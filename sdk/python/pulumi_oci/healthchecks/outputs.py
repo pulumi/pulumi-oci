@@ -59,205 +59,149 @@ class GetHttpMonitorsFilterResult(dict):
 @pulumi.output_type
 class GetHttpMonitorsHttpMonitorResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 headers: Mapping[str, Any],
-                 home_region: str,
-                 id: str,
-                 interval_in_seconds: int,
-                 is_enabled: bool,
-                 method: str,
-                 path: str,
-                 port: int,
-                 protocol: str,
-                 results_url: str,
-                 targets: Sequence[str],
-                 time_created: str,
-                 timeout_in_seconds: int,
-                 vantage_point_names: Sequence[str]):
-        """
-        :param str compartment_id: Filters results by compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: Filters results that exactly match the `displayName` field.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param Mapping[str, Any] headers: A dictionary of HTTP request headers.
-        :param str home_region: Filters results that match the `homeRegion`.
-        :param str id: The OCID of the resource.
-        :param int interval_in_seconds: The monitor interval in seconds. Valid values: 10, 30, and 60.
-        :param bool is_enabled: Enables or disables the monitor. Set to 'true' to launch monitoring.
-        :param str method: The supported HTTP methods available for probes.
-        :param str path: The optional URL path to probe, including query parameters.
-        :param int port: The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        :param str protocol: The supported protocols available for HTTP probes.
-        :param str results_url: A URL for fetching the probe results.
-        :param Sequence[str] targets: A list of targets (hostnames or IP addresses) of the probe.
-        :param str time_created: The RFC 3339-formatted creation date and time of the probe.
-        :param int timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        :param Sequence[str] vantage_point_names: A list of names of vantage points from which to execute the probe.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "home_region", home_region)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "method", method)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "results_url", results_url)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
-        pulumi.set(__self__, "vantage_point_names", vantage_point_names)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 headers: Optional[Mapping[str, Any]] = None,
+                 home_region: Optional[str] = None,
+                 id: Optional[str] = None,
+                 interval_in_seconds: Optional[int] = None,
+                 is_enabled: Optional[bool] = None,
+                 method: Optional[str] = None,
+                 path: Optional[str] = None,
+                 port: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 results_url: Optional[str] = None,
+                 targets: Optional[Sequence[str]] = None,
+                 time_created: Optional[str] = None,
+                 timeout_in_seconds: Optional[int] = None,
+                 vantage_point_names: Optional[Sequence[str]] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if headers is not None:
+            pulumi.set(__self__, "headers", headers)
+        if home_region is not None:
+            pulumi.set(__self__, "home_region", home_region)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if interval_in_seconds is not None:
+            pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if method is not None:
+            pulumi.set(__self__, "method", method)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if results_url is not None:
+            pulumi.set(__self__, "results_url", results_url)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        if vantage_point_names is not None:
+            pulumi.set(__self__, "vantage_point_names", vantage_point_names)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Filters results by compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filters results that exactly match the `displayName` field.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def headers(self) -> Mapping[str, Any]:
-        """
-        A dictionary of HTTP request headers.
-        """
+    def headers(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "headers")
 
     @property
     @pulumi.getter(name="homeRegion")
-    def home_region(self) -> str:
-        """
-        Filters results that match the `homeRegion`.
-        """
+    def home_region(self) -> Optional[str]:
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> int:
-        """
-        The monitor interval in seconds. Valid values: 10, 30, and 60.
-        """
+    def interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "interval_in_seconds")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Enables or disables the monitor. Set to 'true' to launch monitoring.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def method(self) -> str:
-        """
-        The supported HTTP methods available for probes.
-        """
+    def method(self) -> Optional[str]:
         return pulumi.get(self, "method")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        The optional URL path to probe, including query parameters.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The supported protocols available for HTTP probes.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="resultsUrl")
-    def results_url(self) -> str:
-        """
-        A URL for fetching the probe results.
-        """
+    def results_url(self) -> Optional[str]:
         return pulumi.get(self, "results_url")
 
     @property
     @pulumi.getter
-    def targets(self) -> Sequence[str]:
-        """
-        A list of targets (hostnames or IP addresses) of the probe.
-        """
+    def targets(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The RFC 3339-formatted creation date and time of the probe.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="vantagePointNames")
-    def vantage_point_names(self) -> Sequence[str]:
-        """
-        A list of names of vantage points from which to execute the probe.
-        """
+    def vantage_point_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "vantage_point_names")
 
 
@@ -291,361 +235,255 @@ class GetHttpProbeResultsFilterResult(dict):
 @pulumi.output_type
 class GetHttpProbeResultsHttpProbeResultResult(dict):
     def __init__(__self__, *,
-                 connect_end: float,
-                 connect_start: float,
-                 connections: Sequence['outputs.GetHttpProbeResultsHttpProbeResultConnectionResult'],
-                 dns: Sequence['outputs.GetHttpProbeResultsHttpProbeResultDnResult'],
-                 domain_lookup_end: float,
-                 domain_lookup_start: float,
-                 duration: float,
-                 encoded_body_size: int,
-                 error_category: str,
-                 error_message: str,
-                 fetch_start: float,
-                 is_healthy: bool,
-                 is_timed_out: bool,
-                 key: str,
-                 probe_configuration_id: str,
-                 protocol: str,
-                 request_start: float,
-                 response_end: float,
-                 response_start: float,
-                 secure_connection_start: float,
-                 start_time: float,
-                 status_code: int,
-                 target: str,
-                 vantage_point_name: str):
-        """
-        :param float connect_end: The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
-        :param float connect_start: The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
-        :param Sequence['GetHttpProbeResultsHttpProbeResultConnectionArgs'] connections: TCP connection results.  All durations are in milliseconds.
-        :param Sequence['GetHttpProbeResultsHttpProbeResultDnArgs'] dns: The DNS resolution results.
-        :param float domain_lookup_end: The time immediately before the vantage point finishes the domain name lookup for the resource.
-        :param float domain_lookup_start: The time immediately before the vantage point starts the domain name lookup for the resource.
-        :param float duration: The total duration from start of request until response is fully consumed or the connection is closed.
-        :param int encoded_body_size: The size, in octets, of the payload body prior to removing any applied content-codings.
-        :param str error_category: The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
-               * NONE - No error
-               * DNS - DNS errors
-               * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
-               * NETWORK - Network-related errors, for example a "network unreachable" error.
-               * SYSTEM - Internal system errors.
-        :param str error_message: The error information indicating why a probe execution failed.
-        :param float fetch_start: The time immediately before the vantage point starts to fetch the resource.
-        :param bool is_healthy: True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-        :param bool is_timed_out: True if the probe did not complete before the configured `timeoutInSeconds` value.
-        :param str key: A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-        :param str probe_configuration_id: The OCID of a monitor or on-demand probe.
-        :param str protocol: The supported protocols available for HTTP probes.
-        :param float request_start: The time immediately before the vantage point starts requesting the resource from the server.
-        :param float response_end: The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
-        :param float response_start: The time immediately after the vantage point's HTTP parser receives the first byte of the response.
-        :param float secure_connection_start: The time immediately before the vantage point starts the handshake process to secure the current connection.
-        :param float start_time: The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-        :param int status_code: The HTTP response status code.
-        :param str target: Filters results that match the `target`.
-        :param str vantage_point_name: The name of the vantage point that executed the probe.
-        """
-        pulumi.set(__self__, "connect_end", connect_end)
-        pulumi.set(__self__, "connect_start", connect_start)
-        pulumi.set(__self__, "connections", connections)
-        pulumi.set(__self__, "dns", dns)
-        pulumi.set(__self__, "domain_lookup_end", domain_lookup_end)
-        pulumi.set(__self__, "domain_lookup_start", domain_lookup_start)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "encoded_body_size", encoded_body_size)
-        pulumi.set(__self__, "error_category", error_category)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "fetch_start", fetch_start)
-        pulumi.set(__self__, "is_healthy", is_healthy)
-        pulumi.set(__self__, "is_timed_out", is_timed_out)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "probe_configuration_id", probe_configuration_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "request_start", request_start)
-        pulumi.set(__self__, "response_end", response_end)
-        pulumi.set(__self__, "response_start", response_start)
-        pulumi.set(__self__, "secure_connection_start", secure_connection_start)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "status_code", status_code)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "vantage_point_name", vantage_point_name)
+                 connect_end: Optional[float] = None,
+                 connect_start: Optional[float] = None,
+                 connections: Optional[Sequence['outputs.GetHttpProbeResultsHttpProbeResultConnectionResult']] = None,
+                 dns: Optional[Sequence['outputs.GetHttpProbeResultsHttpProbeResultDnResult']] = None,
+                 domain_lookup_end: Optional[float] = None,
+                 domain_lookup_start: Optional[float] = None,
+                 duration: Optional[float] = None,
+                 encoded_body_size: Optional[int] = None,
+                 error_category: Optional[str] = None,
+                 error_message: Optional[str] = None,
+                 fetch_start: Optional[float] = None,
+                 is_healthy: Optional[bool] = None,
+                 is_timed_out: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 probe_configuration_id: Optional[str] = None,
+                 protocol: Optional[str] = None,
+                 request_start: Optional[float] = None,
+                 response_end: Optional[float] = None,
+                 response_start: Optional[float] = None,
+                 secure_connection_start: Optional[float] = None,
+                 start_time: Optional[float] = None,
+                 status_code: Optional[int] = None,
+                 target: Optional[str] = None,
+                 vantage_point_name: Optional[str] = None):
+        if connect_end is not None:
+            pulumi.set(__self__, "connect_end", connect_end)
+        if connect_start is not None:
+            pulumi.set(__self__, "connect_start", connect_start)
+        if connections is not None:
+            pulumi.set(__self__, "connections", connections)
+        if dns is not None:
+            pulumi.set(__self__, "dns", dns)
+        if domain_lookup_end is not None:
+            pulumi.set(__self__, "domain_lookup_end", domain_lookup_end)
+        if domain_lookup_start is not None:
+            pulumi.set(__self__, "domain_lookup_start", domain_lookup_start)
+        if duration is not None:
+            pulumi.set(__self__, "duration", duration)
+        if encoded_body_size is not None:
+            pulumi.set(__self__, "encoded_body_size", encoded_body_size)
+        if error_category is not None:
+            pulumi.set(__self__, "error_category", error_category)
+        if error_message is not None:
+            pulumi.set(__self__, "error_message", error_message)
+        if fetch_start is not None:
+            pulumi.set(__self__, "fetch_start", fetch_start)
+        if is_healthy is not None:
+            pulumi.set(__self__, "is_healthy", is_healthy)
+        if is_timed_out is not None:
+            pulumi.set(__self__, "is_timed_out", is_timed_out)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if probe_configuration_id is not None:
+            pulumi.set(__self__, "probe_configuration_id", probe_configuration_id)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if request_start is not None:
+            pulumi.set(__self__, "request_start", request_start)
+        if response_end is not None:
+            pulumi.set(__self__, "response_end", response_end)
+        if response_start is not None:
+            pulumi.set(__self__, "response_start", response_start)
+        if secure_connection_start is not None:
+            pulumi.set(__self__, "secure_connection_start", secure_connection_start)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if vantage_point_name is not None:
+            pulumi.set(__self__, "vantage_point_name", vantage_point_name)
 
     @property
     @pulumi.getter(name="connectEnd")
-    def connect_end(self) -> float:
-        """
-        The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
-        """
+    def connect_end(self) -> Optional[float]:
         return pulumi.get(self, "connect_end")
 
     @property
     @pulumi.getter(name="connectStart")
-    def connect_start(self) -> float:
-        """
-        The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
-        """
+    def connect_start(self) -> Optional[float]:
         return pulumi.get(self, "connect_start")
 
     @property
     @pulumi.getter
-    def connections(self) -> Sequence['outputs.GetHttpProbeResultsHttpProbeResultConnectionResult']:
-        """
-        TCP connection results.  All durations are in milliseconds.
-        """
+    def connections(self) -> Optional[Sequence['outputs.GetHttpProbeResultsHttpProbeResultConnectionResult']]:
         return pulumi.get(self, "connections")
 
     @property
     @pulumi.getter
-    def dns(self) -> Sequence['outputs.GetHttpProbeResultsHttpProbeResultDnResult']:
-        """
-        The DNS resolution results.
-        """
+    def dns(self) -> Optional[Sequence['outputs.GetHttpProbeResultsHttpProbeResultDnResult']]:
         return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="domainLookupEnd")
-    def domain_lookup_end(self) -> float:
-        """
-        The time immediately before the vantage point finishes the domain name lookup for the resource.
-        """
+    def domain_lookup_end(self) -> Optional[float]:
         return pulumi.get(self, "domain_lookup_end")
 
     @property
     @pulumi.getter(name="domainLookupStart")
-    def domain_lookup_start(self) -> float:
-        """
-        The time immediately before the vantage point starts the domain name lookup for the resource.
-        """
+    def domain_lookup_start(self) -> Optional[float]:
         return pulumi.get(self, "domain_lookup_start")
 
     @property
     @pulumi.getter
-    def duration(self) -> float:
-        """
-        The total duration from start of request until response is fully consumed or the connection is closed.
-        """
+    def duration(self) -> Optional[float]:
         return pulumi.get(self, "duration")
 
     @property
     @pulumi.getter(name="encodedBodySize")
-    def encoded_body_size(self) -> int:
-        """
-        The size, in octets, of the payload body prior to removing any applied content-codings.
-        """
+    def encoded_body_size(self) -> Optional[int]:
         return pulumi.get(self, "encoded_body_size")
 
     @property
     @pulumi.getter(name="errorCategory")
-    def error_category(self) -> str:
-        """
-        The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
-        * NONE - No error
-        * DNS - DNS errors
-        * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
-        * NETWORK - Network-related errors, for example a "network unreachable" error.
-        * SYSTEM - Internal system errors.
-        """
+    def error_category(self) -> Optional[str]:
         return pulumi.get(self, "error_category")
 
     @property
     @pulumi.getter(name="errorMessage")
-    def error_message(self) -> str:
-        """
-        The error information indicating why a probe execution failed.
-        """
+    def error_message(self) -> Optional[str]:
         return pulumi.get(self, "error_message")
 
     @property
     @pulumi.getter(name="fetchStart")
-    def fetch_start(self) -> float:
-        """
-        The time immediately before the vantage point starts to fetch the resource.
-        """
+    def fetch_start(self) -> Optional[float]:
         return pulumi.get(self, "fetch_start")
 
     @property
     @pulumi.getter(name="isHealthy")
-    def is_healthy(self) -> bool:
-        """
-        True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-        """
+    def is_healthy(self) -> Optional[bool]:
         return pulumi.get(self, "is_healthy")
 
     @property
     @pulumi.getter(name="isTimedOut")
-    def is_timed_out(self) -> bool:
-        """
-        True if the probe did not complete before the configured `timeoutInSeconds` value.
-        """
+    def is_timed_out(self) -> Optional[bool]:
         return pulumi.get(self, "is_timed_out")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="probeConfigurationId")
-    def probe_configuration_id(self) -> str:
-        """
-        The OCID of a monitor or on-demand probe.
-        """
+    def probe_configuration_id(self) -> Optional[str]:
         return pulumi.get(self, "probe_configuration_id")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The supported protocols available for HTTP probes.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="requestStart")
-    def request_start(self) -> float:
-        """
-        The time immediately before the vantage point starts requesting the resource from the server.
-        """
+    def request_start(self) -> Optional[float]:
         return pulumi.get(self, "request_start")
 
     @property
     @pulumi.getter(name="responseEnd")
-    def response_end(self) -> float:
-        """
-        The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
-        """
+    def response_end(self) -> Optional[float]:
         return pulumi.get(self, "response_end")
 
     @property
     @pulumi.getter(name="responseStart")
-    def response_start(self) -> float:
-        """
-        The time immediately after the vantage point's HTTP parser receives the first byte of the response.
-        """
+    def response_start(self) -> Optional[float]:
         return pulumi.get(self, "response_start")
 
     @property
     @pulumi.getter(name="secureConnectionStart")
-    def secure_connection_start(self) -> float:
-        """
-        The time immediately before the vantage point starts the handshake process to secure the current connection.
-        """
+    def secure_connection_start(self) -> Optional[float]:
         return pulumi.get(self, "secure_connection_start")
 
     @property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> float:
-        """
-        The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-        """
+    def start_time(self) -> Optional[float]:
         return pulumi.get(self, "start_time")
 
     @property
     @pulumi.getter(name="statusCode")
-    def status_code(self) -> int:
-        """
-        The HTTP response status code.
-        """
+    def status_code(self) -> Optional[int]:
         return pulumi.get(self, "status_code")
 
     @property
     @pulumi.getter
-    def target(self) -> str:
-        """
-        Filters results that match the `target`.
-        """
+    def target(self) -> Optional[str]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="vantagePointName")
-    def vantage_point_name(self) -> str:
-        """
-        The name of the vantage point that executed the probe.
-        """
+    def vantage_point_name(self) -> Optional[str]:
         return pulumi.get(self, "vantage_point_name")
 
 
 @pulumi.output_type
 class GetHttpProbeResultsHttpProbeResultConnectionResult(dict):
     def __init__(__self__, *,
-                 address: str,
-                 connect_duration: float,
-                 port: int,
-                 secure_connect_duration: float):
-        """
-        :param str address: The connection IP address.
-        :param float connect_duration: Total connect duration, calculated using `connectEnd` minus `connectStart`.
-        :param int port: The port.
-        :param float secure_connect_duration: The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
-        """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "connect_duration", connect_duration)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "secure_connect_duration", secure_connect_duration)
+                 address: Optional[str] = None,
+                 connect_duration: Optional[float] = None,
+                 port: Optional[int] = None,
+                 secure_connect_duration: Optional[float] = None):
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if connect_duration is not None:
+            pulumi.set(__self__, "connect_duration", connect_duration)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if secure_connect_duration is not None:
+            pulumi.set(__self__, "secure_connect_duration", secure_connect_duration)
 
     @property
     @pulumi.getter
-    def address(self) -> str:
-        """
-        The connection IP address.
-        """
+    def address(self) -> Optional[str]:
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter(name="connectDuration")
-    def connect_duration(self) -> float:
-        """
-        Total connect duration, calculated using `connectEnd` minus `connectStart`.
-        """
+    def connect_duration(self) -> Optional[float]:
         return pulumi.get(self, "connect_duration")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="secureConnectDuration")
-    def secure_connect_duration(self) -> float:
-        """
-        The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
-        """
+    def secure_connect_duration(self) -> Optional[float]:
         return pulumi.get(self, "secure_connect_duration")
 
 
 @pulumi.output_type
 class GetHttpProbeResultsHttpProbeResultDnResult(dict):
     def __init__(__self__, *,
-                 addresses: Sequence[str],
-                 domain_lookup_duration: float):
-        """
-        :param Sequence[str] addresses: The addresses returned by DNS resolution.
-        :param float domain_lookup_duration: Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-        """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "domain_lookup_duration", domain_lookup_duration)
+                 addresses: Optional[Sequence[str]] = None,
+                 domain_lookup_duration: Optional[float] = None):
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if domain_lookup_duration is not None:
+            pulumi.set(__self__, "domain_lookup_duration", domain_lookup_duration)
 
     @property
     @pulumi.getter
-    def addresses(self) -> Sequence[str]:
-        """
-        The addresses returned by DNS resolution.
-        """
+    def addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="domainLookupDuration")
-    def domain_lookup_duration(self) -> float:
-        """
-        Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-        """
+    def domain_lookup_duration(self) -> Optional[float]:
         return pulumi.get(self, "domain_lookup_duration")
 
 
@@ -679,172 +517,125 @@ class GetPingMonitorsFilterResult(dict):
 @pulumi.output_type
 class GetPingMonitorsPingMonitorResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 home_region: str,
-                 id: str,
-                 interval_in_seconds: int,
-                 is_enabled: bool,
-                 port: int,
-                 protocol: str,
-                 results_url: str,
-                 targets: Sequence[str],
-                 time_created: str,
-                 timeout_in_seconds: int,
-                 vantage_point_names: Sequence[str]):
-        """
-        :param str compartment_id: Filters results by compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: Filters results that exactly match the `displayName` field.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str home_region: Filters results that match the `homeRegion`.
-        :param str id: The OCID of the resource.
-        :param int interval_in_seconds: The monitor interval in seconds. Valid values: 10, 30, and 60.
-        :param bool is_enabled: Enables or disables the monitor. Set to 'true' to launch monitoring.
-        :param int port: The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        :param str protocol: The protocols for ping probes.
-        :param str results_url: A URL for fetching the probe results.
-        :param Sequence[str] targets: A list of targets (hostnames or IP addresses) of the probe.
-        :param str time_created: The RFC 3339-formatted creation date and time of the probe.
-        :param int timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        :param Sequence[str] vantage_point_names: A list of names of vantage points from which to execute the probe.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "home_region", home_region)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "results_url", results_url)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
-        pulumi.set(__self__, "vantage_point_names", vantage_point_names)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 home_region: Optional[str] = None,
+                 id: Optional[str] = None,
+                 interval_in_seconds: Optional[int] = None,
+                 is_enabled: Optional[bool] = None,
+                 port: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 results_url: Optional[str] = None,
+                 targets: Optional[Sequence[str]] = None,
+                 time_created: Optional[str] = None,
+                 timeout_in_seconds: Optional[int] = None,
+                 vantage_point_names: Optional[Sequence[str]] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if home_region is not None:
+            pulumi.set(__self__, "home_region", home_region)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if interval_in_seconds is not None:
+            pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if results_url is not None:
+            pulumi.set(__self__, "results_url", results_url)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        if vantage_point_names is not None:
+            pulumi.set(__self__, "vantage_point_names", vantage_point_names)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Filters results by compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filters results that exactly match the `displayName` field.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeRegion")
-    def home_region(self) -> str:
-        """
-        Filters results that match the `homeRegion`.
-        """
+    def home_region(self) -> Optional[str]:
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> int:
-        """
-        The monitor interval in seconds. Valid values: 10, 30, and 60.
-        """
+    def interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "interval_in_seconds")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Enables or disables the monitor. Set to 'true' to launch monitoring.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocols for ping probes.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="resultsUrl")
-    def results_url(self) -> str:
-        """
-        A URL for fetching the probe results.
-        """
+    def results_url(self) -> Optional[str]:
         return pulumi.get(self, "results_url")
 
     @property
     @pulumi.getter
-    def targets(self) -> Sequence[str]:
-        """
-        A list of targets (hostnames or IP addresses) of the probe.
-        """
+    def targets(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The RFC 3339-formatted creation date and time of the probe.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="vantagePointNames")
-    def vantage_point_names(self) -> Sequence[str]:
-        """
-        A list of names of vantage points from which to execute the probe.
-        """
+    def vantage_point_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "vantage_point_names")
 
 
@@ -878,251 +669,175 @@ class GetPingProbeResultsFilterResult(dict):
 @pulumi.output_type
 class GetPingProbeResultsPingProbeResultResult(dict):
     def __init__(__self__, *,
-                 connections: Sequence['outputs.GetPingProbeResultsPingProbeResultConnectionResult'],
-                 dns: Sequence['outputs.GetPingProbeResultsPingProbeResultDnResult'],
-                 domain_lookup_end: float,
-                 domain_lookup_start: float,
-                 error_category: str,
-                 error_message: str,
-                 icmp_code: int,
-                 is_healthy: bool,
-                 is_timed_out: bool,
-                 key: str,
-                 latency_in_ms: float,
-                 probe_configuration_id: str,
-                 protocol: str,
-                 start_time: float,
-                 target: str,
-                 vantage_point_name: str):
-        """
-        :param Sequence['GetPingProbeResultsPingProbeResultConnectionArgs'] connections: The network connection results.
-        :param Sequence['GetPingProbeResultsPingProbeResultDnArgs'] dns: The DNS resolution results.
-        :param float domain_lookup_end: The time immediately before the vantage point finishes the domain name lookup for the resource.
-        :param float domain_lookup_start: The time immediately before the vantage point starts the domain name lookup for the resource.
-        :param str error_category: The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
-               * NONE - No error
-               * DNS - DNS errors
-               * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
-               * NETWORK - Network-related errors, for example a "network unreachable" error.
-               * SYSTEM - Internal system errors.
-        :param str error_message: The error information indicating why a probe execution failed.
-        :param int icmp_code: The ICMP code of the response message.  This field is not used when the protocol is set to TCP.  For more information on ICMP codes, see [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
-        :param bool is_healthy: True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-        :param bool is_timed_out: True if the probe did not complete before the configured `timeoutInSeconds` value.
-        :param str key: A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-        :param float latency_in_ms: The latency of the probe execution, in milliseconds.
-        :param str probe_configuration_id: The OCID of a monitor or on-demand probe.
-        :param str protocol: The protocols for ping probes.
-        :param float start_time: The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-        :param str target: Filters results that match the `target`.
-        :param str vantage_point_name: The name of the vantage point that executed the probe.
-        """
-        pulumi.set(__self__, "connections", connections)
-        pulumi.set(__self__, "dns", dns)
-        pulumi.set(__self__, "domain_lookup_end", domain_lookup_end)
-        pulumi.set(__self__, "domain_lookup_start", domain_lookup_start)
-        pulumi.set(__self__, "error_category", error_category)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "icmp_code", icmp_code)
-        pulumi.set(__self__, "is_healthy", is_healthy)
-        pulumi.set(__self__, "is_timed_out", is_timed_out)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "latency_in_ms", latency_in_ms)
-        pulumi.set(__self__, "probe_configuration_id", probe_configuration_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "vantage_point_name", vantage_point_name)
+                 connections: Optional[Sequence['outputs.GetPingProbeResultsPingProbeResultConnectionResult']] = None,
+                 dns: Optional[Sequence['outputs.GetPingProbeResultsPingProbeResultDnResult']] = None,
+                 domain_lookup_end: Optional[float] = None,
+                 domain_lookup_start: Optional[float] = None,
+                 error_category: Optional[str] = None,
+                 error_message: Optional[str] = None,
+                 icmp_code: Optional[int] = None,
+                 is_healthy: Optional[bool] = None,
+                 is_timed_out: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 latency_in_ms: Optional[float] = None,
+                 probe_configuration_id: Optional[str] = None,
+                 protocol: Optional[str] = None,
+                 start_time: Optional[float] = None,
+                 target: Optional[str] = None,
+                 vantage_point_name: Optional[str] = None):
+        if connections is not None:
+            pulumi.set(__self__, "connections", connections)
+        if dns is not None:
+            pulumi.set(__self__, "dns", dns)
+        if domain_lookup_end is not None:
+            pulumi.set(__self__, "domain_lookup_end", domain_lookup_end)
+        if domain_lookup_start is not None:
+            pulumi.set(__self__, "domain_lookup_start", domain_lookup_start)
+        if error_category is not None:
+            pulumi.set(__self__, "error_category", error_category)
+        if error_message is not None:
+            pulumi.set(__self__, "error_message", error_message)
+        if icmp_code is not None:
+            pulumi.set(__self__, "icmp_code", icmp_code)
+        if is_healthy is not None:
+            pulumi.set(__self__, "is_healthy", is_healthy)
+        if is_timed_out is not None:
+            pulumi.set(__self__, "is_timed_out", is_timed_out)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if latency_in_ms is not None:
+            pulumi.set(__self__, "latency_in_ms", latency_in_ms)
+        if probe_configuration_id is not None:
+            pulumi.set(__self__, "probe_configuration_id", probe_configuration_id)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if vantage_point_name is not None:
+            pulumi.set(__self__, "vantage_point_name", vantage_point_name)
 
     @property
     @pulumi.getter
-    def connections(self) -> Sequence['outputs.GetPingProbeResultsPingProbeResultConnectionResult']:
-        """
-        The network connection results.
-        """
+    def connections(self) -> Optional[Sequence['outputs.GetPingProbeResultsPingProbeResultConnectionResult']]:
         return pulumi.get(self, "connections")
 
     @property
     @pulumi.getter
-    def dns(self) -> Sequence['outputs.GetPingProbeResultsPingProbeResultDnResult']:
-        """
-        The DNS resolution results.
-        """
+    def dns(self) -> Optional[Sequence['outputs.GetPingProbeResultsPingProbeResultDnResult']]:
         return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="domainLookupEnd")
-    def domain_lookup_end(self) -> float:
-        """
-        The time immediately before the vantage point finishes the domain name lookup for the resource.
-        """
+    def domain_lookup_end(self) -> Optional[float]:
         return pulumi.get(self, "domain_lookup_end")
 
     @property
     @pulumi.getter(name="domainLookupStart")
-    def domain_lookup_start(self) -> float:
-        """
-        The time immediately before the vantage point starts the domain name lookup for the resource.
-        """
+    def domain_lookup_start(self) -> Optional[float]:
         return pulumi.get(self, "domain_lookup_start")
 
     @property
     @pulumi.getter(name="errorCategory")
-    def error_category(self) -> str:
-        """
-        The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
-        * NONE - No error
-        * DNS - DNS errors
-        * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
-        * NETWORK - Network-related errors, for example a "network unreachable" error.
-        * SYSTEM - Internal system errors.
-        """
+    def error_category(self) -> Optional[str]:
         return pulumi.get(self, "error_category")
 
     @property
     @pulumi.getter(name="errorMessage")
-    def error_message(self) -> str:
-        """
-        The error information indicating why a probe execution failed.
-        """
+    def error_message(self) -> Optional[str]:
         return pulumi.get(self, "error_message")
 
     @property
     @pulumi.getter(name="icmpCode")
-    def icmp_code(self) -> int:
-        """
-        The ICMP code of the response message.  This field is not used when the protocol is set to TCP.  For more information on ICMP codes, see [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
-        """
+    def icmp_code(self) -> Optional[int]:
         return pulumi.get(self, "icmp_code")
 
     @property
     @pulumi.getter(name="isHealthy")
-    def is_healthy(self) -> bool:
-        """
-        True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-        """
+    def is_healthy(self) -> Optional[bool]:
         return pulumi.get(self, "is_healthy")
 
     @property
     @pulumi.getter(name="isTimedOut")
-    def is_timed_out(self) -> bool:
-        """
-        True if the probe did not complete before the configured `timeoutInSeconds` value.
-        """
+    def is_timed_out(self) -> Optional[bool]:
         return pulumi.get(self, "is_timed_out")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="latencyInMs")
-    def latency_in_ms(self) -> float:
-        """
-        The latency of the probe execution, in milliseconds.
-        """
+    def latency_in_ms(self) -> Optional[float]:
         return pulumi.get(self, "latency_in_ms")
 
     @property
     @pulumi.getter(name="probeConfigurationId")
-    def probe_configuration_id(self) -> str:
-        """
-        The OCID of a monitor or on-demand probe.
-        """
+    def probe_configuration_id(self) -> Optional[str]:
         return pulumi.get(self, "probe_configuration_id")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocols for ping probes.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> float:
-        """
-        The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-        """
+    def start_time(self) -> Optional[float]:
         return pulumi.get(self, "start_time")
 
     @property
     @pulumi.getter
-    def target(self) -> str:
-        """
-        Filters results that match the `target`.
-        """
+    def target(self) -> Optional[str]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="vantagePointName")
-    def vantage_point_name(self) -> str:
-        """
-        The name of the vantage point that executed the probe.
-        """
+    def vantage_point_name(self) -> Optional[str]:
         return pulumi.get(self, "vantage_point_name")
 
 
 @pulumi.output_type
 class GetPingProbeResultsPingProbeResultConnectionResult(dict):
     def __init__(__self__, *,
-                 address: str,
-                 port: int):
-        """
-        :param str address: The connection IP address.
-        :param int port: The port.
-        """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "port", port)
+                 address: Optional[str] = None,
+                 port: Optional[int] = None):
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def address(self) -> str:
-        """
-        The connection IP address.
-        """
+    def address(self) -> Optional[str]:
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
 
 @pulumi.output_type
 class GetPingProbeResultsPingProbeResultDnResult(dict):
     def __init__(__self__, *,
-                 addresses: Sequence[str],
-                 domain_lookup_duration: float):
-        """
-        :param Sequence[str] addresses: The addresses returned by DNS resolution.
-        :param float domain_lookup_duration: Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-        """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "domain_lookup_duration", domain_lookup_duration)
+                 addresses: Optional[Sequence[str]] = None,
+                 domain_lookup_duration: Optional[float] = None):
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if domain_lookup_duration is not None:
+            pulumi.set(__self__, "domain_lookup_duration", domain_lookup_duration)
 
     @property
     @pulumi.getter
-    def addresses(self) -> Sequence[str]:
-        """
-        The addresses returned by DNS resolution.
-        """
+    def addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="domainLookupDuration")
-    def domain_lookup_duration(self) -> float:
-        """
-        Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-        """
+    def domain_lookup_duration(self) -> Optional[float]:
         return pulumi.get(self, "domain_lookup_duration")
 
 
@@ -1132,9 +847,6 @@ class GetVantagePointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Filters results that exactly match the `name` field.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1143,9 +855,6 @@ class GetVantagePointsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Filters results that exactly match the `name` field.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1162,197 +871,143 @@ class GetVantagePointsFilterResult(dict):
 @pulumi.output_type
 class GetVantagePointsHealthChecksVantagePointResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 geos: Sequence['outputs.GetVantagePointsHealthChecksVantagePointGeoResult'],
-                 name: str,
-                 provider_name: str,
-                 routings: Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult']):
-        """
-        :param str display_name: Filters results that exactly match the `displayName` field.
-        :param Sequence['GetVantagePointsHealthChecksVantagePointGeoArgs'] geos: Geographic information about a vantage point.
-        :param str name: Filters results that exactly match the `name` field.
-        :param str provider_name: The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
-        :param Sequence['GetVantagePointsHealthChecksVantagePointRoutingArgs'] routings: An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "geos", geos)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "provider_name", provider_name)
-        pulumi.set(__self__, "routings", routings)
+                 display_name: Optional[str] = None,
+                 geos: Optional[Sequence['outputs.GetVantagePointsHealthChecksVantagePointGeoResult']] = None,
+                 name: Optional[str] = None,
+                 provider_name: Optional[str] = None,
+                 routings: Optional[Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult']] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if geos is not None:
+            pulumi.set(__self__, "geos", geos)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if provider_name is not None:
+            pulumi.set(__self__, "provider_name", provider_name)
+        if routings is not None:
+            pulumi.set(__self__, "routings", routings)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filters results that exactly match the `displayName` field.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def geos(self) -> Sequence['outputs.GetVantagePointsHealthChecksVantagePointGeoResult']:
-        """
-        Geographic information about a vantage point.
-        """
+    def geos(self) -> Optional[Sequence['outputs.GetVantagePointsHealthChecksVantagePointGeoResult']]:
         return pulumi.get(self, "geos")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Filters results that exactly match the `name` field.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="providerName")
-    def provider_name(self) -> str:
-        """
-        The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
-        """
+    def provider_name(self) -> Optional[str]:
         return pulumi.get(self, "provider_name")
 
     @property
     @pulumi.getter
-    def routings(self) -> Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult']:
-        """
-        An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
-        """
+    def routings(self) -> Optional[Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult']]:
         return pulumi.get(self, "routings")
 
 
 @pulumi.output_type
 class GetVantagePointsHealthChecksVantagePointGeoResult(dict):
     def __init__(__self__, *,
-                 admin_div_code: str,
-                 city_name: str,
-                 country_code: str,
-                 country_name: str,
-                 geo_key: str,
-                 latitude: float,
-                 longitude: float):
-        """
-        :param str admin_div_code: The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-        :param str city_name: Common English-language name for the city.
-        :param str country_code: The ISO 3166-1 alpha-2 country code. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-        :param str country_name: The common English-language name for the country.
-        :param str geo_key: An opaque identifier for the geographic location of the vantage point.
-        :param float latitude: Degrees north of the Equator.
-        :param float longitude: Degrees east of the prime meridian.
-        """
-        pulumi.set(__self__, "admin_div_code", admin_div_code)
-        pulumi.set(__self__, "city_name", city_name)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "geo_key", geo_key)
-        pulumi.set(__self__, "latitude", latitude)
-        pulumi.set(__self__, "longitude", longitude)
+                 admin_div_code: Optional[str] = None,
+                 city_name: Optional[str] = None,
+                 country_code: Optional[str] = None,
+                 country_name: Optional[str] = None,
+                 geo_key: Optional[str] = None,
+                 latitude: Optional[float] = None,
+                 longitude: Optional[float] = None):
+        if admin_div_code is not None:
+            pulumi.set(__self__, "admin_div_code", admin_div_code)
+        if city_name is not None:
+            pulumi.set(__self__, "city_name", city_name)
+        if country_code is not None:
+            pulumi.set(__self__, "country_code", country_code)
+        if country_name is not None:
+            pulumi.set(__self__, "country_name", country_name)
+        if geo_key is not None:
+            pulumi.set(__self__, "geo_key", geo_key)
+        if latitude is not None:
+            pulumi.set(__self__, "latitude", latitude)
+        if longitude is not None:
+            pulumi.set(__self__, "longitude", longitude)
 
     @property
     @pulumi.getter(name="adminDivCode")
-    def admin_div_code(self) -> str:
-        """
-        The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-        """
+    def admin_div_code(self) -> Optional[str]:
         return pulumi.get(self, "admin_div_code")
 
     @property
     @pulumi.getter(name="cityName")
-    def city_name(self) -> str:
-        """
-        Common English-language name for the city.
-        """
+    def city_name(self) -> Optional[str]:
         return pulumi.get(self, "city_name")
 
     @property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> str:
-        """
-        The ISO 3166-1 alpha-2 country code. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-        """
+    def country_code(self) -> Optional[str]:
         return pulumi.get(self, "country_code")
 
     @property
     @pulumi.getter(name="countryName")
-    def country_name(self) -> str:
-        """
-        The common English-language name for the country.
-        """
+    def country_name(self) -> Optional[str]:
         return pulumi.get(self, "country_name")
 
     @property
     @pulumi.getter(name="geoKey")
-    def geo_key(self) -> str:
-        """
-        An opaque identifier for the geographic location of the vantage point.
-        """
+    def geo_key(self) -> Optional[str]:
         return pulumi.get(self, "geo_key")
 
     @property
     @pulumi.getter
-    def latitude(self) -> float:
-        """
-        Degrees north of the Equator.
-        """
+    def latitude(self) -> Optional[float]:
         return pulumi.get(self, "latitude")
 
     @property
     @pulumi.getter
-    def longitude(self) -> float:
-        """
-        Degrees east of the prime meridian.
-        """
+    def longitude(self) -> Optional[float]:
         return pulumi.get(self, "longitude")
 
 
 @pulumi.output_type
 class GetVantagePointsHealthChecksVantagePointRoutingResult(dict):
     def __init__(__self__, *,
-                 as_label: str,
-                 asn: int,
-                 prefix: str,
-                 weight: int):
-        """
-        :param str as_label: The registry label for `asn`, usually the name of the organization that owns the ASN. May be omitted or null.
-        :param int asn: The Autonomous System Number (ASN) identifying the organization responsible for routing packets to `prefix`.
-        :param str prefix: An IP prefix (CIDR syntax) that is less specific than `address`, through which `address` is routed.
-        :param int weight: An integer between 0 and 100 used to select between multiple origin ASNs when routing to `prefix`. Most prefixes have exactly one origin ASN, in which case `weight` will be 100.
-        """
-        pulumi.set(__self__, "as_label", as_label)
-        pulumi.set(__self__, "asn", asn)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "weight", weight)
+                 as_label: Optional[str] = None,
+                 asn: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 weight: Optional[int] = None):
+        if as_label is not None:
+            pulumi.set(__self__, "as_label", as_label)
+        if asn is not None:
+            pulumi.set(__self__, "asn", asn)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter(name="asLabel")
-    def as_label(self) -> str:
-        """
-        The registry label for `asn`, usually the name of the organization that owns the ASN. May be omitted or null.
-        """
+    def as_label(self) -> Optional[str]:
         return pulumi.get(self, "as_label")
 
     @property
     @pulumi.getter
-    def asn(self) -> int:
-        """
-        The Autonomous System Number (ASN) identifying the organization responsible for routing packets to `prefix`.
-        """
+    def asn(self) -> Optional[int]:
         return pulumi.get(self, "asn")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        An IP prefix (CIDR syntax) that is less specific than `address`, through which `address` is routed.
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter
-    def weight(self) -> int:
-        """
-        An integer between 0 and 100 used to select between multiple origin ASNs when routing to `prefix`. Most prefixes have exactly one origin ASN, in which case `weight` will be 100.
-        """
+    def weight(self) -> Optional[int]:
         return pulumi.get(self, "weight")
 
 

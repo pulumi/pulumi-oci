@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
@@ -96,7 +95,7 @@ type GetContainerSignaturesResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetContainerSignaturesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string  `pulumi:"id"`
+	Id          *string `pulumi:"id"`
 	ImageDigest *string `pulumi:"imageDigest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
 	ImageId *string `pulumi:"imageId"`
@@ -167,12 +166,6 @@ func (o GetContainerSignaturesResultOutput) ToGetContainerSignaturesResultOutput
 	return o
 }
 
-func (o GetContainerSignaturesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesResult] {
-	return pulumix.Output[GetContainerSignaturesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
 func (o GetContainerSignaturesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerSignaturesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -199,8 +192,8 @@ func (o GetContainerSignaturesResultOutput) Filters() GetContainerSignaturesFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetContainerSignaturesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerSignaturesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetContainerSignaturesResultOutput) ImageDigest() pulumi.StringPtrOutput {

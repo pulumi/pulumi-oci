@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemsDbSystemCurrentPlacement {
@@ -13,27 +15,27 @@ public final class GetMysqlDbSystemsDbSystemCurrentPlacement {
      * @return The availability domain in which the DB System is placed.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
 
     private GetMysqlDbSystemsDbSystemCurrentPlacement() {}
     /**
      * @return The availability domain in which the DB System is placed.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMysqlDbSystemsDbSystemCurrentPlacement {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String faultDomain;
+        private @Nullable String availabilityDomain;
+        private @Nullable String faultDomain;
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemCurrentPlacement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMysqlDbSystemsDbSystemCurrentPlacement {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         public GetMysqlDbSystemsDbSystemCurrentPlacement build() {

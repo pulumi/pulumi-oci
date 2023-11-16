@@ -83,34 +83,22 @@ class GetExternalClusterResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> str:
-        """
-        The name of the external cluster.
-        """
+    def component_name(self) -> Optional[str]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the external cluster. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -120,114 +108,72 @@ class GetExternalClusterResult:
 
     @property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        """
+    def external_connector_id(self) -> Optional[str]:
         return pulumi.get(self, "external_connector_id")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
-        """
+    def external_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="gridHome")
-    def grid_home(self) -> str:
-        """
-        The directory in which Oracle Grid Infrastructure is installed.
-        """
+    def grid_home(self) -> Optional[str]:
         return pulumi.get(self, "grid_home")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isFlexCluster")
-    def is_flex_cluster(self) -> bool:
-        """
-        Indicates whether the cluster is Oracle Flex Cluster or not.
-        """
+    def is_flex_cluster(self) -> Optional[bool]:
         return pulumi.get(self, "is_flex_cluster")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Sequence['outputs.GetExternalClusterNetworkConfigurationResult']:
-        """
-        The list of network address configurations of the external cluster.
-        """
+    def network_configurations(self) -> Optional[Sequence['outputs.GetExternalClusterNetworkConfigurationResult']]:
         return pulumi.get(self, "network_configurations")
 
     @property
     @pulumi.getter(name="ocrFileLocation")
-    def ocr_file_location(self) -> str:
-        """
-        The location of the Oracle Cluster Registry (OCR).
-        """
+    def ocr_file_location(self) -> Optional[str]:
         return pulumi.get(self, "ocr_file_location")
 
     @property
     @pulumi.getter(name="scanConfigurations")
-    def scan_configurations(self) -> Sequence['outputs.GetExternalClusterScanConfigurationResult']:
-        """
-        The list of Single Client Access Name (SCAN) configurations of the external cluster.
-        """
+    def scan_configurations(self) -> Optional[Sequence['outputs.GetExternalClusterScanConfigurationResult']]:
         return pulumi.get(self, "scan_configurations")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external cluster was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external cluster was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The cluster version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="vipConfigurations")
-    def vip_configurations(self) -> Sequence['outputs.GetExternalClusterVipConfigurationResult']:
-        """
-        The list of Virtual IP (VIP) configurations of the external cluster.
-        """
+    def vip_configurations(self) -> Optional[Sequence['outputs.GetExternalClusterVipConfigurationResult']]:
         return pulumi.get(self, "vip_configurations")
 
 
@@ -261,21 +207,7 @@ class AwaitableGetExternalClusterResult(GetExternalClusterResult):
 def get_external_cluster(external_cluster_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClusterResult:
     """
-    This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external cluster specified by `externalClusterId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_cluster = oci.DatabaseManagement.get_external_cluster(external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
-    ```
-
-
-    :param str external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalClusterId'] = external_cluster_id
@@ -308,20 +240,6 @@ def get_external_cluster(external_cluster_id: Optional[str] = None,
 def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClusterResult]:
     """
-    This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external cluster specified by `externalClusterId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_cluster = oci.DatabaseManagement.get_external_cluster(external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
-    ```
-
-
-    :param str external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

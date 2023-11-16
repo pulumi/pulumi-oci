@@ -79,7 +79,7 @@ export interface GetManagedDatabaseGroupsResult {
     /**
      * The list of managed_database_group_collection.
      */
-    readonly managedDatabaseGroupCollections: outputs.DatabaseManagement.GetManagedDatabaseGroupsManagedDatabaseGroupCollection[];
+    readonly managedDatabaseGroupCollections?: outputs.DatabaseManagement.GetManagedDatabaseGroupsManagedDatabaseGroupCollection[];
     /**
      * The name of the Managed Database Group.
      */

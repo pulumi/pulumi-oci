@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database resource in Oracle Cloud Infrastructure Database service.
@@ -60,73 +59,73 @@ type LookupDatabaseArgs struct {
 // A collection of values returned by getDatabase.
 type LookupDatabaseResult struct {
 	// The character set for the database.
-	CharacterSet string `pulumi:"characterSet"`
+	CharacterSet *string `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings []GetDatabaseConnectionString `pulumi:"connectionStrings"`
 	DatabaseId        string                        `pulumi:"databaseId"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []GetDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-	DatabaseSoftwareImageId string                `pulumi:"databaseSoftwareImageId"`
+	DatabaseSoftwareImageId *string               `pulumi:"databaseSoftwareImageId"`
 	Databases               []GetDatabaseDatabase `pulumi:"databases"`
 	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
 	DbBackupConfigs []GetDatabaseDbBackupConfig `pulumi:"dbBackupConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	DbHomeId string `pulumi:"dbHomeId"`
+	DbHomeId *string `pulumi:"dbHomeId"`
 	// The database name.
-	DbName string `pulumi:"dbName"`
+	DbName *string `pulumi:"dbName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-	DbUniqueName string `pulumi:"dbUniqueName"`
-	DbVersion    string `pulumi:"dbVersion"`
+	DbUniqueName *string `pulumi:"dbUniqueName"`
+	DbVersion    *string `pulumi:"dbVersion"`
 	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-	DbWorkload string `pulumi:"dbWorkload"`
+	DbWorkload *string `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if the database is a container database.
-	IsCdb bool `pulumi:"isCdb"`
+	IsCdb *bool `pulumi:"isCdb"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-	KeyStoreId string `pulumi:"keyStoreId"`
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
+	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId        string `pulumi:"kmsKeyId"`
-	KmsKeyMigration bool   `pulumi:"kmsKeyMigration"`
-	KmsKeyRotation  int    `pulumi:"kmsKeyRotation"`
+	KmsKeyId        *string `pulumi:"kmsKeyId"`
+	KmsKeyMigration *bool   `pulumi:"kmsKeyMigration"`
+	KmsKeyRotation  *int    `pulumi:"kmsKeyRotation"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
-	LastBackupDurationInSeconds int `pulumi:"lastBackupDurationInSeconds"`
+	LastBackupDurationInSeconds *int `pulumi:"lastBackupDurationInSeconds"`
 	// The date and time when the latest database backup was created.
-	LastBackupTimestamp string `pulumi:"lastBackupTimestamp"`
+	LastBackupTimestamp *string `pulumi:"lastBackupTimestamp"`
 	// The date and time when the latest database backup failed.
-	LastFailedBackupTimestamp string `pulumi:"lastFailedBackupTimestamp"`
+	LastFailedBackupTimestamp *string `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The national character set for the database.
-	NcharacterSet string `pulumi:"ncharacterSet"`
+	NcharacterSet *string `pulumi:"ncharacterSet"`
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-	PdbName string `pulumi:"pdbName"`
+	PdbName *string `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
-	SidPrefix string `pulumi:"sidPrefix"`
-	Source    string `pulumi:"source"`
+	SidPrefix *string `pulumi:"sidPrefix"`
+	Source    *string `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-	SourceDatabasePointInTimeRecoveryTimestamp string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
+	SourceDatabasePointInTimeRecoveryTimestamp *string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// The current state of the database.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the database was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId string `pulumi:"vaultId"`
+	VaultId *string `pulumi:"vaultId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-	VmClusterId string `pulumi:"vmClusterId"`
+	VmClusterId *string `pulumi:"vmClusterId"`
 }
 
 func LookupDatabaseOutput(ctx *pulumi.Context, args LookupDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseResultOutput {
@@ -167,20 +166,14 @@ func (o LookupDatabaseResultOutput) ToLookupDatabaseResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseResult] {
-	return pulumix.Output[LookupDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The character set for the database.
-func (o LookupDatabaseResultOutput) CharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.CharacterSet }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) CharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.CharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Connection strings used to connect to the Oracle Database.
@@ -198,8 +191,8 @@ func (o LookupDatabaseResultOutput) DatabaseManagementConfigs() GetDatabaseDatab
 }
 
 // The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-func (o LookupDatabaseResultOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) DatabaseSoftwareImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.DatabaseSoftwareImageId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDatabaseResultOutput) Databases() GetDatabaseDatabaseArrayOutput {
@@ -212,32 +205,32 @@ func (o LookupDatabaseResultOutput) DbBackupConfigs() GetDatabaseDbBackupConfigA
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-func (o LookupDatabaseResultOutput) DbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbHomeId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) DbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.DbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // The database name.
-func (o LookupDatabaseResultOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-func (o LookupDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-func (o LookupDatabaseResultOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseResultOutput) DbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbVersion }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) DbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
 // **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-func (o LookupDatabaseResultOutput) DbWorkload() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbWorkload }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) DbWorkload() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.DbWorkload }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -251,105 +244,105 @@ func (o LookupDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-func (o LookupDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if the database is a container database.
-func (o LookupDatabaseResultOutput) IsCdb() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) bool { return v.IsCdb }).(pulumi.BoolOutput)
+func (o LookupDatabaseResultOutput) IsCdb() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *bool { return v.IsCdb }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-func (o LookupDatabaseResultOutput) KeyStoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KeyStoreId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.KeyStoreId }).(pulumi.StringPtrOutput)
 }
 
 // The wallet name for Oracle Key Vault.
-func (o LookupDatabaseResultOutput) KeyStoreWalletName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) KeyStoreWalletName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.KeyStoreWalletName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o LookupDatabaseResultOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseResultOutput) KmsKeyMigration() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) bool { return v.KmsKeyMigration }).(pulumi.BoolOutput)
+func (o LookupDatabaseResultOutput) KmsKeyMigration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *bool { return v.KmsKeyMigration }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupDatabaseResultOutput) KmsKeyRotation() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) int { return v.KmsKeyRotation }).(pulumi.IntOutput)
+func (o LookupDatabaseResultOutput) KmsKeyRotation() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *int { return v.KmsKeyRotation }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-func (o LookupDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The duration when the latest database backup created.
-func (o LookupDatabaseResultOutput) LastBackupDurationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) int { return v.LastBackupDurationInSeconds }).(pulumi.IntOutput)
+func (o LookupDatabaseResultOutput) LastBackupDurationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *int { return v.LastBackupDurationInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The date and time when the latest database backup was created.
-func (o LookupDatabaseResultOutput) LastBackupTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.LastBackupTimestamp }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) LastBackupTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.LastBackupTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the latest database backup failed.
-func (o LookupDatabaseResultOutput) LastFailedBackupTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.LastFailedBackupTimestamp }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) LastFailedBackupTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.LastFailedBackupTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The national character set for the database.
-func (o LookupDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) NcharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.NcharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-func (o LookupDatabaseResultOutput) PdbName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.PdbName }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) PdbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.PdbName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies a prefix for the `Oracle SID` of the database to be created.
-func (o LookupDatabaseResultOutput) SidPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.SidPrefix }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) SidPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.SidPrefix }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.Source }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-func (o LookupDatabaseResultOutput) SourceDatabasePointInTimeRecoveryTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.SourceDatabasePointInTimeRecoveryTimestamp }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) SourceDatabasePointInTimeRecoveryTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.SourceDatabasePointInTimeRecoveryTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database.
-func (o LookupDatabaseResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database was created.
-func (o LookupDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-func (o LookupDatabaseResultOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.VaultId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-func (o LookupDatabaseResultOutput) VmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseResult) string { return v.VmClusterId }).(pulumi.StringOutput)
+func (o LookupDatabaseResultOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

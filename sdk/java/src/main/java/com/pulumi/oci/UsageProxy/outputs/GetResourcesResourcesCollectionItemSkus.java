@@ -6,6 +6,8 @@ package com.pulumi.oci.UsageProxy.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourcesResourcesCollectionItemSkus {
@@ -13,39 +15,39 @@ public final class GetResourcesResourcesCollectionItemSkus {
      * @return The cloud credit type for the resource.
      * 
      */
-    private String cloudCreditType;
+    private @Nullable String cloudCreditType;
     /**
      * @return The Sku Id for the resource.
      * 
      */
-    private String skuId;
+    private @Nullable String skuId;
     /**
      * @return The Sku type for the resource.
      * 
      */
-    private String skuType;
+    private @Nullable String skuType;
 
     private GetResourcesResourcesCollectionItemSkus() {}
     /**
      * @return The cloud credit type for the resource.
      * 
      */
-    public String cloudCreditType() {
-        return this.cloudCreditType;
+    public Optional<String> cloudCreditType() {
+        return Optional.ofNullable(this.cloudCreditType);
     }
     /**
      * @return The Sku Id for the resource.
      * 
      */
-    public String skuId() {
-        return this.skuId;
+    public Optional<String> skuId() {
+        return Optional.ofNullable(this.skuId);
     }
     /**
      * @return The Sku type for the resource.
      * 
      */
-    public String skuType() {
-        return this.skuType;
+    public Optional<String> skuType() {
+        return Optional.ofNullable(this.skuType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetResourcesResourcesCollectionItemSkus {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cloudCreditType;
-        private String skuId;
-        private String skuType;
+        private @Nullable String cloudCreditType;
+        private @Nullable String skuId;
+        private @Nullable String skuType;
         public Builder() {}
         public Builder(GetResourcesResourcesCollectionItemSkus defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetResourcesResourcesCollectionItemSkus {
         }
 
         @CustomType.Setter
-        public Builder cloudCreditType(String cloudCreditType) {
-            this.cloudCreditType = Objects.requireNonNull(cloudCreditType);
+        public Builder cloudCreditType(@Nullable String cloudCreditType) {
+            this.cloudCreditType = cloudCreditType;
             return this;
         }
         @CustomType.Setter
-        public Builder skuId(String skuId) {
-            this.skuId = Objects.requireNonNull(skuId);
+        public Builder skuId(@Nullable String skuId) {
+            this.skuId = skuId;
             return this;
         }
         @CustomType.Setter
-        public Builder skuType(String skuType) {
-            this.skuType = Objects.requireNonNull(skuType);
+        public Builder skuType(@Nullable String skuType) {
+            this.skuType = skuType;
             return this;
         }
         public GetResourcesResourcesCollectionItemSkus build() {

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
         /// </summary>
-        public readonly int CapacityStorageTrayCount;
+        public readonly int? CapacityStorageTrayCount;
         /// <summary>
         /// The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
         /// </summary>
-        public readonly int ComputeNodeCount;
+        public readonly int? ComputeNodeCount;
         /// <summary>
         /// The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
         /// </summary>
-        public readonly int ManagementNodeCount;
+        public readonly int? ManagementNodeCount;
         /// <summary>
         /// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
         /// </summary>
-        public readonly int PerformanceStorageTrayCount;
+        public readonly int? PerformanceStorageTrayCount;
         /// <summary>
         /// The serial number of the Compute Cloud@Customer infrastructure rack.
         /// </summary>
-        public readonly string SerialNumber;
+        public readonly string? SerialNumber;
 
         [OutputConstructor]
         private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryResult(
-            int capacityStorageTrayCount,
+            int? capacityStorageTrayCount,
 
-            int computeNodeCount,
+            int? computeNodeCount,
 
-            int managementNodeCount,
+            int? managementNodeCount,
 
-            int performanceStorageTrayCount,
+            int? performanceStorageTrayCount,
 
-            string serialNumber)
+            string? serialNumber)
         {
             CapacityStorageTrayCount = capacityStorageTrayCount;
             ComputeNodeCount = computeNodeCount;

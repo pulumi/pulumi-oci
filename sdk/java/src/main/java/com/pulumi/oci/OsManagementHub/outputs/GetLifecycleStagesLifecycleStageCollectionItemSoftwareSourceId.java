@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId {
@@ -13,51 +15,51 @@ public final class GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceI
      * @return Software source description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The OCID of the software source.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Type of the software source.
      * 
      */
-    private String softwareSourceType;
+    private @Nullable String softwareSourceType;
 
     private GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId() {}
     /**
      * @return Software source description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The OCID of the software source.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Type of the software source.
      * 
      */
-    public String softwareSourceType() {
-        return this.softwareSourceType;
+    public Optional<String> softwareSourceType() {
+        return Optional.ofNullable(this.softwareSourceType);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String displayName;
-        private String id;
-        private String softwareSourceType;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable String softwareSourceType;
         public Builder() {}
         public Builder(GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceI
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSourceType(String softwareSourceType) {
-            this.softwareSourceType = Objects.requireNonNull(softwareSourceType);
+        public Builder softwareSourceType(@Nullable String softwareSourceType) {
+            this.softwareSourceType = softwareSourceType;
             return this;
         }
         public GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId build() {

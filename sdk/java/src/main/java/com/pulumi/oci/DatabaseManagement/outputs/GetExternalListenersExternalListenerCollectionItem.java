@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalListenersExternalListenerCollectionItem {
@@ -19,128 +21,128 @@ public final class GetExternalListenersExternalListenerCollectionItem {
      * @return The additional details of the external listener defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      * 
      */
-    private String adrHomeDirectory;
+    private @Nullable String adrHomeDirectory;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the external listener.
      * 
      */
-    private String componentName;
+    private @Nullable String componentName;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of protocol addresses the listener is configured to listen on.
      * 
      */
-    private List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints;
+    private @Nullable List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    private String externalConnectorId;
+    private @Nullable String externalConnectorId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      * 
      */
-    private String externalDbHomeId;
+    private @Nullable String externalDbHomeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
-    private String externalDbNodeId;
+    private @Nullable String externalDbNodeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    private String externalDbSystemId;
-    private String externalListenerId;
+    private @Nullable String externalDbSystemId;
+    private @Nullable String externalListenerId;
     /**
      * @return The name of the host on which the external listener is running.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The listener alias.
      * 
      */
-    private String listenerAlias;
+    private @Nullable String listenerAlias;
     /**
      * @return The location of the listener configuration file listener.ora.
      * 
      */
-    private String listenerOraLocation;
+    private @Nullable String listenerOraLocation;
     /**
      * @return The type of listener.
      * 
      */
-    private String listenerType;
+    private @Nullable String listenerType;
     /**
      * @return The destination directory of the listener log file.
      * 
      */
-    private String logDirectory;
+    private @Nullable String logDirectory;
     /**
      * @return The Oracle home location of the listener.
      * 
      */
-    private String oracleHome;
+    private @Nullable String oracleHome;
     /**
      * @return The list of ASMs that are serviced by the listener.
      * 
      */
-    private List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms;
+    private @Nullable List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms;
     /**
      * @return The list of databases that are serviced by the listener.
      * 
      */
-    private List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases;
+    private @Nullable List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases;
     /**
      * @return The current lifecycle state of the external listener.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the external listener was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the external listener was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The destination directory of the listener trace file.
      * 
      */
-    private String traceDirectory;
+    private @Nullable String traceDirectory;
     /**
      * @return The listener version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetExternalListenersExternalListenerCollectionItem() {}
     /**
@@ -148,178 +150,178 @@ public final class GetExternalListenersExternalListenerCollectionItem {
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      * 
      */
-    public String adrHomeDirectory() {
-        return this.adrHomeDirectory;
+    public Optional<String> adrHomeDirectory() {
+        return Optional.ofNullable(this.adrHomeDirectory);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name of the external listener.
      * 
      */
-    public String componentName() {
-        return this.componentName;
+    public Optional<String> componentName() {
+        return Optional.ofNullable(this.componentName);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The list of protocol addresses the listener is configured to listen on.
      * 
      */
     public List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints() {
-        return this.endpoints;
+        return this.endpoints == null ? List.of() : this.endpoints;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    public String externalConnectorId() {
-        return this.externalConnectorId;
+    public Optional<String> externalConnectorId() {
+        return Optional.ofNullable(this.externalConnectorId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      * 
      */
-    public String externalDbHomeId() {
-        return this.externalDbHomeId;
+    public Optional<String> externalDbHomeId() {
+        return Optional.ofNullable(this.externalDbHomeId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
-    public String externalDbNodeId() {
-        return this.externalDbNodeId;
+    public Optional<String> externalDbNodeId() {
+        return Optional.ofNullable(this.externalDbNodeId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    public String externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Optional<String> externalDbSystemId() {
+        return Optional.ofNullable(this.externalDbSystemId);
     }
-    public String externalListenerId() {
-        return this.externalListenerId;
+    public Optional<String> externalListenerId() {
+        return Optional.ofNullable(this.externalListenerId);
     }
     /**
      * @return The name of the host on which the external listener is running.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The listener alias.
      * 
      */
-    public String listenerAlias() {
-        return this.listenerAlias;
+    public Optional<String> listenerAlias() {
+        return Optional.ofNullable(this.listenerAlias);
     }
     /**
      * @return The location of the listener configuration file listener.ora.
      * 
      */
-    public String listenerOraLocation() {
-        return this.listenerOraLocation;
+    public Optional<String> listenerOraLocation() {
+        return Optional.ofNullable(this.listenerOraLocation);
     }
     /**
      * @return The type of listener.
      * 
      */
-    public String listenerType() {
-        return this.listenerType;
+    public Optional<String> listenerType() {
+        return Optional.ofNullable(this.listenerType);
     }
     /**
      * @return The destination directory of the listener log file.
      * 
      */
-    public String logDirectory() {
-        return this.logDirectory;
+    public Optional<String> logDirectory() {
+        return Optional.ofNullable(this.logDirectory);
     }
     /**
      * @return The Oracle home location of the listener.
      * 
      */
-    public String oracleHome() {
-        return this.oracleHome;
+    public Optional<String> oracleHome() {
+        return Optional.ofNullable(this.oracleHome);
     }
     /**
      * @return The list of ASMs that are serviced by the listener.
      * 
      */
     public List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms() {
-        return this.servicedAsms;
+        return this.servicedAsms == null ? List.of() : this.servicedAsms;
     }
     /**
      * @return The list of databases that are serviced by the listener.
      * 
      */
     public List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases() {
-        return this.servicedDatabases;
+        return this.servicedDatabases == null ? List.of() : this.servicedDatabases;
     }
     /**
      * @return The current lifecycle state of the external listener.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the external listener was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the external listener was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The destination directory of the listener trace file.
      * 
      */
-    public String traceDirectory() {
-        return this.traceDirectory;
+    public Optional<String> traceDirectory() {
+        return Optional.ofNullable(this.traceDirectory);
     }
     /**
      * @return The listener version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -331,32 +333,32 @@ public final class GetExternalListenersExternalListenerCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String adrHomeDirectory;
-        private String compartmentId;
-        private String componentName;
-        private String displayName;
-        private List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints;
-        private String externalConnectorId;
-        private String externalDbHomeId;
-        private String externalDbNodeId;
-        private String externalDbSystemId;
-        private String externalListenerId;
-        private String hostName;
-        private String id;
-        private String lifecycleDetails;
-        private String listenerAlias;
-        private String listenerOraLocation;
-        private String listenerType;
-        private String logDirectory;
-        private String oracleHome;
-        private List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms;
-        private List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
-        private String traceDirectory;
-        private String version;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String adrHomeDirectory;
+        private @Nullable String compartmentId;
+        private @Nullable String componentName;
+        private @Nullable String displayName;
+        private @Nullable List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints;
+        private @Nullable String externalConnectorId;
+        private @Nullable String externalDbHomeId;
+        private @Nullable String externalDbNodeId;
+        private @Nullable String externalDbSystemId;
+        private @Nullable String externalListenerId;
+        private @Nullable String hostName;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String listenerAlias;
+        private @Nullable String listenerOraLocation;
+        private @Nullable String listenerType;
+        private @Nullable String logDirectory;
+        private @Nullable String oracleHome;
+        private @Nullable List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms;
+        private @Nullable List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String traceDirectory;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetExternalListenersExternalListenerCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -389,142 +391,142 @@ public final class GetExternalListenersExternalListenerCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+        public Builder adrHomeDirectory(@Nullable String adrHomeDirectory) {
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+        public Builder componentName(@Nullable String componentName) {
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder endpoints(List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+        public Builder endpoints(@Nullable List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints) {
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetExternalListenersExternalListenerCollectionItemEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
         @CustomType.Setter
-        public Builder externalConnectorId(String externalConnectorId) {
-            this.externalConnectorId = Objects.requireNonNull(externalConnectorId);
+        public Builder externalConnectorId(@Nullable String externalConnectorId) {
+            this.externalConnectorId = externalConnectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbHomeId(String externalDbHomeId) {
-            this.externalDbHomeId = Objects.requireNonNull(externalDbHomeId);
+        public Builder externalDbHomeId(@Nullable String externalDbHomeId) {
+            this.externalDbHomeId = externalDbHomeId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbNodeId(String externalDbNodeId) {
-            this.externalDbNodeId = Objects.requireNonNull(externalDbNodeId);
+        public Builder externalDbNodeId(@Nullable String externalDbNodeId) {
+            this.externalDbNodeId = externalDbNodeId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+        public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalListenerId(String externalListenerId) {
-            this.externalListenerId = Objects.requireNonNull(externalListenerId);
+        public Builder externalListenerId(@Nullable String externalListenerId) {
+            this.externalListenerId = externalListenerId;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerAlias(String listenerAlias) {
-            this.listenerAlias = Objects.requireNonNull(listenerAlias);
+        public Builder listenerAlias(@Nullable String listenerAlias) {
+            this.listenerAlias = listenerAlias;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerOraLocation(String listenerOraLocation) {
-            this.listenerOraLocation = Objects.requireNonNull(listenerOraLocation);
+        public Builder listenerOraLocation(@Nullable String listenerOraLocation) {
+            this.listenerOraLocation = listenerOraLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerType(String listenerType) {
-            this.listenerType = Objects.requireNonNull(listenerType);
+        public Builder listenerType(@Nullable String listenerType) {
+            this.listenerType = listenerType;
             return this;
         }
         @CustomType.Setter
-        public Builder logDirectory(String logDirectory) {
-            this.logDirectory = Objects.requireNonNull(logDirectory);
+        public Builder logDirectory(@Nullable String logDirectory) {
+            this.logDirectory = logDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder oracleHome(String oracleHome) {
-            this.oracleHome = Objects.requireNonNull(oracleHome);
+        public Builder oracleHome(@Nullable String oracleHome) {
+            this.oracleHome = oracleHome;
             return this;
         }
         @CustomType.Setter
-        public Builder servicedAsms(List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms) {
-            this.servicedAsms = Objects.requireNonNull(servicedAsms);
+        public Builder servicedAsms(@Nullable List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms) {
+            this.servicedAsms = servicedAsms;
             return this;
         }
         public Builder servicedAsms(GetExternalListenersExternalListenerCollectionItemServicedAsm... servicedAsms) {
             return servicedAsms(List.of(servicedAsms));
         }
         @CustomType.Setter
-        public Builder servicedDatabases(List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases) {
-            this.servicedDatabases = Objects.requireNonNull(servicedDatabases);
+        public Builder servicedDatabases(@Nullable List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases) {
+            this.servicedDatabases = servicedDatabases;
             return this;
         }
         public Builder servicedDatabases(GetExternalListenersExternalListenerCollectionItemServicedDatabase... servicedDatabases) {
             return servicedDatabases(List.of(servicedDatabases));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder traceDirectory(String traceDirectory) {
-            this.traceDirectory = Objects.requireNonNull(traceDirectory);
+        public Builder traceDirectory(@Nullable String traceDirectory) {
+            this.traceDirectory = traceDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetExternalListenersExternalListenerCollectionItem build() {

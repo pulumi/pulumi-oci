@@ -78,144 +78,144 @@ export interface GetDomainsAccountMgmtInfoResult {
     /**
      * Type of Account
      */
-    readonly accountType: string;
+    readonly accountType?: string;
     /**
      * If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
      */
-    readonly active: boolean;
+    readonly active?: boolean;
     /**
      * Application on which the account is based
      */
-    readonly apps: outputs.Identity.GetDomainsAccountMgmtInfoApp[];
+    readonly apps?: outputs.Identity.GetDomainsAccountMgmtInfoApp[];
     readonly attributeSets?: string[];
     readonly attributes?: string;
     readonly authorization?: string;
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * Unique key for this AccountMgmtInfo, which is used to prevent duplicate AccountMgmtInfo resources. Key is composed of a subset of app, owner and accountType.
      */
-    readonly compositeKey: string;
+    readonly compositeKey?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * If true, a back-fill grant will not be created for a connected managed app as part of account creation.
      */
-    readonly doNotBackFillGrants: boolean;
+    readonly doNotBackFillGrants?: boolean;
     /**
      * If true, the operation will not be performed on the target
      */
-    readonly doNotPerformActionOnTarget: boolean;
+    readonly doNotPerformActionOnTarget?: boolean;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * If true, this account has been marked as a favorite of the User who owns it
      */
-    readonly favorite: boolean;
+    readonly favorite?: boolean;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsAccountMgmtInfoIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsAccountMgmtInfoIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsAccountMgmtInfoIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsAccountMgmtInfoIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application
      */
-    readonly isAccount: boolean;
+    readonly isAccount?: boolean;
     /**
      * Last accessed timestamp of an application
      */
-    readonly lastAccessed: string;
+    readonly lastAccessed?: string;
     /**
      * Matching owning users of the account
      */
-    readonly matchingOwners: outputs.Identity.GetDomainsAccountMgmtInfoMatchingOwner[];
+    readonly matchingOwners?: outputs.Identity.GetDomainsAccountMgmtInfoMatchingOwner[];
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsAccountMgmtInfoMeta[];
+    readonly metas?: outputs.Identity.GetDomainsAccountMgmtInfoMeta[];
     /**
      * Name of the Account
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Object-class of the Account
      */
-    readonly objectClasses: outputs.Identity.GetDomainsAccountMgmtInfoObjectClass[];
+    readonly objectClasses?: outputs.Identity.GetDomainsAccountMgmtInfoObjectClass[];
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     /**
      * The context in which the operation is performed on the account.
      */
-    readonly operationContext: string;
+    readonly operationContext?: string;
     /**
      * Owning user of the account
      */
-    readonly owners: outputs.Identity.GetDomainsAccountMgmtInfoOwner[];
+    readonly owners?: outputs.Identity.GetDomainsAccountMgmtInfoOwner[];
     /**
      * If true, then the response to the account creation operation on a connected managed app returns a preview of the account data that is evaluated by the attribute value generation policy. Note that an account will not be created on the target application when this attribute is set to true.
      */
-    readonly previewOnly: boolean;
+    readonly previewOnly?: boolean;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * Resource Type of the Account
      */
-    readonly resourceTypes: outputs.Identity.GetDomainsAccountMgmtInfoResourceType[];
+    readonly resourceTypes?: outputs.Identity.GetDomainsAccountMgmtInfoResourceType[];
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * Last recorded sync response for the account
      */
-    readonly syncResponse: string;
+    readonly syncResponse?: string;
     /**
      * Last recorded sync situation for the account
      */
-    readonly syncSituation: string;
+    readonly syncSituation?: string;
     /**
      * Last sync timestamp of the account
      */
-    readonly syncTimestamp: string;
+    readonly syncTimestamp?: string;
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsAccountMgmtInfoTag[];
+    readonly tags?: outputs.Identity.GetDomainsAccountMgmtInfoTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * Unique identifier of the Account
      */
-    readonly uid: string;
+    readonly uid?: string;
     /**
      * The UserWalletArtifact that contains the credentials that the system will use when performing Secure Form-Fill to log the user in to this application
      */
-    readonly userWalletArtifacts: outputs.Identity.GetDomainsAccountMgmtInfoUserWalletArtifact[];
+    readonly userWalletArtifacts?: outputs.Identity.GetDomainsAccountMgmtInfoUserWalletArtifact[];
 }
 /**
  * This data source provides details about a specific Account Mgmt Info resource in Oracle Cloud Infrastructure Identity Domains service.

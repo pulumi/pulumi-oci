@@ -6,6 +6,8 @@ package com.pulumi.oci.MeteringComputation.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSchedulesScheduleCollectionItemResultLocation {
@@ -13,51 +15,51 @@ public final class GetSchedulesScheduleCollectionItemResultLocation {
      * @return The bucket name where usage or cost CSVs will be uploaded.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Defines the type of location where the usage or cost CSVs will be stored.
      * 
      */
-    private String locationType;
+    private @Nullable String locationType;
     /**
      * @return The namespace needed to determine the object storage bucket.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The destination Object Store Region specified by the customer.
      * 
      */
-    private String region;
+    private @Nullable String region;
 
     private GetSchedulesScheduleCollectionItemResultLocation() {}
     /**
      * @return The bucket name where usage or cost CSVs will be uploaded.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Defines the type of location where the usage or cost CSVs will be stored.
      * 
      */
-    public String locationType() {
-        return this.locationType;
+    public Optional<String> locationType() {
+        return Optional.ofNullable(this.locationType);
     }
     /**
      * @return The namespace needed to determine the object storage bucket.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The destination Object Store Region specified by the customer.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetSchedulesScheduleCollectionItemResultLocation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String locationType;
-        private String namespace;
-        private String region;
+        private @Nullable String bucket;
+        private @Nullable String locationType;
+        private @Nullable String namespace;
+        private @Nullable String region;
         public Builder() {}
         public Builder(GetSchedulesScheduleCollectionItemResultLocation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetSchedulesScheduleCollectionItemResultLocation {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder locationType(String locationType) {
-            this.locationType = Objects.requireNonNull(locationType);
+        public Builder locationType(@Nullable String locationType) {
+            this.locationType = locationType;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         public GetSchedulesScheduleCollectionItemResultLocation build() {

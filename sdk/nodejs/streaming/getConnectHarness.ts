@@ -45,36 +45,36 @@ export interface GetConnectHarnessResult {
     /**
      * The OCID of the compartment that contains the connect harness.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly connectHarnessId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the connect harness.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Any additional details about the current state of the connect harness.
      */
-    readonly lifecycleStateDetails: string;
+    readonly lifecycleStateDetails?: string;
     /**
      * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The current state of the connect harness.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.

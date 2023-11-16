@@ -166,7 +166,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Indicates whether the changed file contains conflicts.
         /// </summary>
-        public readonly bool AreConflictsInFile;
+        public readonly bool? AreConflictsInFile;
         public readonly string BaseVersion;
         /// <summary>
         /// List of changed section in the file.
@@ -176,38 +176,38 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the file is binary.
         /// </summary>
-        public readonly bool IsBinary;
+        public readonly bool? IsBinary;
         public readonly bool? IsComparisonFromMergeBase;
         /// <summary>
         /// Indicates whether the file is large.
         /// </summary>
-        public readonly bool IsLarge;
+        public readonly bool? IsLarge;
         /// <summary>
         /// The ID of the changed object on the target version.
         /// </summary>
-        public readonly string NewId;
+        public readonly string? NewId;
         /// <summary>
         /// The path on the target version to the changed object.
         /// </summary>
-        public readonly string NewPath;
+        public readonly string? NewPath;
         /// <summary>
         /// The ID of the changed object on the base version.
         /// </summary>
-        public readonly string OldId;
+        public readonly string? OldId;
         /// <summary>
         /// The path on the base version to the changed object.
         /// </summary>
-        public readonly string OldPath;
+        public readonly string? OldPath;
         public readonly string RepositoryId;
         public readonly string TargetVersion;
 
         [OutputConstructor]
         private GetRepositoryFileDiffResult(
-            bool areConflictsInFile,
+            bool? areConflictsInFile,
 
             string baseVersion,
 
@@ -215,21 +215,21 @@ namespace Pulumi.Oci.DevOps
 
             string filePath,
 
-            string id,
+            string? id,
 
-            bool isBinary,
+            bool? isBinary,
 
             bool? isComparisonFromMergeBase,
 
-            bool isLarge,
+            bool? isLarge,
 
-            string newId,
+            string? newId,
 
-            string newPath,
+            string? newPath,
 
-            string oldId,
+            string? oldId,
 
-            string oldPath,
+            string? oldPath,
 
             string repositoryId,
 

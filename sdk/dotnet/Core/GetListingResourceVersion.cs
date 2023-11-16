@@ -58,12 +58,12 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ListingId;
-        public readonly string ListingResourceId;
-        public readonly string ListingResourceVersion;
+        public readonly string? ListingResourceId;
+        public readonly string? ListingResourceVersion;
         public readonly string ResourceVersion;
-        public readonly string TimePublished;
+        public readonly string? TimePublished;
 
         [OutputConstructor]
         private GetListingResourceVersionResult(
@@ -75,17 +75,17 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<string> compatibleShapes,
 
-            string id,
+            string? id,
 
             string listingId,
 
-            string listingResourceId,
+            string? listingResourceId,
 
-            string listingResourceVersion,
+            string? listingResourceVersion,
 
             string resourceVersion,
 
-            string timePublished)
+            string? timePublished)
         {
             AccessiblePorts = accessiblePorts;
             AllowedActions = allowedActions;

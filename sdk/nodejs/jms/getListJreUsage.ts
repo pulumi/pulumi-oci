@@ -82,11 +82,11 @@ export interface GetListJreUsageResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of Java Runtimes.
      */
-    readonly items: outputs.Jms.GetListJreUsageItem[];
+    readonly items?: outputs.Jms.GetListJreUsageItem[];
     /**
      * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      */

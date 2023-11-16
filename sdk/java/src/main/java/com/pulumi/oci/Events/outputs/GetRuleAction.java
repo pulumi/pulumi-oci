@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Events.outputs.GetRuleActionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRuleAction {
@@ -14,7 +15,7 @@ public final class GetRuleAction {
      * @return A list of one or more Action objects.
      * 
      */
-    private List<GetRuleActionAction> actions;
+    private @Nullable List<GetRuleActionAction> actions;
 
     private GetRuleAction() {}
     /**
@@ -22,7 +23,7 @@ public final class GetRuleAction {
      * 
      */
     public List<GetRuleActionAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetRuleAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRuleActionAction> actions;
+        private @Nullable List<GetRuleActionAction> actions;
         public Builder() {}
         public Builder(GetRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetRuleAction {
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetRuleActionAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetRuleActionAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetRuleActionAction... actions) {

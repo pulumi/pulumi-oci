@@ -49,39 +49,27 @@ class GetTenancyResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the tenancy.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeRegionKey")
-    def home_region_key(self) -> str:
-        """
-        The region key for the tenancy's home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`
-        """
+    def home_region_key(self) -> Optional[str]:
         return pulumi.get(self, "home_region_key")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,10 +77,7 @@ class GetTenancyResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the tenancy.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -102,10 +87,7 @@ class GetTenancyResult:
 
     @property
     @pulumi.getter(name="upiIdcsCompatibilityLayerEndpoint")
-    def upi_idcs_compatibility_layer_endpoint(self) -> str:
-        """
-        Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
-        """
+    def upi_idcs_compatibility_layer_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "upi_idcs_compatibility_layer_endpoint")
 
 
@@ -128,21 +110,7 @@ class AwaitableGetTenancyResult(GetTenancyResult):
 def get_tenancy(tenancy_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTenancyResult:
     """
-    This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
-
-    Get the specified tenancy's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['tenancyId'] = tenancy_id
@@ -164,20 +132,6 @@ def get_tenancy(tenancy_id: Optional[str] = None,
 def get_tenancy_output(tenancy_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTenancyResult]:
     """
-    This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
-
-    Get the specified tenancy's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     ...

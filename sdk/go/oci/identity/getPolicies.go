@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Policies in Oracle Cloud Infrastructure Identity service.
@@ -74,7 +73,7 @@ type GetPoliciesResult struct {
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// The list of policies.
@@ -126,12 +125,6 @@ func (o GetPoliciesResultOutput) ToGetPoliciesResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesResult] {
-	return pulumix.Output[GetPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the policy (either the tenancy or another compartment).
 func (o GetPoliciesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPoliciesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -142,8 +135,8 @@ func (o GetPoliciesResultOutput) Filters() GetPoliciesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.

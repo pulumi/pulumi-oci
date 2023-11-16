@@ -26,20 +26,6 @@ class RuleArgs:
                  recipients: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Rule resource.
-        :param pulumi.Input[str] budget_id: The unique budget OCID.
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-        :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         """
         pulumi.set(__self__, "budget_id", budget_id)
         pulumi.set(__self__, "threshold", threshold)
@@ -61,9 +47,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> pulumi.Input[str]:
-        """
-        The unique budget OCID.
-        """
         return pulumi.get(self, "budget_id")
 
     @budget_id.setter
@@ -73,9 +56,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def threshold(self) -> pulumi.Input[float]:
-        """
-        (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-        """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
@@ -85,9 +65,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="thresholdType")
     def threshold_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of threshold.
-        """
         return pulumi.get(self, "threshold_type")
 
     @threshold_type.setter
@@ -97,13 +74,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -113,9 +83,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -125,9 +92,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the alert rule.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -137,9 +101,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the alert rule. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -149,9 +110,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -161,9 +119,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -173,9 +128,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def recipients(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
-        """
         return pulumi.get(self, "recipients")
 
     @recipients.setter
@@ -202,24 +154,6 @@ class _RuleState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Rule resources.
-        :param pulumi.Input[str] budget_id: The unique budget OCID.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
-        :param pulumi.Input[str] state: The current state of the alert rule.
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-        :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] time_created: The time when the budget was created.
-        :param pulumi.Input[str] time_updated: The time when the budget was updated.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[int] version: The version of the alert rule. Starts from 1 and increments by 1.
         """
         if budget_id is not None:
             pulumi.set(__self__, "budget_id", budget_id)
@@ -253,9 +187,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique budget OCID.
-        """
         return pulumi.get(self, "budget_id")
 
     @budget_id.setter
@@ -265,9 +196,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -277,9 +205,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the alert rule.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -289,9 +214,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the alert rule. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -301,9 +223,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -313,9 +232,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -325,9 +241,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def recipients(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
-        """
         return pulumi.get(self, "recipients")
 
     @recipients.setter
@@ -337,9 +250,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the alert rule.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -349,9 +259,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def threshold(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-        """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
@@ -361,9 +268,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="thresholdType")
     def threshold_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of threshold.
-        """
         return pulumi.get(self, "threshold_type")
 
     @threshold_type.setter
@@ -373,9 +277,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the budget was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -385,9 +286,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the budget was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -397,13 +295,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -413,9 +304,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version of the alert rule. Starts from 1 and increments by 1.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -440,57 +328,9 @@ class Rule(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new Alert Rule.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_alert_rule = oci.budget.Rule("testAlertRule",
-            budget_id=oci_budget_budget["test_budget"]["id"],
-            threshold=var["alert_rule_threshold"],
-            threshold_type=var["alert_rule_threshold_type"],
-            type=var["alert_rule_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["alert_rule_description"],
-            display_name=var["alert_rule_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            message=var["alert_rule_message"],
-            recipients=var["alert_rule_recipients"])
-        ```
-
-        ## Import
-
-        AlertRules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
-        ```
-
+        Create a Rule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] budget_id: The unique budget OCID.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-        :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -499,41 +339,7 @@ class Rule(pulumi.CustomResource):
                  args: RuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new Alert Rule.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_alert_rule = oci.budget.Rule("testAlertRule",
-            budget_id=oci_budget_budget["test_budget"]["id"],
-            threshold=var["alert_rule_threshold"],
-            threshold_type=var["alert_rule_threshold_type"],
-            type=var["alert_rule_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["alert_rule_description"],
-            display_name=var["alert_rule_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            message=var["alert_rule_message"],
-            recipients=var["alert_rule_recipients"])
-        ```
-
-        ## Import
-
-        AlertRules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
-        ```
-
+        Create a Rule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -621,24 +427,6 @@ class Rule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] budget_id: The unique budget OCID.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
-        :param pulumi.Input[str] state: The current state of the alert rule.
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-        :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] time_created: The time when the budget was created.
-        :param pulumi.Input[str] time_updated: The time when the budget was updated.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[int] version: The version of the alert rule. Starts from 1 and increments by 1.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -663,116 +451,70 @@ class Rule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> pulumi.Output[str]:
-        """
-        The unique budget OCID.
-        """
         return pulumi.get(self, "budget_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description of the alert rule.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the alert rule. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def message(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-        """
+    def message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter
     def recipients(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
-        """
         return pulumi.get(self, "recipients")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the alert rule.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def threshold(self) -> pulumi.Output[float]:
-        """
-        (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-        """
         return pulumi.get(self, "threshold")
 
     @property
     @pulumi.getter(name="thresholdType")
     def threshold_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of threshold.
-        """
         return pulumi.get(self, "threshold_type")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the budget was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when the budget was updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version of the alert rule. Starts from 1 and increments by 1.
-        """
+    def version(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "version")
 

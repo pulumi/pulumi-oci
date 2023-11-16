@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmDiskGroupsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetExternalAsmDiskGroupsResult {
      * @return The list of external_asm_disk_group_collection.
      * 
      */
-    private List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections;
+    private @Nullable List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections;
     private String externalAsmId;
     private @Nullable List<GetExternalAsmDiskGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalAsmDiskGroupsResult() {}
     /**
@@ -32,7 +33,7 @@ public final class GetExternalAsmDiskGroupsResult {
      * 
      */
     public List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections() {
-        return this.externalAsmDiskGroupCollections;
+        return this.externalAsmDiskGroupCollections == null ? List.of() : this.externalAsmDiskGroupCollections;
     }
     public String externalAsmId() {
         return this.externalAsmId;
@@ -44,8 +45,8 @@ public final class GetExternalAsmDiskGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,10 +58,10 @@ public final class GetExternalAsmDiskGroupsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections;
+        private @Nullable List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections;
         private String externalAsmId;
         private @Nullable List<GetExternalAsmDiskGroupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalAsmDiskGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,8 +72,8 @@ public final class GetExternalAsmDiskGroupsResult {
         }
 
         @CustomType.Setter
-        public Builder externalAsmDiskGroupCollections(List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections) {
-            this.externalAsmDiskGroupCollections = Objects.requireNonNull(externalAsmDiskGroupCollections);
+        public Builder externalAsmDiskGroupCollections(@Nullable List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections) {
+            this.externalAsmDiskGroupCollections = externalAsmDiskGroupCollections;
             return this;
         }
         public Builder externalAsmDiskGroupCollections(GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection... externalAsmDiskGroupCollections) {
@@ -92,8 +93,8 @@ public final class GetExternalAsmDiskGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalAsmDiskGroupsResult build() {

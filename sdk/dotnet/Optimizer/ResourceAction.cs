@@ -40,49 +40,49 @@ namespace Pulumi.Oci.Optimizer
         /// The unique OCID associated with the category.
         /// </summary>
         [Output("categoryId")]
-        public Output<string> CategoryId { get; private set; } = null!;
+        public Output<string?> CategoryId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The name associated with the compartment.
         /// </summary>
         [Output("compartmentName")]
-        public Output<string> CompartmentName { get; private set; } = null!;
+        public Output<string?> CompartmentName { get; private set; } = null!;
 
         /// <summary>
         /// The estimated cost savings, in dollars, for the resource action.
         /// </summary>
         [Output("estimatedCostSaving")]
-        public Output<double> EstimatedCostSaving { get; private set; } = null!;
+        public Output<double?> EstimatedCostSaving { get; private set; } = null!;
 
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
         [Output("extendedMetadata")]
-        public Output<ImmutableDictionary<string, object>> ExtendedMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> ExtendedMetadata { get; private set; } = null!;
 
         /// <summary>
         /// Custom metadata key/value pairs for the resource action.
         /// </summary>
         [Output("metadata")]
-        public Output<ImmutableDictionary<string, object>> Metadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The name assigned to the resource.
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// The unique OCID associated with the recommendation.
         /// </summary>
         [Output("recommendationId")]
-        public Output<string> RecommendationId { get; private set; } = null!;
+        public Output<string?> RecommendationId { get; private set; } = null!;
 
         /// <summary>
         /// The unique OCID associated with the resource action.
@@ -94,19 +94,19 @@ namespace Pulumi.Oci.Optimizer
         /// The unique OCID associated with the resource.
         /// </summary>
         [Output("resourceId")]
-        public Output<string> ResourceId { get; private set; } = null!;
+        public Output<string?> ResourceId { get; private set; } = null!;
 
         /// <summary>
         /// The kind of resource.
         /// </summary>
         [Output("resourceType")]
-        public Output<string> ResourceType { get; private set; } = null!;
+        public Output<string?> ResourceType { get; private set; } = null!;
 
         /// <summary>
         /// The resource action's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The status of the resource action.
@@ -118,13 +118,13 @@ namespace Pulumi.Oci.Optimizer
         /// The date and time the resource action details were created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the resource action entered its current status. The format is defined by RFC3339.
         /// </summary>
         [Output("timeStatusBegin")]
-        public Output<string> TimeStatusBegin { get; private set; } = null!;
+        public Output<string?> TimeStatusBegin { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -136,13 +136,13 @@ namespace Pulumi.Oci.Optimizer
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeStatusEnd")]
-        public Output<string> TimeStatusEnd { get; private set; } = null!;
+        public Output<string?> TimeStatusEnd { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource action details were last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

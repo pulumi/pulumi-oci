@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Tag slug
         /// </summary>
-        public readonly string TagSlug;
+        public readonly string? TagSlug;
 
         [OutputConstructor]
         private GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagResult> freeformTags,
 
-            string tagSlug)
+            string? tagSlug)
         {
             DefinedTags = definedTags;
             FreeformTags = freeformTags;

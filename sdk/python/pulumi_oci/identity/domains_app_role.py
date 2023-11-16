@@ -35,140 +35,6 @@ class DomainsAppRoleArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsAppRole resource.
-        :param pulumi.Input['DomainsAppRoleAppArgs'] app: A unique identifier for the application that references this role.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, mapsTo:app.display]]
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: AppRole name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] admin_role: If true, the role provides administrative access privileges.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[bool] available_to_clients: If true, this AppRole can be granted to Apps.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_groups: If true, this AppRole can be granted to Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_users: If true, this AppRole can be granted to Users.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: AppRole description
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] legacy_group_name: The name of the legacy group associated with this AppRole.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: server
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[bool] public: If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
         """
         pulumi.set(__self__, "app", app)
         pulumi.set(__self__, "display_name", display_name)
@@ -204,19 +70,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def app(self) -> pulumi.Input['DomainsAppRoleAppArgs']:
-        """
-        A unique identifier for the application that references this role.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, mapsTo:app.display]]
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -226,21 +79,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        AppRole name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Display Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -250,9 +88,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Input[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -262,19 +97,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -284,18 +106,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="adminRole")
     def admin_role(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, the role provides administrative access privileges.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "admin_role")
 
     @admin_role.setter
@@ -305,9 +115,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -317,9 +124,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -329,9 +133,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -341,18 +142,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="availableToClients")
     def available_to_clients(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole can be granted to Apps.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "available_to_clients")
 
     @available_to_clients.setter
@@ -362,18 +151,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="availableToGroups")
     def available_to_groups(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole can be granted to Groups.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "available_to_groups")
 
     @available_to_groups.setter
@@ -383,18 +160,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="availableToUsers")
     def available_to_users(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole can be granted to Users.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "available_to_users")
 
     @available_to_users.setter
@@ -404,19 +169,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        AppRole description
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -426,19 +178,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="legacyGroupName")
     def legacy_group_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the legacy group associated with this AppRole.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: server
-        """
         return pulumi.get(self, "legacy_group_name")
 
     @legacy_group_name.setter
@@ -448,19 +187,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -470,18 +196,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def public(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "public")
 
     @public.setter
@@ -491,9 +205,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -503,19 +214,6 @@ class DomainsAppRoleArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]]:
-        """
-        A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -558,286 +256,6 @@ class _DomainsAppRoleState:
                  unique_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DomainsAppRole resources.
-        :param pulumi.Input[bool] admin_role: If true, the role provides administrative access privileges.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppRoleAppArgs'] app: A unique identifier for the application that references this role.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, mapsTo:app.display]]
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[bool] available_to_clients: If true, this AppRole can be granted to Apps.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_groups: If true, this AppRole can be granted to Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_users: If true, this AppRole can be granted to Users.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: AppRole description
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: AppRole name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] legacy_group_name: The name of the legacy group associated with this AppRole.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: server
-        :param pulumi.Input[bool] limited_to_one_or_more_groups: (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] localized_display_name: (Updatable) AppRole localization name
-               
-               **Added In:** 2109090424
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMemberArgs']]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, mapsTo:members.value], [columnHeaderName:Grantee Type, mapsTo:members.type]]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * idcsPaginateResponse: true
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[bool] public: If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] unique_name: (Updatable) AppRole unique name
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: string
-               * uniqueness: server
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if admin_role is not None:
             pulumi.set(__self__, "admin_role", admin_role)
@@ -903,18 +321,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="adminRole")
     def admin_role(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, the role provides administrative access privileges.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "admin_role")
 
     @admin_role.setter
@@ -924,19 +330,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input['DomainsAppRoleAppArgs']]:
-        """
-        A unique identifier for the application that references this role.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, mapsTo:app.display]]
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -946,9 +339,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -958,9 +348,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -970,9 +357,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -982,18 +366,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="availableToClients")
     def available_to_clients(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole can be granted to Apps.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "available_to_clients")
 
     @available_to_clients.setter
@@ -1003,18 +375,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="availableToGroups")
     def available_to_groups(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole can be granted to Groups.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "available_to_groups")
 
     @available_to_groups.setter
@@ -1024,18 +384,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="availableToUsers")
     def available_to_users(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole can be granted to Users.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "available_to_users")
 
     @available_to_users.setter
@@ -1045,19 +393,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="compartmentOcid")
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
@@ -1067,19 +402,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="deleteInProgress")
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
@@ -1089,19 +411,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        AppRole description
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1111,21 +420,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        AppRole name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Display Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1135,19 +429,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="domainOcid")
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
@@ -1157,17 +438,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="idcsCreatedBies")
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleIdcsCreatedByArgs']]]]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
@@ -1177,9 +447,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -1189,17 +456,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleIdcsLastModifiedByArgs']]]]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
@@ -1209,19 +465,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
@@ -1231,18 +474,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="idcsPreventedOperations")
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
@@ -1252,19 +483,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="legacyGroupName")
     def legacy_group_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the legacy group associated with this AppRole.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: server
-        """
         return pulumi.get(self, "legacy_group_name")
 
     @legacy_group_name.setter
@@ -1274,20 +492,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="limitedToOneOrMoreGroups")
     def limited_to_one_or_more_groups(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "limited_to_one_or_more_groups")
 
     @limited_to_one_or_more_groups.setter
@@ -1297,21 +501,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="localizedDisplayName")
     def localized_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) AppRole localization name
-
-        **Added In:** 2109090424
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "localized_display_name")
 
     @localized_display_name.setter
@@ -1321,21 +510,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMemberArgs']]]]:
-        """
-        (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, mapsTo:members.value], [columnHeaderName:Grantee Type, mapsTo:members.type]]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * idcsPaginateResponse: true
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "members")
 
     @members.setter
@@ -1345,19 +519,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMetaArgs']]]]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
         return pulumi.get(self, "metas")
 
     @metas.setter
@@ -1367,19 +528,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -1389,18 +537,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def public(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "public")
 
     @public.setter
@@ -1410,9 +546,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -1422,19 +555,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -1444,19 +564,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]]:
-        """
-        A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -1466,19 +573,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="tenancyOcid")
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
@@ -1488,22 +582,6 @@ class _DomainsAppRoleState:
     @property
     @pulumi.getter(name="uniqueName")
     def unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) AppRole unique name
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: always
-        * type: string
-        * uniqueness: server
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "unique_name")
 
     @unique_name.setter
@@ -1535,154 +613,9 @@ class DomainsAppRole(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleTagArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an AppRole
-
-        ## Import
-
-        AppRoles can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
-        ```
-
+        Create a DomainsAppRole resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] admin_role: If true, the role provides administrative access privileges.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppRoleAppArgs']] app: A unique identifier for the application that references this role.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, mapsTo:app.display]]
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[bool] available_to_clients: If true, this AppRole can be granted to Apps.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_groups: If true, this AppRole can be granted to Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_users: If true, this AppRole can be granted to Users.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: AppRole description
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: AppRole name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] legacy_group_name: The name of the legacy group associated with this AppRole.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: server
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[bool] public: If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleTagArgs']]]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
         """
         ...
     @overload
@@ -1691,18 +624,7 @@ class DomainsAppRole(pulumi.CustomResource):
                  args: DomainsAppRoleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an AppRole
-
-        ## Import
-
-        AppRoles can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
-        ```
-
+        Create a DomainsAppRole resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DomainsAppRoleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1829,286 +751,6 @@ class DomainsAppRole(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] admin_role: If true, the role provides administrative access privileges.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppRoleAppArgs']] app: A unique identifier for the application that references this role.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, mapsTo:app.display]]
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[bool] available_to_clients: If true, this AppRole can be granted to Apps.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_groups: If true, this AppRole can be granted to Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] available_to_users: If true, this AppRole can be granted to Users.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: AppRole description
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: AppRole name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] legacy_group_name: The name of the legacy group associated with this AppRole.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: server
-        :param pulumi.Input[bool] limited_to_one_or_more_groups: (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] localized_display_name: (Updatable) AppRole localization name
-               
-               **Added In:** 2109090424
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleMemberArgs']]]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, mapsTo:members.value], [columnHeaderName:Grantee Type, mapsTo:members.type]]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * idcsPaginateResponse: true
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[bool] public: If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleTagArgs']]]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] unique_name: (Updatable) AppRole unique name
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: string
-               * uniqueness: server
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -2148,491 +790,151 @@ class DomainsAppRole(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="adminRole")
-    def admin_role(self) -> pulumi.Output[bool]:
-        """
-        If true, the role provides administrative access privileges.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def admin_role(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "admin_role")
 
     @property
     @pulumi.getter
     def app(self) -> pulumi.Output['outputs.DomainsAppRoleApp']:
-        """
-        A unique identifier for the application that references this role.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, mapsTo:app.display]]
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "app")
 
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @property
     @pulumi.getter
     def attributes(self) -> pulumi.Output[Optional[str]]:
-        """
-        A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[str]]:
-        """
-        The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @property
     @pulumi.getter(name="availableToClients")
-    def available_to_clients(self) -> pulumi.Output[bool]:
-        """
-        If true, this AppRole can be granted to Apps.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def available_to_clients(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "available_to_clients")
 
     @property
     @pulumi.getter(name="availableToGroups")
-    def available_to_groups(self) -> pulumi.Output[bool]:
-        """
-        If true, this AppRole can be granted to Groups.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def available_to_groups(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "available_to_groups")
 
     @property
     @pulumi.getter(name="availableToUsers")
-    def available_to_users(self) -> pulumi.Output[bool]:
-        """
-        If true, this AppRole can be granted to Users.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def available_to_users(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "available_to_users")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def compartment_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def delete_in_progress(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        AppRole description
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        AppRole name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Display Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def domain_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsAppRoleIdcsCreatedBy']]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
+    def idcs_created_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppRoleIdcsCreatedBy']]]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Output[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsAppRoleIdcsLastModifiedBy']]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def idcs_last_modified_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppRoleIdcsLastModifiedBy']]]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_last_upgraded_in_release(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_prevented_operations(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="legacyGroupName")
-    def legacy_group_name(self) -> pulumi.Output[str]:
-        """
-        The name of the legacy group associated with this AppRole.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: server
-        """
+    def legacy_group_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "legacy_group_name")
 
     @property
     @pulumi.getter(name="limitedToOneOrMoreGroups")
-    def limited_to_one_or_more_groups(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def limited_to_one_or_more_groups(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "limited_to_one_or_more_groups")
 
     @property
     @pulumi.getter(name="localizedDisplayName")
-    def localized_display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) AppRole localization name
-
-        **Added In:** 2109090424
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def localized_display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "localized_display_name")
 
     @property
     @pulumi.getter
-    def members(self) -> pulumi.Output[Sequence['outputs.DomainsAppRoleMember']]:
-        """
-        (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, mapsTo:members.value], [columnHeaderName:Grantee Type, mapsTo:members.type]]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * idcsPaginateResponse: true
-        * type: complex
-        * uniqueness: none
-        """
+    def members(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppRoleMember']]]:
         return pulumi.get(self, "members")
 
     @property
     @pulumi.getter
-    def metas(self) -> pulumi.Output[Sequence['outputs.DomainsAppRoleMeta']]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
+    def metas(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppRoleMeta']]]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter
-    def ocid(self) -> pulumi.Output[str]:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
+    def ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter
-    def public(self) -> pulumi.Output[bool]:
-        """
-        If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def public(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "public")
 
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> pulumi.Output[Optional[str]]:
-        """
-        An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Output[Sequence[str]]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> pulumi.Output[Sequence['outputs.DomainsAppRoleTag']]:
-        """
-        A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def tags(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppRoleTag']]]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def tenancy_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="uniqueName")
-    def unique_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) AppRole unique name
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: always
-        * type: string
-        * uniqueness: server
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def unique_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "unique_name")
 

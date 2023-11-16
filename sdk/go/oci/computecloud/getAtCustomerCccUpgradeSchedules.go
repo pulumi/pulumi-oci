@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -90,7 +89,7 @@ type GetAtCustomerCccUpgradeSchedulesResult struct {
 	DisplayNameContains *string                                  `pulumi:"displayNameContains"`
 	Filters             []GetAtCustomerCccUpgradeSchedulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Lifecycle state of the resource.
 	State *string `pulumi:"state"`
 }
@@ -146,12 +145,6 @@ func (o GetAtCustomerCccUpgradeSchedulesResultOutput) ToGetAtCustomerCccUpgradeS
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeSchedulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesResult] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccUpgradeSchedulesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -192,8 +185,8 @@ func (o GetAtCustomerCccUpgradeSchedulesResultOutput) Filters() GetAtCustomerCcc
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAtCustomerCccUpgradeSchedulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle state of the resource.

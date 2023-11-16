@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -60,25 +59,25 @@ type GetGuardTargetArgs struct {
 // A collection of values returned by getGuardTarget.
 type GetGuardTargetResult struct {
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// ResponderRule description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// ResponderRule display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// Total number of recipes attached to target
-	RecipeCount int `pulumi:"recipeCount"`
+	RecipeCount *int `pulumi:"recipeCount"`
 	// The current state of the ResponderRule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Details specific to the target type.
@@ -87,15 +86,15 @@ type GetGuardTargetResult struct {
 	TargetDetectorRecipes []GetGuardTargetTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	TargetId              string                               `pulumi:"targetId"`
 	// Resource ID which the target uses to monitor
-	TargetResourceId string `pulumi:"targetResourceId"`
+	TargetResourceId *string `pulumi:"targetResourceId"`
 	// possible type of targets
-	TargetResourceType string `pulumi:"targetResourceType"`
+	TargetResourceType *string `pulumi:"targetResourceType"`
 	// List of responder recipes associated with target
 	TargetResponderRecipes []GetGuardTargetTargetResponderRecipe `pulumi:"targetResponderRecipes"`
 	// The date and time the target was created. Format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the target was updated. Format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetGuardTargetOutput(ctx *pulumi.Context, args GetGuardTargetOutputArgs, opts ...pulumi.InvokeOption) GetGuardTargetResultOutput {
@@ -136,15 +135,9 @@ func (o GetGuardTargetResultOutput) ToGetGuardTargetResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetGuardTargetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetResult] {
-	return pulumix.Output[GetGuardTargetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
-func (o GetGuardTargetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -153,13 +146,13 @@ func (o GetGuardTargetResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // ResponderRule description.
-func (o GetGuardTargetResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // ResponderRule display name.
-func (o GetGuardTargetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -168,8 +161,8 @@ func (o GetGuardTargetResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier of TargetResponderRecipe that can't be changed after creation.
-func (o GetGuardTargetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of inherited compartments
@@ -178,18 +171,18 @@ func (o GetGuardTargetResultOutput) InheritedByCompartments() pulumi.StringArray
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetGuardTargetResultOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Total number of recipes attached to target
-func (o GetGuardTargetResultOutput) RecipeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) int { return v.RecipeCount }).(pulumi.IntOutput)
+func (o GetGuardTargetResultOutput) RecipeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *int { return v.RecipeCount }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the ResponderRule.
-func (o GetGuardTargetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -212,13 +205,13 @@ func (o GetGuardTargetResultOutput) TargetId() pulumi.StringOutput {
 }
 
 // Resource ID which the target uses to monitor
-func (o GetGuardTargetResultOutput) TargetResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.TargetResourceId }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) TargetResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.TargetResourceId }).(pulumi.StringPtrOutput)
 }
 
 // possible type of targets
-func (o GetGuardTargetResultOutput) TargetResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.TargetResourceType }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) TargetResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.TargetResourceType }).(pulumi.StringPtrOutput)
 }
 
 // List of responder recipes associated with target
@@ -227,13 +220,13 @@ func (o GetGuardTargetResultOutput) TargetResponderRecipes() GetGuardTargetTarge
 }
 
 // The date and time the target was created. Format defined by RFC3339.
-func (o GetGuardTargetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the target was updated. Format defined by RFC3339.
-func (o GetGuardTargetResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetGuardTargetResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

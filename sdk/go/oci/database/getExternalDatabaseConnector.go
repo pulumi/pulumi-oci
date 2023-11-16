@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.
@@ -60,36 +59,36 @@ type LookupExternalDatabaseConnectorArgs struct {
 // A collection of values returned by getExternalDatabaseConnector.
 type LookupExternalDatabaseConnectorResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
 	ConnectionCredentials []GetExternalDatabaseConnectorConnectionCredential `pulumi:"connectionCredentials"`
 	// The status of connectivity to the external database.
-	ConnectionStatus string `pulumi:"connectionStatus"`
+	ConnectionStatus *string `pulumi:"connectionStatus"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDatabaseConnectorConnectionString `pulumi:"connectionStrings"`
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-	ConnectorAgentId string `pulumi:"connectorAgentId"`
+	ConnectorAgentId *string `pulumi:"connectorAgentId"`
 	// The type of connector used by the external database resource.
-	ConnectorType string `pulumi:"connectorType"`
+	ConnectorType *string `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
-	DisplayName                 string `pulumi:"displayName"`
-	ExternalDatabaseConnectorId string `pulumi:"externalDatabaseConnectorId"`
+	DisplayName                 *string `pulumi:"displayName"`
+	ExternalDatabaseConnectorId string  `pulumi:"externalDatabaseConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
-	ExternalDatabaseId string `pulumi:"externalDatabaseId"`
+	ExternalDatabaseId *string `pulumi:"externalDatabaseId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external database connector resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the `connectionStatus` of this external connector was last updated.
-	TimeConnectionStatusLastUpdated string `pulumi:"timeConnectionStatusLastUpdated"`
+	TimeConnectionStatusLastUpdated *string `pulumi:"timeConnectionStatusLastUpdated"`
 	// The date and time the external connector was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupExternalDatabaseConnectorOutput(ctx *pulumi.Context, args LookupExternalDatabaseConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDatabaseConnectorResultOutput {
@@ -130,15 +129,9 @@ func (o LookupExternalDatabaseConnectorResultOutput) ToLookupExternalDatabaseCon
 	return o
 }
 
-func (o LookupExternalDatabaseConnectorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalDatabaseConnectorResult] {
-	return pulumix.Output[LookupExternalDatabaseConnectorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupExternalDatabaseConnectorResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
@@ -149,8 +142,8 @@ func (o LookupExternalDatabaseConnectorResultOutput) ConnectionCredentials() Get
 }
 
 // The status of connectivity to the external database.
-func (o LookupExternalDatabaseConnectorResultOutput) ConnectionStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.ConnectionStatus }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) ConnectionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.ConnectionStatus }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database connection string.
@@ -161,13 +154,13 @@ func (o LookupExternalDatabaseConnectorResultOutput) ConnectionStrings() GetExte
 }
 
 // The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-func (o LookupExternalDatabaseConnectorResultOutput) ConnectorAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.ConnectorAgentId }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) ConnectorAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.ConnectorAgentId }).(pulumi.StringPtrOutput)
 }
 
 // The type of connector used by the external database resource.
-func (o LookupExternalDatabaseConnectorResultOutput) ConnectorType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.ConnectorType }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) ConnectorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.ConnectorType }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -176,8 +169,8 @@ func (o LookupExternalDatabaseConnectorResultOutput) DefinedTags() pulumi.MapOut
 }
 
 // The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
-func (o LookupExternalDatabaseConnectorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalDatabaseConnectorResultOutput) ExternalDatabaseConnectorId() pulumi.StringOutput {
@@ -185,8 +178,8 @@ func (o LookupExternalDatabaseConnectorResultOutput) ExternalDatabaseConnectorId
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
-func (o LookupExternalDatabaseConnectorResultOutput) ExternalDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.ExternalDatabaseId }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) ExternalDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.ExternalDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -195,28 +188,28 @@ func (o LookupExternalDatabaseConnectorResultOutput) FreeformTags() pulumi.MapOu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-func (o LookupExternalDatabaseConnectorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupExternalDatabaseConnectorResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external database connector resource.
-func (o LookupExternalDatabaseConnectorResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the `connectionStatus` of this external connector was last updated.
-func (o LookupExternalDatabaseConnectorResultOutput) TimeConnectionStatusLastUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.TimeConnectionStatusLastUpdated }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) TimeConnectionStatusLastUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.TimeConnectionStatusLastUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external connector was created.
-func (o LookupExternalDatabaseConnectorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalDatabaseConnectorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

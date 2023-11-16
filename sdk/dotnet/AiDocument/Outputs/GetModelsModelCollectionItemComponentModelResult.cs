@@ -16,10 +16,10 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         /// </summary>
-        public readonly string ModelId;
+        public readonly string? ModelId;
 
         [OutputConstructor]
-        private GetModelsModelCollectionItemComponentModelResult(string modelId)
+        private GetModelsModelCollectionItemComponentModelResult(string? modelId)
         {
             ModelId = modelId;
         }

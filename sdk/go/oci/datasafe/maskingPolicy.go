@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -105,31 +104,31 @@ type MaskingPolicy struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the masking policy.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-	IsDropTempTablesEnabled pulumi.BoolOutput `pulumi:"isDropTempTablesEnabled"`
+	IsDropTempTablesEnabled pulumi.BoolPtrOutput `pulumi:"isDropTempTablesEnabled"`
 	// (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-	IsRedoLoggingEnabled pulumi.BoolOutput `pulumi:"isRedoLoggingEnabled"`
+	IsRedoLoggingEnabled pulumi.BoolPtrOutput `pulumi:"isRedoLoggingEnabled"`
 	// (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-	IsRefreshStatsEnabled pulumi.BoolOutput `pulumi:"isRefreshStatsEnabled"`
+	IsRefreshStatsEnabled pulumi.BoolPtrOutput `pulumi:"isRefreshStatsEnabled"`
 	// (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-	ParallelDegree pulumi.StringOutput `pulumi:"parallelDegree"`
+	ParallelDegree pulumi.StringPtrOutput `pulumi:"parallelDegree"`
 	// (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-	PostMaskingScript pulumi.StringOutput `pulumi:"postMaskingScript"`
+	PostMaskingScript pulumi.StringPtrOutput `pulumi:"postMaskingScript"`
 	// (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-	PreMaskingScript pulumi.StringOutput `pulumi:"preMaskingScript"`
+	PreMaskingScript pulumi.StringPtrOutput `pulumi:"preMaskingScript"`
 	// (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-	Recompile pulumi.StringOutput `pulumi:"recompile"`
+	Recompile pulumi.StringPtrOutput `pulumi:"recompile"`
 	// The current state of the masking policy.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMaskingPolicy registers a new resource with the given unique name, arguments, and options.
@@ -343,12 +342,6 @@ func (i *MaskingPolicy) ToMaskingPolicyOutputWithContext(ctx context.Context) Ma
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPolicyOutput)
 }
 
-func (i *MaskingPolicy) ToOutput(ctx context.Context) pulumix.Output[*MaskingPolicy] {
-	return pulumix.Output[*MaskingPolicy]{
-		OutputState: i.ToMaskingPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MaskingPolicyArrayInput is an input type that accepts MaskingPolicyArray and MaskingPolicyArrayOutput values.
 // You can construct a concrete instance of `MaskingPolicyArrayInput` via:
 //
@@ -372,12 +365,6 @@ func (i MaskingPolicyArray) ToMaskingPolicyArrayOutput() MaskingPolicyArrayOutpu
 
 func (i MaskingPolicyArray) ToMaskingPolicyArrayOutputWithContext(ctx context.Context) MaskingPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPolicyArrayOutput)
-}
-
-func (i MaskingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*MaskingPolicy] {
-	return pulumix.Output[[]*MaskingPolicy]{
-		OutputState: i.ToMaskingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MaskingPolicyMapInput is an input type that accepts MaskingPolicyMap and MaskingPolicyMapOutput values.
@@ -405,12 +392,6 @@ func (i MaskingPolicyMap) ToMaskingPolicyMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPolicyMapOutput)
 }
 
-func (i MaskingPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskingPolicy] {
-	return pulumix.Output[map[string]*MaskingPolicy]{
-		OutputState: i.ToMaskingPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MaskingPolicyOutput struct{ *pulumi.OutputState }
 
 func (MaskingPolicyOutput) ElementType() reflect.Type {
@@ -423,12 +404,6 @@ func (o MaskingPolicyOutput) ToMaskingPolicyOutput() MaskingPolicyOutput {
 
 func (o MaskingPolicyOutput) ToMaskingPolicyOutputWithContext(ctx context.Context) MaskingPolicyOutput {
 	return o
-}
-
-func (o MaskingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*MaskingPolicy] {
-	return pulumix.Output[*MaskingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
@@ -455,13 +430,13 @@ func (o MaskingPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the masking policy.
-func (o MaskingPolicyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-func (o MaskingPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -470,53 +445,53 @@ func (o MaskingPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-func (o MaskingPolicyOutput) IsDropTempTablesEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.BoolOutput { return v.IsDropTempTablesEnabled }).(pulumi.BoolOutput)
+func (o MaskingPolicyOutput) IsDropTempTablesEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.BoolPtrOutput { return v.IsDropTempTablesEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-func (o MaskingPolicyOutput) IsRedoLoggingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.BoolOutput { return v.IsRedoLoggingEnabled }).(pulumi.BoolOutput)
+func (o MaskingPolicyOutput) IsRedoLoggingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.BoolPtrOutput { return v.IsRedoLoggingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-func (o MaskingPolicyOutput) IsRefreshStatsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.BoolOutput { return v.IsRefreshStatsEnabled }).(pulumi.BoolOutput)
+func (o MaskingPolicyOutput) IsRefreshStatsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.BoolPtrOutput { return v.IsRefreshStatsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-func (o MaskingPolicyOutput) ParallelDegree() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.ParallelDegree }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) ParallelDegree() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.ParallelDegree }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-func (o MaskingPolicyOutput) PostMaskingScript() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.PostMaskingScript }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) PostMaskingScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.PostMaskingScript }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-func (o MaskingPolicyOutput) PreMaskingScript() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.PreMaskingScript }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) PreMaskingScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.PreMaskingScript }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-func (o MaskingPolicyOutput) Recompile() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.Recompile }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) Recompile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.Recompile }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the masking policy.
-func (o MaskingPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o MaskingPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-func (o MaskingPolicyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MaskingPolicyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MaskingPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -531,12 +506,6 @@ func (o MaskingPolicyArrayOutput) ToMaskingPolicyArrayOutput() MaskingPolicyArra
 
 func (o MaskingPolicyArrayOutput) ToMaskingPolicyArrayOutputWithContext(ctx context.Context) MaskingPolicyArrayOutput {
 	return o
-}
-
-func (o MaskingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MaskingPolicy] {
-	return pulumix.Output[[]*MaskingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskingPolicyArrayOutput) Index(i pulumi.IntInput) MaskingPolicyOutput {
@@ -557,12 +526,6 @@ func (o MaskingPolicyMapOutput) ToMaskingPolicyMapOutput() MaskingPolicyMapOutpu
 
 func (o MaskingPolicyMapOutput) ToMaskingPolicyMapOutputWithContext(ctx context.Context) MaskingPolicyMapOutput {
 	return o
-}
-
-func (o MaskingPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskingPolicy] {
-	return pulumix.Output[map[string]*MaskingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskingPolicyMapOutput) MapIndex(k pulumi.StringInput) MaskingPolicyOutput {

@@ -93,7 +93,7 @@ export interface GetDiscoveryJobsResultsResult {
     /**
      * The list of discovery_job_result_collection.
      */
-    readonly discoveryJobResultCollections: outputs.DataSafe.GetDiscoveryJobsResultsDiscoveryJobResultCollection[];
+    readonly discoveryJobResultCollections?: outputs.DataSafe.GetDiscoveryJobsResultsDiscoveryJobResultCollection[];
     /**
      * The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      */
@@ -102,7 +102,7 @@ export interface GetDiscoveryJobsResultsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      */

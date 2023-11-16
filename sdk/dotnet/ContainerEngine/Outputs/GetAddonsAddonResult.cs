@@ -32,20 +32,20 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// current installed version of the addon
         /// </summary>
-        public readonly string CurrentInstalledVersion;
+        public readonly string? CurrentInstalledVersion;
         public readonly bool RemoveAddonResourcesOnDelete;
         /// <summary>
         /// The state of the addon.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the cluster was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// selected addon version, or null indicates autoUpdate
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetAddonsAddonResult(
@@ -57,15 +57,15 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<Outputs.GetAddonsAddonConfigurationResult> configurations,
 
-            string currentInstalledVersion,
+            string? currentInstalledVersion,
 
             bool removeAddonResourcesOnDelete,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string version)
+            string? version)
         {
             AddonErrors = addonErrors;
             AddonName = addonName;

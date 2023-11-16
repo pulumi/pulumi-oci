@@ -61,13 +61,13 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this decryption rule belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
         /// </summary>
         [Output("position")]
-        public Output<Outputs.NetworkFirewallPolicyDecryptionRulePosition> Position { get; private set; } = null!;
+        public Output<Outputs.NetworkFirewallPolicyDecryptionRulePosition?> Position { get; private set; } = null!;
 
         [Output("priorityOrder")]
         public Output<string?> PriorityOrder { get; private set; } = null!;

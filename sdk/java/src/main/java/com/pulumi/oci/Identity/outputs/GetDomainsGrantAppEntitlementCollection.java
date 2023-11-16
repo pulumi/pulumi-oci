@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGrantAppEntitlementCollection {
@@ -13,27 +15,27 @@ public final class GetDomainsGrantAppEntitlementCollection {
      * @return The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Value of the tag.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsGrantAppEntitlementCollection() {}
     /**
      * @return The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Value of the tag.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsGrantAppEntitlementCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ref;
-        private String value;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsGrantAppEntitlementCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsGrantAppEntitlementCollection {
         }
 
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsGrantAppEntitlementCollection build() {

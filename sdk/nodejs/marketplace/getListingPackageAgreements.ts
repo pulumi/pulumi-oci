@@ -61,7 +61,7 @@ export interface GetListingPackageAgreementsResult {
     /**
      * The list of agreements.
      */
-    readonly agreements: outputs.Marketplace.GetListingPackageAgreementsAgreement[];
+    readonly agreements?: outputs.Marketplace.GetListingPackageAgreementsAgreement[];
     /**
      * The unique identifier for the compartment.
      */
@@ -70,7 +70,7 @@ export interface GetListingPackageAgreementsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly listingId: string;
     readonly packageVersion: string;
 }

@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Core
         /// Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
@@ -125,19 +125,19 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
         /// </summary>
         [Output("dhcpOptionsId")]
-        public Output<string> DhcpOptionsId { get; private set; } = null!;
+        public Output<string?> DhcpOptionsId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
@@ -149,13 +149,13 @@ namespace Pulumi.Oci.Core
         /// Example: `subnet123`
         /// </summary>
         [Output("dnsLabel")]
-        public Output<string> DnsLabel { get; private set; } = null!;
+        public Output<string?> DnsLabel { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Core
         /// Example: `2001:0db8:0123:1111::/64`
         /// </summary>
         [Output("ipv6cidrBlock")]
-        public Output<string> Ipv6cidrBlock { get; private set; } = null!;
+        public Output<string?> Ipv6cidrBlock { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.Core
         /// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
         /// </summary>
         [Output("ipv6virtualRouterIp")]
-        public Output<string> Ipv6virtualRouterIp { get; private set; } = null!;
+        public Output<string?> Ipv6virtualRouterIp { get; private set; } = null!;
 
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.Core
         /// Example: `true`
         /// </summary>
         [Output("prohibitInternetIngress")]
-        public Output<bool> ProhibitInternetIngress { get; private set; } = null!;
+        public Output<bool?> ProhibitInternetIngress { get; private set; } = null!;
 
         /// <summary>
         /// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
@@ -202,13 +202,13 @@ namespace Pulumi.Oci.Core
         /// Example: `true`
         /// </summary>
         [Output("prohibitPublicIpOnVnic")]
-        public Output<bool> ProhibitPublicIpOnVnic { get; private set; } = null!;
+        public Output<bool?> ProhibitPublicIpOnVnic { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
         /// </summary>
         [Output("routeTableId")]
-        public Output<string> RouteTableId { get; private set; } = null!;
+        public Output<string?> RouteTableId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
@@ -220,19 +220,19 @@ namespace Pulumi.Oci.Core
         /// The subnet's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
         /// </summary>
         [Output("subnetDomainName")]
-        public Output<string> SubnetDomainName { get; private set; } = null!;
+        public Output<string?> SubnetDomainName { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
@@ -248,13 +248,13 @@ namespace Pulumi.Oci.Core
         /// The IP address of the virtual router.  Example: `10.0.14.1`
         /// </summary>
         [Output("virtualRouterIp")]
-        public Output<string> VirtualRouterIp { get; private set; } = null!;
+        public Output<string?> VirtualRouterIp { get; private set; } = null!;
 
         /// <summary>
         /// The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
         /// </summary>
         [Output("virtualRouterMac")]
-        public Output<string> VirtualRouterMac { get; private set; } = null!;
+        public Output<string?> VirtualRouterMac { get; private set; } = null!;
 
 
         /// <summary>

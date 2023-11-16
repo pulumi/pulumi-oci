@@ -51,54 +51,54 @@ export interface GetDatabaseUpgradeHistoryEntryResult {
     /**
      * The database upgrade action.
      */
-    readonly action: string;
+    readonly action?: string;
     readonly databaseId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
      */
-    readonly options: string;
+    readonly options?: string;
     /**
      * The source of the Oracle Database software to be used for the upgrade.
      * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
      * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      */
-    readonly source: string;
+    readonly source?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
-    readonly sourceDbHomeId: string;
+    readonly sourceDbHomeId?: string;
     /**
      * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * the database software image used for upgrading database.
      */
-    readonly targetDatabaseSoftwareImageId: string;
+    readonly targetDatabaseSoftwareImageId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
-    readonly targetDbHomeId: string;
+    readonly targetDbHomeId?: string;
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      */
-    readonly targetDbVersion: string;
+    readonly targetDbVersion?: string;
     /**
      * The date and time when the database upgrade ended.
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * The date and time when the database upgrade started.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     readonly upgradeHistoryEntryId: string;
 }
 /**

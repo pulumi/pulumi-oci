@@ -94,170 +94,107 @@ class GetVtapResult:
 
     @property
     @pulumi.getter(name="captureFilterId")
-    def capture_filter_id(self) -> str:
-        """
-        The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        """
+    def capture_filter_id(self) -> Optional[str]:
         return pulumi.get(self, "capture_filter_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="encapsulationProtocol")
-    def encapsulation_protocol(self) -> str:
-        """
-        Defines an encapsulation header type for the VTAP's mirrored traffic.
-        """
+    def encapsulation_protocol(self) -> Optional[str]:
         return pulumi.get(self, "encapsulation_protocol")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isVtapEnabled")
-    def is_vtap_enabled(self) -> bool:
-        """
-        Used to start or stop a `Vtap` resource.
-        """
+    def is_vtap_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_vtap_enabled")
 
     @property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> str:
-        """
-        The VTAP's current running state.
-        """
+    def lifecycle_state_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_state_details")
 
     @property
     @pulumi.getter(name="maxPacketSize")
-    def max_packet_size(self) -> int:
-        """
-        The maximum size of the packets to be included in the filter.
-        """
+    def max_packet_size(self) -> Optional[int]:
         return pulumi.get(self, "max_packet_size")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter(name="sourcePrivateEndpointIp")
-    def source_private_endpoint_ip(self) -> str:
-        """
-        The IP Address of the source private endpoint.
-        """
+    def source_private_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "source_private_endpoint_ip")
 
     @property
     @pulumi.getter(name="sourcePrivateEndpointSubnetId")
-    def source_private_endpoint_subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
-        """
+    def source_private_endpoint_subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "source_private_endpoint_subnet_id")
 
     @property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> str:
-        """
-        The source type for the VTAP.
-        """
+    def source_type(self) -> Optional[str]:
         return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The VTAP's administrative lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetIp")
-    def target_ip(self) -> str:
-        """
-        The IP address of the destination resource where mirrored packets are sent.
-        """
+    def target_ip(self) -> Optional[str]:
         return pulumi.get(self, "target_ip")
 
     @property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> str:
-        """
-        The target type for the VTAP.
-        """
+    def target_type(self) -> Optional[str]:
         return pulumi.get(self, "target_type")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="trafficMode")
-    def traffic_mode(self) -> str:
-        """
-        Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
-        """
+    def traffic_mode(self) -> Optional[str]:
         return pulumi.get(self, "traffic_mode")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
     @property
@@ -267,10 +204,7 @@ class GetVtapResult:
 
     @property
     @pulumi.getter(name="vxlanNetworkIdentifier")
-    def vxlan_network_identifier(self) -> str:
-        """
-        The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
-        """
+    def vxlan_network_identifier(self) -> Optional[str]:
         return pulumi.get(self, "vxlan_network_identifier")
 
 
@@ -308,21 +242,7 @@ class AwaitableGetVtapResult(GetVtapResult):
 def get_vtap(vtap_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVtapResult:
     """
-    This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified `Vtap` resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vtap = oci.Core.get_vtap(vtap_id=oci_core_vtap["test_vtap"]["id"])
-    ```
-
-
-    :param str vtap_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vtapId'] = vtap_id
@@ -359,20 +279,6 @@ def get_vtap(vtap_id: Optional[str] = None,
 def get_vtap_output(vtap_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVtapResult]:
     """
-    This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified `Vtap` resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vtap = oci.Core.get_vtap(vtap_id=oci_core_vtap["test_vtap"]["id"])
-    ```
-
-
-    :param str vtap_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP.
+    Use this data source to access information about an existing resource.
     """
     ...

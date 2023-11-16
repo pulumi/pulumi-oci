@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
@@ -95,7 +94,7 @@ type GetTargetDatabasesResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetTargetDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The infrastructure type the database is running on.
 	InfrastructureType *string `pulumi:"infrastructureType"`
 	// The current state of the target database in Data Safe.
@@ -160,12 +159,6 @@ func (o GetTargetDatabasesResultOutput) ToGetTargetDatabasesResultOutputWithCont
 	return o
 }
 
-func (o GetTargetDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesResult] {
-	return pulumix.Output[GetTargetDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTargetDatabasesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetDatabasesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -198,8 +191,8 @@ func (o GetTargetDatabasesResultOutput) Filters() GetTargetDatabasesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTargetDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTargetDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTargetDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The infrastructure type the database is running on.

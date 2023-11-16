@@ -42,10 +42,7 @@ class GetApplianceImagesResult:
 
     @property
     @pulumi.getter(name="applianceImageCollections")
-    def appliance_image_collections(self) -> Sequence['outputs.GetApplianceImagesApplianceImageCollectionResult']:
-        """
-        The list of appliance_image_collection.
-        """
+    def appliance_image_collections(self) -> Optional[Sequence['outputs.GetApplianceImagesApplianceImageCollectionResult']]:
         return pulumi.get(self, "appliance_image_collections")
 
     @property
@@ -56,9 +53,6 @@ class GetApplianceImagesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the image to be displayed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -68,7 +62,7 @@ class GetApplianceImagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,23 +87,7 @@ def get_appliance_images(compartment_id: Optional[str] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetApplianceImagesFilterArgs']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplianceImagesResult:
     """
-    This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of Appliance Images.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_appliance_images = oci.CloudBridge.get_appliance_images(compartment_id=var["compartment_id"],
-        display_name=var["appliance_image_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -132,22 +110,6 @@ def get_appliance_images_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetApplianceImagesFilterArgs']]]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplianceImagesResult]:
     """
-    This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of Appliance Images.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_appliance_images = oci.CloudBridge.get_appliance_images(compartment_id=var["compartment_id"],
-        display_name=var["appliance_image_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    Use this data source to access information about an existing resource.
     """
     ...

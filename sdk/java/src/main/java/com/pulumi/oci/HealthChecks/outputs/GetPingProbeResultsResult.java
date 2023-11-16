@@ -20,12 +20,12 @@ public final class GetPingProbeResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of ping_probe_results.
      * 
      */
-    private List<GetPingProbeResultsPingProbeResult> pingProbeResults;
+    private @Nullable List<GetPingProbeResultsPingProbeResult> pingProbeResults;
     /**
      * @return The OCID of the monitor or on-demand probe responsible for creating this result.
      * 
@@ -47,15 +47,15 @@ public final class GetPingProbeResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of ping_probe_results.
      * 
      */
     public List<GetPingProbeResultsPingProbeResult> pingProbeResults() {
-        return this.pingProbeResults;
+        return this.pingProbeResults == null ? List.of() : this.pingProbeResults;
     }
     /**
      * @return The OCID of the monitor or on-demand probe responsible for creating this result.
@@ -88,8 +88,8 @@ public final class GetPingProbeResultsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPingProbeResultsFilter> filters;
-        private String id;
-        private List<GetPingProbeResultsPingProbeResult> pingProbeResults;
+        private @Nullable String id;
+        private @Nullable List<GetPingProbeResultsPingProbeResult> pingProbeResults;
         private String probeConfigurationId;
         private @Nullable Double startTimeGreaterThanOrEqualTo;
         private @Nullable Double startTimeLessThanOrEqualTo;
@@ -115,13 +115,13 @@ public final class GetPingProbeResultsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder pingProbeResults(List<GetPingProbeResultsPingProbeResult> pingProbeResults) {
-            this.pingProbeResults = Objects.requireNonNull(pingProbeResults);
+        public Builder pingProbeResults(@Nullable List<GetPingProbeResultsPingProbeResult> pingProbeResults) {
+            this.pingProbeResults = pingProbeResults;
             return this;
         }
         public Builder pingProbeResults(GetPingProbeResultsPingProbeResult... pingProbeResults) {

@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowJobTaskLifecycleState {
@@ -13,39 +15,39 @@ public final class GetMediaWorkflowJobTaskLifecycleState {
      * @return Unique key within a MediaWorkflowJob for the task.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current state of the MediaWorkflowJob task.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetMediaWorkflowJobTaskLifecycleState() {}
     /**
      * @return Unique key within a MediaWorkflowJob for the task.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current state of the MediaWorkflowJob task.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMediaWorkflowJobTaskLifecycleState {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String key;
-        private String lifecycleDetails;
-        private String state;
+        private @Nullable String key;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetMediaWorkflowJobTaskLifecycleState defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMediaWorkflowJobTaskLifecycleState {
         }
 
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetMediaWorkflowJobTaskLifecycleState build() {

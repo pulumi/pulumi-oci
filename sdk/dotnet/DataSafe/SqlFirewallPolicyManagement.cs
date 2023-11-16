@@ -22,61 +22,61 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableArray<string>> AllowedClientPrograms { get; private set; } = null!;
 
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         [Output("dbUserName")]
-        public Output<string> DbUserName { get; private set; } = null!;
+        public Output<string?> DbUserName { get; private set; } = null!;
 
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("enforcementScope")]
-        public Output<string> EnforcementScope { get; private set; } = null!;
+        public Output<string?> EnforcementScope { get; private set; } = null!;
 
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         [Output("securityPolicyId")]
-        public Output<string> SecurityPolicyId { get; private set; } = null!;
+        public Output<string?> SecurityPolicyId { get; private set; } = null!;
 
         [Output("sqlFirewallPolicyId")]
-        public Output<string> SqlFirewallPolicyId { get; private set; } = null!;
+        public Output<string?> SqlFirewallPolicyId { get; private set; } = null!;
 
         [Output("sqlLevel")]
-        public Output<string> SqlLevel { get; private set; } = null!;
+        public Output<string?> SqlLevel { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         [Output("targetId")]
-        public Output<string> TargetId { get; private set; } = null!;
+        public Output<string?> TargetId { get; private set; } = null!;
 
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         [Output("violationAction")]
-        public Output<string> ViolationAction { get; private set; } = null!;
+        public Output<string?> ViolationAction { get; private set; } = null!;
 
         [Output("violationAudit")]
-        public Output<string> ViolationAudit { get; private set; } = null!;
+        public Output<string?> ViolationAudit { get; private set; } = null!;
 
 
         /// <summary>

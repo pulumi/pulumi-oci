@@ -68,19 +68,12 @@ class ConnectionAdminCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Administrator password
-        :param pulumi.Input[str] username: (Updatable) Administrator username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Administrator password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -90,9 +83,6 @@ class ConnectionAdminCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Administrator username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -107,12 +97,6 @@ class ConnectionConnectDescriptorArgs:
                  database_service_name: Optional[pulumi.Input[str]] = None,
                  host: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] connect_string: (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: <host>:<port>/<db_service_name> Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
-        :param pulumi.Input[str] database_service_name: (Updatable) Database service name. Required if no connectString was specified.
-        :param pulumi.Input[str] host: (Updatable) Name of the host the SSH key is valid for.
-        :param pulumi.Input[int] port: (Updatable) Port of the connect descriptor. Required if no connectString was specified.
-        """
         if connect_string is not None:
             pulumi.set(__self__, "connect_string", connect_string)
         if database_service_name is not None:
@@ -125,9 +109,6 @@ class ConnectionConnectDescriptorArgs:
     @property
     @pulumi.getter(name="connectString")
     def connect_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: <host>:<port>/<db_service_name> Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
-        """
         return pulumi.get(self, "connect_string")
 
     @connect_string.setter
@@ -137,9 +118,6 @@ class ConnectionConnectDescriptorArgs:
     @property
     @pulumi.getter(name="databaseServiceName")
     def database_service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Database service name. Required if no connectString was specified.
-        """
         return pulumi.get(self, "database_service_name")
 
     @database_service_name.setter
@@ -149,9 +127,6 @@ class ConnectionConnectDescriptorArgs:
     @property
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the host the SSH key is valid for.
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -161,9 +136,6 @@ class ConnectionConnectDescriptorArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Port of the connect descriptor. Required if no connectString was specified.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -178,12 +150,6 @@ class ConnectionPrivateEndpointArgs:
                  subnet_id: pulumi.Input[str],
                  vcn_id: pulumi.Input[str],
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's subnet where the private endpoint VNIC will reside.
-        :param pulumi.Input[str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
-        :param pulumi.Input[str] id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
-        """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -193,9 +159,6 @@ class ConnectionPrivateEndpointArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -205,9 +168,6 @@ class ConnectionPrivateEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's subnet where the private endpoint VNIC will reside.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -217,9 +177,6 @@ class ConnectionPrivateEndpointArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -229,9 +186,6 @@ class ConnectionPrivateEndpointArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -244,19 +198,12 @@ class ConnectionReplicationCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Administrator password
-        :param pulumi.Input[str] username: (Updatable) Administrator username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Administrator password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -266,9 +213,6 @@ class ConnectionReplicationCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Administrator username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -283,12 +227,6 @@ class ConnectionSshDetailsArgs:
                  sshkey: pulumi.Input[str],
                  user: pulumi.Input[str],
                  sudo_location: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host: (Updatable) Name of the host the SSH key is valid for.
-        :param pulumi.Input[str] sshkey: (Updatable) Private SSH key string.
-        :param pulumi.Input[str] user: (Updatable) SSH user
-        :param pulumi.Input[str] sudo_location: (Updatable) Sudo location
-        """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "sshkey", sshkey)
         pulumi.set(__self__, "user", user)
@@ -298,9 +236,6 @@ class ConnectionSshDetailsArgs:
     @property
     @pulumi.getter
     def host(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the host the SSH key is valid for.
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -310,9 +245,6 @@ class ConnectionSshDetailsArgs:
     @property
     @pulumi.getter
     def sshkey(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Private SSH key string.
-        """
         return pulumi.get(self, "sshkey")
 
     @sshkey.setter
@@ -322,9 +254,6 @@ class ConnectionSshDetailsArgs:
     @property
     @pulumi.getter
     def user(self) -> pulumi.Input[str]:
-        """
-        (Updatable) SSH user
-        """
         return pulumi.get(self, "user")
 
     @user.setter
@@ -334,9 +263,6 @@ class ConnectionSshDetailsArgs:
     @property
     @pulumi.getter(name="sudoLocation")
     def sudo_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Sudo location
-        """
         return pulumi.get(self, "sudo_location")
 
     @sudo_location.setter
@@ -350,15 +276,6 @@ class ConnectionVaultDetailsArgs:
                  compartment_id: pulumi.Input[str],
                  key_id: pulumi.Input[str],
                  vault_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        :param pulumi.Input[str] key_id: (Updatable) OCID of the vault encryption key
-        :param pulumi.Input[str] vault_id: (Updatable) OCID of the vault 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -366,9 +283,6 @@ class ConnectionVaultDetailsArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -378,9 +292,6 @@ class ConnectionVaultDetailsArgs:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the vault encryption key
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -390,13 +301,6 @@ class ConnectionVaultDetailsArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the vault 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -410,11 +314,6 @@ class JobProgressArgs:
                  current_phase: Optional[pulumi.Input[str]] = None,
                  current_status: Optional[pulumi.Input[str]] = None,
                  phases: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]] = None):
-        """
-        :param pulumi.Input[str] current_phase: Current phase of the job.
-        :param pulumi.Input[str] current_status: Current status of the job.
-        :param pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]] phases: List of phase status for the job.
-        """
         if current_phase is not None:
             pulumi.set(__self__, "current_phase", current_phase)
         if current_status is not None:
@@ -425,9 +324,6 @@ class JobProgressArgs:
     @property
     @pulumi.getter(name="currentPhase")
     def current_phase(self) -> Optional[pulumi.Input[str]]:
-        """
-        Current phase of the job.
-        """
         return pulumi.get(self, "current_phase")
 
     @current_phase.setter
@@ -437,9 +333,6 @@ class JobProgressArgs:
     @property
     @pulumi.getter(name="currentStatus")
     def current_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Current status of the job.
-        """
         return pulumi.get(self, "current_status")
 
     @current_status.setter
@@ -449,9 +342,6 @@ class JobProgressArgs:
     @property
     @pulumi.getter
     def phases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]:
-        """
-        List of phase status for the job.
-        """
         return pulumi.get(self, "phases")
 
     @phases.setter
@@ -471,17 +361,6 @@ class JobProgressPhaseArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  progress: Optional[pulumi.Input[int]] = None,
                  status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] action: The text describing the action required to fix the issue
-        :param pulumi.Input[int] duration_in_ms: Duration of the phase in milliseconds
-        :param pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]] extracts: Summary of phase status results.
-        :param pulumi.Input[bool] is_advisor_report_available: True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
-        :param pulumi.Input[str] issue: The text describing the root cause of the reported issue
-        :param pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]] log_locations: Details to access log file in the specified Object Storage bucket, if any.
-        :param pulumi.Input[str] name: Phase name
-        :param pulumi.Input[int] progress: Percent progress of job phase.
-        :param pulumi.Input[str] status: Phase status
-        """
         if action is not None:
             pulumi.set(__self__, "action", action)
         if duration_in_ms is not None:
@@ -504,9 +383,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        The text describing the action required to fix the issue
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -516,9 +392,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter(name="durationInMs")
     def duration_in_ms(self) -> Optional[pulumi.Input[int]]:
-        """
-        Duration of the phase in milliseconds
-        """
         return pulumi.get(self, "duration_in_ms")
 
     @duration_in_ms.setter
@@ -528,9 +401,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter
     def extracts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]:
-        """
-        Summary of phase status results.
-        """
         return pulumi.get(self, "extracts")
 
     @extracts.setter
@@ -540,9 +410,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter(name="isAdvisorReportAvailable")
     def is_advisor_report_available(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
-        """
         return pulumi.get(self, "is_advisor_report_available")
 
     @is_advisor_report_available.setter
@@ -552,9 +419,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter
     def issue(self) -> Optional[pulumi.Input[str]]:
-        """
-        The text describing the root cause of the reported issue
-        """
         return pulumi.get(self, "issue")
 
     @issue.setter
@@ -564,9 +428,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter(name="logLocations")
     def log_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]]:
-        """
-        Details to access log file in the specified Object Storage bucket, if any.
-        """
         return pulumi.get(self, "log_locations")
 
     @log_locations.setter
@@ -576,9 +437,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Phase name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -588,9 +446,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter
     def progress(self) -> Optional[pulumi.Input[int]]:
-        """
-        Percent progress of job phase.
-        """
         return pulumi.get(self, "progress")
 
     @progress.setter
@@ -600,9 +455,6 @@ class JobProgressPhaseArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Phase status
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -615,10 +467,6 @@ class JobProgressPhaseExtractArgs:
     def __init__(__self__, *,
                  message: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] message: Message in entry.
-        :param pulumi.Input[str] type: Type of unsupported object
-        """
         if message is not None:
             pulumi.set(__self__, "message", message)
         if type is not None:
@@ -627,9 +475,6 @@ class JobProgressPhaseExtractArgs:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        Message in entry.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -639,9 +484,6 @@ class JobProgressPhaseExtractArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of unsupported object
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -655,11 +497,6 @@ class JobProgressPhaseLogLocationArgs:
                  bucket: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] bucket: Name of the bucket containing the log file.
-        :param pulumi.Input[str] namespace: Object Storage namespace.
-        :param pulumi.Input[str] object: Name of the object (regular expression is allowed)
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if namespace is not None:
@@ -670,9 +507,6 @@ class JobProgressPhaseLogLocationArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the bucket containing the log file.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -682,9 +516,6 @@ class JobProgressPhaseLogLocationArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -694,9 +525,6 @@ class JobProgressPhaseLogLocationArgs:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the object (regular expression is allowed)
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -710,11 +538,6 @@ class JobUnsupportedObjectArgs:
                  object: Optional[pulumi.Input[str]] = None,
                  owner: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] object: Name of the object (regular expression is allowed)
-        :param pulumi.Input[str] owner: Owner of the object (regular expression is allowed)
-        :param pulumi.Input[str] type: Type of unsupported object
-        """
         if object is not None:
             pulumi.set(__self__, "object", object)
         if owner is not None:
@@ -725,9 +548,6 @@ class JobUnsupportedObjectArgs:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the object (regular expression is allowed)
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -737,9 +557,6 @@ class JobUnsupportedObjectArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
-        """
-        Owner of the object (regular expression is allowed)
-        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -749,9 +566,6 @@ class JobUnsupportedObjectArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of unsupported object
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -764,10 +578,6 @@ class MigrationAdvisorSettingsArgs:
     def __init__(__self__, *,
                  is_ignore_errors: Optional[pulumi.Input[bool]] = None,
                  is_skip_advisor: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_ignore_errors: (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
-        :param pulumi.Input[bool] is_skip_advisor: (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
-        """
         if is_ignore_errors is not None:
             pulumi.set(__self__, "is_ignore_errors", is_ignore_errors)
         if is_skip_advisor is not None:
@@ -776,9 +586,6 @@ class MigrationAdvisorSettingsArgs:
     @property
     @pulumi.getter(name="isIgnoreErrors")
     def is_ignore_errors(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
-        """
         return pulumi.get(self, "is_ignore_errors")
 
     @is_ignore_errors.setter
@@ -788,9 +595,6 @@ class MigrationAdvisorSettingsArgs:
     @property
     @pulumi.getter(name="isSkipAdvisor")
     def is_skip_advisor(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
-        """
         return pulumi.get(self, "is_skip_advisor")
 
     @is_skip_advisor.setter
@@ -803,10 +607,6 @@ class MigrationDataTransferMediumDetailsArgs:
     def __init__(__self__, *,
                  database_link_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs']] = None,
                  object_storage_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageDetailsArgs']] = None):
-        """
-        :param pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs'] database_link_details: (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
-        :param pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageDetailsArgs'] object_storage_details: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        """
         if database_link_details is not None:
             pulumi.set(__self__, "database_link_details", database_link_details)
         if object_storage_details is not None:
@@ -815,9 +615,6 @@ class MigrationDataTransferMediumDetailsArgs:
     @property
     @pulumi.getter(name="databaseLinkDetails")
     def database_link_details(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs']]:
-        """
-        (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
-        """
         return pulumi.get(self, "database_link_details")
 
     @database_link_details.setter
@@ -827,9 +624,6 @@ class MigrationDataTransferMediumDetailsArgs:
     @property
     @pulumi.getter(name="objectStorageDetails")
     def object_storage_details(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageDetailsArgs']]:
-        """
-        (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        """
         return pulumi.get(self, "object_storage_details")
 
     @object_storage_details.setter
@@ -842,10 +636,6 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  wallet_bucket: Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs']] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of directory object in database
-        :param pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs'] wallet_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if wallet_bucket is not None:
@@ -854,9 +644,6 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of directory object in database
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -866,9 +653,6 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs:
     @property
     @pulumi.getter(name="walletBucket")
     def wallet_bucket(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs']]:
-        """
-        (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-        """
         return pulumi.get(self, "wallet_bucket")
 
     @wallet_bucket.setter
@@ -881,19 +665,12 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs:
     def __init__(__self__, *,
                  bucket: pulumi.Input[str],
                  namespace: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] bucket: (Updatable) Bucket name.
-        :param pulumi.Input[str] namespace: (Updatable) Namespace name of the object store bucket.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
 
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -903,9 +680,6 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Namespace name of the object store bucket.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -918,19 +692,12 @@ class MigrationDataTransferMediumDetailsObjectStorageDetailsArgs:
     def __init__(__self__, *,
                  bucket: pulumi.Input[str],
                  namespace: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] bucket: (Updatable) Bucket name.
-        :param pulumi.Input[str] namespace: (Updatable) Namespace name of the object store bucket.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
 
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -940,9 +707,6 @@ class MigrationDataTransferMediumDetailsObjectStorageDetailsArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Namespace name of the object store bucket.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -959,10 +723,6 @@ class MigrationDataTransferMediumDetailsV2Args:
                  object_storage_bucket: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs']] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  secret_access_key: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Migration type.
-        :param pulumi.Input[str] name: (Updatable) Name of directory object in database
-        """
         pulumi.set(__self__, "type", type)
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
@@ -978,9 +738,6 @@ class MigrationDataTransferMediumDetailsV2Args:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Migration type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -999,9 +756,6 @@ class MigrationDataTransferMediumDetailsV2Args:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of directory object in database
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1041,10 +795,6 @@ class MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs:
     def __init__(__self__, *,
                  bucket: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] bucket: (Updatable) Bucket name.
-        :param pulumi.Input[str] namespace: (Updatable) Namespace name of the object store bucket.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if namespace is not None:
@@ -1053,9 +803,6 @@ class MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -1065,9 +812,6 @@ class MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Namespace name of the object store bucket.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -1083,13 +827,6 @@ class MigrationDatapumpSettingsArgs:
                  import_directory_object: Optional[pulumi.Input['MigrationDatapumpSettingsImportDirectoryObjectArgs']] = None,
                  job_mode: Optional[pulumi.Input[str]] = None,
                  metadata_remaps: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationDatapumpSettingsMetadataRemapArgs']]]] = None):
-        """
-        :param pulumi.Input['MigrationDatapumpSettingsDataPumpParametersArgs'] data_pump_parameters: (Updatable) Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
-        :param pulumi.Input['MigrationDatapumpSettingsExportDirectoryObjectArgs'] export_directory_object: (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
-        :param pulumi.Input['MigrationDatapumpSettingsImportDirectoryObjectArgs'] import_directory_object: (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
-        :param pulumi.Input[str] job_mode: (Updatable) Data Pump job mode. Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
-        :param pulumi.Input[Sequence[pulumi.Input['MigrationDatapumpSettingsMetadataRemapArgs']]] metadata_remaps: (Updatable) Defines remapping to be applied to objects as they are processed. Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
-        """
         if data_pump_parameters is not None:
             pulumi.set(__self__, "data_pump_parameters", data_pump_parameters)
         if export_directory_object is not None:
@@ -1104,9 +841,6 @@ class MigrationDatapumpSettingsArgs:
     @property
     @pulumi.getter(name="dataPumpParameters")
     def data_pump_parameters(self) -> Optional[pulumi.Input['MigrationDatapumpSettingsDataPumpParametersArgs']]:
-        """
-        (Updatable) Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
-        """
         return pulumi.get(self, "data_pump_parameters")
 
     @data_pump_parameters.setter
@@ -1116,9 +850,6 @@ class MigrationDatapumpSettingsArgs:
     @property
     @pulumi.getter(name="exportDirectoryObject")
     def export_directory_object(self) -> Optional[pulumi.Input['MigrationDatapumpSettingsExportDirectoryObjectArgs']]:
-        """
-        (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
-        """
         return pulumi.get(self, "export_directory_object")
 
     @export_directory_object.setter
@@ -1128,9 +859,6 @@ class MigrationDatapumpSettingsArgs:
     @property
     @pulumi.getter(name="importDirectoryObject")
     def import_directory_object(self) -> Optional[pulumi.Input['MigrationDatapumpSettingsImportDirectoryObjectArgs']]:
-        """
-        (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
-        """
         return pulumi.get(self, "import_directory_object")
 
     @import_directory_object.setter
@@ -1140,9 +868,6 @@ class MigrationDatapumpSettingsArgs:
     @property
     @pulumi.getter(name="jobMode")
     def job_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Data Pump job mode. Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
-        """
         return pulumi.get(self, "job_mode")
 
     @job_mode.setter
@@ -1152,9 +877,6 @@ class MigrationDatapumpSettingsArgs:
     @property
     @pulumi.getter(name="metadataRemaps")
     def metadata_remaps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationDatapumpSettingsMetadataRemapArgs']]]]:
-        """
-        (Updatable) Defines remapping to be applied to objects as they are processed. Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
-        """
         return pulumi.get(self, "metadata_remaps")
 
     @metadata_remaps.setter
@@ -1171,14 +893,6 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
                  import_parallelism_degree: Optional[pulumi.Input[int]] = None,
                  is_cluster: Optional[pulumi.Input[bool]] = None,
                  table_exists_action: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] estimate: (Updatable) Estimate size of dumps that will be generated.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_parameters: (Updatable) Exclude paratemers for Export and Import.
-        :param pulumi.Input[int] export_parallelism_degree: (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
-        :param pulumi.Input[int] import_parallelism_degree: (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
-        :param pulumi.Input[bool] is_cluster: (Updatable) Set to false to force Data Pump worker process to run on one instance.
-        :param pulumi.Input[str] table_exists_action: (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
-        """
         if estimate is not None:
             pulumi.set(__self__, "estimate", estimate)
         if exclude_parameters is not None:
@@ -1195,9 +909,6 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
     @property
     @pulumi.getter
     def estimate(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Estimate size of dumps that will be generated.
-        """
         return pulumi.get(self, "estimate")
 
     @estimate.setter
@@ -1207,9 +918,6 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
     @property
     @pulumi.getter(name="excludeParameters")
     def exclude_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Exclude paratemers for Export and Import.
-        """
         return pulumi.get(self, "exclude_parameters")
 
     @exclude_parameters.setter
@@ -1219,9 +927,6 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
     @property
     @pulumi.getter(name="exportParallelismDegree")
     def export_parallelism_degree(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
-        """
         return pulumi.get(self, "export_parallelism_degree")
 
     @export_parallelism_degree.setter
@@ -1231,9 +936,6 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
     @property
     @pulumi.getter(name="importParallelismDegree")
     def import_parallelism_degree(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
-        """
         return pulumi.get(self, "import_parallelism_degree")
 
     @import_parallelism_degree.setter
@@ -1243,9 +945,6 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
     @property
     @pulumi.getter(name="isCluster")
     def is_cluster(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Set to false to force Data Pump worker process to run on one instance.
-        """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
@@ -1255,9 +954,6 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
     @property
     @pulumi.getter(name="tableExistsAction")
     def table_exists_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
-        """
         return pulumi.get(self, "table_exists_action")
 
     @table_exists_action.setter
@@ -1270,10 +966,6 @@ class MigrationDatapumpSettingsExportDirectoryObjectArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  path: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of directory object in database
-        :param pulumi.Input[str] path: (Updatable) Absolute path of directory on database server
-        """
         pulumi.set(__self__, "name", name)
         if path is not None:
             pulumi.set(__self__, "path", path)
@@ -1281,9 +973,6 @@ class MigrationDatapumpSettingsExportDirectoryObjectArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of directory object in database
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1293,9 +982,6 @@ class MigrationDatapumpSettingsExportDirectoryObjectArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Absolute path of directory on database server
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -1308,10 +994,6 @@ class MigrationDatapumpSettingsImportDirectoryObjectArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  path: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of directory object in database
-        :param pulumi.Input[str] path: (Updatable) Absolute path of directory on database server
-        """
         pulumi.set(__self__, "name", name)
         if path is not None:
             pulumi.set(__self__, "path", path)
@@ -1319,9 +1001,6 @@ class MigrationDatapumpSettingsImportDirectoryObjectArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of directory object in database
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1331,9 +1010,6 @@ class MigrationDatapumpSettingsImportDirectoryObjectArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Absolute path of directory on database server
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -1347,11 +1023,6 @@ class MigrationDatapumpSettingsMetadataRemapArgs:
                  new_value: pulumi.Input[str],
                  old_value: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] new_value: (Updatable) Specifies the new value that oldValue should be translated into.
-        :param pulumi.Input[str] old_value: (Updatable) Specifies the value which needs to be reset.
-        :param pulumi.Input[str] type: (Updatable) Migration type.
-        """
         pulumi.set(__self__, "new_value", new_value)
         pulumi.set(__self__, "old_value", old_value)
         pulumi.set(__self__, "type", type)
@@ -1359,9 +1030,6 @@ class MigrationDatapumpSettingsMetadataRemapArgs:
     @property
     @pulumi.getter(name="newValue")
     def new_value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Specifies the new value that oldValue should be translated into.
-        """
         return pulumi.get(self, "new_value")
 
     @new_value.setter
@@ -1371,9 +1039,6 @@ class MigrationDatapumpSettingsMetadataRemapArgs:
     @property
     @pulumi.getter(name="oldValue")
     def old_value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Specifies the value which needs to be reset.
-        """
         return pulumi.get(self, "old_value")
 
     @old_value.setter
@@ -1383,9 +1048,6 @@ class MigrationDatapumpSettingsMetadataRemapArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Migration type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1399,10 +1061,6 @@ class MigrationDumpTransferDetailsArgs:
                  shared_storage_mount_target_id: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input['MigrationDumpTransferDetailsSourceArgs']] = None,
                  target: Optional[pulumi.Input['MigrationDumpTransferDetailsTargetArgs']] = None):
-        """
-        :param pulumi.Input['MigrationDumpTransferDetailsSourceArgs'] source: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
-        :param pulumi.Input['MigrationDumpTransferDetailsTargetArgs'] target: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
-        """
         if shared_storage_mount_target_id is not None:
             pulumi.set(__self__, "shared_storage_mount_target_id", shared_storage_mount_target_id)
         if source is not None:
@@ -1422,9 +1080,6 @@ class MigrationDumpTransferDetailsArgs:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['MigrationDumpTransferDetailsSourceArgs']]:
-        """
-        (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -1434,9 +1089,6 @@ class MigrationDumpTransferDetailsArgs:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input['MigrationDumpTransferDetailsTargetArgs']]:
-        """
-        (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -1450,11 +1102,6 @@ class MigrationDumpTransferDetailsSourceArgs:
                  kind: pulumi.Input[str],
                  oci_home: Optional[pulumi.Input[str]] = None,
                  wallet_location: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kind: (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
-        :param pulumi.Input[str] oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
-        :param pulumi.Input[str] wallet_location: (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
-        """
         pulumi.set(__self__, "kind", kind)
         if oci_home is not None:
             pulumi.set(__self__, "oci_home", oci_home)
@@ -1464,9 +1111,6 @@ class MigrationDumpTransferDetailsSourceArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -1476,9 +1120,6 @@ class MigrationDumpTransferDetailsSourceArgs:
     @property
     @pulumi.getter(name="ociHome")
     def oci_home(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
-        """
         return pulumi.get(self, "oci_home")
 
     @oci_home.setter
@@ -1488,9 +1129,6 @@ class MigrationDumpTransferDetailsSourceArgs:
     @property
     @pulumi.getter(name="walletLocation")
     def wallet_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
-        """
         return pulumi.get(self, "wallet_location")
 
     @wallet_location.setter
@@ -1504,11 +1142,6 @@ class MigrationDumpTransferDetailsTargetArgs:
                  kind: pulumi.Input[str],
                  oci_home: Optional[pulumi.Input[str]] = None,
                  wallet_location: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kind: (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
-        :param pulumi.Input[str] oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
-        :param pulumi.Input[str] wallet_location: (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
-        """
         pulumi.set(__self__, "kind", kind)
         if oci_home is not None:
             pulumi.set(__self__, "oci_home", oci_home)
@@ -1518,9 +1151,6 @@ class MigrationDumpTransferDetailsTargetArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -1530,9 +1160,6 @@ class MigrationDumpTransferDetailsTargetArgs:
     @property
     @pulumi.getter(name="ociHome")
     def oci_home(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
-        """
         return pulumi.get(self, "oci_home")
 
     @oci_home.setter
@@ -1542,9 +1169,6 @@ class MigrationDumpTransferDetailsTargetArgs:
     @property
     @pulumi.getter(name="walletLocation")
     def wallet_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
-        """
         return pulumi.get(self, "wallet_location")
 
     @wallet_location.setter
@@ -1559,12 +1183,6 @@ class MigrationExcludeObjectArgs:
                  owner: pulumi.Input[str],
                  is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] object: (Updatable) Name of the object (regular expression is allowed)
-        :param pulumi.Input[str] owner: (Updatable) Owner of the object (regular expression is allowed)
-        :param pulumi.Input[bool] is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-        :param pulumi.Input[str] type: (Updatable) Migration type.
-        """
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "owner", owner)
         if is_omit_excluded_table_from_replication is not None:
@@ -1575,9 +1193,6 @@ class MigrationExcludeObjectArgs:
     @property
     @pulumi.getter
     def object(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the object (regular expression is allowed)
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -1587,9 +1202,6 @@ class MigrationExcludeObjectArgs:
     @property
     @pulumi.getter
     def owner(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Owner of the object (regular expression is allowed)
-        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1599,9 +1211,6 @@ class MigrationExcludeObjectArgs:
     @property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
     def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-        """
         return pulumi.get(self, "is_omit_excluded_table_from_replication")
 
     @is_omit_excluded_table_from_replication.setter
@@ -1611,9 +1220,6 @@ class MigrationExcludeObjectArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Migration type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1626,10 +1232,6 @@ class MigrationGoldenGateDetailsArgs:
     def __init__(__self__, *,
                  hub: pulumi.Input['MigrationGoldenGateDetailsHubArgs'],
                  settings: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsArgs']] = None):
-        """
-        :param pulumi.Input['MigrationGoldenGateDetailsHubArgs'] hub: (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
-        :param pulumi.Input['MigrationGoldenGateDetailsSettingsArgs'] settings: (Updatable) Optional settings for GoldenGate Microservices processes
-        """
         pulumi.set(__self__, "hub", hub)
         if settings is not None:
             pulumi.set(__self__, "settings", settings)
@@ -1637,9 +1239,6 @@ class MigrationGoldenGateDetailsArgs:
     @property
     @pulumi.getter
     def hub(self) -> pulumi.Input['MigrationGoldenGateDetailsHubArgs']:
-        """
-        (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
-        """
         return pulumi.get(self, "hub")
 
     @hub.setter
@@ -1649,9 +1248,6 @@ class MigrationGoldenGateDetailsArgs:
     @property
     @pulumi.getter
     def settings(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsArgs']]:
-        """
-        (Updatable) Optional settings for GoldenGate Microservices processes
-        """
         return pulumi.get(self, "settings")
 
     @settings.setter
@@ -1670,16 +1266,6 @@ class MigrationGoldenGateDetailsHubArgs:
                  source_microservices_deployment_name: Optional[pulumi.Input[str]] = None,
                  target_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']] = None,
                  target_microservices_deployment_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['MigrationGoldenGateDetailsHubRestAdminCredentialsArgs'] rest_admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] url: (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
-        :param pulumi.Input[str] compute_id: (Updatable) OCID of GoldenGate Microservices compute instance.
-        :param pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs'] source_container_db_admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs'] source_db_admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] source_microservices_deployment_name: (Updatable) Name of GoldenGate Microservices deployment to operate on source database
-        :param pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs'] target_db_admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] target_microservices_deployment_name: (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-        """
         pulumi.set(__self__, "rest_admin_credentials", rest_admin_credentials)
         pulumi.set(__self__, "url", url)
         if compute_id is not None:
@@ -1698,9 +1284,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter(name="restAdminCredentials")
     def rest_admin_credentials(self) -> pulumi.Input['MigrationGoldenGateDetailsHubRestAdminCredentialsArgs']:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "rest_admin_credentials")
 
     @rest_admin_credentials.setter
@@ -1710,9 +1293,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter
     def url(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -1722,9 +1302,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter(name="computeId")
     def compute_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of GoldenGate Microservices compute instance.
-        """
         return pulumi.get(self, "compute_id")
 
     @compute_id.setter
@@ -1734,9 +1311,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter(name="sourceContainerDbAdminCredentials")
     def source_container_db_admin_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs']]:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "source_container_db_admin_credentials")
 
     @source_container_db_admin_credentials.setter
@@ -1746,9 +1320,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter(name="sourceDbAdminCredentials")
     def source_db_admin_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs']]:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "source_db_admin_credentials")
 
     @source_db_admin_credentials.setter
@@ -1758,9 +1329,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter(name="sourceMicroservicesDeploymentName")
     def source_microservices_deployment_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of GoldenGate Microservices deployment to operate on source database
-        """
         return pulumi.get(self, "source_microservices_deployment_name")
 
     @source_microservices_deployment_name.setter
@@ -1770,9 +1338,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter(name="targetDbAdminCredentials")
     def target_db_admin_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']]:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "target_db_admin_credentials")
 
     @target_db_admin_credentials.setter
@@ -1782,9 +1347,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @property
     @pulumi.getter(name="targetMicroservicesDeploymentName")
     def target_microservices_deployment_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-        """
         return pulumi.get(self, "target_microservices_deployment_name")
 
     @target_microservices_deployment_name.setter
@@ -1797,19 +1359,12 @@ class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Database  password
-        :param pulumi.Input[str] username: (Updatable) Database username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database  password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -1819,9 +1374,6 @@ class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -1834,19 +1386,12 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Database  password
-        :param pulumi.Input[str] username: (Updatable) Database username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database  password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -1856,9 +1401,6 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -1871,19 +1413,12 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Database  password
-        :param pulumi.Input[str] username: (Updatable) Database username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database  password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -1893,9 +1428,6 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -1908,19 +1440,12 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Database  password
-        :param pulumi.Input[str] username: (Updatable) Database username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database  password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -1930,9 +1455,6 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -1946,11 +1468,6 @@ class MigrationGoldenGateDetailsSettingsArgs:
                  acceptable_lag: Optional[pulumi.Input[int]] = None,
                  extract: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsExtractArgs']] = None,
                  replicat: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsReplicatArgs']] = None):
-        """
-        :param pulumi.Input[int] acceptable_lag: (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
-        :param pulumi.Input['MigrationGoldenGateDetailsSettingsExtractArgs'] extract: (Updatable) Parameters for GoldenGate Extract processes.
-        :param pulumi.Input['MigrationGoldenGateDetailsSettingsReplicatArgs'] replicat: (Updatable) Parameters for GoldenGate Replicat processes.
-        """
         if acceptable_lag is not None:
             pulumi.set(__self__, "acceptable_lag", acceptable_lag)
         if extract is not None:
@@ -1961,9 +1478,6 @@ class MigrationGoldenGateDetailsSettingsArgs:
     @property
     @pulumi.getter(name="acceptableLag")
     def acceptable_lag(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
-        """
         return pulumi.get(self, "acceptable_lag")
 
     @acceptable_lag.setter
@@ -1973,9 +1487,6 @@ class MigrationGoldenGateDetailsSettingsArgs:
     @property
     @pulumi.getter
     def extract(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsExtractArgs']]:
-        """
-        (Updatable) Parameters for GoldenGate Extract processes.
-        """
         return pulumi.get(self, "extract")
 
     @extract.setter
@@ -1985,9 +1496,6 @@ class MigrationGoldenGateDetailsSettingsArgs:
     @property
     @pulumi.getter
     def replicat(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsReplicatArgs']]:
-        """
-        (Updatable) Parameters for GoldenGate Replicat processes.
-        """
         return pulumi.get(self, "replicat")
 
     @replicat.setter
@@ -2000,10 +1508,6 @@ class MigrationGoldenGateDetailsSettingsExtractArgs:
     def __init__(__self__, *,
                  long_trans_duration: Optional[pulumi.Input[int]] = None,
                  performance_profile: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] long_trans_duration: (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
-        :param pulumi.Input[str] performance_profile: (Updatable) Extract performance.
-        """
         if long_trans_duration is not None:
             pulumi.set(__self__, "long_trans_duration", long_trans_duration)
         if performance_profile is not None:
@@ -2012,9 +1516,6 @@ class MigrationGoldenGateDetailsSettingsExtractArgs:
     @property
     @pulumi.getter(name="longTransDuration")
     def long_trans_duration(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
-        """
         return pulumi.get(self, "long_trans_duration")
 
     @long_trans_duration.setter
@@ -2024,9 +1525,6 @@ class MigrationGoldenGateDetailsSettingsExtractArgs:
     @property
     @pulumi.getter(name="performanceProfile")
     def performance_profile(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Extract performance.
-        """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
@@ -2041,12 +1539,6 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
                  max_apply_parallelism: Optional[pulumi.Input[int]] = None,
                  min_apply_parallelism: Optional[pulumi.Input[int]] = None,
                  performance_profile: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] map_parallelism: (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
-        :param pulumi.Input[int] max_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        :param pulumi.Input[int] min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        :param pulumi.Input[str] performance_profile: (Updatable) Extract performance.
-        """
         if map_parallelism is not None:
             pulumi.set(__self__, "map_parallelism", map_parallelism)
         if max_apply_parallelism is not None:
@@ -2059,9 +1551,6 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
     @property
     @pulumi.getter(name="mapParallelism")
     def map_parallelism(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
-        """
         return pulumi.get(self, "map_parallelism")
 
     @map_parallelism.setter
@@ -2071,9 +1560,6 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
     @property
     @pulumi.getter(name="maxApplyParallelism")
     def max_apply_parallelism(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        """
         return pulumi.get(self, "max_apply_parallelism")
 
     @max_apply_parallelism.setter
@@ -2083,9 +1569,6 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
     @property
     @pulumi.getter(name="minApplyParallelism")
     def min_apply_parallelism(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        """
         return pulumi.get(self, "min_apply_parallelism")
 
     @min_apply_parallelism.setter
@@ -2095,9 +1578,6 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
     @property
     @pulumi.getter(name="performanceProfile")
     def performance_profile(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Extract performance.
-        """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
@@ -2113,13 +1593,6 @@ class MigrationGoldenGateServiceDetailsArgs:
                  source_container_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs']] = None,
                  source_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs']] = None,
                  target_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs']] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['MigrationGoldenGateServiceDetailsGgsDeploymentArgs']]] ggs_deployments: Details about Oracle GoldenGate GGS Deployment.
-        :param pulumi.Input['MigrationGoldenGateServiceDetailsSettingsArgs'] settings: (Updatable) Optional settings for GoldenGate Microservices processes
-        :param pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs'] source_container_db_credentials: (Updatable) Database Credentials details.
-        :param pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs'] source_db_credentials: (Updatable) Database Credentials details.
-        :param pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs'] target_db_credentials: (Updatable) Database Credentials details.
-        """
         if ggs_deployments is not None:
             pulumi.set(__self__, "ggs_deployments", ggs_deployments)
         if settings is not None:
@@ -2134,9 +1607,6 @@ class MigrationGoldenGateServiceDetailsArgs:
     @property
     @pulumi.getter(name="ggsDeployments")
     def ggs_deployments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationGoldenGateServiceDetailsGgsDeploymentArgs']]]]:
-        """
-        Details about Oracle GoldenGate GGS Deployment.
-        """
         return pulumi.get(self, "ggs_deployments")
 
     @ggs_deployments.setter
@@ -2146,9 +1616,6 @@ class MigrationGoldenGateServiceDetailsArgs:
     @property
     @pulumi.getter
     def settings(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsArgs']]:
-        """
-        (Updatable) Optional settings for GoldenGate Microservices processes
-        """
         return pulumi.get(self, "settings")
 
     @settings.setter
@@ -2158,9 +1625,6 @@ class MigrationGoldenGateServiceDetailsArgs:
     @property
     @pulumi.getter(name="sourceContainerDbCredentials")
     def source_container_db_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs']]:
-        """
-        (Updatable) Database Credentials details.
-        """
         return pulumi.get(self, "source_container_db_credentials")
 
     @source_container_db_credentials.setter
@@ -2170,9 +1634,6 @@ class MigrationGoldenGateServiceDetailsArgs:
     @property
     @pulumi.getter(name="sourceDbCredentials")
     def source_db_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs']]:
-        """
-        (Updatable) Database Credentials details.
-        """
         return pulumi.get(self, "source_db_credentials")
 
     @source_db_credentials.setter
@@ -2182,9 +1643,6 @@ class MigrationGoldenGateServiceDetailsArgs:
     @property
     @pulumi.getter(name="targetDbCredentials")
     def target_db_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs']]:
-        """
-        (Updatable) Database Credentials details.
-        """
         return pulumi.get(self, "target_db_credentials")
 
     @target_db_credentials.setter
@@ -2197,10 +1655,6 @@ class MigrationGoldenGateServiceDetailsGgsDeploymentArgs:
     def __init__(__self__, *,
                  deployment_id: Optional[pulumi.Input[str]] = None,
                  ggs_admin_credentials_secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] deployment_id: OCID of a GoldenGate Deployment
-        :param pulumi.Input[str] ggs_admin_credentials_secret_id: OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
-        """
         if deployment_id is not None:
             pulumi.set(__self__, "deployment_id", deployment_id)
         if ggs_admin_credentials_secret_id is not None:
@@ -2209,9 +1663,6 @@ class MigrationGoldenGateServiceDetailsGgsDeploymentArgs:
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of a GoldenGate Deployment
-        """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
@@ -2221,9 +1672,6 @@ class MigrationGoldenGateServiceDetailsGgsDeploymentArgs:
     @property
     @pulumi.getter(name="ggsAdminCredentialsSecretId")
     def ggs_admin_credentials_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
-        """
         return pulumi.get(self, "ggs_admin_credentials_secret_id")
 
     @ggs_admin_credentials_secret_id.setter
@@ -2237,11 +1685,6 @@ class MigrationGoldenGateServiceDetailsSettingsArgs:
                  acceptable_lag: Optional[pulumi.Input[int]] = None,
                  extract: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs']] = None,
                  replicat: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs']] = None):
-        """
-        :param pulumi.Input[int] acceptable_lag: (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
-        :param pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs'] extract: (Updatable) Parameters for GoldenGate Extract processes.
-        :param pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs'] replicat: (Updatable) Parameters for GoldenGate Replicat processes.
-        """
         if acceptable_lag is not None:
             pulumi.set(__self__, "acceptable_lag", acceptable_lag)
         if extract is not None:
@@ -2252,9 +1695,6 @@ class MigrationGoldenGateServiceDetailsSettingsArgs:
     @property
     @pulumi.getter(name="acceptableLag")
     def acceptable_lag(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
-        """
         return pulumi.get(self, "acceptable_lag")
 
     @acceptable_lag.setter
@@ -2264,9 +1704,6 @@ class MigrationGoldenGateServiceDetailsSettingsArgs:
     @property
     @pulumi.getter
     def extract(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs']]:
-        """
-        (Updatable) Parameters for GoldenGate Extract processes.
-        """
         return pulumi.get(self, "extract")
 
     @extract.setter
@@ -2276,9 +1713,6 @@ class MigrationGoldenGateServiceDetailsSettingsArgs:
     @property
     @pulumi.getter
     def replicat(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs']]:
-        """
-        (Updatable) Parameters for GoldenGate Replicat processes.
-        """
         return pulumi.get(self, "replicat")
 
     @replicat.setter
@@ -2291,10 +1725,6 @@ class MigrationGoldenGateServiceDetailsSettingsExtractArgs:
     def __init__(__self__, *,
                  long_trans_duration: Optional[pulumi.Input[int]] = None,
                  performance_profile: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] long_trans_duration: (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
-        :param pulumi.Input[str] performance_profile: (Updatable) Extract performance.
-        """
         if long_trans_duration is not None:
             pulumi.set(__self__, "long_trans_duration", long_trans_duration)
         if performance_profile is not None:
@@ -2303,9 +1733,6 @@ class MigrationGoldenGateServiceDetailsSettingsExtractArgs:
     @property
     @pulumi.getter(name="longTransDuration")
     def long_trans_duration(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
-        """
         return pulumi.get(self, "long_trans_duration")
 
     @long_trans_duration.setter
@@ -2315,9 +1742,6 @@ class MigrationGoldenGateServiceDetailsSettingsExtractArgs:
     @property
     @pulumi.getter(name="performanceProfile")
     def performance_profile(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Extract performance.
-        """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
@@ -2331,11 +1755,6 @@ class MigrationGoldenGateServiceDetailsSettingsReplicatArgs:
                  map_parallelism: Optional[pulumi.Input[int]] = None,
                  max_apply_parallelism: Optional[pulumi.Input[int]] = None,
                  min_apply_parallelism: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] map_parallelism: (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
-        :param pulumi.Input[int] max_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        :param pulumi.Input[int] min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        """
         if map_parallelism is not None:
             pulumi.set(__self__, "map_parallelism", map_parallelism)
         if max_apply_parallelism is not None:
@@ -2346,9 +1765,6 @@ class MigrationGoldenGateServiceDetailsSettingsReplicatArgs:
     @property
     @pulumi.getter(name="mapParallelism")
     def map_parallelism(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
-        """
         return pulumi.get(self, "map_parallelism")
 
     @map_parallelism.setter
@@ -2358,9 +1774,6 @@ class MigrationGoldenGateServiceDetailsSettingsReplicatArgs:
     @property
     @pulumi.getter(name="maxApplyParallelism")
     def max_apply_parallelism(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        """
         return pulumi.get(self, "max_apply_parallelism")
 
     @max_apply_parallelism.setter
@@ -2370,9 +1783,6 @@ class MigrationGoldenGateServiceDetailsSettingsReplicatArgs:
     @property
     @pulumi.getter(name="minApplyParallelism")
     def min_apply_parallelism(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        """
         return pulumi.get(self, "min_apply_parallelism")
 
     @min_apply_parallelism.setter
@@ -2385,19 +1795,12 @@ class MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Database  password
-        :param pulumi.Input[str] username: (Updatable) Database username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database  password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -2407,9 +1810,6 @@ class MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -2422,19 +1822,12 @@ class MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Database  password
-        :param pulumi.Input[str] username: (Updatable) Database username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database  password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -2444,9 +1837,6 @@ class MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -2459,19 +1849,12 @@ class MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) Database  password
-        :param pulumi.Input[str] username: (Updatable) Database username
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database  password
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -2481,9 +1864,6 @@ class MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database username
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -2498,12 +1878,6 @@ class MigrationIncludeObjectArgs:
                  owner: pulumi.Input[str],
                  is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] object: (Updatable) Name of the object (regular expression is allowed)
-        :param pulumi.Input[str] owner: (Updatable) Owner of the object (regular expression is allowed)
-        :param pulumi.Input[bool] is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-        :param pulumi.Input[str] type: (Updatable) Migration type.
-        """
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "owner", owner)
         if is_omit_excluded_table_from_replication is not None:
@@ -2514,9 +1888,6 @@ class MigrationIncludeObjectArgs:
     @property
     @pulumi.getter
     def object(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the object (regular expression is allowed)
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -2526,9 +1897,6 @@ class MigrationIncludeObjectArgs:
     @property
     @pulumi.getter
     def owner(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Owner of the object (regular expression is allowed)
-        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -2538,9 +1906,6 @@ class MigrationIncludeObjectArgs:
     @property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
     def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-        """
         return pulumi.get(self, "is_omit_excluded_table_from_replication")
 
     @is_omit_excluded_table_from_replication.setter
@@ -2550,9 +1915,6 @@ class MigrationIncludeObjectArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Migration type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2566,15 +1928,6 @@ class MigrationVaultDetailsArgs:
                  compartment_id: pulumi.Input[str],
                  key_id: pulumi.Input[str],
                  vault_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        :param pulumi.Input[str] key_id: (Updatable) OCID of the vault encryption key
-        :param pulumi.Input[str] vault_id: (Updatable) OCID of the vault 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -2582,9 +1935,6 @@ class MigrationVaultDetailsArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -2594,9 +1944,6 @@ class MigrationVaultDetailsArgs:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the vault encryption key
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -2606,13 +1953,6 @@ class MigrationVaultDetailsArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the vault 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -2743,9 +2083,6 @@ class GetMigrationObjectTypesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Object type name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2754,9 +2091,6 @@ class GetMigrationObjectTypesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Object type name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2788,9 +2122,6 @@ class GetMigrationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of directory object in database
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2799,9 +2130,6 @@ class GetMigrationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of directory object in database
-        """
         return pulumi.get(self, "name")
 
     @name.setter

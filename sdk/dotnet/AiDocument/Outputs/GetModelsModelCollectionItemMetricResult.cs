@@ -24,7 +24,7 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// The type of the Document model.
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// Overall Metrics report for Document Classification Model.
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.AiDocument.Outputs
 
             ImmutableArray<Outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult> labelMetricsReports,
 
-            string modelType,
+            string? modelType,
 
             ImmutableArray<Outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult> overallMetricsReports)
         {

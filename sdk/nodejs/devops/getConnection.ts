@@ -47,76 +47,76 @@ export interface GetConnectionResult {
     /**
      * The OCID of personal access token saved in secret store.
      */
-    readonly accessToken: string;
+    readonly accessToken?: string;
     /**
      * OCID of personal Bitbucket Cloud AppPassword saved in secret store
      */
-    readonly appPassword: string;
+    readonly appPassword?: string;
     /**
      * The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
      */
-    readonly baseUrl: string;
+    readonly baseUrl?: string;
     /**
      * The OCID of the compartment containing the connection.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly connectionId: string;
     /**
      * The type of connection.
      */
-    readonly connectionType: string;
+    readonly connectionType?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Optional description about the connection.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The result of validating the credentials of a connection.
      */
-    readonly lastConnectionValidationResults: outputs.DevOps.GetConnectionLastConnectionValidationResult[];
+    readonly lastConnectionValidationResults?: outputs.DevOps.GetConnectionLastConnectionValidationResult[];
     /**
      * The OCID of the DevOps project.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The current state of the connection.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * TLS configuration used by build service to verify TLS connection.
      */
-    readonly tlsVerifyConfigs: outputs.DevOps.GetConnectionTlsVerifyConfig[];
+    readonly tlsVerifyConfigs?: outputs.DevOps.GetConnectionTlsVerifyConfig[];
     /**
      * Public Bitbucket Cloud Username in plain text
      */
-    readonly username: string;
+    readonly username?: string;
 }
 /**
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.

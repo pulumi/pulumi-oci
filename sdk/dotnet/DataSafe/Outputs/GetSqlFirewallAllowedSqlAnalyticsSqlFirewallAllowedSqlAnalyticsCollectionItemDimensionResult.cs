@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The database user name.
         /// </summary>
-        public readonly string DbUserName;
+        public readonly string? DbUserName;
         /// <summary>
         /// The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
         /// </summary>
-        public readonly string SqlFirewallPolicyId;
+        public readonly string? SqlFirewallPolicyId;
         /// <summary>
         /// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
         /// </summary>
-        public readonly string SqlLevel;
+        public readonly string? SqlLevel;
         /// <summary>
         /// The current state of the SQL firewall allowed SQL.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionResult(
-            string dbUserName,
+            string? dbUserName,
 
-            string sqlFirewallPolicyId,
+            string? sqlFirewallPolicyId,
 
-            string sqlLevel,
+            string? sqlLevel,
 
-            string state)
+            string? state)
         {
             DbUserName = dbUserName;
             SqlFirewallPolicyId = sqlFirewallPolicyId;

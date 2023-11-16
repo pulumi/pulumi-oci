@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRuleCondition;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentRule {
@@ -15,31 +17,31 @@ public final class GetFusionEnvironmentRule {
      * @return Rule type
      * 
      */
-    private String action;
-    private List<GetFusionEnvironmentRuleCondition> conditions;
+    private @Nullable String action;
+    private @Nullable List<GetFusionEnvironmentRuleCondition> conditions;
     /**
      * @return A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
      * 
      */
-    private String description;
+    private @Nullable String description;
 
     private GetFusionEnvironmentRule() {}
     /**
      * @return Rule type
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     public List<GetFusionEnvironmentRuleCondition> conditions() {
-        return this.conditions;
+        return this.conditions == null ? List.of() : this.conditions;
     }
     /**
      * @return A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
 
     public static Builder builder() {
@@ -51,9 +53,9 @@ public final class GetFusionEnvironmentRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<GetFusionEnvironmentRuleCondition> conditions;
-        private String description;
+        private @Nullable String action;
+        private @Nullable List<GetFusionEnvironmentRuleCondition> conditions;
+        private @Nullable String description;
         public Builder() {}
         public Builder(GetFusionEnvironmentRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,21 +65,21 @@ public final class GetFusionEnvironmentRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder conditions(List<GetFusionEnvironmentRuleCondition> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+        public Builder conditions(@Nullable List<GetFusionEnvironmentRuleCondition> conditions) {
+            this.conditions = conditions;
             return this;
         }
         public Builder conditions(GetFusionEnvironmentRuleCondition... conditions) {
             return conditions(List.of(conditions));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         public GetFusionEnvironmentRule build() {

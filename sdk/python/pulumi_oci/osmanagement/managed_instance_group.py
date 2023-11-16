@@ -24,16 +24,6 @@ class ManagedInstanceGroupArgs:
                  os_family: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroup resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -49,9 +39,6 @@ class ManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -61,9 +48,6 @@ class ManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Managed Instance Group identifier
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -73,9 +57,6 @@ class ManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -85,9 +66,6 @@ class ManagedInstanceGroupArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information specified by the user about the managed instance group
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -97,9 +75,6 @@ class ManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -109,13 +84,6 @@ class ManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
@@ -137,18 +105,6 @@ class _ManagedInstanceGroupState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroup resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
-        :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]] managed_instances: list of Managed Instances in the group
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Software Source.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -172,9 +128,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -184,9 +137,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -196,9 +146,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information specified by the user about the managed instance group
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -208,9 +155,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Managed Instance Group identifier
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -220,9 +164,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -241,9 +182,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter(name="managedInstances")
     def managed_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]]]:
-        """
-        list of Managed Instances in the group
-        """
         return pulumi.get(self, "managed_instances")
 
     @managed_instances.setter
@@ -253,13 +191,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
@@ -269,9 +200,6 @@ class _ManagedInstanceGroupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Software Source.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -292,51 +220,9 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  os_family: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure OS Management service.
-
-        Creates a new Managed Instance Group on the management system.
-        This will not contain any managed instances after it is first created,
-        and they must be added later.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_managed_instance_group = oci.os_management.ManagedInstanceGroup("testManagedInstanceGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["managed_instance_group_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["managed_instance_group_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            os_family=var["managed_instance_group_os_family"])
-        ```
-
-        ## Import
-
-        ManagedInstanceGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
-        ```
-
+        Create a ManagedInstanceGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
-        :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -345,39 +231,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  args: ManagedInstanceGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure OS Management service.
-
-        Creates a new Managed Instance Group on the management system.
-        This will not contain any managed instances after it is first created,
-        and they must be added later.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_managed_instance_group = oci.os_management.ManagedInstanceGroup("testManagedInstanceGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["managed_instance_group_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["managed_instance_group_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            os_family=var["managed_instance_group_os_family"])
-        ```
-
-        ## Import
-
-        ManagedInstanceGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
-        ```
-
+        Create a ManagedInstanceGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -447,18 +301,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
-        :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManagedInstanceArgs']]]] managed_instances: list of Managed Instances in the group
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Software Source.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -478,73 +320,45 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Information specified by the user about the managed instance group
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Managed Instance Group identifier
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="managedInstanceCount")
-    def managed_instance_count(self) -> pulumi.Output[int]:
+    def managed_instance_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "managed_instance_count")
 
     @property
     @pulumi.getter(name="managedInstances")
-    def managed_instances(self) -> pulumi.Output[Sequence['outputs.ManagedInstanceGroupManagedInstance']]:
-        """
-        list of Managed Instances in the group
-        """
+    def managed_instances(self) -> pulumi.Output[Optional[Sequence['outputs.ManagedInstanceGroupManagedInstance']]]:
         return pulumi.get(self, "managed_instances")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> pulumi.Output[str]:
-        """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def os_family(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Software Source.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

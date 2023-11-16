@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,30 +59,30 @@ type LookupSdmMaskingPolicyDifferenceArgs struct {
 // A collection of values returned by getSdmMaskingPolicyDifference.
 type LookupSdmMaskingPolicyDifferenceResult struct {
 	// The OCID of the compartment that contains the SDM masking policy difference.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-	DifferenceType string `pulumi:"differenceType"`
+	DifferenceType *string `pulumi:"differenceType"`
 	// The display name of the SDM masking policy difference.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the SDM masking policy difference.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the masking policy associated with the SDM masking policy difference.
-	MaskingPolicyId              string `pulumi:"maskingPolicyId"`
-	SdmMaskingPolicyDifferenceId string `pulumi:"sdmMaskingPolicyDifferenceId"`
+	MaskingPolicyId              *string `pulumi:"maskingPolicyId"`
+	SdmMaskingPolicyDifferenceId string  `pulumi:"sdmMaskingPolicyDifferenceId"`
 	// The OCID of the sensitive data model associated with the SDM masking policy difference.
-	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
 	// The current state of the SDM masking policy difference.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreationStarted string `pulumi:"timeCreationStarted"`
+	TimeCreationStarted *string `pulumi:"timeCreationStarted"`
 }
 
 func LookupSdmMaskingPolicyDifferenceOutput(ctx *pulumi.Context, args LookupSdmMaskingPolicyDifferenceOutputArgs, opts ...pulumi.InvokeOption) LookupSdmMaskingPolicyDifferenceResultOutput {
@@ -124,15 +123,9 @@ func (o LookupSdmMaskingPolicyDifferenceResultOutput) ToLookupSdmMaskingPolicyDi
 	return o
 }
 
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSdmMaskingPolicyDifferenceResult] {
-	return pulumix.Output[LookupSdmMaskingPolicyDifferenceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the SDM masking policy difference.
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -141,13 +134,13 @@ func (o LookupSdmMaskingPolicyDifferenceResultOutput) DefinedTags() pulumi.MapOu
 }
 
 // The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) DifferenceType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.DifferenceType }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) DifferenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.DifferenceType }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the SDM masking policy difference.
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -156,13 +149,13 @@ func (o LookupSdmMaskingPolicyDifferenceResultOutput) FreeformTags() pulumi.MapO
 }
 
 // The OCID of the SDM masking policy difference.
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the masking policy associated with the SDM masking policy difference.
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) MaskingPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.MaskingPolicyId }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) MaskingPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.MaskingPolicyId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSdmMaskingPolicyDifferenceResultOutput) SdmMaskingPolicyDifferenceId() pulumi.StringOutput {
@@ -170,13 +163,13 @@ func (o LookupSdmMaskingPolicyDifferenceResultOutput) SdmMaskingPolicyDifference
 }
 
 // The OCID of the sensitive data model associated with the SDM masking policy difference.
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) SensitiveDataModelId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.SensitiveDataModelId }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) SensitiveDataModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.SensitiveDataModelId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the SDM masking policy difference.
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -185,13 +178,13 @@ func (o LookupSdmMaskingPolicyDifferenceResultOutput) SystemTags() pulumi.MapOut
 }
 
 // The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSdmMaskingPolicyDifferenceResultOutput) TimeCreationStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.TimeCreationStarted }).(pulumi.StringOutput)
+func (o LookupSdmMaskingPolicyDifferenceResultOutput) TimeCreationStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) *string { return v.TimeCreationStarted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

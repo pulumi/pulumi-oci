@@ -111,8 +111,8 @@ export class Job extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly artifactContentLength!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly artifactContentMd5!: pulumi.Output<string>;
-    public /*out*/ readonly artifactLastModified!: pulumi.Output<string>;
+    public /*out*/ readonly artifactContentMd5!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly artifactLastModified!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
@@ -120,11 +120,11 @@ export class Job extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Delete all related JobRuns upon deletion of the Job.
      */
@@ -132,16 +132,16 @@ export class Job extends pulumi.CustomResource {
     /**
      * (Updatable) A short description of the job.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public /*out*/ readonly emptyArtifact!: pulumi.Output<boolean>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly emptyArtifact!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
      */
@@ -157,15 +157,15 @@ export class Job extends pulumi.CustomResource {
     /**
      * Logging configuration for resource.
      */
-    public readonly jobLogConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobLogConfigurationDetails>;
+    public readonly jobLogConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobLogConfigurationDetails | undefined>;
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
-    public readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobJobStorageMountConfigurationDetailsList[]>;
+    public readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobJobStorageMountConfigurationDetailsList[] | undefined>;
     /**
      * The state of the job.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      */
@@ -173,11 +173,11 @@ export class Job extends pulumi.CustomResource {
     /**
      * The state of the job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Job resource with the given unique name, arguments, and options.

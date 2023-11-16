@@ -90,7 +90,7 @@ export interface GetOutboundConnectorsResult {
     /**
      * The list of outbound_connectors.
      */
-    readonly outboundConnectors: outputs.FileStorage.GetOutboundConnectorsOutboundConnector[];
+    readonly outboundConnectors?: outputs.FileStorage.GetOutboundConnectorsOutboundConnector[];
     /**
      * The current state of this outbound connector.
      */

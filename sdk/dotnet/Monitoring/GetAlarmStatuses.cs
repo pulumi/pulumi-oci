@@ -242,7 +242,7 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ResourceId;
         public readonly string? ServiceName;
         /// <summary>
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.Monitoring
 
             ImmutableArray<Outputs.GetAlarmStatusesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? resourceId,
 

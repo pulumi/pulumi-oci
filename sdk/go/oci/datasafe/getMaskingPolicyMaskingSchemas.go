@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Masking Policy Masking Schemas in Oracle Cloud Infrastructure Data Safe service.
@@ -65,8 +64,8 @@ type GetMaskingPolicyMaskingSchemasArgs struct {
 type GetMaskingPolicyMaskingSchemasResult struct {
 	Filters []GetMaskingPolicyMaskingSchemasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string `pulumi:"id"`
-	MaskingPolicyId string `pulumi:"maskingPolicyId"`
+	Id              *string `pulumi:"id"`
+	MaskingPolicyId string  `pulumi:"maskingPolicyId"`
 	// The list of masking_schema_collection.
 	MaskingSchemaCollections []GetMaskingPolicyMaskingSchemasMaskingSchemaCollection `pulumi:"maskingSchemaCollections"`
 	// The database schema that contains the masking column.
@@ -114,19 +113,13 @@ func (o GetMaskingPolicyMaskingSchemasResultOutput) ToGetMaskingPolicyMaskingSch
 	return o
 }
 
-func (o GetMaskingPolicyMaskingSchemasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingSchemasResult] {
-	return pulumix.Output[GetMaskingPolicyMaskingSchemasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMaskingPolicyMaskingSchemasResultOutput) Filters() GetMaskingPolicyMaskingSchemasFilterArrayOutput {
 	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasResult) []GetMaskingPolicyMaskingSchemasFilter { return v.Filters }).(GetMaskingPolicyMaskingSchemasFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaskingPolicyMaskingSchemasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaskingPolicyMaskingSchemasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMaskingPolicyMaskingSchemasResultOutput) MaskingPolicyId() pulumi.StringOutput {

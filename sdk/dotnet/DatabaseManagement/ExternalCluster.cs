@@ -29,25 +29,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("additionalDetails")]
-        public Output<ImmutableDictionary<string, object>> AdditionalDetails { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdditionalDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the external cluster.
         /// </summary>
         [Output("componentName")]
-        public Output<string> ComponentName { get; private set; } = null!;
+        public Output<string?> ComponentName { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the external cluster. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -63,31 +63,31 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("externalConnectorId")]
-        public Output<string> ExternalConnectorId { get; private set; } = null!;
+        public Output<string?> ExternalConnectorId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
         /// </summary>
         [Output("externalDbSystemId")]
-        public Output<string> ExternalDbSystemId { get; private set; } = null!;
+        public Output<string?> ExternalDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// The directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
         [Output("gridHome")]
-        public Output<string> GridHome { get; private set; } = null!;
+        public Output<string?> GridHome { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the cluster is Oracle Flex Cluster or not.
         /// </summary>
         [Output("isFlexCluster")]
-        public Output<bool> IsFlexCluster { get; private set; } = null!;
+        public Output<bool?> IsFlexCluster { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The list of network address configurations of the external cluster.
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The location of the Oracle Cluster Registry (OCR).
         /// </summary>
         [Output("ocrFileLocation")]
-        public Output<string> OcrFileLocation { get; private set; } = null!;
+        public Output<string?> OcrFileLocation { get; private set; } = null!;
 
         /// <summary>
         /// The list of Single Client Access Name (SCAN) configurations of the external cluster.
@@ -111,25 +111,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The current lifecycle state of the external cluster.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external cluster was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external cluster was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The cluster version.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
         /// <summary>
         /// The list of Virtual IP (VIP) configurations of the external cluster.

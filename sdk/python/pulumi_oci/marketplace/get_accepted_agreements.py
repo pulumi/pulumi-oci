@@ -56,26 +56,17 @@ class GetAcceptedAgreementsResult:
 
     @property
     @pulumi.getter(name="acceptedAgreements")
-    def accepted_agreements(self) -> Sequence['outputs.GetAcceptedAgreementsAcceptedAgreementResult']:
-        """
-        The list of accepted_agreements.
-        """
+    def accepted_agreements(self) -> Optional[Sequence['outputs.GetAcceptedAgreementsAcceptedAgreementResult']]:
         return pulumi.get(self, "accepted_agreements")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The unique identifier for the compartment where the agreement was accepted.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A display name for the accepted agreement.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +76,7 @@ class GetAcceptedAgreementsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,17 +85,11 @@ class GetAcceptedAgreementsResult:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> Optional[str]:
-        """
-        The unique identifier for the listing associated with the agreement.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> Optional[str]:
-        """
-        The package version associated with the agreement.
-        """
         return pulumi.get(self, "package_version")
 
 
@@ -132,30 +117,7 @@ def get_accepted_agreements(accepted_agreement_id: Optional[str] = None,
                             package_version: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAcceptedAgreementsResult:
     """
-    This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
-
-    Lists the terms of use agreements that have been accepted in the specified compartment.
-    You can filter results by specifying query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=var["compartment_id"],
-        accepted_agreement_id=oci_marketplace_accepted_agreement["test_accepted_agreement"]["id"],
-        display_name=var["accepted_agreement_display_name"],
-        listing_id=oci_marketplace_listing["test_listing"]["id"],
-        package_version=var["accepted_agreement_package_version"])
-    ```
-
-
-    :param str accepted_agreement_id: The unique identifier for the accepted terms of use agreement.
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str display_name: The display name of the resource.
-    :param str listing_id: The unique identifier for the listing.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['acceptedAgreementId'] = accepted_agreement_id
@@ -187,29 +149,6 @@ def get_accepted_agreements_output(accepted_agreement_id: Optional[pulumi.Input[
                                    package_version: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAcceptedAgreementsResult]:
     """
-    This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
-
-    Lists the terms of use agreements that have been accepted in the specified compartment.
-    You can filter results by specifying query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=var["compartment_id"],
-        accepted_agreement_id=oci_marketplace_accepted_agreement["test_accepted_agreement"]["id"],
-        display_name=var["accepted_agreement_display_name"],
-        listing_id=oci_marketplace_listing["test_listing"]["id"],
-        package_version=var["accepted_agreement_package_version"])
-    ```
-
-
-    :param str accepted_agreement_id: The unique identifier for the accepted terms of use agreement.
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str display_name: The display name of the resource.
-    :param str listing_id: The unique identifier for the listing.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
+    Use this data source to access information about an existing resource.
     """
     ...

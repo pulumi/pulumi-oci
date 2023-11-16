@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Inventories in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -67,7 +66,7 @@ type GetInventoriesResult struct {
 	CompartmentId string                 `pulumi:"compartmentId"`
 	Filters       []GetInventoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of inventory_collection.
 	InventoryCollections []GetInventoriesInventoryCollection `pulumi:"inventoryCollections"`
 	// The current state of the inventory.
@@ -115,12 +114,6 @@ func (o GetInventoriesResultOutput) ToGetInventoriesResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetInventoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesResult] {
-	return pulumix.Output[GetInventoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenantId.
 func (o GetInventoriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInventoriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -131,8 +124,8 @@ func (o GetInventoriesResultOutput) Filters() GetInventoriesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInventoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInventoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of inventory_collection.

@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Availability domain where the ContainerInstance will be created.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Container configuration type.
         /// </summary>
-        public readonly string ContainerConfigType;
+        public readonly string? ContainerConfigType;
         /// <summary>
         /// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
 
         [OutputConstructor]
         private GetDeployStageContainerConfigResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string containerConfigType,
+            string? containerConfigType,
 
             ImmutableArray<Outputs.GetDeployStageContainerConfigNetworkChannelResult> networkChannels,
 
             ImmutableArray<Outputs.GetDeployStageContainerConfigShapeConfigResult> shapeConfigs,
 
-            string shapeName)
+            string? shapeName)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

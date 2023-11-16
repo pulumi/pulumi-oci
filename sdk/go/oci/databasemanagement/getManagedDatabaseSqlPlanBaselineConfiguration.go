@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -66,24 +65,24 @@ type GetManagedDatabaseSqlPlanBaselineConfigurationResult struct {
 	// The set of parameters used in an SPM evolve task.
 	AutoSpmEvolveTaskParameters []GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter `pulumi:"autoSpmEvolveTaskParameters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
-	IsAutoSpmEvolveTaskEnabled bool `pulumi:"isAutoSpmEvolveTaskEnabled"`
+	IsAutoSpmEvolveTaskEnabled *bool `pulumi:"isAutoSpmEvolveTaskEnabled"`
 	// Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
-	IsAutomaticInitialPlanCaptureEnabled bool `pulumi:"isAutomaticInitialPlanCaptureEnabled"`
+	IsAutomaticInitialPlanCaptureEnabled *bool `pulumi:"isAutomaticInitialPlanCaptureEnabled"`
 	// Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
-	IsHighFrequencyAutoSpmEvolveTaskEnabled bool `pulumi:"isHighFrequencyAutoSpmEvolveTaskEnabled"`
+	IsHighFrequencyAutoSpmEvolveTaskEnabled *bool `pulumi:"isHighFrequencyAutoSpmEvolveTaskEnabled"`
 	// Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
-	IsSqlPlanBaselinesUsageEnabled bool   `pulumi:"isSqlPlanBaselinesUsageEnabled"`
+	IsSqlPlanBaselinesUsageEnabled *bool  `pulumi:"isSqlPlanBaselinesUsageEnabled"`
 	ManagedDatabaseId              string `pulumi:"managedDatabaseId"`
 	// The number of weeks to retain unused plans before they are purged.
-	PlanRetentionWeeks int `pulumi:"planRetentionWeeks"`
+	PlanRetentionWeeks *int `pulumi:"planRetentionWeeks"`
 	// The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
-	SpaceBudgetMb float64 `pulumi:"spaceBudgetMb"`
+	SpaceBudgetMb *float64 `pulumi:"spaceBudgetMb"`
 	// The maximum percent of `SYSAUX` space that can be used for SQL Management Base.
-	SpaceBudgetPercent float64 `pulumi:"spaceBudgetPercent"`
+	SpaceBudgetPercent *float64 `pulumi:"spaceBudgetPercent"`
 	// The space used by SQL Management Base in MB.
-	SpaceUsedMb float64 `pulumi:"spaceUsedMb"`
+	SpaceUsedMb *float64 `pulumi:"spaceUsedMb"`
 }
 
 func GetManagedDatabaseSqlPlanBaselineConfigurationOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlPlanBaselineConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput {
@@ -124,12 +123,6 @@ func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ToGetManaged
 	return o
 }
 
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The capture filters used in automatic initial plan capture.
 func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) AutoCaptureFilters() GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) []GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter {
@@ -145,34 +138,36 @@ func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) AutoSpmEvolv
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsAutoSpmEvolveTaskEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) bool { return v.IsAutoSpmEvolveTaskEnabled }).(pulumi.BoolOutput)
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsAutoSpmEvolveTaskEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *bool {
+		return v.IsAutoSpmEvolveTaskEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsAutomaticInitialPlanCaptureEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) bool {
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsAutomaticInitialPlanCaptureEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *bool {
 		return v.IsAutomaticInitialPlanCaptureEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsHighFrequencyAutoSpmEvolveTaskEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) bool {
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsHighFrequencyAutoSpmEvolveTaskEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *bool {
 		return v.IsHighFrequencyAutoSpmEvolveTaskEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsSqlPlanBaselinesUsageEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) bool {
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsSqlPlanBaselinesUsageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *bool {
 		return v.IsSqlPlanBaselinesUsageEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ManagedDatabaseId() pulumi.StringOutput {
@@ -180,23 +175,23 @@ func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ManagedDatab
 }
 
 // The number of weeks to retain unused plans before they are purged.
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) PlanRetentionWeeks() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) int { return v.PlanRetentionWeeks }).(pulumi.IntOutput)
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) PlanRetentionWeeks() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *int { return v.PlanRetentionWeeks }).(pulumi.IntPtrOutput)
 }
 
 // The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) SpaceBudgetMb() pulumi.Float64Output {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) float64 { return v.SpaceBudgetMb }).(pulumi.Float64Output)
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) SpaceBudgetMb() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *float64 { return v.SpaceBudgetMb }).(pulumi.Float64PtrOutput)
 }
 
 // The maximum percent of `SYSAUX` space that can be used for SQL Management Base.
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) SpaceBudgetPercent() pulumi.Float64Output {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) float64 { return v.SpaceBudgetPercent }).(pulumi.Float64Output)
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) SpaceBudgetPercent() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *float64 { return v.SpaceBudgetPercent }).(pulumi.Float64PtrOutput)
 }
 
 // The space used by SQL Management Base in MB.
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) SpaceUsedMb() pulumi.Float64Output {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) float64 { return v.SpaceUsedMb }).(pulumi.Float64Output)
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) SpaceUsedMb() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *float64 { return v.SpaceUsedMb }).(pulumi.Float64PtrOutput)
 }
 
 func init() {

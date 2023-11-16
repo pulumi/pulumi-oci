@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Account Mgmt Infos in Oracle Cloud Infrastructure Identity Domains service.
@@ -94,16 +93,16 @@ type GetDomainsAccountMgmtInfosResult struct {
 	Authorization    *string                                     `pulumi:"authorization"`
 	CompartmentId    *string                                     `pulumi:"compartmentId"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id                        string  `pulumi:"id"`
+	Id                        *string `pulumi:"id"`
 	IdcsEndpoint              string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage              int     `pulumi:"itemsPerPage"`
+	ItemsPerPage              *int    `pulumi:"itemsPerPage"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas      []string `pulumi:"schemas"`
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsAccountMgmtInfosOutput(ctx *pulumi.Context, args GetDomainsAccountMgmtInfosOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAccountMgmtInfosResultOutput {
@@ -161,12 +160,6 @@ func (o GetDomainsAccountMgmtInfosResultOutput) ToGetDomainsAccountMgmtInfosResu
 	return o
 }
 
-func (o GetDomainsAccountMgmtInfosResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsAccountMgmtInfosResult] {
-	return pulumix.Output[GetDomainsAccountMgmtInfosResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsAccountMgmtInfosResultOutput) AccountMgmtInfoCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) *int { return v.AccountMgmtInfoCount }).(pulumi.IntPtrOutput)
 }
@@ -199,16 +192,16 @@ func (o GetDomainsAccountMgmtInfosResultOutput) CompartmentId() pulumi.StringPtr
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o GetDomainsAccountMgmtInfosResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfosResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsAccountMgmtInfosResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsAccountMgmtInfosResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsAccountMgmtInfosResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsAccountMgmtInfosResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -232,8 +225,8 @@ func (o GetDomainsAccountMgmtInfosResultOutput) StartIndex() pulumi.IntPtrOutput
 	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsAccountMgmtInfosResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsAccountMgmtInfosResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfosResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

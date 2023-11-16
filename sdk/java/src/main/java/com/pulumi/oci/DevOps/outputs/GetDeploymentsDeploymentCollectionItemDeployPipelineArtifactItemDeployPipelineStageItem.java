@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem {
@@ -13,27 +15,27 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
      * @return The OCID of the stage.
      * 
      */
-    private String deployStageId;
+    private @Nullable String deployStageId;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem() {}
     /**
      * @return The OCID of the stage.
      * 
      */
-    public String deployStageId() {
-        return this.deployStageId;
+    public Optional<String> deployStageId() {
+        return Optional.ofNullable(this.deployStageId);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deployStageId;
-        private String displayName;
+        private @Nullable String deployStageId;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
         }
 
         @CustomType.Setter
-        public Builder deployStageId(String deployStageId) {
-            this.deployStageId = Objects.requireNonNull(deployStageId);
+        public Builder deployStageId(@Nullable String deployStageId) {
+            this.deployStageId = deployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem build() {

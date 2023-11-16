@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
@@ -74,7 +73,7 @@ type GetAlertRulesResult struct {
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetAlertRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the alert rule.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetAlertRulesResultOutput) ToGetAlertRulesResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetAlertRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertRulesResult] {
-	return pulumix.Output[GetAlertRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of alert_rules.
 func (o GetAlertRulesResultOutput) AlertRules() GetAlertRulesAlertRuleArrayOutput {
 	return o.ApplyT(func(v GetAlertRulesResult) []GetAlertRulesAlertRule { return v.AlertRules }).(GetAlertRulesAlertRuleArrayOutput)
@@ -148,8 +141,8 @@ func (o GetAlertRulesResultOutput) Filters() GetAlertRulesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAlertRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlertRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the alert rule.

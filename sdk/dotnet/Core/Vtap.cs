@@ -90,43 +90,43 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
         /// </summary>
         [Output("encapsulationProtocol")]
-        public Output<string> EncapsulationProtocol { get; private set; } = null!;
+        public Output<string?> EncapsulationProtocol { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Used to start or stop a `Vtap` resource.
         /// </summary>
         [Output("isVtapEnabled")]
-        public Output<bool> IsVtapEnabled { get; private set; } = null!;
+        public Output<bool?> IsVtapEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The VTAP's current running state.
         /// </summary>
         [Output("lifecycleStateDetails")]
-        public Output<string> LifecycleStateDetails { get; private set; } = null!;
+        public Output<string?> LifecycleStateDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The maximum size of the packets to be included in the filter.
         /// </summary>
         [Output("maxPacketSize")]
-        public Output<int> MaxPacketSize { get; private set; } = null!;
+        public Output<int?> MaxPacketSize { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
@@ -138,55 +138,55 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The IP Address of the source private endpoint.
         /// </summary>
         [Output("sourcePrivateEndpointIp")]
-        public Output<string> SourcePrivateEndpointIp { get; private set; } = null!;
+        public Output<string?> SourcePrivateEndpointIp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
         /// </summary>
         [Output("sourcePrivateEndpointSubnetId")]
-        public Output<string> SourcePrivateEndpointSubnetId { get; private set; } = null!;
+        public Output<string?> SourcePrivateEndpointSubnetId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The source type for the VTAP.
         /// </summary>
         [Output("sourceType")]
-        public Output<string> SourceType { get; private set; } = null!;
+        public Output<string?> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// The VTAP's administrative lifecycle state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
         /// </summary>
         [Output("targetId")]
-        public Output<string> TargetId { get; private set; } = null!;
+        public Output<string?> TargetId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The IP address of the destination resource where mirrored packets are sent.
         /// </summary>
         [Output("targetIp")]
-        public Output<string> TargetIp { get; private set; } = null!;
+        public Output<string?> TargetIp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target type for the VTAP.
         /// </summary>
         [Output("targetType")]
-        public Output<string> TargetType { get; private set; } = null!;
+        public Output<string?> TargetType { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
         /// </summary>
         [Output("trafficMode")]
-        public Output<string> TrafficMode { get; private set; } = null!;
+        public Output<string?> TrafficMode { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vxlanNetworkIdentifier")]
-        public Output<string> VxlanNetworkIdentifier { get; private set; } = null!;
+        public Output<string?> VxlanNetworkIdentifier { get; private set; } = null!;
 
 
         /// <summary>

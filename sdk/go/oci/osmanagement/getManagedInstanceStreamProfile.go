@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
@@ -105,8 +104,8 @@ type GetManagedInstanceStreamProfileResult struct {
 	CompartmentId *string                                 `pulumi:"compartmentId"`
 	Filters       []GetManagedInstanceStreamProfileFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	Id                *string `pulumi:"id"`
+	ManagedInstanceId string  `pulumi:"managedInstanceId"`
 	// The name of the module that contains the stream profile
 	ModuleName *string `pulumi:"moduleName"`
 	// The list of module_stream_profile_on_managed_instances.
@@ -171,12 +170,6 @@ func (o GetManagedInstanceStreamProfileResultOutput) ToGetManagedInstanceStreamP
 	return o
 }
 
-func (o GetManagedInstanceStreamProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileResult] {
-	return pulumix.Output[GetManagedInstanceStreamProfileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceStreamProfileResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstanceStreamProfileResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -188,8 +181,8 @@ func (o GetManagedInstanceStreamProfileResultOutput) Filters() GetManagedInstanc
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedInstanceStreamProfileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceStreamProfileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceStreamProfileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedInstanceStreamProfileResultOutput) ManagedInstanceId() pulumi.StringOutput {

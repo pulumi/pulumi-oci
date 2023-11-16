@@ -79,11 +79,11 @@ export interface GetDhcpOptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The collection of individual DHCP options.
      */
-    readonly options: outputs.Core.GetDhcpOptionsOption[];
+    readonly options?: outputs.Core.GetDhcpOptionsOption[];
     /**
      * The current state of the set of DHCP options.
      */

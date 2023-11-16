@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGatewaysGatewayCollectionCaBundle {
@@ -13,39 +15,39 @@ public final class GetGatewaysGatewayCollectionCaBundle {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private String caBundleId;
+    private @Nullable String caBundleId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private String certificateAuthorityId;
+    private @Nullable String certificateAuthorityId;
     /**
      * @return Type of the Response Cache.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetGatewaysGatewayCollectionCaBundle() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    public String caBundleId() {
-        return this.caBundleId;
+    public Optional<String> caBundleId() {
+        return Optional.ofNullable(this.caBundleId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    public String certificateAuthorityId() {
-        return this.certificateAuthorityId;
+    public Optional<String> certificateAuthorityId() {
+        return Optional.ofNullable(this.certificateAuthorityId);
     }
     /**
      * @return Type of the Response Cache.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetGatewaysGatewayCollectionCaBundle {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String caBundleId;
-        private String certificateAuthorityId;
-        private String type;
+        private @Nullable String caBundleId;
+        private @Nullable String certificateAuthorityId;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetGatewaysGatewayCollectionCaBundle defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetGatewaysGatewayCollectionCaBundle {
         }
 
         @CustomType.Setter
-        public Builder caBundleId(String caBundleId) {
-            this.caBundleId = Objects.requireNonNull(caBundleId);
+        public Builder caBundleId(@Nullable String caBundleId) {
+            this.caBundleId = caBundleId;
             return this;
         }
         @CustomType.Setter
-        public Builder certificateAuthorityId(String certificateAuthorityId) {
-            this.certificateAuthorityId = Objects.requireNonNull(certificateAuthorityId);
+        public Builder certificateAuthorityId(@Nullable String certificateAuthorityId) {
+            this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetGatewaysGatewayCollectionCaBundle build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -41,7 +40,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	Active pulumi.BoolOutput `pulumi:"active"`
+	Active pulumi.BoolPtrOutput `pulumi:"active"`
 	// (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
 	//
 	// **SCIM++ Properties:**
@@ -72,7 +71,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -84,7 +83,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Description of the user
 	//
 	// **Added In:** 2012271618
@@ -99,7 +98,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
 	//
 	// **SCIM++ Properties:**
@@ -110,7 +109,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -122,7 +121,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) A complex attribute representing emails
 	//
 	// **SCIM++ Properties:**
@@ -159,7 +158,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	//
 	// **SCIM++ Properties:**
@@ -205,7 +204,7 @@ type DomainsUser struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -242,7 +241,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Locale pulumi.StringOutput `pulumi:"locale"`
+	Locale pulumi.StringPtrOutput `pulumi:"locale"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -283,7 +282,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	NickName pulumi.StringOutput `pulumi:"nickName"`
+	NickName pulumi.StringPtrOutput `pulumi:"nickName"`
 	// (Updatable) The OCID of the user's support account.
 	//
 	// **Added In:** 2103141444
@@ -297,7 +296,7 @@ type DomainsUser struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) Password attribute. Max length for password is controlled via Password Policy.
 	//
 	// **SCIM++ Properties:**
@@ -312,7 +311,7 @@ type DomainsUser struct {
 	// * returned: never
 	// * type: string
 	// * uniqueness: none
-	Password pulumi.StringOutput `pulumi:"password"`
+	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// (Updatable) Phone numbers
 	//
 	// **SCIM++ Properties:**
@@ -351,7 +350,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	PreferredLanguage pulumi.StringOutput `pulumi:"preferredLanguage"`
+	PreferredLanguage pulumi.StringPtrOutput `pulumi:"preferredLanguage"`
 	// (Updatable) A fully-qualified URL to a page representing the User's online profile
 	//
 	// **SCIM++ Properties:**
@@ -366,7 +365,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: reference
 	// * uniqueness: none
-	ProfileUrl pulumi.StringOutput `pulumi:"profileUrl"`
+	ProfileUrl pulumi.StringPtrOutput `pulumi:"profileUrl"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
@@ -415,7 +414,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) User's timezone
 	//
 	// **SCIM++ Properties:**
@@ -431,7 +430,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Timezone pulumi.StringOutput `pulumi:"timezone"`
+	Timezone pulumi.StringPtrOutput `pulumi:"timezone"`
 	// (Updatable) Title
 	//
 	// **SCIM++ Properties:**
@@ -446,47 +445,47 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Title pulumi.StringOutput `pulumi:"title"`
+	Title pulumi.StringPtrOutput `pulumi:"title"`
 	// (Updatable) Enterprise User
-	Urnietfparamsscimschemasextensionenterprise20user DomainsUserUrnietfparamsscimschemasextensionenterprise20userOutput `pulumi:"urnietfparamsscimschemasextensionenterprise20user"`
+	Urnietfparamsscimschemasextensionenterprise20user DomainsUserUrnietfparamsscimschemasextensionenterprise20userPtrOutput `pulumi:"urnietfparamsscimschemasextensionenterprise20user"`
 	// (Updatable) Oracle Cloud Infrastructure Tags.
-	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
+	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
 	// (Updatable) This extension defines attributes to manage user's risk score.
-	UrnietfparamsscimschemasoracleidcsextensionadaptiveUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionadaptiveUser"`
+	UrnietfparamsscimschemasoracleidcsextensionadaptiveUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionadaptiveUser"`
 	// (Updatable) User's Capabilities
-	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"`
+	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"`
 	// (Updatable) The database credentials user extension.
-	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"`
+	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"`
 	// (Updatable) DB User extension
 	UrnietfparamsscimschemasoracleidcsextensiondbUserUsers DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbUserUsers"`
 	// (Updatable) Kerberos User extension
-	UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionkerberosUserUser"`
+	UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionkerberosUserUser"`
 	// (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-	UrnietfparamsscimschemasoracleidcsextensionmfaUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionmfaUser"`
+	UrnietfparamsscimschemasoracleidcsextensionmfaUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionmfaUser"`
 	// (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 	UrnietfparamsscimschemasoracleidcsextensionpasswordStateUsers DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers"`
 	// (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"`
+	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"`
 	// (Updatable) POSIX User extension
-	UrnietfparamsscimschemasoracleidcsextensionposixUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixUser"`
+	UrnietfparamsscimschemasoracleidcsextensionposixUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixUser"`
 	// (Updatable) This extension defines the attributes used to store the security questions of a user.
-	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"`
+	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"`
 	// (Updatable) Controls whether a user can update themselves or not via User related APIs
-	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
+	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-	UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser"`
+	UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser"`
 	// (Updatable) SFF Auth Keys User extension
-	UrnietfparamsscimschemasoracleidcsextensionsffUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsffUser"`
+	UrnietfparamsscimschemasoracleidcsextensionsffUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsffUser"`
 	// (Updatable) Social User extension
-	UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsocialAccountUser"`
+	UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsocialAccountUser"`
 	// (Updatable) Terms Of Use extension
-	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"`
+	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"`
 	// (Updatable) User's credentials
 	UrnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers"`
 	// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-	UrnietfparamsscimschemasoracleidcsextensionuserStateUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserStateUser"`
+	UrnietfparamsscimschemasoracleidcsextensionuserStateUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserStateUser"`
 	// (Updatable) Oracle Identity Cloud Service User
-	UrnietfparamsscimschemasoracleidcsextensionuserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserUser"`
+	UrnietfparamsscimschemasoracleidcsextensionuserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserUser"`
 	// (Updatable) User name
 	//
 	// **SCIM++ Properties:**
@@ -516,7 +515,7 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	UserType pulumi.StringOutput `pulumi:"userType"`
+	UserType pulumi.StringPtrOutput `pulumi:"userType"`
 	// (Updatable) A list of certificates issued to the User.
 	//
 	// **SCIM++ Properties:**
@@ -2372,12 +2371,6 @@ func (i *DomainsUser) ToDomainsUserOutputWithContext(ctx context.Context) Domain
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserOutput)
 }
 
-func (i *DomainsUser) ToOutput(ctx context.Context) pulumix.Output[*DomainsUser] {
-	return pulumix.Output[*DomainsUser]{
-		OutputState: i.ToDomainsUserOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsUserArrayInput is an input type that accepts DomainsUserArray and DomainsUserArrayOutput values.
 // You can construct a concrete instance of `DomainsUserArrayInput` via:
 //
@@ -2401,12 +2394,6 @@ func (i DomainsUserArray) ToDomainsUserArrayOutput() DomainsUserArrayOutput {
 
 func (i DomainsUserArray) ToDomainsUserArrayOutputWithContext(ctx context.Context) DomainsUserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserArrayOutput)
-}
-
-func (i DomainsUserArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUser] {
-	return pulumix.Output[[]*DomainsUser]{
-		OutputState: i.ToDomainsUserArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsUserMapInput is an input type that accepts DomainsUserMap and DomainsUserMapOutput values.
@@ -2434,12 +2421,6 @@ func (i DomainsUserMap) ToDomainsUserMapOutputWithContext(ctx context.Context) D
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserMapOutput)
 }
 
-func (i DomainsUserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUser] {
-	return pulumix.Output[map[string]*DomainsUser]{
-		OutputState: i.ToDomainsUserMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsUserOutput struct{ *pulumi.OutputState }
 
 func (DomainsUserOutput) ElementType() reflect.Type {
@@ -2454,12 +2435,6 @@ func (o DomainsUserOutput) ToDomainsUserOutputWithContext(ctx context.Context) D
 	return o
 }
 
-func (o DomainsUserOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsUser] {
-	return pulumix.Output[*DomainsUser]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Status of the account
 //
 // **Added In:** 17.4.6
@@ -2472,8 +2447,8 @@ func (o DomainsUserOutput) ToOutput(ctx context.Context) pulumix.Output[*Domains
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsUserOutput) Active() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
+func (o DomainsUserOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
@@ -2518,8 +2493,8 @@ func (o DomainsUserOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsUserOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -2533,8 +2508,8 @@ func (o DomainsUserOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsUserOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsUserOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Description of the user
@@ -2551,8 +2526,8 @@ func (o DomainsUserOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsUserOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
@@ -2565,8 +2540,8 @@ func (o DomainsUserOutput) Description() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DomainsUserOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -2580,8 +2555,8 @@ func (o DomainsUserOutput) DisplayName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsUserOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A complex attribute representing emails
@@ -2626,8 +2601,8 @@ func (o DomainsUserOutput) Entitlements() DomainsUserEntitlementArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+func (o DomainsUserOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -2687,8 +2662,8 @@ func (o DomainsUserOutput) IdcsLastModifiedBies() DomainsUserIdcsLastModifiedByA
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsUserOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -2733,8 +2708,8 @@ func (o DomainsUserOutput) Ims() DomainsUserImArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) Locale() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.Locale }).(pulumi.StringOutput)
+func (o DomainsUserOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.Locale }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -2783,8 +2758,8 @@ func (o DomainsUserOutput) Name() DomainsUserNameOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) NickName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.NickName }).(pulumi.StringOutput)
+func (o DomainsUserOutput) NickName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.NickName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the user's support account.
@@ -2800,8 +2775,8 @@ func (o DomainsUserOutput) NickName() pulumi.StringOutput {
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsUserOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Password attribute. Max length for password is controlled via Password Policy.
@@ -2818,8 +2793,8 @@ func (o DomainsUserOutput) Ocid() pulumi.StringOutput {
 // * returned: never
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+func (o DomainsUserOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Phone numbers
@@ -2866,8 +2841,8 @@ func (o DomainsUserOutput) Photos() DomainsUserPhotoArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) PreferredLanguage() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.PreferredLanguage }).(pulumi.StringOutput)
+func (o DomainsUserOutput) PreferredLanguage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.PreferredLanguage }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A fully-qualified URL to a page representing the User's online profile
@@ -2884,8 +2859,8 @@ func (o DomainsUserOutput) PreferredLanguage() pulumi.StringOutput {
 // * returned: default
 // * type: reference
 // * uniqueness: none
-func (o DomainsUserOutput) ProfileUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.ProfileUrl }).(pulumi.StringOutput)
+func (o DomainsUserOutput) ProfileUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.ProfileUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -2948,8 +2923,8 @@ func (o DomainsUserOutput) Tags() DomainsUserTagArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsUserOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User's timezone
@@ -2967,8 +2942,8 @@ func (o DomainsUserOutput) TenancyOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) Timezone() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.Timezone }).(pulumi.StringOutput)
+func (o DomainsUserOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.Timezone }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Title
@@ -2985,43 +2960,43 @@ func (o DomainsUserOutput) Timezone() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.Title }).(pulumi.StringOutput)
+func (o DomainsUserOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Enterprise User
-func (o DomainsUserOutput) Urnietfparamsscimschemasextensionenterprise20user() DomainsUserUrnietfparamsscimschemasextensionenterprise20userOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasextensionenterprise20userOutput {
+func (o DomainsUserOutput) Urnietfparamsscimschemasextensionenterprise20user() DomainsUserUrnietfparamsscimschemasextensionenterprise20userPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasextensionenterprise20userPtrOutput {
 		return v.Urnietfparamsscimschemasextensionenterprise20user
-	}).(DomainsUserUrnietfparamsscimschemasextensionenterprise20userOutput)
+	}).(DomainsUserUrnietfparamsscimschemasextensionenterprise20userPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tags.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionOciTags
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput)
 }
 
 // (Updatable) This extension defines attributes to manage user's risk score.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionadaptiveUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionadaptiveUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionadaptiveUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserPtrOutput)
 }
 
 // (Updatable) User's Capabilities
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserPtrOutput)
 }
 
 // (Updatable) The database credentials user extension.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserPtrOutput)
 }
 
 // (Updatable) DB User extension
@@ -3032,17 +3007,17 @@ func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensiondbUserUser
 }
 
 // (Updatable) Kerberos User extension
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserPtrOutput)
 }
 
 // (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionmfaUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionmfaUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionmfaUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPtrOutput)
 }
 
 // (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
@@ -3053,59 +3028,59 @@ func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionpasswordSt
 }
 
 // (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserPtrOutput)
 }
 
 // (Updatable) POSIX User extension
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionposixUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionposixUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionposixUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserPtrOutput)
 }
 
 // (Updatable) This extension defines the attributes used to store the security questions of a user.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserPtrOutput)
 }
 
 // (Updatable) Controls whether a user can update themselves or not via User related APIs
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionselfChangeUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput)
 }
 
 // (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserPtrOutput)
 }
 
 // (Updatable) SFF Auth Keys User extension
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionsffUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionsffUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionsffUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserPtrOutput)
 }
 
 // (Updatable) Social User extension
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserPtrOutput)
 }
 
 // (Updatable) Terms Of Use extension
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserPtrOutput)
 }
 
 // (Updatable) User's credentials
@@ -3116,17 +3091,17 @@ func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserCreden
 }
 
 // (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserStateUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserStateUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionuserStateUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserPtrOutput)
 }
 
 // (Updatable) Oracle Identity Cloud Service User
-func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
-	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
+func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionuserUser
-	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput)
+	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserPtrOutput)
 }
 
 // (Updatable) User name
@@ -3161,8 +3136,8 @@ func (o DomainsUserOutput) UserName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserOutput) UserType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.UserType }).(pulumi.StringOutput)
+func (o DomainsUserOutput) UserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUser) pulumi.StringPtrOutput { return v.UserType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of certificates issued to the User.
@@ -3193,12 +3168,6 @@ func (o DomainsUserArrayOutput) ToDomainsUserArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o DomainsUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUser] {
-	return pulumix.Output[[]*DomainsUser]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsUserArrayOutput) Index(i pulumi.IntInput) DomainsUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsUser {
 		return vs[0].([]*DomainsUser)[vs[1].(int)]
@@ -3217,12 +3186,6 @@ func (o DomainsUserMapOutput) ToDomainsUserMapOutput() DomainsUserMapOutput {
 
 func (o DomainsUserMapOutput) ToDomainsUserMapOutputWithContext(ctx context.Context) DomainsUserMapOutput {
 	return o
-}
-
-func (o DomainsUserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUser] {
-	return pulumix.Output[map[string]*DomainsUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsUserMapOutput) MapIndex(k pulumi.StringInput) DomainsUserOutput {

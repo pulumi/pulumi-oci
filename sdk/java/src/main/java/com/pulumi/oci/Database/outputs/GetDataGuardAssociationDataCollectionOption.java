@@ -6,22 +6,24 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataGuardAssociationDataCollectionOption {
-    private Boolean isDiagnosticsEventsEnabled;
-    private Boolean isHealthMonitoringEnabled;
-    private Boolean isIncidentLogsEnabled;
+    private @Nullable Boolean isDiagnosticsEventsEnabled;
+    private @Nullable Boolean isHealthMonitoringEnabled;
+    private @Nullable Boolean isIncidentLogsEnabled;
 
     private GetDataGuardAssociationDataCollectionOption() {}
-    public Boolean isDiagnosticsEventsEnabled() {
-        return this.isDiagnosticsEventsEnabled;
+    public Optional<Boolean> isDiagnosticsEventsEnabled() {
+        return Optional.ofNullable(this.isDiagnosticsEventsEnabled);
     }
-    public Boolean isHealthMonitoringEnabled() {
-        return this.isHealthMonitoringEnabled;
+    public Optional<Boolean> isHealthMonitoringEnabled() {
+        return Optional.ofNullable(this.isHealthMonitoringEnabled);
     }
-    public Boolean isIncidentLogsEnabled() {
-        return this.isIncidentLogsEnabled;
+    public Optional<Boolean> isIncidentLogsEnabled() {
+        return Optional.ofNullable(this.isIncidentLogsEnabled);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetDataGuardAssociationDataCollectionOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isDiagnosticsEventsEnabled;
-        private Boolean isHealthMonitoringEnabled;
-        private Boolean isIncidentLogsEnabled;
+        private @Nullable Boolean isDiagnosticsEventsEnabled;
+        private @Nullable Boolean isHealthMonitoringEnabled;
+        private @Nullable Boolean isIncidentLogsEnabled;
         public Builder() {}
         public Builder(GetDataGuardAssociationDataCollectionOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetDataGuardAssociationDataCollectionOption {
         }
 
         @CustomType.Setter
-        public Builder isDiagnosticsEventsEnabled(Boolean isDiagnosticsEventsEnabled) {
-            this.isDiagnosticsEventsEnabled = Objects.requireNonNull(isDiagnosticsEventsEnabled);
+        public Builder isDiagnosticsEventsEnabled(@Nullable Boolean isDiagnosticsEventsEnabled) {
+            this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isHealthMonitoringEnabled(Boolean isHealthMonitoringEnabled) {
-            this.isHealthMonitoringEnabled = Objects.requireNonNull(isHealthMonitoringEnabled);
+        public Builder isHealthMonitoringEnabled(@Nullable Boolean isHealthMonitoringEnabled) {
+            this.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isIncidentLogsEnabled(Boolean isIncidentLogsEnabled) {
-            this.isIncidentLogsEnabled = Objects.requireNonNull(isIncidentLogsEnabled);
+        public Builder isIncidentLogsEnabled(@Nullable Boolean isIncidentLogsEnabled) {
+            this.isIncidentLogsEnabled = isIncidentLogsEnabled;
             return this;
         }
         public GetDataGuardAssociationDataCollectionOption build() {

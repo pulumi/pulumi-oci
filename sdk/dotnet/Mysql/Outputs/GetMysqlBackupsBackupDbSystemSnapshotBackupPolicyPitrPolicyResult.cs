@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Specifies if PITR is enabled or disabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
-        private GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(bool isEnabled)
+        private GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(bool? isEnabled)
         {
             IsEnabled = isEnabled;
         }

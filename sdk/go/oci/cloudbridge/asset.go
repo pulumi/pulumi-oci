@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -173,11 +172,11 @@ type Asset struct {
 	// (Updatable) The OCID of the compartment that the asset belongs to.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Compute related properties.
-	Compute AssetComputeOutput `pulumi:"compute"`
+	Compute AssetComputePtrOutput `pulumi:"compute"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Asset display name.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey pulumi.StringOutput `pulumi:"externalAssetKey"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -187,19 +186,19 @@ type Asset struct {
 	// The source key to which the asset belongs.
 	SourceKey pulumi.StringOutput `pulumi:"sourceKey"`
 	// The current state of the asset.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the asset was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the asset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Virtual machine related properties.
-	Vm AssetVmOutput `pulumi:"vm"`
+	Vm AssetVmPtrOutput `pulumi:"vm"`
 	// (Updatable) VMware vCenter related properties.
-	VmwareVcenter AssetVmwareVcenterOutput `pulumi:"vmwareVcenter"`
+	VmwareVcenter AssetVmwareVcenterPtrOutput `pulumi:"vmwareVcenter"`
 	// (Updatable) VMware virtual machine related properties.
-	VmwareVm AssetVmwareVmOutput `pulumi:"vmwareVm"`
+	VmwareVm AssetVmwareVmPtrOutput `pulumi:"vmwareVm"`
 }
 
 // NewAsset registers a new resource with the given unique name, arguments, and options.
@@ -406,12 +405,6 @@ func (i *Asset) ToAssetOutputWithContext(ctx context.Context) AssetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AssetOutput)
 }
 
-func (i *Asset) ToOutput(ctx context.Context) pulumix.Output[*Asset] {
-	return pulumix.Output[*Asset]{
-		OutputState: i.ToAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetArrayInput is an input type that accepts AssetArray and AssetArrayOutput values.
 // You can construct a concrete instance of `AssetArrayInput` via:
 //
@@ -435,12 +428,6 @@ func (i AssetArray) ToAssetArrayOutput() AssetArrayOutput {
 
 func (i AssetArray) ToAssetArrayOutputWithContext(ctx context.Context) AssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AssetArrayOutput)
-}
-
-func (i AssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*Asset] {
-	return pulumix.Output[[]*Asset]{
-		OutputState: i.ToAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AssetMapInput is an input type that accepts AssetMap and AssetMapOutput values.
@@ -468,12 +455,6 @@ func (i AssetMap) ToAssetMapOutputWithContext(ctx context.Context) AssetMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AssetMapOutput)
 }
 
-func (i AssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Asset] {
-	return pulumix.Output[map[string]*Asset]{
-		OutputState: i.ToAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetOutput struct{ *pulumi.OutputState }
 
 func (AssetOutput) ElementType() reflect.Type {
@@ -486,12 +467,6 @@ func (o AssetOutput) ToAssetOutput() AssetOutput {
 
 func (o AssetOutput) ToAssetOutputWithContext(ctx context.Context) AssetOutput {
 	return o
-}
-
-func (o AssetOutput) ToOutput(ctx context.Context) pulumix.Output[*Asset] {
-	return pulumix.Output[*Asset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of asset source OCID.
@@ -510,8 +485,8 @@ func (o AssetOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Compute related properties.
-func (o AssetOutput) Compute() AssetComputeOutput {
-	return o.ApplyT(func(v *Asset) AssetComputeOutput { return v.Compute }).(AssetComputeOutput)
+func (o AssetOutput) Compute() AssetComputePtrOutput {
+	return o.ApplyT(func(v *Asset) AssetComputePtrOutput { return v.Compute }).(AssetComputePtrOutput)
 }
 
 // (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -520,8 +495,8 @@ func (o AssetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Asset display name.
-func (o AssetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AssetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The key of the asset from the external environment.
@@ -545,8 +520,8 @@ func (o AssetOutput) SourceKey() pulumi.StringOutput {
 }
 
 // The current state of the asset.
-func (o AssetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AssetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -555,28 +530,28 @@ func (o AssetOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the asset was created. An RFC3339 formatted datetime string.
-func (o AssetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AssetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the asset was updated. An RFC3339 formatted datetime string.
-func (o AssetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AssetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Virtual machine related properties.
-func (o AssetOutput) Vm() AssetVmOutput {
-	return o.ApplyT(func(v *Asset) AssetVmOutput { return v.Vm }).(AssetVmOutput)
+func (o AssetOutput) Vm() AssetVmPtrOutput {
+	return o.ApplyT(func(v *Asset) AssetVmPtrOutput { return v.Vm }).(AssetVmPtrOutput)
 }
 
 // (Updatable) VMware vCenter related properties.
-func (o AssetOutput) VmwareVcenter() AssetVmwareVcenterOutput {
-	return o.ApplyT(func(v *Asset) AssetVmwareVcenterOutput { return v.VmwareVcenter }).(AssetVmwareVcenterOutput)
+func (o AssetOutput) VmwareVcenter() AssetVmwareVcenterPtrOutput {
+	return o.ApplyT(func(v *Asset) AssetVmwareVcenterPtrOutput { return v.VmwareVcenter }).(AssetVmwareVcenterPtrOutput)
 }
 
 // (Updatable) VMware virtual machine related properties.
-func (o AssetOutput) VmwareVm() AssetVmwareVmOutput {
-	return o.ApplyT(func(v *Asset) AssetVmwareVmOutput { return v.VmwareVm }).(AssetVmwareVmOutput)
+func (o AssetOutput) VmwareVm() AssetVmwareVmPtrOutput {
+	return o.ApplyT(func(v *Asset) AssetVmwareVmPtrOutput { return v.VmwareVm }).(AssetVmwareVmPtrOutput)
 }
 
 type AssetArrayOutput struct{ *pulumi.OutputState }
@@ -591,12 +566,6 @@ func (o AssetArrayOutput) ToAssetArrayOutput() AssetArrayOutput {
 
 func (o AssetArrayOutput) ToAssetArrayOutputWithContext(ctx context.Context) AssetArrayOutput {
 	return o
-}
-
-func (o AssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Asset] {
-	return pulumix.Output[[]*Asset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetArrayOutput) Index(i pulumi.IntInput) AssetOutput {
@@ -617,12 +586,6 @@ func (o AssetMapOutput) ToAssetMapOutput() AssetMapOutput {
 
 func (o AssetMapOutput) ToAssetMapOutputWithContext(ctx context.Context) AssetMapOutput {
 	return o
-}
-
-func (o AssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Asset] {
-	return pulumix.Output[map[string]*Asset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetMapOutput) MapIndex(k pulumi.StringInput) AssetOutput {

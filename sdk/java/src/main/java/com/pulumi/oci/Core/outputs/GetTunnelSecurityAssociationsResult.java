@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetTunnelSecurityAssociationsTunnelSecurityAs
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,14 +19,14 @@ public final class GetTunnelSecurityAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String ipsecId;
     private String tunnelId;
     /**
      * @return The list of tunnel_security_associations.
      * 
      */
-    private List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations;
+    private @Nullable List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations;
 
     private GetTunnelSecurityAssociationsResult() {}
     public List<GetTunnelSecurityAssociationsFilter> filters() {
@@ -35,8 +36,8 @@ public final class GetTunnelSecurityAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String ipsecId() {
         return this.ipsecId;
@@ -49,7 +50,7 @@ public final class GetTunnelSecurityAssociationsResult {
      * 
      */
     public List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations() {
-        return this.tunnelSecurityAssociations;
+        return this.tunnelSecurityAssociations == null ? List.of() : this.tunnelSecurityAssociations;
     }
 
     public static Builder builder() {
@@ -62,10 +63,10 @@ public final class GetTunnelSecurityAssociationsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTunnelSecurityAssociationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String ipsecId;
         private String tunnelId;
-        private List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations;
+        private @Nullable List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations;
         public Builder() {}
         public Builder(GetTunnelSecurityAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,8 +86,8 @@ public final class GetTunnelSecurityAssociationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -100,8 +101,8 @@ public final class GetTunnelSecurityAssociationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tunnelSecurityAssociations(List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations) {
-            this.tunnelSecurityAssociations = Objects.requireNonNull(tunnelSecurityAssociations);
+        public Builder tunnelSecurityAssociations(@Nullable List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations) {
+            this.tunnelSecurityAssociations = tunnelSecurityAssociations;
             return this;
         }
         public Builder tunnelSecurityAssociations(GetTunnelSecurityAssociationsTunnelSecurityAssociation... tunnelSecurityAssociations) {

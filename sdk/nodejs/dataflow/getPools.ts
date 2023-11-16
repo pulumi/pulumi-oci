@@ -83,7 +83,7 @@ export interface GetPoolsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the user who created the resource.
      */
@@ -91,7 +91,7 @@ export interface GetPoolsResult {
     /**
      * The list of pool_collection.
      */
-    readonly poolCollections: outputs.DataFlow.GetPoolsPoolCollection[];
+    readonly poolCollections?: outputs.DataFlow.GetPoolsPoolCollection[];
     /**
      * The current state of this pool.
      */

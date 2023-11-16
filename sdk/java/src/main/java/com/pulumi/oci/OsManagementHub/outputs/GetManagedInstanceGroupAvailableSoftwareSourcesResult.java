@@ -18,7 +18,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
      * @return The list of available_software_source_collection.
      * 
      */
-    private List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections;
+    private @Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections;
     /**
      * @return The OCID for the compartment.
      * 
@@ -35,7 +35,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedInstanceGroupId;
 
     private GetManagedInstanceGroupAvailableSoftwareSourcesResult() {}
@@ -44,7 +44,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
      * 
      */
     public List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections() {
-        return this.availableSoftwareSourceCollections;
+        return this.availableSoftwareSourceCollections == null ? List.of() : this.availableSoftwareSourceCollections;
     }
     /**
      * @return The OCID for the compartment.
@@ -70,8 +70,8 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedInstanceGroupId() {
         return this.managedInstanceGroupId;
@@ -86,12 +86,12 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections;
+        private @Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections;
         private @Nullable String compartmentId;
         private @Nullable String displayNameContains;
         private @Nullable List<String> displayNames;
         private @Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedInstanceGroupId;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailableSoftwareSourcesResult defaults) {
@@ -106,8 +106,8 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
         }
 
         @CustomType.Setter
-        public Builder availableSoftwareSourceCollections(List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections) {
-            this.availableSoftwareSourceCollections = Objects.requireNonNull(availableSoftwareSourceCollections);
+        public Builder availableSoftwareSourceCollections(@Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections) {
+            this.availableSoftwareSourceCollections = availableSoftwareSourceCollections;
             return this;
         }
         public Builder availableSoftwareSourceCollections(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection... availableSoftwareSourceCollections) {
@@ -140,8 +140,8 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

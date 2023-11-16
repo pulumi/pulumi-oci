@@ -29,25 +29,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("additionalDetails")]
-        public Output<ImmutableDictionary<string, object>> AdditionalDetails { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdditionalDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the external ASM.
         /// </summary>
         [Output("componentName")]
-        public Output<string> ComponentName { get; private set; } = null!;
+        public Output<string?> ComponentName { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the database. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
@@ -63,37 +63,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("externalConnectorId")]
-        public Output<string> ExternalConnectorId { get; private set; } = null!;
+        public Output<string?> ExternalConnectorId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
         /// </summary>
         [Output("externalDbSystemId")]
-        public Output<string> ExternalDbSystemId { get; private set; } = null!;
+        public Output<string?> ExternalDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
         [Output("gridHome")]
-        public Output<string> GridHome { get; private set; } = null!;
+        public Output<string?> GridHome { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the ASM is a cluster ASM or not.
         /// </summary>
         [Output("isCluster")]
-        public Output<bool> IsCluster { get; private set; } = null!;
+        public Output<bool?> IsCluster { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether Oracle Flex ASM is enabled or not.
         /// </summary>
         [Output("isFlexEnabled")]
-        public Output<bool> IsFlexEnabled { get; private set; } = null!;
+        public Output<bool?> IsFlexEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The list of databases that are serviced by the ASM.
@@ -105,25 +105,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The current lifecycle state of the external ASM.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external ASM was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external ASM was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The ASM version.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

@@ -114,7 +114,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Display name of the virtual node pool. This is a non-unique value.
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
@@ -142,13 +142,13 @@ namespace Pulumi.Oci.ContainerEngine
         /// The version of Kubernetes running on the nodes in the node pool.
         /// </summary>
         [Output("kubernetesVersion")]
-        public Output<string> KubernetesVersion { get; private set; } = null!;
+        public Output<string?> KubernetesVersion { get; private set; } = null!;
 
         /// <summary>
         /// Details about the state of the Virtual Node Pool.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of network security group IDs applied to the Pod VNIC.
@@ -178,13 +178,13 @@ namespace Pulumi.Oci.ContainerEngine
         /// The state of the Virtual Node Pool.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
@@ -196,19 +196,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// The time the virtual node pool was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the virtual node pool was updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
         /// </summary>
         [Output("virtualNodeTags")]
-        public Output<Outputs.VirtualNodePoolVirtualNodeTags> VirtualNodeTags { get; private set; } = null!;
+        public Output<Outputs.VirtualNodePoolVirtualNodeTags?> VirtualNodeTags { get; private set; } = null!;
 
 
         /// <summary>

@@ -59,31 +59,31 @@ namespace Pulumi.Oci.Streaming
         /// (Updatable) The OCID of the compartment that contains the stream.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Any additional details about the current state of the stream.
         /// </summary>
         [Output("lifecycleStateDetails")]
-        public Output<string> LifecycleStateDetails { get; private set; } = null!;
+        public Output<string?> LifecycleStateDetails { get; private set; } = null!;
 
         /// <summary>
         /// The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
         /// </summary>
         [Output("messagesEndpoint")]
-        public Output<string> MessagesEndpoint { get; private set; } = null!;
+        public Output<string?> MessagesEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
@@ -101,13 +101,13 @@ namespace Pulumi.Oci.Streaming
         /// The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         /// </summary>
         [Output("retentionInHours")]
-        public Output<int> RetentionInHours { get; private set; } = null!;
+        public Output<int?> RetentionInHours { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the stream.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the stream pool that contains the stream.
@@ -117,13 +117,13 @@ namespace Pulumi.Oci.Streaming
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("streamPoolId")]
-        public Output<string> StreamPoolId { get; private set; } = null!;
+        public Output<string?> StreamPoolId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

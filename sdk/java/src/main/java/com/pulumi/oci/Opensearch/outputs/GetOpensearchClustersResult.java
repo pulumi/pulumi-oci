@@ -34,7 +34,7 @@ public final class GetOpensearchClustersResult {
      * @return The list of opensearch_cluster_collection.
      * 
      */
-    private List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections;
+    private @Nullable List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections;
     /**
      * @return The current state of the cluster.
      * 
@@ -71,7 +71,7 @@ public final class GetOpensearchClustersResult {
      * 
      */
     public List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections() {
-        return this.opensearchClusterCollections;
+        return this.opensearchClusterCollections == null ? List.of() : this.opensearchClusterCollections;
     }
     /**
      * @return The current state of the cluster.
@@ -94,7 +94,7 @@ public final class GetOpensearchClustersResult {
         private @Nullable String displayName;
         private @Nullable List<GetOpensearchClustersFilter> filters;
         private @Nullable String id;
-        private List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections;
+        private @Nullable List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetOpensearchClustersResult defaults) {
@@ -131,8 +131,8 @@ public final class GetOpensearchClustersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder opensearchClusterCollections(List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections) {
-            this.opensearchClusterCollections = Objects.requireNonNull(opensearchClusterCollections);
+        public Builder opensearchClusterCollections(@Nullable List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections) {
+            this.opensearchClusterCollections = opensearchClusterCollections;
             return this;
         }
         public Builder opensearchClusterCollections(GetOpensearchClustersOpensearchClusterCollection... opensearchClusterCollections) {

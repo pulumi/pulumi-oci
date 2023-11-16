@@ -174,7 +174,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsComparisonFromMergeBase;
         public readonly string RepositoryId;
         public readonly string TargetVersion;
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.DevOps
 
             ImmutableArray<Outputs.GetRepositoryDiffsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isComparisonFromMergeBase,
 

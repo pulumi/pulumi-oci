@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetZonesZone {
@@ -22,221 +24,221 @@ public final class GetZonesZone {
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
-    private List<GetZonesZoneExternalDownstream> externalDownstreams;
+    private @Nullable List<GetZonesZoneExternalDownstream> externalDownstreams;
     /**
      * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
-    private List<GetZonesZoneExternalMaster> externalMasters;
+    private @Nullable List<GetZonesZoneExternalMaster> externalMasters;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the zone.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    private Boolean isProtected;
+    private @Nullable Boolean isProtected;
     /**
      * @return A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The authoritative nameservers for the zone.
      * 
      */
-    private List<GetZonesZoneNameserver> nameservers;
+    private @Nullable List<GetZonesZoneNameserver> nameservers;
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope. This value will be null
      * for zones in the global DNS and `PRIVATE` when listing private zones.
      * 
      */
-    private String scope;
+    private @Nullable String scope;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private String self;
+    private @Nullable String self;
     /**
      * @return The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
-    private Integer serial;
+    private @Nullable Integer serial;
     /**
      * @return The state of a resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
-    private String version;
+    private @Nullable String version;
     /**
      * @return The OCID of the view the resource is associated with.
      * 
      */
-    private String viewId;
+    private @Nullable String viewId;
     /**
      * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      * 
      */
-    private List<GetZonesZoneZoneTransferServer> zoneTransferServers;
+    private @Nullable List<GetZonesZoneZoneTransferServer> zoneTransferServers;
     /**
      * @return Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
      * 
      */
-    private String zoneType;
+    private @Nullable String zoneType;
 
     private GetZonesZone() {}
     /**
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
     public List<GetZonesZoneExternalDownstream> externalDownstreams() {
-        return this.externalDownstreams;
+        return this.externalDownstreams == null ? List.of() : this.externalDownstreams;
     }
     /**
      * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
     public List<GetZonesZoneExternalMaster> externalMasters() {
-        return this.externalMasters;
+        return this.externalMasters == null ? List.of() : this.externalMasters;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the zone.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    public Boolean isProtected() {
-        return this.isProtected;
+    public Optional<Boolean> isProtected() {
+        return Optional.ofNullable(this.isProtected);
     }
     /**
      * @return A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The authoritative nameservers for the zone.
      * 
      */
     public List<GetZonesZoneNameserver> nameservers() {
-        return this.nameservers;
+        return this.nameservers == null ? List.of() : this.nameservers;
     }
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope. This value will be null
      * for zones in the global DNS and `PRIVATE` when listing private zones.
      * 
      */
-    public String scope() {
-        return this.scope;
+    public Optional<String> scope() {
+        return Optional.ofNullable(this.scope);
     }
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public String self() {
-        return this.self;
+    public Optional<String> self() {
+        return Optional.ofNullable(this.self);
     }
     /**
      * @return The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
-    public Integer serial() {
-        return this.serial;
+    public Optional<Integer> serial() {
+        return Optional.ofNullable(this.serial);
     }
     /**
      * @return The state of a resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
     /**
      * @return The OCID of the view the resource is associated with.
      * 
      */
-    public String viewId() {
-        return this.viewId;
+    public Optional<String> viewId() {
+        return Optional.ofNullable(this.viewId);
     }
     /**
      * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      * 
      */
     public List<GetZonesZoneZoneTransferServer> zoneTransferServers() {
-        return this.zoneTransferServers;
+        return this.zoneTransferServers == null ? List.of() : this.zoneTransferServers;
     }
     /**
      * @return Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
      * 
      */
-    public String zoneType() {
-        return this.zoneType;
+    public Optional<String> zoneType() {
+        return Optional.ofNullable(this.zoneType);
     }
 
     public static Builder builder() {
@@ -248,24 +250,24 @@ public final class GetZonesZone {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<GetZonesZoneExternalDownstream> externalDownstreams;
-        private List<GetZonesZoneExternalMaster> externalMasters;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isProtected;
-        private String name;
-        private List<GetZonesZoneNameserver> nameservers;
-        private String scope;
-        private String self;
-        private Integer serial;
-        private String state;
-        private String timeCreated;
-        private String version;
-        private String viewId;
-        private List<GetZonesZoneZoneTransferServer> zoneTransferServers;
-        private String zoneType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<GetZonesZoneExternalDownstream> externalDownstreams;
+        private @Nullable List<GetZonesZoneExternalMaster> externalMasters;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isProtected;
+        private @Nullable String name;
+        private @Nullable List<GetZonesZoneNameserver> nameservers;
+        private @Nullable String scope;
+        private @Nullable String self;
+        private @Nullable Integer serial;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String version;
+        private @Nullable String viewId;
+        private @Nullable List<GetZonesZoneZoneTransferServer> zoneTransferServers;
+        private @Nullable String zoneType;
         public Builder() {}
         public Builder(GetZonesZone defaults) {
     	      Objects.requireNonNull(defaults);
@@ -290,105 +292,105 @@ public final class GetZonesZone {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDownstreams(List<GetZonesZoneExternalDownstream> externalDownstreams) {
-            this.externalDownstreams = Objects.requireNonNull(externalDownstreams);
+        public Builder externalDownstreams(@Nullable List<GetZonesZoneExternalDownstream> externalDownstreams) {
+            this.externalDownstreams = externalDownstreams;
             return this;
         }
         public Builder externalDownstreams(GetZonesZoneExternalDownstream... externalDownstreams) {
             return externalDownstreams(List.of(externalDownstreams));
         }
         @CustomType.Setter
-        public Builder externalMasters(List<GetZonesZoneExternalMaster> externalMasters) {
-            this.externalMasters = Objects.requireNonNull(externalMasters);
+        public Builder externalMasters(@Nullable List<GetZonesZoneExternalMaster> externalMasters) {
+            this.externalMasters = externalMasters;
             return this;
         }
         public Builder externalMasters(GetZonesZoneExternalMaster... externalMasters) {
             return externalMasters(List.of(externalMasters));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+        public Builder isProtected(@Nullable Boolean isProtected) {
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder nameservers(List<GetZonesZoneNameserver> nameservers) {
-            this.nameservers = Objects.requireNonNull(nameservers);
+        public Builder nameservers(@Nullable List<GetZonesZoneNameserver> nameservers) {
+            this.nameservers = nameservers;
             return this;
         }
         public Builder nameservers(GetZonesZoneNameserver... nameservers) {
             return nameservers(List.of(nameservers));
         }
         @CustomType.Setter
-        public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+        public Builder scope(@Nullable String scope) {
+            this.scope = scope;
             return this;
         }
         @CustomType.Setter
-        public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+        public Builder self(@Nullable String self) {
+            this.self = self;
             return this;
         }
         @CustomType.Setter
-        public Builder serial(Integer serial) {
-            this.serial = Objects.requireNonNull(serial);
+        public Builder serial(@Nullable Integer serial) {
+            this.serial = serial;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder viewId(String viewId) {
-            this.viewId = Objects.requireNonNull(viewId);
+        public Builder viewId(@Nullable String viewId) {
+            this.viewId = viewId;
             return this;
         }
         @CustomType.Setter
-        public Builder zoneTransferServers(List<GetZonesZoneZoneTransferServer> zoneTransferServers) {
-            this.zoneTransferServers = Objects.requireNonNull(zoneTransferServers);
+        public Builder zoneTransferServers(@Nullable List<GetZonesZoneZoneTransferServer> zoneTransferServers) {
+            this.zoneTransferServers = zoneTransferServers;
             return this;
         }
         public Builder zoneTransferServers(GetZonesZoneZoneTransferServer... zoneTransferServers) {
             return zoneTransferServers(List.of(zoneTransferServers));
         }
         @CustomType.Setter
-        public Builder zoneType(String zoneType) {
-            this.zoneType = Objects.requireNonNull(zoneType);
+        public Builder zoneType(@Nullable String zoneType) {
+            this.zoneType = zoneType;
             return this;
         }
         public GetZonesZone build() {

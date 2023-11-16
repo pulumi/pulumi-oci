@@ -13,23 +13,23 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigResult
     {
-        public readonly int MaxMemoryPerNode;
-        public readonly int MaxOcpusPerNode;
-        public readonly int MemoryStepSize;
+        public readonly int? MaxMemoryPerNode;
+        public readonly int? MaxOcpusPerNode;
+        public readonly int? MemoryStepSize;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricResult> Metrics;
-        public readonly int OcpuStepSize;
+        public readonly int? OcpuStepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigResult(
-            int maxMemoryPerNode,
+            int? maxMemoryPerNode,
 
-            int maxOcpusPerNode,
+            int? maxOcpusPerNode,
 
-            int memoryStepSize,
+            int? memoryStepSize,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricResult> metrics,
 
-            int ocpuStepSize)
+            int? ocpuStepSize)
         {
             MaxMemoryPerNode = maxMemoryPerNode;
             MaxOcpusPerNode = maxOcpusPerNode;

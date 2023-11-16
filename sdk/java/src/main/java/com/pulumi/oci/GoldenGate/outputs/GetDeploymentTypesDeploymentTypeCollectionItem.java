@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentTypesDeploymentTypeCollectionItem {
@@ -14,87 +16,87 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      * @return The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is &#39;DATA_REPLICATION&#39; and &#39;STREAM_ANALYTICS&#39;.
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return An array of connectionTypes.
      * 
      */
-    private List<String> connectionTypes;
+    private @Nullable List<String> connectionTypes;
     /**
      * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
      * 
      */
-    private String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Allows to query by a specific GoldenGate version.
      * 
      */
-    private String oggVersion;
+    private @Nullable String oggVersion;
     /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
      * 
      */
-    private List<String> sourceTechnologies;
+    private @Nullable List<String> sourceTechnologies;
     /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
      * 
      */
-    private List<String> targetTechnologies;
+    private @Nullable List<String> targetTechnologies;
 
     private GetDeploymentTypesDeploymentTypeCollectionItem() {}
     /**
      * @return The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is &#39;DATA_REPLICATION&#39; and &#39;STREAM_ANALYTICS&#39;.
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return An array of connectionTypes.
      * 
      */
     public List<String> connectionTypes() {
-        return this.connectionTypes;
+        return this.connectionTypes == null ? List.of() : this.connectionTypes;
     }
     /**
      * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
      * 
      */
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Allows to query by a specific GoldenGate version.
      * 
      */
-    public String oggVersion() {
-        return this.oggVersion;
+    public Optional<String> oggVersion() {
+        return Optional.ofNullable(this.oggVersion);
     }
     /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
      * 
      */
     public List<String> sourceTechnologies() {
-        return this.sourceTechnologies;
+        return this.sourceTechnologies == null ? List.of() : this.sourceTechnologies;
     }
     /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
      * 
      */
     public List<String> targetTechnologies() {
-        return this.targetTechnologies;
+        return this.targetTechnologies == null ? List.of() : this.targetTechnologies;
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String category;
-        private List<String> connectionTypes;
-        private String deploymentType;
-        private String displayName;
-        private String oggVersion;
-        private List<String> sourceTechnologies;
-        private List<String> targetTechnologies;
+        private @Nullable String category;
+        private @Nullable List<String> connectionTypes;
+        private @Nullable String deploymentType;
+        private @Nullable String displayName;
+        private @Nullable String oggVersion;
+        private @Nullable List<String> sourceTechnologies;
+        private @Nullable List<String> targetTechnologies;
         public Builder() {}
         public Builder(GetDeploymentTypesDeploymentTypeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,44 +128,44 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionTypes(List<String> connectionTypes) {
-            this.connectionTypes = Objects.requireNonNull(connectionTypes);
+        public Builder connectionTypes(@Nullable List<String> connectionTypes) {
+            this.connectionTypes = connectionTypes;
             return this;
         }
         public Builder connectionTypes(String... connectionTypes) {
             return connectionTypes(List.of(connectionTypes));
         }
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+        public Builder oggVersion(@Nullable String oggVersion) {
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceTechnologies(List<String> sourceTechnologies) {
-            this.sourceTechnologies = Objects.requireNonNull(sourceTechnologies);
+        public Builder sourceTechnologies(@Nullable List<String> sourceTechnologies) {
+            this.sourceTechnologies = sourceTechnologies;
             return this;
         }
         public Builder sourceTechnologies(String... sourceTechnologies) {
             return sourceTechnologies(List.of(sourceTechnologies));
         }
         @CustomType.Setter
-        public Builder targetTechnologies(List<String> targetTechnologies) {
-            this.targetTechnologies = Objects.requireNonNull(targetTechnologies);
+        public Builder targetTechnologies(@Nullable List<String> targetTechnologies) {
+            this.targetTechnologies = targetTechnologies;
             return this;
         }
         public Builder targetTechnologies(String... targetTechnologies) {

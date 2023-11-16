@@ -49,9 +49,6 @@ class GetFusionEnvironmentServiceAttachmentsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Service Attachment Display name, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +63,7 @@ class GetFusionEnvironmentServiceAttachmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,26 +71,17 @@ class GetFusionEnvironmentServiceAttachmentsResult:
 
     @property
     @pulumi.getter(name="serviceAttachmentCollections")
-    def service_attachment_collections(self) -> Sequence['outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult']:
-        """
-        The list of service_attachment_collection.
-        """
+    def service_attachment_collections(self) -> Optional[Sequence['outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult']]:
         return pulumi.get(self, "service_attachment_collections")
 
     @property
     @pulumi.getter(name="serviceInstanceType")
     def service_instance_type(self) -> Optional[str]:
-        """
-        Type of the serviceInstance.
-        """
         return pulumi.get(self, "service_instance_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the ServiceInstance.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_fusion_environment_service_attachments(display_name: Optional[str] = Non
                                                state: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentServiceAttachmentsResult:
     """
-    This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of service attachments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_service_attachments = oci.Functions.get_fusion_environment_service_attachments(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_service_attachment_display_name"],
-        service_instance_type=var["fusion_environment_service_attachment_service_instance_type"],
-        state=var["fusion_environment_service_attachment_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str service_instance_type: A filter that returns all resources that match the specified lifecycle state.
-    :param str state: A filter that returns all resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -168,26 +136,6 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
                                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentServiceAttachmentsResult]:
     """
-    This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of service attachments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_service_attachments = oci.Functions.get_fusion_environment_service_attachments(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_service_attachment_display_name"],
-        service_instance_type=var["fusion_environment_service_attachment_service_instance_type"],
-        state=var["fusion_environment_service_attachment_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str service_instance_type: A filter that returns all resources that match the specified lifecycle state.
-    :param str state: A filter that returns all resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

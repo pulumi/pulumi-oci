@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -60,34 +59,34 @@ type LookupExternalDbSystemConnectorArgs struct {
 // A collection of values returned by getExternalDbSystemConnector.
 type LookupExternalDbSystemConnectorResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-	AgentId string `pulumi:"agentId"`
+	AgentId *string `pulumi:"agentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The error message indicating the reason for connection failure or `null` if the connection was successful.
-	ConnectionFailureMessage string `pulumi:"connectionFailureMessage"`
+	ConnectionFailureMessage *string `pulumi:"connectionFailureMessage"`
 	// The connection details required to connect to an external DB system component.
 	ConnectionInfos []GetExternalDbSystemConnectorConnectionInfo `pulumi:"connectionInfos"`
 	// The status of connectivity to the external DB system component.
-	ConnectionStatus string `pulumi:"connectionStatus"`
+	ConnectionStatus *string `pulumi:"connectionStatus"`
 	// The type of connector.
-	ConnectorType string `pulumi:"connectorType"`
+	ConnectorType *string `pulumi:"connectorType"`
 	// The user-friendly name for the external connector. The name does not have to be unique.
-	DisplayName                 string `pulumi:"displayName"`
-	ExternalDbSystemConnectorId string `pulumi:"externalDbSystemConnectorId"`
+	DisplayName                 *string `pulumi:"displayName"`
+	ExternalDbSystemConnectorId string  `pulumi:"externalDbSystemConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
-	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external DB system connector.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the connectionStatus of the external DB system connector was last updated.
-	TimeConnectionStatusLastUpdated string `pulumi:"timeConnectionStatusLastUpdated"`
+	TimeConnectionStatusLastUpdated *string `pulumi:"timeConnectionStatusLastUpdated"`
 	// The date and time the external DB system connector was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external DB system connector was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupExternalDbSystemConnectorOutput(ctx *pulumi.Context, args LookupExternalDbSystemConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbSystemConnectorResultOutput {
@@ -128,25 +127,19 @@ func (o LookupExternalDbSystemConnectorResultOutput) ToLookupExternalDbSystemCon
 	return o
 }
 
-func (o LookupExternalDbSystemConnectorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalDbSystemConnectorResult] {
-	return pulumix.Output[LookupExternalDbSystemConnectorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-func (o LookupExternalDbSystemConnectorResultOutput) AgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.AgentId }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupExternalDbSystemConnectorResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The error message indicating the reason for connection failure or `null` if the connection was successful.
-func (o LookupExternalDbSystemConnectorResultOutput) ConnectionFailureMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.ConnectionFailureMessage }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) ConnectionFailureMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.ConnectionFailureMessage }).(pulumi.StringPtrOutput)
 }
 
 // The connection details required to connect to an external DB system component.
@@ -157,18 +150,18 @@ func (o LookupExternalDbSystemConnectorResultOutput) ConnectionInfos() GetExtern
 }
 
 // The status of connectivity to the external DB system component.
-func (o LookupExternalDbSystemConnectorResultOutput) ConnectionStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.ConnectionStatus }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) ConnectionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.ConnectionStatus }).(pulumi.StringPtrOutput)
 }
 
 // The type of connector.
-func (o LookupExternalDbSystemConnectorResultOutput) ConnectorType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.ConnectorType }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) ConnectorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.ConnectorType }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the external connector. The name does not have to be unique.
-func (o LookupExternalDbSystemConnectorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalDbSystemConnectorResultOutput) ExternalDbSystemConnectorId() pulumi.StringOutput {
@@ -176,38 +169,38 @@ func (o LookupExternalDbSystemConnectorResultOutput) ExternalDbSystemConnectorId
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
-func (o LookupExternalDbSystemConnectorResultOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
-func (o LookupExternalDbSystemConnectorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupExternalDbSystemConnectorResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external DB system connector.
-func (o LookupExternalDbSystemConnectorResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the connectionStatus of the external DB system connector was last updated.
-func (o LookupExternalDbSystemConnectorResultOutput) TimeConnectionStatusLastUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.TimeConnectionStatusLastUpdated }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) TimeConnectionStatusLastUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.TimeConnectionStatusLastUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system connector was created.
-func (o LookupExternalDbSystemConnectorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system connector was last updated.
-func (o LookupExternalDbSystemConnectorResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemConnectorResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

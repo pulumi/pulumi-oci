@@ -39,15 +39,12 @@ class GetManagementDashboardsExportResult:
 
     @property
     @pulumi.getter(name="exportDetails")
-    def export_details(self) -> str:
-        """
-        String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `export_details` can be used to pass as `import_details` (CompartmentIds may have to be changed) in `ManagementDashboard.ManagementDashboardsImport` resource.
-        """
+    def export_details(self) -> Optional[str]:
         return pulumi.get(self, "export_details")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,23 +65,7 @@ class AwaitableGetManagementDashboardsExportResult(GetManagementDashboardsExport
 def get_management_dashboards_export(export_dashboard_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementDashboardsExportResult:
     """
-    This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
-
-    Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
-    Here's an example of how you can use CLI to export a dashboard:
-    `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}"  > dashboards.json`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_dashboards_export = oci.ManagementDashboard.get_management_dashboards_export(export_dashboard_id=oci_management_dashboard_export_dashboard["test_export_dashboard"]["id"])
-    ```
-
-
-    :param str export_dashboard_id: List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['exportDashboardId'] = export_dashboard_id
@@ -101,22 +82,6 @@ def get_management_dashboards_export(export_dashboard_id: Optional[str] = None,
 def get_management_dashboards_export_output(export_dashboard_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementDashboardsExportResult]:
     """
-    This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
-
-    Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
-    Here's an example of how you can use CLI to export a dashboard:
-    `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}"  > dashboards.json`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_dashboards_export = oci.ManagementDashboard.get_management_dashboards_export(export_dashboard_id=oci_management_dashboard_export_dashboard["test_export_dashboard"]["id"])
-    ```
-
-
-    :param str export_dashboard_id: List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
+    Use this data source to access information about an existing resource.
     """
     ...

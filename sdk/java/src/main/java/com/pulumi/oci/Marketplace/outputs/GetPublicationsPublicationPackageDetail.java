@@ -9,38 +9,40 @@ import com.pulumi.oci.Marketplace.outputs.GetPublicationsPublicationPackageDetai
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicationsPublicationPackageDetail {
-    private List<GetPublicationsPublicationPackageDetailEula> eulas;
-    private String imageId;
-    private List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems;
+    private @Nullable List<GetPublicationsPublicationPackageDetailEula> eulas;
+    private @Nullable String imageId;
+    private @Nullable List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems;
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    private String packageType;
-    private String packageVersion;
+    private @Nullable String packageType;
+    private @Nullable String packageVersion;
 
     private GetPublicationsPublicationPackageDetail() {}
     public List<GetPublicationsPublicationPackageDetailEula> eulas() {
-        return this.eulas;
+        return this.eulas == null ? List.of() : this.eulas;
     }
-    public String imageId() {
-        return this.imageId;
+    public Optional<String> imageId() {
+        return Optional.ofNullable(this.imageId);
     }
     public List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems() {
-        return this.operatingSystems;
+        return this.operatingSystems == null ? List.of() : this.operatingSystems;
     }
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    public String packageType() {
-        return this.packageType;
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
     }
-    public String packageVersion() {
-        return this.packageVersion;
+    public Optional<String> packageVersion() {
+        return Optional.ofNullable(this.packageVersion);
     }
 
     public static Builder builder() {
@@ -52,11 +54,11 @@ public final class GetPublicationsPublicationPackageDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPublicationsPublicationPackageDetailEula> eulas;
-        private String imageId;
-        private List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems;
-        private String packageType;
-        private String packageVersion;
+        private @Nullable List<GetPublicationsPublicationPackageDetailEula> eulas;
+        private @Nullable String imageId;
+        private @Nullable List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems;
+        private @Nullable String packageType;
+        private @Nullable String packageVersion;
         public Builder() {}
         public Builder(GetPublicationsPublicationPackageDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,34 +70,34 @@ public final class GetPublicationsPublicationPackageDetail {
         }
 
         @CustomType.Setter
-        public Builder eulas(List<GetPublicationsPublicationPackageDetailEula> eulas) {
-            this.eulas = Objects.requireNonNull(eulas);
+        public Builder eulas(@Nullable List<GetPublicationsPublicationPackageDetailEula> eulas) {
+            this.eulas = eulas;
             return this;
         }
         public Builder eulas(GetPublicationsPublicationPackageDetailEula... eulas) {
             return eulas(List.of(eulas));
         }
         @CustomType.Setter
-        public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+        public Builder imageId(@Nullable String imageId) {
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystems(List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+        public Builder operatingSystems(@Nullable List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems) {
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetPublicationsPublicationPackageDetailOperatingSystem... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
         @CustomType.Setter
-        public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+        public Builder packageType(@Nullable String packageType) {
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
-        public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+        public Builder packageVersion(@Nullable String packageVersion) {
+            this.packageVersion = packageVersion;
             return this;
         }
         public GetPublicationsPublicationPackageDetail build() {

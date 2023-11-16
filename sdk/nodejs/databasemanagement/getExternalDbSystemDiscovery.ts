@@ -47,49 +47,49 @@ export interface GetExternalDbSystemDiscoveryResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      */
-    readonly agentId: string;
+    readonly agentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The list of DB system components that were found in the DB system discovery.
      */
-    readonly discoveredComponents: outputs.DatabaseManagement.GetExternalDbSystemDiscoveryDiscoveredComponent[];
+    readonly discoveredComponents?: outputs.DatabaseManagement.GetExternalDbSystemDiscoveryDiscoveredComponent[];
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalDbSystemDiscoveryId: string;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    readonly gridHome: string;
+    readonly gridHome?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
-    readonly patchOperations: outputs.DatabaseManagement.GetExternalDbSystemDiscoveryPatchOperation[];
+    readonly lifecycleDetails?: string;
+    readonly patchOperations?: outputs.DatabaseManagement.GetExternalDbSystemDiscoveryPatchOperation[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
      */
-    readonly resourceId: string;
+    readonly resourceId?: string;
     /**
      * The current lifecycle state of the external DB system discovery resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external DB system discovery was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external DB system discovery was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.

@@ -83,26 +83,17 @@ class GetDatabaseToolsConnectionResult:
 
     @property
     @pulumi.getter(name="advancedProperties")
-    def advanced_properties(self) -> Mapping[str, Any]:
-        """
-        The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
-        """
+    def advanced_properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "advanced_properties")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> str:
-        """
-        The connect descriptor or Easy Connect Naming method used to connect to the database.
-        """
+    def connection_string(self) -> Optional[str]:
         return pulumi.get(self, "connection_string")
 
     @property
@@ -112,122 +103,77 @@ class GetDatabaseToolsConnectionResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="keyStores")
-    def key_stores(self) -> Sequence['outputs.GetDatabaseToolsConnectionKeyStoreResult']:
-        """
-        The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
-        """
+    def key_stores(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionKeyStoreResult']]:
         return pulumi.get(self, "key_stores")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="relatedResources")
-    def related_resources(self) -> Sequence['outputs.GetDatabaseToolsConnectionRelatedResourceResult']:
-        """
-        A related resource
-        """
+    def related_resources(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionRelatedResourceResult']]:
         return pulumi.get(self, "related_resources")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Database Tools connection.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The Database Tools connection type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        The database user name.
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="userPasswords")
-    def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionUserPasswordResult']:
-        """
-        The user password.
-        """
+    def user_passwords(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionUserPasswordResult']]:
         return pulumi.get(self, "user_passwords")
 
 
@@ -261,21 +207,7 @@ class AwaitableGetDatabaseToolsConnectionResult(GetDatabaseToolsConnectionResult
 def get_database_tools_connection(database_tools_connection_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsConnectionResult:
     """
-    This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
-
-    Gets details of the specified Database Tools connection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=oci_database_tools_database_tools_connection["test_database_tools_connection"]["id"])
-    ```
-
-
-    :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseToolsConnectionId'] = database_tools_connection_id
@@ -308,20 +240,6 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
 def get_database_tools_connection_output(database_tools_connection_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsConnectionResult]:
     """
-    This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
-
-    Gets details of the specified Database Tools connection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=oci_database_tools_database_tools_connection["test_database_tools_connection"]["id"])
-    ```
-
-
-    :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+    Use this data source to access information about an existing resource.
     """
     ...

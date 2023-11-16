@@ -128,42 +128,27 @@ class GetDomainsGroupResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The Group display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
@@ -173,18 +158,12 @@ class GetDomainsGroupResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsGroupIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsGroupIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -194,58 +173,37 @@ class GetDomainsGroupResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsGroupIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsGroupIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter
-    def members(self) -> Sequence['outputs.GetDomainsGroupMemberResult']:
-        """
-        The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-        """
+    def members(self) -> Optional[Sequence['outputs.GetDomainsGroupMemberResult']]:
         return pulumi.get(self, "members")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsGroupMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsGroupMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="nonUniqueDisplayName")
-    def non_unique_display_name(self) -> str:
-        """
-        A human readable name for the group as defined by the Service Consumer.
-        """
+    def non_unique_display_name(self) -> Optional[str]:
         return pulumi.get(self, "non_unique_display_name")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
@@ -255,74 +213,47 @@ class GetDomainsGroupResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsGroupTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsGroupTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagResult']:
-        """
-        Oracle Cloud Infrastructure Tags.
-        """
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsGroups")
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_groups(self) -> Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupResult']:
-        """
-        Schema for Database Service  Resource
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_groups(self) -> Optional[Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_groups")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondynamicGroups")
-    def urnietfparamsscimschemasoracleidcsextensiondynamic_groups(self) -> Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupResult']:
-        """
-        Dynamic Group
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondynamic_groups(self) -> Optional[Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondynamic_groups")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiongroupGroups")
-    def urnietfparamsscimschemasoracleidcsextensiongroup_groups(self) -> Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupResult']:
-        """
-        Oracle Identity Cloud Service Group
-        """
+    def urnietfparamsscimschemasoracleidcsextensiongroup_groups(self) -> Optional[Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiongroup_groups")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixGroups")
-    def urnietfparamsscimschemasoracleidcsextensionposix_groups(self) -> Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupResult']:
-        """
-        POSIX Group extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionposix_groups(self) -> Optional[Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_groups")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableGroups")
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_groups(self) -> Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupResult']:
-        """
-        Requestable Group
-        """
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_groups(self) -> Optional[Sequence['outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_groups")
 
 
@@ -371,31 +302,7 @@ def get_domains_group(attribute_sets: Optional[Sequence[str]] = None,
                       resource_type_schema_version: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsGroupResult:
     """
-    This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a group. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_group = oci.Identity.get_domains_group(group_id=oci_identity_group["test_group"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["group_authorization"],
-        resource_type_schema_version=var["group_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str group_id: ID of the resource
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -448,30 +355,6 @@ def get_domains_group_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
                              resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsGroupResult]:
     """
-    This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a group. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_group = oci.Identity.get_domains_group(group_id=oci_identity_group["test_group"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["group_authorization"],
-        resource_type_schema_version=var["group_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str group_id: ID of the resource
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

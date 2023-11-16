@@ -71,15 +71,12 @@ class GetRemediationRunStageResult:
 
     @property
     @pulumi.getter(name="auditId")
-    def audit_id(self) -> str:
-        """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
-        """
+    def audit_id(self) -> Optional[str]:
         return pulumi.get(self, "audit_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -87,50 +84,32 @@ class GetRemediationRunStageResult:
 
     @property
     @pulumi.getter(name="nextStageType")
-    def next_stage_type(self) -> str:
-        """
-        The next type of stage in the remediation run.
-        """
+    def next_stage_type(self) -> Optional[str]:
         return pulumi.get(self, "next_stage_type")
 
     @property
     @pulumi.getter(name="pipelineProperties")
-    def pipeline_properties(self) -> Sequence['outputs.GetRemediationRunStagePipelinePropertyResult']:
-        """
-        Pipeline properties which result from the run of the verify stage.
-        """
+    def pipeline_properties(self) -> Optional[Sequence['outputs.GetRemediationRunStagePipelinePropertyResult']]:
         return pulumi.get(self, "pipeline_properties")
 
     @property
     @pulumi.getter(name="previousStageType")
-    def previous_stage_type(self) -> str:
-        """
-        The previous type of stage in the remediation run.
-        """
+    def previous_stage_type(self) -> Optional[str]:
         return pulumi.get(self, "previous_stage_type")
 
     @property
     @pulumi.getter(name="pullRequestProperties")
-    def pull_request_properties(self) -> Sequence['outputs.GetRemediationRunStagePullRequestPropertyResult']:
-        """
-        Pull request properties from recommend stage of the remediation run.
-        """
+    def pull_request_properties(self) -> Optional[Sequence['outputs.GetRemediationRunStagePullRequestPropertyResult']]:
         return pulumi.get(self, "pull_request_properties")
 
     @property
     @pulumi.getter(name="recommendedUpdatesCount")
-    def recommended_updates_count(self) -> int:
-        """
-        Count of recommended application dependencies to update.
-        """
+    def recommended_updates_count(self) -> Optional[int]:
         return pulumi.get(self, "recommended_updates_count")
 
     @property
     @pulumi.getter(name="remediationRunId")
     def remediation_run_id(self) -> str:
-        """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        """
         return pulumi.get(self, "remediation_run_id")
 
     @property
@@ -140,50 +119,32 @@ class GetRemediationRunStageResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current status of a remediation run stage.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def summary(self) -> str:
-        """
-        Information about the current step within the stage.
-        """
+    def summary(self) -> Optional[str]:
         return pulumi.get(self, "summary")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the remediation run stage.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -214,23 +175,7 @@ def get_remediation_run_stage(remediation_run_id: Optional[str] = None,
                               stage_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRunStageResult:
     """
-    This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
-
-    Returns the details of the specified Remediation Run Stage.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_run_stage = oci.Adm.get_remediation_run_stage(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        stage_type=var["remediation_run_stage_stage_type"])
-    ```
-
-
-    :param str remediation_run_id: Unique Remediation Run identifier path parameter.
-    :param str stage_type: The type of Remediation Run Stage, as a URL path parameter.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['remediationRunId'] = remediation_run_id
@@ -261,22 +206,6 @@ def get_remediation_run_stage_output(remediation_run_id: Optional[pulumi.Input[s
                                      stage_type: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunStageResult]:
     """
-    This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
-
-    Returns the details of the specified Remediation Run Stage.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_run_stage = oci.Adm.get_remediation_run_stage(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        stage_type=var["remediation_run_stage_stage_type"])
-    ```
-
-
-    :param str remediation_run_id: Unique Remediation Run identifier path parameter.
-    :param str stage_type: The type of Remediation Run Stage, as a URL path parameter.
+    Use this data source to access information about an existing resource.
     """
     ...

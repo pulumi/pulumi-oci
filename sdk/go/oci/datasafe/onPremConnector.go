@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.
@@ -64,30 +63,30 @@ type OnPremConnector struct {
 	pulumi.CustomResourceState
 
 	// Latest available version of the on-premises connector.
-	AvailableVersion pulumi.StringOutput `pulumi:"availableVersion"`
+	AvailableVersion pulumi.StringPtrOutput `pulumi:"availableVersion"`
 	// (Updatable) The OCID of the compartment where you want to create the on-premises connector.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Created version of the on-premises connector.
-	CreatedVersion pulumi.StringOutput `pulumi:"createdVersion"`
+	CreatedVersion pulumi.StringPtrOutput `pulumi:"createdVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the on-premises connector.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it's changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the on-premises connector.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the on-premises connector.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewOnPremConnector registers a new resource with the given unique name, arguments, and options.
@@ -238,12 +237,6 @@ func (i *OnPremConnector) ToOnPremConnectorOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(OnPremConnectorOutput)
 }
 
-func (i *OnPremConnector) ToOutput(ctx context.Context) pulumix.Output[*OnPremConnector] {
-	return pulumix.Output[*OnPremConnector]{
-		OutputState: i.ToOnPremConnectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OnPremConnectorArrayInput is an input type that accepts OnPremConnectorArray and OnPremConnectorArrayOutput values.
 // You can construct a concrete instance of `OnPremConnectorArrayInput` via:
 //
@@ -267,12 +260,6 @@ func (i OnPremConnectorArray) ToOnPremConnectorArrayOutput() OnPremConnectorArra
 
 func (i OnPremConnectorArray) ToOnPremConnectorArrayOutputWithContext(ctx context.Context) OnPremConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OnPremConnectorArrayOutput)
-}
-
-func (i OnPremConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*OnPremConnector] {
-	return pulumix.Output[[]*OnPremConnector]{
-		OutputState: i.ToOnPremConnectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OnPremConnectorMapInput is an input type that accepts OnPremConnectorMap and OnPremConnectorMapOutput values.
@@ -300,12 +287,6 @@ func (i OnPremConnectorMap) ToOnPremConnectorMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(OnPremConnectorMapOutput)
 }
 
-func (i OnPremConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OnPremConnector] {
-	return pulumix.Output[map[string]*OnPremConnector]{
-		OutputState: i.ToOnPremConnectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OnPremConnectorOutput struct{ *pulumi.OutputState }
 
 func (OnPremConnectorOutput) ElementType() reflect.Type {
@@ -320,15 +301,9 @@ func (o OnPremConnectorOutput) ToOnPremConnectorOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o OnPremConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*OnPremConnector] {
-	return pulumix.Output[*OnPremConnector]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Latest available version of the on-premises connector.
-func (o OnPremConnectorOutput) AvailableVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.AvailableVersion }).(pulumi.StringOutput)
+func (o OnPremConnectorOutput) AvailableVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringPtrOutput { return v.AvailableVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment where you want to create the on-premises connector.
@@ -337,8 +312,8 @@ func (o OnPremConnectorOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Created version of the on-premises connector.
-func (o OnPremConnectorOutput) CreatedVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.CreatedVersion }).(pulumi.StringOutput)
+func (o OnPremConnectorOutput) CreatedVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringPtrOutput { return v.CreatedVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -347,13 +322,13 @@ func (o OnPremConnectorOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the on-premises connector.
-func (o OnPremConnectorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o OnPremConnectorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it's changeable.
-func (o OnPremConnectorOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o OnPremConnectorOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -365,13 +340,13 @@ func (o OnPremConnectorOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details about the current state of the on-premises connector.
-func (o OnPremConnectorOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o OnPremConnectorOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the on-premises connector.
-func (o OnPremConnectorOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OnPremConnectorOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -380,8 +355,8 @@ func (o OnPremConnectorOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o OnPremConnectorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OnPremConnectorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type OnPremConnectorArrayOutput struct{ *pulumi.OutputState }
@@ -396,12 +371,6 @@ func (o OnPremConnectorArrayOutput) ToOnPremConnectorArrayOutput() OnPremConnect
 
 func (o OnPremConnectorArrayOutput) ToOnPremConnectorArrayOutputWithContext(ctx context.Context) OnPremConnectorArrayOutput {
 	return o
-}
-
-func (o OnPremConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OnPremConnector] {
-	return pulumix.Output[[]*OnPremConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OnPremConnectorArrayOutput) Index(i pulumi.IntInput) OnPremConnectorOutput {
@@ -422,12 +391,6 @@ func (o OnPremConnectorMapOutput) ToOnPremConnectorMapOutput() OnPremConnectorMa
 
 func (o OnPremConnectorMapOutput) ToOnPremConnectorMapOutputWithContext(ctx context.Context) OnPremConnectorMapOutput {
 	return o
-}
-
-func (o OnPremConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OnPremConnector] {
-	return pulumix.Output[map[string]*OnPremConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OnPremConnectorMapOutput) MapIndex(k pulumi.StringInput) OnPremConnectorOutput {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesSchemasSchema {
@@ -14,27 +16,27 @@ public final class GetTargetDatabasesSchemasSchema {
      * @return A filter to return only items related to specific type of schema.
      * 
      */
-    private Boolean isOracleMaintained;
+    private @Nullable Boolean isOracleMaintained;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
 
     private GetTargetDatabasesSchemasSchema() {}
     /**
      * @return A filter to return only items related to specific type of schema.
      * 
      */
-    public Boolean isOracleMaintained() {
-        return this.isOracleMaintained;
+    public Optional<Boolean> isOracleMaintained() {
+        return Optional.ofNullable(this.isOracleMaintained);
     }
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetTargetDatabasesSchemasSchema {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isOracleMaintained;
-        private String schemaName;
+        private @Nullable Boolean isOracleMaintained;
+        private @Nullable String schemaName;
         public Builder() {}
         public Builder(GetTargetDatabasesSchemasSchema defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetTargetDatabasesSchemasSchema {
         }
 
         @CustomType.Setter
-        public Builder isOracleMaintained(Boolean isOracleMaintained) {
-            this.isOracleMaintained = Objects.requireNonNull(isOracleMaintained);
+        public Builder isOracleMaintained(@Nullable Boolean isOracleMaintained) {
+            this.isOracleMaintained = isOracleMaintained;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         public GetTargetDatabasesSchemasSchema build() {

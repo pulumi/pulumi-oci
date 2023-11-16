@@ -116,56 +116,56 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="applicationId", refs={String.class}, tree="[0]")
-    private Output<String> applicationId;
+    private Output</* @Nullable */ String> applicationId;
 
     /**
      * @return The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
      * 
      */
-    public Output<String> applicationId() {
-        return this.applicationId;
+    public Output<Optional<String>> applicationId() {
+        return Codegen.optional(this.applicationId);
     }
     /**
      * Logging details of Application logs for Data Flow Run.
      * 
      */
     @Export(name="applicationLogConfig", refs={InvokeRunApplicationLogConfig.class}, tree="[0]")
-    private Output<InvokeRunApplicationLogConfig> applicationLogConfig;
+    private Output</* @Nullable */ InvokeRunApplicationLogConfig> applicationLogConfig;
 
     /**
      * @return Logging details of Application logs for Data Flow Run.
      * 
      */
-    public Output<InvokeRunApplicationLogConfig> applicationLogConfig() {
-        return this.applicationLogConfig;
+    public Output<Optional<InvokeRunApplicationLogConfig>> applicationLogConfig() {
+        return Codegen.optional(this.applicationLogConfig);
     }
     /**
      * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     @Export(name="archiveUri", refs={String.class}, tree="[0]")
-    private Output<String> archiveUri;
+    private Output</* @Nullable */ String> archiveUri;
 
     /**
      * @return A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    public Output<String> archiveUri() {
-        return this.archiveUri;
+    public Output<Optional<String>> archiveUri() {
+        return Codegen.optional(this.archiveUri);
     }
     /**
      * The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
     @Export(name="arguments", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> arguments;
+    private Output</* @Nullable */ List<String>> arguments;
 
     /**
      * @return The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
-    public Output<List<String>> arguments() {
-        return this.arguments;
+    public Output<Optional<List<String>>> arguments() {
+        return Codegen.optional(this.arguments);
     }
     @Export(name="asynchronous", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> asynchronous;
@@ -178,14 +178,14 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="className", refs={String.class}, tree="[0]")
-    private Output<String> className;
+    private Output</* @Nullable */ String> className;
 
     /**
      * @return The class for the application.
      * 
      */
-    public Output<String> className() {
-        return this.className;
+    public Output<Optional<String>> className() {
+        return Codegen.optional(this.className);
     }
     /**
      * (Updatable) The OCID of a compartment.
@@ -206,504 +206,504 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configuration", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> configuration;
+    private Output</* @Nullable */ Map<String,Object>> configuration;
 
     /**
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    public Output<Map<String,Object>> configuration() {
-        return this.configuration;
+    public Output<Optional<Map<String,Object>>> configuration() {
+        return Codegen.optional(this.configuration);
     }
     /**
      * The data read by the run in bytes.
      * 
      */
     @Export(name="dataReadInBytes", refs={String.class}, tree="[0]")
-    private Output<String> dataReadInBytes;
+    private Output</* @Nullable */ String> dataReadInBytes;
 
     /**
      * @return The data read by the run in bytes.
      * 
      */
-    public Output<String> dataReadInBytes() {
-        return this.dataReadInBytes;
+    public Output<Optional<String>> dataReadInBytes() {
+        return Codegen.optional(this.dataReadInBytes);
     }
     /**
      * The data written by the run in bytes.
      * 
      */
     @Export(name="dataWrittenInBytes", refs={String.class}, tree="[0]")
-    private Output<String> dataWrittenInBytes;
+    private Output</* @Nullable */ String> dataWrittenInBytes;
 
     /**
      * @return The data written by the run in bytes.
      * 
      */
-    public Output<String> dataWrittenInBytes() {
-        return this.dataWrittenInBytes;
+    public Output<Optional<String>> dataWrittenInBytes() {
+        return Codegen.optional(this.dataWrittenInBytes);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application&#39;s displayName or set by API using fileUri&#39;s application file name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application&#39;s displayName or set by API using fileUri&#39;s application file name.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The VM shape for the driver. Sets the driver cores and memory.
      * 
      */
     @Export(name="driverShape", refs={String.class}, tree="[0]")
-    private Output<String> driverShape;
+    private Output</* @Nullable */ String> driverShape;
 
     /**
      * @return The VM shape for the driver. Sets the driver cores and memory.
      * 
      */
-    public Output<String> driverShape() {
-        return this.driverShape;
+    public Output<Optional<String>> driverShape() {
+        return Codegen.optional(this.driverShape);
     }
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
     @Export(name="driverShapeConfig", refs={InvokeRunDriverShapeConfig.class}, tree="[0]")
-    private Output<InvokeRunDriverShapeConfig> driverShapeConfig;
+    private Output</* @Nullable */ InvokeRunDriverShapeConfig> driverShapeConfig;
 
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    public Output<InvokeRunDriverShapeConfig> driverShapeConfig() {
-        return this.driverShapeConfig;
+    public Output<Optional<InvokeRunDriverShapeConfig>> driverShapeConfig() {
+        return Codegen.optional(this.driverShapeConfig);
     }
     /**
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
     @Export(name="execute", refs={String.class}, tree="[0]")
-    private Output<String> execute;
+    private Output</* @Nullable */ String> execute;
 
     /**
      * @return The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
-    public Output<String> execute() {
-        return this.execute;
+    public Output<Optional<String>> execute() {
+        return Codegen.optional(this.execute);
     }
     /**
      * The VM shape for the executors. Sets the executor cores and memory.
      * 
      */
     @Export(name="executorShape", refs={String.class}, tree="[0]")
-    private Output<String> executorShape;
+    private Output</* @Nullable */ String> executorShape;
 
     /**
      * @return The VM shape for the executors. Sets the executor cores and memory.
      * 
      */
-    public Output<String> executorShape() {
-        return this.executorShape;
+    public Output<Optional<String>> executorShape() {
+        return Codegen.optional(this.executorShape);
     }
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
     @Export(name="executorShapeConfig", refs={InvokeRunExecutorShapeConfig.class}, tree="[0]")
-    private Output<InvokeRunExecutorShapeConfig> executorShapeConfig;
+    private Output</* @Nullable */ InvokeRunExecutorShapeConfig> executorShapeConfig;
 
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    public Output<InvokeRunExecutorShapeConfig> executorShapeConfig() {
-        return this.executorShapeConfig;
+    public Output<Optional<InvokeRunExecutorShapeConfig>> executorShapeConfig() {
+        return Codegen.optional(this.executorShapeConfig);
     }
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     @Export(name="fileUri", refs={String.class}, tree="[0]")
-    private Output<String> fileUri;
+    private Output</* @Nullable */ String> fileUri;
 
     /**
      * @return An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    public Output<String> fileUri() {
-        return this.fileUri;
+    public Output<Optional<String>> fileUri() {
+        return Codegen.optional(this.fileUri);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
      * 
      */
     @Export(name="idleTimeoutInMinutes", refs={String.class}, tree="[0]")
-    private Output<String> idleTimeoutInMinutes;
+    private Output</* @Nullable */ String> idleTimeoutInMinutes;
 
     /**
      * @return (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
      * 
      */
-    public Output<String> idleTimeoutInMinutes() {
-        return this.idleTimeoutInMinutes;
+    public Output<Optional<String>> idleTimeoutInMinutes() {
+        return Codegen.optional(this.idleTimeoutInMinutes);
     }
     /**
      * The Spark language.
      * 
      */
     @Export(name="language", refs={String.class}, tree="[0]")
-    private Output<String> language;
+    private Output</* @Nullable */ String> language;
 
     /**
      * @return The Spark language.
      * 
      */
-    public Output<String> language() {
-        return this.language;
+    public Output<Optional<String>> language() {
+        return Codegen.optional(this.language);
     }
     /**
      * The detailed messages about the lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return The detailed messages about the lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     @Export(name="logsBucketUri", refs={String.class}, tree="[0]")
-    private Output<String> logsBucketUri;
+    private Output</* @Nullable */ String> logsBucketUri;
 
     /**
      * @return An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    public Output<String> logsBucketUri() {
-        return this.logsBucketUri;
+    public Output<Optional<String>> logsBucketUri() {
+        return Codegen.optional(this.logsBucketUri);
     }
     /**
      * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
      * 
      */
     @Export(name="maxDurationInMinutes", refs={String.class}, tree="[0]")
-    private Output<String> maxDurationInMinutes;
+    private Output</* @Nullable */ String> maxDurationInMinutes;
 
     /**
      * @return (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
      * 
      */
-    public Output<String> maxDurationInMinutes() {
-        return this.maxDurationInMinutes;
+    public Output<Optional<String>> maxDurationInMinutes() {
+        return Codegen.optional(this.maxDurationInMinutes);
     }
     /**
      * The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
     @Export(name="metastoreId", refs={String.class}, tree="[0]")
-    private Output<String> metastoreId;
+    private Output</* @Nullable */ String> metastoreId;
 
     /**
      * @return The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
-    public Output<String> metastoreId() {
-        return this.metastoreId;
+    public Output<Optional<String>> metastoreId() {
+        return Codegen.optional(this.metastoreId);
     }
     /**
      * The number of executor VMs requested.
      * 
      */
     @Export(name="numExecutors", refs={Integer.class}, tree="[0]")
-    private Output<Integer> numExecutors;
+    private Output</* @Nullable */ Integer> numExecutors;
 
     /**
      * @return The number of executor VMs requested.
      * 
      */
-    public Output<Integer> numExecutors() {
-        return this.numExecutors;
+    public Output<Optional<Integer>> numExecutors() {
+        return Codegen.optional(this.numExecutors);
     }
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * 
      */
     @Export(name="opcRequestId", refs={String.class}, tree="[0]")
-    private Output<String> opcRequestId;
+    private Output</* @Nullable */ String> opcRequestId;
 
     /**
      * @return Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * 
      */
-    public Output<String> opcRequestId() {
-        return this.opcRequestId;
+    public Output<Optional<String>> opcRequestId() {
+        return Codegen.optional(this.opcRequestId);
     }
     /**
      * The OCID of the user who created the resource.
      * 
      */
     @Export(name="ownerPrincipalId", refs={String.class}, tree="[0]")
-    private Output<String> ownerPrincipalId;
+    private Output</* @Nullable */ String> ownerPrincipalId;
 
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    public Output<String> ownerPrincipalId() {
-        return this.ownerPrincipalId;
+    public Output<Optional<String>> ownerPrincipalId() {
+        return Codegen.optional(this.ownerPrincipalId);
     }
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
     @Export(name="ownerUserName", refs={String.class}, tree="[0]")
-    private Output<String> ownerUserName;
+    private Output</* @Nullable */ String> ownerUserName;
 
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    public Output<String> ownerUserName() {
-        return this.ownerUserName;
+    public Output<Optional<String>> ownerUserName() {
+        return Codegen.optional(this.ownerUserName);
     }
     /**
      * An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
     @Export(name="parameters", refs={List.class,InvokeRunParameter.class}, tree="[0,1]")
-    private Output<List<InvokeRunParameter>> parameters;
+    private Output</* @Nullable */ List<InvokeRunParameter>> parameters;
 
     /**
      * @return An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
-    public Output<List<InvokeRunParameter>> parameters() {
-        return this.parameters;
+    public Output<Optional<List<InvokeRunParameter>>> parameters() {
+        return Codegen.optional(this.parameters);
     }
     /**
      * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      * 
      */
     @Export(name="poolId", refs={String.class}, tree="[0]")
-    private Output<String> poolId;
+    private Output</* @Nullable */ String> poolId;
 
     /**
      * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      * 
      */
-    public Output<String> poolId() {
-        return this.poolId;
+    public Output<Optional<String>> poolId() {
+        return Codegen.optional(this.poolId);
     }
     /**
      * An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
     @Export(name="privateEndpointDnsZones", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> privateEndpointDnsZones;
+    private Output</* @Nullable */ List<String>> privateEndpointDnsZones;
 
     /**
      * @return An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
-    public Output<List<String>> privateEndpointDnsZones() {
-        return this.privateEndpointDnsZones;
+    public Output<Optional<List<String>>> privateEndpointDnsZones() {
+        return Codegen.optional(this.privateEndpointDnsZones);
     }
     /**
      * The OCID of a private endpoint.
      * 
      */
     @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointId;
+    private Output</* @Nullable */ String> privateEndpointId;
 
     /**
      * @return The OCID of a private endpoint.
      * 
      */
-    public Output<String> privateEndpointId() {
-        return this.privateEndpointId;
+    public Output<Optional<String>> privateEndpointId() {
+        return Codegen.optional(this.privateEndpointId);
     }
     /**
      * The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
      * 
      */
     @Export(name="privateEndpointMaxHostCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> privateEndpointMaxHostCount;
+    private Output</* @Nullable */ Integer> privateEndpointMaxHostCount;
 
     /**
      * @return The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
      * 
      */
-    public Output<Integer> privateEndpointMaxHostCount() {
-        return this.privateEndpointMaxHostCount;
+    public Output<Optional<Integer>> privateEndpointMaxHostCount() {
+        return Codegen.optional(this.privateEndpointMaxHostCount);
     }
     /**
      * An array of network security group OCIDs.
      * 
      */
     @Export(name="privateEndpointNsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> privateEndpointNsgIds;
+    private Output</* @Nullable */ List<String>> privateEndpointNsgIds;
 
     /**
      * @return An array of network security group OCIDs.
      * 
      */
-    public Output<List<String>> privateEndpointNsgIds() {
-        return this.privateEndpointNsgIds;
+    public Output<Optional<List<String>>> privateEndpointNsgIds() {
+        return Codegen.optional(this.privateEndpointNsgIds);
     }
     /**
      * The OCID of a subnet.
      * 
      */
     @Export(name="privateEndpointSubnetId", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointSubnetId;
+    private Output</* @Nullable */ String> privateEndpointSubnetId;
 
     /**
      * @return The OCID of a subnet.
      * 
      */
-    public Output<String> privateEndpointSubnetId() {
-        return this.privateEndpointSubnetId;
+    public Output<Optional<String>> privateEndpointSubnetId() {
+        return Codegen.optional(this.privateEndpointSubnetId);
     }
     /**
      * The duration of the run in milliseconds.
      * 
      */
     @Export(name="runDurationInMilliseconds", refs={String.class}, tree="[0]")
-    private Output<String> runDurationInMilliseconds;
+    private Output</* @Nullable */ String> runDurationInMilliseconds;
 
     /**
      * @return The duration of the run in milliseconds.
      * 
      */
-    public Output<String> runDurationInMilliseconds() {
-        return this.runDurationInMilliseconds;
+    public Output<Optional<String>> runDurationInMilliseconds() {
+        return Codegen.optional(this.runDurationInMilliseconds);
     }
     /**
      * The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
      * 
      */
     @Export(name="sparkVersion", refs={String.class}, tree="[0]")
-    private Output<String> sparkVersion;
+    private Output</* @Nullable */ String> sparkVersion;
 
     /**
      * @return The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
      * 
      */
-    public Output<String> sparkVersion() {
-        return this.sparkVersion;
+    public Output<Optional<String>> sparkVersion() {
+        return Codegen.optional(this.sparkVersion);
     }
     /**
      * The current state of this run.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of this run.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The total number of oCPU requested by the run.
      * 
      */
     @Export(name="totalOcpu", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalOcpu;
+    private Output</* @Nullable */ Integer> totalOcpu;
 
     /**
      * @return The total number of oCPU requested by the run.
      * 
      */
-    public Output<Integer> totalOcpu() {
-        return this.totalOcpu;
+    public Output<Optional<Integer>> totalOcpu() {
+        return Codegen.optional(this.totalOcpu);
     }
     /**
      * The Spark application processing type.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The Spark application processing type.
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -713,7 +713,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="warehouseBucketUri", refs={String.class}, tree="[0]")
-    private Output<String> warehouseBucketUri;
+    private Output</* @Nullable */ String> warehouseBucketUri;
 
     /**
      * @return An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -722,8 +722,8 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> warehouseBucketUri() {
-        return this.warehouseBucketUri;
+    public Output<Optional<String>> warehouseBucketUri() {
+        return Codegen.optional(this.warehouseBucketUri);
     }
 
     /**

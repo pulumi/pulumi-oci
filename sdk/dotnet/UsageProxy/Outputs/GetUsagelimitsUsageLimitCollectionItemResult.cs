@@ -16,98 +16,98 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// The action when usage limit is hit
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The alert level of the usage limit
         /// </summary>
-        public readonly double AlertLevel;
+        public readonly double? AlertLevel;
         /// <summary>
         /// The user who created the limit
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Entitlement ID of the usage limit
         /// </summary>
-        public readonly string EntitlementId;
+        public readonly string? EntitlementId;
         /// <summary>
         /// The usage limit ID
         /// </summary>
-        public readonly string Id;
-        public readonly string Limit;
+        public readonly string? Id;
+        public readonly string? Limit;
         /// <summary>
         /// Hard or soft limit. Hard limits lead to breaches, soft to alerts.
         /// </summary>
-        public readonly string LimitType;
+        public readonly string? LimitType;
         /// <summary>
         /// The maximum hard limit set for the usage limit
         /// </summary>
-        public readonly string MaxHardLimit;
+        public readonly string? MaxHardLimit;
         /// <summary>
         /// The user who modified the limit
         /// </summary>
-        public readonly string ModifiedBy;
+        public readonly string? ModifiedBy;
         /// <summary>
         /// The resource for which the limit is defined
         /// </summary>
-        public readonly string ResourceName;
+        public readonly string? ResourceName;
         /// <summary>
         /// The service for which the limit is defined
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
         /// <summary>
         /// The SKU for which the usage limit is set
         /// </summary>
-        public readonly string SkuPartId;
+        public readonly string? SkuPartId;
         /// <summary>
         /// The usage limit lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Time when the usage limit was created
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time when the usage limit was modified
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
         /// <summary>
         /// The value type of the usage limit
         /// </summary>
-        public readonly string ValueType;
+        public readonly string? ValueType;
 
         [OutputConstructor]
         private GetUsagelimitsUsageLimitCollectionItemResult(
-            string action,
+            string? action,
 
-            double alertLevel,
+            double? alertLevel,
 
-            string createdBy,
+            string? createdBy,
 
-            string entitlementId,
+            string? entitlementId,
 
-            string id,
+            string? id,
 
-            string limit,
+            string? limit,
 
-            string limitType,
+            string? limitType,
 
-            string maxHardLimit,
+            string? maxHardLimit,
 
-            string modifiedBy,
+            string? modifiedBy,
 
-            string resourceName,
+            string? resourceName,
 
-            string serviceName,
+            string? serviceName,
 
-            string skuPartId,
+            string? skuPartId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeModified,
+            string? timeModified,
 
-            string valueType)
+            string? valueType)
         {
             Action = action;
             AlertLevel = alertLevel;

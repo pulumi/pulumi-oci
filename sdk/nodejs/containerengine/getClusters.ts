@@ -61,7 +61,7 @@ export interface GetClustersResult {
     /**
      * The list of clusters.
      */
-    readonly clusters: outputs.ContainerEngine.GetClustersCluster[];
+    readonly clusters?: outputs.ContainerEngine.GetClustersCluster[];
     /**
      * The OCID of the compartment in which the cluster exists.
      */
@@ -70,7 +70,7 @@ export interface GetClustersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the cluster.
      */

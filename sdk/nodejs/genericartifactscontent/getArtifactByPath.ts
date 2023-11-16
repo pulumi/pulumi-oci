@@ -54,20 +54,20 @@ export interface GetArtifactByPathArgs {
  * A collection of values returned by getArtifactByPath.
  */
 export interface GetArtifactByPathResult {
-    readonly artifactId: string;
+    readonly artifactId?: string;
     readonly artifactPath: string;
-    readonly compartmentId: string;
-    readonly content: string;
-    readonly definedTags: {[key: string]: any};
-    readonly displayName: string;
-    readonly freeformTags: {[key: string]: any};
-    readonly id: string;
+    readonly compartmentId?: string;
+    readonly content?: string;
+    readonly definedTags?: {[key: string]: any};
+    readonly displayName?: string;
+    readonly freeformTags?: {[key: string]: any};
+    readonly id?: string;
     readonly repositoryId: string;
-    readonly sha256: string;
-    readonly sizeInBytes: string;
-    readonly source: string;
-    readonly state: string;
-    readonly timeCreated: string;
+    readonly sha256?: string;
+    readonly sizeInBytes?: string;
+    readonly source?: string;
+    readonly state?: string;
+    readonly timeCreated?: string;
     readonly version: string;
 }
 /**

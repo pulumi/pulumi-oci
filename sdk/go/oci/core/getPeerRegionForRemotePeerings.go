@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
@@ -59,7 +58,7 @@ type GetPeerRegionForRemotePeeringsArgs struct {
 type GetPeerRegionForRemotePeeringsResult struct {
 	Filters []GetPeerRegionForRemotePeeringsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of peer_region_for_remote_peerings.
 	PeerRegionForRemotePeerings []GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering `pulumi:"peerRegionForRemotePeerings"`
 }
@@ -101,19 +100,13 @@ func (o GetPeerRegionForRemotePeeringsResultOutput) ToGetPeerRegionForRemotePeer
 	return o
 }
 
-func (o GetPeerRegionForRemotePeeringsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeerRegionForRemotePeeringsResult] {
-	return pulumix.Output[GetPeerRegionForRemotePeeringsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPeerRegionForRemotePeeringsResultOutput) Filters() GetPeerRegionForRemotePeeringsFilterArrayOutput {
 	return o.ApplyT(func(v GetPeerRegionForRemotePeeringsResult) []GetPeerRegionForRemotePeeringsFilter { return v.Filters }).(GetPeerRegionForRemotePeeringsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPeerRegionForRemotePeeringsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPeerRegionForRemotePeeringsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPeerRegionForRemotePeeringsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPeerRegionForRemotePeeringsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of peer_region_for_remote_peerings.

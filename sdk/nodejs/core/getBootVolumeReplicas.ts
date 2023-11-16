@@ -78,7 +78,7 @@ export interface GetBootVolumeReplicasResult {
     /**
      * The list of boot_volume_replicas.
      */
-    readonly bootVolumeReplicas: outputs.Core.GetBootVolumeReplicasBootVolumeReplica[];
+    readonly bootVolumeReplicas?: outputs.Core.GetBootVolumeReplicasBootVolumeReplica[];
     /**
      * The OCID of the compartment that contains the boot volume replica.
      */
@@ -91,7 +91,7 @@ export interface GetBootVolumeReplicasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of a boot volume replica.
      */

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -76,11 +75,11 @@ type DataMaskRule struct {
 	// (Updatable) Data Mask Categories
 	DataMaskCategories pulumi.StringArrayOutput `pulumi:"dataMaskCategories"`
 	// (Updatable) The status of the dataMaskRule.
-	DataMaskRuleStatus pulumi.StringOutput `pulumi:"dataMaskRuleStatus"`
+	DataMaskRuleStatus pulumi.StringPtrOutput `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The data mask rule description. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Data mask rule name.
 	//
 	// Avoid entering confidential information.
@@ -92,17 +91,17 @@ type DataMaskRule struct {
 	// (Updatable) IAM Group id associated with the data mask rule
 	IamGroupId pulumi.StringOutput `pulumi:"iamGroupId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// The current state of the DataMaskRule.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
 	TargetSelected DataMaskRuleTargetSelectedOutput `pulumi:"targetSelected"`
 	// The date and time the target was created. Format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the target was updated. Format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDataMaskRule registers a new resource with the given unique name, arguments, and options.
@@ -301,12 +300,6 @@ func (i *DataMaskRule) ToDataMaskRuleOutputWithContext(ctx context.Context) Data
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleOutput)
 }
 
-func (i *DataMaskRule) ToOutput(ctx context.Context) pulumix.Output[*DataMaskRule] {
-	return pulumix.Output[*DataMaskRule]{
-		OutputState: i.ToDataMaskRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataMaskRuleArrayInput is an input type that accepts DataMaskRuleArray and DataMaskRuleArrayOutput values.
 // You can construct a concrete instance of `DataMaskRuleArrayInput` via:
 //
@@ -330,12 +323,6 @@ func (i DataMaskRuleArray) ToDataMaskRuleArrayOutput() DataMaskRuleArrayOutput {
 
 func (i DataMaskRuleArray) ToDataMaskRuleArrayOutputWithContext(ctx context.Context) DataMaskRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleArrayOutput)
-}
-
-func (i DataMaskRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataMaskRule] {
-	return pulumix.Output[[]*DataMaskRule]{
-		OutputState: i.ToDataMaskRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataMaskRuleMapInput is an input type that accepts DataMaskRuleMap and DataMaskRuleMapOutput values.
@@ -363,12 +350,6 @@ func (i DataMaskRuleMap) ToDataMaskRuleMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleMapOutput)
 }
 
-func (i DataMaskRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataMaskRule] {
-	return pulumix.Output[map[string]*DataMaskRule]{
-		OutputState: i.ToDataMaskRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataMaskRuleOutput struct{ *pulumi.OutputState }
 
 func (DataMaskRuleOutput) ElementType() reflect.Type {
@@ -383,12 +364,6 @@ func (o DataMaskRuleOutput) ToDataMaskRuleOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o DataMaskRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*DataMaskRule] {
-	return pulumix.Output[*DataMaskRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Compartment Identifier where the resource is created
 func (o DataMaskRuleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -400,8 +375,8 @@ func (o DataMaskRuleOutput) DataMaskCategories() pulumi.StringArrayOutput {
 }
 
 // (Updatable) The status of the dataMaskRule.
-func (o DataMaskRuleOutput) DataMaskRuleStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.DataMaskRuleStatus }).(pulumi.StringOutput)
+func (o DataMaskRuleOutput) DataMaskRuleStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringPtrOutput { return v.DataMaskRuleStatus }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -410,8 +385,8 @@ func (o DataMaskRuleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The data mask rule description. Avoid entering confidential information.
-func (o DataMaskRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DataMaskRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Data mask rule name.
@@ -434,13 +409,13 @@ func (o DataMaskRuleOutput) IamGroupId() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o DataMaskRuleOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o DataMaskRuleOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DataMaskRule.
-func (o DataMaskRuleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DataMaskRuleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -454,13 +429,13 @@ func (o DataMaskRuleOutput) TargetSelected() DataMaskRuleTargetSelectedOutput {
 }
 
 // The date and time the target was created. Format defined by RFC3339.
-func (o DataMaskRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DataMaskRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the target was updated. Format defined by RFC3339.
-func (o DataMaskRuleOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DataMaskRuleOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DataMaskRuleArrayOutput struct{ *pulumi.OutputState }
@@ -475,12 +450,6 @@ func (o DataMaskRuleArrayOutput) ToDataMaskRuleArrayOutput() DataMaskRuleArrayOu
 
 func (o DataMaskRuleArrayOutput) ToDataMaskRuleArrayOutputWithContext(ctx context.Context) DataMaskRuleArrayOutput {
 	return o
-}
-
-func (o DataMaskRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataMaskRule] {
-	return pulumix.Output[[]*DataMaskRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataMaskRuleArrayOutput) Index(i pulumi.IntInput) DataMaskRuleOutput {
@@ -501,12 +470,6 @@ func (o DataMaskRuleMapOutput) ToDataMaskRuleMapOutput() DataMaskRuleMapOutput {
 
 func (o DataMaskRuleMapOutput) ToDataMaskRuleMapOutputWithContext(ctx context.Context) DataMaskRuleMapOutput {
 	return o
-}
-
-func (o DataMaskRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataMaskRule] {
-	return pulumix.Output[map[string]*DataMaskRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataMaskRuleMapOutput) MapIndex(k pulumi.StringInput) DataMaskRuleOutput {

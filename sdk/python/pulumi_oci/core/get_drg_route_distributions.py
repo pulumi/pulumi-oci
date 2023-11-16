@@ -46,25 +46,16 @@ class GetDrgRouteDistributionsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
-        """
         return pulumi.get(self, "drg_id")
 
     @property
     @pulumi.getter(name="drgRouteDistributions")
-    def drg_route_distributions(self) -> Sequence['outputs.GetDrgRouteDistributionsDrgRouteDistributionResult']:
-        """
-        The list of drg_route_distributions.
-        """
+    def drg_route_distributions(self) -> Optional[Sequence['outputs.GetDrgRouteDistributionsDrgRouteDistributionResult']]:
         return pulumi.get(self, "drg_route_distributions")
 
     @property
@@ -74,7 +65,7 @@ class GetDrgRouteDistributionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetDrgRouteDistributionsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The route distribution's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,28 +97,7 @@ def get_drg_route_distributions(display_name: Optional[str] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteDistributionsResult:
     """
-    This data source provides the list of Drg Route Distributions in Oracle Cloud Infrastructure Core service.
-
-    Lists the route distributions in the specified DRG.
-
-    To retrieve the statements in a distribution, use the
-    ListDrgRouteDistributionStatements operation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_distribution_display_name"],
-        state=var["drg_route_distribution_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-    :param str state: A filter that only returns resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -156,27 +123,6 @@ def get_drg_route_distributions_output(display_name: Optional[pulumi.Input[Optio
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionsResult]:
     """
-    This data source provides the list of Drg Route Distributions in Oracle Cloud Infrastructure Core service.
-
-    Lists the route distributions in the specified DRG.
-
-    To retrieve the statements in a distribution, use the
-    ListDrgRouteDistributionStatements operation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_distribution_display_name"],
-        state=var["drg_route_distribution_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-    :param str state: A filter that only returns resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -45,26 +45,17 @@ class GetCatalogPrivateEndpointsResult:
 
     @property
     @pulumi.getter(name="catalogPrivateEndpoints")
-    def catalog_private_endpoints(self) -> Sequence['outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpointResult']:
-        """
-        The list of catalog_private_endpoints.
-        """
+    def catalog_private_endpoints(self) -> Optional[Sequence['outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpointResult']]:
         return pulumi.get(self, "catalog_private_endpoints")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Identifier of the compartment this private endpoint belongs to
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Mutable name of the Private Reverse Connection Endpoint
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetCatalogPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetCatalogPrivateEndpointsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the private endpoint resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_catalog_private_endpoints(compartment_id: Optional[str] = None,
                                   state: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogPrivateEndpointsResult:
     """
-    This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all the catalog private endpoints in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_private_endpoints = oci.DataCatalog.get_catalog_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["catalog_private_endpoint_display_name"],
-        state=var["catalog_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment where you want to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_catalog_private_endpoints_output(compartment_id: Optional[pulumi.Input[s
                                          state: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogPrivateEndpointsResult]:
     """
-    This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all the catalog private endpoints in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_private_endpoints = oci.DataCatalog.get_catalog_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["catalog_private_endpoint_display_name"],
-        state=var["catalog_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment where you want to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

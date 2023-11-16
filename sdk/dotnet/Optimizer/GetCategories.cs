@@ -243,7 +243,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IncludeOrganization;
         /// <summary>
         /// The name assigned to the category.
@@ -266,7 +266,7 @@ namespace Pulumi.Oci.Optimizer
 
             ImmutableArray<Outputs.GetCategoriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? includeOrganization,
 

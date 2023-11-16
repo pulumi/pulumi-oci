@@ -51,12 +51,12 @@ export interface GetCrossConnectLocationsResult {
     /**
      * The list of cross_connect_locations.
      */
-    readonly crossConnectLocations: outputs.Core.GetCrossConnectLocationsCrossConnectLocation[];
+    readonly crossConnectLocations?: outputs.Core.GetCrossConnectLocationsCrossConnectLocation[];
     readonly filters?: outputs.Core.GetCrossConnectLocationsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.

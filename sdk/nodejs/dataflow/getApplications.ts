@@ -73,7 +73,7 @@ export interface GetApplicationsResult {
     /**
      * The list of applications.
      */
-    readonly applications: outputs.DataFlow.GetApplicationsApplication[];
+    readonly applications?: outputs.DataFlow.GetApplicationsApplication[];
     /**
      * The OCID of a compartment.
      */
@@ -87,7 +87,7 @@ export interface GetApplicationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the user who created the resource.
      */

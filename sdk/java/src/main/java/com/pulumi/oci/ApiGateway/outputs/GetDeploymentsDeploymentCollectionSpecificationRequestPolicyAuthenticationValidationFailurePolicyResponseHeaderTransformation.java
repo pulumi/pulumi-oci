@@ -9,6 +9,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation {
@@ -16,17 +17,17 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * @return Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders;
     /**
      * @return Rename HTTP headers as they pass through the gateway.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders;
     /**
      * @return Set HTTP headers as they pass through the gateway.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation() {}
     /**
@@ -34,21 +35,21 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders() {
-        return this.filterHeaders;
+        return this.filterHeaders == null ? List.of() : this.filterHeaders;
     }
     /**
      * @return Rename HTTP headers as they pass through the gateway.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders() {
-        return this.renameHeaders;
+        return this.renameHeaders == null ? List.of() : this.renameHeaders;
     }
     /**
      * @return Set HTTP headers as they pass through the gateway.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders() {
-        return this.setHeaders;
+        return this.setHeaders == null ? List.of() : this.setHeaders;
     }
 
     public static Builder builder() {
@@ -60,9 +61,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +73,24 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
 
         @CustomType.Setter
-        public Builder filterHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders) {
-            this.filterHeaders = Objects.requireNonNull(filterHeaders);
+        public Builder filterHeaders(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders) {
+            this.filterHeaders = filterHeaders;
             return this;
         }
         public Builder filterHeaders(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader... filterHeaders) {
             return filterHeaders(List.of(filterHeaders));
         }
         @CustomType.Setter
-        public Builder renameHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders) {
-            this.renameHeaders = Objects.requireNonNull(renameHeaders);
+        public Builder renameHeaders(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders) {
+            this.renameHeaders = renameHeaders;
             return this;
         }
         public Builder renameHeaders(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader... renameHeaders) {
             return renameHeaders(List.of(renameHeaders));
         }
         @CustomType.Setter
-        public Builder setHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders) {
-            this.setHeaders = Objects.requireNonNull(setHeaders);
+        public Builder setHeaders(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders) {
+            this.setHeaders = setHeaders;
             return this;
         }
         public Builder setHeaders(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader... setHeaders) {

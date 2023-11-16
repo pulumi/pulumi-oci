@@ -46,17 +46,11 @@ class GetEnrollmentStatusesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="enrollmentStatusCollections")
-    def enrollment_status_collections(self) -> Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionResult']:
-        """
-        The list of enrollment_status_collection.
-        """
+    def enrollment_status_collections(self) -> Optional[Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionResult']]:
         return pulumi.get(self, "enrollment_status_collections")
 
     @property
@@ -66,7 +60,7 @@ class GetEnrollmentStatusesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +69,11 @@ class GetEnrollmentStatusesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The enrollment status' current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        The current Cloud Advisor enrollment status.
-        """
         return pulumi.get(self, "status")
 
 
@@ -109,25 +97,7 @@ def get_enrollment_statuses(compartment_id: Optional[str] = None,
                             status: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnrollmentStatusesResult:
     """
-    This data source provides the list of Enrollment Statuses in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the Cloud Advisor enrollment statuses.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enrollment_statuses = oci.Optimizer.get_enrollment_statuses(compartment_id=var["compartment_id"],
-        state=var["enrollment_status_state"],
-        status=var["enrollment_status_status"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str state: A filter that returns results that match the lifecycle state specified.
-    :param str status: A filter that returns results that match the Cloud Advisor enrollment status specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_enrollment_statuses_output(compartment_id: Optional[pulumi.Input[str]] =
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnrollmentStatusesResult]:
     """
-    This data source provides the list of Enrollment Statuses in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the Cloud Advisor enrollment statuses.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enrollment_statuses = oci.Optimizer.get_enrollment_statuses(compartment_id=var["compartment_id"],
-        state=var["enrollment_status_state"],
-        status=var["enrollment_status_status"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str state: A filter that returns results that match the lifecycle state specified.
-    :param str status: A filter that returns results that match the Cloud Advisor enrollment status specified.
+    Use this data source to access information about an existing resource.
     """
     ...

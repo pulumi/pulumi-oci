@@ -47,7 +47,7 @@ class GetRunStatementsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,25 +56,16 @@ class GetRunStatementsResult:
     @property
     @pulumi.getter(name="runId")
     def run_id(self) -> str:
-        """
-        The ID of a run.
-        """
         return pulumi.get(self, "run_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of this statement.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="statementCollections")
-    def statement_collections(self) -> Sequence['outputs.GetRunStatementsStatementCollectionResult']:
-        """
-        The list of statement_collection.
-        """
+    def statement_collections(self) -> Optional[Sequence['outputs.GetRunStatementsStatementCollectionResult']]:
         return pulumi.get(self, "statement_collections")
 
 
@@ -96,23 +87,7 @@ def get_run_statements(filters: Optional[Sequence[pulumi.InputType['GetRunStatem
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRunStatementsResult:
     """
-    This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all statements for a Session run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_statements = oci.DataFlow.get_run_statements(run_id=oci_dataflow_run["test_run"]["id"],
-        state=var["run_statement_state"])
-    ```
-
-
-    :param str run_id: The unique ID for the run
-    :param str state: The LifecycleState of the statement.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -135,22 +110,6 @@ def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[p
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunStatementsResult]:
     """
-    This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all statements for a Session run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_statements = oci.DataFlow.get_run_statements(run_id=oci_dataflow_run["test_run"]["id"],
-        state=var["run_statement_state"])
-    ```
-
-
-    :param str run_id: The unique ID for the run
-    :param str state: The LifecycleState of the statement.
+    Use this data source to access information about an existing resource.
     """
     ...

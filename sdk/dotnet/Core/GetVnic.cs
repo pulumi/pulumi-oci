@@ -116,31 +116,31 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The VNIC's availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// </summary>
-        public readonly string HostnameLabel;
+        public readonly string? HostnameLabel;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
         /// </summary>
@@ -148,11 +148,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
         /// </summary>
-        public readonly bool IsPrimary;
+        public readonly bool? IsPrimary;
         /// <summary>
         /// The MAC address of the VNIC.
         /// </summary>
-        public readonly string MacAddress;
+        public readonly string? MacAddress;
         /// <summary>
         /// A list of the OCIDs of the network security groups that the VNIC belongs to.
         /// </summary>
@@ -160,70 +160,70 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The private IP address of the primary `privateIp` object on the VNIC. The address is within the CIDR of the VNIC's subnet.  Example: `10.0.3.3`
         /// </summary>
-        public readonly string PrivateIpAddress;
+        public readonly string? PrivateIpAddress;
         /// <summary>
         /// The public IP address of the VNIC, if one is assigned.
         /// </summary>
-        public readonly string PublicIpAddress;
+        public readonly string? PublicIpAddress;
         /// <summary>
         /// Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
         /// </summary>
-        public readonly bool SkipSourceDestCheck;
+        public readonly bool? SkipSourceDestCheck;
         /// <summary>
         /// The current state of the VNIC.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of belonging to a subnet), the `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan). If the VNIC is instead in a subnet, `subnetId` has a value.
         /// </summary>
-        public readonly string VlanId;
+        public readonly string? VlanId;
         public readonly string VnicId;
 
         [OutputConstructor]
         private GetVnicResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostnameLabel,
+            string? hostnameLabel,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> ipv6addresses,
 
-            bool isPrimary,
+            bool? isPrimary,
 
-            string macAddress,
+            string? macAddress,
 
             ImmutableArray<string> nsgIds,
 
-            string privateIpAddress,
+            string? privateIpAddress,
 
-            string publicIpAddress,
+            string? publicIpAddress,
 
-            bool skipSourceDestCheck,
+            bool? skipSourceDestCheck,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vlanId,
+            string? vlanId,
 
             string vnicId)
         {

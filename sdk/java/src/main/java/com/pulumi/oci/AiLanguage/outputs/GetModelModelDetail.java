@@ -8,6 +8,8 @@ import com.pulumi.oci.AiLanguage.outputs.GetModelModelDetailClassificationMode;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelModelDetail {
@@ -15,22 +17,22 @@ public final class GetModelModelDetail {
      * @return classification Modes
      * 
      */
-    private List<GetModelModelDetailClassificationMode> classificationModes;
+    private @Nullable List<GetModelModelDetailClassificationMode> classificationModes;
     /**
      * @return supported language default value is en
      * 
      */
-    private String languageCode;
+    private @Nullable String languageCode;
     /**
      * @return Model type
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
     /**
      * @return For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetModelModelDetail() {}
     /**
@@ -38,28 +40,28 @@ public final class GetModelModelDetail {
      * 
      */
     public List<GetModelModelDetailClassificationMode> classificationModes() {
-        return this.classificationModes;
+        return this.classificationModes == null ? List.of() : this.classificationModes;
     }
     /**
      * @return supported language default value is en
      * 
      */
-    public String languageCode() {
-        return this.languageCode;
+    public Optional<String> languageCode() {
+        return Optional.ofNullable(this.languageCode);
     }
     /**
      * @return Model type
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetModelModelDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelModelDetailClassificationMode> classificationModes;
-        private String languageCode;
-        private String modelType;
-        private String version;
+        private @Nullable List<GetModelModelDetailClassificationMode> classificationModes;
+        private @Nullable String languageCode;
+        private @Nullable String modelType;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetModelModelDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetModelModelDetail {
         }
 
         @CustomType.Setter
-        public Builder classificationModes(List<GetModelModelDetailClassificationMode> classificationModes) {
-            this.classificationModes = Objects.requireNonNull(classificationModes);
+        public Builder classificationModes(@Nullable List<GetModelModelDetailClassificationMode> classificationModes) {
+            this.classificationModes = classificationModes;
             return this;
         }
         public Builder classificationModes(GetModelModelDetailClassificationMode... classificationModes) {
             return classificationModes(List.of(classificationModes));
         }
         @CustomType.Setter
-        public Builder languageCode(String languageCode) {
-            this.languageCode = Objects.requireNonNull(languageCode);
+        public Builder languageCode(@Nullable String languageCode) {
+            this.languageCode = languageCode;
             return this;
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetModelModelDetail build() {

@@ -24,14 +24,14 @@ public final class GetTargetDatabasesColumnsResult {
      * @return The list of columns.
      * 
      */
-    private List<GetTargetDatabasesColumnsColumn> columns;
+    private @Nullable List<GetTargetDatabasesColumnsColumn> columns;
     private @Nullable List<String> datatypes;
     private @Nullable List<GetTargetDatabasesColumnsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String schemaNameContains;
     /**
      * @return Name of the schema.
@@ -62,7 +62,7 @@ public final class GetTargetDatabasesColumnsResult {
      * 
      */
     public List<GetTargetDatabasesColumnsColumn> columns() {
-        return this.columns;
+        return this.columns == null ? List.of() : this.columns;
     }
     public List<String> datatypes() {
         return this.datatypes == null ? List.of() : this.datatypes;
@@ -74,8 +74,8 @@ public final class GetTargetDatabasesColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> schemaNameContains() {
         return Optional.ofNullable(this.schemaNameContains);
@@ -112,10 +112,10 @@ public final class GetTargetDatabasesColumnsResult {
     public static final class Builder {
         private @Nullable String columnNameContains;
         private @Nullable List<String> columnNames;
-        private List<GetTargetDatabasesColumnsColumn> columns;
+        private @Nullable List<GetTargetDatabasesColumnsColumn> columns;
         private @Nullable List<String> datatypes;
         private @Nullable List<GetTargetDatabasesColumnsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String schemaNameContains;
         private @Nullable List<String> schemaNames;
         private @Nullable String tableNameContains;
@@ -151,8 +151,8 @@ public final class GetTargetDatabasesColumnsResult {
             return columnNames(List.of(columnNames));
         }
         @CustomType.Setter
-        public Builder columns(List<GetTargetDatabasesColumnsColumn> columns) {
-            this.columns = Objects.requireNonNull(columns);
+        public Builder columns(@Nullable List<GetTargetDatabasesColumnsColumn> columns) {
+            this.columns = columns;
             return this;
         }
         public Builder columns(GetTargetDatabasesColumnsColumn... columns) {
@@ -175,8 +175,8 @@ public final class GetTargetDatabasesColumnsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

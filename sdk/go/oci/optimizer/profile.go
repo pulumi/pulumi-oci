@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
@@ -85,7 +84,7 @@ type Profile struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
-	AggregationIntervalInDays pulumi.IntOutput `pulumi:"aggregationIntervalInDays"`
+	AggregationIntervalInDays pulumi.IntPtrOutput `pulumi:"aggregationIntervalInDays"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
@@ -99,15 +98,15 @@ type Profile struct {
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The profile's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
-	TargetCompartments ProfileTargetCompartmentsOutput `pulumi:"targetCompartments"`
+	TargetCompartments ProfileTargetCompartmentsPtrOutput `pulumi:"targetCompartments"`
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
-	TargetTags ProfileTargetTagsOutput `pulumi:"targetTags"`
+	TargetTags ProfileTargetTagsPtrOutput `pulumi:"targetTags"`
 	// The date and time the profile was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the profile was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewProfile registers a new resource with the given unique name, arguments, and options.
@@ -272,12 +271,6 @@ func (i *Profile) ToProfileOutputWithContext(ctx context.Context) ProfileOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileOutput)
 }
 
-func (i *Profile) ToOutput(ctx context.Context) pulumix.Output[*Profile] {
-	return pulumix.Output[*Profile]{
-		OutputState: i.ToProfileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileArrayInput is an input type that accepts ProfileArray and ProfileArrayOutput values.
 // You can construct a concrete instance of `ProfileArrayInput` via:
 //
@@ -301,12 +294,6 @@ func (i ProfileArray) ToProfileArrayOutput() ProfileArrayOutput {
 
 func (i ProfileArray) ToProfileArrayOutputWithContext(ctx context.Context) ProfileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileArrayOutput)
-}
-
-func (i ProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]*Profile] {
-	return pulumix.Output[[]*Profile]{
-		OutputState: i.ToProfileArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProfileMapInput is an input type that accepts ProfileMap and ProfileMapOutput values.
@@ -334,12 +321,6 @@ func (i ProfileMap) ToProfileMapOutputWithContext(ctx context.Context) ProfileMa
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileMapOutput)
 }
 
-func (i ProfileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Profile] {
-	return pulumix.Output[map[string]*Profile]{
-		OutputState: i.ToProfileMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileOutput struct{ *pulumi.OutputState }
 
 func (ProfileOutput) ElementType() reflect.Type {
@@ -354,15 +335,9 @@ func (o ProfileOutput) ToProfileOutputWithContext(ctx context.Context) ProfileOu
 	return o
 }
 
-func (o ProfileOutput) ToOutput(ctx context.Context) pulumix.Output[*Profile] {
-	return pulumix.Output[*Profile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
-func (o ProfileOutput) AggregationIntervalInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v *Profile) pulumi.IntOutput { return v.AggregationIntervalInDays }).(pulumi.IntOutput)
+func (o ProfileOutput) AggregationIntervalInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.IntPtrOutput { return v.AggregationIntervalInDays }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the tenancy. The tenancy is the root compartment.
@@ -396,28 +371,28 @@ func (o ProfileOutput) Name() pulumi.StringOutput {
 }
 
 // The profile's current state.
-func (o ProfileOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ProfileOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Optional. The compartments specified in the profile override for a recommendation.
-func (o ProfileOutput) TargetCompartments() ProfileTargetCompartmentsOutput {
-	return o.ApplyT(func(v *Profile) ProfileTargetCompartmentsOutput { return v.TargetCompartments }).(ProfileTargetCompartmentsOutput)
+func (o ProfileOutput) TargetCompartments() ProfileTargetCompartmentsPtrOutput {
+	return o.ApplyT(func(v *Profile) ProfileTargetCompartmentsPtrOutput { return v.TargetCompartments }).(ProfileTargetCompartmentsPtrOutput)
 }
 
 // (Updatable) Optional. The tags specified in the profile override for a recommendation.
-func (o ProfileOutput) TargetTags() ProfileTargetTagsOutput {
-	return o.ApplyT(func(v *Profile) ProfileTargetTagsOutput { return v.TargetTags }).(ProfileTargetTagsOutput)
+func (o ProfileOutput) TargetTags() ProfileTargetTagsPtrOutput {
+	return o.ApplyT(func(v *Profile) ProfileTargetTagsPtrOutput { return v.TargetTags }).(ProfileTargetTagsPtrOutput)
 }
 
 // The date and time the profile was created, in the format defined by RFC3339.
-func (o ProfileOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ProfileOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the profile was last updated, in the format defined by RFC3339.
-func (o ProfileOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ProfileOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ProfileArrayOutput struct{ *pulumi.OutputState }
@@ -432,12 +407,6 @@ func (o ProfileArrayOutput) ToProfileArrayOutput() ProfileArrayOutput {
 
 func (o ProfileArrayOutput) ToProfileArrayOutputWithContext(ctx context.Context) ProfileArrayOutput {
 	return o
-}
-
-func (o ProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Profile] {
-	return pulumix.Output[[]*Profile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileArrayOutput) Index(i pulumi.IntInput) ProfileOutput {
@@ -458,12 +427,6 @@ func (o ProfileMapOutput) ToProfileMapOutput() ProfileMapOutput {
 
 func (o ProfileMapOutput) ToProfileMapOutputWithContext(ctx context.Context) ProfileMapOutput {
 	return o
-}
-
-func (o ProfileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Profile] {
-	return pulumix.Output[map[string]*Profile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileMapOutput) MapIndex(k pulumi.StringInput) ProfileOutput {

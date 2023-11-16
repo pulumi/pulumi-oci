@@ -18,7 +18,7 @@ public final class GetApisResult {
      * @return The list of api_collection.
      * 
      */
-    private List<GetApisApiCollection> apiCollections;
+    private @Nullable List<GetApisApiCollection> apiCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      * 
@@ -34,7 +34,7 @@ public final class GetApisResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the API.
      * 
@@ -47,7 +47,7 @@ public final class GetApisResult {
      * 
      */
     public List<GetApisApiCollection> apiCollections() {
-        return this.apiCollections;
+        return this.apiCollections == null ? List.of() : this.apiCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -70,8 +70,8 @@ public final class GetApisResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the API.
@@ -90,11 +90,11 @@ public final class GetApisResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApisApiCollection> apiCollections;
+        private @Nullable List<GetApisApiCollection> apiCollections;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetApisFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetApisResult defaults) {
@@ -108,8 +108,8 @@ public final class GetApisResult {
         }
 
         @CustomType.Setter
-        public Builder apiCollections(List<GetApisApiCollection> apiCollections) {
-            this.apiCollections = Objects.requireNonNull(apiCollections);
+        public Builder apiCollections(@Nullable List<GetApisApiCollection> apiCollections) {
+            this.apiCollections = apiCollections;
             return this;
         }
         public Builder apiCollections(GetApisApiCollection... apiCollections) {
@@ -134,8 +134,8 @@ public final class GetApisResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

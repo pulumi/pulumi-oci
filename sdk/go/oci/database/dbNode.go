@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Node resource in Oracle Cloud Infrastructure Database service.
@@ -30,56 +29,56 @@ type DbNode struct {
 	pulumi.CustomResourceState
 
 	// Additional information about the planned maintenance.
-	AdditionalDetails pulumi.StringOutput `pulumi:"additionalDetails"`
+	AdditionalDetails pulumi.StringPtrOutput `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-	BackupIpId pulumi.StringOutput `pulumi:"backupIpId"`
+	BackupIpId pulumi.StringPtrOutput `pulumi:"backupIpId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
-	BackupVnic2id pulumi.StringOutput `pulumi:"backupVnic2id"`
+	BackupVnic2id pulumi.StringPtrOutput `pulumi:"backupVnic2id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
-	BackupVnicId pulumi.StringOutput `pulumi:"backupVnicId"`
+	BackupVnicId pulumi.StringPtrOutput `pulumi:"backupVnicId"`
 	// The number of CPU cores enabled on the Db node.
-	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
+	CpuCoreCount pulumi.IntPtrOutput `pulumi:"cpuCoreCount"`
 	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbNodeId pulumi.StringOutput `pulumi:"dbNodeId"`
 	// The allocated local node storage in GBs on the Db node.
-	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs pulumi.IntPtrOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-	DbServerId pulumi.StringOutput `pulumi:"dbServerId"`
+	DbServerId pulumi.StringPtrOutput `pulumi:"dbServerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrOutput `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The name of the Fault Domain the instance is contained in.
-	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrOutput `pulumi:"faultDomain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-	HostIpId pulumi.StringOutput `pulumi:"hostIpId"`
+	HostIpId pulumi.StringPtrOutput `pulumi:"hostIpId"`
 	// The host name for the database node.
-	Hostname pulumi.StringOutput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrOutput `pulumi:"hostname"`
 	// Information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The type of database node maintenance.
-	MaintenanceType pulumi.StringOutput `pulumi:"maintenanceType"`
+	MaintenanceType pulumi.StringPtrOutput `pulumi:"maintenanceType"`
 	// The allocated memory in GBs on the Db node.
-	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs pulumi.IntPtrOutput `pulumi:"memorySizeInGbs"`
 	// The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-	SoftwareStorageSizeInGb pulumi.IntOutput `pulumi:"softwareStorageSizeInGb"`
+	SoftwareStorageSizeInGb pulumi.IntPtrOutput `pulumi:"softwareStorageSizeInGb"`
 	// The current state of the database node.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time that the database node was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// End date and time of maintenance window.
-	TimeMaintenanceWindowEnd pulumi.StringOutput `pulumi:"timeMaintenanceWindowEnd"`
+	TimeMaintenanceWindowEnd pulumi.StringPtrOutput `pulumi:"timeMaintenanceWindowEnd"`
 	// Start date and time of maintenance window.
-	TimeMaintenanceWindowStart pulumi.StringOutput `pulumi:"timeMaintenanceWindowStart"`
+	TimeMaintenanceWindowStart pulumi.StringPtrOutput `pulumi:"timeMaintenanceWindowStart"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
-	Vnic2id pulumi.StringOutput `pulumi:"vnic2id"`
+	Vnic2id pulumi.StringPtrOutput `pulumi:"vnic2id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
-	VnicId pulumi.StringOutput `pulumi:"vnicId"`
+	VnicId pulumi.StringPtrOutput `pulumi:"vnicId"`
 }
 
 // NewDbNode registers a new resource with the given unique name, arguments, and options.
@@ -274,12 +273,6 @@ func (i *DbNode) ToDbNodeOutputWithContext(ctx context.Context) DbNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeOutput)
 }
 
-func (i *DbNode) ToOutput(ctx context.Context) pulumix.Output[*DbNode] {
-	return pulumix.Output[*DbNode]{
-		OutputState: i.ToDbNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbNodeArrayInput is an input type that accepts DbNodeArray and DbNodeArrayOutput values.
 // You can construct a concrete instance of `DbNodeArrayInput` via:
 //
@@ -303,12 +296,6 @@ func (i DbNodeArray) ToDbNodeArrayOutput() DbNodeArrayOutput {
 
 func (i DbNodeArray) ToDbNodeArrayOutputWithContext(ctx context.Context) DbNodeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeArrayOutput)
-}
-
-func (i DbNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbNode] {
-	return pulumix.Output[[]*DbNode]{
-		OutputState: i.ToDbNodeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbNodeMapInput is an input type that accepts DbNodeMap and DbNodeMapOutput values.
@@ -336,12 +323,6 @@ func (i DbNodeMap) ToDbNodeMapOutputWithContext(ctx context.Context) DbNodeMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeMapOutput)
 }
 
-func (i DbNodeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbNode] {
-	return pulumix.Output[map[string]*DbNode]{
-		OutputState: i.ToDbNodeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbNodeOutput struct{ *pulumi.OutputState }
 
 func (DbNodeOutput) ElementType() reflect.Type {
@@ -356,35 +337,29 @@ func (o DbNodeOutput) ToDbNodeOutputWithContext(ctx context.Context) DbNodeOutpu
 	return o
 }
 
-func (o DbNodeOutput) ToOutput(ctx context.Context) pulumix.Output[*DbNode] {
-	return pulumix.Output[*DbNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Additional information about the planned maintenance.
-func (o DbNodeOutput) AdditionalDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.AdditionalDetails }).(pulumi.StringOutput)
+func (o DbNodeOutput) AdditionalDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.AdditionalDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-func (o DbNodeOutput) BackupIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.BackupIpId }).(pulumi.StringOutput)
+func (o DbNodeOutput) BackupIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.BackupIpId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
-func (o DbNodeOutput) BackupVnic2id() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.BackupVnic2id }).(pulumi.StringOutput)
+func (o DbNodeOutput) BackupVnic2id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.BackupVnic2id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
-func (o DbNodeOutput) BackupVnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.BackupVnicId }).(pulumi.StringOutput)
+func (o DbNodeOutput) BackupVnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.BackupVnicId }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPU cores enabled on the Db node.
-func (o DbNodeOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o DbNodeOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.IntPtrOutput { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -393,18 +368,18 @@ func (o DbNodeOutput) DbNodeId() pulumi.StringOutput {
 }
 
 // The allocated local node storage in GBs on the Db node.
-func (o DbNodeOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o DbNodeOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.IntPtrOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-func (o DbNodeOutput) DbServerId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.DbServerId }).(pulumi.StringOutput)
+func (o DbNodeOutput) DbServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.DbServerId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-func (o DbNodeOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
+func (o DbNodeOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -413,8 +388,8 @@ func (o DbNodeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The name of the Fault Domain the instance is contained in.
-func (o DbNodeOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
+func (o DbNodeOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -426,63 +401,63 @@ func (o DbNodeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-func (o DbNodeOutput) HostIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.HostIpId }).(pulumi.StringOutput)
+func (o DbNodeOutput) HostIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.HostIpId }).(pulumi.StringPtrOutput)
 }
 
 // The host name for the database node.
-func (o DbNodeOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
+func (o DbNodeOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // Information about the current lifecycle state.
-func (o DbNodeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DbNodeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The type of database node maintenance.
-func (o DbNodeOutput) MaintenanceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.MaintenanceType }).(pulumi.StringOutput)
+func (o DbNodeOutput) MaintenanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.MaintenanceType }).(pulumi.StringPtrOutput)
 }
 
 // The allocated memory in GBs on the Db node.
-func (o DbNodeOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o DbNodeOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.IntPtrOutput { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-func (o DbNodeOutput) SoftwareStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.IntOutput { return v.SoftwareStorageSizeInGb }).(pulumi.IntOutput)
+func (o DbNodeOutput) SoftwareStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.IntPtrOutput { return v.SoftwareStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the database node.
-func (o DbNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DbNodeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the database node was created.
-func (o DbNodeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DbNodeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // End date and time of maintenance window.
-func (o DbNodeOutput) TimeMaintenanceWindowEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.TimeMaintenanceWindowEnd }).(pulumi.StringOutput)
+func (o DbNodeOutput) TimeMaintenanceWindowEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.TimeMaintenanceWindowEnd }).(pulumi.StringPtrOutput)
 }
 
 // Start date and time of maintenance window.
-func (o DbNodeOutput) TimeMaintenanceWindowStart() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.TimeMaintenanceWindowStart }).(pulumi.StringOutput)
+func (o DbNodeOutput) TimeMaintenanceWindowStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.TimeMaintenanceWindowStart }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
-func (o DbNodeOutput) Vnic2id() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.Vnic2id }).(pulumi.StringOutput)
+func (o DbNodeOutput) Vnic2id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.Vnic2id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
-func (o DbNodeOutput) VnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.VnicId }).(pulumi.StringOutput)
+func (o DbNodeOutput) VnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringPtrOutput { return v.VnicId }).(pulumi.StringPtrOutput)
 }
 
 type DbNodeArrayOutput struct{ *pulumi.OutputState }
@@ -497,12 +472,6 @@ func (o DbNodeArrayOutput) ToDbNodeArrayOutput() DbNodeArrayOutput {
 
 func (o DbNodeArrayOutput) ToDbNodeArrayOutputWithContext(ctx context.Context) DbNodeArrayOutput {
 	return o
-}
-
-func (o DbNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbNode] {
-	return pulumix.Output[[]*DbNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbNodeArrayOutput) Index(i pulumi.IntInput) DbNodeOutput {
@@ -523,12 +492,6 @@ func (o DbNodeMapOutput) ToDbNodeMapOutput() DbNodeMapOutput {
 
 func (o DbNodeMapOutput) ToDbNodeMapOutputWithContext(ctx context.Context) DbNodeMapOutput {
 	return o
-}
-
-func (o DbNodeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbNode] {
-	return pulumix.Output[map[string]*DbNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbNodeMapOutput) MapIndex(k pulumi.StringInput) DbNodeOutput {

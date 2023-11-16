@@ -125,34 +125,34 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The count of ingest time rules.
         /// </summary>
-        public readonly int IngestTimeRulesCount;
+        public readonly int? IngestTimeRulesCount;
         public readonly string Namespace;
         /// <summary>
         /// The count of saved search rules.
         /// </summary>
-        public readonly int SavedSearchRulesCount;
+        public readonly int? SavedSearchRulesCount;
         /// <summary>
         /// The total count of detection rules.
         /// </summary>
-        public readonly int TotalCount;
+        public readonly int? TotalCount;
 
         [OutputConstructor]
         private GetNamespaceRulesSummaryResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
-            int ingestTimeRulesCount,
+            int? ingestTimeRulesCount,
 
             string @namespace,
 
-            int savedSearchRulesCount,
+            int? savedSearchRulesCount,
 
-            int totalCount)
+            int? totalCount)
         {
             CompartmentId = compartmentId;
             Id = id;

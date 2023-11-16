@@ -107,7 +107,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="adminRole", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> adminRole;
+    private Output</* @Nullable */ Boolean> adminRole;
 
     /**
      * @return If true, the role provides administrative access privileges.
@@ -122,8 +122,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> adminRole() {
-        return this.adminRole;
+    public Output<Optional<Boolean>> adminRole() {
+        return Codegen.optional(this.adminRole);
     }
     /**
      * A unique identifier for the application that references this role.
@@ -215,7 +215,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availableToClients", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> availableToClients;
+    private Output</* @Nullable */ Boolean> availableToClients;
 
     /**
      * @return If true, this AppRole can be granted to Apps.
@@ -230,8 +230,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> availableToClients() {
-        return this.availableToClients;
+    public Output<Optional<Boolean>> availableToClients() {
+        return Codegen.optional(this.availableToClients);
     }
     /**
      * If true, this AppRole can be granted to Groups.
@@ -247,7 +247,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availableToGroups", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> availableToGroups;
+    private Output</* @Nullable */ Boolean> availableToGroups;
 
     /**
      * @return If true, this AppRole can be granted to Groups.
@@ -262,8 +262,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> availableToGroups() {
-        return this.availableToGroups;
+    public Output<Optional<Boolean>> availableToGroups() {
+        return Codegen.optional(this.availableToGroups);
     }
     /**
      * If true, this AppRole can be granted to Users.
@@ -279,7 +279,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availableToUsers", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> availableToUsers;
+    private Output</* @Nullable */ Boolean> availableToUsers;
 
     /**
      * @return If true, this AppRole can be granted to Users.
@@ -294,8 +294,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> availableToUsers() {
-        return this.availableToUsers;
+    public Output<Optional<Boolean>> availableToUsers() {
+        return Codegen.optional(this.availableToUsers);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -312,7 +312,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -328,8 +328,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -346,7 +346,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -362,8 +362,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * AppRole description
@@ -380,7 +380,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return AppRole description
@@ -396,8 +396,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * AppRole name
@@ -452,7 +452,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -468,8 +468,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -484,7 +484,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsAppRoleIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsAppRoleIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsAppRoleIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -498,8 +498,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppRoleIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsAppRoleIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -528,7 +528,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsAppRoleIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsAppRoleIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsAppRoleIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -542,8 +542,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppRoleIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsAppRoleIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -560,7 +560,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -576,8 +576,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -593,7 +593,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -608,8 +608,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * The name of the legacy group associated with this AppRole.
@@ -626,7 +626,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="legacyGroupName", refs={String.class}, tree="[0]")
-    private Output<String> legacyGroupName;
+    private Output</* @Nullable */ String> legacyGroupName;
 
     /**
      * @return The name of the legacy group associated with this AppRole.
@@ -642,8 +642,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: server
      * 
      */
-    public Output<String> legacyGroupName() {
-        return this.legacyGroupName;
+    public Output<Optional<String>> legacyGroupName() {
+        return Codegen.optional(this.legacyGroupName);
     }
     /**
      * (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
@@ -661,7 +661,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="limitedToOneOrMoreGroups", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> limitedToOneOrMoreGroups;
+    private Output</* @Nullable */ Boolean> limitedToOneOrMoreGroups;
 
     /**
      * @return (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
@@ -678,8 +678,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> limitedToOneOrMoreGroups() {
-        return this.limitedToOneOrMoreGroups;
+    public Output<Optional<Boolean>> limitedToOneOrMoreGroups() {
+        return Codegen.optional(this.limitedToOneOrMoreGroups);
     }
     /**
      * (Updatable) AppRole localization name
@@ -698,7 +698,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="localizedDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> localizedDisplayName;
+    private Output</* @Nullable */ String> localizedDisplayName;
 
     /**
      * @return (Updatable) AppRole localization name
@@ -716,8 +716,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> localizedDisplayName() {
-        return this.localizedDisplayName;
+    public Output<Optional<String>> localizedDisplayName() {
+        return Codegen.optional(this.localizedDisplayName);
     }
     /**
      * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
@@ -736,7 +736,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="members", refs={List.class,DomainsAppRoleMember.class}, tree="[0,1]")
-    private Output<List<DomainsAppRoleMember>> members;
+    private Output</* @Nullable */ List<DomainsAppRoleMember>> members;
 
     /**
      * @return (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
@@ -754,8 +754,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppRoleMember>> members() {
-        return this.members;
+    public Output<Optional<List<DomainsAppRoleMember>>> members() {
+        return Codegen.optional(this.members);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -772,7 +772,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metas", refs={List.class,DomainsAppRoleMeta.class}, tree="[0,1]")
-    private Output<List<DomainsAppRoleMeta>> metas;
+    private Output</* @Nullable */ List<DomainsAppRoleMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -788,8 +788,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppRoleMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsAppRoleMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -806,7 +806,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -822,8 +822,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
@@ -839,7 +839,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="public", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> public_;
+    private Output</* @Nullable */ Boolean> public_;
 
     /**
      * @return If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
@@ -854,8 +854,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> public_() {
-        return this.public_;
+    public Output<Optional<Boolean>> public_() {
+        return Codegen.optional(this.public_);
     }
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -920,7 +920,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tags", refs={List.class,DomainsAppRoleTag.class}, tree="[0,1]")
-    private Output<List<DomainsAppRoleTag>> tags;
+    private Output</* @Nullable */ List<DomainsAppRoleTag>> tags;
 
     /**
      * @return A list of tags on this resource.
@@ -936,8 +936,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppRoleTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsAppRoleTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -954,7 +954,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -970,8 +970,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * (Updatable) AppRole unique name
@@ -990,7 +990,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="uniqueName", refs={String.class}, tree="[0]")
-    private Output<String> uniqueName;
+    private Output</* @Nullable */ String> uniqueName;
 
     /**
      * @return (Updatable) AppRole unique name
@@ -1008,8 +1008,8 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> uniqueName() {
-        return this.uniqueName;
+    public Output<Optional<String>> uniqueName() {
+        return Codegen.optional(this.uniqueName);
     }
 
     /**

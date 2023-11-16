@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the user the password belongs to.
         /// </summary>
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetCustomerSecretKeysFilterResult> filters,
 
-            string id,
+            string? id,
 
             string userId)
         {

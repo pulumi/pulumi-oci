@@ -45,52 +45,52 @@ export interface GetOnpremConnectorResult {
     /**
      * Latest available version of the on-premises connector.
      */
-    readonly availableVersion: string;
+    readonly availableVersion?: string;
     /**
      * The OCID of the compartment that contains the on-premises connector.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Created version of the on-premises connector.
      */
-    readonly createdVersion: string;
+    readonly createdVersion?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the on-premises connector.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the on-premises connector.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the on-premises connector.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the current state of the on-premises connector.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly onPremConnectorId: string;
     /**
      * The current state of the on-premises connector.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.

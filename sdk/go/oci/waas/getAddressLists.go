@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Address Lists in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -81,7 +80,7 @@ type GetAddressListsResult struct {
 	CompartmentId string                  `pulumi:"compartmentId"`
 	Filters       []GetAddressListsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                              string   `pulumi:"id"`
+	Id                              *string  `pulumi:"id"`
 	Ids                             []string `pulumi:"ids"`
 	Names                           []string `pulumi:"names"`
 	States                          []string `pulumi:"states"`
@@ -138,12 +137,6 @@ func (o GetAddressListsResultOutput) ToGetAddressListsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetAddressListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsResult] {
-	return pulumix.Output[GetAddressListsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of address_lists.
 func (o GetAddressListsResultOutput) AddressLists() GetAddressListsAddressListArrayOutput {
 	return o.ApplyT(func(v GetAddressListsResult) []GetAddressListsAddressList { return v.AddressLists }).(GetAddressListsAddressListArrayOutput)
@@ -159,8 +152,8 @@ func (o GetAddressListsResultOutput) Filters() GetAddressListsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAddressListsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressListsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAddressListsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressListsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAddressListsResultOutput) Ids() pulumi.StringArrayOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
@@ -99,8 +98,8 @@ type GetDetectorRecipesResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetDetectorRecipesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string `pulumi:"id"`
-	ResourceMetadataOnly *bool  `pulumi:"resourceMetadataOnly"`
+	Id                   *string `pulumi:"id"`
+	ResourceMetadataOnly *bool   `pulumi:"resourceMetadataOnly"`
 	// The current state of the resource.
 	State *string `pulumi:"state"`
 }
@@ -154,12 +153,6 @@ func (o GetDetectorRecipesResultOutput) ToGetDetectorRecipesResultOutputWithCont
 	return o
 }
 
-func (o GetDetectorRecipesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesResult] {
-	return pulumix.Output[GetDetectorRecipesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDetectorRecipesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -190,8 +183,8 @@ func (o GetDetectorRecipesResultOutput) Filters() GetDetectorRecipesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDetectorRecipesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectorRecipesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectorRecipesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectorRecipesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDetectorRecipesResultOutput) ResourceMetadataOnly() pulumi.BoolPtrOutput {

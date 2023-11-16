@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorTask {
@@ -14,63 +16,63 @@ public final class GetServiceConnectorTask {
      * @return Size limit (kilobytes) for batch sent to invoke the function.
      * 
      */
-    private Integer batchSizeInKbs;
+    private @Nullable Integer batchSizeInKbs;
     /**
      * @return Time limit (seconds) for batch sent to invoke the function.
      * 
      */
-    private Integer batchTimeInSec;
+    private @Nullable Integer batchTimeInSec;
     /**
      * @return A filter or mask to limit the source used in the flow defined by the service connector.
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    private String functionId;
+    private @Nullable String functionId;
     /**
      * @return The type descriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
 
     private GetServiceConnectorTask() {}
     /**
      * @return Size limit (kilobytes) for batch sent to invoke the function.
      * 
      */
-    public Integer batchSizeInKbs() {
-        return this.batchSizeInKbs;
+    public Optional<Integer> batchSizeInKbs() {
+        return Optional.ofNullable(this.batchSizeInKbs);
     }
     /**
      * @return Time limit (seconds) for batch sent to invoke the function.
      * 
      */
-    public Integer batchTimeInSec() {
-        return this.batchTimeInSec;
+    public Optional<Integer> batchTimeInSec() {
+        return Optional.ofNullable(this.batchTimeInSec);
     }
     /**
      * @return A filter or mask to limit the source used in the flow defined by the service connector.
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    public String functionId() {
-        return this.functionId;
+    public Optional<String> functionId() {
+        return Optional.ofNullable(this.functionId);
     }
     /**
      * @return The type descriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetServiceConnectorTask {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer batchSizeInKbs;
-        private Integer batchTimeInSec;
-        private String condition;
-        private String functionId;
-        private String kind;
+        private @Nullable Integer batchSizeInKbs;
+        private @Nullable Integer batchTimeInSec;
+        private @Nullable String condition;
+        private @Nullable String functionId;
+        private @Nullable String kind;
         public Builder() {}
         public Builder(GetServiceConnectorTask defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetServiceConnectorTask {
         }
 
         @CustomType.Setter
-        public Builder batchSizeInKbs(Integer batchSizeInKbs) {
-            this.batchSizeInKbs = Objects.requireNonNull(batchSizeInKbs);
+        public Builder batchSizeInKbs(@Nullable Integer batchSizeInKbs) {
+            this.batchSizeInKbs = batchSizeInKbs;
             return this;
         }
         @CustomType.Setter
-        public Builder batchTimeInSec(Integer batchTimeInSec) {
-            this.batchTimeInSec = Objects.requireNonNull(batchTimeInSec);
+        public Builder batchTimeInSec(@Nullable Integer batchTimeInSec) {
+            this.batchTimeInSec = batchTimeInSec;
             return this;
         }
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+        public Builder functionId(@Nullable String functionId) {
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         public GetServiceConnectorTask build() {

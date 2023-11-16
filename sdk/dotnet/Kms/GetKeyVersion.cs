@@ -148,7 +148,7 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The OCID of the compartment that contains this key version.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Key reference data to be returned to the customer as a response.
         /// </summary>
@@ -156,15 +156,15 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// Key version ID associated with the external key.
         /// </summary>
-        public readonly string ExternalKeyVersionId;
+        public readonly string? ExternalKeyVersionId;
         /// <summary>
         /// The OCID of the key version.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         /// </summary>
-        public readonly bool IsPrimary;
+        public readonly bool? IsPrimary;
         /// <summary>
         /// The OCID of the master encryption key associated with this key version.
         /// </summary>
@@ -177,44 +177,44 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
         /// </summary>
-        public readonly string PublicKey;
+        public readonly string? PublicKey;
         /// <summary>
         /// KeyVersion replica details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetKeyVersionReplicaDetailResult> ReplicaDetails;
-        public readonly string RestoredFromKeyId;
+        public readonly string? RestoredFromKeyId;
         /// <summary>
         /// The OCID of the key version from which this key version was restored.
         /// </summary>
-        public readonly string RestoredFromKeyVersionId;
+        public readonly string? RestoredFromKeyVersionId;
         /// <summary>
         /// The key version's current lifecycle state.  Example: `ENABLED`
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// The OCID of the vault that contains this key version.
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetKeyVersionResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetKeyVersionExternalKeyReferenceDetailResult> externalKeyReferenceDetails,
 
-            string externalKeyVersionId,
+            string? externalKeyVersionId,
 
-            string id,
+            string? id,
 
-            bool isPrimary,
+            bool? isPrimary,
 
             string keyId,
 
@@ -222,21 +222,21 @@ namespace Pulumi.Oci.Kms
 
             string managementEndpoint,
 
-            string publicKey,
+            string? publicKey,
 
             ImmutableArray<Outputs.GetKeyVersionReplicaDetailResult> replicaDetails,
 
-            string restoredFromKeyId,
+            string? restoredFromKeyId,
 
-            string restoredFromKeyVersionId,
+            string? restoredFromKeyVersionId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string vaultId)
+            string? vaultId)
         {
             CompartmentId = compartmentId;
             ExternalKeyReferenceDetails = externalKeyReferenceDetails;

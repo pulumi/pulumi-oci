@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformsBlockchainPlatformCollection {
-    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items;
+    private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items;
 
     private GetBlockchainPlatformsBlockchainPlatformCollection() {}
     public List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items;
+        private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items;
         public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBlockchainPlatformsBlockchainPlatformCollectionItem... items) {

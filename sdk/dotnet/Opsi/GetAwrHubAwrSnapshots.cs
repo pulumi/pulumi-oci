@@ -177,7 +177,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? TimeGreaterThanOrEqualTo;
         public readonly string? TimeLessThanOrEqualTo;
 
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.Opsi
 
             ImmutableArray<Outputs.GetAwrHubAwrSnapshotsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? timeGreaterThanOrEqualTo,
 

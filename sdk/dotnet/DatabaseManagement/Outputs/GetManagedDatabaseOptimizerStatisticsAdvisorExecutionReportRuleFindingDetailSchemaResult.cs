@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The name of the rule.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The names of schema objects.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult(
-            string name,
+            string? name,
 
             ImmutableArray<string> objects)
         {

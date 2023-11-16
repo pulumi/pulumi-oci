@@ -9,6 +9,7 @@ import com.pulumi.oci.LicenseManager.outputs.GetLicenseRecordsLicenseRecordColle
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetLicenseRecordsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of license_record_collection.
      * 
      */
-    private List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections;
+    private @Nullable List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections;
     /**
      * @return The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
      * 
@@ -38,15 +39,15 @@ public final class GetLicenseRecordsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of license_record_collection.
      * 
      */
     public List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections() {
-        return this.licenseRecordCollections;
+        return this.licenseRecordCollections == null ? List.of() : this.licenseRecordCollections;
     }
     /**
      * @return The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
@@ -66,8 +67,8 @@ public final class GetLicenseRecordsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetLicenseRecordsFilter> filters;
-        private String id;
-        private List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections;
+        private @Nullable String id;
+        private @Nullable List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections;
         private String productLicenseId;
         public Builder() {}
         public Builder(GetLicenseRecordsResult defaults) {
@@ -87,13 +88,13 @@ public final class GetLicenseRecordsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseRecordCollections(List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections) {
-            this.licenseRecordCollections = Objects.requireNonNull(licenseRecordCollections);
+        public Builder licenseRecordCollections(@Nullable List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections) {
+            this.licenseRecordCollections = licenseRecordCollections;
             return this;
         }
         public Builder licenseRecordCollections(GetLicenseRecordsLicenseRecordCollection... licenseRecordCollections) {

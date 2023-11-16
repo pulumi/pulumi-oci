@@ -16,47 +16,47 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// <summary>
         /// A filter to return resources that match the given display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The string that defines the Span Filter expression.
         /// </summary>
-        public readonly string FilterText;
+        public readonly string? FilterText;
         /// <summary>
         /// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
         /// </summary>
-        public readonly bool IsApplyToErrorSpans;
+        public readonly bool? IsApplyToErrorSpans;
         /// <summary>
         /// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
         /// </summary>
-        public readonly int Priority;
+        public readonly int? Priority;
         /// <summary>
         /// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         /// </summary>
-        public readonly int SatisfiedResponseTime;
+        public readonly int? SatisfiedResponseTime;
         /// <summary>
         /// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         /// </summary>
-        public readonly int ToleratingResponseTime;
+        public readonly int? ToleratingResponseTime;
 
         [OutputConstructor]
         private GetConfigsConfigCollectionItemRuleResult(
-            string displayName,
+            string? displayName,
 
-            string filterText,
+            string? filterText,
 
-            bool isApplyToErrorSpans,
+            bool? isApplyToErrorSpans,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            int priority,
+            int? priority,
 
-            int satisfiedResponseTime,
+            int? satisfiedResponseTime,
 
-            int toleratingResponseTime)
+            int? toleratingResponseTime)
         {
             DisplayName = displayName;
             FilterText = filterText;

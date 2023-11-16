@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Name of the header.
         /// </summary>
-        public readonly string HeaderName;
+        public readonly string? HeaderName;
         /// <summary>
         /// Value of the header.
         /// </summary>
-        public readonly string HeaderValue;
+        public readonly string? HeaderValue;
 
         [OutputConstructor]
         private GetMonitorConfigurationRequestHeaderResult(
-            string headerName,
+            string? headerName,
 
-            string headerValue)
+            string? headerValue)
         {
             HeaderName = headerName;
             HeaderValue = headerValue;

@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterNetworksVmClusterNetworkDrScan {
@@ -15,39 +17,39 @@ public final class GetVmClusterNetworksVmClusterNetworkDrScan {
      * @return The node host name.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The list of SCAN IP addresses. Three addresses should be provided.
      * 
      */
-    private List<String> ips;
+    private @Nullable List<String> ips;
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private Integer scanListenerPortTcp;
+    private @Nullable Integer scanListenerPortTcp;
 
     private GetVmClusterNetworksVmClusterNetworkDrScan() {}
     /**
      * @return The node host name.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The list of SCAN IP addresses. Three addresses should be provided.
      * 
      */
     public List<String> ips() {
-        return this.ips;
+        return this.ips == null ? List.of() : this.ips;
     }
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
      */
-    public Integer scanListenerPortTcp() {
-        return this.scanListenerPortTcp;
+    public Optional<Integer> scanListenerPortTcp() {
+        return Optional.ofNullable(this.scanListenerPortTcp);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetVmClusterNetworksVmClusterNetworkDrScan {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
-        private List<String> ips;
-        private Integer scanListenerPortTcp;
+        private @Nullable String hostname;
+        private @Nullable List<String> ips;
+        private @Nullable Integer scanListenerPortTcp;
         public Builder() {}
         public Builder(GetVmClusterNetworksVmClusterNetworkDrScan defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetVmClusterNetworksVmClusterNetworkDrScan {
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder ips(List<String> ips) {
-            this.ips = Objects.requireNonNull(ips);
+        public Builder ips(@Nullable List<String> ips) {
+            this.ips = ips;
             return this;
         }
         public Builder ips(String... ips) {
             return ips(List.of(ips));
         }
         @CustomType.Setter
-        public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
-            this.scanListenerPortTcp = Objects.requireNonNull(scanListenerPortTcp);
+        public Builder scanListenerPortTcp(@Nullable Integer scanListenerPortTcp) {
+            this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
         public GetVmClusterNetworksVmClusterNetworkDrScan build() {

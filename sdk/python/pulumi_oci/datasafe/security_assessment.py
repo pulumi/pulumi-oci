@@ -25,19 +25,6 @@ class SecurityAssessmentArgs:
                  schedule: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SecurityAssessment resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-               
-               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "target_id", target_id)
@@ -55,9 +42,6 @@ class SecurityAssessmentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the security assessment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,13 +51,6 @@ class SecurityAssessmentArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the target database on which security assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -83,9 +60,6 @@ class SecurityAssessmentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -95,9 +69,6 @@ class SecurityAssessmentArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the security assessment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -107,9 +78,6 @@ class SecurityAssessmentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the security assessment.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -119,9 +87,6 @@ class SecurityAssessmentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -131,11 +96,6 @@ class SecurityAssessmentArgs:
     @property
     @pulumi.getter
     def schedule(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-
-        Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
@@ -173,37 +133,6 @@ class _SecurityAssessmentState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SecurityAssessment resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        :param pulumi.Input[bool] is_baseline: Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-        :param pulumi.Input[bool] is_deviated_from_baseline: Indicates whether or not the security assessment deviates from the baseline.
-        :param pulumi.Input[str] last_compared_baseline_id: The OCID of the baseline against which the latest security assessment was compared.
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the security assessment.
-        :param pulumi.Input[str] link: The summary of findings for the security assessment.
-        :param pulumi.Input[str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-               
-               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        :param pulumi.Input[str] schedule_security_assessment_id: The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-        :param pulumi.Input[str] state: The current state of the security assessment.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticArgs']]] statistics: Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
-        :param pulumi.Input[str] target_version: The version of the target database.
-        :param pulumi.Input[str] time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] triggered_by: Indicates whether the security assessment was created by system or by a user.
-        :param pulumi.Input[str] type: The type of this security assessment. The possible types are:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -259,9 +188,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the security assessment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -271,9 +197,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -283,9 +206,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the security assessment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -295,9 +215,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the security assessment.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -307,9 +224,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -319,9 +233,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="ignoredAssessmentIds")
     def ignored_assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        """
         return pulumi.get(self, "ignored_assessment_ids")
 
     @ignored_assessment_ids.setter
@@ -331,9 +242,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="ignoredTargets")
     def ignored_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        """
         return pulumi.get(self, "ignored_targets")
 
     @ignored_targets.setter
@@ -343,9 +251,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="isBaseline")
     def is_baseline(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-        """
         return pulumi.get(self, "is_baseline")
 
     @is_baseline.setter
@@ -355,9 +260,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="isDeviatedFromBaseline")
     def is_deviated_from_baseline(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether or not the security assessment deviates from the baseline.
-        """
         return pulumi.get(self, "is_deviated_from_baseline")
 
     @is_deviated_from_baseline.setter
@@ -367,9 +269,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="lastComparedBaselineId")
     def last_compared_baseline_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the baseline against which the latest security assessment was compared.
-        """
         return pulumi.get(self, "last_compared_baseline_id")
 
     @last_compared_baseline_id.setter
@@ -379,9 +278,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the current state of the security assessment.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -391,9 +287,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter
     def link(self) -> Optional[pulumi.Input[str]]:
-        """
-        The summary of findings for the security assessment.
-        """
         return pulumi.get(self, "link")
 
     @link.setter
@@ -403,11 +296,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter
     def schedule(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-
-        Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
@@ -417,9 +305,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="scheduleSecurityAssessmentId")
     def schedule_security_assessment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-        """
         return pulumi.get(self, "schedule_security_assessment_id")
 
     @schedule_security_assessment_id.setter
@@ -429,9 +314,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the security assessment.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -441,9 +323,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter
     def statistics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticArgs']]]]:
-        """
-        Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
-        """
         return pulumi.get(self, "statistics")
 
     @statistics.setter
@@ -453,9 +332,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -465,13 +341,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target database on which security assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -481,9 +350,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="targetIds")
     def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Array of database target OCIDs.
-        """
         return pulumi.get(self, "target_ids")
 
     @target_ids.setter
@@ -493,9 +359,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="targetVersion")
     def target_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the target database.
-        """
         return pulumi.get(self, "target_version")
 
     @target_version.setter
@@ -505,9 +368,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -517,9 +377,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="timeLastAssessed")
     def time_last_assessed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_last_assessed")
 
     @time_last_assessed.setter
@@ -529,9 +386,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -541,9 +395,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter(name="triggeredBy")
     def triggered_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates whether the security assessment was created by system or by a user.
-        """
         return pulumi.get(self, "triggered_by")
 
     @triggered_by.setter
@@ -553,9 +404,6 @@ class _SecurityAssessmentState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of this security assessment. The possible types are:
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -577,55 +425,9 @@ class SecurityAssessment(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
-        it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
-        at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_security_assessment = oci.data_safe.SecurityAssessment("testSecurityAssessment",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["security_assessment_description"],
-            display_name=var["security_assessment_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            schedule=var["security_assessment_schedule"])
-        ```
-
-        ## Import
-
-        SecurityAssessments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
-        ```
-
+        Create a SecurityAssessment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-               
-               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -634,40 +436,7 @@ class SecurityAssessment(pulumi.CustomResource):
                  args: SecurityAssessmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
-        it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
-        at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_security_assessment = oci.data_safe.SecurityAssessment("testSecurityAssessment",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["security_assessment_description"],
-            display_name=var["security_assessment_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            schedule=var["security_assessment_schedule"])
-        ```
-
-        ## Import
-
-        SecurityAssessments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
-        ```
-
+        Create a SecurityAssessment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SecurityAssessmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -770,37 +539,6 @@ class SecurityAssessment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        :param pulumi.Input[bool] is_baseline: Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-        :param pulumi.Input[bool] is_deviated_from_baseline: Indicates whether or not the security assessment deviates from the baseline.
-        :param pulumi.Input[str] last_compared_baseline_id: The OCID of the baseline against which the latest security assessment was compared.
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the security assessment.
-        :param pulumi.Input[str] link: The summary of findings for the security assessment.
-        :param pulumi.Input[str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-               
-               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        :param pulumi.Input[str] schedule_security_assessment_id: The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-        :param pulumi.Input[str] state: The current state of the security assessment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityAssessmentStatisticArgs']]]] statistics: Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
-        :param pulumi.Input[str] target_version: The version of the target database.
-        :param pulumi.Input[str] time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] triggered_by: Indicates whether the security assessment was created by system or by a user.
-        :param pulumi.Input[str] type: The type of this security assessment. The possible types are:
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -836,206 +574,125 @@ class SecurityAssessment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the security assessment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the security assessment.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the security assessment.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ignoredAssessmentIds")
-    def ignored_assessment_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        """
+    def ignored_assessment_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "ignored_assessment_ids")
 
     @property
     @pulumi.getter(name="ignoredTargets")
-    def ignored_targets(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        """
+    def ignored_targets(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "ignored_targets")
 
     @property
     @pulumi.getter(name="isBaseline")
-    def is_baseline(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-        """
+    def is_baseline(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_baseline")
 
     @property
     @pulumi.getter(name="isDeviatedFromBaseline")
-    def is_deviated_from_baseline(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether or not the security assessment deviates from the baseline.
-        """
+    def is_deviated_from_baseline(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_deviated_from_baseline")
 
     @property
     @pulumi.getter(name="lastComparedBaselineId")
-    def last_compared_baseline_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the baseline against which the latest security assessment was compared.
-        """
+    def last_compared_baseline_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_compared_baseline_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the current state of the security assessment.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def link(self) -> pulumi.Output[str]:
-        """
-        The summary of findings for the security assessment.
-        """
+    def link(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "link")
 
     @property
     @pulumi.getter
-    def schedule(self) -> pulumi.Output[str]:
-        """
-        (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-
-        Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        """
+    def schedule(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "schedule")
 
     @property
     @pulumi.getter(name="scheduleSecurityAssessmentId")
-    def schedule_security_assessment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-        """
+    def schedule_security_assessment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "schedule_security_assessment_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the security assessment.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def statistics(self) -> pulumi.Output[Sequence['outputs.SecurityAssessmentStatistic']]:
-        """
-        Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
-        """
+    def statistics(self) -> pulumi.Output[Optional[Sequence['outputs.SecurityAssessmentStatistic']]]:
         return pulumi.get(self, "statistics")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the target database on which security assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Array of database target OCIDs.
-        """
+    def target_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "target_ids")
 
     @property
     @pulumi.getter(name="targetVersion")
-    def target_version(self) -> pulumi.Output[str]:
-        """
-        The version of the target database.
-        """
+    def target_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "target_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastAssessed")
-    def time_last_assessed(self) -> pulumi.Output[str]:
-        """
-        The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_last_assessed(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_assessed")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="triggeredBy")
-    def triggered_by(self) -> pulumi.Output[str]:
-        """
-        Indicates whether the security assessment was created by system or by a user.
-        """
+    def triggered_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "triggered_by")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of this security assessment. The possible types are:
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 

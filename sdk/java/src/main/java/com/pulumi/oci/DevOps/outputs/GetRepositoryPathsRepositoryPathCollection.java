@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryPathsRepositoryPathCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryPathsRepositoryPathCollection {
@@ -14,7 +15,7 @@ public final class GetRepositoryPathsRepositoryPathCollection {
      * @return List of objects describing files or directories in a repository.
      * 
      */
-    private List<GetRepositoryPathsRepositoryPathCollectionItem> items;
+    private @Nullable List<GetRepositoryPathsRepositoryPathCollectionItem> items;
 
     private GetRepositoryPathsRepositoryPathCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetRepositoryPathsRepositoryPathCollection {
      * 
      */
     public List<GetRepositoryPathsRepositoryPathCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetRepositoryPathsRepositoryPathCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRepositoryPathsRepositoryPathCollectionItem> items;
+        private @Nullable List<GetRepositoryPathsRepositoryPathCollectionItem> items;
         public Builder() {}
         public Builder(GetRepositoryPathsRepositoryPathCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetRepositoryPathsRepositoryPathCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRepositoryPathsRepositoryPathCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRepositoryPathsRepositoryPathCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRepositoryPathsRepositoryPathCollectionItem... items) {

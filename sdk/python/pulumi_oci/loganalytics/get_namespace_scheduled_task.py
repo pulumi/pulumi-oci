@@ -80,82 +80,52 @@ class GetNamespaceScheduledTaskResult:
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetNamespaceScheduledTaskActionResult']:
-        """
-        Action for scheduled task.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTaskActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def kind(self) -> str:
-        """
-        Discriminator.
-        """
+    def kind(self) -> Optional[str]:
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="numOccurrences")
-    def num_occurrences(self) -> str:
-        """
-        Number of execution occurrences.
-        """
+    def num_occurrences(self) -> Optional[str]:
         return pulumi.get(self, "num_occurrences")
 
     @property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> str:
-        """
-        The ManagementSavedSearch id [OCID] utilized in the action.
-        """
+    def saved_search_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_search_id")
 
     @property
@@ -165,58 +135,37 @@ class GetNamespaceScheduledTaskResult:
 
     @property
     @pulumi.getter
-    def schedules(self) -> Sequence['outputs.GetNamespaceScheduledTaskScheduleResult']:
-        """
-        Schedules.
-        """
+    def schedules(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTaskScheduleResult']]:
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the scheduled task.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="taskStatus")
-    def task_status(self) -> str:
-        """
-        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-        """
+    def task_status(self) -> Optional[str]:
         return pulumi.get(self, "task_status")
 
     @property
     @pulumi.getter(name="taskType")
-    def task_type(self) -> str:
-        """
-        Task type.
-        """
+    def task_type(self) -> Optional[str]:
         return pulumi.get(self, "task_type")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the scheduled task was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -250,23 +199,7 @@ def get_namespace_scheduled_task(namespace: Optional[str] = None,
                                  scheduled_task_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceScheduledTaskResult:
     """
-    This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Get the scheduled task for the specified task identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=var["namespace_scheduled_task_namespace"],
-        scheduled_task_id=oci_log_analytics_scheduled_task["test_scheduled_task"]["id"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str scheduled_task_id: Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -300,22 +233,6 @@ def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[str]] =
                                         scheduled_task_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceScheduledTaskResult]:
     """
-    This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Get the scheduled task for the specified task identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=var["namespace_scheduled_task_namespace"],
-        scheduled_task_id=oci_log_analytics_scheduled_task["test_scheduled_task"]["id"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str scheduled_task_id: Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
+    Use this data source to access information about an existing resource.
     """
     ...

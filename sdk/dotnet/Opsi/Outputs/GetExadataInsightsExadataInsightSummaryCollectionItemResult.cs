@@ -16,161 +16,161 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Unique Enterprise Manager bridge identifier
         /// </summary>
-        public readonly string EnterpriseManagerBridgeId;
+        public readonly string? EnterpriseManagerBridgeId;
         /// <summary>
         /// Enterprise Manager Entity Display Name
         /// </summary>
-        public readonly string EnterpriseManagerEntityDisplayName;
+        public readonly string? EnterpriseManagerEntityDisplayName;
         /// <summary>
         /// Enterprise Manager Entity Unique Identifier
         /// </summary>
-        public readonly string EnterpriseManagerEntityIdentifier;
+        public readonly string? EnterpriseManagerEntityIdentifier;
         /// <summary>
         /// Enterprise Manager Entity Name
         /// </summary>
-        public readonly string EnterpriseManagerEntityName;
+        public readonly string? EnterpriseManagerEntityName;
         /// <summary>
         /// Enterprise Manager Entity Type
         /// </summary>
-        public readonly string EnterpriseManagerEntityType;
+        public readonly string? EnterpriseManagerEntityType;
         /// <summary>
         /// Enterprise Manager Unique Identifier
         /// </summary>
-        public readonly string EnterpriseManagerIdentifier;
+        public readonly string? EnterpriseManagerIdentifier;
         /// <summary>
         /// Source of the Exadata system.
         /// </summary>
-        public readonly string EntitySource;
+        public readonly string? EntitySource;
         /// <summary>
         /// The user-friendly name for the Exadata system. The name does not have to be unique.
         /// </summary>
-        public readonly string ExadataDisplayName;
+        public readonly string? ExadataDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         /// </summary>
-        public readonly string ExadataInfraId;
+        public readonly string? ExadataInfraId;
         /// <summary>
         /// Oracle Cloud Infrastructure exadata infrastructure resource type
         /// </summary>
-        public readonly string ExadataInfraResourceType;
+        public readonly string? ExadataInfraResourceType;
         /// <summary>
         /// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         /// </summary>
-        public readonly string ExadataName;
+        public readonly string? ExadataName;
         /// <summary>
         /// Exadata rack type.
         /// </summary>
-        public readonly string ExadataRackType;
+        public readonly string? ExadataRackType;
         /// <summary>
         /// The shape of the Exadata Infrastructure.
         /// </summary>
-        public readonly string ExadataShape;
+        public readonly string? ExadataShape;
         /// <summary>
         /// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
         /// </summary>
-        public readonly string ExadataType;
+        public readonly string? ExadataType;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string Id;
-        public readonly bool IsAutoSyncEnabled;
+        public readonly string? Id;
+        public readonly bool? IsAutoSyncEnabled;
         /// <summary>
         /// true if virtualization is used in the Exadata system
         /// </summary>
-        public readonly bool IsVirtualizedExadata;
+        public readonly bool? IsVirtualizedExadata;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult> MemberVmClusterDetails;
         /// <summary>
         /// Lifecycle states
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Resource Status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the Exadata insight was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetExadataInsightsExadataInsightSummaryCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string enterpriseManagerBridgeId,
+            string? enterpriseManagerBridgeId,
 
-            string enterpriseManagerEntityDisplayName,
+            string? enterpriseManagerEntityDisplayName,
 
-            string enterpriseManagerEntityIdentifier,
+            string? enterpriseManagerEntityIdentifier,
 
-            string enterpriseManagerEntityName,
+            string? enterpriseManagerEntityName,
 
-            string enterpriseManagerEntityType,
+            string? enterpriseManagerEntityType,
 
-            string enterpriseManagerIdentifier,
+            string? enterpriseManagerIdentifier,
 
-            string entitySource,
+            string? entitySource,
 
-            string exadataDisplayName,
+            string? exadataDisplayName,
 
-            string exadataInfraId,
+            string? exadataInfraId,
 
-            string exadataInfraResourceType,
+            string? exadataInfraResourceType,
 
-            string exadataName,
+            string? exadataName,
 
-            string exadataRackType,
+            string? exadataRackType,
 
-            string exadataShape,
+            string? exadataShape,
 
-            string exadataType,
+            string? exadataType,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isAutoSyncEnabled,
+            bool? isAutoSyncEnabled,
 
-            bool isVirtualizedExadata,
+            bool? isVirtualizedExadata,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult> memberVmClusterDetails,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

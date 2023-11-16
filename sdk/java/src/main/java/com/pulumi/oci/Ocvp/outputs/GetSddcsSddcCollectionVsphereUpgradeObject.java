@@ -6,6 +6,8 @@ package com.pulumi.oci.Ocvp.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSddcsSddcCollectionVsphereUpgradeObject {
@@ -13,27 +15,27 @@ public final class GetSddcsSddcCollectionVsphereUpgradeObject {
      * @return Binary object download link.
      * 
      */
-    private String downloadLink;
+    private @Nullable String downloadLink;
     /**
      * @return Binary object description.
      * 
      */
-    private String linkDescription;
+    private @Nullable String linkDescription;
 
     private GetSddcsSddcCollectionVsphereUpgradeObject() {}
     /**
      * @return Binary object download link.
      * 
      */
-    public String downloadLink() {
-        return this.downloadLink;
+    public Optional<String> downloadLink() {
+        return Optional.ofNullable(this.downloadLink);
     }
     /**
      * @return Binary object description.
      * 
      */
-    public String linkDescription() {
-        return this.linkDescription;
+    public Optional<String> linkDescription() {
+        return Optional.ofNullable(this.linkDescription);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetSddcsSddcCollectionVsphereUpgradeObject {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String downloadLink;
-        private String linkDescription;
+        private @Nullable String downloadLink;
+        private @Nullable String linkDescription;
         public Builder() {}
         public Builder(GetSddcsSddcCollectionVsphereUpgradeObject defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetSddcsSddcCollectionVsphereUpgradeObject {
         }
 
         @CustomType.Setter
-        public Builder downloadLink(String downloadLink) {
-            this.downloadLink = Objects.requireNonNull(downloadLink);
+        public Builder downloadLink(@Nullable String downloadLink) {
+            this.downloadLink = downloadLink;
             return this;
         }
         @CustomType.Setter
-        public Builder linkDescription(String linkDescription) {
-            this.linkDescription = Objects.requireNonNull(linkDescription);
+        public Builder linkDescription(@Nullable String linkDescription) {
+            this.linkDescription = linkDescription;
             return this;
         }
         public GetSddcsSddcCollectionVsphereUpgradeObject build() {

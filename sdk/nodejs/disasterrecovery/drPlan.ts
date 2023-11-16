@@ -69,11 +69,11 @@ export class DrPlan extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      */
@@ -85,39 +85,39 @@ export class DrPlan extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the DR plan's current state in more detail.
      */
-    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string>;
+    public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string | undefined>;
     /**
      * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
-    public /*out*/ readonly peerRegion!: pulumi.Output<string>;
+    public /*out*/ readonly peerRegion!: pulumi.Output<string | undefined>;
     /**
      * The list of groups in this DR plan.
      */
-    public /*out*/ readonly planGroups!: pulumi.Output<outputs.DisasterRecovery.DrPlanPlanGroup[]>;
+    public /*out*/ readonly planGroups!: pulumi.Output<outputs.DisasterRecovery.DrPlanPlanGroup[] | undefined>;
     /**
      * The current state of the DR plan.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The type of DR plan to be created. 
      *

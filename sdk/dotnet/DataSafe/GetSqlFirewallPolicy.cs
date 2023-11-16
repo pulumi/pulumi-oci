@@ -120,76 +120,76 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the compartment containing the SQL firewall policy.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The database user name.
         /// </summary>
-        public readonly string DbUserName;
+        public readonly string? DbUserName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the SQL firewall policy.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The display name of the SQL firewall policy.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Specifies the SQL firewall policy enforcement option.
         /// </summary>
-        public readonly string EnforcementScope;
+        public readonly string? EnforcementScope;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the SQL firewall policy.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details about the current state of the SQL firewall policy in Data Safe.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The OCID of the security policy corresponding to the SQL firewall policy.
         /// </summary>
-        public readonly string SecurityPolicyId;
+        public readonly string? SecurityPolicyId;
         public readonly string SqlFirewallPolicyId;
         /// <summary>
         /// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
         /// </summary>
-        public readonly string SqlLevel;
+        public readonly string? SqlLevel;
         /// <summary>
         /// The current state of the SQL firewall policy.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Specifies whether the SQL firewall policy is enabled or disabled.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time that the SQL firewall policy was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Specifies the mode in which the SQL firewall policy is enabled.
         /// </summary>
-        public readonly string ViolationAction;
+        public readonly string? ViolationAction;
         /// <summary>
         /// Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
         /// </summary>
-        public readonly string ViolationAudit;
+        public readonly string? ViolationAudit;
 
         [OutputConstructor]
         private GetSqlFirewallPolicyResult(
@@ -199,43 +199,43 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<string> allowedClientPrograms,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string dbUserName,
+            string? dbUserName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string enforcementScope,
+            string? enforcementScope,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string securityPolicyId,
+            string? securityPolicyId,
 
             string sqlFirewallPolicyId,
 
-            string sqlLevel,
+            string? sqlLevel,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string violationAction,
+            string? violationAction,
 
-            string violationAudit)
+            string? violationAudit)
         {
             AllowedClientIps = allowedClientIps;
             AllowedClientOsUsernames = allowedClientOsUsernames;

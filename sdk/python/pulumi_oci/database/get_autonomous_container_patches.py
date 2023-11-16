@@ -51,17 +51,11 @@ class GetAutonomousContainerPatchesResult:
     @property
     @pulumi.getter(name="autonomousPatchType")
     def autonomous_patch_type(self) -> Optional[str]:
-        """
-        Maintenance run type, either "QUARTERLY" or "TIMEZONE".
-        """
         return pulumi.get(self, "autonomous_patch_type")
 
     @property
     @pulumi.getter(name="autonomousPatches")
-    def autonomous_patches(self) -> Sequence['outputs.GetAutonomousContainerPatchesAutonomousPatchResult']:
-        """
-        The list of autonomous_patches.
-        """
+    def autonomous_patches(self) -> Optional[Sequence['outputs.GetAutonomousContainerPatchesAutonomousPatchResult']]:
         return pulumi.get(self, "autonomous_patches")
 
     @property
@@ -76,7 +70,7 @@ class GetAutonomousContainerPatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,25 +97,7 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
                                      filters: Optional[Sequence[pulumi.InputType['GetAutonomousContainerPatchesFilterArgs']]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerPatchesResult:
     """
-    This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists the patches applicable to the requested container database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-        compartment_id=var["compartment_id"],
-        autonomous_patch_type=var["autonomous_container_patch_autonomous_patch_type"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_patch_type: Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
@@ -147,24 +123,6 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousContainerPatchesFilterArgs']]]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerPatchesResult]:
     """
-    This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists the patches applicable to the requested container database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-        compartment_id=var["compartment_id"],
-        autonomous_patch_type=var["autonomous_container_patch_autonomous_patch_type"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_patch_type: Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

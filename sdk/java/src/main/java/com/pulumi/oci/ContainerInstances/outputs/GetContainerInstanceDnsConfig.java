@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceDnsConfig {
@@ -14,17 +15,17 @@ public final class GetContainerInstanceDnsConfig {
      * @return IP address of the name server..
      * 
      */
-    private List<String> nameservers;
+    private @Nullable List<String> nameservers;
     /**
      * @return Options allows certain internal resolver variables to be modified.
      * 
      */
-    private List<String> options;
+    private @Nullable List<String> options;
     /**
      * @return Search list for hostname lookup.
      * 
      */
-    private List<String> searches;
+    private @Nullable List<String> searches;
 
     private GetContainerInstanceDnsConfig() {}
     /**
@@ -32,21 +33,21 @@ public final class GetContainerInstanceDnsConfig {
      * 
      */
     public List<String> nameservers() {
-        return this.nameservers;
+        return this.nameservers == null ? List.of() : this.nameservers;
     }
     /**
      * @return Options allows certain internal resolver variables to be modified.
      * 
      */
     public List<String> options() {
-        return this.options;
+        return this.options == null ? List.of() : this.options;
     }
     /**
      * @return Search list for hostname lookup.
      * 
      */
     public List<String> searches() {
-        return this.searches;
+        return this.searches == null ? List.of() : this.searches;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetContainerInstanceDnsConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> nameservers;
-        private List<String> options;
-        private List<String> searches;
+        private @Nullable List<String> nameservers;
+        private @Nullable List<String> options;
+        private @Nullable List<String> searches;
         public Builder() {}
         public Builder(GetContainerInstanceDnsConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,24 +71,24 @@ public final class GetContainerInstanceDnsConfig {
         }
 
         @CustomType.Setter
-        public Builder nameservers(List<String> nameservers) {
-            this.nameservers = Objects.requireNonNull(nameservers);
+        public Builder nameservers(@Nullable List<String> nameservers) {
+            this.nameservers = nameservers;
             return this;
         }
         public Builder nameservers(String... nameservers) {
             return nameservers(List.of(nameservers));
         }
         @CustomType.Setter
-        public Builder options(List<String> options) {
-            this.options = Objects.requireNonNull(options);
+        public Builder options(@Nullable List<String> options) {
+            this.options = options;
             return this;
         }
         public Builder options(String... options) {
             return options(List.of(options));
         }
         @CustomType.Setter
-        public Builder searches(List<String> searches) {
-            this.searches = Objects.requireNonNull(searches);
+        public Builder searches(@Nullable List<String> searches) {
+            this.searches = searches;
             return this;
         }
         public Builder searches(String... searches) {

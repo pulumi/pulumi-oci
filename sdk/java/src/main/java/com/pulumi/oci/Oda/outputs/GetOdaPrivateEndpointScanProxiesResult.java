@@ -19,13 +19,13 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String odaPrivateEndpointId;
     /**
      * @return The list of oda_private_endpoint_scan_proxy_collection.
      * 
      */
-    private List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections;
+    private @Nullable List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections;
     /**
      * @return The current state of the ODA Private Endpoint Scan Proxy.
      * 
@@ -40,8 +40,8 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String odaPrivateEndpointId() {
         return this.odaPrivateEndpointId;
@@ -51,7 +51,7 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
      * 
      */
     public List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections() {
-        return this.odaPrivateEndpointScanProxyCollections;
+        return this.odaPrivateEndpointScanProxyCollections == null ? List.of() : this.odaPrivateEndpointScanProxyCollections;
     }
     /**
      * @return The current state of the ODA Private Endpoint Scan Proxy.
@@ -71,9 +71,9 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetOdaPrivateEndpointScanProxiesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String odaPrivateEndpointId;
-        private List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections;
+        private @Nullable List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetOdaPrivateEndpointScanProxiesResult defaults) {
@@ -94,8 +94,8 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -104,8 +104,8 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder odaPrivateEndpointScanProxyCollections(List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections) {
-            this.odaPrivateEndpointScanProxyCollections = Objects.requireNonNull(odaPrivateEndpointScanProxyCollections);
+        public Builder odaPrivateEndpointScanProxyCollections(@Nullable List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections) {
+            this.odaPrivateEndpointScanProxyCollections = odaPrivateEndpointScanProxyCollections;
             return this;
         }
         public Builder odaPrivateEndpointScanProxyCollections(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection... odaPrivateEndpointScanProxyCollections) {

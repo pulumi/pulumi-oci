@@ -156,7 +156,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The unique name of the schedule created by the user.
         /// </summary>
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.MeteringComputation
 
             ImmutableArray<Outputs.GetSchedulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

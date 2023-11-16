@@ -13,12 +13,12 @@ namespace Pulumi.Oci.DataCatalog.Outputs
     [OutputType]
     public sealed class GetConnectionsConnectionCollectionResult
     {
-        public readonly int Count;
+        public readonly int? Count;
         public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemResult> Items;
 
         [OutputConstructor]
         private GetConnectionsConnectionCollectionResult(
-            int count,
+            int? count,
 
             ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemResult> items)
         {

@@ -21,13 +21,13 @@ public final class GetInstallationSitesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String installationPath;
     /**
      * @return The list of installation_site_collection.
      * 
      */
-    private List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections;
+    private @Nullable List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections;
     private @Nullable String jreDistribution;
     private @Nullable String jreSecurityStatus;
     private @Nullable String jreVendor;
@@ -56,8 +56,8 @@ public final class GetInstallationSitesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> installationPath() {
         return Optional.ofNullable(this.installationPath);
@@ -67,7 +67,7 @@ public final class GetInstallationSitesResult {
      * 
      */
     public List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections() {
-        return this.installationSiteCollections;
+        return this.installationSiteCollections == null ? List.of() : this.installationSiteCollections;
     }
     public Optional<String> jreDistribution() {
         return Optional.ofNullable(this.jreDistribution);
@@ -113,9 +113,9 @@ public final class GetInstallationSitesResult {
         private @Nullable String applicationId;
         private @Nullable List<GetInstallationSitesFilter> filters;
         private String fleetId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String installationPath;
-        private List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections;
+        private @Nullable List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections;
         private @Nullable String jreDistribution;
         private @Nullable String jreSecurityStatus;
         private @Nullable String jreVendor;
@@ -164,8 +164,8 @@ public final class GetInstallationSitesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -174,8 +174,8 @@ public final class GetInstallationSitesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder installationSiteCollections(List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections) {
-            this.installationSiteCollections = Objects.requireNonNull(installationSiteCollections);
+        public Builder installationSiteCollections(@Nullable List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections) {
+            this.installationSiteCollections = installationSiteCollections;
             return this;
         }
         public Builder installationSiteCollections(GetInstallationSitesInstallationSiteCollection... installationSiteCollections) {

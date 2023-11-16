@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
@@ -20,407 +22,407 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return User credential details to connect to the database. This is supplied via the External Database Service.
      * 
      */
-    private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails;
+    private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails;
     /**
      * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
      * 
      */
-    private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails;
+    private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails;
     /**
      * @return User credential details to connect to the database. This is supplied via the External Database Service.
      * 
      */
-    private List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails;
+    private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails;
     /**
      * @return A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      * 
      */
-    private String databaseConnectionStatusDetails;
+    private @Nullable String databaseConnectionStatusDetails;
     /**
      * @return Display name of database
      * 
      */
-    private String databaseDisplayName;
+    private @Nullable String databaseDisplayName;
     /**
      * @return Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      * 
      */
-    private String databaseId;
+    private @Nullable String databaseId;
     /**
      * @return Name of database
      * 
      */
-    private String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return Oracle Cloud Infrastructure database resource type
      * 
      */
-    private String databaseResourceType;
+    private @Nullable String databaseResourceType;
     /**
      * @return Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The version of the database.
      * 
      */
-    private String databaseVersion;
-    private String dbmPrivateEndpointId;
+    private @Nullable String databaseVersion;
+    private @Nullable String dbmPrivateEndpointId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
-    private String deploymentType;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable String deploymentType;
     /**
      * @return Unique Enterprise Manager bridge identifier
      * 
      */
-    private String enterpriseManagerBridgeId;
+    private @Nullable String enterpriseManagerBridgeId;
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    private String enterpriseManagerEntityDisplayName;
+    private @Nullable String enterpriseManagerEntityDisplayName;
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    private String enterpriseManagerEntityIdentifier;
+    private @Nullable String enterpriseManagerEntityIdentifier;
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    private String enterpriseManagerEntityName;
+    private @Nullable String enterpriseManagerEntityName;
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    private String enterpriseManagerEntityType;
+    private @Nullable String enterpriseManagerEntityType;
     /**
      * @return Enterprise Manager Unqiue Identifier
      * 
      */
-    private String enterpriseManagerIdentifier;
+    private @Nullable String enterpriseManagerIdentifier;
     /**
      * @return Source of the database entity.
      * 
      */
-    private String entitySource;
+    private @Nullable String entitySource;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      * 
      */
-    private String exadataInsightId;
+    private @Nullable String exadataInsightId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Unique Operations Insights PrivateEndpoint identifier
      * 
      */
-    private String opsiPrivateEndpointId;
+    private @Nullable String opsiPrivateEndpointId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      * 
      */
-    private String parentId;
+    private @Nullable String parentId;
     /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
-    private Integer processorCount;
+    private @Nullable Integer processorCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * 
      */
-    private String rootId;
+    private @Nullable String rootId;
     /**
      * @return Database service name used for connection requests.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return Lifecycle states
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Resource Status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the database insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDatabaseInsightsDatabaseInsightsCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return User credential details to connect to the database. This is supplied via the External Database Service.
      * 
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails() {
-        return this.connectionCredentialDetails;
+        return this.connectionCredentialDetails == null ? List.of() : this.connectionCredentialDetails;
     }
     /**
      * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
      * 
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails() {
-        return this.connectionDetails;
+        return this.connectionDetails == null ? List.of() : this.connectionDetails;
     }
     /**
      * @return User credential details to connect to the database. This is supplied via the External Database Service.
      * 
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails() {
-        return this.credentialDetails;
+        return this.credentialDetails == null ? List.of() : this.credentialDetails;
     }
     /**
      * @return A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      * 
      */
-    public String databaseConnectionStatusDetails() {
-        return this.databaseConnectionStatusDetails;
+    public Optional<String> databaseConnectionStatusDetails() {
+        return Optional.ofNullable(this.databaseConnectionStatusDetails);
     }
     /**
      * @return Display name of database
      * 
      */
-    public String databaseDisplayName() {
-        return this.databaseDisplayName;
+    public Optional<String> databaseDisplayName() {
+        return Optional.ofNullable(this.databaseDisplayName);
     }
     /**
      * @return Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      * 
      */
-    public String databaseId() {
-        return this.databaseId;
+    public Optional<String> databaseId() {
+        return Optional.ofNullable(this.databaseId);
     }
     /**
      * @return Name of database
      * 
      */
-    public String databaseName() {
-        return this.databaseName;
+    public Optional<String> databaseName() {
+        return Optional.ofNullable(this.databaseName);
     }
     /**
      * @return Oracle Cloud Infrastructure database resource type
      * 
      */
-    public String databaseResourceType() {
-        return this.databaseResourceType;
+    public Optional<String> databaseResourceType() {
+        return Optional.ofNullable(this.databaseResourceType);
     }
     /**
      * @return Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return The version of the database.
      * 
      */
-    public String databaseVersion() {
-        return this.databaseVersion;
+    public Optional<String> databaseVersion() {
+        return Optional.ofNullable(this.databaseVersion);
     }
-    public String dbmPrivateEndpointId() {
-        return this.dbmPrivateEndpointId;
+    public Optional<String> dbmPrivateEndpointId() {
+        return Optional.ofNullable(this.dbmPrivateEndpointId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return Unique Enterprise Manager bridge identifier
      * 
      */
-    public String enterpriseManagerBridgeId() {
-        return this.enterpriseManagerBridgeId;
+    public Optional<String> enterpriseManagerBridgeId() {
+        return Optional.ofNullable(this.enterpriseManagerBridgeId);
     }
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    public String enterpriseManagerEntityDisplayName() {
-        return this.enterpriseManagerEntityDisplayName;
+    public Optional<String> enterpriseManagerEntityDisplayName() {
+        return Optional.ofNullable(this.enterpriseManagerEntityDisplayName);
     }
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    public String enterpriseManagerEntityIdentifier() {
-        return this.enterpriseManagerEntityIdentifier;
+    public Optional<String> enterpriseManagerEntityIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerEntityIdentifier);
     }
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    public String enterpriseManagerEntityName() {
-        return this.enterpriseManagerEntityName;
+    public Optional<String> enterpriseManagerEntityName() {
+        return Optional.ofNullable(this.enterpriseManagerEntityName);
     }
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    public String enterpriseManagerEntityType() {
-        return this.enterpriseManagerEntityType;
+    public Optional<String> enterpriseManagerEntityType() {
+        return Optional.ofNullable(this.enterpriseManagerEntityType);
     }
     /**
      * @return Enterprise Manager Unqiue Identifier
      * 
      */
-    public String enterpriseManagerIdentifier() {
-        return this.enterpriseManagerIdentifier;
+    public Optional<String> enterpriseManagerIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerIdentifier);
     }
     /**
      * @return Source of the database entity.
      * 
      */
-    public String entitySource() {
-        return this.entitySource;
+    public Optional<String> entitySource() {
+        return Optional.ofNullable(this.entitySource);
     }
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      * 
      */
-    public String exadataInsightId() {
-        return this.exadataInsightId;
+    public Optional<String> exadataInsightId() {
+        return Optional.ofNullable(this.exadataInsightId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Unique Operations Insights PrivateEndpoint identifier
      * 
      */
-    public String opsiPrivateEndpointId() {
-        return this.opsiPrivateEndpointId;
+    public Optional<String> opsiPrivateEndpointId() {
+        return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      * 
      */
-    public String parentId() {
-        return this.parentId;
+    public Optional<String> parentId() {
+        return Optional.ofNullable(this.parentId);
     }
     /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
-    public Integer processorCount() {
-        return this.processorCount;
+    public Optional<Integer> processorCount() {
+        return Optional.ofNullable(this.processorCount);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * 
      */
-    public String rootId() {
-        return this.rootId;
+    public Optional<String> rootId() {
+        return Optional.ofNullable(this.rootId);
     }
     /**
      * @return Database service name used for connection requests.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return Lifecycle states
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Resource Status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the database insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -432,41 +434,41 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails;
-        private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails;
-        private List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails;
-        private String databaseConnectionStatusDetails;
-        private String databaseDisplayName;
-        private String databaseId;
-        private String databaseName;
-        private String databaseResourceType;
-        private String databaseType;
-        private String databaseVersion;
-        private String dbmPrivateEndpointId;
-        private Map<String,Object> definedTags;
-        private String deploymentType;
-        private String enterpriseManagerBridgeId;
-        private String enterpriseManagerEntityDisplayName;
-        private String enterpriseManagerEntityIdentifier;
-        private String enterpriseManagerEntityName;
-        private String enterpriseManagerEntityType;
-        private String enterpriseManagerIdentifier;
-        private String entitySource;
-        private String exadataInsightId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String opsiPrivateEndpointId;
-        private String parentId;
-        private Integer processorCount;
-        private String rootId;
-        private String serviceName;
-        private String state;
-        private String status;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails;
+        private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails;
+        private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails;
+        private @Nullable String databaseConnectionStatusDetails;
+        private @Nullable String databaseDisplayName;
+        private @Nullable String databaseId;
+        private @Nullable String databaseName;
+        private @Nullable String databaseResourceType;
+        private @Nullable String databaseType;
+        private @Nullable String databaseVersion;
+        private @Nullable String dbmPrivateEndpointId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deploymentType;
+        private @Nullable String enterpriseManagerBridgeId;
+        private @Nullable String enterpriseManagerEntityDisplayName;
+        private @Nullable String enterpriseManagerEntityIdentifier;
+        private @Nullable String enterpriseManagerEntityName;
+        private @Nullable String enterpriseManagerEntityType;
+        private @Nullable String enterpriseManagerIdentifier;
+        private @Nullable String entitySource;
+        private @Nullable String exadataInsightId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String opsiPrivateEndpointId;
+        private @Nullable String parentId;
+        private @Nullable Integer processorCount;
+        private @Nullable String rootId;
+        private @Nullable String serviceName;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDatabaseInsightsDatabaseInsightsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -508,187 +510,187 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionCredentialDetails(List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails) {
-            this.connectionCredentialDetails = Objects.requireNonNull(connectionCredentialDetails);
+        public Builder connectionCredentialDetails(@Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails) {
+            this.connectionCredentialDetails = connectionCredentialDetails;
             return this;
         }
         public Builder connectionCredentialDetails(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail... connectionCredentialDetails) {
             return connectionCredentialDetails(List.of(connectionCredentialDetails));
         }
         @CustomType.Setter
-        public Builder connectionDetails(List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails) {
-            this.connectionDetails = Objects.requireNonNull(connectionDetails);
+        public Builder connectionDetails(@Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails) {
+            this.connectionDetails = connectionDetails;
             return this;
         }
         public Builder connectionDetails(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail... connectionDetails) {
             return connectionDetails(List.of(connectionDetails));
         }
         @CustomType.Setter
-        public Builder credentialDetails(List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails) {
-            this.credentialDetails = Objects.requireNonNull(credentialDetails);
+        public Builder credentialDetails(@Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails) {
+            this.credentialDetails = credentialDetails;
             return this;
         }
         public Builder credentialDetails(GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail... credentialDetails) {
             return credentialDetails(List.of(credentialDetails));
         }
         @CustomType.Setter
-        public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
-            this.databaseConnectionStatusDetails = Objects.requireNonNull(databaseConnectionStatusDetails);
+        public Builder databaseConnectionStatusDetails(@Nullable String databaseConnectionStatusDetails) {
+            this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseDisplayName(String databaseDisplayName) {
-            this.databaseDisplayName = Objects.requireNonNull(databaseDisplayName);
+        public Builder databaseDisplayName(@Nullable String databaseDisplayName) {
+            this.databaseDisplayName = databaseDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+        public Builder databaseId(@Nullable String databaseId) {
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+        public Builder databaseName(@Nullable String databaseName) {
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseResourceType(String databaseResourceType) {
-            this.databaseResourceType = Objects.requireNonNull(databaseResourceType);
+        public Builder databaseResourceType(@Nullable String databaseResourceType) {
+            this.databaseResourceType = databaseResourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+        public Builder databaseVersion(@Nullable String databaseVersion) {
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
-            this.dbmPrivateEndpointId = Objects.requireNonNull(dbmPrivateEndpointId);
+        public Builder dbmPrivateEndpointId(@Nullable String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
-            this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
+        public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityDisplayName(String enterpriseManagerEntityDisplayName) {
-            this.enterpriseManagerEntityDisplayName = Objects.requireNonNull(enterpriseManagerEntityDisplayName);
+        public Builder enterpriseManagerEntityDisplayName(@Nullable String enterpriseManagerEntityDisplayName) {
+            this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
-            this.enterpriseManagerEntityIdentifier = Objects.requireNonNull(enterpriseManagerEntityIdentifier);
+        public Builder enterpriseManagerEntityIdentifier(@Nullable String enterpriseManagerEntityIdentifier) {
+            this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
-            this.enterpriseManagerEntityName = Objects.requireNonNull(enterpriseManagerEntityName);
+        public Builder enterpriseManagerEntityName(@Nullable String enterpriseManagerEntityName) {
+            this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
-            this.enterpriseManagerEntityType = Objects.requireNonNull(enterpriseManagerEntityType);
+        public Builder enterpriseManagerEntityType(@Nullable String enterpriseManagerEntityType) {
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
-            this.enterpriseManagerIdentifier = Objects.requireNonNull(enterpriseManagerIdentifier);
+        public Builder enterpriseManagerIdentifier(@Nullable String enterpriseManagerIdentifier) {
+            this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+        public Builder entitySource(@Nullable String entitySource) {
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInsightId(String exadataInsightId) {
-            this.exadataInsightId = Objects.requireNonNull(exadataInsightId);
+        public Builder exadataInsightId(@Nullable String exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
-            this.opsiPrivateEndpointId = Objects.requireNonNull(opsiPrivateEndpointId);
+        public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder parentId(String parentId) {
-            this.parentId = Objects.requireNonNull(parentId);
+        public Builder parentId(@Nullable String parentId) {
+            this.parentId = parentId;
             return this;
         }
         @CustomType.Setter
-        public Builder processorCount(Integer processorCount) {
-            this.processorCount = Objects.requireNonNull(processorCount);
+        public Builder processorCount(@Nullable Integer processorCount) {
+            this.processorCount = processorCount;
             return this;
         }
         @CustomType.Setter
-        public Builder rootId(String rootId) {
-            this.rootId = Objects.requireNonNull(rootId);
+        public Builder rootId(@Nullable String rootId) {
+            this.rootId = rootId;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDatabaseInsightsDatabaseInsightsCollectionItem build() {

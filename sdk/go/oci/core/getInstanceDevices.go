@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
@@ -70,8 +69,8 @@ type GetInstanceDevicesResult struct {
 	Devices []GetInstanceDevicesDevice `pulumi:"devices"`
 	Filters []GetInstanceDevicesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	InstanceId string `pulumi:"instanceId"`
+	Id         *string `pulumi:"id"`
+	InstanceId string  `pulumi:"instanceId"`
 	// The flag denoting whether device is available.
 	IsAvailable *bool `pulumi:"isAvailable"`
 	// The device name.
@@ -121,12 +120,6 @@ func (o GetInstanceDevicesResultOutput) ToGetInstanceDevicesResultOutputWithCont
 	return o
 }
 
-func (o GetInstanceDevicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceDevicesResult] {
-	return pulumix.Output[GetInstanceDevicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of devices.
 func (o GetInstanceDevicesResultOutput) Devices() GetInstanceDevicesDeviceArrayOutput {
 	return o.ApplyT(func(v GetInstanceDevicesResult) []GetInstanceDevicesDevice { return v.Devices }).(GetInstanceDevicesDeviceArrayOutput)
@@ -137,8 +130,8 @@ func (o GetInstanceDevicesResultOutput) Filters() GetInstanceDevicesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstanceDevicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceDevicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstanceDevicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceDevicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInstanceDevicesResultOutput) InstanceId() pulumi.StringOutput {

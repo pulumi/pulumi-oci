@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -35,14 +34,14 @@ type LookupNetworkFirewallPolicyUrlListArgs struct {
 
 // A collection of values returned by getNetworkFirewallPolicyUrlList.
 type LookupNetworkFirewallPolicyUrlListResult struct {
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique name identifier for the URL list.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this URL List belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// Total count of URLs in the URL List
-	TotalUrls int `pulumi:"totalUrls"`
+	TotalUrls *int `pulumi:"totalUrls"`
 	// List of urls.
 	Urls []GetNetworkFirewallPolicyUrlListUrl `pulumi:"urls"`
 }
@@ -87,14 +86,8 @@ func (o LookupNetworkFirewallPolicyUrlListResultOutput) ToLookupNetworkFirewallP
 	return o
 }
 
-func (o LookupNetworkFirewallPolicyUrlListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyUrlListResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyUrlListResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupNetworkFirewallPolicyUrlListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyUrlListResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyUrlListResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyUrlListResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique name identifier for the URL list.
@@ -107,13 +100,13 @@ func (o LookupNetworkFirewallPolicyUrlListResultOutput) NetworkFirewallPolicyId(
 }
 
 // OCID of the Network Firewall Policy this URL List belongs to.
-func (o LookupNetworkFirewallPolicyUrlListResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyUrlListResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyUrlListResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyUrlListResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Total count of URLs in the URL List
-func (o LookupNetworkFirewallPolicyUrlListResultOutput) TotalUrls() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyUrlListResult) int { return v.TotalUrls }).(pulumi.IntOutput)
+func (o LookupNetworkFirewallPolicyUrlListResultOutput) TotalUrls() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyUrlListResult) *int { return v.TotalUrls }).(pulumi.IntPtrOutput)
 }
 
 // List of urls.

@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddonOptionsAddonOption {
@@ -18,135 +20,135 @@ public final class GetAddonOptionsAddonOption {
      * @return Addon group info, a namespace concept that groups addons with similar functionalities.
      * 
      */
-    private String addonGroup;
+    private @Nullable String addonGroup;
     /**
      * @return Addon definition schema version to validate addon.
      * 
      */
-    private String addonSchemaVersion;
+    private @Nullable String addonSchemaVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Information about the addon version.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Is it an essential addon for cluster operation or not.
      * 
      */
-    private Boolean isEssential;
+    private @Nullable Boolean isEssential;
     /**
      * @return Name of the addon and it would be unique.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The life cycle state of the addon.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the work request was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The resources this work request affects.
      * 
      */
-    private List<GetAddonOptionsAddonOptionVersion> versions;
+    private @Nullable List<GetAddonOptionsAddonOptionVersion> versions;
 
     private GetAddonOptionsAddonOption() {}
     /**
      * @return Addon group info, a namespace concept that groups addons with similar functionalities.
      * 
      */
-    public String addonGroup() {
-        return this.addonGroup;
+    public Optional<String> addonGroup() {
+        return Optional.ofNullable(this.addonGroup);
     }
     /**
      * @return Addon definition schema version to validate addon.
      * 
      */
-    public String addonSchemaVersion() {
-        return this.addonSchemaVersion;
+    public Optional<String> addonSchemaVersion() {
+        return Optional.ofNullable(this.addonSchemaVersion);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Information about the addon version.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Is it an essential addon for cluster operation or not.
      * 
      */
-    public Boolean isEssential() {
-        return this.isEssential;
+    public Optional<Boolean> isEssential() {
+        return Optional.ofNullable(this.isEssential);
     }
     /**
      * @return Name of the addon and it would be unique.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The life cycle state of the addon.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the work request was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The resources this work request affects.
      * 
      */
     public List<GetAddonOptionsAddonOptionVersion> versions() {
-        return this.versions;
+        return this.versions == null ? List.of() : this.versions;
     }
 
     public static Builder builder() {
@@ -158,17 +160,17 @@ public final class GetAddonOptionsAddonOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String addonGroup;
-        private String addonSchemaVersion;
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private Boolean isEssential;
-        private String name;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private List<GetAddonOptionsAddonOptionVersion> versions;
+        private @Nullable String addonGroup;
+        private @Nullable String addonSchemaVersion;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Boolean isEssential;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable List<GetAddonOptionsAddonOptionVersion> versions;
         public Builder() {}
         public Builder(GetAddonOptionsAddonOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -186,58 +188,58 @@ public final class GetAddonOptionsAddonOption {
         }
 
         @CustomType.Setter
-        public Builder addonGroup(String addonGroup) {
-            this.addonGroup = Objects.requireNonNull(addonGroup);
+        public Builder addonGroup(@Nullable String addonGroup) {
+            this.addonGroup = addonGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder addonSchemaVersion(String addonSchemaVersion) {
-            this.addonSchemaVersion = Objects.requireNonNull(addonSchemaVersion);
+        public Builder addonSchemaVersion(@Nullable String addonSchemaVersion) {
+            this.addonSchemaVersion = addonSchemaVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder isEssential(Boolean isEssential) {
-            this.isEssential = Objects.requireNonNull(isEssential);
+        public Builder isEssential(@Nullable Boolean isEssential) {
+            this.isEssential = isEssential;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder versions(List<GetAddonOptionsAddonOptionVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+        public Builder versions(@Nullable List<GetAddonOptionsAddonOptionVersion> versions) {
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetAddonOptionsAddonOptionVersion... versions) {

@@ -64,31 +64,31 @@ namespace Pulumi.Oci.Identity
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
         [Output("inactiveState")]
-        public Output<string> InactiveState { get; private set; } = null!;
+        public Output<string?> InactiveState { get; private set; } = null!;
 
         /// <summary>
         /// The secret key.
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// The secret key's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeExpires")]
-        public Output<string> TimeExpires { get; private set; } = null!;
+        public Output<string?> TimeExpires { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user.

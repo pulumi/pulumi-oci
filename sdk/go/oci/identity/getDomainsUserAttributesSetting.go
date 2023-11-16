@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific User Attributes Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -82,34 +81,34 @@ type GetDomainsUserAttributesSettingResult struct {
 	Attributes        *string                                           `pulumi:"attributes"`
 	Authorization     *string                                           `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsUserAttributesSettingIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                         `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsUserAttributesSettingIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsUserAttributesSettingMeta `pulumi:"metas"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsUserAttributesSettingTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid             string `pulumi:"tenancyOcid"`
-	UserAttributesSettingId string `pulumi:"userAttributesSettingId"`
+	TenancyOcid             *string `pulumi:"tenancyOcid"`
+	UserAttributesSettingId string  `pulumi:"userAttributesSettingId"`
 }
 
 func GetDomainsUserAttributesSettingOutput(ctx *pulumi.Context, args GetDomainsUserAttributesSettingOutputArgs, opts ...pulumi.InvokeOption) GetDomainsUserAttributesSettingResultOutput {
@@ -160,12 +159,6 @@ func (o GetDomainsUserAttributesSettingResultOutput) ToGetDomainsUserAttributesS
 	return o
 }
 
-func (o GetDomainsUserAttributesSettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserAttributesSettingResult] {
-	return pulumix.Output[GetDomainsUserAttributesSettingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsUserAttributesSettingResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -186,23 +179,23 @@ func (o GetDomainsUserAttributesSettingResultOutput) Authorization() pulumi.Stri
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o GetDomainsUserAttributesSettingResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o GetDomainsUserAttributesSettingResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o GetDomainsUserAttributesSettingResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o GetDomainsUserAttributesSettingResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o GetDomainsUserAttributesSettingResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o GetDomainsUserAttributesSettingResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsUserAttributesSettingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsUserAttributesSettingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -224,8 +217,8 @@ func (o GetDomainsUserAttributesSettingResultOutput) IdcsLastModifiedBies() GetD
 }
 
 // The release number when the resource was upgraded.
-func (o GetDomainsUserAttributesSettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o GetDomainsUserAttributesSettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -239,8 +232,8 @@ func (o GetDomainsUserAttributesSettingResultOutput) Metas() GetDomainsUserAttri
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o GetDomainsUserAttributesSettingResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o GetDomainsUserAttributesSettingResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsUserAttributesSettingResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -258,8 +251,8 @@ func (o GetDomainsUserAttributesSettingResultOutput) Tags() GetDomainsUserAttrib
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o GetDomainsUserAttributesSettingResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o GetDomainsUserAttributesSettingResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsUserAttributesSettingResultOutput) UserAttributesSettingId() pulumi.StringOutput {

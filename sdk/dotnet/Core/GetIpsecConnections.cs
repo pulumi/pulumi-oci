@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetIpsecConnectionsResult(
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetIpsecConnectionsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             Connections = connections;

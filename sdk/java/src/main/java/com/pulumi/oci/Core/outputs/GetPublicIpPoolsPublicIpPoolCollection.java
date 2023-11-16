@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.GetPublicIpPoolsPublicIpPoolCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicIpPoolsPublicIpPoolCollection {
-    private List<GetPublicIpPoolsPublicIpPoolCollectionItem> items;
+    private @Nullable List<GetPublicIpPoolsPublicIpPoolCollectionItem> items;
 
     private GetPublicIpPoolsPublicIpPoolCollection() {}
     public List<GetPublicIpPoolsPublicIpPoolCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetPublicIpPoolsPublicIpPoolCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPublicIpPoolsPublicIpPoolCollectionItem> items;
+        private @Nullable List<GetPublicIpPoolsPublicIpPoolCollectionItem> items;
         public Builder() {}
         public Builder(GetPublicIpPoolsPublicIpPoolCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetPublicIpPoolsPublicIpPoolCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetPublicIpPoolsPublicIpPoolCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetPublicIpPoolsPublicIpPoolCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetPublicIpPoolsPublicIpPoolCollectionItem... items) {

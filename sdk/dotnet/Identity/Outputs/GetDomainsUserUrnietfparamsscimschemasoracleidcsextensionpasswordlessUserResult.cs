@@ -20,19 +20,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Authentication Factor Method
         /// </summary>
-        public readonly string FactorMethod;
+        public readonly string? FactorMethod;
         /// <summary>
         /// Authentication Factor Type
         /// </summary>
-        public readonly string FactorType;
+        public readonly string? FactorType;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserResult(
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierResult> factorIdentifiers,
 
-            string factorMethod,
+            string? factorMethod,
 
-            string factorType)
+            string? factorType)
         {
             FactorIdentifiers = factorIdentifiers;
             FactorMethod = factorMethod;

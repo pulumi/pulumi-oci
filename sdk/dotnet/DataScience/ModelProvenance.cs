@@ -53,13 +53,13 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
         /// </summary>
         [Output("gitBranch")]
-        public Output<string> GitBranch { get; private set; } = null!;
+        public Output<string?> GitBranch { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
         /// </summary>
         [Output("gitCommit")]
-        public Output<string> GitCommit { get; private set; } = null!;
+        public Output<string?> GitCommit { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -71,19 +71,19 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
         /// </summary>
         [Output("repositoryUrl")]
-        public Output<string> RepositoryUrl { get; private set; } = null!;
+        public Output<string?> RepositoryUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) For model reproducibility purposes. Path to model artifacts.
         /// </summary>
         [Output("scriptDir")]
-        public Output<string> ScriptDir { get; private set; } = null!;
+        public Output<string?> ScriptDir { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
         /// </summary>
         [Output("trainingId")]
-        public Output<string> TrainingId { get; private set; } = null!;
+        public Output<string?> TrainingId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.DataScience
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("trainingScript")]
-        public Output<string> TrainingScript { get; private set; } = null!;
+        public Output<string?> TrainingScript { get; private set; } = null!;
 
 
         /// <summary>

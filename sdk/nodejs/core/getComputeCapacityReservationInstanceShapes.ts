@@ -66,13 +66,13 @@ export interface GetComputeCapacityReservationInstanceShapesResult {
     /**
      * The list of compute_capacity_reservation_instance_shapes.
      */
-    readonly computeCapacityReservationInstanceShapes: outputs.Core.GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape[];
+    readonly computeCapacityReservationInstanceShapes?: outputs.Core.GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape[];
     readonly displayName?: string;
     readonly filters?: outputs.Core.GetComputeCapacityReservationInstanceShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.

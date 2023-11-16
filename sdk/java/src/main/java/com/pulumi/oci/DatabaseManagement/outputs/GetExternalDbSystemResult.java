@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemResult {
@@ -17,104 +19,104 @@ public final class GetExternalDbSystemResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The details required to enable Database Management for an external DB system.
      * 
      */
-    private List<GetExternalDbSystemDatabaseManagementConfig> databaseManagementConfigs;
+    private @Nullable List<GetExternalDbSystemDatabaseManagementConfig> databaseManagementConfigs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      * 
      */
-    private String dbSystemDiscoveryId;
+    private @Nullable String dbSystemDiscoveryId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      * 
      */
-    private String discoveryAgentId;
+    private @Nullable String discoveryAgentId;
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private String externalDbSystemId;
     /**
      * @return The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      * 
      */
-    private String homeDirectory;
+    private @Nullable String homeDirectory;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the DB system is a cluster DB system or not.
      * 
      */
-    private Boolean isCluster;
+    private @Nullable Boolean isCluster;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The configuration details of Stack Monitoring for an external DB system.
      * 
      */
-    private List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs;
+    private @Nullable List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs;
     /**
      * @return The current lifecycle state of the external DB system resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the external DB system was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the external DB system was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetExternalDbSystemResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The details required to enable Database Management for an external DB system.
      * 
      */
     public List<GetExternalDbSystemDatabaseManagementConfig> databaseManagementConfigs() {
-        return this.databaseManagementConfigs;
+        return this.databaseManagementConfigs == null ? List.of() : this.databaseManagementConfigs;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      * 
      */
-    public String dbSystemDiscoveryId() {
-        return this.dbSystemDiscoveryId;
+    public Optional<String> dbSystemDiscoveryId() {
+        return Optional.ofNullable(this.dbSystemDiscoveryId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      * 
      */
-    public String discoveryAgentId() {
-        return this.discoveryAgentId;
+    public Optional<String> discoveryAgentId() {
+        return Optional.ofNullable(this.discoveryAgentId);
     }
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public String externalDbSystemId() {
         return this.externalDbSystemId;
@@ -123,57 +125,57 @@ public final class GetExternalDbSystemResult {
      * @return The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      * 
      */
-    public String homeDirectory() {
-        return this.homeDirectory;
+    public Optional<String> homeDirectory() {
+        return Optional.ofNullable(this.homeDirectory);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the DB system is a cluster DB system or not.
      * 
      */
-    public Boolean isCluster() {
-        return this.isCluster;
+    public Optional<Boolean> isCluster() {
+        return Optional.ofNullable(this.isCluster);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The configuration details of Stack Monitoring for an external DB system.
      * 
      */
     public List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs() {
-        return this.stackMonitoringConfigs;
+        return this.stackMonitoringConfigs == null ? List.of() : this.stackMonitoringConfigs;
     }
     /**
      * @return The current lifecycle state of the external DB system resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the external DB system was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the external DB system was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -185,20 +187,20 @@ public final class GetExternalDbSystemResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetExternalDbSystemDatabaseManagementConfig> databaseManagementConfigs;
-        private String dbSystemDiscoveryId;
-        private String discoveryAgentId;
-        private String displayName;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetExternalDbSystemDatabaseManagementConfig> databaseManagementConfigs;
+        private @Nullable String dbSystemDiscoveryId;
+        private @Nullable String discoveryAgentId;
+        private @Nullable String displayName;
         private String externalDbSystemId;
-        private String homeDirectory;
-        private String id;
-        private Boolean isCluster;
-        private String lifecycleDetails;
-        private List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String homeDirectory;
+        private @Nullable String id;
+        private @Nullable Boolean isCluster;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetExternalDbSystemResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -219,31 +221,31 @@ public final class GetExternalDbSystemResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseManagementConfigs(List<GetExternalDbSystemDatabaseManagementConfig> databaseManagementConfigs) {
-            this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
+        public Builder databaseManagementConfigs(@Nullable List<GetExternalDbSystemDatabaseManagementConfig> databaseManagementConfigs) {
+            this.databaseManagementConfigs = databaseManagementConfigs;
             return this;
         }
         public Builder databaseManagementConfigs(GetExternalDbSystemDatabaseManagementConfig... databaseManagementConfigs) {
             return databaseManagementConfigs(List.of(databaseManagementConfigs));
         }
         @CustomType.Setter
-        public Builder dbSystemDiscoveryId(String dbSystemDiscoveryId) {
-            this.dbSystemDiscoveryId = Objects.requireNonNull(dbSystemDiscoveryId);
+        public Builder dbSystemDiscoveryId(@Nullable String dbSystemDiscoveryId) {
+            this.dbSystemDiscoveryId = dbSystemDiscoveryId;
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryAgentId(String discoveryAgentId) {
-            this.discoveryAgentId = Objects.requireNonNull(discoveryAgentId);
+        public Builder discoveryAgentId(@Nullable String discoveryAgentId) {
+            this.discoveryAgentId = discoveryAgentId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -252,46 +254,46 @@ public final class GetExternalDbSystemResult {
             return this;
         }
         @CustomType.Setter
-        public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+        public Builder homeDirectory(@Nullable String homeDirectory) {
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+        public Builder isCluster(@Nullable Boolean isCluster) {
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder stackMonitoringConfigs(List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs) {
-            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+        public Builder stackMonitoringConfigs(@Nullable List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = stackMonitoringConfigs;
             return this;
         }
         public Builder stackMonitoringConfigs(GetExternalDbSystemStackMonitoringConfig... stackMonitoringConfigs) {
             return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalDbSystemResult build() {

@@ -152,196 +152,196 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the masking policy.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the masking policy.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the masking policy. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the masking policy. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It&#39;s enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      * 
      */
     @Export(name="isDropTempTablesEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDropTempTablesEnabled;
+    private Output</* @Nullable */ Boolean> isDropTempTablesEnabled;
 
     /**
      * @return (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It&#39;s enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      * 
      */
-    public Output<Boolean> isDropTempTablesEnabled() {
-        return this.isDropTempTablesEnabled;
+    public Output<Optional<Boolean>> isDropTempTablesEnabled() {
+        return Codegen.optional(this.isDropTempTablesEnabled);
     }
     /**
      * (Updatable) Indicates if redo logging is enabled during a masking operation. It&#39;s disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      * 
      */
     @Export(name="isRedoLoggingEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRedoLoggingEnabled;
+    private Output</* @Nullable */ Boolean> isRedoLoggingEnabled;
 
     /**
      * @return (Updatable) Indicates if redo logging is enabled during a masking operation. It&#39;s disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      * 
      */
-    public Output<Boolean> isRedoLoggingEnabled() {
-        return this.isRedoLoggingEnabled;
+    public Output<Optional<Boolean>> isRedoLoggingEnabled() {
+        return Codegen.optional(this.isRedoLoggingEnabled);
     }
     /**
      * (Updatable) Indicates if statistics gathering is enabled. It&#39;s enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      * 
      */
     @Export(name="isRefreshStatsEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRefreshStatsEnabled;
+    private Output</* @Nullable */ Boolean> isRefreshStatsEnabled;
 
     /**
      * @return (Updatable) Indicates if statistics gathering is enabled. It&#39;s enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      * 
      */
-    public Output<Boolean> isRefreshStatsEnabled() {
-        return this.isRefreshStatsEnabled;
+    public Output<Optional<Boolean>> isRefreshStatsEnabled() {
+        return Codegen.optional(this.isRefreshStatsEnabled);
     }
     /**
      * (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
     @Export(name="parallelDegree", refs={String.class}, tree="[0]")
-    private Output<String> parallelDegree;
+    private Output</* @Nullable */ String> parallelDegree;
 
     /**
      * @return (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
-    public Output<String> parallelDegree() {
-        return this.parallelDegree;
+    public Output<Optional<String>> parallelDegree() {
+        return Codegen.optional(this.parallelDegree);
     }
     /**
      * (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed after the core masking script generated using the masking policy. It&#39;s usually used to perform additional transformation or cleanup work after masking.
      * 
      */
     @Export(name="postMaskingScript", refs={String.class}, tree="[0]")
-    private Output<String> postMaskingScript;
+    private Output</* @Nullable */ String> postMaskingScript;
 
     /**
      * @return (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed after the core masking script generated using the masking policy. It&#39;s usually used to perform additional transformation or cleanup work after masking.
      * 
      */
-    public Output<String> postMaskingScript() {
-        return this.postMaskingScript;
+    public Output<Optional<String>> postMaskingScript() {
+        return Codegen.optional(this.postMaskingScript);
     }
     /**
      * (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed before  the core masking script generated using the masking policy. It&#39;s usually used to perform any preparation or prerequisite work before masking data.
      * 
      */
     @Export(name="preMaskingScript", refs={String.class}, tree="[0]")
-    private Output<String> preMaskingScript;
+    private Output</* @Nullable */ String> preMaskingScript;
 
     /**
      * @return (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed before  the core masking script generated using the masking policy. It&#39;s usually used to perform any preparation or prerequisite work before masking data.
      * 
      */
-    public Output<String> preMaskingScript() {
-        return this.preMaskingScript;
+    public Output<Optional<String>> preMaskingScript() {
+        return Codegen.optional(this.preMaskingScript);
     }
     /**
      * (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      * 
      */
     @Export(name="recompile", refs={String.class}, tree="[0]")
-    private Output<String> recompile;
+    private Output</* @Nullable */ String> recompile;
 
     /**
      * @return (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      * 
      */
-    public Output<String> recompile() {
-        return this.recompile;
+    public Output<Optional<String>> recompile() {
+        return Codegen.optional(this.recompile);
     }
     /**
      * The current state of the masking policy.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the masking policy.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

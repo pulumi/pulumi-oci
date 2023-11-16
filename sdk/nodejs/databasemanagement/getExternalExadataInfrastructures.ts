@@ -63,12 +63,12 @@ export interface GetExternalExadataInfrastructuresResult {
     /**
      * The list of external_exadata_infrastructure_collection.
      */
-    readonly externalExadataInfrastructureCollections: outputs.DatabaseManagement.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection[];
+    readonly externalExadataInfrastructureCollections?: outputs.DatabaseManagement.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalExadataInfrastructuresFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.

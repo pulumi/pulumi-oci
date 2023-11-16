@@ -281,10 +281,6 @@ class BootVolumeAutotunePolicyArgs:
     def __init__(__self__, *,
                  autotune_type: pulumi.Input[str],
                  max_vpus_per_gb: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] autotune_type: (Updatable) This specifies the type of autotunes supported by OCI.
-        :param pulumi.Input[str] max_vpus_per_gb: (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
@@ -292,9 +288,6 @@ class BootVolumeAutotunePolicyArgs:
     @property
     @pulumi.getter(name="autotuneType")
     def autotune_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) This specifies the type of autotunes supported by OCI.
-        """
         return pulumi.get(self, "autotune_type")
 
     @autotune_type.setter
@@ -304,9 +297,6 @@ class BootVolumeAutotunePolicyArgs:
     @property
     @pulumi.getter(name="maxVpusPerGb")
     def max_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         return pulumi.get(self, "max_vpus_per_gb")
 
     @max_vpus_per_gb.setter
@@ -320,10 +310,6 @@ class BootVolumeBackupSourceDetailsArgs:
                  boot_volume_backup_id: pulumi.Input[str],
                  region: pulumi.Input[str],
                  kms_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] region: The region of the volume backup source.
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         pulumi.set(__self__, "boot_volume_backup_id", boot_volume_backup_id)
         pulumi.set(__self__, "region", region)
         if kms_key_id is not None:
@@ -341,9 +327,6 @@ class BootVolumeBackupSourceDetailsArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
-        """
-        The region of the volume backup source.
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -353,9 +336,6 @@ class BootVolumeBackupSourceDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -369,11 +349,6 @@ class BootVolumeBootVolumeReplicaArgs:
                  availability_domain: pulumi.Input[str],
                  boot_volume_replica_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] boot_volume_replica_id: The boot volume replica's Oracle ID (OCID).
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if boot_volume_replica_id is not None:
             pulumi.set(__self__, "boot_volume_replica_id", boot_volume_replica_id)
@@ -383,9 +358,6 @@ class BootVolumeBootVolumeReplicaArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -395,9 +367,6 @@ class BootVolumeBootVolumeReplicaArgs:
     @property
     @pulumi.getter(name="bootVolumeReplicaId")
     def boot_volume_replica_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The boot volume replica's Oracle ID (OCID).
-        """
         return pulumi.get(self, "boot_volume_replica_id")
 
     @boot_volume_replica_id.setter
@@ -407,9 +376,6 @@ class BootVolumeBootVolumeReplicaArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -422,19 +388,12 @@ class BootVolumeSourceDetailsArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] id: The OCID of the boot volume replica.
-        :param pulumi.Input[str] type: The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
-        """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the boot volume replica.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -444,9 +403,6 @@ class BootVolumeSourceDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -468,26 +424,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
                  source_cidr: Optional[pulumi.Input[str]] = None,
                  tcp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']] = None,
                  udp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']] = None):
-        """
-        :param pulumi.Input[str] destination_cidr: (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
-        :param pulumi.Input[str] flow_log_type: (Updatable) Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
-        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs'] icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-               
-               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates whether a flow log capture filter rule is enabled.
-        :param pulumi.Input[int] priority: (Updatable) A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
-        :param pulumi.Input[str] protocol: (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-               * 1 = ICMP
-               * 6 = TCP
-               * 17 = UDP
-        :param pulumi.Input[str] rule_action: (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
-        :param pulumi.Input[int] sampling_rate: (Updatable) Sampling interval as 1 of X, where X is an integer not greater than 100000.
-        :param pulumi.Input[str] source_cidr: (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
-        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         if destination_cidr is not None:
             pulumi.set(__self__, "destination_cidr", destination_cidr)
         if flow_log_type is not None:
@@ -514,9 +450,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="destinationCidr")
     def destination_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
-        """
         return pulumi.get(self, "destination_cidr")
 
     @destination_cidr.setter
@@ -526,9 +459,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="flowLogType")
     def flow_log_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
-        """
         return pulumi.get(self, "flow_log_type")
 
     @flow_log_type.setter
@@ -538,13 +468,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="icmpOptions")
     def icmp_options(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-
-        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        """
         return pulumi.get(self, "icmp_options")
 
     @icmp_options.setter
@@ -554,9 +477,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether a flow log capture filter rule is enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -566,9 +486,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
-        """
         return pulumi.get(self, "priority")
 
     @priority.setter
@@ -578,12 +495,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-        * 1 = ICMP
-        * 6 = TCP
-        * 17 = UDP
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -593,9 +504,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
-        """
         return pulumi.get(self, "rule_action")
 
     @rule_action.setter
@@ -605,9 +513,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="samplingRate")
     def sampling_rate(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Sampling interval as 1 of X, where X is an integer not greater than 100000.
-        """
         return pulumi.get(self, "sampling_rate")
 
     @sampling_rate.setter
@@ -617,9 +522,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="sourceCidr")
     def source_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
-        """
         return pulumi.get(self, "source_cidr")
 
     @source_cidr.setter
@@ -629,9 +531,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "tcp_options")
 
     @tcp_options.setter
@@ -641,9 +540,6 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "udp_options")
 
     @udp_options.setter
@@ -656,10 +552,6 @@ class CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[int],
                  code: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] type: (Updatable) The ICMP type.
-        :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
-        """
         pulumi.set(__self__, "type", type)
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -667,9 +559,6 @@ class CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The ICMP type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -679,9 +568,6 @@ class CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The ICMP code (optional).
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -694,10 +580,6 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs:
     def __init__(__self__, *,
                  destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']] = None,
                  source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
-        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if destination_port_range is not None:
             pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -706,9 +588,6 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs:
     @property
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "destination_port_range")
 
     @destination_port_range.setter
@@ -718,9 +597,6 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -733,23 +609,12 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -759,13 +624,6 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -778,23 +636,12 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -804,13 +651,6 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -823,10 +663,6 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs:
     def __init__(__self__, *,
                  destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']] = None,
                  source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
-        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if destination_port_range is not None:
             pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -835,9 +671,6 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs:
     @property
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "destination_port_range")
 
     @destination_port_range.setter
@@ -847,9 +680,6 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -862,23 +692,12 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -888,13 +707,6 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -907,23 +719,12 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -933,13 +734,6 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -958,23 +752,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
                  source_cidr: Optional[pulumi.Input[str]] = None,
                  tcp_options: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs']] = None,
                  udp_options: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs']] = None):
-        """
-        :param pulumi.Input[str] traffic_direction: (Updatable) The traffic direction the VTAP is configured to mirror.
-        :param pulumi.Input[str] destination_cidr: (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
-        :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs'] icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-               
-               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        :param pulumi.Input[str] protocol: (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-               * 1 = ICMP
-               * 6 = TCP
-               * 17 = UDP
-        :param pulumi.Input[str] rule_action: (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
-        :param pulumi.Input[str] source_cidr: (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
-        :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         pulumi.set(__self__, "traffic_direction", traffic_direction)
         if destination_cidr is not None:
             pulumi.set(__self__, "destination_cidr", destination_cidr)
@@ -994,9 +771,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The traffic direction the VTAP is configured to mirror.
-        """
         return pulumi.get(self, "traffic_direction")
 
     @traffic_direction.setter
@@ -1006,9 +780,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="destinationCidr")
     def destination_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
-        """
         return pulumi.get(self, "destination_cidr")
 
     @destination_cidr.setter
@@ -1018,13 +789,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="icmpOptions")
     def icmp_options(self) -> Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-
-        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        """
         return pulumi.get(self, "icmp_options")
 
     @icmp_options.setter
@@ -1034,12 +798,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-        * 1 = ICMP
-        * 6 = TCP
-        * 17 = UDP
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -1049,9 +807,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
-        """
         return pulumi.get(self, "rule_action")
 
     @rule_action.setter
@@ -1061,9 +816,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="sourceCidr")
     def source_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
-        """
         return pulumi.get(self, "source_cidr")
 
     @source_cidr.setter
@@ -1073,9 +825,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "tcp_options")
 
     @tcp_options.setter
@@ -1085,9 +834,6 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
     @property
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "udp_options")
 
     @udp_options.setter
@@ -1100,10 +846,6 @@ class CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[int],
                  code: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] type: (Updatable) The ICMP type.
-        :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
-        """
         pulumi.set(__self__, "type", type)
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -1111,9 +853,6 @@ class CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The ICMP type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1123,9 +862,6 @@ class CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The ICMP code (optional).
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -1138,10 +874,6 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs:
     def __init__(__self__, *,
                  destination_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']] = None,
                  source_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
-        :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if destination_port_range is not None:
             pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -1150,9 +882,6 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs:
     @property
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "destination_port_range")
 
     @destination_port_range.setter
@@ -1162,9 +891,6 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -1177,23 +903,12 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -1203,13 +918,6 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -1222,23 +930,12 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -1248,13 +945,6 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -1267,10 +957,6 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs:
     def __init__(__self__, *,
                  destination_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']] = None,
                  source_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
-        :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if destination_port_range is not None:
             pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -1279,9 +965,6 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs:
     @property
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "destination_port_range")
 
     @destination_port_range.setter
@@ -1291,9 +974,6 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -1306,23 +986,12 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -1332,13 +1001,6 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -1351,23 +1013,12 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -1377,13 +1028,6 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -1396,10 +1040,6 @@ class ClusterNetworkClusterConfigurationArgs:
     def __init__(__self__, *,
                  hpc_island_id: pulumi.Input[str],
                  network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs.
-        """
         pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         if network_block_ids is not None:
             pulumi.set(__self__, "network_block_ids", network_block_ids)
@@ -1407,9 +1047,6 @@ class ClusterNetworkClusterConfigurationArgs:
     @property
     @pulumi.getter(name="hpcIslandId")
     def hpc_island_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
-        """
         return pulumi.get(self, "hpc_island_id")
 
     @hpc_island_id.setter
@@ -1419,9 +1056,6 @@ class ClusterNetworkClusterConfigurationArgs:
     @property
     @pulumi.getter(name="networkBlockIds")
     def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of network block OCIDs.
-        """
         return pulumi.get(self, "network_block_ids")
 
     @network_block_ids.setter
@@ -1445,19 +1079,6 @@ class ClusterNetworkInstancePoolArgs:
                  placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]] load_balancers: The load balancers attached to the instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]] placement_configurations: The placement configurations for the instance pool.
-        :param pulumi.Input[str] state: The current state of the cluster network.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         pulumi.set(__self__, "size", size)
         if compartment_id is not None:
@@ -1486,9 +1107,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="instanceConfigurationId")
     def instance_configuration_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
@@ -1498,9 +1116,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter
     def size(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of instances that should be in the instance pool.
-        """
         return pulumi.get(self, "size")
 
     @size.setter
@@ -1510,9 +1125,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -1522,9 +1134,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -1534,9 +1143,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1546,9 +1152,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -1558,9 +1161,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -1588,9 +1188,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]]]:
-        """
-        The load balancers attached to the instance pool.
-        """
         return pulumi.get(self, "load_balancers")
 
     @load_balancers.setter
@@ -1600,9 +1197,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]]:
-        """
-        The placement configurations for the instance pool.
-        """
         return pulumi.get(self, "placement_configurations")
 
     @placement_configurations.setter
@@ -1612,9 +1206,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the cluster network.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1624,9 +1215,6 @@ class ClusterNetworkInstancePoolArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -1644,15 +1232,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
                  port: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  vnic_selection: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] backend_set_name: The name of the backend set on the load balancer.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-        :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
-        :param pulumi.Input[int] port: The port value used for the backends.
-        :param pulumi.Input[str] state: The current state of the cluster network.
-        :param pulumi.Input[str] vnic_selection: Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
         if backend_set_name is not None:
             pulumi.set(__self__, "backend_set_name", backend_set_name)
         if id is not None:
@@ -1671,9 +1250,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="backendSetName")
     def backend_set_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the backend set on the load balancer.
-        """
         return pulumi.get(self, "backend_set_name")
 
     @backend_set_name.setter
@@ -1683,9 +1259,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -1695,9 +1268,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
-        """
         return pulumi.get(self, "instance_pool_id")
 
     @instance_pool_id.setter
@@ -1707,9 +1277,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -1719,9 +1286,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port value used for the backends.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -1731,9 +1295,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the cluster network.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1743,9 +1304,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="vnicSelection")
     def vnic_selection(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
         return pulumi.get(self, "vnic_selection")
 
     @vnic_selection.setter
@@ -1761,13 +1319,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
                  primary_subnet_id: Optional[pulumi.Input[str]] = None,
                  primary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: The fault domains to place instances.
-        :param pulumi.Input[str] primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]] primary_vnic_subnets: Details about the IPv6 primary subnet.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
-        """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if fault_domains is not None:
@@ -1782,9 +1333,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -1794,9 +1342,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="faultDomains")
     def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The fault domains to place instances.
-        """
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
@@ -1806,9 +1351,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-        """
         return pulumi.get(self, "primary_subnet_id")
 
     @primary_subnet_id.setter
@@ -1818,9 +1360,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="primaryVnicSubnets")
     def primary_vnic_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]]:
-        """
-        Details about the IPv6 primary subnet.
-        """
         return pulumi.get(self, "primary_vnic_subnets")
 
     @primary_vnic_subnets.setter
@@ -1830,9 +1369,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="secondaryVnicSubnets")
     def secondary_vnic_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]]:
-        """
-        The set of secondary VNIC data for instances in the pool.
-        """
         return pulumi.get(self, "secondary_vnic_subnets")
 
     @secondary_vnic_subnets.setter
@@ -1846,15 +1382,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
             pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
@@ -1865,9 +1392,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -1877,9 +1401,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="isAssignIpv6ip")
     def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "is_assign_ipv6ip")
 
     @is_assign_ipv6ip.setter
@@ -1889,13 +1410,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1907,18 +1421,12 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
 class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -1933,16 +1441,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
@@ -1955,9 +1453,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1967,9 +1462,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -1979,9 +1471,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="isAssignIpv6ip")
     def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "is_assign_ipv6ip")
 
     @is_assign_ipv6ip.setter
@@ -1991,13 +1480,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2009,18 +1491,12 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
 class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -2036,12 +1512,6 @@ class ClusterNetworkPlacementConfigurationArgs:
                  primary_subnet_id: Optional[pulumi.Input[str]] = None,
                  primary_vnic_subnets: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-        :param pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if placement_constraint is not None:
             pulumi.set(__self__, "placement_constraint", placement_constraint)
@@ -2055,9 +1525,6 @@ class ClusterNetworkPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -2076,9 +1543,6 @@ class ClusterNetworkPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-        """
         return pulumi.get(self, "primary_subnet_id")
 
     @primary_subnet_id.setter
@@ -2088,9 +1552,6 @@ class ClusterNetworkPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="primaryVnicSubnets")
     def primary_vnic_subnets(self) -> Optional[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']]:
-        """
-        Details about the IPv6 primary subnet.
-        """
         return pulumi.get(self, "primary_vnic_subnets")
 
     @primary_vnic_subnets.setter
@@ -2100,9 +1561,6 @@ class ClusterNetworkPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="secondaryVnicSubnets")
     def secondary_vnic_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]]]:
-        """
-        The set of secondary VNIC data for instances in the pool.
-        """
         return pulumi.get(self, "secondary_vnic_subnets")
 
     @secondary_vnic_subnets.setter
@@ -2116,15 +1574,6 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
                  subnet_id: pulumi.Input[str],
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
             pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
@@ -2134,13 +1583,6 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2150,9 +1592,6 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -2162,9 +1601,6 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
     @property
     @pulumi.getter(name="isAssignIpv6ip")
     def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "is_assign_ipv6ip")
 
     @is_assign_ipv6ip.setter
@@ -2176,18 +1612,12 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
 class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -2202,16 +1632,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -2223,13 +1643,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2239,9 +1652,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -2251,9 +1661,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -2263,9 +1670,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="isAssignIpv6ip")
     def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "is_assign_ipv6ip")
 
     @is_assign_ipv6ip.setter
@@ -2277,18 +1681,12 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
 class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -2304,15 +1702,6 @@ class ComputeCapacityReportShapeAvailabilityArgs:
                  available_count: Optional[pulumi.Input[str]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
                  instance_shape_config: Optional[pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[str] instance_shape: The shape that you want to request a capacity report for. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        :param pulumi.Input[str] availability_status: A flag denoting whether capacity is available.
-        :param pulumi.Input[str] available_count: The total number of new instances that can be created with the specified shape configuration.
-        :param pulumi.Input[str] fault_domain: The fault domain for the capacity report.
-               
-               If you do not specify a fault domain, the capacity report includes information about all fault domains.
-        :param pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs'] instance_shape_config: The shape configuration for a shape in a capacity report.
-        """
         pulumi.set(__self__, "instance_shape", instance_shape)
         if availability_status is not None:
             pulumi.set(__self__, "availability_status", availability_status)
@@ -2326,9 +1715,6 @@ class ComputeCapacityReportShapeAvailabilityArgs:
     @property
     @pulumi.getter(name="instanceShape")
     def instance_shape(self) -> pulumi.Input[str]:
-        """
-        The shape that you want to request a capacity report for. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        """
         return pulumi.get(self, "instance_shape")
 
     @instance_shape.setter
@@ -2338,9 +1724,6 @@ class ComputeCapacityReportShapeAvailabilityArgs:
     @property
     @pulumi.getter(name="availabilityStatus")
     def availability_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        A flag denoting whether capacity is available.
-        """
         return pulumi.get(self, "availability_status")
 
     @availability_status.setter
@@ -2350,9 +1733,6 @@ class ComputeCapacityReportShapeAvailabilityArgs:
     @property
     @pulumi.getter(name="availableCount")
     def available_count(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of new instances that can be created with the specified shape configuration.
-        """
         return pulumi.get(self, "available_count")
 
     @available_count.setter
@@ -2362,11 +1742,6 @@ class ComputeCapacityReportShapeAvailabilityArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain for the capacity report.
-
-        If you do not specify a fault domain, the capacity report includes information about all fault domains.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -2376,9 +1751,6 @@ class ComputeCapacityReportShapeAvailabilityArgs:
     @property
     @pulumi.getter(name="instanceShapeConfig")
     def instance_shape_config(self) -> Optional[pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']]:
-        """
-        The shape configuration for a shape in a capacity report.
-        """
         return pulumi.get(self, "instance_shape_config")
 
     @instance_shape_config.setter
@@ -2392,15 +1764,6 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -2411,9 +1774,6 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total amount of memory available to the instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2423,9 +1783,6 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -2435,13 +1792,6 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs available to the instance. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -2458,26 +1808,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
                  fault_domain: Optional[pulumi.Input[str]] = None,
                  instance_shape_config: Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs']] = None,
                  used_count: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] instance_shape: (Updatable) The shape requested when launching instances using reserved capacity. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
-        :param pulumi.Input[str] reserved_count: (Updatable) The total number of instances that can be launched from the capacity configuration.
-        :param pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs'] cluster_config: (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
-               
-               If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
-        :param pulumi.Input[str] fault_domain: (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
-               
-               To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
-               
-               Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs'] instance_shape_config: (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
-               
-               If the parameter is provided, the reservation is created with the resources that you specify. If some properties are missing or the parameter is not provided, the reservation is created with the default configuration values for the `shape` that you specify.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-               
-               For more information about customizing the resources that are allocated to flexible shapes, see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
-        :param pulumi.Input[str] used_count: The amount of capacity in use out of the total capacity reserved in this capacity configuration.
-        """
         pulumi.set(__self__, "instance_shape", instance_shape)
         pulumi.set(__self__, "reserved_count", reserved_count)
         if cluster_config is not None:
@@ -2492,9 +1822,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @property
     @pulumi.getter(name="instanceShape")
     def instance_shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The shape requested when launching instances using reserved capacity. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
-        """
         return pulumi.get(self, "instance_shape")
 
     @instance_shape.setter
@@ -2504,9 +1831,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @property
     @pulumi.getter(name="reservedCount")
     def reserved_count(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The total number of instances that can be launched from the capacity configuration.
-        """
         return pulumi.get(self, "reserved_count")
 
     @reserved_count.setter
@@ -2516,11 +1840,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @property
     @pulumi.getter(name="clusterConfig")
     def cluster_config(self) -> Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs']]:
-        """
-        (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
-
-        If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
-        """
         return pulumi.get(self, "cluster_config")
 
     @cluster_config.setter
@@ -2530,13 +1849,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
-
-        To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
-
-        Example: `FAULT-DOMAIN-1`
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -2546,15 +1858,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @property
     @pulumi.getter(name="instanceShapeConfig")
     def instance_shape_config(self) -> Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs']]:
-        """
-        (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
-
-        If the parameter is provided, the reservation is created with the resources that you specify. If some properties are missing or the parameter is not provided, the reservation is created with the default configuration values for the `shape` that you specify.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-
-        For more information about customizing the resources that are allocated to flexible shapes, see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
-        """
         return pulumi.get(self, "instance_shape_config")
 
     @instance_shape_config.setter
@@ -2564,9 +1867,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @property
     @pulumi.getter(name="usedCount")
     def used_count(self) -> Optional[pulumi.Input[str]]:
-        """
-        The amount of capacity in use out of the total capacity reserved in this capacity configuration.
-        """
         return pulumi.get(self, "used_count")
 
     @used_count.setter
@@ -2579,10 +1879,6 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
     def __init__(__self__, *,
                  hpc_island_id: pulumi.Input[str],
                  network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] hpc_island_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: (Updatable) The list of OCIDs of the network blocks.
-        """
         pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         if network_block_ids is not None:
             pulumi.set(__self__, "network_block_ids", network_block_ids)
@@ -2590,9 +1886,6 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
     @property
     @pulumi.getter(name="hpcIslandId")
     def hpc_island_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
-        """
         return pulumi.get(self, "hpc_island_id")
 
     @hpc_island_id.setter
@@ -2602,9 +1895,6 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
     @property
     @pulumi.getter(name="networkBlockIds")
     def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of OCIDs of the network blocks.
-        """
         return pulumi.get(self, "network_block_ids")
 
     @network_block_ids.setter
@@ -2617,10 +1907,6 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -2629,9 +1915,6 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total amount of memory available to the instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2641,9 +1924,6 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs available to the instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -2658,16 +1938,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
                  encryption_cipher: Optional[pulumi.Input[str]] = None,
                  is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
                  primary_key: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']] = None):
-        """
-        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
-        :param pulumi.Input[bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
-        :param pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
-        """
         pulumi.set(__self__, "state", state)
         if encryption_cipher is not None:
             pulumi.set(__self__, "encryption_cipher", encryption_cipher)
@@ -2679,13 +1949,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
     @property
     @pulumi.getter
     def state(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Indicates whether or not MACsec is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -2695,9 +1958,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
     @property
     @pulumi.getter(name="encryptionCipher")
     def encryption_cipher(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of encryption cipher suite to use for the MACsec connection.
-        """
         return pulumi.get(self, "encryption_cipher")
 
     @encryption_cipher.setter
@@ -2707,9 +1967,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
     @property
     @pulumi.getter(name="isUnprotectedTrafficAllowed")
     def is_unprotected_traffic_allowed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
-        """
         return pulumi.get(self, "is_unprotected_traffic_allowed")
 
     @is_unprotected_traffic_allowed.setter
@@ -2719,9 +1976,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
     @property
     @pulumi.getter(name="primaryKey")
     def primary_key(self) -> Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']]:
-        """
-        (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
-        """
         return pulumi.get(self, "primary_key")
 
     @primary_key.setter
@@ -2736,16 +1990,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
                  connectivity_association_name_secret_id: pulumi.Input[str],
                  connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
                  connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
-        :param pulumi.Input[str] connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
-        :param pulumi.Input[str] connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
-        :param pulumi.Input[str] connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
-        """
         pulumi.set(__self__, "connectivity_association_key_secret_id", connectivity_association_key_secret_id)
         pulumi.set(__self__, "connectivity_association_name_secret_id", connectivity_association_name_secret_id)
         if connectivity_association_key_secret_version is not None:
@@ -2756,11 +2000,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationKeySecretId")
     def connectivity_association_key_secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
-        """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
     @connectivity_association_key_secret_id.setter
@@ -2770,11 +2009,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
-        """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
     @connectivity_association_name_secret_id.setter
@@ -2784,9 +2018,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationKeySecretVersion")
     def connectivity_association_key_secret_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret version of the `connectivityAssociationKey` secret in Vault.
-        """
         return pulumi.get(self, "connectivity_association_key_secret_version")
 
     @connectivity_association_key_secret_version.setter
@@ -2796,9 +2027,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationNameSecretVersion")
     def connectivity_association_name_secret_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret version of the connectivity association name secret in Vault.
-        """
         return pulumi.get(self, "connectivity_association_name_secret_version")
 
     @connectivity_association_name_secret_version.setter
@@ -2813,12 +2041,6 @@ class CrossConnectMacsecPropertiesArgs:
                  encryption_cipher: Optional[pulumi.Input[str]] = None,
                  is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
                  primary_key: Optional[pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs']] = None):
-        """
-        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
-        :param pulumi.Input[str] encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
-        :param pulumi.Input[bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
-        :param pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
-        """
         pulumi.set(__self__, "state", state)
         if encryption_cipher is not None:
             pulumi.set(__self__, "encryption_cipher", encryption_cipher)
@@ -2830,9 +2052,6 @@ class CrossConnectMacsecPropertiesArgs:
     @property
     @pulumi.getter
     def state(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Indicates whether or not MACsec is enabled.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -2842,9 +2061,6 @@ class CrossConnectMacsecPropertiesArgs:
     @property
     @pulumi.getter(name="encryptionCipher")
     def encryption_cipher(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of encryption cipher suite to use for the MACsec connection.
-        """
         return pulumi.get(self, "encryption_cipher")
 
     @encryption_cipher.setter
@@ -2854,9 +2070,6 @@ class CrossConnectMacsecPropertiesArgs:
     @property
     @pulumi.getter(name="isUnprotectedTrafficAllowed")
     def is_unprotected_traffic_allowed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
-        """
         return pulumi.get(self, "is_unprotected_traffic_allowed")
 
     @is_unprotected_traffic_allowed.setter
@@ -2866,9 +2079,6 @@ class CrossConnectMacsecPropertiesArgs:
     @property
     @pulumi.getter(name="primaryKey")
     def primary_key(self) -> Optional[pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs']]:
-        """
-        (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
-        """
         return pulumi.get(self, "primary_key")
 
     @primary_key.setter
@@ -2883,16 +2093,6 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
                  connectivity_association_name_secret_id: pulumi.Input[str],
                  connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
                  connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
-        :param pulumi.Input[str] connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
-        :param pulumi.Input[str] connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
-        :param pulumi.Input[str] connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
-        """
         pulumi.set(__self__, "connectivity_association_key_secret_id", connectivity_association_key_secret_id)
         pulumi.set(__self__, "connectivity_association_name_secret_id", connectivity_association_name_secret_id)
         if connectivity_association_key_secret_version is not None:
@@ -2903,11 +2103,6 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationKeySecretId")
     def connectivity_association_key_secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
-        """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
     @connectivity_association_key_secret_id.setter
@@ -2917,11 +2112,6 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
-        """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
     @connectivity_association_name_secret_id.setter
@@ -2931,9 +2121,6 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationKeySecretVersion")
     def connectivity_association_key_secret_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret version of the `connectivityAssociationKey` secret in Vault.
-        """
         return pulumi.get(self, "connectivity_association_key_secret_version")
 
     @connectivity_association_key_secret_version.setter
@@ -2943,9 +2130,6 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @property
     @pulumi.getter(name="connectivityAssociationNameSecretVersion")
     def connectivity_association_name_secret_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret version of the connectivity association name secret in Vault.
-        """
         return pulumi.get(self, "connectivity_association_name_secret_version")
 
     @connectivity_association_name_secret_version.setter
@@ -3620,19 +2804,6 @@ class DhcpOptionsOptionArgs:
                  custom_dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  search_domain_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  server_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The specific DHCP option. Either `DomainNameServer` (for [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/)) or `SearchDomain` (for [DhcpSearchDomainOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpSearchDomainOption/)).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] custom_dns_servers: (Updatable) If you set `serverType` to `CustomDnsServer`, specify the IP address of at least one DNS server of your choice (three maximum).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_domain_names: (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
-               
-               If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
-               
-               If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
-        :param pulumi.Input[str] server_type: (Updatable) 
-               * **VcnLocal:** Reserved for future use.
-               * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
-        """
         pulumi.set(__self__, "type", type)
         if custom_dns_servers is not None:
             pulumi.set(__self__, "custom_dns_servers", custom_dns_servers)
@@ -3644,9 +2815,6 @@ class DhcpOptionsOptionArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The specific DHCP option. Either `DomainNameServer` (for [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/)) or `SearchDomain` (for [DhcpSearchDomainOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpSearchDomainOption/)).
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3656,9 +2824,6 @@ class DhcpOptionsOptionArgs:
     @property
     @pulumi.getter(name="customDnsServers")
     def custom_dns_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) If you set `serverType` to `CustomDnsServer`, specify the IP address of at least one DNS server of your choice (three maximum).
-        """
         return pulumi.get(self, "custom_dns_servers")
 
     @custom_dns_servers.setter
@@ -3668,13 +2833,6 @@ class DhcpOptionsOptionArgs:
     @property
     @pulumi.getter(name="searchDomainNames")
     def search_domain_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
-
-        If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
-
-        If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
-        """
         return pulumi.get(self, "search_domain_names")
 
     @search_domain_names.setter
@@ -3684,12 +2842,6 @@ class DhcpOptionsOptionArgs:
     @property
     @pulumi.getter(name="serverType")
     def server_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) 
-        * **VcnLocal:** Reserved for future use.
-        * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-        * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
-        """
         return pulumi.get(self, "server_type")
 
     @server_type.setter
@@ -3704,16 +2856,6 @@ class DrgAttachmentManagementNetworkDetailsArgs:
                  type: pulumi.Input[str],
                  ipsec_connection_id: Optional[pulumi.Input[str]] = None,
                  route_table_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
-        :param pulumi.Input[str] type: The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-        :param pulumi.Input[str] ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
-        :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
-               
-               For information about why you would associate a route table with a DRG attachment, see:
-               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
         if ipsec_connection_id is not None:
@@ -3724,9 +2866,6 @@ class DrgAttachmentManagementNetworkDetailsArgs:
     @property
     @pulumi.getter
     def id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -3736,9 +2875,6 @@ class DrgAttachmentManagementNetworkDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3748,9 +2884,6 @@ class DrgAttachmentManagementNetworkDetailsArgs:
     @property
     @pulumi.getter(name="ipsecConnectionId")
     def ipsec_connection_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IPSec connection that contains the attached IPSec tunnel.
-        """
         return pulumi.get(self, "ipsec_connection_id")
 
     @ipsec_connection_id.setter
@@ -3760,13 +2893,6 @@ class DrgAttachmentManagementNetworkDetailsArgs:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the route table the DRG attachment is using.
-
-        For information about why you would associate a route table with a DRG attachment, see:
-        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -3785,21 +2911,6 @@ class DrgAttachmentNetworkDetailsArgs:
                  transport_attachment_id: Optional[pulumi.Input[str]] = None,
                  transport_only_mode: Optional[pulumi.Input[bool]] = None,
                  vcn_route_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
-        :param pulumi.Input[str] ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
-        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
-               
-               If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
-               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-               This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
-        :param pulumi.Input[str] transport_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
-        :param pulumi.Input[bool] transport_only_mode: Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
-        :param pulumi.Input[str] vcn_route_type: (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
-        """
         pulumi.set(__self__, "type", type)
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -3819,9 +2930,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3831,9 +2939,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -3843,9 +2948,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter
     def ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
-        """
         return pulumi.get(self, "ids")
 
     @ids.setter
@@ -3855,9 +2957,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter(name="ipsecConnectionId")
     def ipsec_connection_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IPSec connection that contains the attached IPSec tunnel.
-        """
         return pulumi.get(self, "ipsec_connection_id")
 
     @ipsec_connection_id.setter
@@ -3867,14 +2966,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
-
-        If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
-        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-        This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -3884,9 +2975,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter(name="transportAttachmentId")
     def transport_attachment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
-        """
         return pulumi.get(self, "transport_attachment_id")
 
     @transport_attachment_id.setter
@@ -3896,9 +2984,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter(name="transportOnlyMode")
     def transport_only_mode(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
-        """
         return pulumi.get(self, "transport_only_mode")
 
     @transport_only_mode.setter
@@ -3908,9 +2993,6 @@ class DrgAttachmentNetworkDetailsArgs:
     @property
     @pulumi.getter(name="vcnRouteType")
     def vcn_route_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
-        """
         return pulumi.get(self, "vcn_route_type")
 
     @vcn_route_type.setter
@@ -3922,18 +3004,12 @@ class DrgAttachmentNetworkDetailsArgs:
 class DrgAttachmentsListDrgAllAttachmentArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: The Oracle-assigned ID of the DRG attachment
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle-assigned ID of the DRG attachment
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -3948,12 +3024,6 @@ class DrgDefaultDrgRouteTableArgs:
                  remote_peering_connection: Optional[pulumi.Input[str]] = None,
                  vcn: Optional[pulumi.Input[str]] = None,
                  virtual_circuit: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipsec_tunnel: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
-        :param pulumi.Input[str] remote_peering_connection: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type REMOTE_PEERING_CONNECTION on creation.
-        :param pulumi.Input[str] vcn: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
-        :param pulumi.Input[str] virtual_circuit: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on creation.
-        """
         if ipsec_tunnel is not None:
             pulumi.set(__self__, "ipsec_tunnel", ipsec_tunnel)
         if remote_peering_connection is not None:
@@ -3966,9 +3036,6 @@ class DrgDefaultDrgRouteTableArgs:
     @property
     @pulumi.getter(name="ipsecTunnel")
     def ipsec_tunnel(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
-        """
         return pulumi.get(self, "ipsec_tunnel")
 
     @ipsec_tunnel.setter
@@ -3978,9 +3045,6 @@ class DrgDefaultDrgRouteTableArgs:
     @property
     @pulumi.getter(name="remotePeeringConnection")
     def remote_peering_connection(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type REMOTE_PEERING_CONNECTION on creation.
-        """
         return pulumi.get(self, "remote_peering_connection")
 
     @remote_peering_connection.setter
@@ -3990,9 +3054,6 @@ class DrgDefaultDrgRouteTableArgs:
     @property
     @pulumi.getter
     def vcn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
-        """
         return pulumi.get(self, "vcn")
 
     @vcn.setter
@@ -4002,9 +3063,6 @@ class DrgDefaultDrgRouteTableArgs:
     @property
     @pulumi.getter(name="virtualCircuit")
     def virtual_circuit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on creation.
-        """
         return pulumi.get(self, "virtual_circuit")
 
     @virtual_circuit.setter
@@ -4018,11 +3076,6 @@ class DrgRouteDistributionStatementMatchCriteriaArgs:
                  attachment_type: Optional[pulumi.Input[str]] = None,
                  drg_attachment_id: Optional[pulumi.Input[str]] = None,
                  match_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] attachment_type: The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
-        :param pulumi.Input[str] drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
-        :param pulumi.Input[str] match_type: (Updatable) The type of the match criteria for a route distribution statement.
-        """
         if attachment_type is not None:
             pulumi.set(__self__, "attachment_type", attachment_type)
         if drg_attachment_id is not None:
@@ -4033,9 +3086,6 @@ class DrgRouteDistributionStatementMatchCriteriaArgs:
     @property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
-        """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
@@ -4045,9 +3095,6 @@ class DrgRouteDistributionStatementMatchCriteriaArgs:
     @property
     @pulumi.getter(name="drgAttachmentId")
     def drg_attachment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
-        """
         return pulumi.get(self, "drg_attachment_id")
 
     @drg_attachment_id.setter
@@ -4057,9 +3104,6 @@ class DrgRouteDistributionStatementMatchCriteriaArgs:
     @property
     @pulumi.getter(name="matchType")
     def match_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the match criteria for a route distribution statement.
-        """
         return pulumi.get(self, "match_type")
 
     @match_type.setter
@@ -4072,10 +3116,6 @@ class ImageAgentFeatureArgs:
     def __init__(__self__, *,
                  is_management_supported: Optional[pulumi.Input[bool]] = None,
                  is_monitoring_supported: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_management_supported: This attribute is not used.
-        :param pulumi.Input[bool] is_monitoring_supported: This attribute is not used.
-        """
         if is_management_supported is not None:
             pulumi.set(__self__, "is_management_supported", is_management_supported)
         if is_monitoring_supported is not None:
@@ -4084,9 +3124,6 @@ class ImageAgentFeatureArgs:
     @property
     @pulumi.getter(name="isManagementSupported")
     def is_management_supported(self) -> Optional[pulumi.Input[bool]]:
-        """
-        This attribute is not used.
-        """
         return pulumi.get(self, "is_management_supported")
 
     @is_management_supported.setter
@@ -4096,9 +3133,6 @@ class ImageAgentFeatureArgs:
     @property
     @pulumi.getter(name="isMonitoringSupported")
     def is_monitoring_supported(self) -> Optional[pulumi.Input[bool]]:
-        """
-        This attribute is not used.
-        """
         return pulumi.get(self, "is_monitoring_supported")
 
     @is_monitoring_supported.setter
@@ -4117,16 +3151,6 @@ class ImageImageSourceDetailsArgs:
                  operating_system_version: Optional[pulumi.Input[str]] = None,
                  source_image_type: Optional[pulumi.Input[str]] = None,
                  source_uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] source_type: The source type for the image. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.
-        :param pulumi.Input[str] bucket_name: The Object Storage bucket for the image.
-        :param pulumi.Input[str] namespace_name: The Object Storage namespace for the image.
-        :param pulumi.Input[str] object_name: The Object Storage name for the image.
-        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
-        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
-        :param pulumi.Input[str] source_image_type: The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-        :param pulumi.Input[str] source_uri: The Object Storage URL for the image.
-        """
         pulumi.set(__self__, "source_type", source_type)
         if bucket_name is not None:
             pulumi.set(__self__, "bucket_name", bucket_name)
@@ -4146,9 +3170,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        The source type for the image. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -4158,9 +3179,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="bucketName")
     def bucket_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Object Storage bucket for the image.
-        """
         return pulumi.get(self, "bucket_name")
 
     @bucket_name.setter
@@ -4170,9 +3188,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Object Storage namespace for the image.
-        """
         return pulumi.get(self, "namespace_name")
 
     @namespace_name.setter
@@ -4182,9 +3197,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="objectName")
     def object_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Object Storage name for the image.
-        """
         return pulumi.get(self, "object_name")
 
     @object_name.setter
@@ -4194,9 +3206,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system.  Example: `Oracle Linux`
-        """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
@@ -4206,9 +3215,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="operatingSystemVersion")
     def operating_system_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system version.  Example: `7.2`
-        """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
@@ -4218,9 +3224,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceImageType")
     def source_image_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-        """
         return pulumi.get(self, "source_image_type")
 
     @source_image_type.setter
@@ -4230,9 +3233,6 @@ class ImageImageSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceUri")
     def source_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Object Storage URL for the image.
-        """
         return pulumi.get(self, "source_uri")
 
     @source_uri.setter
@@ -4249,14 +3249,6 @@ class ImageLaunchOptionArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  network_type: Optional[pulumi.Input[str]] = None,
                  remote_data_volume_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] boot_volume_type: Emulation type for the boot volume.
-        :param pulumi.Input[str] firmware: Firmware used to boot VM. Select the option that matches your operating system.
-        :param pulumi.Input[bool] is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
-        :param pulumi.Input[str] network_type: Emulation type for the physical network interface card (NIC).
-        :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
-        """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -4273,9 +3265,6 @@ class ImageLaunchOptionArgs:
     @property
     @pulumi.getter(name="bootVolumeType")
     def boot_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for the boot volume.
-        """
         return pulumi.get(self, "boot_volume_type")
 
     @boot_volume_type.setter
@@ -4285,9 +3274,6 @@ class ImageLaunchOptionArgs:
     @property
     @pulumi.getter
     def firmware(self) -> Optional[pulumi.Input[str]]:
-        """
-        Firmware used to boot VM. Select the option that matches your operating system.
-        """
         return pulumi.get(self, "firmware")
 
     @firmware.setter
@@ -4297,9 +3283,6 @@ class ImageLaunchOptionArgs:
     @property
     @pulumi.getter(name="isConsistentVolumeNamingEnabled")
     def is_consistent_volume_naming_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable consistent volume naming feature. Defaults to false.
-        """
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @is_consistent_volume_naming_enabled.setter
@@ -4309,9 +3292,6 @@ class ImageLaunchOptionArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -4321,9 +3301,6 @@ class ImageLaunchOptionArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for the physical network interface card (NIC).
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -4333,9 +3310,6 @@ class ImageLaunchOptionArgs:
     @property
     @pulumi.getter(name="remoteDataVolumeType")
     def remote_data_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for volume.
-        """
         return pulumi.get(self, "remote_data_volume_type")
 
     @remote_data_volume_type.setter
@@ -4350,26 +3324,6 @@ class InstanceAgentConfigArgs:
                  is_management_disabled: Optional[pulumi.Input[bool]] = None,
                  is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
                  plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgs']]]] = None):
-        """
-        :param pulumi.Input[bool] are_all_plugins_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-               
-               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        :param pulumi.Input[bool] is_management_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-               
-               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-               
-               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-        :param pulumi.Input[bool] is_monitoring_disabled: (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-               
-               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-               
-               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgs']]] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
-        """
         if are_all_plugins_disabled is not None:
             pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
@@ -4382,11 +3336,6 @@ class InstanceAgentConfigArgs:
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
     def are_all_plugins_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-
-        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "are_all_plugins_disabled")
 
     @are_all_plugins_disabled.setter
@@ -4396,15 +3345,6 @@ class InstanceAgentConfigArgs:
     @property
     @pulumi.getter(name="isManagementDisabled")
     def is_management_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-
-        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-
-        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-        """
         return pulumi.get(self, "is_management_disabled")
 
     @is_management_disabled.setter
@@ -4414,15 +3354,6 @@ class InstanceAgentConfigArgs:
     @property
     @pulumi.getter(name="isMonitoringDisabled")
     def is_monitoring_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-
-        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-
-        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
-        """
         return pulumi.get(self, "is_monitoring_disabled")
 
     @is_monitoring_disabled.setter
@@ -4432,9 +3363,6 @@ class InstanceAgentConfigArgs:
     @property
     @pulumi.getter(name="pluginsConfigs")
     def plugins_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgs']]]]:
-        """
-        (Updatable) The configuration of plugins associated with this instance.
-        """
         return pulumi.get(self, "plugins_configs")
 
     @plugins_configs.setter
@@ -4447,23 +3375,12 @@ class InstanceAgentConfigPluginsConfigArgs:
     def __init__(__self__, *,
                  desired_state: pulumi.Input[str],
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] desired_state: (Updatable) Whether the plugin should be enabled or disabled.
-               
-               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-        :param pulumi.Input[str] name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         pulumi.set(__self__, "desired_state", desired_state)
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="desiredState")
     def desired_state(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Whether the plugin should be enabled or disabled.
-
-        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-        """
         return pulumi.get(self, "desired_state")
 
     @desired_state.setter
@@ -4473,9 +3390,6 @@ class InstanceAgentConfigPluginsConfigArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4488,10 +3402,6 @@ class InstanceAvailabilityConfigArgs:
     def __init__(__self__, *,
                  is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
                  recovery_action: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_live_migration_preferred: (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-        :param pulumi.Input[str] recovery_action: (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-        """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
@@ -4500,9 +3410,6 @@ class InstanceAvailabilityConfigArgs:
     @property
     @pulumi.getter(name="isLiveMigrationPreferred")
     def is_live_migration_preferred(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-        """
         return pulumi.get(self, "is_live_migration_preferred")
 
     @is_live_migration_preferred.setter
@@ -4512,9 +3419,6 @@ class InstanceAvailabilityConfigArgs:
     @property
     @pulumi.getter(name="recoveryAction")
     def recovery_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-        """
         return pulumi.get(self, "recovery_action")
 
     @recovery_action.setter
@@ -4530,15 +3434,6 @@ class InstanceConfigurationInstanceDetailsArgs:
                  launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs']] = None,
                  options: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]] = None,
                  secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]] = None):
-        """
-        :param pulumi.Input[str] instance_type: The type of instance details. Supported instanceType is compute
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgs']]] block_volumes: Block volume parameters.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs'] launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-               
-               See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]] options: Multiple Compute Instance Configuration instance details.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]] secondary_vnics: Secondary VNIC parameters.
-        """
         pulumi.set(__self__, "instance_type", instance_type)
         if block_volumes is not None:
             pulumi.set(__self__, "block_volumes", block_volumes)
@@ -4552,9 +3447,6 @@ class InstanceConfigurationInstanceDetailsArgs:
     @property
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Input[str]:
-        """
-        The type of instance details. Supported instanceType is compute
-        """
         return pulumi.get(self, "instance_type")
 
     @instance_type.setter
@@ -4564,9 +3456,6 @@ class InstanceConfigurationInstanceDetailsArgs:
     @property
     @pulumi.getter(name="blockVolumes")
     def block_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgs']]]]:
-        """
-        Block volume parameters.
-        """
         return pulumi.get(self, "block_volumes")
 
     @block_volumes.setter
@@ -4576,11 +3465,6 @@ class InstanceConfigurationInstanceDetailsArgs:
     @property
     @pulumi.getter(name="launchDetails")
     def launch_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs']]:
-        """
-        Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
-        See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
-        """
         return pulumi.get(self, "launch_details")
 
     @launch_details.setter
@@ -4590,9 +3474,6 @@ class InstanceConfigurationInstanceDetailsArgs:
     @property
     @pulumi.getter
     def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]]:
-        """
-        Multiple Compute Instance Configuration instance details.
-        """
         return pulumi.get(self, "options")
 
     @options.setter
@@ -4602,9 +3483,6 @@ class InstanceConfigurationInstanceDetailsArgs:
     @property
     @pulumi.getter(name="secondaryVnics")
     def secondary_vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]]:
-        """
-        Secondary VNIC parameters.
-        """
         return pulumi.get(self, "secondary_vnics")
 
     @secondary_vnics.setter
@@ -4618,11 +3496,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeArgs:
                  attach_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs']] = None,
                  create_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs']] = None,
                  volume_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs'] attach_details: Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs'] create_details: Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
-        :param pulumi.Input[str] volume_id: The OCID of the volume.
-        """
         if attach_details is not None:
             pulumi.set(__self__, "attach_details", attach_details)
         if create_details is not None:
@@ -4633,9 +3506,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeArgs:
     @property
     @pulumi.getter(name="attachDetails")
     def attach_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs']]:
-        """
-        Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
-        """
         return pulumi.get(self, "attach_details")
 
     @attach_details.setter
@@ -4645,9 +3515,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeArgs:
     @property
     @pulumi.getter(name="createDetails")
     def create_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs']]:
-        """
-        Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
-        """
         return pulumi.get(self, "create_details")
 
     @create_details.setter
@@ -4657,9 +3524,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeArgs:
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume.
-        """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
@@ -4677,15 +3541,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
                  is_read_only: Optional[pulumi.Input[bool]] = None,
                  is_shareable: Optional[pulumi.Input[bool]] = None,
                  use_chap: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[str] device: The device name.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        :param pulumi.Input[bool] is_read_only: Whether the attachment should be created in read-only mode.
-        :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        """
         pulumi.set(__self__, "type", type)
         if device is not None:
             pulumi.set(__self__, "device", device)
@@ -4703,9 +3558,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4715,9 +3567,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter
     def device(self) -> Optional[pulumi.Input[str]]:
-        """
-        The device name.
-        """
         return pulumi.get(self, "device")
 
     @device.setter
@@ -4727,9 +3576,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -4739,9 +3585,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -4751,9 +3594,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="isReadOnly")
     def is_read_only(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment should be created in read-only mode.
-        """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
@@ -4763,9 +3603,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="isShareable")
     def is_shareable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        """
         return pulumi.get(self, "is_shareable")
 
     @is_shareable.setter
@@ -4775,9 +3612,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="useChap")
     def use_chap(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        """
         return pulumi.get(self, "use_chap")
 
     @use_chap.setter
@@ -4801,22 +3635,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
                  size_in_gbs: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
                  vpus_per_gb: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs']]] autotune_policies: The list of autotune policies enabled for this volume.
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
-        :param pulumi.Input[str] size_in_gbs: The size of the volume in GBs.
-        :param pulumi.Input[str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
-        """
         if autotune_policies is not None:
             pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain is not None:
@@ -4847,9 +3665,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="autotunePolicies")
     def autotune_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs']]]]:
-        """
-        The list of autotune policies enabled for this volume.
-        """
         return pulumi.get(self, "autotune_policies")
 
     @autotune_policies.setter
@@ -4859,9 +3674,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -4871,9 +3683,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        """
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -4883,9 +3692,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="blockVolumeReplicas")
     def block_volume_replicas(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs']]:
-        """
-        The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        """
         return pulumi.get(self, "block_volume_replicas")
 
     @block_volume_replicas.setter
@@ -4895,9 +3701,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -4907,9 +3710,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -4919,9 +3719,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -4931,9 +3728,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -4943,9 +3737,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        """
         return pulumi.get(self, "is_auto_tune_enabled")
 
     @is_auto_tune_enabled.setter
@@ -4955,9 +3746,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -4967,9 +3755,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the volume in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -4988,11 +3773,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="vpusPerGb")
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
         return pulumi.get(self, "vpus_per_gb")
 
     @vpus_per_gb.setter
@@ -5005,10 +3785,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy
     def __init__(__self__, *,
                  autotune_type: pulumi.Input[str],
                  max_vpus_per_gb: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] autotune_type: This specifies the type of autotunes supported by OCI.
-        :param pulumi.Input[str] max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
@@ -5016,9 +3792,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy
     @property
     @pulumi.getter(name="autotuneType")
     def autotune_type(self) -> pulumi.Input[str]:
-        """
-        This specifies the type of autotunes supported by OCI.
-        """
         return pulumi.get(self, "autotune_type")
 
     @autotune_type.setter
@@ -5028,9 +3801,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy
     @property
     @pulumi.getter(name="maxVpusPerGb")
     def max_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         return pulumi.get(self, "max_vpus_per_gb")
 
     @max_vpus_per_gb.setter
@@ -5043,10 +3813,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  display_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -5054,9 +3820,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -5066,9 +3829,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -5081,10 +3841,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsA
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[str] id: The OCID of the volume backup.
-        """
         pulumi.set(__self__, "type", type)
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -5092,9 +3848,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsA
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -5104,9 +3857,6 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsA
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume backup.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -5141,87 +3891,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs']] = None,
                  source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs']] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs'] agent_config: Configuration options for the Oracle Cloud Agent software running on the instance.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs'] availability_config: Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-               
-               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-               
-               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        :param pulumi.Input[str] fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-               
-               If you do not specify the fault domain, the system selects one for you.
-               
-               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-               
-               Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-        :param pulumi.Input[str] ipxe_script: This is an advanced option.
-               
-               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-               
-               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-               
-               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-               
-               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-               
-               For more information about iPXE, see http://ipxe.org.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-               
-               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-               
-               **Providing Cloud-Init Metadata**
-               
-               You can use the following metadata key names to provide information to Cloud-Init:
-               
-               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-               
-               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-               
-               **Metadata Example**
-               
-               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-               
-               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-               
-               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-               
-               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs'] platform_config: The platform configuration requested for the instance.
-               
-               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
-        :param pulumi.Input[str] preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-        :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-               
-               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs'] shape_config: The shape configuration requested for the instance.
-               
-               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        """
         if agent_config is not None:
             pulumi.set(__self__, "agent_config", agent_config)
         if availability_config is not None:
@@ -5274,9 +3943,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="agentConfig")
     def agent_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs']]:
-        """
-        Configuration options for the Oracle Cloud Agent software running on the instance.
-        """
         return pulumi.get(self, "agent_config")
 
     @agent_config.setter
@@ -5286,9 +3952,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="availabilityConfig")
     def availability_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs']]:
-        """
-        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-        """
         return pulumi.get(self, "availability_config")
 
     @availability_config.setter
@@ -5298,9 +3961,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -5310,9 +3970,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compute capacity reservation this instance is launched under.
-        """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
@@ -5322,9 +3979,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -5334,9 +3988,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="createVnicDetails")
     def create_vnic_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs']]:
-        """
-        Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
@@ -5346,11 +3997,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="dedicatedVmHostId")
     def dedicated_vm_host_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the dedicated virtual machine host to place the instance on.
-
-        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-        """
         return pulumi.get(self, "dedicated_vm_host_id")
 
     @dedicated_vm_host_id.setter
@@ -5360,9 +4006,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -5372,9 +4015,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -5384,13 +4024,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-
-        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -5400,15 +4033,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-
-        If you do not specify the fault domain, the system selects one for you.
-
-        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-
-        Example: `FAULT-DOMAIN-1`
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -5418,9 +4042,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -5430,9 +4051,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="instanceOptions")
     def instance_options(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs']]:
-        """
-        Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-        """
         return pulumi.get(self, "instance_options")
 
     @instance_options.setter
@@ -5442,19 +4060,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="ipxeScript")
     def ipxe_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        This is an advanced option.
-
-        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-
-        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-
-        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-
-        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-
-        For more information about iPXE, see http://ipxe.org.
-        """
         return pulumi.get(self, "ipxe_script")
 
     @ipxe_script.setter
@@ -5464,9 +4069,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -5476,9 +4078,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="launchMode")
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        """
         return pulumi.get(self, "launch_mode")
 
     @launch_mode.setter
@@ -5488,9 +4087,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="launchOptions")
     def launch_options(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs']]:
-        """
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        """
         return pulumi.get(self, "launch_options")
 
     @launch_options.setter
@@ -5500,33 +4096,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-
-        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-
-        **Providing Cloud-Init Metadata**
-
-        You can use the following metadata key names to provide information to Cloud-Init:
-
-        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-
-        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-
-        **Metadata Example**
-
-        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-
-        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-
-        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-
-        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -5536,13 +4105,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs']]:
-        """
-        The platform configuration requested for the instance.
-
-        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        """
         return pulumi.get(self, "platform_config")
 
     @platform_config.setter
@@ -5552,9 +4114,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="preemptibleInstanceConfig")
     def preemptible_instance_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs']]:
-        """
-        Configuration options for preemptible instances.
-        """
         return pulumi.get(self, "preemptible_instance_config")
 
     @preemptible_instance_config.setter
@@ -5564,9 +4123,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="preferredMaintenanceAction")
     def preferred_maintenance_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-        """
         return pulumi.get(self, "preferred_maintenance_action")
 
     @preferred_maintenance_action.setter
@@ -5576,11 +4132,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-
-        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -5590,13 +4141,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs']]:
-        """
-        The shape configuration requested for the instance.
-
-        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -5620,26 +4164,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
                  is_management_disabled: Optional[pulumi.Input[bool]] = None,
                  is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
                  plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs']]]] = None):
-        """
-        :param pulumi.Input[bool] are_all_plugins_disabled: Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-               
-               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        :param pulumi.Input[bool] is_management_disabled: Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-               
-               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-               
-               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-        :param pulumi.Input[bool] is_monitoring_disabled: Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-               
-               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-               
-               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs']]] plugins_configs: The configuration of plugins associated with this instance.
-        """
         if are_all_plugins_disabled is not None:
             pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
@@ -5652,11 +4176,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
     def are_all_plugins_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-
-        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "are_all_plugins_disabled")
 
     @are_all_plugins_disabled.setter
@@ -5666,15 +4185,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="isManagementDisabled")
     def is_management_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-
-        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-
-        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-        """
         return pulumi.get(self, "is_management_disabled")
 
     @is_management_disabled.setter
@@ -5684,15 +4194,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="isMonitoringDisabled")
     def is_monitoring_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-
-        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-
-        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
-        """
         return pulumi.get(self, "is_monitoring_disabled")
 
     @is_monitoring_disabled.setter
@@ -5702,9 +4203,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="pluginsConfigs")
     def plugins_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs']]]]:
-        """
-        The configuration of plugins associated with this instance.
-        """
         return pulumi.get(self, "plugins_configs")
 
     @plugins_configs.setter
@@ -5717,12 +4215,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigA
     def __init__(__self__, *,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] desired_state: Whether the plugin should be enabled or disabled.
-               
-               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-        :param pulumi.Input[str] name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         if desired_state is not None:
             pulumi.set(__self__, "desired_state", desired_state)
         if name is not None:
@@ -5731,11 +4223,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigA
     @property
     @pulumi.getter(name="desiredState")
     def desired_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Whether the plugin should be enabled or disabled.
-
-        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-        """
         return pulumi.get(self, "desired_state")
 
     @desired_state.setter
@@ -5745,9 +4232,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigA
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5760,10 +4244,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs:
     def __init__(__self__, *,
                  is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
                  recovery_action: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-        :param pulumi.Input[str] recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-        """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
@@ -5772,9 +4252,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs:
     @property
     @pulumi.getter(name="isLiveMigrationPreferred")
     def is_live_migration_preferred(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-        """
         return pulumi.get(self, "is_live_migration_preferred")
 
     @is_live_migration_preferred.setter
@@ -5784,9 +4261,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs:
     @property
     @pulumi.getter(name="recoveryAction")
     def recovery_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-        """
         return pulumi.get(self, "recovery_action")
 
     @recovery_action.setter
@@ -5809,20 +4283,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         if assign_ipv6ip is not None:
             pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -5851,9 +4311,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @assign_ipv6ip.setter
@@ -5863,9 +4320,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_private_dns_record")
 
     @assign_private_dns_record.setter
@@ -5875,9 +4329,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPublicIp")
     def assign_public_ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_public_ip")
 
     @assign_public_ip.setter
@@ -5887,9 +4338,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -5899,9 +4347,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -5911,9 +4356,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -5923,9 +4365,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -5935,9 +4374,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -5947,9 +4383,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -5959,9 +4392,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -5971,9 +4401,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
@@ -5983,9 +4410,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -5998,10 +4422,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     def __init__(__self__, *,
                  ipv6address: Optional[pulumi.Input[str]] = None,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -6010,9 +4430,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
@@ -6022,9 +4439,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -6036,18 +4450,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
 class InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs:
     def __init__(__self__, *,
                  are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-        """
         if are_legacy_imds_endpoints_disabled is not None:
             pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
     def are_legacy_imds_endpoints_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-        """
         return pulumi.get(self, "are_legacy_imds_endpoints_disabled")
 
     @are_legacy_imds_endpoints_disabled.setter
@@ -6064,14 +4472,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  network_type: Optional[pulumi.Input[str]] = None,
                  remote_data_volume_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] boot_volume_type: Emulation type for the boot volume.
-        :param pulumi.Input[str] firmware: Firmware used to boot VM. Select the option that matches your operating system.
-        :param pulumi.Input[bool] is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        :param pulumi.Input[str] network_type: Emulation type for the physical network interface card (NIC).
-        :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
-        """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -6088,9 +4488,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="bootVolumeType")
     def boot_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for the boot volume.
-        """
         return pulumi.get(self, "boot_volume_type")
 
     @boot_volume_type.setter
@@ -6100,9 +4497,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter
     def firmware(self) -> Optional[pulumi.Input[str]]:
-        """
-        Firmware used to boot VM. Select the option that matches your operating system.
-        """
         return pulumi.get(self, "firmware")
 
     @firmware.setter
@@ -6112,9 +4506,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="isConsistentVolumeNamingEnabled")
     def is_consistent_volume_naming_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable consistent volume naming feature. Defaults to false.
-        """
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @is_consistent_volume_naming_enabled.setter
@@ -6124,9 +4515,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -6136,9 +4524,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for the physical network interface card (NIC).
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -6148,9 +4533,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="remoteDataVolumeType")
     def remote_data_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for volume.
-        """
         return pulumi.get(self, "remote_data_volume_type")
 
     @remote_data_volume_type.setter
@@ -6173,24 +4555,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
                  is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
                  numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
                  percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        :param pulumi.Input[Mapping[str, Any]] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
-        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-        :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
-        :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
-        :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-        :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-               
-               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
-        :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
-        :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-               
-               If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
-        """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
             pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
@@ -6218,9 +4582,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6230,9 +4591,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="areVirtualInstructionsEnabled")
     def are_virtual_instructions_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        """
         return pulumi.get(self, "are_virtual_instructions_enabled")
 
     @are_virtual_instructions_enabled.setter
@@ -6242,9 +4600,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="configMap")
     def config_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Instance Platform Configuration Configuration Map for flexible setting input.
-        """
         return pulumi.get(self, "config_map")
 
     @config_map.setter
@@ -6254,9 +4609,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isAccessControlServiceEnabled")
     def is_access_control_service_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-        """
         return pulumi.get(self, "is_access_control_service_enabled")
 
     @is_access_control_service_enabled.setter
@@ -6266,9 +4618,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
     def is_input_output_memory_management_unit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the input-output memory management unit is enabled.
-        """
         return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @is_input_output_memory_management_unit_enabled.setter
@@ -6278,9 +4627,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
     def is_measured_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Measured Boot feature is enabled on the instance.
-        """
         return pulumi.get(self, "is_measured_boot_enabled")
 
     @is_measured_boot_enabled.setter
@@ -6290,9 +4636,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isMemoryEncryptionEnabled")
     def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-        """
         return pulumi.get(self, "is_memory_encryption_enabled")
 
     @is_memory_encryption_enabled.setter
@@ -6302,9 +4645,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isSecureBootEnabled")
     def is_secure_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Secure Boot is enabled on the instance.
-        """
         return pulumi.get(self, "is_secure_boot_enabled")
 
     @is_secure_boot_enabled.setter
@@ -6314,11 +4654,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-
-        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
-        """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
     @is_symmetric_multi_threading_enabled.setter
@@ -6328,9 +4663,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Trusted Platform Module (TPM) is enabled on the instance.
-        """
         return pulumi.get(self, "is_trusted_platform_module_enabled")
 
     @is_trusted_platform_module_enabled.setter
@@ -6340,9 +4672,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="numaNodesPerSocket")
     def numa_nodes_per_socket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of NUMA nodes per socket (NPS).
-        """
         return pulumi.get(self, "numa_nodes_per_socket")
 
     @numa_nodes_per_socket.setter
@@ -6352,11 +4681,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
-        """
-        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-
-        If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
-        """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
     @percentage_of_cores_enabled.setter
@@ -6368,18 +4692,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
 class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
                  preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
-        """
         if preemption_action is not None:
             pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
     def preemption_action(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]:
-        """
-        The action to run when the preemptible instance is interrupted for eviction.
-        """
         return pulumi.get(self, "preemption_action")
 
     @preemption_action.setter
@@ -6392,10 +4710,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         pulumi.set(__self__, "type", type)
         if preserve_boot_volume is not None:
             pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
@@ -6403,9 +4717,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6415,9 +4726,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig
     @property
     @pulumi.getter(name="preserveBootVolume")
     def preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         return pulumi.get(self, "preserve_boot_volume")
 
     @preserve_boot_volume.setter
@@ -6433,15 +4741,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None,
                  vcpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-               
-               The following values are supported:
-        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance.
-        :param pulumi.Input[int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-        """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
@@ -6456,11 +4755,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
     def baseline_ocpu_utilization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-
-        The following values are supported:
-        """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
     @baseline_ocpu_utilization.setter
@@ -6470,9 +4764,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total amount of memory available to the instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -6482,9 +4773,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -6494,9 +4782,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs available to the instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -6506,9 +4791,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter
     def vcpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-        """
         return pulumi.get(self, "vcpus")
 
     @vcpus.setter
@@ -6526,17 +4808,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
                  image_id: Optional[pulumi.Input[str]] = None,
                  instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-        :param pulumi.Input[str] boot_volume_id: The OCID of the boot volume used to boot the instance.
-        :param pulumi.Input[str] boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
-        :param pulumi.Input[str] boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
-        :param pulumi.Input[str] image_id: The OCID of the image used to boot the instance.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_id is not None:
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
@@ -6554,9 +4825,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -6566,9 +4834,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeId")
     def boot_volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the boot volume used to boot the instance.
-        """
         return pulumi.get(self, "boot_volume_id")
 
     @boot_volume_id.setter
@@ -6578,9 +4843,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeSizeInGbs")
     def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
-        """
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @boot_volume_size_in_gbs.setter
@@ -6590,11 +4852,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeVpusPerGb")
     def boot_volume_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @boot_volume_vpus_per_gb.setter
@@ -6604,9 +4861,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the image used to boot the instance.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -6616,9 +4870,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="instanceSourceImageFilterDetails")
     def instance_source_image_filter_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]:
-        """
-        These are the criteria for selecting an image. This is required if imageId is not specified.
-        """
         return pulumi.get(self, "instance_source_image_filter_details")
 
     @instance_source_image_filter_details.setter
@@ -6628,9 +4879,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -6645,12 +4893,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
                  defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  operating_system: Optional[pulumi.Input[str]] = None,
                  operating_system_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Mapping[str, Any]] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
-        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags_filter is not None:
@@ -6663,9 +4905,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -6675,9 +4914,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
     @property
     @pulumi.getter(name="definedTagsFilter")
     def defined_tags_filter(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags_filter")
 
     @defined_tags_filter.setter
@@ -6687,9 +4923,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system.  Example: `Oracle Linux`
-        """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
@@ -6699,9 +4932,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
     @property
     @pulumi.getter(name="operatingSystemVersion")
     def operating_system_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system version.  Example: `7.2`
-        """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
@@ -6715,13 +4945,6 @@ class InstanceConfigurationInstanceDetailsOptionArgs:
                  block_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]] = None,
                  launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']] = None,
                  secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]] block_volumes: Block volume parameters.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs'] launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-               
-               See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]] secondary_vnics: Secondary VNIC parameters.
-        """
         if block_volumes is not None:
             pulumi.set(__self__, "block_volumes", block_volumes)
         if launch_details is not None:
@@ -6732,9 +4955,6 @@ class InstanceConfigurationInstanceDetailsOptionArgs:
     @property
     @pulumi.getter(name="blockVolumes")
     def block_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]]:
-        """
-        Block volume parameters.
-        """
         return pulumi.get(self, "block_volumes")
 
     @block_volumes.setter
@@ -6744,11 +4964,6 @@ class InstanceConfigurationInstanceDetailsOptionArgs:
     @property
     @pulumi.getter(name="launchDetails")
     def launch_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']]:
-        """
-        Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
-        See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
-        """
         return pulumi.get(self, "launch_details")
 
     @launch_details.setter
@@ -6758,9 +4973,6 @@ class InstanceConfigurationInstanceDetailsOptionArgs:
     @property
     @pulumi.getter(name="secondaryVnics")
     def secondary_vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]]:
-        """
-        Secondary VNIC parameters.
-        """
         return pulumi.get(self, "secondary_vnics")
 
     @secondary_vnics.setter
@@ -6774,11 +4986,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs:
                  attach_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']] = None,
                  create_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']] = None,
                  volume_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs'] attach_details: Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs'] create_details: Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
-        :param pulumi.Input[str] volume_id: The OCID of the volume.
-        """
         if attach_details is not None:
             pulumi.set(__self__, "attach_details", attach_details)
         if create_details is not None:
@@ -6789,9 +4996,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs:
     @property
     @pulumi.getter(name="attachDetails")
     def attach_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']]:
-        """
-        Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
-        """
         return pulumi.get(self, "attach_details")
 
     @attach_details.setter
@@ -6801,9 +5005,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs:
     @property
     @pulumi.getter(name="createDetails")
     def create_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']]:
-        """
-        Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
-        """
         return pulumi.get(self, "create_details")
 
     @create_details.setter
@@ -6813,9 +5014,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs:
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume.
-        """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
@@ -6833,15 +5031,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
                  is_read_only: Optional[pulumi.Input[bool]] = None,
                  is_shareable: Optional[pulumi.Input[bool]] = None,
                  use_chap: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[str] device: The device name.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        :param pulumi.Input[bool] is_read_only: Whether the attachment should be created in read-only mode.
-        :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        """
         pulumi.set(__self__, "type", type)
         if device is not None:
             pulumi.set(__self__, "device", device)
@@ -6859,9 +5048,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6871,9 +5057,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter
     def device(self) -> Optional[pulumi.Input[str]]:
-        """
-        The device name.
-        """
         return pulumi.get(self, "device")
 
     @device.setter
@@ -6883,9 +5066,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -6895,9 +5075,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -6907,9 +5084,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="isReadOnly")
     def is_read_only(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment should be created in read-only mode.
-        """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
@@ -6919,9 +5093,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="isShareable")
     def is_shareable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        """
         return pulumi.get(self, "is_shareable")
 
     @is_shareable.setter
@@ -6931,9 +5102,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
     @property
     @pulumi.getter(name="useChap")
     def use_chap(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        """
         return pulumi.get(self, "use_chap")
 
     @use_chap.setter
@@ -6957,22 +5125,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
                  size_in_gbs: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
                  vpus_per_gb: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]] autotune_policies: The list of autotune policies enabled for this volume.
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
-        :param pulumi.Input[str] size_in_gbs: The size of the volume in GBs.
-        :param pulumi.Input[str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
-        """
         if autotune_policies is not None:
             pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain is not None:
@@ -7003,9 +5155,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="autotunePolicies")
     def autotune_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]]]:
-        """
-        The list of autotune policies enabled for this volume.
-        """
         return pulumi.get(self, "autotune_policies")
 
     @autotune_policies.setter
@@ -7015,9 +5164,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -7027,9 +5173,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        """
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -7039,9 +5182,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="blockVolumeReplicas")
     def block_volume_replicas(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs']]:
-        """
-        The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        """
         return pulumi.get(self, "block_volume_replicas")
 
     @block_volume_replicas.setter
@@ -7051,9 +5191,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -7063,9 +5200,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -7075,9 +5209,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -7087,9 +5218,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -7099,9 +5227,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        """
         return pulumi.get(self, "is_auto_tune_enabled")
 
     @is_auto_tune_enabled.setter
@@ -7111,9 +5236,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -7123,9 +5245,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the volume in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -7144,11 +5263,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @property
     @pulumi.getter(name="vpusPerGb")
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
         return pulumi.get(self, "vpus_per_gb")
 
     @vpus_per_gb.setter
@@ -7161,10 +5275,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotune
     def __init__(__self__, *,
                  autotune_type: pulumi.Input[str],
                  max_vpus_per_gb: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] autotune_type: This specifies the type of autotunes supported by OCI.
-        :param pulumi.Input[str] max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
@@ -7172,9 +5282,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotune
     @property
     @pulumi.getter(name="autotuneType")
     def autotune_type(self) -> pulumi.Input[str]:
-        """
-        This specifies the type of autotunes supported by OCI.
-        """
         return pulumi.get(self, "autotune_type")
 
     @autotune_type.setter
@@ -7184,9 +5291,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotune
     @property
     @pulumi.getter(name="maxVpusPerGb")
     def max_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         return pulumi.get(self, "max_vpus_per_gb")
 
     @max_vpus_per_gb.setter
@@ -7199,10 +5303,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVol
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  display_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -7210,9 +5310,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVol
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -7222,9 +5319,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVol
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -7237,10 +5331,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[str] id: The OCID of the volume backup.
-        """
         pulumi.set(__self__, "type", type)
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -7248,9 +5338,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -7260,9 +5347,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume backup.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -7297,87 +5381,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']] = None,
                  source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs']] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs'] agent_config: Configuration options for the Oracle Cloud Agent software running on the instance.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs'] availability_config: Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-               
-               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-               
-               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        :param pulumi.Input[str] fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-               
-               If you do not specify the fault domain, the system selects one for you.
-               
-               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-               
-               Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-        :param pulumi.Input[str] ipxe_script: This is an advanced option.
-               
-               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-               
-               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-               
-               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-               
-               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-               
-               For more information about iPXE, see http://ipxe.org.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-               
-               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-               
-               **Providing Cloud-Init Metadata**
-               
-               You can use the following metadata key names to provide information to Cloud-Init:
-               
-               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-               
-               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-               
-               **Metadata Example**
-               
-               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-               
-               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-               
-               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-               
-               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs'] platform_config: The platform configuration requested for the instance.
-               
-               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
-        :param pulumi.Input[str] preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-        :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-               
-               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs'] shape_config: The shape configuration requested for the instance.
-               
-               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        """
         if agent_config is not None:
             pulumi.set(__self__, "agent_config", agent_config)
         if availability_config is not None:
@@ -7430,9 +5433,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="agentConfig")
     def agent_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs']]:
-        """
-        Configuration options for the Oracle Cloud Agent software running on the instance.
-        """
         return pulumi.get(self, "agent_config")
 
     @agent_config.setter
@@ -7442,9 +5442,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="availabilityConfig")
     def availability_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs']]:
-        """
-        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-        """
         return pulumi.get(self, "availability_config")
 
     @availability_config.setter
@@ -7454,9 +5451,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -7466,9 +5460,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compute capacity reservation this instance is launched under.
-        """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
@@ -7478,9 +5469,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -7490,9 +5478,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="createVnicDetails")
     def create_vnic_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs']]:
-        """
-        Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
@@ -7502,11 +5487,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="dedicatedVmHostId")
     def dedicated_vm_host_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the dedicated virtual machine host to place the instance on.
-
-        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-        """
         return pulumi.get(self, "dedicated_vm_host_id")
 
     @dedicated_vm_host_id.setter
@@ -7516,9 +5496,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -7528,9 +5505,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -7540,13 +5514,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-
-        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -7556,15 +5523,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-
-        If you do not specify the fault domain, the system selects one for you.
-
-        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-
-        Example: `FAULT-DOMAIN-1`
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -7574,9 +5532,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -7586,9 +5541,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="instanceOptions")
     def instance_options(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs']]:
-        """
-        Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-        """
         return pulumi.get(self, "instance_options")
 
     @instance_options.setter
@@ -7598,19 +5550,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="ipxeScript")
     def ipxe_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        This is an advanced option.
-
-        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-
-        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-
-        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-
-        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-
-        For more information about iPXE, see http://ipxe.org.
-        """
         return pulumi.get(self, "ipxe_script")
 
     @ipxe_script.setter
@@ -7620,9 +5559,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -7632,9 +5568,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="launchMode")
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        """
         return pulumi.get(self, "launch_mode")
 
     @launch_mode.setter
@@ -7644,9 +5577,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="launchOptions")
     def launch_options(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']]:
-        """
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        """
         return pulumi.get(self, "launch_options")
 
     @launch_options.setter
@@ -7656,33 +5586,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-
-        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-
-        **Providing Cloud-Init Metadata**
-
-        You can use the following metadata key names to provide information to Cloud-Init:
-
-        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-
-        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-
-        **Metadata Example**
-
-        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-
-        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-
-        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-
-        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -7692,13 +5595,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']]:
-        """
-        The platform configuration requested for the instance.
-
-        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        """
         return pulumi.get(self, "platform_config")
 
     @platform_config.setter
@@ -7708,9 +5604,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="preemptibleInstanceConfig")
     def preemptible_instance_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']]:
-        """
-        Configuration options for preemptible instances.
-        """
         return pulumi.get(self, "preemptible_instance_config")
 
     @preemptible_instance_config.setter
@@ -7720,9 +5613,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="preferredMaintenanceAction")
     def preferred_maintenance_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-        """
         return pulumi.get(self, "preferred_maintenance_action")
 
     @preferred_maintenance_action.setter
@@ -7732,11 +5622,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-
-        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -7746,13 +5631,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']]:
-        """
-        The shape configuration requested for the instance.
-
-        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -7776,26 +5654,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
                  is_management_disabled: Optional[pulumi.Input[bool]] = None,
                  is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
                  plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]] = None):
-        """
-        :param pulumi.Input[bool] are_all_plugins_disabled: Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-               
-               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        :param pulumi.Input[bool] is_management_disabled: Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-               
-               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-               
-               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-        :param pulumi.Input[bool] is_monitoring_disabled: Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-               
-               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-               
-               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]] plugins_configs: The configuration of plugins associated with this instance.
-        """
         if are_all_plugins_disabled is not None:
             pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
@@ -7808,11 +5666,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
     def are_all_plugins_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-
-        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "are_all_plugins_disabled")
 
     @are_all_plugins_disabled.setter
@@ -7822,15 +5675,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="isManagementDisabled")
     def is_management_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-
-        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-
-        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-        """
         return pulumi.get(self, "is_management_disabled")
 
     @is_management_disabled.setter
@@ -7840,15 +5684,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="isMonitoringDisabled")
     def is_monitoring_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-
-        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-
-        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
-        """
         return pulumi.get(self, "is_monitoring_disabled")
 
     @is_monitoring_disabled.setter
@@ -7858,9 +5693,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
     @property
     @pulumi.getter(name="pluginsConfigs")
     def plugins_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]]:
-        """
-        The configuration of plugins associated with this instance.
-        """
         return pulumi.get(self, "plugins_configs")
 
     @plugins_configs.setter
@@ -7873,12 +5705,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
     def __init__(__self__, *,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] desired_state: Whether the plugin should be enabled or disabled.
-               
-               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-        :param pulumi.Input[str] name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         if desired_state is not None:
             pulumi.set(__self__, "desired_state", desired_state)
         if name is not None:
@@ -7887,11 +5713,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
     @property
     @pulumi.getter(name="desiredState")
     def desired_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Whether the plugin should be enabled or disabled.
-
-        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-        """
         return pulumi.get(self, "desired_state")
 
     @desired_state.setter
@@ -7901,9 +5722,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7916,10 +5734,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigA
     def __init__(__self__, *,
                  is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
                  recovery_action: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-        :param pulumi.Input[str] recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-        """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
@@ -7928,9 +5742,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigA
     @property
     @pulumi.getter(name="isLiveMigrationPreferred")
     def is_live_migration_preferred(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-        """
         return pulumi.get(self, "is_live_migration_preferred")
 
     @is_live_migration_preferred.setter
@@ -7940,9 +5751,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigA
     @property
     @pulumi.getter(name="recoveryAction")
     def recovery_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-        """
         return pulumi.get(self, "recovery_action")
 
     @recovery_action.setter
@@ -7965,20 +5773,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         if assign_ipv6ip is not None:
             pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -8007,9 +5801,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @assign_ipv6ip.setter
@@ -8019,9 +5810,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_private_dns_record")
 
     @assign_private_dns_record.setter
@@ -8031,9 +5819,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="assignPublicIp")
     def assign_public_ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_public_ip")
 
     @assign_public_ip.setter
@@ -8043,9 +5828,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -8055,9 +5837,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -8067,9 +5846,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -8079,9 +5855,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -8091,9 +5864,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -8103,9 +5873,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -8115,9 +5882,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -8127,9 +5891,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
@@ -8139,9 +5900,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -8154,10 +5912,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
     def __init__(__self__, *,
                  ipv6address: Optional[pulumi.Input[str]] = None,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -8166,9 +5920,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
@@ -8178,9 +5929,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -8192,18 +5940,12 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
 class InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs:
     def __init__(__self__, *,
                  are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-        """
         if are_legacy_imds_endpoints_disabled is not None:
             pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
     def are_legacy_imds_endpoints_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-        """
         return pulumi.get(self, "are_legacy_imds_endpoints_disabled")
 
     @are_legacy_imds_endpoints_disabled.setter
@@ -8220,14 +5962,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  network_type: Optional[pulumi.Input[str]] = None,
                  remote_data_volume_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] boot_volume_type: Emulation type for the boot volume.
-        :param pulumi.Input[str] firmware: Firmware used to boot VM. Select the option that matches your operating system.
-        :param pulumi.Input[bool] is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        :param pulumi.Input[str] network_type: Emulation type for the physical network interface card (NIC).
-        :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
-        """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -8244,9 +5978,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="bootVolumeType")
     def boot_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for the boot volume.
-        """
         return pulumi.get(self, "boot_volume_type")
 
     @boot_volume_type.setter
@@ -8256,9 +5987,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter
     def firmware(self) -> Optional[pulumi.Input[str]]:
-        """
-        Firmware used to boot VM. Select the option that matches your operating system.
-        """
         return pulumi.get(self, "firmware")
 
     @firmware.setter
@@ -8268,9 +5996,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="isConsistentVolumeNamingEnabled")
     def is_consistent_volume_naming_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable consistent volume naming feature. Defaults to false.
-        """
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @is_consistent_volume_naming_enabled.setter
@@ -8280,9 +6005,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -8292,9 +6014,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for the physical network interface card (NIC).
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -8304,9 +6023,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
     @property
     @pulumi.getter(name="remoteDataVolumeType")
     def remote_data_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for volume.
-        """
         return pulumi.get(self, "remote_data_volume_type")
 
     @remote_data_volume_type.setter
@@ -8328,23 +6044,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
                  is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
                  numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
                  percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-        :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
-        :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
-        :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-        :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-               
-               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
-        :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
-        :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-               
-               If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
-        """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
             pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
@@ -8370,9 +6069,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -8382,9 +6078,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="areVirtualInstructionsEnabled")
     def are_virtual_instructions_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        """
         return pulumi.get(self, "are_virtual_instructions_enabled")
 
     @are_virtual_instructions_enabled.setter
@@ -8394,9 +6087,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isAccessControlServiceEnabled")
     def is_access_control_service_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-        """
         return pulumi.get(self, "is_access_control_service_enabled")
 
     @is_access_control_service_enabled.setter
@@ -8406,9 +6096,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
     def is_input_output_memory_management_unit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the input-output memory management unit is enabled.
-        """
         return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @is_input_output_memory_management_unit_enabled.setter
@@ -8418,9 +6105,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
     def is_measured_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Measured Boot feature is enabled on the instance.
-        """
         return pulumi.get(self, "is_measured_boot_enabled")
 
     @is_measured_boot_enabled.setter
@@ -8430,9 +6114,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isMemoryEncryptionEnabled")
     def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-        """
         return pulumi.get(self, "is_memory_encryption_enabled")
 
     @is_memory_encryption_enabled.setter
@@ -8442,9 +6123,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isSecureBootEnabled")
     def is_secure_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Secure Boot is enabled on the instance.
-        """
         return pulumi.get(self, "is_secure_boot_enabled")
 
     @is_secure_boot_enabled.setter
@@ -8454,11 +6132,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-
-        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
-        """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
     @is_symmetric_multi_threading_enabled.setter
@@ -8468,9 +6141,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Trusted Platform Module (TPM) is enabled on the instance.
-        """
         return pulumi.get(self, "is_trusted_platform_module_enabled")
 
     @is_trusted_platform_module_enabled.setter
@@ -8480,9 +6150,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="numaNodesPerSocket")
     def numa_nodes_per_socket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of NUMA nodes per socket (NPS).
-        """
         return pulumi.get(self, "numa_nodes_per_socket")
 
     @numa_nodes_per_socket.setter
@@ -8492,11 +6159,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @property
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
-        """
-        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-
-        If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
-        """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
     @percentage_of_cores_enabled.setter
@@ -8508,18 +6170,12 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
 class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
                  preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
-        """
         if preemption_action is not None:
             pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
     def preemption_action(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]:
-        """
-        The action to run when the preemptible instance is interrupted for eviction.
-        """
         return pulumi.get(self, "preemption_action")
 
     @preemption_action.setter
@@ -8532,10 +6188,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstance
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         pulumi.set(__self__, "type", type)
         if preserve_boot_volume is not None:
             pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
@@ -8543,9 +6195,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstance
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -8555,9 +6204,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstance
     @property
     @pulumi.getter(name="preserveBootVolume")
     def preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         return pulumi.get(self, "preserve_boot_volume")
 
     @preserve_boot_volume.setter
@@ -8573,15 +6219,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None,
                  vcpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-               
-               The following values are supported:
-        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance.
-        :param pulumi.Input[int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-        """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
@@ -8596,11 +6233,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
     def baseline_ocpu_utilization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-
-        The following values are supported:
-        """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
     @baseline_ocpu_utilization.setter
@@ -8610,9 +6242,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total amount of memory available to the instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -8622,9 +6251,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -8634,9 +6260,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs available to the instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -8646,9 +6269,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     @property
     @pulumi.getter
     def vcpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-        """
         return pulumi.get(self, "vcpus")
 
     @vcpus.setter
@@ -8666,17 +6286,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
                  image_id: Optional[pulumi.Input[str]] = None,
                  instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-        :param pulumi.Input[str] boot_volume_id: The OCID of the boot volume used to boot the instance.
-        :param pulumi.Input[str] boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
-        :param pulumi.Input[str] boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
-        :param pulumi.Input[str] image_id: The OCID of the image used to boot the instance.
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_id is not None:
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
@@ -8694,9 +6303,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -8706,9 +6312,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeId")
     def boot_volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the boot volume used to boot the instance.
-        """
         return pulumi.get(self, "boot_volume_id")
 
     @boot_volume_id.setter
@@ -8718,9 +6321,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeSizeInGbs")
     def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
-        """
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @boot_volume_size_in_gbs.setter
@@ -8730,11 +6330,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeVpusPerGb")
     def boot_volume_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @boot_volume_vpus_per_gb.setter
@@ -8744,9 +6339,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the image used to boot the instance.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -8756,9 +6348,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="instanceSourceImageFilterDetails")
     def instance_source_image_filter_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]:
-        """
-        These are the criteria for selecting an image. This is required if imageId is not specified.
-        """
         return pulumi.get(self, "instance_source_image_filter_details")
 
     @instance_source_image_filter_details.setter
@@ -8768,9 +6357,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -8785,12 +6371,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
                  defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  operating_system: Optional[pulumi.Input[str]] = None,
                  operating_system_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Mapping[str, Any]] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
-        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags_filter is not None:
@@ -8803,9 +6383,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -8815,9 +6392,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
     @property
     @pulumi.getter(name="definedTagsFilter")
     def defined_tags_filter(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags_filter")
 
     @defined_tags_filter.setter
@@ -8827,9 +6401,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system.  Example: `Oracle Linux`
-        """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
@@ -8839,9 +6410,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
     @property
     @pulumi.getter(name="operatingSystemVersion")
     def operating_system_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system version.  Example: `7.2`
-        """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
@@ -8855,11 +6423,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
                  create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  nic_index: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        """
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if display_name is not None:
@@ -8870,9 +6433,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
     @property
     @pulumi.getter(name="createVnicDetails")
     def create_vnic_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']]:
-        """
-        Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
@@ -8882,9 +6442,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -8894,9 +6451,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
     @property
     @pulumi.getter(name="nicIndex")
     def nic_index(self) -> Optional[pulumi.Input[int]]:
-        """
-        Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        """
         return pulumi.get(self, "nic_index")
 
     @nic_index.setter
@@ -8919,20 +6473,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         if assign_ipv6ip is not None:
             pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -8961,9 +6501,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @assign_ipv6ip.setter
@@ -8973,9 +6510,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_private_dns_record")
 
     @assign_private_dns_record.setter
@@ -8985,9 +6519,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="assignPublicIp")
     def assign_public_ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_public_ip")
 
     @assign_public_ip.setter
@@ -8997,9 +6528,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -9009,9 +6537,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -9021,9 +6546,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -9033,9 +6555,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -9045,9 +6564,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -9057,9 +6573,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -9069,9 +6582,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -9081,9 +6591,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
@@ -9093,9 +6600,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -9108,10 +6612,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
     def __init__(__self__, *,
                  ipv6address: Optional[pulumi.Input[str]] = None,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -9120,9 +6620,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
@@ -9132,9 +6629,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -9148,11 +6642,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicArgs:
                  create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  nic_index: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        """
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if display_name is not None:
@@ -9163,9 +6652,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicArgs:
     @property
     @pulumi.getter(name="createVnicDetails")
     def create_vnic_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs']]:
-        """
-        Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
@@ -9175,9 +6661,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -9187,9 +6670,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicArgs:
     @property
     @pulumi.getter(name="nicIndex")
     def nic_index(self) -> Optional[pulumi.Input[int]]:
-        """
-        Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        """
         return pulumi.get(self, "nic_index")
 
     @nic_index.setter
@@ -9212,20 +6692,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         if assign_ipv6ip is not None:
             pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -9254,9 +6720,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @assign_ipv6ip.setter
@@ -9266,9 +6729,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_private_dns_record")
 
     @assign_private_dns_record.setter
@@ -9278,9 +6738,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPublicIp")
     def assign_public_ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "assign_public_ip")
 
     @assign_public_ip.setter
@@ -9290,9 +6747,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -9302,9 +6756,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -9314,9 +6765,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -9326,9 +6774,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -9338,9 +6783,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -9350,9 +6792,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -9362,9 +6801,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -9374,9 +6810,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
@@ -9386,9 +6819,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -9401,10 +6831,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
     def __init__(__self__, *,
                  ipv6address: Optional[pulumi.Input[str]] = None,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -9413,9 +6839,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
@@ -9425,9 +6848,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -9451,42 +6871,6 @@ class InstanceCreateVnicDetailsArgs:
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. The default value is true.
-               If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
-        :param pulumi.Input[str] assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-               
-               **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-               
-               **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-               
-               Example: `false`
-               
-               If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-               
-               If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
-               
-               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Example: `10.0.3.3`
-        :param pulumi.Input[bool] skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-               
-               If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Example: `true`
-        :param pulumi.Input[str] subnet_id: Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
-        :param pulumi.Input[str] vlan_id: Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
         if assign_ipv6ip is not None:
             pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -9517,9 +6901,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @assign_ipv6ip.setter
@@ -9529,10 +6910,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. The default value is true.
-        If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
-        """
         return pulumi.get(self, "assign_private_dns_record")
 
     @assign_private_dns_record.setter
@@ -9542,17 +6919,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPublicIp")
     def assign_public_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-
-        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-
-        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-
-        Example: `false`
-
-        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        """
         return pulumi.get(self, "assign_public_ip")
 
     @assign_public_ip.setter
@@ -9562,9 +6928,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -9574,9 +6937,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -9586,9 +6946,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -9598,9 +6955,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -9610,9 +6964,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -9622,11 +6973,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-
-        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -9636,13 +6982,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
-
-        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Example: `10.0.3.3`
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -9652,13 +6991,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-
-        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Example: `true`
-        """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
@@ -9668,9 +7000,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -9680,11 +7009,6 @@ class InstanceCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -9725,18 +7049,12 @@ class InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
 class InstanceInstanceOptionsArgs:
     def __init__(__self__, *,
                  are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-        """
         if are_legacy_imds_endpoints_disabled is not None:
             pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
     def are_legacy_imds_endpoints_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-        """
         return pulumi.get(self, "are_legacy_imds_endpoints_disabled")
 
     @are_legacy_imds_endpoints_disabled.setter
@@ -9753,14 +7071,6 @@ class InstanceLaunchOptionsArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  network_type: Optional[pulumi.Input[str]] = None,
                  remote_data_volume_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] boot_volume_type: (Updatable) Emulation type for the boot volume.
-        :param pulumi.Input[str] firmware: Firmware used to boot VM. Select the option that matches your operating system.
-        :param pulumi.Input[bool] is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
-        :param pulumi.Input[str] network_type: (Updatable) Emulation type for the physical network interface card (NIC).
-        :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
-        """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -9777,9 +7087,6 @@ class InstanceLaunchOptionsArgs:
     @property
     @pulumi.getter(name="bootVolumeType")
     def boot_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Emulation type for the boot volume.
-        """
         return pulumi.get(self, "boot_volume_type")
 
     @boot_volume_type.setter
@@ -9789,9 +7096,6 @@ class InstanceLaunchOptionsArgs:
     @property
     @pulumi.getter
     def firmware(self) -> Optional[pulumi.Input[str]]:
-        """
-        Firmware used to boot VM. Select the option that matches your operating system.
-        """
         return pulumi.get(self, "firmware")
 
     @firmware.setter
@@ -9801,9 +7105,6 @@ class InstanceLaunchOptionsArgs:
     @property
     @pulumi.getter(name="isConsistentVolumeNamingEnabled")
     def is_consistent_volume_naming_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable consistent volume naming feature. Defaults to false.
-        """
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @is_consistent_volume_naming_enabled.setter
@@ -9813,9 +7114,6 @@ class InstanceLaunchOptionsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -9825,9 +7123,6 @@ class InstanceLaunchOptionsArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Emulation type for the physical network interface card (NIC).
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -9837,9 +7132,6 @@ class InstanceLaunchOptionsArgs:
     @property
     @pulumi.getter(name="remoteDataVolumeType")
     def remote_data_volume_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Emulation type for volume.
-        """
         return pulumi.get(self, "remote_data_volume_type")
 
     @remote_data_volume_type.setter
@@ -9862,24 +7154,6 @@ class InstancePlatformConfigArgs:
                  is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
                  numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
                  percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        :param pulumi.Input[Mapping[str, Any]] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
-        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-        :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
-        :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
-        :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-        :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-               
-               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
-        :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
-        :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-               
-               If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
-        """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
             pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
@@ -9907,9 +7181,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -9919,9 +7190,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="areVirtualInstructionsEnabled")
     def are_virtual_instructions_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        """
         return pulumi.get(self, "are_virtual_instructions_enabled")
 
     @are_virtual_instructions_enabled.setter
@@ -9931,9 +7199,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="configMap")
     def config_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Instance Platform Configuration Configuration Map for flexible setting input.
-        """
         return pulumi.get(self, "config_map")
 
     @config_map.setter
@@ -9943,9 +7208,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="isAccessControlServiceEnabled")
     def is_access_control_service_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-        """
         return pulumi.get(self, "is_access_control_service_enabled")
 
     @is_access_control_service_enabled.setter
@@ -9955,9 +7217,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
     def is_input_output_memory_management_unit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the input-output memory management unit is enabled.
-        """
         return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @is_input_output_memory_management_unit_enabled.setter
@@ -9967,9 +7226,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
     def is_measured_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Measured Boot feature is enabled on the instance.
-        """
         return pulumi.get(self, "is_measured_boot_enabled")
 
     @is_measured_boot_enabled.setter
@@ -9979,9 +7235,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="isMemoryEncryptionEnabled")
     def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-        """
         return pulumi.get(self, "is_memory_encryption_enabled")
 
     @is_memory_encryption_enabled.setter
@@ -9991,9 +7244,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="isSecureBootEnabled")
     def is_secure_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether Secure Boot is enabled on the instance.
-        """
         return pulumi.get(self, "is_secure_boot_enabled")
 
     @is_secure_boot_enabled.setter
@@ -10003,11 +7253,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-
-        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
-        """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
     @is_symmetric_multi_threading_enabled.setter
@@ -10017,9 +7262,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Trusted Platform Module (TPM) is enabled on the instance.
-        """
         return pulumi.get(self, "is_trusted_platform_module_enabled")
 
     @is_trusted_platform_module_enabled.setter
@@ -10029,9 +7271,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="numaNodesPerSocket")
     def numa_nodes_per_socket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of NUMA nodes per socket (NPS).
-        """
         return pulumi.get(self, "numa_nodes_per_socket")
 
     @numa_nodes_per_socket.setter
@@ -10041,11 +7280,6 @@ class InstancePlatformConfigArgs:
     @property
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
-        """
-        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-
-        If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
-        """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
     @percentage_of_cores_enabled.setter
@@ -10061,13 +7295,6 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
                  backend_set_name: Optional[pulumi.Input[str]] = None,
                  load_balancer_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] backend_health_status: The health of the backend as observed by the load balancer.
-        :param pulumi.Input[str] backend_name: The name of the backend in the backend set.
-        :param pulumi.Input[str] backend_set_name: The name of the backend set on the load balancer.
-        :param pulumi.Input[str] load_balancer_id: The OCID of the load balancer attached to the instance pool.
-        :param pulumi.Input[str] state: The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-        """
         if backend_health_status is not None:
             pulumi.set(__self__, "backend_health_status", backend_health_status)
         if backend_name is not None:
@@ -10082,9 +7309,6 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
     @property
     @pulumi.getter(name="backendHealthStatus")
     def backend_health_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The health of the backend as observed by the load balancer.
-        """
         return pulumi.get(self, "backend_health_status")
 
     @backend_health_status.setter
@@ -10094,9 +7318,6 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
     @property
     @pulumi.getter(name="backendName")
     def backend_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the backend in the backend set.
-        """
         return pulumi.get(self, "backend_name")
 
     @backend_name.setter
@@ -10106,9 +7327,6 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
     @property
     @pulumi.getter(name="backendSetName")
     def backend_set_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the backend set on the load balancer.
-        """
         return pulumi.get(self, "backend_set_name")
 
     @backend_set_name.setter
@@ -10118,9 +7336,6 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the load balancer attached to the instance pool.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -10130,9 +7345,6 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -10150,19 +7362,6 @@ class InstancePoolLoadBalancerArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  instance_pool_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] backend_set_name: The name of the backend set on the load balancer to add instances to.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
-        :param pulumi.Input[int] port: The port value to use when creating the backend set.
-        :param pulumi.Input[str] vnic_selection: Indicates which VNIC on each instance in the pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-        :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "backend_set_name", backend_set_name)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         pulumi.set(__self__, "port", port)
@@ -10177,9 +7376,6 @@ class InstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="backendSetName")
     def backend_set_name(self) -> pulumi.Input[str]:
-        """
-        The name of the backend set on the load balancer to add instances to.
-        """
         return pulumi.get(self, "backend_set_name")
 
     @backend_set_name.setter
@@ -10189,9 +7385,6 @@ class InstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -10201,9 +7394,6 @@ class InstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter
     def port(self) -> pulumi.Input[int]:
-        """
-        The port value to use when creating the backend set.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -10213,9 +7403,6 @@ class InstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="vnicSelection")
     def vnic_selection(self) -> pulumi.Input[str]:
-        """
-        Indicates which VNIC on each instance in the pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
         return pulumi.get(self, "vnic_selection")
 
     @vnic_selection.setter
@@ -10225,9 +7412,6 @@ class InstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -10237,9 +7421,6 @@ class InstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
-        """
         return pulumi.get(self, "instance_pool_id")
 
     @instance_pool_id.setter
@@ -10249,13 +7430,6 @@ class InstancePoolLoadBalancerArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -10271,21 +7445,6 @@ class InstancePoolPlacementConfigurationArgs:
                  primary_subnet_id: Optional[pulumi.Input[str]] = None,
                  primary_vnic_subnets: Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) The fault domains to place instances.
-               
-               If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
-               
-               To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
-               
-               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-               
-               Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
-        :param pulumi.Input[str] primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-        :param pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs'] primary_vnic_subnets: (Updatable) Details about the IPv6 primary subnet.
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
@@ -10299,9 +7458,6 @@ class InstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -10311,17 +7467,6 @@ class InstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="faultDomains")
     def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The fault domains to place instances.
-
-        If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
-
-        To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
-
-        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-
-        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
-        """
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
@@ -10331,9 +7476,6 @@ class InstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-        """
         return pulumi.get(self, "primary_subnet_id")
 
     @primary_subnet_id.setter
@@ -10343,9 +7485,6 @@ class InstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="primaryVnicSubnets")
     def primary_vnic_subnets(self) -> Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']]:
-        """
-        (Updatable) Details about the IPv6 primary subnet.
-        """
         return pulumi.get(self, "primary_vnic_subnets")
 
     @primary_vnic_subnets.setter
@@ -10355,9 +7494,6 @@ class InstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="secondaryVnicSubnets")
     def secondary_vnic_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]]:
-        """
-        (Updatable) The set of secondary VNIC data for instances in the pool.
-        """
         return pulumi.get(self, "secondary_vnic_subnets")
 
     @secondary_vnic_subnets.setter
@@ -10371,11 +7507,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
                  subnet_id: pulumi.Input[str],
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[bool] is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
             pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
@@ -10385,9 +7516,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -10397,9 +7525,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -10409,9 +7534,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
     @property
     @pulumi.getter(name="isAssignIpv6ip")
     def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "is_assign_ipv6ip")
 
     @is_assign_ipv6ip.setter
@@ -10423,18 +7545,12 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
 class InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6subnet_cidr: (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -10449,12 +7565,6 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[bool] is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -10466,9 +7576,6 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -10478,9 +7585,6 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -10490,9 +7594,6 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -10502,9 +7603,6 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @property
     @pulumi.getter(name="isAssignIpv6ip")
     def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "is_assign_ipv6ip")
 
     @is_assign_ipv6ip.setter
@@ -10516,18 +7614,12 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
 class InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ipv6subnet_cidr: (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
@@ -10539,17 +7631,11 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnet
 class InstancePreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
                  preemption_action: pulumi.Input['InstancePreemptibleInstanceConfigPreemptionActionArgs']):
-        """
-        :param pulumi.Input['InstancePreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
-        """
         pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
     def preemption_action(self) -> pulumi.Input['InstancePreemptibleInstanceConfigPreemptionActionArgs']:
-        """
-        The action to run when the preemptible instance is interrupted for eviction.
-        """
         return pulumi.get(self, "preemption_action")
 
     @preemption_action.setter
@@ -10562,10 +7648,6 @@ class InstancePreemptibleInstanceConfigPreemptionActionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         pulumi.set(__self__, "type", type)
         if preserve_boot_volume is not None:
             pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
@@ -10573,9 +7655,6 @@ class InstancePreemptibleInstanceConfigPreemptionActionArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -10585,9 +7664,6 @@ class InstancePreemptibleInstanceConfigPreemptionActionArgs:
     @property
     @pulumi.getter(name="preserveBootVolume")
     def preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         return pulumi.get(self, "preserve_boot_volume")
 
     @preserve_boot_volume.setter
@@ -10611,23 +7687,6 @@ class InstanceShapeConfigArgs:
                  ocpus: Optional[pulumi.Input[float]] = None,
                  processor_description: Optional[pulumi.Input[str]] = None,
                  vcpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-               
-               The following values are supported:
-        :param pulumi.Input[str] gpu_description: A short description of the instance's graphics processing unit (GPU).
-        :param pulumi.Input[int] gpus: The number of GPUs available to the instance.
-        :param pulumi.Input[str] local_disk_description: A short description of the local disks available to this instance.
-        :param pulumi.Input[int] local_disks: The number of local disks available to the instance.
-        :param pulumi.Input[float] local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes.
-        :param pulumi.Input[int] max_vnic_attachments: The maximum number of VNIC attachments for the instance.
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
-        :param pulumi.Input[float] networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
-        :param pulumi.Input[int] nvmes: (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
-        :param pulumi.Input[str] processor_description: A short description of the instance's processor (CPU).
-        :param pulumi.Input[int] vcpus: (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-        """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if gpu_description is not None:
@@ -10658,11 +7717,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
     def baseline_ocpu_utilization(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-
-        The following values are supported:
-        """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
     @baseline_ocpu_utilization.setter
@@ -10672,9 +7726,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="gpuDescription")
     def gpu_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        A short description of the instance's graphics processing unit (GPU).
-        """
         return pulumi.get(self, "gpu_description")
 
     @gpu_description.setter
@@ -10684,9 +7735,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter
     def gpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of GPUs available to the instance.
-        """
         return pulumi.get(self, "gpus")
 
     @gpus.setter
@@ -10696,9 +7744,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="localDiskDescription")
     def local_disk_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        A short description of the local disks available to this instance.
-        """
         return pulumi.get(self, "local_disk_description")
 
     @local_disk_description.setter
@@ -10708,9 +7753,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="localDisks")
     def local_disks(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of local disks available to the instance.
-        """
         return pulumi.get(self, "local_disks")
 
     @local_disks.setter
@@ -10720,9 +7762,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="localDisksTotalSizeInGbs")
     def local_disks_total_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The aggregate size of all local disks, in gigabytes.
-        """
         return pulumi.get(self, "local_disks_total_size_in_gbs")
 
     @local_disks_total_size_in_gbs.setter
@@ -10732,9 +7771,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="maxVnicAttachments")
     def max_vnic_attachments(self) -> Optional[pulumi.Input[int]]:
-        """
-        The maximum number of VNIC attachments for the instance.
-        """
         return pulumi.get(self, "max_vnic_attachments")
 
     @max_vnic_attachments.setter
@@ -10744,9 +7780,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total amount of memory available to the instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -10756,9 +7789,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="networkingBandwidthInGbps")
     def networking_bandwidth_in_gbps(self) -> Optional[pulumi.Input[float]]:
-        """
-        The networking bandwidth available to the instance, in gigabits per second.
-        """
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
     @networking_bandwidth_in_gbps.setter
@@ -10768,9 +7798,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -10780,9 +7807,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs available to the instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -10792,9 +7816,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="processorDescription")
     def processor_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        A short description of the instance's processor (CPU).
-        """
         return pulumi.get(self, "processor_description")
 
     @processor_description.setter
@@ -10804,9 +7825,6 @@ class InstanceShapeConfigArgs:
     @property
     @pulumi.getter
     def vcpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-        """
         return pulumi.get(self, "vcpus")
 
     @vcpus.setter
@@ -10823,16 +7841,6 @@ class InstanceSourceDetailsArgs:
                  instance_source_image_filter_details: Optional[pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-        :param pulumi.Input[str] boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
-        :param pulumi.Input[str] boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
-        :param pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
-        :param pulumi.Input[str] source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
-        """
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_size_in_gbs is not None:
             pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -10848,9 +7856,6 @@ class InstanceSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -10860,9 +7865,6 @@ class InstanceSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeSizeInGbs")
     def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
-        """
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @boot_volume_size_in_gbs.setter
@@ -10872,11 +7874,6 @@ class InstanceSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeVpusPerGb")
     def boot_volume_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @boot_volume_vpus_per_gb.setter
@@ -10886,9 +7883,6 @@ class InstanceSourceDetailsArgs:
     @property
     @pulumi.getter(name="instanceSourceImageFilterDetails")
     def instance_source_image_filter_details(self) -> Optional[pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']]:
-        """
-        These are the criteria for selecting an image. This is required if imageId is not specified.
-        """
         return pulumi.get(self, "instance_source_image_filter_details")
 
     @instance_source_image_filter_details.setter
@@ -10898,9 +7892,6 @@ class InstanceSourceDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -10910,9 +7901,6 @@ class InstanceSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceId")
     def source_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of an image or a boot volume to use, depending on the value of `source_type`.
-        """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
@@ -10927,12 +7915,6 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
                  defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  operating_system: Optional[pulumi.Input[str]] = None,
                  operating_system_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Mapping[str, Any]] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
-        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
-        """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags_filter is not None:
             pulumi.set(__self__, "defined_tags_filter", defined_tags_filter)
@@ -10944,9 +7926,6 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -10956,9 +7935,6 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
     @property
     @pulumi.getter(name="definedTagsFilter")
     def defined_tags_filter(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags_filter")
 
     @defined_tags_filter.setter
@@ -10968,9 +7944,6 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system.  Example: `Oracle Linux`
-        """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
@@ -10980,9 +7953,6 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
     @property
     @pulumi.getter(name="operatingSystemVersion")
     def operating_system_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system version.  Example: `7.2`
-        """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
@@ -10999,34 +7969,6 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
                  customer_interface_ip: Optional[pulumi.Input[str]] = None,
                  oracle_bgp_asn: Optional[pulumi.Input[str]] = None,
                  oracle_interface_ip: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] bgp_ipv6state: The state of the BGP IPv6 session.
-        :param pulumi.Input[str] bgp_state: The state of the BGP session.
-        :param pulumi.Input[str] customer_bgp_asn: If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
-               
-               If the tunnel's `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
-               
-               Example: `12345` (2-byte) or `1587232876` (4-byte)
-        :param pulumi.Input[str] customer_interface_ip: The IP address for the CPE end of the inside tunnel interface.
-               
-               If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
-               
-               If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
-               
-               The value must be a /30 or /31.
-               
-               Example: `10.0.0.5/31`
-        :param pulumi.Input[str] oracle_bgp_asn: The Oracle BGP ASN.
-        :param pulumi.Input[str] oracle_interface_ip: The IP address for the Oracle end of the inside tunnel interface.
-               
-               If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
-               
-               If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
-               
-               The value must be a /30 or /31.
-               
-               Example: `10.0.0.4/31`
-        """
         if bgp_ipv6state is not None:
             pulumi.set(__self__, "bgp_ipv6state", bgp_ipv6state)
         if bgp_state is not None:
@@ -11043,9 +7985,6 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @property
     @pulumi.getter(name="bgpIpv6state")
     def bgp_ipv6state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the BGP IPv6 session.
-        """
         return pulumi.get(self, "bgp_ipv6state")
 
     @bgp_ipv6state.setter
@@ -11055,9 +7994,6 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @property
     @pulumi.getter(name="bgpState")
     def bgp_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the BGP session.
-        """
         return pulumi.get(self, "bgp_state")
 
     @bgp_state.setter
@@ -11067,13 +8003,6 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @property
     @pulumi.getter(name="customerBgpAsn")
     def customer_bgp_asn(self) -> Optional[pulumi.Input[str]]:
-        """
-        If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
-
-        If the tunnel's `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
-
-        Example: `12345` (2-byte) or `1587232876` (4-byte)
-        """
         return pulumi.get(self, "customer_bgp_asn")
 
     @customer_bgp_asn.setter
@@ -11083,17 +8012,6 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @property
     @pulumi.getter(name="customerInterfaceIp")
     def customer_interface_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address for the CPE end of the inside tunnel interface.
-
-        If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
-
-        If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
-
-        The value must be a /30 or /31.
-
-        Example: `10.0.0.5/31`
-        """
         return pulumi.get(self, "customer_interface_ip")
 
     @customer_interface_ip.setter
@@ -11103,9 +8021,6 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @property
     @pulumi.getter(name="oracleBgpAsn")
     def oracle_bgp_asn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle BGP ASN.
-        """
         return pulumi.get(self, "oracle_bgp_asn")
 
     @oracle_bgp_asn.setter
@@ -11115,17 +8030,6 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @property
     @pulumi.getter(name="oracleInterfaceIp")
     def oracle_interface_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address for the Oracle end of the inside tunnel interface.
-
-        If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
-
-        If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
-
-        The value must be a /30 or /31.
-
-        Example: `10.0.0.4/31`
-        """
         return pulumi.get(self, "oracle_interface_ip")
 
     @oracle_interface_ip.setter
@@ -11167,10 +8071,6 @@ class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs:
     def __init__(__self__, *,
                  cpe_traffic_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  oracle_traffic_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] cpe_traffic_selectors: Lists IPv4 or IPv6-enabled subnets in your on-premises network.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] oracle_traffic_selectors: Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
-        """
         if cpe_traffic_selectors is not None:
             pulumi.set(__self__, "cpe_traffic_selectors", cpe_traffic_selectors)
         if oracle_traffic_selectors is not None:
@@ -11179,9 +8079,6 @@ class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs:
     @property
     @pulumi.getter(name="cpeTrafficSelectors")
     def cpe_traffic_selectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Lists IPv4 or IPv6-enabled subnets in your on-premises network.
-        """
         return pulumi.get(self, "cpe_traffic_selectors")
 
     @cpe_traffic_selectors.setter
@@ -11191,9 +8088,6 @@ class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs:
     @property
     @pulumi.getter(name="oracleTrafficSelectors")
     def oracle_traffic_selectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
-        """
         return pulumi.get(self, "oracle_traffic_selectors")
 
     @oracle_traffic_selectors.setter
@@ -11492,10 +8386,6 @@ class NetworkSecurityGroupSecurityRuleIcmpOptionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[int],
                  code: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] type: The ICMP type.
-        :param pulumi.Input[int] code: The ICMP code (optional).
-        """
         pulumi.set(__self__, "type", type)
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -11503,9 +8393,6 @@ class NetworkSecurityGroupSecurityRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[int]:
-        """
-        The ICMP type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -11515,9 +8402,6 @@ class NetworkSecurityGroupSecurityRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[int]]:
-        """
-        The ICMP code (optional).
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -11559,23 +8443,12 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -11585,13 +8458,6 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -11604,23 +8470,12 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -11630,13 +8485,6 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -11678,23 +8526,12 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -11704,13 +8541,6 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -11723,23 +8553,12 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -11749,13 +8568,6 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -11772,24 +8584,6 @@ class RouteTableRouteRuleArgs:
                  destination: Optional[pulumi.Input[str]] = None,
                  destination_type: Optional[pulumi.Input[str]] = None,
                  route_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] network_entity_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-        :param pulumi.Input[str] cidr_block: (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
-               
-               A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
-               
-               Cannot be an IPv6 prefix.
-               
-               Example: `0.0.0.0/0`
-        :param pulumi.Input[str] description: (Updatable) An optional description of your choice for the rule.
-        :param pulumi.Input[str] destination: (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
-               
-               Allowed values:
-               * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
-        :param pulumi.Input[str] destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-        :param pulumi.Input[str] route_type: (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
-        """
         pulumi.set(__self__, "network_entity_id", network_entity_id)
         if cidr_block is not None:
             warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
@@ -11808,9 +8602,6 @@ class RouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="networkEntityId")
     def network_entity_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-        """
         return pulumi.get(self, "network_entity_id")
 
     @network_entity_id.setter
@@ -11820,15 +8611,6 @@ class RouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
-
-        A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
-
-        Cannot be an IPv6 prefix.
-
-        Example: `0.0.0.0/0`
-        """
         warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
         pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
 
@@ -11841,9 +8623,6 @@ class RouteTableRouteRuleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An optional description of your choice for the rule.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -11853,13 +8632,6 @@ class RouteTableRouteRuleArgs:
     @property
     @pulumi.getter
     def destination(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
-
-        Allowed values:
-        * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-        * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
-        """
         return pulumi.get(self, "destination")
 
     @destination.setter
@@ -11869,9 +8641,6 @@ class RouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-        """
         return pulumi.get(self, "destination_type")
 
     @destination_type.setter
@@ -11881,9 +8650,6 @@ class RouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="routeType")
     def route_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
-        """
         return pulumi.get(self, "route_type")
 
     @route_type.setter
@@ -11902,26 +8668,6 @@ class SecurityListEgressSecurityRuleArgs:
                  stateless: Optional[pulumi.Input[bool]] = None,
                  tcp_options: Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsArgs']] = None,
                  udp_options: Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsArgs']] = None):
-        """
-        :param pulumi.Input[str] destination: (Updatable) Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
-               
-               Allowed values:
-               * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
-        :param pulumi.Input[str] protocol: (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
-        :param pulumi.Input[str] description: (Updatable) An optional description of your choice for the rule.
-        :param pulumi.Input[str] destination_type: (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
-               
-               Allowed values:
-        :param pulumi.Input['SecurityListEgressSecurityRuleIcmpOptionsArgs'] icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-               
-               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        :param pulumi.Input[bool] stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        :param pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         pulumi.set(__self__, "destination", destination)
         pulumi.set(__self__, "protocol", protocol)
         if description is not None:
@@ -11940,13 +8686,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter
     def destination(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
-
-        Allowed values:
-        * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-        * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
-        """
         return pulumi.get(self, "destination")
 
     @destination.setter
@@ -11956,9 +8695,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -11968,9 +8704,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An optional description of your choice for the rule.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -11980,11 +8713,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
-
-        Allowed values:
-        """
         return pulumi.get(self, "destination_type")
 
     @destination_type.setter
@@ -11994,13 +8722,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter(name="icmpOptions")
     def icmp_options(self) -> Optional[pulumi.Input['SecurityListEgressSecurityRuleIcmpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-
-        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        """
         return pulumi.get(self, "icmp_options")
 
     @icmp_options.setter
@@ -12010,9 +8731,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter
     def stateless(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        """
         return pulumi.get(self, "stateless")
 
     @stateless.setter
@@ -12022,9 +8740,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "tcp_options")
 
     @tcp_options.setter
@@ -12034,9 +8749,6 @@ class SecurityListEgressSecurityRuleArgs:
     @property
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "udp_options")
 
     @udp_options.setter
@@ -12049,10 +8761,6 @@ class SecurityListEgressSecurityRuleIcmpOptionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[int],
                  code: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] type: (Updatable) The ICMP type.
-        :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
-        """
         pulumi.set(__self__, "type", type)
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -12060,9 +8768,6 @@ class SecurityListEgressSecurityRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The ICMP type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -12072,9 +8777,6 @@ class SecurityListEgressSecurityRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The ICMP code (optional).
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -12088,11 +8790,6 @@ class SecurityListEgressSecurityRuleTcpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        :param pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if max is not None:
             pulumi.set(__self__, "max", max)
         if min is not None:
@@ -12103,9 +8800,6 @@ class SecurityListEgressSecurityRuleTcpOptionsArgs:
     @property
     @pulumi.getter
     def max(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12115,9 +8809,6 @@ class SecurityListEgressSecurityRuleTcpOptionsArgs:
     @property
     @pulumi.getter
     def min(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12127,9 +8818,6 @@ class SecurityListEgressSecurityRuleTcpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -12142,19 +8830,12 @@ class SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12164,9 +8845,6 @@ class SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12180,11 +8858,6 @@ class SecurityListEgressSecurityRuleUdpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        :param pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if max is not None:
             pulumi.set(__self__, "max", max)
         if min is not None:
@@ -12195,9 +8868,6 @@ class SecurityListEgressSecurityRuleUdpOptionsArgs:
     @property
     @pulumi.getter
     def max(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12207,9 +8877,6 @@ class SecurityListEgressSecurityRuleUdpOptionsArgs:
     @property
     @pulumi.getter
     def min(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12219,9 +8886,6 @@ class SecurityListEgressSecurityRuleUdpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -12234,19 +8898,12 @@ class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12256,9 +8913,6 @@ class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12277,24 +8931,6 @@ class SecurityListIngressSecurityRuleArgs:
                  stateless: Optional[pulumi.Input[bool]] = None,
                  tcp_options: Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsArgs']] = None,
                  udp_options: Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsArgs']] = None):
-        """
-        :param pulumi.Input[str] protocol: (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
-        :param pulumi.Input[str] source: (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
-               
-               Allowed values:
-               * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
-        :param pulumi.Input[str] description: (Updatable) An optional description of your choice for the rule.
-        :param pulumi.Input['SecurityListIngressSecurityRuleIcmpOptionsArgs'] icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-               
-               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        :param pulumi.Input[str] source_type: (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-        :param pulumi.Input[bool] stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        :param pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         pulumi.set(__self__, "protocol", protocol)
         pulumi.set(__self__, "source", source)
         if description is not None:
@@ -12313,9 +8949,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -12325,13 +8958,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
-
-        Allowed values:
-        * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-        * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -12341,9 +8967,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An optional description of your choice for the rule.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -12353,13 +8976,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter(name="icmpOptions")
     def icmp_options(self) -> Optional[pulumi.Input['SecurityListIngressSecurityRuleIcmpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
-        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
-        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
-
-        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        """
         return pulumi.get(self, "icmp_options")
 
     @icmp_options.setter
@@ -12369,9 +8985,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -12381,9 +8994,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter
     def stateless(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        """
         return pulumi.get(self, "stateless")
 
     @stateless.setter
@@ -12393,9 +9003,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "tcp_options")
 
     @tcp_options.setter
@@ -12405,9 +9012,6 @@ class SecurityListIngressSecurityRuleArgs:
     @property
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsArgs']]:
-        """
-        (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
-        """
         return pulumi.get(self, "udp_options")
 
     @udp_options.setter
@@ -12420,10 +9024,6 @@ class SecurityListIngressSecurityRuleIcmpOptionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[int],
                  code: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] type: (Updatable) The ICMP type.
-        :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
-        """
         pulumi.set(__self__, "type", type)
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -12431,9 +9031,6 @@ class SecurityListIngressSecurityRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The ICMP type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -12443,9 +9040,6 @@ class SecurityListIngressSecurityRuleIcmpOptionsArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The ICMP code (optional).
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -12459,11 +9053,6 @@ class SecurityListIngressSecurityRuleTcpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        :param pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if max is not None:
             pulumi.set(__self__, "max", max)
         if min is not None:
@@ -12474,9 +9063,6 @@ class SecurityListIngressSecurityRuleTcpOptionsArgs:
     @property
     @pulumi.getter
     def max(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12486,9 +9072,6 @@ class SecurityListIngressSecurityRuleTcpOptionsArgs:
     @property
     @pulumi.getter
     def min(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12498,9 +9081,6 @@ class SecurityListIngressSecurityRuleTcpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -12513,19 +9093,12 @@ class SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12535,9 +9108,6 @@ class SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12551,11 +9121,6 @@ class SecurityListIngressSecurityRuleUdpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        :param pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
-        """
         if max is not None:
             pulumi.set(__self__, "max", max)
         if min is not None:
@@ -12566,9 +9131,6 @@ class SecurityListIngressSecurityRuleUdpOptionsArgs:
     @property
     @pulumi.getter
     def max(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12578,9 +9140,6 @@ class SecurityListIngressSecurityRuleUdpOptionsArgs:
     @property
     @pulumi.getter
     def min(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12590,9 +9149,6 @@ class SecurityListIngressSecurityRuleUdpOptionsArgs:
     @property
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "source_port_range")
 
     @source_port_range.setter
@@ -12605,19 +9161,12 @@ class SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -12627,9 +9176,6 @@ class SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs:
     @property
     @pulumi.getter
     def min(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -12642,10 +9188,6 @@ class ServiceGatewayServiceArgs:
     def __init__(__self__, *,
                  service_id: pulumi.Input[str],
                  service_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] service_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/).
-        :param pulumi.Input[str] service_name: The name of the service.
-        """
         pulumi.set(__self__, "service_id", service_id)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
@@ -12653,9 +9195,6 @@ class ServiceGatewayServiceArgs:
     @property
     @pulumi.getter(name="serviceId")
     def service_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/).
-        """
         return pulumi.get(self, "service_id")
 
     @service_id.setter
@@ -12665,9 +9204,6 @@ class ServiceGatewayServiceArgs:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the service.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -12680,19 +9216,12 @@ class VcnByoipv6cidrDetailArgs:
     def __init__(__self__, *,
                  byoipv6range_id: pulumi.Input[str],
                  ipv6cidr_block: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        :param pulumi.Input[str] ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
-        """
         pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
         pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
 
     @property
     @pulumi.getter(name="byoipv6rangeId")
     def byoipv6range_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        """
         return pulumi.get(self, "byoipv6range_id")
 
     @byoipv6range_id.setter
@@ -12702,9 +9231,6 @@ class VcnByoipv6cidrDetailArgs:
     @property
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> pulumi.Input[str]:
-        """
-        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
-        """
         return pulumi.get(self, "ipv6cidr_block")
 
     @ipv6cidr_block.setter
@@ -12722,35 +9248,6 @@ class VirtualCircuitCrossConnectMappingArgs:
                  oracle_bgp_peering_ip: Optional[pulumi.Input[str]] = None,
                  oracle_bgp_peering_ipv6: Optional[pulumi.Input[str]] = None,
                  vlan: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] bgp_md5auth_key: (Updatable) The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
-        :param pulumi.Input[str] cross_connect_or_cross_connect_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
-        :param pulumi.Input[str] customer_bgp_peering_ip: (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
-               
-               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-               
-               Example: `10.0.0.18/31`
-        :param pulumi.Input[str] customer_bgp_peering_ipv6: (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
-               
-               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-               
-               IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               
-               Example: `2001:db8::1/64`
-        :param pulumi.Input[str] oracle_bgp_peering_ip: (Updatable) The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
-               
-               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-               
-               Example: `10.0.0.19/31`
-        :param pulumi.Input[str] oracle_bgp_peering_ipv6: (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
-               
-               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-               
-               Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               
-               Example: `2001:db8::2/64`
-        :param pulumi.Input[int] vlan: (Updatable) The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
-        """
         if bgp_md5auth_key is not None:
             pulumi.set(__self__, "bgp_md5auth_key", bgp_md5auth_key)
         if cross_connect_or_cross_connect_group_id is not None:
@@ -12769,9 +9266,6 @@ class VirtualCircuitCrossConnectMappingArgs:
     @property
     @pulumi.getter(name="bgpMd5authKey")
     def bgp_md5auth_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
-        """
         return pulumi.get(self, "bgp_md5auth_key")
 
     @bgp_md5auth_key.setter
@@ -12781,9 +9275,6 @@ class VirtualCircuitCrossConnectMappingArgs:
     @property
     @pulumi.getter(name="crossConnectOrCrossConnectGroupId")
     def cross_connect_or_cross_connect_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
-        """
         return pulumi.get(self, "cross_connect_or_cross_connect_group_id")
 
     @cross_connect_or_cross_connect_group_id.setter
@@ -12793,13 +9284,6 @@ class VirtualCircuitCrossConnectMappingArgs:
     @property
     @pulumi.getter(name="customerBgpPeeringIp")
     def customer_bgp_peering_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
-
-        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-
-        Example: `10.0.0.18/31`
-        """
         return pulumi.get(self, "customer_bgp_peering_ip")
 
     @customer_bgp_peering_ip.setter
@@ -12809,15 +9293,6 @@ class VirtualCircuitCrossConnectMappingArgs:
     @property
     @pulumi.getter(name="customerBgpPeeringIpv6")
     def customer_bgp_peering_ipv6(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
-
-        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-
-        IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-
-        Example: `2001:db8::1/64`
-        """
         return pulumi.get(self, "customer_bgp_peering_ipv6")
 
     @customer_bgp_peering_ipv6.setter
@@ -12827,13 +9302,6 @@ class VirtualCircuitCrossConnectMappingArgs:
     @property
     @pulumi.getter(name="oracleBgpPeeringIp")
     def oracle_bgp_peering_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
-
-        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-
-        Example: `10.0.0.19/31`
-        """
         return pulumi.get(self, "oracle_bgp_peering_ip")
 
     @oracle_bgp_peering_ip.setter
@@ -12843,15 +9311,6 @@ class VirtualCircuitCrossConnectMappingArgs:
     @property
     @pulumi.getter(name="oracleBgpPeeringIpv6")
     def oracle_bgp_peering_ipv6(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
-
-        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-
-        Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-
-        Example: `2001:db8::2/64`
-        """
         return pulumi.get(self, "oracle_bgp_peering_ipv6")
 
     @oracle_bgp_peering_ipv6.setter
@@ -12861,9 +9320,6 @@ class VirtualCircuitCrossConnectMappingArgs:
     @property
     @pulumi.getter
     def vlan(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
-        """
         return pulumi.get(self, "vlan")
 
     @vlan.setter
@@ -12875,17 +9331,11 @@ class VirtualCircuitCrossConnectMappingArgs:
 class VirtualCircuitPublicPrefixArgs:
     def __init__(__self__, *,
                  cidr_block: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] cidr_block: (Updatable) An individual public IP prefix (CIDR) to add to the public virtual circuit. All prefix sizes are allowed.
-        """
         pulumi.set(__self__, "cidr_block", cidr_block)
 
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Input[str]:
-        """
-        (Updatable) An individual public IP prefix (CIDR) to add to the public virtual circuit. All prefix sizes are allowed.
-        """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -12936,53 +9386,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
-               
-               If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
-        :param pulumi.Input[str] assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-               
-               **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-               
-               **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-               
-               Example: `false`
-               
-               If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
-               
-               Example: `bminstance1`
-               
-               If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-               
-               If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
-               
-               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Example: `10.0.3.3`
-        :param pulumi.Input[bool] skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-               
-               If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Example: `true`
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
-               
-               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        :param pulumi.Input[str] vlan_id: Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
         if assign_ipv6ip is not None:
             pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -13013,9 +9416,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @assign_ipv6ip.setter
@@ -13025,11 +9425,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
-
-        If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
-        """
         return pulumi.get(self, "assign_private_dns_record")
 
     @assign_private_dns_record.setter
@@ -13039,17 +9434,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="assignPublicIp")
     def assign_public_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-
-        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-
-        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-
-        Example: `false`
-
-        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        """
         return pulumi.get(self, "assign_public_ip")
 
     @assign_public_ip.setter
@@ -13059,9 +9443,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -13071,9 +9452,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -13083,9 +9461,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -13095,17 +9470,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
-
-        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
-
-        Example: `bminstance1`
-
-        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -13115,9 +9479,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
@@ -13127,11 +9488,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-
-        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -13141,13 +9497,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
-
-        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Example: `10.0.3.3`
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -13157,13 +9506,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-
-        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Example: `true`
-        """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
@@ -13173,11 +9515,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
-
-        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -13187,11 +9524,6 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -13234,11 +9566,6 @@ class VolumeAttachmentMultipathDeviceArgs:
                  ipv4: Optional[pulumi.Input[str]] = None,
                  iqn: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
-        :param pulumi.Input[str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-        :param pulumi.Input[int] port: The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-        """
         if ipv4 is not None:
             pulumi.set(__self__, "ipv4", ipv4)
         if iqn is not None:
@@ -13249,9 +9576,6 @@ class VolumeAttachmentMultipathDeviceArgs:
     @property
     @pulumi.getter
     def ipv4(self) -> Optional[pulumi.Input[str]]:
-        """
-        The volume's iSCSI IP address.  Example: `169.254.2.2`
-        """
         return pulumi.get(self, "ipv4")
 
     @ipv4.setter
@@ -13261,9 +9585,6 @@ class VolumeAttachmentMultipathDeviceArgs:
     @property
     @pulumi.getter
     def iqn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-        """
         return pulumi.get(self, "iqn")
 
     @iqn.setter
@@ -13273,9 +9594,6 @@ class VolumeAttachmentMultipathDeviceArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -13288,10 +9606,6 @@ class VolumeAutotunePolicyArgs:
     def __init__(__self__, *,
                  autotune_type: pulumi.Input[str],
                  max_vpus_per_gb: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] autotune_type: (Updatable) This specifies the type of autotunes supported by OCI.
-        :param pulumi.Input[str] max_vpus_per_gb: (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
@@ -13299,9 +9613,6 @@ class VolumeAutotunePolicyArgs:
     @property
     @pulumi.getter(name="autotuneType")
     def autotune_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) This specifies the type of autotunes supported by OCI.
-        """
         return pulumi.get(self, "autotune_type")
 
     @autotune_type.setter
@@ -13311,9 +9622,6 @@ class VolumeAutotunePolicyArgs:
     @property
     @pulumi.getter(name="maxVpusPerGb")
     def max_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-        """
         return pulumi.get(self, "max_vpus_per_gb")
 
     @max_vpus_per_gb.setter
@@ -13334,33 +9642,6 @@ class VolumeBackupPolicyScheduleArgs:
                  offset_seconds: Optional[pulumi.Input[int]] = None,
                  offset_type: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] backup_type: (Updatable) The type of volume backup to create.
-        :param pulumi.Input[str] period: (Updatable) The volume backup frequency.
-        :param pulumi.Input[int] retention_seconds: (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
-        :param pulumi.Input[int] day_of_month: (Updatable) The day of the month to schedule the volume backup.
-        :param pulumi.Input[str] day_of_week: (Updatable) The day of the week to schedule the volume backup.
-        :param pulumi.Input[int] hour_of_day: (Updatable) The hour of the day to schedule the volume backup.
-        :param pulumi.Input[str] month: (Updatable) The month of the year to schedule the volume backup.
-        :param pulumi.Input[int] offset_seconds: (Updatable) The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
-        :param pulumi.Input[str] offset_type: (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
-               
-               `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
-               
-               `dayOfWeek` is applicable for period `ONE_WEEK`.
-               
-               `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
-               
-               'month' is applicable for period 'ONE_YEAR'.
-               
-               They will be ignored in the requests for inapplicable periods.
-               
-               If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
-               
-               For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
-        :param pulumi.Input[str] time_zone: (Updatable) Specifies what time zone is the schedule in
-               enum:
-        """
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "period", period)
         pulumi.set(__self__, "retention_seconds", retention_seconds)
@@ -13382,9 +9663,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="backupType")
     def backup_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of volume backup to create.
-        """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
@@ -13394,9 +9672,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter
     def period(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The volume backup frequency.
-        """
         return pulumi.get(self, "period")
 
     @period.setter
@@ -13406,9 +9681,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="retentionSeconds")
     def retention_seconds(self) -> pulumi.Input[int]:
-        """
-        (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
-        """
         return pulumi.get(self, "retention_seconds")
 
     @retention_seconds.setter
@@ -13418,9 +9690,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="dayOfMonth")
     def day_of_month(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The day of the month to schedule the volume backup.
-        """
         return pulumi.get(self, "day_of_month")
 
     @day_of_month.setter
@@ -13430,9 +9699,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The day of the week to schedule the volume backup.
-        """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
@@ -13442,9 +9708,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="hourOfDay")
     def hour_of_day(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The hour of the day to schedule the volume backup.
-        """
         return pulumi.get(self, "hour_of_day")
 
     @hour_of_day.setter
@@ -13454,9 +9717,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter
     def month(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The month of the year to schedule the volume backup.
-        """
         return pulumi.get(self, "month")
 
     @month.setter
@@ -13466,9 +9726,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="offsetSeconds")
     def offset_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
-        """
         return pulumi.get(self, "offset_seconds")
 
     @offset_seconds.setter
@@ -13478,23 +9735,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="offsetType")
     def offset_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
-
-        `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
-
-        `dayOfWeek` is applicable for period `ONE_WEEK`.
-
-        `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
-
-        'month' is applicable for period 'ONE_YEAR'.
-
-        They will be ignored in the requests for inapplicable periods.
-
-        If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
-
-        For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
-        """
         return pulumi.get(self, "offset_type")
 
     @offset_type.setter
@@ -13504,10 +9744,6 @@ class VolumeBackupPolicyScheduleArgs:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies what time zone is the schedule in
-        enum:
-        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -13521,15 +9757,6 @@ class VolumeBackupSourceDetailsArgs:
                  region: pulumi.Input[str],
                  volume_backup_id: pulumi.Input[str],
                  kms_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] region: The region of the volume backup source.
-        :param pulumi.Input[str] volume_backup_id: The OCID of the source volume backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "volume_backup_id", volume_backup_id)
         if kms_key_id is not None:
@@ -13538,9 +9765,6 @@ class VolumeBackupSourceDetailsArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
-        """
-        The region of the volume backup source.
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -13550,13 +9774,6 @@ class VolumeBackupSourceDetailsArgs:
     @property
     @pulumi.getter(name="volumeBackupId")
     def volume_backup_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the source volume backup.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "volume_backup_id")
 
     @volume_backup_id.setter
@@ -13566,9 +9783,6 @@ class VolumeBackupSourceDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -13582,11 +9796,6 @@ class VolumeBlockVolumeReplicaArgs:
                  availability_domain: pulumi.Input[str],
                  block_volume_replica_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] block_volume_replica_id: The block volume replica's Oracle ID (OCID).
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if block_volume_replica_id is not None:
             pulumi.set(__self__, "block_volume_replica_id", block_volume_replica_id)
@@ -13596,9 +9805,6 @@ class VolumeBlockVolumeReplicaArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -13608,9 +9814,6 @@ class VolumeBlockVolumeReplicaArgs:
     @property
     @pulumi.getter(name="blockVolumeReplicaId")
     def block_volume_replica_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The block volume replica's Oracle ID (OCID).
-        """
         return pulumi.get(self, "block_volume_replica_id")
 
     @block_volume_replica_id.setter
@@ -13620,9 +9823,6 @@ class VolumeBlockVolumeReplicaArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -13636,16 +9836,6 @@ class VolumeGroupBackupSourceDetailsArgs:
                  region: pulumi.Input[str],
                  volume_group_backup_id: pulumi.Input[str],
                  kms_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] region: The region of the volume backup source.
-        :param pulumi.Input[str] volume_group_backup_id: The OCID of the source volume group backup.
-               
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
         if kms_key_id is not None:
@@ -13654,9 +9844,6 @@ class VolumeGroupBackupSourceDetailsArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
-        """
-        The region of the volume backup source.
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -13666,14 +9853,6 @@ class VolumeGroupBackupSourceDetailsArgs:
     @property
     @pulumi.getter(name="volumeGroupBackupId")
     def volume_group_backup_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the source volume group backup.
-
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "volume_group_backup_id")
 
     @volume_group_backup_id.setter
@@ -13683,9 +9862,6 @@ class VolumeGroupBackupSourceDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -13701,13 +9877,6 @@ class VolumeGroupSourceDetailsArgs:
                  volume_group_id: Optional[pulumi.Input[str]] = None,
                  volume_group_replica_id: Optional[pulumi.Input[str]] = None,
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] type: The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeGroupReplicaId`, `volumeIds`
-        :param pulumi.Input[str] volume_group_backup_id: The OCID of the volume group backup to restore from.
-        :param pulumi.Input[str] volume_group_id: The OCID of the volume group to clone from.
-        :param pulumi.Input[str] volume_group_replica_id: The OCID of the volume group replica.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
-        """
         pulumi.set(__self__, "type", type)
         if volume_group_backup_id is not None:
             pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
@@ -13721,9 +9890,6 @@ class VolumeGroupSourceDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeGroupReplicaId`, `volumeIds`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -13733,9 +9899,6 @@ class VolumeGroupSourceDetailsArgs:
     @property
     @pulumi.getter(name="volumeGroupBackupId")
     def volume_group_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume group backup to restore from.
-        """
         return pulumi.get(self, "volume_group_backup_id")
 
     @volume_group_backup_id.setter
@@ -13745,9 +9908,6 @@ class VolumeGroupSourceDetailsArgs:
     @property
     @pulumi.getter(name="volumeGroupId")
     def volume_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume group to clone from.
-        """
         return pulumi.get(self, "volume_group_id")
 
     @volume_group_id.setter
@@ -13757,9 +9917,6 @@ class VolumeGroupSourceDetailsArgs:
     @property
     @pulumi.getter(name="volumeGroupReplicaId")
     def volume_group_replica_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume group replica.
-        """
         return pulumi.get(self, "volume_group_replica_id")
 
     @volume_group_replica_id.setter
@@ -13769,9 +9926,6 @@ class VolumeGroupSourceDetailsArgs:
     @property
     @pulumi.getter(name="volumeIds")
     def volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        OCIDs for the volumes in this volume group.
-        """
         return pulumi.get(self, "volume_ids")
 
     @volume_ids.setter
@@ -13785,15 +9939,6 @@ class VolumeGroupVolumeGroupReplicaArgs:
                  availability_domain: pulumi.Input[str],
                  display_name: Optional[pulumi.Input[str]] = None,
                  volume_group_replica_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] volume_group_replica_id: The OCID of the volume group replica.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -13803,9 +9948,6 @@ class VolumeGroupVolumeGroupReplicaArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -13815,13 +9957,6 @@ class VolumeGroupVolumeGroupReplicaArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -13831,9 +9966,6 @@ class VolumeGroupVolumeGroupReplicaArgs:
     @property
     @pulumi.getter(name="volumeGroupReplicaId")
     def volume_group_replica_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume group replica.
-        """
         return pulumi.get(self, "volume_group_replica_id")
 
     @volume_group_replica_id.setter
@@ -13846,19 +9978,12 @@ class VolumeSourceDetailsArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] id: The OCID of the block volume replica.
-        :param pulumi.Input[str] type: The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
-        """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the block volume replica.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -13868,9 +9993,6 @@ class VolumeSourceDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -14586,10 +10708,6 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the compute global image capability schema version
-        :param Sequence[str] values: the list of values for the enum
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -14598,9 +10716,6 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the compute global image capability schema version
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -14610,9 +10725,6 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs:
     @property
     @pulumi.getter
     def values(self) -> Sequence[str]:
-        """
-        the list of values for the enum
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -14635,9 +10747,6 @@ class GetComputeImageCapabilitySchemasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param Sequence[str] values: the list of values for the enum
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -14655,9 +10764,6 @@ class GetComputeImageCapabilitySchemasFilterArgs:
     @property
     @pulumi.getter
     def values(self) -> Sequence[str]:
-        """
-        the list of values for the enum
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -14836,9 +10942,6 @@ class GetCrossConnectLocationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the location.  Example: `CyrusOne, Chandler, AZ`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -14847,9 +10950,6 @@ class GetCrossConnectLocationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the location.  Example: `CyrusOne, Chandler, AZ`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -14881,9 +10981,6 @@ class GetCrossConnectPortSpeedShapeFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the port speed shape.  Example: `10 Gbps`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -14892,9 +10989,6 @@ class GetCrossConnectPortSpeedShapeFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the port speed shape.  Example: `10 Gbps`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -15511,9 +11605,6 @@ class GetInstanceConfigurationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -15522,9 +11613,6 @@ class GetInstanceConfigurationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -15595,9 +11683,6 @@ class GetInstanceDevicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only devices that match the given name exactly.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -15606,9 +11691,6 @@ class GetInstanceDevicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only devices that match the given name exactly.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -15718,9 +11800,6 @@ class GetInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -15729,9 +11808,6 @@ class GetInstancesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -16270,9 +12346,6 @@ class GetPeerRegionForRemotePeeringsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The region's name.  Example: `us-phoenix-1`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -16281,9 +12354,6 @@ class GetPeerRegionForRemotePeeringsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The region's name.  Example: `us-phoenix-1`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -16588,9 +12658,6 @@ class GetServicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -16599,9 +12666,6 @@ class GetServicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -16672,9 +12736,6 @@ class GetShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -16683,9 +12744,6 @@ class GetShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -16873,9 +12931,6 @@ class GetVirtualCircuitBandwidthShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the bandwidth shape.  Example: `10 Gbps`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -16884,9 +12939,6 @@ class GetVirtualCircuitBandwidthShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the bandwidth shape.  Example: `10 Gbps`
-        """
         return pulumi.get(self, "name")
 
     @name.setter

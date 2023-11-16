@@ -108,27 +108,27 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// ResponderRule description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// ResponderRule display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of inherited compartments
         /// </summary>
@@ -136,19 +136,19 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecyleDetails;
+        public readonly string? LifecyleDetails;
         /// <summary>
         /// Total number of recipes attached to target
         /// </summary>
-        public readonly int RecipeCount;
+        public readonly int? RecipeCount;
         /// <summary>
         /// The current state of the ResponderRule.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Details specific to the target type.
         /// </summary>
@@ -161,11 +161,11 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// Resource ID which the target uses to monitor
         /// </summary>
-        public readonly string TargetResourceId;
+        public readonly string? TargetResourceId;
         /// <summary>
         /// possible type of targets
         /// </summary>
-        public readonly string TargetResourceType;
+        public readonly string? TargetResourceType;
         /// <summary>
         /// List of responder recipes associated with target
         /// </summary>
@@ -173,35 +173,35 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The date and time the target was created. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the target was updated. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetGuardTargetResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> inheritedByCompartments,
 
-            string lifecyleDetails,
+            string? lifecyleDetails,
 
-            int recipeCount,
+            int? recipeCount,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetailResult> targetDetails,
 
@@ -209,15 +209,15 @@ namespace Pulumi.Oci.CloudGuard
 
             string targetId,
 
-            string targetResourceId,
+            string? targetResourceId,
 
-            string targetResourceType,
+            string? targetResourceType,
 
             ImmutableArray<Outputs.GetGuardTargetTargetResponderRecipeResult> targetResponderRecipes,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

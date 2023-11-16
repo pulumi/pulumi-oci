@@ -52,17 +52,11 @@ class GetNetworkSecurityGroupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the network security group is in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -72,7 +66,7 @@ class GetNetworkSecurityGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,26 +74,17 @@ class GetNetworkSecurityGroupsResult:
 
     @property
     @pulumi.getter(name="networkSecurityGroups")
-    def network_security_groups(self) -> Sequence['outputs.GetNetworkSecurityGroupsNetworkSecurityGroupResult']:
-        """
-        The list of network_security_groups.
-        """
+    def network_security_groups(self) -> Optional[Sequence['outputs.GetNetworkSecurityGroupsNetworkSecurityGroupResult']]:
         return pulumi.get(self, "network_security_groups")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The network security group's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group's VCN.
-        """
         return pulumi.get(self, "vcn_id")
 
     @property
@@ -132,30 +117,7 @@ def get_network_security_groups(compartment_id: Optional[str] = None,
                                 vlan_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityGroupsResult:
     """
-    This data source provides the list of Network Security Groups in Oracle Cloud Infrastructure Core service.
-
-    Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
-    You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=var["compartment_id"],
-        display_name=var["network_security_group_display_name"],
-        state=var["network_security_group_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-    :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -187,29 +149,6 @@ def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Opt
                                        vlan_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupsResult]:
     """
-    This data source provides the list of Network Security Groups in Oracle Cloud Infrastructure Core service.
-
-    Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
-    You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=var["compartment_id"],
-        display_name=var["network_security_group_display_name"],
-        state=var["network_security_group_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-    :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+    Use this data source to access information about an existing resource.
     """
     ...

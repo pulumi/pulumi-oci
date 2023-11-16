@@ -75,13 +75,13 @@ namespace Pulumi.Oci.RecoveryMod
         /// The OCID of the protected database.
         /// </summary>
         [Output("databaseId")]
-        public Output<string> DatabaseId { get; private set; } = null!;
+        public Output<string?> DatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         /// </summary>
         [Output("databaseSize")]
-        public Output<string> DatabaseSize { get; private set; } = null!;
+        public Output<string?> DatabaseSize { get; private set; } = null!;
 
         /// <summary>
         /// The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Indicates the protection status of the database. Allowed values are:
@@ -114,31 +114,31 @@ namespace Pulumi.Oci.RecoveryMod
         /// * ALERT
         /// </summary>
         [Output("health")]
-        public Output<string> Health { get; private set; } = null!;
+        public Output<string?> Health { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current health of the protected database.
         /// </summary>
         [Output("healthDetails")]
-        public Output<string> HealthDetails { get; private set; } = null!;
+        public Output<string?> HealthDetails { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the protected database is created by Recovery Service or created manually. Set to &lt;b&gt;TRUE&lt;/b&gt; for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to &lt;b&gt;FALSE&lt;/b&gt; for a user-defined protected database.
         /// </summary>
         [Output("isReadOnlyResource")]
-        public Output<bool> IsReadOnlyResource { get; private set; } = null!;
+        public Output<bool?> IsReadOnlyResource { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         /// </summary>
         [Output("isRedoLogsShipped")]
-        public Output<bool> IsRedoLogsShipped { get; private set; } = null!;
+        public Output<bool?> IsRedoLogsShipped { get; private set; } = null!;
 
         /// <summary>
         /// Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Backup performance and storage utilization metrics for the protected database.
@@ -168,31 +168,31 @@ namespace Pulumi.Oci.RecoveryMod
         /// The current state of the Protected Database.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
         /// </summary>
         [Output("vpcUserName")]
-        public Output<string> VpcUserName { get; private set; } = null!;
+        public Output<string?> VpcUserName { get; private set; } = null!;
 
 
         /// <summary>

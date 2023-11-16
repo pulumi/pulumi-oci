@@ -71,7 +71,7 @@ export interface GetEmailDomainsResult {
     /**
      * The list of email_domain_collection.
      */
-    readonly emailDomainCollections: outputs.Email.GetEmailDomainsEmailDomainCollection[];
+    readonly emailDomainCollections?: outputs.Email.GetEmailDomainsEmailDomainCollection[];
     readonly filters?: outputs.Email.GetEmailDomainsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.

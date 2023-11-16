@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
         /// </summary>
-        public readonly string AllowedChars;
+        public readonly string? AllowedChars;
         /// <summary>
         /// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         /// </summary>
-        public readonly string Attributes;
+        public readonly string? Attributes;
         /// <summary>
         /// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         /// </summary>
-        public readonly string Authorization;
+        public readonly string? Authorization;
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
         /// </summary>
@@ -40,27 +40,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// A String that describes the password policy
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A delimiter used to separate characters in the dictionary file
         /// </summary>
-        public readonly string DictionaryDelimiter;
+        public readonly string? DictionaryDelimiter;
         /// <summary>
         /// A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
         /// </summary>
-        public readonly string DictionaryLocation;
+        public readonly string? DictionaryLocation;
         /// <summary>
         /// Indicates whether the password can match a dictionary word
         /// </summary>
-        public readonly bool DictionaryWordDisallowed;
+        public readonly bool? DictionaryWordDisallowed;
         /// <summary>
         /// A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
         /// </summary>
-        public readonly string DisallowedChars;
+        public readonly string? DisallowedChars;
         /// <summary>
         /// A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
         /// </summary>
@@ -72,23 +72,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The number of distinct characters between old password and new password
         /// </summary>
-        public readonly int DistinctCharacters;
+        public readonly int? DistinctCharacters;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// </summary>
-        public readonly string ExternalId;
+        public readonly string? ExternalId;
         /// <summary>
         /// Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
         /// </summary>
-        public readonly bool FirstNameDisallowed;
+        public readonly bool? FirstNameDisallowed;
         /// <summary>
         /// Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
         /// </summary>
-        public readonly bool ForcePasswordReset;
+        public readonly bool? ForcePasswordReset;
         /// <summary>
         /// A list of groups that the password policy belongs to.
         /// </summary>
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -104,7 +104,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The basic endpoint for the identity domain
         /// </summary>
-        public readonly string IdcsEndpoint;
+        public readonly string? IdcsEndpoint;
         /// <summary>
         /// The User or App who modified the Resource
         /// </summary>
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -120,27 +120,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
         /// </summary>
-        public readonly bool LastNameDisallowed;
+        public readonly bool? LastNameDisallowed;
         /// <summary>
         /// The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
         /// </summary>
-        public readonly int LockoutDuration;
+        public readonly int? LockoutDuration;
         /// <summary>
         /// An integer that represents the maximum number of failed logins before an account is locked
         /// </summary>
-        public readonly int MaxIncorrectAttempts;
+        public readonly int? MaxIncorrectAttempts;
         /// <summary>
         /// The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
         /// </summary>
-        public readonly int MaxLength;
+        public readonly int? MaxLength;
         /// <summary>
         /// The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
         /// </summary>
-        public readonly int MaxRepeatedChars;
+        public readonly int? MaxRepeatedChars;
         /// <summary>
         /// The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
         /// </summary>
-        public readonly int MaxSpecialChars;
+        public readonly int? MaxSpecialChars;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -148,75 +148,75 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
         /// </summary>
-        public readonly int MinAlphaNumerals;
+        public readonly int? MinAlphaNumerals;
         /// <summary>
         /// The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
         /// </summary>
-        public readonly int MinAlphas;
+        public readonly int? MinAlphas;
         /// <summary>
         /// The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
         /// </summary>
-        public readonly int MinLength;
+        public readonly int? MinLength;
         /// <summary>
         /// The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
         /// </summary>
-        public readonly int MinLowerCase;
+        public readonly int? MinLowerCase;
         /// <summary>
         /// The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
         /// </summary>
-        public readonly int MinNumerals;
+        public readonly int? MinNumerals;
         /// <summary>
         /// Minimum time after which the user can resubmit the reset password request
         /// </summary>
-        public readonly int MinPasswordAge;
+        public readonly int? MinPasswordAge;
         /// <summary>
         /// The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
         /// </summary>
-        public readonly int MinSpecialChars;
+        public readonly int? MinSpecialChars;
         /// <summary>
         /// The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
         /// </summary>
-        public readonly int MinUniqueChars;
+        public readonly int? MinUniqueChars;
         /// <summary>
         /// The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
         /// </summary>
-        public readonly int MinUpperCase;
+        public readonly int? MinUpperCase;
         /// <summary>
         /// A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The number of passwords that will be kept in history that may not be used as a password
         /// </summary>
-        public readonly int NumPasswordsInHistory;
+        public readonly int? NumPasswordsInHistory;
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// An integer indicating the number of days before which the user should be warned about password expiry.
         /// </summary>
-        public readonly int PasswordExpireWarning;
+        public readonly int? PasswordExpireWarning;
         /// <summary>
         /// The number of days after which the password expires automatically
         /// </summary>
-        public readonly int PasswordExpiresAfter;
+        public readonly int? PasswordExpiresAfter;
         /// <summary>
         /// Indicates whether the password policy is configured as Simple, Standard, or Custom.
         /// </summary>
-        public readonly string PasswordStrength;
+        public readonly string? PasswordStrength;
         /// <summary>
         /// Password policy priority
         /// </summary>
-        public readonly int Priority;
+        public readonly int? Priority;
         /// <summary>
         /// A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
         /// </summary>
-        public readonly string RequiredChars;
+        public readonly string? RequiredChars;
         /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         /// </summary>
-        public readonly string ResourceTypeSchemaVersion;
+        public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
         /// </summary>
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates that the password must begin with an alphabetic character
         /// </summary>
-        public readonly bool StartsWithAlphabet;
+        public readonly bool? StartsWithAlphabet;
         /// <summary>
         /// A list of tags on this resource.
         /// </summary>
@@ -232,125 +232,125 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
         /// </summary>
-        public readonly bool UserNameDisallowed;
+        public readonly bool? UserNameDisallowed;
 
         [OutputConstructor]
         private GetDomainsPasswordPoliciesPasswordPolicyResult(
-            string allowedChars,
+            string? allowedChars,
 
             ImmutableArray<string> attributeSets,
 
-            string attributes,
+            string? attributes,
 
-            string authorization,
+            string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
             ImmutableArray<Outputs.GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRuleResult> configuredPasswordPolicyRules,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string description,
+            string? description,
 
-            string dictionaryDelimiter,
+            string? dictionaryDelimiter,
 
-            string dictionaryLocation,
+            string? dictionaryLocation,
 
-            bool dictionaryWordDisallowed,
+            bool? dictionaryWordDisallowed,
 
-            string disallowedChars,
+            string? disallowedChars,
 
             ImmutableArray<string> disallowedSubstrings,
 
             ImmutableArray<string> disallowedUserAttributeValues,
 
-            int distinctCharacters,
+            int? distinctCharacters,
 
-            string domainOcid,
+            string? domainOcid,
 
-            string externalId,
+            string? externalId,
 
-            bool firstNameDisallowed,
+            bool? firstNameDisallowed,
 
-            bool forcePasswordReset,
+            bool? forcePasswordReset,
 
             ImmutableArray<Outputs.GetDomainsPasswordPoliciesPasswordPolicyGroupResult> groups,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedByResult> idcsCreatedBies,
 
-            string idcsEndpoint,
+            string? idcsEndpoint,
 
             ImmutableArray<Outputs.GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            bool lastNameDisallowed,
+            bool? lastNameDisallowed,
 
-            int lockoutDuration,
+            int? lockoutDuration,
 
-            int maxIncorrectAttempts,
+            int? maxIncorrectAttempts,
 
-            int maxLength,
+            int? maxLength,
 
-            int maxRepeatedChars,
+            int? maxRepeatedChars,
 
-            int maxSpecialChars,
+            int? maxSpecialChars,
 
             ImmutableArray<Outputs.GetDomainsPasswordPoliciesPasswordPolicyMetaResult> metas,
 
-            int minAlphaNumerals,
+            int? minAlphaNumerals,
 
-            int minAlphas,
+            int? minAlphas,
 
-            int minLength,
+            int? minLength,
 
-            int minLowerCase,
+            int? minLowerCase,
 
-            int minNumerals,
+            int? minNumerals,
 
-            int minPasswordAge,
+            int? minPasswordAge,
 
-            int minSpecialChars,
+            int? minSpecialChars,
 
-            int minUniqueChars,
+            int? minUniqueChars,
 
-            int minUpperCase,
+            int? minUpperCase,
 
-            string name,
+            string? name,
 
-            int numPasswordsInHistory,
+            int? numPasswordsInHistory,
 
-            string ocid,
+            string? ocid,
 
-            int passwordExpireWarning,
+            int? passwordExpireWarning,
 
-            int passwordExpiresAfter,
+            int? passwordExpiresAfter,
 
-            string passwordStrength,
+            string? passwordStrength,
 
-            int priority,
+            int? priority,
 
-            string requiredChars,
+            string? requiredChars,
 
-            string resourceTypeSchemaVersion,
+            string? resourceTypeSchemaVersion,
 
             ImmutableArray<string> schemas,
 
-            bool startsWithAlphabet,
+            bool? startsWithAlphabet,
 
             ImmutableArray<Outputs.GetDomainsPasswordPoliciesPasswordPolicyTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
-            bool userNameDisallowed)
+            bool? userNameDisallowed)
         {
             AllowedChars = allowedChars;
             AttributeSets = attributeSets;

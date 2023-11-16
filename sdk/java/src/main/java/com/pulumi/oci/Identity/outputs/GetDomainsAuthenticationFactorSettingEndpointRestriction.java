@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingEndpointRestriction {
@@ -14,63 +16,63 @@ public final class GetDomainsAuthenticationFactorSettingEndpointRestriction {
      * @return Maximum number of days until an endpoint can be trusted
      * 
      */
-    private Integer maxEndpointTrustDurationInDays;
+    private @Nullable Integer maxEndpointTrustDurationInDays;
     /**
      * @return Maximum number of enrolled devices per user
      * 
      */
-    private Integer maxEnrolledDevices;
+    private @Nullable Integer maxEnrolledDevices;
     /**
      * @return An integer that represents the maximum number of failed MFA logins before an account is locked
      * 
      */
-    private Integer maxIncorrectAttempts;
+    private @Nullable Integer maxIncorrectAttempts;
     /**
      * @return Max number of trusted endpoints per user
      * 
      */
-    private Integer maxTrustedEndpoints;
+    private @Nullable Integer maxTrustedEndpoints;
     /**
      * @return Specify if trusted endpoints are enabled
      * 
      */
-    private Boolean trustedEndpointsEnabled;
+    private @Nullable Boolean trustedEndpointsEnabled;
 
     private GetDomainsAuthenticationFactorSettingEndpointRestriction() {}
     /**
      * @return Maximum number of days until an endpoint can be trusted
      * 
      */
-    public Integer maxEndpointTrustDurationInDays() {
-        return this.maxEndpointTrustDurationInDays;
+    public Optional<Integer> maxEndpointTrustDurationInDays() {
+        return Optional.ofNullable(this.maxEndpointTrustDurationInDays);
     }
     /**
      * @return Maximum number of enrolled devices per user
      * 
      */
-    public Integer maxEnrolledDevices() {
-        return this.maxEnrolledDevices;
+    public Optional<Integer> maxEnrolledDevices() {
+        return Optional.ofNullable(this.maxEnrolledDevices);
     }
     /**
      * @return An integer that represents the maximum number of failed MFA logins before an account is locked
      * 
      */
-    public Integer maxIncorrectAttempts() {
-        return this.maxIncorrectAttempts;
+    public Optional<Integer> maxIncorrectAttempts() {
+        return Optional.ofNullable(this.maxIncorrectAttempts);
     }
     /**
      * @return Max number of trusted endpoints per user
      * 
      */
-    public Integer maxTrustedEndpoints() {
-        return this.maxTrustedEndpoints;
+    public Optional<Integer> maxTrustedEndpoints() {
+        return Optional.ofNullable(this.maxTrustedEndpoints);
     }
     /**
      * @return Specify if trusted endpoints are enabled
      * 
      */
-    public Boolean trustedEndpointsEnabled() {
-        return this.trustedEndpointsEnabled;
+    public Optional<Boolean> trustedEndpointsEnabled() {
+        return Optional.ofNullable(this.trustedEndpointsEnabled);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetDomainsAuthenticationFactorSettingEndpointRestriction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maxEndpointTrustDurationInDays;
-        private Integer maxEnrolledDevices;
-        private Integer maxIncorrectAttempts;
-        private Integer maxTrustedEndpoints;
-        private Boolean trustedEndpointsEnabled;
+        private @Nullable Integer maxEndpointTrustDurationInDays;
+        private @Nullable Integer maxEnrolledDevices;
+        private @Nullable Integer maxIncorrectAttempts;
+        private @Nullable Integer maxTrustedEndpoints;
+        private @Nullable Boolean trustedEndpointsEnabled;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingEndpointRestriction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetDomainsAuthenticationFactorSettingEndpointRestriction {
         }
 
         @CustomType.Setter
-        public Builder maxEndpointTrustDurationInDays(Integer maxEndpointTrustDurationInDays) {
-            this.maxEndpointTrustDurationInDays = Objects.requireNonNull(maxEndpointTrustDurationInDays);
+        public Builder maxEndpointTrustDurationInDays(@Nullable Integer maxEndpointTrustDurationInDays) {
+            this.maxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder maxEnrolledDevices(Integer maxEnrolledDevices) {
-            this.maxEnrolledDevices = Objects.requireNonNull(maxEnrolledDevices);
+        public Builder maxEnrolledDevices(@Nullable Integer maxEnrolledDevices) {
+            this.maxEnrolledDevices = maxEnrolledDevices;
             return this;
         }
         @CustomType.Setter
-        public Builder maxIncorrectAttempts(Integer maxIncorrectAttempts) {
-            this.maxIncorrectAttempts = Objects.requireNonNull(maxIncorrectAttempts);
+        public Builder maxIncorrectAttempts(@Nullable Integer maxIncorrectAttempts) {
+            this.maxIncorrectAttempts = maxIncorrectAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder maxTrustedEndpoints(Integer maxTrustedEndpoints) {
-            this.maxTrustedEndpoints = Objects.requireNonNull(maxTrustedEndpoints);
+        public Builder maxTrustedEndpoints(@Nullable Integer maxTrustedEndpoints) {
+            this.maxTrustedEndpoints = maxTrustedEndpoints;
             return this;
         }
         @CustomType.Setter
-        public Builder trustedEndpointsEnabled(Boolean trustedEndpointsEnabled) {
-            this.trustedEndpointsEnabled = Objects.requireNonNull(trustedEndpointsEnabled);
+        public Builder trustedEndpointsEnabled(@Nullable Boolean trustedEndpointsEnabled) {
+            this.trustedEndpointsEnabled = trustedEndpointsEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingEndpointRestriction build() {

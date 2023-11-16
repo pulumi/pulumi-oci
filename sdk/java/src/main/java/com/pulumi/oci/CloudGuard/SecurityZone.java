@@ -14,6 +14,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -86,28 +87,28 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The security zone&#39;s description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The security zone&#39;s description
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The security zone&#39;s name
@@ -130,7 +131,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -138,36 +139,36 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * List of inherited compartments
      * 
      */
     @Export(name="inheritedByCompartments", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> inheritedByCompartments;
+    private Output</* @Nullable */ List<String>> inheritedByCompartments;
 
     /**
      * @return List of inherited compartments
      * 
      */
-    public Output<List<String>> inheritedByCompartments() {
-        return this.inheritedByCompartments;
+    public Output<Optional<List<String>>> inheritedByCompartments() {
+        return Codegen.optional(this.inheritedByCompartments);
     }
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
@@ -194,56 +195,56 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="securityZoneTargetId", refs={String.class}, tree="[0]")
-    private Output<String> securityZoneTargetId;
+    private Output</* @Nullable */ String> securityZoneTargetId;
 
     /**
      * @return The OCID of the target associated with the security zone
      * 
      */
-    public Output<String> securityZoneTargetId() {
-        return this.securityZoneTargetId;
+    public Output<Optional<String>> securityZoneTargetId() {
+        return Codegen.optional(this.securityZoneTargetId);
     }
     /**
      * The current state of the security zone
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the security zone
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the security zone was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the security zone was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the security zone was last updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the security zone was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelProvenanceResult {
@@ -13,52 +15,52 @@ public final class GetModelProvenanceResult {
      * @return For model reproducibility purposes. Branch of the git repository associated with model training.
      * 
      */
-    private String gitBranch;
+    private @Nullable String gitBranch;
     /**
      * @return For model reproducibility purposes. Commit ID of the git repository associated with model training.
      * 
      */
-    private String gitCommit;
-    private String id;
+    private @Nullable String gitCommit;
+    private @Nullable String id;
     private String modelId;
     /**
      * @return For model reproducibility purposes. URL of the git repository associated with model training.
      * 
      */
-    private String repositoryUrl;
+    private @Nullable String repositoryUrl;
     /**
      * @return For model reproducibility purposes. Path to model artifacts.
      * 
      */
-    private String scriptDir;
+    private @Nullable String scriptDir;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      * 
      */
-    private String trainingId;
+    private @Nullable String trainingId;
     /**
      * @return For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
      * 
      */
-    private String trainingScript;
+    private @Nullable String trainingScript;
 
     private GetModelProvenanceResult() {}
     /**
      * @return For model reproducibility purposes. Branch of the git repository associated with model training.
      * 
      */
-    public String gitBranch() {
-        return this.gitBranch;
+    public Optional<String> gitBranch() {
+        return Optional.ofNullable(this.gitBranch);
     }
     /**
      * @return For model reproducibility purposes. Commit ID of the git repository associated with model training.
      * 
      */
-    public String gitCommit() {
-        return this.gitCommit;
+    public Optional<String> gitCommit() {
+        return Optional.ofNullable(this.gitCommit);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String modelId() {
         return this.modelId;
@@ -67,29 +69,29 @@ public final class GetModelProvenanceResult {
      * @return For model reproducibility purposes. URL of the git repository associated with model training.
      * 
      */
-    public String repositoryUrl() {
-        return this.repositoryUrl;
+    public Optional<String> repositoryUrl() {
+        return Optional.ofNullable(this.repositoryUrl);
     }
     /**
      * @return For model reproducibility purposes. Path to model artifacts.
      * 
      */
-    public String scriptDir() {
-        return this.scriptDir;
+    public Optional<String> scriptDir() {
+        return Optional.ofNullable(this.scriptDir);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      * 
      */
-    public String trainingId() {
-        return this.trainingId;
+    public Optional<String> trainingId() {
+        return Optional.ofNullable(this.trainingId);
     }
     /**
      * @return For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
      * 
      */
-    public String trainingScript() {
-        return this.trainingScript;
+    public Optional<String> trainingScript() {
+        return Optional.ofNullable(this.trainingScript);
     }
 
     public static Builder builder() {
@@ -101,14 +103,14 @@ public final class GetModelProvenanceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String gitBranch;
-        private String gitCommit;
-        private String id;
+        private @Nullable String gitBranch;
+        private @Nullable String gitCommit;
+        private @Nullable String id;
         private String modelId;
-        private String repositoryUrl;
-        private String scriptDir;
-        private String trainingId;
-        private String trainingScript;
+        private @Nullable String repositoryUrl;
+        private @Nullable String scriptDir;
+        private @Nullable String trainingId;
+        private @Nullable String trainingScript;
         public Builder() {}
         public Builder(GetModelProvenanceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,18 +125,18 @@ public final class GetModelProvenanceResult {
         }
 
         @CustomType.Setter
-        public Builder gitBranch(String gitBranch) {
-            this.gitBranch = Objects.requireNonNull(gitBranch);
+        public Builder gitBranch(@Nullable String gitBranch) {
+            this.gitBranch = gitBranch;
             return this;
         }
         @CustomType.Setter
-        public Builder gitCommit(String gitCommit) {
-            this.gitCommit = Objects.requireNonNull(gitCommit);
+        public Builder gitCommit(@Nullable String gitCommit) {
+            this.gitCommit = gitCommit;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -143,23 +145,23 @@ public final class GetModelProvenanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+        public Builder repositoryUrl(@Nullable String repositoryUrl) {
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder scriptDir(String scriptDir) {
-            this.scriptDir = Objects.requireNonNull(scriptDir);
+        public Builder scriptDir(@Nullable String scriptDir) {
+            this.scriptDir = scriptDir;
             return this;
         }
         @CustomType.Setter
-        public Builder trainingId(String trainingId) {
-            this.trainingId = Objects.requireNonNull(trainingId);
+        public Builder trainingId(@Nullable String trainingId) {
+            this.trainingId = trainingId;
             return this;
         }
         @CustomType.Setter
-        public Builder trainingScript(String trainingScript) {
-            this.trainingScript = Objects.requireNonNull(trainingScript);
+        public Builder trainingScript(@Nullable String trainingScript) {
+            this.trainingScript = trainingScript;
             return this;
         }
         public GetModelProvenanceResult build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
@@ -89,7 +88,7 @@ type BootVolume struct {
 	pulumi.CustomResourceState
 
 	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
-	AutoTunedVpusPerGb pulumi.StringOutput `pulumi:"autoTunedVpusPerGb"`
+	AutoTunedVpusPerGb pulumi.StringPtrOutput `pulumi:"autoTunedVpusPerGb"`
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies BootVolumeAutotunePolicyArrayOutput `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -97,7 +96,7 @@ type BootVolume struct {
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-	BackupPolicyId pulumi.StringOutput `pulumi:"backupPolicyId"`
+	BackupPolicyId pulumi.StringPtrOutput `pulumi:"backupPolicyId"`
 	// (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
 	BootVolumeReplicas         BootVolumeBootVolumeReplicaArrayOutput `pulumi:"bootVolumeReplicas"`
 	BootVolumeReplicasDeletion pulumi.BoolPtrOutput                   `pulumi:"bootVolumeReplicasDeletion"`
@@ -106,34 +105,34 @@ type BootVolume struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The image OCID used to create the boot volume.
-	ImageId pulumi.StringOutput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrOutput `pulumi:"imageId"`
 	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-	IsAutoTuneEnabled pulumi.BoolOutput `pulumi:"isAutoTuneEnabled"`
+	IsAutoTuneEnabled pulumi.BoolPtrOutput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
-	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
+	IsHydrated pulumi.BoolPtrOutput `pulumi:"isHydrated"`
 	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
-	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
+	SizeInGbs pulumi.StringPtrOutput `pulumi:"sizeInGbs"`
 	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
-	SizeInMbs     pulumi.StringOutput           `pulumi:"sizeInMbs"`
+	SizeInMbs     pulumi.StringPtrOutput        `pulumi:"sizeInMbs"`
 	SourceDetails BootVolumeSourceDetailsOutput `pulumi:"sourceDetails"`
 	// The current state of a boot volume.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the source volume group.
-	VolumeGroupId pulumi.StringOutput `pulumi:"volumeGroupId"`
+	VolumeGroupId pulumi.StringPtrOutput `pulumi:"volumeGroupId"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 	//
 	// Allowed values:
-	VpusPerGb pulumi.StringOutput `pulumi:"vpusPerGb"`
+	VpusPerGb pulumi.StringPtrOutput `pulumi:"vpusPerGb"`
 }
 
 // NewBootVolume registers a new resource with the given unique name, arguments, and options.
@@ -366,12 +365,6 @@ func (i *BootVolume) ToBootVolumeOutputWithContext(ctx context.Context) BootVolu
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeOutput)
 }
 
-func (i *BootVolume) ToOutput(ctx context.Context) pulumix.Output[*BootVolume] {
-	return pulumix.Output[*BootVolume]{
-		OutputState: i.ToBootVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BootVolumeArrayInput is an input type that accepts BootVolumeArray and BootVolumeArrayOutput values.
 // You can construct a concrete instance of `BootVolumeArrayInput` via:
 //
@@ -395,12 +388,6 @@ func (i BootVolumeArray) ToBootVolumeArrayOutput() BootVolumeArrayOutput {
 
 func (i BootVolumeArray) ToBootVolumeArrayOutputWithContext(ctx context.Context) BootVolumeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeArrayOutput)
-}
-
-func (i BootVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolume] {
-	return pulumix.Output[[]*BootVolume]{
-		OutputState: i.ToBootVolumeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BootVolumeMapInput is an input type that accepts BootVolumeMap and BootVolumeMapOutput values.
@@ -428,12 +415,6 @@ func (i BootVolumeMap) ToBootVolumeMapOutputWithContext(ctx context.Context) Boo
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeMapOutput)
 }
 
-func (i BootVolumeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolume] {
-	return pulumix.Output[map[string]*BootVolume]{
-		OutputState: i.ToBootVolumeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BootVolumeOutput struct{ *pulumi.OutputState }
 
 func (BootVolumeOutput) ElementType() reflect.Type {
@@ -448,15 +429,9 @@ func (o BootVolumeOutput) ToBootVolumeOutputWithContext(ctx context.Context) Boo
 	return o
 }
 
-func (o BootVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[*BootVolume] {
-	return pulumix.Output[*BootVolume]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
-func (o BootVolumeOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
+func (o BootVolumeOutput) AutoTunedVpusPerGb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.AutoTunedVpusPerGb }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of autotune policies to be enabled for this volume.
@@ -472,8 +447,8 @@ func (o BootVolumeOutput) AvailabilityDomain() pulumi.StringOutput {
 // If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
 //
 // Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-func (o BootVolumeOutput) BackupPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.BackupPolicyId }).(pulumi.StringOutput)
+func (o BootVolumeOutput) BackupPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.BackupPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
@@ -496,8 +471,8 @@ func (o BootVolumeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o BootVolumeOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o BootVolumeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -506,33 +481,33 @@ func (o BootVolumeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The image OCID used to create the boot volume.
-func (o BootVolumeOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.ImageId }).(pulumi.StringOutput)
+func (o BootVolumeOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-func (o BootVolumeOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.BoolOutput { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
+func (o BootVolumeOutput) IsAutoTuneEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.BoolPtrOutput { return v.IsAutoTuneEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
-func (o BootVolumeOutput) IsHydrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.BoolOutput { return v.IsHydrated }).(pulumi.BoolOutput)
+func (o BootVolumeOutput) IsHydrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.BoolPtrOutput { return v.IsHydrated }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
-func (o BootVolumeOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o BootVolumeOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The size of the volume in GBs.
-func (o BootVolumeOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o BootVolumeOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
-func (o BootVolumeOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o BootVolumeOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 func (o BootVolumeOutput) SourceDetails() BootVolumeSourceDetailsOutput {
@@ -540,8 +515,8 @@ func (o BootVolumeOutput) SourceDetails() BootVolumeSourceDetailsOutput {
 }
 
 // The current state of a boot volume.
-func (o BootVolumeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BootVolumeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -550,20 +525,20 @@ func (o BootVolumeOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o BootVolumeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BootVolumeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source volume group.
-func (o BootVolumeOutput) VolumeGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.VolumeGroupId }).(pulumi.StringOutput)
+func (o BootVolumeOutput) VolumeGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.VolumeGroupId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 //
 // Allowed values:
-func (o BootVolumeOutput) VpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.VpusPerGb }).(pulumi.StringOutput)
+func (o BootVolumeOutput) VpusPerGb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringPtrOutput { return v.VpusPerGb }).(pulumi.StringPtrOutput)
 }
 
 type BootVolumeArrayOutput struct{ *pulumi.OutputState }
@@ -578,12 +553,6 @@ func (o BootVolumeArrayOutput) ToBootVolumeArrayOutput() BootVolumeArrayOutput {
 
 func (o BootVolumeArrayOutput) ToBootVolumeArrayOutputWithContext(ctx context.Context) BootVolumeArrayOutput {
 	return o
-}
-
-func (o BootVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolume] {
-	return pulumix.Output[[]*BootVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BootVolumeArrayOutput) Index(i pulumi.IntInput) BootVolumeOutput {
@@ -604,12 +573,6 @@ func (o BootVolumeMapOutput) ToBootVolumeMapOutput() BootVolumeMapOutput {
 
 func (o BootVolumeMapOutput) ToBootVolumeMapOutputWithContext(ctx context.Context) BootVolumeMapOutput {
 	return o
-}
-
-func (o BootVolumeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolume] {
-	return pulumix.Output[map[string]*BootVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BootVolumeMapOutput) MapIndex(k pulumi.StringInput) BootVolumeOutput {

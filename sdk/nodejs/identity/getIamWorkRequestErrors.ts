@@ -54,12 +54,12 @@ export interface GetIamWorkRequestErrorsResult {
     /**
      * The list of iam_work_request_errors.
      */
-    readonly iamWorkRequestErrors: outputs.Identity.GetIamWorkRequestErrorsIamWorkRequestError[];
+    readonly iamWorkRequestErrors?: outputs.Identity.GetIamWorkRequestErrorsIamWorkRequestError[];
     readonly iamWorkRequestId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Iam Work Request Errors in Oracle Cloud Infrastructure Identity service.

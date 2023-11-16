@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Trail Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -88,7 +87,7 @@ type GetAuditTrailAnalyticResult struct {
 	CompartmentIdInSubtree *bool    `pulumi:"compartmentIdInSubtree"`
 	GroupBies              []string `pulumi:"groupBies"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Array of audit trail aggregration data.
 	Items []GetAuditTrailAnalyticItem `pulumi:"items"`
 	// The OCID of the Data Safe target for which the audit trail is created.
@@ -141,12 +140,6 @@ func (o GetAuditTrailAnalyticResultOutput) ToGetAuditTrailAnalyticResultOutputWi
 	return o
 }
 
-func (o GetAuditTrailAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailAnalyticResult] {
-	return pulumix.Output[GetAuditTrailAnalyticResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAuditTrailAnalyticResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditTrailAnalyticResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -164,8 +157,8 @@ func (o GetAuditTrailAnalyticResultOutput) GroupBies() pulumi.StringArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditTrailAnalyticResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditTrailAnalyticResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditTrailAnalyticResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditTrailAnalyticResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Array of audit trail aggregration data.

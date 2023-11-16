@@ -16,47 +16,47 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// flag indicating whether the plugin is in enabled mode or disabled mode.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Management Agent Plugin Identifier, can be renamed
         /// </summary>
-        public readonly string PluginDisplayName;
+        public readonly string? PluginDisplayName;
         /// <summary>
         /// Plugin Id
         /// </summary>
-        public readonly string PluginId;
+        public readonly string? PluginId;
         /// <summary>
         /// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
         /// </summary>
-        public readonly string PluginName;
+        public readonly string? PluginName;
         /// <summary>
         /// Plugin Status
         /// </summary>
-        public readonly string PluginStatus;
+        public readonly string? PluginStatus;
         /// <summary>
         /// Status message of the Plugin
         /// </summary>
-        public readonly string PluginStatusMessage;
+        public readonly string? PluginStatusMessage;
         /// <summary>
         /// Plugin Version
         /// </summary>
-        public readonly string PluginVersion;
+        public readonly string? PluginVersion;
 
         [OutputConstructor]
         private GetManagementAgentsManagementAgentPluginListResult(
-            bool isEnabled,
+            bool? isEnabled,
 
-            string pluginDisplayName,
+            string? pluginDisplayName,
 
-            string pluginId,
+            string? pluginId,
 
-            string pluginName,
+            string? pluginName,
 
-            string pluginStatus,
+            string? pluginStatus,
 
-            string pluginStatusMessage,
+            string? pluginStatusMessage,
 
-            string pluginVersion)
+            string? pluginVersion)
         {
             IsEnabled = isEnabled;
             PluginDisplayName = pluginDisplayName;

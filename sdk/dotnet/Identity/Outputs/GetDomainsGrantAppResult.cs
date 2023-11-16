@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The displayName of the User or App who modified this Resource
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The URI of the SCIM resource that represents the User or App who modified this Resource
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsGrantAppResult(
-            string display,
+            string? display,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Display = display;
             Ref = @ref;

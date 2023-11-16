@@ -65,10 +65,7 @@ class GetAuditArchiveRetrievalsResult:
 
     @property
     @pulumi.getter(name="auditArchiveRetrievalCollections")
-    def audit_archive_retrieval_collections(self) -> Sequence['outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionResult']:
-        """
-        The list of audit_archive_retrieval_collection.
-        """
+    def audit_archive_retrieval_collections(self) -> Optional[Sequence['outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionResult']]:
         return pulumi.get(self, "audit_archive_retrieval_collections")
 
     @property
@@ -79,9 +76,6 @@ class GetAuditArchiveRetrievalsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains archive retrieval.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -92,9 +86,6 @@ class GetAuditArchiveRetrievalsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -104,7 +95,7 @@ class GetAuditArchiveRetrievalsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -113,25 +104,16 @@ class GetAuditArchiveRetrievalsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the archive retrieval.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target associated with the archive retrieval.
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeOfExpiry")
     def time_of_expiry(self) -> Optional[str]:
-        """
-        The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-        """
         return pulumi.get(self, "time_of_expiry")
 
 
@@ -165,35 +147,7 @@ def get_audit_archive_retrievals(access_level: Optional[str] = None,
                                  time_of_expiry: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditArchiveRetrievalsResult:
     """
-    This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the list of audit archive retrieval.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=var["compartment_id"],
-        access_level=var["audit_archive_retrieval_access_level"],
-        audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"],
-        compartment_id_in_subtree=var["audit_archive_retrieval_compartment_id_in_subtree"],
-        display_name=var["audit_archive_retrieval_display_name"],
-        state=var["audit_archive_retrieval_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_of_expiry=var["audit_archive_retrieval_time_of_expiry"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_archive_retrieval_id: OCID of the archive retrieval.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: A filter to return only resources that matches the specified lifecycle state.
-    :param str target_id: The OCID of the target associated with the archive retrieval.
-    :param str time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -234,34 +188,6 @@ def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Opti
                                         time_of_expiry: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditArchiveRetrievalsResult]:
     """
-    This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the list of audit archive retrieval.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=var["compartment_id"],
-        access_level=var["audit_archive_retrieval_access_level"],
-        audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"],
-        compartment_id_in_subtree=var["audit_archive_retrieval_compartment_id_in_subtree"],
-        display_name=var["audit_archive_retrieval_display_name"],
-        state=var["audit_archive_retrieval_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_of_expiry=var["audit_archive_retrieval_time_of_expiry"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_archive_retrieval_id: OCID of the archive retrieval.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: A filter to return only resources that matches the specified lifecycle state.
-    :param str target_id: The OCID of the target associated with the archive retrieval.
-    :param str time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser {
@@ -16,39 +18,39 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return A boolean value that indicates whether the consent is granted.
      * 
      */
-    private Boolean consentGranted;
+    private @Nullable Boolean consentGranted;
     /**
      * @return Self registration profile used when user is self registered.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles;
     /**
      * @return User token returned if userFlowControlledByExternalClient is true
      * 
      */
-    private String userToken;
+    private @Nullable String userToken;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser() {}
     /**
      * @return A boolean value that indicates whether the consent is granted.
      * 
      */
-    public Boolean consentGranted() {
-        return this.consentGranted;
+    public Optional<Boolean> consentGranted() {
+        return Optional.ofNullable(this.consentGranted);
     }
     /**
      * @return Self registration profile used when user is self registered.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles() {
-        return this.selfRegistrationProfiles;
+        return this.selfRegistrationProfiles == null ? List.of() : this.selfRegistrationProfiles;
     }
     /**
      * @return User token returned if userFlowControlledByExternalClient is true
      * 
      */
-    public String userToken() {
-        return this.userToken;
+    public Optional<String> userToken() {
+        return Optional.ofNullable(this.userToken);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean consentGranted;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles;
-        private String userToken;
+        private @Nullable Boolean consentGranted;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles;
+        private @Nullable String userToken;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder consentGranted(Boolean consentGranted) {
-            this.consentGranted = Objects.requireNonNull(consentGranted);
+        public Builder consentGranted(@Nullable Boolean consentGranted) {
+            this.consentGranted = consentGranted;
             return this;
         }
         @CustomType.Setter
-        public Builder selfRegistrationProfiles(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles) {
-            this.selfRegistrationProfiles = Objects.requireNonNull(selfRegistrationProfiles);
+        public Builder selfRegistrationProfiles(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles) {
+            this.selfRegistrationProfiles = selfRegistrationProfiles;
             return this;
         }
         public Builder selfRegistrationProfiles(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile... selfRegistrationProfiles) {
             return selfRegistrationProfiles(List.of(selfRegistrationProfiles));
         }
         @CustomType.Setter
-        public Builder userToken(String userToken) {
-            this.userToken = Objects.requireNonNull(userToken);
+        public Builder userToken(@Nullable String userToken) {
+            this.userToken = userToken;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser build() {

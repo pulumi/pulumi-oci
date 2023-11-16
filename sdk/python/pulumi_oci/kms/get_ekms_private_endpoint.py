@@ -70,34 +70,22 @@ class GetEkmsPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="caBundle")
-    def ca_bundle(self) -> str:
-        """
-        CABundle to validate TLS certificate of the external key manager system in PEM format
-        """
+    def ca_bundle(self) -> Optional[str]:
         return pulumi.get(self, "ca_bundle")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Identifier of the compartment this EKMS private endpoint belongs to
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Mutable name of the EKMS private endpoint
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -107,82 +95,52 @@ class GetEkmsPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="externalKeyManagerIp")
-    def external_key_manager_ip(self) -> str:
-        """
-        Private IP of the external key manager system to connect to from the EKMS private endpoint
-        """
+    def external_key_manager_ip(self) -> Optional[str]:
         return pulumi.get(self, "external_key_manager_ip")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port of the external key manager system
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> str:
-        """
-        The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-        """
+    def private_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the EKMS private endpoint resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        Subnet Identifier
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -212,21 +170,7 @@ class AwaitableGetEkmsPrivateEndpointResult(GetEkmsPrivateEndpointResult):
 def get_ekms_private_endpoint(ekms_private_endpoint_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEkmsPrivateEndpointResult:
     """
-    This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets a specific EKMS private by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=oci_kms_ekms_private_endpoint["test_ekms_private_endpoint"]["id"])
-    ```
-
-
-    :param str ekms_private_endpoint_id: Unique EKMS private endpoint identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['ekmsPrivateEndpointId'] = ekms_private_endpoint_id
@@ -255,20 +199,6 @@ def get_ekms_private_endpoint(ekms_private_endpoint_id: Optional[str] = None,
 def get_ekms_private_endpoint_output(ekms_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEkmsPrivateEndpointResult]:
     """
-    This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets a specific EKMS private by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=oci_kms_ekms_private_endpoint["test_ekms_private_endpoint"]["id"])
-    ```
-
-
-    :param str ekms_private_endpoint_id: Unique EKMS private endpoint identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

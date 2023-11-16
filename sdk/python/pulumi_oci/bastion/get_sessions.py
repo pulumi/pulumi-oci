@@ -49,17 +49,11 @@ class GetSessionsResult:
     @property
     @pulumi.getter(name="bastionId")
     def bastion_id(self) -> str:
-        """
-        The unique identifier (OCID) of the bastion that is hosting this session.
-        """
         return pulumi.get(self, "bastion_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the session.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetSessionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -87,10 +81,7 @@ class GetSessionsResult:
 
     @property
     @pulumi.getter
-    def sessions(self) -> Sequence['outputs.GetSessionsSessionResult']:
-        """
-        The list of sessions.
-        """
+    def sessions(self) -> Optional[Sequence['outputs.GetSessionsSessionResult']]:
         return pulumi.get(self, "sessions")
 
 
@@ -116,27 +107,7 @@ def get_sessions(bastion_id: Optional[str] = None,
                  session_lifecycle_state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSessionsResult:
     """
-    This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sessions = oci.Bastion.get_sessions(bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-        display_name=var["session_display_name"],
-        session_id=oci_bastion_session["test_session"]["id"],
-        session_lifecycle_state=var["session_session_lifecycle_state"])
-    ```
-
-
-    :param str bastion_id: The unique identifier (OCID) of the bastion in which to list sessions.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str session_id: The unique identifier (OCID) of the session in which to list resources.
-    :param str session_lifecycle_state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bastionId'] = bastion_id
@@ -165,26 +136,6 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[str]] = None,
                         session_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSessionsResult]:
     """
-    This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sessions = oci.Bastion.get_sessions(bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-        display_name=var["session_display_name"],
-        session_id=oci_bastion_session["test_session"]["id"],
-        session_lifecycle_state=var["session_session_lifecycle_state"])
-    ```
-
-
-    :param str bastion_id: The unique identifier (OCID) of the bastion in which to list sessions.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str session_id: The unique identifier (OCID) of the session in which to list resources.
-    :param str session_lifecycle_state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

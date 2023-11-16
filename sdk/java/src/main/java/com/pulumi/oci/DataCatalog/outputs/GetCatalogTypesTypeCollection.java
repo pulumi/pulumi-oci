@@ -8,18 +8,20 @@ import com.pulumi.oci.DataCatalog.outputs.GetCatalogTypesTypeCollectionItem;
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCatalogTypesTypeCollection {
-    private Integer count;
-    private List<GetCatalogTypesTypeCollectionItem> items;
+    private @Nullable Integer count;
+    private @Nullable List<GetCatalogTypesTypeCollectionItem> items;
 
     private GetCatalogTypesTypeCollection() {}
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     public List<GetCatalogTypesTypeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetCatalogTypesTypeCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private List<GetCatalogTypesTypeCollectionItem> items;
+        private @Nullable Integer count;
+        private @Nullable List<GetCatalogTypesTypeCollectionItem> items;
         public Builder() {}
         public Builder(GetCatalogTypesTypeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetCatalogTypesTypeCollection {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetCatalogTypesTypeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetCatalogTypesTypeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetCatalogTypesTypeCollectionItem... items) {

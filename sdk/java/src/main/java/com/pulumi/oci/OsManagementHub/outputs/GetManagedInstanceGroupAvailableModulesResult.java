@@ -20,12 +20,12 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of managed_instance_group_available_module_collection.
      * 
      */
-    private List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections;
+    private @Nullable List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections;
     private String managedInstanceGroupId;
     /**
      * @return The name of the module that is available to be enabled on the managed instance group.
@@ -45,15 +45,15 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of managed_instance_group_available_module_collection.
      * 
      */
     public List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections() {
-        return this.managedInstanceGroupAvailableModuleCollections;
+        return this.managedInstanceGroupAvailableModuleCollections == null ? List.of() : this.managedInstanceGroupAvailableModuleCollections;
     }
     public String managedInstanceGroupId() {
         return this.managedInstanceGroupId;
@@ -80,8 +80,8 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetManagedInstanceGroupAvailableModulesFilter> filters;
-        private String id;
-        private List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections;
+        private @Nullable String id;
+        private @Nullable List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections;
         private String managedInstanceGroupId;
         private @Nullable String name;
         private @Nullable String nameContains;
@@ -111,13 +111,13 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceGroupAvailableModuleCollections(List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections) {
-            this.managedInstanceGroupAvailableModuleCollections = Objects.requireNonNull(managedInstanceGroupAvailableModuleCollections);
+        public Builder managedInstanceGroupAvailableModuleCollections(@Nullable List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections) {
+            this.managedInstanceGroupAvailableModuleCollections = managedInstanceGroupAvailableModuleCollections;
             return this;
         }
         public Builder managedInstanceGroupAvailableModuleCollections(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection... managedInstanceGroupAvailableModuleCollections) {

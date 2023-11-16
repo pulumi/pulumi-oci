@@ -8,6 +8,8 @@ import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceCollectionItemBillToA
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceCollectionItemBillToAddress {
@@ -15,171 +17,171 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddress {
      * @return Address line 1
      * 
      */
-    private String addressLine1;
+    private @Nullable String addressLine1;
     /**
      * @return Address line 2
      * 
      */
-    private String addressLine2;
+    private @Nullable String addressLine2;
     /**
      * @return Address line 3
      * 
      */
-    private String addressLine3;
+    private @Nullable String addressLine3;
     /**
      * @return Address line 4
      * 
      */
-    private String addressLine4;
+    private @Nullable String addressLine4;
     /**
      * @return Name of the city
      * 
      */
-    private String city;
+    private @Nullable String city;
     /**
      * @return Name of the customer company
      * 
      */
-    private String companyName;
+    private @Nullable String companyName;
     /**
      * @return Name of the contact person
      * 
      */
-    private String contactName;
+    private @Nullable String contactName;
     /**
      * @return Country details model
      * 
      */
-    private List<GetInvoicesInvoiceCollectionItemBillToAddressCountry> countries;
+    private @Nullable List<GetInvoicesInvoiceCollectionItemBillToAddressCountry> countries;
     /**
      * @return County name
      * 
      */
-    private String county;
+    private @Nullable String county;
     /**
      * @return ZIP no
      * 
      */
-    private String postalCode;
+    private @Nullable String postalCode;
     /**
      * @return Name of the province
      * 
      */
-    private String province;
+    private @Nullable String province;
     /**
      * @return Name of the state
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Street name
      * 
      */
-    private String streetName;
+    private @Nullable String streetName;
     /**
      * @return House no
      * 
      */
-    private String streetNumber;
+    private @Nullable String streetNumber;
 
     private GetInvoicesInvoiceCollectionItemBillToAddress() {}
     /**
      * @return Address line 1
      * 
      */
-    public String addressLine1() {
-        return this.addressLine1;
+    public Optional<String> addressLine1() {
+        return Optional.ofNullable(this.addressLine1);
     }
     /**
      * @return Address line 2
      * 
      */
-    public String addressLine2() {
-        return this.addressLine2;
+    public Optional<String> addressLine2() {
+        return Optional.ofNullable(this.addressLine2);
     }
     /**
      * @return Address line 3
      * 
      */
-    public String addressLine3() {
-        return this.addressLine3;
+    public Optional<String> addressLine3() {
+        return Optional.ofNullable(this.addressLine3);
     }
     /**
      * @return Address line 4
      * 
      */
-    public String addressLine4() {
-        return this.addressLine4;
+    public Optional<String> addressLine4() {
+        return Optional.ofNullable(this.addressLine4);
     }
     /**
      * @return Name of the city
      * 
      */
-    public String city() {
-        return this.city;
+    public Optional<String> city() {
+        return Optional.ofNullable(this.city);
     }
     /**
      * @return Name of the customer company
      * 
      */
-    public String companyName() {
-        return this.companyName;
+    public Optional<String> companyName() {
+        return Optional.ofNullable(this.companyName);
     }
     /**
      * @return Name of the contact person
      * 
      */
-    public String contactName() {
-        return this.contactName;
+    public Optional<String> contactName() {
+        return Optional.ofNullable(this.contactName);
     }
     /**
      * @return Country details model
      * 
      */
     public List<GetInvoicesInvoiceCollectionItemBillToAddressCountry> countries() {
-        return this.countries;
+        return this.countries == null ? List.of() : this.countries;
     }
     /**
      * @return County name
      * 
      */
-    public String county() {
-        return this.county;
+    public Optional<String> county() {
+        return Optional.ofNullable(this.county);
     }
     /**
      * @return ZIP no
      * 
      */
-    public String postalCode() {
-        return this.postalCode;
+    public Optional<String> postalCode() {
+        return Optional.ofNullable(this.postalCode);
     }
     /**
      * @return Name of the province
      * 
      */
-    public String province() {
-        return this.province;
+    public Optional<String> province() {
+        return Optional.ofNullable(this.province);
     }
     /**
      * @return Name of the state
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Street name
      * 
      */
-    public String streetName() {
-        return this.streetName;
+    public Optional<String> streetName() {
+        return Optional.ofNullable(this.streetName);
     }
     /**
      * @return House no
      * 
      */
-    public String streetNumber() {
-        return this.streetNumber;
+    public Optional<String> streetNumber() {
+        return Optional.ofNullable(this.streetNumber);
     }
 
     public static Builder builder() {
@@ -191,20 +193,20 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String addressLine1;
-        private String addressLine2;
-        private String addressLine3;
-        private String addressLine4;
-        private String city;
-        private String companyName;
-        private String contactName;
-        private List<GetInvoicesInvoiceCollectionItemBillToAddressCountry> countries;
-        private String county;
-        private String postalCode;
-        private String province;
-        private String state;
-        private String streetName;
-        private String streetNumber;
+        private @Nullable String addressLine1;
+        private @Nullable String addressLine2;
+        private @Nullable String addressLine3;
+        private @Nullable String addressLine4;
+        private @Nullable String city;
+        private @Nullable String companyName;
+        private @Nullable String contactName;
+        private @Nullable List<GetInvoicesInvoiceCollectionItemBillToAddressCountry> countries;
+        private @Nullable String county;
+        private @Nullable String postalCode;
+        private @Nullable String province;
+        private @Nullable String state;
+        private @Nullable String streetName;
+        private @Nullable String streetNumber;
         public Builder() {}
         public Builder(GetInvoicesInvoiceCollectionItemBillToAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -225,76 +227,76 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddress {
         }
 
         @CustomType.Setter
-        public Builder addressLine1(String addressLine1) {
-            this.addressLine1 = Objects.requireNonNull(addressLine1);
+        public Builder addressLine1(@Nullable String addressLine1) {
+            this.addressLine1 = addressLine1;
             return this;
         }
         @CustomType.Setter
-        public Builder addressLine2(String addressLine2) {
-            this.addressLine2 = Objects.requireNonNull(addressLine2);
+        public Builder addressLine2(@Nullable String addressLine2) {
+            this.addressLine2 = addressLine2;
             return this;
         }
         @CustomType.Setter
-        public Builder addressLine3(String addressLine3) {
-            this.addressLine3 = Objects.requireNonNull(addressLine3);
+        public Builder addressLine3(@Nullable String addressLine3) {
+            this.addressLine3 = addressLine3;
             return this;
         }
         @CustomType.Setter
-        public Builder addressLine4(String addressLine4) {
-            this.addressLine4 = Objects.requireNonNull(addressLine4);
+        public Builder addressLine4(@Nullable String addressLine4) {
+            this.addressLine4 = addressLine4;
             return this;
         }
         @CustomType.Setter
-        public Builder city(String city) {
-            this.city = Objects.requireNonNull(city);
+        public Builder city(@Nullable String city) {
+            this.city = city;
             return this;
         }
         @CustomType.Setter
-        public Builder companyName(String companyName) {
-            this.companyName = Objects.requireNonNull(companyName);
+        public Builder companyName(@Nullable String companyName) {
+            this.companyName = companyName;
             return this;
         }
         @CustomType.Setter
-        public Builder contactName(String contactName) {
-            this.contactName = Objects.requireNonNull(contactName);
+        public Builder contactName(@Nullable String contactName) {
+            this.contactName = contactName;
             return this;
         }
         @CustomType.Setter
-        public Builder countries(List<GetInvoicesInvoiceCollectionItemBillToAddressCountry> countries) {
-            this.countries = Objects.requireNonNull(countries);
+        public Builder countries(@Nullable List<GetInvoicesInvoiceCollectionItemBillToAddressCountry> countries) {
+            this.countries = countries;
             return this;
         }
         public Builder countries(GetInvoicesInvoiceCollectionItemBillToAddressCountry... countries) {
             return countries(List.of(countries));
         }
         @CustomType.Setter
-        public Builder county(String county) {
-            this.county = Objects.requireNonNull(county);
+        public Builder county(@Nullable String county) {
+            this.county = county;
             return this;
         }
         @CustomType.Setter
-        public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+        public Builder postalCode(@Nullable String postalCode) {
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
-        public Builder province(String province) {
-            this.province = Objects.requireNonNull(province);
+        public Builder province(@Nullable String province) {
+            this.province = province;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder streetName(String streetName) {
-            this.streetName = Objects.requireNonNull(streetName);
+        public Builder streetName(@Nullable String streetName) {
+            this.streetName = streetName;
             return this;
         }
         @CustomType.Setter
-        public Builder streetNumber(String streetNumber) {
-            this.streetNumber = Objects.requireNonNull(streetNumber);
+        public Builder streetNumber(@Nullable String streetNumber) {
+            this.streetNumber = streetNumber;
             return this;
         }
         public GetInvoicesInvoiceCollectionItemBillToAddress build() {

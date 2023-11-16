@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Osub Usage service.
@@ -52,7 +51,7 @@ type GetComputedUsagesResult struct {
 	ComputedUsages []GetComputedUsagesComputedUsage `pulumi:"computedUsages"`
 	Filters        []GetComputedUsagesFilter        `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Product description
 	ParentProduct    *string `pulumi:"parentProduct"`
 	SubscriptionId   string  `pulumi:"subscriptionId"`
@@ -112,12 +111,6 @@ func (o GetComputedUsagesResultOutput) ToGetComputedUsagesResultOutputWithContex
 	return o
 }
 
-func (o GetComputedUsagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesResult] {
-	return pulumix.Output[GetComputedUsagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsagesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetComputedUsagesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -136,8 +129,8 @@ func (o GetComputedUsagesResultOutput) Filters() GetComputedUsagesFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputedUsagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputedUsagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Product description

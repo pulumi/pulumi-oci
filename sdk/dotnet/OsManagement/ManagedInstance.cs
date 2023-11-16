@@ -35,7 +35,7 @@ namespace Pulumi.Oci.OsManagement
         /// Number of bug fix type updates available to be installed
         /// </summary>
         [Output("bugUpdatesAvailable")]
-        public Output<int> BugUpdatesAvailable { get; private set; } = null!;
+        public Output<int?> BugUpdatesAvailable { get; private set; } = null!;
 
         /// <summary>
         /// list of child Software Sources attached to the Managed Instance
@@ -47,55 +47,55 @@ namespace Pulumi.Oci.OsManagement
         /// OCID for the Compartment
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Information specified by the user about the managed instance
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// User friendly name
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Number of enhancement type updates available to be installed
         /// </summary>
         [Output("enhancementUpdatesAvailable")]
-        public Output<int> EnhancementUpdatesAvailable { get; private set; } = null!;
+        public Output<int?> EnhancementUpdatesAvailable { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) True if user allow data collection for this instance
         /// </summary>
         [Output("isDataCollectionAuthorized")]
-        public Output<bool> IsDataCollectionAuthorized { get; private set; } = null!;
+        public Output<bool?> IsDataCollectionAuthorized { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether a reboot is required to complete installation of updates.
         /// </summary>
         [Output("isRebootRequired")]
-        public Output<bool> IsRebootRequired { get; private set; } = null!;
+        public Output<bool?> IsRebootRequired { get; private set; } = null!;
 
         /// <summary>
         /// The ksplice effective kernel version
         /// </summary>
         [Output("kspliceEffectiveKernelVersion")]
-        public Output<string> KspliceEffectiveKernelVersion { get; private set; } = null!;
+        public Output<string?> KspliceEffectiveKernelVersion { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the instance last booted
         /// </summary>
         [Output("lastBoot")]
-        public Output<string> LastBoot { get; private set; } = null!;
+        public Output<string?> LastBoot { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the instance last checked in
         /// </summary>
         [Output("lastCheckin")]
-        public Output<string> LastCheckin { get; private set; } = null!;
+        public Output<string?> LastCheckin { get; private set; } = null!;
 
         /// <summary>
         /// The ids of the managed instance groups of which this instance is a member.
@@ -117,37 +117,37 @@ namespace Pulumi.Oci.OsManagement
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("notificationTopicId")]
-        public Output<string> NotificationTopicId { get; private set; } = null!;
+        public Output<string?> NotificationTopicId { get; private set; } = null!;
 
         /// <summary>
         /// The Operating System type of the managed instance.
         /// </summary>
         [Output("osFamily")]
-        public Output<string> OsFamily { get; private set; } = null!;
+        public Output<string?> OsFamily { get; private set; } = null!;
 
         /// <summary>
         /// Operating System Kernel Version
         /// </summary>
         [Output("osKernelVersion")]
-        public Output<string> OsKernelVersion { get; private set; } = null!;
+        public Output<string?> OsKernelVersion { get; private set; } = null!;
 
         /// <summary>
         /// Operating System Name
         /// </summary>
         [Output("osName")]
-        public Output<string> OsName { get; private set; } = null!;
+        public Output<string?> OsName { get; private set; } = null!;
 
         /// <summary>
         /// Operating System Version
         /// </summary>
         [Output("osVersion")]
-        public Output<string> OsVersion { get; private set; } = null!;
+        public Output<string?> OsVersion { get; private set; } = null!;
 
         /// <summary>
         /// Number of non-classified updates available to be installed
         /// </summary>
         [Output("otherUpdatesAvailable")]
-        public Output<int> OtherUpdatesAvailable { get; private set; } = null!;
+        public Output<int?> OtherUpdatesAvailable { get; private set; } = null!;
 
         /// <summary>
         /// the parent (base) Software Source attached to the Managed Instance
@@ -159,31 +159,31 @@ namespace Pulumi.Oci.OsManagement
         /// Number of scheduled jobs associated with this instance
         /// </summary>
         [Output("scheduledJobCount")]
-        public Output<int> ScheduledJobCount { get; private set; } = null!;
+        public Output<int?> ScheduledJobCount { get; private set; } = null!;
 
         /// <summary>
         /// Number of security type updates available to be installed
         /// </summary>
         [Output("securityUpdatesAvailable")]
-        public Output<int> SecurityUpdatesAvailable { get; private set; } = null!;
+        public Output<int?> SecurityUpdatesAvailable { get; private set; } = null!;
 
         /// <summary>
         /// status of the managed instance.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// Number of updates available to be installed
         /// </summary>
         [Output("updatesAvailable")]
-        public Output<int> UpdatesAvailable { get; private set; } = null!;
+        public Output<int?> UpdatesAvailable { get; private set; } = null!;
 
         /// <summary>
         /// Number of work requests associated with this instance
         /// </summary>
         [Output("workRequestCount")]
-        public Output<int> WorkRequestCount { get; private set; } = null!;
+        public Output<int?> WorkRequestCount { get; private set; } = null!;
 
 
         /// <summary>

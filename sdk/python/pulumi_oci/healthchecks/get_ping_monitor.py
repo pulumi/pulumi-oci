@@ -73,66 +73,42 @@ class GetPingMonitorResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly and mutable name suitable for display in a user interface.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeRegion")
-    def home_region(self) -> str:
-        """
-        The region where updates must be made and where results must be fetched from.
-        """
+    def home_region(self) -> Optional[str]:
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> int:
-        """
-        The monitor interval in seconds. Valid values: 10, 30, and 60.
-        """
+    def interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "interval_in_seconds")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Enables or disables the monitor. Set to 'true' to launch monitoring.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
@@ -142,58 +118,37 @@ class GetPingMonitorResult:
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocols for ping probes.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="resultsUrl")
-    def results_url(self) -> str:
-        """
-        A URL for fetching the probe results.
-        """
+    def results_url(self) -> Optional[str]:
         return pulumi.get(self, "results_url")
 
     @property
     @pulumi.getter
-    def targets(self) -> Sequence[str]:
-        """
-        A list of targets (hostnames or IP addresses) of the probe.
-        """
+    def targets(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The RFC 3339-formatted creation date and time of the probe.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="vantagePointNames")
-    def vantage_point_names(self) -> Sequence[str]:
-        """
-        A list of names of vantage points from which to execute the probe.
-        """
+    def vantage_point_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "vantage_point_names")
 
 
@@ -224,21 +179,7 @@ class AwaitableGetPingMonitorResult(GetPingMonitorResult):
 def get_ping_monitor(monitor_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPingMonitorResult:
     """
-    This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets the configuration for the specified ping monitor.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
-    ```
-
-
-    :param str monitor_id: The OCID of a monitor.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['monitorId'] = monitor_id
@@ -268,20 +209,6 @@ def get_ping_monitor(monitor_id: Optional[str] = None,
 def get_ping_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPingMonitorResult]:
     """
-    This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets the configuration for the specified ping monitor.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
-    ```
-
-
-    :param str monitor_id: The OCID of a monitor.
+    Use this data source to access information about an existing resource.
     """
     ...

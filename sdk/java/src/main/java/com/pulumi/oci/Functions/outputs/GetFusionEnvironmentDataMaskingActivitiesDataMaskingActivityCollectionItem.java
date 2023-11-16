@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem {
@@ -14,67 +16,67 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
      * @return unique FusionEnvironment identifier
      * 
      */
-    private String fusionEnvironmentId;
+    private @Nullable String fusionEnvironmentId;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
-    private Boolean isResumeDataMasking;
+    private @Nullable String id;
+    private @Nullable Boolean isResumeDataMasking;
     /**
      * @return A filter that returns all resources that match the specified status
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the data masking activity ended. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeMaskingFinish;
+    private @Nullable String timeMaskingFinish;
     /**
      * @return The time the data masking activity started. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeMaskingStart;
+    private @Nullable String timeMaskingStart;
 
     private GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem() {}
     /**
      * @return unique FusionEnvironment identifier
      * 
      */
-    public String fusionEnvironmentId() {
-        return this.fusionEnvironmentId;
+    public Optional<String> fusionEnvironmentId() {
+        return Optional.ofNullable(this.fusionEnvironmentId);
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean isResumeDataMasking() {
-        return this.isResumeDataMasking;
+    public Optional<Boolean> isResumeDataMasking() {
+        return Optional.ofNullable(this.isResumeDataMasking);
     }
     /**
      * @return A filter that returns all resources that match the specified status
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the data masking activity ended. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeMaskingFinish() {
-        return this.timeMaskingFinish;
+    public Optional<String> timeMaskingFinish() {
+        return Optional.ofNullable(this.timeMaskingFinish);
     }
     /**
      * @return The time the data masking activity started. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeMaskingStart() {
-        return this.timeMaskingStart;
+    public Optional<String> timeMaskingStart() {
+        return Optional.ofNullable(this.timeMaskingStart);
     }
 
     public static Builder builder() {
@@ -86,12 +88,12 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fusionEnvironmentId;
-        private String id;
-        private Boolean isResumeDataMasking;
-        private String state;
-        private String timeMaskingFinish;
-        private String timeMaskingStart;
+        private @Nullable String fusionEnvironmentId;
+        private @Nullable String id;
+        private @Nullable Boolean isResumeDataMasking;
+        private @Nullable String state;
+        private @Nullable String timeMaskingFinish;
+        private @Nullable String timeMaskingStart;
         public Builder() {}
         public Builder(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -104,33 +106,33 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
         }
 
         @CustomType.Setter
-        public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+        public Builder fusionEnvironmentId(@Nullable String fusionEnvironmentId) {
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isResumeDataMasking(Boolean isResumeDataMasking) {
-            this.isResumeDataMasking = Objects.requireNonNull(isResumeDataMasking);
+        public Builder isResumeDataMasking(@Nullable Boolean isResumeDataMasking) {
+            this.isResumeDataMasking = isResumeDataMasking;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaskingFinish(String timeMaskingFinish) {
-            this.timeMaskingFinish = Objects.requireNonNull(timeMaskingFinish);
+        public Builder timeMaskingFinish(@Nullable String timeMaskingFinish) {
+            this.timeMaskingFinish = timeMaskingFinish;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaskingStart(String timeMaskingStart) {
-            this.timeMaskingStart = Objects.requireNonNull(timeMaskingStart);
+        public Builder timeMaskingStart(@Nullable String timeMaskingStart) {
+            this.timeMaskingStart = timeMaskingStart;
             return this;
         }
         public GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem build() {

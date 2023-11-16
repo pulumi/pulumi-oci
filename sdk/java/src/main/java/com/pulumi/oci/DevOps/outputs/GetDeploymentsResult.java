@@ -28,7 +28,7 @@ public final class GetDeploymentsResult {
      * @return The list of deployment_collection.
      * 
      */
-    private List<GetDeploymentsDeploymentCollection> deploymentCollections;
+    private @Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections;
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
@@ -73,7 +73,7 @@ public final class GetDeploymentsResult {
      * 
      */
     public List<GetDeploymentsDeploymentCollection> deploymentCollections() {
-        return this.deploymentCollections;
+        return this.deploymentCollections == null ? List.of() : this.deploymentCollections;
     }
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -124,7 +124,7 @@ public final class GetDeploymentsResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String deployPipelineId;
-        private List<GetDeploymentsDeploymentCollection> deploymentCollections;
+        private @Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentsFilter> filters;
         private @Nullable String id;
@@ -158,8 +158,8 @@ public final class GetDeploymentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentCollections(List<GetDeploymentsDeploymentCollection> deploymentCollections) {
-            this.deploymentCollections = Objects.requireNonNull(deploymentCollections);
+        public Builder deploymentCollections(@Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections) {
+            this.deploymentCollections = deploymentCollections;
             return this;
         }
         public Builder deploymentCollections(GetDeploymentsDeploymentCollection... deploymentCollections) {

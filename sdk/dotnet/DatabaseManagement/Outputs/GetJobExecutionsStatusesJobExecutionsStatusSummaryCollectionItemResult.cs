@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of job executions of a particular status.
         /// </summary>
-        public readonly int Count;
+        public readonly int? Count;
         /// <summary>
         /// The status of the job execution.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult(
-            int count,
+            int? count,
 
-            string status)
+            string? status)
         {
             Count = count;
             Status = status;

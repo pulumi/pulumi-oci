@@ -13,23 +13,23 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     [OutputType]
     public sealed class GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult
     {
-        public readonly bool IsReadOnly;
-        public readonly string MountPath;
-        public readonly int Partition;
-        public readonly string SubPath;
-        public readonly string VolumeName;
+        public readonly bool? IsReadOnly;
+        public readonly string? MountPath;
+        public readonly int? Partition;
+        public readonly string? SubPath;
+        public readonly string? VolumeName;
 
         [OutputConstructor]
         private GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult(
-            bool isReadOnly,
+            bool? isReadOnly,
 
-            string mountPath,
+            string? mountPath,
 
-            int partition,
+            int? partition,
 
-            string subPath,
+            string? subPath,
 
-            string volumeName)
+            string? volumeName)
         {
             IsReadOnly = isReadOnly;
             MountPath = mountPath;

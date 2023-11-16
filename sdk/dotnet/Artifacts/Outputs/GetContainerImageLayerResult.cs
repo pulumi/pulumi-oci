@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// <summary>
         /// The sha256 digest of the image layer.
         /// </summary>
-        public readonly string Digest;
+        public readonly string? Digest;
         /// <summary>
         /// The size of the layer in bytes.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         /// <summary>
         /// The creation time of the version.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetContainerImageLayerResult(
-            string digest,
+            string? digest,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Digest = digest;
             SizeInBytes = sizeInBytes;

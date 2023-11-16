@@ -16,6 +16,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp {
@@ -23,291 +25,291 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
      * @return If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \&#34;false\&#34; will be assumed as the value for this attribute.
      * 
      */
-    private Boolean accountFormVisible;
+    private @Nullable Boolean accountFormVisible;
     /**
      * @return If true, admin has granted consent to perform managed app run-time operations.
      * 
      */
-    private Boolean adminConsentGranted;
+    private @Nullable Boolean adminConsentGranted;
     /**
      * @return ConnectorBundle configuration properties
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties;
     /**
      * @return Configurable options maintaining a pool of ICF connector instances. Values for sub attributes can be set only if the ConnectorBundle referenced in the App has connectorPoolingSupported set to true
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations;
     /**
      * @return If true, the managed app can be authoritative.
      * 
      */
-    private Boolean canBeAuthoritative;
+    private @Nullable Boolean canBeAuthoritative;
     /**
      * @return If true, the accounts of the application are managed through an ICF connector bundle
      * 
      */
-    private Boolean connected;
+    private @Nullable Boolean connected;
     /**
      * @return ConnectorBundle
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles;
     /**
      * @return If true, send activation email to new users created from authoritative sync.
      * 
      */
-    private Boolean enableAuthSyncNewUserNotification;
+    private @Nullable Boolean enableAuthSyncNewUserNotification;
     /**
      * @return If true, sync run-time operations are enabled for this App.
      * 
      */
-    private Boolean enableSync;
+    private @Nullable Boolean enableSync;
     /**
      * @return If true, send sync summary as notification upon job completion.
      * 
      */
-    private Boolean enableSyncSummaryReportNotification;
+    private @Nullable Boolean enableSyncSummaryReportNotification;
     /**
      * @return Flat file connector bundle configuration properties
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties;
     /**
      * @return Flat file connector bundle to sync from a flat file.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles;
     /**
      * @return IdentityBridges associated with this App
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges;
     /**
      * @return If true, sync from the managed app will be performed as authoritative sync.
      * 
      */
-    private Boolean isAuthoritative;
+    private @Nullable Boolean isAuthoritative;
     /**
      * @return If true, the managed app is a directory.
      * 
      */
-    private Boolean isDirectory;
+    private @Nullable Boolean isDirectory;
     /**
      * @return If true, the managed app is an On-Premise app.
      * 
      */
-    private Boolean isOnPremiseApp;
+    private @Nullable Boolean isOnPremiseApp;
     /**
      * @return If true, the managed app supports schema customization.
      * 
      */
-    private Boolean isSchemaCustomizationSupported;
+    private @Nullable Boolean isSchemaCustomizationSupported;
     /**
      * @return If true, the managed app supports schema discovery.
      * 
      */
-    private Boolean isSchemaDiscoverySupported;
+    private @Nullable Boolean isSchemaDiscoverySupported;
     /**
      * @return If true, the managed app requires 3-legged OAuth for authorization.
      * 
      */
-    private Boolean isThreeLeggedOauthEnabled;
+    private @Nullable Boolean isThreeLeggedOauthEnabled;
     /**
      * @return If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
      * 
      */
-    private Boolean isTwoLeggedOauthEnabled;
+    private @Nullable Boolean isTwoLeggedOauthEnabled;
     /**
      * @return Object classes
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses;
     /**
      * @return The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App&#39;s configuration with respect to synchronization.
      * 
      */
-    private String syncConfigLastModified;
+    private @Nullable String syncConfigLastModified;
     /**
      * @return The value of this attribute persists any OAuth access token that the system uses to connect to this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be two-legged or three-legged. A two-legged flow involves only the requester and the server. A three-legged flow also requires the consent of a user -- in this case the consent of an administrator.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials;
     /**
      * @return Three legged OAuth provider name in Oracle Identity Cloud Service.
      * 
      */
-    private String threeLeggedOauthProviderName;
+    private @Nullable String threeLeggedOauthProviderName;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp() {}
     /**
      * @return If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \&#34;false\&#34; will be assumed as the value for this attribute.
      * 
      */
-    public Boolean accountFormVisible() {
-        return this.accountFormVisible;
+    public Optional<Boolean> accountFormVisible() {
+        return Optional.ofNullable(this.accountFormVisible);
     }
     /**
      * @return If true, admin has granted consent to perform managed app run-time operations.
      * 
      */
-    public Boolean adminConsentGranted() {
-        return this.adminConsentGranted;
+    public Optional<Boolean> adminConsentGranted() {
+        return Optional.ofNullable(this.adminConsentGranted);
     }
     /**
      * @return ConnectorBundle configuration properties
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties() {
-        return this.bundleConfigurationProperties;
+        return this.bundleConfigurationProperties == null ? List.of() : this.bundleConfigurationProperties;
     }
     /**
      * @return Configurable options maintaining a pool of ICF connector instances. Values for sub attributes can be set only if the ConnectorBundle referenced in the App has connectorPoolingSupported set to true
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations() {
-        return this.bundlePoolConfigurations;
+        return this.bundlePoolConfigurations == null ? List.of() : this.bundlePoolConfigurations;
     }
     /**
      * @return If true, the managed app can be authoritative.
      * 
      */
-    public Boolean canBeAuthoritative() {
-        return this.canBeAuthoritative;
+    public Optional<Boolean> canBeAuthoritative() {
+        return Optional.ofNullable(this.canBeAuthoritative);
     }
     /**
      * @return If true, the accounts of the application are managed through an ICF connector bundle
      * 
      */
-    public Boolean connected() {
-        return this.connected;
+    public Optional<Boolean> connected() {
+        return Optional.ofNullable(this.connected);
     }
     /**
      * @return ConnectorBundle
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles() {
-        return this.connectorBundles;
+        return this.connectorBundles == null ? List.of() : this.connectorBundles;
     }
     /**
      * @return If true, send activation email to new users created from authoritative sync.
      * 
      */
-    public Boolean enableAuthSyncNewUserNotification() {
-        return this.enableAuthSyncNewUserNotification;
+    public Optional<Boolean> enableAuthSyncNewUserNotification() {
+        return Optional.ofNullable(this.enableAuthSyncNewUserNotification);
     }
     /**
      * @return If true, sync run-time operations are enabled for this App.
      * 
      */
-    public Boolean enableSync() {
-        return this.enableSync;
+    public Optional<Boolean> enableSync() {
+        return Optional.ofNullable(this.enableSync);
     }
     /**
      * @return If true, send sync summary as notification upon job completion.
      * 
      */
-    public Boolean enableSyncSummaryReportNotification() {
-        return this.enableSyncSummaryReportNotification;
+    public Optional<Boolean> enableSyncSummaryReportNotification() {
+        return Optional.ofNullable(this.enableSyncSummaryReportNotification);
     }
     /**
      * @return Flat file connector bundle configuration properties
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties() {
-        return this.flatFileBundleConfigurationProperties;
+        return this.flatFileBundleConfigurationProperties == null ? List.of() : this.flatFileBundleConfigurationProperties;
     }
     /**
      * @return Flat file connector bundle to sync from a flat file.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles() {
-        return this.flatFileConnectorBundles;
+        return this.flatFileConnectorBundles == null ? List.of() : this.flatFileConnectorBundles;
     }
     /**
      * @return IdentityBridges associated with this App
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges() {
-        return this.identityBridges;
+        return this.identityBridges == null ? List.of() : this.identityBridges;
     }
     /**
      * @return If true, sync from the managed app will be performed as authoritative sync.
      * 
      */
-    public Boolean isAuthoritative() {
-        return this.isAuthoritative;
+    public Optional<Boolean> isAuthoritative() {
+        return Optional.ofNullable(this.isAuthoritative);
     }
     /**
      * @return If true, the managed app is a directory.
      * 
      */
-    public Boolean isDirectory() {
-        return this.isDirectory;
+    public Optional<Boolean> isDirectory() {
+        return Optional.ofNullable(this.isDirectory);
     }
     /**
      * @return If true, the managed app is an On-Premise app.
      * 
      */
-    public Boolean isOnPremiseApp() {
-        return this.isOnPremiseApp;
+    public Optional<Boolean> isOnPremiseApp() {
+        return Optional.ofNullable(this.isOnPremiseApp);
     }
     /**
      * @return If true, the managed app supports schema customization.
      * 
      */
-    public Boolean isSchemaCustomizationSupported() {
-        return this.isSchemaCustomizationSupported;
+    public Optional<Boolean> isSchemaCustomizationSupported() {
+        return Optional.ofNullable(this.isSchemaCustomizationSupported);
     }
     /**
      * @return If true, the managed app supports schema discovery.
      * 
      */
-    public Boolean isSchemaDiscoverySupported() {
-        return this.isSchemaDiscoverySupported;
+    public Optional<Boolean> isSchemaDiscoverySupported() {
+        return Optional.ofNullable(this.isSchemaDiscoverySupported);
     }
     /**
      * @return If true, the managed app requires 3-legged OAuth for authorization.
      * 
      */
-    public Boolean isThreeLeggedOauthEnabled() {
-        return this.isThreeLeggedOauthEnabled;
+    public Optional<Boolean> isThreeLeggedOauthEnabled() {
+        return Optional.ofNullable(this.isThreeLeggedOauthEnabled);
     }
     /**
      * @return If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
      * 
      */
-    public Boolean isTwoLeggedOauthEnabled() {
-        return this.isTwoLeggedOauthEnabled;
+    public Optional<Boolean> isTwoLeggedOauthEnabled() {
+        return Optional.ofNullable(this.isTwoLeggedOauthEnabled);
     }
     /**
      * @return Object classes
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses() {
-        return this.objectClasses;
+        return this.objectClasses == null ? List.of() : this.objectClasses;
     }
     /**
      * @return The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App&#39;s configuration with respect to synchronization.
      * 
      */
-    public String syncConfigLastModified() {
-        return this.syncConfigLastModified;
+    public Optional<String> syncConfigLastModified() {
+        return Optional.ofNullable(this.syncConfigLastModified);
     }
     /**
      * @return The value of this attribute persists any OAuth access token that the system uses to connect to this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be two-legged or three-legged. A two-legged flow involves only the requester and the server. A three-legged flow also requires the consent of a user -- in this case the consent of an administrator.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials() {
-        return this.threeLeggedOauthCredentials;
+        return this.threeLeggedOauthCredentials == null ? List.of() : this.threeLeggedOauthCredentials;
     }
     /**
      * @return Three legged OAuth provider name in Oracle Identity Cloud Service.
      * 
      */
-    public String threeLeggedOauthProviderName() {
-        return this.threeLeggedOauthProviderName;
+    public Optional<String> threeLeggedOauthProviderName() {
+        return Optional.ofNullable(this.threeLeggedOauthProviderName);
     }
 
     public static Builder builder() {
@@ -319,30 +321,30 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean accountFormVisible;
-        private Boolean adminConsentGranted;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations;
-        private Boolean canBeAuthoritative;
-        private Boolean connected;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles;
-        private Boolean enableAuthSyncNewUserNotification;
-        private Boolean enableSync;
-        private Boolean enableSyncSummaryReportNotification;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges;
-        private Boolean isAuthoritative;
-        private Boolean isDirectory;
-        private Boolean isOnPremiseApp;
-        private Boolean isSchemaCustomizationSupported;
-        private Boolean isSchemaDiscoverySupported;
-        private Boolean isThreeLeggedOauthEnabled;
-        private Boolean isTwoLeggedOauthEnabled;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses;
-        private String syncConfigLastModified;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials;
-        private String threeLeggedOauthProviderName;
+        private @Nullable Boolean accountFormVisible;
+        private @Nullable Boolean adminConsentGranted;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations;
+        private @Nullable Boolean canBeAuthoritative;
+        private @Nullable Boolean connected;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles;
+        private @Nullable Boolean enableAuthSyncNewUserNotification;
+        private @Nullable Boolean enableSync;
+        private @Nullable Boolean enableSyncSummaryReportNotification;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges;
+        private @Nullable Boolean isAuthoritative;
+        private @Nullable Boolean isDirectory;
+        private @Nullable Boolean isOnPremiseApp;
+        private @Nullable Boolean isSchemaCustomizationSupported;
+        private @Nullable Boolean isSchemaDiscoverySupported;
+        private @Nullable Boolean isThreeLeggedOauthEnabled;
+        private @Nullable Boolean isTwoLeggedOauthEnabled;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses;
+        private @Nullable String syncConfigLastModified;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials;
+        private @Nullable String threeLeggedOauthProviderName;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -373,147 +375,147 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
 
         @CustomType.Setter
-        public Builder accountFormVisible(Boolean accountFormVisible) {
-            this.accountFormVisible = Objects.requireNonNull(accountFormVisible);
+        public Builder accountFormVisible(@Nullable Boolean accountFormVisible) {
+            this.accountFormVisible = accountFormVisible;
             return this;
         }
         @CustomType.Setter
-        public Builder adminConsentGranted(Boolean adminConsentGranted) {
-            this.adminConsentGranted = Objects.requireNonNull(adminConsentGranted);
+        public Builder adminConsentGranted(@Nullable Boolean adminConsentGranted) {
+            this.adminConsentGranted = adminConsentGranted;
             return this;
         }
         @CustomType.Setter
-        public Builder bundleConfigurationProperties(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties) {
-            this.bundleConfigurationProperties = Objects.requireNonNull(bundleConfigurationProperties);
+        public Builder bundleConfigurationProperties(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties) {
+            this.bundleConfigurationProperties = bundleConfigurationProperties;
             return this;
         }
         public Builder bundleConfigurationProperties(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty... bundleConfigurationProperties) {
             return bundleConfigurationProperties(List.of(bundleConfigurationProperties));
         }
         @CustomType.Setter
-        public Builder bundlePoolConfigurations(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations) {
-            this.bundlePoolConfigurations = Objects.requireNonNull(bundlePoolConfigurations);
+        public Builder bundlePoolConfigurations(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations) {
+            this.bundlePoolConfigurations = bundlePoolConfigurations;
             return this;
         }
         public Builder bundlePoolConfigurations(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration... bundlePoolConfigurations) {
             return bundlePoolConfigurations(List.of(bundlePoolConfigurations));
         }
         @CustomType.Setter
-        public Builder canBeAuthoritative(Boolean canBeAuthoritative) {
-            this.canBeAuthoritative = Objects.requireNonNull(canBeAuthoritative);
+        public Builder canBeAuthoritative(@Nullable Boolean canBeAuthoritative) {
+            this.canBeAuthoritative = canBeAuthoritative;
             return this;
         }
         @CustomType.Setter
-        public Builder connected(Boolean connected) {
-            this.connected = Objects.requireNonNull(connected);
+        public Builder connected(@Nullable Boolean connected) {
+            this.connected = connected;
             return this;
         }
         @CustomType.Setter
-        public Builder connectorBundles(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles) {
-            this.connectorBundles = Objects.requireNonNull(connectorBundles);
+        public Builder connectorBundles(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles) {
+            this.connectorBundles = connectorBundles;
             return this;
         }
         public Builder connectorBundles(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle... connectorBundles) {
             return connectorBundles(List.of(connectorBundles));
         }
         @CustomType.Setter
-        public Builder enableAuthSyncNewUserNotification(Boolean enableAuthSyncNewUserNotification) {
-            this.enableAuthSyncNewUserNotification = Objects.requireNonNull(enableAuthSyncNewUserNotification);
+        public Builder enableAuthSyncNewUserNotification(@Nullable Boolean enableAuthSyncNewUserNotification) {
+            this.enableAuthSyncNewUserNotification = enableAuthSyncNewUserNotification;
             return this;
         }
         @CustomType.Setter
-        public Builder enableSync(Boolean enableSync) {
-            this.enableSync = Objects.requireNonNull(enableSync);
+        public Builder enableSync(@Nullable Boolean enableSync) {
+            this.enableSync = enableSync;
             return this;
         }
         @CustomType.Setter
-        public Builder enableSyncSummaryReportNotification(Boolean enableSyncSummaryReportNotification) {
-            this.enableSyncSummaryReportNotification = Objects.requireNonNull(enableSyncSummaryReportNotification);
+        public Builder enableSyncSummaryReportNotification(@Nullable Boolean enableSyncSummaryReportNotification) {
+            this.enableSyncSummaryReportNotification = enableSyncSummaryReportNotification;
             return this;
         }
         @CustomType.Setter
-        public Builder flatFileBundleConfigurationProperties(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties) {
-            this.flatFileBundleConfigurationProperties = Objects.requireNonNull(flatFileBundleConfigurationProperties);
+        public Builder flatFileBundleConfigurationProperties(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties) {
+            this.flatFileBundleConfigurationProperties = flatFileBundleConfigurationProperties;
             return this;
         }
         public Builder flatFileBundleConfigurationProperties(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty... flatFileBundleConfigurationProperties) {
             return flatFileBundleConfigurationProperties(List.of(flatFileBundleConfigurationProperties));
         }
         @CustomType.Setter
-        public Builder flatFileConnectorBundles(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles) {
-            this.flatFileConnectorBundles = Objects.requireNonNull(flatFileConnectorBundles);
+        public Builder flatFileConnectorBundles(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles) {
+            this.flatFileConnectorBundles = flatFileConnectorBundles;
             return this;
         }
         public Builder flatFileConnectorBundles(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle... flatFileConnectorBundles) {
             return flatFileConnectorBundles(List.of(flatFileConnectorBundles));
         }
         @CustomType.Setter
-        public Builder identityBridges(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges) {
-            this.identityBridges = Objects.requireNonNull(identityBridges);
+        public Builder identityBridges(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges) {
+            this.identityBridges = identityBridges;
             return this;
         }
         public Builder identityBridges(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge... identityBridges) {
             return identityBridges(List.of(identityBridges));
         }
         @CustomType.Setter
-        public Builder isAuthoritative(Boolean isAuthoritative) {
-            this.isAuthoritative = Objects.requireNonNull(isAuthoritative);
+        public Builder isAuthoritative(@Nullable Boolean isAuthoritative) {
+            this.isAuthoritative = isAuthoritative;
             return this;
         }
         @CustomType.Setter
-        public Builder isDirectory(Boolean isDirectory) {
-            this.isDirectory = Objects.requireNonNull(isDirectory);
+        public Builder isDirectory(@Nullable Boolean isDirectory) {
+            this.isDirectory = isDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder isOnPremiseApp(Boolean isOnPremiseApp) {
-            this.isOnPremiseApp = Objects.requireNonNull(isOnPremiseApp);
+        public Builder isOnPremiseApp(@Nullable Boolean isOnPremiseApp) {
+            this.isOnPremiseApp = isOnPremiseApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isSchemaCustomizationSupported(Boolean isSchemaCustomizationSupported) {
-            this.isSchemaCustomizationSupported = Objects.requireNonNull(isSchemaCustomizationSupported);
+        public Builder isSchemaCustomizationSupported(@Nullable Boolean isSchemaCustomizationSupported) {
+            this.isSchemaCustomizationSupported = isSchemaCustomizationSupported;
             return this;
         }
         @CustomType.Setter
-        public Builder isSchemaDiscoverySupported(Boolean isSchemaDiscoverySupported) {
-            this.isSchemaDiscoverySupported = Objects.requireNonNull(isSchemaDiscoverySupported);
+        public Builder isSchemaDiscoverySupported(@Nullable Boolean isSchemaDiscoverySupported) {
+            this.isSchemaDiscoverySupported = isSchemaDiscoverySupported;
             return this;
         }
         @CustomType.Setter
-        public Builder isThreeLeggedOauthEnabled(Boolean isThreeLeggedOauthEnabled) {
-            this.isThreeLeggedOauthEnabled = Objects.requireNonNull(isThreeLeggedOauthEnabled);
+        public Builder isThreeLeggedOauthEnabled(@Nullable Boolean isThreeLeggedOauthEnabled) {
+            this.isThreeLeggedOauthEnabled = isThreeLeggedOauthEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isTwoLeggedOauthEnabled(Boolean isTwoLeggedOauthEnabled) {
-            this.isTwoLeggedOauthEnabled = Objects.requireNonNull(isTwoLeggedOauthEnabled);
+        public Builder isTwoLeggedOauthEnabled(@Nullable Boolean isTwoLeggedOauthEnabled) {
+            this.isTwoLeggedOauthEnabled = isTwoLeggedOauthEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder objectClasses(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses) {
-            this.objectClasses = Objects.requireNonNull(objectClasses);
+        public Builder objectClasses(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses) {
+            this.objectClasses = objectClasses;
             return this;
         }
         public Builder objectClasses(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass... objectClasses) {
             return objectClasses(List.of(objectClasses));
         }
         @CustomType.Setter
-        public Builder syncConfigLastModified(String syncConfigLastModified) {
-            this.syncConfigLastModified = Objects.requireNonNull(syncConfigLastModified);
+        public Builder syncConfigLastModified(@Nullable String syncConfigLastModified) {
+            this.syncConfigLastModified = syncConfigLastModified;
             return this;
         }
         @CustomType.Setter
-        public Builder threeLeggedOauthCredentials(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials) {
-            this.threeLeggedOauthCredentials = Objects.requireNonNull(threeLeggedOauthCredentials);
+        public Builder threeLeggedOauthCredentials(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials) {
+            this.threeLeggedOauthCredentials = threeLeggedOauthCredentials;
             return this;
         }
         public Builder threeLeggedOauthCredentials(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential... threeLeggedOauthCredentials) {
             return threeLeggedOauthCredentials(List.of(threeLeggedOauthCredentials));
         }
         @CustomType.Setter
-        public Builder threeLeggedOauthProviderName(String threeLeggedOauthProviderName) {
-            this.threeLeggedOauthProviderName = Objects.requireNonNull(threeLeggedOauthProviderName);
+        public Builder threeLeggedOauthProviderName(@Nullable String threeLeggedOauthProviderName) {
+            this.threeLeggedOauthProviderName = threeLeggedOauthProviderName;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp build() {

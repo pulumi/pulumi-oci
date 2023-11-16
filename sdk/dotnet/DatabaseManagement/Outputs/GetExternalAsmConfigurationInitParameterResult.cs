@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The user-friendly name for the ASM instance. The name does not have to be unique.
         /// </summary>
-        public readonly string AsmInstanceDisplayName;
+        public readonly string? AsmInstanceDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
         /// </summary>
-        public readonly string AsmInstanceId;
+        public readonly string? AsmInstanceId;
         /// <summary>
         /// The list of disk group names that an ASM instance mounts at startup or when the `ALTER DISKGROUP ALL MOUNT` statement is issued.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// An operating system-dependent value used to limit the set of disks considered for discovery.
         /// </summary>
-        public readonly string DiskDiscoveryPath;
+        public readonly string? DiskDiscoveryPath;
         /// <summary>
         /// The list of failure groups that contain preferred read disks.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The maximum power on an ASM instance for disk rebalancing.
         /// </summary>
-        public readonly int RebalancePower;
+        public readonly int? RebalancePower;
 
         [OutputConstructor]
         private GetExternalAsmConfigurationInitParameterResult(
-            string asmInstanceDisplayName,
+            string? asmInstanceDisplayName,
 
-            string asmInstanceId,
+            string? asmInstanceId,
 
             ImmutableArray<string> autoMountDiskGroups,
 
-            string diskDiscoveryPath,
+            string? diskDiscoveryPath,
 
             ImmutableArray<string> preferredReadFailureGroups,
 
-            int rebalancePower)
+            int? rebalancePower)
         {
             AsmInstanceDisplayName = asmInstanceDisplayName;
             AsmInstanceId = asmInstanceId;

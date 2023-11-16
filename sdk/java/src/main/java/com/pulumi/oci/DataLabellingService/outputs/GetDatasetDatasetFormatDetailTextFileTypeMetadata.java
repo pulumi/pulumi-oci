@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetDatasetFormatDetailTextFileTypeMetadata {
@@ -14,75 +16,75 @@ public final class GetDatasetDatasetFormatDetailTextFileTypeMetadata {
      * @return A column delimiter
      * 
      */
-    private String columnDelimiter;
+    private @Nullable String columnDelimiter;
     /**
      * @return The index of a selected column. This is a zero-based index.
      * 
      */
-    private Integer columnIndex;
+    private @Nullable Integer columnIndex;
     /**
      * @return The name of a selected column.
      * 
      */
-    private String columnName;
+    private @Nullable String columnName;
     /**
      * @return An escape character.
      * 
      */
-    private String escapeCharacter;
+    private @Nullable String escapeCharacter;
     /**
      * @return It defines the format type of text files.
      * 
      */
-    private String formatType;
+    private @Nullable String formatType;
     /**
      * @return A line delimiter.
      * 
      */
-    private String lineDelimiter;
+    private @Nullable String lineDelimiter;
 
     private GetDatasetDatasetFormatDetailTextFileTypeMetadata() {}
     /**
      * @return A column delimiter
      * 
      */
-    public String columnDelimiter() {
-        return this.columnDelimiter;
+    public Optional<String> columnDelimiter() {
+        return Optional.ofNullable(this.columnDelimiter);
     }
     /**
      * @return The index of a selected column. This is a zero-based index.
      * 
      */
-    public Integer columnIndex() {
-        return this.columnIndex;
+    public Optional<Integer> columnIndex() {
+        return Optional.ofNullable(this.columnIndex);
     }
     /**
      * @return The name of a selected column.
      * 
      */
-    public String columnName() {
-        return this.columnName;
+    public Optional<String> columnName() {
+        return Optional.ofNullable(this.columnName);
     }
     /**
      * @return An escape character.
      * 
      */
-    public String escapeCharacter() {
-        return this.escapeCharacter;
+    public Optional<String> escapeCharacter() {
+        return Optional.ofNullable(this.escapeCharacter);
     }
     /**
      * @return It defines the format type of text files.
      * 
      */
-    public String formatType() {
-        return this.formatType;
+    public Optional<String> formatType() {
+        return Optional.ofNullable(this.formatType);
     }
     /**
      * @return A line delimiter.
      * 
      */
-    public String lineDelimiter() {
-        return this.lineDelimiter;
+    public Optional<String> lineDelimiter() {
+        return Optional.ofNullable(this.lineDelimiter);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetDatasetDatasetFormatDetailTextFileTypeMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String columnDelimiter;
-        private Integer columnIndex;
-        private String columnName;
-        private String escapeCharacter;
-        private String formatType;
-        private String lineDelimiter;
+        private @Nullable String columnDelimiter;
+        private @Nullable Integer columnIndex;
+        private @Nullable String columnName;
+        private @Nullable String escapeCharacter;
+        private @Nullable String formatType;
+        private @Nullable String lineDelimiter;
         public Builder() {}
         public Builder(GetDatasetDatasetFormatDetailTextFileTypeMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetDatasetDatasetFormatDetailTextFileTypeMetadata {
         }
 
         @CustomType.Setter
-        public Builder columnDelimiter(String columnDelimiter) {
-            this.columnDelimiter = Objects.requireNonNull(columnDelimiter);
+        public Builder columnDelimiter(@Nullable String columnDelimiter) {
+            this.columnDelimiter = columnDelimiter;
             return this;
         }
         @CustomType.Setter
-        public Builder columnIndex(Integer columnIndex) {
-            this.columnIndex = Objects.requireNonNull(columnIndex);
+        public Builder columnIndex(@Nullable Integer columnIndex) {
+            this.columnIndex = columnIndex;
             return this;
         }
         @CustomType.Setter
-        public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+        public Builder columnName(@Nullable String columnName) {
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
-        public Builder escapeCharacter(String escapeCharacter) {
-            this.escapeCharacter = Objects.requireNonNull(escapeCharacter);
+        public Builder escapeCharacter(@Nullable String escapeCharacter) {
+            this.escapeCharacter = escapeCharacter;
             return this;
         }
         @CustomType.Setter
-        public Builder formatType(String formatType) {
-            this.formatType = Objects.requireNonNull(formatType);
+        public Builder formatType(@Nullable String formatType) {
+            this.formatType = formatType;
             return this;
         }
         @CustomType.Setter
-        public Builder lineDelimiter(String lineDelimiter) {
-            this.lineDelimiter = Objects.requireNonNull(lineDelimiter);
+        public Builder lineDelimiter(@Nullable String lineDelimiter) {
+            this.lineDelimiter = lineDelimiter;
             return this;
         }
         public GetDatasetDatasetFormatDetailTextFileTypeMetadata build() {

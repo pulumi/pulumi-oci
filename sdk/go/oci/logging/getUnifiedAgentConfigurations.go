@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.
@@ -82,7 +81,7 @@ type GetUnifiedAgentConfigurationsResult struct {
 	Filters     []GetUnifiedAgentConfigurationsFilter `pulumi:"filters"`
 	GroupId     *string                               `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string  `pulumi:"id"`
+	Id                       *string `pulumi:"id"`
 	IsCompartmentIdInSubtree *bool   `pulumi:"isCompartmentIdInSubtree"`
 	LogId                    *string `pulumi:"logId"`
 	// The pipeline state.
@@ -140,12 +139,6 @@ func (o GetUnifiedAgentConfigurationsResultOutput) ToGetUnifiedAgentConfiguratio
 	return o
 }
 
-func (o GetUnifiedAgentConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationsResult] {
-	return pulumix.Output[GetUnifiedAgentConfigurationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
 func (o GetUnifiedAgentConfigurationsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -165,8 +158,8 @@ func (o GetUnifiedAgentConfigurationsResultOutput) GroupId() pulumi.StringPtrOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUnifiedAgentConfigurationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUnifiedAgentConfigurationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetUnifiedAgentConfigurationsResultOutput) IsCompartmentIdInSubtree() pulumi.BoolPtrOutput {

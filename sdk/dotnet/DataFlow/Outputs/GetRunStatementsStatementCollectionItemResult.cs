@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The statement code to execute. Example: `println(sc.version)`
         /// </summary>
-        public readonly string Code;
+        public readonly string? Code;
         /// <summary>
         /// The statement ID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The execution output of a statement.
         /// </summary>
@@ -28,41 +28,41 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The execution progress.
         /// </summary>
-        public readonly double Progress;
+        public readonly double? Progress;
         /// <summary>
         /// The unique ID for the run
         /// </summary>
-        public readonly string RunId;
+        public readonly string? RunId;
         /// <summary>
         /// The LifecycleState of the statement.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCompleted;
+        public readonly string? TimeCompleted;
         /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetRunStatementsStatementCollectionItemResult(
-            string code,
+            string? code,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRunStatementsStatementCollectionItemOutputResult> outputs,
 
-            double progress,
+            double? progress,
 
-            string runId,
+            string? runId,
 
-            string state,
+            string? state,
 
-            string timeCompleted,
+            string? timeCompleted,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Code = code;
             Id = id;

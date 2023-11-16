@@ -81,9 +81,6 @@ class GetSecurityAssessmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the security assessment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -94,9 +91,6 @@ class GetSecurityAssessmentsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the security assessment.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -106,7 +100,7 @@ class GetSecurityAssessmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -115,9 +109,6 @@ class GetSecurityAssessmentsResult:
     @property
     @pulumi.getter(name="isBaseline")
     def is_baseline(self) -> Optional[bool]:
-        """
-        Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-        """
         return pulumi.get(self, "is_baseline")
 
     @property
@@ -132,18 +123,12 @@ class GetSecurityAssessmentsResult:
 
     @property
     @pulumi.getter(name="securityAssessments")
-    def security_assessments(self) -> Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentResult']:
-        """
-        The list of security_assessments.
-        """
+    def security_assessments(self) -> Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentResult']]:
         return pulumi.get(self, "security_assessments")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the security assessment.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -164,17 +149,11 @@ class GetSecurityAssessmentsResult:
     @property
     @pulumi.getter(name="triggeredBy")
     def triggered_by(self) -> Optional[str]:
-        """
-        Indicates whether the security assessment was created by system or by a user.
-        """
         return pulumi.get(self, "triggered_by")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of this security assessment. The possible types are:
-        """
         return pulumi.get(self, "type")
 
 
@@ -218,63 +197,7 @@ def get_security_assessments(access_level: Optional[str] = None,
                              type: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentsResult:
     """
-    This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of security assessments.
-
-    The ListSecurityAssessments operation returns only the assessments in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessments = oci.DataSafe.get_security_assessments(compartment_id=var["compartment_id"],
-        access_level=var["security_assessment_access_level"],
-        compartment_id_in_subtree=var["security_assessment_compartment_id_in_subtree"],
-        display_name=var["security_assessment_display_name"],
-        is_baseline=var["security_assessment_is_baseline"],
-        is_schedule_assessment=var["security_assessment_is_schedule_assessment"],
-        schedule_assessment_id=oci_data_safe_schedule_assessment["test_schedule_assessment"]["id"],
-        state=var["security_assessment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["security_assessment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["security_assessment_time_created_less_than"],
-        triggered_by=var["security_assessment_triggered_by"],
-        type=var["security_assessment_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_baseline: A filter to return only the security assessments that are set as a baseline.
-    :param bool is_schedule_assessment: A filter to return only security assessments of type save schedule.
-    :param str schedule_assessment_id: The OCID of the security assessment of type SAVE_SCHEDULE.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str triggered_by: A filter to return only security asessments that were created by either user or system.
-    :param str type: A filter to return only items that match the specified security assessment type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -330,62 +253,6 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
                                     type: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentsResult]:
     """
-    This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of security assessments.
-
-    The ListSecurityAssessments operation returns only the assessments in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessments = oci.DataSafe.get_security_assessments(compartment_id=var["compartment_id"],
-        access_level=var["security_assessment_access_level"],
-        compartment_id_in_subtree=var["security_assessment_compartment_id_in_subtree"],
-        display_name=var["security_assessment_display_name"],
-        is_baseline=var["security_assessment_is_baseline"],
-        is_schedule_assessment=var["security_assessment_is_schedule_assessment"],
-        schedule_assessment_id=oci_data_safe_schedule_assessment["test_schedule_assessment"]["id"],
-        state=var["security_assessment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["security_assessment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["security_assessment_time_created_less_than"],
-        triggered_by=var["security_assessment_triggered_by"],
-        type=var["security_assessment_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_baseline: A filter to return only the security assessments that are set as a baseline.
-    :param bool is_schedule_assessment: A filter to return only security assessments of type save schedule.
-    :param str schedule_assessment_id: The OCID of the security assessment of type SAVE_SCHEDULE.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str triggered_by: A filter to return only security asessments that were created by either user or system.
-    :param str type: A filter to return only items that match the specified security assessment type.
+    Use this data source to access information about an existing resource.
     """
     ...

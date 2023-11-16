@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig {
@@ -14,7 +15,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemp
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private List<GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+    private @Nullable List<GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
     private GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig() {}
     /**
@@ -22,7 +23,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemp
      * 
      */
     public List<GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions() {
-        return this.preemptionActions;
+        return this.preemptionActions == null ? List.of() : this.preemptionActions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemp
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+        private @Nullable List<GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
         public Builder() {}
         public Builder(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemp
         }
 
         @CustomType.Setter
-        public Builder preemptionActions(List<GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+        public Builder preemptionActions(@Nullable List<GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction... preemptionActions) {

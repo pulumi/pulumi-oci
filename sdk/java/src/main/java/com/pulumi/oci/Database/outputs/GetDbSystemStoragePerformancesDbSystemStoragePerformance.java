@@ -9,6 +9,8 @@ import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesDbSystemSto
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
@@ -16,17 +18,17 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
      * @return List of storage performance for the DATA disks
      * 
      */
-    private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists;
+    private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists;
     /**
      * @return List of storage performance for the RECO disks
      * 
      */
-    private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists;
+    private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists;
     /**
      * @return Optional. Filters the performance results by shape type.
      * 
      */
-    private String shapeType;
+    private @Nullable String shapeType;
 
     private GetDbSystemStoragePerformancesDbSystemStoragePerformance() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
      * 
      */
     public List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists() {
-        return this.dataStoragePerformanceLists;
+        return this.dataStoragePerformanceLists == null ? List.of() : this.dataStoragePerformanceLists;
     }
     /**
      * @return List of storage performance for the RECO disks
      * 
      */
     public List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists() {
-        return this.recoStoragePerformanceLists;
+        return this.recoStoragePerformanceLists == null ? List.of() : this.recoStoragePerformanceLists;
     }
     /**
      * @return Optional. Filters the performance results by shape type.
      * 
      */
-    public String shapeType() {
-        return this.shapeType;
+    public Optional<String> shapeType() {
+        return Optional.ofNullable(this.shapeType);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists;
-        private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists;
-        private String shapeType;
+        private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists;
+        private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists;
+        private @Nullable String shapeType;
         public Builder() {}
         public Builder(GetDbSystemStoragePerformancesDbSystemStoragePerformance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +74,24 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
         }
 
         @CustomType.Setter
-        public Builder dataStoragePerformanceLists(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists) {
-            this.dataStoragePerformanceLists = Objects.requireNonNull(dataStoragePerformanceLists);
+        public Builder dataStoragePerformanceLists(@Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists) {
+            this.dataStoragePerformanceLists = dataStoragePerformanceLists;
             return this;
         }
         public Builder dataStoragePerformanceLists(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList... dataStoragePerformanceLists) {
             return dataStoragePerformanceLists(List.of(dataStoragePerformanceLists));
         }
         @CustomType.Setter
-        public Builder recoStoragePerformanceLists(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists) {
-            this.recoStoragePerformanceLists = Objects.requireNonNull(recoStoragePerformanceLists);
+        public Builder recoStoragePerformanceLists(@Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists) {
+            this.recoStoragePerformanceLists = recoStoragePerformanceLists;
             return this;
         }
         public Builder recoStoragePerformanceLists(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList... recoStoragePerformanceLists) {
             return recoStoragePerformanceLists(List.of(recoStoragePerformanceLists));
         }
         @CustomType.Setter
-        public Builder shapeType(String shapeType) {
-            this.shapeType = Objects.requireNonNull(shapeType);
+        public Builder shapeType(@Nullable String shapeType) {
+            this.shapeType = shapeType;
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformance build() {

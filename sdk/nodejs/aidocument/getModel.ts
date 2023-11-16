@@ -47,55 +47,55 @@ export interface GetModelResult {
     /**
      * The compartment identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
      */
-    readonly componentModels: outputs.AiDocument.GetModelComponentModel[];
+    readonly componentModels?: outputs.AiDocument.GetModelComponentModel[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * An optional description of the model.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A human-friendly name for the model, which can be changed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A unique identifier that is immutable after creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Set to true when the model is created by using multiple key value extraction models.
      */
-    readonly isComposedModel: boolean;
+    readonly isComposedModel?: boolean;
     /**
      * Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      */
-    readonly isQuickMode: boolean;
+    readonly isQuickMode?: boolean;
     /**
      * The collection of labels used to train the custom model.
      */
-    readonly labels: string[];
+    readonly labels?: string[];
     /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
      */
-    readonly maxTrainingTimeInHours: number;
+    readonly maxTrainingTimeInHours?: number;
     /**
      * Trained Model Metrics.
      */
-    readonly metrics: outputs.AiDocument.GetModelMetric[];
+    readonly metrics?: outputs.AiDocument.GetModelMetric[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
      */
@@ -103,51 +103,51 @@ export interface GetModelResult {
     /**
      * The type of the Document model.
      */
-    readonly modelType: string;
+    readonly modelType?: string;
     /**
      * The version of the model.
      */
-    readonly modelVersion: string;
+    readonly modelVersion?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The current state of the model.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The tenancy id of the model.
      */
-    readonly tenancyId: string;
+    readonly tenancyId?: string;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    readonly testingDatasets: outputs.AiDocument.GetModelTestingDataset[];
+    readonly testingDatasets?: outputs.AiDocument.GetModelTestingDataset[];
     /**
      * When the model was created, as an RFC3339 datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * When the model was updated, as an RFC3339 datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The total hours actually used for model training.
      */
-    readonly trainedTimeInHours: number;
+    readonly trainedTimeInHours?: number;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    readonly trainingDatasets: outputs.AiDocument.GetModelTrainingDataset[];
+    readonly trainingDatasets?: outputs.AiDocument.GetModelTrainingDataset[];
     /**
      * The base entity which is the input for creating and training a model.
      */
-    readonly validationDatasets: outputs.AiDocument.GetModelValidationDataset[];
+    readonly validationDatasets?: outputs.AiDocument.GetModelValidationDataset[];
 }
 /**
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Document service.

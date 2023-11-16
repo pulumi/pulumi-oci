@@ -76,7 +76,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// OCID of associated Distribution Channel.
         /// </summary>
@@ -84,42 +84,42 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string MediaAssetId;
         /// <summary>
         /// The ingest MediaWorkflowJob ID that created this attachment.
         /// </summary>
-        public readonly string MediaWorkflowJobId;
+        public readonly string? MediaWorkflowJobId;
         /// <summary>
         /// The identifier for the metadata.
         /// </summary>
-        public readonly string MetadataRef;
+        public readonly string? MetadataRef;
         /// <summary>
         /// Lifecycle state of the attachment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Version of the attachment.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetMediaAssetDistributionChannelAttachmentResult(
-            string displayName,
+            string? displayName,
 
             string distributionChannelId,
 
-            string id,
+            string? id,
 
             string mediaAssetId,
 
-            string mediaWorkflowJobId,
+            string? mediaWorkflowJobId,
 
-            string metadataRef,
+            string? metadataRef,
 
-            string state,
+            string? state,
 
-            string version)
+            string? version)
         {
             DisplayName = displayName;
             DistributionChannelId = distributionChannelId;

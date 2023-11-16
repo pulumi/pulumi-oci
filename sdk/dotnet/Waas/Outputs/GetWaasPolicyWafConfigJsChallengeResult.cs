@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
         /// </summary>
-        public readonly int ActionExpirationInSeconds;
+        public readonly int? ActionExpirationInSeconds;
         /// <summary>
         /// When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
         /// </summary>
-        public readonly bool AreRedirectsChallenged;
+        public readonly bool? AreRedirectsChallenged;
         /// <summary>
         /// The challenge settings if `action` is set to `BLOCK`.
         /// </summary>
-        public readonly Outputs.GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult ChallengeSettings;
+        public readonly Outputs.GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult? ChallengeSettings;
         /// <summary>
         /// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The number of failed requests before taking action. If unspecified, defaults to `10`.
         /// </summary>
-        public readonly int FailureThreshold;
+        public readonly int? FailureThreshold;
         /// <summary>
         /// Enables or disables the JavaScript challenge Web Application Firewall feature.
         /// </summary>
@@ -44,31 +44,31 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
         /// </summary>
-        public readonly bool IsNatEnabled;
+        public readonly bool? IsNatEnabled;
         /// <summary>
         /// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
         /// </summary>
-        public readonly Outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult SetHttpHeader;
+        public readonly Outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult? SetHttpHeader;
 
         [OutputConstructor]
         private GetWaasPolicyWafConfigJsChallengeResult(
-            string action,
+            string? action,
 
-            int actionExpirationInSeconds,
+            int? actionExpirationInSeconds,
 
-            bool areRedirectsChallenged,
+            bool? areRedirectsChallenged,
 
-            Outputs.GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult challengeSettings,
+            Outputs.GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult? challengeSettings,
 
             ImmutableArray<Outputs.GetWaasPolicyWafConfigJsChallengeCriteriaResult> criterias,
 
-            int failureThreshold,
+            int? failureThreshold,
 
             bool isEnabled,
 
-            bool isNatEnabled,
+            bool? isNatEnabled,
 
-            Outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult setHttpHeader)
+            Outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult? setHttpHeader)
         {
             Action = action;
             ActionExpirationInSeconds = actionExpirationInSeconds;

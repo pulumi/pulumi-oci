@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
@@ -77,7 +76,7 @@ type GetIpsecConnectionsResult struct {
 	DrgId   *string                     `pulumi:"drgId"`
 	Filters []GetIpsecConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetIpsecConnectionsOutput(ctx *pulumi.Context, args GetIpsecConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetIpsecConnectionsResultOutput {
@@ -123,12 +122,6 @@ func (o GetIpsecConnectionsResultOutput) ToGetIpsecConnectionsResultOutputWithCo
 	return o
 }
 
-func (o GetIpsecConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionsResult] {
-	return pulumix.Output[GetIpsecConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
 func (o GetIpsecConnectionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -154,8 +147,8 @@ func (o GetIpsecConnectionsResultOutput) Filters() GetIpsecConnectionsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpsecConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpsecConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

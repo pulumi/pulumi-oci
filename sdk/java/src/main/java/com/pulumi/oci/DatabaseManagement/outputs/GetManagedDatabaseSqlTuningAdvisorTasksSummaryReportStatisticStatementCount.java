@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount {
@@ -13,51 +15,51 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The number of distinct SQL statements.
      * 
      */
-    private Integer distinctSql;
+    private @Nullable Integer distinctSql;
     /**
      * @return The number of distinct SQL statements with errors.
      * 
      */
-    private Integer errorCount;
+    private @Nullable Integer errorCount;
     /**
      * @return The number of distinct SQL statements with findings.
      * 
      */
-    private Integer findingCount;
+    private @Nullable Integer findingCount;
     /**
      * @return The total number of SQL statements.
      * 
      */
-    private Integer totalSql;
+    private @Nullable Integer totalSql;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount() {}
     /**
      * @return The number of distinct SQL statements.
      * 
      */
-    public Integer distinctSql() {
-        return this.distinctSql;
+    public Optional<Integer> distinctSql() {
+        return Optional.ofNullable(this.distinctSql);
     }
     /**
      * @return The number of distinct SQL statements with errors.
      * 
      */
-    public Integer errorCount() {
-        return this.errorCount;
+    public Optional<Integer> errorCount() {
+        return Optional.ofNullable(this.errorCount);
     }
     /**
      * @return The number of distinct SQL statements with findings.
      * 
      */
-    public Integer findingCount() {
-        return this.findingCount;
+    public Optional<Integer> findingCount() {
+        return Optional.ofNullable(this.findingCount);
     }
     /**
      * @return The total number of SQL statements.
      * 
      */
-    public Integer totalSql() {
-        return this.totalSql;
+    public Optional<Integer> totalSql() {
+        return Optional.ofNullable(this.totalSql);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer distinctSql;
-        private Integer errorCount;
-        private Integer findingCount;
-        private Integer totalSql;
+        private @Nullable Integer distinctSql;
+        private @Nullable Integer errorCount;
+        private @Nullable Integer findingCount;
+        private @Nullable Integer totalSql;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         }
 
         @CustomType.Setter
-        public Builder distinctSql(Integer distinctSql) {
-            this.distinctSql = Objects.requireNonNull(distinctSql);
+        public Builder distinctSql(@Nullable Integer distinctSql) {
+            this.distinctSql = distinctSql;
             return this;
         }
         @CustomType.Setter
-        public Builder errorCount(Integer errorCount) {
-            this.errorCount = Objects.requireNonNull(errorCount);
+        public Builder errorCount(@Nullable Integer errorCount) {
+            this.errorCount = errorCount;
             return this;
         }
         @CustomType.Setter
-        public Builder findingCount(Integer findingCount) {
-            this.findingCount = Objects.requireNonNull(findingCount);
+        public Builder findingCount(@Nullable Integer findingCount) {
+            this.findingCount = findingCount;
             return this;
         }
         @CustomType.Setter
-        public Builder totalSql(Integer totalSql) {
-            this.totalSql = Objects.requireNonNull(totalSql);
+        public Builder totalSql(@Nullable Integer totalSql) {
+            this.totalSql = totalSql;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount build() {

@@ -66,16 +66,16 @@ export interface GetDecryptedDataResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly keyId: string;
     /**
      * The decrypted data, in the form of a base64-encoded value.
      */
-    readonly plaintext: string;
+    readonly plaintext?: string;
     /**
      * Checksum of the decrypted data.
      */
-    readonly plaintextChecksum: string;
+    readonly plaintextChecksum?: string;
 }
 /**
  * The `oci.Kms.getDecryptedData` data source provides details about a specific DecryptedData

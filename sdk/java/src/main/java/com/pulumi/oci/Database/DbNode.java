@@ -14,6 +14,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -37,70 +38,70 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalDetails", refs={String.class}, tree="[0]")
-    private Output<String> additionalDetails;
+    private Output</* @Nullable */ String> additionalDetails;
 
     /**
      * @return Additional information about the planned maintenance.
      * 
      */
-    public Output<String> additionalDetails() {
-        return this.additionalDetails;
+    public Output<Optional<String>> additionalDetails() {
+        return Codegen.optional(this.additionalDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
     @Export(name="backupIpId", refs={String.class}, tree="[0]")
-    private Output<String> backupIpId;
+    private Output</* @Nullable */ String> backupIpId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
-    public Output<String> backupIpId() {
-        return this.backupIpId;
+    public Output<Optional<String>> backupIpId() {
+        return Codegen.optional(this.backupIpId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      * 
      */
     @Export(name="backupVnic2id", refs={String.class}, tree="[0]")
-    private Output<String> backupVnic2id;
+    private Output</* @Nullable */ String> backupVnic2id;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      * 
      */
-    public Output<String> backupVnic2id() {
-        return this.backupVnic2id;
+    public Output<Optional<String>> backupVnic2id() {
+        return Codegen.optional(this.backupVnic2id);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      * 
      */
     @Export(name="backupVnicId", refs={String.class}, tree="[0]")
-    private Output<String> backupVnicId;
+    private Output</* @Nullable */ String> backupVnicId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      * 
      */
-    public Output<String> backupVnicId() {
-        return this.backupVnicId;
+    public Output<Optional<String>> backupVnicId() {
+        return Codegen.optional(this.backupVnicId);
     }
     /**
      * The number of CPU cores enabled on the Db node.
      * 
      */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpuCoreCount;
+    private Output</* @Nullable */ Integer> cpuCoreCount;
 
     /**
      * @return The number of CPU cores enabled on the Db node.
      * 
      */
-    public Output<Integer> cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Output<Optional<Integer>> cpuCoreCount() {
+        return Codegen.optional(this.cpuCoreCount);
     }
     /**
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -121,70 +122,70 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dbNodeStorageSizeInGbs;
+    private Output</* @Nullable */ Integer> dbNodeStorageSizeInGbs;
 
     /**
      * @return The allocated local node storage in GBs on the Db node.
      * 
      */
-    public Output<Integer> dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Output<Optional<Integer>> dbNodeStorageSizeInGbs() {
+        return Codegen.optional(this.dbNodeStorageSizeInGbs);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      * 
      */
     @Export(name="dbServerId", refs={String.class}, tree="[0]")
-    private Output<String> dbServerId;
+    private Output</* @Nullable */ String> dbServerId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      * 
      */
-    public Output<String> dbServerId() {
-        return this.dbServerId;
+    public Output<Optional<String>> dbServerId() {
+        return Codegen.optional(this.dbServerId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     @Export(name="dbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> dbSystemId;
+    private Output</* @Nullable */ String> dbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public Output<String> dbSystemId() {
-        return this.dbSystemId;
+    public Output<Optional<String>> dbSystemId() {
+        return Codegen.optional(this.dbSystemId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The name of the Fault Domain the instance is contained in.
      * 
      */
     @Export(name="faultDomain", refs={String.class}, tree="[0]")
-    private Output<String> faultDomain;
+    private Output</* @Nullable */ String> faultDomain;
 
     /**
      * @return The name of the Fault Domain the instance is contained in.
      * 
      */
-    public Output<String> faultDomain() {
-        return this.faultDomain;
+    public Output<Optional<String>> faultDomain() {
+        return Codegen.optional(this.faultDomain);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -194,7 +195,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -203,176 +204,176 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
     @Export(name="hostIpId", refs={String.class}, tree="[0]")
-    private Output<String> hostIpId;
+    private Output</* @Nullable */ String> hostIpId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
-    public Output<String> hostIpId() {
-        return this.hostIpId;
+    public Output<Optional<String>> hostIpId() {
+        return Codegen.optional(this.hostIpId);
     }
     /**
      * The host name for the database node.
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
-    private Output<String> hostname;
+    private Output</* @Nullable */ String> hostname;
 
     /**
      * @return The host name for the database node.
      * 
      */
-    public Output<String> hostname() {
-        return this.hostname;
+    public Output<Optional<String>> hostname() {
+        return Codegen.optional(this.hostname);
     }
     /**
      * Information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The type of database node maintenance.
      * 
      */
     @Export(name="maintenanceType", refs={String.class}, tree="[0]")
-    private Output<String> maintenanceType;
+    private Output</* @Nullable */ String> maintenanceType;
 
     /**
      * @return The type of database node maintenance.
      * 
      */
-    public Output<String> maintenanceType() {
-        return this.maintenanceType;
+    public Output<Optional<String>> maintenanceType() {
+        return Codegen.optional(this.maintenanceType);
     }
     /**
      * The allocated memory in GBs on the Db node.
      * 
      */
     @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memorySizeInGbs;
+    private Output</* @Nullable */ Integer> memorySizeInGbs;
 
     /**
      * @return The allocated memory in GBs on the Db node.
      * 
      */
-    public Output<Integer> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Integer>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     /**
      * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      * 
      */
     @Export(name="softwareStorageSizeInGb", refs={Integer.class}, tree="[0]")
-    private Output<Integer> softwareStorageSizeInGb;
+    private Output</* @Nullable */ Integer> softwareStorageSizeInGb;
 
     /**
      * @return The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      * 
      */
-    public Output<Integer> softwareStorageSizeInGb() {
-        return this.softwareStorageSizeInGb;
+    public Output<Optional<Integer>> softwareStorageSizeInGb() {
+        return Codegen.optional(this.softwareStorageSizeInGb);
     }
     /**
      * The current state of the database node.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the database node.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time that the database node was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time that the database node was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * End date and time of maintenance window.
      * 
      */
     @Export(name="timeMaintenanceWindowEnd", refs={String.class}, tree="[0]")
-    private Output<String> timeMaintenanceWindowEnd;
+    private Output</* @Nullable */ String> timeMaintenanceWindowEnd;
 
     /**
      * @return End date and time of maintenance window.
      * 
      */
-    public Output<String> timeMaintenanceWindowEnd() {
-        return this.timeMaintenanceWindowEnd;
+    public Output<Optional<String>> timeMaintenanceWindowEnd() {
+        return Codegen.optional(this.timeMaintenanceWindowEnd);
     }
     /**
      * Start date and time of maintenance window.
      * 
      */
     @Export(name="timeMaintenanceWindowStart", refs={String.class}, tree="[0]")
-    private Output<String> timeMaintenanceWindowStart;
+    private Output</* @Nullable */ String> timeMaintenanceWindowStart;
 
     /**
      * @return Start date and time of maintenance window.
      * 
      */
-    public Output<String> timeMaintenanceWindowStart() {
-        return this.timeMaintenanceWindowStart;
+    public Output<Optional<String>> timeMaintenanceWindowStart() {
+        return Codegen.optional(this.timeMaintenanceWindowStart);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
     @Export(name="vnic2id", refs={String.class}, tree="[0]")
-    private Output<String> vnic2id;
+    private Output</* @Nullable */ String> vnic2id;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
-    public Output<String> vnic2id() {
-        return this.vnic2id;
+    public Output<Optional<String>> vnic2id() {
+        return Codegen.optional(this.vnic2id);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
     @Export(name="vnicId", refs={String.class}, tree="[0]")
-    private Output<String> vnicId;
+    private Output</* @Nullable */ String> vnicId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    public Output<String> vnicId() {
-        return this.vnicId;
+    public Output<Optional<String>> vnicId() {
+        return Codegen.optional(this.vnicId);
     }
 
     /**

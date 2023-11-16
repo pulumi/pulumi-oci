@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
@@ -66,17 +65,17 @@ type GetBdsInstanceGetOsPatchResult struct {
 	BdsInstanceId string                           `pulumi:"bdsInstanceId"`
 	Filters       []GetBdsInstanceGetOsPatchFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Minimum BDS version required to install current OS patch.
-	MinBdsVersion string `pulumi:"minBdsVersion"`
+	MinBdsVersion *string `pulumi:"minBdsVersion"`
 	// Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
 	MinCompatibleOdhVersionMap map[string]interface{} `pulumi:"minCompatibleOdhVersionMap"`
 	// Version of the os patch.
 	OsPatchVersion string `pulumi:"osPatchVersion"`
 	// Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
-	PatchType string `pulumi:"patchType"`
+	PatchType *string `pulumi:"patchType"`
 	// Released date of the OS patch.
-	ReleaseDate string `pulumi:"releaseDate"`
+	ReleaseDate *string `pulumi:"releaseDate"`
 	// List of summaries of individual target packages.
 	TargetPackages []GetBdsInstanceGetOsPatchTargetPackage `pulumi:"targetPackages"`
 }
@@ -122,12 +121,6 @@ func (o GetBdsInstanceGetOsPatchResultOutput) ToGetBdsInstanceGetOsPatchResultOu
 	return o
 }
 
-func (o GetBdsInstanceGetOsPatchResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceGetOsPatchResult] {
-	return pulumix.Output[GetBdsInstanceGetOsPatchResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceGetOsPatchResultOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
@@ -137,13 +130,13 @@ func (o GetBdsInstanceGetOsPatchResultOutput) Filters() GetBdsInstanceGetOsPatch
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBdsInstanceGetOsPatchResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBdsInstanceGetOsPatchResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Minimum BDS version required to install current OS patch.
-func (o GetBdsInstanceGetOsPatchResultOutput) MinBdsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) string { return v.MinBdsVersion }).(pulumi.StringOutput)
+func (o GetBdsInstanceGetOsPatchResultOutput) MinBdsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) *string { return v.MinBdsVersion }).(pulumi.StringPtrOutput)
 }
 
 // Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
@@ -157,13 +150,13 @@ func (o GetBdsInstanceGetOsPatchResultOutput) OsPatchVersion() pulumi.StringOutp
 }
 
 // Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
-func (o GetBdsInstanceGetOsPatchResultOutput) PatchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) string { return v.PatchType }).(pulumi.StringOutput)
+func (o GetBdsInstanceGetOsPatchResultOutput) PatchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) *string { return v.PatchType }).(pulumi.StringPtrOutput)
 }
 
 // Released date of the OS patch.
-func (o GetBdsInstanceGetOsPatchResultOutput) ReleaseDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) string { return v.ReleaseDate }).(pulumi.StringOutput)
+func (o GetBdsInstanceGetOsPatchResultOutput) ReleaseDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) *string { return v.ReleaseDate }).(pulumi.StringPtrOutput)
 }
 
 // List of summaries of individual target packages.

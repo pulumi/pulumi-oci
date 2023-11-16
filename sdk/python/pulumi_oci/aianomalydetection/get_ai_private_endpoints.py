@@ -45,26 +45,17 @@ class GetAiPrivateEndpointsResult:
 
     @property
     @pulumi.getter(name="aiPrivateEndpointCollections")
-    def ai_private_endpoint_collections(self) -> Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionResult']:
-        """
-        The list of ai_private_endpoint_collection.
-        """
+    def ai_private_endpoint_collections(self) -> Optional[Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionResult']]:
         return pulumi.get(self, "ai_private_endpoint_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Private Reverse Connection Endpoint display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -75,17 +66,11 @@ class GetAiPrivateEndpointsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the private endpoint resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_ai_private_endpoints(compartment_id: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAiPrivateEndpointsResult:
     """
-    This data source provides the list of Ai Private Endpoints in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of all the AI private endpoints in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ai_private_endpoints = oci.AiAnomalyDetection.get_ai_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["ai_private_endpoint_display_name"],
-        id=var["ai_private_endpoint_id"],
-        state=var["ai_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique AiPrivateEndpoint identifier
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] 
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAiPrivateEndpointsResult]:
     """
-    This data source provides the list of Ai Private Endpoints in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of all the AI private endpoints in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ai_private_endpoints = oci.AiAnomalyDetection.get_ai_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["ai_private_endpoint_display_name"],
-        id=var["ai_private_endpoint_id"],
-        state=var["ai_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique AiPrivateEndpoint identifier
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

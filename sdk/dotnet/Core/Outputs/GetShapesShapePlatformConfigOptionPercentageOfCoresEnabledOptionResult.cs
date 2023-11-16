@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The default percentage of cores enabled.
         /// </summary>
-        public readonly int DefaultValue;
+        public readonly int? DefaultValue;
         /// <summary>
         /// The maximum allowed percentage of cores enabled.
         /// </summary>
-        public readonly int Max;
+        public readonly int? Max;
         /// <summary>
         /// The minimum allowed percentage of cores enabled.
         /// </summary>
-        public readonly int Min;
+        public readonly int? Min;
 
         [OutputConstructor]
         private GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult(
-            int defaultValue,
+            int? defaultValue,
 
-            int max,
+            int? max,
 
-            int min)
+            int? min)
         {
             DefaultValue = defaultValue;
             Max = max;

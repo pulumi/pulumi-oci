@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApisApiCollectionItemValidationResult {
@@ -13,27 +15,27 @@ public final class GetApisApiCollectionItemValidationResult {
      * @return Name of the validation.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Result of the validation.
      * 
      */
-    private String result;
+    private @Nullable String result;
 
     private GetApisApiCollectionItemValidationResult() {}
     /**
      * @return Name of the validation.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Result of the validation.
      * 
      */
-    public String result() {
-        return this.result;
+    public Optional<String> result() {
+        return Optional.ofNullable(this.result);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetApisApiCollectionItemValidationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String result;
+        private @Nullable String name;
+        private @Nullable String result;
         public Builder() {}
         public Builder(GetApisApiCollectionItemValidationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetApisApiCollectionItemValidationResult {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+        public Builder result(@Nullable String result) {
+            this.result = result;
             return this;
         }
         public GetApisApiCollectionItemValidationResult build() {

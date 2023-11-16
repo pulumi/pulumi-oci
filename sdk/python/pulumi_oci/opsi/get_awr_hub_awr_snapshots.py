@@ -53,10 +53,7 @@ class GetAwrHubAwrSnapshotsResult:
 
     @property
     @pulumi.getter(name="awrSnapshotCollections")
-    def awr_snapshot_collections(self) -> Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult']:
-        """
-        The list of awr_snapshot_collection.
-        """
+    def awr_snapshot_collections(self) -> Optional[Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult']]:
         return pulumi.get(self, "awr_snapshot_collections")
 
     @property
@@ -71,7 +68,7 @@ class GetAwrHubAwrSnapshotsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -110,28 +107,7 @@ def get_awr_hub_awr_snapshots(awr_hub_id: Optional[str] = None,
                               time_less_than_or_equal_to: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAwrHubAwrSnapshotsResult:
     """
-    This data source provides the list of Awr Hub Awr Snapshots in Oracle Cloud Infrastructure Opsi service.
-
-    Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
-    The timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hub_awr_snapshots = oci.Opsi.get_awr_hub_awr_snapshots(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        awr_source_database_identifier=var["awr_hub_awr_snapshot_awr_source_database_identifier"],
-        time_greater_than_or_equal_to=var["awr_hub_awr_snapshot_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["awr_hub_awr_snapshot_time_less_than_or_equal_to"])
-    ```
-
-
-    :param str awr_hub_id: Unique Awr Hub identifier
-    :param str awr_source_database_identifier: AWR source database identifier.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-    :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['awrHubId'] = awr_hub_id
@@ -160,27 +136,6 @@ def get_awr_hub_awr_snapshots_output(awr_hub_id: Optional[pulumi.Input[str]] = N
                                      time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubAwrSnapshotsResult]:
     """
-    This data source provides the list of Awr Hub Awr Snapshots in Oracle Cloud Infrastructure Opsi service.
-
-    Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
-    The timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hub_awr_snapshots = oci.Opsi.get_awr_hub_awr_snapshots(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        awr_source_database_identifier=var["awr_hub_awr_snapshot_awr_source_database_identifier"],
-        time_greater_than_or_equal_to=var["awr_hub_awr_snapshot_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["awr_hub_awr_snapshot_time_less_than_or_equal_to"])
-    ```
-
-
-    :param str awr_hub_id: Unique Awr Hub identifier
-    :param str awr_source_database_identifier: AWR source database identifier.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-    :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+    Use this data source to access information about an existing resource.
     """
     ...

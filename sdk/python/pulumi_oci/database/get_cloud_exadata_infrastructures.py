@@ -45,26 +45,17 @@ class GetCloudExadataInfrastructuresResult:
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructures")
-    def cloud_exadata_infrastructures(self) -> Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureResult']:
-        """
-        The list of cloud_exadata_infrastructures.
-        """
+    def cloud_exadata_infrastructures(self) -> Optional[Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureResult']]:
         return pulumi.get(self, "cloud_exadata_infrastructures")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetCloudExadataInfrastructuresResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetCloudExadataInfrastructuresResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the cloud Exadata infrastructure resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_cloud_exadata_infrastructures(compartment_id: Optional[str] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudExadataInfrastructuresResult:
     """
-    This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=var["compartment_id"],
-        display_name=var["cloud_exadata_infrastructure_display_name"],
-        state=var["cloud_exadata_infrastructure_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_cloud_exadata_infrastructures_output(compartment_id: Optional[pulumi.Inp
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudExadataInfrastructuresResult]:
     """
-    This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=var["compartment_id"],
-        display_name=var["cloud_exadata_infrastructure_display_name"],
-        state=var["cloud_exadata_infrastructure_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

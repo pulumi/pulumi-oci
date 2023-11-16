@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstVbsInstanceResult {
@@ -16,73 +18,73 @@ public final class GetInstVbsInstanceResult {
      * @return Compartment of the service instance
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Service instance display name
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private String id;
-    private String idcsAccessToken;
+    private @Nullable String id;
+    private @Nullable String idcsAccessToken;
     /**
      * @return Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
      * 
      */
-    private Boolean isResourceUsageAgreementGranted;
+    private @Nullable Boolean isResourceUsageAgreementGranted;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecyleDetails;
+    private @Nullable String lifecyleDetails;
     /**
      * @return Service instance name (unique identifier)
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Compartment where VBS may create additional resources for the service instance
      * 
      */
-    private String resourceCompartmentId;
+    private @Nullable String resourceCompartmentId;
     /**
      * @return The current state of the VbsInstance.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the the VbsInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the VbsInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Public web URL for accessing the VBS service instance
      * 
      */
-    private String vbsAccessUrl;
+    private @Nullable String vbsAccessUrl;
     private String vbsInstanceId;
 
     private GetInstVbsInstanceResult() {}
@@ -90,102 +92,102 @@ public final class GetInstVbsInstanceResult {
      * @return Compartment of the service instance
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Service instance display name
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String idcsAccessToken() {
-        return this.idcsAccessToken;
+    public Optional<String> idcsAccessToken() {
+        return Optional.ofNullable(this.idcsAccessToken);
     }
     /**
      * @return Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
      * 
      */
-    public Boolean isResourceUsageAgreementGranted() {
-        return this.isResourceUsageAgreementGranted;
+    public Optional<Boolean> isResourceUsageAgreementGranted() {
+        return Optional.ofNullable(this.isResourceUsageAgreementGranted);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecyleDetails() {
-        return this.lifecyleDetails;
+    public Optional<String> lifecyleDetails() {
+        return Optional.ofNullable(this.lifecyleDetails);
     }
     /**
      * @return Service instance name (unique identifier)
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Compartment where VBS may create additional resources for the service instance
      * 
      */
-    public String resourceCompartmentId() {
-        return this.resourceCompartmentId;
+    public Optional<String> resourceCompartmentId() {
+        return Optional.ofNullable(this.resourceCompartmentId);
     }
     /**
      * @return The current state of the VbsInstance.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the the VbsInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the VbsInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Public web URL for accessing the VBS service instance
      * 
      */
-    public String vbsAccessUrl() {
-        return this.vbsAccessUrl;
+    public Optional<String> vbsAccessUrl() {
+        return Optional.ofNullable(this.vbsAccessUrl);
     }
     public String vbsInstanceId() {
         return this.vbsInstanceId;
@@ -200,21 +202,21 @@ public final class GetInstVbsInstanceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String idcsAccessToken;
-        private Boolean isResourceUsageAgreementGranted;
-        private String lifecyleDetails;
-        private String name;
-        private String resourceCompartmentId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private String vbsAccessUrl;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String idcsAccessToken;
+        private @Nullable Boolean isResourceUsageAgreementGranted;
+        private @Nullable String lifecyleDetails;
+        private @Nullable String name;
+        private @Nullable String resourceCompartmentId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String vbsAccessUrl;
         private String vbsInstanceId;
         public Builder() {}
         public Builder(GetInstVbsInstanceResult defaults) {
@@ -238,78 +240,78 @@ public final class GetInstVbsInstanceResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
+        public Builder idcsAccessToken(@Nullable String idcsAccessToken) {
+            this.idcsAccessToken = idcsAccessToken;
             return this;
         }
         @CustomType.Setter
-        public Builder isResourceUsageAgreementGranted(Boolean isResourceUsageAgreementGranted) {
-            this.isResourceUsageAgreementGranted = Objects.requireNonNull(isResourceUsageAgreementGranted);
+        public Builder isResourceUsageAgreementGranted(@Nullable Boolean isResourceUsageAgreementGranted) {
+            this.isResourceUsageAgreementGranted = isResourceUsageAgreementGranted;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+        public Builder lifecyleDetails(@Nullable String lifecyleDetails) {
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+        public Builder resourceCompartmentId(@Nullable String resourceCompartmentId) {
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder vbsAccessUrl(String vbsAccessUrl) {
-            this.vbsAccessUrl = Objects.requireNonNull(vbsAccessUrl);
+        public Builder vbsAccessUrl(@Nullable String vbsAccessUrl) {
+            this.vbsAccessUrl = vbsAccessUrl;
             return this;
         }
         @CustomType.Setter

@@ -39,10 +39,7 @@ class GetByoipAllocatedRangesResult:
 
     @property
     @pulumi.getter(name="byoipAllocatedRangeCollections")
-    def byoip_allocated_range_collections(self) -> Sequence['outputs.GetByoipAllocatedRangesByoipAllocatedRangeCollectionResult']:
-        """
-        The list of byoip_allocated_range_collection.
-        """
+    def byoip_allocated_range_collections(self) -> Optional[Sequence['outputs.GetByoipAllocatedRangesByoipAllocatedRangeCollectionResult']]:
         return pulumi.get(self, "byoip_allocated_range_collections")
 
     @property
@@ -57,7 +54,7 @@ class GetByoipAllocatedRangesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,22 +77,7 @@ def get_byoip_allocated_ranges(byoip_range_id: Optional[str] = None,
                                filters: Optional[Sequence[pulumi.InputType['GetByoipAllocatedRangesFilterArgs']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetByoipAllocatedRangesResult:
     """
-    This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
-
-    Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
-    Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_byoip_allocated_ranges = oci.Core.get_byoip_allocated_ranges(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
-    ```
-
-
-    :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['byoipRangeId'] = byoip_range_id
@@ -115,21 +97,6 @@ def get_byoip_allocated_ranges_output(byoip_range_id: Optional[pulumi.Input[str]
                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetByoipAllocatedRangesFilterArgs']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetByoipAllocatedRangesResult]:
     """
-    This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
-
-    Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
-    Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_byoip_allocated_ranges = oci.Core.get_byoip_allocated_ranges(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
-    ```
-
-
-    :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
+    Use this data source to access information about an existing resource.
     """
     ...

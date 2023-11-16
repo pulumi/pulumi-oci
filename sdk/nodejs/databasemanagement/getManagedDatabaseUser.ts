@@ -51,104 +51,104 @@ export interface GetManagedDatabaseUserResult {
     /**
      * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      */
-    readonly allShared: string;
+    readonly allShared?: string;
     /**
      * The authentication mechanism for the user.
      */
-    readonly authentication: string;
+    readonly authentication?: string;
     /**
      * Indicates whether a given user is common(Y) or local(N).
      */
-    readonly common: string;
+    readonly common?: string;
     /**
      * The initial resource consumer group for the User.
      */
-    readonly consumerGroup: string;
+    readonly consumerGroup?: string;
     /**
      * The default collation for the user schema.
      */
-    readonly defaultCollation: string;
+    readonly defaultCollation?: string;
     /**
      * The default tablespace for data.
      */
-    readonly defaultTablespace: string;
+    readonly defaultTablespace?: string;
     /**
      * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
      */
-    readonly editionsEnabled: string;
+    readonly editionsEnabled?: string;
     /**
      * The external name of the user.
      */
-    readonly externalName: string;
+    readonly externalName?: string;
     /**
      * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
      */
-    readonly externalShared: string;
+    readonly externalShared?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      */
-    readonly implicit: string;
+    readonly implicit?: string;
     /**
      * Indicates whether the user definition is inherited from another container (YES) or not (NO).
      */
-    readonly inherited: string;
+    readonly inherited?: string;
     /**
      * The default local temporary tablespace for the user.
      */
-    readonly localTempTablespace: string;
+    readonly localTempTablespace?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of the User.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      */
-    readonly oracleMaintained: string;
+    readonly oracleMaintained?: string;
     /**
      * The list of existing versions of the password hashes (also known as "verifiers") for the account.
      */
-    readonly passwordVersions: string;
+    readonly passwordVersions?: string;
     /**
      * The profile name of the user.
      */
-    readonly profile: string;
+    readonly profile?: string;
     /**
      * Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
      */
-    readonly proxyConnect: string;
+    readonly proxyConnect?: string;
     /**
      * The status of the user account.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The name of the default tablespace for temporary tables or the name of a tablespace group.
      */
-    readonly tempTablespace: string;
+    readonly tempTablespace?: string;
     /**
      * The date and time the user was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time of the expiration of the user account.
      */
-    readonly timeExpiring: string;
+    readonly timeExpiring?: string;
     /**
      * The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
      */
-    readonly timeLastLogin: string;
+    readonly timeLastLogin?: string;
     /**
      * The date the account was locked, if the status of the account is LOCKED.
      */
-    readonly timeLocked: string;
+    readonly timeLocked?: string;
     /**
      * The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
      */
-    readonly timePasswordChanged: string;
+    readonly timePasswordChanged?: string;
     readonly userName: string;
 }
 /**

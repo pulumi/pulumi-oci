@@ -76,11 +76,11 @@ export class PrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description of the private endpoint. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The private endpoint display name. Avoid entering confidential information.
      */
@@ -88,27 +88,27 @@ export class PrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
      */
-    public readonly dnsZones!: pulumi.Output<string[]>;
+    public readonly dnsZones!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
      */
-    public readonly isUsedWithConfigurationSourceProvider!: pulumi.Output<boolean>;
+    public readonly isUsedWithConfigurationSourceProvider!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
      */
-    public readonly nsgIdLists!: pulumi.Output<string[]>;
+    public readonly nsgIdLists!: pulumi.Output<string[] | undefined>;
     /**
      * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
      */
-    public /*out*/ readonly sourceIps!: pulumi.Output<string[]>;
+    public /*out*/ readonly sourceIps!: pulumi.Output<string[] | undefined>;
     /**
      * The current lifecycle state of the private endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
      */
@@ -116,7 +116,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
     /**
      * The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
      *

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
@@ -82,7 +81,7 @@ type GetAutonomousDatabasesClonesResult struct {
 	DisplayName *string                              `pulumi:"displayName"`
 	Filters     []GetAutonomousDatabasesClonesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Autonomous Database.
 	State *string `pulumi:"state"`
 }
@@ -134,12 +133,6 @@ func (o GetAutonomousDatabasesClonesResultOutput) ToGetAutonomousDatabasesClones
 	return o
 }
 
-func (o GetAutonomousDatabasesClonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDatabasesClonesResult] {
-	return pulumix.Output[GetAutonomousDatabasesClonesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutonomousDatabasesClonesResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
@@ -170,8 +163,8 @@ func (o GetAutonomousDatabasesClonesResultOutput) Filters() GetAutonomousDatabas
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousDatabasesClonesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousDatabasesClonesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Autonomous Database.

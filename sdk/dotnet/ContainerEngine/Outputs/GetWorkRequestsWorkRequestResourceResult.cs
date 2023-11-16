@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The way in which this resource was affected by the work tracked by the work request.
         /// </summary>
-        public readonly string ActionType;
+        public readonly string? ActionType;
         /// <summary>
         /// The resource type the work request affects.
         /// </summary>
-        public readonly string EntityType;
+        public readonly string? EntityType;
         /// <summary>
         /// The URI path on which the user can issue a GET request to access the resource metadata.
         /// </summary>
-        public readonly string EntityUri;
+        public readonly string? EntityUri;
         /// <summary>
         /// The OCID of the resource the work request affects.
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
 
         [OutputConstructor]
         private GetWorkRequestsWorkRequestResourceResult(
-            string actionType,
+            string? actionType,
 
-            string entityType,
+            string? entityType,
 
-            string entityUri,
+            string? entityUri,
 
-            string identifier)
+            string? identifier)
         {
             ActionType = actionType;
             EntityType = entityType;

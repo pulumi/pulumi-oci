@@ -45,52 +45,52 @@ export interface GetMigrationResult {
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Migration Identifier that can be renamed
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether migration is marked as completed.
      */
-    readonly isCompleted: boolean;
+    readonly isCompleted?: boolean;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly migrationId: string;
     /**
      * Replication schedule identifier
      */
-    readonly replicationScheduleId: string;
+    readonly replicationScheduleId?: string;
     /**
      * The current state of migration.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the migration project was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the migration project was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.

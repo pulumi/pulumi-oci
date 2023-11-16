@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyApplicationGroupResult {
@@ -15,8 +17,8 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
      * @return List of apps in the group.
      * 
      */
-    private List<String> apps;
-    private String id;
+    private @Nullable List<String> apps;
+    private @Nullable String id;
     /**
      * @return Name of the application Group.
      * 
@@ -27,12 +29,12 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
      * @return OCID of the Network Firewall Policy this application group belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Count of total applications in the given application group.
      * 
      */
-    private Integer totalApps;
+    private @Nullable Integer totalApps;
 
     private GetNetworkFirewallPolicyApplicationGroupResult() {}
     /**
@@ -40,10 +42,10 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
      * 
      */
     public List<String> apps() {
-        return this.apps;
+        return this.apps == null ? List.of() : this.apps;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the application Group.
@@ -59,15 +61,15 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
      * @return OCID of the Network Firewall Policy this application group belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Count of total applications in the given application group.
      * 
      */
-    public Integer totalApps() {
-        return this.totalApps;
+    public Optional<Integer> totalApps() {
+        return Optional.ofNullable(this.totalApps);
     }
 
     public static Builder builder() {
@@ -79,12 +81,12 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> apps;
-        private String id;
+        private @Nullable List<String> apps;
+        private @Nullable String id;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private Integer totalApps;
+        private @Nullable String parentResourceId;
+        private @Nullable Integer totalApps;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyApplicationGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,16 +99,16 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
         }
 
         @CustomType.Setter
-        public Builder apps(List<String> apps) {
-            this.apps = Objects.requireNonNull(apps);
+        public Builder apps(@Nullable List<String> apps) {
+            this.apps = apps;
             return this;
         }
         public Builder apps(String... apps) {
             return apps(List.of(apps));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -120,13 +122,13 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalApps(Integer totalApps) {
-            this.totalApps = Objects.requireNonNull(totalApps);
+        public Builder totalApps(@Nullable Integer totalApps) {
+            this.totalApps = totalApps;
             return this;
         }
         public GetNetworkFirewallPolicyApplicationGroupResult build() {

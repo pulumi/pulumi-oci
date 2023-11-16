@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
@@ -82,7 +81,7 @@ type GetBootVolumeReplicasResult struct {
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetBootVolumeReplicasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of a boot volume replica.
 	State                *string `pulumi:"state"`
 	VolumeGroupReplicaId *string `pulumi:"volumeGroupReplicaId"`
@@ -135,12 +134,6 @@ func (o GetBootVolumeReplicasResultOutput) ToGetBootVolumeReplicasResultOutputWi
 	return o
 }
 
-func (o GetBootVolumeReplicasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBootVolumeReplicasResult] {
-	return pulumix.Output[GetBootVolumeReplicasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 func (o GetBootVolumeReplicasResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBootVolumeReplicasResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -168,8 +161,8 @@ func (o GetBootVolumeReplicasResultOutput) Filters() GetBootVolumeReplicasFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBootVolumeReplicasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBootVolumeReplicasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBootVolumeReplicasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumeReplicasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of a boot volume replica.

@@ -56,11 +56,11 @@ export interface GetProtectedDatabaseFetchConfigurationResult {
     /**
      * content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base64EncodeContent` to false.
      */
-    readonly content: string;
+    readonly content?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly protectedDatabaseId: string;
 }
 /**

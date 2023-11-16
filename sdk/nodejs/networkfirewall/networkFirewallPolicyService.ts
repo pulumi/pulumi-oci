@@ -74,7 +74,7 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
     /**
      * OCID of the Network Firewall Policy this service belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of port-ranges to be used.
      */

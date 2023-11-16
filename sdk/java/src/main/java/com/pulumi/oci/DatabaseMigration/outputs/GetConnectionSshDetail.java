@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionSshDetail {
@@ -13,43 +15,43 @@ public final class GetConnectionSshDetail {
      * @return Name of the host the SSH key is valid for.
      * 
      */
-    private String host;
-    private String sshkey;
+    private @Nullable String host;
+    private @Nullable String sshkey;
     /**
      * @return Sudo location
      * 
      */
-    private String sudoLocation;
+    private @Nullable String sudoLocation;
     /**
      * @return SSH user
      * 
      */
-    private String user;
+    private @Nullable String user;
 
     private GetConnectionSshDetail() {}
     /**
      * @return Name of the host the SSH key is valid for.
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
-    public String sshkey() {
-        return this.sshkey;
+    public Optional<String> sshkey() {
+        return Optional.ofNullable(this.sshkey);
     }
     /**
      * @return Sudo location
      * 
      */
-    public String sudoLocation() {
-        return this.sudoLocation;
+    public Optional<String> sudoLocation() {
+        return Optional.ofNullable(this.sudoLocation);
     }
     /**
      * @return SSH user
      * 
      */
-    public String user() {
-        return this.user;
+    public Optional<String> user() {
+        return Optional.ofNullable(this.user);
     }
 
     public static Builder builder() {
@@ -61,10 +63,10 @@ public final class GetConnectionSshDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String host;
-        private String sshkey;
-        private String sudoLocation;
-        private String user;
+        private @Nullable String host;
+        private @Nullable String sshkey;
+        private @Nullable String sudoLocation;
+        private @Nullable String user;
         public Builder() {}
         public Builder(GetConnectionSshDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,23 +77,23 @@ public final class GetConnectionSshDetail {
         }
 
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder sshkey(String sshkey) {
-            this.sshkey = Objects.requireNonNull(sshkey);
+        public Builder sshkey(@Nullable String sshkey) {
+            this.sshkey = sshkey;
             return this;
         }
         @CustomType.Setter
-        public Builder sudoLocation(String sudoLocation) {
-            this.sudoLocation = Objects.requireNonNull(sudoLocation);
+        public Builder sudoLocation(@Nullable String sudoLocation) {
+            this.sudoLocation = sudoLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder user(String user) {
-            this.user = Objects.requireNonNull(user);
+        public Builder user(@Nullable String user) {
+            this.user = user;
             return this;
         }
         public GetConnectionSshDetail build() {

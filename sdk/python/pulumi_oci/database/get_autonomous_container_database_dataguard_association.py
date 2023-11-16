@@ -82,18 +82,12 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
 
     @property
     @pulumi.getter(name="applyLag")
-    def apply_lag(self) -> str:
-        """
-        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
-        """
+    def apply_lag(self) -> Optional[str]:
         return pulumi.get(self, "apply_lag")
 
     @property
     @pulumi.getter(name="applyRate")
-    def apply_rate(self) -> str:
-        """
-        The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
-        """
+    def apply_rate(self) -> Optional[str]:
         return pulumi.get(self, "apply_rate")
 
     @property
@@ -104,129 +98,81 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
-        """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
-    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
-        """
-        The lag time for my preference based on data loss tolerance in seconds.
-        """
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
-    def is_automatic_failover_enabled(self) -> bool:
-        """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
-        """
+    def is_automatic_failover_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycleState, if available.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDataguardAssociationId")
-    def peer_autonomous_container_database_dataguard_association_id(self) -> str:
-        """
-        The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
-        """
+    def peer_autonomous_container_database_dataguard_association_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_container_database_dataguard_association_id")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseId")
-    def peer_autonomous_container_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
-        """
+    def peer_autonomous_container_database_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_container_database_id")
 
     @property
     @pulumi.getter(name="peerLifecycleState")
-    def peer_lifecycle_state(self) -> str:
-        """
-        The current state of Autonomous Data Guard.
-        """
+    def peer_lifecycle_state(self) -> Optional[str]:
         return pulumi.get(self, "peer_lifecycle_state")
 
     @property
     @pulumi.getter(name="peerRole")
-    def peer_role(self) -> str:
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        """
+    def peer_role(self) -> Optional[str]:
         return pulumi.get(self, "peer_role")
 
     @property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> str:
-        """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
+    def protection_mode(self) -> Optional[str]:
         return pulumi.get(self, "protection_mode")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of Autonomous Data Guard.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Autonomous DataGuard association was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastRoleChanged")
-    def time_last_role_changed(self) -> str:
-        """
-        The date and time when the last role change action happened.
-        """
+    def time_last_role_changed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_role_changed")
 
     @property
     @pulumi.getter(name="timeLastSynced")
-    def time_last_synced(self) -> str:
-        """
-        The date and time of the last update to the apply lag, apply rate, and transport lag values.
-        """
+    def time_last_synced(self) -> Optional[str]:
         return pulumi.get(self, "time_last_synced")
 
     @property
     @pulumi.getter(name="transportLag")
-    def transport_lag(self) -> str:
-        """
-        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
-        """
+    def transport_lag(self) -> Optional[str]:
         return pulumi.get(self, "transport_lag")
 
 
@@ -261,23 +207,7 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
                                                             autonomous_container_database_id: Optional[str] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseDataguardAssociationResult:
     """
-    This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
-
-    Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=oci_database_autonomous_container_database_dataguard_association["test_autonomous_container_database_dataguard_association"]["id"],
-        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseDataguardAssociationId'] = autonomous_container_database_dataguard_association_id
@@ -312,22 +242,6 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
                                                                    autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationResult]:
     """
-    This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
-
-    Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=oci_database_autonomous_container_database_dataguard_association["test_autonomous_container_database_dataguard_association"]["id"],
-        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

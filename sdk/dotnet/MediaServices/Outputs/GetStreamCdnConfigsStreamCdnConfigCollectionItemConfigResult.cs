@@ -16,77 +16,77 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The hostname of the CDN edge server to use when building CDN URLs.
         /// </summary>
-        public readonly string EdgeHostname;
+        public readonly string? EdgeHostname;
         /// <summary>
         /// The path to prepend when building CDN URLs.
         /// </summary>
-        public readonly string EdgePathPrefix;
+        public readonly string? EdgePathPrefix;
         /// <summary>
         /// The encryption key to use for edge token authentication.
         /// </summary>
-        public readonly string EdgeTokenKey;
+        public readonly string? EdgeTokenKey;
         /// <summary>
         /// Salt to use when encrypting authentication token.
         /// </summary>
-        public readonly string EdgeTokenSalt;
+        public readonly string? EdgeTokenSalt;
         /// <summary>
         /// Whether token authentication should be used at the CDN edge.
         /// </summary>
-        public readonly bool IsEdgeTokenAuth;
+        public readonly bool? IsEdgeTokenAuth;
         /// <summary>
         /// The shared secret key A, two for errorless key rotation.
         /// </summary>
-        public readonly string OriginAuthSecretKeyA;
+        public readonly string? OriginAuthSecretKeyA;
         /// <summary>
         /// The shared secret key B, two for errorless key rotation.
         /// </summary>
-        public readonly string OriginAuthSecretKeyB;
+        public readonly string? OriginAuthSecretKeyB;
         /// <summary>
         /// Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
         /// </summary>
-        public readonly string OriginAuthSecretKeyNonceA;
+        public readonly string? OriginAuthSecretKeyNonceA;
         /// <summary>
         /// Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
         /// </summary>
-        public readonly string OriginAuthSecretKeyNonceB;
+        public readonly string? OriginAuthSecretKeyNonceB;
         /// <summary>
         /// The type of encryption used to compute the signature.
         /// </summary>
-        public readonly string OriginAuthSignEncryption;
+        public readonly string? OriginAuthSignEncryption;
         /// <summary>
         /// The type of data used to compute the signature.
         /// </summary>
-        public readonly string OriginAuthSignType;
+        public readonly string? OriginAuthSignType;
         /// <summary>
         /// The name of the CDN configuration type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult(
-            string edgeHostname,
+            string? edgeHostname,
 
-            string edgePathPrefix,
+            string? edgePathPrefix,
 
-            string edgeTokenKey,
+            string? edgeTokenKey,
 
-            string edgeTokenSalt,
+            string? edgeTokenSalt,
 
-            bool isEdgeTokenAuth,
+            bool? isEdgeTokenAuth,
 
-            string originAuthSecretKeyA,
+            string? originAuthSecretKeyA,
 
-            string originAuthSecretKeyB,
+            string? originAuthSecretKeyB,
 
-            string originAuthSecretKeyNonceA,
+            string? originAuthSecretKeyNonceA,
 
-            string originAuthSecretKeyNonceB,
+            string? originAuthSecretKeyNonceB,
 
-            string originAuthSignEncryption,
+            string? originAuthSignEncryption,
 
-            string originAuthSignType,
+            string? originAuthSignType,
 
-            string type)
+            string? type)
         {
             EdgeHostname = edgeHostname;
             EdgePathPrefix = edgePathPrefix;

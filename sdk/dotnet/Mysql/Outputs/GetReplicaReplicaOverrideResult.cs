@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The OCID of the Configuration to be used by the read replica.
         /// </summary>
-        public readonly string ConfigurationId;
+        public readonly string? ConfigurationId;
         /// <summary>
         /// The MySQL version to be used by the read replica.
         /// </summary>
-        public readonly string MysqlVersion;
+        public readonly string? MysqlVersion;
         /// <summary>
         /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
 
         [OutputConstructor]
         private GetReplicaReplicaOverrideResult(
-            string configurationId,
+            string? configurationId,
 
-            string mysqlVersion,
+            string? mysqlVersion,
 
-            string shapeName)
+            string? shapeName)
         {
             ConfigurationId = configurationId;
             MysqlVersion = mysqlVersion;

@@ -47,233 +47,233 @@ export interface GetConnectionResult {
     /**
      * Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
      */
-    readonly accessKeyId: string;
-    readonly accountKey: string;
+    readonly accessKeyId?: string;
+    readonly accountKey?: string;
     /**
      * Sets the Azure storage account name.
      */
-    readonly accountName: string;
+    readonly accountName?: string;
     /**
      * An array of name-value pair attribute entries. Used as additional parameters in connection string.
      */
-    readonly additionalAttributes: outputs.GoldenGate.GetConnectionAdditionalAttribute[];
+    readonly additionalAttributes?: outputs.GoldenGate.GetConnectionAdditionalAttribute[];
     /**
      * Used authentication mechanism to access Azure Data Lake Storage.
      */
-    readonly authenticationType: string;
+    readonly authenticationType?: string;
     /**
      * Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
-    readonly azureTenantId: string;
+    readonly azureTenantId?: string;
     /**
      * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
      */
-    readonly bootstrapServers: outputs.GoldenGate.GetConnectionBootstrapServer[];
+    readonly bootstrapServers?: outputs.GoldenGate.GetConnectionBootstrapServer[];
     /**
      * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      */
-    readonly clientId: string;
-    readonly clientSecret: string;
+    readonly clientId?: string;
+    readonly clientSecret?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
      */
-    readonly connectionFactory: string;
+    readonly connectionFactory?: string;
     readonly connectionId: string;
     /**
      * Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
      */
-    readonly connectionString: string;
+    readonly connectionString?: string;
     /**
      * The connection type.
      */
-    readonly connectionType: string;
+    readonly connectionType?: string;
     /**
      * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
      */
-    readonly connectionUrl: string;
-    readonly consumerProperties: string;
-    readonly coreSiteXml: string;
+    readonly connectionUrl?: string;
+    readonly consumerProperties?: string;
+    readonly coreSiteXml?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
-    readonly databaseId: string;
+    readonly databaseId?: string;
     /**
      * The name of the database.
      */
-    readonly databaseName: string;
+    readonly databaseName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      */
-    readonly dbSystemId: string;
+    readonly dbSystemId?: string;
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    readonly deploymentId: string;
+    readonly deploymentId?: string;
     /**
      * Metadata about this specific object.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * An object's Display Name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      */
-    readonly endpoint: string;
+    readonly endpoint?: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The name or address of a host.
      */
-    readonly host: string;
+    readonly host?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
-    readonly ingressIps: outputs.GoldenGate.GetConnectionIngressIp[];
+    readonly ingressIps?: outputs.GoldenGate.GetConnectionIngressIp[];
     /**
      * The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
      */
-    readonly jndiConnectionFactory: string;
+    readonly jndiConnectionFactory?: string;
     /**
      * The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
      */
-    readonly jndiInitialContextFactory: string;
+    readonly jndiInitialContextFactory?: string;
     /**
      * The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
      */
-    readonly jndiProviderUrl: string;
-    readonly jndiSecurityCredentials: string;
+    readonly jndiProviderUrl?: string;
+    readonly jndiSecurityCredentials?: string;
     /**
      * Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
      */
-    readonly jndiSecurityPrincipal: string;
+    readonly jndiSecurityPrincipal?: string;
     /**
      * Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
-    readonly keyId: string;
-    readonly keyStore: string;
-    readonly keyStorePassword: string;
+    readonly keyId?: string;
+    readonly keyStore?: string;
+    readonly keyStorePassword?: string;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    readonly nsgIds: string[];
-    readonly password: string;
+    readonly nsgIds?: string[];
+    readonly password?: string;
     /**
      * The port of an endpoint usually specified for a connection.
      */
-    readonly port: number;
+    readonly port?: number;
     /**
      * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
-    readonly privateIp: string;
-    readonly privateKeyFile: string;
-    readonly privateKeyPassphrase: string;
-    readonly producerProperties: string;
-    readonly publicKeyFingerprint: string;
+    readonly privateIp?: string;
+    readonly privateKeyFile?: string;
+    readonly privateKeyPassphrase?: string;
+    readonly producerProperties?: string;
+    readonly publicKeyFingerprint?: string;
     /**
      * The name of the region. e.g.: us-ashburn-1
      */
-    readonly region: string;
-    readonly sasToken: string;
-    readonly secretAccessKey: string;
+    readonly region?: string;
+    readonly sasToken?: string;
+    readonly secretAccessKey?: string;
     /**
      * Security Protocol for Microsoft SQL Server/PostgreSQL.
      */
-    readonly securityProtocol: string;
+    readonly securityProtocol?: string;
     /**
      * The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
-    readonly sessionMode: string;
+    readonly sessionMode?: string;
     /**
      * If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      */
-    readonly shouldUseJndi: boolean;
+    readonly shouldUseJndi?: boolean;
     /**
      * If set to true, the driver validates the certificate that is sent by the database server.
      */
-    readonly shouldValidateServerCertificate: boolean;
+    readonly shouldValidateServerCertificate?: boolean;
     /**
      * Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      */
-    readonly sslCa: string;
-    readonly sslCert: string;
-    readonly sslCrl: string;
-    readonly sslKey: string;
-    readonly sslKeyPassword: string;
+    readonly sslCa?: string;
+    readonly sslCert?: string;
+    readonly sslCrl?: string;
+    readonly sslKey?: string;
+    readonly sslKeyPassword?: string;
     /**
      * SSL mode for PostgreSQL.
      */
-    readonly sslMode: string;
+    readonly sslMode?: string;
     /**
      * Possible lifecycle states for connection.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      */
-    readonly streamPoolId: string;
+    readonly streamPoolId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The Kafka (e.g. Confluent) Schema Registry technology type.
      */
-    readonly technologyType: string;
+    readonly technologyType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
      */
-    readonly tenancyId: string;
+    readonly tenancyId?: string;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeUpdated: string;
-    readonly trustStore: string;
-    readonly trustStorePassword: string;
+    readonly timeUpdated?: string;
+    readonly trustStore?: string;
+    readonly trustStorePassword?: string;
     /**
      * Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
-    readonly url: string;
+    readonly url?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
      */
-    readonly userId: string;
+    readonly userId?: string;
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      */
-    readonly username: string;
+    readonly username?: string;
     /**
      * Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
-    readonly vaultId: string;
-    readonly wallet: string;
+    readonly vaultId?: string;
+    readonly wallet?: string;
 }
 /**
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.

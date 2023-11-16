@@ -167,7 +167,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current lifecycle state of the cloud Exadata infrastructure resource.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetCloudExadataInfrastructuresFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

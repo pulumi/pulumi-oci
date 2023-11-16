@@ -25,9 +25,6 @@ class GetNotificationTopicsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to only return resources that match the given name exactly.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -36,9 +33,6 @@ class GetNotificationTopicsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to only return resources that match the given name exactly.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -55,139 +49,101 @@ class GetNotificationTopicsFilterResult(dict):
 @pulumi.output_type
 class GetNotificationTopicsNotificationTopicResult(dict):
     def __init__(__self__, *,
-                 api_endpoint: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 etag: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 name: str,
-                 short_topic_id: str,
-                 state: str,
-                 time_created: str,
-                 topic_id: str):
-        """
-        :param str api_endpoint: The endpoint for managing subscriptions or publishing messages to the topic.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str description: The description of the topic.
-        :param str etag: For optimistic concurrency control. See `if-match`.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: A filter to only return resources that match the given id exactly.
-        :param str name: A filter to only return resources that match the given name exactly.
-        :param str short_topic_id: A unique short topic Id. This is used only for SMS subscriptions.
-        :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-        :param str time_created: The time the topic was created.
-        :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-        """
-        pulumi.set(__self__, "api_endpoint", api_endpoint)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "short_topic_id", short_topic_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "topic_id", topic_id)
+                 api_endpoint: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 etag: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 short_topic_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 topic_id: Optional[str] = None):
+        if api_endpoint is not None:
+            pulumi.set(__self__, "api_endpoint", api_endpoint)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if etag is not None:
+            pulumi.set(__self__, "etag", etag)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if short_topic_id is not None:
+            pulumi.set(__self__, "short_topic_id", short_topic_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
 
     @property
     @pulumi.getter(name="apiEndpoint")
-    def api_endpoint(self) -> str:
-        """
-        The endpoint for managing subscriptions or publishing messages to the topic.
-        """
+    def api_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "api_endpoint")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the topic.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        For optimistic concurrency control. See `if-match`.
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to only return resources that match the given id exactly.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to only return resources that match the given name exactly.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="shortTopicId")
-    def short_topic_id(self) -> str:
-        """
-        A unique short topic Id. This is used only for SMS subscriptions.
-        """
+    def short_topic_id(self) -> Optional[str]:
         return pulumi.get(self, "short_topic_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the topic was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="topicId")
-    def topic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-        """
+    def topic_id(self) -> Optional[str]:
         return pulumi.get(self, "topic_id")
 
 
@@ -221,165 +177,127 @@ class GetSubscriptionsFilterResult(dict):
 @pulumi.output_type
 class GetSubscriptionsSubscriptionResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 created_time: str,
-                 defined_tags: Mapping[str, Any],
-                 delivery_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult'],
-                 endpoint: str,
-                 etag: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 protocol: str,
-                 state: str,
-                 topic_id: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_time: The time when this suscription was created.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str endpoint: A locator that corresponds to the subscription protocol.  For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. Avoid entering confidential information.
-        :param str etag: For optimistic concurrency control. See `if-match`.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-        :param str protocol: The protocol used for the subscription.
-        :param str state: The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-        :param str topic_id: Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_time", created_time)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delivery_policies", delivery_policies)
-        pulumi.set(__self__, "endpoint", endpoint)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "topic_id", topic_id)
+                 compartment_id: Optional[str] = None,
+                 created_time: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 delivery_policies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult']] = None,
+                 endpoint: Optional[str] = None,
+                 etag: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 protocol: Optional[str] = None,
+                 state: Optional[str] = None,
+                 topic_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_time is not None:
+            pulumi.set(__self__, "created_time", created_time)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if delivery_policies is not None:
+            pulumi.set(__self__, "delivery_policies", delivery_policies)
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if etag is not None:
+            pulumi.set(__self__, "etag", etag)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> str:
-        """
-        The time when this suscription was created.
-        """
+    def created_time(self) -> Optional[str]:
         return pulumi.get(self, "created_time")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deliveryPolicies")
-    def delivery_policies(self) -> Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult']:
+    def delivery_policies(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult']]:
         return pulumi.get(self, "delivery_policies")
 
     @property
     @pulumi.getter
-    def endpoint(self) -> str:
-        """
-        A locator that corresponds to the subscription protocol.  For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. Avoid entering confidential information.
-        """
+    def endpoint(self) -> Optional[str]:
         return pulumi.get(self, "endpoint")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        For optimistic concurrency control. See `if-match`.
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocol used for the subscription.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="topicId")
-    def topic_id(self) -> str:
-        """
-        Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
-        """
+    def topic_id(self) -> Optional[str]:
         return pulumi.get(self, "topic_id")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionDeliveryPolicyResult(dict):
     def __init__(__self__, *,
-                 backoff_retry_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']):
-        pulumi.set(__self__, "backoff_retry_policies", backoff_retry_policies)
+                 backoff_retry_policies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']] = None):
+        if backoff_retry_policies is not None:
+            pulumi.set(__self__, "backoff_retry_policies", backoff_retry_policies)
 
     @property
     @pulumi.getter(name="backoffRetryPolicies")
-    def backoff_retry_policies(self) -> Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']:
+    def backoff_retry_policies(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']]:
         return pulumi.get(self, "backoff_retry_policies")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult(dict):
     def __init__(__self__, *,
-                 max_retry_duration: int,
-                 policy_type: str):
-        """
-        :param int max_retry_duration: The maximum retry duration in milliseconds.
-        :param str policy_type: The type of delivery policy. Default value: EXPONENTIAL.
-        """
-        pulumi.set(__self__, "max_retry_duration", max_retry_duration)
-        pulumi.set(__self__, "policy_type", policy_type)
+                 max_retry_duration: Optional[int] = None,
+                 policy_type: Optional[str] = None):
+        if max_retry_duration is not None:
+            pulumi.set(__self__, "max_retry_duration", max_retry_duration)
+        if policy_type is not None:
+            pulumi.set(__self__, "policy_type", policy_type)
 
     @property
     @pulumi.getter(name="maxRetryDuration")
-    def max_retry_duration(self) -> int:
-        """
-        The maximum retry duration in milliseconds.
-        """
+    def max_retry_duration(self) -> Optional[int]:
         return pulumi.get(self, "max_retry_duration")
 
     @property
     @pulumi.getter(name="policyType")
-    def policy_type(self) -> str:
-        """
-        The type of delivery policy. Default value: EXPONENTIAL.
-        """
+    def policy_type(self) -> Optional[str]:
         return pulumi.get(self, "policy_type")
 
 

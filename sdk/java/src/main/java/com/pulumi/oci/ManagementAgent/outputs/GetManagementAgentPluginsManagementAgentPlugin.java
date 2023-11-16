@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentPluginsManagementAgentPlugin {
@@ -16,99 +18,99 @@ public final class GetManagementAgentPluginsManagementAgentPlugin {
      * @return Management Agent Plugin description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Filter to return only Management Agent Plugins having the particular display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Management Agent Plugin Id
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
      * 
      */
-    private Boolean isConsoleDeployable;
+    private @Nullable Boolean isConsoleDeployable;
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Filter to return only Management Agents in the particular lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Supported Platform Types
      * 
      */
-    private List<String> supportedPlatformTypes;
+    private @Nullable List<String> supportedPlatformTypes;
     /**
      * @return Management Agent Plugin Version
      * 
      */
-    private Integer version;
+    private @Nullable Integer version;
 
     private GetManagementAgentPluginsManagementAgentPlugin() {}
     /**
      * @return Management Agent Plugin description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Filter to return only Management Agent Plugins having the particular display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Management Agent Plugin Id
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
      * 
      */
-    public Boolean isConsoleDeployable() {
-        return this.isConsoleDeployable;
+    public Optional<Boolean> isConsoleDeployable() {
+        return Optional.ofNullable(this.isConsoleDeployable);
     }
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Filter to return only Management Agents in the particular lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Supported Platform Types
      * 
      */
     public List<String> supportedPlatformTypes() {
-        return this.supportedPlatformTypes;
+        return this.supportedPlatformTypes == null ? List.of() : this.supportedPlatformTypes;
     }
     /**
      * @return Management Agent Plugin Version
      * 
      */
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -120,14 +122,14 @@ public final class GetManagementAgentPluginsManagementAgentPlugin {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String displayName;
-        private String id;
-        private Boolean isConsoleDeployable;
-        private String name;
-        private String state;
-        private List<String> supportedPlatformTypes;
-        private Integer version;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable Boolean isConsoleDeployable;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable List<String> supportedPlatformTypes;
+        private @Nullable Integer version;
         public Builder() {}
         public Builder(GetManagementAgentPluginsManagementAgentPlugin defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,46 +144,46 @@ public final class GetManagementAgentPluginsManagementAgentPlugin {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isConsoleDeployable(Boolean isConsoleDeployable) {
-            this.isConsoleDeployable = Objects.requireNonNull(isConsoleDeployable);
+        public Builder isConsoleDeployable(@Nullable Boolean isConsoleDeployable) {
+            this.isConsoleDeployable = isConsoleDeployable;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedPlatformTypes(List<String> supportedPlatformTypes) {
-            this.supportedPlatformTypes = Objects.requireNonNull(supportedPlatformTypes);
+        public Builder supportedPlatformTypes(@Nullable List<String> supportedPlatformTypes) {
+            this.supportedPlatformTypes = supportedPlatformTypes;
             return this;
         }
         public Builder supportedPlatformTypes(String... supportedPlatformTypes) {
             return supportedPlatformTypes(List.of(supportedPlatformTypes));
         }
         @CustomType.Setter
-        public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Integer version) {
+            this.version = version;
             return this;
         }
         public GetManagementAgentPluginsManagementAgentPlugin build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Waas.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificatesCertificateSubjectName {
@@ -13,87 +15,87 @@ public final class GetCertificatesCertificateSubjectName {
      * @return The fully qualified domain name used for DNS lookups of the server.
      * 
      */
-    private String commonName;
+    private @Nullable String commonName;
     /**
      * @return ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO&#39;s website](https://www.iso.org/obp/ui/#search/code/).
      * 
      */
-    private String country;
+    private @Nullable String country;
     /**
      * @return The email address of the server&#39;s administrator.
      * 
      */
-    private String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return The city in which the organization is located.
      * 
      */
-    private String locality;
+    private @Nullable String locality;
     /**
      * @return The organization name.
      * 
      */
-    private String organization;
+    private @Nullable String organization;
     /**
      * @return The field to differentiate between divisions within an organization.
      * 
      */
-    private String organizationalUnit;
+    private @Nullable String organizationalUnit;
     /**
      * @return The province where the organization is located.
      * 
      */
-    private String stateProvince;
+    private @Nullable String stateProvince;
 
     private GetCertificatesCertificateSubjectName() {}
     /**
      * @return The fully qualified domain name used for DNS lookups of the server.
      * 
      */
-    public String commonName() {
-        return this.commonName;
+    public Optional<String> commonName() {
+        return Optional.ofNullable(this.commonName);
     }
     /**
      * @return ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO&#39;s website](https://www.iso.org/obp/ui/#search/code/).
      * 
      */
-    public String country() {
-        return this.country;
+    public Optional<String> country() {
+        return Optional.ofNullable(this.country);
     }
     /**
      * @return The email address of the server&#39;s administrator.
      * 
      */
-    public String emailAddress() {
-        return this.emailAddress;
+    public Optional<String> emailAddress() {
+        return Optional.ofNullable(this.emailAddress);
     }
     /**
      * @return The city in which the organization is located.
      * 
      */
-    public String locality() {
-        return this.locality;
+    public Optional<String> locality() {
+        return Optional.ofNullable(this.locality);
     }
     /**
      * @return The organization name.
      * 
      */
-    public String organization() {
-        return this.organization;
+    public Optional<String> organization() {
+        return Optional.ofNullable(this.organization);
     }
     /**
      * @return The field to differentiate between divisions within an organization.
      * 
      */
-    public String organizationalUnit() {
-        return this.organizationalUnit;
+    public Optional<String> organizationalUnit() {
+        return Optional.ofNullable(this.organizationalUnit);
     }
     /**
      * @return The province where the organization is located.
      * 
      */
-    public String stateProvince() {
-        return this.stateProvince;
+    public Optional<String> stateProvince() {
+        return Optional.ofNullable(this.stateProvince);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetCertificatesCertificateSubjectName {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commonName;
-        private String country;
-        private String emailAddress;
-        private String locality;
-        private String organization;
-        private String organizationalUnit;
-        private String stateProvince;
+        private @Nullable String commonName;
+        private @Nullable String country;
+        private @Nullable String emailAddress;
+        private @Nullable String locality;
+        private @Nullable String organization;
+        private @Nullable String organizationalUnit;
+        private @Nullable String stateProvince;
         public Builder() {}
         public Builder(GetCertificatesCertificateSubjectName defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetCertificatesCertificateSubjectName {
         }
 
         @CustomType.Setter
-        public Builder commonName(String commonName) {
-            this.commonName = Objects.requireNonNull(commonName);
+        public Builder commonName(@Nullable String commonName) {
+            this.commonName = commonName;
             return this;
         }
         @CustomType.Setter
-        public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+        public Builder country(@Nullable String country) {
+            this.country = country;
             return this;
         }
         @CustomType.Setter
-        public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+        public Builder emailAddress(@Nullable String emailAddress) {
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder locality(String locality) {
-            this.locality = Objects.requireNonNull(locality);
+        public Builder locality(@Nullable String locality) {
+            this.locality = locality;
             return this;
         }
         @CustomType.Setter
-        public Builder organization(String organization) {
-            this.organization = Objects.requireNonNull(organization);
+        public Builder organization(@Nullable String organization) {
+            this.organization = organization;
             return this;
         }
         @CustomType.Setter
-        public Builder organizationalUnit(String organizationalUnit) {
-            this.organizationalUnit = Objects.requireNonNull(organizationalUnit);
+        public Builder organizationalUnit(@Nullable String organizationalUnit) {
+            this.organizationalUnit = organizationalUnit;
             return this;
         }
         @CustomType.Setter
-        public Builder stateProvince(String stateProvince) {
-            this.stateProvince = Objects.requireNonNull(stateProvince);
+        public Builder stateProvince(@Nullable String stateProvince) {
+            this.stateProvince = stateProvince;
             return this;
         }
         public GetCertificatesCertificateSubjectName build() {

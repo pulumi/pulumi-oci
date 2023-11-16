@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -65,21 +64,21 @@ type Index struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-	IsIfNotExists pulumi.BoolOutput `pulumi:"isIfNotExists"`
+	IsIfNotExists pulumi.BoolPtrOutput `pulumi:"isIfNotExists"`
 	// A set of keys for a secondary index.
 	Keys IndexKeyArrayOutput `pulumi:"keys"`
 	// A message describing the current state in more detail.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Index name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The state of an index.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// the OCID of the table to which this index belongs.
-	TableId pulumi.StringOutput `pulumi:"tableId"`
+	TableId pulumi.StringPtrOutput `pulumi:"tableId"`
 	// The name of the table to which this index belongs.
-	TableName pulumi.StringOutput `pulumi:"tableName"`
+	TableName pulumi.StringPtrOutput `pulumi:"tableName"`
 	// A table name within the compartment, or a table OCID.
 	//
 	// ** IMPORTANT **
@@ -230,12 +229,6 @@ func (i *Index) ToIndexOutputWithContext(ctx context.Context) IndexOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IndexOutput)
 }
 
-func (i *Index) ToOutput(ctx context.Context) pulumix.Output[*Index] {
-	return pulumix.Output[*Index]{
-		OutputState: i.ToIndexOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IndexArrayInput is an input type that accepts IndexArray and IndexArrayOutput values.
 // You can construct a concrete instance of `IndexArrayInput` via:
 //
@@ -259,12 +252,6 @@ func (i IndexArray) ToIndexArrayOutput() IndexArrayOutput {
 
 func (i IndexArray) ToIndexArrayOutputWithContext(ctx context.Context) IndexArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IndexArrayOutput)
-}
-
-func (i IndexArray) ToOutput(ctx context.Context) pulumix.Output[[]*Index] {
-	return pulumix.Output[[]*Index]{
-		OutputState: i.ToIndexArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IndexMapInput is an input type that accepts IndexMap and IndexMapOutput values.
@@ -292,12 +279,6 @@ func (i IndexMap) ToIndexMapOutputWithContext(ctx context.Context) IndexMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IndexMapOutput)
 }
 
-func (i IndexMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Index] {
-	return pulumix.Output[map[string]*Index]{
-		OutputState: i.ToIndexMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IndexOutput struct{ *pulumi.OutputState }
 
 func (IndexOutput) ElementType() reflect.Type {
@@ -312,20 +293,14 @@ func (o IndexOutput) ToIndexOutputWithContext(ctx context.Context) IndexOutput {
 	return o
 }
 
-func (o IndexOutput) ToOutput(ctx context.Context) pulumix.Output[*Index] {
-	return pulumix.Output[*Index]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-func (o IndexOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Index) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o IndexOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Index) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-func (o IndexOutput) IsIfNotExists() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Index) pulumi.BoolOutput { return v.IsIfNotExists }).(pulumi.BoolOutput)
+func (o IndexOutput) IsIfNotExists() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Index) pulumi.BoolPtrOutput { return v.IsIfNotExists }).(pulumi.BoolPtrOutput)
 }
 
 // A set of keys for a secondary index.
@@ -334,8 +309,8 @@ func (o IndexOutput) Keys() IndexKeyArrayOutput {
 }
 
 // A message describing the current state in more detail.
-func (o IndexOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Index) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o IndexOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Index) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Index name.
@@ -344,18 +319,18 @@ func (o IndexOutput) Name() pulumi.StringOutput {
 }
 
 // The state of an index.
-func (o IndexOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Index) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o IndexOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Index) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // the OCID of the table to which this index belongs.
-func (o IndexOutput) TableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Index) pulumi.StringOutput { return v.TableId }).(pulumi.StringOutput)
+func (o IndexOutput) TableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Index) pulumi.StringPtrOutput { return v.TableId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the table to which this index belongs.
-func (o IndexOutput) TableName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Index) pulumi.StringOutput { return v.TableName }).(pulumi.StringOutput)
+func (o IndexOutput) TableName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Index) pulumi.StringPtrOutput { return v.TableName }).(pulumi.StringPtrOutput)
 }
 
 // A table name within the compartment, or a table OCID.
@@ -380,12 +355,6 @@ func (o IndexArrayOutput) ToIndexArrayOutputWithContext(ctx context.Context) Ind
 	return o
 }
 
-func (o IndexArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Index] {
-	return pulumix.Output[[]*Index]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o IndexArrayOutput) Index(i pulumi.IntInput) IndexOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Index {
 		return vs[0].([]*Index)[vs[1].(int)]
@@ -404,12 +373,6 @@ func (o IndexMapOutput) ToIndexMapOutput() IndexMapOutput {
 
 func (o IndexMapOutput) ToIndexMapOutputWithContext(ctx context.Context) IndexMapOutput {
 	return o
-}
-
-func (o IndexMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Index] {
-	return pulumix.Output[map[string]*Index]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IndexMapOutput) MapIndex(k pulumi.StringInput) IndexOutput {

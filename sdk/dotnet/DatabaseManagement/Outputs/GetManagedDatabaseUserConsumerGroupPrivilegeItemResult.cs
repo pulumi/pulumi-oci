@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
         /// </summary>
-        public readonly string GrantOption;
+        public readonly string? GrantOption;
         /// <summary>
         /// Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
         /// </summary>
-        public readonly string InitialGroup;
+        public readonly string? InitialGroup;
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetManagedDatabaseUserConsumerGroupPrivilegeItemResult(
-            string grantOption,
+            string? grantOption,
 
-            string initialGroup,
+            string? initialGroup,
 
-            string name)
+            string? name)
         {
             GrantOption = grantOption;
             InitialGroup = initialGroup;

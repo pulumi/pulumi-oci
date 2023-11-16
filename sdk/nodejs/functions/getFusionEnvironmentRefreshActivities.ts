@@ -79,11 +79,11 @@ export interface GetFusionEnvironmentRefreshActivitiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of refresh_activity_collection.
      */
-    readonly refreshActivityCollections: outputs.Functions.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection[];
+    readonly refreshActivityCollections?: outputs.Functions.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection[];
     /**
      * The current state of the refreshActivity.
      */

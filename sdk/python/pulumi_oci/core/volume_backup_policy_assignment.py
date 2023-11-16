@@ -18,12 +18,6 @@ class VolumeBackupPolicyAssignmentArgs:
                  policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a VolumeBackupPolicyAssignment resource.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
-        :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "asset_id", asset_id)
         pulumi.set(__self__, "policy_id", policy_id)
@@ -31,9 +25,6 @@ class VolumeBackupPolicyAssignmentArgs:
     @property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the volume to assign the policy to.
-        """
         return pulumi.get(self, "asset_id")
 
     @asset_id.setter
@@ -43,13 +34,6 @@ class VolumeBackupPolicyAssignmentArgs:
     @property
     @pulumi.getter(name="policyId")
     def policy_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the volume backup policy to assign to the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
@@ -65,13 +49,6 @@ class _VolumeBackupPolicyAssignmentState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VolumeBackupPolicyAssignment resources.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
-        :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         if asset_id is not None:
             pulumi.set(__self__, "asset_id", asset_id)
@@ -83,9 +60,6 @@ class _VolumeBackupPolicyAssignmentState:
     @property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume to assign the policy to.
-        """
         return pulumi.get(self, "asset_id")
 
     @asset_id.setter
@@ -95,13 +69,6 @@ class _VolumeBackupPolicyAssignmentState:
     @property
     @pulumi.getter(name="policyId")
     def policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume backup policy to assign to the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
@@ -111,9 +78,6 @@ class _VolumeBackupPolicyAssignmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -130,39 +94,9 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
                  policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
-
-        Assigns a volume backup policy to the specified volume. Note that a given volume can
-        only have one backup policy assigned to it. If this operation is used for a volume that already
-        has a different backup policy assigned, the prior backup policy will be silently unassigned.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment",
-            asset_id=oci_core_volume["test_volume"]["id"],
-            policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
-        ```
-
-        ## Import
-
-        VolumeBackupPolicyAssignments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
-        ```
-
+        Create a VolumeBackupPolicyAssignment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
-        :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -171,31 +105,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
                  args: VolumeBackupPolicyAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
-
-        Assigns a volume backup policy to the specified volume. Note that a given volume can
-        only have one backup policy assigned to it. If this operation is used for a volume that already
-        has a different backup policy assigned, the prior backup policy will be silently unassigned.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment",
-            asset_id=oci_core_volume["test_volume"]["id"],
-            policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
-        ```
-
-        ## Import
-
-        VolumeBackupPolicyAssignments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
-        ```
-
+        Create a VolumeBackupPolicyAssignment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VolumeBackupPolicyAssignmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -249,13 +159,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
-        :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -269,28 +172,15 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the volume to assign the policy to.
-        """
         return pulumi.get(self, "asset_id")
 
     @property
     @pulumi.getter(name="policyId")
     def policy_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the volume backup policy to assign to the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "policy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

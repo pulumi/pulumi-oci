@@ -41,7 +41,7 @@ class GetManagedDatabaseUserConsumerGroupPrivilegeResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetManagedDatabaseUserConsumerGroupPrivilegeResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseUserConsumerGroupPrivilegeItemResult']:
-        """
-        An array of consumer group privileges.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseUserConsumerGroupPrivilegeItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -63,9 +60,6 @@ class GetManagedDatabaseUserConsumerGroupPrivilegeResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the granted consumer group privilege.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -92,25 +86,7 @@ def get_managed_database_user_consumer_group_privilege(managed_database_id: Opti
                                                        user_name: Optional[str] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUserConsumerGroupPrivilegeResult:
     """
-    This data source provides details about a specific Managed Database User Consumer Group Privilege resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of consumer group privileges granted to a specific user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user_consumer_group_privilege = oci.DatabaseManagement.get_managed_database_user_consumer_group_privilege(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_consumer_group_privilege_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -133,24 +109,6 @@ def get_managed_database_user_consumer_group_privilege_output(managed_database_i
                                                               user_name: Optional[pulumi.Input[str]] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserConsumerGroupPrivilegeResult]:
     """
-    This data source provides details about a specific Managed Database User Consumer Group Privilege resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of consumer group privileges granted to a specific user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user_consumer_group_privilege = oci.DatabaseManagement.get_managed_database_user_consumer_group_privilege(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_consumer_group_privilege_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     ...

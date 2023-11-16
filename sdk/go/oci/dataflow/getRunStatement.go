@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
@@ -63,22 +62,22 @@ type LookupRunStatementArgs struct {
 // A collection of values returned by getRunStatement.
 type LookupRunStatementResult struct {
 	// The statement code to execute. Example: `println(sc.version)`
-	Code string `pulumi:"code"`
+	Code *string `pulumi:"code"`
 	// The statement ID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The execution output of a statement.
 	Outputs []GetRunStatementOutput `pulumi:"outputs"`
 	// The execution progress.
-	Progress float64 `pulumi:"progress"`
+	Progress *float64 `pulumi:"progress"`
 	// The ID of a run.
 	RunId string `pulumi:"runId"`
 	// The current state of this statement.
-	State       string `pulumi:"state"`
-	StatementId string `pulumi:"statementId"`
+	State       *string `pulumi:"state"`
+	StatementId string  `pulumi:"statementId"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-	TimeCompleted string `pulumi:"timeCompleted"`
+	TimeCompleted *string `pulumi:"timeCompleted"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupRunStatementOutput(ctx *pulumi.Context, args LookupRunStatementOutputArgs, opts ...pulumi.InvokeOption) LookupRunStatementResultOutput {
@@ -121,20 +120,14 @@ func (o LookupRunStatementResultOutput) ToLookupRunStatementResultOutputWithCont
 	return o
 }
 
-func (o LookupRunStatementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRunStatementResult] {
-	return pulumix.Output[LookupRunStatementResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The statement code to execute. Example: `println(sc.version)`
-func (o LookupRunStatementResultOutput) Code() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRunStatementResult) string { return v.Code }).(pulumi.StringOutput)
+func (o LookupRunStatementResultOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRunStatementResult) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
 // The statement ID.
-func (o LookupRunStatementResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRunStatementResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRunStatementResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRunStatementResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The execution output of a statement.
@@ -143,8 +136,8 @@ func (o LookupRunStatementResultOutput) Outputs() GetRunStatementOutputArrayOutp
 }
 
 // The execution progress.
-func (o LookupRunStatementResultOutput) Progress() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupRunStatementResult) float64 { return v.Progress }).(pulumi.Float64Output)
+func (o LookupRunStatementResultOutput) Progress() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupRunStatementResult) *float64 { return v.Progress }).(pulumi.Float64PtrOutput)
 }
 
 // The ID of a run.
@@ -153,8 +146,8 @@ func (o LookupRunStatementResultOutput) RunId() pulumi.StringOutput {
 }
 
 // The current state of this statement.
-func (o LookupRunStatementResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRunStatementResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRunStatementResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRunStatementResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupRunStatementResultOutput) StatementId() pulumi.StringOutput {
@@ -162,13 +155,13 @@ func (o LookupRunStatementResultOutput) StatementId() pulumi.StringOutput {
 }
 
 // The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-func (o LookupRunStatementResultOutput) TimeCompleted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRunStatementResult) string { return v.TimeCompleted }).(pulumi.StringOutput)
+func (o LookupRunStatementResultOutput) TimeCompleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRunStatementResult) *string { return v.TimeCompleted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o LookupRunStatementResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRunStatementResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRunStatementResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRunStatementResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

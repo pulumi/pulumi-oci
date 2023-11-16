@@ -16,17 +16,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Position of IN parameter
         /// </summary>
-        public readonly int InParamPosition;
+        public readonly int? InParamPosition;
         /// <summary>
         /// Value of IN parameter
         /// </summary>
-        public readonly string InParamValue;
+        public readonly string? InParamValue;
 
         [OutputConstructor]
         private GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailResult(
-            int inParamPosition,
+            int? inParamPosition,
 
-            string inParamValue)
+            string? inParamValue)
         {
             InParamPosition = inParamPosition;
             InParamValue = inParamValue;

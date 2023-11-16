@@ -144,7 +144,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string KubernetesVersion;
 
         [OutputConstructor]
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetAddonOptionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string kubernetesVersion)
         {

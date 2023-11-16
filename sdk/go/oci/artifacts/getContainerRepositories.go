@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
@@ -84,7 +83,7 @@ type GetContainerRepositoriesResult struct {
 	DisplayName *string                          `pulumi:"displayName"`
 	Filters     []GetContainerRepositoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the repository is public. A public repository allows unauthenticated access.
 	IsPublic     *bool   `pulumi:"isPublic"`
 	RepositoryId *string `pulumi:"repositoryId"`
@@ -141,12 +140,6 @@ func (o GetContainerRepositoriesResultOutput) ToGetContainerRepositoriesResultOu
 	return o
 }
 
-func (o GetContainerRepositoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesResult] {
-	return pulumix.Output[GetContainerRepositoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment in which the container repository exists.
 func (o GetContainerRepositoriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -173,8 +166,8 @@ func (o GetContainerRepositoriesResultOutput) Filters() GetContainerRepositories
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetContainerRepositoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the repository is public. A public repository allows unauthenticated access.

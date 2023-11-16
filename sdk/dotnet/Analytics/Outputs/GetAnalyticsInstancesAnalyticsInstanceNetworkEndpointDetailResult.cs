@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// <summary>
         /// The type of network endpoint.
         /// </summary>
-        public readonly string NetworkEndpointType;
+        public readonly string? NetworkEndpointType;
         /// <summary>
         /// Network Security Group OCIDs for an Analytics instance.
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// <summary>
         /// OCID of the customer subnet connected to private access channel.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// OCID of the customer VCN peered with private access channel.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
         /// <summary>
         /// Source IP addresses or IP address ranges in ingress rules.
         /// </summary>
@@ -44,13 +44,13 @@ namespace Pulumi.Oci.Analytics.Outputs
 
         [OutputConstructor]
         private GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(
-            string networkEndpointType,
+            string? networkEndpointType,
 
             ImmutableArray<string> networkSecurityGroupIds,
 
-            string subnetId,
+            string? subnetId,
 
-            string vcnId,
+            string? vcnId,
 
             ImmutableArray<string> whitelistedIps,
 

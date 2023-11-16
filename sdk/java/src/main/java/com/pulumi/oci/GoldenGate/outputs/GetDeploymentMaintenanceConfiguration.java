@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentMaintenanceConfiguration {
@@ -14,63 +16,63 @@ public final class GetDeploymentMaintenanceConfiguration {
      * @return Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
      * 
      */
-    private Integer bundleReleaseUpgradePeriodInDays;
+    private @Nullable Integer bundleReleaseUpgradePeriodInDays;
     /**
      * @return Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
      * 
      */
-    private Integer interimReleaseUpgradePeriodInDays;
+    private @Nullable Integer interimReleaseUpgradePeriodInDays;
     /**
      * @return By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
      * 
      */
-    private Boolean isInterimReleaseAutoUpgradeEnabled;
+    private @Nullable Boolean isInterimReleaseAutoUpgradeEnabled;
     /**
      * @return Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
      * 
      */
-    private Integer majorReleaseUpgradePeriodInDays;
+    private @Nullable Integer majorReleaseUpgradePeriodInDays;
     /**
      * @return Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
      * 
      */
-    private Integer securityPatchUpgradePeriodInDays;
+    private @Nullable Integer securityPatchUpgradePeriodInDays;
 
     private GetDeploymentMaintenanceConfiguration() {}
     /**
      * @return Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
      * 
      */
-    public Integer bundleReleaseUpgradePeriodInDays() {
-        return this.bundleReleaseUpgradePeriodInDays;
+    public Optional<Integer> bundleReleaseUpgradePeriodInDays() {
+        return Optional.ofNullable(this.bundleReleaseUpgradePeriodInDays);
     }
     /**
      * @return Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
      * 
      */
-    public Integer interimReleaseUpgradePeriodInDays() {
-        return this.interimReleaseUpgradePeriodInDays;
+    public Optional<Integer> interimReleaseUpgradePeriodInDays() {
+        return Optional.ofNullable(this.interimReleaseUpgradePeriodInDays);
     }
     /**
      * @return By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
      * 
      */
-    public Boolean isInterimReleaseAutoUpgradeEnabled() {
-        return this.isInterimReleaseAutoUpgradeEnabled;
+    public Optional<Boolean> isInterimReleaseAutoUpgradeEnabled() {
+        return Optional.ofNullable(this.isInterimReleaseAutoUpgradeEnabled);
     }
     /**
      * @return Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
      * 
      */
-    public Integer majorReleaseUpgradePeriodInDays() {
-        return this.majorReleaseUpgradePeriodInDays;
+    public Optional<Integer> majorReleaseUpgradePeriodInDays() {
+        return Optional.ofNullable(this.majorReleaseUpgradePeriodInDays);
     }
     /**
      * @return Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
      * 
      */
-    public Integer securityPatchUpgradePeriodInDays() {
-        return this.securityPatchUpgradePeriodInDays;
+    public Optional<Integer> securityPatchUpgradePeriodInDays() {
+        return Optional.ofNullable(this.securityPatchUpgradePeriodInDays);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetDeploymentMaintenanceConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer bundleReleaseUpgradePeriodInDays;
-        private Integer interimReleaseUpgradePeriodInDays;
-        private Boolean isInterimReleaseAutoUpgradeEnabled;
-        private Integer majorReleaseUpgradePeriodInDays;
-        private Integer securityPatchUpgradePeriodInDays;
+        private @Nullable Integer bundleReleaseUpgradePeriodInDays;
+        private @Nullable Integer interimReleaseUpgradePeriodInDays;
+        private @Nullable Boolean isInterimReleaseAutoUpgradeEnabled;
+        private @Nullable Integer majorReleaseUpgradePeriodInDays;
+        private @Nullable Integer securityPatchUpgradePeriodInDays;
         public Builder() {}
         public Builder(GetDeploymentMaintenanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetDeploymentMaintenanceConfiguration {
         }
 
         @CustomType.Setter
-        public Builder bundleReleaseUpgradePeriodInDays(Integer bundleReleaseUpgradePeriodInDays) {
-            this.bundleReleaseUpgradePeriodInDays = Objects.requireNonNull(bundleReleaseUpgradePeriodInDays);
+        public Builder bundleReleaseUpgradePeriodInDays(@Nullable Integer bundleReleaseUpgradePeriodInDays) {
+            this.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder interimReleaseUpgradePeriodInDays(Integer interimReleaseUpgradePeriodInDays) {
-            this.interimReleaseUpgradePeriodInDays = Objects.requireNonNull(interimReleaseUpgradePeriodInDays);
+        public Builder interimReleaseUpgradePeriodInDays(@Nullable Integer interimReleaseUpgradePeriodInDays) {
+            this.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder isInterimReleaseAutoUpgradeEnabled(Boolean isInterimReleaseAutoUpgradeEnabled) {
-            this.isInterimReleaseAutoUpgradeEnabled = Objects.requireNonNull(isInterimReleaseAutoUpgradeEnabled);
+        public Builder isInterimReleaseAutoUpgradeEnabled(@Nullable Boolean isInterimReleaseAutoUpgradeEnabled) {
+            this.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder majorReleaseUpgradePeriodInDays(Integer majorReleaseUpgradePeriodInDays) {
-            this.majorReleaseUpgradePeriodInDays = Objects.requireNonNull(majorReleaseUpgradePeriodInDays);
+        public Builder majorReleaseUpgradePeriodInDays(@Nullable Integer majorReleaseUpgradePeriodInDays) {
+            this.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder securityPatchUpgradePeriodInDays(Integer securityPatchUpgradePeriodInDays) {
-            this.securityPatchUpgradePeriodInDays = Objects.requireNonNull(securityPatchUpgradePeriodInDays);
+        public Builder securityPatchUpgradePeriodInDays(@Nullable Integer securityPatchUpgradePeriodInDays) {
+            this.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
             return this;
         }
         public GetDeploymentMaintenanceConfiguration build() {

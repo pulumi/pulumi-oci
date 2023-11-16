@@ -44,7 +44,7 @@ class GetVmClusterPatchHistoryEntriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,10 +52,7 @@ class GetVmClusterPatchHistoryEntriesResult:
 
     @property
     @pulumi.getter(name="patchHistoryEntries")
-    def patch_history_entries(self) -> Sequence['outputs.GetVmClusterPatchHistoryEntriesPatchHistoryEntryResult']:
-        """
-        The list of patch_history_entries.
-        """
+    def patch_history_entries(self) -> Optional[Sequence['outputs.GetVmClusterPatchHistoryEntriesPatchHistoryEntryResult']]:
         return pulumi.get(self, "patch_history_entries")
 
     @property
@@ -80,21 +77,7 @@ def get_vm_cluster_patch_history_entries(filters: Optional[Sequence[pulumi.Input
                                          vm_cluster_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterPatchHistoryEntriesResult:
     """
-    This data source provides the list of Vm Cluster Patch History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patch_history_entries = oci.Database.get_vm_cluster_patch_history_entries(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_vm_cluster_patch_history_entries_output(filters: Optional[pulumi.Input[O
                                                 vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntriesResult]:
     """
-    This data source provides the list of Vm Cluster Patch History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patch_history_entries = oci.Database.get_vm_cluster_patch_history_entries(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

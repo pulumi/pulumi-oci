@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
         /// </summary>
-        public readonly int ActionDurationInSeconds;
+        public readonly int? ActionDurationInSeconds;
         /// <summary>
         /// Evaluation period in seconds.
         /// </summary>
-        public readonly int PeriodInSeconds;
+        public readonly int? PeriodInSeconds;
         /// <summary>
         /// Requests allowed per evaluation period.
         /// </summary>
-        public readonly int RequestsLimit;
+        public readonly int? RequestsLimit;
 
         [OutputConstructor]
         private GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult(
-            int actionDurationInSeconds,
+            int? actionDurationInSeconds,
 
-            int periodInSeconds,
+            int? periodInSeconds,
 
-            int requestsLimit)
+            int? requestsLimit)
         {
             ActionDurationInSeconds = actionDurationInSeconds;
             PeriodInSeconds = periodInSeconds;

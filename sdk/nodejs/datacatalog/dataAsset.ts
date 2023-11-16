@@ -67,11 +67,11 @@ export class DataAsset extends pulumi.CustomResource {
     /**
      * OCID of the user who created the data asset.
      */
-    public /*out*/ readonly createdById!: pulumi.Output<string>;
+    public /*out*/ readonly createdById!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Detailed description of the data asset.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -79,32 +79,32 @@ export class DataAsset extends pulumi.CustomResource {
     /**
      * External URI that can be used to reference the object. Format will differ based on the type of object.
      */
-    public /*out*/ readonly externalKey!: pulumi.Output<string>;
+    public /*out*/ readonly externalKey!: pulumi.Output<string | undefined>;
     /**
      * Unique data asset key that is immutable.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public readonly properties!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
+    public readonly properties!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The current state of the data asset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeHarvested!: pulumi.Output<string>;
+    public /*out*/ readonly timeHarvested!: pulumi.Output<string | undefined>;
     /**
      * The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.
      *
@@ -116,11 +116,11 @@ export class DataAsset extends pulumi.CustomResource {
     /**
      * OCID of the user who last modified the data asset.
      */
-    public /*out*/ readonly updatedById!: pulumi.Output<string>;
+    public /*out*/ readonly updatedById!: pulumi.Output<string | undefined>;
     /**
      * URI to the data asset instance in the API.
      */
-    public /*out*/ readonly uri!: pulumi.Output<string>;
+    public /*out*/ readonly uri!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DataAsset resource with the given unique name, arguments, and options.

@@ -9,6 +9,8 @@ import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelEncryptionDomainConfi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecConnectionTunnelResult {
@@ -16,69 +18,69 @@ public final class GetIpsecConnectionTunnelResult {
      * @return Information needed to establish a BGP Session on an interface.
      * 
      */
-    private List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
+    private @Nullable List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
     /**
      * @return The OCID of the compartment containing the tunnel.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The IP address of Cpe headend.  Example: `129.146.17.50`
      * 
      */
-    private String cpeIp;
+    private @Nullable String cpeIp;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Configuration information used by the encryption domain policy.
      * 
      */
-    private List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
+    private @Nullable List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Internet Key Exchange protocol version.
      * 
      */
-    private String ikeVersion;
+    private @Nullable String ikeVersion;
     private String ipsecId;
     /**
      * @return the routing strategy used for this tunnel, either static route or BGP dynamic routing
      * 
      */
-    private String routing;
+    private @Nullable String routing;
     /**
      * @return The IPSec connection&#39;s tunnel&#39;s lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The tunnel&#39;s current state.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeStatusUpdated;
+    private @Nullable String timeStatusUpdated;
     private String tunnelId;
     /**
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `129.146.17.50`
      * 
      */
-    private String vpnIp;
+    private @Nullable String vpnIp;
 
     private GetIpsecConnectionTunnelResult() {}
     /**
@@ -86,49 +88,49 @@ public final class GetIpsecConnectionTunnelResult {
      * 
      */
     public List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos() {
-        return this.bgpSessionInfos;
+        return this.bgpSessionInfos == null ? List.of() : this.bgpSessionInfos;
     }
     /**
      * @return The OCID of the compartment containing the tunnel.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The IP address of Cpe headend.  Example: `129.146.17.50`
      * 
      */
-    public String cpeIp() {
-        return this.cpeIp;
+    public Optional<String> cpeIp() {
+        return Optional.ofNullable(this.cpeIp);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Configuration information used by the encryption domain policy.
      * 
      */
     public List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs() {
-        return this.encryptionDomainConfigs;
+        return this.encryptionDomainConfigs == null ? List.of() : this.encryptionDomainConfigs;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Internet Key Exchange protocol version.
      * 
      */
-    public String ikeVersion() {
-        return this.ikeVersion;
+    public Optional<String> ikeVersion() {
+        return Optional.ofNullable(this.ikeVersion);
     }
     public String ipsecId() {
         return this.ipsecId;
@@ -137,36 +139,36 @@ public final class GetIpsecConnectionTunnelResult {
      * @return the routing strategy used for this tunnel, either static route or BGP dynamic routing
      * 
      */
-    public String routing() {
-        return this.routing;
+    public Optional<String> routing() {
+        return Optional.ofNullable(this.routing);
     }
     /**
      * @return The IPSec connection&#39;s tunnel&#39;s lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The tunnel&#39;s current state.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeStatusUpdated() {
-        return this.timeStatusUpdated;
+    public Optional<String> timeStatusUpdated() {
+        return Optional.ofNullable(this.timeStatusUpdated);
     }
     public String tunnelId() {
         return this.tunnelId;
@@ -175,8 +177,8 @@ public final class GetIpsecConnectionTunnelResult {
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `129.146.17.50`
      * 
      */
-    public String vpnIp() {
-        return this.vpnIp;
+    public Optional<String> vpnIp() {
+        return Optional.ofNullable(this.vpnIp);
     }
 
     public static Builder builder() {
@@ -188,21 +190,21 @@ public final class GetIpsecConnectionTunnelResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
-        private String compartmentId;
-        private String cpeIp;
-        private String displayName;
-        private List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
-        private String id;
-        private String ikeVersion;
+        private @Nullable List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
+        private @Nullable String compartmentId;
+        private @Nullable String cpeIp;
+        private @Nullable String displayName;
+        private @Nullable List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
+        private @Nullable String id;
+        private @Nullable String ikeVersion;
         private String ipsecId;
-        private String routing;
-        private String state;
-        private String status;
-        private String timeCreated;
-        private String timeStatusUpdated;
+        private @Nullable String routing;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String timeCreated;
+        private @Nullable String timeStatusUpdated;
         private String tunnelId;
-        private String vpnIp;
+        private @Nullable String vpnIp;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -224,44 +226,44 @@ public final class GetIpsecConnectionTunnelResult {
         }
 
         @CustomType.Setter
-        public Builder bgpSessionInfos(List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos) {
-            this.bgpSessionInfos = Objects.requireNonNull(bgpSessionInfos);
+        public Builder bgpSessionInfos(@Nullable List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos) {
+            this.bgpSessionInfos = bgpSessionInfos;
             return this;
         }
         public Builder bgpSessionInfos(GetIpsecConnectionTunnelBgpSessionInfo... bgpSessionInfos) {
             return bgpSessionInfos(List.of(bgpSessionInfos));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpeIp(String cpeIp) {
-            this.cpeIp = Objects.requireNonNull(cpeIp);
+        public Builder cpeIp(@Nullable String cpeIp) {
+            this.cpeIp = cpeIp;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder encryptionDomainConfigs(List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs) {
-            this.encryptionDomainConfigs = Objects.requireNonNull(encryptionDomainConfigs);
+        public Builder encryptionDomainConfigs(@Nullable List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs) {
+            this.encryptionDomainConfigs = encryptionDomainConfigs;
             return this;
         }
         public Builder encryptionDomainConfigs(GetIpsecConnectionTunnelEncryptionDomainConfig... encryptionDomainConfigs) {
             return encryptionDomainConfigs(List.of(encryptionDomainConfigs));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ikeVersion(String ikeVersion) {
-            this.ikeVersion = Objects.requireNonNull(ikeVersion);
+        public Builder ikeVersion(@Nullable String ikeVersion) {
+            this.ikeVersion = ikeVersion;
             return this;
         }
         @CustomType.Setter
@@ -270,28 +272,28 @@ public final class GetIpsecConnectionTunnelResult {
             return this;
         }
         @CustomType.Setter
-        public Builder routing(String routing) {
-            this.routing = Objects.requireNonNull(routing);
+        public Builder routing(@Nullable String routing) {
+            this.routing = routing;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusUpdated(String timeStatusUpdated) {
-            this.timeStatusUpdated = Objects.requireNonNull(timeStatusUpdated);
+        public Builder timeStatusUpdated(@Nullable String timeStatusUpdated) {
+            this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
         @CustomType.Setter
@@ -300,8 +302,8 @@ public final class GetIpsecConnectionTunnelResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vpnIp(String vpnIp) {
-            this.vpnIp = Objects.requireNonNull(vpnIp);
+        public Builder vpnIp(@Nullable String vpnIp) {
+            this.vpnIp = vpnIp;
             return this;
         }
         public GetIpsecConnectionTunnelResult build() {

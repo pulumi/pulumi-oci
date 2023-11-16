@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigResult {
@@ -22,99 +24,99 @@ public final class GetConfigResult {
      * @return The type of configuration item.
      * 
      */
-    private String configType;
+    private @Nullable String configType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A description of the metric.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A list of dimensions for the metric. This variable should not be used.
      * 
      */
-    private List<GetConfigDimension> dimensions;
+    private @Nullable List<GetConfigDimension> dimensions;
     /**
      * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    private String etag;
+    private @Nullable String etag;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
-    private String filterId;
+    private @Nullable String filterId;
     /**
      * @return The string that defines the Span Filter expression.
      * 
      */
-    private String filterText;
+    private @Nullable String filterText;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
-    private String group;
+    private @Nullable String group;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of configuration items that reference the span filter.
      * 
      */
-    private List<GetConfigInUseBy> inUseBies;
+    private @Nullable List<GetConfigInUseBy> inUseBies;
     /**
      * @return The list of metrics in this group.
      * 
      */
-    private List<GetConfigMetric> metrics;
+    private @Nullable List<GetConfigMetric> metrics;
     /**
      * @return The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
-    private String namespace;
-    private String opcDryRun;
+    private @Nullable String namespace;
+    private @Nullable String opcDryRun;
     /**
      * @return The options are stored here as JSON.
      * 
      */
-    private String options;
-    private List<GetConfigRule> rules;
+    private @Nullable String options;
+    private @Nullable List<GetConfigRule> rules;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    private String updatedBy;
+    private @Nullable String updatedBy;
 
     private GetConfigResult() {}
     public String apmDomainId() {
@@ -127,140 +129,140 @@ public final class GetConfigResult {
      * @return The type of configuration item.
      * 
      */
-    public String configType() {
-        return this.configType;
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A description of the metric.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A list of dimensions for the metric. This variable should not be used.
      * 
      */
     public List<GetConfigDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    public String etag() {
-        return this.etag;
+    public Optional<String> etag() {
+        return Optional.ofNullable(this.etag);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
-    public String filterId() {
-        return this.filterId;
+    public Optional<String> filterId() {
+        return Optional.ofNullable(this.filterId);
     }
     /**
      * @return The string that defines the Span Filter expression.
      * 
      */
-    public String filterText() {
-        return this.filterText;
+    public Optional<String> filterText() {
+        return Optional.ofNullable(this.filterText);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
-    public String group() {
-        return this.group;
+    public Optional<String> group() {
+        return Optional.ofNullable(this.group);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of configuration items that reference the span filter.
      * 
      */
     public List<GetConfigInUseBy> inUseBies() {
-        return this.inUseBies;
+        return this.inUseBies == null ? List.of() : this.inUseBies;
     }
     /**
      * @return The list of metrics in this group.
      * 
      */
     public List<GetConfigMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
-    public String opcDryRun() {
-        return this.opcDryRun;
+    public Optional<String> opcDryRun() {
+        return Optional.ofNullable(this.opcDryRun);
     }
     /**
      * @return The options are stored here as JSON.
      * 
      */
-    public String options() {
-        return this.options;
+    public Optional<String> options() {
+        return Optional.ofNullable(this.options);
     }
     public List<GetConfigRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    public String updatedBy() {
-        return this.updatedBy;
+    public Optional<String> updatedBy() {
+        return Optional.ofNullable(this.updatedBy);
     }
 
     public static Builder builder() {
@@ -274,27 +276,27 @@ public final class GetConfigResult {
     public static final class Builder {
         private String apmDomainId;
         private String configId;
-        private String configType;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private String description;
-        private List<GetConfigDimension> dimensions;
-        private String displayName;
-        private String etag;
-        private String filterId;
-        private String filterText;
-        private Map<String,Object> freeformTags;
-        private String group;
-        private String id;
-        private List<GetConfigInUseBy> inUseBies;
-        private List<GetConfigMetric> metrics;
-        private String namespace;
-        private String opcDryRun;
-        private String options;
-        private List<GetConfigRule> rules;
-        private String timeCreated;
-        private String timeUpdated;
-        private String updatedBy;
+        private @Nullable String configType;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable List<GetConfigDimension> dimensions;
+        private @Nullable String displayName;
+        private @Nullable String etag;
+        private @Nullable String filterId;
+        private @Nullable String filterText;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String group;
+        private @Nullable String id;
+        private @Nullable List<GetConfigInUseBy> inUseBies;
+        private @Nullable List<GetConfigMetric> metrics;
+        private @Nullable String namespace;
+        private @Nullable String opcDryRun;
+        private @Nullable String options;
+        private @Nullable List<GetConfigRule> rules;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String updatedBy;
         public Builder() {}
         public Builder(GetConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -334,120 +336,120 @@ public final class GetConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+        public Builder configType(@Nullable String configType) {
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetConfigDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetConfigDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetConfigDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+        public Builder etag(@Nullable String etag) {
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
-        public Builder filterId(String filterId) {
-            this.filterId = Objects.requireNonNull(filterId);
+        public Builder filterId(@Nullable String filterId) {
+            this.filterId = filterId;
             return this;
         }
         @CustomType.Setter
-        public Builder filterText(String filterText) {
-            this.filterText = Objects.requireNonNull(filterText);
+        public Builder filterText(@Nullable String filterText) {
+            this.filterText = filterText;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder group(String group) {
-            this.group = Objects.requireNonNull(group);
+        public Builder group(@Nullable String group) {
+            this.group = group;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inUseBies(List<GetConfigInUseBy> inUseBies) {
-            this.inUseBies = Objects.requireNonNull(inUseBies);
+        public Builder inUseBies(@Nullable List<GetConfigInUseBy> inUseBies) {
+            this.inUseBies = inUseBies;
             return this;
         }
         public Builder inUseBies(GetConfigInUseBy... inUseBies) {
             return inUseBies(List.of(inUseBies));
         }
         @CustomType.Setter
-        public Builder metrics(List<GetConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetConfigMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder opcDryRun(String opcDryRun) {
-            this.opcDryRun = Objects.requireNonNull(opcDryRun);
+        public Builder opcDryRun(@Nullable String opcDryRun) {
+            this.opcDryRun = opcDryRun;
             return this;
         }
         @CustomType.Setter
-        public Builder options(String options) {
-            this.options = Objects.requireNonNull(options);
+        public Builder options(@Nullable String options) {
+            this.options = options;
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetConfigRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetConfigRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetConfigRule... rules) {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+        public Builder updatedBy(@Nullable String updatedBy) {
+            this.updatedBy = updatedBy;
             return this;
         }
         public GetConfigResult build() {

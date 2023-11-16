@@ -167,22 +167,22 @@ namespace Pulumi.Oci.ApmTraces
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsSummarized;
         /// <summary>
         /// Name of the property.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         public readonly string? SnapshotTime;
         public readonly string? ThreadId;
         /// <summary>
         /// End time of the trace.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// Start time of the trace.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         public readonly string TraceKey;
         /// <summary>
         /// Trace snapshots properties.
@@ -193,19 +193,19 @@ namespace Pulumi.Oci.ApmTraces
         private GetTraceSnapshotDataResult(
             string apmDomainId,
 
-            string id,
+            string? id,
 
             bool? isSummarized,
 
-            string key,
+            string? key,
 
             string? snapshotTime,
 
             string? threadId,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted,
+            string? timeStarted,
 
             string traceKey,
 

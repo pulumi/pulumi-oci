@@ -26,7 +26,7 @@ public final class GetDetectorRecipesResult {
      * @return The list of detector_recipe_collection.
      * 
      */
-    private List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
+    private @Nullable List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
     /**
      * @return The display name of entity
      * 
@@ -37,7 +37,7 @@ public final class GetDetectorRecipesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean resourceMetadataOnly;
     /**
      * @return The current state of the resource.
@@ -64,7 +64,7 @@ public final class GetDetectorRecipesResult {
      * 
      */
     public List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections() {
-        return this.detectorRecipeCollections;
+        return this.detectorRecipeCollections == null ? List.of() : this.detectorRecipeCollections;
     }
     /**
      * @return The display name of entity
@@ -80,8 +80,8 @@ public final class GetDetectorRecipesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> resourceMetadataOnly() {
         return Optional.ofNullable(this.resourceMetadataOnly);
@@ -106,10 +106,10 @@ public final class GetDetectorRecipesResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
+        private @Nullable List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDetectorRecipesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean resourceMetadataOnly;
         private @Nullable String state;
         public Builder() {}
@@ -142,8 +142,8 @@ public final class GetDetectorRecipesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder detectorRecipeCollections(List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections) {
-            this.detectorRecipeCollections = Objects.requireNonNull(detectorRecipeCollections);
+        public Builder detectorRecipeCollections(@Nullable List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections) {
+            this.detectorRecipeCollections = detectorRecipeCollections;
             return this;
         }
         public Builder detectorRecipeCollections(GetDetectorRecipesDetectorRecipeCollection... detectorRecipeCollections) {
@@ -163,8 +163,8 @@ public final class GetDetectorRecipesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

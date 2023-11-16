@@ -108,122 +108,122 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// A regular expression to be used by data discovery for matching column comments.
         /// </summary>
-        public readonly string CommentPattern;
+        public readonly string? CommentPattern;
         /// <summary>
         /// The OCID of the compartment that contains the sensitive type.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A regular expression to be used by data discovery for matching column data values.
         /// </summary>
-        public readonly string DataPattern;
+        public readonly string? DataPattern;
         /// <summary>
         /// The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
         /// </summary>
-        public readonly string DefaultMaskingFormatId;
+        public readonly string? DefaultMaskingFormatId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the sensitive type.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The display name of the sensitive type.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
         /// </summary>
-        public readonly string EntityType;
+        public readonly string? EntityType;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the sensitive type.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A regular expression to be used by data discovery for matching column names.
         /// </summary>
-        public readonly string NamePattern;
+        public readonly string? NamePattern;
         /// <summary>
         /// The OCID of the parent sensitive category.
         /// </summary>
-        public readonly string ParentCategoryId;
+        public readonly string? ParentCategoryId;
         /// <summary>
         /// The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
         /// </summary>
-        public readonly string SearchType;
+        public readonly string? SearchType;
         public readonly string SensitiveTypeId;
         /// <summary>
         /// The short name of the sensitive type.
         /// </summary>
-        public readonly string ShortName;
+        public readonly string? ShortName;
         /// <summary>
         /// Specifies whether the sensitive type is user-defined or predefined.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// The current state of the sensitive type.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetSensitiveTypeResult(
-            string commentPattern,
+            string? commentPattern,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string dataPattern,
+            string? dataPattern,
 
-            string defaultMaskingFormatId,
+            string? defaultMaskingFormatId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string entityType,
+            string? entityType,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string namePattern,
+            string? namePattern,
 
-            string parentCategoryId,
+            string? parentCategoryId,
 
-            string searchType,
+            string? searchType,
 
             string sensitiveTypeId,
 
-            string shortName,
+            string? shortName,
 
-            string source,
+            string? source,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CommentPattern = commentPattern;
             CompartmentId = compartmentId;

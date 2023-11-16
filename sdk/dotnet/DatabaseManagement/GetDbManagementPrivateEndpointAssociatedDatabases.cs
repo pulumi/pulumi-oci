@@ -148,7 +148,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetDbManagementPrivateEndpointAssociatedDatabasesResult(
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetDbManagementPrivateEndpointAssociatedDatabasesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AssociatedDatabaseCollections = associatedDatabaseCollections;
             CompartmentId = compartmentId;

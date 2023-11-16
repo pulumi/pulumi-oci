@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,28 +59,28 @@ type LookupSecurityPolicyArgs struct {
 // A collection of values returned by getSecurityPolicy.
 type LookupSecurityPolicyResult struct {
 	// The OCID of the compartment containing the security policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the security policy.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the security policy.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the security policy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details about the current state of the security policy in Data Safe.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	SecurityPolicyId string  `pulumi:"securityPolicyId"`
 	// The current state of the security policy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time that the security policy was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last date and time the security policy was updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupSecurityPolicyOutput(ctx *pulumi.Context, args LookupSecurityPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityPolicyResultOutput {
@@ -122,15 +121,9 @@ func (o LookupSecurityPolicyResultOutput) ToLookupSecurityPolicyResultOutputWith
 	return o
 }
 
-func (o LookupSecurityPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSecurityPolicyResult] {
-	return pulumix.Output[LookupSecurityPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the security policy.
-func (o LookupSecurityPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -139,13 +132,13 @@ func (o LookupSecurityPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the security policy.
-func (o LookupSecurityPolicyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the security policy.
-func (o LookupSecurityPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -154,13 +147,13 @@ func (o LookupSecurityPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the security policy.
-func (o LookupSecurityPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the security policy in Data Safe.
-func (o LookupSecurityPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSecurityPolicyResultOutput) SecurityPolicyId() pulumi.StringOutput {
@@ -168,8 +161,8 @@ func (o LookupSecurityPolicyResultOutput) SecurityPolicyId() pulumi.StringOutput
 }
 
 // The current state of the security policy.
-func (o LookupSecurityPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -178,13 +171,13 @@ func (o LookupSecurityPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time that the security policy was created, in the format defined by RFC3339.
-func (o LookupSecurityPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the security policy was updated, in the format defined by RFC3339.
-func (o LookupSecurityPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSecurityPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

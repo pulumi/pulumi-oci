@@ -110,39 +110,39 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         /// </summary>
-        public readonly string DatabaseStatus;
+        public readonly string? DatabaseStatus;
         /// <summary>
         /// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         /// </summary>
-        public readonly string DatabaseSubType;
+        public readonly string? DatabaseSubType;
         /// <summary>
         /// The type of Oracle Database installation.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// The infrastructure used to deploy the Oracle Database.
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the Oracle Database is part of a cluster.
         /// </summary>
-        public readonly bool IsCluster;
+        public readonly bool? IsCluster;
         /// <summary>
         /// A list of Managed Database Groups that the Managed Database belongs to.
         /// </summary>
@@ -151,63 +151,63 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The management option used when enabling Database Management.
         /// </summary>
-        public readonly string ManagementOption;
+        public readonly string? ManagementOption;
         /// <summary>
         /// The name of the Managed Database.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
         /// </summary>
-        public readonly string ParentContainerId;
+        public readonly string? ParentContainerId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
         /// </summary>
-        public readonly string StorageSystemId;
+        public readonly string? StorageSystemId;
         /// <summary>
         /// The date and time the Managed Database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The workload type of the Autonomous Database.
         /// </summary>
-        public readonly string WorkloadType;
+        public readonly string? WorkloadType;
 
         [OutputConstructor]
         private GetManagedDatabaseResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseStatus,
+            string? databaseStatus,
 
-            string databaseSubType,
+            string? databaseSubType,
 
-            string databaseType,
+            string? databaseType,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string id,
+            string? id,
 
-            bool isCluster,
+            bool? isCluster,
 
             ImmutableArray<Outputs.GetManagedDatabaseManagedDatabaseGroupResult> managedDatabaseGroups,
 
             string managedDatabaseId,
 
-            string managementOption,
+            string? managementOption,
 
-            string name,
+            string? name,
 
-            string parentContainerId,
+            string? parentContainerId,
 
-            string storageSystemId,
+            string? storageSystemId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string workloadType)
+            string? workloadType)
         {
             AdditionalDetails = additionalDetails;
             CompartmentId = compartmentId;

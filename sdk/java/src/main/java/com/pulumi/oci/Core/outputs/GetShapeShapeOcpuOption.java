@@ -6,22 +6,24 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapeShapeOcpuOption {
-    private Double max;
-    private Double maxPerNumaNode;
-    private Double min;
+    private @Nullable Double max;
+    private @Nullable Double maxPerNumaNode;
+    private @Nullable Double min;
 
     private GetShapeShapeOcpuOption() {}
-    public Double max() {
-        return this.max;
+    public Optional<Double> max() {
+        return Optional.ofNullable(this.max);
     }
-    public Double maxPerNumaNode() {
-        return this.maxPerNumaNode;
+    public Optional<Double> maxPerNumaNode() {
+        return Optional.ofNullable(this.maxPerNumaNode);
     }
-    public Double min() {
-        return this.min;
+    public Optional<Double> min() {
+        return Optional.ofNullable(this.min);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetShapeShapeOcpuOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double max;
-        private Double maxPerNumaNode;
-        private Double min;
+        private @Nullable Double max;
+        private @Nullable Double maxPerNumaNode;
+        private @Nullable Double min;
         public Builder() {}
         public Builder(GetShapeShapeOcpuOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetShapeShapeOcpuOption {
         }
 
         @CustomType.Setter
-        public Builder max(Double max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Double max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder maxPerNumaNode(Double maxPerNumaNode) {
-            this.maxPerNumaNode = Objects.requireNonNull(maxPerNumaNode);
+        public Builder maxPerNumaNode(@Nullable Double maxPerNumaNode) {
+            this.maxPerNumaNode = maxPerNumaNode;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Double min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Double min) {
+            this.min = min;
             return this;
         }
         public GetShapeShapeOcpuOption build() {

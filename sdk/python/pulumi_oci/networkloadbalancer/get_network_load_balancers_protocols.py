@@ -41,7 +41,7 @@ class GetNetworkLoadBalancersProtocolsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetNetworkLoadBalancersProtocolsResult:
 
     @property
     @pulumi.getter(name="networkLoadBalancersProtocolCollections")
-    def network_load_balancers_protocol_collections(self) -> Sequence['outputs.GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionResult']:
-        """
-        The list of network_load_balancers_protocol_collection.
-        """
+    def network_load_balancers_protocol_collections(self) -> Optional[Sequence['outputs.GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionResult']]:
         return pulumi.get(self, "network_load_balancers_protocol_collections")
 
 
@@ -70,19 +67,7 @@ class AwaitableGetNetworkLoadBalancersProtocolsResult(GetNetworkLoadBalancersPro
 def get_network_load_balancers_protocols(filters: Optional[Sequence[pulumi.InputType['GetNetworkLoadBalancersProtocolsFilterArgs']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancersProtocolsResult:
     """
-    This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    This API has been deprecated so it won't return the updated list of supported protocls.
-    Lists all supported traffic protocols.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancers_protocols = oci.NetworkLoadBalancer.get_network_load_balancers_protocols()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -99,18 +84,6 @@ def get_network_load_balancers_protocols(filters: Optional[Sequence[pulumi.Input
 def get_network_load_balancers_protocols_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkLoadBalancersProtocolsFilterArgs']]]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancersProtocolsResult]:
     """
-    This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    This API has been deprecated so it won't return the updated list of supported protocls.
-    Lists all supported traffic protocols.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancers_protocols = oci.NetworkLoadBalancer.get_network_load_balancers_protocols()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

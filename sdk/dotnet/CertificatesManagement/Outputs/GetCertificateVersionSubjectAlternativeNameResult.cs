@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The subject alternative name.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetCertificateVersionSubjectAlternativeNameResult(
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Type = type;
             Value = value;

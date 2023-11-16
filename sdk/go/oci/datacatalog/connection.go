@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -65,39 +64,39 @@ type Connection struct {
 	// Unique catalog identifier.
 	CatalogId pulumi.StringOutput `pulumi:"catalogId"`
 	// OCID of the user who created the connection.
-	CreatedById pulumi.StringOutput `pulumi:"createdById"`
+	CreatedById pulumi.StringPtrOutput `pulumi:"createdById"`
 	// Unique data asset key.
 	DataAssetKey pulumi.StringOutput `pulumi:"dataAssetKey"`
 	// (Updatable) A description of the connection.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
 	EncProperties pulumi.MapOutput `pulumi:"encProperties"`
 	// Unique external key of this object from the source system.
-	ExternalKey pulumi.StringOutput `pulumi:"externalKey"`
+	ExternalKey pulumi.StringPtrOutput `pulumi:"externalKey"`
 	// (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-	IsDefault pulumi.BoolOutput `pulumi:"isDefault"`
+	IsDefault pulumi.BoolPtrOutput `pulumi:"isDefault"`
 	// Unique connection key that is immutable.
-	Key        pulumi.StringOutput `pulumi:"key"`
-	Properties pulumi.MapOutput    `pulumi:"properties"`
+	Key        pulumi.StringPtrOutput `pulumi:"key"`
+	Properties pulumi.MapOutput       `pulumi:"properties"`
 	// The current state of the connection.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeStatusUpdated pulumi.StringOutput `pulumi:"timeStatusUpdated"`
+	TimeStatusUpdated pulumi.StringPtrOutput `pulumi:"timeStatusUpdated"`
 	// The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey pulumi.StringOutput `pulumi:"typeKey"`
 	// OCID of the user who modified the connection.
-	UpdatedById pulumi.StringOutput `pulumi:"updatedById"`
+	UpdatedById pulumi.StringPtrOutput `pulumi:"updatedById"`
 	// URI to the connection instance in the API.
-	Uri pulumi.StringOutput `pulumi:"uri"`
+	Uri pulumi.StringPtrOutput `pulumi:"uri"`
 }
 
 // NewConnection registers a new resource with the given unique name, arguments, and options.
@@ -299,12 +298,6 @@ func (i *Connection) ToConnectionOutputWithContext(ctx context.Context) Connecti
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionOutput)
 }
 
-func (i *Connection) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: i.ToConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectionArrayInput is an input type that accepts ConnectionArray and ConnectionArrayOutput values.
 // You can construct a concrete instance of `ConnectionArrayInput` via:
 //
@@ -328,12 +321,6 @@ func (i ConnectionArray) ToConnectionArrayOutput() ConnectionArrayOutput {
 
 func (i ConnectionArray) ToConnectionArrayOutputWithContext(ctx context.Context) ConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionArrayOutput)
-}
-
-func (i ConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: i.ToConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConnectionMapInput is an input type that accepts ConnectionMap and ConnectionMapOutput values.
@@ -361,12 +348,6 @@ func (i ConnectionMap) ToConnectionMapOutputWithContext(ctx context.Context) Con
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionMapOutput)
 }
 
-func (i ConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: i.ToConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectionOutput struct{ *pulumi.OutputState }
 
 func (ConnectionOutput) ElementType() reflect.Type {
@@ -381,20 +362,14 @@ func (o ConnectionOutput) ToConnectionOutputWithContext(ctx context.Context) Con
 	return o
 }
 
-func (o ConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique catalog identifier.
 func (o ConnectionOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CatalogId }).(pulumi.StringOutput)
 }
 
 // OCID of the user who created the connection.
-func (o ConnectionOutput) CreatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CreatedById }).(pulumi.StringOutput)
+func (o ConnectionOutput) CreatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.CreatedById }).(pulumi.StringPtrOutput)
 }
 
 // Unique data asset key.
@@ -403,8 +378,8 @@ func (o ConnectionOutput) DataAssetKey() pulumi.StringOutput {
 }
 
 // (Updatable) A description of the connection.
-func (o ConnectionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ConnectionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -418,18 +393,18 @@ func (o ConnectionOutput) EncProperties() pulumi.MapOutput {
 }
 
 // Unique external key of this object from the source system.
-func (o ConnectionOutput) ExternalKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ExternalKey }).(pulumi.StringOutput)
+func (o ConnectionOutput) ExternalKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-func (o ConnectionOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.IsDefault }).(pulumi.BoolOutput)
+func (o ConnectionOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.BoolPtrOutput { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // Unique connection key that is immutable.
-func (o ConnectionOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o ConnectionOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 func (o ConnectionOutput) Properties() pulumi.MapOutput {
@@ -437,23 +412,23 @@ func (o ConnectionOutput) Properties() pulumi.MapOutput {
 }
 
 // The current state of the connection.
-func (o ConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-func (o ConnectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o ConnectionOutput) TimeStatusUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o ConnectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object type. Type key's can be found via the '/types' endpoint.
@@ -465,13 +440,13 @@ func (o ConnectionOutput) TypeKey() pulumi.StringOutput {
 }
 
 // OCID of the user who modified the connection.
-func (o ConnectionOutput) UpdatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.UpdatedById }).(pulumi.StringOutput)
+func (o ConnectionOutput) UpdatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.UpdatedById }).(pulumi.StringPtrOutput)
 }
 
 // URI to the connection instance in the API.
-func (o ConnectionOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Uri }).(pulumi.StringOutput)
+func (o ConnectionOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 type ConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -486,12 +461,6 @@ func (o ConnectionArrayOutput) ToConnectionArrayOutput() ConnectionArrayOutput {
 
 func (o ConnectionArrayOutput) ToConnectionArrayOutputWithContext(ctx context.Context) ConnectionArrayOutput {
 	return o
-}
-
-func (o ConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionArrayOutput) Index(i pulumi.IntInput) ConnectionOutput {
@@ -512,12 +481,6 @@ func (o ConnectionMapOutput) ToConnectionMapOutput() ConnectionMapOutput {
 
 func (o ConnectionMapOutput) ToConnectionMapOutputWithContext(ctx context.Context) ConnectionMapOutput {
 	return o
-}
-
-func (o ConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionMapOutput) MapIndex(k pulumi.StringInput) ConnectionOutput {

@@ -50,11 +50,11 @@ export interface GetVmClusterPatchHistoryEntriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of patch_history_entries.
      */
-    readonly patchHistoryEntries: outputs.Database.GetVmClusterPatchHistoryEntriesPatchHistoryEntry[];
+    readonly patchHistoryEntries?: outputs.Database.GetVmClusterPatchHistoryEntriesPatchHistoryEntry[];
     readonly vmClusterId: string;
 }
 /**

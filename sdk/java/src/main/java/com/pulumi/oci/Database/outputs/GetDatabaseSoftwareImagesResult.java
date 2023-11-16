@@ -24,7 +24,7 @@ public final class GetDatabaseSoftwareImagesResult {
      * @return The list of database_software_images.
      * 
      */
-    private List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
+    private @Nullable List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
     /**
      * @return The user-friendly name for the database software image. The name does not have to be unique.
      * 
@@ -35,7 +35,7 @@ public final class GetDatabaseSoftwareImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return To what shape the image is meant for.
      * 
@@ -70,7 +70,7 @@ public final class GetDatabaseSoftwareImagesResult {
      * 
      */
     public List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages() {
-        return this.databaseSoftwareImages;
+        return this.databaseSoftwareImages == null ? List.of() : this.databaseSoftwareImages;
     }
     /**
      * @return The user-friendly name for the database software image. The name does not have to be unique.
@@ -86,8 +86,8 @@ public final class GetDatabaseSoftwareImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return To what shape the image is meant for.
@@ -128,10 +128,10 @@ public final class GetDatabaseSoftwareImagesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
+        private @Nullable List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
         private @Nullable String displayName;
         private @Nullable List<GetDatabaseSoftwareImagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String imageShapeFamily;
         private @Nullable String imageType;
         private @Nullable Boolean isUpgradeSupported;
@@ -156,8 +156,8 @@ public final class GetDatabaseSoftwareImagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSoftwareImages(List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages) {
-            this.databaseSoftwareImages = Objects.requireNonNull(databaseSoftwareImages);
+        public Builder databaseSoftwareImages(@Nullable List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages) {
+            this.databaseSoftwareImages = databaseSoftwareImages;
             return this;
         }
         public Builder databaseSoftwareImages(GetDatabaseSoftwareImagesDatabaseSoftwareImage... databaseSoftwareImages) {
@@ -177,8 +177,8 @@ public final class GetDatabaseSoftwareImagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

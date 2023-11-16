@@ -49,25 +49,16 @@ class GetDatabaseToolsEndpointServicesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseToolsEndpointServiceCollections")
-    def database_tools_endpoint_service_collections(self) -> Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResult']:
-        """
-        The list of database_tools_endpoint_service_collection.
-        """
+    def database_tools_endpoint_service_collections(self) -> Optional[Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResult']]:
         return pulumi.get(self, "database_tools_endpoint_service_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +68,7 @@ class GetDatabaseToolsEndpointServicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,17 +77,11 @@ class GetDatabaseToolsEndpointServicesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A unique, non-changeable resource name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Database Tools Endpoint Service.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
                                          state: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsEndpointServicesResult:
     """
-    This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
-
-    Returns a list of Database Tools endpoint services.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_endpoint_service_display_name"],
-        name=var["database_tools_endpoint_service_name"],
-        state=var["database_tools_endpoint_service_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire specified display name.
-    :param str name: A filter to return only resources that match the entire specified name.
-    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
                                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsEndpointServicesResult]:
     """
-    This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
-
-    Returns a list of Database Tools endpoint services.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_endpoint_service_display_name"],
-        name=var["database_tools_endpoint_service_name"],
-        state=var["database_tools_endpoint_service_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire specified display name.
-    :param str name: A filter to return only resources that match the entire specified name.
-    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation {
@@ -16,17 +18,17 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return An example of the recommendation.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples;
     /**
      * @return The message of the rationale.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The rationale of the recommendation.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation() {}
     /**
@@ -34,21 +36,21 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples() {
-        return this.examples;
+        return this.examples == null ? List.of() : this.examples;
     }
     /**
      * @return The message of the rationale.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The rationale of the recommendation.
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales() {
-        return this.rationales;
+        return this.rationales == null ? List.of() : this.rationales;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples;
-        private String message;
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples;
+        private @Nullable String message;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         }
 
         @CustomType.Setter
-        public Builder examples(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples) {
-            this.examples = Objects.requireNonNull(examples);
+        public Builder examples(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples) {
+            this.examples = examples;
             return this;
         }
         public Builder examples(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample... examples) {
             return examples(List.of(examples));
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder rationales(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales) {
-            this.rationales = Objects.requireNonNull(rationales);
+        public Builder rationales(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales) {
+            this.rationales = rationales;
             return this;
         }
         public Builder rationales(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale... rationales) {

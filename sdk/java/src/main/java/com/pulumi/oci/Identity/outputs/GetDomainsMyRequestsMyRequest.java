@@ -14,6 +14,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyRequestsMyRequest {
@@ -21,207 +23,207 @@ public final class GetDomainsMyRequestsMyRequest {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return justification
      * 
      */
-    private String justification;
+    private @Nullable String justification;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsMyRequestsMyRequestMeta> metas;
+    private @Nullable List<GetDomainsMyRequestsMyRequestMeta> metas;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return Requestable resource reference.
      * 
      */
-    private List<GetDomainsMyRequestsMyRequestRequesting> requestings;
+    private @Nullable List<GetDomainsMyRequestsMyRequestRequesting> requestings;
     /**
      * @return Requesting User
      * 
      */
-    private List<GetDomainsMyRequestsMyRequestRequestor> requestors;
+    private @Nullable List<GetDomainsMyRequestsMyRequestRequestor> requestors;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsMyRequestsMyRequestTag> tags;
+    private @Nullable List<GetDomainsMyRequestsMyRequestTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
 
     private GetDomainsMyRequestsMyRequest() {}
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return justification
      * 
      */
-    public String justification() {
-        return this.justification;
+    public Optional<String> justification() {
+        return Optional.ofNullable(this.justification);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsMyRequestsMyRequestMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return Requestable resource reference.
      * 
      */
     public List<GetDomainsMyRequestsMyRequestRequesting> requestings() {
-        return this.requestings;
+        return this.requestings == null ? List.of() : this.requestings;
     }
     /**
      * @return Requesting User
      * 
      */
     public List<GetDomainsMyRequestsMyRequestRequestor> requestors() {
-        return this.requestors;
+        return this.requestors == null ? List.of() : this.requestors;
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsMyRequestsMyRequestTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
 
     public static Builder builder() {
@@ -233,23 +235,23 @@ public final class GetDomainsMyRequestsMyRequest {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private String id;
-        private List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies;
-        private List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private String justification;
-        private List<GetDomainsMyRequestsMyRequestMeta> metas;
-        private String ocid;
-        private List<GetDomainsMyRequestsMyRequestRequesting> requestings;
-        private List<GetDomainsMyRequestsMyRequestRequestor> requestors;
-        private List<String> schemas;
-        private String status;
-        private List<GetDomainsMyRequestsMyRequestTag> tags;
-        private String tenancyOcid;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable String justification;
+        private @Nullable List<GetDomainsMyRequestsMyRequestMeta> metas;
+        private @Nullable String ocid;
+        private @Nullable List<GetDomainsMyRequestsMyRequestRequesting> requestings;
+        private @Nullable List<GetDomainsMyRequestsMyRequestRequestor> requestors;
+        private @Nullable List<String> schemas;
+        private @Nullable String status;
+        private @Nullable List<GetDomainsMyRequestsMyRequestTag> tags;
+        private @Nullable String tenancyOcid;
         public Builder() {}
         public Builder(GetDomainsMyRequestsMyRequest defaults) {
     	      Objects.requireNonNull(defaults);
@@ -273,112 +275,112 @@ public final class GetDomainsMyRequestsMyRequest {
         }
 
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyRequestsMyRequestIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyRequestsMyRequestIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder justification(String justification) {
-            this.justification = Objects.requireNonNull(justification);
+        public Builder justification(@Nullable String justification) {
+            this.justification = justification;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsMyRequestsMyRequestMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsMyRequestsMyRequestMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyRequestsMyRequestMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder requestings(List<GetDomainsMyRequestsMyRequestRequesting> requestings) {
-            this.requestings = Objects.requireNonNull(requestings);
+        public Builder requestings(@Nullable List<GetDomainsMyRequestsMyRequestRequesting> requestings) {
+            this.requestings = requestings;
             return this;
         }
         public Builder requestings(GetDomainsMyRequestsMyRequestRequesting... requestings) {
             return requestings(List.of(requestings));
         }
         @CustomType.Setter
-        public Builder requestors(List<GetDomainsMyRequestsMyRequestRequestor> requestors) {
-            this.requestors = Objects.requireNonNull(requestors);
+        public Builder requestors(@Nullable List<GetDomainsMyRequestsMyRequestRequestor> requestors) {
+            this.requestors = requestors;
             return this;
         }
         public Builder requestors(GetDomainsMyRequestsMyRequestRequestor... requestors) {
             return requestors(List.of(requestors));
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsMyRequestsMyRequestTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsMyRequestsMyRequestTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyRequestsMyRequestTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsMyRequestsMyRequest build() {

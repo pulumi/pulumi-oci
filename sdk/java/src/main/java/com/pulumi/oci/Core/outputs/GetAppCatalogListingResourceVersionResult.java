@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppCatalogListingResourceVersionResult {
@@ -15,27 +17,27 @@ public final class GetAppCatalogListingResourceVersionResult {
      * @return List of accessible ports for instances launched with this listing resource version.
      * 
      */
-    private List<Integer> accessiblePorts;
+    private @Nullable List<Integer> accessiblePorts;
     /**
      * @return Allowed actions for the listing resource.
      * 
      */
-    private List<String> allowedActions;
+    private @Nullable List<String> allowedActions;
     /**
      * @return List of regions that this listing resource version is available.
      * 
      */
-    private List<String> availableRegions;
+    private @Nullable List<String> availableRegions;
     /**
      * @return Array of shapes compatible with this resource.
      * 
      */
-    private List<String> compatibleShapes;
+    private @Nullable List<String> compatibleShapes;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the listing this resource version belongs to.
      * 
@@ -45,18 +47,18 @@ public final class GetAppCatalogListingResourceVersionResult {
      * @return OCID of the listing resource.
      * 
      */
-    private String listingResourceId;
+    private @Nullable String listingResourceId;
     /**
      * @return Resource Version.
      * 
      */
-    private String listingResourceVersion;
+    private @Nullable String listingResourceVersion;
     private String resourceVersion;
     /**
      * @return Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    private String timePublished;
+    private @Nullable String timePublished;
 
     private GetAppCatalogListingResourceVersionResult() {}
     /**
@@ -64,35 +66,35 @@ public final class GetAppCatalogListingResourceVersionResult {
      * 
      */
     public List<Integer> accessiblePorts() {
-        return this.accessiblePorts;
+        return this.accessiblePorts == null ? List.of() : this.accessiblePorts;
     }
     /**
      * @return Allowed actions for the listing resource.
      * 
      */
     public List<String> allowedActions() {
-        return this.allowedActions;
+        return this.allowedActions == null ? List.of() : this.allowedActions;
     }
     /**
      * @return List of regions that this listing resource version is available.
      * 
      */
     public List<String> availableRegions() {
-        return this.availableRegions;
+        return this.availableRegions == null ? List.of() : this.availableRegions;
     }
     /**
      * @return Array of shapes compatible with this resource.
      * 
      */
     public List<String> compatibleShapes() {
-        return this.compatibleShapes;
+        return this.compatibleShapes == null ? List.of() : this.compatibleShapes;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the listing this resource version belongs to.
@@ -105,15 +107,15 @@ public final class GetAppCatalogListingResourceVersionResult {
      * @return OCID of the listing resource.
      * 
      */
-    public String listingResourceId() {
-        return this.listingResourceId;
+    public Optional<String> listingResourceId() {
+        return Optional.ofNullable(this.listingResourceId);
     }
     /**
      * @return Resource Version.
      * 
      */
-    public String listingResourceVersion() {
-        return this.listingResourceVersion;
+    public Optional<String> listingResourceVersion() {
+        return Optional.ofNullable(this.listingResourceVersion);
     }
     public String resourceVersion() {
         return this.resourceVersion;
@@ -122,8 +124,8 @@ public final class GetAppCatalogListingResourceVersionResult {
      * @return Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    public String timePublished() {
-        return this.timePublished;
+    public Optional<String> timePublished() {
+        return Optional.ofNullable(this.timePublished);
     }
 
     public static Builder builder() {
@@ -135,16 +137,16 @@ public final class GetAppCatalogListingResourceVersionResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<Integer> accessiblePorts;
-        private List<String> allowedActions;
-        private List<String> availableRegions;
-        private List<String> compatibleShapes;
-        private String id;
+        private @Nullable List<Integer> accessiblePorts;
+        private @Nullable List<String> allowedActions;
+        private @Nullable List<String> availableRegions;
+        private @Nullable List<String> compatibleShapes;
+        private @Nullable String id;
         private String listingId;
-        private String listingResourceId;
-        private String listingResourceVersion;
+        private @Nullable String listingResourceId;
+        private @Nullable String listingResourceVersion;
         private String resourceVersion;
-        private String timePublished;
+        private @Nullable String timePublished;
         public Builder() {}
         public Builder(GetAppCatalogListingResourceVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -161,40 +163,40 @@ public final class GetAppCatalogListingResourceVersionResult {
         }
 
         @CustomType.Setter
-        public Builder accessiblePorts(List<Integer> accessiblePorts) {
-            this.accessiblePorts = Objects.requireNonNull(accessiblePorts);
+        public Builder accessiblePorts(@Nullable List<Integer> accessiblePorts) {
+            this.accessiblePorts = accessiblePorts;
             return this;
         }
         public Builder accessiblePorts(Integer... accessiblePorts) {
             return accessiblePorts(List.of(accessiblePorts));
         }
         @CustomType.Setter
-        public Builder allowedActions(List<String> allowedActions) {
-            this.allowedActions = Objects.requireNonNull(allowedActions);
+        public Builder allowedActions(@Nullable List<String> allowedActions) {
+            this.allowedActions = allowedActions;
             return this;
         }
         public Builder allowedActions(String... allowedActions) {
             return allowedActions(List.of(allowedActions));
         }
         @CustomType.Setter
-        public Builder availableRegions(List<String> availableRegions) {
-            this.availableRegions = Objects.requireNonNull(availableRegions);
+        public Builder availableRegions(@Nullable List<String> availableRegions) {
+            this.availableRegions = availableRegions;
             return this;
         }
         public Builder availableRegions(String... availableRegions) {
             return availableRegions(List.of(availableRegions));
         }
         @CustomType.Setter
-        public Builder compatibleShapes(List<String> compatibleShapes) {
-            this.compatibleShapes = Objects.requireNonNull(compatibleShapes);
+        public Builder compatibleShapes(@Nullable List<String> compatibleShapes) {
+            this.compatibleShapes = compatibleShapes;
             return this;
         }
         public Builder compatibleShapes(String... compatibleShapes) {
             return compatibleShapes(List.of(compatibleShapes));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -203,13 +205,13 @@ public final class GetAppCatalogListingResourceVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder listingResourceId(String listingResourceId) {
-            this.listingResourceId = Objects.requireNonNull(listingResourceId);
+        public Builder listingResourceId(@Nullable String listingResourceId) {
+            this.listingResourceId = listingResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder listingResourceVersion(String listingResourceVersion) {
-            this.listingResourceVersion = Objects.requireNonNull(listingResourceVersion);
+        public Builder listingResourceVersion(@Nullable String listingResourceVersion) {
+            this.listingResourceVersion = listingResourceVersion;
             return this;
         }
         @CustomType.Setter
@@ -218,8 +220,8 @@ public final class GetAppCatalogListingResourceVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timePublished(String timePublished) {
-            this.timePublished = Objects.requireNonNull(timePublished);
+        public Builder timePublished(@Nullable String timePublished) {
+            this.timePublished = timePublished;
             return this;
         }
         public GetAppCatalogListingResourceVersionResult build() {

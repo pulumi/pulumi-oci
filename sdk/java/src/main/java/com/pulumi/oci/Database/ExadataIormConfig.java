@@ -13,6 +13,7 @@ import com.pulumi.oci.Database.outputs.ExadataIormConfigDbPlan;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -103,14 +104,14 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
@@ -120,7 +121,7 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="objective", refs={String.class}, tree="[0]")
-    private Output<String> objective;
+    private Output</* @Nullable */ String> objective;
 
     /**
      * @return (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
@@ -129,22 +130,22 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> objective() {
-        return this.objective;
+    public Output<Optional<String>> objective() {
+        return Codegen.optional(this.objective);
     }
     /**
      * The current state of IORM configuration for the Exadata DB system.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of IORM configuration for the Exadata DB system.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

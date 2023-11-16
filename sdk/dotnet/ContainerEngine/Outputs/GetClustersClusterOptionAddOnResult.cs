@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Whether or not to enable the Kubernetes Dashboard add-on.
         /// </summary>
-        public readonly bool IsKubernetesDashboardEnabled;
+        public readonly bool? IsKubernetesDashboardEnabled;
         /// <summary>
         /// Whether or not to enable the Tiller add-on.
         /// </summary>
-        public readonly bool IsTillerEnabled;
+        public readonly bool? IsTillerEnabled;
 
         [OutputConstructor]
         private GetClustersClusterOptionAddOnResult(
-            bool isKubernetesDashboardEnabled,
+            bool? isKubernetesDashboardEnabled,
 
-            bool isTillerEnabled)
+            bool? isTillerEnabled)
         {
             IsKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
             IsTillerEnabled = isTillerEnabled;

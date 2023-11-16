@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of virtual_circuit_associated_tunnel_details.
         /// </summary>
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Core
         private GetVirtualCircuitAssociatedTunnelsResult(
             ImmutableArray<Outputs.GetVirtualCircuitAssociatedTunnelsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailResult> virtualCircuitAssociatedTunnelDetails,
 

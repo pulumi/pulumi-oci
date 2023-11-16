@@ -65,11 +65,11 @@ export interface GetLimitDefinitionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of limit_definitions.
      */
-    readonly limitDefinitions: outputs.Limits.GetLimitDefinitionsLimitDefinition[];
+    readonly limitDefinitions?: outputs.Limits.GetLimitDefinitionsLimitDefinition[];
     /**
      * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      */

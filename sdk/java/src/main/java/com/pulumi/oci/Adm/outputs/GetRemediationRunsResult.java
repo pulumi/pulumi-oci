@@ -39,7 +39,7 @@ public final class GetRemediationRunsResult {
      * @return The list of remediation_run_collection.
      * 
      */
-    private List<GetRemediationRunsRemediationRunCollection> remediationRunCollections;
+    private @Nullable List<GetRemediationRunsRemediationRunCollection> remediationRunCollections;
     /**
      * @return The current lifecycle state of the remediation run.
      * 
@@ -83,7 +83,7 @@ public final class GetRemediationRunsResult {
      * 
      */
     public List<GetRemediationRunsRemediationRunCollection> remediationRunCollections() {
-        return this.remediationRunCollections;
+        return this.remediationRunCollections == null ? List.of() : this.remediationRunCollections;
     }
     /**
      * @return The current lifecycle state of the remediation run.
@@ -107,7 +107,7 @@ public final class GetRemediationRunsResult {
         private @Nullable List<GetRemediationRunsFilter> filters;
         private @Nullable String id;
         private @Nullable String remediationRecipeId;
-        private List<GetRemediationRunsRemediationRunCollection> remediationRunCollections;
+        private @Nullable List<GetRemediationRunsRemediationRunCollection> remediationRunCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetRemediationRunsResult defaults) {
@@ -150,8 +150,8 @@ public final class GetRemediationRunsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder remediationRunCollections(List<GetRemediationRunsRemediationRunCollection> remediationRunCollections) {
-            this.remediationRunCollections = Objects.requireNonNull(remediationRunCollections);
+        public Builder remediationRunCollections(@Nullable List<GetRemediationRunsRemediationRunCollection> remediationRunCollections) {
+            this.remediationRunCollections = remediationRunCollections;
             return this;
         }
         public Builder remediationRunCollections(GetRemediationRunsRemediationRunCollection... remediationRunCollections) {

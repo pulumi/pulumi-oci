@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
@@ -66,7 +65,7 @@ type GetWorkRequestErrorsResult struct {
 	CompartmentId string                       `pulumi:"compartmentId"`
 	Filters       []GetWorkRequestErrorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of work_request_errors.
 	WorkRequestErrors []GetWorkRequestErrorsWorkRequestError `pulumi:"workRequestErrors"`
 	WorkRequestId     string                                 `pulumi:"workRequestId"`
@@ -113,12 +112,6 @@ func (o GetWorkRequestErrorsResultOutput) ToGetWorkRequestErrorsResultOutputWith
 	return o
 }
 
-func (o GetWorkRequestErrorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsResult] {
-	return pulumix.Output[GetWorkRequestErrorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkRequestErrorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkRequestErrorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -128,8 +121,8 @@ func (o GetWorkRequestErrorsResultOutput) Filters() GetWorkRequestErrorsFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkRequestErrorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestErrorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkRequestErrorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestErrorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of work_request_errors.

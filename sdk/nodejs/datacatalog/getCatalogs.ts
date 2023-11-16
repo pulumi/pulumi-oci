@@ -61,7 +61,7 @@ export interface GetCatalogsResult {
     /**
      * The list of catalogs.
      */
-    readonly catalogs: outputs.DataCatalog.GetCatalogsCatalog[];
+    readonly catalogs?: outputs.DataCatalog.GetCatalogsCatalog[];
     /**
      * Compartment identifier.
      */
@@ -74,7 +74,7 @@ export interface GetCatalogsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the data catalog resource.
      */

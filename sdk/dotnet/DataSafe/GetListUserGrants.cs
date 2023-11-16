@@ -260,7 +260,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The privilege category.
         /// </summary>
@@ -288,7 +288,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetListUserGrantsGrantResult> grants,
 
-            string id,
+            string? id,
 
             string? privilegeCategory,
 

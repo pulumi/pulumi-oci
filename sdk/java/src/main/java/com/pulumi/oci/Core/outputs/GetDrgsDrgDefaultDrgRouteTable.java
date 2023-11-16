@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgsDrgDefaultDrgRouteTable {
@@ -13,51 +15,51 @@ public final class GetDrgsDrgDefaultDrgRouteTable {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
      * 
      */
-    private String ipsecTunnel;
+    private @Nullable String ipsecTunnel;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type REMOTE_PEERING_CONNECTION on creation.
      * 
      */
-    private String remotePeeringConnection;
+    private @Nullable String remotePeeringConnection;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
      * 
      */
-    private String vcn;
+    private @Nullable String vcn;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on creation.
      * 
      */
-    private String virtualCircuit;
+    private @Nullable String virtualCircuit;
 
     private GetDrgsDrgDefaultDrgRouteTable() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
      * 
      */
-    public String ipsecTunnel() {
-        return this.ipsecTunnel;
+    public Optional<String> ipsecTunnel() {
+        return Optional.ofNullable(this.ipsecTunnel);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type REMOTE_PEERING_CONNECTION on creation.
      * 
      */
-    public String remotePeeringConnection() {
-        return this.remotePeeringConnection;
+    public Optional<String> remotePeeringConnection() {
+        return Optional.ofNullable(this.remotePeeringConnection);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
      * 
      */
-    public String vcn() {
-        return this.vcn;
+    public Optional<String> vcn() {
+        return Optional.ofNullable(this.vcn);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on creation.
      * 
      */
-    public String virtualCircuit() {
-        return this.virtualCircuit;
+    public Optional<String> virtualCircuit() {
+        return Optional.ofNullable(this.virtualCircuit);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDrgsDrgDefaultDrgRouteTable {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipsecTunnel;
-        private String remotePeeringConnection;
-        private String vcn;
-        private String virtualCircuit;
+        private @Nullable String ipsecTunnel;
+        private @Nullable String remotePeeringConnection;
+        private @Nullable String vcn;
+        private @Nullable String virtualCircuit;
         public Builder() {}
         public Builder(GetDrgsDrgDefaultDrgRouteTable defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDrgsDrgDefaultDrgRouteTable {
         }
 
         @CustomType.Setter
-        public Builder ipsecTunnel(String ipsecTunnel) {
-            this.ipsecTunnel = Objects.requireNonNull(ipsecTunnel);
+        public Builder ipsecTunnel(@Nullable String ipsecTunnel) {
+            this.ipsecTunnel = ipsecTunnel;
             return this;
         }
         @CustomType.Setter
-        public Builder remotePeeringConnection(String remotePeeringConnection) {
-            this.remotePeeringConnection = Objects.requireNonNull(remotePeeringConnection);
+        public Builder remotePeeringConnection(@Nullable String remotePeeringConnection) {
+            this.remotePeeringConnection = remotePeeringConnection;
             return this;
         }
         @CustomType.Setter
-        public Builder vcn(String vcn) {
-            this.vcn = Objects.requireNonNull(vcn);
+        public Builder vcn(@Nullable String vcn) {
+            this.vcn = vcn;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualCircuit(String virtualCircuit) {
-            this.virtualCircuit = Objects.requireNonNull(virtualCircuit);
+        public Builder virtualCircuit(@Nullable String virtualCircuit) {
+            this.virtualCircuit = virtualCircuit;
             return this;
         }
         public GetDrgsDrgDefaultDrgRouteTable build() {

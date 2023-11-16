@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sdm Masking Policy Difference Difference Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -84,7 +83,7 @@ type GetSdmMaskingPolicyDifferenceDifferenceColumnsResult struct {
 	DifferenceType *string                                                `pulumi:"differenceType"`
 	Filters        []GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The database object that contains the difference column.
 	Objects []string `pulumi:"objects"`
 	// Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options: SYNC: To sync the difference column and update the masking policy to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change the masking policy. After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
@@ -149,12 +148,6 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput) ToGetSdmMask
 	return o
 }
 
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsResult] {
-	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the difference column.
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput) ColumnNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsResult) []string { return v.ColumnNames }).(pulumi.StringArrayOutput)
@@ -172,8 +165,8 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput) Filters() Ge
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The database object that contains the difference column.

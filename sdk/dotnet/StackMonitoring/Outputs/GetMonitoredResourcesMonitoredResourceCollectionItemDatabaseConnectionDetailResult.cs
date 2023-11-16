@@ -16,47 +16,47 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string ConnectorId;
+        public readonly string? ConnectorId;
         /// <summary>
         /// dbId of the database.
         /// </summary>
-        public readonly string DbId;
+        public readonly string? DbId;
         /// <summary>
         /// UniqueName used for database connection requests.
         /// </summary>
-        public readonly string DbUniqueName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// Listener Port number used for connection requests.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// Protocol used in DB connection string when connecting to external database service.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Service name used for connection requests.
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
         /// <summary>
         /// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string SslSecretId;
+        public readonly string? SslSecretId;
 
         [OutputConstructor]
         private GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailResult(
-            string connectorId,
+            string? connectorId,
 
-            string dbId,
+            string? dbId,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string serviceName,
+            string? serviceName,
 
-            string sslSecretId)
+            string? sslSecretId)
         {
             ConnectorId = connectorId;
             DbId = dbId;

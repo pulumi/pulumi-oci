@@ -6,6 +6,8 @@ package com.pulumi.oci.Dns.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResolverAttachedView {
@@ -13,15 +15,15 @@ public final class GetResolverAttachedView {
      * @return The OCID of the view.
      * 
      */
-    private String viewId;
+    private @Nullable String viewId;
 
     private GetResolverAttachedView() {}
     /**
      * @return The OCID of the view.
      * 
      */
-    public String viewId() {
-        return this.viewId;
+    public Optional<String> viewId() {
+        return Optional.ofNullable(this.viewId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetResolverAttachedView {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String viewId;
+        private @Nullable String viewId;
         public Builder() {}
         public Builder(GetResolverAttachedView defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetResolverAttachedView {
         }
 
         @CustomType.Setter
-        public Builder viewId(String viewId) {
-            this.viewId = Objects.requireNonNull(viewId);
+        public Builder viewId(@Nullable String viewId) {
+            this.viewId = viewId;
             return this;
         }
         public GetResolverAttachedView build() {

@@ -16,33 +16,34 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="oci:Core/virtualNetwork:VirtualNetwork")
 public class VirtualNetwork extends com.pulumi.resources.CustomResource {
     @Export(name="byoipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> byoipv6cidrBlocks;
+    private Output</* @Nullable */ List<String>> byoipv6cidrBlocks;
 
-    public Output<List<String>> byoipv6cidrBlocks() {
-        return this.byoipv6cidrBlocks;
+    public Output<Optional<List<String>>> byoipv6cidrBlocks() {
+        return Codegen.optional(this.byoipv6cidrBlocks);
     }
     @Export(name="byoipv6cidrDetails", refs={List.class,VirtualNetworkByoipv6cidrDetail.class}, tree="[0,1]")
-    private Output<List<VirtualNetworkByoipv6cidrDetail>> byoipv6cidrDetails;
+    private Output</* @Nullable */ List<VirtualNetworkByoipv6cidrDetail>> byoipv6cidrDetails;
 
-    public Output<List<VirtualNetworkByoipv6cidrDetail>> byoipv6cidrDetails() {
-        return this.byoipv6cidrDetails;
+    public Output<Optional<List<VirtualNetworkByoipv6cidrDetail>>> byoipv6cidrDetails() {
+        return Codegen.optional(this.byoipv6cidrDetails);
     }
     @Export(name="cidrBlock", refs={String.class}, tree="[0]")
-    private Output<String> cidrBlock;
+    private Output</* @Nullable */ String> cidrBlock;
 
-    public Output<String> cidrBlock() {
-        return this.cidrBlock;
+    public Output<Optional<String>> cidrBlock() {
+        return Codegen.optional(this.cidrBlock);
     }
     @Export(name="cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> cidrBlocks;
+    private Output</* @Nullable */ List<String>> cidrBlocks;
 
-    public Output<List<String>> cidrBlocks() {
-        return this.cidrBlocks;
+    public Output<Optional<List<String>>> cidrBlocks() {
+        return Codegen.optional(this.cidrBlocks);
     }
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
@@ -51,88 +52,88 @@ public class VirtualNetwork extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     @Export(name="defaultDhcpOptionsId", refs={String.class}, tree="[0]")
-    private Output<String> defaultDhcpOptionsId;
+    private Output</* @Nullable */ String> defaultDhcpOptionsId;
 
-    public Output<String> defaultDhcpOptionsId() {
-        return this.defaultDhcpOptionsId;
+    public Output<Optional<String>> defaultDhcpOptionsId() {
+        return Codegen.optional(this.defaultDhcpOptionsId);
     }
     @Export(name="defaultRouteTableId", refs={String.class}, tree="[0]")
-    private Output<String> defaultRouteTableId;
+    private Output</* @Nullable */ String> defaultRouteTableId;
 
-    public Output<String> defaultRouteTableId() {
-        return this.defaultRouteTableId;
+    public Output<Optional<String>> defaultRouteTableId() {
+        return Codegen.optional(this.defaultRouteTableId);
     }
     @Export(name="defaultSecurityListId", refs={String.class}, tree="[0]")
-    private Output<String> defaultSecurityListId;
+    private Output</* @Nullable */ String> defaultSecurityListId;
 
-    public Output<String> defaultSecurityListId() {
-        return this.defaultSecurityListId;
+    public Output<Optional<String>> defaultSecurityListId() {
+        return Codegen.optional(this.defaultSecurityListId);
     }
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     @Export(name="dnsLabel", refs={String.class}, tree="[0]")
-    private Output<String> dnsLabel;
+    private Output</* @Nullable */ String> dnsLabel;
 
-    public Output<String> dnsLabel() {
-        return this.dnsLabel;
+    public Output<Optional<String>> dnsLabel() {
+        return Codegen.optional(this.dnsLabel);
     }
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     @Export(name="ipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> ipv6cidrBlocks;
+    private Output</* @Nullable */ List<String>> ipv6cidrBlocks;
 
-    public Output<List<String>> ipv6cidrBlocks() {
-        return this.ipv6cidrBlocks;
+    public Output<Optional<List<String>>> ipv6cidrBlocks() {
+        return Codegen.optional(this.ipv6cidrBlocks);
     }
     @Export(name="ipv6privateCidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> ipv6privateCidrBlocks;
+    private Output</* @Nullable */ List<String>> ipv6privateCidrBlocks;
 
-    public Output<List<String>> ipv6privateCidrBlocks() {
-        return this.ipv6privateCidrBlocks;
+    public Output<Optional<List<String>>> ipv6privateCidrBlocks() {
+        return Codegen.optional(this.ipv6privateCidrBlocks);
     }
     @Export(name="isIpv6enabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIpv6enabled;
+    private Output</* @Nullable */ Boolean> isIpv6enabled;
 
-    public Output<Boolean> isIpv6enabled() {
-        return this.isIpv6enabled;
+    public Output<Optional<Boolean>> isIpv6enabled() {
+        return Codegen.optional(this.isIpv6enabled);
     }
     @Export(name="isOracleGuaAllocationEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOracleGuaAllocationEnabled;
+    private Output</* @Nullable */ Boolean> isOracleGuaAllocationEnabled;
 
-    public Output<Boolean> isOracleGuaAllocationEnabled() {
-        return this.isOracleGuaAllocationEnabled;
+    public Output<Optional<Boolean>> isOracleGuaAllocationEnabled() {
+        return Codegen.optional(this.isOracleGuaAllocationEnabled);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     @Export(name="vcnDomainName", refs={String.class}, tree="[0]")
-    private Output<String> vcnDomainName;
+    private Output</* @Nullable */ String> vcnDomainName;
 
-    public Output<String> vcnDomainName() {
-        return this.vcnDomainName;
+    public Output<Optional<String>> vcnDomainName() {
+        return Codegen.optional(this.vcnDomainName);
     }
 
     /**

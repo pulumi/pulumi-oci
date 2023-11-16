@@ -16,77 +16,77 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
         /// </summary>
-        public readonly int DaysToExpire;
+        public readonly int? DaysToExpire;
         /// <summary>
         /// The description of the SQL Tuning Advisor task.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly int InstanceId;
+        public readonly int? InstanceId;
         /// <summary>
         /// The optional query parameter to filter the SQL Tuning Advisor task list by name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The owner of the SQL Tuning Advisor task.
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// The number of recommendations provided for the SQL Tuning Advisor task.
         /// </summary>
-        public readonly int RecommendationCount;
+        public readonly int? RecommendationCount;
         /// <summary>
         /// The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string SqlTuningAdvisorTaskId;
+        public readonly string? SqlTuningAdvisorTaskId;
         /// <summary>
         /// The status of the SQL Tuning Advisor task.
         /// </summary>
-        public readonly string TaskStatus;
+        public readonly string? TaskStatus;
         /// <summary>
         /// The Creation date of the SQL Tuning Advisor task.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The end time of the task execution.
         /// </summary>
-        public readonly string TimeExecutionEnded;
+        public readonly string? TimeExecutionEnded;
         /// <summary>
         /// The start time of the task execution.
         /// </summary>
-        public readonly string TimeExecutionStarted;
+        public readonly string? TimeExecutionStarted;
         /// <summary>
         /// The total number of SQL statements related to the SQL Tuning Advisor task.
         /// </summary>
-        public readonly int TotalSqlStatements;
+        public readonly int? TotalSqlStatements;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTaskItemResult(
-            int daysToExpire,
+            int? daysToExpire,
 
-            string description,
+            string? description,
 
-            int instanceId,
+            int? instanceId,
 
-            string name,
+            string? name,
 
-            string owner,
+            string? owner,
 
-            int recommendationCount,
+            int? recommendationCount,
 
-            string sqlTuningAdvisorTaskId,
+            string? sqlTuningAdvisorTaskId,
 
-            string taskStatus,
+            string? taskStatus,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeExecutionEnded,
+            string? timeExecutionEnded,
 
-            string timeExecutionStarted,
+            string? timeExecutionStarted,
 
-            int totalSqlStatements)
+            int? totalSqlStatements)
         {
             DaysToExpire = daysToExpire;
             Description = description;

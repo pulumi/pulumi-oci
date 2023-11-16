@@ -100,7 +100,7 @@ export interface GetMountTargetsResult {
     /**
      * The list of mount_targets.
      */
-    readonly mountTargets: outputs.FileStorage.GetMountTargetsMountTarget[];
+    readonly mountTargets?: outputs.FileStorage.GetMountTargetsMountTarget[];
     /**
      * The current state of the mount target.
      */

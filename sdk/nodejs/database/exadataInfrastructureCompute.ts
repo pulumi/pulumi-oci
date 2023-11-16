@@ -54,83 +54,83 @@ export class ExadataInfrastructureCompute extends pulumi.CustomResource {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
+    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number | undefined>;
     public readonly activationFile!: pulumi.Output<string | undefined>;
     /**
      * The number of additional compute servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly additionalComputeCount!: pulumi.Output<number>;
+    public /*out*/ readonly additionalComputeCount!: pulumi.Output<number | undefined>;
     public readonly additionalComputeCountComputeManagedResource!: pulumi.Output<number | undefined>;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string>;
+    public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string | undefined>;
     public readonly additionalComputeSystemModelComputeManagedResource!: pulumi.Output<string | undefined>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number>;
+    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number | undefined>;
     /**
      * The CIDR block for the Exadata administration network.
      */
-    public /*out*/ readonly adminNetworkCidr!: pulumi.Output<string>;
+    public /*out*/ readonly adminNetworkCidr!: pulumi.Output<string | undefined>;
     /**
      * The IP address for the first control plane server.
      */
-    public /*out*/ readonly cloudControlPlaneServer1!: pulumi.Output<string>;
+    public /*out*/ readonly cloudControlPlaneServer1!: pulumi.Output<string | undefined>;
     /**
      * The IP address for the second control plane server.
      */
-    public /*out*/ readonly cloudControlPlaneServer2!: pulumi.Output<string>;
+    public /*out*/ readonly cloudControlPlaneServer2!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The number of compute servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly computeCount!: pulumi.Output<number>;
+    public /*out*/ readonly computeCount!: pulumi.Output<number | undefined>;
     /**
      * The list of contacts for the Exadata infrastructure.
      */
-    public /*out*/ readonly contacts!: pulumi.Output<outputs.Database.ExadataInfrastructureComputeContact[]>;
+    public /*out*/ readonly contacts!: pulumi.Output<outputs.Database.ExadataInfrastructureComputeContact[] | undefined>;
     /**
      * The corporate network proxy for access to the control plane network.
      */
-    public /*out*/ readonly corporateProxy!: pulumi.Output<string>;
+    public /*out*/ readonly corporateProxy!: pulumi.Output<string | undefined>;
     /**
      * The number of enabled CPU cores.
      */
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
-    public /*out*/ readonly createAsync!: pulumi.Output<boolean>;
+    public /*out*/ readonly cpusEnabled!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly createAsync!: pulumi.Output<boolean | undefined>;
     /**
      * The CSI Number of the Exadata infrastructure.
      */
-    public /*out*/ readonly csiNumber!: pulumi.Output<string>;
+    public /*out*/ readonly csiNumber!: pulumi.Output<string | undefined>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    public /*out*/ readonly dbServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly dbServerVersion!: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    public /*out*/ readonly dnsServers!: pulumi.Output<string[]>;
+    public /*out*/ readonly dnsServers!: pulumi.Output<string[] | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -138,87 +138,87 @@ export class ExadataInfrastructureCompute extends pulumi.CustomResource {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The gateway for the control plane network.
      */
-    public /*out*/ readonly gateway!: pulumi.Output<string>;
+    public /*out*/ readonly gateway!: pulumi.Output<string | undefined>;
     /**
      * The CIDR block for the Exadata InfiniBand interconnect.
      */
-    public /*out*/ readonly infiniBandNetworkCidr!: pulumi.Output<string>;
+    public /*out*/ readonly infiniBandNetworkCidr!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      */
-    public /*out*/ readonly isCpsOfflineReportEnabled!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCpsOfflineReportEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      */
-    public /*out*/ readonly maintenanceSloStatus!: pulumi.Output<string>;
+    public /*out*/ readonly maintenanceSloStatus!: pulumi.Output<string | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.ExadataInfrastructureComputeMaintenanceWindow[]>;
+    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.ExadataInfrastructureComputeMaintenanceWindow[] | undefined>;
     /**
      * The total number of CPU cores available.
      */
-    public /*out*/ readonly maxCpuCount!: pulumi.Output<number>;
+    public /*out*/ readonly maxCpuCount!: pulumi.Output<number | undefined>;
     /**
      * The total available DATA disk group size.
      */
-    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number | undefined>;
     /**
      * The total local node storage available in GBs.
      */
-    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number | undefined>;
     /**
      * The total memory available in GBs.
      */
-    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string | undefined>;
     /**
      * The netmask for the control plane network.
      */
-    public /*out*/ readonly netmask!: pulumi.Output<string>;
+    public /*out*/ readonly netmask!: pulumi.Output<string | undefined>;
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    public /*out*/ readonly ntpServers!: pulumi.Output<string[]>;
+    public /*out*/ readonly ntpServers!: pulumi.Output<string[] | undefined>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    public /*out*/ readonly shape!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the Exadata infrastructure.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The number of Exadata storage servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly storageCount!: pulumi.Output<number>;
+    public /*out*/ readonly storageCount!: pulumi.Output<number | undefined>;
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
-    public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly storageServerVersion!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Exadata infrastructure was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    public /*out*/ readonly timeZone!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExadataInfrastructureCompute resource with the given unique name, arguments, and options.

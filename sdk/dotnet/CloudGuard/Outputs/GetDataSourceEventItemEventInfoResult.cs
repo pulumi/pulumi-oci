@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Possible type of dataSourceFeed Provider(LoggingQuery)
         /// </summary>
-        public readonly string DataSourceFeedProvider;
-        public readonly string LogResult;
-        public readonly string ObservedValue;
-        public readonly string Operator;
-        public readonly string TriggerValue;
+        public readonly string? DataSourceFeedProvider;
+        public readonly string? LogResult;
+        public readonly string? ObservedValue;
+        public readonly string? Operator;
+        public readonly string? TriggerValue;
 
         [OutputConstructor]
         private GetDataSourceEventItemEventInfoResult(
-            string dataSourceFeedProvider,
+            string? dataSourceFeedProvider,
 
-            string logResult,
+            string? logResult,
 
-            string observedValue,
+            string? observedValue,
 
-            string @operator,
+            string? @operator,
 
-            string triggerValue)
+            string? triggerValue)
         {
             DataSourceFeedProvider = dataSourceFeedProvider;
             LogResult = logResult;

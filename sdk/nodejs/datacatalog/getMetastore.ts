@@ -45,48 +45,48 @@ export interface GetMetastoreResult {
     /**
      * OCID of the compartment which holds the metastore.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
      */
-    readonly defaultExternalTableLocation: string;
+    readonly defaultExternalTableLocation?: string;
     /**
      * Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
      */
-    readonly defaultManagedTableLocation: string;
+    readonly defaultManagedTableLocation?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Mutable name of the metastore.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The metastore's OCID.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly metastoreId: string;
     /**
      * The current state of the metastore.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.

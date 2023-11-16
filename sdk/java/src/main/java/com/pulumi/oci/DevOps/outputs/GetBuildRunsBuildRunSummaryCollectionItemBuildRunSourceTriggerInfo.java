@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo {
@@ -15,17 +17,17 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * @return The list of actions that are to be performed for this Trigger
      * 
      */
-    private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions;
+    private @Nullable List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The trigger that invoked the build run.
      * 
      */
-    private String triggerId;
+    private @Nullable String triggerId;
 
     private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo() {}
     /**
@@ -33,21 +35,21 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * 
      */
     public List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The trigger that invoked the build run.
      * 
      */
-    public String triggerId() {
-        return this.triggerId;
+    public Optional<String> triggerId() {
+        return Optional.ofNullable(this.triggerId);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions;
-        private String displayName;
-        private String triggerId;
+        private @Nullable List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions;
+        private @Nullable String displayName;
+        private @Nullable String triggerId;
         public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerId(String triggerId) {
-            this.triggerId = Objects.requireNonNull(triggerId);
+        public Builder triggerId(@Nullable String triggerId) {
+            this.triggerId = triggerId;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo build() {

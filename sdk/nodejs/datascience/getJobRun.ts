@@ -44,80 +44,80 @@ export interface GetJobRunArgs {
  * A collection of values returned by getJobRun.
  */
 export interface GetJobRunResult {
-    readonly asynchronous: boolean;
+    readonly asynchronous?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly display name for the resource.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The job configuration details
      */
-    readonly jobConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobConfigurationOverrideDetail[];
+    readonly jobConfigurationOverrideDetails?: outputs.DataScience.GetJobRunJobConfigurationOverrideDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      */
-    readonly jobId: string;
+    readonly jobId?: string;
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)
      */
-    readonly jobInfrastructureConfigurationDetails: outputs.DataScience.GetJobRunJobInfrastructureConfigurationDetail[];
+    readonly jobInfrastructureConfigurationDetails?: outputs.DataScience.GetJobRunJobInfrastructureConfigurationDetail[];
     /**
      * Logging configuration for resource.
      */
-    readonly jobLogConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobLogConfigurationOverrideDetail[];
+    readonly jobLogConfigurationOverrideDetails?: outputs.DataScience.GetJobRunJobLogConfigurationOverrideDetail[];
     readonly jobRunId: string;
     /**
      * Collection of JobStorageMountConfigurationDetails.
      */
-    readonly jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobRunJobStorageMountConfigurationDetailsList[];
+    readonly jobStorageMountConfigurationDetailsLists?: outputs.DataScience.GetJobRunJobStorageMountConfigurationDetailsList[];
     /**
      * Details of the state of the job run.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Customer logging details for job run.
      */
-    readonly logDetails: outputs.DataScience.GetJobRunLogDetail[];
+    readonly logDetails?: outputs.DataScience.GetJobRunLogDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The state of the job run.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeAccepted: string;
+    readonly timeAccepted?: string;
     /**
      * The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
 }
 /**
  * This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.

@@ -50,23 +50,23 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * The OCID of a compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Specifies the list of artifact override arguments at the time of deployment.
      */
-    public readonly deployArtifactOverrideArguments!: pulumi.Output<outputs.DevOps.DeploymentDeployArtifactOverrideArguments>;
+    public readonly deployArtifactOverrideArguments!: pulumi.Output<outputs.DevOps.DeploymentDeployArtifactOverrideArguments | undefined>;
     /**
      * List of all artifacts used in the pipeline.
      */
-    public /*out*/ readonly deployPipelineArtifacts!: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineArtifact[]>;
+    public /*out*/ readonly deployPipelineArtifacts!: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineArtifact[] | undefined>;
     /**
      * List of all environments used in the pipeline.
      */
-    public /*out*/ readonly deployPipelineEnvironments!: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineEnvironment[]>;
+    public /*out*/ readonly deployPipelineEnvironments!: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineEnvironment[] | undefined>;
     /**
      * The OCID of a pipeline.
      */
@@ -74,19 +74,19 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * The OCID of the stage.
      */
-    public readonly deployStageId!: pulumi.Output<string>;
+    public readonly deployStageId!: pulumi.Output<string | undefined>;
     /**
      * Specifies the list of arguments to be overriden per Stage at the time of deployment.
      */
-    public readonly deployStageOverrideArguments!: pulumi.Output<outputs.DevOps.DeploymentDeployStageOverrideArguments>;
+    public readonly deployStageOverrideArguments!: pulumi.Output<outputs.DevOps.DeploymentDeployStageOverrideArguments | undefined>;
     /**
      * Specifies list of arguments passed along with the deployment.
      */
-    public readonly deploymentArguments!: pulumi.Output<outputs.DevOps.DeploymentDeploymentArguments>;
+    public readonly deploymentArguments!: pulumi.Output<outputs.DevOps.DeploymentDeploymentArguments | undefined>;
     /**
      * The execution progress details of a deployment.
      */
-    public /*out*/ readonly deploymentExecutionProgresses!: pulumi.Output<outputs.DevOps.DeploymentDeploymentExecutionProgress[]>;
+    public /*out*/ readonly deploymentExecutionProgresses!: pulumi.Output<outputs.DevOps.DeploymentDeploymentExecutionProgress[] | undefined>;
     /**
      * (Updatable) Specifies type for this deployment.
      */
@@ -94,39 +94,39 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * (Updatable) Deployment display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Specifies the OCID of the previous deployment to be redeployed.
      */
-    public readonly previousDeploymentId!: pulumi.Output<string>;
+    public readonly previousDeploymentId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of a project.
      */
-    public /*out*/ readonly projectId!: pulumi.Output<string>;
+    public /*out*/ readonly projectId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the deployment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
      *

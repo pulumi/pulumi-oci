@@ -108,27 +108,27 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The LDAP Distinguished Name of the account.
         /// </summary>
-        public readonly string BindDistinguishedName;
+        public readonly string? BindDistinguishedName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The account type of this outbound connector.
         /// </summary>
-        public readonly string ConnectorType;
+        public readonly string? ConnectorType;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Array of server endpoints to use when connecting with the LDAP bind account.
         /// </summary>
@@ -136,58 +136,58 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string OutboundConnectorId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         /// </summary>
-        public readonly string PasswordSecretId;
+        public readonly string? PasswordSecretId;
         /// <summary>
         /// Version of the password secret in the Vault to use.
         /// </summary>
-        public readonly int PasswordSecretVersion;
+        public readonly int? PasswordSecretVersion;
         /// <summary>
         /// The current state of this outbound connector.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetOutboundConnectorResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string bindDistinguishedName,
+            string? bindDistinguishedName,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string connectorType,
+            string? connectorType,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetOutboundConnectorEndpointResult> endpoints,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             string outboundConnectorId,
 
-            string passwordSecretId,
+            string? passwordSecretId,
 
-            int passwordSecretVersion,
+            int? passwordSecretVersion,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AvailabilityDomain = availabilityDomain;
             BindDistinguishedName = bindDistinguishedName;

@@ -70,23 +70,23 @@ export class BaselineableMetric extends pulumi.CustomResource {
     /**
      * Created user id
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Is the metric created out of box, default false
      */
-    public /*out*/ readonly isOutOfBox!: pulumi.Output<boolean>;
+    public /*out*/ readonly isOutOfBox!: pulumi.Output<boolean | undefined>;
     /**
      * last Updated user id
      */
-    public /*out*/ readonly lastUpdatedBy!: pulumi.Output<string>;
+    public /*out*/ readonly lastUpdatedBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) name of the metric
      */
@@ -106,23 +106,23 @@ export class BaselineableMetric extends pulumi.CustomResource {
     /**
      * The current lifecycle state of the metric extension
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * OCID of the tenancy
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyId!: pulumi.Output<string | undefined>;
     /**
      * creation date
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * last updated time
      */
-    public /*out*/ readonly timeLastUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a BaselineableMetric resource with the given unique name, arguments, and options.

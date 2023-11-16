@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbNodeConsoleConnectionsConsoleConnection {
@@ -15,127 +17,127 @@ public final class GetDbNodeConsoleConnectionsConsoleConnection {
      * @return The OCID of the compartment to contain the console connection.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The SSH connection string for the console connection.
      * 
      */
-    private String connectionString;
+    private @Nullable String connectionString;
     /**
      * @return The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String dbNodeId;
+    private @Nullable String dbNodeId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The SSH public key fingerprint for the console connection.
      * 
      */
-    private String fingerprint;
+    private @Nullable String fingerprint;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the console connection.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
-    private String publicKey;
+    private @Nullable String lifecycleDetails;
+    private @Nullable String publicKey;
     /**
      * @return The SSH public key&#39;s fingerprint for the console connection service host.
      * 
      */
-    private String serviceHostKeyFingerprint;
+    private @Nullable String serviceHostKeyFingerprint;
     /**
      * @return The current state of the console connection.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetDbNodeConsoleConnectionsConsoleConnection() {}
     /**
      * @return The OCID of the compartment to contain the console connection.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The SSH connection string for the console connection.
      * 
      */
-    public String connectionString() {
-        return this.connectionString;
+    public Optional<String> connectionString() {
+        return Optional.ofNullable(this.connectionString);
     }
     /**
      * @return The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String dbNodeId() {
-        return this.dbNodeId;
+    public Optional<String> dbNodeId() {
+        return Optional.ofNullable(this.dbNodeId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The SSH public key fingerprint for the console connection.
      * 
      */
-    public String fingerprint() {
-        return this.fingerprint;
+    public Optional<String> fingerprint() {
+        return Optional.ofNullable(this.fingerprint);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the console connection.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public String publicKey() {
-        return this.publicKey;
+    public Optional<String> publicKey() {
+        return Optional.ofNullable(this.publicKey);
     }
     /**
      * @return The SSH public key&#39;s fingerprint for the console connection service host.
      * 
      */
-    public String serviceHostKeyFingerprint() {
-        return this.serviceHostKeyFingerprint;
+    public Optional<String> serviceHostKeyFingerprint() {
+        return Optional.ofNullable(this.serviceHostKeyFingerprint);
     }
     /**
      * @return The current state of the console connection.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -147,17 +149,17 @@ public final class GetDbNodeConsoleConnectionsConsoleConnection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String connectionString;
-        private String dbNodeId;
-        private Map<String,Object> definedTags;
-        private String fingerprint;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String publicKey;
-        private String serviceHostKeyFingerprint;
-        private String state;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionString;
+        private @Nullable String dbNodeId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String fingerprint;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String publicKey;
+        private @Nullable String serviceHostKeyFingerprint;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetDbNodeConsoleConnectionsConsoleConnection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -175,58 +177,58 @@ public final class GetDbNodeConsoleConnectionsConsoleConnection {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+        public Builder connectionString(@Nullable String connectionString) {
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeId(String dbNodeId) {
-            this.dbNodeId = Objects.requireNonNull(dbNodeId);
+        public Builder dbNodeId(@Nullable String dbNodeId) {
+            this.dbNodeId = dbNodeId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+        public Builder fingerprint(@Nullable String fingerprint) {
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder publicKey(String publicKey) {
-            this.publicKey = Objects.requireNonNull(publicKey);
+        public Builder publicKey(@Nullable String publicKey) {
+            this.publicKey = publicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
-            this.serviceHostKeyFingerprint = Objects.requireNonNull(serviceHostKeyFingerprint);
+        public Builder serviceHostKeyFingerprint(@Nullable String serviceHostKeyFingerprint) {
+            this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetDbNodeConsoleConnectionsConsoleConnection build() {

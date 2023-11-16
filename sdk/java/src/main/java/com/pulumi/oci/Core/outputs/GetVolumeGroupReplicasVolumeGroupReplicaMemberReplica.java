@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
@@ -13,27 +15,27 @@ public final class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
      * @return Membership state of the volume replica in relation to the volume group replica.
      * 
      */
-    private String membershipState;
+    private @Nullable String membershipState;
     /**
      * @return The volume replica ID.
      * 
      */
-    private String volumeReplicaId;
+    private @Nullable String volumeReplicaId;
 
     private GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica() {}
     /**
      * @return Membership state of the volume replica in relation to the volume group replica.
      * 
      */
-    public String membershipState() {
-        return this.membershipState;
+    public Optional<String> membershipState() {
+        return Optional.ofNullable(this.membershipState);
     }
     /**
      * @return The volume replica ID.
      * 
      */
-    public String volumeReplicaId() {
-        return this.volumeReplicaId;
+    public Optional<String> volumeReplicaId() {
+        return Optional.ofNullable(this.volumeReplicaId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String membershipState;
-        private String volumeReplicaId;
+        private @Nullable String membershipState;
+        private @Nullable String volumeReplicaId;
         public Builder() {}
         public Builder(GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
         }
 
         @CustomType.Setter
-        public Builder membershipState(String membershipState) {
-            this.membershipState = Objects.requireNonNull(membershipState);
+        public Builder membershipState(@Nullable String membershipState) {
+            this.membershipState = membershipState;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeReplicaId(String volumeReplicaId) {
-            this.volumeReplicaId = Objects.requireNonNull(volumeReplicaId);
+        public Builder volumeReplicaId(@Nullable String volumeReplicaId) {
+            this.volumeReplicaId = volumeReplicaId;
             return this;
         }
         public GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica build() {

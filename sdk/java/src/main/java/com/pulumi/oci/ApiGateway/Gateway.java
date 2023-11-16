@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,28 +99,28 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="caBundles", refs={List.class,GatewayCaBundle.class}, tree="[0,1]")
-    private Output<List<GatewayCaBundle>> caBundles;
+    private Output</* @Nullable */ List<GatewayCaBundle>> caBundles;
 
     /**
      * @return (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
      * 
      */
-    public Output<List<GatewayCaBundle>> caBundles() {
-        return this.caBundles;
+    public Output<Optional<List<GatewayCaBundle>>> caBundles() {
+        return Codegen.optional(this.caBundles);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
-    private Output<String> certificateId;
+    private Output</* @Nullable */ String> certificateId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    public Output<String> certificateId() {
-        return this.certificateId;
+    public Output<Optional<String>> certificateId() {
+        return Codegen.optional(this.certificateId);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -140,28 +141,28 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
@@ -182,98 +183,98 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The hostname for APIs deployed on the gateway.
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
-    private Output<String> hostname;
+    private Output</* @Nullable */ String> hostname;
 
     /**
      * @return The hostname for APIs deployed on the gateway.
      * 
      */
-    public Output<String> hostname() {
-        return this.hostname;
+    public Output<Optional<String>> hostname() {
+        return Codegen.optional(this.hostname);
     }
     /**
      * An array of IP addresses associated with the gateway.
      * 
      */
     @Export(name="ipAddresses", refs={List.class,GatewayIpAddress.class}, tree="[0,1]")
-    private Output<List<GatewayIpAddress>> ipAddresses;
+    private Output</* @Nullable */ List<GatewayIpAddress>> ipAddresses;
 
     /**
      * @return An array of IP addresses associated with the gateway.
      * 
      */
-    public Output<List<GatewayIpAddress>> ipAddresses() {
-        return this.ipAddresses;
+    public Output<Optional<List<GatewayIpAddress>>> ipAddresses() {
+        return Codegen.optional(this.ipAddresses);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      * 
      */
     @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> networkSecurityGroupIds;
+    private Output</* @Nullable */ List<String>> networkSecurityGroupIds;
 
     /**
      * @return (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      * 
      */
-    public Output<List<String>> networkSecurityGroupIds() {
-        return this.networkSecurityGroupIds;
+    public Output<Optional<List<String>>> networkSecurityGroupIds() {
+        return Codegen.optional(this.networkSecurityGroupIds);
     }
     /**
      * (Updatable) Base Gateway response cache.
      * 
      */
     @Export(name="responseCacheDetails", refs={GatewayResponseCacheDetails.class}, tree="[0]")
-    private Output<GatewayResponseCacheDetails> responseCacheDetails;
+    private Output</* @Nullable */ GatewayResponseCacheDetails> responseCacheDetails;
 
     /**
      * @return (Updatable) Base Gateway response cache.
      * 
      */
-    public Output<GatewayResponseCacheDetails> responseCacheDetails() {
-        return this.responseCacheDetails;
+    public Output<Optional<GatewayResponseCacheDetails>> responseCacheDetails() {
+        return Codegen.optional(this.responseCacheDetails);
     }
     /**
      * The current state of the gateway.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the gateway.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
@@ -300,28 +301,28 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

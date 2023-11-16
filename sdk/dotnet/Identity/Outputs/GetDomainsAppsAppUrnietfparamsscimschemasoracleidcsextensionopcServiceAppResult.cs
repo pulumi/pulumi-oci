@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Current Federation Mode
         /// </summary>
-        public readonly string CurrentFederationMode;
+        public readonly string? CurrentFederationMode;
         /// <summary>
         /// Current Synchronization Mode
         /// </summary>
-        public readonly string CurrentSynchronizationMode;
+        public readonly string? CurrentSynchronizationMode;
         /// <summary>
         /// If true, indicates that enablement is in progress started but not completed
         /// </summary>
-        public readonly bool EnablingNextFedSyncModes;
+        public readonly bool? EnablingNextFedSyncModes;
         /// <summary>
         /// Next Federation Mode
         /// </summary>
-        public readonly string NextFederationMode;
+        public readonly string? NextFederationMode;
         /// <summary>
         /// Next Synchronization Mode
         /// </summary>
-        public readonly string NextSynchronizationMode;
+        public readonly string? NextSynchronizationMode;
         /// <summary>
         /// This value identifies the OPC region in which the service is running.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// This value specifies the unique identifier assigned to an instance of an Oracle Public Cloud service app.
         /// </summary>
-        public readonly string ServiceInstanceIdentifier;
+        public readonly string? ServiceInstanceIdentifier;
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppResult(
-            string currentFederationMode,
+            string? currentFederationMode,
 
-            string currentSynchronizationMode,
+            string? currentSynchronizationMode,
 
-            bool enablingNextFedSyncModes,
+            bool? enablingNextFedSyncModes,
 
-            string nextFederationMode,
+            string? nextFederationMode,
 
-            string nextSynchronizationMode,
+            string? nextSynchronizationMode,
 
-            string region,
+            string? region,
 
-            string serviceInstanceIdentifier)
+            string? serviceInstanceIdentifier)
         {
             CurrentFederationMode = currentFederationMode;
             CurrentSynchronizationMode = currentSynchronizationMode;

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Indicates if the resource pool should be deleted for the Autonomous Database.
         /// </summary>
-        public readonly bool IsDisabled;
+        public readonly bool? IsDisabled;
         /// <summary>
         /// The frequency of the long-term backup schedule
         /// </summary>
-        public readonly string RepeatCadence;
+        public readonly string? RepeatCadence;
         /// <summary>
         /// Retention period, in days, for long-term backups
         /// </summary>
-        public readonly int RetentionPeriodInDays;
+        public readonly int? RetentionPeriodInDays;
         /// <summary>
         /// The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
         /// </summary>
-        public readonly string TimeOfBackup;
+        public readonly string? TimeOfBackup;
 
         [OutputConstructor]
         private GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult(
-            bool isDisabled,
+            bool? isDisabled,
 
-            string repeatCadence,
+            string? repeatCadence,
 
-            int retentionPeriodInDays,
+            int? retentionPeriodInDays,
 
-            string timeOfBackup)
+            string? timeOfBackup)
         {
             IsDisabled = isDisabled;
             RepeatCadence = repeatCadence;

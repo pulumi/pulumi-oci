@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
         /// </summary>
-        public readonly bool IsCritical;
+        public readonly bool? IsCritical;
         /// <summary>
         /// The certificate extension name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The certificate extension value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetCertificatesCertificateExtensionResult(
-            bool isCritical,
+            bool? isCritical,
 
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             IsCritical = isCritical;
             Name = name;

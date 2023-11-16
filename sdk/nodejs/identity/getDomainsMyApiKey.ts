@@ -66,74 +66,74 @@ export interface GetDomainsMyApiKeyResult {
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * Description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * Fingerprint
      */
-    readonly fingerprint: string;
+    readonly fingerprint?: string;
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsMyApiKeyIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsMyApiKeyIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsMyApiKeyIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsMyApiKeyIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * Key or name of the tag.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsMyApiKeyMeta[];
+    readonly metas?: outputs.Identity.GetDomainsMyApiKeyMeta[];
     readonly myApiKeyId: string;
     /**
      * The user's OCID.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsMyApiKeyTag[];
+    readonly tags?: outputs.Identity.GetDomainsMyApiKeyTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * The user linked to the API key.
      */
-    readonly users: outputs.Identity.GetDomainsMyApiKeyUser[];
+    readonly users?: outputs.Identity.GetDomainsMyApiKeyUser[];
 }
 /**
  * This data source provides details about a specific My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.

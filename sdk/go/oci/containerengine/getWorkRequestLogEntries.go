@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.
@@ -66,8 +65,8 @@ type GetWorkRequestLogEntriesResult struct {
 	CompartmentId string                           `pulumi:"compartmentId"`
 	Filters       []GetWorkRequestLogEntriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id            string `pulumi:"id"`
-	WorkRequestId string `pulumi:"workRequestId"`
+	Id            *string `pulumi:"id"`
+	WorkRequestId string  `pulumi:"workRequestId"`
 	// The list of work_request_log_entries.
 	WorkRequestLogEntries []GetWorkRequestLogEntriesWorkRequestLogEntry `pulumi:"workRequestLogEntries"`
 }
@@ -113,12 +112,6 @@ func (o GetWorkRequestLogEntriesResultOutput) ToGetWorkRequestLogEntriesResultOu
 	return o
 }
 
-func (o GetWorkRequestLogEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesResult] {
-	return pulumix.Output[GetWorkRequestLogEntriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkRequestLogEntriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkRequestLogEntriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -128,8 +121,8 @@ func (o GetWorkRequestLogEntriesResultOutput) Filters() GetWorkRequestLogEntries
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkRequestLogEntriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestLogEntriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkRequestLogEntriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestLogEntriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWorkRequestLogEntriesResultOutput) WorkRequestId() pulumi.StringOutput {

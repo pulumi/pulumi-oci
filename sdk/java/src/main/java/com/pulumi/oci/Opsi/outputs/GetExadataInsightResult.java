@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInsightResult {
@@ -18,215 +20,215 @@ public final class GetExadataInsightResult {
      * @return Compartment identifier of the Exadata insight resource
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    private String enterpriseManagerBridgeId;
+    private @Nullable String enterpriseManagerBridgeId;
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    private String enterpriseManagerEntityDisplayName;
+    private @Nullable String enterpriseManagerEntityDisplayName;
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    private String enterpriseManagerEntityIdentifier;
+    private @Nullable String enterpriseManagerEntityIdentifier;
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    private String enterpriseManagerEntityName;
+    private @Nullable String enterpriseManagerEntityName;
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    private String enterpriseManagerEntityType;
+    private @Nullable String enterpriseManagerEntityType;
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    private String enterpriseManagerIdentifier;
+    private @Nullable String enterpriseManagerIdentifier;
     /**
      * @return Source of the Exadata system.
      * 
      */
-    private String entitySource;
+    private @Nullable String entitySource;
     /**
      * @return The user-friendly name for the Exadata system. The name does not have to be unique.
      * 
      */
-    private String exadataDisplayName;
+    private @Nullable String exadataDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * 
      */
-    private String exadataInfraId;
+    private @Nullable String exadataInfraId;
     /**
      * @return Oracle Cloud Infrastructure exadata infrastructure resource type
      * 
      */
-    private String exadataInfraResourceType;
+    private @Nullable String exadataInfraResourceType;
     private String exadataInsightId;
     /**
      * @return The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      * 
      */
-    private String exadataName;
+    private @Nullable String exadataName;
     /**
      * @return Exadata rack type.
      * 
      */
-    private String exadataRackType;
+    private @Nullable String exadataRackType;
     /**
      * @return The shape of the Exadata Infrastructure.
      * 
      */
-    private String exadataShape;
+    private @Nullable String exadataShape;
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
      * 
      */
-    private String exadataType;
+    private @Nullable String exadataType;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Exadata insight identifier
      * 
      */
-    private String id;
-    private Boolean isAutoSyncEnabled;
+    private @Nullable String id;
+    private @Nullable Boolean isAutoSyncEnabled;
     /**
      * @return true if virtualization is used in the Exadata system
      * 
      */
-    private Boolean isVirtualizedExadata;
+    private @Nullable Boolean isVirtualizedExadata;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
-    private List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails;
+    private @Nullable String lifecycleDetails;
+    private @Nullable List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails;
     /**
      * @return The current state of the Exadata insight.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Indicates the status of an Exadata insight in Operations Insights
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the Exadata insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetExadataInsightResult() {}
     /**
      * @return Compartment identifier of the Exadata insight resource
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    public String enterpriseManagerBridgeId() {
-        return this.enterpriseManagerBridgeId;
+    public Optional<String> enterpriseManagerBridgeId() {
+        return Optional.ofNullable(this.enterpriseManagerBridgeId);
     }
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    public String enterpriseManagerEntityDisplayName() {
-        return this.enterpriseManagerEntityDisplayName;
+    public Optional<String> enterpriseManagerEntityDisplayName() {
+        return Optional.ofNullable(this.enterpriseManagerEntityDisplayName);
     }
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    public String enterpriseManagerEntityIdentifier() {
-        return this.enterpriseManagerEntityIdentifier;
+    public Optional<String> enterpriseManagerEntityIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerEntityIdentifier);
     }
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    public String enterpriseManagerEntityName() {
-        return this.enterpriseManagerEntityName;
+    public Optional<String> enterpriseManagerEntityName() {
+        return Optional.ofNullable(this.enterpriseManagerEntityName);
     }
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    public String enterpriseManagerEntityType() {
-        return this.enterpriseManagerEntityType;
+    public Optional<String> enterpriseManagerEntityType() {
+        return Optional.ofNullable(this.enterpriseManagerEntityType);
     }
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    public String enterpriseManagerIdentifier() {
-        return this.enterpriseManagerIdentifier;
+    public Optional<String> enterpriseManagerIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerIdentifier);
     }
     /**
      * @return Source of the Exadata system.
      * 
      */
-    public String entitySource() {
-        return this.entitySource;
+    public Optional<String> entitySource() {
+        return Optional.ofNullable(this.entitySource);
     }
     /**
      * @return The user-friendly name for the Exadata system. The name does not have to be unique.
      * 
      */
-    public String exadataDisplayName() {
-        return this.exadataDisplayName;
+    public Optional<String> exadataDisplayName() {
+        return Optional.ofNullable(this.exadataDisplayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * 
      */
-    public String exadataInfraId() {
-        return this.exadataInfraId;
+    public Optional<String> exadataInfraId() {
+        return Optional.ofNullable(this.exadataInfraId);
     }
     /**
      * @return Oracle Cloud Infrastructure exadata infrastructure resource type
      * 
      */
-    public String exadataInfraResourceType() {
-        return this.exadataInfraResourceType;
+    public Optional<String> exadataInfraResourceType() {
+        return Optional.ofNullable(this.exadataInfraResourceType);
     }
     public String exadataInsightId() {
         return this.exadataInsightId;
@@ -235,98 +237,98 @@ public final class GetExadataInsightResult {
      * @return The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      * 
      */
-    public String exadataName() {
-        return this.exadataName;
+    public Optional<String> exadataName() {
+        return Optional.ofNullable(this.exadataName);
     }
     /**
      * @return Exadata rack type.
      * 
      */
-    public String exadataRackType() {
-        return this.exadataRackType;
+    public Optional<String> exadataRackType() {
+        return Optional.ofNullable(this.exadataRackType);
     }
     /**
      * @return The shape of the Exadata Infrastructure.
      * 
      */
-    public String exadataShape() {
-        return this.exadataShape;
+    public Optional<String> exadataShape() {
+        return Optional.ofNullable(this.exadataShape);
     }
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
      * 
      */
-    public String exadataType() {
-        return this.exadataType;
+    public Optional<String> exadataType() {
+        return Optional.ofNullable(this.exadataType);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Exadata insight identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean isAutoSyncEnabled() {
-        return this.isAutoSyncEnabled;
+    public Optional<Boolean> isAutoSyncEnabled() {
+        return Optional.ofNullable(this.isAutoSyncEnabled);
     }
     /**
      * @return true if virtualization is used in the Exadata system
      * 
      */
-    public Boolean isVirtualizedExadata() {
-        return this.isVirtualizedExadata;
+    public Optional<Boolean> isVirtualizedExadata() {
+        return Optional.ofNullable(this.isVirtualizedExadata);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails() {
-        return this.memberVmClusterDetails;
+        return this.memberVmClusterDetails == null ? List.of() : this.memberVmClusterDetails;
     }
     /**
      * @return The current state of the Exadata insight.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Indicates the status of an Exadata insight in Operations Insights
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the Exadata insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -338,34 +340,34 @@ public final class GetExadataInsightResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String enterpriseManagerBridgeId;
-        private String enterpriseManagerEntityDisplayName;
-        private String enterpriseManagerEntityIdentifier;
-        private String enterpriseManagerEntityName;
-        private String enterpriseManagerEntityType;
-        private String enterpriseManagerIdentifier;
-        private String entitySource;
-        private String exadataDisplayName;
-        private String exadataInfraId;
-        private String exadataInfraResourceType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String enterpriseManagerBridgeId;
+        private @Nullable String enterpriseManagerEntityDisplayName;
+        private @Nullable String enterpriseManagerEntityIdentifier;
+        private @Nullable String enterpriseManagerEntityName;
+        private @Nullable String enterpriseManagerEntityType;
+        private @Nullable String enterpriseManagerIdentifier;
+        private @Nullable String entitySource;
+        private @Nullable String exadataDisplayName;
+        private @Nullable String exadataInfraId;
+        private @Nullable String exadataInfraResourceType;
         private String exadataInsightId;
-        private String exadataName;
-        private String exadataRackType;
-        private String exadataShape;
-        private String exadataType;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isAutoSyncEnabled;
-        private Boolean isVirtualizedExadata;
-        private String lifecycleDetails;
-        private List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails;
-        private String state;
-        private String status;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String exadataName;
+        private @Nullable String exadataRackType;
+        private @Nullable String exadataShape;
+        private @Nullable String exadataType;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isAutoSyncEnabled;
+        private @Nullable Boolean isVirtualizedExadata;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetExadataInsightResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -400,63 +402,63 @@ public final class GetExadataInsightResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
-            this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
+        public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityDisplayName(String enterpriseManagerEntityDisplayName) {
-            this.enterpriseManagerEntityDisplayName = Objects.requireNonNull(enterpriseManagerEntityDisplayName);
+        public Builder enterpriseManagerEntityDisplayName(@Nullable String enterpriseManagerEntityDisplayName) {
+            this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
-            this.enterpriseManagerEntityIdentifier = Objects.requireNonNull(enterpriseManagerEntityIdentifier);
+        public Builder enterpriseManagerEntityIdentifier(@Nullable String enterpriseManagerEntityIdentifier) {
+            this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
-            this.enterpriseManagerEntityName = Objects.requireNonNull(enterpriseManagerEntityName);
+        public Builder enterpriseManagerEntityName(@Nullable String enterpriseManagerEntityName) {
+            this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
-            this.enterpriseManagerEntityType = Objects.requireNonNull(enterpriseManagerEntityType);
+        public Builder enterpriseManagerEntityType(@Nullable String enterpriseManagerEntityType) {
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
-            this.enterpriseManagerIdentifier = Objects.requireNonNull(enterpriseManagerIdentifier);
+        public Builder enterpriseManagerIdentifier(@Nullable String enterpriseManagerIdentifier) {
+            this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+        public Builder entitySource(@Nullable String entitySource) {
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataDisplayName(String exadataDisplayName) {
-            this.exadataDisplayName = Objects.requireNonNull(exadataDisplayName);
+        public Builder exadataDisplayName(@Nullable String exadataDisplayName) {
+            this.exadataDisplayName = exadataDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInfraId(String exadataInfraId) {
-            this.exadataInfraId = Objects.requireNonNull(exadataInfraId);
+        public Builder exadataInfraId(@Nullable String exadataInfraId) {
+            this.exadataInfraId = exadataInfraId;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInfraResourceType(String exadataInfraResourceType) {
-            this.exadataInfraResourceType = Objects.requireNonNull(exadataInfraResourceType);
+        public Builder exadataInfraResourceType(@Nullable String exadataInfraResourceType) {
+            this.exadataInfraResourceType = exadataInfraResourceType;
             return this;
         }
         @CustomType.Setter
@@ -465,81 +467,81 @@ public final class GetExadataInsightResult {
             return this;
         }
         @CustomType.Setter
-        public Builder exadataName(String exadataName) {
-            this.exadataName = Objects.requireNonNull(exadataName);
+        public Builder exadataName(@Nullable String exadataName) {
+            this.exadataName = exadataName;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataRackType(String exadataRackType) {
-            this.exadataRackType = Objects.requireNonNull(exadataRackType);
+        public Builder exadataRackType(@Nullable String exadataRackType) {
+            this.exadataRackType = exadataRackType;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataShape(String exadataShape) {
-            this.exadataShape = Objects.requireNonNull(exadataShape);
+        public Builder exadataShape(@Nullable String exadataShape) {
+            this.exadataShape = exadataShape;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataType(String exadataType) {
-            this.exadataType = Objects.requireNonNull(exadataType);
+        public Builder exadataType(@Nullable String exadataType) {
+            this.exadataType = exadataType;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoSyncEnabled(Boolean isAutoSyncEnabled) {
-            this.isAutoSyncEnabled = Objects.requireNonNull(isAutoSyncEnabled);
+        public Builder isAutoSyncEnabled(@Nullable Boolean isAutoSyncEnabled) {
+            this.isAutoSyncEnabled = isAutoSyncEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isVirtualizedExadata(Boolean isVirtualizedExadata) {
-            this.isVirtualizedExadata = Objects.requireNonNull(isVirtualizedExadata);
+        public Builder isVirtualizedExadata(@Nullable Boolean isVirtualizedExadata) {
+            this.isVirtualizedExadata = isVirtualizedExadata;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder memberVmClusterDetails(List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails) {
-            this.memberVmClusterDetails = Objects.requireNonNull(memberVmClusterDetails);
+        public Builder memberVmClusterDetails(@Nullable List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails) {
+            this.memberVmClusterDetails = memberVmClusterDetails;
             return this;
         }
         public Builder memberVmClusterDetails(GetExadataInsightMemberVmClusterDetail... memberVmClusterDetails) {
             return memberVmClusterDetails(List.of(memberVmClusterDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExadataInsightResult build() {

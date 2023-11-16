@@ -34,7 +34,7 @@ public final class GetGenericArtifactsResult {
      * @return The list of generic_artifact_collection.
      * 
      */
-    private List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections;
+    private @Nullable List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
      * 
@@ -91,7 +91,7 @@ public final class GetGenericArtifactsResult {
      * 
      */
     public List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections() {
-        return this.genericArtifactCollections;
+        return this.genericArtifactCollections == null ? List.of() : this.genericArtifactCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -142,7 +142,7 @@ public final class GetGenericArtifactsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetGenericArtifactsFilter> filters;
-        private List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections;
+        private @Nullable List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections;
         private @Nullable String id;
         private String repositoryId;
         private @Nullable String sha256;
@@ -187,8 +187,8 @@ public final class GetGenericArtifactsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder genericArtifactCollections(List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections) {
-            this.genericArtifactCollections = Objects.requireNonNull(genericArtifactCollections);
+        public Builder genericArtifactCollections(@Nullable List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections) {
+            this.genericArtifactCollections = genericArtifactCollections;
             return this;
         }
         public Builder genericArtifactCollections(GetGenericArtifactsGenericArtifactCollection... genericArtifactCollections) {

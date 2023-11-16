@@ -84,14 +84,14 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="items", refs={List.class,MonitoredResourcesListMemberItem.class}, tree="[0,1]")
-    private Output<List<MonitoredResourcesListMemberItem>> items;
+    private Output</* @Nullable */ List<MonitoredResourcesListMemberItem>> items;
 
     /**
      * @return List of member resources.
      * 
      */
-    public Output<List<MonitoredResourcesListMemberItem>> items() {
-        return this.items;
+    public Output<Optional<List<MonitoredResourcesListMemberItem>>> items() {
+        return Codegen.optional(this.items);
     }
     /**
      * The field which determines the depth of hierarchy while searching for members.

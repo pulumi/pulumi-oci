@@ -8,10 +8,12 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyServiceListResult {
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the service Group.
      * 
@@ -22,21 +24,21 @@ public final class GetNetworkFirewallPolicyServiceListResult {
      * @return OCID of the Network Firewall Policy this serviceList belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return List of services in the group.
      * 
      */
-    private List<String> services;
+    private @Nullable List<String> services;
     /**
      * @return Count of total services in the given service List.
      * 
      */
-    private Integer totalServices;
+    private @Nullable Integer totalServices;
 
     private GetNetworkFirewallPolicyServiceListResult() {}
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the service Group.
@@ -52,22 +54,22 @@ public final class GetNetworkFirewallPolicyServiceListResult {
      * @return OCID of the Network Firewall Policy this serviceList belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return List of services in the group.
      * 
      */
     public List<String> services() {
-        return this.services;
+        return this.services == null ? List.of() : this.services;
     }
     /**
      * @return Count of total services in the given service List.
      * 
      */
-    public Integer totalServices() {
-        return this.totalServices;
+    public Optional<Integer> totalServices() {
+        return Optional.ofNullable(this.totalServices);
     }
 
     public static Builder builder() {
@@ -79,12 +81,12 @@ public final class GetNetworkFirewallPolicyServiceListResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private List<String> services;
-        private Integer totalServices;
+        private @Nullable String parentResourceId;
+        private @Nullable List<String> services;
+        private @Nullable Integer totalServices;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyServiceListResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,8 +99,8 @@ public final class GetNetworkFirewallPolicyServiceListResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -112,21 +114,21 @@ public final class GetNetworkFirewallPolicyServiceListResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder services(List<String> services) {
-            this.services = Objects.requireNonNull(services);
+        public Builder services(@Nullable List<String> services) {
+            this.services = services;
             return this;
         }
         public Builder services(String... services) {
             return services(List.of(services));
         }
         @CustomType.Setter
-        public Builder totalServices(Integer totalServices) {
-            this.totalServices = Objects.requireNonNull(totalServices);
+        public Builder totalServices(@Nullable Integer totalServices) {
+            this.totalServices = totalServices;
             return this;
         }
         public GetNetworkFirewallPolicyServiceListResult build() {

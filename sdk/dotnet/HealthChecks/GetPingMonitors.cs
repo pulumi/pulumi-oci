@@ -173,7 +173,7 @@ namespace Pulumi.Oci.HealthChecks
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of ping_monitors.
         /// </summary>
@@ -189,7 +189,7 @@ namespace Pulumi.Oci.HealthChecks
 
             string? homeRegion,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPingMonitorsPingMonitorResult> pingMonitors)
         {

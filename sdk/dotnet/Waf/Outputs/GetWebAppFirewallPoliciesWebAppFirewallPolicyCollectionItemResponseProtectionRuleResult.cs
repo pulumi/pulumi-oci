@@ -16,24 +16,24 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
         /// </summary>
-        public readonly string ActionName;
+        public readonly string? ActionName;
         /// <summary>
         /// An expression that determines whether or not the rule action should be executed.
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
         /// The language used to parse condition from field `condition`. Available languages:
         /// * **JMESPATH** an extended JMESPath language syntax.
         /// </summary>
-        public readonly string ConditionLanguage;
+        public readonly string? ConditionLanguage;
         /// <summary>
         /// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
         /// </summary>
-        public readonly bool IsBodyInspectionEnabled;
+        public readonly bool? IsBodyInspectionEnabled;
         /// <summary>
         /// Rule name. Must be unique within the module.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         /// </summary>
@@ -45,25 +45,25 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Type of WebAppFirewallPolicyRule.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult(
-            string actionName,
+            string? actionName,
 
-            string condition,
+            string? condition,
 
-            string conditionLanguage,
+            string? conditionLanguage,
 
-            bool isBodyInspectionEnabled,
+            bool? isBodyInspectionEnabled,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult> protectionCapabilities,
 
             ImmutableArray<Outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult> protectionCapabilitySettings,
 
-            string type)
+            string? type)
         {
             ActionName = actionName;
             Condition = condition;

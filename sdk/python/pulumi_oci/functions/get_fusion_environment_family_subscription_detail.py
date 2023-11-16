@@ -40,7 +40,7 @@ class GetFusionEnvironmentFamilySubscriptionDetailResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetFusionEnvironmentFamilySubscriptionDetailResult:
 
     @property
     @pulumi.getter
-    def subscriptions(self) -> Sequence['outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult']:
-        """
-        List of subscriptions.
-        """
+    def subscriptions(self) -> Optional[Sequence['outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult']]:
         return pulumi.get(self, "subscriptions")
 
 
@@ -69,21 +66,7 @@ class AwaitableGetFusionEnvironmentFamilySubscriptionDetailResult(GetFusionEnvir
 def get_fusion_environment_family_subscription_detail(fusion_environment_family_id: Optional[str] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentFamilySubscriptionDetailResult:
     """
-    This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets the subscription details of an fusion environment family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_family_subscription_detail = oci.Functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
-    ```
-
-
-    :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentFamilyId'] = fusion_environment_family_id
@@ -100,20 +83,6 @@ def get_fusion_environment_family_subscription_detail(fusion_environment_family_
 def get_fusion_environment_family_subscription_detail_output(fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentFamilySubscriptionDetailResult]:
     """
-    This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets the subscription details of an fusion environment family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_family_subscription_detail = oci.Functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
-    ```
-
-
-    :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
+    Use this data source to access information about an existing resource.
     """
     ...

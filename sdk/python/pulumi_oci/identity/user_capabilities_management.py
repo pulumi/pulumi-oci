@@ -22,16 +22,6 @@ class UserCapabilitiesManagementArgs:
                  can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a UserCapabilitiesManagement resource.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-        :param pulumi.Input[bool] can_use_api_keys: (Updatable) Indicates if the user can use API keys.
-        :param pulumi.Input[bool] can_use_auth_tokens: (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-        :param pulumi.Input[bool] can_use_console_password: (Updatable) Indicates if the user can log in to the console.
-        :param pulumi.Input[bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
-        :param pulumi.Input[bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "user_id", user_id)
         if can_use_api_keys is not None:
@@ -48,9 +38,6 @@ class UserCapabilitiesManagementArgs:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user.
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -60,9 +47,6 @@ class UserCapabilitiesManagementArgs:
     @property
     @pulumi.getter(name="canUseApiKeys")
     def can_use_api_keys(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use API keys.
-        """
         return pulumi.get(self, "can_use_api_keys")
 
     @can_use_api_keys.setter
@@ -72,9 +56,6 @@ class UserCapabilitiesManagementArgs:
     @property
     @pulumi.getter(name="canUseAuthTokens")
     def can_use_auth_tokens(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-        """
         return pulumi.get(self, "can_use_auth_tokens")
 
     @can_use_auth_tokens.setter
@@ -84,9 +65,6 @@ class UserCapabilitiesManagementArgs:
     @property
     @pulumi.getter(name="canUseConsolePassword")
     def can_use_console_password(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can log in to the console.
-        """
         return pulumi.get(self, "can_use_console_password")
 
     @can_use_console_password.setter
@@ -96,9 +74,6 @@ class UserCapabilitiesManagementArgs:
     @property
     @pulumi.getter(name="canUseCustomerSecretKeys")
     def can_use_customer_secret_keys(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use SigV4 symmetric keys.
-        """
         return pulumi.get(self, "can_use_customer_secret_keys")
 
     @can_use_customer_secret_keys.setter
@@ -108,13 +83,6 @@ class UserCapabilitiesManagementArgs:
     @property
     @pulumi.getter(name="canUseSmtpCredentials")
     def can_use_smtp_credentials(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use SMTP passwords.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "can_use_smtp_credentials")
 
     @can_use_smtp_credentials.setter
@@ -133,16 +101,6 @@ class _UserCapabilitiesManagementState:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering UserCapabilitiesManagement resources.
-        :param pulumi.Input[bool] can_use_api_keys: (Updatable) Indicates if the user can use API keys.
-        :param pulumi.Input[bool] can_use_auth_tokens: (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-        :param pulumi.Input[bool] can_use_console_password: (Updatable) Indicates if the user can log in to the console.
-        :param pulumi.Input[bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
-        :param pulumi.Input[bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] user_id: The OCID of the user.
         """
         if can_use_api_keys is not None:
             pulumi.set(__self__, "can_use_api_keys", can_use_api_keys)
@@ -160,9 +118,6 @@ class _UserCapabilitiesManagementState:
     @property
     @pulumi.getter(name="canUseApiKeys")
     def can_use_api_keys(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use API keys.
-        """
         return pulumi.get(self, "can_use_api_keys")
 
     @can_use_api_keys.setter
@@ -172,9 +127,6 @@ class _UserCapabilitiesManagementState:
     @property
     @pulumi.getter(name="canUseAuthTokens")
     def can_use_auth_tokens(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-        """
         return pulumi.get(self, "can_use_auth_tokens")
 
     @can_use_auth_tokens.setter
@@ -184,9 +136,6 @@ class _UserCapabilitiesManagementState:
     @property
     @pulumi.getter(name="canUseConsolePassword")
     def can_use_console_password(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can log in to the console.
-        """
         return pulumi.get(self, "can_use_console_password")
 
     @can_use_console_password.setter
@@ -196,9 +145,6 @@ class _UserCapabilitiesManagementState:
     @property
     @pulumi.getter(name="canUseCustomerSecretKeys")
     def can_use_customer_secret_keys(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use SigV4 symmetric keys.
-        """
         return pulumi.get(self, "can_use_customer_secret_keys")
 
     @can_use_customer_secret_keys.setter
@@ -208,13 +154,6 @@ class _UserCapabilitiesManagementState:
     @property
     @pulumi.getter(name="canUseSmtpCredentials")
     def can_use_smtp_credentials(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the user can use SMTP passwords.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "can_use_smtp_credentials")
 
     @can_use_smtp_credentials.setter
@@ -224,9 +163,6 @@ class _UserCapabilitiesManagementState:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user.
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -247,47 +183,9 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the User Capabilities Management resource in Oracle Cloud Infrastructure Identity service.
-
-        Manages the capabilities of the specified user.
-
-        **Important:** Deleting the User Capabilities Management leaves the User resource in its existing state (rather than returning to its defaults)
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_user_capabilities_management = oci.identity.UserCapabilitiesManagement("testUserCapabilitiesManagement",
-            user_id=oci_identity_user["user1"]["id"],
-            can_use_api_keys=True,
-            can_use_auth_tokens=True,
-            can_use_console_password=False,
-            can_use_customer_secret_keys=True,
-            can_use_smtp_credentials=True)
-        ```
-
-        ## Import
-
-        Users can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
-        ```
-
+        Create a UserCapabilitiesManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] can_use_api_keys: (Updatable) Indicates if the user can use API keys.
-        :param pulumi.Input[bool] can_use_auth_tokens: (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-        :param pulumi.Input[bool] can_use_console_password: (Updatable) Indicates if the user can log in to the console.
-        :param pulumi.Input[bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
-        :param pulumi.Input[bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] user_id: The OCID of the user.
         """
         ...
     @overload
@@ -296,35 +194,7 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
                  args: UserCapabilitiesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the User Capabilities Management resource in Oracle Cloud Infrastructure Identity service.
-
-        Manages the capabilities of the specified user.
-
-        **Important:** Deleting the User Capabilities Management leaves the User resource in its existing state (rather than returning to its defaults)
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_user_capabilities_management = oci.identity.UserCapabilitiesManagement("testUserCapabilitiesManagement",
-            user_id=oci_identity_user["user1"]["id"],
-            can_use_api_keys=True,
-            can_use_auth_tokens=True,
-            can_use_console_password=False,
-            can_use_customer_secret_keys=True,
-            can_use_smtp_credentials=True)
-        ```
-
-        ## Import
-
-        Users can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
-        ```
-
+        Create a UserCapabilitiesManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param UserCapabilitiesManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -386,16 +256,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] can_use_api_keys: (Updatable) Indicates if the user can use API keys.
-        :param pulumi.Input[bool] can_use_auth_tokens: (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-        :param pulumi.Input[bool] can_use_console_password: (Updatable) Indicates if the user can log in to the console.
-        :param pulumi.Input[bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
-        :param pulumi.Input[bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] user_id: The OCID of the user.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -411,53 +271,31 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="canUseApiKeys")
-    def can_use_api_keys(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if the user can use API keys.
-        """
+    def can_use_api_keys(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "can_use_api_keys")
 
     @property
     @pulumi.getter(name="canUseAuthTokens")
-    def can_use_auth_tokens(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-        """
+    def can_use_auth_tokens(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "can_use_auth_tokens")
 
     @property
     @pulumi.getter(name="canUseConsolePassword")
-    def can_use_console_password(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if the user can log in to the console.
-        """
+    def can_use_console_password(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "can_use_console_password")
 
     @property
     @pulumi.getter(name="canUseCustomerSecretKeys")
-    def can_use_customer_secret_keys(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if the user can use SigV4 symmetric keys.
-        """
+    def can_use_customer_secret_keys(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "can_use_customer_secret_keys")
 
     @property
     @pulumi.getter(name="canUseSmtpCredentials")
-    def can_use_smtp_credentials(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if the user can use SMTP passwords.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def can_use_smtp_credentials(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "can_use_smtp_credentials")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user.
-        """
         return pulumi.get(self, "user_id")
 

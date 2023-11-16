@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Data Science service.
@@ -60,24 +59,24 @@ type LookupProjectArgs struct {
 // A collection of values returned by getProject.
 type LookupProjectResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created this project.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the project.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-	Id        string `pulumi:"id"`
-	ProjectId string `pulumi:"projectId"`
+	Id        *string `pulumi:"id"`
+	ProjectId string  `pulumi:"projectId"`
 	// The state of the project.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupProjectOutput(ctx *pulumi.Context, args LookupProjectOutputArgs, opts ...pulumi.InvokeOption) LookupProjectResultOutput {
@@ -118,20 +117,14 @@ func (o LookupProjectResultOutput) ToLookupProjectResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupProjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProjectResult] {
-	return pulumix.Output[LookupProjectResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project's compartment.
-func (o LookupProjectResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created this project.
-func (o LookupProjectResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -140,13 +133,13 @@ func (o LookupProjectResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the project.
-func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-func (o LookupProjectResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -155,8 +148,8 @@ func (o LookupProjectResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-func (o LookupProjectResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {
@@ -164,13 +157,13 @@ func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The state of the project.
-func (o LookupProjectResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o LookupProjectResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

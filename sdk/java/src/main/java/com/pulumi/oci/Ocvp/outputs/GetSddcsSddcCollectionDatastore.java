@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSddcsSddcCollectionDatastore {
@@ -15,17 +17,17 @@ public final class GetSddcsSddcCollectionDatastore {
      * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
      * 
      */
-    private List<String> blockVolumeIds;
+    private @Nullable List<String> blockVolumeIds;
     /**
      * @return Size of the Block Storage Volume in GB.
      * 
      */
-    private Double capacity;
+    private @Nullable Double capacity;
     /**
      * @return Type of the datastore.
      * 
      */
-    private String datastoreType;
+    private @Nullable String datastoreType;
 
     private GetSddcsSddcCollectionDatastore() {}
     /**
@@ -33,21 +35,21 @@ public final class GetSddcsSddcCollectionDatastore {
      * 
      */
     public List<String> blockVolumeIds() {
-        return this.blockVolumeIds;
+        return this.blockVolumeIds == null ? List.of() : this.blockVolumeIds;
     }
     /**
      * @return Size of the Block Storage Volume in GB.
      * 
      */
-    public Double capacity() {
-        return this.capacity;
+    public Optional<Double> capacity() {
+        return Optional.ofNullable(this.capacity);
     }
     /**
      * @return Type of the datastore.
      * 
      */
-    public String datastoreType() {
-        return this.datastoreType;
+    public Optional<String> datastoreType() {
+        return Optional.ofNullable(this.datastoreType);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetSddcsSddcCollectionDatastore {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> blockVolumeIds;
-        private Double capacity;
-        private String datastoreType;
+        private @Nullable List<String> blockVolumeIds;
+        private @Nullable Double capacity;
+        private @Nullable String datastoreType;
         public Builder() {}
         public Builder(GetSddcsSddcCollectionDatastore defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetSddcsSddcCollectionDatastore {
         }
 
         @CustomType.Setter
-        public Builder blockVolumeIds(List<String> blockVolumeIds) {
-            this.blockVolumeIds = Objects.requireNonNull(blockVolumeIds);
+        public Builder blockVolumeIds(@Nullable List<String> blockVolumeIds) {
+            this.blockVolumeIds = blockVolumeIds;
             return this;
         }
         public Builder blockVolumeIds(String... blockVolumeIds) {
             return blockVolumeIds(List.of(blockVolumeIds));
         }
         @CustomType.Setter
-        public Builder capacity(Double capacity) {
-            this.capacity = Objects.requireNonNull(capacity);
+        public Builder capacity(@Nullable Double capacity) {
+            this.capacity = capacity;
             return this;
         }
         @CustomType.Setter
-        public Builder datastoreType(String datastoreType) {
-            this.datastoreType = Objects.requireNonNull(datastoreType);
+        public Builder datastoreType(@Nullable String datastoreType) {
+            this.datastoreType = datastoreType;
             return this;
         }
         public GetSddcsSddcCollectionDatastore build() {

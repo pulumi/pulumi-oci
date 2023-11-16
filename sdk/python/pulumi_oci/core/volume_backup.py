@@ -26,14 +26,6 @@ class VolumeBackupArgs:
                  volume_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a VolumeBackup resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input['VolumeBackupSourceDetailsArgs'] source_details: Details of the volume backup source in the cloud.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-        :param pulumi.Input[str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,9 +47,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume backup.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +56,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -79,9 +65,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -91,9 +74,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -103,9 +83,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -115,9 +92,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['VolumeBackupSourceDetailsArgs']]:
-        """
-        Details of the volume backup source in the cloud.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -127,9 +101,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -139,9 +110,6 @@ class VolumeBackupArgs:
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
-        """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
@@ -173,25 +141,6 @@ class _VolumeBackupState:
                  volume_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VolumeBackup resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input[str] size_in_gbs: The size of the volume, in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
-        :param pulumi.Input['VolumeBackupSourceDetailsArgs'] source_details: Details of the volume backup source in the cloud.
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
-        :param pulumi.Input[str] source_volume_backup_id: The OCID of the source volume backup.
-        :param pulumi.Input[str] state: The current state of a volume backup.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] time_created: The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_request_received: The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-        :param pulumi.Input[str] unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
-        :param pulumi.Input[str] unique_size_in_mbs: The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
-        :param pulumi.Input[str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -241,9 +190,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume backup.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -253,9 +199,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -265,9 +208,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -277,9 +217,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="expirationTime")
     def expiration_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        """
         return pulumi.get(self, "expiration_time")
 
     @expiration_time.setter
@@ -289,9 +226,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -301,9 +235,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -313,9 +244,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the volume, in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -325,9 +253,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="sizeInMbs")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
-        """
         warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
         pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
 
@@ -340,9 +265,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['VolumeBackupSourceDetailsArgs']]:
-        """
-        Details of the volume backup source in the cloud.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -352,9 +274,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether the backup was created manually, or via scheduled backup policy.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -364,9 +283,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="sourceVolumeBackupId")
     def source_volume_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the source volume backup.
-        """
         return pulumi.get(self, "source_volume_backup_id")
 
     @source_volume_backup_id.setter
@@ -376,9 +292,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of a volume backup.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -388,9 +301,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -400,9 +310,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -412,9 +319,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="timeRequestReceived")
     def time_request_received(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-        """
         return pulumi.get(self, "time_request_received")
 
     @time_request_received.setter
@@ -424,9 +328,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -436,9 +337,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="uniqueSizeInGbs")
     def unique_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
-        """
         return pulumi.get(self, "unique_size_in_gbs")
 
     @unique_size_in_gbs.setter
@@ -448,9 +346,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="uniqueSizeInMbs")
     def unique_size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
-        """
         warnings.warn("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""", DeprecationWarning)
         pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
 
@@ -463,9 +358,6 @@ class _VolumeBackupState:
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
-        """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
@@ -488,52 +380,9 @@ class VolumeBackup(pulumi.CustomResource):
                  volume_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Volume Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new backup of the specified volume. For general information about volume backups,
-        see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
-
-        When the request is received, the backup object is in a REQUEST_RECEIVED state.
-        When the data is imaged, it goes into a CREATING state.
-        After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_backup = oci.core.VolumeBackup("testVolumeBackup",
-            volume_id=oci_core_volume["test_volume"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_backup_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            type=var["volume_backup_type"])
-        ```
-
-        ## Import
-
-        VolumeBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeBackup:VolumeBackup test_volume_backup "id"
-        ```
-
+        Create a VolumeBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input[pulumi.InputType['VolumeBackupSourceDetailsArgs']] source_details: Details of the volume backup source in the cloud.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-        :param pulumi.Input[str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
         ...
     @overload
@@ -542,42 +391,7 @@ class VolumeBackup(pulumi.CustomResource):
                  args: Optional[VolumeBackupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new backup of the specified volume. For general information about volume backups,
-        see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
-
-        When the request is received, the backup object is in a REQUEST_RECEIVED state.
-        When the data is imaged, it goes into a CREATING state.
-        After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_backup = oci.core.VolumeBackup("testVolumeBackup",
-            volume_id=oci_core_volume["test_volume"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_backup_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            type=var["volume_backup_type"])
-        ```
-
-        ## Import
-
-        VolumeBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeBackup:VolumeBackup test_volume_backup "id"
-        ```
-
+        Create a VolumeBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VolumeBackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -665,25 +479,6 @@ class VolumeBackup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input[str] size_in_gbs: The size of the volume, in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
-        :param pulumi.Input[pulumi.InputType['VolumeBackupSourceDetailsArgs']] source_details: Details of the volume backup source in the cloud.
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
-        :param pulumi.Input[str] source_volume_backup_id: The OCID of the source volume backup.
-        :param pulumi.Input[str] state: The current state of a volume backup.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] time_created: The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_request_received: The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-        :param pulumi.Input[str] unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
-        :param pulumi.Input[str] unique_size_in_mbs: The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
-        :param pulumi.Input[str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -712,66 +507,42 @@ class VolumeBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume backup.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="expirationTime")
-    def expiration_time(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        """
+    def expiration_time(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "expiration_time")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The size of the volume, in GBs.
-        """
+    def size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> pulumi.Output[str]:
-        """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
-        """
+    def size_in_mbs(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
         pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
 
@@ -780,81 +551,51 @@ class VolumeBackup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> pulumi.Output[Optional['outputs.VolumeBackupSourceDetails']]:
-        """
-        Details of the volume backup source in the cloud.
-        """
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> pulumi.Output[str]:
-        """
-        Specifies whether the backup was created manually, or via scheduled backup policy.
-        """
+    def source_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter(name="sourceVolumeBackupId")
-    def source_volume_backup_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the source volume backup.
-        """
+    def source_volume_backup_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_volume_backup_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of a volume backup.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeRequestReceived")
-    def time_request_received(self) -> pulumi.Output[str]:
-        """
-        The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-        """
+    def time_request_received(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_request_received")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="uniqueSizeInGbs")
-    def unique_size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
-        """
+    def unique_size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "unique_size_in_gbs")
 
     @property
     @pulumi.getter(name="uniqueSizeInMbs")
-    def unique_size_in_mbs(self) -> pulumi.Output[str]:
-        """
-        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
-        """
+    def unique_size_in_mbs(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""", DeprecationWarning)
         pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
 
@@ -862,9 +603,6 @@ class VolumeBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="volumeId")
-    def volume_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
-        """
+    def volume_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "volume_id")
 

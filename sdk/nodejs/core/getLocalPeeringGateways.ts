@@ -61,11 +61,11 @@ export interface GetLocalPeeringGatewaysResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of local_peering_gateways.
      */
-    readonly localPeeringGateways: outputs.Core.GetLocalPeeringGatewaysLocalPeeringGateway[];
+    readonly localPeeringGateways?: outputs.Core.GetLocalPeeringGatewaysLocalPeeringGateway[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
      */

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int TargetMemoryPerNode;
+        public readonly int? TargetMemoryPerNode;
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int TargetOcpusPerNode;
+        public readonly int? TargetOcpusPerNode;
         /// <summary>
         /// For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
         /// </summary>
-        public readonly string TargetShape;
+        public readonly string? TargetShape;
         /// <summary>
         /// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
         /// </summary>
-        public readonly string TimeRecurrence;
+        public readonly string? TimeRecurrence;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigResult(
-            int targetMemoryPerNode,
+            int? targetMemoryPerNode,
 
-            int targetOcpusPerNode,
+            int? targetOcpusPerNode,
 
-            string targetShape,
+            string? targetShape,
 
-            string timeRecurrence)
+            string? timeRecurrence)
         {
             TargetMemoryPerNode = targetMemoryPerNode;
             TargetOcpusPerNode = targetOcpusPerNode;

@@ -45,26 +45,17 @@ class GetBlockchainPlatformsResult:
 
     @property
     @pulumi.getter(name="blockchainPlatformCollections")
-    def blockchain_platform_collections(self) -> Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionResult']:
-        """
-        The list of blockchain_platform_collection.
-        """
+    def blockchain_platform_collections(self) -> Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionResult']]:
         return pulumi.get(self, "blockchain_platform_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Platform Instance Display name, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetBlockchainPlatformsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetBlockchainPlatformsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Platform Instance.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_blockchain_platforms(compartment_id: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBlockchainPlatformsResult:
     """
-    This data source provides the list of Blockchain Platforms in Oracle Cloud Infrastructure Blockchain service.
-
-    Returns a list Blockchain Platform Instances in a compartment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_blockchain_platforms = oci.Blockchain.get_blockchain_platforms(compartment_id=var["compartment_id"],
-        display_name=var["blockchain_platform_display_name"],
-        state=var["blockchain_platform_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_blockchain_platforms_output(compartment_id: Optional[pulumi.Input[str]] 
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockchainPlatformsResult]:
     """
-    This data source provides the list of Blockchain Platforms in Oracle Cloud Infrastructure Blockchain service.
-
-    Returns a list Blockchain Platform Instances in a compartment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_blockchain_platforms = oci.Blockchain.get_blockchain_platforms(compartment_id=var["compartment_id"],
-        display_name=var["blockchain_platform_display_name"],
-        state=var["blockchain_platform_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

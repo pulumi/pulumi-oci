@@ -45,11 +45,11 @@ export interface GetLogSetsCountResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * This is the total number of log sets the tenancy has configured.
      */
-    readonly logSetsCount: string;
+    readonly logSetsCount?: string;
     readonly namespace: string;
 }
 /**

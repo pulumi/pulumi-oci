@@ -40,9 +40,6 @@ class GetNamespacesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The is the tenancy ID
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -52,7 +49,7 @@ class GetNamespacesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetNamespacesResult:
 
     @property
     @pulumi.getter(name="namespaceCollections")
-    def namespace_collections(self) -> Sequence['outputs.GetNamespacesNamespaceCollectionResult']:
-        """
-        The list of namespace_collection.
-        """
+    def namespace_collections(self) -> Optional[Sequence['outputs.GetNamespacesNamespaceCollectionResult']]:
         return pulumi.get(self, "namespace_collections")
 
 
@@ -83,22 +77,7 @@ def get_namespaces(compartment_id: Optional[str] = None,
                    filters: Optional[Sequence[pulumi.InputType['GetNamespacesFilterArgs']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespacesResult:
     """
-    This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
-
-    Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-    result also indicates if the tenancy is onboarded with Logging Analytics.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -118,21 +97,6 @@ def get_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamespacesFilterArgs']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespacesResult]:
     """
-    This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
-
-    Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-    result also indicates if the tenancy is onboarded with Logging Analytics.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

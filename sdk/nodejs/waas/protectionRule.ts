@@ -52,15 +52,15 @@ export class ProtectionRule extends pulumi.CustomResource {
     /**
      * (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      */
-    public readonly action!: pulumi.Output<string>;
+    public readonly action!: pulumi.Output<string | undefined>;
     /**
      * The description of the protection rule.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    public /*out*/ readonly description!: pulumi.Output<string | undefined>;
     /**
      * An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      */
-    public readonly exclusions!: pulumi.Output<outputs.Waas.ProtectionRuleExclusion[]>;
+    public readonly exclusions!: pulumi.Output<outputs.Waas.ProtectionRuleExclusion[] | undefined>;
     /**
      * (Updatable) The unique key of the protection rule.
      */
@@ -68,15 +68,15 @@ export class ProtectionRule extends pulumi.CustomResource {
     /**
      * The list of labels for the protection rule.
      */
-    public /*out*/ readonly labels!: pulumi.Output<string[]>;
+    public /*out*/ readonly labels!: pulumi.Output<string[] | undefined>;
     /**
      * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      */
-    public /*out*/ readonly modSecurityRuleIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly modSecurityRuleIds!: pulumi.Output<string[] | undefined>;
     /**
      * The name of the protection rule.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */

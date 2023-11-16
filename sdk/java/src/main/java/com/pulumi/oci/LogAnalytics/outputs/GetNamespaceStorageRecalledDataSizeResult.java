@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceStorageRecalledDataSizeResult {
@@ -13,36 +15,36 @@ public final class GetNamespaceStorageRecalledDataSizeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
     /**
      * @return This is the size of the archival data not recalled yet
      * 
      */
-    private String notRecalledDataInBytes;
+    private @Nullable String notRecalledDataInBytes;
     /**
      * @return This is the size of the recalled data
      * 
      */
-    private String recalledDataInBytes;
+    private @Nullable String recalledDataInBytes;
     /**
      * @return This is the end of the time range of the archival data
      * 
      */
-    private String timeDataEnded;
+    private @Nullable String timeDataEnded;
     /**
      * @return This is the start of the time range of the archival data
      * 
      */
-    private String timeDataStarted;
+    private @Nullable String timeDataStarted;
 
     private GetNamespaceStorageRecalledDataSizeResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -51,29 +53,29 @@ public final class GetNamespaceStorageRecalledDataSizeResult {
      * @return This is the size of the archival data not recalled yet
      * 
      */
-    public String notRecalledDataInBytes() {
-        return this.notRecalledDataInBytes;
+    public Optional<String> notRecalledDataInBytes() {
+        return Optional.ofNullable(this.notRecalledDataInBytes);
     }
     /**
      * @return This is the size of the recalled data
      * 
      */
-    public String recalledDataInBytes() {
-        return this.recalledDataInBytes;
+    public Optional<String> recalledDataInBytes() {
+        return Optional.ofNullable(this.recalledDataInBytes);
     }
     /**
      * @return This is the end of the time range of the archival data
      * 
      */
-    public String timeDataEnded() {
-        return this.timeDataEnded;
+    public Optional<String> timeDataEnded() {
+        return Optional.ofNullable(this.timeDataEnded);
     }
     /**
      * @return This is the start of the time range of the archival data
      * 
      */
-    public String timeDataStarted() {
-        return this.timeDataStarted;
+    public Optional<String> timeDataStarted() {
+        return Optional.ofNullable(this.timeDataStarted);
     }
 
     public static Builder builder() {
@@ -85,12 +87,12 @@ public final class GetNamespaceStorageRecalledDataSizeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String namespace;
-        private String notRecalledDataInBytes;
-        private String recalledDataInBytes;
-        private String timeDataEnded;
-        private String timeDataStarted;
+        private @Nullable String notRecalledDataInBytes;
+        private @Nullable String recalledDataInBytes;
+        private @Nullable String timeDataEnded;
+        private @Nullable String timeDataStarted;
         public Builder() {}
         public Builder(GetNamespaceStorageRecalledDataSizeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -103,8 +105,8 @@ public final class GetNamespaceStorageRecalledDataSizeResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -113,23 +115,23 @@ public final class GetNamespaceStorageRecalledDataSizeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder notRecalledDataInBytes(String notRecalledDataInBytes) {
-            this.notRecalledDataInBytes = Objects.requireNonNull(notRecalledDataInBytes);
+        public Builder notRecalledDataInBytes(@Nullable String notRecalledDataInBytes) {
+            this.notRecalledDataInBytes = notRecalledDataInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder recalledDataInBytes(String recalledDataInBytes) {
-            this.recalledDataInBytes = Objects.requireNonNull(recalledDataInBytes);
+        public Builder recalledDataInBytes(@Nullable String recalledDataInBytes) {
+            this.recalledDataInBytes = recalledDataInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDataEnded(String timeDataEnded) {
-            this.timeDataEnded = Objects.requireNonNull(timeDataEnded);
+        public Builder timeDataEnded(@Nullable String timeDataEnded) {
+            this.timeDataEnded = timeDataEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDataStarted(String timeDataStarted) {
-            this.timeDataStarted = Objects.requireNonNull(timeDataStarted);
+        public Builder timeDataStarted(@Nullable String timeDataStarted) {
+            this.timeDataStarted = timeDataStarted;
             return this;
         }
         public GetNamespaceStorageRecalledDataSizeResult build() {

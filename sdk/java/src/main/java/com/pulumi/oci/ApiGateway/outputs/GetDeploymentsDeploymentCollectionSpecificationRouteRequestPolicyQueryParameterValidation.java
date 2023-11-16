@@ -8,26 +8,28 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation {
-    private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private String validationMode;
+    private @Nullable String validationMode;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation() {}
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters() {
-        return this.parameters;
+        return this.parameters == null ? List.of() : this.parameters;
     }
     /**
      * @return Validation behavior mode.
      * 
      */
-    public String validationMode() {
-        return this.validationMode;
+    public Optional<String> validationMode() {
+        return Optional.ofNullable(this.validationMode);
     }
 
     public static Builder builder() {
@@ -39,8 +41,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
-        private String validationMode;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
+        private @Nullable String validationMode;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -49,16 +51,16 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
 
         @CustomType.Setter
-        public Builder parameters(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters) {
+            this.parameters = parameters;
             return this;
         }
         public Builder parameters(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter... parameters) {
             return parameters(List.of(parameters));
         }
         @CustomType.Setter
-        public Builder validationMode(String validationMode) {
-            this.validationMode = Objects.requireNonNull(validationMode);
+        public Builder validationMode(@Nullable String validationMode) {
+            this.validationMode = validationMode;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation build() {

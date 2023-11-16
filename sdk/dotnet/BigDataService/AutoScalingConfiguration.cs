@@ -101,7 +101,7 @@ namespace Pulumi.Oci.BigDataService
         /// (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the autoscale configuration is enabled.
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.BigDataService
         /// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         /// </summary>
         [Output("policy")]
-        public Output<Outputs.AutoScalingConfigurationPolicy> Policy { get; private set; } = null!;
+        public Output<Outputs.AutoScalingConfigurationPolicy?> Policy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Policy definition for the autoscale configuration.
@@ -135,25 +135,25 @@ namespace Pulumi.Oci.BigDataService
         /// An autoscaling configuration can have one of above supported policies.
         /// </summary>
         [Output("policyDetails")]
-        public Output<Outputs.AutoScalingConfigurationPolicyDetails> PolicyDetails { get; private set; } = null!;
+        public Output<Outputs.AutoScalingConfigurationPolicyDetails?> PolicyDetails { get; private set; } = null!;
 
         /// <summary>
         /// The state of the autoscale configuration.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

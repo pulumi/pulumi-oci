@@ -50,12 +50,12 @@ export interface GetManagedMySqlDatabaseConfigurationDataResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedMySqlDatabaseId: string;
     /**
      * The list of my_sql_configuration_data_collection.
      */
-    readonly mySqlConfigurationDataCollections: outputs.DatabaseManagement.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection[];
+    readonly mySqlConfigurationDataCollections?: outputs.DatabaseManagement.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection[];
 }
 /**
  * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.

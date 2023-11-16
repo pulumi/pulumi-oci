@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
@@ -14,7 +15,7 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
      * @return Items in collection.
      * 
      */
-    private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items;
+    private @Nullable List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items;
 
     private GetMigrationObjectTypesMigrationObjectTypeSummaryCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
      * 
      */
     public List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items;
+        private @Nullable List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetMigrationObjectTypesMigrationObjectTypeSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem... items) {

@@ -51,40 +51,40 @@ export interface GetSoftwareSourcePackageGroupResult {
     /**
      * description of the package group.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Indicates the order to display category or environment.
      */
-    readonly displayOrder: number;
+    readonly displayOrder?: number;
     /**
      * Indicates if this is a group, category or environment.
      */
-    readonly groupType: string;
+    readonly groupType?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if this package group is the default.
      */
-    readonly isDefault: boolean;
+    readonly isDefault?: boolean;
     /**
      * Indicates if this package group is visible by users.
      */
-    readonly isUserVisible: boolean;
+    readonly isUserVisible?: boolean;
     /**
      * Package group name.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly packageGroupId: string;
     /**
      * The list of packages in the package group.
      */
-    readonly packages: string[];
+    readonly packages?: string[];
     /**
      * the IDs of the package group's repositories.
      */
-    readonly repositories: string[];
+    readonly repositories?: string[];
     readonly softwareSourceId: string;
 }
 /**

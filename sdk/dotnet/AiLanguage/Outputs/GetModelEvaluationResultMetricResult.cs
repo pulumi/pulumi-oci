@@ -16,65 +16,65 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// The fraction of the labels that were correctly recognised .
         /// </summary>
-        public readonly double Accuracy;
+        public readonly double? Accuracy;
         /// <summary>
         /// F1-score, is a measure of a model’s accuracy on a dataset
         /// </summary>
-        public readonly double MacroF1;
+        public readonly double? MacroF1;
         /// <summary>
         /// Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         /// </summary>
-        public readonly double MacroPrecision;
+        public readonly double? MacroPrecision;
         /// <summary>
         /// Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         /// </summary>
-        public readonly double MacroRecall;
+        public readonly double? MacroRecall;
         /// <summary>
         /// F1-score, is a measure of a model’s accuracy on a dataset
         /// </summary>
-        public readonly double MicroF1;
+        public readonly double? MicroF1;
         /// <summary>
         /// Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         /// </summary>
-        public readonly double MicroPrecision;
+        public readonly double? MicroPrecision;
         /// <summary>
         /// Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         /// </summary>
-        public readonly double MicroRecall;
+        public readonly double? MicroRecall;
         /// <summary>
         /// F1-score, is a measure of a model’s accuracy on a dataset
         /// </summary>
-        public readonly double WeightedF1;
+        public readonly double? WeightedF1;
         /// <summary>
         /// Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         /// </summary>
-        public readonly double WeightedPrecision;
+        public readonly double? WeightedPrecision;
         /// <summary>
         /// Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         /// </summary>
-        public readonly double WeightedRecall;
+        public readonly double? WeightedRecall;
 
         [OutputConstructor]
         private GetModelEvaluationResultMetricResult(
-            double accuracy,
+            double? accuracy,
 
-            double macroF1,
+            double? macroF1,
 
-            double macroPrecision,
+            double? macroPrecision,
 
-            double macroRecall,
+            double? macroRecall,
 
-            double microF1,
+            double? microF1,
 
-            double microPrecision,
+            double? microPrecision,
 
-            double microRecall,
+            double? microRecall,
 
-            double weightedF1,
+            double? weightedF1,
 
-            double weightedPrecision,
+            double? weightedPrecision,
 
-            double weightedRecall)
+            double? weightedRecall)
         {
             Accuracy = accuracy;
             MacroF1 = macroF1;

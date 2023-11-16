@@ -6,54 +6,56 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstancesContainerInstanceCollectionItemImagePullSecret {
-    private String password;
+    private @Nullable String password;
     /**
      * @return The registry endpoint of the container image.
      * 
      */
-    private String registryEndpoint;
+    private @Nullable String registryEndpoint;
     /**
      * @return The OCID of the secret for registry credentials.
      * 
      */
-    private String secretId;
+    private @Nullable String secretId;
     /**
      * @return The type of ImagePullSecret.
      * 
      */
-    private String secretType;
-    private String username;
+    private @Nullable String secretType;
+    private @Nullable String username;
 
     private GetContainerInstancesContainerInstanceCollectionItemImagePullSecret() {}
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return The registry endpoint of the container image.
      * 
      */
-    public String registryEndpoint() {
-        return this.registryEndpoint;
+    public Optional<String> registryEndpoint() {
+        return Optional.ofNullable(this.registryEndpoint);
     }
     /**
      * @return The OCID of the secret for registry credentials.
      * 
      */
-    public String secretId() {
-        return this.secretId;
+    public Optional<String> secretId() {
+        return Optional.ofNullable(this.secretId);
     }
     /**
      * @return The type of ImagePullSecret.
      * 
      */
-    public String secretType() {
-        return this.secretType;
+    public Optional<String> secretType() {
+        return Optional.ofNullable(this.secretType);
     }
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -65,11 +67,11 @@ public final class GetContainerInstancesContainerInstanceCollectionItemImagePull
     }
     @CustomType.Builder
     public static final class Builder {
-        private String password;
-        private String registryEndpoint;
-        private String secretId;
-        private String secretType;
-        private String username;
+        private @Nullable String password;
+        private @Nullable String registryEndpoint;
+        private @Nullable String secretId;
+        private @Nullable String secretType;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetContainerInstancesContainerInstanceCollectionItemImagePullSecret defaults) {
     	      Objects.requireNonNull(defaults);
@@ -81,28 +83,28 @@ public final class GetContainerInstancesContainerInstanceCollectionItemImagePull
         }
 
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder registryEndpoint(String registryEndpoint) {
-            this.registryEndpoint = Objects.requireNonNull(registryEndpoint);
+        public Builder registryEndpoint(@Nullable String registryEndpoint) {
+            this.registryEndpoint = registryEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+        public Builder secretId(@Nullable String secretId) {
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
-        public Builder secretType(String secretType) {
-            this.secretType = Objects.requireNonNull(secretType);
+        public Builder secretType(@Nullable String secretType) {
+            this.secretType = secretType;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemImagePullSecret build() {

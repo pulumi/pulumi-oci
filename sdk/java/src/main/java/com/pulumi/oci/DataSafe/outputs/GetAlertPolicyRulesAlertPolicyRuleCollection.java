@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
@@ -14,7 +15,7 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
      * @return Array of alert policy rules summary
      * 
      */
-    private List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
+    private @Nullable List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
 
     private GetAlertPolicyRulesAlertPolicyRuleCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
      * 
      */
     public List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
+        private @Nullable List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
         public Builder() {}
         public Builder(GetAlertPolicyRulesAlertPolicyRuleCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAlertPolicyRulesAlertPolicyRuleCollectionItem... items) {

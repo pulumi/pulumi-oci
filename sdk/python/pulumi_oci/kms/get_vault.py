@@ -86,143 +86,92 @@ class GetVaultResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains a particular vault.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
-    def crypto_endpoint(self) -> str:
-        """
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-        """
+    def crypto_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "crypto_endpoint")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalKeyManagerMetadataSummaries")
-    def external_key_manager_metadata_summaries(self) -> Sequence['outputs.GetVaultExternalKeyManagerMetadataSummaryResult']:
-        """
-        Summary about metadata of external key manager to be returned to the customer as a response.
-        """
+    def external_key_manager_metadata_summaries(self) -> Optional[Sequence['outputs.GetVaultExternalKeyManagerMetadataSummaryResult']]:
         return pulumi.get(self, "external_key_manager_metadata_summaries")
 
     @property
     @pulumi.getter(name="externalKeyManagerMetadatas")
-    def external_key_manager_metadatas(self) -> Sequence['outputs.GetVaultExternalKeyManagerMetadataResult']:
+    def external_key_manager_metadatas(self) -> Optional[Sequence['outputs.GetVaultExternalKeyManagerMetadataResult']]:
         return pulumi.get(self, "external_key_manager_metadatas")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the vault.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> bool:
-        """
-        A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
-        """
+    def is_primary(self) -> Optional[bool]:
         return pulumi.get(self, "is_primary")
 
     @property
     @pulumi.getter(name="managementEndpoint")
-    def management_endpoint(self) -> str:
-        """
-        The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-        """
+    def management_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "management_endpoint")
 
     @property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> Sequence['outputs.GetVaultReplicaDetailResult']:
-        """
-        Vault replica details
-        """
+    def replica_details(self) -> Optional[Sequence['outputs.GetVaultReplicaDetailResult']]:
         return pulumi.get(self, "replica_details")
 
     @property
     @pulumi.getter(name="restoreFromFiles")
-    def restore_from_files(self) -> Sequence['outputs.GetVaultRestoreFromFileResult']:
-        """
-        Details where vault was backed up.
-        """
+    def restore_from_files(self) -> Optional[Sequence['outputs.GetVaultRestoreFromFileResult']]:
         return pulumi.get(self, "restore_from_files")
 
     @property
     @pulumi.getter(name="restoreFromObjectStores")
-    def restore_from_object_stores(self) -> Sequence['outputs.GetVaultRestoreFromObjectStoreResult']:
-        """
-        Details where vault was backed up
-        """
+    def restore_from_object_stores(self) -> Optional[Sequence['outputs.GetVaultRestoreFromObjectStoreResult']]:
         return pulumi.get(self, "restore_from_object_stores")
 
     @property
     @pulumi.getter(name="restoreTrigger")
-    def restore_trigger(self) -> bool:
-        """
-        When flipped, triggers restore if restore options are provided. Values of 0 or 1 are supported
-        """
+    def restore_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "restore_trigger")
 
     @property
     @pulumi.getter(name="restoredFromVaultId")
-    def restored_from_vault_id(self) -> str:
-        """
-        The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
-        """
+    def restored_from_vault_id(self) -> Optional[str]:
         return pulumi.get(self, "restored_from_vault_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The vault's current lifecycle state.  Example: `DELETED`
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property to indicate when to delete the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
@@ -232,10 +181,7 @@ class GetVaultResult:
 
     @property
     @pulumi.getter(name="vaultType")
-    def vault_type(self) -> str:
-        """
-        The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
-        """
+    def vault_type(self) -> Optional[str]:
         return pulumi.get(self, "vault_type")
 
 
@@ -270,26 +216,7 @@ class AwaitableGetVaultResult(GetVaultResult):
 def get_vault(vault_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVaultResult:
     """
-    This data source provides details about a specific Vault resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets the specified vault's configuration information.
-
-    As a provisioning operation, this call is subject to a Key Management limit that applies to
-    the total number of requests across all provisioning read operations. Key Management might
-    throttle this call to reject an otherwise valid request when the total rate of provisioning
-    read operations exceeds 10 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vault = oci.Kms.get_vault(vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vaultId'] = vault_id
@@ -323,25 +250,6 @@ def get_vault(vault_id: Optional[str] = None,
 def get_vault_output(vault_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultResult]:
     """
-    This data source provides details about a specific Vault resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets the specified vault's configuration information.
-
-    As a provisioning operation, this call is subject to a Key Management limit that applies to
-    the total number of requests across all provisioning read operations. Key Management might
-    throttle this call to reject an otherwise valid request when the total rate of provisioning
-    read operations exceeds 10 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vault = oci.Kms.get_vault(vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     ...

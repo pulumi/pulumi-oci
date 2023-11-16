@@ -46,17 +46,11 @@ class GetServiceCatalogsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The Compartment id where the service catalog exists
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the service catalog.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetServiceCatalogsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,10 +68,7 @@ class GetServiceCatalogsResult:
 
     @property
     @pulumi.getter(name="serviceCatalogCollections")
-    def service_catalog_collections(self) -> Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionResult']:
-        """
-        The list of service_catalog_collection.
-        """
+    def service_catalog_collections(self) -> Optional[Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionResult']]:
         return pulumi.get(self, "service_catalog_collections")
 
     @property
@@ -106,25 +97,7 @@ def get_service_catalogs(compartment_id: Optional[str] = None,
                          service_catalog_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceCatalogsResult:
     """
-    This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists all the service catalogs in the given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=var["compartment_id"],
-        display_name=var["service_catalog_display_name"],
-        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str display_name: Exact match name filter.
-    :param str service_catalog_id: The unique identifier for the service catalog.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 service_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogsResult]:
     """
-    This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists all the service catalogs in the given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=var["compartment_id"],
-        display_name=var["service_catalog_display_name"],
-        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str display_name: Exact match name filter.
-    :param str service_catalog_id: The unique identifier for the service catalog.
+    Use this data source to access information about an existing resource.
     """
     ...

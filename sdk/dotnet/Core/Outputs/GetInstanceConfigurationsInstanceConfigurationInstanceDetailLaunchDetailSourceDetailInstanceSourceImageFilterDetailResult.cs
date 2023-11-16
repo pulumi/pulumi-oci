@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTagsFilter;
+        public readonly ImmutableDictionary<string, object>? DefinedTagsFilter;
         /// <summary>
         /// The image's operating system.  Example: `Oracle Linux`
         /// </summary>
-        public readonly string OperatingSystem;
+        public readonly string? OperatingSystem;
         /// <summary>
         /// The image's operating system version.  Example: `7.2`
         /// </summary>
-        public readonly string OperatingSystemVersion;
+        public readonly string? OperatingSystemVersion;
 
         [OutputConstructor]
         private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTagsFilter,
+            ImmutableDictionary<string, object>? definedTagsFilter,
 
-            string operatingSystem,
+            string? operatingSystem,
 
-            string operatingSystemVersion)
+            string? operatingSystemVersion)
         {
             CompartmentId = compartmentId;
             DefinedTagsFilter = definedTagsFilter;

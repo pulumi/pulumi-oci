@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemResult(string name)
+        private GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemResult(string? name)
         {
             Name = name;
         }

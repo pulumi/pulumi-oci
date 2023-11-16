@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Database
         /// The status of connectivity to the external database.
         /// </summary>
         [Output("connectionStatus")]
-        public Output<string> ConnectionStatus { get; private set; } = null!;
+        public Output<string?> ConnectionStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Oracle Database connection string.
@@ -101,13 +101,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The type of connector used by the external database resource.
         /// </summary>
         [Output("connectorType")]
-        public Output<string> ConnectorType { get; private set; } = null!;
+        public Output<string?> ConnectorType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
@@ -129,31 +129,31 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the external database connector resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the `connectionStatus` of this external connector was last updated.
         /// </summary>
         [Output("timeConnectionStatusLastUpdated")]
-        public Output<string> TimeConnectionStatusLastUpdated { get; private set; } = null!;
+        public Output<string?> TimeConnectionStatusLastUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external connector was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// Number of samples used for testing the model.
         /// </summary>
-        public readonly int TestSampleCount;
+        public readonly int? TestSampleCount;
         /// <summary>
         /// Number of samples used for training the model.
         /// </summary>
-        public readonly int TrainingSampleCount;
+        public readonly int? TrainingSampleCount;
         /// <summary>
         /// Number of samples used for validating the model.
         /// </summary>
-        public readonly int ValidationSampleCount;
+        public readonly int? ValidationSampleCount;
 
         [OutputConstructor]
         private GetModelsModelCollectionItemMetricDatasetSummaryResult(
-            int testSampleCount,
+            int? testSampleCount,
 
-            int trainingSampleCount,
+            int? trainingSampleCount,
 
-            int validationSampleCount)
+            int? validationSampleCount)
         {
             TestSampleCount = testSampleCount;
             TrainingSampleCount = trainingSampleCount;

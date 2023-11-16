@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.BackupState;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -66,42 +67,42 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The name of the availability domain where the database backup is stored.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The Oracle Database edition of the DB system from which the database backup was taken.
      * 
      */
     @Export(name="databaseEdition", refs={String.class}, tree="[0]")
-    private Output<String> databaseEdition;
+    private Output</* @Nullable */ String> databaseEdition;
 
     /**
      * @return The Oracle Database edition of the DB system from which the database backup was taken.
      * 
      */
-    public Output<String> databaseEdition() {
-        return this.databaseEdition;
+    public Output<Optional<String>> databaseEdition() {
+        return Codegen.optional(this.databaseEdition);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -122,14 +123,14 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="databaseSizeInGbs", refs={Double.class}, tree="[0]")
-    private Output<Double> databaseSizeInGbs;
+    private Output</* @Nullable */ Double> databaseSizeInGbs;
 
     /**
      * @return The size of the database in gigabytes at the time the backup was taken.
      * 
      */
-    public Output<Double> databaseSizeInGbs() {
-        return this.databaseSizeInGbs;
+    public Output<Optional<Double>> databaseSizeInGbs() {
+        return Codegen.optional(this.databaseSizeInGbs);
     }
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
@@ -156,168 +157,168 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="keyStoreId", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreId;
+    private Output</* @Nullable */ String> keyStoreId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public Output<String> keyStoreId() {
-        return this.keyStoreId;
+    public Output<Optional<String>> keyStoreId() {
+        return Codegen.optional(this.keyStoreId);
     }
     /**
      * The wallet name for Oracle Key Vault.
      * 
      */
     @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreWalletName;
+    private Output</* @Nullable */ String> keyStoreWalletName;
 
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public Output<String> keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Output<Optional<String>> keyStoreWalletName() {
+        return Codegen.optional(this.keyStoreWalletName);
     }
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyVersionId;
+    private Output</* @Nullable */ String> kmsKeyVersionId;
 
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public Output<String> kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Output<Optional<String>> kmsKeyVersionId() {
+        return Codegen.optional(this.kmsKeyVersionId);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Shape of the backup&#39;s source database.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return Shape of the backup&#39;s source database.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * The current state of the backup.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the backup.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the backup was completed.
      * 
      */
     @Export(name="timeEnded", refs={String.class}, tree="[0]")
-    private Output<String> timeEnded;
+    private Output</* @Nullable */ String> timeEnded;
 
     /**
      * @return The date and time the backup was completed.
      * 
      */
-    public Output<String> timeEnded() {
-        return this.timeEnded;
+    public Output<Optional<String>> timeEnded() {
+        return Codegen.optional(this.timeEnded);
     }
     /**
      * The date and time the backup started.
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The date and time the backup started.
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
     /**
      * The type of backup.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The type of backup.
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
-    private Output<String> vaultId;
+    private Output</* @Nullable */ String> vaultId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public Output<String> vaultId() {
-        return this.vaultId;
+    public Output<Optional<String>> vaultId() {
+        return Codegen.optional(this.vaultId);
     }
     /**
      * Version of the backup&#39;s source database
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return Version of the backup&#39;s source database
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

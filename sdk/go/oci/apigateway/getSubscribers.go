@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
@@ -72,7 +71,7 @@ type GetSubscribersResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetSubscribersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the subscriber.
 	State *string `pulumi:"state"`
 	// The list of subscriber_collection.
@@ -122,12 +121,6 @@ func (o GetSubscribersResultOutput) ToGetSubscribersResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetSubscribersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribersResult] {
-	return pulumix.Output[GetSubscribersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 func (o GetSubscribersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscribersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetSubscribersResultOutput) Filters() GetSubscribersFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSubscribersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscribersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the subscriber.

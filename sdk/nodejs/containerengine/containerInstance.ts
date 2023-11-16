@@ -164,11 +164,11 @@ export class ContainerInstance extends pulumi.CustomResource {
     /**
      * The number of containers on the container instance.
      */
-    public /*out*/ readonly containerCount!: pulumi.Output<number>;
+    public /*out*/ readonly containerCount!: pulumi.Output<number | undefined>;
     /**
      * Container restart policy
      */
-    public readonly containerRestartPolicy!: pulumi.Output<string>;
+    public readonly containerRestartPolicy!: pulumi.Output<string | undefined>;
     /**
      * The containers to create on this container instance.
      */
@@ -176,35 +176,35 @@ export class ContainerInstance extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      */
-    public readonly dnsConfig!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceDnsConfig>;
+    public readonly dnsConfig!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceDnsConfig | undefined>;
     /**
      * The fault domain where the container instance runs.
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    public readonly faultDomain!: pulumi.Output<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
-    public readonly gracefulShutdownTimeoutInSeconds!: pulumi.Output<string>;
+    public readonly gracefulShutdownTimeoutInSeconds!: pulumi.Output<string | undefined>;
     /**
      * The image pulls secrets so you can access private registry to pull container images.
      */
-    public readonly imagePullSecrets!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceImagePullSecret[]>;
+    public readonly imagePullSecrets!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceImagePullSecret[] | undefined>;
     /**
      * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      */
@@ -220,19 +220,19 @@ export class ContainerInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The networks available to containers on this container instance.
      */
@@ -240,13 +240,13 @@ export class ContainerInstance extends pulumi.CustomResource {
     /**
      * The number of volumes that are attached to the container instance.
      */
-    public /*out*/ readonly volumeCount!: pulumi.Output<number>;
+    public /*out*/ readonly volumeCount!: pulumi.Output<number | undefined>;
     /**
      * A volume is a directory with data that is accessible across multiple containers in a container instance.
      *
      * You can attach up to 32 volumes to single container instance.
      */
-    public readonly volumes!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVolume[]>;
+    public readonly volumes!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVolume[] | undefined>;
 
     /**
      * Create a ContainerInstance resource with the given unique name, arguments, and options.

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig {
@@ -14,7 +15,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleIn
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+    private @Nullable List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
     private GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig() {}
     /**
@@ -22,7 +23,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleIn
      * 
      */
     public List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions() {
-        return this.preemptionActions;
+        return this.preemptionActions == null ? List.of() : this.preemptionActions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleIn
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+        private @Nullable List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
         public Builder() {}
         public Builder(GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleIn
         }
 
         @CustomType.Setter
-        public Builder preemptionActions(List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+        public Builder preemptionActions(@Nullable List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction... preemptionActions) {

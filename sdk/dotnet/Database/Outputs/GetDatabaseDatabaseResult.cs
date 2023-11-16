@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDatabaseDatabaseResult
     {
-        public readonly string AdminPassword;
-        public readonly string BackupId;
-        public readonly string BackupTdePassword;
+        public readonly string? AdminPassword;
+        public readonly string? BackupId;
+        public readonly string? BackupTdePassword;
         /// <summary>
         /// The character set for the database.
         /// </summary>
-        public readonly string CharacterSet;
+        public readonly string? CharacterSet;
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
-        public readonly string DatabaseSoftwareImageId;
+        public readonly string? DatabaseSoftwareImageId;
         /// <summary>
         /// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         /// </summary>
@@ -31,89 +31,89 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The database name.
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
         /// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
         /// </summary>
-        public readonly string DbUniqueName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
         /// </summary>
-        public readonly string DbWorkload;
+        public readonly string? DbWorkload;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The national character set for the database.
         /// </summary>
-        public readonly string NcharacterSet;
+        public readonly string? NcharacterSet;
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
-        public readonly string PdbName;
+        public readonly string? PdbName;
         public readonly ImmutableArray<string> PluggableDatabases;
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
-        public readonly string SidPrefix;
-        public readonly string TdeWalletPassword;
+        public readonly string? SidPrefix;
+        public readonly string? TdeWalletPassword;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetDatabaseDatabaseResult(
-            string adminPassword,
+            string? adminPassword,
 
-            string backupId,
+            string? backupId,
 
-            string backupTdePassword,
+            string? backupTdePassword,
 
-            string characterSet,
+            string? characterSet,
 
-            string databaseSoftwareImageId,
+            string? databaseSoftwareImageId,
 
             ImmutableArray<Outputs.GetDatabaseDatabaseDbBackupConfigResult> dbBackupConfigs,
 
-            string dbName,
+            string? dbName,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            string dbWorkload,
+            string? dbWorkload,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string ncharacterSet,
+            string? ncharacterSet,
 
-            string pdbName,
+            string? pdbName,
 
             ImmutableArray<string> pluggableDatabases,
 
-            string sidPrefix,
+            string? sidPrefix,
 
-            string tdeWalletPassword,
+            string? tdeWalletPassword,
 
-            string vaultId)
+            string? vaultId)
         {
             AdminPassword = adminPassword;
             BackupId = backupId;

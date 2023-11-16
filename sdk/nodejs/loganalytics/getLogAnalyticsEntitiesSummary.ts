@@ -51,7 +51,7 @@ export interface GetLogAnalyticsEntitiesSummaryResult {
     /**
      * Total number of ACTIVE entities
      */
-    readonly activeEntitiesCount: number;
+    readonly activeEntitiesCount?: number;
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -59,15 +59,15 @@ export interface GetLogAnalyticsEntitiesSummaryResult {
     /**
      * Entities with log collection enabled
      */
-    readonly entitiesWithHasLogsCollectedCount: number;
+    readonly entitiesWithHasLogsCollectedCount?: number;
     /**
      * Entities with management agent
      */
-    readonly entitiesWithManagementAgentCount: number;
+    readonly entitiesWithManagementAgentCount?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
 }
 /**

@@ -8,6 +8,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDe
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
@@ -15,17 +17,17 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
      * @return Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
     /**
      * @return This value is the minimum number of nodes the cluster can be scaled-in to.
      * 
      */
-    private Integer minNodeCount;
+    private @Nullable Integer minNodeCount;
     /**
      * @return This value is the number of nodes to add during a scale-out event.
      * 
      */
-    private Integer stepSize;
+    private @Nullable Integer stepSize;
 
     private GetAutoScalingConfigurationPolicyDetailScaleInConfig() {}
     /**
@@ -33,21 +35,21 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return This value is the minimum number of nodes the cluster can be scaled-in to.
      * 
      */
-    public Integer minNodeCount() {
-        return this.minNodeCount;
+    public Optional<Integer> minNodeCount() {
+        return Optional.ofNullable(this.minNodeCount);
     }
     /**
      * @return This value is the number of nodes to add during a scale-out event.
      * 
      */
-    public Integer stepSize() {
-        return this.stepSize;
+    public Optional<Integer> stepSize() {
+        return Optional.ofNullable(this.stepSize);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
-        private Integer minNodeCount;
-        private Integer stepSize;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
+        private @Nullable Integer minNodeCount;
+        private @Nullable Integer stepSize;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleInConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
         }
 
         @CustomType.Setter
-        public Builder metrics(List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder minNodeCount(Integer minNodeCount) {
-            this.minNodeCount = Objects.requireNonNull(minNodeCount);
+        public Builder minNodeCount(@Nullable Integer minNodeCount) {
+            this.minNodeCount = minNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder stepSize(Integer stepSize) {
-            this.stepSize = Objects.requireNonNull(stepSize);
+        public Builder stepSize(@Nullable Integer stepSize) {
+            this.stepSize = stepSize;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleInConfig build() {

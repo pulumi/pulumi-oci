@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
@@ -63,7 +62,7 @@ type GetOrganizationSubscriptionsResult struct {
 	CompartmentId string                               `pulumi:"compartmentId"`
 	Filters       []GetOrganizationSubscriptionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of organization_subscriptions.
 	OrganizationSubscriptions []GetOrganizationSubscriptionsOrganizationSubscription `pulumi:"organizationSubscriptions"`
 }
@@ -107,12 +106,6 @@ func (o GetOrganizationSubscriptionsResultOutput) ToGetOrganizationSubscriptions
 	return o
 }
 
-func (o GetOrganizationSubscriptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsResult] {
-	return pulumix.Output[GetOrganizationSubscriptionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOrganizationSubscriptionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationSubscriptionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -122,8 +115,8 @@ func (o GetOrganizationSubscriptionsResultOutput) Filters() GetOrganizationSubsc
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOrganizationSubscriptionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of organization_subscriptions.

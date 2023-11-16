@@ -47,105 +47,105 @@ export interface GetSecurityAssessmentResult {
     /**
      * The OCID of the compartment that contains the security assessment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the security assessment.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the security assessment.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the security assessment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    readonly ignoredAssessmentIds: string[];
+    readonly ignoredAssessmentIds?: string[];
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    readonly ignoredTargets: string[];
+    readonly ignoredTargets?: string[];
     /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      */
-    readonly isBaseline: boolean;
+    readonly isBaseline?: boolean;
     /**
      * Indicates whether or not the security assessment deviates from the baseline.
      */
-    readonly isDeviatedFromBaseline: boolean;
+    readonly isDeviatedFromBaseline?: boolean;
     /**
      * The OCID of the baseline against which the latest security assessment was compared.
      */
-    readonly lastComparedBaselineId: string;
+    readonly lastComparedBaselineId?: string;
     /**
      * Details about the current state of the security assessment.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The summary of findings for the security assessment.
      */
-    readonly link: string;
+    readonly link?: string;
     /**
      * Schedule of the assessment that runs periodically in the specified format: - <version-string>;<version-specific-schedule>
      */
-    readonly schedule: string;
+    readonly schedule?: string;
     /**
      * The OCID of the security assessment that is responsible for creating this scheduled save assessment.
      */
-    readonly scheduleSecurityAssessmentId: string;
+    readonly scheduleSecurityAssessmentId?: string;
     readonly securityAssessmentId: string;
     /**
      * The current state of the security assessment.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
      */
-    readonly statistics: outputs.DataSafe.GetSecurityAssessmentStatistic[];
+    readonly statistics?: outputs.DataSafe.GetSecurityAssessmentStatistic[];
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
-    readonly targetId: string;
+    readonly systemTags?: {[key: string]: any};
+    readonly targetId?: string;
     /**
      * Array of database target OCIDs.
      */
-    readonly targetIds: string[];
+    readonly targetIds?: string[];
     /**
      * The version of the target database.
      */
-    readonly targetVersion: string;
+    readonly targetVersion?: string;
     /**
      * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeLastAssessed: string;
+    readonly timeLastAssessed?: string;
     /**
      * The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Indicates whether the security assessment was created by system or by a user.
      */
-    readonly triggeredBy: string;
+    readonly triggeredBy?: string;
     /**
      * The type of this security assessment. The possible types are:
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.

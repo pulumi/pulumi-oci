@@ -77,7 +77,7 @@ export interface GetConnectionAssignmentsResult {
     /**
      * The list of connection_assignment_collection.
      */
-    readonly connectionAssignmentCollections: outputs.GoldenGate.GetConnectionAssignmentsConnectionAssignmentCollection[];
+    readonly connectionAssignmentCollections?: outputs.GoldenGate.GetConnectionAssignmentsConnectionAssignmentCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      */
@@ -90,7 +90,7 @@ export interface GetConnectionAssignmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly name?: string;
     /**
      * Possible lifecycle states for connection assignments.

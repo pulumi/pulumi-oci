@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The total amount of memory available to each node, in gigabytes.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
 
         [OutputConstructor]
         private GetNodePoolNodeShapeConfigResult(
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double ocpus)
+            double? ocpus)
         {
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;

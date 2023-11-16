@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -85,28 +86,28 @@ public class EnterpriseManagerBridge extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Description of Enterprise Manager Bridge
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description of Enterprise Manager Bridge
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
@@ -127,28 +128,28 @@ public class EnterpriseManagerBridge extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Object Storage Bucket Name
@@ -175,84 +176,84 @@ public class EnterpriseManagerBridge extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="objectStorageBucketStatusDetails", refs={String.class}, tree="[0]")
-    private Output<String> objectStorageBucketStatusDetails;
+    private Output</* @Nullable */ String> objectStorageBucketStatusDetails;
 
     /**
      * @return A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
      * 
      */
-    public Output<String> objectStorageBucketStatusDetails() {
-        return this.objectStorageBucketStatusDetails;
+    public Output<Optional<String>> objectStorageBucketStatusDetails() {
+        return Codegen.optional(this.objectStorageBucketStatusDetails);
     }
     /**
      * Object Storage Namespace Name
      * 
      */
     @Export(name="objectStorageNamespaceName", refs={String.class}, tree="[0]")
-    private Output<String> objectStorageNamespaceName;
+    private Output</* @Nullable */ String> objectStorageNamespaceName;
 
     /**
      * @return Object Storage Namespace Name
      * 
      */
-    public Output<String> objectStorageNamespaceName() {
-        return this.objectStorageNamespaceName;
+    public Output<Optional<String>> objectStorageNamespaceName() {
+        return Codegen.optional(this.objectStorageNamespaceName);
     }
     /**
      * The current state of the Enterprise Manager bridge.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Enterprise Manager bridge.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

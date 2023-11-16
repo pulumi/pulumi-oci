@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
@@ -99,7 +98,7 @@ type GetManagedListsResult struct {
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetManagedListsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// type of the list
 	ListType *string `pulumi:"listType"`
 	// The list of managed_list_collection.
@@ -160,12 +159,6 @@ func (o GetManagedListsResultOutput) ToGetManagedListsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetManagedListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsResult] {
-	return pulumix.Output[GetManagedListsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedListsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedListsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -189,8 +182,8 @@ func (o GetManagedListsResultOutput) Filters() GetManagedListsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedListsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedListsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedListsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedListsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // type of the list

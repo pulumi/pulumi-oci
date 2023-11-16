@@ -73,7 +73,7 @@ namespace Pulumi.Oci.NetworkFirewall
     [OutputType]
     public sealed class GetNetworkFirewallPolicyServiceResult
     {
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the service.
         /// </summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this service belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// List of port-ranges used.
         /// </summary>
@@ -90,21 +90,21 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// Describes the type of Service.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyServiceResult(
-            string id,
+            string? id,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyServicePortRangeResult> portRanges,
 
-            string type)
+            string? type)
         {
             Id = id;
             Name = name;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
@@ -63,57 +62,57 @@ type GetManagedDatabaseUserArgs struct {
 // A collection of values returned by getManagedDatabaseUser.
 type GetManagedDatabaseUserResult struct {
 	// In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
-	AllShared string `pulumi:"allShared"`
+	AllShared *string `pulumi:"allShared"`
 	// The authentication mechanism for the user.
-	Authentication string `pulumi:"authentication"`
+	Authentication *string `pulumi:"authentication"`
 	// Indicates whether a given user is common(Y) or local(N).
-	Common string `pulumi:"common"`
+	Common *string `pulumi:"common"`
 	// The initial resource consumer group for the User.
-	ConsumerGroup string `pulumi:"consumerGroup"`
+	ConsumerGroup *string `pulumi:"consumerGroup"`
 	// The default collation for the user schema.
-	DefaultCollation string `pulumi:"defaultCollation"`
+	DefaultCollation *string `pulumi:"defaultCollation"`
 	// The default tablespace for data.
-	DefaultTablespace string `pulumi:"defaultTablespace"`
+	DefaultTablespace *string `pulumi:"defaultTablespace"`
 	// Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
-	EditionsEnabled string `pulumi:"editionsEnabled"`
+	EditionsEnabled *string `pulumi:"editionsEnabled"`
 	// The external name of the user.
-	ExternalName string `pulumi:"externalName"`
+	ExternalName *string `pulumi:"externalName"`
 	// In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
-	ExternalShared string `pulumi:"externalShared"`
+	ExternalShared *string `pulumi:"externalShared"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
-	Implicit string `pulumi:"implicit"`
+	Implicit *string `pulumi:"implicit"`
 	// Indicates whether the user definition is inherited from another container (YES) or not (NO).
-	Inherited string `pulumi:"inherited"`
+	Inherited *string `pulumi:"inherited"`
 	// The default local temporary tablespace for the user.
-	LocalTempTablespace string `pulumi:"localTempTablespace"`
-	ManagedDatabaseId   string `pulumi:"managedDatabaseId"`
+	LocalTempTablespace *string `pulumi:"localTempTablespace"`
+	ManagedDatabaseId   string  `pulumi:"managedDatabaseId"`
 	// The name of the User.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
-	OracleMaintained string `pulumi:"oracleMaintained"`
+	OracleMaintained *string `pulumi:"oracleMaintained"`
 	// The list of existing versions of the password hashes (also known as "verifiers") for the account.
-	PasswordVersions string `pulumi:"passwordVersions"`
+	PasswordVersions *string `pulumi:"passwordVersions"`
 	// The profile name of the user.
-	Profile string `pulumi:"profile"`
+	Profile *string `pulumi:"profile"`
 	// Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
-	ProxyConnect string `pulumi:"proxyConnect"`
+	ProxyConnect *string `pulumi:"proxyConnect"`
 	// The status of the user account.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The name of the default tablespace for temporary tables or the name of a tablespace group.
-	TempTablespace string `pulumi:"tempTablespace"`
+	TempTablespace *string `pulumi:"tempTablespace"`
 	// The date and time the user was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of the expiration of the user account.
-	TimeExpiring string `pulumi:"timeExpiring"`
+	TimeExpiring *string `pulumi:"timeExpiring"`
 	// The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
-	TimeLastLogin string `pulumi:"timeLastLogin"`
+	TimeLastLogin *string `pulumi:"timeLastLogin"`
 	// The date the account was locked, if the status of the account is LOCKED.
-	TimeLocked string `pulumi:"timeLocked"`
+	TimeLocked *string `pulumi:"timeLocked"`
 	// The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
-	TimePasswordChanged string `pulumi:"timePasswordChanged"`
-	UserName            string `pulumi:"userName"`
+	TimePasswordChanged *string `pulumi:"timePasswordChanged"`
+	UserName            string  `pulumi:"userName"`
 }
 
 func GetManagedDatabaseUserOutput(ctx *pulumi.Context, args GetManagedDatabaseUserOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserResultOutput {
@@ -156,75 +155,69 @@ func (o GetManagedDatabaseUserResultOutput) ToGetManagedDatabaseUserResultOutput
 	return o
 }
 
-func (o GetManagedDatabaseUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserResult] {
-	return pulumix.Output[GetManagedDatabaseUserResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
-func (o GetManagedDatabaseUserResultOutput) AllShared() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.AllShared }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) AllShared() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.AllShared }).(pulumi.StringPtrOutput)
 }
 
 // The authentication mechanism for the user.
-func (o GetManagedDatabaseUserResultOutput) Authentication() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Authentication }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Authentication() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Authentication }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether a given user is common(Y) or local(N).
-func (o GetManagedDatabaseUserResultOutput) Common() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Common }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Common() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Common }).(pulumi.StringPtrOutput)
 }
 
 // The initial resource consumer group for the User.
-func (o GetManagedDatabaseUserResultOutput) ConsumerGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.ConsumerGroup }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) ConsumerGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.ConsumerGroup }).(pulumi.StringPtrOutput)
 }
 
 // The default collation for the user schema.
-func (o GetManagedDatabaseUserResultOutput) DefaultCollation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.DefaultCollation }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) DefaultCollation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.DefaultCollation }).(pulumi.StringPtrOutput)
 }
 
 // The default tablespace for data.
-func (o GetManagedDatabaseUserResultOutput) DefaultTablespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.DefaultTablespace }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) DefaultTablespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.DefaultTablespace }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
-func (o GetManagedDatabaseUserResultOutput) EditionsEnabled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.EditionsEnabled }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) EditionsEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.EditionsEnabled }).(pulumi.StringPtrOutput)
 }
 
 // The external name of the user.
-func (o GetManagedDatabaseUserResultOutput) ExternalName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.ExternalName }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) ExternalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.ExternalName }).(pulumi.StringPtrOutput)
 }
 
 // In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
-func (o GetManagedDatabaseUserResultOutput) ExternalShared() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.ExternalShared }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) ExternalShared() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.ExternalShared }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseUserResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
-func (o GetManagedDatabaseUserResultOutput) Implicit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Implicit }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Implicit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Implicit }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the user definition is inherited from another container (YES) or not (NO).
-func (o GetManagedDatabaseUserResultOutput) Inherited() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Inherited }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Inherited() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Inherited }).(pulumi.StringPtrOutput)
 }
 
 // The default local temporary tablespace for the user.
-func (o GetManagedDatabaseUserResultOutput) LocalTempTablespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.LocalTempTablespace }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) LocalTempTablespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.LocalTempTablespace }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUserResultOutput) ManagedDatabaseId() pulumi.StringOutput {
@@ -232,63 +225,63 @@ func (o GetManagedDatabaseUserResultOutput) ManagedDatabaseId() pulumi.StringOut
 }
 
 // The name of the User.
-func (o GetManagedDatabaseUserResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
-func (o GetManagedDatabaseUserResultOutput) OracleMaintained() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.OracleMaintained }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) OracleMaintained() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.OracleMaintained }).(pulumi.StringPtrOutput)
 }
 
 // The list of existing versions of the password hashes (also known as "verifiers") for the account.
-func (o GetManagedDatabaseUserResultOutput) PasswordVersions() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.PasswordVersions }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) PasswordVersions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.PasswordVersions }).(pulumi.StringPtrOutput)
 }
 
 // The profile name of the user.
-func (o GetManagedDatabaseUserResultOutput) Profile() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Profile }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Profile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Profile }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
-func (o GetManagedDatabaseUserResultOutput) ProxyConnect() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.ProxyConnect }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) ProxyConnect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.ProxyConnect }).(pulumi.StringPtrOutput)
 }
 
 // The status of the user account.
-func (o GetManagedDatabaseUserResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The name of the default tablespace for temporary tables or the name of a tablespace group.
-func (o GetManagedDatabaseUserResultOutput) TempTablespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TempTablespace }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) TempTablespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.TempTablespace }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the user was created.
-func (o GetManagedDatabaseUserResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the expiration of the user account.
-func (o GetManagedDatabaseUserResultOutput) TimeExpiring() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TimeExpiring }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) TimeExpiring() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.TimeExpiring }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
-func (o GetManagedDatabaseUserResultOutput) TimeLastLogin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TimeLastLogin }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) TimeLastLogin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.TimeLastLogin }).(pulumi.StringPtrOutput)
 }
 
 // The date the account was locked, if the status of the account is LOCKED.
-func (o GetManagedDatabaseUserResultOutput) TimeLocked() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TimeLocked }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) TimeLocked() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.TimeLocked }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
-func (o GetManagedDatabaseUserResultOutput) TimePasswordChanged() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TimePasswordChanged }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserResultOutput) TimePasswordChanged() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.TimePasswordChanged }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUserResultOutput) UserName() pulumi.StringOutput {

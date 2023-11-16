@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogSetsCountResult {
@@ -13,12 +15,12 @@ public final class GetLogSetsCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return This is the total number of log sets the tenancy has configured.
      * 
      */
-    private String logSetsCount;
+    private @Nullable String logSetsCount;
     private String namespace;
 
     private GetLogSetsCountResult() {}
@@ -26,15 +28,15 @@ public final class GetLogSetsCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return This is the total number of log sets the tenancy has configured.
      * 
      */
-    public String logSetsCount() {
-        return this.logSetsCount;
+    public Optional<String> logSetsCount() {
+        return Optional.ofNullable(this.logSetsCount);
     }
     public String namespace() {
         return this.namespace;
@@ -49,8 +51,8 @@ public final class GetLogSetsCountResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String logSetsCount;
+        private @Nullable String id;
+        private @Nullable String logSetsCount;
         private String namespace;
         public Builder() {}
         public Builder(GetLogSetsCountResult defaults) {
@@ -61,13 +63,13 @@ public final class GetLogSetsCountResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder logSetsCount(String logSetsCount) {
-            this.logSetsCount = Objects.requireNonNull(logSetsCount);
+        public Builder logSetsCount(@Nullable String logSetsCount) {
+            this.logSetsCount = logSetsCount;
             return this;
         }
         @CustomType.Setter

@@ -86,7 +86,7 @@ export class Profile extends pulumi.CustomResource {
     /**
      * (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
      */
-    public readonly aggregationIntervalInDays!: pulumi.Output<number>;
+    public readonly aggregationIntervalInDays!: pulumi.Output<number | undefined>;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
@@ -94,7 +94,7 @@ export class Profile extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Text describing the profile. Avoid entering confidential information.
      */
@@ -102,7 +102,7 @@ export class Profile extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A list of configuration levels for each recommendation.
      */
@@ -114,23 +114,23 @@ export class Profile extends pulumi.CustomResource {
     /**
      * The profile's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      */
-    public readonly targetCompartments!: pulumi.Output<outputs.Optimizer.ProfileTargetCompartments>;
+    public readonly targetCompartments!: pulumi.Output<outputs.Optimizer.ProfileTargetCompartments | undefined>;
     /**
      * (Updatable) Optional. The tags specified in the profile override for a recommendation.
      */
-    public readonly targetTags!: pulumi.Output<outputs.Optimizer.ProfileTargetTags>;
+    public readonly targetTags!: pulumi.Output<outputs.Optimizer.ProfileTargetTags | undefined>;
     /**
      * The date and time the profile was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the profile was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Profile resource with the given unique name, arguments, and options.

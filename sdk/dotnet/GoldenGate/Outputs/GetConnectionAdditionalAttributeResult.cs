@@ -16,17 +16,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The name of the property entry.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The value of the property entry.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetConnectionAdditionalAttributeResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSslCipherSuiteResult {
@@ -14,15 +16,15 @@ public final class GetSslCipherSuiteResult {
      * @return A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      * 
      */
-    private List<String> ciphers;
-    private String id;
+    private @Nullable List<String> ciphers;
+    private @Nullable String id;
     private String loadBalancerId;
     /**
      * @return A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
     private String name;
-    private String state;
+    private @Nullable String state;
 
     private GetSslCipherSuiteResult() {}
     /**
@@ -30,10 +32,10 @@ public final class GetSslCipherSuiteResult {
      * 
      */
     public List<String> ciphers() {
-        return this.ciphers;
+        return this.ciphers == null ? List.of() : this.ciphers;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -45,8 +47,8 @@ public final class GetSslCipherSuiteResult {
     public String name() {
         return this.name;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -58,11 +60,11 @@ public final class GetSslCipherSuiteResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> ciphers;
-        private String id;
+        private @Nullable List<String> ciphers;
+        private @Nullable String id;
         private String loadBalancerId;
         private String name;
-        private String state;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetSslCipherSuiteResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -74,16 +76,16 @@ public final class GetSslCipherSuiteResult {
         }
 
         @CustomType.Setter
-        public Builder ciphers(List<String> ciphers) {
-            this.ciphers = Objects.requireNonNull(ciphers);
+        public Builder ciphers(@Nullable List<String> ciphers) {
+            this.ciphers = ciphers;
             return this;
         }
         public Builder ciphers(String... ciphers) {
             return ciphers(List.of(ciphers));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -97,8 +99,8 @@ public final class GetSslCipherSuiteResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetSslCipherSuiteResult build() {

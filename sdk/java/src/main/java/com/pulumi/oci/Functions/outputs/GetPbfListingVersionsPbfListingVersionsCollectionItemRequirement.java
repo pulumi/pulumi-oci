@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsPbfListingVersionsC
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement {
@@ -15,27 +17,27 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirem
      * @return Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
      * 
      */
-    private String minMemoryRequiredInMbs;
+    private @Nullable String minMemoryRequiredInMbs;
     /**
      * @return List of policies required for this PBF execution.
      * 
      */
-    private List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies;
+    private @Nullable List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies;
 
     private GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement() {}
     /**
      * @return Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
      * 
      */
-    public String minMemoryRequiredInMbs() {
-        return this.minMemoryRequiredInMbs;
+    public Optional<String> minMemoryRequiredInMbs() {
+        return Optional.ofNullable(this.minMemoryRequiredInMbs);
     }
     /**
      * @return List of policies required for this PBF execution.
      * 
      */
     public List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies() {
-        return this.policies;
+        return this.policies == null ? List.of() : this.policies;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirem
     }
     @CustomType.Builder
     public static final class Builder {
-        private String minMemoryRequiredInMbs;
-        private List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies;
+        private @Nullable String minMemoryRequiredInMbs;
+        private @Nullable List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies;
         public Builder() {}
         public Builder(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirem
         }
 
         @CustomType.Setter
-        public Builder minMemoryRequiredInMbs(String minMemoryRequiredInMbs) {
-            this.minMemoryRequiredInMbs = Objects.requireNonNull(minMemoryRequiredInMbs);
+        public Builder minMemoryRequiredInMbs(@Nullable String minMemoryRequiredInMbs) {
+            this.minMemoryRequiredInMbs = minMemoryRequiredInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder policies(List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+        public Builder policies(@Nullable List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies) {
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy... policies) {

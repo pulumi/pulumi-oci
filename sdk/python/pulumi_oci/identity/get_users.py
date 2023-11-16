@@ -52,17 +52,11 @@ class GetUsersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the user.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="externalIdentifier")
     def external_identifier(self) -> Optional[str]:
-        """
-        Identifier of the user in the identity provider
-        """
         return pulumi.get(self, "external_identifier")
 
     @property
@@ -72,7 +66,7 @@ class GetUsersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,33 +75,21 @@ class GetUsersResult:
     @property
     @pulumi.getter(name="identityProviderId")
     def identity_provider_id(self) -> Optional[str]:
-        """
-        The OCID of the `IdentityProvider` this user belongs to.
-        """
         return pulumi.get(self, "identity_provider_id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The user's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def users(self) -> Sequence['outputs.GetUsersUserResult']:
-        """
-        The list of users.
-        """
+    def users(self) -> Optional[Sequence['outputs.GetUsersUserResult']]:
         return pulumi.get(self, "users")
 
 
@@ -135,31 +117,7 @@ def get_users(compartment_id: Optional[str] = None,
               state: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsersResult:
     """
-    This data source provides the list of Users in Oracle Cloud Infrastructure Identity service.
-
-    Lists the users in your tenancy. You must specify your tenancy's OCID as the value for the
-    compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_users = oci.Identity.get_users(compartment_id=var["tenancy_ocid"],
-        external_identifier=var["user_external_identifier"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["user_name"],
-        state=var["user_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str external_identifier: The id of a user in the identity provider.
-    :param str identity_provider_id: The id of the identity provider.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -191,30 +149,6 @@ def get_users_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsersResult]:
     """
-    This data source provides the list of Users in Oracle Cloud Infrastructure Identity service.
-
-    Lists the users in your tenancy. You must specify your tenancy's OCID as the value for the
-    compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_users = oci.Identity.get_users(compartment_id=var["tenancy_ocid"],
-        external_identifier=var["user_external_identifier"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["user_name"],
-        state=var["user_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str external_identifier: The id of a user in the identity provider.
-    :param str identity_provider_id: The id of the identity provider.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

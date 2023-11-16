@@ -39,7 +39,7 @@ public final class GetOutboundConnectorsResult {
      * @return The list of outbound_connectors.
      * 
      */
-    private List<GetOutboundConnectorsOutboundConnector> outboundConnectors;
+    private @Nullable List<GetOutboundConnectorsOutboundConnector> outboundConnectors;
     /**
      * @return The current state of this outbound connector.
      * 
@@ -83,7 +83,7 @@ public final class GetOutboundConnectorsResult {
      * 
      */
     public List<GetOutboundConnectorsOutboundConnector> outboundConnectors() {
-        return this.outboundConnectors;
+        return this.outboundConnectors == null ? List.of() : this.outboundConnectors;
     }
     /**
      * @return The current state of this outbound connector.
@@ -107,7 +107,7 @@ public final class GetOutboundConnectorsResult {
         private @Nullable String displayName;
         private @Nullable List<GetOutboundConnectorsFilter> filters;
         private @Nullable String id;
-        private List<GetOutboundConnectorsOutboundConnector> outboundConnectors;
+        private @Nullable List<GetOutboundConnectorsOutboundConnector> outboundConnectors;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetOutboundConnectorsResult defaults) {
@@ -150,8 +150,8 @@ public final class GetOutboundConnectorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outboundConnectors(List<GetOutboundConnectorsOutboundConnector> outboundConnectors) {
-            this.outboundConnectors = Objects.requireNonNull(outboundConnectors);
+        public Builder outboundConnectors(@Nullable List<GetOutboundConnectorsOutboundConnector> outboundConnectors) {
+            this.outboundConnectors = outboundConnectors;
             return this;
         }
         public Builder outboundConnectors(GetOutboundConnectorsOutboundConnector... outboundConnectors) {

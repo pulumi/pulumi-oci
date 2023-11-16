@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Database service.
@@ -77,7 +76,7 @@ type GetVmClusterNetworksResult struct {
 	ExadataInfrastructureId string                       `pulumi:"exadataInfrastructureId"`
 	Filters                 []GetVmClusterNetworksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 	State *string `pulumi:"state"`
 	// The list of vm_cluster_networks.
@@ -129,12 +128,6 @@ func (o GetVmClusterNetworksResultOutput) ToGetVmClusterNetworksResultOutputWith
 	return o
 }
 
-func (o GetVmClusterNetworksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksResult] {
-	return pulumix.Output[GetVmClusterNetworksResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetVmClusterNetworksResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterNetworksResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -155,8 +148,8 @@ func (o GetVmClusterNetworksResultOutput) Filters() GetVmClusterNetworksFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterNetworksResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
         /// </summary>
-        public readonly string StorageManagement;
+        public readonly string? StorageManagement;
 
         [OutputConstructor]
-        private GetDbSystemsDbSystemDbSystemOptionResult(string storageManagement)
+        private GetDbSystemsDbSystemDbSystemOptionResult(string? storageManagement)
         {
             StorageManagement = storageManagement;
         }

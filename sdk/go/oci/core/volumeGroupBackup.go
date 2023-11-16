@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
@@ -65,44 +64,44 @@ type VolumeGroupBackup struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-	ExpirationTime pulumi.StringOutput `pulumi:"expirationTime"`
+	ExpirationTime pulumi.StringPtrOutput `pulumi:"expirationTime"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The aggregate size of the volume group backup, in GBs.
-	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
+	SizeInGbs pulumi.StringPtrOutput `pulumi:"sizeInGbs"`
 	// The aggregate size of the volume group backup, in MBs.
-	SizeInMbs pulumi.StringOutput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrOutput `pulumi:"sizeInMbs"`
 	// Details of the volume group backup source in the cloud.
 	SourceDetails VolumeGroupBackupSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// Specifies whether the volume group backup was created manually, or via scheduled backup policy.
-	SourceType pulumi.StringOutput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// The OCID of the source volume group backup.
-	SourceVolumeGroupBackupId pulumi.StringOutput `pulumi:"sourceVolumeGroupBackupId"`
+	SourceVolumeGroupBackupId pulumi.StringPtrOutput `pulumi:"sourceVolumeGroupBackupId"`
 	// The current state of a volume group backup.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeRequestReceived pulumi.StringOutput `pulumi:"timeRequestReceived"`
+	TimeRequestReceived pulumi.StringPtrOutput `pulumi:"timeRequestReceived"`
 	// The type of backup to create. If omitted, defaults to incremental.
 	// * Allowed values are :
 	// * FULL
 	// * INCREMENTAL
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-	UniqueSizeInGbs pulumi.StringOutput `pulumi:"uniqueSizeInGbs"`
+	UniqueSizeInGbs pulumi.StringPtrOutput `pulumi:"uniqueSizeInGbs"`
 	// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-	UniqueSizeInMbs pulumi.StringOutput `pulumi:"uniqueSizeInMbs"`
+	UniqueSizeInMbs pulumi.StringPtrOutput `pulumi:"uniqueSizeInMbs"`
 	// OCIDs for the volume backups in this volume group backup.
 	VolumeBackupIds pulumi.StringArrayOutput `pulumi:"volumeBackupIds"`
 	// The OCID of the volume group that needs to be backed up.
-	VolumeGroupId pulumi.StringOutput `pulumi:"volumeGroupId"`
+	VolumeGroupId pulumi.StringPtrOutput `pulumi:"volumeGroupId"`
 }
 
 // NewVolumeGroupBackup registers a new resource with the given unique name, arguments, and options.
@@ -286,12 +285,6 @@ func (i *VolumeGroupBackup) ToVolumeGroupBackupOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupOutput)
 }
 
-func (i *VolumeGroupBackup) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroupBackup] {
-	return pulumix.Output[*VolumeGroupBackup]{
-		OutputState: i.ToVolumeGroupBackupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VolumeGroupBackupArrayInput is an input type that accepts VolumeGroupBackupArray and VolumeGroupBackupArrayOutput values.
 // You can construct a concrete instance of `VolumeGroupBackupArrayInput` via:
 //
@@ -315,12 +308,6 @@ func (i VolumeGroupBackupArray) ToVolumeGroupBackupArrayOutput() VolumeGroupBack
 
 func (i VolumeGroupBackupArray) ToVolumeGroupBackupArrayOutputWithContext(ctx context.Context) VolumeGroupBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupArrayOutput)
-}
-
-func (i VolumeGroupBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroupBackup] {
-	return pulumix.Output[[]*VolumeGroupBackup]{
-		OutputState: i.ToVolumeGroupBackupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VolumeGroupBackupMapInput is an input type that accepts VolumeGroupBackupMap and VolumeGroupBackupMapOutput values.
@@ -348,12 +335,6 @@ func (i VolumeGroupBackupMap) ToVolumeGroupBackupMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupMapOutput)
 }
 
-func (i VolumeGroupBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroupBackup] {
-	return pulumix.Output[map[string]*VolumeGroupBackup]{
-		OutputState: i.ToVolumeGroupBackupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VolumeGroupBackupOutput struct{ *pulumi.OutputState }
 
 func (VolumeGroupBackupOutput) ElementType() reflect.Type {
@@ -368,15 +349,9 @@ func (o VolumeGroupBackupOutput) ToVolumeGroupBackupOutputWithContext(ctx contex
 	return o
 }
 
-func (o VolumeGroupBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroupBackup] {
-	return pulumix.Output[*VolumeGroupBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-func (o VolumeGroupBackupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -385,13 +360,13 @@ func (o VolumeGroupBackupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VolumeGroupBackupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-func (o VolumeGroupBackupOutput) ExpirationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.ExpirationTime }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) ExpirationTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.ExpirationTime }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -400,13 +375,13 @@ func (o VolumeGroupBackupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The aggregate size of the volume group backup, in GBs.
-func (o VolumeGroupBackupOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The aggregate size of the volume group backup, in MBs.
-func (o VolumeGroupBackupOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Details of the volume group backup source in the cloud.
@@ -415,46 +390,46 @@ func (o VolumeGroupBackupOutput) SourceDetails() VolumeGroupBackupSourceDetailsP
 }
 
 // Specifies whether the volume group backup was created manually, or via scheduled backup policy.
-func (o VolumeGroupBackupOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source volume group backup.
-func (o VolumeGroupBackupOutput) SourceVolumeGroupBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.SourceVolumeGroupBackupId }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) SourceVolumeGroupBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.SourceVolumeGroupBackupId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of a volume group backup.
-func (o VolumeGroupBackupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o VolumeGroupBackupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o VolumeGroupBackupOutput) TimeRequestReceived() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.TimeRequestReceived }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) TimeRequestReceived() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.TimeRequestReceived }).(pulumi.StringPtrOutput)
 }
 
 // The type of backup to create. If omitted, defaults to incremental.
 // * Allowed values are :
 // * FULL
 // * INCREMENTAL
-func (o VolumeGroupBackupOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-func (o VolumeGroupBackupOutput) UniqueSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.UniqueSizeInGbs }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) UniqueSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.UniqueSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-func (o VolumeGroupBackupOutput) UniqueSizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.UniqueSizeInMbs }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) UniqueSizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.UniqueSizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // OCIDs for the volume backups in this volume group backup.
@@ -463,8 +438,8 @@ func (o VolumeGroupBackupOutput) VolumeBackupIds() pulumi.StringArrayOutput {
 }
 
 // The OCID of the volume group that needs to be backed up.
-func (o VolumeGroupBackupOutput) VolumeGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.VolumeGroupId }).(pulumi.StringOutput)
+func (o VolumeGroupBackupOutput) VolumeGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringPtrOutput { return v.VolumeGroupId }).(pulumi.StringPtrOutput)
 }
 
 type VolumeGroupBackupArrayOutput struct{ *pulumi.OutputState }
@@ -479,12 +454,6 @@ func (o VolumeGroupBackupArrayOutput) ToVolumeGroupBackupArrayOutput() VolumeGro
 
 func (o VolumeGroupBackupArrayOutput) ToVolumeGroupBackupArrayOutputWithContext(ctx context.Context) VolumeGroupBackupArrayOutput {
 	return o
-}
-
-func (o VolumeGroupBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroupBackup] {
-	return pulumix.Output[[]*VolumeGroupBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeGroupBackupArrayOutput) Index(i pulumi.IntInput) VolumeGroupBackupOutput {
@@ -505,12 +474,6 @@ func (o VolumeGroupBackupMapOutput) ToVolumeGroupBackupMapOutput() VolumeGroupBa
 
 func (o VolumeGroupBackupMapOutput) ToVolumeGroupBackupMapOutputWithContext(ctx context.Context) VolumeGroupBackupMapOutput {
 	return o
-}
-
-func (o VolumeGroupBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroupBackup] {
-	return pulumix.Output[map[string]*VolumeGroupBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeGroupBackupMapOutput) MapIndex(k pulumi.StringInput) VolumeGroupBackupOutput {

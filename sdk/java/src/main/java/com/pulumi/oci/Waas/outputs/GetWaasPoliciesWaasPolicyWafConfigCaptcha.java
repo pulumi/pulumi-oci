@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigCaptcha {
@@ -14,87 +16,87 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCaptcha {
      * @return The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
      * 
      */
-    private String failureMessage;
+    private @Nullable String failureMessage;
     /**
      * @return The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to &#39;Enter the letters and numbers as they are shown in the image above.&#39;
      * 
      */
-    private String footerText;
+    private @Nullable String footerText;
     /**
      * @return The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to &#39;We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.&#39;
      * 
      */
-    private String headerText;
+    private @Nullable String headerText;
     /**
      * @return The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
      * 
      */
-    private Integer sessionExpirationInSeconds;
+    private @Nullable Integer sessionExpirationInSeconds;
     /**
      * @return The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
      * 
      */
-    private String submitLabel;
+    private @Nullable String submitLabel;
     /**
      * @return The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
      * 
      */
-    private String title;
+    private @Nullable String title;
     /**
      * @return The unique URL path at which to show the CAPTCHA challenge.
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetWaasPoliciesWaasPolicyWafConfigCaptcha() {}
     /**
      * @return The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
      * 
      */
-    public String failureMessage() {
-        return this.failureMessage;
+    public Optional<String> failureMessage() {
+        return Optional.ofNullable(this.failureMessage);
     }
     /**
      * @return The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to &#39;Enter the letters and numbers as they are shown in the image above.&#39;
      * 
      */
-    public String footerText() {
-        return this.footerText;
+    public Optional<String> footerText() {
+        return Optional.ofNullable(this.footerText);
     }
     /**
      * @return The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to &#39;We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.&#39;
      * 
      */
-    public String headerText() {
-        return this.headerText;
+    public Optional<String> headerText() {
+        return Optional.ofNullable(this.headerText);
     }
     /**
      * @return The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
      * 
      */
-    public Integer sessionExpirationInSeconds() {
-        return this.sessionExpirationInSeconds;
+    public Optional<Integer> sessionExpirationInSeconds() {
+        return Optional.ofNullable(this.sessionExpirationInSeconds);
     }
     /**
      * @return The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
      * 
      */
-    public String submitLabel() {
-        return this.submitLabel;
+    public Optional<String> submitLabel() {
+        return Optional.ofNullable(this.submitLabel);
     }
     /**
      * @return The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
      * 
      */
-    public String title() {
-        return this.title;
+    public Optional<String> title() {
+        return Optional.ofNullable(this.title);
     }
     /**
      * @return The unique URL path at which to show the CAPTCHA challenge.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCaptcha {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String failureMessage;
-        private String footerText;
-        private String headerText;
-        private Integer sessionExpirationInSeconds;
-        private String submitLabel;
-        private String title;
-        private String url;
+        private @Nullable String failureMessage;
+        private @Nullable String footerText;
+        private @Nullable String headerText;
+        private @Nullable Integer sessionExpirationInSeconds;
+        private @Nullable String submitLabel;
+        private @Nullable String title;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigCaptcha defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCaptcha {
         }
 
         @CustomType.Setter
-        public Builder failureMessage(String failureMessage) {
-            this.failureMessage = Objects.requireNonNull(failureMessage);
+        public Builder failureMessage(@Nullable String failureMessage) {
+            this.failureMessage = failureMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder footerText(String footerText) {
-            this.footerText = Objects.requireNonNull(footerText);
+        public Builder footerText(@Nullable String footerText) {
+            this.footerText = footerText;
             return this;
         }
         @CustomType.Setter
-        public Builder headerText(String headerText) {
-            this.headerText = Objects.requireNonNull(headerText);
+        public Builder headerText(@Nullable String headerText) {
+            this.headerText = headerText;
             return this;
         }
         @CustomType.Setter
-        public Builder sessionExpirationInSeconds(Integer sessionExpirationInSeconds) {
-            this.sessionExpirationInSeconds = Objects.requireNonNull(sessionExpirationInSeconds);
+        public Builder sessionExpirationInSeconds(@Nullable Integer sessionExpirationInSeconds) {
+            this.sessionExpirationInSeconds = sessionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder submitLabel(String submitLabel) {
-            this.submitLabel = Objects.requireNonNull(submitLabel);
+        public Builder submitLabel(@Nullable String submitLabel) {
+            this.submitLabel = submitLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+        public Builder title(@Nullable String title) {
+            this.title = title;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCaptcha build() {

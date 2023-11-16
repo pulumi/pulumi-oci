@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
         /// </summary>
-        public readonly string EnvironmentMaintenanceOverride;
+        public readonly string? EnvironmentMaintenanceOverride;
         /// <summary>
         /// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
         /// </summary>
-        public readonly string MonthlyPatchingOverride;
+        public readonly string? MonthlyPatchingOverride;
         /// <summary>
         /// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.Functions.Outputs
 
         [OutputConstructor]
         private GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult(
-            string environmentMaintenanceOverride,
+            string? environmentMaintenanceOverride,
 
-            string monthlyPatchingOverride,
+            string? monthlyPatchingOverride,
 
             ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult> quarterlyUpgradeBeginTimes)
         {

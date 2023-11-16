@@ -64,7 +64,7 @@ namespace Pulumi.Oci.IdentityDataPlane
         /// The security token, signed by auth service
         /// </summary>
         [Output("token")]
-        public Output<string> Token { get; private set; } = null!;
+        public Output<string?> Token { get; private set; } = null!;
 
 
         /// <summary>

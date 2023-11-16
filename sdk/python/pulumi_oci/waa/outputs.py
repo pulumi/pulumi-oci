@@ -49,38 +49,12 @@ class AppAccelerationPolicyResponseCachingPolicy(dict):
 
     def __init__(__self__, *,
                  is_response_header_based_caching_enabled: Optional[bool] = None):
-        """
-        :param bool is_response_header_based_caching_enabled: (Updatable) When false, responses will not be cached by the backend based on response headers.
-               
-               When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
-               
-               The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
-               
-               If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
-               
-               If the header includes the "Set-Cookie" field, such a response will not be cached.
-               
-               If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
-        """
         if is_response_header_based_caching_enabled is not None:
             pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
     def is_response_header_based_caching_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) When false, responses will not be cached by the backend based on response headers.
-
-        When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
-
-        The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
-
-        If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
-
-        If the header includes the "Set-Cookie" field, such a response will not be cached.
-
-        If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
-        """
         return pulumi.get(self, "is_response_header_based_caching_enabled")
 
 
@@ -105,18 +79,12 @@ class AppAccelerationPolicyResponseCompressionPolicy(dict):
 
     def __init__(__self__, *,
                  gzip_compression: Optional['outputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompression'] = None):
-        """
-        :param 'AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs' gzip_compression: (Updatable) An object that specifies the gzip compression policy.
-        """
         if gzip_compression is not None:
             pulumi.set(__self__, "gzip_compression", gzip_compression)
 
     @property
     @pulumi.getter(name="gzipCompression")
     def gzip_compression(self) -> Optional['outputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompression']:
-        """
-        (Updatable) An object that specifies the gzip compression policy.
-        """
         return pulumi.get(self, "gzip_compression")
 
 
@@ -141,22 +109,12 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompression(dict):
 
     def __init__(__self__, *,
                  is_enabled: Optional[bool] = None):
-        """
-        :param bool is_enabled: (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-               
-               When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-
-        When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
-        """
         return pulumi.get(self, "is_enabled")
 
 
@@ -190,259 +148,192 @@ class GetAppAccelerationPoliciesFilterResult(dict):
 @pulumi.output_type
 class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 response_caching_policies: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult'],
-                 response_compression_policies: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: A filter to return only the WebAppAccelerationPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param Sequence['GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs'] response_caching_policies: An object that specifies an HTTP response caching policy.
-        :param Sequence['GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArgs'] response_compression_policies: An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
-        :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "response_caching_policies", response_caching_policies)
-        pulumi.set(__self__, "response_compression_policies", response_compression_policies)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 response_caching_policies: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult']] = None,
+                 response_compression_policies: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if response_caching_policies is not None:
+            pulumi.set(__self__, "response_caching_policies", response_caching_policies)
+        if response_compression_policies is not None:
+            pulumi.set(__self__, "response_compression_policies", response_compression_policies)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to return only the WebAppAccelerationPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="responseCachingPolicies")
-    def response_caching_policies(self) -> Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult']:
-        """
-        An object that specifies an HTTP response caching policy.
-        """
+    def response_caching_policies(self) -> Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult']]:
         return pulumi.get(self, "response_caching_policies")
 
     @property
     @pulumi.getter(name="responseCompressionPolicies")
-    def response_compression_policies(self) -> Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult']:
-        """
-        An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
-        """
+    def response_compression_policies(self) -> Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult']]:
         return pulumi.get(self, "response_compression_policies")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult(dict):
     def __init__(__self__, *,
-                 is_response_header_based_caching_enabled: bool):
-        """
-        :param bool is_response_header_based_caching_enabled: When false, responses will not be cached by the backend based on response headers.
-        """
-        pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+                 is_response_header_based_caching_enabled: Optional[bool] = None):
+        if is_response_header_based_caching_enabled is not None:
+            pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
-    def is_response_header_based_caching_enabled(self) -> bool:
-        """
-        When false, responses will not be cached by the backend based on response headers.
-        """
+    def is_response_header_based_caching_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_response_header_based_caching_enabled")
 
 
 @pulumi.output_type
 class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult(dict):
     def __init__(__self__, *,
-                 gzip_compressions: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult']):
-        """
-        :param Sequence['GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs'] gzip_compressions: An object that specifies the gzip compression policy.
-        """
-        pulumi.set(__self__, "gzip_compressions", gzip_compressions)
+                 gzip_compressions: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult']] = None):
+        if gzip_compressions is not None:
+            pulumi.set(__self__, "gzip_compressions", gzip_compressions)
 
     @property
     @pulumi.getter(name="gzipCompressions")
-    def gzip_compressions(self) -> Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult']:
-        """
-        An object that specifies the gzip compression policy.
-        """
+    def gzip_compressions(self) -> Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult']]:
         return pulumi.get(self, "gzip_compressions")
 
 
 @pulumi.output_type
 class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool):
-        """
-        :param bool is_enabled: When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+                 is_enabled: Optional[bool] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
 
 @pulumi.output_type
 class GetAppAccelerationPolicyResponseCachingPolicyResult(dict):
     def __init__(__self__, *,
-                 is_response_header_based_caching_enabled: bool):
-        """
-        :param bool is_response_header_based_caching_enabled: When false, responses will not be cached by the backend based on response headers.
-        """
-        pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+                 is_response_header_based_caching_enabled: Optional[bool] = None):
+        if is_response_header_based_caching_enabled is not None:
+            pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
-    def is_response_header_based_caching_enabled(self) -> bool:
-        """
-        When false, responses will not be cached by the backend based on response headers.
-        """
+    def is_response_header_based_caching_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_response_header_based_caching_enabled")
 
 
 @pulumi.output_type
 class GetAppAccelerationPolicyResponseCompressionPolicyResult(dict):
     def __init__(__self__, *,
-                 gzip_compressions: Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult']):
-        """
-        :param Sequence['GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs'] gzip_compressions: An object that specifies the gzip compression policy.
-        """
-        pulumi.set(__self__, "gzip_compressions", gzip_compressions)
+                 gzip_compressions: Optional[Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult']] = None):
+        if gzip_compressions is not None:
+            pulumi.set(__self__, "gzip_compressions", gzip_compressions)
 
     @property
     @pulumi.getter(name="gzipCompressions")
-    def gzip_compressions(self) -> Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult']:
-        """
-        An object that specifies the gzip compression policy.
-        """
+    def gzip_compressions(self) -> Optional[Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult']]:
         return pulumi.get(self, "gzip_compressions")
 
 
 @pulumi.output_type
 class GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool):
-        """
-        :param bool is_enabled: When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+                 is_enabled: Optional[bool] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
 
@@ -476,162 +367,122 @@ class GetAppAccelerationsFilterResult(dict):
 @pulumi.output_type
 class GetAppAccelerationsWebAppAccelerationCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAppAccelerationsWebAppAccelerationCollectionItemResult(dict):
     def __init__(__self__, *,
-                 backend_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 load_balancer_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 web_app_acceleration_policy_id: str):
-        """
-        :param str backend_type: Type of the WebAppFirewall, as example LOAD_BALANCER.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param str load_balancer_id: LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
-        :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-        :param str web_app_acceleration_policy_id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
-        """
-        pulumi.set(__self__, "backend_type", backend_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "web_app_acceleration_policy_id", web_app_acceleration_policy_id)
+                 backend_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 load_balancer_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 web_app_acceleration_policy_id: Optional[str] = None):
+        if backend_type is not None:
+            pulumi.set(__self__, "backend_type", backend_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if load_balancer_id is not None:
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if web_app_acceleration_policy_id is not None:
+            pulumi.set(__self__, "web_app_acceleration_policy_id", web_app_acceleration_policy_id)
 
     @property
     @pulumi.getter(name="backendType")
-    def backend_type(self) -> str:
-        """
-        Type of the WebAppFirewall, as example LOAD_BALANCER.
-        """
+    def backend_type(self) -> Optional[str]:
         return pulumi.get(self, "backend_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> str:
-        """
-        LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
-        """
+    def load_balancer_id(self) -> Optional[str]:
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="webAppAccelerationPolicyId")
-    def web_app_acceleration_policy_id(self) -> str:
-        """
-        A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
-        """
+    def web_app_acceleration_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "web_app_acceleration_policy_id")
 
 

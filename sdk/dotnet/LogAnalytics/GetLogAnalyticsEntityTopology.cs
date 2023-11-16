@@ -136,7 +136,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Array of log analytics entity summary.
         /// </summary>
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.LogAnalytics
 
         [OutputConstructor]
         private GetLogAnalyticsEntityTopologyResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLogAnalyticsEntityTopologyItemResult> items,
 

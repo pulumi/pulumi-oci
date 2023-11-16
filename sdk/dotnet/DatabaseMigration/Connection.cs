@@ -105,7 +105,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
         /// </summary>
         [Output("certificateTdn")]
-        public Output<string> CertificateTdn { get; private set; } = null!;
+        public Output<string?> CertificateTdn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -117,19 +117,19 @@ namespace Pulumi.Oci.DatabaseMigration
         /// (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
         /// </summary>
         [Output("connectDescriptor")]
-        public Output<Outputs.ConnectionConnectDescriptor> ConnectDescriptor { get; private set; } = null!;
+        public Output<Outputs.ConnectionConnectDescriptor?> ConnectDescriptor { get; private set; } = null!;
 
         /// <summary>
         /// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
         /// </summary>
         [Output("credentialsSecretId")]
-        public Output<string> CredentialsSecretId { get; private set; } = null!;
+        public Output<string?> CredentialsSecretId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
         /// </summary>
         [Output("databaseId")]
-        public Output<string> DatabaseId { get; private set; } = null!;
+        public Output<string?> DatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// Database connection type.
@@ -141,25 +141,25 @@ namespace Pulumi.Oci.DatabaseMigration
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Database Connection display name identifier.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
@@ -171,55 +171,55 @@ namespace Pulumi.Oci.DatabaseMigration
         /// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         /// </summary>
         [Output("privateEndpoint")]
-        public Output<Outputs.ConnectionPrivateEndpoint> PrivateEndpoint { get; private set; } = null!;
+        public Output<Outputs.ConnectionPrivateEndpoint?> PrivateEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
         /// </summary>
         [Output("replicationCredentials")]
-        public Output<Outputs.ConnectionReplicationCredentials> ReplicationCredentials { get; private set; } = null!;
+        public Output<Outputs.ConnectionReplicationCredentials?> ReplicationCredentials { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         /// </summary>
         [Output("sshDetails")]
-        public Output<Outputs.ConnectionSshDetails> SshDetails { get; private set; } = null!;
+        public Output<Outputs.ConnectionSshDetails?> SshDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Connection resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the Connection resource was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time of the last Connection resource details update. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
         /// </summary>
         [Output("tlsKeystore")]
-        public Output<string> TlsKeystore { get; private set; } = null!;
+        public Output<string?> TlsKeystore { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
         /// </summary>
         [Output("tlsWallet")]
-        public Output<string> TlsWallet { get; private set; } = null!;
+        public Output<string?> TlsWallet { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets

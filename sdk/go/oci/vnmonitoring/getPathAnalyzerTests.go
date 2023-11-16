@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Path Analyzer Tests in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -72,7 +71,7 @@ type GetPathAnalyzerTestsResult struct {
 	DisplayName *string                      `pulumi:"displayName"`
 	Filters     []GetPathAnalyzerTestsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of path_analyzer_test_collection.
 	PathAnalyzerTestCollections []GetPathAnalyzerTestsPathAnalyzerTestCollection `pulumi:"pathAnalyzerTestCollections"`
 	// The current state of the `PathAnalyzerTest` resource.
@@ -122,12 +121,6 @@ func (o GetPathAnalyzerTestsResultOutput) ToGetPathAnalyzerTestsResultOutputWith
 	return o
 }
 
-func (o GetPathAnalyzerTestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsResult] {
-	return pulumix.Output[GetPathAnalyzerTestsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
 func (o GetPathAnalyzerTestsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPathAnalyzerTestsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetPathAnalyzerTestsResultOutput) Filters() GetPathAnalyzerTestsFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPathAnalyzerTestsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPathAnalyzerTestsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPathAnalyzerTestsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPathAnalyzerTestsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of path_analyzer_test_collection.

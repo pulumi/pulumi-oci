@@ -113,57 +113,57 @@ namespace Pulumi.Oci.Identity
     [OutputType]
     public sealed class GetDomainResult
     {
-        public readonly string AdminEmail;
-        public readonly string AdminFirstName;
-        public readonly string AdminLastName;
-        public readonly string AdminUserName;
+        public readonly string? AdminEmail;
+        public readonly string? AdminFirstName;
+        public readonly string? AdminLastName;
+        public readonly string? AdminUserName;
         /// <summary>
         /// The OCID of the compartment containing the domain.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The domain descripition
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The mutable display name of the domain
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string DomainId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
         /// </summary>
-        public readonly string HomeRegion;
+        public readonly string? HomeRegion;
         /// <summary>
         /// Region specific domain URL.
         /// </summary>
-        public readonly string HomeRegionUrl;
+        public readonly string? HomeRegionUrl;
         /// <summary>
         /// The OCID of the domain
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether domain is hidden on login screen or not.
         /// </summary>
-        public readonly bool IsHiddenOnLogin;
-        public readonly bool IsNotificationBypassed;
-        public readonly bool IsPrimaryEmailRequired;
+        public readonly bool? IsHiddenOnLogin;
+        public readonly bool? IsNotificationBypassed;
+        public readonly bool? IsPrimaryEmailRequired;
         /// <summary>
         /// The License type of Domain
         /// </summary>
-        public readonly string LicenseType;
+        public readonly string? LicenseType;
         /// <summary>
         /// Any additional details about the current state of the Domain.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The regions domain is replication to.
         /// </summary>
@@ -171,67 +171,67 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The type of the domain.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Region agnostic domain URL.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetDomainResult(
-            string adminEmail,
+            string? adminEmail,
 
-            string adminFirstName,
+            string? adminFirstName,
 
-            string adminLastName,
+            string? adminLastName,
 
-            string adminUserName,
+            string? adminUserName,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             string domainId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string homeRegion,
+            string? homeRegion,
 
-            string homeRegionUrl,
+            string? homeRegionUrl,
 
-            string id,
+            string? id,
 
-            bool isHiddenOnLogin,
+            bool? isHiddenOnLogin,
 
-            bool isNotificationBypassed,
+            bool? isNotificationBypassed,
 
-            bool isPrimaryEmailRequired,
+            bool? isPrimaryEmailRequired,
 
-            string licenseType,
+            string? licenseType,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetDomainReplicaRegionResult> replicaRegions,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string type,
+            string? type,
 
-            string url)
+            string? url)
         {
             AdminEmail = adminEmail;
             AdminFirstName = adminFirstName;

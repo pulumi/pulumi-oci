@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
@@ -63,7 +62,7 @@ type GetBdsInstanceListOsPatchesResult struct {
 	BdsInstanceId string                              `pulumi:"bdsInstanceId"`
 	Filters       []GetBdsInstanceListOsPatchesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of os_patches.
 	OsPatches []GetBdsInstanceListOsPatchesOsPatch `pulumi:"osPatches"`
 }
@@ -107,12 +106,6 @@ func (o GetBdsInstanceListOsPatchesResultOutput) ToGetBdsInstanceListOsPatchesRe
 	return o
 }
 
-func (o GetBdsInstanceListOsPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceListOsPatchesResult] {
-	return pulumix.Output[GetBdsInstanceListOsPatchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceListOsPatchesResultOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceListOsPatchesResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
@@ -122,8 +115,8 @@ func (o GetBdsInstanceListOsPatchesResultOutput) Filters() GetBdsInstanceListOsP
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBdsInstanceListOsPatchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceListOsPatchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBdsInstanceListOsPatchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceListOsPatchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of os_patches.

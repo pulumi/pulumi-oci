@@ -20,13 +20,13 @@ public final class GetComputedUsagesResult {
      * @return The list of computed_usages.
      * 
      */
-    private List<GetComputedUsagesComputedUsage> computedUsages;
+    private @Nullable List<GetComputedUsagesComputedUsage> computedUsages;
     private @Nullable List<GetComputedUsagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Product description
      * 
@@ -48,7 +48,7 @@ public final class GetComputedUsagesResult {
      * 
      */
     public List<GetComputedUsagesComputedUsage> computedUsages() {
-        return this.computedUsages;
+        return this.computedUsages == null ? List.of() : this.computedUsages;
     }
     public List<GetComputedUsagesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -57,8 +57,8 @@ public final class GetComputedUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Product description
@@ -88,9 +88,9 @@ public final class GetComputedUsagesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String computedProduct;
-        private List<GetComputedUsagesComputedUsage> computedUsages;
+        private @Nullable List<GetComputedUsagesComputedUsage> computedUsages;
         private @Nullable List<GetComputedUsagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String parentProduct;
         private String subscriptionId;
         private String timeFrom;
@@ -120,8 +120,8 @@ public final class GetComputedUsagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder computedUsages(List<GetComputedUsagesComputedUsage> computedUsages) {
-            this.computedUsages = Objects.requireNonNull(computedUsages);
+        public Builder computedUsages(@Nullable List<GetComputedUsagesComputedUsage> computedUsages) {
+            this.computedUsages = computedUsages;
             return this;
         }
         public Builder computedUsages(GetComputedUsagesComputedUsage... computedUsages) {
@@ -136,8 +136,8 @@ public final class GetComputedUsagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

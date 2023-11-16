@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBucketSummariesBucketSummary {
@@ -18,255 +20,255 @@ public final class GetBucketSummariesBucketSummary {
      * @return The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
      * 
      */
-    private String accessType;
+    private @Nullable String accessType;
     /**
      * @return The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
      * 
      */
-    private String approximateCount;
+    private @Nullable String approximateCount;
     /**
      * @return The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      * 
      */
-    private String approximateSize;
+    private @Nullable String approximateSize;
     /**
      * @return The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the &#39;Standard&#39; and &#39;InfrequentAccess&#39; tiers based on the access pattern of the objects.
      * 
      */
-    private String autoTiering;
-    private String bucketId;
+    private @Nullable String autoTiering;
+    private @Nullable String bucketId;
     /**
      * @return The ID of the compartment in which to list buckets.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The entity tag (ETag) for the bucket.
      * 
      */
-    private String etag;
+    private @Nullable String etag;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private String id;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String id;
     /**
      * @return Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
      * 
      */
-    private Boolean isReadOnly;
+    private @Nullable Boolean isReadOnly;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return Arbitrary string keys and values for user-defined metadata.
      * 
      */
-    private Map<String,Object> metadata;
+    private @Nullable Map<String,Object> metadata;
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      * 
      */
-    private Boolean objectEventsEnabled;
+    private @Nullable Boolean objectEventsEnabled;
     /**
      * @return The entity tag (ETag) for the live object lifecycle policy on the bucket.
      * 
      */
-    private String objectLifecyclePolicyEtag;
+    private @Nullable String objectLifecyclePolicyEtag;
     /**
      * @return Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to &#39;true&#39; when you create a replication policy for the bucket.
      * 
      */
-    private Boolean replicationEnabled;
-    private List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules;
+    private @Nullable Boolean replicationEnabled;
+    private @Nullable List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules;
     /**
      * @return The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage. The `storageTier` property is immutable after bucket is created.
      * 
      */
-    private String storageTier;
+    private @Nullable String storageTier;
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
      * 
      */
-    private String versioning;
+    private @Nullable String versioning;
 
     private GetBucketSummariesBucketSummary() {}
     /**
      * @return The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
      * 
      */
-    public String accessType() {
-        return this.accessType;
+    public Optional<String> accessType() {
+        return Optional.ofNullable(this.accessType);
     }
     /**
      * @return The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
      * 
      */
-    public String approximateCount() {
-        return this.approximateCount;
+    public Optional<String> approximateCount() {
+        return Optional.ofNullable(this.approximateCount);
     }
     /**
      * @return The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      * 
      */
-    public String approximateSize() {
-        return this.approximateSize;
+    public Optional<String> approximateSize() {
+        return Optional.ofNullable(this.approximateSize);
     }
     /**
      * @return The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the &#39;Standard&#39; and &#39;InfrequentAccess&#39; tiers based on the access pattern of the objects.
      * 
      */
-    public String autoTiering() {
-        return this.autoTiering;
+    public Optional<String> autoTiering() {
+        return Optional.ofNullable(this.autoTiering);
     }
-    public String bucketId() {
-        return this.bucketId;
+    public Optional<String> bucketId() {
+        return Optional.ofNullable(this.bucketId);
     }
     /**
      * @return The ID of the compartment in which to list buckets.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The entity tag (ETag) for the bucket.
      * 
      */
-    public String etag() {
-        return this.etag;
+    public Optional<String> etag() {
+        return Optional.ofNullable(this.etag);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
      * 
      */
-    public Boolean isReadOnly() {
-        return this.isReadOnly;
+    public Optional<Boolean> isReadOnly() {
+        return Optional.ofNullable(this.isReadOnly);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return Arbitrary string keys and values for user-defined metadata.
      * 
      */
     public Map<String,Object> metadata() {
-        return this.metadata;
+        return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      * 
      */
-    public Boolean objectEventsEnabled() {
-        return this.objectEventsEnabled;
+    public Optional<Boolean> objectEventsEnabled() {
+        return Optional.ofNullable(this.objectEventsEnabled);
     }
     /**
      * @return The entity tag (ETag) for the live object lifecycle policy on the bucket.
      * 
      */
-    public String objectLifecyclePolicyEtag() {
-        return this.objectLifecyclePolicyEtag;
+    public Optional<String> objectLifecyclePolicyEtag() {
+        return Optional.ofNullable(this.objectLifecyclePolicyEtag);
     }
     /**
      * @return Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to &#39;true&#39; when you create a replication policy for the bucket.
      * 
      */
-    public Boolean replicationEnabled() {
-        return this.replicationEnabled;
+    public Optional<Boolean> replicationEnabled() {
+        return Optional.ofNullable(this.replicationEnabled);
     }
     public List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules() {
-        return this.retentionRules;
+        return this.retentionRules == null ? List.of() : this.retentionRules;
     }
     /**
      * @return The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage. The `storageTier` property is immutable after bucket is created.
      * 
      */
-    public String storageTier() {
-        return this.storageTier;
+    public Optional<String> storageTier() {
+        return Optional.ofNullable(this.storageTier);
     }
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
      * 
      */
-    public String versioning() {
-        return this.versioning;
+    public Optional<String> versioning() {
+        return Optional.ofNullable(this.versioning);
     }
 
     public static Builder builder() {
@@ -278,29 +280,29 @@ public final class GetBucketSummariesBucketSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accessType;
-        private String approximateCount;
-        private String approximateSize;
-        private String autoTiering;
-        private String bucketId;
-        private String compartmentId;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private String etag;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isReadOnly;
-        private String kmsKeyId;
-        private Map<String,Object> metadata;
-        private String name;
-        private String namespace;
-        private Boolean objectEventsEnabled;
-        private String objectLifecyclePolicyEtag;
-        private Boolean replicationEnabled;
-        private List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules;
-        private String storageTier;
-        private String timeCreated;
-        private String versioning;
+        private @Nullable String accessType;
+        private @Nullable String approximateCount;
+        private @Nullable String approximateSize;
+        private @Nullable String autoTiering;
+        private @Nullable String bucketId;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String etag;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isReadOnly;
+        private @Nullable String kmsKeyId;
+        private @Nullable Map<String,Object> metadata;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable Boolean objectEventsEnabled;
+        private @Nullable String objectLifecyclePolicyEtag;
+        private @Nullable Boolean replicationEnabled;
+        private @Nullable List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules;
+        private @Nullable String storageTier;
+        private @Nullable String timeCreated;
+        private @Nullable String versioning;
         public Builder() {}
         public Builder(GetBucketSummariesBucketSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -330,121 +332,121 @@ public final class GetBucketSummariesBucketSummary {
         }
 
         @CustomType.Setter
-        public Builder accessType(String accessType) {
-            this.accessType = Objects.requireNonNull(accessType);
+        public Builder accessType(@Nullable String accessType) {
+            this.accessType = accessType;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateCount(String approximateCount) {
-            this.approximateCount = Objects.requireNonNull(approximateCount);
+        public Builder approximateCount(@Nullable String approximateCount) {
+            this.approximateCount = approximateCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateSize(String approximateSize) {
-            this.approximateSize = Objects.requireNonNull(approximateSize);
+        public Builder approximateSize(@Nullable String approximateSize) {
+            this.approximateSize = approximateSize;
             return this;
         }
         @CustomType.Setter
-        public Builder autoTiering(String autoTiering) {
-            this.autoTiering = Objects.requireNonNull(autoTiering);
+        public Builder autoTiering(@Nullable String autoTiering) {
+            this.autoTiering = autoTiering;
             return this;
         }
         @CustomType.Setter
-        public Builder bucketId(String bucketId) {
-            this.bucketId = Objects.requireNonNull(bucketId);
+        public Builder bucketId(@Nullable String bucketId) {
+            this.bucketId = bucketId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+        public Builder etag(@Nullable String etag) {
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isReadOnly(Boolean isReadOnly) {
-            this.isReadOnly = Objects.requireNonNull(isReadOnly);
+        public Builder isReadOnly(@Nullable Boolean isReadOnly) {
+            this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable Map<String,Object> metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder objectEventsEnabled(Boolean objectEventsEnabled) {
-            this.objectEventsEnabled = Objects.requireNonNull(objectEventsEnabled);
+        public Builder objectEventsEnabled(@Nullable Boolean objectEventsEnabled) {
+            this.objectEventsEnabled = objectEventsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder objectLifecyclePolicyEtag(String objectLifecyclePolicyEtag) {
-            this.objectLifecyclePolicyEtag = Objects.requireNonNull(objectLifecyclePolicyEtag);
+        public Builder objectLifecyclePolicyEtag(@Nullable String objectLifecyclePolicyEtag) {
+            this.objectLifecyclePolicyEtag = objectLifecyclePolicyEtag;
             return this;
         }
         @CustomType.Setter
-        public Builder replicationEnabled(Boolean replicationEnabled) {
-            this.replicationEnabled = Objects.requireNonNull(replicationEnabled);
+        public Builder replicationEnabled(@Nullable Boolean replicationEnabled) {
+            this.replicationEnabled = replicationEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionRules(List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules) {
-            this.retentionRules = Objects.requireNonNull(retentionRules);
+        public Builder retentionRules(@Nullable List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules) {
+            this.retentionRules = retentionRules;
             return this;
         }
         public Builder retentionRules(GetBucketSummariesBucketSummaryRetentionRule... retentionRules) {
             return retentionRules(List.of(retentionRules));
         }
         @CustomType.Setter
-        public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+        public Builder storageTier(@Nullable String storageTier) {
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder versioning(String versioning) {
-            this.versioning = Objects.requireNonNull(versioning);
+        public Builder versioning(@Nullable String versioning) {
+            this.versioning = versioning;
             return this;
         }
         public GetBucketSummariesBucketSummary build() {

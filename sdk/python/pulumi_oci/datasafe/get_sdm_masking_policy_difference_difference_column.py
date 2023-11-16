@@ -67,10 +67,7 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnResult:
 
     @property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> str:
-        """
-        The name of the difference column.
-        """
+    def column_name(self) -> Optional[str]:
         return pulumi.get(self, "column_name")
 
     @property
@@ -80,15 +77,12 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnResult:
 
     @property
     @pulumi.getter(name="differenceType")
-    def difference_type(self) -> str:
-        """
-        The type of the SDM masking policy difference column. It can be one of the following three types: NEW: A new sensitive column in the sensitive data model that is not in the masking policy. DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model. MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
-        """
+    def difference_type(self) -> Optional[str]:
         return pulumi.get(self, "difference_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,42 +90,27 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnResult:
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key that identifies the SDM masking policy difference column.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="maskingColumnkey")
-    def masking_columnkey(self) -> str:
-        """
-        The unique key that identifies the masking column represented by the SDM masking policy difference column.
-        """
+    def masking_columnkey(self) -> Optional[str]:
         return pulumi.get(self, "masking_columnkey")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The database object that contains the difference column.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="plannedAction")
-    def planned_action(self) -> str:
-        """
-        Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options: SYNC: To sync the difference column and update the masking policy to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change the masking policy. After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
-        """
+    def planned_action(self) -> Optional[str]:
         return pulumi.get(self, "planned_action")
 
     @property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> str:
-        """
-        The database schema that contains the difference column.
-        """
+    def schema_name(self) -> Optional[str]:
         return pulumi.get(self, "schema_name")
 
     @property
@@ -141,34 +120,22 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnResult:
 
     @property
     @pulumi.getter(name="sensitiveColumnkey")
-    def sensitive_columnkey(self) -> str:
-        """
-        The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
-        """
+    def sensitive_columnkey(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_columnkey")
 
     @property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> str:
-        """
-        The OCID of the sensitive type associated with the difference column.
-        """
+    def sensitive_type_id(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_type_id")
 
     @property
     @pulumi.getter(name="syncStatus")
-    def sync_status(self) -> str:
-        """
-        Indicates if the difference column has been processed. Use GetDifferenceColumn operation to  track whether the difference column has already been processed and applied to the masking policy.
-        """
+    def sync_status(self) -> Optional[str]:
         return pulumi.get(self, "sync_status")
 
     @property
     @pulumi.getter(name="timeLastSynced")
-    def time_last_synced(self) -> str:
-        """
-        The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_last_synced(self) -> Optional[str]:
         return pulumi.get(self, "time_last_synced")
 
 
@@ -198,23 +165,7 @@ def get_sdm_masking_policy_difference_difference_column(difference_column_key: O
                                                         sdm_masking_policy_difference_id: Optional[str] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSdmMaskingPolicyDifferenceDifferenceColumnResult:
     """
-    This data source provides details about a specific Sdm Masking Policy Difference Difference Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified SDM Masking policy difference column.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=var["sdm_masking_policy_difference_difference_column_difference_column_key"],
-        sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
-    ```
-
-
-    :param str difference_column_key: The unique key that identifies the difference column.
-    :param str sdm_masking_policy_difference_id: The OCID of the SDM masking policy difference.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['differenceColumnKey'] = difference_column_key
@@ -244,22 +195,6 @@ def get_sdm_masking_policy_difference_difference_column_output(difference_column
                                                                sdm_masking_policy_difference_id: Optional[pulumi.Input[str]] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnResult]:
     """
-    This data source provides details about a specific Sdm Masking Policy Difference Difference Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified SDM Masking policy difference column.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=var["sdm_masking_policy_difference_difference_column_difference_column_key"],
-        sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
-    ```
-
-
-    :param str difference_column_key: The unique key that identifies the difference column.
-    :param str sdm_masking_policy_difference_id: The OCID of the SDM masking policy difference.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
@@ -61,13 +60,13 @@ type GetClusterCredentialRotationStatusArgs struct {
 type GetClusterCredentialRotationStatusResult struct {
 	ClusterId string `pulumi:"clusterId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action. COMPLETED: New credentials are functional on kuberentes cluster.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 	// The time by which retirement of old credentials should start.
-	TimeAutoCompletionScheduled string `pulumi:"timeAutoCompletionScheduled"`
+	TimeAutoCompletionScheduled *string `pulumi:"timeAutoCompletionScheduled"`
 }
 
 func GetClusterCredentialRotationStatusOutput(ctx *pulumi.Context, args GetClusterCredentialRotationStatusOutputArgs, opts ...pulumi.InvokeOption) GetClusterCredentialRotationStatusResultOutput {
@@ -108,34 +107,28 @@ func (o GetClusterCredentialRotationStatusResultOutput) ToGetClusterCredentialRo
 	return o
 }
 
-func (o GetClusterCredentialRotationStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterCredentialRotationStatusResult] {
-	return pulumix.Output[GetClusterCredentialRotationStatusResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClusterCredentialRotationStatusResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetClusterCredentialRotationStatusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClusterCredentialRotationStatusResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action. COMPLETED: New credentials are functional on kuberentes cluster.
-func (o GetClusterCredentialRotationStatusResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetClusterCredentialRotationStatusResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
-func (o GetClusterCredentialRotationStatusResultOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetClusterCredentialRotationStatusResultOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // The time by which retirement of old credentials should start.
-func (o GetClusterCredentialRotationStatusResultOutput) TimeAutoCompletionScheduled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) string { return v.TimeAutoCompletionScheduled }).(pulumi.StringOutput)
+func (o GetClusterCredentialRotationStatusResultOutput) TimeAutoCompletionScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterCredentialRotationStatusResult) *string { return v.TimeAutoCompletionScheduled }).(pulumi.StringPtrOutput)
 }
 
 func init() {

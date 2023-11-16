@@ -66,9 +66,6 @@ class GetCertificateAuthorityVersionResult:
     @property
     @pulumi.getter(name="certificateAuthorityId")
     def certificate_authority_id(self) -> str:
-        """
-        The OCID of the CA.
-        """
         return pulumi.get(self, "certificate_authority_id")
 
     @property
@@ -78,7 +75,7 @@ class GetCertificateAuthorityVersionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,79 +83,52 @@ class GetCertificateAuthorityVersionResult:
 
     @property
     @pulumi.getter(name="issuerCaVersionNumber")
-    def issuer_ca_version_number(self) -> str:
-        """
-        The version number of the issuing CA.
-        """
+    def issuer_ca_version_number(self) -> Optional[str]:
         return pulumi.get(self, "issuer_ca_version_number")
 
     @property
     @pulumi.getter(name="revocationStatuses")
-    def revocation_statuses(self) -> Sequence['outputs.GetCertificateAuthorityVersionRevocationStatusResult']:
-        """
-        The current revocation status of the entity.
-        """
+    def revocation_statuses(self) -> Optional[Sequence['outputs.GetCertificateAuthorityVersionRevocationStatusResult']]:
         return pulumi.get(self, "revocation_statuses")
 
     @property
     @pulumi.getter(name="serialNumber")
-    def serial_number(self) -> str:
-        """
-        A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-        """
+    def serial_number(self) -> Optional[str]:
         return pulumi.get(self, "serial_number")
 
     @property
     @pulumi.getter
-    def stages(self) -> Sequence[str]:
-        """
-        A list of rotation states for this CA version.
-        """
+    def stages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter(name="subjectAlternativeNames")
-    def subject_alternative_names(self) -> Sequence['outputs.GetCertificateAuthorityVersionSubjectAlternativeNameResult']:
+    def subject_alternative_names(self) -> Optional[Sequence['outputs.GetCertificateAuthorityVersionSubjectAlternativeNameResult']]:
         return pulumi.get(self, "subject_alternative_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A optional property indicating when the CA version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter
-    def validities(self) -> Sequence['outputs.GetCertificateAuthorityVersionValidityResult']:
-        """
-        An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
-        """
+    def validities(self) -> Optional[Sequence['outputs.GetCertificateAuthorityVersionValidityResult']]:
         return pulumi.get(self, "validities")
 
     @property
     @pulumi.getter(name="versionName")
-    def version_name(self) -> str:
-        """
-        The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-        """
+    def version_name(self) -> Optional[str]:
         return pulumi.get(self, "version_name")
 
     @property
     @pulumi.getter(name="versionNumber")
-    def version_number(self) -> str:
-        """
-        The version number of the CA.
-        """
+    def version_number(self) -> Optional[str]:
         return pulumi.get(self, "version_number")
 
 
@@ -187,13 +157,7 @@ def get_certificate_authority_version(certificate_authority_id: Optional[str] = 
                                       certificate_authority_version_number: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateAuthorityVersionResult:
     """
-    This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all versions for the specified certificate authority (CA).
-    Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-
-
-    :param str certificate_authority_id: The OCID of the certificate authority (CA).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateAuthorityId'] = certificate_authority_id
@@ -222,12 +186,6 @@ def get_certificate_authority_version_output(certificate_authority_id: Optional[
                                              certificate_authority_version_number: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityVersionResult]:
     """
-    This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all versions for the specified certificate authority (CA).
-    Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-
-
-    :param str certificate_authority_id: The OCID of the certificate authority (CA).
+    Use this data source to access information about an existing resource.
     """
     ...

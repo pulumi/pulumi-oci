@@ -25,23 +25,6 @@ class ResponderRecipeArgs:
                  responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]]] = None):
         """
         The set of arguments for constructing a ResponderRecipe resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[str] source_responder_recipe_id: The id of the source responder recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]] responder_rules: (Updatable) Responder Rules to override from source responder recipe
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -58,9 +41,6 @@ class ResponderRecipeArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -70,11 +50,6 @@ class ResponderRecipeArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Responder recipe display name.
-
-        Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -84,13 +59,6 @@ class ResponderRecipeArgs:
     @property
     @pulumi.getter(name="sourceResponderRecipeId")
     def source_responder_recipe_id(self) -> pulumi.Input[str]:
-        """
-        The id of the source responder recipe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_responder_recipe_id")
 
     @source_responder_recipe_id.setter
@@ -100,9 +68,6 @@ class ResponderRecipeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -112,11 +77,6 @@ class ResponderRecipeArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Responder recipe description.
-
-        Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -126,11 +86,6 @@ class ResponderRecipeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-
-        Avoid entering confidential information.
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -140,9 +95,6 @@ class ResponderRecipeArgs:
     @property
     @pulumi.getter(name="responderRules")
     def responder_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]]]:
-        """
-        (Updatable) Responder Rules to override from source responder recipe
-        """
         return pulumi.get(self, "responder_rules")
 
     @responder_rules.setter
@@ -169,30 +121,6 @@ class _ResponderRecipeState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ResponderRecipe resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleArgs']]] effective_responder_rules: List of responder rules associated with the recipe
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] owner: Owner of ResponderRecipe
-        :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]] responder_rules: (Updatable) Responder Rules to override from source responder recipe
-        :param pulumi.Input[str] source_responder_recipe_id: The id of the source responder recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Example.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the responder recipe was created. Format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -226,9 +154,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -238,9 +163,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -250,11 +172,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Responder recipe description.
-
-        Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -264,11 +181,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Responder recipe display name.
-
-        Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -278,9 +190,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="effectiveResponderRules")
     def effective_responder_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleArgs']]]]:
-        """
-        List of responder rules associated with the recipe
-        """
         return pulumi.get(self, "effective_responder_rules")
 
     @effective_responder_rules.setter
@@ -290,11 +199,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-
-        Avoid entering confidential information.
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -304,9 +208,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -316,9 +217,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
-        """
-        Owner of ResponderRecipe
-        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -328,9 +226,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="responderRules")
     def responder_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]]]:
-        """
-        (Updatable) Responder Rules to override from source responder recipe
-        """
         return pulumi.get(self, "responder_rules")
 
     @responder_rules.setter
@@ -340,13 +235,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="sourceResponderRecipeId")
     def source_responder_recipe_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The id of the source responder recipe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_responder_recipe_id")
 
     @source_responder_recipe_id.setter
@@ -356,9 +244,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Example.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -368,9 +253,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -380,9 +262,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the responder recipe was created. Format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -392,9 +271,6 @@ class _ResponderRecipeState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the responder recipe was updated. Format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -416,37 +292,9 @@ class ResponderRecipe(pulumi.CustomResource):
                  source_responder_recipe_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Create a ResponderRecipe.
-
-        ## Import
-
-        ResponderRecipes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
-        ```
-
+        Create a ResponderRecipe resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResponderRecipeResponderRuleArgs']]]] responder_rules: (Updatable) Responder Rules to override from source responder recipe
-        :param pulumi.Input[str] source_responder_recipe_id: The id of the source responder recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -455,18 +303,7 @@ class ResponderRecipe(pulumi.CustomResource):
                  args: ResponderRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Create a ResponderRecipe.
-
-        ## Import
-
-        ResponderRecipes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
-        ```
-
+        Create a ResponderRecipe resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ResponderRecipeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -549,30 +386,6 @@ class ResponderRecipe(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResponderRecipeEffectiveResponderRuleArgs']]]] effective_responder_rules: List of responder rules associated with the recipe
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-               
-               Avoid entering confidential information.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] owner: Owner of ResponderRecipe
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResponderRecipeResponderRuleArgs']]]] responder_rules: (Updatable) Responder Rules to override from source responder recipe
-        :param pulumi.Input[str] source_responder_recipe_id: The id of the source responder recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Example.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the responder recipe was created. Format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -597,122 +410,70 @@ class ResponderRecipe(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Responder recipe description.
-
-        Avoid entering confidential information.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Responder recipe display name.
-
-        Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="effectiveResponderRules")
-    def effective_responder_rules(self) -> pulumi.Output[Sequence['outputs.ResponderRecipeEffectiveResponderRule']]:
-        """
-        List of responder rules associated with the recipe
-        """
+    def effective_responder_rules(self) -> pulumi.Output[Optional[Sequence['outputs.ResponderRecipeEffectiveResponderRule']]]:
         return pulumi.get(self, "effective_responder_rules")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-
-        Avoid entering confidential information.
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def owner(self) -> pulumi.Output[str]:
-        """
-        Owner of ResponderRecipe
-        """
+    def owner(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "owner")
 
     @property
     @pulumi.getter(name="responderRules")
-    def responder_rules(self) -> pulumi.Output[Sequence['outputs.ResponderRecipeResponderRule']]:
-        """
-        (Updatable) Responder Rules to override from source responder recipe
-        """
+    def responder_rules(self) -> pulumi.Output[Optional[Sequence['outputs.ResponderRecipeResponderRule']]]:
         return pulumi.get(self, "responder_rules")
 
     @property
     @pulumi.getter(name="sourceResponderRecipeId")
     def source_responder_recipe_id(self) -> pulumi.Output[str]:
-        """
-        The id of the source responder recipe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_responder_recipe_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Example.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the responder recipe was created. Format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the responder recipe was updated. Format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

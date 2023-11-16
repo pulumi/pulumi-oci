@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction {
@@ -14,19 +16,19 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
      * @return The type of action to take.
      * 
      */
-    private String type;
-    private Integer value;
+    private @Nullable String type;
+    private @Nullable Integer value;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction() {}
     /**
      * @return The type of action to take.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
-    public Integer value() {
-        return this.value;
+    public Optional<Integer> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -38,8 +40,8 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     }
     @CustomType.Builder
     public static final class Builder {
-        private String type;
-        private Integer value;
+        private @Nullable String type;
+        private @Nullable Integer value;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -48,13 +50,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         }
 
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Integer value) {
+            this.value = value;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction build() {

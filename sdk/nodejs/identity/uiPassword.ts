@@ -63,19 +63,19 @@ export class UiPassword extends pulumi.CustomResource {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveStatus!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveStatus!: pulumi.Output<string | undefined>;
     /**
      * The user's password for the Console.
      */
-    public /*out*/ readonly password!: pulumi.Output<string>;
+    public /*out*/ readonly password!: pulumi.Output<string | undefined>;
     /**
      * The password's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the user.
      *

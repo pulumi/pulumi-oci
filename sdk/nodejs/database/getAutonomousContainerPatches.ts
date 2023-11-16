@@ -66,13 +66,13 @@ export interface GetAutonomousContainerPatchesResult {
     /**
      * The list of autonomous_patches.
      */
-    readonly autonomousPatches: outputs.Database.GetAutonomousContainerPatchesAutonomousPatch[];
+    readonly autonomousPatches?: outputs.Database.GetAutonomousContainerPatchesAutonomousPatch[];
     readonly compartmentId: string;
     readonly filters?: outputs.Database.GetAutonomousContainerPatchesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.

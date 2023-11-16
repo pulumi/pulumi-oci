@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
@@ -75,7 +74,7 @@ type GetExternalDatabasesResult struct {
 	ExternalDbSystemId          *string                                          `pulumi:"externalDbSystemId"`
 	Filters                     []GetExternalDatabasesFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalDatabasesOutput(ctx *pulumi.Context, args GetExternalDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetExternalDatabasesResultOutput {
@@ -121,12 +120,6 @@ func (o GetExternalDatabasesResultOutput) ToGetExternalDatabasesResultOutputWith
 	return o
 }
 
-func (o GetExternalDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalDatabasesResult] {
-	return pulumix.Output[GetExternalDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExternalDatabasesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExternalDatabasesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -153,8 +146,8 @@ func (o GetExternalDatabasesResultOutput) Filters() GetExternalDatabasesFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

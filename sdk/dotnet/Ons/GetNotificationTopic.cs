@@ -114,44 +114,44 @@ namespace Pulumi.Oci.Ons
         /// <summary>
         /// The endpoint for managing subscriptions or publishing messages to the topic.
         /// </summary>
-        public readonly string ApiEndpoint;
+        public readonly string? ApiEndpoint;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the topic.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// For optimistic concurrency control. See `if-match`.
         /// </summary>
-        public readonly string Etag;
+        public readonly string? Etag;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
-        public readonly string Id;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly string? Id;
         /// <summary>
         /// The name of the topic.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A unique short topic Id. This is used only for SMS subscriptions.
         /// </summary>
-        public readonly string ShortTopicId;
+        public readonly string? ShortTopicId;
         /// <summary>
         /// The lifecycle state of the topic.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the topic was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         /// </summary>
@@ -159,27 +159,27 @@ namespace Pulumi.Oci.Ons
 
         [OutputConstructor]
         private GetNotificationTopicResult(
-            string apiEndpoint,
+            string? apiEndpoint,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string etag,
+            string? etag,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string shortTopicId,
+            string? shortTopicId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
             string topicId)
         {

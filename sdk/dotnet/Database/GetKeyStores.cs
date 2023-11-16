@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of key_stores.
         /// </summary>
@@ -143,7 +143,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetKeyStoresFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetKeyStoresKeyStoreResult> keyStores)
         {

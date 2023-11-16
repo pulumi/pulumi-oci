@@ -83,18 +83,6 @@ class ExportExportOption(dict):
                  identity_squash: Optional[str] = None,
                  is_anonymous_access_allowed: Optional[bool] = None,
                  require_privileged_source_port: Optional[bool] = None):
-        """
-        :param str source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-               
-               **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
-        :param str access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-        :param Sequence[str] allowed_auths: (Updatable) Array of allowed NFS authentication types.
-        :param str anonymous_gid: (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-        :param str anonymous_uid: (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-        :param str identity_squash: (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-        :param bool is_anonymous_access_allowed: (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-        :param bool require_privileged_source_port: (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-        """
         pulumi.set(__self__, "source", source)
         if access is not None:
             pulumi.set(__self__, "access", access)
@@ -114,67 +102,41 @@ class ExportExportOption(dict):
     @property
     @pulumi.getter
     def source(self) -> str:
-        """
-        (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-
-        **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
-        """
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
     def access(self) -> Optional[str]:
-        """
-        (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-        """
         return pulumi.get(self, "access")
 
     @property
     @pulumi.getter(name="allowedAuths")
     def allowed_auths(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Array of allowed NFS authentication types.
-        """
         return pulumi.get(self, "allowed_auths")
 
     @property
     @pulumi.getter(name="anonymousGid")
     def anonymous_gid(self) -> Optional[str]:
-        """
-        (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-        """
         return pulumi.get(self, "anonymous_gid")
 
     @property
     @pulumi.getter(name="anonymousUid")
     def anonymous_uid(self) -> Optional[str]:
-        """
-        (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-        """
         return pulumi.get(self, "anonymous_uid")
 
     @property
     @pulumi.getter(name="identitySquash")
     def identity_squash(self) -> Optional[str]:
-        """
-        (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-        """
         return pulumi.get(self, "identity_squash")
 
     @property
     @pulumi.getter(name="isAnonymousAccessAllowed")
     def is_anonymous_access_allowed(self) -> Optional[bool]:
-        """
-        (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-        """
         return pulumi.get(self, "is_anonymous_access_allowed")
 
     @property
     @pulumi.getter(name="requirePrivilegedSourcePort")
     def require_privileged_source_port(self) -> Optional[bool]:
-        """
-        (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-        """
         return pulumi.get(self, "require_privileged_source_port")
 
 
@@ -202,14 +164,6 @@ class FileSystemSourceDetail(dict):
     def __init__(__self__, *,
                  parent_file_system_id: Optional[str] = None,
                  source_snapshot_id: Optional[str] = None):
-        """
-        :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if parent_file_system_id is not None:
             pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
         if source_snapshot_id is not None:
@@ -218,21 +172,11 @@ class FileSystemSourceDetail(dict):
     @property
     @pulumi.getter(name="parentFileSystemId")
     def parent_file_system_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
         return pulumi.get(self, "parent_file_system_id")
 
     @property
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_snapshot_id")
 
 
@@ -277,17 +221,6 @@ class FilesystemSnapshotPolicySchedule(dict):
                  retention_duration_in_seconds: Optional[str] = None,
                  schedule_prefix: Optional[str] = None,
                  time_schedule_start: Optional[str] = None):
-        """
-        :param str period: (Updatable) The frequency of scheduled snapshots.
-        :param str time_zone: (Updatable) Time zone used for scheduling the snapshot.
-        :param int day_of_month: (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-        :param str day_of_week: (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-        :param int hour_of_day: (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-        :param str month: (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-        :param str retention_duration_in_seconds: (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-        :param str schedule_prefix: (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-        :param str time_schedule_start: (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-        """
         pulumi.set(__self__, "period", period)
         pulumi.set(__self__, "time_zone", time_zone)
         if day_of_month is not None:
@@ -308,73 +241,46 @@ class FilesystemSnapshotPolicySchedule(dict):
     @property
     @pulumi.getter
     def period(self) -> str:
-        """
-        (Updatable) The frequency of scheduled snapshots.
-        """
         return pulumi.get(self, "period")
 
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> str:
-        """
-        (Updatable) Time zone used for scheduling the snapshot.
-        """
         return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter(name="dayOfMonth")
     def day_of_month(self) -> Optional[int]:
-        """
-        (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-        """
         return pulumi.get(self, "day_of_month")
 
     @property
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> Optional[str]:
-        """
-        (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-        """
         return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="hourOfDay")
     def hour_of_day(self) -> Optional[int]:
-        """
-        (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-        """
         return pulumi.get(self, "hour_of_day")
 
     @property
     @pulumi.getter
     def month(self) -> Optional[str]:
-        """
-        (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-        """
         return pulumi.get(self, "month")
 
     @property
     @pulumi.getter(name="retentionDurationInSeconds")
     def retention_duration_in_seconds(self) -> Optional[str]:
-        """
-        (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-        """
         return pulumi.get(self, "retention_duration_in_seconds")
 
     @property
     @pulumi.getter(name="schedulePrefix")
     def schedule_prefix(self) -> Optional[str]:
-        """
-        (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-        """
         return pulumi.get(self, "schedule_prefix")
 
     @property
     @pulumi.getter(name="timeScheduleStart")
     def time_schedule_start(self) -> Optional[str]:
-        """
-        (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-        """
         return pulumi.get(self, "time_schedule_start")
 
 
@@ -411,13 +317,6 @@ class MountTargetKerberos(dict):
                  current_key_tab_secret_version: Optional[int] = None,
                  is_kerberos_enabled: Optional[bool] = None,
                  key_tab_secret_id: Optional[str] = None):
-        """
-        :param str kerberos_realm: (Updatable) The Kerberos realm that the mount target will join.
-        :param int backup_key_tab_secret_version: (Updatable) Version of the keytab Secret in the Vault to use as a backup.
-        :param int current_key_tab_secret_version: (Updatable) Version of the keytab Secret in the Vault to use.
-        :param bool is_kerberos_enabled: (Updatable) Specifies whether to enable or disable Kerberos.
-        :param str key_tab_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
-        """
         pulumi.set(__self__, "kerberos_realm", kerberos_realm)
         if backup_key_tab_secret_version is not None:
             pulumi.set(__self__, "backup_key_tab_secret_version", backup_key_tab_secret_version)
@@ -431,41 +330,26 @@ class MountTargetKerberos(dict):
     @property
     @pulumi.getter(name="kerberosRealm")
     def kerberos_realm(self) -> str:
-        """
-        (Updatable) The Kerberos realm that the mount target will join.
-        """
         return pulumi.get(self, "kerberos_realm")
 
     @property
     @pulumi.getter(name="backupKeyTabSecretVersion")
     def backup_key_tab_secret_version(self) -> Optional[int]:
-        """
-        (Updatable) Version of the keytab Secret in the Vault to use as a backup.
-        """
         return pulumi.get(self, "backup_key_tab_secret_version")
 
     @property
     @pulumi.getter(name="currentKeyTabSecretVersion")
     def current_key_tab_secret_version(self) -> Optional[int]:
-        """
-        (Updatable) Version of the keytab Secret in the Vault to use.
-        """
         return pulumi.get(self, "current_key_tab_secret_version")
 
     @property
     @pulumi.getter(name="isKerberosEnabled")
     def is_kerberos_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) Specifies whether to enable or disable Kerberos.
-        """
         return pulumi.get(self, "is_kerberos_enabled")
 
     @property
     @pulumi.getter(name="keyTabSecretId")
     def key_tab_secret_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
-        """
         return pulumi.get(self, "key_tab_secret_id")
 
 
@@ -511,16 +395,6 @@ class MountTargetLdapIdmap(dict):
                  outbound_connector2id: Optional[str] = None,
                  schema_type: Optional[str] = None,
                  user_search_base: Optional[str] = None):
-        """
-        :param int cache_lifetime_seconds: (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
-        :param int cache_refresh_interval_seconds: (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-        :param str group_search_base: (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-        :param int negative_cache_lifetime_seconds: (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-        :param str outbound_connector1id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-        :param str outbound_connector2id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-        :param str schema_type: (Updatable) Schema type of the LDAP account.
-        :param str user_search_base: (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-        """
         if cache_lifetime_seconds is not None:
             pulumi.set(__self__, "cache_lifetime_seconds", cache_lifetime_seconds)
         if cache_refresh_interval_seconds is not None:
@@ -541,65 +415,41 @@ class MountTargetLdapIdmap(dict):
     @property
     @pulumi.getter(name="cacheLifetimeSeconds")
     def cache_lifetime_seconds(self) -> Optional[int]:
-        """
-        (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
-        """
         return pulumi.get(self, "cache_lifetime_seconds")
 
     @property
     @pulumi.getter(name="cacheRefreshIntervalSeconds")
     def cache_refresh_interval_seconds(self) -> Optional[int]:
-        """
-        (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-        """
         return pulumi.get(self, "cache_refresh_interval_seconds")
 
     @property
     @pulumi.getter(name="groupSearchBase")
     def group_search_base(self) -> Optional[str]:
-        """
-        (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-        """
         return pulumi.get(self, "group_search_base")
 
     @property
     @pulumi.getter(name="negativeCacheLifetimeSeconds")
     def negative_cache_lifetime_seconds(self) -> Optional[int]:
-        """
-        (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-        """
         return pulumi.get(self, "negative_cache_lifetime_seconds")
 
     @property
     @pulumi.getter(name="outboundConnector1id")
     def outbound_connector1id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-        """
         return pulumi.get(self, "outbound_connector1id")
 
     @property
     @pulumi.getter(name="outboundConnector2id")
     def outbound_connector2id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-        """
         return pulumi.get(self, "outbound_connector2id")
 
     @property
     @pulumi.getter(name="schemaType")
     def schema_type(self) -> Optional[str]:
-        """
-        (Updatable) Schema type of the LDAP account.
-        """
         return pulumi.get(self, "schema_type")
 
     @property
     @pulumi.getter(name="userSearchBase")
     def user_search_base(self) -> Optional[str]:
-        """
-        (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-        """
         return pulumi.get(self, "user_search_base")
 
 
@@ -608,140 +458,102 @@ class OutboundConnectorEndpoint(dict):
     def __init__(__self__, *,
                  hostname: str,
                  port: str):
-        """
-        :param str hostname: Name of the DNS server.
-        :param str port: Port of the DNS server.
-        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
     def hostname(self) -> str:
-        """
-        Name of the DNS server.
-        """
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
     def port(self) -> str:
-        """
-        Port of the DNS server.
-        """
         return pulumi.get(self, "port")
 
 
 @pulumi.output_type
 class GetExportSetsExportSetResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 compartment_id: str,
-                 display_name: str,
-                 id: str,
-                 max_fs_stat_bytes: str,
-                 max_fs_stat_files: str,
-                 mount_target_id: str,
-                 state: str,
-                 time_created: str,
-                 vcn_id: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param str max_fs_stat_bytes: Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        :param str max_fs_stat_files: Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "max_fs_stat_bytes", max_fs_stat_bytes)
-        pulumi.set(__self__, "max_fs_stat_files", max_fs_stat_files)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 max_fs_stat_bytes: Optional[str] = None,
+                 max_fs_stat_files: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if max_fs_stat_bytes is not None:
+            pulumi.set(__self__, "max_fs_stat_bytes", max_fs_stat_bytes)
+        if max_fs_stat_files is not None:
+            pulumi.set(__self__, "max_fs_stat_files", max_fs_stat_files)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="maxFsStatBytes")
-    def max_fs_stat_bytes(self) -> str:
-        """
-        Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        """
+    def max_fs_stat_bytes(self) -> Optional[str]:
         return pulumi.get(self, "max_fs_stat_bytes")
 
     @property
     @pulumi.getter(name="maxFsStatFiles")
-    def max_fs_stat_files(self) -> str:
-        """
-        Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
-        """
+    def max_fs_stat_files(self) -> Optional[str]:
         return pulumi.get(self, "max_fs_stat_files")
 
     @property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> str:
+    def mount_target_id(self) -> Optional[str]:
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -775,190 +587,138 @@ class GetExportSetsFilterResult(dict):
 @pulumi.output_type
 class GetExportsExportResult(dict):
     def __init__(__self__, *,
-                 export_options: Sequence['outputs.GetExportsExportExportOptionResult'],
-                 export_set_id: str,
-                 file_system_id: str,
-                 id: str,
-                 is_idmap_groups_for_sys_auth: bool,
-                 path: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param Sequence['GetExportsExportExportOptionArgs'] export_options: Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
-        :param str export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-        :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param bool is_idmap_groups_for_sys_auth: Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        :param str path: Path used to access the associated file system.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "export_options", export_options)
-        pulumi.set(__self__, "export_set_id", export_set_id)
-        pulumi.set(__self__, "file_system_id", file_system_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 export_options: Optional[Sequence['outputs.GetExportsExportExportOptionResult']] = None,
+                 export_set_id: Optional[str] = None,
+                 file_system_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_idmap_groups_for_sys_auth: Optional[bool] = None,
+                 path: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if export_options is not None:
+            pulumi.set(__self__, "export_options", export_options)
+        if export_set_id is not None:
+            pulumi.set(__self__, "export_set_id", export_set_id)
+        if file_system_id is not None:
+            pulumi.set(__self__, "file_system_id", file_system_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_idmap_groups_for_sys_auth is not None:
+            pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="exportOptions")
-    def export_options(self) -> Sequence['outputs.GetExportsExportExportOptionResult']:
-        """
-        Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
-        """
+    def export_options(self) -> Optional[Sequence['outputs.GetExportsExportExportOptionResult']]:
         return pulumi.get(self, "export_options")
 
     @property
     @pulumi.getter(name="exportSetId")
-    def export_set_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-        """
+    def export_set_id(self) -> Optional[str]:
         return pulumi.get(self, "export_set_id")
 
     @property
     @pulumi.getter(name="fileSystemId")
-    def file_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-        """
+    def file_system_id(self) -> Optional[str]:
         return pulumi.get(self, "file_system_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isIdmapGroupsForSysAuth")
-    def is_idmap_groups_for_sys_auth(self) -> bool:
-        """
-        Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        """
+    def is_idmap_groups_for_sys_auth(self) -> Optional[bool]:
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        Path used to access the associated file system.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetExportsExportExportOptionResult(dict):
     def __init__(__self__, *,
-                 access: str,
-                 allowed_auths: Sequence[str],
-                 anonymous_gid: str,
-                 anonymous_uid: str,
-                 identity_squash: str,
-                 is_anonymous_access_allowed: bool,
-                 require_privileged_source_port: bool,
-                 source: str):
-        """
-        :param str access: Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-        :param Sequence[str] allowed_auths: Array of allowed NFS authentication types.
-        :param str anonymous_gid: GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-        :param str anonymous_uid: UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-        :param str identity_squash: Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-        :param bool is_anonymous_access_allowed: Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-        :param bool require_privileged_source_port: If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-        :param str source: Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-        """
-        pulumi.set(__self__, "access", access)
-        pulumi.set(__self__, "allowed_auths", allowed_auths)
-        pulumi.set(__self__, "anonymous_gid", anonymous_gid)
-        pulumi.set(__self__, "anonymous_uid", anonymous_uid)
-        pulumi.set(__self__, "identity_squash", identity_squash)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "require_privileged_source_port", require_privileged_source_port)
-        pulumi.set(__self__, "source", source)
+                 access: Optional[str] = None,
+                 allowed_auths: Optional[Sequence[str]] = None,
+                 anonymous_gid: Optional[str] = None,
+                 anonymous_uid: Optional[str] = None,
+                 identity_squash: Optional[str] = None,
+                 is_anonymous_access_allowed: Optional[bool] = None,
+                 require_privileged_source_port: Optional[bool] = None,
+                 source: Optional[str] = None):
+        if access is not None:
+            pulumi.set(__self__, "access", access)
+        if allowed_auths is not None:
+            pulumi.set(__self__, "allowed_auths", allowed_auths)
+        if anonymous_gid is not None:
+            pulumi.set(__self__, "anonymous_gid", anonymous_gid)
+        if anonymous_uid is not None:
+            pulumi.set(__self__, "anonymous_uid", anonymous_uid)
+        if identity_squash is not None:
+            pulumi.set(__self__, "identity_squash", identity_squash)
+        if is_anonymous_access_allowed is not None:
+            pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
+        if require_privileged_source_port is not None:
+            pulumi.set(__self__, "require_privileged_source_port", require_privileged_source_port)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
-    def access(self) -> str:
-        """
-        Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-        """
+    def access(self) -> Optional[str]:
         return pulumi.get(self, "access")
 
     @property
     @pulumi.getter(name="allowedAuths")
-    def allowed_auths(self) -> Sequence[str]:
-        """
-        Array of allowed NFS authentication types.
-        """
+    def allowed_auths(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_auths")
 
     @property
     @pulumi.getter(name="anonymousGid")
-    def anonymous_gid(self) -> str:
-        """
-        GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-        """
+    def anonymous_gid(self) -> Optional[str]:
         return pulumi.get(self, "anonymous_gid")
 
     @property
     @pulumi.getter(name="anonymousUid")
-    def anonymous_uid(self) -> str:
-        """
-        UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-        """
+    def anonymous_uid(self) -> Optional[str]:
         return pulumi.get(self, "anonymous_uid")
 
     @property
     @pulumi.getter(name="identitySquash")
-    def identity_squash(self) -> str:
-        """
-        Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-        """
+    def identity_squash(self) -> Optional[str]:
         return pulumi.get(self, "identity_squash")
 
     @property
     @pulumi.getter(name="isAnonymousAccessAllowed")
-    def is_anonymous_access_allowed(self) -> bool:
-        """
-        Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-        """
+    def is_anonymous_access_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_anonymous_access_allowed")
 
     @property
     @pulumi.getter(name="requirePrivilegedSourcePort")
-    def require_privileged_source_port(self) -> bool:
-        """
-        If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-        """
+    def require_privileged_source_port(self) -> Optional[bool]:
         return pulumi.get(self, "require_privileged_source_port")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
-        """
-        Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-        """
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
 
@@ -992,234 +752,170 @@ class GetExportsFilterResult(dict):
 @pulumi.output_type
 class GetFileSystemsFileSystemResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 filesystem_snapshot_policy_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_clone_parent: bool,
-                 is_hydrated: bool,
-                 is_targetable: bool,
-                 kms_key_id: str,
-                 lifecycle_details: str,
-                 metered_bytes: str,
-                 replication_target_id: str,
-                 source_details: Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult'],
-                 source_snapshot_id: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param bool is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param bool is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-        :param bool is_targetable: Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
-        :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-        :param str lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param str metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
-        :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-        :param Sequence['GetFileSystemsFileSystemSourceDetailArgs'] source_details: Source information for the file system.
-        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_clone_parent", is_clone_parent)
-        pulumi.set(__self__, "is_hydrated", is_hydrated)
-        pulumi.set(__self__, "is_targetable", is_targetable)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "metered_bytes", metered_bytes)
-        pulumi.set(__self__, "replication_target_id", replication_target_id)
-        pulumi.set(__self__, "source_details", source_details)
-        pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 filesystem_snapshot_policy_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_clone_parent: Optional[bool] = None,
+                 is_hydrated: Optional[bool] = None,
+                 is_targetable: Optional[bool] = None,
+                 kms_key_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 metered_bytes: Optional[str] = None,
+                 replication_target_id: Optional[str] = None,
+                 source_details: Optional[Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult']] = None,
+                 source_snapshot_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if filesystem_snapshot_policy_id is not None:
+            pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_clone_parent is not None:
+            pulumi.set(__self__, "is_clone_parent", is_clone_parent)
+        if is_hydrated is not None:
+            pulumi.set(__self__, "is_hydrated", is_hydrated)
+        if is_targetable is not None:
+            pulumi.set(__self__, "is_targetable", is_targetable)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if metered_bytes is not None:
+            pulumi.set(__self__, "metered_bytes", metered_bytes)
+        if replication_target_id is not None:
+            pulumi.set(__self__, "replication_target_id", replication_target_id)
+        if source_details is not None:
+            pulumi.set(__self__, "source_details", source_details)
+        if source_snapshot_id is not None:
+            pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="filesystemSnapshotPolicyId")
-    def filesystem_snapshot_policy_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
-        """
+    def filesystem_snapshot_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCloneParent")
-    def is_clone_parent(self) -> bool:
-        """
-        Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def is_clone_parent(self) -> Optional[bool]:
         return pulumi.get(self, "is_clone_parent")
 
     @property
     @pulumi.getter(name="isHydrated")
-    def is_hydrated(self) -> bool:
-        """
-        Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-        """
+    def is_hydrated(self) -> Optional[bool]:
         return pulumi.get(self, "is_hydrated")
 
     @property
     @pulumi.getter(name="isTargetable")
-    def is_targetable(self) -> bool:
-        """
-        Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
-        """
+    def is_targetable(self) -> Optional[bool]:
         return pulumi.get(self, "is_targetable")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current 'lifecycleState'.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="meteredBytes")
-    def metered_bytes(self) -> str:
-        """
-        The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
-        """
+    def metered_bytes(self) -> Optional[str]:
         return pulumi.get(self, "metered_bytes")
 
     @property
     @pulumi.getter(name="replicationTargetId")
-    def replication_target_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-        """
+    def replication_target_id(self) -> Optional[str]:
         return pulumi.get(self, "replication_target_id")
 
     @property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult']:
-        """
-        Source information for the file system.
-        """
+    def source_details(self) -> Optional[Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult']]:
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter(name="sourceSnapshotId")
-    def source_snapshot_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def source_snapshot_id(self) -> Optional[str]:
         return pulumi.get(self, "source_snapshot_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetFileSystemsFileSystemSourceDetailResult(dict):
     def __init__(__self__, *,
-                 parent_file_system_id: str,
-                 source_snapshot_id: str):
-        """
-        :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
-        pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
-        pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+                 parent_file_system_id: Optional[str] = None,
+                 source_snapshot_id: Optional[str] = None):
+        if parent_file_system_id is not None:
+            pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
+        if source_snapshot_id is not None:
+            pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
 
     @property
     @pulumi.getter(name="parentFileSystemId")
-    def parent_file_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def parent_file_system_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_file_system_id")
 
     @property
     @pulumi.getter(name="sourceSnapshotId")
-    def source_snapshot_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def source_snapshot_id(self) -> Optional[str]:
         return pulumi.get(self, "source_snapshot_id")
 
 
@@ -1253,223 +949,162 @@ class GetFileSystemsFilterResult(dict):
 @pulumi.output_type
 class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 policy_prefix: str,
-                 schedules: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult'],
-                 state: str,
-                 time_created: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param str policy_prefix: The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param Sequence['GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs'] schedules: The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "policy_prefix", policy_prefix)
-        pulumi.set(__self__, "schedules", schedules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 policy_prefix: Optional[str] = None,
+                 schedules: Optional[Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult']] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if policy_prefix is not None:
+            pulumi.set(__self__, "policy_prefix", policy_prefix)
+        if schedules is not None:
+            pulumi.set(__self__, "schedules", schedules)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="policyPrefix")
-    def policy_prefix(self) -> str:
-        """
-        The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        """
+    def policy_prefix(self) -> Optional[str]:
         return pulumi.get(self, "policy_prefix")
 
     @property
     @pulumi.getter
-    def schedules(self) -> Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult']:
-        """
-        The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-        """
+    def schedules(self) -> Optional[Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult']]:
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult(dict):
     def __init__(__self__, *,
-                 day_of_month: int,
-                 day_of_week: str,
-                 hour_of_day: int,
-                 month: str,
-                 period: str,
-                 retention_duration_in_seconds: str,
-                 schedule_prefix: str,
-                 time_schedule_start: str,
-                 time_zone: str):
-        """
-        :param int day_of_month: The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-        :param str day_of_week: The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-        :param int hour_of_day: The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-        :param str month: The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-        :param str period: The frequency of scheduled snapshots.
-        :param str retention_duration_in_seconds: The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-        :param str schedule_prefix: A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-        :param str time_schedule_start: The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-        :param str time_zone: Time zone used for scheduling the snapshot.
-        """
-        pulumi.set(__self__, "day_of_month", day_of_month)
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "hour_of_day", hour_of_day)
-        pulumi.set(__self__, "month", month)
-        pulumi.set(__self__, "period", period)
-        pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
-        pulumi.set(__self__, "schedule_prefix", schedule_prefix)
-        pulumi.set(__self__, "time_schedule_start", time_schedule_start)
-        pulumi.set(__self__, "time_zone", time_zone)
+                 day_of_month: Optional[int] = None,
+                 day_of_week: Optional[str] = None,
+                 hour_of_day: Optional[int] = None,
+                 month: Optional[str] = None,
+                 period: Optional[str] = None,
+                 retention_duration_in_seconds: Optional[str] = None,
+                 schedule_prefix: Optional[str] = None,
+                 time_schedule_start: Optional[str] = None,
+                 time_zone: Optional[str] = None):
+        if day_of_month is not None:
+            pulumi.set(__self__, "day_of_month", day_of_month)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if hour_of_day is not None:
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if month is not None:
+            pulumi.set(__self__, "month", month)
+        if period is not None:
+            pulumi.set(__self__, "period", period)
+        if retention_duration_in_seconds is not None:
+            pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
+        if schedule_prefix is not None:
+            pulumi.set(__self__, "schedule_prefix", schedule_prefix)
+        if time_schedule_start is not None:
+            pulumi.set(__self__, "time_schedule_start", time_schedule_start)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
 
     @property
     @pulumi.getter(name="dayOfMonth")
-    def day_of_month(self) -> int:
-        """
-        The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-        """
+    def day_of_month(self) -> Optional[int]:
         return pulumi.get(self, "day_of_month")
 
     @property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> str:
-        """
-        The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-        """
+    def day_of_week(self) -> Optional[str]:
         return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="hourOfDay")
-    def hour_of_day(self) -> int:
-        """
-        The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-        """
+    def hour_of_day(self) -> Optional[int]:
         return pulumi.get(self, "hour_of_day")
 
     @property
     @pulumi.getter
-    def month(self) -> str:
-        """
-        The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-        """
+    def month(self) -> Optional[str]:
         return pulumi.get(self, "month")
 
     @property
     @pulumi.getter
-    def period(self) -> str:
-        """
-        The frequency of scheduled snapshots.
-        """
+    def period(self) -> Optional[str]:
         return pulumi.get(self, "period")
 
     @property
     @pulumi.getter(name="retentionDurationInSeconds")
-    def retention_duration_in_seconds(self) -> str:
-        """
-        The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-        """
+    def retention_duration_in_seconds(self) -> Optional[str]:
         return pulumi.get(self, "retention_duration_in_seconds")
 
     @property
     @pulumi.getter(name="schedulePrefix")
-    def schedule_prefix(self) -> str:
-        """
-        A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-        """
+    def schedule_prefix(self) -> Optional[str]:
         return pulumi.get(self, "schedule_prefix")
 
     @property
     @pulumi.getter(name="timeScheduleStart")
-    def time_schedule_start(self) -> str:
-        """
-        The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-        """
+    def time_schedule_start(self) -> Optional[str]:
         return pulumi.get(self, "time_schedule_start")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
-        """
-        Time zone used for scheduling the snapshot.
-        """
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
 
@@ -1503,106 +1138,77 @@ class GetFilesystemSnapshotPoliciesFilterResult(dict):
 @pulumi.output_type
 class GetFilesystemSnapshotPolicyScheduleResult(dict):
     def __init__(__self__, *,
-                 day_of_month: int,
-                 day_of_week: str,
-                 hour_of_day: int,
-                 month: str,
-                 period: str,
-                 retention_duration_in_seconds: str,
-                 schedule_prefix: str,
-                 time_schedule_start: str,
-                 time_zone: str):
-        """
-        :param int day_of_month: The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-        :param str day_of_week: The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-        :param int hour_of_day: The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-        :param str month: The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-        :param str period: The frequency of scheduled snapshots.
-        :param str retention_duration_in_seconds: The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-        :param str schedule_prefix: A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-        :param str time_schedule_start: The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-        :param str time_zone: Time zone used for scheduling the snapshot.
-        """
-        pulumi.set(__self__, "day_of_month", day_of_month)
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "hour_of_day", hour_of_day)
-        pulumi.set(__self__, "month", month)
-        pulumi.set(__self__, "period", period)
-        pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
-        pulumi.set(__self__, "schedule_prefix", schedule_prefix)
-        pulumi.set(__self__, "time_schedule_start", time_schedule_start)
-        pulumi.set(__self__, "time_zone", time_zone)
+                 day_of_month: Optional[int] = None,
+                 day_of_week: Optional[str] = None,
+                 hour_of_day: Optional[int] = None,
+                 month: Optional[str] = None,
+                 period: Optional[str] = None,
+                 retention_duration_in_seconds: Optional[str] = None,
+                 schedule_prefix: Optional[str] = None,
+                 time_schedule_start: Optional[str] = None,
+                 time_zone: Optional[str] = None):
+        if day_of_month is not None:
+            pulumi.set(__self__, "day_of_month", day_of_month)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if hour_of_day is not None:
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if month is not None:
+            pulumi.set(__self__, "month", month)
+        if period is not None:
+            pulumi.set(__self__, "period", period)
+        if retention_duration_in_seconds is not None:
+            pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
+        if schedule_prefix is not None:
+            pulumi.set(__self__, "schedule_prefix", schedule_prefix)
+        if time_schedule_start is not None:
+            pulumi.set(__self__, "time_schedule_start", time_schedule_start)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
 
     @property
     @pulumi.getter(name="dayOfMonth")
-    def day_of_month(self) -> int:
-        """
-        The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-        """
+    def day_of_month(self) -> Optional[int]:
         return pulumi.get(self, "day_of_month")
 
     @property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> str:
-        """
-        The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-        """
+    def day_of_week(self) -> Optional[str]:
         return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="hourOfDay")
-    def hour_of_day(self) -> int:
-        """
-        The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-        """
+    def hour_of_day(self) -> Optional[int]:
         return pulumi.get(self, "hour_of_day")
 
     @property
     @pulumi.getter
-    def month(self) -> str:
-        """
-        The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-        """
+    def month(self) -> Optional[str]:
         return pulumi.get(self, "month")
 
     @property
     @pulumi.getter
-    def period(self) -> str:
-        """
-        The frequency of scheduled snapshots.
-        """
+    def period(self) -> Optional[str]:
         return pulumi.get(self, "period")
 
     @property
     @pulumi.getter(name="retentionDurationInSeconds")
-    def retention_duration_in_seconds(self) -> str:
-        """
-        The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-        """
+    def retention_duration_in_seconds(self) -> Optional[str]:
         return pulumi.get(self, "retention_duration_in_seconds")
 
     @property
     @pulumi.getter(name="schedulePrefix")
-    def schedule_prefix(self) -> str:
-        """
-        A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-        """
+    def schedule_prefix(self) -> Optional[str]:
         return pulumi.get(self, "schedule_prefix")
 
     @property
     @pulumi.getter(name="timeScheduleStart")
-    def time_schedule_start(self) -> str:
-        """
-        The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-        """
+    def time_schedule_start(self) -> Optional[str]:
         return pulumi.get(self, "time_schedule_start")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
-        """
-        Time zone used for scheduling the snapshot.
-        """
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
 
@@ -1636,383 +1242,284 @@ class GetMountTargetsFilterResult(dict):
 @pulumi.output_type
 class GetMountTargetsMountTargetResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 export_set_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 hostname_label: str,
-                 id: str,
-                 idmap_type: str,
-                 ip_address: str,
-                 kerberos: Sequence['outputs.GetMountTargetsMountTargetKerberoResult'],
-                 ldap_idmaps: Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult'],
-                 lifecycle_details: str,
-                 nsg_ids: Sequence[str],
-                 private_ip_ids: Sequence[str],
-                 state: str,
-                 subnet_id: str,
-                 time_created: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        :param str export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param str idmap_type: The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
-        :param Sequence['GetMountTargetsMountTargetKerberoArgs'] kerberos: Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
-        :param Sequence['GetMountTargetsMountTargetLdapIdmapArgs'] ldap_idmaps: Mount target details about the LDAP ID mapping configuration.
-        :param str lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param Sequence[str] nsg_ids: A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        :param Sequence[str] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
-        :param str time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "export_set_id", export_set_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idmap_type", idmap_type)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "kerberos", kerberos)
-        pulumi.set(__self__, "ldap_idmaps", ldap_idmaps)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip_ids", private_ip_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 export_set_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 hostname_label: Optional[str] = None,
+                 id: Optional[str] = None,
+                 idmap_type: Optional[str] = None,
+                 ip_address: Optional[str] = None,
+                 kerberos: Optional[Sequence['outputs.GetMountTargetsMountTargetKerberoResult']] = None,
+                 ldap_idmaps: Optional[Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 private_ip_ids: Optional[Sequence[str]] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if export_set_id is not None:
+            pulumi.set(__self__, "export_set_id", export_set_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname_label is not None:
+            pulumi.set(__self__, "hostname_label", hostname_label)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if idmap_type is not None:
+            pulumi.set(__self__, "idmap_type", idmap_type)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if kerberos is not None:
+            pulumi.set(__self__, "kerberos", kerberos)
+        if ldap_idmaps is not None:
+            pulumi.set(__self__, "ldap_idmaps", ldap_idmaps)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_ip_ids is not None:
+            pulumi.set(__self__, "private_ip_ids", private_ip_ids)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exportSetId")
-    def export_set_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-        """
+    def export_set_id(self) -> Optional[str]:
         return pulumi.get(self, "export_set_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> str:
+    def hostname_label(self) -> Optional[str]:
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idmapType")
-    def idmap_type(self) -> str:
-        """
-        The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
-        """
+    def idmap_type(self) -> Optional[str]:
         return pulumi.get(self, "idmap_type")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> str:
+    def ip_address(self) -> Optional[str]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter
-    def kerberos(self) -> Sequence['outputs.GetMountTargetsMountTargetKerberoResult']:
-        """
-        Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
-        """
+    def kerberos(self) -> Optional[Sequence['outputs.GetMountTargetsMountTargetKerberoResult']]:
         return pulumi.get(self, "kerberos")
 
     @property
     @pulumi.getter(name="ldapIdmaps")
-    def ldap_idmaps(self) -> Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult']:
-        """
-        Mount target details about the LDAP ID mapping configuration.
-        """
+    def ldap_idmaps(self) -> Optional[Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult']]:
         return pulumi.get(self, "ldap_idmaps")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current 'lifecycleState'.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateIpIds")
-    def private_ip_ids(self) -> Sequence[str]:
-        """
-        The OCIDs of the private IP addresses associated with this mount target.
-        """
+    def private_ip_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "private_ip_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetMountTargetsMountTargetKerberoResult(dict):
     def __init__(__self__, *,
-                 backup_key_tab_secret_version: int,
-                 current_key_tab_secret_version: int,
-                 is_kerberos_enabled: bool,
-                 kerberos_realm: str,
-                 key_tab_secret_id: str):
-        """
-        :param int backup_key_tab_secret_version: Version of the keytab secert in the Vault to use as a backup.
-        :param int current_key_tab_secret_version: Version of the keytab secret in the Vault to use.
-        :param bool is_kerberos_enabled: Specifies whether to enable or disable Kerberos.
-        :param str kerberos_realm: The Kerberos realm that the mount target will join.
-        :param str key_tab_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
-        """
-        pulumi.set(__self__, "backup_key_tab_secret_version", backup_key_tab_secret_version)
-        pulumi.set(__self__, "current_key_tab_secret_version", current_key_tab_secret_version)
-        pulumi.set(__self__, "is_kerberos_enabled", is_kerberos_enabled)
-        pulumi.set(__self__, "kerberos_realm", kerberos_realm)
-        pulumi.set(__self__, "key_tab_secret_id", key_tab_secret_id)
+                 backup_key_tab_secret_version: Optional[int] = None,
+                 current_key_tab_secret_version: Optional[int] = None,
+                 is_kerberos_enabled: Optional[bool] = None,
+                 kerberos_realm: Optional[str] = None,
+                 key_tab_secret_id: Optional[str] = None):
+        if backup_key_tab_secret_version is not None:
+            pulumi.set(__self__, "backup_key_tab_secret_version", backup_key_tab_secret_version)
+        if current_key_tab_secret_version is not None:
+            pulumi.set(__self__, "current_key_tab_secret_version", current_key_tab_secret_version)
+        if is_kerberos_enabled is not None:
+            pulumi.set(__self__, "is_kerberos_enabled", is_kerberos_enabled)
+        if kerberos_realm is not None:
+            pulumi.set(__self__, "kerberos_realm", kerberos_realm)
+        if key_tab_secret_id is not None:
+            pulumi.set(__self__, "key_tab_secret_id", key_tab_secret_id)
 
     @property
     @pulumi.getter(name="backupKeyTabSecretVersion")
-    def backup_key_tab_secret_version(self) -> int:
-        """
-        Version of the keytab secert in the Vault to use as a backup.
-        """
+    def backup_key_tab_secret_version(self) -> Optional[int]:
         return pulumi.get(self, "backup_key_tab_secret_version")
 
     @property
     @pulumi.getter(name="currentKeyTabSecretVersion")
-    def current_key_tab_secret_version(self) -> int:
-        """
-        Version of the keytab secret in the Vault to use.
-        """
+    def current_key_tab_secret_version(self) -> Optional[int]:
         return pulumi.get(self, "current_key_tab_secret_version")
 
     @property
     @pulumi.getter(name="isKerberosEnabled")
-    def is_kerberos_enabled(self) -> bool:
-        """
-        Specifies whether to enable or disable Kerberos.
-        """
+    def is_kerberos_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_kerberos_enabled")
 
     @property
     @pulumi.getter(name="kerberosRealm")
-    def kerberos_realm(self) -> str:
-        """
-        The Kerberos realm that the mount target will join.
-        """
+    def kerberos_realm(self) -> Optional[str]:
         return pulumi.get(self, "kerberos_realm")
 
     @property
     @pulumi.getter(name="keyTabSecretId")
-    def key_tab_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
-        """
+    def key_tab_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "key_tab_secret_id")
 
 
 @pulumi.output_type
 class GetMountTargetsMountTargetLdapIdmapResult(dict):
     def __init__(__self__, *,
-                 cache_lifetime_seconds: int,
-                 cache_refresh_interval_seconds: int,
-                 group_search_base: str,
-                 negative_cache_lifetime_seconds: int,
-                 outbound_connector1id: str,
-                 outbound_connector2id: str,
-                 schema_type: str,
-                 user_search_base: str):
-        """
-        :param int cache_lifetime_seconds: The maximum amount of time the mount target is allowed to use a cached entry.
-        :param int cache_refresh_interval_seconds: The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-        :param str group_search_base: All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-        :param int negative_cache_lifetime_seconds: The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-        :param str outbound_connector1id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-        :param str outbound_connector2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-        :param str schema_type: Schema type of the LDAP account.
-        :param str user_search_base: All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-        """
-        pulumi.set(__self__, "cache_lifetime_seconds", cache_lifetime_seconds)
-        pulumi.set(__self__, "cache_refresh_interval_seconds", cache_refresh_interval_seconds)
-        pulumi.set(__self__, "group_search_base", group_search_base)
-        pulumi.set(__self__, "negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
-        pulumi.set(__self__, "outbound_connector1id", outbound_connector1id)
-        pulumi.set(__self__, "outbound_connector2id", outbound_connector2id)
-        pulumi.set(__self__, "schema_type", schema_type)
-        pulumi.set(__self__, "user_search_base", user_search_base)
+                 cache_lifetime_seconds: Optional[int] = None,
+                 cache_refresh_interval_seconds: Optional[int] = None,
+                 group_search_base: Optional[str] = None,
+                 negative_cache_lifetime_seconds: Optional[int] = None,
+                 outbound_connector1id: Optional[str] = None,
+                 outbound_connector2id: Optional[str] = None,
+                 schema_type: Optional[str] = None,
+                 user_search_base: Optional[str] = None):
+        if cache_lifetime_seconds is not None:
+            pulumi.set(__self__, "cache_lifetime_seconds", cache_lifetime_seconds)
+        if cache_refresh_interval_seconds is not None:
+            pulumi.set(__self__, "cache_refresh_interval_seconds", cache_refresh_interval_seconds)
+        if group_search_base is not None:
+            pulumi.set(__self__, "group_search_base", group_search_base)
+        if negative_cache_lifetime_seconds is not None:
+            pulumi.set(__self__, "negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
+        if outbound_connector1id is not None:
+            pulumi.set(__self__, "outbound_connector1id", outbound_connector1id)
+        if outbound_connector2id is not None:
+            pulumi.set(__self__, "outbound_connector2id", outbound_connector2id)
+        if schema_type is not None:
+            pulumi.set(__self__, "schema_type", schema_type)
+        if user_search_base is not None:
+            pulumi.set(__self__, "user_search_base", user_search_base)
 
     @property
     @pulumi.getter(name="cacheLifetimeSeconds")
-    def cache_lifetime_seconds(self) -> int:
-        """
-        The maximum amount of time the mount target is allowed to use a cached entry.
-        """
+    def cache_lifetime_seconds(self) -> Optional[int]:
         return pulumi.get(self, "cache_lifetime_seconds")
 
     @property
     @pulumi.getter(name="cacheRefreshIntervalSeconds")
-    def cache_refresh_interval_seconds(self) -> int:
-        """
-        The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-        """
+    def cache_refresh_interval_seconds(self) -> Optional[int]:
         return pulumi.get(self, "cache_refresh_interval_seconds")
 
     @property
     @pulumi.getter(name="groupSearchBase")
-    def group_search_base(self) -> str:
-        """
-        All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-        """
+    def group_search_base(self) -> Optional[str]:
         return pulumi.get(self, "group_search_base")
 
     @property
     @pulumi.getter(name="negativeCacheLifetimeSeconds")
-    def negative_cache_lifetime_seconds(self) -> int:
-        """
-        The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-        """
+    def negative_cache_lifetime_seconds(self) -> Optional[int]:
         return pulumi.get(self, "negative_cache_lifetime_seconds")
 
     @property
     @pulumi.getter(name="outboundConnector1id")
-    def outbound_connector1id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-        """
+    def outbound_connector1id(self) -> Optional[str]:
         return pulumi.get(self, "outbound_connector1id")
 
     @property
     @pulumi.getter(name="outboundConnector2id")
-    def outbound_connector2id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-        """
+    def outbound_connector2id(self) -> Optional[str]:
         return pulumi.get(self, "outbound_connector2id")
 
     @property
     @pulumi.getter(name="schemaType")
-    def schema_type(self) -> str:
-        """
-        Schema type of the LDAP account.
-        """
+    def schema_type(self) -> Optional[str]:
         return pulumi.get(self, "schema_type")
 
     @property
     @pulumi.getter(name="userSearchBase")
-    def user_search_base(self) -> str:
-        """
-        All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-        """
+    def user_search_base(self) -> Optional[str]:
         return pulumi.get(self, "user_search_base")
 
 
 @pulumi.output_type
 class GetOutboundConnectorEndpointResult(dict):
     def __init__(__self__, *,
-                 hostname: str,
-                 port: str):
-        """
-        :param str hostname: Name of the DNS server.
-        :param str port: Port of the DNS server.
-        """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
+                 hostname: Optional[str] = None,
+                 port: Optional[str] = None):
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        Name of the DNS server.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        Port of the DNS server.
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
 
@@ -2046,179 +1553,130 @@ class GetOutboundConnectorsFilterResult(dict):
 @pulumi.output_type
 class GetOutboundConnectorsOutboundConnectorResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 bind_distinguished_name: str,
-                 compartment_id: str,
-                 connector_type: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 endpoints: Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult'],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 password_secret_id: str,
-                 password_secret_version: int,
-                 state: str,
-                 time_created: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str bind_distinguished_name: The LDAP Distinguished Name of the account.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str connector_type: The account type of this outbound connector.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        :param Sequence['GetOutboundConnectorsOutboundConnectorEndpointArgs'] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        :param int password_secret_version: Version of the password secret in the Vault to use.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "bind_distinguished_name", bind_distinguished_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connector_type", connector_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "password_secret_version", password_secret_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 availability_domain: Optional[str] = None,
+                 bind_distinguished_name: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 connector_type: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 endpoints: Optional[Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult']] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 password_secret_version: Optional[int] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if bind_distinguished_name is not None:
+            pulumi.set(__self__, "bind_distinguished_name", bind_distinguished_name)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if endpoints is not None:
+            pulumi.set(__self__, "endpoints", endpoints)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if password_secret_version is not None:
+            pulumi.set(__self__, "password_secret_version", password_secret_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="bindDistinguishedName")
-    def bind_distinguished_name(self) -> str:
-        """
-        The LDAP Distinguished Name of the account.
-        """
+    def bind_distinguished_name(self) -> Optional[str]:
         return pulumi.get(self, "bind_distinguished_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> str:
-        """
-        The account type of this outbound connector.
-        """
+    def connector_type(self) -> Optional[str]:
         return pulumi.get(self, "connector_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoints(self) -> Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult']:
-        """
-        Array of server endpoints to use when connecting with the LDAP bind account.
-        """
+    def endpoints(self) -> Optional[Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult']]:
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter(name="passwordSecretVersion")
-    def password_secret_version(self) -> int:
-        """
-        Version of the password secret in the Vault to use.
-        """
+    def password_secret_version(self) -> Optional[int]:
         return pulumi.get(self, "password_secret_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetOutboundConnectorsOutboundConnectorEndpointResult(dict):
     def __init__(__self__, *,
-                 hostname: str,
-                 port: str):
-        """
-        :param str hostname: Name of the DNS server.
-        :param str port: Port of the DNS server.
-        """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
+                 hostname: Optional[str] = None,
+                 port: Optional[str] = None):
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        Name of the DNS server.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        Port of the DNS server.
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
 
@@ -2252,183 +1710,133 @@ class GetReplicationTargetsFilterResult(dict):
 @pulumi.output_type
 class GetReplicationTargetsReplicationTargetResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 delta_progress: str,
-                 delta_status: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 last_snapshot_id: str,
-                 lifecycle_details: str,
-                 recovery_point_time: str,
-                 replication_id: str,
-                 source_id: str,
-                 state: str,
-                 target_id: str,
-                 time_created: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str delta_progress: Percentage progress of the current replication cycle.
-        :param str delta_status: The current state of the snapshot during replication operations.
-        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param str last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
-        :param str lifecycle_details: Additional information about the current `lifecycleState`.
-        :param str recovery_point_time: The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        :param str replication_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
-        :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
-        :param str time_created: The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delta_progress", delta_progress)
-        pulumi.set(__self__, "delta_status", delta_status)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "recovery_point_time", recovery_point_time)
-        pulumi.set(__self__, "replication_id", replication_id)
-        pulumi.set(__self__, "source_id", source_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 delta_progress: Optional[str] = None,
+                 delta_status: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 last_snapshot_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 recovery_point_time: Optional[str] = None,
+                 replication_id: Optional[str] = None,
+                 source_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 target_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if delta_progress is not None:
+            pulumi.set(__self__, "delta_progress", delta_progress)
+        if delta_status is not None:
+            pulumi.set(__self__, "delta_status", delta_status)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if last_snapshot_id is not None:
+            pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if recovery_point_time is not None:
+            pulumi.set(__self__, "recovery_point_time", recovery_point_time)
+        if replication_id is not None:
+            pulumi.set(__self__, "replication_id", replication_id)
+        if source_id is not None:
+            pulumi.set(__self__, "source_id", source_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deltaProgress")
-    def delta_progress(self) -> str:
-        """
-        Percentage progress of the current replication cycle.
-        """
+    def delta_progress(self) -> Optional[str]:
         return pulumi.get(self, "delta_progress")
 
     @property
     @pulumi.getter(name="deltaStatus")
-    def delta_status(self) -> str:
-        """
-        The current state of the snapshot during replication operations.
-        """
+    def delta_status(self) -> Optional[str]:
         return pulumi.get(self, "delta_status")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lastSnapshotId")
-    def last_snapshot_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
-        """
+    def last_snapshot_id(self) -> Optional[str]:
         return pulumi.get(self, "last_snapshot_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current `lifecycleState`.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="recoveryPointTime")
-    def recovery_point_time(self) -> str:
-        """
-        The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        """
+    def recovery_point_time(self) -> Optional[str]:
         return pulumi.get(self, "recovery_point_time")
 
     @property
     @pulumi.getter(name="replicationId")
-    def replication_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
-        """
+    def replication_id(self) -> Optional[str]:
         return pulumi.get(self, "replication_id")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -2462,194 +1870,141 @@ class GetReplicationsFilterResult(dict):
 @pulumi.output_type
 class GetReplicationsReplicationResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 delta_progress: str,
-                 delta_status: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 last_snapshot_id: str,
-                 lifecycle_details: str,
-                 recovery_point_time: str,
-                 replication_interval: str,
-                 replication_target_id: str,
-                 source_id: str,
-                 state: str,
-                 target_id: str,
-                 time_created: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str delta_progress: Percentage progress of the current replication cycle.
-        :param str delta_status: The current state of the snapshot during replication operations.
-        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param str last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-        :param str lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param str recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        :param str replication_interval: Duration in minutes between replication snapshots.
-        :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-        :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
-        :param str time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delta_progress", delta_progress)
-        pulumi.set(__self__, "delta_status", delta_status)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "recovery_point_time", recovery_point_time)
-        pulumi.set(__self__, "replication_interval", replication_interval)
-        pulumi.set(__self__, "replication_target_id", replication_target_id)
-        pulumi.set(__self__, "source_id", source_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 delta_progress: Optional[str] = None,
+                 delta_status: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 last_snapshot_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 recovery_point_time: Optional[str] = None,
+                 replication_interval: Optional[str] = None,
+                 replication_target_id: Optional[str] = None,
+                 source_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 target_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if delta_progress is not None:
+            pulumi.set(__self__, "delta_progress", delta_progress)
+        if delta_status is not None:
+            pulumi.set(__self__, "delta_status", delta_status)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if last_snapshot_id is not None:
+            pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if recovery_point_time is not None:
+            pulumi.set(__self__, "recovery_point_time", recovery_point_time)
+        if replication_interval is not None:
+            pulumi.set(__self__, "replication_interval", replication_interval)
+        if replication_target_id is not None:
+            pulumi.set(__self__, "replication_target_id", replication_target_id)
+        if source_id is not None:
+            pulumi.set(__self__, "source_id", source_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deltaProgress")
-    def delta_progress(self) -> str:
-        """
-        Percentage progress of the current replication cycle.
-        """
+    def delta_progress(self) -> Optional[str]:
         return pulumi.get(self, "delta_progress")
 
     @property
     @pulumi.getter(name="deltaStatus")
-    def delta_status(self) -> str:
-        """
-        The current state of the snapshot during replication operations.
-        """
+    def delta_status(self) -> Optional[str]:
         return pulumi.get(self, "delta_status")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lastSnapshotId")
-    def last_snapshot_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-        """
+    def last_snapshot_id(self) -> Optional[str]:
         return pulumi.get(self, "last_snapshot_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current 'lifecycleState'.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="recoveryPointTime")
-    def recovery_point_time(self) -> str:
-        """
-        The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        """
+    def recovery_point_time(self) -> Optional[str]:
         return pulumi.get(self, "recovery_point_time")
 
     @property
     @pulumi.getter(name="replicationInterval")
-    def replication_interval(self) -> str:
-        """
-        Duration in minutes between replication snapshots.
-        """
+    def replication_interval(self) -> Optional[str]:
         return pulumi.get(self, "replication_interval")
 
     @property
     @pulumi.getter(name="replicationTargetId")
-    def replication_target_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-        """
+    def replication_target_id(self) -> Optional[str]:
         return pulumi.get(self, "replication_target_id")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -2659,9 +2014,6 @@ class GetSnapshotsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the snapshot. This value is immutable.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2670,9 +2022,6 @@ class GetSnapshotsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the snapshot. This value is immutable.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2689,167 +2038,117 @@ class GetSnapshotsFilterResult(dict):
 @pulumi.output_type
 class GetSnapshotsSnapshotResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 expiration_time: str,
-                 file_system_id: str,
-                 filesystem_snapshot_policy_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_clone_source: bool,
-                 lifecycle_details: str,
-                 name: str,
-                 provenance_id: str,
-                 snapshot_time: str,
-                 snapshot_type: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str expiration_time: The time when this snapshot will be deleted.
-        :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-        :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param bool is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param str lifecycle_details: Additional information about the current `lifecycleState`.
-        :param str name: Name of the snapshot. This value is immutable.
-        :param str provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param str snapshot_time: The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
-               * If the snapshot is created in the original file system directory.
-               * If the snapshot is cloned from a file system.
-               * If the snapshot is replicated from a file system.
-        :param str snapshot_type: Specifies the generation type of the snapshot.
-        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "expiration_time", expiration_time)
-        pulumi.set(__self__, "file_system_id", file_system_id)
-        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_clone_source", is_clone_source)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "provenance_id", provenance_id)
-        pulumi.set(__self__, "snapshot_time", snapshot_time)
-        pulumi.set(__self__, "snapshot_type", snapshot_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 expiration_time: Optional[str] = None,
+                 file_system_id: Optional[str] = None,
+                 filesystem_snapshot_policy_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_clone_source: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 name: Optional[str] = None,
+                 provenance_id: Optional[str] = None,
+                 snapshot_time: Optional[str] = None,
+                 snapshot_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if expiration_time is not None:
+            pulumi.set(__self__, "expiration_time", expiration_time)
+        if file_system_id is not None:
+            pulumi.set(__self__, "file_system_id", file_system_id)
+        if filesystem_snapshot_policy_id is not None:
+            pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_clone_source is not None:
+            pulumi.set(__self__, "is_clone_source", is_clone_source)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if provenance_id is not None:
+            pulumi.set(__self__, "provenance_id", provenance_id)
+        if snapshot_time is not None:
+            pulumi.set(__self__, "snapshot_time", snapshot_time)
+        if snapshot_type is not None:
+            pulumi.set(__self__, "snapshot_type", snapshot_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="expirationTime")
-    def expiration_time(self) -> str:
-        """
-        The time when this snapshot will be deleted.
-        """
+    def expiration_time(self) -> Optional[str]:
         return pulumi.get(self, "expiration_time")
 
     @property
     @pulumi.getter(name="fileSystemId")
-    def file_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-        """
+    def file_system_id(self) -> Optional[str]:
         return pulumi.get(self, "file_system_id")
 
     @property
     @pulumi.getter(name="filesystemSnapshotPolicyId")
-    def filesystem_snapshot_policy_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
-        """
+    def filesystem_snapshot_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCloneSource")
-    def is_clone_source(self) -> bool:
-        """
-        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def is_clone_source(self) -> Optional[bool]:
         return pulumi.get(self, "is_clone_source")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current `lifecycleState`.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the snapshot. This value is immutable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="provenanceId")
-    def provenance_id(self) -> str:
-        """
-        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def provenance_id(self) -> Optional[str]:
         return pulumi.get(self, "provenance_id")
 
     @property
     @pulumi.getter(name="snapshotTime")
-    def snapshot_time(self) -> str:
-        """
-        The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
-        * If the snapshot is created in the original file system directory.
-        * If the snapshot is cloned from a file system.
-        * If the snapshot is replicated from a file system.
-        """
+    def snapshot_time(self) -> Optional[str]:
         return pulumi.get(self, "snapshot_time")
 
     @property
     @pulumi.getter(name="snapshotType")
-    def snapshot_type(self) -> str:
-        """
-        Specifies the generation type of the snapshot.
-        """
+    def snapshot_type(self) -> Optional[str]:
         return pulumi.get(self, "snapshot_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 

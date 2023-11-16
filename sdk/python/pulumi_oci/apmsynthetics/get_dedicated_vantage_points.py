@@ -53,18 +53,12 @@ class GetDedicatedVantagePointsResult:
 
     @property
     @pulumi.getter(name="dedicatedVantagePointCollections")
-    def dedicated_vantage_point_collections(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionResult']:
-        """
-        The list of dedicated_vantage_point_collection.
-        """
+    def dedicated_vantage_point_collections(self) -> Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionResult']]:
         return pulumi.get(self, "dedicated_vantage_point_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +68,7 @@ class GetDedicatedVantagePointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,17 +77,11 @@ class GetDedicatedVantagePointsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Unique permanent name of the dedicated vantage point. This is the same as the displayName.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        Status of the dedicated vantage point.
-        """
         return pulumi.get(self, "status")
 
 
@@ -119,27 +107,7 @@ def get_dedicated_vantage_points(apm_domain_id: Optional[str] = None,
                                  status: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVantagePointsResult:
     """
-    This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of dedicated vantage points.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vantage_points = oci.ApmSynthetics.get_dedicated_vantage_points(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        display_name=var["dedicated_vantage_point_display_name"],
-        name=var["dedicated_vantage_point_name"],
-        status=var["dedicated_vantage_point_status"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only the resources that match the entire display name.
-    :param str name: A filter to return only the resources that match the entire name.
-    :param str status: A filter to return only the dedicated vantage points that match a given status.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -168,26 +136,6 @@ def get_dedicated_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str
                                         status: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVantagePointsResult]:
     """
-    This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of dedicated vantage points.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vantage_points = oci.ApmSynthetics.get_dedicated_vantage_points(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        display_name=var["dedicated_vantage_point_display_name"],
-        name=var["dedicated_vantage_point_name"],
-        status=var["dedicated_vantage_point_status"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only the resources that match the entire display name.
-    :param str name: A filter to return only the resources that match the entire name.
-    :param str status: A filter to return only the dedicated vantage points that match a given status.
+    Use this data source to access information about an existing resource.
     """
     ...

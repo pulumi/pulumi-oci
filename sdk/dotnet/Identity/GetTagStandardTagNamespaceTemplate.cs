@@ -125,11 +125,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The default description of the tag namespace that users can use to create the tag definition
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The reserved name of this standard tag namespace
         /// </summary>
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The status of the standard tag namespace
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The template of the tag definition. This object includes necessary details to create the provided standard tag definition.
         /// </summary>
@@ -147,13 +147,13 @@ namespace Pulumi.Oci.Identity
         private GetTagStandardTagNamespaceTemplateResult(
             string compartmentId,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
             string standardTagNamespaceName,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetTagStandardTagNamespaceTemplateTagDefinitionTemplateResult> tagDefinitionTemplates)
         {

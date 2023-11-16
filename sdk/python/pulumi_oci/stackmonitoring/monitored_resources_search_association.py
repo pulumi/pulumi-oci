@@ -26,18 +26,6 @@ class MonitoredResourcesSearchAssociationArgs:
                  source_resource_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesSearchAssociation resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if association_type is not None:
@@ -58,9 +46,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -70,9 +55,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="associationType")
     def association_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Association type filter to search associated resources.
-        """
         return pulumi.get(self, "association_type")
 
     @association_type.setter
@@ -82,9 +64,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "destination_resource_id")
 
     @destination_resource_id.setter
@@ -94,9 +73,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="destinationResourceName")
     def destination_resource_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Name.
-        """
         return pulumi.get(self, "destination_resource_name")
 
     @destination_resource_name.setter
@@ -106,9 +82,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="destinationResourceType")
     def destination_resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Type.
-        """
         return pulumi.get(self, "destination_resource_type")
 
     @destination_resource_type.setter
@@ -118,9 +91,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "source_resource_id")
 
     @source_resource_id.setter
@@ -130,9 +100,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="sourceResourceName")
     def source_resource_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Name.
-        """
         return pulumi.get(self, "source_resource_name")
 
     @source_resource_name.setter
@@ -142,13 +109,6 @@ class MonitoredResourcesSearchAssociationArgs:
     @property
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_resource_type")
 
     @source_resource_type.setter
@@ -170,19 +130,6 @@ class _MonitoredResourcesSearchAssociationState:
                  source_resource_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesSearchAssociation resources.
-        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemArgs']]] items: List of Monitored Resource Associations.
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if association_type is not None:
             pulumi.set(__self__, "association_type", association_type)
@@ -206,9 +153,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="associationType")
     def association_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Association type filter to search associated resources.
-        """
         return pulumi.get(self, "association_type")
 
     @association_type.setter
@@ -218,9 +162,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -230,9 +171,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "destination_resource_id")
 
     @destination_resource_id.setter
@@ -242,9 +180,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="destinationResourceName")
     def destination_resource_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Name.
-        """
         return pulumi.get(self, "destination_resource_name")
 
     @destination_resource_name.setter
@@ -254,9 +189,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="destinationResourceType")
     def destination_resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Type.
-        """
         return pulumi.get(self, "destination_resource_type")
 
     @destination_resource_type.setter
@@ -266,9 +198,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemArgs']]]]:
-        """
-        List of Monitored Resource Associations.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -278,9 +207,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "source_resource_id")
 
     @source_resource_id.setter
@@ -290,9 +216,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="sourceResourceName")
     def source_resource_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Name.
-        """
         return pulumi.get(self, "source_resource_name")
 
     @source_resource_name.setter
@@ -302,13 +225,6 @@ class _MonitoredResourcesSearchAssociationState:
     @property
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_resource_type")
 
     @source_resource_type.setter
@@ -331,49 +247,9 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
                  source_resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Search associations in the given compartment based on the search criteria.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resources_search_association = oci.stack_monitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation",
-            compartment_id=var["compartment_id"],
-            association_type=var["monitored_resources_search_association_association_type"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            destination_resource_name=var["monitored_resources_search_association_destination_resource_name"],
-            destination_resource_type=var["monitored_resources_search_association_destination_resource_type"],
-            source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"],
-            source_resource_name=var["monitored_resources_search_association_source_resource_name"],
-            source_resource_type=var["monitored_resources_search_association_source_resource_type"])
-        ```
-
-        ## Import
-
-        MonitoredResourcesSearchAssociations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
-        ```
-
+        Create a MonitoredResourcesSearchAssociation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -382,35 +258,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
                  args: MonitoredResourcesSearchAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Search associations in the given compartment based on the search criteria.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resources_search_association = oci.stack_monitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation",
-            compartment_id=var["compartment_id"],
-            association_type=var["monitored_resources_search_association_association_type"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            destination_resource_name=var["monitored_resources_search_association_destination_resource_name"],
-            destination_resource_type=var["monitored_resources_search_association_destination_resource_type"],
-            source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"],
-            source_resource_name=var["monitored_resources_search_association_source_resource_name"],
-            source_resource_type=var["monitored_resources_search_association_source_resource_type"])
-        ```
-
-        ## Import
-
-        MonitoredResourcesSearchAssociations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
-        ```
-
+        Create a MonitoredResourcesSearchAssociation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MonitoredResourcesSearchAssociationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -480,19 +328,6 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchAssociationItemArgs']]]] items: List of Monitored Resource Associations.
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -512,76 +347,45 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="associationType")
     def association_type(self) -> pulumi.Output[Optional[str]]:
-        """
-        Association type filter to search associated resources.
-        """
         return pulumi.get(self, "association_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "destination_resource_id")
 
     @property
     @pulumi.getter(name="destinationResourceName")
     def destination_resource_name(self) -> pulumi.Output[Optional[str]]:
-        """
-        Source Monitored Resource Name.
-        """
         return pulumi.get(self, "destination_resource_name")
 
     @property
     @pulumi.getter(name="destinationResourceType")
     def destination_resource_type(self) -> pulumi.Output[Optional[str]]:
-        """
-        Source Monitored Resource Type.
-        """
         return pulumi.get(self, "destination_resource_type")
 
     @property
     @pulumi.getter
-    def items(self) -> pulumi.Output[Sequence['outputs.MonitoredResourcesSearchAssociationItem']]:
-        """
-        List of Monitored Resource Associations.
-        """
+    def items(self) -> pulumi.Output[Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItem']]]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "source_resource_id")
 
     @property
     @pulumi.getter(name="sourceResourceName")
     def source_resource_name(self) -> pulumi.Output[Optional[str]]:
-        """
-        Source Monitored Resource Name.
-        """
         return pulumi.get(self, "source_resource_name")
 
     @property
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> pulumi.Output[Optional[str]]:
-        """
-        Source Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_resource_type")
 

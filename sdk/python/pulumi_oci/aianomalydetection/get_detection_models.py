@@ -49,17 +49,11 @@ class GetDetectionModelsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID for the model's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetDetectionModelsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,26 +71,17 @@ class GetDetectionModelsResult:
 
     @property
     @pulumi.getter(name="modelCollections")
-    def model_collections(self) -> Sequence['outputs.GetDetectionModelsModelCollectionResult']:
-        """
-        The list of model_collection.
-        """
+    def model_collections(self) -> Optional[Sequence['outputs.GetDetectionModelsModelCollectionResult']]:
         return pulumi.get(self, "model_collections")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the model.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_detection_models(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectionModelsResult:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of Models.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_models = oci.AiAnomalyDetection.get_detection_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["model_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_detection_models_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionModelsResult]:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of Models.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_models = oci.AiAnomalyDetection.get_detection_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["model_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

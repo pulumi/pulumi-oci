@@ -47,51 +47,51 @@ export interface GetVolumeGroupReplicaResult {
     /**
      * The availability domain of the volume group replica.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The OCID of the compartment that contains the volume group replica.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Volume replicas within this volume group replica.
      */
-    readonly memberReplicas: outputs.Core.GetVolumeGroupReplicaMemberReplica[];
+    readonly memberReplicas?: outputs.Core.GetVolumeGroupReplicaMemberReplica[];
     /**
      * The aggregate size of the volume group replica in GBs.
      */
-    readonly sizeInGbs: string;
+    readonly sizeInGbs?: string;
     /**
      * The current state of a volume group.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the volume group replica was last synced from the source volume group. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeLastSynced: string;
+    readonly timeLastSynced?: string;
     /**
      * The OCID of the source volume group.
      */
-    readonly volumeGroupId: string;
+    readonly volumeGroupId?: string;
     readonly volumeGroupReplicaId: string;
 }
 /**

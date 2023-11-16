@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -121,14 +122,14 @@ public class Target extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The target description.
@@ -137,7 +138,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return The target description.
@@ -145,8 +146,8 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) DetectorTemplate identifier.
@@ -173,7 +174,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -181,106 +182,106 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * List of inherited compartments
      * 
      */
     @Export(name="inheritedByCompartments", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> inheritedByCompartments;
+    private Output</* @Nullable */ List<String>> inheritedByCompartments;
 
     /**
      * @return List of inherited compartments
      * 
      */
-    public Output<List<String>> inheritedByCompartments() {
-        return this.inheritedByCompartments;
+    public Output<Optional<List<String>>> inheritedByCompartments() {
+        return Codegen.optional(this.inheritedByCompartments);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecyleDetails;
+    private Output</* @Nullable */ String> lifecyleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecyleDetails() {
-        return this.lifecyleDetails;
+    public Output<Optional<String>> lifecyleDetails() {
+        return Codegen.optional(this.lifecyleDetails);
     }
     /**
      * Total number of recipes attached to target
      * 
      */
     @Export(name="recipeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> recipeCount;
+    private Output</* @Nullable */ Integer> recipeCount;
 
     /**
      * @return Total number of recipes attached to target
      * 
      */
-    public Output<Integer> recipeCount() {
-        return this.recipeCount;
+    public Output<Optional<Integer>> recipeCount() {
+        return Codegen.optional(this.recipeCount);
     }
     /**
      * (Updatable) The current state of the DetectorRule.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The current state of the DetectorRule.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * Details specific to the target type.
      * 
      */
     @Export(name="targetDetails", refs={List.class,TargetTargetDetail.class}, tree="[0,1]")
-    private Output<List<TargetTargetDetail>> targetDetails;
+    private Output</* @Nullable */ List<TargetTargetDetail>> targetDetails;
 
     /**
      * @return Details specific to the target type.
      * 
      */
-    public Output<List<TargetTargetDetail>> targetDetails() {
-        return this.targetDetails;
+    public Output<Optional<List<TargetTargetDetail>>> targetDetails() {
+        return Codegen.optional(this.targetDetails);
     }
     /**
      * (Updatable) List of detector recipes to associate with target
      * 
      */
     @Export(name="targetDetectorRecipes", refs={List.class,TargetTargetDetectorRecipe.class}, tree="[0,1]")
-    private Output<List<TargetTargetDetectorRecipe>> targetDetectorRecipes;
+    private Output</* @Nullable */ List<TargetTargetDetectorRecipe>> targetDetectorRecipes;
 
     /**
      * @return (Updatable) List of detector recipes to associate with target
      * 
      */
-    public Output<List<TargetTargetDetectorRecipe>> targetDetectorRecipes() {
-        return this.targetDetectorRecipes;
+    public Output<Optional<List<TargetTargetDetectorRecipe>>> targetDetectorRecipes() {
+        return Codegen.optional(this.targetDetectorRecipes);
     }
     /**
      * Resource ID which the target uses to monitor
@@ -315,42 +316,42 @@ public class Target extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="targetResponderRecipes", refs={List.class,TargetTargetResponderRecipe.class}, tree="[0,1]")
-    private Output<List<TargetTargetResponderRecipe>> targetResponderRecipes;
+    private Output</* @Nullable */ List<TargetTargetResponderRecipe>> targetResponderRecipes;
 
     /**
      * @return (Updatable) List of responder recipes to associate with target
      * 
      */
-    public Output<List<TargetTargetResponderRecipe>> targetResponderRecipes() {
-        return this.targetResponderRecipes;
+    public Output<Optional<List<TargetTargetResponderRecipe>>> targetResponderRecipes() {
+        return Codegen.optional(this.targetResponderRecipes);
     }
     /**
      * The date and time the target was created. Format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the target was updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

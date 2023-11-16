@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRecipeVerifyConfiguration {
@@ -15,52 +17,52 @@ public final class GetRemediationRecipeVerifyConfiguration {
      * @return Additional key-value pairs passed as parameters to the build service when running an experiment.
      * 
      */
-    private Map<String,Object> additionalParameters;
+    private @Nullable Map<String,Object> additionalParameters;
     /**
      * @return The type of Build Service.
      * 
      */
-    private String buildServiceType;
+    private @Nullable String buildServiceType;
     /**
      * @return The URL that locates the Jenkins pipeline.
      * 
      */
-    private String jenkinsUrl;
+    private @Nullable String jenkinsUrl;
     /**
      * @return The name of the Jenkins pipeline job that identifies the build pipeline.
      * 
      */
-    private String jobName;
+    private @Nullable String jobName;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
      * 
      */
-    private String patSecretId;
+    private @Nullable String patSecretId;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user&#39;s DevOps Build Pipeline.
      * 
      */
-    private String pipelineId;
+    private @Nullable String pipelineId;
     /**
      * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
-    private String repositoryUrl;
+    private @Nullable String repositoryUrl;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
      * 
      */
-    private String triggerSecretId;
+    private @Nullable String triggerSecretId;
     /**
      * @return The username that will be used to authenticate with Jenkins.
      * 
      */
-    private String username;
+    private @Nullable String username;
     /**
      * @return The name of the GitHub Actions workflow that defines the build pipeline.
      * 
      */
-    private String workflowName;
+    private @Nullable String workflowName;
 
     private GetRemediationRecipeVerifyConfiguration() {}
     /**
@@ -68,70 +70,70 @@ public final class GetRemediationRecipeVerifyConfiguration {
      * 
      */
     public Map<String,Object> additionalParameters() {
-        return this.additionalParameters;
+        return this.additionalParameters == null ? Map.of() : this.additionalParameters;
     }
     /**
      * @return The type of Build Service.
      * 
      */
-    public String buildServiceType() {
-        return this.buildServiceType;
+    public Optional<String> buildServiceType() {
+        return Optional.ofNullable(this.buildServiceType);
     }
     /**
      * @return The URL that locates the Jenkins pipeline.
      * 
      */
-    public String jenkinsUrl() {
-        return this.jenkinsUrl;
+    public Optional<String> jenkinsUrl() {
+        return Optional.ofNullable(this.jenkinsUrl);
     }
     /**
      * @return The name of the Jenkins pipeline job that identifies the build pipeline.
      * 
      */
-    public String jobName() {
-        return this.jobName;
+    public Optional<String> jobName() {
+        return Optional.ofNullable(this.jobName);
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
      * 
      */
-    public String patSecretId() {
-        return this.patSecretId;
+    public Optional<String> patSecretId() {
+        return Optional.ofNullable(this.patSecretId);
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user&#39;s DevOps Build Pipeline.
      * 
      */
-    public String pipelineId() {
-        return this.pipelineId;
+    public Optional<String> pipelineId() {
+        return Optional.ofNullable(this.pipelineId);
     }
     /**
      * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
-    public String repositoryUrl() {
-        return this.repositoryUrl;
+    public Optional<String> repositoryUrl() {
+        return Optional.ofNullable(this.repositoryUrl);
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
      * 
      */
-    public String triggerSecretId() {
-        return this.triggerSecretId;
+    public Optional<String> triggerSecretId() {
+        return Optional.ofNullable(this.triggerSecretId);
     }
     /**
      * @return The username that will be used to authenticate with Jenkins.
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
     /**
      * @return The name of the GitHub Actions workflow that defines the build pipeline.
      * 
      */
-    public String workflowName() {
-        return this.workflowName;
+    public Optional<String> workflowName() {
+        return Optional.ofNullable(this.workflowName);
     }
 
     public static Builder builder() {
@@ -143,16 +145,16 @@ public final class GetRemediationRecipeVerifyConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalParameters;
-        private String buildServiceType;
-        private String jenkinsUrl;
-        private String jobName;
-        private String patSecretId;
-        private String pipelineId;
-        private String repositoryUrl;
-        private String triggerSecretId;
-        private String username;
-        private String workflowName;
+        private @Nullable Map<String,Object> additionalParameters;
+        private @Nullable String buildServiceType;
+        private @Nullable String jenkinsUrl;
+        private @Nullable String jobName;
+        private @Nullable String patSecretId;
+        private @Nullable String pipelineId;
+        private @Nullable String repositoryUrl;
+        private @Nullable String triggerSecretId;
+        private @Nullable String username;
+        private @Nullable String workflowName;
         public Builder() {}
         public Builder(GetRemediationRecipeVerifyConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -169,53 +171,53 @@ public final class GetRemediationRecipeVerifyConfiguration {
         }
 
         @CustomType.Setter
-        public Builder additionalParameters(Map<String,Object> additionalParameters) {
-            this.additionalParameters = Objects.requireNonNull(additionalParameters);
+        public Builder additionalParameters(@Nullable Map<String,Object> additionalParameters) {
+            this.additionalParameters = additionalParameters;
             return this;
         }
         @CustomType.Setter
-        public Builder buildServiceType(String buildServiceType) {
-            this.buildServiceType = Objects.requireNonNull(buildServiceType);
+        public Builder buildServiceType(@Nullable String buildServiceType) {
+            this.buildServiceType = buildServiceType;
             return this;
         }
         @CustomType.Setter
-        public Builder jenkinsUrl(String jenkinsUrl) {
-            this.jenkinsUrl = Objects.requireNonNull(jenkinsUrl);
+        public Builder jenkinsUrl(@Nullable String jenkinsUrl) {
+            this.jenkinsUrl = jenkinsUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder jobName(String jobName) {
-            this.jobName = Objects.requireNonNull(jobName);
+        public Builder jobName(@Nullable String jobName) {
+            this.jobName = jobName;
             return this;
         }
         @CustomType.Setter
-        public Builder patSecretId(String patSecretId) {
-            this.patSecretId = Objects.requireNonNull(patSecretId);
+        public Builder patSecretId(@Nullable String patSecretId) {
+            this.patSecretId = patSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder pipelineId(String pipelineId) {
-            this.pipelineId = Objects.requireNonNull(pipelineId);
+        public Builder pipelineId(@Nullable String pipelineId) {
+            this.pipelineId = pipelineId;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+        public Builder repositoryUrl(@Nullable String repositoryUrl) {
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerSecretId(String triggerSecretId) {
-            this.triggerSecretId = Objects.requireNonNull(triggerSecretId);
+        public Builder triggerSecretId(@Nullable String triggerSecretId) {
+            this.triggerSecretId = triggerSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         @CustomType.Setter
-        public Builder workflowName(String workflowName) {
-            this.workflowName = Objects.requireNonNull(workflowName);
+        public Builder workflowName(@Nullable String workflowName) {
+            this.workflowName = workflowName;
             return this;
         }
         public GetRemediationRecipeVerifyConfiguration build() {

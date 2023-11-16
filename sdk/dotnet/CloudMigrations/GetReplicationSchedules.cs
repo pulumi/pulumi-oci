@@ -177,7 +177,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of replication_schedule_collection.
         /// </summary>
@@ -196,7 +196,7 @@ namespace Pulumi.Oci.CloudMigrations
 
             ImmutableArray<Outputs.GetReplicationSchedulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetReplicationSchedulesReplicationScheduleCollectionResult> replicationScheduleCollections,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
@@ -65,8 +64,8 @@ type GetManagedDatabaseUsersArgs struct {
 type GetManagedDatabaseUsersResult struct {
 	Filters []GetManagedDatabaseUsersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The name of the User.
 	Name *string `pulumi:"name"`
 	// The list of user_collection.
@@ -114,19 +113,13 @@ func (o GetManagedDatabaseUsersResultOutput) ToGetManagedDatabaseUsersResultOutp
 	return o
 }
 
-func (o GetManagedDatabaseUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUsersResult] {
-	return pulumix.Output[GetManagedDatabaseUsersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseUsersResultOutput) Filters() GetManagedDatabaseUsersFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUsersResult) []GetManagedDatabaseUsersFilter { return v.Filters }).(GetManagedDatabaseUsersFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUsersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUsersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUsersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUsersResultOutput) ManagedDatabaseId() pulumi.StringOutput {

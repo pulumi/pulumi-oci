@@ -26,18 +26,6 @@ class ProductLicenseArgs:
                  vendor_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ProductLicense resource.
-        :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
-        :param pulumi.Input[str] display_name: Name of the product license.
-        :param pulumi.Input[bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.
-        :param pulumi.Input[str] license_unit: The product license unit.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]] images: (Updatable) The image details associated with the product license.
-        :param pulumi.Input[str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -55,9 +43,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +52,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        Name of the product license.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -79,9 +61,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter(name="isVendorOracle")
     def is_vendor_oracle(self) -> pulumi.Input[bool]:
-        """
-        Specifies if the product license vendor is Oracle or a third party.
-        """
         return pulumi.get(self, "is_vendor_oracle")
 
     @is_vendor_oracle.setter
@@ -91,9 +70,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter(name="licenseUnit")
     def license_unit(self) -> pulumi.Input[str]:
-        """
-        The product license unit.
-        """
         return pulumi.get(self, "license_unit")
 
     @license_unit.setter
@@ -103,9 +79,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -115,9 +88,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -127,9 +97,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter
     def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]:
-        """
-        (Updatable) The image details associated with the product license.
-        """
         return pulumi.get(self, "images")
 
     @images.setter
@@ -139,13 +106,6 @@ class ProductLicenseArgs:
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The product license vendor name, for example: Microsoft, RHEL, and so on. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
@@ -178,30 +138,6 @@ class _ProductLicenseState:
                  vendor_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ProductLicense resources.
-        :param pulumi.Input[int] active_license_record_count: The number of active license records associated with the product license.
-        :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Name of the product license.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]] images: (Updatable) The image details associated with the product license.
-        :param pulumi.Input[bool] is_over_subscribed: Specifies whether or not the product license is oversubscribed.
-        :param pulumi.Input[bool] is_unlimited: Specifies if the license unit count is unlimited.
-        :param pulumi.Input[bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.
-        :param pulumi.Input[str] license_unit: The product license unit.
-        :param pulumi.Input[str] state: The current product license state.
-        :param pulumi.Input[str] status: The current product license status.
-        :param pulumi.Input[str] status_description: Status description for the current product license status.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param pulumi.Input[int] total_active_license_unit_count: The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-        :param pulumi.Input[int] total_license_record_count: The number of license records associated with the product license.
-        :param pulumi.Input[float] total_license_units_consumed: The number of license units consumed. Updated after each allocation run.
-        :param pulumi.Input[str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if active_license_record_count is not None:
             pulumi.set(__self__, "active_license_record_count", active_license_record_count)
@@ -247,9 +183,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="activeLicenseRecordCount")
     def active_license_record_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of active license records associated with the product license.
-        """
         return pulumi.get(self, "active_license_record_count")
 
     @active_license_record_count.setter
@@ -259,9 +192,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -271,9 +201,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -283,9 +210,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the product license.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -295,9 +219,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -307,9 +228,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter
     def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]:
-        """
-        (Updatable) The image details associated with the product license.
-        """
         return pulumi.get(self, "images")
 
     @images.setter
@@ -319,9 +237,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="isOverSubscribed")
     def is_over_subscribed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies whether or not the product license is oversubscribed.
-        """
         return pulumi.get(self, "is_over_subscribed")
 
     @is_over_subscribed.setter
@@ -331,9 +246,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="isUnlimited")
     def is_unlimited(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies if the license unit count is unlimited.
-        """
         return pulumi.get(self, "is_unlimited")
 
     @is_unlimited.setter
@@ -343,9 +255,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="isVendorOracle")
     def is_vendor_oracle(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies if the product license vendor is Oracle or a third party.
-        """
         return pulumi.get(self, "is_vendor_oracle")
 
     @is_vendor_oracle.setter
@@ -355,9 +264,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="licenseUnit")
     def license_unit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The product license unit.
-        """
         return pulumi.get(self, "license_unit")
 
     @license_unit.setter
@@ -367,9 +273,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current product license state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -379,9 +282,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current product license status.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -391,9 +291,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="statusDescription")
     def status_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        Status description for the current product license status.
-        """
         return pulumi.get(self, "status_description")
 
     @status_description.setter
@@ -403,9 +300,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -415,9 +309,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -427,9 +318,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -439,9 +327,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="totalActiveLicenseUnitCount")
     def total_active_license_unit_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-        """
         return pulumi.get(self, "total_active_license_unit_count")
 
     @total_active_license_unit_count.setter
@@ -451,9 +336,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="totalLicenseRecordCount")
     def total_license_record_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of license records associated with the product license.
-        """
         return pulumi.get(self, "total_license_record_count")
 
     @total_license_record_count.setter
@@ -463,9 +345,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="totalLicenseUnitsConsumed")
     def total_license_units_consumed(self) -> Optional[pulumi.Input[float]]:
-        """
-        The number of license units consumed. Updated after each allocation run.
-        """
         return pulumi.get(self, "total_license_units_consumed")
 
     @total_license_units_consumed.setter
@@ -475,13 +354,6 @@ class _ProductLicenseState:
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The product license vendor name, for example: Microsoft, RHEL, and so on. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
@@ -504,56 +376,9 @@ class ProductLicense(pulumi.CustomResource):
                  vendor_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new product license.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_product_license = oci.license_manager.ProductLicense("testProductLicense",
-            compartment_id=var["compartment_id"],
-            display_name=var["product_license_display_name"],
-            is_vendor_oracle=var["product_license_is_vendor_oracle"],
-            license_unit=var["product_license_license_unit"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            images=[oci.license_manager.ProductLicenseImageArgs(
-                listing_id=oci_marketplace_listing["test_listing"]["id"],
-                package_version=var["product_license_images_package_version"],
-            )],
-            vendor_name=var["product_license_vendor_name"])
-        ```
-
-        ## Import
-
-        ProductLicenses can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
-        ```
-
+        Create a ProductLicense resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Name of the product license.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProductLicenseImageArgs']]]] images: (Updatable) The image details associated with the product license.
-        :param pulumi.Input[bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.
-        :param pulumi.Input[str] license_unit: The product license unit.
-        :param pulumi.Input[str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -562,42 +387,7 @@ class ProductLicense(pulumi.CustomResource):
                  args: ProductLicenseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new product license.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_product_license = oci.license_manager.ProductLicense("testProductLicense",
-            compartment_id=var["compartment_id"],
-            display_name=var["product_license_display_name"],
-            is_vendor_oracle=var["product_license_is_vendor_oracle"],
-            license_unit=var["product_license_license_unit"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            images=[oci.license_manager.ProductLicenseImageArgs(
-                listing_id=oci_marketplace_listing["test_listing"]["id"],
-                package_version=var["product_license_images_package_version"],
-            )],
-            vendor_name=var["product_license_vendor_name"])
-        ```
-
-        ## Import
-
-        ProductLicenses can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
-        ```
-
+        Create a ProductLicense resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ProductLicenseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -695,30 +485,6 @@ class ProductLicense(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] active_license_record_count: The number of active license records associated with the product license.
-        :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Name of the product license.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProductLicenseImageArgs']]]] images: (Updatable) The image details associated with the product license.
-        :param pulumi.Input[bool] is_over_subscribed: Specifies whether or not the product license is oversubscribed.
-        :param pulumi.Input[bool] is_unlimited: Specifies if the license unit count is unlimited.
-        :param pulumi.Input[bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.
-        :param pulumi.Input[str] license_unit: The product license unit.
-        :param pulumi.Input[str] state: The current product license state.
-        :param pulumi.Input[str] status: The current product license status.
-        :param pulumi.Input[str] status_description: Status description for the current product license status.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param pulumi.Input[int] total_active_license_unit_count: The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-        :param pulumi.Input[int] total_license_record_count: The number of license records associated with the product license.
-        :param pulumi.Input[float] total_license_units_consumed: The number of license units consumed. Updated after each allocation run.
-        :param pulumi.Input[str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -748,165 +514,101 @@ class ProductLicense(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="activeLicenseRecordCount")
-    def active_license_record_count(self) -> pulumi.Output[int]:
-        """
-        The number of active license records associated with the product license.
-        """
+    def active_license_record_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "active_license_record_count")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        Name of the product license.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def images(self) -> pulumi.Output[Sequence['outputs.ProductLicenseImage']]:
-        """
-        (Updatable) The image details associated with the product license.
-        """
+    def images(self) -> pulumi.Output[Optional[Sequence['outputs.ProductLicenseImage']]]:
         return pulumi.get(self, "images")
 
     @property
     @pulumi.getter(name="isOverSubscribed")
-    def is_over_subscribed(self) -> pulumi.Output[bool]:
-        """
-        Specifies whether or not the product license is oversubscribed.
-        """
+    def is_over_subscribed(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_over_subscribed")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> pulumi.Output[bool]:
-        """
-        Specifies if the license unit count is unlimited.
-        """
+    def is_unlimited(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter(name="isVendorOracle")
     def is_vendor_oracle(self) -> pulumi.Output[bool]:
-        """
-        Specifies if the product license vendor is Oracle or a third party.
-        """
         return pulumi.get(self, "is_vendor_oracle")
 
     @property
     @pulumi.getter(name="licenseUnit")
     def license_unit(self) -> pulumi.Output[str]:
-        """
-        The product license unit.
-        """
         return pulumi.get(self, "license_unit")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current product license state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        The current product license status.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusDescription")
-    def status_description(self) -> pulumi.Output[str]:
-        """
-        Status description for the current product license status.
-        """
+    def status_description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status_description")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalActiveLicenseUnitCount")
-    def total_active_license_unit_count(self) -> pulumi.Output[int]:
-        """
-        The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-        """
+    def total_active_license_unit_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_active_license_unit_count")
 
     @property
     @pulumi.getter(name="totalLicenseRecordCount")
-    def total_license_record_count(self) -> pulumi.Output[int]:
-        """
-        The number of license records associated with the product license.
-        """
+    def total_license_record_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_license_record_count")
 
     @property
     @pulumi.getter(name="totalLicenseUnitsConsumed")
-    def total_license_units_consumed(self) -> pulumi.Output[float]:
-        """
-        The number of license units consumed. Updated after each allocation run.
-        """
+    def total_license_units_consumed(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "total_license_units_consumed")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> pulumi.Output[str]:
-        """
-        The product license vendor name, for example: Microsoft, RHEL, and so on. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def vendor_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vendor_name")
 

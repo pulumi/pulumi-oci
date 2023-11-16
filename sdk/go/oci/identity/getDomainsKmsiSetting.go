@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -78,50 +77,50 @@ type LookupDomainsKmsiSettingResult struct {
 	Attributes    *string  `pulumi:"attributes"`
 	Authorization *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId *string `pulumi:"externalId"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsKmsiSettingIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                               `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsKmsiSettingIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// Identifier represents KMSI feature is enabled or not.
-	KmsiFeatureEnabled bool `pulumi:"kmsiFeatureEnabled"`
+	KmsiFeatureEnabled *bool `pulumi:"kmsiFeatureEnabled"`
 	// Identifier represents KMSI to be prompted to user or not.
-	KmsiPromptEnabled bool   `pulumi:"kmsiPromptEnabled"`
+	KmsiPromptEnabled *bool  `pulumi:"kmsiPromptEnabled"`
 	KmsiSettingId     string `pulumi:"kmsiSettingId"`
 	// Timestamp of when the KmsiSettings was enabled last time.
-	LastEnabledOn string `pulumi:"lastEnabledOn"`
+	LastEnabledOn *string `pulumi:"lastEnabledOn"`
 	// Identifier represents duration in days within which kmsi token must be used.
-	LastUsedValidityInDays int `pulumi:"lastUsedValidityInDays"`
+	LastUsedValidityInDays *int `pulumi:"lastUsedValidityInDays"`
 	// Identifier represents maximum KMSI sessions allowed in the system.
-	MaxAllowedSessions int `pulumi:"maxAllowedSessions"`
+	MaxAllowedSessions *int `pulumi:"maxAllowedSessions"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsKmsiSettingMeta `pulumi:"metas"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsKmsiSettingTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Identifier represents validity duration in days.
-	TokenValidityInDays int `pulumi:"tokenValidityInDays"`
+	TokenValidityInDays *int `pulumi:"tokenValidityInDays"`
 	// Identifier represents whether user is prompted for ToU or not.
-	TouPromptDisabled bool `pulumi:"touPromptDisabled"`
+	TouPromptDisabled *bool `pulumi:"touPromptDisabled"`
 }
 
 func LookupDomainsKmsiSettingOutput(ctx *pulumi.Context, args LookupDomainsKmsiSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsKmsiSettingResultOutput {
@@ -172,12 +171,6 @@ func (o LookupDomainsKmsiSettingResultOutput) ToLookupDomainsKmsiSettingResultOu
 	return o
 }
 
-func (o LookupDomainsKmsiSettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsKmsiSettingResult] {
-	return pulumix.Output[LookupDomainsKmsiSettingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsKmsiSettingResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -191,28 +184,28 @@ func (o LookupDomainsKmsiSettingResultOutput) Authorization() pulumi.StringPtrOu
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsKmsiSettingResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsKmsiSettingResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsKmsiSettingResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsKmsiSettingResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-func (o LookupDomainsKmsiSettingResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsKmsiSettingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -232,8 +225,8 @@ func (o LookupDomainsKmsiSettingResultOutput) IdcsLastModifiedBies() GetDomainsK
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsKmsiSettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -242,13 +235,13 @@ func (o LookupDomainsKmsiSettingResultOutput) IdcsPreventedOperations() pulumi.S
 }
 
 // Identifier represents KMSI feature is enabled or not.
-func (o LookupDomainsKmsiSettingResultOutput) KmsiFeatureEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) bool { return v.KmsiFeatureEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsKmsiSettingResultOutput) KmsiFeatureEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *bool { return v.KmsiFeatureEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Identifier represents KMSI to be prompted to user or not.
-func (o LookupDomainsKmsiSettingResultOutput) KmsiPromptEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) bool { return v.KmsiPromptEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsKmsiSettingResultOutput) KmsiPromptEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *bool { return v.KmsiPromptEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupDomainsKmsiSettingResultOutput) KmsiSettingId() pulumi.StringOutput {
@@ -256,18 +249,18 @@ func (o LookupDomainsKmsiSettingResultOutput) KmsiSettingId() pulumi.StringOutpu
 }
 
 // Timestamp of when the KmsiSettings was enabled last time.
-func (o LookupDomainsKmsiSettingResultOutput) LastEnabledOn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.LastEnabledOn }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) LastEnabledOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.LastEnabledOn }).(pulumi.StringPtrOutput)
 }
 
 // Identifier represents duration in days within which kmsi token must be used.
-func (o LookupDomainsKmsiSettingResultOutput) LastUsedValidityInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) int { return v.LastUsedValidityInDays }).(pulumi.IntOutput)
+func (o LookupDomainsKmsiSettingResultOutput) LastUsedValidityInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *int { return v.LastUsedValidityInDays }).(pulumi.IntPtrOutput)
 }
 
 // Identifier represents maximum KMSI sessions allowed in the system.
-func (o LookupDomainsKmsiSettingResultOutput) MaxAllowedSessions() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) int { return v.MaxAllowedSessions }).(pulumi.IntOutput)
+func (o LookupDomainsKmsiSettingResultOutput) MaxAllowedSessions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *int { return v.MaxAllowedSessions }).(pulumi.IntPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -276,8 +269,8 @@ func (o LookupDomainsKmsiSettingResultOutput) Metas() GetDomainsKmsiSettingMetaA
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsKmsiSettingResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsKmsiSettingResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -295,18 +288,18 @@ func (o LookupDomainsKmsiSettingResultOutput) Tags() GetDomainsKmsiSettingTagArr
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsKmsiSettingResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsKmsiSettingResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Identifier represents validity duration in days.
-func (o LookupDomainsKmsiSettingResultOutput) TokenValidityInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) int { return v.TokenValidityInDays }).(pulumi.IntOutput)
+func (o LookupDomainsKmsiSettingResultOutput) TokenValidityInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *int { return v.TokenValidityInDays }).(pulumi.IntPtrOutput)
 }
 
 // Identifier represents whether user is prompted for ToU or not.
-func (o LookupDomainsKmsiSettingResultOutput) TouPromptDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) bool { return v.TouPromptDisabled }).(pulumi.BoolOutput)
+func (o LookupDomainsKmsiSettingResultOutput) TouPromptDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsKmsiSettingResult) *bool { return v.TouPromptDisabled }).(pulumi.BoolPtrOutput)
 }
 
 func init() {

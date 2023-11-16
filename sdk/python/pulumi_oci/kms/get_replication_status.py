@@ -38,7 +38,7 @@ class GetReplicationStatusResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -51,10 +51,7 @@ class GetReplicationStatusResult:
 
     @property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> Sequence['outputs.GetReplicationStatusReplicaDetailResult']:
-        """
-        Replica Details.
-        """
+    def replica_details(self) -> Optional[Sequence['outputs.GetReplicationStatusReplicaDetailResult']]:
         return pulumi.get(self, "replica_details")
 
     @property
@@ -79,26 +76,7 @@ def get_replication_status(management_endpoint: Optional[str] = None,
                            replication_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationStatusResult:
     """
-    This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
-
-    When a vault has a replica, each operation on the vault or its resources, such as
-    keys, is replicated and has an associated replicationId. Replication status provides
-    details about whether the operation associated with the given replicationId has been
-    successfully applied across replicas.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_status = oci.Kms.get_replication_status(replication_id=oci_kms_replication["test_replication"]["id"],
-        management_endpoint=var["replication_status_management_endpoint"])
-    ```
-
-
-    :param str management_endpoint: The service endpoint to perform management operations against. See Vault Management endpoint.
-    :param str replication_id: replicationId associated with an operation on a resource
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managementEndpoint'] = management_endpoint
@@ -118,25 +96,6 @@ def get_replication_status_output(management_endpoint: Optional[pulumi.Input[str
                                   replication_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationStatusResult]:
     """
-    This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
-
-    When a vault has a replica, each operation on the vault or its resources, such as
-    keys, is replicated and has an associated replicationId. Replication status provides
-    details about whether the operation associated with the given replicationId has been
-    successfully applied across replicas.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_status = oci.Kms.get_replication_status(replication_id=oci_kms_replication["test_replication"]["id"],
-        management_endpoint=var["replication_status_management_endpoint"])
-    ```
-
-
-    :param str management_endpoint: The service endpoint to perform management operations against. See Vault Management endpoint.
-    :param str replication_id: replicationId associated with an operation on a resource
+    Use this data source to access information about an existing resource.
     """
     ...

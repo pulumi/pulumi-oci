@@ -110,50 +110,50 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string EnrollmentStatusId;
         /// <summary>
         /// The OCID of the enrollment status.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The enrollment status' current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The current Cloud Advisor enrollment status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The reason for the enrollment status of the tenancy.
         /// </summary>
-        public readonly string StatusReason;
+        public readonly string? StatusReason;
         /// <summary>
         /// The date and time the enrollment status was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the enrollment status was last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetEnrollmentStatusResult(
-            string compartmentId,
+            string? compartmentId,
 
             string enrollmentStatusId,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string statusReason,
+            string? statusReason,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             EnrollmentStatusId = enrollmentStatusId;

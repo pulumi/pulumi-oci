@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Name of the Ingress resource.
         /// </summary>
-        public readonly string IngressName;
+        public readonly string? IngressName;
         /// <summary>
         /// First Namespace for deployment.
         /// </summary>
-        public readonly string NamespaceA;
+        public readonly string? NamespaceA;
         /// <summary>
         /// Second Namespace for deployment.
         /// </summary>
-        public readonly string NamespaceB;
+        public readonly string? NamespaceB;
         /// <summary>
         /// Canary strategy type.
         /// </summary>
-        public readonly string StrategyType;
+        public readonly string? StrategyType;
 
         [OutputConstructor]
         private GetDeployStageBlueGreenStrategyResult(
-            string ingressName,
+            string? ingressName,
 
-            string namespaceA,
+            string? namespaceA,
 
-            string namespaceB,
+            string? namespaceB,
 
-            string strategyType)
+            string? strategyType)
         {
             IngressName = ingressName;
             NamespaceA = namespaceA;

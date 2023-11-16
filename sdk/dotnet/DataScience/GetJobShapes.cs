@@ -126,7 +126,7 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of job_shapes.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetJobShapesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetJobShapesJobShapeResult> jobShapes)
         {

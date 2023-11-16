@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -63,43 +62,43 @@ type LookupWorkspaceExportRequestArgs struct {
 // A collection of values returned by getWorkspaceExportRequest.
 type LookupWorkspaceExportRequestResult struct {
 	// Controls if the references will be exported along with the objects
-	AreReferencesIncluded bool `pulumi:"areReferencesIncluded"`
+	AreReferencesIncluded *bool `pulumi:"areReferencesIncluded"`
 	// The name of the Object Storage Bucket where the objects will be exported to
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Name of the user who initiated export request.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Contains key of the error
 	ErrorMessages    map[string]interface{} `pulumi:"errorMessages"`
 	ExportRequestKey string                 `pulumi:"exportRequestKey"`
 	// The array of exported object details.
 	ExportedItems []GetWorkspaceExportRequestExportedItem `pulumi:"exportedItems"`
 	// Name of the exported zip file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 	// Export multiple objects based on filters.
 	Filters []string `pulumi:"filters"`
-	Id      string   `pulumi:"id"`
+	Id      *string  `pulumi:"id"`
 	// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-	IsObjectOverwriteEnabled bool `pulumi:"isObjectOverwriteEnabled"`
+	IsObjectOverwriteEnabled *bool `pulumi:"isObjectOverwriteEnabled"`
 	// Export object request key
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Name of the export request.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The list of the objects to be exported
 	ObjectKeys []string `pulumi:"objectKeys"`
 	// Region of the object storage (if using object storage of different region)
-	ObjectStorageRegion string `pulumi:"objectStorageRegion"`
+	ObjectStorageRegion *string `pulumi:"objectStorageRegion"`
 	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-	ObjectStorageTenancyId string `pulumi:"objectStorageTenancyId"`
+	ObjectStorageTenancyId *string `pulumi:"objectStorageTenancyId"`
 	// The array of exported referenced objects.
-	ReferencedItems string `pulumi:"referencedItems"`
+	ReferencedItems *string `pulumi:"referencedItems"`
 	// Export Objects request status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Time at which the request was completely processed.
-	TimeEndedInMillis string `pulumi:"timeEndedInMillis"`
+	TimeEndedInMillis *string `pulumi:"timeEndedInMillis"`
 	// Time at which the request started getting processed.
-	TimeStartedInMillis string `pulumi:"timeStartedInMillis"`
+	TimeStartedInMillis *string `pulumi:"timeStartedInMillis"`
 	// Number of objects that are exported.
-	TotalExportedObjectCount int    `pulumi:"totalExportedObjectCount"`
+	TotalExportedObjectCount *int   `pulumi:"totalExportedObjectCount"`
 	WorkspaceId              string `pulumi:"workspaceId"`
 }
 
@@ -143,25 +142,19 @@ func (o LookupWorkspaceExportRequestResultOutput) ToLookupWorkspaceExportRequest
 	return o
 }
 
-func (o LookupWorkspaceExportRequestResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceExportRequestResult] {
-	return pulumix.Output[LookupWorkspaceExportRequestResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Controls if the references will be exported along with the objects
-func (o LookupWorkspaceExportRequestResultOutput) AreReferencesIncluded() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) bool { return v.AreReferencesIncluded }).(pulumi.BoolOutput)
+func (o LookupWorkspaceExportRequestResultOutput) AreReferencesIncluded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *bool { return v.AreReferencesIncluded }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the Object Storage Bucket where the objects will be exported to
-func (o LookupWorkspaceExportRequestResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Name of the user who initiated export request.
-func (o LookupWorkspaceExportRequestResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Contains key of the error
@@ -181,8 +174,8 @@ func (o LookupWorkspaceExportRequestResultOutput) ExportedItems() GetWorkspaceEx
 }
 
 // Name of the exported zip file.
-func (o LookupWorkspaceExportRequestResultOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.FileName }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.FileName }).(pulumi.StringPtrOutput)
 }
 
 // Export multiple objects based on filters.
@@ -190,23 +183,23 @@ func (o LookupWorkspaceExportRequestResultOutput) Filters() pulumi.StringArrayOu
 	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) []string { return v.Filters }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupWorkspaceExportRequestResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-func (o LookupWorkspaceExportRequestResultOutput) IsObjectOverwriteEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) bool { return v.IsObjectOverwriteEnabled }).(pulumi.BoolOutput)
+func (o LookupWorkspaceExportRequestResultOutput) IsObjectOverwriteEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *bool { return v.IsObjectOverwriteEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Export object request key
-func (o LookupWorkspaceExportRequestResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Name of the export request.
-func (o LookupWorkspaceExportRequestResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The list of the objects to be exported
@@ -215,38 +208,38 @@ func (o LookupWorkspaceExportRequestResultOutput) ObjectKeys() pulumi.StringArra
 }
 
 // Region of the object storage (if using object storage of different region)
-func (o LookupWorkspaceExportRequestResultOutput) ObjectStorageRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.ObjectStorageRegion }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) ObjectStorageRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.ObjectStorageRegion }).(pulumi.StringPtrOutput)
 }
 
 // Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-func (o LookupWorkspaceExportRequestResultOutput) ObjectStorageTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.ObjectStorageTenancyId }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) ObjectStorageTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.ObjectStorageTenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The array of exported referenced objects.
-func (o LookupWorkspaceExportRequestResultOutput) ReferencedItems() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.ReferencedItems }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) ReferencedItems() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.ReferencedItems }).(pulumi.StringPtrOutput)
 }
 
 // Export Objects request status.
-func (o LookupWorkspaceExportRequestResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the request was completely processed.
-func (o LookupWorkspaceExportRequestResultOutput) TimeEndedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.TimeEndedInMillis }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) TimeEndedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.TimeEndedInMillis }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the request started getting processed.
-func (o LookupWorkspaceExportRequestResultOutput) TimeStartedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) string { return v.TimeStartedInMillis }).(pulumi.StringOutput)
+func (o LookupWorkspaceExportRequestResultOutput) TimeStartedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *string { return v.TimeStartedInMillis }).(pulumi.StringPtrOutput)
 }
 
 // Number of objects that are exported.
-func (o LookupWorkspaceExportRequestResultOutput) TotalExportedObjectCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) int { return v.TotalExportedObjectCount }).(pulumi.IntOutput)
+func (o LookupWorkspaceExportRequestResultOutput) TotalExportedObjectCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) *int { return v.TotalExportedObjectCount }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupWorkspaceExportRequestResultOutput) WorkspaceId() pulumi.StringOutput {

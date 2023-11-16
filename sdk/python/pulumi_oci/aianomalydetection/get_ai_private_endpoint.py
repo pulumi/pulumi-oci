@@ -72,106 +72,67 @@ class GetAiPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="attachedDataAssets")
-    def attached_data_assets(self) -> Sequence[str]:
-        """
-        The list of dataAssets using the private reverse connection endpoint.
-        """
+    def attached_data_assets(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "attached_data_assets")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Private Reverse Connection Endpoint display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
-    def dns_zones(self) -> Sequence[str]:
-        """
-        List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
+    def dns_zones(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the private endpoint resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        Subnet Identifier
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -200,21 +161,7 @@ class AwaitableGetAiPrivateEndpointResult(GetAiPrivateEndpointResult):
 def get_ai_private_endpoint(ai_private_endpoint_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAiPrivateEndpointResult:
     """
-    This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Gets a specific private reverse connection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ai_private_endpoint = oci.AiAnomalyDetection.get_ai_private_endpoint(ai_private_endpoint_id=oci_ai_anomaly_detection_ai_private_endpoint["test_ai_private_endpoint"]["id"])
-    ```
-
-
-    :param str ai_private_endpoint_id: Unique private reverse connection identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['aiPrivateEndpointId'] = ai_private_endpoint_id
@@ -242,20 +189,6 @@ def get_ai_private_endpoint(ai_private_endpoint_id: Optional[str] = None,
 def get_ai_private_endpoint_output(ai_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAiPrivateEndpointResult]:
     """
-    This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Gets a specific private reverse connection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ai_private_endpoint = oci.AiAnomalyDetection.get_ai_private_endpoint(ai_private_endpoint_id=oci_ai_anomaly_detection_ai_private_endpoint["test_ai_private_endpoint"]["id"])
-    ```
-
-
-    :param str ai_private_endpoint_id: Unique private reverse connection identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

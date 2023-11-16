@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMySupportAccountIdcsCreatedBy {
@@ -13,63 +15,63 @@ public final class GetDomainsMySupportAccountIdcsCreatedBy {
      * @return User display name
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return User&#39;s ocid
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return The URI that corresponds to the user linked to this Support Account
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The type of resource, User or App, that modified this Resource
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return User&#39;s id
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsMySupportAccountIdcsCreatedBy() {}
     /**
      * @return User display name
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return User&#39;s ocid
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return The URI that corresponds to the user linked to this Support Account
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The type of resource, User or App, that modified this Resource
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return User&#39;s id
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsMySupportAccountIdcsCreatedBy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private String ocid;
-        private String ref;
-        private String type;
-        private String value;
+        private @Nullable String display;
+        private @Nullable String ocid;
+        private @Nullable String ref;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsMySupportAccountIdcsCreatedBy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsMySupportAccountIdcsCreatedBy {
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsMySupportAccountIdcsCreatedBy build() {

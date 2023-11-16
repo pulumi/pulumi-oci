@@ -25,17 +25,6 @@ class SecurityListArgs:
                  ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]] = None):
         """
         The set of arguments for constructing a SecurityList resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -53,9 +42,6 @@ class SecurityListArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -65,13 +51,6 @@ class SecurityListArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -81,9 +60,6 @@ class SecurityListArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -93,9 +69,6 @@ class SecurityListArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -105,9 +78,6 @@ class SecurityListArgs:
     @property
     @pulumi.getter(name="egressSecurityRules")
     def egress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]:
-        """
-        (Updatable) Rules for allowing egress IP packets.
-        """
         return pulumi.get(self, "egress_security_rules")
 
     @egress_security_rules.setter
@@ -117,9 +87,6 @@ class SecurityListArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -129,9 +96,6 @@ class SecurityListArgs:
     @property
     @pulumi.getter(name="ingressSecurityRules")
     def ingress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]:
-        """
-        (Updatable) Rules for allowing ingress IP packets.
-        """
         return pulumi.get(self, "ingress_security_rules")
 
     @ingress_security_rules.setter
@@ -153,19 +117,6 @@ class _SecurityListState:
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SecurityList resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
-        :param pulumi.Input[str] state: The security list's current state.
-        :param pulumi.Input[str] time_created: The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -189,9 +140,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -201,9 +149,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -213,9 +158,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -225,9 +167,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="egressSecurityRules")
     def egress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]:
-        """
-        (Updatable) Rules for allowing egress IP packets.
-        """
         return pulumi.get(self, "egress_security_rules")
 
     @egress_security_rules.setter
@@ -237,9 +176,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -249,9 +185,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="ingressSecurityRules")
     def ingress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]:
-        """
-        (Updatable) Rules for allowing ingress IP packets.
-        """
         return pulumi.get(self, "ingress_security_rules")
 
     @ingress_security_rules.setter
@@ -261,9 +194,6 @@ class _SecurityListState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The security list's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -273,9 +203,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -285,13 +212,6 @@ class _SecurityListState:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -313,118 +233,9 @@ class SecurityList(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Security List resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new security list for the specified VCN. For more information
-        about security lists, see [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
-        For information on the number of rules you can have in a security list, see
-        [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the security
-        list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
-        or other Networking Service components. If you're not sure which compartment to use, put the security
-        list in the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the security list, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        For more information on configuring a VCN's default security list, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_security_list = oci.core.SecurityList("testSecurityList",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["security_list_display_name"],
-            egress_security_rules=[oci.core.SecurityListEgressSecurityRuleArgs(
-                destination=var["security_list_egress_security_rules_destination"],
-                protocol=var["security_list_egress_security_rules_protocol"],
-                description=var["security_list_egress_security_rules_description"],
-                destination_type=var["security_list_egress_security_rules_destination_type"],
-                icmp_options=oci.core.SecurityListEgressSecurityRuleIcmpOptionsArgs(
-                    type=var["security_list_egress_security_rules_icmp_options_type"],
-                    code=var["security_list_egress_security_rules_icmp_options_code"],
-                ),
-                stateless=var["security_list_egress_security_rules_stateless"],
-                tcp_options=oci.core.SecurityListEgressSecurityRuleTcpOptionsArgs(
-                    max=var["security_list_egress_security_rules_tcp_options_destination_port_range_max"],
-                    min=var["security_list_egress_security_rules_tcp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["security_list_egress_security_rules_tcp_options_source_port_range_max"],
-                        min=var["security_list_egress_security_rules_tcp_options_source_port_range_min"],
-                    ),
-                ),
-                udp_options=oci.core.SecurityListEgressSecurityRuleUdpOptionsArgs(
-                    max=var["security_list_egress_security_rules_udp_options_destination_port_range_max"],
-                    min=var["security_list_egress_security_rules_udp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["security_list_egress_security_rules_udp_options_source_port_range_max"],
-                        min=var["security_list_egress_security_rules_udp_options_source_port_range_min"],
-                    ),
-                ),
-            )],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ingress_security_rules=[oci.core.SecurityListIngressSecurityRuleArgs(
-                protocol=var["security_list_ingress_security_rules_protocol"],
-                source=var["security_list_ingress_security_rules_source"],
-                description=var["security_list_ingress_security_rules_description"],
-                icmp_options=oci.core.SecurityListIngressSecurityRuleIcmpOptionsArgs(
-                    type=var["security_list_ingress_security_rules_icmp_options_type"],
-                    code=var["security_list_ingress_security_rules_icmp_options_code"],
-                ),
-                source_type=var["security_list_ingress_security_rules_source_type"],
-                stateless=var["security_list_ingress_security_rules_stateless"],
-                tcp_options=oci.core.SecurityListIngressSecurityRuleTcpOptionsArgs(
-                    max=var["security_list_ingress_security_rules_tcp_options_destination_port_range_max"],
-                    min=var["security_list_ingress_security_rules_tcp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["security_list_ingress_security_rules_tcp_options_source_port_range_max"],
-                        min=var["security_list_ingress_security_rules_tcp_options_source_port_range_min"],
-                    ),
-                ),
-                udp_options=oci.core.SecurityListIngressSecurityRuleUdpOptionsArgs(
-                    max=var["security_list_ingress_security_rules_udp_options_destination_port_range_max"],
-                    min=var["security_list_ingress_security_rules_udp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["security_list_ingress_security_rules_udp_options_source_port_range_max"],
-                        min=var["security_list_ingress_security_rules_udp_options_source_port_range_min"],
-                    ),
-                ),
-            )])
-        ```
-
-        ## Import
-
-        SecurityLists can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
-        ```
-
+        Create a SecurityList resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListEgressSecurityRuleArgs']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListIngressSecurityRuleArgs']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -433,105 +244,7 @@ class SecurityList(pulumi.CustomResource):
                  args: SecurityListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security List resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new security list for the specified VCN. For more information
-        about security lists, see [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
-        For information on the number of rules you can have in a security list, see
-        [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the security
-        list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
-        or other Networking Service components. If you're not sure which compartment to use, put the security
-        list in the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the security list, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        For more information on configuring a VCN's default security list, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_security_list = oci.core.SecurityList("testSecurityList",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["security_list_display_name"],
-            egress_security_rules=[oci.core.SecurityListEgressSecurityRuleArgs(
-                destination=var["security_list_egress_security_rules_destination"],
-                protocol=var["security_list_egress_security_rules_protocol"],
-                description=var["security_list_egress_security_rules_description"],
-                destination_type=var["security_list_egress_security_rules_destination_type"],
-                icmp_options=oci.core.SecurityListEgressSecurityRuleIcmpOptionsArgs(
-                    type=var["security_list_egress_security_rules_icmp_options_type"],
-                    code=var["security_list_egress_security_rules_icmp_options_code"],
-                ),
-                stateless=var["security_list_egress_security_rules_stateless"],
-                tcp_options=oci.core.SecurityListEgressSecurityRuleTcpOptionsArgs(
-                    max=var["security_list_egress_security_rules_tcp_options_destination_port_range_max"],
-                    min=var["security_list_egress_security_rules_tcp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["security_list_egress_security_rules_tcp_options_source_port_range_max"],
-                        min=var["security_list_egress_security_rules_tcp_options_source_port_range_min"],
-                    ),
-                ),
-                udp_options=oci.core.SecurityListEgressSecurityRuleUdpOptionsArgs(
-                    max=var["security_list_egress_security_rules_udp_options_destination_port_range_max"],
-                    min=var["security_list_egress_security_rules_udp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["security_list_egress_security_rules_udp_options_source_port_range_max"],
-                        min=var["security_list_egress_security_rules_udp_options_source_port_range_min"],
-                    ),
-                ),
-            )],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ingress_security_rules=[oci.core.SecurityListIngressSecurityRuleArgs(
-                protocol=var["security_list_ingress_security_rules_protocol"],
-                source=var["security_list_ingress_security_rules_source"],
-                description=var["security_list_ingress_security_rules_description"],
-                icmp_options=oci.core.SecurityListIngressSecurityRuleIcmpOptionsArgs(
-                    type=var["security_list_ingress_security_rules_icmp_options_type"],
-                    code=var["security_list_ingress_security_rules_icmp_options_code"],
-                ),
-                source_type=var["security_list_ingress_security_rules_source_type"],
-                stateless=var["security_list_ingress_security_rules_stateless"],
-                tcp_options=oci.core.SecurityListIngressSecurityRuleTcpOptionsArgs(
-                    max=var["security_list_ingress_security_rules_tcp_options_destination_port_range_max"],
-                    min=var["security_list_ingress_security_rules_tcp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["security_list_ingress_security_rules_tcp_options_source_port_range_max"],
-                        min=var["security_list_ingress_security_rules_tcp_options_source_port_range_min"],
-                    ),
-                ),
-                udp_options=oci.core.SecurityListIngressSecurityRuleUdpOptionsArgs(
-                    max=var["security_list_ingress_security_rules_udp_options_destination_port_range_max"],
-                    min=var["security_list_ingress_security_rules_udp_options_destination_port_range_min"],
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["security_list_ingress_security_rules_udp_options_source_port_range_max"],
-                        min=var["security_list_ingress_security_rules_udp_options_source_port_range_min"],
-                    ),
-                ),
-            )])
-        ```
-
-        ## Import
-
-        SecurityLists can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
-        ```
-
+        Create a SecurityList resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SecurityListArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -602,19 +315,6 @@ class SecurityList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListEgressSecurityRuleArgs']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListIngressSecurityRuleArgs']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
-        :param pulumi.Input[str] state: The security list's current state.
-        :param pulumi.Input[str] time_created: The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -634,76 +334,45 @@ class SecurityList(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="egressSecurityRules")
     def egress_security_rules(self) -> pulumi.Output[Optional[Sequence['outputs.SecurityListEgressSecurityRule']]]:
-        """
-        (Updatable) Rules for allowing egress IP packets.
-        """
         return pulumi.get(self, "egress_security_rules")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ingressSecurityRules")
     def ingress_security_rules(self) -> pulumi.Output[Optional[Sequence['outputs.SecurityListIngressSecurityRule']]]:
-        """
-        (Updatable) Rules for allowing ingress IP packets.
-        """
         return pulumi.get(self, "ingress_security_rules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The security list's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 

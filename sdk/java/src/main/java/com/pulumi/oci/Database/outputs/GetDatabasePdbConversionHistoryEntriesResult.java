@@ -20,13 +20,13 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String pdbConversionAction;
     /**
      * @return The list of pdb_conversion_history_entries.
      * 
      */
-    private List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries;
+    private @Nullable List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries;
     /**
      * @return Status of an operation performed during the conversion of a non-container database to a pluggable database.
      * 
@@ -44,8 +44,8 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> pdbConversionAction() {
         return Optional.ofNullable(this.pdbConversionAction);
@@ -55,7 +55,7 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
      * 
      */
     public List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries() {
-        return this.pdbConversionHistoryEntries;
+        return this.pdbConversionHistoryEntries == null ? List.of() : this.pdbConversionHistoryEntries;
     }
     /**
      * @return Status of an operation performed during the conversion of a non-container database to a pluggable database.
@@ -76,9 +76,9 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
     public static final class Builder {
         private String databaseId;
         private @Nullable List<GetDatabasePdbConversionHistoryEntriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String pdbConversionAction;
-        private List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries;
+        private @Nullable List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDatabasePdbConversionHistoryEntriesResult defaults) {
@@ -105,8 +105,8 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -115,8 +115,8 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder pdbConversionHistoryEntries(List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries) {
-            this.pdbConversionHistoryEntries = Objects.requireNonNull(pdbConversionHistoryEntries);
+        public Builder pdbConversionHistoryEntries(@Nullable List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries) {
+            this.pdbConversionHistoryEntries = pdbConversionHistoryEntries;
             return this;
         }
         public Builder pdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry... pdbConversionHistoryEntries) {

@@ -55,47 +55,47 @@ export interface GetDedicatedVantagePointResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      */
-    readonly dvpStackDetails: outputs.ApmSynthetics.GetDedicatedVantagePointDvpStackDetail[];
+    readonly dvpStackDetails?: outputs.ApmSynthetics.GetDedicatedVantagePointDvpStackDetail[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
      */
-    readonly monitorStatusCountMaps: outputs.ApmSynthetics.GetDedicatedVantagePointMonitorStatusCountMap[];
+    readonly monitorStatusCountMaps?: outputs.ApmSynthetics.GetDedicatedVantagePointMonitorStatusCountMap[];
     /**
      * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Name of the region.
      */
-    readonly region: string;
+    readonly region?: string;
     /**
      * Status of the dedicated vantage point.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.

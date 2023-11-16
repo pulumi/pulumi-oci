@@ -47,74 +47,74 @@ export interface GetImageResult {
     /**
      * Oracle Cloud Agent features supported on the image.
      */
-    readonly agentFeatures: outputs.Core.GetImageAgentFeature[];
+    readonly agentFeatures?: outputs.Core.GetImageAgentFeature[];
     /**
      * The OCID of the image originally used to launch the instance.
      */
-    readonly baseImageId: string;
+    readonly baseImageId?: string;
     /**
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      */
-    readonly billableSizeInGbs: string;
+    readonly billableSizeInGbs?: string;
     /**
      * The OCID of the compartment containing the instance you want to use as the basis for the image.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      */
-    readonly createImageAllowed: boolean;
+    readonly createImageAllowed?: boolean;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the image.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly imageId: string;
-    readonly imageSourceDetails: outputs.Core.GetImageImageSourceDetail[];
-    readonly instanceId: string;
+    readonly imageSourceDetails?: outputs.Core.GetImageImageSourceDetail[];
+    readonly instanceId?: string;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      */
-    readonly launchMode: string;
+    readonly launchMode?: string;
     /**
      * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    readonly launchOptions: outputs.Core.GetImageLaunchOption[];
+    readonly launchOptions?: outputs.Core.GetImageLaunchOption[];
     /**
      * The listing type of the image. The default value is "NONE".
      */
-    readonly listingType: string;
+    readonly listingType?: string;
     /**
      * The image's operating system.  Example: `Oracle Linux`
      */
-    readonly operatingSystem: string;
+    readonly operatingSystem?: string;
     /**
      * The image's operating system version.  Example: `7.2`
      */
-    readonly operatingSystemVersion: string;
+    readonly operatingSystemVersion?: string;
     /**
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      */
-    readonly sizeInMbs: string;
+    readonly sizeInMbs?: string;
     /**
      * The current state of the image.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Image resource in Oracle Cloud Infrastructure Core service.

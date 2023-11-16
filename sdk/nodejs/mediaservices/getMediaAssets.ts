@@ -130,7 +130,7 @@ export interface GetMediaAssetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The ID of the senior most asset from which this asset is derived.
      */
@@ -138,7 +138,7 @@ export interface GetMediaAssetsResult {
     /**
      * The list of media_asset_collection.
      */
-    readonly mediaAssetCollections: outputs.MediaServices.GetMediaAssetsMediaAssetCollection[];
+    readonly mediaAssetCollections?: outputs.MediaServices.GetMediaAssetsMediaAssetCollection[];
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
      */

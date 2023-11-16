@@ -97,11 +97,11 @@ export interface GetKeysResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of keys.
      */
-    readonly keys: outputs.Kms.GetKeysKey[];
+    readonly keys?: outputs.Kms.GetKeysKey[];
     /**
      * The length of the key in bytes, expressed as an integer. Supported values include the following:
      * * AES: 16, 24, or 32

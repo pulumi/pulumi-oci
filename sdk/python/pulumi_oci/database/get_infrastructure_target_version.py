@@ -48,7 +48,7 @@ class GetInfrastructureTargetVersionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,34 +56,22 @@ class GetInfrastructureTargetVersionResult:
 
     @property
     @pulumi.getter(name="targetDbVersionHistoryEntries")
-    def target_db_version_history_entries(self) -> Sequence[str]:
-        """
-        The history entry of the target system software version for the database server patching operation.
-        """
+    def target_db_version_history_entries(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_db_version_history_entries")
 
     @property
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[str]:
-        """
-        The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
-        """
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> Optional[str]:
-        """
-        The resource type of the target Exadata infrastructure resource that will receive the system software update.
-        """
         return pulumi.get(self, "target_resource_type")
 
     @property
     @pulumi.getter(name="targetStorageVersionHistoryEntries")
-    def target_storage_version_history_entries(self) -> Sequence[str]:
-        """
-        The history entry of the target storage cell system software version for the storage cell patching operation.
-        """
+    def target_storage_version_history_entries(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_storage_version_history_entries")
 
 
@@ -106,26 +94,7 @@ def get_infrastructure_target_version(compartment_id: Optional[str] = None,
                                       target_resource_type: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInfrastructureTargetVersionResult:
     """
-    This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
-
-    Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
-    Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=var["compartment_id"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["infrastructure_target_version_target_resource_type"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str target_resource_id: The target resource ID.
-    :param str target_resource_type: The type of the target resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -149,25 +118,6 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
                                              target_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInfrastructureTargetVersionResult]:
     """
-    This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
-
-    Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
-    Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=var["compartment_id"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["infrastructure_target_version_target_resource_type"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str target_resource_id: The target resource ID.
-    :param str target_resource_type: The type of the target resource.
+    Use this data source to access information about an existing resource.
     """
     ...

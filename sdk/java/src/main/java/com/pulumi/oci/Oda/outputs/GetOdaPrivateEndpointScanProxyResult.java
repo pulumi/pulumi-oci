@@ -8,6 +8,8 @@ import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointScanProxyScanListenerInfo
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOdaPrivateEndpointScanProxyResult {
@@ -15,42 +17,42 @@ public final class GetOdaPrivateEndpointScanProxyResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String odaPrivateEndpointId;
     private String odaPrivateEndpointScanProxyId;
     /**
      * @return The protocol used for communication between client, scanProxy and RAC&#39;s scan listeners
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The FQDN/IPs and port information of customer&#39;s Real Application Cluster (RAC)&#39;s SCAN listeners.
      * 
      */
-    private List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos;
+    private @Nullable List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos;
     /**
      * @return Type indicating whether Scan listener is specified by its FQDN or list of IPs
      * 
      */
-    private String scanListenerType;
+    private @Nullable String scanListenerType;
     /**
      * @return The current state of the ODA Private Endpoint Scan Proxy.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetOdaPrivateEndpointScanProxyResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String odaPrivateEndpointId() {
         return this.odaPrivateEndpointId;
@@ -62,36 +64,36 @@ public final class GetOdaPrivateEndpointScanProxyResult {
      * @return The protocol used for communication between client, scanProxy and RAC&#39;s scan listeners
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The FQDN/IPs and port information of customer&#39;s Real Application Cluster (RAC)&#39;s SCAN listeners.
      * 
      */
     public List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos() {
-        return this.scanListenerInfos;
+        return this.scanListenerInfos == null ? List.of() : this.scanListenerInfos;
     }
     /**
      * @return Type indicating whether Scan listener is specified by its FQDN or list of IPs
      * 
      */
-    public String scanListenerType() {
-        return this.scanListenerType;
+    public Optional<String> scanListenerType() {
+        return Optional.ofNullable(this.scanListenerType);
     }
     /**
      * @return The current state of the ODA Private Endpoint Scan Proxy.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -103,14 +105,14 @@ public final class GetOdaPrivateEndpointScanProxyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String odaPrivateEndpointId;
         private String odaPrivateEndpointScanProxyId;
-        private String protocol;
-        private List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos;
-        private String scanListenerType;
-        private String state;
-        private String timeCreated;
+        private @Nullable String protocol;
+        private @Nullable List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos;
+        private @Nullable String scanListenerType;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetOdaPrivateEndpointScanProxyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,8 +127,8 @@ public final class GetOdaPrivateEndpointScanProxyResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -140,31 +142,31 @@ public final class GetOdaPrivateEndpointScanProxyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerInfos(List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos) {
-            this.scanListenerInfos = Objects.requireNonNull(scanListenerInfos);
+        public Builder scanListenerInfos(@Nullable List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos) {
+            this.scanListenerInfos = scanListenerInfos;
             return this;
         }
         public Builder scanListenerInfos(GetOdaPrivateEndpointScanProxyScanListenerInfo... scanListenerInfos) {
             return scanListenerInfos(List.of(scanListenerInfos));
         }
         @CustomType.Setter
-        public Builder scanListenerType(String scanListenerType) {
-            this.scanListenerType = Objects.requireNonNull(scanListenerType);
+        public Builder scanListenerType(@Nullable String scanListenerType) {
+            this.scanListenerType = scanListenerType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetOdaPrivateEndpointScanProxyResult build() {

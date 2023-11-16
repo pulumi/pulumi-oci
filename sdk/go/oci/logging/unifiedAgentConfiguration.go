@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
@@ -138,27 +137,27 @@ type UnifiedAgentConfiguration struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// State of unified agent service configuration.
-	ConfigurationState pulumi.StringOutput `pulumi:"configurationState"`
+	ConfigurationState pulumi.StringPtrOutput `pulumi:"configurationState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Groups using the configuration.
-	GroupAssociation UnifiedAgentConfigurationGroupAssociationOutput `pulumi:"groupAssociation"`
+	GroupAssociation UnifiedAgentConfigurationGroupAssociationPtrOutput `pulumi:"groupAssociation"`
 	// (Updatable) Whether or not this resource is currently enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// (Updatable) Top level Unified Agent service configuration object.
 	ServiceConfiguration UnifiedAgentConfigurationServiceConfigurationOutput `pulumi:"serviceConfiguration"`
 	// The pipeline state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Time the resource was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified pulumi.StringOutput `pulumi:"timeLastModified"`
+	TimeLastModified pulumi.StringPtrOutput `pulumi:"timeLastModified"`
 }
 
 // NewUnifiedAgentConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -319,12 +318,6 @@ func (i *UnifiedAgentConfiguration) ToUnifiedAgentConfigurationOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationOutput)
 }
 
-func (i *UnifiedAgentConfiguration) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfiguration] {
-	return pulumix.Output[*UnifiedAgentConfiguration]{
-		OutputState: i.ToUnifiedAgentConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UnifiedAgentConfigurationArrayInput is an input type that accepts UnifiedAgentConfigurationArray and UnifiedAgentConfigurationArrayOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationArrayInput` via:
 //
@@ -348,12 +341,6 @@ func (i UnifiedAgentConfigurationArray) ToUnifiedAgentConfigurationArrayOutput()
 
 func (i UnifiedAgentConfigurationArray) ToUnifiedAgentConfigurationArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationArrayOutput)
-}
-
-func (i UnifiedAgentConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*UnifiedAgentConfiguration] {
-	return pulumix.Output[[]*UnifiedAgentConfiguration]{
-		OutputState: i.ToUnifiedAgentConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UnifiedAgentConfigurationMapInput is an input type that accepts UnifiedAgentConfigurationMap and UnifiedAgentConfigurationMapOutput values.
@@ -381,12 +368,6 @@ func (i UnifiedAgentConfigurationMap) ToUnifiedAgentConfigurationMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationMapOutput)
 }
 
-func (i UnifiedAgentConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnifiedAgentConfiguration] {
-	return pulumix.Output[map[string]*UnifiedAgentConfiguration]{
-		OutputState: i.ToUnifiedAgentConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UnifiedAgentConfigurationOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationOutput) ElementType() reflect.Type {
@@ -401,20 +382,14 @@ func (o UnifiedAgentConfigurationOutput) ToUnifiedAgentConfigurationOutputWithCo
 	return o
 }
 
-func (o UnifiedAgentConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfiguration] {
-	return pulumix.Output[*UnifiedAgentConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that the resource belongs to.
 func (o UnifiedAgentConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // State of unified agent service configuration.
-func (o UnifiedAgentConfigurationOutput) ConfigurationState() pulumi.StringOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringOutput { return v.ConfigurationState }).(pulumi.StringOutput)
+func (o UnifiedAgentConfigurationOutput) ConfigurationState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringPtrOutput { return v.ConfigurationState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -423,13 +398,13 @@ func (o UnifiedAgentConfigurationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description for this resource.
-func (o UnifiedAgentConfigurationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o UnifiedAgentConfigurationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-func (o UnifiedAgentConfigurationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o UnifiedAgentConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -438,10 +413,10 @@ func (o UnifiedAgentConfigurationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Groups using the configuration.
-func (o UnifiedAgentConfigurationOutput) GroupAssociation() UnifiedAgentConfigurationGroupAssociationOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) UnifiedAgentConfigurationGroupAssociationOutput {
+func (o UnifiedAgentConfigurationOutput) GroupAssociation() UnifiedAgentConfigurationGroupAssociationPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) UnifiedAgentConfigurationGroupAssociationPtrOutput {
 		return v.GroupAssociation
-	}).(UnifiedAgentConfigurationGroupAssociationOutput)
+	}).(UnifiedAgentConfigurationGroupAssociationPtrOutput)
 }
 
 // (Updatable) Whether or not this resource is currently enabled.
@@ -457,18 +432,18 @@ func (o UnifiedAgentConfigurationOutput) ServiceConfiguration() UnifiedAgentConf
 }
 
 // The pipeline state.
-func (o UnifiedAgentConfigurationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o UnifiedAgentConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o UnifiedAgentConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o UnifiedAgentConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o UnifiedAgentConfigurationOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringOutput { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o UnifiedAgentConfigurationOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringPtrOutput { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 type UnifiedAgentConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -483,12 +458,6 @@ func (o UnifiedAgentConfigurationArrayOutput) ToUnifiedAgentConfigurationArrayOu
 
 func (o UnifiedAgentConfigurationArrayOutput) ToUnifiedAgentConfigurationArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationArrayOutput {
 	return o
-}
-
-func (o UnifiedAgentConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UnifiedAgentConfiguration] {
-	return pulumix.Output[[]*UnifiedAgentConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UnifiedAgentConfigurationArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationOutput {
@@ -509,12 +478,6 @@ func (o UnifiedAgentConfigurationMapOutput) ToUnifiedAgentConfigurationMapOutput
 
 func (o UnifiedAgentConfigurationMapOutput) ToUnifiedAgentConfigurationMapOutputWithContext(ctx context.Context) UnifiedAgentConfigurationMapOutput {
 	return o
-}
-
-func (o UnifiedAgentConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnifiedAgentConfiguration] {
-	return pulumix.Output[map[string]*UnifiedAgentConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UnifiedAgentConfigurationMapOutput) MapIndex(k pulumi.StringInput) UnifiedAgentConfigurationOutput {

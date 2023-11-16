@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetDiagnosesFleetDiagnosisCollectionItem {
@@ -13,51 +15,51 @@ public final class GetFleetDiagnosesFleetDiagnosisCollectionItem {
      * @return The diagnosis message.
      * 
      */
-    private String resourceDiagnosis;
+    private @Nullable String resourceDiagnosis;
     /**
      * @return The OCID of the external resouce needed by the fleet.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can&#39;t locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
      * 
      */
-    private String resourceState;
+    private @Nullable String resourceState;
     /**
      * @return The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
 
     private GetFleetDiagnosesFleetDiagnosisCollectionItem() {}
     /**
      * @return The diagnosis message.
      * 
      */
-    public String resourceDiagnosis() {
-        return this.resourceDiagnosis;
+    public Optional<String> resourceDiagnosis() {
+        return Optional.ofNullable(this.resourceDiagnosis);
     }
     /**
      * @return The OCID of the external resouce needed by the fleet.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can&#39;t locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
      * 
      */
-    public String resourceState() {
-        return this.resourceState;
+    public Optional<String> resourceState() {
+        return Optional.ofNullable(this.resourceState);
     }
     /**
      * @return The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetFleetDiagnosesFleetDiagnosisCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String resourceDiagnosis;
-        private String resourceId;
-        private String resourceState;
-        private String resourceType;
+        private @Nullable String resourceDiagnosis;
+        private @Nullable String resourceId;
+        private @Nullable String resourceState;
+        private @Nullable String resourceType;
         public Builder() {}
         public Builder(GetFleetDiagnosesFleetDiagnosisCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetFleetDiagnosesFleetDiagnosisCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder resourceDiagnosis(String resourceDiagnosis) {
-            this.resourceDiagnosis = Objects.requireNonNull(resourceDiagnosis);
+        public Builder resourceDiagnosis(@Nullable String resourceDiagnosis) {
+            this.resourceDiagnosis = resourceDiagnosis;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceState(String resourceState) {
-            this.resourceState = Objects.requireNonNull(resourceState);
+        public Builder resourceState(@Nullable String resourceState) {
+            this.resourceState = resourceState;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         public GetFleetDiagnosesFleetDiagnosisCollectionItem build() {

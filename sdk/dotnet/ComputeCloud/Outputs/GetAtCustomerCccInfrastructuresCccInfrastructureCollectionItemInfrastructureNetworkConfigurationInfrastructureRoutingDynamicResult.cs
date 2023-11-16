@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// The topology in use for the Border Gateway Protocol (BGP) configuration.
         /// </summary>
-        public readonly string BgpTopology;
+        public readonly string? BgpTopology;
         /// <summary>
         /// The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
         /// </summary>
-        public readonly int OracleAsn;
+        public readonly int? OracleAsn;
         /// <summary>
         /// The list of peer devices in the dynamic routing configuration.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
 
         [OutputConstructor]
         private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicResult(
-            string bgpTopology,
+            string? bgpTopology,
 
-            int oracleAsn,
+            int? oracleAsn,
 
             ImmutableArray<Outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult> peerInformations)
         {

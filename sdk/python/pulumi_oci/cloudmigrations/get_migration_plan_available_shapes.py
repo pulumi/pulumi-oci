@@ -52,17 +52,11 @@ class GetMigrationPlanAvailableShapesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        Availability domain of the shape.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableShapesCollections")
-    def available_shapes_collections(self) -> Sequence['outputs.GetMigrationPlanAvailableShapesAvailableShapesCollectionResult']:
-        """
-        The list of available_shapes_collection.
-        """
+    def available_shapes_collections(self) -> Optional[Sequence['outputs.GetMigrationPlanAvailableShapesAvailableShapesCollectionResult']]:
         return pulumi.get(self, "available_shapes_collections")
 
     @property
@@ -82,7 +76,7 @@ class GetMigrationPlanAvailableShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -123,29 +117,7 @@ def get_migration_plan_available_shapes(availability_domain: Optional[str] = Non
                                         reserved_capacity_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationPlanAvailableShapesResult:
     """
-    This data source provides the list of Migration Plan Available Shapes in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    List of shapes by parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_plan_available_shapes = oci.CloudMigrations.get_migration_plan_available_shapes(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        availability_domain=var["migration_plan_available_shape_availability_domain"],
-        compartment_id=var["compartment_id"],
-        dvh_host_id=oci_cloud_migrations_dvh_host["test_dvh_host"]["id"],
-        reserved_capacity_id=oci_cloud_migrations_reserved_capacity["test_reserved_capacity"]["id"])
-    ```
-
-
-    :param str availability_domain: The availability domain in which to list resources.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str dvh_host_id: The ID of the Dvh in which to list resources.
-    :param str migration_plan_id: Unique migration plan identifier
-    :param str reserved_capacity_id: The reserved capacity ID for which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -177,28 +149,6 @@ def get_migration_plan_available_shapes_output(availability_domain: Optional[pul
                                                reserved_capacity_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationPlanAvailableShapesResult]:
     """
-    This data source provides the list of Migration Plan Available Shapes in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    List of shapes by parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_plan_available_shapes = oci.CloudMigrations.get_migration_plan_available_shapes(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        availability_domain=var["migration_plan_available_shape_availability_domain"],
-        compartment_id=var["compartment_id"],
-        dvh_host_id=oci_cloud_migrations_dvh_host["test_dvh_host"]["id"],
-        reserved_capacity_id=oci_cloud_migrations_reserved_capacity["test_reserved_capacity"]["id"])
-    ```
-
-
-    :param str availability_domain: The availability domain in which to list resources.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str dvh_host_id: The ID of the Dvh in which to list resources.
-    :param str migration_plan_id: Unique migration plan identifier
-    :param str reserved_capacity_id: The reserved capacity ID for which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

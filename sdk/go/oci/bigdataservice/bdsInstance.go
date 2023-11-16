@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -30,7 +29,7 @@ type BdsInstance struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-	BootstrapScriptUrl pulumi.StringOutput `pulumi:"bootstrapScriptUrl"`
+	BootstrapScriptUrl pulumi.StringPtrOutput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayOutput `pulumi:"cloudSqlDetails"`
 	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
@@ -38,7 +37,7 @@ type BdsInstance struct {
 	// Specific info about a Hadoop cluster
 	ClusterDetails BdsInstanceClusterDetailArrayOutput `pulumi:"clusterDetails"`
 	// Profile of the Big Data Service cluster.
-	ClusterProfile pulumi.StringOutput `pulumi:"clusterProfile"`
+	ClusterProfile pulumi.StringPtrOutput `pulumi:"clusterProfile"`
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey pulumi.StringOutput `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution
@@ -47,7 +46,7 @@ type BdsInstance struct {
 	CompartmentId         pulumi.StringOutput                       `pulumi:"compartmentId"`
 	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrOutput `pulumi:"computeOnlyWorkerNode"`
 	// The user who created the cluster.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the BDS instance
@@ -56,7 +55,7 @@ type BdsInstance struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
-	IsCloudSqlConfigured pulumi.BoolOutput `pulumi:"isCloudSqlConfigured"`
+	IsCloudSqlConfigured pulumi.BoolPtrOutput `pulumi:"isCloudSqlConfigured"`
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
 	IsForceStopJobs pulumi.BoolPtrOutput `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
@@ -68,27 +67,27 @@ type BdsInstance struct {
 	// The kafka broker node in the BDS instance
 	KafkaBrokerNode BdsInstanceKafkaBrokerNodePtrOutput `pulumi:"kafkaBrokerNode"`
 	// The user-defined kerberos realm name.
-	KerberosRealmName pulumi.StringOutput `pulumi:"kerberosRealmName"`
+	KerberosRealmName pulumi.StringPtrOutput `pulumi:"kerberosRealmName"`
 	// (Updatable) The OCID of the Key Management master encryption key.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeOutput `pulumi:"masterNode"`
 	// Additional configuration of the user's network.
-	NetworkConfig BdsInstanceNetworkConfigOutput `pulumi:"networkConfig"`
+	NetworkConfig BdsInstanceNetworkConfigPtrOutput `pulumi:"networkConfig"`
 	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayOutput `pulumi:"nodes"`
 	// The amount of worker nodes should be created
-	NumberOfNodes pulumi.IntOutput `pulumi:"numberOfNodes"`
+	NumberOfNodes pulumi.IntPtrOutput `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot pulumi.IntOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	NumberOfNodesRequiringMaintenanceReboot pulumi.IntPtrOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrOutput `pulumi:"osPatchVersion"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the BDS instance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The utility node in the BDS instance
 	UtilNode   BdsInstanceUtilNodeOutput   `pulumi:"utilNode"`
 	WorkerNode BdsInstanceWorkerNodeOutput `pulumi:"workerNode"`
@@ -424,12 +423,6 @@ func (i *BdsInstance) ToBdsInstanceOutputWithContext(ctx context.Context) BdsIns
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOutput)
 }
 
-func (i *BdsInstance) ToOutput(ctx context.Context) pulumix.Output[*BdsInstance] {
-	return pulumix.Output[*BdsInstance]{
-		OutputState: i.ToBdsInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceArrayInput is an input type that accepts BdsInstanceArray and BdsInstanceArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceArrayInput` via:
 //
@@ -453,12 +446,6 @@ func (i BdsInstanceArray) ToBdsInstanceArrayOutput() BdsInstanceArrayOutput {
 
 func (i BdsInstanceArray) ToBdsInstanceArrayOutputWithContext(ctx context.Context) BdsInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceArrayOutput)
-}
-
-func (i BdsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstance] {
-	return pulumix.Output[[]*BdsInstance]{
-		OutputState: i.ToBdsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BdsInstanceMapInput is an input type that accepts BdsInstanceMap and BdsInstanceMapOutput values.
@@ -486,12 +473,6 @@ func (i BdsInstanceMap) ToBdsInstanceMapOutputWithContext(ctx context.Context) B
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMapOutput)
 }
 
-func (i BdsInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstance] {
-	return pulumix.Output[map[string]*BdsInstance]{
-		OutputState: i.ToBdsInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceOutput) ElementType() reflect.Type {
@@ -506,15 +487,9 @@ func (o BdsInstanceOutput) ToBdsInstanceOutputWithContext(ctx context.Context) B
 	return o
 }
 
-func (o BdsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstance] {
-	return pulumix.Output[*BdsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-func (o BdsInstanceOutput) BootstrapScriptUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.BootstrapScriptUrl }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) BootstrapScriptUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.BootstrapScriptUrl }).(pulumi.StringPtrOutput)
 }
 
 // The information about added Cloud SQL capability
@@ -533,8 +508,8 @@ func (o BdsInstanceOutput) ClusterDetails() BdsInstanceClusterDetailArrayOutput 
 }
 
 // Profile of the Big Data Service cluster.
-func (o BdsInstanceOutput) ClusterProfile() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.ClusterProfile }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) ClusterProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.ClusterProfile }).(pulumi.StringPtrOutput)
 }
 
 // The SSH public key used to authenticate the cluster connection.
@@ -557,8 +532,8 @@ func (o BdsInstanceOutput) ComputeOnlyWorkerNode() BdsInstanceComputeOnlyWorkerN
 }
 
 // The user who created the cluster.
-func (o BdsInstanceOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -581,8 +556,8 @@ func (o BdsInstanceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
-func (o BdsInstanceOutput) IsCloudSqlConfigured() pulumi.BoolOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.BoolOutput { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
+func (o BdsInstanceOutput) IsCloudSqlConfigured() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.BoolPtrOutput { return v.IsCloudSqlConfigured }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -611,13 +586,13 @@ func (o BdsInstanceOutput) KafkaBrokerNode() BdsInstanceKafkaBrokerNodePtrOutput
 }
 
 // The user-defined kerberos realm name.
-func (o BdsInstanceOutput) KerberosRealmName() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.KerberosRealmName }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) KerberosRealmName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.KerberosRealmName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the Key Management master encryption key.
-func (o BdsInstanceOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The master node in the BDS instance
@@ -626,8 +601,8 @@ func (o BdsInstanceOutput) MasterNode() BdsInstanceMasterNodeOutput {
 }
 
 // Additional configuration of the user's network.
-func (o BdsInstanceOutput) NetworkConfig() BdsInstanceNetworkConfigOutput {
-	return o.ApplyT(func(v *BdsInstance) BdsInstanceNetworkConfigOutput { return v.NetworkConfig }).(BdsInstanceNetworkConfigOutput)
+func (o BdsInstanceOutput) NetworkConfig() BdsInstanceNetworkConfigPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) BdsInstanceNetworkConfigPtrOutput { return v.NetworkConfig }).(BdsInstanceNetworkConfigPtrOutput)
 }
 
 // The list of nodes in the Big Data Service cluster.
@@ -636,13 +611,13 @@ func (o BdsInstanceOutput) Nodes() BdsInstanceNodeArrayOutput {
 }
 
 // The amount of worker nodes should be created
-func (o BdsInstanceOutput) NumberOfNodes() pulumi.IntOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodes }).(pulumi.IntOutput)
+func (o BdsInstanceOutput) NumberOfNodes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.IntPtrOutput { return v.NumberOfNodes }).(pulumi.IntPtrOutput)
 }
 
 // Number of nodes that require a maintenance reboot
-func (o BdsInstanceOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntOutput)
+func (o BdsInstanceOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.IntPtrOutput { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The version of the patch to be upated.
@@ -651,18 +626,18 @@ func (o BdsInstanceOutput) OsPatchVersion() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
-func (o BdsInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the BDS instance was created. An RFC3339 formatted datetime string
-func (o BdsInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the BDS instance was updated. An RFC3339 formatted datetime string
-func (o BdsInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o BdsInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The utility node in the BDS instance
@@ -688,12 +663,6 @@ func (o BdsInstanceArrayOutput) ToBdsInstanceArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o BdsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstance] {
-	return pulumix.Output[[]*BdsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BdsInstanceArrayOutput) Index(i pulumi.IntInput) BdsInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BdsInstance {
 		return vs[0].([]*BdsInstance)[vs[1].(int)]
@@ -712,12 +681,6 @@ func (o BdsInstanceMapOutput) ToBdsInstanceMapOutput() BdsInstanceMapOutput {
 
 func (o BdsInstanceMapOutput) ToBdsInstanceMapOutputWithContext(ctx context.Context) BdsInstanceMapOutput {
 	return o
-}
-
-func (o BdsInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstance] {
-	return pulumix.Output[map[string]*BdsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceMapOutput) MapIndex(k pulumi.StringInput) BdsInstanceOutput {

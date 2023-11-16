@@ -45,68 +45,68 @@ export interface GetExternalClusterInstanceResult {
     /**
      * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      */
-    readonly adrHomeDirectory: string;
+    readonly adrHomeDirectory?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name of the external cluster instance.
      */
-    readonly componentName: string;
+    readonly componentName?: string;
     /**
      * The Oracle base location of Cluster Ready Services (CRS).
      */
-    readonly crsBaseDirectory: string;
+    readonly crsBaseDirectory?: string;
     /**
      * The user-friendly name for the cluster instance. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
      */
-    readonly externalClusterId: string;
+    readonly externalClusterId?: string;
     readonly externalClusterInstanceId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    readonly externalConnectorId: string;
+    readonly externalConnectorId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      */
-    readonly externalDbNodeId: string;
+    readonly externalDbNodeId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
      */
-    readonly externalDbSystemId: string;
+    readonly externalDbSystemId?: string;
     /**
      * The name of the host on which the cluster instance is running.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The role of the cluster node.
      */
-    readonly nodeRole: string;
+    readonly nodeRole?: string;
     /**
      * The current lifecycle state of the external cluster instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external cluster instance was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external cluster instance was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.

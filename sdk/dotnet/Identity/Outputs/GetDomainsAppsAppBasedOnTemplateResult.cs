@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
         /// </summary>
-        public readonly string LastModified;
+        public readonly string? LastModified;
         /// <summary>
         /// URI of the AppRole.
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
         /// <summary>
         /// Unique well-known identifier used to reference connector bundle.
         /// </summary>
-        public readonly string WellKnownId;
+        public readonly string? WellKnownId;
 
         [OutputConstructor]
         private GetDomainsAppsAppBasedOnTemplateResult(
-            string lastModified,
+            string? lastModified,
 
-            string @ref,
+            string? @ref,
 
-            string value,
+            string? value,
 
-            string wellKnownId)
+            string? wellKnownId)
         {
             LastModified = lastModified;
             Ref = @ref;

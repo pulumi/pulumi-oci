@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -119,15 +118,15 @@ type MaskingPoliciesMaskingColumn struct {
 	// (Updatable) The name of the substitution column.
 	ColumnName pulumi.StringOutput `pulumi:"columnName"`
 	// The data type of the masking column.
-	DataType pulumi.StringOutput `pulumi:"dataType"`
+	DataType pulumi.StringPtrOutput `pulumi:"dataType"`
 	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-	IsMaskingEnabled pulumi.BoolOutput `pulumi:"isMaskingEnabled"`
+	IsMaskingEnabled pulumi.BoolPtrOutput `pulumi:"isMaskingEnabled"`
 	// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// Details about the current state of the masking column.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-	MaskingColumnGroup pulumi.StringOutput `pulumi:"maskingColumnGroup"`
+	MaskingColumnGroup pulumi.StringPtrOutput `pulumi:"maskingColumnGroup"`
 	// (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
 	MaskingFormats MaskingPoliciesMaskingColumnMaskingFormatArrayOutput `pulumi:"maskingFormats"`
 	// The OCID of the masking policy.
@@ -135,20 +134,20 @@ type MaskingPoliciesMaskingColumn struct {
 	// The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
 	Object pulumi.StringOutput `pulumi:"object"`
 	// (Updatable) The type of the object that contains the database column.
-	ObjectType pulumi.StringOutput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrOutput `pulumi:"objectType"`
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName pulumi.StringOutput `pulumi:"schemaName"`
 	// (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SensitiveTypeId pulumi.StringOutput `pulumi:"sensitiveTypeId"`
+	SensitiveTypeId pulumi.StringPtrOutput `pulumi:"sensitiveTypeId"`
 	// The current state of the masking column.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMaskingPoliciesMaskingColumn registers a new resource with the given unique name, arguments, and options.
@@ -344,12 +343,6 @@ func (i *MaskingPoliciesMaskingColumn) ToMaskingPoliciesMaskingColumnOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesMaskingColumnOutput)
 }
 
-func (i *MaskingPoliciesMaskingColumn) ToOutput(ctx context.Context) pulumix.Output[*MaskingPoliciesMaskingColumn] {
-	return pulumix.Output[*MaskingPoliciesMaskingColumn]{
-		OutputState: i.ToMaskingPoliciesMaskingColumnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MaskingPoliciesMaskingColumnArrayInput is an input type that accepts MaskingPoliciesMaskingColumnArray and MaskingPoliciesMaskingColumnArrayOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnArrayInput` via:
 //
@@ -373,12 +366,6 @@ func (i MaskingPoliciesMaskingColumnArray) ToMaskingPoliciesMaskingColumnArrayOu
 
 func (i MaskingPoliciesMaskingColumnArray) ToMaskingPoliciesMaskingColumnArrayOutputWithContext(ctx context.Context) MaskingPoliciesMaskingColumnArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesMaskingColumnArrayOutput)
-}
-
-func (i MaskingPoliciesMaskingColumnArray) ToOutput(ctx context.Context) pulumix.Output[[]*MaskingPoliciesMaskingColumn] {
-	return pulumix.Output[[]*MaskingPoliciesMaskingColumn]{
-		OutputState: i.ToMaskingPoliciesMaskingColumnArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MaskingPoliciesMaskingColumnMapInput is an input type that accepts MaskingPoliciesMaskingColumnMap and MaskingPoliciesMaskingColumnMapOutput values.
@@ -406,12 +393,6 @@ func (i MaskingPoliciesMaskingColumnMap) ToMaskingPoliciesMaskingColumnMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesMaskingColumnMapOutput)
 }
 
-func (i MaskingPoliciesMaskingColumnMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskingPoliciesMaskingColumn] {
-	return pulumix.Output[map[string]*MaskingPoliciesMaskingColumn]{
-		OutputState: i.ToMaskingPoliciesMaskingColumnMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MaskingPoliciesMaskingColumnOutput struct{ *pulumi.OutputState }
 
 func (MaskingPoliciesMaskingColumnOutput) ElementType() reflect.Type {
@@ -426,12 +407,6 @@ func (o MaskingPoliciesMaskingColumnOutput) ToMaskingPoliciesMaskingColumnOutput
 	return o
 }
 
-func (o MaskingPoliciesMaskingColumnOutput) ToOutput(ctx context.Context) pulumix.Output[*MaskingPoliciesMaskingColumn] {
-	return pulumix.Output[*MaskingPoliciesMaskingColumn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of child columns that are in referential relationship with the masking column.
 func (o MaskingPoliciesMaskingColumnOutput) ChildColumns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringArrayOutput { return v.ChildColumns }).(pulumi.StringArrayOutput)
@@ -443,28 +418,28 @@ func (o MaskingPoliciesMaskingColumnOutput) ColumnName() pulumi.StringOutput {
 }
 
 // The data type of the masking column.
-func (o MaskingPoliciesMaskingColumnOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.DataType }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-func (o MaskingPoliciesMaskingColumnOutput) IsMaskingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.BoolOutput { return v.IsMaskingEnabled }).(pulumi.BoolOutput)
+func (o MaskingPoliciesMaskingColumnOutput) IsMaskingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.BoolPtrOutput { return v.IsMaskingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-func (o MaskingPoliciesMaskingColumnOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the masking column.
-func (o MaskingPoliciesMaskingColumnOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-func (o MaskingPoliciesMaskingColumnOutput) MaskingColumnGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.MaskingColumnGroup }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) MaskingColumnGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.MaskingColumnGroup }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
@@ -485,8 +460,8 @@ func (o MaskingPoliciesMaskingColumnOutput) Object() pulumi.StringOutput {
 }
 
 // (Updatable) The type of the object that contains the database column.
-func (o MaskingPoliciesMaskingColumnOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.ObjectType }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 // The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
@@ -498,23 +473,23 @@ func (o MaskingPoliciesMaskingColumnOutput) SchemaName() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o MaskingPoliciesMaskingColumnOutput) SensitiveTypeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.SensitiveTypeId }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the masking column.
-func (o MaskingPoliciesMaskingColumnOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o MaskingPoliciesMaskingColumnOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o MaskingPoliciesMaskingColumnOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MaskingPoliciesMaskingColumnOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MaskingPoliciesMaskingColumnArrayOutput struct{ *pulumi.OutputState }
@@ -529,12 +504,6 @@ func (o MaskingPoliciesMaskingColumnArrayOutput) ToMaskingPoliciesMaskingColumnA
 
 func (o MaskingPoliciesMaskingColumnArrayOutput) ToMaskingPoliciesMaskingColumnArrayOutputWithContext(ctx context.Context) MaskingPoliciesMaskingColumnArrayOutput {
 	return o
-}
-
-func (o MaskingPoliciesMaskingColumnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MaskingPoliciesMaskingColumn] {
-	return pulumix.Output[[]*MaskingPoliciesMaskingColumn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskingPoliciesMaskingColumnArrayOutput) Index(i pulumi.IntInput) MaskingPoliciesMaskingColumnOutput {
@@ -555,12 +524,6 @@ func (o MaskingPoliciesMaskingColumnMapOutput) ToMaskingPoliciesMaskingColumnMap
 
 func (o MaskingPoliciesMaskingColumnMapOutput) ToMaskingPoliciesMaskingColumnMapOutputWithContext(ctx context.Context) MaskingPoliciesMaskingColumnMapOutput {
 	return o
-}
-
-func (o MaskingPoliciesMaskingColumnMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskingPoliciesMaskingColumn] {
-	return pulumix.Output[map[string]*MaskingPoliciesMaskingColumn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskingPoliciesMaskingColumnMapOutput) MapIndex(k pulumi.StringInput) MaskingPoliciesMaskingColumnOutput {

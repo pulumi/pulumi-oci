@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewaysIngressGatewayCollectionItemMtl {
@@ -14,27 +16,27 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemMtl {
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    private String certificateId;
+    private @Nullable String certificateId;
     /**
      * @return The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      * 
      */
-    private Integer maximumValidity;
+    private @Nullable Integer maximumValidity;
 
     private GetIngressGatewaysIngressGatewayCollectionItemMtl() {}
     /**
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    public String certificateId() {
-        return this.certificateId;
+    public Optional<String> certificateId() {
+        return Optional.ofNullable(this.certificateId);
     }
     /**
      * @return The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      * 
      */
-    public Integer maximumValidity() {
-        return this.maximumValidity;
+    public Optional<Integer> maximumValidity() {
+        return Optional.ofNullable(this.maximumValidity);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemMtl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateId;
-        private Integer maximumValidity;
+        private @Nullable String certificateId;
+        private @Nullable Integer maximumValidity;
         public Builder() {}
         public Builder(GetIngressGatewaysIngressGatewayCollectionItemMtl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemMtl {
         }
 
         @CustomType.Setter
-        public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+        public Builder certificateId(@Nullable String certificateId) {
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
-        public Builder maximumValidity(Integer maximumValidity) {
-            this.maximumValidity = Objects.requireNonNull(maximumValidity);
+        public Builder maximumValidity(@Nullable Integer maximumValidity) {
+            this.maximumValidity = maximumValidity;
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItemMtl build() {

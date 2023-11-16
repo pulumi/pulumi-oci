@@ -53,14 +53,11 @@ class GetManagedPreferredCredentialResult:
     @property
     @pulumi.getter(name="credentialName")
     def credential_name(self) -> str:
-        """
-        The name of the preferred credential.
-        """
         return pulumi.get(self, "credential_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,10 +65,7 @@ class GetManagedPreferredCredentialResult:
 
     @property
     @pulumi.getter(name="isAccessible")
-    def is_accessible(self) -> bool:
-        """
-        Indicates whether the preferred credential is accessible.
-        """
+    def is_accessible(self) -> Optional[bool]:
         return pulumi.get(self, "is_accessible")
 
     @property
@@ -81,42 +75,27 @@ class GetManagedPreferredCredentialResult:
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        The role of the database user.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the preferred credential.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of preferred credential. Only 'BASIC' is supported currently.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        The user name used to connect to the database.
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
 
@@ -141,23 +120,7 @@ def get_managed_preferred_credential(credential_name: Optional[str] = None,
                                      managed_database_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedPreferredCredentialResult:
     """
-    This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the preferred credential details for a Managed Database based on credentialName.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=var["managed_database_preferred_credential_credential_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str credential_name: The name of the preferred credential.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['credentialName'] = credential_name
@@ -182,22 +145,6 @@ def get_managed_preferred_credential_output(credential_name: Optional[pulumi.Inp
                                             managed_database_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedPreferredCredentialResult]:
     """
-    This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the preferred credential details for a Managed Database based on credentialName.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=var["managed_database_preferred_credential_credential_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str credential_name: The name of the preferred credential.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     ...

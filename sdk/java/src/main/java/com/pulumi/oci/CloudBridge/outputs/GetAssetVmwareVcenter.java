@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudBridge.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetVmwareVcenter {
@@ -13,39 +15,39 @@ public final class GetAssetVmwareVcenter {
      * @return Data center name.
      * 
      */
-    private String dataCenter;
+    private @Nullable String dataCenter;
     /**
      * @return vCenter unique key.
      * 
      */
-    private String vcenterKey;
+    private @Nullable String vcenterKey;
     /**
      * @return Dot-separated version string.
      * 
      */
-    private String vcenterVersion;
+    private @Nullable String vcenterVersion;
 
     private GetAssetVmwareVcenter() {}
     /**
      * @return Data center name.
      * 
      */
-    public String dataCenter() {
-        return this.dataCenter;
+    public Optional<String> dataCenter() {
+        return Optional.ofNullable(this.dataCenter);
     }
     /**
      * @return vCenter unique key.
      * 
      */
-    public String vcenterKey() {
-        return this.vcenterKey;
+    public Optional<String> vcenterKey() {
+        return Optional.ofNullable(this.vcenterKey);
     }
     /**
      * @return Dot-separated version string.
      * 
      */
-    public String vcenterVersion() {
-        return this.vcenterVersion;
+    public Optional<String> vcenterVersion() {
+        return Optional.ofNullable(this.vcenterVersion);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAssetVmwareVcenter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dataCenter;
-        private String vcenterKey;
-        private String vcenterVersion;
+        private @Nullable String dataCenter;
+        private @Nullable String vcenterKey;
+        private @Nullable String vcenterVersion;
         public Builder() {}
         public Builder(GetAssetVmwareVcenter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAssetVmwareVcenter {
         }
 
         @CustomType.Setter
-        public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+        public Builder dataCenter(@Nullable String dataCenter) {
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
-        public Builder vcenterKey(String vcenterKey) {
-            this.vcenterKey = Objects.requireNonNull(vcenterKey);
+        public Builder vcenterKey(@Nullable String vcenterKey) {
+            this.vcenterKey = vcenterKey;
             return this;
         }
         @CustomType.Setter
-        public Builder vcenterVersion(String vcenterVersion) {
-            this.vcenterVersion = Objects.requireNonNull(vcenterVersion);
+        public Builder vcenterVersion(@Nullable String vcenterVersion) {
+            this.vcenterVersion = vcenterVersion;
             return this;
         }
         public GetAssetVmwareVcenter build() {

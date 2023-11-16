@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
@@ -70,7 +69,7 @@ type GetProfilesResult struct {
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetProfilesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name assigned to the profile. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// The list of profile_collection.
@@ -122,12 +121,6 @@ func (o GetProfilesResultOutput) ToGetProfilesResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetProfilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesResult] {
-	return pulumix.Output[GetProfilesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy. The tenancy is the root compartment.
 func (o GetProfilesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfilesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -138,8 +131,8 @@ func (o GetProfilesResultOutput) Filters() GetProfilesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetProfilesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfilesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name assigned to the profile. Avoid entering confidential information.

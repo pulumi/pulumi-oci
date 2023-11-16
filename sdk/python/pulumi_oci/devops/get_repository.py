@@ -101,50 +101,32 @@ class GetRepositoryResult:
 
     @property
     @pulumi.getter(name="branchCount")
-    def branch_count(self) -> int:
-        """
-        The count of the branches present in the repository.
-        """
+    def branch_count(self) -> Optional[int]:
         return pulumi.get(self, "branch_count")
 
     @property
     @pulumi.getter(name="commitCount")
-    def commit_count(self) -> int:
-        """
-        The count of the commits present in the repository.
-        """
+    def commit_count(self) -> Optional[int]:
         return pulumi.get(self, "commit_count")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the repository's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="defaultBranch")
-    def default_branch(self) -> str:
-        """
-        The default branch of the repository.
-        """
+    def default_branch(self) -> Optional[str]:
         return pulumi.get(self, "default_branch")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Details of the repository. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
@@ -154,74 +136,47 @@ class GetRepositoryResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="httpUrl")
-    def http_url(self) -> str:
-        """
-        HTTP URL that you use to git clone, pull and push.
-        """
+    def http_url(self) -> Optional[str]:
         return pulumi.get(self, "http_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the repository. This value is unique and immutable.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter(name="mirrorRepositoryConfigs")
-    def mirror_repository_configs(self) -> Sequence['outputs.GetRepositoryMirrorRepositoryConfigResult']:
-        """
-        Configuration information for mirroring the repository.
-        """
+    def mirror_repository_configs(self) -> Optional[Sequence['outputs.GetRepositoryMirrorRepositoryConfigResult']]:
         return pulumi.get(self, "mirror_repository_configs")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Unique name of a repository. This value is mutable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Tenancy unique namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of the DevOps project containing the repository.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter(name="projectName")
-    def project_name(self) -> str:
-        """
-        Unique project name in a namespace.
-        """
+    def project_name(self) -> Optional[str]:
         return pulumi.get(self, "project_name")
 
     @property
@@ -231,66 +186,42 @@ class GetRepositoryResult:
 
     @property
     @pulumi.getter(name="repositoryType")
-    def repository_type(self) -> str:
-        """
-        Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
-        """
+    def repository_type(self) -> Optional[str]:
         return pulumi.get(self, "repository_type")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        The size of the repository in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="sshUrl")
-    def ssh_url(self) -> str:
-        """
-        SSH URL that you use to git clone, pull and push.
-        """
+    def ssh_url(self) -> Optional[str]:
         return pulumi.get(self, "ssh_url")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the repository.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="triggerBuildEvents")
-    def trigger_build_events(self) -> Sequence[str]:
-        """
-        Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
-        """
+    def trigger_build_events(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "trigger_build_events")
 
 
@@ -331,23 +262,7 @@ def get_repository(fields: Optional[Sequence[str]] = None,
                    repository_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryResult:
     """
-    This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a repository by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository = oci.DevOps.get_repository(repository_id=oci_devops_repository["test_repository"]["id"],
-        fields=var["repository_fields"])
-    ```
-
-
-    :param Sequence[str] fields: Fields parameter can contain multiple flags useful in deciding the API functionality.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fields'] = fields
@@ -388,22 +303,6 @@ def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]
                           repository_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryResult]:
     """
-    This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a repository by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository = oci.DevOps.get_repository(repository_id=oci_devops_repository["test_repository"]["id"],
-        fields=var["repository_fields"])
-    ```
-
-
-    :param Sequence[str] fields: Fields parameter can contain multiple flags useful in deciding the API functionality.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -20,7 +20,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// OCId of the problem.
         /// </summary>
-        public readonly string ProblemId;
+        public readonly string? ProblemId;
         /// <summary>
         /// Data source problem entities region
         /// </summary>
@@ -28,29 +28,29 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Log result query url for a data source query
         /// </summary>
-        public readonly string ResultUrl;
+        public readonly string? ResultUrl;
         /// <summary>
         /// Data source problem entities first detected time
         /// </summary>
-        public readonly string TimeFirstDetected;
+        public readonly string? TimeFirstDetected;
         /// <summary>
         /// Data source problem entities last detected time
         /// </summary>
-        public readonly string TimeLastDetected;
+        public readonly string? TimeLastDetected;
 
         [OutputConstructor]
         private GetProblemEntitiesProblemEntityCollectionItemResult(
             ImmutableArray<Outputs.GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult> entityDetails,
 
-            string problemId,
+            string? problemId,
 
             ImmutableArray<string> regions,
 
-            string resultUrl,
+            string? resultUrl,
 
-            string timeFirstDetected,
+            string? timeFirstDetected,
 
-            string timeLastDetected)
+            string? timeLastDetected)
         {
             EntityDetails = entityDetails;
             ProblemId = problemId;

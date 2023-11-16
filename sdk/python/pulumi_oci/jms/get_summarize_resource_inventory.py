@@ -52,18 +52,12 @@ class GetSummarizeResourceInventoryResult:
 
     @property
     @pulumi.getter(name="activeFleetCount")
-    def active_fleet_count(self) -> int:
-        """
-        The number of _active_ fleets.
-        """
+    def active_fleet_count(self) -> Optional[int]:
         return pulumi.get(self, "active_fleet_count")
 
     @property
     @pulumi.getter(name="applicationCount")
-    def application_count(self) -> int:
-        """
-        The number of applications.
-        """
+    def application_count(self) -> Optional[int]:
         return pulumi.get(self, "application_count")
 
     @property
@@ -73,7 +67,7 @@ class GetSummarizeResourceInventoryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,26 +75,17 @@ class GetSummarizeResourceInventoryResult:
 
     @property
     @pulumi.getter(name="installationCount")
-    def installation_count(self) -> int:
-        """
-        The number of Java installations.
-        """
+    def installation_count(self) -> Optional[int]:
         return pulumi.get(self, "installation_count")
 
     @property
     @pulumi.getter(name="jreCount")
-    def jre_count(self) -> int:
-        """
-        The number of Java Runtimes.
-        """
+    def jre_count(self) -> Optional[int]:
         return pulumi.get(self, "jre_count")
 
     @property
     @pulumi.getter(name="managedInstanceCount")
-    def managed_instance_count(self) -> int:
-        """
-        The number of managed instances.
-        """
+    def managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "managed_instance_count")
 
     @property
@@ -136,25 +121,7 @@ def get_summarize_resource_inventory(compartment_id: Optional[str] = None,
                                      time_start: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSummarizeResourceInventoryResult:
     """
-    This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=var["compartment_id"],
-        time_end=var["summarize_resource_inventory_time_end"],
-        time_start=var["summarize_resource_inventory_time_start"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -181,24 +148,6 @@ def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Inpu
                                             time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSummarizeResourceInventoryResult]:
     """
-    This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=var["compartment_id"],
-        time_end=var["summarize_resource_inventory_time_end"],
-        time_start=var["summarize_resource_inventory_time_start"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     ...

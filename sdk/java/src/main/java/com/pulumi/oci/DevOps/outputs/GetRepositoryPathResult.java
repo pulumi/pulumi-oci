@@ -20,12 +20,12 @@ public final class GetRepositoryPathResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of objects describing files or directories in a repository.
      * 
      */
-    private List<GetRepositoryPathItem> items;
+    private @Nullable List<GetRepositoryPathItem> items;
     private @Nullable Boolean pathsInSubtree;
     private @Nullable String ref;
     private String repositoryId;
@@ -41,15 +41,15 @@ public final class GetRepositoryPathResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of objects describing files or directories in a repository.
      * 
      */
     public List<GetRepositoryPathItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<Boolean> pathsInSubtree() {
         return Optional.ofNullable(this.pathsInSubtree);
@@ -72,8 +72,8 @@ public final class GetRepositoryPathResult {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String folderPath;
-        private String id;
-        private List<GetRepositoryPathItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetRepositoryPathItem> items;
         private @Nullable Boolean pathsInSubtree;
         private @Nullable String ref;
         private String repositoryId;
@@ -100,13 +100,13 @@ public final class GetRepositoryPathResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetRepositoryPathItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRepositoryPathItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRepositoryPathItem... items) {

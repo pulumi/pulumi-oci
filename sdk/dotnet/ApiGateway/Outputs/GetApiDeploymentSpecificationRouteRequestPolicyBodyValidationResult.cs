@@ -20,19 +20,19 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Determines if the parameter is required in the request.
         /// </summary>
-        public readonly bool Required;
+        public readonly bool? Required;
         /// <summary>
         /// Validation behavior mode.
         /// </summary>
-        public readonly string ValidationMode;
+        public readonly string? ValidationMode;
 
         [OutputConstructor]
         private GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationResult(
             ImmutableArray<Outputs.GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult> contents,
 
-            bool required,
+            bool? required,
 
-            string validationMode)
+            string? validationMode)
         {
             Contents = contents;
             Required = required;

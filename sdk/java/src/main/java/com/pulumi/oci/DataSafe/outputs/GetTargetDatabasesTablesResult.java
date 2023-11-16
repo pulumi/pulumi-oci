@@ -19,7 +19,7 @@ public final class GetTargetDatabasesTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String schemaNameContains;
     /**
      * @return Name of the schema.
@@ -36,7 +36,7 @@ public final class GetTargetDatabasesTablesResult {
      * @return The list of tables.
      * 
      */
-    private List<GetTargetDatabasesTablesTable> tables;
+    private @Nullable List<GetTargetDatabasesTablesTable> tables;
     private String targetDatabaseId;
 
     private GetTargetDatabasesTablesResult() {}
@@ -47,8 +47,8 @@ public final class GetTargetDatabasesTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> schemaNameContains() {
         return Optional.ofNullable(this.schemaNameContains);
@@ -75,7 +75,7 @@ public final class GetTargetDatabasesTablesResult {
      * 
      */
     public List<GetTargetDatabasesTablesTable> tables() {
-        return this.tables;
+        return this.tables == null ? List.of() : this.tables;
     }
     public String targetDatabaseId() {
         return this.targetDatabaseId;
@@ -91,12 +91,12 @@ public final class GetTargetDatabasesTablesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTargetDatabasesTablesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String schemaNameContains;
         private @Nullable List<String> schemaNames;
         private @Nullable String tableNameContains;
         private @Nullable List<String> tableNames;
-        private List<GetTargetDatabasesTablesTable> tables;
+        private @Nullable List<GetTargetDatabasesTablesTable> tables;
         private String targetDatabaseId;
         public Builder() {}
         public Builder(GetTargetDatabasesTablesResult defaults) {
@@ -120,8 +120,8 @@ public final class GetTargetDatabasesTablesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -151,8 +151,8 @@ public final class GetTargetDatabasesTablesResult {
             return tableNames(List.of(tableNames));
         }
         @CustomType.Setter
-        public Builder tables(List<GetTargetDatabasesTablesTable> tables) {
-            this.tables = Objects.requireNonNull(tables);
+        public Builder tables(@Nullable List<GetTargetDatabasesTablesTable> tables) {
+            this.tables = tables;
             return this;
         }
         public Builder tables(GetTargetDatabasesTablesTable... tables) {

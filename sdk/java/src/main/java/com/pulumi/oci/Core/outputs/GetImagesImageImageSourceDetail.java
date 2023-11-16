@@ -6,58 +6,60 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagesImageImageSourceDetail {
-    private String bucketName;
-    private String namespaceName;
-    private String objectName;
+    private @Nullable String bucketName;
+    private @Nullable String namespaceName;
+    private @Nullable String objectName;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    private String operatingSystem;
+    private @Nullable String operatingSystem;
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    private String operatingSystemVersion;
-    private String sourceImageType;
-    private String sourceType;
-    private String sourceUri;
+    private @Nullable String operatingSystemVersion;
+    private @Nullable String sourceImageType;
+    private @Nullable String sourceType;
+    private @Nullable String sourceUri;
 
     private GetImagesImageImageSourceDetail() {}
-    public String bucketName() {
-        return this.bucketName;
+    public Optional<String> bucketName() {
+        return Optional.ofNullable(this.bucketName);
     }
-    public String namespaceName() {
-        return this.namespaceName;
+    public Optional<String> namespaceName() {
+        return Optional.ofNullable(this.namespaceName);
     }
-    public String objectName() {
-        return this.objectName;
+    public Optional<String> objectName() {
+        return Optional.ofNullable(this.objectName);
     }
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    public String operatingSystem() {
-        return this.operatingSystem;
+    public Optional<String> operatingSystem() {
+        return Optional.ofNullable(this.operatingSystem);
     }
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    public String operatingSystemVersion() {
-        return this.operatingSystemVersion;
+    public Optional<String> operatingSystemVersion() {
+        return Optional.ofNullable(this.operatingSystemVersion);
     }
-    public String sourceImageType() {
-        return this.sourceImageType;
+    public Optional<String> sourceImageType() {
+        return Optional.ofNullable(this.sourceImageType);
     }
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
-    public String sourceUri() {
-        return this.sourceUri;
+    public Optional<String> sourceUri() {
+        return Optional.ofNullable(this.sourceUri);
     }
 
     public static Builder builder() {
@@ -69,14 +71,14 @@ public final class GetImagesImageImageSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucketName;
-        private String namespaceName;
-        private String objectName;
-        private String operatingSystem;
-        private String operatingSystemVersion;
-        private String sourceImageType;
-        private String sourceType;
-        private String sourceUri;
+        private @Nullable String bucketName;
+        private @Nullable String namespaceName;
+        private @Nullable String objectName;
+        private @Nullable String operatingSystem;
+        private @Nullable String operatingSystemVersion;
+        private @Nullable String sourceImageType;
+        private @Nullable String sourceType;
+        private @Nullable String sourceUri;
         public Builder() {}
         public Builder(GetImagesImageImageSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -91,43 +93,43 @@ public final class GetImagesImageImageSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder bucketName(String bucketName) {
-            this.bucketName = Objects.requireNonNull(bucketName);
+        public Builder bucketName(@Nullable String bucketName) {
+            this.bucketName = bucketName;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaceName(String namespaceName) {
-            this.namespaceName = Objects.requireNonNull(namespaceName);
+        public Builder namespaceName(@Nullable String namespaceName) {
+            this.namespaceName = namespaceName;
             return this;
         }
         @CustomType.Setter
-        public Builder objectName(String objectName) {
-            this.objectName = Objects.requireNonNull(objectName);
+        public Builder objectName(@Nullable String objectName) {
+            this.objectName = objectName;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+        public Builder operatingSystem(@Nullable String operatingSystem) {
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+        public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceImageType(String sourceImageType) {
-            this.sourceImageType = Objects.requireNonNull(sourceImageType);
+        public Builder sourceImageType(@Nullable String sourceImageType) {
+            this.sourceImageType = sourceImageType;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceUri(String sourceUri) {
-            this.sourceUri = Objects.requireNonNull(sourceUri);
+        public Builder sourceUri(@Nullable String sourceUri) {
+            this.sourceUri = sourceUri;
             return this;
         }
         public GetImagesImageImageSourceDetail build() {

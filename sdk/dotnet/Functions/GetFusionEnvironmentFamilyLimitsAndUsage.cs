@@ -113,7 +113,7 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The limit and usage for a specific environment type, for example, production, development, or test.
         /// </summary>
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Functions
 
             string fusionEnvironmentFamilyId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageResult> productionLimitAndUsages,
 

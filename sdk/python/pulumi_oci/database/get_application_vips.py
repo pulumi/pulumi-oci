@@ -45,26 +45,17 @@ class GetApplicationVipsResult:
 
     @property
     @pulumi.getter(name="applicationVips")
-    def application_vips(self) -> Sequence['outputs.GetApplicationVipsApplicationVipResult']:
-        """
-        The list of application_vips.
-        """
+    def application_vips(self) -> Optional[Sequence['outputs.GetApplicationVipsApplicationVipResult']]:
         return pulumi.get(self, "application_vips")
 
     @property
     @pulumi.getter(name="cloudVmClusterId")
     def cloud_vm_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
-        """
         return pulumi.get(self, "cloud_vm_cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -74,7 +65,7 @@ class GetApplicationVipsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetApplicationVipsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the application virtual IP (VIP) address.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_application_vips(cloud_vm_cluster_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationVipsResult:
     """
-    This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        state=var["application_vip_state"])
-    ```
-
-
-    :param str cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cloudVmClusterId'] = cloud_vm_cluster_id
@@ -153,24 +123,6 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationVipsResult]:
     """
-    This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        state=var["application_vip_state"])
-    ```
-
-
-    :param str cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

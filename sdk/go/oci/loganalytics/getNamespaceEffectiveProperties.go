@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
@@ -84,8 +83,8 @@ type GetNamespaceEffectivePropertiesResult struct {
 	EntityId                     *string                                                      `pulumi:"entityId"`
 	Filters                      []GetNamespaceEffectivePropertiesFilter                      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	IsIncludePatterns *bool  `pulumi:"isIncludePatterns"`
+	Id                *string `pulumi:"id"`
+	IsIncludePatterns *bool   `pulumi:"isIncludePatterns"`
 	// The property name.
 	Name       *string `pulumi:"name"`
 	Namespace  string  `pulumi:"namespace"`
@@ -144,12 +143,6 @@ func (o GetNamespaceEffectivePropertiesResultOutput) ToGetNamespaceEffectiveProp
 	return o
 }
 
-func (o GetNamespaceEffectivePropertiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesResult] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceEffectivePropertiesResultOutput) AgentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNamespaceEffectivePropertiesResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
@@ -172,8 +165,8 @@ func (o GetNamespaceEffectivePropertiesResultOutput) Filters() GetNamespaceEffec
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceEffectivePropertiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceEffectivePropertiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceEffectivePropertiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespaceEffectivePropertiesResultOutput) IsIncludePatterns() pulumi.BoolPtrOutput {

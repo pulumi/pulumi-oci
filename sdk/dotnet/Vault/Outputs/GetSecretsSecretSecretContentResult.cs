@@ -13,23 +13,23 @@ namespace Pulumi.Oci.Vault.Outputs
     [OutputType]
     public sealed class GetSecretsSecretSecretContentResult
     {
-        public readonly string Content;
-        public readonly string ContentType;
+        public readonly string? Content;
+        public readonly string? ContentType;
         /// <summary>
         /// The secret name.
         /// </summary>
-        public readonly string Name;
-        public readonly string Stage;
+        public readonly string? Name;
+        public readonly string? Stage;
 
         [OutputConstructor]
         private GetSecretsSecretSecretContentResult(
-            string content,
+            string? content,
 
-            string contentType,
+            string? contentType,
 
-            string name,
+            string? name,
 
-            string stage)
+            string? stage)
         {
             Content = content;
             ContentType = contentType;

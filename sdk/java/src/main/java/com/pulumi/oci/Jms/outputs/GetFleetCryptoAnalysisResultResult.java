@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetCryptoAnalysisResultResult {
@@ -14,23 +16,23 @@ public final class GetFleetCryptoAnalysisResultResult {
      * @return The result aggregation mode
      * 
      */
-    private String aggregationMode;
+    private @Nullable String aggregationMode;
     /**
      * @return The Object Storage bucket name of this analysis result.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     private String cryptoAnalysisResultId;
     /**
      * @return The Crypto Roadmap version used to perform the analysis.
      * 
      */
-    private String cryptoRoadmapVersion;
+    private @Nullable String cryptoRoadmapVersion;
     /**
      * @return Total number of findings with the analysis.
      * 
      */
-    private Integer findingCount;
+    private @Nullable Integer findingCount;
     /**
      * @return The fleet OCID.
      * 
@@ -40,77 +42,77 @@ public final class GetFleetCryptoAnalysisResultResult {
      * @return The hostname of the managed instance.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The managed instance OCID.
      * 
      */
-    private String managedInstanceId;
+    private @Nullable String managedInstanceId;
     /**
      * @return The Object Storage namespace of this analysis result.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
      * 
      */
-    private Integer nonCompliantFindingCount;
+    private @Nullable Integer nonCompliantFindingCount;
     /**
      * @return The Object Storage object name of this analysis result.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return Total number of summarized events. Summarized events are deduplicated events of interest.
      * 
      */
-    private Integer summarizedEventCount;
+    private @Nullable Integer summarizedEventCount;
     /**
      * @return The time the result is compiled.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time of the first event in the analysis.
      * 
      */
-    private String timeFirstEvent;
+    private @Nullable String timeFirstEvent;
     /**
      * @return Time of the last event in the analysis.
      * 
      */
-    private String timeLastEvent;
+    private @Nullable String timeLastEvent;
     /**
      * @return Total number of events in the analysis.
      * 
      */
-    private Integer totalEventCount;
+    private @Nullable Integer totalEventCount;
     /**
      * @return The OCID of the work request to start the analysis.
      * 
      */
-    private String workRequestId;
+    private @Nullable String workRequestId;
 
     private GetFleetCryptoAnalysisResultResult() {}
     /**
      * @return The result aggregation mode
      * 
      */
-    public String aggregationMode() {
-        return this.aggregationMode;
+    public Optional<String> aggregationMode() {
+        return Optional.ofNullable(this.aggregationMode);
     }
     /**
      * @return The Object Storage bucket name of this analysis result.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     public String cryptoAnalysisResultId() {
         return this.cryptoAnalysisResultId;
@@ -119,15 +121,15 @@ public final class GetFleetCryptoAnalysisResultResult {
      * @return The Crypto Roadmap version used to perform the analysis.
      * 
      */
-    public String cryptoRoadmapVersion() {
-        return this.cryptoRoadmapVersion;
+    public Optional<String> cryptoRoadmapVersion() {
+        return Optional.ofNullable(this.cryptoRoadmapVersion);
     }
     /**
      * @return Total number of findings with the analysis.
      * 
      */
-    public Integer findingCount() {
-        return this.findingCount;
+    public Optional<Integer> findingCount() {
+        return Optional.ofNullable(this.findingCount);
     }
     /**
      * @return The fleet OCID.
@@ -140,85 +142,85 @@ public final class GetFleetCryptoAnalysisResultResult {
      * @return The hostname of the managed instance.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The managed instance OCID.
      * 
      */
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
     /**
      * @return The Object Storage namespace of this analysis result.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
      * 
      */
-    public Integer nonCompliantFindingCount() {
-        return this.nonCompliantFindingCount;
+    public Optional<Integer> nonCompliantFindingCount() {
+        return Optional.ofNullable(this.nonCompliantFindingCount);
     }
     /**
      * @return The Object Storage object name of this analysis result.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return Total number of summarized events. Summarized events are deduplicated events of interest.
      * 
      */
-    public Integer summarizedEventCount() {
-        return this.summarizedEventCount;
+    public Optional<Integer> summarizedEventCount() {
+        return Optional.ofNullable(this.summarizedEventCount);
     }
     /**
      * @return The time the result is compiled.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time of the first event in the analysis.
      * 
      */
-    public String timeFirstEvent() {
-        return this.timeFirstEvent;
+    public Optional<String> timeFirstEvent() {
+        return Optional.ofNullable(this.timeFirstEvent);
     }
     /**
      * @return Time of the last event in the analysis.
      * 
      */
-    public String timeLastEvent() {
-        return this.timeLastEvent;
+    public Optional<String> timeLastEvent() {
+        return Optional.ofNullable(this.timeLastEvent);
     }
     /**
      * @return Total number of events in the analysis.
      * 
      */
-    public Integer totalEventCount() {
-        return this.totalEventCount;
+    public Optional<Integer> totalEventCount() {
+        return Optional.ofNullable(this.totalEventCount);
     }
     /**
      * @return The OCID of the work request to start the analysis.
      * 
      */
-    public String workRequestId() {
-        return this.workRequestId;
+    public Optional<String> workRequestId() {
+        return Optional.ofNullable(this.workRequestId);
     }
 
     public static Builder builder() {
@@ -230,24 +232,24 @@ public final class GetFleetCryptoAnalysisResultResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String aggregationMode;
-        private String bucket;
+        private @Nullable String aggregationMode;
+        private @Nullable String bucket;
         private String cryptoAnalysisResultId;
-        private String cryptoRoadmapVersion;
-        private Integer findingCount;
+        private @Nullable String cryptoRoadmapVersion;
+        private @Nullable Integer findingCount;
         private String fleetId;
-        private String hostName;
-        private String id;
-        private String managedInstanceId;
-        private String namespace;
-        private Integer nonCompliantFindingCount;
-        private String object;
-        private Integer summarizedEventCount;
-        private String timeCreated;
-        private String timeFirstEvent;
-        private String timeLastEvent;
-        private Integer totalEventCount;
-        private String workRequestId;
+        private @Nullable String hostName;
+        private @Nullable String id;
+        private @Nullable String managedInstanceId;
+        private @Nullable String namespace;
+        private @Nullable Integer nonCompliantFindingCount;
+        private @Nullable String object;
+        private @Nullable Integer summarizedEventCount;
+        private @Nullable String timeCreated;
+        private @Nullable String timeFirstEvent;
+        private @Nullable String timeLastEvent;
+        private @Nullable Integer totalEventCount;
+        private @Nullable String workRequestId;
         public Builder() {}
         public Builder(GetFleetCryptoAnalysisResultResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -272,13 +274,13 @@ public final class GetFleetCryptoAnalysisResultResult {
         }
 
         @CustomType.Setter
-        public Builder aggregationMode(String aggregationMode) {
-            this.aggregationMode = Objects.requireNonNull(aggregationMode);
+        public Builder aggregationMode(@Nullable String aggregationMode) {
+            this.aggregationMode = aggregationMode;
             return this;
         }
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
@@ -287,13 +289,13 @@ public final class GetFleetCryptoAnalysisResultResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cryptoRoadmapVersion(String cryptoRoadmapVersion) {
-            this.cryptoRoadmapVersion = Objects.requireNonNull(cryptoRoadmapVersion);
+        public Builder cryptoRoadmapVersion(@Nullable String cryptoRoadmapVersion) {
+            this.cryptoRoadmapVersion = cryptoRoadmapVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder findingCount(Integer findingCount) {
-            this.findingCount = Objects.requireNonNull(findingCount);
+        public Builder findingCount(@Nullable Integer findingCount) {
+            this.findingCount = findingCount;
             return this;
         }
         @CustomType.Setter
@@ -302,63 +304,63 @@ public final class GetFleetCryptoAnalysisResultResult {
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder nonCompliantFindingCount(Integer nonCompliantFindingCount) {
-            this.nonCompliantFindingCount = Objects.requireNonNull(nonCompliantFindingCount);
+        public Builder nonCompliantFindingCount(@Nullable Integer nonCompliantFindingCount) {
+            this.nonCompliantFindingCount = nonCompliantFindingCount;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder summarizedEventCount(Integer summarizedEventCount) {
-            this.summarizedEventCount = Objects.requireNonNull(summarizedEventCount);
+        public Builder summarizedEventCount(@Nullable Integer summarizedEventCount) {
+            this.summarizedEventCount = summarizedEventCount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFirstEvent(String timeFirstEvent) {
-            this.timeFirstEvent = Objects.requireNonNull(timeFirstEvent);
+        public Builder timeFirstEvent(@Nullable String timeFirstEvent) {
+            this.timeFirstEvent = timeFirstEvent;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastEvent(String timeLastEvent) {
-            this.timeLastEvent = Objects.requireNonNull(timeLastEvent);
+        public Builder timeLastEvent(@Nullable String timeLastEvent) {
+            this.timeLastEvent = timeLastEvent;
             return this;
         }
         @CustomType.Setter
-        public Builder totalEventCount(Integer totalEventCount) {
-            this.totalEventCount = Objects.requireNonNull(totalEventCount);
+        public Builder totalEventCount(@Nullable Integer totalEventCount) {
+            this.totalEventCount = totalEventCount;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+        public Builder workRequestId(@Nullable String workRequestId) {
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetFleetCryptoAnalysisResultResult build() {

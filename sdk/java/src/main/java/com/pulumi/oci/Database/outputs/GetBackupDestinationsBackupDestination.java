@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackupDestinationsBackupDestination {
@@ -18,42 +20,42 @@ public final class GetBackupDestinationsBackupDestination {
      * @return List of databases associated with the backup destination.
      * 
      */
-    private List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases;
+    private @Nullable List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
      * 
      */
-    private String connectionString;
+    private @Nullable String connectionString;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-provided name of the backup destination.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
@@ -62,43 +64,43 @@ public final class GetBackupDestinationsBackupDestination {
      * 
      */
     @Deprecated /* The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead. */
-    private String localMountPointPath;
-    private List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails;
+    private @Nullable String localMountPointPath;
+    private @Nullable List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails;
     /**
      * @return NFS Mount type for backup destination.
      * 
      */
-    private String nfsMountType;
+    private @Nullable String nfsMountType;
     /**
      * @return Specifies the directory on which to mount the file system
      * 
      */
-    private String nfsServerExport;
+    private @Nullable String nfsServerExport;
     /**
      * @return Host names or IP addresses for NFS Auto mount.
      * 
      */
-    private List<String> nfsServers;
+    private @Nullable List<String> nfsServers;
     /**
      * @return The current lifecycle state of the backup destination.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the backup destination was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return A filter to return only resources that match the given type of the Backup Destination.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      * 
      */
-    private List<String> vpcUsers;
+    private @Nullable List<String> vpcUsers;
 
     private GetBackupDestinationsBackupDestination() {}
     /**
@@ -106,56 +108,56 @@ public final class GetBackupDestinationsBackupDestination {
      * 
      */
     public List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases() {
-        return this.associatedDatabases;
+        return this.associatedDatabases == null ? List.of() : this.associatedDatabases;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
      * 
      */
-    public String connectionString() {
-        return this.connectionString;
+    public Optional<String> connectionString() {
+        return Optional.ofNullable(this.connectionString);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-provided name of the backup destination.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
@@ -165,60 +167,60 @@ public final class GetBackupDestinationsBackupDestination {
      * 
      */
     @Deprecated /* The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead. */
-    public String localMountPointPath() {
-        return this.localMountPointPath;
+    public Optional<String> localMountPointPath() {
+        return Optional.ofNullable(this.localMountPointPath);
     }
     public List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails() {
-        return this.mountTypeDetails;
+        return this.mountTypeDetails == null ? List.of() : this.mountTypeDetails;
     }
     /**
      * @return NFS Mount type for backup destination.
      * 
      */
-    public String nfsMountType() {
-        return this.nfsMountType;
+    public Optional<String> nfsMountType() {
+        return Optional.ofNullable(this.nfsMountType);
     }
     /**
      * @return Specifies the directory on which to mount the file system
      * 
      */
-    public String nfsServerExport() {
-        return this.nfsServerExport;
+    public Optional<String> nfsServerExport() {
+        return Optional.ofNullable(this.nfsServerExport);
     }
     /**
      * @return Host names or IP addresses for NFS Auto mount.
      * 
      */
     public List<String> nfsServers() {
-        return this.nfsServers;
+        return this.nfsServers == null ? List.of() : this.nfsServers;
     }
     /**
      * @return The current lifecycle state of the backup destination.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the backup destination was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return A filter to return only resources that match the given type of the Backup Destination.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      * 
      */
     public List<String> vpcUsers() {
-        return this.vpcUsers;
+        return this.vpcUsers == null ? List.of() : this.vpcUsers;
     }
 
     public static Builder builder() {
@@ -230,23 +232,23 @@ public final class GetBackupDestinationsBackupDestination {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases;
-        private String compartmentId;
-        private String connectionString;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String localMountPointPath;
-        private List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails;
-        private String nfsMountType;
-        private String nfsServerExport;
-        private List<String> nfsServers;
-        private String state;
-        private String timeCreated;
-        private String type;
-        private List<String> vpcUsers;
+        private @Nullable List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionString;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String localMountPointPath;
+        private @Nullable List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails;
+        private @Nullable String nfsMountType;
+        private @Nullable String nfsServerExport;
+        private @Nullable List<String> nfsServers;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String type;
+        private @Nullable List<String> vpcUsers;
         public Builder() {}
         public Builder(GetBackupDestinationsBackupDestination defaults) {
     	      Objects.requireNonNull(defaults);
@@ -270,97 +272,97 @@ public final class GetBackupDestinationsBackupDestination {
         }
 
         @CustomType.Setter
-        public Builder associatedDatabases(List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases) {
-            this.associatedDatabases = Objects.requireNonNull(associatedDatabases);
+        public Builder associatedDatabases(@Nullable List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases) {
+            this.associatedDatabases = associatedDatabases;
             return this;
         }
         public Builder associatedDatabases(GetBackupDestinationsBackupDestinationAssociatedDatabase... associatedDatabases) {
             return associatedDatabases(List.of(associatedDatabases));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+        public Builder connectionString(@Nullable String connectionString) {
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder localMountPointPath(String localMountPointPath) {
-            this.localMountPointPath = Objects.requireNonNull(localMountPointPath);
+        public Builder localMountPointPath(@Nullable String localMountPointPath) {
+            this.localMountPointPath = localMountPointPath;
             return this;
         }
         @CustomType.Setter
-        public Builder mountTypeDetails(List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails) {
-            this.mountTypeDetails = Objects.requireNonNull(mountTypeDetails);
+        public Builder mountTypeDetails(@Nullable List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails) {
+            this.mountTypeDetails = mountTypeDetails;
             return this;
         }
         public Builder mountTypeDetails(GetBackupDestinationsBackupDestinationMountTypeDetail... mountTypeDetails) {
             return mountTypeDetails(List.of(mountTypeDetails));
         }
         @CustomType.Setter
-        public Builder nfsMountType(String nfsMountType) {
-            this.nfsMountType = Objects.requireNonNull(nfsMountType);
+        public Builder nfsMountType(@Nullable String nfsMountType) {
+            this.nfsMountType = nfsMountType;
             return this;
         }
         @CustomType.Setter
-        public Builder nfsServerExport(String nfsServerExport) {
-            this.nfsServerExport = Objects.requireNonNull(nfsServerExport);
+        public Builder nfsServerExport(@Nullable String nfsServerExport) {
+            this.nfsServerExport = nfsServerExport;
             return this;
         }
         @CustomType.Setter
-        public Builder nfsServers(List<String> nfsServers) {
-            this.nfsServers = Objects.requireNonNull(nfsServers);
+        public Builder nfsServers(@Nullable List<String> nfsServers) {
+            this.nfsServers = nfsServers;
             return this;
         }
         public Builder nfsServers(String... nfsServers) {
             return nfsServers(List.of(nfsServers));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vpcUsers(List<String> vpcUsers) {
-            this.vpcUsers = Objects.requireNonNull(vpcUsers);
+        public Builder vpcUsers(@Nullable List<String> vpcUsers) {
+            this.vpcUsers = vpcUsers;
             return this;
         }
         public Builder vpcUsers(String... vpcUsers) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -60,7 +59,7 @@ type GetEdgeSubnetsResult struct {
 	EdgeSubnets []GetEdgeSubnetsEdgeSubnet `pulumi:"edgeSubnets"`
 	Filters     []GetEdgeSubnetsFilter     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetEdgeSubnetsOutput(ctx *pulumi.Context, args GetEdgeSubnetsOutputArgs, opts ...pulumi.InvokeOption) GetEdgeSubnetsResultOutput {
@@ -100,12 +99,6 @@ func (o GetEdgeSubnetsResultOutput) ToGetEdgeSubnetsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetEdgeSubnetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsResult] {
-	return pulumix.Output[GetEdgeSubnetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of edge_subnets.
 func (o GetEdgeSubnetsResultOutput) EdgeSubnets() GetEdgeSubnetsEdgeSubnetArrayOutput {
 	return o.ApplyT(func(v GetEdgeSubnetsResult) []GetEdgeSubnetsEdgeSubnet { return v.EdgeSubnets }).(GetEdgeSubnetsEdgeSubnetArrayOutput)
@@ -116,8 +109,8 @@ func (o GetEdgeSubnetsResultOutput) Filters() GetEdgeSubnetsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetEdgeSubnetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEdgeSubnetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEdgeSubnetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEdgeSubnetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

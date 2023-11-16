@@ -32,12 +32,12 @@ public final class GetReportsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of report_collection.
      * 
      */
-    private List<GetReportsReportCollection> reportCollections;
+    private @Nullable List<GetReportsReportCollection> reportCollections;
     /**
      * @return The OCID of the report definition.
      * 
@@ -82,15 +82,15 @@ public final class GetReportsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of report_collection.
      * 
      */
     public List<GetReportsReportCollection> reportCollections() {
-        return this.reportCollections;
+        return this.reportCollections == null ? List.of() : this.reportCollections;
     }
     /**
      * @return The OCID of the report definition.
@@ -128,8 +128,8 @@ public final class GetReportsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetReportsFilter> filters;
-        private String id;
-        private List<GetReportsReportCollection> reportCollections;
+        private @Nullable String id;
+        private @Nullable List<GetReportsReportCollection> reportCollections;
         private @Nullable String reportDefinitionId;
         private @Nullable String state;
         private @Nullable String type;
@@ -177,13 +177,13 @@ public final class GetReportsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder reportCollections(List<GetReportsReportCollection> reportCollections) {
-            this.reportCollections = Objects.requireNonNull(reportCollections);
+        public Builder reportCollections(@Nullable List<GetReportsReportCollection> reportCollections) {
+            this.reportCollections = reportCollections;
             return this;
         }
         public Builder reportCollections(GetReportsReportCollection... reportCollections) {

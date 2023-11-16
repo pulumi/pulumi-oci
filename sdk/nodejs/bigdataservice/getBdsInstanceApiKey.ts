@@ -53,40 +53,40 @@ export interface GetBdsInstanceApiKeyResult {
     /**
      * The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
      */
-    readonly defaultRegion: string;
+    readonly defaultRegion?: string;
     /**
      * The fingerprint that corresponds to the public API key requested.
      */
-    readonly fingerprint: string;
+    readonly fingerprint?: string;
     /**
      * Identifier of the user's API key.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
      */
-    readonly keyAlias: string;
-    readonly passphrase: string;
+    readonly keyAlias?: string;
+    readonly passphrase?: string;
     /**
      * The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
      */
-    readonly pemfilepath: string;
+    readonly pemfilepath?: string;
     /**
      * The current status of the API key.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of your tenancy.
      */
-    readonly tenantId: string;
+    readonly tenantId?: string;
     /**
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The user OCID for which this API key was created.
      */
-    readonly userId: string;
+    readonly userId?: string;
 }
 /**
  * This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.

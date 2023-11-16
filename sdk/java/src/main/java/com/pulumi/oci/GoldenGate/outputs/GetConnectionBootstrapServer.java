@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionBootstrapServer {
@@ -14,39 +16,39 @@ public final class GetConnectionBootstrapServer {
      * @return The name or address of a host.
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return The port of an endpoint usually specified for a connection.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
-    private String privateIp;
+    private @Nullable String privateIp;
 
     private GetConnectionBootstrapServer() {}
     /**
      * @return The name or address of a host.
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return The port of an endpoint usually specified for a connection.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
-    public String privateIp() {
-        return this.privateIp;
+    public Optional<String> privateIp() {
+        return Optional.ofNullable(this.privateIp);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetConnectionBootstrapServer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String host;
-        private Integer port;
-        private String privateIp;
+        private @Nullable String host;
+        private @Nullable Integer port;
+        private @Nullable String privateIp;
         public Builder() {}
         public Builder(GetConnectionBootstrapServer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetConnectionBootstrapServer {
         }
 
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+        public Builder privateIp(@Nullable String privateIp) {
+            this.privateIp = privateIp;
             return this;
         }
         public GetConnectionBootstrapServer build() {

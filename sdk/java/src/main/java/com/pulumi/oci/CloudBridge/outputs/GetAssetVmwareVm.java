@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetVmwareVm {
@@ -17,135 +19,135 @@ public final class GetAssetVmwareVm {
      * @return Cluster name.
      * 
      */
-    private String cluster;
+    private @Nullable String cluster;
     /**
      * @return Customer fields.
      * 
      */
-    private List<String> customerFields;
+    private @Nullable List<String> customerFields;
     /**
      * @return Customer defined tags.
      * 
      */
-    private List<GetAssetVmwareVmCustomerTag> customerTags;
+    private @Nullable List<GetAssetVmwareVmCustomerTag> customerTags;
     /**
      * @return Fault tolerance bandwidth.
      * 
      */
-    private Integer faultToleranceBandwidth;
+    private @Nullable Integer faultToleranceBandwidth;
     /**
      * @return Fault tolerance to secondary latency.
      * 
      */
-    private Integer faultToleranceSecondaryLatency;
+    private @Nullable Integer faultToleranceSecondaryLatency;
     /**
      * @return Fault tolerance state.
      * 
      */
-    private String faultToleranceState;
+    private @Nullable String faultToleranceState;
     /**
      * @return vCenter-specific identifier of the virtual machine.
      * 
      */
-    private String instanceUuid;
+    private @Nullable String instanceUuid;
     /**
      * @return Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
      * 
      */
-    private Boolean isDisksCbtEnabled;
+    private @Nullable Boolean isDisksCbtEnabled;
     /**
      * @return Whether changed block tracking for this VM&#39;s disk is active.
      * 
      */
-    private Boolean isDisksUuidEnabled;
+    private @Nullable Boolean isDisksUuidEnabled;
     /**
      * @return Path directory of the asset.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return VMware tools status.
      * 
      */
-    private String vmwareToolsStatus;
+    private @Nullable String vmwareToolsStatus;
 
     private GetAssetVmwareVm() {}
     /**
      * @return Cluster name.
      * 
      */
-    public String cluster() {
-        return this.cluster;
+    public Optional<String> cluster() {
+        return Optional.ofNullable(this.cluster);
     }
     /**
      * @return Customer fields.
      * 
      */
     public List<String> customerFields() {
-        return this.customerFields;
+        return this.customerFields == null ? List.of() : this.customerFields;
     }
     /**
      * @return Customer defined tags.
      * 
      */
     public List<GetAssetVmwareVmCustomerTag> customerTags() {
-        return this.customerTags;
+        return this.customerTags == null ? List.of() : this.customerTags;
     }
     /**
      * @return Fault tolerance bandwidth.
      * 
      */
-    public Integer faultToleranceBandwidth() {
-        return this.faultToleranceBandwidth;
+    public Optional<Integer> faultToleranceBandwidth() {
+        return Optional.ofNullable(this.faultToleranceBandwidth);
     }
     /**
      * @return Fault tolerance to secondary latency.
      * 
      */
-    public Integer faultToleranceSecondaryLatency() {
-        return this.faultToleranceSecondaryLatency;
+    public Optional<Integer> faultToleranceSecondaryLatency() {
+        return Optional.ofNullable(this.faultToleranceSecondaryLatency);
     }
     /**
      * @return Fault tolerance state.
      * 
      */
-    public String faultToleranceState() {
-        return this.faultToleranceState;
+    public Optional<String> faultToleranceState() {
+        return Optional.ofNullable(this.faultToleranceState);
     }
     /**
      * @return vCenter-specific identifier of the virtual machine.
      * 
      */
-    public String instanceUuid() {
-        return this.instanceUuid;
+    public Optional<String> instanceUuid() {
+        return Optional.ofNullable(this.instanceUuid);
     }
     /**
      * @return Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
      * 
      */
-    public Boolean isDisksCbtEnabled() {
-        return this.isDisksCbtEnabled;
+    public Optional<Boolean> isDisksCbtEnabled() {
+        return Optional.ofNullable(this.isDisksCbtEnabled);
     }
     /**
      * @return Whether changed block tracking for this VM&#39;s disk is active.
      * 
      */
-    public Boolean isDisksUuidEnabled() {
-        return this.isDisksUuidEnabled;
+    public Optional<Boolean> isDisksUuidEnabled() {
+        return Optional.ofNullable(this.isDisksUuidEnabled);
     }
     /**
      * @return Path directory of the asset.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return VMware tools status.
      * 
      */
-    public String vmwareToolsStatus() {
-        return this.vmwareToolsStatus;
+    public Optional<String> vmwareToolsStatus() {
+        return Optional.ofNullable(this.vmwareToolsStatus);
     }
 
     public static Builder builder() {
@@ -157,17 +159,17 @@ public final class GetAssetVmwareVm {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cluster;
-        private List<String> customerFields;
-        private List<GetAssetVmwareVmCustomerTag> customerTags;
-        private Integer faultToleranceBandwidth;
-        private Integer faultToleranceSecondaryLatency;
-        private String faultToleranceState;
-        private String instanceUuid;
-        private Boolean isDisksCbtEnabled;
-        private Boolean isDisksUuidEnabled;
-        private String path;
-        private String vmwareToolsStatus;
+        private @Nullable String cluster;
+        private @Nullable List<String> customerFields;
+        private @Nullable List<GetAssetVmwareVmCustomerTag> customerTags;
+        private @Nullable Integer faultToleranceBandwidth;
+        private @Nullable Integer faultToleranceSecondaryLatency;
+        private @Nullable String faultToleranceState;
+        private @Nullable String instanceUuid;
+        private @Nullable Boolean isDisksCbtEnabled;
+        private @Nullable Boolean isDisksUuidEnabled;
+        private @Nullable String path;
+        private @Nullable String vmwareToolsStatus;
         public Builder() {}
         public Builder(GetAssetVmwareVm defaults) {
     	      Objects.requireNonNull(defaults);
@@ -185,64 +187,64 @@ public final class GetAssetVmwareVm {
         }
 
         @CustomType.Setter
-        public Builder cluster(String cluster) {
-            this.cluster = Objects.requireNonNull(cluster);
+        public Builder cluster(@Nullable String cluster) {
+            this.cluster = cluster;
             return this;
         }
         @CustomType.Setter
-        public Builder customerFields(List<String> customerFields) {
-            this.customerFields = Objects.requireNonNull(customerFields);
+        public Builder customerFields(@Nullable List<String> customerFields) {
+            this.customerFields = customerFields;
             return this;
         }
         public Builder customerFields(String... customerFields) {
             return customerFields(List.of(customerFields));
         }
         @CustomType.Setter
-        public Builder customerTags(List<GetAssetVmwareVmCustomerTag> customerTags) {
-            this.customerTags = Objects.requireNonNull(customerTags);
+        public Builder customerTags(@Nullable List<GetAssetVmwareVmCustomerTag> customerTags) {
+            this.customerTags = customerTags;
             return this;
         }
         public Builder customerTags(GetAssetVmwareVmCustomerTag... customerTags) {
             return customerTags(List.of(customerTags));
         }
         @CustomType.Setter
-        public Builder faultToleranceBandwidth(Integer faultToleranceBandwidth) {
-            this.faultToleranceBandwidth = Objects.requireNonNull(faultToleranceBandwidth);
+        public Builder faultToleranceBandwidth(@Nullable Integer faultToleranceBandwidth) {
+            this.faultToleranceBandwidth = faultToleranceBandwidth;
             return this;
         }
         @CustomType.Setter
-        public Builder faultToleranceSecondaryLatency(Integer faultToleranceSecondaryLatency) {
-            this.faultToleranceSecondaryLatency = Objects.requireNonNull(faultToleranceSecondaryLatency);
+        public Builder faultToleranceSecondaryLatency(@Nullable Integer faultToleranceSecondaryLatency) {
+            this.faultToleranceSecondaryLatency = faultToleranceSecondaryLatency;
             return this;
         }
         @CustomType.Setter
-        public Builder faultToleranceState(String faultToleranceState) {
-            this.faultToleranceState = Objects.requireNonNull(faultToleranceState);
+        public Builder faultToleranceState(@Nullable String faultToleranceState) {
+            this.faultToleranceState = faultToleranceState;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceUuid(String instanceUuid) {
-            this.instanceUuid = Objects.requireNonNull(instanceUuid);
+        public Builder instanceUuid(@Nullable String instanceUuid) {
+            this.instanceUuid = instanceUuid;
             return this;
         }
         @CustomType.Setter
-        public Builder isDisksCbtEnabled(Boolean isDisksCbtEnabled) {
-            this.isDisksCbtEnabled = Objects.requireNonNull(isDisksCbtEnabled);
+        public Builder isDisksCbtEnabled(@Nullable Boolean isDisksCbtEnabled) {
+            this.isDisksCbtEnabled = isDisksCbtEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isDisksUuidEnabled(Boolean isDisksUuidEnabled) {
-            this.isDisksUuidEnabled = Objects.requireNonNull(isDisksUuidEnabled);
+        public Builder isDisksUuidEnabled(@Nullable Boolean isDisksUuidEnabled) {
+            this.isDisksUuidEnabled = isDisksUuidEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder vmwareToolsStatus(String vmwareToolsStatus) {
-            this.vmwareToolsStatus = Objects.requireNonNull(vmwareToolsStatus);
+        public Builder vmwareToolsStatus(@Nullable String vmwareToolsStatus) {
+            this.vmwareToolsStatus = vmwareToolsStatus;
             return this;
         }
         public GetAssetVmwareVm build() {

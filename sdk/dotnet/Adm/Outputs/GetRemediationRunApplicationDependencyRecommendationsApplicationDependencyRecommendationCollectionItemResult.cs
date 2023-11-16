@@ -20,25 +20,25 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
         /// </summary>
-        public readonly string Gav;
+        public readonly string? Gav;
         /// <summary>
         /// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
         /// </summary>
-        public readonly string NodeId;
+        public readonly string? NodeId;
         /// <summary>
         /// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
         /// </summary>
-        public readonly string RecommendedGav;
+        public readonly string? RecommendedGav;
 
         [OutputConstructor]
         private GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemResult(
             ImmutableArray<string> applicationDependencyNodeIds,
 
-            string gav,
+            string? gav,
 
-            string nodeId,
+            string? nodeId,
 
-            string recommendedGav)
+            string? recommendedGav)
         {
             ApplicationDependencyNodeIds = applicationDependencyNodeIds;
             Gav = gav;

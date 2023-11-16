@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A valid Oracle character set.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult(string name)
+        private GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult(string? name)
         {
             Name = name;
         }

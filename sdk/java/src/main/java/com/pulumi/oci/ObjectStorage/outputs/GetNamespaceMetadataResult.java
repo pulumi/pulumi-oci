@@ -6,31 +6,33 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceMetadataResult {
-    private String defaultS3compartmentId;
-    private String defaultSwiftCompartmentId;
+    private @Nullable String defaultS3compartmentId;
+    private @Nullable String defaultSwiftCompartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
 
     private GetNamespaceMetadataResult() {}
-    public String defaultS3compartmentId() {
-        return this.defaultS3compartmentId;
+    public Optional<String> defaultS3compartmentId() {
+        return Optional.ofNullable(this.defaultS3compartmentId);
     }
-    public String defaultSwiftCompartmentId() {
-        return this.defaultSwiftCompartmentId;
+    public Optional<String> defaultSwiftCompartmentId() {
+        return Optional.ofNullable(this.defaultSwiftCompartmentId);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -45,9 +47,9 @@ public final class GetNamespaceMetadataResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultS3compartmentId;
-        private String defaultSwiftCompartmentId;
-        private String id;
+        private @Nullable String defaultS3compartmentId;
+        private @Nullable String defaultSwiftCompartmentId;
+        private @Nullable String id;
         private String namespace;
         public Builder() {}
         public Builder(GetNamespaceMetadataResult defaults) {
@@ -59,18 +61,18 @@ public final class GetNamespaceMetadataResult {
         }
 
         @CustomType.Setter
-        public Builder defaultS3compartmentId(String defaultS3compartmentId) {
-            this.defaultS3compartmentId = Objects.requireNonNull(defaultS3compartmentId);
+        public Builder defaultS3compartmentId(@Nullable String defaultS3compartmentId) {
+            this.defaultS3compartmentId = defaultS3compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultSwiftCompartmentId(String defaultSwiftCompartmentId) {
-            this.defaultSwiftCompartmentId = Objects.requireNonNull(defaultSwiftCompartmentId);
+        public Builder defaultSwiftCompartmentId(@Nullable String defaultSwiftCompartmentId) {
+            this.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

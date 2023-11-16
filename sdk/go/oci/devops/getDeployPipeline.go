@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
@@ -60,7 +59,7 @@ type LookupDeployPipelineArgs struct {
 // A collection of values returned by getDeployPipeline.
 type LookupDeployPipelineResult struct {
 	// The OCID of the compartment where the pipeline is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// List of all artifacts used in the pipeline.
@@ -71,25 +70,25 @@ type LookupDeployPipelineResult struct {
 	// Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
 	DeployPipelineParameters []GetDeployPipelineDeployPipelineParameter `pulumi:"deployPipelineParameters"`
 	// Optional description about the deployment pipeline.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of a project.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The current state of the deployment pipeline.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDeployPipelineOutput(ctx *pulumi.Context, args LookupDeployPipelineOutputArgs, opts ...pulumi.InvokeOption) LookupDeployPipelineResultOutput {
@@ -130,15 +129,9 @@ func (o LookupDeployPipelineResultOutput) ToLookupDeployPipelineResultOutputWith
 	return o
 }
 
-func (o LookupDeployPipelineResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeployPipelineResult] {
-	return pulumix.Output[LookupDeployPipelineResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment where the pipeline is created.
-func (o LookupDeployPipelineResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -172,13 +165,13 @@ func (o LookupDeployPipelineResultOutput) DeployPipelineParameters() GetDeployPi
 }
 
 // Optional description about the deployment pipeline.
-func (o LookupDeployPipelineResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-func (o LookupDeployPipelineResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -187,23 +180,23 @@ func (o LookupDeployPipelineResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupDeployPipelineResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupDeployPipelineResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a project.
-func (o LookupDeployPipelineResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the deployment pipeline.
-func (o LookupDeployPipelineResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -212,13 +205,13 @@ func (o LookupDeployPipelineResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupDeployPipelineResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupDeployPipelineResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployPipelineResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDeployPipelineResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployPipelineResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

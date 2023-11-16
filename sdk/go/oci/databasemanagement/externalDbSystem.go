@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
@@ -67,27 +66,27 @@ type ExternalDbSystem struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The details required to enable Database Management for an external DB system.
-	DatabaseManagementConfig ExternalDbSystemDatabaseManagementConfigOutput `pulumi:"databaseManagementConfig"`
+	DatabaseManagementConfig ExternalDbSystemDatabaseManagementConfigPtrOutput `pulumi:"databaseManagementConfig"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId pulumi.StringOutput `pulumi:"dbSystemDiscoveryId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
-	DiscoveryAgentId pulumi.StringOutput `pulumi:"discoveryAgentId"`
+	DiscoveryAgentId pulumi.StringPtrOutput `pulumi:"discoveryAgentId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
-	HomeDirectory pulumi.StringOutput `pulumi:"homeDirectory"`
+	HomeDirectory pulumi.StringPtrOutput `pulumi:"homeDirectory"`
 	// Indicates whether the DB system is a cluster DB system or not.
-	IsCluster pulumi.BoolOutput `pulumi:"isCluster"`
+	IsCluster pulumi.BoolPtrOutput `pulumi:"isCluster"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The details of the associated service that will be enabled or disabled for an external DB System.
-	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigOutput `pulumi:"stackMonitoringConfig"`
+	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigPtrOutput `pulumi:"stackMonitoringConfig"`
 	// The current lifecycle state of the external DB system resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the external DB system was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the external DB system was last updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewExternalDbSystem registers a new resource with the given unique name, arguments, and options.
@@ -233,12 +232,6 @@ func (i *ExternalDbSystem) ToExternalDbSystemOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemOutput)
 }
 
-func (i *ExternalDbSystem) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystem] {
-	return pulumix.Output[*ExternalDbSystem]{
-		OutputState: i.ToExternalDbSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalDbSystemArrayInput is an input type that accepts ExternalDbSystemArray and ExternalDbSystemArrayOutput values.
 // You can construct a concrete instance of `ExternalDbSystemArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i ExternalDbSystemArray) ToExternalDbSystemArrayOutput() ExternalDbSystemA
 
 func (i ExternalDbSystemArray) ToExternalDbSystemArrayOutputWithContext(ctx context.Context) ExternalDbSystemArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemArrayOutput)
-}
-
-func (i ExternalDbSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystem] {
-	return pulumix.Output[[]*ExternalDbSystem]{
-		OutputState: i.ToExternalDbSystemArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalDbSystemMapInput is an input type that accepts ExternalDbSystemMap and ExternalDbSystemMapOutput values.
@@ -295,12 +282,6 @@ func (i ExternalDbSystemMap) ToExternalDbSystemMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemMapOutput)
 }
 
-func (i ExternalDbSystemMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystem] {
-	return pulumix.Output[map[string]*ExternalDbSystem]{
-		OutputState: i.ToExternalDbSystemMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalDbSystemOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemOutput) ElementType() reflect.Type {
@@ -315,22 +296,16 @@ func (o ExternalDbSystemOutput) ToExternalDbSystemOutputWithContext(ctx context.
 	return o
 }
 
-func (o ExternalDbSystemOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystem] {
-	return pulumix.Output[*ExternalDbSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 func (o ExternalDbSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The details required to enable Database Management for an external DB system.
-func (o ExternalDbSystemOutput) DatabaseManagementConfig() ExternalDbSystemDatabaseManagementConfigOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) ExternalDbSystemDatabaseManagementConfigOutput {
+func (o ExternalDbSystemOutput) DatabaseManagementConfig() ExternalDbSystemDatabaseManagementConfigPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) ExternalDbSystemDatabaseManagementConfigPtrOutput {
 		return v.DatabaseManagementConfig
-	}).(ExternalDbSystemDatabaseManagementConfigOutput)
+	}).(ExternalDbSystemDatabaseManagementConfigPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
@@ -339,48 +314,50 @@ func (o ExternalDbSystemOutput) DbSystemDiscoveryId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
-func (o ExternalDbSystemOutput) DiscoveryAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.DiscoveryAgentId }).(pulumi.StringOutput)
+func (o ExternalDbSystemOutput) DiscoveryAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringPtrOutput { return v.DiscoveryAgentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-func (o ExternalDbSystemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ExternalDbSystemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
-func (o ExternalDbSystemOutput) HomeDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.HomeDirectory }).(pulumi.StringOutput)
+func (o ExternalDbSystemOutput) HomeDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringPtrOutput { return v.HomeDirectory }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the DB system is a cluster DB system or not.
-func (o ExternalDbSystemOutput) IsCluster() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.BoolOutput { return v.IsCluster }).(pulumi.BoolOutput)
+func (o ExternalDbSystemOutput) IsCluster() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.BoolPtrOutput { return v.IsCluster }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o ExternalDbSystemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalDbSystemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The details of the associated service that will be enabled or disabled for an external DB System.
-func (o ExternalDbSystemOutput) StackMonitoringConfig() ExternalDbSystemStackMonitoringConfigOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) ExternalDbSystemStackMonitoringConfigOutput { return v.StackMonitoringConfig }).(ExternalDbSystemStackMonitoringConfigOutput)
+func (o ExternalDbSystemOutput) StackMonitoringConfig() ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) ExternalDbSystemStackMonitoringConfigPtrOutput {
+		return v.StackMonitoringConfig
+	}).(ExternalDbSystemStackMonitoringConfigPtrOutput)
 }
 
 // The current lifecycle state of the external DB system resource.
-func (o ExternalDbSystemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalDbSystemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system was created.
-func (o ExternalDbSystemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalDbSystemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system was last updated.
-func (o ExternalDbSystemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ExternalDbSystemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ExternalDbSystemArrayOutput struct{ *pulumi.OutputState }
@@ -395,12 +372,6 @@ func (o ExternalDbSystemArrayOutput) ToExternalDbSystemArrayOutput() ExternalDbS
 
 func (o ExternalDbSystemArrayOutput) ToExternalDbSystemArrayOutputWithContext(ctx context.Context) ExternalDbSystemArrayOutput {
 	return o
-}
-
-func (o ExternalDbSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystem] {
-	return pulumix.Output[[]*ExternalDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbSystemArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemOutput {
@@ -421,12 +392,6 @@ func (o ExternalDbSystemMapOutput) ToExternalDbSystemMapOutput() ExternalDbSyste
 
 func (o ExternalDbSystemMapOutput) ToExternalDbSystemMapOutputWithContext(ctx context.Context) ExternalDbSystemMapOutput {
 	return o
-}
-
-func (o ExternalDbSystemMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystem] {
-	return pulumix.Output[map[string]*ExternalDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbSystemMapOutput) MapIndex(k pulumi.StringInput) ExternalDbSystemOutput {

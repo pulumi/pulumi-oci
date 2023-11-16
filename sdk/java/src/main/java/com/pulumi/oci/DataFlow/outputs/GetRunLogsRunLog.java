@@ -6,42 +6,44 @@ package com.pulumi.oci.DataFlow.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRunLogsRunLog {
-    private String name;
+    private @Nullable String name;
     /**
      * @return The unique ID for the run
      * 
      */
-    private String runId;
-    private String sizeInBytes;
-    private String source;
-    private String timeCreated;
-    private String type;
+    private @Nullable String runId;
+    private @Nullable String sizeInBytes;
+    private @Nullable String source;
+    private @Nullable String timeCreated;
+    private @Nullable String type;
 
     private GetRunLogsRunLog() {}
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The unique ID for the run
      * 
      */
-    public String runId() {
-        return this.runId;
+    public Optional<String> runId() {
+        return Optional.ofNullable(this.runId);
     }
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -53,12 +55,12 @@ public final class GetRunLogsRunLog {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String runId;
-        private String sizeInBytes;
-        private String source;
-        private String timeCreated;
-        private String type;
+        private @Nullable String name;
+        private @Nullable String runId;
+        private @Nullable String sizeInBytes;
+        private @Nullable String source;
+        private @Nullable String timeCreated;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetRunLogsRunLog defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,33 +73,33 @@ public final class GetRunLogsRunLog {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder runId(String runId) {
-            this.runId = Objects.requireNonNull(runId);
+        public Builder runId(@Nullable String runId) {
+            this.runId = runId;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetRunLogsRunLog build() {

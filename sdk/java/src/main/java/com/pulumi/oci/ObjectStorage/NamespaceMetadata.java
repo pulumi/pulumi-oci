@@ -11,21 +11,22 @@ import com.pulumi.oci.ObjectStorage.NamespaceMetadataArgs;
 import com.pulumi.oci.ObjectStorage.inputs.NamespaceMetadataState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="oci:ObjectStorage/namespaceMetadata:NamespaceMetadata")
 public class NamespaceMetadata extends com.pulumi.resources.CustomResource {
     @Export(name="defaultS3compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> defaultS3compartmentId;
+    private Output</* @Nullable */ String> defaultS3compartmentId;
 
-    public Output<String> defaultS3compartmentId() {
-        return this.defaultS3compartmentId;
+    public Output<Optional<String>> defaultS3compartmentId() {
+        return Codegen.optional(this.defaultS3compartmentId);
     }
     @Export(name="defaultSwiftCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> defaultSwiftCompartmentId;
+    private Output</* @Nullable */ String> defaultSwiftCompartmentId;
 
-    public Output<String> defaultSwiftCompartmentId() {
-        return this.defaultSwiftCompartmentId;
+    public Output<Optional<String>> defaultSwiftCompartmentId() {
+        return Codegen.optional(this.defaultSwiftCompartmentId);
     }
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;

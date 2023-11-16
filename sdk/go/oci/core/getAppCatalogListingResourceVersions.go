@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of App Catalog Listing Resource Versions in Oracle Cloud Infrastructure Core service.
@@ -64,7 +63,7 @@ type GetAppCatalogListingResourceVersionsResult struct {
 	AppCatalogListingResourceVersions []GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion `pulumi:"appCatalogListingResourceVersions"`
 	Filters                           []GetAppCatalogListingResourceVersionsFilter                           `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the listing this resource version belongs to.
 	ListingId string `pulumi:"listingId"`
 }
@@ -108,12 +107,6 @@ func (o GetAppCatalogListingResourceVersionsResultOutput) ToGetAppCatalogListing
 	return o
 }
 
-func (o GetAppCatalogListingResourceVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppCatalogListingResourceVersionsResult] {
-	return pulumix.Output[GetAppCatalogListingResourceVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of app_catalog_listing_resource_versions.
 func (o GetAppCatalogListingResourceVersionsResultOutput) AppCatalogListingResourceVersions() GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersionArrayOutput {
 	return o.ApplyT(func(v GetAppCatalogListingResourceVersionsResult) []GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion {
@@ -128,8 +121,8 @@ func (o GetAppCatalogListingResourceVersionsResultOutput) Filters() GetAppCatalo
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAppCatalogListingResourceVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResourceVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResourceVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResourceVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the listing this resource version belongs to.

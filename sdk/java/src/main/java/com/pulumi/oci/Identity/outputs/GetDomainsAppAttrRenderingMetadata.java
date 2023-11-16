@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppAttrRenderingMetadata {
@@ -15,183 +17,183 @@ public final class GetDomainsAppAttrRenderingMetadata {
      * @return Data type of the attribute.
      * 
      */
-    private String datatype;
+    private @Nullable String datatype;
     /**
      * @return Help text for the attribute. It can contain HTML tags.
      * 
      */
-    private String helptext;
+    private @Nullable String helptext;
     /**
      * @return Label for the attribute to be shown in the UI.
      * 
      */
-    private String label;
+    private @Nullable String label;
     /**
      * @return Maximum length of the attribute.
      * 
      */
-    private Integer maxLength;
+    private @Nullable Integer maxLength;
     /**
      * @return Maximum size of the attribute.
      * 
      */
-    private Integer maxSize;
+    private @Nullable Integer maxSize;
     /**
      * @return Minimum length of the attribute.
      * 
      */
-    private Integer minLength;
+    private @Nullable Integer minLength;
     /**
      * @return Minimum size of the attribute..
      * 
      */
-    private Integer minSize;
+    private @Nullable Integer minSize;
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Display sequence of the bundle configuration property.
      * 
      */
-    private Integer order;
+    private @Nullable Integer order;
     /**
      * @return If true, indicates that this value must be protected.
      * 
      */
-    private Boolean readOnly;
+    private @Nullable Boolean readOnly;
     /**
      * @return Regular expression of the attribute for validation.
      * 
      */
-    private String regexp;
+    private @Nullable String regexp;
     /**
      * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private Boolean required;
+    private @Nullable Boolean required;
     /**
      * @return UI widget to use for the attribute.
      * 
      */
-    private String section;
+    private @Nullable String section;
     /**
      * @return Indicates whether the attribute is to be shown on the application creation UI.
      * 
      */
-    private Boolean visible;
+    private @Nullable Boolean visible;
     /**
      * @return UI widget to use for the attribute.
      * 
      */
-    private String widget;
+    private @Nullable String widget;
 
     private GetDomainsAppAttrRenderingMetadata() {}
     /**
      * @return Data type of the attribute.
      * 
      */
-    public String datatype() {
-        return this.datatype;
+    public Optional<String> datatype() {
+        return Optional.ofNullable(this.datatype);
     }
     /**
      * @return Help text for the attribute. It can contain HTML tags.
      * 
      */
-    public String helptext() {
-        return this.helptext;
+    public Optional<String> helptext() {
+        return Optional.ofNullable(this.helptext);
     }
     /**
      * @return Label for the attribute to be shown in the UI.
      * 
      */
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     /**
      * @return Maximum length of the attribute.
      * 
      */
-    public Integer maxLength() {
-        return this.maxLength;
+    public Optional<Integer> maxLength() {
+        return Optional.ofNullable(this.maxLength);
     }
     /**
      * @return Maximum size of the attribute.
      * 
      */
-    public Integer maxSize() {
-        return this.maxSize;
+    public Optional<Integer> maxSize() {
+        return Optional.ofNullable(this.maxSize);
     }
     /**
      * @return Minimum length of the attribute.
      * 
      */
-    public Integer minLength() {
-        return this.minLength;
+    public Optional<Integer> minLength() {
+        return Optional.ofNullable(this.minLength);
     }
     /**
      * @return Minimum size of the attribute..
      * 
      */
-    public Integer minSize() {
-        return this.minSize;
+    public Optional<Integer> minSize() {
+        return Optional.ofNullable(this.minSize);
     }
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Display sequence of the bundle configuration property.
      * 
      */
-    public Integer order() {
-        return this.order;
+    public Optional<Integer> order() {
+        return Optional.ofNullable(this.order);
     }
     /**
      * @return If true, indicates that this value must be protected.
      * 
      */
-    public Boolean readOnly() {
-        return this.readOnly;
+    public Optional<Boolean> readOnly() {
+        return Optional.ofNullable(this.readOnly);
     }
     /**
      * @return Regular expression of the attribute for validation.
      * 
      */
-    public String regexp() {
-        return this.regexp;
+    public Optional<String> regexp() {
+        return Optional.ofNullable(this.regexp);
     }
     /**
      * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public Boolean required() {
-        return this.required;
+    public Optional<Boolean> required() {
+        return Optional.ofNullable(this.required);
     }
     /**
      * @return UI widget to use for the attribute.
      * 
      */
-    public String section() {
-        return this.section;
+    public Optional<String> section() {
+        return Optional.ofNullable(this.section);
     }
     /**
      * @return Indicates whether the attribute is to be shown on the application creation UI.
      * 
      */
-    public Boolean visible() {
-        return this.visible;
+    public Optional<Boolean> visible() {
+        return Optional.ofNullable(this.visible);
     }
     /**
      * @return UI widget to use for the attribute.
      * 
      */
-    public String widget() {
-        return this.widget;
+    public Optional<String> widget() {
+        return Optional.ofNullable(this.widget);
     }
 
     public static Builder builder() {
@@ -203,21 +205,21 @@ public final class GetDomainsAppAttrRenderingMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String datatype;
-        private String helptext;
-        private String label;
-        private Integer maxLength;
-        private Integer maxSize;
-        private Integer minLength;
-        private Integer minSize;
-        private String name;
-        private Integer order;
-        private Boolean readOnly;
-        private String regexp;
-        private Boolean required;
-        private String section;
-        private Boolean visible;
-        private String widget;
+        private @Nullable String datatype;
+        private @Nullable String helptext;
+        private @Nullable String label;
+        private @Nullable Integer maxLength;
+        private @Nullable Integer maxSize;
+        private @Nullable Integer minLength;
+        private @Nullable Integer minSize;
+        private @Nullable String name;
+        private @Nullable Integer order;
+        private @Nullable Boolean readOnly;
+        private @Nullable String regexp;
+        private @Nullable Boolean required;
+        private @Nullable String section;
+        private @Nullable Boolean visible;
+        private @Nullable String widget;
         public Builder() {}
         public Builder(GetDomainsAppAttrRenderingMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -239,78 +241,78 @@ public final class GetDomainsAppAttrRenderingMetadata {
         }
 
         @CustomType.Setter
-        public Builder datatype(String datatype) {
-            this.datatype = Objects.requireNonNull(datatype);
+        public Builder datatype(@Nullable String datatype) {
+            this.datatype = datatype;
             return this;
         }
         @CustomType.Setter
-        public Builder helptext(String helptext) {
-            this.helptext = Objects.requireNonNull(helptext);
+        public Builder helptext(@Nullable String helptext) {
+            this.helptext = helptext;
             return this;
         }
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder maxLength(Integer maxLength) {
-            this.maxLength = Objects.requireNonNull(maxLength);
+        public Builder maxLength(@Nullable Integer maxLength) {
+            this.maxLength = maxLength;
             return this;
         }
         @CustomType.Setter
-        public Builder maxSize(Integer maxSize) {
-            this.maxSize = Objects.requireNonNull(maxSize);
+        public Builder maxSize(@Nullable Integer maxSize) {
+            this.maxSize = maxSize;
             return this;
         }
         @CustomType.Setter
-        public Builder minLength(Integer minLength) {
-            this.minLength = Objects.requireNonNull(minLength);
+        public Builder minLength(@Nullable Integer minLength) {
+            this.minLength = minLength;
             return this;
         }
         @CustomType.Setter
-        public Builder minSize(Integer minSize) {
-            this.minSize = Objects.requireNonNull(minSize);
+        public Builder minSize(@Nullable Integer minSize) {
+            this.minSize = minSize;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder order(Integer order) {
-            this.order = Objects.requireNonNull(order);
+        public Builder order(@Nullable Integer order) {
+            this.order = order;
             return this;
         }
         @CustomType.Setter
-        public Builder readOnly(Boolean readOnly) {
-            this.readOnly = Objects.requireNonNull(readOnly);
+        public Builder readOnly(@Nullable Boolean readOnly) {
+            this.readOnly = readOnly;
             return this;
         }
         @CustomType.Setter
-        public Builder regexp(String regexp) {
-            this.regexp = Objects.requireNonNull(regexp);
+        public Builder regexp(@Nullable String regexp) {
+            this.regexp = regexp;
             return this;
         }
         @CustomType.Setter
-        public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+        public Builder required(@Nullable Boolean required) {
+            this.required = required;
             return this;
         }
         @CustomType.Setter
-        public Builder section(String section) {
-            this.section = Objects.requireNonNull(section);
+        public Builder section(@Nullable String section) {
+            this.section = section;
             return this;
         }
         @CustomType.Setter
-        public Builder visible(Boolean visible) {
-            this.visible = Objects.requireNonNull(visible);
+        public Builder visible(@Nullable Boolean visible) {
+            this.visible = visible;
             return this;
         }
         @CustomType.Setter
-        public Builder widget(String widget) {
-            this.widget = Objects.requireNonNull(widget);
+        public Builder widget(@Nullable String widget) {
+            this.widget = widget;
             return this;
         }
         public GetDomainsAppAttrRenderingMetadata build() {

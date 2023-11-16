@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
@@ -114,7 +113,7 @@ type GetAuditProfilesResult struct {
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetAuditProfilesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
 	IsOverrideGlobalRetentionSetting *bool `pulumi:"isOverrideGlobalRetentionSetting"`
 	// Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -182,12 +181,6 @@ func (o GetAuditProfilesResultOutput) ToGetAuditProfilesResultOutputWithContext(
 	return o
 }
 
-func (o GetAuditProfilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesResult] {
-	return pulumix.Output[GetAuditProfilesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAuditProfilesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditProfilesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -227,8 +220,8 @@ func (o GetAuditProfilesResultOutput) Filters() GetAuditProfilesFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditProfilesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditProfilesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditProfilesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditProfilesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.

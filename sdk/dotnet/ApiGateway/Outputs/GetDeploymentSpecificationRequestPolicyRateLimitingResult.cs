@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The maximum number of requests per second to allow.
         /// </summary>
-        public readonly int RateInRequestsPerSecond;
+        public readonly int? RateInRequestsPerSecond;
         /// <summary>
         /// The key used to group requests together.
         /// </summary>
-        public readonly string RateKey;
+        public readonly string? RateKey;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRequestPolicyRateLimitingResult(
-            int rateInRequestsPerSecond,
+            int? rateInRequestsPerSecond,
 
-            string rateKey)
+            string? rateKey)
         {
             RateInRequestsPerSecond = rateInRequestsPerSecond;
             RateKey = rateKey;

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifact {
@@ -14,7 +15,7 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
      * @return List of parameters defined for a deployment pipeline.
      * 
      */
-    private List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem> items;
+    private @Nullable List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem> items;
 
     private GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifact() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
      * 
      */
     public List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem> items;
+        private @Nullable List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem> items;
         public Builder() {}
         public Builder(GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem... items) {

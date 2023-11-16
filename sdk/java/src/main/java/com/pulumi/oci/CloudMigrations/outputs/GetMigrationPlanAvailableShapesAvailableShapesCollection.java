@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanAvailableShapesAvailableShapesCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationPlanAvailableShapesAvailableShapesCollection {
@@ -14,7 +15,7 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollection {
      * @return Available shapes list.
      * 
      */
-    private List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items;
+    private @Nullable List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items;
 
     private GetMigrationPlanAvailableShapesAvailableShapesCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollection {
      * 
      */
     public List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items;
+        private @Nullable List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items;
         public Builder() {}
         public Builder(GetMigrationPlanAvailableShapesAvailableShapesCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationPlanAvailableShapesAvailableShapesCollectionItem... items) {

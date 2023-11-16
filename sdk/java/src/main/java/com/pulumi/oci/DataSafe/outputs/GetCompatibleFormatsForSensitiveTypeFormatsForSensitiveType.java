@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForSensitiveTypeForma
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
@@ -15,12 +17,12 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
      * @return An array of the library masking formats compatible with the sensitive type.
      * 
      */
-    private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats;
+    private @Nullable List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats;
     /**
      * @return The OCID of the sensitive type.
      * 
      */
-    private String sensitiveTypeId;
+    private @Nullable String sensitiveTypeId;
 
     private GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType() {}
     /**
@@ -28,14 +30,14 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
      * 
      */
     public List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats() {
-        return this.maskingFormats;
+        return this.maskingFormats == null ? List.of() : this.maskingFormats;
     }
     /**
      * @return The OCID of the sensitive type.
      * 
      */
-    public String sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats;
-        private String sensitiveTypeId;
+        private @Nullable List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats;
+        private @Nullable String sensitiveTypeId;
         public Builder() {}
         public Builder(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
         }
 
         @CustomType.Setter
-        public Builder maskingFormats(List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats) {
-            this.maskingFormats = Objects.requireNonNull(maskingFormats);
+        public Builder maskingFormats(@Nullable List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats) {
+            this.maskingFormats = maskingFormats;
             return this;
         }
         public Builder maskingFormats(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat... maskingFormats) {
             return maskingFormats(List.of(maskingFormats));
         }
         @CustomType.Setter
-        public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         public GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType build() {

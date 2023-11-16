@@ -8,6 +8,8 @@ import com.pulumi.oci.GoldenGate.outputs.GetMessageItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMessageResult {
@@ -16,12 +18,12 @@ public final class GetMessageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of DeploymentMessages.
      * 
      */
-    private List<GetMessageItem> items;
+    private @Nullable List<GetMessageItem> items;
 
     private GetMessageResult() {}
     public String deploymentId() {
@@ -31,15 +33,15 @@ public final class GetMessageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of DeploymentMessages.
      * 
      */
     public List<GetMessageItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetMessageResult {
     @CustomType.Builder
     public static final class Builder {
         private String deploymentId;
-        private String id;
-        private List<GetMessageItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetMessageItem> items;
         public Builder() {}
         public Builder(GetMessageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetMessageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetMessageItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMessageItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMessageItem... items) {

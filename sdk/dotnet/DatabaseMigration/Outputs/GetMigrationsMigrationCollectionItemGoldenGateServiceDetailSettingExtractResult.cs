@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         /// </summary>
-        public readonly int LongTransDuration;
+        public readonly int? LongTransDuration;
         /// <summary>
         /// Extract performance.
         /// </summary>
-        public readonly string PerformanceProfile;
+        public readonly string? PerformanceProfile;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractResult(
-            int longTransDuration,
+            int? longTransDuration,
 
-            string performanceProfile)
+            string? performanceProfile)
         {
             LongTransDuration = longTransDuration;
             PerformanceProfile = performanceProfile;

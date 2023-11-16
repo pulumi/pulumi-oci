@@ -71,7 +71,7 @@ export interface GetDbServersResult {
     /**
      * The list of db_servers.
      */
-    readonly dbServers: outputs.Database.GetDbServersDbServer[];
+    readonly dbServers?: outputs.Database.GetDbServersDbServer[];
     /**
      * The user-friendly name for the Db server. The name does not need to be unique.
      */
@@ -84,7 +84,7 @@ export interface GetDbServersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Db server.
      */

@@ -49,33 +49,21 @@ class GetComputeCapacityReservationsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain of the compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the compute capacity reservation.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeCapacityReservations")
-    def compute_capacity_reservations(self) -> Sequence['outputs.GetComputeCapacityReservationsComputeCapacityReservationResult']:
-        """
-        The list of compute_capacity_reservations.
-        """
+    def compute_capacity_reservations(self) -> Optional[Sequence['outputs.GetComputeCapacityReservationsComputeCapacityReservationResult']]:
         return pulumi.get(self, "compute_capacity_reservations")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +73,7 @@ class GetComputeCapacityReservationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetComputeCapacityReservationsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the compute capacity reservation.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,30 +107,7 @@ def get_compute_capacity_reservations(availability_domain: Optional[str] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationsResult:
     """
-    This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
-
-    Lists the compute capacity reservations that match the specified criteria and compartment.
-
-    You can limit the list by specifying a compute capacity reservation display name
-    (the list will include all the identically-named compute capacity reservations in the compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservations = oci.Core.get_compute_capacity_reservations(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_capacity_reservation_availability_domain"],
-        display_name=var["compute_capacity_reservation_display_name"],
-        state=var["compute_capacity_reservation_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -174,29 +136,6 @@ def get_compute_capacity_reservations_output(availability_domain: Optional[pulum
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationsResult]:
     """
-    This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
-
-    Lists the compute capacity reservations that match the specified criteria and compartment.
-
-    You can limit the list by specifying a compute capacity reservation display name
-    (the list will include all the identically-named compute capacity reservations in the compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservations = oci.Core.get_compute_capacity_reservations(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_capacity_reservation_availability_domain"],
-        display_name=var["compute_capacity_reservation_display_name"],
-        state=var["compute_capacity_reservation_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
@@ -17,47 +19,47 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
      * @return The unique names of the databases using the disk group.
      * 
      */
-    private List<String> databases;
+    private @Nullable List<String> databases;
     /**
      * @return The number of ASM instances that have the disk group in dismounted state.
      * 
      */
-    private Integer dismountingInstanceCount;
+    private @Nullable Integer dismountingInstanceCount;
     /**
      * @return Indicates whether the disk group is a sparse disk group or not.
      * 
      */
-    private Boolean isSparse;
+    private @Nullable Boolean isSparse;
     /**
      * @return The number of ASM instances that have the disk group in mounted state.
      * 
      */
-    private Integer mountingInstanceCount;
+    private @Nullable Integer mountingInstanceCount;
     /**
      * @return The name of the ASM disk group.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The redundancy type of the disk group.
      * 
      */
-    private String redundancyType;
+    private @Nullable String redundancyType;
     /**
      * @return The total capacity of the disk group (in megabytes).
      * 
      */
-    private String totalSizeInMbs;
+    private @Nullable String totalSizeInMbs;
     /**
      * @return The percentage of used space in the disk group.
      * 
      */
-    private Double usedPercent;
+    private @Nullable Double usedPercent;
     /**
      * @return The used capacity of the disk group (in megabytes).
      * 
      */
-    private String usedSizeInMbs;
+    private @Nullable String usedSizeInMbs;
 
     private GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem() {}
     /**
@@ -65,63 +67,63 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
      * 
      */
     public List<String> databases() {
-        return this.databases;
+        return this.databases == null ? List.of() : this.databases;
     }
     /**
      * @return The number of ASM instances that have the disk group in dismounted state.
      * 
      */
-    public Integer dismountingInstanceCount() {
-        return this.dismountingInstanceCount;
+    public Optional<Integer> dismountingInstanceCount() {
+        return Optional.ofNullable(this.dismountingInstanceCount);
     }
     /**
      * @return Indicates whether the disk group is a sparse disk group or not.
      * 
      */
-    public Boolean isSparse() {
-        return this.isSparse;
+    public Optional<Boolean> isSparse() {
+        return Optional.ofNullable(this.isSparse);
     }
     /**
      * @return The number of ASM instances that have the disk group in mounted state.
      * 
      */
-    public Integer mountingInstanceCount() {
-        return this.mountingInstanceCount;
+    public Optional<Integer> mountingInstanceCount() {
+        return Optional.ofNullable(this.mountingInstanceCount);
     }
     /**
      * @return The name of the ASM disk group.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The redundancy type of the disk group.
      * 
      */
-    public String redundancyType() {
-        return this.redundancyType;
+    public Optional<String> redundancyType() {
+        return Optional.ofNullable(this.redundancyType);
     }
     /**
      * @return The total capacity of the disk group (in megabytes).
      * 
      */
-    public String totalSizeInMbs() {
-        return this.totalSizeInMbs;
+    public Optional<String> totalSizeInMbs() {
+        return Optional.ofNullable(this.totalSizeInMbs);
     }
     /**
      * @return The percentage of used space in the disk group.
      * 
      */
-    public Double usedPercent() {
-        return this.usedPercent;
+    public Optional<Double> usedPercent() {
+        return Optional.ofNullable(this.usedPercent);
     }
     /**
      * @return The used capacity of the disk group (in megabytes).
      * 
      */
-    public String usedSizeInMbs() {
-        return this.usedSizeInMbs;
+    public Optional<String> usedSizeInMbs() {
+        return Optional.ofNullable(this.usedSizeInMbs);
     }
 
     public static Builder builder() {
@@ -133,15 +135,15 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> databases;
-        private Integer dismountingInstanceCount;
-        private Boolean isSparse;
-        private Integer mountingInstanceCount;
-        private String name;
-        private String redundancyType;
-        private String totalSizeInMbs;
-        private Double usedPercent;
-        private String usedSizeInMbs;
+        private @Nullable List<String> databases;
+        private @Nullable Integer dismountingInstanceCount;
+        private @Nullable Boolean isSparse;
+        private @Nullable Integer mountingInstanceCount;
+        private @Nullable String name;
+        private @Nullable String redundancyType;
+        private @Nullable String totalSizeInMbs;
+        private @Nullable Double usedPercent;
+        private @Nullable String usedSizeInMbs;
         public Builder() {}
         public Builder(GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -157,51 +159,51 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder databases(List<String> databases) {
-            this.databases = Objects.requireNonNull(databases);
+        public Builder databases(@Nullable List<String> databases) {
+            this.databases = databases;
             return this;
         }
         public Builder databases(String... databases) {
             return databases(List.of(databases));
         }
         @CustomType.Setter
-        public Builder dismountingInstanceCount(Integer dismountingInstanceCount) {
-            this.dismountingInstanceCount = Objects.requireNonNull(dismountingInstanceCount);
+        public Builder dismountingInstanceCount(@Nullable Integer dismountingInstanceCount) {
+            this.dismountingInstanceCount = dismountingInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder isSparse(Boolean isSparse) {
-            this.isSparse = Objects.requireNonNull(isSparse);
+        public Builder isSparse(@Nullable Boolean isSparse) {
+            this.isSparse = isSparse;
             return this;
         }
         @CustomType.Setter
-        public Builder mountingInstanceCount(Integer mountingInstanceCount) {
-            this.mountingInstanceCount = Objects.requireNonNull(mountingInstanceCount);
+        public Builder mountingInstanceCount(@Nullable Integer mountingInstanceCount) {
+            this.mountingInstanceCount = mountingInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder redundancyType(String redundancyType) {
-            this.redundancyType = Objects.requireNonNull(redundancyType);
+        public Builder redundancyType(@Nullable String redundancyType) {
+            this.redundancyType = redundancyType;
             return this;
         }
         @CustomType.Setter
-        public Builder totalSizeInMbs(String totalSizeInMbs) {
-            this.totalSizeInMbs = Objects.requireNonNull(totalSizeInMbs);
+        public Builder totalSizeInMbs(@Nullable String totalSizeInMbs) {
+            this.totalSizeInMbs = totalSizeInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder usedPercent(Double usedPercent) {
-            this.usedPercent = Objects.requireNonNull(usedPercent);
+        public Builder usedPercent(@Nullable Double usedPercent) {
+            this.usedPercent = usedPercent;
             return this;
         }
         @CustomType.Setter
-        public Builder usedSizeInMbs(String usedSizeInMbs) {
-            this.usedSizeInMbs = Objects.requireNonNull(usedSizeInMbs);
+        public Builder usedSizeInMbs(@Nullable String usedSizeInMbs) {
+            this.usedSizeInMbs = usedSizeInMbs;
             return this;
         }
         public GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem build() {

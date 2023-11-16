@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
@@ -76,7 +75,7 @@ type GetExternalClusterInstancesResult struct {
 	ExternalClusterInstanceCollections []GetExternalClusterInstancesExternalClusterInstanceCollection `pulumi:"externalClusterInstanceCollections"`
 	Filters                            []GetExternalClusterInstancesFilter                            `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalClusterInstancesOutput(ctx *pulumi.Context, args GetExternalClusterInstancesOutputArgs, opts ...pulumi.InvokeOption) GetExternalClusterInstancesResultOutput {
@@ -122,12 +121,6 @@ func (o GetExternalClusterInstancesResultOutput) ToGetExternalClusterInstancesRe
 	return o
 }
 
-func (o GetExternalClusterInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalClusterInstancesResult] {
-	return pulumix.Output[GetExternalClusterInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExternalClusterInstancesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExternalClusterInstancesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -155,8 +148,8 @@ func (o GetExternalClusterInstancesResultOutput) Filters() GetExternalClusterIns
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalClusterInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalClusterInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalClusterInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalClusterInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

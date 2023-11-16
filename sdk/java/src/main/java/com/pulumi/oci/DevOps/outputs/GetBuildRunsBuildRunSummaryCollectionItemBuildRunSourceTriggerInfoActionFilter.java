@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter {
@@ -15,17 +17,17 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
      * 
      */
-    private List<String> events;
+    private @Nullable List<String> events;
     /**
      * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
-    private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
+    private @Nullable List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
     /**
      * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
-    private String triggerSource;
+    private @Nullable String triggerSource;
 
     private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter() {}
     /**
@@ -33,21 +35,21 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * 
      */
     public List<String> events() {
-        return this.events;
+        return this.events == null ? List.of() : this.events;
     }
     /**
      * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     public List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes() {
-        return this.includes;
+        return this.includes == null ? List.of() : this.includes;
     }
     /**
      * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
-    public String triggerSource() {
-        return this.triggerSource;
+    public Optional<String> triggerSource() {
+        return Optional.ofNullable(this.triggerSource);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> events;
-        private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
-        private String triggerSource;
+        private @Nullable List<String> events;
+        private @Nullable List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
+        private @Nullable String triggerSource;
         public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,24 +73,24 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         }
 
         @CustomType.Setter
-        public Builder events(List<String> events) {
-            this.events = Objects.requireNonNull(events);
+        public Builder events(@Nullable List<String> events) {
+            this.events = events;
             return this;
         }
         public Builder events(String... events) {
             return events(List.of(events));
         }
         @CustomType.Setter
-        public Builder includes(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes) {
-            this.includes = Objects.requireNonNull(includes);
+        public Builder includes(@Nullable List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes) {
+            this.includes = includes;
             return this;
         }
         public Builder includes(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude... includes) {
             return includes(List.of(includes));
         }
         @CustomType.Setter
-        public Builder triggerSource(String triggerSource) {
-            this.triggerSource = Objects.requireNonNull(triggerSource);
+        public Builder triggerSource(@Nullable String triggerSource) {
+            this.triggerSource = triggerSource;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter build() {

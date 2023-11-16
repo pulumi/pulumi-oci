@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Pluggable Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
@@ -177,12 +176,6 @@ func (i *ExternalPluggableDatabaseOperationsInsightsManagement) ToExternalPlugga
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseOperationsInsightsManagementOutput)
 }
 
-func (i *ExternalPluggableDatabaseOperationsInsightsManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[*ExternalPluggableDatabaseOperationsInsightsManagement]{
-		OutputState: i.ToExternalPluggableDatabaseOperationsInsightsManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalPluggableDatabaseOperationsInsightsManagementArrayInput is an input type that accepts ExternalPluggableDatabaseOperationsInsightsManagementArray and ExternalPluggableDatabaseOperationsInsightsManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseOperationsInsightsManagementArrayInput` via:
 //
@@ -206,12 +199,6 @@ func (i ExternalPluggableDatabaseOperationsInsightsManagementArray) ToExternalPl
 
 func (i ExternalPluggableDatabaseOperationsInsightsManagementArray) ToExternalPluggableDatabaseOperationsInsightsManagementArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabaseOperationsInsightsManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseOperationsInsightsManagementArrayOutput)
-}
-
-func (i ExternalPluggableDatabaseOperationsInsightsManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[[]*ExternalPluggableDatabaseOperationsInsightsManagement]{
-		OutputState: i.ToExternalPluggableDatabaseOperationsInsightsManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalPluggableDatabaseOperationsInsightsManagementMapInput is an input type that accepts ExternalPluggableDatabaseOperationsInsightsManagementMap and ExternalPluggableDatabaseOperationsInsightsManagementMapOutput values.
@@ -239,12 +226,6 @@ func (i ExternalPluggableDatabaseOperationsInsightsManagementMap) ToExternalPlug
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseOperationsInsightsManagementMapOutput)
 }
 
-func (i ExternalPluggableDatabaseOperationsInsightsManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[map[string]*ExternalPluggableDatabaseOperationsInsightsManagement]{
-		OutputState: i.ToExternalPluggableDatabaseOperationsInsightsManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalPluggableDatabaseOperationsInsightsManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalPluggableDatabaseOperationsInsightsManagementOutput) ElementType() reflect.Type {
@@ -257,12 +238,6 @@ func (o ExternalPluggableDatabaseOperationsInsightsManagementOutput) ToExternalP
 
 func (o ExternalPluggableDatabaseOperationsInsightsManagementOutput) ToExternalPluggableDatabaseOperationsInsightsManagementOutputWithContext(ctx context.Context) ExternalPluggableDatabaseOperationsInsightsManagementOutput {
 	return o
-}
-
-func (o ExternalPluggableDatabaseOperationsInsightsManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[*ExternalPluggableDatabaseOperationsInsightsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
@@ -303,12 +278,6 @@ func (o ExternalPluggableDatabaseOperationsInsightsManagementArrayOutput) ToExte
 	return o
 }
 
-func (o ExternalPluggableDatabaseOperationsInsightsManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[[]*ExternalPluggableDatabaseOperationsInsightsManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalPluggableDatabaseOperationsInsightsManagementArrayOutput) Index(i pulumi.IntInput) ExternalPluggableDatabaseOperationsInsightsManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalPluggableDatabaseOperationsInsightsManagement {
 		return vs[0].([]*ExternalPluggableDatabaseOperationsInsightsManagement)[vs[1].(int)]
@@ -327,12 +296,6 @@ func (o ExternalPluggableDatabaseOperationsInsightsManagementMapOutput) ToExtern
 
 func (o ExternalPluggableDatabaseOperationsInsightsManagementMapOutput) ToExternalPluggableDatabaseOperationsInsightsManagementMapOutputWithContext(ctx context.Context) ExternalPluggableDatabaseOperationsInsightsManagementMapOutput {
 	return o
-}
-
-func (o ExternalPluggableDatabaseOperationsInsightsManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[map[string]*ExternalPluggableDatabaseOperationsInsightsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalPluggableDatabaseOperationsInsightsManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalPluggableDatabaseOperationsInsightsManagementOutput {

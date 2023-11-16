@@ -73,13 +73,13 @@ namespace Pulumi.Oci.DatabaseTools
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A description of the Database Tools private endpoint.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// Then FQDN to use for the private endpoint.
         /// </summary>
         [Output("endpointFqdn")]
-        public Output<string> EndpointFqdn { get; private set; } = null!;
+        public Output<string?> EndpointFqdn { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
@@ -103,13 +103,13 @@ namespace Pulumi.Oci.DatabaseTools
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -121,13 +121,13 @@ namespace Pulumi.Oci.DatabaseTools
         /// The private IP address that represents the access point for the associated endpoint service.
         /// </summary>
         [Output("privateEndpointIp")]
-        public Output<string> PrivateEndpointIp { get; private set; } = null!;
+        public Output<string?> PrivateEndpointIp { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
         /// </summary>
         [Output("privateEndpointVnicId")]
-        public Output<string> PrivateEndpointVnicId { get; private set; } = null!;
+        public Output<string?> PrivateEndpointVnicId { get; private set; } = null!;
 
         /// <summary>
         /// Reverse connection configuration details of the private endpoint.
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// The current state of the Database Tools private endpoint.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -155,25 +155,25 @@ namespace Pulumi.Oci.DatabaseTools
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         /// </summary>
         [Output("vcnId")]
-        public Output<string> VcnId { get; private set; } = null!;
+        public Output<string?> VcnId { get; private set; } = null!;
 
 
         /// <summary>

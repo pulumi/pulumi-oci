@@ -52,9 +52,9 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === MonitorPluginManagement.__pulumiType;
     }
 
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
-    public /*out*/ readonly monitoredInstanceDescription!: pulumi.Output<string>;
-    public /*out*/ readonly monitoredInstanceDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly monitoredInstanceDescription!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly monitoredInstanceDisplayName!: pulumi.Output<string | undefined>;
     /**
      * OCID of monitored instance.
      *
@@ -63,8 +63,8 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly monitoredInstanceId!: pulumi.Output<string>;
-    public /*out*/ readonly monitoredInstanceManagementAgentId!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly monitoredInstanceManagementAgentId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitorPluginManagement resource with the given unique name, arguments, and options.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The password of the database user.
         /// </summary>
-        public readonly string Password;
+        public readonly string? Password;
         /// <summary>
         /// The database user name.
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
 
         [OutputConstructor]
         private GetTargetDatabasesTargetDatabaseCredentialResult(
-            string password,
+            string? password,
 
-            string userName)
+            string? userName)
         {
             Password = password;
             UserName = userName;

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// An array of connectionTypes.
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         /// </summary>
@@ -40,13 +40,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
         [OutputConstructor]
         private GetDeploymentTypeItemResult(
-            string category,
+            string? category,
 
             ImmutableArray<string> connectionTypes,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<string> sourceTechnologies,
 

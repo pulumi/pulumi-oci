@@ -57,12 +57,12 @@ export interface GetReplicationPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * The list of replication_policies.
      */
-    readonly replicationPolicies: outputs.ObjectStorage.GetReplicationPoliciesReplicationPolicy[];
+    readonly replicationPolicies?: outputs.ObjectStorage.GetReplicationPoliciesReplicationPolicy[];
 }
 /**
  * This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
@@ -63,34 +62,34 @@ type LookupRemediationRunStageArgs struct {
 // A collection of values returned by getRemediationRunStage.
 type LookupRemediationRunStageResult struct {
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
-	AuditId string `pulumi:"auditId"`
+	AuditId *string `pulumi:"auditId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The next type of stage in the remediation run.
-	NextStageType string `pulumi:"nextStageType"`
+	NextStageType *string `pulumi:"nextStageType"`
 	// Pipeline properties which result from the run of the verify stage.
 	PipelineProperties []GetRemediationRunStagePipelineProperty `pulumi:"pipelineProperties"`
 	// The previous type of stage in the remediation run.
-	PreviousStageType string `pulumi:"previousStageType"`
+	PreviousStageType *string `pulumi:"previousStageType"`
 	// Pull request properties from recommend stage of the remediation run.
 	PullRequestProperties []GetRemediationRunStagePullRequestProperty `pulumi:"pullRequestProperties"`
 	// Count of recommended application dependencies to update.
-	RecommendedUpdatesCount int `pulumi:"recommendedUpdatesCount"`
+	RecommendedUpdatesCount *int `pulumi:"recommendedUpdatesCount"`
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
 	RemediationRunId string `pulumi:"remediationRunId"`
 	StageType        string `pulumi:"stageType"`
 	// The current status of a remediation run stage.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Information about the current step within the stage.
-	Summary string `pulumi:"summary"`
+	Summary *string `pulumi:"summary"`
 	// The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The type of the remediation run stage.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupRemediationRunStageOutput(ctx *pulumi.Context, args LookupRemediationRunStageOutputArgs, opts ...pulumi.InvokeOption) LookupRemediationRunStageResultOutput {
@@ -133,25 +132,19 @@ func (o LookupRemediationRunStageResultOutput) ToLookupRemediationRunStageResult
 	return o
 }
 
-func (o LookupRemediationRunStageResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRemediationRunStageResult] {
-	return pulumix.Output[LookupRemediationRunStageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
-func (o LookupRemediationRunStageResultOutput) AuditId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.AuditId }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) AuditId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.AuditId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupRemediationRunStageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The next type of stage in the remediation run.
-func (o LookupRemediationRunStageResultOutput) NextStageType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.NextStageType }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) NextStageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.NextStageType }).(pulumi.StringPtrOutput)
 }
 
 // Pipeline properties which result from the run of the verify stage.
@@ -162,8 +155,8 @@ func (o LookupRemediationRunStageResultOutput) PipelineProperties() GetRemediati
 }
 
 // The previous type of stage in the remediation run.
-func (o LookupRemediationRunStageResultOutput) PreviousStageType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.PreviousStageType }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) PreviousStageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.PreviousStageType }).(pulumi.StringPtrOutput)
 }
 
 // Pull request properties from recommend stage of the remediation run.
@@ -174,8 +167,8 @@ func (o LookupRemediationRunStageResultOutput) PullRequestProperties() GetRemedi
 }
 
 // Count of recommended application dependencies to update.
-func (o LookupRemediationRunStageResultOutput) RecommendedUpdatesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) int { return v.RecommendedUpdatesCount }).(pulumi.IntOutput)
+func (o LookupRemediationRunStageResultOutput) RecommendedUpdatesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *int { return v.RecommendedUpdatesCount }).(pulumi.IntPtrOutput)
 }
 
 // The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
@@ -188,33 +181,33 @@ func (o LookupRemediationRunStageResultOutput) StageType() pulumi.StringOutput {
 }
 
 // The current status of a remediation run stage.
-func (o LookupRemediationRunStageResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Information about the current step within the stage.
-func (o LookupRemediationRunStageResultOutput) Summary() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.Summary }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) Summary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.Summary }).(pulumi.StringPtrOutput)
 }
 
 // The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o LookupRemediationRunStageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o LookupRemediationRunStageResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o LookupRemediationRunStageResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The type of the remediation run stage.
-func (o LookupRemediationRunStageResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRunStageResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupRemediationRunStageResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRunStageResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

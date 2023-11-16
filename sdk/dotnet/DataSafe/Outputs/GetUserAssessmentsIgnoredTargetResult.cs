@@ -13,20 +13,20 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetUserAssessmentsIgnoredTargetResult
     {
-        public readonly string LifecycleState;
+        public readonly string? LifecycleState;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
-        public readonly string UserAssessmentId;
+        public readonly string? TargetId;
+        public readonly string? UserAssessmentId;
 
         [OutputConstructor]
         private GetUserAssessmentsIgnoredTargetResult(
-            string lifecycleState,
+            string? lifecycleState,
 
-            string targetId,
+            string? targetId,
 
-            string userAssessmentId)
+            string? userAssessmentId)
         {
             LifecycleState = lifecycleState;
             TargetId = targetId;

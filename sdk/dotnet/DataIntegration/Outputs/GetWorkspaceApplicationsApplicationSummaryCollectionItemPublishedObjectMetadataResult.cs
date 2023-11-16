@@ -16,47 +16,47 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The patch action indicating if object was created, updated, or deleted.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Used to filter by the identifier of the published object.
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
         /// <summary>
         /// The key of the object.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Used to filter by the name of the object.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The fully qualified path of the published object, which would include its project and folder.
         /// </summary>
-        public readonly string NamePath;
+        public readonly string? NamePath;
         /// <summary>
         /// The object version.
         /// </summary>
-        public readonly int ObjectVersion;
+        public readonly int? ObjectVersion;
         /// <summary>
         /// The type of the object in patch.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult(
-            string action,
+            string? action,
 
-            string identifier,
+            string? identifier,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
-            string namePath,
+            string? namePath,
 
-            int objectVersion,
+            int? objectVersion,
 
-            string type)
+            string? type)
         {
             Action = action;
             Identifier = identifier;

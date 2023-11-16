@@ -6,6 +6,8 @@ package com.pulumi.oci.Waas.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
@@ -29,12 +31,12 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
      * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return The value of the header.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria() {}
     /**
@@ -57,15 +59,15 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
      * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return The value of the header.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -77,8 +79,8 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String condition;
-        private String value;
+        private @Nullable String condition;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,13 +89,13 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
         }
 
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria build() {

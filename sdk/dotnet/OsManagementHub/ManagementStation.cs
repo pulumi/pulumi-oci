@@ -78,13 +78,13 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details describing the Management Station config.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Management Station name
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the host
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// OCID for the Instance associated with the Management Station.
         /// </summary>
         [Output("managedInstanceId")]
-        public Output<string> ManagedInstanceId { get; private set; } = null!;
+        public Output<string?> ManagedInstanceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information for creating a mirror configuration
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// A decimal number representing the mirror capacity
         /// </summary>
         [Output("mirrorCapacity")]
-        public Output<int> MirrorCapacity { get; private set; } = null!;
+        public Output<int?> MirrorCapacity { get; private set; } = null!;
 
         /// <summary>
         /// Status summary of all repos
@@ -132,19 +132,19 @@ namespace Pulumi.Oci.OsManagementHub
         /// A decimal number representing the completeness percentage
         /// </summary>
         [Output("overallPercentage")]
-        public Output<int> OverallPercentage { get; private set; } = null!;
+        public Output<int?> OverallPercentage { get; private set; } = null!;
 
         /// <summary>
         /// Current state of the mirroring
         /// </summary>
         [Output("overallState")]
-        public Output<string> OverallState { get; private set; } = null!;
+        public Output<string?> OverallState { get; private set; } = null!;
 
         /// <summary>
         /// OCID of the Profile associated with the Station
         /// </summary>
         [Output("profileId")]
-        public Output<string> ProfileId { get; private set; } = null!;
+        public Output<string?> ProfileId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information for creating a proxy configuration
@@ -156,25 +156,25 @@ namespace Pulumi.Oci.OsManagementHub
         /// OCID of the Scheduled Job for mirror sync
         /// </summary>
         [Output("scheduledJobId")]
-        public Output<string> ScheduledJobId { get; private set; } = null!;
+        public Output<string?> ScheduledJobId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Management Station config.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// A decimal number representing the total of repos
         /// </summary>
         [Output("totalMirrors")]
-        public Output<int> TotalMirrors { get; private set; } = null!;
+        public Output<int?> TotalMirrors { get; private set; } = null!;
 
 
         /// <summary>

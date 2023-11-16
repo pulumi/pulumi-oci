@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -132,12 +131,6 @@ func (o GetDatasetsResultOutput) ToGetDatasetsResultOutput() GetDatasetsResultOu
 
 func (o GetDatasetsResultOutput) ToGetDatasetsResultOutputWithContext(ctx context.Context) GetDatasetsResultOutput {
 	return o
-}
-
-func (o GetDatasetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsResult] {
-	return pulumix.Output[GetDatasetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The annotation format name required for labeling records.

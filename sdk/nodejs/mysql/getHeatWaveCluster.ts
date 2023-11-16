@@ -47,40 +47,40 @@ export interface GetHeatWaveClusterResult {
     /**
      * A HeatWave node is a compute host that is part of a HeatWave cluster.
      */
-    readonly clusterNodes: outputs.Mysql.GetHeatWaveClusterClusterNode[];
+    readonly clusterNodes?: outputs.Mysql.GetHeatWaveClusterClusterNode[];
     /**
      * The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      */
-    readonly clusterSize: number;
+    readonly clusterSize?: number;
     /**
      * The OCID of the parent DB System this HeatWave cluster is attached to.
      */
     readonly dbSystemId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * Lakehouse enabled status for the HeatWave cluster.
      */
-    readonly isLakehouseEnabled: boolean;
+    readonly isLakehouseEnabled?: boolean;
     /**
      * Additional information about the current lifecycleState.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
      */
-    readonly shapeName: string;
+    readonly shapeName?: string;
     /**
      * The current state of the HeatWave cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.

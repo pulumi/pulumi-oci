@@ -53,34 +53,34 @@ export interface GetPeerResult {
     /**
      * Availability Domain of peer
      */
-    readonly ad: string;
+    readonly ad?: string;
     /**
      * peer alias
      */
-    readonly alias: string;
+    readonly alias?: string;
     readonly blockchainPlatformId: string;
     /**
      * Host on which the Peer exists
      */
-    readonly host: string;
-    readonly id: string;
+    readonly host?: string;
+    readonly id?: string;
     /**
      * OCPU allocation parameter
      */
-    readonly ocpuAllocationParams: outputs.Blockchain.GetPeerOcpuAllocationParam[];
+    readonly ocpuAllocationParams?: outputs.Blockchain.GetPeerOcpuAllocationParam[];
     readonly peerId: string;
     /**
      * peer identifier
      */
-    readonly peerKey: string;
+    readonly peerKey?: string;
     /**
      * Peer role
      */
-    readonly role: string;
+    readonly role?: string;
     /**
      * The current state of the peer.
      */
-    readonly state: string;
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.

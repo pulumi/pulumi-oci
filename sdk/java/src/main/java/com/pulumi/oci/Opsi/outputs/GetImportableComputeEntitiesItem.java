@@ -6,6 +6,8 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImportableComputeEntitiesItem {
@@ -13,75 +15,75 @@ public final class GetImportableComputeEntitiesItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
      * 
      */
-    private String computeDisplayName;
+    private @Nullable String computeDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    private String computeId;
+    private @Nullable String computeId;
     /**
      * @return Source of the importable agent entity.
      * 
      */
-    private String entitySource;
+    private @Nullable String entitySource;
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      * 
      */
-    private String platformType;
+    private @Nullable String platformType;
 
     private GetImportableComputeEntitiesItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
      * 
      */
-    public String computeDisplayName() {
-        return this.computeDisplayName;
+    public Optional<String> computeDisplayName() {
+        return Optional.ofNullable(this.computeDisplayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    public String computeId() {
-        return this.computeId;
+    public Optional<String> computeId() {
+        return Optional.ofNullable(this.computeId);
     }
     /**
      * @return Source of the importable agent entity.
      * 
      */
-    public String entitySource() {
-        return this.entitySource;
+    public Optional<String> entitySource() {
+        return Optional.ofNullable(this.entitySource);
     }
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      * 
      */
-    public String platformType() {
-        return this.platformType;
+    public Optional<String> platformType() {
+        return Optional.ofNullable(this.platformType);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetImportableComputeEntitiesItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String computeDisplayName;
-        private String computeId;
-        private String entitySource;
-        private String hostName;
-        private String platformType;
+        private @Nullable String compartmentId;
+        private @Nullable String computeDisplayName;
+        private @Nullable String computeId;
+        private @Nullable String entitySource;
+        private @Nullable String hostName;
+        private @Nullable String platformType;
         public Builder() {}
         public Builder(GetImportableComputeEntitiesItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetImportableComputeEntitiesItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeDisplayName(String computeDisplayName) {
-            this.computeDisplayName = Objects.requireNonNull(computeDisplayName);
+        public Builder computeDisplayName(@Nullable String computeDisplayName) {
+            this.computeDisplayName = computeDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder computeId(String computeId) {
-            this.computeId = Objects.requireNonNull(computeId);
+        public Builder computeId(@Nullable String computeId) {
+            this.computeId = computeId;
             return this;
         }
         @CustomType.Setter
-        public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+        public Builder entitySource(@Nullable String entitySource) {
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+        public Builder platformType(@Nullable String platformType) {
+            this.platformType = platformType;
             return this;
         }
         public GetImportableComputeEntitiesItem build() {

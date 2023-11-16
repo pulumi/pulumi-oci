@@ -67,10 +67,7 @@ class GetDatabaseUpgradeHistoryEntryResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The database upgrade action.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
@@ -80,7 +77,7 @@ class GetDatabaseUpgradeHistoryEntryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,84 +85,52 @@ class GetDatabaseUpgradeHistoryEntryResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def options(self) -> str:
-        """
-        Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
-        """
+    def options(self) -> Optional[str]:
         return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
-        """
-        The source of the Oracle Database software to be used for the upgrade.
-        * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
-        * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-        """
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="sourceDbHomeId")
-    def source_db_home_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
+    def source_db_home_id(self) -> Optional[str]:
         return pulumi.get(self, "source_db_home_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetDatabaseSoftwareImageId")
-    def target_database_software_image_id(self) -> str:
-        """
-        the database software image used for upgrading database.
-        """
+    def target_database_software_image_id(self) -> Optional[str]:
         return pulumi.get(self, "target_database_software_image_id")
 
     @property
     @pulumi.getter(name="targetDbHomeId")
-    def target_db_home_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
+    def target_db_home_id(self) -> Optional[str]:
         return pulumi.get(self, "target_db_home_id")
 
     @property
     @pulumi.getter(name="targetDbVersion")
-    def target_db_version(self) -> str:
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-        """
+    def target_db_version(self) -> Optional[str]:
         return pulumi.get(self, "target_db_version")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        The date and time when the database upgrade ended.
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time when the database upgrade started.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
@@ -200,23 +165,7 @@ def get_database_upgrade_history_entry(database_id: Optional[str] = None,
                                        upgrade_history_entry_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseUpgradeHistoryEntryResult:
     """
-    This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    gets the upgrade history for a specified database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_upgrade_history_entry = oci.Database.get_database_upgrade_history_entry(database_id=oci_database_database["test_database"]["id"],
-        upgrade_history_entry_id=oci_database_upgrade_history_entry["test_upgrade_history_entry"]["id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str upgrade_history_entry_id: The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
@@ -246,22 +195,6 @@ def get_database_upgrade_history_entry_output(database_id: Optional[pulumi.Input
                                               upgrade_history_entry_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseUpgradeHistoryEntryResult]:
     """
-    This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    gets the upgrade history for a specified database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_upgrade_history_entry = oci.Database.get_database_upgrade_history_entry(database_id=oci_database_database["test_database"]["id"],
-        upgrade_history_entry_id=oci_database_upgrade_history_entry["test_upgrade_history_entry"]["id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str upgrade_history_entry_id: The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

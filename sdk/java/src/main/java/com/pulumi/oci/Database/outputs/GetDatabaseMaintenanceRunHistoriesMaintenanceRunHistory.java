@@ -9,6 +9,8 @@ import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoriesMainten
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
@@ -16,17 +18,17 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
      * @return List of database server history details.
      * 
      */
-    private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails;
+    private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails;
     /**
      * @return The OCID of the maintenance run.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details of a maintenance run.
      * 
      */
-    private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails;
+    private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails;
 
     private GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
      * 
      */
     public List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails() {
-        return this.dbServersHistoryDetails;
+        return this.dbServersHistoryDetails == null ? List.of() : this.dbServersHistoryDetails;
     }
     /**
      * @return The OCID of the maintenance run.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details of a maintenance run.
      * 
      */
     public List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails() {
-        return this.maintenanceRunDetails;
+        return this.maintenanceRunDetails == null ? List.of() : this.maintenanceRunDetails;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails;
-        private String id;
-        private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails;
+        private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails;
+        private @Nullable String id;
+        private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails;
         public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
         }
 
         @CustomType.Setter
-        public Builder dbServersHistoryDetails(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails) {
-            this.dbServersHistoryDetails = Objects.requireNonNull(dbServersHistoryDetails);
+        public Builder dbServersHistoryDetails(@Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails) {
+            this.dbServersHistoryDetails = dbServersHistoryDetails;
             return this;
         }
         public Builder dbServersHistoryDetails(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail... dbServersHistoryDetails) {
             return dbServersHistoryDetails(List.of(dbServersHistoryDetails));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceRunDetails(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails) {
-            this.maintenanceRunDetails = Objects.requireNonNull(maintenanceRunDetails);
+        public Builder maintenanceRunDetails(@Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails) {
+            this.maintenanceRunDetails = maintenanceRunDetails;
             return this;
         }
         public Builder maintenanceRunDetails(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail... maintenanceRunDetails) {

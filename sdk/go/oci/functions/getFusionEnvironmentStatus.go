@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -61,9 +60,9 @@ type GetFusionEnvironmentStatusArgs struct {
 type GetFusionEnvironmentStatusResult struct {
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The data plane status of FusionEnvironment.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 func GetFusionEnvironmentStatusOutput(ctx *pulumi.Context, args GetFusionEnvironmentStatusOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentStatusResultOutput {
@@ -104,24 +103,18 @@ func (o GetFusionEnvironmentStatusResultOutput) ToGetFusionEnvironmentStatusResu
 	return o
 }
 
-func (o GetFusionEnvironmentStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentStatusResult] {
-	return pulumix.Output[GetFusionEnvironmentStatusResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentStatusResultOutput) FusionEnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentStatusResult) string { return v.FusionEnvironmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentStatusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentStatusResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentStatusResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentStatusResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The data plane status of FusionEnvironment.
-func (o GetFusionEnvironmentStatusResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentStatusResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentStatusResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentStatusResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 func init() {

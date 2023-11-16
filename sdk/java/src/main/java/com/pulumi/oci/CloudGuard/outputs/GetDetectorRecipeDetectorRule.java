@@ -10,6 +10,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeDetectorRuleEntitiesMa
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectorRecipeDetectorRule {
@@ -17,82 +19,82 @@ public final class GetDetectorRecipeDetectorRule {
      * @return List of CandidateResponderRule related to this rule
      * 
      */
-    private List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules;
+    private @Nullable List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
      * @return The id of the attached DataSource.
      * 
      */
-    private String dataSourceId;
+    private @Nullable String dataSourceId;
     /**
      * @return Description for DetectorRecipeDetectorRule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Details of a Detector Rule
      * 
      */
-    private List<GetDetectorRecipeDetectorRuleDetail> details;
+    private @Nullable List<GetDetectorRecipeDetectorRuleDetail> details;
     /**
      * @return detector for the rule
      * 
      */
-    private String detector;
+    private @Nullable String detector;
     /**
      * @return The unique identifier of the detector rule.
      * 
      */
-    private String detectorRuleId;
+    private @Nullable String detectorRuleId;
     /**
      * @return The display name of entity
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Data Source entities mapping for a Detector Rule
      * 
      */
-    private List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
+    private @Nullable List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return List of cloudguard managed list types related to this rule
      * 
      */
-    private List<String> managedListTypes;
+    private @Nullable List<String> managedListTypes;
     /**
      * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
-    private String recommendation;
+    private @Nullable String recommendation;
     /**
      * @return resource type of the configuration to which the rule is applied
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return service type of the configuration to which the rule is applied
      * 
      */
-    private String serviceType;
+    private @Nullable String serviceType;
     /**
      * @return The current state of the resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the detector recipe was created. Format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the detector recipe was updated. Format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDetectorRecipeDetectorRule() {}
     /**
@@ -100,112 +102,112 @@ public final class GetDetectorRecipeDetectorRule {
      * 
      */
     public List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules() {
-        return this.candidateResponderRules;
+        return this.candidateResponderRules == null ? List.of() : this.candidateResponderRules;
     }
     /**
      * @return The id of the attached DataSource.
      * 
      */
-    public String dataSourceId() {
-        return this.dataSourceId;
+    public Optional<String> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
     }
     /**
      * @return Description for DetectorRecipeDetectorRule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Details of a Detector Rule
      * 
      */
     public List<GetDetectorRecipeDetectorRuleDetail> details() {
-        return this.details;
+        return this.details == null ? List.of() : this.details;
     }
     /**
      * @return detector for the rule
      * 
      */
-    public String detector() {
-        return this.detector;
+    public Optional<String> detector() {
+        return Optional.ofNullable(this.detector);
     }
     /**
      * @return The unique identifier of the detector rule.
      * 
      */
-    public String detectorRuleId() {
-        return this.detectorRuleId;
+    public Optional<String> detectorRuleId() {
+        return Optional.ofNullable(this.detectorRuleId);
     }
     /**
      * @return The display name of entity
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Data Source entities mapping for a Detector Rule
      * 
      */
     public List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings() {
-        return this.entitiesMappings;
+        return this.entitiesMappings == null ? List.of() : this.entitiesMappings;
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return List of cloudguard managed list types related to this rule
      * 
      */
     public List<String> managedListTypes() {
-        return this.managedListTypes;
+        return this.managedListTypes == null ? List.of() : this.managedListTypes;
     }
     /**
      * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
-    public String recommendation() {
-        return this.recommendation;
+    public Optional<String> recommendation() {
+        return Optional.ofNullable(this.recommendation);
     }
     /**
      * @return resource type of the configuration to which the rule is applied
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return service type of the configuration to which the rule is applied
      * 
      */
-    public String serviceType() {
-        return this.serviceType;
+    public Optional<String> serviceType() {
+        return Optional.ofNullable(this.serviceType);
     }
     /**
      * @return The current state of the resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the detector recipe was created. Format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the detector recipe was updated. Format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -217,22 +219,22 @@ public final class GetDetectorRecipeDetectorRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules;
-        private String dataSourceId;
-        private String description;
-        private List<GetDetectorRecipeDetectorRuleDetail> details;
-        private String detector;
-        private String detectorRuleId;
-        private String displayName;
-        private List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
-        private String lifecycleDetails;
-        private List<String> managedListTypes;
-        private String recommendation;
-        private String resourceType;
-        private String serviceType;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules;
+        private @Nullable String dataSourceId;
+        private @Nullable String description;
+        private @Nullable List<GetDetectorRecipeDetectorRuleDetail> details;
+        private @Nullable String detector;
+        private @Nullable String detectorRuleId;
+        private @Nullable String displayName;
+        private @Nullable List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> managedListTypes;
+        private @Nullable String recommendation;
+        private @Nullable String resourceType;
+        private @Nullable String serviceType;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDetectorRecipeDetectorRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -255,95 +257,95 @@ public final class GetDetectorRecipeDetectorRule {
         }
 
         @CustomType.Setter
-        public Builder candidateResponderRules(List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules) {
-            this.candidateResponderRules = Objects.requireNonNull(candidateResponderRules);
+        public Builder candidateResponderRules(@Nullable List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules) {
+            this.candidateResponderRules = candidateResponderRules;
             return this;
         }
         public Builder candidateResponderRules(GetDetectorRecipeDetectorRuleCandidateResponderRule... candidateResponderRules) {
             return candidateResponderRules(List.of(candidateResponderRules));
         }
         @CustomType.Setter
-        public Builder dataSourceId(String dataSourceId) {
-            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+        public Builder dataSourceId(@Nullable String dataSourceId) {
+            this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder details(List<GetDetectorRecipeDetectorRuleDetail> details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable List<GetDetectorRecipeDetectorRuleDetail> details) {
+            this.details = details;
             return this;
         }
         public Builder details(GetDetectorRecipeDetectorRuleDetail... details) {
             return details(List.of(details));
         }
         @CustomType.Setter
-        public Builder detector(String detector) {
-            this.detector = Objects.requireNonNull(detector);
+        public Builder detector(@Nullable String detector) {
+            this.detector = detector;
             return this;
         }
         @CustomType.Setter
-        public Builder detectorRuleId(String detectorRuleId) {
-            this.detectorRuleId = Objects.requireNonNull(detectorRuleId);
+        public Builder detectorRuleId(@Nullable String detectorRuleId) {
+            this.detectorRuleId = detectorRuleId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder entitiesMappings(List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings) {
-            this.entitiesMappings = Objects.requireNonNull(entitiesMappings);
+        public Builder entitiesMappings(@Nullable List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings) {
+            this.entitiesMappings = entitiesMappings;
             return this;
         }
         public Builder entitiesMappings(GetDetectorRecipeDetectorRuleEntitiesMapping... entitiesMappings) {
             return entitiesMappings(List.of(entitiesMappings));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder managedListTypes(List<String> managedListTypes) {
-            this.managedListTypes = Objects.requireNonNull(managedListTypes);
+        public Builder managedListTypes(@Nullable List<String> managedListTypes) {
+            this.managedListTypes = managedListTypes;
             return this;
         }
         public Builder managedListTypes(String... managedListTypes) {
             return managedListTypes(List.of(managedListTypes));
         }
         @CustomType.Setter
-        public Builder recommendation(String recommendation) {
-            this.recommendation = Objects.requireNonNull(recommendation);
+        public Builder recommendation(@Nullable String recommendation) {
+            this.recommendation = recommendation;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceType(String serviceType) {
-            this.serviceType = Objects.requireNonNull(serviceType);
+        public Builder serviceType(@Nullable String serviceType) {
+            this.serviceType = serviceType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDetectorRecipeDetectorRule build() {

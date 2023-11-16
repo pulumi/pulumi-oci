@@ -47,26 +47,26 @@ export interface GetFusionEnvironmentAdminUserResult {
     /**
      * Admin users email address
      */
-    readonly emailAddress: string;
+    readonly emailAddress?: string;
     /**
      * Admin users first name
      */
-    readonly firstName: string;
+    readonly firstName?: string;
     readonly fusionEnvironmentId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * A page of AdminUserSummary objects.
      */
-    readonly items: outputs.Functions.GetFusionEnvironmentAdminUserItem[];
+    readonly items?: outputs.Functions.GetFusionEnvironmentAdminUserItem[];
     /**
      * Admin users last name
      */
-    readonly lastName: string;
-    readonly password: string;
+    readonly lastName?: string;
+    readonly password?: string;
     /**
      * Admin username
      */
-    readonly username: string;
+    readonly username?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.

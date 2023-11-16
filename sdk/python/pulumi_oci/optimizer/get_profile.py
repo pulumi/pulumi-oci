@@ -68,66 +68,42 @@ class GetProfileResult:
 
     @property
     @pulumi.getter(name="aggregationIntervalInDays")
-    def aggregation_interval_in_days(self) -> int:
-        """
-        The time period over which to collect data for the recommendations, measured in number of days.
-        """
+    def aggregation_interval_in_days(self) -> Optional[int]:
         return pulumi.get(self, "aggregation_interval_in_days")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the profile. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID of the profile.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="levelsConfigurations")
-    def levels_configurations(self) -> Sequence['outputs.GetProfileLevelsConfigurationResult']:
-        """
-        A list of configuration levels for each recommendation.
-        """
+    def levels_configurations(self) -> Optional[Sequence['outputs.GetProfileLevelsConfigurationResult']]:
         return pulumi.get(self, "levels_configurations")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name assigned to the profile. Avoid entering confidential information.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -137,42 +113,27 @@ class GetProfileResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The profile's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetCompartments")
-    def target_compartments(self) -> Sequence['outputs.GetProfileTargetCompartmentResult']:
-        """
-        Optional. The compartments specified in the profile override for a recommendation.
-        """
+    def target_compartments(self) -> Optional[Sequence['outputs.GetProfileTargetCompartmentResult']]:
         return pulumi.get(self, "target_compartments")
 
     @property
     @pulumi.getter(name="targetTags")
-    def target_tags(self) -> Sequence['outputs.GetProfileTargetTagResult']:
-        """
-        Optional. The tags specified in the profile override for a recommendation.
-        """
+    def target_tags(self) -> Optional[Sequence['outputs.GetProfileTargetTagResult']]:
         return pulumi.get(self, "target_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the profile was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the profile was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetProfileResult(GetProfileResult):
 def get_profile(profile_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProfileResult:
     """
-    This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the specified profile's information. Uses the profile's OCID to determine which profile to retrieve.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_profile = oci.Optimizer.get_profile(profile_id=oci_optimizer_profile["test_profile"]["id"])
-    ```
-
-
-    :param str profile_id: The unique OCID of the profile.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['profileId'] = profile_id
@@ -243,20 +190,6 @@ def get_profile(profile_id: Optional[str] = None,
 def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfileResult]:
     """
-    This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the specified profile's information. Uses the profile's OCID to determine which profile to retrieve.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_profile = oci.Optimizer.get_profile(profile_id=oci_optimizer_profile["test_profile"]["id"])
-    ```
-
-
-    :param str profile_id: The unique OCID of the profile.
+    Use this data source to access information about an existing resource.
     """
     ...

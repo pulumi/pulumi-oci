@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The maximum number of OCPUs supported for this image and shape.
         /// </summary>
-        public readonly int Max;
+        public readonly int? Max;
         /// <summary>
         /// The minimum number of OCPUs supported for this image and shape.
         /// </summary>
-        public readonly int Min;
+        public readonly int? Min;
 
         [OutputConstructor]
         private GetImageShapeOcpuConstraintResult(
-            int max,
+            int? max,
 
-            int min)
+            int? min)
         {
             Max = max;
             Min = min;

@@ -51,20 +51,20 @@ export interface GetFleetCryptoAnalysisResultResult {
     /**
      * The result aggregation mode
      */
-    readonly aggregationMode: string;
+    readonly aggregationMode?: string;
     /**
      * The Object Storage bucket name of this analysis result.
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     readonly cryptoAnalysisResultId: string;
     /**
      * The Crypto Roadmap version used to perform the analysis.
      */
-    readonly cryptoRoadmapVersion: string;
+    readonly cryptoRoadmapVersion?: string;
     /**
      * Total number of findings with the analysis.
      */
-    readonly findingCount: number;
+    readonly findingCount?: number;
     /**
      * The fleet OCID.
      */
@@ -72,51 +72,51 @@ export interface GetFleetCryptoAnalysisResultResult {
     /**
      * The hostname of the managed instance.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The managed instance OCID.
      */
-    readonly managedInstanceId: string;
+    readonly managedInstanceId?: string;
     /**
      * The Object Storage namespace of this analysis result.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
      */
-    readonly nonCompliantFindingCount: number;
+    readonly nonCompliantFindingCount?: number;
     /**
      * The Object Storage object name of this analysis result.
      */
-    readonly object: string;
+    readonly object?: string;
     /**
      * Total number of summarized events. Summarized events are deduplicated events of interest.
      */
-    readonly summarizedEventCount: number;
+    readonly summarizedEventCount?: number;
     /**
      * The time the result is compiled.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Time of the first event in the analysis.
      */
-    readonly timeFirstEvent: string;
+    readonly timeFirstEvent?: string;
     /**
      * Time of the last event in the analysis.
      */
-    readonly timeLastEvent: string;
+    readonly timeLastEvent?: string;
     /**
      * Total number of events in the analysis.
      */
-    readonly totalEventCount: number;
+    readonly totalEventCount?: number;
     /**
      * The OCID of the work request to start the analysis.
      */
-    readonly workRequestId: string;
+    readonly workRequestId?: string;
 }
 /**
  * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.

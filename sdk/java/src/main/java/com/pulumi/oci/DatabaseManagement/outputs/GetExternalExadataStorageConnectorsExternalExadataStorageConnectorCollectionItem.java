@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem {
@@ -17,74 +19,74 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
      * 
      */
-    private String agentId;
+    private @Nullable String agentId;
     /**
      * @return The unique string of the connection. For example, &#34;https://&lt;storage-server-name&gt;/MS/RESTService/&#34;.
      * 
      */
-    private String connectionUri;
-    private String connectorName;
-    private List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo> credentialInfos;
+    private @Nullable String connectionUri;
+    private @Nullable String connectorName;
+    private @Nullable List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo> credentialInfos;
     /**
      * @return The optional single value query filter parameter on the entity display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    private String exadataInfrastructureId;
+    private @Nullable String exadataInfrastructureId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The internal ID of the Exadata resource.
      * 
      */
-    private String internalId;
+    private @Nullable String internalId;
     /**
      * @return The details of the lifecycle state of the Exadata resource.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current lifecycle state of the database resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The status of the Exadata resource.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      * 
      */
-    private String storageServerId;
+    private @Nullable String storageServerId;
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The timestamp of the last update of the Exadata resource.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The version of the Exadata resource.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem() {}
     /**
@@ -92,104 +94,104 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
      * 
      */
-    public String agentId() {
-        return this.agentId;
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
     }
     /**
      * @return The unique string of the connection. For example, &#34;https://&lt;storage-server-name&gt;/MS/RESTService/&#34;.
      * 
      */
-    public String connectionUri() {
-        return this.connectionUri;
+    public Optional<String> connectionUri() {
+        return Optional.ofNullable(this.connectionUri);
     }
-    public String connectorName() {
-        return this.connectorName;
+    public Optional<String> connectorName() {
+        return Optional.ofNullable(this.connectorName);
     }
     public List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo> credentialInfos() {
-        return this.credentialInfos;
+        return this.credentialInfos == null ? List.of() : this.credentialInfos;
     }
     /**
      * @return The optional single value query filter parameter on the entity display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    public String exadataInfrastructureId() {
-        return this.exadataInfrastructureId;
+    public Optional<String> exadataInfrastructureId() {
+        return Optional.ofNullable(this.exadataInfrastructureId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The internal ID of the Exadata resource.
      * 
      */
-    public String internalId() {
-        return this.internalId;
+    public Optional<String> internalId() {
+        return Optional.ofNullable(this.internalId);
     }
     /**
      * @return The details of the lifecycle state of the Exadata resource.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current lifecycle state of the database resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The status of the Exadata resource.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      * 
      */
-    public String storageServerId() {
-        return this.storageServerId;
+    public Optional<String> storageServerId() {
+        return Optional.ofNullable(this.storageServerId);
     }
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The timestamp of the last update of the Exadata resource.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The version of the Exadata resource.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -201,22 +203,22 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String agentId;
-        private String connectionUri;
-        private String connectorName;
-        private List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo> credentialInfos;
-        private String displayName;
-        private String exadataInfrastructureId;
-        private String id;
-        private String internalId;
-        private String lifecycleDetails;
-        private String state;
-        private String status;
-        private String storageServerId;
-        private String timeCreated;
-        private String timeUpdated;
-        private String version;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String agentId;
+        private @Nullable String connectionUri;
+        private @Nullable String connectorName;
+        private @Nullable List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo> credentialInfos;
+        private @Nullable String displayName;
+        private @Nullable String exadataInfrastructureId;
+        private @Nullable String id;
+        private @Nullable String internalId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String storageServerId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -239,86 +241,86 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+        public Builder agentId(@Nullable String agentId) {
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionUri(String connectionUri) {
-            this.connectionUri = Objects.requireNonNull(connectionUri);
+        public Builder connectionUri(@Nullable String connectionUri) {
+            this.connectionUri = connectionUri;
             return this;
         }
         @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
+        public Builder connectorName(@Nullable String connectorName) {
+            this.connectorName = connectorName;
             return this;
         }
         @CustomType.Setter
-        public Builder credentialInfos(List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo> credentialInfos) {
-            this.credentialInfos = Objects.requireNonNull(credentialInfos);
+        public Builder credentialInfos(@Nullable List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo> credentialInfos) {
+            this.credentialInfos = credentialInfos;
             return this;
         }
         public Builder credentialInfos(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo... credentialInfos) {
             return credentialInfos(List.of(credentialInfos));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+        public Builder exadataInfrastructureId(@Nullable String exadataInfrastructureId) {
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder internalId(String internalId) {
-            this.internalId = Objects.requireNonNull(internalId);
+        public Builder internalId(@Nullable String internalId) {
+            this.internalId = internalId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder storageServerId(String storageServerId) {
-            this.storageServerId = Objects.requireNonNull(storageServerId);
+        public Builder storageServerId(@Nullable String storageServerId) {
+            this.storageServerId = storageServerId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem build() {

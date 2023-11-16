@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
@@ -72,7 +71,7 @@ type GetAppCatalogListingsResult struct {
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetAppCatalogListingsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the publisher who published this listing.
 	PublisherName *string `pulumi:"publisherName"`
 	PublisherType *string `pulumi:"publisherType"`
@@ -121,12 +120,6 @@ func (o GetAppCatalogListingsResultOutput) ToGetAppCatalogListingsResultOutputWi
 	return o
 }
 
-func (o GetAppCatalogListingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppCatalogListingsResult] {
-	return pulumix.Output[GetAppCatalogListingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of app_catalog_listings.
 func (o GetAppCatalogListingsResultOutput) AppCatalogListings() GetAppCatalogListingsAppCatalogListingArrayOutput {
 	return o.ApplyT(func(v GetAppCatalogListingsResult) []GetAppCatalogListingsAppCatalogListing {
@@ -144,8 +137,8 @@ func (o GetAppCatalogListingsResultOutput) Filters() GetAppCatalogListingsFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAppCatalogListingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAppCatalogListingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the publisher who published this listing.

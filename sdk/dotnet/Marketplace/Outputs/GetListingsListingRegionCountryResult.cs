@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// A code assigned to the item.
         /// </summary>
-        public readonly string Code;
+        public readonly string? Code;
         /// <summary>
         /// The name of the listing.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetListingsListingRegionCountryResult(
-            string code,
+            string? code,
 
-            string name)
+            string? name)
         {
             Code = code;
             Name = name;

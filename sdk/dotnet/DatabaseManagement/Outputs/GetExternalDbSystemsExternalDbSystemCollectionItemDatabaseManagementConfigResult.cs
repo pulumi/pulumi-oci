@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The Oracle license model that applies to the external database.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
 
         [OutputConstructor]
-        private GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigResult(string licenseModel)
+        private GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigResult(string? licenseModel)
         {
             LicenseModel = licenseModel;
         }

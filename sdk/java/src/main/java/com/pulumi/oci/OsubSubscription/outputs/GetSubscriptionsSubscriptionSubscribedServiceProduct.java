@@ -6,6 +6,8 @@ package com.pulumi.oci.OsubSubscription.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
@@ -13,51 +15,51 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
      * @return Product name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Product part numner
      * 
      */
-    private String partNumber;
+    private @Nullable String partNumber;
     /**
      * @return Product provisioning group
      * 
      */
-    private String provisioningGroup;
+    private @Nullable String provisioningGroup;
     /**
      * @return Unit of measure
      * 
      */
-    private String unitOfMeasure;
+    private @Nullable String unitOfMeasure;
 
     private GetSubscriptionsSubscriptionSubscribedServiceProduct() {}
     /**
      * @return Product name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Product part numner
      * 
      */
-    public String partNumber() {
-        return this.partNumber;
+    public Optional<String> partNumber() {
+        return Optional.ofNullable(this.partNumber);
     }
     /**
      * @return Product provisioning group
      * 
      */
-    public String provisioningGroup() {
-        return this.provisioningGroup;
+    public Optional<String> provisioningGroup() {
+        return Optional.ofNullable(this.provisioningGroup);
     }
     /**
      * @return Unit of measure
      * 
      */
-    public String unitOfMeasure() {
-        return this.unitOfMeasure;
+    public Optional<String> unitOfMeasure() {
+        return Optional.ofNullable(this.unitOfMeasure);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String partNumber;
-        private String provisioningGroup;
-        private String unitOfMeasure;
+        private @Nullable String name;
+        private @Nullable String partNumber;
+        private @Nullable String provisioningGroup;
+        private @Nullable String unitOfMeasure;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionSubscribedServiceProduct defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+        public Builder partNumber(@Nullable String partNumber) {
+            this.partNumber = partNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder provisioningGroup(String provisioningGroup) {
-            this.provisioningGroup = Objects.requireNonNull(provisioningGroup);
+        public Builder provisioningGroup(@Nullable String provisioningGroup) {
+            this.provisioningGroup = provisioningGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder unitOfMeasure(String unitOfMeasure) {
-            this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+        public Builder unitOfMeasure(@Nullable String unitOfMeasure) {
+            this.unitOfMeasure = unitOfMeasure;
             return this;
         }
         public GetSubscriptionsSubscriptionSubscribedServiceProduct build() {

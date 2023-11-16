@@ -45,18 +45,12 @@ class GetClustersResult:
 
     @property
     @pulumi.getter
-    def clusters(self) -> Sequence['outputs.GetClustersClusterResult']:
-        """
-        The list of clusters.
-        """
+    def clusters(self) -> Optional[Sequence['outputs.GetClustersClusterResult']]:
         return pulumi.get(self, "clusters")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which the cluster exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -66,7 +60,7 @@ class GetClustersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +69,11 @@ class GetClustersResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the cluster.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The state of the cluster masters.
-        """
         return pulumi.get(self, "states")
 
 
@@ -109,25 +97,7 @@ def get_clusters(compartment_id: Optional[str] = None,
                  states: Optional[Sequence[str]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClustersResult:
     """
-    This data source provides the list of Clusters in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the cluster objects in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_clusters = oci.ContainerEngine.get_clusters(compartment_id=var["compartment_id"],
-        name=var["cluster_name"],
-        states=var["cluster_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The name to filter on.
-    :param Sequence[str] states: A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClustersResult]:
     """
-    This data source provides the list of Clusters in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the cluster objects in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_clusters = oci.ContainerEngine.get_clusters(compartment_id=var["compartment_id"],
-        name=var["cluster_name"],
-        states=var["cluster_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The name to filter on.
-    :param Sequence[str] states: A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+    Use this data source to access information about an existing resource.
     """
     ...

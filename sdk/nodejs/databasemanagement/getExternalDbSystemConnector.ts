@@ -47,60 +47,60 @@ export interface GetExternalDbSystemConnectorResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      */
-    readonly agentId: string;
+    readonly agentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The error message indicating the reason for connection failure or `null` if the connection was successful.
      */
-    readonly connectionFailureMessage: string;
+    readonly connectionFailureMessage?: string;
     /**
      * The connection details required to connect to an external DB system component.
      */
-    readonly connectionInfos: outputs.DatabaseManagement.GetExternalDbSystemConnectorConnectionInfo[];
+    readonly connectionInfos?: outputs.DatabaseManagement.GetExternalDbSystemConnectorConnectionInfo[];
     /**
      * The status of connectivity to the external DB system component.
      */
-    readonly connectionStatus: string;
+    readonly connectionStatus?: string;
     /**
      * The type of connector.
      */
-    readonly connectorType: string;
+    readonly connectorType?: string;
     /**
      * The user-friendly name for the external connector. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalDbSystemConnectorId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
      */
-    readonly externalDbSystemId: string;
+    readonly externalDbSystemId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current lifecycle state of the external DB system connector.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the connectionStatus of the external DB system connector was last updated.
      */
-    readonly timeConnectionStatusLastUpdated: string;
+    readonly timeConnectionStatusLastUpdated?: string;
     /**
      * The date and time the external DB system connector was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external DB system connector was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.

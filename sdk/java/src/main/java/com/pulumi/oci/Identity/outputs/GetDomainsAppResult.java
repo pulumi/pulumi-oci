@@ -61,67 +61,67 @@ public final class GetDomainsAppResult {
      * @return Access token expiry
      * 
      */
-    private Integer accessTokenExpiry;
+    private @Nullable Integer accessTokenExpiry;
     /**
      * @return Accounts of App
      * 
      */
-    private List<GetDomainsAppAccount> accounts;
+    private @Nullable List<GetDomainsAppAccount> accounts;
     /**
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
      * 
      */
-    private Boolean active;
+    private @Nullable Boolean active;
     /**
      * @return A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
      * 
      */
-    private List<GetDomainsAppAdminRole> adminRoles;
+    private @Nullable List<GetDomainsAppAdminRole> adminRoles;
     /**
      * @return Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
      * 
      */
-    private List<GetDomainsAppAliasApp> aliasApps;
+    private @Nullable List<GetDomainsAppAliasApp> aliasApps;
     /**
      * @return If true, indicates that the system should allow all URL-schemes within each value of the &#39;redirectUris&#39; attribute.  Also indicates that the system should not attempt to confirm that each value of the &#39;redirectUris&#39; attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
      * 
      */
-    private Boolean allUrlSchemesAllowed;
+    private @Nullable Boolean allUrlSchemesAllowed;
     /**
      * @return If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
      * 
      */
-    private Boolean allowAccessControl;
+    private @Nullable Boolean allowAccessControl;
     /**
      * @return If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
      * 
      */
-    private Boolean allowOffline;
+    private @Nullable Boolean allowOffline;
     /**
      * @return List of grant-types that this App is allowed to use when it acts as an OAuthClient.
      * 
      */
-    private List<String> allowedGrants;
+    private @Nullable List<String> allowedGrants;
     /**
      * @return OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are &#39;introspect&#39; and &#39;onBehalfOfUser&#39;. The value &#39;introspect&#39; allows the client to look inside the access-token. The value &#39;onBehalfOfUser&#39; overrides how the client&#39;s privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client&#39;s privileges and the user&#39;s privileges. The value &#39;onBehalfOf&#39; indicates that authorization should ignore the privileges of the client and use only the user&#39;s privileges to calculate the effective privileges.
      * 
      */
-    private List<String> allowedOperations;
+    private @Nullable List<String> allowedOperations;
     /**
      * @return A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
      * 
      */
-    private List<GetDomainsAppAllowedScope> allowedScopes;
+    private @Nullable List<GetDomainsAppAllowedScope> allowedScopes;
     /**
      * @return A list of tags, acting as an OAuthClient, this App is allowed to access.
      * 
      */
-    private List<GetDomainsAppAllowedTag> allowedTags;
+    private @Nullable List<GetDomainsAppAllowedTag> allowedTags;
     /**
      * @return Application icon.
      * 
      */
-    private String appIcon;
+    private @Nullable String appIcon;
     /**
      * @return The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
      * 
@@ -131,619 +131,619 @@ public final class GetDomainsAppResult {
      * @return App Sign-on Policy.
      * 
      */
-    private List<GetDomainsAppAppSignonPolicy> appSignonPolicies;
+    private @Nullable List<GetDomainsAppAppSignonPolicy> appSignonPolicies;
     /**
      * @return Application thumbnail.
      * 
      */
-    private String appThumbnail;
+    private @Nullable String appThumbnail;
     /**
      * @return Network Perimeter
      * 
      */
-    private List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters;
+    private @Nullable List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters;
     /**
      * @return OPCService facet of the application.
      * 
      */
-    private List<GetDomainsAppAsOpcService> asOpcServices;
+    private @Nullable List<GetDomainsAppAsOpcService> asOpcServices;
     /**
      * @return Label for the attribute to be shown in the UI.
      * 
      */
-    private List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas;
+    private @Nullable List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas;
     private @Nullable List<String> attributeSets;
     private @Nullable String attributes;
     /**
      * @return The base URI for all of the scopes defined in this App. The value of &#39;audience&#39; is combined with the &#39;value&#39; of each scope to form an &#39;fqs&#39; or fully qualified scope.
      * 
      */
-    private String audience;
+    private @Nullable String audience;
     private @Nullable String authorization;
     /**
      * @return Application template on which the application is based.
      * 
      */
-    private List<GetDomainsAppBasedOnTemplate> basedOnTemplates;
+    private @Nullable List<GetDomainsAppBasedOnTemplate> basedOnTemplates;
     /**
      * @return If true, indicates that consent should be skipped for all scopes
      * 
      */
-    private Boolean bypassConsent;
+    private @Nullable Boolean bypassConsent;
     /**
      * @return Callback Service URL
      * 
      */
-    private String callbackServiceUrl;
+    private @Nullable String callbackServiceUrl;
     /**
      * @return Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
      * 
      */
-    private List<GetDomainsAppCertificate> certificates;
+    private @Nullable List<GetDomainsAppCertificate> certificates;
     /**
      * @return Network Perimeters checking mode
      * 
      */
-    private String clientIpChecking;
+    private @Nullable String clientIpChecking;
     /**
      * @return This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
      * 
      */
-    private String clientSecret;
+    private @Nullable String clientSecret;
     /**
      * @return Specifies the type of access that this App has when it acts as an OAuthClient.
      * 
      */
-    private String clientType;
+    private @Nullable String clientType;
     /**
      * @return A collection of arbitrary properties that scope the privileges of a cloud-control App.
      * 
      */
-    private List<GetDomainsAppCloudControlProperty> cloudControlProperties;
+    private @Nullable List<GetDomainsAppCloudControlProperty> cloudControlProperties;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return Contact Email Address
      * 
      */
-    private String contactEmailAddress;
+    private @Nullable String contactEmailAddress;
     /**
      * @return Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
      * 
      */
-    private List<String> delegatedServiceNames;
+    private @Nullable List<String> delegatedServiceNames;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return The description of the AppRole.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Indicates whether the application is allowed to be access using kmsi token.
      * 
      */
-    private Boolean disableKmsiTokenAuthentication;
+    private @Nullable Boolean disableKmsiTokenAuthentication;
     /**
      * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return App attributes editable by subject
      * 
      */
-    private List<GetDomainsAppEditableAttribute> editableAttributes;
+    private @Nullable List<GetDomainsAppEditableAttribute> editableAttributes;
     /**
      * @return This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
      * 
      */
-    private String errorPageUrl;
+    private @Nullable String errorPageUrl;
     /**
      * @return A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      * 
      */
-    private List<GetDomainsAppGrantedAppRole> grantedAppRoles;
+    private @Nullable List<GetDomainsAppGrantedAppRole> grantedAppRoles;
     /**
      * @return Grants assigned to the app
      * 
      */
-    private List<GetDomainsAppGrant> grants;
+    private @Nullable List<GetDomainsAppGrant> grants;
     /**
      * @return Hashed Client Secret. This hash-value is used to verify the &#39;clientSecret&#39; credential of this App
      * 
      */
-    private String hashedClientSecret;
+    private @Nullable String hashedClientSecret;
     /**
      * @return Home Page URL
      * 
      */
-    private String homePageUrl;
+    private @Nullable String homePageUrl;
     /**
      * @return URL of application icon.
      * 
      */
-    private String icon;
+    private @Nullable String icon;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Encryption Alogrithm to use for encrypting ID token.
      * 
      */
-    private String idTokenEncAlgo;
+    private @Nullable String idTokenEncAlgo;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
      * 
      */
-    private List<GetDomainsAppIdentityProvider> identityProviders;
+    private @Nullable List<GetDomainsAppIdentityProvider> identityProviders;
     /**
      * @return IDP Policy.
      * 
      */
-    private List<GetDomainsAppIdpPolicy> idpPolicies;
+    private @Nullable List<GetDomainsAppIdpPolicy> idpPolicies;
     /**
      * @return If true, this App is an internal infrastructure App.
      * 
      */
-    private Boolean infrastructure;
+    private @Nullable Boolean infrastructure;
     /**
      * @return If true, this App is an AliasApp and it cannot be granted to an end-user directly.
      * 
      */
-    private Boolean isAliasApp;
+    private @Nullable Boolean isAliasApp;
     /**
      * @return If true, this application acts as database service Application
      * 
      */
-    private Boolean isDatabaseService;
+    private @Nullable Boolean isDatabaseService;
     /**
      * @return If true, this app acts as Enterprise app with Authentication and URL Authz policy.
      * 
      */
-    private Boolean isEnterpriseApp;
+    private @Nullable Boolean isEnterpriseApp;
     /**
      * @return If true, this application acts as FormFill Application
      * 
      */
-    private Boolean isFormFill;
+    private @Nullable Boolean isFormFill;
     /**
      * @return If true, indicates that this App supports Kerberos Authentication
      * 
      */
-    private Boolean isKerberosRealm;
+    private @Nullable Boolean isKerberosRealm;
     /**
      * @return If true, this App allows runtime services to log end users into this App automatically.
      * 
      */
-    private Boolean isLoginTarget;
+    private @Nullable Boolean isLoginTarget;
     /**
      * @return If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
      * 
      */
-    private Boolean isManagedApp;
+    private @Nullable Boolean isManagedApp;
     /**
      * @return If true, indicates that the App should be visible in each end-user&#39;s mobile application.
      * 
      */
-    private Boolean isMobileTarget;
+    private @Nullable Boolean isMobileTarget;
     /**
      * @return If true, indicates the app is used for multicloud service integration.
      * 
      */
-    private Boolean isMulticloudServiceApp;
+    private @Nullable Boolean isMulticloudServiceApp;
     /**
      * @return If true, this application acts as an OAuth Client
      * 
      */
-    private Boolean isOauthClient;
+    private @Nullable Boolean isOauthClient;
     /**
      * @return If true, indicates that this application acts as an OAuth Resource.
      * 
      */
-    private Boolean isOauthResource;
+    private @Nullable Boolean isOauthResource;
     /**
      * @return This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
      * 
      */
-    private Boolean isObligationCapable;
+    private @Nullable Boolean isObligationCapable;
     /**
      * @return If true, this application is an Oracle Public Cloud service-instance.
      * 
      */
-    private Boolean isOpcService;
+    private @Nullable Boolean isOpcService;
     /**
      * @return If true, this application acts as an Radius App
      * 
      */
-    private Boolean isRadiusApp;
+    private @Nullable Boolean isRadiusApp;
     /**
      * @return If true, then this App acts as a SAML Service Provider.
      * 
      */
-    private Boolean isSamlServiceProvider;
+    private @Nullable Boolean isSamlServiceProvider;
     /**
      * @return If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User&#39;s memberships in AppRoles.
      * 
      */
-    private Boolean isUnmanagedApp;
+    private @Nullable Boolean isUnmanagedApp;
     /**
      * @return If true, the webtier policy is active
      * 
      */
-    private Boolean isWebTierPolicy;
+    private @Nullable Boolean isWebTierPolicy;
     /**
      * @return The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
      * 
      */
-    private String landingPageUrl;
+    private @Nullable String landingPageUrl;
     /**
      * @return This attribute specifies the callback URL for the social linking operation.
      * 
      */
-    private String linkingCallbackUrl;
+    private @Nullable String linkingCallbackUrl;
     /**
      * @return The protocol that runtime services will use to log end users in to this App automatically. If &#39;OIDC&#39;, then runtime services use the OpenID Connect protocol. If &#39;SAML&#39;, then runtime services use Security Assertion Markup Language protocol.
      * 
      */
-    private String loginMechanism;
+    private @Nullable String loginMechanism;
     /**
      * @return This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
      * 
      */
-    private String loginPageUrl;
+    private @Nullable String loginPageUrl;
     /**
      * @return This attribute specifies the URL of the page that the App uses when an end-user signs out.
      * 
      */
-    private String logoutPageUrl;
+    private @Nullable String logoutPageUrl;
     /**
      * @return OAuth will use this URI to logout if this App wants to participate in SSO, and if this App&#39;s session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
      * 
      */
-    private String logoutUri;
+    private @Nullable String logoutUri;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsAppMeta> metas;
+    private @Nullable List<GetDomainsAppMeta> metas;
     /**
      * @return Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
      * 
      */
-    private Boolean meterAsOpcService;
+    private @Nullable Boolean meterAsOpcService;
     /**
      * @return If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
      * 
      */
-    private Boolean migrated;
+    private @Nullable Boolean migrated;
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
      * 
      */
-    private List<String> postLogoutRedirectUris;
+    private @Nullable List<String> postLogoutRedirectUris;
     /**
      * @return Privacy Policy URL
      * 
      */
-    private String privacyPolicyUrl;
+    private @Nullable String privacyPolicyUrl;
     /**
      * @return Application Logo URL
      * 
      */
-    private String productLogoUrl;
+    private @Nullable String productLogoUrl;
     /**
      * @return Product Name
      * 
      */
-    private String productName;
+    private @Nullable String productName;
     /**
      * @return A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      * 
      */
-    private List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences;
+    private @Nullable List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences;
     /**
      * @return RADIUS Policy assigned to this application.
      * 
      */
-    private List<GetDomainsAppRadiusPolicy> radiusPolicies;
+    private @Nullable List<GetDomainsAppRadiusPolicy> radiusPolicies;
     /**
      * @return If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
      * 
      */
-    private Boolean readyToUpgrade;
+    private @Nullable Boolean readyToUpgrade;
     /**
      * @return OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
      * 
      */
-    private List<String> redirectUris;
+    private @Nullable List<String> redirectUris;
     /**
      * @return Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
      * 
      */
-    private Integer refreshTokenExpiry;
+    private @Nullable Integer refreshTokenExpiry;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is &#39;SAML&#39;.
      * 
      */
-    private List<GetDomainsAppSamlServiceProvider> samlServiceProviders;
+    private @Nullable List<GetDomainsAppSamlServiceProvider> samlServiceProviders;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return Scopes defined by this App. Used when this App acts as an OAuth Resource.
      * 
      */
-    private List<GetDomainsAppScope> scopes;
+    private @Nullable List<GetDomainsAppScope> scopes;
     /**
      * @return A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      * 
      */
-    private List<String> secondaryAudiences;
+    private @Nullable List<String> secondaryAudiences;
     /**
      * @return Custom attribute that is required to compute other attribute values during app creation.
      * 
      */
-    private List<GetDomainsAppServiceParam> serviceParams;
+    private @Nullable List<GetDomainsAppServiceParam> serviceParams;
     /**
      * @return This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
      * 
      */
-    private String serviceTypeUrn;
+    private @Nullable String serviceTypeUrn;
     /**
      * @return This value specifies the version of the Oracle Public Cloud service of which this App is an instance
      * 
      */
-    private String serviceTypeVersion;
+    private @Nullable String serviceTypeVersion;
     /**
      * @return If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
      * 
      */
-    private Boolean showInMyApps;
+    private @Nullable Boolean showInMyApps;
     /**
      * @return Sign-on Policy.
      * 
      */
-    private List<GetDomainsAppSignonPolicy> signonPolicies;
+    private @Nullable List<GetDomainsAppSignonPolicy> signonPolicies;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsAppTag> tags;
+    private @Nullable List<GetDomainsAppTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return Terms of Service URL
      * 
      */
-    private String termsOfServiceUrl;
+    private @Nullable String termsOfServiceUrl;
     /**
      * @return Terms Of Use.
      * 
      */
-    private List<GetDomainsAppTermsOfUse> termsOfUses;
+    private @Nullable List<GetDomainsAppTermsOfUse> termsOfUses;
     /**
      * @return Trust Policies.
      * 
      */
-    private List<GetDomainsAppTrustPolicy> trustPolicies;
+    private @Nullable List<GetDomainsAppTrustPolicy> trustPolicies;
     /**
      * @return Indicates the scope of trust for this App when acting as an OAuthClient. A value of &#39;Explicit&#39; indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as &#39;allowedScopes&#39;. A value of &#39;Account&#39; indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of &#39;Tags&#39; indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of &#39;Default&#39; indicates that the Tenant default trust scope configured in the Tenant Settings is used.
      * 
      */
-    private String trustScope;
+    private @Nullable String trustScope;
     /**
      * @return Oracle Cloud Infrastructure Tags.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
     /**
      * @return This extension provides attributes for database service facet of an App
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps;
     /**
      * @return This extension defines the Enterprise App related attributes.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
     /**
      * @return This extension provides attributes for Form-Fill facet of App
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
     /**
      * @return This extension provides attributes for Form-Fill facet of AppTemplate
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
     /**
      * @return Kerberos Realm
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
     /**
      * @return Managed App
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
     /**
      * @return This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
     /**
      * @return This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
     /**
      * @return This extension defines attributes specific to Apps that represent instances of Radius App.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
     /**
      * @return Requestable App
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps;
     /**
      * @return This extension defines attributes related to the Service Providers configuration.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
     /**
      * @return WebTier Policy
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
     /**
      * @return A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
      * 
      */
-    private List<GetDomainsAppUserRole> userRoles;
+    private @Nullable List<GetDomainsAppUserRole> userRoles;
 
     private GetDomainsAppResult() {}
     /**
      * @return Access token expiry
      * 
      */
-    public Integer accessTokenExpiry() {
-        return this.accessTokenExpiry;
+    public Optional<Integer> accessTokenExpiry() {
+        return Optional.ofNullable(this.accessTokenExpiry);
     }
     /**
      * @return Accounts of App
      * 
      */
     public List<GetDomainsAppAccount> accounts() {
-        return this.accounts;
+        return this.accounts == null ? List.of() : this.accounts;
     }
     /**
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
      * 
      */
-    public Boolean active() {
-        return this.active;
+    public Optional<Boolean> active() {
+        return Optional.ofNullable(this.active);
     }
     /**
      * @return A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
      * 
      */
     public List<GetDomainsAppAdminRole> adminRoles() {
-        return this.adminRoles;
+        return this.adminRoles == null ? List.of() : this.adminRoles;
     }
     /**
      * @return Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
      * 
      */
     public List<GetDomainsAppAliasApp> aliasApps() {
-        return this.aliasApps;
+        return this.aliasApps == null ? List.of() : this.aliasApps;
     }
     /**
      * @return If true, indicates that the system should allow all URL-schemes within each value of the &#39;redirectUris&#39; attribute.  Also indicates that the system should not attempt to confirm that each value of the &#39;redirectUris&#39; attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
      * 
      */
-    public Boolean allUrlSchemesAllowed() {
-        return this.allUrlSchemesAllowed;
+    public Optional<Boolean> allUrlSchemesAllowed() {
+        return Optional.ofNullable(this.allUrlSchemesAllowed);
     }
     /**
      * @return If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
      * 
      */
-    public Boolean allowAccessControl() {
-        return this.allowAccessControl;
+    public Optional<Boolean> allowAccessControl() {
+        return Optional.ofNullable(this.allowAccessControl);
     }
     /**
      * @return If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
      * 
      */
-    public Boolean allowOffline() {
-        return this.allowOffline;
+    public Optional<Boolean> allowOffline() {
+        return Optional.ofNullable(this.allowOffline);
     }
     /**
      * @return List of grant-types that this App is allowed to use when it acts as an OAuthClient.
      * 
      */
     public List<String> allowedGrants() {
-        return this.allowedGrants;
+        return this.allowedGrants == null ? List.of() : this.allowedGrants;
     }
     /**
      * @return OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are &#39;introspect&#39; and &#39;onBehalfOfUser&#39;. The value &#39;introspect&#39; allows the client to look inside the access-token. The value &#39;onBehalfOfUser&#39; overrides how the client&#39;s privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client&#39;s privileges and the user&#39;s privileges. The value &#39;onBehalfOf&#39; indicates that authorization should ignore the privileges of the client and use only the user&#39;s privileges to calculate the effective privileges.
      * 
      */
     public List<String> allowedOperations() {
-        return this.allowedOperations;
+        return this.allowedOperations == null ? List.of() : this.allowedOperations;
     }
     /**
      * @return A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
      * 
      */
     public List<GetDomainsAppAllowedScope> allowedScopes() {
-        return this.allowedScopes;
+        return this.allowedScopes == null ? List.of() : this.allowedScopes;
     }
     /**
      * @return A list of tags, acting as an OAuthClient, this App is allowed to access.
      * 
      */
     public List<GetDomainsAppAllowedTag> allowedTags() {
-        return this.allowedTags;
+        return this.allowedTags == null ? List.of() : this.allowedTags;
     }
     /**
      * @return Application icon.
      * 
      */
-    public String appIcon() {
-        return this.appIcon;
+    public Optional<String> appIcon() {
+        return Optional.ofNullable(this.appIcon);
     }
     /**
      * @return The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
@@ -757,35 +757,35 @@ public final class GetDomainsAppResult {
      * 
      */
     public List<GetDomainsAppAppSignonPolicy> appSignonPolicies() {
-        return this.appSignonPolicies;
+        return this.appSignonPolicies == null ? List.of() : this.appSignonPolicies;
     }
     /**
      * @return Application thumbnail.
      * 
      */
-    public String appThumbnail() {
-        return this.appThumbnail;
+    public Optional<String> appThumbnail() {
+        return Optional.ofNullable(this.appThumbnail);
     }
     /**
      * @return Network Perimeter
      * 
      */
     public List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters() {
-        return this.appsNetworkPerimeters;
+        return this.appsNetworkPerimeters == null ? List.of() : this.appsNetworkPerimeters;
     }
     /**
      * @return OPCService facet of the application.
      * 
      */
     public List<GetDomainsAppAsOpcService> asOpcServices() {
-        return this.asOpcServices;
+        return this.asOpcServices == null ? List.of() : this.asOpcServices;
     }
     /**
      * @return Label for the attribute to be shown in the UI.
      * 
      */
     public List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas() {
-        return this.attrRenderingMetadatas;
+        return this.attrRenderingMetadatas == null ? List.of() : this.attrRenderingMetadatas;
     }
     public List<String> attributeSets() {
         return this.attributeSets == null ? List.of() : this.attributeSets;
@@ -797,8 +797,8 @@ public final class GetDomainsAppResult {
      * @return The base URI for all of the scopes defined in this App. The value of &#39;audience&#39; is combined with the &#39;value&#39; of each scope to form an &#39;fqs&#39; or fully qualified scope.
      * 
      */
-    public String audience() {
-        return this.audience;
+    public Optional<String> audience() {
+        return Optional.ofNullable(this.audience);
     }
     public Optional<String> authorization() {
         return Optional.ofNullable(this.authorization);
@@ -808,182 +808,182 @@ public final class GetDomainsAppResult {
      * 
      */
     public List<GetDomainsAppBasedOnTemplate> basedOnTemplates() {
-        return this.basedOnTemplates;
+        return this.basedOnTemplates == null ? List.of() : this.basedOnTemplates;
     }
     /**
      * @return If true, indicates that consent should be skipped for all scopes
      * 
      */
-    public Boolean bypassConsent() {
-        return this.bypassConsent;
+    public Optional<Boolean> bypassConsent() {
+        return Optional.ofNullable(this.bypassConsent);
     }
     /**
      * @return Callback Service URL
      * 
      */
-    public String callbackServiceUrl() {
-        return this.callbackServiceUrl;
+    public Optional<String> callbackServiceUrl() {
+        return Optional.ofNullable(this.callbackServiceUrl);
     }
     /**
      * @return Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
      * 
      */
     public List<GetDomainsAppCertificate> certificates() {
-        return this.certificates;
+        return this.certificates == null ? List.of() : this.certificates;
     }
     /**
      * @return Network Perimeters checking mode
      * 
      */
-    public String clientIpChecking() {
-        return this.clientIpChecking;
+    public Optional<String> clientIpChecking() {
+        return Optional.ofNullable(this.clientIpChecking);
     }
     /**
      * @return This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
      * 
      */
-    public String clientSecret() {
-        return this.clientSecret;
+    public Optional<String> clientSecret() {
+        return Optional.ofNullable(this.clientSecret);
     }
     /**
      * @return Specifies the type of access that this App has when it acts as an OAuthClient.
      * 
      */
-    public String clientType() {
-        return this.clientType;
+    public Optional<String> clientType() {
+        return Optional.ofNullable(this.clientType);
     }
     /**
      * @return A collection of arbitrary properties that scope the privileges of a cloud-control App.
      * 
      */
     public List<GetDomainsAppCloudControlProperty> cloudControlProperties() {
-        return this.cloudControlProperties;
+        return this.cloudControlProperties == null ? List.of() : this.cloudControlProperties;
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return Contact Email Address
      * 
      */
-    public String contactEmailAddress() {
-        return this.contactEmailAddress;
+    public Optional<String> contactEmailAddress() {
+        return Optional.ofNullable(this.contactEmailAddress);
     }
     /**
      * @return Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
      * 
      */
     public List<String> delegatedServiceNames() {
-        return this.delegatedServiceNames;
+        return this.delegatedServiceNames == null ? List.of() : this.delegatedServiceNames;
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return The description of the AppRole.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Indicates whether the application is allowed to be access using kmsi token.
      * 
      */
-    public Boolean disableKmsiTokenAuthentication() {
-        return this.disableKmsiTokenAuthentication;
+    public Optional<Boolean> disableKmsiTokenAuthentication() {
+        return Optional.ofNullable(this.disableKmsiTokenAuthentication);
     }
     /**
      * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return App attributes editable by subject
      * 
      */
     public List<GetDomainsAppEditableAttribute> editableAttributes() {
-        return this.editableAttributes;
+        return this.editableAttributes == null ? List.of() : this.editableAttributes;
     }
     /**
      * @return This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
      * 
      */
-    public String errorPageUrl() {
-        return this.errorPageUrl;
+    public Optional<String> errorPageUrl() {
+        return Optional.ofNullable(this.errorPageUrl);
     }
     /**
      * @return A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      * 
      */
     public List<GetDomainsAppGrantedAppRole> grantedAppRoles() {
-        return this.grantedAppRoles;
+        return this.grantedAppRoles == null ? List.of() : this.grantedAppRoles;
     }
     /**
      * @return Grants assigned to the app
      * 
      */
     public List<GetDomainsAppGrant> grants() {
-        return this.grants;
+        return this.grants == null ? List.of() : this.grants;
     }
     /**
      * @return Hashed Client Secret. This hash-value is used to verify the &#39;clientSecret&#39; credential of this App
      * 
      */
-    public String hashedClientSecret() {
-        return this.hashedClientSecret;
+    public Optional<String> hashedClientSecret() {
+        return Optional.ofNullable(this.hashedClientSecret);
     }
     /**
      * @return Home Page URL
      * 
      */
-    public String homePageUrl() {
-        return this.homePageUrl;
+    public Optional<String> homePageUrl() {
+        return Optional.ofNullable(this.homePageUrl);
     }
     /**
      * @return URL of application icon.
      * 
      */
-    public String icon() {
-        return this.icon;
+    public Optional<String> icon() {
+        return Optional.ofNullable(this.icon);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Encryption Alogrithm to use for encrypting ID token.
      * 
      */
-    public String idTokenEncAlgo() {
-        return this.idTokenEncAlgo;
+    public Optional<String> idTokenEncAlgo() {
+        return Optional.ofNullable(this.idTokenEncAlgo);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -993,301 +993,301 @@ public final class GetDomainsAppResult {
      * 
      */
     public List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
      * 
      */
     public List<GetDomainsAppIdentityProvider> identityProviders() {
-        return this.identityProviders;
+        return this.identityProviders == null ? List.of() : this.identityProviders;
     }
     /**
      * @return IDP Policy.
      * 
      */
     public List<GetDomainsAppIdpPolicy> idpPolicies() {
-        return this.idpPolicies;
+        return this.idpPolicies == null ? List.of() : this.idpPolicies;
     }
     /**
      * @return If true, this App is an internal infrastructure App.
      * 
      */
-    public Boolean infrastructure() {
-        return this.infrastructure;
+    public Optional<Boolean> infrastructure() {
+        return Optional.ofNullable(this.infrastructure);
     }
     /**
      * @return If true, this App is an AliasApp and it cannot be granted to an end-user directly.
      * 
      */
-    public Boolean isAliasApp() {
-        return this.isAliasApp;
+    public Optional<Boolean> isAliasApp() {
+        return Optional.ofNullable(this.isAliasApp);
     }
     /**
      * @return If true, this application acts as database service Application
      * 
      */
-    public Boolean isDatabaseService() {
-        return this.isDatabaseService;
+    public Optional<Boolean> isDatabaseService() {
+        return Optional.ofNullable(this.isDatabaseService);
     }
     /**
      * @return If true, this app acts as Enterprise app with Authentication and URL Authz policy.
      * 
      */
-    public Boolean isEnterpriseApp() {
-        return this.isEnterpriseApp;
+    public Optional<Boolean> isEnterpriseApp() {
+        return Optional.ofNullable(this.isEnterpriseApp);
     }
     /**
      * @return If true, this application acts as FormFill Application
      * 
      */
-    public Boolean isFormFill() {
-        return this.isFormFill;
+    public Optional<Boolean> isFormFill() {
+        return Optional.ofNullable(this.isFormFill);
     }
     /**
      * @return If true, indicates that this App supports Kerberos Authentication
      * 
      */
-    public Boolean isKerberosRealm() {
-        return this.isKerberosRealm;
+    public Optional<Boolean> isKerberosRealm() {
+        return Optional.ofNullable(this.isKerberosRealm);
     }
     /**
      * @return If true, this App allows runtime services to log end users into this App automatically.
      * 
      */
-    public Boolean isLoginTarget() {
-        return this.isLoginTarget;
+    public Optional<Boolean> isLoginTarget() {
+        return Optional.ofNullable(this.isLoginTarget);
     }
     /**
      * @return If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
      * 
      */
-    public Boolean isManagedApp() {
-        return this.isManagedApp;
+    public Optional<Boolean> isManagedApp() {
+        return Optional.ofNullable(this.isManagedApp);
     }
     /**
      * @return If true, indicates that the App should be visible in each end-user&#39;s mobile application.
      * 
      */
-    public Boolean isMobileTarget() {
-        return this.isMobileTarget;
+    public Optional<Boolean> isMobileTarget() {
+        return Optional.ofNullable(this.isMobileTarget);
     }
     /**
      * @return If true, indicates the app is used for multicloud service integration.
      * 
      */
-    public Boolean isMulticloudServiceApp() {
-        return this.isMulticloudServiceApp;
+    public Optional<Boolean> isMulticloudServiceApp() {
+        return Optional.ofNullable(this.isMulticloudServiceApp);
     }
     /**
      * @return If true, this application acts as an OAuth Client
      * 
      */
-    public Boolean isOauthClient() {
-        return this.isOauthClient;
+    public Optional<Boolean> isOauthClient() {
+        return Optional.ofNullable(this.isOauthClient);
     }
     /**
      * @return If true, indicates that this application acts as an OAuth Resource.
      * 
      */
-    public Boolean isOauthResource() {
-        return this.isOauthResource;
+    public Optional<Boolean> isOauthResource() {
+        return Optional.ofNullable(this.isOauthResource);
     }
     /**
      * @return This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
      * 
      */
-    public Boolean isObligationCapable() {
-        return this.isObligationCapable;
+    public Optional<Boolean> isObligationCapable() {
+        return Optional.ofNullable(this.isObligationCapable);
     }
     /**
      * @return If true, this application is an Oracle Public Cloud service-instance.
      * 
      */
-    public Boolean isOpcService() {
-        return this.isOpcService;
+    public Optional<Boolean> isOpcService() {
+        return Optional.ofNullable(this.isOpcService);
     }
     /**
      * @return If true, this application acts as an Radius App
      * 
      */
-    public Boolean isRadiusApp() {
-        return this.isRadiusApp;
+    public Optional<Boolean> isRadiusApp() {
+        return Optional.ofNullable(this.isRadiusApp);
     }
     /**
      * @return If true, then this App acts as a SAML Service Provider.
      * 
      */
-    public Boolean isSamlServiceProvider() {
-        return this.isSamlServiceProvider;
+    public Optional<Boolean> isSamlServiceProvider() {
+        return Optional.ofNullable(this.isSamlServiceProvider);
     }
     /**
      * @return If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User&#39;s memberships in AppRoles.
      * 
      */
-    public Boolean isUnmanagedApp() {
-        return this.isUnmanagedApp;
+    public Optional<Boolean> isUnmanagedApp() {
+        return Optional.ofNullable(this.isUnmanagedApp);
     }
     /**
      * @return If true, the webtier policy is active
      * 
      */
-    public Boolean isWebTierPolicy() {
-        return this.isWebTierPolicy;
+    public Optional<Boolean> isWebTierPolicy() {
+        return Optional.ofNullable(this.isWebTierPolicy);
     }
     /**
      * @return The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
      * 
      */
-    public String landingPageUrl() {
-        return this.landingPageUrl;
+    public Optional<String> landingPageUrl() {
+        return Optional.ofNullable(this.landingPageUrl);
     }
     /**
      * @return This attribute specifies the callback URL for the social linking operation.
      * 
      */
-    public String linkingCallbackUrl() {
-        return this.linkingCallbackUrl;
+    public Optional<String> linkingCallbackUrl() {
+        return Optional.ofNullable(this.linkingCallbackUrl);
     }
     /**
      * @return The protocol that runtime services will use to log end users in to this App automatically. If &#39;OIDC&#39;, then runtime services use the OpenID Connect protocol. If &#39;SAML&#39;, then runtime services use Security Assertion Markup Language protocol.
      * 
      */
-    public String loginMechanism() {
-        return this.loginMechanism;
+    public Optional<String> loginMechanism() {
+        return Optional.ofNullable(this.loginMechanism);
     }
     /**
      * @return This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
      * 
      */
-    public String loginPageUrl() {
-        return this.loginPageUrl;
+    public Optional<String> loginPageUrl() {
+        return Optional.ofNullable(this.loginPageUrl);
     }
     /**
      * @return This attribute specifies the URL of the page that the App uses when an end-user signs out.
      * 
      */
-    public String logoutPageUrl() {
-        return this.logoutPageUrl;
+    public Optional<String> logoutPageUrl() {
+        return Optional.ofNullable(this.logoutPageUrl);
     }
     /**
      * @return OAuth will use this URI to logout if this App wants to participate in SSO, and if this App&#39;s session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
      * 
      */
-    public String logoutUri() {
-        return this.logoutUri;
+    public Optional<String> logoutUri() {
+        return Optional.ofNullable(this.logoutUri);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsAppMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
      * 
      */
-    public Boolean meterAsOpcService() {
-        return this.meterAsOpcService;
+    public Optional<Boolean> meterAsOpcService() {
+        return Optional.ofNullable(this.meterAsOpcService);
     }
     /**
      * @return If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
      * 
      */
-    public Boolean migrated() {
-        return this.migrated;
+    public Optional<Boolean> migrated() {
+        return Optional.ofNullable(this.migrated);
     }
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
      * 
      */
     public List<String> postLogoutRedirectUris() {
-        return this.postLogoutRedirectUris;
+        return this.postLogoutRedirectUris == null ? List.of() : this.postLogoutRedirectUris;
     }
     /**
      * @return Privacy Policy URL
      * 
      */
-    public String privacyPolicyUrl() {
-        return this.privacyPolicyUrl;
+    public Optional<String> privacyPolicyUrl() {
+        return Optional.ofNullable(this.privacyPolicyUrl);
     }
     /**
      * @return Application Logo URL
      * 
      */
-    public String productLogoUrl() {
-        return this.productLogoUrl;
+    public Optional<String> productLogoUrl() {
+        return Optional.ofNullable(this.productLogoUrl);
     }
     /**
      * @return Product Name
      * 
      */
-    public String productName() {
-        return this.productName;
+    public Optional<String> productName() {
+        return Optional.ofNullable(this.productName);
     }
     /**
      * @return A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      * 
      */
     public List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences() {
-        return this.protectableSecondaryAudiences;
+        return this.protectableSecondaryAudiences == null ? List.of() : this.protectableSecondaryAudiences;
     }
     /**
      * @return RADIUS Policy assigned to this application.
      * 
      */
     public List<GetDomainsAppRadiusPolicy> radiusPolicies() {
-        return this.radiusPolicies;
+        return this.radiusPolicies == null ? List.of() : this.radiusPolicies;
     }
     /**
      * @return If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
      * 
      */
-    public Boolean readyToUpgrade() {
-        return this.readyToUpgrade;
+    public Optional<Boolean> readyToUpgrade() {
+        return Optional.ofNullable(this.readyToUpgrade);
     }
     /**
      * @return OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
      * 
      */
     public List<String> redirectUris() {
-        return this.redirectUris;
+        return this.redirectUris == null ? List.of() : this.redirectUris;
     }
     /**
      * @return Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
      * 
      */
-    public Integer refreshTokenExpiry() {
-        return this.refreshTokenExpiry;
+    public Optional<Integer> refreshTokenExpiry() {
+        return Optional.ofNullable(this.refreshTokenExpiry);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -1297,203 +1297,203 @@ public final class GetDomainsAppResult {
      * 
      */
     public List<GetDomainsAppSamlServiceProvider> samlServiceProviders() {
-        return this.samlServiceProviders;
+        return this.samlServiceProviders == null ? List.of() : this.samlServiceProviders;
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return Scopes defined by this App. Used when this App acts as an OAuth Resource.
      * 
      */
     public List<GetDomainsAppScope> scopes() {
-        return this.scopes;
+        return this.scopes == null ? List.of() : this.scopes;
     }
     /**
      * @return A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      * 
      */
     public List<String> secondaryAudiences() {
-        return this.secondaryAudiences;
+        return this.secondaryAudiences == null ? List.of() : this.secondaryAudiences;
     }
     /**
      * @return Custom attribute that is required to compute other attribute values during app creation.
      * 
      */
     public List<GetDomainsAppServiceParam> serviceParams() {
-        return this.serviceParams;
+        return this.serviceParams == null ? List.of() : this.serviceParams;
     }
     /**
      * @return This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
      * 
      */
-    public String serviceTypeUrn() {
-        return this.serviceTypeUrn;
+    public Optional<String> serviceTypeUrn() {
+        return Optional.ofNullable(this.serviceTypeUrn);
     }
     /**
      * @return This value specifies the version of the Oracle Public Cloud service of which this App is an instance
      * 
      */
-    public String serviceTypeVersion() {
-        return this.serviceTypeVersion;
+    public Optional<String> serviceTypeVersion() {
+        return Optional.ofNullable(this.serviceTypeVersion);
     }
     /**
      * @return If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
      * 
      */
-    public Boolean showInMyApps() {
-        return this.showInMyApps;
+    public Optional<Boolean> showInMyApps() {
+        return Optional.ofNullable(this.showInMyApps);
     }
     /**
      * @return Sign-on Policy.
      * 
      */
     public List<GetDomainsAppSignonPolicy> signonPolicies() {
-        return this.signonPolicies;
+        return this.signonPolicies == null ? List.of() : this.signonPolicies;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsAppTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return Terms of Service URL
      * 
      */
-    public String termsOfServiceUrl() {
-        return this.termsOfServiceUrl;
+    public Optional<String> termsOfServiceUrl() {
+        return Optional.ofNullable(this.termsOfServiceUrl);
     }
     /**
      * @return Terms Of Use.
      * 
      */
     public List<GetDomainsAppTermsOfUse> termsOfUses() {
-        return this.termsOfUses;
+        return this.termsOfUses == null ? List.of() : this.termsOfUses;
     }
     /**
      * @return Trust Policies.
      * 
      */
     public List<GetDomainsAppTrustPolicy> trustPolicies() {
-        return this.trustPolicies;
+        return this.trustPolicies == null ? List.of() : this.trustPolicies;
     }
     /**
      * @return Indicates the scope of trust for this App when acting as an OAuthClient. A value of &#39;Explicit&#39; indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as &#39;allowedScopes&#39;. A value of &#39;Account&#39; indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of &#39;Tags&#39; indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of &#39;Default&#39; indicates that the Tenant default trust scope configured in the Tenant Settings is used.
      * 
      */
-    public String trustScope() {
-        return this.trustScope;
+    public Optional<String> trustScope() {
+        return Optional.ofNullable(this.trustScope);
     }
     /**
      * @return Oracle Cloud Infrastructure Tags.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags() {
-        return this.urnietfparamsscimschemasoracleidcsextensionOciTags;
+        return this.urnietfparamsscimschemasoracleidcsextensionOciTags == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionOciTags;
     }
     /**
      * @return This extension provides attributes for database service facet of an App
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensiondbcsApps;
+        return this.urnietfparamsscimschemasoracleidcsextensiondbcsApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensiondbcsApps;
     }
     /**
      * @return This extension defines the Enterprise App related attributes.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
     }
     /**
      * @return This extension provides attributes for Form-Fill facet of App
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionformFillAppApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
     }
     /**
      * @return This extension provides attributes for Form-Fill facet of AppTemplate
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates() {
-        return this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
+        return this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
     }
     /**
      * @return Kerberos Realm
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
     }
     /**
      * @return Managed App
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionmanagedappApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
     }
     /**
      * @return This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
     }
     /**
      * @return This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionopcServiceApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
     }
     /**
      * @return This extension defines attributes specific to Apps that represent instances of Radius App.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionradiusAppApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
     }
     /**
      * @return Requestable App
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionrequestableApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionrequestableApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionrequestableApps;
     }
     /**
      * @return This extension defines attributes related to the Service Providers configuration.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
     }
     /**
      * @return WebTier Policy
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps() {
-        return this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
+        return this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
     }
     /**
      * @return A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
      * 
      */
     public List<GetDomainsAppUserRole> userRoles() {
-        return this.userRoles;
+        return this.userRoles == null ? List.of() : this.userRoles;
     }
 
     public static Builder builder() {
@@ -1505,129 +1505,129 @@ public final class GetDomainsAppResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer accessTokenExpiry;
-        private List<GetDomainsAppAccount> accounts;
-        private Boolean active;
-        private List<GetDomainsAppAdminRole> adminRoles;
-        private List<GetDomainsAppAliasApp> aliasApps;
-        private Boolean allUrlSchemesAllowed;
-        private Boolean allowAccessControl;
-        private Boolean allowOffline;
-        private List<String> allowedGrants;
-        private List<String> allowedOperations;
-        private List<GetDomainsAppAllowedScope> allowedScopes;
-        private List<GetDomainsAppAllowedTag> allowedTags;
-        private String appIcon;
+        private @Nullable Integer accessTokenExpiry;
+        private @Nullable List<GetDomainsAppAccount> accounts;
+        private @Nullable Boolean active;
+        private @Nullable List<GetDomainsAppAdminRole> adminRoles;
+        private @Nullable List<GetDomainsAppAliasApp> aliasApps;
+        private @Nullable Boolean allUrlSchemesAllowed;
+        private @Nullable Boolean allowAccessControl;
+        private @Nullable Boolean allowOffline;
+        private @Nullable List<String> allowedGrants;
+        private @Nullable List<String> allowedOperations;
+        private @Nullable List<GetDomainsAppAllowedScope> allowedScopes;
+        private @Nullable List<GetDomainsAppAllowedTag> allowedTags;
+        private @Nullable String appIcon;
         private String appId;
-        private List<GetDomainsAppAppSignonPolicy> appSignonPolicies;
-        private String appThumbnail;
-        private List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters;
-        private List<GetDomainsAppAsOpcService> asOpcServices;
-        private List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas;
+        private @Nullable List<GetDomainsAppAppSignonPolicy> appSignonPolicies;
+        private @Nullable String appThumbnail;
+        private @Nullable List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters;
+        private @Nullable List<GetDomainsAppAsOpcService> asOpcServices;
+        private @Nullable List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas;
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
-        private String audience;
+        private @Nullable String audience;
         private @Nullable String authorization;
-        private List<GetDomainsAppBasedOnTemplate> basedOnTemplates;
-        private Boolean bypassConsent;
-        private String callbackServiceUrl;
-        private List<GetDomainsAppCertificate> certificates;
-        private String clientIpChecking;
-        private String clientSecret;
-        private String clientType;
-        private List<GetDomainsAppCloudControlProperty> cloudControlProperties;
-        private String compartmentOcid;
-        private String contactEmailAddress;
-        private List<String> delegatedServiceNames;
-        private Boolean deleteInProgress;
-        private String description;
-        private Boolean disableKmsiTokenAuthentication;
-        private String displayName;
-        private String domainOcid;
-        private List<GetDomainsAppEditableAttribute> editableAttributes;
-        private String errorPageUrl;
-        private List<GetDomainsAppGrantedAppRole> grantedAppRoles;
-        private List<GetDomainsAppGrant> grants;
-        private String hashedClientSecret;
-        private String homePageUrl;
-        private String icon;
-        private String id;
-        private String idTokenEncAlgo;
-        private List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable List<GetDomainsAppBasedOnTemplate> basedOnTemplates;
+        private @Nullable Boolean bypassConsent;
+        private @Nullable String callbackServiceUrl;
+        private @Nullable List<GetDomainsAppCertificate> certificates;
+        private @Nullable String clientIpChecking;
+        private @Nullable String clientSecret;
+        private @Nullable String clientType;
+        private @Nullable List<GetDomainsAppCloudControlProperty> cloudControlProperties;
+        private @Nullable String compartmentOcid;
+        private @Nullable String contactEmailAddress;
+        private @Nullable List<String> delegatedServiceNames;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String description;
+        private @Nullable Boolean disableKmsiTokenAuthentication;
+        private @Nullable String displayName;
+        private @Nullable String domainOcid;
+        private @Nullable List<GetDomainsAppEditableAttribute> editableAttributes;
+        private @Nullable String errorPageUrl;
+        private @Nullable List<GetDomainsAppGrantedAppRole> grantedAppRoles;
+        private @Nullable List<GetDomainsAppGrant> grants;
+        private @Nullable String hashedClientSecret;
+        private @Nullable String homePageUrl;
+        private @Nullable String icon;
+        private @Nullable String id;
+        private @Nullable String idTokenEncAlgo;
+        private @Nullable List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private List<GetDomainsAppIdentityProvider> identityProviders;
-        private List<GetDomainsAppIdpPolicy> idpPolicies;
-        private Boolean infrastructure;
-        private Boolean isAliasApp;
-        private Boolean isDatabaseService;
-        private Boolean isEnterpriseApp;
-        private Boolean isFormFill;
-        private Boolean isKerberosRealm;
-        private Boolean isLoginTarget;
-        private Boolean isManagedApp;
-        private Boolean isMobileTarget;
-        private Boolean isMulticloudServiceApp;
-        private Boolean isOauthClient;
-        private Boolean isOauthResource;
-        private Boolean isObligationCapable;
-        private Boolean isOpcService;
-        private Boolean isRadiusApp;
-        private Boolean isSamlServiceProvider;
-        private Boolean isUnmanagedApp;
-        private Boolean isWebTierPolicy;
-        private String landingPageUrl;
-        private String linkingCallbackUrl;
-        private String loginMechanism;
-        private String loginPageUrl;
-        private String logoutPageUrl;
-        private String logoutUri;
-        private List<GetDomainsAppMeta> metas;
-        private Boolean meterAsOpcService;
-        private Boolean migrated;
-        private String name;
-        private String ocid;
-        private List<String> postLogoutRedirectUris;
-        private String privacyPolicyUrl;
-        private String productLogoUrl;
-        private String productName;
-        private List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences;
-        private List<GetDomainsAppRadiusPolicy> radiusPolicies;
-        private Boolean readyToUpgrade;
-        private List<String> redirectUris;
-        private Integer refreshTokenExpiry;
+        private @Nullable List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable List<GetDomainsAppIdentityProvider> identityProviders;
+        private @Nullable List<GetDomainsAppIdpPolicy> idpPolicies;
+        private @Nullable Boolean infrastructure;
+        private @Nullable Boolean isAliasApp;
+        private @Nullable Boolean isDatabaseService;
+        private @Nullable Boolean isEnterpriseApp;
+        private @Nullable Boolean isFormFill;
+        private @Nullable Boolean isKerberosRealm;
+        private @Nullable Boolean isLoginTarget;
+        private @Nullable Boolean isManagedApp;
+        private @Nullable Boolean isMobileTarget;
+        private @Nullable Boolean isMulticloudServiceApp;
+        private @Nullable Boolean isOauthClient;
+        private @Nullable Boolean isOauthResource;
+        private @Nullable Boolean isObligationCapable;
+        private @Nullable Boolean isOpcService;
+        private @Nullable Boolean isRadiusApp;
+        private @Nullable Boolean isSamlServiceProvider;
+        private @Nullable Boolean isUnmanagedApp;
+        private @Nullable Boolean isWebTierPolicy;
+        private @Nullable String landingPageUrl;
+        private @Nullable String linkingCallbackUrl;
+        private @Nullable String loginMechanism;
+        private @Nullable String loginPageUrl;
+        private @Nullable String logoutPageUrl;
+        private @Nullable String logoutUri;
+        private @Nullable List<GetDomainsAppMeta> metas;
+        private @Nullable Boolean meterAsOpcService;
+        private @Nullable Boolean migrated;
+        private @Nullable String name;
+        private @Nullable String ocid;
+        private @Nullable List<String> postLogoutRedirectUris;
+        private @Nullable String privacyPolicyUrl;
+        private @Nullable String productLogoUrl;
+        private @Nullable String productName;
+        private @Nullable List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences;
+        private @Nullable List<GetDomainsAppRadiusPolicy> radiusPolicies;
+        private @Nullable Boolean readyToUpgrade;
+        private @Nullable List<String> redirectUris;
+        private @Nullable Integer refreshTokenExpiry;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<GetDomainsAppSamlServiceProvider> samlServiceProviders;
-        private List<String> schemas;
-        private List<GetDomainsAppScope> scopes;
-        private List<String> secondaryAudiences;
-        private List<GetDomainsAppServiceParam> serviceParams;
-        private String serviceTypeUrn;
-        private String serviceTypeVersion;
-        private Boolean showInMyApps;
-        private List<GetDomainsAppSignonPolicy> signonPolicies;
-        private List<GetDomainsAppTag> tags;
-        private String tenancyOcid;
-        private String termsOfServiceUrl;
-        private List<GetDomainsAppTermsOfUse> termsOfUses;
-        private List<GetDomainsAppTrustPolicy> trustPolicies;
-        private String trustScope;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
-        private List<GetDomainsAppUserRole> userRoles;
+        private @Nullable List<GetDomainsAppSamlServiceProvider> samlServiceProviders;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsAppScope> scopes;
+        private @Nullable List<String> secondaryAudiences;
+        private @Nullable List<GetDomainsAppServiceParam> serviceParams;
+        private @Nullable String serviceTypeUrn;
+        private @Nullable String serviceTypeVersion;
+        private @Nullable Boolean showInMyApps;
+        private @Nullable List<GetDomainsAppSignonPolicy> signonPolicies;
+        private @Nullable List<GetDomainsAppTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String termsOfServiceUrl;
+        private @Nullable List<GetDomainsAppTermsOfUse> termsOfUses;
+        private @Nullable List<GetDomainsAppTrustPolicy> trustPolicies;
+        private @Nullable String trustScope;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
+        private @Nullable List<GetDomainsAppUserRole> userRoles;
         public Builder() {}
         public Builder(GetDomainsAppResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -1757,89 +1757,89 @@ public final class GetDomainsAppResult {
         }
 
         @CustomType.Setter
-        public Builder accessTokenExpiry(Integer accessTokenExpiry) {
-            this.accessTokenExpiry = Objects.requireNonNull(accessTokenExpiry);
+        public Builder accessTokenExpiry(@Nullable Integer accessTokenExpiry) {
+            this.accessTokenExpiry = accessTokenExpiry;
             return this;
         }
         @CustomType.Setter
-        public Builder accounts(List<GetDomainsAppAccount> accounts) {
-            this.accounts = Objects.requireNonNull(accounts);
+        public Builder accounts(@Nullable List<GetDomainsAppAccount> accounts) {
+            this.accounts = accounts;
             return this;
         }
         public Builder accounts(GetDomainsAppAccount... accounts) {
             return accounts(List.of(accounts));
         }
         @CustomType.Setter
-        public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+        public Builder active(@Nullable Boolean active) {
+            this.active = active;
             return this;
         }
         @CustomType.Setter
-        public Builder adminRoles(List<GetDomainsAppAdminRole> adminRoles) {
-            this.adminRoles = Objects.requireNonNull(adminRoles);
+        public Builder adminRoles(@Nullable List<GetDomainsAppAdminRole> adminRoles) {
+            this.adminRoles = adminRoles;
             return this;
         }
         public Builder adminRoles(GetDomainsAppAdminRole... adminRoles) {
             return adminRoles(List.of(adminRoles));
         }
         @CustomType.Setter
-        public Builder aliasApps(List<GetDomainsAppAliasApp> aliasApps) {
-            this.aliasApps = Objects.requireNonNull(aliasApps);
+        public Builder aliasApps(@Nullable List<GetDomainsAppAliasApp> aliasApps) {
+            this.aliasApps = aliasApps;
             return this;
         }
         public Builder aliasApps(GetDomainsAppAliasApp... aliasApps) {
             return aliasApps(List.of(aliasApps));
         }
         @CustomType.Setter
-        public Builder allUrlSchemesAllowed(Boolean allUrlSchemesAllowed) {
-            this.allUrlSchemesAllowed = Objects.requireNonNull(allUrlSchemesAllowed);
+        public Builder allUrlSchemesAllowed(@Nullable Boolean allUrlSchemesAllowed) {
+            this.allUrlSchemesAllowed = allUrlSchemesAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder allowAccessControl(Boolean allowAccessControl) {
-            this.allowAccessControl = Objects.requireNonNull(allowAccessControl);
+        public Builder allowAccessControl(@Nullable Boolean allowAccessControl) {
+            this.allowAccessControl = allowAccessControl;
             return this;
         }
         @CustomType.Setter
-        public Builder allowOffline(Boolean allowOffline) {
-            this.allowOffline = Objects.requireNonNull(allowOffline);
+        public Builder allowOffline(@Nullable Boolean allowOffline) {
+            this.allowOffline = allowOffline;
             return this;
         }
         @CustomType.Setter
-        public Builder allowedGrants(List<String> allowedGrants) {
-            this.allowedGrants = Objects.requireNonNull(allowedGrants);
+        public Builder allowedGrants(@Nullable List<String> allowedGrants) {
+            this.allowedGrants = allowedGrants;
             return this;
         }
         public Builder allowedGrants(String... allowedGrants) {
             return allowedGrants(List.of(allowedGrants));
         }
         @CustomType.Setter
-        public Builder allowedOperations(List<String> allowedOperations) {
-            this.allowedOperations = Objects.requireNonNull(allowedOperations);
+        public Builder allowedOperations(@Nullable List<String> allowedOperations) {
+            this.allowedOperations = allowedOperations;
             return this;
         }
         public Builder allowedOperations(String... allowedOperations) {
             return allowedOperations(List.of(allowedOperations));
         }
         @CustomType.Setter
-        public Builder allowedScopes(List<GetDomainsAppAllowedScope> allowedScopes) {
-            this.allowedScopes = Objects.requireNonNull(allowedScopes);
+        public Builder allowedScopes(@Nullable List<GetDomainsAppAllowedScope> allowedScopes) {
+            this.allowedScopes = allowedScopes;
             return this;
         }
         public Builder allowedScopes(GetDomainsAppAllowedScope... allowedScopes) {
             return allowedScopes(List.of(allowedScopes));
         }
         @CustomType.Setter
-        public Builder allowedTags(List<GetDomainsAppAllowedTag> allowedTags) {
-            this.allowedTags = Objects.requireNonNull(allowedTags);
+        public Builder allowedTags(@Nullable List<GetDomainsAppAllowedTag> allowedTags) {
+            this.allowedTags = allowedTags;
             return this;
         }
         public Builder allowedTags(GetDomainsAppAllowedTag... allowedTags) {
             return allowedTags(List.of(allowedTags));
         }
         @CustomType.Setter
-        public Builder appIcon(String appIcon) {
-            this.appIcon = Objects.requireNonNull(appIcon);
+        public Builder appIcon(@Nullable String appIcon) {
+            this.appIcon = appIcon;
             return this;
         }
         @CustomType.Setter
@@ -1848,37 +1848,37 @@ public final class GetDomainsAppResult {
             return this;
         }
         @CustomType.Setter
-        public Builder appSignonPolicies(List<GetDomainsAppAppSignonPolicy> appSignonPolicies) {
-            this.appSignonPolicies = Objects.requireNonNull(appSignonPolicies);
+        public Builder appSignonPolicies(@Nullable List<GetDomainsAppAppSignonPolicy> appSignonPolicies) {
+            this.appSignonPolicies = appSignonPolicies;
             return this;
         }
         public Builder appSignonPolicies(GetDomainsAppAppSignonPolicy... appSignonPolicies) {
             return appSignonPolicies(List.of(appSignonPolicies));
         }
         @CustomType.Setter
-        public Builder appThumbnail(String appThumbnail) {
-            this.appThumbnail = Objects.requireNonNull(appThumbnail);
+        public Builder appThumbnail(@Nullable String appThumbnail) {
+            this.appThumbnail = appThumbnail;
             return this;
         }
         @CustomType.Setter
-        public Builder appsNetworkPerimeters(List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters) {
-            this.appsNetworkPerimeters = Objects.requireNonNull(appsNetworkPerimeters);
+        public Builder appsNetworkPerimeters(@Nullable List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters) {
+            this.appsNetworkPerimeters = appsNetworkPerimeters;
             return this;
         }
         public Builder appsNetworkPerimeters(GetDomainsAppAppsNetworkPerimeter... appsNetworkPerimeters) {
             return appsNetworkPerimeters(List.of(appsNetworkPerimeters));
         }
         @CustomType.Setter
-        public Builder asOpcServices(List<GetDomainsAppAsOpcService> asOpcServices) {
-            this.asOpcServices = Objects.requireNonNull(asOpcServices);
+        public Builder asOpcServices(@Nullable List<GetDomainsAppAsOpcService> asOpcServices) {
+            this.asOpcServices = asOpcServices;
             return this;
         }
         public Builder asOpcServices(GetDomainsAppAsOpcService... asOpcServices) {
             return asOpcServices(List.of(asOpcServices));
         }
         @CustomType.Setter
-        public Builder attrRenderingMetadatas(List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas) {
-            this.attrRenderingMetadatas = Objects.requireNonNull(attrRenderingMetadatas);
+        public Builder attrRenderingMetadatas(@Nullable List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas) {
+            this.attrRenderingMetadatas = attrRenderingMetadatas;
             return this;
         }
         public Builder attrRenderingMetadatas(GetDomainsAppAttrRenderingMetadata... attrRenderingMetadatas) {
@@ -1898,8 +1898,8 @@ public final class GetDomainsAppResult {
             return this;
         }
         @CustomType.Setter
-        public Builder audience(String audience) {
-            this.audience = Objects.requireNonNull(audience);
+        public Builder audience(@Nullable String audience) {
+            this.audience = audience;
             return this;
         }
         @CustomType.Setter
@@ -1908,154 +1908,154 @@ public final class GetDomainsAppResult {
             return this;
         }
         @CustomType.Setter
-        public Builder basedOnTemplates(List<GetDomainsAppBasedOnTemplate> basedOnTemplates) {
-            this.basedOnTemplates = Objects.requireNonNull(basedOnTemplates);
+        public Builder basedOnTemplates(@Nullable List<GetDomainsAppBasedOnTemplate> basedOnTemplates) {
+            this.basedOnTemplates = basedOnTemplates;
             return this;
         }
         public Builder basedOnTemplates(GetDomainsAppBasedOnTemplate... basedOnTemplates) {
             return basedOnTemplates(List.of(basedOnTemplates));
         }
         @CustomType.Setter
-        public Builder bypassConsent(Boolean bypassConsent) {
-            this.bypassConsent = Objects.requireNonNull(bypassConsent);
+        public Builder bypassConsent(@Nullable Boolean bypassConsent) {
+            this.bypassConsent = bypassConsent;
             return this;
         }
         @CustomType.Setter
-        public Builder callbackServiceUrl(String callbackServiceUrl) {
-            this.callbackServiceUrl = Objects.requireNonNull(callbackServiceUrl);
+        public Builder callbackServiceUrl(@Nullable String callbackServiceUrl) {
+            this.callbackServiceUrl = callbackServiceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder certificates(List<GetDomainsAppCertificate> certificates) {
-            this.certificates = Objects.requireNonNull(certificates);
+        public Builder certificates(@Nullable List<GetDomainsAppCertificate> certificates) {
+            this.certificates = certificates;
             return this;
         }
         public Builder certificates(GetDomainsAppCertificate... certificates) {
             return certificates(List.of(certificates));
         }
         @CustomType.Setter
-        public Builder clientIpChecking(String clientIpChecking) {
-            this.clientIpChecking = Objects.requireNonNull(clientIpChecking);
+        public Builder clientIpChecking(@Nullable String clientIpChecking) {
+            this.clientIpChecking = clientIpChecking;
             return this;
         }
         @CustomType.Setter
-        public Builder clientSecret(String clientSecret) {
-            this.clientSecret = Objects.requireNonNull(clientSecret);
+        public Builder clientSecret(@Nullable String clientSecret) {
+            this.clientSecret = clientSecret;
             return this;
         }
         @CustomType.Setter
-        public Builder clientType(String clientType) {
-            this.clientType = Objects.requireNonNull(clientType);
+        public Builder clientType(@Nullable String clientType) {
+            this.clientType = clientType;
             return this;
         }
         @CustomType.Setter
-        public Builder cloudControlProperties(List<GetDomainsAppCloudControlProperty> cloudControlProperties) {
-            this.cloudControlProperties = Objects.requireNonNull(cloudControlProperties);
+        public Builder cloudControlProperties(@Nullable List<GetDomainsAppCloudControlProperty> cloudControlProperties) {
+            this.cloudControlProperties = cloudControlProperties;
             return this;
         }
         public Builder cloudControlProperties(GetDomainsAppCloudControlProperty... cloudControlProperties) {
             return cloudControlProperties(List.of(cloudControlProperties));
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder contactEmailAddress(String contactEmailAddress) {
-            this.contactEmailAddress = Objects.requireNonNull(contactEmailAddress);
+        public Builder contactEmailAddress(@Nullable String contactEmailAddress) {
+            this.contactEmailAddress = contactEmailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder delegatedServiceNames(List<String> delegatedServiceNames) {
-            this.delegatedServiceNames = Objects.requireNonNull(delegatedServiceNames);
+        public Builder delegatedServiceNames(@Nullable List<String> delegatedServiceNames) {
+            this.delegatedServiceNames = delegatedServiceNames;
             return this;
         }
         public Builder delegatedServiceNames(String... delegatedServiceNames) {
             return delegatedServiceNames(List.of(delegatedServiceNames));
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder disableKmsiTokenAuthentication(Boolean disableKmsiTokenAuthentication) {
-            this.disableKmsiTokenAuthentication = Objects.requireNonNull(disableKmsiTokenAuthentication);
+        public Builder disableKmsiTokenAuthentication(@Nullable Boolean disableKmsiTokenAuthentication) {
+            this.disableKmsiTokenAuthentication = disableKmsiTokenAuthentication;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder editableAttributes(List<GetDomainsAppEditableAttribute> editableAttributes) {
-            this.editableAttributes = Objects.requireNonNull(editableAttributes);
+        public Builder editableAttributes(@Nullable List<GetDomainsAppEditableAttribute> editableAttributes) {
+            this.editableAttributes = editableAttributes;
             return this;
         }
         public Builder editableAttributes(GetDomainsAppEditableAttribute... editableAttributes) {
             return editableAttributes(List.of(editableAttributes));
         }
         @CustomType.Setter
-        public Builder errorPageUrl(String errorPageUrl) {
-            this.errorPageUrl = Objects.requireNonNull(errorPageUrl);
+        public Builder errorPageUrl(@Nullable String errorPageUrl) {
+            this.errorPageUrl = errorPageUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder grantedAppRoles(List<GetDomainsAppGrantedAppRole> grantedAppRoles) {
-            this.grantedAppRoles = Objects.requireNonNull(grantedAppRoles);
+        public Builder grantedAppRoles(@Nullable List<GetDomainsAppGrantedAppRole> grantedAppRoles) {
+            this.grantedAppRoles = grantedAppRoles;
             return this;
         }
         public Builder grantedAppRoles(GetDomainsAppGrantedAppRole... grantedAppRoles) {
             return grantedAppRoles(List.of(grantedAppRoles));
         }
         @CustomType.Setter
-        public Builder grants(List<GetDomainsAppGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+        public Builder grants(@Nullable List<GetDomainsAppGrant> grants) {
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetDomainsAppGrant... grants) {
             return grants(List.of(grants));
         }
         @CustomType.Setter
-        public Builder hashedClientSecret(String hashedClientSecret) {
-            this.hashedClientSecret = Objects.requireNonNull(hashedClientSecret);
+        public Builder hashedClientSecret(@Nullable String hashedClientSecret) {
+            this.hashedClientSecret = hashedClientSecret;
             return this;
         }
         @CustomType.Setter
-        public Builder homePageUrl(String homePageUrl) {
-            this.homePageUrl = Objects.requireNonNull(homePageUrl);
+        public Builder homePageUrl(@Nullable String homePageUrl) {
+            this.homePageUrl = homePageUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder icon(String icon) {
-            this.icon = Objects.requireNonNull(icon);
+        public Builder icon(@Nullable String icon) {
+            this.icon = icon;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idTokenEncAlgo(String idTokenEncAlgo) {
-            this.idTokenEncAlgo = Objects.requireNonNull(idTokenEncAlgo);
+        public Builder idTokenEncAlgo(@Nullable String idTokenEncAlgo) {
+            this.idTokenEncAlgo = idTokenEncAlgo;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAppIdcsCreatedBy... idcsCreatedBies) {
@@ -2067,245 +2067,245 @@ public final class GetDomainsAppResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAppIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder identityProviders(List<GetDomainsAppIdentityProvider> identityProviders) {
-            this.identityProviders = Objects.requireNonNull(identityProviders);
+        public Builder identityProviders(@Nullable List<GetDomainsAppIdentityProvider> identityProviders) {
+            this.identityProviders = identityProviders;
             return this;
         }
         public Builder identityProviders(GetDomainsAppIdentityProvider... identityProviders) {
             return identityProviders(List.of(identityProviders));
         }
         @CustomType.Setter
-        public Builder idpPolicies(List<GetDomainsAppIdpPolicy> idpPolicies) {
-            this.idpPolicies = Objects.requireNonNull(idpPolicies);
+        public Builder idpPolicies(@Nullable List<GetDomainsAppIdpPolicy> idpPolicies) {
+            this.idpPolicies = idpPolicies;
             return this;
         }
         public Builder idpPolicies(GetDomainsAppIdpPolicy... idpPolicies) {
             return idpPolicies(List.of(idpPolicies));
         }
         @CustomType.Setter
-        public Builder infrastructure(Boolean infrastructure) {
-            this.infrastructure = Objects.requireNonNull(infrastructure);
+        public Builder infrastructure(@Nullable Boolean infrastructure) {
+            this.infrastructure = infrastructure;
             return this;
         }
         @CustomType.Setter
-        public Builder isAliasApp(Boolean isAliasApp) {
-            this.isAliasApp = Objects.requireNonNull(isAliasApp);
+        public Builder isAliasApp(@Nullable Boolean isAliasApp) {
+            this.isAliasApp = isAliasApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isDatabaseService(Boolean isDatabaseService) {
-            this.isDatabaseService = Objects.requireNonNull(isDatabaseService);
+        public Builder isDatabaseService(@Nullable Boolean isDatabaseService) {
+            this.isDatabaseService = isDatabaseService;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnterpriseApp(Boolean isEnterpriseApp) {
-            this.isEnterpriseApp = Objects.requireNonNull(isEnterpriseApp);
+        public Builder isEnterpriseApp(@Nullable Boolean isEnterpriseApp) {
+            this.isEnterpriseApp = isEnterpriseApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isFormFill(Boolean isFormFill) {
-            this.isFormFill = Objects.requireNonNull(isFormFill);
+        public Builder isFormFill(@Nullable Boolean isFormFill) {
+            this.isFormFill = isFormFill;
             return this;
         }
         @CustomType.Setter
-        public Builder isKerberosRealm(Boolean isKerberosRealm) {
-            this.isKerberosRealm = Objects.requireNonNull(isKerberosRealm);
+        public Builder isKerberosRealm(@Nullable Boolean isKerberosRealm) {
+            this.isKerberosRealm = isKerberosRealm;
             return this;
         }
         @CustomType.Setter
-        public Builder isLoginTarget(Boolean isLoginTarget) {
-            this.isLoginTarget = Objects.requireNonNull(isLoginTarget);
+        public Builder isLoginTarget(@Nullable Boolean isLoginTarget) {
+            this.isLoginTarget = isLoginTarget;
             return this;
         }
         @CustomType.Setter
-        public Builder isManagedApp(Boolean isManagedApp) {
-            this.isManagedApp = Objects.requireNonNull(isManagedApp);
+        public Builder isManagedApp(@Nullable Boolean isManagedApp) {
+            this.isManagedApp = isManagedApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isMobileTarget(Boolean isMobileTarget) {
-            this.isMobileTarget = Objects.requireNonNull(isMobileTarget);
+        public Builder isMobileTarget(@Nullable Boolean isMobileTarget) {
+            this.isMobileTarget = isMobileTarget;
             return this;
         }
         @CustomType.Setter
-        public Builder isMulticloudServiceApp(Boolean isMulticloudServiceApp) {
-            this.isMulticloudServiceApp = Objects.requireNonNull(isMulticloudServiceApp);
+        public Builder isMulticloudServiceApp(@Nullable Boolean isMulticloudServiceApp) {
+            this.isMulticloudServiceApp = isMulticloudServiceApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isOauthClient(Boolean isOauthClient) {
-            this.isOauthClient = Objects.requireNonNull(isOauthClient);
+        public Builder isOauthClient(@Nullable Boolean isOauthClient) {
+            this.isOauthClient = isOauthClient;
             return this;
         }
         @CustomType.Setter
-        public Builder isOauthResource(Boolean isOauthResource) {
-            this.isOauthResource = Objects.requireNonNull(isOauthResource);
+        public Builder isOauthResource(@Nullable Boolean isOauthResource) {
+            this.isOauthResource = isOauthResource;
             return this;
         }
         @CustomType.Setter
-        public Builder isObligationCapable(Boolean isObligationCapable) {
-            this.isObligationCapable = Objects.requireNonNull(isObligationCapable);
+        public Builder isObligationCapable(@Nullable Boolean isObligationCapable) {
+            this.isObligationCapable = isObligationCapable;
             return this;
         }
         @CustomType.Setter
-        public Builder isOpcService(Boolean isOpcService) {
-            this.isOpcService = Objects.requireNonNull(isOpcService);
+        public Builder isOpcService(@Nullable Boolean isOpcService) {
+            this.isOpcService = isOpcService;
             return this;
         }
         @CustomType.Setter
-        public Builder isRadiusApp(Boolean isRadiusApp) {
-            this.isRadiusApp = Objects.requireNonNull(isRadiusApp);
+        public Builder isRadiusApp(@Nullable Boolean isRadiusApp) {
+            this.isRadiusApp = isRadiusApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isSamlServiceProvider(Boolean isSamlServiceProvider) {
-            this.isSamlServiceProvider = Objects.requireNonNull(isSamlServiceProvider);
+        public Builder isSamlServiceProvider(@Nullable Boolean isSamlServiceProvider) {
+            this.isSamlServiceProvider = isSamlServiceProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder isUnmanagedApp(Boolean isUnmanagedApp) {
-            this.isUnmanagedApp = Objects.requireNonNull(isUnmanagedApp);
+        public Builder isUnmanagedApp(@Nullable Boolean isUnmanagedApp) {
+            this.isUnmanagedApp = isUnmanagedApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isWebTierPolicy(Boolean isWebTierPolicy) {
-            this.isWebTierPolicy = Objects.requireNonNull(isWebTierPolicy);
+        public Builder isWebTierPolicy(@Nullable Boolean isWebTierPolicy) {
+            this.isWebTierPolicy = isWebTierPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder landingPageUrl(String landingPageUrl) {
-            this.landingPageUrl = Objects.requireNonNull(landingPageUrl);
+        public Builder landingPageUrl(@Nullable String landingPageUrl) {
+            this.landingPageUrl = landingPageUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder linkingCallbackUrl(String linkingCallbackUrl) {
-            this.linkingCallbackUrl = Objects.requireNonNull(linkingCallbackUrl);
+        public Builder linkingCallbackUrl(@Nullable String linkingCallbackUrl) {
+            this.linkingCallbackUrl = linkingCallbackUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder loginMechanism(String loginMechanism) {
-            this.loginMechanism = Objects.requireNonNull(loginMechanism);
+        public Builder loginMechanism(@Nullable String loginMechanism) {
+            this.loginMechanism = loginMechanism;
             return this;
         }
         @CustomType.Setter
-        public Builder loginPageUrl(String loginPageUrl) {
-            this.loginPageUrl = Objects.requireNonNull(loginPageUrl);
+        public Builder loginPageUrl(@Nullable String loginPageUrl) {
+            this.loginPageUrl = loginPageUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutPageUrl(String logoutPageUrl) {
-            this.logoutPageUrl = Objects.requireNonNull(logoutPageUrl);
+        public Builder logoutPageUrl(@Nullable String logoutPageUrl) {
+            this.logoutPageUrl = logoutPageUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutUri(String logoutUri) {
-            this.logoutUri = Objects.requireNonNull(logoutUri);
+        public Builder logoutUri(@Nullable String logoutUri) {
+            this.logoutUri = logoutUri;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsAppMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsAppMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAppMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder meterAsOpcService(Boolean meterAsOpcService) {
-            this.meterAsOpcService = Objects.requireNonNull(meterAsOpcService);
+        public Builder meterAsOpcService(@Nullable Boolean meterAsOpcService) {
+            this.meterAsOpcService = meterAsOpcService;
             return this;
         }
         @CustomType.Setter
-        public Builder migrated(Boolean migrated) {
-            this.migrated = Objects.requireNonNull(migrated);
+        public Builder migrated(@Nullable Boolean migrated) {
+            this.migrated = migrated;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder postLogoutRedirectUris(List<String> postLogoutRedirectUris) {
-            this.postLogoutRedirectUris = Objects.requireNonNull(postLogoutRedirectUris);
+        public Builder postLogoutRedirectUris(@Nullable List<String> postLogoutRedirectUris) {
+            this.postLogoutRedirectUris = postLogoutRedirectUris;
             return this;
         }
         public Builder postLogoutRedirectUris(String... postLogoutRedirectUris) {
             return postLogoutRedirectUris(List.of(postLogoutRedirectUris));
         }
         @CustomType.Setter
-        public Builder privacyPolicyUrl(String privacyPolicyUrl) {
-            this.privacyPolicyUrl = Objects.requireNonNull(privacyPolicyUrl);
+        public Builder privacyPolicyUrl(@Nullable String privacyPolicyUrl) {
+            this.privacyPolicyUrl = privacyPolicyUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder productLogoUrl(String productLogoUrl) {
-            this.productLogoUrl = Objects.requireNonNull(productLogoUrl);
+        public Builder productLogoUrl(@Nullable String productLogoUrl) {
+            this.productLogoUrl = productLogoUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder productName(String productName) {
-            this.productName = Objects.requireNonNull(productName);
+        public Builder productName(@Nullable String productName) {
+            this.productName = productName;
             return this;
         }
         @CustomType.Setter
-        public Builder protectableSecondaryAudiences(List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences) {
-            this.protectableSecondaryAudiences = Objects.requireNonNull(protectableSecondaryAudiences);
+        public Builder protectableSecondaryAudiences(@Nullable List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences) {
+            this.protectableSecondaryAudiences = protectableSecondaryAudiences;
             return this;
         }
         public Builder protectableSecondaryAudiences(GetDomainsAppProtectableSecondaryAudience... protectableSecondaryAudiences) {
             return protectableSecondaryAudiences(List.of(protectableSecondaryAudiences));
         }
         @CustomType.Setter
-        public Builder radiusPolicies(List<GetDomainsAppRadiusPolicy> radiusPolicies) {
-            this.radiusPolicies = Objects.requireNonNull(radiusPolicies);
+        public Builder radiusPolicies(@Nullable List<GetDomainsAppRadiusPolicy> radiusPolicies) {
+            this.radiusPolicies = radiusPolicies;
             return this;
         }
         public Builder radiusPolicies(GetDomainsAppRadiusPolicy... radiusPolicies) {
             return radiusPolicies(List.of(radiusPolicies));
         }
         @CustomType.Setter
-        public Builder readyToUpgrade(Boolean readyToUpgrade) {
-            this.readyToUpgrade = Objects.requireNonNull(readyToUpgrade);
+        public Builder readyToUpgrade(@Nullable Boolean readyToUpgrade) {
+            this.readyToUpgrade = readyToUpgrade;
             return this;
         }
         @CustomType.Setter
-        public Builder redirectUris(List<String> redirectUris) {
-            this.redirectUris = Objects.requireNonNull(redirectUris);
+        public Builder redirectUris(@Nullable List<String> redirectUris) {
+            this.redirectUris = redirectUris;
             return this;
         }
         public Builder redirectUris(String... redirectUris) {
             return redirectUris(List.of(redirectUris));
         }
         @CustomType.Setter
-        public Builder refreshTokenExpiry(Integer refreshTokenExpiry) {
-            this.refreshTokenExpiry = Objects.requireNonNull(refreshTokenExpiry);
+        public Builder refreshTokenExpiry(@Nullable Integer refreshTokenExpiry) {
+            this.refreshTokenExpiry = refreshTokenExpiry;
             return this;
         }
         @CustomType.Setter
@@ -2314,214 +2314,214 @@ public final class GetDomainsAppResult {
             return this;
         }
         @CustomType.Setter
-        public Builder samlServiceProviders(List<GetDomainsAppSamlServiceProvider> samlServiceProviders) {
-            this.samlServiceProviders = Objects.requireNonNull(samlServiceProviders);
+        public Builder samlServiceProviders(@Nullable List<GetDomainsAppSamlServiceProvider> samlServiceProviders) {
+            this.samlServiceProviders = samlServiceProviders;
             return this;
         }
         public Builder samlServiceProviders(GetDomainsAppSamlServiceProvider... samlServiceProviders) {
             return samlServiceProviders(List.of(samlServiceProviders));
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder scopes(List<GetDomainsAppScope> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+        public Builder scopes(@Nullable List<GetDomainsAppScope> scopes) {
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(GetDomainsAppScope... scopes) {
             return scopes(List.of(scopes));
         }
         @CustomType.Setter
-        public Builder secondaryAudiences(List<String> secondaryAudiences) {
-            this.secondaryAudiences = Objects.requireNonNull(secondaryAudiences);
+        public Builder secondaryAudiences(@Nullable List<String> secondaryAudiences) {
+            this.secondaryAudiences = secondaryAudiences;
             return this;
         }
         public Builder secondaryAudiences(String... secondaryAudiences) {
             return secondaryAudiences(List.of(secondaryAudiences));
         }
         @CustomType.Setter
-        public Builder serviceParams(List<GetDomainsAppServiceParam> serviceParams) {
-            this.serviceParams = Objects.requireNonNull(serviceParams);
+        public Builder serviceParams(@Nullable List<GetDomainsAppServiceParam> serviceParams) {
+            this.serviceParams = serviceParams;
             return this;
         }
         public Builder serviceParams(GetDomainsAppServiceParam... serviceParams) {
             return serviceParams(List.of(serviceParams));
         }
         @CustomType.Setter
-        public Builder serviceTypeUrn(String serviceTypeUrn) {
-            this.serviceTypeUrn = Objects.requireNonNull(serviceTypeUrn);
+        public Builder serviceTypeUrn(@Nullable String serviceTypeUrn) {
+            this.serviceTypeUrn = serviceTypeUrn;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceTypeVersion(String serviceTypeVersion) {
-            this.serviceTypeVersion = Objects.requireNonNull(serviceTypeVersion);
+        public Builder serviceTypeVersion(@Nullable String serviceTypeVersion) {
+            this.serviceTypeVersion = serviceTypeVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder showInMyApps(Boolean showInMyApps) {
-            this.showInMyApps = Objects.requireNonNull(showInMyApps);
+        public Builder showInMyApps(@Nullable Boolean showInMyApps) {
+            this.showInMyApps = showInMyApps;
             return this;
         }
         @CustomType.Setter
-        public Builder signonPolicies(List<GetDomainsAppSignonPolicy> signonPolicies) {
-            this.signonPolicies = Objects.requireNonNull(signonPolicies);
+        public Builder signonPolicies(@Nullable List<GetDomainsAppSignonPolicy> signonPolicies) {
+            this.signonPolicies = signonPolicies;
             return this;
         }
         public Builder signonPolicies(GetDomainsAppSignonPolicy... signonPolicies) {
             return signonPolicies(List.of(signonPolicies));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsAppTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsAppTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAppTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder termsOfServiceUrl(String termsOfServiceUrl) {
-            this.termsOfServiceUrl = Objects.requireNonNull(termsOfServiceUrl);
+        public Builder termsOfServiceUrl(@Nullable String termsOfServiceUrl) {
+            this.termsOfServiceUrl = termsOfServiceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder termsOfUses(List<GetDomainsAppTermsOfUse> termsOfUses) {
-            this.termsOfUses = Objects.requireNonNull(termsOfUses);
+        public Builder termsOfUses(@Nullable List<GetDomainsAppTermsOfUse> termsOfUses) {
+            this.termsOfUses = termsOfUses;
             return this;
         }
         public Builder termsOfUses(GetDomainsAppTermsOfUse... termsOfUses) {
             return termsOfUses(List.of(termsOfUses));
         }
         @CustomType.Setter
-        public Builder trustPolicies(List<GetDomainsAppTrustPolicy> trustPolicies) {
-            this.trustPolicies = Objects.requireNonNull(trustPolicies);
+        public Builder trustPolicies(@Nullable List<GetDomainsAppTrustPolicy> trustPolicies) {
+            this.trustPolicies = trustPolicies;
             return this;
         }
         public Builder trustPolicies(GetDomainsAppTrustPolicy... trustPolicies) {
             return trustPolicies(List.of(trustPolicies));
         }
         @CustomType.Setter
-        public Builder trustScope(String trustScope) {
-            this.trustScope = Objects.requireNonNull(trustScope);
+        public Builder trustScope(@Nullable String trustScope) {
+            this.trustScope = trustScope;
             return this;
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags) {
-            this.urnietfparamsscimschemasoracleidcsextensionOciTags = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionOciTags);
+        public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags) {
+            this.urnietfparamsscimschemasoracleidcsextensionOciTags = urnietfparamsscimschemasoracleidcsextensionOciTags;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag... urnietfparamsscimschemasoracleidcsextensionOciTags) {
             return urnietfparamsscimschemasoracleidcsextensionOciTags(List.of(urnietfparamsscimschemasoracleidcsextensionOciTags));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensiondbcsApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps) {
-            this.urnietfparamsscimschemasoracleidcsextensiondbcsApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondbcsApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensiondbcsApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps) {
+            this.urnietfparamsscimschemasoracleidcsextensiondbcsApps = urnietfparamsscimschemasoracleidcsextensiondbcsApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondbcsApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp... urnietfparamsscimschemasoracleidcsextensiondbcsApps) {
             return urnietfparamsscimschemasoracleidcsextensiondbcsApps(List.of(urnietfparamsscimschemasoracleidcsextensiondbcsApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps = urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp... urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps) {
             return urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps(List.of(urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionformFillAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionformFillAppApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionformFillAppApps = urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp... urnietfparamsscimschemasoracleidcsextensionformFillAppApps) {
             return urnietfparamsscimschemasoracleidcsextensionformFillAppApps(List.of(urnietfparamsscimschemasoracleidcsextensionformFillAppApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates) {
-            this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates);
+        public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates) {
+            this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates = urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate... urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates) {
             return urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates(List.of(urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps = urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp... urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps) {
             return urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps(List.of(urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionmanagedappApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionmanagedappApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionmanagedappApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionmanagedappApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionmanagedappApps = urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionmanagedappApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp... urnietfparamsscimschemasoracleidcsextensionmanagedappApps) {
             return urnietfparamsscimschemasoracleidcsextensionmanagedappApps(List.of(urnietfparamsscimschemasoracleidcsextensionmanagedappApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps = urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp... urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps) {
             return urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps(List.of(urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionopcServiceApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionopcServiceApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionopcServiceApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionopcServiceApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionopcServiceApps = urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionopcServiceApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp... urnietfparamsscimschemasoracleidcsextensionopcServiceApps) {
             return urnietfparamsscimschemasoracleidcsextensionopcServiceApps(List.of(urnietfparamsscimschemasoracleidcsextensionopcServiceApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionradiusAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionradiusAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionradiusAppApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionradiusAppApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionradiusAppApps = urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionradiusAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp... urnietfparamsscimschemasoracleidcsextensionradiusAppApps) {
             return urnietfparamsscimschemasoracleidcsextensionradiusAppApps(List.of(urnietfparamsscimschemasoracleidcsextensionradiusAppApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionrequestableApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionrequestableApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionrequestableApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionrequestableApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionrequestableApps = urnietfparamsscimschemasoracleidcsextensionrequestableApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionrequestableApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp... urnietfparamsscimschemasoracleidcsextensionrequestableApps) {
             return urnietfparamsscimschemasoracleidcsextensionrequestableApps(List.of(urnietfparamsscimschemasoracleidcsextensionrequestableApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps = urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp... urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps) {
             return urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps(List.of(urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps);
+        public Builder urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps) {
+            this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps = urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp... urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps) {
             return urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps(List.of(urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps));
         }
         @CustomType.Setter
-        public Builder userRoles(List<GetDomainsAppUserRole> userRoles) {
-            this.userRoles = Objects.requireNonNull(userRoles);
+        public Builder userRoles(@Nullable List<GetDomainsAppUserRole> userRoles) {
+            this.userRoles = userRoles;
             return this;
         }
         public Builder userRoles(GetDomainsAppUserRole... userRoles) {

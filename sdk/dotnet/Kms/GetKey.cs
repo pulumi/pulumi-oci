@@ -134,20 +134,20 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The OCID of the compartment that contains this master encryption key.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
         /// </summary>
-        public readonly string CurrentKeyVersion;
+        public readonly string? CurrentKeyVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly string DesiredState;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly string? DesiredState;
         /// <summary>
         /// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Key reference data to be returned to the customer as a response.
         /// </summary>
@@ -156,15 +156,15 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the key.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         /// </summary>
-        public readonly bool IsPrimary;
+        public readonly bool? IsPrimary;
         public readonly string KeyId;
         /// <summary>
         /// The cryptographic properties of a key.
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         /// </summary>
-        public readonly string ProtectionMode;
+        public readonly string? ProtectionMode;
         /// <summary>
         /// Key replica details
         /// </summary>
@@ -190,49 +190,49 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// When flipped, triggers restore if restore options are provided. Values of 0 or 1 are supported.
         /// </summary>
-        public readonly bool RestoreTrigger;
+        public readonly bool? RestoreTrigger;
         /// <summary>
         /// The OCID of the key from which this key was restored.
         /// </summary>
-        public readonly string RestoredFromKeyId;
+        public readonly string? RestoredFromKeyId;
         /// <summary>
         /// The key's current lifecycle state.  Example: `ENABLED`
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// The OCID of the vault that contains this key.
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetKeyResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string currentKeyVersion,
+            string? currentKeyVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string desiredState,
+            string? desiredState,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetKeyExternalKeyReferenceDetailResult> externalKeyReferenceDetails,
 
             ImmutableArray<Outputs.GetKeyExternalKeyReferenceResult> externalKeyReferences,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isPrimary,
+            bool? isPrimary,
 
             string keyId,
 
@@ -240,7 +240,7 @@ namespace Pulumi.Oci.Kms
 
             string managementEndpoint,
 
-            string protectionMode,
+            string? protectionMode,
 
             ImmutableArray<Outputs.GetKeyReplicaDetailResult> replicaDetails,
 
@@ -248,17 +248,17 @@ namespace Pulumi.Oci.Kms
 
             ImmutableArray<Outputs.GetKeyRestoreFromObjectStoreResult> restoreFromObjectStores,
 
-            bool restoreTrigger,
+            bool? restoreTrigger,
 
-            string restoredFromKeyId,
+            string? restoredFromKeyId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string vaultId)
+            string? vaultId)
         {
             CompartmentId = compartmentId;
             CurrentKeyVersion = currentKeyVersion;

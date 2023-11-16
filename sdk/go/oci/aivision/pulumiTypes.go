@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -69,12 +68,6 @@ func (i ModelTestingDatasetArgs) ToModelTestingDatasetOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTestingDatasetOutput)
 }
 
-func (i ModelTestingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[ModelTestingDataset] {
-	return pulumix.Output[ModelTestingDataset]{
-		OutputState: i.ToModelTestingDatasetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ModelTestingDatasetArgs) ToModelTestingDatasetPtrOutput() ModelTestingDatasetPtrOutput {
 	return i.ToModelTestingDatasetPtrOutputWithContext(context.Background())
 }
@@ -116,12 +109,6 @@ func (i *modelTestingDatasetPtrType) ToModelTestingDatasetPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTestingDatasetPtrOutput)
 }
 
-func (i *modelTestingDatasetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelTestingDataset] {
-	return pulumix.Output[*ModelTestingDataset]{
-		OutputState: i.ToModelTestingDatasetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelTestingDatasetOutput struct{ *pulumi.OutputState }
 
 func (ModelTestingDatasetOutput) ElementType() reflect.Type {
@@ -144,12 +131,6 @@ func (o ModelTestingDatasetOutput) ToModelTestingDatasetPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelTestingDataset) *ModelTestingDataset {
 		return &v
 	}).(ModelTestingDatasetPtrOutput)
-}
-
-func (o ModelTestingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[ModelTestingDataset] {
-	return pulumix.Output[ModelTestingDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the ObjectStorage bucket that contains the input data file.
@@ -192,12 +173,6 @@ func (o ModelTestingDatasetPtrOutput) ToModelTestingDatasetPtrOutput() ModelTest
 
 func (o ModelTestingDatasetPtrOutput) ToModelTestingDatasetPtrOutputWithContext(ctx context.Context) ModelTestingDatasetPtrOutput {
 	return o
-}
-
-func (o ModelTestingDatasetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelTestingDataset] {
-	return pulumix.Output[*ModelTestingDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelTestingDatasetPtrOutput) Elem() ModelTestingDatasetOutput {
@@ -318,12 +293,6 @@ func (i ModelTrainingDatasetArgs) ToModelTrainingDatasetOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTrainingDatasetOutput)
 }
 
-func (i ModelTrainingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[ModelTrainingDataset] {
-	return pulumix.Output[ModelTrainingDataset]{
-		OutputState: i.ToModelTrainingDatasetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ModelTrainingDatasetArgs) ToModelTrainingDatasetPtrOutput() ModelTrainingDatasetPtrOutput {
 	return i.ToModelTrainingDatasetPtrOutputWithContext(context.Background())
 }
@@ -365,12 +334,6 @@ func (i *modelTrainingDatasetPtrType) ToModelTrainingDatasetPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTrainingDatasetPtrOutput)
 }
 
-func (i *modelTrainingDatasetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelTrainingDataset] {
-	return pulumix.Output[*ModelTrainingDataset]{
-		OutputState: i.ToModelTrainingDatasetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelTrainingDatasetOutput struct{ *pulumi.OutputState }
 
 func (ModelTrainingDatasetOutput) ElementType() reflect.Type {
@@ -393,12 +356,6 @@ func (o ModelTrainingDatasetOutput) ToModelTrainingDatasetPtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelTrainingDataset) *ModelTrainingDataset {
 		return &v
 	}).(ModelTrainingDatasetPtrOutput)
-}
-
-func (o ModelTrainingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[ModelTrainingDataset] {
-	return pulumix.Output[ModelTrainingDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the ObjectStorage bucket that contains the input data file.
@@ -441,12 +398,6 @@ func (o ModelTrainingDatasetPtrOutput) ToModelTrainingDatasetPtrOutput() ModelTr
 
 func (o ModelTrainingDatasetPtrOutput) ToModelTrainingDatasetPtrOutputWithContext(ctx context.Context) ModelTrainingDatasetPtrOutput {
 	return o
-}
-
-func (o ModelTrainingDatasetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelTrainingDataset] {
-	return pulumix.Output[*ModelTrainingDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelTrainingDatasetPtrOutput) Elem() ModelTrainingDatasetOutput {
@@ -567,12 +518,6 @@ func (i ModelValidationDatasetArgs) ToModelValidationDatasetOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ModelValidationDatasetOutput)
 }
 
-func (i ModelValidationDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[ModelValidationDataset] {
-	return pulumix.Output[ModelValidationDataset]{
-		OutputState: i.ToModelValidationDatasetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ModelValidationDatasetArgs) ToModelValidationDatasetPtrOutput() ModelValidationDatasetPtrOutput {
 	return i.ToModelValidationDatasetPtrOutputWithContext(context.Background())
 }
@@ -614,12 +559,6 @@ func (i *modelValidationDatasetPtrType) ToModelValidationDatasetPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(ModelValidationDatasetPtrOutput)
 }
 
-func (i *modelValidationDatasetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelValidationDataset] {
-	return pulumix.Output[*ModelValidationDataset]{
-		OutputState: i.ToModelValidationDatasetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelValidationDatasetOutput struct{ *pulumi.OutputState }
 
 func (ModelValidationDatasetOutput) ElementType() reflect.Type {
@@ -642,12 +581,6 @@ func (o ModelValidationDatasetOutput) ToModelValidationDatasetPtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelValidationDataset) *ModelValidationDataset {
 		return &v
 	}).(ModelValidationDatasetPtrOutput)
-}
-
-func (o ModelValidationDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[ModelValidationDataset] {
-	return pulumix.Output[ModelValidationDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the ObjectStorage bucket that contains the input data file.
@@ -690,12 +623,6 @@ func (o ModelValidationDatasetPtrOutput) ToModelValidationDatasetPtrOutput() Mod
 
 func (o ModelValidationDatasetPtrOutput) ToModelValidationDatasetPtrOutputWithContext(ctx context.Context) ModelValidationDatasetPtrOutput {
 	return o
-}
-
-func (o ModelValidationDatasetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelValidationDataset] {
-	return pulumix.Output[*ModelValidationDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelValidationDatasetPtrOutput) Elem() ModelValidationDatasetOutput {
@@ -763,15 +690,15 @@ func (o ModelValidationDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 
 type GetModelTestingDataset struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId string `pulumi:"datasetId"`
+	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType string `pulumi:"datasetType"`
+	DatasetType *string `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
-	NamespaceName string `pulumi:"namespaceName"`
+	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetModelTestingDatasetInput is an input type that accepts GetModelTestingDatasetArgs and GetModelTestingDatasetOutput values.
@@ -787,15 +714,15 @@ type GetModelTestingDatasetInput interface {
 
 type GetModelTestingDatasetArgs struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId pulumi.StringInput `pulumi:"datasetId"`
+	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	DatasetType pulumi.StringPtrInput `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
-	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetModelTestingDatasetArgs) ElementType() reflect.Type {
@@ -808,12 +735,6 @@ func (i GetModelTestingDatasetArgs) ToGetModelTestingDatasetOutput() GetModelTes
 
 func (i GetModelTestingDatasetArgs) ToGetModelTestingDatasetOutputWithContext(ctx context.Context) GetModelTestingDatasetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTestingDatasetOutput)
-}
-
-func (i GetModelTestingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelTestingDataset] {
-	return pulumix.Output[GetModelTestingDataset]{
-		OutputState: i.ToGetModelTestingDatasetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetModelTestingDatasetArrayInput is an input type that accepts GetModelTestingDatasetArray and GetModelTestingDatasetArrayOutput values.
@@ -841,12 +762,6 @@ func (i GetModelTestingDatasetArray) ToGetModelTestingDatasetArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTestingDatasetArrayOutput)
 }
 
-func (i GetModelTestingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTestingDataset] {
-	return pulumix.Output[[]GetModelTestingDataset]{
-		OutputState: i.ToGetModelTestingDatasetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelTestingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelTestingDatasetOutput) ElementType() reflect.Type {
@@ -861,35 +776,29 @@ func (o GetModelTestingDatasetOutput) ToGetModelTestingDatasetOutputWithContext(
 	return o
 }
 
-func (o GetModelTestingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelTestingDataset] {
-	return pulumix.Output[GetModelTestingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelTestingDatasetOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTestingDataset) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetModelTestingDatasetOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTestingDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Science Labeling Dataset.
-func (o GetModelTestingDatasetOutput) DatasetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTestingDataset) string { return v.DatasetId }).(pulumi.StringOutput)
+func (o GetModelTestingDatasetOutput) DatasetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTestingDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Dataset.
-func (o GetModelTestingDatasetOutput) DatasetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTestingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
+func (o GetModelTestingDatasetOutput) DatasetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTestingDataset) *string { return v.DatasetType }).(pulumi.StringPtrOutput)
 }
 
 // The namespace name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelTestingDatasetOutput) NamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTestingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
+func (o GetModelTestingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTestingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the input data file.
-func (o GetModelTestingDatasetOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTestingDataset) string { return v.Object }).(pulumi.StringOutput)
+func (o GetModelTestingDatasetOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTestingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetModelTestingDatasetArrayOutput struct{ *pulumi.OutputState }
@@ -906,12 +815,6 @@ func (o GetModelTestingDatasetArrayOutput) ToGetModelTestingDatasetArrayOutputWi
 	return o
 }
 
-func (o GetModelTestingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTestingDataset] {
-	return pulumix.Output[[]GetModelTestingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetModelTestingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelTestingDatasetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelTestingDataset {
 		return vs[0].([]GetModelTestingDataset)[vs[1].(int)]
@@ -920,15 +823,15 @@ func (o GetModelTestingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelTest
 
 type GetModelTrainingDataset struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId string `pulumi:"datasetId"`
+	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType string `pulumi:"datasetType"`
+	DatasetType *string `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
-	NamespaceName string `pulumi:"namespaceName"`
+	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetModelTrainingDatasetInput is an input type that accepts GetModelTrainingDatasetArgs and GetModelTrainingDatasetOutput values.
@@ -944,15 +847,15 @@ type GetModelTrainingDatasetInput interface {
 
 type GetModelTrainingDatasetArgs struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId pulumi.StringInput `pulumi:"datasetId"`
+	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	DatasetType pulumi.StringPtrInput `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
-	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetModelTrainingDatasetArgs) ElementType() reflect.Type {
@@ -965,12 +868,6 @@ func (i GetModelTrainingDatasetArgs) ToGetModelTrainingDatasetOutput() GetModelT
 
 func (i GetModelTrainingDatasetArgs) ToGetModelTrainingDatasetOutputWithContext(ctx context.Context) GetModelTrainingDatasetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTrainingDatasetOutput)
-}
-
-func (i GetModelTrainingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelTrainingDataset] {
-	return pulumix.Output[GetModelTrainingDataset]{
-		OutputState: i.ToGetModelTrainingDatasetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetModelTrainingDatasetArrayInput is an input type that accepts GetModelTrainingDatasetArray and GetModelTrainingDatasetArrayOutput values.
@@ -998,12 +895,6 @@ func (i GetModelTrainingDatasetArray) ToGetModelTrainingDatasetArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTrainingDatasetArrayOutput)
 }
 
-func (i GetModelTrainingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTrainingDataset] {
-	return pulumix.Output[[]GetModelTrainingDataset]{
-		OutputState: i.ToGetModelTrainingDatasetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelTrainingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelTrainingDatasetOutput) ElementType() reflect.Type {
@@ -1018,35 +909,29 @@ func (o GetModelTrainingDatasetOutput) ToGetModelTrainingDatasetOutputWithContex
 	return o
 }
 
-func (o GetModelTrainingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelTrainingDataset] {
-	return pulumix.Output[GetModelTrainingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelTrainingDatasetOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetModelTrainingDatasetOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTrainingDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Science Labeling Dataset.
-func (o GetModelTrainingDatasetOutput) DatasetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.DatasetId }).(pulumi.StringOutput)
+func (o GetModelTrainingDatasetOutput) DatasetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTrainingDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Dataset.
-func (o GetModelTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
+func (o GetModelTrainingDatasetOutput) DatasetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTrainingDataset) *string { return v.DatasetType }).(pulumi.StringPtrOutput)
 }
 
 // The namespace name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelTrainingDatasetOutput) NamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
+func (o GetModelTrainingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTrainingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the input data file.
-func (o GetModelTrainingDatasetOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.Object }).(pulumi.StringOutput)
+func (o GetModelTrainingDatasetOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTrainingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetModelTrainingDatasetArrayOutput struct{ *pulumi.OutputState }
@@ -1063,12 +948,6 @@ func (o GetModelTrainingDatasetArrayOutput) ToGetModelTrainingDatasetArrayOutput
 	return o
 }
 
-func (o GetModelTrainingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTrainingDataset] {
-	return pulumix.Output[[]GetModelTrainingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetModelTrainingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelTrainingDatasetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelTrainingDataset {
 		return vs[0].([]GetModelTrainingDataset)[vs[1].(int)]
@@ -1077,15 +956,15 @@ func (o GetModelTrainingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelTra
 
 type GetModelValidationDataset struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId string `pulumi:"datasetId"`
+	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType string `pulumi:"datasetType"`
+	DatasetType *string `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
-	NamespaceName string `pulumi:"namespaceName"`
+	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetModelValidationDatasetInput is an input type that accepts GetModelValidationDatasetArgs and GetModelValidationDatasetOutput values.
@@ -1101,15 +980,15 @@ type GetModelValidationDatasetInput interface {
 
 type GetModelValidationDatasetArgs struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId pulumi.StringInput `pulumi:"datasetId"`
+	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	DatasetType pulumi.StringPtrInput `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
-	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetModelValidationDatasetArgs) ElementType() reflect.Type {
@@ -1122,12 +1001,6 @@ func (i GetModelValidationDatasetArgs) ToGetModelValidationDatasetOutput() GetMo
 
 func (i GetModelValidationDatasetArgs) ToGetModelValidationDatasetOutputWithContext(ctx context.Context) GetModelValidationDatasetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelValidationDatasetOutput)
-}
-
-func (i GetModelValidationDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelValidationDataset] {
-	return pulumix.Output[GetModelValidationDataset]{
-		OutputState: i.ToGetModelValidationDatasetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetModelValidationDatasetArrayInput is an input type that accepts GetModelValidationDatasetArray and GetModelValidationDatasetArrayOutput values.
@@ -1155,12 +1028,6 @@ func (i GetModelValidationDatasetArray) ToGetModelValidationDatasetArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelValidationDatasetArrayOutput)
 }
 
-func (i GetModelValidationDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelValidationDataset] {
-	return pulumix.Output[[]GetModelValidationDataset]{
-		OutputState: i.ToGetModelValidationDatasetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelValidationDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelValidationDatasetOutput) ElementType() reflect.Type {
@@ -1175,35 +1042,29 @@ func (o GetModelValidationDatasetOutput) ToGetModelValidationDatasetOutputWithCo
 	return o
 }
 
-func (o GetModelValidationDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelValidationDataset] {
-	return pulumix.Output[GetModelValidationDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelValidationDatasetOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelValidationDataset) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetModelValidationDatasetOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelValidationDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Science Labeling Dataset.
-func (o GetModelValidationDatasetOutput) DatasetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelValidationDataset) string { return v.DatasetId }).(pulumi.StringOutput)
+func (o GetModelValidationDatasetOutput) DatasetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelValidationDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Dataset.
-func (o GetModelValidationDatasetOutput) DatasetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelValidationDataset) string { return v.DatasetType }).(pulumi.StringOutput)
+func (o GetModelValidationDatasetOutput) DatasetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelValidationDataset) *string { return v.DatasetType }).(pulumi.StringPtrOutput)
 }
 
 // The namespace name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelValidationDatasetOutput) NamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelValidationDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
+func (o GetModelValidationDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelValidationDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the input data file.
-func (o GetModelValidationDatasetOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelValidationDataset) string { return v.Object }).(pulumi.StringOutput)
+func (o GetModelValidationDatasetOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelValidationDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetModelValidationDatasetArrayOutput struct{ *pulumi.OutputState }
@@ -1218,12 +1079,6 @@ func (o GetModelValidationDatasetArrayOutput) ToGetModelValidationDatasetArrayOu
 
 func (o GetModelValidationDatasetArrayOutput) ToGetModelValidationDatasetArrayOutputWithContext(ctx context.Context) GetModelValidationDatasetArrayOutput {
 	return o
-}
-
-func (o GetModelValidationDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelValidationDataset] {
-	return pulumix.Output[[]GetModelValidationDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetModelValidationDatasetArrayOutput) Index(i pulumi.IntInput) GetModelValidationDatasetOutput {
@@ -1267,12 +1122,6 @@ func (i GetModelsFilterArgs) ToGetModelsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsFilterOutput)
 }
 
-func (i GetModelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsFilter] {
-	return pulumix.Output[GetModelsFilter]{
-		OutputState: i.ToGetModelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetModelsFilterArrayInput is an input type that accepts GetModelsFilterArray and GetModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetModelsFilterArrayInput` via:
 //
@@ -1298,12 +1147,6 @@ func (i GetModelsFilterArray) ToGetModelsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsFilterArrayOutput)
 }
 
-func (i GetModelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsFilter] {
-	return pulumix.Output[[]GetModelsFilter]{
-		OutputState: i.ToGetModelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetModelsFilterOutput) ElementType() reflect.Type {
@@ -1316,12 +1159,6 @@ func (o GetModelsFilterOutput) ToGetModelsFilterOutput() GetModelsFilterOutput {
 
 func (o GetModelsFilterOutput) ToGetModelsFilterOutputWithContext(ctx context.Context) GetModelsFilterOutput {
 	return o
-}
-
-func (o GetModelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsFilter] {
-	return pulumix.Output[GetModelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetModelsFilterOutput) Name() pulumi.StringOutput {
@@ -1348,12 +1185,6 @@ func (o GetModelsFilterArrayOutput) ToGetModelsFilterArrayOutput() GetModelsFilt
 
 func (o GetModelsFilterArrayOutput) ToGetModelsFilterArrayOutputWithContext(ctx context.Context) GetModelsFilterArrayOutput {
 	return o
-}
-
-func (o GetModelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsFilter] {
-	return pulumix.Output[[]GetModelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetModelsFilterArrayOutput) Index(i pulumi.IntInput) GetModelsFilterOutput {
@@ -1393,12 +1224,6 @@ func (i GetModelsModelCollectionArgs) ToGetModelsModelCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionOutput)
 }
 
-func (i GetModelsModelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollection] {
-	return pulumix.Output[GetModelsModelCollection]{
-		OutputState: i.ToGetModelsModelCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetModelsModelCollectionArrayInput is an input type that accepts GetModelsModelCollectionArray and GetModelsModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionArrayInput` via:
 //
@@ -1424,12 +1249,6 @@ func (i GetModelsModelCollectionArray) ToGetModelsModelCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionArrayOutput)
 }
 
-func (i GetModelsModelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollection] {
-	return pulumix.Output[[]GetModelsModelCollection]{
-		OutputState: i.ToGetModelsModelCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelsModelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionOutput) ElementType() reflect.Type {
@@ -1442,12 +1261,6 @@ func (o GetModelsModelCollectionOutput) ToGetModelsModelCollectionOutput() GetMo
 
 func (o GetModelsModelCollectionOutput) ToGetModelsModelCollectionOutputWithContext(ctx context.Context) GetModelsModelCollectionOutput {
 	return o
-}
-
-func (o GetModelsModelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollection] {
-	return pulumix.Output[GetModelsModelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetModelsModelCollectionOutput) Items() GetModelsModelCollectionItemArrayOutput {
@@ -1468,12 +1281,6 @@ func (o GetModelsModelCollectionArrayOutput) ToGetModelsModelCollectionArrayOutp
 	return o
 }
 
-func (o GetModelsModelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollection] {
-	return pulumix.Output[[]GetModelsModelCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollection {
 		return vs[0].([]GetModelsModelCollection)[vs[1].(int)]
@@ -1482,55 +1289,55 @@ func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsM
 
 type GetModelsModelCollectionItem struct {
 	// Average precision of the trained model
-	AveragePrecision float64 `pulumi:"averagePrecision"`
+	AveragePrecision *float64 `pulumi:"averagePrecision"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Confidence ratio of the calculation
-	ConfidenceThreshold float64 `pulumi:"confidenceThreshold"`
+	ConfidenceThreshold *float64 `pulumi:"confidenceThreshold"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the model.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique Model identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If It's true, Training is set for recommended epochs needed for quick training.
-	IsQuickMode bool `pulumi:"isQuickMode"`
+	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The maximum duration in hours for which the training will run.
-	MaxTrainingDurationInHours float64 `pulumi:"maxTrainingDurationInHours"`
+	MaxTrainingDurationInHours *float64 `pulumi:"maxTrainingDurationInHours"`
 	// Complete Training Metrics for successful trained model
-	Metrics string `pulumi:"metrics"`
+	Metrics *string `pulumi:"metrics"`
 	// Type of the Model.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The version of the model
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Precision of the trained model
-	Precision float64 `pulumi:"precision"`
+	Precision *float64 `pulumi:"precision"`
 	// The ID of the project for which to list the objects.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// Recall of the trained model
-	Recall float64 `pulumi:"recall"`
+	Recall *float64 `pulumi:"recall"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Total number of testing Images
-	TestImageCount int `pulumi:"testImageCount"`
+	TestImageCount *int `pulumi:"testImageCount"`
 	// The base entity for a Dataset, which is the input for Model creation.
 	TestingDatasets []GetModelsModelCollectionItemTestingDataset `pulumi:"testingDatasets"`
 	// The time the Model was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Model was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Total number of training Images
-	TotalImageCount int `pulumi:"totalImageCount"`
+	TotalImageCount *int `pulumi:"totalImageCount"`
 	// Total hours actually used for training
-	TrainedDurationInHours float64 `pulumi:"trainedDurationInHours"`
+	TrainedDurationInHours *float64 `pulumi:"trainedDurationInHours"`
 	// The base entity for a Dataset, which is the input for Model creation.
 	TrainingDatasets []GetModelsModelCollectionItemTrainingDataset `pulumi:"trainingDatasets"`
 	// The base entity for a Dataset, which is the input for Model creation.
@@ -1550,55 +1357,55 @@ type GetModelsModelCollectionItemInput interface {
 
 type GetModelsModelCollectionItemArgs struct {
 	// Average precision of the trained model
-	AveragePrecision pulumi.Float64Input `pulumi:"averagePrecision"`
+	AveragePrecision pulumi.Float64PtrInput `pulumi:"averagePrecision"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Confidence ratio of the calculation
-	ConfidenceThreshold pulumi.Float64Input `pulumi:"confidenceThreshold"`
+	ConfidenceThreshold pulumi.Float64PtrInput `pulumi:"confidenceThreshold"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A short description of the model.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique Model identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// If It's true, Training is set for recommended epochs needed for quick training.
-	IsQuickMode pulumi.BoolInput `pulumi:"isQuickMode"`
+	IsQuickMode pulumi.BoolPtrInput `pulumi:"isQuickMode"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The maximum duration in hours for which the training will run.
-	MaxTrainingDurationInHours pulumi.Float64Input `pulumi:"maxTrainingDurationInHours"`
+	MaxTrainingDurationInHours pulumi.Float64PtrInput `pulumi:"maxTrainingDurationInHours"`
 	// Complete Training Metrics for successful trained model
-	Metrics pulumi.StringInput `pulumi:"metrics"`
+	Metrics pulumi.StringPtrInput `pulumi:"metrics"`
 	// Type of the Model.
-	ModelType pulumi.StringInput `pulumi:"modelType"`
+	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// The version of the model
-	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// Precision of the trained model
-	Precision pulumi.Float64Input `pulumi:"precision"`
+	Precision pulumi.Float64PtrInput `pulumi:"precision"`
 	// The ID of the project for which to list the objects.
-	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
 	// Recall of the trained model
-	Recall pulumi.Float64Input `pulumi:"recall"`
+	Recall pulumi.Float64PtrInput `pulumi:"recall"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// Total number of testing Images
-	TestImageCount pulumi.IntInput `pulumi:"testImageCount"`
+	TestImageCount pulumi.IntPtrInput `pulumi:"testImageCount"`
 	// The base entity for a Dataset, which is the input for Model creation.
 	TestingDatasets GetModelsModelCollectionItemTestingDatasetArrayInput `pulumi:"testingDatasets"`
 	// The time the Model was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Model was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Total number of training Images
-	TotalImageCount pulumi.IntInput `pulumi:"totalImageCount"`
+	TotalImageCount pulumi.IntPtrInput `pulumi:"totalImageCount"`
 	// Total hours actually used for training
-	TrainedDurationInHours pulumi.Float64Input `pulumi:"trainedDurationInHours"`
+	TrainedDurationInHours pulumi.Float64PtrInput `pulumi:"trainedDurationInHours"`
 	// The base entity for a Dataset, which is the input for Model creation.
 	TrainingDatasets GetModelsModelCollectionItemTrainingDatasetArrayInput `pulumi:"trainingDatasets"`
 	// The base entity for a Dataset, which is the input for Model creation.
@@ -1615,12 +1422,6 @@ func (i GetModelsModelCollectionItemArgs) ToGetModelsModelCollectionItemOutput()
 
 func (i GetModelsModelCollectionItemArgs) ToGetModelsModelCollectionItemOutputWithContext(ctx context.Context) GetModelsModelCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemOutput)
-}
-
-func (i GetModelsModelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItem] {
-	return pulumix.Output[GetModelsModelCollectionItem]{
-		OutputState: i.ToGetModelsModelCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetModelsModelCollectionItemArrayInput is an input type that accepts GetModelsModelCollectionItemArray and GetModelsModelCollectionItemArrayOutput values.
@@ -1648,12 +1449,6 @@ func (i GetModelsModelCollectionItemArray) ToGetModelsModelCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemArrayOutput)
 }
 
-func (i GetModelsModelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItem] {
-	return pulumix.Output[[]GetModelsModelCollectionItem]{
-		OutputState: i.ToGetModelsModelCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelsModelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemOutput) ElementType() reflect.Type {
@@ -1668,25 +1463,19 @@ func (o GetModelsModelCollectionItemOutput) ToGetModelsModelCollectionItemOutput
 	return o
 }
 
-func (o GetModelsModelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItem] {
-	return pulumix.Output[GetModelsModelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Average precision of the trained model
-func (o GetModelsModelCollectionItemOutput) AveragePrecision() pulumi.Float64Output {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.AveragePrecision }).(pulumi.Float64Output)
+func (o GetModelsModelCollectionItemOutput) AveragePrecision() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *float64 { return v.AveragePrecision }).(pulumi.Float64PtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetModelsModelCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Confidence ratio of the calculation
-func (o GetModelsModelCollectionItemOutput) ConfidenceThreshold() pulumi.Float64Output {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.ConfidenceThreshold }).(pulumi.Float64Output)
+func (o GetModelsModelCollectionItemOutput) ConfidenceThreshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *float64 { return v.ConfidenceThreshold }).(pulumi.Float64PtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1695,13 +1484,13 @@ func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the model.
-func (o GetModelsModelCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetModelsModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1710,58 +1499,58 @@ func (o GetModelsModelCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // unique Model identifier
-func (o GetModelsModelCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If It's true, Training is set for recommended epochs needed for quick training.
-func (o GetModelsModelCollectionItemOutput) IsQuickMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) bool { return v.IsQuickMode }).(pulumi.BoolOutput)
+func (o GetModelsModelCollectionItemOutput) IsQuickMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *bool { return v.IsQuickMode }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetModelsModelCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in hours for which the training will run.
-func (o GetModelsModelCollectionItemOutput) MaxTrainingDurationInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.MaxTrainingDurationInHours }).(pulumi.Float64Output)
+func (o GetModelsModelCollectionItemOutput) MaxTrainingDurationInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *float64 { return v.MaxTrainingDurationInHours }).(pulumi.Float64PtrOutput)
 }
 
 // Complete Training Metrics for successful trained model
-func (o GetModelsModelCollectionItemOutput) Metrics() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Metrics }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) Metrics() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.Metrics }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Model.
-func (o GetModelsModelCollectionItemOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The version of the model
-func (o GetModelsModelCollectionItemOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Precision of the trained model
-func (o GetModelsModelCollectionItemOutput) Precision() pulumi.Float64Output {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.Precision }).(pulumi.Float64Output)
+func (o GetModelsModelCollectionItemOutput) Precision() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *float64 { return v.Precision }).(pulumi.Float64PtrOutput)
 }
 
 // The ID of the project for which to list the objects.
-func (o GetModelsModelCollectionItemOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // Recall of the trained model
-func (o GetModelsModelCollectionItemOutput) Recall() pulumi.Float64Output {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.Recall }).(pulumi.Float64Output)
+func (o GetModelsModelCollectionItemOutput) Recall() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *float64 { return v.Recall }).(pulumi.Float64PtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetModelsModelCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1770,8 +1559,8 @@ func (o GetModelsModelCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Total number of testing Images
-func (o GetModelsModelCollectionItemOutput) TestImageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) int { return v.TestImageCount }).(pulumi.IntOutput)
+func (o GetModelsModelCollectionItemOutput) TestImageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *int { return v.TestImageCount }).(pulumi.IntPtrOutput)
 }
 
 // The base entity for a Dataset, which is the input for Model creation.
@@ -1782,23 +1571,23 @@ func (o GetModelsModelCollectionItemOutput) TestingDatasets() GetModelsModelColl
 }
 
 // The time the Model was created. An RFC3339 formatted datetime string
-func (o GetModelsModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Model was updated. An RFC3339 formatted datetime string
-func (o GetModelsModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Total number of training Images
-func (o GetModelsModelCollectionItemOutput) TotalImageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) int { return v.TotalImageCount }).(pulumi.IntOutput)
+func (o GetModelsModelCollectionItemOutput) TotalImageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *int { return v.TotalImageCount }).(pulumi.IntPtrOutput)
 }
 
 // Total hours actually used for training
-func (o GetModelsModelCollectionItemOutput) TrainedDurationInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.TrainedDurationInHours }).(pulumi.Float64Output)
+func (o GetModelsModelCollectionItemOutput) TrainedDurationInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) *float64 { return v.TrainedDurationInHours }).(pulumi.Float64PtrOutput)
 }
 
 // The base entity for a Dataset, which is the input for Model creation.
@@ -1829,12 +1618,6 @@ func (o GetModelsModelCollectionItemArrayOutput) ToGetModelsModelCollectionItemA
 	return o
 }
 
-func (o GetModelsModelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItem] {
-	return pulumix.Output[[]GetModelsModelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItem {
 		return vs[0].([]GetModelsModelCollectionItem)[vs[1].(int)]
@@ -1843,14 +1626,14 @@ func (o GetModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMod
 
 type GetModelsModelCollectionItemTestingDataset struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId string `pulumi:"datasetId"`
+	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string `pulumi:"datasetType"`
-	NamespaceName string `pulumi:"namespaceName"`
+	DatasetType   *string `pulumi:"datasetType"`
+	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetModelsModelCollectionItemTestingDatasetInput is an input type that accepts GetModelsModelCollectionItemTestingDatasetArgs and GetModelsModelCollectionItemTestingDatasetOutput values.
@@ -1866,14 +1649,14 @@ type GetModelsModelCollectionItemTestingDatasetInput interface {
 
 type GetModelsModelCollectionItemTestingDatasetArgs struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId pulumi.StringInput `pulumi:"datasetId"`
+	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
-	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	DatasetType   pulumi.StringPtrInput `pulumi:"datasetType"`
+	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetModelsModelCollectionItemTestingDatasetArgs) ElementType() reflect.Type {
@@ -1886,12 +1669,6 @@ func (i GetModelsModelCollectionItemTestingDatasetArgs) ToGetModelsModelCollecti
 
 func (i GetModelsModelCollectionItemTestingDatasetArgs) ToGetModelsModelCollectionItemTestingDatasetOutputWithContext(ctx context.Context) GetModelsModelCollectionItemTestingDatasetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTestingDatasetOutput)
-}
-
-func (i GetModelsModelCollectionItemTestingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTestingDataset] {
-	return pulumix.Output[GetModelsModelCollectionItemTestingDataset]{
-		OutputState: i.ToGetModelsModelCollectionItemTestingDatasetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetModelsModelCollectionItemTestingDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemTestingDatasetArray and GetModelsModelCollectionItemTestingDatasetArrayOutput values.
@@ -1919,12 +1696,6 @@ func (i GetModelsModelCollectionItemTestingDatasetArray) ToGetModelsModelCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTestingDatasetArrayOutput)
 }
 
-func (i GetModelsModelCollectionItemTestingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTestingDataset] {
-	return pulumix.Output[[]GetModelsModelCollectionItemTestingDataset]{
-		OutputState: i.ToGetModelsModelCollectionItemTestingDatasetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelsModelCollectionItemTestingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemTestingDatasetOutput) ElementType() reflect.Type {
@@ -1939,34 +1710,28 @@ func (o GetModelsModelCollectionItemTestingDatasetOutput) ToGetModelsModelCollec
 	return o
 }
 
-func (o GetModelsModelCollectionItemTestingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTestingDataset] {
-	return pulumix.Output[GetModelsModelCollectionItemTestingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelsModelCollectionItemTestingDatasetOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTestingDatasetOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Science Labeling Dataset.
-func (o GetModelsModelCollectionItemTestingDatasetOutput) DatasetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.DatasetId }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTestingDatasetOutput) DatasetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Dataset.
-func (o GetModelsModelCollectionItemTestingDatasetOutput) DatasetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTestingDatasetOutput) DatasetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) *string { return v.DatasetType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetModelsModelCollectionItemTestingDatasetOutput) NamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTestingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the input data file.
-func (o GetModelsModelCollectionItemTestingDatasetOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.Object }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTestingDatasetOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetModelsModelCollectionItemTestingDatasetArrayOutput struct{ *pulumi.OutputState }
@@ -1983,12 +1748,6 @@ func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) ToGetModelsModelC
 	return o
 }
 
-func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTestingDataset] {
-	return pulumix.Output[[]GetModelsModelCollectionItemTestingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemTestingDatasetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItemTestingDataset {
 		return vs[0].([]GetModelsModelCollectionItemTestingDataset)[vs[1].(int)]
@@ -1997,14 +1756,14 @@ func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) Index(i pulumi.In
 
 type GetModelsModelCollectionItemTrainingDataset struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId string `pulumi:"datasetId"`
+	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string `pulumi:"datasetType"`
-	NamespaceName string `pulumi:"namespaceName"`
+	DatasetType   *string `pulumi:"datasetType"`
+	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetModelsModelCollectionItemTrainingDatasetInput is an input type that accepts GetModelsModelCollectionItemTrainingDatasetArgs and GetModelsModelCollectionItemTrainingDatasetOutput values.
@@ -2020,14 +1779,14 @@ type GetModelsModelCollectionItemTrainingDatasetInput interface {
 
 type GetModelsModelCollectionItemTrainingDatasetArgs struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId pulumi.StringInput `pulumi:"datasetId"`
+	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
-	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	DatasetType   pulumi.StringPtrInput `pulumi:"datasetType"`
+	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetModelsModelCollectionItemTrainingDatasetArgs) ElementType() reflect.Type {
@@ -2040,12 +1799,6 @@ func (i GetModelsModelCollectionItemTrainingDatasetArgs) ToGetModelsModelCollect
 
 func (i GetModelsModelCollectionItemTrainingDatasetArgs) ToGetModelsModelCollectionItemTrainingDatasetOutputWithContext(ctx context.Context) GetModelsModelCollectionItemTrainingDatasetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTrainingDatasetOutput)
-}
-
-func (i GetModelsModelCollectionItemTrainingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTrainingDataset] {
-	return pulumix.Output[GetModelsModelCollectionItemTrainingDataset]{
-		OutputState: i.ToGetModelsModelCollectionItemTrainingDatasetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetModelsModelCollectionItemTrainingDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemTrainingDatasetArray and GetModelsModelCollectionItemTrainingDatasetArrayOutput values.
@@ -2073,12 +1826,6 @@ func (i GetModelsModelCollectionItemTrainingDatasetArray) ToGetModelsModelCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTrainingDatasetArrayOutput)
 }
 
-func (i GetModelsModelCollectionItemTrainingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset] {
-	return pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset]{
-		OutputState: i.ToGetModelsModelCollectionItemTrainingDatasetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelsModelCollectionItemTrainingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemTrainingDatasetOutput) ElementType() reflect.Type {
@@ -2093,34 +1840,28 @@ func (o GetModelsModelCollectionItemTrainingDatasetOutput) ToGetModelsModelColle
 	return o
 }
 
-func (o GetModelsModelCollectionItemTrainingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTrainingDataset] {
-	return pulumix.Output[GetModelsModelCollectionItemTrainingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelsModelCollectionItemTrainingDatasetOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTrainingDatasetOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Science Labeling Dataset.
-func (o GetModelsModelCollectionItemTrainingDatasetOutput) DatasetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.DatasetId }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTrainingDatasetOutput) DatasetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Dataset.
-func (o GetModelsModelCollectionItemTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTrainingDatasetOutput) DatasetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) *string { return v.DatasetType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetModelsModelCollectionItemTrainingDatasetOutput) NamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTrainingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the input data file.
-func (o GetModelsModelCollectionItemTrainingDatasetOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.Object }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemTrainingDatasetOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetModelsModelCollectionItemTrainingDatasetArrayOutput struct{ *pulumi.OutputState }
@@ -2137,12 +1878,6 @@ func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) ToGetModelsModel
 	return o
 }
 
-func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset] {
-	return pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemTrainingDatasetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItemTrainingDataset {
 		return vs[0].([]GetModelsModelCollectionItemTrainingDataset)[vs[1].(int)]
@@ -2151,14 +1886,14 @@ func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) Index(i pulumi.I
 
 type GetModelsModelCollectionItemValidationDataset struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId string `pulumi:"datasetId"`
+	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string `pulumi:"datasetType"`
-	NamespaceName string `pulumi:"namespaceName"`
+	DatasetType   *string `pulumi:"datasetType"`
+	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetModelsModelCollectionItemValidationDatasetInput is an input type that accepts GetModelsModelCollectionItemValidationDatasetArgs and GetModelsModelCollectionItemValidationDatasetOutput values.
@@ -2174,14 +1909,14 @@ type GetModelsModelCollectionItemValidationDatasetInput interface {
 
 type GetModelsModelCollectionItemValidationDatasetArgs struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The OCID of the Data Science Labeling Dataset.
-	DatasetId pulumi.StringInput `pulumi:"datasetId"`
+	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
-	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	DatasetType   pulumi.StringPtrInput `pulumi:"datasetType"`
+	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetModelsModelCollectionItemValidationDatasetArgs) ElementType() reflect.Type {
@@ -2194,12 +1929,6 @@ func (i GetModelsModelCollectionItemValidationDatasetArgs) ToGetModelsModelColle
 
 func (i GetModelsModelCollectionItemValidationDatasetArgs) ToGetModelsModelCollectionItemValidationDatasetOutputWithContext(ctx context.Context) GetModelsModelCollectionItemValidationDatasetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemValidationDatasetOutput)
-}
-
-func (i GetModelsModelCollectionItemValidationDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemValidationDataset] {
-	return pulumix.Output[GetModelsModelCollectionItemValidationDataset]{
-		OutputState: i.ToGetModelsModelCollectionItemValidationDatasetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetModelsModelCollectionItemValidationDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemValidationDatasetArray and GetModelsModelCollectionItemValidationDatasetArrayOutput values.
@@ -2227,12 +1956,6 @@ func (i GetModelsModelCollectionItemValidationDatasetArray) ToGetModelsModelColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemValidationDatasetArrayOutput)
 }
 
-func (i GetModelsModelCollectionItemValidationDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemValidationDataset] {
-	return pulumix.Output[[]GetModelsModelCollectionItemValidationDataset]{
-		OutputState: i.ToGetModelsModelCollectionItemValidationDatasetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetModelsModelCollectionItemValidationDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemValidationDatasetOutput) ElementType() reflect.Type {
@@ -2247,34 +1970,28 @@ func (o GetModelsModelCollectionItemValidationDatasetOutput) ToGetModelsModelCol
 	return o
 }
 
-func (o GetModelsModelCollectionItemValidationDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemValidationDataset] {
-	return pulumix.Output[GetModelsModelCollectionItemValidationDataset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the ObjectStorage bucket that contains the input data file.
-func (o GetModelsModelCollectionItemValidationDatasetOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemValidationDatasetOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Science Labeling Dataset.
-func (o GetModelsModelCollectionItemValidationDatasetOutput) DatasetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.DatasetId }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemValidationDatasetOutput) DatasetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Dataset.
-func (o GetModelsModelCollectionItemValidationDatasetOutput) DatasetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.DatasetType }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemValidationDatasetOutput) DatasetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) *string { return v.DatasetType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetModelsModelCollectionItemValidationDatasetOutput) NamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemValidationDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the input data file.
-func (o GetModelsModelCollectionItemValidationDatasetOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.Object }).(pulumi.StringOutput)
+func (o GetModelsModelCollectionItemValidationDatasetOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetModelsModelCollectionItemValidationDatasetArrayOutput struct{ *pulumi.OutputState }
@@ -2289,12 +2006,6 @@ func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) ToGetModelsMod
 
 func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) ToGetModelsModelCollectionItemValidationDatasetArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemValidationDatasetArrayOutput {
 	return o
-}
-
-func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemValidationDataset] {
-	return pulumix.Output[[]GetModelsModelCollectionItemValidationDataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemValidationDatasetOutput {
@@ -2338,12 +2049,6 @@ func (i GetProjectsFilterArgs) ToGetProjectsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsFilterOutput)
 }
 
-func (i GetProjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProjectsFilter] {
-	return pulumix.Output[GetProjectsFilter]{
-		OutputState: i.ToGetProjectsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProjectsFilterArrayInput is an input type that accepts GetProjectsFilterArray and GetProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProjectsFilterArrayInput` via:
 //
@@ -2369,12 +2074,6 @@ func (i GetProjectsFilterArray) ToGetProjectsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsFilterArrayOutput)
 }
 
-func (i GetProjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsFilter] {
-	return pulumix.Output[[]GetProjectsFilter]{
-		OutputState: i.ToGetProjectsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProjectsFilterOutput) ElementType() reflect.Type {
@@ -2387,12 +2086,6 @@ func (o GetProjectsFilterOutput) ToGetProjectsFilterOutput() GetProjectsFilterOu
 
 func (o GetProjectsFilterOutput) ToGetProjectsFilterOutputWithContext(ctx context.Context) GetProjectsFilterOutput {
 	return o
-}
-
-func (o GetProjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsFilter] {
-	return pulumix.Output[GetProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProjectsFilterOutput) Name() pulumi.StringOutput {
@@ -2419,12 +2112,6 @@ func (o GetProjectsFilterArrayOutput) ToGetProjectsFilterArrayOutput() GetProjec
 
 func (o GetProjectsFilterArrayOutput) ToGetProjectsFilterArrayOutputWithContext(ctx context.Context) GetProjectsFilterArrayOutput {
 	return o
-}
-
-func (o GetProjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsFilter] {
-	return pulumix.Output[[]GetProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProjectsFilterArrayOutput) Index(i pulumi.IntInput) GetProjectsFilterOutput {
@@ -2464,12 +2151,6 @@ func (i GetProjectsProjectCollectionArgs) ToGetProjectsProjectCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionOutput)
 }
 
-func (i GetProjectsProjectCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollection] {
-	return pulumix.Output[GetProjectsProjectCollection]{
-		OutputState: i.ToGetProjectsProjectCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProjectsProjectCollectionArrayInput is an input type that accepts GetProjectsProjectCollectionArray and GetProjectsProjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionArrayInput` via:
 //
@@ -2495,12 +2176,6 @@ func (i GetProjectsProjectCollectionArray) ToGetProjectsProjectCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionArrayOutput)
 }
 
-func (i GetProjectsProjectCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollection] {
-	return pulumix.Output[[]GetProjectsProjectCollection]{
-		OutputState: i.ToGetProjectsProjectCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProjectsProjectCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProjectsProjectCollectionOutput) ElementType() reflect.Type {
@@ -2513,12 +2188,6 @@ func (o GetProjectsProjectCollectionOutput) ToGetProjectsProjectCollectionOutput
 
 func (o GetProjectsProjectCollectionOutput) ToGetProjectsProjectCollectionOutputWithContext(ctx context.Context) GetProjectsProjectCollectionOutput {
 	return o
-}
-
-func (o GetProjectsProjectCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollection] {
-	return pulumix.Output[GetProjectsProjectCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProjectsProjectCollectionOutput) Items() GetProjectsProjectCollectionItemArrayOutput {
@@ -2539,12 +2208,6 @@ func (o GetProjectsProjectCollectionArrayOutput) ToGetProjectsProjectCollectionA
 	return o
 }
 
-func (o GetProjectsProjectCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollection] {
-	return pulumix.Output[[]GetProjectsProjectCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProjectsProjectCollectionArrayOutput) Index(i pulumi.IntInput) GetProjectsProjectCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsProjectCollection {
 		return vs[0].([]GetProjectsProjectCollection)[vs[1].(int)]
@@ -2553,27 +2216,27 @@ func (o GetProjectsProjectCollectionArrayOutput) Index(i pulumi.IntInput) GetPro
 
 type GetProjectsProjectCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the project.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique Project identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the Project was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Project was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetProjectsProjectCollectionItemInput is an input type that accepts GetProjectsProjectCollectionItemArgs and GetProjectsProjectCollectionItemOutput values.
@@ -2589,27 +2252,27 @@ type GetProjectsProjectCollectionItemInput interface {
 
 type GetProjectsProjectCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A short description of the project.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique Project identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the Project was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Project was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetProjectsProjectCollectionItemArgs) ElementType() reflect.Type {
@@ -2622,12 +2285,6 @@ func (i GetProjectsProjectCollectionItemArgs) ToGetProjectsProjectCollectionItem
 
 func (i GetProjectsProjectCollectionItemArgs) ToGetProjectsProjectCollectionItemOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionItemOutput)
-}
-
-func (i GetProjectsProjectCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollectionItem] {
-	return pulumix.Output[GetProjectsProjectCollectionItem]{
-		OutputState: i.ToGetProjectsProjectCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProjectsProjectCollectionItemArrayInput is an input type that accepts GetProjectsProjectCollectionItemArray and GetProjectsProjectCollectionItemArrayOutput values.
@@ -2655,12 +2312,6 @@ func (i GetProjectsProjectCollectionItemArray) ToGetProjectsProjectCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionItemArrayOutput)
 }
 
-func (i GetProjectsProjectCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollectionItem] {
-	return pulumix.Output[[]GetProjectsProjectCollectionItem]{
-		OutputState: i.ToGetProjectsProjectCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProjectsProjectCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProjectsProjectCollectionItemOutput) ElementType() reflect.Type {
@@ -2675,15 +2326,9 @@ func (o GetProjectsProjectCollectionItemOutput) ToGetProjectsProjectCollectionIt
 	return o
 }
 
-func (o GetProjectsProjectCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollectionItem] {
-	return pulumix.Output[GetProjectsProjectCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetProjectsProjectCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2692,13 +2337,13 @@ func (o GetProjectsProjectCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the project.
-func (o GetProjectsProjectCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetProjectsProjectCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2707,18 +2352,18 @@ func (o GetProjectsProjectCollectionItemOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // unique Project identifier
-func (o GetProjectsProjectCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetProjectsProjectCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetProjectsProjectCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2727,13 +2372,13 @@ func (o GetProjectsProjectCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the Project was created. An RFC3339 formatted datetime string
-func (o GetProjectsProjectCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Project was updated. An RFC3339 formatted datetime string
-func (o GetProjectsProjectCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetProjectsProjectCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetProjectsProjectCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2748,12 +2393,6 @@ func (o GetProjectsProjectCollectionItemArrayOutput) ToGetProjectsProjectCollect
 
 func (o GetProjectsProjectCollectionItemArrayOutput) ToGetProjectsProjectCollectionItemArrayOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetProjectsProjectCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollectionItem] {
-	return pulumix.Output[[]GetProjectsProjectCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProjectsProjectCollectionItemOutput {

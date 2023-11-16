@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.GetAgentImagesAgentImageCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAgentImagesAgentImageCollection {
@@ -14,7 +15,7 @@ public final class GetAgentImagesAgentImageCollection {
      * @return Items in collection.
      * 
      */
-    private List<GetAgentImagesAgentImageCollectionItem> items;
+    private @Nullable List<GetAgentImagesAgentImageCollectionItem> items;
 
     private GetAgentImagesAgentImageCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAgentImagesAgentImageCollection {
      * 
      */
     public List<GetAgentImagesAgentImageCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAgentImagesAgentImageCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAgentImagesAgentImageCollectionItem> items;
+        private @Nullable List<GetAgentImagesAgentImageCollectionItem> items;
         public Builder() {}
         public Builder(GetAgentImagesAgentImageCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAgentImagesAgentImageCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAgentImagesAgentImageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAgentImagesAgentImageCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAgentImagesAgentImageCollectionItem... items) {

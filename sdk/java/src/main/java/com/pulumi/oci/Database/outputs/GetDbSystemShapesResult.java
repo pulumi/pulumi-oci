@@ -20,13 +20,13 @@ public final class GetDbSystemShapesResult {
      * @return The list of db_system_shapes.
      * 
      */
-    private List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
+    private @Nullable List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
     private @Nullable List<GetDbSystemShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDbSystemShapesResult() {}
     public Optional<String> availabilityDomain() {
@@ -40,7 +40,7 @@ public final class GetDbSystemShapesResult {
      * 
      */
     public List<GetDbSystemShapesDbSystemShape> dbSystemShapes() {
-        return this.dbSystemShapes;
+        return this.dbSystemShapes == null ? List.of() : this.dbSystemShapes;
     }
     public List<GetDbSystemShapesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -49,8 +49,8 @@ public final class GetDbSystemShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -64,9 +64,9 @@ public final class GetDbSystemShapesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
+        private @Nullable List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
         private @Nullable List<GetDbSystemShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDbSystemShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,8 +88,8 @@ public final class GetDbSystemShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemShapes(List<GetDbSystemShapesDbSystemShape> dbSystemShapes) {
-            this.dbSystemShapes = Objects.requireNonNull(dbSystemShapes);
+        public Builder dbSystemShapes(@Nullable List<GetDbSystemShapesDbSystemShape> dbSystemShapes) {
+            this.dbSystemShapes = dbSystemShapes;
             return this;
         }
         public Builder dbSystemShapes(GetDbSystemShapesDbSystemShape... dbSystemShapes) {
@@ -104,8 +104,8 @@ public final class GetDbSystemShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDbSystemShapesResult build() {

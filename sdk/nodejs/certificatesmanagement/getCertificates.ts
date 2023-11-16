@@ -75,7 +75,7 @@ export interface GetCertificatesResult {
     /**
      * The list of certificate_collection.
      */
-    readonly certificateCollections: outputs.CertificatesManagement.GetCertificatesCertificateCollection[];
+    readonly certificateCollections?: outputs.CertificatesManagement.GetCertificatesCertificateCollection[];
     /**
      * The OCID of the certificate.
      */
@@ -88,7 +88,7 @@ export interface GetCertificatesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the certificate authority (CA) that issued the certificate.
      */

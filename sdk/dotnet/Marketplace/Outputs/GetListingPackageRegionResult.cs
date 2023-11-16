@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// A code assigned to the item.
         /// </summary>
-        public readonly string Code;
+        public readonly string? Code;
         /// <summary>
         /// Countries in the region.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The name of the variable.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetListingPackageRegionResult(
-            string code,
+            string? code,
 
             ImmutableArray<Outputs.GetListingPackageRegionCountryResult> countries,
 
-            string name)
+            string? name)
         {
             Code = code;
             Countries = countries;

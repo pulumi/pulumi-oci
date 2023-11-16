@@ -16,95 +16,95 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
         /// </summary>
-        public readonly string DeviceProtectionPolicy;
+        public readonly string? DeviceProtectionPolicy;
         /// <summary>
         /// The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
         /// </summary>
-        public readonly int InitialLockoutPeriodInSecs;
+        public readonly int? InitialLockoutPeriodInSecs;
         /// <summary>
         /// The size of the key that the system uses to generate the public-private key pair
         /// </summary>
-        public readonly int KeyPairLength;
+        public readonly int? KeyPairLength;
         /// <summary>
         /// The pattern of escalation that the system follows, in locking a particular user out of the service.
         /// </summary>
-        public readonly string LockoutEscalationPattern;
+        public readonly string? LockoutEscalationPattern;
         /// <summary>
         /// The maximum number of times that a particular user can fail to login before the system locks that user out of the service
         /// </summary>
-        public readonly int MaxFailuresBeforeLockout;
+        public readonly int? MaxFailuresBeforeLockout;
         /// <summary>
         /// The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
         /// </summary>
-        public readonly int MaxFailuresBeforeWarning;
+        public readonly int? MaxFailuresBeforeWarning;
         /// <summary>
         /// The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
         /// </summary>
-        public readonly int MaxLockoutIntervalInSecs;
+        public readonly int? MaxLockoutIntervalInSecs;
         /// <summary>
         /// Minimum length of the Personal Identification Number (PIN)
         /// </summary>
-        public readonly int MinPinLength;
+        public readonly int? MinPinLength;
         /// <summary>
         /// The period of time in days after which a client should refresh its policy by re-reading that policy from the server
         /// </summary>
-        public readonly int PolicyUpdateFreqInDays;
+        public readonly int? PolicyUpdateFreqInDays;
         /// <summary>
         /// Indicates which algorithm the system will use to sign requests
         /// </summary>
-        public readonly string RequestSigningAlgo;
+        public readonly string? RequestSigningAlgo;
         /// <summary>
         /// Indicates the type of encoding that the system should use to generate a shared secret
         /// </summary>
-        public readonly string SharedSecretEncoding;
+        public readonly string? SharedSecretEncoding;
         /// <summary>
         /// If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
         /// </summary>
-        public readonly bool UnlockAppForEachRequestEnabled;
+        public readonly bool? UnlockAppForEachRequestEnabled;
         /// <summary>
         /// Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
         /// </summary>
-        public readonly int UnlockAppIntervalInSecs;
+        public readonly int? UnlockAppIntervalInSecs;
         /// <summary>
         /// If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
         /// </summary>
-        public readonly bool UnlockOnAppForegroundEnabled;
+        public readonly bool? UnlockOnAppForegroundEnabled;
         /// <summary>
         /// If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
         /// </summary>
-        public readonly bool UnlockOnAppStartEnabled;
+        public readonly bool? UnlockOnAppStartEnabled;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingClientAppSettingResult(
-            string deviceProtectionPolicy,
+            string? deviceProtectionPolicy,
 
-            int initialLockoutPeriodInSecs,
+            int? initialLockoutPeriodInSecs,
 
-            int keyPairLength,
+            int? keyPairLength,
 
-            string lockoutEscalationPattern,
+            string? lockoutEscalationPattern,
 
-            int maxFailuresBeforeLockout,
+            int? maxFailuresBeforeLockout,
 
-            int maxFailuresBeforeWarning,
+            int? maxFailuresBeforeWarning,
 
-            int maxLockoutIntervalInSecs,
+            int? maxLockoutIntervalInSecs,
 
-            int minPinLength,
+            int? minPinLength,
 
-            int policyUpdateFreqInDays,
+            int? policyUpdateFreqInDays,
 
-            string requestSigningAlgo,
+            string? requestSigningAlgo,
 
-            string sharedSecretEncoding,
+            string? sharedSecretEncoding,
 
-            bool unlockAppForEachRequestEnabled,
+            bool? unlockAppForEachRequestEnabled,
 
-            int unlockAppIntervalInSecs,
+            int? unlockAppIntervalInSecs,
 
-            bool unlockOnAppForegroundEnabled,
+            bool? unlockOnAppForegroundEnabled,
 
-            bool unlockOnAppStartEnabled)
+            bool? unlockOnAppStartEnabled)
         {
             DeviceProtectionPolicy = deviceProtectionPolicy;
             InitialLockoutPeriodInSecs = initialLockoutPeriodInSecs;

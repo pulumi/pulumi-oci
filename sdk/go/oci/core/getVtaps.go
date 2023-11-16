@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
@@ -89,7 +88,7 @@ type GetVtapsResult struct {
 	DisplayName *string          `pulumi:"displayName"`
 	Filters     []GetVtapsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Used to start or stop a `Vtap` resource.
 	IsVtapEnabled *bool   `pulumi:"isVtapEnabled"`
 	Source        *string `pulumi:"source"`
@@ -160,12 +159,6 @@ func (o GetVtapsResultOutput) ToGetVtapsResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetVtapsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVtapsResult] {
-	return pulumix.Output[GetVtapsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
 func (o GetVtapsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVtapsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -181,8 +174,8 @@ func (o GetVtapsResultOutput) Filters() GetVtapsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVtapsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVtapsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVtapsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVtapsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Used to start or stop a `Vtap` resource.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Firewall Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -117,7 +116,7 @@ type GetSqlFirewallPoliciesResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetSqlFirewallPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the security policy corresponding to the SQL firewall policy.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 	// The list of sql_firewall_policy_collection.
@@ -194,12 +193,6 @@ func (o GetSqlFirewallPoliciesResultOutput) ToGetSqlFirewallPoliciesResultOutput
 	return o
 }
 
-func (o GetSqlFirewallPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPoliciesResult] {
-	return pulumix.Output[GetSqlFirewallPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlFirewallPoliciesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlFirewallPoliciesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -228,8 +221,8 @@ func (o GetSqlFirewallPoliciesResultOutput) Filters() GetSqlFirewallPoliciesFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSqlFirewallPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlFirewallPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlFirewallPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the security policy corresponding to the SQL firewall policy.

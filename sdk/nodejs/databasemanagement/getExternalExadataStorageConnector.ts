@@ -47,62 +47,62 @@ export interface GetExternalExadataStorageConnectorResult {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
      */
-    readonly agentId: string;
+    readonly agentId?: string;
     /**
      * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
      */
-    readonly connectionUri: string;
-    readonly connectorName: string;
-    readonly credentialInfos: outputs.DatabaseManagement.GetExternalExadataStorageConnectorCredentialInfo[];
+    readonly connectionUri?: string;
+    readonly connectorName?: string;
+    readonly credentialInfos?: outputs.DatabaseManagement.GetExternalExadataStorageConnectorCredentialInfo[];
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    readonly exadataInfrastructureId: string;
+    readonly exadataInfrastructureId?: string;
     readonly externalExadataStorageConnectorId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The internal ID of the Exadata resource.
      */
-    readonly internalId: string;
+    readonly internalId?: string;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current lifecycle state of the database resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The status of the Exadata resource.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      */
-    readonly storageServerId: string;
+    readonly storageServerId?: string;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The version of the Exadata resource.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.

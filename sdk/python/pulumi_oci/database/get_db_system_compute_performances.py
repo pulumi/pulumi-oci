@@ -39,10 +39,7 @@ class GetDbSystemComputePerformancesResult:
 
     @property
     @pulumi.getter(name="dbSystemComputePerformances")
-    def db_system_compute_performances(self) -> Sequence['outputs.GetDbSystemComputePerformancesDbSystemComputePerformanceResult']:
-        """
-        The list of db_system_compute_performances.
-        """
+    def db_system_compute_performances(self) -> Optional[Sequence['outputs.GetDbSystemComputePerformancesDbSystemComputePerformanceResult']]:
         return pulumi.get(self, "db_system_compute_performances")
 
     @property
@@ -57,7 +54,7 @@ class GetDbSystemComputePerformancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_db_system_compute_performances(db_system_shape: Optional[str] = None,
                                        filters: Optional[Sequence[pulumi.InputType['GetDbSystemComputePerformancesFilterArgs']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemComputePerformancesResult:
     """
-    This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=var["db_system_compute_performance_db_system_shape"])
-    ```
-
-
-    :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemShape'] = db_system_shape
@@ -114,20 +97,6 @@ def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.I
                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemComputePerformancesFilterArgs']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemComputePerformancesResult]:
     """
-    This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=var["db_system_compute_performance_db_system_shape"])
-    ```
-
-
-    :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
+    Use this data source to access information about an existing resource.
     """
     ...

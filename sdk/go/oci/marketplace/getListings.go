@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listings in Oracle Cloud Infrastructure Marketplace service.
@@ -108,7 +107,7 @@ type GetListingsResult struct {
 	CompartmentId *string             `pulumi:"compartmentId"`
 	Filters       []GetListingsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string  `pulumi:"id"`
+	Id      *string `pulumi:"id"`
 	ImageId *string `pulumi:"imageId"`
 	// Indicates whether the listing is included in Featured Listings.
 	IsFeatured   *bool    `pulumi:"isFeatured"`
@@ -184,12 +183,6 @@ func (o GetListingsResultOutput) ToGetListingsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetListingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsResult] {
-	return pulumix.Output[GetListingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListingsResultOutput) Categories() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetListingsResult) []string { return v.Categories }).(pulumi.StringArrayOutput)
 }
@@ -203,8 +196,8 @@ func (o GetListingsResultOutput) Filters() GetListingsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetListingsResultOutput) ImageId() pulumi.StringPtrOutput {

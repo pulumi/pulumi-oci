@@ -91,19 +91,19 @@ namespace Pulumi.Oci.VisualBuilder
         /// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         /// </summary>
         [Output("consumptionModel")]
-        public Output<string> ConsumptionModel { get; private set; } = null!;
+        public Output<string?> ConsumptionModel { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details for a custom endpoint for the vb instance (update).
         /// </summary>
         [Output("customEndpoint")]
-        public Output<Outputs.VbInstanceCustomEndpoint> CustomEndpoint { get; private set; } = null!;
+        public Output<Outputs.VbInstanceCustomEndpoint?> CustomEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Vb Instance Identifier.
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Information for IDCS access
@@ -133,25 +133,25 @@ namespace Pulumi.Oci.VisualBuilder
         /// The Vb Instance URL.
         /// </summary>
         [Output("instanceUrl")]
-        public Output<string> InstanceUrl { get; private set; } = null!;
+        public Output<string?> InstanceUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Visual Builder is enabled or not.
         /// </summary>
         [Output("isVisualBuilderEnabled")]
-        public Output<bool> IsVisualBuilderEnabled { get; private set; } = null!;
+        public Output<bool?> IsVisualBuilderEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The NAT gateway IP address for the VB management VCN
         /// </summary>
         [Output("managementNatGatewayIp")]
-        public Output<string> ManagementNatGatewayIp { get; private set; } = null!;
+        public Output<string?> ManagementNatGatewayIp { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         /// </summary>
         [Output("managementVcnId")]
-        public Output<string> ManagementVcnId { get; private set; } = null!;
+        public Output<string?> ManagementVcnId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of Nodes
@@ -167,43 +167,43 @@ namespace Pulumi.Oci.VisualBuilder
         /// The NAT gateway IP address for the VB service VCN
         /// </summary>
         [Output("serviceNatGatewayIp")]
-        public Output<string> ServiceNatGatewayIp { get; private set; } = null!;
+        public Output<string?> ServiceNatGatewayIp { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
         /// </summary>
         [Output("serviceVcnId")]
-        public Output<string> ServiceVcnId { get; private set; } = null!;
+        public Output<string?> ServiceVcnId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the vb instance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("stateMessage")]
-        public Output<string> StateMessage { get; private set; } = null!;
+        public Output<string?> StateMessage { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the VbInstance was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the VbInstance was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

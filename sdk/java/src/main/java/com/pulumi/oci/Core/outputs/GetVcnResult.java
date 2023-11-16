@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVcnResult {
@@ -18,90 +20,90 @@ public final class GetVcnResult {
      * @return The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      * 
      */
-    private List<String> byoipv6cidrBlocks;
-    private List<GetVcnByoipv6cidrDetail> byoipv6cidrDetails;
+    private @Nullable List<String> byoipv6cidrBlocks;
+    private @Nullable List<GetVcnByoipv6cidrDetail> byoipv6cidrDetails;
     /**
      * @return Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
      * 
      */
-    private String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return The list of IPv4 CIDR blocks the VCN will use.
      * 
      */
-    private List<String> cidrBlocks;
+    private @Nullable List<String> cidrBlocks;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default set of DHCP options.
      * 
      */
-    private String defaultDhcpOptionsId;
+    private @Nullable String defaultDhcpOptionsId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default route table.
      * 
      */
-    private String defaultRouteTableId;
+    private @Nullable String defaultRouteTableId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default security list.
      * 
      */
-    private String defaultSecurityListId;
+    private @Nullable String defaultSecurityListId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * 
      */
-    private String dnsLabel;
+    private @Nullable String dnsLabel;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The VCN&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
-    private List<String> ipv6cidrBlocks;
+    private @Nullable List<String> ipv6cidrBlocks;
     /**
      * @return For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN&#39;s IP address space.
      * 
      */
-    private List<String> ipv6privateCidrBlocks;
-    private Boolean isIpv6enabled;
-    private Boolean isOracleGuaAllocationEnabled;
+    private @Nullable List<String> ipv6privateCidrBlocks;
+    private @Nullable Boolean isIpv6enabled;
+    private @Nullable Boolean isOracleGuaAllocationEnabled;
     /**
      * @return The VCN&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The VCN&#39;s domain name, which consists of the VCN&#39;s DNS label, and the `oraclevcn.com` domain.
      * 
      */
-    private String vcnDomainName;
+    private @Nullable String vcnDomainName;
     private String vcnId;
 
     private GetVcnResult() {}
@@ -110,128 +112,128 @@ public final class GetVcnResult {
      * 
      */
     public List<String> byoipv6cidrBlocks() {
-        return this.byoipv6cidrBlocks;
+        return this.byoipv6cidrBlocks == null ? List.of() : this.byoipv6cidrBlocks;
     }
     public List<GetVcnByoipv6cidrDetail> byoipv6cidrDetails() {
-        return this.byoipv6cidrDetails;
+        return this.byoipv6cidrDetails == null ? List.of() : this.byoipv6cidrDetails;
     }
     /**
      * @return Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
      * 
      */
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
     /**
      * @return The list of IPv4 CIDR blocks the VCN will use.
      * 
      */
     public List<String> cidrBlocks() {
-        return this.cidrBlocks;
+        return this.cidrBlocks == null ? List.of() : this.cidrBlocks;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default set of DHCP options.
      * 
      */
-    public String defaultDhcpOptionsId() {
-        return this.defaultDhcpOptionsId;
+    public Optional<String> defaultDhcpOptionsId() {
+        return Optional.ofNullable(this.defaultDhcpOptionsId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default route table.
      * 
      */
-    public String defaultRouteTableId() {
-        return this.defaultRouteTableId;
+    public Optional<String> defaultRouteTableId() {
+        return Optional.ofNullable(this.defaultRouteTableId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default security list.
      * 
      */
-    public String defaultSecurityListId() {
-        return this.defaultSecurityListId;
+    public Optional<String> defaultSecurityListId() {
+        return Optional.ofNullable(this.defaultSecurityListId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * 
      */
-    public String dnsLabel() {
-        return this.dnsLabel;
+    public Optional<String> dnsLabel() {
+        return Optional.ofNullable(this.dnsLabel);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The VCN&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
     public List<String> ipv6cidrBlocks() {
-        return this.ipv6cidrBlocks;
+        return this.ipv6cidrBlocks == null ? List.of() : this.ipv6cidrBlocks;
     }
     /**
      * @return For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN&#39;s IP address space.
      * 
      */
     public List<String> ipv6privateCidrBlocks() {
-        return this.ipv6privateCidrBlocks;
+        return this.ipv6privateCidrBlocks == null ? List.of() : this.ipv6privateCidrBlocks;
     }
-    public Boolean isIpv6enabled() {
-        return this.isIpv6enabled;
+    public Optional<Boolean> isIpv6enabled() {
+        return Optional.ofNullable(this.isIpv6enabled);
     }
-    public Boolean isOracleGuaAllocationEnabled() {
-        return this.isOracleGuaAllocationEnabled;
+    public Optional<Boolean> isOracleGuaAllocationEnabled() {
+        return Optional.ofNullable(this.isOracleGuaAllocationEnabled);
     }
     /**
      * @return The VCN&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The VCN&#39;s domain name, which consists of the VCN&#39;s DNS label, and the `oraclevcn.com` domain.
      * 
      */
-    public String vcnDomainName() {
-        return this.vcnDomainName;
+    public Optional<String> vcnDomainName() {
+        return Optional.ofNullable(this.vcnDomainName);
     }
     public String vcnId() {
         return this.vcnId;
@@ -246,26 +248,26 @@ public final class GetVcnResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> byoipv6cidrBlocks;
-        private List<GetVcnByoipv6cidrDetail> byoipv6cidrDetails;
-        private String cidrBlock;
-        private List<String> cidrBlocks;
-        private String compartmentId;
-        private String defaultDhcpOptionsId;
-        private String defaultRouteTableId;
-        private String defaultSecurityListId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String dnsLabel;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<String> ipv6cidrBlocks;
-        private List<String> ipv6privateCidrBlocks;
-        private Boolean isIpv6enabled;
-        private Boolean isOracleGuaAllocationEnabled;
-        private String state;
-        private String timeCreated;
-        private String vcnDomainName;
+        private @Nullable List<String> byoipv6cidrBlocks;
+        private @Nullable List<GetVcnByoipv6cidrDetail> byoipv6cidrDetails;
+        private @Nullable String cidrBlock;
+        private @Nullable List<String> cidrBlocks;
+        private @Nullable String compartmentId;
+        private @Nullable String defaultDhcpOptionsId;
+        private @Nullable String defaultRouteTableId;
+        private @Nullable String defaultSecurityListId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String dnsLabel;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<String> ipv6cidrBlocks;
+        private @Nullable List<String> ipv6privateCidrBlocks;
+        private @Nullable Boolean isIpv6enabled;
+        private @Nullable Boolean isOracleGuaAllocationEnabled;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String vcnDomainName;
         private String vcnId;
         public Builder() {}
         public Builder(GetVcnResult defaults) {
@@ -294,118 +296,118 @@ public final class GetVcnResult {
         }
 
         @CustomType.Setter
-        public Builder byoipv6cidrBlocks(List<String> byoipv6cidrBlocks) {
-            this.byoipv6cidrBlocks = Objects.requireNonNull(byoipv6cidrBlocks);
+        public Builder byoipv6cidrBlocks(@Nullable List<String> byoipv6cidrBlocks) {
+            this.byoipv6cidrBlocks = byoipv6cidrBlocks;
             return this;
         }
         public Builder byoipv6cidrBlocks(String... byoipv6cidrBlocks) {
             return byoipv6cidrBlocks(List.of(byoipv6cidrBlocks));
         }
         @CustomType.Setter
-        public Builder byoipv6cidrDetails(List<GetVcnByoipv6cidrDetail> byoipv6cidrDetails) {
-            this.byoipv6cidrDetails = Objects.requireNonNull(byoipv6cidrDetails);
+        public Builder byoipv6cidrDetails(@Nullable List<GetVcnByoipv6cidrDetail> byoipv6cidrDetails) {
+            this.byoipv6cidrDetails = byoipv6cidrDetails;
             return this;
         }
         public Builder byoipv6cidrDetails(GetVcnByoipv6cidrDetail... byoipv6cidrDetails) {
             return byoipv6cidrDetails(List.of(byoipv6cidrDetails));
         }
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder cidrBlocks(List<String> cidrBlocks) {
-            this.cidrBlocks = Objects.requireNonNull(cidrBlocks);
+        public Builder cidrBlocks(@Nullable List<String> cidrBlocks) {
+            this.cidrBlocks = cidrBlocks;
             return this;
         }
         public Builder cidrBlocks(String... cidrBlocks) {
             return cidrBlocks(List.of(cidrBlocks));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultDhcpOptionsId(String defaultDhcpOptionsId) {
-            this.defaultDhcpOptionsId = Objects.requireNonNull(defaultDhcpOptionsId);
+        public Builder defaultDhcpOptionsId(@Nullable String defaultDhcpOptionsId) {
+            this.defaultDhcpOptionsId = defaultDhcpOptionsId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultRouteTableId(String defaultRouteTableId) {
-            this.defaultRouteTableId = Objects.requireNonNull(defaultRouteTableId);
+        public Builder defaultRouteTableId(@Nullable String defaultRouteTableId) {
+            this.defaultRouteTableId = defaultRouteTableId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultSecurityListId(String defaultSecurityListId) {
-            this.defaultSecurityListId = Objects.requireNonNull(defaultSecurityListId);
+        public Builder defaultSecurityListId(@Nullable String defaultSecurityListId) {
+            this.defaultSecurityListId = defaultSecurityListId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsLabel(String dnsLabel) {
-            this.dnsLabel = Objects.requireNonNull(dnsLabel);
+        public Builder dnsLabel(@Nullable String dnsLabel) {
+            this.dnsLabel = dnsLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6cidrBlocks(List<String> ipv6cidrBlocks) {
-            this.ipv6cidrBlocks = Objects.requireNonNull(ipv6cidrBlocks);
+        public Builder ipv6cidrBlocks(@Nullable List<String> ipv6cidrBlocks) {
+            this.ipv6cidrBlocks = ipv6cidrBlocks;
             return this;
         }
         public Builder ipv6cidrBlocks(String... ipv6cidrBlocks) {
             return ipv6cidrBlocks(List.of(ipv6cidrBlocks));
         }
         @CustomType.Setter
-        public Builder ipv6privateCidrBlocks(List<String> ipv6privateCidrBlocks) {
-            this.ipv6privateCidrBlocks = Objects.requireNonNull(ipv6privateCidrBlocks);
+        public Builder ipv6privateCidrBlocks(@Nullable List<String> ipv6privateCidrBlocks) {
+            this.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
             return this;
         }
         public Builder ipv6privateCidrBlocks(String... ipv6privateCidrBlocks) {
             return ipv6privateCidrBlocks(List.of(ipv6privateCidrBlocks));
         }
         @CustomType.Setter
-        public Builder isIpv6enabled(Boolean isIpv6enabled) {
-            this.isIpv6enabled = Objects.requireNonNull(isIpv6enabled);
+        public Builder isIpv6enabled(@Nullable Boolean isIpv6enabled) {
+            this.isIpv6enabled = isIpv6enabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
-            this.isOracleGuaAllocationEnabled = Objects.requireNonNull(isOracleGuaAllocationEnabled);
+        public Builder isOracleGuaAllocationEnabled(@Nullable Boolean isOracleGuaAllocationEnabled) {
+            this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnDomainName(String vcnDomainName) {
-            this.vcnDomainName = Objects.requireNonNull(vcnDomainName);
+        public Builder vcnDomainName(@Nullable String vcnDomainName) {
+            this.vcnDomainName = vcnDomainName;
             return this;
         }
         @CustomType.Setter

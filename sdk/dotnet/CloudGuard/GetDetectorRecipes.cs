@@ -239,7 +239,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? ResourceMetadataOnly;
         /// <summary>
         /// The current state of the resource.
@@ -260,7 +260,7 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableArray<Outputs.GetDetectorRecipesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? resourceMetadataOnly,
 

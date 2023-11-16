@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -60,80 +59,80 @@ type LookupDeploymentArgs struct {
 // A collection of values returned by getDeployment.
 type LookupDeploymentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
-	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-	DeploymentBackupId string `pulumi:"deploymentBackupId"`
+	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas []GetDeploymentDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
 	DeploymentId              string                                  `pulumi:"deploymentId"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-	DeploymentType string `pulumi:"deploymentType"`
+	DeploymentType *string `pulumi:"deploymentType"`
 	// The URL of a resource.
-	DeploymentUrl string `pulumi:"deploymentUrl"`
+	DeploymentUrl *string `pulumi:"deploymentUrl"`
 	// Metadata about this specific object.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// An object's Display Name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
-	Fqdn string `pulumi:"fqdn"`
+	Fqdn *string `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
-	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
+	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// True if all of the aggregate resources are working correctly.
-	IsHealthy bool `pulumi:"isHealthy"`
+	IsHealthy *bool `pulumi:"isHealthy"`
 	// Indicates if the resource is the the latest available version.
-	IsLatestVersion bool `pulumi:"isLatestVersion"`
+	IsLatestVersion *bool `pulumi:"isLatestVersion"`
 	// True if this object is publicly available.
-	IsPublic bool `pulumi:"isPublic"`
+	IsPublic *bool `pulumi:"isPublic"`
 	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-	IsStorageUtilizationLimitExceeded bool `pulumi:"isStorageUtilizationLimitExceeded"`
+	IsStorageUtilizationLimitExceeded *bool `pulumi:"isStorageUtilizationLimitExceeded"`
 	// The Oracle license model that applies to a Deployment.
-	LicenseModel string `pulumi:"licenseModel"`
+	LicenseModel *string `pulumi:"licenseModel"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
-	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// Attributes for configuring automatic deployment maintenance.
 	MaintenanceConfigurations []GetDeploymentMaintenanceConfiguration `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
 	MaintenanceWindows []GetDeploymentMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// Type of the next maintenance.
-	NextMaintenanceActionType string `pulumi:"nextMaintenanceActionType"`
+	NextMaintenanceActionType *string `pulumi:"nextMaintenanceActionType"`
 	// Description of the next maintenance.
-	NextMaintenanceDescription string `pulumi:"nextMaintenanceDescription"`
+	NextMaintenanceDescription *string `pulumi:"nextMaintenanceDescription"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
 	OggDatas []GetDeploymentOggData `pulumi:"oggDatas"`
 	// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-	PrivateIpAddress string `pulumi:"privateIpAddress"`
+	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
-	PublicIpAddress string `pulumi:"publicIpAddress"`
+	PublicIpAddress *string `pulumi:"publicIpAddress"`
 	// Possible lifecycle states.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
-	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
+	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
+	TimeOfNextMaintenance *string `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
+	TimeOggVersionSupportedUntil *string `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpgradeRequired string `pulumi:"timeUpgradeRequired"`
+	TimeUpgradeRequired *string `pulumi:"timeUpgradeRequired"`
 }
 
 func LookupDeploymentOutput(ctx *pulumi.Context, args LookupDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentResultOutput {
@@ -174,20 +173,14 @@ func (o LookupDeploymentResultOutput) ToLookupDeploymentResultOutputWithContext(
 	return o
 }
 
-func (o LookupDeploymentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeploymentResult] {
-	return pulumix.Output[LookupDeploymentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-func (o LookupDeploymentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Minimum number of OCPUs to be made available for this Deployment.
-func (o LookupDeploymentResultOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o LookupDeploymentResultOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -196,8 +189,8 @@ func (o LookupDeploymentResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-func (o LookupDeploymentResultOutput) DeploymentBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentBackupId }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) DeploymentBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.DeploymentBackupId }).(pulumi.StringPtrOutput)
 }
 
 // Information regarding the deployment diagnostic collection
@@ -212,28 +205,28 @@ func (o LookupDeploymentResultOutput) DeploymentId() pulumi.StringOutput {
 }
 
 // The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-func (o LookupDeploymentResultOutput) DeploymentType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentType }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
 
 // The URL of a resource.
-func (o LookupDeploymentResultOutput) DeploymentUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentUrl }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) DeploymentUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.DeploymentUrl }).(pulumi.StringPtrOutput)
 }
 
 // Metadata about this specific object.
-func (o LookupDeploymentResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // An object's Display Name.
-func (o LookupDeploymentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A three-label Fully Qualified Domain Name (FQDN) for a resource.
-func (o LookupDeploymentResultOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Fqdn }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -242,48 +235,48 @@ func (o LookupDeploymentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-func (o LookupDeploymentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
-func (o LookupDeploymentResultOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
+func (o LookupDeploymentResultOutput) IsAutoScalingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *bool { return v.IsAutoScalingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // True if all of the aggregate resources are working correctly.
-func (o LookupDeploymentResultOutput) IsHealthy() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsHealthy }).(pulumi.BoolOutput)
+func (o LookupDeploymentResultOutput) IsHealthy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *bool { return v.IsHealthy }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the resource is the the latest available version.
-func (o LookupDeploymentResultOutput) IsLatestVersion() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsLatestVersion }).(pulumi.BoolOutput)
+func (o LookupDeploymentResultOutput) IsLatestVersion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *bool { return v.IsLatestVersion }).(pulumi.BoolPtrOutput)
 }
 
 // True if this object is publicly available.
-func (o LookupDeploymentResultOutput) IsPublic() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsPublic }).(pulumi.BoolOutput)
+func (o LookupDeploymentResultOutput) IsPublic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
 // Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-func (o LookupDeploymentResultOutput) IsStorageUtilizationLimitExceeded() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsStorageUtilizationLimitExceeded }).(pulumi.BoolOutput)
+func (o LookupDeploymentResultOutput) IsStorageUtilizationLimitExceeded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *bool { return v.IsStorageUtilizationLimitExceeded }).(pulumi.BoolPtrOutput)
 }
 
 // The Oracle license model that applies to a Deployment.
-func (o LookupDeploymentResultOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LicenseModel }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o LookupDeploymentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Possible GGS lifecycle sub-states.
-func (o LookupDeploymentResultOutput) LifecycleSubState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) LifecycleSubState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.LifecycleSubState }).(pulumi.StringPtrOutput)
 }
 
 // Attributes for configuring automatic deployment maintenance.
@@ -299,13 +292,13 @@ func (o LookupDeploymentResultOutput) MaintenanceWindows() GetDeploymentMaintena
 }
 
 // Type of the next maintenance.
-func (o LookupDeploymentResultOutput) NextMaintenanceActionType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.NextMaintenanceActionType }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) NextMaintenanceActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.NextMaintenanceActionType }).(pulumi.StringPtrOutput)
 }
 
 // Description of the next maintenance.
-func (o LookupDeploymentResultOutput) NextMaintenanceDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.NextMaintenanceDescription }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) NextMaintenanceDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.NextMaintenanceDescription }).(pulumi.StringPtrOutput)
 }
 
 // An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -319,28 +312,28 @@ func (o LookupDeploymentResultOutput) OggDatas() GetDeploymentOggDataArrayOutput
 }
 
 // The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-func (o LookupDeploymentResultOutput) PrivateIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) PrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.PrivateIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The public IP address representing the access point for the Deployment.
-func (o LookupDeploymentResultOutput) PublicIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.PublicIpAddress }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) PublicIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.PublicIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states.
-func (o LookupDeploymentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The amount of storage being utilized (in bytes)
-func (o LookupDeploymentResultOutput) StorageUtilizationInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.StorageUtilizationInBytes }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) StorageUtilizationInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.StorageUtilizationInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-func (o LookupDeploymentResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -349,28 +342,28 @@ func (o LookupDeploymentResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentResultOutput) TimeOfNextMaintenance() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeOfNextMaintenance }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) TimeOfNextMaintenance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.TimeOfNextMaintenance }).(pulumi.StringPtrOutput)
 }
 
 // The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentResultOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) TimeOggVersionSupportedUntil() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentResultOutput) TimeUpgradeRequired() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeUpgradeRequired }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) TimeUpgradeRequired() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.TimeUpgradeRequired }).(pulumi.StringPtrOutput)
 }
 
 func init() {

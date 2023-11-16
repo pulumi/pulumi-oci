@@ -64,30 +64,17 @@ class GetDatabasePdbConversionHistoryEntryResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The operations used to convert a non-container database to a pluggable database.
-        * Use `PRECHECK` to run a pre-check operation on non-container database prior to converting it into a pluggable database.
-        * Use `CONVERT` to convert a non-container database into a pluggable database.
-        * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
-        * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="additionalCdbParams")
-    def additional_cdb_params(self) -> str:
-        """
-        Additional container database parameter.
-        """
+    def additional_cdb_params(self) -> Optional[str]:
         return pulumi.get(self, "additional_cdb_params")
 
     @property
     @pulumi.getter(name="cdbName")
-    def cdb_name(self) -> str:
-        """
-        The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
-        """
+    def cdb_name(self) -> Optional[str]:
         return pulumi.get(self, "cdb_name")
 
     @property
@@ -97,7 +84,7 @@ class GetDatabasePdbConversionHistoryEntryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,10 +92,7 @@ class GetDatabasePdbConversionHistoryEntryResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state for the conversion operation.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -118,51 +102,32 @@ class GetDatabasePdbConversionHistoryEntryResult:
 
     @property
     @pulumi.getter(name="sourceDatabaseId")
-    def source_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
+    def source_database_id(self) -> Optional[str]:
         return pulumi.get(self, "source_database_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Status of an operation performed during the conversion of a non-container database to a pluggable database.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def target(self) -> str:
-        """
-        The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
-        * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
-        """
+    def target(self) -> Optional[str]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="targetDatabaseId")
-    def target_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
+    def target_database_id(self) -> Optional[str]:
         return pulumi.get(self, "target_database_id")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        The date and time when the database conversion operation ended.
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time when the database conversion operation started.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -191,23 +156,7 @@ def get_database_pdb_conversion_history_entry(database_id: Optional[str] = None,
                                               pdb_conversion_history_entry_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabasePdbConversionHistoryEntryResult:
     """
-    This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_pdb_conversion_history_entry = oci.Database.get_database_pdb_conversion_history_entry(database_id=oci_database_database["test_database"]["id"],
-        pdb_conversion_history_entry_id=oci_database_pdb_conversion_history_entry["test_pdb_conversion_history_entry"]["id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str pdb_conversion_history_entry_id: The database conversion history [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
@@ -236,22 +185,6 @@ def get_database_pdb_conversion_history_entry_output(database_id: Optional[pulum
                                                      pdb_conversion_history_entry_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntryResult]:
     """
-    This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_pdb_conversion_history_entry = oci.Database.get_database_pdb_conversion_history_entry(database_id=oci_database_database["test_database"]["id"],
-        pdb_conversion_history_entry_id=oci_database_pdb_conversion_history_entry["test_pdb_conversion_history_entry"]["id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str pdb_conversion_history_entry_id: The database conversion history [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalClustersExternalClusterCollectionItemNetworkConfiguration {
@@ -14,39 +16,39 @@ public final class GetExternalClustersExternalClusterCollectionItemNetworkConfig
      * @return The network number from which VIPs are obtained.
      * 
      */
-    private Integer networkNumber;
+    private @Nullable Integer networkNumber;
     /**
      * @return The network type.
      * 
      */
-    private String networkType;
+    private @Nullable String networkType;
     /**
      * @return The subnet for the network.
      * 
      */
-    private String subnet;
+    private @Nullable String subnet;
 
     private GetExternalClustersExternalClusterCollectionItemNetworkConfiguration() {}
     /**
      * @return The network number from which VIPs are obtained.
      * 
      */
-    public Integer networkNumber() {
-        return this.networkNumber;
+    public Optional<Integer> networkNumber() {
+        return Optional.ofNullable(this.networkNumber);
     }
     /**
      * @return The network type.
      * 
      */
-    public String networkType() {
-        return this.networkType;
+    public Optional<String> networkType() {
+        return Optional.ofNullable(this.networkType);
     }
     /**
      * @return The subnet for the network.
      * 
      */
-    public String subnet() {
-        return this.subnet;
+    public Optional<String> subnet() {
+        return Optional.ofNullable(this.subnet);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetExternalClustersExternalClusterCollectionItemNetworkConfig
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer networkNumber;
-        private String networkType;
-        private String subnet;
+        private @Nullable Integer networkNumber;
+        private @Nullable String networkType;
+        private @Nullable String subnet;
         public Builder() {}
         public Builder(GetExternalClustersExternalClusterCollectionItemNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetExternalClustersExternalClusterCollectionItemNetworkConfig
         }
 
         @CustomType.Setter
-        public Builder networkNumber(Integer networkNumber) {
-            this.networkNumber = Objects.requireNonNull(networkNumber);
+        public Builder networkNumber(@Nullable Integer networkNumber) {
+            this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+        public Builder networkType(@Nullable String networkType) {
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
-        public Builder subnet(String subnet) {
-            this.subnet = Objects.requireNonNull(subnet);
+        public Builder subnet(@Nullable String subnet) {
+            this.subnet = subnet;
             return this;
         }
         public GetExternalClustersExternalClusterCollectionItemNetworkConfiguration build() {

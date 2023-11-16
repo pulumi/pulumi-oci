@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -74,7 +73,7 @@ type GetCompatibleFormatsForSensitiveTypeResult struct {
 	// An array of library masking formats compatible with the existing sensitive types.
 	FormatsForSensitiveTypes []GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType `pulumi:"formatsForSensitiveTypes"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetCompatibleFormatsForSensitiveTypeOutput(ctx *pulumi.Context, args GetCompatibleFormatsForSensitiveTypeOutputArgs, opts ...pulumi.InvokeOption) GetCompatibleFormatsForSensitiveTypeResultOutput {
@@ -119,12 +118,6 @@ func (o GetCompatibleFormatsForSensitiveTypeResultOutput) ToGetCompatibleFormats
 	return o
 }
 
-func (o GetCompatibleFormatsForSensitiveTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForSensitiveTypeResult] {
-	return pulumix.Output[GetCompatibleFormatsForSensitiveTypeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCompatibleFormatsForSensitiveTypeResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCompatibleFormatsForSensitiveTypeResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -145,8 +138,8 @@ func (o GetCompatibleFormatsForSensitiveTypeResultOutput) FormatsForSensitiveTyp
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCompatibleFormatsForSensitiveTypeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCompatibleFormatsForSensitiveTypeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCompatibleFormatsForSensitiveTypeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCompatibleFormatsForSensitiveTypeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

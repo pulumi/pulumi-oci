@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetApplicationsApplicationImagePolicyCon
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApplicationsApplicationImagePolicyConfig {
@@ -15,27 +17,27 @@ public final class GetApplicationsApplicationImagePolicyConfig {
      * @return Define if image signature verification policy is enabled for the application.
      * 
      */
-    private Boolean isPolicyEnabled;
+    private @Nullable Boolean isPolicyEnabled;
     /**
      * @return A list of KMS key details.
      * 
      */
-    private List<GetApplicationsApplicationImagePolicyConfigKeyDetail> keyDetails;
+    private @Nullable List<GetApplicationsApplicationImagePolicyConfigKeyDetail> keyDetails;
 
     private GetApplicationsApplicationImagePolicyConfig() {}
     /**
      * @return Define if image signature verification policy is enabled for the application.
      * 
      */
-    public Boolean isPolicyEnabled() {
-        return this.isPolicyEnabled;
+    public Optional<Boolean> isPolicyEnabled() {
+        return Optional.ofNullable(this.isPolicyEnabled);
     }
     /**
      * @return A list of KMS key details.
      * 
      */
     public List<GetApplicationsApplicationImagePolicyConfigKeyDetail> keyDetails() {
-        return this.keyDetails;
+        return this.keyDetails == null ? List.of() : this.keyDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetApplicationsApplicationImagePolicyConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isPolicyEnabled;
-        private List<GetApplicationsApplicationImagePolicyConfigKeyDetail> keyDetails;
+        private @Nullable Boolean isPolicyEnabled;
+        private @Nullable List<GetApplicationsApplicationImagePolicyConfigKeyDetail> keyDetails;
         public Builder() {}
         public Builder(GetApplicationsApplicationImagePolicyConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetApplicationsApplicationImagePolicyConfig {
         }
 
         @CustomType.Setter
-        public Builder isPolicyEnabled(Boolean isPolicyEnabled) {
-            this.isPolicyEnabled = Objects.requireNonNull(isPolicyEnabled);
+        public Builder isPolicyEnabled(@Nullable Boolean isPolicyEnabled) {
+            this.isPolicyEnabled = isPolicyEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder keyDetails(List<GetApplicationsApplicationImagePolicyConfigKeyDetail> keyDetails) {
-            this.keyDetails = Objects.requireNonNull(keyDetails);
+        public Builder keyDetails(@Nullable List<GetApplicationsApplicationImagePolicyConfigKeyDetail> keyDetails) {
+            this.keyDetails = keyDetails;
             return this;
         }
         public Builder keyDetails(GetApplicationsApplicationImagePolicyConfigKeyDetail... keyDetails) {

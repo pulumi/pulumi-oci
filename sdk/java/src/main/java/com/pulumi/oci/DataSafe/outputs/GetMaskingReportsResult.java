@@ -27,7 +27,7 @@ public final class GetMaskingReportsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the masking policy used.
      * 
@@ -37,7 +37,7 @@ public final class GetMaskingReportsResult {
      * @return The list of masking_report_collection.
      * 
      */
-    private List<GetMaskingReportsMaskingReportCollection> maskingReportCollections;
+    private @Nullable List<GetMaskingReportsMaskingReportCollection> maskingReportCollections;
     /**
      * @return The OCID of the target database masked.
      * 
@@ -65,8 +65,8 @@ public final class GetMaskingReportsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the masking policy used.
@@ -80,7 +80,7 @@ public final class GetMaskingReportsResult {
      * 
      */
     public List<GetMaskingReportsMaskingReportCollection> maskingReportCollections() {
-        return this.maskingReportCollections;
+        return this.maskingReportCollections == null ? List.of() : this.maskingReportCollections;
     }
     /**
      * @return The OCID of the target database masked.
@@ -103,9 +103,9 @@ public final class GetMaskingReportsResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetMaskingReportsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String maskingPolicyId;
-        private List<GetMaskingReportsMaskingReportCollection> maskingReportCollections;
+        private @Nullable List<GetMaskingReportsMaskingReportCollection> maskingReportCollections;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetMaskingReportsResult defaults) {
@@ -144,8 +144,8 @@ public final class GetMaskingReportsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -154,8 +154,8 @@ public final class GetMaskingReportsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder maskingReportCollections(List<GetMaskingReportsMaskingReportCollection> maskingReportCollections) {
-            this.maskingReportCollections = Objects.requireNonNull(maskingReportCollections);
+        public Builder maskingReportCollections(@Nullable List<GetMaskingReportsMaskingReportCollection> maskingReportCollections) {
+            this.maskingReportCollections = maskingReportCollections;
             return this;
         }
         public Builder maskingReportCollections(GetMaskingReportsMaskingReportCollection... maskingReportCollections) {

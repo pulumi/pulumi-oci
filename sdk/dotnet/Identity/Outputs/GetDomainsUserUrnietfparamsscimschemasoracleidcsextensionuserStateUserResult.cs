@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The last failed login date.
         /// </summary>
-        public readonly string LastFailedLoginDate;
+        public readonly string? LastFailedLoginDate;
         /// <summary>
         /// The last successful login date.
         /// </summary>
-        public readonly string LastSuccessfulLoginDate;
+        public readonly string? LastSuccessfulLoginDate;
         /// <summary>
         /// A complex attribute that indicates an account is locked (blocking any new sessions).
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The number of failed login attempts. The value is reset to 0 after a successful login.
         /// </summary>
-        public readonly int LoginAttempts;
+        public readonly int? LoginAttempts;
         /// <summary>
         /// The maximum number of concurrent sessions for a user.
         /// </summary>
-        public readonly int MaxConcurrentSessions;
+        public readonly int? MaxConcurrentSessions;
         /// <summary>
         /// The previous successful login date.
         /// </summary>
-        public readonly string PreviousSuccessfulLoginDate;
+        public readonly string? PreviousSuccessfulLoginDate;
         /// <summary>
         /// The number of failed recovery attempts. The value is reset to 0 after a successful login.
         /// </summary>
-        public readonly int RecoveryAttempts;
+        public readonly int? RecoveryAttempts;
         /// <summary>
         /// The number of failed account recovery enrollment attempts.
         /// </summary>
-        public readonly int RecoveryEnrollAttempts;
+        public readonly int? RecoveryEnrollAttempts;
         /// <summary>
         /// A complex attribute that indicates a password recovery is locked (blocking any new sessions).
         /// </summary>
@@ -52,21 +52,21 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserResult(
-            string lastFailedLoginDate,
+            string? lastFailedLoginDate,
 
-            string lastSuccessfulLoginDate,
+            string? lastSuccessfulLoginDate,
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedResult> lockeds,
 
-            int loginAttempts,
+            int? loginAttempts,
 
-            int maxConcurrentSessions,
+            int? maxConcurrentSessions,
 
-            string previousSuccessfulLoginDate,
+            string? previousSuccessfulLoginDate,
 
-            int recoveryAttempts,
+            int? recoveryAttempts,
 
-            int recoveryEnrollAttempts,
+            int? recoveryEnrollAttempts,
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedResult> recoveryLockeds)
         {

@@ -48,23 +48,17 @@ class GetRunLogResult:
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        The content of the run log.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        The content type of the run log.
-        """
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -100,23 +94,7 @@ def get_run_log(base64_encode_content: Optional[bool] = None,
                 run_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRunLogResult:
     """
-    This data source provides details about a specific Run Log resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves the content of an run log.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_log = oci.DataFlow.get_run_log(name=var["run_log_name"],
-        run_id=oci_dataflow_run["test_run"]["id"])
-    ```
-
-
-    :param str name: The name of the log. Avoid entering confidential information.
-    :param str run_id: The unique ID for the run
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['base64EncodeContent'] = base64_encode_content
@@ -140,22 +118,6 @@ def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[boo
                        run_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunLogResult]:
     """
-    This data source provides details about a specific Run Log resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves the content of an run log.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_log = oci.DataFlow.get_run_log(name=var["run_log_name"],
-        run_id=oci_dataflow_run["test_run"]["id"])
-    ```
-
-
-    :param str name: The name of the log. Avoid entering confidential information.
-    :param str run_id: The unique ID for the run
+    Use this data source to access information about an existing resource.
     """
     ...

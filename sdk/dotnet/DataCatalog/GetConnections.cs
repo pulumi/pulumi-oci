@@ -328,7 +328,7 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether this connection is the default connection.
         /// </summary>
@@ -374,7 +374,7 @@ namespace Pulumi.Oci.DataCatalog
 
             ImmutableArray<Outputs.GetConnectionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isDefault,
 

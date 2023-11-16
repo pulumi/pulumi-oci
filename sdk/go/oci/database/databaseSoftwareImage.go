@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type DatabaseSoftwareImage struct {
 	// List of one-off patches for Database Homes.
 	DatabaseSoftwareImageOneOffPatches pulumi.StringArrayOutput `pulumi:"databaseSoftwareImageOneOffPatches"`
 	// The database version with which the database software image is to be built.
-	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
+	DatabaseVersion pulumi.StringPtrOutput `pulumi:"databaseVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
@@ -82,28 +81,28 @@ type DatabaseSoftwareImage struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// To what shape the image is meant for.
-	ImageShapeFamily pulumi.StringOutput `pulumi:"imageShapeFamily"`
+	ImageShapeFamily pulumi.StringPtrOutput `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
-	ImageType pulumi.StringOutput `pulumi:"imageType"`
+	ImageType pulumi.StringPtrOutput `pulumi:"imageType"`
 	// The patches included in the image and the version of the image.
-	IncludedPatchesSummary pulumi.StringOutput `pulumi:"includedPatchesSummary"`
+	IncludedPatchesSummary pulumi.StringPtrOutput `pulumi:"includedPatchesSummary"`
 	// True if this Database software image is supported for Upgrade.
-	IsUpgradeSupported pulumi.BoolOutput `pulumi:"isUpgradeSupported"`
+	IsUpgradeSupported pulumi.BoolPtrOutput `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The output from the OPatch lsInventory command, which is passed as a string.
-	LsInventory pulumi.StringOutput `pulumi:"lsInventory"`
+	LsInventory pulumi.StringPtrOutput `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-	PatchSet pulumi.StringOutput `pulumi:"patchSet"`
+	PatchSet pulumi.StringPtrOutput `pulumi:"patchSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SourceDbHomeId pulumi.StringOutput `pulumi:"sourceDbHomeId"`
+	SourceDbHomeId pulumi.StringPtrOutput `pulumi:"sourceDbHomeId"`
 	// The current state of the database software image.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the database software image was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewDatabaseSoftwareImage registers a new resource with the given unique name, arguments, and options.
@@ -305,12 +304,6 @@ func (i *DatabaseSoftwareImage) ToDatabaseSoftwareImageOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSoftwareImageOutput)
 }
 
-func (i *DatabaseSoftwareImage) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSoftwareImage] {
-	return pulumix.Output[*DatabaseSoftwareImage]{
-		OutputState: i.ToDatabaseSoftwareImageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseSoftwareImageArrayInput is an input type that accepts DatabaseSoftwareImageArray and DatabaseSoftwareImageArrayOutput values.
 // You can construct a concrete instance of `DatabaseSoftwareImageArrayInput` via:
 //
@@ -334,12 +327,6 @@ func (i DatabaseSoftwareImageArray) ToDatabaseSoftwareImageArrayOutput() Databas
 
 func (i DatabaseSoftwareImageArray) ToDatabaseSoftwareImageArrayOutputWithContext(ctx context.Context) DatabaseSoftwareImageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSoftwareImageArrayOutput)
-}
-
-func (i DatabaseSoftwareImageArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSoftwareImage] {
-	return pulumix.Output[[]*DatabaseSoftwareImage]{
-		OutputState: i.ToDatabaseSoftwareImageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseSoftwareImageMapInput is an input type that accepts DatabaseSoftwareImageMap and DatabaseSoftwareImageMapOutput values.
@@ -367,12 +354,6 @@ func (i DatabaseSoftwareImageMap) ToDatabaseSoftwareImageMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSoftwareImageMapOutput)
 }
 
-func (i DatabaseSoftwareImageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSoftwareImage] {
-	return pulumix.Output[map[string]*DatabaseSoftwareImage]{
-		OutputState: i.ToDatabaseSoftwareImageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseSoftwareImageOutput struct{ *pulumi.OutputState }
 
 func (DatabaseSoftwareImageOutput) ElementType() reflect.Type {
@@ -385,12 +366,6 @@ func (o DatabaseSoftwareImageOutput) ToDatabaseSoftwareImageOutput() DatabaseSof
 
 func (o DatabaseSoftwareImageOutput) ToDatabaseSoftwareImageOutputWithContext(ctx context.Context) DatabaseSoftwareImageOutput {
 	return o
-}
-
-func (o DatabaseSoftwareImageOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSoftwareImage] {
-	return pulumix.Output[*DatabaseSoftwareImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
@@ -409,8 +384,8 @@ func (o DatabaseSoftwareImageOutput) DatabaseSoftwareImageOneOffPatches() pulumi
 }
 
 // The database version with which the database software image is to be built.
-func (o DatabaseSoftwareImageOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -429,56 +404,56 @@ func (o DatabaseSoftwareImageOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // To what shape the image is meant for.
-func (o DatabaseSoftwareImageOutput) ImageShapeFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.ImageShapeFamily }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) ImageShapeFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.ImageShapeFamily }).(pulumi.StringPtrOutput)
 }
 
 // The type of software image. Can be grid or database.
-func (o DatabaseSoftwareImageOutput) ImageType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.ImageType }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) ImageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.ImageType }).(pulumi.StringPtrOutput)
 }
 
 // The patches included in the image and the version of the image.
-func (o DatabaseSoftwareImageOutput) IncludedPatchesSummary() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.IncludedPatchesSummary }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) IncludedPatchesSummary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.IncludedPatchesSummary }).(pulumi.StringPtrOutput)
 }
 
 // True if this Database software image is supported for Upgrade.
-func (o DatabaseSoftwareImageOutput) IsUpgradeSupported() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.BoolOutput { return v.IsUpgradeSupported }).(pulumi.BoolOutput)
+func (o DatabaseSoftwareImageOutput) IsUpgradeSupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.BoolPtrOutput { return v.IsUpgradeSupported }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed message for the lifecycle state.
-func (o DatabaseSoftwareImageOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The output from the OPatch lsInventory command, which is passed as a string.
-func (o DatabaseSoftwareImageOutput) LsInventory() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.LsInventory }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) LsInventory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.LsInventory }).(pulumi.StringPtrOutput)
 }
 
 // The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-func (o DatabaseSoftwareImageOutput) PatchSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.PatchSet }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) PatchSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.PatchSet }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DatabaseSoftwareImageOutput) SourceDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.SourceDbHomeId }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) SourceDbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.SourceDbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database software image.
-func (o DatabaseSoftwareImageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database software image was created.
-func (o DatabaseSoftwareImageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DatabaseSoftwareImageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type DatabaseSoftwareImageArrayOutput struct{ *pulumi.OutputState }
@@ -493,12 +468,6 @@ func (o DatabaseSoftwareImageArrayOutput) ToDatabaseSoftwareImageArrayOutput() D
 
 func (o DatabaseSoftwareImageArrayOutput) ToDatabaseSoftwareImageArrayOutputWithContext(ctx context.Context) DatabaseSoftwareImageArrayOutput {
 	return o
-}
-
-func (o DatabaseSoftwareImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSoftwareImage] {
-	return pulumix.Output[[]*DatabaseSoftwareImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSoftwareImageArrayOutput) Index(i pulumi.IntInput) DatabaseSoftwareImageOutput {
@@ -519,12 +488,6 @@ func (o DatabaseSoftwareImageMapOutput) ToDatabaseSoftwareImageMapOutput() Datab
 
 func (o DatabaseSoftwareImageMapOutput) ToDatabaseSoftwareImageMapOutputWithContext(ctx context.Context) DatabaseSoftwareImageMapOutput {
 	return o
-}
-
-func (o DatabaseSoftwareImageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSoftwareImage] {
-	return pulumix.Output[map[string]*DatabaseSoftwareImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSoftwareImageMapOutput) MapIndex(k pulumi.StringInput) DatabaseSoftwareImageOutput {

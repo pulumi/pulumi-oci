@@ -64,11 +64,11 @@ export interface GetAwrHubAwrSourcesSummaryResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of AwrSource summary objects.
      */
-    readonly items: outputs.Opsi.GetAwrHubAwrSourcesSummaryItem[];
+    readonly items?: outputs.Opsi.GetAwrHubAwrSourcesSummaryItem[];
     /**
      * Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
      */

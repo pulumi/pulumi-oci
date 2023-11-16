@@ -108,13 +108,13 @@ namespace Pulumi.Oci.Mysql
         /// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         /// </summary>
         [Output("adminPassword")]
-        public Output<string> AdminPassword { get; private set; } = null!;
+        public Output<string?> AdminPassword { get; private set; } = null!;
 
         /// <summary>
         /// The username for the administrative user.
         /// </summary>
         [Output("adminUsername")]
-        public Output<string> AdminUsername { get; private set; } = null!;
+        public Output<string?> AdminUsername { get; private set; } = null!;
 
         /// <summary>
         /// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) Backup policy as optionally used for DB System Creation.
         /// </summary>
         [Output("backupPolicy")]
-        public Output<Outputs.MysqlDbSystemBackupPolicy> BackupPolicy { get; private set; } = null!;
+        public Output<Outputs.MysqlDbSystemBackupPolicy?> BackupPolicy { get; private set; } = null!;
 
         /// <summary>
         /// A list with a summary of all the Channels attached to the DB System.
@@ -148,13 +148,13 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) The OCID of the Configuration to be used for this DB System.
         /// </summary>
         [Output("configurationId")]
-        public Output<string> ConfigurationId { get; private set; } = null!;
+        public Output<string?> ConfigurationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         /// </summary>
         [Output("crashRecovery")]
-        public Output<string> CrashRecovery { get; private set; } = null!;
+        public Output<string?> CrashRecovery { get; private set; } = null!;
 
         /// <summary>
         /// The availability domain and fault domain a DB System is placed in.
@@ -166,19 +166,19 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         /// </summary>
         [Output("dataStorageSizeInGb")]
-        public Output<int> DataStorageSizeInGb { get; private set; } = null!;
+        public Output<int?> DataStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to enable monitoring via the Database Management service.
         /// </summary>
         [Output("databaseManagement")]
-        public Output<string> DatabaseManagement { get; private set; } = null!;
+        public Output<string?> DatabaseManagement { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -190,13 +190,13 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) User-provided data about the DB System.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The network endpoints available for this DB System.
@@ -212,13 +212,13 @@ namespace Pulumi.Oci.Mysql
         /// For a standalone DB System, this defines the fault domain in which the DB System is placed.
         /// </summary>
         [Output("faultDomain")]
-        public Output<string> FaultDomain { get; private set; } = null!;
+        public Output<string?> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A summary of a HeatWave cluster.
@@ -234,19 +234,19 @@ namespace Pulumi.Oci.Mysql
         /// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         /// </summary>
         [Output("hostnameLabel")]
-        public Output<string> HostnameLabel { get; private set; } = null!;
+        public Output<string?> HostnameLabel { get; private set; } = null!;
 
         /// <summary>
         /// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         /// </summary>
         [Output("ipAddress")]
-        public Output<string> IpAddress { get; private set; } = null!;
+        public Output<string?> IpAddress { get; private set; } = null!;
 
         /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
         [Output("isHeatWaveClusterAttached")]
-        public Output<bool> IsHeatWaveClusterAttached { get; private set; } = null!;
+        public Output<bool?> IsHeatWaveClusterAttached { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies if the DB System is highly available.
@@ -254,25 +254,25 @@ namespace Pulumi.Oci.Mysql
         /// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         /// </summary>
         [Output("isHighlyAvailable")]
-        public Output<bool> IsHighlyAvailable { get; private set; } = null!;
+        public Output<bool?> IsHighlyAvailable { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         /// </summary>
         [Output("maintenance")]
-        public Output<Outputs.MysqlDbSystemMaintenance> Maintenance { get; private set; } = null!;
+        public Output<Outputs.MysqlDbSystemMaintenance?> Maintenance { get; private set; } = null!;
 
         /// <summary>
         /// The specific MySQL version identifier.
         /// </summary>
         [Output("mysqlVersion")]
-        public Output<string> MysqlVersion { get; private set; } = null!;
+        public Output<string?> MysqlVersion { get; private set; } = null!;
 
         /// <summary>
         /// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
@@ -284,13 +284,13 @@ namespace Pulumi.Oci.Mysql
         /// The port for primary endpoint of the DB System to listen on.
         /// </summary>
         [Output("port")]
-        public Output<int> Port { get; private set; } = null!;
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
         /// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         /// </summary>
         [Output("portX")]
-        public Output<int> PortX { get; private set; } = null!;
+        public Output<int?> PortX { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -312,13 +312,13 @@ namespace Pulumi.Oci.Mysql
         /// Parameters detailing how to provision the initial data of the system.
         /// </summary>
         [Output("source")]
-        public Output<Outputs.MysqlDbSystemSource> Source { get; private set; } = null!;
+        public Output<Outputs.MysqlDbSystemSource?> Source { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the subnet the DB System is associated with.
@@ -330,13 +330,13 @@ namespace Pulumi.Oci.Mysql
         /// The date and time the DB System was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the DB System was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

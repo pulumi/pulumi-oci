@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Events
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of rules.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Events
 
             ImmutableArray<Outputs.GetRulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRulesRuleResult> rules,
 

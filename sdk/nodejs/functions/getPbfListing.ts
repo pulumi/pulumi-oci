@@ -47,48 +47,48 @@ export interface GetPbfListingResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A short overview of the PBF Listing: the purpose of the PBF and and associated information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A brief descriptive name for the PBF trigger.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly pbfListingId: string;
     /**
      * Contains details about the publisher of this PBF Listing.
      */
-    readonly publisherDetails: outputs.Functions.GetPbfListingPublisherDetail[];
+    readonly publisherDetails?: outputs.Functions.GetPbfListingPublisherDetail[];
     /**
      * The current state of the PBF resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the PbfListing was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The last time the PbfListing was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * An array of Trigger. A list of triggers that may activate the PBF.
      */
-    readonly triggers: outputs.Functions.GetPbfListingTrigger[];
+    readonly triggers?: outputs.Functions.GetPbfListingTrigger[];
 }
 /**
  * This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.

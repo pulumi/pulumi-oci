@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult {
@@ -17,18 +19,18 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The statistics of a SQL execution plan.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
     /**
      * @return The statistics of a SQL execution plan.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
     private String sqlObjectId;
     private String sqlTuningAdvisorTaskId;
 
@@ -40,8 +42,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -51,14 +53,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds() {
-        return this.modifieds;
+        return this.modifieds == null ? List.of() : this.modifieds;
     }
     /**
      * @return The statistics of a SQL execution plan.
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals() {
-        return this.originals;
+        return this.originals == null ? List.of() : this.originals;
     }
     public String sqlObjectId() {
         return this.sqlObjectId;
@@ -77,10 +79,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     @CustomType.Builder
     public static final class Builder {
         private String executionId;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
         public Builder() {}
@@ -101,8 +103,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -111,16 +113,16 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
             return this;
         }
         @CustomType.Setter
-        public Builder modifieds(List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds) {
-            this.modifieds = Objects.requireNonNull(modifieds);
+        public Builder modifieds(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds) {
+            this.modifieds = modifieds;
             return this;
         }
         public Builder modifieds(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified... modifieds) {
             return modifieds(List.of(modifieds));
         }
         @CustomType.Setter
-        public Builder originals(List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals) {
-            this.originals = Objects.requireNonNull(originals);
+        public Builder originals(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals) {
+            this.originals = originals;
             return this;
         }
         public Builder originals(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal... originals) {

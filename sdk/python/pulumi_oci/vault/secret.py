@@ -28,20 +28,6 @@ class SecretArgs:
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None):
         """
         The set of arguments for constructing a Secret resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
-        :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
-        :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        :param pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
@@ -62,9 +48,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment where you want to create the secret.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -74,9 +57,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the master encryption key that is used to encrypt the secret.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -86,9 +66,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="secretContent")
     def secret_content(self) -> pulumi.Input['SecretSecretContentArgs']:
-        """
-        (Updatable) The content of the secret and metadata to help identify it.
-        """
         return pulumi.get(self, "secret_content")
 
     @secret_content.setter
@@ -98,9 +75,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="secretName")
     def secret_name(self) -> pulumi.Input[str]:
-        """
-        A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
         return pulumi.get(self, "secret_name")
 
     @secret_name.setter
@@ -110,13 +84,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the vault where you want to create the secret.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -126,9 +93,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -138,9 +102,6 @@ class SecretArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A brief description of the secret. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -150,9 +111,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -162,9 +120,6 @@ class SecretArgs:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -174,9 +129,6 @@ class SecretArgs:
     @property
     @pulumi.getter(name="secretRules")
     def secret_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
-        """
-        (Updatable) A list of rules to control how the secret is used and managed.
-        """
         return pulumi.get(self, "secret_rules")
 
     @secret_rules.setter
@@ -205,26 +157,6 @@ class _SecretState:
                  vault_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Secret resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
-        :param pulumi.Input[str] current_version_number: The version number of the secret version that's currently in use.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the secret.
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
-        :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
-        :param pulumi.Input[str] state: The current lifecycle state of the secret.
-        :param pulumi.Input[str] time_created: A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_current_version_expiry: An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_deletion: An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -262,9 +194,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment where you want to create the secret.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -274,9 +203,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="currentVersionNumber")
     def current_version_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version number of the secret version that's currently in use.
-        """
         return pulumi.get(self, "current_version_number")
 
     @current_version_number.setter
@@ -286,9 +212,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -298,9 +221,6 @@ class _SecretState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A brief description of the secret. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -310,9 +230,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -322,9 +239,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the master encryption key that is used to encrypt the secret.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -334,9 +248,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state of the secret.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -346,9 +257,6 @@ class _SecretState:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -358,9 +266,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="secretContent")
     def secret_content(self) -> Optional[pulumi.Input['SecretSecretContentArgs']]:
-        """
-        (Updatable) The content of the secret and metadata to help identify it.
-        """
         return pulumi.get(self, "secret_content")
 
     @secret_content.setter
@@ -370,9 +275,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="secretName")
     def secret_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
         return pulumi.get(self, "secret_name")
 
     @secret_name.setter
@@ -382,9 +284,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="secretRules")
     def secret_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
-        """
-        (Updatable) A list of rules to control how the secret is used and managed.
-        """
         return pulumi.get(self, "secret_rules")
 
     @secret_rules.setter
@@ -394,9 +293,6 @@ class _SecretState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the secret.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -406,9 +302,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -418,9 +311,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="timeOfCurrentVersionExpiry")
     def time_of_current_version_expiry(self) -> Optional[pulumi.Input[str]]:
-        """
-        An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_of_current_version_expiry")
 
     @time_of_current_version_expiry.setter
@@ -430,9 +320,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="timeOfDeletion")
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
-        """
-        An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
@@ -442,13 +329,6 @@ class _SecretState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the vault where you want to create the secret.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -473,34 +353,9 @@ class Secret(pulumi.CustomResource):
                  vault_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
-
-        Creates a new secret according to the details of the request.
-
-        ## Import
-
-        Secrets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Vault/secret:Secret test_secret "id"
-        ```
-
+        Create a Secret resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        :param pulumi.Input[pulumi.InputType['SecretSecretContentArgs']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
-        :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
-        :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -509,18 +364,7 @@ class Secret(pulumi.CustomResource):
                  args: SecretArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
-
-        Creates a new secret according to the details of the request.
-
-        ## Import
-
-        Secrets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Vault/secret:Secret test_secret "id"
-        ```
-
+        Create a Secret resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SecretArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -614,26 +458,6 @@ class Secret(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
-        :param pulumi.Input[str] current_version_number: The version number of the secret version that's currently in use.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the secret.
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        :param pulumi.Input[pulumi.InputType['SecretSecretContentArgs']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
-        :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
-        :param pulumi.Input[str] state: The current lifecycle state of the secret.
-        :param pulumi.Input[str] time_created: A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_current_version_expiry: An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_deletion: An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -660,132 +484,80 @@ class Secret(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment where you want to create the secret.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="currentVersionNumber")
-    def current_version_number(self) -> pulumi.Output[str]:
-        """
-        The version number of the secret version that's currently in use.
-        """
+    def current_version_number(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "current_version_number")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A brief description of the secret. Avoid entering confidential information.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the master encryption key that is used to encrypt the secret.
-        """
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state of the secret.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        """
+    def metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter(name="secretContent")
     def secret_content(self) -> pulumi.Output['outputs.SecretSecretContent']:
-        """
-        (Updatable) The content of the secret and metadata to help identify it.
-        """
         return pulumi.get(self, "secret_content")
 
     @property
     @pulumi.getter(name="secretName")
     def secret_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
         return pulumi.get(self, "secret_name")
 
     @property
     @pulumi.getter(name="secretRules")
-    def secret_rules(self) -> pulumi.Output[Sequence['outputs.SecretSecretRule']]:
-        """
-        (Updatable) A list of rules to control how the secret is used and managed.
-        """
+    def secret_rules(self) -> pulumi.Output[Optional[Sequence['outputs.SecretSecretRule']]]:
         return pulumi.get(self, "secret_rules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the secret.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfCurrentVersionExpiry")
-    def time_of_current_version_expiry(self) -> pulumi.Output[str]:
-        """
-        An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_current_version_expiry(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_current_version_expiry")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> pulumi.Output[str]:
-        """
-        An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the vault where you want to create the secret.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vault_id")
 

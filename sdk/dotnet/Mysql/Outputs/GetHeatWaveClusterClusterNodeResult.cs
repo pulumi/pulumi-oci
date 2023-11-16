@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The ID of the node within MySQL HeatWave cluster.
         /// </summary>
-        public readonly string NodeId;
+        public readonly string? NodeId;
         /// <summary>
         /// The current state of the HeatWave cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetHeatWaveClusterClusterNodeResult(
-            string nodeId,
+            string? nodeId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             NodeId = nodeId;
             State = state;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
@@ -75,7 +74,7 @@ type GetUsagelimitsResult struct {
 	CompartmentId string                 `pulumi:"compartmentId"`
 	Filters       []GetUsagelimitsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The limit type of the usage limit
 	LimitType      *string `pulumi:"limitType"`
 	ResourceType   *string `pulumi:"resourceType"`
@@ -132,12 +131,6 @@ func (o GetUsagelimitsResultOutput) ToGetUsagelimitsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetUsagelimitsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsResult] {
-	return pulumix.Output[GetUsagelimitsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUsagelimitsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsagelimitsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -147,8 +140,8 @@ func (o GetUsagelimitsResultOutput) Filters() GetUsagelimitsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUsagelimitsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUsagelimitsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The limit type of the usage limit

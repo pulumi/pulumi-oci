@@ -56,26 +56,17 @@ class GetDbNodesResult:
 
     @property
     @pulumi.getter(name="dbNodes")
-    def db_nodes(self) -> Sequence['outputs.GetDbNodesDbNodeResult']:
-        """
-        The list of db_nodes.
-        """
+    def db_nodes(self) -> Optional[Sequence['outputs.GetDbNodesDbNodeResult']]:
         return pulumi.get(self, "db_nodes")
 
     @property
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-        """
         return pulumi.get(self, "db_server_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
@@ -85,7 +76,7 @@ class GetDbNodesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +85,6 @@ class GetDbNodesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the database node.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -129,29 +117,7 @@ def get_db_nodes(compartment_id: Optional[str] = None,
                  vm_cluster_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodesResult:
     """
-    This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
-
-    Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=var["compartment_id"],
-        db_server_id=oci_database_db_server["test_db_server"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        state=var["db_node_state"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -183,28 +149,6 @@ def get_db_nodes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         vm_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodesResult]:
     """
-    This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
-
-    Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=var["compartment_id"],
-        db_server_id=oci_database_db_server["test_db_server"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        state=var["db_node_state"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

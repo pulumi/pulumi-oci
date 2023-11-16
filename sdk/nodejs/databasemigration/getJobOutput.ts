@@ -47,11 +47,11 @@ export interface GetJobOutputResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Items in collection.
      */
-    readonly items: outputs.DatabaseMigration.GetJobOutputItem[];
+    readonly items?: outputs.DatabaseMigration.GetJobOutputItem[];
     readonly jobId: string;
 }
 /**

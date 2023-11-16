@@ -110,7 +110,7 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The application ID.
         /// </summary>
-        public readonly string ApplicationId;
+        public readonly string? ApplicationId;
         /// <summary>
         /// Logging details of Application logs for Data Flow Run.
         /// </summary>
@@ -118,44 +118,44 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
-        public readonly string ArchiveUri;
+        public readonly string? ArchiveUri;
         /// <summary>
         /// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         /// </summary>
         public readonly ImmutableArray<string> Arguments;
-        public readonly bool Asynchronous;
+        public readonly bool? Asynchronous;
         /// <summary>
         /// The class for the application.
         /// </summary>
-        public readonly string ClassName;
+        public readonly string? ClassName;
         /// <summary>
         /// The OCID of a compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Configuration;
+        public readonly ImmutableDictionary<string, object>? Configuration;
         /// <summary>
         /// The data read by the run in bytes.
         /// </summary>
-        public readonly string DataReadInBytes;
+        public readonly string? DataReadInBytes;
         /// <summary>
         /// The data written by the run in bytes.
         /// </summary>
-        public readonly string DataWrittenInBytes;
+        public readonly string? DataWrittenInBytes;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. This name is not necessarily unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The VM shape for the driver. Sets the driver cores and memory.
         /// </summary>
-        public readonly string DriverShape;
+        public readonly string? DriverShape;
         /// <summary>
         /// This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
@@ -163,11 +163,11 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         /// </summary>
-        public readonly string Execute;
+        public readonly string? Execute;
         /// <summary>
         /// The VM shape for the executors. Sets the executor cores and memory.
         /// </summary>
-        public readonly string ExecutorShape;
+        public readonly string? ExecutorShape;
         /// <summary>
         /// This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
@@ -175,55 +175,55 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
-        public readonly string FileUri;
+        public readonly string? FileUri;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The ID of a run.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         /// </summary>
-        public readonly string IdleTimeoutInMinutes;
+        public readonly string? IdleTimeoutInMinutes;
         /// <summary>
         /// The Spark language.
         /// </summary>
-        public readonly string Language;
+        public readonly string? Language;
         /// <summary>
         /// The detailed messages about the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
-        public readonly string LogsBucketUri;
+        public readonly string? LogsBucketUri;
         /// <summary>
         /// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         /// </summary>
-        public readonly string MaxDurationInMinutes;
+        public readonly string? MaxDurationInMinutes;
         /// <summary>
         /// The OCID of Oracle Cloud Infrastructure Hive Metastore.
         /// </summary>
-        public readonly string MetastoreId;
+        public readonly string? MetastoreId;
         /// <summary>
         /// The number of executor VMs requested.
         /// </summary>
-        public readonly int NumExecutors;
+        public readonly int? NumExecutors;
         /// <summary>
         /// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
         /// </summary>
-        public readonly string OpcRequestId;
+        public readonly string? OpcRequestId;
         /// <summary>
         /// The OCID of the user who created the resource.
         /// </summary>
-        public readonly string OwnerPrincipalId;
+        public readonly string? OwnerPrincipalId;
         /// <summary>
         /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
-        public readonly string OwnerUserName;
+        public readonly string? OwnerUserName;
         /// <summary>
         /// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         /// </summary>
@@ -231,7 +231,7 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         /// </summary>
-        public readonly string PoolId;
+        public readonly string? PoolId;
         /// <summary>
         /// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         /// </summary>
@@ -239,11 +239,11 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The OCID of a private endpoint.
         /// </summary>
-        public readonly string PrivateEndpointId;
+        public readonly string? PrivateEndpointId;
         /// <summary>
         /// The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
         /// </summary>
-        public readonly int PrivateEndpointMaxHostCount;
+        public readonly int? PrivateEndpointMaxHostCount;
         /// <summary>
         /// An array of network security group OCIDs.
         /// </summary>
@@ -251,134 +251,134 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The OCID of a subnet.
         /// </summary>
-        public readonly string PrivateEndpointSubnetId;
+        public readonly string? PrivateEndpointSubnetId;
         /// <summary>
         /// The duration of the run in milliseconds.
         /// </summary>
-        public readonly string RunDurationInMilliseconds;
+        public readonly string? RunDurationInMilliseconds;
         public readonly string RunId;
         /// <summary>
         /// The Spark version utilized to run the application.
         /// </summary>
-        public readonly string SparkVersion;
+        public readonly string? SparkVersion;
         /// <summary>
         /// The current state of this run.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The total number of oCPU requested by the run.
         /// </summary>
-        public readonly int TotalOcpu;
+        public readonly int? TotalOcpu;
         /// <summary>
         /// The Spark application processing type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
-        public readonly string WarehouseBucketUri;
+        public readonly string? WarehouseBucketUri;
 
         [OutputConstructor]
         private GetInvokeRunResult(
-            string applicationId,
+            string? applicationId,
 
             ImmutableArray<Outputs.GetInvokeRunApplicationLogConfigResult> applicationLogConfigs,
 
-            string archiveUri,
+            string? archiveUri,
 
             ImmutableArray<string> arguments,
 
-            bool asynchronous,
+            bool? asynchronous,
 
-            string className,
+            string? className,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> configuration,
+            ImmutableDictionary<string, object>? configuration,
 
-            string dataReadInBytes,
+            string? dataReadInBytes,
 
-            string dataWrittenInBytes,
+            string? dataWrittenInBytes,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string driverShape,
+            string? driverShape,
 
             ImmutableArray<Outputs.GetInvokeRunDriverShapeConfigResult> driverShapeConfigs,
 
-            string execute,
+            string? execute,
 
-            string executorShape,
+            string? executorShape,
 
             ImmutableArray<Outputs.GetInvokeRunExecutorShapeConfigResult> executorShapeConfigs,
 
-            string fileUri,
+            string? fileUri,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string idleTimeoutInMinutes,
+            string? idleTimeoutInMinutes,
 
-            string language,
+            string? language,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string logsBucketUri,
+            string? logsBucketUri,
 
-            string maxDurationInMinutes,
+            string? maxDurationInMinutes,
 
-            string metastoreId,
+            string? metastoreId,
 
-            int numExecutors,
+            int? numExecutors,
 
-            string opcRequestId,
+            string? opcRequestId,
 
-            string ownerPrincipalId,
+            string? ownerPrincipalId,
 
-            string ownerUserName,
+            string? ownerUserName,
 
             ImmutableArray<Outputs.GetInvokeRunParameterResult> parameters,
 
-            string poolId,
+            string? poolId,
 
             ImmutableArray<string> privateEndpointDnsZones,
 
-            string privateEndpointId,
+            string? privateEndpointId,
 
-            int privateEndpointMaxHostCount,
+            int? privateEndpointMaxHostCount,
 
             ImmutableArray<string> privateEndpointNsgIds,
 
-            string privateEndpointSubnetId,
+            string? privateEndpointSubnetId,
 
-            string runDurationInMilliseconds,
+            string? runDurationInMilliseconds,
 
             string runId,
 
-            string sparkVersion,
+            string? sparkVersion,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int totalOcpu,
+            int? totalOcpu,
 
-            string type,
+            string? type,
 
-            string warehouseBucketUri)
+            string? warehouseBucketUri)
         {
             ApplicationId = applicationId;
             ApplicationLogConfigs = applicationLogConfigs;

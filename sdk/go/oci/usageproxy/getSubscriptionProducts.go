@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscription Products in Oracle Cloud Infrastructure Usage Proxy service.
@@ -71,7 +70,7 @@ type GetSubscriptionProductsArgs struct {
 type GetSubscriptionProductsResult struct {
 	Filters []GetSubscriptionProductsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of product_collection.
 	ProductCollections []GetSubscriptionProductsProductCollection `pulumi:"productCollections"`
 	Producttype        *string                                    `pulumi:"producttype"`
@@ -125,19 +124,13 @@ func (o GetSubscriptionProductsResultOutput) ToGetSubscriptionProductsResultOutp
 	return o
 }
 
-func (o GetSubscriptionProductsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsResult] {
-	return pulumix.Output[GetSubscriptionProductsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionProductsResultOutput) Filters() GetSubscriptionProductsFilterArrayOutput {
 	return o.ApplyT(func(v GetSubscriptionProductsResult) []GetSubscriptionProductsFilter { return v.Filters }).(GetSubscriptionProductsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSubscriptionProductsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionProductsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionProductsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of product_collection.

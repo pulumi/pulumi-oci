@@ -53,11 +53,11 @@ export interface GetManagedDatabasesAsmPropertyResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of AsmPropertySummary resources.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabasesAsmPropertyItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabasesAsmPropertyItem[];
     readonly managedDatabaseId: string;
     readonly name?: string;
 }

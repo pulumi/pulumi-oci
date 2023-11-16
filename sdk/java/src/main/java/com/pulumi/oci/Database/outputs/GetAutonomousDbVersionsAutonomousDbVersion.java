@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDbVersionsAutonomousDbVersion {
@@ -14,99 +16,99 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
      * @return A filter to return only autonomous database resources that match the specified workload type.
      * 
      */
-    private String dbWorkload;
+    private @Nullable String dbWorkload;
     /**
      * @return A URL that points to a detailed description of the Autonomous Database version.
      * 
      */
-    private String details;
+    private @Nullable String details;
     /**
      * @return True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
-    private Boolean isDedicated;
+    private @Nullable Boolean isDedicated;
     /**
      * @return True if this version of the Oracle Database software&#39;s default is free.
      * 
      */
-    private Boolean isDefaultForFree;
+    private @Nullable Boolean isDefaultForFree;
     /**
      * @return True if this version of the Oracle Database software&#39;s default is paid.
      * 
      */
-    private Boolean isDefaultForPaid;
+    private @Nullable Boolean isDefaultForPaid;
     /**
      * @return True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
      * 
      */
-    private Boolean isFreeTierEnabled;
+    private @Nullable Boolean isFreeTierEnabled;
     /**
      * @return True if this version of the Oracle Database software has payments enabled.
      * 
      */
-    private Boolean isPaidEnabled;
+    private @Nullable Boolean isPaidEnabled;
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetAutonomousDbVersionsAutonomousDbVersion() {}
     /**
      * @return A filter to return only autonomous database resources that match the specified workload type.
      * 
      */
-    public String dbWorkload() {
-        return this.dbWorkload;
+    public Optional<String> dbWorkload() {
+        return Optional.ofNullable(this.dbWorkload);
     }
     /**
      * @return A URL that points to a detailed description of the Autonomous Database version.
      * 
      */
-    public String details() {
-        return this.details;
+    public Optional<String> details() {
+        return Optional.ofNullable(this.details);
     }
     /**
      * @return True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
-    public Boolean isDedicated() {
-        return this.isDedicated;
+    public Optional<Boolean> isDedicated() {
+        return Optional.ofNullable(this.isDedicated);
     }
     /**
      * @return True if this version of the Oracle Database software&#39;s default is free.
      * 
      */
-    public Boolean isDefaultForFree() {
-        return this.isDefaultForFree;
+    public Optional<Boolean> isDefaultForFree() {
+        return Optional.ofNullable(this.isDefaultForFree);
     }
     /**
      * @return True if this version of the Oracle Database software&#39;s default is paid.
      * 
      */
-    public Boolean isDefaultForPaid() {
-        return this.isDefaultForPaid;
+    public Optional<Boolean> isDefaultForPaid() {
+        return Optional.ofNullable(this.isDefaultForPaid);
     }
     /**
      * @return True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
      * 
      */
-    public Boolean isFreeTierEnabled() {
-        return this.isFreeTierEnabled;
+    public Optional<Boolean> isFreeTierEnabled() {
+        return Optional.ofNullable(this.isFreeTierEnabled);
     }
     /**
      * @return True if this version of the Oracle Database software has payments enabled.
      * 
      */
-    public Boolean isPaidEnabled() {
-        return this.isPaidEnabled;
+    public Optional<Boolean> isPaidEnabled() {
+        return Optional.ofNullable(this.isPaidEnabled);
     }
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -118,14 +120,14 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbWorkload;
-        private String details;
-        private Boolean isDedicated;
-        private Boolean isDefaultForFree;
-        private Boolean isDefaultForPaid;
-        private Boolean isFreeTierEnabled;
-        private Boolean isPaidEnabled;
-        private String version;
+        private @Nullable String dbWorkload;
+        private @Nullable String details;
+        private @Nullable Boolean isDedicated;
+        private @Nullable Boolean isDefaultForFree;
+        private @Nullable Boolean isDefaultForPaid;
+        private @Nullable Boolean isFreeTierEnabled;
+        private @Nullable Boolean isPaidEnabled;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetAutonomousDbVersionsAutonomousDbVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,43 +142,43 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
         }
 
         @CustomType.Setter
-        public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+        public Builder dbWorkload(@Nullable String dbWorkload) {
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
-        public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable String details) {
+            this.details = details;
             return this;
         }
         @CustomType.Setter
-        public Builder isDedicated(Boolean isDedicated) {
-            this.isDedicated = Objects.requireNonNull(isDedicated);
+        public Builder isDedicated(@Nullable Boolean isDedicated) {
+            this.isDedicated = isDedicated;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefaultForFree(Boolean isDefaultForFree) {
-            this.isDefaultForFree = Objects.requireNonNull(isDefaultForFree);
+        public Builder isDefaultForFree(@Nullable Boolean isDefaultForFree) {
+            this.isDefaultForFree = isDefaultForFree;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefaultForPaid(Boolean isDefaultForPaid) {
-            this.isDefaultForPaid = Objects.requireNonNull(isDefaultForPaid);
+        public Builder isDefaultForPaid(@Nullable Boolean isDefaultForPaid) {
+            this.isDefaultForPaid = isDefaultForPaid;
             return this;
         }
         @CustomType.Setter
-        public Builder isFreeTierEnabled(Boolean isFreeTierEnabled) {
-            this.isFreeTierEnabled = Objects.requireNonNull(isFreeTierEnabled);
+        public Builder isFreeTierEnabled(@Nullable Boolean isFreeTierEnabled) {
+            this.isFreeTierEnabled = isFreeTierEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isPaidEnabled(Boolean isPaidEnabled) {
-            this.isPaidEnabled = Objects.requireNonNull(isPaidEnabled);
+        public Builder isPaidEnabled(@Nullable Boolean isPaidEnabled) {
+            this.isPaidEnabled = isPaidEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetAutonomousDbVersionsAutonomousDbVersion build() {

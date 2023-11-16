@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
@@ -30,7 +29,7 @@ type AuditProfile struct {
 	pulumi.CustomResourceState
 
 	// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
-	AuditCollectedVolume pulumi.StringOutput `pulumi:"auditCollectedVolume"`
+	AuditCollectedVolume pulumi.StringPtrOutput `pulumi:"auditCollectedVolume"`
 	// The OCID of the audit.
 	AuditProfileId pulumi.StringOutput `pulumi:"auditProfileId"`
 	// Indicates the list of available audit trails on the target.
@@ -41,35 +40,35 @@ type AuditProfile struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger pulumi.IntPtrOutput `pulumi:"changeRetentionTrigger"`
 	// (Updatable) The OCID of the compartment that contains the audit.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
-	IsOverrideGlobalRetentionSetting pulumi.BoolOutput `pulumi:"isOverrideGlobalRetentionSetting"`
+	IsOverrideGlobalRetentionSetting pulumi.BoolPtrOutput `pulumi:"isOverrideGlobalRetentionSetting"`
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
-	IsPaidUsageEnabled pulumi.BoolOutput `pulumi:"isPaidUsageEnabled"`
+	IsPaidUsageEnabled pulumi.BoolPtrOutput `pulumi:"isPaidUsageEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
-	OfflineMonths pulumi.IntOutput `pulumi:"offlineMonths"`
+	OfflineMonths pulumi.IntPtrOutput `pulumi:"offlineMonths"`
 	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
-	OnlineMonths pulumi.IntOutput `pulumi:"onlineMonths"`
+	OnlineMonths pulumi.IntPtrOutput `pulumi:"onlineMonths"`
 	// The current state of the audit profile.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of the Data Safe target for which the audit profile is created.
-	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAuditProfile registers a new resource with the given unique name, arguments, and options.
@@ -264,12 +263,6 @@ func (i *AuditProfile) ToAuditProfileOutputWithContext(ctx context.Context) Audi
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileOutput)
 }
 
-func (i *AuditProfile) ToOutput(ctx context.Context) pulumix.Output[*AuditProfile] {
-	return pulumix.Output[*AuditProfile]{
-		OutputState: i.ToAuditProfileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AuditProfileArrayInput is an input type that accepts AuditProfileArray and AuditProfileArrayOutput values.
 // You can construct a concrete instance of `AuditProfileArrayInput` via:
 //
@@ -293,12 +286,6 @@ func (i AuditProfileArray) ToAuditProfileArrayOutput() AuditProfileArrayOutput {
 
 func (i AuditProfileArray) ToAuditProfileArrayOutputWithContext(ctx context.Context) AuditProfileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileArrayOutput)
-}
-
-func (i AuditProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuditProfile] {
-	return pulumix.Output[[]*AuditProfile]{
-		OutputState: i.ToAuditProfileArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AuditProfileMapInput is an input type that accepts AuditProfileMap and AuditProfileMapOutput values.
@@ -326,12 +313,6 @@ func (i AuditProfileMap) ToAuditProfileMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileMapOutput)
 }
 
-func (i AuditProfileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditProfile] {
-	return pulumix.Output[map[string]*AuditProfile]{
-		OutputState: i.ToAuditProfileMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AuditProfileOutput struct{ *pulumi.OutputState }
 
 func (AuditProfileOutput) ElementType() reflect.Type {
@@ -346,15 +327,9 @@ func (o AuditProfileOutput) ToAuditProfileOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o AuditProfileOutput) ToOutput(ctx context.Context) pulumix.Output[*AuditProfile] {
-	return pulumix.Output[*AuditProfile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
-func (o AuditProfileOutput) AuditCollectedVolume() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.AuditCollectedVolume }).(pulumi.StringOutput)
+func (o AuditProfileOutput) AuditCollectedVolume() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.AuditCollectedVolume }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the audit.
@@ -376,8 +351,8 @@ func (o AuditProfileOutput) ChangeRetentionTrigger() pulumi.IntPtrOutput {
 }
 
 // (Updatable) The OCID of the compartment that contains the audit.
-func (o AuditProfileOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o AuditProfileOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -386,13 +361,13 @@ func (o AuditProfileOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the audit profile.
-func (o AuditProfileOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o AuditProfileOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
-func (o AuditProfileOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AuditProfileOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -401,33 +376,33 @@ func (o AuditProfileOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
-func (o AuditProfileOutput) IsOverrideGlobalRetentionSetting() pulumi.BoolOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.BoolOutput { return v.IsOverrideGlobalRetentionSetting }).(pulumi.BoolOutput)
+func (o AuditProfileOutput) IsOverrideGlobalRetentionSetting() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.BoolPtrOutput { return v.IsOverrideGlobalRetentionSetting }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
-func (o AuditProfileOutput) IsPaidUsageEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.BoolOutput { return v.IsPaidUsageEnabled }).(pulumi.BoolOutput)
+func (o AuditProfileOutput) IsPaidUsageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.BoolPtrOutput { return v.IsPaidUsageEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Details about the current state of the audit profile in Data Safe.
-func (o AuditProfileOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AuditProfileOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
-func (o AuditProfileOutput) OfflineMonths() pulumi.IntOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.IntOutput { return v.OfflineMonths }).(pulumi.IntOutput)
+func (o AuditProfileOutput) OfflineMonths() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.IntPtrOutput { return v.OfflineMonths }).(pulumi.IntPtrOutput)
 }
 
 // Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
-func (o AuditProfileOutput) OnlineMonths() pulumi.IntOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.IntOutput { return v.OnlineMonths }).(pulumi.IntOutput)
+func (o AuditProfileOutput) OnlineMonths() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.IntPtrOutput { return v.OnlineMonths }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the audit profile.
-func (o AuditProfileOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AuditProfileOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -436,18 +411,18 @@ func (o AuditProfileOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the Data Safe target for which the audit profile is created.
-func (o AuditProfileOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+func (o AuditProfileOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the audit profile was created, in the format defined by RFC3339.
-func (o AuditProfileOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AuditProfileOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the audit profile was updated, in the format defined by RFC3339.
-func (o AuditProfileOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AuditProfileOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AuditProfileArrayOutput struct{ *pulumi.OutputState }
@@ -462,12 +437,6 @@ func (o AuditProfileArrayOutput) ToAuditProfileArrayOutput() AuditProfileArrayOu
 
 func (o AuditProfileArrayOutput) ToAuditProfileArrayOutputWithContext(ctx context.Context) AuditProfileArrayOutput {
 	return o
-}
-
-func (o AuditProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuditProfile] {
-	return pulumix.Output[[]*AuditProfile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuditProfileArrayOutput) Index(i pulumi.IntInput) AuditProfileOutput {
@@ -488,12 +457,6 @@ func (o AuditProfileMapOutput) ToAuditProfileMapOutput() AuditProfileMapOutput {
 
 func (o AuditProfileMapOutput) ToAuditProfileMapOutputWithContext(ctx context.Context) AuditProfileMapOutput {
 	return o
-}
-
-func (o AuditProfileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditProfile] {
-	return pulumix.Output[map[string]*AuditProfile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuditProfileMapOutput) MapIndex(k pulumi.StringInput) AuditProfileOutput {

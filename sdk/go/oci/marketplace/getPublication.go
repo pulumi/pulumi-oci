@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Publication resource in Oracle Cloud Infrastructure Marketplace service.
@@ -60,7 +59,7 @@ type LookupPublicationArgs struct {
 // A collection of values returned by getPublication.
 type LookupPublicationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -68,28 +67,28 @@ type LookupPublicationResult struct {
 	// The model for upload data for images and icons.
 	Icons []GetPublicationIcon `pulumi:"icons"`
 	// The unique identifier for the publication in Marketplace.
-	Id                      string `pulumi:"id"`
-	IsAgreementAcknowledged bool   `pulumi:"isAgreementAcknowledged"`
+	Id                      *string `pulumi:"id"`
+	IsAgreementAcknowledged *bool   `pulumi:"isAgreementAcknowledged"`
 	// The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-	ListingType string `pulumi:"listingType"`
+	ListingType *string `pulumi:"listingType"`
 	// A long description of the publication to use in the listing.
-	LongDescription string `pulumi:"longDescription"`
+	LongDescription *string `pulumi:"longDescription"`
 	// The name of the operating system.
-	Name           string                        `pulumi:"name"`
+	Name           *string                       `pulumi:"name"`
 	PackageDetails []GetPublicationPackageDetail `pulumi:"packageDetails"`
 	// The listing's package type.
-	PackageType   string `pulumi:"packageType"`
-	PublicationId string `pulumi:"publicationId"`
+	PackageType   *string `pulumi:"packageType"`
+	PublicationId string  `pulumi:"publicationId"`
 	// A short description of the publication to use in the listing.
-	ShortDescription string `pulumi:"shortDescription"`
+	ShortDescription *string `pulumi:"shortDescription"`
 	// The lifecycle state of the publication.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Contact information for getting support from the publisher for the listing.
 	SupportContacts []GetPublicationSupportContact `pulumi:"supportContacts"`
 	// The list of operating systems supported by the listing.
 	SupportedOperatingSystems []GetPublicationSupportedOperatingSystem `pulumi:"supportedOperatingSystems"`
 	// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupPublicationOutput(ctx *pulumi.Context, args LookupPublicationOutputArgs, opts ...pulumi.InvokeOption) LookupPublicationResultOutput {
@@ -130,15 +129,9 @@ func (o LookupPublicationResultOutput) ToLookupPublicationResultOutputWithContex
 	return o
 }
 
-func (o LookupPublicationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPublicationResult] {
-	return pulumix.Output[LookupPublicationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
-func (o LookupPublicationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -157,27 +150,27 @@ func (o LookupPublicationResultOutput) Icons() GetPublicationIconArrayOutput {
 }
 
 // The unique identifier for the publication in Marketplace.
-func (o LookupPublicationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupPublicationResultOutput) IsAgreementAcknowledged() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupPublicationResult) bool { return v.IsAgreementAcknowledged }).(pulumi.BoolOutput)
+func (o LookupPublicationResultOutput) IsAgreementAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *bool { return v.IsAgreementAcknowledged }).(pulumi.BoolPtrOutput)
 }
 
 // The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-func (o LookupPublicationResultOutput) ListingType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.ListingType }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) ListingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.ListingType }).(pulumi.StringPtrOutput)
 }
 
 // A long description of the publication to use in the listing.
-func (o LookupPublicationResultOutput) LongDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.LongDescription }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) LongDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.LongDescription }).(pulumi.StringPtrOutput)
 }
 
 // The name of the operating system.
-func (o LookupPublicationResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPublicationResultOutput) PackageDetails() GetPublicationPackageDetailArrayOutput {
@@ -185,8 +178,8 @@ func (o LookupPublicationResultOutput) PackageDetails() GetPublicationPackageDet
 }
 
 // The listing's package type.
-func (o LookupPublicationResultOutput) PackageType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.PackageType }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) PackageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.PackageType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPublicationResultOutput) PublicationId() pulumi.StringOutput {
@@ -194,13 +187,13 @@ func (o LookupPublicationResultOutput) PublicationId() pulumi.StringOutput {
 }
 
 // A short description of the publication to use in the listing.
-func (o LookupPublicationResultOutput) ShortDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.ShortDescription }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) ShortDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.ShortDescription }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the publication.
-func (o LookupPublicationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Contact information for getting support from the publisher for the listing.
@@ -216,8 +209,8 @@ func (o LookupPublicationResultOutput) SupportedOperatingSystems() GetPublicatio
 }
 
 // The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupPublicationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPublicationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

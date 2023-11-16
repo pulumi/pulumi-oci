@@ -9,6 +9,7 @@ import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunsScheduledRunCo
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,7 +19,7 @@ public final class GetScheduledRunsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The ocid representing unique shedule
      * 
@@ -28,7 +29,7 @@ public final class GetScheduledRunsResult {
      * @return The list of scheduled_run_collection.
      * 
      */
-    private List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections;
+    private @Nullable List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections;
 
     private GetScheduledRunsResult() {}
     public List<GetScheduledRunsFilter> filters() {
@@ -38,8 +39,8 @@ public final class GetScheduledRunsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The ocid representing unique shedule
@@ -53,7 +54,7 @@ public final class GetScheduledRunsResult {
      * 
      */
     public List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections() {
-        return this.scheduledRunCollections;
+        return this.scheduledRunCollections == null ? List.of() : this.scheduledRunCollections;
     }
 
     public static Builder builder() {
@@ -66,9 +67,9 @@ public final class GetScheduledRunsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetScheduledRunsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String scheduleId;
-        private List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections;
+        private @Nullable List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections;
         public Builder() {}
         public Builder(GetScheduledRunsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,8 +88,8 @@ public final class GetScheduledRunsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -97,8 +98,8 @@ public final class GetScheduledRunsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledRunCollections(List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections) {
-            this.scheduledRunCollections = Objects.requireNonNull(scheduledRunCollections);
+        public Builder scheduledRunCollections(@Nullable List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections) {
+            this.scheduledRunCollections = scheduledRunCollections;
             return this;
         }
         public Builder scheduledRunCollections(GetScheduledRunsScheduledRunCollection... scheduledRunCollections) {

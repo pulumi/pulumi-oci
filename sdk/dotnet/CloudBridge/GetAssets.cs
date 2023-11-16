@@ -246,7 +246,7 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Inventory ID to which an asset belongs to.
         /// </summary>
@@ -276,7 +276,7 @@ namespace Pulumi.Oci.CloudBridge
 
             ImmutableArray<Outputs.GetAssetsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? inventoryId,
 

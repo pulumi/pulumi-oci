@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemHeatWaveCluster {
@@ -15,75 +17,75 @@ public final class GetMysqlDbSystemHeatWaveCluster {
      * @return The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      * 
      */
-    private Integer clusterSize;
+    private @Nullable Integer clusterSize;
     /**
      * @return Lakehouse enabled status for the HeatWave cluster.
      * 
      */
-    private Boolean isLakehouseEnabled;
+    private @Nullable Boolean isLakehouseEnabled;
     /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return The current state of the DB System.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the DB System was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the DB System was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetMysqlDbSystemHeatWaveCluster() {}
     /**
      * @return The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      * 
      */
-    public Integer clusterSize() {
-        return this.clusterSize;
+    public Optional<Integer> clusterSize() {
+        return Optional.ofNullable(this.clusterSize);
     }
     /**
      * @return Lakehouse enabled status for the HeatWave cluster.
      * 
      */
-    public Boolean isLakehouseEnabled() {
-        return this.isLakehouseEnabled;
+    public Optional<Boolean> isLakehouseEnabled() {
+        return Optional.ofNullable(this.isLakehouseEnabled);
     }
     /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return The current state of the DB System.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the DB System was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the DB System was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetMysqlDbSystemHeatWaveCluster {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer clusterSize;
-        private Boolean isLakehouseEnabled;
-        private String shapeName;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable Integer clusterSize;
+        private @Nullable Boolean isLakehouseEnabled;
+        private @Nullable String shapeName;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetMysqlDbSystemHeatWaveCluster defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,33 +115,33 @@ public final class GetMysqlDbSystemHeatWaveCluster {
         }
 
         @CustomType.Setter
-        public Builder clusterSize(Integer clusterSize) {
-            this.clusterSize = Objects.requireNonNull(clusterSize);
+        public Builder clusterSize(@Nullable Integer clusterSize) {
+            this.clusterSize = clusterSize;
             return this;
         }
         @CustomType.Setter
-        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
-            this.isLakehouseEnabled = Objects.requireNonNull(isLakehouseEnabled);
+        public Builder isLakehouseEnabled(@Nullable Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMysqlDbSystemHeatWaveCluster build() {

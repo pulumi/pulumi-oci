@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -60,28 +59,28 @@ type LookupMonitoredResourceTaskArgs struct {
 // A collection of values returned by getMonitoredResourceTask.
 type LookupMonitoredResourceTaskResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id                      string `pulumi:"id"`
-	MonitoredResourceTaskId string `pulumi:"monitoredResourceTaskId"`
+	Id                      *string `pulumi:"id"`
+	MonitoredResourceTaskId string  `pulumi:"monitoredResourceTaskId"`
 	// Name of the task.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current state of the stack monitoring resource task.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The request details for the performing the task.
 	TaskDetails []GetMonitoredResourceTaskTaskDetail `pulumi:"taskDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 	WorkRequestIds []string `pulumi:"workRequestIds"`
 }
@@ -124,15 +123,9 @@ func (o LookupMonitoredResourceTaskResultOutput) ToLookupMonitoredResourceTaskRe
 	return o
 }
 
-func (o LookupMonitoredResourceTaskResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMonitoredResourceTaskResult] {
-	return pulumix.Output[LookupMonitoredResourceTaskResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
-func (o LookupMonitoredResourceTaskResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceTaskResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -146,8 +139,8 @@ func (o LookupMonitoredResourceTaskResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupMonitoredResourceTaskResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceTaskResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMonitoredResourceTaskResultOutput) MonitoredResourceTaskId() pulumi.StringOutput {
@@ -155,13 +148,13 @@ func (o LookupMonitoredResourceTaskResultOutput) MonitoredResourceTaskId() pulum
 }
 
 // Name of the task.
-func (o LookupMonitoredResourceTaskResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceTaskResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the stack monitoring resource task.
-func (o LookupMonitoredResourceTaskResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceTaskResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -175,18 +168,18 @@ func (o LookupMonitoredResourceTaskResultOutput) TaskDetails() GetMonitoredResou
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
-func (o LookupMonitoredResourceTaskResultOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.TenantId }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceTaskResultOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o LookupMonitoredResourceTaskResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceTaskResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o LookupMonitoredResourceTaskResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceTaskResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.

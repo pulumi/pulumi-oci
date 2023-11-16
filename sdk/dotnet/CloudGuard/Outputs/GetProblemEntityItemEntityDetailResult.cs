@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The display name of entity
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Type of entity
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The entity value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetProblemEntityItemEntityDetailResult(
-            string displayName,
+            string? displayName,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             DisplayName = displayName;
             Type = type;

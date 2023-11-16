@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeDetec
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration {
@@ -15,63 +17,63 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigura
      * @return Unique name of the configuration
      * 
      */
-    private String configKey;
+    private @Nullable String configKey;
     /**
      * @return configuration data type
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return configuration name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return configuration value
      * 
      */
-    private String value;
+    private @Nullable String value;
     /**
      * @return List of configuration values
      * 
      */
-    private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
+    private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
 
     private GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration() {}
     /**
      * @return Unique name of the configuration
      * 
      */
-    public String configKey() {
-        return this.configKey;
+    public Optional<String> configKey() {
+        return Optional.ofNullable(this.configKey);
     }
     /**
      * @return configuration data type
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return configuration name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return configuration value
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
     /**
      * @return List of configuration values
      * 
      */
     public List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigura
     }
     @CustomType.Builder
     public static final class Builder {
-        private String configKey;
-        private String dataType;
-        private String name;
-        private String value;
-        private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
+        private @Nullable String configKey;
+        private @Nullable String dataType;
+        private @Nullable String name;
+        private @Nullable String value;
+        private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
         public Builder() {}
         public Builder(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigura
         }
 
         @CustomType.Setter
-        public Builder configKey(String configKey) {
-            this.configKey = Objects.requireNonNull(configKey);
+        public Builder configKey(@Nullable String configKey) {
+            this.configKey = configKey;
             return this;
         }
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values) {
+            this.values = values;
             return this;
         }
         public Builder values(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue... values) {

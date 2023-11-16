@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The OCID of the view.
         /// </summary>
-        public readonly string ViewId;
+        public readonly string? ViewId;
 
         [OutputConstructor]
-        private GetResolverAttachedViewResult(string viewId)
+        private GetResolverAttachedViewResult(string? viewId)
         {
             ViewId = viewId;
         }

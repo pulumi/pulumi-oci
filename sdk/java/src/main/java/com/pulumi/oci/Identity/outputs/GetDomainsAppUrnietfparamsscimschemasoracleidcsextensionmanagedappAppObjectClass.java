@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass {
@@ -14,75 +16,75 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
      * @return Display-name of the AppRole.
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return If true, the object class represents an account. The isAccountObjectClass attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    private Boolean isAccountObjectClass;
+    private @Nullable Boolean isAccountObjectClass;
     /**
      * @return URI of the AppRole.
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Object class resource type
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass() {}
     /**
      * @return Display-name of the AppRole.
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return If true, the object class represents an account. The isAccountObjectClass attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    public Boolean isAccountObjectClass() {
-        return this.isAccountObjectClass;
+    public Optional<Boolean> isAccountObjectClass() {
+        return Optional.ofNullable(this.isAccountObjectClass);
     }
     /**
      * @return URI of the AppRole.
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Object class resource type
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private Boolean isAccountObjectClass;
-        private String ref;
-        private String resourceType;
-        private String type;
-        private String value;
+        private @Nullable String display;
+        private @Nullable Boolean isAccountObjectClass;
+        private @Nullable String ref;
+        private @Nullable String resourceType;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder isAccountObjectClass(Boolean isAccountObjectClass) {
-            this.isAccountObjectClass = Objects.requireNonNull(isAccountObjectClass);
+        public Builder isAccountObjectClass(@Nullable Boolean isAccountObjectClass) {
+            this.isAccountObjectClass = isAccountObjectClass;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass build() {

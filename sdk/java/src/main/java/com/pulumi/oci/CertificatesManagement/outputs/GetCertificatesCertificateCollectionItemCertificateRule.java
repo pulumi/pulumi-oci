@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificatesCertificateCollectionItemCertificateRule {
@@ -13,39 +15,39 @@ public final class GetCertificatesCertificateCollectionItemCertificateRule {
      * @return A property specifying the period of time, in days, before the certificate&#39;s targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private String advanceRenewalPeriod;
+    private @Nullable String advanceRenewalPeriod;
     /**
      * @return A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private String renewalInterval;
+    private @Nullable String renewalInterval;
     /**
      * @return The type of rule.
      * 
      */
-    private String ruleType;
+    private @Nullable String ruleType;
 
     private GetCertificatesCertificateCollectionItemCertificateRule() {}
     /**
      * @return A property specifying the period of time, in days, before the certificate&#39;s targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    public String advanceRenewalPeriod() {
-        return this.advanceRenewalPeriod;
+    public Optional<String> advanceRenewalPeriod() {
+        return Optional.ofNullable(this.advanceRenewalPeriod);
     }
     /**
      * @return A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    public String renewalInterval() {
-        return this.renewalInterval;
+    public Optional<String> renewalInterval() {
+        return Optional.ofNullable(this.renewalInterval);
     }
     /**
      * @return The type of rule.
      * 
      */
-    public String ruleType() {
-        return this.ruleType;
+    public Optional<String> ruleType() {
+        return Optional.ofNullable(this.ruleType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetCertificatesCertificateCollectionItemCertificateRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String advanceRenewalPeriod;
-        private String renewalInterval;
-        private String ruleType;
+        private @Nullable String advanceRenewalPeriod;
+        private @Nullable String renewalInterval;
+        private @Nullable String ruleType;
         public Builder() {}
         public Builder(GetCertificatesCertificateCollectionItemCertificateRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetCertificatesCertificateCollectionItemCertificateRule {
         }
 
         @CustomType.Setter
-        public Builder advanceRenewalPeriod(String advanceRenewalPeriod) {
-            this.advanceRenewalPeriod = Objects.requireNonNull(advanceRenewalPeriod);
+        public Builder advanceRenewalPeriod(@Nullable String advanceRenewalPeriod) {
+            this.advanceRenewalPeriod = advanceRenewalPeriod;
             return this;
         }
         @CustomType.Setter
-        public Builder renewalInterval(String renewalInterval) {
-            this.renewalInterval = Objects.requireNonNull(renewalInterval);
+        public Builder renewalInterval(@Nullable String renewalInterval) {
+            this.renewalInterval = renewalInterval;
             return this;
         }
         @CustomType.Setter
-        public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+        public Builder ruleType(@Nullable String ruleType) {
+            this.ruleType = ruleType;
             return this;
         }
         public GetCertificatesCertificateCollectionItemCertificateRule build() {

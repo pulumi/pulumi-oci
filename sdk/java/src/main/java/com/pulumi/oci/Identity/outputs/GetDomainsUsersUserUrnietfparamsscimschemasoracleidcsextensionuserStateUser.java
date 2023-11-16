@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser {
@@ -17,111 +19,111 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return The last failed login date.
      * 
      */
-    private String lastFailedLoginDate;
+    private @Nullable String lastFailedLoginDate;
     /**
      * @return The last successful login date.
      * 
      */
-    private String lastSuccessfulLoginDate;
+    private @Nullable String lastSuccessfulLoginDate;
     /**
      * @return A complex attribute that indicates an account is locked (blocking any new sessions).
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds;
     /**
      * @return The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
      */
-    private Integer loginAttempts;
+    private @Nullable Integer loginAttempts;
     /**
      * @return The maximum number of concurrent sessions for a user.
      * 
      */
-    private Integer maxConcurrentSessions;
+    private @Nullable Integer maxConcurrentSessions;
     /**
      * @return The previous successful login date.
      * 
      */
-    private String previousSuccessfulLoginDate;
+    private @Nullable String previousSuccessfulLoginDate;
     /**
      * @return The number of failed recovery attempts. The value is reset to 0 after a successful login.
      * 
      */
-    private Integer recoveryAttempts;
+    private @Nullable Integer recoveryAttempts;
     /**
      * @return The number of failed account recovery enrollment attempts.
      * 
      */
-    private Integer recoveryEnrollAttempts;
+    private @Nullable Integer recoveryEnrollAttempts;
     /**
      * @return A complex attribute that indicates a password recovery is locked (blocking any new sessions).
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser() {}
     /**
      * @return The last failed login date.
      * 
      */
-    public String lastFailedLoginDate() {
-        return this.lastFailedLoginDate;
+    public Optional<String> lastFailedLoginDate() {
+        return Optional.ofNullable(this.lastFailedLoginDate);
     }
     /**
      * @return The last successful login date.
      * 
      */
-    public String lastSuccessfulLoginDate() {
-        return this.lastSuccessfulLoginDate;
+    public Optional<String> lastSuccessfulLoginDate() {
+        return Optional.ofNullable(this.lastSuccessfulLoginDate);
     }
     /**
      * @return A complex attribute that indicates an account is locked (blocking any new sessions).
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds() {
-        return this.lockeds;
+        return this.lockeds == null ? List.of() : this.lockeds;
     }
     /**
      * @return The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
      */
-    public Integer loginAttempts() {
-        return this.loginAttempts;
+    public Optional<Integer> loginAttempts() {
+        return Optional.ofNullable(this.loginAttempts);
     }
     /**
      * @return The maximum number of concurrent sessions for a user.
      * 
      */
-    public Integer maxConcurrentSessions() {
-        return this.maxConcurrentSessions;
+    public Optional<Integer> maxConcurrentSessions() {
+        return Optional.ofNullable(this.maxConcurrentSessions);
     }
     /**
      * @return The previous successful login date.
      * 
      */
-    public String previousSuccessfulLoginDate() {
-        return this.previousSuccessfulLoginDate;
+    public Optional<String> previousSuccessfulLoginDate() {
+        return Optional.ofNullable(this.previousSuccessfulLoginDate);
     }
     /**
      * @return The number of failed recovery attempts. The value is reset to 0 after a successful login.
      * 
      */
-    public Integer recoveryAttempts() {
-        return this.recoveryAttempts;
+    public Optional<Integer> recoveryAttempts() {
+        return Optional.ofNullable(this.recoveryAttempts);
     }
     /**
      * @return The number of failed account recovery enrollment attempts.
      * 
      */
-    public Integer recoveryEnrollAttempts() {
-        return this.recoveryEnrollAttempts;
+    public Optional<Integer> recoveryEnrollAttempts() {
+        return Optional.ofNullable(this.recoveryEnrollAttempts);
     }
     /**
      * @return A complex attribute that indicates a password recovery is locked (blocking any new sessions).
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds() {
-        return this.recoveryLockeds;
+        return this.recoveryLockeds == null ? List.of() : this.recoveryLockeds;
     }
 
     public static Builder builder() {
@@ -133,15 +135,15 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lastFailedLoginDate;
-        private String lastSuccessfulLoginDate;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds;
-        private Integer loginAttempts;
-        private Integer maxConcurrentSessions;
-        private String previousSuccessfulLoginDate;
-        private Integer recoveryAttempts;
-        private Integer recoveryEnrollAttempts;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds;
+        private @Nullable String lastFailedLoginDate;
+        private @Nullable String lastSuccessfulLoginDate;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds;
+        private @Nullable Integer loginAttempts;
+        private @Nullable Integer maxConcurrentSessions;
+        private @Nullable String previousSuccessfulLoginDate;
+        private @Nullable Integer recoveryAttempts;
+        private @Nullable Integer recoveryEnrollAttempts;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -157,51 +159,51 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder lastFailedLoginDate(String lastFailedLoginDate) {
-            this.lastFailedLoginDate = Objects.requireNonNull(lastFailedLoginDate);
+        public Builder lastFailedLoginDate(@Nullable String lastFailedLoginDate) {
+            this.lastFailedLoginDate = lastFailedLoginDate;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSuccessfulLoginDate(String lastSuccessfulLoginDate) {
-            this.lastSuccessfulLoginDate = Objects.requireNonNull(lastSuccessfulLoginDate);
+        public Builder lastSuccessfulLoginDate(@Nullable String lastSuccessfulLoginDate) {
+            this.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
             return this;
         }
         @CustomType.Setter
-        public Builder lockeds(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds) {
-            this.lockeds = Objects.requireNonNull(lockeds);
+        public Builder lockeds(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds) {
+            this.lockeds = lockeds;
             return this;
         }
         public Builder lockeds(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked... lockeds) {
             return lockeds(List.of(lockeds));
         }
         @CustomType.Setter
-        public Builder loginAttempts(Integer loginAttempts) {
-            this.loginAttempts = Objects.requireNonNull(loginAttempts);
+        public Builder loginAttempts(@Nullable Integer loginAttempts) {
+            this.loginAttempts = loginAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder maxConcurrentSessions(Integer maxConcurrentSessions) {
-            this.maxConcurrentSessions = Objects.requireNonNull(maxConcurrentSessions);
+        public Builder maxConcurrentSessions(@Nullable Integer maxConcurrentSessions) {
+            this.maxConcurrentSessions = maxConcurrentSessions;
             return this;
         }
         @CustomType.Setter
-        public Builder previousSuccessfulLoginDate(String previousSuccessfulLoginDate) {
-            this.previousSuccessfulLoginDate = Objects.requireNonNull(previousSuccessfulLoginDate);
+        public Builder previousSuccessfulLoginDate(@Nullable String previousSuccessfulLoginDate) {
+            this.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryAttempts(Integer recoveryAttempts) {
-            this.recoveryAttempts = Objects.requireNonNull(recoveryAttempts);
+        public Builder recoveryAttempts(@Nullable Integer recoveryAttempts) {
+            this.recoveryAttempts = recoveryAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryEnrollAttempts(Integer recoveryEnrollAttempts) {
-            this.recoveryEnrollAttempts = Objects.requireNonNull(recoveryEnrollAttempts);
+        public Builder recoveryEnrollAttempts(@Nullable Integer recoveryEnrollAttempts) {
+            this.recoveryEnrollAttempts = recoveryEnrollAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryLockeds(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds) {
-            this.recoveryLockeds = Objects.requireNonNull(recoveryLockeds);
+        public Builder recoveryLockeds(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds) {
+            this.recoveryLockeds = recoveryLockeds;
             return this;
         }
         public Builder recoveryLockeds(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked... recoveryLockeds) {

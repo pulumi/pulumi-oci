@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -64,26 +63,26 @@ type MigrationAsset struct {
 	// Availability domain
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// Compartment Identifier
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// List of migration assets that depend on the asset.
 	DependedOnBies pulumi.StringArrayOutput `pulumi:"dependedOnBies"`
 	// (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// OCID of an asset for an inventory.
 	InventoryAssetId pulumi.StringOutput `pulumi:"inventoryAssetId"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails         pulumi.StringOutput      `pulumi:"lifecycleDetails"`
+	LifecycleDetails         pulumi.StringPtrOutput   `pulumi:"lifecycleDetails"`
 	MigrationAssetDependsOns pulumi.StringArrayOutput `pulumi:"migrationAssetDependsOns"`
 	// OCID of the associated migration.
 	MigrationId pulumi.StringOutput `pulumi:"migrationId"`
 	// List of notifications
 	Notifications pulumi.StringArrayOutput `pulumi:"notifications"`
 	// The parent snapshot of the migration asset to be used by the replication task.
-	ParentSnapshot pulumi.StringOutput `pulumi:"parentSnapshot"`
+	ParentSnapshot pulumi.StringPtrOutput `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringOutput `pulumi:"replicationCompartmentId"`
 	// (Updatable) Replication schedule identifier
-	ReplicationScheduleId pulumi.StringOutput `pulumi:"replicationScheduleId"`
+	ReplicationScheduleId pulumi.StringPtrOutput `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
 	//
 	// ** IMPORTANT **
@@ -92,17 +91,17 @@ type MigrationAsset struct {
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
 	Snapshots pulumi.MapOutput `pulumi:"snapshots"`
 	// OCID that is referenced to an asset for an inventory.
-	SourceAssetId pulumi.StringOutput `pulumi:"sourceAssetId"`
+	SourceAssetId pulumi.StringPtrOutput `pulumi:"sourceAssetId"`
 	// The current state of the migration asset.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Tenancy identifier
-	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
+	TenancyId pulumi.StringPtrOutput `pulumi:"tenancyId"`
 	// The time when the migration asset was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the migration asset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The type of asset referenced for inventory.
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 }
 
 // NewMigrationAsset registers a new resource with the given unique name, arguments, and options.
@@ -309,12 +308,6 @@ func (i *MigrationAsset) ToMigrationAssetOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetOutput)
 }
 
-func (i *MigrationAsset) ToOutput(ctx context.Context) pulumix.Output[*MigrationAsset] {
-	return pulumix.Output[*MigrationAsset]{
-		OutputState: i.ToMigrationAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MigrationAssetArrayInput is an input type that accepts MigrationAssetArray and MigrationAssetArrayOutput values.
 // You can construct a concrete instance of `MigrationAssetArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i MigrationAssetArray) ToMigrationAssetArrayOutput() MigrationAssetArrayOu
 
 func (i MigrationAssetArray) ToMigrationAssetArrayOutputWithContext(ctx context.Context) MigrationAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetArrayOutput)
-}
-
-func (i MigrationAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationAsset] {
-	return pulumix.Output[[]*MigrationAsset]{
-		OutputState: i.ToMigrationAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MigrationAssetMapInput is an input type that accepts MigrationAssetMap and MigrationAssetMapOutput values.
@@ -371,12 +358,6 @@ func (i MigrationAssetMap) ToMigrationAssetMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetMapOutput)
 }
 
-func (i MigrationAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationAsset] {
-	return pulumix.Output[map[string]*MigrationAsset]{
-		OutputState: i.ToMigrationAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MigrationAssetOutput struct{ *pulumi.OutputState }
 
 func (MigrationAssetOutput) ElementType() reflect.Type {
@@ -391,20 +372,14 @@ func (o MigrationAssetOutput) ToMigrationAssetOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o MigrationAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationAsset] {
-	return pulumix.Output[*MigrationAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Availability domain
 func (o MigrationAssetOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // Compartment Identifier
-func (o MigrationAssetOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // List of migration assets that depend on the asset.
@@ -413,8 +388,8 @@ func (o MigrationAssetOutput) DependedOnBies() pulumi.StringArrayOutput {
 }
 
 // (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o MigrationAssetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of an asset for an inventory.
@@ -423,8 +398,8 @@ func (o MigrationAssetOutput) InventoryAssetId() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o MigrationAssetOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o MigrationAssetOutput) MigrationAssetDependsOns() pulumi.StringArrayOutput {
@@ -442,8 +417,8 @@ func (o MigrationAssetOutput) Notifications() pulumi.StringArrayOutput {
 }
 
 // The parent snapshot of the migration asset to be used by the replication task.
-func (o MigrationAssetOutput) ParentSnapshot() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.ParentSnapshot }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) ParentSnapshot() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.ParentSnapshot }).(pulumi.StringPtrOutput)
 }
 
 // Replication compartment identifier
@@ -452,8 +427,8 @@ func (o MigrationAssetOutput) ReplicationCompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Replication schedule identifier
-func (o MigrationAssetOutput) ReplicationScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.ReplicationScheduleId }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) ReplicationScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.ReplicationScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // Name of snapshot bucket
@@ -470,33 +445,33 @@ func (o MigrationAssetOutput) Snapshots() pulumi.MapOutput {
 }
 
 // OCID that is referenced to an asset for an inventory.
-func (o MigrationAssetOutput) SourceAssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.SourceAssetId }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) SourceAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.SourceAssetId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the migration asset.
-func (o MigrationAssetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Tenancy identifier
-func (o MigrationAssetOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.TenancyId }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The time when the migration asset was created. An RFC3339 formatted datetime string.
-func (o MigrationAssetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the migration asset was updated. An RFC3339 formatted datetime string.
-func (o MigrationAssetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The type of asset referenced for inventory.
-func (o MigrationAssetOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o MigrationAssetOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type MigrationAssetArrayOutput struct{ *pulumi.OutputState }
@@ -511,12 +486,6 @@ func (o MigrationAssetArrayOutput) ToMigrationAssetArrayOutput() MigrationAssetA
 
 func (o MigrationAssetArrayOutput) ToMigrationAssetArrayOutputWithContext(ctx context.Context) MigrationAssetArrayOutput {
 	return o
-}
-
-func (o MigrationAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationAsset] {
-	return pulumix.Output[[]*MigrationAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationAssetArrayOutput) Index(i pulumi.IntInput) MigrationAssetOutput {
@@ -537,12 +506,6 @@ func (o MigrationAssetMapOutput) ToMigrationAssetMapOutput() MigrationAssetMapOu
 
 func (o MigrationAssetMapOutput) ToMigrationAssetMapOutputWithContext(ctx context.Context) MigrationAssetMapOutput {
 	return o
-}
-
-func (o MigrationAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationAsset] {
-	return pulumix.Output[map[string]*MigrationAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationAssetMapOutput) MapIndex(k pulumi.StringInput) MigrationAssetOutput {

@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentInstallKeyResult {
@@ -15,132 +17,132 @@ public final class GetManagementAgentInstallKeyResult {
      * @return Total number of install for this keys
      * 
      */
-    private Integer allowedKeyInstallCount;
+    private @Nullable Integer allowedKeyInstallCount;
     /**
      * @return Compartment Identifier
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Principal id of user who created the Agent Install key
      * 
      */
-    private String createdByPrincipalId;
+    private @Nullable String createdByPrincipalId;
     /**
      * @return Total number of install for this keys
      * 
      */
-    private Integer currentKeyInstallCount;
+    private @Nullable Integer currentKeyInstallCount;
     /**
      * @return Management Agent Install Key Name
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Agent install Key identifier
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
      * 
      */
-    private Boolean isUnlimited;
+    private @Nullable Boolean isUnlimited;
     /**
      * @return Management Agent Install Key
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     private String managementAgentInstallKeyId;
     /**
      * @return Status of Key
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return date after which key would expire after creation
      * 
      */
-    private String timeExpires;
+    private @Nullable String timeExpires;
     /**
      * @return The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetManagementAgentInstallKeyResult() {}
     /**
      * @return Total number of install for this keys
      * 
      */
-    public Integer allowedKeyInstallCount() {
-        return this.allowedKeyInstallCount;
+    public Optional<Integer> allowedKeyInstallCount() {
+        return Optional.ofNullable(this.allowedKeyInstallCount);
     }
     /**
      * @return Compartment Identifier
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Principal id of user who created the Agent Install key
      * 
      */
-    public String createdByPrincipalId() {
-        return this.createdByPrincipalId;
+    public Optional<String> createdByPrincipalId() {
+        return Optional.ofNullable(this.createdByPrincipalId);
     }
     /**
      * @return Total number of install for this keys
      * 
      */
-    public Integer currentKeyInstallCount() {
-        return this.currentKeyInstallCount;
+    public Optional<Integer> currentKeyInstallCount() {
+        return Optional.ofNullable(this.currentKeyInstallCount);
     }
     /**
      * @return Management Agent Install Key Name
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Agent install Key identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
      * 
      */
-    public Boolean isUnlimited() {
-        return this.isUnlimited;
+    public Optional<Boolean> isUnlimited() {
+        return Optional.ofNullable(this.isUnlimited);
     }
     /**
      * @return Management Agent Install Key
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public String managementAgentInstallKeyId() {
         return this.managementAgentInstallKeyId;
@@ -149,29 +151,29 @@ public final class GetManagementAgentInstallKeyResult {
      * @return Status of Key
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return date after which key would expire after creation
      * 
      */
-    public String timeExpires() {
-        return this.timeExpires;
+    public Optional<String> timeExpires() {
+        return Optional.ofNullable(this.timeExpires);
     }
     /**
      * @return The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -183,20 +185,20 @@ public final class GetManagementAgentInstallKeyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer allowedKeyInstallCount;
-        private String compartmentId;
-        private String createdByPrincipalId;
-        private Integer currentKeyInstallCount;
-        private String displayName;
-        private String id;
-        private Boolean isUnlimited;
-        private String key;
-        private String lifecycleDetails;
+        private @Nullable Integer allowedKeyInstallCount;
+        private @Nullable String compartmentId;
+        private @Nullable String createdByPrincipalId;
+        private @Nullable Integer currentKeyInstallCount;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable Boolean isUnlimited;
+        private @Nullable String key;
+        private @Nullable String lifecycleDetails;
         private String managementAgentInstallKeyId;
-        private String state;
-        private String timeCreated;
-        private String timeExpires;
-        private String timeUpdated;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeExpires;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetManagementAgentInstallKeyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -217,48 +219,48 @@ public final class GetManagementAgentInstallKeyResult {
         }
 
         @CustomType.Setter
-        public Builder allowedKeyInstallCount(Integer allowedKeyInstallCount) {
-            this.allowedKeyInstallCount = Objects.requireNonNull(allowedKeyInstallCount);
+        public Builder allowedKeyInstallCount(@Nullable Integer allowedKeyInstallCount) {
+            this.allowedKeyInstallCount = allowedKeyInstallCount;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdByPrincipalId(String createdByPrincipalId) {
-            this.createdByPrincipalId = Objects.requireNonNull(createdByPrincipalId);
+        public Builder createdByPrincipalId(@Nullable String createdByPrincipalId) {
+            this.createdByPrincipalId = createdByPrincipalId;
             return this;
         }
         @CustomType.Setter
-        public Builder currentKeyInstallCount(Integer currentKeyInstallCount) {
-            this.currentKeyInstallCount = Objects.requireNonNull(currentKeyInstallCount);
+        public Builder currentKeyInstallCount(@Nullable Integer currentKeyInstallCount) {
+            this.currentKeyInstallCount = currentKeyInstallCount;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isUnlimited(Boolean isUnlimited) {
-            this.isUnlimited = Objects.requireNonNull(isUnlimited);
+        public Builder isUnlimited(@Nullable Boolean isUnlimited) {
+            this.isUnlimited = isUnlimited;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -267,23 +269,23 @@ public final class GetManagementAgentInstallKeyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+        public Builder timeExpires(@Nullable String timeExpires) {
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetManagementAgentInstallKeyResult build() {

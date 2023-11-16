@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceImportRequestResult {
@@ -19,79 +21,79 @@ public final class GetWorkspaceImportRequestResult {
      * @return The name of the Object Storage Bucket where the objects will be imported from
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Name of the user who initiated import request.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Contains key of the error
      * 
      */
-    private Map<String,Object> errorMessages;
+    private @Nullable Map<String,Object> errorMessages;
     /**
      * @return Name of the zip file from which objects will be imported.
      * 
      */
-    private String fileName;
-    private String id;
+    private @Nullable String fileName;
+    private @Nullable String id;
     /**
      * @return Import Objects Conflict resolution.
      * 
      */
-    private List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions;
+    private @Nullable List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions;
     private String importRequestKey;
     /**
      * @return The array of imported object details.
      * 
      */
-    private List<GetWorkspaceImportRequestImportedObject> importedObjects;
+    private @Nullable List<GetWorkspaceImportRequestImportedObject> importedObjects;
     /**
      * @return Import object request key
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Name of the import request.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Key of the object inside which all the objects will be imported
      * 
      */
-    private String objectKeyForImport;
+    private @Nullable String objectKeyForImport;
     /**
      * @return Region of the object storage (if using object storage of different region)
      * 
      */
-    private String objectStorageRegion;
+    private @Nullable String objectStorageRegion;
     /**
      * @return Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
-    private String objectStorageTenancyId;
+    private @Nullable String objectStorageTenancyId;
     /**
      * @return Import Objects request status.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Time at which the request was completely processed.
      * 
      */
-    private String timeEndedInMillis;
+    private @Nullable String timeEndedInMillis;
     /**
      * @return Time at which the request started getting processed.
      * 
      */
-    private String timeStartedInMillis;
+    private @Nullable String timeStartedInMillis;
     /**
      * @return Number of objects that are imported.
      * 
      */
-    private Integer totalImportedObjectCount;
+    private @Nullable Integer totalImportedObjectCount;
     private String workspaceId;
 
     private GetWorkspaceImportRequestResult() {}
@@ -99,39 +101,39 @@ public final class GetWorkspaceImportRequestResult {
      * @return The name of the Object Storage Bucket where the objects will be imported from
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Name of the user who initiated import request.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Contains key of the error
      * 
      */
     public Map<String,Object> errorMessages() {
-        return this.errorMessages;
+        return this.errorMessages == null ? Map.of() : this.errorMessages;
     }
     /**
      * @return Name of the zip file from which objects will be imported.
      * 
      */
-    public String fileName() {
-        return this.fileName;
+    public Optional<String> fileName() {
+        return Optional.ofNullable(this.fileName);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Import Objects Conflict resolution.
      * 
      */
     public List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions() {
-        return this.importConflictResolutions;
+        return this.importConflictResolutions == null ? List.of() : this.importConflictResolutions;
     }
     public String importRequestKey() {
         return this.importRequestKey;
@@ -141,70 +143,70 @@ public final class GetWorkspaceImportRequestResult {
      * 
      */
     public List<GetWorkspaceImportRequestImportedObject> importedObjects() {
-        return this.importedObjects;
+        return this.importedObjects == null ? List.of() : this.importedObjects;
     }
     /**
      * @return Import object request key
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Name of the import request.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Key of the object inside which all the objects will be imported
      * 
      */
-    public String objectKeyForImport() {
-        return this.objectKeyForImport;
+    public Optional<String> objectKeyForImport() {
+        return Optional.ofNullable(this.objectKeyForImport);
     }
     /**
      * @return Region of the object storage (if using object storage of different region)
      * 
      */
-    public String objectStorageRegion() {
-        return this.objectStorageRegion;
+    public Optional<String> objectStorageRegion() {
+        return Optional.ofNullable(this.objectStorageRegion);
     }
     /**
      * @return Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
-    public String objectStorageTenancyId() {
-        return this.objectStorageTenancyId;
+    public Optional<String> objectStorageTenancyId() {
+        return Optional.ofNullable(this.objectStorageTenancyId);
     }
     /**
      * @return Import Objects request status.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Time at which the request was completely processed.
      * 
      */
-    public String timeEndedInMillis() {
-        return this.timeEndedInMillis;
+    public Optional<String> timeEndedInMillis() {
+        return Optional.ofNullable(this.timeEndedInMillis);
     }
     /**
      * @return Time at which the request started getting processed.
      * 
      */
-    public String timeStartedInMillis() {
-        return this.timeStartedInMillis;
+    public Optional<String> timeStartedInMillis() {
+        return Optional.ofNullable(this.timeStartedInMillis);
     }
     /**
      * @return Number of objects that are imported.
      * 
      */
-    public Integer totalImportedObjectCount() {
-        return this.totalImportedObjectCount;
+    public Optional<Integer> totalImportedObjectCount() {
+        return Optional.ofNullable(this.totalImportedObjectCount);
     }
     public String workspaceId() {
         return this.workspaceId;
@@ -219,23 +221,23 @@ public final class GetWorkspaceImportRequestResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String createdBy;
-        private Map<String,Object> errorMessages;
-        private String fileName;
-        private String id;
-        private List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions;
+        private @Nullable String bucket;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> errorMessages;
+        private @Nullable String fileName;
+        private @Nullable String id;
+        private @Nullable List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions;
         private String importRequestKey;
-        private List<GetWorkspaceImportRequestImportedObject> importedObjects;
-        private String key;
-        private String name;
-        private String objectKeyForImport;
-        private String objectStorageRegion;
-        private String objectStorageTenancyId;
-        private String status;
-        private String timeEndedInMillis;
-        private String timeStartedInMillis;
-        private Integer totalImportedObjectCount;
+        private @Nullable List<GetWorkspaceImportRequestImportedObject> importedObjects;
+        private @Nullable String key;
+        private @Nullable String name;
+        private @Nullable String objectKeyForImport;
+        private @Nullable String objectStorageRegion;
+        private @Nullable String objectStorageTenancyId;
+        private @Nullable String status;
+        private @Nullable String timeEndedInMillis;
+        private @Nullable String timeStartedInMillis;
+        private @Nullable Integer totalImportedObjectCount;
         private String workspaceId;
         public Builder() {}
         public Builder(GetWorkspaceImportRequestResult defaults) {
@@ -261,33 +263,33 @@ public final class GetWorkspaceImportRequestResult {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessages(Map<String,Object> errorMessages) {
-            this.errorMessages = Objects.requireNonNull(errorMessages);
+        public Builder errorMessages(@Nullable Map<String,Object> errorMessages) {
+            this.errorMessages = errorMessages;
             return this;
         }
         @CustomType.Setter
-        public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+        public Builder fileName(@Nullable String fileName) {
+            this.fileName = fileName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder importConflictResolutions(List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions) {
-            this.importConflictResolutions = Objects.requireNonNull(importConflictResolutions);
+        public Builder importConflictResolutions(@Nullable List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions) {
+            this.importConflictResolutions = importConflictResolutions;
             return this;
         }
         public Builder importConflictResolutions(GetWorkspaceImportRequestImportConflictResolution... importConflictResolutions) {
@@ -299,56 +301,56 @@ public final class GetWorkspaceImportRequestResult {
             return this;
         }
         @CustomType.Setter
-        public Builder importedObjects(List<GetWorkspaceImportRequestImportedObject> importedObjects) {
-            this.importedObjects = Objects.requireNonNull(importedObjects);
+        public Builder importedObjects(@Nullable List<GetWorkspaceImportRequestImportedObject> importedObjects) {
+            this.importedObjects = importedObjects;
             return this;
         }
         public Builder importedObjects(GetWorkspaceImportRequestImportedObject... importedObjects) {
             return importedObjects(List.of(importedObjects));
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objectKeyForImport(String objectKeyForImport) {
-            this.objectKeyForImport = Objects.requireNonNull(objectKeyForImport);
+        public Builder objectKeyForImport(@Nullable String objectKeyForImport) {
+            this.objectKeyForImport = objectKeyForImport;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageRegion(String objectStorageRegion) {
-            this.objectStorageRegion = Objects.requireNonNull(objectStorageRegion);
+        public Builder objectStorageRegion(@Nullable String objectStorageRegion) {
+            this.objectStorageRegion = objectStorageRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageTenancyId(String objectStorageTenancyId) {
-            this.objectStorageTenancyId = Objects.requireNonNull(objectStorageTenancyId);
+        public Builder objectStorageTenancyId(@Nullable String objectStorageTenancyId) {
+            this.objectStorageTenancyId = objectStorageTenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEndedInMillis(String timeEndedInMillis) {
-            this.timeEndedInMillis = Objects.requireNonNull(timeEndedInMillis);
+        public Builder timeEndedInMillis(@Nullable String timeEndedInMillis) {
+            this.timeEndedInMillis = timeEndedInMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStartedInMillis(String timeStartedInMillis) {
-            this.timeStartedInMillis = Objects.requireNonNull(timeStartedInMillis);
+        public Builder timeStartedInMillis(@Nullable String timeStartedInMillis) {
+            this.timeStartedInMillis = timeStartedInMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder totalImportedObjectCount(Integer totalImportedObjectCount) {
-            this.totalImportedObjectCount = Objects.requireNonNull(totalImportedObjectCount);
+        public Builder totalImportedObjectCount(@Nullable Integer totalImportedObjectCount) {
+            this.totalImportedObjectCount = totalImportedObjectCount;
             return this;
         }
         @CustomType.Setter

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// <summary>
         /// The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
         /// </summary>
-        public readonly double BackupSpaceEstimateInGbs;
+        public readonly double? BackupSpaceEstimateInGbs;
         /// <summary>
         /// Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
         /// </summary>
-        public readonly double BackupSpaceUsedInGbs;
+        public readonly double? BackupSpaceUsedInGbs;
         /// <summary>
         /// Number of seconds backups are currently retained for this database.
         /// </summary>
-        public readonly double CurrentRetentionPeriodInSeconds;
+        public readonly double? CurrentRetentionPeriodInSeconds;
         /// <summary>
         /// The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
         /// </summary>
-        public readonly double DbSizeInGbs;
+        public readonly double? DbSizeInGbs;
         /// <summary>
         /// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         /// </summary>
-        public readonly bool IsRedoLogsEnabled;
+        public readonly bool? IsRedoLogsEnabled;
         /// <summary>
         /// The maximum number of days to retain backups for a protected database.
         /// </summary>
-        public readonly double RetentionPeriodInDays;
+        public readonly double? RetentionPeriodInDays;
         /// <summary>
         /// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
         /// </summary>
-        public readonly double UnprotectedWindowInSeconds;
+        public readonly double? UnprotectedWindowInSeconds;
 
         [OutputConstructor]
         private GetProtectedDatabaseMetricResult(
-            double backupSpaceEstimateInGbs,
+            double? backupSpaceEstimateInGbs,
 
-            double backupSpaceUsedInGbs,
+            double? backupSpaceUsedInGbs,
 
-            double currentRetentionPeriodInSeconds,
+            double? currentRetentionPeriodInSeconds,
 
-            double dbSizeInGbs,
+            double? dbSizeInGbs,
 
-            bool isRedoLogsEnabled,
+            bool? isRedoLogsEnabled,
 
-            double retentionPeriodInDays,
+            double? retentionPeriodInDays,
 
-            double unprotectedWindowInSeconds)
+            double? unprotectedWindowInSeconds)
         {
             BackupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
             BackupSpaceUsedInGbs = backupSpaceUsedInGbs;

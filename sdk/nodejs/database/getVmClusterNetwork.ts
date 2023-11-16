@@ -51,27 +51,27 @@ export interface GetVmClusterNetworkArgs {
  * A collection of values returned by getVmClusterNetwork.
  */
 export interface GetVmClusterNetworkResult {
-    readonly action: string;
+    readonly action?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the VM cluster network. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    readonly dns: string[];
+    readonly dns?: string[];
     /**
      * The SCAN details for DR network
      */
-    readonly drScans: outputs.Database.GetVmClusterNetworkDrScan[];
+    readonly drScans?: outputs.Database.GetVmClusterNetworkDrScan[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
@@ -79,41 +79,41 @@ export interface GetVmClusterNetworkResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    readonly ntps: string[];
+    readonly ntps?: string[];
     /**
      * The SCAN details.
      */
-    readonly scans: outputs.Database.GetVmClusterNetworkScan[];
+    readonly scans?: outputs.Database.GetVmClusterNetworkScan[];
     /**
      * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time when the VM cluster network was created.
      */
-    readonly timeCreated: string;
-    readonly validateVmClusterNetwork: boolean;
+    readonly timeCreated?: string;
+    readonly validateVmClusterNetwork?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      */
-    readonly vmClusterId: string;
+    readonly vmClusterId?: string;
     readonly vmClusterNetworkId: string;
     /**
      * Details of the client and backup networks.
      */
-    readonly vmNetworks: outputs.Database.GetVmClusterNetworkVmNetwork[];
+    readonly vmNetworks?: outputs.Database.GetVmClusterNetworkVmNetwork[];
 }
 /**
  * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.

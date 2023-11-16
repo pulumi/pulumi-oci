@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.GetFastLaunchJobConfigsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetFastLaunchJobConfigsResult {
      * @return The list of fast_launch_job_configs.
      * 
      */
-    private List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs;
+    private @Nullable List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs;
     private @Nullable List<GetFastLaunchJobConfigsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetFastLaunchJobConfigsResult() {}
     public String compartmentId() {
@@ -35,7 +36,7 @@ public final class GetFastLaunchJobConfigsResult {
      * 
      */
     public List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs() {
-        return this.fastLaunchJobConfigs;
+        return this.fastLaunchJobConfigs == null ? List.of() : this.fastLaunchJobConfigs;
     }
     public List<GetFastLaunchJobConfigsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetFastLaunchJobConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetFastLaunchJobConfigsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs;
+        private @Nullable List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs;
         private @Nullable List<GetFastLaunchJobConfigsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetFastLaunchJobConfigsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetFastLaunchJobConfigsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder fastLaunchJobConfigs(List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs) {
-            this.fastLaunchJobConfigs = Objects.requireNonNull(fastLaunchJobConfigs);
+        public Builder fastLaunchJobConfigs(@Nullable List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs) {
+            this.fastLaunchJobConfigs = fastLaunchJobConfigs;
             return this;
         }
         public Builder fastLaunchJobConfigs(GetFastLaunchJobConfigsFastLaunchJobConfig... fastLaunchJobConfigs) {
@@ -92,8 +93,8 @@ public final class GetFastLaunchJobConfigsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetFastLaunchJobConfigsResult build() {

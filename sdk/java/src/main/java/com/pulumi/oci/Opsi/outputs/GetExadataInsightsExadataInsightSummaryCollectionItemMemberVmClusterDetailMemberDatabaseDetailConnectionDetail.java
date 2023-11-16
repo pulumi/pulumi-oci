@@ -8,22 +8,24 @@ import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollec
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail {
-    private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
-    private String protocol;
-    private String serviceName;
+    private @Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
+    private @Nullable String protocol;
+    private @Nullable String serviceName;
 
     private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail() {}
     public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts() {
-        return this.hosts;
+        return this.hosts == null ? List.of() : this.hosts;
     }
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
 
     public static Builder builder() {
@@ -35,9 +37,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
-        private String protocol;
-        private String serviceName;
+        private @Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
+        private @Nullable String protocol;
+        private @Nullable String serviceName;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,21 +49,21 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         }
 
         @CustomType.Setter
-        public Builder hosts(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts) {
-            this.hosts = Objects.requireNonNull(hosts);
+        public Builder hosts(@Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts) {
+            this.hosts = hosts;
             return this;
         }
         public Builder hosts(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost... hosts) {
             return hosts(List.of(hosts));
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail build() {

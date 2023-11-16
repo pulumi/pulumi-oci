@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
@@ -63,17 +62,17 @@ type GetMediaWorkflowJobFactArgs struct {
 // A collection of values returned by getMediaWorkflowJobFact.
 type GetMediaWorkflowJobFactResult struct {
 	// The body of the detail captured as JSON.
-	Detail string `pulumi:"detail"`
+	Detail *string `pulumi:"detail"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
 	Key string `pulumi:"key"`
 	// Reference to the parent job.
 	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
 	// Unique name. It is read-only and generated for the fact.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The type of information contained in this detail.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func GetMediaWorkflowJobFactOutput(ctx *pulumi.Context, args GetMediaWorkflowJobFactOutputArgs, opts ...pulumi.InvokeOption) GetMediaWorkflowJobFactResultOutput {
@@ -116,20 +115,14 @@ func (o GetMediaWorkflowJobFactResultOutput) ToGetMediaWorkflowJobFactResultOutp
 	return o
 }
 
-func (o GetMediaWorkflowJobFactResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactResult] {
-	return pulumix.Output[GetMediaWorkflowJobFactResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The body of the detail captured as JSON.
-func (o GetMediaWorkflowJobFactResultOutput) Detail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) string { return v.Detail }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactResultOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) *string { return v.Detail }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMediaWorkflowJobFactResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
@@ -143,13 +136,13 @@ func (o GetMediaWorkflowJobFactResultOutput) MediaWorkflowJobId() pulumi.StringO
 }
 
 // Unique name. It is read-only and generated for the fact.
-func (o GetMediaWorkflowJobFactResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The type of information contained in this detail.
-func (o GetMediaWorkflowJobFactResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

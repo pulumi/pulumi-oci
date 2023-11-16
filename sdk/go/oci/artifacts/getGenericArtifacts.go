@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Generic Artifacts in Oracle Cloud Infrastructure Artifacts service.
@@ -153,12 +152,6 @@ func (o GetGenericArtifactsResultOutput) ToGetGenericArtifactsResultOutput() Get
 
 func (o GetGenericArtifactsResultOutput) ToGetGenericArtifactsResultOutputWithContext(ctx context.Context) GetGenericArtifactsResultOutput {
 	return o
-}
-
-func (o GetGenericArtifactsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsResult] {
-	return pulumix.Output[GetGenericArtifactsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`

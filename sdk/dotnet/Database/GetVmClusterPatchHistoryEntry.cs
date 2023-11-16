@@ -124,51 +124,51 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The action being performed or was completed.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly string PatchHistoryEntryId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
         /// </summary>
-        public readonly string PatchId;
+        public readonly string? PatchId;
         /// <summary>
         /// The current state of the action.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time when the patch action completed
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time when the patch action started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         public readonly string VmClusterId;
 
         [OutputConstructor]
         private GetVmClusterPatchHistoryEntryResult(
-            string action,
+            string? action,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             string patchHistoryEntryId,
 
-            string patchId,
+            string? patchId,
 
-            string state,
+            string? state,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted,
+            string? timeStarted,
 
             string vmClusterId)
         {

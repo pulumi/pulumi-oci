@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure ADM service.
@@ -60,24 +59,24 @@ type GetKnowledgebaseArgs struct {
 // A collection of values returned by getKnowledgebase.
 type GetKnowledgebaseResult struct {
 	// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the knowledge base.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-	Id              string `pulumi:"id"`
-	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+	Id              *string `pulumi:"id"`
+	KnowledgeBaseId string  `pulumi:"knowledgeBaseId"`
 	// The current lifecycle state of the knowledge base.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetKnowledgebaseOutput(ctx *pulumi.Context, args GetKnowledgebaseOutputArgs, opts ...pulumi.InvokeOption) GetKnowledgebaseResultOutput {
@@ -118,15 +117,9 @@ func (o GetKnowledgebaseResultOutput) ToGetKnowledgebaseResultOutputWithContext(
 	return o
 }
 
-func (o GetKnowledgebaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebaseResult] {
-	return pulumix.Output[GetKnowledgebaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-func (o GetKnowledgebaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetKnowledgebaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -135,8 +128,8 @@ func (o GetKnowledgebaseResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The name of the knowledge base.
-func (o GetKnowledgebaseResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetKnowledgebaseResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -145,8 +138,8 @@ func (o GetKnowledgebaseResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-func (o GetKnowledgebaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetKnowledgebaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetKnowledgebaseResultOutput) KnowledgeBaseId() pulumi.StringOutput {
@@ -154,8 +147,8 @@ func (o GetKnowledgebaseResultOutput) KnowledgeBaseId() pulumi.StringOutput {
 }
 
 // The current lifecycle state of the knowledge base.
-func (o GetKnowledgebaseResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetKnowledgebaseResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -164,13 +157,13 @@ func (o GetKnowledgebaseResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetKnowledgebaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetKnowledgebaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetKnowledgebaseResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetKnowledgebaseResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
@@ -105,8 +104,8 @@ type GetResourceActionsResult struct {
 	CompartmentIdInSubtree bool                       `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetResourceActionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	IncludeOrganization *bool  `pulumi:"includeOrganization"`
+	Id                  *string `pulumi:"id"`
+	IncludeOrganization *bool   `pulumi:"includeOrganization"`
 	// The name assigned to the resource.
 	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -191,12 +190,6 @@ func (o GetResourceActionsResultOutput) ToGetResourceActionsResultOutputWithCont
 	return o
 }
 
-func (o GetResourceActionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResult] {
-	return pulumix.Output[GetResourceActionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceActionsResultOutput) ChildTenancyIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetResourceActionsResult) []string { return v.ChildTenancyIds }).(pulumi.StringArrayOutput)
 }
@@ -215,8 +208,8 @@ func (o GetResourceActionsResultOutput) Filters() GetResourceActionsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetResourceActionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResourceActionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResourceActionsResultOutput) IncludeOrganization() pulumi.BoolPtrOutput {

@@ -12,6 +12,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimsch
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup {
@@ -19,37 +21,37 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
      * @return A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
      */
-    private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles;
+    private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles;
     /**
      * @return Source from which this group got created.
      * 
      */
-    private String creationMechanism;
+    private @Nullable String creationMechanism;
     /**
      * @return Group description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Grants assigned to group
      * 
      */
-    private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants;
+    private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants;
     /**
      * @return Group owners
      * 
      */
-    private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners;
+    private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners;
     /**
      * @return Password Policy associated with this Group.
      * 
      */
-    private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies;
+    private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies;
     /**
      * @return The entity that created this Group.
      * 
      */
-    private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps;
+    private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps;
 
     private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup() {}
     /**
@@ -57,49 +59,49 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
      * 
      */
     public List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles() {
-        return this.appRoles;
+        return this.appRoles == null ? List.of() : this.appRoles;
     }
     /**
      * @return Source from which this group got created.
      * 
      */
-    public String creationMechanism() {
-        return this.creationMechanism;
+    public Optional<String> creationMechanism() {
+        return Optional.ofNullable(this.creationMechanism);
     }
     /**
      * @return Group description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Grants assigned to group
      * 
      */
     public List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants() {
-        return this.grants;
+        return this.grants == null ? List.of() : this.grants;
     }
     /**
      * @return Group owners
      * 
      */
     public List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners() {
-        return this.owners;
+        return this.owners == null ? List.of() : this.owners;
     }
     /**
      * @return Password Policy associated with this Group.
      * 
      */
     public List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies() {
-        return this.passwordPolicies;
+        return this.passwordPolicies == null ? List.of() : this.passwordPolicies;
     }
     /**
      * @return The entity that created this Group.
      * 
      */
     public List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps() {
-        return this.syncedFromApps;
+        return this.syncedFromApps == null ? List.of() : this.syncedFromApps;
     }
 
     public static Builder builder() {
@@ -111,13 +113,13 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles;
-        private String creationMechanism;
-        private String description;
-        private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants;
-        private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners;
-        private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies;
-        private List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps;
+        private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles;
+        private @Nullable String creationMechanism;
+        private @Nullable String description;
+        private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants;
+        private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners;
+        private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies;
+        private @Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps;
         public Builder() {}
         public Builder(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -131,50 +133,50 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
 
         @CustomType.Setter
-        public Builder appRoles(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles) {
-            this.appRoles = Objects.requireNonNull(appRoles);
+        public Builder appRoles(@Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles) {
+            this.appRoles = appRoles;
             return this;
         }
         public Builder appRoles(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole... appRoles) {
             return appRoles(List.of(appRoles));
         }
         @CustomType.Setter
-        public Builder creationMechanism(String creationMechanism) {
-            this.creationMechanism = Objects.requireNonNull(creationMechanism);
+        public Builder creationMechanism(@Nullable String creationMechanism) {
+            this.creationMechanism = creationMechanism;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder grants(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+        public Builder grants(@Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants) {
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant... grants) {
             return grants(List.of(grants));
         }
         @CustomType.Setter
-        public Builder owners(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners) {
-            this.owners = Objects.requireNonNull(owners);
+        public Builder owners(@Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners) {
+            this.owners = owners;
             return this;
         }
         public Builder owners(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner... owners) {
             return owners(List.of(owners));
         }
         @CustomType.Setter
-        public Builder passwordPolicies(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies) {
-            this.passwordPolicies = Objects.requireNonNull(passwordPolicies);
+        public Builder passwordPolicies(@Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies) {
+            this.passwordPolicies = passwordPolicies;
             return this;
         }
         public Builder passwordPolicies(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy... passwordPolicies) {
             return passwordPolicies(List.of(passwordPolicies));
         }
         @CustomType.Setter
-        public Builder syncedFromApps(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps) {
-            this.syncedFromApps = Objects.requireNonNull(syncedFromApps);
+        public Builder syncedFromApps(@Nullable List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps) {
+            this.syncedFromApps = syncedFromApps;
             return this;
         }
         public Builder syncedFromApps(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp... syncedFromApps) {

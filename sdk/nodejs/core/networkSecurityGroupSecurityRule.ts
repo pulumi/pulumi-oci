@@ -93,7 +93,7 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
     /**
      * An optional description of your choice for the rule. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
      *
@@ -102,13 +102,13 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
      * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
      * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
      */
-    public readonly destination!: pulumi.Output<string>;
+    public readonly destination!: pulumi.Output<string | undefined>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`.
      *
      * Allowed values:
      */
-    public readonly destinationType!: pulumi.Output<string>;
+    public readonly destinationType!: pulumi.Output<string | undefined>;
     /**
      * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
      */
@@ -124,7 +124,7 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
     /**
      * Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
      */
-    public /*out*/ readonly isValid!: pulumi.Output<boolean>;
+    public /*out*/ readonly isValid!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      */
@@ -145,11 +145,11 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
      */
-    public readonly sourceType!: pulumi.Output<string>;
+    public readonly sourceType!: pulumi.Output<string | undefined>;
     /**
      * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      */
-    public readonly stateless!: pulumi.Output<boolean>;
+    public readonly stateless!: pulumi.Output<boolean | undefined>;
     /**
      * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      */
@@ -157,7 +157,7 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
     /**
      * The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      */

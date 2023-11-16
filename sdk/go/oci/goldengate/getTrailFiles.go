@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
@@ -71,7 +70,7 @@ type GetTrailFilesResult struct {
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetTrailFilesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of trail_file_collection.
 	TrailFileCollections []GetTrailFilesTrailFileCollection `pulumi:"trailFileCollections"`
 	// The TrailFile Id.
@@ -121,12 +120,6 @@ func (o GetTrailFilesResultOutput) ToGetTrailFilesResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetTrailFilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTrailFilesResult] {
-	return pulumix.Output[GetTrailFilesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTrailFilesResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrailFilesResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
@@ -141,8 +134,8 @@ func (o GetTrailFilesResultOutput) Filters() GetTrailFilesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTrailFilesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTrailFilesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTrailFilesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTrailFilesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of trail_file_collection.

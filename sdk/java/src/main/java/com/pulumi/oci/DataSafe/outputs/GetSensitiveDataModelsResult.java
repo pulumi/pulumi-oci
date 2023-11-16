@@ -32,12 +32,12 @@ public final class GetSensitiveDataModelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of sensitive_data_model_collection.
      * 
      */
-    private List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections;
+    private @Nullable List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections;
     private @Nullable String sensitiveDataModelId;
     /**
      * @return The current state of the sensitive data model.
@@ -80,15 +80,15 @@ public final class GetSensitiveDataModelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of sensitive_data_model_collection.
      * 
      */
     public List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections() {
-        return this.sensitiveDataModelCollections;
+        return this.sensitiveDataModelCollections == null ? List.of() : this.sensitiveDataModelCollections;
     }
     public Optional<String> sensitiveDataModelId() {
         return Optional.ofNullable(this.sensitiveDataModelId);
@@ -128,8 +128,8 @@ public final class GetSensitiveDataModelsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetSensitiveDataModelsFilter> filters;
-        private String id;
-        private List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections;
         private @Nullable String sensitiveDataModelId;
         private @Nullable String state;
         private @Nullable String targetId;
@@ -181,13 +181,13 @@ public final class GetSensitiveDataModelsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveDataModelCollections(List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections) {
-            this.sensitiveDataModelCollections = Objects.requireNonNull(sensitiveDataModelCollections);
+        public Builder sensitiveDataModelCollections(@Nullable List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections) {
+            this.sensitiveDataModelCollections = sensitiveDataModelCollections;
             return this;
         }
         public Builder sensitiveDataModelCollections(GetSensitiveDataModelsSensitiveDataModelCollection... sensitiveDataModelCollections) {

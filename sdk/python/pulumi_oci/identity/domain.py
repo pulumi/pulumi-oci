@@ -33,25 +33,6 @@ class DomainArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Domain resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the Compartment where domain is created
-        :param pulumi.Input[str] description: (Updatable) Domain entity description
-        :param pulumi.Input[str] display_name: (Updatable) The mutable display name of the domain.
-        :param pulumi.Input[str] home_region: The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        :param pulumi.Input[str] license_type: The License type of Domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] admin_email: The admin email address
-        :param pulumi.Input[str] admin_first_name: The admin first name
-        :param pulumi.Input[str] admin_last_name: The admin last name
-        :param pulumi.Input[str] admin_user_name: The admin user name
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_hidden_on_login: (Updatable) Indicates whether domain is hidden on login screen or not.
-        :param pulumi.Input[bool] is_notification_bypassed: Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-        :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-        :param pulumi.Input[str] state: The current state.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
@@ -82,9 +63,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the Compartment where domain is created
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -94,9 +72,6 @@ class DomainArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Domain entity description
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -106,9 +81,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The mutable display name of the domain.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -118,9 +90,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="homeRegion")
     def home_region(self) -> pulumi.Input[str]:
-        """
-        The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        """
         return pulumi.get(self, "home_region")
 
     @home_region.setter
@@ -130,13 +99,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> pulumi.Input[str]:
-        """
-        The License type of Domain
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "license_type")
 
     @license_type.setter
@@ -146,9 +108,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="adminEmail")
     def admin_email(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin email address
-        """
         return pulumi.get(self, "admin_email")
 
     @admin_email.setter
@@ -158,9 +117,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="adminFirstName")
     def admin_first_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin first name
-        """
         return pulumi.get(self, "admin_first_name")
 
     @admin_first_name.setter
@@ -170,9 +126,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="adminLastName")
     def admin_last_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin last name
-        """
         return pulumi.get(self, "admin_last_name")
 
     @admin_last_name.setter
@@ -182,9 +135,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="adminUserName")
     def admin_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin user name
-        """
         return pulumi.get(self, "admin_user_name")
 
     @admin_user_name.setter
@@ -194,9 +144,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -206,9 +153,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -218,9 +162,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="isHiddenOnLogin")
     def is_hidden_on_login(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether domain is hidden on login screen or not.
-        """
         return pulumi.get(self, "is_hidden_on_login")
 
     @is_hidden_on_login.setter
@@ -230,9 +171,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="isNotificationBypassed")
     def is_notification_bypassed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-        """
         return pulumi.get(self, "is_notification_bypassed")
 
     @is_notification_bypassed.setter
@@ -242,9 +180,6 @@ class DomainArgs:
     @property
     @pulumi.getter(name="isPrimaryEmailRequired")
     def is_primary_email_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-        """
         return pulumi.get(self, "is_primary_email_required")
 
     @is_primary_email_required.setter
@@ -254,9 +189,6 @@ class DomainArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -290,31 +222,6 @@ class _DomainState:
                  url: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Domain resources.
-        :param pulumi.Input[str] admin_email: The admin email address
-        :param pulumi.Input[str] admin_first_name: The admin first name
-        :param pulumi.Input[str] admin_last_name: The admin last name
-        :param pulumi.Input[str] admin_user_name: The admin user name
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the Compartment where domain is created
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Domain entity description
-        :param pulumi.Input[str] display_name: (Updatable) The mutable display name of the domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] home_region: The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        :param pulumi.Input[str] home_region_url: Region specific domain URL.
-        :param pulumi.Input[bool] is_hidden_on_login: (Updatable) Indicates whether domain is hidden on login screen or not.
-        :param pulumi.Input[bool] is_notification_bypassed: Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-        :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-        :param pulumi.Input[str] license_type: The License type of Domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the Domain.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainReplicaRegionArgs']]] replica_regions: The regions domain is replication to.
-        :param pulumi.Input[str] state: The current state.
-        :param pulumi.Input[str] time_created: Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] type: The type of the domain.
-        :param pulumi.Input[str] url: Region agnostic domain URL.
         """
         if admin_email is not None:
             pulumi.set(__self__, "admin_email", admin_email)
@@ -362,9 +269,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="adminEmail")
     def admin_email(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin email address
-        """
         return pulumi.get(self, "admin_email")
 
     @admin_email.setter
@@ -374,9 +278,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="adminFirstName")
     def admin_first_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin first name
-        """
         return pulumi.get(self, "admin_first_name")
 
     @admin_first_name.setter
@@ -386,9 +287,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="adminLastName")
     def admin_last_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin last name
-        """
         return pulumi.get(self, "admin_last_name")
 
     @admin_last_name.setter
@@ -398,9 +296,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="adminUserName")
     def admin_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The admin user name
-        """
         return pulumi.get(self, "admin_user_name")
 
     @admin_user_name.setter
@@ -410,9 +305,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Compartment where domain is created
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -422,9 +314,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -434,9 +323,6 @@ class _DomainState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Domain entity description
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -446,9 +332,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The mutable display name of the domain.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -458,9 +341,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -470,9 +350,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="homeRegion")
     def home_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        """
         return pulumi.get(self, "home_region")
 
     @home_region.setter
@@ -482,9 +359,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="homeRegionUrl")
     def home_region_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Region specific domain URL.
-        """
         return pulumi.get(self, "home_region_url")
 
     @home_region_url.setter
@@ -494,9 +368,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="isHiddenOnLogin")
     def is_hidden_on_login(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether domain is hidden on login screen or not.
-        """
         return pulumi.get(self, "is_hidden_on_login")
 
     @is_hidden_on_login.setter
@@ -506,9 +377,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="isNotificationBypassed")
     def is_notification_bypassed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-        """
         return pulumi.get(self, "is_notification_bypassed")
 
     @is_notification_bypassed.setter
@@ -518,9 +386,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="isPrimaryEmailRequired")
     def is_primary_email_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-        """
         return pulumi.get(self, "is_primary_email_required")
 
     @is_primary_email_required.setter
@@ -530,13 +395,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The License type of Domain
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "license_type")
 
     @license_type.setter
@@ -546,9 +404,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Any additional details about the current state of the Domain.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -558,9 +413,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="replicaRegions")
     def replica_regions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainReplicaRegionArgs']]]]:
-        """
-        The regions domain is replication to.
-        """
         return pulumi.get(self, "replica_regions")
 
     @replica_regions.setter
@@ -570,9 +422,6 @@ class _DomainState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -582,9 +431,6 @@ class _DomainState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -594,9 +440,6 @@ class _DomainState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the domain.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -606,9 +449,6 @@ class _DomainState:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Region agnostic domain URL.
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -638,81 +478,9 @@ class Domain(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Domain resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
-        {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
-        this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
-
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
-
-        After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
-        before using it.
-        If the domain's {@code displayName} already exists, returns 400 BAD REQUEST.
-        If any one of admin related fields are provided and one of the following 3 fields
-        - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
-          returns 400 BAD REQUEST.
-        - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
-          returns 400 BAD REQUEST.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_domain = oci.identity.Domain("testDomain",
-            compartment_id=var["compartment_id"],
-            description=var["domain_description"],
-            display_name=var["domain_display_name"],
-            home_region=var["domain_home_region"],
-            license_type=var["domain_license_type"],
-            admin_email=var["domain_admin_email"],
-            admin_first_name=var["domain_admin_first_name"],
-            admin_last_name=var["domain_admin_last_name"],
-            admin_user_name=oci_identity_user["test_user"]["name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_hidden_on_login=var["domain_is_hidden_on_login"],
-            is_notification_bypassed=var["domain_is_notification_bypassed"],
-            is_primary_email_required=var["domain_is_primary_email_required"])
-        ```
-
-        ## Import
-
-        Domains can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domain:Domain test_domain "id"
-        ```
-
+        Create a Domain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] admin_email: The admin email address
-        :param pulumi.Input[str] admin_first_name: The admin first name
-        :param pulumi.Input[str] admin_last_name: The admin last name
-        :param pulumi.Input[str] admin_user_name: The admin user name
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the Compartment where domain is created
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Domain entity description
-        :param pulumi.Input[str] display_name: (Updatable) The mutable display name of the domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] home_region: The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        :param pulumi.Input[bool] is_hidden_on_login: (Updatable) Indicates whether domain is hidden on login screen or not.
-        :param pulumi.Input[bool] is_notification_bypassed: Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-        :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-        :param pulumi.Input[str] license_type: The License type of Domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state.
         """
         ...
     @overload
@@ -721,60 +489,7 @@ class Domain(pulumi.CustomResource):
                  args: DomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Domain resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
-        {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
-        this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
-
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
-
-        After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
-        before using it.
-        If the domain's {@code displayName} already exists, returns 400 BAD REQUEST.
-        If any one of admin related fields are provided and one of the following 3 fields
-        - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
-          returns 400 BAD REQUEST.
-        - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
-          returns 400 BAD REQUEST.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_domain = oci.identity.Domain("testDomain",
-            compartment_id=var["compartment_id"],
-            description=var["domain_description"],
-            display_name=var["domain_display_name"],
-            home_region=var["domain_home_region"],
-            license_type=var["domain_license_type"],
-            admin_email=var["domain_admin_email"],
-            admin_first_name=var["domain_admin_first_name"],
-            admin_last_name=var["domain_admin_last_name"],
-            admin_user_name=oci_identity_user["test_user"]["name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_hidden_on_login=var["domain_is_hidden_on_login"],
-            is_notification_bypassed=var["domain_is_notification_bypassed"],
-            is_primary_email_required=var["domain_is_primary_email_required"])
-        ```
-
-        ## Import
-
-        Domains can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domain:Domain test_domain "id"
-        ```
-
+        Create a Domain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DomainArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -883,31 +598,6 @@ class Domain(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] admin_email: The admin email address
-        :param pulumi.Input[str] admin_first_name: The admin first name
-        :param pulumi.Input[str] admin_last_name: The admin last name
-        :param pulumi.Input[str] admin_user_name: The admin user name
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the Compartment where domain is created
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Domain entity description
-        :param pulumi.Input[str] display_name: (Updatable) The mutable display name of the domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] home_region: The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        :param pulumi.Input[str] home_region_url: Region specific domain URL.
-        :param pulumi.Input[bool] is_hidden_on_login: (Updatable) Indicates whether domain is hidden on login screen or not.
-        :param pulumi.Input[bool] is_notification_bypassed: Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-        :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-        :param pulumi.Input[str] license_type: The License type of Domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the Domain.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainReplicaRegionArgs']]]] replica_regions: The regions domain is replication to.
-        :param pulumi.Input[str] state: The current state.
-        :param pulumi.Input[str] time_created: Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] type: The type of the domain.
-        :param pulumi.Input[str] url: Region agnostic domain URL.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -938,173 +628,106 @@ class Domain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="adminEmail")
-    def admin_email(self) -> pulumi.Output[str]:
-        """
-        The admin email address
-        """
+    def admin_email(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "admin_email")
 
     @property
     @pulumi.getter(name="adminFirstName")
-    def admin_first_name(self) -> pulumi.Output[str]:
-        """
-        The admin first name
-        """
+    def admin_first_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "admin_first_name")
 
     @property
     @pulumi.getter(name="adminLastName")
-    def admin_last_name(self) -> pulumi.Output[str]:
-        """
-        The admin last name
-        """
+    def admin_last_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "admin_last_name")
 
     @property
     @pulumi.getter(name="adminUserName")
-    def admin_user_name(self) -> pulumi.Output[str]:
-        """
-        The admin user name
-        """
+    def admin_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "admin_user_name")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the Compartment where domain is created
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Domain entity description
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The mutable display name of the domain.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeRegion")
     def home_region(self) -> pulumi.Output[str]:
-        """
-        The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        """
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter(name="homeRegionUrl")
-    def home_region_url(self) -> pulumi.Output[str]:
-        """
-        Region specific domain URL.
-        """
+    def home_region_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "home_region_url")
 
     @property
     @pulumi.getter(name="isHiddenOnLogin")
-    def is_hidden_on_login(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether domain is hidden on login screen or not.
-        """
+    def is_hidden_on_login(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_hidden_on_login")
 
     @property
     @pulumi.getter(name="isNotificationBypassed")
-    def is_notification_bypassed(self) -> pulumi.Output[bool]:
-        """
-        Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-        """
+    def is_notification_bypassed(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_notification_bypassed")
 
     @property
     @pulumi.getter(name="isPrimaryEmailRequired")
-    def is_primary_email_required(self) -> pulumi.Output[bool]:
-        """
-        Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-        """
+    def is_primary_email_required(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_primary_email_required")
 
     @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> pulumi.Output[str]:
-        """
-        The License type of Domain
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Any additional details about the current state of the Domain.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="replicaRegions")
-    def replica_regions(self) -> pulumi.Output[Sequence['outputs.DomainReplicaRegion']]:
-        """
-        The regions domain is replication to.
-        """
+    def replica_regions(self) -> pulumi.Output[Optional[Sequence['outputs.DomainReplicaRegion']]]:
         return pulumi.get(self, "replica_regions")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of the domain.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def url(self) -> pulumi.Output[str]:
-        """
-        Region agnostic domain URL.
-        """
+    def url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "url")
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Authors in Oracle Cloud Infrastructure Devops service.
@@ -65,7 +64,7 @@ type GetRepositoryAuthorsArgs struct {
 type GetRepositoryAuthorsResult struct {
 	Filters []GetRepositoryAuthorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string  `pulumi:"id"`
+	Id      *string `pulumi:"id"`
 	RefName *string `pulumi:"refName"`
 	// The list of repository_author_collection.
 	RepositoryAuthorCollections []GetRepositoryAuthorsRepositoryAuthorCollection `pulumi:"repositoryAuthorCollections"`
@@ -113,19 +112,13 @@ func (o GetRepositoryAuthorsResultOutput) ToGetRepositoryAuthorsResultOutputWith
 	return o
 }
 
-func (o GetRepositoryAuthorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryAuthorsResult] {
-	return pulumix.Output[GetRepositoryAuthorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoryAuthorsResultOutput) Filters() GetRepositoryAuthorsFilterArrayOutput {
 	return o.ApplyT(func(v GetRepositoryAuthorsResult) []GetRepositoryAuthorsFilter { return v.Filters }).(GetRepositoryAuthorsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryAuthorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryAuthorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryAuthorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryAuthorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryAuthorsResultOutput) RefName() pulumi.StringPtrOutput {

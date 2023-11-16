@@ -9,6 +9,7 @@ import com.pulumi.oci.CloudGuard.outputs.GetProblemEntitiesProblemEntityCollecti
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetProblemEntitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of problem_entity_collection.
      * 
      */
-    private List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections;
+    private @Nullable List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections;
     /**
      * @return Attached problem id
      * 
@@ -38,15 +39,15 @@ public final class GetProblemEntitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of problem_entity_collection.
      * 
      */
     public List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections() {
-        return this.problemEntityCollections;
+        return this.problemEntityCollections == null ? List.of() : this.problemEntityCollections;
     }
     /**
      * @return Attached problem id
@@ -66,8 +67,8 @@ public final class GetProblemEntitiesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetProblemEntitiesFilter> filters;
-        private String id;
-        private List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections;
+        private @Nullable String id;
+        private @Nullable List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections;
         private String problemId;
         public Builder() {}
         public Builder(GetProblemEntitiesResult defaults) {
@@ -87,13 +88,13 @@ public final class GetProblemEntitiesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder problemEntityCollections(List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections) {
-            this.problemEntityCollections = Objects.requireNonNull(problemEntityCollections);
+        public Builder problemEntityCollections(@Nullable List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections) {
+            this.problemEntityCollections = problemEntityCollections;
             return this;
         }
         public Builder problemEntityCollections(GetProblemEntitiesProblemEntityCollection... problemEntityCollections) {

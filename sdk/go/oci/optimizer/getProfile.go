@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.
@@ -60,32 +59,32 @@ type LookupProfileArgs struct {
 // A collection of values returned by getProfile.
 type LookupProfileResult struct {
 	// The time period over which to collect data for the recommendations, measured in number of days.
-	AggregationIntervalInDays int `pulumi:"aggregationIntervalInDays"`
+	AggregationIntervalInDays *int `pulumi:"aggregationIntervalInDays"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Text describing the profile. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique OCID of the profile.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of configuration levels for each recommendation.
 	LevelsConfigurations []GetProfileLevelsConfiguration `pulumi:"levelsConfigurations"`
 	// The name assigned to the profile. Avoid entering confidential information.
-	Name      string `pulumi:"name"`
-	ProfileId string `pulumi:"profileId"`
+	Name      *string `pulumi:"name"`
+	ProfileId string  `pulumi:"profileId"`
 	// The profile's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments []GetProfileTargetCompartment `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
 	TargetTags []GetProfileTargetTag `pulumi:"targetTags"`
 	// The date and time the profile was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the profile was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupProfileOutput(ctx *pulumi.Context, args LookupProfileOutputArgs, opts ...pulumi.InvokeOption) LookupProfileResultOutput {
@@ -126,20 +125,14 @@ func (o LookupProfileResultOutput) ToLookupProfileResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProfileResult] {
-	return pulumix.Output[LookupProfileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The time period over which to collect data for the recommendations, measured in number of days.
-func (o LookupProfileResultOutput) AggregationIntervalInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupProfileResult) int { return v.AggregationIntervalInDays }).(pulumi.IntOutput)
+func (o LookupProfileResultOutput) AggregationIntervalInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *int { return v.AggregationIntervalInDays }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the tenancy. The tenancy is the root compartment.
-func (o LookupProfileResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
@@ -148,8 +141,8 @@ func (o LookupProfileResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Text describing the profile. Avoid entering confidential information.
-func (o LookupProfileResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -158,8 +151,8 @@ func (o LookupProfileResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique OCID of the profile.
-func (o LookupProfileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of configuration levels for each recommendation.
@@ -168,8 +161,8 @@ func (o LookupProfileResultOutput) LevelsConfigurations() GetProfileLevelsConfig
 }
 
 // The name assigned to the profile. Avoid entering confidential information.
-func (o LookupProfileResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProfileResultOutput) ProfileId() pulumi.StringOutput {
@@ -177,8 +170,8 @@ func (o LookupProfileResultOutput) ProfileId() pulumi.StringOutput {
 }
 
 // The profile's current state.
-func (o LookupProfileResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Optional. The compartments specified in the profile override for a recommendation.
@@ -192,13 +185,13 @@ func (o LookupProfileResultOutput) TargetTags() GetProfileTargetTagArrayOutput {
 }
 
 // The date and time the profile was created, in the format defined by RFC3339.
-func (o LookupProfileResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the profile was last updated, in the format defined by RFC3339.
-func (o LookupProfileResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

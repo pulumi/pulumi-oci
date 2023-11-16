@@ -56,18 +56,12 @@ class GetAddonResult:
 
     @property
     @pulumi.getter(name="addonErrors")
-    def addon_errors(self) -> Sequence['outputs.GetAddonAddonErrorResult']:
-        """
-        The error info of the addon.
-        """
+    def addon_errors(self) -> Optional[Sequence['outputs.GetAddonAddonErrorResult']]:
         return pulumi.get(self, "addon_errors")
 
     @property
     @pulumi.getter(name="addonName")
     def addon_name(self) -> str:
-        """
-        The name of the addon.
-        """
         return pulumi.get(self, "addon_name")
 
     @property
@@ -77,52 +71,37 @@ class GetAddonResult:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetAddonConfigurationResult']:
-        """
-        Addon configuration details.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetAddonConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter(name="currentInstalledVersion")
-    def current_installed_version(self) -> str:
-        """
-        current installed version of the addon
-        """
+    def current_installed_version(self) -> Optional[str]:
         return pulumi.get(self, "current_installed_version")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="removeAddonResourcesOnDelete")
-    def remove_addon_resources_on_delete(self) -> bool:
+    def remove_addon_resources_on_delete(self) -> Optional[bool]:
         return pulumi.get(self, "remove_addon_resources_on_delete")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the addon.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the cluster was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        selected addon version, or null indicates autoUpdate
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -148,23 +127,7 @@ def get_addon(addon_name: Optional[str] = None,
               cluster_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddonResult:
     """
-    This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the specified addon for a cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_addon = oci.ContainerEngine.get_addon(addon_name=oci_containerengine_addon["test_addon"]["name"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str addon_name: The name of the addon.
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['addonName'] = addon_name
@@ -190,22 +153,6 @@ def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
                      cluster_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonResult]:
     """
-    This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the specified addon for a cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_addon = oci.ContainerEngine.get_addon(addon_name=oci_containerengine_addon["test_addon"]["name"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str addon_name: The name of the addon.
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

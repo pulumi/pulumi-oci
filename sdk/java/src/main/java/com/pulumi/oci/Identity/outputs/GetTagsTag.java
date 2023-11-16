@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTagsTag {
@@ -18,57 +20,57 @@ public final class GetTagsTag {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description you assign to the tag.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the tag definition.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the tag is enabled for cost tracking.
      * 
      */
-    private Boolean isCostTracking;
+    private @Nullable Boolean isCostTracking;
     /**
      * @return Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      * 
      */
-    private Boolean isRetired;
+    private @Nullable Boolean isRetired;
     /**
      * @return The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the tag namespace.
      * 
      */
-    private String tagNamespaceId;
+    private @Nullable String tagNamespaceId;
     /**
      * @return Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
      * 
      */
-    private List<GetTagsTagValidator> validators;
+    private @Nullable List<GetTagsTagValidator> validators;
 
     private GetTagsTag() {}
     /**
@@ -76,77 +78,77 @@ public final class GetTagsTag {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description you assign to the tag.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the tag definition.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the tag is enabled for cost tracking.
      * 
      */
-    public Boolean isCostTracking() {
-        return this.isCostTracking;
+    public Optional<Boolean> isCostTracking() {
+        return Optional.ofNullable(this.isCostTracking);
     }
     /**
      * @return Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      * 
      */
-    public Boolean isRetired() {
-        return this.isRetired;
+    public Optional<Boolean> isRetired() {
+        return Optional.ofNullable(this.isRetired);
     }
     /**
      * @return The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the tag namespace.
      * 
      */
-    public String tagNamespaceId() {
-        return this.tagNamespaceId;
+    public Optional<String> tagNamespaceId() {
+        return Optional.ofNullable(this.tagNamespaceId);
     }
     /**
      * @return Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
      * 
      */
     public List<GetTagsTagValidator> validators() {
-        return this.validators;
+        return this.validators == null ? List.of() : this.validators;
     }
 
     public static Builder builder() {
@@ -158,17 +160,17 @@ public final class GetTagsTag {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCostTracking;
-        private Boolean isRetired;
-        private String name;
-        private String state;
-        private String tagNamespaceId;
-        private String timeCreated;
-        private List<GetTagsTagValidator> validators;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCostTracking;
+        private @Nullable Boolean isRetired;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable String tagNamespaceId;
+        private @Nullable String timeCreated;
+        private @Nullable List<GetTagsTagValidator> validators;
         public Builder() {}
         public Builder(GetTagsTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -186,58 +188,58 @@ public final class GetTagsTag {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCostTracking(Boolean isCostTracking) {
-            this.isCostTracking = Objects.requireNonNull(isCostTracking);
+        public Builder isCostTracking(@Nullable Boolean isCostTracking) {
+            this.isCostTracking = isCostTracking;
             return this;
         }
         @CustomType.Setter
-        public Builder isRetired(Boolean isRetired) {
-            this.isRetired = Objects.requireNonNull(isRetired);
+        public Builder isRetired(@Nullable Boolean isRetired) {
+            this.isRetired = isRetired;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tagNamespaceId(String tagNamespaceId) {
-            this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
+        public Builder tagNamespaceId(@Nullable String tagNamespaceId) {
+            this.tagNamespaceId = tagNamespaceId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder validators(List<GetTagsTagValidator> validators) {
-            this.validators = Objects.requireNonNull(validators);
+        public Builder validators(@Nullable List<GetTagsTagValidator> validators) {
+            this.validators = validators;
             return this;
         }
         public Builder validators(GetTagsTagValidator... validators) {

@@ -13,41 +13,41 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationResult
     {
-        public readonly string BdsInstanceId;
-        public readonly string ClusterAdminPassword;
-        public readonly string DisplayName;
-        public readonly string Id;
-        public readonly bool IsEnabled;
-        public readonly string NodeType;
+        public readonly string? BdsInstanceId;
+        public readonly string? ClusterAdminPassword;
+        public readonly string? DisplayName;
+        public readonly string? Id;
+        public readonly bool? IsEnabled;
+        public readonly string? NodeType;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult> Policies;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult> PolicyDetails;
-        public readonly string State;
-        public readonly string TimeCreated;
-        public readonly string TimeUpdated;
+        public readonly string? State;
+        public readonly string? TimeCreated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationResult(
-            string bdsInstanceId,
+            string? bdsInstanceId,
 
-            string clusterAdminPassword,
+            string? clusterAdminPassword,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string nodeType,
+            string? nodeType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult> policies,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult> policyDetails,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             BdsInstanceId = bdsInstanceId;
             ClusterAdminPassword = clusterAdminPassword;

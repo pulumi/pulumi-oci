@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -62,30 +61,30 @@ type LookupMeshResult struct {
 	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 	CertificateAuthorities []GetMeshCertificateAuthority `pulumi:"certificateAuthorities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	MeshId           string `pulumi:"meshId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	MeshId           string  `pulumi:"meshId"`
 	// Sets a minimum level of mTLS authentication for all virtual services within the mesh.
 	Mtls []GetMeshMtl `pulumi:"mtls"`
 	// The current state of the Resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupMeshOutput(ctx *pulumi.Context, args LookupMeshOutputArgs, opts ...pulumi.InvokeOption) LookupMeshResultOutput {
@@ -126,20 +125,14 @@ func (o LookupMeshResultOutput) ToLookupMeshResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o LookupMeshResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMeshResult] {
-	return pulumix.Output[LookupMeshResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 func (o LookupMeshResultOutput) CertificateAuthorities() GetMeshCertificateAuthorityArrayOutput {
 	return o.ApplyT(func(v LookupMeshResult) []GetMeshCertificateAuthority { return v.CertificateAuthorities }).(GetMeshCertificateAuthorityArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupMeshResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -148,13 +141,13 @@ func (o LookupMeshResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o LookupMeshResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-func (o LookupMeshResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -163,13 +156,13 @@ func (o LookupMeshResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupMeshResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o LookupMeshResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMeshResultOutput) MeshId() pulumi.StringOutput {
@@ -182,8 +175,8 @@ func (o LookupMeshResultOutput) Mtls() GetMeshMtlArrayOutput {
 }
 
 // The current state of the Resource.
-func (o LookupMeshResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -192,13 +185,13 @@ func (o LookupMeshResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o LookupMeshResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o LookupMeshResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMeshResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMeshResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMeshResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

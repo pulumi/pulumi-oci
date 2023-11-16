@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Project resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -68,22 +67,22 @@ type Project struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the project.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The lifecycle state of the Project.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewProject registers a new resource with the given unique name, arguments, and options.
@@ -226,12 +225,6 @@ func (i *Project) ToProjectOutputWithContext(ctx context.Context) ProjectOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectOutput)
 }
 
-func (i *Project) ToOutput(ctx context.Context) pulumix.Output[*Project] {
-	return pulumix.Output[*Project]{
-		OutputState: i.ToProjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProjectArrayInput is an input type that accepts ProjectArray and ProjectArrayOutput values.
 // You can construct a concrete instance of `ProjectArrayInput` via:
 //
@@ -255,12 +248,6 @@ func (i ProjectArray) ToProjectArrayOutput() ProjectArrayOutput {
 
 func (i ProjectArray) ToProjectArrayOutputWithContext(ctx context.Context) ProjectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectArrayOutput)
-}
-
-func (i ProjectArray) ToOutput(ctx context.Context) pulumix.Output[[]*Project] {
-	return pulumix.Output[[]*Project]{
-		OutputState: i.ToProjectArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProjectMapInput is an input type that accepts ProjectMap and ProjectMapOutput values.
@@ -288,12 +275,6 @@ func (i ProjectMap) ToProjectMapOutputWithContext(ctx context.Context) ProjectMa
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectMapOutput)
 }
 
-func (i ProjectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Project] {
-	return pulumix.Output[map[string]*Project]{
-		OutputState: i.ToProjectMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProjectOutput struct{ *pulumi.OutputState }
 
 func (ProjectOutput) ElementType() reflect.Type {
@@ -308,12 +289,6 @@ func (o ProjectOutput) ToProjectOutputWithContext(ctx context.Context) ProjectOu
 	return o
 }
 
-func (o ProjectOutput) ToOutput(ctx context.Context) pulumix.Output[*Project] {
-	return pulumix.Output[*Project]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID for the project's compartment.
 func (o ProjectOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -325,13 +300,13 @@ func (o ProjectOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the project.
-func (o ProjectOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ProjectOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-func (o ProjectOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ProjectOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -343,8 +318,8 @@ func (o ProjectOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The lifecycle state of the Project.
-func (o ProjectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ProjectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -353,13 +328,13 @@ func (o ProjectOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o ProjectOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ProjectOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o ProjectOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ProjectOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ProjectArrayOutput struct{ *pulumi.OutputState }
@@ -374,12 +349,6 @@ func (o ProjectArrayOutput) ToProjectArrayOutput() ProjectArrayOutput {
 
 func (o ProjectArrayOutput) ToProjectArrayOutputWithContext(ctx context.Context) ProjectArrayOutput {
 	return o
-}
-
-func (o ProjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Project] {
-	return pulumix.Output[[]*Project]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProjectArrayOutput) Index(i pulumi.IntInput) ProjectOutput {
@@ -400,12 +369,6 @@ func (o ProjectMapOutput) ToProjectMapOutput() ProjectMapOutput {
 
 func (o ProjectMapOutput) ToProjectMapOutputWithContext(ctx context.Context) ProjectMapOutput {
 	return o
-}
-
-func (o ProjectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Project] {
-	return pulumix.Output[map[string]*Project]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProjectMapOutput) MapIndex(k pulumi.StringInput) ProjectOutput {

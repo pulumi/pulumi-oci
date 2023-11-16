@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertResult {
@@ -17,112 +19,112 @@ public final class GetAlertResult {
      * @return Type of the alert. Indicates the Data Safe feature triggering the alert.
      * 
      */
-    private String alertType;
+    private @Nullable String alertType;
     /**
      * @return A comment for the alert. Entered by the user.
      * 
      */
-    private String comment;
+    private @Nullable String comment;
     /**
      * @return The OCID of the compartment that contains the alert.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the alert.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The display name of the alert.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    private Map<String,Object> featureDetails;
+    private @Nullable Map<String,Object> featureDetails;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the alert.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The operation (event) that triggered alert.
      * 
      */
-    private String operation;
+    private @Nullable String operation;
     /**
      * @return The result of the operation (event) that triggered alert.
      * 
      */
-    private String operationStatus;
+    private @Nullable String operationStatus;
     /**
      * @return Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String operationTime;
+    private @Nullable String operationTime;
     /**
      * @return The OCID of the policy that triggered alert.
      * 
      */
-    private String policyId;
+    private @Nullable String policyId;
     /**
      * @return The resource endpoint that triggered the alert.
      * 
      */
-    private String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return Severity level of the alert.
      * 
      */
-    private String severity;
+    private @Nullable String severity;
     /**
      * @return The current state of the alert.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The status of the alert.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Array of OCIDs of the target database which are associated with the alert.
      * 
      */
-    private List<String> targetIds;
+    private @Nullable List<String> targetIds;
     /**
      * @return Array of names of the target database.
      * 
      */
-    private List<String> targetNames;
+    private @Nullable List<String> targetNames;
     /**
      * @return Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetAlertResult() {}
     public String alertId() {
@@ -132,155 +134,155 @@ public final class GetAlertResult {
      * @return Type of the alert. Indicates the Data Safe feature triggering the alert.
      * 
      */
-    public String alertType() {
-        return this.alertType;
+    public Optional<String> alertType() {
+        return Optional.ofNullable(this.alertType);
     }
     /**
      * @return A comment for the alert. Entered by the user.
      * 
      */
-    public String comment() {
-        return this.comment;
+    public Optional<String> comment() {
+        return Optional.ofNullable(this.comment);
     }
     /**
      * @return The OCID of the compartment that contains the alert.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the alert.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The display name of the alert.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     public Map<String,Object> featureDetails() {
-        return this.featureDetails;
+        return this.featureDetails == null ? Map.of() : this.featureDetails;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the alert.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The operation (event) that triggered alert.
      * 
      */
-    public String operation() {
-        return this.operation;
+    public Optional<String> operation() {
+        return Optional.ofNullable(this.operation);
     }
     /**
      * @return The result of the operation (event) that triggered alert.
      * 
      */
-    public String operationStatus() {
-        return this.operationStatus;
+    public Optional<String> operationStatus() {
+        return Optional.ofNullable(this.operationStatus);
     }
     /**
      * @return Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String operationTime() {
-        return this.operationTime;
+    public Optional<String> operationTime() {
+        return Optional.ofNullable(this.operationTime);
     }
     /**
      * @return The OCID of the policy that triggered alert.
      * 
      */
-    public String policyId() {
-        return this.policyId;
+    public Optional<String> policyId() {
+        return Optional.ofNullable(this.policyId);
     }
     /**
      * @return The resource endpoint that triggered the alert.
      * 
      */
-    public String resourceName() {
-        return this.resourceName;
+    public Optional<String> resourceName() {
+        return Optional.ofNullable(this.resourceName);
     }
     /**
      * @return Severity level of the alert.
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
     /**
      * @return The current state of the alert.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The status of the alert.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Array of OCIDs of the target database which are associated with the alert.
      * 
      */
     public List<String> targetIds() {
-        return this.targetIds;
+        return this.targetIds == null ? List.of() : this.targetIds;
     }
     /**
      * @return Array of names of the target database.
      * 
      */
     public List<String> targetNames() {
-        return this.targetNames;
+        return this.targetNames == null ? List.of() : this.targetNames;
     }
     /**
      * @return Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -293,28 +295,28 @@ public final class GetAlertResult {
     @CustomType.Builder
     public static final class Builder {
         private String alertId;
-        private String alertType;
-        private String comment;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> featureDetails;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String operation;
-        private String operationStatus;
-        private String operationTime;
-        private String policyId;
-        private String resourceName;
-        private String severity;
-        private String state;
-        private String status;
-        private Map<String,Object> systemTags;
-        private List<String> targetIds;
-        private List<String> targetNames;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String alertType;
+        private @Nullable String comment;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> featureDetails;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String operation;
+        private @Nullable String operationStatus;
+        private @Nullable String operationTime;
+        private @Nullable String policyId;
+        private @Nullable String resourceName;
+        private @Nullable String severity;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable List<String> targetIds;
+        private @Nullable List<String> targetNames;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetAlertResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -349,119 +351,119 @@ public final class GetAlertResult {
             return this;
         }
         @CustomType.Setter
-        public Builder alertType(String alertType) {
-            this.alertType = Objects.requireNonNull(alertType);
+        public Builder alertType(@Nullable String alertType) {
+            this.alertType = alertType;
             return this;
         }
         @CustomType.Setter
-        public Builder comment(String comment) {
-            this.comment = Objects.requireNonNull(comment);
+        public Builder comment(@Nullable String comment) {
+            this.comment = comment;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder featureDetails(Map<String,Object> featureDetails) {
-            this.featureDetails = Objects.requireNonNull(featureDetails);
+        public Builder featureDetails(@Nullable Map<String,Object> featureDetails) {
+            this.featureDetails = featureDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+        public Builder operation(@Nullable String operation) {
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
-        public Builder operationStatus(String operationStatus) {
-            this.operationStatus = Objects.requireNonNull(operationStatus);
+        public Builder operationStatus(@Nullable String operationStatus) {
+            this.operationStatus = operationStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder operationTime(String operationTime) {
-            this.operationTime = Objects.requireNonNull(operationTime);
+        public Builder operationTime(@Nullable String operationTime) {
+            this.operationTime = operationTime;
             return this;
         }
         @CustomType.Setter
-        public Builder policyId(String policyId) {
-            this.policyId = Objects.requireNonNull(policyId);
+        public Builder policyId(@Nullable String policyId) {
+            this.policyId = policyId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+        public Builder resourceName(@Nullable String resourceName) {
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+        public Builder targetIds(@Nullable List<String> targetIds) {
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
         }
         @CustomType.Setter
-        public Builder targetNames(List<String> targetNames) {
-            this.targetNames = Objects.requireNonNull(targetNames);
+        public Builder targetNames(@Nullable List<String> targetNames) {
+            this.targetNames = targetNames;
             return this;
         }
         public Builder targetNames(String... targetNames) {
             return targetNames(List.of(targetNames));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAlertResult build() {

@@ -27,15 +27,6 @@ class ModelArgs:
                  test_strategy: Optional[pulumi.Input['ModelTestStrategyArgs']] = None):
         """
         The set of arguments for constructing a Model resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
-        :param pulumi.Input['ModelModelDetailsArgs'] model_details: Possible model types
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: Possible data set type
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the a model.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['ModelTestStrategyArgs'] test_strategy: Possible strategy as testing and validation(optional) dataset.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "model_details", model_details)
@@ -55,9 +46,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +55,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="modelDetails")
     def model_details(self) -> pulumi.Input['ModelModelDetailsArgs']:
-        """
-        Possible model types
-        """
         return pulumi.get(self, "model_details")
 
     @model_details.setter
@@ -79,9 +64,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -91,9 +73,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> pulumi.Input['ModelTrainingDatasetArgs']:
-        """
-        Possible data set type
-        """
         return pulumi.get(self, "training_dataset")
 
     @training_dataset.setter
@@ -103,9 +82,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -115,9 +91,6 @@ class ModelArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the a model.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -127,9 +100,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -139,9 +109,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -151,9 +118,6 @@ class ModelArgs:
     @property
     @pulumi.getter(name="testStrategy")
     def test_strategy(self) -> Optional[pulumi.Input['ModelTestStrategyArgs']]:
-        """
-        Possible strategy as testing and validation(optional) dataset.
-        """
         return pulumi.get(self, "test_strategy")
 
     @test_strategy.setter
@@ -182,22 +146,6 @@ class _ModelState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Model resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the a model.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultArgs']]] evaluation_results: model training results of different models
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        :param pulumi.Input['ModelModelDetailsArgs'] model_details: Possible model types
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[str] state: The state of the model.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input['ModelTestStrategyArgs'] test_strategy: Possible strategy as testing and validation(optional) dataset.
-        :param pulumi.Input[str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: Possible data set type
-        :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -235,9 +183,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -247,9 +192,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -259,9 +201,6 @@ class _ModelState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the a model.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -271,9 +210,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -283,9 +219,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="evaluationResults")
     def evaluation_results(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultArgs']]]]:
-        """
-        model training results of different models
-        """
         return pulumi.get(self, "evaluation_results")
 
     @evaluation_results.setter
@@ -295,9 +228,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -307,9 +237,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -319,9 +246,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="modelDetails")
     def model_details(self) -> Optional[pulumi.Input['ModelModelDetailsArgs']]:
-        """
-        Possible model types
-        """
         return pulumi.get(self, "model_details")
 
     @model_details.setter
@@ -331,9 +255,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -343,9 +264,6 @@ class _ModelState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the model.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -355,9 +273,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -367,9 +282,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="testStrategy")
     def test_strategy(self) -> Optional[pulumi.Input['ModelTestStrategyArgs']]:
-        """
-        Possible strategy as testing and validation(optional) dataset.
-        """
         return pulumi.get(self, "test_strategy")
 
     @test_strategy.setter
@@ -379,9 +291,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the model was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -391,9 +300,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the model was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -403,9 +309,6 @@ class _ModelState:
     @property
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> Optional[pulumi.Input['ModelTrainingDatasetArgs']]:
-        """
-        Possible data set type
-        """
         return pulumi.get(self, "training_dataset")
 
     @training_dataset.setter
@@ -415,9 +318,6 @@ class _ModelState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -441,90 +341,9 @@ class Model(pulumi.CustomResource):
                  training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
-
-        Creates a new model for training and train the model with date provided.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model = oci.ai_language.Model("testModel",
-            compartment_id=var["compartment_id"],
-            model_details=oci.ai_language.ModelModelDetailsArgs(
-                model_type=var["model_model_details_model_type"],
-                classification_mode=oci.ai_language.ModelModelDetailsClassificationModeArgs(
-                    classification_mode=var["model_model_details_classification_mode_classification_mode"],
-                    version=var["model_model_details_classification_mode_version"],
-                ),
-                language_code=var["model_model_details_language_code"],
-                version=var["model_model_details_version"],
-            ),
-            project_id=oci_ai_language_project["test_project"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            test_strategy=oci.ai_language.ModelTestStrategyArgs(
-                strategy_type=var["model_test_strategy_strategy_type"],
-                testing_dataset=oci.ai_language.ModelTestStrategyTestingDatasetArgs(
-                    dataset_type=var["model_test_strategy_testing_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                    location_details=oci.ai_language.ModelTestStrategyTestingDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_testing_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_testing_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_testing_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_testing_dataset_location_details_object_names"],
-                    ),
-                ),
-                validation_dataset=oci.ai_language.ModelTestStrategyValidationDatasetArgs(
-                    dataset_type=var["model_test_strategy_validation_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                    location_details=oci.ai_language.ModelTestStrategyValidationDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_validation_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_validation_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_validation_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_validation_dataset_location_details_object_names"],
-                    ),
-                ),
-            ),
-            training_dataset=oci.ai_language.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                location_details=oci.ai_language.ModelTrainingDatasetLocationDetailsArgs(
-                    bucket=var["model_training_dataset_location_details_bucket"],
-                    location_type=var["model_training_dataset_location_details_location_type"],
-                    namespace=var["model_training_dataset_location_details_namespace"],
-                    object_names=var["model_training_dataset_location_details_object_names"],
-                ),
-            ))
-        ```
-
-        ## Import
-
-        Models can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AiLanguage/model:Model test_model "id"
-        ```
-
+        Create a Model resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the a model.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['ModelModelDetailsArgs']] model_details: Possible model types
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[pulumi.InputType['ModelTestStrategyArgs']] test_strategy: Possible strategy as testing and validation(optional) dataset.
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: Possible data set type
         """
         ...
     @overload
@@ -533,79 +352,7 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
-
-        Creates a new model for training and train the model with date provided.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model = oci.ai_language.Model("testModel",
-            compartment_id=var["compartment_id"],
-            model_details=oci.ai_language.ModelModelDetailsArgs(
-                model_type=var["model_model_details_model_type"],
-                classification_mode=oci.ai_language.ModelModelDetailsClassificationModeArgs(
-                    classification_mode=var["model_model_details_classification_mode_classification_mode"],
-                    version=var["model_model_details_classification_mode_version"],
-                ),
-                language_code=var["model_model_details_language_code"],
-                version=var["model_model_details_version"],
-            ),
-            project_id=oci_ai_language_project["test_project"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            test_strategy=oci.ai_language.ModelTestStrategyArgs(
-                strategy_type=var["model_test_strategy_strategy_type"],
-                testing_dataset=oci.ai_language.ModelTestStrategyTestingDatasetArgs(
-                    dataset_type=var["model_test_strategy_testing_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                    location_details=oci.ai_language.ModelTestStrategyTestingDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_testing_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_testing_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_testing_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_testing_dataset_location_details_object_names"],
-                    ),
-                ),
-                validation_dataset=oci.ai_language.ModelTestStrategyValidationDatasetArgs(
-                    dataset_type=var["model_test_strategy_validation_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                    location_details=oci.ai_language.ModelTestStrategyValidationDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_validation_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_validation_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_validation_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_validation_dataset_location_details_object_names"],
-                    ),
-                ),
-            ),
-            training_dataset=oci.ai_language.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                location_details=oci.ai_language.ModelTrainingDatasetLocationDetailsArgs(
-                    bucket=var["model_training_dataset_location_details_bucket"],
-                    location_type=var["model_training_dataset_location_details_location_type"],
-                    namespace=var["model_training_dataset_location_details_namespace"],
-                    object_names=var["model_training_dataset_location_details_object_names"],
-                ),
-            ))
-        ```
-
-        ## Import
-
-        Models can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AiLanguage/model:Model test_model "id"
-        ```
-
+        Create a Model resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ModelArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -696,22 +443,6 @@ class Model(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the a model.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelEvaluationResultArgs']]]] evaluation_results: model training results of different models
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        :param pulumi.Input[pulumi.InputType['ModelModelDetailsArgs']] model_details: Possible model types
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[str] state: The state of the model.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[pulumi.InputType['ModelTestStrategyArgs']] test_strategy: Possible strategy as testing and validation(optional) dataset.
-        :param pulumi.Input[str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: Possible data set type
-        :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -738,128 +469,80 @@ class Model(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A short description of the a model.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="evaluationResults")
-    def evaluation_results(self) -> pulumi.Output[Sequence['outputs.ModelEvaluationResult']]:
-        """
-        model training results of different models
-        """
+    def evaluation_results(self) -> pulumi.Output[Optional[Sequence['outputs.ModelEvaluationResult']]]:
         return pulumi.get(self, "evaluation_results")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="modelDetails")
     def model_details(self) -> pulumi.Output['outputs.ModelModelDetails']:
-        """
-        Possible model types
-        """
         return pulumi.get(self, "model_details")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the model.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="testStrategy")
-    def test_strategy(self) -> pulumi.Output['outputs.ModelTestStrategy']:
-        """
-        Possible strategy as testing and validation(optional) dataset.
-        """
+    def test_strategy(self) -> pulumi.Output[Optional['outputs.ModelTestStrategy']]:
         return pulumi.get(self, "test_strategy")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the model was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the model was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> pulumi.Output['outputs.ModelTrainingDataset']:
-        """
-        Possible data set type
-        """
         return pulumi.get(self, "training_dataset")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 

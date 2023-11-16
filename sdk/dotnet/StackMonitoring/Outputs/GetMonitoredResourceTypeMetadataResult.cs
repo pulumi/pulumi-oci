@@ -21,7 +21,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
         /// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
         /// </summary>
-        public readonly string Format;
+        public readonly string? Format;
         /// <summary>
         /// List of required properties for resource type.
         /// </summary>
@@ -41,13 +41,13 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ValidPropertyValues;
+        public readonly ImmutableDictionary<string, object>? ValidPropertyValues;
 
         [OutputConstructor]
         private GetMonitoredResourceTypeMetadataResult(
             ImmutableArray<string> agentProperties,
 
-            string format,
+            string? format,
 
             ImmutableArray<string> requiredProperties,
 
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<string> validPropertiesForUpdates,
 
-            ImmutableDictionary<string, object> validPropertyValues)
+            ImmutableDictionary<string, object>? validPropertyValues)
         {
             AgentProperties = agentProperties;
             Format = format;

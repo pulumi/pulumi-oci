@@ -19,31 +19,31 @@ public final class GetTraceSnapshotDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isSummarized;
     /**
      * @return Name of the property.
      * 
      */
-    private String key;
+    private @Nullable String key;
     private @Nullable String snapshotTime;
     private @Nullable String threadId;
     /**
      * @return End time of the trace.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return Start time of the trace.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     private String traceKey;
     /**
      * @return Trace snapshots properties.
      * 
      */
-    private List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails;
+    private @Nullable List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails;
 
     private GetTraceSnapshotDataResult() {}
     public String apmDomainId() {
@@ -53,8 +53,8 @@ public final class GetTraceSnapshotDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isSummarized() {
         return Optional.ofNullable(this.isSummarized);
@@ -63,8 +63,8 @@ public final class GetTraceSnapshotDataResult {
      * @return Name of the property.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     public Optional<String> snapshotTime() {
         return Optional.ofNullable(this.snapshotTime);
@@ -76,15 +76,15 @@ public final class GetTraceSnapshotDataResult {
      * @return End time of the trace.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return Start time of the trace.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     public String traceKey() {
         return this.traceKey;
@@ -94,7 +94,7 @@ public final class GetTraceSnapshotDataResult {
      * 
      */
     public List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails() {
-        return this.traceSnapshotDetails;
+        return this.traceSnapshotDetails == null ? List.of() : this.traceSnapshotDetails;
     }
 
     public static Builder builder() {
@@ -107,15 +107,15 @@ public final class GetTraceSnapshotDataResult {
     @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isSummarized;
-        private String key;
+        private @Nullable String key;
         private @Nullable String snapshotTime;
         private @Nullable String threadId;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         private String traceKey;
-        private List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails;
+        private @Nullable List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails;
         public Builder() {}
         public Builder(GetTraceSnapshotDataResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -137,8 +137,8 @@ public final class GetTraceSnapshotDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -147,8 +147,8 @@ public final class GetTraceSnapshotDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
@@ -162,13 +162,13 @@ public final class GetTraceSnapshotDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
@@ -177,8 +177,8 @@ public final class GetTraceSnapshotDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder traceSnapshotDetails(List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails) {
-            this.traceSnapshotDetails = Objects.requireNonNull(traceSnapshotDetails);
+        public Builder traceSnapshotDetails(@Nullable List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails) {
+            this.traceSnapshotDetails = traceSnapshotDetails;
             return this;
         }
         public Builder traceSnapshotDetails(GetTraceSnapshotDataTraceSnapshotDetail... traceSnapshotDetails) {

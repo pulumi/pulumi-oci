@@ -58,9 +58,6 @@ class GetNamespaceIngestTimeRulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -71,25 +68,16 @@ class GetNamespaceIngestTimeRulesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The ingest time rule display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="fieldName")
     def field_name(self) -> Optional[str]:
-        """
-        The field name to be evaluated.
-        """
         return pulumi.get(self, "field_name")
 
     @property
     @pulumi.getter(name="fieldValue")
     def field_value(self) -> Optional[str]:
-        """
-        The field value to be evaluated.
-        """
         return pulumi.get(self, "field_value")
 
     @property
@@ -99,7 +87,7 @@ class GetNamespaceIngestTimeRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -107,26 +95,17 @@ class GetNamespaceIngestTimeRulesResult:
 
     @property
     @pulumi.getter(name="ingestTimeRuleSummaryCollections")
-    def ingest_time_rule_summary_collections(self) -> Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult']:
-        """
-        The list of ingest_time_rule_summary_collection.
-        """
+    def ingest_time_rule_summary_collections(self) -> Optional[Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult']]:
         return pulumi.get(self, "ingest_time_rule_summary_collections")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the ingest time rule.
-        """
         return pulumi.get(self, "state")
 
 
@@ -158,33 +137,7 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[str] = None,
                                     state: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceIngestTimeRulesResult:
     """
-    This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_ingest_time_rule_namespace"],
-        condition_kind=var["namespace_ingest_time_rule_condition_kind"],
-        display_name=var["namespace_ingest_time_rule_display_name"],
-        field_name=var["namespace_ingest_time_rule_field_name"],
-        field_value=var["namespace_ingest_time_rule_field_value"],
-        state=var["namespace_ingest_time_rule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str condition_kind: The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-    :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-    :param str field_name: The field name used for filtering. Only rules using the specified field name will be returned.
-    :param str field_value: The field value used for filtering. Only rules using the specified field value will be returned.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -222,32 +175,6 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceIngestTimeRulesResult]:
     """
-    This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_ingest_time_rule_namespace"],
-        condition_kind=var["namespace_ingest_time_rule_condition_kind"],
-        display_name=var["namespace_ingest_time_rule_display_name"],
-        field_name=var["namespace_ingest_time_rule_field_name"],
-        field_value=var["namespace_ingest_time_rule_field_value"],
-        state=var["namespace_ingest_time_rule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str condition_kind: The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-    :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-    :param str field_name: The field name used for filtering. Only rules using the specified field name will be returned.
-    :param str field_value: The field value used for filtering. Only rules using the specified field value will be returned.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+    Use this data source to access information about an existing resource.
     """
     ...

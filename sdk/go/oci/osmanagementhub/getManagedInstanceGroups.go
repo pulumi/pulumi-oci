@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
@@ -91,7 +90,7 @@ type GetManagedInstanceGroupsResult struct {
 	DisplayNames []string                         `pulumi:"displayNames"`
 	Filters      []GetManagedInstanceGroupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of managed_instance_group_collection.
 	ManagedInstanceGroupCollections []GetManagedInstanceGroupsManagedInstanceGroupCollection `pulumi:"managedInstanceGroupCollections"`
 	ManagedInstanceGroupId          *string                                                  `pulumi:"managedInstanceGroupId"`
@@ -155,12 +154,6 @@ func (o GetManagedInstanceGroupsResultOutput) ToGetManagedInstanceGroupsResultOu
 	return o
 }
 
-func (o GetManagedInstanceGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsResult] {
-	return pulumix.Output[GetManagedInstanceGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CPU architecture of the instances in the managed instance group.
 func (o GetManagedInstanceGroupsResultOutput) ArchType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupsResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
@@ -185,8 +178,8 @@ func (o GetManagedInstanceGroupsResultOutput) Filters() GetManagedInstanceGroups
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedInstanceGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of managed_instance_group_collection.

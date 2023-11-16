@@ -36,7 +36,7 @@ export interface GetNetworkFirewallPolicyServiceListArgs {
  * A collection of values returned by getNetworkFirewallPolicyServiceList.
  */
 export interface GetNetworkFirewallPolicyServiceListResult {
-    readonly id: string;
+    readonly id?: string;
     /**
      * Name of the service Group.
      */
@@ -45,15 +45,15 @@ export interface GetNetworkFirewallPolicyServiceListResult {
     /**
      * OCID of the Network Firewall Policy this serviceList belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * List of services in the group.
      */
-    readonly services: string[];
+    readonly services?: string[];
     /**
      * Count of total services in the given service List.
      */
-    readonly totalServices: number;
+    readonly totalServices?: number;
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.

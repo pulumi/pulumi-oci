@@ -6,6 +6,8 @@ package com.pulumi.oci.Analytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
@@ -13,27 +15,27 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone 
      * @return Description of private source scan host zone.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
-    private String dnsZone;
+    private @Nullable String dnsZone;
 
     private GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone() {}
     /**
      * @return Description of private source scan host zone.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
-    public String dnsZone() {
-        return this.dnsZone;
+    public Optional<String> dnsZone() {
+        return Optional.ofNullable(this.dnsZone);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String dnsZone;
+        private @Nullable String description;
+        private @Nullable String dnsZone;
         public Builder() {}
         public Builder(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone 
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsZone(String dnsZone) {
-            this.dnsZone = Objects.requireNonNull(dnsZone);
+        public Builder dnsZone(@Nullable String dnsZone) {
+            this.dnsZone = dnsZone;
             return this;
         }
         public GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone build() {

@@ -24,12 +24,12 @@ public final class GetVolumeBackupPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of volume_backup_policies.
      * 
      */
-    private List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies;
+    private @Nullable List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies;
 
     private GetVolumeBackupPoliciesResult() {}
     /**
@@ -46,15 +46,15 @@ public final class GetVolumeBackupPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of volume_backup_policies.
      * 
      */
     public List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies() {
-        return this.volumeBackupPolicies;
+        return this.volumeBackupPolicies == null ? List.of() : this.volumeBackupPolicies;
     }
 
     public static Builder builder() {
@@ -68,8 +68,8 @@ public final class GetVolumeBackupPoliciesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetVolumeBackupPoliciesFilter> filters;
-        private String id;
-        private List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies;
+        private @Nullable String id;
+        private @Nullable List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies;
         public Builder() {}
         public Builder(GetVolumeBackupPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -93,13 +93,13 @@ public final class GetVolumeBackupPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeBackupPolicies(List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies) {
-            this.volumeBackupPolicies = Objects.requireNonNull(volumeBackupPolicies);
+        public Builder volumeBackupPolicies(@Nullable List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies) {
+            this.volumeBackupPolicies = volumeBackupPolicies;
             return this;
         }
         public Builder volumeBackupPolicies(GetVolumeBackupPoliciesVolumeBackupPolicy... volumeBackupPolicies) {

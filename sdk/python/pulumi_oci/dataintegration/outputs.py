@@ -131,15 +131,6 @@ class WorkspaceApplicationDependentObjectMetadata(dict):
                  name_path: Optional[str] = None,
                  object_version: Optional[int] = None,
                  type: Optional[str] = None):
-        """
-        :param str action: The patch action indicating if object was created, updated, or deleted.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str name_path: The fully qualified path of the published object, which would include its project and folder.
-        :param int object_version: The object version.
-        :param str type: The type of the object in patch.
-        """
         if action is not None:
             pulumi.set(__self__, "action", action)
         if identifier is not None:
@@ -158,57 +149,36 @@ class WorkspaceApplicationDependentObjectMetadata(dict):
     @property
     @pulumi.getter
     def action(self) -> Optional[str]:
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
     def identifier(self) -> Optional[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
     def name_path(self) -> Optional[str]:
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[int]:
-        """
-        The object version.
-        """
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the object in patch.
-        """
         return pulumi.get(self, "type")
 
 
@@ -268,22 +238,6 @@ class WorkspaceApplicationMetadata(dict):
                  time_updated: Optional[str] = None,
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
-        """
-        :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['WorkspaceApplicationMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['WorkspaceApplicationMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version.
-        :param str time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
-        :param str time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if aggregators is not None:
@@ -316,113 +270,71 @@ class WorkspaceApplicationMetadata(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        The owning object's key for this object.
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
     def aggregators(self) -> Optional[Sequence['outputs.WorkspaceApplicationMetadataAggregator']]:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
     def count_statistics(self) -> Optional[Sequence['outputs.WorkspaceApplicationMetadataCountStatistic']]:
-        """
-        A count statistics.
-        """
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The user that created the object.
-        """
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
     def created_by_name(self) -> Optional[str]:
-        """
-        The user that created the object.
-        """
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
-        """
-        The full path to identify this object.
-        """
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
     def info_fields(self) -> Optional[Mapping[str, Any]]:
-        """
-        Information property fields.
-        """
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
-        """
-        Specifies whether this object is a favorite or not.
-        """
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
-        """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[int]:
-        """
-        The registry version.
-        """
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> Optional[str]:
-        """
-        The user that updated the object.
-        """
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
     def updated_by_name(self) -> Optional[str]:
-        """
-        The user that updated the object.
-        """
         return pulumi.get(self, "updated_by_name")
 
 
@@ -434,13 +346,6 @@ class WorkspaceApplicationMetadataAggregator(dict):
                  key: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
-        """
-        :param str description: (Updatable) Detailed description for the object.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str type: The type of the object in patch.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if identifier is not None:
@@ -455,41 +360,26 @@ class WorkspaceApplicationMetadataAggregator(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) Detailed description for the object.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def identifier(self) -> Optional[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the object in patch.
-        """
         return pulumi.get(self, "type")
 
 
@@ -514,18 +404,12 @@ class WorkspaceApplicationMetadataCountStatistic(dict):
 
     def __init__(__self__, *,
                  object_type_count_lists: Optional[Sequence['outputs.WorkspaceApplicationMetadataCountStatisticObjectTypeCountList']] = None):
-        """
-        :param Sequence['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
         if object_type_count_lists is not None:
             pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
     def object_type_count_lists(self) -> Optional[Sequence['outputs.WorkspaceApplicationMetadataCountStatisticObjectTypeCountList']]:
-        """
-        The array of statistics.
-        """
         return pulumi.get(self, "object_type_count_lists")
 
 
@@ -553,10 +437,6 @@ class WorkspaceApplicationMetadataCountStatisticObjectTypeCountList(dict):
     def __init__(__self__, *,
                  object_count: Optional[str] = None,
                  object_type: Optional[str] = None):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
         if object_count is not None:
             pulumi.set(__self__, "object_count", object_count)
         if object_type is not None:
@@ -565,17 +445,11 @@ class WorkspaceApplicationMetadataCountStatisticObjectTypeCountList(dict):
     @property
     @pulumi.getter(name="objectCount")
     def object_count(self) -> Optional[str]:
-        """
-        The value for the count statistic object.
-        """
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[str]:
-        """
-        The type of object for the count statistic object.
-        """
         return pulumi.get(self, "object_type")
 
 
@@ -601,10 +475,6 @@ class WorkspaceApplicationParentRef(dict):
     def __init__(__self__, *,
                  parent: Optional[str] = None,
                  root_doc_id: Optional[str] = None):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
         if parent is not None:
             pulumi.set(__self__, "parent", parent)
         if root_doc_id is not None:
@@ -613,17 +483,11 @@ class WorkspaceApplicationParentRef(dict):
     @property
     @pulumi.getter
     def parent(self) -> Optional[str]:
-        """
-        Key of the parent object.
-        """
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
     def root_doc_id(self) -> Optional[str]:
-        """
-        Key of the root document object.
-        """
         return pulumi.get(self, "root_doc_id")
 
 
@@ -656,15 +520,6 @@ class WorkspaceApplicationPublishedObjectMetadata(dict):
                  name_path: Optional[str] = None,
                  object_version: Optional[int] = None,
                  type: Optional[str] = None):
-        """
-        :param str action: The patch action indicating if object was created, updated, or deleted.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str name_path: The fully qualified path of the published object, which would include its project and folder.
-        :param int object_version: The object version.
-        :param str type: The type of the object in patch.
-        """
         if action is not None:
             pulumi.set(__self__, "action", action)
         if identifier is not None:
@@ -683,57 +538,36 @@ class WorkspaceApplicationPublishedObjectMetadata(dict):
     @property
     @pulumi.getter
     def action(self) -> Optional[str]:
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
     def identifier(self) -> Optional[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
     def name_path(self) -> Optional[str]:
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[int]:
-        """
-        The object version.
-        """
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the object in patch.
-        """
         return pulumi.get(self, "type")
 
 
@@ -766,13 +600,6 @@ class WorkspaceApplicationRegistryMetadata(dict):
                  key: Optional[str] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None):
-        """
-        :param str aggregator_key: The owning object's key for this object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: The identifying key for the object.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if is_favorite is not None:
@@ -787,41 +614,26 @@ class WorkspaceApplicationRegistryMetadata(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        The owning object's key for this object.
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
-        """
-        Specifies whether this object is a favorite or not.
-        """
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
-        """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[int]:
-        """
-        The registry version.
-        """
         return pulumi.get(self, "registry_version")
 
 
@@ -858,17 +670,6 @@ class WorkspaceApplicationSourceApplicationInfo(dict):
                  copy_type: Optional[str] = None,
                  last_patch_key: Optional[str] = None,
                  workspace_id: Optional[str] = None):
-        """
-        :param str application_key: The source application key to use when creating the application.
-        :param str application_version: The source application version of the application.
-        :param str copy_type: Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
-        :param str last_patch_key: The last patch key for the application.
-        :param str workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if application_key is not None:
             pulumi.set(__self__, "application_key", application_key)
         if application_version is not None:
@@ -883,45 +684,26 @@ class WorkspaceApplicationSourceApplicationInfo(dict):
     @property
     @pulumi.getter(name="applicationKey")
     def application_key(self) -> Optional[str]:
-        """
-        The source application key to use when creating the application.
-        """
         return pulumi.get(self, "application_key")
 
     @property
     @pulumi.getter(name="applicationVersion")
     def application_version(self) -> Optional[str]:
-        """
-        The source application version of the application.
-        """
         return pulumi.get(self, "application_version")
 
     @property
     @pulumi.getter(name="copyType")
     def copy_type(self) -> Optional[str]:
-        """
-        Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
-        """
         return pulumi.get(self, "copy_type")
 
     @property
     @pulumi.getter(name="lastPatchKey")
     def last_patch_key(self) -> Optional[str]:
-        """
-        The last patch key for the application.
-        """
         return pulumi.get(self, "last_patch_key")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
 
@@ -961,16 +743,6 @@ class WorkspaceExportRequestExportedItem(dict):
                  object_type: Optional[str] = None,
                  object_version: Optional[str] = None,
                  time_updated_in_millis: Optional[str] = None):
-        """
-        :param str aggregator_key: Aggregator key
-        :param str identifier: Object identifier
-        :param str key: Export object request key
-        :param str name: Name of the export request.
-        :param str name_path: Object name path
-        :param str object_type: Object type
-        :param str object_version: Object version
-        :param str time_updated_in_millis: time at which this object was last updated.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if identifier is not None:
@@ -991,65 +763,41 @@ class WorkspaceExportRequestExportedItem(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        Aggregator key
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
     def identifier(self) -> Optional[str]:
-        """
-        Object identifier
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        Export object request key
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the export request.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
     def name_path(self) -> Optional[str]:
-        """
-        Object name path
-        """
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[str]:
-        """
-        Object type
-        """
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[str]:
-        """
-        Object version
-        """
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="timeUpdatedInMillis")
     def time_updated_in_millis(self) -> Optional[str]:
-        """
-        time at which this object was last updated.
-        """
         return pulumi.get(self, "time_updated_in_millis")
 
 
@@ -1109,22 +857,6 @@ class WorkspaceFolderMetadata(dict):
                  time_updated: Optional[str] = None,
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
-        """
-        :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param Sequence['WorkspaceFolderMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['WorkspaceFolderMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param int registry_version: (Updatable) The registry version.
-        :param str time_created: The date and time that the object was created.
-        :param str time_updated: The date and time that the object was updated.
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if aggregators is not None:
@@ -1157,113 +889,71 @@ class WorkspaceFolderMetadata(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        (Updatable) The owning object's key for this object.
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
     def aggregators(self) -> Optional[Sequence['outputs.WorkspaceFolderMetadataAggregator']]:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
     def count_statistics(self) -> Optional[Sequence['outputs.WorkspaceFolderMetadataCountStatistic']]:
-        """
-        A count statistics.
-        """
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The user that created the object.
-        """
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
     def created_by_name(self) -> Optional[str]:
-        """
-        The user that created the object.
-        """
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
-        """
-        The full path to identify this object.
-        """
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
     def info_fields(self) -> Optional[Mapping[str, Any]]:
-        """
-        Information property fields.
-        """
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[int]:
-        """
-        (Updatable) The registry version.
-        """
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
-        """
-        The date and time that the object was created.
-        """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
-        """
-        The date and time that the object was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> Optional[str]:
-        """
-        The user that updated the object.
-        """
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
     def updated_by_name(self) -> Optional[str]:
-        """
-        The user that updated the object.
-        """
         return pulumi.get(self, "updated_by_name")
 
 
@@ -1275,13 +965,6 @@ class WorkspaceFolderMetadataAggregator(dict):
                  key: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
-        """
-        :param str description: (Updatable) A user defined description for the folder.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str type: The type of the aggregator.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if identifier is not None:
@@ -1296,41 +979,26 @@ class WorkspaceFolderMetadataAggregator(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) A user defined description for the folder.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def identifier(self) -> Optional[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the aggregator.
-        """
         return pulumi.get(self, "type")
 
 
@@ -1355,18 +1023,12 @@ class WorkspaceFolderMetadataCountStatistic(dict):
 
     def __init__(__self__, *,
                  object_type_count_lists: Optional[Sequence['outputs.WorkspaceFolderMetadataCountStatisticObjectTypeCountList']] = None):
-        """
-        :param Sequence['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
         if object_type_count_lists is not None:
             pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
     def object_type_count_lists(self) -> Optional[Sequence['outputs.WorkspaceFolderMetadataCountStatisticObjectTypeCountList']]:
-        """
-        The array of statistics.
-        """
         return pulumi.get(self, "object_type_count_lists")
 
 
@@ -1394,10 +1056,6 @@ class WorkspaceFolderMetadataCountStatisticObjectTypeCountList(dict):
     def __init__(__self__, *,
                  object_count: Optional[str] = None,
                  object_type: Optional[str] = None):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
         if object_count is not None:
             pulumi.set(__self__, "object_count", object_count)
         if object_type is not None:
@@ -1406,17 +1064,11 @@ class WorkspaceFolderMetadataCountStatisticObjectTypeCountList(dict):
     @property
     @pulumi.getter(name="objectCount")
     def object_count(self) -> Optional[str]:
-        """
-        The value for the count statistic object.
-        """
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[str]:
-        """
-        The type of object for the count statistic object.
-        """
         return pulumi.get(self, "object_type")
 
 
@@ -1442,10 +1094,6 @@ class WorkspaceFolderParentRef(dict):
     def __init__(__self__, *,
                  parent: Optional[str] = None,
                  root_doc_id: Optional[str] = None):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
         if parent is not None:
             pulumi.set(__self__, "parent", parent)
         if root_doc_id is not None:
@@ -1454,17 +1102,11 @@ class WorkspaceFolderParentRef(dict):
     @property
     @pulumi.getter
     def parent(self) -> Optional[str]:
-        """
-        Key of the parent object.
-        """
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
     def root_doc_id(self) -> Optional[str]:
-        """
-        Key of the root document object.
-        """
         return pulumi.get(self, "root_doc_id")
 
 
@@ -1497,13 +1139,6 @@ class WorkspaceFolderRegistryMetadata(dict):
                  key: Optional[str] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None):
-        """
-        :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param str key: (Updatable) The identifying key for the object.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param int registry_version: (Updatable) The registry version.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if is_favorite is not None:
@@ -1518,41 +1153,26 @@ class WorkspaceFolderRegistryMetadata(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        (Updatable) The owning object's key for this object.
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[int]:
-        """
-        (Updatable) The registry version.
-        """
         return pulumi.get(self, "registry_version")
 
 
@@ -1583,11 +1203,6 @@ class WorkspaceImportRequestImportConflictResolution(dict):
                  import_conflict_resolution_type: str,
                  duplicate_prefix: Optional[str] = None,
                  duplicate_suffix: Optional[str] = None):
-        """
-        :param str import_conflict_resolution_type: Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-        :param str duplicate_prefix: In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-        :param str duplicate_suffix: In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-        """
         pulumi.set(__self__, "import_conflict_resolution_type", import_conflict_resolution_type)
         if duplicate_prefix is not None:
             pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
@@ -1597,25 +1212,16 @@ class WorkspaceImportRequestImportConflictResolution(dict):
     @property
     @pulumi.getter(name="importConflictResolutionType")
     def import_conflict_resolution_type(self) -> str:
-        """
-        Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-        """
         return pulumi.get(self, "import_conflict_resolution_type")
 
     @property
     @pulumi.getter(name="duplicatePrefix")
     def duplicate_prefix(self) -> Optional[str]:
-        """
-        In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-        """
         return pulumi.get(self, "duplicate_prefix")
 
     @property
     @pulumi.getter(name="duplicateSuffix")
     def duplicate_suffix(self) -> Optional[str]:
-        """
-        In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-        """
         return pulumi.get(self, "duplicate_suffix")
 
 
@@ -1663,18 +1269,6 @@ class WorkspaceImportRequestImportedObject(dict):
                  old_key: Optional[str] = None,
                  resolution_action: Optional[str] = None,
                  time_updated_in_millis: Optional[str] = None):
-        """
-        :param str aggregator_key: Aggregator key
-        :param str identifier: Object identifier
-        :param str name: Name of the import request.
-        :param str name_path: Object name path
-        :param str new_key: New key of the object
-        :param str object_type: Object type
-        :param str object_version: Object version
-        :param str old_key: Old key of the object
-        :param str resolution_action: Object resolution action
-        :param str time_updated_in_millis: time at which this object was last updated.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if identifier is not None:
@@ -1699,81 +1293,51 @@ class WorkspaceImportRequestImportedObject(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        Aggregator key
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
     def identifier(self) -> Optional[str]:
-        """
-        Object identifier
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the import request.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
     def name_path(self) -> Optional[str]:
-        """
-        Object name path
-        """
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="newKey")
     def new_key(self) -> Optional[str]:
-        """
-        New key of the object
-        """
         return pulumi.get(self, "new_key")
 
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[str]:
-        """
-        Object type
-        """
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[str]:
-        """
-        Object version
-        """
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="oldKey")
     def old_key(self) -> Optional[str]:
-        """
-        Old key of the object
-        """
         return pulumi.get(self, "old_key")
 
     @property
     @pulumi.getter(name="resolutionAction")
     def resolution_action(self) -> Optional[str]:
-        """
-        Object resolution action
-        """
         return pulumi.get(self, "resolution_action")
 
     @property
     @pulumi.getter(name="timeUpdatedInMillis")
     def time_updated_in_millis(self) -> Optional[str]:
-        """
-        time at which this object was last updated.
-        """
         return pulumi.get(self, "time_updated_in_millis")
 
 
@@ -1833,22 +1397,6 @@ class WorkspaceProjectMetadata(dict):
                  time_updated: Optional[str] = None,
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
-        """
-        :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param Sequence['WorkspaceProjectMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['WorkspaceProjectMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param int registry_version: (Updatable) The registry version.
-        :param str time_created: The date and time that the object was created.
-        :param str time_updated: The date and time that the object was updated.
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if aggregators is not None:
@@ -1881,113 +1429,71 @@ class WorkspaceProjectMetadata(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        (Updatable) The owning object's key for this object.
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
     def aggregators(self) -> Optional[Sequence['outputs.WorkspaceProjectMetadataAggregator']]:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
     def count_statistics(self) -> Optional[Sequence['outputs.WorkspaceProjectMetadataCountStatistic']]:
-        """
-        A count statistics.
-        """
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The user that created the object.
-        """
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
     def created_by_name(self) -> Optional[str]:
-        """
-        The user that created the object.
-        """
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
-        """
-        The full path to identify this object.
-        """
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
     def info_fields(self) -> Optional[Mapping[str, Any]]:
-        """
-        Information property fields.
-        """
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[int]:
-        """
-        (Updatable) The registry version.
-        """
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
-        """
-        The date and time that the object was created.
-        """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
-        """
-        The date and time that the object was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> Optional[str]:
-        """
-        The user that updated the object.
-        """
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
     def updated_by_name(self) -> Optional[str]:
-        """
-        The user that updated the object.
-        """
         return pulumi.get(self, "updated_by_name")
 
 
@@ -1999,13 +1505,6 @@ class WorkspaceProjectMetadataAggregator(dict):
                  key: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
-        """
-        :param str description: (Updatable) A user defined description for the project.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str type: The type of the aggregator.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if identifier is not None:
@@ -2020,41 +1519,26 @@ class WorkspaceProjectMetadataAggregator(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) A user defined description for the project.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def identifier(self) -> Optional[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the aggregator.
-        """
         return pulumi.get(self, "type")
 
 
@@ -2079,18 +1563,12 @@ class WorkspaceProjectMetadataCountStatistic(dict):
 
     def __init__(__self__, *,
                  object_type_count_lists: Optional[Sequence['outputs.WorkspaceProjectMetadataCountStatisticObjectTypeCountList']] = None):
-        """
-        :param Sequence['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
         if object_type_count_lists is not None:
             pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
     def object_type_count_lists(self) -> Optional[Sequence['outputs.WorkspaceProjectMetadataCountStatisticObjectTypeCountList']]:
-        """
-        The array of statistics.
-        """
         return pulumi.get(self, "object_type_count_lists")
 
 
@@ -2118,10 +1596,6 @@ class WorkspaceProjectMetadataCountStatisticObjectTypeCountList(dict):
     def __init__(__self__, *,
                  object_count: Optional[str] = None,
                  object_type: Optional[str] = None):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
         if object_count is not None:
             pulumi.set(__self__, "object_count", object_count)
         if object_type is not None:
@@ -2130,17 +1604,11 @@ class WorkspaceProjectMetadataCountStatisticObjectTypeCountList(dict):
     @property
     @pulumi.getter(name="objectCount")
     def object_count(self) -> Optional[str]:
-        """
-        The value for the count statistic object.
-        """
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[str]:
-        """
-        The type of object for the count statistic object.
-        """
         return pulumi.get(self, "object_type")
 
 
@@ -2166,10 +1634,6 @@ class WorkspaceProjectParentRef(dict):
     def __init__(__self__, *,
                  parent: Optional[str] = None,
                  root_doc_id: Optional[str] = None):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
         if parent is not None:
             pulumi.set(__self__, "parent", parent)
         if root_doc_id is not None:
@@ -2178,17 +1642,11 @@ class WorkspaceProjectParentRef(dict):
     @property
     @pulumi.getter
     def parent(self) -> Optional[str]:
-        """
-        Key of the parent object.
-        """
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
     def root_doc_id(self) -> Optional[str]:
-        """
-        Key of the root document object.
-        """
         return pulumi.get(self, "root_doc_id")
 
 
@@ -2221,13 +1679,6 @@ class WorkspaceProjectRegistryMetadata(dict):
                  key: Optional[str] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None):
-        """
-        :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param str key: (Updatable) The identifying key for the object.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param int registry_version: (Updatable) The registry version.
-        """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
         if is_favorite is not None:
@@ -2242,1516 +1693,1110 @@ class WorkspaceProjectRegistryMetadata(dict):
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        (Updatable) The owning object's key for this object.
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[int]:
-        """
-        (Updatable) The registry version.
-        """
         return pulumi.get(self, "registry_version")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationDependentObjectMetadataResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 name_path: str,
-                 object_version: int,
-                 type: str):
-        """
-        :param str action: The patch action indicating if object was created, updated, or deleted.
-        :param str identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: The key of the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str name_path: The fully qualified path of the published object, which would include its project and folder.
-        :param int object_version: The object version.
-        :param str type: The type of the object in patch.
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+                 action: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 object_version: Optional[int] = None,
+                 type: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The object version.
-        """
+    def object_version(self) -> Optional[int]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the object in patch.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 aggregators: Sequence['outputs.GetWorkspaceApplicationMetadataAggregatorResult'],
-                 count_statistics: Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticResult'],
-                 created_by: str,
-                 created_by_name: str,
-                 identifier_path: str,
-                 info_fields: Mapping[str, Any],
-                 is_favorite: bool,
-                 labels: Sequence[str],
-                 registry_version: int,
-                 time_created: str,
-                 time_updated: str,
-                 updated_by: str,
-                 updated_by_name: str):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param Sequence['GetWorkspaceApplicationMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['GetWorkspaceApplicationMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        :param str time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
-        :param str time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.GetWorkspaceApplicationMetadataAggregatorResult']] = None,
+                 count_statistics: Optional[Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticResult']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def aggregators(self) -> Sequence['outputs.GetWorkspaceApplicationMetadataAggregatorResult']:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
+    def aggregators(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationMetadataAggregatorResult']]:
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
-    def count_statistics(self) -> Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticResult']:
-        """
-        A count statistics.
-        """
+    def count_statistics(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticResult']]:
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
-    def created_by_name(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by_name(self) -> Optional[str]:
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
-    def identifier_path(self) -> str:
-        """
-        The full path to identify this object.
-        """
+    def identifier_path(self) -> Optional[str]:
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
-        """
-        Information property fields.
-        """
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
-    def updated_by_name(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by_name(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_name")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationMetadataAggregatorResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The description of the aggregator.
-        :param str identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: The key of the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str type: The type of the object in patch.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the object in patch.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationMetadataCountStatisticResult(dict):
     def __init__(__self__, *,
-                 object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult']):
-        """
-        :param Sequence['GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+                 object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult']] = None):
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
-    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult']:
-        """
-        The array of statistics.
-        """
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult']]:
         return pulumi.get(self, "object_type_count_lists")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult(dict):
     def __init__(__self__, *,
-                 object_count: str,
-                 object_type: str):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
-    def object_count(self) -> str:
-        """
-        The value for the count statistic object.
-        """
+    def object_count(self) -> Optional[str]:
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of object for the count statistic object.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationParentRefResult(dict):
     def __init__(__self__, *,
-                 parent: str,
-                 root_doc_id: str):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
-    def parent(self) -> str:
-        """
-        Key of the parent object.
-        """
+    def parent(self) -> Optional[str]:
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
-    def root_doc_id(self) -> str:
-        """
-        Key of the root document object.
-        """
+    def root_doc_id(self) -> Optional[str]:
         return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationPublishedObjectMetadataResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 name_path: str,
-                 object_version: int,
-                 type: str):
-        """
-        :param str action: The patch action indicating if object was created, updated, or deleted.
-        :param str identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: The key of the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str name_path: The fully qualified path of the published object, which would include its project and folder.
-        :param int object_version: The object version.
-        :param str type: The type of the object in patch.
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+                 action: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 object_version: Optional[int] = None,
+                 type: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The object version.
-        """
+    def object_version(self) -> Optional[int]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the object in patch.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationRegistryMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 is_favorite: bool,
-                 key: str,
-                 labels: Sequence[str],
-                 registry_version: int):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: The key of the object.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+                 aggregator_key: Optional[str] = None,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationSourceApplicationInfoResult(dict):
     def __init__(__self__, *,
-                 application_key: str,
-                 application_version: str,
-                 copy_type: str,
-                 last_patch_key: str,
-                 workspace_id: str):
-        """
-        :param str application_key: The application key.
-        :param str application_version: The source application version of the application.
-        :param str last_patch_key: The last patch key for the application.
-        :param str workspace_id: The workspace ID.
-        """
-        pulumi.set(__self__, "application_key", application_key)
-        pulumi.set(__self__, "application_version", application_version)
-        pulumi.set(__self__, "copy_type", copy_type)
-        pulumi.set(__self__, "last_patch_key", last_patch_key)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+                 application_key: Optional[str] = None,
+                 application_version: Optional[str] = None,
+                 copy_type: Optional[str] = None,
+                 last_patch_key: Optional[str] = None,
+                 workspace_id: Optional[str] = None):
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if application_version is not None:
+            pulumi.set(__self__, "application_version", application_version)
+        if copy_type is not None:
+            pulumi.set(__self__, "copy_type", copy_type)
+        if last_patch_key is not None:
+            pulumi.set(__self__, "last_patch_key", last_patch_key)
+        if workspace_id is not None:
+            pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
-    def application_key(self) -> str:
-        """
-        The application key.
-        """
+    def application_key(self) -> Optional[str]:
         return pulumi.get(self, "application_key")
 
     @property
     @pulumi.getter(name="applicationVersion")
-    def application_version(self) -> str:
-        """
-        The source application version of the application.
-        """
+    def application_version(self) -> Optional[str]:
         return pulumi.get(self, "application_version")
 
     @property
     @pulumi.getter(name="copyType")
-    def copy_type(self) -> str:
+    def copy_type(self) -> Optional[str]:
         return pulumi.get(self, "copy_type")
 
     @property
     @pulumi.getter(name="lastPatchKey")
-    def last_patch_key(self) -> str:
-        """
-        The last patch key for the application.
-        """
+    def last_patch_key(self) -> Optional[str]:
         return pulumi.get(self, "last_patch_key")
 
     @property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> str:
-        """
-        The workspace ID.
-        """
+    def workspace_id(self) -> Optional[str]:
         return pulumi.get(self, "workspace_id")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 application_version: int,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 dependent_object_metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult'],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 identifier: str,
-                 key: str,
-                 key_map: Mapping[str, Any],
-                 metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult'],
-                 model_type: str,
-                 model_version: str,
-                 name: str,
-                 object_status: int,
-                 object_version: int,
-                 parent_reves: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult'],
-                 published_object_metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult'],
-                 registry_metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult'],
-                 source_application_infos: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult'],
-                 state: str,
-                 time_created: str,
-                 time_patched: str,
-                 time_updated: str,
-                 workspace_id: str):
-        """
-        :param int application_version: The source application version of the application.
-        :param str compartment_id: OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArgs'] dependent_object_metadatas: A list of dependent objects in this patch.
-        :param str description: The description of the aggregator.
-        :param str display_name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: OCID of the resource that is used to uniquely identify the application
-        :param str identifier: Used to filter by the identifier of the published object.
-        :param str key: The key of the object.
-        :param Mapping[str, Any] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The object type.
-        :param str model_version: The object's model version.
-        :param str name: Used to filter by the name of the object.
-        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param int object_version: The object version.
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArgs'] parent_reves: A reference to the object's parent.
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArgs'] published_object_metadatas: A list of objects that are published or unpublished in this patch.
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArgs'] source_application_infos: The information about the application.
-        :param str state: The current state of the workspace.
-        :param str time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
-        :param str time_patched: The date and time the application was patched, in the timestamp format defined by RFC3339.
-        :param str time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        :param str workspace_id: The workspace ID.
-        """
-        pulumi.set(__self__, "application_version", application_version)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "dependent_object_metadatas", dependent_object_metadatas)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_map", key_map)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_status", object_status)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "parent_reves", parent_reves)
-        pulumi.set(__self__, "published_object_metadatas", published_object_metadatas)
-        pulumi.set(__self__, "registry_metadatas", registry_metadatas)
-        pulumi.set(__self__, "source_application_infos", source_application_infos)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_patched", time_patched)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+                 application_version: Optional[int] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 dependent_object_metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult']] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 key_map: Optional[Mapping[str, Any]] = None,
+                 metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult']] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 object_version: Optional[int] = None,
+                 parent_reves: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult']] = None,
+                 published_object_metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult']] = None,
+                 registry_metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult']] = None,
+                 source_application_infos: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult']] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_patched: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 workspace_id: Optional[str] = None):
+        if application_version is not None:
+            pulumi.set(__self__, "application_version", application_version)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if dependent_object_metadatas is not None:
+            pulumi.set(__self__, "dependent_object_metadatas", dependent_object_metadatas)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if key_map is not None:
+            pulumi.set(__self__, "key_map", key_map)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if parent_reves is not None:
+            pulumi.set(__self__, "parent_reves", parent_reves)
+        if published_object_metadatas is not None:
+            pulumi.set(__self__, "published_object_metadatas", published_object_metadatas)
+        if registry_metadatas is not None:
+            pulumi.set(__self__, "registry_metadatas", registry_metadatas)
+        if source_application_infos is not None:
+            pulumi.set(__self__, "source_application_infos", source_application_infos)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_patched is not None:
+            pulumi.set(__self__, "time_patched", time_patched)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if workspace_id is not None:
+            pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationVersion")
-    def application_version(self) -> int:
-        """
-        The source application version of the application.
-        """
+    def application_version(self) -> Optional[int]:
         return pulumi.get(self, "application_version")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dependentObjectMetadatas")
-    def dependent_object_metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult']:
-        """
-        A list of dependent objects in this patch.
-        """
+    def dependent_object_metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult']]:
         return pulumi.get(self, "dependent_object_metadatas")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        OCID of the resource that is used to uniquely identify the application
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the published object.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
-        """
-        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
+    def key_map(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "key_map")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult']:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The object type.
-        """
+    def model_type(self) -> Optional[str]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> str:
-        """
-        The object's model version.
-        """
+    def model_version(self) -> Optional[str]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> int:
-        """
-        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
+    def object_status(self) -> Optional[int]:
         return pulumi.get(self, "object_status")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The object version.
-        """
+    def object_version(self) -> Optional[int]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult']:
-        """
-        A reference to the object's parent.
-        """
+    def parent_reves(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult']]:
         return pulumi.get(self, "parent_reves")
 
     @property
     @pulumi.getter(name="publishedObjectMetadatas")
-    def published_object_metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult']:
-        """
-        A list of objects that are published or unpublished in this patch.
-        """
+    def published_object_metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult']]:
         return pulumi.get(self, "published_object_metadatas")
 
     @property
     @pulumi.getter(name="registryMetadatas")
-    def registry_metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult']:
+    def registry_metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult']]:
         return pulumi.get(self, "registry_metadatas")
 
     @property
     @pulumi.getter(name="sourceApplicationInfos")
-    def source_application_infos(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult']:
-        """
-        The information about the application.
-        """
+    def source_application_infos(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult']]:
         return pulumi.get(self, "source_application_infos")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the workspace.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timePatched")
-    def time_patched(self) -> str:
-        """
-        The date and time the application was patched, in the timestamp format defined by RFC3339.
-        """
+    def time_patched(self) -> Optional[str]:
         return pulumi.get(self, "time_patched")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> str:
-        """
-        The workspace ID.
-        """
+    def workspace_id(self) -> Optional[str]:
         return pulumi.get(self, "workspace_id")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 name_path: str,
-                 object_version: int,
-                 type: str):
-        """
-        :param str action: The patch action indicating if object was created, updated, or deleted.
-        :param str identifier: Used to filter by the identifier of the published object.
-        :param str key: The key of the object.
-        :param str name: Used to filter by the name of the object.
-        :param str name_path: The fully qualified path of the published object, which would include its project and folder.
-        :param int object_version: The object version.
-        :param str type: The type of the object in patch.
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+                 action: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 object_version: Optional[int] = None,
+                 type: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the published object.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The object version.
-        """
+    def object_version(self) -> Optional[int]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the object in patch.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 aggregators: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult'],
-                 count_statistics: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult'],
-                 created_by: str,
-                 created_by_name: str,
-                 identifier_path: str,
-                 info_fields: Mapping[str, Any],
-                 is_favorite: bool,
-                 labels: Sequence[str],
-                 registry_version: int,
-                 time_created: str,
-                 time_updated: str,
-                 updated_by: str,
-                 updated_by_name: str):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        :param str time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
-        :param str time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult']] = None,
+                 count_statistics: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def aggregators(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult']:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
+    def aggregators(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult']]:
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
-    def count_statistics(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult']:
-        """
-        A count statistics.
-        """
+    def count_statistics(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult']]:
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
-    def created_by_name(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by_name(self) -> Optional[str]:
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
-    def identifier_path(self) -> str:
-        """
-        The full path to identify this object.
-        """
+    def identifier_path(self) -> Optional[str]:
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
-        """
-        Information property fields.
-        """
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
-    def updated_by_name(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by_name(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_name")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The description of the aggregator.
-        :param str identifier: Used to filter by the identifier of the published object.
-        :param str key: The key of the object.
-        :param str name: Used to filter by the name of the object.
-        :param str type: The type of the object in patch.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the published object.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the object in patch.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult(dict):
     def __init__(__self__, *,
-                 object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']):
-        """
-        :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+                 object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']] = None):
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
-    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']:
-        """
-        The array of statistics.
-        """
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']]:
         return pulumi.get(self, "object_type_count_lists")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult(dict):
     def __init__(__self__, *,
-                 object_count: str,
-                 object_type: str):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
-    def object_count(self) -> str:
-        """
-        The value for the count statistic object.
-        """
+    def object_count(self) -> Optional[str]:
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of object for the count statistic object.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult(dict):
     def __init__(__self__, *,
-                 parent: str,
-                 root_doc_id: str):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
-    def parent(self) -> str:
-        """
-        Key of the parent object.
-        """
+    def parent(self) -> Optional[str]:
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
-    def root_doc_id(self) -> str:
-        """
-        Key of the root document object.
-        """
+    def root_doc_id(self) -> Optional[str]:
         return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 name_path: str,
-                 object_version: int,
-                 type: str):
-        """
-        :param str action: The patch action indicating if object was created, updated, or deleted.
-        :param str identifier: Used to filter by the identifier of the published object.
-        :param str key: The key of the object.
-        :param str name: Used to filter by the name of the object.
-        :param str name_path: The fully qualified path of the published object, which would include its project and folder.
-        :param int object_version: The object version.
-        :param str type: The type of the object in patch.
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+                 action: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 object_version: Optional[int] = None,
+                 type: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the published object.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The object version.
-        """
+    def object_version(self) -> Optional[int]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the object in patch.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 is_favorite: bool,
-                 key: str,
-                 labels: Sequence[str],
-                 registry_version: int):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: The key of the object.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+                 aggregator_key: Optional[str] = None,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
 
 @pulumi.output_type
 class GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult(dict):
     def __init__(__self__, *,
-                 application_key: str,
-                 application_version: str,
-                 copy_type: str,
-                 last_patch_key: str,
-                 workspace_id: str):
-        """
-        :param str application_key: The source application key to use when creating the application.
-        :param str application_version: The source application version of the application.
-        :param str last_patch_key: The last patch key for the application.
-        :param str workspace_id: The workspace ID.
-        """
-        pulumi.set(__self__, "application_key", application_key)
-        pulumi.set(__self__, "application_version", application_version)
-        pulumi.set(__self__, "copy_type", copy_type)
-        pulumi.set(__self__, "last_patch_key", last_patch_key)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+                 application_key: Optional[str] = None,
+                 application_version: Optional[str] = None,
+                 copy_type: Optional[str] = None,
+                 last_patch_key: Optional[str] = None,
+                 workspace_id: Optional[str] = None):
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if application_version is not None:
+            pulumi.set(__self__, "application_version", application_version)
+        if copy_type is not None:
+            pulumi.set(__self__, "copy_type", copy_type)
+        if last_patch_key is not None:
+            pulumi.set(__self__, "last_patch_key", last_patch_key)
+        if workspace_id is not None:
+            pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
-    def application_key(self) -> str:
-        """
-        The source application key to use when creating the application.
-        """
+    def application_key(self) -> Optional[str]:
         return pulumi.get(self, "application_key")
 
     @property
     @pulumi.getter(name="applicationVersion")
-    def application_version(self) -> str:
-        """
-        The source application version of the application.
-        """
+    def application_version(self) -> Optional[str]:
         return pulumi.get(self, "application_version")
 
     @property
     @pulumi.getter(name="copyType")
-    def copy_type(self) -> str:
+    def copy_type(self) -> Optional[str]:
         return pulumi.get(self, "copy_type")
 
     @property
     @pulumi.getter(name="lastPatchKey")
-    def last_patch_key(self) -> str:
-        """
-        The last patch key for the application.
-        """
+    def last_patch_key(self) -> Optional[str]:
         return pulumi.get(self, "last_patch_key")
 
     @property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> str:
-        """
-        The workspace ID.
-        """
+    def workspace_id(self) -> Optional[str]:
         return pulumi.get(self, "workspace_id")
 
 
@@ -3761,9 +2806,6 @@ class GetWorkspaceApplicationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Used to filter by the name of the object.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3772,9 +2814,6 @@ class GetWorkspaceApplicationsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -3791,418 +2830,306 @@ class GetWorkspaceApplicationsFilterResult(dict):
 @pulumi.output_type
 class GetWorkspaceExportRequestExportedItemResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 name_path: str,
-                 object_type: str,
-                 object_version: str,
-                 time_updated_in_millis: str):
-        """
-        :param str aggregator_key: Aggregator key
-        :param str identifier: Object identifier
-        :param str key: Export object request key
-        :param str name: Name of the export request.
-        :param str name_path: Object name path
-        :param str object_type: Object type
-        :param str object_version: Object version
-        :param str time_updated_in_millis: time at which this object was last updated.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
+                 aggregator_key: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 object_type: Optional[str] = None,
+                 object_version: Optional[str] = None,
+                 time_updated_in_millis: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if time_updated_in_millis is not None:
+            pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        Aggregator key
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Object identifier
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Export object request key
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the export request.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        Object name path
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        Object type
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> str:
-        """
-        Object version
-        """
+    def object_version(self) -> Optional[str]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="timeUpdatedInMillis")
-    def time_updated_in_millis(self) -> str:
-        """
-        time at which this object was last updated.
-        """
+    def time_updated_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_updated_in_millis")
 
 
 @pulumi.output_type
 class GetWorkspaceExportRequestsExportRequestSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 are_references_included: bool,
                  bucket: str,
-                 created_by: str,
-                 error_messages: Mapping[str, Any],
-                 exported_items: Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult'],
-                 file_name: str,
-                 filters: Sequence[str],
-                 is_object_overwrite_enabled: bool,
-                 key: str,
-                 name: str,
-                 object_keys: Sequence[str],
-                 object_storage_region: str,
-                 object_storage_tenancy_id: str,
-                 referenced_items: str,
-                 status: str,
-                 time_ended_in_millis: str,
-                 time_started_in_millis: str,
-                 total_exported_object_count: int,
-                 workspace_id: str):
-        """
-        :param bool are_references_included: Controls if the references will be exported along with the objects
-        :param str bucket: The name of the Object Storage Bucket where the objects will be exported to
-        :param str created_by: Name of the user who initiated export request.
-        :param Mapping[str, Any] error_messages: Contains key of the error
-        :param Sequence['GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs'] exported_items: The array of exported object details.
-        :param str file_name: Name of the exported zip file.
-        :param Sequence[str] filters: Export multiple objects based on filters.
-        :param bool is_object_overwrite_enabled: Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        :param str key: Export object request key
-        :param str name: Used to filter by the name of the object.
-        :param Sequence[str] object_keys: The list of the objects to be exported
-        :param str object_storage_region: Region of the object storage (if using object storage of different region)
-        :param str object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param str referenced_items: The array of exported referenced objects.
-        :param str status: Export Objects request status.
-        :param str time_ended_in_millis: Specifies end time of a copy object request.
-        :param str time_started_in_millis: Specifies start time of a copy object request.
-        :param int total_exported_object_count: Number of objects that are exported.
-        :param str workspace_id: The workspace ID.
-        """
-        pulumi.set(__self__, "are_references_included", are_references_included)
+                 workspace_id: str,
+                 are_references_included: Optional[bool] = None,
+                 created_by: Optional[str] = None,
+                 error_messages: Optional[Mapping[str, Any]] = None,
+                 exported_items: Optional[Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult']] = None,
+                 file_name: Optional[str] = None,
+                 filters: Optional[Sequence[str]] = None,
+                 is_object_overwrite_enabled: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_keys: Optional[Sequence[str]] = None,
+                 object_storage_region: Optional[str] = None,
+                 object_storage_tenancy_id: Optional[str] = None,
+                 referenced_items: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_ended_in_millis: Optional[str] = None,
+                 time_started_in_millis: Optional[str] = None,
+                 total_exported_object_count: Optional[int] = None):
         pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "error_messages", error_messages)
-        pulumi.set(__self__, "exported_items", exported_items)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "is_object_overwrite_enabled", is_object_overwrite_enabled)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_keys", object_keys)
-        pulumi.set(__self__, "object_storage_region", object_storage_region)
-        pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
-        pulumi.set(__self__, "referenced_items", referenced_items)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
-        pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
-        pulumi.set(__self__, "total_exported_object_count", total_exported_object_count)
         pulumi.set(__self__, "workspace_id", workspace_id)
-
-    @property
-    @pulumi.getter(name="areReferencesIncluded")
-    def are_references_included(self) -> bool:
-        """
-        Controls if the references will be exported along with the objects
-        """
-        return pulumi.get(self, "are_references_included")
+        if are_references_included is not None:
+            pulumi.set(__self__, "are_references_included", are_references_included)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if error_messages is not None:
+            pulumi.set(__self__, "error_messages", error_messages)
+        if exported_items is not None:
+            pulumi.set(__self__, "exported_items", exported_items)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+        if is_object_overwrite_enabled is not None:
+            pulumi.set(__self__, "is_object_overwrite_enabled", is_object_overwrite_enabled)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_keys is not None:
+            pulumi.set(__self__, "object_keys", object_keys)
+        if object_storage_region is not None:
+            pulumi.set(__self__, "object_storage_region", object_storage_region)
+        if object_storage_tenancy_id is not None:
+            pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+        if referenced_items is not None:
+            pulumi.set(__self__, "referenced_items", referenced_items)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_ended_in_millis is not None:
+            pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
+        if time_started_in_millis is not None:
+            pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
+        if total_exported_object_count is not None:
+            pulumi.set(__self__, "total_exported_object_count", total_exported_object_count)
 
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        The name of the Object Storage Bucket where the objects will be exported to
-        """
         return pulumi.get(self, "bucket")
-
-    @property
-    @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        Name of the user who initiated export request.
-        """
-        return pulumi.get(self, "created_by")
-
-    @property
-    @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
-        """
-        Contains key of the error
-        """
-        return pulumi.get(self, "error_messages")
-
-    @property
-    @pulumi.getter(name="exportedItems")
-    def exported_items(self) -> Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult']:
-        """
-        The array of exported object details.
-        """
-        return pulumi.get(self, "exported_items")
-
-    @property
-    @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        Name of the exported zip file.
-        """
-        return pulumi.get(self, "file_name")
-
-    @property
-    @pulumi.getter
-    def filters(self) -> Sequence[str]:
-        """
-        Export multiple objects based on filters.
-        """
-        return pulumi.get(self, "filters")
-
-    @property
-    @pulumi.getter(name="isObjectOverwriteEnabled")
-    def is_object_overwrite_enabled(self) -> bool:
-        """
-        Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        """
-        return pulumi.get(self, "is_object_overwrite_enabled")
-
-    @property
-    @pulumi.getter
-    def key(self) -> str:
-        """
-        Export object request key
-        """
-        return pulumi.get(self, "key")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="objectKeys")
-    def object_keys(self) -> Sequence[str]:
-        """
-        The list of the objects to be exported
-        """
-        return pulumi.get(self, "object_keys")
-
-    @property
-    @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> str:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
-        return pulumi.get(self, "object_storage_region")
-
-    @property
-    @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> str:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
-        return pulumi.get(self, "object_storage_tenancy_id")
-
-    @property
-    @pulumi.getter(name="referencedItems")
-    def referenced_items(self) -> str:
-        """
-        The array of exported referenced objects.
-        """
-        return pulumi.get(self, "referenced_items")
-
-    @property
-    @pulumi.getter
-    def status(self) -> str:
-        """
-        Export Objects request status.
-        """
-        return pulumi.get(self, "status")
-
-    @property
-    @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> str:
-        """
-        Specifies end time of a copy object request.
-        """
-        return pulumi.get(self, "time_ended_in_millis")
-
-    @property
-    @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> str:
-        """
-        Specifies start time of a copy object request.
-        """
-        return pulumi.get(self, "time_started_in_millis")
-
-    @property
-    @pulumi.getter(name="totalExportedObjectCount")
-    def total_exported_object_count(self) -> int:
-        """
-        Number of objects that are exported.
-        """
-        return pulumi.get(self, "total_exported_object_count")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> str:
-        """
-        The workspace ID.
-        """
         return pulumi.get(self, "workspace_id")
+
+    @property
+    @pulumi.getter(name="areReferencesIncluded")
+    def are_references_included(self) -> Optional[bool]:
+        return pulumi.get(self, "are_references_included")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[str]:
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="errorMessages")
+    def error_messages(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "error_messages")
+
+    @property
+    @pulumi.getter(name="exportedItems")
+    def exported_items(self) -> Optional[Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult']]:
+        return pulumi.get(self, "exported_items")
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> Optional[str]:
+        return pulumi.get(self, "file_name")
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "filters")
+
+    @property
+    @pulumi.getter(name="isObjectOverwriteEnabled")
+    def is_object_overwrite_enabled(self) -> Optional[bool]:
+        return pulumi.get(self, "is_object_overwrite_enabled")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectKeys")
+    def object_keys(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "object_keys")
+
+    @property
+    @pulumi.getter(name="objectStorageRegion")
+    def object_storage_region(self) -> Optional[str]:
+        return pulumi.get(self, "object_storage_region")
+
+    @property
+    @pulumi.getter(name="objectStorageTenancyId")
+    def object_storage_tenancy_id(self) -> Optional[str]:
+        return pulumi.get(self, "object_storage_tenancy_id")
+
+    @property
+    @pulumi.getter(name="referencedItems")
+    def referenced_items(self) -> Optional[str]:
+        return pulumi.get(self, "referenced_items")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeEndedInMillis")
+    def time_ended_in_millis(self) -> Optional[str]:
+        return pulumi.get(self, "time_ended_in_millis")
+
+    @property
+    @pulumi.getter(name="timeStartedInMillis")
+    def time_started_in_millis(self) -> Optional[str]:
+        return pulumi.get(self, "time_started_in_millis")
+
+    @property
+    @pulumi.getter(name="totalExportedObjectCount")
+    def total_exported_object_count(self) -> Optional[int]:
+        return pulumi.get(self, "total_exported_object_count")
 
 
 @pulumi.output_type
 class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 name_path: str,
-                 object_type: str,
-                 object_version: str,
-                 time_updated_in_millis: str):
-        """
-        :param str aggregator_key: Aggregator key
-        :param str identifier: Object identifier
-        :param str key: Export object request key
-        :param str name: Used to filter by the name of the object.
-        :param str name_path: Object name path
-        :param str object_type: Object type
-        :param str object_version: Object version
-        :param str time_updated_in_millis: time at which this object was last updated.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
+                 aggregator_key: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 object_type: Optional[str] = None,
+                 object_version: Optional[str] = None,
+                 time_updated_in_millis: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if time_updated_in_millis is not None:
+            pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        Aggregator key
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Object identifier
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Export object request key
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        Object name path
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        Object type
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> str:
-        """
-        Object version
-        """
+    def object_version(self) -> Optional[str]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="timeUpdatedInMillis")
-    def time_updated_in_millis(self) -> str:
-        """
-        time at which this object was last updated.
-        """
+    def time_updated_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_updated_in_millis")
 
 
@@ -4212,9 +3139,6 @@ class GetWorkspaceExportRequestsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Used to filter by the name of the object.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4223,9 +3147,6 @@ class GetWorkspaceExportRequestsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4242,361 +3163,262 @@ class GetWorkspaceExportRequestsFilterResult(dict):
 @pulumi.output_type
 class GetWorkspaceFolderMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 aggregators: Sequence['outputs.GetWorkspaceFolderMetadataAggregatorResult'],
-                 count_statistics: Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticResult'],
-                 created_by: str,
-                 created_by_name: str,
-                 identifier_path: str,
-                 info_fields: Mapping[str, Any],
-                 is_favorite: bool,
-                 labels: Sequence[str],
-                 registry_version: int,
-                 time_created: str,
-                 time_updated: str,
-                 updated_by: str,
-                 updated_by_name: str):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param Sequence['GetWorkspaceFolderMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['GetWorkspaceFolderMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        :param str time_created: The date and time that the object was created.
-        :param str time_updated: The date and time that the object was updated.
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.GetWorkspaceFolderMetadataAggregatorResult']] = None,
+                 count_statistics: Optional[Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticResult']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def aggregators(self) -> Sequence['outputs.GetWorkspaceFolderMetadataAggregatorResult']:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
+    def aggregators(self) -> Optional[Sequence['outputs.GetWorkspaceFolderMetadataAggregatorResult']]:
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
-    def count_statistics(self) -> Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticResult']:
-        """
-        A count statistics.
-        """
+    def count_statistics(self) -> Optional[Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticResult']]:
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
-    def created_by_name(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by_name(self) -> Optional[str]:
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
-    def identifier_path(self) -> str:
-        """
-        The full path to identify this object.
-        """
+    def identifier_path(self) -> Optional[str]:
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
-        """
-        Information property fields.
-        """
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the object was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the object was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
-    def updated_by_name(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by_name(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_name")
 
 
 @pulumi.output_type
 class GetWorkspaceFolderMetadataAggregatorResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The description of the aggregator.
-        :param str identifier: The identifier of the aggregator.
-        :param str key: The key of the aggregator object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str type: The type of the aggregator.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        The identifier of the aggregator.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the aggregator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceFolderMetadataCountStatisticResult(dict):
     def __init__(__self__, *,
-                 object_type_count_lists: Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult']):
-        """
-        :param Sequence['GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+                 object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult']] = None):
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
-    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult']:
-        """
-        The array of statistics.
-        """
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult']]:
         return pulumi.get(self, "object_type_count_lists")
 
 
 @pulumi.output_type
 class GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult(dict):
     def __init__(__self__, *,
-                 object_count: str,
-                 object_type: str):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
-    def object_count(self) -> str:
-        """
-        The value for the count statistic object.
-        """
+    def object_count(self) -> Optional[str]:
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of object for the count statistic object.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
 
 @pulumi.output_type
 class GetWorkspaceFolderParentRefResult(dict):
     def __init__(__self__, *,
-                 parent: str,
-                 root_doc_id: str):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
-    def parent(self) -> str:
-        """
-        Key of the parent object.
-        """
+    def parent(self) -> Optional[str]:
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
-    def root_doc_id(self) -> str:
-        """
-        Key of the root document object.
-        """
+    def root_doc_id(self) -> Optional[str]:
         return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
 class GetWorkspaceFolderRegistryMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 is_favorite: bool,
-                 key: str,
-                 labels: Sequence[str],
-                 registry_version: int):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: The key of the aggregator object.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+                 aggregator_key: Optional[str] = None,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
 
@@ -4606,9 +3428,6 @@ class GetWorkspaceFoldersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Used to filter by the name of the object.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4617,9 +3436,6 @@ class GetWorkspaceFoldersFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4636,164 +3452,70 @@ class GetWorkspaceFoldersFilterResult(dict):
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 category_name: str,
-                 description: str,
-                 folder_key: str,
                  identifier: str,
-                 key: str,
-                 key_map: Mapping[str, Any],
-                 metadatas: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult'],
-                 model_type: str,
-                 model_version: str,
                  name: str,
-                 object_status: int,
-                 object_version: int,
-                 parent_reves: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult'],
                  registry_metadata: 'outputs.GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult',
-                 workspace_id: str):
-        """
-        :param str category_name: The category name.
-        :param str description: The description of the aggregator.
-        :param str identifier: Used to filter by the identifier of the object.
-        :param str key: The key of the aggregator object.
-        :param Mapping[str, Any] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The type of the object.
-        :param str model_version: The model version of an object.
-        :param str name: Used to filter by the name of the object.
-        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs'] parent_reves: A reference to the object's parent.
-        :param str workspace_id: The workspace ID.
-        """
-        pulumi.set(__self__, "category_name", category_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "folder_key", folder_key)
+                 workspace_id: str,
+                 category_name: Optional[str] = None,
+                 description: Optional[str] = None,
+                 folder_key: Optional[str] = None,
+                 key: Optional[str] = None,
+                 key_map: Optional[Mapping[str, Any]] = None,
+                 metadatas: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult']] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 object_version: Optional[int] = None,
+                 parent_reves: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult']] = None):
         pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_map", key_map)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
         pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_status", object_status)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "parent_reves", parent_reves)
         pulumi.set(__self__, "registry_metadata", registry_metadata)
         pulumi.set(__self__, "workspace_id", workspace_id)
-
-    @property
-    @pulumi.getter(name="categoryName")
-    def category_name(self) -> str:
-        """
-        The category name.
-        """
-        return pulumi.get(self, "category_name")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter(name="folderKey")
-    def folder_key(self) -> str:
-        return pulumi.get(self, "folder_key")
+        if category_name is not None:
+            pulumi.set(__self__, "category_name", category_name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if folder_key is not None:
+            pulumi.set(__self__, "folder_key", folder_key)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if key_map is not None:
+            pulumi.set(__self__, "key_map", key_map)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if parent_reves is not None:
+            pulumi.set(__self__, "parent_reves", parent_reves)
 
     @property
     @pulumi.getter
     def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the object.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
-        return pulumi.get(self, "key")
-
-    @property
-    @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
-        """
-        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
-        return pulumi.get(self, "key_map")
-
-    @property
-    @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult']:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
-        return pulumi.get(self, "metadatas")
-
-    @property
-    @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The type of the object.
-        """
-        return pulumi.get(self, "model_type")
-
-    @property
-    @pulumi.getter(name="modelVersion")
-    def model_version(self) -> str:
-        """
-        The model version of an object.
-        """
-        return pulumi.get(self, "model_version")
-
-    @property
-    @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="objectStatus")
-    def object_status(self) -> int:
-        """
-        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        return pulumi.get(self, "object_status")
-
-    @property
-    @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The version of the object that is used to track changes in the object instance.
-        """
-        return pulumi.get(self, "object_version")
-
-    @property
-    @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult']:
-        """
-        A reference to the object's parent.
-        """
-        return pulumi.get(self, "parent_reves")
 
     @property
     @pulumi.getter(name="registryMetadata")
@@ -4803,527 +3525,437 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemResult(dict):
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> str:
-        """
-        The workspace ID.
-        """
         return pulumi.get(self, "workspace_id")
+
+    @property
+    @pulumi.getter(name="categoryName")
+    def category_name(self) -> Optional[str]:
+        return pulumi.get(self, "category_name")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="folderKey")
+    def folder_key(self) -> Optional[str]:
+        return pulumi.get(self, "folder_key")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="keyMap")
+    def key_map(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "key_map")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult']]:
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> Optional[int]:
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult']]:
+        return pulumi.get(self, "parent_reves")
 
 
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 aggregators: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult'],
-                 count_statistics: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult'],
-                 created_by: str,
-                 created_by_name: str,
-                 identifier_path: str,
-                 info_fields: Mapping[str, Any],
-                 is_favorite: bool,
-                 labels: Sequence[str],
-                 registry_version: int,
-                 time_created: str,
-                 time_updated: str,
-                 updated_by: str,
-                 updated_by_name: str):
-        """
-        :param str aggregator_key: Used to filter by the project or the folder object.
-        :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        :param str time_created: The date and time that the object was created.
-        :param str time_updated: The date and time that the object was updated.
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult']] = None,
+                 count_statistics: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        Used to filter by the project or the folder object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def aggregators(self) -> Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult']:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
+    def aggregators(self) -> Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult']]:
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
-    def count_statistics(self) -> Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult']:
-        """
-        A count statistics.
-        """
+    def count_statistics(self) -> Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult']]:
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
-    def created_by_name(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by_name(self) -> Optional[str]:
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
-    def identifier_path(self) -> str:
-        """
-        The full path to identify this object.
-        """
+    def identifier_path(self) -> Optional[str]:
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
-        """
-        Information property fields.
-        """
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the object was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the object was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
-    def updated_by_name(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by_name(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_name")
 
 
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The description of the aggregator.
-        :param str identifier: Used to filter by the identifier of the object.
-        :param str key: The key of the aggregator object.
-        :param str name: Used to filter by the name of the object.
-        :param str type: The type of the aggregator.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the object.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the aggregator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult(dict):
     def __init__(__self__, *,
-                 object_type_count_lists: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']):
-        """
-        :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+                 object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']] = None):
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
-    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']:
-        """
-        The array of statistics.
-        """
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']]:
         return pulumi.get(self, "object_type_count_lists")
 
 
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult(dict):
     def __init__(__self__, *,
-                 object_count: str,
-                 object_type: str):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
-    def object_count(self) -> str:
-        """
-        The value for the count statistic object.
-        """
+    def object_count(self) -> Optional[str]:
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of object for the count statistic object.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
 
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult(dict):
     def __init__(__self__, *,
-                 parent: str,
-                 root_doc_id: str):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
-    def parent(self) -> str:
-        """
-        Key of the parent object.
-        """
+    def parent(self) -> Optional[str]:
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
-    def root_doc_id(self) -> str:
-        """
-        Key of the root document object.
-        """
+    def root_doc_id(self) -> Optional[str]:
         return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
 class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 is_favorite: bool,
-                 key: str,
-                 labels: Sequence[str],
-                 registry_version: int):
-        """
-        :param str aggregator_key: Used to filter by the project or the folder object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: The key of the aggregator object.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+                 aggregator_key: Optional[str] = None,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        Used to filter by the project or the folder object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
 
 @pulumi.output_type
 class GetWorkspaceImportRequestImportConflictResolutionResult(dict):
     def __init__(__self__, *,
-                 duplicate_prefix: str,
-                 duplicate_suffix: str,
-                 import_conflict_resolution_type: str):
-        """
-        :param str duplicate_prefix: In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-        :param str duplicate_suffix: In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-        :param str import_conflict_resolution_type: Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-        """
-        pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
-        pulumi.set(__self__, "duplicate_suffix", duplicate_suffix)
-        pulumi.set(__self__, "import_conflict_resolution_type", import_conflict_resolution_type)
+                 duplicate_prefix: Optional[str] = None,
+                 duplicate_suffix: Optional[str] = None,
+                 import_conflict_resolution_type: Optional[str] = None):
+        if duplicate_prefix is not None:
+            pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
+        if duplicate_suffix is not None:
+            pulumi.set(__self__, "duplicate_suffix", duplicate_suffix)
+        if import_conflict_resolution_type is not None:
+            pulumi.set(__self__, "import_conflict_resolution_type", import_conflict_resolution_type)
 
     @property
     @pulumi.getter(name="duplicatePrefix")
-    def duplicate_prefix(self) -> str:
-        """
-        In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-        """
+    def duplicate_prefix(self) -> Optional[str]:
         return pulumi.get(self, "duplicate_prefix")
 
     @property
     @pulumi.getter(name="duplicateSuffix")
-    def duplicate_suffix(self) -> str:
-        """
-        In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-        """
+    def duplicate_suffix(self) -> Optional[str]:
         return pulumi.get(self, "duplicate_suffix")
 
     @property
     @pulumi.getter(name="importConflictResolutionType")
-    def import_conflict_resolution_type(self) -> str:
-        """
-        Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-        """
+    def import_conflict_resolution_type(self) -> Optional[str]:
         return pulumi.get(self, "import_conflict_resolution_type")
 
 
 @pulumi.output_type
 class GetWorkspaceImportRequestImportedObjectResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 identifier: str,
-                 name: str,
-                 name_path: str,
-                 new_key: str,
-                 object_type: str,
-                 object_version: str,
-                 old_key: str,
-                 resolution_action: str,
-                 time_updated_in_millis: str):
-        """
-        :param str aggregator_key: Aggregator key
-        :param str identifier: Object identifier
-        :param str name: Name of the import request.
-        :param str name_path: Object name path
-        :param str new_key: New key of the object
-        :param str object_type: Object type
-        :param str object_version: Object version
-        :param str old_key: Old key of the object
-        :param str resolution_action: Object resolution action
-        :param str time_updated_in_millis: time at which this object was last updated.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "new_key", new_key)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "old_key", old_key)
-        pulumi.set(__self__, "resolution_action", resolution_action)
-        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
+                 aggregator_key: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 new_key: Optional[str] = None,
+                 object_type: Optional[str] = None,
+                 object_version: Optional[str] = None,
+                 old_key: Optional[str] = None,
+                 resolution_action: Optional[str] = None,
+                 time_updated_in_millis: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if new_key is not None:
+            pulumi.set(__self__, "new_key", new_key)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if old_key is not None:
+            pulumi.set(__self__, "old_key", old_key)
+        if resolution_action is not None:
+            pulumi.set(__self__, "resolution_action", resolution_action)
+        if time_updated_in_millis is not None:
+            pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        Aggregator key
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Object identifier
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the import request.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        Object name path
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="newKey")
-    def new_key(self) -> str:
-        """
-        New key of the object
-        """
+    def new_key(self) -> Optional[str]:
         return pulumi.get(self, "new_key")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        Object type
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> str:
-        """
-        Object version
-        """
+    def object_version(self) -> Optional[str]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="oldKey")
-    def old_key(self) -> str:
-        """
-        Old key of the object
-        """
+    def old_key(self) -> Optional[str]:
         return pulumi.get(self, "old_key")
 
     @property
     @pulumi.getter(name="resolutionAction")
-    def resolution_action(self) -> str:
-        """
-        Object resolution action
-        """
+    def resolution_action(self) -> Optional[str]:
         return pulumi.get(self, "resolution_action")
 
     @property
     @pulumi.getter(name="timeUpdatedInMillis")
-    def time_updated_in_millis(self) -> str:
-        """
-        time at which this object was last updated.
-        """
+    def time_updated_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_updated_in_millis")
 
 
@@ -5333,9 +3965,6 @@ class GetWorkspaceImportRequestsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Used to filter by the name of the object.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5344,9 +3973,6 @@ class GetWorkspaceImportRequestsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -5363,12 +3989,13 @@ class GetWorkspaceImportRequestsFilterResult(dict):
 @pulumi.output_type
 class GetWorkspaceImportRequestsImportRequestSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -5376,700 +4003,504 @@ class GetWorkspaceImportRequestsImportRequestSummaryCollectionResult(dict):
 class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  bucket: str,
-                 created_by: str,
-                 error_messages: Mapping[str, Any],
                  file_name: str,
-                 import_conflict_resolution: 'outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult',
-                 imported_objects: Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult'],
-                 key: str,
-                 name: str,
-                 object_key_for_import: str,
-                 object_storage_region: str,
-                 object_storage_tenancy_id: str,
-                 status: str,
-                 time_ended_in_millis: str,
-                 time_started_in_millis: str,
-                 total_imported_object_count: int,
-                 workspace_id: str):
-        """
-        :param str bucket: The name of the Object Storage Bucket where the objects will be imported from
-        :param str created_by: Name of the user who initiated import request.
-        :param Mapping[str, Any] error_messages: Contains key of the error
-        :param str file_name: Name of the zip file from which objects will be imported.
-        :param 'GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs' import_conflict_resolution: Import Objects Conflict resolution.
-        :param Sequence['GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs'] imported_objects: The array of imported object details.
-        :param str key: Import object request key
-        :param str name: Used to filter by the name of the object.
-        :param str object_key_for_import: Key of the object inside which all the objects will be imported
-        :param str object_storage_region: Region of the object storage (if using object storage of different region)
-        :param str object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param str status: Import Objects request status.
-        :param str time_ended_in_millis: Specifies end time of a copy object request.
-        :param str time_started_in_millis: Specifies start time of a copy object request.
-        :param int total_imported_object_count: Number of objects that are imported.
-        :param str workspace_id: The workspace ID.
-        """
+                 workspace_id: str,
+                 created_by: Optional[str] = None,
+                 error_messages: Optional[Mapping[str, Any]] = None,
+                 import_conflict_resolution: Optional['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult'] = None,
+                 imported_objects: Optional[Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult']] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_key_for_import: Optional[str] = None,
+                 object_storage_region: Optional[str] = None,
+                 object_storage_tenancy_id: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_ended_in_millis: Optional[str] = None,
+                 time_started_in_millis: Optional[str] = None,
+                 total_imported_object_count: Optional[int] = None):
         pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "error_messages", error_messages)
         pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "import_conflict_resolution", import_conflict_resolution)
-        pulumi.set(__self__, "imported_objects", imported_objects)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_key_for_import", object_key_for_import)
-        pulumi.set(__self__, "object_storage_region", object_storage_region)
-        pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
-        pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
-        pulumi.set(__self__, "total_imported_object_count", total_imported_object_count)
         pulumi.set(__self__, "workspace_id", workspace_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if error_messages is not None:
+            pulumi.set(__self__, "error_messages", error_messages)
+        if import_conflict_resolution is not None:
+            pulumi.set(__self__, "import_conflict_resolution", import_conflict_resolution)
+        if imported_objects is not None:
+            pulumi.set(__self__, "imported_objects", imported_objects)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_key_for_import is not None:
+            pulumi.set(__self__, "object_key_for_import", object_key_for_import)
+        if object_storage_region is not None:
+            pulumi.set(__self__, "object_storage_region", object_storage_region)
+        if object_storage_tenancy_id is not None:
+            pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_ended_in_millis is not None:
+            pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
+        if time_started_in_millis is not None:
+            pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
+        if total_imported_object_count is not None:
+            pulumi.set(__self__, "total_imported_object_count", total_imported_object_count)
 
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        The name of the Object Storage Bucket where the objects will be imported from
-        """
         return pulumi.get(self, "bucket")
-
-    @property
-    @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        Name of the user who initiated import request.
-        """
-        return pulumi.get(self, "created_by")
-
-    @property
-    @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
-        """
-        Contains key of the error
-        """
-        return pulumi.get(self, "error_messages")
 
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> str:
-        """
-        Name of the zip file from which objects will be imported.
-        """
         return pulumi.get(self, "file_name")
-
-    @property
-    @pulumi.getter(name="importConflictResolution")
-    def import_conflict_resolution(self) -> 'outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult':
-        """
-        Import Objects Conflict resolution.
-        """
-        return pulumi.get(self, "import_conflict_resolution")
-
-    @property
-    @pulumi.getter(name="importedObjects")
-    def imported_objects(self) -> Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult']:
-        """
-        The array of imported object details.
-        """
-        return pulumi.get(self, "imported_objects")
-
-    @property
-    @pulumi.getter
-    def key(self) -> str:
-        """
-        Import object request key
-        """
-        return pulumi.get(self, "key")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="objectKeyForImport")
-    def object_key_for_import(self) -> str:
-        """
-        Key of the object inside which all the objects will be imported
-        """
-        return pulumi.get(self, "object_key_for_import")
-
-    @property
-    @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> str:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
-        return pulumi.get(self, "object_storage_region")
-
-    @property
-    @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> str:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
-        return pulumi.get(self, "object_storage_tenancy_id")
-
-    @property
-    @pulumi.getter
-    def status(self) -> str:
-        """
-        Import Objects request status.
-        """
-        return pulumi.get(self, "status")
-
-    @property
-    @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> str:
-        """
-        Specifies end time of a copy object request.
-        """
-        return pulumi.get(self, "time_ended_in_millis")
-
-    @property
-    @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> str:
-        """
-        Specifies start time of a copy object request.
-        """
-        return pulumi.get(self, "time_started_in_millis")
-
-    @property
-    @pulumi.getter(name="totalImportedObjectCount")
-    def total_imported_object_count(self) -> int:
-        """
-        Number of objects that are imported.
-        """
-        return pulumi.get(self, "total_imported_object_count")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> str:
-        """
-        The workspace ID.
-        """
         return pulumi.get(self, "workspace_id")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[str]:
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="errorMessages")
+    def error_messages(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "error_messages")
+
+    @property
+    @pulumi.getter(name="importConflictResolution")
+    def import_conflict_resolution(self) -> Optional['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult']:
+        return pulumi.get(self, "import_conflict_resolution")
+
+    @property
+    @pulumi.getter(name="importedObjects")
+    def imported_objects(self) -> Optional[Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult']]:
+        return pulumi.get(self, "imported_objects")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectKeyForImport")
+    def object_key_for_import(self) -> Optional[str]:
+        return pulumi.get(self, "object_key_for_import")
+
+    @property
+    @pulumi.getter(name="objectStorageRegion")
+    def object_storage_region(self) -> Optional[str]:
+        return pulumi.get(self, "object_storage_region")
+
+    @property
+    @pulumi.getter(name="objectStorageTenancyId")
+    def object_storage_tenancy_id(self) -> Optional[str]:
+        return pulumi.get(self, "object_storage_tenancy_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeEndedInMillis")
+    def time_ended_in_millis(self) -> Optional[str]:
+        return pulumi.get(self, "time_ended_in_millis")
+
+    @property
+    @pulumi.getter(name="timeStartedInMillis")
+    def time_started_in_millis(self) -> Optional[str]:
+        return pulumi.get(self, "time_started_in_millis")
+
+    @property
+    @pulumi.getter(name="totalImportedObjectCount")
+    def total_imported_object_count(self) -> Optional[int]:
+        return pulumi.get(self, "total_imported_object_count")
 
 
 @pulumi.output_type
 class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult(dict):
     def __init__(__self__, *,
-                 duplicate_prefix: str,
-                 duplicate_suffix: str,
-                 import_conflict_resolution_type: str):
-        """
-        :param str duplicate_prefix: In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-        :param str duplicate_suffix: In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-        :param str import_conflict_resolution_type: Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-        """
-        pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
-        pulumi.set(__self__, "duplicate_suffix", duplicate_suffix)
+                 import_conflict_resolution_type: str,
+                 duplicate_prefix: Optional[str] = None,
+                 duplicate_suffix: Optional[str] = None):
         pulumi.set(__self__, "import_conflict_resolution_type", import_conflict_resolution_type)
-
-    @property
-    @pulumi.getter(name="duplicatePrefix")
-    def duplicate_prefix(self) -> str:
-        """
-        In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-        """
-        return pulumi.get(self, "duplicate_prefix")
-
-    @property
-    @pulumi.getter(name="duplicateSuffix")
-    def duplicate_suffix(self) -> str:
-        """
-        In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-        """
-        return pulumi.get(self, "duplicate_suffix")
+        if duplicate_prefix is not None:
+            pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
+        if duplicate_suffix is not None:
+            pulumi.set(__self__, "duplicate_suffix", duplicate_suffix)
 
     @property
     @pulumi.getter(name="importConflictResolutionType")
     def import_conflict_resolution_type(self) -> str:
-        """
-        Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-        """
         return pulumi.get(self, "import_conflict_resolution_type")
+
+    @property
+    @pulumi.getter(name="duplicatePrefix")
+    def duplicate_prefix(self) -> Optional[str]:
+        return pulumi.get(self, "duplicate_prefix")
+
+    @property
+    @pulumi.getter(name="duplicateSuffix")
+    def duplicate_suffix(self) -> Optional[str]:
+        return pulumi.get(self, "duplicate_suffix")
 
 
 @pulumi.output_type
 class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 identifier: str,
-                 name: str,
-                 name_path: str,
-                 new_key: str,
-                 object_type: str,
-                 object_version: str,
-                 old_key: str,
-                 resolution_action: str,
-                 time_updated_in_millis: str):
-        """
-        :param str aggregator_key: Aggregator key
-        :param str identifier: Object identifier
-        :param str name: Used to filter by the name of the object.
-        :param str name_path: Object name path
-        :param str new_key: New key of the object
-        :param str object_type: Object type
-        :param str object_version: Object version
-        :param str old_key: Old key of the object
-        :param str resolution_action: Object resolution action
-        :param str time_updated_in_millis: time at which this object was last updated.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "new_key", new_key)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "old_key", old_key)
-        pulumi.set(__self__, "resolution_action", resolution_action)
-        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
+                 aggregator_key: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 name: Optional[str] = None,
+                 name_path: Optional[str] = None,
+                 new_key: Optional[str] = None,
+                 object_type: Optional[str] = None,
+                 object_version: Optional[str] = None,
+                 old_key: Optional[str] = None,
+                 resolution_action: Optional[str] = None,
+                 time_updated_in_millis: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_path is not None:
+            pulumi.set(__self__, "name_path", name_path)
+        if new_key is not None:
+            pulumi.set(__self__, "new_key", new_key)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if old_key is not None:
+            pulumi.set(__self__, "old_key", old_key)
+        if resolution_action is not None:
+            pulumi.set(__self__, "resolution_action", resolution_action)
+        if time_updated_in_millis is not None:
+            pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        Aggregator key
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Object identifier
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="namePath")
-    def name_path(self) -> str:
-        """
-        Object name path
-        """
+    def name_path(self) -> Optional[str]:
         return pulumi.get(self, "name_path")
 
     @property
     @pulumi.getter(name="newKey")
-    def new_key(self) -> str:
-        """
-        New key of the object
-        """
+    def new_key(self) -> Optional[str]:
         return pulumi.get(self, "new_key")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        Object type
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> str:
-        """
-        Object version
-        """
+    def object_version(self) -> Optional[str]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="oldKey")
-    def old_key(self) -> str:
-        """
-        Old key of the object
-        """
+    def old_key(self) -> Optional[str]:
         return pulumi.get(self, "old_key")
 
     @property
     @pulumi.getter(name="resolutionAction")
-    def resolution_action(self) -> str:
-        """
-        Object resolution action
-        """
+    def resolution_action(self) -> Optional[str]:
         return pulumi.get(self, "resolution_action")
 
     @property
     @pulumi.getter(name="timeUpdatedInMillis")
-    def time_updated_in_millis(self) -> str:
-        """
-        time at which this object was last updated.
-        """
+    def time_updated_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_updated_in_millis")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 aggregators: Sequence['outputs.GetWorkspaceProjectMetadataAggregatorResult'],
-                 count_statistics: Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticResult'],
-                 created_by: str,
-                 created_by_name: str,
-                 identifier_path: str,
-                 info_fields: Mapping[str, Any],
-                 is_favorite: bool,
-                 labels: Sequence[str],
-                 registry_version: int,
-                 time_created: str,
-                 time_updated: str,
-                 updated_by: str,
-                 updated_by_name: str):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param Sequence['GetWorkspaceProjectMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['GetWorkspaceProjectMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        :param str time_created: The date and time that the object was created.
-        :param str time_updated: The date and time that the object was updated.
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.GetWorkspaceProjectMetadataAggregatorResult']] = None,
+                 count_statistics: Optional[Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticResult']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def aggregators(self) -> Sequence['outputs.GetWorkspaceProjectMetadataAggregatorResult']:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
+    def aggregators(self) -> Optional[Sequence['outputs.GetWorkspaceProjectMetadataAggregatorResult']]:
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
-    def count_statistics(self) -> Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticResult']:
-        """
-        A count statistics.
-        """
+    def count_statistics(self) -> Optional[Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticResult']]:
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
-    def created_by_name(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by_name(self) -> Optional[str]:
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
-    def identifier_path(self) -> str:
-        """
-        The full path to identify this object.
-        """
+    def identifier_path(self) -> Optional[str]:
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
-        """
-        Information property fields.
-        """
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the object was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the object was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
-    def updated_by_name(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by_name(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_name")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectMetadataAggregatorResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The description of the aggregator.
-        :param str identifier: The identifier of the aggregator.
-        :param str key: The key of the aggregator object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param str type: The type of the aggregator.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        The identifier of the aggregator.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the aggregator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectMetadataCountStatisticResult(dict):
     def __init__(__self__, *,
-                 object_type_count_lists: Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult']):
-        """
-        :param Sequence['GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+                 object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult']] = None):
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
-    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult']:
-        """
-        The array of statistics.
-        """
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult']]:
         return pulumi.get(self, "object_type_count_lists")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult(dict):
     def __init__(__self__, *,
-                 object_count: str,
-                 object_type: str):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
-    def object_count(self) -> str:
-        """
-        The value for the count statistic object.
-        """
+    def object_count(self) -> Optional[str]:
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of object for the count statistic object.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectParentRefResult(dict):
     def __init__(__self__, *,
-                 parent: str,
-                 root_doc_id: str):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
-    def parent(self) -> str:
-        """
-        Key of the parent object.
-        """
+    def parent(self) -> Optional[str]:
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
-    def root_doc_id(self) -> str:
-        """
-        Key of the root document object.
-        """
+    def root_doc_id(self) -> Optional[str]:
         return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectRegistryMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 is_favorite: bool,
-                 key: str,
-                 labels: Sequence[str],
-                 registry_version: int):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: The key of the aggregator object.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+                 aggregator_key: Optional[str] = None,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
 
@@ -6079,9 +4510,6 @@ class GetWorkspaceProjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Used to filter by the name of the object.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6090,9 +4518,6 @@ class GetWorkspaceProjectsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -6109,526 +4534,389 @@ class GetWorkspaceProjectsFilterResult(dict):
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 description: str,
                  identifier: str,
-                 key: str,
-                 key_map: Mapping[str, Any],
-                 metadatas: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult'],
-                 model_type: str,
-                 model_version: str,
                  name: str,
-                 object_status: int,
-                 object_version: int,
-                 parent_reves: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult'],
-                 project_key: str,
-                 registry_metadata: 'outputs.GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult',
-                 workspace_id: str):
-        """
-        :param str description: The description of the aggregator.
-        :param str identifier: Used to filter by the identifier of the object.
-        :param str key: The key of the aggregator object.
-        :param Mapping[str, Any] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The type of the object.
-        :param str model_version: The model version of an object.
-        :param str name: Used to filter by the name of the object.
-        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs'] parent_reves: A reference to the object's parent.
-        :param str workspace_id: The workspace ID.
-        """
-        pulumi.set(__self__, "description", description)
+                 workspace_id: str,
+                 description: Optional[str] = None,
+                 key: Optional[str] = None,
+                 key_map: Optional[Mapping[str, Any]] = None,
+                 metadatas: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult']] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 object_version: Optional[int] = None,
+                 parent_reves: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult']] = None,
+                 project_key: Optional[str] = None,
+                 registry_metadata: Optional['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult'] = None):
         pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_map", key_map)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
         pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_status", object_status)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "parent_reves", parent_reves)
-        pulumi.set(__self__, "project_key", project_key)
-        pulumi.set(__self__, "registry_metadata", registry_metadata)
         pulumi.set(__self__, "workspace_id", workspace_id)
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
-        return pulumi.get(self, "description")
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if key_map is not None:
+            pulumi.set(__self__, "key_map", key_map)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if parent_reves is not None:
+            pulumi.set(__self__, "parent_reves", parent_reves)
+        if project_key is not None:
+            pulumi.set(__self__, "project_key", project_key)
+        if registry_metadata is not None:
+            pulumi.set(__self__, "registry_metadata", registry_metadata)
 
     @property
     @pulumi.getter
     def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the object.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
-        return pulumi.get(self, "key")
-
-    @property
-    @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
-        """
-        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
-        return pulumi.get(self, "key_map")
-
-    @property
-    @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult']:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
-        return pulumi.get(self, "metadatas")
-
-    @property
-    @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The type of the object.
-        """
-        return pulumi.get(self, "model_type")
-
-    @property
-    @pulumi.getter(name="modelVersion")
-    def model_version(self) -> str:
-        """
-        The model version of an object.
-        """
-        return pulumi.get(self, "model_version")
-
-    @property
-    @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="objectStatus")
-    def object_status(self) -> int:
-        """
-        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        return pulumi.get(self, "object_status")
-
-    @property
-    @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The version of the object that is used to track changes in the object instance.
-        """
-        return pulumi.get(self, "object_version")
-
-    @property
-    @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult']:
-        """
-        A reference to the object's parent.
-        """
-        return pulumi.get(self, "parent_reves")
-
-    @property
-    @pulumi.getter(name="projectKey")
-    def project_key(self) -> str:
-        return pulumi.get(self, "project_key")
-
-    @property
-    @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> 'outputs.GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult':
-        return pulumi.get(self, "registry_metadata")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> str:
-        """
-        The workspace ID.
-        """
         return pulumi.get(self, "workspace_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="keyMap")
+    def key_map(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "key_map")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult']]:
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> Optional[int]:
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult']]:
+        return pulumi.get(self, "parent_reves")
+
+    @property
+    @pulumi.getter(name="projectKey")
+    def project_key(self) -> Optional[str]:
+        return pulumi.get(self, "project_key")
+
+    @property
+    @pulumi.getter(name="registryMetadata")
+    def registry_metadata(self) -> Optional['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult']:
+        return pulumi.get(self, "registry_metadata")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 aggregators: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult'],
-                 count_statistics: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult'],
-                 created_by: str,
-                 created_by_name: str,
-                 identifier_path: str,
-                 info_fields: Mapping[str, Any],
-                 is_favorite: bool,
-                 labels: Sequence[str],
-                 registry_version: int,
-                 time_created: str,
-                 time_updated: str,
-                 updated_by: str,
-                 updated_by_name: str):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs'] count_statistics: A count statistics.
-        :param str created_by: The user that created the object.
-        :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        :param str time_created: The date and time that the object was created.
-        :param str time_updated: The date and time that the object was updated.
-        :param str updated_by: The user that updated the object.
-        :param str updated_by_name: The user that updated the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult']] = None,
+                 count_statistics: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter
-    def aggregators(self) -> Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult']:
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
+    def aggregators(self) -> Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult']]:
         return pulumi.get(self, "aggregators")
 
     @property
     @pulumi.getter(name="countStatistics")
-    def count_statistics(self) -> Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult']:
-        """
-        A count statistics.
-        """
+    def count_statistics(self) -> Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult']]:
         return pulumi.get(self, "count_statistics")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="createdByName")
-    def created_by_name(self) -> str:
-        """
-        The user that created the object.
-        """
+    def created_by_name(self) -> Optional[str]:
         return pulumi.get(self, "created_by_name")
 
     @property
     @pulumi.getter(name="identifierPath")
-    def identifier_path(self) -> str:
-        """
-        The full path to identify this object.
-        """
+    def identifier_path(self) -> Optional[str]:
         return pulumi.get(self, "identifier_path")
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
-        """
-        Information property fields.
-        """
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "info_fields")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the object was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the object was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="updatedByName")
-    def updated_by_name(self) -> str:
-        """
-        The user that updated the object.
-        """
+    def updated_by_name(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_name")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 identifier: str,
-                 key: str,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The description of the aggregator.
-        :param str identifier: Used to filter by the identifier of the object.
-        :param str key: The key of the aggregator object.
-        :param str name: Used to filter by the name of the object.
-        :param str type: The type of the aggregator.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Used to filter by the identifier of the object.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the aggregator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult(dict):
     def __init__(__self__, *,
-                 object_type_count_lists: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']):
-        """
-        :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
-        """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+                 object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']] = None):
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
-    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']:
-        """
-        The array of statistics.
-        """
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']]:
         return pulumi.get(self, "object_type_count_lists")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult(dict):
     def __init__(__self__, *,
-                 object_count: str,
-                 object_type: str):
-        """
-        :param str object_count: The value for the count statistic object.
-        :param str object_type: The type of object for the count statistic object.
-        """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
-    def object_count(self) -> str:
-        """
-        The value for the count statistic object.
-        """
+    def object_count(self) -> Optional[str]:
         return pulumi.get(self, "object_count")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of object for the count statistic object.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult(dict):
     def __init__(__self__, *,
-                 parent: str,
-                 root_doc_id: str):
-        """
-        :param str parent: Key of the parent object.
-        :param str root_doc_id: Key of the root document object.
-        """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
-    def parent(self) -> str:
-        """
-        Key of the parent object.
-        """
+    def parent(self) -> Optional[str]:
         return pulumi.get(self, "parent")
 
     @property
     @pulumi.getter(name="rootDocId")
-    def root_doc_id(self) -> str:
-        """
-        Key of the root document object.
-        """
+    def root_doc_id(self) -> Optional[str]:
         return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
 class GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult(dict):
     def __init__(__self__, *,
-                 aggregator_key: str,
-                 is_favorite: bool,
-                 key: str,
-                 labels: Sequence[str],
-                 registry_version: int):
-        """
-        :param str aggregator_key: The owning object key for this object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: The key of the aggregator object.
-        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param int registry_version: The registry version of the object.
-        """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+                 aggregator_key: Optional[str] = None,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
-    def aggregator_key(self) -> str:
-        """
-        The owning object key for this object.
-        """
+    def aggregator_key(self) -> Optional[str]:
         return pulumi.get(self, "aggregator_key")
 
     @property
     @pulumi.getter(name="isFavorite")
-    def is_favorite(self) -> bool:
-        """
-        Specifies whether this object is a favorite or not.
-        """
+    def is_favorite(self) -> Optional[bool]:
         return pulumi.get(self, "is_favorite")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="registryVersion")
-    def registry_version(self) -> int:
-        """
-        The registry version of the object.
-        """
+    def registry_version(self) -> Optional[int]:
         return pulumi.get(self, "registry_version")
 
 
@@ -6638,9 +4926,6 @@ class GetWorkspacesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Used to filter by the name of the object.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6649,9 +4934,6 @@ class GetWorkspacesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Used to filter by the name of the object.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -6668,240 +4950,189 @@ class GetWorkspacesFilterResult(dict):
 @pulumi.output_type
 class GetWorkspacesWorkspaceResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 dns_server_ip: str,
-                 dns_server_zone: str,
-                 endpoint_compartment_id: str,
-                 endpoint_id: str,
-                 endpoint_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_force_operation: bool,
-                 is_private_network_enabled: bool,
-                 quiesce_timeout: int,
-                 registry_compartment_id: str,
-                 registry_id: str,
-                 registry_name: str,
-                 state: str,
-                 state_message: str,
-                 subnet_id: str,
-                 time_created: str,
-                 time_updated: str,
-                 vcn_id: str):
-        """
-        :param str compartment_id: The OCID of the compartment containing the resources you want to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A user defined description for the workspace.
-        :param str display_name: A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
-        :param str dns_server_ip: The IP of the custom DNS.
-        :param str dns_server_zone: The DNS zone of the custom DNS to use to resolve names.
-        :param str endpoint_id: DCMS endpoint associated with the container/workspace. Returns null if there is none.
-        :param str endpoint_name: Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: A system-generated and immutable identifier assigned to the workspace upon creation.
-        :param bool is_private_network_enabled: Specifies whether the private network connection is enabled or disabled.
-        :param str registry_id: DCMS registry associated with the container/workspace. Returns null if there is none.
-        :param str state: The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
-        :param str state_message: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        :param str subnet_id: The OCID of the subnet for customer connected databases.
-        :param str time_created: The date and time the workspace was created, in the timestamp format defined by RFC3339.
-        :param str time_updated: The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str vcn_id: The OCID of the VCN the subnet is in.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_server_ip", dns_server_ip)
-        pulumi.set(__self__, "dns_server_zone", dns_server_zone)
-        pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
-        pulumi.set(__self__, "endpoint_id", endpoint_id)
-        pulumi.set(__self__, "endpoint_name", endpoint_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_force_operation", is_force_operation)
-        pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
-        pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
-        pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
-        pulumi.set(__self__, "registry_id", registry_id)
-        pulumi.set(__self__, "registry_name", registry_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 dns_server_ip: Optional[str] = None,
+                 dns_server_zone: Optional[str] = None,
+                 endpoint_compartment_id: Optional[str] = None,
+                 endpoint_id: Optional[str] = None,
+                 endpoint_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_force_operation: Optional[bool] = None,
+                 is_private_network_enabled: Optional[bool] = None,
+                 quiesce_timeout: Optional[int] = None,
+                 registry_compartment_id: Optional[str] = None,
+                 registry_id: Optional[str] = None,
+                 registry_name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_message: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if dns_server_ip is not None:
+            pulumi.set(__self__, "dns_server_ip", dns_server_ip)
+        if dns_server_zone is not None:
+            pulumi.set(__self__, "dns_server_zone", dns_server_zone)
+        if endpoint_compartment_id is not None:
+            pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
+        if endpoint_id is not None:
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_name is not None:
+            pulumi.set(__self__, "endpoint_name", endpoint_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_force_operation is not None:
+            pulumi.set(__self__, "is_force_operation", is_force_operation)
+        if is_private_network_enabled is not None:
+            pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
+        if quiesce_timeout is not None:
+            pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
+        if registry_compartment_id is not None:
+            pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
+        if registry_id is not None:
+            pulumi.set(__self__, "registry_id", registry_id)
+        if registry_name is not None:
+            pulumi.set(__self__, "registry_name", registry_name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_message is not None:
+            pulumi.set(__self__, "state_message", state_message)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the resources you want to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user defined description for the workspace.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsServerIp")
-    def dns_server_ip(self) -> str:
-        """
-        The IP of the custom DNS.
-        """
+    def dns_server_ip(self) -> Optional[str]:
         return pulumi.get(self, "dns_server_ip")
 
     @property
     @pulumi.getter(name="dnsServerZone")
-    def dns_server_zone(self) -> str:
-        """
-        The DNS zone of the custom DNS to use to resolve names.
-        """
+    def dns_server_zone(self) -> Optional[str]:
         return pulumi.get(self, "dns_server_zone")
 
     @property
     @pulumi.getter(name="endpointCompartmentId")
-    def endpoint_compartment_id(self) -> str:
+    def endpoint_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_compartment_id")
 
     @property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> str:
-        """
-        DCMS endpoint associated with the container/workspace. Returns null if there is none.
-        """
+    def endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_id")
 
     @property
     @pulumi.getter(name="endpointName")
-    def endpoint_name(self) -> str:
-        """
-        Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-        """
+    def endpoint_name(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A system-generated and immutable identifier assigned to the workspace upon creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isForceOperation")
-    def is_force_operation(self) -> bool:
+    def is_force_operation(self) -> Optional[bool]:
         return pulumi.get(self, "is_force_operation")
 
     @property
     @pulumi.getter(name="isPrivateNetworkEnabled")
-    def is_private_network_enabled(self) -> bool:
-        """
-        Specifies whether the private network connection is enabled or disabled.
-        """
+    def is_private_network_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_private_network_enabled")
 
     @property
     @pulumi.getter(name="quiesceTimeout")
-    def quiesce_timeout(self) -> int:
+    def quiesce_timeout(self) -> Optional[int]:
         return pulumi.get(self, "quiesce_timeout")
 
     @property
     @pulumi.getter(name="registryCompartmentId")
-    def registry_compartment_id(self) -> str:
+    def registry_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "registry_compartment_id")
 
     @property
     @pulumi.getter(name="registryId")
-    def registry_id(self) -> str:
-        """
-        DCMS registry associated with the container/workspace. Returns null if there is none.
-        """
+    def registry_id(self) -> Optional[str]:
         return pulumi.get(self, "registry_id")
 
     @property
     @pulumi.getter(name="registryName")
-    def registry_name(self) -> str:
+    def registry_name(self) -> Optional[str]:
         return pulumi.get(self, "registry_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the subnet for customer connected databases.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the workspace was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The OCID of the VCN the subnet is in.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 

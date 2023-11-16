@@ -73,60 +73,60 @@ export interface GetOpsiConfigurationResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly configItemCustomStatuses: string[];
     readonly configItemFields: string[];
     /**
      * Array of configuration item summary objects.
      */
-    readonly configItems: outputs.Opsi.GetOpsiConfigurationConfigItem[];
+    readonly configItems?: outputs.Opsi.GetOpsiConfigurationConfigItem[];
     readonly configItemsApplicableContexts: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of OPSI configuration.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * User-friendly display name for the OPSI configuration. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly opsiConfigFields: string[];
     /**
      * OPSI configuration type.
      */
-    readonly opsiConfigType: string;
+    readonly opsiConfigType?: string;
     readonly opsiConfigurationId: string;
     /**
      * OPSI configuration resource lifecycle state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.

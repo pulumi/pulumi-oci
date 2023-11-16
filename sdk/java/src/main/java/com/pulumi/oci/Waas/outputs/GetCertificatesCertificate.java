@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificatesCertificate {
@@ -22,227 +24,227 @@ public final class GetCertificatesCertificate {
      * @return The data of the SSL certificate.
      * 
      */
-    private String certificateData;
+    private @Nullable String certificateData;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name of the SSL certificate.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      * 
      */
-    private List<GetCertificatesCertificateExtension> extensions;
+    private @Nullable List<GetCertificatesCertificateExtension> extensions;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
      * 
      */
-    private Boolean isTrustVerificationDisabled;
-    private String issuedBy;
+    private @Nullable Boolean isTrustVerificationDisabled;
+    private @Nullable String issuedBy;
     /**
      * @return The issuer of the certificate.
      * 
      */
-    private List<GetCertificatesCertificateIssuerName> issuerNames;
-    private String privateKeyData;
+    private @Nullable List<GetCertificatesCertificateIssuerName> issuerNames;
+    private @Nullable String privateKeyData;
     /**
      * @return Information about the public key and the algorithm used by the public key.
      * 
      */
-    private List<GetCertificatesCertificatePublicKeyInfo> publicKeyInfos;
+    private @Nullable List<GetCertificatesCertificatePublicKeyInfo> publicKeyInfos;
     /**
      * @return A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      * 
      */
-    private String serialNumber;
+    private @Nullable String serialNumber;
     /**
      * @return The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      * 
      */
-    private String signatureAlgorithm;
+    private @Nullable String signatureAlgorithm;
     /**
      * @return The current lifecycle state of the SSL certificate.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The entity to be secured by the certificate.
      * 
      */
-    private List<GetCertificatesCertificateSubjectName> subjectNames;
+    private @Nullable List<GetCertificatesCertificateSubjectName> subjectNames;
     /**
      * @return The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeNotValidAfter;
+    private @Nullable String timeNotValidAfter;
     /**
      * @return The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeNotValidBefore;
+    private @Nullable String timeNotValidBefore;
     /**
      * @return The version of the encoded certificate.
      * 
      */
-    private Integer version;
+    private @Nullable Integer version;
 
     private GetCertificatesCertificate() {}
     /**
      * @return The data of the SSL certificate.
      * 
      */
-    public String certificateData() {
-        return this.certificateData;
+    public Optional<String> certificateData() {
+        return Optional.ofNullable(this.certificateData);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name of the SSL certificate.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      * 
      */
     public List<GetCertificatesCertificateExtension> extensions() {
-        return this.extensions;
+        return this.extensions == null ? List.of() : this.extensions;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
      * 
      */
-    public Boolean isTrustVerificationDisabled() {
-        return this.isTrustVerificationDisabled;
+    public Optional<Boolean> isTrustVerificationDisabled() {
+        return Optional.ofNullable(this.isTrustVerificationDisabled);
     }
-    public String issuedBy() {
-        return this.issuedBy;
+    public Optional<String> issuedBy() {
+        return Optional.ofNullable(this.issuedBy);
     }
     /**
      * @return The issuer of the certificate.
      * 
      */
     public List<GetCertificatesCertificateIssuerName> issuerNames() {
-        return this.issuerNames;
+        return this.issuerNames == null ? List.of() : this.issuerNames;
     }
-    public String privateKeyData() {
-        return this.privateKeyData;
+    public Optional<String> privateKeyData() {
+        return Optional.ofNullable(this.privateKeyData);
     }
     /**
      * @return Information about the public key and the algorithm used by the public key.
      * 
      */
     public List<GetCertificatesCertificatePublicKeyInfo> publicKeyInfos() {
-        return this.publicKeyInfos;
+        return this.publicKeyInfos == null ? List.of() : this.publicKeyInfos;
     }
     /**
      * @return A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      * 
      */
-    public String serialNumber() {
-        return this.serialNumber;
+    public Optional<String> serialNumber() {
+        return Optional.ofNullable(this.serialNumber);
     }
     /**
      * @return The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      * 
      */
-    public String signatureAlgorithm() {
-        return this.signatureAlgorithm;
+    public Optional<String> signatureAlgorithm() {
+        return Optional.ofNullable(this.signatureAlgorithm);
     }
     /**
      * @return The current lifecycle state of the SSL certificate.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The entity to be secured by the certificate.
      * 
      */
     public List<GetCertificatesCertificateSubjectName> subjectNames() {
-        return this.subjectNames;
+        return this.subjectNames == null ? List.of() : this.subjectNames;
     }
     /**
      * @return The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeNotValidAfter() {
-        return this.timeNotValidAfter;
+    public Optional<String> timeNotValidAfter() {
+        return Optional.ofNullable(this.timeNotValidAfter);
     }
     /**
      * @return The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeNotValidBefore() {
-        return this.timeNotValidBefore;
+    public Optional<String> timeNotValidBefore() {
+        return Optional.ofNullable(this.timeNotValidBefore);
     }
     /**
      * @return The version of the encoded certificate.
      * 
      */
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -254,26 +256,26 @@ public final class GetCertificatesCertificate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateData;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetCertificatesCertificateExtension> extensions;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isTrustVerificationDisabled;
-        private String issuedBy;
-        private List<GetCertificatesCertificateIssuerName> issuerNames;
-        private String privateKeyData;
-        private List<GetCertificatesCertificatePublicKeyInfo> publicKeyInfos;
-        private String serialNumber;
-        private String signatureAlgorithm;
-        private String state;
-        private List<GetCertificatesCertificateSubjectName> subjectNames;
-        private String timeCreated;
-        private String timeNotValidAfter;
-        private String timeNotValidBefore;
-        private Integer version;
+        private @Nullable String certificateData;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetCertificatesCertificateExtension> extensions;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isTrustVerificationDisabled;
+        private @Nullable String issuedBy;
+        private @Nullable List<GetCertificatesCertificateIssuerName> issuerNames;
+        private @Nullable String privateKeyData;
+        private @Nullable List<GetCertificatesCertificatePublicKeyInfo> publicKeyInfos;
+        private @Nullable String serialNumber;
+        private @Nullable String signatureAlgorithm;
+        private @Nullable String state;
+        private @Nullable List<GetCertificatesCertificateSubjectName> subjectNames;
+        private @Nullable String timeCreated;
+        private @Nullable String timeNotValidAfter;
+        private @Nullable String timeNotValidBefore;
+        private @Nullable Integer version;
         public Builder() {}
         public Builder(GetCertificatesCertificate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -300,115 +302,115 @@ public final class GetCertificatesCertificate {
         }
 
         @CustomType.Setter
-        public Builder certificateData(String certificateData) {
-            this.certificateData = Objects.requireNonNull(certificateData);
+        public Builder certificateData(@Nullable String certificateData) {
+            this.certificateData = certificateData;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder extensions(List<GetCertificatesCertificateExtension> extensions) {
-            this.extensions = Objects.requireNonNull(extensions);
+        public Builder extensions(@Nullable List<GetCertificatesCertificateExtension> extensions) {
+            this.extensions = extensions;
             return this;
         }
         public Builder extensions(GetCertificatesCertificateExtension... extensions) {
             return extensions(List.of(extensions));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isTrustVerificationDisabled(Boolean isTrustVerificationDisabled) {
-            this.isTrustVerificationDisabled = Objects.requireNonNull(isTrustVerificationDisabled);
+        public Builder isTrustVerificationDisabled(@Nullable Boolean isTrustVerificationDisabled) {
+            this.isTrustVerificationDisabled = isTrustVerificationDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder issuedBy(String issuedBy) {
-            this.issuedBy = Objects.requireNonNull(issuedBy);
+        public Builder issuedBy(@Nullable String issuedBy) {
+            this.issuedBy = issuedBy;
             return this;
         }
         @CustomType.Setter
-        public Builder issuerNames(List<GetCertificatesCertificateIssuerName> issuerNames) {
-            this.issuerNames = Objects.requireNonNull(issuerNames);
+        public Builder issuerNames(@Nullable List<GetCertificatesCertificateIssuerName> issuerNames) {
+            this.issuerNames = issuerNames;
             return this;
         }
         public Builder issuerNames(GetCertificatesCertificateIssuerName... issuerNames) {
             return issuerNames(List.of(issuerNames));
         }
         @CustomType.Setter
-        public Builder privateKeyData(String privateKeyData) {
-            this.privateKeyData = Objects.requireNonNull(privateKeyData);
+        public Builder privateKeyData(@Nullable String privateKeyData) {
+            this.privateKeyData = privateKeyData;
             return this;
         }
         @CustomType.Setter
-        public Builder publicKeyInfos(List<GetCertificatesCertificatePublicKeyInfo> publicKeyInfos) {
-            this.publicKeyInfos = Objects.requireNonNull(publicKeyInfos);
+        public Builder publicKeyInfos(@Nullable List<GetCertificatesCertificatePublicKeyInfo> publicKeyInfos) {
+            this.publicKeyInfos = publicKeyInfos;
             return this;
         }
         public Builder publicKeyInfos(GetCertificatesCertificatePublicKeyInfo... publicKeyInfos) {
             return publicKeyInfos(List.of(publicKeyInfos));
         }
         @CustomType.Setter
-        public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+        public Builder serialNumber(@Nullable String serialNumber) {
+            this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder signatureAlgorithm(String signatureAlgorithm) {
-            this.signatureAlgorithm = Objects.requireNonNull(signatureAlgorithm);
+        public Builder signatureAlgorithm(@Nullable String signatureAlgorithm) {
+            this.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subjectNames(List<GetCertificatesCertificateSubjectName> subjectNames) {
-            this.subjectNames = Objects.requireNonNull(subjectNames);
+        public Builder subjectNames(@Nullable List<GetCertificatesCertificateSubjectName> subjectNames) {
+            this.subjectNames = subjectNames;
             return this;
         }
         public Builder subjectNames(GetCertificatesCertificateSubjectName... subjectNames) {
             return subjectNames(List.of(subjectNames));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeNotValidAfter(String timeNotValidAfter) {
-            this.timeNotValidAfter = Objects.requireNonNull(timeNotValidAfter);
+        public Builder timeNotValidAfter(@Nullable String timeNotValidAfter) {
+            this.timeNotValidAfter = timeNotValidAfter;
             return this;
         }
         @CustomType.Setter
-        public Builder timeNotValidBefore(String timeNotValidBefore) {
-            this.timeNotValidBefore = Objects.requireNonNull(timeNotValidBefore);
+        public Builder timeNotValidBefore(@Nullable String timeNotValidBefore) {
+            this.timeNotValidBefore = timeNotValidBefore;
             return this;
         }
         @CustomType.Setter
-        public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Integer version) {
+            this.version = version;
             return this;
         }
         public GetCertificatesCertificate build() {

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetListenersListenerCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListenersListenerCollection {
-    private List<GetListenersListenerCollectionItem> items;
+    private @Nullable List<GetListenersListenerCollectionItem> items;
 
     private GetListenersListenerCollection() {}
     public List<GetListenersListenerCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetListenersListenerCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetListenersListenerCollectionItem> items;
+        private @Nullable List<GetListenersListenerCollectionItem> items;
         public Builder() {}
         public Builder(GetListenersListenerCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetListenersListenerCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetListenersListenerCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetListenersListenerCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetListenersListenerCollectionItem... items) {

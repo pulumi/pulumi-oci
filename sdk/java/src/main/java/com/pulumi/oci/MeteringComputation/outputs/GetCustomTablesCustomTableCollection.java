@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.MeteringComputation.outputs.GetCustomTablesCustomTableCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCustomTablesCustomTableCollection {
-    private List<GetCustomTablesCustomTableCollectionItem> items;
+    private @Nullable List<GetCustomTablesCustomTableCollectionItem> items;
 
     private GetCustomTablesCustomTableCollection() {}
     public List<GetCustomTablesCustomTableCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetCustomTablesCustomTableCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCustomTablesCustomTableCollectionItem> items;
+        private @Nullable List<GetCustomTablesCustomTableCollectionItem> items;
         public Builder() {}
         public Builder(GetCustomTablesCustomTableCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetCustomTablesCustomTableCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetCustomTablesCustomTableCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetCustomTablesCustomTableCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetCustomTablesCustomTableCollectionItem... items) {

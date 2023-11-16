@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
@@ -72,7 +71,7 @@ type GetManagedInstancesResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetManagedInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of managed_instances.
 	ManagedInstances []GetManagedInstancesManagedInstance `pulumi:"managedInstances"`
 	// The Operating System type of the managed instance.
@@ -122,12 +121,6 @@ func (o GetManagedInstancesResultOutput) ToGetManagedInstancesResultOutputWithCo
 	return o
 }
 
-func (o GetManagedInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesResult] {
-	return pulumix.Output[GetManagedInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID for the Compartment
 func (o GetManagedInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetManagedInstancesResultOutput) Filters() GetManagedInstancesFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of managed_instances.

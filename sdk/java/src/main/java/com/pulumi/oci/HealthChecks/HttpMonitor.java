@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,14 +99,14 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly and mutable name suitable for display in a user interface.
@@ -126,14 +127,14 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) A dictionary of HTTP request headers.
@@ -142,7 +143,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="headers", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> headers;
+    private Output</* @Nullable */ Map<String,Object>> headers;
 
     /**
      * @return (Updatable) A dictionary of HTTP request headers.
@@ -150,22 +151,22 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      * 
      */
-    public Output<Map<String,Object>> headers() {
-        return this.headers;
+    public Output<Optional<Map<String,Object>>> headers() {
+        return Codegen.optional(this.headers);
     }
     /**
      * The region where updates must be made and where results must be fetched from.
      * 
      */
     @Export(name="homeRegion", refs={String.class}, tree="[0]")
-    private Output<String> homeRegion;
+    private Output</* @Nullable */ String> homeRegion;
 
     /**
      * @return The region where updates must be made and where results must be fetched from.
      * 
      */
-    public Output<String> homeRegion() {
-        return this.homeRegion;
+    public Output<Optional<String>> homeRegion() {
+        return Codegen.optional(this.homeRegion);
     }
     /**
      * (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -186,56 +187,56 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnabled;
+    private Output</* @Nullable */ Boolean> isEnabled;
 
     /**
      * @return (Updatable) Enables or disables the monitor. Set to &#39;true&#39; to launch monitoring.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
+    public Output<Optional<Boolean>> isEnabled() {
+        return Codegen.optional(this.isEnabled);
     }
     /**
      * (Updatable) The supported HTTP methods available for probes.
      * 
      */
     @Export(name="method", refs={String.class}, tree="[0]")
-    private Output<String> method;
+    private Output</* @Nullable */ String> method;
 
     /**
      * @return (Updatable) The supported HTTP methods available for probes.
      * 
      */
-    public Output<String> method() {
-        return this.method;
+    public Output<Optional<String>> method() {
+        return Codegen.optional(this.method);
     }
     /**
      * (Updatable) The optional URL path to probe, including query parameters.
      * 
      */
     @Export(name="path", refs={String.class}, tree="[0]")
-    private Output<String> path;
+    private Output</* @Nullable */ String> path;
 
     /**
      * @return (Updatable) The optional URL path to probe, including query parameters.
      * 
      */
-    public Output<String> path() {
-        return this.path;
+    public Output<Optional<String>> path() {
+        return Codegen.optional(this.path);
     }
     /**
      * (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
-    private Output<Integer> port;
+    private Output</* @Nullable */ Integer> port;
 
     /**
      * @return (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Output<Optional<Integer>> port() {
+        return Codegen.optional(this.port);
     }
     /**
      * (Updatable) The supported protocols available for HTTP probes.
@@ -256,14 +257,14 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="resultsUrl", refs={String.class}, tree="[0]")
-    private Output<String> resultsUrl;
+    private Output</* @Nullable */ String> resultsUrl;
 
     /**
      * @return A URL for fetching the probe results.
      * 
      */
-    public Output<String> resultsUrl() {
-        return this.resultsUrl;
+    public Output<Optional<String>> resultsUrl() {
+        return Codegen.optional(this.resultsUrl);
     }
     /**
      * (Updatable) A list of targets (hostnames or IP addresses) of the probe.
@@ -284,28 +285,28 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
     @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> timeoutInSeconds;
+    private Output</* @Nullable */ Integer> timeoutInSeconds;
 
     /**
      * @return (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    public Output<Integer> timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Output<Optional<Integer>> timeoutInSeconds() {
+        return Codegen.optional(this.timeoutInSeconds);
     }
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
@@ -315,7 +316,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vantagePointNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> vantagePointNames;
+    private Output</* @Nullable */ List<String>> vantagePointNames;
 
     /**
      * @return (Updatable) A list of names of vantage points from which to execute the probe.
@@ -324,8 +325,8 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> vantagePointNames() {
-        return this.vantagePointNames;
+    public Output<Optional<List<String>>> vantagePointNames() {
+        return Codegen.optional(this.vantagePointNames);
     }
 
     /**

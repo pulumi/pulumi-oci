@@ -95,11 +95,11 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    public readonly alternateCustomEndpoints!: pulumi.Output<outputs.Integration.IntegrationInstanceAlternateCustomEndpoint[]>;
+    public readonly alternateCustomEndpoints!: pulumi.Output<outputs.Integration.IntegrationInstanceAlternateCustomEndpoint[] | undefined>;
     /**
      * A list of associated attachments to other services
      */
-    public /*out*/ readonly attachments!: pulumi.Output<outputs.Integration.IntegrationInstanceAttachment[]>;
+    public /*out*/ readonly attachments!: pulumi.Output<outputs.Integration.IntegrationInstanceAttachment[] | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -107,15 +107,15 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    public readonly consumptionModel!: pulumi.Output<string>;
+    public readonly consumptionModel!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      */
-    public readonly customEndpoint!: pulumi.Output<outputs.Integration.IntegrationInstanceCustomEndpoint>;
+    public readonly customEndpoint!: pulumi.Output<outputs.Integration.IntegrationInstanceCustomEndpoint | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Integration Instance Identifier.
      */
@@ -131,7 +131,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      */
@@ -139,11 +139,11 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * Information for IDCS access
      */
-    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.Integration.IntegrationInstanceIdcsInfo[]>;
+    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.Integration.IntegrationInstanceIdcsInfo[] | undefined>;
     /**
      * The Integration Instance URL.
      */
-    public /*out*/ readonly instanceUrl!: pulumi.Output<string>;
+    public /*out*/ readonly instanceUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
@@ -155,11 +155,11 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * (Updatable) The file server is enabled or not.
      */
-    public readonly isFileServerEnabled!: pulumi.Output<boolean>;
+    public readonly isFileServerEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    public readonly isVisualBuilderEnabled!: pulumi.Output<boolean>;
+    public readonly isVisualBuilderEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The number of configured message packs
      */
@@ -167,11 +167,11 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * Base representation of a network endpoint.
      */
-    public readonly networkEndpointDetails!: pulumi.Output<outputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    public readonly networkEndpointDetails!: pulumi.Output<outputs.Integration.IntegrationInstanceNetworkEndpointDetails | undefined>;
     /**
      * Shape
      */
-    public readonly shape!: pulumi.Output<string>;
+    public readonly shape!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      *
@@ -179,19 +179,19 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    public /*out*/ readonly stateMessage!: pulumi.Output<string | undefined>;
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a IntegrationInstance resource with the given unique name, arguments, and options.

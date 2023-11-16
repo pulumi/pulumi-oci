@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
@@ -32,56 +31,56 @@ type ExternalListener struct {
 	// The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails pulumi.MapOutput `pulumi:"additionalDetails"`
 	// The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
-	AdrHomeDirectory pulumi.StringOutput `pulumi:"adrHomeDirectory"`
+	AdrHomeDirectory pulumi.StringPtrOutput `pulumi:"adrHomeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The name of the external listener.
-	ComponentName pulumi.StringOutput `pulumi:"componentName"`
+	ComponentName pulumi.StringPtrOutput `pulumi:"componentName"`
 	// The user-friendly name for the database. The name does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The list of protocol addresses the listener is configured to listen on.
 	Endpoints ExternalListenerEndpointArrayOutput `pulumi:"endpoints"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	ExternalConnectorId pulumi.StringOutput `pulumi:"externalConnectorId"`
+	ExternalConnectorId pulumi.StringPtrOutput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
-	ExternalDbHomeId pulumi.StringOutput `pulumi:"externalDbHomeId"`
+	ExternalDbHomeId pulumi.StringPtrOutput `pulumi:"externalDbHomeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-	ExternalDbNodeId pulumi.StringOutput `pulumi:"externalDbNodeId"`
+	ExternalDbNodeId pulumi.StringPtrOutput `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
-	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId pulumi.StringPtrOutput `pulumi:"externalDbSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalListenerId pulumi.StringOutput `pulumi:"externalListenerId"`
 	// The name of the host on which the external listener is running.
-	HostName pulumi.StringOutput `pulumi:"hostName"`
+	HostName pulumi.StringPtrOutput `pulumi:"hostName"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The listener alias.
-	ListenerAlias pulumi.StringOutput `pulumi:"listenerAlias"`
+	ListenerAlias pulumi.StringPtrOutput `pulumi:"listenerAlias"`
 	// The location of the listener configuration file listener.ora.
-	ListenerOraLocation pulumi.StringOutput `pulumi:"listenerOraLocation"`
+	ListenerOraLocation pulumi.StringPtrOutput `pulumi:"listenerOraLocation"`
 	// The type of listener.
-	ListenerType pulumi.StringOutput `pulumi:"listenerType"`
+	ListenerType pulumi.StringPtrOutput `pulumi:"listenerType"`
 	// The destination directory of the listener log file.
-	LogDirectory pulumi.StringOutput `pulumi:"logDirectory"`
+	LogDirectory pulumi.StringPtrOutput `pulumi:"logDirectory"`
 	// The Oracle home location of the listener.
-	OracleHome pulumi.StringOutput `pulumi:"oracleHome"`
+	OracleHome pulumi.StringPtrOutput `pulumi:"oracleHome"`
 	// The list of ASMs that are serviced by the listener.
 	ServicedAsms ExternalListenerServicedAsmArrayOutput `pulumi:"servicedAsms"`
 	// The list of databases that are serviced by the listener.
 	ServicedDatabases ExternalListenerServicedDatabaseArrayOutput `pulumi:"servicedDatabases"`
 	// The current lifecycle state of the external listener.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the external listener was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the external listener was last updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The destination directory of the listener trace file.
-	TraceDirectory pulumi.StringOutput `pulumi:"traceDirectory"`
+	TraceDirectory pulumi.StringPtrOutput `pulumi:"traceDirectory"`
 	// The listener version.
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewExternalListener registers a new resource with the given unique name, arguments, and options.
@@ -276,12 +275,6 @@ func (i *ExternalListener) ToExternalListenerOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalListenerOutput)
 }
 
-func (i *ExternalListener) ToOutput(ctx context.Context) pulumix.Output[*ExternalListener] {
-	return pulumix.Output[*ExternalListener]{
-		OutputState: i.ToExternalListenerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalListenerArrayInput is an input type that accepts ExternalListenerArray and ExternalListenerArrayOutput values.
 // You can construct a concrete instance of `ExternalListenerArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i ExternalListenerArray) ToExternalListenerArrayOutput() ExternalListenerA
 
 func (i ExternalListenerArray) ToExternalListenerArrayOutputWithContext(ctx context.Context) ExternalListenerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalListenerArrayOutput)
-}
-
-func (i ExternalListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalListener] {
-	return pulumix.Output[[]*ExternalListener]{
-		OutputState: i.ToExternalListenerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalListenerMapInput is an input type that accepts ExternalListenerMap and ExternalListenerMapOutput values.
@@ -338,12 +325,6 @@ func (i ExternalListenerMap) ToExternalListenerMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalListenerMapOutput)
 }
 
-func (i ExternalListenerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalListener] {
-	return pulumix.Output[map[string]*ExternalListener]{
-		OutputState: i.ToExternalListenerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalListenerOutput struct{ *pulumi.OutputState }
 
 func (ExternalListenerOutput) ElementType() reflect.Type {
@@ -358,35 +339,29 @@ func (o ExternalListenerOutput) ToExternalListenerOutputWithContext(ctx context.
 	return o
 }
 
-func (o ExternalListenerOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalListener] {
-	return pulumix.Output[*ExternalListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o ExternalListenerOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v *ExternalListener) pulumi.MapOutput { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
-func (o ExternalListenerOutput) AdrHomeDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.AdrHomeDirectory }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) AdrHomeDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.AdrHomeDirectory }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-func (o ExternalListenerOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the external listener.
-func (o ExternalListenerOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ComponentName }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the database. The name does not have to be unique.
-func (o ExternalListenerOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The list of protocol addresses the listener is configured to listen on.
@@ -395,23 +370,23 @@ func (o ExternalListenerOutput) Endpoints() ExternalListenerEndpointArrayOutput 
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-func (o ExternalListenerOutput) ExternalConnectorId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ExternalConnectorId }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ExternalConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ExternalConnectorId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
-func (o ExternalListenerOutput) ExternalDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ExternalDbHomeId }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ExternalDbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ExternalDbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-func (o ExternalListenerOutput) ExternalDbNodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ExternalDbNodeId }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ExternalDbNodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ExternalDbNodeId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
-func (o ExternalListenerOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
@@ -423,38 +398,38 @@ func (o ExternalListenerOutput) ExternalListenerId() pulumi.StringOutput {
 }
 
 // The name of the host on which the external listener is running.
-func (o ExternalListenerOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.HostName }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o ExternalListenerOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The listener alias.
-func (o ExternalListenerOutput) ListenerAlias() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ListenerAlias }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ListenerAlias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ListenerAlias }).(pulumi.StringPtrOutput)
 }
 
 // The location of the listener configuration file listener.ora.
-func (o ExternalListenerOutput) ListenerOraLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ListenerOraLocation }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ListenerOraLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ListenerOraLocation }).(pulumi.StringPtrOutput)
 }
 
 // The type of listener.
-func (o ExternalListenerOutput) ListenerType() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ListenerType }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) ListenerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.ListenerType }).(pulumi.StringPtrOutput)
 }
 
 // The destination directory of the listener log file.
-func (o ExternalListenerOutput) LogDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.LogDirectory }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) LogDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.LogDirectory }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle home location of the listener.
-func (o ExternalListenerOutput) OracleHome() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.OracleHome }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) OracleHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.OracleHome }).(pulumi.StringPtrOutput)
 }
 
 // The list of ASMs that are serviced by the listener.
@@ -468,28 +443,28 @@ func (o ExternalListenerOutput) ServicedDatabases() ExternalListenerServicedData
 }
 
 // The current lifecycle state of the external listener.
-func (o ExternalListenerOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external listener was created.
-func (o ExternalListenerOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external listener was last updated.
-func (o ExternalListenerOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The destination directory of the listener trace file.
-func (o ExternalListenerOutput) TraceDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.TraceDirectory }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) TraceDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.TraceDirectory }).(pulumi.StringPtrOutput)
 }
 
 // The listener version.
-func (o ExternalListenerOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o ExternalListenerOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type ExternalListenerArrayOutput struct{ *pulumi.OutputState }
@@ -504,12 +479,6 @@ func (o ExternalListenerArrayOutput) ToExternalListenerArrayOutput() ExternalLis
 
 func (o ExternalListenerArrayOutput) ToExternalListenerArrayOutputWithContext(ctx context.Context) ExternalListenerArrayOutput {
 	return o
-}
-
-func (o ExternalListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalListener] {
-	return pulumix.Output[[]*ExternalListener]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalListenerArrayOutput) Index(i pulumi.IntInput) ExternalListenerOutput {
@@ -530,12 +499,6 @@ func (o ExternalListenerMapOutput) ToExternalListenerMapOutput() ExternalListene
 
 func (o ExternalListenerMapOutput) ToExternalListenerMapOutputWithContext(ctx context.Context) ExternalListenerMapOutput {
 	return o
-}
-
-func (o ExternalListenerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalListener] {
-	return pulumix.Output[map[string]*ExternalListener]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalListenerMapOutput) MapIndex(k pulumi.StringInput) ExternalListenerOutput {

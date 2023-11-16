@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// PasswordPolicy Name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// PasswordPolicy priority
         /// </summary>
-        public readonly int Priority;
+        public readonly int? Priority;
         /// <summary>
         /// App URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The ID of the App.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyResult(
-            string name,
+            string? name,
 
-            int priority,
+            int? priority,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Name = name;
             Priority = priority;

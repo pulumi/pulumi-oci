@@ -55,14 +55,14 @@ export interface GetAutonomousExadataInfrastructureShapesResult {
     /**
      * The list of autonomous_exadata_infrastructure_shapes.
      */
-    readonly autonomousExadataInfrastructureShapes: outputs.Database.GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape[];
+    readonly autonomousExadataInfrastructureShapes?: outputs.Database.GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape[];
     readonly availabilityDomain: string;
     readonly compartmentId: string;
     readonly filters?: outputs.Database.GetAutonomousExadataInfrastructureShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.

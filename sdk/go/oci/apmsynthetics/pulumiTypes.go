@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i ConfigAvailabilityConfigurationArgs) ToConfigAvailabilityConfigurationOu
 
 func (i ConfigAvailabilityConfigurationArgs) ToConfigAvailabilityConfigurationOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigAvailabilityConfigurationOutput)
-}
-
-func (i ConfigAvailabilityConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigAvailabilityConfiguration] {
-	return pulumix.Output[ConfigAvailabilityConfiguration]{
-		OutputState: i.ToConfigAvailabilityConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i ConfigAvailabilityConfigurationArgs) ToConfigAvailabilityConfigurationPtrOutput() ConfigAvailabilityConfigurationPtrOutput {
@@ -98,12 +91,6 @@ func (i *configAvailabilityConfigurationPtrType) ToConfigAvailabilityConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigAvailabilityConfigurationPtrOutput)
 }
 
-func (i *configAvailabilityConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigAvailabilityConfiguration] {
-	return pulumix.Output[*ConfigAvailabilityConfiguration]{
-		OutputState: i.ToConfigAvailabilityConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigAvailabilityConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ConfigAvailabilityConfigurationOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o ConfigAvailabilityConfigurationOutput) ToConfigAvailabilityConfiguration
 	}).(ConfigAvailabilityConfigurationPtrOutput)
 }
 
-func (o ConfigAvailabilityConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigAvailabilityConfiguration] {
-	return pulumix.Output[ConfigAvailabilityConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
 func (o ConfigAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConfigAvailabilityConfiguration) *int { return v.MaxAllowedFailuresPerInterval }).(pulumi.IntPtrOutput)
@@ -156,12 +137,6 @@ func (o ConfigAvailabilityConfigurationPtrOutput) ToConfigAvailabilityConfigurat
 
 func (o ConfigAvailabilityConfigurationPtrOutput) ToConfigAvailabilityConfigurationPtrOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationPtrOutput {
 	return o
-}
-
-func (o ConfigAvailabilityConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigAvailabilityConfiguration] {
-	return pulumix.Output[*ConfigAvailabilityConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigAvailabilityConfigurationPtrOutput) Elem() ConfigAvailabilityConfigurationOutput {
@@ -291,12 +266,6 @@ func (i ConfigConfigurationArgs) ToConfigConfigurationOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationOutput)
 }
 
-func (i ConfigConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfiguration] {
-	return pulumix.Output[ConfigConfiguration]{
-		OutputState: i.ToConfigConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigConfigurationArgs) ToConfigConfigurationPtrOutput() ConfigConfigurationPtrOutput {
 	return i.ToConfigConfigurationPtrOutputWithContext(context.Background())
 }
@@ -338,12 +307,6 @@ func (i *configConfigurationPtrType) ToConfigConfigurationPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationPtrOutput)
 }
 
-func (i *configConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfiguration] {
-	return pulumix.Output[*ConfigConfiguration]{
-		OutputState: i.ToConfigConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationOutput) ElementType() reflect.Type {
@@ -366,12 +329,6 @@ func (o ConfigConfigurationOutput) ToConfigConfigurationPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfiguration) *ConfigConfiguration {
 		return &v
 	}).(ConfigConfigurationPtrOutput)
-}
-
-func (o ConfigConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfiguration] {
-	return pulumix.Output[ConfigConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Details for client certificate.
@@ -475,12 +432,6 @@ func (o ConfigConfigurationPtrOutput) ToConfigConfigurationPtrOutput() ConfigCon
 
 func (o ConfigConfigurationPtrOutput) ToConfigConfigurationPtrOutputWithContext(ctx context.Context) ConfigConfigurationPtrOutput {
 	return o
-}
-
-func (o ConfigConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfiguration] {
-	return pulumix.Output[*ConfigConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationPtrOutput) Elem() ConfigConfigurationOutput {
@@ -700,12 +651,6 @@ func (i ConfigConfigurationClientCertificateDetailsArgs) ToConfigConfigurationCl
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsOutput)
 }
 
-func (i ConfigConfigurationClientCertificateDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationClientCertificateDetails] {
-	return pulumix.Output[ConfigConfigurationClientCertificateDetails]{
-		OutputState: i.ToConfigConfigurationClientCertificateDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigConfigurationClientCertificateDetailsArgs) ToConfigConfigurationClientCertificateDetailsPtrOutput() ConfigConfigurationClientCertificateDetailsPtrOutput {
 	return i.ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(context.Background())
 }
@@ -747,12 +692,6 @@ func (i *configConfigurationClientCertificateDetailsPtrType) ToConfigConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsPtrOutput)
 }
 
-func (i *configConfigurationClientCertificateDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationClientCertificateDetails] {
-	return pulumix.Output[*ConfigConfigurationClientCertificateDetails]{
-		OutputState: i.ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationClientCertificateDetailsOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationClientCertificateDetailsOutput) ElementType() reflect.Type {
@@ -775,12 +714,6 @@ func (o ConfigConfigurationClientCertificateDetailsOutput) ToConfigConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetails {
 		return &v
 	}).(ConfigConfigurationClientCertificateDetailsPtrOutput)
-}
-
-func (o ConfigConfigurationClientCertificateDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationClientCertificateDetails] {
-	return pulumix.Output[ConfigConfigurationClientCertificateDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Client certificate in PEM format.
@@ -809,12 +742,6 @@ func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ToConfigConfigurat
 
 func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPtrOutput {
 	return o
-}
-
-func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationClientCertificateDetails] {
-	return pulumix.Output[*ConfigConfigurationClientCertificateDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationClientCertificateDetailsPtrOutput) Elem() ConfigConfigurationClientCertificateDetailsOutput {
@@ -884,12 +811,6 @@ func (i ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ToConf
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsClientCertificateOutput)
 }
 
-func (i ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationClientCertificateDetailsClientCertificate] {
-	return pulumix.Output[ConfigConfigurationClientCertificateDetailsClientCertificate]{
-		OutputState: i.ToConfigConfigurationClientCertificateDetailsClientCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
 	return i.ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(context.Background())
 }
@@ -931,12 +852,6 @@ func (i *configConfigurationClientCertificateDetailsClientCertificatePtrType) To
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
 }
 
-func (i *configConfigurationClientCertificateDetailsClientCertificatePtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationClientCertificateDetailsClientCertificate] {
-	return pulumix.Output[*ConfigConfigurationClientCertificateDetailsClientCertificate]{
-		OutputState: i.ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationClientCertificateDetailsClientCertificateOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ElementType() reflect.Type {
@@ -961,12 +876,6 @@ func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ToCo
 	}).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
 }
 
-func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationClientCertificateDetailsClientCertificate] {
-	return pulumix.Output[ConfigConfigurationClientCertificateDetailsClientCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Content of the private key file.
 func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsClientCertificate) *string { return v.Content }).(pulumi.StringPtrOutput)
@@ -989,12 +898,6 @@ func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) T
 
 func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
 	return o
-}
-
-func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationClientCertificateDetailsClientCertificate] {
-	return pulumix.Output[*ConfigConfigurationClientCertificateDetailsClientCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) Elem() ConfigConfigurationClientCertificateDetailsClientCertificateOutput {
@@ -1064,12 +967,6 @@ func (i ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ToConfigConfi
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsPrivateKeyOutput)
 }
 
-func (i ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationClientCertificateDetailsPrivateKey] {
-	return pulumix.Output[ConfigConfigurationClientCertificateDetailsPrivateKey]{
-		OutputState: i.ToConfigConfigurationClientCertificateDetailsPrivateKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
 	return i.ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(context.Background())
 }
@@ -1111,12 +1008,6 @@ func (i *configConfigurationClientCertificateDetailsPrivateKeyPtrType) ToConfigC
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput)
 }
 
-func (i *configConfigurationClientCertificateDetailsPrivateKeyPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationClientCertificateDetailsPrivateKey] {
-	return pulumix.Output[*ConfigConfigurationClientCertificateDetailsPrivateKey]{
-		OutputState: i.ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationClientCertificateDetailsPrivateKeyOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ElementType() reflect.Type {
@@ -1141,12 +1032,6 @@ func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ToConfigCon
 	}).(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput)
 }
 
-func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationClientCertificateDetailsPrivateKey] {
-	return pulumix.Output[ConfigConfigurationClientCertificateDetailsPrivateKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Content of the private key file.
 func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsPrivateKey) *string { return v.Content }).(pulumi.StringPtrOutput)
@@ -1169,12 +1054,6 @@ func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) ToConfig
 
 func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
 	return o
-}
-
-func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationClientCertificateDetailsPrivateKey] {
-	return pulumix.Output[*ConfigConfigurationClientCertificateDetailsPrivateKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) Elem() ConfigConfigurationClientCertificateDetailsPrivateKeyOutput {
@@ -1244,12 +1123,6 @@ func (i ConfigConfigurationDnsConfigurationArgs) ToConfigConfigurationDnsConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDnsConfigurationOutput)
 }
 
-func (i ConfigConfigurationDnsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationDnsConfiguration] {
-	return pulumix.Output[ConfigConfigurationDnsConfiguration]{
-		OutputState: i.ToConfigConfigurationDnsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigConfigurationDnsConfigurationArgs) ToConfigConfigurationDnsConfigurationPtrOutput() ConfigConfigurationDnsConfigurationPtrOutput {
 	return i.ToConfigConfigurationDnsConfigurationPtrOutputWithContext(context.Background())
 }
@@ -1291,12 +1164,6 @@ func (i *configConfigurationDnsConfigurationPtrType) ToConfigConfigurationDnsCon
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDnsConfigurationPtrOutput)
 }
 
-func (i *configConfigurationDnsConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationDnsConfiguration] {
-	return pulumix.Output[*ConfigConfigurationDnsConfiguration]{
-		OutputState: i.ToConfigConfigurationDnsConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationDnsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationDnsConfigurationOutput) ElementType() reflect.Type {
@@ -1321,12 +1188,6 @@ func (o ConfigConfigurationDnsConfigurationOutput) ToConfigConfigurationDnsConfi
 	}).(ConfigConfigurationDnsConfigurationPtrOutput)
 }
 
-func (o ConfigConfigurationDnsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationDnsConfiguration] {
-	return pulumix.Output[ConfigConfigurationDnsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 func (o ConfigConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationDnsConfiguration) *bool { return v.IsOverrideDns }).(pulumi.BoolPtrOutput)
@@ -1349,12 +1210,6 @@ func (o ConfigConfigurationDnsConfigurationPtrOutput) ToConfigConfigurationDnsCo
 
 func (o ConfigConfigurationDnsConfigurationPtrOutput) ToConfigConfigurationDnsConfigurationPtrOutputWithContext(ctx context.Context) ConfigConfigurationDnsConfigurationPtrOutput {
 	return o
-}
-
-func (o ConfigConfigurationDnsConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationDnsConfiguration] {
-	return pulumix.Output[*ConfigConfigurationDnsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationDnsConfigurationPtrOutput) Elem() ConfigConfigurationDnsConfigurationOutput {
@@ -1436,12 +1291,6 @@ func (i ConfigConfigurationNetworkConfigurationArgs) ToConfigConfigurationNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationNetworkConfigurationOutput)
 }
 
-func (i ConfigConfigurationNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationNetworkConfiguration] {
-	return pulumix.Output[ConfigConfigurationNetworkConfiguration]{
-		OutputState: i.ToConfigConfigurationNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigConfigurationNetworkConfigurationArgs) ToConfigConfigurationNetworkConfigurationPtrOutput() ConfigConfigurationNetworkConfigurationPtrOutput {
 	return i.ToConfigConfigurationNetworkConfigurationPtrOutputWithContext(context.Background())
 }
@@ -1483,12 +1332,6 @@ func (i *configConfigurationNetworkConfigurationPtrType) ToConfigConfigurationNe
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationNetworkConfigurationPtrOutput)
 }
 
-func (i *configConfigurationNetworkConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationNetworkConfiguration] {
-	return pulumix.Output[*ConfigConfigurationNetworkConfiguration]{
-		OutputState: i.ToConfigConfigurationNetworkConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -1511,12 +1354,6 @@ func (o ConfigConfigurationNetworkConfigurationOutput) ToConfigConfigurationNetw
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationNetworkConfiguration) *ConfigConfigurationNetworkConfiguration {
 		return &v
 	}).(ConfigConfigurationNetworkConfigurationPtrOutput)
-}
-
-func (o ConfigConfigurationNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationNetworkConfiguration] {
-	return pulumix.Output[ConfigConfigurationNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Number of hops.
@@ -1556,12 +1393,6 @@ func (o ConfigConfigurationNetworkConfigurationPtrOutput) ToConfigConfigurationN
 
 func (o ConfigConfigurationNetworkConfigurationPtrOutput) ToConfigConfigurationNetworkConfigurationPtrOutputWithContext(ctx context.Context) ConfigConfigurationNetworkConfigurationPtrOutput {
 	return o
-}
-
-func (o ConfigConfigurationNetworkConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationNetworkConfiguration] {
-	return pulumix.Output[*ConfigConfigurationNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationNetworkConfigurationPtrOutput) Elem() ConfigConfigurationNetworkConfigurationOutput {
@@ -1685,12 +1516,6 @@ func (i ConfigConfigurationReqAuthenticationDetailsArgs) ToConfigConfigurationRe
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationReqAuthenticationDetailsOutput)
 }
 
-func (i ConfigConfigurationReqAuthenticationDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationReqAuthenticationDetails] {
-	return pulumix.Output[ConfigConfigurationReqAuthenticationDetails]{
-		OutputState: i.ToConfigConfigurationReqAuthenticationDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigConfigurationReqAuthenticationDetailsArgs) ToConfigConfigurationReqAuthenticationDetailsPtrOutput() ConfigConfigurationReqAuthenticationDetailsPtrOutput {
 	return i.ToConfigConfigurationReqAuthenticationDetailsPtrOutputWithContext(context.Background())
 }
@@ -1732,12 +1557,6 @@ func (i *configConfigurationReqAuthenticationDetailsPtrType) ToConfigConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationReqAuthenticationDetailsPtrOutput)
 }
 
-func (i *configConfigurationReqAuthenticationDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationReqAuthenticationDetails] {
-	return pulumix.Output[*ConfigConfigurationReqAuthenticationDetails]{
-		OutputState: i.ToConfigConfigurationReqAuthenticationDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationReqAuthenticationDetailsOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationReqAuthenticationDetailsOutput) ElementType() reflect.Type {
@@ -1760,12 +1579,6 @@ func (o ConfigConfigurationReqAuthenticationDetailsOutput) ToConfigConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationReqAuthenticationDetails) *ConfigConfigurationReqAuthenticationDetails {
 		return &v
 	}).(ConfigConfigurationReqAuthenticationDetailsPtrOutput)
-}
-
-func (o ConfigConfigurationReqAuthenticationDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationReqAuthenticationDetails] {
-	return pulumix.Output[ConfigConfigurationReqAuthenticationDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
@@ -1822,12 +1635,6 @@ func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) ToConfigConfigurat
 
 func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) ToConfigConfigurationReqAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationReqAuthenticationDetailsPtrOutput {
 	return o
-}
-
-func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigConfigurationReqAuthenticationDetails] {
-	return pulumix.Output[*ConfigConfigurationReqAuthenticationDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) Elem() ConfigConfigurationReqAuthenticationDetailsOutput {
@@ -1957,12 +1764,6 @@ func (i ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs) ToConfigConfi
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput)
 }
 
-func (i ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationReqAuthenticationDetailsAuthHeader] {
-	return pulumix.Output[ConfigConfigurationReqAuthenticationDetailsAuthHeader]{
-		OutputState: i.ToConfigConfigurationReqAuthenticationDetailsAuthHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayInput is an input type that accepts ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray and ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayInput` via:
 //
@@ -1988,12 +1789,6 @@ func (i ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray) ToConfigConf
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput)
 }
 
-func (i ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationReqAuthenticationDetailsAuthHeader] {
-	return pulumix.Output[[]ConfigConfigurationReqAuthenticationDetailsAuthHeader]{
-		OutputState: i.ToConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput) ElementType() reflect.Type {
@@ -2006,12 +1801,6 @@ func (o ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput) ToConfigCon
 
 func (o ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput) ToConfigConfigurationReqAuthenticationDetailsAuthHeaderOutputWithContext(ctx context.Context) ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput {
 	return o
-}
-
-func (o ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationReqAuthenticationDetailsAuthHeader] {
-	return pulumix.Output[ConfigConfigurationReqAuthenticationDetailsAuthHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Name of the header.
@@ -2036,12 +1825,6 @@ func (o ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput) ToConf
 
 func (o ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput) ToConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutputWithContext(ctx context.Context) ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput {
 	return o
-}
-
-func (o ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationReqAuthenticationDetailsAuthHeader] {
-	return pulumix.Output[[]ConfigConfigurationReqAuthenticationDetailsAuthHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput) Index(i pulumi.IntInput) ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput {
@@ -2087,12 +1870,6 @@ func (i ConfigConfigurationRequestHeaderArgs) ToConfigConfigurationRequestHeader
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationRequestHeaderOutput)
 }
 
-func (i ConfigConfigurationRequestHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationRequestHeader] {
-	return pulumix.Output[ConfigConfigurationRequestHeader]{
-		OutputState: i.ToConfigConfigurationRequestHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigConfigurationRequestHeaderArrayInput is an input type that accepts ConfigConfigurationRequestHeaderArray and ConfigConfigurationRequestHeaderArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationRequestHeaderArrayInput` via:
 //
@@ -2118,12 +1895,6 @@ func (i ConfigConfigurationRequestHeaderArray) ToConfigConfigurationRequestHeade
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationRequestHeaderArrayOutput)
 }
 
-func (i ConfigConfigurationRequestHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationRequestHeader] {
-	return pulumix.Output[[]ConfigConfigurationRequestHeader]{
-		OutputState: i.ToConfigConfigurationRequestHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationRequestHeaderOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationRequestHeaderOutput) ElementType() reflect.Type {
@@ -2136,12 +1907,6 @@ func (o ConfigConfigurationRequestHeaderOutput) ToConfigConfigurationRequestHead
 
 func (o ConfigConfigurationRequestHeaderOutput) ToConfigConfigurationRequestHeaderOutputWithContext(ctx context.Context) ConfigConfigurationRequestHeaderOutput {
 	return o
-}
-
-func (o ConfigConfigurationRequestHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationRequestHeader] {
-	return pulumix.Output[ConfigConfigurationRequestHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Name of the header.
@@ -2166,12 +1931,6 @@ func (o ConfigConfigurationRequestHeaderArrayOutput) ToConfigConfigurationReques
 
 func (o ConfigConfigurationRequestHeaderArrayOutput) ToConfigConfigurationRequestHeaderArrayOutputWithContext(ctx context.Context) ConfigConfigurationRequestHeaderArrayOutput {
 	return o
-}
-
-func (o ConfigConfigurationRequestHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationRequestHeader] {
-	return pulumix.Output[[]ConfigConfigurationRequestHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationRequestHeaderArrayOutput) Index(i pulumi.IntInput) ConfigConfigurationRequestHeaderOutput {
@@ -2217,12 +1976,6 @@ func (i ConfigConfigurationRequestQueryParamArgs) ToConfigConfigurationRequestQu
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationRequestQueryParamOutput)
 }
 
-func (i ConfigConfigurationRequestQueryParamArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationRequestQueryParam] {
-	return pulumix.Output[ConfigConfigurationRequestQueryParam]{
-		OutputState: i.ToConfigConfigurationRequestQueryParamOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigConfigurationRequestQueryParamArrayInput is an input type that accepts ConfigConfigurationRequestQueryParamArray and ConfigConfigurationRequestQueryParamArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationRequestQueryParamArrayInput` via:
 //
@@ -2248,12 +2001,6 @@ func (i ConfigConfigurationRequestQueryParamArray) ToConfigConfigurationRequestQ
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationRequestQueryParamArrayOutput)
 }
 
-func (i ConfigConfigurationRequestQueryParamArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationRequestQueryParam] {
-	return pulumix.Output[[]ConfigConfigurationRequestQueryParam]{
-		OutputState: i.ToConfigConfigurationRequestQueryParamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationRequestQueryParamOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationRequestQueryParamOutput) ElementType() reflect.Type {
@@ -2266,12 +2013,6 @@ func (o ConfigConfigurationRequestQueryParamOutput) ToConfigConfigurationRequest
 
 func (o ConfigConfigurationRequestQueryParamOutput) ToConfigConfigurationRequestQueryParamOutputWithContext(ctx context.Context) ConfigConfigurationRequestQueryParamOutput {
 	return o
-}
-
-func (o ConfigConfigurationRequestQueryParamOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationRequestQueryParam] {
-	return pulumix.Output[ConfigConfigurationRequestQueryParam]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Name of the parameter.
@@ -2296,12 +2037,6 @@ func (o ConfigConfigurationRequestQueryParamArrayOutput) ToConfigConfigurationRe
 
 func (o ConfigConfigurationRequestQueryParamArrayOutput) ToConfigConfigurationRequestQueryParamArrayOutputWithContext(ctx context.Context) ConfigConfigurationRequestQueryParamArrayOutput {
 	return o
-}
-
-func (o ConfigConfigurationRequestQueryParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationRequestQueryParam] {
-	return pulumix.Output[[]ConfigConfigurationRequestQueryParam]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationRequestQueryParamArrayOutput) Index(i pulumi.IntInput) ConfigConfigurationRequestQueryParamOutput {
@@ -2343,12 +2078,6 @@ func (i ConfigConfigurationVerifyTextArgs) ToConfigConfigurationVerifyTextOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationVerifyTextOutput)
 }
 
-func (i ConfigConfigurationVerifyTextArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationVerifyText] {
-	return pulumix.Output[ConfigConfigurationVerifyText]{
-		OutputState: i.ToConfigConfigurationVerifyTextOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigConfigurationVerifyTextArrayInput is an input type that accepts ConfigConfigurationVerifyTextArray and ConfigConfigurationVerifyTextArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationVerifyTextArrayInput` via:
 //
@@ -2374,12 +2103,6 @@ func (i ConfigConfigurationVerifyTextArray) ToConfigConfigurationVerifyTextArray
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationVerifyTextArrayOutput)
 }
 
-func (i ConfigConfigurationVerifyTextArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationVerifyText] {
-	return pulumix.Output[[]ConfigConfigurationVerifyText]{
-		OutputState: i.ToConfigConfigurationVerifyTextArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigConfigurationVerifyTextOutput struct{ *pulumi.OutputState }
 
 func (ConfigConfigurationVerifyTextOutput) ElementType() reflect.Type {
@@ -2392,12 +2115,6 @@ func (o ConfigConfigurationVerifyTextOutput) ToConfigConfigurationVerifyTextOutp
 
 func (o ConfigConfigurationVerifyTextOutput) ToConfigConfigurationVerifyTextOutputWithContext(ctx context.Context) ConfigConfigurationVerifyTextOutput {
 	return o
-}
-
-func (o ConfigConfigurationVerifyTextOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigConfigurationVerifyText] {
-	return pulumix.Output[ConfigConfigurationVerifyText]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Verification text in the response.
@@ -2417,12 +2134,6 @@ func (o ConfigConfigurationVerifyTextArrayOutput) ToConfigConfigurationVerifyTex
 
 func (o ConfigConfigurationVerifyTextArrayOutput) ToConfigConfigurationVerifyTextArrayOutputWithContext(ctx context.Context) ConfigConfigurationVerifyTextArrayOutput {
 	return o
-}
-
-func (o ConfigConfigurationVerifyTextArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigConfigurationVerifyText] {
-	return pulumix.Output[[]ConfigConfigurationVerifyText]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) ConfigConfigurationVerifyTextOutput {
@@ -2468,12 +2179,6 @@ func (i ConfigMaintenanceWindowScheduleArgs) ToConfigMaintenanceWindowScheduleOu
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMaintenanceWindowScheduleOutput)
 }
 
-func (i ConfigMaintenanceWindowScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigMaintenanceWindowSchedule] {
-	return pulumix.Output[ConfigMaintenanceWindowSchedule]{
-		OutputState: i.ToConfigMaintenanceWindowScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConfigMaintenanceWindowScheduleArgs) ToConfigMaintenanceWindowSchedulePtrOutput() ConfigMaintenanceWindowSchedulePtrOutput {
 	return i.ToConfigMaintenanceWindowSchedulePtrOutputWithContext(context.Background())
 }
@@ -2515,12 +2220,6 @@ func (i *configMaintenanceWindowSchedulePtrType) ToConfigMaintenanceWindowSchedu
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMaintenanceWindowSchedulePtrOutput)
 }
 
-func (i *configMaintenanceWindowSchedulePtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigMaintenanceWindowSchedule] {
-	return pulumix.Output[*ConfigMaintenanceWindowSchedule]{
-		OutputState: i.ToConfigMaintenanceWindowSchedulePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigMaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
 
 func (ConfigMaintenanceWindowScheduleOutput) ElementType() reflect.Type {
@@ -2545,12 +2244,6 @@ func (o ConfigMaintenanceWindowScheduleOutput) ToConfigMaintenanceWindowSchedule
 	}).(ConfigMaintenanceWindowSchedulePtrOutput)
 }
 
-func (o ConfigMaintenanceWindowScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigMaintenanceWindowSchedule] {
-	return pulumix.Output[ConfigMaintenanceWindowSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o ConfigMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
@@ -2573,12 +2266,6 @@ func (o ConfigMaintenanceWindowSchedulePtrOutput) ToConfigMaintenanceWindowSched
 
 func (o ConfigMaintenanceWindowSchedulePtrOutput) ToConfigMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) ConfigMaintenanceWindowSchedulePtrOutput {
 	return o
-}
-
-func (o ConfigMaintenanceWindowSchedulePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigMaintenanceWindowSchedule] {
-	return pulumix.Output[*ConfigMaintenanceWindowSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigMaintenanceWindowSchedulePtrOutput) Elem() ConfigMaintenanceWindowScheduleOutput {
@@ -2660,12 +2347,6 @@ func (i ConfigScriptParameterArgs) ToConfigScriptParameterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigScriptParameterOutput)
 }
 
-func (i ConfigScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigScriptParameter] {
-	return pulumix.Output[ConfigScriptParameter]{
-		OutputState: i.ToConfigScriptParameterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigScriptParameterArrayInput is an input type that accepts ConfigScriptParameterArray and ConfigScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ConfigScriptParameterArrayInput` via:
 //
@@ -2691,12 +2372,6 @@ func (i ConfigScriptParameterArray) ToConfigScriptParameterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigScriptParameterArrayOutput)
 }
 
-func (i ConfigScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigScriptParameter] {
-	return pulumix.Output[[]ConfigScriptParameter]{
-		OutputState: i.ToConfigScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (ConfigScriptParameterOutput) ElementType() reflect.Type {
@@ -2709,12 +2384,6 @@ func (o ConfigScriptParameterOutput) ToConfigScriptParameterOutput() ConfigScrip
 
 func (o ConfigScriptParameterOutput) ToConfigScriptParameterOutputWithContext(ctx context.Context) ConfigScriptParameterOutput {
 	return o
-}
-
-func (o ConfigScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigScriptParameter] {
-	return pulumix.Output[ConfigScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If parameter value is default or overwritten.
@@ -2756,12 +2425,6 @@ func (o ConfigScriptParameterArrayOutput) ToConfigScriptParameterArrayOutput() C
 
 func (o ConfigScriptParameterArrayOutput) ToConfigScriptParameterArrayOutputWithContext(ctx context.Context) ConfigScriptParameterArrayOutput {
 	return o
-}
-
-func (o ConfigScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigScriptParameter] {
-	return pulumix.Output[[]ConfigScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigScriptParameterArrayOutput) Index(i pulumi.IntInput) ConfigScriptParameterOutput {
@@ -2807,12 +2470,6 @@ func (i ConfigScriptParameterMonitorScriptParameterArgs) ToConfigScriptParameter
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigScriptParameterMonitorScriptParameterOutput)
 }
 
-func (i ConfigScriptParameterMonitorScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[ConfigScriptParameterMonitorScriptParameter]{
-		OutputState: i.ToConfigScriptParameterMonitorScriptParameterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigScriptParameterMonitorScriptParameterArrayInput is an input type that accepts ConfigScriptParameterMonitorScriptParameterArray and ConfigScriptParameterMonitorScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ConfigScriptParameterMonitorScriptParameterArrayInput` via:
 //
@@ -2838,12 +2495,6 @@ func (i ConfigScriptParameterMonitorScriptParameterArray) ToConfigScriptParamete
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigScriptParameterMonitorScriptParameterArrayOutput)
 }
 
-func (i ConfigScriptParameterMonitorScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[[]ConfigScriptParameterMonitorScriptParameter]{
-		OutputState: i.ToConfigScriptParameterMonitorScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigScriptParameterMonitorScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (ConfigScriptParameterMonitorScriptParameterOutput) ElementType() reflect.Type {
@@ -2856,12 +2507,6 @@ func (o ConfigScriptParameterMonitorScriptParameterOutput) ToConfigScriptParamet
 
 func (o ConfigScriptParameterMonitorScriptParameterOutput) ToConfigScriptParameterMonitorScriptParameterOutputWithContext(ctx context.Context) ConfigScriptParameterMonitorScriptParameterOutput {
 	return o
-}
-
-func (o ConfigScriptParameterMonitorScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[ConfigScriptParameterMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Name of the parameter.
@@ -2886,12 +2531,6 @@ func (o ConfigScriptParameterMonitorScriptParameterArrayOutput) ToConfigScriptPa
 
 func (o ConfigScriptParameterMonitorScriptParameterArrayOutput) ToConfigScriptParameterMonitorScriptParameterArrayOutputWithContext(ctx context.Context) ConfigScriptParameterMonitorScriptParameterArrayOutput {
 	return o
-}
-
-func (o ConfigScriptParameterMonitorScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[[]ConfigScriptParameterMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigScriptParameterMonitorScriptParameterArrayOutput) Index(i pulumi.IntInput) ConfigScriptParameterMonitorScriptParameterOutput {
@@ -2937,12 +2576,6 @@ func (i ConfigVantagePointArgs) ToConfigVantagePointOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigVantagePointOutput)
 }
 
-func (i ConfigVantagePointArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigVantagePoint] {
-	return pulumix.Output[ConfigVantagePoint]{
-		OutputState: i.ToConfigVantagePointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigVantagePointArrayInput is an input type that accepts ConfigVantagePointArray and ConfigVantagePointArrayOutput values.
 // You can construct a concrete instance of `ConfigVantagePointArrayInput` via:
 //
@@ -2968,12 +2601,6 @@ func (i ConfigVantagePointArray) ToConfigVantagePointArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigVantagePointArrayOutput)
 }
 
-func (i ConfigVantagePointArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigVantagePoint] {
-	return pulumix.Output[[]ConfigVantagePoint]{
-		OutputState: i.ToConfigVantagePointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigVantagePointOutput struct{ *pulumi.OutputState }
 
 func (ConfigVantagePointOutput) ElementType() reflect.Type {
@@ -2986,12 +2613,6 @@ func (o ConfigVantagePointOutput) ToConfigVantagePointOutput() ConfigVantagePoin
 
 func (o ConfigVantagePointOutput) ToConfigVantagePointOutputWithContext(ctx context.Context) ConfigVantagePointOutput {
 	return o
-}
-
-func (o ConfigVantagePointOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigVantagePoint] {
-	return pulumix.Output[ConfigVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name that can be edited. The name should not contain any confidential information.
@@ -3016,12 +2637,6 @@ func (o ConfigVantagePointArrayOutput) ToConfigVantagePointArrayOutput() ConfigV
 
 func (o ConfigVantagePointArrayOutput) ToConfigVantagePointArrayOutputWithContext(ctx context.Context) ConfigVantagePointArrayOutput {
 	return o
-}
-
-func (o ConfigVantagePointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigVantagePoint] {
-	return pulumix.Output[[]ConfigVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigVantagePointArrayOutput) Index(i pulumi.IntInput) ConfigVantagePointOutput {
@@ -3075,12 +2690,6 @@ func (i DedicatedVantagePointDvpStackDetailsArgs) ToDedicatedVantagePointDvpStac
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointDvpStackDetailsOutput)
 }
 
-func (i DedicatedVantagePointDvpStackDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DedicatedVantagePointDvpStackDetails] {
-	return pulumix.Output[DedicatedVantagePointDvpStackDetails]{
-		OutputState: i.ToDedicatedVantagePointDvpStackDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DedicatedVantagePointDvpStackDetailsArgs) ToDedicatedVantagePointDvpStackDetailsPtrOutput() DedicatedVantagePointDvpStackDetailsPtrOutput {
 	return i.ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(context.Background())
 }
@@ -3122,12 +2731,6 @@ func (i *dedicatedVantagePointDvpStackDetailsPtrType) ToDedicatedVantagePointDvp
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointDvpStackDetailsPtrOutput)
 }
 
-func (i *dedicatedVantagePointDvpStackDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVantagePointDvpStackDetails] {
-	return pulumix.Output[*DedicatedVantagePointDvpStackDetails]{
-		OutputState: i.ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DedicatedVantagePointDvpStackDetailsOutput struct{ *pulumi.OutputState }
 
 func (DedicatedVantagePointDvpStackDetailsOutput) ElementType() reflect.Type {
@@ -3150,12 +2753,6 @@ func (o DedicatedVantagePointDvpStackDetailsOutput) ToDedicatedVantagePointDvpSt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DedicatedVantagePointDvpStackDetails) *DedicatedVantagePointDvpStackDetails {
 		return &v
 	}).(DedicatedVantagePointDvpStackDetailsPtrOutput)
-}
-
-func (o DedicatedVantagePointDvpStackDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DedicatedVantagePointDvpStackDetails] {
-	return pulumix.Output[DedicatedVantagePointDvpStackDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
@@ -3190,12 +2787,6 @@ func (o DedicatedVantagePointDvpStackDetailsPtrOutput) ToDedicatedVantagePointDv
 
 func (o DedicatedVantagePointDvpStackDetailsPtrOutput) ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(ctx context.Context) DedicatedVantagePointDvpStackDetailsPtrOutput {
 	return o
-}
-
-func (o DedicatedVantagePointDvpStackDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVantagePointDvpStackDetails] {
-	return pulumix.Output[*DedicatedVantagePointDvpStackDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DedicatedVantagePointDvpStackDetailsPtrOutput) Elem() DedicatedVantagePointDvpStackDetailsOutput {
@@ -3293,12 +2884,6 @@ func (i DedicatedVantagePointMonitorStatusCountMapArgs) ToDedicatedVantagePointM
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointMonitorStatusCountMapOutput)
 }
 
-func (i DedicatedVantagePointMonitorStatusCountMapArgs) ToOutput(ctx context.Context) pulumix.Output[DedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[DedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: i.ToDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DedicatedVantagePointMonitorStatusCountMapArrayInput is an input type that accepts DedicatedVantagePointMonitorStatusCountMapArray and DedicatedVantagePointMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointMonitorStatusCountMapArrayInput` via:
 //
@@ -3324,12 +2909,6 @@ func (i DedicatedVantagePointMonitorStatusCountMapArray) ToDedicatedVantagePoint
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointMonitorStatusCountMapArrayOutput)
 }
 
-func (i DedicatedVantagePointMonitorStatusCountMapArray) ToOutput(ctx context.Context) pulumix.Output[[]DedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[[]DedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: i.ToDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DedicatedVantagePointMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
 
 func (DedicatedVantagePointMonitorStatusCountMapOutput) ElementType() reflect.Type {
@@ -3342,12 +2921,6 @@ func (o DedicatedVantagePointMonitorStatusCountMapOutput) ToDedicatedVantagePoin
 
 func (o DedicatedVantagePointMonitorStatusCountMapOutput) ToDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx context.Context) DedicatedVantagePointMonitorStatusCountMapOutput {
 	return o
-}
-
-func (o DedicatedVantagePointMonitorStatusCountMapOutput) ToOutput(ctx context.Context) pulumix.Output[DedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[DedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of disabled monitors using the script.
@@ -3382,12 +2955,6 @@ func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) ToDedicatedVantag
 
 func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) ToDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) DedicatedVantagePointMonitorStatusCountMapArrayOutput {
 	return o
-}
-
-func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[[]DedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) DedicatedVantagePointMonitorStatusCountMapOutput {
@@ -3441,12 +3008,6 @@ func (i ScriptMonitorStatusCountMapArgs) ToScriptMonitorStatusCountMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptMonitorStatusCountMapOutput)
 }
 
-func (i ScriptMonitorStatusCountMapArgs) ToOutput(ctx context.Context) pulumix.Output[ScriptMonitorStatusCountMap] {
-	return pulumix.Output[ScriptMonitorStatusCountMap]{
-		OutputState: i.ToScriptMonitorStatusCountMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ScriptMonitorStatusCountMapArrayInput is an input type that accepts ScriptMonitorStatusCountMapArray and ScriptMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `ScriptMonitorStatusCountMapArrayInput` via:
 //
@@ -3472,12 +3033,6 @@ func (i ScriptMonitorStatusCountMapArray) ToScriptMonitorStatusCountMapArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptMonitorStatusCountMapArrayOutput)
 }
 
-func (i ScriptMonitorStatusCountMapArray) ToOutput(ctx context.Context) pulumix.Output[[]ScriptMonitorStatusCountMap] {
-	return pulumix.Output[[]ScriptMonitorStatusCountMap]{
-		OutputState: i.ToScriptMonitorStatusCountMapArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScriptMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
 
 func (ScriptMonitorStatusCountMapOutput) ElementType() reflect.Type {
@@ -3490,12 +3045,6 @@ func (o ScriptMonitorStatusCountMapOutput) ToScriptMonitorStatusCountMapOutput()
 
 func (o ScriptMonitorStatusCountMapOutput) ToScriptMonitorStatusCountMapOutputWithContext(ctx context.Context) ScriptMonitorStatusCountMapOutput {
 	return o
-}
-
-func (o ScriptMonitorStatusCountMapOutput) ToOutput(ctx context.Context) pulumix.Output[ScriptMonitorStatusCountMap] {
-	return pulumix.Output[ScriptMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of disabled monitors using the script.
@@ -3530,12 +3079,6 @@ func (o ScriptMonitorStatusCountMapArrayOutput) ToScriptMonitorStatusCountMapArr
 
 func (o ScriptMonitorStatusCountMapArrayOutput) ToScriptMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) ScriptMonitorStatusCountMapArrayOutput {
 	return o
-}
-
-func (o ScriptMonitorStatusCountMapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ScriptMonitorStatusCountMap] {
-	return pulumix.Output[[]ScriptMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScriptMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) ScriptMonitorStatusCountMapOutput {
@@ -3599,12 +3142,6 @@ func (i ScriptParameterArgs) ToScriptParameterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptParameterOutput)
 }
 
-func (i ScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[ScriptParameter] {
-	return pulumix.Output[ScriptParameter]{
-		OutputState: i.ToScriptParameterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ScriptParameterArrayInput is an input type that accepts ScriptParameterArray and ScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ScriptParameterArrayInput` via:
 //
@@ -3630,12 +3167,6 @@ func (i ScriptParameterArray) ToScriptParameterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptParameterArrayOutput)
 }
 
-func (i ScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]ScriptParameter] {
-	return pulumix.Output[[]ScriptParameter]{
-		OutputState: i.ToScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (ScriptParameterOutput) ElementType() reflect.Type {
@@ -3648,12 +3179,6 @@ func (o ScriptParameterOutput) ToScriptParameterOutput() ScriptParameterOutput {
 
 func (o ScriptParameterOutput) ToScriptParameterOutputWithContext(ctx context.Context) ScriptParameterOutput {
 	return o
-}
-
-func (o ScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[ScriptParameter] {
-	return pulumix.Output[ScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If parameter value is default or overwritten.
@@ -3696,12 +3221,6 @@ func (o ScriptParameterArrayOutput) ToScriptParameterArrayOutput() ScriptParamet
 
 func (o ScriptParameterArrayOutput) ToScriptParameterArrayOutputWithContext(ctx context.Context) ScriptParameterArrayOutput {
 	return o
-}
-
-func (o ScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ScriptParameter] {
-	return pulumix.Output[[]ScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScriptParameterArrayOutput) Index(i pulumi.IntInput) ScriptParameterOutput {
@@ -3757,12 +3276,6 @@ func (i ScriptParameterScriptParameterArgs) ToScriptParameterScriptParameterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptParameterScriptParameterOutput)
 }
 
-func (i ScriptParameterScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[ScriptParameterScriptParameter] {
-	return pulumix.Output[ScriptParameterScriptParameter]{
-		OutputState: i.ToScriptParameterScriptParameterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ScriptParameterScriptParameterArrayInput is an input type that accepts ScriptParameterScriptParameterArray and ScriptParameterScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ScriptParameterScriptParameterArrayInput` via:
 //
@@ -3788,12 +3301,6 @@ func (i ScriptParameterScriptParameterArray) ToScriptParameterScriptParameterArr
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptParameterScriptParameterArrayOutput)
 }
 
-func (i ScriptParameterScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]ScriptParameterScriptParameter] {
-	return pulumix.Output[[]ScriptParameterScriptParameter]{
-		OutputState: i.ToScriptParameterScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScriptParameterScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (ScriptParameterScriptParameterOutput) ElementType() reflect.Type {
@@ -3806,12 +3313,6 @@ func (o ScriptParameterScriptParameterOutput) ToScriptParameterScriptParameterOu
 
 func (o ScriptParameterScriptParameterOutput) ToScriptParameterScriptParameterOutputWithContext(ctx context.Context) ScriptParameterScriptParameterOutput {
 	return o
-}
-
-func (o ScriptParameterScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[ScriptParameterScriptParameter] {
-	return pulumix.Output[ScriptParameterScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
@@ -3846,12 +3347,6 @@ func (o ScriptParameterScriptParameterArrayOutput) ToScriptParameterScriptParame
 	return o
 }
 
-func (o ScriptParameterScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ScriptParameterScriptParameter] {
-	return pulumix.Output[[]ScriptParameterScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ScriptParameterScriptParameterArrayOutput) Index(i pulumi.IntInput) ScriptParameterScriptParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScriptParameterScriptParameter {
 		return vs[0].([]ScriptParameterScriptParameter)[vs[1].(int)]
@@ -3860,13 +3355,13 @@ func (o ScriptParameterScriptParameterArrayOutput) Index(i pulumi.IntInput) Scri
 
 type GetDedicatedVantagePointDvpStackDetail struct {
 	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStackId string `pulumi:"dvpStackId"`
+	DvpStackId *string `pulumi:"dvpStackId"`
 	// Type of stack.
-	DvpStackType string `pulumi:"dvpStackType"`
+	DvpStackType *string `pulumi:"dvpStackType"`
 	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStreamId string `pulumi:"dvpStreamId"`
+	DvpStreamId *string `pulumi:"dvpStreamId"`
 	// Version of the dedicated vantage point.
-	DvpVersion string `pulumi:"dvpVersion"`
+	DvpVersion *string `pulumi:"dvpVersion"`
 }
 
 // GetDedicatedVantagePointDvpStackDetailInput is an input type that accepts GetDedicatedVantagePointDvpStackDetailArgs and GetDedicatedVantagePointDvpStackDetailOutput values.
@@ -3882,13 +3377,13 @@ type GetDedicatedVantagePointDvpStackDetailInput interface {
 
 type GetDedicatedVantagePointDvpStackDetailArgs struct {
 	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
+	DvpStackId pulumi.StringPtrInput `pulumi:"dvpStackId"`
 	// Type of stack.
-	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
+	DvpStackType pulumi.StringPtrInput `pulumi:"dvpStackType"`
 	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
+	DvpStreamId pulumi.StringPtrInput `pulumi:"dvpStreamId"`
 	// Version of the dedicated vantage point.
-	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
+	DvpVersion pulumi.StringPtrInput `pulumi:"dvpVersion"`
 }
 
 func (GetDedicatedVantagePointDvpStackDetailArgs) ElementType() reflect.Type {
@@ -3901,12 +3396,6 @@ func (i GetDedicatedVantagePointDvpStackDetailArgs) ToGetDedicatedVantagePointDv
 
 func (i GetDedicatedVantagePointDvpStackDetailArgs) ToGetDedicatedVantagePointDvpStackDetailOutputWithContext(ctx context.Context) GetDedicatedVantagePointDvpStackDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointDvpStackDetailOutput)
-}
-
-func (i GetDedicatedVantagePointDvpStackDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointDvpStackDetail] {
-	return pulumix.Output[GetDedicatedVantagePointDvpStackDetail]{
-		OutputState: i.ToGetDedicatedVantagePointDvpStackDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDedicatedVantagePointDvpStackDetailArrayInput is an input type that accepts GetDedicatedVantagePointDvpStackDetailArray and GetDedicatedVantagePointDvpStackDetailArrayOutput values.
@@ -3934,12 +3423,6 @@ func (i GetDedicatedVantagePointDvpStackDetailArray) ToGetDedicatedVantagePointD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointDvpStackDetailArrayOutput)
 }
 
-func (i GetDedicatedVantagePointDvpStackDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointDvpStackDetail] {
-	return pulumix.Output[[]GetDedicatedVantagePointDvpStackDetail]{
-		OutputState: i.ToGetDedicatedVantagePointDvpStackDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDedicatedVantagePointDvpStackDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDedicatedVantagePointDvpStackDetailOutput) ElementType() reflect.Type {
@@ -3954,30 +3437,24 @@ func (o GetDedicatedVantagePointDvpStackDetailOutput) ToGetDedicatedVantagePoint
 	return o
 }
 
-func (o GetDedicatedVantagePointDvpStackDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointDvpStackDetail] {
-	return pulumix.Output[GetDedicatedVantagePointDvpStackDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStackId }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) *string { return v.DvpStackId }).(pulumi.StringPtrOutput)
 }
 
 // Type of stack.
-func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStackType }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) *string { return v.DvpStackType }).(pulumi.StringPtrOutput)
 }
 
 // Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStreamId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStreamId }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) *string { return v.DvpStreamId }).(pulumi.StringPtrOutput)
 }
 
 // Version of the dedicated vantage point.
-func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpVersion }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) *string { return v.DvpVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetDedicatedVantagePointDvpStackDetailArrayOutput struct{ *pulumi.OutputState }
@@ -3994,12 +3471,6 @@ func (o GetDedicatedVantagePointDvpStackDetailArrayOutput) ToGetDedicatedVantage
 	return o
 }
 
-func (o GetDedicatedVantagePointDvpStackDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointDvpStackDetail] {
-	return pulumix.Output[[]GetDedicatedVantagePointDvpStackDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDedicatedVantagePointDvpStackDetailArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointDvpStackDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointDvpStackDetail {
 		return vs[0].([]GetDedicatedVantagePointDvpStackDetail)[vs[1].(int)]
@@ -4008,13 +3479,13 @@ func (o GetDedicatedVantagePointDvpStackDetailArrayOutput) Index(i pulumi.IntInp
 
 type GetDedicatedVantagePointMonitorStatusCountMap struct {
 	// Number of disabled monitors using the script.
-	Disabled int `pulumi:"disabled"`
+	Disabled *int `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled int `pulumi:"enabled"`
+	Enabled *int `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid int `pulumi:"invalid"`
+	Invalid *int `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total int `pulumi:"total"`
+	Total *int `pulumi:"total"`
 }
 
 // GetDedicatedVantagePointMonitorStatusCountMapInput is an input type that accepts GetDedicatedVantagePointMonitorStatusCountMap and GetDedicatedVantagePointMonitorStatusCountMapOutput values.
@@ -4030,13 +3501,13 @@ type GetDedicatedVantagePointMonitorStatusCountMapInput interface {
 
 type GetDedicatedVantagePointMonitorStatusCountMapArgs struct {
 	// Number of disabled monitors using the script.
-	Disabled pulumi.IntInput `pulumi:"disabled"`
+	Disabled pulumi.IntPtrInput `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled pulumi.IntInput `pulumi:"enabled"`
+	Enabled pulumi.IntPtrInput `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid pulumi.IntInput `pulumi:"invalid"`
+	Invalid pulumi.IntPtrInput `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total pulumi.IntInput `pulumi:"total"`
+	Total pulumi.IntPtrInput `pulumi:"total"`
 }
 
 func (GetDedicatedVantagePointMonitorStatusCountMapArgs) ElementType() reflect.Type {
@@ -4049,12 +3520,6 @@ func (i GetDedicatedVantagePointMonitorStatusCountMapArgs) ToGetDedicatedVantage
 
 func (i GetDedicatedVantagePointMonitorStatusCountMapArgs) ToGetDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx context.Context) GetDedicatedVantagePointMonitorStatusCountMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointMonitorStatusCountMapOutput)
-}
-
-func (i GetDedicatedVantagePointMonitorStatusCountMapArgs) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[GetDedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: i.ToGetDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDedicatedVantagePointMonitorStatusCountMapArrayInput is an input type that accepts GetDedicatedVantagePointMonitorStatusCountMapArray and GetDedicatedVantagePointMonitorStatusCountMapArrayOutput values.
@@ -4082,12 +3547,6 @@ func (i GetDedicatedVantagePointMonitorStatusCountMapArray) ToGetDedicatedVantag
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointMonitorStatusCountMapArrayOutput)
 }
 
-func (i GetDedicatedVantagePointMonitorStatusCountMapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[[]GetDedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: i.ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDedicatedVantagePointMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
 
 func (GetDedicatedVantagePointMonitorStatusCountMapOutput) ElementType() reflect.Type {
@@ -4102,30 +3561,24 @@ func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) ToGetDedicatedVanta
 	return o
 }
 
-func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[GetDedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of disabled monitors using the script.
-func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Disabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Disabled }).(pulumi.IntOutput)
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Disabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) *int { return v.Disabled }).(pulumi.IntPtrOutput)
 }
 
 // Number of enabled monitors using the script.
-func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Enabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Enabled }).(pulumi.IntOutput)
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Enabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) *int { return v.Enabled }).(pulumi.IntPtrOutput)
 }
 
 // Number of invalid monitors using the script.
-func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Invalid() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Invalid }).(pulumi.IntOutput)
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Invalid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) *int { return v.Invalid }).(pulumi.IntPtrOutput)
 }
 
 // Total number of monitors using the script.
-func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Total() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Total }).(pulumi.IntOutput)
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) *int { return v.Total }).(pulumi.IntPtrOutput)
 }
 
 type GetDedicatedVantagePointMonitorStatusCountMapArrayOutput struct{ *pulumi.OutputState }
@@ -4140,12 +3593,6 @@ func (o GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) ToGetDedicated
 
 func (o GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointMonitorStatusCountMapArrayOutput {
 	return o
-}
-
-func (o GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointMonitorStatusCountMap] {
-	return pulumix.Output[[]GetDedicatedVantagePointMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointMonitorStatusCountMapOutput {
@@ -4185,12 +3632,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs) ToGetDedic
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput)
 }
 
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollection] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollection]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput` via:
 //
@@ -4216,12 +3657,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArray) ToGetDedi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput)
 }
 
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollection] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollection]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) ElementType() reflect.Type {
@@ -4234,12 +3669,6 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) ToGetDed
 
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput {
 	return o
-}
-
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollection] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) Items() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput {
@@ -4262,12 +3691,6 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) ToG
 	return o
 }
 
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollection] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsDedicatedVantagePointCollection {
 		return vs[0].([]GetDedicatedVantagePointsDedicatedVantagePointCollection)[vs[1].(int)]
@@ -4276,29 +3699,29 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) Ind
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItem struct {
 	// The APM domain ID the request is intended for.
-	ApmDomainId string `pulumi:"apmDomainId"`
+	ApmDomainId *string `pulumi:"apmDomainId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap `pulumi:"monitorStatusCountMaps"`
 	// A filter to return only the resources that match the entire name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Name of the region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// A filter to return only the dedicated vantage points that match a given status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput values.
@@ -4314,29 +3737,29 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput interface
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
-	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	ApmDomainId pulumi.StringPtrInput `pulumi:"apmDomainId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput `pulumi:"monitorStatusCountMaps"`
 	// A filter to return only the resources that match the entire name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Name of the region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// A filter to return only the dedicated vantage points that match a given status.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ElementType() reflect.Type {
@@ -4349,12 +3772,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ToGetD
 
 func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput)
-}
-
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItem] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItem]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput values.
@@ -4382,12 +3799,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput)
 }
 
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ElementType() reflect.Type {
@@ -4402,15 +3813,9 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ToGe
 	return o
 }
 
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItem] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The APM domain ID the request is intended for.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ApmDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.ApmDomainId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4421,8 +3826,8 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Defi
 }
 
 // A filter to return only the resources that match the entire display name.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
@@ -4440,8 +3845,8 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Free
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -4452,28 +3857,28 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Moni
 }
 
 // A filter to return only the resources that match the entire name.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Name of the region.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the dedicated vantage points that match a given status.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4490,12 +3895,6 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput)
 	return o
 }
 
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsDedicatedVantagePointCollectionItem {
 		return vs[0].([]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem)[vs[1].(int)]
@@ -4504,13 +3903,13 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput)
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail struct {
 	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStackId string `pulumi:"dvpStackId"`
+	DvpStackId *string `pulumi:"dvpStackId"`
 	// Type of stack.
-	DvpStackType string `pulumi:"dvpStackType"`
+	DvpStackType *string `pulumi:"dvpStackType"`
 	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStreamId string `pulumi:"dvpStreamId"`
+	DvpStreamId *string `pulumi:"dvpStreamId"`
 	// Version of the dedicated vantage point.
-	DvpVersion string `pulumi:"dvpVersion"`
+	DvpVersion *string `pulumi:"dvpVersion"`
 }
 
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput values.
@@ -4526,13 +3925,13 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailI
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs struct {
 	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
+	DvpStackId pulumi.StringPtrInput `pulumi:"dvpStackId"`
 	// Type of stack.
-	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
+	DvpStackType pulumi.StringPtrInput `pulumi:"dvpStackType"`
 	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
+	DvpStreamId pulumi.StringPtrInput `pulumi:"dvpStreamId"`
 	// Version of the dedicated vantage point.
-	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
+	DvpVersion pulumi.StringPtrInput `pulumi:"dvpVersion"`
 }
 
 func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs) ElementType() reflect.Type {
@@ -4545,12 +3944,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 
 func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput)
-}
-
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput values.
@@ -4578,12 +3971,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput)
 }
 
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) ElementType() reflect.Type {
@@ -4598,38 +3985,32 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 	return o
 }
 
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStackId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStackId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) *string {
 		return v.DvpStackId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of stack.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStackType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStackType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) *string {
 		return v.DvpStackType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStreamId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) *string {
 		return v.DvpStreamId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Version of the dedicated vantage point.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) *string {
 		return v.DvpVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4646,12 +4027,6 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 	return o
 }
 
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail {
 		return vs[0].([]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail)[vs[1].(int)]
@@ -4660,13 +4035,13 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap struct {
 	// Number of disabled monitors using the script.
-	Disabled int `pulumi:"disabled"`
+	Disabled *int `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled int `pulumi:"enabled"`
+	Enabled *int `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid int `pulumi:"invalid"`
+	Invalid *int `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total int `pulumi:"total"`
+	Total *int `pulumi:"total"`
 }
 
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput values.
@@ -4682,13 +4057,13 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCo
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs struct {
 	// Number of disabled monitors using the script.
-	Disabled pulumi.IntInput `pulumi:"disabled"`
+	Disabled pulumi.IntPtrInput `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled pulumi.IntInput `pulumi:"enabled"`
+	Enabled pulumi.IntPtrInput `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid pulumi.IntInput `pulumi:"invalid"`
+	Invalid pulumi.IntPtrInput `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total pulumi.IntInput `pulumi:"total"`
+	Total pulumi.IntPtrInput `pulumi:"total"`
 }
 
 func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs) ElementType() reflect.Type {
@@ -4701,12 +4076,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatu
 
 func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput)
-}
-
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput values.
@@ -4734,12 +4103,6 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput)
 }
 
-func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap]{
-		OutputState: i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
 
 func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) ElementType() reflect.Type {
@@ -4754,38 +4117,32 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatu
 	return o
 }
 
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of disabled monitors using the script.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Disabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Disabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) *int {
 		return v.Disabled
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Number of enabled monitors using the script.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Enabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Enabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) *int {
 		return v.Enabled
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Number of invalid monitors using the script.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Invalid() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Invalid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) *int {
 		return v.Invalid
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Total number of monitors using the script.
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Total() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) *int {
 		return v.Total
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput struct{ *pulumi.OutputState }
@@ -4800,12 +4157,6 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatu
 
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput {
 	return o
-}
-
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput {
@@ -4851,12 +4202,6 @@ func (i GetDedicatedVantagePointsFilterArgs) ToGetDedicatedVantagePointsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsFilterOutput)
 }
 
-func (i GetDedicatedVantagePointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsFilter] {
-	return pulumix.Output[GetDedicatedVantagePointsFilter]{
-		OutputState: i.ToGetDedicatedVantagePointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDedicatedVantagePointsFilterArrayInput is an input type that accepts GetDedicatedVantagePointsFilterArray and GetDedicatedVantagePointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsFilterArrayInput` via:
 //
@@ -4882,12 +4227,6 @@ func (i GetDedicatedVantagePointsFilterArray) ToGetDedicatedVantagePointsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsFilterArrayOutput)
 }
 
-func (i GetDedicatedVantagePointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsFilter] {
-	return pulumix.Output[[]GetDedicatedVantagePointsFilter]{
-		OutputState: i.ToGetDedicatedVantagePointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDedicatedVantagePointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDedicatedVantagePointsFilterOutput) ElementType() reflect.Type {
@@ -4900,12 +4239,6 @@ func (o GetDedicatedVantagePointsFilterOutput) ToGetDedicatedVantagePointsFilter
 
 func (o GetDedicatedVantagePointsFilterOutput) ToGetDedicatedVantagePointsFilterOutputWithContext(ctx context.Context) GetDedicatedVantagePointsFilterOutput {
 	return o
-}
-
-func (o GetDedicatedVantagePointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVantagePointsFilter] {
-	return pulumix.Output[GetDedicatedVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only the resources that match the entire name.
@@ -4935,12 +4268,6 @@ func (o GetDedicatedVantagePointsFilterArrayOutput) ToGetDedicatedVantagePointsF
 	return o
 }
 
-func (o GetDedicatedVantagePointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDedicatedVantagePointsFilter] {
-	return pulumix.Output[[]GetDedicatedVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDedicatedVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsFilter {
 		return vs[0].([]GetDedicatedVantagePointsFilter)[vs[1].(int)]
@@ -4949,9 +4276,9 @@ func (o GetDedicatedVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetMonitorAvailabilityConfiguration struct {
 	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-	MaxAllowedFailuresPerInterval int `pulumi:"maxAllowedFailuresPerInterval"`
+	MaxAllowedFailuresPerInterval *int `pulumi:"maxAllowedFailuresPerInterval"`
 	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-	MinAllowedRunsPerInterval int `pulumi:"minAllowedRunsPerInterval"`
+	MinAllowedRunsPerInterval *int `pulumi:"minAllowedRunsPerInterval"`
 }
 
 // GetMonitorAvailabilityConfigurationInput is an input type that accepts GetMonitorAvailabilityConfigurationArgs and GetMonitorAvailabilityConfigurationOutput values.
@@ -4967,9 +4294,9 @@ type GetMonitorAvailabilityConfigurationInput interface {
 
 type GetMonitorAvailabilityConfigurationArgs struct {
 	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-	MaxAllowedFailuresPerInterval pulumi.IntInput `pulumi:"maxAllowedFailuresPerInterval"`
+	MaxAllowedFailuresPerInterval pulumi.IntPtrInput `pulumi:"maxAllowedFailuresPerInterval"`
 	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-	MinAllowedRunsPerInterval pulumi.IntInput `pulumi:"minAllowedRunsPerInterval"`
+	MinAllowedRunsPerInterval pulumi.IntPtrInput `pulumi:"minAllowedRunsPerInterval"`
 }
 
 func (GetMonitorAvailabilityConfigurationArgs) ElementType() reflect.Type {
@@ -4982,12 +4309,6 @@ func (i GetMonitorAvailabilityConfigurationArgs) ToGetMonitorAvailabilityConfigu
 
 func (i GetMonitorAvailabilityConfigurationArgs) ToGetMonitorAvailabilityConfigurationOutputWithContext(ctx context.Context) GetMonitorAvailabilityConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorAvailabilityConfigurationOutput)
-}
-
-func (i GetMonitorAvailabilityConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorAvailabilityConfiguration] {
-	return pulumix.Output[GetMonitorAvailabilityConfiguration]{
-		OutputState: i.ToGetMonitorAvailabilityConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorAvailabilityConfigurationArrayInput is an input type that accepts GetMonitorAvailabilityConfigurationArray and GetMonitorAvailabilityConfigurationArrayOutput values.
@@ -5015,12 +4336,6 @@ func (i GetMonitorAvailabilityConfigurationArray) ToGetMonitorAvailabilityConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorAvailabilityConfigurationArrayOutput)
 }
 
-func (i GetMonitorAvailabilityConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorAvailabilityConfiguration] {
-	return pulumix.Output[[]GetMonitorAvailabilityConfiguration]{
-		OutputState: i.ToGetMonitorAvailabilityConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorAvailabilityConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorAvailabilityConfigurationOutput) ElementType() reflect.Type {
@@ -5035,20 +4350,14 @@ func (o GetMonitorAvailabilityConfigurationOutput) ToGetMonitorAvailabilityConfi
 	return o
 }
 
-func (o GetMonitorAvailabilityConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorAvailabilityConfiguration] {
-	return pulumix.Output[GetMonitorAvailabilityConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-func (o GetMonitorAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) int { return v.MaxAllowedFailuresPerInterval }).(pulumi.IntOutput)
+func (o GetMonitorAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) *int { return v.MaxAllowedFailuresPerInterval }).(pulumi.IntPtrOutput)
 }
 
 // Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-func (o GetMonitorAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) int { return v.MinAllowedRunsPerInterval }).(pulumi.IntOutput)
+func (o GetMonitorAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) *int { return v.MinAllowedRunsPerInterval }).(pulumi.IntPtrOutput)
 }
 
 type GetMonitorAvailabilityConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -5065,12 +4374,6 @@ func (o GetMonitorAvailabilityConfigurationArrayOutput) ToGetMonitorAvailability
 	return o
 }
 
-func (o GetMonitorAvailabilityConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorAvailabilityConfiguration] {
-	return pulumix.Output[[]GetMonitorAvailabilityConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorAvailabilityConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorAvailabilityConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorAvailabilityConfiguration {
 		return vs[0].([]GetMonitorAvailabilityConfiguration)[vs[1].(int)]
@@ -5081,35 +4384,35 @@ type GetMonitorConfiguration struct {
 	// Details for client certificate.
 	ClientCertificateDetails []GetMonitorConfigurationClientCertificateDetail `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// Information about the DNS settings.
 	DnsConfigurations []GetMonitorConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
-	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
+	IsCertificateValidationEnabled *bool `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
-	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
+	IsDefaultSnapshotEnabled *bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
-	IsFailureRetried bool `pulumi:"isFailureRetried"`
+	IsFailureRetried *bool `pulumi:"isFailureRetried"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
-	IsRedirectionEnabled bool `pulumi:"isRedirectionEnabled"`
+	IsRedirectionEnabled *bool `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations []GetMonitorConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails []GetMonitorConfigurationReqAuthenticationDetail `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
-	ReqAuthenticationScheme string `pulumi:"reqAuthenticationScheme"`
+	ReqAuthenticationScheme *string `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders []GetMonitorConfigurationRequestHeader `pulumi:"requestHeaders"`
 	// Request HTTP method.
-	RequestMethod string `pulumi:"requestMethod"`
+	RequestMethod *string `pulumi:"requestMethod"`
 	// Request post body content.
-	RequestPostBody string `pulumi:"requestPostBody"`
+	RequestPostBody *string `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams []GetMonitorConfigurationRequestQueryParam `pulumi:"requestQueryParams"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-	VerifyResponseContent string `pulumi:"verifyResponseContent"`
+	VerifyResponseContent *string `pulumi:"verifyResponseContent"`
 	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts []GetMonitorConfigurationVerifyText `pulumi:"verifyTexts"`
 }
@@ -5129,35 +4432,35 @@ type GetMonitorConfigurationArgs struct {
 	// Details for client certificate.
 	ClientCertificateDetails GetMonitorConfigurationClientCertificateDetailArrayInput `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// Information about the DNS settings.
 	DnsConfigurations GetMonitorConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
-	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
+	IsCertificateValidationEnabled pulumi.BoolPtrInput `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
-	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
+	IsDefaultSnapshotEnabled pulumi.BoolPtrInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
-	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
+	IsFailureRetried pulumi.BoolPtrInput `pulumi:"isFailureRetried"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
-	IsRedirectionEnabled pulumi.BoolInput `pulumi:"isRedirectionEnabled"`
+	IsRedirectionEnabled pulumi.BoolPtrInput `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations GetMonitorConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails GetMonitorConfigurationReqAuthenticationDetailArrayInput `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
-	ReqAuthenticationScheme pulumi.StringInput `pulumi:"reqAuthenticationScheme"`
+	ReqAuthenticationScheme pulumi.StringPtrInput `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders GetMonitorConfigurationRequestHeaderArrayInput `pulumi:"requestHeaders"`
 	// Request HTTP method.
-	RequestMethod pulumi.StringInput `pulumi:"requestMethod"`
+	RequestMethod pulumi.StringPtrInput `pulumi:"requestMethod"`
 	// Request post body content.
-	RequestPostBody pulumi.StringInput `pulumi:"requestPostBody"`
+	RequestPostBody pulumi.StringPtrInput `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams GetMonitorConfigurationRequestQueryParamArrayInput `pulumi:"requestQueryParams"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-	VerifyResponseContent pulumi.StringInput `pulumi:"verifyResponseContent"`
+	VerifyResponseContent pulumi.StringPtrInput `pulumi:"verifyResponseContent"`
 	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts GetMonitorConfigurationVerifyTextArrayInput `pulumi:"verifyTexts"`
 }
@@ -5172,12 +4475,6 @@ func (i GetMonitorConfigurationArgs) ToGetMonitorConfigurationOutput() GetMonito
 
 func (i GetMonitorConfigurationArgs) ToGetMonitorConfigurationOutputWithContext(ctx context.Context) GetMonitorConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationOutput)
-}
-
-func (i GetMonitorConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfiguration] {
-	return pulumix.Output[GetMonitorConfiguration]{
-		OutputState: i.ToGetMonitorConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationArrayInput is an input type that accepts GetMonitorConfigurationArray and GetMonitorConfigurationArrayOutput values.
@@ -5205,12 +4502,6 @@ func (i GetMonitorConfigurationArray) ToGetMonitorConfigurationArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationArrayOutput)
 }
 
-func (i GetMonitorConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfiguration] {
-	return pulumix.Output[[]GetMonitorConfiguration]{
-		OutputState: i.ToGetMonitorConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationOutput) ElementType() reflect.Type {
@@ -5225,12 +4516,6 @@ func (o GetMonitorConfigurationOutput) ToGetMonitorConfigurationOutputWithContex
 	return o
 }
 
-func (o GetMonitorConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfiguration] {
-	return pulumix.Output[GetMonitorConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details for client certificate.
 func (o GetMonitorConfigurationOutput) ClientCertificateDetails() GetMonitorConfigurationClientCertificateDetailArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationClientCertificateDetail {
@@ -5239,8 +4524,8 @@ func (o GetMonitorConfigurationOutput) ClientCertificateDetails() GetMonitorConf
 }
 
 // Type of configuration.
-func (o GetMonitorConfigurationOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // Information about the DNS settings.
@@ -5249,23 +4534,23 @@ func (o GetMonitorConfigurationOutput) DnsConfigurations() GetMonitorConfigurati
 }
 
 // If certificate validation is enabled, then the call will fail in case of certification errors.
-func (o GetMonitorConfigurationOutput) IsCertificateValidationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolOutput)
+func (o GetMonitorConfigurationOutput) IsCertificateValidationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If disabled, auto snapshots are not collected.
-func (o GetMonitorConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolOutput)
+func (o GetMonitorConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If isFailureRetried is enabled, then a failed call will be retried.
-func (o GetMonitorConfigurationOutput) IsFailureRetried() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsFailureRetried }).(pulumi.BoolOutput)
+func (o GetMonitorConfigurationOutput) IsFailureRetried() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *bool { return v.IsFailureRetried }).(pulumi.BoolPtrOutput)
 }
 
 // If redirection is enabled, then redirects will be allowed while accessing target URL.
-func (o GetMonitorConfigurationOutput) IsRedirectionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsRedirectionEnabled }).(pulumi.BoolOutput)
+func (o GetMonitorConfigurationOutput) IsRedirectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *bool { return v.IsRedirectionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Details of the network configuration.
@@ -5283,8 +4568,8 @@ func (o GetMonitorConfigurationOutput) ReqAuthenticationDetails() GetMonitorConf
 }
 
 // Request HTTP authentication scheme.
-func (o GetMonitorConfigurationOutput) ReqAuthenticationScheme() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.ReqAuthenticationScheme }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationOutput) ReqAuthenticationScheme() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *string { return v.ReqAuthenticationScheme }).(pulumi.StringPtrOutput)
 }
 
 // List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
@@ -5293,13 +4578,13 @@ func (o GetMonitorConfigurationOutput) RequestHeaders() GetMonitorConfigurationR
 }
 
 // Request HTTP method.
-func (o GetMonitorConfigurationOutput) RequestMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.RequestMethod }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationOutput) RequestMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *string { return v.RequestMethod }).(pulumi.StringPtrOutput)
 }
 
 // Request post body content.
-func (o GetMonitorConfigurationOutput) RequestPostBody() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.RequestPostBody }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationOutput) RequestPostBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *string { return v.RequestPostBody }).(pulumi.StringPtrOutput)
 }
 
 // List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
@@ -5315,8 +4600,8 @@ func (o GetMonitorConfigurationOutput) VerifyResponseCodes() pulumi.StringArrayO
 }
 
 // Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-func (o GetMonitorConfigurationOutput) VerifyResponseContent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.VerifyResponseContent }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationOutput) VerifyResponseContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) *string { return v.VerifyResponseContent }).(pulumi.StringPtrOutput)
 }
 
 // Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
@@ -5336,12 +4621,6 @@ func (o GetMonitorConfigurationArrayOutput) ToGetMonitorConfigurationArrayOutput
 
 func (o GetMonitorConfigurationArrayOutput) ToGetMonitorConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationArrayOutput {
 	return o
-}
-
-func (o GetMonitorConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfiguration] {
-	return pulumix.Output[[]GetMonitorConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitorConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationOutput {
@@ -5387,12 +4666,6 @@ func (i GetMonitorConfigurationClientCertificateDetailArgs) ToGetMonitorConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailOutput)
 }
 
-func (i GetMonitorConfigurationClientCertificateDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationClientCertificateDetail] {
-	return pulumix.Output[GetMonitorConfigurationClientCertificateDetail]{
-		OutputState: i.ToGetMonitorConfigurationClientCertificateDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitorConfigurationClientCertificateDetailArrayInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailArray and GetMonitorConfigurationClientCertificateDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationClientCertificateDetailArrayInput` via:
 //
@@ -5418,12 +4691,6 @@ func (i GetMonitorConfigurationClientCertificateDetailArray) ToGetMonitorConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailArrayOutput)
 }
 
-func (i GetMonitorConfigurationClientCertificateDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationClientCertificateDetail] {
-	return pulumix.Output[[]GetMonitorConfigurationClientCertificateDetail]{
-		OutputState: i.ToGetMonitorConfigurationClientCertificateDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationClientCertificateDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationClientCertificateDetailOutput) ElementType() reflect.Type {
@@ -5436,12 +4703,6 @@ func (o GetMonitorConfigurationClientCertificateDetailOutput) ToGetMonitorConfig
 
 func (o GetMonitorConfigurationClientCertificateDetailOutput) ToGetMonitorConfigurationClientCertificateDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailOutput {
 	return o
-}
-
-func (o GetMonitorConfigurationClientCertificateDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationClientCertificateDetail] {
-	return pulumix.Output[GetMonitorConfigurationClientCertificateDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Client certificate in PEM format.
@@ -5472,12 +4733,6 @@ func (o GetMonitorConfigurationClientCertificateDetailArrayOutput) ToGetMonitorC
 	return o
 }
 
-func (o GetMonitorConfigurationClientCertificateDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationClientCertificateDetail] {
-	return pulumix.Output[[]GetMonitorConfigurationClientCertificateDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationClientCertificateDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationClientCertificateDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationClientCertificateDetail {
 		return vs[0].([]GetMonitorConfigurationClientCertificateDetail)[vs[1].(int)]
@@ -5486,9 +4741,9 @@ func (o GetMonitorConfigurationClientCertificateDetailArrayOutput) Index(i pulum
 
 type GetMonitorConfigurationClientCertificateDetailClientCertificate struct {
 	// Content of the private key file.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// Name of the private key file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 }
 
 // GetMonitorConfigurationClientCertificateDetailClientCertificateInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailClientCertificateArgs and GetMonitorConfigurationClientCertificateDetailClientCertificateOutput values.
@@ -5504,9 +4759,9 @@ type GetMonitorConfigurationClientCertificateDetailClientCertificateInput interf
 
 type GetMonitorConfigurationClientCertificateDetailClientCertificateArgs struct {
 	// Content of the private key file.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// Name of the private key file.
-	FileName pulumi.StringInput `pulumi:"fileName"`
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 }
 
 func (GetMonitorConfigurationClientCertificateDetailClientCertificateArgs) ElementType() reflect.Type {
@@ -5519,12 +4774,6 @@ func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArgs) ToG
 
 func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArgs) ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailClientCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailClientCertificateOutput)
-}
-
-func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[GetMonitorConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: i.ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailClientCertificateArray and GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput values.
@@ -5552,12 +4801,6 @@ func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput)
 }
 
-func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: i.ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationClientCertificateDetailClientCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) ElementType() reflect.Type {
@@ -5572,20 +4815,14 @@ func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) T
 	return o
 }
 
-func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[GetMonitorConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Content of the private key file.
-func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailClientCertificate) string { return v.Content }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailClientCertificate) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // Name of the private key file.
-func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailClientCertificate) string { return v.FileName }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailClientCertificate) *string { return v.FileName }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -5602,12 +4839,6 @@ func (o GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutp
 	return o
 }
 
-func (o GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationClientCertificateDetailClientCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationClientCertificateDetailClientCertificate {
 		return vs[0].([]GetMonitorConfigurationClientCertificateDetailClientCertificate)[vs[1].(int)]
@@ -5616,9 +4847,9 @@ func (o GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutp
 
 type GetMonitorConfigurationClientCertificateDetailPrivateKey struct {
 	// Content of the private key file.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// Name of the private key file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 }
 
 // GetMonitorConfigurationClientCertificateDetailPrivateKeyInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs and GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput values.
@@ -5634,9 +4865,9 @@ type GetMonitorConfigurationClientCertificateDetailPrivateKeyInput interface {
 
 type GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs struct {
 	// Content of the private key file.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// Name of the private key file.
-	FileName pulumi.StringInput `pulumi:"fileName"`
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 }
 
 func (GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs) ElementType() reflect.Type {
@@ -5649,12 +4880,6 @@ func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs) ToGetMonit
 
 func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput)
-}
-
-func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[GetMonitorConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: i.ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailPrivateKeyArray and GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput values.
@@ -5682,12 +4907,6 @@ func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArray) ToGetMoni
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput)
 }
 
-func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: i.ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) ElementType() reflect.Type {
@@ -5702,20 +4921,14 @@ func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) ToGetMon
 	return o
 }
 
-func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[GetMonitorConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Content of the private key file.
-func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailPrivateKey) string { return v.Content }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailPrivateKey) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // Name of the private key file.
-func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailPrivateKey) string { return v.FileName }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailPrivateKey) *string { return v.FileName }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput struct{ *pulumi.OutputState }
@@ -5732,12 +4945,6 @@ func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) ToG
 	return o
 }
 
-func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[[]GetMonitorConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationClientCertificateDetailPrivateKey {
 		return vs[0].([]GetMonitorConfigurationClientCertificateDetailPrivateKey)[vs[1].(int)]
@@ -5746,9 +4953,9 @@ func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) Ind
 
 type GetMonitorConfigurationDnsConfiguration struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
-	IsOverrideDns bool `pulumi:"isOverrideDns"`
+	IsOverrideDns *bool `pulumi:"isOverrideDns"`
 	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-	OverrideDnsIp string `pulumi:"overrideDnsIp"`
+	OverrideDnsIp *string `pulumi:"overrideDnsIp"`
 }
 
 // GetMonitorConfigurationDnsConfigurationInput is an input type that accepts GetMonitorConfigurationDnsConfigurationArgs and GetMonitorConfigurationDnsConfigurationOutput values.
@@ -5764,9 +4971,9 @@ type GetMonitorConfigurationDnsConfigurationInput interface {
 
 type GetMonitorConfigurationDnsConfigurationArgs struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
-	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
+	IsOverrideDns pulumi.BoolPtrInput `pulumi:"isOverrideDns"`
 	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
+	OverrideDnsIp pulumi.StringPtrInput `pulumi:"overrideDnsIp"`
 }
 
 func (GetMonitorConfigurationDnsConfigurationArgs) ElementType() reflect.Type {
@@ -5779,12 +4986,6 @@ func (i GetMonitorConfigurationDnsConfigurationArgs) ToGetMonitorConfigurationDn
 
 func (i GetMonitorConfigurationDnsConfigurationArgs) ToGetMonitorConfigurationDnsConfigurationOutputWithContext(ctx context.Context) GetMonitorConfigurationDnsConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDnsConfigurationOutput)
-}
-
-func (i GetMonitorConfigurationDnsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationDnsConfiguration] {
-	return pulumix.Output[GetMonitorConfigurationDnsConfiguration]{
-		OutputState: i.ToGetMonitorConfigurationDnsConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationDnsConfigurationArrayInput is an input type that accepts GetMonitorConfigurationDnsConfigurationArray and GetMonitorConfigurationDnsConfigurationArrayOutput values.
@@ -5812,12 +5013,6 @@ func (i GetMonitorConfigurationDnsConfigurationArray) ToGetMonitorConfigurationD
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDnsConfigurationArrayOutput)
 }
 
-func (i GetMonitorConfigurationDnsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationDnsConfiguration] {
-	return pulumix.Output[[]GetMonitorConfigurationDnsConfiguration]{
-		OutputState: i.ToGetMonitorConfigurationDnsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationDnsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationDnsConfigurationOutput) ElementType() reflect.Type {
@@ -5832,20 +5027,14 @@ func (o GetMonitorConfigurationDnsConfigurationOutput) ToGetMonitorConfiguration
 	return o
 }
 
-func (o GetMonitorConfigurationDnsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationDnsConfiguration] {
-	return pulumix.Output[GetMonitorConfigurationDnsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If isOverrideDns is true, then DNS settings will be overridden.
-func (o GetMonitorConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
+func (o GetMonitorConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) *bool { return v.IsOverrideDns }).(pulumi.BoolPtrOutput)
 }
 
 // Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-func (o GetMonitorConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) *string { return v.OverrideDnsIp }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationDnsConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -5862,12 +5051,6 @@ func (o GetMonitorConfigurationDnsConfigurationArrayOutput) ToGetMonitorConfigur
 	return o
 }
 
-func (o GetMonitorConfigurationDnsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationDnsConfiguration] {
-	return pulumix.Output[[]GetMonitorConfigurationDnsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationDnsConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationDnsConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationDnsConfiguration {
 		return vs[0].([]GetMonitorConfigurationDnsConfiguration)[vs[1].(int)]
@@ -5876,15 +5059,15 @@ func (o GetMonitorConfigurationDnsConfigurationArrayOutput) Index(i pulumi.IntIn
 
 type GetMonitorConfigurationNetworkConfiguration struct {
 	// Number of hops.
-	NumberOfHops int `pulumi:"numberOfHops"`
+	NumberOfHops *int `pulumi:"numberOfHops"`
 	// Type of probe mode when TCP protocol is selected.
-	ProbeMode string `pulumi:"probeMode"`
+	ProbeMode *string `pulumi:"probeMode"`
 	// Number of probes per hop.
-	ProbePerHop int `pulumi:"probePerHop"`
+	ProbePerHop *int `pulumi:"probePerHop"`
 	// Type of protocol.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Number of probe packets sent out simultaneously.
-	TransmissionRate int `pulumi:"transmissionRate"`
+	TransmissionRate *int `pulumi:"transmissionRate"`
 }
 
 // GetMonitorConfigurationNetworkConfigurationInput is an input type that accepts GetMonitorConfigurationNetworkConfigurationArgs and GetMonitorConfigurationNetworkConfigurationOutput values.
@@ -5900,15 +5083,15 @@ type GetMonitorConfigurationNetworkConfigurationInput interface {
 
 type GetMonitorConfigurationNetworkConfigurationArgs struct {
 	// Number of hops.
-	NumberOfHops pulumi.IntInput `pulumi:"numberOfHops"`
+	NumberOfHops pulumi.IntPtrInput `pulumi:"numberOfHops"`
 	// Type of probe mode when TCP protocol is selected.
-	ProbeMode pulumi.StringInput `pulumi:"probeMode"`
+	ProbeMode pulumi.StringPtrInput `pulumi:"probeMode"`
 	// Number of probes per hop.
-	ProbePerHop pulumi.IntInput `pulumi:"probePerHop"`
+	ProbePerHop pulumi.IntPtrInput `pulumi:"probePerHop"`
 	// Type of protocol.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Number of probe packets sent out simultaneously.
-	TransmissionRate pulumi.IntInput `pulumi:"transmissionRate"`
+	TransmissionRate pulumi.IntPtrInput `pulumi:"transmissionRate"`
 }
 
 func (GetMonitorConfigurationNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -5921,12 +5104,6 @@ func (i GetMonitorConfigurationNetworkConfigurationArgs) ToGetMonitorConfigurati
 
 func (i GetMonitorConfigurationNetworkConfigurationArgs) ToGetMonitorConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) GetMonitorConfigurationNetworkConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationNetworkConfigurationOutput)
-}
-
-func (i GetMonitorConfigurationNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationNetworkConfiguration] {
-	return pulumix.Output[GetMonitorConfigurationNetworkConfiguration]{
-		OutputState: i.ToGetMonitorConfigurationNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationNetworkConfigurationArrayInput is an input type that accepts GetMonitorConfigurationNetworkConfigurationArray and GetMonitorConfigurationNetworkConfigurationArrayOutput values.
@@ -5954,12 +5131,6 @@ func (i GetMonitorConfigurationNetworkConfigurationArray) ToGetMonitorConfigurat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationNetworkConfigurationArrayOutput)
 }
 
-func (i GetMonitorConfigurationNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationNetworkConfiguration] {
-	return pulumix.Output[[]GetMonitorConfigurationNetworkConfiguration]{
-		OutputState: i.ToGetMonitorConfigurationNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -5974,35 +5145,29 @@ func (o GetMonitorConfigurationNetworkConfigurationOutput) ToGetMonitorConfigura
 	return o
 }
 
-func (o GetMonitorConfigurationNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationNetworkConfiguration] {
-	return pulumix.Output[GetMonitorConfigurationNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of hops.
-func (o GetMonitorConfigurationNetworkConfigurationOutput) NumberOfHops() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) int { return v.NumberOfHops }).(pulumi.IntOutput)
+func (o GetMonitorConfigurationNetworkConfigurationOutput) NumberOfHops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) *int { return v.NumberOfHops }).(pulumi.IntPtrOutput)
 }
 
 // Type of probe mode when TCP protocol is selected.
-func (o GetMonitorConfigurationNetworkConfigurationOutput) ProbeMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) string { return v.ProbeMode }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationNetworkConfigurationOutput) ProbeMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) *string { return v.ProbeMode }).(pulumi.StringPtrOutput)
 }
 
 // Number of probes per hop.
-func (o GetMonitorConfigurationNetworkConfigurationOutput) ProbePerHop() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) int { return v.ProbePerHop }).(pulumi.IntOutput)
+func (o GetMonitorConfigurationNetworkConfigurationOutput) ProbePerHop() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) *int { return v.ProbePerHop }).(pulumi.IntPtrOutput)
 }
 
 // Type of protocol.
-func (o GetMonitorConfigurationNetworkConfigurationOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationNetworkConfigurationOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Number of probe packets sent out simultaneously.
-func (o GetMonitorConfigurationNetworkConfigurationOutput) TransmissionRate() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) int { return v.TransmissionRate }).(pulumi.IntOutput)
+func (o GetMonitorConfigurationNetworkConfigurationOutput) TransmissionRate() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationNetworkConfiguration) *int { return v.TransmissionRate }).(pulumi.IntPtrOutput)
 }
 
 type GetMonitorConfigurationNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -6019,12 +5184,6 @@ func (o GetMonitorConfigurationNetworkConfigurationArrayOutput) ToGetMonitorConf
 	return o
 }
 
-func (o GetMonitorConfigurationNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationNetworkConfiguration] {
-	return pulumix.Output[[]GetMonitorConfigurationNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationNetworkConfiguration {
 		return vs[0].([]GetMonitorConfigurationNetworkConfiguration)[vs[1].(int)]
@@ -6035,19 +5194,19 @@ type GetMonitorConfigurationReqAuthenticationDetail struct {
 	// List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	AuthHeaders []GetMonitorConfigurationReqAuthenticationDetailAuthHeader `pulumi:"authHeaders"`
 	// Request method.
-	AuthRequestMethod string `pulumi:"authRequestMethod"`
+	AuthRequestMethod *string `pulumi:"authRequestMethod"`
 	// Request post body.
-	AuthRequestPostBody string `pulumi:"authRequestPostBody"`
+	AuthRequestPostBody *string `pulumi:"authRequestPostBody"`
 	// Authentication token.
-	AuthToken string `pulumi:"authToken"`
+	AuthToken *string `pulumi:"authToken"`
 	// URL to get authentication token.
-	AuthUrl string `pulumi:"authUrl"`
+	AuthUrl *string `pulumi:"authUrl"`
 	// User name for authentication.
-	AuthUserName string `pulumi:"authUserName"`
+	AuthUserName *string `pulumi:"authUserName"`
 	// User password for authentication.
-	AuthUserPassword string `pulumi:"authUserPassword"`
+	AuthUserPassword *string `pulumi:"authUserPassword"`
 	// Request HTTP OAuth scheme.
-	OauthScheme string `pulumi:"oauthScheme"`
+	OauthScheme *string `pulumi:"oauthScheme"`
 }
 
 // GetMonitorConfigurationReqAuthenticationDetailInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailArgs and GetMonitorConfigurationReqAuthenticationDetailOutput values.
@@ -6065,19 +5224,19 @@ type GetMonitorConfigurationReqAuthenticationDetailArgs struct {
 	// List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	AuthHeaders GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayInput `pulumi:"authHeaders"`
 	// Request method.
-	AuthRequestMethod pulumi.StringInput `pulumi:"authRequestMethod"`
+	AuthRequestMethod pulumi.StringPtrInput `pulumi:"authRequestMethod"`
 	// Request post body.
-	AuthRequestPostBody pulumi.StringInput `pulumi:"authRequestPostBody"`
+	AuthRequestPostBody pulumi.StringPtrInput `pulumi:"authRequestPostBody"`
 	// Authentication token.
-	AuthToken pulumi.StringInput `pulumi:"authToken"`
+	AuthToken pulumi.StringPtrInput `pulumi:"authToken"`
 	// URL to get authentication token.
-	AuthUrl pulumi.StringInput `pulumi:"authUrl"`
+	AuthUrl pulumi.StringPtrInput `pulumi:"authUrl"`
 	// User name for authentication.
-	AuthUserName pulumi.StringInput `pulumi:"authUserName"`
+	AuthUserName pulumi.StringPtrInput `pulumi:"authUserName"`
 	// User password for authentication.
-	AuthUserPassword pulumi.StringInput `pulumi:"authUserPassword"`
+	AuthUserPassword pulumi.StringPtrInput `pulumi:"authUserPassword"`
 	// Request HTTP OAuth scheme.
-	OauthScheme pulumi.StringInput `pulumi:"oauthScheme"`
+	OauthScheme pulumi.StringPtrInput `pulumi:"oauthScheme"`
 }
 
 func (GetMonitorConfigurationReqAuthenticationDetailArgs) ElementType() reflect.Type {
@@ -6090,12 +5249,6 @@ func (i GetMonitorConfigurationReqAuthenticationDetailArgs) ToGetMonitorConfigur
 
 func (i GetMonitorConfigurationReqAuthenticationDetailArgs) ToGetMonitorConfigurationReqAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationReqAuthenticationDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationReqAuthenticationDetailOutput)
-}
-
-func (i GetMonitorConfigurationReqAuthenticationDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[GetMonitorConfigurationReqAuthenticationDetail]{
-		OutputState: i.ToGetMonitorConfigurationReqAuthenticationDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationReqAuthenticationDetailArrayInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailArray and GetMonitorConfigurationReqAuthenticationDetailArrayOutput values.
@@ -6123,12 +5276,6 @@ func (i GetMonitorConfigurationReqAuthenticationDetailArray) ToGetMonitorConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationReqAuthenticationDetailArrayOutput)
 }
 
-func (i GetMonitorConfigurationReqAuthenticationDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetail]{
-		OutputState: i.ToGetMonitorConfigurationReqAuthenticationDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationReqAuthenticationDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationReqAuthenticationDetailOutput) ElementType() reflect.Type {
@@ -6143,12 +5290,6 @@ func (o GetMonitorConfigurationReqAuthenticationDetailOutput) ToGetMonitorConfig
 	return o
 }
 
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[GetMonitorConfigurationReqAuthenticationDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthHeaders() GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) []GetMonitorConfigurationReqAuthenticationDetailAuthHeader {
@@ -6157,38 +5298,38 @@ func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthHeaders() GetM
 }
 
 // Request method.
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthRequestMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthRequestMethod }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthRequestMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) *string { return v.AuthRequestMethod }).(pulumi.StringPtrOutput)
 }
 
 // Request post body.
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthRequestPostBody() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthRequestPostBody }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthRequestPostBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) *string { return v.AuthRequestPostBody }).(pulumi.StringPtrOutput)
 }
 
 // Authentication token.
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthToken }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) *string { return v.AuthToken }).(pulumi.StringPtrOutput)
 }
 
 // URL to get authentication token.
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthUrl }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) *string { return v.AuthUrl }).(pulumi.StringPtrOutput)
 }
 
 // User name for authentication.
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthUserName }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) *string { return v.AuthUserName }).(pulumi.StringPtrOutput)
 }
 
 // User password for authentication.
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUserPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthUserPassword }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUserPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) *string { return v.AuthUserPassword }).(pulumi.StringPtrOutput)
 }
 
 // Request HTTP OAuth scheme.
-func (o GetMonitorConfigurationReqAuthenticationDetailOutput) OauthScheme() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.OauthScheme }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailOutput) OauthScheme() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) *string { return v.OauthScheme }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationReqAuthenticationDetailArrayOutput struct{ *pulumi.OutputState }
@@ -6205,12 +5346,6 @@ func (o GetMonitorConfigurationReqAuthenticationDetailArrayOutput) ToGetMonitorC
 	return o
 }
 
-func (o GetMonitorConfigurationReqAuthenticationDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationReqAuthenticationDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationReqAuthenticationDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationReqAuthenticationDetail {
 		return vs[0].([]GetMonitorConfigurationReqAuthenticationDetail)[vs[1].(int)]
@@ -6219,9 +5354,9 @@ func (o GetMonitorConfigurationReqAuthenticationDetailArrayOutput) Index(i pulum
 
 type GetMonitorConfigurationReqAuthenticationDetailAuthHeader struct {
 	// Name of the header.
-	HeaderName string `pulumi:"headerName"`
+	HeaderName *string `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue string `pulumi:"headerValue"`
+	HeaderValue *string `pulumi:"headerValue"`
 }
 
 // GetMonitorConfigurationReqAuthenticationDetailAuthHeaderInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs and GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput values.
@@ -6237,9 +5372,9 @@ type GetMonitorConfigurationReqAuthenticationDetailAuthHeaderInput interface {
 
 type GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs struct {
 	// Name of the header.
-	HeaderName pulumi.StringInput `pulumi:"headerName"`
+	HeaderName pulumi.StringPtrInput `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue pulumi.StringInput `pulumi:"headerValue"`
+	HeaderValue pulumi.StringPtrInput `pulumi:"headerValue"`
 }
 
 func (GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs) ElementType() reflect.Type {
@@ -6252,12 +5387,6 @@ func (i GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs) ToGetMonit
 
 func (i GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs) ToGetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutputWithContext(ctx context.Context) GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput)
-}
-
-func (i GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[GetMonitorConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: i.ToGetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArray and GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput values.
@@ -6285,12 +5414,6 @@ func (i GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArray) ToGetMoni
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput)
 }
 
-func (i GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: i.ToGetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput) ElementType() reflect.Type {
@@ -6305,20 +5428,14 @@ func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput) ToGetMon
 	return o
 }
 
-func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[GetMonitorConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the header.
-func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetailAuthHeader) string { return v.HeaderName }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetailAuthHeader) *string { return v.HeaderName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the header.
-func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetailAuthHeader) string { return v.HeaderValue }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetailAuthHeader) *string { return v.HeaderValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -6335,12 +5452,6 @@ func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput) ToG
 	return o
 }
 
-func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[[]GetMonitorConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationReqAuthenticationDetailAuthHeader {
 		return vs[0].([]GetMonitorConfigurationReqAuthenticationDetailAuthHeader)[vs[1].(int)]
@@ -6349,9 +5460,9 @@ func (o GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput) Ind
 
 type GetMonitorConfigurationRequestHeader struct {
 	// Name of the header.
-	HeaderName string `pulumi:"headerName"`
+	HeaderName *string `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue string `pulumi:"headerValue"`
+	HeaderValue *string `pulumi:"headerValue"`
 }
 
 // GetMonitorConfigurationRequestHeaderInput is an input type that accepts GetMonitorConfigurationRequestHeaderArgs and GetMonitorConfigurationRequestHeaderOutput values.
@@ -6367,9 +5478,9 @@ type GetMonitorConfigurationRequestHeaderInput interface {
 
 type GetMonitorConfigurationRequestHeaderArgs struct {
 	// Name of the header.
-	HeaderName pulumi.StringInput `pulumi:"headerName"`
+	HeaderName pulumi.StringPtrInput `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue pulumi.StringInput `pulumi:"headerValue"`
+	HeaderValue pulumi.StringPtrInput `pulumi:"headerValue"`
 }
 
 func (GetMonitorConfigurationRequestHeaderArgs) ElementType() reflect.Type {
@@ -6382,12 +5493,6 @@ func (i GetMonitorConfigurationRequestHeaderArgs) ToGetMonitorConfigurationReque
 
 func (i GetMonitorConfigurationRequestHeaderArgs) ToGetMonitorConfigurationRequestHeaderOutputWithContext(ctx context.Context) GetMonitorConfigurationRequestHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationRequestHeaderOutput)
-}
-
-func (i GetMonitorConfigurationRequestHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationRequestHeader] {
-	return pulumix.Output[GetMonitorConfigurationRequestHeader]{
-		OutputState: i.ToGetMonitorConfigurationRequestHeaderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationRequestHeaderArrayInput is an input type that accepts GetMonitorConfigurationRequestHeaderArray and GetMonitorConfigurationRequestHeaderArrayOutput values.
@@ -6415,12 +5520,6 @@ func (i GetMonitorConfigurationRequestHeaderArray) ToGetMonitorConfigurationRequ
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationRequestHeaderArrayOutput)
 }
 
-func (i GetMonitorConfigurationRequestHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationRequestHeader] {
-	return pulumix.Output[[]GetMonitorConfigurationRequestHeader]{
-		OutputState: i.ToGetMonitorConfigurationRequestHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationRequestHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationRequestHeaderOutput) ElementType() reflect.Type {
@@ -6435,20 +5534,14 @@ func (o GetMonitorConfigurationRequestHeaderOutput) ToGetMonitorConfigurationReq
 	return o
 }
 
-func (o GetMonitorConfigurationRequestHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationRequestHeader] {
-	return pulumix.Output[GetMonitorConfigurationRequestHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the header.
-func (o GetMonitorConfigurationRequestHeaderOutput) HeaderName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationRequestHeader) string { return v.HeaderName }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationRequestHeaderOutput) HeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationRequestHeader) *string { return v.HeaderName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the header.
-func (o GetMonitorConfigurationRequestHeaderOutput) HeaderValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationRequestHeader) string { return v.HeaderValue }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationRequestHeaderOutput) HeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationRequestHeader) *string { return v.HeaderValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationRequestHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -6465,12 +5558,6 @@ func (o GetMonitorConfigurationRequestHeaderArrayOutput) ToGetMonitorConfigurati
 	return o
 }
 
-func (o GetMonitorConfigurationRequestHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationRequestHeader] {
-	return pulumix.Output[[]GetMonitorConfigurationRequestHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationRequestHeaderArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationRequestHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationRequestHeader {
 		return vs[0].([]GetMonitorConfigurationRequestHeader)[vs[1].(int)]
@@ -6479,9 +5566,9 @@ func (o GetMonitorConfigurationRequestHeaderArrayOutput) Index(i pulumi.IntInput
 
 type GetMonitorConfigurationRequestQueryParam struct {
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetMonitorConfigurationRequestQueryParamInput is an input type that accepts GetMonitorConfigurationRequestQueryParamArgs and GetMonitorConfigurationRequestQueryParamOutput values.
@@ -6497,9 +5584,9 @@ type GetMonitorConfigurationRequestQueryParamInput interface {
 
 type GetMonitorConfigurationRequestQueryParamArgs struct {
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetMonitorConfigurationRequestQueryParamArgs) ElementType() reflect.Type {
@@ -6512,12 +5599,6 @@ func (i GetMonitorConfigurationRequestQueryParamArgs) ToGetMonitorConfigurationR
 
 func (i GetMonitorConfigurationRequestQueryParamArgs) ToGetMonitorConfigurationRequestQueryParamOutputWithContext(ctx context.Context) GetMonitorConfigurationRequestQueryParamOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationRequestQueryParamOutput)
-}
-
-func (i GetMonitorConfigurationRequestQueryParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationRequestQueryParam] {
-	return pulumix.Output[GetMonitorConfigurationRequestQueryParam]{
-		OutputState: i.ToGetMonitorConfigurationRequestQueryParamOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationRequestQueryParamArrayInput is an input type that accepts GetMonitorConfigurationRequestQueryParamArray and GetMonitorConfigurationRequestQueryParamArrayOutput values.
@@ -6545,12 +5626,6 @@ func (i GetMonitorConfigurationRequestQueryParamArray) ToGetMonitorConfiguration
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationRequestQueryParamArrayOutput)
 }
 
-func (i GetMonitorConfigurationRequestQueryParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationRequestQueryParam] {
-	return pulumix.Output[[]GetMonitorConfigurationRequestQueryParam]{
-		OutputState: i.ToGetMonitorConfigurationRequestQueryParamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationRequestQueryParamOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationRequestQueryParamOutput) ElementType() reflect.Type {
@@ -6565,20 +5640,14 @@ func (o GetMonitorConfigurationRequestQueryParamOutput) ToGetMonitorConfiguratio
 	return o
 }
 
-func (o GetMonitorConfigurationRequestQueryParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationRequestQueryParam] {
-	return pulumix.Output[GetMonitorConfigurationRequestQueryParam]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the parameter.
-func (o GetMonitorConfigurationRequestQueryParamOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationRequestQueryParam) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationRequestQueryParamOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationRequestQueryParam) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetMonitorConfigurationRequestQueryParamOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationRequestQueryParam) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationRequestQueryParamOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationRequestQueryParam) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationRequestQueryParamArrayOutput struct{ *pulumi.OutputState }
@@ -6595,12 +5664,6 @@ func (o GetMonitorConfigurationRequestQueryParamArrayOutput) ToGetMonitorConfigu
 	return o
 }
 
-func (o GetMonitorConfigurationRequestQueryParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationRequestQueryParam] {
-	return pulumix.Output[[]GetMonitorConfigurationRequestQueryParam]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationRequestQueryParamArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationRequestQueryParamOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationRequestQueryParam {
 		return vs[0].([]GetMonitorConfigurationRequestQueryParam)[vs[1].(int)]
@@ -6609,7 +5672,7 @@ func (o GetMonitorConfigurationRequestQueryParamArrayOutput) Index(i pulumi.IntI
 
 type GetMonitorConfigurationVerifyText struct {
 	// Verification text in the response.
-	Text string `pulumi:"text"`
+	Text *string `pulumi:"text"`
 }
 
 // GetMonitorConfigurationVerifyTextInput is an input type that accepts GetMonitorConfigurationVerifyTextArgs and GetMonitorConfigurationVerifyTextOutput values.
@@ -6625,7 +5688,7 @@ type GetMonitorConfigurationVerifyTextInput interface {
 
 type GetMonitorConfigurationVerifyTextArgs struct {
 	// Verification text in the response.
-	Text pulumi.StringInput `pulumi:"text"`
+	Text pulumi.StringPtrInput `pulumi:"text"`
 }
 
 func (GetMonitorConfigurationVerifyTextArgs) ElementType() reflect.Type {
@@ -6638,12 +5701,6 @@ func (i GetMonitorConfigurationVerifyTextArgs) ToGetMonitorConfigurationVerifyTe
 
 func (i GetMonitorConfigurationVerifyTextArgs) ToGetMonitorConfigurationVerifyTextOutputWithContext(ctx context.Context) GetMonitorConfigurationVerifyTextOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationVerifyTextOutput)
-}
-
-func (i GetMonitorConfigurationVerifyTextArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationVerifyText] {
-	return pulumix.Output[GetMonitorConfigurationVerifyText]{
-		OutputState: i.ToGetMonitorConfigurationVerifyTextOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorConfigurationVerifyTextArrayInput is an input type that accepts GetMonitorConfigurationVerifyTextArray and GetMonitorConfigurationVerifyTextArrayOutput values.
@@ -6671,12 +5728,6 @@ func (i GetMonitorConfigurationVerifyTextArray) ToGetMonitorConfigurationVerifyT
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationVerifyTextArrayOutput)
 }
 
-func (i GetMonitorConfigurationVerifyTextArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationVerifyText] {
-	return pulumix.Output[[]GetMonitorConfigurationVerifyText]{
-		OutputState: i.ToGetMonitorConfigurationVerifyTextArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorConfigurationVerifyTextOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorConfigurationVerifyTextOutput) ElementType() reflect.Type {
@@ -6691,15 +5742,9 @@ func (o GetMonitorConfigurationVerifyTextOutput) ToGetMonitorConfigurationVerify
 	return o
 }
 
-func (o GetMonitorConfigurationVerifyTextOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorConfigurationVerifyText] {
-	return pulumix.Output[GetMonitorConfigurationVerifyText]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Verification text in the response.
-func (o GetMonitorConfigurationVerifyTextOutput) Text() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorConfigurationVerifyText) string { return v.Text }).(pulumi.StringOutput)
+func (o GetMonitorConfigurationVerifyTextOutput) Text() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationVerifyText) *string { return v.Text }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorConfigurationVerifyTextArrayOutput struct{ *pulumi.OutputState }
@@ -6716,12 +5761,6 @@ func (o GetMonitorConfigurationVerifyTextArrayOutput) ToGetMonitorConfigurationV
 	return o
 }
 
-func (o GetMonitorConfigurationVerifyTextArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorConfigurationVerifyText] {
-	return pulumix.Output[[]GetMonitorConfigurationVerifyText]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationVerifyTextOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationVerifyText {
 		return vs[0].([]GetMonitorConfigurationVerifyText)[vs[1].(int)]
@@ -6730,9 +5769,9 @@ func (o GetMonitorConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) G
 
 type GetMonitorMaintenanceWindowSchedule struct {
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 // GetMonitorMaintenanceWindowScheduleInput is an input type that accepts GetMonitorMaintenanceWindowScheduleArgs and GetMonitorMaintenanceWindowScheduleOutput values.
@@ -6748,9 +5787,9 @@ type GetMonitorMaintenanceWindowScheduleInput interface {
 
 type GetMonitorMaintenanceWindowScheduleArgs struct {
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
 func (GetMonitorMaintenanceWindowScheduleArgs) ElementType() reflect.Type {
@@ -6763,12 +5802,6 @@ func (i GetMonitorMaintenanceWindowScheduleArgs) ToGetMonitorMaintenanceWindowSc
 
 func (i GetMonitorMaintenanceWindowScheduleArgs) ToGetMonitorMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorMaintenanceWindowScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorMaintenanceWindowScheduleOutput)
-}
-
-func (i GetMonitorMaintenanceWindowScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorMaintenanceWindowSchedule] {
-	return pulumix.Output[GetMonitorMaintenanceWindowSchedule]{
-		OutputState: i.ToGetMonitorMaintenanceWindowScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorMaintenanceWindowScheduleArrayInput is an input type that accepts GetMonitorMaintenanceWindowScheduleArray and GetMonitorMaintenanceWindowScheduleArrayOutput values.
@@ -6796,12 +5829,6 @@ func (i GetMonitorMaintenanceWindowScheduleArray) ToGetMonitorMaintenanceWindowS
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorMaintenanceWindowScheduleArrayOutput)
 }
 
-func (i GetMonitorMaintenanceWindowScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorMaintenanceWindowSchedule] {
-	return pulumix.Output[[]GetMonitorMaintenanceWindowSchedule]{
-		OutputState: i.ToGetMonitorMaintenanceWindowScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorMaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorMaintenanceWindowScheduleOutput) ElementType() reflect.Type {
@@ -6816,20 +5843,14 @@ func (o GetMonitorMaintenanceWindowScheduleOutput) ToGetMonitorMaintenanceWindow
 	return o
 }
 
-func (o GetMonitorMaintenanceWindowScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorMaintenanceWindowSchedule] {
-	return pulumix.Output[GetMonitorMaintenanceWindowSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetMonitorMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetMonitorMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetMonitorMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetMonitorMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorMaintenanceWindowScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -6846,12 +5867,6 @@ func (o GetMonitorMaintenanceWindowScheduleArrayOutput) ToGetMonitorMaintenanceW
 	return o
 }
 
-func (o GetMonitorMaintenanceWindowScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorMaintenanceWindowSchedule] {
-	return pulumix.Output[[]GetMonitorMaintenanceWindowSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorMaintenanceWindowScheduleArrayOutput) Index(i pulumi.IntInput) GetMonitorMaintenanceWindowScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorMaintenanceWindowSchedule {
 		return vs[0].([]GetMonitorMaintenanceWindowSchedule)[vs[1].(int)]
@@ -6860,15 +5875,15 @@ func (o GetMonitorMaintenanceWindowScheduleArrayOutput) Index(i pulumi.IntInput)
 
 type GetMonitorScriptParameter struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten bool `pulumi:"isOverwritten"`
+	IsOverwritten *bool `pulumi:"isOverwritten"`
 	// Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-	IsSecret bool `pulumi:"isSecret"`
+	IsSecret *bool `pulumi:"isSecret"`
 	// Details of the script parameter that can be used to overwrite the parameter present in the script.
 	MonitorScriptParameters []GetMonitorScriptParameterMonitorScriptParameter `pulumi:"monitorScriptParameters"`
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetMonitorScriptParameterInput is an input type that accepts GetMonitorScriptParameterArgs and GetMonitorScriptParameterOutput values.
@@ -6884,15 +5899,15 @@ type GetMonitorScriptParameterInput interface {
 
 type GetMonitorScriptParameterArgs struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten pulumi.BoolInput `pulumi:"isOverwritten"`
+	IsOverwritten pulumi.BoolPtrInput `pulumi:"isOverwritten"`
 	// Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-	IsSecret pulumi.BoolInput `pulumi:"isSecret"`
+	IsSecret pulumi.BoolPtrInput `pulumi:"isSecret"`
 	// Details of the script parameter that can be used to overwrite the parameter present in the script.
 	MonitorScriptParameters GetMonitorScriptParameterMonitorScriptParameterArrayInput `pulumi:"monitorScriptParameters"`
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetMonitorScriptParameterArgs) ElementType() reflect.Type {
@@ -6905,12 +5920,6 @@ func (i GetMonitorScriptParameterArgs) ToGetMonitorScriptParameterOutput() GetMo
 
 func (i GetMonitorScriptParameterArgs) ToGetMonitorScriptParameterOutputWithContext(ctx context.Context) GetMonitorScriptParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorScriptParameterOutput)
-}
-
-func (i GetMonitorScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorScriptParameter] {
-	return pulumix.Output[GetMonitorScriptParameter]{
-		OutputState: i.ToGetMonitorScriptParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorScriptParameterArrayInput is an input type that accepts GetMonitorScriptParameterArray and GetMonitorScriptParameterArrayOutput values.
@@ -6938,12 +5947,6 @@ func (i GetMonitorScriptParameterArray) ToGetMonitorScriptParameterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorScriptParameterArrayOutput)
 }
 
-func (i GetMonitorScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorScriptParameter] {
-	return pulumix.Output[[]GetMonitorScriptParameter]{
-		OutputState: i.ToGetMonitorScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorScriptParameterOutput) ElementType() reflect.Type {
@@ -6958,20 +5961,14 @@ func (o GetMonitorScriptParameterOutput) ToGetMonitorScriptParameterOutputWithCo
 	return o
 }
 
-func (o GetMonitorScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorScriptParameter] {
-	return pulumix.Output[GetMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If parameter value is default or overwritten.
-func (o GetMonitorScriptParameterOutput) IsOverwritten() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorScriptParameter) bool { return v.IsOverwritten }).(pulumi.BoolOutput)
+func (o GetMonitorScriptParameterOutput) IsOverwritten() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorScriptParameter) *bool { return v.IsOverwritten }).(pulumi.BoolPtrOutput)
 }
 
 // Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-func (o GetMonitorScriptParameterOutput) GetIsSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorScriptParameter) bool { return v.IsSecret }).(pulumi.BoolOutput)
+func (o GetMonitorScriptParameterOutput) GetIsSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorScriptParameter) *bool { return v.IsSecret }).(pulumi.BoolPtrOutput)
 }
 
 // Details of the script parameter that can be used to overwrite the parameter present in the script.
@@ -6982,13 +5979,13 @@ func (o GetMonitorScriptParameterOutput) MonitorScriptParameters() GetMonitorScr
 }
 
 // Name of the parameter.
-func (o GetMonitorScriptParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorScriptParameter) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetMonitorScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetMonitorScriptParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorScriptParameter) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetMonitorScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorScriptParameterArrayOutput struct{ *pulumi.OutputState }
@@ -7005,12 +6002,6 @@ func (o GetMonitorScriptParameterArrayOutput) ToGetMonitorScriptParameterArrayOu
 	return o
 }
 
-func (o GetMonitorScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorScriptParameter] {
-	return pulumix.Output[[]GetMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorScriptParameterArrayOutput) Index(i pulumi.IntInput) GetMonitorScriptParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorScriptParameter {
 		return vs[0].([]GetMonitorScriptParameter)[vs[1].(int)]
@@ -7019,9 +6010,9 @@ func (o GetMonitorScriptParameterArrayOutput) Index(i pulumi.IntInput) GetMonito
 
 type GetMonitorScriptParameterMonitorScriptParameter struct {
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetMonitorScriptParameterMonitorScriptParameterInput is an input type that accepts GetMonitorScriptParameterMonitorScriptParameterArgs and GetMonitorScriptParameterMonitorScriptParameterOutput values.
@@ -7037,9 +6028,9 @@ type GetMonitorScriptParameterMonitorScriptParameterInput interface {
 
 type GetMonitorScriptParameterMonitorScriptParameterArgs struct {
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetMonitorScriptParameterMonitorScriptParameterArgs) ElementType() reflect.Type {
@@ -7052,12 +6043,6 @@ func (i GetMonitorScriptParameterMonitorScriptParameterArgs) ToGetMonitorScriptP
 
 func (i GetMonitorScriptParameterMonitorScriptParameterArgs) ToGetMonitorScriptParameterMonitorScriptParameterOutputWithContext(ctx context.Context) GetMonitorScriptParameterMonitorScriptParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorScriptParameterMonitorScriptParameterOutput)
-}
-
-func (i GetMonitorScriptParameterMonitorScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[GetMonitorScriptParameterMonitorScriptParameter]{
-		OutputState: i.ToGetMonitorScriptParameterMonitorScriptParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorScriptParameterMonitorScriptParameterArrayInput is an input type that accepts GetMonitorScriptParameterMonitorScriptParameterArray and GetMonitorScriptParameterMonitorScriptParameterArrayOutput values.
@@ -7085,12 +6070,6 @@ func (i GetMonitorScriptParameterMonitorScriptParameterArray) ToGetMonitorScript
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorScriptParameterMonitorScriptParameterArrayOutput)
 }
 
-func (i GetMonitorScriptParameterMonitorScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[[]GetMonitorScriptParameterMonitorScriptParameter]{
-		OutputState: i.ToGetMonitorScriptParameterMonitorScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorScriptParameterMonitorScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorScriptParameterMonitorScriptParameterOutput) ElementType() reflect.Type {
@@ -7105,20 +6084,14 @@ func (o GetMonitorScriptParameterMonitorScriptParameterOutput) ToGetMonitorScrip
 	return o
 }
 
-func (o GetMonitorScriptParameterMonitorScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[GetMonitorScriptParameterMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the parameter.
-func (o GetMonitorScriptParameterMonitorScriptParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorScriptParameterMonitorScriptParameter) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetMonitorScriptParameterMonitorScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorScriptParameterMonitorScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetMonitorScriptParameterMonitorScriptParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorScriptParameterMonitorScriptParameter) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetMonitorScriptParameterMonitorScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorScriptParameterMonitorScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorScriptParameterMonitorScriptParameterArrayOutput struct{ *pulumi.OutputState }
@@ -7135,12 +6108,6 @@ func (o GetMonitorScriptParameterMonitorScriptParameterArrayOutput) ToGetMonitor
 	return o
 }
 
-func (o GetMonitorScriptParameterMonitorScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[[]GetMonitorScriptParameterMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorScriptParameterMonitorScriptParameterArrayOutput) Index(i pulumi.IntInput) GetMonitorScriptParameterMonitorScriptParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorScriptParameterMonitorScriptParameter {
 		return vs[0].([]GetMonitorScriptParameterMonitorScriptParameter)[vs[1].(int)]
@@ -7149,9 +6116,9 @@ func (o GetMonitorScriptParameterMonitorScriptParameterArrayOutput) Index(i pulu
 
 type GetMonitorVantagePoint struct {
 	// Unique name that can be edited. The name should not contain any confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Name of the vantage point.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetMonitorVantagePointInput is an input type that accepts GetMonitorVantagePointArgs and GetMonitorVantagePointOutput values.
@@ -7167,9 +6134,9 @@ type GetMonitorVantagePointInput interface {
 
 type GetMonitorVantagePointArgs struct {
 	// Unique name that can be edited. The name should not contain any confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Name of the vantage point.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetMonitorVantagePointArgs) ElementType() reflect.Type {
@@ -7182,12 +6149,6 @@ func (i GetMonitorVantagePointArgs) ToGetMonitorVantagePointOutput() GetMonitorV
 
 func (i GetMonitorVantagePointArgs) ToGetMonitorVantagePointOutputWithContext(ctx context.Context) GetMonitorVantagePointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorVantagePointOutput)
-}
-
-func (i GetMonitorVantagePointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorVantagePoint] {
-	return pulumix.Output[GetMonitorVantagePoint]{
-		OutputState: i.ToGetMonitorVantagePointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorVantagePointArrayInput is an input type that accepts GetMonitorVantagePointArray and GetMonitorVantagePointArrayOutput values.
@@ -7215,12 +6176,6 @@ func (i GetMonitorVantagePointArray) ToGetMonitorVantagePointArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorVantagePointArrayOutput)
 }
 
-func (i GetMonitorVantagePointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorVantagePoint] {
-	return pulumix.Output[[]GetMonitorVantagePoint]{
-		OutputState: i.ToGetMonitorVantagePointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorVantagePointOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorVantagePointOutput) ElementType() reflect.Type {
@@ -7235,20 +6190,14 @@ func (o GetMonitorVantagePointOutput) ToGetMonitorVantagePointOutputWithContext(
 	return o
 }
 
-func (o GetMonitorVantagePointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorVantagePoint] {
-	return pulumix.Output[GetMonitorVantagePoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique name that can be edited. The name should not contain any confidential information.
-func (o GetMonitorVantagePointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorVantagePoint) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMonitorVantagePointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorVantagePoint) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the vantage point.
-func (o GetMonitorVantagePointOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+func (o GetMonitorVantagePointOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorVantagePoint) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorVantagePointArrayOutput struct{ *pulumi.OutputState }
@@ -7263,12 +6212,6 @@ func (o GetMonitorVantagePointArrayOutput) ToGetMonitorVantagePointArrayOutput()
 
 func (o GetMonitorVantagePointArrayOutput) ToGetMonitorVantagePointArrayOutputWithContext(ctx context.Context) GetMonitorVantagePointArrayOutput {
 	return o
-}
-
-func (o GetMonitorVantagePointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorVantagePoint] {
-	return pulumix.Output[[]GetMonitorVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitorVantagePointArrayOutput) Index(i pulumi.IntInput) GetMonitorVantagePointOutput {
@@ -7314,12 +6257,6 @@ func (i GetMonitorsFilterArgs) ToGetMonitorsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsFilterOutput)
 }
 
-func (i GetMonitorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsFilter] {
-	return pulumix.Output[GetMonitorsFilter]{
-		OutputState: i.ToGetMonitorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitorsFilterArrayInput is an input type that accepts GetMonitorsFilterArray and GetMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsFilterArrayInput` via:
 //
@@ -7345,12 +6282,6 @@ func (i GetMonitorsFilterArray) ToGetMonitorsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsFilterArrayOutput)
 }
 
-func (i GetMonitorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsFilter] {
-	return pulumix.Output[[]GetMonitorsFilter]{
-		OutputState: i.ToGetMonitorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsFilterOutput) ElementType() reflect.Type {
@@ -7363,12 +6294,6 @@ func (o GetMonitorsFilterOutput) ToGetMonitorsFilterOutput() GetMonitorsFilterOu
 
 func (o GetMonitorsFilterOutput) ToGetMonitorsFilterOutputWithContext(ctx context.Context) GetMonitorsFilterOutput {
 	return o
-}
-
-func (o GetMonitorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsFilter] {
-	return pulumix.Output[GetMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the vantage point.
@@ -7396,12 +6321,6 @@ func (o GetMonitorsFilterArrayOutput) ToGetMonitorsFilterArrayOutput() GetMonito
 
 func (o GetMonitorsFilterArrayOutput) ToGetMonitorsFilterArrayOutputWithContext(ctx context.Context) GetMonitorsFilterArrayOutput {
 	return o
-}
-
-func (o GetMonitorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsFilter] {
-	return pulumix.Output[[]GetMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetMonitorsFilterOutput {
@@ -7441,12 +6360,6 @@ func (i GetMonitorsMonitorCollectionArgs) ToGetMonitorsMonitorCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionOutput)
 }
 
-func (i GetMonitorsMonitorCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollection] {
-	return pulumix.Output[GetMonitorsMonitorCollection]{
-		OutputState: i.ToGetMonitorsMonitorCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitorsMonitorCollectionArrayInput is an input type that accepts GetMonitorsMonitorCollectionArray and GetMonitorsMonitorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionArrayInput` via:
 //
@@ -7472,12 +6385,6 @@ func (i GetMonitorsMonitorCollectionArray) ToGetMonitorsMonitorCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollection] {
-	return pulumix.Output[[]GetMonitorsMonitorCollection]{
-		OutputState: i.ToGetMonitorsMonitorCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionOutput) ElementType() reflect.Type {
@@ -7490,12 +6397,6 @@ func (o GetMonitorsMonitorCollectionOutput) ToGetMonitorsMonitorCollectionOutput
 
 func (o GetMonitorsMonitorCollectionOutput) ToGetMonitorsMonitorCollectionOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionOutput {
 	return o
-}
-
-func (o GetMonitorsMonitorCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollection] {
-	return pulumix.Output[GetMonitorsMonitorCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitorsMonitorCollectionOutput) Items() GetMonitorsMonitorCollectionItemArrayOutput {
@@ -7516,12 +6417,6 @@ func (o GetMonitorsMonitorCollectionArrayOutput) ToGetMonitorsMonitorCollectionA
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollection] {
-	return pulumix.Output[[]GetMonitorsMonitorCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollection {
 		return vs[0].([]GetMonitorsMonitorCollection)[vs[1].(int)]
@@ -7530,51 +6425,51 @@ func (o GetMonitorsMonitorCollectionArrayOutput) Index(i pulumi.IntInput) GetMon
 
 type GetMonitorsMonitorCollectionItem struct {
 	// The APM domain ID the request is intended for.
-	ApmDomainId string `pulumi:"apmDomainId"`
+	ApmDomainId *string `pulumi:"apmDomainId"`
 	// Monitor availability configuration details.
 	AvailabilityConfigurations []GetMonitorsMonitorCollectionItemAvailabilityConfiguration `pulumi:"availabilityConfigurations"`
 	// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
+	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorsMonitorCollectionItemConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If isRunNow is enabled, then the monitor will run immediately.
-	IsRunNow bool `pulumi:"isRunNow"`
+	IsRunNow *bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
-	IsRunOnce bool `pulumi:"isRunOnce"`
+	IsRunOnce *bool `pulumi:"isRunOnce"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-	MonitorType string `pulumi:"monitorType"`
+	MonitorType *string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
+	RepeatIntervalInSeconds *int `pulumi:"repeatIntervalInSeconds"`
 	// Scheduling policy to decide the distribution of monitor executions on vantage points.
-	SchedulingPolicy string `pulumi:"schedulingPolicy"`
+	SchedulingPolicy *string `pulumi:"schedulingPolicy"`
 	// A filter to return only monitors using scriptId.
-	ScriptId string `pulumi:"scriptId"`
+	ScriptId *string `pulumi:"scriptId"`
 	// Name of the script.
-	ScriptName string `pulumi:"scriptName"`
+	ScriptName *string `pulumi:"scriptName"`
 	// List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
 	ScriptParameters []GetMonitorsMonitorCollectionItemScriptParameter `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
-	VantagePointCount int `pulumi:"vantagePointCount"`
+	VantagePointCount *int `pulumi:"vantagePointCount"`
 	// List of public and dedicated vantage points where the monitor is running.
 	VantagePoints []GetMonitorsMonitorCollectionItemVantagePoint `pulumi:"vantagePoints"`
 }
@@ -7592,51 +6487,51 @@ type GetMonitorsMonitorCollectionItemInput interface {
 
 type GetMonitorsMonitorCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
-	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	ApmDomainId pulumi.StringPtrInput `pulumi:"apmDomainId"`
 	// Monitor availability configuration details.
 	AvailabilityConfigurations GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput `pulumi:"availabilityConfigurations"`
 	// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	BatchIntervalInSeconds pulumi.IntInput `pulumi:"batchIntervalInSeconds"`
+	BatchIntervalInSeconds pulumi.IntPtrInput `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations GetMonitorsMonitorCollectionItemConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// If isRunNow is enabled, then the monitor will run immediately.
-	IsRunNow pulumi.BoolInput `pulumi:"isRunNow"`
+	IsRunNow pulumi.BoolPtrInput `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
-	IsRunOnce pulumi.BoolInput `pulumi:"isRunOnce"`
+	IsRunOnce pulumi.BoolPtrInput `pulumi:"isRunOnce"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput `pulumi:"maintenanceWindowSchedules"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-	MonitorType pulumi.StringInput `pulumi:"monitorType"`
+	MonitorType pulumi.StringPtrInput `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-	RepeatIntervalInSeconds pulumi.IntInput `pulumi:"repeatIntervalInSeconds"`
+	RepeatIntervalInSeconds pulumi.IntPtrInput `pulumi:"repeatIntervalInSeconds"`
 	// Scheduling policy to decide the distribution of monitor executions on vantage points.
-	SchedulingPolicy pulumi.StringInput `pulumi:"schedulingPolicy"`
+	SchedulingPolicy pulumi.StringPtrInput `pulumi:"schedulingPolicy"`
 	// A filter to return only monitors using scriptId.
-	ScriptId pulumi.StringInput `pulumi:"scriptId"`
+	ScriptId pulumi.StringPtrInput `pulumi:"scriptId"`
 	// Name of the script.
-	ScriptName pulumi.StringInput `pulumi:"scriptName"`
+	ScriptName pulumi.StringPtrInput `pulumi:"scriptName"`
 	// List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
 	ScriptParameters GetMonitorsMonitorCollectionItemScriptParameterArrayInput `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
-	VantagePointCount pulumi.IntInput `pulumi:"vantagePointCount"`
+	VantagePointCount pulumi.IntPtrInput `pulumi:"vantagePointCount"`
 	// List of public and dedicated vantage points where the monitor is running.
 	VantagePoints GetMonitorsMonitorCollectionItemVantagePointArrayInput `pulumi:"vantagePoints"`
 }
@@ -7651,12 +6546,6 @@ func (i GetMonitorsMonitorCollectionItemArgs) ToGetMonitorsMonitorCollectionItem
 
 func (i GetMonitorsMonitorCollectionItemArgs) ToGetMonitorsMonitorCollectionItemOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItem] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItem]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemArray and GetMonitorsMonitorCollectionItemArrayOutput values.
@@ -7684,12 +6573,6 @@ func (i GetMonitorsMonitorCollectionItemArray) ToGetMonitorsMonitorCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItem] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItem]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemOutput) ElementType() reflect.Type {
@@ -7704,15 +6587,9 @@ func (o GetMonitorsMonitorCollectionItemOutput) ToGetMonitorsMonitorCollectionIt
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItem] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The APM domain ID the request is intended for.
-func (o GetMonitorsMonitorCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) ApmDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.ApmDomainId }).(pulumi.StringPtrOutput)
 }
 
 // Monitor availability configuration details.
@@ -7723,8 +6600,8 @@ func (o GetMonitorsMonitorCollectionItemOutput) AvailabilityConfigurations() Get
 }
 
 // Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-func (o GetMonitorsMonitorCollectionItemOutput) BatchIntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) BatchIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *int { return v.BatchIntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Details of monitor configuration.
@@ -7740,8 +6617,8 @@ func (o GetMonitorsMonitorCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only the resources that match the entire display name.
-func (o GetMonitorsMonitorCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -7750,18 +6627,18 @@ func (o GetMonitorsMonitorCollectionItemOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-func (o GetMonitorsMonitorCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If isRunNow is enabled, then the monitor will run immediately.
-func (o GetMonitorsMonitorCollectionItemOutput) IsRunNow() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunNow }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) IsRunNow() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *bool { return v.IsRunNow }).(pulumi.BoolPtrOutput)
 }
 
 // If runOnce is enabled, then the monitor will run once.
-func (o GetMonitorsMonitorCollectionItemOutput) IsRunOnce() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) IsRunOnce() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *bool { return v.IsRunOnce }).(pulumi.BoolPtrOutput)
 }
 
 // Details required to schedule maintenance window.
@@ -7772,28 +6649,28 @@ func (o GetMonitorsMonitorCollectionItemOutput) MaintenanceWindowSchedules() Get
 }
 
 // A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-func (o GetMonitorsMonitorCollectionItemOutput) MonitorType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.MonitorType }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) MonitorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.MonitorType }).(pulumi.StringPtrOutput)
 }
 
 // Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-func (o GetMonitorsMonitorCollectionItemOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) RepeatIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *int { return v.RepeatIntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Scheduling policy to decide the distribution of monitor executions on vantage points.
-func (o GetMonitorsMonitorCollectionItemOutput) SchedulingPolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.SchedulingPolicy }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) SchedulingPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.SchedulingPolicy }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only monitors using scriptId.
-func (o GetMonitorsMonitorCollectionItemOutput) ScriptId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.ScriptId }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) ScriptId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.ScriptId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the script.
-func (o GetMonitorsMonitorCollectionItemOutput) ScriptName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.ScriptName }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) ScriptName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.ScriptName }).(pulumi.StringPtrOutput)
 }
 
 // List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
@@ -7804,33 +6681,33 @@ func (o GetMonitorsMonitorCollectionItemOutput) ScriptParameters() GetMonitorsMo
 }
 
 // A filter to return only monitors that match the status given.
-func (o GetMonitorsMonitorCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-func (o GetMonitorsMonitorCollectionItemOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Target }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetMonitorsMonitorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o GetMonitorsMonitorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-func (o GetMonitorsMonitorCollectionItemOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Number of vantage points where monitor is running.
-func (o GetMonitorsMonitorCollectionItemOutput) VantagePointCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.VantagePointCount }).(pulumi.IntOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) VantagePointCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) *int { return v.VantagePointCount }).(pulumi.IntPtrOutput)
 }
 
 // List of public and dedicated vantage points where the monitor is running.
@@ -7854,12 +6731,6 @@ func (o GetMonitorsMonitorCollectionItemArrayOutput) ToGetMonitorsMonitorCollect
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItem] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItem {
 		return vs[0].([]GetMonitorsMonitorCollectionItem)[vs[1].(int)]
@@ -7868,9 +6739,9 @@ func (o GetMonitorsMonitorCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetMonitorsMonitorCollectionItemAvailabilityConfiguration struct {
 	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-	MaxAllowedFailuresPerInterval int `pulumi:"maxAllowedFailuresPerInterval"`
+	MaxAllowedFailuresPerInterval *int `pulumi:"maxAllowedFailuresPerInterval"`
 	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-	MinAllowedRunsPerInterval int `pulumi:"minAllowedRunsPerInterval"`
+	MinAllowedRunsPerInterval *int `pulumi:"minAllowedRunsPerInterval"`
 }
 
 // GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput is an input type that accepts GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs and GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput values.
@@ -7886,9 +6757,9 @@ type GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput interface {
 
 type GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs struct {
 	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-	MaxAllowedFailuresPerInterval pulumi.IntInput `pulumi:"maxAllowedFailuresPerInterval"`
+	MaxAllowedFailuresPerInterval pulumi.IntPtrInput `pulumi:"maxAllowedFailuresPerInterval"`
 	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-	MinAllowedRunsPerInterval pulumi.IntInput `pulumi:"minAllowedRunsPerInterval"`
+	MinAllowedRunsPerInterval pulumi.IntPtrInput `pulumi:"minAllowedRunsPerInterval"`
 }
 
 func (GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs) ElementType() reflect.Type {
@@ -7901,12 +6772,6 @@ func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs) ToGetMoni
 
 func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemAvailabilityConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemAvailabilityConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray and GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput values.
@@ -7934,12 +6799,6 @@ func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray) ToGetMon
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemAvailabilityConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemAvailabilityConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) ElementType() reflect.Type {
@@ -7954,24 +6813,18 @@ func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) ToGetMo
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemAvailabilityConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemAvailabilityConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) int {
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) *int {
 		return v.MaxAllowedFailuresPerInterval
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) int {
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) *int {
 		return v.MinAllowedRunsPerInterval
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -7988,12 +6841,6 @@ func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) To
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemAvailabilityConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemAvailabilityConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemAvailabilityConfiguration {
 		return vs[0].([]GetMonitorsMonitorCollectionItemAvailabilityConfiguration)[vs[1].(int)]
@@ -8004,35 +6851,35 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	// Details for client certificate.
 	ClientCertificateDetails []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// Information about the DNS settings.
 	DnsConfigurations []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
-	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
+	IsCertificateValidationEnabled *bool `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
-	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
+	IsDefaultSnapshotEnabled *bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
-	IsFailureRetried bool `pulumi:"isFailureRetried"`
+	IsFailureRetried *bool `pulumi:"isFailureRetried"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
-	IsRedirectionEnabled bool `pulumi:"isRedirectionEnabled"`
+	IsRedirectionEnabled *bool `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations []GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails []GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
-	ReqAuthenticationScheme string `pulumi:"reqAuthenticationScheme"`
+	ReqAuthenticationScheme *string `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders []GetMonitorsMonitorCollectionItemConfigurationRequestHeader `pulumi:"requestHeaders"`
 	// Request HTTP method.
-	RequestMethod string `pulumi:"requestMethod"`
+	RequestMethod *string `pulumi:"requestMethod"`
 	// Request post body content.
-	RequestPostBody string `pulumi:"requestPostBody"`
+	RequestPostBody *string `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams []GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam `pulumi:"requestQueryParams"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-	VerifyResponseContent string `pulumi:"verifyResponseContent"`
+	VerifyResponseContent *string `pulumi:"verifyResponseContent"`
 	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts []GetMonitorsMonitorCollectionItemConfigurationVerifyText `pulumi:"verifyTexts"`
 }
@@ -8052,35 +6899,35 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	// Details for client certificate.
 	ClientCertificateDetails GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// Information about the DNS settings.
 	DnsConfigurations GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
-	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
+	IsCertificateValidationEnabled pulumi.BoolPtrInput `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
-	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
+	IsDefaultSnapshotEnabled pulumi.BoolPtrInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
-	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
+	IsFailureRetried pulumi.BoolPtrInput `pulumi:"isFailureRetried"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
-	IsRedirectionEnabled pulumi.BoolInput `pulumi:"isRedirectionEnabled"`
+	IsRedirectionEnabled pulumi.BoolPtrInput `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayInput `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
-	ReqAuthenticationScheme pulumi.StringInput `pulumi:"reqAuthenticationScheme"`
+	ReqAuthenticationScheme pulumi.StringPtrInput `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayInput `pulumi:"requestHeaders"`
 	// Request HTTP method.
-	RequestMethod pulumi.StringInput `pulumi:"requestMethod"`
+	RequestMethod pulumi.StringPtrInput `pulumi:"requestMethod"`
 	// Request post body content.
-	RequestPostBody pulumi.StringInput `pulumi:"requestPostBody"`
+	RequestPostBody pulumi.StringPtrInput `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayInput `pulumi:"requestQueryParams"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-	VerifyResponseContent pulumi.StringInput `pulumi:"verifyResponseContent"`
+	VerifyResponseContent pulumi.StringPtrInput `pulumi:"verifyResponseContent"`
 	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayInput `pulumi:"verifyTexts"`
 }
@@ -8095,12 +6942,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationArgs) ToGetMonitorsMonitorC
 
 func (i GetMonitorsMonitorCollectionItemConfigurationArgs) ToGetMonitorsMonitorCollectionItemConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationArray and GetMonitorsMonitorCollectionItemConfigurationArrayOutput values.
@@ -8128,12 +6969,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationArray) ToGetMonitorsMonitor
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationOutput) ElementType() reflect.Type {
@@ -8148,12 +6983,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ToGetMonitorsMonito
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details for client certificate.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ClientCertificateDetails() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail {
@@ -8162,8 +6991,8 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ClientCertificateDe
 }
 
 // Type of configuration.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // Information about the DNS settings.
@@ -8174,23 +7003,23 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DnsConfigurations()
 }
 
 // If certificate validation is enabled, then the call will fail in case of certification errors.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsCertificateValidationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsCertificateValidationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If disabled, auto snapshots are not collected.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If isFailureRetried is enabled, then a failed call will be retried.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsFailureRetried() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsFailureRetried }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsFailureRetried() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *bool { return v.IsFailureRetried }).(pulumi.BoolPtrOutput)
 }
 
 // If redirection is enabled, then redirects will be allowed while accessing target URL.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsRedirectionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsRedirectionEnabled }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsRedirectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *bool { return v.IsRedirectionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Details of the network configuration.
@@ -8208,8 +7037,8 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ReqAuthenticationDe
 }
 
 // Request HTTP authentication scheme.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ReqAuthenticationScheme() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.ReqAuthenticationScheme }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ReqAuthenticationScheme() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *string { return v.ReqAuthenticationScheme }).(pulumi.StringPtrOutput)
 }
 
 // List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
@@ -8220,13 +7049,13 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RequestHeaders() Ge
 }
 
 // Request HTTP method.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RequestMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.RequestMethod }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RequestMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *string { return v.RequestMethod }).(pulumi.StringPtrOutput)
 }
 
 // Request post body content.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RequestPostBody() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.RequestPostBody }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RequestPostBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *string { return v.RequestPostBody }).(pulumi.StringPtrOutput)
 }
 
 // List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
@@ -8242,8 +7071,8 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) VerifyResponseCodes
 }
 
 // Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-func (o GetMonitorsMonitorCollectionItemConfigurationOutput) VerifyResponseContent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.VerifyResponseContent }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) VerifyResponseContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) *string { return v.VerifyResponseContent }).(pulumi.StringPtrOutput)
 }
 
 // Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
@@ -8265,12 +7094,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationArrayOutput) ToGetMonitorsM
 
 func (o GetMonitorsMonitorCollectionItemConfigurationArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationArrayOutput {
 	return o
-}
-
-func (o GetMonitorsMonitorCollectionItemConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitorsMonitorCollectionItemConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationOutput {
@@ -8316,12 +7139,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput` via:
 //
@@ -8347,12 +7164,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ElementType() reflect.Type {
@@ -8365,12 +7176,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutp
 
 func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput {
 	return o
-}
-
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Client certificate in PEM format.
@@ -8401,12 +7206,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArra
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail)[vs[1].(int)]
@@ -8415,9 +7214,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArra
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate struct {
 	// Content of the private key file.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// Name of the private key file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput values.
@@ -8433,9 +7232,9 @@ type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientC
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs struct {
 	// Content of the private key file.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// Name of the private key file.
-	FileName pulumi.StringInput `pulumi:"fileName"`
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs) ElementType() reflect.Type {
@@ -8448,12 +7247,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClie
 
 func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput values.
@@ -8481,12 +7274,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClie
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) ElementType() reflect.Type {
@@ -8501,24 +7288,18 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClie
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Content of the private key file.
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate) *string {
 		return v.Content
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the private key file.
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate) *string {
 		return v.FileName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -8535,12 +7316,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClie
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate)[vs[1].(int)]
@@ -8549,9 +7324,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClie
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey struct {
 	// Content of the private key file.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// Name of the private key file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput values.
@@ -8567,9 +7342,9 @@ type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivate
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs struct {
 	// Content of the private key file.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// Name of the private key file.
-	FileName pulumi.StringInput `pulumi:"fileName"`
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs) ElementType() reflect.Type {
@@ -8582,12 +7357,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPriv
 
 func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput values.
@@ -8615,12 +7384,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPriv
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) ElementType() reflect.Type {
@@ -8635,24 +7398,18 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPriv
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Content of the private key file.
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey) *string {
 		return v.Content
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the private key file.
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey) *string {
 		return v.FileName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput struct{ *pulumi.OutputState }
@@ -8669,12 +7426,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPriv
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey)[vs[1].(int)]
@@ -8683,9 +7434,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPriv
 
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
-	IsOverrideDns bool `pulumi:"isOverrideDns"`
+	IsOverrideDns *bool `pulumi:"isOverrideDns"`
 	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-	OverrideDnsIp string `pulumi:"overrideDnsIp"`
+	OverrideDnsIp *string `pulumi:"overrideDnsIp"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs and GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput values.
@@ -8701,9 +7452,9 @@ type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput interfac
 
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
-	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
+	IsOverrideDns pulumi.BoolPtrInput `pulumi:"isOverrideDns"`
 	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
+	OverrideDnsIp pulumi.StringPtrInput `pulumi:"overrideDnsIp"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs) ElementType() reflect.Type {
@@ -8716,12 +7467,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs) ToGet
 
 func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray and GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput values.
@@ -8749,12 +7494,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) ElementType() reflect.Type {
@@ -8769,20 +7508,14 @@ func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) ToG
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If isOverrideDns is true, then DNS settings will be overridden.
-func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) *bool { return v.IsOverrideDns }).(pulumi.BoolPtrOutput)
 }
 
 // Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) *string { return v.OverrideDnsIp }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -8799,12 +7532,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration)[vs[1].(int)]
@@ -8813,15 +7540,15 @@ func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput
 
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration struct {
 	// Number of hops.
-	NumberOfHops int `pulumi:"numberOfHops"`
+	NumberOfHops *int `pulumi:"numberOfHops"`
 	// Type of probe mode when TCP protocol is selected.
-	ProbeMode string `pulumi:"probeMode"`
+	ProbeMode *string `pulumi:"probeMode"`
 	// Number of probes per hop.
-	ProbePerHop int `pulumi:"probePerHop"`
+	ProbePerHop *int `pulumi:"probePerHop"`
 	// Type of protocol.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Number of probe packets sent out simultaneously.
-	TransmissionRate int `pulumi:"transmissionRate"`
+	TransmissionRate *int `pulumi:"transmissionRate"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs and GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput values.
@@ -8837,15 +7564,15 @@ type GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput inte
 
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs struct {
 	// Number of hops.
-	NumberOfHops pulumi.IntInput `pulumi:"numberOfHops"`
+	NumberOfHops pulumi.IntPtrInput `pulumi:"numberOfHops"`
 	// Type of probe mode when TCP protocol is selected.
-	ProbeMode pulumi.StringInput `pulumi:"probeMode"`
+	ProbeMode pulumi.StringPtrInput `pulumi:"probeMode"`
 	// Number of probes per hop.
-	ProbePerHop pulumi.IntInput `pulumi:"probePerHop"`
+	ProbePerHop pulumi.IntPtrInput `pulumi:"probePerHop"`
 	// Type of protocol.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Number of probe packets sent out simultaneously.
-	TransmissionRate pulumi.IntInput `pulumi:"transmissionRate"`
+	TransmissionRate pulumi.IntPtrInput `pulumi:"transmissionRate"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -8858,12 +7585,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs) T
 
 func (i GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs) ToGetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray and GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput values.
@@ -8891,12 +7612,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -8911,37 +7626,31 @@ func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput)
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of hops.
-func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) NumberOfHops() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) int { return v.NumberOfHops }).(pulumi.IntOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) NumberOfHops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) *int { return v.NumberOfHops }).(pulumi.IntPtrOutput)
 }
 
 // Type of probe mode when TCP protocol is selected.
-func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) ProbeMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) string { return v.ProbeMode }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) ProbeMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) *string { return v.ProbeMode }).(pulumi.StringPtrOutput)
 }
 
 // Number of probes per hop.
-func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) ProbePerHop() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) int { return v.ProbePerHop }).(pulumi.IntOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) ProbePerHop() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) *int { return v.ProbePerHop }).(pulumi.IntPtrOutput)
 }
 
 // Type of protocol.
-func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Number of probe packets sent out simultaneously.
-func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) TransmissionRate() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) int {
+func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput) TransmissionRate() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration) *int {
 		return v.TransmissionRate
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -8958,12 +7667,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOu
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration)[vs[1].(int)]
@@ -8974,19 +7677,19 @@ type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail struct
 	// List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	AuthHeaders []GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader `pulumi:"authHeaders"`
 	// Request method.
-	AuthRequestMethod string `pulumi:"authRequestMethod"`
+	AuthRequestMethod *string `pulumi:"authRequestMethod"`
 	// Request post body.
-	AuthRequestPostBody string `pulumi:"authRequestPostBody"`
+	AuthRequestPostBody *string `pulumi:"authRequestPostBody"`
 	// Authentication token.
-	AuthToken string `pulumi:"authToken"`
+	AuthToken *string `pulumi:"authToken"`
 	// URL to get authentication token.
-	AuthUrl string `pulumi:"authUrl"`
+	AuthUrl *string `pulumi:"authUrl"`
 	// User name for authentication.
-	AuthUserName string `pulumi:"authUserName"`
+	AuthUserName *string `pulumi:"authUserName"`
 	// User password for authentication.
-	AuthUserPassword string `pulumi:"authUserPassword"`
+	AuthUserPassword *string `pulumi:"authUserPassword"`
 	// Request HTTP OAuth scheme.
-	OauthScheme string `pulumi:"oauthScheme"`
+	OauthScheme *string `pulumi:"oauthScheme"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput values.
@@ -9004,19 +7707,19 @@ type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs st
 	// List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	AuthHeaders GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayInput `pulumi:"authHeaders"`
 	// Request method.
-	AuthRequestMethod pulumi.StringInput `pulumi:"authRequestMethod"`
+	AuthRequestMethod pulumi.StringPtrInput `pulumi:"authRequestMethod"`
 	// Request post body.
-	AuthRequestPostBody pulumi.StringInput `pulumi:"authRequestPostBody"`
+	AuthRequestPostBody pulumi.StringPtrInput `pulumi:"authRequestPostBody"`
 	// Authentication token.
-	AuthToken pulumi.StringInput `pulumi:"authToken"`
+	AuthToken pulumi.StringPtrInput `pulumi:"authToken"`
 	// URL to get authentication token.
-	AuthUrl pulumi.StringInput `pulumi:"authUrl"`
+	AuthUrl pulumi.StringPtrInput `pulumi:"authUrl"`
 	// User name for authentication.
-	AuthUserName pulumi.StringInput `pulumi:"authUserName"`
+	AuthUserName pulumi.StringPtrInput `pulumi:"authUserName"`
 	// User password for authentication.
-	AuthUserPassword pulumi.StringInput `pulumi:"authUserPassword"`
+	AuthUserPassword pulumi.StringPtrInput `pulumi:"authUserPassword"`
 	// Request HTTP OAuth scheme.
-	OauthScheme pulumi.StringInput `pulumi:"oauthScheme"`
+	OauthScheme pulumi.StringPtrInput `pulumi:"oauthScheme"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs) ElementType() reflect.Type {
@@ -9029,12 +7732,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs
 
 func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArray and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutput values.
@@ -9062,12 +7759,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) ElementType() reflect.Type {
@@ -9082,12 +7773,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutp
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthHeaders() GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) []GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader {
@@ -9096,50 +7781,50 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutp
 }
 
 // Request method.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthRequestMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthRequestMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) *string {
 		return v.AuthRequestMethod
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Request post body.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthRequestPostBody() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthRequestPostBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) *string {
 		return v.AuthRequestPostBody
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Authentication token.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) *string {
 		return v.AuthToken
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // URL to get authentication token.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string { return v.AuthUrl }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) *string { return v.AuthUrl }).(pulumi.StringPtrOutput)
 }
 
 // User name for authentication.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) *string {
 		return v.AuthUserName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // User password for authentication.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUserPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUserPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) *string {
 		return v.AuthUserPassword
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Request HTTP OAuth scheme.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) OauthScheme() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) OauthScheme() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) *string {
 		return v.OauthScheme
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutput struct{ *pulumi.OutputState }
@@ -9156,12 +7841,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArra
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail)[vs[1].(int)]
@@ -9170,9 +7849,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArra
 
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader struct {
 	// Name of the header.
-	HeaderName string `pulumi:"headerName"`
+	HeaderName *string `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue string `pulumi:"headerValue"`
+	HeaderValue *string `pulumi:"headerValue"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput values.
@@ -9188,9 +7867,9 @@ type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHea
 
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs struct {
 	// Name of the header.
-	HeaderName pulumi.StringInput `pulumi:"headerName"`
+	HeaderName pulumi.StringPtrInput `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue pulumi.StringInput `pulumi:"headerValue"`
+	HeaderValue pulumi.StringPtrInput `pulumi:"headerValue"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs) ElementType() reflect.Type {
@@ -9203,12 +7882,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuth
 
 func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs) ToGetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArray and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutput values.
@@ -9236,12 +7909,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuth
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput) ElementType() reflect.Type {
@@ -9256,24 +7923,18 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuth
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the header.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader) *string {
 		return v.HeaderName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Value of the header.
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader) string {
+func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput) HeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader) *string {
 		return v.HeaderValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -9290,12 +7951,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuth
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader)[vs[1].(int)]
@@ -9304,9 +7959,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuth
 
 type GetMonitorsMonitorCollectionItemConfigurationRequestHeader struct {
 	// Name of the header.
-	HeaderName string `pulumi:"headerName"`
+	HeaderName *string `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue string `pulumi:"headerValue"`
+	HeaderValue *string `pulumi:"headerValue"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationRequestHeaderInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs and GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput values.
@@ -9322,9 +7977,9 @@ type GetMonitorsMonitorCollectionItemConfigurationRequestHeaderInput interface {
 
 type GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs struct {
 	// Name of the header.
-	HeaderName pulumi.StringInput `pulumi:"headerName"`
+	HeaderName pulumi.StringPtrInput `pulumi:"headerName"`
 	// Value of the header.
-	HeaderValue pulumi.StringInput `pulumi:"headerValue"`
+	HeaderValue pulumi.StringPtrInput `pulumi:"headerValue"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs) ElementType() reflect.Type {
@@ -9337,12 +7992,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs) ToGetMon
 
 func (i GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs) ToGetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestHeader] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestHeader]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArray and GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput values.
@@ -9370,12 +8019,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArray) ToGetMo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestHeader] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestHeader]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput) ElementType() reflect.Type {
@@ -9390,20 +8033,14 @@ func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput) ToGetM
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestHeader] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the header.
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput) HeaderName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestHeader) string { return v.HeaderName }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput) HeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestHeader) *string { return v.HeaderName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the header.
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput) HeaderValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestHeader) string { return v.HeaderValue }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput) HeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestHeader) *string { return v.HeaderValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -9420,12 +8057,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput) T
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestHeader] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationRequestHeader {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationRequestHeader)[vs[1].(int)]
@@ -9434,9 +8065,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput) I
 
 type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam struct {
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs and GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput values.
@@ -9452,9 +8083,9 @@ type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamInput interfa
 
 type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs struct {
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs) ElementType() reflect.Type {
@@ -9467,12 +8098,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs) ToGe
 
 func (i GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs) ToGetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArray and GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput values.
@@ -9500,12 +8125,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput) ElementType() reflect.Type {
@@ -9520,20 +8139,14 @@ func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput) To
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the parameter.
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput struct{ *pulumi.OutputState }
@@ -9550,12 +8163,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutpu
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam)[vs[1].(int)]
@@ -9564,7 +8171,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutpu
 
 type GetMonitorsMonitorCollectionItemConfigurationVerifyText struct {
 	// Verification text in the response.
-	Text string `pulumi:"text"`
+	Text *string `pulumi:"text"`
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationVerifyTextInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs and GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput values.
@@ -9580,7 +8187,7 @@ type GetMonitorsMonitorCollectionItemConfigurationVerifyTextInput interface {
 
 type GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs struct {
 	// Verification text in the response.
-	Text pulumi.StringInput `pulumi:"text"`
+	Text pulumi.StringPtrInput `pulumi:"text"`
 }
 
 func (GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs) ElementType() reflect.Type {
@@ -9593,12 +8200,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs) ToGetMonito
 
 func (i GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs) ToGetMonitorsMonitorCollectionItemConfigurationVerifyTextOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationVerifyText] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationVerifyText]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationVerifyTextOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationVerifyTextArray and GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput values.
@@ -9626,12 +8227,6 @@ func (i GetMonitorsMonitorCollectionItemConfigurationVerifyTextArray) ToGetMonit
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemConfigurationVerifyTextArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationVerifyText] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationVerifyText]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput) ElementType() reflect.Type {
@@ -9646,15 +8241,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput) ToGetMoni
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationVerifyText] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemConfigurationVerifyText]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Verification text in the response.
-func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput) Text() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationVerifyText) string { return v.Text }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput) Text() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationVerifyText) *string { return v.Text }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput struct{ *pulumi.OutputState }
@@ -9671,12 +8260,6 @@ func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput) ToGe
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationVerifyText] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemConfigurationVerifyText]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationVerifyText {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationVerifyText)[vs[1].(int)]
@@ -9685,9 +8268,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput) Inde
 
 type GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule struct {
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 // GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput is an input type that accepts GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs and GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput values.
@@ -9703,9 +8286,9 @@ type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput interface {
 
 type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs struct {
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
 func (GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs) ElementType() reflect.Type {
@@ -9718,12 +8301,6 @@ func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs) ToGetMoni
 
 func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray and GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput values.
@@ -9751,12 +8328,6 @@ func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray) ToGetMon
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ElementType() reflect.Type {
@@ -9771,20 +8342,14 @@ func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ToGetMo
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -9801,12 +8366,6 @@ func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) To
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
 		return vs[0].([]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule)[vs[1].(int)]
@@ -9815,15 +8374,15 @@ func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) In
 
 type GetMonitorsMonitorCollectionItemScriptParameter struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten bool `pulumi:"isOverwritten"`
+	IsOverwritten *bool `pulumi:"isOverwritten"`
 	// Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-	IsSecret bool `pulumi:"isSecret"`
+	IsSecret *bool `pulumi:"isSecret"`
 	// Details of the script parameter that can be used to overwrite the parameter present in the script.
 	MonitorScriptParameters []GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter `pulumi:"monitorScriptParameters"`
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetMonitorsMonitorCollectionItemScriptParameterInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterArgs and GetMonitorsMonitorCollectionItemScriptParameterOutput values.
@@ -9839,15 +8398,15 @@ type GetMonitorsMonitorCollectionItemScriptParameterInput interface {
 
 type GetMonitorsMonitorCollectionItemScriptParameterArgs struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten pulumi.BoolInput `pulumi:"isOverwritten"`
+	IsOverwritten pulumi.BoolPtrInput `pulumi:"isOverwritten"`
 	// Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-	IsSecret pulumi.BoolInput `pulumi:"isSecret"`
+	IsSecret pulumi.BoolPtrInput `pulumi:"isSecret"`
 	// Details of the script parameter that can be used to overwrite the parameter present in the script.
 	MonitorScriptParameters GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayInput `pulumi:"monitorScriptParameters"`
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetMonitorsMonitorCollectionItemScriptParameterArgs) ElementType() reflect.Type {
@@ -9860,12 +8419,6 @@ func (i GetMonitorsMonitorCollectionItemScriptParameterArgs) ToGetMonitorsMonito
 
 func (i GetMonitorsMonitorCollectionItemScriptParameterArgs) ToGetMonitorsMonitorCollectionItemScriptParameterOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemScriptParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemScriptParameterOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameter] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameter]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemScriptParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemScriptParameterArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterArray and GetMonitorsMonitorCollectionItemScriptParameterArrayOutput values.
@@ -9893,12 +8446,6 @@ func (i GetMonitorsMonitorCollectionItemScriptParameterArray) ToGetMonitorsMonit
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemScriptParameterArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameter] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameter]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemScriptParameterOutput) ElementType() reflect.Type {
@@ -9913,20 +8460,14 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) ToGetMonitorsMoni
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameter] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If parameter value is default or overwritten.
-func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) IsOverwritten() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) bool { return v.IsOverwritten }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) IsOverwritten() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) *bool { return v.IsOverwritten }).(pulumi.BoolPtrOutput)
 }
 
 // Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) GetIsSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) bool { return v.IsSecret }).(pulumi.BoolOutput)
+func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) GetIsSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) *bool { return v.IsSecret }).(pulumi.BoolPtrOutput)
 }
 
 // Details of the script parameter that can be used to overwrite the parameter present in the script.
@@ -9937,13 +8478,13 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) MonitorScriptPara
 }
 
 // Name of the parameter.
-func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemScriptParameterArrayOutput struct{ *pulumi.OutputState }
@@ -9960,12 +8501,6 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterArrayOutput) ToGetMonitor
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameter] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemScriptParameterArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemScriptParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemScriptParameter {
 		return vs[0].([]GetMonitorsMonitorCollectionItemScriptParameter)[vs[1].(int)]
@@ -9974,9 +8509,9 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterArrayOutput) Index(i pulu
 
 type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter struct {
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs and GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput values.
@@ -9992,9 +8527,9 @@ type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterInput 
 
 type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs struct {
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs) ElementType() reflect.Type {
@@ -10007,12 +8542,6 @@ func (i GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArg
 
 func (i GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs) ToGetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArray and GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput values.
@@ -10040,12 +8569,6 @@ func (i GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput) ElementType() reflect.Type {
@@ -10060,24 +8583,18 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOut
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the parameter.
-func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter) string {
+func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter) *string {
 		return v.ParamName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter) string {
+func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter) *string {
 		return v.ParamValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput struct{ *pulumi.OutputState }
@@ -10094,12 +8611,6 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArr
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter {
 		return vs[0].([]GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter)[vs[1].(int)]
@@ -10108,9 +8619,9 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArr
 
 type GetMonitorsMonitorCollectionItemVantagePoint struct {
 	// A filter to return only the resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Name of the vantage point.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetMonitorsMonitorCollectionItemVantagePointInput is an input type that accepts GetMonitorsMonitorCollectionItemVantagePointArgs and GetMonitorsMonitorCollectionItemVantagePointOutput values.
@@ -10126,9 +8637,9 @@ type GetMonitorsMonitorCollectionItemVantagePointInput interface {
 
 type GetMonitorsMonitorCollectionItemVantagePointArgs struct {
 	// A filter to return only the resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Name of the vantage point.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetMonitorsMonitorCollectionItemVantagePointArgs) ElementType() reflect.Type {
@@ -10141,12 +8652,6 @@ func (i GetMonitorsMonitorCollectionItemVantagePointArgs) ToGetMonitorsMonitorCo
 
 func (i GetMonitorsMonitorCollectionItemVantagePointArgs) ToGetMonitorsMonitorCollectionItemVantagePointOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemVantagePointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemVantagePointOutput)
-}
-
-func (i GetMonitorsMonitorCollectionItemVantagePointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemVantagePoint] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemVantagePoint]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemVantagePointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitorsMonitorCollectionItemVantagePointArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemVantagePointArray and GetMonitorsMonitorCollectionItemVantagePointArrayOutput values.
@@ -10174,12 +8679,6 @@ func (i GetMonitorsMonitorCollectionItemVantagePointArray) ToGetMonitorsMonitorC
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemVantagePointArrayOutput)
 }
 
-func (i GetMonitorsMonitorCollectionItemVantagePointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemVantagePoint] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemVantagePoint]{
-		OutputState: i.ToGetMonitorsMonitorCollectionItemVantagePointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitorsMonitorCollectionItemVantagePointOutput struct{ *pulumi.OutputState }
 
 func (GetMonitorsMonitorCollectionItemVantagePointOutput) ElementType() reflect.Type {
@@ -10194,20 +8693,14 @@ func (o GetMonitorsMonitorCollectionItemVantagePointOutput) ToGetMonitorsMonitor
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemVantagePointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsMonitorCollectionItemVantagePoint] {
-	return pulumix.Output[GetMonitorsMonitorCollectionItemVantagePoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only the resources that match the entire display name.
-func (o GetMonitorsMonitorCollectionItemVantagePointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemVantagePointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the vantage point.
-func (o GetMonitorsMonitorCollectionItemVantagePointOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+func (o GetMonitorsMonitorCollectionItemVantagePointOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitorsMonitorCollectionItemVantagePointArrayOutput struct{ *pulumi.OutputState }
@@ -10224,12 +8717,6 @@ func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) ToGetMonitorsMo
 	return o
 }
 
-func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitorsMonitorCollectionItemVantagePoint] {
-	return pulumix.Output[[]GetMonitorsMonitorCollectionItemVantagePoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemVantagePointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemVantagePoint {
 		return vs[0].([]GetMonitorsMonitorCollectionItemVantagePoint)[vs[1].(int)]
@@ -10238,13 +8725,13 @@ func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) Index(i pulumi.
 
 type GetResultResultDataSet struct {
 	// Data content in byte format. Example: Zip or Screenshot.
-	ByteContent string `pulumi:"byteContent"`
+	ByteContent *string `pulumi:"byteContent"`
 	// Name of the data.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Data content in string format. Example: HAR.
-	StringContent string `pulumi:"stringContent"`
+	StringContent *string `pulumi:"stringContent"`
 	// The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	Timestamp string `pulumi:"timestamp"`
+	Timestamp *string `pulumi:"timestamp"`
 }
 
 // GetResultResultDataSetInput is an input type that accepts GetResultResultDataSetArgs and GetResultResultDataSetOutput values.
@@ -10260,13 +8747,13 @@ type GetResultResultDataSetInput interface {
 
 type GetResultResultDataSetArgs struct {
 	// Data content in byte format. Example: Zip or Screenshot.
-	ByteContent pulumi.StringInput `pulumi:"byteContent"`
+	ByteContent pulumi.StringPtrInput `pulumi:"byteContent"`
 	// Name of the data.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Data content in string format. Example: HAR.
-	StringContent pulumi.StringInput `pulumi:"stringContent"`
+	StringContent pulumi.StringPtrInput `pulumi:"stringContent"`
 	// The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
 }
 
 func (GetResultResultDataSetArgs) ElementType() reflect.Type {
@@ -10279,12 +8766,6 @@ func (i GetResultResultDataSetArgs) ToGetResultResultDataSetOutput() GetResultRe
 
 func (i GetResultResultDataSetArgs) ToGetResultResultDataSetOutputWithContext(ctx context.Context) GetResultResultDataSetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResultResultDataSetOutput)
-}
-
-func (i GetResultResultDataSetArgs) ToOutput(ctx context.Context) pulumix.Output[GetResultResultDataSet] {
-	return pulumix.Output[GetResultResultDataSet]{
-		OutputState: i.ToGetResultResultDataSetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResultResultDataSetArrayInput is an input type that accepts GetResultResultDataSetArray and GetResultResultDataSetArrayOutput values.
@@ -10312,12 +8793,6 @@ func (i GetResultResultDataSetArray) ToGetResultResultDataSetArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetResultResultDataSetArrayOutput)
 }
 
-func (i GetResultResultDataSetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResultResultDataSet] {
-	return pulumix.Output[[]GetResultResultDataSet]{
-		OutputState: i.ToGetResultResultDataSetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResultResultDataSetOutput struct{ *pulumi.OutputState }
 
 func (GetResultResultDataSetOutput) ElementType() reflect.Type {
@@ -10332,30 +8807,24 @@ func (o GetResultResultDataSetOutput) ToGetResultResultDataSetOutputWithContext(
 	return o
 }
 
-func (o GetResultResultDataSetOutput) ToOutput(ctx context.Context) pulumix.Output[GetResultResultDataSet] {
-	return pulumix.Output[GetResultResultDataSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Data content in byte format. Example: Zip or Screenshot.
-func (o GetResultResultDataSetOutput) ByteContent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResultResultDataSet) string { return v.ByteContent }).(pulumi.StringOutput)
+func (o GetResultResultDataSetOutput) ByteContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResultResultDataSet) *string { return v.ByteContent }).(pulumi.StringPtrOutput)
 }
 
 // Name of the data.
-func (o GetResultResultDataSetOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResultResultDataSet) string { return v.Name }).(pulumi.StringOutput)
+func (o GetResultResultDataSetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResultResultDataSet) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Data content in string format. Example: HAR.
-func (o GetResultResultDataSetOutput) StringContent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResultResultDataSet) string { return v.StringContent }).(pulumi.StringOutput)
+func (o GetResultResultDataSetOutput) StringContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResultResultDataSet) *string { return v.StringContent }).(pulumi.StringPtrOutput)
 }
 
 // The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o GetResultResultDataSetOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResultResultDataSet) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetResultResultDataSetOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResultResultDataSet) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 type GetResultResultDataSetArrayOutput struct{ *pulumi.OutputState }
@@ -10372,12 +8841,6 @@ func (o GetResultResultDataSetArrayOutput) ToGetResultResultDataSetArrayOutputWi
 	return o
 }
 
-func (o GetResultResultDataSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResultResultDataSet] {
-	return pulumix.Output[[]GetResultResultDataSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResultResultDataSetArrayOutput) Index(i pulumi.IntInput) GetResultResultDataSetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResultResultDataSet {
 		return vs[0].([]GetResultResultDataSet)[vs[1].(int)]
@@ -10386,13 +8849,13 @@ func (o GetResultResultDataSetArrayOutput) Index(i pulumi.IntInput) GetResultRes
 
 type GetScriptMonitorStatusCountMap struct {
 	// Number of disabled monitors using the script.
-	Disabled int `pulumi:"disabled"`
+	Disabled *int `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled int `pulumi:"enabled"`
+	Enabled *int `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid int `pulumi:"invalid"`
+	Invalid *int `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total int `pulumi:"total"`
+	Total *int `pulumi:"total"`
 }
 
 // GetScriptMonitorStatusCountMapInput is an input type that accepts GetScriptMonitorStatusCountMap and GetScriptMonitorStatusCountMapOutput values.
@@ -10408,13 +8871,13 @@ type GetScriptMonitorStatusCountMapInput interface {
 
 type GetScriptMonitorStatusCountMapArgs struct {
 	// Number of disabled monitors using the script.
-	Disabled pulumi.IntInput `pulumi:"disabled"`
+	Disabled pulumi.IntPtrInput `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled pulumi.IntInput `pulumi:"enabled"`
+	Enabled pulumi.IntPtrInput `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid pulumi.IntInput `pulumi:"invalid"`
+	Invalid pulumi.IntPtrInput `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total pulumi.IntInput `pulumi:"total"`
+	Total pulumi.IntPtrInput `pulumi:"total"`
 }
 
 func (GetScriptMonitorStatusCountMapArgs) ElementType() reflect.Type {
@@ -10427,12 +8890,6 @@ func (i GetScriptMonitorStatusCountMapArgs) ToGetScriptMonitorStatusCountMapOutp
 
 func (i GetScriptMonitorStatusCountMapArgs) ToGetScriptMonitorStatusCountMapOutputWithContext(ctx context.Context) GetScriptMonitorStatusCountMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptMonitorStatusCountMapOutput)
-}
-
-func (i GetScriptMonitorStatusCountMapArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptMonitorStatusCountMap] {
-	return pulumix.Output[GetScriptMonitorStatusCountMap]{
-		OutputState: i.ToGetScriptMonitorStatusCountMapOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScriptMonitorStatusCountMapArrayInput is an input type that accepts GetScriptMonitorStatusCountMapArray and GetScriptMonitorStatusCountMapArrayOutput values.
@@ -10460,12 +8917,6 @@ func (i GetScriptMonitorStatusCountMapArray) ToGetScriptMonitorStatusCountMapArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptMonitorStatusCountMapArrayOutput)
 }
 
-func (i GetScriptMonitorStatusCountMapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptMonitorStatusCountMap] {
-	return pulumix.Output[[]GetScriptMonitorStatusCountMap]{
-		OutputState: i.ToGetScriptMonitorStatusCountMapArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
 
 func (GetScriptMonitorStatusCountMapOutput) ElementType() reflect.Type {
@@ -10480,30 +8931,24 @@ func (o GetScriptMonitorStatusCountMapOutput) ToGetScriptMonitorStatusCountMapOu
 	return o
 }
 
-func (o GetScriptMonitorStatusCountMapOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptMonitorStatusCountMap] {
-	return pulumix.Output[GetScriptMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of disabled monitors using the script.
-func (o GetScriptMonitorStatusCountMapOutput) Disabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) int { return v.Disabled }).(pulumi.IntOutput)
+func (o GetScriptMonitorStatusCountMapOutput) Disabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) *int { return v.Disabled }).(pulumi.IntPtrOutput)
 }
 
 // Number of enabled monitors using the script.
-func (o GetScriptMonitorStatusCountMapOutput) Enabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) int { return v.Enabled }).(pulumi.IntOutput)
+func (o GetScriptMonitorStatusCountMapOutput) Enabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) *int { return v.Enabled }).(pulumi.IntPtrOutput)
 }
 
 // Number of invalid monitors using the script.
-func (o GetScriptMonitorStatusCountMapOutput) Invalid() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) int { return v.Invalid }).(pulumi.IntOutput)
+func (o GetScriptMonitorStatusCountMapOutput) Invalid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) *int { return v.Invalid }).(pulumi.IntPtrOutput)
 }
 
 // Total number of monitors using the script.
-func (o GetScriptMonitorStatusCountMapOutput) Total() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) int { return v.Total }).(pulumi.IntOutput)
+func (o GetScriptMonitorStatusCountMapOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptMonitorStatusCountMap) *int { return v.Total }).(pulumi.IntPtrOutput)
 }
 
 type GetScriptMonitorStatusCountMapArrayOutput struct{ *pulumi.OutputState }
@@ -10520,12 +8965,6 @@ func (o GetScriptMonitorStatusCountMapArrayOutput) ToGetScriptMonitorStatusCount
 	return o
 }
 
-func (o GetScriptMonitorStatusCountMapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptMonitorStatusCountMap] {
-	return pulumix.Output[[]GetScriptMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) GetScriptMonitorStatusCountMapOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScriptMonitorStatusCountMap {
 		return vs[0].([]GetScriptMonitorStatusCountMap)[vs[1].(int)]
@@ -10534,13 +8973,13 @@ func (o GetScriptMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) GetS
 
 type GetScriptParameter struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten bool `pulumi:"isOverwritten"`
+	IsOverwritten *bool `pulumi:"isOverwritten"`
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret bool `pulumi:"isSecret"`
+	IsSecret *bool `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 	// Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
 	ScriptParameters []GetScriptParameterScriptParameter `pulumi:"scriptParameters"`
 }
@@ -10558,13 +8997,13 @@ type GetScriptParameterInput interface {
 
 type GetScriptParameterArgs struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten pulumi.BoolInput `pulumi:"isOverwritten"`
+	IsOverwritten pulumi.BoolPtrInput `pulumi:"isOverwritten"`
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret pulumi.BoolInput `pulumi:"isSecret"`
+	IsSecret pulumi.BoolPtrInput `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 	// Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
 	ScriptParameters GetScriptParameterScriptParameterArrayInput `pulumi:"scriptParameters"`
 }
@@ -10579,12 +9018,6 @@ func (i GetScriptParameterArgs) ToGetScriptParameterOutput() GetScriptParameterO
 
 func (i GetScriptParameterArgs) ToGetScriptParameterOutputWithContext(ctx context.Context) GetScriptParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptParameterOutput)
-}
-
-func (i GetScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptParameter] {
-	return pulumix.Output[GetScriptParameter]{
-		OutputState: i.ToGetScriptParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScriptParameterArrayInput is an input type that accepts GetScriptParameterArray and GetScriptParameterArrayOutput values.
@@ -10612,12 +9045,6 @@ func (i GetScriptParameterArray) ToGetScriptParameterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptParameterArrayOutput)
 }
 
-func (i GetScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptParameter] {
-	return pulumix.Output[[]GetScriptParameter]{
-		OutputState: i.ToGetScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (GetScriptParameterOutput) ElementType() reflect.Type {
@@ -10632,30 +9059,24 @@ func (o GetScriptParameterOutput) ToGetScriptParameterOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptParameter] {
-	return pulumix.Output[GetScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If parameter value is default or overwritten.
-func (o GetScriptParameterOutput) IsOverwritten() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetScriptParameter) bool { return v.IsOverwritten }).(pulumi.BoolOutput)
+func (o GetScriptParameterOutput) IsOverwritten() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScriptParameter) *bool { return v.IsOverwritten }).(pulumi.BoolPtrOutput)
 }
 
 // If the parameter value is secret and should be kept confidential, then set isSecret to true.
-func (o GetScriptParameterOutput) GetIsSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetScriptParameter) bool { return v.IsSecret }).(pulumi.BoolOutput)
+func (o GetScriptParameterOutput) GetIsSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScriptParameter) *bool { return v.IsSecret }).(pulumi.BoolPtrOutput)
 }
 
 // Name of the parameter.
-func (o GetScriptParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptParameter) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetScriptParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptParameter) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 // Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
@@ -10677,12 +9098,6 @@ func (o GetScriptParameterArrayOutput) ToGetScriptParameterArrayOutputWithContex
 	return o
 }
 
-func (o GetScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptParameter] {
-	return pulumix.Output[[]GetScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptParameterArrayOutput) Index(i pulumi.IntInput) GetScriptParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScriptParameter {
 		return vs[0].([]GetScriptParameter)[vs[1].(int)]
@@ -10691,11 +9106,11 @@ func (o GetScriptParameterArrayOutput) Index(i pulumi.IntInput) GetScriptParamet
 
 type GetScriptParameterScriptParameter struct {
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret bool `pulumi:"isSecret"`
+	IsSecret *bool `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetScriptParameterScriptParameterInput is an input type that accepts GetScriptParameterScriptParameterArgs and GetScriptParameterScriptParameterOutput values.
@@ -10711,11 +9126,11 @@ type GetScriptParameterScriptParameterInput interface {
 
 type GetScriptParameterScriptParameterArgs struct {
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret pulumi.BoolInput `pulumi:"isSecret"`
+	IsSecret pulumi.BoolPtrInput `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetScriptParameterScriptParameterArgs) ElementType() reflect.Type {
@@ -10728,12 +9143,6 @@ func (i GetScriptParameterScriptParameterArgs) ToGetScriptParameterScriptParamet
 
 func (i GetScriptParameterScriptParameterArgs) ToGetScriptParameterScriptParameterOutputWithContext(ctx context.Context) GetScriptParameterScriptParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptParameterScriptParameterOutput)
-}
-
-func (i GetScriptParameterScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptParameterScriptParameter] {
-	return pulumix.Output[GetScriptParameterScriptParameter]{
-		OutputState: i.ToGetScriptParameterScriptParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScriptParameterScriptParameterArrayInput is an input type that accepts GetScriptParameterScriptParameterArray and GetScriptParameterScriptParameterArrayOutput values.
@@ -10761,12 +9170,6 @@ func (i GetScriptParameterScriptParameterArray) ToGetScriptParameterScriptParame
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptParameterScriptParameterArrayOutput)
 }
 
-func (i GetScriptParameterScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptParameterScriptParameter] {
-	return pulumix.Output[[]GetScriptParameterScriptParameter]{
-		OutputState: i.ToGetScriptParameterScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptParameterScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (GetScriptParameterScriptParameterOutput) ElementType() reflect.Type {
@@ -10781,25 +9184,19 @@ func (o GetScriptParameterScriptParameterOutput) ToGetScriptParameterScriptParam
 	return o
 }
 
-func (o GetScriptParameterScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptParameterScriptParameter] {
-	return pulumix.Output[GetScriptParameterScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If the parameter value is secret and should be kept confidential, then set isSecret to true.
-func (o GetScriptParameterScriptParameterOutput) GetIsSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetScriptParameterScriptParameter) bool { return v.IsSecret }).(pulumi.BoolOutput)
+func (o GetScriptParameterScriptParameterOutput) GetIsSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScriptParameterScriptParameter) *bool { return v.IsSecret }).(pulumi.BoolPtrOutput)
 }
 
 // Name of the parameter.
-func (o GetScriptParameterScriptParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptParameterScriptParameter) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetScriptParameterScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptParameterScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetScriptParameterScriptParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptParameterScriptParameter) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetScriptParameterScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptParameterScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 type GetScriptParameterScriptParameterArrayOutput struct{ *pulumi.OutputState }
@@ -10814,12 +9211,6 @@ func (o GetScriptParameterScriptParameterArrayOutput) ToGetScriptParameterScript
 
 func (o GetScriptParameterScriptParameterArrayOutput) ToGetScriptParameterScriptParameterArrayOutputWithContext(ctx context.Context) GetScriptParameterScriptParameterArrayOutput {
 	return o
-}
-
-func (o GetScriptParameterScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptParameterScriptParameter] {
-	return pulumix.Output[[]GetScriptParameterScriptParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScriptParameterScriptParameterArrayOutput) Index(i pulumi.IntInput) GetScriptParameterScriptParameterOutput {
@@ -10863,12 +9254,6 @@ func (i GetScriptsFilterArgs) ToGetScriptsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsFilterOutput)
 }
 
-func (i GetScriptsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptsFilter] {
-	return pulumix.Output[GetScriptsFilter]{
-		OutputState: i.ToGetScriptsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetScriptsFilterArrayInput is an input type that accepts GetScriptsFilterArray and GetScriptsFilterArrayOutput values.
 // You can construct a concrete instance of `GetScriptsFilterArrayInput` via:
 //
@@ -10894,12 +9279,6 @@ func (i GetScriptsFilterArray) ToGetScriptsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsFilterArrayOutput)
 }
 
-func (i GetScriptsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsFilter] {
-	return pulumix.Output[[]GetScriptsFilter]{
-		OutputState: i.ToGetScriptsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetScriptsFilterOutput) ElementType() reflect.Type {
@@ -10912,12 +9291,6 @@ func (o GetScriptsFilterOutput) ToGetScriptsFilterOutput() GetScriptsFilterOutpu
 
 func (o GetScriptsFilterOutput) ToGetScriptsFilterOutputWithContext(ctx context.Context) GetScriptsFilterOutput {
 	return o
-}
-
-func (o GetScriptsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptsFilter] {
-	return pulumix.Output[GetScriptsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScriptsFilterOutput) Name() pulumi.StringOutput {
@@ -10944,12 +9317,6 @@ func (o GetScriptsFilterArrayOutput) ToGetScriptsFilterArrayOutput() GetScriptsF
 
 func (o GetScriptsFilterArrayOutput) ToGetScriptsFilterArrayOutputWithContext(ctx context.Context) GetScriptsFilterArrayOutput {
 	return o
-}
-
-func (o GetScriptsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsFilter] {
-	return pulumix.Output[[]GetScriptsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScriptsFilterArrayOutput) Index(i pulumi.IntInput) GetScriptsFilterOutput {
@@ -10989,12 +9356,6 @@ func (i GetScriptsScriptCollectionArgs) ToGetScriptsScriptCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionOutput)
 }
 
-func (i GetScriptsScriptCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollection] {
-	return pulumix.Output[GetScriptsScriptCollection]{
-		OutputState: i.ToGetScriptsScriptCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetScriptsScriptCollectionArrayInput is an input type that accepts GetScriptsScriptCollectionArray and GetScriptsScriptCollectionArrayOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionArrayInput` via:
 //
@@ -11020,12 +9381,6 @@ func (i GetScriptsScriptCollectionArray) ToGetScriptsScriptCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionArrayOutput)
 }
 
-func (i GetScriptsScriptCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollection] {
-	return pulumix.Output[[]GetScriptsScriptCollection]{
-		OutputState: i.ToGetScriptsScriptCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptsScriptCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetScriptsScriptCollectionOutput) ElementType() reflect.Type {
@@ -11038,12 +9393,6 @@ func (o GetScriptsScriptCollectionOutput) ToGetScriptsScriptCollectionOutput() G
 
 func (o GetScriptsScriptCollectionOutput) ToGetScriptsScriptCollectionOutputWithContext(ctx context.Context) GetScriptsScriptCollectionOutput {
 	return o
-}
-
-func (o GetScriptsScriptCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollection] {
-	return pulumix.Output[GetScriptsScriptCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScriptsScriptCollectionOutput) Items() GetScriptsScriptCollectionItemArrayOutput {
@@ -11064,12 +9413,6 @@ func (o GetScriptsScriptCollectionArrayOutput) ToGetScriptsScriptCollectionArray
 	return o
 }
 
-func (o GetScriptsScriptCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollection] {
-	return pulumix.Output[[]GetScriptsScriptCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptsScriptCollectionArrayOutput) Index(i pulumi.IntInput) GetScriptsScriptCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScriptsScriptCollection {
 		return vs[0].([]GetScriptsScriptCollection)[vs[1].(int)]
@@ -11078,33 +9421,33 @@ func (o GetScriptsScriptCollectionArrayOutput) Index(i pulumi.IntInput) GetScrip
 
 type GetScriptsScriptCollectionItem struct {
 	// The APM domain ID the request is intended for.
-	ApmDomainId string `pulumi:"apmDomainId"`
+	ApmDomainId *string `pulumi:"apmDomainId"`
 	// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// File name of the uploaded script content.
-	ContentFileName string `pulumi:"contentFileName"`
+	ContentFileName *string `pulumi:"contentFileName"`
 	// Size of the script content.
-	ContentSizeInBytes int `pulumi:"contentSizeInBytes"`
+	ContentSizeInBytes *int `pulumi:"contentSizeInBytes"`
 	// A filter to return only resources that match the content type given.
-	ContentType string `pulumi:"contentType"`
+	ContentType *string `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps []GetScriptsScriptCollectionItemMonitorStatusCountMap `pulumi:"monitorStatusCountMaps"`
 	// List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
 	Parameters []GetScriptsScriptCollectionItemParameter `pulumi:"parameters"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The time the script was uploaded.
-	TimeUploaded string `pulumi:"timeUploaded"`
+	TimeUploaded *string `pulumi:"timeUploaded"`
 }
 
 // GetScriptsScriptCollectionItemInput is an input type that accepts GetScriptsScriptCollectionItemArgs and GetScriptsScriptCollectionItemOutput values.
@@ -11120,33 +9463,33 @@ type GetScriptsScriptCollectionItemInput interface {
 
 type GetScriptsScriptCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
-	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	ApmDomainId pulumi.StringPtrInput `pulumi:"apmDomainId"`
 	// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// File name of the uploaded script content.
-	ContentFileName pulumi.StringInput `pulumi:"contentFileName"`
+	ContentFileName pulumi.StringPtrInput `pulumi:"contentFileName"`
 	// Size of the script content.
-	ContentSizeInBytes pulumi.IntInput `pulumi:"contentSizeInBytes"`
+	ContentSizeInBytes pulumi.IntPtrInput `pulumi:"contentSizeInBytes"`
 	// A filter to return only resources that match the content type given.
-	ContentType pulumi.StringInput `pulumi:"contentType"`
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps GetScriptsScriptCollectionItemMonitorStatusCountMapArrayInput `pulumi:"monitorStatusCountMaps"`
 	// List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
 	Parameters GetScriptsScriptCollectionItemParameterArrayInput `pulumi:"parameters"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The time the script was uploaded.
-	TimeUploaded pulumi.StringInput `pulumi:"timeUploaded"`
+	TimeUploaded pulumi.StringPtrInput `pulumi:"timeUploaded"`
 }
 
 func (GetScriptsScriptCollectionItemArgs) ElementType() reflect.Type {
@@ -11159,12 +9502,6 @@ func (i GetScriptsScriptCollectionItemArgs) ToGetScriptsScriptCollectionItemOutp
 
 func (i GetScriptsScriptCollectionItemArgs) ToGetScriptsScriptCollectionItemOutputWithContext(ctx context.Context) GetScriptsScriptCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemOutput)
-}
-
-func (i GetScriptsScriptCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItem] {
-	return pulumix.Output[GetScriptsScriptCollectionItem]{
-		OutputState: i.ToGetScriptsScriptCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScriptsScriptCollectionItemArrayInput is an input type that accepts GetScriptsScriptCollectionItemArray and GetScriptsScriptCollectionItemArrayOutput values.
@@ -11192,12 +9529,6 @@ func (i GetScriptsScriptCollectionItemArray) ToGetScriptsScriptCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemArrayOutput)
 }
 
-func (i GetScriptsScriptCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItem] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItem]{
-		OutputState: i.ToGetScriptsScriptCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptsScriptCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetScriptsScriptCollectionItemOutput) ElementType() reflect.Type {
@@ -11212,35 +9543,29 @@ func (o GetScriptsScriptCollectionItemOutput) ToGetScriptsScriptCollectionItemOu
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItem] {
-	return pulumix.Output[GetScriptsScriptCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The APM domain ID the request is intended for.
-func (o GetScriptsScriptCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) ApmDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.ApmDomainId }).(pulumi.StringPtrOutput)
 }
 
 // The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-func (o GetScriptsScriptCollectionItemOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.Content }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // File name of the uploaded script content.
-func (o GetScriptsScriptCollectionItemOutput) ContentFileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.ContentFileName }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) ContentFileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.ContentFileName }).(pulumi.StringPtrOutput)
 }
 
 // Size of the script content.
-func (o GetScriptsScriptCollectionItemOutput) ContentSizeInBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) int { return v.ContentSizeInBytes }).(pulumi.IntOutput)
+func (o GetScriptsScriptCollectionItemOutput) ContentSizeInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *int { return v.ContentSizeInBytes }).(pulumi.IntPtrOutput)
 }
 
 // A filter to return only resources that match the content type given.
-func (o GetScriptsScriptCollectionItemOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -11249,8 +9574,8 @@ func (o GetScriptsScriptCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only the resources that match the entire display name.
-func (o GetScriptsScriptCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -11259,8 +9584,8 @@ func (o GetScriptsScriptCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-func (o GetScriptsScriptCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -11276,18 +9601,18 @@ func (o GetScriptsScriptCollectionItemOutput) Parameters() GetScriptsScriptColle
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetScriptsScriptCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o GetScriptsScriptCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The time the script was uploaded.
-func (o GetScriptsScriptCollectionItemOutput) TimeUploaded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.TimeUploaded }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemOutput) TimeUploaded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) *string { return v.TimeUploaded }).(pulumi.StringPtrOutput)
 }
 
 type GetScriptsScriptCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11304,12 +9629,6 @@ func (o GetScriptsScriptCollectionItemArrayOutput) ToGetScriptsScriptCollectionI
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItem] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptsScriptCollectionItemArrayOutput) Index(i pulumi.IntInput) GetScriptsScriptCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScriptsScriptCollectionItem {
 		return vs[0].([]GetScriptsScriptCollectionItem)[vs[1].(int)]
@@ -11318,13 +9637,13 @@ func (o GetScriptsScriptCollectionItemArrayOutput) Index(i pulumi.IntInput) GetS
 
 type GetScriptsScriptCollectionItemMonitorStatusCountMap struct {
 	// Number of disabled monitors using the script.
-	Disabled int `pulumi:"disabled"`
+	Disabled *int `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled int `pulumi:"enabled"`
+	Enabled *int `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid int `pulumi:"invalid"`
+	Invalid *int `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total int `pulumi:"total"`
+	Total *int `pulumi:"total"`
 }
 
 // GetScriptsScriptCollectionItemMonitorStatusCountMapInput is an input type that accepts GetScriptsScriptCollectionItemMonitorStatusCountMap and GetScriptsScriptCollectionItemMonitorStatusCountMapOutput values.
@@ -11340,13 +9659,13 @@ type GetScriptsScriptCollectionItemMonitorStatusCountMapInput interface {
 
 type GetScriptsScriptCollectionItemMonitorStatusCountMapArgs struct {
 	// Number of disabled monitors using the script.
-	Disabled pulumi.IntInput `pulumi:"disabled"`
+	Disabled pulumi.IntPtrInput `pulumi:"disabled"`
 	// Number of enabled monitors using the script.
-	Enabled pulumi.IntInput `pulumi:"enabled"`
+	Enabled pulumi.IntPtrInput `pulumi:"enabled"`
 	// Number of invalid monitors using the script.
-	Invalid pulumi.IntInput `pulumi:"invalid"`
+	Invalid pulumi.IntPtrInput `pulumi:"invalid"`
 	// Total number of monitors using the script.
-	Total pulumi.IntInput `pulumi:"total"`
+	Total pulumi.IntPtrInput `pulumi:"total"`
 }
 
 func (GetScriptsScriptCollectionItemMonitorStatusCountMapArgs) ElementType() reflect.Type {
@@ -11359,12 +9678,6 @@ func (i GetScriptsScriptCollectionItemMonitorStatusCountMapArgs) ToGetScriptsScr
 
 func (i GetScriptsScriptCollectionItemMonitorStatusCountMapArgs) ToGetScriptsScriptCollectionItemMonitorStatusCountMapOutputWithContext(ctx context.Context) GetScriptsScriptCollectionItemMonitorStatusCountMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemMonitorStatusCountMapOutput)
-}
-
-func (i GetScriptsScriptCollectionItemMonitorStatusCountMapArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[GetScriptsScriptCollectionItemMonitorStatusCountMap]{
-		OutputState: i.ToGetScriptsScriptCollectionItemMonitorStatusCountMapOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScriptsScriptCollectionItemMonitorStatusCountMapArrayInput is an input type that accepts GetScriptsScriptCollectionItemMonitorStatusCountMapArray and GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput values.
@@ -11392,12 +9705,6 @@ func (i GetScriptsScriptCollectionItemMonitorStatusCountMapArray) ToGetScriptsSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput)
 }
 
-func (i GetScriptsScriptCollectionItemMonitorStatusCountMapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItemMonitorStatusCountMap]{
-		OutputState: i.ToGetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptsScriptCollectionItemMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
 
 func (GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) ElementType() reflect.Type {
@@ -11412,30 +9719,24 @@ func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) ToGetScriptsS
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[GetScriptsScriptCollectionItemMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of disabled monitors using the script.
-func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Disabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) int { return v.Disabled }).(pulumi.IntOutput)
+func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Disabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) *int { return v.Disabled }).(pulumi.IntPtrOutput)
 }
 
 // Number of enabled monitors using the script.
-func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Enabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) int { return v.Enabled }).(pulumi.IntOutput)
+func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Enabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) *int { return v.Enabled }).(pulumi.IntPtrOutput)
 }
 
 // Number of invalid monitors using the script.
-func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Invalid() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) int { return v.Invalid }).(pulumi.IntOutput)
+func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Invalid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) *int { return v.Invalid }).(pulumi.IntPtrOutput)
 }
 
 // Total number of monitors using the script.
-func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Total() pulumi.IntOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) int { return v.Total }).(pulumi.IntOutput)
+func (o GetScriptsScriptCollectionItemMonitorStatusCountMapOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemMonitorStatusCountMap) *int { return v.Total }).(pulumi.IntPtrOutput)
 }
 
 type GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput struct{ *pulumi.OutputState }
@@ -11452,12 +9753,6 @@ func (o GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput) ToGetScr
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItemMonitorStatusCountMap] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItemMonitorStatusCountMap]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) GetScriptsScriptCollectionItemMonitorStatusCountMapOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScriptsScriptCollectionItemMonitorStatusCountMap {
 		return vs[0].([]GetScriptsScriptCollectionItemMonitorStatusCountMap)[vs[1].(int)]
@@ -11466,13 +9761,13 @@ func (o GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput) Index(i 
 
 type GetScriptsScriptCollectionItemParameter struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten bool `pulumi:"isOverwritten"`
+	IsOverwritten *bool `pulumi:"isOverwritten"`
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret bool `pulumi:"isSecret"`
+	IsSecret *bool `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 	// Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
 	ScriptParameters []GetScriptsScriptCollectionItemParameterScriptParameter `pulumi:"scriptParameters"`
 }
@@ -11490,13 +9785,13 @@ type GetScriptsScriptCollectionItemParameterInput interface {
 
 type GetScriptsScriptCollectionItemParameterArgs struct {
 	// If parameter value is default or overwritten.
-	IsOverwritten pulumi.BoolInput `pulumi:"isOverwritten"`
+	IsOverwritten pulumi.BoolPtrInput `pulumi:"isOverwritten"`
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret pulumi.BoolInput `pulumi:"isSecret"`
+	IsSecret pulumi.BoolPtrInput `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 	// Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
 	ScriptParameters GetScriptsScriptCollectionItemParameterScriptParameterArrayInput `pulumi:"scriptParameters"`
 }
@@ -11511,12 +9806,6 @@ func (i GetScriptsScriptCollectionItemParameterArgs) ToGetScriptsScriptCollectio
 
 func (i GetScriptsScriptCollectionItemParameterArgs) ToGetScriptsScriptCollectionItemParameterOutputWithContext(ctx context.Context) GetScriptsScriptCollectionItemParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemParameterOutput)
-}
-
-func (i GetScriptsScriptCollectionItemParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItemParameter] {
-	return pulumix.Output[GetScriptsScriptCollectionItemParameter]{
-		OutputState: i.ToGetScriptsScriptCollectionItemParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScriptsScriptCollectionItemParameterArrayInput is an input type that accepts GetScriptsScriptCollectionItemParameterArray and GetScriptsScriptCollectionItemParameterArrayOutput values.
@@ -11544,12 +9833,6 @@ func (i GetScriptsScriptCollectionItemParameterArray) ToGetScriptsScriptCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemParameterArrayOutput)
 }
 
-func (i GetScriptsScriptCollectionItemParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItemParameter] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItemParameter]{
-		OutputState: i.ToGetScriptsScriptCollectionItemParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptsScriptCollectionItemParameterOutput struct{ *pulumi.OutputState }
 
 func (GetScriptsScriptCollectionItemParameterOutput) ElementType() reflect.Type {
@@ -11564,30 +9847,24 @@ func (o GetScriptsScriptCollectionItemParameterOutput) ToGetScriptsScriptCollect
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItemParameter] {
-	return pulumix.Output[GetScriptsScriptCollectionItemParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If parameter value is default or overwritten.
-func (o GetScriptsScriptCollectionItemParameterOutput) IsOverwritten() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) bool { return v.IsOverwritten }).(pulumi.BoolOutput)
+func (o GetScriptsScriptCollectionItemParameterOutput) IsOverwritten() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) *bool { return v.IsOverwritten }).(pulumi.BoolPtrOutput)
 }
 
 // If the parameter value is secret and should be kept confidential, then set isSecret to true.
-func (o GetScriptsScriptCollectionItemParameterOutput) GetIsSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) bool { return v.IsSecret }).(pulumi.BoolOutput)
+func (o GetScriptsScriptCollectionItemParameterOutput) GetIsSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) *bool { return v.IsSecret }).(pulumi.BoolPtrOutput)
 }
 
 // Name of the parameter.
-func (o GetScriptsScriptCollectionItemParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetScriptsScriptCollectionItemParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 // Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
@@ -11611,12 +9888,6 @@ func (o GetScriptsScriptCollectionItemParameterArrayOutput) ToGetScriptsScriptCo
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItemParameter] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItemParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptsScriptCollectionItemParameterArrayOutput) Index(i pulumi.IntInput) GetScriptsScriptCollectionItemParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScriptsScriptCollectionItemParameter {
 		return vs[0].([]GetScriptsScriptCollectionItemParameter)[vs[1].(int)]
@@ -11625,11 +9896,11 @@ func (o GetScriptsScriptCollectionItemParameterArrayOutput) Index(i pulumi.IntIn
 
 type GetScriptsScriptCollectionItemParameterScriptParameter struct {
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret bool `pulumi:"isSecret"`
+	IsSecret *bool `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName string `pulumi:"paramName"`
+	ParamName *string `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue string `pulumi:"paramValue"`
+	ParamValue *string `pulumi:"paramValue"`
 }
 
 // GetScriptsScriptCollectionItemParameterScriptParameterInput is an input type that accepts GetScriptsScriptCollectionItemParameterScriptParameterArgs and GetScriptsScriptCollectionItemParameterScriptParameterOutput values.
@@ -11645,11 +9916,11 @@ type GetScriptsScriptCollectionItemParameterScriptParameterInput interface {
 
 type GetScriptsScriptCollectionItemParameterScriptParameterArgs struct {
 	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
-	IsSecret pulumi.BoolInput `pulumi:"isSecret"`
+	IsSecret pulumi.BoolPtrInput `pulumi:"isSecret"`
 	// Name of the parameter.
-	ParamName pulumi.StringInput `pulumi:"paramName"`
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// Value of the parameter.
-	ParamValue pulumi.StringInput `pulumi:"paramValue"`
+	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
 func (GetScriptsScriptCollectionItemParameterScriptParameterArgs) ElementType() reflect.Type {
@@ -11662,12 +9933,6 @@ func (i GetScriptsScriptCollectionItemParameterScriptParameterArgs) ToGetScripts
 
 func (i GetScriptsScriptCollectionItemParameterScriptParameterArgs) ToGetScriptsScriptCollectionItemParameterScriptParameterOutputWithContext(ctx context.Context) GetScriptsScriptCollectionItemParameterScriptParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemParameterScriptParameterOutput)
-}
-
-func (i GetScriptsScriptCollectionItemParameterScriptParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItemParameterScriptParameter] {
-	return pulumix.Output[GetScriptsScriptCollectionItemParameterScriptParameter]{
-		OutputState: i.ToGetScriptsScriptCollectionItemParameterScriptParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScriptsScriptCollectionItemParameterScriptParameterArrayInput is an input type that accepts GetScriptsScriptCollectionItemParameterScriptParameterArray and GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput values.
@@ -11695,12 +9960,6 @@ func (i GetScriptsScriptCollectionItemParameterScriptParameterArray) ToGetScript
 	return pulumi.ToOutputWithContext(ctx, i).(GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput)
 }
 
-func (i GetScriptsScriptCollectionItemParameterScriptParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItemParameterScriptParameter] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItemParameterScriptParameter]{
-		OutputState: i.ToGetScriptsScriptCollectionItemParameterScriptParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScriptsScriptCollectionItemParameterScriptParameterOutput struct{ *pulumi.OutputState }
 
 func (GetScriptsScriptCollectionItemParameterScriptParameterOutput) ElementType() reflect.Type {
@@ -11715,25 +9974,19 @@ func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) ToGetScrip
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptsScriptCollectionItemParameterScriptParameter] {
-	return pulumix.Output[GetScriptsScriptCollectionItemParameterScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If the parameter value is secret and should be kept confidential, then set isSecret to true.
-func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) GetIsSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameterScriptParameter) bool { return v.IsSecret }).(pulumi.BoolOutput)
+func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) GetIsSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameterScriptParameter) *bool { return v.IsSecret }).(pulumi.BoolPtrOutput)
 }
 
 // Name of the parameter.
-func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) ParamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameterScriptParameter) string { return v.ParamName }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameterScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
 // Value of the parameter.
-func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) ParamValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameterScriptParameter) string { return v.ParamValue }).(pulumi.StringOutput)
+func (o GetScriptsScriptCollectionItemParameterScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItemParameterScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
 
 type GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput struct{ *pulumi.OutputState }
@@ -11750,12 +10003,6 @@ func (o GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput) ToGet
 	return o
 }
 
-func (o GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScriptsScriptCollectionItemParameterScriptParameter] {
-	return pulumix.Output[[]GetScriptsScriptCollectionItemParameterScriptParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput) Index(i pulumi.IntInput) GetScriptsScriptCollectionItemParameterScriptParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScriptsScriptCollectionItemParameterScriptParameter {
 		return vs[0].([]GetScriptsScriptCollectionItemParameterScriptParameter)[vs[1].(int)]
@@ -11764,11 +10011,11 @@ func (o GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput) Index
 
 type GetVantagePointItem struct {
 	// A filter to return only the resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Geographic summary of a vantage point.
 	Geos []GetVantagePointItemGeo `pulumi:"geos"`
 	// A filter to return only the resources that match the entire name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetVantagePointItemInput is an input type that accepts GetVantagePointItemArgs and GetVantagePointItemOutput values.
@@ -11784,11 +10031,11 @@ type GetVantagePointItemInput interface {
 
 type GetVantagePointItemArgs struct {
 	// A filter to return only the resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Geographic summary of a vantage point.
 	Geos GetVantagePointItemGeoArrayInput `pulumi:"geos"`
 	// A filter to return only the resources that match the entire name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetVantagePointItemArgs) ElementType() reflect.Type {
@@ -11801,12 +10048,6 @@ func (i GetVantagePointItemArgs) ToGetVantagePointItemOutput() GetVantagePointIt
 
 func (i GetVantagePointItemArgs) ToGetVantagePointItemOutputWithContext(ctx context.Context) GetVantagePointItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointItemOutput)
-}
-
-func (i GetVantagePointItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointItem] {
-	return pulumix.Output[GetVantagePointItem]{
-		OutputState: i.ToGetVantagePointItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVantagePointItemArrayInput is an input type that accepts GetVantagePointItemArray and GetVantagePointItemArrayOutput values.
@@ -11834,12 +10075,6 @@ func (i GetVantagePointItemArray) ToGetVantagePointItemArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointItemArrayOutput)
 }
 
-func (i GetVantagePointItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointItem] {
-	return pulumix.Output[[]GetVantagePointItem]{
-		OutputState: i.ToGetVantagePointItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointItemOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointItemOutput) ElementType() reflect.Type {
@@ -11854,15 +10089,9 @@ func (o GetVantagePointItemOutput) ToGetVantagePointItemOutputWithContext(ctx co
 	return o
 }
 
-func (o GetVantagePointItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointItem] {
-	return pulumix.Output[GetVantagePointItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only the resources that match the entire display name.
-func (o GetVantagePointItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVantagePointItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Geographic summary of a vantage point.
@@ -11871,8 +10100,8 @@ func (o GetVantagePointItemOutput) Geos() GetVantagePointItemGeoArrayOutput {
 }
 
 // A filter to return only the resources that match the entire name.
-func (o GetVantagePointItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetVantagePointItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetVantagePointItemArrayOutput struct{ *pulumi.OutputState }
@@ -11889,12 +10118,6 @@ func (o GetVantagePointItemArrayOutput) ToGetVantagePointItemArrayOutputWithCont
 	return o
 }
 
-func (o GetVantagePointItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointItem] {
-	return pulumix.Output[[]GetVantagePointItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVantagePointItemArrayOutput) Index(i pulumi.IntInput) GetVantagePointItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVantagePointItem {
 		return vs[0].([]GetVantagePointItem)[vs[1].(int)]
@@ -11903,17 +10126,17 @@ func (o GetVantagePointItemArrayOutput) Index(i pulumi.IntInput) GetVantagePoint
 
 type GetVantagePointItemGeo struct {
 	// The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-	AdminDivCode string `pulumi:"adminDivCode"`
+	AdminDivCode *string `pulumi:"adminDivCode"`
 	// Common English-language name for the city.
-	CityName string `pulumi:"cityName"`
+	CityName *string `pulumi:"cityName"`
 	// The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-	CountryCode string `pulumi:"countryCode"`
+	CountryCode *string `pulumi:"countryCode"`
 	// The common English-language name for the country.
-	CountryName string `pulumi:"countryName"`
+	CountryName *string `pulumi:"countryName"`
 	// Degrees north of the Equator.
-	Latitude float64 `pulumi:"latitude"`
+	Latitude *float64 `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
-	Longitude float64 `pulumi:"longitude"`
+	Longitude *float64 `pulumi:"longitude"`
 }
 
 // GetVantagePointItemGeoInput is an input type that accepts GetVantagePointItemGeoArgs and GetVantagePointItemGeoOutput values.
@@ -11929,17 +10152,17 @@ type GetVantagePointItemGeoInput interface {
 
 type GetVantagePointItemGeoArgs struct {
 	// The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-	AdminDivCode pulumi.StringInput `pulumi:"adminDivCode"`
+	AdminDivCode pulumi.StringPtrInput `pulumi:"adminDivCode"`
 	// Common English-language name for the city.
-	CityName pulumi.StringInput `pulumi:"cityName"`
+	CityName pulumi.StringPtrInput `pulumi:"cityName"`
 	// The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	CountryCode pulumi.StringPtrInput `pulumi:"countryCode"`
 	// The common English-language name for the country.
-	CountryName pulumi.StringInput `pulumi:"countryName"`
+	CountryName pulumi.StringPtrInput `pulumi:"countryName"`
 	// Degrees north of the Equator.
-	Latitude pulumi.Float64Input `pulumi:"latitude"`
+	Latitude pulumi.Float64PtrInput `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
-	Longitude pulumi.Float64Input `pulumi:"longitude"`
+	Longitude pulumi.Float64PtrInput `pulumi:"longitude"`
 }
 
 func (GetVantagePointItemGeoArgs) ElementType() reflect.Type {
@@ -11952,12 +10175,6 @@ func (i GetVantagePointItemGeoArgs) ToGetVantagePointItemGeoOutput() GetVantageP
 
 func (i GetVantagePointItemGeoArgs) ToGetVantagePointItemGeoOutputWithContext(ctx context.Context) GetVantagePointItemGeoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointItemGeoOutput)
-}
-
-func (i GetVantagePointItemGeoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointItemGeo] {
-	return pulumix.Output[GetVantagePointItemGeo]{
-		OutputState: i.ToGetVantagePointItemGeoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVantagePointItemGeoArrayInput is an input type that accepts GetVantagePointItemGeoArray and GetVantagePointItemGeoArrayOutput values.
@@ -11985,12 +10202,6 @@ func (i GetVantagePointItemGeoArray) ToGetVantagePointItemGeoArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointItemGeoArrayOutput)
 }
 
-func (i GetVantagePointItemGeoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointItemGeo] {
-	return pulumix.Output[[]GetVantagePointItemGeo]{
-		OutputState: i.ToGetVantagePointItemGeoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointItemGeoOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointItemGeoOutput) ElementType() reflect.Type {
@@ -12005,40 +10216,34 @@ func (o GetVantagePointItemGeoOutput) ToGetVantagePointItemGeoOutputWithContext(
 	return o
 }
 
-func (o GetVantagePointItemGeoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointItemGeo] {
-	return pulumix.Output[GetVantagePointItemGeo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-func (o GetVantagePointItemGeoOutput) AdminDivCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointItemGeo) string { return v.AdminDivCode }).(pulumi.StringOutput)
+func (o GetVantagePointItemGeoOutput) AdminDivCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointItemGeo) *string { return v.AdminDivCode }).(pulumi.StringPtrOutput)
 }
 
 // Common English-language name for the city.
-func (o GetVantagePointItemGeoOutput) CityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointItemGeo) string { return v.CityName }).(pulumi.StringOutput)
+func (o GetVantagePointItemGeoOutput) CityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointItemGeo) *string { return v.CityName }).(pulumi.StringPtrOutput)
 }
 
 // The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-func (o GetVantagePointItemGeoOutput) CountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointItemGeo) string { return v.CountryCode }).(pulumi.StringOutput)
+func (o GetVantagePointItemGeoOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointItemGeo) *string { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
 
 // The common English-language name for the country.
-func (o GetVantagePointItemGeoOutput) CountryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointItemGeo) string { return v.CountryName }).(pulumi.StringOutput)
+func (o GetVantagePointItemGeoOutput) CountryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointItemGeo) *string { return v.CountryName }).(pulumi.StringPtrOutput)
 }
 
 // Degrees north of the Equator.
-func (o GetVantagePointItemGeoOutput) Latitude() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVantagePointItemGeo) float64 { return v.Latitude }).(pulumi.Float64Output)
+func (o GetVantagePointItemGeoOutput) Latitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVantagePointItemGeo) *float64 { return v.Latitude }).(pulumi.Float64PtrOutput)
 }
 
 // Degrees east of the prime meridian.
-func (o GetVantagePointItemGeoOutput) Longitude() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVantagePointItemGeo) float64 { return v.Longitude }).(pulumi.Float64Output)
+func (o GetVantagePointItemGeoOutput) Longitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVantagePointItemGeo) *float64 { return v.Longitude }).(pulumi.Float64PtrOutput)
 }
 
 type GetVantagePointItemGeoArrayOutput struct{ *pulumi.OutputState }
@@ -12053,12 +10258,6 @@ func (o GetVantagePointItemGeoArrayOutput) ToGetVantagePointItemGeoArrayOutput()
 
 func (o GetVantagePointItemGeoArrayOutput) ToGetVantagePointItemGeoArrayOutputWithContext(ctx context.Context) GetVantagePointItemGeoArrayOutput {
 	return o
-}
-
-func (o GetVantagePointItemGeoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointItemGeo] {
-	return pulumix.Output[[]GetVantagePointItemGeo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointItemGeoArrayOutput) Index(i pulumi.IntInput) GetVantagePointItemGeoOutput {
@@ -12104,12 +10303,6 @@ func (i GetVantagePointsFilterArgs) ToGetVantagePointsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsFilterOutput)
 }
 
-func (i GetVantagePointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsFilter] {
-	return pulumix.Output[GetVantagePointsFilter]{
-		OutputState: i.ToGetVantagePointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVantagePointsFilterArrayInput is an input type that accepts GetVantagePointsFilterArray and GetVantagePointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsFilterArrayInput` via:
 //
@@ -12135,12 +10328,6 @@ func (i GetVantagePointsFilterArray) ToGetVantagePointsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsFilterArrayOutput)
 }
 
-func (i GetVantagePointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsFilter] {
-	return pulumix.Output[[]GetVantagePointsFilter]{
-		OutputState: i.ToGetVantagePointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsFilterOutput) ElementType() reflect.Type {
@@ -12153,12 +10340,6 @@ func (o GetVantagePointsFilterOutput) ToGetVantagePointsFilterOutput() GetVantag
 
 func (o GetVantagePointsFilterOutput) ToGetVantagePointsFilterOutputWithContext(ctx context.Context) GetVantagePointsFilterOutput {
 	return o
-}
-
-func (o GetVantagePointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsFilter] {
-	return pulumix.Output[GetVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only the resources that match the entire name.
@@ -12186,12 +10367,6 @@ func (o GetVantagePointsFilterArrayOutput) ToGetVantagePointsFilterArrayOutput()
 
 func (o GetVantagePointsFilterArrayOutput) ToGetVantagePointsFilterArrayOutputWithContext(ctx context.Context) GetVantagePointsFilterArrayOutput {
 	return o
-}
-
-func (o GetVantagePointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsFilter] {
-	return pulumix.Output[[]GetVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) GetVantagePointsFilterOutput {
@@ -12233,12 +10408,6 @@ func (i GetVantagePointsPublicVantagePointCollectionArgs) ToGetVantagePointsPubl
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsPublicVantagePointCollectionOutput)
 }
 
-func (i GetVantagePointsPublicVantagePointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsPublicVantagePointCollection] {
-	return pulumix.Output[GetVantagePointsPublicVantagePointCollection]{
-		OutputState: i.ToGetVantagePointsPublicVantagePointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVantagePointsPublicVantagePointCollectionArrayInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionArray and GetVantagePointsPublicVantagePointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsPublicVantagePointCollectionArrayInput` via:
 //
@@ -12264,12 +10433,6 @@ func (i GetVantagePointsPublicVantagePointCollectionArray) ToGetVantagePointsPub
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsPublicVantagePointCollectionArrayOutput)
 }
 
-func (i GetVantagePointsPublicVantagePointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsPublicVantagePointCollection] {
-	return pulumix.Output[[]GetVantagePointsPublicVantagePointCollection]{
-		OutputState: i.ToGetVantagePointsPublicVantagePointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsPublicVantagePointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsPublicVantagePointCollectionOutput) ElementType() reflect.Type {
@@ -12282,12 +10445,6 @@ func (o GetVantagePointsPublicVantagePointCollectionOutput) ToGetVantagePointsPu
 
 func (o GetVantagePointsPublicVantagePointCollectionOutput) ToGetVantagePointsPublicVantagePointCollectionOutputWithContext(ctx context.Context) GetVantagePointsPublicVantagePointCollectionOutput {
 	return o
-}
-
-func (o GetVantagePointsPublicVantagePointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsPublicVantagePointCollection] {
-	return pulumix.Output[GetVantagePointsPublicVantagePointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of PublicVantagePointSummary items.
@@ -12311,12 +10468,6 @@ func (o GetVantagePointsPublicVantagePointCollectionArrayOutput) ToGetVantagePoi
 	return o
 }
 
-func (o GetVantagePointsPublicVantagePointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsPublicVantagePointCollection] {
-	return pulumix.Output[[]GetVantagePointsPublicVantagePointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVantagePointsPublicVantagePointCollectionArrayOutput) Index(i pulumi.IntInput) GetVantagePointsPublicVantagePointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVantagePointsPublicVantagePointCollection {
 		return vs[0].([]GetVantagePointsPublicVantagePointCollection)[vs[1].(int)]
@@ -12325,11 +10476,11 @@ func (o GetVantagePointsPublicVantagePointCollectionArrayOutput) Index(i pulumi.
 
 type GetVantagePointsPublicVantagePointCollectionItem struct {
 	// A filter to return only the resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Geographic summary of a vantage point.
 	Geos []GetVantagePointsPublicVantagePointCollectionItemGeo `pulumi:"geos"`
 	// A filter to return only the resources that match the entire name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetVantagePointsPublicVantagePointCollectionItemInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemArgs and GetVantagePointsPublicVantagePointCollectionItemOutput values.
@@ -12345,11 +10496,11 @@ type GetVantagePointsPublicVantagePointCollectionItemInput interface {
 
 type GetVantagePointsPublicVantagePointCollectionItemArgs struct {
 	// A filter to return only the resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Geographic summary of a vantage point.
 	Geos GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput `pulumi:"geos"`
 	// A filter to return only the resources that match the entire name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetVantagePointsPublicVantagePointCollectionItemArgs) ElementType() reflect.Type {
@@ -12362,12 +10513,6 @@ func (i GetVantagePointsPublicVantagePointCollectionItemArgs) ToGetVantagePoints
 
 func (i GetVantagePointsPublicVantagePointCollectionItemArgs) ToGetVantagePointsPublicVantagePointCollectionItemOutputWithContext(ctx context.Context) GetVantagePointsPublicVantagePointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsPublicVantagePointCollectionItemOutput)
-}
-
-func (i GetVantagePointsPublicVantagePointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsPublicVantagePointCollectionItem] {
-	return pulumix.Output[GetVantagePointsPublicVantagePointCollectionItem]{
-		OutputState: i.ToGetVantagePointsPublicVantagePointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVantagePointsPublicVantagePointCollectionItemArrayInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemArray and GetVantagePointsPublicVantagePointCollectionItemArrayOutput values.
@@ -12395,12 +10540,6 @@ func (i GetVantagePointsPublicVantagePointCollectionItemArray) ToGetVantagePoint
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsPublicVantagePointCollectionItemArrayOutput)
 }
 
-func (i GetVantagePointsPublicVantagePointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItem] {
-	return pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItem]{
-		OutputState: i.ToGetVantagePointsPublicVantagePointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsPublicVantagePointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsPublicVantagePointCollectionItemOutput) ElementType() reflect.Type {
@@ -12415,15 +10554,9 @@ func (o GetVantagePointsPublicVantagePointCollectionItemOutput) ToGetVantagePoin
 	return o
 }
 
-func (o GetVantagePointsPublicVantagePointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsPublicVantagePointCollectionItem] {
-	return pulumix.Output[GetVantagePointsPublicVantagePointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only the resources that match the entire display name.
-func (o GetVantagePointsPublicVantagePointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVantagePointsPublicVantagePointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Geographic summary of a vantage point.
@@ -12434,8 +10567,8 @@ func (o GetVantagePointsPublicVantagePointCollectionItemOutput) Geos() GetVantag
 }
 
 // A filter to return only the resources that match the entire name.
-func (o GetVantagePointsPublicVantagePointCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetVantagePointsPublicVantagePointCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetVantagePointsPublicVantagePointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -12452,12 +10585,6 @@ func (o GetVantagePointsPublicVantagePointCollectionItemArrayOutput) ToGetVantag
 	return o
 }
 
-func (o GetVantagePointsPublicVantagePointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItem] {
-	return pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVantagePointsPublicVantagePointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVantagePointsPublicVantagePointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVantagePointsPublicVantagePointCollectionItem {
 		return vs[0].([]GetVantagePointsPublicVantagePointCollectionItem)[vs[1].(int)]
@@ -12466,17 +10593,17 @@ func (o GetVantagePointsPublicVantagePointCollectionItemArrayOutput) Index(i pul
 
 type GetVantagePointsPublicVantagePointCollectionItemGeo struct {
 	// The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-	AdminDivCode string `pulumi:"adminDivCode"`
+	AdminDivCode *string `pulumi:"adminDivCode"`
 	// Common English-language name for the city.
-	CityName string `pulumi:"cityName"`
+	CityName *string `pulumi:"cityName"`
 	// The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-	CountryCode string `pulumi:"countryCode"`
+	CountryCode *string `pulumi:"countryCode"`
 	// The common English-language name for the country.
-	CountryName string `pulumi:"countryName"`
+	CountryName *string `pulumi:"countryName"`
 	// Degrees north of the equator.
-	Latitude float64 `pulumi:"latitude"`
+	Latitude *float64 `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
-	Longitude float64 `pulumi:"longitude"`
+	Longitude *float64 `pulumi:"longitude"`
 }
 
 // GetVantagePointsPublicVantagePointCollectionItemGeoInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemGeoArgs and GetVantagePointsPublicVantagePointCollectionItemGeoOutput values.
@@ -12492,17 +10619,17 @@ type GetVantagePointsPublicVantagePointCollectionItemGeoInput interface {
 
 type GetVantagePointsPublicVantagePointCollectionItemGeoArgs struct {
 	// The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-	AdminDivCode pulumi.StringInput `pulumi:"adminDivCode"`
+	AdminDivCode pulumi.StringPtrInput `pulumi:"adminDivCode"`
 	// Common English-language name for the city.
-	CityName pulumi.StringInput `pulumi:"cityName"`
+	CityName pulumi.StringPtrInput `pulumi:"cityName"`
 	// The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	CountryCode pulumi.StringPtrInput `pulumi:"countryCode"`
 	// The common English-language name for the country.
-	CountryName pulumi.StringInput `pulumi:"countryName"`
+	CountryName pulumi.StringPtrInput `pulumi:"countryName"`
 	// Degrees north of the equator.
-	Latitude pulumi.Float64Input `pulumi:"latitude"`
+	Latitude pulumi.Float64PtrInput `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
-	Longitude pulumi.Float64Input `pulumi:"longitude"`
+	Longitude pulumi.Float64PtrInput `pulumi:"longitude"`
 }
 
 func (GetVantagePointsPublicVantagePointCollectionItemGeoArgs) ElementType() reflect.Type {
@@ -12515,12 +10642,6 @@ func (i GetVantagePointsPublicVantagePointCollectionItemGeoArgs) ToGetVantagePoi
 
 func (i GetVantagePointsPublicVantagePointCollectionItemGeoArgs) ToGetVantagePointsPublicVantagePointCollectionItemGeoOutputWithContext(ctx context.Context) GetVantagePointsPublicVantagePointCollectionItemGeoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsPublicVantagePointCollectionItemGeoOutput)
-}
-
-func (i GetVantagePointsPublicVantagePointCollectionItemGeoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsPublicVantagePointCollectionItemGeo] {
-	return pulumix.Output[GetVantagePointsPublicVantagePointCollectionItemGeo]{
-		OutputState: i.ToGetVantagePointsPublicVantagePointCollectionItemGeoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemGeoArray and GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput values.
@@ -12548,12 +10669,6 @@ func (i GetVantagePointsPublicVantagePointCollectionItemGeoArray) ToGetVantagePo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput)
 }
 
-func (i GetVantagePointsPublicVantagePointCollectionItemGeoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItemGeo] {
-	return pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItemGeo]{
-		OutputState: i.ToGetVantagePointsPublicVantagePointCollectionItemGeoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsPublicVantagePointCollectionItemGeoOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsPublicVantagePointCollectionItemGeoOutput) ElementType() reflect.Type {
@@ -12568,40 +10683,34 @@ func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) ToGetVantageP
 	return o
 }
 
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsPublicVantagePointCollectionItemGeo] {
-	return pulumix.Output[GetVantagePointsPublicVantagePointCollectionItemGeo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) AdminDivCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) string { return v.AdminDivCode }).(pulumi.StringOutput)
+func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) AdminDivCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) *string { return v.AdminDivCode }).(pulumi.StringPtrOutput)
 }
 
 // Common English-language name for the city.
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) CityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) string { return v.CityName }).(pulumi.StringOutput)
+func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) CityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) *string { return v.CityName }).(pulumi.StringPtrOutput)
 }
 
 // The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) CountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) string { return v.CountryCode }).(pulumi.StringOutput)
+func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) *string { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
 
 // The common English-language name for the country.
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) CountryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) string { return v.CountryName }).(pulumi.StringOutput)
+func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) CountryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) *string { return v.CountryName }).(pulumi.StringPtrOutput)
 }
 
 // Degrees north of the equator.
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) Latitude() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) float64 { return v.Latitude }).(pulumi.Float64Output)
+func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) Latitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) *float64 { return v.Latitude }).(pulumi.Float64PtrOutput)
 }
 
 // Degrees east of the prime meridian.
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) Longitude() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) float64 { return v.Longitude }).(pulumi.Float64Output)
+func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) Longitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) *float64 { return v.Longitude }).(pulumi.Float64PtrOutput)
 }
 
 type GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput struct{ *pulumi.OutputState }
@@ -12616,12 +10725,6 @@ func (o GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput) ToGetVan
 
 func (o GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput) ToGetVantagePointsPublicVantagePointCollectionItemGeoArrayOutputWithContext(ctx context.Context) GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput {
 	return o
-}
-
-func (o GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItemGeo] {
-	return pulumix.Output[[]GetVantagePointsPublicVantagePointCollectionItemGeo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput) Index(i pulumi.IntInput) GetVantagePointsPublicVantagePointCollectionItemGeoOutput {

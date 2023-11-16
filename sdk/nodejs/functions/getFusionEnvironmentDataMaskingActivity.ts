@@ -56,20 +56,20 @@ export interface GetFusionEnvironmentDataMaskingActivityResult {
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
-    readonly isResumeDataMasking: boolean;
+    readonly id?: string;
+    readonly isResumeDataMasking?: boolean;
     /**
      * The current state of the DataMaskingActivity.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the data masking activity ended. An RFC3339 formatted datetime string.
      */
-    readonly timeMaskingFinish: string;
+    readonly timeMaskingFinish?: string;
     /**
      * The time the data masking activity started. An RFC3339 formatted datetime string.
      */
-    readonly timeMaskingStart: string;
+    readonly timeMaskingStart?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.

@@ -35,7 +35,7 @@ public final class GetInvokeRunsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the user who created the resource.
      * 
@@ -50,7 +50,7 @@ public final class GetInvokeRunsResult {
      * @return The list of runs.
      * 
      */
-    private List<GetInvokeRunsRun> runs;
+    private @Nullable List<GetInvokeRunsRun> runs;
     /**
      * @return The current state of this run.
      * 
@@ -90,8 +90,8 @@ public final class GetInvokeRunsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the user who created the resource.
@@ -112,7 +112,7 @@ public final class GetInvokeRunsResult {
      * 
      */
     public List<GetInvokeRunsRun> runs() {
-        return this.runs;
+        return this.runs == null ? List.of() : this.runs;
     }
     /**
      * @return The current state of this run.
@@ -139,10 +139,10 @@ public final class GetInvokeRunsResult {
         private @Nullable String displayName;
         private @Nullable String displayNameStartsWith;
         private @Nullable List<GetInvokeRunsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String ownerPrincipalId;
         private @Nullable String poolId;
-        private List<GetInvokeRunsRun> runs;
+        private @Nullable List<GetInvokeRunsRun> runs;
         private @Nullable String state;
         private @Nullable String timeCreatedGreaterThan;
         public Builder() {}
@@ -190,8 +190,8 @@ public final class GetInvokeRunsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -205,8 +205,8 @@ public final class GetInvokeRunsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder runs(List<GetInvokeRunsRun> runs) {
-            this.runs = Objects.requireNonNull(runs);
+        public Builder runs(@Nullable List<GetInvokeRunsRun> runs) {
+            this.runs = runs;
             return this;
         }
         public Builder runs(GetInvokeRunsRun... runs) {

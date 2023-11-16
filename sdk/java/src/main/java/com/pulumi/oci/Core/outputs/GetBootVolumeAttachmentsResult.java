@@ -23,7 +23,7 @@ public final class GetBootVolumeAttachmentsResult {
      * @return The list of boot_volume_attachments.
      * 
      */
-    private List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments;
+    private @Nullable List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments;
     /**
      * @return The OCID of the boot volume.
      * 
@@ -39,7 +39,7 @@ public final class GetBootVolumeAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the instance the boot volume is attached to.
      * 
@@ -59,7 +59,7 @@ public final class GetBootVolumeAttachmentsResult {
      * 
      */
     public List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments() {
-        return this.bootVolumeAttachments;
+        return this.bootVolumeAttachments == null ? List.of() : this.bootVolumeAttachments;
     }
     /**
      * @return The OCID of the boot volume.
@@ -82,8 +82,8 @@ public final class GetBootVolumeAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the instance the boot volume is attached to.
@@ -103,11 +103,11 @@ public final class GetBootVolumeAttachmentsResult {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
-        private List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments;
+        private @Nullable List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments;
         private @Nullable String bootVolumeId;
         private String compartmentId;
         private @Nullable List<GetBootVolumeAttachmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String instanceId;
         public Builder() {}
         public Builder(GetBootVolumeAttachmentsResult defaults) {
@@ -127,8 +127,8 @@ public final class GetBootVolumeAttachmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder bootVolumeAttachments(List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments) {
-            this.bootVolumeAttachments = Objects.requireNonNull(bootVolumeAttachments);
+        public Builder bootVolumeAttachments(@Nullable List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments) {
+            this.bootVolumeAttachments = bootVolumeAttachments;
             return this;
         }
         public Builder bootVolumeAttachments(GetBootVolumeAttachmentsBootVolumeAttachment... bootVolumeAttachments) {
@@ -153,8 +153,8 @@ public final class GetBootVolumeAttachmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

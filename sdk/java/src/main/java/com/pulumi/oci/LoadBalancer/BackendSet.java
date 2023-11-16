@@ -114,10 +114,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:LoadBalancer/backendSet:BackendSet")
 public class BackendSet extends com.pulumi.resources.CustomResource {
     @Export(name="backends", refs={List.class,BackendSetBackend.class}, tree="[0,1]")
-    private Output<List<BackendSetBackend>> backends;
+    private Output</* @Nullable */ List<BackendSetBackend>> backends;
 
-    public Output<List<BackendSetBackend>> backends() {
-        return this.backends;
+    public Output<Optional<List<BackendSetBackend>>> backends() {
+        return Codegen.optional(this.backends);
     }
     /**
      * (Updatable) The health check policy&#39;s configuration details.
@@ -152,7 +152,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lbCookieSessionPersistenceConfiguration", refs={BackendSetLbCookieSessionPersistenceConfiguration.class}, tree="[0]")
-    private Output<BackendSetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfiguration;
+    private Output</* @Nullable */ BackendSetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfiguration;
 
     /**
      * @return (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
@@ -172,8 +172,8 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    public Output<BackendSetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfiguration() {
-        return this.lbCookieSessionPersistenceConfiguration;
+    public Output<Optional<BackendSetLbCookieSessionPersistenceConfiguration>> lbCookieSessionPersistenceConfiguration() {
+        return Codegen.optional(this.lbCookieSessionPersistenceConfiguration);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
@@ -242,7 +242,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sessionPersistenceConfiguration", refs={BackendSetSessionPersistenceConfiguration.class}, tree="[0]")
-    private Output<BackendSetSessionPersistenceConfiguration> sessionPersistenceConfiguration;
+    private Output</* @Nullable */ BackendSetSessionPersistenceConfiguration> sessionPersistenceConfiguration;
 
     /**
      * @return (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
@@ -260,8 +260,8 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    public Output<BackendSetSessionPersistenceConfiguration> sessionPersistenceConfiguration() {
-        return this.sessionPersistenceConfiguration;
+    public Output<Optional<BackendSetSessionPersistenceConfiguration>> sessionPersistenceConfiguration() {
+        return Codegen.optional(this.sessionPersistenceConfiguration);
     }
     /**
      * (Updatable) The load balancer&#39;s SSL handling configuration details.
@@ -282,10 +282,10 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sslConfiguration);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

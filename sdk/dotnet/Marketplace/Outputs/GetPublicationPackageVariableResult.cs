@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The data type of the variable.
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// The variable's default value.
         /// </summary>
-        public readonly string DefaultValue;
+        public readonly string? DefaultValue;
         /// <summary>
         /// A description of the variable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A brief textual description that helps to explain the variable.
         /// </summary>
-        public readonly string HintMessage;
+        public readonly string? HintMessage;
         /// <summary>
         /// Whether the variable is mandatory.
         /// </summary>
-        public readonly bool IsMandatory;
+        public readonly bool? IsMandatory;
         /// <summary>
         /// The name of the variable.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetPublicationPackageVariableResult(
-            string dataType,
+            string? dataType,
 
-            string defaultValue,
+            string? defaultValue,
 
-            string description,
+            string? description,
 
-            string hintMessage,
+            string? hintMessage,
 
-            bool isMandatory,
+            bool? isMandatory,
 
-            string name)
+            string? name)
         {
             DataType = dataType;
             DefaultValue = defaultValue;

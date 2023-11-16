@@ -19,13 +19,6 @@ class UserGroupMembershipArgs:
                  compartment_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a UserGroupMembership resource.
-        :param pulumi.Input[str] group_id: The OCID of the group.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
         """
         pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "user_id", user_id)
@@ -35,9 +28,6 @@ class UserGroupMembershipArgs:
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the group.
-        """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
@@ -47,13 +37,6 @@ class UserGroupMembershipArgs:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -63,9 +46,6 @@ class UserGroupMembershipArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tenancy containing the user, group, and membership object.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -84,16 +64,6 @@ class _UserGroupMembershipState:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering UserGroupMembership resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
-        :param pulumi.Input[str] group_id: The OCID of the group.
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] state: The membership's current state.
-        :param pulumi.Input[str] time_created: Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -111,9 +81,6 @@ class _UserGroupMembershipState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tenancy containing the user, group, and membership object.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -123,9 +90,6 @@ class _UserGroupMembershipState:
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the group.
-        """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
@@ -135,9 +99,6 @@ class _UserGroupMembershipState:
     @property
     @pulumi.getter(name="inactiveState")
     def inactive_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
         return pulumi.get(self, "inactive_state")
 
     @inactive_state.setter
@@ -147,9 +108,6 @@ class _UserGroupMembershipState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The membership's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -159,9 +117,6 @@ class _UserGroupMembershipState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -171,13 +126,6 @@ class _UserGroupMembershipState:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -195,38 +143,9 @@ class UserGroupMembership(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
-
-        Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_user_group_membership = oci.identity.UserGroupMembership("testUserGroupMembership",
-            group_id=oci_identity_group["test_group"]["id"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        UserGroupMemberships can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
-        ```
-
+        Create a UserGroupMembership resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
-        :param pulumi.Input[str] group_id: The OCID of the group.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -235,29 +154,7 @@ class UserGroupMembership(pulumi.CustomResource):
                  args: UserGroupMembershipArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
-
-        Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_user_group_membership = oci.identity.UserGroupMembership("testUserGroupMembership",
-            group_id=oci_identity_group["test_group"]["id"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        UserGroupMemberships can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
-        ```
-
+        Create a UserGroupMembership resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param UserGroupMembershipArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -318,16 +215,6 @@ class UserGroupMembership(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
-        :param pulumi.Input[str] group_id: The OCID of the group.
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] state: The membership's current state.
-        :param pulumi.Input[str] time_created: Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -343,53 +230,31 @@ class UserGroupMembership(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the tenancy containing the user, group, and membership object.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the group.
-        """
         return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> pulumi.Output[str]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The membership's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 

@@ -67,7 +67,7 @@ export class MonitoredResourcesListMember extends pulumi.CustomResource {
     /**
      * List of member resources.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesListMemberItem[]>;
+    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesListMemberItem[] | undefined>;
     /**
      * The field which determines the depth of hierarchy while searching for members.
      */

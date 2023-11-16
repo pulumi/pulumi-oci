@@ -16,95 +16,95 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Data type of the attribute.
         /// </summary>
-        public readonly string Datatype;
+        public readonly string? Datatype;
         /// <summary>
         /// Help text for the attribute. It can contain HTML tags.
         /// </summary>
-        public readonly string Helptext;
+        public readonly string? Helptext;
         /// <summary>
         /// Label for the attribute to be shown in the UI.
         /// </summary>
-        public readonly string Label;
+        public readonly string? Label;
         /// <summary>
         /// Maximum length of the attribute.
         /// </summary>
-        public readonly int MaxLength;
+        public readonly int? MaxLength;
         /// <summary>
         /// Maximum size of the attribute.
         /// </summary>
-        public readonly int MaxSize;
+        public readonly int? MaxSize;
         /// <summary>
         /// Minimum length of the attribute.
         /// </summary>
-        public readonly int MinLength;
+        public readonly int? MinLength;
         /// <summary>
         /// Minimum size of the attribute..
         /// </summary>
-        public readonly int MinSize;
+        public readonly int? MinSize;
         /// <summary>
         /// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Display sequence of the bundle configuration property.
         /// </summary>
-        public readonly int Order;
+        public readonly int? Order;
         /// <summary>
         /// If true, indicates that this value must be protected.
         /// </summary>
-        public readonly bool ReadOnly;
+        public readonly bool? ReadOnly;
         /// <summary>
         /// Regular expression of the attribute for validation.
         /// </summary>
-        public readonly string Regexp;
+        public readonly string? Regexp;
         /// <summary>
         /// If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \"isRequired\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly bool Required;
+        public readonly bool? Required;
         /// <summary>
         /// UI widget to use for the attribute.
         /// </summary>
-        public readonly string Section;
+        public readonly string? Section;
         /// <summary>
         /// Indicates whether the attribute is to be shown on the application creation UI.
         /// </summary>
-        public readonly bool Visible;
+        public readonly bool? Visible;
         /// <summary>
         /// UI widget to use for the attribute.
         /// </summary>
-        public readonly string Widget;
+        public readonly string? Widget;
 
         [OutputConstructor]
         private GetDomainsAppsAppAttrRenderingMetadataResult(
-            string datatype,
+            string? datatype,
 
-            string helptext,
+            string? helptext,
 
-            string label,
+            string? label,
 
-            int maxLength,
+            int? maxLength,
 
-            int maxSize,
+            int? maxSize,
 
-            int minLength,
+            int? minLength,
 
-            int minSize,
+            int? minSize,
 
-            string name,
+            string? name,
 
-            int order,
+            int? order,
 
-            bool readOnly,
+            bool? readOnly,
 
-            string regexp,
+            string? regexp,
 
-            bool required,
+            bool? required,
 
-            string section,
+            string? section,
 
-            bool visible,
+            bool? visible,
 
-            string widget)
+            string? widget)
         {
             Datatype = datatype;
             Helptext = helptext;

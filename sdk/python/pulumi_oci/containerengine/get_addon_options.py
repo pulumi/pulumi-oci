@@ -47,10 +47,7 @@ class GetAddonOptionsResult:
 
     @property
     @pulumi.getter(name="addonOptions")
-    def addon_options(self) -> Sequence['outputs.GetAddonOptionsAddonOptionResult']:
-        """
-        The list of addon_options.
-        """
+    def addon_options(self) -> Optional[Sequence['outputs.GetAddonOptionsAddonOptionResult']]:
         return pulumi.get(self, "addon_options")
 
     @property
@@ -60,7 +57,7 @@ class GetAddonOptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_addon_options(addon_name: Optional[str] = None,
                       kubernetes_version: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddonOptionsResult:
     """
-    This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
-
-    Get list of supported addons for a specific kubernetes version.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=var["addon_option_kubernetes_version"],
-        addon_name=oci_containerengine_addon["test_addon"]["name"])
-    ```
-
-
-    :param str addon_name: The name of the addon.
-    :param str kubernetes_version: The kubernetes version to fetch the addons.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['addonName'] = addon_name
@@ -129,22 +110,6 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] =
                              kubernetes_version: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonOptionsResult]:
     """
-    This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
-
-    Get list of supported addons for a specific kubernetes version.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=var["addon_option_kubernetes_version"],
-        addon_name=oci_containerengine_addon["test_addon"]["name"])
-    ```
-
-
-    :param str addon_name: The name of the addon.
-    :param str kubernetes_version: The kubernetes version to fetch the addons.
+    Use this data source to access information about an existing resource.
     """
     ...

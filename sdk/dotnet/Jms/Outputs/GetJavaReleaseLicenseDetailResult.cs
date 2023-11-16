@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Commonly used name for the license type.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// License type for the Java version.
         /// </summary>
-        public readonly string LicenseType;
+        public readonly string? LicenseType;
         /// <summary>
         /// Publicly accessible license URL containing the detailed terms and conditions.
         /// </summary>
-        public readonly string LicenseUrl;
+        public readonly string? LicenseUrl;
 
         [OutputConstructor]
         private GetJavaReleaseLicenseDetailResult(
-            string displayName,
+            string? displayName,
 
-            string licenseType,
+            string? licenseType,
 
-            string licenseUrl)
+            string? licenseUrl)
         {
             DisplayName = displayName;
             LicenseType = licenseType;

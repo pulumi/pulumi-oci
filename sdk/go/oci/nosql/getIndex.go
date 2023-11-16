@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -66,23 +65,23 @@ type LookupIndexArgs struct {
 // A collection of values returned by getIndex.
 type LookupIndexResult struct {
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
-	Id            string `pulumi:"id"`
-	IndexName     string `pulumi:"indexName"`
-	IsIfNotExists bool   `pulumi:"isIfNotExists"`
+	CompartmentId string  `pulumi:"compartmentId"`
+	Id            *string `pulumi:"id"`
+	IndexName     string  `pulumi:"indexName"`
+	IsIfNotExists *bool   `pulumi:"isIfNotExists"`
 	// A set of keys for a secondary index.
 	Keys []GetIndexKey `pulumi:"keys"`
 	// A message describing the current state in more detail.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Index name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The state of an index.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// the OCID of the table to which this index belongs.
-	TableId string `pulumi:"tableId"`
+	TableId *string `pulumi:"tableId"`
 	// The name of the table to which this index belongs.
-	TableName     string `pulumi:"tableName"`
-	TableNameOrId string `pulumi:"tableNameOrId"`
+	TableName     *string `pulumi:"tableName"`
+	TableNameOrId string  `pulumi:"tableNameOrId"`
 }
 
 func LookupIndexOutput(ctx *pulumi.Context, args LookupIndexOutputArgs, opts ...pulumi.InvokeOption) LookupIndexResultOutput {
@@ -127,27 +126,21 @@ func (o LookupIndexResultOutput) ToLookupIndexResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupIndexResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupIndexResult] {
-	return pulumix.Output[LookupIndexResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
 func (o LookupIndexResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIndexResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o LookupIndexResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIndexResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupIndexResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIndexResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupIndexResultOutput) IndexName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIndexResult) string { return v.IndexName }).(pulumi.StringOutput)
 }
 
-func (o LookupIndexResultOutput) IsIfNotExists() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupIndexResult) bool { return v.IsIfNotExists }).(pulumi.BoolOutput)
+func (o LookupIndexResultOutput) IsIfNotExists() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupIndexResult) *bool { return v.IsIfNotExists }).(pulumi.BoolPtrOutput)
 }
 
 // A set of keys for a secondary index.
@@ -156,28 +149,28 @@ func (o LookupIndexResultOutput) Keys() GetIndexKeyArrayOutput {
 }
 
 // A message describing the current state in more detail.
-func (o LookupIndexResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIndexResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupIndexResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIndexResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Index name.
-func (o LookupIndexResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIndexResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupIndexResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIndexResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The state of an index.
-func (o LookupIndexResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIndexResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupIndexResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIndexResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // the OCID of the table to which this index belongs.
-func (o LookupIndexResultOutput) TableId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIndexResult) string { return v.TableId }).(pulumi.StringOutput)
+func (o LookupIndexResultOutput) TableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIndexResult) *string { return v.TableId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the table to which this index belongs.
-func (o LookupIndexResultOutput) TableName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIndexResult) string { return v.TableName }).(pulumi.StringOutput)
+func (o LookupIndexResultOutput) TableName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIndexResult) *string { return v.TableName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupIndexResultOutput) TableNameOrId() pulumi.StringOutput {

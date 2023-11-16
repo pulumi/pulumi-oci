@@ -68,7 +68,7 @@ export interface GetNetworkSourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
      */
@@ -76,7 +76,7 @@ export interface GetNetworkSourcesResult {
     /**
      * The list of network_sources.
      */
-    readonly networkSources: outputs.Identity.GetNetworkSourcesNetworkSource[];
+    readonly networkSources?: outputs.Identity.GetNetworkSourcesNetworkSource[];
     /**
      * The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      */

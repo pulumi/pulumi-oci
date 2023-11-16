@@ -25,7 +25,7 @@ public final class GetSoftwareSourcePackageGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Package group name.
      * 
@@ -36,7 +36,7 @@ public final class GetSoftwareSourcePackageGroupsResult {
      * @return The list of package_group_collection.
      * 
      */
-    private List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections;
+    private @Nullable List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections;
     private String softwareSourceId;
 
     private GetSoftwareSourcePackageGroupsResult() {}
@@ -57,8 +57,8 @@ public final class GetSoftwareSourcePackageGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Package group name.
@@ -75,7 +75,7 @@ public final class GetSoftwareSourcePackageGroupsResult {
      * 
      */
     public List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections() {
-        return this.packageGroupCollections;
+        return this.packageGroupCollections == null ? List.of() : this.packageGroupCollections;
     }
     public String softwareSourceId() {
         return this.softwareSourceId;
@@ -93,10 +93,10 @@ public final class GetSoftwareSourcePackageGroupsResult {
         private @Nullable String compartmentId;
         private @Nullable List<GetSoftwareSourcePackageGroupsFilter> filters;
         private @Nullable List<String> groupTypes;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String nameContains;
-        private List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections;
+        private @Nullable List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections;
         private String softwareSourceId;
         public Builder() {}
         public Builder(GetSoftwareSourcePackageGroupsResult defaults) {
@@ -133,8 +133,8 @@ public final class GetSoftwareSourcePackageGroupsResult {
             return groupTypes(List.of(groupTypes));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -148,8 +148,8 @@ public final class GetSoftwareSourcePackageGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder packageGroupCollections(List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections) {
-            this.packageGroupCollections = Objects.requireNonNull(packageGroupCollections);
+        public Builder packageGroupCollections(@Nullable List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections) {
+            this.packageGroupCollections = packageGroupCollections;
             return this;
         }
         public Builder packageGroupCollections(GetSoftwareSourcePackageGroupsPackageGroupCollection... packageGroupCollections) {

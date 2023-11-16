@@ -61,12 +61,12 @@ export interface GetManagedDatabaseUserDataAccessContainersResult {
     /**
      * The list of data_access_container_collection.
      */
-    readonly dataAccessContainerCollections: outputs.DatabaseManagement.GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection[];
+    readonly dataAccessContainerCollections?: outputs.DatabaseManagement.GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabaseUserDataAccessContainersFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of the container included in the attribute.

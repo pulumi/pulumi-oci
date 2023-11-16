@@ -81,7 +81,7 @@ export interface GetPrivateEndpointsResult {
     /**
      * The list of data_science_private_endpoints.
      */
-    readonly dataSciencePrivateEndpoints: outputs.DataScience.GetPrivateEndpointsDataSciencePrivateEndpoint[];
+    readonly dataSciencePrivateEndpoints?: outputs.DataScience.GetPrivateEndpointsDataSciencePrivateEndpoint[];
     /**
      * Data Science resource type.
      */
@@ -94,7 +94,7 @@ export interface GetPrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * State of the Data Science private endpoint.
      */

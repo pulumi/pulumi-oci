@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The original case-insensitive name of the header.  This name must be unique across transformation policies.
         /// </summary>
-        public readonly string From;
+        public readonly string? From;
         /// <summary>
         /// The new name of the header.  This name must be unique across transformation policies.
         /// </summary>
-        public readonly string To;
+        public readonly string? To;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult(
-            string from,
+            string? from,
 
-            string to)
+            string? to)
         {
             From = from;
             To = to;

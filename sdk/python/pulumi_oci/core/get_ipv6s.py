@@ -50,7 +50,7 @@ class GetIpv6sResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,33 +59,21 @@ class GetIpv6sResult:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[str]:
-        """
-        The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
-        """
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter
-    def ipv6s(self) -> Sequence['outputs.GetIpv6sIpv6Result']:
-        """
-        The list of ipv6s.
-        """
+    def ipv6s(self) -> Optional[Sequence['outputs.GetIpv6sIpv6Result']]:
         return pulumi.get(self, "ipv6s")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
-        """
         return pulumi.get(self, "vnic_id")
 
 
@@ -109,32 +97,7 @@ def get_ipv6s(filters: Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]
               vnic_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpv6sResult:
     """
-    This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
-
-    Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
-    on one of these filters:
-
-      * Subnet OCID.
-      * VNIC OCID.
-      * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-          IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-          [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipv6s = oci.Core.get_ipv6s(ip_address=var["ipv6_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
-    ```
-
-
-    :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
-    :param str subnet_id: The OCID of the subnet.
-    :param str vnic_id: The OCID of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -160,31 +123,6 @@ def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inp
                      vnic_id: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpv6sResult]:
     """
-    This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
-
-    Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
-    on one of these filters:
-
-      * Subnet OCID.
-      * VNIC OCID.
-      * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-          IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-          [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipv6s = oci.Core.get_ipv6s(ip_address=var["ipv6_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
-    ```
-
-
-    :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
-    :param str subnet_id: The OCID of the subnet.
-    :param str vnic_id: The OCID of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     ...

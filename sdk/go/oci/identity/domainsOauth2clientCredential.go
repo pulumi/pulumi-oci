@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -58,7 +57,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// Description
 	//
 	// **Added In:** 2101262133
@@ -69,7 +68,7 @@ type DomainsOauth2clientCredential struct {
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -81,7 +80,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// When the user's credentials expire.
 	//
 	// **Added In:** 2109090424
@@ -95,7 +94,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: default
 	// * type: dateTime
 	// * uniqueness: none
-	ExpiresOn pulumi.StringOutput `pulumi:"expiresOn"`
+	ExpiresOn pulumi.StringPtrOutput `pulumi:"expiresOn"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -129,7 +128,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -154,7 +153,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsResetSecret pulumi.BoolOutput `pulumi:"isResetSecret"`
+	IsResetSecret pulumi.BoolPtrOutput `pulumi:"isResetSecret"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -190,7 +189,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -229,7 +228,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: never
 	// * type: string
 	// * uniqueness: none
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -253,9 +252,9 @@ type DomainsOauth2clientCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
-	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
+	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// The user linked to the OAuth2 client credential.
 	//
 	// **SCIM++ Properties:**
@@ -267,7 +266,7 @@ type DomainsOauth2clientCredential struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	User DomainsOauth2clientCredentialUserOutput `pulumi:"user"`
+	User DomainsOauth2clientCredentialUserPtrOutput `pulumi:"user"`
 }
 
 // NewDomainsOauth2clientCredential registers a new resource with the given unique name, arguments, and options.
@@ -1098,12 +1097,6 @@ func (i *DomainsOauth2clientCredential) ToDomainsOauth2clientCredentialOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsOauth2clientCredentialOutput)
 }
 
-func (i *DomainsOauth2clientCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsOauth2clientCredential] {
-	return pulumix.Output[*DomainsOauth2clientCredential]{
-		OutputState: i.ToDomainsOauth2clientCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsOauth2clientCredentialArrayInput is an input type that accepts DomainsOauth2clientCredentialArray and DomainsOauth2clientCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsOauth2clientCredentialArrayInput` via:
 //
@@ -1127,12 +1120,6 @@ func (i DomainsOauth2clientCredentialArray) ToDomainsOauth2clientCredentialArray
 
 func (i DomainsOauth2clientCredentialArray) ToDomainsOauth2clientCredentialArrayOutputWithContext(ctx context.Context) DomainsOauth2clientCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsOauth2clientCredentialArrayOutput)
-}
-
-func (i DomainsOauth2clientCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsOauth2clientCredential] {
-	return pulumix.Output[[]*DomainsOauth2clientCredential]{
-		OutputState: i.ToDomainsOauth2clientCredentialArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsOauth2clientCredentialMapInput is an input type that accepts DomainsOauth2clientCredentialMap and DomainsOauth2clientCredentialMapOutput values.
@@ -1160,12 +1147,6 @@ func (i DomainsOauth2clientCredentialMap) ToDomainsOauth2clientCredentialMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsOauth2clientCredentialMapOutput)
 }
 
-func (i DomainsOauth2clientCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsOauth2clientCredential] {
-	return pulumix.Output[map[string]*DomainsOauth2clientCredential]{
-		OutputState: i.ToDomainsOauth2clientCredentialMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsOauth2clientCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsOauth2clientCredentialOutput) ElementType() reflect.Type {
@@ -1178,12 +1159,6 @@ func (o DomainsOauth2clientCredentialOutput) ToDomainsOauth2clientCredentialOutp
 
 func (o DomainsOauth2clientCredentialOutput) ToDomainsOauth2clientCredentialOutputWithContext(ctx context.Context) DomainsOauth2clientCredentialOutput {
 	return o
-}
-
-func (o DomainsOauth2clientCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsOauth2clientCredential] {
-	return pulumix.Output[*DomainsOauth2clientCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1212,8 +1187,8 @@ func (o DomainsOauth2clientCredentialOutput) Authorization() pulumi.StringPtrOut
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1227,8 +1202,8 @@ func (o DomainsOauth2clientCredentialOutput) CompartmentOcid() pulumi.StringOutp
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsOauth2clientCredentialOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
@@ -1241,8 +1216,8 @@ func (o DomainsOauth2clientCredentialOutput) DeleteInProgress() pulumi.BoolOutpu
 // * mutability: readWrite
 // * required: false
 // * returned: default
-func (o DomainsOauth2clientCredentialOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1256,8 +1231,8 @@ func (o DomainsOauth2clientCredentialOutput) Description() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // When the user's credentials expire.
@@ -1273,8 +1248,8 @@ func (o DomainsOauth2clientCredentialOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: dateTime
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1323,8 +1298,8 @@ func (o DomainsOauth2clientCredentialOutput) IdcsLastModifiedBies() DomainsOauth
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1354,8 +1329,8 @@ func (o DomainsOauth2clientCredentialOutput) IdcsPreventedOperations() pulumi.St
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) IsResetSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.BoolOutput { return v.IsResetSecret }).(pulumi.BoolOutput)
+func (o DomainsOauth2clientCredentialOutput) IsResetSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.BoolPtrOutput { return v.IsResetSecret }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1399,8 +1374,8 @@ func (o DomainsOauth2clientCredentialOutput) Name() pulumi.StringOutput {
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1450,8 +1425,8 @@ func (o DomainsOauth2clientCredentialOutput) Scopes() DomainsOauth2clientCredent
 // * returned: never
 // * type: string
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -1480,15 +1455,15 @@ func (o DomainsOauth2clientCredentialOutput) Tags() DomainsOauth2clientCredentia
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsOauth2clientCredentialOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs
-func (o DomainsOauth2clientCredentialOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+func (o DomainsOauth2clientCredentialOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionselfChangeUser
-	}).(DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+	}).(DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput)
 }
 
 // The user linked to the OAuth2 client credential.
@@ -1502,8 +1477,8 @@ func (o DomainsOauth2clientCredentialOutput) Urnietfparamsscimschemasoracleidcse
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsOauth2clientCredentialOutput) User() DomainsOauth2clientCredentialUserOutput {
-	return o.ApplyT(func(v *DomainsOauth2clientCredential) DomainsOauth2clientCredentialUserOutput { return v.User }).(DomainsOauth2clientCredentialUserOutput)
+func (o DomainsOauth2clientCredentialOutput) User() DomainsOauth2clientCredentialUserPtrOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) DomainsOauth2clientCredentialUserPtrOutput { return v.User }).(DomainsOauth2clientCredentialUserPtrOutput)
 }
 
 type DomainsOauth2clientCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -1518,12 +1493,6 @@ func (o DomainsOauth2clientCredentialArrayOutput) ToDomainsOauth2clientCredentia
 
 func (o DomainsOauth2clientCredentialArrayOutput) ToDomainsOauth2clientCredentialArrayOutputWithContext(ctx context.Context) DomainsOauth2clientCredentialArrayOutput {
 	return o
-}
-
-func (o DomainsOauth2clientCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsOauth2clientCredential] {
-	return pulumix.Output[[]*DomainsOauth2clientCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsOauth2clientCredentialArrayOutput) Index(i pulumi.IntInput) DomainsOauth2clientCredentialOutput {
@@ -1544,12 +1513,6 @@ func (o DomainsOauth2clientCredentialMapOutput) ToDomainsOauth2clientCredentialM
 
 func (o DomainsOauth2clientCredentialMapOutput) ToDomainsOauth2clientCredentialMapOutputWithContext(ctx context.Context) DomainsOauth2clientCredentialMapOutput {
 	return o
-}
-
-func (o DomainsOauth2clientCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsOauth2clientCredential] {
-	return pulumix.Output[map[string]*DomainsOauth2clientCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsOauth2clientCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsOauth2clientCredentialOutput {

@@ -19,12 +19,12 @@ public final class GetLogAnalyticsCategoriesListResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of categories.
      * 
      */
-    private List<GetLogAnalyticsCategoriesListItem> items;
+    private @Nullable List<GetLogAnalyticsCategoriesListItem> items;
     /**
      * @return The unique name that identifies the category.
      * 
@@ -43,15 +43,15 @@ public final class GetLogAnalyticsCategoriesListResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of categories.
      * 
      */
     public List<GetLogAnalyticsCategoriesListItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The unique name that identifies the category.
@@ -75,8 +75,8 @@ public final class GetLogAnalyticsCategoriesListResult {
     public static final class Builder {
         private @Nullable String categoryDisplayText;
         private @Nullable String categoryType;
-        private String id;
-        private List<GetLogAnalyticsCategoriesListItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetLogAnalyticsCategoriesListItem> items;
         private @Nullable String name;
         private String namespace;
         public Builder() {}
@@ -101,13 +101,13 @@ public final class GetLogAnalyticsCategoriesListResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetLogAnalyticsCategoriesListItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetLogAnalyticsCategoriesListItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsCategoriesListItem... items) {

@@ -60,7 +60,7 @@ namespace Pulumi.Oci.DataCatalog
         /// OCID of the user who created the connection.
         /// </summary>
         [Output("createdById")]
-        public Output<string> CreatedById { get; private set; } = null!;
+        public Output<string?> CreatedById { get; private set; } = null!;
 
         /// <summary>
         /// Unique data asset key.
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.DataCatalog
         /// (Updatable) A description of the connection.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -90,19 +90,19 @@ namespace Pulumi.Oci.DataCatalog
         /// Unique external key of this object from the source system.
         /// </summary>
         [Output("externalKey")]
-        public Output<string> ExternalKey { get; private set; } = null!;
+        public Output<string?> ExternalKey { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
         /// </summary>
         [Output("isDefault")]
-        public Output<bool> IsDefault { get; private set; } = null!;
+        public Output<bool?> IsDefault { get; private set; } = null!;
 
         /// <summary>
         /// Unique connection key that is immutable.
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         [Output("properties")]
         public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
@@ -111,25 +111,25 @@ namespace Pulumi.Oci.DataCatalog
         /// The current state of the connection.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeStatusUpdated")]
-        public Output<string> TimeStatusUpdated { get; private set; } = null!;
+        public Output<string?> TimeStatusUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The key of the object type. Type key's can be found via the '/types' endpoint.
@@ -145,13 +145,13 @@ namespace Pulumi.Oci.DataCatalog
         /// OCID of the user who modified the connection.
         /// </summary>
         [Output("updatedById")]
-        public Output<string> UpdatedById { get; private set; } = null!;
+        public Output<string?> UpdatedById { get; private set; } = null!;
 
         /// <summary>
         /// URI to the connection instance in the API.
         /// </summary>
         [Output("uri")]
-        public Output<string> Uri { get; private set; } = null!;
+        public Output<string?> Uri { get; private set; } = null!;
 
 
         /// <summary>

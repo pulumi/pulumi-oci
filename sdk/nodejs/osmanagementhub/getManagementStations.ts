@@ -98,7 +98,7 @@ export interface GetManagementStationsResult {
     /**
      * The list of management_station_collection.
      */
-    readonly managementStationCollections: outputs.OsManagementHub.GetManagementStationsManagementStationCollection[];
+    readonly managementStationCollections?: outputs.OsManagementHub.GetManagementStationsManagementStationCollection[];
     /**
      * The current state of the Management Station config.
      */

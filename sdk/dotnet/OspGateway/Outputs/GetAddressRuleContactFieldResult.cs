@@ -20,7 +20,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// The given field is requeired or not
         /// </summary>
-        public readonly bool IsRequired;
+        public readonly bool? IsRequired;
         /// <summary>
         /// Label information
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
         /// </summary>
-        public readonly string Language;
+        public readonly string? Language;
         /// <summary>
         /// The field name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAddressRuleContactFieldResult(
             ImmutableArray<Outputs.GetAddressRuleContactFieldFormatResult> formats,
 
-            bool isRequired,
+            bool? isRequired,
 
             ImmutableArray<Outputs.GetAddressRuleContactFieldLabelResult> labels,
 
-            string language,
+            string? language,
 
-            string name)
+            string? name)
         {
             Formats = formats;
             IsRequired = isRequired;

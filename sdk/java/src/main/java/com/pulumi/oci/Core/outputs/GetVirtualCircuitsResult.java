@@ -29,7 +29,7 @@ public final class GetVirtualCircuitsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The virtual circuit&#39;s current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
@@ -39,7 +39,7 @@ public final class GetVirtualCircuitsResult {
      * @return The list of virtual_circuits.
      * 
      */
-    private List<GetVirtualCircuitsVirtualCircuit> virtualCircuits;
+    private @Nullable List<GetVirtualCircuitsVirtualCircuit> virtualCircuits;
 
     private GetVirtualCircuitsResult() {}
     /**
@@ -63,8 +63,8 @@ public final class GetVirtualCircuitsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The virtual circuit&#39;s current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
@@ -78,7 +78,7 @@ public final class GetVirtualCircuitsResult {
      * 
      */
     public List<GetVirtualCircuitsVirtualCircuit> virtualCircuits() {
-        return this.virtualCircuits;
+        return this.virtualCircuits == null ? List.of() : this.virtualCircuits;
     }
 
     public static Builder builder() {
@@ -93,9 +93,9 @@ public final class GetVirtualCircuitsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVirtualCircuitsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetVirtualCircuitsVirtualCircuit> virtualCircuits;
+        private @Nullable List<GetVirtualCircuitsVirtualCircuit> virtualCircuits;
         public Builder() {}
         public Builder(GetVirtualCircuitsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,8 +126,8 @@ public final class GetVirtualCircuitsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -136,8 +136,8 @@ public final class GetVirtualCircuitsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder virtualCircuits(List<GetVirtualCircuitsVirtualCircuit> virtualCircuits) {
-            this.virtualCircuits = Objects.requireNonNull(virtualCircuits);
+        public Builder virtualCircuits(@Nullable List<GetVirtualCircuitsVirtualCircuit> virtualCircuits) {
+            this.virtualCircuits = virtualCircuits;
             return this;
         }
         public Builder virtualCircuits(GetVirtualCircuitsVirtualCircuit... virtualCircuits) {

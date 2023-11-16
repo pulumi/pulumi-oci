@@ -27,6 +27,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageResult {
@@ -34,343 +36,343 @@ public final class GetDeployStageResult {
      * @return Specifies the approval policy.
      * 
      */
-    private List<GetDeployStageApprovalPolicy> approvalPolicies;
+    private @Nullable List<GetDeployStageApprovalPolicy> approvalPolicies;
     /**
      * @return Disable pre/post upgrade hooks. Set to false by default.
      * 
      */
-    private Boolean areHooksEnabled;
+    private @Nullable Boolean areHooksEnabled;
     /**
      * @return Collection of backend environment IP addresses.
      * 
      */
-    private List<GetDeployStageBlueBackendIp> blueBackendIps;
+    private @Nullable List<GetDeployStageBlueBackendIp> blueBackendIps;
     /**
      * @return Specifies the required blue green release strategy for OKE deployment.
      * 
      */
-    private List<GetDeployStageBlueGreenStrategy> blueGreenStrategies;
+    private @Nullable List<GetDeployStageBlueGreenStrategy> blueGreenStrategies;
     /**
      * @return Specifies the required canary release strategy for OKE deployment.
      * 
      */
-    private List<GetDeployStageCanaryStrategy> canaryStrategies;
+    private @Nullable List<GetDeployStageCanaryStrategy> canaryStrategies;
     /**
      * @return The OCID of the artifact that contains the command specification.
      * 
      */
-    private String commandSpecDeployArtifactId;
+    private @Nullable String commandSpecDeployArtifactId;
     /**
      * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      * 
      */
-    private String computeInstanceGroupBlueGreenDeploymentDeployStageId;
+    private @Nullable String computeInstanceGroupBlueGreenDeploymentDeployStageId;
     /**
      * @return The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
      * 
      */
-    private String computeInstanceGroupCanaryDeployStageId;
+    private @Nullable String computeInstanceGroupCanaryDeployStageId;
     /**
      * @return A compute instance group canary traffic shift stage OCID for load balancer.
      * 
      */
-    private String computeInstanceGroupCanaryTrafficShiftDeployStageId;
+    private @Nullable String computeInstanceGroupCanaryTrafficShiftDeployStageId;
     /**
      * @return A compute instance group environment OCID for rolling deployment.
      * 
      */
-    private String computeInstanceGroupDeployEnvironmentId;
+    private @Nullable String computeInstanceGroupDeployEnvironmentId;
     /**
      * @return User provided key and value pair configuration, which is assigned through constants or parameter.
      * 
      */
-    private Map<String,Object> config;
+    private @Nullable Map<String,Object> config;
     /**
      * @return Specifies the container configuration.
      * 
      */
-    private List<GetDeployStageContainerConfig> containerConfigs;
+    private @Nullable List<GetDeployStageContainerConfig> containerConfigs;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
-    private String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return The list of file artifact OCIDs to deploy.
      * 
      */
-    private List<String> deployArtifactIds;
+    private @Nullable List<String> deployArtifactIds;
     /**
      * @return First compute instance group environment OCID for deployment.
      * 
      */
-    private String deployEnvironmentIdA;
+    private @Nullable String deployEnvironmentIdA;
     /**
      * @return Second compute instance group environment OCID for deployment.
      * 
      */
-    private String deployEnvironmentIdB;
+    private @Nullable String deployEnvironmentIdB;
     /**
      * @return The OCID of a pipeline.
      * 
      */
-    private String deployPipelineId;
+    private @Nullable String deployPipelineId;
     private String deployStageId;
     /**
      * @return Collection containing the predecessors of a stage.
      * 
      */
-    private List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections;
+    private @Nullable List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections;
     /**
      * @return Deployment stage type.
      * 
      */
-    private String deployStageType;
+    private @Nullable String deployStageType;
     /**
      * @return The OCID of the artifact that contains the deployment specification.
      * 
      */
-    private String deploymentSpecDeployArtifactId;
+    private @Nullable String deploymentSpecDeployArtifactId;
     /**
      * @return Optional description about the deployment stage.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A Docker image artifact OCID.
      * 
      */
-    private String dockerImageDeployArtifactId;
+    private @Nullable String dockerImageDeployArtifactId;
     /**
      * @return Specifies a failure policy for a compute instance group rolling deployment stage.
      * 
      */
-    private List<GetDeployStageFailurePolicy> failurePolicies;
+    private @Nullable List<GetDeployStageFailurePolicy> failurePolicies;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Function environment OCID.
      * 
      */
-    private String functionDeployEnvironmentId;
+    private @Nullable String functionDeployEnvironmentId;
     /**
      * @return Timeout for execution of the Function. Value in seconds.
      * 
      */
-    private Integer functionTimeoutInSeconds;
+    private @Nullable Integer functionTimeoutInSeconds;
     /**
      * @return Collection of backend environment IP addresses.
      * 
      */
-    private List<GetDeployStageGreenBackendIp> greenBackendIps;
+    private @Nullable List<GetDeployStageGreenBackendIp> greenBackendIps;
     /**
      * @return Helm chart artifact OCID.
      * 
      */
-    private String helmChartDeployArtifactId;
+    private @Nullable String helmChartDeployArtifactId;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
-    private Boolean isAsync;
+    private @Nullable Boolean isAsync;
     /**
      * @return Enables helm --debug option to stream output to tf stdout. Set to false by default.
      * 
      */
-    private Boolean isDebugEnabled;
+    private @Nullable Boolean isDebugEnabled;
     /**
      * @return Force resource update through delete; or if required, recreate. Set to false by default.
      * 
      */
-    private Boolean isForceEnabled;
+    private @Nullable Boolean isForceEnabled;
     /**
      * @return A boolean flag specifies whether the invoked function must be validated.
      * 
      */
-    private Boolean isValidationEnabled;
+    private @Nullable Boolean isValidationEnabled;
     /**
      * @return List of Kubernetes manifest artifact OCIDs.
      * 
      */
-    private List<String> kubernetesManifestDeployArtifactIds;
+    private @Nullable List<String> kubernetesManifestDeployArtifactIds;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
-    private List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs;
+    private @Nullable List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs;
     /**
      * @return Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      * 
      */
-    private Integer maxHistory;
+    private @Nullable Integer maxHistory;
     /**
      * @return Maximum usable memory for the Function (in MB).
      * 
      */
-    private String maxMemoryInMbs;
+    private @Nullable String maxMemoryInMbs;
     /**
      * @return Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      * 
      */
-    private String okeBlueGreenDeployStageId;
+    private @Nullable String okeBlueGreenDeployStageId;
     /**
      * @return The OCID of an upstream OKE canary deployment stage in this pipeline.
      * 
      */
-    private String okeCanaryDeployStageId;
+    private @Nullable String okeCanaryDeployStageId;
     /**
      * @return The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
      * 
      */
-    private String okeCanaryTrafficShiftDeployStageId;
+    private @Nullable String okeCanaryTrafficShiftDeployStageId;
     /**
      * @return Kubernetes cluster environment OCID for deployment.
      * 
      */
-    private String okeClusterDeployEnvironmentId;
+    private @Nullable String okeClusterDeployEnvironmentId;
     /**
      * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
-    private List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs;
+    private @Nullable List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs;
     /**
      * @return The OCID of a project.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return Release name of the Helm chart.
      * 
      */
-    private String releaseName;
+    private @Nullable String releaseName;
     /**
      * @return Specifies the rollback policy. This is initiated on the failure of certain stage types.
      * 
      */
-    private List<GetDeployStageRollbackPolicy> rollbackPolicies;
+    private @Nullable List<GetDeployStageRollbackPolicy> rollbackPolicies;
     /**
      * @return Description of rollout policy for load balancer traffic shift stage.
      * 
      */
-    private List<GetDeployStageRolloutPolicy> rolloutPolicies;
+    private @Nullable List<GetDeployStageRolloutPolicy> rolloutPolicies;
     /**
      * @return Specifies the name and value pairs to set helm values.
      * 
      */
-    private List<GetDeployStageSetString> setStrings;
+    private @Nullable List<GetDeployStageSetString> setStrings;
     /**
      * @return Specifies the name and value pairs to set helm values.
      * 
      */
-    private List<GetDeployStageSetValue> setValues;
+    private @Nullable List<GetDeployStageSetValue> setValues;
     /**
      * @return Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      * 
      */
-    private Boolean shouldCleanupOnFail;
+    private @Nullable Boolean shouldCleanupOnFail;
     /**
      * @return Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
      * 
      */
-    private Boolean shouldNotWait;
+    private @Nullable Boolean shouldNotWait;
     /**
      * @return During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      * 
      */
-    private Boolean shouldResetValues;
+    private @Nullable Boolean shouldResetValues;
     /**
      * @return During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      * 
      */
-    private Boolean shouldReuseValues;
+    private @Nullable Boolean shouldReuseValues;
     /**
      * @return If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      * 
      */
-    private Boolean shouldSkipCrds;
+    private @Nullable Boolean shouldSkipCrds;
     /**
      * @return If set, renders subchart notes along with the parent. Set to false by default.
      * 
      */
-    private Boolean shouldSkipRenderSubchartNotes;
+    private @Nullable Boolean shouldSkipRenderSubchartNotes;
     /**
      * @return The current state of the deployment stage.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
-    private List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs;
+    private @Nullable List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs;
     /**
      * @return Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
-    private Integer timeoutInSeconds;
+    private @Nullable Integer timeoutInSeconds;
     /**
      * @return Specifies the target or destination backend set.
      * 
      */
-    private String trafficShiftTarget;
+    private @Nullable String trafficShiftTarget;
     /**
      * @return List of values.yaml file artifact OCIDs.
      * 
      */
-    private List<String> valuesArtifactIds;
+    private @Nullable List<String> valuesArtifactIds;
     /**
      * @return Specifies wait criteria for the Wait stage.
      * 
      */
-    private List<GetDeployStageWaitCriteria> waitCriterias;
+    private @Nullable List<GetDeployStageWaitCriteria> waitCriterias;
 
     private GetDeployStageResult() {}
     /**
@@ -378,133 +380,133 @@ public final class GetDeployStageResult {
      * 
      */
     public List<GetDeployStageApprovalPolicy> approvalPolicies() {
-        return this.approvalPolicies;
+        return this.approvalPolicies == null ? List.of() : this.approvalPolicies;
     }
     /**
      * @return Disable pre/post upgrade hooks. Set to false by default.
      * 
      */
-    public Boolean areHooksEnabled() {
-        return this.areHooksEnabled;
+    public Optional<Boolean> areHooksEnabled() {
+        return Optional.ofNullable(this.areHooksEnabled);
     }
     /**
      * @return Collection of backend environment IP addresses.
      * 
      */
     public List<GetDeployStageBlueBackendIp> blueBackendIps() {
-        return this.blueBackendIps;
+        return this.blueBackendIps == null ? List.of() : this.blueBackendIps;
     }
     /**
      * @return Specifies the required blue green release strategy for OKE deployment.
      * 
      */
     public List<GetDeployStageBlueGreenStrategy> blueGreenStrategies() {
-        return this.blueGreenStrategies;
+        return this.blueGreenStrategies == null ? List.of() : this.blueGreenStrategies;
     }
     /**
      * @return Specifies the required canary release strategy for OKE deployment.
      * 
      */
     public List<GetDeployStageCanaryStrategy> canaryStrategies() {
-        return this.canaryStrategies;
+        return this.canaryStrategies == null ? List.of() : this.canaryStrategies;
     }
     /**
      * @return The OCID of the artifact that contains the command specification.
      * 
      */
-    public String commandSpecDeployArtifactId() {
-        return this.commandSpecDeployArtifactId;
+    public Optional<String> commandSpecDeployArtifactId() {
+        return Optional.ofNullable(this.commandSpecDeployArtifactId);
     }
     /**
      * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      * 
      */
-    public String computeInstanceGroupBlueGreenDeploymentDeployStageId() {
-        return this.computeInstanceGroupBlueGreenDeploymentDeployStageId;
+    public Optional<String> computeInstanceGroupBlueGreenDeploymentDeployStageId() {
+        return Optional.ofNullable(this.computeInstanceGroupBlueGreenDeploymentDeployStageId);
     }
     /**
      * @return The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
      * 
      */
-    public String computeInstanceGroupCanaryDeployStageId() {
-        return this.computeInstanceGroupCanaryDeployStageId;
+    public Optional<String> computeInstanceGroupCanaryDeployStageId() {
+        return Optional.ofNullable(this.computeInstanceGroupCanaryDeployStageId);
     }
     /**
      * @return A compute instance group canary traffic shift stage OCID for load balancer.
      * 
      */
-    public String computeInstanceGroupCanaryTrafficShiftDeployStageId() {
-        return this.computeInstanceGroupCanaryTrafficShiftDeployStageId;
+    public Optional<String> computeInstanceGroupCanaryTrafficShiftDeployStageId() {
+        return Optional.ofNullable(this.computeInstanceGroupCanaryTrafficShiftDeployStageId);
     }
     /**
      * @return A compute instance group environment OCID for rolling deployment.
      * 
      */
-    public String computeInstanceGroupDeployEnvironmentId() {
-        return this.computeInstanceGroupDeployEnvironmentId;
+    public Optional<String> computeInstanceGroupDeployEnvironmentId() {
+        return Optional.ofNullable(this.computeInstanceGroupDeployEnvironmentId);
     }
     /**
      * @return User provided key and value pair configuration, which is assigned through constants or parameter.
      * 
      */
     public Map<String,Object> config() {
-        return this.config;
+        return this.config == null ? Map.of() : this.config;
     }
     /**
      * @return Specifies the container configuration.
      * 
      */
     public List<GetDeployStageContainerConfig> containerConfigs() {
-        return this.containerConfigs;
+        return this.containerConfigs == null ? List.of() : this.containerConfigs;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
-    public String deployArtifactId() {
-        return this.deployArtifactId;
+    public Optional<String> deployArtifactId() {
+        return Optional.ofNullable(this.deployArtifactId);
     }
     /**
      * @return The list of file artifact OCIDs to deploy.
      * 
      */
     public List<String> deployArtifactIds() {
-        return this.deployArtifactIds;
+        return this.deployArtifactIds == null ? List.of() : this.deployArtifactIds;
     }
     /**
      * @return First compute instance group environment OCID for deployment.
      * 
      */
-    public String deployEnvironmentIdA() {
-        return this.deployEnvironmentIdA;
+    public Optional<String> deployEnvironmentIdA() {
+        return Optional.ofNullable(this.deployEnvironmentIdA);
     }
     /**
      * @return Second compute instance group environment OCID for deployment.
      * 
      */
-    public String deployEnvironmentIdB() {
-        return this.deployEnvironmentIdB;
+    public Optional<String> deployEnvironmentIdB() {
+        return Optional.ofNullable(this.deployEnvironmentIdB);
     }
     /**
      * @return The OCID of a pipeline.
      * 
      */
-    public String deployPipelineId() {
-        return this.deployPipelineId;
+    public Optional<String> deployPipelineId() {
+        return Optional.ofNullable(this.deployPipelineId);
     }
     public String deployStageId() {
         return this.deployStageId;
@@ -514,343 +516,343 @@ public final class GetDeployStageResult {
      * 
      */
     public List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections() {
-        return this.deployStagePredecessorCollections;
+        return this.deployStagePredecessorCollections == null ? List.of() : this.deployStagePredecessorCollections;
     }
     /**
      * @return Deployment stage type.
      * 
      */
-    public String deployStageType() {
-        return this.deployStageType;
+    public Optional<String> deployStageType() {
+        return Optional.ofNullable(this.deployStageType);
     }
     /**
      * @return The OCID of the artifact that contains the deployment specification.
      * 
      */
-    public String deploymentSpecDeployArtifactId() {
-        return this.deploymentSpecDeployArtifactId;
+    public Optional<String> deploymentSpecDeployArtifactId() {
+        return Optional.ofNullable(this.deploymentSpecDeployArtifactId);
     }
     /**
      * @return Optional description about the deployment stage.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A Docker image artifact OCID.
      * 
      */
-    public String dockerImageDeployArtifactId() {
-        return this.dockerImageDeployArtifactId;
+    public Optional<String> dockerImageDeployArtifactId() {
+        return Optional.ofNullable(this.dockerImageDeployArtifactId);
     }
     /**
      * @return Specifies a failure policy for a compute instance group rolling deployment stage.
      * 
      */
     public List<GetDeployStageFailurePolicy> failurePolicies() {
-        return this.failurePolicies;
+        return this.failurePolicies == null ? List.of() : this.failurePolicies;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Function environment OCID.
      * 
      */
-    public String functionDeployEnvironmentId() {
-        return this.functionDeployEnvironmentId;
+    public Optional<String> functionDeployEnvironmentId() {
+        return Optional.ofNullable(this.functionDeployEnvironmentId);
     }
     /**
      * @return Timeout for execution of the Function. Value in seconds.
      * 
      */
-    public Integer functionTimeoutInSeconds() {
-        return this.functionTimeoutInSeconds;
+    public Optional<Integer> functionTimeoutInSeconds() {
+        return Optional.ofNullable(this.functionTimeoutInSeconds);
     }
     /**
      * @return Collection of backend environment IP addresses.
      * 
      */
     public List<GetDeployStageGreenBackendIp> greenBackendIps() {
-        return this.greenBackendIps;
+        return this.greenBackendIps == null ? List.of() : this.greenBackendIps;
     }
     /**
      * @return Helm chart artifact OCID.
      * 
      */
-    public String helmChartDeployArtifactId() {
-        return this.helmChartDeployArtifactId;
+    public Optional<String> helmChartDeployArtifactId() {
+        return Optional.ofNullable(this.helmChartDeployArtifactId);
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
-    public Boolean isAsync() {
-        return this.isAsync;
+    public Optional<Boolean> isAsync() {
+        return Optional.ofNullable(this.isAsync);
     }
     /**
      * @return Enables helm --debug option to stream output to tf stdout. Set to false by default.
      * 
      */
-    public Boolean isDebugEnabled() {
-        return this.isDebugEnabled;
+    public Optional<Boolean> isDebugEnabled() {
+        return Optional.ofNullable(this.isDebugEnabled);
     }
     /**
      * @return Force resource update through delete; or if required, recreate. Set to false by default.
      * 
      */
-    public Boolean isForceEnabled() {
-        return this.isForceEnabled;
+    public Optional<Boolean> isForceEnabled() {
+        return Optional.ofNullable(this.isForceEnabled);
     }
     /**
      * @return A boolean flag specifies whether the invoked function must be validated.
      * 
      */
-    public Boolean isValidationEnabled() {
-        return this.isValidationEnabled;
+    public Optional<Boolean> isValidationEnabled() {
+        return Optional.ofNullable(this.isValidationEnabled);
     }
     /**
      * @return List of Kubernetes manifest artifact OCIDs.
      * 
      */
     public List<String> kubernetesManifestDeployArtifactIds() {
-        return this.kubernetesManifestDeployArtifactIds;
+        return this.kubernetesManifestDeployArtifactIds == null ? List.of() : this.kubernetesManifestDeployArtifactIds;
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
     public List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs() {
-        return this.loadBalancerConfigs;
+        return this.loadBalancerConfigs == null ? List.of() : this.loadBalancerConfigs;
     }
     /**
      * @return Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      * 
      */
-    public Integer maxHistory() {
-        return this.maxHistory;
+    public Optional<Integer> maxHistory() {
+        return Optional.ofNullable(this.maxHistory);
     }
     /**
      * @return Maximum usable memory for the Function (in MB).
      * 
      */
-    public String maxMemoryInMbs() {
-        return this.maxMemoryInMbs;
+    public Optional<String> maxMemoryInMbs() {
+        return Optional.ofNullable(this.maxMemoryInMbs);
     }
     /**
      * @return Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      * 
      */
-    public String okeBlueGreenDeployStageId() {
-        return this.okeBlueGreenDeployStageId;
+    public Optional<String> okeBlueGreenDeployStageId() {
+        return Optional.ofNullable(this.okeBlueGreenDeployStageId);
     }
     /**
      * @return The OCID of an upstream OKE canary deployment stage in this pipeline.
      * 
      */
-    public String okeCanaryDeployStageId() {
-        return this.okeCanaryDeployStageId;
+    public Optional<String> okeCanaryDeployStageId() {
+        return Optional.ofNullable(this.okeCanaryDeployStageId);
     }
     /**
      * @return The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
      * 
      */
-    public String okeCanaryTrafficShiftDeployStageId() {
-        return this.okeCanaryTrafficShiftDeployStageId;
+    public Optional<String> okeCanaryTrafficShiftDeployStageId() {
+        return Optional.ofNullable(this.okeCanaryTrafficShiftDeployStageId);
     }
     /**
      * @return Kubernetes cluster environment OCID for deployment.
      * 
      */
-    public String okeClusterDeployEnvironmentId() {
-        return this.okeClusterDeployEnvironmentId;
+    public Optional<String> okeClusterDeployEnvironmentId() {
+        return Optional.ofNullable(this.okeClusterDeployEnvironmentId);
     }
     /**
      * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
     public List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs() {
-        return this.productionLoadBalancerConfigs;
+        return this.productionLoadBalancerConfigs == null ? List.of() : this.productionLoadBalancerConfigs;
     }
     /**
      * @return The OCID of a project.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return Release name of the Helm chart.
      * 
      */
-    public String releaseName() {
-        return this.releaseName;
+    public Optional<String> releaseName() {
+        return Optional.ofNullable(this.releaseName);
     }
     /**
      * @return Specifies the rollback policy. This is initiated on the failure of certain stage types.
      * 
      */
     public List<GetDeployStageRollbackPolicy> rollbackPolicies() {
-        return this.rollbackPolicies;
+        return this.rollbackPolicies == null ? List.of() : this.rollbackPolicies;
     }
     /**
      * @return Description of rollout policy for load balancer traffic shift stage.
      * 
      */
     public List<GetDeployStageRolloutPolicy> rolloutPolicies() {
-        return this.rolloutPolicies;
+        return this.rolloutPolicies == null ? List.of() : this.rolloutPolicies;
     }
     /**
      * @return Specifies the name and value pairs to set helm values.
      * 
      */
     public List<GetDeployStageSetString> setStrings() {
-        return this.setStrings;
+        return this.setStrings == null ? List.of() : this.setStrings;
     }
     /**
      * @return Specifies the name and value pairs to set helm values.
      * 
      */
     public List<GetDeployStageSetValue> setValues() {
-        return this.setValues;
+        return this.setValues == null ? List.of() : this.setValues;
     }
     /**
      * @return Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      * 
      */
-    public Boolean shouldCleanupOnFail() {
-        return this.shouldCleanupOnFail;
+    public Optional<Boolean> shouldCleanupOnFail() {
+        return Optional.ofNullable(this.shouldCleanupOnFail);
     }
     /**
      * @return Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
      * 
      */
-    public Boolean shouldNotWait() {
-        return this.shouldNotWait;
+    public Optional<Boolean> shouldNotWait() {
+        return Optional.ofNullable(this.shouldNotWait);
     }
     /**
      * @return During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      * 
      */
-    public Boolean shouldResetValues() {
-        return this.shouldResetValues;
+    public Optional<Boolean> shouldResetValues() {
+        return Optional.ofNullable(this.shouldResetValues);
     }
     /**
      * @return During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      * 
      */
-    public Boolean shouldReuseValues() {
-        return this.shouldReuseValues;
+    public Optional<Boolean> shouldReuseValues() {
+        return Optional.ofNullable(this.shouldReuseValues);
     }
     /**
      * @return If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      * 
      */
-    public Boolean shouldSkipCrds() {
-        return this.shouldSkipCrds;
+    public Optional<Boolean> shouldSkipCrds() {
+        return Optional.ofNullable(this.shouldSkipCrds);
     }
     /**
      * @return If set, renders subchart notes along with the parent. Set to false by default.
      * 
      */
-    public Boolean shouldSkipRenderSubchartNotes() {
-        return this.shouldSkipRenderSubchartNotes;
+    public Optional<Boolean> shouldSkipRenderSubchartNotes() {
+        return Optional.ofNullable(this.shouldSkipRenderSubchartNotes);
     }
     /**
      * @return The current state of the deployment stage.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
     public List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs() {
-        return this.testLoadBalancerConfigs;
+        return this.testLoadBalancerConfigs == null ? List.of() : this.testLoadBalancerConfigs;
     }
     /**
      * @return Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
-    public Integer timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Optional<Integer> timeoutInSeconds() {
+        return Optional.ofNullable(this.timeoutInSeconds);
     }
     /**
      * @return Specifies the target or destination backend set.
      * 
      */
-    public String trafficShiftTarget() {
-        return this.trafficShiftTarget;
+    public Optional<String> trafficShiftTarget() {
+        return Optional.ofNullable(this.trafficShiftTarget);
     }
     /**
      * @return List of values.yaml file artifact OCIDs.
      * 
      */
     public List<String> valuesArtifactIds() {
-        return this.valuesArtifactIds;
+        return this.valuesArtifactIds == null ? List.of() : this.valuesArtifactIds;
     }
     /**
      * @return Specifies wait criteria for the Wait stage.
      * 
      */
     public List<GetDeployStageWaitCriteria> waitCriterias() {
-        return this.waitCriterias;
+        return this.waitCriterias == null ? List.of() : this.waitCriterias;
     }
 
     public static Builder builder() {
@@ -862,75 +864,75 @@ public final class GetDeployStageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployStageApprovalPolicy> approvalPolicies;
-        private Boolean areHooksEnabled;
-        private List<GetDeployStageBlueBackendIp> blueBackendIps;
-        private List<GetDeployStageBlueGreenStrategy> blueGreenStrategies;
-        private List<GetDeployStageCanaryStrategy> canaryStrategies;
-        private String commandSpecDeployArtifactId;
-        private String compartmentId;
-        private String computeInstanceGroupBlueGreenDeploymentDeployStageId;
-        private String computeInstanceGroupCanaryDeployStageId;
-        private String computeInstanceGroupCanaryTrafficShiftDeployStageId;
-        private String computeInstanceGroupDeployEnvironmentId;
-        private Map<String,Object> config;
-        private List<GetDeployStageContainerConfig> containerConfigs;
-        private Map<String,Object> definedTags;
-        private String deployArtifactId;
-        private List<String> deployArtifactIds;
-        private String deployEnvironmentIdA;
-        private String deployEnvironmentIdB;
-        private String deployPipelineId;
+        private @Nullable List<GetDeployStageApprovalPolicy> approvalPolicies;
+        private @Nullable Boolean areHooksEnabled;
+        private @Nullable List<GetDeployStageBlueBackendIp> blueBackendIps;
+        private @Nullable List<GetDeployStageBlueGreenStrategy> blueGreenStrategies;
+        private @Nullable List<GetDeployStageCanaryStrategy> canaryStrategies;
+        private @Nullable String commandSpecDeployArtifactId;
+        private @Nullable String compartmentId;
+        private @Nullable String computeInstanceGroupBlueGreenDeploymentDeployStageId;
+        private @Nullable String computeInstanceGroupCanaryDeployStageId;
+        private @Nullable String computeInstanceGroupCanaryTrafficShiftDeployStageId;
+        private @Nullable String computeInstanceGroupDeployEnvironmentId;
+        private @Nullable Map<String,Object> config;
+        private @Nullable List<GetDeployStageContainerConfig> containerConfigs;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deployArtifactId;
+        private @Nullable List<String> deployArtifactIds;
+        private @Nullable String deployEnvironmentIdA;
+        private @Nullable String deployEnvironmentIdB;
+        private @Nullable String deployPipelineId;
         private String deployStageId;
-        private List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections;
-        private String deployStageType;
-        private String deploymentSpecDeployArtifactId;
-        private String description;
-        private String displayName;
-        private String dockerImageDeployArtifactId;
-        private List<GetDeployStageFailurePolicy> failurePolicies;
-        private Map<String,Object> freeformTags;
-        private String functionDeployEnvironmentId;
-        private Integer functionTimeoutInSeconds;
-        private List<GetDeployStageGreenBackendIp> greenBackendIps;
-        private String helmChartDeployArtifactId;
-        private String id;
-        private Boolean isAsync;
-        private Boolean isDebugEnabled;
-        private Boolean isForceEnabled;
-        private Boolean isValidationEnabled;
-        private List<String> kubernetesManifestDeployArtifactIds;
-        private String lifecycleDetails;
-        private List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs;
-        private Integer maxHistory;
-        private String maxMemoryInMbs;
-        private String namespace;
-        private String okeBlueGreenDeployStageId;
-        private String okeCanaryDeployStageId;
-        private String okeCanaryTrafficShiftDeployStageId;
-        private String okeClusterDeployEnvironmentId;
-        private List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs;
-        private String projectId;
-        private String releaseName;
-        private List<GetDeployStageRollbackPolicy> rollbackPolicies;
-        private List<GetDeployStageRolloutPolicy> rolloutPolicies;
-        private List<GetDeployStageSetString> setStrings;
-        private List<GetDeployStageSetValue> setValues;
-        private Boolean shouldCleanupOnFail;
-        private Boolean shouldNotWait;
-        private Boolean shouldResetValues;
-        private Boolean shouldReuseValues;
-        private Boolean shouldSkipCrds;
-        private Boolean shouldSkipRenderSubchartNotes;
-        private String state;
-        private Map<String,Object> systemTags;
-        private List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs;
-        private String timeCreated;
-        private String timeUpdated;
-        private Integer timeoutInSeconds;
-        private String trafficShiftTarget;
-        private List<String> valuesArtifactIds;
-        private List<GetDeployStageWaitCriteria> waitCriterias;
+        private @Nullable List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections;
+        private @Nullable String deployStageType;
+        private @Nullable String deploymentSpecDeployArtifactId;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String dockerImageDeployArtifactId;
+        private @Nullable List<GetDeployStageFailurePolicy> failurePolicies;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String functionDeployEnvironmentId;
+        private @Nullable Integer functionTimeoutInSeconds;
+        private @Nullable List<GetDeployStageGreenBackendIp> greenBackendIps;
+        private @Nullable String helmChartDeployArtifactId;
+        private @Nullable String id;
+        private @Nullable Boolean isAsync;
+        private @Nullable Boolean isDebugEnabled;
+        private @Nullable Boolean isForceEnabled;
+        private @Nullable Boolean isValidationEnabled;
+        private @Nullable List<String> kubernetesManifestDeployArtifactIds;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs;
+        private @Nullable Integer maxHistory;
+        private @Nullable String maxMemoryInMbs;
+        private @Nullable String namespace;
+        private @Nullable String okeBlueGreenDeployStageId;
+        private @Nullable String okeCanaryDeployStageId;
+        private @Nullable String okeCanaryTrafficShiftDeployStageId;
+        private @Nullable String okeClusterDeployEnvironmentId;
+        private @Nullable List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs;
+        private @Nullable String projectId;
+        private @Nullable String releaseName;
+        private @Nullable List<GetDeployStageRollbackPolicy> rollbackPolicies;
+        private @Nullable List<GetDeployStageRolloutPolicy> rolloutPolicies;
+        private @Nullable List<GetDeployStageSetString> setStrings;
+        private @Nullable List<GetDeployStageSetValue> setValues;
+        private @Nullable Boolean shouldCleanupOnFail;
+        private @Nullable Boolean shouldNotWait;
+        private @Nullable Boolean shouldResetValues;
+        private @Nullable Boolean shouldReuseValues;
+        private @Nullable Boolean shouldSkipCrds;
+        private @Nullable Boolean shouldSkipRenderSubchartNotes;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Integer timeoutInSeconds;
+        private @Nullable String trafficShiftTarget;
+        private @Nullable List<String> valuesArtifactIds;
+        private @Nullable List<GetDeployStageWaitCriteria> waitCriterias;
         public Builder() {}
         public Builder(GetDeployStageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -1006,116 +1008,116 @@ public final class GetDeployStageResult {
         }
 
         @CustomType.Setter
-        public Builder approvalPolicies(List<GetDeployStageApprovalPolicy> approvalPolicies) {
-            this.approvalPolicies = Objects.requireNonNull(approvalPolicies);
+        public Builder approvalPolicies(@Nullable List<GetDeployStageApprovalPolicy> approvalPolicies) {
+            this.approvalPolicies = approvalPolicies;
             return this;
         }
         public Builder approvalPolicies(GetDeployStageApprovalPolicy... approvalPolicies) {
             return approvalPolicies(List.of(approvalPolicies));
         }
         @CustomType.Setter
-        public Builder areHooksEnabled(Boolean areHooksEnabled) {
-            this.areHooksEnabled = Objects.requireNonNull(areHooksEnabled);
+        public Builder areHooksEnabled(@Nullable Boolean areHooksEnabled) {
+            this.areHooksEnabled = areHooksEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder blueBackendIps(List<GetDeployStageBlueBackendIp> blueBackendIps) {
-            this.blueBackendIps = Objects.requireNonNull(blueBackendIps);
+        public Builder blueBackendIps(@Nullable List<GetDeployStageBlueBackendIp> blueBackendIps) {
+            this.blueBackendIps = blueBackendIps;
             return this;
         }
         public Builder blueBackendIps(GetDeployStageBlueBackendIp... blueBackendIps) {
             return blueBackendIps(List.of(blueBackendIps));
         }
         @CustomType.Setter
-        public Builder blueGreenStrategies(List<GetDeployStageBlueGreenStrategy> blueGreenStrategies) {
-            this.blueGreenStrategies = Objects.requireNonNull(blueGreenStrategies);
+        public Builder blueGreenStrategies(@Nullable List<GetDeployStageBlueGreenStrategy> blueGreenStrategies) {
+            this.blueGreenStrategies = blueGreenStrategies;
             return this;
         }
         public Builder blueGreenStrategies(GetDeployStageBlueGreenStrategy... blueGreenStrategies) {
             return blueGreenStrategies(List.of(blueGreenStrategies));
         }
         @CustomType.Setter
-        public Builder canaryStrategies(List<GetDeployStageCanaryStrategy> canaryStrategies) {
-            this.canaryStrategies = Objects.requireNonNull(canaryStrategies);
+        public Builder canaryStrategies(@Nullable List<GetDeployStageCanaryStrategy> canaryStrategies) {
+            this.canaryStrategies = canaryStrategies;
             return this;
         }
         public Builder canaryStrategies(GetDeployStageCanaryStrategy... canaryStrategies) {
             return canaryStrategies(List.of(canaryStrategies));
         }
         @CustomType.Setter
-        public Builder commandSpecDeployArtifactId(String commandSpecDeployArtifactId) {
-            this.commandSpecDeployArtifactId = Objects.requireNonNull(commandSpecDeployArtifactId);
+        public Builder commandSpecDeployArtifactId(@Nullable String commandSpecDeployArtifactId) {
+            this.commandSpecDeployArtifactId = commandSpecDeployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeInstanceGroupBlueGreenDeploymentDeployStageId(String computeInstanceGroupBlueGreenDeploymentDeployStageId) {
-            this.computeInstanceGroupBlueGreenDeploymentDeployStageId = Objects.requireNonNull(computeInstanceGroupBlueGreenDeploymentDeployStageId);
+        public Builder computeInstanceGroupBlueGreenDeploymentDeployStageId(@Nullable String computeInstanceGroupBlueGreenDeploymentDeployStageId) {
+            this.computeInstanceGroupBlueGreenDeploymentDeployStageId = computeInstanceGroupBlueGreenDeploymentDeployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeInstanceGroupCanaryDeployStageId(String computeInstanceGroupCanaryDeployStageId) {
-            this.computeInstanceGroupCanaryDeployStageId = Objects.requireNonNull(computeInstanceGroupCanaryDeployStageId);
+        public Builder computeInstanceGroupCanaryDeployStageId(@Nullable String computeInstanceGroupCanaryDeployStageId) {
+            this.computeInstanceGroupCanaryDeployStageId = computeInstanceGroupCanaryDeployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeInstanceGroupCanaryTrafficShiftDeployStageId(String computeInstanceGroupCanaryTrafficShiftDeployStageId) {
-            this.computeInstanceGroupCanaryTrafficShiftDeployStageId = Objects.requireNonNull(computeInstanceGroupCanaryTrafficShiftDeployStageId);
+        public Builder computeInstanceGroupCanaryTrafficShiftDeployStageId(@Nullable String computeInstanceGroupCanaryTrafficShiftDeployStageId) {
+            this.computeInstanceGroupCanaryTrafficShiftDeployStageId = computeInstanceGroupCanaryTrafficShiftDeployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeInstanceGroupDeployEnvironmentId(String computeInstanceGroupDeployEnvironmentId) {
-            this.computeInstanceGroupDeployEnvironmentId = Objects.requireNonNull(computeInstanceGroupDeployEnvironmentId);
+        public Builder computeInstanceGroupDeployEnvironmentId(@Nullable String computeInstanceGroupDeployEnvironmentId) {
+            this.computeInstanceGroupDeployEnvironmentId = computeInstanceGroupDeployEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder config(Map<String,Object> config) {
-            this.config = Objects.requireNonNull(config);
+        public Builder config(@Nullable Map<String,Object> config) {
+            this.config = config;
             return this;
         }
         @CustomType.Setter
-        public Builder containerConfigs(List<GetDeployStageContainerConfig> containerConfigs) {
-            this.containerConfigs = Objects.requireNonNull(containerConfigs);
+        public Builder containerConfigs(@Nullable List<GetDeployStageContainerConfig> containerConfigs) {
+            this.containerConfigs = containerConfigs;
             return this;
         }
         public Builder containerConfigs(GetDeployStageContainerConfig... containerConfigs) {
             return containerConfigs(List.of(containerConfigs));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+        public Builder deployArtifactId(@Nullable String deployArtifactId) {
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactIds(List<String> deployArtifactIds) {
-            this.deployArtifactIds = Objects.requireNonNull(deployArtifactIds);
+        public Builder deployArtifactIds(@Nullable List<String> deployArtifactIds) {
+            this.deployArtifactIds = deployArtifactIds;
             return this;
         }
         public Builder deployArtifactIds(String... deployArtifactIds) {
             return deployArtifactIds(List.of(deployArtifactIds));
         }
         @CustomType.Setter
-        public Builder deployEnvironmentIdA(String deployEnvironmentIdA) {
-            this.deployEnvironmentIdA = Objects.requireNonNull(deployEnvironmentIdA);
+        public Builder deployEnvironmentIdA(@Nullable String deployEnvironmentIdA) {
+            this.deployEnvironmentIdA = deployEnvironmentIdA;
             return this;
         }
         @CustomType.Setter
-        public Builder deployEnvironmentIdB(String deployEnvironmentIdB) {
-            this.deployEnvironmentIdB = Objects.requireNonNull(deployEnvironmentIdB);
+        public Builder deployEnvironmentIdB(@Nullable String deployEnvironmentIdB) {
+            this.deployEnvironmentIdB = deployEnvironmentIdB;
             return this;
         }
         @CustomType.Setter
-        public Builder deployPipelineId(String deployPipelineId) {
-            this.deployPipelineId = Objects.requireNonNull(deployPipelineId);
+        public Builder deployPipelineId(@Nullable String deployPipelineId) {
+            this.deployPipelineId = deployPipelineId;
             return this;
         }
         @CustomType.Setter
@@ -1124,284 +1126,284 @@ public final class GetDeployStageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deployStagePredecessorCollections(List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections) {
-            this.deployStagePredecessorCollections = Objects.requireNonNull(deployStagePredecessorCollections);
+        public Builder deployStagePredecessorCollections(@Nullable List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections) {
+            this.deployStagePredecessorCollections = deployStagePredecessorCollections;
             return this;
         }
         public Builder deployStagePredecessorCollections(GetDeployStageDeployStagePredecessorCollection... deployStagePredecessorCollections) {
             return deployStagePredecessorCollections(List.of(deployStagePredecessorCollections));
         }
         @CustomType.Setter
-        public Builder deployStageType(String deployStageType) {
-            this.deployStageType = Objects.requireNonNull(deployStageType);
+        public Builder deployStageType(@Nullable String deployStageType) {
+            this.deployStageType = deployStageType;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentSpecDeployArtifactId(String deploymentSpecDeployArtifactId) {
-            this.deploymentSpecDeployArtifactId = Objects.requireNonNull(deploymentSpecDeployArtifactId);
+        public Builder deploymentSpecDeployArtifactId(@Nullable String deploymentSpecDeployArtifactId) {
+            this.deploymentSpecDeployArtifactId = deploymentSpecDeployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dockerImageDeployArtifactId(String dockerImageDeployArtifactId) {
-            this.dockerImageDeployArtifactId = Objects.requireNonNull(dockerImageDeployArtifactId);
+        public Builder dockerImageDeployArtifactId(@Nullable String dockerImageDeployArtifactId) {
+            this.dockerImageDeployArtifactId = dockerImageDeployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder failurePolicies(List<GetDeployStageFailurePolicy> failurePolicies) {
-            this.failurePolicies = Objects.requireNonNull(failurePolicies);
+        public Builder failurePolicies(@Nullable List<GetDeployStageFailurePolicy> failurePolicies) {
+            this.failurePolicies = failurePolicies;
             return this;
         }
         public Builder failurePolicies(GetDeployStageFailurePolicy... failurePolicies) {
             return failurePolicies(List.of(failurePolicies));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder functionDeployEnvironmentId(String functionDeployEnvironmentId) {
-            this.functionDeployEnvironmentId = Objects.requireNonNull(functionDeployEnvironmentId);
+        public Builder functionDeployEnvironmentId(@Nullable String functionDeployEnvironmentId) {
+            this.functionDeployEnvironmentId = functionDeployEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder functionTimeoutInSeconds(Integer functionTimeoutInSeconds) {
-            this.functionTimeoutInSeconds = Objects.requireNonNull(functionTimeoutInSeconds);
+        public Builder functionTimeoutInSeconds(@Nullable Integer functionTimeoutInSeconds) {
+            this.functionTimeoutInSeconds = functionTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder greenBackendIps(List<GetDeployStageGreenBackendIp> greenBackendIps) {
-            this.greenBackendIps = Objects.requireNonNull(greenBackendIps);
+        public Builder greenBackendIps(@Nullable List<GetDeployStageGreenBackendIp> greenBackendIps) {
+            this.greenBackendIps = greenBackendIps;
             return this;
         }
         public Builder greenBackendIps(GetDeployStageGreenBackendIp... greenBackendIps) {
             return greenBackendIps(List.of(greenBackendIps));
         }
         @CustomType.Setter
-        public Builder helmChartDeployArtifactId(String helmChartDeployArtifactId) {
-            this.helmChartDeployArtifactId = Objects.requireNonNull(helmChartDeployArtifactId);
+        public Builder helmChartDeployArtifactId(@Nullable String helmChartDeployArtifactId) {
+            this.helmChartDeployArtifactId = helmChartDeployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAsync(Boolean isAsync) {
-            this.isAsync = Objects.requireNonNull(isAsync);
+        public Builder isAsync(@Nullable Boolean isAsync) {
+            this.isAsync = isAsync;
             return this;
         }
         @CustomType.Setter
-        public Builder isDebugEnabled(Boolean isDebugEnabled) {
-            this.isDebugEnabled = Objects.requireNonNull(isDebugEnabled);
+        public Builder isDebugEnabled(@Nullable Boolean isDebugEnabled) {
+            this.isDebugEnabled = isDebugEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isForceEnabled(Boolean isForceEnabled) {
-            this.isForceEnabled = Objects.requireNonNull(isForceEnabled);
+        public Builder isForceEnabled(@Nullable Boolean isForceEnabled) {
+            this.isForceEnabled = isForceEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isValidationEnabled(Boolean isValidationEnabled) {
-            this.isValidationEnabled = Objects.requireNonNull(isValidationEnabled);
+        public Builder isValidationEnabled(@Nullable Boolean isValidationEnabled) {
+            this.isValidationEnabled = isValidationEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder kubernetesManifestDeployArtifactIds(List<String> kubernetesManifestDeployArtifactIds) {
-            this.kubernetesManifestDeployArtifactIds = Objects.requireNonNull(kubernetesManifestDeployArtifactIds);
+        public Builder kubernetesManifestDeployArtifactIds(@Nullable List<String> kubernetesManifestDeployArtifactIds) {
+            this.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
             return this;
         }
         public Builder kubernetesManifestDeployArtifactIds(String... kubernetesManifestDeployArtifactIds) {
             return kubernetesManifestDeployArtifactIds(List.of(kubernetesManifestDeployArtifactIds));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerConfigs(List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs) {
-            this.loadBalancerConfigs = Objects.requireNonNull(loadBalancerConfigs);
+        public Builder loadBalancerConfigs(@Nullable List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs) {
+            this.loadBalancerConfigs = loadBalancerConfigs;
             return this;
         }
         public Builder loadBalancerConfigs(GetDeployStageLoadBalancerConfig... loadBalancerConfigs) {
             return loadBalancerConfigs(List.of(loadBalancerConfigs));
         }
         @CustomType.Setter
-        public Builder maxHistory(Integer maxHistory) {
-            this.maxHistory = Objects.requireNonNull(maxHistory);
+        public Builder maxHistory(@Nullable Integer maxHistory) {
+            this.maxHistory = maxHistory;
             return this;
         }
         @CustomType.Setter
-        public Builder maxMemoryInMbs(String maxMemoryInMbs) {
-            this.maxMemoryInMbs = Objects.requireNonNull(maxMemoryInMbs);
+        public Builder maxMemoryInMbs(@Nullable String maxMemoryInMbs) {
+            this.maxMemoryInMbs = maxMemoryInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder okeBlueGreenDeployStageId(String okeBlueGreenDeployStageId) {
-            this.okeBlueGreenDeployStageId = Objects.requireNonNull(okeBlueGreenDeployStageId);
+        public Builder okeBlueGreenDeployStageId(@Nullable String okeBlueGreenDeployStageId) {
+            this.okeBlueGreenDeployStageId = okeBlueGreenDeployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder okeCanaryDeployStageId(String okeCanaryDeployStageId) {
-            this.okeCanaryDeployStageId = Objects.requireNonNull(okeCanaryDeployStageId);
+        public Builder okeCanaryDeployStageId(@Nullable String okeCanaryDeployStageId) {
+            this.okeCanaryDeployStageId = okeCanaryDeployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder okeCanaryTrafficShiftDeployStageId(String okeCanaryTrafficShiftDeployStageId) {
-            this.okeCanaryTrafficShiftDeployStageId = Objects.requireNonNull(okeCanaryTrafficShiftDeployStageId);
+        public Builder okeCanaryTrafficShiftDeployStageId(@Nullable String okeCanaryTrafficShiftDeployStageId) {
+            this.okeCanaryTrafficShiftDeployStageId = okeCanaryTrafficShiftDeployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder okeClusterDeployEnvironmentId(String okeClusterDeployEnvironmentId) {
-            this.okeClusterDeployEnvironmentId = Objects.requireNonNull(okeClusterDeployEnvironmentId);
+        public Builder okeClusterDeployEnvironmentId(@Nullable String okeClusterDeployEnvironmentId) {
+            this.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder productionLoadBalancerConfigs(List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs) {
-            this.productionLoadBalancerConfigs = Objects.requireNonNull(productionLoadBalancerConfigs);
+        public Builder productionLoadBalancerConfigs(@Nullable List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs) {
+            this.productionLoadBalancerConfigs = productionLoadBalancerConfigs;
             return this;
         }
         public Builder productionLoadBalancerConfigs(GetDeployStageProductionLoadBalancerConfig... productionLoadBalancerConfigs) {
             return productionLoadBalancerConfigs(List.of(productionLoadBalancerConfigs));
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseName(String releaseName) {
-            this.releaseName = Objects.requireNonNull(releaseName);
+        public Builder releaseName(@Nullable String releaseName) {
+            this.releaseName = releaseName;
             return this;
         }
         @CustomType.Setter
-        public Builder rollbackPolicies(List<GetDeployStageRollbackPolicy> rollbackPolicies) {
-            this.rollbackPolicies = Objects.requireNonNull(rollbackPolicies);
+        public Builder rollbackPolicies(@Nullable List<GetDeployStageRollbackPolicy> rollbackPolicies) {
+            this.rollbackPolicies = rollbackPolicies;
             return this;
         }
         public Builder rollbackPolicies(GetDeployStageRollbackPolicy... rollbackPolicies) {
             return rollbackPolicies(List.of(rollbackPolicies));
         }
         @CustomType.Setter
-        public Builder rolloutPolicies(List<GetDeployStageRolloutPolicy> rolloutPolicies) {
-            this.rolloutPolicies = Objects.requireNonNull(rolloutPolicies);
+        public Builder rolloutPolicies(@Nullable List<GetDeployStageRolloutPolicy> rolloutPolicies) {
+            this.rolloutPolicies = rolloutPolicies;
             return this;
         }
         public Builder rolloutPolicies(GetDeployStageRolloutPolicy... rolloutPolicies) {
             return rolloutPolicies(List.of(rolloutPolicies));
         }
         @CustomType.Setter
-        public Builder setStrings(List<GetDeployStageSetString> setStrings) {
-            this.setStrings = Objects.requireNonNull(setStrings);
+        public Builder setStrings(@Nullable List<GetDeployStageSetString> setStrings) {
+            this.setStrings = setStrings;
             return this;
         }
         public Builder setStrings(GetDeployStageSetString... setStrings) {
             return setStrings(List.of(setStrings));
         }
         @CustomType.Setter
-        public Builder setValues(List<GetDeployStageSetValue> setValues) {
-            this.setValues = Objects.requireNonNull(setValues);
+        public Builder setValues(@Nullable List<GetDeployStageSetValue> setValues) {
+            this.setValues = setValues;
             return this;
         }
         public Builder setValues(GetDeployStageSetValue... setValues) {
             return setValues(List.of(setValues));
         }
         @CustomType.Setter
-        public Builder shouldCleanupOnFail(Boolean shouldCleanupOnFail) {
-            this.shouldCleanupOnFail = Objects.requireNonNull(shouldCleanupOnFail);
+        public Builder shouldCleanupOnFail(@Nullable Boolean shouldCleanupOnFail) {
+            this.shouldCleanupOnFail = shouldCleanupOnFail;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldNotWait(Boolean shouldNotWait) {
-            this.shouldNotWait = Objects.requireNonNull(shouldNotWait);
+        public Builder shouldNotWait(@Nullable Boolean shouldNotWait) {
+            this.shouldNotWait = shouldNotWait;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldResetValues(Boolean shouldResetValues) {
-            this.shouldResetValues = Objects.requireNonNull(shouldResetValues);
+        public Builder shouldResetValues(@Nullable Boolean shouldResetValues) {
+            this.shouldResetValues = shouldResetValues;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldReuseValues(Boolean shouldReuseValues) {
-            this.shouldReuseValues = Objects.requireNonNull(shouldReuseValues);
+        public Builder shouldReuseValues(@Nullable Boolean shouldReuseValues) {
+            this.shouldReuseValues = shouldReuseValues;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldSkipCrds(Boolean shouldSkipCrds) {
-            this.shouldSkipCrds = Objects.requireNonNull(shouldSkipCrds);
+        public Builder shouldSkipCrds(@Nullable Boolean shouldSkipCrds) {
+            this.shouldSkipCrds = shouldSkipCrds;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldSkipRenderSubchartNotes(Boolean shouldSkipRenderSubchartNotes) {
-            this.shouldSkipRenderSubchartNotes = Objects.requireNonNull(shouldSkipRenderSubchartNotes);
+        public Builder shouldSkipRenderSubchartNotes(@Nullable Boolean shouldSkipRenderSubchartNotes) {
+            this.shouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder testLoadBalancerConfigs(List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs) {
-            this.testLoadBalancerConfigs = Objects.requireNonNull(testLoadBalancerConfigs);
+        public Builder testLoadBalancerConfigs(@Nullable List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs) {
+            this.testLoadBalancerConfigs = testLoadBalancerConfigs;
             return this;
         }
         public Builder testLoadBalancerConfigs(GetDeployStageTestLoadBalancerConfig... testLoadBalancerConfigs) {
             return testLoadBalancerConfigs(List.of(testLoadBalancerConfigs));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+        public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder trafficShiftTarget(String trafficShiftTarget) {
-            this.trafficShiftTarget = Objects.requireNonNull(trafficShiftTarget);
+        public Builder trafficShiftTarget(@Nullable String trafficShiftTarget) {
+            this.trafficShiftTarget = trafficShiftTarget;
             return this;
         }
         @CustomType.Setter
-        public Builder valuesArtifactIds(List<String> valuesArtifactIds) {
-            this.valuesArtifactIds = Objects.requireNonNull(valuesArtifactIds);
+        public Builder valuesArtifactIds(@Nullable List<String> valuesArtifactIds) {
+            this.valuesArtifactIds = valuesArtifactIds;
             return this;
         }
         public Builder valuesArtifactIds(String... valuesArtifactIds) {
             return valuesArtifactIds(List.of(valuesArtifactIds));
         }
         @CustomType.Setter
-        public Builder waitCriterias(List<GetDeployStageWaitCriteria> waitCriterias) {
-            this.waitCriterias = Objects.requireNonNull(waitCriterias);
+        public Builder waitCriterias(@Nullable List<GetDeployStageWaitCriteria> waitCriterias) {
+            this.waitCriterias = waitCriterias;
             return this;
         }
         public Builder waitCriterias(GetDeployStageWaitCriteria... waitCriterias) {

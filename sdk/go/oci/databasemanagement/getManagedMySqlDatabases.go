@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
@@ -64,7 +63,7 @@ type GetManagedMySqlDatabasesResult struct {
 	CompartmentId string                           `pulumi:"compartmentId"`
 	Filters       []GetManagedMySqlDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of managed_my_sql_database_collection.
 	ManagedMySqlDatabaseCollections []GetManagedMySqlDatabasesManagedMySqlDatabaseCollection `pulumi:"managedMySqlDatabaseCollections"`
 }
@@ -108,12 +107,6 @@ func (o GetManagedMySqlDatabasesResultOutput) ToGetManagedMySqlDatabasesResultOu
 	return o
 }
 
-func (o GetManagedMySqlDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabasesResult] {
-	return pulumix.Output[GetManagedMySqlDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
 func (o GetManagedMySqlDatabasesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabasesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -124,8 +117,8 @@ func (o GetManagedMySqlDatabasesResultOutput) Filters() GetManagedMySqlDatabases
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedMySqlDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of managed_my_sql_database_collection.

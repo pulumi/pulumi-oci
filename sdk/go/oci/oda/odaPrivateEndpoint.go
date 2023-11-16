@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -73,24 +72,24 @@ type OdaPrivateEndpoint struct {
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the ODA private endpoint.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User-defined name for the ODA private endpoint. Avoid entering confidential information. You can change this value.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The current state of the ODA private endpoint.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewOdaPrivateEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -248,12 +247,6 @@ func (i *OdaPrivateEndpoint) ToOdaPrivateEndpointOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointOutput)
 }
 
-func (i *OdaPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpoint] {
-	return pulumix.Output[*OdaPrivateEndpoint]{
-		OutputState: i.ToOdaPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaPrivateEndpointArrayInput is an input type that accepts OdaPrivateEndpointArray and OdaPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `OdaPrivateEndpointArrayInput` via:
 //
@@ -277,12 +270,6 @@ func (i OdaPrivateEndpointArray) ToOdaPrivateEndpointArrayOutput() OdaPrivateEnd
 
 func (i OdaPrivateEndpointArray) ToOdaPrivateEndpointArrayOutputWithContext(ctx context.Context) OdaPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointArrayOutput)
-}
-
-func (i OdaPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpoint] {
-	return pulumix.Output[[]*OdaPrivateEndpoint]{
-		OutputState: i.ToOdaPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OdaPrivateEndpointMapInput is an input type that accepts OdaPrivateEndpointMap and OdaPrivateEndpointMapOutput values.
@@ -310,12 +297,6 @@ func (i OdaPrivateEndpointMap) ToOdaPrivateEndpointMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointMapOutput)
 }
 
-func (i OdaPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpoint] {
-	return pulumix.Output[map[string]*OdaPrivateEndpoint]{
-		OutputState: i.ToOdaPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (OdaPrivateEndpointOutput) ElementType() reflect.Type {
@@ -330,12 +311,6 @@ func (o OdaPrivateEndpointOutput) ToOdaPrivateEndpointOutputWithContext(ctx cont
 	return o
 }
 
-func (o OdaPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpoint] {
-	return pulumix.Output[*OdaPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
 func (o OdaPrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -347,13 +322,13 @@ func (o OdaPrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the ODA private endpoint.
-func (o OdaPrivateEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o OdaPrivateEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User-defined name for the ODA private endpoint. Avoid entering confidential information. You can change this value.
-func (o OdaPrivateEndpointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o OdaPrivateEndpointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
@@ -367,8 +342,8 @@ func (o OdaPrivateEndpointOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The current state of the ODA private endpoint.
-func (o OdaPrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OdaPrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -380,13 +355,13 @@ func (o OdaPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o OdaPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OdaPrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o OdaPrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o OdaPrivateEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type OdaPrivateEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -401,12 +376,6 @@ func (o OdaPrivateEndpointArrayOutput) ToOdaPrivateEndpointArrayOutput() OdaPriv
 
 func (o OdaPrivateEndpointArrayOutput) ToOdaPrivateEndpointArrayOutputWithContext(ctx context.Context) OdaPrivateEndpointArrayOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpoint] {
-	return pulumix.Output[[]*OdaPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaPrivateEndpointArrayOutput) Index(i pulumi.IntInput) OdaPrivateEndpointOutput {
@@ -427,12 +396,6 @@ func (o OdaPrivateEndpointMapOutput) ToOdaPrivateEndpointMapOutput() OdaPrivateE
 
 func (o OdaPrivateEndpointMapOutput) ToOdaPrivateEndpointMapOutputWithContext(ctx context.Context) OdaPrivateEndpointMapOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpoint] {
-	return pulumix.Output[map[string]*OdaPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) OdaPrivateEndpointOutput {

@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -110,28 +111,28 @@ public class NetworkFirewallPolicyAddressList extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this Address List belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * Count of total addresses in the AddressList
      * 
      */
     @Export(name="totalAddresses", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalAddresses;
+    private Output</* @Nullable */ Integer> totalAddresses;
 
     /**
      * @return Count of total addresses in the AddressList
      * 
      */
-    public Output<Integer> totalAddresses() {
-        return this.totalAddresses;
+    public Output<Optional<Integer>> totalAddresses() {
+        return Codegen.optional(this.totalAddresses);
     }
     /**
      * Type of address List. The accepted values are - * FQDN * IP

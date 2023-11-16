@@ -16,7 +16,7 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// Used to indicate if further quota consumption isAllowed.
         /// </summary>
-        public readonly bool IsAllowed;
+        public readonly bool? IsAllowed;
         /// <summary>
         /// The list of resource quota details.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.UsageProxy.Outputs
 
         [OutputConstructor]
         private GetResourceQuotasResourceQuotumCollectionResult(
-            bool isAllowed,
+            bool? isAllowed,
 
             ImmutableArray<Outputs.GetResourceQuotasResourceQuotumCollectionItemResult> items)
         {

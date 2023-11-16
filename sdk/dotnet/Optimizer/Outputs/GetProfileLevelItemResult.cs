@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The default aggregation interval (in days) for profiles using this profile level.
         /// </summary>
-        public readonly int DefaultInterval;
+        public readonly int? DefaultInterval;
         /// <summary>
         /// The metrics that will be evaluated by profiles using this profile level.
         /// </summary>
@@ -24,19 +24,19 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Optional. A filter that returns results that match the recommendation name specified.
         /// </summary>
-        public readonly string RecommendationName;
+        public readonly string? RecommendationName;
         /// <summary>
         /// The date and time the category details were created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the category details were last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// An array of aggregation intervals (in days) allowed for profiles using this profile level.
         /// </summary>
@@ -44,17 +44,17 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
         [OutputConstructor]
         private GetProfileLevelItemResult(
-            int defaultInterval,
+            int? defaultInterval,
 
             ImmutableArray<Outputs.GetProfileLevelItemMetricResult> metrics,
 
-            string name,
+            string? name,
 
-            string recommendationName,
+            string? recommendationName,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<int> validIntervals)
         {

@@ -18,12 +18,6 @@ class ExternalDbNodeArgs:
                  external_connector_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExternalDbNode resource.
-        :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         """
         pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         if external_connector_id is not None:
@@ -32,13 +26,6 @@ class ExternalDbNodeArgs:
     @property
     @pulumi.getter(name="externalDbNodeId")
     def external_db_node_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_db_node_id")
 
     @external_db_node_id.setter
@@ -48,9 +35,6 @@ class ExternalDbNodeArgs:
     @property
     @pulumi.getter(name="externalConnectorId")
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
@@ -78,25 +62,6 @@ class _ExternalDbNodeState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbNode resources.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] component_name: The name of the external DB node.
-        :param pulumi.Input[float] cpu_core_count: The number of CPU cores available on the DB node.
-        :param pulumi.Input[str] display_name: The user-friendly name for the external DB node. The name does not have to be unique.
-        :param pulumi.Input[str] domain_name: Name of the domain.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-        :param pulumi.Input[str] host_name: The host name for the DB node.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[float] memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB node.
-        :param pulumi.Input[str] time_created: The date and time the external DB node was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB node was last updated.
         """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
@@ -132,9 +97,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
@@ -144,9 +106,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -156,9 +115,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="componentName")
     def component_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the external DB node.
-        """
         return pulumi.get(self, "component_name")
 
     @component_name.setter
@@ -168,9 +124,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[float]]:
-        """
-        The number of CPU cores available on the DB node.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -180,9 +133,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the external DB node. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -192,9 +142,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="domainName")
     def domain_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the domain.
-        """
         return pulumi.get(self, "domain_name")
 
     @domain_name.setter
@@ -204,9 +151,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="externalConnectorId")
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
@@ -216,13 +160,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="externalDbNodeId")
     def external_db_node_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_db_node_id")
 
     @external_db_node_id.setter
@@ -232,9 +169,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
@@ -244,9 +178,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name for the DB node.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -256,9 +187,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -268,9 +196,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total memory in gigabytes (GB) on the DB node.
-        """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
@@ -280,9 +205,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the external DB node.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -292,9 +214,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB node was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -304,9 +223,6 @@ class _ExternalDbNodeState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB node was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -323,26 +239,9 @@ class ExternalDbNode(pulumi.CustomResource):
                  external_db_node_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external DB node specified by `externalDbNodeId`.
-
-        ## Import
-
-        ExternalDbNodes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
-        ```
-
+        Create a ExternalDbNode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -351,18 +250,7 @@ class ExternalDbNode(pulumi.CustomResource):
                  args: ExternalDbNodeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external DB node specified by `externalDbNodeId`.
-
-        ## Import
-
-        ExternalDbNodes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
-        ```
-
+        Create a ExternalDbNode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalDbNodeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -438,25 +326,6 @@ class ExternalDbNode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] component_name: The name of the external DB node.
-        :param pulumi.Input[float] cpu_core_count: The number of CPU cores available on the DB node.
-        :param pulumi.Input[str] display_name: The user-friendly name for the external DB node. The name does not have to be unique.
-        :param pulumi.Input[str] domain_name: Name of the domain.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-        :param pulumi.Input[str] host_name: The host name for the DB node.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[float] memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB node.
-        :param pulumi.Input[str] time_created: The date and time the external DB node was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB node was last updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -481,125 +350,76 @@ class ExternalDbNode(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> pulumi.Output[str]:
-        """
-        The name of the external DB node.
-        """
+    def component_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> pulumi.Output[float]:
-        """
-        The number of CPU cores available on the DB node.
-        """
+    def cpu_core_count(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the external DB node. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainName")
-    def domain_name(self) -> pulumi.Output[str]:
-        """
-        Name of the domain.
-        """
+    def domain_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        """
+    def external_connector_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_connector_id")
 
     @property
     @pulumi.getter(name="externalDbNodeId")
     def external_db_node_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_db_node_id")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-        """
+    def external_db_system_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> pulumi.Output[str]:
-        """
-        The host name for the DB node.
-        """
+    def host_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> pulumi.Output[float]:
-        """
-        The total memory in gigabytes (GB) on the DB node.
-        """
+    def memory_size_in_gbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the external DB node.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB node was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB node was last updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

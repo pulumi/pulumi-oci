@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJavaReleaseLicenseDetail {
@@ -13,39 +15,39 @@ public final class GetJavaReleaseLicenseDetail {
      * @return Commonly used name for the license type.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return License type for the Java version.
      * 
      */
-    private String licenseType;
+    private @Nullable String licenseType;
     /**
      * @return Publicly accessible license URL containing the detailed terms and conditions.
      * 
      */
-    private String licenseUrl;
+    private @Nullable String licenseUrl;
 
     private GetJavaReleaseLicenseDetail() {}
     /**
      * @return Commonly used name for the license type.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return License type for the Java version.
      * 
      */
-    public String licenseType() {
-        return this.licenseType;
+    public Optional<String> licenseType() {
+        return Optional.ofNullable(this.licenseType);
     }
     /**
      * @return Publicly accessible license URL containing the detailed terms and conditions.
      * 
      */
-    public String licenseUrl() {
-        return this.licenseUrl;
+    public Optional<String> licenseUrl() {
+        return Optional.ofNullable(this.licenseUrl);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetJavaReleaseLicenseDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String licenseType;
-        private String licenseUrl;
+        private @Nullable String displayName;
+        private @Nullable String licenseType;
+        private @Nullable String licenseUrl;
         public Builder() {}
         public Builder(GetJavaReleaseLicenseDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetJavaReleaseLicenseDetail {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+        public Builder licenseType(@Nullable String licenseType) {
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseUrl(String licenseUrl) {
-            this.licenseUrl = Objects.requireNonNull(licenseUrl);
+        public Builder licenseUrl(@Nullable String licenseUrl) {
+            this.licenseUrl = licenseUrl;
             return this;
         }
         public GetJavaReleaseLicenseDetail build() {

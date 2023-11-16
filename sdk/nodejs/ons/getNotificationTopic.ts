@@ -47,44 +47,44 @@ export interface GetNotificationTopicResult {
     /**
      * The endpoint for managing subscriptions or publishing messages to the topic.
      */
-    readonly apiEndpoint: string;
+    readonly apiEndpoint?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the topic.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * For optimistic concurrency control. See `if-match`.
      */
-    readonly etag: string;
+    readonly etag?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
-    readonly id: string;
+    readonly freeformTags?: {[key: string]: any};
+    readonly id?: string;
     /**
      * The name of the topic.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * A unique short topic Id. This is used only for SMS subscriptions.
      */
-    readonly shortTopicId: string;
+    readonly shortTopicId?: string;
     /**
      * The lifecycle state of the topic.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the topic was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      */

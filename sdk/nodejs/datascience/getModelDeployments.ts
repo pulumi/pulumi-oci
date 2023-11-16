@@ -96,7 +96,7 @@ export interface GetModelDeploymentsResult {
     /**
      * The list of model_deployments.
      */
-    readonly modelDeployments: outputs.DataScience.GetModelDeploymentsModelDeployment[];
+    readonly modelDeployments?: outputs.DataScience.GetModelDeploymentsModelDeployment[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      */

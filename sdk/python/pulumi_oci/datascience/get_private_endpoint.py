@@ -76,18 +76,12 @@ class GetPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private endpoint.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
@@ -97,111 +91,72 @@ class GetPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="dataScienceResourceType")
-    def data_science_resource_type(self) -> str:
-        """
-        Data Science resource type.
-        """
+    def data_science_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "data_science_resource_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user friendly description. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        Accesing the Data Science resource using FQDN.
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a private endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the state of Data Science private endpoint.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of network security group OCIDs.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        State of the Data Science private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subDomain")
-    def sub_domain(self) -> str:
+    def sub_domain(self) -> Optional[str]:
         return pulumi.get(self, "sub_domain")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of a subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -233,21 +188,7 @@ class AwaitableGetPrivateEndpointResult(GetPrivateEndpointResult):
 def get_private_endpoint(data_science_private_endpoint_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointResult:
     """
-    This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
-
-    Retrieves an private endpoint using a `privateEndpointId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=oci_datascience_private_endpoint["test_data_science_private_endpoint"]["id"])
-    ```
-
-
-    :param str data_science_private_endpoint_id: The unique ID for a Data Science private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dataSciencePrivateEndpointId'] = data_science_private_endpoint_id
@@ -278,20 +219,6 @@ def get_private_endpoint(data_science_private_endpoint_id: Optional[str] = None,
 def get_private_endpoint_output(data_science_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
-    This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
-
-    Retrieves an private endpoint using a `privateEndpointId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=oci_datascience_private_endpoint["test_data_science_private_endpoint"]["id"])
-    ```
-
-
-    :param str data_science_private_endpoint_id: The unique ID for a Data Science private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

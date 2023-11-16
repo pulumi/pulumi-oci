@@ -193,23 +193,23 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// Validation period of the trust token.
         /// </summary>
-        public readonly string ExpiryTime;
+        public readonly string? ExpiryTime;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -230,11 +230,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Indicates when this token was used lastime.
         /// </summary>
-        public readonly string LastUsedOn;
+        public readonly string? LastUsedOn;
         /// <summary>
         /// The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
         /// </summary>
-        public readonly string Location;
+        public readonly string? Location;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -243,15 +243,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name of the User Agent that the user wants the system to trust and to use in Multi-Factor Authentication.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The OCID of the user
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// User agent platform for which the trust token has been issued.
         /// </summary>
-        public readonly string Platform;
+        public readonly string? Platform;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -264,15 +264,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// The token type being created. This token is used as trusted and kmsi token.
         /// </summary>
-        public readonly string TokenType;
+        public readonly string? TokenType;
         /// <summary>
         /// Trust token for the user agent. This is a random string value that will be updated whenever a token that has been issued is verified successfully.
         /// </summary>
-        public readonly string TrustToken;
+        public readonly string? TrustToken;
         /// <summary>
         /// Trusted 2FA Factors
         /// </summary>
@@ -290,15 +290,15 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string domainOcid,
+            string? domainOcid,
 
-            string expiryTime,
+            string? expiryTime,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsMyTrustedUserAgentIdcsCreatedByResult> idcsCreatedBies,
 
@@ -306,23 +306,23 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsMyTrustedUserAgentIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            string lastUsedOn,
+            string? lastUsedOn,
 
-            string location,
+            string? location,
 
             ImmutableArray<Outputs.GetDomainsMyTrustedUserAgentMetaResult> metas,
 
             string myTrustedUserAgentId,
 
-            string name,
+            string? name,
 
-            string ocid,
+            string? ocid,
 
-            string platform,
+            string? platform,
 
             string? resourceTypeSchemaVersion,
 
@@ -330,11 +330,11 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsMyTrustedUserAgentTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
-            string tokenType,
+            string? tokenType,
 
-            string trustToken,
+            string? trustToken,
 
             ImmutableArray<Outputs.GetDomainsMyTrustedUserAgentTrustedFactorResult> trustedFactors,
 

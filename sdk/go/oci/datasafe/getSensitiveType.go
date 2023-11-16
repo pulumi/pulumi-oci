@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,44 +59,44 @@ type LookupSensitiveTypeArgs struct {
 // A collection of values returned by getSensitiveType.
 type LookupSensitiveTypeResult struct {
 	// A regular expression to be used by data discovery for matching column comments.
-	CommentPattern string `pulumi:"commentPattern"`
+	CommentPattern *string `pulumi:"commentPattern"`
 	// The OCID of the compartment that contains the sensitive type.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A regular expression to be used by data discovery for matching column data values.
-	DataPattern string `pulumi:"dataPattern"`
+	DataPattern *string `pulumi:"dataPattern"`
 	// The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-	DefaultMaskingFormatId string `pulumi:"defaultMaskingFormatId"`
+	DefaultMaskingFormatId *string `pulumi:"defaultMaskingFormatId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the sensitive type.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the sensitive type.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
-	EntityType string `pulumi:"entityType"`
+	EntityType *string `pulumi:"entityType"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the sensitive type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A regular expression to be used by data discovery for matching column names.
-	NamePattern string `pulumi:"namePattern"`
+	NamePattern *string `pulumi:"namePattern"`
 	// The OCID of the parent sensitive category.
-	ParentCategoryId string `pulumi:"parentCategoryId"`
+	ParentCategoryId *string `pulumi:"parentCategoryId"`
 	// The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
-	SearchType      string `pulumi:"searchType"`
-	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
+	SearchType      *string `pulumi:"searchType"`
+	SensitiveTypeId string  `pulumi:"sensitiveTypeId"`
 	// The short name of the sensitive type.
-	ShortName string `pulumi:"shortName"`
+	ShortName *string `pulumi:"shortName"`
 	// Specifies whether the sensitive type is user-defined or predefined.
-	Source string `pulumi:"source"`
+	Source *string `pulumi:"source"`
 	// The current state of the sensitive type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupSensitiveTypeOutput(ctx *pulumi.Context, args LookupSensitiveTypeOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveTypeResultOutput {
@@ -138,30 +137,24 @@ func (o LookupSensitiveTypeResultOutput) ToLookupSensitiveTypeResultOutputWithCo
 	return o
 }
 
-func (o LookupSensitiveTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSensitiveTypeResult] {
-	return pulumix.Output[LookupSensitiveTypeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A regular expression to be used by data discovery for matching column comments.
-func (o LookupSensitiveTypeResultOutput) CommentPattern() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.CommentPattern }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) CommentPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.CommentPattern }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the sensitive type.
-func (o LookupSensitiveTypeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A regular expression to be used by data discovery for matching column data values.
-func (o LookupSensitiveTypeResultOutput) DataPattern() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.DataPattern }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) DataPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.DataPattern }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-func (o LookupSensitiveTypeResultOutput) DefaultMaskingFormatId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.DefaultMaskingFormatId }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) DefaultMaskingFormatId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.DefaultMaskingFormatId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -170,18 +163,18 @@ func (o LookupSensitiveTypeResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the sensitive type.
-func (o LookupSensitiveTypeResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the sensitive type.
-func (o LookupSensitiveTypeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
-func (o LookupSensitiveTypeResultOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.EntityType }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -190,23 +183,23 @@ func (o LookupSensitiveTypeResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the sensitive type.
-func (o LookupSensitiveTypeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A regular expression to be used by data discovery for matching column names.
-func (o LookupSensitiveTypeResultOutput) NamePattern() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.NamePattern }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) NamePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.NamePattern }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the parent sensitive category.
-func (o LookupSensitiveTypeResultOutput) ParentCategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.ParentCategoryId }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) ParentCategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.ParentCategoryId }).(pulumi.StringPtrOutput)
 }
 
 // The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
-func (o LookupSensitiveTypeResultOutput) SearchType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.SearchType }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) SearchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.SearchType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSensitiveTypeResultOutput) SensitiveTypeId() pulumi.StringOutput {
@@ -214,18 +207,18 @@ func (o LookupSensitiveTypeResultOutput) SensitiveTypeId() pulumi.StringOutput {
 }
 
 // The short name of the sensitive type.
-func (o LookupSensitiveTypeResultOutput) ShortName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.ShortName }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) ShortName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.ShortName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the sensitive type is user-defined or predefined.
-func (o LookupSensitiveTypeResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.Source }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the sensitive type.
-func (o LookupSensitiveTypeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -234,13 +227,13 @@ func (o LookupSensitiveTypeResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSensitiveTypeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSensitiveTypeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSensitiveTypeResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

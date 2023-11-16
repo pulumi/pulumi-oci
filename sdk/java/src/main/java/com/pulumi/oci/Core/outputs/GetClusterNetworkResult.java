@@ -12,75 +12,77 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworkResult {
-    private List<GetClusterNetworkClusterConfiguration> clusterConfigurations;
+    private @Nullable List<GetClusterNetworkClusterConfiguration> clusterConfigurations;
     private String clusterNetworkId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
-    private String hpcIslandId;
+    private @Nullable String hpcIslandId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The instance pools in the cluster network.
      * 
      */
-    private List<GetClusterNetworkInstancePool> instancePools;
+    private @Nullable List<GetClusterNetworkInstancePool> instancePools;
     /**
      * @return The list of network block OCIDs of the HPC island.
      * 
      */
-    private List<String> networkBlockIds;
+    private @Nullable List<String> networkBlockIds;
     /**
      * @return The location for where the instance pools in a cluster network will place instances.
      * 
      */
-    private List<GetClusterNetworkPlacementConfiguration> placementConfigurations;
+    private @Nullable List<GetClusterNetworkPlacementConfiguration> placementConfigurations;
     /**
      * @return The current state of the cluster network.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetClusterNetworkResult() {}
     public List<GetClusterNetworkClusterConfiguration> clusterConfigurations() {
-        return this.clusterConfigurations;
+        return this.clusterConfigurations == null ? List.of() : this.clusterConfigurations;
     }
     public String clusterNetworkId() {
         return this.clusterNetworkId;
@@ -89,85 +91,85 @@ public final class GetClusterNetworkResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
-    public String hpcIslandId() {
-        return this.hpcIslandId;
+    public Optional<String> hpcIslandId() {
+        return Optional.ofNullable(this.hpcIslandId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The instance pools in the cluster network.
      * 
      */
     public List<GetClusterNetworkInstancePool> instancePools() {
-        return this.instancePools;
+        return this.instancePools == null ? List.of() : this.instancePools;
     }
     /**
      * @return The list of network block OCIDs of the HPC island.
      * 
      */
     public List<String> networkBlockIds() {
-        return this.networkBlockIds;
+        return this.networkBlockIds == null ? List.of() : this.networkBlockIds;
     }
     /**
      * @return The location for where the instance pools in a cluster network will place instances.
      * 
      */
     public List<GetClusterNetworkPlacementConfiguration> placementConfigurations() {
-        return this.placementConfigurations;
+        return this.placementConfigurations == null ? List.of() : this.placementConfigurations;
     }
     /**
      * @return The current state of the cluster network.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -179,20 +181,20 @@ public final class GetClusterNetworkResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetClusterNetworkClusterConfiguration> clusterConfigurations;
+        private @Nullable List<GetClusterNetworkClusterConfiguration> clusterConfigurations;
         private String clusterNetworkId;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String hpcIslandId;
-        private String id;
-        private List<GetClusterNetworkInstancePool> instancePools;
-        private List<String> networkBlockIds;
-        private List<GetClusterNetworkPlacementConfiguration> placementConfigurations;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hpcIslandId;
+        private @Nullable String id;
+        private @Nullable List<GetClusterNetworkInstancePool> instancePools;
+        private @Nullable List<String> networkBlockIds;
+        private @Nullable List<GetClusterNetworkPlacementConfiguration> placementConfigurations;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetClusterNetworkResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -213,8 +215,8 @@ public final class GetClusterNetworkResult {
         }
 
         @CustomType.Setter
-        public Builder clusterConfigurations(List<GetClusterNetworkClusterConfiguration> clusterConfigurations) {
-            this.clusterConfigurations = Objects.requireNonNull(clusterConfigurations);
+        public Builder clusterConfigurations(@Nullable List<GetClusterNetworkClusterConfiguration> clusterConfigurations) {
+            this.clusterConfigurations = clusterConfigurations;
             return this;
         }
         public Builder clusterConfigurations(GetClusterNetworkClusterConfiguration... clusterConfigurations) {
@@ -226,72 +228,72 @@ public final class GetClusterNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hpcIslandId(String hpcIslandId) {
-            this.hpcIslandId = Objects.requireNonNull(hpcIslandId);
+        public Builder hpcIslandId(@Nullable String hpcIslandId) {
+            this.hpcIslandId = hpcIslandId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instancePools(List<GetClusterNetworkInstancePool> instancePools) {
-            this.instancePools = Objects.requireNonNull(instancePools);
+        public Builder instancePools(@Nullable List<GetClusterNetworkInstancePool> instancePools) {
+            this.instancePools = instancePools;
             return this;
         }
         public Builder instancePools(GetClusterNetworkInstancePool... instancePools) {
             return instancePools(List.of(instancePools));
         }
         @CustomType.Setter
-        public Builder networkBlockIds(List<String> networkBlockIds) {
-            this.networkBlockIds = Objects.requireNonNull(networkBlockIds);
+        public Builder networkBlockIds(@Nullable List<String> networkBlockIds) {
+            this.networkBlockIds = networkBlockIds;
             return this;
         }
         public Builder networkBlockIds(String... networkBlockIds) {
             return networkBlockIds(List.of(networkBlockIds));
         }
         @CustomType.Setter
-        public Builder placementConfigurations(List<GetClusterNetworkPlacementConfiguration> placementConfigurations) {
-            this.placementConfigurations = Objects.requireNonNull(placementConfigurations);
+        public Builder placementConfigurations(@Nullable List<GetClusterNetworkPlacementConfiguration> placementConfigurations) {
+            this.placementConfigurations = placementConfigurations;
             return this;
         }
         public Builder placementConfigurations(GetClusterNetworkPlacementConfiguration... placementConfigurations) {
             return placementConfigurations(List.of(placementConfigurations));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetClusterNetworkResult build() {

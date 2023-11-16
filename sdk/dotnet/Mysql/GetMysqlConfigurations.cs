@@ -236,7 +236,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the associated Shape.
         /// </summary>
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Mysql
 
             ImmutableArray<Outputs.GetMysqlConfigurationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? shapeName,
 

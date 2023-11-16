@@ -20,19 +20,6 @@ class DrgRouteTableRouteRuleArgs:
                  next_hop_drg_attachment_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a DrgRouteTableRouteRule resource.
-        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-        :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "destination", destination)
         pulumi.set(__self__, "destination_type", destination_type)
@@ -42,12 +29,6 @@ class DrgRouteTableRouteRuleArgs:
     @property
     @pulumi.getter
     def destination(self) -> pulumi.Input[str]:
-        """
-        (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
-
-        Potential values:
-        * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        """
         return pulumi.get(self, "destination")
 
     @destination.setter
@@ -57,9 +38,6 @@ class DrgRouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> pulumi.Input[str]:
-        """
-        Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-        """
         return pulumi.get(self, "destination_type")
 
     @destination_type.setter
@@ -69,12 +47,6 @@ class DrgRouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-
-        Potential values:
-        * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        """
         return pulumi.get(self, "drg_route_table_id")
 
     @drg_route_table_id.setter
@@ -84,12 +56,6 @@ class DrgRouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="nextHopDrgAttachmentId")
     def next_hop_drg_attachment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "next_hop_drg_attachment_id")
 
     @next_hop_drg_attachment_id.setter
@@ -111,24 +77,6 @@ class _DrgRouteTableRouteRuleState:
                  route_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DrgRouteTableRouteRule resources.
-        :param pulumi.Input[Mapping[str, Any]] attributes: Additional properties for the route, computed by the service.
-        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-        :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[bool] is_blackhole: Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
-        :param pulumi.Input[bool] is_conflict: Indicates that the route was not imported due to a conflict between route rules.
-        :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] route_provenance: The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
-        :param pulumi.Input[str] route_type: You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
         """
         if attributes is not None:
             pulumi.set(__self__, "attributes", attributes)
@@ -152,9 +100,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Additional properties for the route, computed by the service.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -164,12 +109,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter
     def destination(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
-
-        Potential values:
-        * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        """
         return pulumi.get(self, "destination")
 
     @destination.setter
@@ -179,9 +118,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-        """
         return pulumi.get(self, "destination_type")
 
     @destination_type.setter
@@ -191,12 +127,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-
-        Potential values:
-        * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        """
         return pulumi.get(self, "drg_route_table_id")
 
     @drg_route_table_id.setter
@@ -206,9 +136,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter(name="isBlackhole")
     def is_blackhole(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
-        """
         return pulumi.get(self, "is_blackhole")
 
     @is_blackhole.setter
@@ -218,9 +145,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter(name="isConflict")
     def is_conflict(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates that the route was not imported due to a conflict between route rules.
-        """
         return pulumi.get(self, "is_conflict")
 
     @is_conflict.setter
@@ -230,12 +154,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter(name="nextHopDrgAttachmentId")
     def next_hop_drg_attachment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "next_hop_drg_attachment_id")
 
     @next_hop_drg_attachment_id.setter
@@ -245,9 +163,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter(name="routeProvenance")
     def route_provenance(self) -> Optional[pulumi.Input[str]]:
-        """
-        The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
-        """
         return pulumi.get(self, "route_provenance")
 
     @route_provenance.setter
@@ -257,9 +172,6 @@ class _DrgRouteTableRouteRuleState:
     @property
     @pulumi.getter(name="routeType")
     def route_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
-        """
         return pulumi.get(self, "route_type")
 
     @route_type.setter
@@ -278,46 +190,9 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                  next_hop_drg_attachment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one static route rule to the specified DRG route table.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_route_table_route_rule = oci.core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-            destination=var["drg_route_table_route_rule_route_rules_destination"],
-            destination_type=var["drg_route_table_route_rule_route_rules_destination_type"],
-            next_hop_drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"])
-        ```
-
-        ## Import
-
-        DrgRouteTableRouteRule can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
-        ```
-
+        Create a DrgRouteTableRouteRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-        :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -326,31 +201,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                  args: DrgRouteTableRouteRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one static route rule to the specified DRG route table.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_route_table_route_rule = oci.core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-            destination=var["drg_route_table_route_rule_route_rules_destination"],
-            destination_type=var["drg_route_table_route_rule_route_rules_destination_type"],
-            next_hop_drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"])
-        ```
-
-        ## Import
-
-        DrgRouteTableRouteRule can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
-        ```
-
+        Create a DrgRouteTableRouteRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DrgRouteTableRouteRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -422,24 +273,6 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] attributes: Additional properties for the route, computed by the service.
-        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-        :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-               
-               Potential values:
-               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        :param pulumi.Input[bool] is_blackhole: Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
-        :param pulumi.Input[bool] is_conflict: Indicates that the route was not imported due to a conflict between route rules.
-        :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] route_provenance: The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
-        :param pulumi.Input[str] route_type: You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -458,82 +291,46 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def attributes(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Additional properties for the route, computed by the service.
-        """
+    def attributes(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "attributes")
 
     @property
     @pulumi.getter
     def destination(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
-
-        Potential values:
-        * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        """
         return pulumi.get(self, "destination")
 
     @property
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> pulumi.Output[str]:
-        """
-        Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-        """
         return pulumi.get(self, "destination_type")
 
     @property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-
-        Potential values:
-        * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
-        """
         return pulumi.get(self, "drg_route_table_id")
 
     @property
     @pulumi.getter(name="isBlackhole")
-    def is_blackhole(self) -> pulumi.Output[bool]:
-        """
-        Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
-        """
+    def is_blackhole(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_blackhole")
 
     @property
     @pulumi.getter(name="isConflict")
-    def is_conflict(self) -> pulumi.Output[bool]:
-        """
-        Indicates that the route was not imported due to a conflict between route rules.
-        """
+    def is_conflict(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_conflict")
 
     @property
     @pulumi.getter(name="nextHopDrgAttachmentId")
     def next_hop_drg_attachment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "next_hop_drg_attachment_id")
 
     @property
     @pulumi.getter(name="routeProvenance")
-    def route_provenance(self) -> pulumi.Output[str]:
-        """
-        The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
-        """
+    def route_provenance(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "route_provenance")
 
     @property
     @pulumi.getter(name="routeType")
-    def route_type(self) -> pulumi.Output[str]:
-        """
-        You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
-        """
+    def route_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "route_type")
 

@@ -70,11 +70,6 @@ class DatabaseToolsConnectionKeyStore(dict):
                  key_store_content: Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStoreContent'] = None,
                  key_store_password: Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStorePassword'] = None,
                  key_store_type: Optional[str] = None):
-        """
-        :param 'DatabaseToolsConnectionKeyStoreKeyStoreContentArgs' key_store_content: (Updatable) The key store content.
-        :param 'DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs' key_store_password: (Updatable) The key store password.
-        :param str key_store_type: (Updatable) The key store type.
-        """
         if key_store_content is not None:
             pulumi.set(__self__, "key_store_content", key_store_content)
         if key_store_password is not None:
@@ -85,25 +80,16 @@ class DatabaseToolsConnectionKeyStore(dict):
     @property
     @pulumi.getter(name="keyStoreContent")
     def key_store_content(self) -> Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStoreContent']:
-        """
-        (Updatable) The key store content.
-        """
         return pulumi.get(self, "key_store_content")
 
     @property
     @pulumi.getter(name="keyStorePassword")
     def key_store_password(self) -> Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStorePassword']:
-        """
-        (Updatable) The key store password.
-        """
         return pulumi.get(self, "key_store_password")
 
     @property
     @pulumi.getter(name="keyStoreType")
     def key_store_type(self) -> Optional[str]:
-        """
-        (Updatable) The key store type.
-        """
         return pulumi.get(self, "key_store_type")
 
 
@@ -131,14 +117,6 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContent(dict):
     def __init__(__self__, *,
                  value_type: str,
                  secret_id: Optional[str] = None):
-        """
-        :param str value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         pulumi.set(__self__, "value_type", value_type)
         if secret_id is not None:
             pulumi.set(__self__, "secret_id", secret_id)
@@ -146,21 +124,11 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContent(dict):
     @property
     @pulumi.getter(name="valueType")
     def value_type(self) -> str:
-        """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value_type")
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
 
@@ -188,14 +156,6 @@ class DatabaseToolsConnectionKeyStoreKeyStorePassword(dict):
     def __init__(__self__, *,
                  value_type: str,
                  secret_id: Optional[str] = None):
-        """
-        :param str value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         pulumi.set(__self__, "value_type", value_type)
         if secret_id is not None:
             pulumi.set(__self__, "secret_id", secret_id)
@@ -203,21 +163,11 @@ class DatabaseToolsConnectionKeyStoreKeyStorePassword(dict):
     @property
     @pulumi.getter(name="valueType")
     def value_type(self) -> str:
-        """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value_type")
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
 
@@ -243,27 +193,17 @@ class DatabaseToolsConnectionRelatedResource(dict):
     def __init__(__self__, *,
                  entity_type: str,
                  identifier: str):
-        """
-        :param str entity_type: (Updatable) The resource entity type.
-        :param str identifier: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
         pulumi.set(__self__, "entity_type", entity_type)
         pulumi.set(__self__, "identifier", identifier)
 
     @property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> str:
-        """
-        (Updatable) The resource entity type.
-        """
         return pulumi.get(self, "entity_type")
 
     @property
     @pulumi.getter
     def identifier(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
         return pulumi.get(self, "identifier")
 
 
@@ -291,35 +231,17 @@ class DatabaseToolsConnectionUserPassword(dict):
     def __init__(__self__, *,
                  secret_id: str,
                  value_type: str):
-        """
-        :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param str value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
     def value_type(self) -> str:
-        """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value_type")
 
 
@@ -344,18 +266,12 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfiguration(dict):
 
     def __init__(__self__, *,
                  reverse_connections_source_ips: Optional[Sequence['outputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp']] = None):
-        """
-        :param Sequence['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs'] reverse_connections_source_ips: A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
         if reverse_connections_source_ips is not None:
             pulumi.set(__self__, "reverse_connections_source_ips", reverse_connections_source_ips)
 
     @property
     @pulumi.getter(name="reverseConnectionsSourceIps")
     def reverse_connections_source_ips(self) -> Optional[Sequence['outputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp']]:
-        """
-        A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
         return pulumi.get(self, "reverse_connections_source_ips")
 
 
@@ -380,547 +296,400 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
 
     def __init__(__self__, *,
                  source_ip: Optional[str] = None):
-        """
-        :param str source_ip: The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
         if source_ip is not None:
             pulumi.set(__self__, "source_ip", source_ip)
 
     @property
     @pulumi.getter(name="sourceIp")
     def source_ip(self) -> Optional[str]:
-        """
-        The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
         return pulumi.get(self, "source_ip")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionKeyStoreResult(dict):
     def __init__(__self__, *,
-                 key_store_contents: Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult'],
-                 key_store_passwords: Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult'],
-                 key_store_type: str):
-        """
-        :param Sequence['GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs'] key_store_contents: The key store content.
-        :param Sequence['GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs'] key_store_passwords: The key store password.
-        :param str key_store_type: The key store type.
-        """
-        pulumi.set(__self__, "key_store_contents", key_store_contents)
-        pulumi.set(__self__, "key_store_passwords", key_store_passwords)
-        pulumi.set(__self__, "key_store_type", key_store_type)
+                 key_store_contents: Optional[Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult']] = None,
+                 key_store_passwords: Optional[Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult']] = None,
+                 key_store_type: Optional[str] = None):
+        if key_store_contents is not None:
+            pulumi.set(__self__, "key_store_contents", key_store_contents)
+        if key_store_passwords is not None:
+            pulumi.set(__self__, "key_store_passwords", key_store_passwords)
+        if key_store_type is not None:
+            pulumi.set(__self__, "key_store_type", key_store_type)
 
     @property
     @pulumi.getter(name="keyStoreContents")
-    def key_store_contents(self) -> Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult']:
-        """
-        The key store content.
-        """
+    def key_store_contents(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult']]:
         return pulumi.get(self, "key_store_contents")
 
     @property
     @pulumi.getter(name="keyStorePasswords")
-    def key_store_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult']:
-        """
-        The key store password.
-        """
+    def key_store_passwords(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult']]:
         return pulumi.get(self, "key_store_passwords")
 
     @property
     @pulumi.getter(name="keyStoreType")
-    def key_store_type(self) -> str:
-        """
-        The key store type.
-        """
+    def key_store_type(self) -> Optional[str]:
         return pulumi.get(self, "key_store_type")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult(dict):
     def __init__(__self__, *,
-                 secret_id: str,
-                 value_type: str):
-        """
-        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param str value_type: The value type of the user password.
-        """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "value_type", value_type)
+                 secret_id: Optional[str] = None,
+                 value_type: Optional[str] = None):
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> str:
-        """
-        The value type of the user password.
-        """
+    def value_type(self) -> Optional[str]:
         return pulumi.get(self, "value_type")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult(dict):
     def __init__(__self__, *,
-                 secret_id: str,
-                 value_type: str):
-        """
-        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param str value_type: The value type of the user password.
-        """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "value_type", value_type)
+                 secret_id: Optional[str] = None,
+                 value_type: Optional[str] = None):
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> str:
-        """
-        The value type of the user password.
-        """
+    def value_type(self) -> Optional[str]:
         return pulumi.get(self, "value_type")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionRelatedResourceResult(dict):
     def __init__(__self__, *,
-                 entity_type: str,
-                 identifier: str):
-        """
-        :param str entity_type: The resource entity type.
-        :param str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "identifier", identifier)
+                 entity_type: Optional[str] = None,
+                 identifier: Optional[str] = None):
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> str:
-        """
-        The resource entity type.
-        """
+    def entity_type(self) -> Optional[str]:
         return pulumi.get(self, "entity_type")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionUserPasswordResult(dict):
     def __init__(__self__, *,
-                 secret_id: str,
-                 value_type: str):
-        """
-        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param str value_type: The value type of the user password.
-        """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "value_type", value_type)
+                 secret_id: Optional[str] = None,
+                 value_type: Optional[str] = None):
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> str:
-        """
-        The value type of the user password.
-        """
+    def value_type(self) -> Optional[str]:
         return pulumi.get(self, "value_type")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 advanced_properties: Mapping[str, Any],
-                 compartment_id: str,
-                 connection_string: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 key_stores: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult'],
-                 lifecycle_details: str,
-                 private_endpoint_id: str,
-                 related_resources: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 type: str,
-                 user_name: str,
-                 user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']):
-        """
-        :param Mapping[str, Any] advanced_properties: The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str connection_string: The connect descriptor or Easy Connect Naming method used to connect to the database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire specified display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs'] key_stores: The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-        :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs'] related_resources: A related resource
-        :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
-        :param str type: A filter to return only resources their type matches the specified type.
-        :param str user_name: The database user name.
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs'] user_passwords: The user password.
-        """
-        pulumi.set(__self__, "advanced_properties", advanced_properties)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_string", connection_string)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "key_stores", key_stores)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "related_resources", related_resources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "user_passwords", user_passwords)
+                 advanced_properties: Optional[Mapping[str, Any]] = None,
+                 compartment_id: Optional[str] = None,
+                 connection_string: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 key_stores: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 related_resources: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 type: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 user_passwords: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']] = None):
+        if advanced_properties is not None:
+            pulumi.set(__self__, "advanced_properties", advanced_properties)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if key_stores is not None:
+            pulumi.set(__self__, "key_stores", key_stores)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if related_resources is not None:
+            pulumi.set(__self__, "related_resources", related_resources)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if user_passwords is not None:
+            pulumi.set(__self__, "user_passwords", user_passwords)
 
     @property
     @pulumi.getter(name="advancedProperties")
-    def advanced_properties(self) -> Mapping[str, Any]:
-        """
-        The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
-        """
+    def advanced_properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "advanced_properties")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> str:
-        """
-        The connect descriptor or Easy Connect Naming method used to connect to the database.
-        """
+    def connection_string(self) -> Optional[str]:
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire specified display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="keyStores")
-    def key_stores(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult']:
-        """
-        The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
-        """
+    def key_stores(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult']]:
         return pulumi.get(self, "key_stores")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="relatedResources")
-    def related_resources(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult']:
-        """
-        A related resource
-        """
+    def related_resources(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult']]:
         return pulumi.get(self, "related_resources")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        A filter to return only resources their type matches the specified type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        The database user name.
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="userPasswords")
-    def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']:
-        """
-        The user password.
-        """
+    def user_passwords(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']]:
         return pulumi.get(self, "user_passwords")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult(dict):
     def __init__(__self__, *,
-                 key_store_contents: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult'],
-                 key_store_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult'],
-                 key_store_type: str):
-        """
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArgs'] key_store_contents: The key store content.
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs'] key_store_passwords: The key store password.
-        :param str key_store_type: The key store type.
-        """
-        pulumi.set(__self__, "key_store_contents", key_store_contents)
-        pulumi.set(__self__, "key_store_passwords", key_store_passwords)
-        pulumi.set(__self__, "key_store_type", key_store_type)
+                 key_store_contents: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult']] = None,
+                 key_store_passwords: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult']] = None,
+                 key_store_type: Optional[str] = None):
+        if key_store_contents is not None:
+            pulumi.set(__self__, "key_store_contents", key_store_contents)
+        if key_store_passwords is not None:
+            pulumi.set(__self__, "key_store_passwords", key_store_passwords)
+        if key_store_type is not None:
+            pulumi.set(__self__, "key_store_type", key_store_type)
 
     @property
     @pulumi.getter(name="keyStoreContents")
-    def key_store_contents(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult']:
-        """
-        The key store content.
-        """
+    def key_store_contents(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult']]:
         return pulumi.get(self, "key_store_contents")
 
     @property
     @pulumi.getter(name="keyStorePasswords")
-    def key_store_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult']:
-        """
-        The key store password.
-        """
+    def key_store_passwords(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult']]:
         return pulumi.get(self, "key_store_passwords")
 
     @property
     @pulumi.getter(name="keyStoreType")
-    def key_store_type(self) -> str:
-        """
-        The key store type.
-        """
+    def key_store_type(self) -> Optional[str]:
         return pulumi.get(self, "key_store_type")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult(dict):
     def __init__(__self__, *,
-                 secret_id: str,
-                 value_type: str):
-        """
-        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param str value_type: The value type of the user password.
-        """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "value_type", value_type)
+                 secret_id: Optional[str] = None,
+                 value_type: Optional[str] = None):
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> str:
-        """
-        The value type of the user password.
-        """
+    def value_type(self) -> Optional[str]:
         return pulumi.get(self, "value_type")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult(dict):
     def __init__(__self__, *,
-                 secret_id: str,
-                 value_type: str):
-        """
-        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param str value_type: The value type of the user password.
-        """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "value_type", value_type)
+                 secret_id: Optional[str] = None,
+                 value_type: Optional[str] = None):
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> str:
-        """
-        The value type of the user password.
-        """
+    def value_type(self) -> Optional[str]:
         return pulumi.get(self, "value_type")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult(dict):
     def __init__(__self__, *,
-                 entity_type: str,
-                 identifier: str):
-        """
-        :param str entity_type: The resource entity type.
-        :param str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "identifier", identifier)
+                 entity_type: Optional[str] = None,
+                 identifier: Optional[str] = None):
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> str:
-        """
-        The resource entity type.
-        """
+    def entity_type(self) -> Optional[str]:
         return pulumi.get(self, "entity_type")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult(dict):
     def __init__(__self__, *,
-                 secret_id: str,
-                 value_type: str):
-        """
-        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param str value_type: The value type of the user password.
-        """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "value_type", value_type)
+                 secret_id: Optional[str] = None,
+                 value_type: Optional[str] = None):
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> str:
-        """
-        The value type of the user password.
-        """
+    def value_type(self) -> Optional[str]:
         return pulumi.get(self, "value_type")
 
 
@@ -954,151 +723,114 @@ class GetDatabaseToolsConnectionsFilterResult(dict):
 @pulumi.output_type
 class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 name: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A description of the Database Tools Endpoint Service.
-        :param str display_name: A filter to return only resources that match the entire specified display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str name: A filter to return only resources that match the entire specified name.
-        :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the Database Tools Endpoint Service.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire specified display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only resources that match the entire specified name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -1108,9 +840,6 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire specified name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1119,9 +848,6 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire specified name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1138,311 +864,230 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
 @pulumi.output_type
 class GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult(dict):
     def __init__(__self__, *,
-                 reverse_connections_source_ips: Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult']):
-        """
-        :param Sequence['GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs'] reverse_connections_source_ips: A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
-        pulumi.set(__self__, "reverse_connections_source_ips", reverse_connections_source_ips)
+                 reverse_connections_source_ips: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult']] = None):
+        if reverse_connections_source_ips is not None:
+            pulumi.set(__self__, "reverse_connections_source_ips", reverse_connections_source_ips)
 
     @property
     @pulumi.getter(name="reverseConnectionsSourceIps")
-    def reverse_connections_source_ips(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult']:
-        """
-        A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
+    def reverse_connections_source_ips(self) -> Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult']]:
         return pulumi.get(self, "reverse_connections_source_ips")
 
 
 @pulumi.output_type
 class GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult(dict):
     def __init__(__self__, *,
-                 source_ip: str):
-        """
-        :param str source_ip: The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
-        pulumi.set(__self__, "source_ip", source_ip)
+                 source_ip: Optional[str] = None):
+        if source_ip is not None:
+            pulumi.set(__self__, "source_ip", source_ip)
 
     @property
     @pulumi.getter(name="sourceIp")
-    def source_ip(self) -> str:
-        """
-        The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
+    def source_ip(self) -> Optional[str]:
         return pulumi.get(self, "source_ip")
 
 
 @pulumi.output_type
 class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 additional_fqdns: Sequence[str],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 endpoint_fqdn: str,
-                 endpoint_service_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 nsg_ids: Sequence[str],
-                 private_endpoint_ip: str,
-                 private_endpoint_vnic_id: str,
-                 reverse_connection_configurations: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult'],
-                 state: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 vcn_id: str):
-        """
-        :param Sequence[str] additional_fqdns: A list of additional FQDNs that can be also be used for the private endpoint.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A description of the Database Tools private endpoint.
-        :param str display_name: A filter to return only resources that match the entire specified display name.
-        :param str endpoint_fqdn: Then FQDN to use for the private endpoint.
-        :param str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence[str] nsg_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        :param str private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
-        :param str private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-        :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs'] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
-        :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        :param str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
-        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
-        """
-        pulumi.set(__self__, "additional_fqdns", additional_fqdns)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
-        pulumi.set(__self__, "endpoint_service_id", endpoint_service_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "private_endpoint_vnic_id", private_endpoint_vnic_id)
-        pulumi.set(__self__, "reverse_connection_configurations", reverse_connection_configurations)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 additional_fqdns: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 endpoint_fqdn: Optional[str] = None,
+                 endpoint_service_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 private_endpoint_ip: Optional[str] = None,
+                 private_endpoint_vnic_id: Optional[str] = None,
+                 reverse_connection_configurations: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult']] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if additional_fqdns is not None:
+            pulumi.set(__self__, "additional_fqdns", additional_fqdns)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if endpoint_fqdn is not None:
+            pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+        if endpoint_service_id is not None:
+            pulumi.set(__self__, "endpoint_service_id", endpoint_service_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_endpoint_ip is not None:
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if private_endpoint_vnic_id is not None:
+            pulumi.set(__self__, "private_endpoint_vnic_id", private_endpoint_vnic_id)
+        if reverse_connection_configurations is not None:
+            pulumi.set(__self__, "reverse_connection_configurations", reverse_connection_configurations)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="additionalFqdns")
-    def additional_fqdns(self) -> Sequence[str]:
-        """
-        A list of additional FQDNs that can be also be used for the private endpoint.
-        """
+    def additional_fqdns(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "additional_fqdns")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the Database Tools private endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire specified display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="endpointFqdn")
-    def endpoint_fqdn(self) -> str:
-        """
-        Then FQDN to use for the private endpoint.
-        """
+    def endpoint_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_fqdn")
 
     @property
     @pulumi.getter(name="endpointServiceId")
-    def endpoint_service_id(self) -> str:
-        """
-        A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
-        """
+    def endpoint_service_id(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_service_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> str:
-        """
-        The private IP address that represents the access point for the associated endpoint service.
-        """
+    def private_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter(name="privateEndpointVnicId")
-    def private_endpoint_vnic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-        """
+    def private_endpoint_vnic_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_vnic_id")
 
     @property
     @pulumi.getter(name="reverseConnectionConfigurations")
-    def reverse_connection_configurations(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult']:
-        """
-        Reverse connection configuration details of the private endpoint.
-        """
+    def reverse_connection_configurations(self) -> Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult']]:
         return pulumi.get(self, "reverse_connection_configurations")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        A filter to return only resources their `subnetId` matches the specified `subnetId`.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
 @pulumi.output_type
 class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult(dict):
     def __init__(__self__, *,
-                 reverse_connections_source_ips: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult']):
-        """
-        :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs'] reverse_connections_source_ips: A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
-        pulumi.set(__self__, "reverse_connections_source_ips", reverse_connections_source_ips)
+                 reverse_connections_source_ips: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult']] = None):
+        if reverse_connections_source_ips is not None:
+            pulumi.set(__self__, "reverse_connections_source_ips", reverse_connections_source_ips)
 
     @property
     @pulumi.getter(name="reverseConnectionsSourceIps")
-    def reverse_connections_source_ips(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult']:
-        """
-        A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
+    def reverse_connections_source_ips(self) -> Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult']]:
         return pulumi.get(self, "reverse_connections_source_ips")
 
 
 @pulumi.output_type
 class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult(dict):
     def __init__(__self__, *,
-                 source_ip: str):
-        """
-        :param str source_ip: The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
-        pulumi.set(__self__, "source_ip", source_ip)
+                 source_ip: Optional[str] = None):
+        if source_ip is not None:
+            pulumi.set(__self__, "source_ip", source_ip)
 
     @property
     @pulumi.getter(name="sourceIp")
-    def source_ip(self) -> str:
-        """
-        The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
+    def source_ip(self) -> Optional[str]:
         return pulumi.get(self, "source_ip")
 
 

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant {
@@ -13,7 +15,7 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant {
      * @return App identifier
      * 
      */
-    private String appId;
+    private @Nullable String appId;
     /**
      * @return Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:
      * * &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.
@@ -21,25 +23,25 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant {
      * * &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * 
      */
-    private String grantMechanism;
+    private @Nullable String grantMechanism;
     /**
      * @return The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Oracle Cloud Infrastructure Tag value
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant() {}
     /**
      * @return App identifier
      * 
      */
-    public String appId() {
-        return this.appId;
+    public Optional<String> appId() {
+        return Optional.ofNullable(this.appId);
     }
     /**
      * @return Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:
@@ -48,22 +50,22 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant {
      * * &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * 
      */
-    public String grantMechanism() {
-        return this.grantMechanism;
+    public Optional<String> grantMechanism() {
+        return Optional.ofNullable(this.grantMechanism);
     }
     /**
      * @return The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Oracle Cloud Infrastructure Tag value
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -75,10 +77,10 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String appId;
-        private String grantMechanism;
-        private String ref;
-        private String value;
+        private @Nullable String appId;
+        private @Nullable String grantMechanism;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant defaults) {
     	      Objects.requireNonNull(defaults);
@@ -89,23 +91,23 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant {
         }
 
         @CustomType.Setter
-        public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+        public Builder appId(@Nullable String appId) {
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
-        public Builder grantMechanism(String grantMechanism) {
-            this.grantMechanism = Objects.requireNonNull(grantMechanism);
+        public Builder grantMechanism(@Nullable String grantMechanism) {
+            this.grantMechanism = grantMechanism;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsDynamicResourceGroupsDynamicResourceGroupGrant build() {

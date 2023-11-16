@@ -49,17 +49,11 @@ class GetMigrationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        OCID of the compartment where the secret containing the credentials will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Migration Display Name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetMigrationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,25 +72,16 @@ class GetMigrationsResult:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[str]:
-        """
-        Additional status related to the execution and current state of the Migration.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="migrationCollections")
-    def migration_collections(self) -> Sequence['outputs.GetMigrationsMigrationCollectionResult']:
-        """
-        The list of migration_collection.
-        """
+    def migration_collections(self) -> Optional[Sequence['outputs.GetMigrationsMigrationCollectionResult']]:
         return pulumi.get(self, "migration_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Migration resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_migrations(compartment_id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationsResult:
     """
-    This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
-
-    List all Migrations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migrations = oci.DatabaseMigration.get_migrations(compartment_id=var["compartment_id"],
-        display_name=var["migration_display_name"],
-        lifecycle_details=var["migration_lifecycle_details"],
-        state=var["migration_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str lifecycle_details: The lifecycle detailed status of the Migration.
-    :param str state: The lifecycle state of the Migration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_migrations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationsResult]:
     """
-    This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
-
-    List all Migrations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migrations = oci.DatabaseMigration.get_migrations(compartment_id=var["compartment_id"],
-        display_name=var["migration_display_name"],
-        lifecycle_details=var["migration_lifecycle_details"],
-        state=var["migration_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str lifecycle_details: The lifecycle detailed status of the Migration.
-    :param str state: The lifecycle state of the Migration.
+    Use this data source to access information about an existing resource.
     """
     ...

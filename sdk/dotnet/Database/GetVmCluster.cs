@@ -110,16 +110,16 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The name of the availability domain that the VM cluster is located in.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly int CpuCoreCount;
+        public readonly string? CompartmentId;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// The number of enabled CPU cores.
         /// </summary>
-        public readonly int CpusEnabled;
+        public readonly int? CpusEnabled;
         /// <summary>
         /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
@@ -127,15 +127,15 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Size of the DATA disk group in GBs.
         /// </summary>
-        public readonly double DataStorageSizeInGb;
+        public readonly double? DataStorageSizeInGb;
         /// <summary>
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
-        public readonly double DataStorageSizeInTbs;
+        public readonly double? DataStorageSizeInTbs;
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
-        public readonly int DbNodeStorageSizeInGbs;
+        public readonly int? DbNodeStorageSizeInGbs;
         /// <summary>
         /// The list of Db server.
         /// </summary>
@@ -143,57 +143,57 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
-        public readonly string ExadataInfrastructureId;
+        public readonly string? ExadataInfrastructureId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The Oracle Grid Infrastructure software version for the VM cluster.
         /// </summary>
-        public readonly string GiVersion;
+        public readonly string? GiVersion;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         /// </summary>
-        public readonly bool IsLocalBackupEnabled;
+        public readonly bool? IsLocalBackupEnabled;
         /// <summary>
         /// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
         /// </summary>
-        public readonly bool IsSparseDiskgroupEnabled;
+        public readonly bool? IsSparseDiskgroupEnabled;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         /// </summary>
-        public readonly string LastPatchHistoryEntryId;
+        public readonly string? LastPatchHistoryEntryId;
         /// <summary>
         /// The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
-        public readonly int MemorySizeInGbs;
-        public readonly double OcpuCount;
-        public readonly double OcpusEnabled;
+        public readonly int? MemorySizeInGbs;
+        public readonly double? OcpuCount;
+        public readonly double? OcpusEnabled;
         /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the VM cluster.
         /// </summary>
@@ -201,88 +201,88 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The current state of the VM cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Operating system version of the image.
         /// </summary>
-        public readonly string SystemVersion;
+        public readonly string? SystemVersion;
         /// <summary>
         /// The date and time that the VM cluster was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
-        public readonly string TimeZone;
+        public readonly string? TimeZone;
         public readonly string VmClusterId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         /// </summary>
-        public readonly string VmClusterNetworkId;
+        public readonly string? VmClusterNetworkId;
 
         [OutputConstructor]
         private GetVmClusterResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
-            int cpusEnabled,
+            int? cpusEnabled,
 
             ImmutableArray<Outputs.GetVmClusterDataCollectionOptionResult> dataCollectionOptions,
 
-            double dataStorageSizeInGb,
+            double? dataStorageSizeInGb,
 
-            double dataStorageSizeInTbs,
+            double? dataStorageSizeInTbs,
 
-            int dbNodeStorageSizeInGbs,
+            int? dbNodeStorageSizeInGbs,
 
             ImmutableArray<string> dbServers,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string exadataInfrastructureId,
+            string? exadataInfrastructureId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string giVersion,
+            string? giVersion,
 
-            string id,
+            string? id,
 
-            bool isLocalBackupEnabled,
+            bool? isLocalBackupEnabled,
 
-            bool isSparseDiskgroupEnabled,
+            bool? isSparseDiskgroupEnabled,
 
-            string lastPatchHistoryEntryId,
+            string? lastPatchHistoryEntryId,
 
-            string licenseModel,
+            string? licenseModel,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            double ocpuCount,
+            double? ocpuCount,
 
-            double ocpusEnabled,
+            double? ocpusEnabled,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<string> sshPublicKeys,
 
-            string state,
+            string? state,
 
-            string systemVersion,
+            string? systemVersion,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeZone,
+            string? timeZone,
 
             string vmClusterId,
 
-            string vmClusterNetworkId)
+            string? vmClusterNetworkId)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

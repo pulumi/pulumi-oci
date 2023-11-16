@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Certificates in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -82,7 +81,7 @@ type GetCertificatesResult struct {
 	DisplayNames  []string                `pulumi:"displayNames"`
 	Filters       []GetCertificatesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                              string   `pulumi:"id"`
+	Id                              *string  `pulumi:"id"`
 	Ids                             []string `pulumi:"ids"`
 	States                          []string `pulumi:"states"`
 	TimeCreatedGreaterThanOrEqualTo *string  `pulumi:"timeCreatedGreaterThanOrEqualTo"`
@@ -138,12 +137,6 @@ func (o GetCertificatesResultOutput) ToGetCertificatesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetCertificatesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesResult] {
-	return pulumix.Output[GetCertificatesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of certificates.
 func (o GetCertificatesResultOutput) Certificates() GetCertificatesCertificateArrayOutput {
 	return o.ApplyT(func(v GetCertificatesResult) []GetCertificatesCertificate { return v.Certificates }).(GetCertificatesCertificateArrayOutput)
@@ -163,8 +156,8 @@ func (o GetCertificatesResultOutput) Filters() GetCertificatesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCertificatesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificatesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetCertificatesResultOutput) Ids() pulumi.StringArrayOutput {

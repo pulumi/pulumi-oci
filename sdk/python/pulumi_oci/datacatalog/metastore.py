@@ -22,16 +22,6 @@ class MetastoreArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Metastore resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment which holds the metastore.
-        :param pulumi.Input[str] default_external_table_location: Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[str] default_managed_table_location: Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Mutable name of the metastore.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "default_external_table_location", default_external_table_location)
@@ -46,9 +36,6 @@ class MetastoreArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the compartment which holds the metastore.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -58,9 +45,6 @@ class MetastoreArgs:
     @property
     @pulumi.getter(name="defaultExternalTableLocation")
     def default_external_table_location(self) -> pulumi.Input[str]:
-        """
-        Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
         return pulumi.get(self, "default_external_table_location")
 
     @default_external_table_location.setter
@@ -70,9 +54,6 @@ class MetastoreArgs:
     @property
     @pulumi.getter(name="defaultManagedTableLocation")
     def default_managed_table_location(self) -> pulumi.Input[str]:
-        """
-        Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
         return pulumi.get(self, "default_managed_table_location")
 
     @default_managed_table_location.setter
@@ -82,9 +63,6 @@ class MetastoreArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -94,9 +72,6 @@ class MetastoreArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Mutable name of the metastore.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -106,13 +81,6 @@ class MetastoreArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -135,20 +103,6 @@ class _MetastoreState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Metastore resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment which holds the metastore.
-        :param pulumi.Input[str] default_external_table_location: Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[str] default_managed_table_location: Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Mutable name of the metastore.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] state: The current state of the metastore.
-        :param pulumi.Input[str] time_created: Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -174,9 +128,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of the compartment which holds the metastore.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -186,9 +137,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="defaultExternalTableLocation")
     def default_external_table_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
         return pulumi.get(self, "default_external_table_location")
 
     @default_external_table_location.setter
@@ -198,9 +146,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="defaultManagedTableLocation")
     def default_managed_table_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
         return pulumi.get(self, "default_managed_table_location")
 
     @default_managed_table_location.setter
@@ -210,9 +155,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -222,9 +164,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Mutable name of the metastore.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -234,13 +173,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -250,9 +182,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -262,9 +191,6 @@ class _MetastoreState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the metastore.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -274,9 +200,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -286,9 +209,6 @@ class _MetastoreState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -309,49 +229,9 @@ class Metastore(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new metastore.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_metastore = oci.data_catalog.Metastore("testMetastore",
-            compartment_id=var["compartment_id"],
-            default_external_table_location=var["metastore_default_external_table_location"],
-            default_managed_table_location=var["metastore_default_managed_table_location"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["metastore_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        Metastores can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
-        ```
-
+        Create a Metastore resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment which holds the metastore.
-        :param pulumi.Input[str] default_external_table_location: Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[str] default_managed_table_location: Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Mutable name of the metastore.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -360,37 +240,7 @@ class Metastore(pulumi.CustomResource):
                  args: MetastoreArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new metastore.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_metastore = oci.data_catalog.Metastore("testMetastore",
-            compartment_id=var["compartment_id"],
-            default_external_table_location=var["metastore_default_external_table_location"],
-            default_managed_table_location=var["metastore_default_managed_table_location"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["metastore_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        Metastores can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
-        ```
-
+        Create a Metastore resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MetastoreArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -464,20 +314,6 @@ class Metastore(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment which holds the metastore.
-        :param pulumi.Input[str] default_external_table_location: Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[str] default_managed_table_location: Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Mutable name of the metastore.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] state: The current state of the metastore.
-        :param pulumi.Input[str] time_created: Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -498,84 +334,50 @@ class Metastore(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OCID of the compartment which holds the metastore.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="defaultExternalTableLocation")
     def default_external_table_location(self) -> pulumi.Output[str]:
-        """
-        Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
         return pulumi.get(self, "default_external_table_location")
 
     @property
     @pulumi.getter(name="defaultManagedTableLocation")
     def default_managed_table_location(self) -> pulumi.Output[str]:
-        """
-        Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
         return pulumi.get(self, "default_managed_table_location")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Mutable name of the metastore.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the metastore.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

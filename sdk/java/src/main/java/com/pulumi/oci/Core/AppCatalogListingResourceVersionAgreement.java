@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.AppCatalogListingResourceVersionAgreementArgs;
 import com.pulumi.oci.Core.inputs.AppCatalogListingResourceVersionAgreementState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -55,14 +56,14 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * 
      */
     @Export(name="eulaLink", refs={String.class}, tree="[0]")
-    private Output<String> eulaLink;
+    private Output</* @Nullable */ String> eulaLink;
 
     /**
      * @return EULA link
      * 
      */
-    public Output<String> eulaLink() {
-        return this.eulaLink;
+    public Output<Optional<String>> eulaLink() {
+        return Codegen.optional(this.eulaLink);
     }
     /**
      * The OCID of the listing.
@@ -97,42 +98,42 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * 
      */
     @Export(name="oracleTermsOfUseLink", refs={String.class}, tree="[0]")
-    private Output<String> oracleTermsOfUseLink;
+    private Output</* @Nullable */ String> oracleTermsOfUseLink;
 
     /**
      * @return Oracle TOU link
      * 
      */
-    public Output<String> oracleTermsOfUseLink() {
-        return this.oracleTermsOfUseLink;
+    public Output<Optional<String>> oracleTermsOfUseLink() {
+        return Codegen.optional(this.oracleTermsOfUseLink);
     }
     /**
      * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
      * 
      */
     @Export(name="signature", refs={String.class}, tree="[0]")
-    private Output<String> signature;
+    private Output</* @Nullable */ String> signature;
 
     /**
      * @return A generated signature for this agreement retrieval operation which should be used in the create subscription call.
      * 
      */
-    public Output<String> signature() {
-        return this.signature;
+    public Output<Optional<String>> signature() {
+        return Codegen.optional(this.signature);
     }
     /**
      * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
     @Export(name="timeRetrieved", refs={String.class}, tree="[0]")
-    private Output<String> timeRetrieved;
+    private Output</* @Nullable */ String> timeRetrieved;
 
     /**
      * @return Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    public Output<String> timeRetrieved() {
-        return this.timeRetrieved;
+    public Output<Optional<String>> timeRetrieved() {
+        return Codegen.optional(this.timeRetrieved);
     }
 
     /**

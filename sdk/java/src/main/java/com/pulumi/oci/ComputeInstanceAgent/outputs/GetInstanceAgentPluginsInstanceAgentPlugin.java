@@ -6,6 +6,8 @@ package com.pulumi.oci.ComputeInstanceAgent.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceAgentPluginsInstanceAgentPlugin {
@@ -13,51 +15,51 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
      * @return The optional message from the agent plugin
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The plugin name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The plugin status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The last update time of the plugin in UTC
      * 
      */
-    private String timeLastUpdatedUtc;
+    private @Nullable String timeLastUpdatedUtc;
 
     private GetInstanceAgentPluginsInstanceAgentPlugin() {}
     /**
      * @return The optional message from the agent plugin
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The plugin name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The plugin status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The last update time of the plugin in UTC
      * 
      */
-    public String timeLastUpdatedUtc() {
-        return this.timeLastUpdatedUtc;
+    public Optional<String> timeLastUpdatedUtc() {
+        return Optional.ofNullable(this.timeLastUpdatedUtc);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
-        private String name;
-        private String status;
-        private String timeLastUpdatedUtc;
+        private @Nullable String message;
+        private @Nullable String name;
+        private @Nullable String status;
+        private @Nullable String timeLastUpdatedUtc;
         public Builder() {}
         public Builder(GetInstanceAgentPluginsInstanceAgentPlugin defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastUpdatedUtc(String timeLastUpdatedUtc) {
-            this.timeLastUpdatedUtc = Objects.requireNonNull(timeLastUpdatedUtc);
+        public Builder timeLastUpdatedUtc(@Nullable String timeLastUpdatedUtc) {
+            this.timeLastUpdatedUtc = timeLastUpdatedUtc;
             return this;
         }
         public GetInstanceAgentPluginsInstanceAgentPlugin build() {

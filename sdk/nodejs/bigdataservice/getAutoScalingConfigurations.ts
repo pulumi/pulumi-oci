@@ -33,7 +33,7 @@ export interface GetAutoScalingConfigurationsArgs {
  * A collection of values returned by getAutoScalingConfigurations.
  */
 export interface GetAutoScalingConfigurationsResult {
-    readonly autoScalingConfigurations: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfiguration[];
+    readonly autoScalingConfigurations?: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfiguration[];
     readonly bdsInstanceId: string;
     readonly compartmentId: string;
     readonly displayName?: string;
@@ -41,7 +41,7 @@ export interface GetAutoScalingConfigurationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly state?: string;
 }
 export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {

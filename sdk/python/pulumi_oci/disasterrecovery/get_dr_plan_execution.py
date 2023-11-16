@@ -92,26 +92,17 @@ class GetDrPlanExecutionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -121,146 +112,92 @@ class GetDrPlanExecutionResult:
 
     @property
     @pulumi.getter(name="drProtectionGroupId")
-    def dr_protection_group_id(self) -> str:
-        """
-        The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
+    def dr_protection_group_id(self) -> Optional[str]:
         return pulumi.get(self, "dr_protection_group_id")
 
     @property
     @pulumi.getter(name="executionDurationInSec")
-    def execution_duration_in_sec(self) -> int:
-        """
-        The total duration in seconds taken to complete the step execution.  Example: `35`
-        """
+    def execution_duration_in_sec(self) -> Optional[int]:
         return pulumi.get(self, "execution_duration_in_sec")
 
     @property
     @pulumi.getter(name="executionOptions")
-    def execution_options(self) -> Sequence['outputs.GetDrPlanExecutionExecutionOptionResult']:
-        """
-        The options for a plan execution.
-        """
+    def execution_options(self) -> Optional[Sequence['outputs.GetDrPlanExecutionExecutionOptionResult']]:
         return pulumi.get(self, "execution_options")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="groupExecutions")
-    def group_executions(self) -> Sequence['outputs.GetDrPlanExecutionGroupExecutionResult']:
-        """
-        A list of groups executed in this DR plan execution.
-        """
+    def group_executions(self) -> Optional[Sequence['outputs.GetDrPlanExecutionGroupExecutionResult']]:
         return pulumi.get(self, "group_executions")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifeCycleDetails")
-    def life_cycle_details(self) -> str:
-        """
-        A message describing the DR plan execution's current state in more detail.
-        """
+    def life_cycle_details(self) -> Optional[str]:
         return pulumi.get(self, "life_cycle_details")
 
     @property
     @pulumi.getter(name="logLocations")
-    def log_locations(self) -> Sequence['outputs.GetDrPlanExecutionLogLocationResult']:
-        """
-        The details of an object storage log location for a DR protection group.
-        """
+    def log_locations(self) -> Optional[Sequence['outputs.GetDrPlanExecutionLogLocationResult']]:
         return pulumi.get(self, "log_locations")
 
     @property
     @pulumi.getter(name="peerDrProtectionGroupId")
-    def peer_dr_protection_group_id(self) -> str:
-        """
-        The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
+    def peer_dr_protection_group_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_dr_protection_group_id")
 
     @property
     @pulumi.getter(name="peerRegion")
-    def peer_region(self) -> str:
-        """
-        The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        """
+    def peer_region(self) -> Optional[str]:
         return pulumi.get(self, "peer_region")
 
     @property
     @pulumi.getter(name="planExecutionType")
-    def plan_execution_type(self) -> str:
-        """
-        The type of the DR plan executed.
-        """
+    def plan_execution_type(self) -> Optional[str]:
         return pulumi.get(self, "plan_execution_type")
 
     @property
     @pulumi.getter(name="planId")
-    def plan_id(self) -> str:
-        """
-        The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
-        """
+    def plan_id(self) -> Optional[str]:
         return pulumi.get(self, "plan_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the DR plan execution.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -297,21 +234,7 @@ class AwaitableGetDrPlanExecutionResult(GetDrPlanExecutionResult):
 def get_dr_plan_execution(dr_plan_execution_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrPlanExecutionResult:
     """
-    This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get details for the DR plan execution identified by *drPlanExecutionId*.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"])
-    ```
-
-
-    :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['drPlanExecutionId'] = dr_plan_execution_id
@@ -347,20 +270,6 @@ def get_dr_plan_execution(dr_plan_execution_id: Optional[str] = None,
 def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrPlanExecutionResult]:
     """
-    This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get details for the DR plan execution identified by *drPlanExecutionId*.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"])
-    ```
-
-
-    :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
+    Use this data source to access information about an existing resource.
     """
     ...

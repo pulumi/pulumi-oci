@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
@@ -82,7 +81,7 @@ type GetAcceptedAgreementsResult struct {
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetAcceptedAgreementsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The unique identifier for the listing associated with the agreement.
 	ListingId *string `pulumi:"listingId"`
 	// The package version associated with the agreement.
@@ -136,12 +135,6 @@ func (o GetAcceptedAgreementsResultOutput) ToGetAcceptedAgreementsResultOutputWi
 	return o
 }
 
-func (o GetAcceptedAgreementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAcceptedAgreementsResult] {
-	return pulumix.Output[GetAcceptedAgreementsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAcceptedAgreementsResultOutput) AcceptedAgreementId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAcceptedAgreementsResult) *string { return v.AcceptedAgreementId }).(pulumi.StringPtrOutput)
 }
@@ -168,8 +161,8 @@ func (o GetAcceptedAgreementsResultOutput) Filters() GetAcceptedAgreementsFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAcceptedAgreementsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAcceptedAgreementsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAcceptedAgreementsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAcceptedAgreementsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the listing associated with the agreement.

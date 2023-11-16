@@ -44,7 +44,7 @@ class GetVaultReplicasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetVaultReplicasResult:
 
     @property
     @pulumi.getter(name="vaultReplicas")
-    def vault_replicas(self) -> Sequence['outputs.GetVaultReplicasVaultReplicaResult']:
-        """
-        The list of vault_replicas.
-        """
+    def vault_replicas(self) -> Optional[Sequence['outputs.GetVaultReplicasVaultReplicaResult']]:
         return pulumi.get(self, "vault_replicas")
 
 
@@ -80,26 +77,7 @@ def get_vault_replicas(filters: Optional[Sequence[pulumi.InputType['GetVaultRepl
                        vault_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVaultReplicasResult:
     """
-    This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.
-
-    Lists the replicas for a vault
-
-    As a provisioning operation, this call is subject to a Key Management limit that applies to
-    the total number of requests across all provisioning write operations. Key Management might
-    throttle this call to reject an otherwise valid request when the total rate of provisioning
-    write operations exceeds 10 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -119,25 +97,6 @@ def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[p
                               vault_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultReplicasResult]:
     """
-    This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.
-
-    Lists the replicas for a vault
-
-    As a provisioning operation, this call is subject to a Key Management limit that applies to
-    the total number of requests across all provisioning write operations. Key Management might
-    throttle this call to reject an otherwise valid request when the total rate of provisioning
-    write operations exceeds 10 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     ...

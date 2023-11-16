@@ -79,7 +79,7 @@ export interface GetNamespacePropertiesMetadataResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly level?: string;
     /**
      * The property name.
@@ -89,7 +89,7 @@ export interface GetNamespacePropertiesMetadataResult {
     /**
      * The list of property_metadata_summary_collection.
      */
-    readonly propertyMetadataSummaryCollections: outputs.LogAnalytics.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection[];
+    readonly propertyMetadataSummaryCollections?: outputs.LogAnalytics.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection[];
 }
 /**
  * This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.

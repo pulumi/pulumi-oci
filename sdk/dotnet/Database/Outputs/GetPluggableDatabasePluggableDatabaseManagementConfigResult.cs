@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The status of the Pluggable Database Management service.
         /// </summary>
-        public readonly string ManagementStatus;
+        public readonly string? ManagementStatus;
 
         [OutputConstructor]
-        private GetPluggableDatabasePluggableDatabaseManagementConfigResult(string managementStatus)
+        private GetPluggableDatabasePluggableDatabaseManagementConfigResult(string? managementStatus)
         {
             ManagementStatus = managementStatus;
         }

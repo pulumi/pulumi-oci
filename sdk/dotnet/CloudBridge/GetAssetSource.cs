@@ -108,24 +108,24 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// Flag indicating whether historical metrics are collected for assets, originating from this asset source.
         /// </summary>
-        public readonly bool AreHistoricalMetricsCollected;
+        public readonly bool? AreHistoricalMetricsCollected;
         /// <summary>
         /// Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
         /// </summary>
-        public readonly bool AreRealtimeMetricsCollected;
+        public readonly bool? AreRealtimeMetricsCollected;
         public readonly string AssetSourceId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
         /// </summary>
-        public readonly string AssetsCompartmentId;
+        public readonly string? AssetsCompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Credentials for an asset source.
         /// </summary>
@@ -133,31 +133,31 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
         /// </summary>
-        public readonly string DiscoveryScheduleId;
+        public readonly string? DiscoveryScheduleId;
         /// <summary>
         /// A user-friendly name for the asset source. Does not have to be unique, and it's mutable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
         /// </summary>
-        public readonly string EnvironmentId;
+        public readonly string? EnvironmentId;
         /// <summary>
         /// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
         /// </summary>
-        public readonly string InventoryId;
+        public readonly string? InventoryId;
         /// <summary>
         /// The detailed state of the asset source.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Credentials for an asset source.
         /// </summary>
@@ -165,71 +165,71 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// The current state of the asset source.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time when the asset source was created in the RFC3339 format.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The point in time that the asset source was last updated in the RFC3339 format.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
         /// </summary>
-        public readonly string VcenterEndpoint;
+        public readonly string? VcenterEndpoint;
 
         [OutputConstructor]
         private GetAssetSourceResult(
-            bool areHistoricalMetricsCollected,
+            bool? areHistoricalMetricsCollected,
 
-            bool areRealtimeMetricsCollected,
+            bool? areRealtimeMetricsCollected,
 
             string assetSourceId,
 
-            string assetsCompartmentId,
+            string? assetsCompartmentId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetAssetSourceDiscoveryCredentialResult> discoveryCredentials,
 
-            string discoveryScheduleId,
+            string? discoveryScheduleId,
 
-            string displayName,
+            string? displayName,
 
-            string environmentId,
+            string? environmentId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string inventoryId,
+            string? inventoryId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetAssetSourceReplicationCredentialResult> replicationCredentials,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type,
+            string? type,
 
-            string vcenterEndpoint)
+            string? vcenterEndpoint)
         {
             AreHistoricalMetricsCollected = areHistoricalMetricsCollected;
             AreRealtimeMetricsCollected = areRealtimeMetricsCollected;

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Idp Group Mapping resource in Oracle Cloud Infrastructure Identity service.
@@ -61,7 +60,7 @@ type IdpGroupMapping struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the tenancy containing the `IdentityProvider`.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	// The OCID of the identity provider.
@@ -72,11 +71,11 @@ type IdpGroupMapping struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IdpGroupName pulumi.StringOutput `pulumi:"idpGroupName"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The mapping's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewIdpGroupMapping registers a new resource with the given unique name, arguments, and options.
@@ -209,12 +208,6 @@ func (i *IdpGroupMapping) ToIdpGroupMappingOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IdpGroupMappingOutput)
 }
 
-func (i *IdpGroupMapping) ToOutput(ctx context.Context) pulumix.Output[*IdpGroupMapping] {
-	return pulumix.Output[*IdpGroupMapping]{
-		OutputState: i.ToIdpGroupMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IdpGroupMappingArrayInput is an input type that accepts IdpGroupMappingArray and IdpGroupMappingArrayOutput values.
 // You can construct a concrete instance of `IdpGroupMappingArrayInput` via:
 //
@@ -238,12 +231,6 @@ func (i IdpGroupMappingArray) ToIdpGroupMappingArrayOutput() IdpGroupMappingArra
 
 func (i IdpGroupMappingArray) ToIdpGroupMappingArrayOutputWithContext(ctx context.Context) IdpGroupMappingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IdpGroupMappingArrayOutput)
-}
-
-func (i IdpGroupMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]*IdpGroupMapping] {
-	return pulumix.Output[[]*IdpGroupMapping]{
-		OutputState: i.ToIdpGroupMappingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IdpGroupMappingMapInput is an input type that accepts IdpGroupMappingMap and IdpGroupMappingMapOutput values.
@@ -271,12 +258,6 @@ func (i IdpGroupMappingMap) ToIdpGroupMappingMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(IdpGroupMappingMapOutput)
 }
 
-func (i IdpGroupMappingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IdpGroupMapping] {
-	return pulumix.Output[map[string]*IdpGroupMapping]{
-		OutputState: i.ToIdpGroupMappingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IdpGroupMappingOutput struct{ *pulumi.OutputState }
 
 func (IdpGroupMappingOutput) ElementType() reflect.Type {
@@ -291,15 +272,9 @@ func (o IdpGroupMappingOutput) ToIdpGroupMappingOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o IdpGroupMappingOutput) ToOutput(ctx context.Context) pulumix.Output[*IdpGroupMapping] {
-	return pulumix.Output[*IdpGroupMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the `IdentityProvider`.
-func (o IdpGroupMappingOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o IdpGroupMappingOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
@@ -321,18 +296,18 @@ func (o IdpGroupMappingOutput) IdpGroupName() pulumi.StringOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o IdpGroupMappingOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o IdpGroupMappingOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The mapping's current state.
-func (o IdpGroupMappingOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o IdpGroupMappingOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o IdpGroupMappingOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o IdpGroupMappingOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type IdpGroupMappingArrayOutput struct{ *pulumi.OutputState }
@@ -347,12 +322,6 @@ func (o IdpGroupMappingArrayOutput) ToIdpGroupMappingArrayOutput() IdpGroupMappi
 
 func (o IdpGroupMappingArrayOutput) ToIdpGroupMappingArrayOutputWithContext(ctx context.Context) IdpGroupMappingArrayOutput {
 	return o
-}
-
-func (o IdpGroupMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IdpGroupMapping] {
-	return pulumix.Output[[]*IdpGroupMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IdpGroupMappingArrayOutput) Index(i pulumi.IntInput) IdpGroupMappingOutput {
@@ -373,12 +342,6 @@ func (o IdpGroupMappingMapOutput) ToIdpGroupMappingMapOutput() IdpGroupMappingMa
 
 func (o IdpGroupMappingMapOutput) ToIdpGroupMappingMapOutputWithContext(ctx context.Context) IdpGroupMappingMapOutput {
 	return o
-}
-
-func (o IdpGroupMappingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IdpGroupMapping] {
-	return pulumix.Output[map[string]*IdpGroupMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IdpGroupMappingMapOutput) MapIndex(k pulumi.StringInput) IdpGroupMappingOutput {

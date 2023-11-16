@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// software source identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// software source name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetManagedInstancesManagedInstanceParentSoftwareSourceResult(
-            string id,
+            string? id,
 
-            string name)
+            string? name)
         {
             Id = id;
             Name = name;

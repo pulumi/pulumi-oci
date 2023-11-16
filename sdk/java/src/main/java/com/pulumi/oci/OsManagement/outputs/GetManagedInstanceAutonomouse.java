@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceAutonomouse {
@@ -13,15 +15,15 @@ public final class GetManagedInstanceAutonomouse {
      * @return True if daily updates are enabled
      * 
      */
-    private Boolean isAutoUpdateEnabled;
+    private @Nullable Boolean isAutoUpdateEnabled;
 
     private GetManagedInstanceAutonomouse() {}
     /**
      * @return True if daily updates are enabled
      * 
      */
-    public Boolean isAutoUpdateEnabled() {
-        return this.isAutoUpdateEnabled;
+    public Optional<Boolean> isAutoUpdateEnabled() {
+        return Optional.ofNullable(this.isAutoUpdateEnabled);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetManagedInstanceAutonomouse {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isAutoUpdateEnabled;
+        private @Nullable Boolean isAutoUpdateEnabled;
         public Builder() {}
         public Builder(GetManagedInstanceAutonomouse defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetManagedInstanceAutonomouse {
         }
 
         @CustomType.Setter
-        public Builder isAutoUpdateEnabled(Boolean isAutoUpdateEnabled) {
-            this.isAutoUpdateEnabled = Objects.requireNonNull(isAutoUpdateEnabled);
+        public Builder isAutoUpdateEnabled(@Nullable Boolean isAutoUpdateEnabled) {
+            this.isAutoUpdateEnabled = isAutoUpdateEnabled;
             return this;
         }
         public GetManagedInstanceAutonomouse build() {

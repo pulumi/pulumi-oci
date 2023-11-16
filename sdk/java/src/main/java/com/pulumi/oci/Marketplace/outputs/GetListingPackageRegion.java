@@ -8,6 +8,8 @@ import com.pulumi.oci.Marketplace.outputs.GetListingPackageRegionCountry;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPackageRegion {
@@ -15,39 +17,39 @@ public final class GetListingPackageRegion {
      * @return A code assigned to the item.
      * 
      */
-    private String code;
+    private @Nullable String code;
     /**
      * @return Countries in the region.
      * 
      */
-    private List<GetListingPackageRegionCountry> countries;
+    private @Nullable List<GetListingPackageRegionCountry> countries;
     /**
      * @return The name of the variable.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetListingPackageRegion() {}
     /**
      * @return A code assigned to the item.
      * 
      */
-    public String code() {
-        return this.code;
+    public Optional<String> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return Countries in the region.
      * 
      */
     public List<GetListingPackageRegionCountry> countries() {
-        return this.countries;
+        return this.countries == null ? List.of() : this.countries;
     }
     /**
      * @return The name of the variable.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetListingPackageRegion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String code;
-        private List<GetListingPackageRegionCountry> countries;
-        private String name;
+        private @Nullable String code;
+        private @Nullable List<GetListingPackageRegionCountry> countries;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetListingPackageRegion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetListingPackageRegion {
         }
 
         @CustomType.Setter
-        public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable String code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder countries(List<GetListingPackageRegionCountry> countries) {
-            this.countries = Objects.requireNonNull(countries);
+        public Builder countries(@Nullable List<GetListingPackageRegionCountry> countries) {
+            this.countries = countries;
             return this;
         }
         public Builder countries(GetListingPackageRegionCountry... countries) {
             return countries(List.of(countries));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetListingPackageRegion build() {

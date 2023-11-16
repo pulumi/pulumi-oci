@@ -104,105 +104,72 @@ class GetIntegrationInstanceResult:
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
-    def alternate_custom_endpoints(self) -> Sequence['outputs.GetIntegrationInstanceAlternateCustomEndpointResult']:
-        """
-        A list of alternate custom endpoints used for the integration instance URL.
-        """
+    def alternate_custom_endpoints(self) -> Optional[Sequence['outputs.GetIntegrationInstanceAlternateCustomEndpointResult']]:
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @property
     @pulumi.getter
-    def attachments(self) -> Sequence['outputs.GetIntegrationInstanceAttachmentResult']:
-        """
-        A list of associated attachments to other services
-        """
+    def attachments(self) -> Optional[Sequence['outputs.GetIntegrationInstanceAttachmentResult']]:
         return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> str:
-        """
-        The entitlement used for billing purposes.
-        """
+    def consumption_model(self) -> Optional[str]:
         return pulumi.get(self, "consumption_model")
 
     @property
     @pulumi.getter(name="customEndpoints")
-    def custom_endpoints(self) -> Sequence['outputs.GetIntegrationInstanceCustomEndpointResult']:
-        """
-        Details for a custom endpoint for the integration instance.
-        """
+    def custom_endpoints(self) -> Optional[Sequence['outputs.GetIntegrationInstanceCustomEndpointResult']]:
         return pulumi.get(self, "custom_endpoints")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Integration Instance Identifier, can be renamed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> str:
+    def domain_id(self) -> Optional[str]:
         return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
-    def enable_process_automation_trigger(self) -> int:
+    def enable_process_automation_trigger(self) -> Optional[int]:
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The Virtual Cloud Network OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAt")
-    def idcs_at(self) -> str:
+    def idcs_at(self) -> Optional[str]:
         return pulumi.get(self, "idcs_at")
 
     @property
     @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> Sequence['outputs.GetIntegrationInstanceIdcsInfoResult']:
-        """
-        Information for IDCS access
-        """
+    def idcs_infos(self) -> Optional[Sequence['outputs.GetIntegrationInstanceIdcsInfoResult']]:
         return pulumi.get(self, "idcs_infos")
 
     @property
     @pulumi.getter(name="instanceUrl")
-    def instance_url(self) -> str:
-        """
-        The Integration Instance URL.
-        """
+    def instance_url(self) -> Optional[str]:
         return pulumi.get(self, "instance_url")
 
     @property
@@ -212,90 +179,57 @@ class GetIntegrationInstanceResult:
 
     @property
     @pulumi.getter(name="integrationInstanceType")
-    def integration_instance_type(self) -> str:
-        """
-        Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        """
+    def integration_instance_type(self) -> Optional[str]:
         return pulumi.get(self, "integration_instance_type")
 
     @property
     @pulumi.getter(name="isByol")
-    def is_byol(self) -> bool:
-        """
-        Bring your own license.
-        """
+    def is_byol(self) -> Optional[bool]:
         return pulumi.get(self, "is_byol")
 
     @property
     @pulumi.getter(name="isFileServerEnabled")
-    def is_file_server_enabled(self) -> bool:
-        """
-        The file server is enabled or not.
-        """
+    def is_file_server_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_file_server_enabled")
 
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
-    def is_visual_builder_enabled(self) -> bool:
-        """
-        Visual Builder is enabled or not.
-        """
+    def is_visual_builder_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @property
     @pulumi.getter(name="messagePacks")
-    def message_packs(self) -> int:
-        """
-        The number of configured message packs (if any)
-        """
+    def message_packs(self) -> Optional[int]:
         return pulumi.get(self, "message_packs")
 
     @property
     @pulumi.getter(name="networkEndpointDetails")
-    def network_endpoint_details(self) -> Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailResult']:
-        """
-        Base representation of a network endpoint.
-        """
+    def network_endpoint_details(self) -> Optional[Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailResult']]:
         return pulumi.get(self, "network_endpoint_details")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        Shape
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the integration instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -336,21 +270,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
 def get_integration_instance(integration_instance_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIntegrationInstanceResult:
     """
-    This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
-
-    Gets a IntegrationInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=oci_integration_integration_instance["test_integration_instance"]["id"])
-    ```
-
-
-    :param str integration_instance_id: Unique Integration Instance identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['integrationInstanceId'] = integration_instance_id
@@ -390,20 +310,6 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
 def get_integration_instance_output(integration_instance_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIntegrationInstanceResult]:
     """
-    This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
-
-    Gets a IntegrationInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=oci_integration_integration_instance["test_integration_instance"]["id"])
-    ```
-
-
-    :param str integration_instance_id: Unique Integration Instance identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -37,15 +37,12 @@ class GetModelTypeResult:
 
     @property
     @pulumi.getter
-    def capabilities(self) -> str:
-        """
-        Model information capabilities related to version
-        """
+    def capabilities(self) -> Optional[str]:
         return pulumi.get(self, "capabilities")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -58,10 +55,7 @@ class GetModelTypeResult:
 
     @property
     @pulumi.getter
-    def versions(self) -> Sequence[str]:
-        """
-        Model versions available for this model type
-        """
+    def versions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "versions")
 
 
@@ -80,21 +74,7 @@ class AwaitableGetModelTypeResult(GetModelTypeResult):
 def get_model_type(model_type: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelTypeResult:
     """
-    This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.
-
-    Gets model capabilities
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_type = oci.AiLanguage.get_model_type(model_type=var["model_type_model_type"])
-    ```
-
-
-    :param str model_type: Results like version and model supported info by specifying model type
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['modelType'] = model_type
@@ -112,20 +92,6 @@ def get_model_type(model_type: Optional[str] = None,
 def get_model_type_output(model_type: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelTypeResult]:
     """
-    This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.
-
-    Gets model capabilities
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_type = oci.AiLanguage.get_model_type(model_type=var["model_type_model_type"])
-    ```
-
-
-    :param str model_type: Results like version and model supported info by specifying model type
+    Use this data source to access information about an existing resource.
     """
     ...

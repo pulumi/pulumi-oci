@@ -6,6 +6,8 @@ package com.pulumi.oci.Email.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSuppressionResult {
@@ -13,98 +15,98 @@ public final class GetSuppressionResult {
      * @return The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The email address of the suppression.
      * 
      */
-    private String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      * 
      */
-    private String errorDetail;
+    private @Nullable String errorDetail;
     /**
      * @return DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      * 
      */
-    private String errorSource;
+    private @Nullable String errorSource;
     /**
      * @return The unique OCID of the suppression.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      * 
      */
-    private String messageId;
+    private @Nullable String messageId;
     /**
      * @return The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    private String reason;
+    private @Nullable String reason;
     private String suppressionId;
     /**
      * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeLastSuppressed;
+    private @Nullable String timeLastSuppressed;
 
     private GetSuppressionResult() {}
     /**
      * @return The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The email address of the suppression.
      * 
      */
-    public String emailAddress() {
-        return this.emailAddress;
+    public Optional<String> emailAddress() {
+        return Optional.ofNullable(this.emailAddress);
     }
     /**
      * @return The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      * 
      */
-    public String errorDetail() {
-        return this.errorDetail;
+    public Optional<String> errorDetail() {
+        return Optional.ofNullable(this.errorDetail);
     }
     /**
      * @return DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      * 
      */
-    public String errorSource() {
-        return this.errorSource;
+    public Optional<String> errorSource() {
+        return Optional.ofNullable(this.errorSource);
     }
     /**
      * @return The unique OCID of the suppression.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      * 
      */
-    public String messageId() {
-        return this.messageId;
+    public Optional<String> messageId() {
+        return Optional.ofNullable(this.messageId);
     }
     /**
      * @return The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    public String reason() {
-        return this.reason;
+    public Optional<String> reason() {
+        return Optional.ofNullable(this.reason);
     }
     public String suppressionId() {
         return this.suppressionId;
@@ -113,15 +115,15 @@ public final class GetSuppressionResult {
      * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeLastSuppressed() {
-        return this.timeLastSuppressed;
+    public Optional<String> timeLastSuppressed() {
+        return Optional.ofNullable(this.timeLastSuppressed);
     }
 
     public static Builder builder() {
@@ -133,16 +135,16 @@ public final class GetSuppressionResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String emailAddress;
-        private String errorDetail;
-        private String errorSource;
-        private String id;
-        private String messageId;
-        private String reason;
+        private @Nullable String compartmentId;
+        private @Nullable String emailAddress;
+        private @Nullable String errorDetail;
+        private @Nullable String errorSource;
+        private @Nullable String id;
+        private @Nullable String messageId;
+        private @Nullable String reason;
         private String suppressionId;
-        private String timeCreated;
-        private String timeLastSuppressed;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastSuppressed;
         public Builder() {}
         public Builder(GetSuppressionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -159,38 +161,38 @@ public final class GetSuppressionResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+        public Builder emailAddress(@Nullable String emailAddress) {
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder errorDetail(String errorDetail) {
-            this.errorDetail = Objects.requireNonNull(errorDetail);
+        public Builder errorDetail(@Nullable String errorDetail) {
+            this.errorDetail = errorDetail;
             return this;
         }
         @CustomType.Setter
-        public Builder errorSource(String errorSource) {
-            this.errorSource = Objects.requireNonNull(errorSource);
+        public Builder errorSource(@Nullable String errorSource) {
+            this.errorSource = errorSource;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder messageId(String messageId) {
-            this.messageId = Objects.requireNonNull(messageId);
+        public Builder messageId(@Nullable String messageId) {
+            this.messageId = messageId;
             return this;
         }
         @CustomType.Setter
-        public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+        public Builder reason(@Nullable String reason) {
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
@@ -199,13 +201,13 @@ public final class GetSuppressionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastSuppressed(String timeLastSuppressed) {
-            this.timeLastSuppressed = Objects.requireNonNull(timeLastSuppressed);
+        public Builder timeLastSuppressed(@Nullable String timeLastSuppressed) {
+            this.timeLastSuppressed = timeLastSuppressed;
             return this;
         }
         public GetSuppressionResult build() {

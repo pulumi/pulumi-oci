@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
@@ -14,27 +16,27 @@ public final class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
      * @return The compute shape of the nodes that the count is for.
      * 
      */
-    private String logicalShape;
+    private @Nullable String logicalShape;
     /**
      * @return The node count of this compute shape.
      * 
      */
-    private Integer poolCount;
+    private @Nullable Integer poolCount;
 
     private GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount() {}
     /**
      * @return The compute shape of the nodes that the count is for.
      * 
      */
-    public String logicalShape() {
-        return this.logicalShape;
+    public Optional<String> logicalShape() {
+        return Optional.ofNullable(this.logicalShape);
     }
     /**
      * @return The node count of this compute shape.
      * 
      */
-    public Integer poolCount() {
-        return this.poolCount;
+    public Optional<Integer> poolCount() {
+        return Optional.ofNullable(this.poolCount);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String logicalShape;
-        private Integer poolCount;
+        private @Nullable String logicalShape;
+        private @Nullable Integer poolCount;
         public Builder() {}
         public Builder(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
         }
 
         @CustomType.Setter
-        public Builder logicalShape(String logicalShape) {
-            this.logicalShape = Objects.requireNonNull(logicalShape);
+        public Builder logicalShape(@Nullable String logicalShape) {
+            this.logicalShape = logicalShape;
             return this;
         }
         @CustomType.Setter
-        public Builder poolCount(Integer poolCount) {
-            this.poolCount = Objects.requireNonNull(poolCount);
+        public Builder poolCount(@Nullable Integer poolCount) {
+            this.poolCount = poolCount;
             return this;
         }
         public GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount build() {

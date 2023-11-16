@@ -52,20 +52,20 @@ export interface GetNamespaceRulesSummaryResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The count of ingest time rules.
      */
-    readonly ingestTimeRulesCount: number;
+    readonly ingestTimeRulesCount?: number;
     readonly namespace: string;
     /**
      * The count of saved search rules.
      */
-    readonly savedSearchRulesCount: number;
+    readonly savedSearchRulesCount?: number;
     /**
      * The total count of detection rules.
      */
-    readonly totalCount: number;
+    readonly totalCount?: number;
 }
 /**
  * This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.

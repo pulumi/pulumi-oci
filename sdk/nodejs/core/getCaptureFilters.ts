@@ -67,7 +67,7 @@ export interface GetCaptureFiltersResult {
     /**
      * The list of capture_filters.
      */
-    readonly captureFilters: outputs.Core.GetCaptureFiltersCaptureFilter[];
+    readonly captureFilters?: outputs.Core.GetCaptureFiltersCaptureFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
      */
@@ -84,7 +84,7 @@ export interface GetCaptureFiltersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The capture filter's current administrative state.
      */

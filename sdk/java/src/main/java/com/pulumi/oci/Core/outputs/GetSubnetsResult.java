@@ -29,7 +29,7 @@ public final class GetSubnetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The subnet&#39;s current state.
      * 
@@ -39,7 +39,7 @@ public final class GetSubnetsResult {
      * @return The list of subnets.
      * 
      */
-    private List<GetSubnetsSubnet> subnets;
+    private @Nullable List<GetSubnetsSubnet> subnets;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
      * 
@@ -68,8 +68,8 @@ public final class GetSubnetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The subnet&#39;s current state.
@@ -83,7 +83,7 @@ public final class GetSubnetsResult {
      * 
      */
     public List<GetSubnetsSubnet> subnets() {
-        return this.subnets;
+        return this.subnets == null ? List.of() : this.subnets;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
@@ -105,9 +105,9 @@ public final class GetSubnetsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetSubnetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetSubnetsSubnet> subnets;
+        private @Nullable List<GetSubnetsSubnet> subnets;
         private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetSubnetsResult defaults) {
@@ -140,8 +140,8 @@ public final class GetSubnetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -150,8 +150,8 @@ public final class GetSubnetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder subnets(List<GetSubnetsSubnet> subnets) {
-            this.subnets = Objects.requireNonNull(subnets);
+        public Builder subnets(@Nullable List<GetSubnetsSubnet> subnets) {
+            this.subnets = subnets;
             return this;
         }
         public Builder subnets(GetSubnetsSubnet... subnets) {

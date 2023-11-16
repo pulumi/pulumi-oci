@@ -49,12 +49,12 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
      * @return OCID of the Network Firewall Policy this security rule belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return An object which defines the position of the rule.
      * 
      */
-    private List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions;
+    private @Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions;
     private @Nullable String priorityOrder;
 
     private GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem() {}
@@ -103,15 +103,15 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
      * @return OCID of the Network Firewall Policy this security rule belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return An object which defines the position of the rule.
      * 
      */
     public List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions() {
-        return this.positions;
+        return this.positions == null ? List.of() : this.positions;
     }
     public Optional<String> priorityOrder() {
         return Optional.ofNullable(this.priorityOrder);
@@ -131,8 +131,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
         private @Nullable String inspection;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions;
+        private @Nullable String parentResourceId;
+        private @Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions;
         private @Nullable String priorityOrder;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem defaults) {
@@ -173,13 +173,13 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder positions(List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions) {
-            this.positions = Objects.requireNonNull(positions);
+        public Builder positions(@Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions) {
+            this.positions = positions;
             return this;
         }
         public Builder positions(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition... positions) {

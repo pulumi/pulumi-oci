@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Membership rule
         /// </summary>
-        public readonly string MembershipRule;
+        public readonly string? MembershipRule;
         /// <summary>
         /// Membership type
         /// </summary>
-        public readonly string MembershipType;
+        public readonly string? MembershipType;
 
         [OutputConstructor]
         private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupResult(
-            string membershipRule,
+            string? membershipRule,
 
-            string membershipType)
+            string? membershipType)
         {
             MembershipRule = membershipRule;
             MembershipType = membershipType;

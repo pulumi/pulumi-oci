@@ -155,7 +155,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
         /// <summary>
         /// The list of overlapping_recall_collection.
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.LogAnalytics
         private GetNamespaceStorageOverlappingRecallsResult(
             ImmutableArray<Outputs.GetNamespaceStorageOverlappingRecallsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string @namespace,
 

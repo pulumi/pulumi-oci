@@ -67,125 +67,125 @@ export interface GetListingResult {
     /**
      * The model for upload data for images and icons.
      */
-    readonly banners: outputs.Marketplace.GetListingBanner[];
+    readonly banners?: outputs.Marketplace.GetListingBanner[];
     /**
      * Product categories that the listing belongs to.
      */
-    readonly categories: string[];
+    readonly categories?: string[];
     readonly compartmentId?: string;
     /**
      * The list of compatible architectures supported by the listing
      */
-    readonly compatibleArchitectures: string[];
+    readonly compatibleArchitectures?: string[];
     /**
      * The default package version.
      */
-    readonly defaultPackageVersion: string;
+    readonly defaultPackageVersion?: string;
     /**
      * Links to additional documentation provided by the publisher specifically for the listing.
      */
-    readonly documentationLinks: outputs.Marketplace.GetListingDocumentationLink[];
+    readonly documentationLinks?: outputs.Marketplace.GetListingDocumentationLink[];
     /**
      * The model for upload data for images and icons.
      */
-    readonly icons: outputs.Marketplace.GetListingIcon[];
+    readonly icons?: outputs.Marketplace.GetListingIcon[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the listing is included in Featured Listings.
      */
-    readonly isFeatured: boolean;
+    readonly isFeatured?: boolean;
     /**
      * Keywords associated with the listing.
      */
-    readonly keywords: string;
+    readonly keywords?: string;
     /**
      * Languages supported by the listing.
      */
-    readonly languages: outputs.Marketplace.GetListingLanguage[];
+    readonly languages?: outputs.Marketplace.GetListingLanguage[];
     /**
      * A description of the publisher's licensing model for the listing.
      */
-    readonly licenseModelDescription: string;
+    readonly licenseModelDescription?: string;
     /**
      * Reference links.
      */
-    readonly links: outputs.Marketplace.GetListingLink[];
+    readonly links?: outputs.Marketplace.GetListingLink[];
     readonly listingId: string;
     /**
      * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      */
-    readonly listingType: string;
+    readonly listingType?: string;
     /**
      * A long description of the listing.
      */
-    readonly longDescription: string;
+    readonly longDescription?: string;
     /**
      * Text that describes the resource.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The listing's package type.
      */
-    readonly packageType: string;
+    readonly packageType?: string;
     /**
      * Summary details about the publisher of the listing.
      */
-    readonly publishers: outputs.Marketplace.GetListingPublisher[];
+    readonly publishers?: outputs.Marketplace.GetListingPublisher[];
     /**
      * The regions where the listing is eligible to be deployed.
      */
-    readonly regions: outputs.Marketplace.GetListingRegion[];
+    readonly regions?: outputs.Marketplace.GetListingRegion[];
     /**
      * Release notes for the listing.
      */
-    readonly releaseNotes: string;
+    readonly releaseNotes?: string;
     /**
      * Screenshots of the listing.
      */
-    readonly screenshots: outputs.Marketplace.GetListingScreenshot[];
+    readonly screenshots?: outputs.Marketplace.GetListingScreenshot[];
     /**
      * A short description of the listing.
      */
-    readonly shortDescription: string;
+    readonly shortDescription?: string;
     /**
      * Contact information to use to get support from the publisher for the listing.
      */
-    readonly supportContacts: outputs.Marketplace.GetListingSupportContact[];
+    readonly supportContacts?: outputs.Marketplace.GetListingSupportContact[];
     /**
      * Links to support resources for the listing.
      */
-    readonly supportLinks: outputs.Marketplace.GetListingSupportLink[];
+    readonly supportLinks?: outputs.Marketplace.GetListingSupportLink[];
     /**
      * The list of operating systems supported by the listing.
      */
-    readonly supportedOperatingSystems: outputs.Marketplace.GetListingSupportedOperatingSystem[];
+    readonly supportedOperatingSystems?: outputs.Marketplace.GetListingSupportedOperatingSystem[];
     /**
      * System requirements for the listing.
      */
-    readonly systemRequirements: string;
+    readonly systemRequirements?: string;
     /**
      * The tagline of the listing.
      */
-    readonly tagline: string;
+    readonly tagline?: string;
     /**
      * The release date of the listing.
      */
-    readonly timeReleased: string;
+    readonly timeReleased?: string;
     /**
      * Usage information for the listing.
      */
-    readonly usageInformation: string;
+    readonly usageInformation?: string;
     /**
      * The version of the listing.
      */
-    readonly version: string;
+    readonly version?: string;
     /**
      * Videos of the listing.
      */
-    readonly videos: outputs.Marketplace.GetListingVideo[];
+    readonly videos?: outputs.Marketplace.GetListingVideo[];
 }
 /**
  * This data source provides details about a specific Listing resource in Oracle Cloud Infrastructure Marketplace service.

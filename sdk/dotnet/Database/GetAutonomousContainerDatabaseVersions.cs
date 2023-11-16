@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ServiceComponent;
 
         [OutputConstructor]
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string serviceComponent)
         {

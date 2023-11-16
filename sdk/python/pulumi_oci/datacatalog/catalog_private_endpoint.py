@@ -22,16 +22,6 @@ class CatalogPrivateEndpointArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a CatalogPrivateEndpoint resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "dns_zones", dns_zones)
@@ -46,9 +36,6 @@ class CatalogPrivateEndpointArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -58,9 +45,6 @@ class CatalogPrivateEndpointArgs:
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
         return pulumi.get(self, "dns_zones")
 
     @dns_zones.setter
@@ -70,13 +54,6 @@ class CatalogPrivateEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of subnet to which the reverse connection is to be created 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -86,9 +63,6 @@ class CatalogPrivateEndpointArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -98,9 +72,6 @@ class CatalogPrivateEndpointArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the private endpoint resource being created.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -110,9 +81,6 @@ class CatalogPrivateEndpointArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -136,21 +104,6 @@ class _CatalogPrivateEndpointState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CatalogPrivateEndpoint resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalogs: The list of catalogs using the private reverse connection endpoint
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[str] state: The current state of the private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         if attached_catalogs is not None:
             pulumi.set(__self__, "attached_catalogs", attached_catalogs)
@@ -178,9 +131,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="attachedCatalogs")
     def attached_catalogs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of catalogs using the private reverse connection endpoint
-        """
         return pulumi.get(self, "attached_catalogs")
 
     @attached_catalogs.setter
@@ -190,9 +140,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -202,9 +149,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -214,9 +158,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the private endpoint resource being created.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -226,9 +167,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
         return pulumi.get(self, "dns_zones")
 
     @dns_zones.setter
@@ -238,9 +176,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -250,9 +185,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -262,9 +194,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the private endpoint resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -274,13 +203,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of subnet to which the reverse connection is to be created 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -290,9 +212,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -302,9 +221,6 @@ class _CatalogPrivateEndpointState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -325,49 +241,9 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new private reverse connection endpoint.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_catalog_private_endpoint = oci.data_catalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["catalog_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["catalog_private_endpoint_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        CatalogPrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
-        ```
-
+        Create a CatalogPrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -376,37 +252,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  args: CatalogPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new private reverse connection endpoint.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_catalog_private_endpoint = oci.data_catalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["catalog_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["catalog_private_endpoint_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        CatalogPrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
-        ```
-
+        Create a CatalogPrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CatalogPrivateEndpointArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -482,21 +328,6 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalogs: The list of catalogs using the private reverse connection endpoint
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[str] state: The current state of the private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -517,93 +348,56 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="attachedCatalogs")
-    def attached_catalogs(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of catalogs using the private reverse connection endpoint
-        """
+    def attached_catalogs(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "attached_catalogs")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Display name of the private endpoint resource being created.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the private endpoint resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of subnet to which the reverse connection is to be created 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

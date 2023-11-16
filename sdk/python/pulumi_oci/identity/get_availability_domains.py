@@ -39,18 +39,12 @@ class GetAvailabilityDomainsResult:
 
     @property
     @pulumi.getter(name="availabilityDomains")
-    def availability_domains(self) -> Sequence['outputs.GetAvailabilityDomainsAvailabilityDomainResult']:
-        """
-        The list of availability_domains.
-        """
+    def availability_domains(self) -> Optional[Sequence['outputs.GetAvailabilityDomainsAvailabilityDomainResult']]:
         return pulumi.get(self, "availability_domains")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -60,7 +54,7 @@ class GetAvailabilityDomainsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,25 +77,7 @@ def get_availability_domains(compartment_id: Optional[str] = None,
                              filters: Optional[Sequence[pulumi.InputType['GetAvailabilityDomainsFilterArgs']]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAvailabilityDomainsResult:
     """
-    This data source provides the list of Availability Domains in Oracle Cloud Infrastructure Identity service.
-
-    Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
-    of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-    Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
-    create a dependency on the list order.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_availability_domains = oci.Identity.get_availability_domains(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -121,24 +97,6 @@ def get_availability_domains_output(compartment_id: Optional[pulumi.Input[str]] 
                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAvailabilityDomainsFilterArgs']]]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAvailabilityDomainsResult]:
     """
-    This data source provides the list of Availability Domains in Oracle Cloud Infrastructure Identity service.
-
-    Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
-    of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-    Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
-    create a dependency on the list order.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_availability_domains = oci.Identity.get_availability_domains(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     ...

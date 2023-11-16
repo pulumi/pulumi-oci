@@ -22,16 +22,6 @@ class EnterpriseManagerBridgeArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a EnterpriseManagerBridge resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier of the Enterprise Manager bridge
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of Enterprise Manager Bridge
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -46,9 +36,6 @@ class EnterpriseManagerBridgeArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment identifier of the Enterprise Manager bridge
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -58,9 +45,6 @@ class EnterpriseManagerBridgeArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -70,13 +54,6 @@ class EnterpriseManagerBridgeArgs:
     @property
     @pulumi.getter(name="objectStorageBucketName")
     def object_storage_bucket_name(self) -> pulumi.Input[str]:
-        """
-        Object Storage Bucket Name
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object_storage_bucket_name")
 
     @object_storage_bucket_name.setter
@@ -86,9 +63,6 @@ class EnterpriseManagerBridgeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -98,9 +72,6 @@ class EnterpriseManagerBridgeArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of Enterprise Manager Bridge
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -110,9 +81,6 @@ class EnterpriseManagerBridgeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -138,23 +106,6 @@ class _EnterpriseManagerBridgeState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EnterpriseManagerBridge resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier of the Enterprise Manager bridge
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of Enterprise Manager Bridge
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] object_storage_bucket_status_details: A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-        :param pulumi.Input[str] object_storage_namespace_name: Object Storage Namespace Name
-        :param pulumi.Input[str] state: The current state of the Enterprise Manager bridge.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -186,9 +137,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment identifier of the Enterprise Manager bridge
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -198,9 +146,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -210,9 +155,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of Enterprise Manager Bridge
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -222,9 +164,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -234,9 +173,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -246,9 +182,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -258,13 +191,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="objectStorageBucketName")
     def object_storage_bucket_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage Bucket Name
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object_storage_bucket_name")
 
     @object_storage_bucket_name.setter
@@ -274,9 +200,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="objectStorageBucketStatusDetails")
     def object_storage_bucket_status_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-        """
         return pulumi.get(self, "object_storage_bucket_status_details")
 
     @object_storage_bucket_status_details.setter
@@ -286,9 +209,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="objectStorageNamespaceName")
     def object_storage_namespace_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage Namespace Name
-        """
         return pulumi.get(self, "object_storage_namespace_name")
 
     @object_storage_namespace_name.setter
@@ -298,9 +218,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Enterprise Manager bridge.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -310,9 +227,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -322,9 +236,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -334,9 +245,6 @@ class _EnterpriseManagerBridgeState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -357,49 +265,9 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
                  object_storage_bucket_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Enterprise Manager bridge in Operations Insights.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_enterprise_manager_bridge = oci.opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge",
-            compartment_id=var["compartment_id"],
-            display_name=var["enterprise_manager_bridge_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["enterprise_manager_bridge_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        EnterpriseManagerBridges can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge "id"
-        ```
-
+        Create a EnterpriseManagerBridge resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier of the Enterprise Manager bridge
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of Enterprise Manager Bridge
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -408,37 +276,7 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
                  args: EnterpriseManagerBridgeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Enterprise Manager bridge in Operations Insights.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_enterprise_manager_bridge = oci.opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge",
-            compartment_id=var["compartment_id"],
-            display_name=var["enterprise_manager_bridge_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["enterprise_manager_bridge_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        EnterpriseManagerBridges can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge "id"
-        ```
-
+        Create a EnterpriseManagerBridge resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param EnterpriseManagerBridgeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -518,23 +356,6 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier of the Enterprise Manager bridge
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of Enterprise Manager Bridge
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] object_storage_bucket_status_details: A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-        :param pulumi.Input[str] object_storage_namespace_name: Object Storage Namespace Name
-        :param pulumi.Input[str] state: The current state of the Enterprise Manager bridge.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -558,108 +379,65 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment identifier of the Enterprise Manager bridge
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of Enterprise Manager Bridge
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
     def object_storage_bucket_name(self) -> pulumi.Output[str]:
-        """
-        Object Storage Bucket Name
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object_storage_bucket_name")
 
     @property
     @pulumi.getter(name="objectStorageBucketStatusDetails")
-    def object_storage_bucket_status_details(self) -> pulumi.Output[str]:
-        """
-        A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-        """
+    def object_storage_bucket_status_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_storage_bucket_status_details")
 
     @property
     @pulumi.getter(name="objectStorageNamespaceName")
-    def object_storage_namespace_name(self) -> pulumi.Output[str]:
-        """
-        Object Storage Namespace Name
-        """
+    def object_storage_namespace_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_storage_namespace_name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Enterprise Manager bridge.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

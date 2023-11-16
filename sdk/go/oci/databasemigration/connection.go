@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connection resource in Oracle Cloud Infrastructure Database Migration service.
@@ -102,45 +101,45 @@ type Connection struct {
 	// (Updatable) Database Administrator Credentials details.
 	AdminCredentials ConnectionAdminCredentialsOutput `pulumi:"adminCredentials"`
 	// (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-	CertificateTdn pulumi.StringOutput `pulumi:"certificateTdn"`
+	CertificateTdn pulumi.StringPtrOutput `pulumi:"certificateTdn"`
 	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-	ConnectDescriptor ConnectionConnectDescriptorOutput `pulumi:"connectDescriptor"`
+	ConnectDescriptor ConnectionConnectDescriptorPtrOutput `pulumi:"connectDescriptor"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
-	CredentialsSecretId pulumi.StringOutput `pulumi:"credentialsSecretId"`
+	CredentialsSecretId pulumi.StringPtrOutput `pulumi:"credentialsSecretId"`
 	// (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
+	DatabaseId pulumi.StringPtrOutput `pulumi:"databaseId"`
 	// Database connection type.
 	DatabaseType pulumi.StringOutput `pulumi:"databaseType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Database Connection display name identifier.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-	PrivateEndpoint ConnectionPrivateEndpointOutput `pulumi:"privateEndpoint"`
+	PrivateEndpoint ConnectionPrivateEndpointPtrOutput `pulumi:"privateEndpoint"`
 	// (Updatable) Database Administrator Credentials details.
-	ReplicationCredentials ConnectionReplicationCredentialsOutput `pulumi:"replicationCredentials"`
+	ReplicationCredentials ConnectionReplicationCredentialsPtrOutput `pulumi:"replicationCredentials"`
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-	SshDetails ConnectionSshDetailsOutput `pulumi:"sshDetails"`
+	SshDetails ConnectionSshDetailsPtrOutput `pulumi:"sshDetails"`
 	// The current state of the Connection resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the Connection resource was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-	TlsKeystore pulumi.StringOutput `pulumi:"tlsKeystore"`
+	TlsKeystore pulumi.StringPtrOutput `pulumi:"tlsKeystore"`
 	// (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-	TlsWallet pulumi.StringOutput `pulumi:"tlsWallet"`
+	TlsWallet pulumi.StringPtrOutput `pulumi:"tlsWallet"`
 	// (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
 	VaultDetails ConnectionVaultDetailsOutput `pulumi:"vaultDetails"`
 }
@@ -378,12 +377,6 @@ func (i *Connection) ToConnectionOutputWithContext(ctx context.Context) Connecti
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionOutput)
 }
 
-func (i *Connection) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: i.ToConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectionArrayInput is an input type that accepts ConnectionArray and ConnectionArrayOutput values.
 // You can construct a concrete instance of `ConnectionArrayInput` via:
 //
@@ -407,12 +400,6 @@ func (i ConnectionArray) ToConnectionArrayOutput() ConnectionArrayOutput {
 
 func (i ConnectionArray) ToConnectionArrayOutputWithContext(ctx context.Context) ConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionArrayOutput)
-}
-
-func (i ConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: i.ToConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConnectionMapInput is an input type that accepts ConnectionMap and ConnectionMapOutput values.
@@ -440,12 +427,6 @@ func (i ConnectionMap) ToConnectionMapOutputWithContext(ctx context.Context) Con
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionMapOutput)
 }
 
-func (i ConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: i.ToConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectionOutput struct{ *pulumi.OutputState }
 
 func (ConnectionOutput) ElementType() reflect.Type {
@@ -460,20 +441,14 @@ func (o ConnectionOutput) ToConnectionOutputWithContext(ctx context.Context) Con
 	return o
 }
 
-func (o ConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Database Administrator Credentials details.
 func (o ConnectionOutput) AdminCredentials() ConnectionAdminCredentialsOutput {
 	return o.ApplyT(func(v *Connection) ConnectionAdminCredentialsOutput { return v.AdminCredentials }).(ConnectionAdminCredentialsOutput)
 }
 
 // (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-func (o ConnectionOutput) CertificateTdn() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CertificateTdn }).(pulumi.StringOutput)
+func (o ConnectionOutput) CertificateTdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.CertificateTdn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -482,18 +457,18 @@ func (o ConnectionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-func (o ConnectionOutput) ConnectDescriptor() ConnectionConnectDescriptorOutput {
-	return o.ApplyT(func(v *Connection) ConnectionConnectDescriptorOutput { return v.ConnectDescriptor }).(ConnectionConnectDescriptorOutput)
+func (o ConnectionOutput) ConnectDescriptor() ConnectionConnectDescriptorPtrOutput {
+	return o.ApplyT(func(v *Connection) ConnectionConnectDescriptorPtrOutput { return v.ConnectDescriptor }).(ConnectionConnectDescriptorPtrOutput)
 }
 
 // OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
-func (o ConnectionOutput) CredentialsSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CredentialsSecretId }).(pulumi.StringOutput)
+func (o ConnectionOutput) CredentialsSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.CredentialsSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-func (o ConnectionOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DatabaseId }).(pulumi.StringOutput)
+func (o ConnectionOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Database connection type.
@@ -507,8 +482,8 @@ func (o ConnectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Database Connection display name identifier.
-func (o ConnectionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ConnectionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -517,8 +492,8 @@ func (o ConnectionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o ConnectionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ConnectionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
@@ -527,23 +502,23 @@ func (o ConnectionOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-func (o ConnectionOutput) PrivateEndpoint() ConnectionPrivateEndpointOutput {
-	return o.ApplyT(func(v *Connection) ConnectionPrivateEndpointOutput { return v.PrivateEndpoint }).(ConnectionPrivateEndpointOutput)
+func (o ConnectionOutput) PrivateEndpoint() ConnectionPrivateEndpointPtrOutput {
+	return o.ApplyT(func(v *Connection) ConnectionPrivateEndpointPtrOutput { return v.PrivateEndpoint }).(ConnectionPrivateEndpointPtrOutput)
 }
 
 // (Updatable) Database Administrator Credentials details.
-func (o ConnectionOutput) ReplicationCredentials() ConnectionReplicationCredentialsOutput {
-	return o.ApplyT(func(v *Connection) ConnectionReplicationCredentialsOutput { return v.ReplicationCredentials }).(ConnectionReplicationCredentialsOutput)
+func (o ConnectionOutput) ReplicationCredentials() ConnectionReplicationCredentialsPtrOutput {
+	return o.ApplyT(func(v *Connection) ConnectionReplicationCredentialsPtrOutput { return v.ReplicationCredentials }).(ConnectionReplicationCredentialsPtrOutput)
 }
 
 // (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-func (o ConnectionOutput) SshDetails() ConnectionSshDetailsOutput {
-	return o.ApplyT(func(v *Connection) ConnectionSshDetailsOutput { return v.SshDetails }).(ConnectionSshDetailsOutput)
+func (o ConnectionOutput) SshDetails() ConnectionSshDetailsPtrOutput {
+	return o.ApplyT(func(v *Connection) ConnectionSshDetailsPtrOutput { return v.SshDetails }).(ConnectionSshDetailsPtrOutput)
 }
 
 // The current state of the Connection resource.
-func (o ConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -552,23 +527,23 @@ func (o ConnectionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the Connection resource was created. An RFC3339 formatted datetime string.
-func (o ConnectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-func (o ConnectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-func (o ConnectionOutput) TlsKeystore() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TlsKeystore }).(pulumi.StringOutput)
+func (o ConnectionOutput) TlsKeystore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TlsKeystore }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-func (o ConnectionOutput) TlsWallet() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TlsWallet }).(pulumi.StringOutput)
+func (o ConnectionOutput) TlsWallet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TlsWallet }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
@@ -590,12 +565,6 @@ func (o ConnectionArrayOutput) ToConnectionArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ConnectionArrayOutput) Index(i pulumi.IntInput) ConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Connection {
 		return vs[0].([]*Connection)[vs[1].(int)]
@@ -614,12 +583,6 @@ func (o ConnectionMapOutput) ToConnectionMapOutput() ConnectionMapOutput {
 
 func (o ConnectionMapOutput) ToConnectionMapOutputWithContext(ctx context.Context) ConnectionMapOutput {
 	return o
-}
-
-func (o ConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionMapOutput) MapIndex(k pulumi.StringInput) ConnectionOutput {

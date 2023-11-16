@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         /// </summary>
-        public readonly string AdvanceRenewalPeriod;
+        public readonly string? AdvanceRenewalPeriod;
         /// <summary>
         /// A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         /// </summary>
-        public readonly string RenewalInterval;
+        public readonly string? RenewalInterval;
         /// <summary>
         /// The type of rule.
         /// </summary>
-        public readonly string RuleType;
+        public readonly string? RuleType;
 
         [OutputConstructor]
         private GetCertificatesCertificateCollectionItemCertificateRuleResult(
-            string advanceRenewalPeriod,
+            string? advanceRenewalPeriod,
 
-            string renewalInterval,
+            string? renewalInterval,
 
-            string ruleType)
+            string? ruleType)
         {
             AdvanceRenewalPeriod = advanceRenewalPeriod;
             RenewalInterval = renewalInterval;

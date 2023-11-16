@@ -62,10 +62,7 @@ class GetNamespaceEffectivePropertiesResult:
 
     @property
     @pulumi.getter(name="effectivePropertyCollections")
-    def effective_property_collections(self) -> Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionResult']:
-        """
-        The list of effective_property_collection.
-        """
+    def effective_property_collections(self) -> Optional[Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionResult']]:
         return pulumi.get(self, "effective_property_collections")
 
     @property
@@ -80,7 +77,7 @@ class GetNamespaceEffectivePropertiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +91,6 @@ class GetNamespaceEffectivePropertiesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The property name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -143,33 +137,7 @@ def get_namespace_effective_properties(agent_id: Optional[str] = None,
                                        source_name: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceEffectivePropertiesResult:
     """
-    This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of effective properties for the specified resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=var["namespace_effective_property_namespace"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        is_include_patterns=var["namespace_effective_property_is_include_patterns"],
-        name=var["namespace_effective_property_name"],
-        pattern_id=oci_log_analytics_pattern["test_pattern"]["id"],
-        source_name=var["namespace_effective_property_source_name"])
-    ```
-
-
-    :param str agent_id: The agent ocid.
-    :param str entity_id: The entity ocid.
-    :param bool is_include_patterns: The include pattern flag.
-    :param str name: The property name used for filtering.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param int pattern_id: The pattern id.
-    :param str source_name: The source name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['agentId'] = agent_id
@@ -207,32 +175,6 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
                                               source_name: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceEffectivePropertiesResult]:
     """
-    This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of effective properties for the specified resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=var["namespace_effective_property_namespace"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        is_include_patterns=var["namespace_effective_property_is_include_patterns"],
-        name=var["namespace_effective_property_name"],
-        pattern_id=oci_log_analytics_pattern["test_pattern"]["id"],
-        source_name=var["namespace_effective_property_source_name"])
-    ```
-
-
-    :param str agent_id: The agent ocid.
-    :param str entity_id: The entity ocid.
-    :param bool is_include_patterns: The include pattern flag.
-    :param str name: The property name used for filtering.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param int pattern_id: The pattern id.
-    :param str source_name: The source name.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourcesResourcesCollectionItem {
@@ -16,57 +18,57 @@ public final class GetResourcesResourcesCollectionItem {
      * @return The details of any child resources.
      * 
      */
-    private List<String> childResources;
+    private @Nullable List<String> childResources;
     /**
      * @return Units to be used for daily aggregated data.
      * 
      */
-    private String dailyUnitDisplayName;
+    private @Nullable String dailyUnitDisplayName;
     /**
      * @return Description of the resource.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Units to be used for hourly aggregated data.
      * 
      */
-    private String hourlyUnitDisplayName;
+    private @Nullable String hourlyUnitDisplayName;
     /**
      * @return Instance type for the resource.
      * 
      */
-    private String instanceType;
+    private @Nullable String instanceType;
     /**
      * @return Indicates if the SKU was purchased
      * 
      */
-    private Boolean isPurchased;
+    private @Nullable Boolean isPurchased;
     /**
      * @return Name of the resource.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Default units to use when unspecified.
      * 
      */
-    private String rawUnitDisplayName;
+    private @Nullable String rawUnitDisplayName;
     /**
      * @return Name of the service.
      * 
      */
-    private String servicename;
+    private @Nullable String servicename;
     /**
      * @return The details of resource Skus.
      * 
      */
-    private List<GetResourcesResourcesCollectionItemSkus> skuses;
+    private @Nullable List<GetResourcesResourcesCollectionItemSkus> skuses;
     /**
      * @return Usage data type of the resource.
      * 
      */
-    private String usageDataType;
+    private @Nullable String usageDataType;
 
     private GetResourcesResourcesCollectionItem() {}
     /**
@@ -74,77 +76,77 @@ public final class GetResourcesResourcesCollectionItem {
      * 
      */
     public List<String> childResources() {
-        return this.childResources;
+        return this.childResources == null ? List.of() : this.childResources;
     }
     /**
      * @return Units to be used for daily aggregated data.
      * 
      */
-    public String dailyUnitDisplayName() {
-        return this.dailyUnitDisplayName;
+    public Optional<String> dailyUnitDisplayName() {
+        return Optional.ofNullable(this.dailyUnitDisplayName);
     }
     /**
      * @return Description of the resource.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Units to be used for hourly aggregated data.
      * 
      */
-    public String hourlyUnitDisplayName() {
-        return this.hourlyUnitDisplayName;
+    public Optional<String> hourlyUnitDisplayName() {
+        return Optional.ofNullable(this.hourlyUnitDisplayName);
     }
     /**
      * @return Instance type for the resource.
      * 
      */
-    public String instanceType() {
-        return this.instanceType;
+    public Optional<String> instanceType() {
+        return Optional.ofNullable(this.instanceType);
     }
     /**
      * @return Indicates if the SKU was purchased
      * 
      */
-    public Boolean isPurchased() {
-        return this.isPurchased;
+    public Optional<Boolean> isPurchased() {
+        return Optional.ofNullable(this.isPurchased);
     }
     /**
      * @return Name of the resource.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Default units to use when unspecified.
      * 
      */
-    public String rawUnitDisplayName() {
-        return this.rawUnitDisplayName;
+    public Optional<String> rawUnitDisplayName() {
+        return Optional.ofNullable(this.rawUnitDisplayName);
     }
     /**
      * @return Name of the service.
      * 
      */
-    public String servicename() {
-        return this.servicename;
+    public Optional<String> servicename() {
+        return Optional.ofNullable(this.servicename);
     }
     /**
      * @return The details of resource Skus.
      * 
      */
     public List<GetResourcesResourcesCollectionItemSkus> skuses() {
-        return this.skuses;
+        return this.skuses == null ? List.of() : this.skuses;
     }
     /**
      * @return Usage data type of the resource.
      * 
      */
-    public String usageDataType() {
-        return this.usageDataType;
+    public Optional<String> usageDataType() {
+        return Optional.ofNullable(this.usageDataType);
     }
 
     public static Builder builder() {
@@ -156,17 +158,17 @@ public final class GetResourcesResourcesCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> childResources;
-        private String dailyUnitDisplayName;
-        private String description;
-        private String hourlyUnitDisplayName;
-        private String instanceType;
-        private Boolean isPurchased;
-        private String name;
-        private String rawUnitDisplayName;
-        private String servicename;
-        private List<GetResourcesResourcesCollectionItemSkus> skuses;
-        private String usageDataType;
+        private @Nullable List<String> childResources;
+        private @Nullable String dailyUnitDisplayName;
+        private @Nullable String description;
+        private @Nullable String hourlyUnitDisplayName;
+        private @Nullable String instanceType;
+        private @Nullable Boolean isPurchased;
+        private @Nullable String name;
+        private @Nullable String rawUnitDisplayName;
+        private @Nullable String servicename;
+        private @Nullable List<GetResourcesResourcesCollectionItemSkus> skuses;
+        private @Nullable String usageDataType;
         public Builder() {}
         public Builder(GetResourcesResourcesCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -184,64 +186,64 @@ public final class GetResourcesResourcesCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder childResources(List<String> childResources) {
-            this.childResources = Objects.requireNonNull(childResources);
+        public Builder childResources(@Nullable List<String> childResources) {
+            this.childResources = childResources;
             return this;
         }
         public Builder childResources(String... childResources) {
             return childResources(List.of(childResources));
         }
         @CustomType.Setter
-        public Builder dailyUnitDisplayName(String dailyUnitDisplayName) {
-            this.dailyUnitDisplayName = Objects.requireNonNull(dailyUnitDisplayName);
+        public Builder dailyUnitDisplayName(@Nullable String dailyUnitDisplayName) {
+            this.dailyUnitDisplayName = dailyUnitDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder hourlyUnitDisplayName(String hourlyUnitDisplayName) {
-            this.hourlyUnitDisplayName = Objects.requireNonNull(hourlyUnitDisplayName);
+        public Builder hourlyUnitDisplayName(@Nullable String hourlyUnitDisplayName) {
+            this.hourlyUnitDisplayName = hourlyUnitDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceType(String instanceType) {
-            this.instanceType = Objects.requireNonNull(instanceType);
+        public Builder instanceType(@Nullable String instanceType) {
+            this.instanceType = instanceType;
             return this;
         }
         @CustomType.Setter
-        public Builder isPurchased(Boolean isPurchased) {
-            this.isPurchased = Objects.requireNonNull(isPurchased);
+        public Builder isPurchased(@Nullable Boolean isPurchased) {
+            this.isPurchased = isPurchased;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder rawUnitDisplayName(String rawUnitDisplayName) {
-            this.rawUnitDisplayName = Objects.requireNonNull(rawUnitDisplayName);
+        public Builder rawUnitDisplayName(@Nullable String rawUnitDisplayName) {
+            this.rawUnitDisplayName = rawUnitDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder servicename(String servicename) {
-            this.servicename = Objects.requireNonNull(servicename);
+        public Builder servicename(@Nullable String servicename) {
+            this.servicename = servicename;
             return this;
         }
         @CustomType.Setter
-        public Builder skuses(List<GetResourcesResourcesCollectionItemSkus> skuses) {
-            this.skuses = Objects.requireNonNull(skuses);
+        public Builder skuses(@Nullable List<GetResourcesResourcesCollectionItemSkus> skuses) {
+            this.skuses = skuses;
             return this;
         }
         public Builder skuses(GetResourcesResourcesCollectionItemSkus... skuses) {
             return skuses(List.of(skuses));
         }
         @CustomType.Setter
-        public Builder usageDataType(String usageDataType) {
-            this.usageDataType = Objects.requireNonNull(usageDataType);
+        public Builder usageDataType(@Nullable String usageDataType) {
+            this.usageDataType = usageDataType;
             return this;
         }
         public GetResourcesResourcesCollectionItem build() {

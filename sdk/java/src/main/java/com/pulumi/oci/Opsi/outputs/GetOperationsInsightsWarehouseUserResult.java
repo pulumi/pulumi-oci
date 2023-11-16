@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOperationsInsightsWarehouseUserResult {
@@ -16,156 +18,156 @@ public final class GetOperationsInsightsWarehouseUserResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    private String connectionPassword;
+    private @Nullable String connectionPassword;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Hub User OCID
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicate whether user has access to AWR data.
      * 
      */
-    private Boolean isAwrDataAccess;
+    private @Nullable Boolean isAwrDataAccess;
     /**
      * @return Indicate whether user has access to EM data.
      * 
      */
-    private Boolean isEmDataAccess;
+    private @Nullable Boolean isEmDataAccess;
     /**
      * @return Indicate whether user has access to OPSI data.
      * 
      */
-    private Boolean isOpsiDataAccess;
+    private @Nullable Boolean isOpsiDataAccess;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    private String operationsInsightsWarehouseId;
+    private @Nullable String operationsInsightsWarehouseId;
     private String operationsInsightsWarehouseUserId;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetOperationsInsightsWarehouseUserResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    public String connectionPassword() {
-        return this.connectionPassword;
+    public Optional<String> connectionPassword() {
+        return Optional.ofNullable(this.connectionPassword);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Hub User OCID
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicate whether user has access to AWR data.
      * 
      */
-    public Boolean isAwrDataAccess() {
-        return this.isAwrDataAccess;
+    public Optional<Boolean> isAwrDataAccess() {
+        return Optional.ofNullable(this.isAwrDataAccess);
     }
     /**
      * @return Indicate whether user has access to EM data.
      * 
      */
-    public Boolean isEmDataAccess() {
-        return this.isEmDataAccess;
+    public Optional<Boolean> isEmDataAccess() {
+        return Optional.ofNullable(this.isEmDataAccess);
     }
     /**
      * @return Indicate whether user has access to OPSI data.
      * 
      */
-    public Boolean isOpsiDataAccess() {
-        return this.isOpsiDataAccess;
+    public Optional<Boolean> isOpsiDataAccess() {
+        return Optional.ofNullable(this.isOpsiDataAccess);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    public String operationsInsightsWarehouseId() {
-        return this.operationsInsightsWarehouseId;
+    public Optional<String> operationsInsightsWarehouseId() {
+        return Optional.ofNullable(this.operationsInsightsWarehouseId);
     }
     public String operationsInsightsWarehouseUserId() {
         return this.operationsInsightsWarehouseUserId;
@@ -174,29 +176,29 @@ public final class GetOperationsInsightsWarehouseUserResult {
      * @return Possible lifecycle states
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -208,22 +210,22 @@ public final class GetOperationsInsightsWarehouseUserResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String connectionPassword;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isAwrDataAccess;
-        private Boolean isEmDataAccess;
-        private Boolean isOpsiDataAccess;
-        private String lifecycleDetails;
-        private String name;
-        private String operationsInsightsWarehouseId;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionPassword;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isAwrDataAccess;
+        private @Nullable Boolean isEmDataAccess;
+        private @Nullable Boolean isOpsiDataAccess;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable String operationsInsightsWarehouseId;
         private String operationsInsightsWarehouseUserId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetOperationsInsightsWarehouseUserResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -246,58 +248,58 @@ public final class GetOperationsInsightsWarehouseUserResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionPassword(String connectionPassword) {
-            this.connectionPassword = Objects.requireNonNull(connectionPassword);
+        public Builder connectionPassword(@Nullable String connectionPassword) {
+            this.connectionPassword = connectionPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAwrDataAccess(Boolean isAwrDataAccess) {
-            this.isAwrDataAccess = Objects.requireNonNull(isAwrDataAccess);
+        public Builder isAwrDataAccess(@Nullable Boolean isAwrDataAccess) {
+            this.isAwrDataAccess = isAwrDataAccess;
             return this;
         }
         @CustomType.Setter
-        public Builder isEmDataAccess(Boolean isEmDataAccess) {
-            this.isEmDataAccess = Objects.requireNonNull(isEmDataAccess);
+        public Builder isEmDataAccess(@Nullable Boolean isEmDataAccess) {
+            this.isEmDataAccess = isEmDataAccess;
             return this;
         }
         @CustomType.Setter
-        public Builder isOpsiDataAccess(Boolean isOpsiDataAccess) {
-            this.isOpsiDataAccess = Objects.requireNonNull(isOpsiDataAccess);
+        public Builder isOpsiDataAccess(@Nullable Boolean isOpsiDataAccess) {
+            this.isOpsiDataAccess = isOpsiDataAccess;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+        public Builder operationsInsightsWarehouseId(@Nullable String operationsInsightsWarehouseId) {
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
@@ -306,23 +308,23 @@ public final class GetOperationsInsightsWarehouseUserResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOperationsInsightsWarehouseUserResult build() {

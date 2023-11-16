@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The boot volume replica's Oracle ID (OCID).
         /// </summary>
-        public readonly string BootVolumeReplicaId;
+        public readonly string? BootVolumeReplicaId;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
 
         [OutputConstructor]
         private GetBootVolumesBootVolumeBootVolumeReplicaResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string bootVolumeReplicaId,
+            string? bootVolumeReplicaId,
 
-            string displayName)
+            string? displayName)
         {
             AvailabilityDomain = availabilityDomain;
             BootVolumeReplicaId = bootVolumeReplicaId;

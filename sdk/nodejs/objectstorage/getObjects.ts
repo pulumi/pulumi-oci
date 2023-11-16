@@ -81,14 +81,14 @@ export interface GetObjectsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * The list of list_objects.
      */
-    readonly objects: outputs.ObjectStorage.GetObjectsObject[];
+    readonly objects?: outputs.ObjectStorage.GetObjectsObject[];
     readonly prefix?: string;
-    readonly prefixes: string[];
+    readonly prefixes?: string[];
     readonly start?: string;
     readonly startAfter?: string;
 }

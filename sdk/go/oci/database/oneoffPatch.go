@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
@@ -79,23 +78,23 @@ type OneoffPatch struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Detailed message for the lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// List of one-off patches for Database Homes.
 	OneOffPatches pulumi.StringArrayOutput `pulumi:"oneOffPatches"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	ReleaseUpdate pulumi.StringOutput `pulumi:"releaseUpdate"`
 	// SHA-256 checksum of the one-off patch.
-	Sha256sum pulumi.StringOutput `pulumi:"sha256sum"`
+	Sha256sum pulumi.StringPtrOutput `pulumi:"sha256sum"`
 	// The size of one-off patch in kilobytes.
-	SizeInKbs pulumi.Float64Output `pulumi:"sizeInKbs"`
+	SizeInKbs pulumi.Float64PtrOutput `pulumi:"sizeInKbs"`
 	// The current state of the one-off patch.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time one-off patch was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time until which the one-off patch will be available for download.
-	TimeOfExpiration pulumi.StringOutput `pulumi:"timeOfExpiration"`
+	TimeOfExpiration pulumi.StringPtrOutput `pulumi:"timeOfExpiration"`
 	// The date and time one-off patch was updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewOneoffPatch registers a new resource with the given unique name, arguments, and options.
@@ -283,12 +282,6 @@ func (i *OneoffPatch) ToOneoffPatchOutputWithContext(ctx context.Context) Oneoff
 	return pulumi.ToOutputWithContext(ctx, i).(OneoffPatchOutput)
 }
 
-func (i *OneoffPatch) ToOutput(ctx context.Context) pulumix.Output[*OneoffPatch] {
-	return pulumix.Output[*OneoffPatch]{
-		OutputState: i.ToOneoffPatchOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OneoffPatchArrayInput is an input type that accepts OneoffPatchArray and OneoffPatchArrayOutput values.
 // You can construct a concrete instance of `OneoffPatchArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i OneoffPatchArray) ToOneoffPatchArrayOutput() OneoffPatchArrayOutput {
 
 func (i OneoffPatchArray) ToOneoffPatchArrayOutputWithContext(ctx context.Context) OneoffPatchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OneoffPatchArrayOutput)
-}
-
-func (i OneoffPatchArray) ToOutput(ctx context.Context) pulumix.Output[[]*OneoffPatch] {
-	return pulumix.Output[[]*OneoffPatch]{
-		OutputState: i.ToOneoffPatchArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OneoffPatchMapInput is an input type that accepts OneoffPatchMap and OneoffPatchMapOutput values.
@@ -345,12 +332,6 @@ func (i OneoffPatchMap) ToOneoffPatchMapOutputWithContext(ctx context.Context) O
 	return pulumi.ToOutputWithContext(ctx, i).(OneoffPatchMapOutput)
 }
 
-func (i OneoffPatchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OneoffPatch] {
-	return pulumix.Output[map[string]*OneoffPatch]{
-		OutputState: i.ToOneoffPatchMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OneoffPatchOutput struct{ *pulumi.OutputState }
 
 func (OneoffPatchOutput) ElementType() reflect.Type {
@@ -363,12 +344,6 @@ func (o OneoffPatchOutput) ToOneoffPatchOutput() OneoffPatchOutput {
 
 func (o OneoffPatchOutput) ToOneoffPatchOutputWithContext(ctx context.Context) OneoffPatchOutput {
 	return o
-}
-
-func (o OneoffPatchOutput) ToOutput(ctx context.Context) pulumix.Output[*OneoffPatch] {
-	return pulumix.Output[*OneoffPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -405,8 +380,8 @@ func (o OneoffPatchOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Detailed message for the lifecycle state.
-func (o OneoffPatchOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o OneoffPatchOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // List of one-off patches for Database Homes.
@@ -420,33 +395,33 @@ func (o OneoffPatchOutput) ReleaseUpdate() pulumi.StringOutput {
 }
 
 // SHA-256 checksum of the one-off patch.
-func (o OneoffPatchOutput) Sha256sum() pulumi.StringOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.StringOutput { return v.Sha256sum }).(pulumi.StringOutput)
+func (o OneoffPatchOutput) Sha256sum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringPtrOutput { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
 // The size of one-off patch in kilobytes.
-func (o OneoffPatchOutput) SizeInKbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.Float64Output { return v.SizeInKbs }).(pulumi.Float64Output)
+func (o OneoffPatchOutput) SizeInKbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.Float64PtrOutput { return v.SizeInKbs }).(pulumi.Float64PtrOutput)
 }
 
 // The current state of the one-off patch.
-func (o OneoffPatchOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OneoffPatchOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time one-off patch was created.
-func (o OneoffPatchOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OneoffPatchOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time until which the one-off patch will be available for download.
-func (o OneoffPatchOutput) TimeOfExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.StringOutput { return v.TimeOfExpiration }).(pulumi.StringOutput)
+func (o OneoffPatchOutput) TimeOfExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringPtrOutput { return v.TimeOfExpiration }).(pulumi.StringPtrOutput)
 }
 
 // The date and time one-off patch was updated.
-func (o OneoffPatchOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o OneoffPatchOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type OneoffPatchArrayOutput struct{ *pulumi.OutputState }
@@ -461,12 +436,6 @@ func (o OneoffPatchArrayOutput) ToOneoffPatchArrayOutput() OneoffPatchArrayOutpu
 
 func (o OneoffPatchArrayOutput) ToOneoffPatchArrayOutputWithContext(ctx context.Context) OneoffPatchArrayOutput {
 	return o
-}
-
-func (o OneoffPatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OneoffPatch] {
-	return pulumix.Output[[]*OneoffPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OneoffPatchArrayOutput) Index(i pulumi.IntInput) OneoffPatchOutput {
@@ -487,12 +456,6 @@ func (o OneoffPatchMapOutput) ToOneoffPatchMapOutput() OneoffPatchMapOutput {
 
 func (o OneoffPatchMapOutput) ToOneoffPatchMapOutputWithContext(ctx context.Context) OneoffPatchMapOutput {
 	return o
-}
-
-func (o OneoffPatchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OneoffPatch] {
-	return pulumix.Output[map[string]*OneoffPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OneoffPatchMapOutput) MapIndex(k pulumi.StringInput) OneoffPatchOutput {

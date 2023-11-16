@@ -82,7 +82,7 @@ export interface GetPbfListingsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A brief descriptive name for the PBF trigger.
      */
@@ -93,7 +93,7 @@ export interface GetPbfListingsResult {
     /**
      * The list of pbf_listings_collection.
      */
-    readonly pbfListingsCollections: outputs.Functions.GetPbfListingsPbfListingsCollection[];
+    readonly pbfListingsCollections?: outputs.Functions.GetPbfListingsPbfListingsCollection[];
     /**
      * The current state of the PBF resource.
      */

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Member display name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The URI corresponding to the member Resource of this Group
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppRolesAppRoleMemberResult(
-            string display,
+            string? display,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Display = display;
             Ref = @ref;

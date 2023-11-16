@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of memberships.
         /// </summary>
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Identity
 
             string? groupId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetUserGroupMembershipsMembershipResult> memberships,
 

@@ -12,6 +12,7 @@ import com.pulumi.oci.Identity.inputs.TagDefaultState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -93,7 +94,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isRequired", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRequired;
+    private Output</* @Nullable */ Boolean> isRequired;
 
     /**
      * @return (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
@@ -103,22 +104,22 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * Example: `false`
      * 
      */
-    public Output<Boolean> isRequired() {
-        return this.isRequired;
+    public Output<Optional<Boolean>> isRequired() {
+        return Codegen.optional(this.isRequired);
     }
     /**
      * The tag default&#39;s current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The tag default&#39;s current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
@@ -139,42 +140,42 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tagDefinitionName", refs={String.class}, tree="[0]")
-    private Output<String> tagDefinitionName;
+    private Output</* @Nullable */ String> tagDefinitionName;
 
     /**
      * @return The name used in the tag definition. This field is informational in the context of the tag default.
      * 
      */
-    public Output<String> tagDefinitionName() {
-        return this.tagDefinitionName;
+    public Output<Optional<String>> tagDefinitionName() {
+        return Codegen.optional(this.tagDefinitionName);
     }
     /**
      * The OCID of the tag namespace that contains the tag definition.
      * 
      */
     @Export(name="tagNamespaceId", refs={String.class}, tree="[0]")
-    private Output<String> tagNamespaceId;
+    private Output</* @Nullable */ String> tagNamespaceId;
 
     /**
      * @return The OCID of the tag namespace that contains the tag definition.
      * 
      */
-    public Output<String> tagNamespaceId() {
-        return this.tagNamespaceId;
+    public Output<Optional<String>> tagNamespaceId() {
+        return Codegen.optional(this.tagNamespaceId);
     }
     /**
      * Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.

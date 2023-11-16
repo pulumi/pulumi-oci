@@ -13,14 +13,14 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
     [OutputType]
     public sealed class GetBucketSummariesBucketSummaryRetentionRuleDurationResult
     {
-        public readonly string TimeAmount;
-        public readonly string TimeUnit;
+        public readonly string? TimeAmount;
+        public readonly string? TimeUnit;
 
         [OutputConstructor]
         private GetBucketSummariesBucketSummaryRetentionRuleDurationResult(
-            string timeAmount,
+            string? timeAmount,
 
-            string timeUnit)
+            string? timeUnit)
         {
             TimeAmount = timeAmount;
             TimeUnit = timeUnit;

@@ -9,6 +9,8 @@ import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentMode
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail {
@@ -16,39 +18,39 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * @return The type of the model deployment.
      * 
      */
-    private String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return The configuration to carry the environment details thats used in Model Deployment creation
      * 
      */
-    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
+    private @Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
     /**
      * @return The model configuration details.
      * 
      */
-    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
+    private @Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail() {}
     /**
      * @return The type of the model deployment.
      * 
      */
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return The configuration to carry the environment details thats used in Model Deployment creation
      * 
      */
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails() {
-        return this.environmentConfigurationDetails;
+        return this.environmentConfigurationDetails == null ? List.of() : this.environmentConfigurationDetails;
     }
     /**
      * @return The model configuration details.
      * 
      */
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails() {
-        return this.modelConfigurationDetails;
+        return this.modelConfigurationDetails == null ? List.of() : this.modelConfigurationDetails;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deploymentType;
-        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
-        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
+        private @Nullable String deploymentType;
+        private @Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
+        private @Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         }
 
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder environmentConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails) {
-            this.environmentConfigurationDetails = Objects.requireNonNull(environmentConfigurationDetails);
+        public Builder environmentConfigurationDetails(@Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails) {
+            this.environmentConfigurationDetails = environmentConfigurationDetails;
             return this;
         }
         public Builder environmentConfigurationDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail... environmentConfigurationDetails) {
             return environmentConfigurationDetails(List.of(environmentConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder modelConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails) {
-            this.modelConfigurationDetails = Objects.requireNonNull(modelConfigurationDetails);
+        public Builder modelConfigurationDetails(@Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails) {
+            this.modelConfigurationDetails = modelConfigurationDetails;
             return this;
         }
         public Builder modelConfigurationDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail... modelConfigurationDetails) {

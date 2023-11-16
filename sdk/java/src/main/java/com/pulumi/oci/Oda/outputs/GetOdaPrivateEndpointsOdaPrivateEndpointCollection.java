@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollection {
-    private List<GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem> items;
+    private @Nullable List<GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem> items;
 
     private GetOdaPrivateEndpointsOdaPrivateEndpointCollection() {}
     public List<GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem> items;
+        private @Nullable List<GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem> items;
         public Builder() {}
         public Builder(GetOdaPrivateEndpointsOdaPrivateEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem... items) {

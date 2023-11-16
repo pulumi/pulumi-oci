@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey {
@@ -17,63 +19,63 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
      * @return Defines whether or not to uphold SSL verification.
      * 
      */
-    private Boolean isSslVerifyDisabled;
+    private @Nullable Boolean isSslVerifyDisabled;
     /**
      * @return The set of static public keys.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys;
     /**
      * @return The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
-    private Integer maxCacheDurationInHours;
+    private @Nullable Integer maxCacheDurationInHours;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The uri from which to retrieve the key. It must be accessible without authentication.
      * 
      */
-    private String uri;
+    private @Nullable String uri;
 
     private GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey() {}
     /**
      * @return Defines whether or not to uphold SSL verification.
      * 
      */
-    public Boolean isSslVerifyDisabled() {
-        return this.isSslVerifyDisabled;
+    public Optional<Boolean> isSslVerifyDisabled() {
+        return Optional.ofNullable(this.isSslVerifyDisabled);
     }
     /**
      * @return The set of static public keys.
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
-    public Integer maxCacheDurationInHours() {
-        return this.maxCacheDurationInHours;
+    public Optional<Integer> maxCacheDurationInHours() {
+        return Optional.ofNullable(this.maxCacheDurationInHours);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The uri from which to retrieve the key. It must be accessible without authentication.
      * 
      */
-    public String uri() {
-        return this.uri;
+    public Optional<String> uri() {
+        return Optional.ofNullable(this.uri);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isSslVerifyDisabled;
-        private List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys;
-        private Integer maxCacheDurationInHours;
-        private String type;
-        private String uri;
+        private @Nullable Boolean isSslVerifyDisabled;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys;
+        private @Nullable Integer maxCacheDurationInHours;
+        private @Nullable String type;
+        private @Nullable String uri;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,31 +103,31 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
         }
 
         @CustomType.Setter
-        public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+        public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder keys(List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey... keys) {
             return keys(List.of(keys));
         }
         @CustomType.Setter
-        public Builder maxCacheDurationInHours(Integer maxCacheDurationInHours) {
-            this.maxCacheDurationInHours = Objects.requireNonNull(maxCacheDurationInHours);
+        public Builder maxCacheDurationInHours(@Nullable Integer maxCacheDurationInHours) {
+            this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+        public Builder uri(@Nullable String uri) {
+            this.uri = uri;
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey build() {

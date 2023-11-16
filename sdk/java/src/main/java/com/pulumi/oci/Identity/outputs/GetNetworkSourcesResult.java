@@ -24,7 +24,7 @@ public final class GetNetworkSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
      * 
@@ -34,7 +34,7 @@ public final class GetNetworkSourcesResult {
      * @return The list of network_sources.
      * 
      */
-    private List<GetNetworkSourcesNetworkSource> networkSources;
+    private @Nullable List<GetNetworkSourcesNetworkSource> networkSources;
     /**
      * @return The network source object&#39;s current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      * 
@@ -56,8 +56,8 @@ public final class GetNetworkSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
@@ -71,7 +71,7 @@ public final class GetNetworkSourcesResult {
      * 
      */
     public List<GetNetworkSourcesNetworkSource> networkSources() {
-        return this.networkSources;
+        return this.networkSources == null ? List.of() : this.networkSources;
     }
     /**
      * @return The network source object&#39;s current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
@@ -92,9 +92,9 @@ public final class GetNetworkSourcesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetNetworkSourcesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetNetworkSourcesNetworkSource> networkSources;
+        private @Nullable List<GetNetworkSourcesNetworkSource> networkSources;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetNetworkSourcesResult defaults) {
@@ -121,8 +121,8 @@ public final class GetNetworkSourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,8 +131,8 @@ public final class GetNetworkSourcesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder networkSources(List<GetNetworkSourcesNetworkSource> networkSources) {
-            this.networkSources = Objects.requireNonNull(networkSources);
+        public Builder networkSources(@Nullable List<GetNetworkSourcesNetworkSource> networkSources) {
+            this.networkSources = networkSources;
             return this;
         }
         public Builder networkSources(GetNetworkSourcesNetworkSource... networkSources) {

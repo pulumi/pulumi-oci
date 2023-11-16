@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
@@ -61,14 +60,14 @@ type GetOperationsInsightsWarehouseResourceUsageSummaryArgs struct {
 // A collection of values returned by getOperationsInsightsWarehouseResourceUsageSummary.
 type GetOperationsInsightsWarehouseResourceUsageSummaryResult struct {
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-	CpuUsed float64 `pulumi:"cpuUsed"`
+	CpuUsed *float64 `pulumi:"cpuUsed"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                            string `pulumi:"id"`
-	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
+	Id                            *string `pulumi:"id"`
+	OperationsInsightsWarehouseId string  `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Storage by OPSI Warehouse ADW in GB.
-	StorageUsedInGbs float64 `pulumi:"storageUsedInGbs"`
+	StorageUsedInGbs *float64 `pulumi:"storageUsedInGbs"`
 }
 
 func GetOperationsInsightsWarehouseResourceUsageSummaryOutput(ctx *pulumi.Context, args GetOperationsInsightsWarehouseResourceUsageSummaryOutputArgs, opts ...pulumi.InvokeOption) GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput {
@@ -109,20 +108,14 @@ func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) ToGetOpe
 	return o
 }
 
-func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult] {
-	return pulumix.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) CpuUsed() pulumi.Float64Output {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) float64 { return v.CpuUsed }).(pulumi.Float64Output)
+func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) CpuUsed() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) *float64 { return v.CpuUsed }).(pulumi.Float64PtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
@@ -132,13 +125,13 @@ func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) Operatio
 }
 
 // Possible lifecycle states
-func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Storage by OPSI Warehouse ADW in GB.
-func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) StorageUsedInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) float64 { return v.StorageUsedInGbs }).(pulumi.Float64Output)
+func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) StorageUsedInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseResourceUsageSummaryResult) *float64 { return v.StorageUsedInGbs }).(pulumi.Float64PtrOutput)
 }
 
 func init() {

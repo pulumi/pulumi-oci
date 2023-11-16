@@ -79,7 +79,7 @@ export class Rrset extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment the resource belongs to.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The fully qualified domain name where the record can be located.
      */
@@ -88,7 +88,7 @@ export class Rrset extends pulumi.CustomResource {
      * (Updatable) 
      * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
      */
-    public readonly items!: pulumi.Output<outputs.Dns.RrsetItem[]>;
+    public readonly items!: pulumi.Output<outputs.Dns.RrsetItem[] | undefined>;
     /**
      * The type of the target RRSet within the target zone.
      */

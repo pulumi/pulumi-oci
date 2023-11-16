@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A human readable name, primarily used for display purposes. READ-ONLY.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// Group URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsIdentityProviderJitUserProvAssignedGroupResult(
-            string display,
+            string? display,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Display = display;
             Ref = @ref;

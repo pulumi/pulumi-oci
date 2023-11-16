@@ -67,12 +67,12 @@ export interface GetManagedDatabasesDatabaseParametersResult {
     /**
      * The list of database_parameters_collection.
      */
-    readonly databaseParametersCollections: outputs.DatabaseManagement.GetManagedDatabasesDatabaseParametersDatabaseParametersCollection[];
+    readonly databaseParametersCollections?: outputs.DatabaseManagement.GetManagedDatabasesDatabaseParametersDatabaseParametersCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabasesDatabaseParametersFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isAllowedValuesIncluded?: boolean;
     readonly managedDatabaseId: string;
     /**

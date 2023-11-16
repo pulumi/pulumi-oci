@@ -52,11 +52,11 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of the supported versions of bundled VMware software.
      */
-    readonly items: outputs.Ocvp.GetSupportedVmwareSoftwareVersionsItem[];
+    readonly items?: outputs.Ocvp.GetSupportedVmwareSoftwareVersionsItem[];
 }
 /**
  * This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.

@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -45,98 +46,98 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="categoryId", refs={String.class}, tree="[0]")
-    private Output<String> categoryId;
+    private Output</* @Nullable */ String> categoryId;
 
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    public Output<String> categoryId() {
-        return this.categoryId;
+    public Output<Optional<String>> categoryId() {
+        return Codegen.optional(this.categoryId);
     }
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Text describing the recommendation.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return Text describing the recommendation.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * The estimated cost savings, in dollars, for the recommendation.
      * 
      */
     @Export(name="estimatedCostSaving", refs={Double.class}, tree="[0]")
-    private Output<Double> estimatedCostSaving;
+    private Output</* @Nullable */ Double> estimatedCostSaving;
 
     /**
      * @return The estimated cost savings, in dollars, for the recommendation.
      * 
      */
-    public Output<Double> estimatedCostSaving() {
-        return this.estimatedCostSaving;
+    public Output<Optional<Double>> estimatedCostSaving() {
+        return Codegen.optional(this.estimatedCostSaving);
     }
     /**
      * Additional metadata key/value pairs for the recommendation.
      * 
      */
     @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> extendedMetadata;
+    private Output</* @Nullable */ Map<String,Object>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
-    public Output<Map<String,Object>> extendedMetadata() {
-        return this.extendedMetadata;
+    public Output<Optional<Map<String,Object>>> extendedMetadata() {
+        return Codegen.optional(this.extendedMetadata);
     }
     /**
      * The level of importance assigned to the recommendation.
      * 
      */
     @Export(name="importance", refs={String.class}, tree="[0]")
-    private Output<String> importance;
+    private Output</* @Nullable */ String> importance;
 
     /**
      * @return The level of importance assigned to the recommendation.
      * 
      */
-    public Output<String> importance() {
-        return this.importance;
+    public Output<Optional<String>> importance() {
+        return Codegen.optional(this.importance);
     }
     /**
      * The name of the profile level.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return The name of the profile level.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * The unique OCID associated with the recommendation.
@@ -157,28 +158,28 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="resourceCounts", refs={List.class,RecommendationResourceCount.class}, tree="[0,1]")
-    private Output<List<RecommendationResourceCount>> resourceCounts;
+    private Output</* @Nullable */ List<RecommendationResourceCount>> resourceCounts;
 
     /**
      * @return An array of `ResourceCount` objects grouped by the status of the resource actions.
      * 
      */
-    public Output<List<RecommendationResourceCount>> resourceCounts() {
-        return this.resourceCounts;
+    public Output<Optional<List<RecommendationResourceCount>>> resourceCounts() {
+        return Codegen.optional(this.resourceCounts);
     }
     /**
      * The recommendation&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The recommendation&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The status of the recommendation.
@@ -199,42 +200,42 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="supportedLevels", refs={List.class,RecommendationSupportedLevel.class}, tree="[0,1]")
-    private Output<List<RecommendationSupportedLevel>> supportedLevels;
+    private Output</* @Nullable */ List<RecommendationSupportedLevel>> supportedLevels;
 
     /**
      * @return Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      * 
      */
-    public Output<List<RecommendationSupportedLevel>> supportedLevels() {
-        return this.supportedLevels;
+    public Output<Optional<List<RecommendationSupportedLevel>>> supportedLevels() {
+        return Codegen.optional(this.supportedLevels);
     }
     /**
      * The date and time the recommendation details were created, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the recommendation details were created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      * 
      */
     @Export(name="timeStatusBegin", refs={String.class}, tree="[0]")
-    private Output<String> timeStatusBegin;
+    private Output</* @Nullable */ String> timeStatusBegin;
 
     /**
      * @return The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      * 
      */
-    public Output<String> timeStatusBegin() {
-        return this.timeStatusBegin;
+    public Output<Optional<String>> timeStatusBegin() {
+        return Codegen.optional(this.timeStatusBegin);
     }
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -246,7 +247,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeStatusEnd", refs={String.class}, tree="[0]")
-    private Output<String> timeStatusEnd;
+    private Output</* @Nullable */ String> timeStatusEnd;
 
     /**
      * @return (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -257,22 +258,22 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeStatusEnd() {
-        return this.timeStatusEnd;
+    public Output<Optional<String>> timeStatusEnd() {
+        return Codegen.optional(this.timeStatusEnd);
     }
     /**
      * The date and time the recommendation details were last updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the recommendation details were last updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -43,7 +43,7 @@ class GetVaultUsageResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -51,34 +51,22 @@ class GetVaultUsageResult:
 
     @property
     @pulumi.getter(name="keyCount")
-    def key_count(self) -> int:
-        """
-        The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
-        """
+    def key_count(self) -> Optional[int]:
         return pulumi.get(self, "key_count")
 
     @property
     @pulumi.getter(name="keyVersionCount")
-    def key_version_count(self) -> int:
-        """
-        The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
-        """
+    def key_version_count(self) -> Optional[int]:
         return pulumi.get(self, "key_version_count")
 
     @property
     @pulumi.getter(name="softwareKeyCount")
-    def software_key_count(self) -> int:
-        """
-        The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
-        """
+    def software_key_count(self) -> Optional[int]:
         return pulumi.get(self, "software_key_count")
 
     @property
     @pulumi.getter(name="softwareKeyVersionCount")
-    def software_key_version_count(self) -> int:
-        """
-        The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
-        """
+    def software_key_version_count(self) -> Optional[int]:
         return pulumi.get(self, "software_key_version_count")
 
     @property
@@ -104,21 +92,7 @@ class AwaitableGetVaultUsageResult(GetVaultUsageResult):
 def get_vault_usage(vault_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVaultUsageResult:
     """
-    This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vault_usage = oci.Kms.get_vault_usage(vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vaultId'] = vault_id
@@ -138,20 +112,6 @@ def get_vault_usage(vault_id: Optional[str] = None,
 def get_vault_usage_output(vault_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultUsageResult]:
     """
-    This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vault_usage = oci.Kms.get_vault_usage(vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     ...

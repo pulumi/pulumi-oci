@@ -13,41 +13,41 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetIpsecConnectionTunnelBgpSessionInfoResult
     {
-        public readonly string BgpIpv6state;
+        public readonly string? BgpIpv6state;
         /// <summary>
         /// the state of the BGP.
         /// </summary>
-        public readonly string BgpState;
+        public readonly string? BgpState;
         /// <summary>
         /// This is the value of the remote Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
         /// </summary>
-        public readonly string CustomerBgpAsn;
+        public readonly string? CustomerBgpAsn;
         /// <summary>
         /// This is the IPv4 Address used in the BGP peering session for the non-Oracle router. Example: 10.0.0.2/31
         /// </summary>
-        public readonly string CustomerInterfaceIp;
+        public readonly string? CustomerInterfaceIp;
         /// <summary>
         /// This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
         /// </summary>
-        public readonly string OracleBgpAsn;
+        public readonly string? OracleBgpAsn;
         /// <summary>
         /// This is the IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31
         /// </summary>
-        public readonly string OracleInterfaceIp;
+        public readonly string? OracleInterfaceIp;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelBgpSessionInfoResult(
-            string bgpIpv6state,
+            string? bgpIpv6state,
 
-            string bgpState,
+            string? bgpState,
 
-            string customerBgpAsn,
+            string? customerBgpAsn,
 
-            string customerInterfaceIp,
+            string? customerInterfaceIp,
 
-            string oracleBgpAsn,
+            string? oracleBgpAsn,
 
-            string oracleInterfaceIp)
+            string? oracleInterfaceIp)
         {
             BgpIpv6state = bgpIpv6state;
             BgpState = bgpState;

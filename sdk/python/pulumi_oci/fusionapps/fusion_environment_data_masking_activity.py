@@ -18,12 +18,6 @@ class FusionEnvironmentDataMaskingActivityArgs:
                  is_resume_data_masking: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentDataMaskingActivity resource.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         if is_resume_data_masking is not None:
@@ -32,9 +26,6 @@ class FusionEnvironmentDataMaskingActivityArgs:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> pulumi.Input[str]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
@@ -44,13 +35,6 @@ class FusionEnvironmentDataMaskingActivityArgs:
     @property
     @pulumi.getter(name="isResumeDataMasking")
     def is_resume_data_masking(self) -> Optional[pulumi.Input[bool]]:
-        """
-        This allows the Data Safe service to resume the previously failed data masking activity.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_resume_data_masking")
 
     @is_resume_data_masking.setter
@@ -68,15 +52,6 @@ class _FusionEnvironmentDataMaskingActivityState:
                  time_masking_start: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentDataMaskingActivity resources.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the DataMaskingActivity.
-        :param pulumi.Input[str] time_masking_finish: The time the data masking activity ended. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_masking_start: The time the data masking activity started. An RFC3339 formatted datetime string.
         """
         if fusion_environment_id is not None:
             pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
@@ -92,9 +67,6 @@ class _FusionEnvironmentDataMaskingActivityState:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
@@ -104,13 +76,6 @@ class _FusionEnvironmentDataMaskingActivityState:
     @property
     @pulumi.getter(name="isResumeDataMasking")
     def is_resume_data_masking(self) -> Optional[pulumi.Input[bool]]:
-        """
-        This allows the Data Safe service to resume the previously failed data masking activity.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_resume_data_masking")
 
     @is_resume_data_masking.setter
@@ -120,9 +85,6 @@ class _FusionEnvironmentDataMaskingActivityState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DataMaskingActivity.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -132,9 +94,6 @@ class _FusionEnvironmentDataMaskingActivityState:
     @property
     @pulumi.getter(name="timeMaskingFinish")
     def time_masking_finish(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the data masking activity ended. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_masking_finish")
 
     @time_masking_finish.setter
@@ -144,9 +103,6 @@ class _FusionEnvironmentDataMaskingActivityState:
     @property
     @pulumi.getter(name="timeMaskingStart")
     def time_masking_start(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the data masking activity started. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_masking_start")
 
     @time_masking_start.setter
@@ -163,37 +119,9 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
                  is_resume_data_masking: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new DataMaskingActivity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_data_masking_activity = oci.fusion_apps.FusionEnvironmentDataMaskingActivity("testFusionEnvironmentDataMaskingActivity",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            is_resume_data_masking=var["fusion_environment_data_masking_activity_is_resume_data_masking"])
-        ```
-
-        ## Import
-
-        FusionEnvironmentDataMaskingActivities can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
-        ```
-
+        Create a FusionEnvironmentDataMaskingActivity resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -202,29 +130,7 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
                  args: FusionEnvironmentDataMaskingActivityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new DataMaskingActivity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_data_masking_activity = oci.fusion_apps.FusionEnvironmentDataMaskingActivity("testFusionEnvironmentDataMaskingActivity",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            is_resume_data_masking=var["fusion_environment_data_masking_activity_is_resume_data_masking"])
-        ```
-
-        ## Import
-
-        FusionEnvironmentDataMaskingActivities can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
-        ```
-
+        Create a FusionEnvironmentDataMaskingActivity resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentDataMaskingActivityArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -280,15 +186,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the DataMaskingActivity.
-        :param pulumi.Input[str] time_masking_finish: The time the data masking activity ended. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_masking_start: The time the data masking activity started. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -304,44 +201,25 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> pulumi.Output[str]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter(name="isResumeDataMasking")
-    def is_resume_data_masking(self) -> pulumi.Output[bool]:
-        """
-        This allows the Data Safe service to resume the previously failed data masking activity.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def is_resume_data_masking(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_resume_data_masking")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the DataMaskingActivity.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeMaskingFinish")
-    def time_masking_finish(self) -> pulumi.Output[str]:
-        """
-        The time the data masking activity ended. An RFC3339 formatted datetime string.
-        """
+    def time_masking_finish(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_masking_finish")
 
     @property
     @pulumi.getter(name="timeMaskingStart")
-    def time_masking_start(self) -> pulumi.Output[str]:
-        """
-        The time the data masking activity started. An RFC3339 formatted datetime string.
-        """
+    def time_masking_start(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_masking_start")
 

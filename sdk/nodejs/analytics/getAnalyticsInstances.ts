@@ -73,7 +73,7 @@ export interface GetAnalyticsInstancesResult {
     /**
      * The list of analytics_instances.
      */
-    readonly analyticsInstances: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstance[];
+    readonly analyticsInstances?: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstance[];
     /**
      * The capacity model to use.
      */
@@ -90,7 +90,7 @@ export interface GetAnalyticsInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      */

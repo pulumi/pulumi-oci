@@ -35,7 +35,7 @@ class GetNamespaceStorageEncryptionKeyInfoResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -43,10 +43,7 @@ class GetNamespaceStorageEncryptionKeyInfoResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespaceStorageEncryptionKeyInfoItemResult']:
-        """
-        This is an array of encryption key info. There are at most 2 items in the list.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetNamespaceStorageEncryptionKeyInfoItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -69,21 +66,7 @@ class AwaitableGetNamespaceStorageEncryptionKeyInfoResult(GetNamespaceStorageEnc
 def get_namespace_storage_encryption_key_info(namespace: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceStorageEncryptionKeyInfoResult:
     """
-    This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API returns the list of customer owned encryption key info.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=var["namespace_storage_encryption_key_info_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -100,20 +83,6 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[str] = None,
 def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageEncryptionKeyInfoResult]:
     """
-    This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API returns the list of customer owned encryption key info.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=var["namespace_storage_encryption_key_info_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

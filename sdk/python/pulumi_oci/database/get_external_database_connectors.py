@@ -49,33 +49,21 @@ class GetExternalDatabaseConnectorsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalDatabaseConnectors")
-    def external_database_connectors(self) -> Sequence['outputs.GetExternalDatabaseConnectorsExternalDatabaseConnectorResult']:
-        """
-        The list of external_database_connectors.
-        """
+    def external_database_connectors(self) -> Optional[Sequence['outputs.GetExternalDatabaseConnectorsExternalDatabaseConnectorResult']]:
         return pulumi.get(self, "external_database_connectors")
 
     @property
     @pulumi.getter(name="externalDatabaseId")
     def external_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
-        """
         return pulumi.get(self, "external_database_id")
 
     @property
@@ -85,7 +73,7 @@ class GetExternalDatabaseConnectorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetExternalDatabaseConnectorsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the external database connector resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_external_database_connectors(compartment_id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabaseConnectorsResult:
     """
-    This data source provides the list of External Database Connectors in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the external database connectors in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=var["compartment_id"],
-        external_database_id=oci_database_database["test_database"]["id"],
-        display_name=var["external_database_connector_display_name"],
-        state=var["external_database_connector_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str external_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_external_database_connectors_output(compartment_id: Optional[pulumi.Inpu
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabaseConnectorsResult]:
     """
-    This data source provides the list of External Database Connectors in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the external database connectors in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=var["compartment_id"],
-        external_database_id=oci_database_database["test_database"]["id"],
-        display_name=var["external_database_connector_display_name"],
-        state=var["external_database_connector_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str external_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

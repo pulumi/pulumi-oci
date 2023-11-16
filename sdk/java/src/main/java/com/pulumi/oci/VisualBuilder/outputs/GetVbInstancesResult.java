@@ -29,7 +29,7 @@ public final class GetVbInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the vb instance.
      * 
@@ -39,7 +39,7 @@ public final class GetVbInstancesResult {
      * @return The list of vb_instance_summary_collection.
      * 
      */
-    private List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections;
+    private @Nullable List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections;
 
     private GetVbInstancesResult() {}
     /**
@@ -63,8 +63,8 @@ public final class GetVbInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the vb instance.
@@ -78,7 +78,7 @@ public final class GetVbInstancesResult {
      * 
      */
     public List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections() {
-        return this.vbInstanceSummaryCollections;
+        return this.vbInstanceSummaryCollections == null ? List.of() : this.vbInstanceSummaryCollections;
     }
 
     public static Builder builder() {
@@ -93,9 +93,9 @@ public final class GetVbInstancesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVbInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections;
+        private @Nullable List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections;
         public Builder() {}
         public Builder(GetVbInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,8 +126,8 @@ public final class GetVbInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -136,8 +136,8 @@ public final class GetVbInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vbInstanceSummaryCollections(List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections) {
-            this.vbInstanceSummaryCollections = Objects.requireNonNull(vbInstanceSummaryCollections);
+        public Builder vbInstanceSummaryCollections(@Nullable List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections) {
+            this.vbInstanceSummaryCollections = vbInstanceSummaryCollections;
             return this;
         }
         public Builder vbInstanceSummaryCollections(GetVbInstancesVbInstanceSummaryCollection... vbInstanceSummaryCollections) {

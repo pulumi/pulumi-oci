@@ -63,23 +63,23 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      */
-    public readonly agentId!: pulumi.Output<string>;
+    public readonly agentId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The error message indicating the reason for connection failure or `null` if the connection was successful.
      */
-    public /*out*/ readonly connectionFailureMessage!: pulumi.Output<string>;
+    public /*out*/ readonly connectionFailureMessage!: pulumi.Output<string | undefined>;
     /**
      * The connection details required to connect to an external DB system component.
      */
-    public readonly connectionInfos!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemConnectorConnectionInfo[]>;
+    public readonly connectionInfos!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemConnectorConnectionInfo[] | undefined>;
     /**
      * The status of connectivity to the external DB system component.
      */
-    public /*out*/ readonly connectionStatus!: pulumi.Output<string>;
+    public /*out*/ readonly connectionStatus!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The type of connector.
      */
@@ -87,7 +87,7 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
     /**
      * The user-friendly name for the external connector. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      *
@@ -99,23 +99,23 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the external DB system connector.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the connectionStatus of the external DB system connector was last updated.
      */
-    public /*out*/ readonly timeConnectionStatusLastUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeConnectionStatusLastUpdated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB system connector was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB system connector was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalDbSystemConnector resource with the given unique name, arguments, and options.

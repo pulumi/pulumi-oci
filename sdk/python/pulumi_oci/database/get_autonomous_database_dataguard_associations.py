@@ -39,18 +39,12 @@ class GetAutonomousDatabaseDataguardAssociationsResult:
 
     @property
     @pulumi.getter(name="autonomousDatabaseDataguardAssociations")
-    def autonomous_database_dataguard_associations(self) -> Sequence['outputs.GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationResult']:
-        """
-        The list of autonomous_database_dataguard_associations.
-        """
+    def autonomous_database_dataguard_associations(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationResult']]:
         return pulumi.get(self, "autonomous_database_dataguard_associations")
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
@@ -60,7 +54,7 @@ class GetAutonomousDatabaseDataguardAssociationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,21 +77,7 @@ def get_autonomous_database_dataguard_associations(autonomous_database_id: Optio
                                                    filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseDataguardAssociationsFilterArgs']]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseDataguardAssociationsResult:
     """
-    This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -117,20 +97,6 @@ def get_autonomous_database_dataguard_associations_output(autonomous_database_id
                                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseDataguardAssociationsFilterArgs']]]]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationsResult]:
     """
-    This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

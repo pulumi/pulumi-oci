@@ -13,35 +13,37 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterNetworkResult {
-    private String action;
+    private @Nullable String action;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the VM cluster network. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private List<String> dns;
+    private @Nullable List<String> dns;
     /**
      * @return The SCAN details for DR network
      * 
      */
-    private List<GetVmClusterNetworkDrScan> drScans;
+    private @Nullable List<GetVmClusterNetworkDrScan> drScans;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
@@ -51,88 +53,88 @@ public final class GetVmClusterNetworkResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private List<String> ntps;
+    private @Nullable List<String> ntps;
     /**
      * @return The SCAN details.
      * 
      */
-    private List<GetVmClusterNetworkScan> scans;
+    private @Nullable List<GetVmClusterNetworkScan> scans;
     /**
      * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time when the VM cluster network was created.
      * 
      */
-    private String timeCreated;
-    private Boolean validateVmClusterNetwork;
+    private @Nullable String timeCreated;
+    private @Nullable Boolean validateVmClusterNetwork;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      * 
      */
-    private String vmClusterId;
+    private @Nullable String vmClusterId;
     private String vmClusterNetworkId;
     /**
      * @return Details of the client and backup networks.
      * 
      */
-    private List<GetVmClusterNetworkVmNetwork> vmNetworks;
+    private @Nullable List<GetVmClusterNetworkVmNetwork> vmNetworks;
 
     private GetVmClusterNetworkResult() {}
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name for the VM cluster network. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
     public List<String> dns() {
-        return this.dns;
+        return this.dns == null ? List.of() : this.dns;
     }
     /**
      * @return The SCAN details for DR network
      * 
      */
     public List<GetVmClusterNetworkDrScan> drScans() {
-        return this.drScans;
+        return this.drScans == null ? List.of() : this.drScans;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -146,59 +148,59 @@ public final class GetVmClusterNetworkResult {
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
     public List<String> ntps() {
-        return this.ntps;
+        return this.ntps == null ? List.of() : this.ntps;
     }
     /**
      * @return The SCAN details.
      * 
      */
     public List<GetVmClusterNetworkScan> scans() {
-        return this.scans;
+        return this.scans == null ? List.of() : this.scans;
     }
     /**
      * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time when the VM cluster network was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public Boolean validateVmClusterNetwork() {
-        return this.validateVmClusterNetwork;
+    public Optional<Boolean> validateVmClusterNetwork() {
+        return Optional.ofNullable(this.validateVmClusterNetwork);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      * 
      */
-    public String vmClusterId() {
-        return this.vmClusterId;
+    public Optional<String> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
     }
     public String vmClusterNetworkId() {
         return this.vmClusterNetworkId;
@@ -208,7 +210,7 @@ public final class GetVmClusterNetworkResult {
      * 
      */
     public List<GetVmClusterNetworkVmNetwork> vmNetworks() {
-        return this.vmNetworks;
+        return this.vmNetworks == null ? List.of() : this.vmNetworks;
     }
 
     public static Builder builder() {
@@ -220,24 +222,24 @@ public final class GetVmClusterNetworkResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<String> dns;
-        private List<GetVmClusterNetworkDrScan> drScans;
+        private @Nullable String action;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<String> dns;
+        private @Nullable List<GetVmClusterNetworkDrScan> drScans;
         private String exadataInfrastructureId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<String> ntps;
-        private List<GetVmClusterNetworkScan> scans;
-        private String state;
-        private String timeCreated;
-        private Boolean validateVmClusterNetwork;
-        private String vmClusterId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> ntps;
+        private @Nullable List<GetVmClusterNetworkScan> scans;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable Boolean validateVmClusterNetwork;
+        private @Nullable String vmClusterId;
         private String vmClusterNetworkId;
-        private List<GetVmClusterNetworkVmNetwork> vmNetworks;
+        private @Nullable List<GetVmClusterNetworkVmNetwork> vmNetworks;
         public Builder() {}
         public Builder(GetVmClusterNetworkResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -262,36 +264,36 @@ public final class GetVmClusterNetworkResult {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dns(List<String> dns) {
-            this.dns = Objects.requireNonNull(dns);
+        public Builder dns(@Nullable List<String> dns) {
+            this.dns = dns;
             return this;
         }
         public Builder dns(String... dns) {
             return dns(List.of(dns));
         }
         @CustomType.Setter
-        public Builder drScans(List<GetVmClusterNetworkDrScan> drScans) {
-            this.drScans = Objects.requireNonNull(drScans);
+        public Builder drScans(@Nullable List<GetVmClusterNetworkDrScan> drScans) {
+            this.drScans = drScans;
             return this;
         }
         public Builder drScans(GetVmClusterNetworkDrScan... drScans) {
@@ -303,54 +305,54 @@ public final class GetVmClusterNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder ntps(List<String> ntps) {
-            this.ntps = Objects.requireNonNull(ntps);
+        public Builder ntps(@Nullable List<String> ntps) {
+            this.ntps = ntps;
             return this;
         }
         public Builder ntps(String... ntps) {
             return ntps(List.of(ntps));
         }
         @CustomType.Setter
-        public Builder scans(List<GetVmClusterNetworkScan> scans) {
-            this.scans = Objects.requireNonNull(scans);
+        public Builder scans(@Nullable List<GetVmClusterNetworkScan> scans) {
+            this.scans = scans;
             return this;
         }
         public Builder scans(GetVmClusterNetworkScan... scans) {
             return scans(List.of(scans));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder validateVmClusterNetwork(Boolean validateVmClusterNetwork) {
-            this.validateVmClusterNetwork = Objects.requireNonNull(validateVmClusterNetwork);
+        public Builder validateVmClusterNetwork(@Nullable Boolean validateVmClusterNetwork) {
+            this.validateVmClusterNetwork = validateVmClusterNetwork;
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+        public Builder vmClusterId(@Nullable String vmClusterId) {
+            this.vmClusterId = vmClusterId;
             return this;
         }
         @CustomType.Setter
@@ -359,8 +361,8 @@ public final class GetVmClusterNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vmNetworks(List<GetVmClusterNetworkVmNetwork> vmNetworks) {
-            this.vmNetworks = Objects.requireNonNull(vmNetworks);
+        public Builder vmNetworks(@Nullable List<GetVmClusterNetworkVmNetwork> vmNetworks) {
+            this.vmNetworks = vmNetworks;
             return this;
         }
         public Builder vmNetworks(GetVmClusterNetworkVmNetwork... vmNetworks) {

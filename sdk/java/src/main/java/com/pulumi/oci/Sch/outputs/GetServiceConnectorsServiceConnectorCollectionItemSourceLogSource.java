@@ -6,6 +6,8 @@ package com.pulumi.oci.Sch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource {
@@ -13,39 +15,39 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceLogSo
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    private String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    private String logId;
+    private @Nullable String logId;
 
     private GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    public String logGroupId() {
-        return this.logGroupId;
+    public Optional<String> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    public String logId() {
-        return this.logId;
+    public Optional<String> logId() {
+        return Optional.ofNullable(this.logId);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceLogSo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String logGroupId;
-        private String logId;
+        private @Nullable String compartmentId;
+        private @Nullable String logGroupId;
+        private @Nullable String logId;
         public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceLogSo
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+        public Builder logGroupId(@Nullable String logGroupId) {
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder logId(String logId) {
-            this.logId = Objects.requireNonNull(logId);
+        public Builder logId(@Nullable String logId) {
+            this.logId = logId;
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource build() {

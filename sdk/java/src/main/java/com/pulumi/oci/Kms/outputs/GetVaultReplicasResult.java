@@ -9,6 +9,7 @@ import com.pulumi.oci.Kms.outputs.GetVaultReplicasVaultReplica;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetVaultReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String vaultId;
     /**
      * @return The list of vault_replicas.
      * 
      */
-    private List<GetVaultReplicasVaultReplica> vaultReplicas;
+    private @Nullable List<GetVaultReplicasVaultReplica> vaultReplicas;
 
     private GetVaultReplicasResult() {}
     public List<GetVaultReplicasFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetVaultReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String vaultId() {
         return this.vaultId;
@@ -45,7 +46,7 @@ public final class GetVaultReplicasResult {
      * 
      */
     public List<GetVaultReplicasVaultReplica> vaultReplicas() {
-        return this.vaultReplicas;
+        return this.vaultReplicas == null ? List.of() : this.vaultReplicas;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetVaultReplicasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVaultReplicasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String vaultId;
-        private List<GetVaultReplicasVaultReplica> vaultReplicas;
+        private @Nullable List<GetVaultReplicasVaultReplica> vaultReplicas;
         public Builder() {}
         public Builder(GetVaultReplicasResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetVaultReplicasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetVaultReplicasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vaultReplicas(List<GetVaultReplicasVaultReplica> vaultReplicas) {
-            this.vaultReplicas = Objects.requireNonNull(vaultReplicas);
+        public Builder vaultReplicas(@Nullable List<GetVaultReplicasVaultReplica> vaultReplicas) {
+            this.vaultReplicas = vaultReplicas;
             return this;
         }
         public Builder vaultReplicas(GetVaultReplicasVaultReplica... vaultReplicas) {

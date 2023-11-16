@@ -28,13 +28,13 @@ public final class GetExternalDbSystemsResult {
      * @return The list of external_db_system_collection.
      * 
      */
-    private List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections;
+    private @Nullable List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections;
     private @Nullable List<GetExternalDbSystemsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalDbSystemsResult() {}
     /**
@@ -56,7 +56,7 @@ public final class GetExternalDbSystemsResult {
      * 
      */
     public List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections() {
-        return this.externalDbSystemCollections;
+        return this.externalDbSystemCollections == null ? List.of() : this.externalDbSystemCollections;
     }
     public List<GetExternalDbSystemsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -65,8 +65,8 @@ public final class GetExternalDbSystemsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -80,9 +80,9 @@ public final class GetExternalDbSystemsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections;
+        private @Nullable List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections;
         private @Nullable List<GetExternalDbSystemsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalDbSystemsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -104,8 +104,8 @@ public final class GetExternalDbSystemsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemCollections(List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections) {
-            this.externalDbSystemCollections = Objects.requireNonNull(externalDbSystemCollections);
+        public Builder externalDbSystemCollections(@Nullable List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections) {
+            this.externalDbSystemCollections = externalDbSystemCollections;
             return this;
         }
         public Builder externalDbSystemCollections(GetExternalDbSystemsExternalDbSystemCollection... externalDbSystemCollections) {
@@ -120,8 +120,8 @@ public final class GetExternalDbSystemsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalDbSystemsResult build() {

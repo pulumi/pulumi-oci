@@ -48,51 +48,51 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
     /**
      * List of autonomous container database resource usage per autonomous virtual machine.
      */
-    readonly autonomousContainerDatabaseVmUsages: outputs.Database.GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage[];
+    readonly autonomousContainerDatabaseVmUsages?: outputs.Database.GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage[];
     /**
      * CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
      */
-    readonly availableCpus: number;
+    readonly availableCpus?: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Largest provisionable ADB in the Autonomous Container Database.
      */
-    readonly largestProvisionableAutonomousDatabaseInCpus: number;
+    readonly largestProvisionableAutonomousDatabaseInCpus?: number;
     /**
      * Valid list of provisionable CPUs / cores for ADB creation.
      */
-    readonly provisionableCpuses: number[];
+    readonly provisionableCpuses?: number[];
     /**
      * CPUs / cores assigned to ADBs in the Autonomous Container Database.
      */
-    readonly provisionedCpus: number;
+    readonly provisionedCpus?: number;
     /**
      * CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
      */
-    readonly reclaimableCpus: number;
+    readonly reclaimableCpus?: number;
     /**
      * CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
      */
-    readonly reservedCpus: number;
+    readonly reservedCpus?: number;
     /**
      * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
      */
-    readonly usedCpus: number;
+    readonly usedCpus?: number;
 }
 /**
  * This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.

@@ -47,20 +47,20 @@ export interface GetExternalExadataStorageServerIormPlanResult {
     /**
      * The resource allocation directives must all use the share attribute, or they must all use the level and allocation attributes. If you use the share attribute to allocate I/O resources, then the database plan can have a maximum of 1024 directives. If you use the level and allocation attributes to allocate I/O resources, then the database plan can have a maximum of 32 directives. Only one directive is allowed for each database name and each profile name.
      */
-    readonly dbPlans: outputs.DatabaseManagement.GetExternalExadataStorageServerIormPlanDbPlan[];
+    readonly dbPlans?: outputs.DatabaseManagement.GetExternalExadataStorageServerIormPlanDbPlan[];
     readonly externalExadataStorageServerId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The objective of the IORM plan.
      */
-    readonly planObjective: string;
+    readonly planObjective?: string;
     /**
      * The status of the IORM plan.
      */
-    readonly planStatus: string;
+    readonly planStatus?: string;
 }
 /**
  * This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.

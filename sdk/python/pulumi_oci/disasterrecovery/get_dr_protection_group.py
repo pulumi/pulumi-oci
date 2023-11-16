@@ -83,36 +83,27 @@ class GetDrProtectionGroupResult:
 
     @property
     @pulumi.getter
-    def associations(self) -> Sequence['outputs.GetDrProtectionGroupAssociationResult']:
+    def associations(self) -> Optional[Sequence['outputs.GetDrProtectionGroupAssociationResult']]:
         return pulumi.get(self, "associations")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="disassociateTrigger")
-    def disassociate_trigger(self) -> int:
+    def disassociate_trigger(self) -> Optional[int]:
         return pulumi.get(self, "disassociate_trigger")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the DR protection group.  Example: `EBS PHX Group`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -122,106 +113,67 @@ class GetDrProtectionGroupResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifeCycleDetails")
-    def life_cycle_details(self) -> str:
-        """
-        A message describing the DR protection group's current state in more detail.
-        """
+    def life_cycle_details(self) -> Optional[str]:
         return pulumi.get(self, "life_cycle_details")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> str:
-        """
-        The current sub-state of the DR protection group.
-        """
+    def lifecycle_sub_state(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="logLocations")
-    def log_locations(self) -> Sequence['outputs.GetDrProtectionGroupLogLocationResult']:
-        """
-        The details of an object storage log location for a DR protection group.
-        """
+    def log_locations(self) -> Optional[Sequence['outputs.GetDrProtectionGroupLogLocationResult']]:
         return pulumi.get(self, "log_locations")
 
     @property
     @pulumi.getter
-    def members(self) -> Sequence['outputs.GetDrProtectionGroupMemberResult']:
-        """
-        A list of DR protection group members.
-        """
+    def members(self) -> Optional[Sequence['outputs.GetDrProtectionGroupMemberResult']]:
         return pulumi.get(self, "members")
 
     @property
     @pulumi.getter(name="peerId")
-    def peer_id(self) -> str:
-        """
-        The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
+    def peer_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_id")
 
     @property
     @pulumi.getter(name="peerRegion")
-    def peer_region(self) -> str:
-        """
-        The region of the peer DR protection group.  Example: `us-ashburn-1`
-        """
+    def peer_region(self) -> Optional[str]:
         return pulumi.get(self, "peer_region")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        The role of the DR protection group.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the DR protection group.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -255,21 +207,7 @@ class AwaitableGetDrProtectionGroupResult(GetDrProtectionGroupResult):
 def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrProtectionGroupResult:
     """
-    This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get the DR protection group identified by *drProtectionGroupId*.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"])
-    ```
-
-
-    :param str dr_protection_group_id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['drProtectionGroupId'] = dr_protection_group_id
@@ -302,20 +240,6 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
 def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrProtectionGroupResult]:
     """
-    This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get the DR protection group identified by *drProtectionGroupId*.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"])
-    ```
-
-
-    :param str dr_protection_group_id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    Use this data source to access information about an existing resource.
     """
     ...

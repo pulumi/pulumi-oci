@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Users in Oracle Cloud Infrastructure Identity service.
@@ -80,7 +79,7 @@ type GetUsersResult struct {
 	ExternalIdentifier *string          `pulumi:"externalIdentifier"`
 	Filters            []GetUsersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the `IdentityProvider` this user belongs to.
 	IdentityProviderId *string `pulumi:"identityProviderId"`
 	// The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
@@ -138,12 +137,6 @@ func (o GetUsersResultOutput) ToGetUsersResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsersResult] {
-	return pulumix.Output[GetUsersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the user.
 func (o GetUsersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -159,8 +152,8 @@ func (o GetUsersResultOutput) Filters() GetUsersFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUsersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the `IdentityProvider` this user belongs to.

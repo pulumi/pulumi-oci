@@ -24,23 +24,23 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
         /// </summary>
-        public readonly bool CompartmentIdInSubtree;
+        public readonly bool? CompartmentIdInSubtree;
         /// <summary>
         /// Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Dimensions;
+        public readonly ImmutableDictionary<string, object>? Dimensions;
         /// <summary>
         /// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
         /// </summary>
-        public readonly string EndTime;
+        public readonly string? EndTime;
         /// <summary>
         /// The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         /// <summary>
         /// The name of the metric.  Example: `CpuUtilization`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
         /// </summary>
@@ -58,15 +58,15 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
         /// </summary>
-        public readonly string Resolution;
+        public readonly string? Resolution;
         /// <summary>
         /// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         /// </summary>
-        public readonly string ResourceGroup;
+        public readonly string? ResourceGroup;
         /// <summary>
         /// The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
         /// </summary>
-        public readonly string StartTime;
+        public readonly string? StartTime;
 
         [OutputConstructor]
         private GetMetricDataMetricDataResult(
@@ -74,25 +74,25 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
             string compartmentId,
 
-            bool compartmentIdInSubtree,
+            bool? compartmentIdInSubtree,
 
-            ImmutableDictionary<string, object> dimensions,
+            ImmutableDictionary<string, object>? dimensions,
 
-            string endTime,
+            string? endTime,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
-            string name,
+            string? name,
 
             string @namespace,
 
             string query,
 
-            string resolution,
+            string? resolution,
 
-            string resourceGroup,
+            string? resourceGroup,
 
-            string startTime)
+            string? startTime)
         {
             AggregatedDatapoints = aggregatedDatapoints;
             CompartmentId = compartmentId;

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeBackupsVolumeBackupSourceDetail {
@@ -13,23 +15,23 @@ public final class GetVolumeBackupsVolumeBackupSourceDetail {
      * @return The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    private String kmsKeyId;
-    private String region;
-    private String volumeBackupId;
+    private @Nullable String kmsKeyId;
+    private @Nullable String region;
+    private @Nullable String volumeBackupId;
 
     private GetVolumeBackupsVolumeBackupSourceDetail() {}
     /**
      * @return The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
-    public String volumeBackupId() {
-        return this.volumeBackupId;
+    public Optional<String> volumeBackupId() {
+        return Optional.ofNullable(this.volumeBackupId);
     }
 
     public static Builder builder() {
@@ -41,9 +43,9 @@ public final class GetVolumeBackupsVolumeBackupSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kmsKeyId;
-        private String region;
-        private String volumeBackupId;
+        private @Nullable String kmsKeyId;
+        private @Nullable String region;
+        private @Nullable String volumeBackupId;
         public Builder() {}
         public Builder(GetVolumeBackupsVolumeBackupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -53,18 +55,18 @@ public final class GetVolumeBackupsVolumeBackupSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeBackupId(String volumeBackupId) {
-            this.volumeBackupId = Objects.requireNonNull(volumeBackupId);
+        public Builder volumeBackupId(@Nullable String volumeBackupId) {
+            this.volumeBackupId = volumeBackupId;
             return this;
         }
         public GetVolumeBackupsVolumeBackupSourceDetail build() {

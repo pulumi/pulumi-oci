@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Identity
         /// The OCID of the tenancy containing the user, group, and membership object.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the group.
@@ -60,19 +60,19 @@ namespace Pulumi.Oci.Identity
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
         [Output("inactiveState")]
-        public Output<string> InactiveState { get; private set; } = null!;
+        public Output<string?> InactiveState { get; private set; } = null!;
 
         /// <summary>
         /// The membership's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user.

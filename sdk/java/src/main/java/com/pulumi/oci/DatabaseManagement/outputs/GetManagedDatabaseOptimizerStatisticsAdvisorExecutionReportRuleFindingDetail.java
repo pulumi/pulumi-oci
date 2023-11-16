@@ -8,6 +8,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail {
@@ -15,12 +16,12 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The list of operation details.
      * 
      */
-    private List<String> operations;
+    private @Nullable List<String> operations;
     /**
      * @return The names of the impacted database schemas and their objects.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * 
      */
     public List<String> operations() {
-        return this.operations;
+        return this.operations == null ? List.of() : this.operations;
     }
     /**
      * @return The names of the impacted database schemas and their objects.
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> operations;
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas;
+        private @Nullable List<String> operations;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         }
 
         @CustomType.Setter
-        public Builder operations(List<String> operations) {
-            this.operations = Objects.requireNonNull(operations);
+        public Builder operations(@Nullable List<String> operations) {
+            this.operations = operations;
             return this;
         }
         public Builder operations(String... operations) {
             return operations(List.of(operations));
         }
         @CustomType.Setter
-        public Builder schemas(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema... schemas) {

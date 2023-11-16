@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceVnic {
@@ -17,28 +19,28 @@ public final class GetContainerInstanceVnic {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private String hostnameLabel;
-    private Boolean isPublicIpAssigned;
-    private List<String> nsgIds;
-    private String privateIp;
-    private Boolean skipSourceDestCheck;
-    private String subnetId;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String hostnameLabel;
+    private @Nullable Boolean isPublicIpAssigned;
+    private @Nullable List<String> nsgIds;
+    private @Nullable String privateIp;
+    private @Nullable Boolean skipSourceDestCheck;
+    private @Nullable String subnetId;
     /**
      * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
-    private String vnicId;
+    private @Nullable String vnicId;
 
     private GetContainerInstanceVnic() {}
     /**
@@ -46,46 +48,46 @@ public final class GetContainerInstanceVnic {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String hostnameLabel() {
-        return this.hostnameLabel;
+    public Optional<String> hostnameLabel() {
+        return Optional.ofNullable(this.hostnameLabel);
     }
-    public Boolean isPublicIpAssigned() {
-        return this.isPublicIpAssigned;
+    public Optional<Boolean> isPublicIpAssigned() {
+        return Optional.ofNullable(this.isPublicIpAssigned);
     }
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
-    public String privateIp() {
-        return this.privateIp;
+    public Optional<String> privateIp() {
+        return Optional.ofNullable(this.privateIp);
     }
-    public Boolean skipSourceDestCheck() {
-        return this.skipSourceDestCheck;
+    public Optional<Boolean> skipSourceDestCheck() {
+        return Optional.ofNullable(this.skipSourceDestCheck);
     }
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
-    public String vnicId() {
-        return this.vnicId;
+    public Optional<String> vnicId() {
+        return Optional.ofNullable(this.vnicId);
     }
 
     public static Builder builder() {
@@ -97,16 +99,16 @@ public final class GetContainerInstanceVnic {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String hostnameLabel;
-        private Boolean isPublicIpAssigned;
-        private List<String> nsgIds;
-        private String privateIp;
-        private Boolean skipSourceDestCheck;
-        private String subnetId;
-        private String vnicId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostnameLabel;
+        private @Nullable Boolean isPublicIpAssigned;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String privateIp;
+        private @Nullable Boolean skipSourceDestCheck;
+        private @Nullable String subnetId;
+        private @Nullable String vnicId;
         public Builder() {}
         public Builder(GetContainerInstanceVnic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,56 +125,56 @@ public final class GetContainerInstanceVnic {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+        public Builder hostnameLabel(@Nullable String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder isPublicIpAssigned(Boolean isPublicIpAssigned) {
-            this.isPublicIpAssigned = Objects.requireNonNull(isPublicIpAssigned);
+        public Builder isPublicIpAssigned(@Nullable Boolean isPublicIpAssigned) {
+            this.isPublicIpAssigned = isPublicIpAssigned;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+        public Builder privateIp(@Nullable String privateIp) {
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
-        public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
-            this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
+        public Builder skipSourceDestCheck(@Nullable Boolean skipSourceDestCheck) {
+            this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+        public Builder vnicId(@Nullable String vnicId) {
+            this.vnicId = vnicId;
             return this;
         }
         public GetContainerInstanceVnic build() {

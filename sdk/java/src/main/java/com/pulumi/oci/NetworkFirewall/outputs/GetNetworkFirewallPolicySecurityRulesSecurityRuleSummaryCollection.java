@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection {
-    private List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem> items;
+    private @Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem> items;
 
     private GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection() {}
     public List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem> items;
+        private @Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem... items) {

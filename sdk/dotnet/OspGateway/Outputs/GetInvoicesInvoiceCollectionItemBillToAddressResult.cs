@@ -16,31 +16,31 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Address line 1
         /// </summary>
-        public readonly string AddressLine1;
+        public readonly string? AddressLine1;
         /// <summary>
         /// Address line 2
         /// </summary>
-        public readonly string AddressLine2;
+        public readonly string? AddressLine2;
         /// <summary>
         /// Address line 3
         /// </summary>
-        public readonly string AddressLine3;
+        public readonly string? AddressLine3;
         /// <summary>
         /// Address line 4
         /// </summary>
-        public readonly string AddressLine4;
+        public readonly string? AddressLine4;
         /// <summary>
         /// Name of the city
         /// </summary>
-        public readonly string City;
+        public readonly string? City;
         /// <summary>
         /// Name of the customer company
         /// </summary>
-        public readonly string CompanyName;
+        public readonly string? CompanyName;
         /// <summary>
         /// Name of the contact person
         /// </summary>
-        public readonly string ContactName;
+        public readonly string? ContactName;
         /// <summary>
         /// Country details model
         /// </summary>
@@ -48,57 +48,57 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// County name
         /// </summary>
-        public readonly string County;
+        public readonly string? County;
         /// <summary>
         /// ZIP no
         /// </summary>
-        public readonly string PostalCode;
+        public readonly string? PostalCode;
         /// <summary>
         /// Name of the province
         /// </summary>
-        public readonly string Province;
+        public readonly string? Province;
         /// <summary>
         /// Name of the state
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Street name
         /// </summary>
-        public readonly string StreetName;
+        public readonly string? StreetName;
         /// <summary>
         /// House no
         /// </summary>
-        public readonly string StreetNumber;
+        public readonly string? StreetNumber;
 
         [OutputConstructor]
         private GetInvoicesInvoiceCollectionItemBillToAddressResult(
-            string addressLine1,
+            string? addressLine1,
 
-            string addressLine2,
+            string? addressLine2,
 
-            string addressLine3,
+            string? addressLine3,
 
-            string addressLine4,
+            string? addressLine4,
 
-            string city,
+            string? city,
 
-            string companyName,
+            string? companyName,
 
-            string contactName,
+            string? contactName,
 
             ImmutableArray<Outputs.GetInvoicesInvoiceCollectionItemBillToAddressCountryResult> countries,
 
-            string county,
+            string? county,
 
-            string postalCode,
+            string? postalCode,
 
-            string province,
+            string? province,
 
-            string state,
+            string? state,
 
-            string streetName,
+            string? streetName,
 
-            string streetNumber)
+            string? streetNumber)
         {
             AddressLine1 = addressLine1;
             AddressLine2 = addressLine2;

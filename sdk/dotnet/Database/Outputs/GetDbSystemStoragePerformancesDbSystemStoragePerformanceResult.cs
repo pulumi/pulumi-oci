@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Optional. Filters the performance results by shape type.
         /// </summary>
-        public readonly string ShapeType;
+        public readonly string? ShapeType;
 
         [OutputConstructor]
         private GetDbSystemStoragePerformancesDbSystemStoragePerformanceResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListResult> recoStoragePerformanceLists,
 
-            string shapeType)
+            string? shapeType)
         {
             DataStoragePerformanceLists = dataStoragePerformanceLists;
             RecoStoragePerformanceLists = recoStoragePerformanceLists;

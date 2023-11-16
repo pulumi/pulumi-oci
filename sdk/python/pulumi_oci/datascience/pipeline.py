@@ -30,16 +30,6 @@ class PipelineArgs:
                  step_artifact: Optional[pulumi.Input['PipelineStepArtifactArgs']] = None):
         """
         The set of arguments for constructing a Pipeline resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        :param pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]] step_details: (Updatable) Array of step details for each step.
-        :param pulumi.Input['PipelineConfigurationDetailsArgs'] configuration_details: (Updatable) The configuration details of a pipeline.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        :param pulumi.Input['PipelineLogConfigurationDetailsArgs'] log_configuration_details: (Updatable) The pipeline log configuration details.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "project_id", project_id)
@@ -66,9 +56,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -78,9 +65,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -90,9 +74,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="stepDetails")
     def step_details(self) -> pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]]:
-        """
-        (Updatable) Array of step details for each step.
-        """
         return pulumi.get(self, "step_details")
 
     @step_details.setter
@@ -102,9 +83,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> Optional[pulumi.Input['PipelineConfigurationDetailsArgs']]:
-        """
-        (Updatable) The configuration details of a pipeline.
-        """
         return pulumi.get(self, "configuration_details")
 
     @configuration_details.setter
@@ -114,9 +92,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -135,9 +110,6 @@ class PipelineArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the step.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -147,9 +119,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -159,9 +128,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -171,9 +137,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="infrastructureConfigurationDetails")
     def infrastructure_configuration_details(self) -> Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']]:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
         return pulumi.get(self, "infrastructure_configuration_details")
 
     @infrastructure_configuration_details.setter
@@ -183,9 +146,6 @@ class PipelineArgs:
     @property
     @pulumi.getter(name="logConfigurationDetails")
     def log_configuration_details(self) -> Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']]:
-        """
-        (Updatable) The pipeline log configuration details.
-        """
         return pulumi.get(self, "log_configuration_details")
 
     @log_configuration_details.setter
@@ -225,22 +185,6 @@ class _PipelineState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Pipeline resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input['PipelineConfigurationDetailsArgs'] configuration_details: (Updatable) The configuration details of a pipeline.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input['PipelineLogConfigurationDetailsArgs'] log_configuration_details: (Updatable) The pipeline log configuration details.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        :param pulumi.Input[str] state: The current state of the pipeline.
-        :param pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]] step_details: (Updatable) Array of step details for each step.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -282,9 +226,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -294,9 +235,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> Optional[pulumi.Input['PipelineConfigurationDetailsArgs']]:
-        """
-        (Updatable) The configuration details of a pipeline.
-        """
         return pulumi.get(self, "configuration_details")
 
     @configuration_details.setter
@@ -306,9 +244,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -318,9 +253,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -339,9 +271,6 @@ class _PipelineState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the step.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -351,9 +280,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -363,9 +289,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -375,9 +298,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="infrastructureConfigurationDetails")
     def infrastructure_configuration_details(self) -> Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']]:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
         return pulumi.get(self, "infrastructure_configuration_details")
 
     @infrastructure_configuration_details.setter
@@ -387,9 +307,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -399,9 +316,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="logConfigurationDetails")
     def log_configuration_details(self) -> Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']]:
-        """
-        (Updatable) The pipeline log configuration details.
-        """
         return pulumi.get(self, "log_configuration_details")
 
     @log_configuration_details.setter
@@ -411,9 +325,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -423,9 +334,6 @@ class _PipelineState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the pipeline.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -444,9 +352,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="stepDetails")
     def step_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]]]:
-        """
-        (Updatable) Array of step details for each step.
-        """
         return pulumi.get(self, "step_details")
 
     @step_details.setter
@@ -456,9 +361,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -468,9 +370,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -480,9 +379,6 @@ class _PipelineState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -509,90 +405,9 @@ class Pipeline(pulumi.CustomResource):
                  step_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new Pipeline.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_pipeline = oci.data_science.Pipeline("testPipeline",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
-            step_details=[oci.data_science.PipelineStepDetailArgs(
-                step_name=var["pipeline_step_details_step_name"],
-                step_type=var["pipeline_step_details_step_type"],
-                depends_ons=var["pipeline_step_details_depends_on"],
-                description=var["pipeline_step_details_description"],
-                is_artifact_uploaded=var["pipeline_step_details_is_artifact_uploaded"],
-                job_id=oci_datascience_job["test_job"]["id"],
-                step_configuration_details=oci.data_science.PipelineStepDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=var["pipeline_step_details_step_configuration_details_command_line_arguments"],
-                    environment_variables=var["pipeline_step_details_step_configuration_details_environment_variables"],
-                    maximum_runtime_in_minutes=var["pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes"],
-                ),
-                step_infrastructure_configuration_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs(
-                    block_storage_size_in_gbs=var["pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                    shape_config_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                        memory_in_gbs=var["pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs"],
-                        ocpus=var["pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus"],
-                    ),
-                    shape_name=oci_core_shape["test_shape"]["name"],
-                ),
-            )],
-            configuration_details=oci.data_science.PipelineConfigurationDetailsArgs(
-                type=var["pipeline_configuration_details_type"],
-                command_line_arguments=var["pipeline_configuration_details_command_line_arguments"],
-                environment_variables=var["pipeline_configuration_details_environment_variables"],
-                maximum_runtime_in_minutes=var["pipeline_configuration_details_maximum_runtime_in_minutes"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["pipeline_description"],
-            display_name=var["pipeline_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            infrastructure_configuration_details=oci.data_science.PipelineInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=var["pipeline_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                shape_name=oci_core_shape["test_shape"]["name"],
-                shape_config_details=oci.data_science.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                    memory_in_gbs=var["pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs"],
-                    ocpus=var["pipeline_infrastructure_configuration_details_shape_config_details_ocpus"],
-                ),
-            ),
-            log_configuration_details=oci.data_science.PipelineLogConfigurationDetailsArgs(
-                enable_auto_log_creation=var["pipeline_log_configuration_details_enable_auto_log_creation"],
-                enable_logging=var["pipeline_log_configuration_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
-            ))
-        ```
-
-        ## Import
-
-        Pipelines can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
-        ```
-
+        Create a Pipeline resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']] configuration_details: (Updatable) The configuration details of a pipeline.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        :param pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']] log_configuration_details: (Updatable) The pipeline log configuration details.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]] step_details: (Updatable) Array of step details for each step.
         """
         ...
     @overload
@@ -601,78 +416,7 @@ class Pipeline(pulumi.CustomResource):
                  args: PipelineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new Pipeline.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_pipeline = oci.data_science.Pipeline("testPipeline",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
-            step_details=[oci.data_science.PipelineStepDetailArgs(
-                step_name=var["pipeline_step_details_step_name"],
-                step_type=var["pipeline_step_details_step_type"],
-                depends_ons=var["pipeline_step_details_depends_on"],
-                description=var["pipeline_step_details_description"],
-                is_artifact_uploaded=var["pipeline_step_details_is_artifact_uploaded"],
-                job_id=oci_datascience_job["test_job"]["id"],
-                step_configuration_details=oci.data_science.PipelineStepDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=var["pipeline_step_details_step_configuration_details_command_line_arguments"],
-                    environment_variables=var["pipeline_step_details_step_configuration_details_environment_variables"],
-                    maximum_runtime_in_minutes=var["pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes"],
-                ),
-                step_infrastructure_configuration_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs(
-                    block_storage_size_in_gbs=var["pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                    shape_config_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                        memory_in_gbs=var["pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs"],
-                        ocpus=var["pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus"],
-                    ),
-                    shape_name=oci_core_shape["test_shape"]["name"],
-                ),
-            )],
-            configuration_details=oci.data_science.PipelineConfigurationDetailsArgs(
-                type=var["pipeline_configuration_details_type"],
-                command_line_arguments=var["pipeline_configuration_details_command_line_arguments"],
-                environment_variables=var["pipeline_configuration_details_environment_variables"],
-                maximum_runtime_in_minutes=var["pipeline_configuration_details_maximum_runtime_in_minutes"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["pipeline_description"],
-            display_name=var["pipeline_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            infrastructure_configuration_details=oci.data_science.PipelineInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=var["pipeline_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                shape_name=oci_core_shape["test_shape"]["name"],
-                shape_config_details=oci.data_science.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                    memory_in_gbs=var["pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs"],
-                    ocpus=var["pipeline_infrastructure_configuration_details_shape_config_details_ocpus"],
-                ),
-            ),
-            log_configuration_details=oci.data_science.PipelineLogConfigurationDetailsArgs(
-                enable_auto_log_creation=var["pipeline_log_configuration_details_enable_auto_log_creation"],
-                enable_logging=var["pipeline_log_configuration_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
-            ))
-        ```
-
-        ## Import
-
-        Pipelines can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
-        ```
-
+        Create a Pipeline resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PipelineArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -768,22 +512,6 @@ class Pipeline(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']] configuration_details: (Updatable) The configuration details of a pipeline.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']] log_configuration_details: (Updatable) The pipeline log configuration details.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        :param pulumi.Input[str] state: The current state of the pipeline.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]] step_details: (Updatable) Array of step details for each step.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -812,33 +540,21 @@ class Pipeline(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> pulumi.Output['outputs.PipelineConfigurationDetails']:
-        """
-        (Updatable) The configuration details of a pipeline.
-        """
+    def configuration_details(self) -> pulumi.Output[Optional['outputs.PipelineConfigurationDetails']]:
         return pulumi.get(self, "configuration_details")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -848,102 +564,66 @@ class Pipeline(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A short description of the step.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="infrastructureConfigurationDetails")
-    def infrastructure_configuration_details(self) -> pulumi.Output['outputs.PipelineInfrastructureConfigurationDetails']:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
+    def infrastructure_configuration_details(self) -> pulumi.Output[Optional['outputs.PipelineInfrastructureConfigurationDetails']]:
         return pulumi.get(self, "infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logConfigurationDetails")
-    def log_configuration_details(self) -> pulumi.Output['outputs.PipelineLogConfigurationDetails']:
-        """
-        (Updatable) The pipeline log configuration details.
-        """
+    def log_configuration_details(self) -> pulumi.Output[Optional['outputs.PipelineLogConfigurationDetails']]:
         return pulumi.get(self, "log_configuration_details")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the pipeline.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stepArtifact")
-    def step_artifact(self) -> pulumi.Output['outputs.PipelineStepArtifact']:
+    def step_artifact(self) -> pulumi.Output[Optional['outputs.PipelineStepArtifact']]:
         return pulumi.get(self, "step_artifact")
 
     @property
     @pulumi.getter(name="stepDetails")
     def step_details(self) -> pulumi.Output[Sequence['outputs.PipelineStepDetail']]:
-        """
-        (Updatable) Array of step details for each step.
-        """
         return pulumi.get(self, "step_details")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

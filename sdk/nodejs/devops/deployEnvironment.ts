@@ -85,19 +85,19 @@ export class DeployEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the Kubernetes cluster.
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    public readonly clusterId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of a compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
      */
-    public readonly computeInstanceGroupSelectors!: pulumi.Output<outputs.DevOps.DeployEnvironmentComputeInstanceGroupSelectors>;
+    public readonly computeInstanceGroupSelectors!: pulumi.Output<outputs.DevOps.DeployEnvironmentComputeInstanceGroupSelectors | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Deployment environment type.
      */
@@ -105,27 +105,27 @@ export class DeployEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) Optional description about the deployment environment.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Deployment environment display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The OCID of the Function.
      */
-    public readonly functionId!: pulumi.Output<string>;
+    public readonly functionId!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
      */
-    public readonly networkChannel!: pulumi.Output<outputs.DevOps.DeployEnvironmentNetworkChannel>;
+    public readonly networkChannel!: pulumi.Output<outputs.DevOps.DeployEnvironmentNetworkChannel | undefined>;
     /**
      * The OCID of a project.
      *
@@ -137,19 +137,19 @@ export class DeployEnvironment extends pulumi.CustomResource {
     /**
      * The current state of the deployment environment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DeployEnvironment resource with the given unique name, arguments, and options.

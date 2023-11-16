@@ -16,47 +16,47 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
         /// </summary>
-        public readonly string CookieName;
+        public readonly string? CookieName;
         /// <summary>
         /// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         /// </summary>
-        public readonly bool DisableFallback;
+        public readonly bool? DisableFallback;
         /// <summary>
         /// The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
         /// </summary>
-        public readonly string Domain;
+        public readonly string? Domain;
         /// <summary>
         /// Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
         /// </summary>
-        public readonly bool IsHttpOnly;
+        public readonly bool? IsHttpOnly;
         /// <summary>
         /// Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
         /// </summary>
-        public readonly bool IsSecure;
+        public readonly bool? IsSecure;
         /// <summary>
         /// The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
         /// </summary>
-        public readonly int MaxAgeInSeconds;
+        public readonly int? MaxAgeInSeconds;
         /// <summary>
         /// The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
 
         [OutputConstructor]
         private GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult(
-            string cookieName,
+            string? cookieName,
 
-            bool disableFallback,
+            bool? disableFallback,
 
-            string domain,
+            string? domain,
 
-            bool isHttpOnly,
+            bool? isHttpOnly,
 
-            bool isSecure,
+            bool? isSecure,
 
-            int maxAgeInSeconds,
+            int? maxAgeInSeconds,
 
-            string path)
+            string? path)
         {
             CookieName = cookieName;
             DisableFallback = disableFallback;

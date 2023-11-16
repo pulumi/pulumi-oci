@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -63,12 +62,6 @@ func (i ProductLicenseImageArgs) ToProductLicenseImageOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ProductLicenseImageOutput)
 }
 
-func (i ProductLicenseImageArgs) ToOutput(ctx context.Context) pulumix.Output[ProductLicenseImage] {
-	return pulumix.Output[ProductLicenseImage]{
-		OutputState: i.ToProductLicenseImageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProductLicenseImageArrayInput is an input type that accepts ProductLicenseImageArray and ProductLicenseImageArrayOutput values.
 // You can construct a concrete instance of `ProductLicenseImageArrayInput` via:
 //
@@ -94,12 +87,6 @@ func (i ProductLicenseImageArray) ToProductLicenseImageArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ProductLicenseImageArrayOutput)
 }
 
-func (i ProductLicenseImageArray) ToOutput(ctx context.Context) pulumix.Output[[]ProductLicenseImage] {
-	return pulumix.Output[[]ProductLicenseImage]{
-		OutputState: i.ToProductLicenseImageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProductLicenseImageOutput struct{ *pulumi.OutputState }
 
 func (ProductLicenseImageOutput) ElementType() reflect.Type {
@@ -112,12 +99,6 @@ func (o ProductLicenseImageOutput) ToProductLicenseImageOutput() ProductLicenseI
 
 func (o ProductLicenseImageOutput) ToProductLicenseImageOutputWithContext(ctx context.Context) ProductLicenseImageOutput {
 	return o
-}
-
-func (o ProductLicenseImageOutput) ToOutput(ctx context.Context) pulumix.Output[ProductLicenseImage] {
-	return pulumix.Output[ProductLicenseImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The image ID associated with the product license.
@@ -157,12 +138,6 @@ func (o ProductLicenseImageArrayOutput) ToProductLicenseImageArrayOutput() Produ
 
 func (o ProductLicenseImageArrayOutput) ToProductLicenseImageArrayOutputWithContext(ctx context.Context) ProductLicenseImageArrayOutput {
 	return o
-}
-
-func (o ProductLicenseImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProductLicenseImage] {
-	return pulumix.Output[[]ProductLicenseImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProductLicenseImageArrayOutput) Index(i pulumi.IntInput) ProductLicenseImageOutput {
@@ -206,12 +181,6 @@ func (i GetLicenseRecordsFilterArgs) ToGetLicenseRecordsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsFilterOutput)
 }
 
-func (i GetLicenseRecordsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsFilter] {
-	return pulumix.Output[GetLicenseRecordsFilter]{
-		OutputState: i.ToGetLicenseRecordsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLicenseRecordsFilterArrayInput is an input type that accepts GetLicenseRecordsFilterArray and GetLicenseRecordsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsFilterArrayInput` via:
 //
@@ -237,12 +206,6 @@ func (i GetLicenseRecordsFilterArray) ToGetLicenseRecordsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsFilterArrayOutput)
 }
 
-func (i GetLicenseRecordsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsFilter] {
-	return pulumix.Output[[]GetLicenseRecordsFilter]{
-		OutputState: i.ToGetLicenseRecordsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLicenseRecordsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLicenseRecordsFilterOutput) ElementType() reflect.Type {
@@ -255,12 +218,6 @@ func (o GetLicenseRecordsFilterOutput) ToGetLicenseRecordsFilterOutput() GetLice
 
 func (o GetLicenseRecordsFilterOutput) ToGetLicenseRecordsFilterOutputWithContext(ctx context.Context) GetLicenseRecordsFilterOutput {
 	return o
-}
-
-func (o GetLicenseRecordsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsFilter] {
-	return pulumix.Output[GetLicenseRecordsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLicenseRecordsFilterOutput) Name() pulumi.StringOutput {
@@ -287,12 +244,6 @@ func (o GetLicenseRecordsFilterArrayOutput) ToGetLicenseRecordsFilterArrayOutput
 
 func (o GetLicenseRecordsFilterArrayOutput) ToGetLicenseRecordsFilterArrayOutputWithContext(ctx context.Context) GetLicenseRecordsFilterArrayOutput {
 	return o
-}
-
-func (o GetLicenseRecordsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsFilter] {
-	return pulumix.Output[[]GetLicenseRecordsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLicenseRecordsFilterArrayOutput) Index(i pulumi.IntInput) GetLicenseRecordsFilterOutput {
@@ -332,12 +283,6 @@ func (i GetLicenseRecordsLicenseRecordCollectionArgs) ToGetLicenseRecordsLicense
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionOutput)
 }
 
-func (i GetLicenseRecordsLicenseRecordCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollection] {
-	return pulumix.Output[GetLicenseRecordsLicenseRecordCollection]{
-		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLicenseRecordsLicenseRecordCollectionArrayInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionArray and GetLicenseRecordsLicenseRecordCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsLicenseRecordCollectionArrayInput` via:
 //
@@ -363,12 +308,6 @@ func (i GetLicenseRecordsLicenseRecordCollectionArray) ToGetLicenseRecordsLicens
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionArrayOutput)
 }
 
-func (i GetLicenseRecordsLicenseRecordCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection] {
-	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection]{
-		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLicenseRecordsLicenseRecordCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLicenseRecordsLicenseRecordCollectionOutput) ElementType() reflect.Type {
@@ -381,12 +320,6 @@ func (o GetLicenseRecordsLicenseRecordCollectionOutput) ToGetLicenseRecordsLicen
 
 func (o GetLicenseRecordsLicenseRecordCollectionOutput) ToGetLicenseRecordsLicenseRecordCollectionOutputWithContext(ctx context.Context) GetLicenseRecordsLicenseRecordCollectionOutput {
 	return o
-}
-
-func (o GetLicenseRecordsLicenseRecordCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollection] {
-	return pulumix.Output[GetLicenseRecordsLicenseRecordCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLicenseRecordsLicenseRecordCollectionOutput) Items() GetLicenseRecordsLicenseRecordCollectionItemArrayOutput {
@@ -409,12 +342,6 @@ func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) ToGetLicenseRecords
 	return o
 }
 
-func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection] {
-	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) Index(i pulumi.IntInput) GetLicenseRecordsLicenseRecordCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLicenseRecordsLicenseRecordCollection {
 		return vs[0].([]GetLicenseRecordsLicenseRecordCollection)[vs[1].(int)]
@@ -423,41 +350,41 @@ func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) Index(i pulumi.IntI
 
 type GetLicenseRecordsLicenseRecordCollectionItem struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The license record display name. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-	ExpirationDate string `pulumi:"expirationDate"`
+	ExpirationDate *string `pulumi:"expirationDate"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Specifies if the license record term is perpertual.
-	IsPerpetual bool `pulumi:"isPerpetual"`
+	IsPerpetual *bool `pulumi:"isPerpetual"`
 	// Specifies if the license count is unlimited.
-	IsUnlimited bool `pulumi:"isUnlimited"`
+	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// The number of license units added by the user for the given license record. Default 1
-	LicenseCount int `pulumi:"licenseCount"`
+	LicenseCount *int `pulumi:"licenseCount"`
 	// The product license unit.
-	LicenseUnit string `pulumi:"licenseUnit"`
+	LicenseUnit *string `pulumi:"licenseUnit"`
 	// The license record product ID.
-	ProductId string `pulumi:"productId"`
+	ProductId *string `pulumi:"productId"`
 	// The product license name with which the license record is associated.
-	ProductLicense string `pulumi:"productLicense"`
+	ProductLicense *string `pulumi:"productLicense"`
 	// Unique product license identifier.
-	ProductLicenseId string `pulumi:"productLicenseId"`
+	ProductLicenseId *string `pulumi:"productLicenseId"`
 	// The current license record state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-	SupportEndDate string `pulumi:"supportEndDate"`
+	SupportEndDate *string `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetLicenseRecordsLicenseRecordCollectionItemInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionItemArgs and GetLicenseRecordsLicenseRecordCollectionItemOutput values.
@@ -473,41 +400,41 @@ type GetLicenseRecordsLicenseRecordCollectionItemInput interface {
 
 type GetLicenseRecordsLicenseRecordCollectionItemArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The license record display name. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-	ExpirationDate pulumi.StringInput `pulumi:"expirationDate"`
+	ExpirationDate pulumi.StringPtrInput `pulumi:"expirationDate"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Specifies if the license record term is perpertual.
-	IsPerpetual pulumi.BoolInput `pulumi:"isPerpetual"`
+	IsPerpetual pulumi.BoolPtrInput `pulumi:"isPerpetual"`
 	// Specifies if the license count is unlimited.
-	IsUnlimited pulumi.BoolInput `pulumi:"isUnlimited"`
+	IsUnlimited pulumi.BoolPtrInput `pulumi:"isUnlimited"`
 	// The number of license units added by the user for the given license record. Default 1
-	LicenseCount pulumi.IntInput `pulumi:"licenseCount"`
+	LicenseCount pulumi.IntPtrInput `pulumi:"licenseCount"`
 	// The product license unit.
-	LicenseUnit pulumi.StringInput `pulumi:"licenseUnit"`
+	LicenseUnit pulumi.StringPtrInput `pulumi:"licenseUnit"`
 	// The license record product ID.
-	ProductId pulumi.StringInput `pulumi:"productId"`
+	ProductId pulumi.StringPtrInput `pulumi:"productId"`
 	// The product license name with which the license record is associated.
-	ProductLicense pulumi.StringInput `pulumi:"productLicense"`
+	ProductLicense pulumi.StringPtrInput `pulumi:"productLicense"`
 	// Unique product license identifier.
-	ProductLicenseId pulumi.StringInput `pulumi:"productLicenseId"`
+	ProductLicenseId pulumi.StringPtrInput `pulumi:"productLicenseId"`
 	// The current license record state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-	SupportEndDate pulumi.StringInput `pulumi:"supportEndDate"`
+	SupportEndDate pulumi.StringPtrInput `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetLicenseRecordsLicenseRecordCollectionItemArgs) ElementType() reflect.Type {
@@ -520,12 +447,6 @@ func (i GetLicenseRecordsLicenseRecordCollectionItemArgs) ToGetLicenseRecordsLic
 
 func (i GetLicenseRecordsLicenseRecordCollectionItemArgs) ToGetLicenseRecordsLicenseRecordCollectionItemOutputWithContext(ctx context.Context) GetLicenseRecordsLicenseRecordCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionItemOutput)
-}
-
-func (i GetLicenseRecordsLicenseRecordCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem] {
-	return pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem]{
-		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLicenseRecordsLicenseRecordCollectionItemArrayInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionItemArray and GetLicenseRecordsLicenseRecordCollectionItemArrayOutput values.
@@ -553,12 +474,6 @@ func (i GetLicenseRecordsLicenseRecordCollectionItemArray) ToGetLicenseRecordsLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionItemArrayOutput)
 }
 
-func (i GetLicenseRecordsLicenseRecordCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem] {
-	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem]{
-		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLicenseRecordsLicenseRecordCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLicenseRecordsLicenseRecordCollectionItemOutput) ElementType() reflect.Type {
@@ -573,15 +488,9 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ToGetLicenseRecordsL
 	return o
 }
 
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem] {
-	return pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -590,13 +499,13 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) DefinedTags() pulumi
 }
 
 // The license record display name. Avoid entering confidential information.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ExpirationDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.ExpirationDate }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.ExpirationDate }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -605,53 +514,53 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) FreeformTags() pulum
 }
 
 // The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if the license record term is perpertual.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) IsPerpetual() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) bool { return v.IsPerpetual }).(pulumi.BoolOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) IsPerpetual() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *bool { return v.IsPerpetual }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies if the license count is unlimited.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) IsUnlimited() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) bool { return v.IsUnlimited }).(pulumi.BoolOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) IsUnlimited() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *bool { return v.IsUnlimited }).(pulumi.BoolPtrOutput)
 }
 
 // The number of license units added by the user for the given license record. Default 1
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) LicenseCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) int { return v.LicenseCount }).(pulumi.IntOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) LicenseCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *int { return v.LicenseCount }).(pulumi.IntPtrOutput)
 }
 
 // The product license unit.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) LicenseUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.LicenseUnit }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) LicenseUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.LicenseUnit }).(pulumi.StringPtrOutput)
 }
 
 // The license record product ID.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ProductId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.ProductId }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ProductId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.ProductId }).(pulumi.StringPtrOutput)
 }
 
 // The product license name with which the license record is associated.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ProductLicense() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.ProductLicense }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ProductLicense() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.ProductLicense }).(pulumi.StringPtrOutput)
 }
 
 // Unique product license identifier.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ProductLicenseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.ProductLicenseId }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ProductLicenseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.ProductLicenseId }).(pulumi.StringPtrOutput)
 }
 
 // The current license record state.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) SupportEndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.SupportEndDate }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) SupportEndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.SupportEndDate }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -660,13 +569,13 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) SystemTags() pulumi.
 }
 
 // The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsLicenseRecordCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetLicenseRecordsLicenseRecordCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -683,12 +592,6 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemArrayOutput) ToGetLicenseRec
 	return o
 }
 
-func (o GetLicenseRecordsLicenseRecordCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem] {
-	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLicenseRecordsLicenseRecordCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLicenseRecordsLicenseRecordCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLicenseRecordsLicenseRecordCollectionItem {
 		return vs[0].([]GetLicenseRecordsLicenseRecordCollectionItem)[vs[1].(int)]
@@ -697,29 +600,29 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemArrayOutput) Index(i pulumi.
 
 type GetProductLicenseConsumersItem struct {
 	// Specifies if all options are available.
-	AreAllOptionsAvailable bool `pulumi:"areAllOptionsAvailable"`
+	AreAllOptionsAvailable *bool `pulumi:"areAllOptionsAvailable"`
 	// Specifies if the base license is available.
-	IsBaseLicenseAvailable bool `pulumi:"isBaseLicenseAvailable"`
+	IsBaseLicenseAvailable *bool `pulumi:"isBaseLicenseAvailable"`
 	// The product license unit.
-	LicenseUnitType string `pulumi:"licenseUnitType"`
+	LicenseUnitType *string `pulumi:"licenseUnitType"`
 	// Number of license units consumed by the resource.
-	LicenseUnitsConsumed float64 `pulumi:"licenseUnitsConsumed"`
+	LicenseUnitsConsumed *float64 `pulumi:"licenseUnitsConsumed"`
 	// Collection of missing product licenses.
 	MissingProducts []GetProductLicenseConsumersItemMissingProduct `pulumi:"missingProducts"`
 	// The resource product name.
-	ProductName string `pulumi:"productName"`
+	ProductName *string `pulumi:"productName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
-	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 	// The display name of the compartment that contains the resource.
-	ResourceCompartmentName string `pulumi:"resourceCompartmentName"`
+	ResourceCompartmentName *string `pulumi:"resourceCompartmentName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The display name of the resource.
-	ResourceName string `pulumi:"resourceName"`
+	ResourceName *string `pulumi:"resourceName"`
 	// Number of units of the resource
-	ResourceUnitCount float64 `pulumi:"resourceUnitCount"`
+	ResourceUnitCount *float64 `pulumi:"resourceUnitCount"`
 	// The unit type for the resource.
-	ResourceUnitType string `pulumi:"resourceUnitType"`
+	ResourceUnitType *string `pulumi:"resourceUnitType"`
 }
 
 // GetProductLicenseConsumersItemInput is an input type that accepts GetProductLicenseConsumersItemArgs and GetProductLicenseConsumersItemOutput values.
@@ -735,29 +638,29 @@ type GetProductLicenseConsumersItemInput interface {
 
 type GetProductLicenseConsumersItemArgs struct {
 	// Specifies if all options are available.
-	AreAllOptionsAvailable pulumi.BoolInput `pulumi:"areAllOptionsAvailable"`
+	AreAllOptionsAvailable pulumi.BoolPtrInput `pulumi:"areAllOptionsAvailable"`
 	// Specifies if the base license is available.
-	IsBaseLicenseAvailable pulumi.BoolInput `pulumi:"isBaseLicenseAvailable"`
+	IsBaseLicenseAvailable pulumi.BoolPtrInput `pulumi:"isBaseLicenseAvailable"`
 	// The product license unit.
-	LicenseUnitType pulumi.StringInput `pulumi:"licenseUnitType"`
+	LicenseUnitType pulumi.StringPtrInput `pulumi:"licenseUnitType"`
 	// Number of license units consumed by the resource.
-	LicenseUnitsConsumed pulumi.Float64Input `pulumi:"licenseUnitsConsumed"`
+	LicenseUnitsConsumed pulumi.Float64PtrInput `pulumi:"licenseUnitsConsumed"`
 	// Collection of missing product licenses.
 	MissingProducts GetProductLicenseConsumersItemMissingProductArrayInput `pulumi:"missingProducts"`
 	// The resource product name.
-	ProductName pulumi.StringInput `pulumi:"productName"`
+	ProductName pulumi.StringPtrInput `pulumi:"productName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
-	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId pulumi.StringPtrInput `pulumi:"resourceCompartmentId"`
 	// The display name of the compartment that contains the resource.
-	ResourceCompartmentName pulumi.StringInput `pulumi:"resourceCompartmentName"`
+	ResourceCompartmentName pulumi.StringPtrInput `pulumi:"resourceCompartmentName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The display name of the resource.
-	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// Number of units of the resource
-	ResourceUnitCount pulumi.Float64Input `pulumi:"resourceUnitCount"`
+	ResourceUnitCount pulumi.Float64PtrInput `pulumi:"resourceUnitCount"`
 	// The unit type for the resource.
-	ResourceUnitType pulumi.StringInput `pulumi:"resourceUnitType"`
+	ResourceUnitType pulumi.StringPtrInput `pulumi:"resourceUnitType"`
 }
 
 func (GetProductLicenseConsumersItemArgs) ElementType() reflect.Type {
@@ -770,12 +673,6 @@ func (i GetProductLicenseConsumersItemArgs) ToGetProductLicenseConsumersItemOutp
 
 func (i GetProductLicenseConsumersItemArgs) ToGetProductLicenseConsumersItemOutputWithContext(ctx context.Context) GetProductLicenseConsumersItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemOutput)
-}
-
-func (i GetProductLicenseConsumersItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItem] {
-	return pulumix.Output[GetProductLicenseConsumersItem]{
-		OutputState: i.ToGetProductLicenseConsumersItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProductLicenseConsumersItemArrayInput is an input type that accepts GetProductLicenseConsumersItemArray and GetProductLicenseConsumersItemArrayOutput values.
@@ -803,12 +700,6 @@ func (i GetProductLicenseConsumersItemArray) ToGetProductLicenseConsumersItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemArrayOutput)
 }
 
-func (i GetProductLicenseConsumersItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItem] {
-	return pulumix.Output[[]GetProductLicenseConsumersItem]{
-		OutputState: i.ToGetProductLicenseConsumersItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProductLicenseConsumersItemOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicenseConsumersItemOutput) ElementType() reflect.Type {
@@ -823,30 +714,24 @@ func (o GetProductLicenseConsumersItemOutput) ToGetProductLicenseConsumersItemOu
 	return o
 }
 
-func (o GetProductLicenseConsumersItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItem] {
-	return pulumix.Output[GetProductLicenseConsumersItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if all options are available.
-func (o GetProductLicenseConsumersItemOutput) AreAllOptionsAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) bool { return v.AreAllOptionsAvailable }).(pulumi.BoolOutput)
+func (o GetProductLicenseConsumersItemOutput) AreAllOptionsAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *bool { return v.AreAllOptionsAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies if the base license is available.
-func (o GetProductLicenseConsumersItemOutput) IsBaseLicenseAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) bool { return v.IsBaseLicenseAvailable }).(pulumi.BoolOutput)
+func (o GetProductLicenseConsumersItemOutput) IsBaseLicenseAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *bool { return v.IsBaseLicenseAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // The product license unit.
-func (o GetProductLicenseConsumersItemOutput) LicenseUnitType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) string { return v.LicenseUnitType }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemOutput) LicenseUnitType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *string { return v.LicenseUnitType }).(pulumi.StringPtrOutput)
 }
 
 // Number of license units consumed by the resource.
-func (o GetProductLicenseConsumersItemOutput) LicenseUnitsConsumed() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) float64 { return v.LicenseUnitsConsumed }).(pulumi.Float64Output)
+func (o GetProductLicenseConsumersItemOutput) LicenseUnitsConsumed() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *float64 { return v.LicenseUnitsConsumed }).(pulumi.Float64PtrOutput)
 }
 
 // Collection of missing product licenses.
@@ -857,38 +742,38 @@ func (o GetProductLicenseConsumersItemOutput) MissingProducts() GetProductLicens
 }
 
 // The resource product name.
-func (o GetProductLicenseConsumersItemOutput) ProductName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) string { return v.ProductName }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemOutput) ProductName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *string { return v.ProductName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
-func (o GetProductLicenseConsumersItemOutput) ResourceCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) string { return v.ResourceCompartmentId }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemOutput) ResourceCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *string { return v.ResourceCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the compartment that contains the resource.
-func (o GetProductLicenseConsumersItemOutput) ResourceCompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) string { return v.ResourceCompartmentName }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemOutput) ResourceCompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *string { return v.ResourceCompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o GetProductLicenseConsumersItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the resource.
-func (o GetProductLicenseConsumersItemOutput) ResourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) string { return v.ResourceName }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
 // Number of units of the resource
-func (o GetProductLicenseConsumersItemOutput) ResourceUnitCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) float64 { return v.ResourceUnitCount }).(pulumi.Float64Output)
+func (o GetProductLicenseConsumersItemOutput) ResourceUnitCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *float64 { return v.ResourceUnitCount }).(pulumi.Float64PtrOutput)
 }
 
 // The unit type for the resource.
-func (o GetProductLicenseConsumersItemOutput) ResourceUnitType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItem) string { return v.ResourceUnitType }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemOutput) ResourceUnitType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItem) *string { return v.ResourceUnitType }).(pulumi.StringPtrOutput)
 }
 
 type GetProductLicenseConsumersItemArrayOutput struct{ *pulumi.OutputState }
@@ -905,12 +790,6 @@ func (o GetProductLicenseConsumersItemArrayOutput) ToGetProductLicenseConsumersI
 	return o
 }
 
-func (o GetProductLicenseConsumersItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItem] {
-	return pulumix.Output[[]GetProductLicenseConsumersItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProductLicenseConsumersItemArrayOutput) Index(i pulumi.IntInput) GetProductLicenseConsumersItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProductLicenseConsumersItem {
 		return vs[0].([]GetProductLicenseConsumersItem)[vs[1].(int)]
@@ -919,11 +798,11 @@ func (o GetProductLicenseConsumersItemArrayOutput) Index(i pulumi.IntInput) GetP
 
 type GetProductLicenseConsumersItemMissingProduct struct {
 	// Product category base or option.
-	Category string `pulumi:"category"`
+	Category *string `pulumi:"category"`
 	// Units required for the missing product.
-	Count float64 `pulumi:"count"`
+	Count *float64 `pulumi:"count"`
 	// Name of the product.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetProductLicenseConsumersItemMissingProductInput is an input type that accepts GetProductLicenseConsumersItemMissingProductArgs and GetProductLicenseConsumersItemMissingProductOutput values.
@@ -939,11 +818,11 @@ type GetProductLicenseConsumersItemMissingProductInput interface {
 
 type GetProductLicenseConsumersItemMissingProductArgs struct {
 	// Product category base or option.
-	Category pulumi.StringInput `pulumi:"category"`
+	Category pulumi.StringPtrInput `pulumi:"category"`
 	// Units required for the missing product.
-	Count pulumi.Float64Input `pulumi:"count"`
+	Count pulumi.Float64PtrInput `pulumi:"count"`
 	// Name of the product.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetProductLicenseConsumersItemMissingProductArgs) ElementType() reflect.Type {
@@ -956,12 +835,6 @@ func (i GetProductLicenseConsumersItemMissingProductArgs) ToGetProductLicenseCon
 
 func (i GetProductLicenseConsumersItemMissingProductArgs) ToGetProductLicenseConsumersItemMissingProductOutputWithContext(ctx context.Context) GetProductLicenseConsumersItemMissingProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemMissingProductOutput)
-}
-
-func (i GetProductLicenseConsumersItemMissingProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItemMissingProduct] {
-	return pulumix.Output[GetProductLicenseConsumersItemMissingProduct]{
-		OutputState: i.ToGetProductLicenseConsumersItemMissingProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProductLicenseConsumersItemMissingProductArrayInput is an input type that accepts GetProductLicenseConsumersItemMissingProductArray and GetProductLicenseConsumersItemMissingProductArrayOutput values.
@@ -989,12 +862,6 @@ func (i GetProductLicenseConsumersItemMissingProductArray) ToGetProductLicenseCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemMissingProductArrayOutput)
 }
 
-func (i GetProductLicenseConsumersItemMissingProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct] {
-	return pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct]{
-		OutputState: i.ToGetProductLicenseConsumersItemMissingProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProductLicenseConsumersItemMissingProductOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicenseConsumersItemMissingProductOutput) ElementType() reflect.Type {
@@ -1009,25 +876,19 @@ func (o GetProductLicenseConsumersItemMissingProductOutput) ToGetProductLicenseC
 	return o
 }
 
-func (o GetProductLicenseConsumersItemMissingProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItemMissingProduct] {
-	return pulumix.Output[GetProductLicenseConsumersItemMissingProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Product category base or option.
-func (o GetProductLicenseConsumersItemMissingProductOutput) Category() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItemMissingProduct) string { return v.Category }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemMissingProductOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItemMissingProduct) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
 // Units required for the missing product.
-func (o GetProductLicenseConsumersItemMissingProductOutput) Count() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProductLicenseConsumersItemMissingProduct) float64 { return v.Count }).(pulumi.Float64Output)
+func (o GetProductLicenseConsumersItemMissingProductOutput) Count() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItemMissingProduct) *float64 { return v.Count }).(pulumi.Float64PtrOutput)
 }
 
 // Name of the product.
-func (o GetProductLicenseConsumersItemMissingProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersItemMissingProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersItemMissingProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersItemMissingProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetProductLicenseConsumersItemMissingProductArrayOutput struct{ *pulumi.OutputState }
@@ -1044,12 +905,6 @@ func (o GetProductLicenseConsumersItemMissingProductArrayOutput) ToGetProductLic
 	return o
 }
 
-func (o GetProductLicenseConsumersItemMissingProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct] {
-	return pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProductLicenseConsumersItemMissingProductArrayOutput) Index(i pulumi.IntInput) GetProductLicenseConsumersItemMissingProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProductLicenseConsumersItemMissingProduct {
 		return vs[0].([]GetProductLicenseConsumersItemMissingProduct)[vs[1].(int)]
@@ -1058,15 +913,15 @@ func (o GetProductLicenseConsumersItemMissingProductArrayOutput) Index(i pulumi.
 
 type GetProductLicenseImage struct {
 	// The image ID associated with the product license.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The image listing ID.
-	ListingId string `pulumi:"listingId"`
+	ListingId *string `pulumi:"listingId"`
 	// The listing name associated with the product license.
-	ListingName string `pulumi:"listingName"`
+	ListingName *string `pulumi:"listingName"`
 	// The image package version.
-	PackageVersion string `pulumi:"packageVersion"`
+	PackageVersion *string `pulumi:"packageVersion"`
 	// The image publisher.
-	Publisher string `pulumi:"publisher"`
+	Publisher *string `pulumi:"publisher"`
 }
 
 // GetProductLicenseImageInput is an input type that accepts GetProductLicenseImageArgs and GetProductLicenseImageOutput values.
@@ -1082,15 +937,15 @@ type GetProductLicenseImageInput interface {
 
 type GetProductLicenseImageArgs struct {
 	// The image ID associated with the product license.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The image listing ID.
-	ListingId pulumi.StringInput `pulumi:"listingId"`
+	ListingId pulumi.StringPtrInput `pulumi:"listingId"`
 	// The listing name associated with the product license.
-	ListingName pulumi.StringInput `pulumi:"listingName"`
+	ListingName pulumi.StringPtrInput `pulumi:"listingName"`
 	// The image package version.
-	PackageVersion pulumi.StringInput `pulumi:"packageVersion"`
+	PackageVersion pulumi.StringPtrInput `pulumi:"packageVersion"`
 	// The image publisher.
-	Publisher pulumi.StringInput `pulumi:"publisher"`
+	Publisher pulumi.StringPtrInput `pulumi:"publisher"`
 }
 
 func (GetProductLicenseImageArgs) ElementType() reflect.Type {
@@ -1103,12 +958,6 @@ func (i GetProductLicenseImageArgs) ToGetProductLicenseImageOutput() GetProductL
 
 func (i GetProductLicenseImageArgs) ToGetProductLicenseImageOutputWithContext(ctx context.Context) GetProductLicenseImageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseImageOutput)
-}
-
-func (i GetProductLicenseImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseImage] {
-	return pulumix.Output[GetProductLicenseImage]{
-		OutputState: i.ToGetProductLicenseImageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProductLicenseImageArrayInput is an input type that accepts GetProductLicenseImageArray and GetProductLicenseImageArrayOutput values.
@@ -1136,12 +985,6 @@ func (i GetProductLicenseImageArray) ToGetProductLicenseImageArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseImageArrayOutput)
 }
 
-func (i GetProductLicenseImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseImage] {
-	return pulumix.Output[[]GetProductLicenseImage]{
-		OutputState: i.ToGetProductLicenseImageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProductLicenseImageOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicenseImageOutput) ElementType() reflect.Type {
@@ -1156,35 +999,29 @@ func (o GetProductLicenseImageOutput) ToGetProductLicenseImageOutputWithContext(
 	return o
 }
 
-func (o GetProductLicenseImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseImage] {
-	return pulumix.Output[GetProductLicenseImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The image ID associated with the product license.
-func (o GetProductLicenseImageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseImage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProductLicenseImageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseImage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The image listing ID.
-func (o GetProductLicenseImageOutput) ListingId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseImage) string { return v.ListingId }).(pulumi.StringOutput)
+func (o GetProductLicenseImageOutput) ListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseImage) *string { return v.ListingId }).(pulumi.StringPtrOutput)
 }
 
 // The listing name associated with the product license.
-func (o GetProductLicenseImageOutput) ListingName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseImage) string { return v.ListingName }).(pulumi.StringOutput)
+func (o GetProductLicenseImageOutput) ListingName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseImage) *string { return v.ListingName }).(pulumi.StringPtrOutput)
 }
 
 // The image package version.
-func (o GetProductLicenseImageOutput) PackageVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseImage) string { return v.PackageVersion }).(pulumi.StringOutput)
+func (o GetProductLicenseImageOutput) PackageVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseImage) *string { return v.PackageVersion }).(pulumi.StringPtrOutput)
 }
 
 // The image publisher.
-func (o GetProductLicenseImageOutput) Publisher() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseImage) string { return v.Publisher }).(pulumi.StringOutput)
+func (o GetProductLicenseImageOutput) Publisher() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseImage) *string { return v.Publisher }).(pulumi.StringPtrOutput)
 }
 
 type GetProductLicenseImageArrayOutput struct{ *pulumi.OutputState }
@@ -1199,12 +1036,6 @@ func (o GetProductLicenseImageArrayOutput) ToGetProductLicenseImageArrayOutput()
 
 func (o GetProductLicenseImageArrayOutput) ToGetProductLicenseImageArrayOutputWithContext(ctx context.Context) GetProductLicenseImageArrayOutput {
 	return o
-}
-
-func (o GetProductLicenseImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseImage] {
-	return pulumix.Output[[]GetProductLicenseImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProductLicenseImageArrayOutput) Index(i pulumi.IntInput) GetProductLicenseImageOutput {
@@ -1248,12 +1079,6 @@ func (i GetProductLicensesFilterArgs) ToGetProductLicensesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesFilterOutput)
 }
 
-func (i GetProductLicensesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesFilter] {
-	return pulumix.Output[GetProductLicensesFilter]{
-		OutputState: i.ToGetProductLicensesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProductLicensesFilterArrayInput is an input type that accepts GetProductLicensesFilterArray and GetProductLicensesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesFilterArrayInput` via:
 //
@@ -1279,12 +1104,6 @@ func (i GetProductLicensesFilterArray) ToGetProductLicensesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesFilterArrayOutput)
 }
 
-func (i GetProductLicensesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesFilter] {
-	return pulumix.Output[[]GetProductLicensesFilter]{
-		OutputState: i.ToGetProductLicensesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProductLicensesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesFilterOutput) ElementType() reflect.Type {
@@ -1297,12 +1116,6 @@ func (o GetProductLicensesFilterOutput) ToGetProductLicensesFilterOutput() GetPr
 
 func (o GetProductLicensesFilterOutput) ToGetProductLicensesFilterOutputWithContext(ctx context.Context) GetProductLicensesFilterOutput {
 	return o
-}
-
-func (o GetProductLicensesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesFilter] {
-	return pulumix.Output[GetProductLicensesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProductLicensesFilterOutput) Name() pulumi.StringOutput {
@@ -1329,12 +1142,6 @@ func (o GetProductLicensesFilterArrayOutput) ToGetProductLicensesFilterArrayOutp
 
 func (o GetProductLicensesFilterArrayOutput) ToGetProductLicensesFilterArrayOutputWithContext(ctx context.Context) GetProductLicensesFilterArrayOutput {
 	return o
-}
-
-func (o GetProductLicensesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesFilter] {
-	return pulumix.Output[[]GetProductLicensesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProductLicensesFilterArrayOutput) Index(i pulumi.IntInput) GetProductLicensesFilterOutput {
@@ -1374,12 +1181,6 @@ func (i GetProductLicensesProductLicenseCollectionArgs) ToGetProductLicensesProd
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionOutput)
 }
 
-func (i GetProductLicensesProductLicenseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollection] {
-	return pulumix.Output[GetProductLicensesProductLicenseCollection]{
-		OutputState: i.ToGetProductLicensesProductLicenseCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProductLicensesProductLicenseCollectionArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionArray and GetProductLicensesProductLicenseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionArrayInput` via:
 //
@@ -1405,12 +1206,6 @@ func (i GetProductLicensesProductLicenseCollectionArray) ToGetProductLicensesPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionArrayOutput)
 }
 
-func (i GetProductLicensesProductLicenseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollection] {
-	return pulumix.Output[[]GetProductLicensesProductLicenseCollection]{
-		OutputState: i.ToGetProductLicensesProductLicenseCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProductLicensesProductLicenseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesProductLicenseCollectionOutput) ElementType() reflect.Type {
@@ -1423,12 +1218,6 @@ func (o GetProductLicensesProductLicenseCollectionOutput) ToGetProductLicensesPr
 
 func (o GetProductLicensesProductLicenseCollectionOutput) ToGetProductLicensesProductLicenseCollectionOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionOutput {
 	return o
-}
-
-func (o GetProductLicensesProductLicenseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollection] {
-	return pulumix.Output[GetProductLicensesProductLicenseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProductLicensesProductLicenseCollectionOutput) Items() GetProductLicensesProductLicenseCollectionItemArrayOutput {
@@ -1451,12 +1240,6 @@ func (o GetProductLicensesProductLicenseCollectionArrayOutput) ToGetProductLicen
 	return o
 }
 
-func (o GetProductLicensesProductLicenseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollection] {
-	return pulumix.Output[[]GetProductLicensesProductLicenseCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProductLicensesProductLicenseCollectionArrayOutput) Index(i pulumi.IntInput) GetProductLicensesProductLicenseCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProductLicensesProductLicenseCollection {
 		return vs[0].([]GetProductLicensesProductLicenseCollection)[vs[1].(int)]
@@ -1465,47 +1248,47 @@ func (o GetProductLicensesProductLicenseCollectionArrayOutput) Index(i pulumi.In
 
 type GetProductLicensesProductLicenseCollectionItem struct {
 	// The number of active license records associated with the product license.
-	ActiveLicenseRecordCount int `pulumi:"activeLicenseRecordCount"`
+	ActiveLicenseRecordCount *int `pulumi:"activeLicenseRecordCount"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// License record name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The image ID associated with the product license.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The images associated with the product license.
 	Images []GetProductLicensesProductLicenseCollectionItemImage `pulumi:"images"`
 	// Specifies whether or not the product license is oversubscribed.
-	IsOverSubscribed bool `pulumi:"isOverSubscribed"`
+	IsOverSubscribed *bool `pulumi:"isOverSubscribed"`
 	// Specifies if the license unit count is unlimited.
-	IsUnlimited bool `pulumi:"isUnlimited"`
+	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// Specifies whether the vendor is Oracle or a third party.
-	IsVendorOracle bool `pulumi:"isVendorOracle"`
+	IsVendorOracle *bool `pulumi:"isVendorOracle"`
 	// The product license unit.
-	LicenseUnit string `pulumi:"licenseUnit"`
+	LicenseUnit *string `pulumi:"licenseUnit"`
 	// The current product license state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The current product license status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Status description for the current product license status.
-	StatusDescription string `pulumi:"statusDescription"`
+	StatusDescription *string `pulumi:"statusDescription"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-	TotalActiveLicenseUnitCount int `pulumi:"totalActiveLicenseUnitCount"`
+	TotalActiveLicenseUnitCount *int `pulumi:"totalActiveLicenseUnitCount"`
 	// The number of license records associated with the product license.
-	TotalLicenseRecordCount int `pulumi:"totalLicenseRecordCount"`
+	TotalLicenseRecordCount *int `pulumi:"totalLicenseRecordCount"`
 	// The number of license units consumed. Updated after each allocation run.
-	TotalLicenseUnitsConsumed float64 `pulumi:"totalLicenseUnitsConsumed"`
+	TotalLicenseUnitsConsumed *float64 `pulumi:"totalLicenseUnitsConsumed"`
 	// The vendor of the ProductLicense
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 // GetProductLicensesProductLicenseCollectionItemInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemArgs and GetProductLicensesProductLicenseCollectionItemOutput values.
@@ -1521,47 +1304,47 @@ type GetProductLicensesProductLicenseCollectionItemInput interface {
 
 type GetProductLicensesProductLicenseCollectionItemArgs struct {
 	// The number of active license records associated with the product license.
-	ActiveLicenseRecordCount pulumi.IntInput `pulumi:"activeLicenseRecordCount"`
+	ActiveLicenseRecordCount pulumi.IntPtrInput `pulumi:"activeLicenseRecordCount"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// License record name
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The image ID associated with the product license.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The images associated with the product license.
 	Images GetProductLicensesProductLicenseCollectionItemImageArrayInput `pulumi:"images"`
 	// Specifies whether or not the product license is oversubscribed.
-	IsOverSubscribed pulumi.BoolInput `pulumi:"isOverSubscribed"`
+	IsOverSubscribed pulumi.BoolPtrInput `pulumi:"isOverSubscribed"`
 	// Specifies if the license unit count is unlimited.
-	IsUnlimited pulumi.BoolInput `pulumi:"isUnlimited"`
+	IsUnlimited pulumi.BoolPtrInput `pulumi:"isUnlimited"`
 	// Specifies whether the vendor is Oracle or a third party.
-	IsVendorOracle pulumi.BoolInput `pulumi:"isVendorOracle"`
+	IsVendorOracle pulumi.BoolPtrInput `pulumi:"isVendorOracle"`
 	// The product license unit.
-	LicenseUnit pulumi.StringInput `pulumi:"licenseUnit"`
+	LicenseUnit pulumi.StringPtrInput `pulumi:"licenseUnit"`
 	// The current product license state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The current product license status.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Status description for the current product license status.
-	StatusDescription pulumi.StringInput `pulumi:"statusDescription"`
+	StatusDescription pulumi.StringPtrInput `pulumi:"statusDescription"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-	TotalActiveLicenseUnitCount pulumi.IntInput `pulumi:"totalActiveLicenseUnitCount"`
+	TotalActiveLicenseUnitCount pulumi.IntPtrInput `pulumi:"totalActiveLicenseUnitCount"`
 	// The number of license records associated with the product license.
-	TotalLicenseRecordCount pulumi.IntInput `pulumi:"totalLicenseRecordCount"`
+	TotalLicenseRecordCount pulumi.IntPtrInput `pulumi:"totalLicenseRecordCount"`
 	// The number of license units consumed. Updated after each allocation run.
-	TotalLicenseUnitsConsumed pulumi.Float64Input `pulumi:"totalLicenseUnitsConsumed"`
+	TotalLicenseUnitsConsumed pulumi.Float64PtrInput `pulumi:"totalLicenseUnitsConsumed"`
 	// The vendor of the ProductLicense
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 }
 
 func (GetProductLicensesProductLicenseCollectionItemArgs) ElementType() reflect.Type {
@@ -1574,12 +1357,6 @@ func (i GetProductLicensesProductLicenseCollectionItemArgs) ToGetProductLicenses
 
 func (i GetProductLicensesProductLicenseCollectionItemArgs) ToGetProductLicensesProductLicenseCollectionItemOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemOutput)
-}
-
-func (i GetProductLicensesProductLicenseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItem] {
-	return pulumix.Output[GetProductLicensesProductLicenseCollectionItem]{
-		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProductLicensesProductLicenseCollectionItemArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemArray and GetProductLicensesProductLicenseCollectionItemArrayOutput values.
@@ -1607,12 +1384,6 @@ func (i GetProductLicensesProductLicenseCollectionItemArray) ToGetProductLicense
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemArrayOutput)
 }
 
-func (i GetProductLicensesProductLicenseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem] {
-	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem]{
-		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProductLicensesProductLicenseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesProductLicenseCollectionItemOutput) ElementType() reflect.Type {
@@ -1627,20 +1398,14 @@ func (o GetProductLicensesProductLicenseCollectionItemOutput) ToGetProductLicens
 	return o
 }
 
-func (o GetProductLicensesProductLicenseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItem] {
-	return pulumix.Output[GetProductLicensesProductLicenseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of active license records associated with the product license.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) ActiveLicenseRecordCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) int { return v.ActiveLicenseRecordCount }).(pulumi.IntOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) ActiveLicenseRecordCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *int { return v.ActiveLicenseRecordCount }).(pulumi.IntPtrOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1649,8 +1414,8 @@ func (o GetProductLicensesProductLicenseCollectionItemOutput) DefinedTags() pulu
 }
 
 // License record name
-func (o GetProductLicensesProductLicenseCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1659,8 +1424,8 @@ func (o GetProductLicensesProductLicenseCollectionItemOutput) FreeformTags() pul
 }
 
 // The image ID associated with the product license.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The images associated with the product license.
@@ -1671,38 +1436,38 @@ func (o GetProductLicensesProductLicenseCollectionItemOutput) Images() GetProduc
 }
 
 // Specifies whether or not the product license is oversubscribed.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) IsOverSubscribed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) bool { return v.IsOverSubscribed }).(pulumi.BoolOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) IsOverSubscribed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *bool { return v.IsOverSubscribed }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies if the license unit count is unlimited.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) IsUnlimited() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) bool { return v.IsUnlimited }).(pulumi.BoolOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) IsUnlimited() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *bool { return v.IsUnlimited }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the vendor is Oracle or a third party.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) IsVendorOracle() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) bool { return v.IsVendorOracle }).(pulumi.BoolOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) IsVendorOracle() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *bool { return v.IsVendorOracle }).(pulumi.BoolPtrOutput)
 }
 
 // The product license unit.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) LicenseUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.LicenseUnit }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) LicenseUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.LicenseUnit }).(pulumi.StringPtrOutput)
 }
 
 // The current product license state.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The current product license status.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Status description for the current product license status.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) StatusDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.StatusDescription }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) StatusDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.StatusDescription }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1711,33 +1476,33 @@ func (o GetProductLicensesProductLicenseCollectionItemOutput) SystemTags() pulum
 }
 
 // The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) TotalActiveLicenseUnitCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) int { return v.TotalActiveLicenseUnitCount }).(pulumi.IntOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) TotalActiveLicenseUnitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *int { return v.TotalActiveLicenseUnitCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of license records associated with the product license.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) TotalLicenseRecordCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) int { return v.TotalLicenseRecordCount }).(pulumi.IntOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) TotalLicenseRecordCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *int { return v.TotalLicenseRecordCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of license units consumed. Updated after each allocation run.
-func (o GetProductLicensesProductLicenseCollectionItemOutput) TotalLicenseUnitsConsumed() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) float64 { return v.TotalLicenseUnitsConsumed }).(pulumi.Float64Output)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) TotalLicenseUnitsConsumed() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *float64 { return v.TotalLicenseUnitsConsumed }).(pulumi.Float64PtrOutput)
 }
 
 // The vendor of the ProductLicense
-func (o GetProductLicensesProductLicenseCollectionItemOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItem) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type GetProductLicensesProductLicenseCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1754,12 +1519,6 @@ func (o GetProductLicensesProductLicenseCollectionItemArrayOutput) ToGetProductL
 	return o
 }
 
-func (o GetProductLicensesProductLicenseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem] {
-	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProductLicensesProductLicenseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProductLicensesProductLicenseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProductLicensesProductLicenseCollectionItem {
 		return vs[0].([]GetProductLicensesProductLicenseCollectionItem)[vs[1].(int)]
@@ -1768,15 +1527,15 @@ func (o GetProductLicensesProductLicenseCollectionItemArrayOutput) Index(i pulum
 
 type GetProductLicensesProductLicenseCollectionItemImage struct {
 	// The image ID associated with the product license.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The image listing ID.
-	ListingId string `pulumi:"listingId"`
+	ListingId *string `pulumi:"listingId"`
 	// The listing name associated with the product license.
-	ListingName string `pulumi:"listingName"`
+	ListingName *string `pulumi:"listingName"`
 	// The image package version.
-	PackageVersion string `pulumi:"packageVersion"`
+	PackageVersion *string `pulumi:"packageVersion"`
 	// The image publisher.
-	Publisher string `pulumi:"publisher"`
+	Publisher *string `pulumi:"publisher"`
 }
 
 // GetProductLicensesProductLicenseCollectionItemImageInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemImageArgs and GetProductLicensesProductLicenseCollectionItemImageOutput values.
@@ -1792,15 +1551,15 @@ type GetProductLicensesProductLicenseCollectionItemImageInput interface {
 
 type GetProductLicensesProductLicenseCollectionItemImageArgs struct {
 	// The image ID associated with the product license.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The image listing ID.
-	ListingId pulumi.StringInput `pulumi:"listingId"`
+	ListingId pulumi.StringPtrInput `pulumi:"listingId"`
 	// The listing name associated with the product license.
-	ListingName pulumi.StringInput `pulumi:"listingName"`
+	ListingName pulumi.StringPtrInput `pulumi:"listingName"`
 	// The image package version.
-	PackageVersion pulumi.StringInput `pulumi:"packageVersion"`
+	PackageVersion pulumi.StringPtrInput `pulumi:"packageVersion"`
 	// The image publisher.
-	Publisher pulumi.StringInput `pulumi:"publisher"`
+	Publisher pulumi.StringPtrInput `pulumi:"publisher"`
 }
 
 func (GetProductLicensesProductLicenseCollectionItemImageArgs) ElementType() reflect.Type {
@@ -1813,12 +1572,6 @@ func (i GetProductLicensesProductLicenseCollectionItemImageArgs) ToGetProductLic
 
 func (i GetProductLicensesProductLicenseCollectionItemImageArgs) ToGetProductLicensesProductLicenseCollectionItemImageOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionItemImageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemImageOutput)
-}
-
-func (i GetProductLicensesProductLicenseCollectionItemImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage] {
-	return pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage]{
-		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemImageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProductLicensesProductLicenseCollectionItemImageArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemImageArray and GetProductLicensesProductLicenseCollectionItemImageArrayOutput values.
@@ -1846,12 +1599,6 @@ func (i GetProductLicensesProductLicenseCollectionItemImageArray) ToGetProductLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemImageArrayOutput)
 }
 
-func (i GetProductLicensesProductLicenseCollectionItemImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage] {
-	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage]{
-		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemImageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProductLicensesProductLicenseCollectionItemImageOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesProductLicenseCollectionItemImageOutput) ElementType() reflect.Type {
@@ -1866,35 +1613,29 @@ func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ToGetProductL
 	return o
 }
 
-func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage] {
-	return pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The image ID associated with the product license.
-func (o GetProductLicensesProductLicenseCollectionItemImageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemImageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The image listing ID.
-func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ListingId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) string { return v.ListingId }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) *string { return v.ListingId }).(pulumi.StringPtrOutput)
 }
 
 // The listing name associated with the product license.
-func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ListingName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) string { return v.ListingName }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ListingName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) *string { return v.ListingName }).(pulumi.StringPtrOutput)
 }
 
 // The image package version.
-func (o GetProductLicensesProductLicenseCollectionItemImageOutput) PackageVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) string { return v.PackageVersion }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemImageOutput) PackageVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) *string { return v.PackageVersion }).(pulumi.StringPtrOutput)
 }
 
 // The image publisher.
-func (o GetProductLicensesProductLicenseCollectionItemImageOutput) Publisher() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) string { return v.Publisher }).(pulumi.StringOutput)
+func (o GetProductLicensesProductLicenseCollectionItemImageOutput) Publisher() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicensesProductLicenseCollectionItemImage) *string { return v.Publisher }).(pulumi.StringPtrOutput)
 }
 
 type GetProductLicensesProductLicenseCollectionItemImageArrayOutput struct{ *pulumi.OutputState }
@@ -1911,12 +1652,6 @@ func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) ToGetPro
 	return o
 }
 
-func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage] {
-	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) Index(i pulumi.IntInput) GetProductLicensesProductLicenseCollectionItemImageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProductLicensesProductLicenseCollectionItemImage {
 		return vs[0].([]GetProductLicensesProductLicenseCollectionItemImage)[vs[1].(int)]
@@ -1925,19 +1660,19 @@ func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) Index(i 
 
 type GetTopUtilizedProductLicensesItem struct {
 	// Specifies if the license unit count is unlimited.
-	IsUnlimited bool `pulumi:"isUnlimited"`
+	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	ProductLicenseId string `pulumi:"productLicenseId"`
+	ProductLicenseId *string `pulumi:"productLicenseId"`
 	// The product type.
-	ProductType string `pulumi:"productType"`
+	ProductType *string `pulumi:"productType"`
 	// The current product license status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Total number of license units in the product license provided by the user.
-	TotalLicenseUnitCount int `pulumi:"totalLicenseUnitCount"`
+	TotalLicenseUnitCount *int `pulumi:"totalLicenseUnitCount"`
 	// Number of license units consumed.
-	TotalUnitsConsumed float64 `pulumi:"totalUnitsConsumed"`
+	TotalUnitsConsumed *float64 `pulumi:"totalUnitsConsumed"`
 	// The product license unit.
-	UnitType string `pulumi:"unitType"`
+	UnitType *string `pulumi:"unitType"`
 }
 
 // GetTopUtilizedProductLicensesItemInput is an input type that accepts GetTopUtilizedProductLicensesItemArgs and GetTopUtilizedProductLicensesItemOutput values.
@@ -1953,19 +1688,19 @@ type GetTopUtilizedProductLicensesItemInput interface {
 
 type GetTopUtilizedProductLicensesItemArgs struct {
 	// Specifies if the license unit count is unlimited.
-	IsUnlimited pulumi.BoolInput `pulumi:"isUnlimited"`
+	IsUnlimited pulumi.BoolPtrInput `pulumi:"isUnlimited"`
 	// The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	ProductLicenseId pulumi.StringInput `pulumi:"productLicenseId"`
+	ProductLicenseId pulumi.StringPtrInput `pulumi:"productLicenseId"`
 	// The product type.
-	ProductType pulumi.StringInput `pulumi:"productType"`
+	ProductType pulumi.StringPtrInput `pulumi:"productType"`
 	// The current product license status.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Total number of license units in the product license provided by the user.
-	TotalLicenseUnitCount pulumi.IntInput `pulumi:"totalLicenseUnitCount"`
+	TotalLicenseUnitCount pulumi.IntPtrInput `pulumi:"totalLicenseUnitCount"`
 	// Number of license units consumed.
-	TotalUnitsConsumed pulumi.Float64Input `pulumi:"totalUnitsConsumed"`
+	TotalUnitsConsumed pulumi.Float64PtrInput `pulumi:"totalUnitsConsumed"`
 	// The product license unit.
-	UnitType pulumi.StringInput `pulumi:"unitType"`
+	UnitType pulumi.StringPtrInput `pulumi:"unitType"`
 }
 
 func (GetTopUtilizedProductLicensesItemArgs) ElementType() reflect.Type {
@@ -1978,12 +1713,6 @@ func (i GetTopUtilizedProductLicensesItemArgs) ToGetTopUtilizedProductLicensesIt
 
 func (i GetTopUtilizedProductLicensesItemArgs) ToGetTopUtilizedProductLicensesItemOutputWithContext(ctx context.Context) GetTopUtilizedProductLicensesItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedProductLicensesItemOutput)
-}
-
-func (i GetTopUtilizedProductLicensesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedProductLicensesItem] {
-	return pulumix.Output[GetTopUtilizedProductLicensesItem]{
-		OutputState: i.ToGetTopUtilizedProductLicensesItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTopUtilizedProductLicensesItemArrayInput is an input type that accepts GetTopUtilizedProductLicensesItemArray and GetTopUtilizedProductLicensesItemArrayOutput values.
@@ -2011,12 +1740,6 @@ func (i GetTopUtilizedProductLicensesItemArray) ToGetTopUtilizedProductLicensesI
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedProductLicensesItemArrayOutput)
 }
 
-func (i GetTopUtilizedProductLicensesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedProductLicensesItem] {
-	return pulumix.Output[[]GetTopUtilizedProductLicensesItem]{
-		OutputState: i.ToGetTopUtilizedProductLicensesItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTopUtilizedProductLicensesItemOutput struct{ *pulumi.OutputState }
 
 func (GetTopUtilizedProductLicensesItemOutput) ElementType() reflect.Type {
@@ -2031,45 +1754,39 @@ func (o GetTopUtilizedProductLicensesItemOutput) ToGetTopUtilizedProductLicenses
 	return o
 }
 
-func (o GetTopUtilizedProductLicensesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedProductLicensesItem] {
-	return pulumix.Output[GetTopUtilizedProductLicensesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if the license unit count is unlimited.
-func (o GetTopUtilizedProductLicensesItemOutput) IsUnlimited() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) bool { return v.IsUnlimited }).(pulumi.BoolOutput)
+func (o GetTopUtilizedProductLicensesItemOutput) IsUnlimited() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) *bool { return v.IsUnlimited }).(pulumi.BoolPtrOutput)
 }
 
 // The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetTopUtilizedProductLicensesItemOutput) ProductLicenseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) string { return v.ProductLicenseId }).(pulumi.StringOutput)
+func (o GetTopUtilizedProductLicensesItemOutput) ProductLicenseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) *string { return v.ProductLicenseId }).(pulumi.StringPtrOutput)
 }
 
 // The product type.
-func (o GetTopUtilizedProductLicensesItemOutput) ProductType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) string { return v.ProductType }).(pulumi.StringOutput)
+func (o GetTopUtilizedProductLicensesItemOutput) ProductType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) *string { return v.ProductType }).(pulumi.StringPtrOutput)
 }
 
 // The current product license status.
-func (o GetTopUtilizedProductLicensesItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetTopUtilizedProductLicensesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Total number of license units in the product license provided by the user.
-func (o GetTopUtilizedProductLicensesItemOutput) TotalLicenseUnitCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) int { return v.TotalLicenseUnitCount }).(pulumi.IntOutput)
+func (o GetTopUtilizedProductLicensesItemOutput) TotalLicenseUnitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) *int { return v.TotalLicenseUnitCount }).(pulumi.IntPtrOutput)
 }
 
 // Number of license units consumed.
-func (o GetTopUtilizedProductLicensesItemOutput) TotalUnitsConsumed() pulumi.Float64Output {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) float64 { return v.TotalUnitsConsumed }).(pulumi.Float64Output)
+func (o GetTopUtilizedProductLicensesItemOutput) TotalUnitsConsumed() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) *float64 { return v.TotalUnitsConsumed }).(pulumi.Float64PtrOutput)
 }
 
 // The product license unit.
-func (o GetTopUtilizedProductLicensesItemOutput) UnitType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) string { return v.UnitType }).(pulumi.StringOutput)
+func (o GetTopUtilizedProductLicensesItemOutput) UnitType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesItem) *string { return v.UnitType }).(pulumi.StringPtrOutput)
 }
 
 type GetTopUtilizedProductLicensesItemArrayOutput struct{ *pulumi.OutputState }
@@ -2086,12 +1803,6 @@ func (o GetTopUtilizedProductLicensesItemArrayOutput) ToGetTopUtilizedProductLic
 	return o
 }
 
-func (o GetTopUtilizedProductLicensesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedProductLicensesItem] {
-	return pulumix.Output[[]GetTopUtilizedProductLicensesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTopUtilizedProductLicensesItemArrayOutput) Index(i pulumi.IntInput) GetTopUtilizedProductLicensesItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTopUtilizedProductLicensesItem {
 		return vs[0].([]GetTopUtilizedProductLicensesItem)[vs[1].(int)]
@@ -2100,17 +1811,17 @@ func (o GetTopUtilizedProductLicensesItemArrayOutput) Index(i pulumi.IntInput) G
 
 type GetTopUtilizedResourcesItem struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
-	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 	// The display name of the compartment that contains the resource.
-	ResourceCompartmentName string `pulumi:"resourceCompartmentName"`
+	ResourceCompartmentName *string `pulumi:"resourceCompartmentName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// Resource canonical name.
-	ResourceName string `pulumi:"resourceName"`
+	ResourceName *string `pulumi:"resourceName"`
 	// Number of license units consumed by the resource.
-	TotalUnits float64 `pulumi:"totalUnits"`
+	TotalUnits *float64 `pulumi:"totalUnits"`
 	// The resource unit.
-	UnitType string `pulumi:"unitType"`
+	UnitType *string `pulumi:"unitType"`
 }
 
 // GetTopUtilizedResourcesItemInput is an input type that accepts GetTopUtilizedResourcesItemArgs and GetTopUtilizedResourcesItemOutput values.
@@ -2126,17 +1837,17 @@ type GetTopUtilizedResourcesItemInput interface {
 
 type GetTopUtilizedResourcesItemArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
-	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId pulumi.StringPtrInput `pulumi:"resourceCompartmentId"`
 	// The display name of the compartment that contains the resource.
-	ResourceCompartmentName pulumi.StringInput `pulumi:"resourceCompartmentName"`
+	ResourceCompartmentName pulumi.StringPtrInput `pulumi:"resourceCompartmentName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// Resource canonical name.
-	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// Number of license units consumed by the resource.
-	TotalUnits pulumi.Float64Input `pulumi:"totalUnits"`
+	TotalUnits pulumi.Float64PtrInput `pulumi:"totalUnits"`
 	// The resource unit.
-	UnitType pulumi.StringInput `pulumi:"unitType"`
+	UnitType pulumi.StringPtrInput `pulumi:"unitType"`
 }
 
 func (GetTopUtilizedResourcesItemArgs) ElementType() reflect.Type {
@@ -2149,12 +1860,6 @@ func (i GetTopUtilizedResourcesItemArgs) ToGetTopUtilizedResourcesItemOutput() G
 
 func (i GetTopUtilizedResourcesItemArgs) ToGetTopUtilizedResourcesItemOutputWithContext(ctx context.Context) GetTopUtilizedResourcesItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedResourcesItemOutput)
-}
-
-func (i GetTopUtilizedResourcesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedResourcesItem] {
-	return pulumix.Output[GetTopUtilizedResourcesItem]{
-		OutputState: i.ToGetTopUtilizedResourcesItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTopUtilizedResourcesItemArrayInput is an input type that accepts GetTopUtilizedResourcesItemArray and GetTopUtilizedResourcesItemArrayOutput values.
@@ -2182,12 +1887,6 @@ func (i GetTopUtilizedResourcesItemArray) ToGetTopUtilizedResourcesItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedResourcesItemArrayOutput)
 }
 
-func (i GetTopUtilizedResourcesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedResourcesItem] {
-	return pulumix.Output[[]GetTopUtilizedResourcesItem]{
-		OutputState: i.ToGetTopUtilizedResourcesItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTopUtilizedResourcesItemOutput struct{ *pulumi.OutputState }
 
 func (GetTopUtilizedResourcesItemOutput) ElementType() reflect.Type {
@@ -2202,40 +1901,34 @@ func (o GetTopUtilizedResourcesItemOutput) ToGetTopUtilizedResourcesItemOutputWi
 	return o
 }
 
-func (o GetTopUtilizedResourcesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedResourcesItem] {
-	return pulumix.Output[GetTopUtilizedResourcesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
-func (o GetTopUtilizedResourcesItemOutput) ResourceCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedResourcesItem) string { return v.ResourceCompartmentId }).(pulumi.StringOutput)
+func (o GetTopUtilizedResourcesItemOutput) ResourceCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedResourcesItem) *string { return v.ResourceCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the compartment that contains the resource.
-func (o GetTopUtilizedResourcesItemOutput) ResourceCompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedResourcesItem) string { return v.ResourceCompartmentName }).(pulumi.StringOutput)
+func (o GetTopUtilizedResourcesItemOutput) ResourceCompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedResourcesItem) *string { return v.ResourceCompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o GetTopUtilizedResourcesItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedResourcesItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetTopUtilizedResourcesItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedResourcesItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Resource canonical name.
-func (o GetTopUtilizedResourcesItemOutput) ResourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedResourcesItem) string { return v.ResourceName }).(pulumi.StringOutput)
+func (o GetTopUtilizedResourcesItemOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedResourcesItem) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
 // Number of license units consumed by the resource.
-func (o GetTopUtilizedResourcesItemOutput) TotalUnits() pulumi.Float64Output {
-	return o.ApplyT(func(v GetTopUtilizedResourcesItem) float64 { return v.TotalUnits }).(pulumi.Float64Output)
+func (o GetTopUtilizedResourcesItemOutput) TotalUnits() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedResourcesItem) *float64 { return v.TotalUnits }).(pulumi.Float64PtrOutput)
 }
 
 // The resource unit.
-func (o GetTopUtilizedResourcesItemOutput) UnitType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedResourcesItem) string { return v.UnitType }).(pulumi.StringOutput)
+func (o GetTopUtilizedResourcesItemOutput) UnitType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedResourcesItem) *string { return v.UnitType }).(pulumi.StringPtrOutput)
 }
 
 type GetTopUtilizedResourcesItemArrayOutput struct{ *pulumi.OutputState }
@@ -2250,12 +1943,6 @@ func (o GetTopUtilizedResourcesItemArrayOutput) ToGetTopUtilizedResourcesItemArr
 
 func (o GetTopUtilizedResourcesItemArrayOutput) ToGetTopUtilizedResourcesItemArrayOutputWithContext(ctx context.Context) GetTopUtilizedResourcesItemArrayOutput {
 	return o
-}
-
-func (o GetTopUtilizedResourcesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedResourcesItem] {
-	return pulumix.Output[[]GetTopUtilizedResourcesItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetTopUtilizedResourcesItemArrayOutput) Index(i pulumi.IntInput) GetTopUtilizedResourcesItemOutput {

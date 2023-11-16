@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailOptionL
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailOptionSecondaryVnic;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailOption {
@@ -16,17 +17,17 @@ public final class GetInstanceConfigurationInstanceDetailOption {
      * @return Block volume parameters.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes;
     /**
      * @return Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails;
     /**
      * @return Secondary VNIC parameters.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics;
 
     private GetInstanceConfigurationInstanceDetailOption() {}
     /**
@@ -34,21 +35,21 @@ public final class GetInstanceConfigurationInstanceDetailOption {
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes() {
-        return this.blockVolumes;
+        return this.blockVolumes == null ? List.of() : this.blockVolumes;
     }
     /**
      * @return Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails() {
-        return this.launchDetails;
+        return this.launchDetails == null ? List.of() : this.launchDetails;
     }
     /**
      * @return Secondary VNIC parameters.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics() {
-        return this.secondaryVnics;
+        return this.secondaryVnics == null ? List.of() : this.secondaryVnics;
     }
 
     public static Builder builder() {
@@ -60,9 +61,9 @@ public final class GetInstanceConfigurationInstanceDetailOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails;
-        private List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +73,24 @@ public final class GetInstanceConfigurationInstanceDetailOption {
         }
 
         @CustomType.Setter
-        public Builder blockVolumes(List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes) {
-            this.blockVolumes = Objects.requireNonNull(blockVolumes);
+        public Builder blockVolumes(@Nullable List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes) {
+            this.blockVolumes = blockVolumes;
             return this;
         }
         public Builder blockVolumes(GetInstanceConfigurationInstanceDetailOptionBlockVolume... blockVolumes) {
             return blockVolumes(List.of(blockVolumes));
         }
         @CustomType.Setter
-        public Builder launchDetails(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails) {
-            this.launchDetails = Objects.requireNonNull(launchDetails);
+        public Builder launchDetails(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails) {
+            this.launchDetails = launchDetails;
             return this;
         }
         public Builder launchDetails(GetInstanceConfigurationInstanceDetailOptionLaunchDetail... launchDetails) {
             return launchDetails(List.of(launchDetails));
         }
         @CustomType.Setter
-        public Builder secondaryVnics(List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics) {
-            this.secondaryVnics = Objects.requireNonNull(secondaryVnics);
+        public Builder secondaryVnics(@Nullable List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics) {
+            this.secondaryVnics = secondaryVnics;
             return this;
         }
         public Builder secondaryVnics(GetInstanceConfigurationInstanceDetailOptionSecondaryVnic... secondaryVnics) {

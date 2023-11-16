@@ -71,79 +71,52 @@ class GetBdsInstanceApiKeyResult:
 
     @property
     @pulumi.getter(name="defaultRegion")
-    def default_region(self) -> str:
-        """
-        The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-        """
+    def default_region(self) -> Optional[str]:
         return pulumi.get(self, "default_region")
 
     @property
     @pulumi.getter
-    def fingerprint(self) -> str:
-        """
-        The fingerprint that corresponds to the public API key requested.
-        """
+    def fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "fingerprint")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Identifier of the user's API key.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="keyAlias")
-    def key_alias(self) -> str:
-        """
-        User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
-        """
+    def key_alias(self) -> Optional[str]:
         return pulumi.get(self, "key_alias")
 
     @property
     @pulumi.getter
-    def passphrase(self) -> str:
+    def passphrase(self) -> Optional[str]:
         return pulumi.get(self, "passphrase")
 
     @property
     @pulumi.getter
-    def pemfilepath(self) -> str:
-        """
-        The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
-        """
+    def pemfilepath(self) -> Optional[str]:
         return pulumi.get(self, "pemfilepath")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current status of the API key.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> str:
-        """
-        The OCID of your tenancy.
-        """
+    def tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the API key was created, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        The user OCID for which this API key was created.
-        """
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
 
@@ -171,23 +144,7 @@ def get_bds_instance_api_key(api_key_id: Optional[str] = None,
                              bds_instance_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceApiKeyResult:
     """
-    This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns the user's API key information for the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=oci_identity_api_key["test_api_key"]["id"],
-        bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str api_key_id: The API key identifier.
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apiKeyId'] = api_key_id
@@ -215,22 +172,6 @@ def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[str]] = No
                                     bds_instance_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceApiKeyResult]:
     """
-    This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns the user's API key information for the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=oci_identity_api_key["test_api_key"]["id"],
-        bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str api_key_id: The API key identifier.
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

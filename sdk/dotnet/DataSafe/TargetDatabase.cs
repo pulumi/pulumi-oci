@@ -100,13 +100,13 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Types of connection supported by Data Safe.
         /// </summary>
         [Output("connectionOption")]
-        public Output<Outputs.TargetDatabaseConnectionOption> ConnectionOption { get; private set; } = null!;
+        public Output<Outputs.TargetDatabaseConnectionOption?> ConnectionOption { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The database credentials required for Data Safe to connect to the database.
         /// </summary>
         [Output("credentials")]
-        public Output<Outputs.TargetDatabaseCredentials> Credentials { get; private set; } = null!;
+        public Output<Outputs.TargetDatabaseCredentials?> Credentials { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of the database for the registration in Data Safe.
@@ -118,61 +118,61 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the target database in Data Safe.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the target database in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the target database in Data Safe.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time of the target database update in Data Safe.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The details required to establish a TLS enabled connection.
         /// </summary>
         [Output("tlsConfig")]
-        public Output<Outputs.TargetDatabaseTlsConfig> TlsConfig { get; private set; } = null!;
+        public Output<Outputs.TargetDatabaseTlsConfig?> TlsConfig { get; private set; } = null!;
 
 
         /// <summary>

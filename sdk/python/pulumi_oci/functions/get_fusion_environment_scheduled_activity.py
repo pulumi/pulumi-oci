@@ -71,39 +71,27 @@ class GetFusionEnvironmentScheduledActivityResult:
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetFusionEnvironmentScheduledActivityActionResult']:
-        """
-        List of actions
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetFusionEnvironmentScheduledActivityActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="delayInHours")
-    def delay_in_hours(self) -> int:
-        """
-        Cumulative delay hours
-        """
+    def delay_in_hours(self) -> Optional[int]:
         return pulumi.get(self, "delay_in_hours")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        scheduled activity display name, can be renamed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> str:
-        """
-        FAaaS Environment Identifier.
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -111,18 +99,12 @@ class GetFusionEnvironmentScheduledActivityResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="runCycle")
-    def run_cycle(self) -> str:
-        """
-        run cadence.
-        """
+    def run_cycle(self) -> Optional[str]:
         return pulumi.get(self, "run_cycle")
 
     @property
@@ -132,58 +114,37 @@ class GetFusionEnvironmentScheduledActivityResult:
 
     @property
     @pulumi.getter(name="serviceAvailability")
-    def service_availability(self) -> str:
-        """
-        Service availability / impact during scheduled activity execution up down
-        """
+    def service_availability(self) -> Optional[str]:
         return pulumi.get(self, "service_availability")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the scheduledActivity.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the scheduled activity record was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpectedFinish")
-    def time_expected_finish(self) -> str:
-        """
-        Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
-        """
+    def time_expected_finish(self) -> Optional[str]:
         return pulumi.get(self, "time_expected_finish")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeScheduledStart")
-    def time_scheduled_start(self) -> str:
-        """
-        Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
-        """
+    def time_scheduled_start(self) -> Optional[str]:
         return pulumi.get(self, "time_scheduled_start")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -214,23 +175,7 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[st
                                               scheduled_activity_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentScheduledActivityResult:
     """
-    This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a ScheduledActivity by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_scheduled_activity = oci.Functions.get_fusion_environment_scheduled_activity(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        scheduled_activity_id=oci_fusion_apps_scheduled_activity["test_scheduled_activity"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str scheduled_activity_id: Unique ScheduledActivity identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
@@ -261,22 +206,6 @@ def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Opti
                                                      scheduled_activity_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivityResult]:
     """
-    This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a ScheduledActivity by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_scheduled_activity = oci.Functions.get_fusion_environment_scheduled_activity(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        scheduled_activity_id=oci_fusion_apps_scheduled_activity["test_scheduled_activity"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str scheduled_activity_id: Unique ScheduledActivity identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

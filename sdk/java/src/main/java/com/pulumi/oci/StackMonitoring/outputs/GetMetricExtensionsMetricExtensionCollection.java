@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsMetricExtensionCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionsMetricExtensionCollection {
-    private List<GetMetricExtensionsMetricExtensionCollectionItem> items;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItem> items;
 
     private GetMetricExtensionsMetricExtensionCollection() {}
     public List<GetMetricExtensionsMetricExtensionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMetricExtensionsMetricExtensionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMetricExtensionsMetricExtensionCollectionItem> items;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItem> items;
         public Builder() {}
         public Builder(GetMetricExtensionsMetricExtensionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMetricExtensionsMetricExtensionCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMetricExtensionsMetricExtensionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMetricExtensionsMetricExtensionCollectionItem... items) {

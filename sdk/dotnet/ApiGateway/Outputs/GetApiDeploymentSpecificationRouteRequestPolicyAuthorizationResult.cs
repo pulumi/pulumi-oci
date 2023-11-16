@@ -20,13 +20,13 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetApiDeploymentSpecificationRouteRequestPolicyAuthorizationResult(
             ImmutableArray<string> allowedScopes,
 
-            string type)
+            string? type)
         {
             AllowedScopes = allowedScopes;
             Type = type;

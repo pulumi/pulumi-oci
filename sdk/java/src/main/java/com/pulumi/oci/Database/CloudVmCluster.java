@@ -106,28 +106,28 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
     @Export(name="backupNetworkNsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> backupNetworkNsgIds;
+    private Output</* @Nullable */ List<String>> backupNetworkNsgIds;
 
     /**
      * @return (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
-    public Output<List<String>> backupNetworkNsgIds() {
-        return this.backupNetworkNsgIds;
+    public Output<Optional<List<String>>> backupNetworkNsgIds() {
+        return Codegen.optional(this.backupNetworkNsgIds);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
@@ -162,14 +162,14 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clusterName", refs={String.class}, tree="[0]")
-    private Output<String> clusterName;
+    private Output</* @Nullable */ String> clusterName;
 
     /**
      * @return The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    public Output<String> clusterName() {
-        return this.clusterName;
+    public Output<Optional<String>> clusterName() {
+        return Codegen.optional(this.clusterName);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -224,98 +224,98 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataCollectionOptions", refs={CloudVmClusterDataCollectionOptions.class}, tree="[0]")
-    private Output<CloudVmClusterDataCollectionOptions> dataCollectionOptions;
+    private Output</* @Nullable */ CloudVmClusterDataCollectionOptions> dataCollectionOptions;
 
     /**
      * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    public Output<CloudVmClusterDataCollectionOptions> dataCollectionOptions() {
-        return this.dataCollectionOptions;
+    public Output<Optional<CloudVmClusterDataCollectionOptions>> dataCollectionOptions() {
+        return Codegen.optional(this.dataCollectionOptions);
     }
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
     @Export(name="dataStoragePercentage", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dataStoragePercentage;
+    private Output</* @Nullable */ Integer> dataStoragePercentage;
 
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
-    public Output<Integer> dataStoragePercentage() {
-        return this.dataStoragePercentage;
+    public Output<Optional<Integer>> dataStoragePercentage() {
+        return Codegen.optional(this.dataStoragePercentage);
     }
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
      * 
      */
     @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> dataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> dataStorageSizeInTbs;
 
     /**
      * @return (Updatable) The data disk group size to be allocated in TBs.
      * 
      */
-    public Output<Double> dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Output<Optional<Double>> dataStorageSizeInTbs() {
+        return Codegen.optional(this.dataStorageSizeInTbs);
     }
     /**
      * (Updatable) The local node storage to be allocated in GBs.
      * 
      */
     @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dbNodeStorageSizeInGbs;
+    private Output</* @Nullable */ Integer> dbNodeStorageSizeInGbs;
 
     /**
      * @return (Updatable) The local node storage to be allocated in GBs.
      * 
      */
-    public Output<Integer> dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Output<Optional<Integer>> dbNodeStorageSizeInGbs() {
+        return Codegen.optional(this.dbNodeStorageSizeInGbs);
     }
     /**
      * The list of DB servers.
      * 
      */
     @Export(name="dbServers", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> dbServers;
+    private Output</* @Nullable */ List<String>> dbServers;
 
     /**
      * @return The list of DB servers.
      * 
      */
-    public Output<List<String>> dbServers() {
-        return this.dbServers;
+    public Output<Optional<List<String>>> dbServers() {
+        return Codegen.optional(this.dbServers);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
     @Export(name="diskRedundancy", refs={String.class}, tree="[0]")
-    private Output<String> diskRedundancy;
+    private Output</* @Nullable */ String> diskRedundancy;
 
     /**
      * @return The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
-    public Output<String> diskRedundancy() {
-        return this.diskRedundancy;
+    public Output<Optional<String>> diskRedundancy() {
+        return Codegen.optional(this.diskRedundancy);
     }
     /**
      * (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
@@ -336,28 +336,28 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
-    private Output<String> domain;
+    private Output</* @Nullable */ String> domain;
 
     /**
      * @return A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      * 
      */
-    public Output<String> domain() {
-        return this.domain;
+    public Output<Optional<String>> domain() {
+        return Codegen.optional(this.domain);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
@@ -400,126 +400,126 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="iormConfigCaches", refs={List.class,CloudVmClusterIormConfigCach.class}, tree="[0,1]")
-    private Output<List<CloudVmClusterIormConfigCach>> iormConfigCaches;
+    private Output</* @Nullable */ List<CloudVmClusterIormConfigCach>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Output<List<CloudVmClusterIormConfigCach>> iormConfigCaches() {
-        return this.iormConfigCaches;
+    public Output<Optional<List<CloudVmClusterIormConfigCach>>> iormConfigCaches() {
+        return Codegen.optional(this.iormConfigCaches);
     }
     /**
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
      */
     @Export(name="isLocalBackupEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLocalBackupEnabled;
+    private Output</* @Nullable */ Boolean> isLocalBackupEnabled;
 
     /**
      * @return If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
      */
-    public Output<Boolean> isLocalBackupEnabled() {
-        return this.isLocalBackupEnabled;
+    public Output<Optional<Boolean>> isLocalBackupEnabled() {
+        return Codegen.optional(this.isLocalBackupEnabled);
     }
     /**
      * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      * 
      */
     @Export(name="isSparseDiskgroupEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSparseDiskgroupEnabled;
+    private Output</* @Nullable */ Boolean> isSparseDiskgroupEnabled;
 
     /**
      * @return If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      * 
      */
-    public Output<Boolean> isSparseDiskgroupEnabled() {
-        return this.isSparseDiskgroupEnabled;
+    public Output<Optional<Boolean>> isSparseDiskgroupEnabled() {
+        return Codegen.optional(this.isSparseDiskgroupEnabled);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
      */
     @Export(name="lastUpdateHistoryEntryId", refs={String.class}, tree="[0]")
-    private Output<String> lastUpdateHistoryEntryId;
+    private Output</* @Nullable */ String> lastUpdateHistoryEntryId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
      */
-    public Output<String> lastUpdateHistoryEntryId() {
-        return this.lastUpdateHistoryEntryId;
+    public Output<Optional<String>> lastUpdateHistoryEntryId() {
+        return Codegen.optional(this.lastUpdateHistoryEntryId);
     }
     /**
      * (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The port number configured for the listener on the cloud VM cluster.
      * 
      */
     @Export(name="listenerPort", refs={String.class}, tree="[0]")
-    private Output<String> listenerPort;
+    private Output</* @Nullable */ String> listenerPort;
 
     /**
      * @return The port number configured for the listener on the cloud VM cluster.
      * 
      */
-    public Output<String> listenerPort() {
-        return this.listenerPort;
+    public Output<Optional<String>> listenerPort() {
+        return Codegen.optional(this.listenerPort);
     }
     /**
      * (Updatable) The memory to be allocated in GBs.
      * 
      */
     @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memorySizeInGbs;
+    private Output</* @Nullable */ Integer> memorySizeInGbs;
 
     /**
      * @return (Updatable) The memory to be allocated in GBs.
      * 
      */
-    public Output<Integer> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Integer>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     /**
      * The number of nodes in the cloud VM cluster.
      * 
      */
     @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> nodeCount;
+    private Output</* @Nullable */ Integer> nodeCount;
 
     /**
      * @return The number of nodes in the cloud VM cluster.
      * 
      */
-    public Output<Integer> nodeCount() {
-        return this.nodeCount;
+    public Output<Optional<Integer>> nodeCount() {
+        return Codegen.optional(this.nodeCount);
     }
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -527,127 +527,127 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     @Export(name="ocpuCount", refs={Double.class}, tree="[0]")
-    private Output<Double> ocpuCount;
+    private Output</* @Nullable */ Double> ocpuCount;
 
     /**
      * @return (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    public Output<Double> ocpuCount() {
-        return this.ocpuCount;
+    public Output<Optional<Double>> ocpuCount() {
+        return Codegen.optional(this.ocpuCount);
     }
     /**
      * The private zone id in which DNS records need to be created.
      * 
      */
     @Export(name="privateZoneId", refs={String.class}, tree="[0]")
-    private Output<String> privateZoneId;
+    private Output</* @Nullable */ String> privateZoneId;
 
     /**
      * @return The private zone id in which DNS records need to be created.
      * 
      */
-    public Output<String> privateZoneId() {
-        return this.privateZoneId;
+    public Output<Optional<String>> privateZoneId() {
+        return Codegen.optional(this.privateZoneId);
     }
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
     @Export(name="scanDnsName", refs={String.class}, tree="[0]")
-    private Output<String> scanDnsName;
+    private Output</* @Nullable */ String> scanDnsName;
 
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    public Output<String> scanDnsName() {
-        return this.scanDnsName;
+    public Output<Optional<String>> scanDnsName() {
+        return Codegen.optional(this.scanDnsName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
     @Export(name="scanDnsRecordId", refs={String.class}, tree="[0]")
-    private Output<String> scanDnsRecordId;
+    private Output</* @Nullable */ String> scanDnsRecordId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    public Output<String> scanDnsRecordId() {
-        return this.scanDnsRecordId;
+    public Output<Optional<String>> scanDnsRecordId() {
+        return Codegen.optional(this.scanDnsRecordId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     @Export(name="scanIpIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> scanIpIds;
+    private Output</* @Nullable */ List<String>> scanIpIds;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
-    public Output<List<String>> scanIpIds() {
-        return this.scanIpIds;
+    public Output<Optional<List<String>>> scanIpIds() {
+        return Codegen.optional(this.scanIpIds);
     }
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      * 
      */
     @Export(name="scanListenerPortTcp", refs={Integer.class}, tree="[0]")
-    private Output<Integer> scanListenerPortTcp;
+    private Output</* @Nullable */ Integer> scanListenerPortTcp;
 
     /**
      * @return The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      * 
      */
-    public Output<Integer> scanListenerPortTcp() {
-        return this.scanListenerPortTcp;
+    public Output<Optional<Integer>> scanListenerPortTcp() {
+        return Codegen.optional(this.scanListenerPortTcp);
     }
     /**
      * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      * 
      */
     @Export(name="scanListenerPortTcpSsl", refs={Integer.class}, tree="[0]")
-    private Output<Integer> scanListenerPortTcpSsl;
+    private Output</* @Nullable */ Integer> scanListenerPortTcpSsl;
 
     /**
      * @return The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      * 
      */
-    public Output<Integer> scanListenerPortTcpSsl() {
-        return this.scanListenerPortTcpSsl;
+    public Output<Optional<Integer>> scanListenerPortTcpSsl() {
+        return Codegen.optional(this.scanListenerPortTcpSsl);
     }
     /**
      * The model name of the Exadata hardware running the cloud VM cluster.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return The model name of the Exadata hardware running the cloud VM cluster.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
@@ -668,28 +668,28 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the cloud VM cluster.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The storage allocation for the disk group, in gigabytes (GB).
      * 
      */
     @Export(name="storageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> storageSizeInGbs;
+    private Output</* @Nullable */ Integer> storageSizeInGbs;
 
     /**
      * @return The storage allocation for the disk group, in gigabytes (GB).
      * 
      */
-    public Output<Integer> storageSizeInGbs() {
-        return this.storageSizeInGbs;
+    public Output<Optional<Integer>> storageSizeInGbs() {
+        return Codegen.optional(this.storageSizeInGbs);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -710,28 +710,28 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemVersion", refs={String.class}, tree="[0]")
-    private Output<String> systemVersion;
+    private Output</* @Nullable */ String> systemVersion;
 
     /**
      * @return Operating system version of the image.
      * 
      */
-    public Output<String> systemVersion() {
-        return this.systemVersion;
+    public Output<Optional<String>> systemVersion() {
+        return Codegen.optional(this.systemVersion);
     }
     /**
      * The date and time that the cloud VM cluster was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time that the cloud VM cluster was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -741,7 +741,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
-    private Output<String> timeZone;
+    private Output</* @Nullable */ String> timeZone;
 
     /**
      * @return The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -750,36 +750,36 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeZone() {
-        return this.timeZone;
+    public Output<Optional<String>> timeZone() {
+        return Codegen.optional(this.timeZone);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     @Export(name="vipIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> vipIds;
+    private Output</* @Nullable */ List<String>> vipIds;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
-    public Output<List<String>> vipIds() {
-        return this.vipIds;
+    public Output<Optional<List<String>>> vipIds() {
+        return Codegen.optional(this.vipIds);
     }
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
-    private Output<String> zoneId;
+    private Output</* @Nullable */ String> zoneId;
 
     /**
      * @return The OCID of the zone the cloud VM cluster is associated with.
      * 
      */
-    public Output<String> zoneId() {
-        return this.zoneId;
+    public Output<Optional<String>> zoneId() {
+        return Codegen.optional(this.zoneId);
     }
 
     /**

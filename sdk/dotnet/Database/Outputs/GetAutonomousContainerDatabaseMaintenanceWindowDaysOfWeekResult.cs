@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Name of the month of the year.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekResult(string name)
+        private GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekResult(string? name)
         {
             Name = name;
         }

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -60,38 +59,38 @@ type GetLifecycleStageArgs struct {
 // A collection of values returned by getLifecycleStage.
 type GetLifecycleStageResult struct {
 	// The CPU architecture of the target instances.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the tenancy containing the lifecycle stage.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the lifecycle environment for the lifecycle stage.
-	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
-	LifecycleStageId       string `pulumi:"lifecycleStageId"`
+	LifecycleEnvironmentId *string `pulumi:"lifecycleEnvironmentId"`
+	LifecycleStageId       string  `pulumi:"lifecycleStageId"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds []GetLifecycleStageManagedInstanceId `pulumi:"managedInstanceIds"`
 	// The operating system type of the target instances.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-	Rank int `pulumi:"rank"`
+	Rank *int `pulumi:"rank"`
 	// Identifying information for the specified software source.
 	SoftwareSourceIds []GetLifecycleStageSoftwareSourceId `pulumi:"softwareSourceIds"`
 	// The current state of the lifecycle stage.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the lifecycle stage was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 func GetLifecycleStageOutput(ctx *pulumi.Context, args GetLifecycleStageOutputArgs, opts ...pulumi.InvokeOption) GetLifecycleStageResultOutput {
@@ -132,20 +131,14 @@ func (o GetLifecycleStageResultOutput) ToGetLifecycleStageResultOutputWithContex
 	return o
 }
 
-func (o GetLifecycleStageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStageResult] {
-	return pulumix.Output[GetLifecycleStageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CPU architecture of the target instances.
-func (o GetLifecycleStageResultOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy containing the lifecycle stage.
-func (o GetLifecycleStageResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -154,8 +147,8 @@ func (o GetLifecycleStageResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Software source name.
-func (o GetLifecycleStageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -164,13 +157,13 @@ func (o GetLifecycleStageResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLifecycleStageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the lifecycle environment for the lifecycle stage.
-func (o GetLifecycleStageResultOutput) LifecycleEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.LifecycleEnvironmentId }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) LifecycleEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.LifecycleEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLifecycleStageResultOutput) LifecycleStageId() pulumi.StringOutput {
@@ -183,13 +176,13 @@ func (o GetLifecycleStageResultOutput) ManagedInstanceIds() GetLifecycleStageMan
 }
 
 // The operating system type of the target instances.
-func (o GetLifecycleStageResultOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-func (o GetLifecycleStageResultOutput) Rank() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) int { return v.Rank }).(pulumi.IntOutput)
+func (o GetLifecycleStageResultOutput) Rank() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *int { return v.Rank }).(pulumi.IntPtrOutput)
 }
 
 // Identifying information for the specified software source.
@@ -198,8 +191,8 @@ func (o GetLifecycleStageResultOutput) SoftwareSourceIds() GetLifecycleStageSoft
 }
 
 // The current state of the lifecycle stage.
-func (o GetLifecycleStageResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -208,18 +201,18 @@ func (o GetLifecycleStageResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the lifecycle stage was created. An RFC3339 formatted datetime string.
-func (o GetLifecycleStageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
-func (o GetLifecycleStageResultOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o GetLifecycleStageResultOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageResult) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetLifecycleStageResultOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageResult) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

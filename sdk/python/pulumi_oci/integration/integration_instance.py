@@ -36,28 +36,6 @@ class IntegrationInstanceArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IntegrationInstance resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
-        :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[str] shape: Shape
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -94,9 +72,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -106,9 +81,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Integration Instance Identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -118,9 +90,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        """
         return pulumi.get(self, "integration_instance_type")
 
     @integration_instance_type.setter
@@ -130,9 +99,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="isByol")
     def is_byol(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Bring your own license.
-        """
         return pulumi.get(self, "is_byol")
 
     @is_byol.setter
@@ -142,9 +108,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="messagePacks")
     def message_packs(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of configured message packs
-        """
         return pulumi.get(self, "message_packs")
 
     @message_packs.setter
@@ -154,9 +117,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
     def alternate_custom_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]]:
-        """
-        (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        """
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @alternate_custom_endpoints.setter
@@ -166,9 +126,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="consumptionModel")
     def consumption_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        """
         return pulumi.get(self, "consumption_model")
 
     @consumption_model.setter
@@ -178,9 +135,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="customEndpoint")
     def custom_endpoint(self) -> Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']]:
-        """
-        (Updatable) Details for a custom endpoint for the integration instance (update).
-        """
         return pulumi.get(self, "custom_endpoint")
 
     @custom_endpoint.setter
@@ -190,9 +144,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -202,9 +153,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
@@ -214,9 +162,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @enable_process_automation_trigger.setter
@@ -226,9 +171,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -238,9 +180,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="idcsAt")
     def idcs_at(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        """
         return pulumi.get(self, "idcs_at")
 
     @idcs_at.setter
@@ -250,9 +189,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="isFileServerEnabled")
     def is_file_server_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) The file server is enabled or not.
-        """
         return pulumi.get(self, "is_file_server_enabled")
 
     @is_file_server_enabled.setter
@@ -262,9 +198,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
     def is_visual_builder_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Visual Builder is enabled or not.
-        """
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @is_visual_builder_enabled.setter
@@ -274,9 +207,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="networkEndpointDetails")
     def network_endpoint_details(self) -> Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']]:
-        """
-        Base representation of a network endpoint.
-        """
         return pulumi.get(self, "network_endpoint_details")
 
     @network_endpoint_details.setter
@@ -286,9 +216,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        Shape
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -298,13 +225,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -341,34 +261,6 @@ class _IntegrationInstanceState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IntegrationInstance resources.
-        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
-        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
-        :param pulumi.Input[str] instance_url: The Integration Instance URL.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
-        :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[str] shape: Shape
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         """
         if alternate_custom_endpoints is not None:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -422,9 +314,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
     def alternate_custom_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]]:
-        """
-        (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        """
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @alternate_custom_endpoints.setter
@@ -434,9 +323,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter
     def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]]]:
-        """
-        A list of associated attachments to other services
-        """
         return pulumi.get(self, "attachments")
 
     @attachments.setter
@@ -446,9 +332,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -458,9 +341,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="consumptionModel")
     def consumption_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        """
         return pulumi.get(self, "consumption_model")
 
     @consumption_model.setter
@@ -470,9 +350,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="customEndpoint")
     def custom_endpoint(self) -> Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']]:
-        """
-        (Updatable) Details for a custom endpoint for the integration instance (update).
-        """
         return pulumi.get(self, "custom_endpoint")
 
     @custom_endpoint.setter
@@ -482,9 +359,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -494,9 +368,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Integration Instance Identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -506,9 +377,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
@@ -518,9 +386,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @enable_process_automation_trigger.setter
@@ -530,9 +395,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -542,9 +404,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="idcsAt")
     def idcs_at(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        """
         return pulumi.get(self, "idcs_at")
 
     @idcs_at.setter
@@ -554,9 +413,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="idcsInfos")
     def idcs_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]]:
-        """
-        Information for IDCS access
-        """
         return pulumi.get(self, "idcs_infos")
 
     @idcs_infos.setter
@@ -566,9 +422,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="instanceUrl")
     def instance_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Integration Instance URL.
-        """
         return pulumi.get(self, "instance_url")
 
     @instance_url.setter
@@ -578,9 +431,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        """
         return pulumi.get(self, "integration_instance_type")
 
     @integration_instance_type.setter
@@ -590,9 +440,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="isByol")
     def is_byol(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Bring your own license.
-        """
         return pulumi.get(self, "is_byol")
 
     @is_byol.setter
@@ -602,9 +449,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="isFileServerEnabled")
     def is_file_server_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) The file server is enabled or not.
-        """
         return pulumi.get(self, "is_file_server_enabled")
 
     @is_file_server_enabled.setter
@@ -614,9 +458,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
     def is_visual_builder_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Visual Builder is enabled or not.
-        """
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @is_visual_builder_enabled.setter
@@ -626,9 +467,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="messagePacks")
     def message_packs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of configured message packs
-        """
         return pulumi.get(self, "message_packs")
 
     @message_packs.setter
@@ -638,9 +476,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="networkEndpointDetails")
     def network_endpoint_details(self) -> Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']]:
-        """
-        Base representation of a network endpoint.
-        """
         return pulumi.get(self, "network_endpoint_details")
 
     @network_endpoint_details.setter
@@ -650,9 +485,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        Shape
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -662,13 +494,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -678,9 +503,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="stateMessage")
     def state_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
@@ -690,9 +512,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -702,9 +521,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -737,86 +553,9 @@ class IntegrationInstance(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
-
-        Creates a new Integration Instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_integration_instance = oci.integration.IntegrationInstance("testIntegrationInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["integration_instance_display_name"],
-            integration_instance_type=var["integration_instance_integration_instance_type"],
-            is_byol=var["integration_instance_is_byol"],
-            message_packs=var["integration_instance_message_packs"],
-            alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=var["integration_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            )],
-            consumption_model=var["integration_instance_consumption_model"],
-            custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=var["integration_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            domain_id=oci_identity_domain["test_domain"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_at=var["integration_instance_idcs_at"],
-            is_file_server_enabled=var["integration_instance_is_file_server_enabled"],
-            is_visual_builder_enabled=var["integration_instance_is_visual_builder_enabled"],
-            network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["integration_instance_network_endpoint_details_network_endpoint_type"],
-                allowlisted_http_ips=var["integration_instance_network_endpoint_details_allowlisted_http_ips"],
-                allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_id"],
-                    allowlisted_ips=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips"],
-                )],
-                is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
-            ),
-            shape=var["integration_instance_shape"],
-            state=var["integration_instance_target_state"])
-        ```
-
-        ## Import
-
-        IntegrationInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
-        ```
-
+        Create a IntegrationInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
-        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
-        :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[str] shape: Shape
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -825,62 +564,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  args: IntegrationInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
-
-        Creates a new Integration Instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_integration_instance = oci.integration.IntegrationInstance("testIntegrationInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["integration_instance_display_name"],
-            integration_instance_type=var["integration_instance_integration_instance_type"],
-            is_byol=var["integration_instance_is_byol"],
-            message_packs=var["integration_instance_message_packs"],
-            alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=var["integration_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            )],
-            consumption_model=var["integration_instance_consumption_model"],
-            custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=var["integration_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            domain_id=oci_identity_domain["test_domain"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_at=var["integration_instance_idcs_at"],
-            is_file_server_enabled=var["integration_instance_is_file_server_enabled"],
-            is_visual_builder_enabled=var["integration_instance_is_visual_builder_enabled"],
-            network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["integration_instance_network_endpoint_details_network_endpoint_type"],
-                allowlisted_http_ips=var["integration_instance_network_endpoint_details_allowlisted_http_ips"],
-                allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_id"],
-                    allowlisted_ips=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips"],
-                )],
-                is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
-            ),
-            shape=var["integration_instance_shape"],
-            state=var["integration_instance_target_state"])
-        ```
-
-        ## Import
-
-        IntegrationInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
-        ```
-
+        Create a IntegrationInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param IntegrationInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1000,34 +684,6 @@ class IntegrationInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAttachmentArgs']]]] attachments: A list of associated attachments to other services
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
-        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]] idcs_infos: Information for IDCS access
-        :param pulumi.Input[str] instance_url: The Integration Instance URL.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
-        :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[str] shape: Shape
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1061,197 +717,121 @@ class IntegrationInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
-    def alternate_custom_endpoints(self) -> pulumi.Output[Sequence['outputs.IntegrationInstanceAlternateCustomEndpoint']]:
-        """
-        (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        """
+    def alternate_custom_endpoints(self) -> pulumi.Output[Optional[Sequence['outputs.IntegrationInstanceAlternateCustomEndpoint']]]:
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @property
     @pulumi.getter
-    def attachments(self) -> pulumi.Output[Sequence['outputs.IntegrationInstanceAttachment']]:
-        """
-        A list of associated attachments to other services
-        """
+    def attachments(self) -> pulumi.Output[Optional[Sequence['outputs.IntegrationInstanceAttachment']]]:
         return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> pulumi.Output[str]:
-        """
-        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        """
+    def consumption_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "consumption_model")
 
     @property
     @pulumi.getter(name="customEndpoint")
-    def custom_endpoint(self) -> pulumi.Output['outputs.IntegrationInstanceCustomEndpoint']:
-        """
-        (Updatable) Details for a custom endpoint for the integration instance (update).
-        """
+    def custom_endpoint(self) -> pulumi.Output[Optional['outputs.IntegrationInstanceCustomEndpoint']]:
         return pulumi.get(self, "custom_endpoint")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Integration Instance Identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        """
         return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="idcsAt")
     def idcs_at(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        """
         return pulumi.get(self, "idcs_at")
 
     @property
     @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> pulumi.Output[Sequence['outputs.IntegrationInstanceIdcsInfo']]:
-        """
-        Information for IDCS access
-        """
+    def idcs_infos(self) -> pulumi.Output[Optional[Sequence['outputs.IntegrationInstanceIdcsInfo']]]:
         return pulumi.get(self, "idcs_infos")
 
     @property
     @pulumi.getter(name="instanceUrl")
-    def instance_url(self) -> pulumi.Output[str]:
-        """
-        The Integration Instance URL.
-        """
+    def instance_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_url")
 
     @property
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-        """
         return pulumi.get(self, "integration_instance_type")
 
     @property
     @pulumi.getter(name="isByol")
     def is_byol(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Bring your own license.
-        """
         return pulumi.get(self, "is_byol")
 
     @property
     @pulumi.getter(name="isFileServerEnabled")
-    def is_file_server_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) The file server is enabled or not.
-        """
+    def is_file_server_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_file_server_enabled")
 
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
-    def is_visual_builder_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Visual Builder is enabled or not.
-        """
+    def is_visual_builder_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @property
     @pulumi.getter(name="messagePacks")
     def message_packs(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of configured message packs
-        """
         return pulumi.get(self, "message_packs")
 
     @property
     @pulumi.getter(name="networkEndpointDetails")
-    def network_endpoint_details(self) -> pulumi.Output['outputs.IntegrationInstanceNetworkEndpointDetails']:
-        """
-        Base representation of a network endpoint.
-        """
+    def network_endpoint_details(self) -> pulumi.Output[Optional['outputs.IntegrationInstanceNetworkEndpointDetails']]:
         return pulumi.get(self, "network_endpoint_details")
 
     @property
     @pulumi.getter
-    def shape(self) -> pulumi.Output[str]:
-        """
-        Shape
-        """
+    def shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> pulumi.Output[str]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def state_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

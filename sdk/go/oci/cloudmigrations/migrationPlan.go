@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -40,17 +39,17 @@ type MigrationPlan struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the associated migration.
 	MigrationId pulumi.StringOutput `pulumi:"migrationId"`
 	// Status of the migration plan.
 	MigrationPlanStats MigrationPlanMigrationPlanStatArrayOutput `pulumi:"migrationPlanStats"`
 	// OCID of the referenced ORM job.
-	ReferenceToRmsStack pulumi.StringOutput `pulumi:"referenceToRmsStack"`
+	ReferenceToRmsStack pulumi.StringPtrOutput `pulumi:"referenceToRmsStack"`
 	// Source migraiton plan ID to be cloned.
-	SourceMigrationPlanId pulumi.StringOutput `pulumi:"sourceMigrationPlanId"`
+	SourceMigrationPlanId pulumi.StringPtrOutput `pulumi:"sourceMigrationPlanId"`
 	// The current state of the migration plan.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) List of strategies for the resources to be migrated.
 	Strategies MigrationPlanStrategyArrayOutput `pulumi:"strategies"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -58,9 +57,9 @@ type MigrationPlan struct {
 	// (Updatable) List of target environments.
 	TargetEnvironments MigrationPlanTargetEnvironmentArrayOutput `pulumi:"targetEnvironments"`
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMigrationPlan registers a new resource with the given unique name, arguments, and options.
@@ -237,12 +236,6 @@ func (i *MigrationPlan) ToMigrationPlanOutputWithContext(ctx context.Context) Mi
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanOutput)
 }
 
-func (i *MigrationPlan) ToOutput(ctx context.Context) pulumix.Output[*MigrationPlan] {
-	return pulumix.Output[*MigrationPlan]{
-		OutputState: i.ToMigrationPlanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MigrationPlanArrayInput is an input type that accepts MigrationPlanArray and MigrationPlanArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanArrayInput` via:
 //
@@ -266,12 +259,6 @@ func (i MigrationPlanArray) ToMigrationPlanArrayOutput() MigrationPlanArrayOutpu
 
 func (i MigrationPlanArray) ToMigrationPlanArrayOutputWithContext(ctx context.Context) MigrationPlanArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanArrayOutput)
-}
-
-func (i MigrationPlanArray) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationPlan] {
-	return pulumix.Output[[]*MigrationPlan]{
-		OutputState: i.ToMigrationPlanArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MigrationPlanMapInput is an input type that accepts MigrationPlanMap and MigrationPlanMapOutput values.
@@ -299,12 +286,6 @@ func (i MigrationPlanMap) ToMigrationPlanMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMapOutput)
 }
 
-func (i MigrationPlanMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationPlan] {
-	return pulumix.Output[map[string]*MigrationPlan]{
-		OutputState: i.ToMigrationPlanMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MigrationPlanOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanOutput) ElementType() reflect.Type {
@@ -317,12 +298,6 @@ func (o MigrationPlanOutput) ToMigrationPlanOutput() MigrationPlanOutput {
 
 func (o MigrationPlanOutput) ToMigrationPlanOutputWithContext(ctx context.Context) MigrationPlanOutput {
 	return o
-}
-
-func (o MigrationPlanOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationPlan] {
-	return pulumix.Output[*MigrationPlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
@@ -351,8 +326,8 @@ func (o MigrationPlanOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o MigrationPlanOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MigrationPlanOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the associated migration.
@@ -366,18 +341,18 @@ func (o MigrationPlanOutput) MigrationPlanStats() MigrationPlanMigrationPlanStat
 }
 
 // OCID of the referenced ORM job.
-func (o MigrationPlanOutput) ReferenceToRmsStack() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.StringOutput { return v.ReferenceToRmsStack }).(pulumi.StringOutput)
+func (o MigrationPlanOutput) ReferenceToRmsStack() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringPtrOutput { return v.ReferenceToRmsStack }).(pulumi.StringPtrOutput)
 }
 
 // Source migraiton plan ID to be cloned.
-func (o MigrationPlanOutput) SourceMigrationPlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.StringOutput { return v.SourceMigrationPlanId }).(pulumi.StringOutput)
+func (o MigrationPlanOutput) SourceMigrationPlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringPtrOutput { return v.SourceMigrationPlanId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the migration plan.
-func (o MigrationPlanOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MigrationPlanOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of strategies for the resources to be migrated.
@@ -396,13 +371,13 @@ func (o MigrationPlanOutput) TargetEnvironments() MigrationPlanTargetEnvironment
 }
 
 // The time when the migration plan was created. An RFC3339 formatted datetime string.
-func (o MigrationPlanOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MigrationPlanOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
-func (o MigrationPlanOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MigrationPlanOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MigrationPlanArrayOutput struct{ *pulumi.OutputState }
@@ -417,12 +392,6 @@ func (o MigrationPlanArrayOutput) ToMigrationPlanArrayOutput() MigrationPlanArra
 
 func (o MigrationPlanArrayOutput) ToMigrationPlanArrayOutputWithContext(ctx context.Context) MigrationPlanArrayOutput {
 	return o
-}
-
-func (o MigrationPlanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationPlan] {
-	return pulumix.Output[[]*MigrationPlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationPlanArrayOutput) Index(i pulumi.IntInput) MigrationPlanOutput {
@@ -443,12 +412,6 @@ func (o MigrationPlanMapOutput) ToMigrationPlanMapOutput() MigrationPlanMapOutpu
 
 func (o MigrationPlanMapOutput) ToMigrationPlanMapOutputWithContext(ctx context.Context) MigrationPlanMapOutput {
 	return o
-}
-
-func (o MigrationPlanMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationPlan] {
-	return pulumix.Output[map[string]*MigrationPlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationPlanMapOutput) MapIndex(k pulumi.StringInput) MigrationPlanOutput {

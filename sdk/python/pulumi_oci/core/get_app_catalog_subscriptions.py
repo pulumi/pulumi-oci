@@ -42,18 +42,12 @@ class GetAppCatalogSubscriptionsResult:
 
     @property
     @pulumi.getter(name="appCatalogSubscriptions")
-    def app_catalog_subscriptions(self) -> Sequence['outputs.GetAppCatalogSubscriptionsAppCatalogSubscriptionResult']:
-        """
-        The list of app_catalog_subscriptions.
-        """
+    def app_catalog_subscriptions(self) -> Optional[Sequence['outputs.GetAppCatalogSubscriptionsAppCatalogSubscriptionResult']]:
         return pulumi.get(self, "app_catalog_subscriptions")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartmentID of the subscription.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -63,7 +57,7 @@ class GetAppCatalogSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +66,6 @@ class GetAppCatalogSubscriptionsResult:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> Optional[str]:
-        """
-        The ocid of the listing resource.
-        """
         return pulumi.get(self, "listing_id")
 
 
@@ -96,23 +87,7 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
                                   listing_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogSubscriptionsResult:
     """
-    This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
-
-    Lists subscriptions for a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
-        listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str listing_id: A filter to return only the listings that matches the given listing id.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[s
                                          listing_id: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogSubscriptionsResult]:
     """
-    This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
-
-    Lists subscriptions for a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
-        listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str listing_id: A filter to return only the listings that matches the given listing id.
+    Use this data source to access information about an existing resource.
     """
     ...

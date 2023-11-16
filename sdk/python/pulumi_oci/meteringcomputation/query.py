@@ -20,8 +20,6 @@ class QueryArgs:
                  query_definition: pulumi.Input['QueryQueryDefinitionArgs']):
         """
         The set of arguments for constructing a Query resource.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input['QueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "query_definition", query_definition)
@@ -29,9 +27,6 @@ class QueryArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -41,9 +36,6 @@ class QueryArgs:
     @property
     @pulumi.getter(name="queryDefinition")
     def query_definition(self) -> pulumi.Input['QueryQueryDefinitionArgs']:
-        """
-        (Updatable) The common fields for queries.
-        """
         return pulumi.get(self, "query_definition")
 
     @query_definition.setter
@@ -58,8 +50,6 @@ class _QueryState:
                  query_definition: Optional[pulumi.Input['QueryQueryDefinitionArgs']] = None):
         """
         Input properties used for looking up and filtering Query resources.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input['QueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -69,9 +59,6 @@ class _QueryState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -81,9 +68,6 @@ class _QueryState:
     @property
     @pulumi.getter(name="queryDefinition")
     def query_definition(self) -> Optional[pulumi.Input['QueryQueryDefinitionArgs']]:
-        """
-        (Updatable) The common fields for queries.
-        """
         return pulumi.get(self, "query_definition")
 
     @query_definition.setter
@@ -100,62 +84,9 @@ class Query(pulumi.CustomResource):
                  query_definition: Optional[pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created query.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_query = oci.metering_computation.Query("testQuery",
-            compartment_id=var["compartment_id"],
-            query_definition=oci.metering_computation.QueryQueryDefinitionArgs(
-                cost_analysis_ui=oci.metering_computation.QueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=var["query_query_definition_cost_analysis_ui_graph"],
-                    is_cumulative_graph=var["query_query_definition_cost_analysis_ui_is_cumulative_graph"],
-                ),
-                display_name=var["query_query_definition_display_name"],
-                report_query=oci.metering_computation.QueryQueryDefinitionReportQueryArgs(
-                    granularity=var["query_query_definition_report_query_granularity"],
-                    tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-                    compartment_depth=var["query_query_definition_report_query_compartment_depth"],
-                    date_range_name=var["query_query_definition_report_query_date_range_name"],
-                    filter=var["query_query_definition_report_query_filter"],
-                    forecast=oci.metering_computation.QueryQueryDefinitionReportQueryForecastArgs(
-                        time_forecast_ended=var["query_query_definition_report_query_forecast_time_forecast_ended"],
-                        forecast_type=var["query_query_definition_report_query_forecast_forecast_type"],
-                        time_forecast_started=var["query_query_definition_report_query_forecast_time_forecast_started"],
-                    ),
-                    group_bies=var["query_query_definition_report_query_group_by"],
-                    group_by_tags=[oci.metering_computation.QueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=var["query_query_definition_report_query_group_by_tag_key"],
-                        namespace=var["query_query_definition_report_query_group_by_tag_namespace"],
-                        value=var["query_query_definition_report_query_group_by_tag_value"],
-                    )],
-                    is_aggregate_by_time=var["query_query_definition_report_query_is_aggregate_by_time"],
-                    query_type=var["query_query_definition_report_query_query_type"],
-                    time_usage_ended=var["query_query_definition_report_query_time_usage_ended"],
-                    time_usage_started=var["query_query_definition_report_query_time_usage_started"],
-                ),
-                version=var["query_query_definition_version"],
-            ))
-        ```
-
-        ## Import
-
-        Queries can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:MeteringComputation/query:Query test_query "id"
-        ```
-
+        Create a Query resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']] query_definition: (Updatable) The common fields for queries.
         """
         ...
     @overload
@@ -164,58 +95,7 @@ class Query(pulumi.CustomResource):
                  args: QueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created query.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_query = oci.metering_computation.Query("testQuery",
-            compartment_id=var["compartment_id"],
-            query_definition=oci.metering_computation.QueryQueryDefinitionArgs(
-                cost_analysis_ui=oci.metering_computation.QueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=var["query_query_definition_cost_analysis_ui_graph"],
-                    is_cumulative_graph=var["query_query_definition_cost_analysis_ui_is_cumulative_graph"],
-                ),
-                display_name=var["query_query_definition_display_name"],
-                report_query=oci.metering_computation.QueryQueryDefinitionReportQueryArgs(
-                    granularity=var["query_query_definition_report_query_granularity"],
-                    tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-                    compartment_depth=var["query_query_definition_report_query_compartment_depth"],
-                    date_range_name=var["query_query_definition_report_query_date_range_name"],
-                    filter=var["query_query_definition_report_query_filter"],
-                    forecast=oci.metering_computation.QueryQueryDefinitionReportQueryForecastArgs(
-                        time_forecast_ended=var["query_query_definition_report_query_forecast_time_forecast_ended"],
-                        forecast_type=var["query_query_definition_report_query_forecast_forecast_type"],
-                        time_forecast_started=var["query_query_definition_report_query_forecast_time_forecast_started"],
-                    ),
-                    group_bies=var["query_query_definition_report_query_group_by"],
-                    group_by_tags=[oci.metering_computation.QueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=var["query_query_definition_report_query_group_by_tag_key"],
-                        namespace=var["query_query_definition_report_query_group_by_tag_namespace"],
-                        value=var["query_query_definition_report_query_group_by_tag_value"],
-                    )],
-                    is_aggregate_by_time=var["query_query_definition_report_query_is_aggregate_by_time"],
-                    query_type=var["query_query_definition_report_query_query_type"],
-                    time_usage_ended=var["query_query_definition_report_query_time_usage_ended"],
-                    time_usage_started=var["query_query_definition_report_query_time_usage_started"],
-                ),
-                version=var["query_query_definition_version"],
-            ))
-        ```
-
-        ## Import
-
-        Queries can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:MeteringComputation/query:Query test_query "id"
-        ```
-
+        Create a Query resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param QueryArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -267,8 +147,6 @@ class Query(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']] query_definition: (Updatable) The common fields for queries.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -281,16 +159,10 @@ class Query(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="queryDefinition")
     def query_definition(self) -> pulumi.Output['outputs.QueryQueryDefinition']:
-        """
-        (Updatable) The common fields for queries.
-        """
         return pulumi.get(self, "query_definition")
 

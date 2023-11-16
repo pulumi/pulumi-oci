@@ -51,11 +51,11 @@ export interface GetAutonomousDatabaseRefreshableClonesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of refreshable_clone_collection.
      */
-    readonly refreshableCloneCollections: outputs.Database.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection[];
+    readonly refreshableCloneCollections?: outputs.Database.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection[];
 }
 /**
  * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.

@@ -69,7 +69,7 @@ export class WorkspaceExportRequest extends pulumi.CustomResource {
     /**
      * This field controls if the references will be exported along with the objects
      */
-    public readonly areReferencesIncluded!: pulumi.Output<boolean>;
+    public readonly areReferencesIncluded!: pulumi.Output<boolean | undefined>;
     /**
      * Name of the Object Storage bucket where the object will be exported.
      */
@@ -77,67 +77,67 @@ export class WorkspaceExportRequest extends pulumi.CustomResource {
     /**
      * Name of the user who initiated export request.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * Contains key of the error
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The array of exported object details.
      */
-    public /*out*/ readonly exportedItems!: pulumi.Output<outputs.DataIntegration.WorkspaceExportRequestExportedItem[]>;
+    public /*out*/ readonly exportedItems!: pulumi.Output<outputs.DataIntegration.WorkspaceExportRequestExportedItem[] | undefined>;
     /**
      * Name of the exported zip file.
      */
-    public readonly fileName!: pulumi.Output<string>;
+    public readonly fileName!: pulumi.Output<string | undefined>;
     /**
      * Filters for exported objects
      */
-    public readonly filters!: pulumi.Output<string[]>;
+    public readonly filters!: pulumi.Output<string[] | undefined>;
     /**
      * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      */
-    public readonly isObjectOverwriteEnabled!: pulumi.Output<boolean>;
+    public readonly isObjectOverwriteEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Export object request key
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * Name of the export request.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * Field is used to specify which object keys to export
      */
-    public readonly objectKeys!: pulumi.Output<string[]>;
+    public readonly objectKeys!: pulumi.Output<string[] | undefined>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    public readonly objectStorageRegion!: pulumi.Output<string>;
+    public readonly objectStorageRegion!: pulumi.Output<string | undefined>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    public readonly objectStorageTenancyId!: pulumi.Output<string>;
+    public readonly objectStorageTenancyId!: pulumi.Output<string | undefined>;
     /**
      * The array of exported referenced objects.
      */
-    public /*out*/ readonly referencedItems!: pulumi.Output<string>;
+    public /*out*/ readonly referencedItems!: pulumi.Output<string | undefined>;
     /**
      * Export Objects request status.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * Time at which the request was completely processed.
      */
-    public /*out*/ readonly timeEndedInMillis!: pulumi.Output<string>;
+    public /*out*/ readonly timeEndedInMillis!: pulumi.Output<string | undefined>;
     /**
      * Time at which the request started getting processed.
      */
-    public /*out*/ readonly timeStartedInMillis!: pulumi.Output<string>;
+    public /*out*/ readonly timeStartedInMillis!: pulumi.Output<string | undefined>;
     /**
      * Number of objects that are exported.
      */
-    public /*out*/ readonly totalExportedObjectCount!: pulumi.Output<number>;
+    public /*out*/ readonly totalExportedObjectCount!: pulumi.Output<number | undefined>;
     /**
      * The workspace ID.
      *

@@ -16,15 +16,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// ResponderRule description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// ResponderRule display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// List of responder rules associated with the recipe after applying all defaults
         /// </summary>
@@ -32,15 +32,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Owner of ResponderRecipe
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// Unique identifier for Responder Recipe of which this is an extension.
         /// </summary>
-        public readonly string ResponderRecipeId;
+        public readonly string? ResponderRecipeId;
         /// <summary>
         /// List of responder rules associated with the recipe - user input
         /// </summary>
@@ -48,33 +48,33 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The date and time the target was created. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the target was updated. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetGuardTargetTargetResponderRecipeResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult> effectiveResponderRules,
 
-            string id,
+            string? id,
 
-            string owner,
+            string? owner,
 
-            string responderRecipeId,
+            string? responderRecipeId,
 
             ImmutableArray<Outputs.GetGuardTargetTargetResponderRecipeResponderRuleResult> responderRules,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             Description = description;

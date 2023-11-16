@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetEkmsPrivateEndpointsResult(
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Kms
 
             ImmutableArray<Outputs.GetEkmsPrivateEndpointsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             EkmsPrivateEndpoints = ekmsPrivateEndpoints;

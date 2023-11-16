@@ -24,7 +24,7 @@ public final class GetDbHomesResult {
      * @return The list of db_homes.
      * 
      */
-    private List<GetDbHomesDbHome> dbHomes;
+    private @Nullable List<GetDbHomesDbHome> dbHomes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
@@ -45,7 +45,7 @@ public final class GetDbHomesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Database Home.
      * 
@@ -73,7 +73,7 @@ public final class GetDbHomesResult {
      * 
      */
     public List<GetDbHomesDbHome> dbHomes() {
-        return this.dbHomes;
+        return this.dbHomes == null ? List.of() : this.dbHomes;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
@@ -103,8 +103,8 @@ public final class GetDbHomesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Database Home.
@@ -132,12 +132,12 @@ public final class GetDbHomesResult {
     public static final class Builder {
         private @Nullable String backupId;
         private String compartmentId;
-        private List<GetDbHomesDbHome> dbHomes;
+        private @Nullable List<GetDbHomesDbHome> dbHomes;
         private @Nullable String dbSystemId;
         private @Nullable String dbVersion;
         private @Nullable String displayName;
         private @Nullable List<GetDbHomesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String vmClusterId;
         public Builder() {}
@@ -166,8 +166,8 @@ public final class GetDbHomesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbHomes(List<GetDbHomesDbHome> dbHomes) {
-            this.dbHomes = Objects.requireNonNull(dbHomes);
+        public Builder dbHomes(@Nullable List<GetDbHomesDbHome> dbHomes) {
+            this.dbHomes = dbHomes;
             return this;
         }
         public Builder dbHomes(GetDbHomesDbHome... dbHomes) {
@@ -197,8 +197,8 @@ public final class GetDbHomesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

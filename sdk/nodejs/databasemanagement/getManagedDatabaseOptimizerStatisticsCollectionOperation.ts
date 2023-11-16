@@ -53,65 +53,65 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationResult 
     /**
      * The number of objects for which statistics collection is completed.
      */
-    readonly completedCount: number;
+    readonly completedCount?: number;
     /**
      * The summary of the Managed Database resource.
      */
-    readonly databases: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase[];
+    readonly databases?: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase[];
     /**
      * The time it takes to complete the operation (in seconds).
      */
-    readonly durationInSeconds: number;
+    readonly durationInSeconds?: number;
     /**
      * The end time of the operation.
      */
-    readonly endTime: string;
+    readonly endTime?: string;
     /**
      * The number of objects for which statistics collection failed.
      */
-    readonly failedCount: number;
+    readonly failedCount?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The number of objects for which statistics collection is in progress.
      */
-    readonly inProgressCount: number;
+    readonly inProgressCount?: number;
     /**
      * The name of the job.
      */
-    readonly jobName: string;
+    readonly jobName?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of the operation.
      */
-    readonly operationName: string;
+    readonly operationName?: string;
     readonly optimizerStatisticsCollectionOperationId: number;
     /**
      * The start time of the operation.
      */
-    readonly startTime: string;
+    readonly startTime?: string;
     /**
      * The status of the Optimizer Statistics Collection task.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The name of the target object for which statistics are gathered.
      */
-    readonly target: string;
+    readonly target?: string;
     /**
      * An array of Optimizer Statistics Collection task details.
      */
-    readonly tasks: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationTask[];
+    readonly tasks?: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationTask[];
     /**
      * The number of objects for which statistics collection timed out.
      */
-    readonly timedOutCount: number;
+    readonly timedOutCount?: number;
     /**
      * The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
      */
-    readonly totalObjectsCount: number;
+    readonly totalObjectsCount?: number;
 }
 /**
  * This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.

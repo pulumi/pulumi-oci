@@ -94,14 +94,14 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="associatedVirtualCircuits", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> associatedVirtualCircuits;
+    private Output</* @Nullable */ List<String>> associatedVirtualCircuits;
 
     /**
      * @return The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
      * 
      */
-    public Output<List<String>> associatedVirtualCircuits() {
-        return this.associatedVirtualCircuits;
+    public Output<Optional<List<String>>> associatedVirtualCircuits() {
+        return Codegen.optional(this.associatedVirtualCircuits);
     }
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
@@ -110,7 +110,7 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="bgpSessionInfos", refs={List.class,IpsecConnectionTunnelManagementBgpSessionInfo.class}, tree="[0,1]")
-    private Output<List<IpsecConnectionTunnelManagementBgpSessionInfo>> bgpSessionInfos;
+    private Output</* @Nullable */ List<IpsecConnectionTunnelManagementBgpSessionInfo>> bgpSessionInfos;
 
     /**
      * @return Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
@@ -118,50 +118,50 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      * 
      */
-    public Output<List<IpsecConnectionTunnelManagementBgpSessionInfo>> bgpSessionInfos() {
-        return this.bgpSessionInfos;
+    public Output<Optional<List<IpsecConnectionTunnelManagementBgpSessionInfo>>> bgpSessionInfos() {
+        return Codegen.optional(this.bgpSessionInfos);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
      * 
      */
     @Export(name="cpeIp", refs={String.class}, tree="[0]")
-    private Output<String> cpeIp;
+    private Output</* @Nullable */ String> cpeIp;
 
     /**
      * @return The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
      * 
      */
-    public Output<String> cpeIp() {
-        return this.cpeIp;
+    public Output<Optional<String>> cpeIp() {
+        return Codegen.optional(this.cpeIp);
     }
     /**
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     @Export(name="dpdConfigs", refs={List.class,IpsecConnectionTunnelManagementDpdConfig.class}, tree="[0,1]")
     private Output</* @Nullable */ List<IpsecConnectionTunnelManagementDpdConfig>> dpdConfigs;
@@ -170,44 +170,44 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
         return Codegen.optional(this.dpdConfigs);
     }
     @Export(name="dpdMode", refs={String.class}, tree="[0]")
-    private Output<String> dpdMode;
+    private Output</* @Nullable */ String> dpdMode;
 
-    public Output<String> dpdMode() {
-        return this.dpdMode;
+    public Output<Optional<String>> dpdMode() {
+        return Codegen.optional(this.dpdMode);
     }
     @Export(name="dpdTimeoutInSec", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dpdTimeoutInSec;
+    private Output</* @Nullable */ Integer> dpdTimeoutInSec;
 
-    public Output<Integer> dpdTimeoutInSec() {
-        return this.dpdTimeoutInSec;
+    public Output<Optional<Integer>> dpdTimeoutInSec() {
+        return Codegen.optional(this.dpdTimeoutInSec);
     }
     /**
      * Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
      * 
      */
     @Export(name="encryptionDomainConfig", refs={IpsecConnectionTunnelManagementEncryptionDomainConfig.class}, tree="[0]")
-    private Output<IpsecConnectionTunnelManagementEncryptionDomainConfig> encryptionDomainConfig;
+    private Output</* @Nullable */ IpsecConnectionTunnelManagementEncryptionDomainConfig> encryptionDomainConfig;
 
     /**
      * @return Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
      * 
      */
-    public Output<IpsecConnectionTunnelManagementEncryptionDomainConfig> encryptionDomainConfig() {
-        return this.encryptionDomainConfig;
+    public Output<Optional<IpsecConnectionTunnelManagementEncryptionDomainConfig>> encryptionDomainConfig() {
+        return Codegen.optional(this.encryptionDomainConfig);
     }
     /**
      * Internet Key Exchange protocol version.
      * 
      */
     @Export(name="ikeVersion", refs={String.class}, tree="[0]")
-    private Output<String> ikeVersion;
+    private Output</* @Nullable */ String> ikeVersion;
 
     /**
      * @return Internet Key Exchange protocol version.
      * 
      */
-    public Output<String> ikeVersion() {
-        return this.ikeVersion;
+    public Output<Optional<String>> ikeVersion() {
+        return Codegen.optional(this.ikeVersion);
     }
     /**
      * The OCID of the IPSec connection.
@@ -224,28 +224,28 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
         return this.ipsecId;
     }
     @Export(name="natTranslationEnabled", refs={String.class}, tree="[0]")
-    private Output<String> natTranslationEnabled;
+    private Output</* @Nullable */ String> natTranslationEnabled;
 
-    public Output<String> natTranslationEnabled() {
-        return this.natTranslationEnabled;
+    public Output<Optional<String>> natTranslationEnabled() {
+        return Codegen.optional(this.natTranslationEnabled);
     }
     @Export(name="oracleCanInitiate", refs={String.class}, tree="[0]")
-    private Output<String> oracleCanInitiate;
+    private Output</* @Nullable */ String> oracleCanInitiate;
 
-    public Output<String> oracleCanInitiate() {
-        return this.oracleCanInitiate;
+    public Output<Optional<String>> oracleCanInitiate() {
+        return Codegen.optional(this.oracleCanInitiate);
     }
     @Export(name="phaseOneDetails", refs={List.class,IpsecConnectionTunnelManagementPhaseOneDetail.class}, tree="[0,1]")
-    private Output<List<IpsecConnectionTunnelManagementPhaseOneDetail>> phaseOneDetails;
+    private Output</* @Nullable */ List<IpsecConnectionTunnelManagementPhaseOneDetail>> phaseOneDetails;
 
-    public Output<List<IpsecConnectionTunnelManagementPhaseOneDetail>> phaseOneDetails() {
-        return this.phaseOneDetails;
+    public Output<Optional<List<IpsecConnectionTunnelManagementPhaseOneDetail>>> phaseOneDetails() {
+        return Codegen.optional(this.phaseOneDetails);
     }
     @Export(name="phaseTwoDetails", refs={List.class,IpsecConnectionTunnelManagementPhaseTwoDetail.class}, tree="[0,1]")
-    private Output<List<IpsecConnectionTunnelManagementPhaseTwoDetail>> phaseTwoDetails;
+    private Output</* @Nullable */ List<IpsecConnectionTunnelManagementPhaseTwoDetail>> phaseTwoDetails;
 
-    public Output<List<IpsecConnectionTunnelManagementPhaseTwoDetail>> phaseTwoDetails() {
-        return this.phaseTwoDetails;
+    public Output<Optional<List<IpsecConnectionTunnelManagementPhaseTwoDetail>>> phaseTwoDetails() {
+        return Codegen.optional(this.phaseTwoDetails);
     }
     /**
      * The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
@@ -266,70 +266,70 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="sharedSecret", refs={String.class}, tree="[0]")
-    private Output<String> sharedSecret;
+    private Output</* @Nullable */ String> sharedSecret;
 
     /**
      * @return The shared secret (pre-shared key) to use for the IPSec tunnel. If you don&#39;t provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      * 
      */
-    public Output<String> sharedSecret() {
-        return this.sharedSecret;
+    public Output<Optional<String>> sharedSecret() {
+        return Codegen.optional(this.sharedSecret);
     }
     /**
      * The IPSec connection&#39;s tunnel&#39;s lifecycle state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The IPSec connection&#39;s tunnel&#39;s lifecycle state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The tunnel&#39;s current state.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return The tunnel&#39;s current state.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeStatusUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeStatusUpdated;
+    private Output</* @Nullable */ String> timeStatusUpdated;
 
     /**
      * @return When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeStatusUpdated() {
-        return this.timeStatusUpdated;
+    public Output<Optional<String>> timeStatusUpdated() {
+        return Codegen.optional(this.timeStatusUpdated);
     }
     /**
      * The OCID of the IPSec connection&#39;s tunnel.
@@ -350,14 +350,14 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="vpnIp", refs={String.class}, tree="[0]")
-    private Output<String> vpnIp;
+    private Output</* @Nullable */ String> vpnIp;
 
     /**
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `129.146.17.50`
      * 
      */
-    public Output<String> vpnIp() {
-        return this.vpnIp;
+    public Output<Optional<String>> vpnIp() {
+        return Codegen.optional(this.vpnIp);
     }
 
     /**

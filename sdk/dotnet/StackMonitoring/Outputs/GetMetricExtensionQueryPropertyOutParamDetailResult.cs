@@ -16,17 +16,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Position of PL/SQL procedure OUT parameter
         /// </summary>
-        public readonly int OutParamPosition;
+        public readonly int? OutParamPosition;
         /// <summary>
         /// SQL Type of PL/SQL procedure OUT parameter
         /// </summary>
-        public readonly string OutParamType;
+        public readonly string? OutParamType;
 
         [OutputConstructor]
         private GetMetricExtensionQueryPropertyOutParamDetailResult(
-            int outParamPosition,
+            int? outParamPosition,
 
-            string outParamType)
+            string? outParamType)
         {
             OutParamPosition = outParamPosition;
             OutParamType = outParamType;

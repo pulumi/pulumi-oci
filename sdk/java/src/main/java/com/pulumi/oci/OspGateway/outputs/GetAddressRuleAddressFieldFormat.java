@@ -6,6 +6,8 @@ package com.pulumi.oci.OspGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddressRuleAddressFieldFormat {
@@ -13,27 +15,27 @@ public final class GetAddressRuleAddressFieldFormat {
      * @return English translation of the label (for reference only - translation is not provided)
      * 
      */
-    private String example;
+    private @Nullable String example;
     /**
      * @return Language token of the required label
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetAddressRuleAddressFieldFormat() {}
     /**
      * @return English translation of the label (for reference only - translation is not provided)
      * 
      */
-    public String example() {
-        return this.example;
+    public Optional<String> example() {
+        return Optional.ofNullable(this.example);
     }
     /**
      * @return Language token of the required label
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAddressRuleAddressFieldFormat {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String example;
-        private String value;
+        private @Nullable String example;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetAddressRuleAddressFieldFormat defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAddressRuleAddressFieldFormat {
         }
 
         @CustomType.Setter
-        public Builder example(String example) {
-            this.example = Objects.requireNonNull(example);
+        public Builder example(@Nullable String example) {
+            this.example = example;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetAddressRuleAddressFieldFormat build() {

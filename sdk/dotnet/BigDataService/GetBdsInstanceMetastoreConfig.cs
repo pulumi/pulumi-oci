@@ -119,71 +119,71 @@ namespace Pulumi.Oci.BigDataService
     [OutputType]
     public sealed class GetBdsInstanceMetastoreConfigResult
     {
-        public readonly int ActivateTrigger;
+        public readonly int? ActivateTrigger;
         /// <summary>
         /// The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
         /// </summary>
-        public readonly string BdsApiKeyId;
-        public readonly string BdsApiKeyPassphrase;
+        public readonly string? BdsApiKeyId;
+        public readonly string? BdsApiKeyPassphrase;
         public readonly string BdsInstanceId;
-        public readonly string ClusterAdminPassword;
+        public readonly string? ClusterAdminPassword;
         /// <summary>
         /// The display name of metastore configuration
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The ID of the metastore configuration
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string MetastoreConfigId;
         /// <summary>
         /// The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
         /// </summary>
-        public readonly string MetastoreId;
+        public readonly string? MetastoreId;
         /// <summary>
         /// The type of the metastore in the metastore configuration.
         /// </summary>
-        public readonly string MetastoreType;
+        public readonly string? MetastoreType;
         /// <summary>
         /// the lifecycle state of the metastore configuration.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetBdsInstanceMetastoreConfigResult(
-            int activateTrigger,
+            int? activateTrigger,
 
-            string bdsApiKeyId,
+            string? bdsApiKeyId,
 
-            string bdsApiKeyPassphrase,
+            string? bdsApiKeyPassphrase,
 
             string bdsInstanceId,
 
-            string clusterAdminPassword,
+            string? clusterAdminPassword,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
             string metastoreConfigId,
 
-            string metastoreId,
+            string? metastoreId,
 
-            string metastoreType,
+            string? metastoreType,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             ActivateTrigger = activateTrigger;
             BdsApiKeyId = bdsApiKeyId;

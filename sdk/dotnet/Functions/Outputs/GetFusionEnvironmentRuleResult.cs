@@ -16,20 +16,20 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Rule type
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         public readonly ImmutableArray<Outputs.GetFusionEnvironmentRuleConditionResult> Conditions;
         /// <summary>
         /// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
 
         [OutputConstructor]
         private GetFusionEnvironmentRuleResult(
-            string action,
+            string? action,
 
             ImmutableArray<Outputs.GetFusionEnvironmentRuleConditionResult> conditions,
 
-            string description)
+            string? description)
         {
             Action = action;
             Conditions = conditions;

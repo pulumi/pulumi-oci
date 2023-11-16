@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorTarget {
@@ -17,195 +19,195 @@ public final class GetServiceConnectorTarget {
      * @return The batch rollover size in megabytes.
      * 
      */
-    private Integer batchRolloverSizeInMbs;
+    private @Nullable Integer batchRolloverSizeInMbs;
     /**
      * @return The batch rollover time in milliseconds.
      * 
      */
-    private Integer batchRolloverTimeInMs;
+    private @Nullable Integer batchRolloverTimeInMs;
     /**
      * @return The name of the bucket. Avoid entering confidential information.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return List of dimension names and values.
      * 
      */
-    private List<GetServiceConnectorTargetDimension> dimensions;
+    private @Nullable List<GetServiceConnectorTargetDimension> dimensions;
     /**
      * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
      * 
      */
-    private Boolean enableFormattedMessaging;
+    private @Nullable Boolean enableFormattedMessaging;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    private String functionId;
+    private @Nullable String functionId;
     /**
      * @return The type descriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    private String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
-    private String logSourceIdentifier;
+    private @Nullable String logSourceIdentifier;
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    private String metric;
+    private @Nullable String metric;
     /**
      * @return The namespace of the metric.  Example: `oci_computeagent`
      * 
      */
-    private String metricNamespace;
+    private @Nullable String metricNamespace;
     /**
      * @return The namespace.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The prefix of the objects. Avoid entering confidential information.
      * 
      */
-    private String objectNamePrefix;
+    private @Nullable String objectNamePrefix;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    private String streamId;
+    private @Nullable String streamId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    private String topicId;
+    private @Nullable String topicId;
 
     private GetServiceConnectorTarget() {}
     /**
      * @return The batch rollover size in megabytes.
      * 
      */
-    public Integer batchRolloverSizeInMbs() {
-        return this.batchRolloverSizeInMbs;
+    public Optional<Integer> batchRolloverSizeInMbs() {
+        return Optional.ofNullable(this.batchRolloverSizeInMbs);
     }
     /**
      * @return The batch rollover time in milliseconds.
      * 
      */
-    public Integer batchRolloverTimeInMs() {
-        return this.batchRolloverTimeInMs;
+    public Optional<Integer> batchRolloverTimeInMs() {
+        return Optional.ofNullable(this.batchRolloverTimeInMs);
     }
     /**
      * @return The name of the bucket. Avoid entering confidential information.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return List of dimension names and values.
      * 
      */
     public List<GetServiceConnectorTargetDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
      * 
      */
-    public Boolean enableFormattedMessaging() {
-        return this.enableFormattedMessaging;
+    public Optional<Boolean> enableFormattedMessaging() {
+        return Optional.ofNullable(this.enableFormattedMessaging);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    public String functionId() {
-        return this.functionId;
+    public Optional<String> functionId() {
+        return Optional.ofNullable(this.functionId);
     }
     /**
      * @return The type descriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    public String logGroupId() {
-        return this.logGroupId;
+    public Optional<String> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
     }
     /**
      * @return Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
-    public String logSourceIdentifier() {
-        return this.logSourceIdentifier;
+    public Optional<String> logSourceIdentifier() {
+        return Optional.ofNullable(this.logSourceIdentifier);
     }
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    public String metric() {
-        return this.metric;
+    public Optional<String> metric() {
+        return Optional.ofNullable(this.metric);
     }
     /**
      * @return The namespace of the metric.  Example: `oci_computeagent`
      * 
      */
-    public String metricNamespace() {
-        return this.metricNamespace;
+    public Optional<String> metricNamespace() {
+        return Optional.ofNullable(this.metricNamespace);
     }
     /**
      * @return The namespace.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The prefix of the objects. Avoid entering confidential information.
      * 
      */
-    public String objectNamePrefix() {
-        return this.objectNamePrefix;
+    public Optional<String> objectNamePrefix() {
+        return Optional.ofNullable(this.objectNamePrefix);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    public String streamId() {
-        return this.streamId;
+    public Optional<String> streamId() {
+        return Optional.ofNullable(this.streamId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    public String topicId() {
-        return this.topicId;
+    public Optional<String> topicId() {
+        return Optional.ofNullable(this.topicId);
     }
 
     public static Builder builder() {
@@ -217,22 +219,22 @@ public final class GetServiceConnectorTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer batchRolloverSizeInMbs;
-        private Integer batchRolloverTimeInMs;
-        private String bucket;
-        private String compartmentId;
-        private List<GetServiceConnectorTargetDimension> dimensions;
-        private Boolean enableFormattedMessaging;
-        private String functionId;
-        private String kind;
-        private String logGroupId;
-        private String logSourceIdentifier;
-        private String metric;
-        private String metricNamespace;
-        private String namespace;
-        private String objectNamePrefix;
-        private String streamId;
-        private String topicId;
+        private @Nullable Integer batchRolloverSizeInMbs;
+        private @Nullable Integer batchRolloverTimeInMs;
+        private @Nullable String bucket;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetServiceConnectorTargetDimension> dimensions;
+        private @Nullable Boolean enableFormattedMessaging;
+        private @Nullable String functionId;
+        private @Nullable String kind;
+        private @Nullable String logGroupId;
+        private @Nullable String logSourceIdentifier;
+        private @Nullable String metric;
+        private @Nullable String metricNamespace;
+        private @Nullable String namespace;
+        private @Nullable String objectNamePrefix;
+        private @Nullable String streamId;
+        private @Nullable String topicId;
         public Builder() {}
         public Builder(GetServiceConnectorTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -255,86 +257,86 @@ public final class GetServiceConnectorTarget {
         }
 
         @CustomType.Setter
-        public Builder batchRolloverSizeInMbs(Integer batchRolloverSizeInMbs) {
-            this.batchRolloverSizeInMbs = Objects.requireNonNull(batchRolloverSizeInMbs);
+        public Builder batchRolloverSizeInMbs(@Nullable Integer batchRolloverSizeInMbs) {
+            this.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder batchRolloverTimeInMs(Integer batchRolloverTimeInMs) {
-            this.batchRolloverTimeInMs = Objects.requireNonNull(batchRolloverTimeInMs);
+        public Builder batchRolloverTimeInMs(@Nullable Integer batchRolloverTimeInMs) {
+            this.batchRolloverTimeInMs = batchRolloverTimeInMs;
             return this;
         }
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetServiceConnectorTargetDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetServiceConnectorTargetDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetServiceConnectorTargetDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder enableFormattedMessaging(Boolean enableFormattedMessaging) {
-            this.enableFormattedMessaging = Objects.requireNonNull(enableFormattedMessaging);
+        public Builder enableFormattedMessaging(@Nullable Boolean enableFormattedMessaging) {
+            this.enableFormattedMessaging = enableFormattedMessaging;
             return this;
         }
         @CustomType.Setter
-        public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+        public Builder functionId(@Nullable String functionId) {
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
-        public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+        public Builder logGroupId(@Nullable String logGroupId) {
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder logSourceIdentifier(String logSourceIdentifier) {
-            this.logSourceIdentifier = Objects.requireNonNull(logSourceIdentifier);
+        public Builder logSourceIdentifier(@Nullable String logSourceIdentifier) {
+            this.logSourceIdentifier = logSourceIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder metric(String metric) {
-            this.metric = Objects.requireNonNull(metric);
+        public Builder metric(@Nullable String metric) {
+            this.metric = metric;
             return this;
         }
         @CustomType.Setter
-        public Builder metricNamespace(String metricNamespace) {
-            this.metricNamespace = Objects.requireNonNull(metricNamespace);
+        public Builder metricNamespace(@Nullable String metricNamespace) {
+            this.metricNamespace = metricNamespace;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder objectNamePrefix(String objectNamePrefix) {
-            this.objectNamePrefix = Objects.requireNonNull(objectNamePrefix);
+        public Builder objectNamePrefix(@Nullable String objectNamePrefix) {
+            this.objectNamePrefix = objectNamePrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder streamId(String streamId) {
-            this.streamId = Objects.requireNonNull(streamId);
+        public Builder streamId(@Nullable String streamId) {
+            this.streamId = streamId;
             return this;
         }
         @CustomType.Setter
-        public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+        public Builder topicId(@Nullable String topicId) {
+            this.topicId = topicId;
             return this;
         }
         public GetServiceConnectorTarget build() {

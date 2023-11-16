@@ -6,6 +6,8 @@ package com.pulumi.oci.OsubSubscription.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCommitmentsCommitment {
@@ -13,87 +15,87 @@ public final class GetCommitmentsCommitment {
      * @return Commitment available amount
      * 
      */
-    private String availableAmount;
+    private @Nullable String availableAmount;
     /**
      * @return Funded Allocation line value example: 12000.00
      * 
      */
-    private String fundedAllocationValue;
+    private @Nullable String fundedAllocationValue;
     /**
      * @return SPM internal Commitment ID
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Commitment quantity
      * 
      */
-    private String quantity;
+    private @Nullable String quantity;
     /**
      * @return Commitment end date
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Commitment start date
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return Commitment used amount
      * 
      */
-    private String usedAmount;
+    private @Nullable String usedAmount;
 
     private GetCommitmentsCommitment() {}
     /**
      * @return Commitment available amount
      * 
      */
-    public String availableAmount() {
-        return this.availableAmount;
+    public Optional<String> availableAmount() {
+        return Optional.ofNullable(this.availableAmount);
     }
     /**
      * @return Funded Allocation line value example: 12000.00
      * 
      */
-    public String fundedAllocationValue() {
-        return this.fundedAllocationValue;
+    public Optional<String> fundedAllocationValue() {
+        return Optional.ofNullable(this.fundedAllocationValue);
     }
     /**
      * @return SPM internal Commitment ID
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Commitment quantity
      * 
      */
-    public String quantity() {
-        return this.quantity;
+    public Optional<String> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return Commitment end date
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Commitment start date
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
     /**
      * @return Commitment used amount
      * 
      */
-    public String usedAmount() {
-        return this.usedAmount;
+    public Optional<String> usedAmount() {
+        return Optional.ofNullable(this.usedAmount);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetCommitmentsCommitment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availableAmount;
-        private String fundedAllocationValue;
-        private String id;
-        private String quantity;
-        private String timeEnd;
-        private String timeStart;
-        private String usedAmount;
+        private @Nullable String availableAmount;
+        private @Nullable String fundedAllocationValue;
+        private @Nullable String id;
+        private @Nullable String quantity;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
+        private @Nullable String usedAmount;
         public Builder() {}
         public Builder(GetCommitmentsCommitment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetCommitmentsCommitment {
         }
 
         @CustomType.Setter
-        public Builder availableAmount(String availableAmount) {
-            this.availableAmount = Objects.requireNonNull(availableAmount);
+        public Builder availableAmount(@Nullable String availableAmount) {
+            this.availableAmount = availableAmount;
             return this;
         }
         @CustomType.Setter
-        public Builder fundedAllocationValue(String fundedAllocationValue) {
-            this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
+        public Builder fundedAllocationValue(@Nullable String fundedAllocationValue) {
+            this.fundedAllocationValue = fundedAllocationValue;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable String quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
-        public Builder usedAmount(String usedAmount) {
-            this.usedAmount = Objects.requireNonNull(usedAmount);
+        public Builder usedAmount(@Nullable String usedAmount) {
+            this.usedAmount = usedAmount;
             return this;
         }
         public GetCommitmentsCommitment build() {

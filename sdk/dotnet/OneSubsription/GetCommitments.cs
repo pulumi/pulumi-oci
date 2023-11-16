@@ -146,7 +146,7 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// SPM internal Subscribed Service ID
         /// </summary>
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<Outputs.GetCommitmentsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string subscribedServiceId)
         {

@@ -57,13 +57,13 @@ namespace Pulumi.Oci.FileStorage
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The time when this snapshot will be deleted.
         /// </summary>
         [Output("expirationTime")]
-        public Output<string> ExpirationTime { get; private set; } = null!;
+        public Output<string?> ExpirationTime { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
@@ -75,25 +75,25 @@ namespace Pulumi.Oci.FileStorage
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
         /// </summary>
         [Output("filesystemSnapshotPolicyId")]
-        public Output<string> FilesystemSnapshotPolicyId { get; private set; } = null!;
+        public Output<string?> FilesystemSnapshotPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Output("isCloneSource")]
-        public Output<bool> IsCloneSource { get; private set; } = null!;
+        public Output<bool?> IsCloneSource { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current `lifecycleState`.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.FileStorage
         /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Output("provenanceId")]
-        public Output<string> ProvenanceId { get; private set; } = null!;
+        public Output<string?> ProvenanceId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
@@ -122,25 +122,25 @@ namespace Pulumi.Oci.FileStorage
         /// * If the snapshot is replicated from a file system.
         /// </summary>
         [Output("snapshotTime")]
-        public Output<string> SnapshotTime { get; private set; } = null!;
+        public Output<string?> SnapshotTime { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the generation type of the snapshot.
         /// </summary>
         [Output("snapshotType")]
-        public Output<string> SnapshotType { get; private set; } = null!;
+        public Output<string?> SnapshotType { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the snapshot.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

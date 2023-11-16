@@ -54,25 +54,25 @@ export interface GetInstanceAgentPluginResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instanceagentId: string;
     /**
      * The optional message from the agent plugin
      */
-    readonly message: string;
+    readonly message?: string;
     /**
      * The plugin name
      */
-    readonly name: string;
+    readonly name?: string;
     readonly pluginName: string;
     /**
      * The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The last update time of the plugin in UTC
      */
-    readonly timeLastUpdatedUtc: string;
+    readonly timeLastUpdatedUtc?: string;
 }
 /**
  * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.

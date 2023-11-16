@@ -45,15 +45,12 @@ class GetConsoleHistoryDataResult:
 
     @property
     @pulumi.getter
-    def data(self) -> str:
-        """
-        The console history data.
-        """
+    def data(self) -> Optional[str]:
         return pulumi.get(self, "data")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,27 +85,7 @@ def get_console_history_data(console_history_id: Optional[str] = None,
                              offset: Optional[int] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConsoleHistoryDataResult:
     """
-    This data source provides details about a specific Console History Content resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the actual console history data (not the metadata).
-    See [CaptureConsoleHistory](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory/CaptureConsoleHistory)
-    for details about using the console history operations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_console_history_data = oci.Core.get_console_history_data(console_history_id=oci_core_console_history["test_console_history"]["id"],
-        length=var["console_history_content_length"],
-        offset=var["console_history_content_offset"])
-    ```
-
-
-    :param str console_history_id: The OCID of the console history.
-    :param int length: Length of the snapshot data to retrieve. Cannot be less than 10240.
-    :param int offset: Offset of the snapshot data to retrieve.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['consoleHistoryId'] = console_history_id
@@ -131,26 +108,6 @@ def get_console_history_data_output(console_history_id: Optional[pulumi.Input[st
                                     offset: Optional[pulumi.Input[Optional[int]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConsoleHistoryDataResult]:
     """
-    This data source provides details about a specific Console History Content resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the actual console history data (not the metadata).
-    See [CaptureConsoleHistory](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory/CaptureConsoleHistory)
-    for details about using the console history operations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_console_history_data = oci.Core.get_console_history_data(console_history_id=oci_core_console_history["test_console_history"]["id"],
-        length=var["console_history_content_length"],
-        offset=var["console_history_content_offset"])
-    ```
-
-
-    :param str console_history_id: The OCID of the console history.
-    :param int length: Length of the snapshot data to retrieve. Cannot be less than 10240.
-    :param int offset: Offset of the snapshot data to retrieve.
+    Use this data source to access information about an existing resource.
     """
     ...

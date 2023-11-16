@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
@@ -38,9 +37,9 @@ type LibraryMasingFormat struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the format entry.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries LibraryMasingFormatFormatEntryArrayOutput `pulumi:"formatEntries"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -51,13 +50,13 @@ type LibraryMasingFormat struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIds pulumi.StringArrayOutput `pulumi:"sensitiveTypeIds"`
 	// Specifies whether the library masking format is user-defined or predefined.
-	Source pulumi.StringOutput `pulumi:"source"`
+	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// The current state of the library masking format.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewLibraryMasingFormat registers a new resource with the given unique name, arguments, and options.
@@ -219,12 +218,6 @@ func (i *LibraryMasingFormat) ToLibraryMasingFormatOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatOutput)
 }
 
-func (i *LibraryMasingFormat) ToOutput(ctx context.Context) pulumix.Output[*LibraryMasingFormat] {
-	return pulumix.Output[*LibraryMasingFormat]{
-		OutputState: i.ToLibraryMasingFormatOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LibraryMasingFormatArrayInput is an input type that accepts LibraryMasingFormatArray and LibraryMasingFormatArrayOutput values.
 // You can construct a concrete instance of `LibraryMasingFormatArrayInput` via:
 //
@@ -248,12 +241,6 @@ func (i LibraryMasingFormatArray) ToLibraryMasingFormatArrayOutput() LibraryMasi
 
 func (i LibraryMasingFormatArray) ToLibraryMasingFormatArrayOutputWithContext(ctx context.Context) LibraryMasingFormatArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatArrayOutput)
-}
-
-func (i LibraryMasingFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]*LibraryMasingFormat] {
-	return pulumix.Output[[]*LibraryMasingFormat]{
-		OutputState: i.ToLibraryMasingFormatArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LibraryMasingFormatMapInput is an input type that accepts LibraryMasingFormatMap and LibraryMasingFormatMapOutput values.
@@ -281,12 +268,6 @@ func (i LibraryMasingFormatMap) ToLibraryMasingFormatMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatMapOutput)
 }
 
-func (i LibraryMasingFormatMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LibraryMasingFormat] {
-	return pulumix.Output[map[string]*LibraryMasingFormat]{
-		OutputState: i.ToLibraryMasingFormatMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LibraryMasingFormatOutput struct{ *pulumi.OutputState }
 
 func (LibraryMasingFormatOutput) ElementType() reflect.Type {
@@ -301,12 +282,6 @@ func (o LibraryMasingFormatOutput) ToLibraryMasingFormatOutputWithContext(ctx co
 	return o
 }
 
-func (o LibraryMasingFormatOutput) ToOutput(ctx context.Context) pulumix.Output[*LibraryMasingFormat] {
-	return pulumix.Output[*LibraryMasingFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment where the library masking format should be created.
 func (o LibraryMasingFormatOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -318,13 +293,13 @@ func (o LibraryMasingFormatOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the format entry.
-func (o LibraryMasingFormatOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o LibraryMasingFormatOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
-func (o LibraryMasingFormatOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o LibraryMasingFormatOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
@@ -346,23 +321,23 @@ func (o LibraryMasingFormatOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
 }
 
 // Specifies whether the library masking format is user-defined or predefined.
-func (o LibraryMasingFormatOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+func (o LibraryMasingFormatOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the library masking format.
-func (o LibraryMasingFormatOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LibraryMasingFormatOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-func (o LibraryMasingFormatOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LibraryMasingFormatOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-func (o LibraryMasingFormatOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LibraryMasingFormatOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type LibraryMasingFormatArrayOutput struct{ *pulumi.OutputState }
@@ -377,12 +352,6 @@ func (o LibraryMasingFormatArrayOutput) ToLibraryMasingFormatArrayOutput() Libra
 
 func (o LibraryMasingFormatArrayOutput) ToLibraryMasingFormatArrayOutputWithContext(ctx context.Context) LibraryMasingFormatArrayOutput {
 	return o
-}
-
-func (o LibraryMasingFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LibraryMasingFormat] {
-	return pulumix.Output[[]*LibraryMasingFormat]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LibraryMasingFormatArrayOutput) Index(i pulumi.IntInput) LibraryMasingFormatOutput {
@@ -403,12 +372,6 @@ func (o LibraryMasingFormatMapOutput) ToLibraryMasingFormatMapOutput() LibraryMa
 
 func (o LibraryMasingFormatMapOutput) ToLibraryMasingFormatMapOutputWithContext(ctx context.Context) LibraryMasingFormatMapOutput {
 	return o
-}
-
-func (o LibraryMasingFormatMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LibraryMasingFormat] {
-	return pulumix.Output[map[string]*LibraryMasingFormat]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LibraryMasingFormatMapOutput) MapIndex(k pulumi.StringInput) LibraryMasingFormatOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure OS Management service.
@@ -60,25 +59,25 @@ type LookupManagedInstanceGroupArgs struct {
 // A collection of values returned by getManagedInstanceGroup.
 type LookupManagedInstanceGroupResult struct {
 	// OCID for the Compartment
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Information specified by the user about the managed instance group
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User friendly name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
-	Id                     string `pulumi:"id"`
-	ManagedInstanceCount   int    `pulumi:"managedInstanceCount"`
-	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
+	Id                     *string `pulumi:"id"`
+	ManagedInstanceCount   *int    `pulumi:"managedInstanceCount"`
+	ManagedInstanceGroupId string  `pulumi:"managedInstanceGroupId"`
 	// list of Managed Instances in the group
 	ManagedInstances []GetManagedInstanceGroupManagedInstance `pulumi:"managedInstances"`
 	// The Operating System type of the managed instance.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// The current state of the Software Source.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 func LookupManagedInstanceGroupOutput(ctx *pulumi.Context, args LookupManagedInstanceGroupOutputArgs, opts ...pulumi.InvokeOption) LookupManagedInstanceGroupResultOutput {
@@ -119,15 +118,9 @@ func (o LookupManagedInstanceGroupResultOutput) ToLookupManagedInstanceGroupResu
 	return o
 }
 
-func (o LookupManagedInstanceGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedInstanceGroupResult] {
-	return pulumix.Output[LookupManagedInstanceGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID for the Compartment
-func (o LookupManagedInstanceGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -136,13 +129,13 @@ func (o LookupManagedInstanceGroupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Information specified by the user about the managed instance group
-func (o LookupManagedInstanceGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User friendly name
-func (o LookupManagedInstanceGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -151,12 +144,12 @@ func (o LookupManagedInstanceGroupResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // unique identifier that is immutable on creation
-func (o LookupManagedInstanceGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *int { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceGroupId() pulumi.StringOutput {
@@ -171,13 +164,13 @@ func (o LookupManagedInstanceGroupResultOutput) ManagedInstances() GetManagedIns
 }
 
 // The Operating System type of the managed instance.
-func (o LookupManagedInstanceGroupResultOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Software Source.
-func (o LookupManagedInstanceGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

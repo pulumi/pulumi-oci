@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
@@ -14,39 +16,39 @@ public final class GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
      * @return The volume&#39;s iSCSI IP address.  Example: `169.254.2.2`
      * 
      */
-    private String ipv4;
+    private @Nullable String ipv4;
     /**
      * @return The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */
-    private String iqn;
+    private @Nullable String iqn;
     /**
      * @return The volume&#39;s iSCSI port, usually port 860 or 3260.  Example: `3260`
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
 
     private GetVolumeAttachmentsVolumeAttachmentMultipathDevice() {}
     /**
      * @return The volume&#39;s iSCSI IP address.  Example: `169.254.2.2`
      * 
      */
-    public String ipv4() {
-        return this.ipv4;
+    public Optional<String> ipv4() {
+        return Optional.ofNullable(this.ipv4);
     }
     /**
      * @return The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */
-    public String iqn() {
-        return this.iqn;
+    public Optional<String> iqn() {
+        return Optional.ofNullable(this.iqn);
     }
     /**
      * @return The volume&#39;s iSCSI port, usually port 860 or 3260.  Example: `3260`
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipv4;
-        private String iqn;
-        private Integer port;
+        private @Nullable String ipv4;
+        private @Nullable String iqn;
+        private @Nullable Integer port;
         public Builder() {}
         public Builder(GetVolumeAttachmentsVolumeAttachmentMultipathDevice defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
         }
 
         @CustomType.Setter
-        public Builder ipv4(String ipv4) {
-            this.ipv4 = Objects.requireNonNull(ipv4);
+        public Builder ipv4(@Nullable String ipv4) {
+            this.ipv4 = ipv4;
             return this;
         }
         @CustomType.Setter
-        public Builder iqn(String iqn) {
-            this.iqn = Objects.requireNonNull(iqn);
+        public Builder iqn(@Nullable String iqn) {
+            this.iqn = iqn;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         public GetVolumeAttachmentsVolumeAttachmentMultipathDevice build() {

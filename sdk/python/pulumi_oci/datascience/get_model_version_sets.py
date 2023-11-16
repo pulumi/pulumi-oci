@@ -52,17 +52,11 @@ class GetModelVersionSetsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
-        """
         return pulumi.get(self, "created_by")
 
     @property
@@ -73,41 +67,26 @@ class GetModelVersionSetsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="modelVersionSets")
-    def model_version_sets(self) -> Sequence['outputs.GetModelVersionSetsModelVersionSetResult']:
-        """
-        The list of model_version_sets.
-        """
+    def model_version_sets(self) -> Optional[Sequence['outputs.GetModelVersionSetsModelVersionSetResult']]:
         return pulumi.get(self, "model_version_sets")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A user-friendly name for the resource. It must be unique and can't be modified.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model version set.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the model version set.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelVersionSetsResult:
     """
-    This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
-
-    Lists model version sets in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=var["compartment_id"],
-        created_by=var["model_version_set_created_by"],
-        id=var["model_version_set_id"],
-        name=var["model_version_set_name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_version_set_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -194,30 +149,6 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelVersionSetsResult]:
     """
-    This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
-
-    Lists model version sets in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=var["compartment_id"],
-        created_by=var["model_version_set_created_by"],
-        id=var["model_version_set_id"],
-        name=var["model_version_set_name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_version_set_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

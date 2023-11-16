@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress {
@@ -16,53 +18,53 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
      * @return An IP address.  Example: `192.168.0.3`
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return IP version associated with this IP address.
      * 
      */
-    private String ipVersion;
+    private @Nullable String ipVersion;
     /**
      * @return Whether the IP address is public or private.
      * If &#34;true&#34;, then the IP address is public and accessible from the internet.
      * 
      */
-    private Boolean isPublic;
+    private @Nullable Boolean isPublic;
     /**
      * @return An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
      * 
      */
-    private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps;
+    private @Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps;
 
     private GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress() {}
     /**
      * @return An IP address.  Example: `192.168.0.3`
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return IP version associated with this IP address.
      * 
      */
-    public String ipVersion() {
-        return this.ipVersion;
+    public Optional<String> ipVersion() {
+        return Optional.ofNullable(this.ipVersion);
     }
     /**
      * @return Whether the IP address is public or private.
      * If &#34;true&#34;, then the IP address is public and accessible from the internet.
      * 
      */
-    public Boolean isPublic() {
-        return this.isPublic;
+    public Optional<Boolean> isPublic() {
+        return Optional.ofNullable(this.isPublic);
     }
     /**
      * @return An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
      * 
      */
     public List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps() {
-        return this.reservedIps;
+        return this.reservedIps == null ? List.of() : this.reservedIps;
     }
 
     public static Builder builder() {
@@ -74,10 +76,10 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipAddress;
-        private String ipVersion;
-        private Boolean isPublic;
-        private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps;
+        private @Nullable String ipAddress;
+        private @Nullable String ipVersion;
+        private @Nullable Boolean isPublic;
+        private @Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps;
         public Builder() {}
         public Builder(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,23 +90,23 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
         }
 
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder ipVersion(String ipVersion) {
-            this.ipVersion = Objects.requireNonNull(ipVersion);
+        public Builder ipVersion(@Nullable String ipVersion) {
+            this.ipVersion = ipVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+        public Builder isPublic(@Nullable Boolean isPublic) {
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedIps(List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps) {
-            this.reservedIps = Objects.requireNonNull(reservedIps);
+        public Builder reservedIps(@Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps) {
+            this.reservedIps = reservedIps;
             return this;
         }
         public Builder reservedIps(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp... reservedIps) {

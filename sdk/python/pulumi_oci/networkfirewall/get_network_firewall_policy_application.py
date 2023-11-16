@@ -46,31 +46,22 @@ class GetNetworkFirewallPolicyApplicationResult:
 
     @property
     @pulumi.getter(name="icmpCode")
-    def icmp_code(self) -> int:
-        """
-        The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
+    def icmp_code(self) -> Optional[int]:
         return pulumi.get(self, "icmp_code")
 
     @property
     @pulumi.getter(name="icmpType")
-    def icmp_type(self) -> int:
-        """
-        The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
+    def icmp_type(self) -> Optional[int]:
         return pulumi.get(self, "icmp_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the application.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -80,18 +71,12 @@ class GetNetworkFirewallPolicyApplicationResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this application belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Describes the type of application.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -114,13 +99,7 @@ def get_network_firewall_policy_application(name: Optional[str] = None,
                                             network_firewall_policy_id: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyApplicationResult:
     """
-    This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Application by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the application.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -143,12 +122,6 @@ def get_network_firewall_policy_application_output(name: Optional[pulumi.Input[s
                                                    network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyApplicationResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Application by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the application.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

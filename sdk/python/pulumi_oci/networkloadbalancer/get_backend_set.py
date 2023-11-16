@@ -58,47 +58,32 @@ class GetBackendSetResult:
 
     @property
     @pulumi.getter
-    def backends(self) -> Sequence['outputs.GetBackendSetBackendResult']:
-        """
-        Array of backends.
-        """
+    def backends(self) -> Optional[Sequence['outputs.GetBackendSetBackendResult']]:
         return pulumi.get(self, "backends")
 
     @property
     @pulumi.getter(name="healthCheckers")
-    def health_checkers(self) -> Sequence['outputs.GetBackendSetHealthCheckerResult']:
-        """
-        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        """
+    def health_checkers(self) -> Optional[Sequence['outputs.GetBackendSetHealthCheckerResult']]:
         return pulumi.get(self, "health_checkers")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> str:
-        """
-        IP version associated with the backend set.
-        """
+    def ip_version(self) -> Optional[str]:
         return pulumi.get(self, "ip_version")
 
     @property
     @pulumi.getter(name="isPreserveSource")
-    def is_preserve_source(self) -> bool:
-        """
-        If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        """
+    def is_preserve_source(self) -> Optional[bool]:
         return pulumi.get(self, "is_preserve_source")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -108,10 +93,7 @@ class GetBackendSetResult:
 
     @property
     @pulumi.getter
-    def policy(self) -> str:
-        """
-        The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
-        """
+    def policy(self) -> Optional[str]:
         return pulumi.get(self, "policy")
 
 
@@ -136,13 +118,7 @@ def get_backend_set(backend_set_name: Optional[str] = None,
                     network_load_balancer_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendSetResult:
     """
-    This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves the configuration information for the specified backend set.
-
-
-    :param str backend_set_name: The name of the backend set to retrieve.  Example: `example_backend_set`
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['backendSetName'] = backend_set_name
@@ -167,12 +143,6 @@ def get_backend_set_output(backend_set_name: Optional[pulumi.Input[str]] = None,
                            network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetResult]:
     """
-    This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves the configuration information for the specified backend set.
-
-
-    :param str backend_set_name: The name of the backend set to retrieve.  Example: `example_backend_set`
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     ...

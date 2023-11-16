@@ -45,19 +45,19 @@ export interface GetAppCatalogListingResult {
     /**
      * Listing's contact URL.
      */
-    readonly contactUrl: string;
+    readonly contactUrl?: string;
     /**
      * Description of the listing.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * the region free ocid of the listing resource.
      */
@@ -65,19 +65,19 @@ export interface GetAppCatalogListingResult {
     /**
      * Publisher's logo URL.
      */
-    readonly publisherLogoUrl: string;
+    readonly publisherLogoUrl?: string;
     /**
      * The name of the publisher who published this listing.
      */
-    readonly publisherName: string;
+    readonly publisherName?: string;
     /**
      * The short summary for the listing.
      */
-    readonly summary: string;
+    readonly summary?: string;
     /**
      * Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      */
-    readonly timePublished: string;
+    readonly timePublished?: string;
 }
 /**
  * This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.

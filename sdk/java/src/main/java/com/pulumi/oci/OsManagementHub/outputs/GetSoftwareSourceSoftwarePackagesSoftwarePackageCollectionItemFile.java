@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile {
@@ -13,75 +15,75 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
      * @return Checksum of the file.
      * 
      */
-    private String checksum;
+    private @Nullable String checksum;
     /**
      * @return Type of the checksum.
      * 
      */
-    private String checksumType;
+    private @Nullable String checksumType;
     /**
      * @return File path.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return Size of the package in bytes.
      * 
      */
-    private String sizeInBytes;
+    private @Nullable String sizeInBytes;
     /**
      * @return The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
     /**
      * @return Type of the package.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile() {}
     /**
      * @return Checksum of the file.
      * 
      */
-    public String checksum() {
-        return this.checksum;
+    public Optional<String> checksum() {
+        return Optional.ofNullable(this.checksum);
     }
     /**
      * @return Type of the checksum.
      * 
      */
-    public String checksumType() {
-        return this.checksumType;
+    public Optional<String> checksumType() {
+        return Optional.ofNullable(this.checksumType);
     }
     /**
      * @return File path.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return Size of the package in bytes.
      * 
      */
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
     /**
      * @return Type of the package.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String checksum;
-        private String checksumType;
-        private String path;
-        private String sizeInBytes;
-        private String timeModified;
-        private String type;
+        private @Nullable String checksum;
+        private @Nullable String checksumType;
+        private @Nullable String path;
+        private @Nullable String sizeInBytes;
+        private @Nullable String timeModified;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         }
 
         @CustomType.Setter
-        public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+        public Builder checksum(@Nullable String checksum) {
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
-        public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+        public Builder checksumType(@Nullable String checksumType) {
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile build() {

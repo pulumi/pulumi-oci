@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy {
@@ -15,12 +16,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy 
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs;
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs;
 
     private GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy 
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs() {
-        return this.accessLogs;
+        return this.accessLogs == null ? List.of() : this.accessLogs;
     }
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs() {
-        return this.executionLogs;
+        return this.executionLogs == null ? List.of() : this.executionLogs;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy 
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs;
-        private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy 
         }
 
         @CustomType.Setter
-        public Builder accessLogs(List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs) {
-            this.accessLogs = Objects.requireNonNull(accessLogs);
+        public Builder accessLogs(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs) {
+            this.accessLogs = accessLogs;
             return this;
         }
         public Builder accessLogs(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog... accessLogs) {
             return accessLogs(List.of(accessLogs));
         }
         @CustomType.Setter
-        public Builder executionLogs(List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs) {
-            this.executionLogs = Objects.requireNonNull(executionLogs);
+        public Builder executionLogs(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs) {
+            this.executionLogs = executionLogs;
             return this;
         }
         public Builder executionLogs(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog... executionLogs) {

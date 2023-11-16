@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionsReportDefinitionCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportDefinitionsReportDefinitionCollection {
-    private List<GetReportDefinitionsReportDefinitionCollectionItem> items;
+    private @Nullable List<GetReportDefinitionsReportDefinitionCollectionItem> items;
 
     private GetReportDefinitionsReportDefinitionCollection() {}
     public List<GetReportDefinitionsReportDefinitionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetReportDefinitionsReportDefinitionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetReportDefinitionsReportDefinitionCollectionItem> items;
+        private @Nullable List<GetReportDefinitionsReportDefinitionCollectionItem> items;
         public Builder() {}
         public Builder(GetReportDefinitionsReportDefinitionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetReportDefinitionsReportDefinitionCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetReportDefinitionsReportDefinitionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetReportDefinitionsReportDefinitionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetReportDefinitionsReportDefinitionCollectionItem... items) {

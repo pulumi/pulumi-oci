@@ -35,10 +35,6 @@ class ConnectionAdditionalAttributeArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The name of the property entry.
-        :param pulumi.Input[str] value: (Updatable) The value of the property entry.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -47,9 +43,6 @@ class ConnectionAdditionalAttributeArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the property entry.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -59,9 +52,6 @@ class ConnectionAdditionalAttributeArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The value of the property entry.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -75,11 +65,6 @@ class ConnectionBootstrapServerArgs:
                  host: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host: (Updatable) The name or address of a host.
-        :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
         if host is not None:
             pulumi.set(__self__, "host", host)
         if port is not None:
@@ -90,9 +75,6 @@ class ConnectionBootstrapServerArgs:
     @property
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name or address of a host.
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -102,9 +84,6 @@ class ConnectionBootstrapServerArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port of an endpoint usually specified for a connection.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -114,9 +93,6 @@ class ConnectionBootstrapServerArgs:
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -128,18 +104,12 @@ class ConnectionBootstrapServerArgs:
 class ConnectionIngressIpArgs:
     def __init__(__self__, *,
                  ingress_ip: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
         if ingress_ip is not None:
             pulumi.set(__self__, "ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
     def ingress_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
         return pulumi.get(self, "ingress_ip")
 
     @ingress_ip.setter
@@ -156,14 +126,6 @@ class DeploymentDeploymentDiagnosticDataArgs:
                  object: Optional[pulumi.Input[str]] = None,
                  time_diagnostic_end: Optional[pulumi.Input[str]] = None,
                  time_diagnostic_start: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param pulumi.Input[str] diagnostic_state: The state of the deployment diagnostic collection.
-        :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
-        :param pulumi.Input[str] object: Name of the diagnostic collected and uploaded to object storage
-        :param pulumi.Input[str] time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if diagnostic_state is not None:
@@ -180,9 +142,6 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -192,9 +151,6 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @property
     @pulumi.getter(name="diagnosticState")
     def diagnostic_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the deployment diagnostic collection.
-        """
         return pulumi.get(self, "diagnostic_state")
 
     @diagnostic_state.setter
@@ -204,9 +160,6 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -216,9 +169,6 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the diagnostic collected and uploaded to object storage
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -228,9 +178,6 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @property
     @pulumi.getter(name="timeDiagnosticEnd")
     def time_diagnostic_end(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_diagnostic_end")
 
     @time_diagnostic_end.setter
@@ -240,9 +187,6 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @property
     @pulumi.getter(name="timeDiagnosticStart")
     def time_diagnostic_start(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_diagnostic_start")
 
     @time_diagnostic_start.setter
@@ -258,13 +202,6 @@ class DeploymentMaintenanceConfigurationArgs:
                  is_interim_release_auto_upgrade_enabled: Optional[pulumi.Input[bool]] = None,
                  major_release_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
                  security_patch_upgrade_period_in_days: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] bundle_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        :param pulumi.Input[int] interim_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        :param pulumi.Input[bool] is_interim_release_auto_upgrade_enabled: (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        :param pulumi.Input[int] major_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        :param pulumi.Input[int] security_patch_upgrade_period_in_days: (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
         if bundle_release_upgrade_period_in_days is not None:
             pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         if interim_release_upgrade_period_in_days is not None:
@@ -279,9 +216,6 @@ class DeploymentMaintenanceConfigurationArgs:
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
     def bundle_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        """
         return pulumi.get(self, "bundle_release_upgrade_period_in_days")
 
     @bundle_release_upgrade_period_in_days.setter
@@ -291,9 +225,6 @@ class DeploymentMaintenanceConfigurationArgs:
     @property
     @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
     def interim_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        """
         return pulumi.get(self, "interim_release_upgrade_period_in_days")
 
     @interim_release_upgrade_period_in_days.setter
@@ -303,9 +234,6 @@ class DeploymentMaintenanceConfigurationArgs:
     @property
     @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
     def is_interim_release_auto_upgrade_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        """
         return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
 
     @is_interim_release_auto_upgrade_enabled.setter
@@ -315,9 +243,6 @@ class DeploymentMaintenanceConfigurationArgs:
     @property
     @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
     def major_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        """
         return pulumi.get(self, "major_release_upgrade_period_in_days")
 
     @major_release_upgrade_period_in_days.setter
@@ -327,9 +252,6 @@ class DeploymentMaintenanceConfigurationArgs:
     @property
     @pulumi.getter(name="securityPatchUpgradePeriodInDays")
     def security_patch_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
         return pulumi.get(self, "security_patch_upgrade_period_in_days")
 
     @security_patch_upgrade_period_in_days.setter
@@ -342,19 +264,12 @@ class DeploymentMaintenanceWindowArgs:
     def __init__(__self__, *,
                  day: pulumi.Input[str],
                  start_hour: pulumi.Input[int]):
-        """
-        :param pulumi.Input[str] day: (Updatable) Days of the week.
-        :param pulumi.Input[int] start_hour: (Updatable) Start hour for maintenance period. Hour is in UTC.
-        """
         pulumi.set(__self__, "day", day)
         pulumi.set(__self__, "start_hour", start_hour)
 
     @property
     @pulumi.getter
     def day(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Days of the week.
-        """
         return pulumi.get(self, "day")
 
     @day.setter
@@ -364,9 +279,6 @@ class DeploymentMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="startHour")
     def start_hour(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Start hour for maintenance period. Hour is in UTC.
-        """
         return pulumi.get(self, "start_hour")
 
     @start_hour.setter
@@ -386,17 +298,6 @@ class DeploymentOggDataArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  ogg_version: Optional[pulumi.Input[str]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
-        :param pulumi.Input[str] admin_username: (Updatable) The GoldenGate deployment console username.
-        :param pulumi.Input[str] certificate: (Updatable) A PEM-encoded SSL certificate.
-        :param pulumi.Input[str] credential_store: (Updatable) The type of credential store for OGG.
-        :param pulumi.Input[str] identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        :param pulumi.Input[str] key: (Updatable) A PEM-encoded private key.
-        :param pulumi.Input[str] ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
-        :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
         pulumi.set(__self__, "deployment_name", deployment_name)
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
@@ -418,9 +319,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter(name="deploymentName")
     def deployment_name(self) -> pulumi.Input[str]:
-        """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        """
         return pulumi.get(self, "deployment_name")
 
     @deployment_name.setter
@@ -430,9 +328,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
-        """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
@@ -442,9 +337,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The GoldenGate deployment console username.
-        """
         return pulumi.get(self, "admin_username")
 
     @admin_username.setter
@@ -454,9 +346,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A PEM-encoded SSL certificate.
-        """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
@@ -466,9 +355,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter(name="credentialStore")
     def credential_store(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of credential store for OGG.
-        """
         return pulumi.get(self, "credential_store")
 
     @credential_store.setter
@@ -478,9 +364,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter(name="identityDomainId")
     def identity_domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        """
         return pulumi.get(self, "identity_domain_id")
 
     @identity_domain_id.setter
@@ -490,9 +373,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A PEM-encoded private key.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -502,9 +382,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
-        """
         return pulumi.get(self, "ogg_version")
 
     @ogg_version.setter
@@ -514,9 +391,6 @@ class DeploymentOggDataArgs:
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -530,9 +404,6 @@ class GetConnectionAssignmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the connection in the assignment (aliasName).
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -541,9 +412,6 @@ class GetConnectionAssignmentsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the connection in the assignment (aliasName).
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -575,9 +443,6 @@ class GetConnectionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the property entry.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -586,9 +451,6 @@ class GetConnectionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the property entry.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

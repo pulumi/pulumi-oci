@@ -54,11 +54,11 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * The name of the profile used to create the certificate, which depends on the type of certificate you need.
      */
-    public /*out*/ readonly certificateProfileType!: pulumi.Output<string>;
+    public /*out*/ readonly certificateProfileType!: pulumi.Output<string | undefined>;
     /**
      * The details of the certificate revocation list (CRL).
      */
-    public /*out*/ readonly certificateRevocationListDetails!: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateRevocationListDetail[]>;
+    public /*out*/ readonly certificateRevocationListDetails!: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateRevocationListDetail[] | undefined>;
     /**
      * (Updatable) An optional list of rules that control how the certificate is used and managed.
      */
@@ -70,15 +70,15 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * (Updatable) The origin of the certificate.
      */
-    public /*out*/ readonly configType!: pulumi.Output<string>;
+    public /*out*/ readonly configType!: pulumi.Output<string | undefined>;
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      */
-    public /*out*/ readonly currentVersions!: pulumi.Output<outputs.CertificatesManagement.CertificateCurrentVersion[]>;
+    public /*out*/ readonly currentVersions!: pulumi.Output<outputs.CertificatesManagement.CertificateCurrentVersion[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A brief description of the certificate. Avoid entering confidential information.
      */
@@ -86,19 +86,19 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the private CA.
      */
-    public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string>;
+    public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string | undefined>;
     /**
      * The algorithm to use to create key pairs.
      */
-    public /*out*/ readonly keyAlgorithm!: pulumi.Output<string>;
+    public /*out*/ readonly keyAlgorithm!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state of the certificate.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. 
      *
@@ -110,23 +110,23 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * The algorithm to use to sign the public key certificate.
      */
-    public /*out*/ readonly signatureAlgorithm!: pulumi.Output<string>;
+    public /*out*/ readonly signatureAlgorithm!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the certificate.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    public /*out*/ readonly subjects!: pulumi.Output<outputs.CertificatesManagement.CertificateSubject[]>;
+    public /*out*/ readonly subjects!: pulumi.Output<outputs.CertificatesManagement.CertificateSubject[] | undefined>;
     /**
      * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Certificate resource with the given unique name, arguments, and options.

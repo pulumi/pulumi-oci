@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJavaReleasesJavaReleaseCollectionItemArtifact {
@@ -13,63 +15,63 @@ public final class GetJavaReleasesJavaReleaseCollectionItemArtifact {
      * @return Approximate compressed file size in bytes.
      * 
      */
-    private String approximateFileSizeInBytes;
+    private @Nullable String approximateFileSizeInBytes;
     /**
      * @return Product content type of this artifact.
      * 
      */
-    private String artifactContentType;
+    private @Nullable String artifactContentType;
     /**
      * @return Description of the binary artifact. Typically includes the OS, architecture, and installer type.
      * 
      */
-    private String artifactDescription;
+    private @Nullable String artifactDescription;
     /**
      * @return Unique identifier for the artifact.
      * 
      */
-    private String artifactId;
+    private @Nullable String artifactId;
     /**
      * @return SHA256 checksum of the artifact.
      * 
      */
-    private String sha256;
+    private @Nullable String sha256;
 
     private GetJavaReleasesJavaReleaseCollectionItemArtifact() {}
     /**
      * @return Approximate compressed file size in bytes.
      * 
      */
-    public String approximateFileSizeInBytes() {
-        return this.approximateFileSizeInBytes;
+    public Optional<String> approximateFileSizeInBytes() {
+        return Optional.ofNullable(this.approximateFileSizeInBytes);
     }
     /**
      * @return Product content type of this artifact.
      * 
      */
-    public String artifactContentType() {
-        return this.artifactContentType;
+    public Optional<String> artifactContentType() {
+        return Optional.ofNullable(this.artifactContentType);
     }
     /**
      * @return Description of the binary artifact. Typically includes the OS, architecture, and installer type.
      * 
      */
-    public String artifactDescription() {
-        return this.artifactDescription;
+    public Optional<String> artifactDescription() {
+        return Optional.ofNullable(this.artifactDescription);
     }
     /**
      * @return Unique identifier for the artifact.
      * 
      */
-    public String artifactId() {
-        return this.artifactId;
+    public Optional<String> artifactId() {
+        return Optional.ofNullable(this.artifactId);
     }
     /**
      * @return SHA256 checksum of the artifact.
      * 
      */
-    public String sha256() {
-        return this.sha256;
+    public Optional<String> sha256() {
+        return Optional.ofNullable(this.sha256);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetJavaReleasesJavaReleaseCollectionItemArtifact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String approximateFileSizeInBytes;
-        private String artifactContentType;
-        private String artifactDescription;
-        private String artifactId;
-        private String sha256;
+        private @Nullable String approximateFileSizeInBytes;
+        private @Nullable String artifactContentType;
+        private @Nullable String artifactDescription;
+        private @Nullable String artifactId;
+        private @Nullable String sha256;
         public Builder() {}
         public Builder(GetJavaReleasesJavaReleaseCollectionItemArtifact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetJavaReleasesJavaReleaseCollectionItemArtifact {
         }
 
         @CustomType.Setter
-        public Builder approximateFileSizeInBytes(String approximateFileSizeInBytes) {
-            this.approximateFileSizeInBytes = Objects.requireNonNull(approximateFileSizeInBytes);
+        public Builder approximateFileSizeInBytes(@Nullable String approximateFileSizeInBytes) {
+            this.approximateFileSizeInBytes = approximateFileSizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactContentType(String artifactContentType) {
-            this.artifactContentType = Objects.requireNonNull(artifactContentType);
+        public Builder artifactContentType(@Nullable String artifactContentType) {
+            this.artifactContentType = artifactContentType;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactDescription(String artifactDescription) {
-            this.artifactDescription = Objects.requireNonNull(artifactDescription);
+        public Builder artifactDescription(@Nullable String artifactDescription) {
+            this.artifactDescription = artifactDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactId(String artifactId) {
-            this.artifactId = Objects.requireNonNull(artifactId);
+        public Builder artifactId(@Nullable String artifactId) {
+            this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder sha256(String sha256) {
-            this.sha256 = Objects.requireNonNull(sha256);
+        public Builder sha256(@Nullable String sha256) {
+            this.sha256 = sha256;
             return this;
         }
         public GetJavaReleasesJavaReleaseCollectionItemArtifact build() {

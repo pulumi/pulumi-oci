@@ -39,18 +39,12 @@ class GetAutonomousContainerDatabaseDataguardAssociationsResult:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociations")
-    def autonomous_container_database_dataguard_associations(self) -> Sequence['outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationResult']:
-        """
-        The list of autonomous_container_database_dataguard_associations.
-        """
+    def autonomous_container_database_dataguard_associations(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationResult']]:
         return pulumi.get(self, "autonomous_container_database_dataguard_associations")
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
-        """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
@@ -60,7 +54,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,21 +77,7 @@ def get_autonomous_container_database_dataguard_associations(autonomous_containe
                                                              filters: Optional[Sequence[pulumi.InputType['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs']]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseDataguardAssociationsResult:
     """
-    This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_dataguard_associations = oci.Database.get_autonomous_container_database_dataguard_associations(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
@@ -117,20 +97,6 @@ def get_autonomous_container_database_dataguard_associations_output(autonomous_c
                                                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs']]]]] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationsResult]:
     """
-    This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_dataguard_associations = oci.Database.get_autonomous_container_database_dataguard_associations(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

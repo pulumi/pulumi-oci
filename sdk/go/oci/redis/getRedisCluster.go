@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
@@ -60,44 +59,44 @@ type LookupRedisClusterArgs struct {
 // A collection of values returned by getRedisCluster.
 type LookupRedisClusterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name of a Redis cluster node.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The collection of Redis cluster nodes.
 	NodeCollections []GetRedisClusterNodeCollection `pulumi:"nodeCollections"`
 	// The number of nodes in the Redis cluster.
-	NodeCount int `pulumi:"nodeCount"`
+	NodeCount *int `pulumi:"nodeCount"`
 	// The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
+	NodeMemoryInGbs *float64 `pulumi:"nodeMemoryInGbs"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
-	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
+	PrimaryEndpointIpAddress *string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-	PrimaryFqdn    string `pulumi:"primaryFqdn"`
-	RedisClusterId string `pulumi:"redisClusterId"`
+	PrimaryFqdn    *string `pulumi:"primaryFqdn"`
+	RedisClusterId string  `pulumi:"redisClusterId"`
 	// The private IP address of the API endpoint for the Redis cluster's replica nodes.
-	ReplicasEndpointIpAddress string `pulumi:"replicasEndpointIpAddress"`
+	ReplicasEndpointIpAddress *string `pulumi:"replicasEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-	ReplicasFqdn string `pulumi:"replicasFqdn"`
+	ReplicasFqdn *string `pulumi:"replicasFqdn"`
 	// The Redis version that the cluster is running.
-	SoftwareVersion string `pulumi:"softwareVersion"`
+	SoftwareVersion *string `pulumi:"softwareVersion"`
 	// The current state of the Redis cluster.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupRedisClusterOutput(ctx *pulumi.Context, args LookupRedisClusterOutputArgs, opts ...pulumi.InvokeOption) LookupRedisClusterResultOutput {
@@ -138,15 +137,9 @@ func (o LookupRedisClusterResultOutput) ToLookupRedisClusterResultOutputWithCont
 	return o
 }
 
-func (o LookupRedisClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRedisClusterResult] {
-	return pulumix.Output[LookupRedisClusterResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
-func (o LookupRedisClusterResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -155,8 +148,8 @@ func (o LookupRedisClusterResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name of a Redis cluster node.
-func (o LookupRedisClusterResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -165,13 +158,13 @@ func (o LookupRedisClusterResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-func (o LookupRedisClusterResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-func (o LookupRedisClusterResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The collection of Redis cluster nodes.
@@ -180,23 +173,23 @@ func (o LookupRedisClusterResultOutput) NodeCollections() GetRedisClusterNodeCol
 }
 
 // The number of nodes in the Redis cluster.
-func (o LookupRedisClusterResultOutput) NodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) int { return v.NodeCount }).(pulumi.IntOutput)
+func (o LookupRedisClusterResultOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *int { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-func (o LookupRedisClusterResultOutput) NodeMemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupRedisClusterResult) float64 { return v.NodeMemoryInGbs }).(pulumi.Float64Output)
+func (o LookupRedisClusterResultOutput) NodeMemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *float64 { return v.NodeMemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The private IP address of the API endpoint for the Redis cluster's primary node.
-func (o LookupRedisClusterResultOutput) PrimaryEndpointIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.PrimaryEndpointIpAddress }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) PrimaryEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.PrimaryEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-func (o LookupRedisClusterResultOutput) PrimaryFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.PrimaryFqdn }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) PrimaryFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.PrimaryFqdn }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupRedisClusterResultOutput) RedisClusterId() pulumi.StringOutput {
@@ -204,28 +197,28 @@ func (o LookupRedisClusterResultOutput) RedisClusterId() pulumi.StringOutput {
 }
 
 // The private IP address of the API endpoint for the Redis cluster's replica nodes.
-func (o LookupRedisClusterResultOutput) ReplicasEndpointIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.ReplicasEndpointIpAddress }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) ReplicasEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.ReplicasEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-func (o LookupRedisClusterResultOutput) ReplicasFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.ReplicasFqdn }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) ReplicasFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.ReplicasFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The Redis version that the cluster is running.
-func (o LookupRedisClusterResultOutput) SoftwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.SoftwareVersion }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) SoftwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.SoftwareVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Redis cluster.
-func (o LookupRedisClusterResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
-func (o LookupRedisClusterResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -234,13 +227,13 @@ func (o LookupRedisClusterResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-func (o LookupRedisClusterResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-func (o LookupRedisClusterResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupRedisClusterResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

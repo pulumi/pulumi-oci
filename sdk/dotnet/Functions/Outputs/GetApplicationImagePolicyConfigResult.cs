@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Define if image signature verification policy is enabled for the application.
         /// </summary>
-        public readonly bool IsPolicyEnabled;
+        public readonly bool? IsPolicyEnabled;
         /// <summary>
         /// A list of KMS key details.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Functions.Outputs
 
         [OutputConstructor]
         private GetApplicationImagePolicyConfigResult(
-            bool isPolicyEnabled,
+            bool? isPolicyEnabled,
 
             ImmutableArray<Outputs.GetApplicationImagePolicyConfigKeyDetailResult> keyDetails)
         {

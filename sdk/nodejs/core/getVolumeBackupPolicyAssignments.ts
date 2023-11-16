@@ -56,11 +56,11 @@ export interface GetVolumeBackupPolicyAssignmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of volume_backup_policy_assignments.
      */
-    readonly volumeBackupPolicyAssignments: outputs.Core.GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment[];
+    readonly volumeBackupPolicyAssignments?: outputs.Core.GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment[];
 }
 /**
  * This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.

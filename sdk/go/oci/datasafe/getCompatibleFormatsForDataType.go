@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compatible Formats For Data Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,7 +59,7 @@ type GetCompatibleFormatsForDataTypeResult struct {
 	// An array of lists of basic masking formats compatible with the supported data types.
 	FormatsForDataTypes []GetCompatibleFormatsForDataTypeFormatsForDataType `pulumi:"formatsForDataTypes"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetCompatibleFormatsForDataTypeOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetCompatibleFormatsForDataTypeResultOutput {
@@ -89,12 +88,6 @@ func (o GetCompatibleFormatsForDataTypeResultOutput) ToGetCompatibleFormatsForDa
 	return o
 }
 
-func (o GetCompatibleFormatsForDataTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForDataTypeResult] {
-	return pulumix.Output[GetCompatibleFormatsForDataTypeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of lists of basic masking formats compatible with the supported data types.
 func (o GetCompatibleFormatsForDataTypeResultOutput) FormatsForDataTypes() GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput {
 	return o.ApplyT(func(v GetCompatibleFormatsForDataTypeResult) []GetCompatibleFormatsForDataTypeFormatsForDataType {
@@ -103,8 +96,8 @@ func (o GetCompatibleFormatsForDataTypeResultOutput) FormatsForDataTypes() GetCo
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCompatibleFormatsForDataTypeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCompatibleFormatsForDataTypeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCompatibleFormatsForDataTypeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCompatibleFormatsForDataTypeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

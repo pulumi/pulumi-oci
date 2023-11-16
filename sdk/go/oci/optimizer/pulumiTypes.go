@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i ProfileLevelsConfigurationArgs) ToProfileLevelsConfigurationOutput() Pro
 
 func (i ProfileLevelsConfigurationArgs) ToProfileLevelsConfigurationOutputWithContext(ctx context.Context) ProfileLevelsConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationOutput)
-}
-
-func (i ProfileLevelsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfiguration] {
-	return pulumix.Output[ProfileLevelsConfiguration]{
-		OutputState: i.ToProfileLevelsConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i ProfileLevelsConfigurationArgs) ToProfileLevelsConfigurationPtrOutput() ProfileLevelsConfigurationPtrOutput {
@@ -94,12 +87,6 @@ func (i *profileLevelsConfigurationPtrType) ToProfileLevelsConfigurationPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationPtrOutput)
 }
 
-func (i *profileLevelsConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProfileLevelsConfiguration] {
-	return pulumix.Output[*ProfileLevelsConfiguration]{
-		OutputState: i.ToProfileLevelsConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileLevelsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ProfileLevelsConfigurationOutput) ElementType() reflect.Type {
@@ -124,12 +111,6 @@ func (o ProfileLevelsConfigurationOutput) ToProfileLevelsConfigurationPtrOutputW
 	}).(ProfileLevelsConfigurationPtrOutput)
 }
 
-func (o ProfileLevelsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfiguration] {
-	return pulumix.Output[ProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of tags specified in the current profile override.
 func (o ProfileLevelsConfigurationOutput) Items() ProfileLevelsConfigurationItemArrayOutput {
 	return o.ApplyT(func(v ProfileLevelsConfiguration) []ProfileLevelsConfigurationItem { return v.Items }).(ProfileLevelsConfigurationItemArrayOutput)
@@ -147,12 +128,6 @@ func (o ProfileLevelsConfigurationPtrOutput) ToProfileLevelsConfigurationPtrOutp
 
 func (o ProfileLevelsConfigurationPtrOutput) ToProfileLevelsConfigurationPtrOutputWithContext(ctx context.Context) ProfileLevelsConfigurationPtrOutput {
 	return o
-}
-
-func (o ProfileLevelsConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProfileLevelsConfiguration] {
-	return pulumix.Output[*ProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileLevelsConfigurationPtrOutput) Elem() ProfileLevelsConfigurationOutput {
@@ -212,12 +187,6 @@ func (i ProfileLevelsConfigurationItemArgs) ToProfileLevelsConfigurationItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationItemOutput)
 }
 
-func (i ProfileLevelsConfigurationItemArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfigurationItem] {
-	return pulumix.Output[ProfileLevelsConfigurationItem]{
-		OutputState: i.ToProfileLevelsConfigurationItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileLevelsConfigurationItemArrayInput is an input type that accepts ProfileLevelsConfigurationItemArray and ProfileLevelsConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `ProfileLevelsConfigurationItemArrayInput` via:
 //
@@ -243,12 +212,6 @@ func (i ProfileLevelsConfigurationItemArray) ToProfileLevelsConfigurationItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationItemArrayOutput)
 }
 
-func (i ProfileLevelsConfigurationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]ProfileLevelsConfigurationItem]{
-		OutputState: i.ToProfileLevelsConfigurationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileLevelsConfigurationItemOutput struct{ *pulumi.OutputState }
 
 func (ProfileLevelsConfigurationItemOutput) ElementType() reflect.Type {
@@ -261,12 +224,6 @@ func (o ProfileLevelsConfigurationItemOutput) ToProfileLevelsConfigurationItemOu
 
 func (o ProfileLevelsConfigurationItemOutput) ToProfileLevelsConfigurationItemOutputWithContext(ctx context.Context) ProfileLevelsConfigurationItemOutput {
 	return o
-}
-
-func (o ProfileLevelsConfigurationItemOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfigurationItem] {
-	return pulumix.Output[ProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The pre-defined profile level.
@@ -291,12 +248,6 @@ func (o ProfileLevelsConfigurationItemArrayOutput) ToProfileLevelsConfigurationI
 
 func (o ProfileLevelsConfigurationItemArrayOutput) ToProfileLevelsConfigurationItemArrayOutputWithContext(ctx context.Context) ProfileLevelsConfigurationItemArrayOutput {
 	return o
-}
-
-func (o ProfileLevelsConfigurationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]ProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileLevelsConfigurationItemArrayOutput) Index(i pulumi.IntInput) ProfileLevelsConfigurationItemOutput {
@@ -336,12 +287,6 @@ func (i ProfileTargetCompartmentsArgs) ToProfileTargetCompartmentsOutput() Profi
 
 func (i ProfileTargetCompartmentsArgs) ToProfileTargetCompartmentsOutputWithContext(ctx context.Context) ProfileTargetCompartmentsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetCompartmentsOutput)
-}
-
-func (i ProfileTargetCompartmentsArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetCompartments] {
-	return pulumix.Output[ProfileTargetCompartments]{
-		OutputState: i.ToProfileTargetCompartmentsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i ProfileTargetCompartmentsArgs) ToProfileTargetCompartmentsPtrOutput() ProfileTargetCompartmentsPtrOutput {
@@ -385,12 +330,6 @@ func (i *profileTargetCompartmentsPtrType) ToProfileTargetCompartmentsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetCompartmentsPtrOutput)
 }
 
-func (i *profileTargetCompartmentsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetCompartments] {
-	return pulumix.Output[*ProfileTargetCompartments]{
-		OutputState: i.ToProfileTargetCompartmentsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileTargetCompartmentsOutput struct{ *pulumi.OutputState }
 
 func (ProfileTargetCompartmentsOutput) ElementType() reflect.Type {
@@ -415,12 +354,6 @@ func (o ProfileTargetCompartmentsOutput) ToProfileTargetCompartmentsPtrOutputWit
 	}).(ProfileTargetCompartmentsPtrOutput)
 }
 
-func (o ProfileTargetCompartmentsOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetCompartments] {
-	return pulumix.Output[ProfileTargetCompartments]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of tags specified in the current profile override.
 func (o ProfileTargetCompartmentsOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ProfileTargetCompartments) []string { return v.Items }).(pulumi.StringArrayOutput)
@@ -438,12 +371,6 @@ func (o ProfileTargetCompartmentsPtrOutput) ToProfileTargetCompartmentsPtrOutput
 
 func (o ProfileTargetCompartmentsPtrOutput) ToProfileTargetCompartmentsPtrOutputWithContext(ctx context.Context) ProfileTargetCompartmentsPtrOutput {
 	return o
-}
-
-func (o ProfileTargetCompartmentsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetCompartments] {
-	return pulumix.Output[*ProfileTargetCompartments]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileTargetCompartmentsPtrOutput) Elem() ProfileTargetCompartmentsOutput {
@@ -499,12 +426,6 @@ func (i ProfileTargetTagsArgs) ToProfileTargetTagsOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsOutput)
 }
 
-func (i ProfileTargetTagsArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTags] {
-	return pulumix.Output[ProfileTargetTags]{
-		OutputState: i.ToProfileTargetTagsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ProfileTargetTagsArgs) ToProfileTargetTagsPtrOutput() ProfileTargetTagsPtrOutput {
 	return i.ToProfileTargetTagsPtrOutputWithContext(context.Background())
 }
@@ -546,12 +467,6 @@ func (i *profileTargetTagsPtrType) ToProfileTargetTagsPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsPtrOutput)
 }
 
-func (i *profileTargetTagsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetTags] {
-	return pulumix.Output[*ProfileTargetTags]{
-		OutputState: i.ToProfileTargetTagsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileTargetTagsOutput struct{ *pulumi.OutputState }
 
 func (ProfileTargetTagsOutput) ElementType() reflect.Type {
@@ -576,12 +491,6 @@ func (o ProfileTargetTagsOutput) ToProfileTargetTagsPtrOutputWithContext(ctx con
 	}).(ProfileTargetTagsPtrOutput)
 }
 
-func (o ProfileTargetTagsOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTags] {
-	return pulumix.Output[ProfileTargetTags]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of tags specified in the current profile override.
 func (o ProfileTargetTagsOutput) Items() ProfileTargetTagsItemArrayOutput {
 	return o.ApplyT(func(v ProfileTargetTags) []ProfileTargetTagsItem { return v.Items }).(ProfileTargetTagsItemArrayOutput)
@@ -599,12 +508,6 @@ func (o ProfileTargetTagsPtrOutput) ToProfileTargetTagsPtrOutput() ProfileTarget
 
 func (o ProfileTargetTagsPtrOutput) ToProfileTargetTagsPtrOutputWithContext(ctx context.Context) ProfileTargetTagsPtrOutput {
 	return o
-}
-
-func (o ProfileTargetTagsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetTags] {
-	return pulumix.Output[*ProfileTargetTags]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileTargetTagsPtrOutput) Elem() ProfileTargetTagsOutput {
@@ -686,12 +589,6 @@ func (i ProfileTargetTagsItemArgs) ToProfileTargetTagsItemOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsItemOutput)
 }
 
-func (i ProfileTargetTagsItemArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTagsItem] {
-	return pulumix.Output[ProfileTargetTagsItem]{
-		OutputState: i.ToProfileTargetTagsItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileTargetTagsItemArrayInput is an input type that accepts ProfileTargetTagsItemArray and ProfileTargetTagsItemArrayOutput values.
 // You can construct a concrete instance of `ProfileTargetTagsItemArrayInput` via:
 //
@@ -717,12 +614,6 @@ func (i ProfileTargetTagsItemArray) ToProfileTargetTagsItemArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsItemArrayOutput)
 }
 
-func (i ProfileTargetTagsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileTargetTagsItem] {
-	return pulumix.Output[[]ProfileTargetTagsItem]{
-		OutputState: i.ToProfileTargetTagsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileTargetTagsItemOutput struct{ *pulumi.OutputState }
 
 func (ProfileTargetTagsItemOutput) ElementType() reflect.Type {
@@ -735,12 +626,6 @@ func (o ProfileTargetTagsItemOutput) ToProfileTargetTagsItemOutput() ProfileTarg
 
 func (o ProfileTargetTagsItemOutput) ToProfileTargetTagsItemOutputWithContext(ctx context.Context) ProfileTargetTagsItemOutput {
 	return o
-}
-
-func (o ProfileTargetTagsItemOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTagsItem] {
-	return pulumix.Output[ProfileTargetTagsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name you use to refer to the tag, also known as the tag key.
@@ -782,12 +667,6 @@ func (o ProfileTargetTagsItemArrayOutput) ToProfileTargetTagsItemArrayOutput() P
 
 func (o ProfileTargetTagsItemArrayOutput) ToProfileTargetTagsItemArrayOutputWithContext(ctx context.Context) ProfileTargetTagsItemArrayOutput {
 	return o
-}
-
-func (o ProfileTargetTagsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileTargetTagsItem] {
-	return pulumix.Output[[]ProfileTargetTagsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileTargetTagsItemArrayOutput) Index(i pulumi.IntInput) ProfileTargetTagsItemOutput {
@@ -833,12 +712,6 @@ func (i RecommendationResourceCountArgs) ToRecommendationResourceCountOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationResourceCountOutput)
 }
 
-func (i RecommendationResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[RecommendationResourceCount] {
-	return pulumix.Output[RecommendationResourceCount]{
-		OutputState: i.ToRecommendationResourceCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecommendationResourceCountArrayInput is an input type that accepts RecommendationResourceCountArray and RecommendationResourceCountArrayOutput values.
 // You can construct a concrete instance of `RecommendationResourceCountArrayInput` via:
 //
@@ -864,12 +737,6 @@ func (i RecommendationResourceCountArray) ToRecommendationResourceCountArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationResourceCountArrayOutput)
 }
 
-func (i RecommendationResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationResourceCount] {
-	return pulumix.Output[[]RecommendationResourceCount]{
-		OutputState: i.ToRecommendationResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecommendationResourceCountOutput struct{ *pulumi.OutputState }
 
 func (RecommendationResourceCountOutput) ElementType() reflect.Type {
@@ -882,12 +749,6 @@ func (o RecommendationResourceCountOutput) ToRecommendationResourceCountOutput()
 
 func (o RecommendationResourceCountOutput) ToRecommendationResourceCountOutputWithContext(ctx context.Context) RecommendationResourceCountOutput {
 	return o
-}
-
-func (o RecommendationResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[RecommendationResourceCount] {
-	return pulumix.Output[RecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -912,12 +773,6 @@ func (o RecommendationResourceCountArrayOutput) ToRecommendationResourceCountArr
 
 func (o RecommendationResourceCountArrayOutput) ToRecommendationResourceCountArrayOutputWithContext(ctx context.Context) RecommendationResourceCountArrayOutput {
 	return o
-}
-
-func (o RecommendationResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationResourceCount] {
-	return pulumix.Output[[]RecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationResourceCountArrayOutput) Index(i pulumi.IntInput) RecommendationResourceCountOutput {
@@ -959,12 +814,6 @@ func (i RecommendationSupportedLevelArgs) ToRecommendationSupportedLevelOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelOutput)
 }
 
-func (i RecommendationSupportedLevelArgs) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevel] {
-	return pulumix.Output[RecommendationSupportedLevel]{
-		OutputState: i.ToRecommendationSupportedLevelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecommendationSupportedLevelArrayInput is an input type that accepts RecommendationSupportedLevelArray and RecommendationSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelArrayInput` via:
 //
@@ -990,12 +839,6 @@ func (i RecommendationSupportedLevelArray) ToRecommendationSupportedLevelArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelArrayOutput)
 }
 
-func (i RecommendationSupportedLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevel] {
-	return pulumix.Output[[]RecommendationSupportedLevel]{
-		OutputState: i.ToRecommendationSupportedLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecommendationSupportedLevelOutput struct{ *pulumi.OutputState }
 
 func (RecommendationSupportedLevelOutput) ElementType() reflect.Type {
@@ -1008,12 +851,6 @@ func (o RecommendationSupportedLevelOutput) ToRecommendationSupportedLevelOutput
 
 func (o RecommendationSupportedLevelOutput) ToRecommendationSupportedLevelOutputWithContext(ctx context.Context) RecommendationSupportedLevelOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelOutput) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevel] {
-	return pulumix.Output[RecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -1033,12 +870,6 @@ func (o RecommendationSupportedLevelArrayOutput) ToRecommendationSupportedLevelA
 
 func (o RecommendationSupportedLevelArrayOutput) ToRecommendationSupportedLevelArrayOutputWithContext(ctx context.Context) RecommendationSupportedLevelArrayOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevel] {
-	return pulumix.Output[[]RecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationSupportedLevelArrayOutput) Index(i pulumi.IntInput) RecommendationSupportedLevelOutput {
@@ -1080,12 +911,6 @@ func (i RecommendationSupportedLevelItemArgs) ToRecommendationSupportedLevelItem
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelItemOutput)
 }
 
-func (i RecommendationSupportedLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevelItem] {
-	return pulumix.Output[RecommendationSupportedLevelItem]{
-		OutputState: i.ToRecommendationSupportedLevelItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecommendationSupportedLevelItemArrayInput is an input type that accepts RecommendationSupportedLevelItemArray and RecommendationSupportedLevelItemArrayOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelItemArrayInput` via:
 //
@@ -1111,12 +936,6 @@ func (i RecommendationSupportedLevelItemArray) ToRecommendationSupportedLevelIte
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelItemArrayOutput)
 }
 
-func (i RecommendationSupportedLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevelItem] {
-	return pulumix.Output[[]RecommendationSupportedLevelItem]{
-		OutputState: i.ToRecommendationSupportedLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecommendationSupportedLevelItemOutput struct{ *pulumi.OutputState }
 
 func (RecommendationSupportedLevelItemOutput) ElementType() reflect.Type {
@@ -1129,12 +948,6 @@ func (o RecommendationSupportedLevelItemOutput) ToRecommendationSupportedLevelIt
 
 func (o RecommendationSupportedLevelItemOutput) ToRecommendationSupportedLevelItemOutputWithContext(ctx context.Context) RecommendationSupportedLevelItemOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevelItem] {
-	return pulumix.Output[RecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the profile level.
@@ -1154,12 +967,6 @@ func (o RecommendationSupportedLevelItemArrayOutput) ToRecommendationSupportedLe
 
 func (o RecommendationSupportedLevelItemArrayOutput) ToRecommendationSupportedLevelItemArrayOutputWithContext(ctx context.Context) RecommendationSupportedLevelItemArrayOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevelItem] {
-	return pulumix.Output[[]RecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationSupportedLevelItemArrayOutput) Index(i pulumi.IntInput) RecommendationSupportedLevelItemOutput {
@@ -1209,12 +1016,6 @@ func (i ResourceActionActionArgs) ToResourceActionActionOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionActionOutput)
 }
 
-func (i ResourceActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[ResourceActionAction] {
-	return pulumix.Output[ResourceActionAction]{
-		OutputState: i.ToResourceActionActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResourceActionActionArrayInput is an input type that accepts ResourceActionActionArray and ResourceActionActionArrayOutput values.
 // You can construct a concrete instance of `ResourceActionActionArrayInput` via:
 //
@@ -1240,12 +1041,6 @@ func (i ResourceActionActionArray) ToResourceActionActionArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionActionArrayOutput)
 }
 
-func (i ResourceActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]ResourceActionAction] {
-	return pulumix.Output[[]ResourceActionAction]{
-		OutputState: i.ToResourceActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResourceActionActionOutput struct{ *pulumi.OutputState }
 
 func (ResourceActionActionOutput) ElementType() reflect.Type {
@@ -1258,12 +1053,6 @@ func (o ResourceActionActionOutput) ToResourceActionActionOutput() ResourceActio
 
 func (o ResourceActionActionOutput) ToResourceActionActionOutputWithContext(ctx context.Context) ResourceActionActionOutput {
 	return o
-}
-
-func (o ResourceActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[ResourceActionAction] {
-	return pulumix.Output[ResourceActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Text describing the recommended action.
@@ -1293,12 +1082,6 @@ func (o ResourceActionActionArrayOutput) ToResourceActionActionArrayOutput() Res
 
 func (o ResourceActionActionArrayOutput) ToResourceActionActionArrayOutputWithContext(ctx context.Context) ResourceActionActionArrayOutput {
 	return o
-}
-
-func (o ResourceActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResourceActionAction] {
-	return pulumix.Output[[]ResourceActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResourceActionActionArrayOutput) Index(i pulumi.IntInput) ResourceActionActionOutput {
@@ -1338,12 +1121,6 @@ func (i GetCategoriesCategoryCollectionArgs) ToGetCategoriesCategoryCollectionOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionOutput)
 }
 
-func (i GetCategoriesCategoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollection] {
-	return pulumix.Output[GetCategoriesCategoryCollection]{
-		OutputState: i.ToGetCategoriesCategoryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoriesCategoryCollectionArrayInput is an input type that accepts GetCategoriesCategoryCollectionArray and GetCategoriesCategoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionArrayInput` via:
 //
@@ -1369,12 +1146,6 @@ func (i GetCategoriesCategoryCollectionArray) ToGetCategoriesCategoryCollectionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollection] {
-	return pulumix.Output[[]GetCategoriesCategoryCollection]{
-		OutputState: i.ToGetCategoriesCategoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionOutput) ElementType() reflect.Type {
@@ -1387,12 +1158,6 @@ func (o GetCategoriesCategoryCollectionOutput) ToGetCategoriesCategoryCollection
 
 func (o GetCategoriesCategoryCollectionOutput) ToGetCategoriesCategoryCollectionOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollection] {
-	return pulumix.Output[GetCategoriesCategoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoriesCategoryCollectionOutput) Items() GetCategoriesCategoryCollectionItemArrayOutput {
@@ -1413,12 +1178,6 @@ func (o GetCategoriesCategoryCollectionArrayOutput) ToGetCategoriesCategoryColle
 	return o
 }
 
-func (o GetCategoriesCategoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollection] {
-	return pulumix.Output[[]GetCategoriesCategoryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCategoriesCategoryCollectionArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCategoriesCategoryCollection {
 		return vs[0].([]GetCategoriesCategoryCollection)[vs[1].(int)]
@@ -1427,29 +1186,29 @@ func (o GetCategoriesCategoryCollectionArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetCategoriesCategoryCollectionItem struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name associated with the compartment.
-	CompartmentName string `pulumi:"compartmentName"`
+	CompartmentName *string `pulumi:"compartmentName"`
 	// Text describing the category.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the category.
-	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the category.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The unique OCID of the category.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
 	RecommendationCounts []GetCategoriesCategoryCollectionItemRecommendationCount `pulumi:"recommendationCounts"`
 	// An array of `ResourceCount` objects grouped by the status of the recommendation.
 	ResourceCounts []GetCategoriesCategoryCollectionItemResourceCount `pulumi:"resourceCounts"`
 	// A filter that returns results that match the lifecycle state specified.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the category details were created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the category details were last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetCategoriesCategoryCollectionItemInput is an input type that accepts GetCategoriesCategoryCollectionItemArgs and GetCategoriesCategoryCollectionItemOutput values.
@@ -1465,29 +1224,29 @@ type GetCategoriesCategoryCollectionItemInput interface {
 
 type GetCategoriesCategoryCollectionItemArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The name associated with the compartment.
-	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	CompartmentName pulumi.StringPtrInput `pulumi:"compartmentName"`
 	// Text describing the category.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the category.
-	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving pulumi.Float64PtrInput `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the category.
 	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
 	// The unique OCID of the category.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
 	RecommendationCounts GetCategoriesCategoryCollectionItemRecommendationCountArrayInput `pulumi:"recommendationCounts"`
 	// An array of `ResourceCount` objects grouped by the status of the recommendation.
 	ResourceCounts GetCategoriesCategoryCollectionItemResourceCountArrayInput `pulumi:"resourceCounts"`
 	// A filter that returns results that match the lifecycle state specified.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the category details were created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the category details were last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetCategoriesCategoryCollectionItemArgs) ElementType() reflect.Type {
@@ -1500,12 +1259,6 @@ func (i GetCategoriesCategoryCollectionItemArgs) ToGetCategoriesCategoryCollecti
 
 func (i GetCategoriesCategoryCollectionItemArgs) ToGetCategoriesCategoryCollectionItemOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemOutput)
-}
-
-func (i GetCategoriesCategoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItem]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCategoriesCategoryCollectionItemArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemArray and GetCategoriesCategoryCollectionItemArrayOutput values.
@@ -1533,12 +1286,6 @@ func (i GetCategoriesCategoryCollectionItemArray) ToGetCategoriesCategoryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItem]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionItemOutput) ElementType() reflect.Type {
@@ -1553,30 +1300,24 @@ func (o GetCategoriesCategoryCollectionItemOutput) ToGetCategoriesCategoryCollec
 	return o
 }
 
-func (o GetCategoriesCategoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetCategoriesCategoryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name associated with the compartment.
-func (o GetCategoriesCategoryCollectionItemOutput) CompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.CompartmentName }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) CompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.CompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // Text describing the category.
-func (o GetCategoriesCategoryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the category.
-func (o GetCategoriesCategoryCollectionItemOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) float64 { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o GetCategoriesCategoryCollectionItemOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *float64 { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs for the category.
@@ -1585,13 +1326,13 @@ func (o GetCategoriesCategoryCollectionItemOutput) ExtendedMetadata() pulumi.Map
 }
 
 // The unique OCID of the category.
-func (o GetCategoriesCategoryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetCategoriesCategoryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
@@ -1609,18 +1350,18 @@ func (o GetCategoriesCategoryCollectionItemOutput) ResourceCounts() GetCategorie
 }
 
 // A filter that returns results that match the lifecycle state specified.
-func (o GetCategoriesCategoryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were created, in the format defined by RFC3339.
-func (o GetCategoriesCategoryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were last updated, in the format defined by RFC3339.
-func (o GetCategoriesCategoryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetCategoriesCategoryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1637,12 +1378,6 @@ func (o GetCategoriesCategoryCollectionItemArrayOutput) ToGetCategoriesCategoryC
 	return o
 }
 
-func (o GetCategoriesCategoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCategoriesCategoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCategoriesCategoryCollectionItem {
 		return vs[0].([]GetCategoriesCategoryCollectionItem)[vs[1].(int)]
@@ -1651,9 +1386,9 @@ func (o GetCategoriesCategoryCollectionItemArrayOutput) Index(i pulumi.IntInput)
 
 type GetCategoriesCategoryCollectionItemRecommendationCount struct {
 	// The count of resources.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The level of importance assigned to the recommendation.
-	Importance string `pulumi:"importance"`
+	Importance *string `pulumi:"importance"`
 }
 
 // GetCategoriesCategoryCollectionItemRecommendationCountInput is an input type that accepts GetCategoriesCategoryCollectionItemRecommendationCountArgs and GetCategoriesCategoryCollectionItemRecommendationCountOutput values.
@@ -1669,9 +1404,9 @@ type GetCategoriesCategoryCollectionItemRecommendationCountInput interface {
 
 type GetCategoriesCategoryCollectionItemRecommendationCountArgs struct {
 	// The count of resources.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The level of importance assigned to the recommendation.
-	Importance pulumi.StringInput `pulumi:"importance"`
+	Importance pulumi.StringPtrInput `pulumi:"importance"`
 }
 
 func (GetCategoriesCategoryCollectionItemRecommendationCountArgs) ElementType() reflect.Type {
@@ -1684,12 +1419,6 @@ func (i GetCategoriesCategoryCollectionItemRecommendationCountArgs) ToGetCategor
 
 func (i GetCategoriesCategoryCollectionItemRecommendationCountArgs) ToGetCategoriesCategoryCollectionItemRecommendationCountOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemRecommendationCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemRecommendationCountOutput)
-}
-
-func (i GetCategoriesCategoryCollectionItemRecommendationCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemRecommendationCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCategoriesCategoryCollectionItemRecommendationCountArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemRecommendationCountArray and GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput values.
@@ -1717,12 +1446,6 @@ func (i GetCategoriesCategoryCollectionItemRecommendationCountArray) ToGetCatego
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemRecommendationCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemRecommendationCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionItemRecommendationCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionItemRecommendationCountOutput) ElementType() reflect.Type {
@@ -1737,20 +1460,14 @@ func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) ToGetCateg
 	return o
 }
 
-func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The count of resources.
-func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemRecommendationCount) int { return v.Count }).(pulumi.IntOutput)
+func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemRecommendationCount) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The level of importance assigned to the recommendation.
-func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) Importance() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemRecommendationCount) string { return v.Importance }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) Importance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemRecommendationCount) *string { return v.Importance }).(pulumi.StringPtrOutput)
 }
 
 type GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput struct{ *pulumi.OutputState }
@@ -1767,12 +1484,6 @@ func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) ToGet
 	return o
 }
 
-func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionItemRecommendationCountOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCategoriesCategoryCollectionItemRecommendationCount {
 		return vs[0].([]GetCategoriesCategoryCollectionItemRecommendationCount)[vs[1].(int)]
@@ -1781,9 +1492,9 @@ func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) Index
 
 type GetCategoriesCategoryCollectionItemResourceCount struct {
 	// The count of resources.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The recommendation status of the resource.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetCategoriesCategoryCollectionItemResourceCountInput is an input type that accepts GetCategoriesCategoryCollectionItemResourceCountArgs and GetCategoriesCategoryCollectionItemResourceCountOutput values.
@@ -1799,9 +1510,9 @@ type GetCategoriesCategoryCollectionItemResourceCountInput interface {
 
 type GetCategoriesCategoryCollectionItemResourceCountArgs struct {
 	// The count of resources.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The recommendation status of the resource.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetCategoriesCategoryCollectionItemResourceCountArgs) ElementType() reflect.Type {
@@ -1814,12 +1525,6 @@ func (i GetCategoriesCategoryCollectionItemResourceCountArgs) ToGetCategoriesCat
 
 func (i GetCategoriesCategoryCollectionItemResourceCountArgs) ToGetCategoriesCategoryCollectionItemResourceCountOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemResourceCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemResourceCountOutput)
-}
-
-func (i GetCategoriesCategoryCollectionItemResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemResourceCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCategoriesCategoryCollectionItemResourceCountArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemResourceCountArray and GetCategoriesCategoryCollectionItemResourceCountArrayOutput values.
@@ -1847,12 +1552,6 @@ func (i GetCategoriesCategoryCollectionItemResourceCountArray) ToGetCategoriesCa
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemResourceCountArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionItemResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionItemResourceCountOutput) ElementType() reflect.Type {
@@ -1867,20 +1566,14 @@ func (o GetCategoriesCategoryCollectionItemResourceCountOutput) ToGetCategoriesC
 	return o
 }
 
-func (o GetCategoriesCategoryCollectionItemResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The count of resources.
-func (o GetCategoriesCategoryCollectionItemResourceCountOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemResourceCount) int { return v.Count }).(pulumi.IntOutput)
+func (o GetCategoriesCategoryCollectionItemResourceCountOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemResourceCount) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The recommendation status of the resource.
-func (o GetCategoriesCategoryCollectionItemResourceCountOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemResourceCount) string { return v.Status }).(pulumi.StringOutput)
+func (o GetCategoriesCategoryCollectionItemResourceCountOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItemResourceCount) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetCategoriesCategoryCollectionItemResourceCountArrayOutput struct{ *pulumi.OutputState }
@@ -1895,12 +1588,6 @@ func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) ToGetCatego
 
 func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) ToGetCategoriesCategoryCollectionItemResourceCountArrayOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemResourceCountArrayOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionItemResourceCountOutput {
@@ -1946,12 +1633,6 @@ func (i GetCategoriesFilterArgs) ToGetCategoriesFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesFilterOutput)
 }
 
-func (i GetCategoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesFilter] {
-	return pulumix.Output[GetCategoriesFilter]{
-		OutputState: i.ToGetCategoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoriesFilterArrayInput is an input type that accepts GetCategoriesFilterArray and GetCategoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesFilterArrayInput` via:
 //
@@ -1977,12 +1658,6 @@ func (i GetCategoriesFilterArray) ToGetCategoriesFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesFilterArrayOutput)
 }
 
-func (i GetCategoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesFilter] {
-	return pulumix.Output[[]GetCategoriesFilter]{
-		OutputState: i.ToGetCategoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesFilterOutput) ElementType() reflect.Type {
@@ -1995,12 +1670,6 @@ func (o GetCategoriesFilterOutput) ToGetCategoriesFilterOutput() GetCategoriesFi
 
 func (o GetCategoriesFilterOutput) ToGetCategoriesFilterOutputWithContext(ctx context.Context) GetCategoriesFilterOutput {
 	return o
-}
-
-func (o GetCategoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesFilter] {
-	return pulumix.Output[GetCategoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -2030,12 +1699,6 @@ func (o GetCategoriesFilterArrayOutput) ToGetCategoriesFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetCategoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesFilter] {
-	return pulumix.Output[[]GetCategoriesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCategoriesFilterArrayOutput) Index(i pulumi.IntInput) GetCategoriesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCategoriesFilter {
 		return vs[0].([]GetCategoriesFilter)[vs[1].(int)]
@@ -2044,9 +1707,9 @@ func (o GetCategoriesFilterArrayOutput) Index(i pulumi.IntInput) GetCategoriesFi
 
 type GetCategoryRecommendationCount struct {
 	// The count of resources.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The level of importance assigned to the recommendation.
-	Importance string `pulumi:"importance"`
+	Importance *string `pulumi:"importance"`
 }
 
 // GetCategoryRecommendationCountInput is an input type that accepts GetCategoryRecommendationCountArgs and GetCategoryRecommendationCountOutput values.
@@ -2062,9 +1725,9 @@ type GetCategoryRecommendationCountInput interface {
 
 type GetCategoryRecommendationCountArgs struct {
 	// The count of resources.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The level of importance assigned to the recommendation.
-	Importance pulumi.StringInput `pulumi:"importance"`
+	Importance pulumi.StringPtrInput `pulumi:"importance"`
 }
 
 func (GetCategoryRecommendationCountArgs) ElementType() reflect.Type {
@@ -2077,12 +1740,6 @@ func (i GetCategoryRecommendationCountArgs) ToGetCategoryRecommendationCountOutp
 
 func (i GetCategoryRecommendationCountArgs) ToGetCategoryRecommendationCountOutputWithContext(ctx context.Context) GetCategoryRecommendationCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryRecommendationCountOutput)
-}
-
-func (i GetCategoryRecommendationCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoryRecommendationCount] {
-	return pulumix.Output[GetCategoryRecommendationCount]{
-		OutputState: i.ToGetCategoryRecommendationCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCategoryRecommendationCountArrayInput is an input type that accepts GetCategoryRecommendationCountArray and GetCategoryRecommendationCountArrayOutput values.
@@ -2110,12 +1767,6 @@ func (i GetCategoryRecommendationCountArray) ToGetCategoryRecommendationCountArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryRecommendationCountArrayOutput)
 }
 
-func (i GetCategoryRecommendationCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryRecommendationCount] {
-	return pulumix.Output[[]GetCategoryRecommendationCount]{
-		OutputState: i.ToGetCategoryRecommendationCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoryRecommendationCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoryRecommendationCountOutput) ElementType() reflect.Type {
@@ -2130,20 +1781,14 @@ func (o GetCategoryRecommendationCountOutput) ToGetCategoryRecommendationCountOu
 	return o
 }
 
-func (o GetCategoryRecommendationCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoryRecommendationCount] {
-	return pulumix.Output[GetCategoryRecommendationCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The count of resources.
-func (o GetCategoryRecommendationCountOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCategoryRecommendationCount) int { return v.Count }).(pulumi.IntOutput)
+func (o GetCategoryRecommendationCountOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCategoryRecommendationCount) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The level of importance assigned to the recommendation.
-func (o GetCategoryRecommendationCountOutput) Importance() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryRecommendationCount) string { return v.Importance }).(pulumi.StringOutput)
+func (o GetCategoryRecommendationCountOutput) Importance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryRecommendationCount) *string { return v.Importance }).(pulumi.StringPtrOutput)
 }
 
 type GetCategoryRecommendationCountArrayOutput struct{ *pulumi.OutputState }
@@ -2160,12 +1805,6 @@ func (o GetCategoryRecommendationCountArrayOutput) ToGetCategoryRecommendationCo
 	return o
 }
 
-func (o GetCategoryRecommendationCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryRecommendationCount] {
-	return pulumix.Output[[]GetCategoryRecommendationCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCategoryRecommendationCountArrayOutput) Index(i pulumi.IntInput) GetCategoryRecommendationCountOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCategoryRecommendationCount {
 		return vs[0].([]GetCategoryRecommendationCount)[vs[1].(int)]
@@ -2174,9 +1813,9 @@ func (o GetCategoryRecommendationCountArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetCategoryResourceCount struct {
 	// The count of resources.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The recommendation status of the resource.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetCategoryResourceCountInput is an input type that accepts GetCategoryResourceCountArgs and GetCategoryResourceCountOutput values.
@@ -2192,9 +1831,9 @@ type GetCategoryResourceCountInput interface {
 
 type GetCategoryResourceCountArgs struct {
 	// The count of resources.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The recommendation status of the resource.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetCategoryResourceCountArgs) ElementType() reflect.Type {
@@ -2207,12 +1846,6 @@ func (i GetCategoryResourceCountArgs) ToGetCategoryResourceCountOutput() GetCate
 
 func (i GetCategoryResourceCountArgs) ToGetCategoryResourceCountOutputWithContext(ctx context.Context) GetCategoryResourceCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryResourceCountOutput)
-}
-
-func (i GetCategoryResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoryResourceCount] {
-	return pulumix.Output[GetCategoryResourceCount]{
-		OutputState: i.ToGetCategoryResourceCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCategoryResourceCountArrayInput is an input type that accepts GetCategoryResourceCountArray and GetCategoryResourceCountArrayOutput values.
@@ -2240,12 +1873,6 @@ func (i GetCategoryResourceCountArray) ToGetCategoryResourceCountArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryResourceCountArrayOutput)
 }
 
-func (i GetCategoryResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryResourceCount] {
-	return pulumix.Output[[]GetCategoryResourceCount]{
-		OutputState: i.ToGetCategoryResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoryResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoryResourceCountOutput) ElementType() reflect.Type {
@@ -2260,20 +1887,14 @@ func (o GetCategoryResourceCountOutput) ToGetCategoryResourceCountOutputWithCont
 	return o
 }
 
-func (o GetCategoryResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoryResourceCount] {
-	return pulumix.Output[GetCategoryResourceCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The count of resources.
-func (o GetCategoryResourceCountOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCategoryResourceCount) int { return v.Count }).(pulumi.IntOutput)
+func (o GetCategoryResourceCountOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCategoryResourceCount) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The recommendation status of the resource.
-func (o GetCategoryResourceCountOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResourceCount) string { return v.Status }).(pulumi.StringOutput)
+func (o GetCategoryResourceCountOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResourceCount) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetCategoryResourceCountArrayOutput struct{ *pulumi.OutputState }
@@ -2288,12 +1909,6 @@ func (o GetCategoryResourceCountArrayOutput) ToGetCategoryResourceCountArrayOutp
 
 func (o GetCategoryResourceCountArrayOutput) ToGetCategoryResourceCountArrayOutputWithContext(ctx context.Context) GetCategoryResourceCountArrayOutput {
 	return o
-}
-
-func (o GetCategoryResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryResourceCount] {
-	return pulumix.Output[[]GetCategoryResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoryResourceCountArrayOutput) Index(i pulumi.IntInput) GetCategoryResourceCountOutput {
@@ -2333,12 +1948,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionArgs) ToGetEnrollmentStat
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionOutput)
 }
 
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnrollmentStatusesEnrollmentStatusCollectionArrayInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionArray and GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesEnrollmentStatusCollectionArrayInput` via:
 //
@@ -2364,12 +1973,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionArray) ToGetEnrollmentSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput)
 }
 
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnrollmentStatusesEnrollmentStatusCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ElementType() reflect.Type {
@@ -2382,12 +1985,6 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ToGetEnrollmentSt
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ToGetEnrollmentStatusesEnrollmentStatusCollectionOutputWithContext(ctx context.Context) GetEnrollmentStatusesEnrollmentStatusCollectionOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) Items() GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput {
@@ -2410,12 +2007,6 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) ToGetEnrollm
 	return o
 }
 
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) Index(i pulumi.IntInput) GetEnrollmentStatusesEnrollmentStatusCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEnrollmentStatusesEnrollmentStatusCollection {
 		return vs[0].([]GetEnrollmentStatusesEnrollmentStatusCollection)[vs[1].(int)]
@@ -2424,20 +2015,20 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) Index(i pulu
 
 type GetEnrollmentStatusesEnrollmentStatusCollectionItem struct {
 	// The OCID of the compartment.
-	CompartmentId      string `pulumi:"compartmentId"`
-	EnrollmentStatusId string `pulumi:"enrollmentStatusId"`
+	CompartmentId      *string `pulumi:"compartmentId"`
+	EnrollmentStatusId *string `pulumi:"enrollmentStatusId"`
 	// The OCID of the enrollment status.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter that returns results that match the lifecycle state specified.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A filter that returns results that match the Cloud Advisor enrollment status specified.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The reason for the enrollment status of the tenancy.
-	StatusReason string `pulumi:"statusReason"`
+	StatusReason *string `pulumi:"statusReason"`
 	// The date and time the enrollment status was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the enrollment status was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetEnrollmentStatusesEnrollmentStatusCollectionItemInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs and GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput values.
@@ -2453,20 +2044,20 @@ type GetEnrollmentStatusesEnrollmentStatusCollectionItemInput interface {
 
 type GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs struct {
 	// The OCID of the compartment.
-	CompartmentId      pulumi.StringInput `pulumi:"compartmentId"`
-	EnrollmentStatusId pulumi.StringInput `pulumi:"enrollmentStatusId"`
+	CompartmentId      pulumi.StringPtrInput `pulumi:"compartmentId"`
+	EnrollmentStatusId pulumi.StringPtrInput `pulumi:"enrollmentStatusId"`
 	// The OCID of the enrollment status.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter that returns results that match the lifecycle state specified.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter that returns results that match the Cloud Advisor enrollment status specified.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The reason for the enrollment status of the tenancy.
-	StatusReason pulumi.StringInput `pulumi:"statusReason"`
+	StatusReason pulumi.StringPtrInput `pulumi:"statusReason"`
 	// The date and time the enrollment status was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the enrollment status was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs) ElementType() reflect.Type {
@@ -2479,12 +2070,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs) ToGetEnrollment
 
 func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs) ToGetEnrollmentStatusesEnrollmentStatusCollectionItemOutputWithContext(ctx context.Context) GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput)
-}
-
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionItemArray and GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput values.
@@ -2512,12 +2097,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArray) ToGetEnrollmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput)
 }
 
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) ElementType() reflect.Type {
@@ -2532,49 +2111,43 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) ToGetEnrollme
 	return o
 }
 
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) EnrollmentStatusId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.EnrollmentStatusId }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) EnrollmentStatusId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.EnrollmentStatusId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the enrollment status.
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns results that match the lifecycle state specified.
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns results that match the Cloud Advisor enrollment status specified.
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The reason for the enrollment status of the tenancy.
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) StatusReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.StatusReason }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) StatusReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.StatusReason }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the enrollment status was created, in the format defined by RFC3339.
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the enrollment status was last updated, in the format defined by RFC3339.
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesEnrollmentStatusCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2589,12 +2162,6 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput) ToGetEnr
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput) ToGetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutputWithContext(ctx context.Context) GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput {
@@ -2638,12 +2205,6 @@ func (i GetEnrollmentStatusesFilterArgs) ToGetEnrollmentStatusesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesFilterOutput)
 }
 
-func (i GetEnrollmentStatusesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesFilter] {
-	return pulumix.Output[GetEnrollmentStatusesFilter]{
-		OutputState: i.ToGetEnrollmentStatusesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnrollmentStatusesFilterArrayInput is an input type that accepts GetEnrollmentStatusesFilterArray and GetEnrollmentStatusesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesFilterArrayInput` via:
 //
@@ -2669,12 +2230,6 @@ func (i GetEnrollmentStatusesFilterArray) ToGetEnrollmentStatusesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesFilterArrayOutput)
 }
 
-func (i GetEnrollmentStatusesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesFilter] {
-	return pulumix.Output[[]GetEnrollmentStatusesFilter]{
-		OutputState: i.ToGetEnrollmentStatusesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnrollmentStatusesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEnrollmentStatusesFilterOutput) ElementType() reflect.Type {
@@ -2687,12 +2242,6 @@ func (o GetEnrollmentStatusesFilterOutput) ToGetEnrollmentStatusesFilterOutput()
 
 func (o GetEnrollmentStatusesFilterOutput) ToGetEnrollmentStatusesFilterOutputWithContext(ctx context.Context) GetEnrollmentStatusesFilterOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesFilter] {
-	return pulumix.Output[GetEnrollmentStatusesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesFilterOutput) Name() pulumi.StringOutput {
@@ -2719,12 +2268,6 @@ func (o GetEnrollmentStatusesFilterArrayOutput) ToGetEnrollmentStatusesFilterArr
 
 func (o GetEnrollmentStatusesFilterArrayOutput) ToGetEnrollmentStatusesFilterArrayOutputWithContext(ctx context.Context) GetEnrollmentStatusesFilterArrayOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesFilter] {
-	return pulumix.Output[[]GetEnrollmentStatusesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetEnrollmentStatusesFilterOutput {
@@ -2770,12 +2313,6 @@ func (i GetHistoriesFilterArgs) ToGetHistoriesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesFilterOutput)
 }
 
-func (i GetHistoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesFilter] {
-	return pulumix.Output[GetHistoriesFilter]{
-		OutputState: i.ToGetHistoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHistoriesFilterArrayInput is an input type that accepts GetHistoriesFilterArray and GetHistoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesFilterArrayInput` via:
 //
@@ -2801,12 +2338,6 @@ func (i GetHistoriesFilterArray) ToGetHistoriesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesFilterArrayOutput)
 }
 
-func (i GetHistoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesFilter] {
-	return pulumix.Output[[]GetHistoriesFilter]{
-		OutputState: i.ToGetHistoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesFilterOutput) ElementType() reflect.Type {
@@ -2819,12 +2350,6 @@ func (o GetHistoriesFilterOutput) ToGetHistoriesFilterOutput() GetHistoriesFilte
 
 func (o GetHistoriesFilterOutput) ToGetHistoriesFilterOutputWithContext(ctx context.Context) GetHistoriesFilterOutput {
 	return o
-}
-
-func (o GetHistoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesFilter] {
-	return pulumix.Output[GetHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -2852,12 +2377,6 @@ func (o GetHistoriesFilterArrayOutput) ToGetHistoriesFilterArrayOutput() GetHist
 
 func (o GetHistoriesFilterArrayOutput) ToGetHistoriesFilterArrayOutputWithContext(ctx context.Context) GetHistoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetHistoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesFilter] {
-	return pulumix.Output[[]GetHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetHistoriesFilterOutput {
@@ -2899,12 +2418,6 @@ func (i GetHistoriesHistoryCollectionArgs) ToGetHistoriesHistoryCollectionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionOutput)
 }
 
-func (i GetHistoriesHistoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollection] {
-	return pulumix.Output[GetHistoriesHistoryCollection]{
-		OutputState: i.ToGetHistoriesHistoryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHistoriesHistoryCollectionArrayInput is an input type that accepts GetHistoriesHistoryCollectionArray and GetHistoriesHistoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionArrayInput` via:
 //
@@ -2930,12 +2443,6 @@ func (i GetHistoriesHistoryCollectionArray) ToGetHistoriesHistoryCollectionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionArrayOutput)
 }
 
-func (i GetHistoriesHistoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollection] {
-	return pulumix.Output[[]GetHistoriesHistoryCollection]{
-		OutputState: i.ToGetHistoriesHistoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesHistoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesHistoryCollectionOutput) ElementType() reflect.Type {
@@ -2948,12 +2455,6 @@ func (o GetHistoriesHistoryCollectionOutput) ToGetHistoriesHistoryCollectionOutp
 
 func (o GetHistoriesHistoryCollectionOutput) ToGetHistoriesHistoryCollectionOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionOutput {
 	return o
-}
-
-func (o GetHistoriesHistoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollection] {
-	return pulumix.Output[GetHistoriesHistoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A collection of history summaries.
@@ -2975,12 +2476,6 @@ func (o GetHistoriesHistoryCollectionArrayOutput) ToGetHistoriesHistoryCollectio
 	return o
 }
 
-func (o GetHistoriesHistoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollection] {
-	return pulumix.Output[[]GetHistoriesHistoryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHistoriesHistoryCollectionArrayOutput) Index(i pulumi.IntInput) GetHistoriesHistoryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHistoriesHistoryCollection {
 		return vs[0].([]GetHistoriesHistoryCollection)[vs[1].(int)]
@@ -2991,37 +2486,37 @@ type GetHistoriesHistoryCollectionItem struct {
 	// Details about the recommended action.
 	Actions []GetHistoriesHistoryCollectionItemAction `pulumi:"actions"`
 	// The unique OCID associated with the category.
-	CategoryId string `pulumi:"categoryId"`
+	CategoryId *string `pulumi:"categoryId"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name assigned to the compartment.
-	CompartmentName string `pulumi:"compartmentName"`
+	CompartmentName *string `pulumi:"compartmentName"`
 	// The estimated cost savings, in dollars, for the resource action.
-	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation history.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId string `pulumi:"recommendationId"`
+	RecommendationId *string `pulumi:"recommendationId"`
 	// Optional. A filter that returns results that match the recommendation name specified.
-	RecommendationName string `pulumi:"recommendationName"`
+	RecommendationName *string `pulumi:"recommendationName"`
 	// The unique OCID associated with the resource action.
-	ResourceActionId string `pulumi:"resourceActionId"`
+	ResourceActionId *string `pulumi:"resourceActionId"`
 	// The unique OCID associated with the resource.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// Optional. A filter that returns results that match the resource type specified.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// A filter that returns results that match the lifecycle state specified.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A filter that returns recommendations that match the status specified.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The date and time the recommendation history was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetHistoriesHistoryCollectionItemInput is an input type that accepts GetHistoriesHistoryCollectionItemArgs and GetHistoriesHistoryCollectionItemOutput values.
@@ -3039,37 +2534,37 @@ type GetHistoriesHistoryCollectionItemArgs struct {
 	// Details about the recommended action.
 	Actions GetHistoriesHistoryCollectionItemActionArrayInput `pulumi:"actions"`
 	// The unique OCID associated with the category.
-	CategoryId pulumi.StringInput `pulumi:"categoryId"`
+	CategoryId pulumi.StringPtrInput `pulumi:"categoryId"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The name assigned to the compartment.
-	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	CompartmentName pulumi.StringPtrInput `pulumi:"compartmentName"`
 	// The estimated cost savings, in dollars, for the resource action.
-	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving pulumi.Float64PtrInput `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation history.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
 	Metadata pulumi.MapInput `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId pulumi.StringInput `pulumi:"recommendationId"`
+	RecommendationId pulumi.StringPtrInput `pulumi:"recommendationId"`
 	// Optional. A filter that returns results that match the recommendation name specified.
-	RecommendationName pulumi.StringInput `pulumi:"recommendationName"`
+	RecommendationName pulumi.StringPtrInput `pulumi:"recommendationName"`
 	// The unique OCID associated with the resource action.
-	ResourceActionId pulumi.StringInput `pulumi:"resourceActionId"`
+	ResourceActionId pulumi.StringPtrInput `pulumi:"resourceActionId"`
 	// The unique OCID associated with the resource.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// Optional. A filter that returns results that match the resource type specified.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// A filter that returns results that match the lifecycle state specified.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter that returns recommendations that match the status specified.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The date and time the recommendation history was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetHistoriesHistoryCollectionItemArgs) ElementType() reflect.Type {
@@ -3082,12 +2577,6 @@ func (i GetHistoriesHistoryCollectionItemArgs) ToGetHistoriesHistoryCollectionIt
 
 func (i GetHistoriesHistoryCollectionItemArgs) ToGetHistoriesHistoryCollectionItemOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemOutput)
-}
-
-func (i GetHistoriesHistoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItem]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHistoriesHistoryCollectionItemArrayInput is an input type that accepts GetHistoriesHistoryCollectionItemArray and GetHistoriesHistoryCollectionItemArrayOutput values.
@@ -3115,12 +2604,6 @@ func (i GetHistoriesHistoryCollectionItemArray) ToGetHistoriesHistoryCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemArrayOutput)
 }
 
-func (i GetHistoriesHistoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItem]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesHistoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesHistoryCollectionItemOutput) ElementType() reflect.Type {
@@ -3135,35 +2618,29 @@ func (o GetHistoriesHistoryCollectionItemOutput) ToGetHistoriesHistoryCollection
 	return o
 }
 
-func (o GetHistoriesHistoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details about the recommended action.
 func (o GetHistoriesHistoryCollectionItemOutput) Actions() GetHistoriesHistoryCollectionItemActionArrayOutput {
 	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) []GetHistoriesHistoryCollectionItemAction { return v.Actions }).(GetHistoriesHistoryCollectionItemActionArrayOutput)
 }
 
 // The unique OCID associated with the category.
-func (o GetHistoriesHistoryCollectionItemOutput) CategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.CategoryId }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) CategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.CategoryId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetHistoriesHistoryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name assigned to the compartment.
-func (o GetHistoriesHistoryCollectionItemOutput) CompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.CompartmentName }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) CompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.CompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the resource action.
-func (o GetHistoriesHistoryCollectionItemOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) float64 { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o GetHistoriesHistoryCollectionItemOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *float64 { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
@@ -3172,8 +2649,8 @@ func (o GetHistoriesHistoryCollectionItemOutput) ExtendedMetadata() pulumi.MapOu
 }
 
 // The unique OCID associated with the recommendation history.
-func (o GetHistoriesHistoryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Custom metadata key/value pairs for the resource action.
@@ -3182,48 +2659,48 @@ func (o GetHistoriesHistoryCollectionItemOutput) Metadata() pulumi.MapOutput {
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetHistoriesHistoryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the recommendation.
-func (o GetHistoriesHistoryCollectionItemOutput) RecommendationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.RecommendationId }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) RecommendationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.RecommendationId }).(pulumi.StringPtrOutput)
 }
 
 // Optional. A filter that returns results that match the recommendation name specified.
-func (o GetHistoriesHistoryCollectionItemOutput) RecommendationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.RecommendationName }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) RecommendationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.RecommendationName }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the resource action.
-func (o GetHistoriesHistoryCollectionItemOutput) ResourceActionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.ResourceActionId }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) ResourceActionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.ResourceActionId }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the resource.
-func (o GetHistoriesHistoryCollectionItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Optional. A filter that returns results that match the resource type specified.
-func (o GetHistoriesHistoryCollectionItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns results that match the lifecycle state specified.
-func (o GetHistoriesHistoryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns recommendations that match the status specified.
-func (o GetHistoriesHistoryCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the recommendation history was created, in the format defined by RFC3339.
-func (o GetHistoriesHistoryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetHistoriesHistoryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3240,12 +2717,6 @@ func (o GetHistoriesHistoryCollectionItemArrayOutput) ToGetHistoriesHistoryColle
 	return o
 }
 
-func (o GetHistoriesHistoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHistoriesHistoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetHistoriesHistoryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHistoriesHistoryCollectionItem {
 		return vs[0].([]GetHistoriesHistoryCollectionItem)[vs[1].(int)]
@@ -3254,11 +2725,11 @@ func (o GetHistoriesHistoryCollectionItemArrayOutput) Index(i pulumi.IntInput) G
 
 type GetHistoriesHistoryCollectionItemAction struct {
 	// Text describing the recommended action.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The status of the resource action.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The URL path to documentation that explains how to perform the action.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetHistoriesHistoryCollectionItemActionInput is an input type that accepts GetHistoriesHistoryCollectionItemActionArgs and GetHistoriesHistoryCollectionItemActionOutput values.
@@ -3274,11 +2745,11 @@ type GetHistoriesHistoryCollectionItemActionInput interface {
 
 type GetHistoriesHistoryCollectionItemActionArgs struct {
 	// Text describing the recommended action.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The status of the resource action.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The URL path to documentation that explains how to perform the action.
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetHistoriesHistoryCollectionItemActionArgs) ElementType() reflect.Type {
@@ -3291,12 +2762,6 @@ func (i GetHistoriesHistoryCollectionItemActionArgs) ToGetHistoriesHistoryCollec
 
 func (i GetHistoriesHistoryCollectionItemActionArgs) ToGetHistoriesHistoryCollectionItemActionOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionItemActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemActionOutput)
-}
-
-func (i GetHistoriesHistoryCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItemAction]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHistoriesHistoryCollectionItemActionArrayInput is an input type that accepts GetHistoriesHistoryCollectionItemActionArray and GetHistoriesHistoryCollectionItemActionArrayOutput values.
@@ -3324,12 +2789,6 @@ func (i GetHistoriesHistoryCollectionItemActionArray) ToGetHistoriesHistoryColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemActionArrayOutput)
 }
 
-func (i GetHistoriesHistoryCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItemAction]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesHistoryCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesHistoryCollectionItemActionOutput) ElementType() reflect.Type {
@@ -3344,25 +2803,19 @@ func (o GetHistoriesHistoryCollectionItemActionOutput) ToGetHistoriesHistoryColl
 	return o
 }
 
-func (o GetHistoriesHistoryCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Text describing the recommended action.
-func (o GetHistoriesHistoryCollectionItemActionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItemAction) string { return v.Description }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemActionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItemAction) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The status of the resource action.
-func (o GetHistoriesHistoryCollectionItemActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItemAction) string { return v.Type }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItemAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The URL path to documentation that explains how to perform the action.
-func (o GetHistoriesHistoryCollectionItemActionOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItemAction) string { return v.Url }).(pulumi.StringOutput)
+func (o GetHistoriesHistoryCollectionItemActionOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItemAction) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type GetHistoriesHistoryCollectionItemActionArrayOutput struct{ *pulumi.OutputState }
@@ -3379,12 +2832,6 @@ func (o GetHistoriesHistoryCollectionItemActionArrayOutput) ToGetHistoriesHistor
 	return o
 }
 
-func (o GetHistoriesHistoryCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHistoriesHistoryCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetHistoriesHistoryCollectionItemActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHistoriesHistoryCollectionItemAction {
 		return vs[0].([]GetHistoriesHistoryCollectionItemAction)[vs[1].(int)]
@@ -3393,17 +2840,17 @@ func (o GetHistoriesHistoryCollectionItemActionArrayOutput) Index(i pulumi.IntIn
 
 type GetProfileLevelItem struct {
 	// The default aggregation interval (in days) for profiles using this profile level.
-	DefaultInterval int `pulumi:"defaultInterval"`
+	DefaultInterval *int `pulumi:"defaultInterval"`
 	// The metrics that will be evaluated by profiles using this profile level.
 	Metrics []GetProfileLevelItemMetric `pulumi:"metrics"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Optional. A filter that returns results that match the recommendation name specified.
-	RecommendationName string `pulumi:"recommendationName"`
+	RecommendationName *string `pulumi:"recommendationName"`
 	// The date and time the category details were created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the category details were last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An array of aggregation intervals (in days) allowed for profiles using this profile level.
 	ValidIntervals []int `pulumi:"validIntervals"`
 }
@@ -3421,17 +2868,17 @@ type GetProfileLevelItemInput interface {
 
 type GetProfileLevelItemArgs struct {
 	// The default aggregation interval (in days) for profiles using this profile level.
-	DefaultInterval pulumi.IntInput `pulumi:"defaultInterval"`
+	DefaultInterval pulumi.IntPtrInput `pulumi:"defaultInterval"`
 	// The metrics that will be evaluated by profiles using this profile level.
 	Metrics GetProfileLevelItemMetricArrayInput `pulumi:"metrics"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Optional. A filter that returns results that match the recommendation name specified.
-	RecommendationName pulumi.StringInput `pulumi:"recommendationName"`
+	RecommendationName pulumi.StringPtrInput `pulumi:"recommendationName"`
 	// The date and time the category details were created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the category details were last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// An array of aggregation intervals (in days) allowed for profiles using this profile level.
 	ValidIntervals pulumi.IntArrayInput `pulumi:"validIntervals"`
 }
@@ -3446,12 +2893,6 @@ func (i GetProfileLevelItemArgs) ToGetProfileLevelItemOutput() GetProfileLevelIt
 
 func (i GetProfileLevelItemArgs) ToGetProfileLevelItemOutputWithContext(ctx context.Context) GetProfileLevelItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemOutput)
-}
-
-func (i GetProfileLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItem] {
-	return pulumix.Output[GetProfileLevelItem]{
-		OutputState: i.ToGetProfileLevelItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileLevelItemArrayInput is an input type that accepts GetProfileLevelItemArray and GetProfileLevelItemArrayOutput values.
@@ -3479,12 +2920,6 @@ func (i GetProfileLevelItemArray) ToGetProfileLevelItemArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemArrayOutput)
 }
 
-func (i GetProfileLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItem] {
-	return pulumix.Output[[]GetProfileLevelItem]{
-		OutputState: i.ToGetProfileLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelItemOutput) ElementType() reflect.Type {
@@ -3499,15 +2934,9 @@ func (o GetProfileLevelItemOutput) ToGetProfileLevelItemOutputWithContext(ctx co
 	return o
 }
 
-func (o GetProfileLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItem] {
-	return pulumix.Output[GetProfileLevelItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The default aggregation interval (in days) for profiles using this profile level.
-func (o GetProfileLevelItemOutput) DefaultInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProfileLevelItem) int { return v.DefaultInterval }).(pulumi.IntOutput)
+func (o GetProfileLevelItemOutput) DefaultInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItem) *int { return v.DefaultInterval }).(pulumi.IntPtrOutput)
 }
 
 // The metrics that will be evaluated by profiles using this profile level.
@@ -3516,23 +2945,23 @@ func (o GetProfileLevelItemOutput) Metrics() GetProfileLevelItemMetricArrayOutpu
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetProfileLevelItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProfileLevelItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Optional. A filter that returns results that match the recommendation name specified.
-func (o GetProfileLevelItemOutput) RecommendationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelItem) string { return v.RecommendationName }).(pulumi.StringOutput)
+func (o GetProfileLevelItemOutput) RecommendationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItem) *string { return v.RecommendationName }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were created, in the format defined by RFC3339.
-func (o GetProfileLevelItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProfileLevelItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were last updated, in the format defined by RFC3339.
-func (o GetProfileLevelItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetProfileLevelItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // An array of aggregation intervals (in days) allowed for profiles using this profile level.
@@ -3554,12 +2983,6 @@ func (o GetProfileLevelItemArrayOutput) ToGetProfileLevelItemArrayOutputWithCont
 	return o
 }
 
-func (o GetProfileLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItem] {
-	return pulumix.Output[[]GetProfileLevelItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLevelItemArrayOutput) Index(i pulumi.IntInput) GetProfileLevelItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileLevelItem {
 		return vs[0].([]GetProfileLevelItem)[vs[1].(int)]
@@ -3568,13 +2991,13 @@ func (o GetProfileLevelItemArrayOutput) Index(i pulumi.IntInput) GetProfileLevel
 
 type GetProfileLevelItemMetric struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The name of the statistic (e.g., `p95`).
-	Statistic string `pulumi:"statistic"`
+	Statistic *string `pulumi:"statistic"`
 	// Optional. The metric value that the recommendation will target.
-	Target float64 `pulumi:"target"`
+	Target *float64 `pulumi:"target"`
 	// The threshold that must be crossed for the recommendation to appear.
-	Threshold float64 `pulumi:"threshold"`
+	Threshold *float64 `pulumi:"threshold"`
 }
 
 // GetProfileLevelItemMetricInput is an input type that accepts GetProfileLevelItemMetricArgs and GetProfileLevelItemMetricOutput values.
@@ -3590,13 +3013,13 @@ type GetProfileLevelItemMetricInput interface {
 
 type GetProfileLevelItemMetricArgs struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The name of the statistic (e.g., `p95`).
-	Statistic pulumi.StringInput `pulumi:"statistic"`
+	Statistic pulumi.StringPtrInput `pulumi:"statistic"`
 	// Optional. The metric value that the recommendation will target.
-	Target pulumi.Float64Input `pulumi:"target"`
+	Target pulumi.Float64PtrInput `pulumi:"target"`
 	// The threshold that must be crossed for the recommendation to appear.
-	Threshold pulumi.Float64Input `pulumi:"threshold"`
+	Threshold pulumi.Float64PtrInput `pulumi:"threshold"`
 }
 
 func (GetProfileLevelItemMetricArgs) ElementType() reflect.Type {
@@ -3609,12 +3032,6 @@ func (i GetProfileLevelItemMetricArgs) ToGetProfileLevelItemMetricOutput() GetPr
 
 func (i GetProfileLevelItemMetricArgs) ToGetProfileLevelItemMetricOutputWithContext(ctx context.Context) GetProfileLevelItemMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemMetricOutput)
-}
-
-func (i GetProfileLevelItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItemMetric] {
-	return pulumix.Output[GetProfileLevelItemMetric]{
-		OutputState: i.ToGetProfileLevelItemMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileLevelItemMetricArrayInput is an input type that accepts GetProfileLevelItemMetricArray and GetProfileLevelItemMetricArrayOutput values.
@@ -3642,12 +3059,6 @@ func (i GetProfileLevelItemMetricArray) ToGetProfileLevelItemMetricArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemMetricArrayOutput)
 }
 
-func (i GetProfileLevelItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItemMetric] {
-	return pulumix.Output[[]GetProfileLevelItemMetric]{
-		OutputState: i.ToGetProfileLevelItemMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelItemMetricOutput) ElementType() reflect.Type {
@@ -3662,30 +3073,24 @@ func (o GetProfileLevelItemMetricOutput) ToGetProfileLevelItemMetricOutputWithCo
 	return o
 }
 
-func (o GetProfileLevelItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItemMetric] {
-	return pulumix.Output[GetProfileLevelItemMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional. A filter that returns results that match the name specified.
-func (o GetProfileLevelItemMetricOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelItemMetric) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProfileLevelItemMetricOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItemMetric) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The name of the statistic (e.g., `p95`).
-func (o GetProfileLevelItemMetricOutput) Statistic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelItemMetric) string { return v.Statistic }).(pulumi.StringOutput)
+func (o GetProfileLevelItemMetricOutput) Statistic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItemMetric) *string { return v.Statistic }).(pulumi.StringPtrOutput)
 }
 
 // Optional. The metric value that the recommendation will target.
-func (o GetProfileLevelItemMetricOutput) Target() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProfileLevelItemMetric) float64 { return v.Target }).(pulumi.Float64Output)
+func (o GetProfileLevelItemMetricOutput) Target() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItemMetric) *float64 { return v.Target }).(pulumi.Float64PtrOutput)
 }
 
 // The threshold that must be crossed for the recommendation to appear.
-func (o GetProfileLevelItemMetricOutput) Threshold() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProfileLevelItemMetric) float64 { return v.Threshold }).(pulumi.Float64Output)
+func (o GetProfileLevelItemMetricOutput) Threshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProfileLevelItemMetric) *float64 { return v.Threshold }).(pulumi.Float64PtrOutput)
 }
 
 type GetProfileLevelItemMetricArrayOutput struct{ *pulumi.OutputState }
@@ -3700,12 +3105,6 @@ func (o GetProfileLevelItemMetricArrayOutput) ToGetProfileLevelItemMetricArrayOu
 
 func (o GetProfileLevelItemMetricArrayOutput) ToGetProfileLevelItemMetricArrayOutputWithContext(ctx context.Context) GetProfileLevelItemMetricArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItemMetric] {
-	return pulumix.Output[[]GetProfileLevelItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelItemMetricArrayOutput) Index(i pulumi.IntInput) GetProfileLevelItemMetricOutput {
@@ -3747,12 +3146,6 @@ func (i GetProfileLevelsConfigurationArgs) ToGetProfileLevelsConfigurationOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationOutput)
 }
 
-func (i GetProfileLevelsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfiguration] {
-	return pulumix.Output[GetProfileLevelsConfiguration]{
-		OutputState: i.ToGetProfileLevelsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsConfigurationArrayInput is an input type that accepts GetProfileLevelsConfigurationArray and GetProfileLevelsConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsConfigurationArrayInput` via:
 //
@@ -3778,12 +3171,6 @@ func (i GetProfileLevelsConfigurationArray) ToGetProfileLevelsConfigurationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationArrayOutput)
 }
 
-func (i GetProfileLevelsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfiguration] {
-	return pulumix.Output[[]GetProfileLevelsConfiguration]{
-		OutputState: i.ToGetProfileLevelsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsConfigurationOutput) ElementType() reflect.Type {
@@ -3796,12 +3183,6 @@ func (o GetProfileLevelsConfigurationOutput) ToGetProfileLevelsConfigurationOutp
 
 func (o GetProfileLevelsConfigurationOutput) ToGetProfileLevelsConfigurationOutputWithContext(ctx context.Context) GetProfileLevelsConfigurationOutput {
 	return o
-}
-
-func (o GetProfileLevelsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfiguration] {
-	return pulumix.Output[GetProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -3823,12 +3204,6 @@ func (o GetProfileLevelsConfigurationArrayOutput) ToGetProfileLevelsConfiguratio
 	return o
 }
 
-func (o GetProfileLevelsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfiguration] {
-	return pulumix.Output[[]GetProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLevelsConfigurationArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileLevelsConfiguration {
 		return vs[0].([]GetProfileLevelsConfiguration)[vs[1].(int)]
@@ -3837,9 +3212,9 @@ func (o GetProfileLevelsConfigurationArrayOutput) Index(i pulumi.IntInput) GetPr
 
 type GetProfileLevelsConfigurationItem struct {
 	// The pre-defined profile level.
-	Level string `pulumi:"level"`
+	Level *string `pulumi:"level"`
 	// The unique OCID of the recommendation.
-	RecommendationId string `pulumi:"recommendationId"`
+	RecommendationId *string `pulumi:"recommendationId"`
 }
 
 // GetProfileLevelsConfigurationItemInput is an input type that accepts GetProfileLevelsConfigurationItemArgs and GetProfileLevelsConfigurationItemOutput values.
@@ -3855,9 +3230,9 @@ type GetProfileLevelsConfigurationItemInput interface {
 
 type GetProfileLevelsConfigurationItemArgs struct {
 	// The pre-defined profile level.
-	Level pulumi.StringInput `pulumi:"level"`
+	Level pulumi.StringPtrInput `pulumi:"level"`
 	// The unique OCID of the recommendation.
-	RecommendationId pulumi.StringInput `pulumi:"recommendationId"`
+	RecommendationId pulumi.StringPtrInput `pulumi:"recommendationId"`
 }
 
 func (GetProfileLevelsConfigurationItemArgs) ElementType() reflect.Type {
@@ -3870,12 +3245,6 @@ func (i GetProfileLevelsConfigurationItemArgs) ToGetProfileLevelsConfigurationIt
 
 func (i GetProfileLevelsConfigurationItemArgs) ToGetProfileLevelsConfigurationItemOutputWithContext(ctx context.Context) GetProfileLevelsConfigurationItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationItemOutput)
-}
-
-func (i GetProfileLevelsConfigurationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[GetProfileLevelsConfigurationItem]{
-		OutputState: i.ToGetProfileLevelsConfigurationItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileLevelsConfigurationItemArrayInput is an input type that accepts GetProfileLevelsConfigurationItemArray and GetProfileLevelsConfigurationItemArrayOutput values.
@@ -3903,12 +3272,6 @@ func (i GetProfileLevelsConfigurationItemArray) ToGetProfileLevelsConfigurationI
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationItemArrayOutput)
 }
 
-func (i GetProfileLevelsConfigurationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfileLevelsConfigurationItem]{
-		OutputState: i.ToGetProfileLevelsConfigurationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsConfigurationItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsConfigurationItemOutput) ElementType() reflect.Type {
@@ -3923,20 +3286,14 @@ func (o GetProfileLevelsConfigurationItemOutput) ToGetProfileLevelsConfiguration
 	return o
 }
 
-func (o GetProfileLevelsConfigurationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[GetProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The pre-defined profile level.
-func (o GetProfileLevelsConfigurationItemOutput) Level() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsConfigurationItem) string { return v.Level }).(pulumi.StringOutput)
+func (o GetProfileLevelsConfigurationItemOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsConfigurationItem) *string { return v.Level }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID of the recommendation.
-func (o GetProfileLevelsConfigurationItemOutput) RecommendationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsConfigurationItem) string { return v.RecommendationId }).(pulumi.StringOutput)
+func (o GetProfileLevelsConfigurationItemOutput) RecommendationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsConfigurationItem) *string { return v.RecommendationId }).(pulumi.StringPtrOutput)
 }
 
 type GetProfileLevelsConfigurationItemArrayOutput struct{ *pulumi.OutputState }
@@ -3951,12 +3308,6 @@ func (o GetProfileLevelsConfigurationItemArrayOutput) ToGetProfileLevelsConfigur
 
 func (o GetProfileLevelsConfigurationItemArrayOutput) ToGetProfileLevelsConfigurationItemArrayOutputWithContext(ctx context.Context) GetProfileLevelsConfigurationItemArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsConfigurationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsConfigurationItemArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsConfigurationItemOutput {
@@ -4002,12 +3353,6 @@ func (i GetProfileLevelsFilterArgs) ToGetProfileLevelsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsFilterOutput)
 }
 
-func (i GetProfileLevelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsFilter] {
-	return pulumix.Output[GetProfileLevelsFilter]{
-		OutputState: i.ToGetProfileLevelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsFilterArrayInput is an input type that accepts GetProfileLevelsFilterArray and GetProfileLevelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsFilterArrayInput` via:
 //
@@ -4033,12 +3378,6 @@ func (i GetProfileLevelsFilterArray) ToGetProfileLevelsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsFilterArrayOutput)
 }
 
-func (i GetProfileLevelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsFilter] {
-	return pulumix.Output[[]GetProfileLevelsFilter]{
-		OutputState: i.ToGetProfileLevelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsFilterOutput) ElementType() reflect.Type {
@@ -4051,12 +3390,6 @@ func (o GetProfileLevelsFilterOutput) ToGetProfileLevelsFilterOutput() GetProfil
 
 func (o GetProfileLevelsFilterOutput) ToGetProfileLevelsFilterOutputWithContext(ctx context.Context) GetProfileLevelsFilterOutput {
 	return o
-}
-
-func (o GetProfileLevelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsFilter] {
-	return pulumix.Output[GetProfileLevelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -4084,12 +3417,6 @@ func (o GetProfileLevelsFilterArrayOutput) ToGetProfileLevelsFilterArrayOutput()
 
 func (o GetProfileLevelsFilterArrayOutput) ToGetProfileLevelsFilterArrayOutputWithContext(ctx context.Context) GetProfileLevelsFilterArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsFilter] {
-	return pulumix.Output[[]GetProfileLevelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsFilterArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsFilterOutput {
@@ -4131,12 +3458,6 @@ func (i GetProfileLevelsProfileLevelCollectionArgs) ToGetProfileLevelsProfileLev
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollection]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsProfileLevelCollectionArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionArray and GetProfileLevelsProfileLevelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionArrayInput` via:
 //
@@ -4162,12 +3483,6 @@ func (i GetProfileLevelsProfileLevelCollectionArray) ToGetProfileLevelsProfileLe
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionArrayOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollection]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsProfileLevelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsProfileLevelCollectionOutput) ElementType() reflect.Type {
@@ -4180,12 +3495,6 @@ func (o GetProfileLevelsProfileLevelCollectionOutput) ToGetProfileLevelsProfileL
 
 func (o GetProfileLevelsProfileLevelCollectionOutput) ToGetProfileLevelsProfileLevelCollectionOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionOutput {
 	return o
-}
-
-func (o GetProfileLevelsProfileLevelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A collection of profile levels.
@@ -4209,12 +3518,6 @@ func (o GetProfileLevelsProfileLevelCollectionArrayOutput) ToGetProfileLevelsPro
 	return o
 }
 
-func (o GetProfileLevelsProfileLevelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLevelsProfileLevelCollectionArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsProfileLevelCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileLevelsProfileLevelCollection {
 		return vs[0].([]GetProfileLevelsProfileLevelCollection)[vs[1].(int)]
@@ -4223,17 +3526,17 @@ func (o GetProfileLevelsProfileLevelCollectionArrayOutput) Index(i pulumi.IntInp
 
 type GetProfileLevelsProfileLevelCollectionItem struct {
 	// The default aggregation interval (in days) for profiles using this profile level.
-	DefaultInterval int `pulumi:"defaultInterval"`
+	DefaultInterval *int `pulumi:"defaultInterval"`
 	// The metrics that will be evaluated by profiles using this profile level.
 	Metrics []GetProfileLevelsProfileLevelCollectionItemMetric `pulumi:"metrics"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Optional. A filter that returns results that match the recommendation name specified.
-	RecommendationName string `pulumi:"recommendationName"`
+	RecommendationName *string `pulumi:"recommendationName"`
 	// The date and time the category details were created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the category details were last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An array of aggregation intervals (in days) allowed for profiles using this profile level.
 	ValidIntervals []int `pulumi:"validIntervals"`
 }
@@ -4251,17 +3554,17 @@ type GetProfileLevelsProfileLevelCollectionItemInput interface {
 
 type GetProfileLevelsProfileLevelCollectionItemArgs struct {
 	// The default aggregation interval (in days) for profiles using this profile level.
-	DefaultInterval pulumi.IntInput `pulumi:"defaultInterval"`
+	DefaultInterval pulumi.IntPtrInput `pulumi:"defaultInterval"`
 	// The metrics that will be evaluated by profiles using this profile level.
 	Metrics GetProfileLevelsProfileLevelCollectionItemMetricArrayInput `pulumi:"metrics"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Optional. A filter that returns results that match the recommendation name specified.
-	RecommendationName pulumi.StringInput `pulumi:"recommendationName"`
+	RecommendationName pulumi.StringPtrInput `pulumi:"recommendationName"`
 	// The date and time the category details were created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the category details were last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// An array of aggregation intervals (in days) allowed for profiles using this profile level.
 	ValidIntervals pulumi.IntArrayInput `pulumi:"validIntervals"`
 }
@@ -4276,12 +3579,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemArgs) ToGetProfileLevelsProfil
 
 func (i GetProfileLevelsProfileLevelCollectionItemArgs) ToGetProfileLevelsProfileLevelCollectionItemOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemOutput)
-}
-
-func (i GetProfileLevelsProfileLevelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileLevelsProfileLevelCollectionItemArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemArray and GetProfileLevelsProfileLevelCollectionItemArrayOutput values.
@@ -4309,12 +3606,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemArray) ToGetProfileLevelsProfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemArrayOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsProfileLevelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsProfileLevelCollectionItemOutput) ElementType() reflect.Type {
@@ -4329,15 +3620,9 @@ func (o GetProfileLevelsProfileLevelCollectionItemOutput) ToGetProfileLevelsProf
 	return o
 }
 
-func (o GetProfileLevelsProfileLevelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The default aggregation interval (in days) for profiles using this profile level.
-func (o GetProfileLevelsProfileLevelCollectionItemOutput) DefaultInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) int { return v.DefaultInterval }).(pulumi.IntOutput)
+func (o GetProfileLevelsProfileLevelCollectionItemOutput) DefaultInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) *int { return v.DefaultInterval }).(pulumi.IntPtrOutput)
 }
 
 // The metrics that will be evaluated by profiles using this profile level.
@@ -4348,23 +3633,23 @@ func (o GetProfileLevelsProfileLevelCollectionItemOutput) Metrics() GetProfileLe
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetProfileLevelsProfileLevelCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProfileLevelsProfileLevelCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Optional. A filter that returns results that match the recommendation name specified.
-func (o GetProfileLevelsProfileLevelCollectionItemOutput) RecommendationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) string { return v.RecommendationName }).(pulumi.StringOutput)
+func (o GetProfileLevelsProfileLevelCollectionItemOutput) RecommendationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) *string { return v.RecommendationName }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were created, in the format defined by RFC3339.
-func (o GetProfileLevelsProfileLevelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProfileLevelsProfileLevelCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were last updated, in the format defined by RFC3339.
-func (o GetProfileLevelsProfileLevelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetProfileLevelsProfileLevelCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // An array of aggregation intervals (in days) allowed for profiles using this profile level.
@@ -4386,12 +3671,6 @@ func (o GetProfileLevelsProfileLevelCollectionItemArrayOutput) ToGetProfileLevel
 	return o
 }
 
-func (o GetProfileLevelsProfileLevelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLevelsProfileLevelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsProfileLevelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileLevelsProfileLevelCollectionItem {
 		return vs[0].([]GetProfileLevelsProfileLevelCollectionItem)[vs[1].(int)]
@@ -4400,13 +3679,13 @@ func (o GetProfileLevelsProfileLevelCollectionItemArrayOutput) Index(i pulumi.In
 
 type GetProfileLevelsProfileLevelCollectionItemMetric struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The name of the statistic (e.g., `p95`).
-	Statistic string `pulumi:"statistic"`
+	Statistic *string `pulumi:"statistic"`
 	// Optional. The metric value that the recommendation will target.
-	Target float64 `pulumi:"target"`
+	Target *float64 `pulumi:"target"`
 	// The threshold that must be crossed for the recommendation to appear.
-	Threshold float64 `pulumi:"threshold"`
+	Threshold *float64 `pulumi:"threshold"`
 }
 
 // GetProfileLevelsProfileLevelCollectionItemMetricInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemMetricArgs and GetProfileLevelsProfileLevelCollectionItemMetricOutput values.
@@ -4422,13 +3701,13 @@ type GetProfileLevelsProfileLevelCollectionItemMetricInput interface {
 
 type GetProfileLevelsProfileLevelCollectionItemMetricArgs struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The name of the statistic (e.g., `p95`).
-	Statistic pulumi.StringInput `pulumi:"statistic"`
+	Statistic pulumi.StringPtrInput `pulumi:"statistic"`
 	// Optional. The metric value that the recommendation will target.
-	Target pulumi.Float64Input `pulumi:"target"`
+	Target pulumi.Float64PtrInput `pulumi:"target"`
 	// The threshold that must be crossed for the recommendation to appear.
-	Threshold pulumi.Float64Input `pulumi:"threshold"`
+	Threshold pulumi.Float64PtrInput `pulumi:"threshold"`
 }
 
 func (GetProfileLevelsProfileLevelCollectionItemMetricArgs) ElementType() reflect.Type {
@@ -4441,12 +3720,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemMetricArgs) ToGetProfileLevels
 
 func (i GetProfileLevelsProfileLevelCollectionItemMetricArgs) ToGetProfileLevelsProfileLevelCollectionItemMetricOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionItemMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemMetricOutput)
-}
-
-func (i GetProfileLevelsProfileLevelCollectionItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileLevelsProfileLevelCollectionItemMetricArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemMetricArray and GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput values.
@@ -4474,12 +3747,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemMetricArray) ToGetProfileLevel
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsProfileLevelCollectionItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsProfileLevelCollectionItemMetricOutput) ElementType() reflect.Type {
@@ -4494,30 +3761,24 @@ func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) ToGetProfileLeve
 	return o
 }
 
-func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional. A filter that returns results that match the name specified.
-func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The name of the statistic (e.g., `p95`).
-func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Statistic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) string { return v.Statistic }).(pulumi.StringOutput)
+func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Statistic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) *string { return v.Statistic }).(pulumi.StringPtrOutput)
 }
 
 // Optional. The metric value that the recommendation will target.
-func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Target() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) float64 { return v.Target }).(pulumi.Float64Output)
+func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Target() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) *float64 { return v.Target }).(pulumi.Float64PtrOutput)
 }
 
 // The threshold that must be crossed for the recommendation to appear.
-func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Threshold() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) float64 { return v.Threshold }).(pulumi.Float64Output)
+func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) Threshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProfileLevelsProfileLevelCollectionItemMetric) *float64 { return v.Threshold }).(pulumi.Float64PtrOutput)
 }
 
 type GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput struct{ *pulumi.OutputState }
@@ -4532,12 +3793,6 @@ func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) ToGetProfil
 
 func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) ToGetProfileLevelsProfileLevelCollectionItemMetricArrayOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsProfileLevelCollectionItemMetricOutput {
@@ -4579,12 +3834,6 @@ func (i GetProfileTargetCompartmentArgs) ToGetProfileTargetCompartmentOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetCompartmentOutput)
 }
 
-func (i GetProfileTargetCompartmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetCompartment] {
-	return pulumix.Output[GetProfileTargetCompartment]{
-		OutputState: i.ToGetProfileTargetCompartmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileTargetCompartmentArrayInput is an input type that accepts GetProfileTargetCompartmentArray and GetProfileTargetCompartmentArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetCompartmentArrayInput` via:
 //
@@ -4610,12 +3859,6 @@ func (i GetProfileTargetCompartmentArray) ToGetProfileTargetCompartmentArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetCompartmentArrayOutput)
 }
 
-func (i GetProfileTargetCompartmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetCompartment] {
-	return pulumix.Output[[]GetProfileTargetCompartment]{
-		OutputState: i.ToGetProfileTargetCompartmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileTargetCompartmentOutput struct{ *pulumi.OutputState }
 
 func (GetProfileTargetCompartmentOutput) ElementType() reflect.Type {
@@ -4628,12 +3871,6 @@ func (o GetProfileTargetCompartmentOutput) ToGetProfileTargetCompartmentOutput()
 
 func (o GetProfileTargetCompartmentOutput) ToGetProfileTargetCompartmentOutputWithContext(ctx context.Context) GetProfileTargetCompartmentOutput {
 	return o
-}
-
-func (o GetProfileTargetCompartmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetCompartment] {
-	return pulumix.Output[GetProfileTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -4653,12 +3890,6 @@ func (o GetProfileTargetCompartmentArrayOutput) ToGetProfileTargetCompartmentArr
 
 func (o GetProfileTargetCompartmentArrayOutput) ToGetProfileTargetCompartmentArrayOutputWithContext(ctx context.Context) GetProfileTargetCompartmentArrayOutput {
 	return o
-}
-
-func (o GetProfileTargetCompartmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetCompartment] {
-	return pulumix.Output[[]GetProfileTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileTargetCompartmentArrayOutput) Index(i pulumi.IntInput) GetProfileTargetCompartmentOutput {
@@ -4700,12 +3931,6 @@ func (i GetProfileTargetTagArgs) ToGetProfileTargetTagOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagOutput)
 }
 
-func (i GetProfileTargetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTag] {
-	return pulumix.Output[GetProfileTargetTag]{
-		OutputState: i.ToGetProfileTargetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileTargetTagArrayInput is an input type that accepts GetProfileTargetTagArray and GetProfileTargetTagArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetTagArrayInput` via:
 //
@@ -4731,12 +3956,6 @@ func (i GetProfileTargetTagArray) ToGetProfileTargetTagArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagArrayOutput)
 }
 
-func (i GetProfileTargetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTag] {
-	return pulumix.Output[[]GetProfileTargetTag]{
-		OutputState: i.ToGetProfileTargetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileTargetTagOutput struct{ *pulumi.OutputState }
 
 func (GetProfileTargetTagOutput) ElementType() reflect.Type {
@@ -4749,12 +3968,6 @@ func (o GetProfileTargetTagOutput) ToGetProfileTargetTagOutput() GetProfileTarge
 
 func (o GetProfileTargetTagOutput) ToGetProfileTargetTagOutputWithContext(ctx context.Context) GetProfileTargetTagOutput {
 	return o
-}
-
-func (o GetProfileTargetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTag] {
-	return pulumix.Output[GetProfileTargetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -4776,12 +3989,6 @@ func (o GetProfileTargetTagArrayOutput) ToGetProfileTargetTagArrayOutputWithCont
 	return o
 }
 
-func (o GetProfileTargetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTag] {
-	return pulumix.Output[[]GetProfileTargetTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileTargetTagArrayOutput) Index(i pulumi.IntInput) GetProfileTargetTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileTargetTag {
 		return vs[0].([]GetProfileTargetTag)[vs[1].(int)]
@@ -4790,11 +3997,11 @@ func (o GetProfileTargetTagArrayOutput) Index(i pulumi.IntInput) GetProfileTarge
 
 type GetProfileTargetTagItem struct {
 	// The name you use to refer to the tag, also known as the tag key.
-	TagDefinitionName string `pulumi:"tagDefinitionName"`
+	TagDefinitionName *string `pulumi:"tagDefinitionName"`
 	// The name of the tag namespace.
-	TagNamespaceName string `pulumi:"tagNamespaceName"`
+	TagNamespaceName *string `pulumi:"tagNamespaceName"`
 	// Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-	TagValueType string `pulumi:"tagValueType"`
+	TagValueType *string `pulumi:"tagValueType"`
 	// The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 	TagValues []string `pulumi:"tagValues"`
 }
@@ -4812,11 +4019,11 @@ type GetProfileTargetTagItemInput interface {
 
 type GetProfileTargetTagItemArgs struct {
 	// The name you use to refer to the tag, also known as the tag key.
-	TagDefinitionName pulumi.StringInput `pulumi:"tagDefinitionName"`
+	TagDefinitionName pulumi.StringPtrInput `pulumi:"tagDefinitionName"`
 	// The name of the tag namespace.
-	TagNamespaceName pulumi.StringInput `pulumi:"tagNamespaceName"`
+	TagNamespaceName pulumi.StringPtrInput `pulumi:"tagNamespaceName"`
 	// Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-	TagValueType pulumi.StringInput `pulumi:"tagValueType"`
+	TagValueType pulumi.StringPtrInput `pulumi:"tagValueType"`
 	// The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 	TagValues pulumi.StringArrayInput `pulumi:"tagValues"`
 }
@@ -4831,12 +4038,6 @@ func (i GetProfileTargetTagItemArgs) ToGetProfileTargetTagItemOutput() GetProfil
 
 func (i GetProfileTargetTagItemArgs) ToGetProfileTargetTagItemOutputWithContext(ctx context.Context) GetProfileTargetTagItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagItemOutput)
-}
-
-func (i GetProfileTargetTagItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTagItem] {
-	return pulumix.Output[GetProfileTargetTagItem]{
-		OutputState: i.ToGetProfileTargetTagItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileTargetTagItemArrayInput is an input type that accepts GetProfileTargetTagItemArray and GetProfileTargetTagItemArrayOutput values.
@@ -4864,12 +4065,6 @@ func (i GetProfileTargetTagItemArray) ToGetProfileTargetTagItemArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagItemArrayOutput)
 }
 
-func (i GetProfileTargetTagItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTagItem] {
-	return pulumix.Output[[]GetProfileTargetTagItem]{
-		OutputState: i.ToGetProfileTargetTagItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileTargetTagItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileTargetTagItemOutput) ElementType() reflect.Type {
@@ -4884,25 +4079,19 @@ func (o GetProfileTargetTagItemOutput) ToGetProfileTargetTagItemOutputWithContex
 	return o
 }
 
-func (o GetProfileTargetTagItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTagItem] {
-	return pulumix.Output[GetProfileTargetTagItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name you use to refer to the tag, also known as the tag key.
-func (o GetProfileTargetTagItemOutput) TagDefinitionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileTargetTagItem) string { return v.TagDefinitionName }).(pulumi.StringOutput)
+func (o GetProfileTargetTagItemOutput) TagDefinitionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileTargetTagItem) *string { return v.TagDefinitionName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the tag namespace.
-func (o GetProfileTargetTagItemOutput) TagNamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileTargetTagItem) string { return v.TagNamespaceName }).(pulumi.StringOutput)
+func (o GetProfileTargetTagItemOutput) TagNamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileTargetTagItem) *string { return v.TagNamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-func (o GetProfileTargetTagItemOutput) TagValueType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileTargetTagItem) string { return v.TagValueType }).(pulumi.StringOutput)
+func (o GetProfileTargetTagItemOutput) TagValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileTargetTagItem) *string { return v.TagValueType }).(pulumi.StringPtrOutput)
 }
 
 // The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
@@ -4922,12 +4111,6 @@ func (o GetProfileTargetTagItemArrayOutput) ToGetProfileTargetTagItemArrayOutput
 
 func (o GetProfileTargetTagItemArrayOutput) ToGetProfileTargetTagItemArrayOutputWithContext(ctx context.Context) GetProfileTargetTagItemArrayOutput {
 	return o
-}
-
-func (o GetProfileTargetTagItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTagItem] {
-	return pulumix.Output[[]GetProfileTargetTagItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileTargetTagItemArrayOutput) Index(i pulumi.IntInput) GetProfileTargetTagItemOutput {
@@ -4973,12 +4156,6 @@ func (i GetProfilesFilterArgs) ToGetProfilesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesFilterOutput)
 }
 
-func (i GetProfilesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesFilter] {
-	return pulumix.Output[GetProfilesFilter]{
-		OutputState: i.ToGetProfilesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesFilterArrayInput is an input type that accepts GetProfilesFilterArray and GetProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProfilesFilterArrayInput` via:
 //
@@ -5004,12 +4181,6 @@ func (i GetProfilesFilterArray) ToGetProfilesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesFilterArrayOutput)
 }
 
-func (i GetProfilesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesFilter] {
-	return pulumix.Output[[]GetProfilesFilter]{
-		OutputState: i.ToGetProfilesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesFilterOutput) ElementType() reflect.Type {
@@ -5022,12 +4193,6 @@ func (o GetProfilesFilterOutput) ToGetProfilesFilterOutput() GetProfilesFilterOu
 
 func (o GetProfilesFilterOutput) ToGetProfilesFilterOutputWithContext(ctx context.Context) GetProfilesFilterOutput {
 	return o
-}
-
-func (o GetProfilesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesFilter] {
-	return pulumix.Output[GetProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -5055,12 +4220,6 @@ func (o GetProfilesFilterArrayOutput) ToGetProfilesFilterArrayOutput() GetProfil
 
 func (o GetProfilesFilterArrayOutput) ToGetProfilesFilterArrayOutputWithContext(ctx context.Context) GetProfilesFilterArrayOutput {
 	return o
-}
-
-func (o GetProfilesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesFilter] {
-	return pulumix.Output[[]GetProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetProfilesFilterOutput {
@@ -5102,12 +4261,6 @@ func (i GetProfilesProfileCollectionArgs) ToGetProfilesProfileCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionOutput)
 }
 
-func (i GetProfilesProfileCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollection] {
-	return pulumix.Output[GetProfilesProfileCollection]{
-		OutputState: i.ToGetProfilesProfileCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionArrayInput is an input type that accepts GetProfilesProfileCollectionArray and GetProfilesProfileCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionArrayInput` via:
 //
@@ -5133,12 +4286,6 @@ func (i GetProfilesProfileCollectionArray) ToGetProfilesProfileCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollection] {
-	return pulumix.Output[[]GetProfilesProfileCollection]{
-		OutputState: i.ToGetProfilesProfileCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionOutput) ElementType() reflect.Type {
@@ -5151,12 +4298,6 @@ func (o GetProfilesProfileCollectionOutput) ToGetProfilesProfileCollectionOutput
 
 func (o GetProfilesProfileCollectionOutput) ToGetProfilesProfileCollectionOutputWithContext(ctx context.Context) GetProfilesProfileCollectionOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollection] {
-	return pulumix.Output[GetProfilesProfileCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5178,12 +4319,6 @@ func (o GetProfilesProfileCollectionArrayOutput) ToGetProfilesProfileCollectionA
 	return o
 }
 
-func (o GetProfilesProfileCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollection] {
-	return pulumix.Output[[]GetProfilesProfileCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollection {
 		return vs[0].([]GetProfilesProfileCollection)[vs[1].(int)]
@@ -5192,31 +4327,31 @@ func (o GetProfilesProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetPro
 
 type GetProfilesProfileCollectionItem struct {
 	// The time period over which to collect data for the recommendations, measured in number of days.
-	AggregationIntervalInDays int `pulumi:"aggregationIntervalInDays"`
+	AggregationIntervalInDays *int `pulumi:"aggregationIntervalInDays"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Text describing the profile. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique OCID of the profile.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of configuration levels for each recommendation.
 	LevelsConfigurations []GetProfilesProfileCollectionItemLevelsConfiguration `pulumi:"levelsConfigurations"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments []GetProfilesProfileCollectionItemTargetCompartment `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
 	TargetTags []GetProfilesProfileCollectionItemTargetTag `pulumi:"targetTags"`
 	// The date and time the profile was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the profile was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetProfilesProfileCollectionItemInput is an input type that accepts GetProfilesProfileCollectionItemArgs and GetProfilesProfileCollectionItemOutput values.
@@ -5232,31 +4367,31 @@ type GetProfilesProfileCollectionItemInput interface {
 
 type GetProfilesProfileCollectionItemArgs struct {
 	// The time period over which to collect data for the recommendations, measured in number of days.
-	AggregationIntervalInDays pulumi.IntInput `pulumi:"aggregationIntervalInDays"`
+	AggregationIntervalInDays pulumi.IntPtrInput `pulumi:"aggregationIntervalInDays"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Text describing the profile. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The unique OCID of the profile.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A list of configuration levels for each recommendation.
 	LevelsConfigurations GetProfilesProfileCollectionItemLevelsConfigurationArrayInput `pulumi:"levelsConfigurations"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments GetProfilesProfileCollectionItemTargetCompartmentArrayInput `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
 	TargetTags GetProfilesProfileCollectionItemTargetTagArrayInput `pulumi:"targetTags"`
 	// The date and time the profile was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the profile was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetProfilesProfileCollectionItemArgs) ElementType() reflect.Type {
@@ -5269,12 +4404,6 @@ func (i GetProfilesProfileCollectionItemArgs) ToGetProfilesProfileCollectionItem
 
 func (i GetProfilesProfileCollectionItemArgs) ToGetProfilesProfileCollectionItemOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemOutput)
-}
-
-func (i GetProfilesProfileCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemArray and GetProfilesProfileCollectionItemArrayOutput values.
@@ -5302,12 +4431,6 @@ func (i GetProfilesProfileCollectionItemArray) ToGetProfilesProfileCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemOutput) ElementType() reflect.Type {
@@ -5322,20 +4445,14 @@ func (o GetProfilesProfileCollectionItemOutput) ToGetProfilesProfileCollectionIt
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The time period over which to collect data for the recommendations, measured in number of days.
-func (o GetProfilesProfileCollectionItemOutput) AggregationIntervalInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) int { return v.AggregationIntervalInDays }).(pulumi.IntOutput)
+func (o GetProfilesProfileCollectionItemOutput) AggregationIntervalInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *int { return v.AggregationIntervalInDays }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetProfilesProfileCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
@@ -5344,8 +4461,8 @@ func (o GetProfilesProfileCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Text describing the profile. Avoid entering confidential information.
-func (o GetProfilesProfileCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -5354,8 +4471,8 @@ func (o GetProfilesProfileCollectionItemOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The unique OCID of the profile.
-func (o GetProfilesProfileCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of configuration levels for each recommendation.
@@ -5366,13 +4483,13 @@ func (o GetProfilesProfileCollectionItemOutput) LevelsConfigurations() GetProfil
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetProfilesProfileCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns results that match the lifecycle state specified.
-func (o GetProfilesProfileCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Optional. The compartments specified in the profile override for a recommendation.
@@ -5390,13 +4507,13 @@ func (o GetProfilesProfileCollectionItemOutput) TargetTags() GetProfilesProfileC
 }
 
 // The date and time the profile was created, in the format defined by RFC3339.
-func (o GetProfilesProfileCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the profile was last updated, in the format defined by RFC3339.
-func (o GetProfilesProfileCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetProfilesProfileCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5411,12 +4528,6 @@ func (o GetProfilesProfileCollectionItemArrayOutput) ToGetProfilesProfileCollect
 
 func (o GetProfilesProfileCollectionItemArrayOutput) ToGetProfilesProfileCollectionItemArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemOutput {
@@ -5458,12 +4569,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationArgs) ToGetProfilesPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLevelsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemLevelsConfigurationArrayInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationArray and GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemLevelsConfigurationArrayInput` via:
 //
@@ -5489,12 +4594,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationArray) ToGetProfilesP
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLevelsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemLevelsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemLevelsConfigurationOutput) ElementType() reflect.Type {
@@ -5507,12 +4606,6 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationOutput) ToGetProfiles
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationOutput) ToGetProfilesProfileCollectionItemLevelsConfigurationOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLevelsConfigurationOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemLevelsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5536,12 +4629,6 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) ToGetPro
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemLevelsConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItemLevelsConfiguration {
 		return vs[0].([]GetProfilesProfileCollectionItemLevelsConfiguration)[vs[1].(int)]
@@ -5550,9 +4637,9 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) Index(i 
 
 type GetProfilesProfileCollectionItemLevelsConfigurationItem struct {
 	// The pre-defined profile level.
-	Level string `pulumi:"level"`
+	Level *string `pulumi:"level"`
 	// The unique OCID of the recommendation.
-	RecommendationId string `pulumi:"recommendationId"`
+	RecommendationId *string `pulumi:"recommendationId"`
 }
 
 // GetProfilesProfileCollectionItemLevelsConfigurationItemInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationItemArgs and GetProfilesProfileCollectionItemLevelsConfigurationItemOutput values.
@@ -5568,9 +4655,9 @@ type GetProfilesProfileCollectionItemLevelsConfigurationItemInput interface {
 
 type GetProfilesProfileCollectionItemLevelsConfigurationItemArgs struct {
 	// The pre-defined profile level.
-	Level pulumi.StringInput `pulumi:"level"`
+	Level pulumi.StringPtrInput `pulumi:"level"`
 	// The unique OCID of the recommendation.
-	RecommendationId pulumi.StringInput `pulumi:"recommendationId"`
+	RecommendationId pulumi.StringPtrInput `pulumi:"recommendationId"`
 }
 
 func (GetProfilesProfileCollectionItemLevelsConfigurationItemArgs) ElementType() reflect.Type {
@@ -5583,12 +4670,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArgs) ToGetProfil
 
 func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArgs) ToGetProfilesProfileCollectionItemLevelsConfigurationItemOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLevelsConfigurationItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationItemOutput)
-}
-
-func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemLevelsConfigurationItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationItemArray and GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput values.
@@ -5616,12 +4697,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArray) ToGetProfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemLevelsConfigurationItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) ElementType() reflect.Type {
@@ -5636,20 +4711,14 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) ToGetProf
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The pre-defined profile level.
-func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) Level() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemLevelsConfigurationItem) string { return v.Level }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemLevelsConfigurationItem) *string { return v.Level }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID of the recommendation.
-func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) RecommendationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemLevelsConfigurationItem) string { return v.RecommendationId }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) RecommendationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemLevelsConfigurationItem) *string { return v.RecommendationId }).(pulumi.StringPtrOutput)
 }
 
 type GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput struct{ *pulumi.OutputState }
@@ -5664,12 +4733,6 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) ToGe
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) ToGetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemLevelsConfigurationItemOutput {
@@ -5711,12 +4774,6 @@ func (i GetProfilesProfileCollectionItemTargetCompartmentArgs) ToGetProfilesProf
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetCompartmentOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetCompartmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetCompartmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemTargetCompartmentArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetCompartmentArray and GetProfilesProfileCollectionItemTargetCompartmentArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetCompartmentArrayInput` via:
 //
@@ -5742,12 +4799,6 @@ func (i GetProfilesProfileCollectionItemTargetCompartmentArray) ToGetProfilesPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetCompartmentArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetCompartmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetCompartmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemTargetCompartmentOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemTargetCompartmentOutput) ElementType() reflect.Type {
@@ -5760,12 +4811,6 @@ func (o GetProfilesProfileCollectionItemTargetCompartmentOutput) ToGetProfilesPr
 
 func (o GetProfilesProfileCollectionItemTargetCompartmentOutput) ToGetProfilesProfileCollectionItemTargetCompartmentOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetCompartmentOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetCompartmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5785,12 +4830,6 @@ func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) ToGetProfi
 
 func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) ToGetProfilesProfileCollectionItemTargetCompartmentArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetCompartmentArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemTargetCompartmentOutput {
@@ -5832,12 +4871,6 @@ func (i GetProfilesProfileCollectionItemTargetTagArgs) ToGetProfilesProfileColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemTargetTagArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagArray and GetProfilesProfileCollectionItemTargetTagArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetTagArrayInput` via:
 //
@@ -5863,12 +4896,6 @@ func (i GetProfilesProfileCollectionItemTargetTagArray) ToGetProfilesProfileColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemTargetTagOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemTargetTagOutput) ElementType() reflect.Type {
@@ -5881,12 +4908,6 @@ func (o GetProfilesProfileCollectionItemTargetTagOutput) ToGetProfilesProfileCol
 
 func (o GetProfilesProfileCollectionItemTargetTagOutput) ToGetProfilesProfileCollectionItemTargetTagOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetTagOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5910,12 +4931,6 @@ func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) ToGetProfilesProfi
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemTargetTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItemTargetTag {
 		return vs[0].([]GetProfilesProfileCollectionItemTargetTag)[vs[1].(int)]
@@ -5924,11 +4939,11 @@ func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) Index(i pulumi.Int
 
 type GetProfilesProfileCollectionItemTargetTagItem struct {
 	// The name you use to refer to the tag, also known as the tag key.
-	TagDefinitionName string `pulumi:"tagDefinitionName"`
+	TagDefinitionName *string `pulumi:"tagDefinitionName"`
 	// The name of the tag namespace.
-	TagNamespaceName string `pulumi:"tagNamespaceName"`
+	TagNamespaceName *string `pulumi:"tagNamespaceName"`
 	// Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-	TagValueType string `pulumi:"tagValueType"`
+	TagValueType *string `pulumi:"tagValueType"`
 	// The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 	TagValues []string `pulumi:"tagValues"`
 }
@@ -5946,11 +4961,11 @@ type GetProfilesProfileCollectionItemTargetTagItemInput interface {
 
 type GetProfilesProfileCollectionItemTargetTagItemArgs struct {
 	// The name you use to refer to the tag, also known as the tag key.
-	TagDefinitionName pulumi.StringInput `pulumi:"tagDefinitionName"`
+	TagDefinitionName pulumi.StringPtrInput `pulumi:"tagDefinitionName"`
 	// The name of the tag namespace.
-	TagNamespaceName pulumi.StringInput `pulumi:"tagNamespaceName"`
+	TagNamespaceName pulumi.StringPtrInput `pulumi:"tagNamespaceName"`
 	// Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-	TagValueType pulumi.StringInput `pulumi:"tagValueType"`
+	TagValueType pulumi.StringPtrInput `pulumi:"tagValueType"`
 	// The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 	TagValues pulumi.StringArrayInput `pulumi:"tagValues"`
 }
@@ -5965,12 +4980,6 @@ func (i GetProfilesProfileCollectionItemTargetTagItemArgs) ToGetProfilesProfileC
 
 func (i GetProfilesProfileCollectionItemTargetTagItemArgs) ToGetProfilesProfileCollectionItemTargetTagItemOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetTagItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagItemOutput)
-}
-
-func (i GetProfilesProfileCollectionItemTargetTagItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemTargetTagItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagItemArray and GetProfilesProfileCollectionItemTargetTagItemArrayOutput values.
@@ -5998,12 +5007,6 @@ func (i GetProfilesProfileCollectionItemTargetTagItemArray) ToGetProfilesProfile
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagItemArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetTagItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemTargetTagItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemTargetTagItemOutput) ElementType() reflect.Type {
@@ -6018,25 +5021,19 @@ func (o GetProfilesProfileCollectionItemTargetTagItemOutput) ToGetProfilesProfil
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemTargetTagItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name you use to refer to the tag, also known as the tag key.
-func (o GetProfilesProfileCollectionItemTargetTagItemOutput) TagDefinitionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemTargetTagItem) string { return v.TagDefinitionName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemTargetTagItemOutput) TagDefinitionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemTargetTagItem) *string { return v.TagDefinitionName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the tag namespace.
-func (o GetProfilesProfileCollectionItemTargetTagItemOutput) TagNamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemTargetTagItem) string { return v.TagNamespaceName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemTargetTagItemOutput) TagNamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemTargetTagItem) *string { return v.TagNamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-func (o GetProfilesProfileCollectionItemTargetTagItemOutput) TagValueType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemTargetTagItem) string { return v.TagValueType }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemTargetTagItemOutput) TagValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemTargetTagItem) *string { return v.TagValueType }).(pulumi.StringPtrOutput)
 }
 
 // The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
@@ -6058,12 +5055,6 @@ func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) ToGetProfilesP
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemTargetTagItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItemTargetTagItem {
 		return vs[0].([]GetProfilesProfileCollectionItemTargetTagItem)[vs[1].(int)]
@@ -6072,9 +5063,9 @@ func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) Index(i pulumi
 
 type GetRecommendationResourceCount struct {
 	// The count of resources.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The current status of the recommendation.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetRecommendationResourceCountInput is an input type that accepts GetRecommendationResourceCountArgs and GetRecommendationResourceCountOutput values.
@@ -6090,9 +5081,9 @@ type GetRecommendationResourceCountInput interface {
 
 type GetRecommendationResourceCountArgs struct {
 	// The count of resources.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The current status of the recommendation.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetRecommendationResourceCountArgs) ElementType() reflect.Type {
@@ -6105,12 +5096,6 @@ func (i GetRecommendationResourceCountArgs) ToGetRecommendationResourceCountOutp
 
 func (i GetRecommendationResourceCountArgs) ToGetRecommendationResourceCountOutputWithContext(ctx context.Context) GetRecommendationResourceCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationResourceCountOutput)
-}
-
-func (i GetRecommendationResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationResourceCount] {
-	return pulumix.Output[GetRecommendationResourceCount]{
-		OutputState: i.ToGetRecommendationResourceCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationResourceCountArrayInput is an input type that accepts GetRecommendationResourceCountArray and GetRecommendationResourceCountArrayOutput values.
@@ -6138,12 +5123,6 @@ func (i GetRecommendationResourceCountArray) ToGetRecommendationResourceCountArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationResourceCountArrayOutput)
 }
 
-func (i GetRecommendationResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationResourceCount] {
-	return pulumix.Output[[]GetRecommendationResourceCount]{
-		OutputState: i.ToGetRecommendationResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationResourceCountOutput) ElementType() reflect.Type {
@@ -6158,20 +5137,14 @@ func (o GetRecommendationResourceCountOutput) ToGetRecommendationResourceCountOu
 	return o
 }
 
-func (o GetRecommendationResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationResourceCount] {
-	return pulumix.Output[GetRecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The count of resources.
-func (o GetRecommendationResourceCountOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRecommendationResourceCount) int { return v.Count }).(pulumi.IntOutput)
+func (o GetRecommendationResourceCountOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRecommendationResourceCount) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The current status of the recommendation.
-func (o GetRecommendationResourceCountOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationResourceCount) string { return v.Status }).(pulumi.StringOutput)
+func (o GetRecommendationResourceCountOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationResourceCount) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationResourceCountArrayOutput struct{ *pulumi.OutputState }
@@ -6186,12 +5159,6 @@ func (o GetRecommendationResourceCountArrayOutput) ToGetRecommendationResourceCo
 
 func (o GetRecommendationResourceCountArrayOutput) ToGetRecommendationResourceCountArrayOutputWithContext(ctx context.Context) GetRecommendationResourceCountArrayOutput {
 	return o
-}
-
-func (o GetRecommendationResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationResourceCount] {
-	return pulumix.Output[[]GetRecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationResourceCountArrayOutput) Index(i pulumi.IntInput) GetRecommendationResourceCountOutput {
@@ -6237,12 +5204,6 @@ func (i GetRecommendationStrategiesFilterArgs) ToGetRecommendationStrategiesFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesFilterOutput)
 }
 
-func (i GetRecommendationStrategiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesFilter] {
-	return pulumix.Output[GetRecommendationStrategiesFilter]{
-		OutputState: i.ToGetRecommendationStrategiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategiesFilterArrayInput is an input type that accepts GetRecommendationStrategiesFilterArray and GetRecommendationStrategiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesFilterArrayInput` via:
 //
@@ -6268,12 +5229,6 @@ func (i GetRecommendationStrategiesFilterArray) ToGetRecommendationStrategiesFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesFilterArrayOutput)
 }
 
-func (i GetRecommendationStrategiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesFilter] {
-	return pulumix.Output[[]GetRecommendationStrategiesFilter]{
-		OutputState: i.ToGetRecommendationStrategiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesFilterOutput) ElementType() reflect.Type {
@@ -6286,12 +5241,6 @@ func (o GetRecommendationStrategiesFilterOutput) ToGetRecommendationStrategiesFi
 
 func (o GetRecommendationStrategiesFilterOutput) ToGetRecommendationStrategiesFilterOutputWithContext(ctx context.Context) GetRecommendationStrategiesFilterOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesFilter] {
-	return pulumix.Output[GetRecommendationStrategiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -6319,12 +5268,6 @@ func (o GetRecommendationStrategiesFilterArrayOutput) ToGetRecommendationStrateg
 
 func (o GetRecommendationStrategiesFilterArrayOutput) ToGetRecommendationStrategiesFilterArrayOutputWithContext(ctx context.Context) GetRecommendationStrategiesFilterArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesFilter] {
-	return pulumix.Output[[]GetRecommendationStrategiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategiesFilterArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesFilterOutput {
@@ -6366,12 +5309,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionArgs) ToGetRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategiesRecommendationStrategyCollectionArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionArray and GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionArrayInput` via:
 //
@@ -6397,12 +5334,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionArray) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ElementType() reflect.Type {
@@ -6415,12 +5346,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ToGet
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A collection of recommendation strategy summaries.
@@ -6444,12 +5369,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) 
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategiesRecommendationStrategyCollection {
 		return vs[0].([]GetRecommendationStrategiesRecommendationStrategyCollection)[vs[1].(int)]
@@ -6458,7 +5377,7 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) 
 
 type GetRecommendationStrategiesRecommendationStrategyCollectionItem struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The list of strategies used.
 	Strategies []GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy `pulumi:"strategies"`
 }
@@ -6476,7 +5395,7 @@ type GetRecommendationStrategiesRecommendationStrategyCollectionItemInput interf
 
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The list of strategies used.
 	Strategies GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayInput `pulumi:"strategies"`
 }
@@ -6491,12 +5410,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs) ToG
 
 func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput)
-}
-
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput values.
@@ -6524,12 +5437,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) ElementType() reflect.Type {
@@ -6544,15 +5451,9 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) T
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional. A filter that returns results that match the name specified.
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The list of strategies used.
@@ -6576,12 +5477,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutp
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategiesRecommendationStrategyCollectionItem {
 		return vs[0].([]GetRecommendationStrategiesRecommendationStrategyCollectionItem)[vs[1].(int)]
@@ -6590,11 +5485,11 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutp
 
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy struct {
 	// Whether this is the default recommendation strategy.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// The list of strategies for the parameters.
 	ParametersDefinitions []GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition `pulumi:"parametersDefinitions"`
 	// The name of the strategy.
-	StrategyName string `pulumi:"strategyName"`
+	StrategyName *string `pulumi:"strategyName"`
 }
 
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput values.
@@ -6610,11 +5505,11 @@ type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyInpu
 
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs struct {
 	// Whether this is the default recommendation strategy.
-	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
 	// The list of strategies for the parameters.
 	ParametersDefinitions GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayInput `pulumi:"parametersDefinitions"`
 	// The name of the strategy.
-	StrategyName pulumi.StringInput `pulumi:"strategyName"`
+	StrategyName pulumi.StringPtrInput `pulumi:"strategyName"`
 }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs) ElementType() reflect.Type {
@@ -6627,12 +5522,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyA
 
 func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput)
-}
-
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput values.
@@ -6660,12 +5549,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) ElementType() reflect.Type {
@@ -6680,17 +5563,11 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyO
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether this is the default recommendation strategy.
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy) bool {
+func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy) *bool {
 		return v.IsDefault
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The list of strategies for the parameters.
@@ -6701,10 +5578,10 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyO
 }
 
 // The name of the strategy.
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) StrategyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy) string {
+func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) StrategyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy) *string {
 		return v.StrategyName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput struct{ *pulumi.OutputState }
@@ -6721,12 +5598,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyA
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy {
 		return vs[0].([]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy)[vs[1].(int)]
@@ -6737,15 +5608,15 @@ type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyPara
 	// A default value used for the strategy parameter.
 	DefaultValues []interface{} `pulumi:"defaultValues"`
 	// Text describing the strategy parameter.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Whether this parameter is required.
-	IsRequired bool `pulumi:"isRequired"`
+	IsRequired *bool `pulumi:"isRequired"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The list of possible values used for these strategy parameters.
 	PossibleValues []interface{} `pulumi:"possibleValues"`
 	// The type of strategy parameter.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput values.
@@ -6763,15 +5634,15 @@ type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyPara
 	// A default value used for the strategy parameter.
 	DefaultValues pulumi.ArrayInput `pulumi:"defaultValues"`
 	// Text describing the strategy parameter.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Whether this parameter is required.
-	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	IsRequired pulumi.BoolPtrInput `pulumi:"isRequired"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The list of possible values used for these strategy parameters.
 	PossibleValues pulumi.ArrayInput `pulumi:"possibleValues"`
 	// The type of strategy parameter.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs) ElementType() reflect.Type {
@@ -6784,12 +5655,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 
 func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput)
-}
-
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput values.
@@ -6817,12 +5682,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) ElementType() reflect.Type {
@@ -6837,12 +5696,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A default value used for the strategy parameter.
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) DefaultValues() pulumi.ArrayOutput {
 	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) []interface{} {
@@ -6851,24 +5704,24 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 }
 
 // Text describing the strategy parameter.
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) string {
+func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Whether this parameter is required.
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) bool {
+func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) *bool {
 		return v.IsRequired
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) string {
+func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The list of possible values used for these strategy parameters.
@@ -6879,10 +5732,10 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 }
 
 // The type of strategy parameter.
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) string {
+func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -6899,12 +5752,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition {
 		return vs[0].([]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition)[vs[1].(int)]
@@ -6913,7 +5760,7 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 
 type GetRecommendationStrategyItem struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The list of strategies used.
 	Strategies []GetRecommendationStrategyItemStrategy `pulumi:"strategies"`
 }
@@ -6931,7 +5778,7 @@ type GetRecommendationStrategyItemInput interface {
 
 type GetRecommendationStrategyItemArgs struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The list of strategies used.
 	Strategies GetRecommendationStrategyItemStrategyArrayInput `pulumi:"strategies"`
 }
@@ -6946,12 +5793,6 @@ func (i GetRecommendationStrategyItemArgs) ToGetRecommendationStrategyItemOutput
 
 func (i GetRecommendationStrategyItemArgs) ToGetRecommendationStrategyItemOutputWithContext(ctx context.Context) GetRecommendationStrategyItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemOutput)
-}
-
-func (i GetRecommendationStrategyItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItem] {
-	return pulumix.Output[GetRecommendationStrategyItem]{
-		OutputState: i.ToGetRecommendationStrategyItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationStrategyItemArrayInput is an input type that accepts GetRecommendationStrategyItemArray and GetRecommendationStrategyItemArrayOutput values.
@@ -6979,12 +5820,6 @@ func (i GetRecommendationStrategyItemArray) ToGetRecommendationStrategyItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemArrayOutput)
 }
 
-func (i GetRecommendationStrategyItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItem] {
-	return pulumix.Output[[]GetRecommendationStrategyItem]{
-		OutputState: i.ToGetRecommendationStrategyItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategyItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategyItemOutput) ElementType() reflect.Type {
@@ -6999,15 +5834,9 @@ func (o GetRecommendationStrategyItemOutput) ToGetRecommendationStrategyItemOutp
 	return o
 }
 
-func (o GetRecommendationStrategyItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItem] {
-	return pulumix.Output[GetRecommendationStrategyItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional. A filter that returns results that match the name specified.
-func (o GetRecommendationStrategyItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRecommendationStrategyItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The list of strategies used.
@@ -7029,12 +5858,6 @@ func (o GetRecommendationStrategyItemArrayOutput) ToGetRecommendationStrategyIte
 	return o
 }
 
-func (o GetRecommendationStrategyItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItem] {
-	return pulumix.Output[[]GetRecommendationStrategyItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategyItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategyItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategyItem {
 		return vs[0].([]GetRecommendationStrategyItem)[vs[1].(int)]
@@ -7043,11 +5866,11 @@ func (o GetRecommendationStrategyItemArrayOutput) Index(i pulumi.IntInput) GetRe
 
 type GetRecommendationStrategyItemStrategy struct {
 	// Whether this is the default recommendation strategy.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// The list of strategies for the parameters.
 	ParametersDefinitions []GetRecommendationStrategyItemStrategyParametersDefinition `pulumi:"parametersDefinitions"`
 	// The name of the strategy.
-	StrategyName string `pulumi:"strategyName"`
+	StrategyName *string `pulumi:"strategyName"`
 }
 
 // GetRecommendationStrategyItemStrategyInput is an input type that accepts GetRecommendationStrategyItemStrategyArgs and GetRecommendationStrategyItemStrategyOutput values.
@@ -7063,11 +5886,11 @@ type GetRecommendationStrategyItemStrategyInput interface {
 
 type GetRecommendationStrategyItemStrategyArgs struct {
 	// Whether this is the default recommendation strategy.
-	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
 	// The list of strategies for the parameters.
 	ParametersDefinitions GetRecommendationStrategyItemStrategyParametersDefinitionArrayInput `pulumi:"parametersDefinitions"`
 	// The name of the strategy.
-	StrategyName pulumi.StringInput `pulumi:"strategyName"`
+	StrategyName pulumi.StringPtrInput `pulumi:"strategyName"`
 }
 
 func (GetRecommendationStrategyItemStrategyArgs) ElementType() reflect.Type {
@@ -7080,12 +5903,6 @@ func (i GetRecommendationStrategyItemStrategyArgs) ToGetRecommendationStrategyIt
 
 func (i GetRecommendationStrategyItemStrategyArgs) ToGetRecommendationStrategyItemStrategyOutputWithContext(ctx context.Context) GetRecommendationStrategyItemStrategyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyOutput)
-}
-
-func (i GetRecommendationStrategyItemStrategyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationStrategyItemStrategyArrayInput is an input type that accepts GetRecommendationStrategyItemStrategyArray and GetRecommendationStrategyItemStrategyArrayOutput values.
@@ -7113,12 +5930,6 @@ func (i GetRecommendationStrategyItemStrategyArray) ToGetRecommendationStrategyI
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyArrayOutput)
 }
 
-func (i GetRecommendationStrategyItemStrategyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategyItemStrategyOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategyItemStrategyOutput) ElementType() reflect.Type {
@@ -7133,15 +5944,9 @@ func (o GetRecommendationStrategyItemStrategyOutput) ToGetRecommendationStrategy
 	return o
 }
 
-func (o GetRecommendationStrategyItemStrategyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether this is the default recommendation strategy.
-func (o GetRecommendationStrategyItemStrategyOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyItemStrategy) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o GetRecommendationStrategyItemStrategyOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyItemStrategy) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // The list of strategies for the parameters.
@@ -7152,8 +5957,8 @@ func (o GetRecommendationStrategyItemStrategyOutput) ParametersDefinitions() Get
 }
 
 // The name of the strategy.
-func (o GetRecommendationStrategyItemStrategyOutput) StrategyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyItemStrategy) string { return v.StrategyName }).(pulumi.StringOutput)
+func (o GetRecommendationStrategyItemStrategyOutput) StrategyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyItemStrategy) *string { return v.StrategyName }).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationStrategyItemStrategyArrayOutput struct{ *pulumi.OutputState }
@@ -7170,12 +5975,6 @@ func (o GetRecommendationStrategyItemStrategyArrayOutput) ToGetRecommendationStr
 	return o
 }
 
-func (o GetRecommendationStrategyItemStrategyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategyItemStrategyArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategyItemStrategyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategyItemStrategy {
 		return vs[0].([]GetRecommendationStrategyItemStrategy)[vs[1].(int)]
@@ -7186,15 +5985,15 @@ type GetRecommendationStrategyItemStrategyParametersDefinition struct {
 	// A default value used for the strategy parameter.
 	DefaultValues []interface{} `pulumi:"defaultValues"`
 	// Text describing the strategy parameter.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Whether this parameter is required.
-	IsRequired bool `pulumi:"isRequired"`
+	IsRequired *bool `pulumi:"isRequired"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The list of possible values used for these strategy parameters.
 	PossibleValues []interface{} `pulumi:"possibleValues"`
 	// The type of strategy parameter.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetRecommendationStrategyItemStrategyParametersDefinitionInput is an input type that accepts GetRecommendationStrategyItemStrategyParametersDefinitionArgs and GetRecommendationStrategyItemStrategyParametersDefinitionOutput values.
@@ -7212,15 +6011,15 @@ type GetRecommendationStrategyItemStrategyParametersDefinitionArgs struct {
 	// A default value used for the strategy parameter.
 	DefaultValues pulumi.ArrayInput `pulumi:"defaultValues"`
 	// Text describing the strategy parameter.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Whether this parameter is required.
-	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	IsRequired pulumi.BoolPtrInput `pulumi:"isRequired"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The list of possible values used for these strategy parameters.
 	PossibleValues pulumi.ArrayInput `pulumi:"possibleValues"`
 	// The type of strategy parameter.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetRecommendationStrategyItemStrategyParametersDefinitionArgs) ElementType() reflect.Type {
@@ -7233,12 +6032,6 @@ func (i GetRecommendationStrategyItemStrategyParametersDefinitionArgs) ToGetReco
 
 func (i GetRecommendationStrategyItemStrategyParametersDefinitionArgs) ToGetRecommendationStrategyItemStrategyParametersDefinitionOutputWithContext(ctx context.Context) GetRecommendationStrategyItemStrategyParametersDefinitionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyParametersDefinitionOutput)
-}
-
-func (i GetRecommendationStrategyItemStrategyParametersDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyParametersDefinitionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationStrategyItemStrategyParametersDefinitionArrayInput is an input type that accepts GetRecommendationStrategyItemStrategyParametersDefinitionArray and GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput values.
@@ -7266,12 +6059,6 @@ func (i GetRecommendationStrategyItemStrategyParametersDefinitionArray) ToGetRec
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput)
 }
 
-func (i GetRecommendationStrategyItemStrategyParametersDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyParametersDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategyItemStrategyParametersDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategyItemStrategyParametersDefinitionOutput) ElementType() reflect.Type {
@@ -7286,12 +6073,6 @@ func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) ToGetRe
 	return o
 }
 
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A default value used for the strategy parameter.
 func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) DefaultValues() pulumi.ArrayOutput {
 	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) []interface{} {
@@ -7300,18 +6081,18 @@ func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Default
 }
 
 // Text describing the strategy parameter.
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Whether this parameter is required.
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) bool { return v.IsRequired }).(pulumi.BoolOutput)
+func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) *bool { return v.IsRequired }).(pulumi.BoolPtrOutput)
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The list of possible values used for these strategy parameters.
@@ -7322,8 +6103,8 @@ func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Possibl
 }
 
 // The type of strategy parameter.
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) string { return v.Type }).(pulumi.StringOutput)
+func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyItemStrategyParametersDefinition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -7338,12 +6119,6 @@ func (o GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput) To
 
 func (o GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput) ToGetRecommendationStrategyItemStrategyParametersDefinitionArrayOutputWithContext(ctx context.Context) GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategyItemStrategyParametersDefinitionOutput {
@@ -7385,12 +6160,6 @@ func (i GetRecommendationSupportedLevelArgs) ToGetRecommendationSupportedLevelOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelOutput)
 }
 
-func (i GetRecommendationSupportedLevelArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevel] {
-	return pulumix.Output[GetRecommendationSupportedLevel]{
-		OutputState: i.ToGetRecommendationSupportedLevelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationSupportedLevelArrayInput is an input type that accepts GetRecommendationSupportedLevelArray and GetRecommendationSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationSupportedLevelArrayInput` via:
 //
@@ -7416,12 +6185,6 @@ func (i GetRecommendationSupportedLevelArray) ToGetRecommendationSupportedLevelA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelArrayOutput)
 }
 
-func (i GetRecommendationSupportedLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationSupportedLevel]{
-		OutputState: i.ToGetRecommendationSupportedLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationSupportedLevelOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationSupportedLevelOutput) ElementType() reflect.Type {
@@ -7434,12 +6197,6 @@ func (o GetRecommendationSupportedLevelOutput) ToGetRecommendationSupportedLevel
 
 func (o GetRecommendationSupportedLevelOutput) ToGetRecommendationSupportedLevelOutputWithContext(ctx context.Context) GetRecommendationSupportedLevelOutput {
 	return o
-}
-
-func (o GetRecommendationSupportedLevelOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevel] {
-	return pulumix.Output[GetRecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -7461,12 +6218,6 @@ func (o GetRecommendationSupportedLevelArrayOutput) ToGetRecommendationSupported
 	return o
 }
 
-func (o GetRecommendationSupportedLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationSupportedLevelArrayOutput) Index(i pulumi.IntInput) GetRecommendationSupportedLevelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationSupportedLevel {
 		return vs[0].([]GetRecommendationSupportedLevel)[vs[1].(int)]
@@ -7475,7 +6226,7 @@ func (o GetRecommendationSupportedLevelArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetRecommendationSupportedLevelItem struct {
 	// The name of the profile level.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetRecommendationSupportedLevelItemInput is an input type that accepts GetRecommendationSupportedLevelItemArgs and GetRecommendationSupportedLevelItemOutput values.
@@ -7491,7 +6242,7 @@ type GetRecommendationSupportedLevelItemInput interface {
 
 type GetRecommendationSupportedLevelItemArgs struct {
 	// The name of the profile level.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetRecommendationSupportedLevelItemArgs) ElementType() reflect.Type {
@@ -7504,12 +6255,6 @@ func (i GetRecommendationSupportedLevelItemArgs) ToGetRecommendationSupportedLev
 
 func (i GetRecommendationSupportedLevelItemArgs) ToGetRecommendationSupportedLevelItemOutputWithContext(ctx context.Context) GetRecommendationSupportedLevelItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelItemOutput)
-}
-
-func (i GetRecommendationSupportedLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationSupportedLevelItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationSupportedLevelItemArrayInput is an input type that accepts GetRecommendationSupportedLevelItemArray and GetRecommendationSupportedLevelItemArrayOutput values.
@@ -7537,12 +6282,6 @@ func (i GetRecommendationSupportedLevelItemArray) ToGetRecommendationSupportedLe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelItemArrayOutput)
 }
 
-func (i GetRecommendationSupportedLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationSupportedLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationSupportedLevelItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationSupportedLevelItemOutput) ElementType() reflect.Type {
@@ -7557,15 +6296,9 @@ func (o GetRecommendationSupportedLevelItemOutput) ToGetRecommendationSupportedL
 	return o
 }
 
-func (o GetRecommendationSupportedLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the profile level.
-func (o GetRecommendationSupportedLevelItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationSupportedLevelItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRecommendationSupportedLevelItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationSupportedLevelItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationSupportedLevelItemArrayOutput struct{ *pulumi.OutputState }
@@ -7580,12 +6313,6 @@ func (o GetRecommendationSupportedLevelItemArrayOutput) ToGetRecommendationSuppo
 
 func (o GetRecommendationSupportedLevelItemArrayOutput) ToGetRecommendationSupportedLevelItemArrayOutputWithContext(ctx context.Context) GetRecommendationSupportedLevelItemArrayOutput {
 	return o
-}
-
-func (o GetRecommendationSupportedLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationSupportedLevelItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationSupportedLevelItemOutput {
@@ -7631,12 +6358,6 @@ func (i GetRecommendationsFilterArgs) ToGetRecommendationsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsFilterOutput)
 }
 
-func (i GetRecommendationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsFilter] {
-	return pulumix.Output[GetRecommendationsFilter]{
-		OutputState: i.ToGetRecommendationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsFilterArrayInput is an input type that accepts GetRecommendationsFilterArray and GetRecommendationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsFilterArrayInput` via:
 //
@@ -7662,12 +6383,6 @@ func (i GetRecommendationsFilterArray) ToGetRecommendationsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsFilterArrayOutput)
 }
 
-func (i GetRecommendationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsFilter] {
-	return pulumix.Output[[]GetRecommendationsFilter]{
-		OutputState: i.ToGetRecommendationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsFilterOutput) ElementType() reflect.Type {
@@ -7680,12 +6395,6 @@ func (o GetRecommendationsFilterOutput) ToGetRecommendationsFilterOutput() GetRe
 
 func (o GetRecommendationsFilterOutput) ToGetRecommendationsFilterOutputWithContext(ctx context.Context) GetRecommendationsFilterOutput {
 	return o
-}
-
-func (o GetRecommendationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsFilter] {
-	return pulumix.Output[GetRecommendationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -7713,12 +6422,6 @@ func (o GetRecommendationsFilterArrayOutput) ToGetRecommendationsFilterArrayOutp
 
 func (o GetRecommendationsFilterArrayOutput) ToGetRecommendationsFilterArrayOutputWithContext(ctx context.Context) GetRecommendationsFilterArrayOutput {
 	return o
-}
-
-func (o GetRecommendationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsFilter] {
-	return pulumix.Output[[]GetRecommendationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationsFilterArrayOutput) Index(i pulumi.IntInput) GetRecommendationsFilterOutput {
@@ -7760,12 +6463,6 @@ func (i GetRecommendationsRecommendationCollectionArgs) ToGetRecommendationsReco
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[GetRecommendationsRecommendationCollection]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsRecommendationCollectionArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionArray and GetRecommendationsRecommendationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionArrayInput` via:
 //
@@ -7791,12 +6488,6 @@ func (i GetRecommendationsRecommendationCollectionArray) ToGetRecommendationsRec
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollection]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionOutput) ElementType() reflect.Type {
@@ -7809,12 +6500,6 @@ func (o GetRecommendationsRecommendationCollectionOutput) ToGetRecommendationsRe
 
 func (o GetRecommendationsRecommendationCollectionOutput) ToGetRecommendationsRecommendationCollectionOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[GetRecommendationsRecommendationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -7838,12 +6523,6 @@ func (o GetRecommendationsRecommendationCollectionArrayOutput) ToGetRecommendati
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationsRecommendationCollectionArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationsRecommendationCollection {
 		return vs[0].([]GetRecommendationsRecommendationCollection)[vs[1].(int)]
@@ -7852,38 +6531,38 @@ func (o GetRecommendationsRecommendationCollectionArrayOutput) Index(i pulumi.In
 
 type GetRecommendationsRecommendationCollectionItem struct {
 	// The unique OCID associated with the category.
-	CategoryId string `pulumi:"categoryId"`
+	CategoryId *string `pulumi:"categoryId"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Text describing the recommendation.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the recommendation.
-	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The level of importance assigned to the recommendation.
-	Importance string `pulumi:"importance"`
+	Importance *string `pulumi:"importance"`
 	// Optional. A filter that returns results that match the name specified.
-	Name             string `pulumi:"name"`
-	RecommendationId string `pulumi:"recommendationId"`
+	Name             *string `pulumi:"name"`
+	RecommendationId *string `pulumi:"recommendationId"`
 	// An array of `ResourceCount` objects grouped by the status of the resource actions.
 	ResourceCounts []GetRecommendationsRecommendationCollectionItemResourceCount `pulumi:"resourceCounts"`
 	// A filter that returns results that match the lifecycle state specified.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A filter that returns recommendations that match the status specified.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
 	SupportedLevels []GetRecommendationsRecommendationCollectionItemSupportedLevel `pulumi:"supportedLevels"`
 	// The date and time the recommendation details were created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-	TimeStatusBegin string `pulumi:"timeStatusBegin"`
+	TimeStatusBegin *string `pulumi:"timeStatusBegin"`
 	// The date and time the current status will change. The format is defined by RFC3339.
-	TimeStatusEnd string `pulumi:"timeStatusEnd"`
+	TimeStatusEnd *string `pulumi:"timeStatusEnd"`
 	// The date and time the recommendation details were last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetRecommendationsRecommendationCollectionItemInput is an input type that accepts GetRecommendationsRecommendationCollectionItemArgs and GetRecommendationsRecommendationCollectionItemOutput values.
@@ -7899,38 +6578,38 @@ type GetRecommendationsRecommendationCollectionItemInput interface {
 
 type GetRecommendationsRecommendationCollectionItemArgs struct {
 	// The unique OCID associated with the category.
-	CategoryId pulumi.StringInput `pulumi:"categoryId"`
+	CategoryId pulumi.StringPtrInput `pulumi:"categoryId"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Text describing the recommendation.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the recommendation.
-	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving pulumi.Float64PtrInput `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
 	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The level of importance assigned to the recommendation.
-	Importance pulumi.StringInput `pulumi:"importance"`
+	Importance pulumi.StringPtrInput `pulumi:"importance"`
 	// Optional. A filter that returns results that match the name specified.
-	Name             pulumi.StringInput `pulumi:"name"`
-	RecommendationId pulumi.StringInput `pulumi:"recommendationId"`
+	Name             pulumi.StringPtrInput `pulumi:"name"`
+	RecommendationId pulumi.StringPtrInput `pulumi:"recommendationId"`
 	// An array of `ResourceCount` objects grouped by the status of the resource actions.
 	ResourceCounts GetRecommendationsRecommendationCollectionItemResourceCountArrayInput `pulumi:"resourceCounts"`
 	// A filter that returns results that match the lifecycle state specified.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter that returns recommendations that match the status specified.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
 	SupportedLevels GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput `pulumi:"supportedLevels"`
 	// The date and time the recommendation details were created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-	TimeStatusBegin pulumi.StringInput `pulumi:"timeStatusBegin"`
+	TimeStatusBegin pulumi.StringPtrInput `pulumi:"timeStatusBegin"`
 	// The date and time the current status will change. The format is defined by RFC3339.
-	TimeStatusEnd pulumi.StringInput `pulumi:"timeStatusEnd"`
+	TimeStatusEnd pulumi.StringPtrInput `pulumi:"timeStatusEnd"`
 	// The date and time the recommendation details were last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetRecommendationsRecommendationCollectionItemArgs) ElementType() reflect.Type {
@@ -7943,12 +6622,6 @@ func (i GetRecommendationsRecommendationCollectionItemArgs) ToGetRecommendations
 
 func (i GetRecommendationsRecommendationCollectionItemArgs) ToGetRecommendationsRecommendationCollectionItemOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemOutput)
-}
-
-func (i GetRecommendationsRecommendationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationsRecommendationCollectionItemArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemArray and GetRecommendationsRecommendationCollectionItemArrayOutput values.
@@ -7976,12 +6649,6 @@ func (i GetRecommendationsRecommendationCollectionItemArray) ToGetRecommendation
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemOutput) ElementType() reflect.Type {
@@ -7996,30 +6663,24 @@ func (o GetRecommendationsRecommendationCollectionItemOutput) ToGetRecommendatio
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique OCID associated with the category.
-func (o GetRecommendationsRecommendationCollectionItemOutput) CategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.CategoryId }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) CategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.CategoryId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetRecommendationsRecommendationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Text describing the recommendation.
-func (o GetRecommendationsRecommendationCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the recommendation.
-func (o GetRecommendationsRecommendationCollectionItemOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) float64 { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o GetRecommendationsRecommendationCollectionItemOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *float64 { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs for the recommendation.
@@ -8030,22 +6691,22 @@ func (o GetRecommendationsRecommendationCollectionItemOutput) ExtendedMetadata()
 }
 
 // The unique OCID associated with the recommendation.
-func (o GetRecommendationsRecommendationCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The level of importance assigned to the recommendation.
-func (o GetRecommendationsRecommendationCollectionItemOutput) Importance() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.Importance }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) Importance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.Importance }).(pulumi.StringPtrOutput)
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetRecommendationsRecommendationCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o GetRecommendationsRecommendationCollectionItemOutput) RecommendationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.RecommendationId }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) RecommendationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.RecommendationId }).(pulumi.StringPtrOutput)
 }
 
 // An array of `ResourceCount` objects grouped by the status of the resource actions.
@@ -8056,13 +6717,13 @@ func (o GetRecommendationsRecommendationCollectionItemOutput) ResourceCounts() G
 }
 
 // A filter that returns results that match the lifecycle state specified.
-func (o GetRecommendationsRecommendationCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns recommendations that match the status specified.
-func (o GetRecommendationsRecommendationCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
@@ -8073,23 +6734,23 @@ func (o GetRecommendationsRecommendationCollectionItemOutput) SupportedLevels() 
 }
 
 // The date and time the recommendation details were created, in the format defined by RFC3339.
-func (o GetRecommendationsRecommendationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-func (o GetRecommendationsRecommendationCollectionItemOutput) TimeStatusBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.TimeStatusBegin }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) TimeStatusBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.TimeStatusBegin }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the current status will change. The format is defined by RFC3339.
-func (o GetRecommendationsRecommendationCollectionItemOutput) TimeStatusEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.TimeStatusEnd }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) TimeStatusEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.TimeStatusEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the recommendation details were last updated, in the format defined by RFC3339.
-func (o GetRecommendationsRecommendationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationsRecommendationCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8106,12 +6767,6 @@ func (o GetRecommendationsRecommendationCollectionItemArrayOutput) ToGetRecommen
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationsRecommendationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationsRecommendationCollectionItem {
 		return vs[0].([]GetRecommendationsRecommendationCollectionItem)[vs[1].(int)]
@@ -8120,9 +6775,9 @@ func (o GetRecommendationsRecommendationCollectionItemArrayOutput) Index(i pulum
 
 type GetRecommendationsRecommendationCollectionItemResourceCount struct {
 	// The count of resources.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// A filter that returns recommendations that match the status specified.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetRecommendationsRecommendationCollectionItemResourceCountInput is an input type that accepts GetRecommendationsRecommendationCollectionItemResourceCountArgs and GetRecommendationsRecommendationCollectionItemResourceCountOutput values.
@@ -8138,9 +6793,9 @@ type GetRecommendationsRecommendationCollectionItemResourceCountInput interface 
 
 type GetRecommendationsRecommendationCollectionItemResourceCountArgs struct {
 	// The count of resources.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// A filter that returns recommendations that match the status specified.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetRecommendationsRecommendationCollectionItemResourceCountArgs) ElementType() reflect.Type {
@@ -8153,12 +6808,6 @@ func (i GetRecommendationsRecommendationCollectionItemResourceCountArgs) ToGetRe
 
 func (i GetRecommendationsRecommendationCollectionItemResourceCountArgs) ToGetRecommendationsRecommendationCollectionItemResourceCountOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemResourceCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemResourceCountOutput)
-}
-
-func (i GetRecommendationsRecommendationCollectionItemResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemResourceCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationsRecommendationCollectionItemResourceCountArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemResourceCountArray and GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput values.
@@ -8186,12 +6835,6 @@ func (i GetRecommendationsRecommendationCollectionItemResourceCountArray) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemResourceCountOutput) ElementType() reflect.Type {
@@ -8206,20 +6849,14 @@ func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) ToGet
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The count of resources.
-func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItemResourceCount) int { return v.Count }).(pulumi.IntOutput)
+func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItemResourceCount) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // A filter that returns recommendations that match the status specified.
-func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItemResourceCount) string { return v.Status }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItemResourceCount) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput struct{ *pulumi.OutputState }
@@ -8234,12 +6871,6 @@ func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) 
 
 func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) ToGetRecommendationsRecommendationCollectionItemResourceCountArrayOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemResourceCountOutput {
@@ -8281,12 +6912,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArgs) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelArray and GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput` via:
 //
@@ -8312,12 +6937,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemSupportedLevelOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ElementType() reflect.Type {
@@ -8330,12 +6949,6 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ToGe
 
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ToGetRecommendationsRecommendationCollectionItemSupportedLevelOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemSupportedLevelOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -8359,12 +6972,6 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput)
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemSupportedLevelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationsRecommendationCollectionItemSupportedLevel {
 		return vs[0].([]GetRecommendationsRecommendationCollectionItemSupportedLevel)[vs[1].(int)]
@@ -8373,7 +6980,7 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput)
 
 type GetRecommendationsRecommendationCollectionItemSupportedLevelItem struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetRecommendationsRecommendationCollectionItemSupportedLevelItemInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs and GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput values.
@@ -8389,7 +6996,7 @@ type GetRecommendationsRecommendationCollectionItemSupportedLevelItemInput inter
 
 type GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs struct {
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs) ElementType() reflect.Type {
@@ -8402,12 +7009,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs) To
 
 func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs) ToGetRecommendationsRecommendationCollectionItemSupportedLevelItemOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput)
-}
-
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray and GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput values.
@@ -8435,12 +7036,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) ElementType() reflect.Type {
@@ -8455,15 +7050,9 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) 
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional. A filter that returns results that match the name specified.
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItemSupportedLevelItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItemSupportedLevelItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput struct{ *pulumi.OutputState }
@@ -8480,12 +7069,6 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOut
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationsRecommendationCollectionItemSupportedLevelItem {
 		return vs[0].([]GetRecommendationsRecommendationCollectionItemSupportedLevelItem)[vs[1].(int)]
@@ -8494,11 +7077,11 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOut
 
 type GetResourceActionAction struct {
 	// Text describing the recommended action.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The status of the resource action.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The URL path to documentation that explains how to perform the action.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetResourceActionActionInput is an input type that accepts GetResourceActionActionArgs and GetResourceActionActionOutput values.
@@ -8514,11 +7097,11 @@ type GetResourceActionActionInput interface {
 
 type GetResourceActionActionArgs struct {
 	// Text describing the recommended action.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The status of the resource action.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The URL path to documentation that explains how to perform the action.
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetResourceActionActionArgs) ElementType() reflect.Type {
@@ -8531,12 +7114,6 @@ func (i GetResourceActionActionArgs) ToGetResourceActionActionOutput() GetResour
 
 func (i GetResourceActionActionArgs) ToGetResourceActionActionOutputWithContext(ctx context.Context) GetResourceActionActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionActionOutput)
-}
-
-func (i GetResourceActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionAction] {
-	return pulumix.Output[GetResourceActionAction]{
-		OutputState: i.ToGetResourceActionActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourceActionActionArrayInput is an input type that accepts GetResourceActionActionArray and GetResourceActionActionArrayOutput values.
@@ -8564,12 +7141,6 @@ func (i GetResourceActionActionArray) ToGetResourceActionActionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionActionArrayOutput)
 }
 
-func (i GetResourceActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionAction] {
-	return pulumix.Output[[]GetResourceActionAction]{
-		OutputState: i.ToGetResourceActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionActionOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionActionOutput) ElementType() reflect.Type {
@@ -8584,25 +7155,19 @@ func (o GetResourceActionActionOutput) ToGetResourceActionActionOutputWithContex
 	return o
 }
 
-func (o GetResourceActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionAction] {
-	return pulumix.Output[GetResourceActionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Text describing the recommended action.
-func (o GetResourceActionActionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionAction) string { return v.Description }).(pulumi.StringOutput)
+func (o GetResourceActionActionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionAction) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The status of the resource action.
-func (o GetResourceActionActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionAction) string { return v.Type }).(pulumi.StringOutput)
+func (o GetResourceActionActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The URL path to documentation that explains how to perform the action.
-func (o GetResourceActionActionOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionAction) string { return v.Url }).(pulumi.StringOutput)
+func (o GetResourceActionActionOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionAction) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type GetResourceActionActionArrayOutput struct{ *pulumi.OutputState }
@@ -8617,12 +7182,6 @@ func (o GetResourceActionActionArrayOutput) ToGetResourceActionActionArrayOutput
 
 func (o GetResourceActionActionArrayOutput) ToGetResourceActionActionArrayOutputWithContext(ctx context.Context) GetResourceActionActionArrayOutput {
 	return o
-}
-
-func (o GetResourceActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionAction] {
-	return pulumix.Output[[]GetResourceActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionActionArrayOutput) Index(i pulumi.IntInput) GetResourceActionActionOutput {
@@ -8668,12 +7227,6 @@ func (i GetResourceActionsFilterArgs) ToGetResourceActionsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsFilterOutput)
 }
 
-func (i GetResourceActionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsFilter] {
-	return pulumix.Output[GetResourceActionsFilter]{
-		OutputState: i.ToGetResourceActionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceActionsFilterArrayInput is an input type that accepts GetResourceActionsFilterArray and GetResourceActionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsFilterArrayInput` via:
 //
@@ -8699,12 +7252,6 @@ func (i GetResourceActionsFilterArray) ToGetResourceActionsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsFilterArrayOutput)
 }
 
-func (i GetResourceActionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsFilter] {
-	return pulumix.Output[[]GetResourceActionsFilter]{
-		OutputState: i.ToGetResourceActionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsFilterOutput) ElementType() reflect.Type {
@@ -8717,12 +7264,6 @@ func (o GetResourceActionsFilterOutput) ToGetResourceActionsFilterOutput() GetRe
 
 func (o GetResourceActionsFilterOutput) ToGetResourceActionsFilterOutputWithContext(ctx context.Context) GetResourceActionsFilterOutput {
 	return o
-}
-
-func (o GetResourceActionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsFilter] {
-	return pulumix.Output[GetResourceActionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -8750,12 +7291,6 @@ func (o GetResourceActionsFilterArrayOutput) ToGetResourceActionsFilterArrayOutp
 
 func (o GetResourceActionsFilterArrayOutput) ToGetResourceActionsFilterArrayOutputWithContext(ctx context.Context) GetResourceActionsFilterArrayOutput {
 	return o
-}
-
-func (o GetResourceActionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsFilter] {
-	return pulumix.Output[[]GetResourceActionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsFilterArrayOutput) Index(i pulumi.IntInput) GetResourceActionsFilterOutput {
@@ -8795,12 +7330,6 @@ func (i GetResourceActionsResourceActionCollectionArgs) ToGetResourceActionsReso
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[GetResourceActionsResourceActionCollection]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceActionsResourceActionCollectionArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionArray and GetResourceActionsResourceActionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionArrayInput` via:
 //
@@ -8826,12 +7355,6 @@ func (i GetResourceActionsResourceActionCollectionArray) ToGetResourceActionsRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionArrayOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollection]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsResourceActionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsResourceActionCollectionOutput) ElementType() reflect.Type {
@@ -8844,12 +7367,6 @@ func (o GetResourceActionsResourceActionCollectionOutput) ToGetResourceActionsRe
 
 func (o GetResourceActionsResourceActionCollectionOutput) ToGetResourceActionsResourceActionCollectionOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionOutput {
 	return o
-}
-
-func (o GetResourceActionsResourceActionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[GetResourceActionsResourceActionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsResourceActionCollectionOutput) Items() GetResourceActionsResourceActionCollectionItemArrayOutput {
@@ -8872,12 +7389,6 @@ func (o GetResourceActionsResourceActionCollectionArrayOutput) ToGetResourceActi
 	return o
 }
 
-func (o GetResourceActionsResourceActionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceActionsResourceActionCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceActionsResourceActionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceActionsResourceActionCollection {
 		return vs[0].([]GetResourceActionsResourceActionCollection)[vs[1].(int)]
@@ -8888,40 +7399,40 @@ type GetResourceActionsResourceActionCollectionItem struct {
 	// Details about the recommended action.
 	Actions []GetResourceActionsResourceActionCollectionItemAction `pulumi:"actions"`
 	// The unique OCID associated with the category.
-	CategoryId string `pulumi:"categoryId"`
+	CategoryId *string `pulumi:"categoryId"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name associated with the compartment.
-	CompartmentName string `pulumi:"compartmentName"`
+	CompartmentName *string `pulumi:"compartmentName"`
 	// The estimated cost savings, in dollars, for the resource action.
-	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the resource action.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId string `pulumi:"recommendationId"`
-	ResourceActionId string `pulumi:"resourceActionId"`
+	RecommendationId *string `pulumi:"recommendationId"`
+	ResourceActionId *string `pulumi:"resourceActionId"`
 	// The unique OCID associated with the resource.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// Optional. A filter that returns results that match the resource type specified.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// A filter that returns results that match the lifecycle state specified.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A filter that returns recommendations that match the status specified.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The date and time the resource action details were created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the resource action entered its current status. The format is defined by RFC3339.
-	TimeStatusBegin string `pulumi:"timeStatusBegin"`
+	TimeStatusBegin *string `pulumi:"timeStatusBegin"`
 	// The date and time the current status will change. The format is defined by RFC3339.
-	TimeStatusEnd string `pulumi:"timeStatusEnd"`
+	TimeStatusEnd *string `pulumi:"timeStatusEnd"`
 	// The date and time the resource action details were last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetResourceActionsResourceActionCollectionItemInput is an input type that accepts GetResourceActionsResourceActionCollectionItemArgs and GetResourceActionsResourceActionCollectionItemOutput values.
@@ -8939,40 +7450,40 @@ type GetResourceActionsResourceActionCollectionItemArgs struct {
 	// Details about the recommended action.
 	Actions GetResourceActionsResourceActionCollectionItemActionArrayInput `pulumi:"actions"`
 	// The unique OCID associated with the category.
-	CategoryId pulumi.StringInput `pulumi:"categoryId"`
+	CategoryId pulumi.StringPtrInput `pulumi:"categoryId"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The name associated with the compartment.
-	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	CompartmentName pulumi.StringPtrInput `pulumi:"compartmentName"`
 	// The estimated cost savings, in dollars, for the resource action.
-	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving pulumi.Float64PtrInput `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the resource action.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
 	Metadata pulumi.MapInput `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId pulumi.StringInput `pulumi:"recommendationId"`
-	ResourceActionId pulumi.StringInput `pulumi:"resourceActionId"`
+	RecommendationId pulumi.StringPtrInput `pulumi:"recommendationId"`
+	ResourceActionId pulumi.StringPtrInput `pulumi:"resourceActionId"`
 	// The unique OCID associated with the resource.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// Optional. A filter that returns results that match the resource type specified.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// A filter that returns results that match the lifecycle state specified.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter that returns recommendations that match the status specified.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The date and time the resource action details were created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the resource action entered its current status. The format is defined by RFC3339.
-	TimeStatusBegin pulumi.StringInput `pulumi:"timeStatusBegin"`
+	TimeStatusBegin pulumi.StringPtrInput `pulumi:"timeStatusBegin"`
 	// The date and time the current status will change. The format is defined by RFC3339.
-	TimeStatusEnd pulumi.StringInput `pulumi:"timeStatusEnd"`
+	TimeStatusEnd pulumi.StringPtrInput `pulumi:"timeStatusEnd"`
 	// The date and time the resource action details were last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetResourceActionsResourceActionCollectionItemArgs) ElementType() reflect.Type {
@@ -8985,12 +7496,6 @@ func (i GetResourceActionsResourceActionCollectionItemArgs) ToGetResourceActions
 
 func (i GetResourceActionsResourceActionCollectionItemArgs) ToGetResourceActionsResourceActionCollectionItemOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemOutput)
-}
-
-func (i GetResourceActionsResourceActionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItem]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourceActionsResourceActionCollectionItemArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionItemArray and GetResourceActionsResourceActionCollectionItemArrayOutput values.
@@ -9018,12 +7523,6 @@ func (i GetResourceActionsResourceActionCollectionItemArray) ToGetResourceAction
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemArrayOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItem]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsResourceActionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsResourceActionCollectionItemOutput) ElementType() reflect.Type {
@@ -9038,12 +7537,6 @@ func (o GetResourceActionsResourceActionCollectionItemOutput) ToGetResourceActio
 	return o
 }
 
-func (o GetResourceActionsResourceActionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details about the recommended action.
 func (o GetResourceActionsResourceActionCollectionItemOutput) Actions() GetResourceActionsResourceActionCollectionItemActionArrayOutput {
 	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) []GetResourceActionsResourceActionCollectionItemAction {
@@ -9052,23 +7545,23 @@ func (o GetResourceActionsResourceActionCollectionItemOutput) Actions() GetResou
 }
 
 // The unique OCID associated with the category.
-func (o GetResourceActionsResourceActionCollectionItemOutput) CategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.CategoryId }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) CategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.CategoryId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetResourceActionsResourceActionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name associated with the compartment.
-func (o GetResourceActionsResourceActionCollectionItemOutput) CompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.CompartmentName }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) CompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.CompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the resource action.
-func (o GetResourceActionsResourceActionCollectionItemOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) float64 { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o GetResourceActionsResourceActionCollectionItemOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *float64 { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
@@ -9079,8 +7572,8 @@ func (o GetResourceActionsResourceActionCollectionItemOutput) ExtendedMetadata()
 }
 
 // The unique OCID associated with the resource action.
-func (o GetResourceActionsResourceActionCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Custom metadata key/value pairs for the resource action.
@@ -9089,57 +7582,57 @@ func (o GetResourceActionsResourceActionCollectionItemOutput) Metadata() pulumi.
 }
 
 // Optional. A filter that returns results that match the name specified.
-func (o GetResourceActionsResourceActionCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the recommendation.
-func (o GetResourceActionsResourceActionCollectionItemOutput) RecommendationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.RecommendationId }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) RecommendationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.RecommendationId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetResourceActionsResourceActionCollectionItemOutput) ResourceActionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.ResourceActionId }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) ResourceActionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.ResourceActionId }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the resource.
-func (o GetResourceActionsResourceActionCollectionItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Optional. A filter that returns results that match the resource type specified.
-func (o GetResourceActionsResourceActionCollectionItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns results that match the lifecycle state specified.
-func (o GetResourceActionsResourceActionCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns recommendations that match the status specified.
-func (o GetResourceActionsResourceActionCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource action details were created, in the format defined by RFC3339.
-func (o GetResourceActionsResourceActionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the resource action entered its current status. The format is defined by RFC3339.
-func (o GetResourceActionsResourceActionCollectionItemOutput) TimeStatusBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.TimeStatusBegin }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) TimeStatusBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.TimeStatusBegin }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the current status will change. The format is defined by RFC3339.
-func (o GetResourceActionsResourceActionCollectionItemOutput) TimeStatusEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.TimeStatusEnd }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) TimeStatusEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.TimeStatusEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource action details were last updated, in the format defined by RFC3339.
-func (o GetResourceActionsResourceActionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetResourceActionsResourceActionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9156,12 +7649,6 @@ func (o GetResourceActionsResourceActionCollectionItemArrayOutput) ToGetResource
 	return o
 }
 
-func (o GetResourceActionsResourceActionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceActionsResourceActionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceActionsResourceActionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceActionsResourceActionCollectionItem {
 		return vs[0].([]GetResourceActionsResourceActionCollectionItem)[vs[1].(int)]
@@ -9170,11 +7657,11 @@ func (o GetResourceActionsResourceActionCollectionItemArrayOutput) Index(i pulum
 
 type GetResourceActionsResourceActionCollectionItemAction struct {
 	// Text describing the recommended action.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The status of the resource action.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The URL path to documentation that explains how to perform the action.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetResourceActionsResourceActionCollectionItemActionInput is an input type that accepts GetResourceActionsResourceActionCollectionItemActionArgs and GetResourceActionsResourceActionCollectionItemActionOutput values.
@@ -9190,11 +7677,11 @@ type GetResourceActionsResourceActionCollectionItemActionInput interface {
 
 type GetResourceActionsResourceActionCollectionItemActionArgs struct {
 	// Text describing the recommended action.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The status of the resource action.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The URL path to documentation that explains how to perform the action.
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetResourceActionsResourceActionCollectionItemActionArgs) ElementType() reflect.Type {
@@ -9207,12 +7694,6 @@ func (i GetResourceActionsResourceActionCollectionItemActionArgs) ToGetResourceA
 
 func (i GetResourceActionsResourceActionCollectionItemActionArgs) ToGetResourceActionsResourceActionCollectionItemActionOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionItemActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemActionOutput)
-}
-
-func (i GetResourceActionsResourceActionCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourceActionsResourceActionCollectionItemActionArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionItemActionArray and GetResourceActionsResourceActionCollectionItemActionArrayOutput values.
@@ -9240,12 +7721,6 @@ func (i GetResourceActionsResourceActionCollectionItemActionArray) ToGetResource
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemActionArrayOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsResourceActionCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsResourceActionCollectionItemActionOutput) ElementType() reflect.Type {
@@ -9260,25 +7735,19 @@ func (o GetResourceActionsResourceActionCollectionItemActionOutput) ToGetResourc
 	return o
 }
 
-func (o GetResourceActionsResourceActionCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Text describing the recommended action.
-func (o GetResourceActionsResourceActionCollectionItemActionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItemAction) string { return v.Description }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemActionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItemAction) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The status of the resource action.
-func (o GetResourceActionsResourceActionCollectionItemActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItemAction) string { return v.Type }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItemAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The URL path to documentation that explains how to perform the action.
-func (o GetResourceActionsResourceActionCollectionItemActionOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItemAction) string { return v.Url }).(pulumi.StringOutput)
+func (o GetResourceActionsResourceActionCollectionItemActionOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItemAction) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type GetResourceActionsResourceActionCollectionItemActionArrayOutput struct{ *pulumi.OutputState }
@@ -9293,12 +7762,6 @@ func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) ToGetRe
 
 func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) ToGetResourceActionsResourceActionCollectionItemActionArrayOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionItemActionArrayOutput {
 	return o
-}
-
-func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetResourceActionsResourceActionCollectionItemActionOutput {

@@ -24,23 +24,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         /// </summary>
-        public readonly string CpeIp;
+        public readonly string? CpeIp;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
         /// </summary>
-        public readonly string DpdMode;
+        public readonly string? DpdMode;
         /// <summary>
         /// DPD timeout in seconds.
         /// </summary>
-        public readonly int DpdTimeoutInSec;
+        public readonly int? DpdTimeoutInSec;
         /// <summary>
         /// Configuration information used by the encryption domain policy.
         /// </summary>
@@ -48,19 +48,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Internet Key Exchange protocol version.
         /// </summary>
-        public readonly string IkeVersion;
+        public readonly string? IkeVersion;
         /// <summary>
         /// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
         /// </summary>
-        public readonly string NatTranslationEnabled;
+        public readonly string? NatTranslationEnabled;
         /// <summary>
         /// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
         /// </summary>
-        public readonly string OracleCanInitiate;
+        public readonly string? OracleCanInitiate;
         /// <summary>
         /// IPSec tunnel details specific to ISAKMP phase one.
         /// </summary>
@@ -72,27 +72,27 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
         /// </summary>
-        public readonly string Routing;
+        public readonly string? Routing;
         /// <summary>
         /// The tunnel's lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The status of the tunnel based on IPSec protocol characteristics.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The date and time the IPSec tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeStatusUpdated;
+        public readonly string? TimeStatusUpdated;
         /// <summary>
         /// The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
         /// </summary>
-        public readonly string VpnIp;
+        public readonly string? VpnIp;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelsIpSecConnectionTunnelResult(
@@ -100,41 +100,41 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoResult> bgpSessionInfos,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string cpeIp,
+            string? cpeIp,
 
-            string displayName,
+            string? displayName,
 
-            string dpdMode,
+            string? dpdMode,
 
-            int dpdTimeoutInSec,
+            int? dpdTimeoutInSec,
 
             ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigResult> encryptionDomainConfigs,
 
-            string id,
+            string? id,
 
-            string ikeVersion,
+            string? ikeVersion,
 
-            string natTranslationEnabled,
+            string? natTranslationEnabled,
 
-            string oracleCanInitiate,
+            string? oracleCanInitiate,
 
             ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailResult> phaseOneDetails,
 
             ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailResult> phaseTwoDetails,
 
-            string routing,
+            string? routing,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeStatusUpdated,
+            string? timeStatusUpdated,
 
-            string vpnIp)
+            string? vpnIp)
         {
             AssociatedVirtualCircuits = associatedVirtualCircuits;
             BgpSessionInfos = bgpSessionInfos;

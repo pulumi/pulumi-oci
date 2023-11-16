@@ -49,17 +49,11 @@ class GetReplicationSchedulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A name of the replication schedule.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetReplicationSchedulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,10 +71,7 @@ class GetReplicationSchedulesResult:
 
     @property
     @pulumi.getter(name="replicationScheduleCollections")
-    def replication_schedule_collections(self) -> Sequence['outputs.GetReplicationSchedulesReplicationScheduleCollectionResult']:
-        """
-        The list of replication_schedule_collection.
-        """
+    def replication_schedule_collections(self) -> Optional[Sequence['outputs.GetReplicationSchedulesReplicationScheduleCollectionResult']]:
         return pulumi.get(self, "replication_schedule_collections")
 
     @property
@@ -91,9 +82,6 @@ class GetReplicationSchedulesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Current state of the replication schedule.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_replication_schedules(compartment_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationSchedulesResult:
     """
-    This data source provides the list of Replication Schedules in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of replication schedules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=var["compartment_id"],
-        display_name=var["replication_schedule_display_name"],
-        replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-        state=var["replication_schedule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str replication_schedule_id: Unique replication schedule identifier in query
-    :param str state: The current state of the replication schedule.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optio
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationSchedulesResult]:
     """
-    This data source provides the list of Replication Schedules in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of replication schedules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=var["compartment_id"],
-        display_name=var["replication_schedule_display_name"],
-        replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-        state=var["replication_schedule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str replication_schedule_id: Unique replication schedule identifier in query
-    :param str state: The current state of the replication schedule.
+    Use this data source to access information about an existing resource.
     """
     ...

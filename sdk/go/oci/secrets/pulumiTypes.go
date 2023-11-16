@@ -9,16 +9,15 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type GetSecretbundleSecretBundleContent struct {
 	// The base64-encoded content of the secret.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// The formatting type of the secret contents.
-	ContentType string `pulumi:"contentType"`
+	ContentType *string `pulumi:"contentType"`
 }
 
 // GetSecretbundleSecretBundleContentInput is an input type that accepts GetSecretbundleSecretBundleContentArgs and GetSecretbundleSecretBundleContentOutput values.
@@ -34,9 +33,9 @@ type GetSecretbundleSecretBundleContentInput interface {
 
 type GetSecretbundleSecretBundleContentArgs struct {
 	// The base64-encoded content of the secret.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// The formatting type of the secret contents.
-	ContentType pulumi.StringInput `pulumi:"contentType"`
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
 }
 
 func (GetSecretbundleSecretBundleContentArgs) ElementType() reflect.Type {
@@ -49,12 +48,6 @@ func (i GetSecretbundleSecretBundleContentArgs) ToGetSecretbundleSecretBundleCon
 
 func (i GetSecretbundleSecretBundleContentArgs) ToGetSecretbundleSecretBundleContentOutputWithContext(ctx context.Context) GetSecretbundleSecretBundleContentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleSecretBundleContentOutput)
-}
-
-func (i GetSecretbundleSecretBundleContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleSecretBundleContent] {
-	return pulumix.Output[GetSecretbundleSecretBundleContent]{
-		OutputState: i.ToGetSecretbundleSecretBundleContentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSecretbundleSecretBundleContentArrayInput is an input type that accepts GetSecretbundleSecretBundleContentArray and GetSecretbundleSecretBundleContentArrayOutput values.
@@ -82,12 +75,6 @@ func (i GetSecretbundleSecretBundleContentArray) ToGetSecretbundleSecretBundleCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleSecretBundleContentArrayOutput)
 }
 
-func (i GetSecretbundleSecretBundleContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleSecretBundleContent] {
-	return pulumix.Output[[]GetSecretbundleSecretBundleContent]{
-		OutputState: i.ToGetSecretbundleSecretBundleContentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretbundleSecretBundleContentOutput struct{ *pulumi.OutputState }
 
 func (GetSecretbundleSecretBundleContentOutput) ElementType() reflect.Type {
@@ -102,20 +89,14 @@ func (o GetSecretbundleSecretBundleContentOutput) ToGetSecretbundleSecretBundleC
 	return o
 }
 
-func (o GetSecretbundleSecretBundleContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleSecretBundleContent] {
-	return pulumix.Output[GetSecretbundleSecretBundleContent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The base64-encoded content of the secret.
-func (o GetSecretbundleSecretBundleContentOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleSecretBundleContent) string { return v.Content }).(pulumi.StringOutput)
+func (o GetSecretbundleSecretBundleContentOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleSecretBundleContent) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // The formatting type of the secret contents.
-func (o GetSecretbundleSecretBundleContentOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleSecretBundleContent) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetSecretbundleSecretBundleContentOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleSecretBundleContent) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 type GetSecretbundleSecretBundleContentArrayOutput struct{ *pulumi.OutputState }
@@ -130,12 +111,6 @@ func (o GetSecretbundleSecretBundleContentArrayOutput) ToGetSecretbundleSecretBu
 
 func (o GetSecretbundleSecretBundleContentArrayOutput) ToGetSecretbundleSecretBundleContentArrayOutputWithContext(ctx context.Context) GetSecretbundleSecretBundleContentArrayOutput {
 	return o
-}
-
-func (o GetSecretbundleSecretBundleContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleSecretBundleContent] {
-	return pulumix.Output[[]GetSecretbundleSecretBundleContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecretbundleSecretBundleContentArrayOutput) Index(i pulumi.IntInput) GetSecretbundleSecretBundleContentOutput {
@@ -179,12 +154,6 @@ func (i GetSecretbundleVersionsFilterArgs) ToGetSecretbundleVersionsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsFilterOutput)
 }
 
-func (i GetSecretbundleVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsFilter] {
-	return pulumix.Output[GetSecretbundleVersionsFilter]{
-		OutputState: i.ToGetSecretbundleVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecretbundleVersionsFilterArrayInput is an input type that accepts GetSecretbundleVersionsFilterArray and GetSecretbundleVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecretbundleVersionsFilterArrayInput` via:
 //
@@ -210,12 +179,6 @@ func (i GetSecretbundleVersionsFilterArray) ToGetSecretbundleVersionsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsFilterArrayOutput)
 }
 
-func (i GetSecretbundleVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsFilter] {
-	return pulumix.Output[[]GetSecretbundleVersionsFilter]{
-		OutputState: i.ToGetSecretbundleVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretbundleVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecretbundleVersionsFilterOutput) ElementType() reflect.Type {
@@ -228,12 +191,6 @@ func (o GetSecretbundleVersionsFilterOutput) ToGetSecretbundleVersionsFilterOutp
 
 func (o GetSecretbundleVersionsFilterOutput) ToGetSecretbundleVersionsFilterOutputWithContext(ctx context.Context) GetSecretbundleVersionsFilterOutput {
 	return o
-}
-
-func (o GetSecretbundleVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsFilter] {
-	return pulumix.Output[GetSecretbundleVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecretbundleVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -262,12 +219,6 @@ func (o GetSecretbundleVersionsFilterArrayOutput) ToGetSecretbundleVersionsFilte
 	return o
 }
 
-func (o GetSecretbundleVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsFilter] {
-	return pulumix.Output[[]GetSecretbundleVersionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecretbundleVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetSecretbundleVersionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretbundleVersionsFilter {
 		return vs[0].([]GetSecretbundleVersionsFilter)[vs[1].(int)]
@@ -276,19 +227,19 @@ func (o GetSecretbundleVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetSe
 
 type GetSecretbundleVersionsSecretBundleVersion struct {
 	// The OCID of the secret.
-	SecretId string `pulumi:"secretId"`
+	SecretId *string `pulumi:"secretId"`
 	// A list of possible rotation states for the secret bundle.
 	Stages []string `pulumi:"stages"`
 	// The time when the secret bundle was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfExpiry string `pulumi:"timeOfExpiry"`
+	TimeOfExpiry *string `pulumi:"timeOfExpiry"`
 	// The version name of the secret bundle, as provided when the secret was created or last rotated.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// The version number of the secret.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetSecretbundleVersionsSecretBundleVersionInput is an input type that accepts GetSecretbundleVersionsSecretBundleVersionArgs and GetSecretbundleVersionsSecretBundleVersionOutput values.
@@ -304,19 +255,19 @@ type GetSecretbundleVersionsSecretBundleVersionInput interface {
 
 type GetSecretbundleVersionsSecretBundleVersionArgs struct {
 	// The OCID of the secret.
-	SecretId pulumi.StringInput `pulumi:"secretId"`
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// A list of possible rotation states for the secret bundle.
 	Stages pulumi.StringArrayInput `pulumi:"stages"`
 	// The time when the secret bundle was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfExpiry pulumi.StringInput `pulumi:"timeOfExpiry"`
+	TimeOfExpiry pulumi.StringPtrInput `pulumi:"timeOfExpiry"`
 	// The version name of the secret bundle, as provided when the secret was created or last rotated.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// The version number of the secret.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetSecretbundleVersionsSecretBundleVersionArgs) ElementType() reflect.Type {
@@ -329,12 +280,6 @@ func (i GetSecretbundleVersionsSecretBundleVersionArgs) ToGetSecretbundleVersion
 
 func (i GetSecretbundleVersionsSecretBundleVersionArgs) ToGetSecretbundleVersionsSecretBundleVersionOutputWithContext(ctx context.Context) GetSecretbundleVersionsSecretBundleVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsSecretBundleVersionOutput)
-}
-
-func (i GetSecretbundleVersionsSecretBundleVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsSecretBundleVersion] {
-	return pulumix.Output[GetSecretbundleVersionsSecretBundleVersion]{
-		OutputState: i.ToGetSecretbundleVersionsSecretBundleVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSecretbundleVersionsSecretBundleVersionArrayInput is an input type that accepts GetSecretbundleVersionsSecretBundleVersionArray and GetSecretbundleVersionsSecretBundleVersionArrayOutput values.
@@ -362,12 +307,6 @@ func (i GetSecretbundleVersionsSecretBundleVersionArray) ToGetSecretbundleVersio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsSecretBundleVersionArrayOutput)
 }
 
-func (i GetSecretbundleVersionsSecretBundleVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion] {
-	return pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion]{
-		OutputState: i.ToGetSecretbundleVersionsSecretBundleVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretbundleVersionsSecretBundleVersionOutput struct{ *pulumi.OutputState }
 
 func (GetSecretbundleVersionsSecretBundleVersionOutput) ElementType() reflect.Type {
@@ -382,15 +321,9 @@ func (o GetSecretbundleVersionsSecretBundleVersionOutput) ToGetSecretbundleVersi
 	return o
 }
 
-func (o GetSecretbundleVersionsSecretBundleVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsSecretBundleVersion] {
-	return pulumix.Output[GetSecretbundleVersionsSecretBundleVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the secret.
-func (o GetSecretbundleVersionsSecretBundleVersionOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) string { return v.SecretId }).(pulumi.StringOutput)
+func (o GetSecretbundleVersionsSecretBundleVersionOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
 // A list of possible rotation states for the secret bundle.
@@ -399,28 +332,28 @@ func (o GetSecretbundleVersionsSecretBundleVersionOutput) Stages() pulumi.String
 }
 
 // The time when the secret bundle was created.
-func (o GetSecretbundleVersionsSecretBundleVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSecretbundleVersionsSecretBundleVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretbundleVersionsSecretBundleVersionOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetSecretbundleVersionsSecretBundleVersionOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretbundleVersionsSecretBundleVersionOutput) TimeOfExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) string { return v.TimeOfExpiry }).(pulumi.StringOutput)
+func (o GetSecretbundleVersionsSecretBundleVersionOutput) TimeOfExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) *string { return v.TimeOfExpiry }).(pulumi.StringPtrOutput)
 }
 
 // The version name of the secret bundle, as provided when the secret was created or last rotated.
-func (o GetSecretbundleVersionsSecretBundleVersionOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetSecretbundleVersionsSecretBundleVersionOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the secret.
-func (o GetSecretbundleVersionsSecretBundleVersionOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetSecretbundleVersionsSecretBundleVersionOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleVersionsSecretBundleVersion) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSecretbundleVersionsSecretBundleVersionArrayOutput struct{ *pulumi.OutputState }
@@ -435,12 +368,6 @@ func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) ToGetSecretbundle
 
 func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) ToGetSecretbundleVersionsSecretBundleVersionArrayOutputWithContext(ctx context.Context) GetSecretbundleVersionsSecretBundleVersionArrayOutput {
 	return o
-}
-
-func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion] {
-	return pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) Index(i pulumi.IntInput) GetSecretbundleVersionsSecretBundleVersionOutput {

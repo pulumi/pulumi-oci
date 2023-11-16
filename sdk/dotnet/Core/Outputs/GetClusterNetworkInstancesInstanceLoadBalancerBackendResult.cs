@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The health of the backend as observed by the load balancer.
         /// </summary>
-        public readonly string BackendHealthStatus;
+        public readonly string? BackendHealthStatus;
         /// <summary>
         /// The name of the backend in the backend set.
         /// </summary>
-        public readonly string BackendName;
+        public readonly string? BackendName;
         /// <summary>
         /// The name of the backend set on the load balancer.
         /// </summary>
-        public readonly string BackendSetName;
+        public readonly string? BackendSetName;
         /// <summary>
         /// The OCID of the load balancer attached to the instance pool.
         /// </summary>
-        public readonly string LoadBalancerId;
+        public readonly string? LoadBalancerId;
         /// <summary>
         /// The current state of the instance pool instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetClusterNetworkInstancesInstanceLoadBalancerBackendResult(
-            string backendHealthStatus,
+            string? backendHealthStatus,
 
-            string backendName,
+            string? backendName,
 
-            string backendSetName,
+            string? backendSetName,
 
-            string loadBalancerId,
+            string? loadBalancerId,
 
-            string state)
+            string? state)
         {
             BackendHealthStatus = backendHealthStatus;
             BackendName = backendName;

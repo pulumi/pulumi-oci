@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -82,14 +83,14 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="appSuiteName", refs={String.class}, tree="[0]")
-    private Output<String> appSuiteName;
+    private Output</* @Nullable */ String> appSuiteName;
 
     /**
      * @return (Updatable) The application suite name identifying a collection of applications. It&#39;s useful only if maintaining a sensitive data model for a suite of applications.
      * 
      */
-    public Output<String> appSuiteName() {
-        return this.appSuiteName;
+    public Output<Optional<String>> appSuiteName() {
+        return Codegen.optional(this.appSuiteName);
     }
     /**
      * (Updatable) The OCID of the compartment where the sensitive data model should be created.
@@ -110,168 +111,168 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the sensitive data model.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the sensitive data model.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the sensitive data model. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the sensitive data model. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It&#39;s disabled by default and should be used only if there is a need to identify application-level relationships.
      * 
      */
     @Export(name="isAppDefinedRelationDiscoveryEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAppDefinedRelationDiscoveryEnabled;
+    private Output</* @Nullable */ Boolean> isAppDefinedRelationDiscoveryEnabled;
 
     /**
      * @return (Updatable) Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It&#39;s disabled by default and should be used only if there is a need to identify application-level relationships.
      * 
      */
-    public Output<Boolean> isAppDefinedRelationDiscoveryEnabled() {
-        return this.isAppDefinedRelationDiscoveryEnabled;
+    public Output<Optional<Boolean>> isAppDefinedRelationDiscoveryEnabled() {
+        return Codegen.optional(this.isAppDefinedRelationDiscoveryEnabled);
     }
     /**
      * Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
     @Export(name="isIncludeAllSchemas", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIncludeAllSchemas;
+    private Output</* @Nullable */ Boolean> isIncludeAllSchemas;
 
     /**
      * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
-    public Output<Boolean> isIncludeAllSchemas() {
-        return this.isIncludeAllSchemas;
+    public Output<Optional<Boolean>> isIncludeAllSchemas() {
+        return Codegen.optional(this.isIncludeAllSchemas);
     }
     /**
      * Indicates if all the existing sensitive types should be used by data discovery jobs. If it&#39;s set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
      * 
      */
     @Export(name="isIncludeAllSensitiveTypes", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIncludeAllSensitiveTypes;
+    private Output</* @Nullable */ Boolean> isIncludeAllSensitiveTypes;
 
     /**
      * @return Indicates if all the existing sensitive types should be used by data discovery jobs. If it&#39;s set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
      * 
      */
-    public Output<Boolean> isIncludeAllSensitiveTypes() {
-        return this.isIncludeAllSensitiveTypes;
+    public Output<Optional<Boolean>> isIncludeAllSensitiveTypes() {
+        return Codegen.optional(this.isIncludeAllSensitiveTypes);
     }
     /**
      * (Updatable) Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it&#39;s disabled by default and should be used only if it&#39;s acceptable to store sample data in Data Safe&#39;s repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      * 
      */
     @Export(name="isSampleDataCollectionEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSampleDataCollectionEnabled;
+    private Output</* @Nullable */ Boolean> isSampleDataCollectionEnabled;
 
     /**
      * @return (Updatable) Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it&#39;s disabled by default and should be used only if it&#39;s acceptable to store sample data in Data Safe&#39;s repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      * 
      */
-    public Output<Boolean> isSampleDataCollectionEnabled() {
-        return this.isSampleDataCollectionEnabled;
+    public Output<Optional<Boolean>> isSampleDataCollectionEnabled() {
+        return Codegen.optional(this.isSampleDataCollectionEnabled);
     }
     /**
      * (Updatable) The schemas to be scanned by data discovery jobs.
      * 
      */
     @Export(name="schemasForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> schemasForDiscoveries;
+    private Output</* @Nullable */ List<String>> schemasForDiscoveries;
 
     /**
      * @return (Updatable) The schemas to be scanned by data discovery jobs.
      * 
      */
-    public Output<List<String>> schemasForDiscoveries() {
-        return this.schemasForDiscoveries;
+    public Output<Optional<List<String>>> schemasForDiscoveries() {
+        return Codegen.optional(this.schemasForDiscoveries);
     }
     /**
      * (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
      * 
      */
     @Export(name="sensitiveTypeIdsForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> sensitiveTypeIdsForDiscoveries;
+    private Output</* @Nullable */ List<String>> sensitiveTypeIdsForDiscoveries;
 
     /**
      * @return (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
      * 
      */
-    public Output<List<String>> sensitiveTypeIdsForDiscoveries() {
-        return this.sensitiveTypeIdsForDiscoveries;
+    public Output<Optional<List<String>>> sensitiveTypeIdsForDiscoveries() {
+        return Codegen.optional(this.sensitiveTypeIdsForDiscoveries);
     }
     /**
      * The current state of the sensitive data model.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the sensitive data model.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
@@ -298,28 +299,28 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

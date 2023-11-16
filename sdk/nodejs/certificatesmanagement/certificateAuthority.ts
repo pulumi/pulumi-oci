@@ -66,15 +66,15 @@ export class CertificateAuthority extends pulumi.CustomResource {
     /**
      * (Updatable) The origin of the CA.
      */
-    public /*out*/ readonly configType!: pulumi.Output<string>;
+    public /*out*/ readonly configType!: pulumi.Output<string | undefined>;
     /**
      * The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      */
-    public /*out*/ readonly currentVersions!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCurrentVersion[]>;
+    public /*out*/ readonly currentVersions!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCurrentVersion[] | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A brief description of the CA.
      */
@@ -82,11 +82,11 @@ export class CertificateAuthority extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the private CA.
      */
-    public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string>;
+    public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      */
@@ -94,7 +94,7 @@ export class CertificateAuthority extends pulumi.CustomResource {
     /**
      * Additional information about the current CA lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      *
@@ -106,23 +106,23 @@ export class CertificateAuthority extends pulumi.CustomResource {
     /**
      * The algorithm used to sign public key certificates that the CA issues.
      */
-    public /*out*/ readonly signingAlgorithm!: pulumi.Output<string>;
+    public /*out*/ readonly signingAlgorithm!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the certificate authority.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    public /*out*/ readonly subjects!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthoritySubject[]>;
+    public /*out*/ readonly subjects!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthoritySubject[] | undefined>;
     /**
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CertificateAuthority resource with the given unique name, arguments, and options.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
@@ -84,8 +83,8 @@ type GetDbVersionsResult struct {
 	DbVersions []GetDbVersionsDbVersion `pulumi:"dbVersions"`
 	Filters    []GetDbVersionsFilter    `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                               string `pulumi:"id"`
-	IsDatabaseSoftwareImageSupported *bool  `pulumi:"isDatabaseSoftwareImageSupported"`
+	Id                               *string `pulumi:"id"`
+	IsDatabaseSoftwareImageSupported *bool   `pulumi:"isDatabaseSoftwareImageSupported"`
 	// True if this version of the Oracle Database software is supported for Upgrade.
 	IsUpgradeSupported *bool   `pulumi:"isUpgradeSupported"`
 	StorageManagement  *string `pulumi:"storageManagement"`
@@ -142,12 +141,6 @@ func (o GetDbVersionsResultOutput) ToGetDbVersionsResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetDbVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbVersionsResult] {
-	return pulumix.Output[GetDbVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDbVersionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbVersionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -170,8 +163,8 @@ func (o GetDbVersionsResultOutput) Filters() GetDbVersionsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDbVersionsResultOutput) IsDatabaseSoftwareImageSupported() pulumi.BoolPtrOutput {

@@ -45,32 +45,32 @@ export interface GetTenancyResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the tenancy.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The region key for the tenancy's home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`
      */
-    readonly homeRegionKey: string;
+    readonly homeRegionKey?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the tenancy.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly tenancyId: string;
     /**
      * Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
      */
-    readonly upiIdcsCompatibilityLayerEndpoint: string;
+    readonly upiIdcsCompatibilityLayerEndpoint?: string;
 }
 /**
  * This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.

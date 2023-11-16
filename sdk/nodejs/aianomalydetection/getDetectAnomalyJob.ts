@@ -47,72 +47,72 @@ export interface GetDetectAnomalyJobResult {
     /**
      * The OCID of the compartment that starts the job.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Detect anomaly job description.
      */
-    readonly description: string;
+    readonly description?: string;
     readonly detectAnomalyJobId: string;
     /**
      * Detect anomaly job display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Id of the job.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Input details for detect anomaly job.
      */
-    readonly inputDetails: outputs.AiAnomalyDetection.GetDetectAnomalyJobInputDetail[];
+    readonly inputDetails?: outputs.AiAnomalyDetection.GetDetectAnomalyJobInputDetail[];
     /**
      * The current state details of the batch document job.
      */
-    readonly lifecycleStateDetails: string;
+    readonly lifecycleStateDetails?: string;
     /**
      * The OCID of the trained model.
      */
-    readonly modelId: string;
+    readonly modelId?: string;
     /**
      * Output details for detect anomaly job.
      */
-    readonly outputDetails: outputs.AiAnomalyDetection.GetDetectAnomalyJobOutputDetail[];
+    readonly outputDetails?: outputs.AiAnomalyDetection.GetDetectAnomalyJobOutputDetail[];
     /**
      * The OCID of the project.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
      */
-    readonly sensitivity: number;
+    readonly sensitivity?: number;
     /**
      * The current state of the batch document job.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Job accepted time
      */
-    readonly timeAccepted: string;
+    readonly timeAccepted?: string;
     /**
      * Job finished time
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * Job started time
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
 }
 /**
  * This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.

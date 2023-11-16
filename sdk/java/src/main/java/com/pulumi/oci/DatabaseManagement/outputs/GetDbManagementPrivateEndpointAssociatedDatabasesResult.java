@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointA
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
      * @return The list of associated_database_collection.
      * 
      */
-    private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections;
+    private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
@@ -29,7 +30,7 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDbManagementPrivateEndpointAssociatedDatabasesResult() {}
     /**
@@ -37,7 +38,7 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
      * 
      */
     public List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections() {
-        return this.associatedDatabaseCollections;
+        return this.associatedDatabaseCollections == null ? List.of() : this.associatedDatabaseCollections;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -56,8 +57,8 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -69,11 +70,11 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections;
+        private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections;
         private String compartmentId;
         private String dbManagementPrivateEndpointId;
         private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,8 +86,8 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
         }
 
         @CustomType.Setter
-        public Builder associatedDatabaseCollections(List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections) {
-            this.associatedDatabaseCollections = Objects.requireNonNull(associatedDatabaseCollections);
+        public Builder associatedDatabaseCollections(@Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections) {
+            this.associatedDatabaseCollections = associatedDatabaseCollections;
             return this;
         }
         public Builder associatedDatabaseCollections(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection... associatedDatabaseCollections) {
@@ -111,8 +112,8 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDbManagementPrivateEndpointAssociatedDatabasesResult build() {

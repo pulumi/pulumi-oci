@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfo;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildRunSource {
@@ -15,51 +17,51 @@ public final class GetBuildRunBuildRunSource {
      * @return The DevOps code repository identifier that invoked the build run.
      * 
      */
-    private String repositoryId;
+    private @Nullable String repositoryId;
     /**
      * @return The source from which the build run is triggered.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
     /**
      * @return The trigger that invoked the build run.
      * 
      */
-    private String triggerId;
+    private @Nullable String triggerId;
     /**
      * @return Trigger details that need to be used for the BuildRun
      * 
      */
-    private List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos;
+    private @Nullable List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos;
 
     private GetBuildRunBuildRunSource() {}
     /**
      * @return The DevOps code repository identifier that invoked the build run.
      * 
      */
-    public String repositoryId() {
-        return this.repositoryId;
+    public Optional<String> repositoryId() {
+        return Optional.ofNullable(this.repositoryId);
     }
     /**
      * @return The source from which the build run is triggered.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
     /**
      * @return The trigger that invoked the build run.
      * 
      */
-    public String triggerId() {
-        return this.triggerId;
+    public Optional<String> triggerId() {
+        return Optional.ofNullable(this.triggerId);
     }
     /**
      * @return Trigger details that need to be used for the BuildRun
      * 
      */
     public List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos() {
-        return this.triggerInfos;
+        return this.triggerInfos == null ? List.of() : this.triggerInfos;
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetBuildRunBuildRunSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String repositoryId;
-        private String sourceType;
-        private String triggerId;
-        private List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos;
+        private @Nullable String repositoryId;
+        private @Nullable String sourceType;
+        private @Nullable String triggerId;
+        private @Nullable List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos;
         public Builder() {}
         public Builder(GetBuildRunBuildRunSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetBuildRunBuildRunSource {
         }
 
         @CustomType.Setter
-        public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+        public Builder repositoryId(@Nullable String repositoryId) {
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerId(String triggerId) {
-            this.triggerId = Objects.requireNonNull(triggerId);
+        public Builder triggerId(@Nullable String triggerId) {
+            this.triggerId = triggerId;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerInfos(List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos) {
-            this.triggerInfos = Objects.requireNonNull(triggerInfos);
+        public Builder triggerInfos(@Nullable List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos) {
+            this.triggerInfos = triggerInfos;
             return this;
         }
         public Builder triggerInfos(GetBuildRunBuildRunSourceTriggerInfo... triggerInfos) {

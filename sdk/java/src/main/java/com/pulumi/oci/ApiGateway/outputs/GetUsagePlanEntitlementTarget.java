@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUsagePlanEntitlementTarget {
@@ -13,15 +15,15 @@ public final class GetUsagePlanEntitlementTarget {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
      * 
      */
-    private String deploymentId;
+    private @Nullable String deploymentId;
 
     private GetUsagePlanEntitlementTarget() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
      * 
      */
-    public String deploymentId() {
-        return this.deploymentId;
+    public Optional<String> deploymentId() {
+        return Optional.ofNullable(this.deploymentId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetUsagePlanEntitlementTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deploymentId;
+        private @Nullable String deploymentId;
         public Builder() {}
         public Builder(GetUsagePlanEntitlementTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetUsagePlanEntitlementTarget {
         }
 
         @CustomType.Setter
-        public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+        public Builder deploymentId(@Nullable String deploymentId) {
+            this.deploymentId = deploymentId;
             return this;
         }
         public GetUsagePlanEntitlementTarget build() {

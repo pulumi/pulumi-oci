@@ -29,7 +29,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// The ordered list of routing rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult> Rules;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetLoadBalancerRoutingPoliciesRoutingPolicyResult(
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             ImmutableArray<Outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult> rules,
 
-            string state)
+            string? state)
         {
             ConditionLanguageVersion = conditionLanguageVersion;
             LoadBalancerId = loadBalancerId;

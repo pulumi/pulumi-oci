@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.
@@ -93,7 +92,7 @@ type IdentityProvider struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// (Updatable) The XML that contains the information required for federating.
 	Metadata pulumi.StringOutput `pulumi:"metadata"`
 	// (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
@@ -108,13 +107,13 @@ type IdentityProvider struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// The URL to redirect federated users to for authentication with the identity provider.
-	RedirectUrl pulumi.StringOutput `pulumi:"redirectUrl"`
+	RedirectUrl pulumi.StringPtrOutput `pulumi:"redirectUrl"`
 	// The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
-	SigningCertificate pulumi.StringOutput `pulumi:"signingCertificate"`
+	SigningCertificate pulumi.StringPtrOutput `pulumi:"signingCertificate"`
 	// The current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewIdentityProvider registers a new resource with the given unique name, arguments, and options.
@@ -316,12 +315,6 @@ func (i *IdentityProvider) ToIdentityProviderOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IdentityProviderOutput)
 }
 
-func (i *IdentityProvider) ToOutput(ctx context.Context) pulumix.Output[*IdentityProvider] {
-	return pulumix.Output[*IdentityProvider]{
-		OutputState: i.ToIdentityProviderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IdentityProviderArrayInput is an input type that accepts IdentityProviderArray and IdentityProviderArrayOutput values.
 // You can construct a concrete instance of `IdentityProviderArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i IdentityProviderArray) ToIdentityProviderArrayOutput() IdentityProviderA
 
 func (i IdentityProviderArray) ToIdentityProviderArrayOutputWithContext(ctx context.Context) IdentityProviderArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IdentityProviderArrayOutput)
-}
-
-func (i IdentityProviderArray) ToOutput(ctx context.Context) pulumix.Output[[]*IdentityProvider] {
-	return pulumix.Output[[]*IdentityProvider]{
-		OutputState: i.ToIdentityProviderArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IdentityProviderMapInput is an input type that accepts IdentityProviderMap and IdentityProviderMapOutput values.
@@ -378,12 +365,6 @@ func (i IdentityProviderMap) ToIdentityProviderMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(IdentityProviderMapOutput)
 }
 
-func (i IdentityProviderMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IdentityProvider] {
-	return pulumix.Output[map[string]*IdentityProvider]{
-		OutputState: i.ToIdentityProviderMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IdentityProviderOutput struct{ *pulumi.OutputState }
 
 func (IdentityProviderOutput) ElementType() reflect.Type {
@@ -396,12 +377,6 @@ func (o IdentityProviderOutput) ToIdentityProviderOutput() IdentityProviderOutpu
 
 func (o IdentityProviderOutput) ToIdentityProviderOutputWithContext(ctx context.Context) IdentityProviderOutput {
 	return o
-}
-
-func (o IdentityProviderOutput) ToOutput(ctx context.Context) pulumix.Output[*IdentityProvider] {
-	return pulumix.Output[*IdentityProvider]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of your tenancy.
@@ -430,8 +405,8 @@ func (o IdentityProviderOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o IdentityProviderOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o IdentityProviderOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The XML that contains the information required for federating.
@@ -463,23 +438,23 @@ func (o IdentityProviderOutput) Protocol() pulumi.StringOutput {
 }
 
 // The URL to redirect federated users to for authentication with the identity provider.
-func (o IdentityProviderOutput) RedirectUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.StringOutput { return v.RedirectUrl }).(pulumi.StringOutput)
+func (o IdentityProviderOutput) RedirectUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringPtrOutput { return v.RedirectUrl }).(pulumi.StringPtrOutput)
 }
 
 // The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
-func (o IdentityProviderOutput) SigningCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.StringOutput { return v.SigningCertificate }).(pulumi.StringOutput)
+func (o IdentityProviderOutput) SigningCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringPtrOutput { return v.SigningCertificate }).(pulumi.StringPtrOutput)
 }
 
 // The current state.
-func (o IdentityProviderOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o IdentityProviderOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o IdentityProviderOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o IdentityProviderOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type IdentityProviderArrayOutput struct{ *pulumi.OutputState }
@@ -494,12 +469,6 @@ func (o IdentityProviderArrayOutput) ToIdentityProviderArrayOutput() IdentityPro
 
 func (o IdentityProviderArrayOutput) ToIdentityProviderArrayOutputWithContext(ctx context.Context) IdentityProviderArrayOutput {
 	return o
-}
-
-func (o IdentityProviderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IdentityProvider] {
-	return pulumix.Output[[]*IdentityProvider]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IdentityProviderArrayOutput) Index(i pulumi.IntInput) IdentityProviderOutput {
@@ -520,12 +489,6 @@ func (o IdentityProviderMapOutput) ToIdentityProviderMapOutput() IdentityProvide
 
 func (o IdentityProviderMapOutput) ToIdentityProviderMapOutputWithContext(ctx context.Context) IdentityProviderMapOutput {
 	return o
-}
-
-func (o IdentityProviderMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IdentityProvider] {
-	return pulumix.Output[map[string]*IdentityProvider]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IdentityProviderMapOutput) MapIndex(k pulumi.StringInput) IdentityProviderOutput {

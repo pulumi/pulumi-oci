@@ -15,6 +15,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,28 +85,28 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="assignerId", refs={String.class}, tree="[0]")
-    private Output<String> assignerId;
+    private Output</* @Nullable */ String> assignerId;
 
     /**
      * @return The OCID of the user who created this operator control assignment.
      * 
      */
-    public Output<String> assignerId() {
-        return this.assignerId;
+    public Output<Optional<String>> assignerId() {
+        return Codegen.optional(this.assignerId);
     }
     /**
      * (Updatable) Comment about the assignment of the operator control to this target resource.
      * 
      */
     @Export(name="comment", refs={String.class}, tree="[0]")
-    private Output<String> comment;
+    private Output</* @Nullable */ String> comment;
 
     /**
      * @return (Updatable) Comment about the assignment of the operator control to this target resource.
      * 
      */
-    public Output<String> comment() {
-        return this.comment;
+    public Output<Optional<String>> comment() {
+        return Codegen.optional(this.comment);
     }
     /**
      * (Updatable) The OCID of the compartment that contains the operator control assignment.
@@ -126,98 +127,98 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * description containing reason for releasing of OperatorControl.
      * 
      */
     @Export(name="detachmentDescription", refs={String.class}, tree="[0]")
-    private Output<String> detachmentDescription;
+    private Output</* @Nullable */ String> detachmentDescription;
 
     /**
      * @return description containing reason for releasing of OperatorControl.
      * 
      */
-    public Output<String> detachmentDescription() {
-        return this.detachmentDescription;
+    public Output<Optional<String>> detachmentDescription() {
+        return Codegen.optional(this.detachmentDescription);
     }
     /**
      * The code identifying the error occurred during Assignment operation.
      * 
      */
     @Export(name="errorCode", refs={Integer.class}, tree="[0]")
-    private Output<Integer> errorCode;
+    private Output</* @Nullable */ Integer> errorCode;
 
     /**
      * @return The code identifying the error occurred during Assignment operation.
      * 
      */
-    public Output<Integer> errorCode() {
-        return this.errorCode;
+    public Output<Optional<Integer>> errorCode() {
+        return Codegen.optional(this.errorCode);
     }
     /**
      * The message describing the error occurred during Assignment operation.
      * 
      */
     @Export(name="errorMessage", refs={String.class}, tree="[0]")
-    private Output<String> errorMessage;
+    private Output</* @Nullable */ String> errorMessage;
 
     /**
      * @return The message describing the error occurred during Assignment operation.
      * 
      */
-    public Output<String> errorMessage() {
-        return this.errorMessage;
+    public Output<Optional<String>> errorMessage() {
+        return Codegen.optional(this.errorMessage);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The boolean if true would autoApprove during maintenance.
      * 
      */
     @Export(name="isAutoApproveDuringMaintenance", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoApproveDuringMaintenance;
+    private Output</* @Nullable */ Boolean> isAutoApproveDuringMaintenance;
 
     /**
      * @return (Updatable) The boolean if true would autoApprove during maintenance.
      * 
      */
-    public Output<Boolean> isAutoApproveDuringMaintenance() {
-        return this.isAutoApproveDuringMaintenance;
+    public Output<Optional<Boolean>> isAutoApproveDuringMaintenance() {
+        return Codegen.optional(this.isAutoApproveDuringMaintenance);
     }
     /**
      * Whether the assignment is a default assignment.
      * 
      */
     @Export(name="isDefaultAssignment", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDefaultAssignment;
+    private Output</* @Nullable */ Boolean> isDefaultAssignment;
 
     /**
      * @return Whether the assignment is a default assignment.
      * 
      */
-    public Output<Boolean> isDefaultAssignment() {
-        return this.isDefaultAssignment;
+    public Output<Optional<Boolean>> isDefaultAssignment() {
+        return Codegen.optional(this.isDefaultAssignment);
     }
     /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
@@ -238,28 +239,28 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="isLogForwarded", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLogForwarded;
+    private Output</* @Nullable */ Boolean> isLogForwarded;
 
     /**
      * @return (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      * 
      */
-    public Output<Boolean> isLogForwarded() {
-        return this.isLogForwarded;
+    public Output<Optional<Boolean>> isLogForwarded() {
+        return Codegen.optional(this.isLogForwarded);
     }
     /**
      * More in detail about the lifeCycleState.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return More in detail about the lifeCycleState.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The OCID of the operator control that is being assigned to a target resource.
@@ -280,42 +281,42 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="remoteSyslogServerAddress", refs={String.class}, tree="[0]")
-    private Output<String> remoteSyslogServerAddress;
+    private Output</* @Nullable */ String> remoteSyslogServerAddress;
 
     /**
      * @return (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
      * 
      */
-    public Output<String> remoteSyslogServerAddress() {
-        return this.remoteSyslogServerAddress;
+    public Output<Optional<String>> remoteSyslogServerAddress() {
+        return Codegen.optional(this.remoteSyslogServerAddress);
     }
     /**
      * (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      * 
      */
     @Export(name="remoteSyslogServerCaCert", refs={String.class}, tree="[0]")
-    private Output<String> remoteSyslogServerCaCert;
+    private Output</* @Nullable */ String> remoteSyslogServerCaCert;
 
     /**
      * @return (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      * 
      */
-    public Output<String> remoteSyslogServerCaCert() {
-        return this.remoteSyslogServerCaCert;
+    public Output<Optional<String>> remoteSyslogServerCaCert() {
+        return Codegen.optional(this.remoteSyslogServerCaCert);
     }
     /**
      * (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      * 
      */
     @Export(name="remoteSyslogServerPort", refs={Integer.class}, tree="[0]")
-    private Output<Integer> remoteSyslogServerPort;
+    private Output</* @Nullable */ Integer> remoteSyslogServerPort;
 
     /**
      * @return (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      * 
      */
-    public Output<Integer> remoteSyslogServerPort() {
-        return this.remoteSyslogServerPort;
+    public Output<Optional<Integer>> remoteSyslogServerPort() {
+        return Codegen.optional(this.remoteSyslogServerPort);
     }
     /**
      * The OCID of the compartment that contains the target resource.
@@ -378,28 +379,28 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifcycle state of the OperatorControl.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeAssignmentFrom", refs={String.class}, tree="[0]")
-    private Output<String> timeAssignmentFrom;
+    private Output</* @Nullable */ String> timeAssignmentFrom;
 
     /**
      * @return (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public Output<String> timeAssignmentFrom() {
-        return this.timeAssignmentFrom;
+    public Output<Optional<String>> timeAssignmentFrom() {
+        return Codegen.optional(this.timeAssignmentFrom);
     }
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
@@ -409,7 +410,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="timeAssignmentTo", refs={String.class}, tree="[0]")
-    private Output<String> timeAssignmentTo;
+    private Output</* @Nullable */ String> timeAssignmentTo;
 
     /**
      * @return (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
@@ -418,50 +419,50 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeAssignmentTo() {
-        return this.timeAssignmentTo;
+    public Output<Optional<String>> timeAssignmentTo() {
+        return Codegen.optional(this.timeAssignmentTo);
     }
     /**
      * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeOfAssignment", refs={String.class}, tree="[0]")
-    private Output<String> timeOfAssignment;
+    private Output</* @Nullable */ String> timeOfAssignment;
 
     /**
      * @return Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public Output<String> timeOfAssignment() {
-        return this.timeOfAssignment;
+    public Output<Optional<String>> timeOfAssignment() {
+        return Codegen.optional(this.timeOfAssignment);
     }
     /**
      * Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
-    private Output<String> timeOfDeletion;
+    private Output</* @Nullable */ String> timeOfDeletion;
 
     /**
      * @return Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public Output<String> timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Output<Optional<String>> timeOfDeletion() {
+        return Codegen.optional(this.timeOfDeletion);
     }
     /**
      * User id who released the operatorControl.
      * 
      */
     @Export(name="unassignerId", refs={String.class}, tree="[0]")
-    private Output<String> unassignerId;
+    private Output</* @Nullable */ String> unassignerId;
 
     /**
      * @return User id who released the operatorControl.
      * 
      */
-    public Output<String> unassignerId() {
-        return this.unassignerId;
+    public Output<Optional<String>> unassignerId() {
+        return Codegen.optional(this.unassignerId);
     }
 
     /**

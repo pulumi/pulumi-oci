@@ -16,23 +16,23 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// The Object Storage bucket name.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The Object Storage namespace.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The Object Storage object name.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
 
         [OutputConstructor]
         private GetProcessorJobInputLocationObjectLocationResult(
-            string bucket,
+            string? bucket,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object)
+            string? @object)
         {
             Bucket = bucket;
             Namespace = @namespace;

@@ -83,7 +83,7 @@ export interface GetPrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the user who created the resource.
      */
@@ -91,7 +91,7 @@ export interface GetPrivateEndpointsResult {
     /**
      * The list of private_endpoint_collection.
      */
-    readonly privateEndpointCollections: outputs.DataFlow.GetPrivateEndpointsPrivateEndpointCollection[];
+    readonly privateEndpointCollections?: outputs.DataFlow.GetPrivateEndpointsPrivateEndpointCollection[];
     /**
      * The current state of this private endpoint.
      */

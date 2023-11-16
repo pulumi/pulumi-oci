@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The type descriminator.
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
         /// <summary>
         /// The logs for this Logging source.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
-        public readonly string StreamId;
+        public readonly string? StreamId;
 
         [OutputConstructor]
         private GetServiceConnectorSourceResult(
             ImmutableArray<Outputs.GetServiceConnectorSourceCursorResult> cursors,
 
-            string kind,
+            string? kind,
 
             ImmutableArray<Outputs.GetServiceConnectorSourceLogSourceResult> logSources,
 
             ImmutableArray<Outputs.GetServiceConnectorSourceMonitoringSourceResult> monitoringSources,
 
-            string streamId)
+            string? streamId)
         {
             Cursors = cursors;
             Kind = kind;

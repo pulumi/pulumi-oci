@@ -27,18 +27,6 @@ class WorkspaceProjectArgs:
                  registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None):
         """
         The set of arguments for constructing a WorkspaceProject resource.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input['WorkspaceProjectRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         """
         pulumi.set(__self__, "identifier", identifier)
         pulumi.set(__self__, "workspace_id", workspace_id)
@@ -60,9 +48,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
@@ -72,13 +57,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Input[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -88,9 +66,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user defined description for the project.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -100,9 +75,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -112,9 +84,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The model version of an object.
-        """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
@@ -124,9 +93,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -136,9 +102,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter(name="objectStatus")
     def object_status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
@@ -157,9 +120,6 @@ class WorkspaceProjectArgs:
     @property
     @pulumi.getter(name="registryMetadata")
     def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']]:
-        """
-        (Updatable) Information about the object and its parent.
-        """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
@@ -186,23 +146,6 @@ class _WorkspaceProjectState:
                  workspace_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceProject resources.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: The type of the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input['WorkspaceProjectRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -236,9 +179,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user defined description for the project.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -248,9 +188,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
@@ -260,9 +197,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -272,9 +206,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="keyMap")
     def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
@@ -284,9 +215,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]]:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -296,9 +224,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the object.
-        """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
@@ -308,9 +233,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The model version of an object.
-        """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
@@ -320,9 +242,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -332,9 +251,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="objectStatus")
     def object_status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
@@ -344,9 +260,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version of the object that is used to track changes in the object instance.
-        """
         return pulumi.get(self, "object_version")
 
     @object_version.setter
@@ -356,9 +269,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]]]:
-        """
-        A reference to the object's parent.
-        """
         return pulumi.get(self, "parent_reves")
 
     @parent_reves.setter
@@ -377,9 +287,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="registryMetadata")
     def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']]:
-        """
-        (Updatable) Information about the object and its parent.
-        """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
@@ -389,13 +296,6 @@ class _WorkspaceProjectState:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -419,54 +319,9 @@ class WorkspaceProject(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_project = oci.data_integration.WorkspaceProject("testWorkspaceProject",
-            identifier=var["workspace_project_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            description=var["workspace_project_description"],
-            key=var["workspace_project_key"],
-            model_version=var["workspace_project_model_version"],
-            object_status=var["workspace_project_object_status"],
-            registry_metadata=oci.data_integration.WorkspaceProjectRegistryMetadataArgs(
-                aggregator_key=var["workspace_project_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_project_registry_metadata_is_favorite"],
-                key=var["workspace_project_registry_metadata_key"],
-                labels=var["workspace_project_registry_metadata_labels"],
-                registry_version=var["workspace_project_registry_metadata_registry_version"],
-            ))
-        ```
-
-        ## Import
-
-        WorkspaceProjects can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
-        ```
-
+        Create a WorkspaceProject resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[pulumi.InputType['WorkspaceProjectRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -475,40 +330,7 @@ class WorkspaceProject(pulumi.CustomResource):
                  args: WorkspaceProjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_project = oci.data_integration.WorkspaceProject("testWorkspaceProject",
-            identifier=var["workspace_project_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            description=var["workspace_project_description"],
-            key=var["workspace_project_key"],
-            model_version=var["workspace_project_model_version"],
-            object_status=var["workspace_project_object_status"],
-            registry_metadata=oci.data_integration.WorkspaceProjectRegistryMetadataArgs(
-                aggregator_key=var["workspace_project_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_project_registry_metadata_is_favorite"],
-                key=var["workspace_project_registry_metadata_key"],
-                labels=var["workspace_project_registry_metadata_labels"],
-                registry_version=var["workspace_project_registry_metadata_registry_version"],
-            ))
-        ```
-
-        ## Import
-
-        WorkspaceProjects can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
-        ```
-
+        Create a WorkspaceProject resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param WorkspaceProjectArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -591,23 +413,6 @@ class WorkspaceProject(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceProjectMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: The type of the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceProjectParentRefArgs']]]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceProjectRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -631,114 +436,71 @@ class WorkspaceProject(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user defined description for the project.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The identifying key for the object.
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
+    def key_map(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "key_map")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Output[Sequence['outputs.WorkspaceProjectMetadata']]:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
+    def metadatas(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceProjectMetadata']]]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> pulumi.Output[str]:
-        """
-        The type of the object.
-        """
+    def model_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The model version of an object.
-        """
+    def model_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
+    def object_status(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "object_status")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> pulumi.Output[int]:
-        """
-        The version of the object that is used to track changes in the object instance.
-        """
+    def object_version(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> pulumi.Output[Sequence['outputs.WorkspaceProjectParentRef']]:
-        """
-        A reference to the object's parent.
-        """
+    def parent_reves(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceProjectParentRef']]]:
         return pulumi.get(self, "parent_reves")
 
     @property
     @pulumi.getter(name="projectKey")
-    def project_key(self) -> pulumi.Output[str]:
+    def project_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "project_key")
 
     @property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> pulumi.Output['outputs.WorkspaceProjectRegistryMetadata']:
-        """
-        (Updatable) Information about the object and its parent.
-        """
+    def registry_metadata(self) -> pulumi.Output[Optional['outputs.WorkspaceProjectRegistryMetadata']]:
         return pulumi.get(self, "registry_metadata")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Output[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 

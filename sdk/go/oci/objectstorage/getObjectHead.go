@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -65,23 +64,23 @@ type GetObjectHeadArgs struct {
 
 // A collection of values returned by getObjectHead.
 type GetObjectHeadResult struct {
-	ArchivalState string `pulumi:"archivalState"`
-	Bucket        string `pulumi:"bucket"`
+	ArchivalState *string `pulumi:"archivalState"`
+	Bucket        string  `pulumi:"bucket"`
 	// The content-length of the object
-	ContentLength int `pulumi:"contentLength"`
+	ContentLength *int `pulumi:"contentLength"`
 	// The content-type of the object
-	ContentType string `pulumi:"contentType"`
+	ContentType *string `pulumi:"contentType"`
 	// The etag of the object
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The metadata of the object
 	Metadata  map[string]interface{} `pulumi:"metadata"`
 	Namespace string                 `pulumi:"namespace"`
 	Object    string                 `pulumi:"object"`
 	// The storage tier that the object is stored in.
 	// * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
-	StorageTier string `pulumi:"storageTier"`
+	StorageTier *string `pulumi:"storageTier"`
 }
 
 func GetObjectHeadOutput(ctx *pulumi.Context, args GetObjectHeadOutputArgs, opts ...pulumi.InvokeOption) GetObjectHeadResultOutput {
@@ -126,14 +125,8 @@ func (o GetObjectHeadResultOutput) ToGetObjectHeadResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetObjectHeadResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectHeadResult] {
-	return pulumix.Output[GetObjectHeadResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetObjectHeadResultOutput) ArchivalState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectHeadResult) string { return v.ArchivalState }).(pulumi.StringOutput)
+func (o GetObjectHeadResultOutput) ArchivalState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectHeadResult) *string { return v.ArchivalState }).(pulumi.StringPtrOutput)
 }
 
 func (o GetObjectHeadResultOutput) Bucket() pulumi.StringOutput {
@@ -141,23 +134,23 @@ func (o GetObjectHeadResultOutput) Bucket() pulumi.StringOutput {
 }
 
 // The content-length of the object
-func (o GetObjectHeadResultOutput) ContentLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetObjectHeadResult) int { return v.ContentLength }).(pulumi.IntOutput)
+func (o GetObjectHeadResultOutput) ContentLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectHeadResult) *int { return v.ContentLength }).(pulumi.IntPtrOutput)
 }
 
 // The content-type of the object
-func (o GetObjectHeadResultOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectHeadResult) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetObjectHeadResultOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectHeadResult) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 // The etag of the object
-func (o GetObjectHeadResultOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectHeadResult) string { return v.Etag }).(pulumi.StringOutput)
+func (o GetObjectHeadResultOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectHeadResult) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetObjectHeadResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectHeadResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetObjectHeadResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectHeadResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The metadata of the object
@@ -175,8 +168,8 @@ func (o GetObjectHeadResultOutput) Object() pulumi.StringOutput {
 
 // The storage tier that the object is stored in.
 // * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
-func (o GetObjectHeadResultOutput) StorageTier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectHeadResult) string { return v.StorageTier }).(pulumi.StringOutput)
+func (o GetObjectHeadResultOutput) StorageTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectHeadResult) *string { return v.StorageTier }).(pulumi.StringPtrOutput)
 }
 
 func init() {

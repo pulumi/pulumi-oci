@@ -16,7 +16,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// URL that the proxy will forward to
         /// </summary>
-        public readonly string Forward;
+        public readonly string? Forward;
         /// <summary>
         /// List of hosts
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// To enable or disable the proxy (default true)
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Port that the proxy will use
         /// </summary>
-        public readonly string Port;
+        public readonly string? Port;
 
         [OutputConstructor]
         private GetManagementStationProxyResult(
-            string forward,
+            string? forward,
 
             ImmutableArray<string> hosts,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string port)
+            string? port)
         {
             Forward = forward;
             Hosts = hosts;

@@ -73,58 +73,37 @@ class GetExternalDbNodeResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> str:
-        """
-        The name of the external DB node.
-        """
+    def component_name(self) -> Optional[str]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> float:
-        """
-        The number of CPU cores available on the DB node.
-        """
+    def cpu_core_count(self) -> Optional[float]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the external DB node. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainName")
-    def domain_name(self) -> str:
-        """
-        Name of the domain.
-        """
+    def domain_name(self) -> Optional[str]:
         return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        """
+    def external_connector_id(self) -> Optional[str]:
         return pulumi.get(self, "external_connector_id")
 
     @property
@@ -134,66 +113,42 @@ class GetExternalDbNodeResult:
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-        """
+    def external_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The host name for the DB node.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> float:
-        """
-        The total memory in gigabytes (GB) on the DB node.
-        """
+    def memory_size_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external DB node.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external DB node was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external DB node was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -224,21 +179,7 @@ class AwaitableGetExternalDbNodeResult(GetExternalDbNodeResult):
 def get_external_db_node(external_db_node_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbNodeResult:
     """
-    This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB node specified by `externalDbNodeId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=oci_database_management_external_db_node["test_external_db_node"]["id"])
-    ```
-
-
-    :param str external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalDbNodeId'] = external_db_node_id
@@ -268,20 +209,6 @@ def get_external_db_node(external_db_node_id: Optional[str] = None,
 def get_external_db_node_output(external_db_node_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbNodeResult]:
     """
-    This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB node specified by `externalDbNodeId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=oci_database_management_external_db_node["test_external_db_node"]["id"])
-    ```
-
-
-    :param str external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+    Use this data source to access information about an existing resource.
     """
     ...

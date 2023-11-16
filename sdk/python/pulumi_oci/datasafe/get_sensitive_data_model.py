@@ -82,98 +82,62 @@ class GetSensitiveDataModelResult:
 
     @property
     @pulumi.getter(name="appSuiteName")
-    def app_suite_name(self) -> str:
-        """
-        The application suite name identifying a collection of applications. The default value is GENERIC. It's useful only if maintaining a sensitive data model for a suite of applications.
-        """
+    def app_suite_name(self) -> Optional[str]:
         return pulumi.get(self, "app_suite_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the sensitive data model.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the sensitive data model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the sensitive data model.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the sensitive data model.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAppDefinedRelationDiscoveryEnabled")
-    def is_app_defined_relation_discovery_enabled(self) -> bool:
-        """
-        Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        """
+    def is_app_defined_relation_discovery_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_app_defined_relation_discovery_enabled")
 
     @property
     @pulumi.getter(name="isIncludeAllSchemas")
-    def is_include_all_schemas(self) -> bool:
-        """
-        Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
-        """
+    def is_include_all_schemas(self) -> Optional[bool]:
         return pulumi.get(self, "is_include_all_schemas")
 
     @property
     @pulumi.getter(name="isIncludeAllSensitiveTypes")
-    def is_include_all_sensitive_types(self) -> bool:
-        """
-        Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
-        """
+    def is_include_all_sensitive_types(self) -> Optional[bool]:
         return pulumi.get(self, "is_include_all_sensitive_types")
 
     @property
     @pulumi.getter(name="isSampleDataCollectionEnabled")
-    def is_sample_data_collection_enabled(self) -> bool:
-        """
-        Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        """
+    def is_sample_data_collection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_sample_data_collection_enabled")
 
     @property
     @pulumi.getter(name="schemasForDiscoveries")
-    def schemas_for_discoveries(self) -> Sequence[str]:
-        """
-        The schemas to be scanned by data discovery jobs.
-        """
+    def schemas_for_discoveries(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas_for_discoveries")
 
     @property
@@ -183,50 +147,32 @@ class GetSensitiveDataModelResult:
 
     @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
-    def sensitive_type_ids_for_discoveries(self) -> Sequence[str]:
-        """
-        The OCIDs of the sensitive types to be used by data discovery jobs.
-        """
+    def sensitive_type_ids_for_discoveries(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the sensitive data model.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -260,21 +206,7 @@ class AwaitableGetSensitiveDataModelResult(GetSensitiveDataModelResult):
 def get_sensitive_data_model(sensitive_data_model_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelResult:
     """
-    This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified sensitive data model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_model = oci.DataSafe.get_sensitive_data_model(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
-    ```
-
-
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
@@ -307,20 +239,6 @@ def get_sensitive_data_model(sensitive_data_model_id: Optional[str] = None,
 def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelResult]:
     """
-    This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified sensitive data model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_model = oci.DataSafe.get_sensitive_data_model(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
-    ```
-
-
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
+    Use this data source to access information about an existing resource.
     """
     ...

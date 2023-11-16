@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Attachment Management resource in Oracle Cloud Infrastructure Core service.
@@ -67,19 +66,19 @@ type DrgAttachmentManagement struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringOutput `pulumi:"drgId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-	DrgRouteTableId pulumi.StringOutput `pulumi:"drgRouteTableId"`
+	DrgRouteTableId pulumi.StringPtrOutput `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-	ExportDrgRouteDistributionId pulumi.StringOutput `pulumi:"exportDrgRouteDistributionId"`
+	ExportDrgRouteDistributionId pulumi.StringPtrOutput `pulumi:"exportDrgRouteDistributionId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
-	IsCrossTenancy pulumi.BoolOutput `pulumi:"isCrossTenancy"`
+	IsCrossTenancy pulumi.BoolPtrOutput `pulumi:"isCrossTenancy"`
 	// (Updatable)
-	NetworkDetails DrgAttachmentManagementNetworkDetailsOutput `pulumi:"networkDetails"`
+	NetworkDetails DrgAttachmentManagementNetworkDetailsPtrOutput `pulumi:"networkDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
 	NetworkId pulumi.StringPtrOutput `pulumi:"networkId"`
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
@@ -89,13 +88,13 @@ type DrgAttachmentManagement struct {
 	// For information about why you would associate a route table with a DRG attachment, see:
 	// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
 	// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
+	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-	VcnId pulumi.StringOutput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrOutput `pulumi:"vcnId"`
 }
 
 // NewDrgAttachmentManagement registers a new resource with the given unique name, arguments, and options.
@@ -308,12 +307,6 @@ func (i *DrgAttachmentManagement) ToDrgAttachmentManagementOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentManagementOutput)
 }
 
-func (i *DrgAttachmentManagement) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachmentManagement] {
-	return pulumix.Output[*DrgAttachmentManagement]{
-		OutputState: i.ToDrgAttachmentManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgAttachmentManagementArrayInput is an input type that accepts DrgAttachmentManagementArray and DrgAttachmentManagementArrayOutput values.
 // You can construct a concrete instance of `DrgAttachmentManagementArrayInput` via:
 //
@@ -337,12 +330,6 @@ func (i DrgAttachmentManagementArray) ToDrgAttachmentManagementArrayOutput() Drg
 
 func (i DrgAttachmentManagementArray) ToDrgAttachmentManagementArrayOutputWithContext(ctx context.Context) DrgAttachmentManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentManagementArrayOutput)
-}
-
-func (i DrgAttachmentManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachmentManagement] {
-	return pulumix.Output[[]*DrgAttachmentManagement]{
-		OutputState: i.ToDrgAttachmentManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgAttachmentManagementMapInput is an input type that accepts DrgAttachmentManagementMap and DrgAttachmentManagementMapOutput values.
@@ -370,12 +357,6 @@ func (i DrgAttachmentManagementMap) ToDrgAttachmentManagementMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentManagementMapOutput)
 }
 
-func (i DrgAttachmentManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachmentManagement] {
-	return pulumix.Output[map[string]*DrgAttachmentManagement]{
-		OutputState: i.ToDrgAttachmentManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgAttachmentManagementOutput struct{ *pulumi.OutputState }
 
 func (DrgAttachmentManagementOutput) ElementType() reflect.Type {
@@ -388,12 +369,6 @@ func (o DrgAttachmentManagementOutput) ToDrgAttachmentManagementOutput() DrgAtta
 
 func (o DrgAttachmentManagementOutput) ToDrgAttachmentManagementOutputWithContext(ctx context.Context) DrgAttachmentManagementOutput {
 	return o
-}
-
-func (o DrgAttachmentManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachmentManagement] {
-	return pulumix.Output[*DrgAttachmentManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type for the network resource attached to the DRG.
@@ -412,8 +387,8 @@ func (o DrgAttachmentManagementOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o DrgAttachmentManagementOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DrgAttachmentManagementOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -422,13 +397,13 @@ func (o DrgAttachmentManagementOutput) DrgId() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-func (o DrgAttachmentManagementOutput) DrgRouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.DrgRouteTableId }).(pulumi.StringOutput)
+func (o DrgAttachmentManagementOutput) DrgRouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.DrgRouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-func (o DrgAttachmentManagementOutput) ExportDrgRouteDistributionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.ExportDrgRouteDistributionId }).(pulumi.StringOutput)
+func (o DrgAttachmentManagementOutput) ExportDrgRouteDistributionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.ExportDrgRouteDistributionId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -437,13 +412,15 @@ func (o DrgAttachmentManagementOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
-func (o DrgAttachmentManagementOutput) IsCrossTenancy() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.BoolOutput { return v.IsCrossTenancy }).(pulumi.BoolOutput)
+func (o DrgAttachmentManagementOutput) IsCrossTenancy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.BoolPtrOutput { return v.IsCrossTenancy }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable)
-func (o DrgAttachmentManagementOutput) NetworkDetails() DrgAttachmentManagementNetworkDetailsOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) DrgAttachmentManagementNetworkDetailsOutput { return v.NetworkDetails }).(DrgAttachmentManagementNetworkDetailsOutput)
+func (o DrgAttachmentManagementOutput) NetworkDetails() DrgAttachmentManagementNetworkDetailsPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) DrgAttachmentManagementNetworkDetailsPtrOutput {
+		return v.NetworkDetails
+	}).(DrgAttachmentManagementNetworkDetailsPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
@@ -463,23 +440,23 @@ func (o DrgAttachmentManagementOutput) RemoveExportDrgRouteDistributionTrigger()
 // For information about why you would associate a route table with a DRG attachment, see:
 // * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
 // * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-func (o DrgAttachmentManagementOutput) RouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
+func (o DrgAttachmentManagementOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-func (o DrgAttachmentManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DrgAttachmentManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o DrgAttachmentManagementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DrgAttachmentManagementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-func (o DrgAttachmentManagementOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
+func (o DrgAttachmentManagementOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type DrgAttachmentManagementArrayOutput struct{ *pulumi.OutputState }
@@ -494,12 +471,6 @@ func (o DrgAttachmentManagementArrayOutput) ToDrgAttachmentManagementArrayOutput
 
 func (o DrgAttachmentManagementArrayOutput) ToDrgAttachmentManagementArrayOutputWithContext(ctx context.Context) DrgAttachmentManagementArrayOutput {
 	return o
-}
-
-func (o DrgAttachmentManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachmentManagement] {
-	return pulumix.Output[[]*DrgAttachmentManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgAttachmentManagementArrayOutput) Index(i pulumi.IntInput) DrgAttachmentManagementOutput {
@@ -520,12 +491,6 @@ func (o DrgAttachmentManagementMapOutput) ToDrgAttachmentManagementMapOutput() D
 
 func (o DrgAttachmentManagementMapOutput) ToDrgAttachmentManagementMapOutputWithContext(ctx context.Context) DrgAttachmentManagementMapOutput {
 	return o
-}
-
-func (o DrgAttachmentManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachmentManagement] {
-	return pulumix.Output[map[string]*DrgAttachmentManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgAttachmentManagementMapOutput) MapIndex(k pulumi.StringInput) DrgAttachmentManagementOutput {

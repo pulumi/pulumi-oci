@@ -29,7 +29,7 @@ public final class GetOpsiConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return OPSI configuration type.
      * 
@@ -39,7 +39,7 @@ public final class GetOpsiConfigurationsResult {
      * @return The list of opsi_configurations_collection.
      * 
      */
-    private List<GetOpsiConfigurationsOpsiConfigurationsCollection> opsiConfigurationsCollections;
+    private @Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollection> opsiConfigurationsCollections;
     /**
      * @return OPSI configuration resource lifecycle state.
      * 
@@ -68,8 +68,8 @@ public final class GetOpsiConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return OPSI configuration type.
@@ -83,7 +83,7 @@ public final class GetOpsiConfigurationsResult {
      * 
      */
     public List<GetOpsiConfigurationsOpsiConfigurationsCollection> opsiConfigurationsCollections() {
-        return this.opsiConfigurationsCollections;
+        return this.opsiConfigurationsCollections == null ? List.of() : this.opsiConfigurationsCollections;
     }
     /**
      * @return OPSI configuration resource lifecycle state.
@@ -105,9 +105,9 @@ public final class GetOpsiConfigurationsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetOpsiConfigurationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> opsiConfigTypes;
-        private List<GetOpsiConfigurationsOpsiConfigurationsCollection> opsiConfigurationsCollections;
+        private @Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollection> opsiConfigurationsCollections;
         private @Nullable List<String> states;
         public Builder() {}
         public Builder(GetOpsiConfigurationsResult defaults) {
@@ -140,8 +140,8 @@ public final class GetOpsiConfigurationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -153,8 +153,8 @@ public final class GetOpsiConfigurationsResult {
             return opsiConfigTypes(List.of(opsiConfigTypes));
         }
         @CustomType.Setter
-        public Builder opsiConfigurationsCollections(List<GetOpsiConfigurationsOpsiConfigurationsCollection> opsiConfigurationsCollections) {
-            this.opsiConfigurationsCollections = Objects.requireNonNull(opsiConfigurationsCollections);
+        public Builder opsiConfigurationsCollections(@Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollection> opsiConfigurationsCollections) {
+            this.opsiConfigurationsCollections = opsiConfigurationsCollections;
             return this;
         }
         public Builder opsiConfigurationsCollections(GetOpsiConfigurationsOpsiConfigurationsCollection... opsiConfigurationsCollections) {

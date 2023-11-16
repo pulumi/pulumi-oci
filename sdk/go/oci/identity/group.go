@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Group resource in Oracle Cloud Infrastructure Identity service.
@@ -79,7 +78,7 @@ type Group struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the tenancy containing the group.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the group during creation. Does not have to be unique, and it's changeable.
@@ -87,16 +86,16 @@ type Group struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The group's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewGroup registers a new resource with the given unique name, arguments, and options.
@@ -235,12 +234,6 @@ func (i *Group) ToGroupOutputWithContext(ctx context.Context) GroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GroupOutput)
 }
 
-func (i *Group) ToOutput(ctx context.Context) pulumix.Output[*Group] {
-	return pulumix.Output[*Group]{
-		OutputState: i.ToGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GroupArrayInput is an input type that accepts GroupArray and GroupArrayOutput values.
 // You can construct a concrete instance of `GroupArrayInput` via:
 //
@@ -264,12 +257,6 @@ func (i GroupArray) ToGroupArrayOutput() GroupArrayOutput {
 
 func (i GroupArray) ToGroupArrayOutputWithContext(ctx context.Context) GroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GroupArrayOutput)
-}
-
-func (i GroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*Group] {
-	return pulumix.Output[[]*Group]{
-		OutputState: i.ToGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GroupMapInput is an input type that accepts GroupMap and GroupMapOutput values.
@@ -297,12 +284,6 @@ func (i GroupMap) ToGroupMapOutputWithContext(ctx context.Context) GroupMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(GroupMapOutput)
 }
 
-func (i GroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Group] {
-	return pulumix.Output[map[string]*Group]{
-		OutputState: i.ToGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GroupOutput struct{ *pulumi.OutputState }
 
 func (GroupOutput) ElementType() reflect.Type {
@@ -317,15 +298,9 @@ func (o GroupOutput) ToGroupOutputWithContext(ctx context.Context) GroupOutput {
 	return o
 }
 
-func (o GroupOutput) ToOutput(ctx context.Context) pulumix.Output[*Group] {
-	return pulumix.Output[*Group]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the group.
-func (o GroupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GroupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Group) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -344,8 +319,8 @@ func (o GroupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o GroupOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o GroupOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Group) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -357,13 +332,13 @@ func (o GroupOutput) Name() pulumi.StringOutput {
 }
 
 // The group's current state.
-func (o GroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o GroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Group) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o GroupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GroupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Group) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GroupArrayOutput struct{ *pulumi.OutputState }
@@ -378,12 +353,6 @@ func (o GroupArrayOutput) ToGroupArrayOutput() GroupArrayOutput {
 
 func (o GroupArrayOutput) ToGroupArrayOutputWithContext(ctx context.Context) GroupArrayOutput {
 	return o
-}
-
-func (o GroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Group] {
-	return pulumix.Output[[]*Group]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GroupArrayOutput) Index(i pulumi.IntInput) GroupOutput {
@@ -404,12 +373,6 @@ func (o GroupMapOutput) ToGroupMapOutput() GroupMapOutput {
 
 func (o GroupMapOutput) ToGroupMapOutputWithContext(ctx context.Context) GroupMapOutput {
 	return o
-}
-
-func (o GroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Group] {
-	return pulumix.Output[map[string]*Group]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GroupMapOutput) MapIndex(k pulumi.StringInput) GroupOutput {

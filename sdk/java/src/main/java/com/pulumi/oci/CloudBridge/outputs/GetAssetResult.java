@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetResult {
@@ -21,92 +23,92 @@ public final class GetAssetResult {
      * @return List of asset source OCID.
      * 
      */
-    private List<String> assetSourceIds;
+    private @Nullable List<String> assetSourceIds;
     /**
      * @return The type of asset.
      * 
      */
-    private String assetType;
+    private @Nullable String assetType;
     /**
      * @return The OCID of the compartment to which an asset belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Compute related properties.
      * 
      */
-    private List<GetAssetCompute> computes;
+    private @Nullable List<GetAssetCompute> computes;
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Asset display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The key of the asset from the external environment.
      * 
      */
-    private String externalAssetKey;
+    private @Nullable String externalAssetKey;
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Asset OCID that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Inventory ID to which an asset belongs to.
      * 
      */
-    private String inventoryId;
+    private @Nullable String inventoryId;
     /**
      * @return The source key that the asset belongs to.
      * 
      */
-    private String sourceKey;
+    private @Nullable String sourceKey;
     /**
      * @return The current state of the asset.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time when the asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time when the asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Virtual machine related properties.
      * 
      */
-    private List<GetAssetVm> vms;
+    private @Nullable List<GetAssetVm> vms;
     /**
      * @return VMware vCenter related properties.
      * 
      */
-    private List<GetAssetVmwareVcenter> vmwareVcenters;
+    private @Nullable List<GetAssetVmwareVcenter> vmwareVcenters;
     /**
      * @return VMware virtual machine related properties.
      * 
      */
-    private List<GetAssetVmwareVm> vmwareVms;
+    private @Nullable List<GetAssetVmwareVm> vmwareVms;
 
     private GetAssetResult() {}
     public String assetId() {
@@ -117,126 +119,126 @@ public final class GetAssetResult {
      * 
      */
     public List<String> assetSourceIds() {
-        return this.assetSourceIds;
+        return this.assetSourceIds == null ? List.of() : this.assetSourceIds;
     }
     /**
      * @return The type of asset.
      * 
      */
-    public String assetType() {
-        return this.assetType;
+    public Optional<String> assetType() {
+        return Optional.ofNullable(this.assetType);
     }
     /**
      * @return The OCID of the compartment to which an asset belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Compute related properties.
      * 
      */
     public List<GetAssetCompute> computes() {
-        return this.computes;
+        return this.computes == null ? List.of() : this.computes;
     }
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Asset display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The key of the asset from the external environment.
      * 
      */
-    public String externalAssetKey() {
-        return this.externalAssetKey;
+    public Optional<String> externalAssetKey() {
+        return Optional.ofNullable(this.externalAssetKey);
     }
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Asset OCID that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Inventory ID to which an asset belongs to.
      * 
      */
-    public String inventoryId() {
-        return this.inventoryId;
+    public Optional<String> inventoryId() {
+        return Optional.ofNullable(this.inventoryId);
     }
     /**
      * @return The source key that the asset belongs to.
      * 
      */
-    public String sourceKey() {
-        return this.sourceKey;
+    public Optional<String> sourceKey() {
+        return Optional.ofNullable(this.sourceKey);
     }
     /**
      * @return The current state of the asset.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time when the asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time when the asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Virtual machine related properties.
      * 
      */
     public List<GetAssetVm> vms() {
-        return this.vms;
+        return this.vms == null ? List.of() : this.vms;
     }
     /**
      * @return VMware vCenter related properties.
      * 
      */
     public List<GetAssetVmwareVcenter> vmwareVcenters() {
-        return this.vmwareVcenters;
+        return this.vmwareVcenters == null ? List.of() : this.vmwareVcenters;
     }
     /**
      * @return VMware virtual machine related properties.
      * 
      */
     public List<GetAssetVmwareVm> vmwareVms() {
-        return this.vmwareVms;
+        return this.vmwareVms == null ? List.of() : this.vmwareVms;
     }
 
     public static Builder builder() {
@@ -249,24 +251,24 @@ public final class GetAssetResult {
     @CustomType.Builder
     public static final class Builder {
         private String assetId;
-        private List<String> assetSourceIds;
-        private String assetType;
-        private String compartmentId;
-        private List<GetAssetCompute> computes;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String externalAssetKey;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String inventoryId;
-        private String sourceKey;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<GetAssetVm> vms;
-        private List<GetAssetVmwareVcenter> vmwareVcenters;
-        private List<GetAssetVmwareVm> vmwareVms;
+        private @Nullable List<String> assetSourceIds;
+        private @Nullable String assetType;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetAssetCompute> computes;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String externalAssetKey;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String inventoryId;
+        private @Nullable String sourceKey;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetAssetVm> vms;
+        private @Nullable List<GetAssetVmwareVcenter> vmwareVcenters;
+        private @Nullable List<GetAssetVmwareVm> vmwareVms;
         public Builder() {}
         public Builder(GetAssetResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -297,105 +299,105 @@ public final class GetAssetResult {
             return this;
         }
         @CustomType.Setter
-        public Builder assetSourceIds(List<String> assetSourceIds) {
-            this.assetSourceIds = Objects.requireNonNull(assetSourceIds);
+        public Builder assetSourceIds(@Nullable List<String> assetSourceIds) {
+            this.assetSourceIds = assetSourceIds;
             return this;
         }
         public Builder assetSourceIds(String... assetSourceIds) {
             return assetSourceIds(List.of(assetSourceIds));
         }
         @CustomType.Setter
-        public Builder assetType(String assetType) {
-            this.assetType = Objects.requireNonNull(assetType);
+        public Builder assetType(@Nullable String assetType) {
+            this.assetType = assetType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computes(List<GetAssetCompute> computes) {
-            this.computes = Objects.requireNonNull(computes);
+        public Builder computes(@Nullable List<GetAssetCompute> computes) {
+            this.computes = computes;
             return this;
         }
         public Builder computes(GetAssetCompute... computes) {
             return computes(List.of(computes));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalAssetKey(String externalAssetKey) {
-            this.externalAssetKey = Objects.requireNonNull(externalAssetKey);
+        public Builder externalAssetKey(@Nullable String externalAssetKey) {
+            this.externalAssetKey = externalAssetKey;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inventoryId(String inventoryId) {
-            this.inventoryId = Objects.requireNonNull(inventoryId);
+        public Builder inventoryId(@Nullable String inventoryId) {
+            this.inventoryId = inventoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceKey(String sourceKey) {
-            this.sourceKey = Objects.requireNonNull(sourceKey);
+        public Builder sourceKey(@Nullable String sourceKey) {
+            this.sourceKey = sourceKey;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder vms(List<GetAssetVm> vms) {
-            this.vms = Objects.requireNonNull(vms);
+        public Builder vms(@Nullable List<GetAssetVm> vms) {
+            this.vms = vms;
             return this;
         }
         public Builder vms(GetAssetVm... vms) {
             return vms(List.of(vms));
         }
         @CustomType.Setter
-        public Builder vmwareVcenters(List<GetAssetVmwareVcenter> vmwareVcenters) {
-            this.vmwareVcenters = Objects.requireNonNull(vmwareVcenters);
+        public Builder vmwareVcenters(@Nullable List<GetAssetVmwareVcenter> vmwareVcenters) {
+            this.vmwareVcenters = vmwareVcenters;
             return this;
         }
         public Builder vmwareVcenters(GetAssetVmwareVcenter... vmwareVcenters) {
             return vmwareVcenters(List.of(vmwareVcenters));
         }
         @CustomType.Setter
-        public Builder vmwareVms(List<GetAssetVmwareVm> vmwareVms) {
-            this.vmwareVms = Objects.requireNonNull(vmwareVms);
+        public Builder vmwareVms(@Nullable List<GetAssetVmwareVm> vmwareVms) {
+            this.vmwareVms = vmwareVms;
             return this;
         }
         public Builder vmwareVms(GetAssetVmwareVm... vmwareVms) {

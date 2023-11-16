@@ -16,10 +16,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The name of a protocol.  Example: 'HTTP'
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetProtocolsProtocolResult(string name)
+        private GetProtocolsProtocolResult(string? name)
         {
             Name = name;
         }

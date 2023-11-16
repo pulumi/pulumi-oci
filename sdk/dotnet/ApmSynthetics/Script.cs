@@ -80,13 +80,13 @@ namespace Pulumi.Oci.ApmSynthetics
         /// (Updatable) File name of uploaded script content.
         /// </summary>
         [Output("contentFileName")]
-        public Output<string> ContentFileName { get; private set; } = null!;
+        public Output<string?> ContentFileName { get; private set; } = null!;
 
         /// <summary>
         /// Size of the script content.
         /// </summary>
         [Output("contentSizeInBytes")]
-        public Output<int> ContentSizeInBytes { get; private set; } = null!;
+        public Output<int?> ContentSizeInBytes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Content type of script.
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -128,19 +128,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The time the script was uploaded.
         /// </summary>
         [Output("timeUploaded")]
-        public Output<string> TimeUploaded { get; private set; } = null!;
+        public Output<string?> TimeUploaded { get; private set; } = null!;
 
 
         /// <summary>

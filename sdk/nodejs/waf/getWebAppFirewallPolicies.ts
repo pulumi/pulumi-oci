@@ -84,7 +84,7 @@ export interface GetWebAppFirewallPoliciesResult {
     /**
      * The list of web_app_firewall_policy_collection.
      */
-    readonly webAppFirewallPolicyCollections: outputs.Waf.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection[];
+    readonly webAppFirewallPolicyCollections?: outputs.Waf.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection[];
 }
 /**
  * This data source provides the list of Web App Firewall Policies in Oracle Cloud Infrastructure Waf service.

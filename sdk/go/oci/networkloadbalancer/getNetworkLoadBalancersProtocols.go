@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -59,7 +58,7 @@ type GetNetworkLoadBalancersProtocolsArgs struct {
 type GetNetworkLoadBalancersProtocolsResult struct {
 	Filters []GetNetworkLoadBalancersProtocolsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of network_load_balancers_protocol_collection.
 	NetworkLoadBalancersProtocolCollections []GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection `pulumi:"networkLoadBalancersProtocolCollections"`
 }
@@ -101,12 +100,6 @@ func (o GetNetworkLoadBalancersProtocolsResultOutput) ToGetNetworkLoadBalancersP
 	return o
 }
 
-func (o GetNetworkLoadBalancersProtocolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersProtocolsResult] {
-	return pulumix.Output[GetNetworkLoadBalancersProtocolsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancersProtocolsResultOutput) Filters() GetNetworkLoadBalancersProtocolsFilterArrayOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancersProtocolsResult) []GetNetworkLoadBalancersProtocolsFilter {
 		return v.Filters
@@ -114,8 +107,8 @@ func (o GetNetworkLoadBalancersProtocolsResultOutput) Filters() GetNetworkLoadBa
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkLoadBalancersProtocolsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersProtocolsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersProtocolsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersProtocolsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of network_load_balancers_protocol_collection.

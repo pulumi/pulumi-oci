@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentsUserAssessment {
@@ -18,291 +20,291 @@ public final class GetUserAssessmentsUserAssessment {
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the user assessment.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private List<String> ignoredAssessmentIds;
+    private @Nullable List<String> ignoredAssessmentIds;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets;
+    private @Nullable List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets;
     /**
      * @return A filter to return only user assessments that are set as baseline.
      * 
      */
-    private Boolean isBaseline;
+    private @Nullable Boolean isBaseline;
     /**
      * @return Indicates if the user assessment deviates from the baseline.
      * 
      */
-    private Boolean isDeviatedFromBaseline;
+    private @Nullable Boolean isDeviatedFromBaseline;
     /**
      * @return The OCID of the last user assessment baseline against which the latest assessment was compared.
      * 
      */
-    private String lastComparedBaselineId;
+    private @Nullable String lastComparedBaselineId;
     /**
      * @return Details about the current state of the user assessment.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Schedule of the assessment that runs periodically in this specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    private String schedule;
+    private @Nullable String schedule;
     /**
      * @return The OCID of the user assessment that is responsible for creating this scheduled save assessment.
      * 
      */
-    private String scheduleAssessmentId;
+    private @Nullable String scheduleAssessmentId;
     /**
      * @return The current state of the user assessment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    private String statistics;
+    private @Nullable String statistics;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return Array of database target OCIDs.
      * 
      */
-    private List<String> targetIds;
+    private @Nullable List<String> targetIds;
     /**
      * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeLastAssessed;
+    private @Nullable String timeLastAssessed;
     /**
      * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return A filter to return user assessments that were created by either the system or by a user only.
      * 
      */
-    private String triggeredBy;
+    private @Nullable String triggeredBy;
     /**
      * @return A filter to return only items that match the specified assessment type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetUserAssessmentsUserAssessment() {}
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the user assessment.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     public List<String> ignoredAssessmentIds() {
-        return this.ignoredAssessmentIds;
+        return this.ignoredAssessmentIds == null ? List.of() : this.ignoredAssessmentIds;
     }
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     public List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets() {
-        return this.ignoredTargets;
+        return this.ignoredTargets == null ? List.of() : this.ignoredTargets;
     }
     /**
      * @return A filter to return only user assessments that are set as baseline.
      * 
      */
-    public Boolean isBaseline() {
-        return this.isBaseline;
+    public Optional<Boolean> isBaseline() {
+        return Optional.ofNullable(this.isBaseline);
     }
     /**
      * @return Indicates if the user assessment deviates from the baseline.
      * 
      */
-    public Boolean isDeviatedFromBaseline() {
-        return this.isDeviatedFromBaseline;
+    public Optional<Boolean> isDeviatedFromBaseline() {
+        return Optional.ofNullable(this.isDeviatedFromBaseline);
     }
     /**
      * @return The OCID of the last user assessment baseline against which the latest assessment was compared.
      * 
      */
-    public String lastComparedBaselineId() {
-        return this.lastComparedBaselineId;
+    public Optional<String> lastComparedBaselineId() {
+        return Optional.ofNullable(this.lastComparedBaselineId);
     }
     /**
      * @return Details about the current state of the user assessment.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Schedule of the assessment that runs periodically in this specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    public String schedule() {
-        return this.schedule;
+    public Optional<String> schedule() {
+        return Optional.ofNullable(this.schedule);
     }
     /**
      * @return The OCID of the user assessment that is responsible for creating this scheduled save assessment.
      * 
      */
-    public String scheduleAssessmentId() {
-        return this.scheduleAssessmentId;
+    public Optional<String> scheduleAssessmentId() {
+        return Optional.ofNullable(this.scheduleAssessmentId);
     }
     /**
      * @return The current state of the user assessment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    public String statistics() {
-        return this.statistics;
+    public Optional<String> statistics() {
+        return Optional.ofNullable(this.statistics);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return Array of database target OCIDs.
      * 
      */
     public List<String> targetIds() {
-        return this.targetIds;
+        return this.targetIds == null ? List.of() : this.targetIds;
     }
     /**
      * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeLastAssessed() {
-        return this.timeLastAssessed;
+    public Optional<String> timeLastAssessed() {
+        return Optional.ofNullable(this.timeLastAssessed);
     }
     /**
      * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return A filter to return user assessments that were created by either the system or by a user only.
      * 
      */
-    public String triggeredBy() {
-        return this.triggeredBy;
+    public Optional<String> triggeredBy() {
+        return Optional.ofNullable(this.triggeredBy);
     }
     /**
      * @return A filter to return only items that match the specified assessment type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -314,30 +316,30 @@ public final class GetUserAssessmentsUserAssessment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<String> ignoredAssessmentIds;
-        private List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets;
-        private Boolean isBaseline;
-        private Boolean isDeviatedFromBaseline;
-        private String lastComparedBaselineId;
-        private String lifecycleDetails;
-        private String schedule;
-        private String scheduleAssessmentId;
-        private String state;
-        private String statistics;
-        private Map<String,Object> systemTags;
-        private String targetId;
-        private List<String> targetIds;
-        private String timeCreated;
-        private String timeLastAssessed;
-        private String timeUpdated;
-        private String triggeredBy;
-        private String type;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<String> ignoredAssessmentIds;
+        private @Nullable List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets;
+        private @Nullable Boolean isBaseline;
+        private @Nullable Boolean isDeviatedFromBaseline;
+        private @Nullable String lastComparedBaselineId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String schedule;
+        private @Nullable String scheduleAssessmentId;
+        private @Nullable String state;
+        private @Nullable String statistics;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String targetId;
+        private @Nullable List<String> targetIds;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastAssessed;
+        private @Nullable String timeUpdated;
+        private @Nullable String triggeredBy;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetUserAssessmentsUserAssessment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -368,132 +370,132 @@ public final class GetUserAssessmentsUserAssessment {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ignoredAssessmentIds(List<String> ignoredAssessmentIds) {
-            this.ignoredAssessmentIds = Objects.requireNonNull(ignoredAssessmentIds);
+        public Builder ignoredAssessmentIds(@Nullable List<String> ignoredAssessmentIds) {
+            this.ignoredAssessmentIds = ignoredAssessmentIds;
             return this;
         }
         public Builder ignoredAssessmentIds(String... ignoredAssessmentIds) {
             return ignoredAssessmentIds(List.of(ignoredAssessmentIds));
         }
         @CustomType.Setter
-        public Builder ignoredTargets(List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets) {
-            this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
+        public Builder ignoredTargets(@Nullable List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets) {
+            this.ignoredTargets = ignoredTargets;
             return this;
         }
         public Builder ignoredTargets(GetUserAssessmentsUserAssessmentIgnoredTarget... ignoredTargets) {
             return ignoredTargets(List.of(ignoredTargets));
         }
         @CustomType.Setter
-        public Builder isBaseline(Boolean isBaseline) {
-            this.isBaseline = Objects.requireNonNull(isBaseline);
+        public Builder isBaseline(@Nullable Boolean isBaseline) {
+            this.isBaseline = isBaseline;
             return this;
         }
         @CustomType.Setter
-        public Builder isDeviatedFromBaseline(Boolean isDeviatedFromBaseline) {
-            this.isDeviatedFromBaseline = Objects.requireNonNull(isDeviatedFromBaseline);
+        public Builder isDeviatedFromBaseline(@Nullable Boolean isDeviatedFromBaseline) {
+            this.isDeviatedFromBaseline = isDeviatedFromBaseline;
             return this;
         }
         @CustomType.Setter
-        public Builder lastComparedBaselineId(String lastComparedBaselineId) {
-            this.lastComparedBaselineId = Objects.requireNonNull(lastComparedBaselineId);
+        public Builder lastComparedBaselineId(@Nullable String lastComparedBaselineId) {
+            this.lastComparedBaselineId = lastComparedBaselineId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder schedule(String schedule) {
-            this.schedule = Objects.requireNonNull(schedule);
+        public Builder schedule(@Nullable String schedule) {
+            this.schedule = schedule;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleAssessmentId(String scheduleAssessmentId) {
-            this.scheduleAssessmentId = Objects.requireNonNull(scheduleAssessmentId);
+        public Builder scheduleAssessmentId(@Nullable String scheduleAssessmentId) {
+            this.scheduleAssessmentId = scheduleAssessmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder statistics(String statistics) {
-            this.statistics = Objects.requireNonNull(statistics);
+        public Builder statistics(@Nullable String statistics) {
+            this.statistics = statistics;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+        public Builder targetIds(@Nullable List<String> targetIds) {
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastAssessed(String timeLastAssessed) {
-            this.timeLastAssessed = Objects.requireNonNull(timeLastAssessed);
+        public Builder timeLastAssessed(@Nullable String timeLastAssessed) {
+            this.timeLastAssessed = timeLastAssessed;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder triggeredBy(String triggeredBy) {
-            this.triggeredBy = Objects.requireNonNull(triggeredBy);
+        public Builder triggeredBy(@Nullable String triggeredBy) {
+            this.triggeredBy = triggeredBy;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetUserAssessmentsUserAssessment build() {

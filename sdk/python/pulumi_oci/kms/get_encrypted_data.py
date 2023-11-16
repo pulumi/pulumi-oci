@@ -48,10 +48,7 @@ class GetEncryptedDataResult:
 
     @property
     @pulumi.getter
-    def ciphertext(self) -> str:
-        """
-        The encrypted data.
-        """
+    def ciphertext(self) -> Optional[str]:
         return pulumi.get(self, "ciphertext")
 
     @property
@@ -61,7 +58,7 @@ class GetEncryptedDataResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -98,29 +95,7 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
                        plaintext: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEncryptedDataResult:
     """
-    The `Kms.EncryptedData` data source provides details about a specific EncryptedData
-
-    Encrypts data using the given EncryptDataDetails resource.
-    Plaintext included in the example request is a base64-encoded value
-    of a UTF-8 string.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_encrypted_data = oci.Kms.get_encrypted_data(crypto_endpoint=var["encrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        plaintext=var["encrypted_data_plaintext"],
-        associated_data=var["encrypted_data_associated_data"])
-    ```
-
-
-    :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-    :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-    :param str key_id: The OCID of the key to encrypt with.
-    :param str plaintext: The plaintext data to encrypt.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['associatedData'] = associated_data
@@ -146,28 +121,6 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
                               plaintext: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEncryptedDataResult]:
     """
-    The `Kms.EncryptedData` data source provides details about a specific EncryptedData
-
-    Encrypts data using the given EncryptDataDetails resource.
-    Plaintext included in the example request is a base64-encoded value
-    of a UTF-8 string.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_encrypted_data = oci.Kms.get_encrypted_data(crypto_endpoint=var["encrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        plaintext=var["encrypted_data_plaintext"],
-        associated_data=var["encrypted_data_associated_data"])
-    ```
-
-
-    :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-    :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-    :param str key_id: The OCID of the key to encrypt with.
-    :param str plaintext: The plaintext data to encrypt.
+    Use this data source to access information about an existing resource.
     """
     ...

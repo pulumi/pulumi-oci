@@ -122,42 +122,42 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="bandwidthShapeName", refs={String.class}, tree="[0]")
-    private Output<String> bandwidthShapeName;
+    private Output</* @Nullable */ String> bandwidthShapeName;
 
     /**
      * @return (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      * 
      */
-    public Output<String> bandwidthShapeName() {
-        return this.bandwidthShapeName;
+    public Output<Optional<String>> bandwidthShapeName() {
+        return Codegen.optional(this.bandwidthShapeName);
     }
     /**
      * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
     @Export(name="bgpAdminState", refs={String.class}, tree="[0]")
-    private Output<String> bgpAdminState;
+    private Output</* @Nullable */ String> bgpAdminState;
 
     /**
      * @return (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
-    public Output<String> bgpAdminState() {
-        return this.bgpAdminState;
+    public Output<Optional<String>> bgpAdminState() {
+        return Codegen.optional(this.bgpAdminState);
     }
     /**
      * The state of the Ipv6 BGP session associated with the virtual circuit.
      * 
      */
     @Export(name="bgpIpv6sessionState", refs={String.class}, tree="[0]")
-    private Output<String> bgpIpv6sessionState;
+    private Output</* @Nullable */ String> bgpIpv6sessionState;
 
     /**
      * @return The state of the Ipv6 BGP session associated with the virtual circuit.
      * 
      */
-    public Output<String> bgpIpv6sessionState() {
-        return this.bgpIpv6sessionState;
+    public Output<Optional<String>> bgpIpv6sessionState() {
+        return Codegen.optional(this.bgpIpv6sessionState);
     }
     /**
      * Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
@@ -168,28 +168,28 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
     @Export(name="bgpManagement", refs={String.class}, tree="[0]")
-    private Output<String> bgpManagement;
+    private Output</* @Nullable */ String> bgpManagement;
 
     /**
      * @return Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      * 
      */
-    public Output<String> bgpManagement() {
-        return this.bgpManagement;
+    public Output<Optional<String>> bgpManagement() {
+        return Codegen.optional(this.bgpManagement);
     }
     /**
      * The state of the Ipv4 BGP session associated with the virtual circuit.
      * 
      */
     @Export(name="bgpSessionState", refs={String.class}, tree="[0]")
-    private Output<String> bgpSessionState;
+    private Output</* @Nullable */ String> bgpSessionState;
 
     /**
      * @return The state of the Ipv4 BGP session associated with the virtual circuit.
      * 
      */
-    public Output<String> bgpSessionState() {
-        return this.bgpSessionState;
+    public Output<Optional<String>> bgpSessionState() {
+        return Codegen.optional(this.bgpSessionState);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
@@ -210,28 +210,28 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="crossConnectMappings", refs={List.class,VirtualCircuitCrossConnectMapping.class}, tree="[0,1]")
-    private Output<List<VirtualCircuitCrossConnectMapping>> crossConnectMappings;
+    private Output</* @Nullable */ List<VirtualCircuitCrossConnectMapping>> crossConnectMappings;
 
     /**
      * @return (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
      * 
      */
-    public Output<List<VirtualCircuitCrossConnectMapping>> crossConnectMappings() {
-        return this.crossConnectMappings;
+    public Output<Optional<List<VirtualCircuitCrossConnectMapping>>> crossConnectMappings() {
+        return Codegen.optional(this.crossConnectMappings);
     }
     /**
      * (Updatable) Your BGP ASN (either public or private). Provide this value only if there&#39;s a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
      * 
      */
     @Export(name="customerAsn", refs={String.class}, tree="[0]")
-    private Output<String> customerAsn;
+    private Output</* @Nullable */ String> customerAsn;
 
     /**
      * @return (Updatable) Your BGP ASN (either public or private). Provide this value only if there&#39;s a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
      * 
      */
-    public Output<String> customerAsn() {
-        return this.customerAsn;
+    public Output<Optional<String>> customerAsn() {
+        return Codegen.optional(this.customerAsn);
     }
     /**
      * (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
@@ -242,168 +242,168 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
     @Export(name="customerBgpAsn", refs={Integer.class}, tree="[0]")
-    private Output<Integer> customerBgpAsn;
+    private Output</* @Nullable */ Integer> customerBgpAsn;
 
     /**
      * @return (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      * 
      */
-    public Output<Integer> customerBgpAsn() {
-        return this.customerBgpAsn;
+    public Output<Optional<Integer>> customerBgpAsn() {
+        return Codegen.optional(this.customerBgpAsn);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
      * 
      */
     @Export(name="gatewayId", refs={String.class}, tree="[0]")
-    private Output<String> gatewayId;
+    private Output</* @Nullable */ String> gatewayId;
 
     /**
      * @return (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
      * 
      */
-    public Output<String> gatewayId() {
-        return this.gatewayId;
+    public Output<Optional<String>> gatewayId() {
+        return Codegen.optional(this.gatewayId);
     }
     /**
      * (Updatable) The layer 3 IP MTU to use with this virtual circuit.
      * 
      */
     @Export(name="ipMtu", refs={String.class}, tree="[0]")
-    private Output<String> ipMtu;
+    private Output</* @Nullable */ String> ipMtu;
 
     /**
      * @return (Updatable) The layer 3 IP MTU to use with this virtual circuit.
      * 
      */
-    public Output<String> ipMtu() {
-        return this.ipMtu;
+    public Output<Optional<String>> ipMtu() {
+        return Codegen.optional(this.ipMtu);
     }
     /**
      * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
     @Export(name="isBfdEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBfdEnabled;
+    private Output</* @Nullable */ Boolean> isBfdEnabled;
 
     /**
      * @return (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
-    public Output<Boolean> isBfdEnabled() {
-        return this.isBfdEnabled;
+    public Output<Optional<Boolean>> isBfdEnabled() {
+        return Codegen.optional(this.isBfdEnabled);
     }
     /**
      * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      * 
      */
     @Export(name="isTransportMode", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isTransportMode;
+    private Output</* @Nullable */ Boolean> isTransportMode;
 
     /**
      * @return (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      * 
      */
-    public Output<Boolean> isTransportMode() {
-        return this.isTransportMode;
+    public Output<Optional<Boolean>> isTransportMode() {
+        return Codegen.optional(this.isTransportMode);
     }
     /**
      * The Oracle BGP ASN.
      * 
      */
     @Export(name="oracleBgpAsn", refs={Integer.class}, tree="[0]")
-    private Output<Integer> oracleBgpAsn;
+    private Output</* @Nullable */ Integer> oracleBgpAsn;
 
     /**
      * @return The Oracle BGP ASN.
      * 
      */
-    public Output<Integer> oracleBgpAsn() {
-        return this.oracleBgpAsn;
+    public Output<Optional<Integer>> oracleBgpAsn() {
+        return Codegen.optional(this.oracleBgpAsn);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you&#39;re connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      * 
      */
     @Export(name="providerServiceId", refs={String.class}, tree="[0]")
-    private Output<String> providerServiceId;
+    private Output</* @Nullable */ String> providerServiceId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you&#39;re connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      * 
      */
-    public Output<String> providerServiceId() {
-        return this.providerServiceId;
+    public Output<Optional<String>> providerServiceId() {
+        return Codegen.optional(this.providerServiceId);
     }
     /**
      * (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
      * 
      */
     @Export(name="providerServiceKeyName", refs={String.class}, tree="[0]")
-    private Output<String> providerServiceKeyName;
+    private Output</* @Nullable */ String> providerServiceKeyName;
 
     /**
      * @return (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
      * 
      */
-    public Output<String> providerServiceKeyName() {
-        return this.providerServiceKeyName;
+    public Output<Optional<String>> providerServiceKeyName() {
+        return Codegen.optional(this.providerServiceKeyName);
     }
     /**
      * The provider&#39;s state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
      * 
      */
     @Export(name="providerState", refs={String.class}, tree="[0]")
-    private Output<String> providerState;
+    private Output</* @Nullable */ String> providerState;
 
     /**
      * @return The provider&#39;s state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
      * 
      */
-    public Output<String> providerState() {
-        return this.providerState;
+    public Output<Optional<String>> providerState() {
+        return Codegen.optional(this.providerState);
     }
     /**
      * (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
@@ -424,84 +424,84 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="referenceComment", refs={String.class}, tree="[0]")
-    private Output<String> referenceComment;
+    private Output</* @Nullable */ String> referenceComment;
 
     /**
      * @return Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
      * 
      */
-    public Output<String> referenceComment() {
-        return this.referenceComment;
+    public Output<Optional<String>> referenceComment() {
+        return Codegen.optional(this.referenceComment);
     }
     /**
      * The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
      * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
-    private Output<String> region;
+    private Output</* @Nullable */ String> region;
 
     /**
      * @return The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
      * 
      */
-    public Output<String> region() {
-        return this.region;
+    public Output<Optional<String>> region() {
+        return Codegen.optional(this.region);
     }
     /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
     @Export(name="routingPolicies", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> routingPolicies;
+    private Output</* @Nullable */ List<String>> routingPolicies;
 
     /**
      * @return (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
-    public Output<List<String>> routingPolicies() {
-        return this.routingPolicies;
+    public Output<Optional<List<String>>> routingPolicies() {
+        return Codegen.optional(this.routingPolicies);
     }
     /**
      * Provider service type.
      * 
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
-    private Output<String> serviceType;
+    private Output</* @Nullable */ String> serviceType;
 
     /**
      * @return Provider service type.
      * 
      */
-    public Output<String> serviceType() {
-        return this.serviceType;
+    public Output<Optional<String>> serviceType() {
+        return Codegen.optional(this.serviceType);
     }
     /**
      * The virtual circuit&#39;s current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The virtual circuit&#39;s current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).

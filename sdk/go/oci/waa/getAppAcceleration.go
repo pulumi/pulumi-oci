@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
@@ -60,32 +59,32 @@ type LookupAppAccelerationArgs struct {
 // A collection of values returned by getAppAcceleration.
 type LookupAppAccelerationResult struct {
 	// Type of the WebAppFirewall, as example LOAD_BALANCER.
-	BackendType string `pulumi:"backendType"`
+	BackendType *string `pulumi:"backendType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// WebAppAcceleration display name, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// The current state of the WebAppAcceleration.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated          string `pulumi:"timeUpdated"`
-	WebAppAccelerationId string `pulumi:"webAppAccelerationId"`
+	TimeUpdated          *string `pulumi:"timeUpdated"`
+	WebAppAccelerationId string  `pulumi:"webAppAccelerationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
-	WebAppAccelerationPolicyId string `pulumi:"webAppAccelerationPolicyId"`
+	WebAppAccelerationPolicyId *string `pulumi:"webAppAccelerationPolicyId"`
 }
 
 func LookupAppAccelerationOutput(ctx *pulumi.Context, args LookupAppAccelerationOutputArgs, opts ...pulumi.InvokeOption) LookupAppAccelerationResultOutput {
@@ -126,20 +125,14 @@ func (o LookupAppAccelerationResultOutput) ToLookupAppAccelerationResultOutputWi
 	return o
 }
 
-func (o LookupAppAccelerationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppAccelerationResult] {
-	return pulumix.Output[LookupAppAccelerationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of the WebAppFirewall, as example LOAD_BALANCER.
-func (o LookupAppAccelerationResultOutput) BackendType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.BackendType }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) BackendType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.BackendType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupAppAccelerationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -148,8 +141,8 @@ func (o LookupAppAccelerationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // WebAppAcceleration display name, can be renamed.
-func (o LookupAppAccelerationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -158,23 +151,23 @@ func (o LookupAppAccelerationResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
-func (o LookupAppAccelerationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o LookupAppAccelerationResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
-func (o LookupAppAccelerationResultOutput) LoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) LoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.LoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the WebAppAcceleration.
-func (o LookupAppAccelerationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -183,13 +176,13 @@ func (o LookupAppAccelerationResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-func (o LookupAppAccelerationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-func (o LookupAppAccelerationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAppAccelerationResultOutput) WebAppAccelerationId() pulumi.StringOutput {
@@ -197,8 +190,8 @@ func (o LookupAppAccelerationResultOutput) WebAppAccelerationId() pulumi.StringO
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
-func (o LookupAppAccelerationResultOutput) WebAppAccelerationPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationResult) string { return v.WebAppAccelerationPolicyId }).(pulumi.StringOutput)
+func (o LookupAppAccelerationResultOutput) WebAppAccelerationPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationResult) *string { return v.WebAppAccelerationPolicyId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAvailabilityDomainsAvailabilityDomain {
@@ -13,39 +15,39 @@ public final class GetAvailabilityDomainsAvailabilityDomain {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the Availability Domain.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the Availability Domain.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAvailabilityDomainsAvailabilityDomain() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the Availability Domain.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the Availability Domain.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAvailabilityDomainsAvailabilityDomain {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private String name;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAvailabilityDomainsAvailabilityDomain defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAvailabilityDomainsAvailabilityDomain {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAvailabilityDomainsAvailabilityDomain build() {

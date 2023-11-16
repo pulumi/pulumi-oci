@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlVersionVersionVersion {
@@ -13,27 +15,27 @@ public final class GetMysqlVersionVersionVersion {
      * @return A link to a page describing the version.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The specific version identifier
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetMysqlVersionVersionVersion() {}
     /**
      * @return A link to a page describing the version.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The specific version identifier
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMysqlVersionVersionVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String version;
+        private @Nullable String description;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetMysqlVersionVersionVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMysqlVersionVersionVersion {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetMysqlVersionVersionVersion build() {

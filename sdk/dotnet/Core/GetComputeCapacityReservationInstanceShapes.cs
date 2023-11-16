@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetComputeCapacityReservationInstanceShapesResult(
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetComputeCapacityReservationInstanceShapesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

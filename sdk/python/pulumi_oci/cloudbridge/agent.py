@@ -26,18 +26,6 @@ class AgentArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Agent resource.
-        :param pulumi.Input[str] agent_type: Agent identifier.
-        :param pulumi.Input[str] agent_version: Agent identifier.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[str] display_name: (Updatable) Agent identifier.
-        :param pulumi.Input[str] environment_id: Environment identifier.
-        :param pulumi.Input[str] os_version: OS version.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "agent_type", agent_type)
         pulumi.set(__self__, "agent_version", agent_version)
@@ -53,9 +41,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="agentType")
     def agent_type(self) -> pulumi.Input[str]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_type")
 
     @agent_type.setter
@@ -65,9 +50,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="agentVersion")
     def agent_version(self) -> pulumi.Input[str]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_version")
 
     @agent_version.setter
@@ -77,9 +59,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -89,9 +68,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Agent identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -101,9 +77,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="environmentId")
     def environment_id(self) -> pulumi.Input[str]:
-        """
-        Environment identifier.
-        """
         return pulumi.get(self, "environment_id")
 
     @environment_id.setter
@@ -113,13 +86,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> pulumi.Input[str]:
-        """
-        OS version.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "os_version")
 
     @os_version.setter
@@ -129,9 +95,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -141,9 +104,6 @@ class AgentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -174,28 +134,6 @@ class _AgentState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Agent resources.
-        :param pulumi.Input[str] agent_pub_key: Resource principal public key.
-        :param pulumi.Input[str] agent_type: Agent identifier.
-        :param pulumi.Input[str] agent_version: Agent identifier.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) Agent identifier.
-        :param pulumi.Input[str] environment_id: Environment identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] heart_beat_status: The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] os_version: OS version.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['AgentPluginListArgs']]] plugin_lists: List of plugins associated with the agent.
-        :param pulumi.Input[str] state: The current state of the Agent.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_expire_agent_key_in_ms: The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_last_sync_received: The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
         if agent_pub_key is not None:
             pulumi.set(__self__, "agent_pub_key", agent_pub_key)
@@ -237,9 +175,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="agentPubKey")
     def agent_pub_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource principal public key.
-        """
         return pulumi.get(self, "agent_pub_key")
 
     @agent_pub_key.setter
@@ -249,9 +184,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="agentType")
     def agent_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_type")
 
     @agent_type.setter
@@ -261,9 +193,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="agentVersion")
     def agent_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_version")
 
     @agent_version.setter
@@ -273,9 +202,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -285,9 +211,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -297,9 +220,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Agent identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -309,9 +229,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="environmentId")
     def environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Environment identifier.
-        """
         return pulumi.get(self, "environment_id")
 
     @environment_id.setter
@@ -321,9 +238,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -333,9 +247,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="heartBeatStatus")
     def heart_beat_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-        """
         return pulumi.get(self, "heart_beat_status")
 
     @heart_beat_status.setter
@@ -345,9 +256,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -357,13 +265,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        OS version.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "os_version")
 
     @os_version.setter
@@ -373,9 +274,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="pluginLists")
     def plugin_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentPluginListArgs']]]]:
-        """
-        List of plugins associated with the agent.
-        """
         return pulumi.get(self, "plugin_lists")
 
     @plugin_lists.setter
@@ -385,9 +283,6 @@ class _AgentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Agent.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -397,9 +292,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -409,9 +301,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the Agent was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -421,9 +310,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="timeExpireAgentKeyInMs")
     def time_expire_agent_key_in_ms(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_expire_agent_key_in_ms")
 
     @time_expire_agent_key_in_ms.setter
@@ -433,9 +319,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="timeLastSyncReceived")
     def time_last_sync_received(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_last_sync_received")
 
     @time_last_sync_received.setter
@@ -445,9 +328,6 @@ class _AgentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the Agent was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -470,53 +350,9 @@ class Agent(pulumi.CustomResource):
                  os_version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an Agent.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_agent = oci.cloud_bridge.Agent("testAgent",
-            agent_type=var["agent_agent_type"],
-            agent_version=var["agent_agent_version"],
-            compartment_id=var["compartment_id"],
-            display_name=var["agent_display_name"],
-            environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-            os_version=var["agent_os_version"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        Agents can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
-        ```
-
+        Create a Agent resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agent_type: Agent identifier.
-        :param pulumi.Input[str] agent_version: Agent identifier.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) Agent identifier.
-        :param pulumi.Input[str] environment_id: Environment identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] os_version: OS version.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -525,39 +361,7 @@ class Agent(pulumi.CustomResource):
                  args: AgentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an Agent.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_agent = oci.cloud_bridge.Agent("testAgent",
-            agent_type=var["agent_agent_type"],
-            agent_version=var["agent_agent_version"],
-            compartment_id=var["compartment_id"],
-            display_name=var["agent_display_name"],
-            environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-            os_version=var["agent_os_version"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        Agents can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
-        ```
-
+        Create a Agent resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AgentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -655,28 +459,6 @@ class Agent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agent_pub_key: Resource principal public key.
-        :param pulumi.Input[str] agent_type: Agent identifier.
-        :param pulumi.Input[str] agent_version: Agent identifier.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) Agent identifier.
-        :param pulumi.Input[str] environment_id: Environment identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] heart_beat_status: The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] os_version: OS version.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AgentPluginListArgs']]]] plugin_lists: List of plugins associated with the agent.
-        :param pulumi.Input[str] state: The current state of the Agent.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_expire_agent_key_in_ms: The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_last_sync_received: The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -704,149 +486,91 @@ class Agent(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="agentPubKey")
-    def agent_pub_key(self) -> pulumi.Output[str]:
-        """
-        Resource principal public key.
-        """
+    def agent_pub_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "agent_pub_key")
 
     @property
     @pulumi.getter(name="agentType")
     def agent_type(self) -> pulumi.Output[str]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_type")
 
     @property
     @pulumi.getter(name="agentVersion")
     def agent_version(self) -> pulumi.Output[str]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_version")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Agent identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="environmentId")
     def environment_id(self) -> pulumi.Output[str]:
-        """
-        Environment identifier.
-        """
         return pulumi.get(self, "environment_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="heartBeatStatus")
-    def heart_beat_status(self) -> pulumi.Output[str]:
-        """
-        The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-        """
+    def heart_beat_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "heart_beat_status")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> pulumi.Output[str]:
-        """
-        OS version.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "os_version")
 
     @property
     @pulumi.getter(name="pluginLists")
-    def plugin_lists(self) -> pulumi.Output[Sequence['outputs.AgentPluginList']]:
-        """
-        List of plugins associated with the agent.
-        """
+    def plugin_lists(self) -> pulumi.Output[Optional[Sequence['outputs.AgentPluginList']]]:
         return pulumi.get(self, "plugin_lists")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Agent.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the Agent was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpireAgentKeyInMs")
-    def time_expire_agent_key_in_ms(self) -> pulumi.Output[str]:
-        """
-        The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-        """
+    def time_expire_agent_key_in_ms(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_expire_agent_key_in_ms")
 
     @property
     @pulumi.getter(name="timeLastSyncReceived")
-    def time_last_sync_received(self) -> pulumi.Output[str]:
-        """
-        The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-        """
+    def time_last_sync_received(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_sync_received")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when the Agent was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

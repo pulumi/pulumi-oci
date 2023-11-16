@@ -47,12 +47,12 @@ export interface GetExternalExadataStorageServerOpenAlertHistoryResult {
     /**
      * A list of open alerts.
      */
-    readonly alerts: outputs.DatabaseManagement.GetExternalExadataStorageServerOpenAlertHistoryAlert[];
+    readonly alerts?: outputs.DatabaseManagement.GetExternalExadataStorageServerOpenAlertHistoryAlert[];
     readonly externalExadataStorageServerId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.

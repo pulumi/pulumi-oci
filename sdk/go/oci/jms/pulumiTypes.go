@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -57,12 +56,6 @@ func (i FleetInventoryLogArgs) ToFleetInventoryLogOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(FleetInventoryLogOutput)
 }
 
-func (i FleetInventoryLogArgs) ToOutput(ctx context.Context) pulumix.Output[FleetInventoryLog] {
-	return pulumix.Output[FleetInventoryLog]{
-		OutputState: i.ToFleetInventoryLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FleetInventoryLogArgs) ToFleetInventoryLogPtrOutput() FleetInventoryLogPtrOutput {
 	return i.ToFleetInventoryLogPtrOutputWithContext(context.Background())
 }
@@ -104,12 +97,6 @@ func (i *fleetInventoryLogPtrType) ToFleetInventoryLogPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(FleetInventoryLogPtrOutput)
 }
 
-func (i *fleetInventoryLogPtrType) ToOutput(ctx context.Context) pulumix.Output[*FleetInventoryLog] {
-	return pulumix.Output[*FleetInventoryLog]{
-		OutputState: i.ToFleetInventoryLogPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FleetInventoryLogOutput struct{ *pulumi.OutputState }
 
 func (FleetInventoryLogOutput) ElementType() reflect.Type {
@@ -132,12 +119,6 @@ func (o FleetInventoryLogOutput) ToFleetInventoryLogPtrOutputWithContext(ctx con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetInventoryLog) *FleetInventoryLog {
 		return &v
 	}).(FleetInventoryLogPtrOutput)
-}
-
-func (o FleetInventoryLogOutput) ToOutput(ctx context.Context) pulumix.Output[FleetInventoryLog] {
-	return pulumix.Output[FleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -165,12 +146,6 @@ func (o FleetInventoryLogPtrOutput) ToFleetInventoryLogPtrOutput() FleetInventor
 
 func (o FleetInventoryLogPtrOutput) ToFleetInventoryLogPtrOutputWithContext(ctx context.Context) FleetInventoryLogPtrOutput {
 	return o
-}
-
-func (o FleetInventoryLogPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FleetInventoryLog] {
-	return pulumix.Output[*FleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FleetInventoryLogPtrOutput) Elem() FleetInventoryLogOutput {
@@ -249,12 +224,6 @@ func (i FleetOperationLogArgs) ToFleetOperationLogOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(FleetOperationLogOutput)
 }
 
-func (i FleetOperationLogArgs) ToOutput(ctx context.Context) pulumix.Output[FleetOperationLog] {
-	return pulumix.Output[FleetOperationLog]{
-		OutputState: i.ToFleetOperationLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FleetOperationLogArgs) ToFleetOperationLogPtrOutput() FleetOperationLogPtrOutput {
 	return i.ToFleetOperationLogPtrOutputWithContext(context.Background())
 }
@@ -296,12 +265,6 @@ func (i *fleetOperationLogPtrType) ToFleetOperationLogPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(FleetOperationLogPtrOutput)
 }
 
-func (i *fleetOperationLogPtrType) ToOutput(ctx context.Context) pulumix.Output[*FleetOperationLog] {
-	return pulumix.Output[*FleetOperationLog]{
-		OutputState: i.ToFleetOperationLogPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FleetOperationLogOutput struct{ *pulumi.OutputState }
 
 func (FleetOperationLogOutput) ElementType() reflect.Type {
@@ -324,12 +287,6 @@ func (o FleetOperationLogOutput) ToFleetOperationLogPtrOutputWithContext(ctx con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetOperationLog) *FleetOperationLog {
 		return &v
 	}).(FleetOperationLogPtrOutput)
-}
-
-func (o FleetOperationLogOutput) ToOutput(ctx context.Context) pulumix.Output[FleetOperationLog] {
-	return pulumix.Output[FleetOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -357,12 +314,6 @@ func (o FleetOperationLogPtrOutput) ToFleetOperationLogPtrOutput() FleetOperatio
 
 func (o FleetOperationLogPtrOutput) ToFleetOperationLogPtrOutputWithContext(ctx context.Context) FleetOperationLogPtrOutput {
 	return o
-}
-
-func (o FleetOperationLogPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FleetOperationLog] {
-	return pulumix.Output[*FleetOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FleetOperationLogPtrOutput) Elem() FleetOperationLogOutput {
@@ -431,12 +382,6 @@ func (i GetAnnouncementsAnnouncementCollectionArgs) ToGetAnnouncementsAnnounceme
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionOutput)
 }
 
-func (i GetAnnouncementsAnnouncementCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollection]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnouncementsAnnouncementCollectionArrayInput is an input type that accepts GetAnnouncementsAnnouncementCollectionArray and GetAnnouncementsAnnouncementCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAnnouncementsAnnouncementCollectionArrayInput` via:
 //
@@ -462,12 +407,6 @@ func (i GetAnnouncementsAnnouncementCollectionArray) ToGetAnnouncementsAnnouncem
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionArrayOutput)
 }
 
-func (i GetAnnouncementsAnnouncementCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollection]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementsAnnouncementCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementsAnnouncementCollectionOutput) ElementType() reflect.Type {
@@ -480,12 +419,6 @@ func (o GetAnnouncementsAnnouncementCollectionOutput) ToGetAnnouncementsAnnounce
 
 func (o GetAnnouncementsAnnouncementCollectionOutput) ToGetAnnouncementsAnnouncementCollectionOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionOutput {
 	return o
-}
-
-func (o GetAnnouncementsAnnouncementCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of AnnouncementSummary items
@@ -509,12 +442,6 @@ func (o GetAnnouncementsAnnouncementCollectionArrayOutput) ToGetAnnouncementsAnn
 	return o
 }
 
-func (o GetAnnouncementsAnnouncementCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnnouncementsAnnouncementCollectionArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsAnnouncementCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementsAnnouncementCollection {
 		return vs[0].([]GetAnnouncementsAnnouncementCollection)[vs[1].(int)]
@@ -523,13 +450,13 @@ func (o GetAnnouncementsAnnouncementCollectionArrayOutput) Index(i pulumi.IntInp
 
 type GetAnnouncementsAnnouncementCollectionItem struct {
 	// Unique id of the announcement
-	Key int `pulumi:"key"`
+	Key *int `pulumi:"key"`
 	// Summary text of the announcement
-	Summary string `pulumi:"summary"`
+	Summary *string `pulumi:"summary"`
 	// Date time on which the announcement was released
-	TimeReleased string `pulumi:"timeReleased"`
+	TimeReleased *string `pulumi:"timeReleased"`
 	// URL to the announcement web page
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetAnnouncementsAnnouncementCollectionItemInput is an input type that accepts GetAnnouncementsAnnouncementCollectionItemArgs and GetAnnouncementsAnnouncementCollectionItemOutput values.
@@ -545,13 +472,13 @@ type GetAnnouncementsAnnouncementCollectionItemInput interface {
 
 type GetAnnouncementsAnnouncementCollectionItemArgs struct {
 	// Unique id of the announcement
-	Key pulumi.IntInput `pulumi:"key"`
+	Key pulumi.IntPtrInput `pulumi:"key"`
 	// Summary text of the announcement
-	Summary pulumi.StringInput `pulumi:"summary"`
+	Summary pulumi.StringPtrInput `pulumi:"summary"`
 	// Date time on which the announcement was released
-	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	TimeReleased pulumi.StringPtrInput `pulumi:"timeReleased"`
 	// URL to the announcement web page
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetAnnouncementsAnnouncementCollectionItemArgs) ElementType() reflect.Type {
@@ -564,12 +491,6 @@ func (i GetAnnouncementsAnnouncementCollectionItemArgs) ToGetAnnouncementsAnnoun
 
 func (i GetAnnouncementsAnnouncementCollectionItemArgs) ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionItemOutput)
-}
-
-func (i GetAnnouncementsAnnouncementCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnnouncementsAnnouncementCollectionItemArrayInput is an input type that accepts GetAnnouncementsAnnouncementCollectionItemArray and GetAnnouncementsAnnouncementCollectionItemArrayOutput values.
@@ -597,12 +518,6 @@ func (i GetAnnouncementsAnnouncementCollectionItemArray) ToGetAnnouncementsAnnou
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionItemArrayOutput)
 }
 
-func (i GetAnnouncementsAnnouncementCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementsAnnouncementCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementsAnnouncementCollectionItemOutput) ElementType() reflect.Type {
@@ -617,30 +532,24 @@ func (o GetAnnouncementsAnnouncementCollectionItemOutput) ToGetAnnouncementsAnno
 	return o
 }
 
-func (o GetAnnouncementsAnnouncementCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique id of the announcement
-func (o GetAnnouncementsAnnouncementCollectionItemOutput) Key() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) int { return v.Key }).(pulumi.IntOutput)
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) Key() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) *int { return v.Key }).(pulumi.IntPtrOutput)
 }
 
 // Summary text of the announcement
-func (o GetAnnouncementsAnnouncementCollectionItemOutput) Summary() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) string { return v.Summary }).(pulumi.StringOutput)
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) Summary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) *string { return v.Summary }).(pulumi.StringPtrOutput)
 }
 
 // Date time on which the announcement was released
-func (o GetAnnouncementsAnnouncementCollectionItemOutput) TimeReleased() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) TimeReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) *string { return v.TimeReleased }).(pulumi.StringPtrOutput)
 }
 
 // URL to the announcement web page
-func (o GetAnnouncementsAnnouncementCollectionItemOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) string { return v.Url }).(pulumi.StringOutput)
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type GetAnnouncementsAnnouncementCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -655,12 +564,6 @@ func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToGetAnnouncement
 
 func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsAnnouncementCollectionItemOutput {
@@ -704,12 +607,6 @@ func (i GetAnnouncementsFilterArgs) ToGetAnnouncementsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsFilterOutput)
 }
 
-func (i GetAnnouncementsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsFilter] {
-	return pulumix.Output[GetAnnouncementsFilter]{
-		OutputState: i.ToGetAnnouncementsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnouncementsFilterArrayInput is an input type that accepts GetAnnouncementsFilterArray and GetAnnouncementsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAnnouncementsFilterArrayInput` via:
 //
@@ -735,12 +632,6 @@ func (i GetAnnouncementsFilterArray) ToGetAnnouncementsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsFilterArrayOutput)
 }
 
-func (i GetAnnouncementsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsFilter] {
-	return pulumix.Output[[]GetAnnouncementsFilter]{
-		OutputState: i.ToGetAnnouncementsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementsFilterOutput) ElementType() reflect.Type {
@@ -753,12 +644,6 @@ func (o GetAnnouncementsFilterOutput) ToGetAnnouncementsFilterOutput() GetAnnoun
 
 func (o GetAnnouncementsFilterOutput) ToGetAnnouncementsFilterOutputWithContext(ctx context.Context) GetAnnouncementsFilterOutput {
 	return o
-}
-
-func (o GetAnnouncementsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsFilter] {
-	return pulumix.Output[GetAnnouncementsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementsFilterOutput) Name() pulumi.StringOutput {
@@ -787,12 +672,6 @@ func (o GetAnnouncementsFilterArrayOutput) ToGetAnnouncementsFilterArrayOutputWi
 	return o
 }
 
-func (o GetAnnouncementsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsFilter] {
-	return pulumix.Output[[]GetAnnouncementsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnnouncementsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementsFilter {
 		return vs[0].([]GetAnnouncementsFilter)[vs[1].(int)]
@@ -801,7 +680,7 @@ func (o GetAnnouncementsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncem
 
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput is an input type that accepts GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs and GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput values.
@@ -817,7 +696,7 @@ type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput interface {
 
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ElementType() reflect.Type {
@@ -830,12 +709,6 @@ func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToGetFlee
 
 func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray and GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput values.
@@ -863,12 +736,6 @@ func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray) ToGetFle
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ElementType() reflect.Type {
@@ -883,15 +750,9 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToGetFl
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: o.OutputState,
-	}
-}
-
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
-func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput struct{ *pulumi.OutputState }
@@ -908,12 +769,6 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) To
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking)[vs[1].(int)]
@@ -922,7 +777,7 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) In
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Summarized events log for advanced feature.
 	SummarizedEventsLogs []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog `pulumi:"summarizedEventsLogs"`
 }
@@ -940,7 +795,7 @@ type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput interface {
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Summarized events log for advanced feature.
 	SummarizedEventsLogs GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput `pulumi:"summarizedEventsLogs"`
 }
@@ -955,12 +810,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToGetFleetA
 
 func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput values.
@@ -988,12 +837,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray) ToGetFleet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ElementType() reflect.Type {
@@ -1008,15 +851,9 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToGetFlee
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: o.OutputState,
-	}
-}
-
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Summarized events log for advanced feature.
@@ -1040,12 +877,6 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ToGe
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis)[vs[1].(int)]
@@ -1054,9 +885,9 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) Inde
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput values.
@@ -1072,9 +903,9 @@ type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogI
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ElementType() reflect.Type {
@@ -1087,12 +918,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 
 func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput values.
@@ -1120,12 +945,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ElementType() reflect.Type {
@@ -1140,24 +959,18 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) string {
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) *string {
 		return v.LogGroupId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) string {
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) *string {
 		return v.LogId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput struct{ *pulumi.OutputState }
@@ -1174,12 +987,6 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)[vs[1].(int)]
@@ -1188,7 +995,7 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 
 type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs and GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput values.
@@ -1204,7 +1011,7 @@ type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput interface {
 
 type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ElementType() reflect.Type {
@@ -1217,12 +1024,6 @@ func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToGetFlee
 
 func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray and GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput values.
@@ -1250,12 +1051,6 @@ func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray) ToGetFle
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ElementType() reflect.Type {
@@ -1270,15 +1065,9 @@ func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToGetFl
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: o.OutputState,
-	}
-}
-
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
-func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput struct{ *pulumi.OutputState }
@@ -1295,12 +1084,6 @@ func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) To
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis)[vs[1].(int)]
@@ -1309,7 +1092,7 @@ func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) In
 
 type GetFleetAdvancedFeatureConfigurationJfrRecording struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetFleetAdvancedFeatureConfigurationJfrRecordingInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJfrRecordingArgs and GetFleetAdvancedFeatureConfigurationJfrRecordingOutput values.
@@ -1325,7 +1108,7 @@ type GetFleetAdvancedFeatureConfigurationJfrRecordingInput interface {
 
 type GetFleetAdvancedFeatureConfigurationJfrRecordingArgs struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ElementType() reflect.Type {
@@ -1338,12 +1121,6 @@ func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ToGetFleetAdvanced
 
 func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJfrRecordingOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJfrRecordingArray and GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput values.
@@ -1371,12 +1148,6 @@ func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArray) ToGetFleetAdvance
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationJfrRecordingOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ElementType() reflect.Type {
@@ -1391,15 +1162,9 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToGetFleetAdvanc
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: o.OutputState,
-	}
-}
-
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
-func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJfrRecording) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJfrRecording) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput struct{ *pulumi.OutputState }
@@ -1416,12 +1181,6 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ToGetFleetA
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationJfrRecording {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationJfrRecording)[vs[1].(int)]
@@ -1430,7 +1189,7 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) Index(i pul
 
 type GetFleetAdvancedFeatureConfigurationLcm struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// List of available post actions you can execute after the successful Java installation.
 	PostInstallationActions []GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction `pulumi:"postInstallationActions"`
 }
@@ -1448,7 +1207,7 @@ type GetFleetAdvancedFeatureConfigurationLcmInput interface {
 
 type GetFleetAdvancedFeatureConfigurationLcmArgs struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// List of available post actions you can execute after the successful Java installation.
 	PostInstallationActions GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput `pulumi:"postInstallationActions"`
 }
@@ -1463,12 +1222,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmArgs) ToGetFleetAdvancedFeatureCo
 
 func (i GetFleetAdvancedFeatureConfigurationLcmArgs) ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationLcmArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmArray and GetFleetAdvancedFeatureConfigurationLcmArrayOutput values.
@@ -1496,12 +1249,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmArray) ToGetFleetAdvancedFeatureC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmOutput) ElementType() reflect.Type {
@@ -1516,15 +1263,9 @@ func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToGetFleetAdvancedFeature
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
-func (o GetFleetAdvancedFeatureConfigurationLcmOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcm) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFleetAdvancedFeatureConfigurationLcmOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcm) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // List of available post actions you can execute after the successful Java installation.
@@ -1548,12 +1289,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ToGetFleetAdvancedFe
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcm {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcm)[vs[1].(int)]
@@ -1562,19 +1297,19 @@ func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) Index(i pulumi.IntIn
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction struct {
 	// Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
-	AddLoggingHandler bool `pulumi:"addLoggingHandler"`
+	AddLoggingHandler *bool `pulumi:"addLoggingHandler"`
 	// The following post JRE installation actions are supported by the field:
 	// * Disable TLS 1.0 , TLS 1.1
 	DisabledTlsVersions []string `pulumi:"disabledTlsVersions"`
 	// Sets the logging level in logging.properties file.
-	GlobalLoggingLevel string `pulumi:"globalLoggingLevel"`
+	GlobalLoggingLevel *string `pulumi:"globalLoggingLevel"`
 	// test
 	MinimumKeySizeSettings []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting `pulumi:"minimumKeySizeSettings"`
 	// List of proxy properties to be configured in net.properties file.
 	Proxies []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy `pulumi:"proxies"`
 	// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
 	// * Replace JDK root certificates with a list provided by the operating system.
-	ShouldReplaceCertificatesOperatingSystem bool `pulumi:"shouldReplaceCertificatesOperatingSystem"`
+	ShouldReplaceCertificatesOperatingSystem *bool `pulumi:"shouldReplaceCertificatesOperatingSystem"`
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput values.
@@ -1590,19 +1325,19 @@ type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput interfac
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs struct {
 	// Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
-	AddLoggingHandler pulumi.BoolInput `pulumi:"addLoggingHandler"`
+	AddLoggingHandler pulumi.BoolPtrInput `pulumi:"addLoggingHandler"`
 	// The following post JRE installation actions are supported by the field:
 	// * Disable TLS 1.0 , TLS 1.1
 	DisabledTlsVersions pulumi.StringArrayInput `pulumi:"disabledTlsVersions"`
 	// Sets the logging level in logging.properties file.
-	GlobalLoggingLevel pulumi.StringInput `pulumi:"globalLoggingLevel"`
+	GlobalLoggingLevel pulumi.StringPtrInput `pulumi:"globalLoggingLevel"`
 	// test
 	MinimumKeySizeSettings GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput `pulumi:"minimumKeySizeSettings"`
 	// List of proxy properties to be configured in net.properties file.
 	Proxies GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput `pulumi:"proxies"`
 	// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
 	// * Replace JDK root certificates with a list provided by the operating system.
-	ShouldReplaceCertificatesOperatingSystem pulumi.BoolInput `pulumi:"shouldReplaceCertificatesOperatingSystem"`
+	ShouldReplaceCertificatesOperatingSystem pulumi.BoolPtrInput `pulumi:"shouldReplaceCertificatesOperatingSystem"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ElementType() reflect.Type {
@@ -1615,12 +1350,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ToGet
 
 func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput values.
@@ -1648,12 +1377,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ElementType() reflect.Type {
@@ -1668,15 +1391,11 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToG
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) AddLoggingHandler() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) bool { return v.AddLoggingHandler }).(pulumi.BoolOutput)
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) AddLoggingHandler() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) *bool {
+		return v.AddLoggingHandler
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The following post JRE installation actions are supported by the field:
@@ -1688,10 +1407,10 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) Dis
 }
 
 // Sets the logging level in logging.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) GlobalLoggingLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) GlobalLoggingLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) *string {
 		return v.GlobalLoggingLevel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // test
@@ -1710,10 +1429,10 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) Pro
 
 // Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
 // * Replace JDK root certificates with a list provided by the operating system.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ShouldReplaceCertificatesOperatingSystem() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) bool {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ShouldReplaceCertificatesOperatingSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) *bool {
 		return v.ShouldReplaceCertificatesOperatingSystem
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput struct{ *pulumi.OutputState }
@@ -1728,12 +1447,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
@@ -1797,12 +1510,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput` via:
 //
@@ -1828,12 +1535,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ElementType() reflect.Type {
@@ -1846,12 +1547,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
@@ -1896,12 +1591,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting)[vs[1].(int)]
@@ -1910,9 +1599,9 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath struct {
 	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-	KeySize int `pulumi:"keySize"`
+	KeySize *int `pulumi:"keySize"`
 	// The algorithm name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput values.
@@ -1928,9 +1617,9 @@ type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySize
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs struct {
 	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-	KeySize pulumi.IntInput `pulumi:"keySize"`
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
 	// The algorithm name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs) ElementType() reflect.Type {
@@ -1943,12 +1632,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput values.
@@ -1976,12 +1659,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ElementType() reflect.Type {
@@ -1996,24 +1673,18 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) KeySize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath) int {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath) *int {
 		return v.KeySize
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The algorithm name.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput struct{ *pulumi.OutputState }
@@ -2030,12 +1701,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath)[vs[1].(int)]
@@ -2044,9 +1709,9 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar struct {
 	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-	KeySize int `pulumi:"keySize"`
+	KeySize *int `pulumi:"keySize"`
 	// The algorithm name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput values.
@@ -2062,9 +1727,9 @@ type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySize
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs struct {
 	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-	KeySize pulumi.IntInput `pulumi:"keySize"`
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
 	// The algorithm name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs) ElementType() reflect.Type {
@@ -2077,12 +1742,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput values.
@@ -2110,12 +1769,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ElementType() reflect.Type {
@@ -2130,24 +1783,18 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) KeySize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar) int {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar) *int {
 		return v.KeySize
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The algorithm name.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput struct{ *pulumi.OutputState }
@@ -2164,12 +1811,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar)[vs[1].(int)]
@@ -2178,9 +1819,9 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl struct {
 	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-	KeySize int `pulumi:"keySize"`
+	KeySize *int `pulumi:"keySize"`
 	// The algorithm name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput values.
@@ -2196,9 +1837,9 @@ type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySize
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs struct {
 	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-	KeySize pulumi.IntInput `pulumi:"keySize"`
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
 	// The algorithm name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs) ElementType() reflect.Type {
@@ -2211,12 +1852,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput values.
@@ -2244,12 +1879,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ElementType() reflect.Type {
@@ -2264,24 +1893,18 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) KeySize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl) int {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl) *int {
 		return v.KeySize
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The algorithm name.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput struct{ *pulumi.OutputState }
@@ -2298,12 +1921,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl)[vs[1].(int)]
@@ -2312,23 +1929,23 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy struct {
 	// Ftp host to be set in net.properties file.
-	FtpProxyHost string `pulumi:"ftpProxyHost"`
+	FtpProxyHost *string `pulumi:"ftpProxyHost"`
 	// Ftp port number to be set in net.properties file.
-	FtpProxyPort int `pulumi:"ftpProxyPort"`
+	FtpProxyPort *int `pulumi:"ftpProxyPort"`
 	// Http host to be set in net.properties file.
-	HttpProxyHost string `pulumi:"httpProxyHost"`
+	HttpProxyHost *string `pulumi:"httpProxyHost"`
 	// Http port number to be set in net.properties file.
-	HttpProxyPort int `pulumi:"httpProxyPort"`
+	HttpProxyPort *int `pulumi:"httpProxyPort"`
 	// Https host to be set in net.properties file.
-	HttpsProxyHost string `pulumi:"httpsProxyHost"`
+	HttpsProxyHost *string `pulumi:"httpsProxyHost"`
 	// Https port number to be set in net.properties file.
-	HttpsProxyPort int `pulumi:"httpsProxyPort"`
+	HttpsProxyPort *int `pulumi:"httpsProxyPort"`
 	// Socks host to be set in net.properties file.
-	SocksProxyHost string `pulumi:"socksProxyHost"`
+	SocksProxyHost *string `pulumi:"socksProxyHost"`
 	// Socks port number to be set in net.properties file.
-	SocksProxyPort int `pulumi:"socksProxyPort"`
+	SocksProxyPort *int `pulumi:"socksProxyPort"`
 	// Sets "java.net.useSystemProxies=true" in net.properties when they exist.
-	UseSystemProxies bool `pulumi:"useSystemProxies"`
+	UseSystemProxies *bool `pulumi:"useSystemProxies"`
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput values.
@@ -2344,23 +1961,23 @@ type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyInput int
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs struct {
 	// Ftp host to be set in net.properties file.
-	FtpProxyHost pulumi.StringInput `pulumi:"ftpProxyHost"`
+	FtpProxyHost pulumi.StringPtrInput `pulumi:"ftpProxyHost"`
 	// Ftp port number to be set in net.properties file.
-	FtpProxyPort pulumi.IntInput `pulumi:"ftpProxyPort"`
+	FtpProxyPort pulumi.IntPtrInput `pulumi:"ftpProxyPort"`
 	// Http host to be set in net.properties file.
-	HttpProxyHost pulumi.StringInput `pulumi:"httpProxyHost"`
+	HttpProxyHost pulumi.StringPtrInput `pulumi:"httpProxyHost"`
 	// Http port number to be set in net.properties file.
-	HttpProxyPort pulumi.IntInput `pulumi:"httpProxyPort"`
+	HttpProxyPort pulumi.IntPtrInput `pulumi:"httpProxyPort"`
 	// Https host to be set in net.properties file.
-	HttpsProxyHost pulumi.StringInput `pulumi:"httpsProxyHost"`
+	HttpsProxyHost pulumi.StringPtrInput `pulumi:"httpsProxyHost"`
 	// Https port number to be set in net.properties file.
-	HttpsProxyPort pulumi.IntInput `pulumi:"httpsProxyPort"`
+	HttpsProxyPort pulumi.IntPtrInput `pulumi:"httpsProxyPort"`
 	// Socks host to be set in net.properties file.
-	SocksProxyHost pulumi.StringInput `pulumi:"socksProxyHost"`
+	SocksProxyHost pulumi.StringPtrInput `pulumi:"socksProxyHost"`
 	// Socks port number to be set in net.properties file.
-	SocksProxyPort pulumi.IntInput `pulumi:"socksProxyPort"`
+	SocksProxyPort pulumi.IntPtrInput `pulumi:"socksProxyPort"`
 	// Sets "java.net.useSystemProxies=true" in net.properties when they exist.
-	UseSystemProxies pulumi.BoolInput `pulumi:"useSystemProxies"`
+	UseSystemProxies pulumi.BoolPtrInput `pulumi:"useSystemProxies"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) ElementType() reflect.Type {
@@ -2373,12 +1990,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) 
 
 func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput values.
@@ -2406,12 +2017,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ElementType() reflect.Type {
@@ -2426,69 +2031,65 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Ftp host to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) FtpProxyHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) FtpProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *string {
 		return v.FtpProxyHost
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Ftp port number to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) FtpProxyPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int { return v.FtpProxyPort }).(pulumi.IntOutput)
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) FtpProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *int { return v.FtpProxyPort }).(pulumi.IntPtrOutput)
 }
 
 // Http host to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpProxyHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *string {
 		return v.HttpProxyHost
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Http port number to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpProxyPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int { return v.HttpProxyPort }).(pulumi.IntOutput)
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *int {
+		return v.HttpProxyPort
+	}).(pulumi.IntPtrOutput)
 }
 
 // Https host to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpsProxyHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpsProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *string {
 		return v.HttpsProxyHost
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Https port number to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpsProxyPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpsProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *int {
 		return v.HttpsProxyPort
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Socks host to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) SocksProxyHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) SocksProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *string {
 		return v.SocksProxyHost
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Socks port number to be set in net.properties file.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) SocksProxyPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) SocksProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *int {
 		return v.SocksProxyPort
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Sets "java.net.useSystemProxies=true" in net.properties when they exist.
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) UseSystemProxies() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) bool {
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) UseSystemProxies() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) *bool {
 		return v.UseSystemProxies
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput struct{ *pulumi.OutputState }
@@ -2505,12 +2106,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayO
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy)[vs[1].(int)]
@@ -2519,7 +2114,7 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayO
 
 type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput is an input type that accepts GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs and GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput values.
@@ -2535,7 +2130,7 @@ type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput interfac
 
 type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs struct {
 	// PerformanceTuningAnalysis flag to store enabled or disabled status.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ElementType() reflect.Type {
@@ -2548,12 +2143,6 @@ func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToGet
 
 func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput)
-}
-
-func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray and GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput values.
@@ -2581,12 +2170,6 @@ func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ElementType() reflect.Type {
@@ -2601,15 +2184,9 @@ func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToG
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: o.OutputState,
-	}
-}
-
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
-func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput struct{ *pulumi.OutputState }
@@ -2624,12 +2201,6 @@ func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput
 
 func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
@@ -2673,12 +2244,6 @@ func (i GetFleetBlocklistsFilterArgs) ToGetFleetBlocklistsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsFilterOutput)
 }
 
-func (i GetFleetBlocklistsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsFilter] {
-	return pulumix.Output[GetFleetBlocklistsFilter]{
-		OutputState: i.ToGetFleetBlocklistsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetBlocklistsFilterArrayInput is an input type that accepts GetFleetBlocklistsFilterArray and GetFleetBlocklistsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsFilterArrayInput` via:
 //
@@ -2704,12 +2269,6 @@ func (i GetFleetBlocklistsFilterArray) ToGetFleetBlocklistsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsFilterArrayOutput)
 }
 
-func (i GetFleetBlocklistsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsFilter] {
-	return pulumix.Output[[]GetFleetBlocklistsFilter]{
-		OutputState: i.ToGetFleetBlocklistsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetBlocklistsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetBlocklistsFilterOutput) ElementType() reflect.Type {
@@ -2722,12 +2281,6 @@ func (o GetFleetBlocklistsFilterOutput) ToGetFleetBlocklistsFilterOutput() GetFl
 
 func (o GetFleetBlocklistsFilterOutput) ToGetFleetBlocklistsFilterOutputWithContext(ctx context.Context) GetFleetBlocklistsFilterOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsFilter] {
-	return pulumix.Output[GetFleetBlocklistsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetBlocklistsFilterOutput) Name() pulumi.StringOutput {
@@ -2756,12 +2309,6 @@ func (o GetFleetBlocklistsFilterArrayOutput) ToGetFleetBlocklistsFilterArrayOutp
 	return o
 }
 
-func (o GetFleetBlocklistsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsFilter] {
-	return pulumix.Output[[]GetFleetBlocklistsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetBlocklistsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetBlocklistsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetBlocklistsFilter {
 		return vs[0].([]GetFleetBlocklistsFilter)[vs[1].(int)]
@@ -2770,11 +2317,11 @@ func (o GetFleetBlocklistsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetBl
 
 type GetFleetBlocklistsItem struct {
 	// The unique identifier of this blocklist record.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The operation type.
-	Operation string `pulumi:"operation"`
+	Operation *string `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
-	Reason string `pulumi:"reason"`
+	Reason *string `pulumi:"reason"`
 	// A resource to blocklist for certain operation.
 	Targets []GetFleetBlocklistsItemTarget `pulumi:"targets"`
 }
@@ -2792,11 +2339,11 @@ type GetFleetBlocklistsItemInput interface {
 
 type GetFleetBlocklistsItemArgs struct {
 	// The unique identifier of this blocklist record.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The operation type.
-	Operation pulumi.StringInput `pulumi:"operation"`
+	Operation pulumi.StringPtrInput `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
-	Reason pulumi.StringInput `pulumi:"reason"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
 	// A resource to blocklist for certain operation.
 	Targets GetFleetBlocklistsItemTargetArrayInput `pulumi:"targets"`
 }
@@ -2811,12 +2358,6 @@ func (i GetFleetBlocklistsItemArgs) ToGetFleetBlocklistsItemOutput() GetFleetBlo
 
 func (i GetFleetBlocklistsItemArgs) ToGetFleetBlocklistsItemOutputWithContext(ctx context.Context) GetFleetBlocklistsItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemOutput)
-}
-
-func (i GetFleetBlocklistsItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItem] {
-	return pulumix.Output[GetFleetBlocklistsItem]{
-		OutputState: i.ToGetFleetBlocklistsItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetBlocklistsItemArrayInput is an input type that accepts GetFleetBlocklistsItemArray and GetFleetBlocklistsItemArrayOutput values.
@@ -2844,12 +2385,6 @@ func (i GetFleetBlocklistsItemArray) ToGetFleetBlocklistsItemArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemArrayOutput)
 }
 
-func (i GetFleetBlocklistsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItem] {
-	return pulumix.Output[[]GetFleetBlocklistsItem]{
-		OutputState: i.ToGetFleetBlocklistsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetBlocklistsItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetBlocklistsItemOutput) ElementType() reflect.Type {
@@ -2864,25 +2399,19 @@ func (o GetFleetBlocklistsItemOutput) ToGetFleetBlocklistsItemOutputWithContext(
 	return o
 }
 
-func (o GetFleetBlocklistsItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItem] {
-	return pulumix.Output[GetFleetBlocklistsItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique identifier of this blocklist record.
-func (o GetFleetBlocklistsItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetBlocklistsItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetFleetBlocklistsItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetBlocklistsItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The operation type.
-func (o GetFleetBlocklistsItemOutput) Operation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetBlocklistsItem) string { return v.Operation }).(pulumi.StringOutput)
+func (o GetFleetBlocklistsItemOutput) Operation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetBlocklistsItem) *string { return v.Operation }).(pulumi.StringPtrOutput)
 }
 
 // The reason why the operation is blocklisted.
-func (o GetFleetBlocklistsItemOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetBlocklistsItem) string { return v.Reason }).(pulumi.StringOutput)
+func (o GetFleetBlocklistsItemOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetBlocklistsItem) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 // A resource to blocklist for certain operation.
@@ -2904,12 +2433,6 @@ func (o GetFleetBlocklistsItemArrayOutput) ToGetFleetBlocklistsItemArrayOutputWi
 	return o
 }
 
-func (o GetFleetBlocklistsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItem] {
-	return pulumix.Output[[]GetFleetBlocklistsItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetBlocklistsItemArrayOutput) Index(i pulumi.IntInput) GetFleetBlocklistsItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetBlocklistsItem {
 		return vs[0].([]GetFleetBlocklistsItem)[vs[1].(int)]
@@ -2918,11 +2441,11 @@ func (o GetFleetBlocklistsItemArrayOutput) Index(i pulumi.IntInput) GetFleetBloc
 
 type GetFleetBlocklistsItemTarget struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId string `pulumi:"fleetId"`
+	FleetId *string `pulumi:"fleetId"`
 	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey string `pulumi:"installationKey"`
+	InstallationKey *string `pulumi:"installationKey"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 }
 
 // GetFleetBlocklistsItemTargetInput is an input type that accepts GetFleetBlocklistsItemTargetArgs and GetFleetBlocklistsItemTargetOutput values.
@@ -2938,11 +2461,11 @@ type GetFleetBlocklistsItemTargetInput interface {
 
 type GetFleetBlocklistsItemTargetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	FleetId pulumi.StringPtrInput `pulumi:"fleetId"`
 	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey pulumi.StringInput `pulumi:"installationKey"`
+	InstallationKey pulumi.StringPtrInput `pulumi:"installationKey"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 }
 
 func (GetFleetBlocklistsItemTargetArgs) ElementType() reflect.Type {
@@ -2955,12 +2478,6 @@ func (i GetFleetBlocklistsItemTargetArgs) ToGetFleetBlocklistsItemTargetOutput()
 
 func (i GetFleetBlocklistsItemTargetArgs) ToGetFleetBlocklistsItemTargetOutputWithContext(ctx context.Context) GetFleetBlocklistsItemTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemTargetOutput)
-}
-
-func (i GetFleetBlocklistsItemTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[GetFleetBlocklistsItemTarget]{
-		OutputState: i.ToGetFleetBlocklistsItemTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetBlocklistsItemTargetArrayInput is an input type that accepts GetFleetBlocklistsItemTargetArray and GetFleetBlocklistsItemTargetArrayOutput values.
@@ -2988,12 +2505,6 @@ func (i GetFleetBlocklistsItemTargetArray) ToGetFleetBlocklistsItemTargetArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemTargetArrayOutput)
 }
 
-func (i GetFleetBlocklistsItemTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[[]GetFleetBlocklistsItemTarget]{
-		OutputState: i.ToGetFleetBlocklistsItemTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetBlocklistsItemTargetOutput struct{ *pulumi.OutputState }
 
 func (GetFleetBlocklistsItemTargetOutput) ElementType() reflect.Type {
@@ -3008,25 +2519,19 @@ func (o GetFleetBlocklistsItemTargetOutput) ToGetFleetBlocklistsItemTargetOutput
 	return o
 }
 
-func (o GetFleetBlocklistsItemTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[GetFleetBlocklistsItemTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-func (o GetFleetBlocklistsItemTargetOutput) FleetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetBlocklistsItemTarget) string { return v.FleetId }).(pulumi.StringOutput)
+func (o GetFleetBlocklistsItemTargetOutput) FleetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetBlocklistsItemTarget) *string { return v.FleetId }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-func (o GetFleetBlocklistsItemTargetOutput) InstallationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetBlocklistsItemTarget) string { return v.InstallationKey }).(pulumi.StringOutput)
+func (o GetFleetBlocklistsItemTargetOutput) InstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetBlocklistsItemTarget) *string { return v.InstallationKey }).(pulumi.StringPtrOutput)
 }
 
 // The Fleet-unique identifier of the related managed instance.
-func (o GetFleetBlocklistsItemTargetOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetBlocklistsItemTarget) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetFleetBlocklistsItemTargetOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetBlocklistsItemTarget) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 type GetFleetBlocklistsItemTargetArrayOutput struct{ *pulumi.OutputState }
@@ -3041,12 +2546,6 @@ func (o GetFleetBlocklistsItemTargetArrayOutput) ToGetFleetBlocklistsItemTargetA
 
 func (o GetFleetBlocklistsItemTargetArrayOutput) ToGetFleetBlocklistsItemTargetArrayOutputWithContext(ctx context.Context) GetFleetBlocklistsItemTargetArrayOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsItemTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[[]GetFleetBlocklistsItemTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetBlocklistsItemTargetArrayOutput) Index(i pulumi.IntInput) GetFleetBlocklistsItemTargetOutput {
@@ -3086,12 +2585,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs) ToGetFl
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput` via:
 //
@@ -3117,12 +2610,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray) ToGetF
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ElementType() reflect.Type {
@@ -3135,12 +2622,6 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToGet
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) Items() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
@@ -3163,12 +2644,6 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) 
 	return o
 }
 
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection {
 		return vs[0].([]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection)[vs[1].(int)]
@@ -3177,39 +2652,39 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) 
 
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem struct {
 	// The aggregation mode of the crypto event analysis result.
-	AggregationMode string `pulumi:"aggregationMode"`
+	AggregationMode *string `pulumi:"aggregationMode"`
 	// The Object Storage bucket name of this analysis result.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The Crypto Roadmap version used to perform the analysis.
-	CryptoRoadmapVersion string `pulumi:"cryptoRoadmapVersion"`
+	CryptoRoadmapVersion *string `pulumi:"cryptoRoadmapVersion"`
 	// Total number of findings with the analysis.
-	FindingCount int `pulumi:"findingCount"`
+	FindingCount *int `pulumi:"findingCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId string `pulumi:"fleetId"`
+	FleetId *string `pulumi:"fleetId"`
 	// The hostname of the managed instance.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-	NonCompliantFindingCount int `pulumi:"nonCompliantFindingCount"`
+	NonCompliantFindingCount *int `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// Total number of summarized events. Summarized events are deduplicated events of interest.
-	SummarizedEventCount int `pulumi:"summarizedEventCount"`
+	SummarizedEventCount *int `pulumi:"summarizedEventCount"`
 	// The time the result is compiled.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time of the first event in the analysis.
-	TimeFirstEvent string `pulumi:"timeFirstEvent"`
+	TimeFirstEvent *string `pulumi:"timeFirstEvent"`
 	// Time of the last event in the analysis.
-	TimeLastEvent string `pulumi:"timeLastEvent"`
+	TimeLastEvent *string `pulumi:"timeLastEvent"`
 	// Total number of events in the analysis.
-	TotalEventCount int `pulumi:"totalEventCount"`
+	TotalEventCount *int `pulumi:"totalEventCount"`
 	// The OCID of the work request to start the analysis.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 // GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput values.
@@ -3225,39 +2700,39 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput interf
 
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs struct {
 	// The aggregation mode of the crypto event analysis result.
-	AggregationMode pulumi.StringInput `pulumi:"aggregationMode"`
+	AggregationMode pulumi.StringPtrInput `pulumi:"aggregationMode"`
 	// The Object Storage bucket name of this analysis result.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The Crypto Roadmap version used to perform the analysis.
-	CryptoRoadmapVersion pulumi.StringInput `pulumi:"cryptoRoadmapVersion"`
+	CryptoRoadmapVersion pulumi.StringPtrInput `pulumi:"cryptoRoadmapVersion"`
 	// Total number of findings with the analysis.
-	FindingCount pulumi.IntInput `pulumi:"findingCount"`
+	FindingCount pulumi.IntPtrInput `pulumi:"findingCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	FleetId pulumi.StringPtrInput `pulumi:"fleetId"`
 	// The hostname of the managed instance.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-	NonCompliantFindingCount pulumi.IntInput `pulumi:"nonCompliantFindingCount"`
+	NonCompliantFindingCount pulumi.IntPtrInput `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// Total number of summarized events. Summarized events are deduplicated events of interest.
-	SummarizedEventCount pulumi.IntInput `pulumi:"summarizedEventCount"`
+	SummarizedEventCount pulumi.IntPtrInput `pulumi:"summarizedEventCount"`
 	// The time the result is compiled.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Time of the first event in the analysis.
-	TimeFirstEvent pulumi.StringInput `pulumi:"timeFirstEvent"`
+	TimeFirstEvent pulumi.StringPtrInput `pulumi:"timeFirstEvent"`
 	// Time of the last event in the analysis.
-	TimeLastEvent pulumi.StringInput `pulumi:"timeLastEvent"`
+	TimeLastEvent pulumi.StringPtrInput `pulumi:"timeLastEvent"`
 	// Total number of events in the analysis.
-	TotalEventCount pulumi.IntInput `pulumi:"totalEventCount"`
+	TotalEventCount pulumi.IntPtrInput `pulumi:"totalEventCount"`
 	// The OCID of the work request to start the analysis.
-	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+	WorkRequestId pulumi.StringPtrInput `pulumi:"workRequestId"`
 }
 
 func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ElementType() reflect.Type {
@@ -3270,12 +2745,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ToG
 
 func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput)
-}
-
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput values.
@@ -3303,12 +2772,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
@@ -3323,107 +2786,105 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) T
 	return o
 }
 
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The aggregation mode of the crypto event analysis result.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) AggregationMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) AggregationMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string {
 		return v.AggregationMode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage bucket name of this analysis result.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The Crypto Roadmap version used to perform the analysis.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) CryptoRoadmapVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) CryptoRoadmapVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string {
 		return v.CryptoRoadmapVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Total number of findings with the analysis.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) FindingCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int { return v.FindingCount }).(pulumi.IntOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) FindingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *int { return v.FindingCount }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) FleetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.FleetId }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) FleetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string { return v.FleetId }).(pulumi.StringPtrOutput)
 }
 
 // The hostname of the managed instance.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID to identify this analysis results.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The Fleet-unique identifier of the related managed instance.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string {
 		return v.ManagedInstanceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace of this analysis result.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) NonCompliantFindingCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int {
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) NonCompliantFindingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *int {
 		return v.NonCompliantFindingCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The Object Storage object name of this analysis result.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Object }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // Total number of summarized events. Summarized events are deduplicated events of interest.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) SummarizedEventCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int {
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) SummarizedEventCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *int {
 		return v.SummarizedEventCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The time the result is compiled.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time of the first event in the analysis.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeFirstEvent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeFirstEvent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string {
 		return v.TimeFirstEvent
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Time of the last event in the analysis.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeLastEvent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeLastEvent }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeLastEvent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string {
+		return v.TimeLastEvent
+	}).(pulumi.StringPtrOutput)
 }
 
 // Total number of events in the analysis.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TotalEventCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int { return v.TotalEventCount }).(pulumi.IntOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TotalEventCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *int { return v.TotalEventCount }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the work request to start the analysis.
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) *string {
+		return v.WorkRequestId
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3438,12 +2899,6 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutp
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
@@ -3487,12 +2942,6 @@ func (i GetFleetCryptoAnalysisResultsFilterArgs) ToGetFleetCryptoAnalysisResults
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsFilterOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetCryptoAnalysisResultsFilterArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsFilterArray and GetFleetCryptoAnalysisResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetCryptoAnalysisResultsFilterArrayInput` via:
 //
@@ -3518,12 +2967,6 @@ func (i GetFleetCryptoAnalysisResultsFilterArray) ToGetFleetCryptoAnalysisResult
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsFilterArrayOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetCryptoAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetCryptoAnalysisResultsFilterOutput) ElementType() reflect.Type {
@@ -3536,12 +2979,6 @@ func (o GetFleetCryptoAnalysisResultsFilterOutput) ToGetFleetCryptoAnalysisResul
 
 func (o GetFleetCryptoAnalysisResultsFilterOutput) ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
@@ -3568,12 +3005,6 @@ func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToGetFleetCryptoAnalysis
 
 func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsFilterOutput {
@@ -3617,12 +3048,6 @@ func (i GetFleetDiagnosesFilterArgs) ToGetFleetDiagnosesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFilterOutput)
 }
 
-func (i GetFleetDiagnosesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFilter] {
-	return pulumix.Output[GetFleetDiagnosesFilter]{
-		OutputState: i.ToGetFleetDiagnosesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetDiagnosesFilterArrayInput is an input type that accepts GetFleetDiagnosesFilterArray and GetFleetDiagnosesFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetDiagnosesFilterArrayInput` via:
 //
@@ -3648,12 +3073,6 @@ func (i GetFleetDiagnosesFilterArray) ToGetFleetDiagnosesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFilterArrayOutput)
 }
 
-func (i GetFleetDiagnosesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFilter] {
-	return pulumix.Output[[]GetFleetDiagnosesFilter]{
-		OutputState: i.ToGetFleetDiagnosesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetDiagnosesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetDiagnosesFilterOutput) ElementType() reflect.Type {
@@ -3666,12 +3085,6 @@ func (o GetFleetDiagnosesFilterOutput) ToGetFleetDiagnosesFilterOutput() GetFlee
 
 func (o GetFleetDiagnosesFilterOutput) ToGetFleetDiagnosesFilterOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFilter] {
-	return pulumix.Output[GetFleetDiagnosesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetDiagnosesFilterOutput) Name() pulumi.StringOutput {
@@ -3698,12 +3111,6 @@ func (o GetFleetDiagnosesFilterArrayOutput) ToGetFleetDiagnosesFilterArrayOutput
 
 func (o GetFleetDiagnosesFilterArrayOutput) ToGetFleetDiagnosesFilterArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFilter] {
-	return pulumix.Output[[]GetFleetDiagnosesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetDiagnosesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFilterOutput {
@@ -3745,12 +3152,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionArgs) ToGetFleetDiagnosesFleetD
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionOutput)
 }
 
-func (i GetFleetDiagnosesFleetDiagnosisCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetDiagnosesFleetDiagnosisCollectionArrayInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionArray and GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetDiagnosesFleetDiagnosisCollectionArrayInput` via:
 //
@@ -3776,12 +3177,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionArray) ToGetFleetDiagnosesFleet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput)
 }
 
-func (i GetFleetDiagnosesFleetDiagnosisCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetDiagnosesFleetDiagnosisCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetDiagnosesFleetDiagnosisCollectionOutput) ElementType() reflect.Type {
@@ -3794,12 +3189,6 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToGetFleetDiagnosesFlee
 
 func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of the fleet resource diagnosis.
@@ -3823,12 +3212,6 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ToGetFleetDiagnose
 	return o
 }
 
-func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFleetDiagnosisCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDiagnosesFleetDiagnosisCollection {
 		return vs[0].([]GetFleetDiagnosesFleetDiagnosisCollection)[vs[1].(int)]
@@ -3837,13 +3220,13 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) Index(i pulumi.Int
 
 type GetFleetDiagnosesFleetDiagnosisCollectionItem struct {
 	// The diagnosis message.
-	ResourceDiagnosis string `pulumi:"resourceDiagnosis"`
+	ResourceDiagnosis *string `pulumi:"resourceDiagnosis"`
 	// The OCID of the external resouce needed by the fleet.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
-	ResourceState string `pulumi:"resourceState"`
+	ResourceState *string `pulumi:"resourceState"`
 	// The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 }
 
 // GetFleetDiagnosesFleetDiagnosisCollectionItemInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionItemArgs and GetFleetDiagnosesFleetDiagnosisCollectionItemOutput values.
@@ -3859,13 +3242,13 @@ type GetFleetDiagnosesFleetDiagnosisCollectionItemInput interface {
 
 type GetFleetDiagnosesFleetDiagnosisCollectionItemArgs struct {
 	// The diagnosis message.
-	ResourceDiagnosis pulumi.StringInput `pulumi:"resourceDiagnosis"`
+	ResourceDiagnosis pulumi.StringPtrInput `pulumi:"resourceDiagnosis"`
 	// The OCID of the external resouce needed by the fleet.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
-	ResourceState pulumi.StringInput `pulumi:"resourceState"`
+	ResourceState pulumi.StringPtrInput `pulumi:"resourceState"`
 	// The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 }
 
 func (GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ElementType() reflect.Type {
@@ -3878,12 +3261,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ToGetFleetDiagnosesFl
 
 func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionItemOutput)
-}
-
-func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionItemArray and GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput values.
@@ -3911,12 +3288,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArray) ToGetFleetDiagnosesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput)
 }
 
-func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetDiagnosesFleetDiagnosisCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ElementType() reflect.Type {
@@ -3931,30 +3302,24 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ToGetFleetDiagnoses
 	return o
 }
 
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The diagnosis message.
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceDiagnosis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceDiagnosis }).(pulumi.StringOutput)
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceDiagnosis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) *string { return v.ResourceDiagnosis }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the external resouce needed by the fleet.
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceState }).(pulumi.StringOutput)
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) *string { return v.ResourceState }).(pulumi.StringPtrOutput)
 }
 
 // The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3971,12 +3336,6 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ToGetFleetDiag
 	return o
 }
 
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDiagnosesFleetDiagnosisCollectionItem {
 		return vs[0].([]GetFleetDiagnosesFleetDiagnosisCollectionItem)[vs[1].(int)]
@@ -3985,9 +3344,9 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) Index(i pulumi
 
 type GetFleetInventoryLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetFleetInventoryLogInput is an input type that accepts GetFleetInventoryLogArgs and GetFleetInventoryLogOutput values.
@@ -4003,9 +3362,9 @@ type GetFleetInventoryLogInput interface {
 
 type GetFleetInventoryLogArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetFleetInventoryLogArgs) ElementType() reflect.Type {
@@ -4018,12 +3377,6 @@ func (i GetFleetInventoryLogArgs) ToGetFleetInventoryLogOutput() GetFleetInvento
 
 func (i GetFleetInventoryLogArgs) ToGetFleetInventoryLogOutputWithContext(ctx context.Context) GetFleetInventoryLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetInventoryLogOutput)
-}
-
-func (i GetFleetInventoryLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetInventoryLog] {
-	return pulumix.Output[GetFleetInventoryLog]{
-		OutputState: i.ToGetFleetInventoryLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetInventoryLogArrayInput is an input type that accepts GetFleetInventoryLogArray and GetFleetInventoryLogArrayOutput values.
@@ -4051,12 +3404,6 @@ func (i GetFleetInventoryLogArray) ToGetFleetInventoryLogArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetInventoryLogArrayOutput)
 }
 
-func (i GetFleetInventoryLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetInventoryLog] {
-	return pulumix.Output[[]GetFleetInventoryLog]{
-		OutputState: i.ToGetFleetInventoryLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetInventoryLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetInventoryLogOutput) ElementType() reflect.Type {
@@ -4071,20 +3418,14 @@ func (o GetFleetInventoryLogOutput) ToGetFleetInventoryLogOutputWithContext(ctx 
 	return o
 }
 
-func (o GetFleetInventoryLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetInventoryLog] {
-	return pulumix.Output[GetFleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-func (o GetFleetInventoryLogOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetInventoryLog) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetFleetInventoryLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetInventoryLog) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-func (o GetFleetInventoryLogOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetInventoryLog) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetFleetInventoryLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetInventoryLog) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetFleetInventoryLogArrayOutput struct{ *pulumi.OutputState }
@@ -4099,12 +3440,6 @@ func (o GetFleetInventoryLogArrayOutput) ToGetFleetInventoryLogArrayOutput() Get
 
 func (o GetFleetInventoryLogArrayOutput) ToGetFleetInventoryLogArrayOutputWithContext(ctx context.Context) GetFleetInventoryLogArrayOutput {
 	return o
-}
-
-func (o GetFleetInventoryLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetInventoryLog] {
-	return pulumix.Output[[]GetFleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetInventoryLogArrayOutput) Index(i pulumi.IntInput) GetFleetInventoryLogOutput {
@@ -4148,12 +3483,6 @@ func (i GetFleetJavaMigrationAnalysisResultsFilterArgs) ToGetFleetJavaMigrationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsFilterOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetJavaMigrationAnalysisResultsFilterArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsFilterArray and GetFleetJavaMigrationAnalysisResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsFilterArrayInput` via:
 //
@@ -4179,12 +3508,6 @@ func (i GetFleetJavaMigrationAnalysisResultsFilterArray) ToGetFleetJavaMigration
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsFilterArrayOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetJavaMigrationAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetJavaMigrationAnalysisResultsFilterOutput) ElementType() reflect.Type {
@@ -4197,12 +3520,6 @@ func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToGetFleetJavaMigratio
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
@@ -4229,12 +3546,6 @@ func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToGetFleetJavaMig
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsFilterOutput {
@@ -4274,12 +3585,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput` via:
 //
@@ -4305,12 +3610,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ElementType() reflect.Type {
@@ -4323,12 +3622,6 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) Items() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput {
@@ -4351,12 +3644,6 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return o
 }
 
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection {
 		return vs[0].([]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection)[vs[1].(int)]
@@ -4365,37 +3652,37 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem struct {
 	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-	ApplicationExecutionType string `pulumi:"applicationExecutionType"`
+	ApplicationExecutionType *string `pulumi:"applicationExecutionType"`
 	// The name of the application for which the Java migration analysis was performed.
-	ApplicationName string `pulumi:"applicationName"`
+	ApplicationName *string `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
-	ApplicationPath string `pulumi:"applicationPath"`
+	ApplicationPath *string `pulumi:"applicationPath"`
 	// The name of the object storage bucket that contains the results of the migration analysis.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId string `pulumi:"fleetId"`
+	FleetId *string `pulumi:"fleetId"`
 	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The OCID of the migration analysis report.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// Additional info reserved for future use.
-	Metadata string `pulumi:"metadata"`
+	Metadata *string `pulumi:"metadata"`
 	// The object storage namespace that contains the results of the migration analysis.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The names of the object storage objects that contain the results of the migration analysis.
 	ObjectLists []string `pulumi:"objectLists"`
 	// The directory path of the object storage bucket that contains the results of the migration analysis.
-	ObjectStorageUploadDirPath string `pulumi:"objectStorageUploadDirPath"`
+	ObjectStorageUploadDirPath *string `pulumi:"objectStorageUploadDirPath"`
 	// The source JDK version of the application that's currently running.
-	SourceJdkVersion string `pulumi:"sourceJdkVersion"`
+	SourceJdkVersion *string `pulumi:"sourceJdkVersion"`
 	// The target JDK version of the application to be migrated.
-	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+	TargetJdkVersion *string `pulumi:"targetJdkVersion"`
 	// The time the result is compiled.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the work request of this analysis.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 // GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput values.
@@ -4411,37 +3698,37 @@ type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionIt
 
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs struct {
 	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-	ApplicationExecutionType pulumi.StringInput `pulumi:"applicationExecutionType"`
+	ApplicationExecutionType pulumi.StringPtrInput `pulumi:"applicationExecutionType"`
 	// The name of the application for which the Java migration analysis was performed.
-	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	ApplicationName pulumi.StringPtrInput `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
-	ApplicationPath pulumi.StringInput `pulumi:"applicationPath"`
+	ApplicationPath pulumi.StringPtrInput `pulumi:"applicationPath"`
 	// The name of the object storage bucket that contains the results of the migration analysis.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	FleetId pulumi.StringPtrInput `pulumi:"fleetId"`
 	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The OCID of the migration analysis report.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// Additional info reserved for future use.
-	Metadata pulumi.StringInput `pulumi:"metadata"`
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 	// The object storage namespace that contains the results of the migration analysis.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The names of the object storage objects that contain the results of the migration analysis.
 	ObjectLists pulumi.StringArrayInput `pulumi:"objectLists"`
 	// The directory path of the object storage bucket that contains the results of the migration analysis.
-	ObjectStorageUploadDirPath pulumi.StringInput `pulumi:"objectStorageUploadDirPath"`
+	ObjectStorageUploadDirPath pulumi.StringPtrInput `pulumi:"objectStorageUploadDirPath"`
 	// The source JDK version of the application that's currently running.
-	SourceJdkVersion pulumi.StringInput `pulumi:"sourceJdkVersion"`
+	SourceJdkVersion pulumi.StringPtrInput `pulumi:"sourceJdkVersion"`
 	// The target JDK version of the application to be migrated.
-	TargetJdkVersion pulumi.StringInput `pulumi:"targetJdkVersion"`
+	TargetJdkVersion pulumi.StringPtrInput `pulumi:"targetJdkVersion"`
 	// The time the result is compiled.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The OCID of the work request of this analysis.
-	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+	WorkRequestId pulumi.StringPtrInput `pulumi:"workRequestId"`
 }
 
 func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs) ElementType() reflect.Type {
@@ -4454,12 +3741,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 
 func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput)
-}
-
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput values.
@@ -4487,12 +3768,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
@@ -4507,80 +3782,74 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return o
 }
 
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationExecutionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationExecutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.ApplicationExecutionType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the application for which the Java migration analysis was performed.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.ApplicationName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The installation path of the application for which the Java migration analysis was performed.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.ApplicationPath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the object storage bucket that contains the results of the migration analysis.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.Bucket
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) FleetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) FleetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.FleetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.HostName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the migration analysis report.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Fleet-unique identifier of the related managed instance.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.ManagedInstanceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Additional info reserved for future use.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Metadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Metadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.Metadata
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object storage namespace that contains the results of the migration analysis.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.Namespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The names of the object storage objects that contain the results of the migration analysis.
@@ -4591,38 +3860,38 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 }
 
 // The directory path of the object storage bucket that contains the results of the migration analysis.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ObjectStorageUploadDirPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ObjectStorageUploadDirPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.ObjectStorageUploadDirPath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The source JDK version of the application that's currently running.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) SourceJdkVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) SourceJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.SourceJdkVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The target JDK version of the application to be migrated.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) TargetJdkVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) TargetJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.TargetJdkVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the result is compiled.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the work request of this analysis.
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) *string {
 		return v.WorkRequestId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4639,12 +3908,6 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return o
 }
 
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem {
 		return vs[0].([]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)[vs[1].(int)]
@@ -4653,9 +3916,9 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 
 type GetFleetOperationLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetFleetOperationLogInput is an input type that accepts GetFleetOperationLogArgs and GetFleetOperationLogOutput values.
@@ -4671,9 +3934,9 @@ type GetFleetOperationLogInput interface {
 
 type GetFleetOperationLogArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetFleetOperationLogArgs) ElementType() reflect.Type {
@@ -4686,12 +3949,6 @@ func (i GetFleetOperationLogArgs) ToGetFleetOperationLogOutput() GetFleetOperati
 
 func (i GetFleetOperationLogArgs) ToGetFleetOperationLogOutputWithContext(ctx context.Context) GetFleetOperationLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetOperationLogOutput)
-}
-
-func (i GetFleetOperationLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetOperationLog] {
-	return pulumix.Output[GetFleetOperationLog]{
-		OutputState: i.ToGetFleetOperationLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetOperationLogArrayInput is an input type that accepts GetFleetOperationLogArray and GetFleetOperationLogArrayOutput values.
@@ -4719,12 +3976,6 @@ func (i GetFleetOperationLogArray) ToGetFleetOperationLogArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetOperationLogArrayOutput)
 }
 
-func (i GetFleetOperationLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetOperationLog] {
-	return pulumix.Output[[]GetFleetOperationLog]{
-		OutputState: i.ToGetFleetOperationLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetOperationLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetOperationLogOutput) ElementType() reflect.Type {
@@ -4739,20 +3990,14 @@ func (o GetFleetOperationLogOutput) ToGetFleetOperationLogOutputWithContext(ctx 
 	return o
 }
 
-func (o GetFleetOperationLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetOperationLog] {
-	return pulumix.Output[GetFleetOperationLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-func (o GetFleetOperationLogOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetOperationLog) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetFleetOperationLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetOperationLog) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-func (o GetFleetOperationLogOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetOperationLog) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetFleetOperationLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetOperationLog) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetFleetOperationLogArrayOutput struct{ *pulumi.OutputState }
@@ -4767,12 +4012,6 @@ func (o GetFleetOperationLogArrayOutput) ToGetFleetOperationLogArrayOutput() Get
 
 func (o GetFleetOperationLogArrayOutput) ToGetFleetOperationLogArrayOutputWithContext(ctx context.Context) GetFleetOperationLogArrayOutput {
 	return o
-}
-
-func (o GetFleetOperationLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetOperationLog] {
-	return pulumix.Output[[]GetFleetOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetOperationLogArrayOutput) Index(i pulumi.IntInput) GetFleetOperationLogOutput {
@@ -4816,12 +4055,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsFilterArgs) ToGetFleetPerformanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsFilterOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetPerformanceTuningAnalysisResultsFilterArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsFilterArray and GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsFilterArrayInput` via:
 //
@@ -4847,12 +4080,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsFilterArray) ToGetFleetPerforman
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetPerformanceTuningAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetPerformanceTuningAnalysisResultsFilterOutput) ElementType() reflect.Type {
@@ -4865,12 +4092,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToGetFleetPerforma
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
@@ -4897,12 +4118,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToGetFleetPer
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsFilterOutput {
@@ -4942,12 +4157,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput` via:
 //
@@ -4973,12 +4182,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ElementType() reflect.Type {
@@ -4991,12 +4194,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) Items() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
@@ -5019,12 +4216,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return o
 }
 
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection {
 		return vs[0].([]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection)[vs[1].(int)]
@@ -5033,39 +4224,39 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 
 type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem struct {
 	// The Fleet-unique identifier of the related application.
-	ApplicationId string `pulumi:"applicationId"`
+	ApplicationId *string `pulumi:"applicationId"`
 	// The internal identifier of the application installation for which the report has been generated.
-	ApplicationInstallationId string `pulumi:"applicationInstallationId"`
+	ApplicationInstallationId *string `pulumi:"applicationInstallationId"`
 	// The installation path of the application for which the report has been generated.
-	ApplicationInstallationPath string `pulumi:"applicationInstallationPath"`
+	ApplicationInstallationPath *string `pulumi:"applicationInstallationPath"`
 	// The name of the application for which the report has been generated.
-	ApplicationName string `pulumi:"applicationName"`
+	ApplicationName *string `pulumi:"applicationName"`
 	// The Object Storage bucket name of this analysis result.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId string `pulumi:"fleetId"`
+	FleetId *string `pulumi:"fleetId"`
 	// The hostname of the managed instance.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The Object Storage object name of this analysis result.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// Result of the analysis based on whether warnings have been found or not.
-	Result string `pulumi:"result"`
+	Result *string `pulumi:"result"`
 	// The time the result is compiled.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the JFR capture finished.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The time the JFR capture started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// Total number of warnings reported by the analysis.
-	WarningCount int `pulumi:"warningCount"`
+	WarningCount *int `pulumi:"warningCount"`
 	// The OCID of the work request to start the analysis.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 // GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput values.
@@ -5081,39 +4272,39 @@ type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultColl
 
 type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs struct {
 	// The Fleet-unique identifier of the related application.
-	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
+	ApplicationId pulumi.StringPtrInput `pulumi:"applicationId"`
 	// The internal identifier of the application installation for which the report has been generated.
-	ApplicationInstallationId pulumi.StringInput `pulumi:"applicationInstallationId"`
+	ApplicationInstallationId pulumi.StringPtrInput `pulumi:"applicationInstallationId"`
 	// The installation path of the application for which the report has been generated.
-	ApplicationInstallationPath pulumi.StringInput `pulumi:"applicationInstallationPath"`
+	ApplicationInstallationPath pulumi.StringPtrInput `pulumi:"applicationInstallationPath"`
 	// The name of the application for which the report has been generated.
-	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	ApplicationName pulumi.StringPtrInput `pulumi:"applicationName"`
 	// The Object Storage bucket name of this analysis result.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	FleetId pulumi.StringPtrInput `pulumi:"fleetId"`
 	// The hostname of the managed instance.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The Object Storage object name of this analysis result.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// Result of the analysis based on whether warnings have been found or not.
-	Result pulumi.StringInput `pulumi:"result"`
+	Result pulumi.StringPtrInput `pulumi:"result"`
 	// The time the result is compiled.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the JFR capture finished.
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// The time the JFR capture started.
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// Total number of warnings reported by the analysis.
-	WarningCount pulumi.IntInput `pulumi:"warningCount"`
+	WarningCount pulumi.IntPtrInput `pulumi:"warningCount"`
 	// The OCID of the work request to start the analysis.
-	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+	WorkRequestId pulumi.StringPtrInput `pulumi:"workRequestId"`
 }
 
 func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs) ElementType() reflect.Type {
@@ -5126,12 +4317,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 
 func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput)
-}
-
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput values.
@@ -5159,12 +4344,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
@@ -5179,129 +4358,123 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return o
 }
 
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Fleet-unique identifier of the related application.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.ApplicationId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The internal identifier of the application installation for which the report has been generated.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationInstallationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationInstallationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.ApplicationInstallationId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The installation path of the application for which the report has been generated.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationInstallationPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationInstallationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.ApplicationInstallationPath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the application for which the report has been generated.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.ApplicationName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage bucket name of this analysis result.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.Bucket
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) FleetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) FleetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.FleetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The hostname of the managed instance.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.HostName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID to identify this analysis results.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Fleet-unique identifier of the related managed instance.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.ManagedInstanceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace of this analysis result.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.Namespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage object name of this analysis result.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.Object
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Result of the analysis based on whether warnings have been found or not.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Result() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Result() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.Result
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the result is compiled.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the JFR capture finished.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.TimeFinished
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the JFR capture started.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.TimeStarted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Total number of warnings reported by the analysis.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) WarningCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) int {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) WarningCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *int {
 		return v.WarningCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the work request to start the analysis.
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) *string {
 		return v.WorkRequestId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5316,12 +4489,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
@@ -5365,12 +4532,6 @@ func (i GetFleetsFilterArgs) ToGetFleetsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFilterOutput)
 }
 
-func (i GetFleetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFilter] {
-	return pulumix.Output[GetFleetsFilter]{
-		OutputState: i.ToGetFleetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetsFilterArrayInput is an input type that accepts GetFleetsFilterArray and GetFleetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFilterArrayInput` via:
 //
@@ -5396,12 +4557,6 @@ func (i GetFleetsFilterArray) ToGetFleetsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFilterArrayOutput)
 }
 
-func (i GetFleetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFilter] {
-	return pulumix.Output[[]GetFleetsFilter]{
-		OutputState: i.ToGetFleetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFilterOutput) ElementType() reflect.Type {
@@ -5414,12 +4569,6 @@ func (o GetFleetsFilterOutput) ToGetFleetsFilterOutput() GetFleetsFilterOutput {
 
 func (o GetFleetsFilterOutput) ToGetFleetsFilterOutputWithContext(ctx context.Context) GetFleetsFilterOutput {
 	return o
-}
-
-func (o GetFleetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFilter] {
-	return pulumix.Output[GetFleetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFilterOutput) Name() pulumi.StringOutput {
@@ -5446,12 +4595,6 @@ func (o GetFleetsFilterArrayOutput) ToGetFleetsFilterArrayOutput() GetFleetsFilt
 
 func (o GetFleetsFilterArrayOutput) ToGetFleetsFilterArrayOutputWithContext(ctx context.Context) GetFleetsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFilter] {
-	return pulumix.Output[[]GetFleetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetsFilterOutput {
@@ -5491,12 +4634,6 @@ func (i GetFleetsFleetCollectionArgs) ToGetFleetsFleetCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionOutput)
 }
 
-func (i GetFleetsFleetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollection] {
-	return pulumix.Output[GetFleetsFleetCollection]{
-		OutputState: i.ToGetFleetsFleetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetsFleetCollectionArrayInput is an input type that accepts GetFleetsFleetCollectionArray and GetFleetsFleetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionArrayInput` via:
 //
@@ -5522,12 +4659,6 @@ func (i GetFleetsFleetCollectionArray) ToGetFleetsFleetCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollection] {
-	return pulumix.Output[[]GetFleetsFleetCollection]{
-		OutputState: i.ToGetFleetsFleetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionOutput) ElementType() reflect.Type {
@@ -5540,12 +4671,6 @@ func (o GetFleetsFleetCollectionOutput) ToGetFleetsFleetCollectionOutput() GetFl
 
 func (o GetFleetsFleetCollectionOutput) ToGetFleetsFleetCollectionOutputWithContext(ctx context.Context) GetFleetsFleetCollectionOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollection] {
-	return pulumix.Output[GetFleetsFleetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFleetCollectionOutput) Items() GetFleetsFleetCollectionItemArrayOutput {
@@ -5566,12 +4691,6 @@ func (o GetFleetsFleetCollectionArrayOutput) ToGetFleetsFleetCollectionArrayOutp
 	return o
 }
 
-func (o GetFleetsFleetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollection] {
-	return pulumix.Output[[]GetFleetsFleetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetsFleetCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetsFleetCollection {
 		return vs[0].([]GetFleetsFleetCollection)[vs[1].(int)]
@@ -5580,39 +4699,39 @@ func (o GetFleetsFleetCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetsF
 
 type GetFleetsFleetCollectionItem struct {
 	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount *int `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateInstallationCount int `pulumi:"approximateInstallationCount"`
+	ApproximateInstallationCount *int `pulumi:"approximateInstallationCount"`
 	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
+	ApproximateJavaServerCount *int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJreCount int `pulumi:"approximateJreCount"`
+	ApproximateJreCount *int `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
+	ApproximateManagedInstanceCount *int `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Fleet's description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID of the Fleet.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetsFleetCollectionItemInventoryLog `pulumi:"inventoryLogs"`
 	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
+	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetsFleetCollectionItemOperationLog `pulumi:"operationLogs"`
 	// The state of the lifecycle.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetFleetsFleetCollectionItemInput is an input type that accepts GetFleetsFleetCollectionItemArgs and GetFleetsFleetCollectionItemOutput values.
@@ -5628,39 +4747,39 @@ type GetFleetsFleetCollectionItemInput interface {
 
 type GetFleetsFleetCollectionItemArgs struct {
 	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount pulumi.IntPtrInput `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateInstallationCount pulumi.IntInput `pulumi:"approximateInstallationCount"`
+	ApproximateInstallationCount pulumi.IntPtrInput `pulumi:"approximateInstallationCount"`
 	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJavaServerCount pulumi.IntInput `pulumi:"approximateJavaServerCount"`
+	ApproximateJavaServerCount pulumi.IntPtrInput `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJreCount pulumi.IntInput `pulumi:"approximateJreCount"`
+	ApproximateJreCount pulumi.IntPtrInput `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateManagedInstanceCount pulumi.IntInput `pulumi:"approximateManagedInstanceCount"`
+	ApproximateManagedInstanceCount pulumi.IntPtrInput `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Fleet's description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The ID of the Fleet.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs GetFleetsFleetCollectionItemInventoryLogArrayInput `pulumi:"inventoryLogs"`
 	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-	IsAdvancedFeaturesEnabled pulumi.BoolInput `pulumi:"isAdvancedFeaturesEnabled"`
+	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs GetFleetsFleetCollectionItemOperationLogArrayInput `pulumi:"operationLogs"`
 	// The state of the lifecycle.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetFleetsFleetCollectionItemArgs) ElementType() reflect.Type {
@@ -5673,12 +4792,6 @@ func (i GetFleetsFleetCollectionItemArgs) ToGetFleetsFleetCollectionItemOutput()
 
 func (i GetFleetsFleetCollectionItemArgs) ToGetFleetsFleetCollectionItemOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemOutput)
-}
-
-func (i GetFleetsFleetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItem] {
-	return pulumix.Output[GetFleetsFleetCollectionItem]{
-		OutputState: i.ToGetFleetsFleetCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetsFleetCollectionItemArrayInput is an input type that accepts GetFleetsFleetCollectionItemArray and GetFleetsFleetCollectionItemArrayOutput values.
@@ -5706,12 +4819,6 @@ func (i GetFleetsFleetCollectionItemArray) ToGetFleetsFleetCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItem] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItem]{
-		OutputState: i.ToGetFleetsFleetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionItemOutput) ElementType() reflect.Type {
@@ -5726,40 +4833,34 @@ func (o GetFleetsFleetCollectionItemOutput) ToGetFleetsFleetCollectionItemOutput
 	return o
 }
 
-func (o GetFleetsFleetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItem] {
-	return pulumix.Output[GetFleetsFleetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o GetFleetsFleetCollectionItemOutput) ApproximateApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
+func (o GetFleetsFleetCollectionItemOutput) ApproximateApplicationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *int { return v.ApproximateApplicationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o GetFleetsFleetCollectionItemOutput) ApproximateInstallationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
+func (o GetFleetsFleetCollectionItemOutput) ApproximateInstallationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *int { return v.ApproximateInstallationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o GetFleetsFleetCollectionItemOutput) ApproximateJavaServerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
+func (o GetFleetsFleetCollectionItemOutput) ApproximateJavaServerCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *int { return v.ApproximateJavaServerCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o GetFleetsFleetCollectionItemOutput) ApproximateJreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
+func (o GetFleetsFleetCollectionItemOutput) ApproximateJreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *int { return v.ApproximateJreCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o GetFleetsFleetCollectionItemOutput) ApproximateManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateManagedInstanceCount }).(pulumi.IntOutput)
+func (o GetFleetsFleetCollectionItemOutput) ApproximateManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *int { return v.ApproximateManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-func (o GetFleetsFleetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -5768,13 +4869,13 @@ func (o GetFleetsFleetCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The Fleet's description.
-func (o GetFleetsFleetCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name.
-func (o GetFleetsFleetCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
@@ -5783,8 +4884,8 @@ func (o GetFleetsFleetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The ID of the Fleet.
-func (o GetFleetsFleetCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Custom Log for inventory or operation log.
@@ -5795,8 +4896,8 @@ func (o GetFleetsFleetCollectionItemOutput) InventoryLogs() GetFleetsFleetCollec
 }
 
 // Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-func (o GetFleetsFleetCollectionItemOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+func (o GetFleetsFleetCollectionItemOutput) IsAdvancedFeaturesEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Custom Log for inventory or operation log.
@@ -5807,8 +4908,8 @@ func (o GetFleetsFleetCollectionItemOutput) OperationLogs() GetFleetsFleetCollec
 }
 
 // The state of the lifecycle.
-func (o GetFleetsFleetCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5817,8 +4918,8 @@ func (o GetFleetsFleetCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetFleetsFleetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetFleetsFleetCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5835,12 +4936,6 @@ func (o GetFleetsFleetCollectionItemArrayOutput) ToGetFleetsFleetCollectionItemA
 	return o
 }
 
-func (o GetFleetsFleetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItem] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetsFleetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetsFleetCollectionItem {
 		return vs[0].([]GetFleetsFleetCollectionItem)[vs[1].(int)]
@@ -5849,9 +4944,9 @@ func (o GetFleetsFleetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFle
 
 type GetFleetsFleetCollectionItemInventoryLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetFleetsFleetCollectionItemInventoryLogInput is an input type that accepts GetFleetsFleetCollectionItemInventoryLogArgs and GetFleetsFleetCollectionItemInventoryLogOutput values.
@@ -5867,9 +4962,9 @@ type GetFleetsFleetCollectionItemInventoryLogInput interface {
 
 type GetFleetsFleetCollectionItemInventoryLogArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetFleetsFleetCollectionItemInventoryLogArgs) ElementType() reflect.Type {
@@ -5882,12 +4977,6 @@ func (i GetFleetsFleetCollectionItemInventoryLogArgs) ToGetFleetsFleetCollection
 
 func (i GetFleetsFleetCollectionItemInventoryLogArgs) ToGetFleetsFleetCollectionItemInventoryLogOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemInventoryLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemInventoryLogOutput)
-}
-
-func (i GetFleetsFleetCollectionItemInventoryLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemInventoryLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetsFleetCollectionItemInventoryLogArrayInput is an input type that accepts GetFleetsFleetCollectionItemInventoryLogArray and GetFleetsFleetCollectionItemInventoryLogArrayOutput values.
@@ -5915,12 +5004,6 @@ func (i GetFleetsFleetCollectionItemInventoryLogArray) ToGetFleetsFleetCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemInventoryLogArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionItemInventoryLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemInventoryLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionItemInventoryLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionItemInventoryLogOutput) ElementType() reflect.Type {
@@ -5935,20 +5018,14 @@ func (o GetFleetsFleetCollectionItemInventoryLogOutput) ToGetFleetsFleetCollecti
 	return o
 }
 
-func (o GetFleetsFleetCollectionItemInventoryLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-func (o GetFleetsFleetCollectionItemInventoryLogOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItemInventoryLog) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemInventoryLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemInventoryLog) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-func (o GetFleetsFleetCollectionItemInventoryLogOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItemInventoryLog) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemInventoryLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemInventoryLog) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetFleetsFleetCollectionItemInventoryLogArrayOutput struct{ *pulumi.OutputState }
@@ -5965,12 +5042,6 @@ func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) ToGetFleetsFleetCol
 	return o
 }
 
-func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionItemInventoryLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetsFleetCollectionItemInventoryLog {
 		return vs[0].([]GetFleetsFleetCollectionItemInventoryLog)[vs[1].(int)]
@@ -5979,9 +5050,9 @@ func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) Index(i pulumi.IntI
 
 type GetFleetsFleetCollectionItemOperationLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetFleetsFleetCollectionItemOperationLogInput is an input type that accepts GetFleetsFleetCollectionItemOperationLogArgs and GetFleetsFleetCollectionItemOperationLogOutput values.
@@ -5997,9 +5068,9 @@ type GetFleetsFleetCollectionItemOperationLogInput interface {
 
 type GetFleetsFleetCollectionItemOperationLogArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetFleetsFleetCollectionItemOperationLogArgs) ElementType() reflect.Type {
@@ -6012,12 +5083,6 @@ func (i GetFleetsFleetCollectionItemOperationLogArgs) ToGetFleetsFleetCollection
 
 func (i GetFleetsFleetCollectionItemOperationLogArgs) ToGetFleetsFleetCollectionItemOperationLogOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemOperationLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemOperationLogOutput)
-}
-
-func (i GetFleetsFleetCollectionItemOperationLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemOperationLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFleetsFleetCollectionItemOperationLogArrayInput is an input type that accepts GetFleetsFleetCollectionItemOperationLogArray and GetFleetsFleetCollectionItemOperationLogArrayOutput values.
@@ -6045,12 +5110,6 @@ func (i GetFleetsFleetCollectionItemOperationLogArray) ToGetFleetsFleetCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemOperationLogArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionItemOperationLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemOperationLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionItemOperationLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionItemOperationLogOutput) ElementType() reflect.Type {
@@ -6065,20 +5124,14 @@ func (o GetFleetsFleetCollectionItemOperationLogOutput) ToGetFleetsFleetCollecti
 	return o
 }
 
-func (o GetFleetsFleetCollectionItemOperationLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-func (o GetFleetsFleetCollectionItemOperationLogOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItemOperationLog) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOperationLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemOperationLog) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-func (o GetFleetsFleetCollectionItemOperationLogOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetsFleetCollectionItemOperationLog) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetFleetsFleetCollectionItemOperationLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemOperationLog) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetFleetsFleetCollectionItemOperationLogArrayOutput struct{ *pulumi.OutputState }
@@ -6095,12 +5148,6 @@ func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) ToGetFleetsFleetCol
 	return o
 }
 
-func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionItemOperationLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetsFleetCollectionItemOperationLog {
 		return vs[0].([]GetFleetsFleetCollectionItemOperationLog)[vs[1].(int)]
@@ -6109,25 +5156,25 @@ func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) Index(i pulumi.IntI
 
 type GetInstallationSiteItem struct {
 	// The approximate count of applications running on this installation
-	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount *int `pulumi:"approximateApplicationCount"`
 	// The list of operations that are blocklisted.
 	Blocklists []GetInstallationSiteItemBlocklist `pulumi:"blocklists"`
 	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey string `pulumi:"installationKey"`
+	InstallationKey *string `pulumi:"installationKey"`
 	// The essential properties to identify a Java Runtime.
 	Jres []GetInstallationSiteItemJre `pulumi:"jres"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// Operating System of the platform on which the Java Runtime was reported.
 	OperatingSystems []GetInstallationSiteItemOperatingSystem `pulumi:"operatingSystems"`
 	// The file system path of the installation.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// The security status of the Java Runtime.
-	SecurityStatus string `pulumi:"securityStatus"`
+	SecurityStatus *string `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen string `pulumi:"timeLastSeen"`
+	TimeLastSeen *string `pulumi:"timeLastSeen"`
 }
 
 // GetInstallationSiteItemInput is an input type that accepts GetInstallationSiteItemArgs and GetInstallationSiteItemOutput values.
@@ -6143,25 +5190,25 @@ type GetInstallationSiteItemInput interface {
 
 type GetInstallationSiteItemArgs struct {
 	// The approximate count of applications running on this installation
-	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount pulumi.IntPtrInput `pulumi:"approximateApplicationCount"`
 	// The list of operations that are blocklisted.
 	Blocklists GetInstallationSiteItemBlocklistArrayInput `pulumi:"blocklists"`
 	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey pulumi.StringInput `pulumi:"installationKey"`
+	InstallationKey pulumi.StringPtrInput `pulumi:"installationKey"`
 	// The essential properties to identify a Java Runtime.
 	Jres GetInstallationSiteItemJreArrayInput `pulumi:"jres"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// Operating System of the platform on which the Java Runtime was reported.
 	OperatingSystems GetInstallationSiteItemOperatingSystemArrayInput `pulumi:"operatingSystems"`
 	// The file system path of the installation.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// The security status of the Java Runtime.
-	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
+	SecurityStatus pulumi.StringPtrInput `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+	TimeLastSeen pulumi.StringPtrInput `pulumi:"timeLastSeen"`
 }
 
 func (GetInstallationSiteItemArgs) ElementType() reflect.Type {
@@ -6174,12 +5221,6 @@ func (i GetInstallationSiteItemArgs) ToGetInstallationSiteItemOutput() GetInstal
 
 func (i GetInstallationSiteItemArgs) ToGetInstallationSiteItemOutputWithContext(ctx context.Context) GetInstallationSiteItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemOutput)
-}
-
-func (i GetInstallationSiteItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItem] {
-	return pulumix.Output[GetInstallationSiteItem]{
-		OutputState: i.ToGetInstallationSiteItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSiteItemArrayInput is an input type that accepts GetInstallationSiteItemArray and GetInstallationSiteItemArrayOutput values.
@@ -6207,12 +5248,6 @@ func (i GetInstallationSiteItemArray) ToGetInstallationSiteItemArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemArrayOutput)
 }
 
-func (i GetInstallationSiteItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItem] {
-	return pulumix.Output[[]GetInstallationSiteItem]{
-		OutputState: i.ToGetInstallationSiteItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemOutput) ElementType() reflect.Type {
@@ -6227,15 +5262,9 @@ func (o GetInstallationSiteItemOutput) ToGetInstallationSiteItemOutputWithContex
 	return o
 }
 
-func (o GetInstallationSiteItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItem] {
-	return pulumix.Output[GetInstallationSiteItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The approximate count of applications running on this installation
-func (o GetInstallationSiteItemOutput) ApproximateApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstallationSiteItem) int { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
+func (o GetInstallationSiteItemOutput) ApproximateApplicationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItem) *int { return v.ApproximateApplicationCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of operations that are blocklisted.
@@ -6244,8 +5273,8 @@ func (o GetInstallationSiteItemOutput) Blocklists() GetInstallationSiteItemBlock
 }
 
 // The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-func (o GetInstallationSiteItemOutput) InstallationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.InstallationKey }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOutput) InstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItem) *string { return v.InstallationKey }).(pulumi.StringPtrOutput)
 }
 
 // The essential properties to identify a Java Runtime.
@@ -6254,8 +5283,8 @@ func (o GetInstallationSiteItemOutput) Jres() GetInstallationSiteItemJreArrayOut
 }
 
 // The Fleet-unique identifier of the related managed instance.
-func (o GetInstallationSiteItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItem) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // Operating System of the platform on which the Java Runtime was reported.
@@ -6264,23 +5293,23 @@ func (o GetInstallationSiteItemOutput) OperatingSystems() GetInstallationSiteIte
 }
 
 // The file system path of the installation.
-func (o GetInstallationSiteItemOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.Path }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItem) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The security status of the Java Runtime.
-func (o GetInstallationSiteItemOutput) SecurityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.SecurityStatus }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOutput) SecurityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItem) *string { return v.SecurityStatus }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the installation site.
-func (o GetInstallationSiteItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-func (o GetInstallationSiteItemOutput) TimeLastSeen() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOutput) TimeLastSeen() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItem) *string { return v.TimeLastSeen }).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSiteItemArrayOutput struct{ *pulumi.OutputState }
@@ -6297,12 +5326,6 @@ func (o GetInstallationSiteItemArrayOutput) ToGetInstallationSiteItemArrayOutput
 	return o
 }
 
-func (o GetInstallationSiteItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItem] {
-	return pulumix.Output[[]GetInstallationSiteItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSiteItemArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSiteItem {
 		return vs[0].([]GetInstallationSiteItem)[vs[1].(int)]
@@ -6311,9 +5334,9 @@ func (o GetInstallationSiteItemArrayOutput) Index(i pulumi.IntInput) GetInstalla
 
 type GetInstallationSiteItemBlocklist struct {
 	// The operation type.
-	Operation string `pulumi:"operation"`
+	Operation *string `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
-	Reason string `pulumi:"reason"`
+	Reason *string `pulumi:"reason"`
 }
 
 // GetInstallationSiteItemBlocklistInput is an input type that accepts GetInstallationSiteItemBlocklistArgs and GetInstallationSiteItemBlocklistOutput values.
@@ -6329,9 +5352,9 @@ type GetInstallationSiteItemBlocklistInput interface {
 
 type GetInstallationSiteItemBlocklistArgs struct {
 	// The operation type.
-	Operation pulumi.StringInput `pulumi:"operation"`
+	Operation pulumi.StringPtrInput `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
-	Reason pulumi.StringInput `pulumi:"reason"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
 }
 
 func (GetInstallationSiteItemBlocklistArgs) ElementType() reflect.Type {
@@ -6344,12 +5367,6 @@ func (i GetInstallationSiteItemBlocklistArgs) ToGetInstallationSiteItemBlocklist
 
 func (i GetInstallationSiteItemBlocklistArgs) ToGetInstallationSiteItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSiteItemBlocklistOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemBlocklistOutput)
-}
-
-func (i GetInstallationSiteItemBlocklistArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[GetInstallationSiteItemBlocklist]{
-		OutputState: i.ToGetInstallationSiteItemBlocklistOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSiteItemBlocklistArrayInput is an input type that accepts GetInstallationSiteItemBlocklistArray and GetInstallationSiteItemBlocklistArrayOutput values.
@@ -6377,12 +5394,6 @@ func (i GetInstallationSiteItemBlocklistArray) ToGetInstallationSiteItemBlocklis
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemBlocklistArrayOutput)
 }
 
-func (i GetInstallationSiteItemBlocklistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSiteItemBlocklist]{
-		OutputState: i.ToGetInstallationSiteItemBlocklistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemBlocklistOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemBlocklistOutput) ElementType() reflect.Type {
@@ -6397,20 +5408,14 @@ func (o GetInstallationSiteItemBlocklistOutput) ToGetInstallationSiteItemBlockli
 	return o
 }
 
-func (o GetInstallationSiteItemBlocklistOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[GetInstallationSiteItemBlocklist]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operation type.
-func (o GetInstallationSiteItemBlocklistOutput) Operation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemBlocklist) string { return v.Operation }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemBlocklistOutput) Operation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemBlocklist) *string { return v.Operation }).(pulumi.StringPtrOutput)
 }
 
 // The reason why the operation is blocklisted.
-func (o GetInstallationSiteItemBlocklistOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemBlocklist) string { return v.Reason }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemBlocklistOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemBlocklist) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSiteItemBlocklistArrayOutput struct{ *pulumi.OutputState }
@@ -6427,12 +5432,6 @@ func (o GetInstallationSiteItemBlocklistArrayOutput) ToGetInstallationSiteItemBl
 	return o
 }
 
-func (o GetInstallationSiteItemBlocklistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSiteItemBlocklist]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSiteItemBlocklistArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemBlocklistOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSiteItemBlocklist {
 		return vs[0].([]GetInstallationSiteItemBlocklist)[vs[1].(int)]
@@ -6441,13 +5440,13 @@ func (o GetInstallationSiteItemBlocklistArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetInstallationSiteItemJre struct {
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-	Distribution string `pulumi:"distribution"`
+	Distribution *string `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
-	JreKey string `pulumi:"jreKey"`
+	JreKey *string `pulumi:"jreKey"`
 	// The vendor of the Java Runtime.
-	Vendor string `pulumi:"vendor"`
+	Vendor *string `pulumi:"vendor"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetInstallationSiteItemJreInput is an input type that accepts GetInstallationSiteItemJreArgs and GetInstallationSiteItemJreOutput values.
@@ -6463,13 +5462,13 @@ type GetInstallationSiteItemJreInput interface {
 
 type GetInstallationSiteItemJreArgs struct {
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-	Distribution pulumi.StringInput `pulumi:"distribution"`
+	Distribution pulumi.StringPtrInput `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
-	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	JreKey pulumi.StringPtrInput `pulumi:"jreKey"`
 	// The vendor of the Java Runtime.
-	Vendor pulumi.StringInput `pulumi:"vendor"`
+	Vendor pulumi.StringPtrInput `pulumi:"vendor"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetInstallationSiteItemJreArgs) ElementType() reflect.Type {
@@ -6482,12 +5481,6 @@ func (i GetInstallationSiteItemJreArgs) ToGetInstallationSiteItemJreOutput() Get
 
 func (i GetInstallationSiteItemJreArgs) ToGetInstallationSiteItemJreOutputWithContext(ctx context.Context) GetInstallationSiteItemJreOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemJreOutput)
-}
-
-func (i GetInstallationSiteItemJreArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemJre] {
-	return pulumix.Output[GetInstallationSiteItemJre]{
-		OutputState: i.ToGetInstallationSiteItemJreOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSiteItemJreArrayInput is an input type that accepts GetInstallationSiteItemJreArray and GetInstallationSiteItemJreArrayOutput values.
@@ -6515,12 +5508,6 @@ func (i GetInstallationSiteItemJreArray) ToGetInstallationSiteItemJreArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemJreArrayOutput)
 }
 
-func (i GetInstallationSiteItemJreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemJre] {
-	return pulumix.Output[[]GetInstallationSiteItemJre]{
-		OutputState: i.ToGetInstallationSiteItemJreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemJreOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemJreOutput) ElementType() reflect.Type {
@@ -6535,30 +5522,24 @@ func (o GetInstallationSiteItemJreOutput) ToGetInstallationSiteItemJreOutputWith
 	return o
 }
 
-func (o GetInstallationSiteItemJreOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemJre] {
-	return pulumix.Output[GetInstallationSiteItemJre]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-func (o GetInstallationSiteItemJreOutput) Distribution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemJre) string { return v.Distribution }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemJreOutput) Distribution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemJre) *string { return v.Distribution }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for a Java Runtime.
-func (o GetInstallationSiteItemJreOutput) JreKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemJre) string { return v.JreKey }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemJreOutput) JreKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemJre) *string { return v.JreKey }).(pulumi.StringPtrOutput)
 }
 
 // The vendor of the Java Runtime.
-func (o GetInstallationSiteItemJreOutput) Vendor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemJre) string { return v.Vendor }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemJreOutput) Vendor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemJre) *string { return v.Vendor }).(pulumi.StringPtrOutput)
 }
 
 // The version of the operating system as provided by the Java system property os.version.
-func (o GetInstallationSiteItemJreOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemJre) string { return v.Version }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemJreOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemJre) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSiteItemJreArrayOutput struct{ *pulumi.OutputState }
@@ -6575,12 +5556,6 @@ func (o GetInstallationSiteItemJreArrayOutput) ToGetInstallationSiteItemJreArray
 	return o
 }
 
-func (o GetInstallationSiteItemJreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemJre] {
-	return pulumix.Output[[]GetInstallationSiteItemJre]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSiteItemJreArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemJreOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSiteItemJre {
 		return vs[0].([]GetInstallationSiteItemJre)[vs[1].(int)]
@@ -6589,15 +5564,15 @@ func (o GetInstallationSiteItemJreArrayOutput) Index(i pulumi.IntInput) GetInsta
 
 type GetInstallationSiteItemOperatingSystem struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
-	Architecture string `pulumi:"architecture"`
+	Architecture *string `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
-	Family string `pulumi:"family"`
+	Family *string `pulumi:"family"`
 	// Number of instances running the operating system
-	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount *int `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetInstallationSiteItemOperatingSystemInput is an input type that accepts GetInstallationSiteItemOperatingSystemArgs and GetInstallationSiteItemOperatingSystemOutput values.
@@ -6613,15 +5588,15 @@ type GetInstallationSiteItemOperatingSystemInput interface {
 
 type GetInstallationSiteItemOperatingSystemArgs struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
-	Architecture pulumi.StringInput `pulumi:"architecture"`
+	Architecture pulumi.StringPtrInput `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
-	Family pulumi.StringInput `pulumi:"family"`
+	Family pulumi.StringPtrInput `pulumi:"family"`
 	// Number of instances running the operating system
-	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount pulumi.IntPtrInput `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetInstallationSiteItemOperatingSystemArgs) ElementType() reflect.Type {
@@ -6634,12 +5609,6 @@ func (i GetInstallationSiteItemOperatingSystemArgs) ToGetInstallationSiteItemOpe
 
 func (i GetInstallationSiteItemOperatingSystemArgs) ToGetInstallationSiteItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSiteItemOperatingSystemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemOperatingSystemOutput)
-}
-
-func (i GetInstallationSiteItemOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSiteItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSiteItemOperatingSystemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSiteItemOperatingSystemArrayInput is an input type that accepts GetInstallationSiteItemOperatingSystemArray and GetInstallationSiteItemOperatingSystemArrayOutput values.
@@ -6667,12 +5636,6 @@ func (i GetInstallationSiteItemOperatingSystemArray) ToGetInstallationSiteItemOp
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemOperatingSystemArrayOutput)
 }
 
-func (i GetInstallationSiteItemOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSiteItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSiteItemOperatingSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemOperatingSystemOutput) ElementType() reflect.Type {
@@ -6687,35 +5650,29 @@ func (o GetInstallationSiteItemOperatingSystemOutput) ToGetInstallationSiteItemO
 	return o
 }
 
-func (o GetInstallationSiteItemOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSiteItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture of the operating system as provided by the Java system property os.arch.
-func (o GetInstallationSiteItemOperatingSystemOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) string { return v.Architecture }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOperatingSystemOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) *string { return v.Architecture }).(pulumi.StringPtrOutput)
 }
 
 // The operating system type, such as Windows or Linux
-func (o GetInstallationSiteItemOperatingSystemOutput) Family() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOperatingSystemOutput) Family() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) *string { return v.Family }).(pulumi.StringPtrOutput)
 }
 
 // Number of instances running the operating system
-func (o GetInstallationSiteItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o GetInstallationSiteItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) *int { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // The name of the operating system as provided by the Java system property os.name.
-func (o GetInstallationSiteItemOperatingSystemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOperatingSystemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The version of the operating system as provided by the Java system property os.version.
-func (o GetInstallationSiteItemOperatingSystemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetInstallationSiteItemOperatingSystemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSiteItemOperatingSystemArrayOutput struct{ *pulumi.OutputState }
@@ -6730,12 +5687,6 @@ func (o GetInstallationSiteItemOperatingSystemArrayOutput) ToGetInstallationSite
 
 func (o GetInstallationSiteItemOperatingSystemArrayOutput) ToGetInstallationSiteItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetInstallationSiteItemOperatingSystemArrayOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSiteItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSiteItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemOperatingSystemOutput {
@@ -6781,12 +5732,6 @@ func (i GetInstallationSitesFilterArgs) ToGetInstallationSitesFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesFilterOutput)
 }
 
-func (i GetInstallationSitesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesFilter] {
-	return pulumix.Output[GetInstallationSitesFilter]{
-		OutputState: i.ToGetInstallationSitesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesFilterArrayInput is an input type that accepts GetInstallationSitesFilterArray and GetInstallationSitesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesFilterArrayInput` via:
 //
@@ -6812,12 +5757,6 @@ func (i GetInstallationSitesFilterArray) ToGetInstallationSitesFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesFilterArrayOutput)
 }
 
-func (i GetInstallationSitesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesFilter] {
-	return pulumix.Output[[]GetInstallationSitesFilter]{
-		OutputState: i.ToGetInstallationSitesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesFilterOutput) ElementType() reflect.Type {
@@ -6830,12 +5769,6 @@ func (o GetInstallationSitesFilterOutput) ToGetInstallationSitesFilterOutput() G
 
 func (o GetInstallationSitesFilterOutput) ToGetInstallationSitesFilterOutputWithContext(ctx context.Context) GetInstallationSitesFilterOutput {
 	return o
-}
-
-func (o GetInstallationSitesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesFilter] {
-	return pulumix.Output[GetInstallationSitesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the operating system as provided by the Java system property os.name.
@@ -6863,12 +5796,6 @@ func (o GetInstallationSitesFilterArrayOutput) ToGetInstallationSitesFilterArray
 
 func (o GetInstallationSitesFilterArrayOutput) ToGetInstallationSitesFilterArrayOutputWithContext(ctx context.Context) GetInstallationSitesFilterArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesFilter] {
-	return pulumix.Output[[]GetInstallationSitesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesFilterArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesFilterOutput {
@@ -6910,12 +5837,6 @@ func (i GetInstallationSitesInstallationSiteCollectionArgs) ToGetInstallationSit
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollection]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionArray and GetInstallationSitesInstallationSiteCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionArrayInput` via:
 //
@@ -6941,12 +5862,6 @@ func (i GetInstallationSitesInstallationSiteCollectionArray) ToGetInstallationSi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollection]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionOutput) ElementType() reflect.Type {
@@ -6959,12 +5874,6 @@ func (o GetInstallationSitesInstallationSiteCollectionOutput) ToGetInstallationS
 
 func (o GetInstallationSitesInstallationSiteCollectionOutput) ToGetInstallationSitesInstallationSiteCollectionOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of Java installation sites.
@@ -6986,12 +5895,6 @@ func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) ToGetInstalla
 
 func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) ToGetInstallationSitesInstallationSiteCollectionArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionOutput {
@@ -7033,12 +5936,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemArgs) ToGetInstallatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionItemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemArray and GetInstallationSitesInstallationSiteCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemArrayInput` via:
 //
@@ -7064,12 +5961,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemArray) ToGetInstallati
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemOutput) ElementType() reflect.Type {
@@ -7082,12 +5973,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ToGetInstallat
 
 func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ToGetInstallationSitesInstallationSiteCollectionItemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of Java installation sites.
@@ -7111,12 +5996,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) ToGetInst
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItem {
 		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItem)[vs[1].(int)]
@@ -7125,25 +6004,25 @@ func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) Index(i p
 
 type GetInstallationSitesInstallationSiteCollectionItemItem struct {
 	// The approximate count of applications running on this installation
-	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount *int `pulumi:"approximateApplicationCount"`
 	// The list of operations that are blocklisted.
 	Blocklists []GetInstallationSitesInstallationSiteCollectionItemItemBlocklist `pulumi:"blocklists"`
 	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey string `pulumi:"installationKey"`
+	InstallationKey *string `pulumi:"installationKey"`
 	// The essential properties to identify a Java Runtime.
 	Jres []GetInstallationSitesInstallationSiteCollectionItemItemJre `pulumi:"jres"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// Operating System of the platform on which the Java Runtime was reported.
 	OperatingSystems []GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem `pulumi:"operatingSystems"`
 	// The file system path of the installation.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// The security status of the Java Runtime.
-	SecurityStatus string `pulumi:"securityStatus"`
+	SecurityStatus *string `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen string `pulumi:"timeLastSeen"`
+	TimeLastSeen *string `pulumi:"timeLastSeen"`
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemArgs and GetInstallationSitesInstallationSiteCollectionItemItemOutput values.
@@ -7159,25 +6038,25 @@ type GetInstallationSitesInstallationSiteCollectionItemItemInput interface {
 
 type GetInstallationSitesInstallationSiteCollectionItemItemArgs struct {
 	// The approximate count of applications running on this installation
-	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount pulumi.IntPtrInput `pulumi:"approximateApplicationCount"`
 	// The list of operations that are blocklisted.
 	Blocklists GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput `pulumi:"blocklists"`
 	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey pulumi.StringInput `pulumi:"installationKey"`
+	InstallationKey pulumi.StringPtrInput `pulumi:"installationKey"`
 	// The essential properties to identify a Java Runtime.
 	Jres GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput `pulumi:"jres"`
 	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// Operating System of the platform on which the Java Runtime was reported.
 	OperatingSystems GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput `pulumi:"operatingSystems"`
 	// The file system path of the installation.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// The security status of the Java Runtime.
-	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
+	SecurityStatus pulumi.StringPtrInput `pulumi:"securityStatus"`
 	// The lifecycle state of the installation site.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+	TimeLastSeen pulumi.StringPtrInput `pulumi:"timeLastSeen"`
 }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemArgs) ElementType() reflect.Type {
@@ -7190,12 +6069,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToGetInstall
 
 func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOutput)
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemArray and GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput values.
@@ -7223,12 +6096,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemArray) ToGetInstal
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemOutput) ElementType() reflect.Type {
@@ -7243,17 +6110,11 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ToGetInsta
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The approximate count of applications running on this installation
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ApproximateApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) int {
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ApproximateApplicationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) *int {
 		return v.ApproximateApplicationCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The list of operations that are blocklisted.
@@ -7264,8 +6125,8 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) Blocklists
 }
 
 // The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) InstallationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.InstallationKey }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) InstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) *string { return v.InstallationKey }).(pulumi.StringPtrOutput)
 }
 
 // The essential properties to identify a Java Runtime.
@@ -7276,8 +6137,8 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) Jres() Get
 }
 
 // The Fleet-unique identifier of the related managed instance.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // Operating System of the platform on which the Java Runtime was reported.
@@ -7288,23 +6149,23 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) OperatingS
 }
 
 // The file system path of the installation.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.Path }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The security status of the Java Runtime.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) SecurityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.SecurityStatus }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) SecurityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) *string { return v.SecurityStatus }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the installation site.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) TimeLastSeen() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) TimeLastSeen() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) *string { return v.TimeLastSeen }).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -7321,12 +6182,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) ToGet
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItem {
 		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItem)[vs[1].(int)]
@@ -7335,9 +6190,9 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) Index
 
 type GetInstallationSitesInstallationSiteCollectionItemItemBlocklist struct {
 	// The operation type.
-	Operation string `pulumi:"operation"`
+	Operation *string `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
-	Reason string `pulumi:"reason"`
+	Reason *string `pulumi:"reason"`
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs and GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput values.
@@ -7353,9 +6208,9 @@ type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput interf
 
 type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs struct {
 	// The operation type.
-	Operation pulumi.StringInput `pulumi:"operation"`
+	Operation pulumi.StringPtrInput `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
-	Reason pulumi.StringInput `pulumi:"reason"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
 }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ElementType() reflect.Type {
@@ -7368,12 +6223,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToG
 
 func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput)
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray and GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput values.
@@ -7401,12 +6250,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ElementType() reflect.Type {
@@ -7421,20 +6264,14 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) T
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operation type.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) Operation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemBlocklist) string { return v.Operation }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) Operation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemBlocklist) *string { return v.Operation }).(pulumi.StringPtrOutput)
 }
 
 // The reason why the operation is blocklisted.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemBlocklist) string { return v.Reason }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemBlocklist) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput struct{ *pulumi.OutputState }
@@ -7451,12 +6288,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutp
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItemBlocklist {
 		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist)[vs[1].(int)]
@@ -7465,13 +6296,13 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutp
 
 type GetInstallationSitesInstallationSiteCollectionItemItemJre struct {
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-	Distribution string `pulumi:"distribution"`
+	Distribution *string `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
-	JreKey string `pulumi:"jreKey"`
+	JreKey *string `pulumi:"jreKey"`
 	// The vendor of the Java Runtime.
-	Vendor string `pulumi:"vendor"`
+	Vendor *string `pulumi:"vendor"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemJreInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemJreArgs and GetInstallationSitesInstallationSiteCollectionItemItemJreOutput values.
@@ -7487,13 +6318,13 @@ type GetInstallationSitesInstallationSiteCollectionItemItemJreInput interface {
 
 type GetInstallationSitesInstallationSiteCollectionItemItemJreArgs struct {
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-	Distribution pulumi.StringInput `pulumi:"distribution"`
+	Distribution pulumi.StringPtrInput `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
-	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	JreKey pulumi.StringPtrInput `pulumi:"jreKey"`
 	// The vendor of the Java Runtime.
-	Vendor pulumi.StringInput `pulumi:"vendor"`
+	Vendor pulumi.StringPtrInput `pulumi:"vendor"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ElementType() reflect.Type {
@@ -7506,12 +6337,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToGetInst
 
 func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemJreOutput)
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemJreArray and GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput values.
@@ -7539,12 +6364,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArray) ToGetIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemJreOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ElementType() reflect.Type {
@@ -7559,30 +6378,24 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToGetIn
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Distribution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Distribution }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Distribution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) *string { return v.Distribution }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for a Java Runtime.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) JreKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.JreKey }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) JreKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) *string { return v.JreKey }).(pulumi.StringPtrOutput)
 }
 
 // The vendor of the Java Runtime.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Vendor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Vendor }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Vendor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) *string { return v.Vendor }).(pulumi.StringPtrOutput)
 }
 
 // The version of the operating system as provided by the Java system property os.version.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Version }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput struct{ *pulumi.OutputState }
@@ -7599,12 +6412,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) To
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItemJre {
 		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItemJre)[vs[1].(int)]
@@ -7613,15 +6420,15 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) In
 
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
-	Architecture string `pulumi:"architecture"`
+	Architecture *string `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
-	Family string `pulumi:"family"`
+	Family *string `pulumi:"family"`
 	// Number of instances running the operating system.
-	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount *int `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs and GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput values.
@@ -7637,15 +6444,15 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput 
 
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
-	Architecture pulumi.StringInput `pulumi:"architecture"`
+	Architecture pulumi.StringPtrInput `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
-	Family pulumi.StringInput `pulumi:"family"`
+	Family pulumi.StringPtrInput `pulumi:"family"`
 	// Number of instances running the operating system.
-	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount pulumi.IntPtrInput `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs) ElementType() reflect.Type {
@@ -7658,12 +6465,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArg
 
 func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput)
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray and GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput values.
@@ -7691,12 +6492,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ElementType() reflect.Type {
@@ -7711,39 +6506,35 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOut
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture of the operating system as provided by the Java system property os.arch.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string {
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) *string {
 		return v.Architecture
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The operating system type, such as Windows or Linux
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Family() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Family() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) *string { return v.Family }).(pulumi.StringPtrOutput)
 }
 
 // Number of instances running the operating system.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) int {
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) *int {
 		return v.ManagedInstanceCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The name of the operating system as provided by the Java system property os.name.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The version of the operating system as provided by the Java system property os.version.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) *string {
+		return v.Version
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput struct{ *pulumi.OutputState }
@@ -7758,12 +6549,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArr
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
@@ -7807,12 +6592,6 @@ func (i GetJavaFamiliesFilterArgs) ToGetJavaFamiliesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesFilterOutput)
 }
 
-func (i GetJavaFamiliesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesFilter] {
-	return pulumix.Output[GetJavaFamiliesFilter]{
-		OutputState: i.ToGetJavaFamiliesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaFamiliesFilterArrayInput is an input type that accepts GetJavaFamiliesFilterArray and GetJavaFamiliesFilterArrayOutput values.
 // You can construct a concrete instance of `GetJavaFamiliesFilterArrayInput` via:
 //
@@ -7838,12 +6617,6 @@ func (i GetJavaFamiliesFilterArray) ToGetJavaFamiliesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesFilterArrayOutput)
 }
 
-func (i GetJavaFamiliesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesFilter] {
-	return pulumix.Output[[]GetJavaFamiliesFilter]{
-		OutputState: i.ToGetJavaFamiliesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaFamiliesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetJavaFamiliesFilterOutput) ElementType() reflect.Type {
@@ -7856,12 +6629,6 @@ func (o GetJavaFamiliesFilterOutput) ToGetJavaFamiliesFilterOutput() GetJavaFami
 
 func (o GetJavaFamiliesFilterOutput) ToGetJavaFamiliesFilterOutputWithContext(ctx context.Context) GetJavaFamiliesFilterOutput {
 	return o
-}
-
-func (o GetJavaFamiliesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesFilter] {
-	return pulumix.Output[GetJavaFamiliesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesFilterOutput) Name() pulumi.StringOutput {
@@ -7888,12 +6655,6 @@ func (o GetJavaFamiliesFilterArrayOutput) ToGetJavaFamiliesFilterArrayOutput() G
 
 func (o GetJavaFamiliesFilterArrayOutput) ToGetJavaFamiliesFilterArrayOutputWithContext(ctx context.Context) GetJavaFamiliesFilterArrayOutput {
 	return o
-}
-
-func (o GetJavaFamiliesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesFilter] {
-	return pulumix.Output[[]GetJavaFamiliesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesFilterArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesFilterOutput {
@@ -7933,12 +6694,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionArgs) ToGetJavaFamiliesJavaFamilyColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionOutput)
 }
 
-func (i GetJavaFamiliesJavaFamilyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaFamiliesJavaFamilyCollectionArrayInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionArray and GetJavaFamiliesJavaFamilyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionArrayInput` via:
 //
@@ -7964,12 +6719,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionArray) ToGetJavaFamiliesJavaFamilyCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionArrayOutput)
 }
 
-func (i GetJavaFamiliesJavaFamilyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaFamiliesJavaFamilyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetJavaFamiliesJavaFamilyCollectionOutput) ElementType() reflect.Type {
@@ -7982,12 +6731,6 @@ func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToGetJavaFamiliesJavaFamilyCo
 
 func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionOutput {
 	return o
-}
-
-func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesJavaFamilyCollectionOutput) Items() GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
@@ -8008,12 +6751,6 @@ func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) ToGetJavaFamiliesJavaFam
 	return o
 }
 
-func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesJavaFamilyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaFamiliesJavaFamilyCollection {
 		return vs[0].([]GetJavaFamiliesJavaFamilyCollection)[vs[1].(int)]
@@ -8022,15 +6759,15 @@ func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) Index(i pulumi.IntInput)
 
 type GetJavaFamiliesJavaFamilyCollectionItem struct {
 	// The display name for the Java family.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Link to access the documentation for the release.
-	DocUrl string `pulumi:"docUrl"`
+	DocUrl *string `pulumi:"docUrl"`
 	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate *string `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
-	FamilyVersion string `pulumi:"familyVersion"`
+	FamilyVersion *string `pulumi:"familyVersion"`
 	// This indicates the support category for the Java release family.
-	SupportType string `pulumi:"supportType"`
+	SupportType *string `pulumi:"supportType"`
 }
 
 // GetJavaFamiliesJavaFamilyCollectionItemInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionItemArgs and GetJavaFamiliesJavaFamilyCollectionItemOutput values.
@@ -8046,15 +6783,15 @@ type GetJavaFamiliesJavaFamilyCollectionItemInput interface {
 
 type GetJavaFamiliesJavaFamilyCollectionItemArgs struct {
 	// The display name for the Java family.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Link to access the documentation for the release.
-	DocUrl pulumi.StringInput `pulumi:"docUrl"`
+	DocUrl pulumi.StringPtrInput `pulumi:"docUrl"`
 	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate pulumi.StringPtrInput `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
-	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	FamilyVersion pulumi.StringPtrInput `pulumi:"familyVersion"`
 	// This indicates the support category for the Java release family.
-	SupportType pulumi.StringInput `pulumi:"supportType"`
+	SupportType pulumi.StringPtrInput `pulumi:"supportType"`
 }
 
 func (GetJavaFamiliesJavaFamilyCollectionItemArgs) ElementType() reflect.Type {
@@ -8067,12 +6804,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionItemArgs) ToGetJavaFamiliesJavaFamily
 
 func (i GetJavaFamiliesJavaFamilyCollectionItemArgs) ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemOutput)
-}
-
-func (i GetJavaFamiliesJavaFamilyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaFamiliesJavaFamilyCollectionItemArrayInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionItemArray and GetJavaFamiliesJavaFamilyCollectionItemArrayOutput values.
@@ -8100,12 +6831,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionItemArray) ToGetJavaFamiliesJavaFamil
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemArrayOutput)
 }
 
-func (i GetJavaFamiliesJavaFamilyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaFamiliesJavaFamilyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetJavaFamiliesJavaFamilyCollectionItemOutput) ElementType() reflect.Type {
@@ -8120,35 +6845,29 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ToGetJavaFamiliesJavaFami
 	return o
 }
 
-func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name for the Java family.
-func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Link to access the documentation for the release.
-func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) DocUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.DocUrl }).(pulumi.StringOutput)
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) DocUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) *string { return v.DocUrl }).(pulumi.StringPtrOutput)
 }
 
 // The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) EndOfSupportLifeDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) EndOfSupportLifeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) *string { return v.EndOfSupportLifeDate }).(pulumi.StringPtrOutput)
 }
 
 // The version identifier for the Java family.
-func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) FamilyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.FamilyVersion }).(pulumi.StringOutput)
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) FamilyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) *string { return v.FamilyVersion }).(pulumi.StringPtrOutput)
 }
 
 // This indicates the support category for the Java release family.
-func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) SupportType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.SupportType }).(pulumi.StringOutput)
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) SupportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) *string { return v.SupportType }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaFamiliesJavaFamilyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8165,12 +6884,6 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ToGetJavaFamiliesJav
 	return o
 }
 
-func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesJavaFamilyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaFamiliesJavaFamilyCollectionItem {
 		return vs[0].([]GetJavaFamiliesJavaFamilyCollectionItem)[vs[1].(int)]
@@ -8179,15 +6892,15 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) Index(i pulumi.IntIn
 
 type GetJavaReleaseArtifact struct {
 	// Approximate compressed file size in bytes.
-	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	ApproximateFileSizeInBytes *string `pulumi:"approximateFileSizeInBytes"`
 	// Product content type of this artifact.
-	ArtifactContentType string `pulumi:"artifactContentType"`
+	ArtifactContentType *string `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-	ArtifactDescription string `pulumi:"artifactDescription"`
+	ArtifactDescription *string `pulumi:"artifactDescription"`
 	// Unique identifier for the artifact.
-	ArtifactId string `pulumi:"artifactId"`
+	ArtifactId *string `pulumi:"artifactId"`
 	// SHA256 checksum of the artifact.
-	Sha256 string `pulumi:"sha256"`
+	Sha256 *string `pulumi:"sha256"`
 }
 
 // GetJavaReleaseArtifactInput is an input type that accepts GetJavaReleaseArtifactArgs and GetJavaReleaseArtifactOutput values.
@@ -8203,15 +6916,15 @@ type GetJavaReleaseArtifactInput interface {
 
 type GetJavaReleaseArtifactArgs struct {
 	// Approximate compressed file size in bytes.
-	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	ApproximateFileSizeInBytes pulumi.StringPtrInput `pulumi:"approximateFileSizeInBytes"`
 	// Product content type of this artifact.
-	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	ArtifactContentType pulumi.StringPtrInput `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	ArtifactDescription pulumi.StringPtrInput `pulumi:"artifactDescription"`
 	// Unique identifier for the artifact.
-	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	ArtifactId pulumi.StringPtrInput `pulumi:"artifactId"`
 	// SHA256 checksum of the artifact.
-	Sha256 pulumi.StringInput `pulumi:"sha256"`
+	Sha256 pulumi.StringPtrInput `pulumi:"sha256"`
 }
 
 func (GetJavaReleaseArtifactArgs) ElementType() reflect.Type {
@@ -8224,12 +6937,6 @@ func (i GetJavaReleaseArtifactArgs) ToGetJavaReleaseArtifactOutput() GetJavaRele
 
 func (i GetJavaReleaseArtifactArgs) ToGetJavaReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleaseArtifactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseArtifactOutput)
-}
-
-func (i GetJavaReleaseArtifactArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseArtifact] {
-	return pulumix.Output[GetJavaReleaseArtifact]{
-		OutputState: i.ToGetJavaReleaseArtifactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaReleaseArtifactArrayInput is an input type that accepts GetJavaReleaseArtifactArray and GetJavaReleaseArtifactArrayOutput values.
@@ -8257,12 +6964,6 @@ func (i GetJavaReleaseArtifactArray) ToGetJavaReleaseArtifactArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseArtifactArrayOutput)
 }
 
-func (i GetJavaReleaseArtifactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseArtifact] {
-	return pulumix.Output[[]GetJavaReleaseArtifact]{
-		OutputState: i.ToGetJavaReleaseArtifactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleaseArtifactOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleaseArtifactOutput) ElementType() reflect.Type {
@@ -8277,35 +6978,29 @@ func (o GetJavaReleaseArtifactOutput) ToGetJavaReleaseArtifactOutputWithContext(
 	return o
 }
 
-func (o GetJavaReleaseArtifactOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseArtifact] {
-	return pulumix.Output[GetJavaReleaseArtifact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Approximate compressed file size in bytes.
-func (o GetJavaReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
+func (o GetJavaReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) *string { return v.ApproximateFileSizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // Product content type of this artifact.
-func (o GetJavaReleaseArtifactOutput) ArtifactContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
+func (o GetJavaReleaseArtifactOutput) ArtifactContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) *string { return v.ArtifactContentType }).(pulumi.StringPtrOutput)
 }
 
 // Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-func (o GetJavaReleaseArtifactOutput) ArtifactDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
+func (o GetJavaReleaseArtifactOutput) ArtifactDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) *string { return v.ArtifactDescription }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the artifact.
-func (o GetJavaReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+func (o GetJavaReleaseArtifactOutput) ArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) *string { return v.ArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // SHA256 checksum of the artifact.
-func (o GetJavaReleaseArtifactOutput) Sha256() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.Sha256 }).(pulumi.StringOutput)
+func (o GetJavaReleaseArtifactOutput) Sha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) *string { return v.Sha256 }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaReleaseArtifactArrayOutput struct{ *pulumi.OutputState }
@@ -8322,12 +7017,6 @@ func (o GetJavaReleaseArtifactArrayOutput) ToGetJavaReleaseArtifactArrayOutputWi
 	return o
 }
 
-func (o GetJavaReleaseArtifactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseArtifact] {
-	return pulumix.Output[[]GetJavaReleaseArtifact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseArtifactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseArtifact {
 		return vs[0].([]GetJavaReleaseArtifact)[vs[1].(int)]
@@ -8336,15 +7025,15 @@ func (o GetJavaReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaRelea
 
 type GetJavaReleaseFamilyDetail struct {
 	// Commonly used name for the license type.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Link to access the documentation for the release.
-	DocUrl string `pulumi:"docUrl"`
+	DocUrl *string `pulumi:"docUrl"`
 	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate *string `pulumi:"endOfSupportLifeDate"`
 	// Java release family identifier.
-	FamilyVersion string `pulumi:"familyVersion"`
+	FamilyVersion *string `pulumi:"familyVersion"`
 	// This indicates the support category for the Java release family.
-	SupportType string `pulumi:"supportType"`
+	SupportType *string `pulumi:"supportType"`
 }
 
 // GetJavaReleaseFamilyDetailInput is an input type that accepts GetJavaReleaseFamilyDetailArgs and GetJavaReleaseFamilyDetailOutput values.
@@ -8360,15 +7049,15 @@ type GetJavaReleaseFamilyDetailInput interface {
 
 type GetJavaReleaseFamilyDetailArgs struct {
 	// Commonly used name for the license type.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Link to access the documentation for the release.
-	DocUrl pulumi.StringInput `pulumi:"docUrl"`
+	DocUrl pulumi.StringPtrInput `pulumi:"docUrl"`
 	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate pulumi.StringPtrInput `pulumi:"endOfSupportLifeDate"`
 	// Java release family identifier.
-	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	FamilyVersion pulumi.StringPtrInput `pulumi:"familyVersion"`
 	// This indicates the support category for the Java release family.
-	SupportType pulumi.StringInput `pulumi:"supportType"`
+	SupportType pulumi.StringPtrInput `pulumi:"supportType"`
 }
 
 func (GetJavaReleaseFamilyDetailArgs) ElementType() reflect.Type {
@@ -8381,12 +7070,6 @@ func (i GetJavaReleaseFamilyDetailArgs) ToGetJavaReleaseFamilyDetailOutput() Get
 
 func (i GetJavaReleaseFamilyDetailArgs) ToGetJavaReleaseFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailOutput)
-}
-
-func (i GetJavaReleaseFamilyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[GetJavaReleaseFamilyDetail]{
-		OutputState: i.ToGetJavaReleaseFamilyDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaReleaseFamilyDetailArrayInput is an input type that accepts GetJavaReleaseFamilyDetailArray and GetJavaReleaseFamilyDetailArrayOutput values.
@@ -8414,12 +7097,6 @@ func (i GetJavaReleaseFamilyDetailArray) ToGetJavaReleaseFamilyDetailArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailArrayOutput)
 }
 
-func (i GetJavaReleaseFamilyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleaseFamilyDetail]{
-		OutputState: i.ToGetJavaReleaseFamilyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleaseFamilyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleaseFamilyDetailOutput) ElementType() reflect.Type {
@@ -8434,35 +7111,29 @@ func (o GetJavaReleaseFamilyDetailOutput) ToGetJavaReleaseFamilyDetailOutputWith
 	return o
 }
 
-func (o GetJavaReleaseFamilyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[GetJavaReleaseFamilyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commonly used name for the license type.
-func (o GetJavaReleaseFamilyDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetJavaReleaseFamilyDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Link to access the documentation for the release.
-func (o GetJavaReleaseFamilyDetailOutput) DocUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.DocUrl }).(pulumi.StringOutput)
+func (o GetJavaReleaseFamilyDetailOutput) DocUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) *string { return v.DocUrl }).(pulumi.StringPtrOutput)
 }
 
 // The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetJavaReleaseFamilyDetailOutput) EndOfSupportLifeDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+func (o GetJavaReleaseFamilyDetailOutput) EndOfSupportLifeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) *string { return v.EndOfSupportLifeDate }).(pulumi.StringPtrOutput)
 }
 
 // Java release family identifier.
-func (o GetJavaReleaseFamilyDetailOutput) FamilyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.FamilyVersion }).(pulumi.StringOutput)
+func (o GetJavaReleaseFamilyDetailOutput) FamilyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) *string { return v.FamilyVersion }).(pulumi.StringPtrOutput)
 }
 
 // This indicates the support category for the Java release family.
-func (o GetJavaReleaseFamilyDetailOutput) SupportType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.SupportType }).(pulumi.StringOutput)
+func (o GetJavaReleaseFamilyDetailOutput) SupportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) *string { return v.SupportType }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaReleaseFamilyDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8479,12 +7150,6 @@ func (o GetJavaReleaseFamilyDetailArrayOutput) ToGetJavaReleaseFamilyDetailArray
 	return o
 }
 
-func (o GetJavaReleaseFamilyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleaseFamilyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleaseFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseFamilyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseFamilyDetail {
 		return vs[0].([]GetJavaReleaseFamilyDetail)[vs[1].(int)]
@@ -8493,11 +7158,11 @@ func (o GetJavaReleaseFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaR
 
 type GetJavaReleaseLicenseDetail struct {
 	// Commonly used name for the license type.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// License type for the Java version.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 	// Publicly accessible license URL containing the detailed terms and conditions.
-	LicenseUrl string `pulumi:"licenseUrl"`
+	LicenseUrl *string `pulumi:"licenseUrl"`
 }
 
 // GetJavaReleaseLicenseDetailInput is an input type that accepts GetJavaReleaseLicenseDetailArgs and GetJavaReleaseLicenseDetailOutput values.
@@ -8513,11 +7178,11 @@ type GetJavaReleaseLicenseDetailInput interface {
 
 type GetJavaReleaseLicenseDetailArgs struct {
 	// Commonly used name for the license type.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// License type for the Java version.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
 	// Publicly accessible license URL containing the detailed terms and conditions.
-	LicenseUrl pulumi.StringInput `pulumi:"licenseUrl"`
+	LicenseUrl pulumi.StringPtrInput `pulumi:"licenseUrl"`
 }
 
 func (GetJavaReleaseLicenseDetailArgs) ElementType() reflect.Type {
@@ -8530,12 +7195,6 @@ func (i GetJavaReleaseLicenseDetailArgs) ToGetJavaReleaseLicenseDetailOutput() G
 
 func (i GetJavaReleaseLicenseDetailArgs) ToGetJavaReleaseLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseLicenseDetailOutput)
-}
-
-func (i GetJavaReleaseLicenseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[GetJavaReleaseLicenseDetail]{
-		OutputState: i.ToGetJavaReleaseLicenseDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaReleaseLicenseDetailArrayInput is an input type that accepts GetJavaReleaseLicenseDetailArray and GetJavaReleaseLicenseDetailArrayOutput values.
@@ -8563,12 +7222,6 @@ func (i GetJavaReleaseLicenseDetailArray) ToGetJavaReleaseLicenseDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseLicenseDetailArrayOutput)
 }
 
-func (i GetJavaReleaseLicenseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleaseLicenseDetail]{
-		OutputState: i.ToGetJavaReleaseLicenseDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleaseLicenseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleaseLicenseDetailOutput) ElementType() reflect.Type {
@@ -8583,25 +7236,19 @@ func (o GetJavaReleaseLicenseDetailOutput) ToGetJavaReleaseLicenseDetailOutputWi
 	return o
 }
 
-func (o GetJavaReleaseLicenseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[GetJavaReleaseLicenseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commonly used name for the license type.
-func (o GetJavaReleaseLicenseDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetJavaReleaseLicenseDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // License type for the Java version.
-func (o GetJavaReleaseLicenseDetailOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o GetJavaReleaseLicenseDetailOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 // Publicly accessible license URL containing the detailed terms and conditions.
-func (o GetJavaReleaseLicenseDetailOutput) LicenseUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) string { return v.LicenseUrl }).(pulumi.StringOutput)
+func (o GetJavaReleaseLicenseDetailOutput) LicenseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) *string { return v.LicenseUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaReleaseLicenseDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8616,12 +7263,6 @@ func (o GetJavaReleaseLicenseDetailArrayOutput) ToGetJavaReleaseLicenseDetailArr
 
 func (o GetJavaReleaseLicenseDetailArrayOutput) ToGetJavaReleaseLicenseDetailArrayOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailArrayOutput {
 	return o
-}
-
-func (o GetJavaReleaseLicenseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleaseLicenseDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleaseLicenseDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseLicenseDetailOutput {
@@ -8665,12 +7306,6 @@ func (i GetJavaReleasesFilterArgs) ToGetJavaReleasesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesFilterOutput)
 }
 
-func (i GetJavaReleasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesFilter] {
-	return pulumix.Output[GetJavaReleasesFilter]{
-		OutputState: i.ToGetJavaReleasesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesFilterArrayInput is an input type that accepts GetJavaReleasesFilterArray and GetJavaReleasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesFilterArrayInput` via:
 //
@@ -8696,12 +7331,6 @@ func (i GetJavaReleasesFilterArray) ToGetJavaReleasesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesFilterArrayOutput)
 }
 
-func (i GetJavaReleasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesFilter] {
-	return pulumix.Output[[]GetJavaReleasesFilter]{
-		OutputState: i.ToGetJavaReleasesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesFilterOutput) ElementType() reflect.Type {
@@ -8714,12 +7343,6 @@ func (o GetJavaReleasesFilterOutput) ToGetJavaReleasesFilterOutput() GetJavaRele
 
 func (o GetJavaReleasesFilterOutput) ToGetJavaReleasesFilterOutputWithContext(ctx context.Context) GetJavaReleasesFilterOutput {
 	return o
-}
-
-func (o GetJavaReleasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesFilter] {
-	return pulumix.Output[GetJavaReleasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesFilterOutput) Name() pulumi.StringOutput {
@@ -8746,12 +7369,6 @@ func (o GetJavaReleasesFilterArrayOutput) ToGetJavaReleasesFilterArrayOutput() G
 
 func (o GetJavaReleasesFilterArrayOutput) ToGetJavaReleasesFilterArrayOutputWithContext(ctx context.Context) GetJavaReleasesFilterArrayOutput {
 	return o
-}
-
-func (o GetJavaReleasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesFilter] {
-	return pulumix.Output[[]GetJavaReleasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesFilterArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesFilterOutput {
@@ -8791,12 +7408,6 @@ func (i GetJavaReleasesJavaReleaseCollectionArgs) ToGetJavaReleasesJavaReleaseCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollection]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesJavaReleaseCollectionArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionArray and GetJavaReleasesJavaReleaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionArrayInput` via:
 //
@@ -8822,12 +7433,6 @@ func (i GetJavaReleasesJavaReleaseCollectionArray) ToGetJavaReleasesJavaReleaseC
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollection]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionOutput) ElementType() reflect.Type {
@@ -8840,12 +7445,6 @@ func (o GetJavaReleasesJavaReleaseCollectionOutput) ToGetJavaReleasesJavaRelease
 
 func (o GetJavaReleasesJavaReleaseCollectionOutput) ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesJavaReleaseCollectionOutput) Items() GetJavaReleasesJavaReleaseCollectionItemArrayOutput {
@@ -8868,12 +7467,6 @@ func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) ToGetJavaReleasesJavaRe
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollection {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollection)[vs[1].(int)]
@@ -8888,23 +7481,23 @@ type GetJavaReleasesJavaReleaseCollectionItem struct {
 	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails []GetJavaReleasesJavaReleaseCollectionItemFamilyDetail `pulumi:"familyDetails"`
 	// The version identifier for the Java family.
-	FamilyVersion string `pulumi:"familyVersion"`
+	FamilyVersion *string `pulumi:"familyVersion"`
 	// Information about a license type for Java.
 	LicenseDetails []GetJavaReleasesJavaReleaseCollectionItemLicenseDetail `pulumi:"licenseDetails"`
 	// Java license type.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 	// Parent Java release version identifier. This is applicable for BPR releases.
-	ParentReleaseVersion string `pulumi:"parentReleaseVersion"`
+	ParentReleaseVersion *string `pulumi:"parentReleaseVersion"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	ReleaseDate string `pulumi:"releaseDate"`
+	ReleaseDate *string `pulumi:"releaseDate"`
 	// Release notes associated with the Java version.
-	ReleaseNotesUrl string `pulumi:"releaseNotesUrl"`
+	ReleaseNotesUrl *string `pulumi:"releaseNotesUrl"`
 	// Java release type.
-	ReleaseType string `pulumi:"releaseType"`
+	ReleaseType *string `pulumi:"releaseType"`
 	// Unique Java release version identifier
-	ReleaseVersion string `pulumi:"releaseVersion"`
+	ReleaseVersion *string `pulumi:"releaseVersion"`
 	// The security status of the Java version.
-	SecurityStatus string `pulumi:"securityStatus"`
+	SecurityStatus *string `pulumi:"securityStatus"`
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArgs and GetJavaReleasesJavaReleaseCollectionItemOutput values.
@@ -8926,23 +7519,23 @@ type GetJavaReleasesJavaReleaseCollectionItemArgs struct {
 	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput `pulumi:"familyDetails"`
 	// The version identifier for the Java family.
-	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	FamilyVersion pulumi.StringPtrInput `pulumi:"familyVersion"`
 	// Information about a license type for Java.
 	LicenseDetails GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput `pulumi:"licenseDetails"`
 	// Java license type.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
 	// Parent Java release version identifier. This is applicable for BPR releases.
-	ParentReleaseVersion pulumi.StringInput `pulumi:"parentReleaseVersion"`
+	ParentReleaseVersion pulumi.StringPtrInput `pulumi:"parentReleaseVersion"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
+	ReleaseDate pulumi.StringPtrInput `pulumi:"releaseDate"`
 	// Release notes associated with the Java version.
-	ReleaseNotesUrl pulumi.StringInput `pulumi:"releaseNotesUrl"`
+	ReleaseNotesUrl pulumi.StringPtrInput `pulumi:"releaseNotesUrl"`
 	// Java release type.
-	ReleaseType pulumi.StringInput `pulumi:"releaseType"`
+	ReleaseType pulumi.StringPtrInput `pulumi:"releaseType"`
 	// Unique Java release version identifier
-	ReleaseVersion pulumi.StringInput `pulumi:"releaseVersion"`
+	ReleaseVersion pulumi.StringPtrInput `pulumi:"releaseVersion"`
 	// The security status of the Java version.
-	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
+	SecurityStatus pulumi.StringPtrInput `pulumi:"securityStatus"`
 }
 
 func (GetJavaReleasesJavaReleaseCollectionItemArgs) ElementType() reflect.Type {
@@ -8955,12 +7548,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArgs) ToGetJavaReleasesJavaRelea
 
 func (i GetJavaReleasesJavaReleaseCollectionItemArgs) ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemOutput)
-}
-
-func (i GetJavaReleasesJavaReleaseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArray and GetJavaReleasesJavaReleaseCollectionItemArrayOutput values.
@@ -8988,12 +7575,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArray) ToGetJavaReleasesJavaRele
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemOutput) ElementType() reflect.Type {
@@ -9006,12 +7587,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToGetJavaReleasesJavaRel
 
 func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Artifact content types for the Java version.
@@ -9034,8 +7609,8 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) FamilyDetails() GetJavaR
 }
 
 // The version identifier for the Java family.
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) FamilyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.FamilyVersion }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) FamilyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.FamilyVersion }).(pulumi.StringPtrOutput)
 }
 
 // Information about a license type for Java.
@@ -9046,38 +7621,38 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) LicenseDetails() GetJava
 }
 
 // Java license type.
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 // Parent Java release version identifier. This is applicable for BPR releases.
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ParentReleaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ParentReleaseVersion }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ParentReleaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.ParentReleaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseDate }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.ReleaseDate }).(pulumi.StringPtrOutput)
 }
 
 // Release notes associated with the Java version.
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseNotesUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseNotesUrl }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseNotesUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.ReleaseNotesUrl }).(pulumi.StringPtrOutput)
 }
 
 // Java release type.
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseType }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.ReleaseType }).(pulumi.StringPtrOutput)
 }
 
 // Unique Java release version identifier
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseVersion }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.ReleaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The security status of the Java version.
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) SecurityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.SecurityStatus }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) SecurityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) *string { return v.SecurityStatus }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9094,12 +7669,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) ToGetJavaReleasesJa
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItem {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItem)[vs[1].(int)]
@@ -9108,15 +7677,15 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) Index(i pulumi.IntI
 
 type GetJavaReleasesJavaReleaseCollectionItemArtifact struct {
 	// Approximate compressed file size in bytes.
-	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	ApproximateFileSizeInBytes *string `pulumi:"approximateFileSizeInBytes"`
 	// Product content type of this artifact.
-	ArtifactContentType string `pulumi:"artifactContentType"`
+	ArtifactContentType *string `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-	ArtifactDescription string `pulumi:"artifactDescription"`
+	ArtifactDescription *string `pulumi:"artifactDescription"`
 	// Unique identifier for the artifact.
-	ArtifactId string `pulumi:"artifactId"`
+	ArtifactId *string `pulumi:"artifactId"`
 	// SHA256 checksum of the artifact.
-	Sha256 string `pulumi:"sha256"`
+	Sha256 *string `pulumi:"sha256"`
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemArtifactInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArtifactArgs and GetJavaReleasesJavaReleaseCollectionItemArtifactOutput values.
@@ -9132,15 +7701,15 @@ type GetJavaReleasesJavaReleaseCollectionItemArtifactInput interface {
 
 type GetJavaReleasesJavaReleaseCollectionItemArtifactArgs struct {
 	// Approximate compressed file size in bytes.
-	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	ApproximateFileSizeInBytes pulumi.StringPtrInput `pulumi:"approximateFileSizeInBytes"`
 	// Product content type of this artifact.
-	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	ArtifactContentType pulumi.StringPtrInput `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	ArtifactDescription pulumi.StringPtrInput `pulumi:"artifactDescription"`
 	// Unique identifier for the artifact.
-	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	ArtifactId pulumi.StringPtrInput `pulumi:"artifactId"`
 	// SHA256 checksum of the artifact.
-	Sha256 pulumi.StringInput `pulumi:"sha256"`
+	Sha256 pulumi.StringPtrInput `pulumi:"sha256"`
 }
 
 func (GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ElementType() reflect.Type {
@@ -9153,12 +7722,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ToGetJavaReleasesJ
 
 func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArtifactOutput)
-}
-
-func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArtifactArray and GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput values.
@@ -9186,12 +7749,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArray) ToGetJavaReleases
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemArtifactOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ElementType() reflect.Type {
@@ -9206,35 +7763,29 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ToGetJavaRelease
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Approximate compressed file size in bytes.
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) *string { return v.ApproximateFileSizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // Product content type of this artifact.
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) *string { return v.ArtifactContentType }).(pulumi.StringPtrOutput)
 }
 
 // Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) *string { return v.ArtifactDescription }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the artifact.
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) *string { return v.ArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // SHA256 checksum of the artifact.
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) Sha256() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.Sha256 }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) Sha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) *string { return v.Sha256 }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput struct{ *pulumi.OutputState }
@@ -9251,12 +7802,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ToGetJavaRe
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemArtifact {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemArtifact)[vs[1].(int)]
@@ -9265,15 +7810,15 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) Index(i pul
 
 type GetJavaReleasesJavaReleaseCollectionItemFamilyDetail struct {
 	// Commonly used name for the license type.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Link to access the documentation for the release.
-	DocUrl string `pulumi:"docUrl"`
+	DocUrl *string `pulumi:"docUrl"`
 	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate *string `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
-	FamilyVersion string `pulumi:"familyVersion"`
+	FamilyVersion *string `pulumi:"familyVersion"`
 	// This indicates the support category for the Java release family.
-	SupportType string `pulumi:"supportType"`
+	SupportType *string `pulumi:"supportType"`
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs and GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput values.
@@ -9289,15 +7834,15 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput interface {
 
 type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs struct {
 	// Commonly used name for the license type.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Link to access the documentation for the release.
-	DocUrl pulumi.StringInput `pulumi:"docUrl"`
+	DocUrl pulumi.StringPtrInput `pulumi:"docUrl"`
 	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate pulumi.StringPtrInput `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
-	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	FamilyVersion pulumi.StringPtrInput `pulumi:"familyVersion"`
 	// This indicates the support category for the Java release family.
-	SupportType pulumi.StringInput `pulumi:"supportType"`
+	SupportType pulumi.StringPtrInput `pulumi:"supportType"`
 }
 
 func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ElementType() reflect.Type {
@@ -9310,12 +7855,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ToGetJavaRelea
 
 func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput)
-}
-
-func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray and GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput values.
@@ -9343,12 +7882,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray) ToGetJavaRele
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ElementType() reflect.Type {
@@ -9363,35 +7896,29 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToGetJavaRel
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commonly used name for the license type.
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Link to access the documentation for the release.
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) DocUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.DocUrl }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) DocUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) *string { return v.DocUrl }).(pulumi.StringPtrOutput)
 }
 
 // The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) EndOfSupportLifeDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) EndOfSupportLifeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) *string { return v.EndOfSupportLifeDate }).(pulumi.StringPtrOutput)
 }
 
 // The version identifier for the Java family.
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) FamilyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.FamilyVersion }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) FamilyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) *string { return v.FamilyVersion }).(pulumi.StringPtrOutput)
 }
 
 // This indicates the support category for the Java release family.
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) SupportType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.SupportType }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) SupportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) *string { return v.SupportType }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput struct{ *pulumi.OutputState }
@@ -9408,12 +7935,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ToGetJa
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemFamilyDetail {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail)[vs[1].(int)]
@@ -9422,11 +7943,11 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) Index(i
 
 type GetJavaReleasesJavaReleaseCollectionItemLicenseDetail struct {
 	// Commonly used name for the license type.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Java license type.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 	// Publicly accessible license URL containing the detailed terms and conditions.
-	LicenseUrl string `pulumi:"licenseUrl"`
+	LicenseUrl *string `pulumi:"licenseUrl"`
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs and GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput values.
@@ -9442,11 +7963,11 @@ type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput interface {
 
 type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs struct {
 	// Commonly used name for the license type.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Java license type.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
 	// Publicly accessible license URL containing the detailed terms and conditions.
-	LicenseUrl pulumi.StringInput `pulumi:"licenseUrl"`
+	LicenseUrl pulumi.StringPtrInput `pulumi:"licenseUrl"`
 }
 
 func (GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ElementType() reflect.Type {
@@ -9459,12 +7980,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ToGetJavaRele
 
 func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput)
-}
-
-func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray and GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput values.
@@ -9492,12 +8007,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray) ToGetJavaRel
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ElementType() reflect.Type {
@@ -9512,25 +8021,19 @@ func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToGetJavaRe
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commonly used name for the license type.
-func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Java license type.
-func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 // Publicly accessible license URL containing the detailed terms and conditions.
-func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) LicenseUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) string { return v.LicenseUrl }).(pulumi.StringOutput)
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) LicenseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) *string { return v.LicenseUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput struct{ *pulumi.OutputState }
@@ -9547,12 +8050,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ToGetJ
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemLicenseDetail {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail)[vs[1].(int)]
@@ -9561,43 +8058,43 @@ func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) Index(
 
 type GetListJreUsageItem struct {
 	// The approximate count of the applications running on this Java Runtime.
-	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount *int `pulumi:"approximateApplicationCount"`
 	// The approximate count of installations that are installations of this Java Runtime.
-	ApproximateInstallationCount int `pulumi:"approximateInstallationCount"`
+	ApproximateInstallationCount *int `pulumi:"approximateInstallationCount"`
 	// The approximate count of the managed instances that report this Java Runtime.
-	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
+	ApproximateManagedInstanceCount *int `pulumi:"approximateManagedInstanceCount"`
 	// The approximate count of work requests working on this Java Runtime.
-	ApproximatePendingWorkRequestCount int `pulumi:"approximatePendingWorkRequestCount"`
+	ApproximatePendingWorkRequestCount *int `pulumi:"approximatePendingWorkRequestCount"`
 	// The number of days since this release has been under the security baseline.
-	DaysUnderSecurityBaseline int `pulumi:"daysUnderSecurityBaseline"`
+	DaysUnderSecurityBaseline *int `pulumi:"daysUnderSecurityBaseline"`
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-	Distribution string `pulumi:"distribution"`
+	Distribution *string `pulumi:"distribution"`
 	// The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate *string `pulumi:"endOfSupportLifeDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
-	FleetId string `pulumi:"fleetId"`
+	FleetId *string `pulumi:"fleetId"`
 	// The internal identifier of the Java Runtime.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The operating systems that have this Java Runtime installed.
 	OperatingSystems []GetListJreUsageItemOperatingSystem `pulumi:"operatingSystems"`
 	// The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	ReleaseDate string `pulumi:"releaseDate"`
+	ReleaseDate *string `pulumi:"releaseDate"`
 	// The security status of the Java Runtime.
-	SecurityStatus string `pulumi:"securityStatus"`
+	SecurityStatus *string `pulumi:"securityStatus"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeFirstSeen string `pulumi:"timeFirstSeen"`
+	TimeFirstSeen *string `pulumi:"timeFirstSeen"`
 	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen string `pulumi:"timeLastSeen"`
+	TimeLastSeen *string `pulumi:"timeLastSeen"`
 	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// The vendor of the Java Runtime.
-	Vendor string `pulumi:"vendor"`
+	Vendor *string `pulumi:"vendor"`
 	// The version of the Java Runtime.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetListJreUsageItemInput is an input type that accepts GetListJreUsageItemArgs and GetListJreUsageItemOutput values.
@@ -9613,43 +8110,43 @@ type GetListJreUsageItemInput interface {
 
 type GetListJreUsageItemArgs struct {
 	// The approximate count of the applications running on this Java Runtime.
-	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount pulumi.IntPtrInput `pulumi:"approximateApplicationCount"`
 	// The approximate count of installations that are installations of this Java Runtime.
-	ApproximateInstallationCount pulumi.IntInput `pulumi:"approximateInstallationCount"`
+	ApproximateInstallationCount pulumi.IntPtrInput `pulumi:"approximateInstallationCount"`
 	// The approximate count of the managed instances that report this Java Runtime.
-	ApproximateManagedInstanceCount pulumi.IntInput `pulumi:"approximateManagedInstanceCount"`
+	ApproximateManagedInstanceCount pulumi.IntPtrInput `pulumi:"approximateManagedInstanceCount"`
 	// The approximate count of work requests working on this Java Runtime.
-	ApproximatePendingWorkRequestCount pulumi.IntInput `pulumi:"approximatePendingWorkRequestCount"`
+	ApproximatePendingWorkRequestCount pulumi.IntPtrInput `pulumi:"approximatePendingWorkRequestCount"`
 	// The number of days since this release has been under the security baseline.
-	DaysUnderSecurityBaseline pulumi.IntInput `pulumi:"daysUnderSecurityBaseline"`
+	DaysUnderSecurityBaseline pulumi.IntPtrInput `pulumi:"daysUnderSecurityBaseline"`
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-	Distribution pulumi.StringInput `pulumi:"distribution"`
+	Distribution pulumi.StringPtrInput `pulumi:"distribution"`
 	// The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate pulumi.StringPtrInput `pulumi:"endOfSupportLifeDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
-	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	FleetId pulumi.StringPtrInput `pulumi:"fleetId"`
 	// The internal identifier of the Java Runtime.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// The operating systems that have this Java Runtime installed.
 	OperatingSystems GetListJreUsageItemOperatingSystemArrayInput `pulumi:"operatingSystems"`
 	// The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
+	ReleaseDate pulumi.StringPtrInput `pulumi:"releaseDate"`
 	// The security status of the Java Runtime.
-	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
+	SecurityStatus pulumi.StringPtrInput `pulumi:"securityStatus"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeFirstSeen pulumi.StringInput `pulumi:"timeFirstSeen"`
+	TimeFirstSeen pulumi.StringPtrInput `pulumi:"timeFirstSeen"`
 	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+	TimeLastSeen pulumi.StringPtrInput `pulumi:"timeLastSeen"`
 	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// The vendor of the Java Runtime.
-	Vendor pulumi.StringInput `pulumi:"vendor"`
+	Vendor pulumi.StringPtrInput `pulumi:"vendor"`
 	// The version of the Java Runtime.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetListJreUsageItemArgs) ElementType() reflect.Type {
@@ -9662,12 +8159,6 @@ func (i GetListJreUsageItemArgs) ToGetListJreUsageItemOutput() GetListJreUsageIt
 
 func (i GetListJreUsageItemArgs) ToGetListJreUsageItemOutputWithContext(ctx context.Context) GetListJreUsageItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemOutput)
-}
-
-func (i GetListJreUsageItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItem] {
-	return pulumix.Output[GetListJreUsageItem]{
-		OutputState: i.ToGetListJreUsageItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetListJreUsageItemArrayInput is an input type that accepts GetListJreUsageItemArray and GetListJreUsageItemArrayOutput values.
@@ -9695,12 +8186,6 @@ func (i GetListJreUsageItemArray) ToGetListJreUsageItemArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemArrayOutput)
 }
 
-func (i GetListJreUsageItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItem] {
-	return pulumix.Output[[]GetListJreUsageItem]{
-		OutputState: i.ToGetListJreUsageItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListJreUsageItemOutput struct{ *pulumi.OutputState }
 
 func (GetListJreUsageItemOutput) ElementType() reflect.Type {
@@ -9715,60 +8200,54 @@ func (o GetListJreUsageItemOutput) ToGetListJreUsageItemOutputWithContext(ctx co
 	return o
 }
 
-func (o GetListJreUsageItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItem] {
-	return pulumix.Output[GetListJreUsageItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The approximate count of the applications running on this Java Runtime.
-func (o GetListJreUsageItemOutput) ApproximateApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) int { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
+func (o GetListJreUsageItemOutput) ApproximateApplicationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *int { return v.ApproximateApplicationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of installations that are installations of this Java Runtime.
-func (o GetListJreUsageItemOutput) ApproximateInstallationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) int { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
+func (o GetListJreUsageItemOutput) ApproximateInstallationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *int { return v.ApproximateInstallationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of the managed instances that report this Java Runtime.
-func (o GetListJreUsageItemOutput) ApproximateManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) int { return v.ApproximateManagedInstanceCount }).(pulumi.IntOutput)
+func (o GetListJreUsageItemOutput) ApproximateManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *int { return v.ApproximateManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of work requests working on this Java Runtime.
-func (o GetListJreUsageItemOutput) ApproximatePendingWorkRequestCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) int { return v.ApproximatePendingWorkRequestCount }).(pulumi.IntOutput)
+func (o GetListJreUsageItemOutput) ApproximatePendingWorkRequestCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *int { return v.ApproximatePendingWorkRequestCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of days since this release has been under the security baseline.
-func (o GetListJreUsageItemOutput) DaysUnderSecurityBaseline() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) int { return v.DaysUnderSecurityBaseline }).(pulumi.IntOutput)
+func (o GetListJreUsageItemOutput) DaysUnderSecurityBaseline() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *int { return v.DaysUnderSecurityBaseline }).(pulumi.IntPtrOutput)
 }
 
 // The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-func (o GetListJreUsageItemOutput) Distribution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.Distribution }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) Distribution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.Distribution }).(pulumi.StringPtrOutput)
 }
 
 // The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetListJreUsageItemOutput) EndOfSupportLifeDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) EndOfSupportLifeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.EndOfSupportLifeDate }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
-func (o GetListJreUsageItemOutput) FleetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.FleetId }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) FleetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.FleetId }).(pulumi.StringPtrOutput)
 }
 
 // The internal identifier of the Java Runtime.
-func (o GetListJreUsageItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
-func (o GetListJreUsageItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // The operating systems that have this Java Runtime installed.
@@ -9777,43 +8256,43 @@ func (o GetListJreUsageItemOutput) OperatingSystems() GetListJreUsageItemOperati
 }
 
 // The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetListJreUsageItemOutput) ReleaseDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.ReleaseDate }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) ReleaseDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.ReleaseDate }).(pulumi.StringPtrOutput)
 }
 
 // The security status of the Java Runtime.
-func (o GetListJreUsageItemOutput) SecurityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.SecurityStatus }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) SecurityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.SecurityStatus }).(pulumi.StringPtrOutput)
 }
 
 // The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetListJreUsageItemOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
-func (o GetListJreUsageItemOutput) TimeFirstSeen() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.TimeFirstSeen }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) TimeFirstSeen() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.TimeFirstSeen }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-func (o GetListJreUsageItemOutput) TimeLastSeen() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) TimeLastSeen() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.TimeLastSeen }).(pulumi.StringPtrOutput)
 }
 
 // The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetListJreUsageItemOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // The vendor of the Java Runtime.
-func (o GetListJreUsageItemOutput) Vendor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.Vendor }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) Vendor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.Vendor }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Java Runtime.
-func (o GetListJreUsageItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetListJreUsageItemArrayOutput struct{ *pulumi.OutputState }
@@ -9830,12 +8309,6 @@ func (o GetListJreUsageItemArrayOutput) ToGetListJreUsageItemArrayOutputWithCont
 	return o
 }
 
-func (o GetListJreUsageItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItem] {
-	return pulumix.Output[[]GetListJreUsageItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListJreUsageItemArrayOutput) Index(i pulumi.IntInput) GetListJreUsageItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListJreUsageItem {
 		return vs[0].([]GetListJreUsageItem)[vs[1].(int)]
@@ -9844,15 +8317,15 @@ func (o GetListJreUsageItemArrayOutput) Index(i pulumi.IntInput) GetListJreUsage
 
 type GetListJreUsageItemOperatingSystem struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
-	Architecture string `pulumi:"architecture"`
+	Architecture *string `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
-	Family string `pulumi:"family"`
+	Family *string `pulumi:"family"`
 	// Number of instances running the operating system
-	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount *int `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The version of the Java Runtime.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetListJreUsageItemOperatingSystemInput is an input type that accepts GetListJreUsageItemOperatingSystemArgs and GetListJreUsageItemOperatingSystemOutput values.
@@ -9868,15 +8341,15 @@ type GetListJreUsageItemOperatingSystemInput interface {
 
 type GetListJreUsageItemOperatingSystemArgs struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
-	Architecture pulumi.StringInput `pulumi:"architecture"`
+	Architecture pulumi.StringPtrInput `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
-	Family pulumi.StringInput `pulumi:"family"`
+	Family pulumi.StringPtrInput `pulumi:"family"`
 	// Number of instances running the operating system
-	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount pulumi.IntPtrInput `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The version of the Java Runtime.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetListJreUsageItemOperatingSystemArgs) ElementType() reflect.Type {
@@ -9889,12 +8362,6 @@ func (i GetListJreUsageItemOperatingSystemArgs) ToGetListJreUsageItemOperatingSy
 
 func (i GetListJreUsageItemOperatingSystemArgs) ToGetListJreUsageItemOperatingSystemOutputWithContext(ctx context.Context) GetListJreUsageItemOperatingSystemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemOperatingSystemOutput)
-}
-
-func (i GetListJreUsageItemOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[GetListJreUsageItemOperatingSystem]{
-		OutputState: i.ToGetListJreUsageItemOperatingSystemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetListJreUsageItemOperatingSystemArrayInput is an input type that accepts GetListJreUsageItemOperatingSystemArray and GetListJreUsageItemOperatingSystemArrayOutput values.
@@ -9922,12 +8389,6 @@ func (i GetListJreUsageItemOperatingSystemArray) ToGetListJreUsageItemOperatingS
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemOperatingSystemArrayOutput)
 }
 
-func (i GetListJreUsageItemOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[[]GetListJreUsageItemOperatingSystem]{
-		OutputState: i.ToGetListJreUsageItemOperatingSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListJreUsageItemOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetListJreUsageItemOperatingSystemOutput) ElementType() reflect.Type {
@@ -9942,35 +8403,29 @@ func (o GetListJreUsageItemOperatingSystemOutput) ToGetListJreUsageItemOperating
 	return o
 }
 
-func (o GetListJreUsageItemOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[GetListJreUsageItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture of the operating system as provided by the Java system property os.arch.
-func (o GetListJreUsageItemOperatingSystemOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) string { return v.Architecture }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOperatingSystemOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) *string { return v.Architecture }).(pulumi.StringPtrOutput)
 }
 
 // The operating system type, such as Windows or Linux
-func (o GetListJreUsageItemOperatingSystemOutput) Family() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOperatingSystemOutput) Family() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) *string { return v.Family }).(pulumi.StringPtrOutput)
 }
 
 // Number of instances running the operating system
-func (o GetListJreUsageItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o GetListJreUsageItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) *int { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // The name of the operating system as provided by the Java system property os.name.
-func (o GetListJreUsageItemOperatingSystemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOperatingSystemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Java Runtime.
-func (o GetListJreUsageItemOperatingSystemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetListJreUsageItemOperatingSystemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetListJreUsageItemOperatingSystemArrayOutput struct{ *pulumi.OutputState }
@@ -9985,12 +8440,6 @@ func (o GetListJreUsageItemOperatingSystemArrayOutput) ToGetListJreUsageItemOper
 
 func (o GetListJreUsageItemOperatingSystemArrayOutput) ToGetListJreUsageItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetListJreUsageItemOperatingSystemArrayOutput {
 	return o
-}
-
-func (o GetListJreUsageItemOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[[]GetListJreUsageItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListJreUsageItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetListJreUsageItemOperatingSystemOutput {

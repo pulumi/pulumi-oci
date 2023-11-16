@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The alert message.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The severity of the alert.
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
         /// <summary>
         /// The start time of the alert.
         /// </summary>
-        public readonly string TimeStartAt;
+        public readonly string? TimeStartAt;
         /// <summary>
         /// The type of alert.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetExternalExadataStorageServerOpenAlertHistoryAlertResult(
-            string message,
+            string? message,
 
-            string severity,
+            string? severity,
 
-            string timeStartAt,
+            string? timeStartAt,
 
-            string type)
+            string? type)
         {
             Message = message;
             Severity = severity;

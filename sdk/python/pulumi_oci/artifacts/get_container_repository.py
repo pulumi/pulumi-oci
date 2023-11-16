@@ -83,114 +83,72 @@ class GetContainerRepositoryResult:
 
     @property
     @pulumi.getter(name="billableSizeInGbs")
-    def billable_size_in_gbs(self) -> str:
-        """
-        Total storage size in GBs that will be charged.
-        """
+    def billable_size_in_gbs(self) -> Optional[str]:
         return pulumi.get(self, "billable_size_in_gbs")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which the container repository exists.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The id of the user or principal that created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The container repository name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imageCount")
-    def image_count(self) -> int:
-        """
-        Total number of images.
-        """
+    def image_count(self) -> Optional[int]:
         return pulumi.get(self, "image_count")
 
     @property
     @pulumi.getter(name="isImmutable")
-    def is_immutable(self) -> bool:
-        """
-        Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        """
+    def is_immutable(self) -> Optional[bool]:
         return pulumi.get(self, "is_immutable")
 
     @property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> bool:
-        """
-        Whether the repository is public. A public repository allows unauthenticated access.
-        """
+    def is_public(self) -> Optional[bool]:
         return pulumi.get(self, "is_public")
 
     @property
     @pulumi.getter(name="layerCount")
-    def layer_count(self) -> int:
-        """
-        Total number of layers.
-        """
+    def layer_count(self) -> Optional[int]:
         return pulumi.get(self, "layer_count")
 
     @property
     @pulumi.getter(name="layersSizeInBytes")
-    def layers_size_in_bytes(self) -> str:
-        """
-        Total storage in bytes consumed by layers.
-        """
+    def layers_size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "layers_size_in_bytes")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The tenancy namespace used in the container repository path.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def readmes(self) -> Sequence['outputs.GetContainerRepositoryReadmeResult']:
-        """
-        Container repository readme.
-        """
+    def readmes(self) -> Optional[Sequence['outputs.GetContainerRepositoryReadmeResult']]:
         return pulumi.get(self, "readmes")
 
     @property
@@ -200,34 +158,22 @@ class GetContainerRepositoryResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the container repository.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the repository was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastPushed")
-    def time_last_pushed(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-        """
+    def time_last_pushed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_pushed")
 
 
@@ -261,21 +207,7 @@ class AwaitableGetContainerRepositoryResult(GetContainerRepositoryResult):
 def get_container_repository(repository_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerRepositoryResult:
     """
-    This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Get container repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_repository = oci.Artifacts.get_container_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
-    ```
-
-
-    :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['repositoryId'] = repository_id
@@ -308,20 +240,6 @@ def get_container_repository(repository_id: Optional[str] = None,
 def get_container_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerRepositoryResult]:
     """
-    This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Get container repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_repository = oci.Artifacts.get_container_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
-    ```
-
-
-    :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     ...

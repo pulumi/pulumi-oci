@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageFailurePolicy {
@@ -14,39 +16,39 @@ public final class GetDeployStageFailurePolicy {
      * @return The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
      * 
      */
-    private Integer failureCount;
+    private @Nullable Integer failureCount;
     /**
      * @return The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
      * 
      */
-    private Integer failurePercentage;
+    private @Nullable Integer failurePercentage;
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    private String policyType;
+    private @Nullable String policyType;
 
     private GetDeployStageFailurePolicy() {}
     /**
      * @return The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
      * 
      */
-    public Integer failureCount() {
-        return this.failureCount;
+    public Optional<Integer> failureCount() {
+        return Optional.ofNullable(this.failureCount);
     }
     /**
      * @return The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
      * 
      */
-    public Integer failurePercentage() {
-        return this.failurePercentage;
+    public Optional<Integer> failurePercentage() {
+        return Optional.ofNullable(this.failurePercentage);
     }
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    public String policyType() {
-        return this.policyType;
+    public Optional<String> policyType() {
+        return Optional.ofNullable(this.policyType);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDeployStageFailurePolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer failureCount;
-        private Integer failurePercentage;
-        private String policyType;
+        private @Nullable Integer failureCount;
+        private @Nullable Integer failurePercentage;
+        private @Nullable String policyType;
         public Builder() {}
         public Builder(GetDeployStageFailurePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDeployStageFailurePolicy {
         }
 
         @CustomType.Setter
-        public Builder failureCount(Integer failureCount) {
-            this.failureCount = Objects.requireNonNull(failureCount);
+        public Builder failureCount(@Nullable Integer failureCount) {
+            this.failureCount = failureCount;
             return this;
         }
         @CustomType.Setter
-        public Builder failurePercentage(Integer failurePercentage) {
-            this.failurePercentage = Objects.requireNonNull(failurePercentage);
+        public Builder failurePercentage(@Nullable Integer failurePercentage) {
+            this.failurePercentage = failurePercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+        public Builder policyType(@Nullable String policyType) {
+            this.policyType = policyType;
             return this;
         }
         public GetDeployStageFailurePolicy build() {

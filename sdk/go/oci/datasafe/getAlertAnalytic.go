@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -91,7 +90,7 @@ type GetAlertAnalyticResult struct {
 	// GroupBy value used in aggregation.
 	GroupBies []string `pulumi:"groupBies"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The aggregated data point items.
 	Items         []GetAlertAnalyticItem `pulumi:"items"`
 	QueryTimeZone *string                `pulumi:"queryTimeZone"`
@@ -159,12 +158,6 @@ func (o GetAlertAnalyticResultOutput) ToGetAlertAnalyticResultOutputWithContext(
 	return o
 }
 
-func (o GetAlertAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertAnalyticResult] {
-	return pulumix.Output[GetAlertAnalyticResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlertAnalyticResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlertAnalyticResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -183,8 +176,8 @@ func (o GetAlertAnalyticResultOutput) GroupBies() pulumi.StringArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAlertAnalyticResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertAnalyticResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlertAnalyticResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertAnalyticResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The aggregated data point items.

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Boolean value to prompt user to setup account recovery during login.
         /// </summary>
-        public readonly bool AccountRecoveryRequired;
+        public readonly bool? AccountRecoveryRequired;
         /// <summary>
         /// Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
         /// </summary>
-        public readonly bool BypassNotification;
+        public readonly bool? BypassNotification;
         /// <summary>
         /// User creation mechanism
         /// </summary>
-        public readonly string CreationMechanism;
+        public readonly string? CreationMechanism;
         /// <summary>
         /// If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A Boolean value indicating whether or not to hide the getting started page
         /// </summary>
-        public readonly bool DoNotShowGettingStarted;
+        public readonly bool? DoNotShowGettingStarted;
         /// <summary>
         /// Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Specifies date time when a User's group membership was last modified.
         /// </summary>
-        public readonly string GroupMembershipLastModified;
+        public readonly string? GroupMembershipLastModified;
         /// <summary>
         /// Description:
         /// </summary>
@@ -60,35 +60,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A Boolean value indicating whether or not a user is enrolled for account recovery
         /// </summary>
-        public readonly bool IsAccountRecoveryEnrolled;
+        public readonly bool? IsAccountRecoveryEnrolled;
         /// <summary>
         /// A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
         /// </summary>
-        public readonly bool IsAuthenticationDelegated;
+        public readonly bool? IsAuthenticationDelegated;
         /// <summary>
         /// A Boolean value indicating whether or not the user is federated.
         /// </summary>
-        public readonly bool IsFederatedUser;
+        public readonly bool? IsFederatedUser;
         /// <summary>
         /// A Boolean value indicating whether or not group membership is normalized for this user.
         /// </summary>
-        public readonly bool IsGroupMembershipNormalized;
+        public readonly bool? IsGroupMembershipNormalized;
         /// <summary>
         /// A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
         /// </summary>
-        public readonly bool IsGroupMembershipSyncedToUsersGroups;
+        public readonly bool? IsGroupMembershipSyncedToUsersGroups;
         /// <summary>
         /// Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
         /// </summary>
-        public readonly string NotificationEmailTemplateId;
+        public readonly string? NotificationEmailTemplateId;
         /// <summary>
         /// User's preferred landing page following login, logout and reset password.
         /// </summary>
-        public readonly string PreferredUiLandingPage;
+        public readonly string? PreferredUiLandingPage;
         /// <summary>
         /// A supplemental status indicating the reason why a user is disabled
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// A list of Support Accounts corresponding to user.
         /// </summary>
@@ -100,11 +100,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
         /// </summary>
-        public readonly bool UserFlowControlledByExternalClient;
+        public readonly bool? UserFlowControlledByExternalClient;
         /// <summary>
         /// User Support Account Provider
         /// </summary>
-        public readonly string UserProvider;
+        public readonly string? UserProvider;
         /// <summary>
         /// User token returned if userFlowControlledByExternalClient is true
         /// </summary>
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserResult(
-            bool accountRecoveryRequired,
+            bool? accountRecoveryRequired,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountResult> accounts,
 
@@ -120,43 +120,43 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppResult> applicableAuthenticationTargetApps,
 
-            bool bypassNotification,
+            bool? bypassNotification,
 
-            string creationMechanism,
+            string? creationMechanism,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppResult> delegatedAuthenticationTargetApps,
 
-            bool doNotShowGettingStarted,
+            bool? doNotShowGettingStarted,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantResult> grants,
 
-            string groupMembershipLastModified,
+            string? groupMembershipLastModified,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupResult> idcsAppRolesLimitedToGroups,
 
-            bool isAccountRecoveryEnrolled,
+            bool? isAccountRecoveryEnrolled,
 
-            bool isAuthenticationDelegated,
+            bool? isAuthenticationDelegated,
 
-            bool isFederatedUser,
+            bool? isFederatedUser,
 
-            bool isGroupMembershipNormalized,
+            bool? isGroupMembershipNormalized,
 
-            bool isGroupMembershipSyncedToUsersGroups,
+            bool? isGroupMembershipSyncedToUsersGroups,
 
-            string notificationEmailTemplateId,
+            string? notificationEmailTemplateId,
 
-            string preferredUiLandingPage,
+            string? preferredUiLandingPage,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountResult> supportAccounts,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppResult> syncedFromApps,
 
-            bool userFlowControlledByExternalClient,
+            bool? userFlowControlledByExternalClient,
 
-            string userProvider,
+            string? userProvider,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenResult> userTokens)
         {

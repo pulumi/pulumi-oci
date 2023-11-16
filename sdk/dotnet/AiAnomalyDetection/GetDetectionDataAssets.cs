@@ -181,7 +181,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The Unique project id which is created at project creation that is immutable on creation.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
 
             ImmutableArray<Outputs.GetDetectionDataAssetsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? projectId,
 

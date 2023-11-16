@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser {
@@ -13,15 +15,15 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffU
      * @return SFF auth keys clob
      * 
      */
-    private String sffAuthKeys;
+    private @Nullable String sffAuthKeys;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser() {}
     /**
      * @return SFF auth keys clob
      * 
      */
-    public String sffAuthKeys() {
-        return this.sffAuthKeys;
+    public Optional<String> sffAuthKeys() {
+        return Optional.ofNullable(this.sffAuthKeys);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffU
     }
     @CustomType.Builder
     public static final class Builder {
-        private String sffAuthKeys;
+        private @Nullable String sffAuthKeys;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffU
         }
 
         @CustomType.Setter
-        public Builder sffAuthKeys(String sffAuthKeys) {
-            this.sffAuthKeys = Objects.requireNonNull(sffAuthKeys);
+        public Builder sffAuthKeys(@Nullable String sffAuthKeys) {
+            this.sffAuthKeys = sffAuthKeys;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser build() {

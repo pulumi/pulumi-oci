@@ -109,18 +109,12 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter(name="billingContractEndDate")
-    def billing_contract_end_date(self) -> str:
-        """
-        Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-        """
+    def billing_contract_end_date(self) -> Optional[str]:
         return pulumi.get(self, "billing_contract_end_date")
 
     @property
     @pulumi.getter(name="billingDonorHostId")
-    def billing_donor_host_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
-        """
+    def billing_donor_host_id(self) -> Optional[str]:
         warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
         pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
 
@@ -128,42 +122,27 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-        """
+    def capacity_reservation_id(self) -> Optional[str]:
         return pulumi.get(self, "capacity_reservation_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeAvailabilityDomain")
-    def compute_availability_domain(self) -> str:
-        """
-        The availability domain of the ESXi host.
-        """
+    def compute_availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "compute_availability_domain")
 
     @property
     @pulumi.getter(name="computeInstanceId")
-    def compute_instance_id(self) -> str:
-        """
-        In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-        """
+    def compute_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_instance_id")
 
     @property
     @pulumi.getter(name="currentSku")
-    def current_sku(self) -> str:
-        """
-        (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-        """
+    def current_sku(self) -> Optional[str]:
         warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
         pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
 
@@ -171,18 +150,12 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -192,10 +165,7 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter(name="failedEsxiHostId")
-    def failed_esxi_host_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
-        """
+    def failed_esxi_host_id(self) -> Optional[str]:
         warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
         pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
 
@@ -203,66 +173,42 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gracePeriodEndDate")
-    def grace_period_end_date(self) -> str:
-        """
-        The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
-        """
+    def grace_period_end_date(self) -> Optional[str]:
         return pulumi.get(self, "grace_period_end_date")
 
     @property
     @pulumi.getter(name="hostOcpuCount")
-    def host_ocpu_count(self) -> float:
-        """
-        The OCPU count of the ESXi host.
-        """
+    def host_ocpu_count(self) -> Optional[float]:
         return pulumi.get(self, "host_ocpu_count")
 
     @property
     @pulumi.getter(name="hostShapeName")
-    def host_shape_name(self) -> str:
-        """
-        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        """
+    def host_shape_name(self) -> Optional[str]:
         return pulumi.get(self, "host_shape_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isBillingContinuationInProgress")
-    def is_billing_continuation_in_progress(self) -> bool:
-        """
-        Indicates whether this host is in the progress of billing continuation.
-        """
+    def is_billing_continuation_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "is_billing_continuation_in_progress")
 
     @property
     @pulumi.getter(name="isBillingSwappingInProgress")
-    def is_billing_swapping_in_progress(self) -> bool:
-        """
-        Indicates whether this host is in the progress of swapping billing.
-        """
+    def is_billing_swapping_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "is_billing_swapping_in_progress")
 
     @property
     @pulumi.getter(name="nextSku")
-    def next_sku(self) -> str:
-        """
-        (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-        """
+    def next_sku(self) -> Optional[str]:
         warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
         pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
 
@@ -270,10 +216,7 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter(name="nonUpgradedEsxiHostId")
-    def non_upgraded_esxi_host_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
-        """
+    def non_upgraded_esxi_host_id(self) -> Optional[str]:
         warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
         pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
 
@@ -281,18 +224,12 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter(name="replacementEsxiHostId")
-    def replacement_esxi_host_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-        """
+    def replacement_esxi_host_id(self) -> Optional[str]:
         return pulumi.get(self, "replacement_esxi_host_id")
 
     @property
     @pulumi.getter(name="sddcId")
-    def sddc_id(self) -> str:
-        """
-        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
-        """
+    def sddc_id(self) -> Optional[str]:
         warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
         pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
 
@@ -300,50 +237,32 @@ class GetExsiHostResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the ESXi host.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="swapBillingHostId")
-    def swap_billing_host_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-        """
+    def swap_billing_host_id(self) -> Optional[str]:
         return pulumi.get(self, "swap_billing_host_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="upgradedReplacementEsxiHostId")
-    def upgraded_replacement_esxi_host_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
-        """
+    def upgraded_replacement_esxi_host_id(self) -> Optional[str]:
         return pulumi.get(self, "upgraded_replacement_esxi_host_id")
 
     @property
     @pulumi.getter(name="vmwareSoftwareVersion")
-    def vmware_software_version(self) -> str:
-        """
-        The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
-        """
+    def vmware_software_version(self) -> Optional[str]:
         return pulumi.get(self, "vmware_software_version")
 
 
@@ -386,21 +305,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
 def get_exsi_host(esxi_host_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExsiHostResult:
     """
-    This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Gets the specified ESXi host's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=oci_ocvp_esxi_host["test_esxi_host"]["id"])
-    ```
-
-
-    :param str esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['esxiHostId'] = esxi_host_id
@@ -442,20 +347,6 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
 def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExsiHostResult]:
     """
-    This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Gets the specified ESXi host's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=oci_ocvp_esxi_host["test_esxi_host"]["id"])
-    ```
-
-
-    :param str esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
+    Use this data source to access information about an existing resource.
     """
     ...

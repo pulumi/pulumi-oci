@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
         /// </summary>
-        public readonly string Origin;
+        public readonly string? Origin;
         /// <summary>
         /// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Waas.Outputs
 
             ImmutableArray<Outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeResult> jsChallenges,
 
-            string origin,
+            string? origin,
 
             ImmutableArray<string> originGroups,
 

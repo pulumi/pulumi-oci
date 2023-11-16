@@ -27,19 +27,6 @@ class AtCustomerCccInfrastructureArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AtCustomerCccInfrastructure resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
-        :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-        :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
-        :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -60,9 +47,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -72,9 +56,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -84,13 +65,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -100,9 +74,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="cccUpgradeScheduleId")
     def ccc_upgrade_schedule_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-        """
         return pulumi.get(self, "ccc_upgrade_schedule_id")
 
     @ccc_upgrade_schedule_id.setter
@@ -112,9 +83,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="connectionDetails")
     def connection_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A message describing the current connection state in more detail.
-        """
         return pulumi.get(self, "connection_details")
 
     @connection_details.setter
@@ -124,9 +92,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="connectionState")
     def connection_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        """
         return pulumi.get(self, "connection_state")
 
     @connection_state.setter
@@ -136,9 +101,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -148,9 +110,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -160,9 +119,6 @@ class AtCustomerCccInfrastructureArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -195,30 +151,6 @@ class _AtCustomerCccInfrastructureState:
                  upgrade_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]]] = None):
         """
         Input properties used for looking up and filtering AtCustomerCccInfrastructure resources.
-        :param pulumi.Input[str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
-        :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
-        :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureInventoryArgs']]] infrastructure_inventories: Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
-        :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs']]] infrastructure_network_configurations: Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-        :param pulumi.Input[str] provisioning_fingerprint: Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-        :param pulumi.Input[str] provisioning_pin: Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-        :param pulumi.Input[str] short_name: The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-        :param pulumi.Input[str] state: The current state of the Compute Cloud@Customer infrastructure.
-        :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
         """
         if ccc_upgrade_schedule_id is not None:
             pulumi.set(__self__, "ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
@@ -264,9 +196,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="cccUpgradeScheduleId")
     def ccc_upgrade_schedule_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-        """
         return pulumi.get(self, "ccc_upgrade_schedule_id")
 
     @ccc_upgrade_schedule_id.setter
@@ -276,9 +205,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -288,9 +214,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="connectionDetails")
     def connection_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A message describing the current connection state in more detail.
-        """
         return pulumi.get(self, "connection_details")
 
     @connection_details.setter
@@ -300,9 +223,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="connectionState")
     def connection_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        """
         return pulumi.get(self, "connection_state")
 
     @connection_state.setter
@@ -312,9 +232,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -324,9 +241,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -336,9 +250,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -348,9 +259,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -360,9 +268,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="infrastructureInventories")
     def infrastructure_inventories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureInventoryArgs']]]]:
-        """
-        Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
-        """
         return pulumi.get(self, "infrastructure_inventories")
 
     @infrastructure_inventories.setter
@@ -372,9 +277,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="infrastructureNetworkConfigurations")
     def infrastructure_network_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs']]]]:
-        """
-        Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
-        """
         return pulumi.get(self, "infrastructure_network_configurations")
 
     @infrastructure_network_configurations.setter
@@ -384,9 +286,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -396,9 +295,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="provisioningFingerprint")
     def provisioning_fingerprint(self) -> Optional[pulumi.Input[str]]:
-        """
-        Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-        """
         return pulumi.get(self, "provisioning_fingerprint")
 
     @provisioning_fingerprint.setter
@@ -408,9 +304,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="provisioningPin")
     def provisioning_pin(self) -> Optional[pulumi.Input[str]]:
-        """
-        Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-        """
         return pulumi.get(self, "provisioning_pin")
 
     @provisioning_pin.setter
@@ -420,9 +313,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="shortName")
     def short_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-        """
         return pulumi.get(self, "short_name")
 
     @short_name.setter
@@ -432,9 +322,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Compute Cloud@Customer infrastructure.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -444,13 +331,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -460,9 +340,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -472,9 +349,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -484,9 +358,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -496,9 +367,6 @@ class _AtCustomerCccInfrastructureState:
     @property
     @pulumi.getter(name="upgradeInformations")
     def upgrade_informations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]]]:
-        """
-        Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
-        """
         return pulumi.get(self, "upgrade_informations")
 
     @upgrade_informations.setter
@@ -522,56 +390,9 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a Compute Cloud@Customer infrastructure. Once created, Oracle Services
-        must connect the rack in the data center to this Oracle Cloud Infrastructure resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ccc_infrastructure = oci.compute_cloud.AtCustomerCccInfrastructure("testCccInfrastructure",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_infrastructure_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ccc_upgrade_schedule_id=oci_compute_cloud_at_customer_ccc_upgrade_schedule["test_ccc_upgrade_schedule"]["id"],
-            connection_details=var["ccc_infrastructure_connection_details"],
-            connection_state=var["ccc_infrastructure_connection_state"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["ccc_infrastructure_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        CccInfrastructures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
-        ```
-
+        Create a AtCustomerCccInfrastructure resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
-        :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
-        :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -580,41 +401,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
                  args: AtCustomerCccInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a Compute Cloud@Customer infrastructure. Once created, Oracle Services
-        must connect the rack in the data center to this Oracle Cloud Infrastructure resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ccc_infrastructure = oci.compute_cloud.AtCustomerCccInfrastructure("testCccInfrastructure",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_infrastructure_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ccc_upgrade_schedule_id=oci_compute_cloud_at_customer_ccc_upgrade_schedule["test_ccc_upgrade_schedule"]["id"],
-            connection_details=var["ccc_infrastructure_connection_details"],
-            connection_state=var["ccc_infrastructure_connection_state"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["ccc_infrastructure_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        CccInfrastructures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
-        ```
-
+        Create a AtCustomerCccInfrastructure resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AtCustomerCccInfrastructureArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -711,30 +498,6 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
-        :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
-        :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccInfrastructureInfrastructureInventoryArgs']]]] infrastructure_inventories: Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs']]]] infrastructure_network_configurations: Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-        :param pulumi.Input[str] provisioning_fingerprint: Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-        :param pulumi.Input[str] provisioning_pin: Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-        :param pulumi.Input[str] short_name: The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-        :param pulumi.Input[str] state: The current state of the Compute Cloud@Customer infrastructure.
-        :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccInfrastructureUpgradeInformationArgs']]]] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -764,165 +527,101 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="cccUpgradeScheduleId")
-    def ccc_upgrade_schedule_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-        """
+    def ccc_upgrade_schedule_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ccc_upgrade_schedule_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionDetails")
-    def connection_details(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A message describing the current connection state in more detail.
-        """
+    def connection_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "connection_details")
 
     @property
     @pulumi.getter(name="connectionState")
-    def connection_state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        """
+    def connection_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "connection_state")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="infrastructureInventories")
-    def infrastructure_inventories(self) -> pulumi.Output[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureInventory']]:
-        """
-        Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
-        """
+    def infrastructure_inventories(self) -> pulumi.Output[Optional[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureInventory']]]:
         return pulumi.get(self, "infrastructure_inventories")
 
     @property
     @pulumi.getter(name="infrastructureNetworkConfigurations")
-    def infrastructure_network_configurations(self) -> pulumi.Output[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration']]:
-        """
-        Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
-        """
+    def infrastructure_network_configurations(self) -> pulumi.Output[Optional[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration']]]:
         return pulumi.get(self, "infrastructure_network_configurations")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="provisioningFingerprint")
-    def provisioning_fingerprint(self) -> pulumi.Output[str]:
-        """
-        Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-        """
+    def provisioning_fingerprint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "provisioning_fingerprint")
 
     @property
     @pulumi.getter(name="provisioningPin")
-    def provisioning_pin(self) -> pulumi.Output[str]:
-        """
-        Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-        """
+    def provisioning_pin(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "provisioning_pin")
 
     @property
     @pulumi.getter(name="shortName")
-    def short_name(self) -> pulumi.Output[str]:
-        """
-        The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-        """
+    def short_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "short_name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Compute Cloud@Customer infrastructure.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="upgradeInformations")
-    def upgrade_informations(self) -> pulumi.Output[Sequence['outputs.AtCustomerCccInfrastructureUpgradeInformation']]:
-        """
-        Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
-        """
+    def upgrade_informations(self) -> pulumi.Output[Optional[Sequence['outputs.AtCustomerCccInfrastructureUpgradeInformation']]]:
         return pulumi.get(self, "upgrade_informations")
 

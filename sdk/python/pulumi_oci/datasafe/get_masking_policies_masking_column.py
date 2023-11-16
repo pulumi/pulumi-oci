@@ -80,63 +80,42 @@ class GetMaskingPoliciesMaskingColumnResult:
 
     @property
     @pulumi.getter(name="childColumns")
-    def child_columns(self) -> Sequence[str]:
-        """
-        An array of child columns that are in referential relationship with the masking column.
-        """
+    def child_columns(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "child_columns")
 
     @property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> str:
-        """
-        The name of the substitution column.
-        """
+    def column_name(self) -> Optional[str]:
         return pulumi.get(self, "column_name")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        The data type of the masking column.
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isMaskingEnabled")
-    def is_masking_enabled(self) -> bool:
-        """
-        Indicates whether data masking is enabled for the masking column.
-        """
+    def is_masking_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_masking_enabled")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the current state of the masking column.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maskingColumnGroup")
-    def masking_column_group(self) -> str:
-        """
-        The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        """
+    def masking_column_group(self) -> Optional[str]:
         return pulumi.get(self, "masking_column_group")
 
     @property
@@ -146,74 +125,47 @@ class GetMaskingPoliciesMaskingColumnResult:
 
     @property
     @pulumi.getter(name="maskingFormats")
-    def masking_formats(self) -> Sequence['outputs.GetMaskingPoliciesMaskingColumnMaskingFormatResult']:
-        """
-        An array of masking formats assigned to the masking column.
-        """
+    def masking_formats(self) -> Optional[Sequence['outputs.GetMaskingPoliciesMaskingColumnMaskingFormatResult']]:
         return pulumi.get(self, "masking_formats")
 
     @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> str:
-        """
-        The OCID of the masking policy that contains the masking column.
-        """
         return pulumi.get(self, "masking_policy_id")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The name of the object (table or editioning view) that contains the database column.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of the object that contains the database column.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> str:
-        """
-        The name of the schema that contains the database column.
-        """
+    def schema_name(self) -> Optional[str]:
         return pulumi.get(self, "schema_name")
 
     @property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> str:
-        """
-        The OCID of the sensitive type associated with the masking column.
-        """
+    def sensitive_type_id(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_type_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the masking column.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -247,23 +199,7 @@ def get_masking_policies_masking_column(masking_column_key: Optional[str] = None
                                         masking_policy_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPoliciesMaskingColumnResult:
     """
-    This data source provides details about a specific Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified masking column.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=var["masking_policies_masking_column_masking_column_key"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
-    ```
-
-
-    :param str masking_column_key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-    :param str masking_policy_id: The OCID of the masking policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['maskingColumnKey'] = masking_column_key
@@ -297,22 +233,6 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
                                                masking_policy_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnResult]:
     """
-    This data source provides details about a specific Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified masking column.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=var["masking_policies_masking_column_masking_column_key"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
-    ```
-
-
-    :param str masking_column_key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-    :param str masking_policy_id: The OCID of the masking policy.
+    Use this data source to access information about an existing resource.
     """
     ...

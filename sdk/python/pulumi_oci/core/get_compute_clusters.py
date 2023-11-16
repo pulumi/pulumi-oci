@@ -46,33 +46,21 @@ class GetComputeClustersResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeClusterCollections")
-    def compute_cluster_collections(self) -> Sequence['outputs.GetComputeClustersComputeClusterCollectionResult']:
-        """
-        The list of compute_cluster_collection.
-        """
+    def compute_cluster_collections(self) -> Optional[Sequence['outputs.GetComputeClustersComputeClusterCollectionResult']]:
         return pulumi.get(self, "compute_cluster_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -82,7 +70,7 @@ class GetComputeClustersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,26 +97,7 @@ def get_compute_clusters(availability_domain: Optional[str] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetComputeClustersFilterArgs']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeClustersResult:
     """
-    This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
-
-    Lists the compute clusters in the specified compartment.
-    A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_clusters = oci.Core.get_compute_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_cluster_availability_domain"],
-        display_name=var["compute_cluster_display_name"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -154,25 +123,6 @@ def get_compute_clusters_output(availability_domain: Optional[pulumi.Input[Optio
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeClustersFilterArgs']]]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeClustersResult]:
     """
-    This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
-
-    Lists the compute clusters in the specified compartment.
-    A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_clusters = oci.Core.get_compute_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_cluster_availability_domain"],
-        display_name=var["compute_cluster_display_name"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

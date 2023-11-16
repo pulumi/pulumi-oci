@@ -102,7 +102,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// (Updatable) The content length of the body.
         /// </summary>
         [Output("contentLength")]
-        public Output<string> ContentLength { get; private set; } = null!;
+        public Output<string?> ContentLength { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
@@ -110,13 +110,13 @@ namespace Pulumi.Oci.ObjectStorage
         /// "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         /// </summary>
         [Output("contentMd5")]
-        public Output<string> ContentMd5 { get; private set; } = null!;
+        public Output<string?> ContentMd5 { get; private set; } = null!;
 
         /// <summary>
         /// The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
         /// </summary>
         [Output("contentType")]
-        public Output<string> ContentType { get; private set; } = null!;
+        public Output<string?> ContentType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         /// </summary>
         [Output("opcSseKmsKeyId")]
-        public Output<string> OpcSseKmsKeyId { get; private set; } = null!;
+        public Output<string?> OpcSseKmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
@@ -163,19 +163,19 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<Outputs.StorageObjectSourceUriDetails?> SourceUriDetails { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         /// </summary>
         [Output("storageTier")]
-        public Output<string> StorageTier { get; private set; } = null!;
+        public Output<string?> StorageTier { get; private set; } = null!;
 
         [Output("versionId")]
-        public Output<string> VersionId { get; private set; } = null!;
+        public Output<string?> VersionId { get; private set; } = null!;
 
         [Output("workRequestId")]
-        public Output<string> WorkRequestId { get; private set; } = null!;
+        public Output<string?> WorkRequestId { get; private set; } = null!;
 
 
         /// <summary>

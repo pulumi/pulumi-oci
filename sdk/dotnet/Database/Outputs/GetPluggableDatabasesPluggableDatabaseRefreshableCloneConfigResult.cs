@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Indicates whether the Pluggable Database is a refreshable clone.
         /// </summary>
-        public readonly bool IsRefreshableClone;
+        public readonly bool? IsRefreshableClone;
 
         [OutputConstructor]
-        private GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigResult(bool isRefreshableClone)
+        private GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigResult(bool? isRefreshableClone)
         {
             IsRefreshableClone = isRefreshableClone;
         }

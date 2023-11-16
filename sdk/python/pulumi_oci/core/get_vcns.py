@@ -46,17 +46,11 @@ class GetVcnsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetVcnsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +69,11 @@ class GetVcnsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The VCN's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="virtualNetworks")
-    def virtual_networks(self) -> Sequence['outputs.GetVcnsVirtualNetworkResult']:
-        """
-        The list of virtual_networks.
-        """
+    def virtual_networks(self) -> Optional[Sequence['outputs.GetVcnsVirtualNetworkResult']]:
         return pulumi.get(self, "virtual_networks")
 
 
@@ -109,29 +97,7 @@ def get_vcns(compartment_id: Optional[str] = None,
              state: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVcnsResult:
     """
-    This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
-
-    Lists the virtual cloud networks (VCNs) in the specified compartment.
-
-    ## Supported Aliases
-
-    * `core_get_virtual_networks`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vcns = oci.Core.get_vcns(compartment_id=var["compartment_id"],
-        display_name=var["vcn_display_name"],
-        state=var["vcn_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -157,28 +123,6 @@ def get_vcns_output(compartment_id: Optional[pulumi.Input[str]] = None,
                     state: Optional[pulumi.Input[Optional[str]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVcnsResult]:
     """
-    This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
-
-    Lists the virtual cloud networks (VCNs) in the specified compartment.
-
-    ## Supported Aliases
-
-    * `core_get_virtual_networks`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vcns = oci.Core.get_vcns(compartment_id=var["compartment_id"],
-        display_name=var["vcn_display_name"],
-        state=var["vcn_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -20,13 +20,13 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// <summary>
         /// Timestamp at which the log is created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetTraceSpanLogResult(
             ImmutableArray<Outputs.GetTraceSpanLogSpanLogResult> spanLogs,
 
-            string timeCreated)
+            string? timeCreated)
         {
             SpanLogs = spanLogs;
             TimeCreated = timeCreated;

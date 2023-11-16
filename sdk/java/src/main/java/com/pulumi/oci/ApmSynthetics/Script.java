@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -110,28 +111,28 @@ public class Script extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="contentFileName", refs={String.class}, tree="[0]")
-    private Output<String> contentFileName;
+    private Output</* @Nullable */ String> contentFileName;
 
     /**
      * @return (Updatable) File name of uploaded script content.
      * 
      */
-    public Output<String> contentFileName() {
-        return this.contentFileName;
+    public Output<Optional<String>> contentFileName() {
+        return Codegen.optional(this.contentFileName);
     }
     /**
      * Size of the script content.
      * 
      */
     @Export(name="contentSizeInBytes", refs={Integer.class}, tree="[0]")
-    private Output<Integer> contentSizeInBytes;
+    private Output</* @Nullable */ Integer> contentSizeInBytes;
 
     /**
      * @return Size of the script content.
      * 
      */
-    public Output<Integer> contentSizeInBytes() {
-        return this.contentSizeInBytes;
+    public Output<Optional<Integer>> contentSizeInBytes() {
+        return Codegen.optional(this.contentSizeInBytes);
     }
     /**
      * (Updatable) Content type of script.
@@ -152,14 +153,14 @@ public class Script extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
@@ -180,84 +181,84 @@ public class Script extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
     @Export(name="monitorStatusCountMaps", refs={List.class,ScriptMonitorStatusCountMap.class}, tree="[0,1]")
-    private Output<List<ScriptMonitorStatusCountMap>> monitorStatusCountMaps;
+    private Output</* @Nullable */ List<ScriptMonitorStatusCountMap>> monitorStatusCountMaps;
 
     /**
      * @return Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
-    public Output<List<ScriptMonitorStatusCountMap>> monitorStatusCountMaps() {
-        return this.monitorStatusCountMaps;
+    public Output<Optional<List<ScriptMonitorStatusCountMap>>> monitorStatusCountMaps() {
+        return Codegen.optional(this.monitorStatusCountMaps);
     }
     /**
      * (Updatable) List of script parameters. Example: `[{&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;, &#34;isSecret&#34;: false}]`
      * 
      */
     @Export(name="parameters", refs={List.class,ScriptParameter.class}, tree="[0,1]")
-    private Output<List<ScriptParameter>> parameters;
+    private Output</* @Nullable */ List<ScriptParameter>> parameters;
 
     /**
      * @return (Updatable) List of script parameters. Example: `[{&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;, &#34;isSecret&#34;: false}]`
      * 
      */
-    public Output<List<ScriptParameter>> parameters() {
-        return this.parameters;
+    public Output<Optional<List<ScriptParameter>>> parameters() {
+        return Codegen.optional(this.parameters);
     }
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The time the script was uploaded.
      * 
      */
     @Export(name="timeUploaded", refs={String.class}, tree="[0]")
-    private Output<String> timeUploaded;
+    private Output</* @Nullable */ String> timeUploaded;
 
     /**
      * @return The time the script was uploaded.
      * 
      */
-    public Output<String> timeUploaded() {
-        return this.timeUploaded;
+    public Output<Optional<String>> timeUploaded() {
+        return Codegen.optional(this.timeUploaded);
     }
 
     /**

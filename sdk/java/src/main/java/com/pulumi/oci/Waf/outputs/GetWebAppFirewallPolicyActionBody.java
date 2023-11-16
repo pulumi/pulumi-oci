@@ -6,6 +6,8 @@ package com.pulumi.oci.Waf.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPolicyActionBody {
@@ -13,27 +15,27 @@ public final class GetWebAppFirewallPolicyActionBody {
      * @return Static response body text.
      * 
      */
-    private String text;
+    private @Nullable String text;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetWebAppFirewallPolicyActionBody() {}
     /**
      * @return Static response body text.
      * 
      */
-    public String text() {
-        return this.text;
+    public Optional<String> text() {
+        return Optional.ofNullable(this.text);
     }
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetWebAppFirewallPolicyActionBody {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String text;
-        private String type;
+        private @Nullable String text;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyActionBody defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetWebAppFirewallPolicyActionBody {
         }
 
         @CustomType.Setter
-        public Builder text(String text) {
-            this.text = Objects.requireNonNull(text);
+        public Builder text(@Nullable String text) {
+            this.text = text;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetWebAppFirewallPolicyActionBody build() {

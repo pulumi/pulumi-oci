@@ -51,11 +51,11 @@ export interface GetDbNodeConsoleConnectionResult {
     /**
      * The OCID of the compartment to contain the console connection.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The SSH connection string for the console connection.
      */
-    readonly connectionString: string;
+    readonly connectionString?: string;
     /**
      * The OCID of the database node.
      */
@@ -63,15 +63,15 @@ export interface GetDbNodeConsoleConnectionResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The SSH public key fingerprint for the console connection.
      */
-    readonly fingerprint: string;
+    readonly fingerprint?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the console connection.
      */
@@ -79,16 +79,16 @@ export interface GetDbNodeConsoleConnectionResult {
     /**
      * Information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
-    readonly publicKey: string;
+    readonly lifecycleDetails?: string;
+    readonly publicKey?: string;
     /**
      * The SSH public key's fingerprint for the console connection service host.
      */
-    readonly serviceHostKeyFingerprint: string;
+    readonly serviceHostKeyFingerprint?: string;
     /**
      * The current state of the console connection.
      */
-    readonly state: string;
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.

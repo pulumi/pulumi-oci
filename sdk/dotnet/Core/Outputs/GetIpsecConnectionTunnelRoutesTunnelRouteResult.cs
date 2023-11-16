@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
         /// </summary>
-        public readonly string Advertiser;
+        public readonly string? Advertiser;
         /// <summary>
         /// The age of the route.
         /// </summary>
-        public readonly string Age;
+        public readonly string? Age;
         /// <summary>
         /// A list of ASNs in AS_Path.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Indicates this is the best route.
         /// </summary>
-        public readonly bool IsBestPath;
+        public readonly bool? IsBestPath;
         /// <summary>
         /// The BGP network layer reachability information.
         /// </summary>
-        public readonly string Prefix;
+        public readonly string? Prefix;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelRoutesTunnelRouteResult(
-            string advertiser,
+            string? advertiser,
 
-            string age,
+            string? age,
 
             ImmutableArray<int> asPaths,
 
-            bool isBestPath,
+            bool? isBestPath,
 
-            string prefix)
+            string? prefix)
         {
             Advertiser = advertiser;
             Age = age;

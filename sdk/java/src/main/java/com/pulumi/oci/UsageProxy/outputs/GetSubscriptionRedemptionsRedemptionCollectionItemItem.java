@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRedemptionsRedemptionCollectionItemItem {
@@ -14,123 +16,123 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItemItem {
      * @return It provides the redeemed rewards in base/subscription currency.
      * 
      */
-    private Double baseRewards;
+    private @Nullable Double baseRewards;
     /**
      * @return It provides the fxRate between invoice currency and subscription currency.
      * 
      */
-    private Double fxRate;
+    private @Nullable Double fxRate;
     /**
      * @return The currency associated with invoice.
      * 
      */
-    private String invoiceCurrency;
+    private @Nullable String invoiceCurrency;
     /**
      * @return It provides the invoice number against the redemption.
      * 
      */
-    private String invoiceNumber;
+    private @Nullable String invoiceNumber;
     /**
      * @return It provides the invoice total amount of given redemption.
      * 
      */
-    private Double invoiceTotalAmount;
+    private @Nullable Double invoiceTotalAmount;
     /**
      * @return It provides the redeemed rewards in invoice currency.
      * 
      */
-    private Double redeemedRewards;
+    private @Nullable Double redeemedRewards;
     /**
      * @return The redemption code used in the Billing Center during the reward redemption process.
      * 
      */
-    private String redemptionCode;
+    private @Nullable String redemptionCode;
     /**
      * @return It provides the redemption email id.
      * 
      */
-    private String redemptionEmail;
+    private @Nullable String redemptionEmail;
     /**
      * @return It provides the invoice date.
      * 
      */
-    private String timeInvoiced;
+    private @Nullable String timeInvoiced;
     /**
      * @return It provides redeem date.
      * 
      */
-    private String timeRedeemed;
+    private @Nullable String timeRedeemed;
 
     private GetSubscriptionRedemptionsRedemptionCollectionItemItem() {}
     /**
      * @return It provides the redeemed rewards in base/subscription currency.
      * 
      */
-    public Double baseRewards() {
-        return this.baseRewards;
+    public Optional<Double> baseRewards() {
+        return Optional.ofNullable(this.baseRewards);
     }
     /**
      * @return It provides the fxRate between invoice currency and subscription currency.
      * 
      */
-    public Double fxRate() {
-        return this.fxRate;
+    public Optional<Double> fxRate() {
+        return Optional.ofNullable(this.fxRate);
     }
     /**
      * @return The currency associated with invoice.
      * 
      */
-    public String invoiceCurrency() {
-        return this.invoiceCurrency;
+    public Optional<String> invoiceCurrency() {
+        return Optional.ofNullable(this.invoiceCurrency);
     }
     /**
      * @return It provides the invoice number against the redemption.
      * 
      */
-    public String invoiceNumber() {
-        return this.invoiceNumber;
+    public Optional<String> invoiceNumber() {
+        return Optional.ofNullable(this.invoiceNumber);
     }
     /**
      * @return It provides the invoice total amount of given redemption.
      * 
      */
-    public Double invoiceTotalAmount() {
-        return this.invoiceTotalAmount;
+    public Optional<Double> invoiceTotalAmount() {
+        return Optional.ofNullable(this.invoiceTotalAmount);
     }
     /**
      * @return It provides the redeemed rewards in invoice currency.
      * 
      */
-    public Double redeemedRewards() {
-        return this.redeemedRewards;
+    public Optional<Double> redeemedRewards() {
+        return Optional.ofNullable(this.redeemedRewards);
     }
     /**
      * @return The redemption code used in the Billing Center during the reward redemption process.
      * 
      */
-    public String redemptionCode() {
-        return this.redemptionCode;
+    public Optional<String> redemptionCode() {
+        return Optional.ofNullable(this.redemptionCode);
     }
     /**
      * @return It provides the redemption email id.
      * 
      */
-    public String redemptionEmail() {
-        return this.redemptionEmail;
+    public Optional<String> redemptionEmail() {
+        return Optional.ofNullable(this.redemptionEmail);
     }
     /**
      * @return It provides the invoice date.
      * 
      */
-    public String timeInvoiced() {
-        return this.timeInvoiced;
+    public Optional<String> timeInvoiced() {
+        return Optional.ofNullable(this.timeInvoiced);
     }
     /**
      * @return It provides redeem date.
      * 
      */
-    public String timeRedeemed() {
-        return this.timeRedeemed;
+    public Optional<String> timeRedeemed() {
+        return Optional.ofNullable(this.timeRedeemed);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItemItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double baseRewards;
-        private Double fxRate;
-        private String invoiceCurrency;
-        private String invoiceNumber;
-        private Double invoiceTotalAmount;
-        private Double redeemedRewards;
-        private String redemptionCode;
-        private String redemptionEmail;
-        private String timeInvoiced;
-        private String timeRedeemed;
+        private @Nullable Double baseRewards;
+        private @Nullable Double fxRate;
+        private @Nullable String invoiceCurrency;
+        private @Nullable String invoiceNumber;
+        private @Nullable Double invoiceTotalAmount;
+        private @Nullable Double redeemedRewards;
+        private @Nullable String redemptionCode;
+        private @Nullable String redemptionEmail;
+        private @Nullable String timeInvoiced;
+        private @Nullable String timeRedeemed;
         public Builder() {}
         public Builder(GetSubscriptionRedemptionsRedemptionCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,53 +170,53 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItemItem {
         }
 
         @CustomType.Setter
-        public Builder baseRewards(Double baseRewards) {
-            this.baseRewards = Objects.requireNonNull(baseRewards);
+        public Builder baseRewards(@Nullable Double baseRewards) {
+            this.baseRewards = baseRewards;
             return this;
         }
         @CustomType.Setter
-        public Builder fxRate(Double fxRate) {
-            this.fxRate = Objects.requireNonNull(fxRate);
+        public Builder fxRate(@Nullable Double fxRate) {
+            this.fxRate = fxRate;
             return this;
         }
         @CustomType.Setter
-        public Builder invoiceCurrency(String invoiceCurrency) {
-            this.invoiceCurrency = Objects.requireNonNull(invoiceCurrency);
+        public Builder invoiceCurrency(@Nullable String invoiceCurrency) {
+            this.invoiceCurrency = invoiceCurrency;
             return this;
         }
         @CustomType.Setter
-        public Builder invoiceNumber(String invoiceNumber) {
-            this.invoiceNumber = Objects.requireNonNull(invoiceNumber);
+        public Builder invoiceNumber(@Nullable String invoiceNumber) {
+            this.invoiceNumber = invoiceNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder invoiceTotalAmount(Double invoiceTotalAmount) {
-            this.invoiceTotalAmount = Objects.requireNonNull(invoiceTotalAmount);
+        public Builder invoiceTotalAmount(@Nullable Double invoiceTotalAmount) {
+            this.invoiceTotalAmount = invoiceTotalAmount;
             return this;
         }
         @CustomType.Setter
-        public Builder redeemedRewards(Double redeemedRewards) {
-            this.redeemedRewards = Objects.requireNonNull(redeemedRewards);
+        public Builder redeemedRewards(@Nullable Double redeemedRewards) {
+            this.redeemedRewards = redeemedRewards;
             return this;
         }
         @CustomType.Setter
-        public Builder redemptionCode(String redemptionCode) {
-            this.redemptionCode = Objects.requireNonNull(redemptionCode);
+        public Builder redemptionCode(@Nullable String redemptionCode) {
+            this.redemptionCode = redemptionCode;
             return this;
         }
         @CustomType.Setter
-        public Builder redemptionEmail(String redemptionEmail) {
-            this.redemptionEmail = Objects.requireNonNull(redemptionEmail);
+        public Builder redemptionEmail(@Nullable String redemptionEmail) {
+            this.redemptionEmail = redemptionEmail;
             return this;
         }
         @CustomType.Setter
-        public Builder timeInvoiced(String timeInvoiced) {
-            this.timeInvoiced = Objects.requireNonNull(timeInvoiced);
+        public Builder timeInvoiced(@Nullable String timeInvoiced) {
+            this.timeInvoiced = timeInvoiced;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRedeemed(String timeRedeemed) {
-            this.timeRedeemed = Objects.requireNonNull(timeRedeemed);
+        public Builder timeRedeemed(@Nullable String timeRedeemed) {
+            this.timeRedeemed = timeRedeemed;
             return this;
         }
         public GetSubscriptionRedemptionsRedemptionCollectionItemItem build() {

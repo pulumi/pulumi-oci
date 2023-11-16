@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The OCID of the sensitive type.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
 
         [OutputConstructor]
         private GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult(
             ImmutableArray<Outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult> maskingFormats,
 
-            string sensitiveTypeId)
+            string? sensitiveTypeId)
         {
             MaskingFormats = maskingFormats;
             SensitiveTypeId = sensitiveTypeId;

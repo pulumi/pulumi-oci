@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppServiceParam {
@@ -13,27 +15,27 @@ public final class GetDomainsAppServiceParam {
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppServiceParam() {}
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsAppServiceParam {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String value;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppServiceParam defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsAppServiceParam {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppServiceParam build() {

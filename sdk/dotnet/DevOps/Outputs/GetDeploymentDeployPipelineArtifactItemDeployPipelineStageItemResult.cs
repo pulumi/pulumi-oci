@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of the stage.
         /// </summary>
-        public readonly string DeployStageId;
+        public readonly string? DeployStageId;
         /// <summary>
         /// Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
 
         [OutputConstructor]
         private GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemResult(
-            string deployStageId,
+            string? deployStageId,
 
-            string displayName)
+            string? displayName)
         {
             DeployStageId = deployStageId;
             DisplayName = displayName;

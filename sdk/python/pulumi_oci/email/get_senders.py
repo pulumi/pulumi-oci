@@ -49,9 +49,6 @@ class GetSendersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID for the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,9 +59,6 @@ class GetSendersResult:
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[str]:
-        """
-        The email address of the sender.
-        """
         return pulumi.get(self, "email_address")
 
     @property
@@ -74,7 +68,7 @@ class GetSendersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,18 +76,12 @@ class GetSendersResult:
 
     @property
     @pulumi.getter
-    def senders(self) -> Sequence['outputs.GetSendersSenderResult']:
-        """
-        The list of senders.
-        """
+    def senders(self) -> Optional[Sequence['outputs.GetSendersSenderResult']]:
         return pulumi.get(self, "senders")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current status of the approved sender.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_senders(compartment_id: Optional[str] = None,
                 state: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSendersResult:
     """
-    This data source provides the list of Senders in Oracle Cloud Infrastructure Email service.
-
-    Gets a collection of approved sender email addresses and sender IDs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_senders = oci.Email.get_senders(compartment_id=var["compartment_id"],
-        domain=var["sender_domain"],
-        email_address=var["sender_email_address"],
-        state=var["sender_state"])
-    ```
-
-
-    :param str compartment_id: The OCID for the compartment.
-    :param str domain: A filter to only return resources that match the given domain exactly.
-    :param str email_address: The email address of the approved sender.
-    :param str state: The current state of a sender.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSendersResult]:
     """
-    This data source provides the list of Senders in Oracle Cloud Infrastructure Email service.
-
-    Gets a collection of approved sender email addresses and sender IDs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_senders = oci.Email.get_senders(compartment_id=var["compartment_id"],
-        domain=var["sender_domain"],
-        email_address=var["sender_email_address"],
-        state=var["sender_state"])
-    ```
-
-
-    :param str compartment_id: The OCID for the compartment.
-    :param str domain: A filter to only return resources that match the given domain exactly.
-    :param str email_address: The email address of the approved sender.
-    :param str state: The current state of a sender.
+    Use this data source to access information about an existing resource.
     """
     ...

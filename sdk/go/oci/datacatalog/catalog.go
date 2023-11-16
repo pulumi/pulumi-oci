@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -73,23 +72,23 @@ type Catalog struct {
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Data catalog identifier.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-	NumberOfObjects pulumi.IntOutput `pulumi:"numberOfObjects"`
+	NumberOfObjects pulumi.IntPtrOutput `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
-	ServiceApiUrl pulumi.StringOutput `pulumi:"serviceApiUrl"`
+	ServiceApiUrl pulumi.StringPtrOutput `pulumi:"serviceApiUrl"`
 	// The console front endpoint URL to the data catalog instance.
-	ServiceConsoleUrl pulumi.StringOutput `pulumi:"serviceConsoleUrl"`
+	ServiceConsoleUrl pulumi.StringPtrOutput `pulumi:"serviceConsoleUrl"`
 	// The current state of the data catalog resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewCatalog registers a new resource with the given unique name, arguments, and options.
@@ -244,12 +243,6 @@ func (i *Catalog) ToCatalogOutputWithContext(ctx context.Context) CatalogOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogOutput)
 }
 
-func (i *Catalog) ToOutput(ctx context.Context) pulumix.Output[*Catalog] {
-	return pulumix.Output[*Catalog]{
-		OutputState: i.ToCatalogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CatalogArrayInput is an input type that accepts CatalogArray and CatalogArrayOutput values.
 // You can construct a concrete instance of `CatalogArrayInput` via:
 //
@@ -273,12 +266,6 @@ func (i CatalogArray) ToCatalogArrayOutput() CatalogArrayOutput {
 
 func (i CatalogArray) ToCatalogArrayOutputWithContext(ctx context.Context) CatalogArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogArrayOutput)
-}
-
-func (i CatalogArray) ToOutput(ctx context.Context) pulumix.Output[[]*Catalog] {
-	return pulumix.Output[[]*Catalog]{
-		OutputState: i.ToCatalogArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CatalogMapInput is an input type that accepts CatalogMap and CatalogMapOutput values.
@@ -306,12 +293,6 @@ func (i CatalogMap) ToCatalogMapOutputWithContext(ctx context.Context) CatalogMa
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogMapOutput)
 }
 
-func (i CatalogMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Catalog] {
-	return pulumix.Output[map[string]*Catalog]{
-		OutputState: i.ToCatalogMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CatalogOutput struct{ *pulumi.OutputState }
 
 func (CatalogOutput) ElementType() reflect.Type {
@@ -324,12 +305,6 @@ func (o CatalogOutput) ToCatalogOutput() CatalogOutput {
 
 func (o CatalogOutput) ToCatalogOutputWithContext(ctx context.Context) CatalogOutput {
 	return o
-}
-
-func (o CatalogOutput) ToOutput(ctx context.Context) pulumix.Output[*Catalog] {
-	return pulumix.Output[*Catalog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The list of private reverse connection endpoints attached to the catalog
@@ -351,8 +326,8 @@ func (o CatalogOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Data catalog identifier.
-func (o CatalogOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o CatalogOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -361,38 +336,38 @@ func (o CatalogOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-func (o CatalogOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o CatalogOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-func (o CatalogOutput) NumberOfObjects() pulumi.IntOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.IntOutput { return v.NumberOfObjects }).(pulumi.IntOutput)
+func (o CatalogOutput) NumberOfObjects() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.IntPtrOutput { return v.NumberOfObjects }).(pulumi.IntPtrOutput)
 }
 
 // The REST front endpoint URL to the data catalog instance.
-func (o CatalogOutput) ServiceApiUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.ServiceApiUrl }).(pulumi.StringOutput)
+func (o CatalogOutput) ServiceApiUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.ServiceApiUrl }).(pulumi.StringPtrOutput)
 }
 
 // The console front endpoint URL to the data catalog instance.
-func (o CatalogOutput) ServiceConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.ServiceConsoleUrl }).(pulumi.StringOutput)
+func (o CatalogOutput) ServiceConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.ServiceConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the data catalog resource.
-func (o CatalogOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CatalogOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o CatalogOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CatalogOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o CatalogOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o CatalogOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type CatalogArrayOutput struct{ *pulumi.OutputState }
@@ -407,12 +382,6 @@ func (o CatalogArrayOutput) ToCatalogArrayOutput() CatalogArrayOutput {
 
 func (o CatalogArrayOutput) ToCatalogArrayOutputWithContext(ctx context.Context) CatalogArrayOutput {
 	return o
-}
-
-func (o CatalogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Catalog] {
-	return pulumix.Output[[]*Catalog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogArrayOutput) Index(i pulumi.IntInput) CatalogOutput {
@@ -433,12 +402,6 @@ func (o CatalogMapOutput) ToCatalogMapOutput() CatalogMapOutput {
 
 func (o CatalogMapOutput) ToCatalogMapOutputWithContext(ctx context.Context) CatalogMapOutput {
 	return o
-}
-
-func (o CatalogMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Catalog] {
-	return pulumix.Output[map[string]*Catalog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogMapOutput) MapIndex(k pulumi.StringInput) CatalogOutput {

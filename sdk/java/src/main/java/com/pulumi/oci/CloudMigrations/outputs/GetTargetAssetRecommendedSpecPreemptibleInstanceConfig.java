@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetRecommendedSpecPreemptibleInstanceConfig {
@@ -14,7 +15,7 @@ public final class GetTargetAssetRecommendedSpecPreemptibleInstanceConfig {
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+    private @Nullable List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
     private GetTargetAssetRecommendedSpecPreemptibleInstanceConfig() {}
     /**
@@ -22,7 +23,7 @@ public final class GetTargetAssetRecommendedSpecPreemptibleInstanceConfig {
      * 
      */
     public List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions() {
-        return this.preemptionActions;
+        return this.preemptionActions == null ? List.of() : this.preemptionActions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetTargetAssetRecommendedSpecPreemptibleInstanceConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+        private @Nullable List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
         public Builder() {}
         public Builder(GetTargetAssetRecommendedSpecPreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetTargetAssetRecommendedSpecPreemptibleInstanceConfig {
         }
 
         @CustomType.Setter
-        public Builder preemptionActions(List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+        public Builder preemptionActions(@Nullable List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction... preemptionActions) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
@@ -64,49 +63,49 @@ type LookupIntegrationInstanceResult struct {
 	// A list of associated attachments to other services
 	Attachments []GetIntegrationInstanceAttachment `pulumi:"attachments"`
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints []GetIntegrationInstanceCustomEndpoint `pulumi:"customEndpoints"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Integration Instance Identifier, can be renamed.
-	DisplayName                    string `pulumi:"displayName"`
-	DomainId                       string `pulumi:"domainId"`
-	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
+	DisplayName                    *string `pulumi:"displayName"`
+	DomainId                       *string `pulumi:"domainId"`
+	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
-	Id     string `pulumi:"id"`
-	IdcsAt string `pulumi:"idcsAt"`
+	Id     *string `pulumi:"id"`
+	IdcsAt *string `pulumi:"idcsAt"`
 	// Information for IDCS access
 	IdcsInfos []GetIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
-	InstanceUrl           string `pulumi:"instanceUrl"`
-	IntegrationInstanceId string `pulumi:"integrationInstanceId"`
+	InstanceUrl           *string `pulumi:"instanceUrl"`
+	IntegrationInstanceId string  `pulumi:"integrationInstanceId"`
 	// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
+	IntegrationInstanceType *string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
-	IsByol bool `pulumi:"isByol"`
+	IsByol *bool `pulumi:"isByol"`
 	// The file server is enabled or not.
-	IsFileServerEnabled bool `pulumi:"isFileServerEnabled"`
+	IsFileServerEnabled *bool `pulumi:"isFileServerEnabled"`
 	// Visual Builder is enabled or not.
-	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
+	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
 	// The number of configured message packs (if any)
-	MessagePacks int `pulumi:"messagePacks"`
+	MessagePacks *int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// Shape
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The current state of the integration instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage string `pulumi:"stateMessage"`
+	StateMessage *string `pulumi:"stateMessage"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupIntegrationInstanceOutput(ctx *pulumi.Context, args LookupIntegrationInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupIntegrationInstanceResultOutput {
@@ -147,12 +146,6 @@ func (o LookupIntegrationInstanceResultOutput) ToLookupIntegrationInstanceResult
 	return o
 }
 
-func (o LookupIntegrationInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupIntegrationInstanceResult] {
-	return pulumix.Output[LookupIntegrationInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of alternate custom endpoints used for the integration instance URL.
 func (o LookupIntegrationInstanceResultOutput) AlternateCustomEndpoints() GetIntegrationInstanceAlternateCustomEndpointArrayOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstanceAlternateCustomEndpoint {
@@ -166,13 +159,13 @@ func (o LookupIntegrationInstanceResultOutput) Attachments() GetIntegrationInsta
 }
 
 // Compartment Identifier.
-func (o LookupIntegrationInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement used for billing purposes.
-func (o LookupIntegrationInstanceResultOutput) ConsumptionModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.ConsumptionModel }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) ConsumptionModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.ConsumptionModel }).(pulumi.StringPtrOutput)
 }
 
 // Details for a custom endpoint for the integration instance.
@@ -188,16 +181,16 @@ func (o LookupIntegrationInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Integration Instance Identifier, can be renamed.
-func (o LookupIntegrationInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupIntegrationInstanceResultOutput) DomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.DomainId }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupIntegrationInstanceResultOutput) EnableProcessAutomationTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) int { return v.EnableProcessAutomationTrigger }).(pulumi.IntOutput)
+func (o LookupIntegrationInstanceResultOutput) EnableProcessAutomationTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *int { return v.EnableProcessAutomationTrigger }).(pulumi.IntPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -206,12 +199,12 @@ func (o LookupIntegrationInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Virtual Cloud Network OCID.
-func (o LookupIntegrationInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupIntegrationInstanceResultOutput) IdcsAt() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.IdcsAt }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) IdcsAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.IdcsAt }).(pulumi.StringPtrOutput)
 }
 
 // Information for IDCS access
@@ -220,8 +213,8 @@ func (o LookupIntegrationInstanceResultOutput) IdcsInfos() GetIntegrationInstanc
 }
 
 // The Integration Instance URL.
-func (o LookupIntegrationInstanceResultOutput) InstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.InstanceUrl }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) InstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.InstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupIntegrationInstanceResultOutput) IntegrationInstanceId() pulumi.StringOutput {
@@ -229,28 +222,28 @@ func (o LookupIntegrationInstanceResultOutput) IntegrationInstanceId() pulumi.St
 }
 
 // Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-func (o LookupIntegrationInstanceResultOutput) IntegrationInstanceType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.IntegrationInstanceType }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) IntegrationInstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.IntegrationInstanceType }).(pulumi.StringPtrOutput)
 }
 
 // Bring your own license.
-func (o LookupIntegrationInstanceResultOutput) IsByol() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) bool { return v.IsByol }).(pulumi.BoolOutput)
+func (o LookupIntegrationInstanceResultOutput) IsByol() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *bool { return v.IsByol }).(pulumi.BoolPtrOutput)
 }
 
 // The file server is enabled or not.
-func (o LookupIntegrationInstanceResultOutput) IsFileServerEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) bool { return v.IsFileServerEnabled }).(pulumi.BoolOutput)
+func (o LookupIntegrationInstanceResultOutput) IsFileServerEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *bool { return v.IsFileServerEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Visual Builder is enabled or not.
-func (o LookupIntegrationInstanceResultOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+func (o LookupIntegrationInstanceResultOutput) IsVisualBuilderEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The number of configured message packs (if any)
-func (o LookupIntegrationInstanceResultOutput) MessagePacks() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) int { return v.MessagePacks }).(pulumi.IntOutput)
+func (o LookupIntegrationInstanceResultOutput) MessagePacks() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *int { return v.MessagePacks }).(pulumi.IntPtrOutput)
 }
 
 // Base representation of a network endpoint.
@@ -261,28 +254,28 @@ func (o LookupIntegrationInstanceResultOutput) NetworkEndpointDetails() GetInteg
 }
 
 // Shape
-func (o LookupIntegrationInstanceResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the integration instance.
-func (o LookupIntegrationInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupIntegrationInstanceResultOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.StateMessage }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-func (o LookupIntegrationInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-func (o LookupIntegrationInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupIntegrationInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

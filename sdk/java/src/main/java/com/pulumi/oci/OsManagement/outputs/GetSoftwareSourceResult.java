@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceResult {
@@ -18,247 +20,247 @@ public final class GetSoftwareSourceResult {
      * @return The architecture type supported by the Software Source
      * 
      */
-    private String archType;
+    private @Nullable String archType;
     /**
      * @return list of the Managed Instances associated with this Software Sources
      * 
      */
-    private List<GetSoftwareSourceAssociatedManagedInstance> associatedManagedInstances;
+    private @Nullable List<GetSoftwareSourceAssociatedManagedInstance> associatedManagedInstances;
     /**
      * @return The yum repository checksum type used by this software source
      * 
      */
-    private String checksumType;
+    private @Nullable String checksumType;
     /**
      * @return OCID for the Compartment
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Information specified by the user about the software source
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return User friendly name for the software source
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Fingerprint of the GPG key for this software source
      * 
      */
-    private String gpgKeyFingerprint;
+    private @Nullable String gpgKeyFingerprint;
     /**
      * @return ID of the GPG key for this software source
      * 
      */
-    private String gpgKeyId;
+    private @Nullable String gpgKeyId;
     /**
      * @return URL of the GPG key for this software source
      * 
      */
-    private String gpgKeyUrl;
+    private @Nullable String gpgKeyUrl;
     /**
      * @return OCID for the Software Source
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Email address of the person maintaining this software source
      * 
      */
-    private String maintainerEmail;
+    private @Nullable String maintainerEmail;
     /**
      * @return Name of the person maintaining this software source
      * 
      */
-    private String maintainerName;
+    private @Nullable String maintainerName;
     /**
      * @return Phone number of the person maintaining this software source
      * 
      */
-    private String maintainerPhone;
+    private @Nullable String maintainerPhone;
     /**
      * @return Number of packages
      * 
      */
-    private Integer packages;
+    private @Nullable Integer packages;
     /**
      * @return OCID for the parent software source, if there is one
      * 
      */
-    private String parentId;
+    private @Nullable String parentId;
     /**
      * @return Display name the parent software source, if there is one
      * 
      */
-    private String parentName;
+    private @Nullable String parentName;
     /**
      * @return Type of the Software Source
      * 
      */
-    private String repoType;
+    private @Nullable String repoType;
     private String softwareSourceId;
     /**
      * @return The current state of the Software Source.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return status of the software source.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return URL for the repostiory
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetSoftwareSourceResult() {}
     /**
      * @return The architecture type supported by the Software Source
      * 
      */
-    public String archType() {
-        return this.archType;
+    public Optional<String> archType() {
+        return Optional.ofNullable(this.archType);
     }
     /**
      * @return list of the Managed Instances associated with this Software Sources
      * 
      */
     public List<GetSoftwareSourceAssociatedManagedInstance> associatedManagedInstances() {
-        return this.associatedManagedInstances;
+        return this.associatedManagedInstances == null ? List.of() : this.associatedManagedInstances;
     }
     /**
      * @return The yum repository checksum type used by this software source
      * 
      */
-    public String checksumType() {
-        return this.checksumType;
+    public Optional<String> checksumType() {
+        return Optional.ofNullable(this.checksumType);
     }
     /**
      * @return OCID for the Compartment
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Information specified by the user about the software source
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return User friendly name for the software source
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Fingerprint of the GPG key for this software source
      * 
      */
-    public String gpgKeyFingerprint() {
-        return this.gpgKeyFingerprint;
+    public Optional<String> gpgKeyFingerprint() {
+        return Optional.ofNullable(this.gpgKeyFingerprint);
     }
     /**
      * @return ID of the GPG key for this software source
      * 
      */
-    public String gpgKeyId() {
-        return this.gpgKeyId;
+    public Optional<String> gpgKeyId() {
+        return Optional.ofNullable(this.gpgKeyId);
     }
     /**
      * @return URL of the GPG key for this software source
      * 
      */
-    public String gpgKeyUrl() {
-        return this.gpgKeyUrl;
+    public Optional<String> gpgKeyUrl() {
+        return Optional.ofNullable(this.gpgKeyUrl);
     }
     /**
      * @return OCID for the Software Source
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Email address of the person maintaining this software source
      * 
      */
-    public String maintainerEmail() {
-        return this.maintainerEmail;
+    public Optional<String> maintainerEmail() {
+        return Optional.ofNullable(this.maintainerEmail);
     }
     /**
      * @return Name of the person maintaining this software source
      * 
      */
-    public String maintainerName() {
-        return this.maintainerName;
+    public Optional<String> maintainerName() {
+        return Optional.ofNullable(this.maintainerName);
     }
     /**
      * @return Phone number of the person maintaining this software source
      * 
      */
-    public String maintainerPhone() {
-        return this.maintainerPhone;
+    public Optional<String> maintainerPhone() {
+        return Optional.ofNullable(this.maintainerPhone);
     }
     /**
      * @return Number of packages
      * 
      */
-    public Integer packages() {
-        return this.packages;
+    public Optional<Integer> packages() {
+        return Optional.ofNullable(this.packages);
     }
     /**
      * @return OCID for the parent software source, if there is one
      * 
      */
-    public String parentId() {
-        return this.parentId;
+    public Optional<String> parentId() {
+        return Optional.ofNullable(this.parentId);
     }
     /**
      * @return Display name the parent software source, if there is one
      * 
      */
-    public String parentName() {
-        return this.parentName;
+    public Optional<String> parentName() {
+        return Optional.ofNullable(this.parentName);
     }
     /**
      * @return Type of the Software Source
      * 
      */
-    public String repoType() {
-        return this.repoType;
+    public Optional<String> repoType() {
+        return Optional.ofNullable(this.repoType);
     }
     public String softwareSourceId() {
         return this.softwareSourceId;
@@ -267,22 +269,22 @@ public final class GetSoftwareSourceResult {
      * @return The current state of the Software Source.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return status of the software source.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return URL for the repostiory
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -294,29 +296,29 @@ public final class GetSoftwareSourceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archType;
-        private List<GetSoftwareSourceAssociatedManagedInstance> associatedManagedInstances;
-        private String checksumType;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String gpgKeyFingerprint;
-        private String gpgKeyId;
-        private String gpgKeyUrl;
-        private String id;
-        private String maintainerEmail;
-        private String maintainerName;
-        private String maintainerPhone;
-        private Integer packages;
-        private String parentId;
-        private String parentName;
-        private String repoType;
+        private @Nullable String archType;
+        private @Nullable List<GetSoftwareSourceAssociatedManagedInstance> associatedManagedInstances;
+        private @Nullable String checksumType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String gpgKeyFingerprint;
+        private @Nullable String gpgKeyId;
+        private @Nullable String gpgKeyUrl;
+        private @Nullable String id;
+        private @Nullable String maintainerEmail;
+        private @Nullable String maintainerName;
+        private @Nullable String maintainerPhone;
+        private @Nullable Integer packages;
+        private @Nullable String parentId;
+        private @Nullable String parentName;
+        private @Nullable String repoType;
         private String softwareSourceId;
-        private String state;
-        private String status;
-        private String url;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetSoftwareSourceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -346,101 +348,101 @@ public final class GetSoftwareSourceResult {
         }
 
         @CustomType.Setter
-        public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+        public Builder archType(@Nullable String archType) {
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
-        public Builder associatedManagedInstances(List<GetSoftwareSourceAssociatedManagedInstance> associatedManagedInstances) {
-            this.associatedManagedInstances = Objects.requireNonNull(associatedManagedInstances);
+        public Builder associatedManagedInstances(@Nullable List<GetSoftwareSourceAssociatedManagedInstance> associatedManagedInstances) {
+            this.associatedManagedInstances = associatedManagedInstances;
             return this;
         }
         public Builder associatedManagedInstances(GetSoftwareSourceAssociatedManagedInstance... associatedManagedInstances) {
             return associatedManagedInstances(List.of(associatedManagedInstances));
         }
         @CustomType.Setter
-        public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+        public Builder checksumType(@Nullable String checksumType) {
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder gpgKeyFingerprint(String gpgKeyFingerprint) {
-            this.gpgKeyFingerprint = Objects.requireNonNull(gpgKeyFingerprint);
+        public Builder gpgKeyFingerprint(@Nullable String gpgKeyFingerprint) {
+            this.gpgKeyFingerprint = gpgKeyFingerprint;
             return this;
         }
         @CustomType.Setter
-        public Builder gpgKeyId(String gpgKeyId) {
-            this.gpgKeyId = Objects.requireNonNull(gpgKeyId);
+        public Builder gpgKeyId(@Nullable String gpgKeyId) {
+            this.gpgKeyId = gpgKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder gpgKeyUrl(String gpgKeyUrl) {
-            this.gpgKeyUrl = Objects.requireNonNull(gpgKeyUrl);
+        public Builder gpgKeyUrl(@Nullable String gpgKeyUrl) {
+            this.gpgKeyUrl = gpgKeyUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maintainerEmail(String maintainerEmail) {
-            this.maintainerEmail = Objects.requireNonNull(maintainerEmail);
+        public Builder maintainerEmail(@Nullable String maintainerEmail) {
+            this.maintainerEmail = maintainerEmail;
             return this;
         }
         @CustomType.Setter
-        public Builder maintainerName(String maintainerName) {
-            this.maintainerName = Objects.requireNonNull(maintainerName);
+        public Builder maintainerName(@Nullable String maintainerName) {
+            this.maintainerName = maintainerName;
             return this;
         }
         @CustomType.Setter
-        public Builder maintainerPhone(String maintainerPhone) {
-            this.maintainerPhone = Objects.requireNonNull(maintainerPhone);
+        public Builder maintainerPhone(@Nullable String maintainerPhone) {
+            this.maintainerPhone = maintainerPhone;
             return this;
         }
         @CustomType.Setter
-        public Builder packages(Integer packages) {
-            this.packages = Objects.requireNonNull(packages);
+        public Builder packages(@Nullable Integer packages) {
+            this.packages = packages;
             return this;
         }
         @CustomType.Setter
-        public Builder parentId(String parentId) {
-            this.parentId = Objects.requireNonNull(parentId);
+        public Builder parentId(@Nullable String parentId) {
+            this.parentId = parentId;
             return this;
         }
         @CustomType.Setter
-        public Builder parentName(String parentName) {
-            this.parentName = Objects.requireNonNull(parentName);
+        public Builder parentName(@Nullable String parentName) {
+            this.parentName = parentName;
             return this;
         }
         @CustomType.Setter
-        public Builder repoType(String repoType) {
-            this.repoType = Objects.requireNonNull(repoType);
+        public Builder repoType(@Nullable String repoType) {
+            this.repoType = repoType;
             return this;
         }
         @CustomType.Setter
@@ -449,18 +451,18 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetSoftwareSourceResult build() {

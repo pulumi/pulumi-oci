@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
@@ -72,16 +71,16 @@ type ClusterWorkloadMapping struct {
 	// (Updatable) The OCID of the mapped customer compartment.
 	MappedCompartmentId pulumi.StringOutput `pulumi:"mappedCompartmentId"`
 	// The OCID of the mapped customer tenancy.
-	MappedTenancyId pulumi.StringOutput `pulumi:"mappedTenancyId"`
+	MappedTenancyId pulumi.StringPtrOutput `pulumi:"mappedTenancyId"`
 	// The namespace of the workloadMapping.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The state of the workloadMapping.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewClusterWorkloadMapping registers a new resource with the given unique name, arguments, and options.
@@ -226,12 +225,6 @@ func (i *ClusterWorkloadMapping) ToClusterWorkloadMappingOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterWorkloadMappingOutput)
 }
 
-func (i *ClusterWorkloadMapping) ToOutput(ctx context.Context) pulumix.Output[*ClusterWorkloadMapping] {
-	return pulumix.Output[*ClusterWorkloadMapping]{
-		OutputState: i.ToClusterWorkloadMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterWorkloadMappingArrayInput is an input type that accepts ClusterWorkloadMappingArray and ClusterWorkloadMappingArrayOutput values.
 // You can construct a concrete instance of `ClusterWorkloadMappingArrayInput` via:
 //
@@ -255,12 +248,6 @@ func (i ClusterWorkloadMappingArray) ToClusterWorkloadMappingArrayOutput() Clust
 
 func (i ClusterWorkloadMappingArray) ToClusterWorkloadMappingArrayOutputWithContext(ctx context.Context) ClusterWorkloadMappingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterWorkloadMappingArrayOutput)
-}
-
-func (i ClusterWorkloadMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterWorkloadMapping] {
-	return pulumix.Output[[]*ClusterWorkloadMapping]{
-		OutputState: i.ToClusterWorkloadMappingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ClusterWorkloadMappingMapInput is an input type that accepts ClusterWorkloadMappingMap and ClusterWorkloadMappingMapOutput values.
@@ -288,12 +275,6 @@ func (i ClusterWorkloadMappingMap) ToClusterWorkloadMappingMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterWorkloadMappingMapOutput)
 }
 
-func (i ClusterWorkloadMappingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterWorkloadMapping] {
-	return pulumix.Output[map[string]*ClusterWorkloadMapping]{
-		OutputState: i.ToClusterWorkloadMappingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterWorkloadMappingOutput struct{ *pulumi.OutputState }
 
 func (ClusterWorkloadMappingOutput) ElementType() reflect.Type {
@@ -306,12 +287,6 @@ func (o ClusterWorkloadMappingOutput) ToClusterWorkloadMappingOutput() ClusterWo
 
 func (o ClusterWorkloadMappingOutput) ToClusterWorkloadMappingOutputWithContext(ctx context.Context) ClusterWorkloadMappingOutput {
 	return o
-}
-
-func (o ClusterWorkloadMappingOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterWorkloadMapping] {
-	return pulumix.Output[*ClusterWorkloadMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the cluster.
@@ -335,8 +310,8 @@ func (o ClusterWorkloadMappingOutput) MappedCompartmentId() pulumi.StringOutput 
 }
 
 // The OCID of the mapped customer tenancy.
-func (o ClusterWorkloadMappingOutput) MappedTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringOutput { return v.MappedTenancyId }).(pulumi.StringOutput)
+func (o ClusterWorkloadMappingOutput) MappedTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringPtrOutput { return v.MappedTenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The namespace of the workloadMapping.
@@ -348,13 +323,13 @@ func (o ClusterWorkloadMappingOutput) Namespace() pulumi.StringOutput {
 }
 
 // The state of the workloadMapping.
-func (o ClusterWorkloadMappingOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ClusterWorkloadMappingOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created.
-func (o ClusterWorkloadMappingOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ClusterWorkloadMappingOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ClusterWorkloadMappingArrayOutput struct{ *pulumi.OutputState }
@@ -369,12 +344,6 @@ func (o ClusterWorkloadMappingArrayOutput) ToClusterWorkloadMappingArrayOutput()
 
 func (o ClusterWorkloadMappingArrayOutput) ToClusterWorkloadMappingArrayOutputWithContext(ctx context.Context) ClusterWorkloadMappingArrayOutput {
 	return o
-}
-
-func (o ClusterWorkloadMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterWorkloadMapping] {
-	return pulumix.Output[[]*ClusterWorkloadMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterWorkloadMappingArrayOutput) Index(i pulumi.IntInput) ClusterWorkloadMappingOutput {
@@ -395,12 +364,6 @@ func (o ClusterWorkloadMappingMapOutput) ToClusterWorkloadMappingMapOutput() Clu
 
 func (o ClusterWorkloadMappingMapOutput) ToClusterWorkloadMappingMapOutputWithContext(ctx context.Context) ClusterWorkloadMappingMapOutput {
 	return o
-}
-
-func (o ClusterWorkloadMappingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterWorkloadMapping] {
-	return pulumix.Output[map[string]*ClusterWorkloadMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterWorkloadMappingMapOutput) MapIndex(k pulumi.StringInput) ClusterWorkloadMappingOutput {

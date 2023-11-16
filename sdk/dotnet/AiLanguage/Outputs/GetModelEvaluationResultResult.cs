@@ -20,7 +20,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// class level confusion matrix
         /// </summary>
-        public readonly string ConfusionMatrix;
+        public readonly string? ConfusionMatrix;
         /// <summary>
         /// List of entity metrics
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// Model type
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
 
         [OutputConstructor]
         private GetModelEvaluationResultResult(
             ImmutableArray<Outputs.GetModelEvaluationResultClassMetricResult> classMetrics,
 
-            string confusionMatrix,
+            string? confusionMatrix,
 
             ImmutableArray<Outputs.GetModelEvaluationResultEntityMetricResult> entityMetrics,
 
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
 
             ImmutableArray<Outputs.GetModelEvaluationResultMetricResult> metrics,
 
-            string modelType)
+            string? modelType)
         {
             ClassMetrics = classMetrics;
             ConfusionMatrix = confusionMatrix;

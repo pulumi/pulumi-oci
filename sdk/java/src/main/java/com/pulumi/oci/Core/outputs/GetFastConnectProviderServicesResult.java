@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetFastConnectProviderServicesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetFastConnectProviderServicesResult {
      * @return The list of fast_connect_provider_services.
      * 
      */
-    private List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices;
+    private @Nullable List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices;
     private @Nullable List<GetFastConnectProviderServicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetFastConnectProviderServicesResult() {}
     public String compartmentId() {
@@ -35,7 +36,7 @@ public final class GetFastConnectProviderServicesResult {
      * 
      */
     public List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices() {
-        return this.fastConnectProviderServices;
+        return this.fastConnectProviderServices == null ? List.of() : this.fastConnectProviderServices;
     }
     public List<GetFastConnectProviderServicesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetFastConnectProviderServicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetFastConnectProviderServicesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices;
+        private @Nullable List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices;
         private @Nullable List<GetFastConnectProviderServicesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetFastConnectProviderServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetFastConnectProviderServicesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder fastConnectProviderServices(List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices) {
-            this.fastConnectProviderServices = Objects.requireNonNull(fastConnectProviderServices);
+        public Builder fastConnectProviderServices(@Nullable List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices) {
+            this.fastConnectProviderServices = fastConnectProviderServices;
             return this;
         }
         public Builder fastConnectProviderServices(GetFastConnectProviderServicesFastConnectProviderService... fastConnectProviderServices) {
@@ -92,8 +93,8 @@ public final class GetFastConnectProviderServicesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetFastConnectProviderServicesResult build() {

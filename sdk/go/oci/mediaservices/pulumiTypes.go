@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -57,12 +56,6 @@ func (i MediaAssetMediaAssetTagArgs) ToMediaAssetMediaAssetTagOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMediaAssetTagOutput)
 }
 
-func (i MediaAssetMediaAssetTagArgs) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMediaAssetTag] {
-	return pulumix.Output[MediaAssetMediaAssetTag]{
-		OutputState: i.ToMediaAssetMediaAssetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaAssetMediaAssetTagArrayInput is an input type that accepts MediaAssetMediaAssetTagArray and MediaAssetMediaAssetTagArrayOutput values.
 // You can construct a concrete instance of `MediaAssetMediaAssetTagArrayInput` via:
 //
@@ -88,12 +81,6 @@ func (i MediaAssetMediaAssetTagArray) ToMediaAssetMediaAssetTagArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMediaAssetTagArrayOutput)
 }
 
-func (i MediaAssetMediaAssetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMediaAssetTag] {
-	return pulumix.Output[[]MediaAssetMediaAssetTag]{
-		OutputState: i.ToMediaAssetMediaAssetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaAssetMediaAssetTagOutput struct{ *pulumi.OutputState }
 
 func (MediaAssetMediaAssetTagOutput) ElementType() reflect.Type {
@@ -106,12 +93,6 @@ func (o MediaAssetMediaAssetTagOutput) ToMediaAssetMediaAssetTagOutput() MediaAs
 
 func (o MediaAssetMediaAssetTagOutput) ToMediaAssetMediaAssetTagOutputWithContext(ctx context.Context) MediaAssetMediaAssetTagOutput {
 	return o
-}
-
-func (o MediaAssetMediaAssetTagOutput) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMediaAssetTag] {
-	return pulumix.Output[MediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of the media asset.
@@ -139,12 +120,6 @@ func (o MediaAssetMediaAssetTagArrayOutput) ToMediaAssetMediaAssetTagArrayOutput
 
 func (o MediaAssetMediaAssetTagArrayOutput) ToMediaAssetMediaAssetTagArrayOutputWithContext(ctx context.Context) MediaAssetMediaAssetTagArrayOutput {
 	return o
-}
-
-func (o MediaAssetMediaAssetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMediaAssetTag] {
-	return pulumix.Output[[]MediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaAssetMediaAssetTagArrayOutput) Index(i pulumi.IntInput) MediaAssetMediaAssetTagOutput {
@@ -186,12 +161,6 @@ func (i MediaAssetMetadataArgs) ToMediaAssetMetadataOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMetadataOutput)
 }
 
-func (i MediaAssetMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMetadata] {
-	return pulumix.Output[MediaAssetMetadata]{
-		OutputState: i.ToMediaAssetMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaAssetMetadataArrayInput is an input type that accepts MediaAssetMetadataArray and MediaAssetMetadataArrayOutput values.
 // You can construct a concrete instance of `MediaAssetMetadataArrayInput` via:
 //
@@ -217,12 +186,6 @@ func (i MediaAssetMetadataArray) ToMediaAssetMetadataArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMetadataArrayOutput)
 }
 
-func (i MediaAssetMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMetadata] {
-	return pulumix.Output[[]MediaAssetMetadata]{
-		OutputState: i.ToMediaAssetMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaAssetMetadataOutput struct{ *pulumi.OutputState }
 
 func (MediaAssetMetadataOutput) ElementType() reflect.Type {
@@ -235,12 +198,6 @@ func (o MediaAssetMetadataOutput) ToMediaAssetMetadataOutput() MediaAssetMetadat
 
 func (o MediaAssetMetadataOutput) ToMediaAssetMetadataOutputWithContext(ctx context.Context) MediaAssetMetadataOutput {
 	return o
-}
-
-func (o MediaAssetMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMetadata] {
-	return pulumix.Output[MediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) JSON string containing the technial metadata for the media asset.
@@ -260,12 +217,6 @@ func (o MediaAssetMetadataArrayOutput) ToMediaAssetMetadataArrayOutput() MediaAs
 
 func (o MediaAssetMetadataArrayOutput) ToMediaAssetMetadataArrayOutputWithContext(ctx context.Context) MediaAssetMetadataArrayOutput {
 	return o
-}
-
-func (o MediaAssetMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMetadata] {
-	return pulumix.Output[[]MediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaAssetMetadataArrayOutput) Index(i pulumi.IntInput) MediaAssetMetadataOutput {
@@ -323,12 +274,6 @@ func (i MediaWorkflowJobOutputTypeArgs) ToMediaWorkflowJobOutputTypeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobOutputTypeOutput)
 }
 
-func (i MediaWorkflowJobOutputTypeArgs) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobOutputType] {
-	return pulumix.Output[MediaWorkflowJobOutputType]{
-		OutputState: i.ToMediaWorkflowJobOutputTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowJobOutputTypeArrayInput is an input type that accepts MediaWorkflowJobOutputTypeArray and MediaWorkflowJobOutputTypeArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowJobOutputTypeArrayInput` via:
 //
@@ -354,12 +299,6 @@ func (i MediaWorkflowJobOutputTypeArray) ToMediaWorkflowJobOutputTypeArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobOutputTypeArrayOutput)
 }
 
-func (i MediaWorkflowJobOutputTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobOutputType] {
-	return pulumix.Output[[]MediaWorkflowJobOutputType]{
-		OutputState: i.ToMediaWorkflowJobOutputTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowJobOutputTypeOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowJobOutputTypeOutput) ElementType() reflect.Type {
@@ -372,12 +311,6 @@ func (o MediaWorkflowJobOutputTypeOutput) ToMediaWorkflowJobOutputTypeOutput() M
 
 func (o MediaWorkflowJobOutputTypeOutput) ToMediaWorkflowJobOutputTypeOutputWithContext(ctx context.Context) MediaWorkflowJobOutputTypeOutput {
 	return o
-}
-
-func (o MediaWorkflowJobOutputTypeOutput) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobOutputType] {
-	return pulumix.Output[MediaWorkflowJobOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of job output.
@@ -417,12 +350,6 @@ func (o MediaWorkflowJobOutputTypeArrayOutput) ToMediaWorkflowJobOutputTypeArray
 
 func (o MediaWorkflowJobOutputTypeArrayOutput) ToMediaWorkflowJobOutputTypeArrayOutputWithContext(ctx context.Context) MediaWorkflowJobOutputTypeArrayOutput {
 	return o
-}
-
-func (o MediaWorkflowJobOutputTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobOutputType] {
-	return pulumix.Output[[]MediaWorkflowJobOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowJobOutputTypeArrayOutput) Index(i pulumi.IntInput) MediaWorkflowJobOutputTypeOutput {
@@ -472,12 +399,6 @@ func (i MediaWorkflowJobTaskLifecycleStateArgs) ToMediaWorkflowJobTaskLifecycleS
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobTaskLifecycleStateOutput)
 }
 
-func (i MediaWorkflowJobTaskLifecycleStateArgs) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[MediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowJobTaskLifecycleStateArrayInput is an input type that accepts MediaWorkflowJobTaskLifecycleStateArray and MediaWorkflowJobTaskLifecycleStateArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowJobTaskLifecycleStateArrayInput` via:
 //
@@ -503,12 +424,6 @@ func (i MediaWorkflowJobTaskLifecycleStateArray) ToMediaWorkflowJobTaskLifecycle
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobTaskLifecycleStateArrayOutput)
 }
 
-func (i MediaWorkflowJobTaskLifecycleStateArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]MediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowJobTaskLifecycleStateOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowJobTaskLifecycleStateOutput) ElementType() reflect.Type {
@@ -521,12 +436,6 @@ func (o MediaWorkflowJobTaskLifecycleStateOutput) ToMediaWorkflowJobTaskLifecycl
 
 func (o MediaWorkflowJobTaskLifecycleStateOutput) ToMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx context.Context) MediaWorkflowJobTaskLifecycleStateOutput {
 	return o
-}
-
-func (o MediaWorkflowJobTaskLifecycleStateOutput) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[MediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique key within a MediaWorkflowJob for the task.
@@ -556,12 +465,6 @@ func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) ToMediaWorkflowJobTaskLif
 
 func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) ToMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx context.Context) MediaWorkflowJobTaskLifecycleStateArrayOutput {
 	return o
-}
-
-func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]MediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) Index(i pulumi.IntInput) MediaWorkflowJobTaskLifecycleStateOutput {
@@ -633,12 +536,6 @@ func (i MediaWorkflowTaskArgs) ToMediaWorkflowTaskOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowTaskOutput)
 }
 
-func (i MediaWorkflowTaskArgs) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowTask] {
-	return pulumix.Output[MediaWorkflowTask]{
-		OutputState: i.ToMediaWorkflowTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowTaskArrayInput is an input type that accepts MediaWorkflowTaskArray and MediaWorkflowTaskArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowTaskArrayInput` via:
 //
@@ -664,12 +561,6 @@ func (i MediaWorkflowTaskArray) ToMediaWorkflowTaskArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowTaskArrayOutput)
 }
 
-func (i MediaWorkflowTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowTask] {
-	return pulumix.Output[[]MediaWorkflowTask]{
-		OutputState: i.ToMediaWorkflowTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowTaskOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowTaskOutput) ElementType() reflect.Type {
@@ -682,12 +573,6 @@ func (o MediaWorkflowTaskOutput) ToMediaWorkflowTaskOutput() MediaWorkflowTaskOu
 
 func (o MediaWorkflowTaskOutput) ToMediaWorkflowTaskOutputWithContext(ctx context.Context) MediaWorkflowTaskOutput {
 	return o
-}
-
-func (o MediaWorkflowTaskOutput) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowTask] {
-	return pulumix.Output[MediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -740,12 +625,6 @@ func (o MediaWorkflowTaskArrayOutput) ToMediaWorkflowTaskArrayOutput() MediaWork
 
 func (o MediaWorkflowTaskArrayOutput) ToMediaWorkflowTaskArrayOutputWithContext(ctx context.Context) MediaWorkflowTaskArrayOutput {
 	return o
-}
-
-func (o MediaWorkflowTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowTask] {
-	return pulumix.Output[[]MediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowTaskArrayOutput) Index(i pulumi.IntInput) MediaWorkflowTaskOutput {
@@ -831,12 +710,6 @@ func (i StreamCdnConfigConfigArgs) ToStreamCdnConfigConfigOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigConfigOutput)
 }
 
-func (i StreamCdnConfigConfigArgs) ToOutput(ctx context.Context) pulumix.Output[StreamCdnConfigConfig] {
-	return pulumix.Output[StreamCdnConfigConfig]{
-		OutputState: i.ToStreamCdnConfigConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamCdnConfigConfigArgs) ToStreamCdnConfigConfigPtrOutput() StreamCdnConfigConfigPtrOutput {
 	return i.ToStreamCdnConfigConfigPtrOutputWithContext(context.Background())
 }
@@ -878,12 +751,6 @@ func (i *streamCdnConfigConfigPtrType) ToStreamCdnConfigConfigPtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigConfigPtrOutput)
 }
 
-func (i *streamCdnConfigConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfigConfig] {
-	return pulumix.Output[*StreamCdnConfigConfig]{
-		OutputState: i.ToStreamCdnConfigConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamCdnConfigConfigOutput struct{ *pulumi.OutputState }
 
 func (StreamCdnConfigConfigOutput) ElementType() reflect.Type {
@@ -906,12 +773,6 @@ func (o StreamCdnConfigConfigOutput) ToStreamCdnConfigConfigPtrOutputWithContext
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamCdnConfigConfig) *StreamCdnConfigConfig {
 		return &v
 	}).(StreamCdnConfigConfigPtrOutput)
-}
-
-func (o StreamCdnConfigConfigOutput) ToOutput(ctx context.Context) pulumix.Output[StreamCdnConfigConfig] {
-	return pulumix.Output[StreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
@@ -986,12 +847,6 @@ func (o StreamCdnConfigConfigPtrOutput) ToStreamCdnConfigConfigPtrOutput() Strea
 
 func (o StreamCdnConfigConfigPtrOutput) ToStreamCdnConfigConfigPtrOutputWithContext(ctx context.Context) StreamCdnConfigConfigPtrOutput {
 	return o
-}
-
-func (o StreamCdnConfigConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfigConfig] {
-	return pulumix.Output[*StreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamCdnConfigConfigPtrOutput) Elem() StreamCdnConfigConfigOutput {
@@ -1161,12 +1016,6 @@ func (i StreamPackagingConfigEncryptionArgs) ToStreamPackagingConfigEncryptionOu
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigEncryptionOutput)
 }
 
-func (i StreamPackagingConfigEncryptionArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPackagingConfigEncryption] {
-	return pulumix.Output[StreamPackagingConfigEncryption]{
-		OutputState: i.ToStreamPackagingConfigEncryptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamPackagingConfigEncryptionArgs) ToStreamPackagingConfigEncryptionPtrOutput() StreamPackagingConfigEncryptionPtrOutput {
 	return i.ToStreamPackagingConfigEncryptionPtrOutputWithContext(context.Background())
 }
@@ -1208,12 +1057,6 @@ func (i *streamPackagingConfigEncryptionPtrType) ToStreamPackagingConfigEncrypti
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigEncryptionPtrOutput)
 }
 
-func (i *streamPackagingConfigEncryptionPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPackagingConfigEncryption] {
-	return pulumix.Output[*StreamPackagingConfigEncryption]{
-		OutputState: i.ToStreamPackagingConfigEncryptionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPackagingConfigEncryptionOutput struct{ *pulumi.OutputState }
 
 func (StreamPackagingConfigEncryptionOutput) ElementType() reflect.Type {
@@ -1238,12 +1081,6 @@ func (o StreamPackagingConfigEncryptionOutput) ToStreamPackagingConfigEncryption
 	}).(StreamPackagingConfigEncryptionPtrOutput)
 }
 
-func (o StreamPackagingConfigEncryptionOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPackagingConfigEncryption] {
-	return pulumix.Output[StreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The encryption algorithm for the stream packaging configuration.
 func (o StreamPackagingConfigEncryptionOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v StreamPackagingConfigEncryption) string { return v.Algorithm }).(pulumi.StringOutput)
@@ -1266,12 +1103,6 @@ func (o StreamPackagingConfigEncryptionPtrOutput) ToStreamPackagingConfigEncrypt
 
 func (o StreamPackagingConfigEncryptionPtrOutput) ToStreamPackagingConfigEncryptionPtrOutputWithContext(ctx context.Context) StreamPackagingConfigEncryptionPtrOutput {
 	return o
-}
-
-func (o StreamPackagingConfigEncryptionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPackagingConfigEncryption] {
-	return pulumix.Output[*StreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPackagingConfigEncryptionPtrOutput) Elem() StreamPackagingConfigEncryptionOutput {
@@ -1306,9 +1137,9 @@ func (o StreamPackagingConfigEncryptionPtrOutput) KmsKeyId() pulumi.StringPtrOut
 
 type GetMediaAssetMediaAssetTag struct {
 	// The type of the media asset.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Tag of the MediaAsset.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetMediaAssetMediaAssetTagInput is an input type that accepts GetMediaAssetMediaAssetTagArgs and GetMediaAssetMediaAssetTagOutput values.
@@ -1324,9 +1155,9 @@ type GetMediaAssetMediaAssetTagInput interface {
 
 type GetMediaAssetMediaAssetTagArgs struct {
 	// The type of the media asset.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Tag of the MediaAsset.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetMediaAssetMediaAssetTagArgs) ElementType() reflect.Type {
@@ -1339,12 +1170,6 @@ func (i GetMediaAssetMediaAssetTagArgs) ToGetMediaAssetMediaAssetTagOutput() Get
 
 func (i GetMediaAssetMediaAssetTagArgs) ToGetMediaAssetMediaAssetTagOutputWithContext(ctx context.Context) GetMediaAssetMediaAssetTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMediaAssetTagOutput)
-}
-
-func (i GetMediaAssetMediaAssetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetMediaAssetTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaAssetMediaAssetTagArrayInput is an input type that accepts GetMediaAssetMediaAssetTagArray and GetMediaAssetMediaAssetTagArrayOutput values.
@@ -1372,12 +1197,6 @@ func (i GetMediaAssetMediaAssetTagArray) ToGetMediaAssetMediaAssetTagArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMediaAssetTagArrayOutput)
 }
 
-func (i GetMediaAssetMediaAssetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetMediaAssetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetMediaAssetTagOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetMediaAssetTagOutput) ElementType() reflect.Type {
@@ -1392,20 +1211,14 @@ func (o GetMediaAssetMediaAssetTagOutput) ToGetMediaAssetMediaAssetTagOutputWith
 	return o
 }
 
-func (o GetMediaAssetMediaAssetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the media asset.
-func (o GetMediaAssetMediaAssetTagOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetMediaAssetTag) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMediaAssetMediaAssetTagOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetMediaAssetTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Tag of the MediaAsset.
-func (o GetMediaAssetMediaAssetTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetMediaAssetTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetMediaAssetMediaAssetTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetMediaAssetTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaAssetMediaAssetTagArrayOutput struct{ *pulumi.OutputState }
@@ -1422,12 +1235,6 @@ func (o GetMediaAssetMediaAssetTagArrayOutput) ToGetMediaAssetMediaAssetTagArray
 	return o
 }
 
-func (o GetMediaAssetMediaAssetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaAssetMediaAssetTagArrayOutput) Index(i pulumi.IntInput) GetMediaAssetMediaAssetTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetMediaAssetTag {
 		return vs[0].([]GetMediaAssetMediaAssetTag)[vs[1].(int)]
@@ -1436,7 +1243,7 @@ func (o GetMediaAssetMediaAssetTagArrayOutput) Index(i pulumi.IntInput) GetMedia
 
 type GetMediaAssetMetadata struct {
 	// JSON string containing the technial metadata for the media asset.
-	Metadata string `pulumi:"metadata"`
+	Metadata *string `pulumi:"metadata"`
 }
 
 // GetMediaAssetMetadataInput is an input type that accepts GetMediaAssetMetadataArgs and GetMediaAssetMetadataOutput values.
@@ -1452,7 +1259,7 @@ type GetMediaAssetMetadataInput interface {
 
 type GetMediaAssetMetadataArgs struct {
 	// JSON string containing the technial metadata for the media asset.
-	Metadata pulumi.StringInput `pulumi:"metadata"`
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (GetMediaAssetMetadataArgs) ElementType() reflect.Type {
@@ -1465,12 +1272,6 @@ func (i GetMediaAssetMetadataArgs) ToGetMediaAssetMetadataOutput() GetMediaAsset
 
 func (i GetMediaAssetMetadataArgs) ToGetMediaAssetMetadataOutputWithContext(ctx context.Context) GetMediaAssetMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMetadataOutput)
-}
-
-func (i GetMediaAssetMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMetadata] {
-	return pulumix.Output[GetMediaAssetMetadata]{
-		OutputState: i.ToGetMediaAssetMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaAssetMetadataArrayInput is an input type that accepts GetMediaAssetMetadataArray and GetMediaAssetMetadataArrayOutput values.
@@ -1498,12 +1299,6 @@ func (i GetMediaAssetMetadataArray) ToGetMediaAssetMetadataArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMetadataArrayOutput)
 }
 
-func (i GetMediaAssetMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMetadata] {
-	return pulumix.Output[[]GetMediaAssetMetadata]{
-		OutputState: i.ToGetMediaAssetMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetMetadataOutput) ElementType() reflect.Type {
@@ -1518,15 +1313,9 @@ func (o GetMediaAssetMetadataOutput) ToGetMediaAssetMetadataOutputWithContext(ct
 	return o
 }
 
-func (o GetMediaAssetMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMetadata] {
-	return pulumix.Output[GetMediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // JSON string containing the technial metadata for the media asset.
-func (o GetMediaAssetMetadataOutput) Metadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetMetadata) string { return v.Metadata }).(pulumi.StringOutput)
+func (o GetMediaAssetMetadataOutput) Metadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetMetadata) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaAssetMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -1541,12 +1330,6 @@ func (o GetMediaAssetMetadataArrayOutput) ToGetMediaAssetMetadataArrayOutput() G
 
 func (o GetMediaAssetMetadataArrayOutput) ToGetMediaAssetMetadataArrayOutputWithContext(ctx context.Context) GetMediaAssetMetadataArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMetadata] {
-	return pulumix.Output[[]GetMediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetMetadataArrayOutput) Index(i pulumi.IntInput) GetMediaAssetMetadataOutput {
@@ -1590,12 +1373,6 @@ func (i GetMediaAssetsFilterArgs) ToGetMediaAssetsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsFilterOutput)
 }
 
-func (i GetMediaAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsFilter] {
-	return pulumix.Output[GetMediaAssetsFilter]{
-		OutputState: i.ToGetMediaAssetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetsFilterArrayInput is an input type that accepts GetMediaAssetsFilterArray and GetMediaAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetsFilterArrayInput` via:
 //
@@ -1621,12 +1398,6 @@ func (i GetMediaAssetsFilterArray) ToGetMediaAssetsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsFilterArrayOutput)
 }
 
-func (i GetMediaAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsFilter] {
-	return pulumix.Output[[]GetMediaAssetsFilter]{
-		OutputState: i.ToGetMediaAssetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsFilterOutput) ElementType() reflect.Type {
@@ -1639,12 +1410,6 @@ func (o GetMediaAssetsFilterOutput) ToGetMediaAssetsFilterOutput() GetMediaAsset
 
 func (o GetMediaAssetsFilterOutput) ToGetMediaAssetsFilterOutputWithContext(ctx context.Context) GetMediaAssetsFilterOutput {
 	return o
-}
-
-func (o GetMediaAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsFilter] {
-	return pulumix.Output[GetMediaAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsFilterOutput) Name() pulumi.StringOutput {
@@ -1671,12 +1436,6 @@ func (o GetMediaAssetsFilterArrayOutput) ToGetMediaAssetsFilterArrayOutput() Get
 
 func (o GetMediaAssetsFilterArrayOutput) ToGetMediaAssetsFilterArrayOutputWithContext(ctx context.Context) GetMediaAssetsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsFilter] {
-	return pulumix.Output[[]GetMediaAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsFilterOutput {
@@ -1716,12 +1475,6 @@ func (i GetMediaAssetsMediaAssetCollectionArgs) ToGetMediaAssetsMediaAssetCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollection]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetsMediaAssetCollectionArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionArray and GetMediaAssetsMediaAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetsMediaAssetCollectionArrayInput` via:
 //
@@ -1747,12 +1500,6 @@ func (i GetMediaAssetsMediaAssetCollectionArray) ToGetMediaAssetsMediaAssetColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollection]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionOutput) ElementType() reflect.Type {
@@ -1765,12 +1512,6 @@ func (o GetMediaAssetsMediaAssetCollectionOutput) ToGetMediaAssetsMediaAssetColl
 
 func (o GetMediaAssetsMediaAssetCollectionOutput) ToGetMediaAssetsMediaAssetCollectionOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsMediaAssetCollectionOutput) Items() GetMediaAssetsMediaAssetCollectionItemArrayOutput {
@@ -1791,12 +1532,6 @@ func (o GetMediaAssetsMediaAssetCollectionArrayOutput) ToGetMediaAssetsMediaAsse
 	return o
 }
 
-func (o GetMediaAssetsMediaAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaAssetsMediaAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetsMediaAssetCollection {
 		return vs[0].([]GetMediaAssetsMediaAssetCollection)[vs[1].(int)]
@@ -1805,51 +1540,51 @@ func (o GetMediaAssetsMediaAssetCollectionArrayOutput) Index(i pulumi.IntInput) 
 
 type GetMediaAssetsMediaAssetCollectionItem struct {
 	// Filter MediaAsset by the bucket where the object is stored.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique MediaAsset identifier of the first asset upload.
-	MasterMediaAssetId string `pulumi:"masterMediaAssetId"`
+	MasterMediaAssetId *string `pulumi:"masterMediaAssetId"`
 	// List of tags for the MediaAsset.
 	MediaAssetTags []GetMediaAssetsMediaAssetCollectionItemMediaAssetTag `pulumi:"mediaAssetTags"`
 	// The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
-	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowJobId *string `pulumi:"mediaWorkflowJobId"`
 	// JSON string containing the technial metadata for the media asset.
 	Metadatas []GetMediaAssetsMediaAssetCollectionItemMetadata `pulumi:"metadatas"`
 	// The object storage namespace where this asset is located.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Filter MediaAsset by the name of the object in object storage.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// eTag of the underlying object storage object.
-	ObjectEtag string `pulumi:"objectEtag"`
+	ObjectEtag *string `pulumi:"objectEtag"`
 	// Unique MediaAsset identifier of the asset from which this asset is derived.
-	ParentMediaAssetId string `pulumi:"parentMediaAssetId"`
+	ParentMediaAssetId *string `pulumi:"parentMediaAssetId"`
 	// The end index of video segment files.
-	SegmentRangeEndIndex string `pulumi:"segmentRangeEndIndex"`
+	SegmentRangeEndIndex *string `pulumi:"segmentRangeEndIndex"`
 	// The start index for video segment files.
-	SegmentRangeStartIndex string `pulumi:"segmentRangeStartIndex"`
+	SegmentRangeStartIndex *string `pulumi:"segmentRangeStartIndex"`
 	// The ID of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowId string `pulumi:"sourceMediaWorkflowId"`
+	SourceMediaWorkflowId *string `pulumi:"sourceMediaWorkflowId"`
 	// The version of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowVersion string `pulumi:"sourceMediaWorkflowVersion"`
+	SourceMediaWorkflowVersion *string `pulumi:"sourceMediaWorkflowVersion"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Filter MediaAsset by the asset type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetMediaAssetsMediaAssetCollectionItemInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemArgs and GetMediaAssetsMediaAssetCollectionItemOutput values.
@@ -1865,51 +1600,51 @@ type GetMediaAssetsMediaAssetCollectionItemInput interface {
 
 type GetMediaAssetsMediaAssetCollectionItemArgs struct {
 	// Filter MediaAsset by the bucket where the object is stored.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Unique MediaAsset identifier of the first asset upload.
-	MasterMediaAssetId pulumi.StringInput `pulumi:"masterMediaAssetId"`
+	MasterMediaAssetId pulumi.StringPtrInput `pulumi:"masterMediaAssetId"`
 	// List of tags for the MediaAsset.
 	MediaAssetTags GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayInput `pulumi:"mediaAssetTags"`
 	// The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
-	MediaWorkflowJobId pulumi.StringInput `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowJobId pulumi.StringPtrInput `pulumi:"mediaWorkflowJobId"`
 	// JSON string containing the technial metadata for the media asset.
 	Metadatas GetMediaAssetsMediaAssetCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The object storage namespace where this asset is located.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Filter MediaAsset by the name of the object in object storage.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// eTag of the underlying object storage object.
-	ObjectEtag pulumi.StringInput `pulumi:"objectEtag"`
+	ObjectEtag pulumi.StringPtrInput `pulumi:"objectEtag"`
 	// Unique MediaAsset identifier of the asset from which this asset is derived.
-	ParentMediaAssetId pulumi.StringInput `pulumi:"parentMediaAssetId"`
+	ParentMediaAssetId pulumi.StringPtrInput `pulumi:"parentMediaAssetId"`
 	// The end index of video segment files.
-	SegmentRangeEndIndex pulumi.StringInput `pulumi:"segmentRangeEndIndex"`
+	SegmentRangeEndIndex pulumi.StringPtrInput `pulumi:"segmentRangeEndIndex"`
 	// The start index for video segment files.
-	SegmentRangeStartIndex pulumi.StringInput `pulumi:"segmentRangeStartIndex"`
+	SegmentRangeStartIndex pulumi.StringPtrInput `pulumi:"segmentRangeStartIndex"`
 	// The ID of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowId pulumi.StringInput `pulumi:"sourceMediaWorkflowId"`
+	SourceMediaWorkflowId pulumi.StringPtrInput `pulumi:"sourceMediaWorkflowId"`
 	// The version of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowVersion pulumi.StringInput `pulumi:"sourceMediaWorkflowVersion"`
+	SourceMediaWorkflowVersion pulumi.StringPtrInput `pulumi:"sourceMediaWorkflowVersion"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Filter MediaAsset by the asset type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetMediaAssetsMediaAssetCollectionItemArgs) ElementType() reflect.Type {
@@ -1922,12 +1657,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemArgs) ToGetMediaAssetsMediaAssetCo
 
 func (i GetMediaAssetsMediaAssetCollectionItemArgs) ToGetMediaAssetsMediaAssetCollectionItemOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemOutput)
-}
-
-func (i GetMediaAssetsMediaAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaAssetsMediaAssetCollectionItemArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemArray and GetMediaAssetsMediaAssetCollectionItemArrayOutput values.
@@ -1955,12 +1684,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemArray) ToGetMediaAssetsMediaAssetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -1975,20 +1698,14 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) ToGetMediaAssetsMediaAsset
 	return o
 }
 
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filter MediaAsset by the bucket where the object is stored.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1997,8 +1714,8 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) DefinedTags() pulumi.MapOu
 }
 
 // A filter to return only the resources that match the entire display name given.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2007,13 +1724,13 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) FreeformTags() pulumi.MapO
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique MediaAsset identifier of the first asset upload.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) MasterMediaAssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.MasterMediaAssetId }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) MasterMediaAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.MasterMediaAssetId }).(pulumi.StringPtrOutput)
 }
 
 // List of tags for the MediaAsset.
@@ -2024,8 +1741,8 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) MediaAssetTags() GetMediaA
 }
 
 // The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) MediaWorkflowJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) MediaWorkflowJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.MediaWorkflowJobId }).(pulumi.StringPtrOutput)
 }
 
 // JSON string containing the technial metadata for the media asset.
@@ -2036,48 +1753,48 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) Metadatas() GetMediaAssets
 }
 
 // The object storage namespace where this asset is located.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Filter MediaAsset by the name of the object in object storage.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.Object }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // eTag of the underlying object storage object.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) ObjectEtag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.ObjectEtag }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) ObjectEtag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.ObjectEtag }).(pulumi.StringPtrOutput)
 }
 
 // Unique MediaAsset identifier of the asset from which this asset is derived.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) ParentMediaAssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.ParentMediaAssetId }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) ParentMediaAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.ParentMediaAssetId }).(pulumi.StringPtrOutput)
 }
 
 // The end index of video segment files.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) SegmentRangeEndIndex() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.SegmentRangeEndIndex }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) SegmentRangeEndIndex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.SegmentRangeEndIndex }).(pulumi.StringPtrOutput)
 }
 
 // The start index for video segment files.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) SegmentRangeStartIndex() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.SegmentRangeStartIndex }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) SegmentRangeStartIndex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.SegmentRangeStartIndex }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the MediaWorkflow used to produce this asset.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) SourceMediaWorkflowId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.SourceMediaWorkflowId }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) SourceMediaWorkflowId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.SourceMediaWorkflowId }).(pulumi.StringPtrOutput)
 }
 
 // The version of the MediaWorkflow used to produce this asset.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) SourceMediaWorkflowVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.SourceMediaWorkflowVersion }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) SourceMediaWorkflowVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.SourceMediaWorkflowVersion }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2086,18 +1803,18 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) SystemTags() pulumi.MapOut
 }
 
 // The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Filter MediaAsset by the asset type.
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaAssetsMediaAssetCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2114,12 +1831,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) ToGetMediaAssetsMedia
 	return o
 }
 
-func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetsMediaAssetCollectionItem {
 		return vs[0].([]GetMediaAssetsMediaAssetCollectionItem)[vs[1].(int)]
@@ -2128,9 +1839,9 @@ func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) Index(i pulumi.IntInp
 
 type GetMediaAssetsMediaAssetCollectionItemMediaAssetTag struct {
 	// Filter MediaAsset by the asset type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Tag of the MediaAsset.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetMediaAssetsMediaAssetCollectionItemMediaAssetTagInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs and GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput values.
@@ -2146,9 +1857,9 @@ type GetMediaAssetsMediaAssetCollectionItemMediaAssetTagInput interface {
 
 type GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs struct {
 	// Filter MediaAsset by the asset type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Tag of the MediaAsset.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs) ElementType() reflect.Type {
@@ -2161,12 +1872,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs) ToGetMediaAsset
 
 func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs) ToGetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput)
-}
-
-func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArray and GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput values.
@@ -2194,12 +1899,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArray) ToGetMediaAsse
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) ElementType() reflect.Type {
@@ -2214,20 +1913,14 @@ func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) ToGetMediaAss
 	return o
 }
 
-func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filter MediaAsset by the asset type.
-func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemMediaAssetTag) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemMediaAssetTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Tag of the MediaAsset.
-func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemMediaAssetTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemMediaAssetTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput struct{ *pulumi.OutputState }
@@ -2244,12 +1937,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) ToGetMed
 	return o
 }
 
-func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetsMediaAssetCollectionItemMediaAssetTag {
 		return vs[0].([]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag)[vs[1].(int)]
@@ -2258,7 +1945,7 @@ func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) Index(i 
 
 type GetMediaAssetsMediaAssetCollectionItemMetadata struct {
 	// JSON string containing the technial metadata for the media asset.
-	Metadata string `pulumi:"metadata"`
+	Metadata *string `pulumi:"metadata"`
 }
 
 // GetMediaAssetsMediaAssetCollectionItemMetadataInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemMetadataArgs and GetMediaAssetsMediaAssetCollectionItemMetadataOutput values.
@@ -2274,7 +1961,7 @@ type GetMediaAssetsMediaAssetCollectionItemMetadataInput interface {
 
 type GetMediaAssetsMediaAssetCollectionItemMetadataArgs struct {
 	// JSON string containing the technial metadata for the media asset.
-	Metadata pulumi.StringInput `pulumi:"metadata"`
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (GetMediaAssetsMediaAssetCollectionItemMetadataArgs) ElementType() reflect.Type {
@@ -2287,12 +1974,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMetadataArgs) ToGetMediaAssetsMedi
 
 func (i GetMediaAssetsMediaAssetCollectionItemMetadataArgs) ToGetMediaAssetsMediaAssetCollectionItemMetadataOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMetadataOutput)
-}
-
-func (i GetMediaAssetsMediaAssetCollectionItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaAssetsMediaAssetCollectionItemMetadataArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemMetadataArray and GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput values.
@@ -2320,12 +2001,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMetadataArray) ToGetMediaAssetsMed
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionItemMetadataOutput) ElementType() reflect.Type {
@@ -2340,15 +2015,9 @@ func (o GetMediaAssetsMediaAssetCollectionItemMetadataOutput) ToGetMediaAssetsMe
 	return o
 }
 
-func (o GetMediaAssetsMediaAssetCollectionItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // JSON string containing the technial metadata for the media asset.
-func (o GetMediaAssetsMediaAssetCollectionItemMetadataOutput) Metadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemMetadata) string { return v.Metadata }).(pulumi.StringOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemMetadataOutput) Metadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemMetadata) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -2363,12 +2032,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) ToGetMediaAss
 
 func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) ToGetMediaAssetsMediaAssetCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionItemMetadataOutput {
@@ -2412,12 +2075,6 @@ func (i GetMediaWorkflowConfigurationsFilterArgs) ToGetMediaWorkflowConfiguratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsFilterOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsFilter]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowConfigurationsFilterArrayInput is an input type that accepts GetMediaWorkflowConfigurationsFilterArray and GetMediaWorkflowConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowConfigurationsFilterArrayInput` via:
 //
@@ -2443,12 +2100,6 @@ func (i GetMediaWorkflowConfigurationsFilterArray) ToGetMediaWorkflowConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsFilter]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowConfigurationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowConfigurationsFilterOutput) ElementType() reflect.Type {
@@ -2461,12 +2112,6 @@ func (o GetMediaWorkflowConfigurationsFilterOutput) ToGetMediaWorkflowConfigurat
 
 func (o GetMediaWorkflowConfigurationsFilterOutput) ToGetMediaWorkflowConfigurationsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsFilterOutput) Name() pulumi.StringOutput {
@@ -2493,12 +2138,6 @@ func (o GetMediaWorkflowConfigurationsFilterArrayOutput) ToGetMediaWorkflowConfi
 
 func (o GetMediaWorkflowConfigurationsFilterArrayOutput) ToGetMediaWorkflowConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationsFilterOutput {
@@ -2538,12 +2177,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayInput is an input type that accepts GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArray and GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayInput` via:
 //
@@ -2569,12 +2202,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) ElementType() reflect.Type {
@@ -2587,12 +2214,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) Items() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput {
@@ -2615,12 +2236,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayO
 	return o
 }
 
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection {
 		return vs[0].([]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection)[vs[1].(int)]
@@ -2629,27 +2244,27 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayO
 
 type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique MediaWorkflowConfiguration identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
-	Parameters string `pulumi:"parameters"`
+	Parameters *string `pulumi:"parameters"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemInput is an input type that accepts GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs and GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput values.
@@ -2665,27 +2280,27 @@ type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemInput
 
 type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique MediaWorkflowConfiguration identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrInput `pulumi:"lifecyleDetails"`
 	// Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
-	Parameters pulumi.StringInput `pulumi:"parameters"`
+	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs) ElementType() reflect.Type {
@@ -2698,12 +2313,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemAr
 
 func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput)
-}
-
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayInput is an input type that accepts GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArray and GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput values.
@@ -2731,12 +2340,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) ElementType() reflect.Type {
@@ -2751,17 +2354,11 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 	return o
 }
 
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2772,10 +2369,10 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 }
 
 // A filter to return only the resources that match the entire display name given.
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2786,27 +2383,27 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 }
 
 // Unique MediaWorkflowConfiguration identifier.
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string {
 		return v.LifecyleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string {
 		return v.Parameters
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2817,17 +2414,17 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 }
 
 // The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2842,12 +2439,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemAr
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput {
@@ -2893,12 +2484,6 @@ func (i GetMediaWorkflowJobFactsFilterArgs) ToGetMediaWorkflowJobFactsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsFilterOutput)
 }
 
-func (i GetMediaWorkflowJobFactsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobFactsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobFactsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobFactsFilterArrayInput is an input type that accepts GetMediaWorkflowJobFactsFilterArray and GetMediaWorkflowJobFactsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobFactsFilterArrayInput` via:
 //
@@ -2924,12 +2509,6 @@ func (i GetMediaWorkflowJobFactsFilterArray) ToGetMediaWorkflowJobFactsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowJobFactsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobFactsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobFactsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobFactsFilterOutput) ElementType() reflect.Type {
@@ -2942,12 +2521,6 @@ func (o GetMediaWorkflowJobFactsFilterOutput) ToGetMediaWorkflowJobFactsFilterOu
 
 func (o GetMediaWorkflowJobFactsFilterOutput) ToGetMediaWorkflowJobFactsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobFactsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name. It is read-only and generated for the fact.
@@ -2975,12 +2548,6 @@ func (o GetMediaWorkflowJobFactsFilterArrayOutput) ToGetMediaWorkflowJobFactsFil
 
 func (o GetMediaWorkflowJobFactsFilterArrayOutput) ToGetMediaWorkflowJobFactsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobFactsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobFactsFilterOutput {
@@ -3020,12 +2587,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArgs) ToGetMediaWo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput)
 }
 
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayInput is an input type that accepts GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArray and GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayInput` via:
 //
@@ -3051,12 +2612,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArray) ToGetMediaW
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ElementType() reflect.Type {
@@ -3069,12 +2624,6 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ToGetMedia
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) Items() GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput {
@@ -3097,12 +2646,6 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) ToGet
 	return o
 }
 
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection {
 		return vs[0].([]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection)[vs[1].(int)]
@@ -3111,15 +2654,15 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) Index
 
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem struct {
 	// The body of the detail captured as JSON.
-	Detail string `pulumi:"detail"`
+	Detail *string `pulumi:"detail"`
 	// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Unique MediaWorkflowJob identifier.
-	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowJobId *string `pulumi:"mediaWorkflowJobId"`
 	// Unique name. It is read-only and generated for the fact.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Types of details to include.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemInput is an input type that accepts GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs and GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput values.
@@ -3135,15 +2678,15 @@ type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemInput interface {
 
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs struct {
 	// The body of the detail captured as JSON.
-	Detail pulumi.StringInput `pulumi:"detail"`
+	Detail pulumi.StringPtrInput `pulumi:"detail"`
 	// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Unique MediaWorkflowJob identifier.
-	MediaWorkflowJobId pulumi.StringInput `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowJobId pulumi.StringPtrInput `pulumi:"mediaWorkflowJobId"`
 	// Unique name. It is read-only and generated for the fact.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Types of details to include.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs) ElementType() reflect.Type {
@@ -3156,12 +2699,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs) ToGetMed
 
 func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs) ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput)
-}
-
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayInput is an input type that accepts GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArray and GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput values.
@@ -3189,12 +2726,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArray) ToGetMe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ElementType() reflect.Type {
@@ -3209,35 +2740,31 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ToGetM
 	return o
 }
 
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The body of the detail captured as JSON.
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Detail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Detail }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) *string { return v.Detail }).(pulumi.StringPtrOutput)
 }
 
 // Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Unique MediaWorkflowJob identifier.
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) MediaWorkflowJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) MediaWorkflowJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) *string {
+		return v.MediaWorkflowJobId
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique name. It is read-only and generated for the fact.
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Types of details to include.
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3254,12 +2781,6 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) T
 	return o
 }
 
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
 		return vs[0].([]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem)[vs[1].(int)]
@@ -3268,15 +2789,15 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) I
 
 type GetMediaWorkflowJobOutput struct {
 	// Type of job output.
-	AssetType string `pulumi:"assetType"`
+	AssetType *string `pulumi:"assetType"`
 	// The bucket name of the job output.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The ID associated with the job output.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The namespace name of the job output.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name of the job output.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetMediaWorkflowJobOutputInput is an input type that accepts GetMediaWorkflowJobOutputArgs and GetMediaWorkflowJobOutputOutput values.
@@ -3292,15 +2813,15 @@ type GetMediaWorkflowJobOutputInput interface {
 
 type GetMediaWorkflowJobOutputArgs struct {
 	// Type of job output.
-	AssetType pulumi.StringInput `pulumi:"assetType"`
+	AssetType pulumi.StringPtrInput `pulumi:"assetType"`
 	// The bucket name of the job output.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The ID associated with the job output.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The namespace name of the job output.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name of the job output.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetMediaWorkflowJobOutputArgs) ElementType() reflect.Type {
@@ -3313,12 +2834,6 @@ func (i GetMediaWorkflowJobOutputArgs) ToGetMediaWorkflowJobOutputOutput() GetMe
 
 func (i GetMediaWorkflowJobOutputArgs) ToGetMediaWorkflowJobOutputOutputWithContext(ctx context.Context) GetMediaWorkflowJobOutputOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobOutputOutput)
-}
-
-func (i GetMediaWorkflowJobOutputArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobOutput] {
-	return pulumix.Output[GetMediaWorkflowJobOutput]{
-		OutputState: i.ToGetMediaWorkflowJobOutputOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowJobOutputArrayInput is an input type that accepts GetMediaWorkflowJobOutputArray and GetMediaWorkflowJobOutputArrayOutput values.
@@ -3346,12 +2861,6 @@ func (i GetMediaWorkflowJobOutputArray) ToGetMediaWorkflowJobOutputArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobOutputArrayOutput)
 }
 
-func (i GetMediaWorkflowJobOutputArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobOutput] {
-	return pulumix.Output[[]GetMediaWorkflowJobOutput]{
-		OutputState: i.ToGetMediaWorkflowJobOutputArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobOutputOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobOutputOutput) ElementType() reflect.Type {
@@ -3366,35 +2875,29 @@ func (o GetMediaWorkflowJobOutputOutput) ToGetMediaWorkflowJobOutputOutputWithCo
 	return o
 }
 
-func (o GetMediaWorkflowJobOutputOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobOutput] {
-	return pulumix.Output[GetMediaWorkflowJobOutput]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of job output.
-func (o GetMediaWorkflowJobOutputOutput) AssetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobOutput) string { return v.AssetType }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobOutputOutput) AssetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobOutput) *string { return v.AssetType }).(pulumi.StringPtrOutput)
 }
 
 // The bucket name of the job output.
-func (o GetMediaWorkflowJobOutputOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobOutput) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobOutputOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobOutput) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The ID associated with the job output.
-func (o GetMediaWorkflowJobOutputOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobOutput) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobOutputOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobOutput) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The namespace name of the job output.
-func (o GetMediaWorkflowJobOutputOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobOutput) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobOutputOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobOutput) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the job output.
-func (o GetMediaWorkflowJobOutputOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobOutput) string { return v.Object }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobOutputOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobOutput) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowJobOutputArrayOutput struct{ *pulumi.OutputState }
@@ -3411,12 +2914,6 @@ func (o GetMediaWorkflowJobOutputArrayOutput) ToGetMediaWorkflowJobOutputArrayOu
 	return o
 }
 
-func (o GetMediaWorkflowJobOutputArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobOutput] {
-	return pulumix.Output[[]GetMediaWorkflowJobOutput]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobOutputArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobOutputOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobOutput {
 		return vs[0].([]GetMediaWorkflowJobOutput)[vs[1].(int)]
@@ -3425,11 +2922,11 @@ func (o GetMediaWorkflowJobOutputArrayOutput) Index(i pulumi.IntInput) GetMediaW
 
 type GetMediaWorkflowJobTaskLifecycleState struct {
 	// Unique key within a MediaWorkflowJob for the task.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the MediaWorkflowJob task.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 // GetMediaWorkflowJobTaskLifecycleStateInput is an input type that accepts GetMediaWorkflowJobTaskLifecycleStateArgs and GetMediaWorkflowJobTaskLifecycleStateOutput values.
@@ -3445,11 +2942,11 @@ type GetMediaWorkflowJobTaskLifecycleStateInput interface {
 
 type GetMediaWorkflowJobTaskLifecycleStateArgs struct {
 	// Unique key within a MediaWorkflowJob for the task.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The current state of the MediaWorkflowJob task.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetMediaWorkflowJobTaskLifecycleStateArgs) ElementType() reflect.Type {
@@ -3462,12 +2959,6 @@ func (i GetMediaWorkflowJobTaskLifecycleStateArgs) ToGetMediaWorkflowJobTaskLife
 
 func (i GetMediaWorkflowJobTaskLifecycleStateArgs) ToGetMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx context.Context) GetMediaWorkflowJobTaskLifecycleStateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobTaskLifecycleStateOutput)
-}
-
-func (i GetMediaWorkflowJobTaskLifecycleStateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowJobTaskLifecycleStateArrayInput is an input type that accepts GetMediaWorkflowJobTaskLifecycleStateArray and GetMediaWorkflowJobTaskLifecycleStateArrayOutput values.
@@ -3495,12 +2986,6 @@ func (i GetMediaWorkflowJobTaskLifecycleStateArray) ToGetMediaWorkflowJobTaskLif
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobTaskLifecycleStateArrayOutput)
 }
 
-func (i GetMediaWorkflowJobTaskLifecycleStateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobTaskLifecycleStateOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobTaskLifecycleStateOutput) ElementType() reflect.Type {
@@ -3515,25 +3000,19 @@ func (o GetMediaWorkflowJobTaskLifecycleStateOutput) ToGetMediaWorkflowJobTaskLi
 	return o
 }
 
-func (o GetMediaWorkflowJobTaskLifecycleStateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique key within a MediaWorkflowJob for the task.
-func (o GetMediaWorkflowJobTaskLifecycleStateOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobTaskLifecycleState) string { return v.Key }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobTaskLifecycleStateOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobTaskLifecycleState) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle details of MediaWorkflowJob task.
-func (o GetMediaWorkflowJobTaskLifecycleStateOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobTaskLifecycleState) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobTaskLifecycleStateOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobTaskLifecycleState) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the MediaWorkflowJob task.
-func (o GetMediaWorkflowJobTaskLifecycleStateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobTaskLifecycleState) string { return v.State }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobTaskLifecycleStateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobTaskLifecycleState) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowJobTaskLifecycleStateArrayOutput struct{ *pulumi.OutputState }
@@ -3548,12 +3027,6 @@ func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) ToGetMediaWorkflowJobT
 
 func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) ToGetMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobTaskLifecycleStateArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobTaskLifecycleStateOutput {
@@ -3597,12 +3070,6 @@ func (i GetMediaWorkflowJobsFilterArgs) ToGetMediaWorkflowJobsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsFilterOutput)
 }
 
-func (i GetMediaWorkflowJobsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobsFilterArrayInput is an input type that accepts GetMediaWorkflowJobsFilterArray and GetMediaWorkflowJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobsFilterArrayInput` via:
 //
@@ -3628,12 +3095,6 @@ func (i GetMediaWorkflowJobsFilterArray) ToGetMediaWorkflowJobsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsFilterOutput) ElementType() reflect.Type {
@@ -3646,12 +3107,6 @@ func (o GetMediaWorkflowJobsFilterOutput) ToGetMediaWorkflowJobsFilterOutput() G
 
 func (o GetMediaWorkflowJobsFilterOutput) ToGetMediaWorkflowJobsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowJobsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsFilterOutput) Name() pulumi.StringOutput {
@@ -3678,12 +3133,6 @@ func (o GetMediaWorkflowJobsFilterArrayOutput) ToGetMediaWorkflowJobsFilterArray
 
 func (o GetMediaWorkflowJobsFilterArrayOutput) ToGetMediaWorkflowJobsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsFilterOutput {
@@ -3723,12 +3172,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArgs) ToGetMediaWorkflowJo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayInput` via:
 //
@@ -3754,12 +3197,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArray) ToGetMediaWorkflowJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ElementType() reflect.Type {
@@ -3772,12 +3209,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ToGetMediaWorkflow
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) Items() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput {
@@ -3800,12 +3231,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) ToGetMediaWor
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollection {
 		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollection)[vs[1].(int)]
@@ -3814,43 +3239,43 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) Index(i pulum
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique MediaWorkflowJob identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// Unique MediaWorkflow identifier.
-	MediaWorkflowId   string `pulumi:"mediaWorkflowId"`
-	MediaWorkflowName string `pulumi:"mediaWorkflowName"`
+	MediaWorkflowId   *string `pulumi:"mediaWorkflowId"`
+	MediaWorkflowName *string `pulumi:"mediaWorkflowName"`
 	// A list of JobOutput for the workflowJob.
 	Outputs []GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType `pulumi:"outputs"`
 	// Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-	Parameters string `pulumi:"parameters"`
+	Parameters *string `pulumi:"parameters"`
 	// A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-	Runnable string `pulumi:"runnable"`
+	Runnable *string `pulumi:"runnable"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates []GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// Time when the job started to execute. An RFC3339 formatted datetime string.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// Updated time of the job. An RFC3339 formatted datetime string.
-	TimeUpdated            string `pulumi:"timeUpdated"`
-	WorkflowIdentifierType string `pulumi:"workflowIdentifierType"`
+	TimeUpdated            *string `pulumi:"timeUpdated"`
+	WorkflowIdentifierType *string `pulumi:"workflowIdentifierType"`
 }
 
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput values.
@@ -3866,43 +3291,43 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemInput interface {
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique MediaWorkflowJob identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds pulumi.StringArrayInput `pulumi:"mediaWorkflowConfigurationIds"`
 	// Unique MediaWorkflow identifier.
-	MediaWorkflowId   pulumi.StringInput `pulumi:"mediaWorkflowId"`
-	MediaWorkflowName pulumi.StringInput `pulumi:"mediaWorkflowName"`
+	MediaWorkflowId   pulumi.StringPtrInput `pulumi:"mediaWorkflowId"`
+	MediaWorkflowName pulumi.StringPtrInput `pulumi:"mediaWorkflowName"`
 	// A list of JobOutput for the workflowJob.
 	Outputs GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayInput `pulumi:"outputs"`
 	// Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-	Parameters pulumi.StringInput `pulumi:"parameters"`
+	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
 	// A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-	Runnable pulumi.StringInput `pulumi:"runnable"`
+	Runnable pulumi.StringPtrInput `pulumi:"runnable"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayInput `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// Time when the job started to execute. An RFC3339 formatted datetime string.
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// Updated time of the job. An RFC3339 formatted datetime string.
-	TimeUpdated            pulumi.StringInput `pulumi:"timeUpdated"`
-	WorkflowIdentifierType pulumi.StringInput `pulumi:"workflowIdentifierType"`
+	TimeUpdated            pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	WorkflowIdentifierType pulumi.StringPtrInput `pulumi:"workflowIdentifierType"`
 }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs) ElementType() reflect.Type {
@@ -3915,12 +3340,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs) ToGetMediaWorkfl
 
 func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput)
-}
-
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput values.
@@ -3948,12 +3367,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArray) ToGetMediaWorkf
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) ElementType() reflect.Type {
@@ -3968,15 +3381,9 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) ToGetMediaWork
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -3987,8 +3394,8 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) DefinedTags() 
 }
 
 // A filter to return only the resources that match the entire display name given.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -3999,13 +3406,13 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) FreeformTags()
 }
 
 // unique MediaWorkflowJob identifier
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle details of MediaWorkflowJob task.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Configurations to be applied to this run of the workflow.
@@ -4016,12 +3423,12 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) MediaWorkflowC
 }
 
 // Unique MediaWorkflow identifier.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) MediaWorkflowId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.MediaWorkflowId }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) MediaWorkflowId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.MediaWorkflowId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) MediaWorkflowName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.MediaWorkflowName }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) MediaWorkflowName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.MediaWorkflowName }).(pulumi.StringPtrOutput)
 }
 
 // A list of JobOutput for the workflowJob.
@@ -4032,18 +3439,18 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Outputs() GetM
 }
 
 // Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.Parameters }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.Parameters }).(pulumi.StringPtrOutput)
 }
 
 // A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Runnable() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.Runnable }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Runnable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.Runnable }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4059,27 +3466,27 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TaskLifecycleS
 }
 
 // Creation time of the job. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time when the job finished. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // Time when the job started to execute. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // Updated time of the job. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) WorkflowIdentifierType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.WorkflowIdentifierType }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) WorkflowIdentifierType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) *string { return v.WorkflowIdentifierType }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4096,12 +3503,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) ToGetMedi
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
 		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem)[vs[1].(int)]
@@ -4110,15 +3511,15 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) Index(i p
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType struct {
 	// Type of job output.
-	AssetType string `pulumi:"assetType"`
+	AssetType *string `pulumi:"assetType"`
 	// The bucket name of the job output.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// unique MediaWorkflowJob identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The namespace name of the job output.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name of the job output.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput values.
@@ -4134,15 +3535,15 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeInput interface
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs struct {
 	// Type of job output.
-	AssetType pulumi.StringInput `pulumi:"assetType"`
+	AssetType pulumi.StringPtrInput `pulumi:"assetType"`
 	// The bucket name of the job output.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// unique MediaWorkflowJob identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The namespace name of the job output.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name of the job output.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs) ElementType() reflect.Type {
@@ -4155,12 +3556,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs) ToGetM
 
 func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput)
-}
-
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput values.
@@ -4188,12 +3583,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) ElementType() reflect.Type {
@@ -4208,35 +3597,29 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) ToGe
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of job output.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) AssetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) string { return v.AssetType }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) AssetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) *string { return v.AssetType }).(pulumi.StringPtrOutput)
 }
 
 // The bucket name of the job output.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // unique MediaWorkflowJob identifier
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The namespace name of the job output.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name of the job output.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) string { return v.Object }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput struct{ *pulumi.OutputState }
@@ -4253,12 +3636,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput)
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType {
 		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType)[vs[1].(int)]
@@ -4267,11 +3644,11 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput)
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState struct {
 	// Unique key within a MediaWorkflowJob for the task.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput values.
@@ -4287,11 +3664,11 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateInput i
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs struct {
 	// Unique key within a MediaWorkflowJob for the task.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs) ElementType() reflect.Type {
@@ -4304,12 +3681,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs
 
 func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput)
-}
-
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput values.
@@ -4337,12 +3708,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) ElementType() reflect.Type {
@@ -4357,27 +3722,21 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutp
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique key within a MediaWorkflowJob for the task.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState) string { return v.Key }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle details of MediaWorkflowJob task.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState) string {
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState) string { return v.State }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput struct{ *pulumi.OutputState }
@@ -4394,12 +3753,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArra
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState {
 		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState)[vs[1].(int)]
@@ -4408,19 +3761,19 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArra
 
 type GetMediaWorkflowTask struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-	EnableParameterReference string `pulumi:"enableParameterReference"`
+	EnableParameterReference *string `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
 	EnableWhenReferencedParameterEquals map[string]interface{} `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters string `pulumi:"parameters"`
+	Parameters *string `pulumi:"parameters"`
 	// Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
 	Prerequisites []string `pulumi:"prerequisites"`
 	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The version of the MediaWorkflow.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetMediaWorkflowTaskInput is an input type that accepts GetMediaWorkflowTaskArgs and GetMediaWorkflowTaskOutput values.
@@ -4436,19 +3789,19 @@ type GetMediaWorkflowTaskInput interface {
 
 type GetMediaWorkflowTaskArgs struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-	EnableParameterReference pulumi.StringInput `pulumi:"enableParameterReference"`
+	EnableParameterReference pulumi.StringPtrInput `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
 	EnableWhenReferencedParameterEquals pulumi.MapInput `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters pulumi.StringInput `pulumi:"parameters"`
+	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
 	// Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
 	Prerequisites pulumi.StringArrayInput `pulumi:"prerequisites"`
 	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The version of the MediaWorkflow.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetMediaWorkflowTaskArgs) ElementType() reflect.Type {
@@ -4461,12 +3814,6 @@ func (i GetMediaWorkflowTaskArgs) ToGetMediaWorkflowTaskOutput() GetMediaWorkflo
 
 func (i GetMediaWorkflowTaskArgs) ToGetMediaWorkflowTaskOutputWithContext(ctx context.Context) GetMediaWorkflowTaskOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskOutput)
-}
-
-func (i GetMediaWorkflowTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTask] {
-	return pulumix.Output[GetMediaWorkflowTask]{
-		OutputState: i.ToGetMediaWorkflowTaskOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowTaskArrayInput is an input type that accepts GetMediaWorkflowTaskArray and GetMediaWorkflowTaskArrayOutput values.
@@ -4494,12 +3841,6 @@ func (i GetMediaWorkflowTaskArray) ToGetMediaWorkflowTaskArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskArrayOutput)
 }
 
-func (i GetMediaWorkflowTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTask] {
-	return pulumix.Output[[]GetMediaWorkflowTask]{
-		OutputState: i.ToGetMediaWorkflowTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowTaskOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowTaskOutput) ElementType() reflect.Type {
@@ -4514,15 +3855,9 @@ func (o GetMediaWorkflowTaskOutput) ToGetMediaWorkflowTaskOutputWithContext(ctx 
 	return o
 }
 
-func (o GetMediaWorkflowTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTask] {
-	return pulumix.Output[GetMediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-func (o GetMediaWorkflowTaskOutput) EnableParameterReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTask) string { return v.EnableParameterReference }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskOutput) EnableParameterReference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTask) *string { return v.EnableParameterReference }).(pulumi.StringPtrOutput)
 }
 
 // Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
@@ -4531,13 +3866,13 @@ func (o GetMediaWorkflowTaskOutput) EnableWhenReferencedParameterEquals() pulumi
 }
 
 // A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-func (o GetMediaWorkflowTaskOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTask) string { return v.Key }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTask) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-func (o GetMediaWorkflowTaskOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTask) string { return v.Parameters }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTask) *string { return v.Parameters }).(pulumi.StringPtrOutput)
 }
 
 // Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
@@ -4546,13 +3881,13 @@ func (o GetMediaWorkflowTaskOutput) Prerequisites() pulumi.StringArrayOutput {
 }
 
 // The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-func (o GetMediaWorkflowTaskOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTask) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTask) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The version of the MediaWorkflow.
-func (o GetMediaWorkflowTaskOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTask) string { return v.Version }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTask) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowTaskArrayOutput struct{ *pulumi.OutputState }
@@ -4569,12 +3904,6 @@ func (o GetMediaWorkflowTaskArrayOutput) ToGetMediaWorkflowTaskArrayOutputWithCo
 	return o
 }
 
-func (o GetMediaWorkflowTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTask] {
-	return pulumix.Output[[]GetMediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowTaskArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowTaskOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowTask {
 		return vs[0].([]GetMediaWorkflowTask)[vs[1].(int)]
@@ -4583,13 +3912,13 @@ func (o GetMediaWorkflowTaskArrayOutput) Index(i pulumi.IntInput) GetMediaWorkfl
 
 type GetMediaWorkflowTaskDeclarationItem struct {
 	// A filter to return only the resources with their system defined, unique name matching the given name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// JSON schema specifying the parameters supported by this type of task. This is used to validate tasks' parameters when jobs are created.
-	ParametersSchema string `pulumi:"parametersSchema"`
+	ParametersSchema *string `pulumi:"parametersSchema"`
 	// JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
-	ParametersSchemaAllowingReferences string `pulumi:"parametersSchemaAllowingReferences"`
+	ParametersSchemaAllowingReferences *string `pulumi:"parametersSchemaAllowingReferences"`
 	// A filter to select MediaWorkflowTaskDeclaration by version.
-	Version int `pulumi:"version"`
+	Version *int `pulumi:"version"`
 }
 
 // GetMediaWorkflowTaskDeclarationItemInput is an input type that accepts GetMediaWorkflowTaskDeclarationItemArgs and GetMediaWorkflowTaskDeclarationItemOutput values.
@@ -4605,13 +3934,13 @@ type GetMediaWorkflowTaskDeclarationItemInput interface {
 
 type GetMediaWorkflowTaskDeclarationItemArgs struct {
 	// A filter to return only the resources with their system defined, unique name matching the given name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// JSON schema specifying the parameters supported by this type of task. This is used to validate tasks' parameters when jobs are created.
-	ParametersSchema pulumi.StringInput `pulumi:"parametersSchema"`
+	ParametersSchema pulumi.StringPtrInput `pulumi:"parametersSchema"`
 	// JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
-	ParametersSchemaAllowingReferences pulumi.StringInput `pulumi:"parametersSchemaAllowingReferences"`
+	ParametersSchemaAllowingReferences pulumi.StringPtrInput `pulumi:"parametersSchemaAllowingReferences"`
 	// A filter to select MediaWorkflowTaskDeclaration by version.
-	Version pulumi.IntInput `pulumi:"version"`
+	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 
 func (GetMediaWorkflowTaskDeclarationItemArgs) ElementType() reflect.Type {
@@ -4624,12 +3953,6 @@ func (i GetMediaWorkflowTaskDeclarationItemArgs) ToGetMediaWorkflowTaskDeclarati
 
 func (i GetMediaWorkflowTaskDeclarationItemArgs) ToGetMediaWorkflowTaskDeclarationItemOutputWithContext(ctx context.Context) GetMediaWorkflowTaskDeclarationItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskDeclarationItemOutput)
-}
-
-func (i GetMediaWorkflowTaskDeclarationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: i.ToGetMediaWorkflowTaskDeclarationItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowTaskDeclarationItemArrayInput is an input type that accepts GetMediaWorkflowTaskDeclarationItemArray and GetMediaWorkflowTaskDeclarationItemArrayOutput values.
@@ -4657,12 +3980,6 @@ func (i GetMediaWorkflowTaskDeclarationItemArray) ToGetMediaWorkflowTaskDeclarat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskDeclarationItemArrayOutput)
 }
 
-func (i GetMediaWorkflowTaskDeclarationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: i.ToGetMediaWorkflowTaskDeclarationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowTaskDeclarationItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowTaskDeclarationItemOutput) ElementType() reflect.Type {
@@ -4677,30 +3994,24 @@ func (o GetMediaWorkflowTaskDeclarationItemOutput) ToGetMediaWorkflowTaskDeclara
 	return o
 }
 
-func (o GetMediaWorkflowTaskDeclarationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only the resources with their system defined, unique name matching the given name.
-func (o GetMediaWorkflowTaskDeclarationItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskDeclarationItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // JSON schema specifying the parameters supported by this type of task. This is used to validate tasks' parameters when jobs are created.
-func (o GetMediaWorkflowTaskDeclarationItemOutput) ParametersSchema() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) string { return v.ParametersSchema }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskDeclarationItemOutput) ParametersSchema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) *string { return v.ParametersSchema }).(pulumi.StringPtrOutput)
 }
 
 // JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
-func (o GetMediaWorkflowTaskDeclarationItemOutput) ParametersSchemaAllowingReferences() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) string { return v.ParametersSchemaAllowingReferences }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskDeclarationItemOutput) ParametersSchemaAllowingReferences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) *string { return v.ParametersSchemaAllowingReferences }).(pulumi.StringPtrOutput)
 }
 
 // A filter to select MediaWorkflowTaskDeclaration by version.
-func (o GetMediaWorkflowTaskDeclarationItemOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) int { return v.Version }).(pulumi.IntOutput)
+func (o GetMediaWorkflowTaskDeclarationItemOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationItem) *int { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 type GetMediaWorkflowTaskDeclarationItemArrayOutput struct{ *pulumi.OutputState }
@@ -4715,12 +4026,6 @@ func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) ToGetMediaWorkflowTaskDe
 
 func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) ToGetMediaWorkflowTaskDeclarationItemArrayOutputWithContext(ctx context.Context) GetMediaWorkflowTaskDeclarationItemArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowTaskDeclarationItemOutput {
@@ -4764,12 +4069,6 @@ func (i GetMediaWorkflowsFilterArgs) ToGetMediaWorkflowsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsFilterOutput)
 }
 
-func (i GetMediaWorkflowsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsFilter] {
-	return pulumix.Output[GetMediaWorkflowsFilter]{
-		OutputState: i.ToGetMediaWorkflowsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowsFilterArrayInput is an input type that accepts GetMediaWorkflowsFilterArray and GetMediaWorkflowsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowsFilterArrayInput` via:
 //
@@ -4795,12 +4094,6 @@ func (i GetMediaWorkflowsFilterArray) ToGetMediaWorkflowsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowsFilter]{
-		OutputState: i.ToGetMediaWorkflowsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsFilterOutput) ElementType() reflect.Type {
@@ -4813,12 +4106,6 @@ func (o GetMediaWorkflowsFilterOutput) ToGetMediaWorkflowsFilterOutput() GetMedi
 
 func (o GetMediaWorkflowsFilterOutput) ToGetMediaWorkflowsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsFilter] {
-	return pulumix.Output[GetMediaWorkflowsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsFilterOutput) Name() pulumi.StringOutput {
@@ -4845,12 +4132,6 @@ func (o GetMediaWorkflowsFilterArrayOutput) ToGetMediaWorkflowsFilterArrayOutput
 
 func (o GetMediaWorkflowsFilterArrayOutput) ToGetMediaWorkflowsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsFilterOutput {
@@ -4890,12 +4171,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionArgs) ToGetMediaWorkflowsMediaWo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowsMediaWorkflowCollectionArrayInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionArray and GetMediaWorkflowsMediaWorkflowCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowsMediaWorkflowCollectionArrayInput` via:
 //
@@ -4921,12 +4196,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionArray) ToGetMediaWorkflowsMediaW
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsMediaWorkflowCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionOutput) ElementType() reflect.Type {
@@ -4939,12 +4208,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) ToGetMediaWorkflowsMedia
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) ToGetMediaWorkflowsMediaWorkflowCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) Items() GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput {
@@ -4967,12 +4230,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) ToGetMediaWorkflows
 	return o
 }
 
-func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsMediaWorkflowCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowsMediaWorkflowCollection {
 		return vs[0].([]GetMediaWorkflowsMediaWorkflowCollection)[vs[1].(int)]
@@ -4981,33 +4238,33 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) Index(i pulumi.IntI
 
 type GetMediaWorkflowsMediaWorkflowCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique MediaWorkflow identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters string `pulumi:"parameters"`
+	Parameters *string `pulumi:"parameters"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
 	Tasks []GetMediaWorkflowsMediaWorkflowCollectionItemTask `pulumi:"tasks"`
 	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The version of the MediaWorkflow.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetMediaWorkflowsMediaWorkflowCollectionItemInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemArgs and GetMediaWorkflowsMediaWorkflowCollectionItemOutput values.
@@ -5023,33 +4280,33 @@ type GetMediaWorkflowsMediaWorkflowCollectionItemInput interface {
 
 type GetMediaWorkflowsMediaWorkflowCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique MediaWorkflow identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrInput `pulumi:"lifecyleDetails"`
 	// Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
 	MediaWorkflowConfigurationIds pulumi.StringArrayInput `pulumi:"mediaWorkflowConfigurationIds"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters pulumi.StringInput `pulumi:"parameters"`
+	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
 	Tasks GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayInput `pulumi:"tasks"`
 	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The version of the MediaWorkflow.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionItemArgs) ElementType() reflect.Type {
@@ -5062,12 +4319,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemArgs) ToGetMediaWorkflowsMed
 
 func (i GetMediaWorkflowsMediaWorkflowCollectionItemArgs) ToGetMediaWorkflowsMediaWorkflowCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemOutput)
-}
-
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowsMediaWorkflowCollectionItemArrayInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemArray and GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput values.
@@ -5095,12 +4346,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemArray) ToGetMediaWorkflowsMe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsMediaWorkflowCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionItemOutput) ElementType() reflect.Type {
@@ -5115,15 +4360,9 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) ToGetMediaWorkflowsM
 	return o
 }
 
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -5132,8 +4371,8 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) DefinedTags() pulumi
 }
 
 // A filter to return only the resources that match the entire display name given.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -5142,13 +4381,13 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) FreeformTags() pulum
 }
 
 // Unique MediaWorkflow identifier.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
@@ -5157,13 +4396,13 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) MediaWorkflowConfigu
 }
 
 // Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.Parameters }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.Parameters }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5179,18 +4418,18 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Tasks() GetMediaWork
 }
 
 // The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the MediaWorkflow.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5207,12 +4446,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) ToGetMediaWorkf
 	return o
 }
 
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsMediaWorkflowCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowsMediaWorkflowCollectionItem {
 		return vs[0].([]GetMediaWorkflowsMediaWorkflowCollectionItem)[vs[1].(int)]
@@ -5221,19 +4454,19 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) Index(i pulumi.
 
 type GetMediaWorkflowsMediaWorkflowCollectionItemTask struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-	EnableParameterReference string `pulumi:"enableParameterReference"`
+	EnableParameterReference *string `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
 	EnableWhenReferencedParameterEquals map[string]interface{} `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters string `pulumi:"parameters"`
+	Parameters *string `pulumi:"parameters"`
 	// Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
 	Prerequisites []string `pulumi:"prerequisites"`
 	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The version of the MediaWorkflow.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetMediaWorkflowsMediaWorkflowCollectionItemTaskInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs and GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput values.
@@ -5249,19 +4482,19 @@ type GetMediaWorkflowsMediaWorkflowCollectionItemTaskInput interface {
 
 type GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-	EnableParameterReference pulumi.StringInput `pulumi:"enableParameterReference"`
+	EnableParameterReference pulumi.StringPtrInput `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
 	EnableWhenReferencedParameterEquals pulumi.MapInput `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters pulumi.StringInput `pulumi:"parameters"`
+	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
 	// Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
 	Prerequisites pulumi.StringArrayInput `pulumi:"prerequisites"`
 	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The version of the MediaWorkflow.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs) ElementType() reflect.Type {
@@ -5274,12 +4507,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs) ToGetMediaWorkflow
 
 func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs) ToGetMediaWorkflowsMediaWorkflowCollectionItemTaskOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput)
-}
-
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemTaskOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemTaskArray and GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput values.
@@ -5307,12 +4534,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArray) ToGetMediaWorkflo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) ElementType() reflect.Type {
@@ -5327,15 +4548,9 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) ToGetMediaWorkfl
 	return o
 }
 
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) EnableParameterReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) string { return v.EnableParameterReference }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) EnableParameterReference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) *string { return v.EnableParameterReference }).(pulumi.StringPtrOutput)
 }
 
 // Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
@@ -5346,13 +4561,13 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) EnableWhenRefere
 }
 
 // A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) string { return v.Key }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) string { return v.Parameters }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) *string { return v.Parameters }).(pulumi.StringPtrOutput)
 }
 
 // Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
@@ -5361,13 +4576,13 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Prerequisites() 
 }
 
 // The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The version of the MediaWorkflow.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) string { return v.Version }).(pulumi.StringOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput struct{ *pulumi.OutputState }
@@ -5384,12 +4599,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) ToGetMediaW
 	return o
 }
 
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowsMediaWorkflowCollectionItemTask {
 		return vs[0].([]GetMediaWorkflowsMediaWorkflowCollectionItemTask)[vs[1].(int)]
@@ -5398,29 +4607,29 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) Index(i pul
 
 type GetStreamCdnConfigConfig struct {
 	// The hostname of the CDN edge server to use when building CDN URLs.
-	EdgeHostname string `pulumi:"edgeHostname"`
+	EdgeHostname *string `pulumi:"edgeHostname"`
 	// The path to prepend when building CDN URLs.
-	EdgePathPrefix string `pulumi:"edgePathPrefix"`
+	EdgePathPrefix *string `pulumi:"edgePathPrefix"`
 	// The encryption key to use for edge token authentication.
-	EdgeTokenKey string `pulumi:"edgeTokenKey"`
+	EdgeTokenKey *string `pulumi:"edgeTokenKey"`
 	// Salt to use when encrypting authentication token.
-	EdgeTokenSalt string `pulumi:"edgeTokenSalt"`
+	EdgeTokenSalt *string `pulumi:"edgeTokenSalt"`
 	// Whether token authentication should be used at the CDN edge.
-	IsEdgeTokenAuth bool `pulumi:"isEdgeTokenAuth"`
+	IsEdgeTokenAuth *bool `pulumi:"isEdgeTokenAuth"`
 	// The shared secret key A, two for errorless key rotation.
-	OriginAuthSecretKeyA string `pulumi:"originAuthSecretKeyA"`
+	OriginAuthSecretKeyA *string `pulumi:"originAuthSecretKeyA"`
 	// The shared secret key B, two for errorless key rotation.
-	OriginAuthSecretKeyB string `pulumi:"originAuthSecretKeyB"`
+	OriginAuthSecretKeyB *string `pulumi:"originAuthSecretKeyB"`
 	// Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-	OriginAuthSecretKeyNonceA string `pulumi:"originAuthSecretKeyNonceA"`
+	OriginAuthSecretKeyNonceA *string `pulumi:"originAuthSecretKeyNonceA"`
 	// Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-	OriginAuthSecretKeyNonceB string `pulumi:"originAuthSecretKeyNonceB"`
+	OriginAuthSecretKeyNonceB *string `pulumi:"originAuthSecretKeyNonceB"`
 	// The type of encryption used to compute the signature.
-	OriginAuthSignEncryption string `pulumi:"originAuthSignEncryption"`
+	OriginAuthSignEncryption *string `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
-	OriginAuthSignType string `pulumi:"originAuthSignType"`
+	OriginAuthSignType *string `pulumi:"originAuthSignType"`
 	// The name of the CDN configuration type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetStreamCdnConfigConfigInput is an input type that accepts GetStreamCdnConfigConfigArgs and GetStreamCdnConfigConfigOutput values.
@@ -5436,29 +4645,29 @@ type GetStreamCdnConfigConfigInput interface {
 
 type GetStreamCdnConfigConfigArgs struct {
 	// The hostname of the CDN edge server to use when building CDN URLs.
-	EdgeHostname pulumi.StringInput `pulumi:"edgeHostname"`
+	EdgeHostname pulumi.StringPtrInput `pulumi:"edgeHostname"`
 	// The path to prepend when building CDN URLs.
-	EdgePathPrefix pulumi.StringInput `pulumi:"edgePathPrefix"`
+	EdgePathPrefix pulumi.StringPtrInput `pulumi:"edgePathPrefix"`
 	// The encryption key to use for edge token authentication.
-	EdgeTokenKey pulumi.StringInput `pulumi:"edgeTokenKey"`
+	EdgeTokenKey pulumi.StringPtrInput `pulumi:"edgeTokenKey"`
 	// Salt to use when encrypting authentication token.
-	EdgeTokenSalt pulumi.StringInput `pulumi:"edgeTokenSalt"`
+	EdgeTokenSalt pulumi.StringPtrInput `pulumi:"edgeTokenSalt"`
 	// Whether token authentication should be used at the CDN edge.
-	IsEdgeTokenAuth pulumi.BoolInput `pulumi:"isEdgeTokenAuth"`
+	IsEdgeTokenAuth pulumi.BoolPtrInput `pulumi:"isEdgeTokenAuth"`
 	// The shared secret key A, two for errorless key rotation.
-	OriginAuthSecretKeyA pulumi.StringInput `pulumi:"originAuthSecretKeyA"`
+	OriginAuthSecretKeyA pulumi.StringPtrInput `pulumi:"originAuthSecretKeyA"`
 	// The shared secret key B, two for errorless key rotation.
-	OriginAuthSecretKeyB pulumi.StringInput `pulumi:"originAuthSecretKeyB"`
+	OriginAuthSecretKeyB pulumi.StringPtrInput `pulumi:"originAuthSecretKeyB"`
 	// Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-	OriginAuthSecretKeyNonceA pulumi.StringInput `pulumi:"originAuthSecretKeyNonceA"`
+	OriginAuthSecretKeyNonceA pulumi.StringPtrInput `pulumi:"originAuthSecretKeyNonceA"`
 	// Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-	OriginAuthSecretKeyNonceB pulumi.StringInput `pulumi:"originAuthSecretKeyNonceB"`
+	OriginAuthSecretKeyNonceB pulumi.StringPtrInput `pulumi:"originAuthSecretKeyNonceB"`
 	// The type of encryption used to compute the signature.
-	OriginAuthSignEncryption pulumi.StringInput `pulumi:"originAuthSignEncryption"`
+	OriginAuthSignEncryption pulumi.StringPtrInput `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
-	OriginAuthSignType pulumi.StringInput `pulumi:"originAuthSignType"`
+	OriginAuthSignType pulumi.StringPtrInput `pulumi:"originAuthSignType"`
 	// The name of the CDN configuration type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetStreamCdnConfigConfigArgs) ElementType() reflect.Type {
@@ -5471,12 +4680,6 @@ func (i GetStreamCdnConfigConfigArgs) ToGetStreamCdnConfigConfigOutput() GetStre
 
 func (i GetStreamCdnConfigConfigArgs) ToGetStreamCdnConfigConfigOutputWithContext(ctx context.Context) GetStreamCdnConfigConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigConfigOutput)
-}
-
-func (i GetStreamCdnConfigConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigConfig] {
-	return pulumix.Output[GetStreamCdnConfigConfig]{
-		OutputState: i.ToGetStreamCdnConfigConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamCdnConfigConfigArrayInput is an input type that accepts GetStreamCdnConfigConfigArray and GetStreamCdnConfigConfigArrayOutput values.
@@ -5504,12 +4707,6 @@ func (i GetStreamCdnConfigConfigArray) ToGetStreamCdnConfigConfigArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigConfigArrayOutput)
 }
 
-func (i GetStreamCdnConfigConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigConfig]{
-		OutputState: i.ToGetStreamCdnConfigConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigConfigOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigConfigOutput) ElementType() reflect.Type {
@@ -5524,70 +4721,64 @@ func (o GetStreamCdnConfigConfigOutput) ToGetStreamCdnConfigConfigOutputWithCont
 	return o
 }
 
-func (o GetStreamCdnConfigConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigConfig] {
-	return pulumix.Output[GetStreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostname of the CDN edge server to use when building CDN URLs.
-func (o GetStreamCdnConfigConfigOutput) EdgeHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.EdgeHostname }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) EdgeHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.EdgeHostname }).(pulumi.StringPtrOutput)
 }
 
 // The path to prepend when building CDN URLs.
-func (o GetStreamCdnConfigConfigOutput) EdgePathPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.EdgePathPrefix }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) EdgePathPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.EdgePathPrefix }).(pulumi.StringPtrOutput)
 }
 
 // The encryption key to use for edge token authentication.
-func (o GetStreamCdnConfigConfigOutput) EdgeTokenKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.EdgeTokenKey }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) EdgeTokenKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.EdgeTokenKey }).(pulumi.StringPtrOutput)
 }
 
 // Salt to use when encrypting authentication token.
-func (o GetStreamCdnConfigConfigOutput) EdgeTokenSalt() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.EdgeTokenSalt }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) EdgeTokenSalt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.EdgeTokenSalt }).(pulumi.StringPtrOutput)
 }
 
 // Whether token authentication should be used at the CDN edge.
-func (o GetStreamCdnConfigConfigOutput) IsEdgeTokenAuth() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) bool { return v.IsEdgeTokenAuth }).(pulumi.BoolOutput)
+func (o GetStreamCdnConfigConfigOutput) IsEdgeTokenAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *bool { return v.IsEdgeTokenAuth }).(pulumi.BoolPtrOutput)
 }
 
 // The shared secret key A, two for errorless key rotation.
-func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyA() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.OriginAuthSecretKeyA }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyA() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.OriginAuthSecretKeyA }).(pulumi.StringPtrOutput)
 }
 
 // The shared secret key B, two for errorless key rotation.
-func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyB() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.OriginAuthSecretKeyB }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyB() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.OriginAuthSecretKeyB }).(pulumi.StringPtrOutput)
 }
 
 // Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyNonceA() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.OriginAuthSecretKeyNonceA }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyNonceA() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.OriginAuthSecretKeyNonceA }).(pulumi.StringPtrOutput)
 }
 
 // Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyNonceB() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.OriginAuthSecretKeyNonceB }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) OriginAuthSecretKeyNonceB() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.OriginAuthSecretKeyNonceB }).(pulumi.StringPtrOutput)
 }
 
 // The type of encryption used to compute the signature.
-func (o GetStreamCdnConfigConfigOutput) OriginAuthSignEncryption() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.OriginAuthSignEncryption }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) OriginAuthSignEncryption() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.OriginAuthSignEncryption }).(pulumi.StringPtrOutput)
 }
 
 // The type of data used to compute the signature.
-func (o GetStreamCdnConfigConfigOutput) OriginAuthSignType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.OriginAuthSignType }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) OriginAuthSignType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.OriginAuthSignType }).(pulumi.StringPtrOutput)
 }
 
 // The name of the CDN configuration type.
-func (o GetStreamCdnConfigConfigOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.Type }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigConfigOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigConfig) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamCdnConfigConfigArrayOutput struct{ *pulumi.OutputState }
@@ -5602,12 +4793,6 @@ func (o GetStreamCdnConfigConfigArrayOutput) ToGetStreamCdnConfigConfigArrayOutp
 
 func (o GetStreamCdnConfigConfigArrayOutput) ToGetStreamCdnConfigConfigArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigConfigArrayOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigConfigArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigConfigOutput {
@@ -5651,12 +4836,6 @@ func (i GetStreamCdnConfigsFilterArgs) ToGetStreamCdnConfigsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsFilterOutput)
 }
 
-func (i GetStreamCdnConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsFilter] {
-	return pulumix.Output[GetStreamCdnConfigsFilter]{
-		OutputState: i.ToGetStreamCdnConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamCdnConfigsFilterArrayInput is an input type that accepts GetStreamCdnConfigsFilterArray and GetStreamCdnConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamCdnConfigsFilterArrayInput` via:
 //
@@ -5682,12 +4861,6 @@ func (i GetStreamCdnConfigsFilterArray) ToGetStreamCdnConfigsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsFilterArrayOutput)
 }
 
-func (i GetStreamCdnConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsFilter] {
-	return pulumix.Output[[]GetStreamCdnConfigsFilter]{
-		OutputState: i.ToGetStreamCdnConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsFilterOutput) ElementType() reflect.Type {
@@ -5700,12 +4873,6 @@ func (o GetStreamCdnConfigsFilterOutput) ToGetStreamCdnConfigsFilterOutput() Get
 
 func (o GetStreamCdnConfigsFilterOutput) ToGetStreamCdnConfigsFilterOutputWithContext(ctx context.Context) GetStreamCdnConfigsFilterOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsFilter] {
-	return pulumix.Output[GetStreamCdnConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsFilterOutput) Name() pulumi.StringOutput {
@@ -5732,12 +4899,6 @@ func (o GetStreamCdnConfigsFilterArrayOutput) ToGetStreamCdnConfigsFilterArrayOu
 
 func (o GetStreamCdnConfigsFilterArrayOutput) ToGetStreamCdnConfigsFilterArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsFilter] {
-	return pulumix.Output[[]GetStreamCdnConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsFilterOutput {
@@ -5777,12 +4938,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionArgs) ToGetStreamCdnConfigsS
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamCdnConfigsStreamCdnConfigCollectionArrayInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionArray and GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetStreamCdnConfigsStreamCdnConfigCollectionArrayInput` via:
 //
@@ -5808,12 +4963,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionArray) ToGetStreamCdnConfigs
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsStreamCdnConfigCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ElementType() reflect.Type {
@@ -5826,12 +4975,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ToGetStreamCdnConfig
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) Items() GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput {
@@ -5854,12 +4997,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) ToGetStreamCdnC
 	return o
 }
 
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsStreamCdnConfigCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigsStreamCdnConfigCollection {
 		return vs[0].([]GetStreamCdnConfigsStreamCdnConfigCollection)[vs[1].(int)]
@@ -5868,31 +5005,31 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) Index(i pulumi.
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItem struct {
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs []GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The Stream Distribution Channel identifier this CdnConfig belongs to.
-	DistributionChannelId string `pulumi:"distributionChannelId"`
+	DistributionChannelId *string `pulumi:"distributionChannelId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique StreamCdnConfig identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetStreamCdnConfigsStreamCdnConfigCollectionItemInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs and GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput values.
@@ -5908,31 +5045,31 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemInput interface {
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs struct {
 	// Compartment Identifier.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayInput `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The Stream Distribution Channel identifier this CdnConfig belongs to.
-	DistributionChannelId pulumi.StringInput `pulumi:"distributionChannelId"`
+	DistributionChannelId pulumi.StringPtrInput `pulumi:"distributionChannelId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique StreamCdnConfig identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrInput `pulumi:"lifecyleDetails"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs) ElementType() reflect.Type {
@@ -5945,12 +5082,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs) ToGetStreamCdnConf
 
 func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput)
-}
-
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemArray and GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput values.
@@ -5978,12 +5109,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArray) ToGetStreamCdnCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ElementType() reflect.Type {
@@ -5998,15 +5123,9 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ToGetStreamCdnCo
 	return o
 }
 
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Base fields of the StreamCdnConfig configuration object.
@@ -6022,13 +5141,13 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DefinedTags() pu
 }
 
 // A filter to return only the resources that match the entire display name given.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The Stream Distribution Channel identifier this CdnConfig belongs to.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DistributionChannelId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.DistributionChannelId }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DistributionChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.DistributionChannelId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -6037,23 +5156,23 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) FreeformTags() p
 }
 
 // Unique StreamCdnConfig identifier.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether publishing to CDN is enabled.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6062,13 +5181,13 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) SystemTags() pul
 }
 
 // The time when the CDN Config was created. An RFC3339 formatted datetime string.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6085,12 +5204,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) ToGetStream
 	return o
 }
 
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigsStreamCdnConfigCollectionItem {
 		return vs[0].([]GetStreamCdnConfigsStreamCdnConfigCollectionItem)[vs[1].(int)]
@@ -6099,29 +5212,29 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) Index(i pul
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig struct {
 	// The hostname of the CDN edge server to use when building CDN URLs.
-	EdgeHostname string `pulumi:"edgeHostname"`
+	EdgeHostname *string `pulumi:"edgeHostname"`
 	// The path to prepend when building CDN URLs.
-	EdgePathPrefix string `pulumi:"edgePathPrefix"`
+	EdgePathPrefix *string `pulumi:"edgePathPrefix"`
 	// The encryption key to use for edge token authentication.
-	EdgeTokenKey string `pulumi:"edgeTokenKey"`
+	EdgeTokenKey *string `pulumi:"edgeTokenKey"`
 	// Salt to use when encrypting authentication token.
-	EdgeTokenSalt string `pulumi:"edgeTokenSalt"`
+	EdgeTokenSalt *string `pulumi:"edgeTokenSalt"`
 	// Whether token authentication should be used at the CDN edge.
-	IsEdgeTokenAuth bool `pulumi:"isEdgeTokenAuth"`
+	IsEdgeTokenAuth *bool `pulumi:"isEdgeTokenAuth"`
 	// The shared secret key A, two for errorless key rotation.
-	OriginAuthSecretKeyA string `pulumi:"originAuthSecretKeyA"`
+	OriginAuthSecretKeyA *string `pulumi:"originAuthSecretKeyA"`
 	// The shared secret key B, two for errorless key rotation.
-	OriginAuthSecretKeyB string `pulumi:"originAuthSecretKeyB"`
+	OriginAuthSecretKeyB *string `pulumi:"originAuthSecretKeyB"`
 	// Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-	OriginAuthSecretKeyNonceA string `pulumi:"originAuthSecretKeyNonceA"`
+	OriginAuthSecretKeyNonceA *string `pulumi:"originAuthSecretKeyNonceA"`
 	// Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-	OriginAuthSecretKeyNonceB string `pulumi:"originAuthSecretKeyNonceB"`
+	OriginAuthSecretKeyNonceB *string `pulumi:"originAuthSecretKeyNonceB"`
 	// The type of encryption used to compute the signature.
-	OriginAuthSignEncryption string `pulumi:"originAuthSignEncryption"`
+	OriginAuthSignEncryption *string `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
-	OriginAuthSignType string `pulumi:"originAuthSignType"`
+	OriginAuthSignType *string `pulumi:"originAuthSignType"`
 	// The name of the CDN configuration type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs and GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput values.
@@ -6137,29 +5250,29 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigInput interface {
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs struct {
 	// The hostname of the CDN edge server to use when building CDN URLs.
-	EdgeHostname pulumi.StringInput `pulumi:"edgeHostname"`
+	EdgeHostname pulumi.StringPtrInput `pulumi:"edgeHostname"`
 	// The path to prepend when building CDN URLs.
-	EdgePathPrefix pulumi.StringInput `pulumi:"edgePathPrefix"`
+	EdgePathPrefix pulumi.StringPtrInput `pulumi:"edgePathPrefix"`
 	// The encryption key to use for edge token authentication.
-	EdgeTokenKey pulumi.StringInput `pulumi:"edgeTokenKey"`
+	EdgeTokenKey pulumi.StringPtrInput `pulumi:"edgeTokenKey"`
 	// Salt to use when encrypting authentication token.
-	EdgeTokenSalt pulumi.StringInput `pulumi:"edgeTokenSalt"`
+	EdgeTokenSalt pulumi.StringPtrInput `pulumi:"edgeTokenSalt"`
 	// Whether token authentication should be used at the CDN edge.
-	IsEdgeTokenAuth pulumi.BoolInput `pulumi:"isEdgeTokenAuth"`
+	IsEdgeTokenAuth pulumi.BoolPtrInput `pulumi:"isEdgeTokenAuth"`
 	// The shared secret key A, two for errorless key rotation.
-	OriginAuthSecretKeyA pulumi.StringInput `pulumi:"originAuthSecretKeyA"`
+	OriginAuthSecretKeyA pulumi.StringPtrInput `pulumi:"originAuthSecretKeyA"`
 	// The shared secret key B, two for errorless key rotation.
-	OriginAuthSecretKeyB pulumi.StringInput `pulumi:"originAuthSecretKeyB"`
+	OriginAuthSecretKeyB pulumi.StringPtrInput `pulumi:"originAuthSecretKeyB"`
 	// Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-	OriginAuthSecretKeyNonceA pulumi.StringInput `pulumi:"originAuthSecretKeyNonceA"`
+	OriginAuthSecretKeyNonceA pulumi.StringPtrInput `pulumi:"originAuthSecretKeyNonceA"`
 	// Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-	OriginAuthSecretKeyNonceB pulumi.StringInput `pulumi:"originAuthSecretKeyNonceB"`
+	OriginAuthSecretKeyNonceB pulumi.StringPtrInput `pulumi:"originAuthSecretKeyNonceB"`
 	// The type of encryption used to compute the signature.
-	OriginAuthSignEncryption pulumi.StringInput `pulumi:"originAuthSignEncryption"`
+	OriginAuthSignEncryption pulumi.StringPtrInput `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
-	OriginAuthSignType pulumi.StringInput `pulumi:"originAuthSignType"`
+	OriginAuthSignType pulumi.StringPtrInput `pulumi:"originAuthSignType"`
 	// The name of the CDN configuration type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs) ElementType() reflect.Type {
@@ -6172,12 +5285,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs) ToGetStreamC
 
 func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput)
-}
-
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArray and GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput values.
@@ -6205,12 +5312,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArray) ToGetStream
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) ElementType() reflect.Type {
@@ -6225,76 +5326,70 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) ToGetStrea
 	return o
 }
 
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostname of the CDN edge server to use when building CDN URLs.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgeHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.EdgeHostname }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgeHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.EdgeHostname }).(pulumi.StringPtrOutput)
 }
 
 // The path to prepend when building CDN URLs.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgePathPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.EdgePathPrefix }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgePathPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.EdgePathPrefix }).(pulumi.StringPtrOutput)
 }
 
 // The encryption key to use for edge token authentication.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgeTokenKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.EdgeTokenKey }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgeTokenKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.EdgeTokenKey }).(pulumi.StringPtrOutput)
 }
 
 // Salt to use when encrypting authentication token.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgeTokenSalt() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.EdgeTokenSalt }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) EdgeTokenSalt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.EdgeTokenSalt }).(pulumi.StringPtrOutput)
 }
 
 // Whether token authentication should be used at the CDN edge.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) IsEdgeTokenAuth() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) bool { return v.IsEdgeTokenAuth }).(pulumi.BoolOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) IsEdgeTokenAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *bool { return v.IsEdgeTokenAuth }).(pulumi.BoolPtrOutput)
 }
 
 // The shared secret key A, two for errorless key rotation.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyA() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.OriginAuthSecretKeyA }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyA() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.OriginAuthSecretKeyA }).(pulumi.StringPtrOutput)
 }
 
 // The shared secret key B, two for errorless key rotation.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyB() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.OriginAuthSecretKeyB }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyB() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.OriginAuthSecretKeyB }).(pulumi.StringPtrOutput)
 }
 
 // Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyNonceA() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string {
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyNonceA() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string {
 		return v.OriginAuthSecretKeyNonceA
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyNonceB() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string {
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSecretKeyNonceB() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string {
 		return v.OriginAuthSecretKeyNonceB
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of encryption used to compute the signature.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSignEncryption() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string {
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSignEncryption() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string {
 		return v.OriginAuthSignEncryption
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of data used to compute the signature.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSignType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.OriginAuthSignType }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuthSignType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.OriginAuthSignType }).(pulumi.StringPtrOutput)
 }
 
 // The name of the CDN configuration type.
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.Type }).(pulumi.StringOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6309,12 +5404,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) ToGet
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput {
@@ -6358,12 +5447,6 @@ func (i GetStreamDistributionChannelsFilterArgs) ToGetStreamDistributionChannels
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsFilterOutput)
 }
 
-func (i GetStreamDistributionChannelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[GetStreamDistributionChannelsFilter]{
-		OutputState: i.ToGetStreamDistributionChannelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamDistributionChannelsFilterArrayInput is an input type that accepts GetStreamDistributionChannelsFilterArray and GetStreamDistributionChannelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamDistributionChannelsFilterArrayInput` via:
 //
@@ -6389,12 +5472,6 @@ func (i GetStreamDistributionChannelsFilterArray) ToGetStreamDistributionChannel
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsFilterArrayOutput)
 }
 
-func (i GetStreamDistributionChannelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[[]GetStreamDistributionChannelsFilter]{
-		OutputState: i.ToGetStreamDistributionChannelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamDistributionChannelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamDistributionChannelsFilterOutput) ElementType() reflect.Type {
@@ -6407,12 +5484,6 @@ func (o GetStreamDistributionChannelsFilterOutput) ToGetStreamDistributionChanne
 
 func (o GetStreamDistributionChannelsFilterOutput) ToGetStreamDistributionChannelsFilterOutputWithContext(ctx context.Context) GetStreamDistributionChannelsFilterOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[GetStreamDistributionChannelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamDistributionChannelsFilterOutput) Name() pulumi.StringOutput {
@@ -6439,12 +5510,6 @@ func (o GetStreamDistributionChannelsFilterArrayOutput) ToGetStreamDistributionC
 
 func (o GetStreamDistributionChannelsFilterArrayOutput) ToGetStreamDistributionChannelsFilterArrayOutputWithContext(ctx context.Context) GetStreamDistributionChannelsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[[]GetStreamDistributionChannelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamDistributionChannelsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelsFilterOutput {
@@ -6484,12 +5549,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput)
 }
 
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayInput is an input type that accepts GetStreamDistributionChannelsStreamDistributionChannelCollectionArray and GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayInput` via:
 //
@@ -6515,12 +5574,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput)
 }
 
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) ElementType() reflect.Type {
@@ -6533,12 +5586,6 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) 
 
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) Items() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput {
@@ -6561,12 +5608,6 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOut
 	return o
 }
 
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamDistributionChannelsStreamDistributionChannelCollection {
 		return vs[0].([]GetStreamDistributionChannelsStreamDistributionChannelCollection)[vs[1].(int)]
@@ -6575,25 +5616,25 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOut
 
 type GetStreamDistributionChannelsStreamDistributionChannelCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unique domain name of the Distribution Channel.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Stream Distribution Channel identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetStreamDistributionChannelsStreamDistributionChannelCollectionItemInput is an input type that accepts GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs and GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput values.
@@ -6609,25 +5650,25 @@ type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemInput i
 
 type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unique domain name of the Distribution Channel.
-	DomainName pulumi.StringInput `pulumi:"domainName"`
+	DomainName pulumi.StringPtrInput `pulumi:"domainName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Stream Distribution Channel identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs) ElementType() reflect.Type {
@@ -6640,12 +5681,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs
 
 func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput)
-}
-
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayInput is an input type that accepts GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArray and GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput values.
@@ -6673,12 +5708,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput)
 }
 
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) ElementType() reflect.Type {
@@ -6693,17 +5722,11 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 	return o
 }
 
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -6714,17 +5737,17 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 }
 
 // A filter to return only the resources that match the entire display name given.
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique domain name of the Distribution Channel.
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) *string {
 		return v.DomainName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -6735,13 +5758,13 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 }
 
 // Unique Stream Distribution Channel identifier.
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6752,17 +5775,17 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 }
 
 // The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6779,12 +5802,6 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArra
 	return o
 }
 
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamDistributionChannelsStreamDistributionChannelCollectionItem {
 		return vs[0].([]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem)[vs[1].(int)]
@@ -6793,9 +5810,9 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArra
 
 type GetStreamPackagingConfigEncryption struct {
 	// The encryption algorithm for the stream packaging configuration.
-	Algorithm string `pulumi:"algorithm"`
+	Algorithm *string `pulumi:"algorithm"`
 	// The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
 // GetStreamPackagingConfigEncryptionInput is an input type that accepts GetStreamPackagingConfigEncryptionArgs and GetStreamPackagingConfigEncryptionOutput values.
@@ -6811,9 +5828,9 @@ type GetStreamPackagingConfigEncryptionInput interface {
 
 type GetStreamPackagingConfigEncryptionArgs struct {
 	// The encryption algorithm for the stream packaging configuration.
-	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
 	// The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
 func (GetStreamPackagingConfigEncryptionArgs) ElementType() reflect.Type {
@@ -6826,12 +5843,6 @@ func (i GetStreamPackagingConfigEncryptionArgs) ToGetStreamPackagingConfigEncryp
 
 func (i GetStreamPackagingConfigEncryptionArgs) ToGetStreamPackagingConfigEncryptionOutputWithContext(ctx context.Context) GetStreamPackagingConfigEncryptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigEncryptionOutput)
-}
-
-func (i GetStreamPackagingConfigEncryptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigEncryptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPackagingConfigEncryptionArrayInput is an input type that accepts GetStreamPackagingConfigEncryptionArray and GetStreamPackagingConfigEncryptionArrayOutput values.
@@ -6859,12 +5870,6 @@ func (i GetStreamPackagingConfigEncryptionArray) ToGetStreamPackagingConfigEncry
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigEncryptionArrayOutput)
 }
 
-func (i GetStreamPackagingConfigEncryptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigEncryptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigEncryptionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigEncryptionOutput) ElementType() reflect.Type {
@@ -6879,20 +5884,14 @@ func (o GetStreamPackagingConfigEncryptionOutput) ToGetStreamPackagingConfigEncr
 	return o
 }
 
-func (o GetStreamPackagingConfigEncryptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The encryption algorithm for the stream packaging configuration.
-func (o GetStreamPackagingConfigEncryptionOutput) Algorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigEncryption) string { return v.Algorithm }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigEncryptionOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigEncryption) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-func (o GetStreamPackagingConfigEncryptionOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigEncryption) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigEncryptionOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigEncryption) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPackagingConfigEncryptionArrayOutput struct{ *pulumi.OutputState }
@@ -6907,12 +5906,6 @@ func (o GetStreamPackagingConfigEncryptionArrayOutput) ToGetStreamPackagingConfi
 
 func (o GetStreamPackagingConfigEncryptionArrayOutput) ToGetStreamPackagingConfigEncryptionArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigEncryptionArrayOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigEncryptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigEncryptionArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigEncryptionOutput {
@@ -6956,12 +5949,6 @@ func (i GetStreamPackagingConfigsFilterArgs) ToGetStreamPackagingConfigsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsFilterOutput)
 }
 
-func (i GetStreamPackagingConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[GetStreamPackagingConfigsFilter]{
-		OutputState: i.ToGetStreamPackagingConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPackagingConfigsFilterArrayInput is an input type that accepts GetStreamPackagingConfigsFilterArray and GetStreamPackagingConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamPackagingConfigsFilterArrayInput` via:
 //
@@ -6987,12 +5974,6 @@ func (i GetStreamPackagingConfigsFilterArray) ToGetStreamPackagingConfigsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsFilterArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[[]GetStreamPackagingConfigsFilter]{
-		OutputState: i.ToGetStreamPackagingConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsFilterOutput) ElementType() reflect.Type {
@@ -7005,12 +5986,6 @@ func (o GetStreamPackagingConfigsFilterOutput) ToGetStreamPackagingConfigsFilter
 
 func (o GetStreamPackagingConfigsFilterOutput) ToGetStreamPackagingConfigsFilterOutputWithContext(ctx context.Context) GetStreamPackagingConfigsFilterOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[GetStreamPackagingConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsFilterOutput) Name() pulumi.StringOutput {
@@ -7037,12 +6012,6 @@ func (o GetStreamPackagingConfigsFilterArrayOutput) ToGetStreamPackagingConfigsF
 
 func (o GetStreamPackagingConfigsFilterArrayOutput) ToGetStreamPackagingConfigsFilterArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[[]GetStreamPackagingConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsFilterOutput {
@@ -7082,12 +6051,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArgs) ToGetStrea
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionArray and GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayInput` via:
 //
@@ -7113,12 +6076,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArray) ToGetStre
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ElementType() reflect.Type {
@@ -7131,12 +6088,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ToGetStr
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) Items() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput {
@@ -7159,12 +6110,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) ToG
 	return o
 }
 
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigsStreamPackagingConfigCollection {
 		return vs[0].([]GetStreamPackagingConfigsStreamPackagingConfigCollection)[vs[1].(int)]
@@ -7173,31 +6118,31 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) Ind
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItem struct {
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unique Stream Distribution Channel identifier.
-	DistributionChannelId string `pulumi:"distributionChannelId"`
+	DistributionChannelId *string `pulumi:"distributionChannelId"`
 	// The encryption used by the stream packaging configuration.
 	Encryptions []GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption `pulumi:"encryptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The duration in seconds for each fragment.
-	SegmentTimeInSeconds int `pulumi:"segmentTimeInSeconds"`
+	SegmentTimeInSeconds *int `pulumi:"segmentTimeInSeconds"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The output format for the package.
-	StreamPackagingFormat string `pulumi:"streamPackagingFormat"`
+	StreamPackagingFormat *string `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionItemInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput values.
@@ -7213,31 +6158,31 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemInput interface
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs struct {
 	// Compartment Identifier
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unique Stream Distribution Channel identifier.
-	DistributionChannelId pulumi.StringInput `pulumi:"distributionChannelId"`
+	DistributionChannelId pulumi.StringPtrInput `pulumi:"distributionChannelId"`
 	// The encryption used by the stream packaging configuration.
 	Encryptions GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayInput `pulumi:"encryptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The duration in seconds for each fragment.
-	SegmentTimeInSeconds pulumi.IntInput `pulumi:"segmentTimeInSeconds"`
+	SegmentTimeInSeconds pulumi.IntPtrInput `pulumi:"segmentTimeInSeconds"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The output format for the package.
-	StreamPackagingFormat pulumi.StringInput `pulumi:"streamPackagingFormat"`
+	StreamPackagingFormat pulumi.StringPtrInput `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs) ElementType() reflect.Type {
@@ -7250,12 +6195,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs) ToGetS
 
 func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput)
-}
-
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArray and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput values.
@@ -7283,12 +6222,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ElementType() reflect.Type {
@@ -7303,15 +6236,9 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ToGe
 	return o
 }
 
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -7322,15 +6249,15 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Defi
 }
 
 // A filter to return only the resources that match the entire display name given.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Unique Stream Distribution Channel identifier.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) DistributionChannelId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) DistributionChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string {
 		return v.DistributionChannelId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The encryption used by the stream packaging configuration.
@@ -7348,27 +6275,27 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Free
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The duration in seconds for each fragment.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) SegmentTimeInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) int {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) SegmentTimeInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *int {
 		return v.SegmentTimeInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The output format for the package.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) StreamPackagingFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) StreamPackagingFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string {
 		return v.StreamPackagingFormat
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7379,13 +6306,13 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Syst
 }
 
 // The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7402,12 +6329,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput)
 	return o
 }
 
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigsStreamPackagingConfigCollectionItem {
 		return vs[0].([]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem)[vs[1].(int)]
@@ -7416,9 +6337,9 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput)
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption struct {
 	// The encryption algorithm for the stream packaging configuration.
-	Algorithm string `pulumi:"algorithm"`
+	Algorithm *string `pulumi:"algorithm"`
 	// The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput values.
@@ -7434,9 +6355,9 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionInput
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs struct {
 	// The encryption algorithm for the stream packaging configuration.
-	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
 	// The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs) ElementType() reflect.Type {
@@ -7449,12 +6370,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 
 func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput)
-}
-
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArray and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput values.
@@ -7482,12 +6397,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) ElementType() reflect.Type {
@@ -7502,24 +6411,18 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOu
 	return o
 }
 
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The encryption algorithm for the stream packaging configuration.
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) Algorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption) string {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption) *string {
 		return v.Algorithm
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption) string {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption) *string {
 		return v.KmsKeyId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput struct{ *pulumi.OutputState }
@@ -7536,12 +6439,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 	return o
 }
 
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption {
 		return vs[0].([]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption)[vs[1].(int)]
@@ -7550,11 +6447,11 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 
 type GetSystemMediaWorkflowItem struct {
 	// Description of this workflow's processing and how that processing can be customized by specifying parameter values.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only the resources with their system defined, unique name matching the given name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters string `pulumi:"parameters"`
+	Parameters *string `pulumi:"parameters"`
 	// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
 	Tasks []GetSystemMediaWorkflowItemTask `pulumi:"tasks"`
 }
@@ -7572,11 +6469,11 @@ type GetSystemMediaWorkflowItemInput interface {
 
 type GetSystemMediaWorkflowItemArgs struct {
 	// Description of this workflow's processing and how that processing can be customized by specifying parameter values.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only the resources with their system defined, unique name matching the given name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-	Parameters pulumi.StringInput `pulumi:"parameters"`
+	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
 	// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
 	Tasks GetSystemMediaWorkflowItemTaskArrayInput `pulumi:"tasks"`
 }
@@ -7591,12 +6488,6 @@ func (i GetSystemMediaWorkflowItemArgs) ToGetSystemMediaWorkflowItemOutput() Get
 
 func (i GetSystemMediaWorkflowItemArgs) ToGetSystemMediaWorkflowItemOutputWithContext(ctx context.Context) GetSystemMediaWorkflowItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemOutput)
-}
-
-func (i GetSystemMediaWorkflowItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItem] {
-	return pulumix.Output[GetSystemMediaWorkflowItem]{
-		OutputState: i.ToGetSystemMediaWorkflowItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSystemMediaWorkflowItemArrayInput is an input type that accepts GetSystemMediaWorkflowItemArray and GetSystemMediaWorkflowItemArrayOutput values.
@@ -7624,12 +6515,6 @@ func (i GetSystemMediaWorkflowItemArray) ToGetSystemMediaWorkflowItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemArrayOutput)
 }
 
-func (i GetSystemMediaWorkflowItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItem] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItem]{
-		OutputState: i.ToGetSystemMediaWorkflowItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSystemMediaWorkflowItemOutput struct{ *pulumi.OutputState }
 
 func (GetSystemMediaWorkflowItemOutput) ElementType() reflect.Type {
@@ -7644,25 +6529,19 @@ func (o GetSystemMediaWorkflowItemOutput) ToGetSystemMediaWorkflowItemOutputWith
 	return o
 }
 
-func (o GetSystemMediaWorkflowItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItem] {
-	return pulumix.Output[GetSystemMediaWorkflowItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Description of this workflow's processing and how that processing can be customized by specifying parameter values.
-func (o GetSystemMediaWorkflowItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources with their system defined, unique name matching the given name.
-func (o GetSystemMediaWorkflowItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-func (o GetSystemMediaWorkflowItemOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItem) string { return v.Parameters }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowItemOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItem) *string { return v.Parameters }).(pulumi.StringPtrOutput)
 }
 
 // The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
@@ -7684,12 +6563,6 @@ func (o GetSystemMediaWorkflowItemArrayOutput) ToGetSystemMediaWorkflowItemArray
 	return o
 }
 
-func (o GetSystemMediaWorkflowItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItem] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSystemMediaWorkflowItemArrayOutput) Index(i pulumi.IntInput) GetSystemMediaWorkflowItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemMediaWorkflowItem {
 		return vs[0].([]GetSystemMediaWorkflowItem)[vs[1].(int)]
@@ -7698,19 +6571,19 @@ func (o GetSystemMediaWorkflowItemArrayOutput) Index(i pulumi.IntInput) GetSyste
 
 type GetSystemMediaWorkflowItemTask struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-	EnableParameterReference string `pulumi:"enableParameterReference"`
+	EnableParameterReference *string `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
 	EnableWhenReferencedParameterEquals map[string]interface{} `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
 	Parameters string `pulumi:"parameters"`
 	// Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
 	Prerequisites []string `pulumi:"prerequisites"`
 	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The version of the MediaWorkflowTaskDeclaration.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetSystemMediaWorkflowItemTaskInput is an input type that accepts GetSystemMediaWorkflowItemTaskArgs and GetSystemMediaWorkflowItemTaskOutput values.
@@ -7726,19 +6599,19 @@ type GetSystemMediaWorkflowItemTaskInput interface {
 
 type GetSystemMediaWorkflowItemTaskArgs struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-	EnableParameterReference pulumi.StringInput `pulumi:"enableParameterReference"`
+	EnableParameterReference pulumi.StringPtrInput `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
 	EnableWhenReferencedParameterEquals pulumi.MapInput `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
 	Parameters pulumi.StringInput `pulumi:"parameters"`
 	// Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
 	Prerequisites pulumi.StringArrayInput `pulumi:"prerequisites"`
 	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The version of the MediaWorkflowTaskDeclaration.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetSystemMediaWorkflowItemTaskArgs) ElementType() reflect.Type {
@@ -7751,12 +6624,6 @@ func (i GetSystemMediaWorkflowItemTaskArgs) ToGetSystemMediaWorkflowItemTaskOutp
 
 func (i GetSystemMediaWorkflowItemTaskArgs) ToGetSystemMediaWorkflowItemTaskOutputWithContext(ctx context.Context) GetSystemMediaWorkflowItemTaskOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemTaskOutput)
-}
-
-func (i GetSystemMediaWorkflowItemTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[GetSystemMediaWorkflowItemTask]{
-		OutputState: i.ToGetSystemMediaWorkflowItemTaskOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSystemMediaWorkflowItemTaskArrayInput is an input type that accepts GetSystemMediaWorkflowItemTaskArray and GetSystemMediaWorkflowItemTaskArrayOutput values.
@@ -7784,12 +6651,6 @@ func (i GetSystemMediaWorkflowItemTaskArray) ToGetSystemMediaWorkflowItemTaskArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemTaskArrayOutput)
 }
 
-func (i GetSystemMediaWorkflowItemTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItemTask]{
-		OutputState: i.ToGetSystemMediaWorkflowItemTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSystemMediaWorkflowItemTaskOutput struct{ *pulumi.OutputState }
 
 func (GetSystemMediaWorkflowItemTaskOutput) ElementType() reflect.Type {
@@ -7804,15 +6665,9 @@ func (o GetSystemMediaWorkflowItemTaskOutput) ToGetSystemMediaWorkflowItemTaskOu
 	return o
 }
 
-func (o GetSystemMediaWorkflowItemTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[GetSystemMediaWorkflowItemTask]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-func (o GetSystemMediaWorkflowItemTaskOutput) EnableParameterReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) string { return v.EnableParameterReference }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowItemTaskOutput) EnableParameterReference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) *string { return v.EnableParameterReference }).(pulumi.StringPtrOutput)
 }
 
 // Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
@@ -7823,8 +6678,8 @@ func (o GetSystemMediaWorkflowItemTaskOutput) EnableWhenReferencedParameterEqual
 }
 
 // A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-func (o GetSystemMediaWorkflowItemTaskOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) string { return v.Key }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowItemTaskOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -7838,13 +6693,13 @@ func (o GetSystemMediaWorkflowItemTaskOutput) Prerequisites() pulumi.StringArray
 }
 
 // The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-func (o GetSystemMediaWorkflowItemTaskOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) string { return v.Type }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowItemTaskOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The version of the MediaWorkflowTaskDeclaration.
-func (o GetSystemMediaWorkflowItemTaskOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) string { return v.Version }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowItemTaskOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetSystemMediaWorkflowItemTaskArrayOutput struct{ *pulumi.OutputState }
@@ -7859,12 +6714,6 @@ func (o GetSystemMediaWorkflowItemTaskArrayOutput) ToGetSystemMediaWorkflowItemT
 
 func (o GetSystemMediaWorkflowItemTaskArrayOutput) ToGetSystemMediaWorkflowItemTaskArrayOutputWithContext(ctx context.Context) GetSystemMediaWorkflowItemTaskArrayOutput {
 	return o
-}
-
-func (o GetSystemMediaWorkflowItemTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItemTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSystemMediaWorkflowItemTaskArrayOutput) Index(i pulumi.IntInput) GetSystemMediaWorkflowItemTaskOutput {

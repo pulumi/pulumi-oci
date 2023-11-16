@@ -39,14 +39,11 @@ class GetDataSourceEventResult:
     @property
     @pulumi.getter(name="dataSourceId")
     def data_source_id(self) -> str:
-        """
-        Attached data Source
-        """
         return pulumi.get(self, "data_source_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -54,18 +51,12 @@ class GetDataSourceEventResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDataSourceEventItemResult']:
-        """
-        List of event related to a DataSource
-        """
+    def items(self) -> Optional[Sequence['outputs.GetDataSourceEventItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def region(self) -> Optional[str]:
-        """
-        Data source event region
-        """
         return pulumi.get(self, "region")
 
 
@@ -85,23 +76,7 @@ def get_data_source_event(data_source_id: Optional[str] = None,
                           region: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataSourceEventResult:
     """
-    This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of events from CloudGuard DataSource
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_source_event = oci.CloudGuard.get_data_source_event(data_source_id=oci_cloud_guard_data_source["test_data_source"]["id"],
-        region=var["data_source_event_region"])
-    ```
-
-
-    :param str data_source_id: DataSource OCID
-    :param str region: A filter to return only resource their region matches the given region.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dataSourceId'] = data_source_id
@@ -121,22 +96,6 @@ def get_data_source_event_output(data_source_id: Optional[pulumi.Input[str]] = N
                                  region: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSourceEventResult]:
     """
-    This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of events from CloudGuard DataSource
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_source_event = oci.CloudGuard.get_data_source_event(data_source_id=oci_cloud_guard_data_source["test_data_source"]["id"],
-        region=var["data_source_event_region"])
-    ```
-
-
-    :param str data_source_id: DataSource OCID
-    :param str region: A filter to return only resource their region matches the given region.
+    Use this data source to access information about an existing resource.
     """
     ...

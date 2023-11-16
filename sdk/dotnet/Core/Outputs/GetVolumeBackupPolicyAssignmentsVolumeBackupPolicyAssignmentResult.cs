@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of an asset (e.g. a volume).
         /// </summary>
-        public readonly string AssetId;
+        public readonly string? AssetId;
         /// <summary>
         /// The OCID of the volume backup policy assignment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the volume backup policy that has been assigned to the volume.
         /// </summary>
-        public readonly string PolicyId;
+        public readonly string? PolicyId;
         /// <summary>
         /// The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentResult(
-            string assetId,
+            string? assetId,
 
-            string id,
+            string? id,
 
-            string policyId,
+            string? policyId,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AssetId = assetId;
             Id = id;

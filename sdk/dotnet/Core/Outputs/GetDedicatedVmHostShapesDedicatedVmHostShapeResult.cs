@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/dedicatedVmHostShapes).
         /// </summary>
-        public readonly string DedicatedVmHostShape;
+        public readonly string? DedicatedVmHostShape;
 
         [OutputConstructor]
         private GetDedicatedVmHostShapesDedicatedVmHostShapeResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string dedicatedVmHostShape)
+            string? dedicatedVmHostShape)
         {
             AvailabilityDomain = availabilityDomain;
             DedicatedVmHostShape = dedicatedVmHostShape;

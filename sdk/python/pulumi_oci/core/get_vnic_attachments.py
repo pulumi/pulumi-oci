@@ -49,17 +49,11 @@ class GetVnicAttachmentsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -69,7 +63,7 @@ class GetVnicAttachmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,25 +72,16 @@ class GetVnicAttachmentsResult:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[str]:
-        """
-        The OCID of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="vnicAttachments")
-    def vnic_attachments(self) -> Sequence['outputs.GetVnicAttachmentsVnicAttachmentResult']:
-        """
-        The list of vnic_attachments.
-        """
+    def vnic_attachments(self) -> Optional[Sequence['outputs.GetVnicAttachmentsVnicAttachmentResult']]:
         return pulumi.get(self, "vnic_attachments")
 
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[str]:
-        """
-        The OCID of the VNIC. Available after the attachment process is complete.
-        """
         return pulumi.get(self, "vnic_id")
 
 
@@ -122,29 +107,7 @@ def get_vnic_attachments(availability_domain: Optional[str] = None,
                          vnic_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVnicAttachmentsResult:
     """
-    This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
-
-    Lists the VNIC attachments in the specified compartment. A VNIC attachment
-    resides in the same compartment as the attached instance. The list can be
-    filtered by instance, VNIC, or availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=var["compartment_id"],
-        availability_domain=var["vnic_attachment_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        vnic_id=oci_core_vnic["test_vnic"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
-    :param str vnic_id: The OCID of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -173,28 +136,6 @@ def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optio
                                 vnic_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVnicAttachmentsResult]:
     """
-    This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
-
-    Lists the VNIC attachments in the specified compartment. A VNIC attachment
-    resides in the same compartment as the attached instance. The list can be
-    filtered by instance, VNIC, or availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=var["compartment_id"],
-        availability_domain=var["vnic_attachment_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        vnic_id=oci_core_vnic["test_vnic"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
-    :param str vnic_id: The OCID of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     ...

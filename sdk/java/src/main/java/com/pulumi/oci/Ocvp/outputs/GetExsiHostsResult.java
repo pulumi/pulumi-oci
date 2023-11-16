@@ -34,13 +34,13 @@ public final class GetExsiHostsResult {
      * @return The list of esxi_host_collection.
      * 
      */
-    private List<GetExsiHostsEsxiHostCollection> esxiHostCollections;
+    private @Nullable List<GetExsiHostsEsxiHostCollection> esxiHostCollections;
     private @Nullable List<GetExsiHostsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isBillingDonorsOnly;
     private @Nullable Boolean isSwapBillingOnly;
     /**
@@ -81,7 +81,7 @@ public final class GetExsiHostsResult {
      * 
      */
     public List<GetExsiHostsEsxiHostCollection> esxiHostCollections() {
-        return this.esxiHostCollections;
+        return this.esxiHostCollections == null ? List.of() : this.esxiHostCollections;
     }
     public List<GetExsiHostsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -90,8 +90,8 @@ public final class GetExsiHostsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isBillingDonorsOnly() {
         return Optional.ofNullable(this.isBillingDonorsOnly);
@@ -126,9 +126,9 @@ public final class GetExsiHostsResult {
         private @Nullable String compartmentId;
         private @Nullable String computeInstanceId;
         private @Nullable String displayName;
-        private List<GetExsiHostsEsxiHostCollection> esxiHostCollections;
+        private @Nullable List<GetExsiHostsEsxiHostCollection> esxiHostCollections;
         private @Nullable List<GetExsiHostsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isBillingDonorsOnly;
         private @Nullable Boolean isSwapBillingOnly;
         private @Nullable String sddcId;
@@ -164,8 +164,8 @@ public final class GetExsiHostsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder esxiHostCollections(List<GetExsiHostsEsxiHostCollection> esxiHostCollections) {
-            this.esxiHostCollections = Objects.requireNonNull(esxiHostCollections);
+        public Builder esxiHostCollections(@Nullable List<GetExsiHostsEsxiHostCollection> esxiHostCollections) {
+            this.esxiHostCollections = esxiHostCollections;
             return this;
         }
         public Builder esxiHostCollections(GetExsiHostsEsxiHostCollection... esxiHostCollections) {
@@ -180,8 +180,8 @@ public final class GetExsiHostsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

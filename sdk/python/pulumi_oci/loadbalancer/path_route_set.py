@@ -21,9 +21,6 @@ class PathRouteSetArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PathRouteSet resource.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        :param pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]] path_routes: (Updatable) The set of path route rules.
-        :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         """
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         pulumi.set(__self__, "path_routes", path_routes)
@@ -33,9 +30,6 @@ class PathRouteSetArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -45,9 +39,6 @@ class PathRouteSetArgs:
     @property
     @pulumi.getter(name="pathRoutes")
     def path_routes(self) -> pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]:
-        """
-        (Updatable) The set of path route rules.
-        """
         return pulumi.get(self, "path_routes")
 
     @path_routes.setter
@@ -57,9 +48,6 @@ class PathRouteSetArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -76,9 +64,6 @@ class _PathRouteSetState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PathRouteSet resources.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        :param pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]] path_routes: (Updatable) The set of path route rules.
         """
         if load_balancer_id is not None:
             pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -92,9 +77,6 @@ class _PathRouteSetState:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -104,9 +86,6 @@ class _PathRouteSetState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -116,9 +95,6 @@ class _PathRouteSetState:
     @property
     @pulumi.getter(name="pathRoutes")
     def path_routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]]:
-        """
-        (Updatable) The set of path route rules.
-        """
         return pulumi.get(self, "path_routes")
 
     @path_routes.setter
@@ -145,41 +121,9 @@ class PathRouteSet(pulumi.CustomResource):
                  path_routes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PathRouteSetPathRouteArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a path route set to a load balancer. For more information, see
-        [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_path_route_set = oci.load_balancer.PathRouteSet("testPathRouteSet",
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            path_routes=[oci.load_balancer.PathRouteSetPathRouteArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                path=var["path_route_set_path_routes_path"],
-                path_match_type=oci.load_balancer.PathRouteSetPathRoutePathMatchTypeArgs(
-                    match_type=var["path_route_set_path_routes_path_match_type_match_type"],
-                ),
-            )])
-        ```
-
-        ## Import
-
-        PathRouteSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
-        ```
-
+        Create a PathRouteSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PathRouteSetPathRouteArgs']]]] path_routes: (Updatable) The set of path route rules.
         """
         ...
     @overload
@@ -188,36 +132,7 @@ class PathRouteSet(pulumi.CustomResource):
                  args: PathRouteSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a path route set to a load balancer. For more information, see
-        [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_path_route_set = oci.load_balancer.PathRouteSet("testPathRouteSet",
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            path_routes=[oci.load_balancer.PathRouteSetPathRouteArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                path=var["path_route_set_path_routes_path"],
-                path_match_type=oci.load_balancer.PathRouteSetPathRoutePathMatchTypeArgs(
-                    match_type=var["path_route_set_path_routes_path_match_type_match_type"],
-                ),
-            )])
-        ```
-
-        ## Import
-
-        PathRouteSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
-        ```
-
+        Create a PathRouteSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PathRouteSetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -274,9 +189,6 @@ class PathRouteSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PathRouteSetPathRouteArgs']]]] path_routes: (Updatable) The set of path route rules.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -291,29 +203,20 @@ class PathRouteSet(pulumi.CustomResource):
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="pathRoutes")
     def path_routes(self) -> pulumi.Output[Sequence['outputs.PathRouteSetPathRoute']]:
-        """
-        (Updatable) The set of path route rules.
-        """
         return pulumi.get(self, "path_routes")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

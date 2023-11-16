@@ -16,14 +16,14 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
-        public readonly string Name;
-        public readonly string Value;
+        public readonly string? Name;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

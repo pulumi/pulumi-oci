@@ -49,25 +49,16 @@ class GetDrgRouteTablesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
-        """
         return pulumi.get(self, "drg_id")
 
     @property
     @pulumi.getter(name="drgRouteTables")
-    def drg_route_tables(self) -> Sequence['outputs.GetDrgRouteTablesDrgRouteTableResult']:
-        """
-        The list of drg_route_tables.
-        """
+    def drg_route_tables(self) -> Optional[Sequence['outputs.GetDrgRouteTablesDrgRouteTableResult']]:
         return pulumi.get(self, "drg_route_tables")
 
     @property
@@ -77,7 +68,7 @@ class GetDrgRouteTablesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,17 +77,11 @@ class GetDrgRouteTablesResult:
     @property
     @pulumi.getter(name="importDrgRouteDistributionId")
     def import_drg_route_distribution_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
-        """
         return pulumi.get(self, "import_drg_route_distribution_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The DRG route table's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,29 +107,7 @@ def get_drg_route_tables(display_name: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteTablesResult:
     """
-    This data source provides the list of Drg Route Tables in Oracle Cloud Infrastructure Core service.
-
-    Lists the DRG route tables for the specified DRG.
-
-    Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_table_display_name"],
-        import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-        state=var["drg_route_table_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-    :param str import_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
-    :param str state: A filter that only returns matches for the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -173,28 +136,6 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteTablesResult]:
     """
-    This data source provides the list of Drg Route Tables in Oracle Cloud Infrastructure Core service.
-
-    Lists the DRG route tables for the specified DRG.
-
-    Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_table_display_name"],
-        import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-        state=var["drg_route_table_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-    :param str import_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
-    :param str state: A filter that only returns matches for the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

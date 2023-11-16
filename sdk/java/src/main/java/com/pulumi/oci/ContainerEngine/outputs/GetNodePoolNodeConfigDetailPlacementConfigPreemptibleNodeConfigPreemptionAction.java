@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction {
@@ -14,27 +16,27 @@ public final class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConf
      * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
-    private Boolean isPreserveBootVolume;
+    private @Nullable Boolean isPreserveBootVolume;
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction() {}
     /**
      * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
-    public Boolean isPreserveBootVolume() {
-        return this.isPreserveBootVolume;
+    public Optional<Boolean> isPreserveBootVolume() {
+        return Optional.ofNullable(this.isPreserveBootVolume);
     }
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConf
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isPreserveBootVolume;
-        private String type;
+        private @Nullable Boolean isPreserveBootVolume;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConf
         }
 
         @CustomType.Setter
-        public Builder isPreserveBootVolume(Boolean isPreserveBootVolume) {
-            this.isPreserveBootVolume = Objects.requireNonNull(isPreserveBootVolume);
+        public Builder isPreserveBootVolume(@Nullable Boolean isPreserveBootVolume) {
+            this.isPreserveBootVolume = isPreserveBootVolume;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction build() {

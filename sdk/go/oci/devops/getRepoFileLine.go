@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
@@ -70,7 +69,7 @@ type GetRepoFileLineArgs struct {
 type GetRepoFileLineResult struct {
 	FilePath string `pulumi:"filePath"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of lines in the file.
 	Lines           []GetRepoFileLineLine `pulumi:"lines"`
 	RepositoryId    string                `pulumi:"repositoryId"`
@@ -122,19 +121,13 @@ func (o GetRepoFileLineResultOutput) ToGetRepoFileLineResultOutputWithContext(ct
 	return o
 }
 
-func (o GetRepoFileLineResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepoFileLineResult] {
-	return pulumix.Output[GetRepoFileLineResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepoFileLineResultOutput) FilePath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepoFileLineResult) string { return v.FilePath }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepoFileLineResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepoFileLineResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepoFileLineResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepoFileLineResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of lines in the file.

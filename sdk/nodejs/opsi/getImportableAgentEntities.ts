@@ -52,11 +52,11 @@ export interface GetImportableAgentEntitiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of importable agent entity objects.
      */
-    readonly items: outputs.Opsi.GetImportableAgentEntitiesItem[];
+    readonly items?: outputs.Opsi.GetImportableAgentEntitiesItem[];
 }
 /**
  * This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.

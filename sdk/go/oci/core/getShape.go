@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetShape(ctx *pulumi.Context, args *GetShapeArgs, opts ...pulumi.InvokeOption) (*GetShapeResult, error) {
@@ -36,7 +35,7 @@ type GetShapeResult struct {
 	CompartmentId      string           `pulumi:"compartmentId"`
 	Filters            []GetShapeFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string          `pulumi:"id"`
+	Id      *string         `pulumi:"id"`
 	ImageId *string         `pulumi:"imageId"`
 	Shapes  []GetShapeShape `pulumi:"shapes"`
 }
@@ -81,12 +80,6 @@ func (o GetShapeResultOutput) ToGetShapeResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeResult] {
-	return pulumix.Output[GetShapeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetShapeResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetShapeResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -100,8 +93,8 @@ func (o GetShapeResultOutput) Filters() GetShapeFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetShapeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetShapeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetShapeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetShapeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetShapeResultOutput) ImageId() pulumi.StringPtrOutput {

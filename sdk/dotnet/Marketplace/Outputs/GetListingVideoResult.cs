@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// Text that describes the resource.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The URL of the resource.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetListingVideoResult(
-            string name,
+            string? name,
 
-            string url)
+            string? url)
         {
             Name = name;
             Url = url;

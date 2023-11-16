@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -44,56 +45,56 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment that contains this key version.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Key reference data to be returned to the customer as a response.
      * 
      */
     @Export(name="externalKeyReferenceDetails", refs={List.class,KeyVersionExternalKeyReferenceDetail.class}, tree="[0,1]")
-    private Output<List<KeyVersionExternalKeyReferenceDetail>> externalKeyReferenceDetails;
+    private Output</* @Nullable */ List<KeyVersionExternalKeyReferenceDetail>> externalKeyReferenceDetails;
 
     /**
      * @return Key reference data to be returned to the customer as a response.
      * 
      */
-    public Output<List<KeyVersionExternalKeyReferenceDetail>> externalKeyReferenceDetails() {
-        return this.externalKeyReferenceDetails;
+    public Output<Optional<List<KeyVersionExternalKeyReferenceDetail>>> externalKeyReferenceDetails() {
+        return Codegen.optional(this.externalKeyReferenceDetails);
     }
     /**
      * Key version ID associated with the external key.
      * 
      */
     @Export(name="externalKeyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> externalKeyVersionId;
+    private Output</* @Nullable */ String> externalKeyVersionId;
 
     /**
      * @return Key version ID associated with the external key.
      * 
      */
-    public Output<String> externalKeyVersionId() {
-        return this.externalKeyVersionId;
+    public Output<Optional<String>> externalKeyVersionId() {
+        return Codegen.optional(this.externalKeyVersionId);
     }
     /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
     @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrimary;
+    private Output</* @Nullable */ Boolean> isPrimary;
 
     /**
      * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
-    public Output<Boolean> isPrimary() {
-        return this.isPrimary;
+    public Output<Optional<Boolean>> isPrimary() {
+        return Codegen.optional(this.isPrimary);
     }
     /**
      * The OCID of the key.
@@ -110,10 +111,10 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
         return this.keyId;
     }
     @Export(name="keyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> keyVersionId;
+    private Output</* @Nullable */ String> keyVersionId;
 
-    public Output<String> keyVersionId() {
-        return this.keyVersionId;
+    public Output<Optional<String>> keyVersionId() {
+        return Codegen.optional(this.keyVersionId);
     }
     /**
      * The service endpoint to perform management operations against. Management operations include &#39;Create,&#39; &#39;Update,&#39; &#39;List,&#39; &#39;Get,&#39; and &#39;Delete&#39; operations. See Vault Management endpoint.
@@ -134,76 +135,76 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="publicKey", refs={String.class}, tree="[0]")
-    private Output<String> publicKey;
+    private Output</* @Nullable */ String> publicKey;
 
     /**
      * @return The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      * 
      */
-    public Output<String> publicKey() {
-        return this.publicKey;
+    public Output<Optional<String>> publicKey() {
+        return Codegen.optional(this.publicKey);
     }
     /**
      * KeyVersion replica details
      * 
      */
     @Export(name="replicaDetails", refs={List.class,KeyVersionReplicaDetail.class}, tree="[0,1]")
-    private Output<List<KeyVersionReplicaDetail>> replicaDetails;
+    private Output</* @Nullable */ List<KeyVersionReplicaDetail>> replicaDetails;
 
     /**
      * @return KeyVersion replica details
      * 
      */
-    public Output<List<KeyVersionReplicaDetail>> replicaDetails() {
-        return this.replicaDetails;
+    public Output<Optional<List<KeyVersionReplicaDetail>>> replicaDetails() {
+        return Codegen.optional(this.replicaDetails);
     }
     @Export(name="restoredFromKeyId", refs={String.class}, tree="[0]")
-    private Output<String> restoredFromKeyId;
+    private Output</* @Nullable */ String> restoredFromKeyId;
 
-    public Output<String> restoredFromKeyId() {
-        return this.restoredFromKeyId;
+    public Output<Optional<String>> restoredFromKeyId() {
+        return Codegen.optional(this.restoredFromKeyId);
     }
     /**
      * The OCID of the key version from which this key version was restored.
      * 
      */
     @Export(name="restoredFromKeyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> restoredFromKeyVersionId;
+    private Output</* @Nullable */ String> restoredFromKeyVersionId;
 
     /**
      * @return The OCID of the key version from which this key version was restored.
      * 
      */
-    public Output<String> restoredFromKeyVersionId() {
-        return this.restoredFromKeyVersionId;
+    public Output<Optional<String>> restoredFromKeyVersionId() {
+        return Codegen.optional(this.restoredFromKeyVersionId);
     }
     /**
      * The key version&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The key version&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: &#34;2018-04-03T21:10:29.600Z&#34;
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: &#34;2018-04-03T21:10:29.600Z&#34;
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -213,7 +214,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
-    private Output<String> timeOfDeletion;
+    private Output</* @Nullable */ String> timeOfDeletion;
 
     /**
      * @return (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -222,22 +223,22 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Output<Optional<String>> timeOfDeletion() {
+        return Codegen.optional(this.timeOfDeletion);
     }
     /**
      * The OCID of the vault that contains this key version.
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
-    private Output<String> vaultId;
+    private Output</* @Nullable */ String> vaultId;
 
     /**
      * @return The OCID of the vault that contains this key version.
      * 
      */
-    public Output<String> vaultId() {
-        return this.vaultId;
+    public Output<Optional<String>> vaultId() {
+        return Codegen.optional(this.vaultId);
     }
 
     /**

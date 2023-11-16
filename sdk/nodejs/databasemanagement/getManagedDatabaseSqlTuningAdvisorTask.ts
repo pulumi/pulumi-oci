@@ -71,11 +71,11 @@ export interface GetManagedDatabaseSqlTuningAdvisorTaskResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of SQL Tuning Advisor tasks.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTaskItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTaskItem[];
     readonly managedDatabaseId: string;
     /**
      * The name of the SQL Tuning Advisor task.

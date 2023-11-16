@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
@@ -79,21 +78,21 @@ type Fleet struct {
 	pulumi.CustomResourceState
 
 	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateApplicationCount pulumi.IntOutput `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount pulumi.IntPtrOutput `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateInstallationCount pulumi.IntOutput `pulumi:"approximateInstallationCount"`
+	ApproximateInstallationCount pulumi.IntPtrOutput `pulumi:"approximateInstallationCount"`
 	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJavaServerCount pulumi.IntOutput `pulumi:"approximateJavaServerCount"`
+	ApproximateJavaServerCount pulumi.IntPtrOutput `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJreCount pulumi.IntOutput `pulumi:"approximateJreCount"`
+	ApproximateJreCount pulumi.IntPtrOutput `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateManagedInstanceCount pulumi.IntOutput `pulumi:"approximateManagedInstanceCount"`
+	ApproximateManagedInstanceCount pulumi.IntPtrOutput `pulumi:"approximateManagedInstanceCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
@@ -101,15 +100,15 @@ type Fleet struct {
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog FleetInventoryLogOutput `pulumi:"inventoryLog"`
 	// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-	IsAdvancedFeaturesEnabled pulumi.BoolOutput `pulumi:"isAdvancedFeaturesEnabled"`
+	IsAdvancedFeaturesEnabled pulumi.BoolPtrOutput `pulumi:"isAdvancedFeaturesEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
-	OperationLog FleetOperationLogOutput `pulumi:"operationLog"`
+	OperationLog FleetOperationLogPtrOutput `pulumi:"operationLog"`
 	// The lifecycle state of the Fleet.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewFleet registers a new resource with the given unique name, arguments, and options.
@@ -286,12 +285,6 @@ func (i *Fleet) ToFleetOutputWithContext(ctx context.Context) FleetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FleetOutput)
 }
 
-func (i *Fleet) ToOutput(ctx context.Context) pulumix.Output[*Fleet] {
-	return pulumix.Output[*Fleet]{
-		OutputState: i.ToFleetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FleetArrayInput is an input type that accepts FleetArray and FleetArrayOutput values.
 // You can construct a concrete instance of `FleetArrayInput` via:
 //
@@ -315,12 +308,6 @@ func (i FleetArray) ToFleetArrayOutput() FleetArrayOutput {
 
 func (i FleetArray) ToFleetArrayOutputWithContext(ctx context.Context) FleetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FleetArrayOutput)
-}
-
-func (i FleetArray) ToOutput(ctx context.Context) pulumix.Output[[]*Fleet] {
-	return pulumix.Output[[]*Fleet]{
-		OutputState: i.ToFleetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FleetMapInput is an input type that accepts FleetMap and FleetMapOutput values.
@@ -348,12 +335,6 @@ func (i FleetMap) ToFleetMapOutputWithContext(ctx context.Context) FleetMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(FleetMapOutput)
 }
 
-func (i FleetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Fleet] {
-	return pulumix.Output[map[string]*Fleet]{
-		OutputState: i.ToFleetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FleetOutput struct{ *pulumi.OutputState }
 
 func (FleetOutput) ElementType() reflect.Type {
@@ -368,35 +349,29 @@ func (o FleetOutput) ToFleetOutputWithContext(ctx context.Context) FleetOutput {
 	return o
 }
 
-func (o FleetOutput) ToOutput(ctx context.Context) pulumix.Output[*Fleet] {
-	return pulumix.Output[*Fleet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o FleetOutput) ApproximateApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
+func (o FleetOutput) ApproximateApplicationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntPtrOutput { return v.ApproximateApplicationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o FleetOutput) ApproximateInstallationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
+func (o FleetOutput) ApproximateInstallationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntPtrOutput { return v.ApproximateInstallationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o FleetOutput) ApproximateJavaServerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
+func (o FleetOutput) ApproximateJavaServerCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntPtrOutput { return v.ApproximateJavaServerCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o FleetOutput) ApproximateJreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateJreCount }).(pulumi.IntOutput)
+func (o FleetOutput) ApproximateJreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntPtrOutput { return v.ApproximateJreCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o FleetOutput) ApproximateManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateManagedInstanceCount }).(pulumi.IntOutput)
+func (o FleetOutput) ApproximateManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntPtrOutput { return v.ApproximateManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -410,8 +385,8 @@ func (o FleetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
-func (o FleetOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o FleetOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
@@ -430,18 +405,18 @@ func (o FleetOutput) InventoryLog() FleetInventoryLogOutput {
 }
 
 // (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-func (o FleetOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.BoolOutput { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+func (o FleetOutput) IsAdvancedFeaturesEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.BoolPtrOutput { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Custom Log for inventory or operation log.
-func (o FleetOutput) OperationLog() FleetOperationLogOutput {
-	return o.ApplyT(func(v *Fleet) FleetOperationLogOutput { return v.OperationLog }).(FleetOperationLogOutput)
+func (o FleetOutput) OperationLog() FleetOperationLogPtrOutput {
+	return o.ApplyT(func(v *Fleet) FleetOperationLogPtrOutput { return v.OperationLog }).(FleetOperationLogPtrOutput)
 }
 
 // The lifecycle state of the Fleet.
-func (o FleetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FleetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -450,8 +425,8 @@ func (o FleetOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o FleetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Fleet) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o FleetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type FleetArrayOutput struct{ *pulumi.OutputState }
@@ -466,12 +441,6 @@ func (o FleetArrayOutput) ToFleetArrayOutput() FleetArrayOutput {
 
 func (o FleetArrayOutput) ToFleetArrayOutputWithContext(ctx context.Context) FleetArrayOutput {
 	return o
-}
-
-func (o FleetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Fleet] {
-	return pulumix.Output[[]*Fleet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FleetArrayOutput) Index(i pulumi.IntInput) FleetOutput {
@@ -492,12 +461,6 @@ func (o FleetMapOutput) ToFleetMapOutput() FleetMapOutput {
 
 func (o FleetMapOutput) ToFleetMapOutputWithContext(ctx context.Context) FleetMapOutput {
 	return o
-}
-
-func (o FleetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Fleet] {
-	return pulumix.Output[map[string]*Fleet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FleetMapOutput) MapIndex(k pulumi.StringInput) FleetOutput {

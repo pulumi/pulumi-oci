@@ -52,17 +52,11 @@ class GetDbManagementPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbManagementPrivateEndpointCollections")
-    def db_management_private_endpoint_collections(self) -> Sequence['outputs.GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionResult']:
-        """
-        The list of db_management_private_endpoint_collection.
-        """
+    def db_management_private_endpoint_collections(self) -> Optional[Sequence['outputs.GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionResult']]:
         return pulumi.get(self, "db_management_private_endpoint_collections")
 
     @property
@@ -72,7 +66,7 @@ class GetDbManagementPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,33 +75,21 @@ class GetDbManagementPrivateEndpointsResult:
     @property
     @pulumi.getter(name="isCluster")
     def is_cluster(self) -> Optional[bool]:
-        """
-        Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
-        """
         return pulumi.get(self, "is_cluster")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The display name of the Database Management private endpoint.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the Database Management private endpoint.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -135,29 +117,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
                                         vcn_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbManagementPrivateEndpointsResult:
     """
-    This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a list of Database Management private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=var["compartment_id"],
-        is_cluster=var["db_management_private_endpoint_is_cluster"],
-        name=var["db_management_private_endpoint_name"],
-        state=var["db_management_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool is_cluster: The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str state: The lifecycle state of a resource.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -189,28 +149,6 @@ def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.I
                                                vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointsResult]:
     """
-    This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a list of Database Management private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=var["compartment_id"],
-        is_cluster=var["db_management_private_endpoint_is_cluster"],
-        name=var["db_management_private_endpoint_name"],
-        state=var["db_management_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool is_cluster: The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str state: The lifecycle state of a resource.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

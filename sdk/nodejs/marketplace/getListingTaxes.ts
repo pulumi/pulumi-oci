@@ -57,12 +57,12 @@ export interface GetListingTaxesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly listingId: string;
     /**
      * The list of taxes.
      */
-    readonly taxes: outputs.Marketplace.GetListingTaxesTax[];
+    readonly taxes?: outputs.Marketplace.GetListingTaxesTax[];
 }
 /**
  * This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.

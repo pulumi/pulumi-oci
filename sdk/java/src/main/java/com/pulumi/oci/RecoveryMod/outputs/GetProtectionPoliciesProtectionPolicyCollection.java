@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectionPoliciesProtectionPolicyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectionPoliciesProtectionPolicyCollection {
-    private List<GetProtectionPoliciesProtectionPolicyCollectionItem> items;
+    private @Nullable List<GetProtectionPoliciesProtectionPolicyCollectionItem> items;
 
     private GetProtectionPoliciesProtectionPolicyCollection() {}
     public List<GetProtectionPoliciesProtectionPolicyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetProtectionPoliciesProtectionPolicyCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetProtectionPoliciesProtectionPolicyCollectionItem> items;
+        private @Nullable List<GetProtectionPoliciesProtectionPolicyCollectionItem> items;
         public Builder() {}
         public Builder(GetProtectionPoliciesProtectionPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetProtectionPoliciesProtectionPolicyCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetProtectionPoliciesProtectionPolicyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProtectionPoliciesProtectionPolicyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProtectionPoliciesProtectionPolicyCollectionItem... items) {

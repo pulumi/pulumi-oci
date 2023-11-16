@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides details about a specific Listing Package Agreement resource in Oracle Cloud Infrastructure Marketplace service.
@@ -56,19 +55,19 @@ type ListingPackageAgreement struct {
 	// The unique identifier for the agreement.
 	AgreementId pulumi.StringOutput `pulumi:"agreementId"`
 	// Who authored the agreement.
-	Author pulumi.StringOutput `pulumi:"author"`
+	Author pulumi.StringPtrOutput `pulumi:"author"`
 	// The unique identifier for the compartment, required in gov regions.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The content URL of the agreement.
-	ContentUrl pulumi.StringOutput `pulumi:"contentUrl"`
+	ContentUrl pulumi.StringPtrOutput `pulumi:"contentUrl"`
 	// The unique identifier for the listing.
 	ListingId pulumi.StringOutput `pulumi:"listingId"`
 	// The version of the package. Package versions are unique within a listing.
 	PackageVersion pulumi.StringOutput `pulumi:"packageVersion"`
 	// Textual prompt to read and accept the agreement.
-	Prompt pulumi.StringOutput `pulumi:"prompt"`
+	Prompt pulumi.StringPtrOutput `pulumi:"prompt"`
 	// A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
-	Signature pulumi.StringOutput `pulumi:"signature"`
+	Signature pulumi.StringPtrOutput `pulumi:"signature"`
 }
 
 // NewListingPackageAgreement registers a new resource with the given unique name, arguments, and options.
@@ -197,12 +196,6 @@ func (i *ListingPackageAgreement) ToListingPackageAgreementOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ListingPackageAgreementOutput)
 }
 
-func (i *ListingPackageAgreement) ToOutput(ctx context.Context) pulumix.Output[*ListingPackageAgreement] {
-	return pulumix.Output[*ListingPackageAgreement]{
-		OutputState: i.ToListingPackageAgreementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ListingPackageAgreementArrayInput is an input type that accepts ListingPackageAgreementArray and ListingPackageAgreementArrayOutput values.
 // You can construct a concrete instance of `ListingPackageAgreementArrayInput` via:
 //
@@ -226,12 +219,6 @@ func (i ListingPackageAgreementArray) ToListingPackageAgreementArrayOutput() Lis
 
 func (i ListingPackageAgreementArray) ToListingPackageAgreementArrayOutputWithContext(ctx context.Context) ListingPackageAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ListingPackageAgreementArrayOutput)
-}
-
-func (i ListingPackageAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ListingPackageAgreement] {
-	return pulumix.Output[[]*ListingPackageAgreement]{
-		OutputState: i.ToListingPackageAgreementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ListingPackageAgreementMapInput is an input type that accepts ListingPackageAgreementMap and ListingPackageAgreementMapOutput values.
@@ -259,12 +246,6 @@ func (i ListingPackageAgreementMap) ToListingPackageAgreementMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ListingPackageAgreementMapOutput)
 }
 
-func (i ListingPackageAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingPackageAgreement] {
-	return pulumix.Output[map[string]*ListingPackageAgreement]{
-		OutputState: i.ToListingPackageAgreementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ListingPackageAgreementOutput struct{ *pulumi.OutputState }
 
 func (ListingPackageAgreementOutput) ElementType() reflect.Type {
@@ -279,30 +260,24 @@ func (o ListingPackageAgreementOutput) ToListingPackageAgreementOutputWithContex
 	return o
 }
 
-func (o ListingPackageAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*ListingPackageAgreement] {
-	return pulumix.Output[*ListingPackageAgreement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique identifier for the agreement.
 func (o ListingPackageAgreementOutput) AgreementId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringOutput { return v.AgreementId }).(pulumi.StringOutput)
 }
 
 // Who authored the agreement.
-func (o ListingPackageAgreementOutput) Author() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringOutput { return v.Author }).(pulumi.StringOutput)
+func (o ListingPackageAgreementOutput) Author() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringPtrOutput { return v.Author }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the compartment, required in gov regions.
-func (o ListingPackageAgreementOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ListingPackageAgreementOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The content URL of the agreement.
-func (o ListingPackageAgreementOutput) ContentUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringOutput { return v.ContentUrl }).(pulumi.StringOutput)
+func (o ListingPackageAgreementOutput) ContentUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringPtrOutput { return v.ContentUrl }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the listing.
@@ -316,13 +291,13 @@ func (o ListingPackageAgreementOutput) PackageVersion() pulumi.StringOutput {
 }
 
 // Textual prompt to read and accept the agreement.
-func (o ListingPackageAgreementOutput) Prompt() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringOutput { return v.Prompt }).(pulumi.StringOutput)
+func (o ListingPackageAgreementOutput) Prompt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringPtrOutput { return v.Prompt }).(pulumi.StringPtrOutput)
 }
 
 // A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
-func (o ListingPackageAgreementOutput) Signature() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringOutput { return v.Signature }).(pulumi.StringOutput)
+func (o ListingPackageAgreementOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingPackageAgreement) pulumi.StringPtrOutput { return v.Signature }).(pulumi.StringPtrOutput)
 }
 
 type ListingPackageAgreementArrayOutput struct{ *pulumi.OutputState }
@@ -337,12 +312,6 @@ func (o ListingPackageAgreementArrayOutput) ToListingPackageAgreementArrayOutput
 
 func (o ListingPackageAgreementArrayOutput) ToListingPackageAgreementArrayOutputWithContext(ctx context.Context) ListingPackageAgreementArrayOutput {
 	return o
-}
-
-func (o ListingPackageAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ListingPackageAgreement] {
-	return pulumix.Output[[]*ListingPackageAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListingPackageAgreementArrayOutput) Index(i pulumi.IntInput) ListingPackageAgreementOutput {
@@ -363,12 +332,6 @@ func (o ListingPackageAgreementMapOutput) ToListingPackageAgreementMapOutput() L
 
 func (o ListingPackageAgreementMapOutput) ToListingPackageAgreementMapOutputWithContext(ctx context.Context) ListingPackageAgreementMapOutput {
 	return o
-}
-
-func (o ListingPackageAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingPackageAgreement] {
-	return pulumix.Output[map[string]*ListingPackageAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListingPackageAgreementMapOutput) MapIndex(k pulumi.StringInput) ListingPackageAgreementOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
@@ -60,22 +59,22 @@ type GetCommitmentArgs struct {
 // A collection of values returned by getCommitment.
 type GetCommitmentResult struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
-	CommitmentId    string `pulumi:"commitmentId"`
+	AvailableAmount *string `pulumi:"availableAmount"`
+	CommitmentId    string  `pulumi:"commitmentId"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Commitment quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// SPM internal Subscribed Service ID
-	SubscribedServiceId string `pulumi:"subscribedServiceId"`
+	SubscribedServiceId *string `pulumi:"subscribedServiceId"`
 	// Commitment end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Commitment start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Commitment used amount
-	UsedAmount string `pulumi:"usedAmount"`
+	UsedAmount *string `pulumi:"usedAmount"`
 }
 
 func GetCommitmentOutput(ctx *pulumi.Context, args GetCommitmentOutputArgs, opts ...pulumi.InvokeOption) GetCommitmentResultOutput {
@@ -116,15 +115,9 @@ func (o GetCommitmentResultOutput) ToGetCommitmentResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetCommitmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentResult] {
-	return pulumix.Output[GetCommitmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetCommitmentResultOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 func (o GetCommitmentResultOutput) CommitmentId() pulumi.StringOutput {
@@ -132,38 +125,38 @@ func (o GetCommitmentResultOutput) CommitmentId() pulumi.StringOutput {
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetCommitmentResultOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCommitmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Commitment quantity
-func (o GetCommitmentResultOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // SPM internal Subscribed Service ID
-func (o GetCommitmentResultOutput) SubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.SubscribedServiceId }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) SubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.SubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Commitment end date
-func (o GetCommitmentResultOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Commitment start date
-func (o GetCommitmentResultOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Commitment used amount
-func (o GetCommitmentResultOutput) UsedAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentResult) string { return v.UsedAmount }).(pulumi.StringOutput)
+func (o GetCommitmentResultOutput) UsedAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentResult) *string { return v.UsedAmount }).(pulumi.StringPtrOutput)
 }
 
 func init() {

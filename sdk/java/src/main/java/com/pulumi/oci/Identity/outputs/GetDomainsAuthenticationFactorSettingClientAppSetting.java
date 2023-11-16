@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingClientAppSetting {
@@ -15,183 +17,183 @@ public final class GetDomainsAuthenticationFactorSettingClientAppSetting {
      * @return Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
      * 
      */
-    private String deviceProtectionPolicy;
+    private @Nullable String deviceProtectionPolicy;
     /**
      * @return The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
      * 
      */
-    private Integer initialLockoutPeriodInSecs;
+    private @Nullable Integer initialLockoutPeriodInSecs;
     /**
      * @return The size of the key that the system uses to generate the public-private key pair
      * 
      */
-    private Integer keyPairLength;
+    private @Nullable Integer keyPairLength;
     /**
      * @return The pattern of escalation that the system follows, in locking a particular user out of the service.
      * 
      */
-    private String lockoutEscalationPattern;
+    private @Nullable String lockoutEscalationPattern;
     /**
      * @return The maximum number of times that a particular user can fail to login before the system locks that user out of the service
      * 
      */
-    private Integer maxFailuresBeforeLockout;
+    private @Nullable Integer maxFailuresBeforeLockout;
     /**
      * @return The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
      * 
      */
-    private Integer maxFailuresBeforeWarning;
+    private @Nullable Integer maxFailuresBeforeWarning;
     /**
      * @return The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
      * 
      */
-    private Integer maxLockoutIntervalInSecs;
+    private @Nullable Integer maxLockoutIntervalInSecs;
     /**
      * @return Minimum length of the Personal Identification Number (PIN)
      * 
      */
-    private Integer minPinLength;
+    private @Nullable Integer minPinLength;
     /**
      * @return The period of time in days after which a client should refresh its policy by re-reading that policy from the server
      * 
      */
-    private Integer policyUpdateFreqInDays;
+    private @Nullable Integer policyUpdateFreqInDays;
     /**
      * @return Indicates which algorithm the system will use to sign requests
      * 
      */
-    private String requestSigningAlgo;
+    private @Nullable String requestSigningAlgo;
     /**
      * @return Indicates the type of encoding that the system should use to generate a shared secret
      * 
      */
-    private String sharedSecretEncoding;
+    private @Nullable String sharedSecretEncoding;
     /**
      * @return If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
      */
-    private Boolean unlockAppForEachRequestEnabled;
+    private @Nullable Boolean unlockAppForEachRequestEnabled;
     /**
      * @return Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
      * 
      */
-    private Integer unlockAppIntervalInSecs;
+    private @Nullable Integer unlockAppIntervalInSecs;
     /**
      * @return If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
      */
-    private Boolean unlockOnAppForegroundEnabled;
+    private @Nullable Boolean unlockOnAppForegroundEnabled;
     /**
      * @return If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
      */
-    private Boolean unlockOnAppStartEnabled;
+    private @Nullable Boolean unlockOnAppStartEnabled;
 
     private GetDomainsAuthenticationFactorSettingClientAppSetting() {}
     /**
      * @return Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
      * 
      */
-    public String deviceProtectionPolicy() {
-        return this.deviceProtectionPolicy;
+    public Optional<String> deviceProtectionPolicy() {
+        return Optional.ofNullable(this.deviceProtectionPolicy);
     }
     /**
      * @return The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
      * 
      */
-    public Integer initialLockoutPeriodInSecs() {
-        return this.initialLockoutPeriodInSecs;
+    public Optional<Integer> initialLockoutPeriodInSecs() {
+        return Optional.ofNullable(this.initialLockoutPeriodInSecs);
     }
     /**
      * @return The size of the key that the system uses to generate the public-private key pair
      * 
      */
-    public Integer keyPairLength() {
-        return this.keyPairLength;
+    public Optional<Integer> keyPairLength() {
+        return Optional.ofNullable(this.keyPairLength);
     }
     /**
      * @return The pattern of escalation that the system follows, in locking a particular user out of the service.
      * 
      */
-    public String lockoutEscalationPattern() {
-        return this.lockoutEscalationPattern;
+    public Optional<String> lockoutEscalationPattern() {
+        return Optional.ofNullable(this.lockoutEscalationPattern);
     }
     /**
      * @return The maximum number of times that a particular user can fail to login before the system locks that user out of the service
      * 
      */
-    public Integer maxFailuresBeforeLockout() {
-        return this.maxFailuresBeforeLockout;
+    public Optional<Integer> maxFailuresBeforeLockout() {
+        return Optional.ofNullable(this.maxFailuresBeforeLockout);
     }
     /**
      * @return The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
      * 
      */
-    public Integer maxFailuresBeforeWarning() {
-        return this.maxFailuresBeforeWarning;
+    public Optional<Integer> maxFailuresBeforeWarning() {
+        return Optional.ofNullable(this.maxFailuresBeforeWarning);
     }
     /**
      * @return The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
      * 
      */
-    public Integer maxLockoutIntervalInSecs() {
-        return this.maxLockoutIntervalInSecs;
+    public Optional<Integer> maxLockoutIntervalInSecs() {
+        return Optional.ofNullable(this.maxLockoutIntervalInSecs);
     }
     /**
      * @return Minimum length of the Personal Identification Number (PIN)
      * 
      */
-    public Integer minPinLength() {
-        return this.minPinLength;
+    public Optional<Integer> minPinLength() {
+        return Optional.ofNullable(this.minPinLength);
     }
     /**
      * @return The period of time in days after which a client should refresh its policy by re-reading that policy from the server
      * 
      */
-    public Integer policyUpdateFreqInDays() {
-        return this.policyUpdateFreqInDays;
+    public Optional<Integer> policyUpdateFreqInDays() {
+        return Optional.ofNullable(this.policyUpdateFreqInDays);
     }
     /**
      * @return Indicates which algorithm the system will use to sign requests
      * 
      */
-    public String requestSigningAlgo() {
-        return this.requestSigningAlgo;
+    public Optional<String> requestSigningAlgo() {
+        return Optional.ofNullable(this.requestSigningAlgo);
     }
     /**
      * @return Indicates the type of encoding that the system should use to generate a shared secret
      * 
      */
-    public String sharedSecretEncoding() {
-        return this.sharedSecretEncoding;
+    public Optional<String> sharedSecretEncoding() {
+        return Optional.ofNullable(this.sharedSecretEncoding);
     }
     /**
      * @return If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
      */
-    public Boolean unlockAppForEachRequestEnabled() {
-        return this.unlockAppForEachRequestEnabled;
+    public Optional<Boolean> unlockAppForEachRequestEnabled() {
+        return Optional.ofNullable(this.unlockAppForEachRequestEnabled);
     }
     /**
      * @return Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
      * 
      */
-    public Integer unlockAppIntervalInSecs() {
-        return this.unlockAppIntervalInSecs;
+    public Optional<Integer> unlockAppIntervalInSecs() {
+        return Optional.ofNullable(this.unlockAppIntervalInSecs);
     }
     /**
      * @return If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
      */
-    public Boolean unlockOnAppForegroundEnabled() {
-        return this.unlockOnAppForegroundEnabled;
+    public Optional<Boolean> unlockOnAppForegroundEnabled() {
+        return Optional.ofNullable(this.unlockOnAppForegroundEnabled);
     }
     /**
      * @return If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
      */
-    public Boolean unlockOnAppStartEnabled() {
-        return this.unlockOnAppStartEnabled;
+    public Optional<Boolean> unlockOnAppStartEnabled() {
+        return Optional.ofNullable(this.unlockOnAppStartEnabled);
     }
 
     public static Builder builder() {
@@ -203,21 +205,21 @@ public final class GetDomainsAuthenticationFactorSettingClientAppSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deviceProtectionPolicy;
-        private Integer initialLockoutPeriodInSecs;
-        private Integer keyPairLength;
-        private String lockoutEscalationPattern;
-        private Integer maxFailuresBeforeLockout;
-        private Integer maxFailuresBeforeWarning;
-        private Integer maxLockoutIntervalInSecs;
-        private Integer minPinLength;
-        private Integer policyUpdateFreqInDays;
-        private String requestSigningAlgo;
-        private String sharedSecretEncoding;
-        private Boolean unlockAppForEachRequestEnabled;
-        private Integer unlockAppIntervalInSecs;
-        private Boolean unlockOnAppForegroundEnabled;
-        private Boolean unlockOnAppStartEnabled;
+        private @Nullable String deviceProtectionPolicy;
+        private @Nullable Integer initialLockoutPeriodInSecs;
+        private @Nullable Integer keyPairLength;
+        private @Nullable String lockoutEscalationPattern;
+        private @Nullable Integer maxFailuresBeforeLockout;
+        private @Nullable Integer maxFailuresBeforeWarning;
+        private @Nullable Integer maxLockoutIntervalInSecs;
+        private @Nullable Integer minPinLength;
+        private @Nullable Integer policyUpdateFreqInDays;
+        private @Nullable String requestSigningAlgo;
+        private @Nullable String sharedSecretEncoding;
+        private @Nullable Boolean unlockAppForEachRequestEnabled;
+        private @Nullable Integer unlockAppIntervalInSecs;
+        private @Nullable Boolean unlockOnAppForegroundEnabled;
+        private @Nullable Boolean unlockOnAppStartEnabled;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingClientAppSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -239,78 +241,78 @@ public final class GetDomainsAuthenticationFactorSettingClientAppSetting {
         }
 
         @CustomType.Setter
-        public Builder deviceProtectionPolicy(String deviceProtectionPolicy) {
-            this.deviceProtectionPolicy = Objects.requireNonNull(deviceProtectionPolicy);
+        public Builder deviceProtectionPolicy(@Nullable String deviceProtectionPolicy) {
+            this.deviceProtectionPolicy = deviceProtectionPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder initialLockoutPeriodInSecs(Integer initialLockoutPeriodInSecs) {
-            this.initialLockoutPeriodInSecs = Objects.requireNonNull(initialLockoutPeriodInSecs);
+        public Builder initialLockoutPeriodInSecs(@Nullable Integer initialLockoutPeriodInSecs) {
+            this.initialLockoutPeriodInSecs = initialLockoutPeriodInSecs;
             return this;
         }
         @CustomType.Setter
-        public Builder keyPairLength(Integer keyPairLength) {
-            this.keyPairLength = Objects.requireNonNull(keyPairLength);
+        public Builder keyPairLength(@Nullable Integer keyPairLength) {
+            this.keyPairLength = keyPairLength;
             return this;
         }
         @CustomType.Setter
-        public Builder lockoutEscalationPattern(String lockoutEscalationPattern) {
-            this.lockoutEscalationPattern = Objects.requireNonNull(lockoutEscalationPattern);
+        public Builder lockoutEscalationPattern(@Nullable String lockoutEscalationPattern) {
+            this.lockoutEscalationPattern = lockoutEscalationPattern;
             return this;
         }
         @CustomType.Setter
-        public Builder maxFailuresBeforeLockout(Integer maxFailuresBeforeLockout) {
-            this.maxFailuresBeforeLockout = Objects.requireNonNull(maxFailuresBeforeLockout);
+        public Builder maxFailuresBeforeLockout(@Nullable Integer maxFailuresBeforeLockout) {
+            this.maxFailuresBeforeLockout = maxFailuresBeforeLockout;
             return this;
         }
         @CustomType.Setter
-        public Builder maxFailuresBeforeWarning(Integer maxFailuresBeforeWarning) {
-            this.maxFailuresBeforeWarning = Objects.requireNonNull(maxFailuresBeforeWarning);
+        public Builder maxFailuresBeforeWarning(@Nullable Integer maxFailuresBeforeWarning) {
+            this.maxFailuresBeforeWarning = maxFailuresBeforeWarning;
             return this;
         }
         @CustomType.Setter
-        public Builder maxLockoutIntervalInSecs(Integer maxLockoutIntervalInSecs) {
-            this.maxLockoutIntervalInSecs = Objects.requireNonNull(maxLockoutIntervalInSecs);
+        public Builder maxLockoutIntervalInSecs(@Nullable Integer maxLockoutIntervalInSecs) {
+            this.maxLockoutIntervalInSecs = maxLockoutIntervalInSecs;
             return this;
         }
         @CustomType.Setter
-        public Builder minPinLength(Integer minPinLength) {
-            this.minPinLength = Objects.requireNonNull(minPinLength);
+        public Builder minPinLength(@Nullable Integer minPinLength) {
+            this.minPinLength = minPinLength;
             return this;
         }
         @CustomType.Setter
-        public Builder policyUpdateFreqInDays(Integer policyUpdateFreqInDays) {
-            this.policyUpdateFreqInDays = Objects.requireNonNull(policyUpdateFreqInDays);
+        public Builder policyUpdateFreqInDays(@Nullable Integer policyUpdateFreqInDays) {
+            this.policyUpdateFreqInDays = policyUpdateFreqInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder requestSigningAlgo(String requestSigningAlgo) {
-            this.requestSigningAlgo = Objects.requireNonNull(requestSigningAlgo);
+        public Builder requestSigningAlgo(@Nullable String requestSigningAlgo) {
+            this.requestSigningAlgo = requestSigningAlgo;
             return this;
         }
         @CustomType.Setter
-        public Builder sharedSecretEncoding(String sharedSecretEncoding) {
-            this.sharedSecretEncoding = Objects.requireNonNull(sharedSecretEncoding);
+        public Builder sharedSecretEncoding(@Nullable String sharedSecretEncoding) {
+            this.sharedSecretEncoding = sharedSecretEncoding;
             return this;
         }
         @CustomType.Setter
-        public Builder unlockAppForEachRequestEnabled(Boolean unlockAppForEachRequestEnabled) {
-            this.unlockAppForEachRequestEnabled = Objects.requireNonNull(unlockAppForEachRequestEnabled);
+        public Builder unlockAppForEachRequestEnabled(@Nullable Boolean unlockAppForEachRequestEnabled) {
+            this.unlockAppForEachRequestEnabled = unlockAppForEachRequestEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder unlockAppIntervalInSecs(Integer unlockAppIntervalInSecs) {
-            this.unlockAppIntervalInSecs = Objects.requireNonNull(unlockAppIntervalInSecs);
+        public Builder unlockAppIntervalInSecs(@Nullable Integer unlockAppIntervalInSecs) {
+            this.unlockAppIntervalInSecs = unlockAppIntervalInSecs;
             return this;
         }
         @CustomType.Setter
-        public Builder unlockOnAppForegroundEnabled(Boolean unlockOnAppForegroundEnabled) {
-            this.unlockOnAppForegroundEnabled = Objects.requireNonNull(unlockOnAppForegroundEnabled);
+        public Builder unlockOnAppForegroundEnabled(@Nullable Boolean unlockOnAppForegroundEnabled) {
+            this.unlockOnAppForegroundEnabled = unlockOnAppForegroundEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder unlockOnAppStartEnabled(Boolean unlockOnAppStartEnabled) {
-            this.unlockOnAppStartEnabled = Objects.requireNonNull(unlockOnAppStartEnabled);
+        public Builder unlockOnAppStartEnabled(@Nullable Boolean unlockOnAppStartEnabled) {
+            this.unlockOnAppStartEnabled = unlockOnAppStartEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingClientAppSetting build() {

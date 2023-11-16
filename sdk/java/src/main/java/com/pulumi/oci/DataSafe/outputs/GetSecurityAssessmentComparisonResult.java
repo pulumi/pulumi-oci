@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTarget;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentComparisonResult {
@@ -15,37 +17,37 @@ public final class GetSecurityAssessmentComparisonResult {
      * @return The OCID of the security assessment that is set as a baseline.
      * 
      */
-    private String baselineId;
+    private @Nullable String baselineId;
     private String comparisonSecurityAssessmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String securityAssessmentId;
     /**
      * @return The current state of the security assessment comparison.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A target-based comparison between two security assessments.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTarget> targets;
+    private @Nullable List<GetSecurityAssessmentComparisonTarget> targets;
     /**
      * @return The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetSecurityAssessmentComparisonResult() {}
     /**
      * @return The OCID of the security assessment that is set as a baseline.
      * 
      */
-    public String baselineId() {
-        return this.baselineId;
+    public Optional<String> baselineId() {
+        return Optional.ofNullable(this.baselineId);
     }
     public String comparisonSecurityAssessmentId() {
         return this.comparisonSecurityAssessmentId;
@@ -54,8 +56,8 @@ public final class GetSecurityAssessmentComparisonResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String securityAssessmentId() {
         return this.securityAssessmentId;
@@ -64,22 +66,22 @@ public final class GetSecurityAssessmentComparisonResult {
      * @return The current state of the security assessment comparison.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A target-based comparison between two security assessments.
      * 
      */
     public List<GetSecurityAssessmentComparisonTarget> targets() {
-        return this.targets;
+        return this.targets == null ? List.of() : this.targets;
     }
     /**
      * @return The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -91,13 +93,13 @@ public final class GetSecurityAssessmentComparisonResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String baselineId;
+        private @Nullable String baselineId;
         private String comparisonSecurityAssessmentId;
-        private String id;
+        private @Nullable String id;
         private String securityAssessmentId;
-        private String state;
-        private List<GetSecurityAssessmentComparisonTarget> targets;
-        private String timeCreated;
+        private @Nullable String state;
+        private @Nullable List<GetSecurityAssessmentComparisonTarget> targets;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,8 +113,8 @@ public final class GetSecurityAssessmentComparisonResult {
         }
 
         @CustomType.Setter
-        public Builder baselineId(String baselineId) {
-            this.baselineId = Objects.requireNonNull(baselineId);
+        public Builder baselineId(@Nullable String baselineId) {
+            this.baselineId = baselineId;
             return this;
         }
         @CustomType.Setter
@@ -121,8 +123,8 @@ public final class GetSecurityAssessmentComparisonResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,21 +133,21 @@ public final class GetSecurityAssessmentComparisonResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targets(List<GetSecurityAssessmentComparisonTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+        public Builder targets(@Nullable List<GetSecurityAssessmentComparisonTarget> targets) {
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetSecurityAssessmentComparisonTarget... targets) {
             return targets(List.of(targets));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetSecurityAssessmentComparisonResult build() {

@@ -9,6 +9,7 @@ import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveSchemasSens
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,7 +19,7 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The database schema that contains the sensitive column.
      * 
@@ -29,7 +30,7 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
      * @return The list of sensitive_schema_collection.
      * 
      */
-    private List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections;
+    private @Nullable List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections;
 
     private GetSensitiveDataModelSensitiveSchemasResult() {}
     public List<GetSensitiveDataModelSensitiveSchemasFilter> filters() {
@@ -39,8 +40,8 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The database schema that contains the sensitive column.
@@ -57,7 +58,7 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
      * 
      */
     public List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections() {
-        return this.sensitiveSchemaCollections;
+        return this.sensitiveSchemaCollections == null ? List.of() : this.sensitiveSchemaCollections;
     }
 
     public static Builder builder() {
@@ -70,10 +71,10 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSensitiveDataModelSensitiveSchemasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> schemaNames;
         private String sensitiveDataModelId;
-        private List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections;
+        private @Nullable List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections;
         public Builder() {}
         public Builder(GetSensitiveDataModelSensitiveSchemasResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -93,8 +94,8 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -111,8 +112,8 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveSchemaCollections(List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections) {
-            this.sensitiveSchemaCollections = Objects.requireNonNull(sensitiveSchemaCollections);
+        public Builder sensitiveSchemaCollections(@Nullable List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections) {
+            this.sensitiveSchemaCollections = sensitiveSchemaCollections;
             return this;
         }
         public Builder sensitiveSchemaCollections(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection... sensitiveSchemaCollections) {

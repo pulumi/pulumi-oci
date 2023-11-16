@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
@@ -61,31 +60,31 @@ type GetAutonomousVirtualMachineArgs struct {
 type GetAutonomousVirtualMachineResult struct {
 	AutonomousVirtualMachineId string `pulumi:"autonomousVirtualMachineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
-	AutonomousVmClusterId string `pulumi:"autonomousVmClusterId"`
+	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
 	// Client IP Address.
-	ClientIpAddress string `pulumi:"clientIpAddress"`
+	ClientIpAddress *string `pulumi:"clientIpAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the Autonomous Virtual Machine.
-	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// The allocated local node storage in GBs on the Autonomous Virtual Machine.
-	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The display name of the dbServer associated with the Autonomous Virtual Machine.
-	DbServerDisplayName string `pulumi:"dbServerDisplayName"`
+	DbServerDisplayName *string `pulumi:"dbServerDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
-	DbServerId string `pulumi:"dbServerId"`
+	DbServerId *string `pulumi:"dbServerId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The allocated memory in GBs on the Autonomous Virtual Machine.
-	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The current state of the Autonomous Virtual Machine.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The name of the Autonomous Virtual Machine.
-	VmName string `pulumi:"vmName"`
+	VmName *string `pulumi:"vmName"`
 }
 
 func GetAutonomousVirtualMachineOutput(ctx *pulumi.Context, args GetAutonomousVirtualMachineOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousVirtualMachineResultOutput {
@@ -126,49 +125,43 @@ func (o GetAutonomousVirtualMachineResultOutput) ToGetAutonomousVirtualMachineRe
 	return o
 }
 
-func (o GetAutonomousVirtualMachineResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousVirtualMachineResult] {
-	return pulumix.Output[GetAutonomousVirtualMachineResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutonomousVirtualMachineResultOutput) AutonomousVirtualMachineId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.AutonomousVirtualMachineId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) AutonomousVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.AutonomousVmClusterId }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) AutonomousVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.AutonomousVmClusterId }).(pulumi.StringPtrOutput)
 }
 
 // Client IP Address.
-func (o GetAutonomousVirtualMachineResultOutput) ClientIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.ClientIpAddress }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) ClientIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.ClientIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetAutonomousVirtualMachineResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPU cores enabled on the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o GetAutonomousVirtualMachineResultOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // The allocated local node storage in GBs on the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o GetAutonomousVirtualMachineResultOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The display name of the dbServer associated with the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) DbServerDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.DbServerDisplayName }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) DbServerDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.DbServerDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) DbServerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.DbServerId }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) DbServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.DbServerId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -182,23 +175,23 @@ func (o GetAutonomousVirtualMachineResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousVirtualMachineResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The allocated memory in GBs on the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o GetAutonomousVirtualMachineResultOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *int { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Autonomous Virtual Machine.
-func (o GetAutonomousVirtualMachineResultOutput) VmName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) string { return v.VmName }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachineResultOutput) VmName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) *string { return v.VmName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

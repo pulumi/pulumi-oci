@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
@@ -14,27 +16,27 @@ public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
      * @return The name of the port speed shape.  Example: `10 Gbps`
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The port speed in Gbps.  Example: `10`
      * 
      */
-    private Integer portSpeedInGbps;
+    private @Nullable Integer portSpeedInGbps;
 
     private GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape() {}
     /**
      * @return The name of the port speed shape.  Example: `10 Gbps`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The port speed in Gbps.  Example: `10`
      * 
      */
-    public Integer portSpeedInGbps() {
-        return this.portSpeedInGbps;
+    public Optional<Integer> portSpeedInGbps() {
+        return Optional.ofNullable(this.portSpeedInGbps);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private Integer portSpeedInGbps;
+        private @Nullable String name;
+        private @Nullable Integer portSpeedInGbps;
         public Builder() {}
         public Builder(GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder portSpeedInGbps(Integer portSpeedInGbps) {
-            this.portSpeedInGbps = Objects.requireNonNull(portSpeedInGbps);
+        public Builder portSpeedInGbps(@Nullable Integer portSpeedInGbps) {
+            this.portSpeedInGbps = portSpeedInGbps;
             return this;
         }
         public GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape build() {

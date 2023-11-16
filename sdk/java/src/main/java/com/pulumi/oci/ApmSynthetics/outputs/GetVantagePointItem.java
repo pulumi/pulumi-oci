@@ -8,6 +8,8 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetVantagePointItemGeo;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVantagePointItem {
@@ -15,39 +17,39 @@ public final class GetVantagePointItem {
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Geographic summary of a vantage point.
      * 
      */
-    private List<GetVantagePointItemGeo> geos;
+    private @Nullable List<GetVantagePointItemGeo> geos;
     /**
      * @return A filter to return only the resources that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetVantagePointItem() {}
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Geographic summary of a vantage point.
      * 
      */
     public List<GetVantagePointItemGeo> geos() {
-        return this.geos;
+        return this.geos == null ? List.of() : this.geos;
     }
     /**
      * @return A filter to return only the resources that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetVantagePointItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private List<GetVantagePointItemGeo> geos;
-        private String name;
+        private @Nullable String displayName;
+        private @Nullable List<GetVantagePointItemGeo> geos;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetVantagePointItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetVantagePointItem {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder geos(List<GetVantagePointItemGeo> geos) {
-            this.geos = Objects.requireNonNull(geos);
+        public Builder geos(@Nullable List<GetVantagePointItemGeo> geos) {
+            this.geos = geos;
             return this;
         }
         public Builder geos(GetVantagePointItemGeo... geos) {
             return geos(List.of(geos));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetVantagePointItem build() {

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// Bucket name
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Bucket namespace name
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Path for the metadata file.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult(
-            string bucket,
+            string? bucket,
 
-            string @namespace,
+            string? @namespace,
 
-            string path,
+            string? path,
 
-            string sourceType)
+            string? sourceType)
         {
             Bucket = bucket;
             Namespace = @namespace;

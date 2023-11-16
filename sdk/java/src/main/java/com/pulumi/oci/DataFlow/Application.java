@@ -116,14 +116,14 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="applicationLogConfig", refs={ApplicationApplicationLogConfig.class}, tree="[0]")
-    private Output<ApplicationApplicationLogConfig> applicationLogConfig;
+    private Output</* @Nullable */ ApplicationApplicationLogConfig> applicationLogConfig;
 
     /**
      * @return (Updatable) Logging details of Application logs for Data Flow Run.
      * 
      */
-    public Output<ApplicationApplicationLogConfig> applicationLogConfig() {
-        return this.applicationLogConfig;
+    public Output<Optional<ApplicationApplicationLogConfig>> applicationLogConfig() {
+        return Codegen.optional(this.applicationLogConfig);
     }
     /**
      * (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -144,14 +144,14 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="arguments", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> arguments;
+    private Output</* @Nullable */ List<String>> arguments;
 
     /**
      * @return (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
-    public Output<List<String>> arguments() {
-        return this.arguments;
+    public Output<Optional<List<String>>> arguments() {
+        return Codegen.optional(this.arguments);
     }
     /**
      * (Updatable) The class for the application.
@@ -186,42 +186,42 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configuration", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> configuration;
+    private Output</* @Nullable */ Map<String,Object>> configuration;
 
     /**
      * @return (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    public Output<Map<String,Object>> configuration() {
-        return this.configuration;
+    public Output<Optional<Map<String,Object>>> configuration() {
+        return Codegen.optional(this.configuration);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A user-friendly description. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -256,28 +256,28 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="driverShapeConfig", refs={ApplicationDriverShapeConfig.class}, tree="[0]")
-    private Output<ApplicationDriverShapeConfig> driverShapeConfig;
+    private Output</* @Nullable */ ApplicationDriverShapeConfig> driverShapeConfig;
 
     /**
      * @return (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    public Output<ApplicationDriverShapeConfig> driverShapeConfig() {
-        return this.driverShapeConfig;
+    public Output<Optional<ApplicationDriverShapeConfig>> driverShapeConfig() {
+        return Codegen.optional(this.driverShapeConfig);
     }
     /**
      * (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
     @Export(name="execute", refs={String.class}, tree="[0]")
-    private Output<String> execute;
+    private Output</* @Nullable */ String> execute;
 
     /**
      * @return (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
-    public Output<String> execute() {
-        return this.execute;
+    public Output<Optional<String>> execute() {
+        return Codegen.optional(this.execute);
     }
     /**
      * (Updatable) The VM shape for the executors. Sets the executor cores and memory.
@@ -298,56 +298,56 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="executorShapeConfig", refs={ApplicationExecutorShapeConfig.class}, tree="[0]")
-    private Output<ApplicationExecutorShapeConfig> executorShapeConfig;
+    private Output</* @Nullable */ ApplicationExecutorShapeConfig> executorShapeConfig;
 
     /**
      * @return (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    public Output<ApplicationExecutorShapeConfig> executorShapeConfig() {
-        return this.executorShapeConfig;
+    public Output<Optional<ApplicationExecutorShapeConfig>> executorShapeConfig() {
+        return Codegen.optional(this.executorShapeConfig);
     }
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     @Export(name="fileUri", refs={String.class}, tree="[0]")
-    private Output<String> fileUri;
+    private Output</* @Nullable */ String> fileUri;
 
     /**
      * @return (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    public Output<String> fileUri() {
-        return this.fileUri;
+    public Output<Optional<String>> fileUri() {
+        return Codegen.optional(this.fileUri);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
      * 
      */
     @Export(name="idleTimeoutInMinutes", refs={String.class}, tree="[0]")
-    private Output<String> idleTimeoutInMinutes;
+    private Output</* @Nullable */ String> idleTimeoutInMinutes;
 
     /**
      * @return (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
      * 
      */
-    public Output<String> idleTimeoutInMinutes() {
-        return this.idleTimeoutInMinutes;
+    public Output<Optional<String>> idleTimeoutInMinutes() {
+        return Codegen.optional(this.idleTimeoutInMinutes);
     }
     /**
      * (Updatable) The Spark language.
@@ -368,42 +368,42 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="logsBucketUri", refs={String.class}, tree="[0]")
-    private Output<String> logsBucketUri;
+    private Output</* @Nullable */ String> logsBucketUri;
 
     /**
      * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    public Output<String> logsBucketUri() {
-        return this.logsBucketUri;
+    public Output<Optional<String>> logsBucketUri() {
+        return Codegen.optional(this.logsBucketUri);
     }
     /**
      * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
      * 
      */
     @Export(name="maxDurationInMinutes", refs={String.class}, tree="[0]")
-    private Output<String> maxDurationInMinutes;
+    private Output</* @Nullable */ String> maxDurationInMinutes;
 
     /**
      * @return (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
      * 
      */
-    public Output<String> maxDurationInMinutes() {
-        return this.maxDurationInMinutes;
+    public Output<Optional<String>> maxDurationInMinutes() {
+        return Codegen.optional(this.maxDurationInMinutes);
     }
     /**
      * (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
     @Export(name="metastoreId", refs={String.class}, tree="[0]")
-    private Output<String> metastoreId;
+    private Output</* @Nullable */ String> metastoreId;
 
     /**
      * @return (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
-    public Output<String> metastoreId() {
-        return this.metastoreId;
+    public Output<Optional<String>> metastoreId() {
+        return Codegen.optional(this.metastoreId);
     }
     /**
      * (Updatable) The number of executor VMs requested.
@@ -424,70 +424,70 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ownerPrincipalId", refs={String.class}, tree="[0]")
-    private Output<String> ownerPrincipalId;
+    private Output</* @Nullable */ String> ownerPrincipalId;
 
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    public Output<String> ownerPrincipalId() {
-        return this.ownerPrincipalId;
+    public Output<Optional<String>> ownerPrincipalId() {
+        return Codegen.optional(this.ownerPrincipalId);
     }
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
     @Export(name="ownerUserName", refs={String.class}, tree="[0]")
-    private Output<String> ownerUserName;
+    private Output</* @Nullable */ String> ownerUserName;
 
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    public Output<String> ownerUserName() {
-        return this.ownerUserName;
+    public Output<Optional<String>> ownerUserName() {
+        return Codegen.optional(this.ownerUserName);
     }
     /**
      * (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
     @Export(name="parameters", refs={List.class,ApplicationParameter.class}, tree="[0,1]")
-    private Output<List<ApplicationParameter>> parameters;
+    private Output</* @Nullable */ List<ApplicationParameter>> parameters;
 
     /**
      * @return (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
-    public Output<List<ApplicationParameter>> parameters() {
-        return this.parameters;
+    public Output<Optional<List<ApplicationParameter>>> parameters() {
+        return Codegen.optional(this.parameters);
     }
     /**
      * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      * 
      */
     @Export(name="poolId", refs={String.class}, tree="[0]")
-    private Output<String> poolId;
+    private Output</* @Nullable */ String> poolId;
 
     /**
      * @return (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      * 
      */
-    public Output<String> poolId() {
-        return this.poolId;
+    public Output<Optional<String>> poolId() {
+        return Codegen.optional(this.poolId);
     }
     /**
      * (Updatable) The OCID of a private endpoint.
      * 
      */
     @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointId;
+    private Output</* @Nullable */ String> privateEndpointId;
 
     /**
      * @return (Updatable) The OCID of a private endpoint.
      * 
      */
-    public Output<String> privateEndpointId() {
-        return this.privateEndpointId;
+    public Output<Optional<String>> privateEndpointId() {
+        return Codegen.optional(this.privateEndpointId);
     }
     /**
      * (Updatable) The Spark version utilized to run the application.
@@ -508,56 +508,56 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of this application.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The Spark application processing type.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The Spark application processing type.
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -567,7 +567,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="warehouseBucketUri", refs={String.class}, tree="[0]")
-    private Output<String> warehouseBucketUri;
+    private Output</* @Nullable */ String> warehouseBucketUri;
 
     /**
      * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -576,8 +576,8 @@ public class Application extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> warehouseBucketUri() {
-        return this.warehouseBucketUri;
+    public Output<Optional<String>> warehouseBucketUri() {
+        return Codegen.optional(this.warehouseBucketUri);
     }
 
     /**

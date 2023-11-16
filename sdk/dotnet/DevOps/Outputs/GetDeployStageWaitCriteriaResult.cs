@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
         /// </summary>
-        public readonly string WaitDuration;
+        public readonly string? WaitDuration;
         /// <summary>
         /// Wait criteria type.
         /// </summary>
-        public readonly string WaitType;
+        public readonly string? WaitType;
 
         [OutputConstructor]
         private GetDeployStageWaitCriteriaResult(
-            string waitDuration,
+            string? waitDuration,
 
-            string waitType)
+            string? waitType)
         {
             WaitDuration = waitDuration;
             WaitType = waitType;

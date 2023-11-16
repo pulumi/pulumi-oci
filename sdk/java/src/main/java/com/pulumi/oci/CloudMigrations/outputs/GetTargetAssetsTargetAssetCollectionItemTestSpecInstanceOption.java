@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudMigrations.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption {
@@ -13,15 +15,15 @@ public final class GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptio
      * @return Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
      */
-    private Boolean areLegacyImdsEndpointsDisabled;
+    private @Nullable Boolean areLegacyImdsEndpointsDisabled;
 
     private GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption() {}
     /**
      * @return Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
      */
-    public Boolean areLegacyImdsEndpointsDisabled() {
-        return this.areLegacyImdsEndpointsDisabled;
+    public Optional<Boolean> areLegacyImdsEndpointsDisabled() {
+        return Optional.ofNullable(this.areLegacyImdsEndpointsDisabled);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptio
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areLegacyImdsEndpointsDisabled;
+        private @Nullable Boolean areLegacyImdsEndpointsDisabled;
         public Builder() {}
         public Builder(GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptio
         }
 
         @CustomType.Setter
-        public Builder areLegacyImdsEndpointsDisabled(Boolean areLegacyImdsEndpointsDisabled) {
-            this.areLegacyImdsEndpointsDisabled = Objects.requireNonNull(areLegacyImdsEndpointsDisabled);
+        public Builder areLegacyImdsEndpointsDisabled(@Nullable Boolean areLegacyImdsEndpointsDisabled) {
+            this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption build() {

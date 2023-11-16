@@ -16,29 +16,29 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         /// </summary>
-        public readonly string MetricName;
+        public readonly string? MetricName;
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         /// </summary>
-        public readonly string ResourceGroup;
+        public readonly string? ResourceGroup;
 
         [OutputConstructor]
         private GetNamespaceScheduledTaskActionMetricExtractionResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string metricName,
+            string? metricName,
 
-            string @namespace,
+            string? @namespace,
 
-            string resourceGroup)
+            string? resourceGroup)
         {
             CompartmentId = compartmentId;
             MetricName = metricName;

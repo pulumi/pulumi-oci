@@ -24,14 +24,14 @@ public final class GetSqlFirewallViolationAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String queryTimeZone;
     private @Nullable String scimQuery;
     /**
      * @return The list of sql_firewall_violation_analytics_collection.
      * 
      */
-    private List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection> sqlFirewallViolationAnalyticsCollections;
+    private @Nullable List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection> sqlFirewallViolationAnalyticsCollections;
     private @Nullable List<String> summaryFields;
     /**
      * @return The time at which the aggregation ended.
@@ -64,8 +64,8 @@ public final class GetSqlFirewallViolationAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> queryTimeZone() {
         return Optional.ofNullable(this.queryTimeZone);
@@ -78,7 +78,7 @@ public final class GetSqlFirewallViolationAnalyticsResult {
      * 
      */
     public List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection> sqlFirewallViolationAnalyticsCollections() {
-        return this.sqlFirewallViolationAnalyticsCollections;
+        return this.sqlFirewallViolationAnalyticsCollections == null ? List.of() : this.sqlFirewallViolationAnalyticsCollections;
     }
     public List<String> summaryFields() {
         return this.summaryFields == null ? List.of() : this.summaryFields;
@@ -112,10 +112,10 @@ public final class GetSqlFirewallViolationAnalyticsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetSqlFirewallViolationAnalyticsFilter> filters;
         private @Nullable List<String> groupBies;
-        private String id;
+        private @Nullable String id;
         private @Nullable String queryTimeZone;
         private @Nullable String scimQuery;
-        private List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection> sqlFirewallViolationAnalyticsCollections;
+        private @Nullable List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection> sqlFirewallViolationAnalyticsCollections;
         private @Nullable List<String> summaryFields;
         private @Nullable String timeEnded;
         private @Nullable String timeStarted;
@@ -168,8 +168,8 @@ public final class GetSqlFirewallViolationAnalyticsResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -183,8 +183,8 @@ public final class GetSqlFirewallViolationAnalyticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallViolationAnalyticsCollections(List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection> sqlFirewallViolationAnalyticsCollections) {
-            this.sqlFirewallViolationAnalyticsCollections = Objects.requireNonNull(sqlFirewallViolationAnalyticsCollections);
+        public Builder sqlFirewallViolationAnalyticsCollections(@Nullable List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection> sqlFirewallViolationAnalyticsCollections) {
+            this.sqlFirewallViolationAnalyticsCollections = sqlFirewallViolationAnalyticsCollections;
             return this;
         }
         public Builder sqlFirewallViolationAnalyticsCollections(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection... sqlFirewallViolationAnalyticsCollections) {

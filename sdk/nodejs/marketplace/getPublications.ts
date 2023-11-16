@@ -78,7 +78,7 @@ export interface GetPublicationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      */
@@ -92,7 +92,7 @@ export interface GetPublicationsResult {
     /**
      * The list of publications.
      */
-    readonly publications: outputs.Marketplace.GetPublicationsPublication[];
+    readonly publications?: outputs.Marketplace.GetPublicationsPublication[];
 }
 /**
  * This data source provides the list of Publications in Oracle Cloud Infrastructure Marketplace service.

@@ -67,30 +67,30 @@ export interface GetResourceAvailabilityResult {
     /**
      * The count of available resources. To support resources with fractional counts, the field rounds down to the nearest integer.
      */
-    readonly available: string;
+    readonly available?: string;
     readonly compartmentId: string;
     /**
      * The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
      */
-    readonly effectiveQuotaValue: number;
+    readonly effectiveQuotaValue?: number;
     /**
      * The most accurate count of available resources.
      */
-    readonly fractionalAvailability: number;
+    readonly fractionalAvailability?: number;
     /**
      * The current most accurate usage in the given compartment.
      */
-    readonly fractionalUsage: number;
+    readonly fractionalUsage?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly limitName: string;
     readonly serviceName: string;
     /**
      * The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
      */
-    readonly used: string;
+    readonly used?: string;
 }
 /**
  * This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.

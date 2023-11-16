@@ -104,82 +104,52 @@ class GetExternalListenerResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> str:
-        """
-        The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
-        """
+    def adr_home_directory(self) -> Optional[str]:
         return pulumi.get(self, "adr_home_directory")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> str:
-        """
-        The name of the external listener.
-        """
+    def component_name(self) -> Optional[str]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoints(self) -> Sequence['outputs.GetExternalListenerEndpointResult']:
-        """
-        The list of protocol addresses the listener is configured to listen on.
-        """
+    def endpoints(self) -> Optional[Sequence['outputs.GetExternalListenerEndpointResult']]:
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        """
+    def external_connector_id(self) -> Optional[str]:
         return pulumi.get(self, "external_connector_id")
 
     @property
     @pulumi.getter(name="externalDbHomeId")
-    def external_db_home_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
-        """
+    def external_db_home_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_home_id")
 
     @property
     @pulumi.getter(name="externalDbNodeId")
-    def external_db_node_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-        """
+    def external_db_node_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_node_id")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
-        """
+    def external_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
@@ -189,122 +159,77 @@ class GetExternalListenerResult:
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The name of the host on which the external listener is running.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="listenerAlias")
-    def listener_alias(self) -> str:
-        """
-        The listener alias.
-        """
+    def listener_alias(self) -> Optional[str]:
         return pulumi.get(self, "listener_alias")
 
     @property
     @pulumi.getter(name="listenerOraLocation")
-    def listener_ora_location(self) -> str:
-        """
-        The location of the listener configuration file listener.ora.
-        """
+    def listener_ora_location(self) -> Optional[str]:
         return pulumi.get(self, "listener_ora_location")
 
     @property
     @pulumi.getter(name="listenerType")
-    def listener_type(self) -> str:
-        """
-        The type of listener.
-        """
+    def listener_type(self) -> Optional[str]:
         return pulumi.get(self, "listener_type")
 
     @property
     @pulumi.getter(name="logDirectory")
-    def log_directory(self) -> str:
-        """
-        The destination directory of the listener log file.
-        """
+    def log_directory(self) -> Optional[str]:
         return pulumi.get(self, "log_directory")
 
     @property
     @pulumi.getter(name="oracleHome")
-    def oracle_home(self) -> str:
-        """
-        The Oracle home location of the listener.
-        """
+    def oracle_home(self) -> Optional[str]:
         return pulumi.get(self, "oracle_home")
 
     @property
     @pulumi.getter(name="servicedAsms")
-    def serviced_asms(self) -> Sequence['outputs.GetExternalListenerServicedAsmResult']:
-        """
-        The list of ASMs that are serviced by the listener.
-        """
+    def serviced_asms(self) -> Optional[Sequence['outputs.GetExternalListenerServicedAsmResult']]:
         return pulumi.get(self, "serviced_asms")
 
     @property
     @pulumi.getter(name="servicedDatabases")
-    def serviced_databases(self) -> Sequence['outputs.GetExternalListenerServicedDatabaseResult']:
-        """
-        The list of databases that are serviced by the listener.
-        """
+    def serviced_databases(self) -> Optional[Sequence['outputs.GetExternalListenerServicedDatabaseResult']]:
         return pulumi.get(self, "serviced_databases")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external listener.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external listener was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external listener was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="traceDirectory")
-    def trace_directory(self) -> str:
-        """
-        The destination directory of the listener trace file.
-        """
+    def trace_directory(self) -> Optional[str]:
         return pulumi.get(self, "trace_directory")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The listener version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -345,21 +270,7 @@ class AwaitableGetExternalListenerResult(GetExternalListenerResult):
 def get_external_listener(external_listener_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalListenerResult:
     """
-    This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external listener specified by `externalListenerId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_listener = oci.DatabaseManagement.get_external_listener(external_listener_id=oci_database_management_external_listener["test_external_listener"]["id"])
-    ```
-
-
-    :param str external_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalListenerId'] = external_listener_id
@@ -399,20 +310,6 @@ def get_external_listener(external_listener_id: Optional[str] = None,
 def get_external_listener_output(external_listener_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalListenerResult]:
     """
-    This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external listener specified by `externalListenerId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_listener = oci.DatabaseManagement.get_external_listener(external_listener_id=oci_database_management_external_listener["test_external_listener"]["id"])
-    ```
-
-
-    :param str external_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+    Use this data source to access information about an existing resource.
     """
     ...

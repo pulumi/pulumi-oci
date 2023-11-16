@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -60,11 +59,11 @@ type LookupNamespaceArgs struct {
 // A collection of values returned by getNamespace.
 type LookupNamespaceResult struct {
 	// The is the tenancy ID
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// This indicates if the tenancy is onboarded to Logging Analytics
-	IsOnboarded bool `pulumi:"isOnboarded"`
+	IsOnboarded *bool `pulumi:"isOnboarded"`
 	// This is the namespace name of a tenancy
 	Namespace string `pulumi:"namespace"`
 }
@@ -107,25 +106,19 @@ func (o LookupNamespaceResultOutput) ToLookupNamespaceResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupNamespaceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNamespaceResult] {
-	return pulumix.Output[LookupNamespaceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The is the tenancy ID
-func (o LookupNamespaceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNamespaceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupNamespaceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNamespaceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // This indicates if the tenancy is onboarded to Logging Analytics
-func (o LookupNamespaceResultOutput) IsOnboarded() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupNamespaceResult) bool { return v.IsOnboarded }).(pulumi.BoolOutput)
+func (o LookupNamespaceResultOutput) IsOnboarded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceResult) *bool { return v.IsOnboarded }).(pulumi.BoolPtrOutput)
 }
 
 // This is the namespace name of a tenancy

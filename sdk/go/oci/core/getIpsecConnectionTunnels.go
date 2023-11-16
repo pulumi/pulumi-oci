@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ip Sec Connection Tunnels in Oracle Cloud Infrastructure Core service.
@@ -62,7 +61,7 @@ type GetIpsecConnectionTunnelsArgs struct {
 type GetIpsecConnectionTunnelsResult struct {
 	Filters []GetIpsecConnectionTunnelsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of ip_sec_connection_tunnels.
 	IpSecConnectionTunnels []GetIpsecConnectionTunnelsIpSecConnectionTunnel `pulumi:"ipSecConnectionTunnels"`
 	IpsecId                string                                           `pulumi:"ipsecId"`
@@ -107,19 +106,13 @@ func (o GetIpsecConnectionTunnelsResultOutput) ToGetIpsecConnectionTunnelsResult
 	return o
 }
 
-func (o GetIpsecConnectionTunnelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsResult] {
-	return pulumix.Output[GetIpsecConnectionTunnelsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIpsecConnectionTunnelsResultOutput) Filters() GetIpsecConnectionTunnelsFilterArrayOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsResult) []GetIpsecConnectionTunnelsFilter { return v.Filters }).(GetIpsecConnectionTunnelsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpsecConnectionTunnelsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of ip_sec_connection_tunnels.

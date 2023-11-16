@@ -74,11 +74,11 @@ export interface GetHttpMonitorsResult {
     /**
      * The list of http_monitors.
      */
-    readonly httpMonitors: outputs.HealthChecks.GetHttpMonitorsHttpMonitor[];
+    readonly httpMonitors?: outputs.HealthChecks.GetHttpMonitorsHttpMonitor[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.

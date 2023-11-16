@@ -30,7 +30,7 @@ public final class GetVtapsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Used to start or stop a `Vtap` resource.
      * 
@@ -61,7 +61,7 @@ public final class GetVtapsResult {
      * @return The list of vtaps.
      * 
      */
-    private List<GetVtapsVtap> vtaps;
+    private @Nullable List<GetVtapsVtap> vtaps;
 
     private GetVtapsResult() {}
     /**
@@ -85,8 +85,8 @@ public final class GetVtapsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Used to start or stop a `Vtap` resource.
@@ -131,7 +131,7 @@ public final class GetVtapsResult {
      * 
      */
     public List<GetVtapsVtap> vtaps() {
-        return this.vtaps;
+        return this.vtaps == null ? List.of() : this.vtaps;
     }
 
     public static Builder builder() {
@@ -146,14 +146,14 @@ public final class GetVtapsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVtapsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isVtapEnabled;
         private @Nullable String source;
         private @Nullable String state;
         private @Nullable String targetId;
         private @Nullable String targetIp;
         private @Nullable String vcnId;
-        private List<GetVtapsVtap> vtaps;
+        private @Nullable List<GetVtapsVtap> vtaps;
         public Builder() {}
         public Builder(GetVtapsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -189,8 +189,8 @@ public final class GetVtapsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -224,8 +224,8 @@ public final class GetVtapsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vtaps(List<GetVtapsVtap> vtaps) {
-            this.vtaps = Objects.requireNonNull(vtaps);
+        public Builder vtaps(@Nullable List<GetVtapsVtap> vtaps) {
+            this.vtaps = vtaps;
             return this;
         }
         public Builder vtaps(GetVtapsVtap... vtaps) {

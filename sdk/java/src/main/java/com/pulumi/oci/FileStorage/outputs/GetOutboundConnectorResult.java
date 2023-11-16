@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOutboundConnectorResult {
@@ -18,132 +20,132 @@ public final class GetOutboundConnectorResult {
      * @return The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The LDAP Distinguished Name of the account.
      * 
      */
-    private String bindDistinguishedName;
+    private @Nullable String bindDistinguishedName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The account type of this outbound connector.
      * 
      */
-    private String connectorType;
+    private @Nullable String connectorType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Array of server endpoints to use when connecting with the LDAP bind account.
      * 
      */
-    private List<GetOutboundConnectorEndpoint> endpoints;
+    private @Nullable List<GetOutboundConnectorEndpoint> endpoints;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String outboundConnectorId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      * 
      */
-    private String passwordSecretId;
+    private @Nullable String passwordSecretId;
     /**
      * @return Version of the password secret in the Vault to use.
      * 
      */
-    private Integer passwordSecretVersion;
+    private @Nullable Integer passwordSecretVersion;
     /**
      * @return The current state of this outbound connector.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetOutboundConnectorResult() {}
     /**
      * @return The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The LDAP Distinguished Name of the account.
      * 
      */
-    public String bindDistinguishedName() {
-        return this.bindDistinguishedName;
+    public Optional<String> bindDistinguishedName() {
+        return Optional.ofNullable(this.bindDistinguishedName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The account type of this outbound connector.
      * 
      */
-    public String connectorType() {
-        return this.connectorType;
+    public Optional<String> connectorType() {
+        return Optional.ofNullable(this.connectorType);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Array of server endpoints to use when connecting with the LDAP bind account.
      * 
      */
     public List<GetOutboundConnectorEndpoint> endpoints() {
-        return this.endpoints;
+        return this.endpoints == null ? List.of() : this.endpoints;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String outboundConnectorId() {
         return this.outboundConnectorId;
@@ -152,29 +154,29 @@ public final class GetOutboundConnectorResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      * 
      */
-    public String passwordSecretId() {
-        return this.passwordSecretId;
+    public Optional<String> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
     }
     /**
      * @return Version of the password secret in the Vault to use.
      * 
      */
-    public Integer passwordSecretVersion() {
-        return this.passwordSecretVersion;
+    public Optional<Integer> passwordSecretVersion() {
+        return Optional.ofNullable(this.passwordSecretVersion);
     }
     /**
      * @return The current state of this outbound connector.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -186,20 +188,20 @@ public final class GetOutboundConnectorResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String bindDistinguishedName;
-        private String compartmentId;
-        private String connectorType;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetOutboundConnectorEndpoint> endpoints;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable String availabilityDomain;
+        private @Nullable String bindDistinguishedName;
+        private @Nullable String compartmentId;
+        private @Nullable String connectorType;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetOutboundConnectorEndpoint> endpoints;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private String outboundConnectorId;
-        private String passwordSecretId;
-        private Integer passwordSecretVersion;
-        private String state;
-        private String timeCreated;
+        private @Nullable String passwordSecretId;
+        private @Nullable Integer passwordSecretVersion;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetOutboundConnectorResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -220,51 +222,51 @@ public final class GetOutboundConnectorResult {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder bindDistinguishedName(String bindDistinguishedName) {
-            this.bindDistinguishedName = Objects.requireNonNull(bindDistinguishedName);
+        public Builder bindDistinguishedName(@Nullable String bindDistinguishedName) {
+            this.bindDistinguishedName = bindDistinguishedName;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+        public Builder connectorType(@Nullable String connectorType) {
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder endpoints(List<GetOutboundConnectorEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+        public Builder endpoints(@Nullable List<GetOutboundConnectorEndpoint> endpoints) {
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetOutboundConnectorEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -273,23 +275,23 @@ public final class GetOutboundConnectorResult {
             return this;
         }
         @CustomType.Setter
-        public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+        public Builder passwordSecretId(@Nullable String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordSecretVersion(Integer passwordSecretVersion) {
-            this.passwordSecretVersion = Objects.requireNonNull(passwordSecretVersion);
+        public Builder passwordSecretVersion(@Nullable Integer passwordSecretVersion) {
+            this.passwordSecretVersion = passwordSecretVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetOutboundConnectorResult build() {

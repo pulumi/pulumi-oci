@@ -18,12 +18,12 @@ public final class GetNetworkFirewallPolicyMappedSecretsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of mapped_secret_summary_collection.
      * 
      */
-    private List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections;
+    private @Nullable List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections;
     private String networkFirewallPolicyId;
 
     private GetNetworkFirewallPolicyMappedSecretsResult() {}
@@ -34,15 +34,15 @@ public final class GetNetworkFirewallPolicyMappedSecretsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of mapped_secret_summary_collection.
      * 
      */
     public List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections() {
-        return this.mappedSecretSummaryCollections;
+        return this.mappedSecretSummaryCollections == null ? List.of() : this.mappedSecretSummaryCollections;
     }
     public String networkFirewallPolicyId() {
         return this.networkFirewallPolicyId;
@@ -58,8 +58,8 @@ public final class GetNetworkFirewallPolicyMappedSecretsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
-        private String id;
-        private List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections;
+        private @Nullable String id;
+        private @Nullable List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections;
         private String networkFirewallPolicyId;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyMappedSecretsResult defaults) {
@@ -76,13 +76,13 @@ public final class GetNetworkFirewallPolicyMappedSecretsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder mappedSecretSummaryCollections(List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections) {
-            this.mappedSecretSummaryCollections = Objects.requireNonNull(mappedSecretSummaryCollections);
+        public Builder mappedSecretSummaryCollections(@Nullable List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections) {
+            this.mappedSecretSummaryCollections = mappedSecretSummaryCollections;
             return this;
         }
         public Builder mappedSecretSummaryCollections(GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection... mappedSecretSummaryCollections) {

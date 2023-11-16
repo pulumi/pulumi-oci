@@ -16,149 +16,149 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
         /// </summary>
-        public readonly string AllShared;
+        public readonly string? AllShared;
         /// <summary>
         /// The authentication mechanism for the user.
         /// </summary>
-        public readonly string Authentication;
+        public readonly string? Authentication;
         /// <summary>
         /// Indicates whether a given user is common(Y) or local(N).
         /// </summary>
-        public readonly string Common;
+        public readonly string? Common;
         /// <summary>
         /// The initial resource consumer group for the User.
         /// </summary>
-        public readonly string ConsumerGroup;
+        public readonly string? ConsumerGroup;
         /// <summary>
         /// The default collation for the user schema.
         /// </summary>
-        public readonly string DefaultCollation;
+        public readonly string? DefaultCollation;
         /// <summary>
         /// The default tablespace for data.
         /// </summary>
-        public readonly string DefaultTablespace;
+        public readonly string? DefaultTablespace;
         /// <summary>
         /// Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
         /// </summary>
-        public readonly string EditionsEnabled;
+        public readonly string? EditionsEnabled;
         /// <summary>
         /// The external name of the user.
         /// </summary>
-        public readonly string ExternalName;
+        public readonly string? ExternalName;
         /// <summary>
         /// In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
         /// </summary>
-        public readonly string ExternalShared;
+        public readonly string? ExternalShared;
         /// <summary>
         /// Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
         /// </summary>
-        public readonly string Implicit;
+        public readonly string? Implicit;
         /// <summary>
         /// Indicates whether the user definition is inherited from another container (YES) or not (NO).
         /// </summary>
-        public readonly string Inherited;
+        public readonly string? Inherited;
         /// <summary>
         /// The default local temporary tablespace for the user.
         /// </summary>
-        public readonly string LocalTempTablespace;
+        public readonly string? LocalTempTablespace;
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
         /// </summary>
-        public readonly string OracleMaintained;
+        public readonly string? OracleMaintained;
         /// <summary>
         /// The list of existing versions of the password hashes (also known as "verifiers") for the account.
         /// </summary>
-        public readonly string PasswordVersions;
+        public readonly string? PasswordVersions;
         /// <summary>
         /// The profile name of the user.
         /// </summary>
-        public readonly string Profile;
+        public readonly string? Profile;
         /// <summary>
         /// Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
         /// </summary>
-        public readonly string ProxyConnect;
+        public readonly string? ProxyConnect;
         /// <summary>
         /// The status of the user account.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The name of the default tablespace for temporary tables or the name of a tablespace group.
         /// </summary>
-        public readonly string TempTablespace;
+        public readonly string? TempTablespace;
         /// <summary>
         /// The date and time the user was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time of the expiration of the user account.
         /// </summary>
-        public readonly string TimeExpiring;
+        public readonly string? TimeExpiring;
         /// <summary>
         /// The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
         /// </summary>
-        public readonly string TimeLastLogin;
+        public readonly string? TimeLastLogin;
         /// <summary>
         /// The date the account was locked, if the status of the account is LOCKED.
         /// </summary>
-        public readonly string TimeLocked;
+        public readonly string? TimeLocked;
         /// <summary>
         /// The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
         /// </summary>
-        public readonly string TimePasswordChanged;
+        public readonly string? TimePasswordChanged;
 
         [OutputConstructor]
         private GetManagedDatabaseUsersUserCollectionItemResult(
-            string allShared,
+            string? allShared,
 
-            string authentication,
+            string? authentication,
 
-            string common,
+            string? common,
 
-            string consumerGroup,
+            string? consumerGroup,
 
-            string defaultCollation,
+            string? defaultCollation,
 
-            string defaultTablespace,
+            string? defaultTablespace,
 
-            string editionsEnabled,
+            string? editionsEnabled,
 
-            string externalName,
+            string? externalName,
 
-            string externalShared,
+            string? externalShared,
 
-            string @implicit,
+            string? @implicit,
 
-            string inherited,
+            string? inherited,
 
-            string localTempTablespace,
+            string? localTempTablespace,
 
-            string name,
+            string? name,
 
-            string oracleMaintained,
+            string? oracleMaintained,
 
-            string passwordVersions,
+            string? passwordVersions,
 
-            string profile,
+            string? profile,
 
-            string proxyConnect,
+            string? proxyConnect,
 
-            string status,
+            string? status,
 
-            string tempTablespace,
+            string? tempTablespace,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeExpiring,
+            string? timeExpiring,
 
-            string timeLastLogin,
+            string? timeLastLogin,
 
-            string timeLocked,
+            string? timeLocked,
 
-            string timePasswordChanged)
+            string? timePasswordChanged)
         {
             AllShared = allShared;
             Authentication = authentication;

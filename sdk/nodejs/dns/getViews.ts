@@ -96,7 +96,7 @@ export interface GetViewsResult {
     /**
      * The list of views.
      */
-    readonly views: outputs.Dns.GetViewsView[];
+    readonly views?: outputs.Dns.GetViewsView[];
 }
 /**
  * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.

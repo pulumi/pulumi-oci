@@ -126,11 +126,11 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Cumulative delay hours
         /// </summary>
-        public readonly int DelayInHours;
+        public readonly int? DelayInHours;
         /// <summary>
         /// scheduled activity display name, can be renamed.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// FAaaS Environment Identifier.
         /// </summary>
@@ -138,76 +138,76 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// run cadence.
         /// </summary>
-        public readonly string RunCycle;
+        public readonly string? RunCycle;
         public readonly string ScheduledActivityId;
         /// <summary>
         /// Service availability / impact during scheduled activity execution up down
         /// </summary>
-        public readonly string ServiceAvailability;
+        public readonly string? ServiceAvailability;
         /// <summary>
         /// The current state of the scheduledActivity.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the scheduled activity record was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeExpectedFinish;
+        public readonly string? TimeExpectedFinish;
         /// <summary>
         /// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeScheduledStart;
+        public readonly string? TimeScheduledStart;
         /// <summary>
         /// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetFusionEnvironmentScheduledActivityResult(
             ImmutableArray<Outputs.GetFusionEnvironmentScheduledActivityActionResult> actions,
 
-            int delayInHours,
+            int? delayInHours,
 
-            string displayName,
+            string? displayName,
 
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string runCycle,
+            string? runCycle,
 
             string scheduledActivityId,
 
-            string serviceAvailability,
+            string? serviceAvailability,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeExpectedFinish,
+            string? timeExpectedFinish,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeScheduledStart,
+            string? timeScheduledStart,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Actions = actions;
             DelayInHours = delayInHours;

@@ -25,12 +25,12 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of service_attachment_collection.
      * 
      */
-    private List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections;
+    private @Nullable List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections;
     /**
      * @return Type of the serviceInstance.
      * 
@@ -60,15 +60,15 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of service_attachment_collection.
      * 
      */
     public List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections() {
-        return this.serviceAttachmentCollections;
+        return this.serviceAttachmentCollections == null ? List.of() : this.serviceAttachmentCollections;
     }
     /**
      * @return Type of the serviceInstance.
@@ -97,8 +97,8 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
         private @Nullable String displayName;
         private @Nullable List<GetFusionEnvironmentServiceAttachmentsFilter> filters;
         private String fusionEnvironmentId;
-        private String id;
-        private List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections;
+        private @Nullable String id;
+        private @Nullable List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections;
         private @Nullable String serviceInstanceType;
         private @Nullable String state;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceAttachmentCollections(List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections) {
-            this.serviceAttachmentCollections = Objects.requireNonNull(serviceAttachmentCollections);
+        public Builder serviceAttachmentCollections(@Nullable List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections) {
+            this.serviceAttachmentCollections = serviceAttachmentCollections;
             return this;
         }
         public Builder serviceAttachmentCollections(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection... serviceAttachmentCollections) {

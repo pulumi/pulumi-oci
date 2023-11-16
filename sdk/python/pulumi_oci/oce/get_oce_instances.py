@@ -49,9 +49,6 @@ class GetOceInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -66,7 +63,7 @@ class GetOceInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,26 +71,17 @@ class GetOceInstancesResult:
 
     @property
     @pulumi.getter(name="oceInstances")
-    def oce_instances(self) -> Sequence['outputs.GetOceInstancesOceInstanceResult']:
-        """
-        The list of oce_instances.
-        """
+    def oce_instances(self) -> Optional[Sequence['outputs.GetOceInstancesOceInstanceResult']]:
         return pulumi.get(self, "oce_instances")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the instance lifecycle.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> Optional[str]:
-        """
-        Tenancy Identifier
-        """
         return pulumi.get(self, "tenancy_id")
 
 
@@ -119,27 +107,7 @@ def get_oce_instances(compartment_id: Optional[str] = None,
                       tenancy_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOceInstancesResult:
     """
-    This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
-
-    Returns a list of OceInstances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=var["compartment_id"],
-        display_name=var["oce_instance_display_name"],
-        state=var["oce_instance_state"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: Filter results on lifecycleState.
-    :param str tenancy_id: The ID of the tenancy in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_oce_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              tenancy_id: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOceInstancesResult]:
     """
-    This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
-
-    Returns a list of OceInstances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=var["compartment_id"],
-        display_name=var["oce_instance_display_name"],
-        state=var["oce_instance_state"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: Filter results on lifecycleState.
-    :param str tenancy_id: The ID of the tenancy in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

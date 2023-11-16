@@ -8,6 +8,7 @@ import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsRewardCollectionI
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsRewardCollectionItemSummary;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRewardsRewardCollectionItem {
@@ -15,12 +16,12 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
      * @return The monthly summary of rewards.
      * 
      */
-    private List<GetSubscriptionRewardsRewardCollectionItemItem> items;
+    private @Nullable List<GetSubscriptionRewardsRewardCollectionItemItem> items;
     /**
      * @return The overall monthly reward summary.
      * 
      */
-    private List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries;
+    private @Nullable List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries;
 
     private GetSubscriptionRewardsRewardCollectionItem() {}
     /**
@@ -28,14 +29,14 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
      * 
      */
     public List<GetSubscriptionRewardsRewardCollectionItemItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The overall monthly reward summary.
      * 
      */
     public List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries() {
-        return this.summaries;
+        return this.summaries == null ? List.of() : this.summaries;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionRewardsRewardCollectionItemItem> items;
-        private List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries;
+        private @Nullable List<GetSubscriptionRewardsRewardCollectionItemItem> items;
+        private @Nullable List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries;
         public Builder() {}
         public Builder(GetSubscriptionRewardsRewardCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSubscriptionRewardsRewardCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSubscriptionRewardsRewardCollectionItemItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRewardsRewardCollectionItemItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder summaries(List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries) {
-            this.summaries = Objects.requireNonNull(summaries);
+        public Builder summaries(@Nullable List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries) {
+            this.summaries = summaries;
             return this;
         }
         public Builder summaries(GetSubscriptionRewardsRewardCollectionItemSummary... summaries) {

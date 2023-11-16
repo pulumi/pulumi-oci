@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Suppression resource in Oracle Cloud Infrastructure Email service.
@@ -61,24 +60,24 @@ type LookupSuppressionArgs struct {
 // A collection of values returned by getSuppression.
 type LookupSuppressionResult struct {
 	// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The email address of the suppression.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-	ErrorDetail string `pulumi:"errorDetail"`
+	ErrorDetail *string `pulumi:"errorDetail"`
 	// DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-	ErrorSource string `pulumi:"errorSource"`
+	ErrorSource *string `pulumi:"errorSource"`
 	// The unique OCID of the suppression.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-	MessageId string `pulumi:"messageId"`
+	MessageId *string `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	Reason        string `pulumi:"reason"`
-	SuppressionId string `pulumi:"suppressionId"`
+	Reason        *string `pulumi:"reason"`
+	SuppressionId string  `pulumi:"suppressionId"`
 	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeLastSuppressed string `pulumi:"timeLastSuppressed"`
+	TimeLastSuppressed *string `pulumi:"timeLastSuppressed"`
 }
 
 func LookupSuppressionOutput(ctx *pulumi.Context, args LookupSuppressionOutputArgs, opts ...pulumi.InvokeOption) LookupSuppressionResultOutput {
@@ -119,45 +118,39 @@ func (o LookupSuppressionResultOutput) ToLookupSuppressionResultOutputWithContex
 	return o
 }
 
-func (o LookupSuppressionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSuppressionResult] {
-	return pulumix.Output[LookupSuppressionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
-func (o LookupSuppressionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the suppression.
-func (o LookupSuppressionResultOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-func (o LookupSuppressionResultOutput) ErrorDetail() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.ErrorDetail }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) ErrorDetail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.ErrorDetail }).(pulumi.StringPtrOutput)
 }
 
 // DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-func (o LookupSuppressionResultOutput) ErrorSource() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.ErrorSource }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) ErrorSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.ErrorSource }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID of the suppression.
-func (o LookupSuppressionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-func (o LookupSuppressionResultOutput) MessageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.MessageId }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) MessageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.MessageId }).(pulumi.StringPtrOutput)
 }
 
 // The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o LookupSuppressionResultOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.Reason }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSuppressionResultOutput) SuppressionId() pulumi.StringOutput {
@@ -165,13 +158,13 @@ func (o LookupSuppressionResultOutput) SuppressionId() pulumi.StringOutput {
 }
 
 // The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupSuppressionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupSuppressionResultOutput) TimeLastSuppressed() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSuppressionResult) string { return v.TimeLastSuppressed }).(pulumi.StringOutput)
+func (o LookupSuppressionResultOutput) TimeLastSuppressed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSuppressionResult) *string { return v.TimeLastSuppressed }).(pulumi.StringPtrOutput)
 }
 
 func init() {

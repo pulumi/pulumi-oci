@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInsightsExadataInsightSummaryCollection {
-    private List<GetExadataInsightsExadataInsightSummaryCollectionItem> items;
+    private @Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItem> items;
 
     private GetExadataInsightsExadataInsightSummaryCollection() {}
     public List<GetExadataInsightsExadataInsightSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExadataInsightsExadataInsightSummaryCollectionItem> items;
+        private @Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetExadataInsightsExadataInsightSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetExadataInsightsExadataInsightSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetExadataInsightsExadataInsightSummaryCollectionItem... items) {

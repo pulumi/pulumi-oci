@@ -247,7 +247,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         /// </summary>
@@ -277,7 +277,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetReportDefinitionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isSeeded,
 

@@ -130,7 +130,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAnnotationFormatsResult(
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.DataLabellingService
 
             ImmutableArray<Outputs.GetAnnotationFormatsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AnnotationFormatCollections = annotationFormatCollections;
             CompartmentId = compartmentId;

@@ -45,109 +45,109 @@ export interface GetBlockchainPlatformArgs {
  */
 export interface GetBlockchainPlatformResult {
     readonly blockchainPlatformId: string;
-    readonly caCertArchiveText: string;
+    readonly caCertArchiveText?: string;
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Blockchain Platform component details.
      */
-    readonly componentDetails: outputs.Blockchain.GetBlockchainPlatformComponentDetail[];
+    readonly componentDetails?: outputs.Blockchain.GetBlockchainPlatformComponentDetail[];
     /**
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      */
-    readonly computeShape: string;
+    readonly computeShape?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Platform Instance Description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Platform Instance Display name, can be renamed
      */
-    readonly displayName: string;
-    readonly federatedUserId: string;
+    readonly displayName?: string;
+    readonly federatedUserId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * List of OcpuUtilization for all hosts
      */
-    readonly hostOcpuUtilizationInfos: outputs.Blockchain.GetBlockchainPlatformHostOcpuUtilizationInfo[];
+    readonly hostOcpuUtilizationInfos?: outputs.Blockchain.GetBlockchainPlatformHostOcpuUtilizationInfo[];
     /**
      * unique identifier that is immutable on creation
      */
-    readonly id: string;
-    readonly idcsAccessToken: string;
+    readonly id?: string;
+    readonly idcsAccessToken?: string;
     /**
      * Bring your own license
      */
-    readonly isByol: boolean;
+    readonly isByol?: boolean;
     /**
      * True for multi-AD blockchain plaforms, false for single-AD
      */
-    readonly isMultiAd: boolean;
+    readonly isMultiAd?: boolean;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      */
-    readonly loadBalancerShape: string;
+    readonly loadBalancerShape?: string;
     /**
      * Role of platform - FOUNDER or PARTICIPANT
      */
-    readonly platformRole: string;
+    readonly platformRole?: string;
     /**
      * Type of Platform shape - DEFAULT or CUSTOM
      */
-    readonly platformShapeType: string;
+    readonly platformShapeType?: string;
     /**
      * Platform Version
      */
-    readonly platformVersion: string;
+    readonly platformVersion?: string;
     /**
      * Number of replicas of service components like Rest Proxy, CA and Console
      */
-    readonly replicas: outputs.Blockchain.GetBlockchainPlatformReplica[];
+    readonly replicas?: outputs.Blockchain.GetBlockchainPlatformReplica[];
     /**
      * Service endpoint URL, valid post-provisioning
      */
-    readonly serviceEndpoint: string;
+    readonly serviceEndpoint?: string;
     /**
      * The version of the Platform Instance.
      */
-    readonly serviceVersion: string;
+    readonly serviceVersion?: string;
     /**
      * The current state of the Platform Instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Storage size in TBs
      */
-    readonly storageSizeInTbs: number;
+    readonly storageSizeInTbs?: number;
     /**
      * Storage used in TBs
      */
-    readonly storageUsedInTbs: number;
+    readonly storageUsedInTbs?: number;
     /**
      * The time the the Platform Instance was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Platform Instance was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Number of total OCPUs allocated to the platform cluster
      */
-    readonly totalOcpuCapacity: number;
+    readonly totalOcpuCapacity?: number;
 }
 /**
  * This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.

@@ -78,7 +78,7 @@ export interface GetDeployEnvironmentsResult {
     /**
      * The list of deploy_environment_collection.
      */
-    readonly deployEnvironmentCollections: outputs.DevOps.GetDeployEnvironmentsDeployEnvironmentCollection[];
+    readonly deployEnvironmentCollections?: outputs.DevOps.GetDeployEnvironmentsDeployEnvironmentCollection[];
     /**
      * Deployment environment display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */

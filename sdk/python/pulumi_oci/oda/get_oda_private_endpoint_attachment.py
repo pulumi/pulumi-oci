@@ -49,26 +49,17 @@ class GetOdaPrivateEndpointAttachmentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="odaInstanceId")
-    def oda_instance_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        """
+    def oda_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "oda_instance_id")
 
     @property
@@ -78,34 +69,22 @@ class GetOdaPrivateEndpointAttachmentResult:
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
-    def oda_private_endpoint_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-        """
+    def oda_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the ODA Private Endpoint attachment.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -128,21 +107,7 @@ class AwaitableGetOdaPrivateEndpointAttachmentResult(GetOdaPrivateEndpointAttach
 def get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointAttachmentResult:
     """
-    This data source provides details about a specific Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Gets the specified ODA Private Endpoint Attachment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=oci_oda_oda_private_endpoint_attachment["test_oda_private_endpoint_attachment"]["id"])
-    ```
-
-
-    :param str oda_private_endpoint_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint Attachment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['odaPrivateEndpointAttachmentId'] = oda_private_endpoint_attachment_id
@@ -164,20 +129,6 @@ def get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id: Opti
 def get_oda_private_endpoint_attachment_output(oda_private_endpoint_attachment_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointAttachmentResult]:
     """
-    This data source provides details about a specific Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Gets the specified ODA Private Endpoint Attachment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=oci_oda_oda_private_endpoint_attachment["test_oda_private_endpoint_attachment"]["id"])
-    ```
-
-
-    :param str oda_private_endpoint_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint Attachment.
+    Use this data source to access information about an existing resource.
     """
     ...

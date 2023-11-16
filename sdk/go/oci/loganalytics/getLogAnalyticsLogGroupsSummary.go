@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -64,9 +63,9 @@ type GetLogAnalyticsLogGroupsSummaryArgs struct {
 type GetLogAnalyticsLogGroupsSummaryResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id            string `pulumi:"id"`
-	LogGroupCount int    `pulumi:"logGroupCount"`
-	Namespace     string `pulumi:"namespace"`
+	Id            *string `pulumi:"id"`
+	LogGroupCount *int    `pulumi:"logGroupCount"`
+	Namespace     string  `pulumi:"namespace"`
 }
 
 func GetLogAnalyticsLogGroupsSummaryOutput(ctx *pulumi.Context, args GetLogAnalyticsLogGroupsSummaryOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsLogGroupsSummaryResultOutput {
@@ -109,23 +108,17 @@ func (o GetLogAnalyticsLogGroupsSummaryResultOutput) ToGetLogAnalyticsLogGroupsS
 	return o
 }
 
-func (o GetLogAnalyticsLogGroupsSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsSummaryResult] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsSummaryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsLogGroupsSummaryResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsLogGroupsSummaryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsLogGroupsSummaryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsSummaryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsSummaryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsSummaryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetLogAnalyticsLogGroupsSummaryResultOutput) LogGroupCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsSummaryResult) int { return v.LogGroupCount }).(pulumi.IntOutput)
+func (o GetLogAnalyticsLogGroupsSummaryResultOutput) LogGroupCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsSummaryResult) *int { return v.LogGroupCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetLogAnalyticsLogGroupsSummaryResultOutput) Namespace() pulumi.StringOutput {

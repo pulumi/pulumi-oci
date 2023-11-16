@@ -6,6 +6,8 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeysKeyExternalKeyReference {
@@ -13,15 +15,15 @@ public final class GetKeysKeyExternalKeyReference {
      * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
-    private String externalKeyId;
+    private @Nullable String externalKeyId;
 
     private GetKeysKeyExternalKeyReference() {}
     /**
      * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
-    public String externalKeyId() {
-        return this.externalKeyId;
+    public Optional<String> externalKeyId() {
+        return Optional.ofNullable(this.externalKeyId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetKeysKeyExternalKeyReference {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String externalKeyId;
+        private @Nullable String externalKeyId;
         public Builder() {}
         public Builder(GetKeysKeyExternalKeyReference defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetKeysKeyExternalKeyReference {
         }
 
         @CustomType.Setter
-        public Builder externalKeyId(String externalKeyId) {
-            this.externalKeyId = Objects.requireNonNull(externalKeyId);
+        public Builder externalKeyId(@Nullable String externalKeyId) {
+            this.externalKeyId = externalKeyId;
             return this;
         }
         public GetKeysKeyExternalKeyReference build() {

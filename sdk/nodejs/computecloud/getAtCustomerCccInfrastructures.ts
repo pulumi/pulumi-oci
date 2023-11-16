@@ -87,7 +87,7 @@ export interface GetAtCustomerCccInfrastructuresResult {
     /**
      * The list of ccc_infrastructure_collection.
      */
-    readonly cccInfrastructureCollections: outputs.ComputeCloud.GetAtCustomerCccInfrastructuresCccInfrastructureCollection[];
+    readonly cccInfrastructureCollections?: outputs.ComputeCloud.GetAtCustomerCccInfrastructuresCccInfrastructureCollection[];
     readonly cccInfrastructureId?: string;
     /**
      * The infrastructure compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -103,7 +103,7 @@ export interface GetAtCustomerCccInfrastructuresResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Compute Cloud@Customer infrastructure.
      */

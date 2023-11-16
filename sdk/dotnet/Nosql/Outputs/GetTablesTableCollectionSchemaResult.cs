@@ -17,7 +17,7 @@ namespace Pulumi.Oci.Nosql.Outputs
         public readonly ImmutableArray<Outputs.GetTablesTableCollectionSchemaIdentityResult> Identities;
         public readonly ImmutableArray<string> PrimaryKeys;
         public readonly ImmutableArray<string> ShardKeys;
-        public readonly int Ttl;
+        public readonly int? Ttl;
 
         [OutputConstructor]
         private GetTablesTableCollectionSchemaResult(
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Nosql.Outputs
 
             ImmutableArray<string> shardKeys,
 
-            int ttl)
+            int? ttl)
         {
             Columns = columns;
             Identities = identities;

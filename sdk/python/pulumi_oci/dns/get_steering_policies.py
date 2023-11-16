@@ -61,17 +61,11 @@ class GetSteeringPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the steering policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -87,41 +81,26 @@ class GetSteeringPoliciesResult:
     @property
     @pulumi.getter(name="healthCheckMonitorId")
     def health_check_monitor_id(self) -> Optional[str]:
-        """
-        The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-        """
         return pulumi.get(self, "health_check_monitor_id")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the resource.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="steeringPolicies")
-    def steering_policies(self) -> Sequence['outputs.GetSteeringPoliciesSteeringPolicyResult']:
-        """
-        The list of steering_policies.
-        """
+    def steering_policies(self) -> Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyResult']]:
         return pulumi.get(self, "steering_policies")
 
     @property
     @pulumi.getter
     def template(self) -> Optional[str]:
-        """
-        A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-        """
         return pulumi.get(self, "template")
 
     @property
@@ -166,37 +145,7 @@ def get_steering_policies(compartment_id: Optional[str] = None,
                           time_created_less_than: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSteeringPoliciesResult:
     """
-    This data source provides the list of Steering Policies in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all steering policies in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_display_name"],
-        display_name_contains=var["steering_policy_display_name_contains"],
-        health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
-        id=var["steering_policy_id"],
-        state=var["steering_policy_state"],
-        template=var["steering_policy_template"],
-        time_created_greater_than_or_equal_to=var["steering_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str display_name_contains: The partial displayName of a resource. Will match any resource whose name (case-insensitive) contains the provided value.
-    :param str health_check_monitor_id: Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
-    :param str id: The OCID of a resource.
-    :param str state: The state of a resource.
-    :param str template: Search by steering template type. Will match any resource whose template type matches the provided value.
-    :param str time_created_greater_than_or_equal_to: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
-    :param str time_created_less_than: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -239,36 +188,6 @@ def get_steering_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPoliciesResult]:
     """
-    This data source provides the list of Steering Policies in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all steering policies in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_display_name"],
-        display_name_contains=var["steering_policy_display_name_contains"],
-        health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
-        id=var["steering_policy_id"],
-        state=var["steering_policy_state"],
-        template=var["steering_policy_template"],
-        time_created_greater_than_or_equal_to=var["steering_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str display_name_contains: The partial displayName of a resource. Will match any resource whose name (case-insensitive) contains the provided value.
-    :param str health_check_monitor_id: Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
-    :param str id: The OCID of a resource.
-    :param str state: The state of a resource.
-    :param str template: Search by steering template type. Will match any resource whose template type matches the provided value.
-    :param str time_created_greater_than_or_equal_to: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
-    :param str time_created_less_than: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
+    Use this data source to access information about an existing resource.
     """
     ...

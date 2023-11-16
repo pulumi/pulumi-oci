@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
@@ -79,7 +78,7 @@ type GetGatewaysResult struct {
 	// The list of gateway_collection.
 	GatewayCollections []GetGatewaysGatewayCollection `pulumi:"gatewayCollections"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the gateway.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetGatewaysResultOutput) ToGetGatewaysResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetGatewaysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGatewaysResult] {
-	return pulumix.Output[GetGatewaysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 func (o GetGatewaysResultOutput) CertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGatewaysResult) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
@@ -160,8 +153,8 @@ func (o GetGatewaysResultOutput) GatewayCollections() GetGatewaysGatewayCollecti
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetGatewaysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGatewaysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetGatewaysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGatewaysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the gateway.

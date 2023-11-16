@@ -75,14 +75,11 @@ class GetAlertAnalyticResult:
     @property
     @pulumi.getter(name="groupBies")
     def group_bies(self) -> Optional[Sequence[str]]:
-        """
-        GroupBy value used in aggregation.
-        """
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,10 +87,7 @@ class GetAlertAnalyticResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAlertAnalyticItemResult']:
-        """
-        The aggregated data point items.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAlertAnalyticItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -114,17 +108,11 @@ class GetAlertAnalyticResult:
     @property
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[str]:
-        """
-        The time at which the aggregation ended.
-        """
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[str]:
-        """
-        The time at which the aggregation started.
-        """
         return pulumi.get(self, "time_started")
 
 
@@ -158,39 +146,7 @@ def get_alert_analytic(access_level: Optional[str] = None,
                        time_started: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertAnalyticResult:
     """
-    This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns aggregation details of alerts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_analytic = oci.DataSafe.get_alert_analytic(compartment_id=var["compartment_id"],
-        access_level=var["alert_analytic_access_level"],
-        compartment_id_in_subtree=var["alert_analytic_compartment_id_in_subtree"],
-        group_bies=var["alert_analytic_group_by"],
-        query_time_zone=var["alert_analytic_query_time_zone"],
-        scim_query=var["alert_analytic_scim_query"],
-        summary_fields=var["alert_analytic_summary_field"],
-        time_ended=var["alert_analytic_time_ended"],
-        time_started=var["alert_analytic_time_started"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-    :param str query_time_zone: Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated
-    :param Sequence[str] summary_fields: Specifies a subset of summarized fields to be returned in the response.
-    :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -231,38 +187,6 @@ def get_alert_analytic_output(access_level: Optional[pulumi.Input[Optional[str]]
                               time_started: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertAnalyticResult]:
     """
-    This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns aggregation details of alerts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_analytic = oci.DataSafe.get_alert_analytic(compartment_id=var["compartment_id"],
-        access_level=var["alert_analytic_access_level"],
-        compartment_id_in_subtree=var["alert_analytic_compartment_id_in_subtree"],
-        group_bies=var["alert_analytic_group_by"],
-        query_time_zone=var["alert_analytic_query_time_zone"],
-        scim_query=var["alert_analytic_scim_query"],
-        summary_fields=var["alert_analytic_summary_field"],
-        time_ended=var["alert_analytic_time_ended"],
-        time_started=var["alert_analytic_time_started"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-    :param str query_time_zone: Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated
-    :param Sequence[str] summary_fields: Specifies a subset of summarized fields to be returned in the response.
-    :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     ...

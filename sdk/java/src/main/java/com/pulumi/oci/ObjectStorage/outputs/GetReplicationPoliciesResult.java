@@ -9,6 +9,7 @@ import com.pulumi.oci.ObjectStorage.outputs.GetReplicationPoliciesReplicationPol
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,13 +20,13 @@ public final class GetReplicationPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
     /**
      * @return The list of replication_policies.
      * 
      */
-    private List<GetReplicationPoliciesReplicationPolicy> replicationPolicies;
+    private @Nullable List<GetReplicationPoliciesReplicationPolicy> replicationPolicies;
 
     private GetReplicationPoliciesResult() {}
     public String bucket() {
@@ -38,8 +39,8 @@ public final class GetReplicationPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -49,7 +50,7 @@ public final class GetReplicationPoliciesResult {
      * 
      */
     public List<GetReplicationPoliciesReplicationPolicy> replicationPolicies() {
-        return this.replicationPolicies;
+        return this.replicationPolicies == null ? List.of() : this.replicationPolicies;
     }
 
     public static Builder builder() {
@@ -63,9 +64,9 @@ public final class GetReplicationPoliciesResult {
     public static final class Builder {
         private String bucket;
         private @Nullable List<GetReplicationPoliciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String namespace;
-        private List<GetReplicationPoliciesReplicationPolicy> replicationPolicies;
+        private @Nullable List<GetReplicationPoliciesReplicationPolicy> replicationPolicies;
         public Builder() {}
         public Builder(GetReplicationPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,8 +91,8 @@ public final class GetReplicationPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -100,8 +101,8 @@ public final class GetReplicationPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder replicationPolicies(List<GetReplicationPoliciesReplicationPolicy> replicationPolicies) {
-            this.replicationPolicies = Objects.requireNonNull(replicationPolicies);
+        public Builder replicationPolicies(@Nullable List<GetReplicationPoliciesReplicationPolicy> replicationPolicies) {
+            this.replicationPolicies = replicationPolicies;
             return this;
         }
         public Builder replicationPolicies(GetReplicationPoliciesReplicationPolicy... replicationPolicies) {

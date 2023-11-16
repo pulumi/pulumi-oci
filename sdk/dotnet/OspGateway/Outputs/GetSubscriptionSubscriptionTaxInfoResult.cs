@@ -16,35 +16,35 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Tax exemption reason code.
         /// </summary>
-        public readonly string NoTaxReasonCode;
+        public readonly string? NoTaxReasonCode;
         /// <summary>
         /// Tax exemption reason description.
         /// </summary>
-        public readonly string NoTaxReasonCodeDetails;
+        public readonly string? NoTaxReasonCodeDetails;
         /// <summary>
         /// Brazilian companies' CNPJ number.
         /// </summary>
-        public readonly string TaxCnpj;
+        public readonly string? TaxCnpj;
         /// <summary>
         /// Tay payer identifier.
         /// </summary>
-        public readonly string TaxPayerId;
+        public readonly string? TaxPayerId;
         /// <summary>
         /// Tax registration number.
         /// </summary>
-        public readonly string TaxRegNumber;
+        public readonly string? TaxRegNumber;
 
         [OutputConstructor]
         private GetSubscriptionSubscriptionTaxInfoResult(
-            string noTaxReasonCode,
+            string? noTaxReasonCode,
 
-            string noTaxReasonCodeDetails,
+            string? noTaxReasonCodeDetails,
 
-            string taxCnpj,
+            string? taxCnpj,
 
-            string taxPayerId,
+            string? taxPayerId,
 
-            string taxRegNumber)
+            string? taxRegNumber)
         {
             NoTaxReasonCode = noTaxReasonCode;
             NoTaxReasonCodeDetails = noTaxReasonCodeDetails;

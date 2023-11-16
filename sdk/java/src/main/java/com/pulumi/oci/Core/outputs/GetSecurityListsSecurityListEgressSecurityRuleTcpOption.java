@@ -8,6 +8,8 @@ import com.pulumi.oci.Core.outputs.GetSecurityListsSecurityListEgressSecurityRul
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
@@ -15,31 +17,31 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
      * @return The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
-    private Integer max;
+    private @Nullable Integer max;
     /**
      * @return The minimum port number. Must not be greater than the maximum port number.
      * 
      */
-    private Integer min;
-    private List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges;
+    private @Nullable Integer min;
+    private @Nullable List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges;
 
     private GetSecurityListsSecurityListEgressSecurityRuleTcpOption() {}
     /**
      * @return The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
-    public Integer max() {
-        return this.max;
+    public Optional<Integer> max() {
+        return Optional.ofNullable(this.max);
     }
     /**
      * @return The minimum port number. Must not be greater than the maximum port number.
      * 
      */
-    public Integer min() {
-        return this.min;
+    public Optional<Integer> min() {
+        return Optional.ofNullable(this.min);
     }
     public List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges() {
-        return this.sourcePortRanges;
+        return this.sourcePortRanges == null ? List.of() : this.sourcePortRanges;
     }
 
     public static Builder builder() {
@@ -51,9 +53,9 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer max;
-        private Integer min;
-        private List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges;
+        private @Nullable Integer max;
+        private @Nullable Integer min;
+        private @Nullable List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges;
         public Builder() {}
         public Builder(GetSecurityListsSecurityListEgressSecurityRuleTcpOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,18 +65,18 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
         }
 
         @CustomType.Setter
-        public Builder max(Integer max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Integer max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Integer min) {
+            this.min = min;
             return this;
         }
         @CustomType.Setter
-        public Builder sourcePortRanges(List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+        public Builder sourcePortRanges(@Nullable List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges) {
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange... sourcePortRanges) {

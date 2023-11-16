@@ -44,44 +44,44 @@ export interface GetCertificateAuthorityVersionResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The version number of the issuing CA.
      */
-    readonly issuerCaVersionNumber: string;
+    readonly issuerCaVersionNumber?: string;
     /**
      * The current revocation status of the entity.
      */
-    readonly revocationStatuses: outputs.CertificatesManagement.GetCertificateAuthorityVersionRevocationStatus[];
+    readonly revocationStatuses?: outputs.CertificatesManagement.GetCertificateAuthorityVersionRevocationStatus[];
     /**
      * A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
      */
-    readonly serialNumber: string;
+    readonly serialNumber?: string;
     /**
      * A list of rotation states for this CA version.
      */
-    readonly stages: string[];
-    readonly subjectAlternativeNames: outputs.CertificatesManagement.GetCertificateAuthorityVersionSubjectAlternativeName[];
+    readonly stages?: string[];
+    readonly subjectAlternativeNames?: outputs.CertificatesManagement.GetCertificateAuthorityVersionSubjectAlternativeName[];
     /**
      * A optional property indicating when the CA version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
     /**
      * An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      */
-    readonly validities: outputs.CertificatesManagement.GetCertificateAuthorityVersionValidity[];
+    readonly validities?: outputs.CertificatesManagement.GetCertificateAuthorityVersionValidity[];
     /**
      * The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      */
-    readonly versionName: string;
+    readonly versionName?: string;
     /**
      * The version number of the CA.
      */
-    readonly versionNumber: string;
+    readonly versionNumber?: string;
 }
 /**
  * This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.

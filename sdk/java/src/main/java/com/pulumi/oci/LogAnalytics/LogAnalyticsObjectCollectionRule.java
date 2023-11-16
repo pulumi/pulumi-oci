@@ -90,28 +90,28 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="charEncoding", refs={String.class}, tree="[0]")
-    private Output<String> charEncoding;
+    private Output</* @Nullable */ String> charEncoding;
 
     /**
      * @return (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      * 
      */
-    public Output<String> charEncoding() {
-        return this.charEncoding;
+    public Output<Optional<String>> charEncoding() {
+        return Codegen.optional(this.charEncoding);
     }
     /**
      * The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      * 
      */
     @Export(name="collectionType", refs={String.class}, tree="[0]")
-    private Output<String> collectionType;
+    private Output</* @Nullable */ String> collectionType;
 
     /**
      * @return The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      * 
      */
-    public Output<String> collectionType() {
-        return this.collectionType;
+    public Output<Optional<String>> collectionType() {
+        return Codegen.optional(this.collectionType);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
@@ -132,84 +132,84 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * 
      */
     @Export(name="entityId", refs={String.class}, tree="[0]")
-    private Output<String> entityId;
+    private Output</* @Nullable */ String> entityId;
 
     /**
      * @return (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * 
      */
-    public Output<String> entityId() {
-        return this.entityId;
+    public Output<Optional<String>> entityId() {
+        return Codegen.optional(this.entityId);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Whether or not this rule is currently enabled.
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnabled;
+    private Output</* @Nullable */ Boolean> isEnabled;
 
     /**
      * @return (Updatable) Whether or not this rule is currently enabled.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
+    public Output<Optional<Boolean>> isEnabled() {
+        return Codegen.optional(this.isEnabled);
     }
     /**
      * A detailed status of the life cycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A detailed status of the life cycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -230,42 +230,42 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="logSet", refs={String.class}, tree="[0]")
-    private Output<String> logSet;
+    private Output</* @Nullable */ String> logSet;
 
     /**
      * @return (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      * 
      */
-    public Output<String> logSet() {
-        return this.logSet;
+    public Output<Optional<String>> logSet() {
+        return Codegen.optional(this.logSet);
     }
     /**
      * (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      * 
      */
     @Export(name="logSetExtRegex", refs={String.class}, tree="[0]")
-    private Output<String> logSetExtRegex;
+    private Output</* @Nullable */ String> logSetExtRegex;
 
     /**
      * @return (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      * 
      */
-    public Output<String> logSetExtRegex() {
-        return this.logSetExtRegex;
+    public Output<Optional<String>> logSetExtRegex() {
+        return Codegen.optional(this.logSetExtRegex);
     }
     /**
      * (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
      * 
      */
     @Export(name="logSetKey", refs={String.class}, tree="[0]")
-    private Output<String> logSetKey;
+    private Output</* @Nullable */ String> logSetKey;
 
     /**
      * @return (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
      * 
      */
-    public Output<String> logSetKey() {
-        return this.logSetKey;
+    public Output<Optional<String>> logSetKey() {
+        return Codegen.optional(this.logSetKey);
     }
     /**
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
@@ -356,84 +356,84 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="overrides", refs={List.class,LogAnalyticsObjectCollectionRuleOverride.class}, tree="[0,1]")
-    private Output<List<LogAnalyticsObjectCollectionRuleOverride>> overrides;
+    private Output</* @Nullable */ List<LogAnalyticsObjectCollectionRuleOverride>> overrides;
 
     /**
      * @return (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
      * 
      */
-    public Output<List<LogAnalyticsObjectCollectionRuleOverride>> overrides() {
-        return this.overrides;
+    public Output<Optional<List<LogAnalyticsObjectCollectionRuleOverride>>> overrides() {
+        return Codegen.optional(this.overrides);
     }
     /**
      * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
     @Export(name="pollSince", refs={String.class}, tree="[0]")
-    private Output<String> pollSince;
+    private Output</* @Nullable */ String> pollSince;
 
     /**
      * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
-    public Output<String> pollSince() {
-        return this.pollSince;
+    public Output<Optional<String>> pollSince() {
+        return Codegen.optional(this.pollSince);
     }
     /**
      * The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      * 
      */
     @Export(name="pollTill", refs={String.class}, tree="[0]")
-    private Output<String> pollTill;
+    private Output</* @Nullable */ String> pollTill;
 
     /**
      * @return The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      * 
      */
-    public Output<String> pollTill() {
-        return this.pollTill;
+    public Output<Optional<String>> pollTill() {
+        return Codegen.optional(this.pollTill);
     }
     /**
      * The current state of the rule.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the rule.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time when this rule was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when this rule was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time when this rule was last updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when this rule was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
@@ -443,7 +443,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="timezone", refs={String.class}, tree="[0]")
-    private Output<String> timezone;
+    private Output</* @Nullable */ String> timezone;
 
     /**
      * @return (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
@@ -452,8 +452,8 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timezone() {
-        return this.timezone;
+    public Output<Optional<String>> timezone() {
+        return Codegen.optional(this.timezone);
     }
 
     /**

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Verification text in the response.
         /// </summary>
-        public readonly string Text;
+        public readonly string? Text;
 
         [OutputConstructor]
-        private GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult(string text)
+        private GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult(string? text)
         {
             Text = text;
         }

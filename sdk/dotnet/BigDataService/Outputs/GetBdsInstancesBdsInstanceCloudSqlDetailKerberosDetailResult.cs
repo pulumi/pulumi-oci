@@ -16,17 +16,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// Location of the keytab file
         /// </summary>
-        public readonly string KeytabFile;
+        public readonly string? KeytabFile;
         /// <summary>
         /// Name of the Kerberos principal.
         /// </summary>
-        public readonly string PrincipalName;
+        public readonly string? PrincipalName;
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailResult(
-            string keytabFile,
+            string? keytabFile,
 
-            string principalName)
+            string? principalName)
         {
             KeytabFile = keytabFile;
             PrincipalName = principalName;

@@ -70,11 +70,11 @@ export interface GetPrivateApplicationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of private_application_collection.
      */
-    readonly privateApplicationCollections: outputs.ServiceCatalog.GetPrivateApplicationsPrivateApplicationCollection[];
+    readonly privateApplicationCollections?: outputs.ServiceCatalog.GetPrivateApplicationsPrivateApplicationCollection[];
     readonly privateApplicationId?: string;
 }
 /**

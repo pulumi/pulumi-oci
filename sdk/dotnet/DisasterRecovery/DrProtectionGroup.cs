@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The details for associating a DR protection group with a peer DR protection group.
         /// </summary>
         [Output("association")]
-        public Output<Outputs.DrProtectionGroupAssociation> Association { get; private set; } = null!;
+        public Output<Outputs.DrProtectionGroupAssociation?> Association { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
@@ -91,19 +91,19 @@ namespace Pulumi.Oci.DisasterRecovery
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the DR protection group's current state in more detail.
         /// </summary>
         [Output("lifeCycleDetails")]
-        public Output<string> LifeCycleDetails { get; private set; } = null!;
+        public Output<string?> LifeCycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current sub-state of the DR protection group.
         /// </summary>
         [Output("lifecycleSubState")]
-        public Output<string> LifecycleSubState { get; private set; } = null!;
+        public Output<string?> LifecycleSubState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The details for creating an object storage log location for a DR protection group.
@@ -121,43 +121,43 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("peerId")]
-        public Output<string> PeerId { get; private set; } = null!;
+        public Output<string?> PeerId { get; private set; } = null!;
 
         /// <summary>
         /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Output("peerRegion")]
-        public Output<string> PeerRegion { get; private set; } = null!;
+        public Output<string?> PeerRegion { get; private set; } = null!;
 
         /// <summary>
         /// The role of the DR protection group.  Example: `STANDBY`
         /// </summary>
         [Output("role")]
-        public Output<string> Role { get; private set; } = null!;
+        public Output<string?> Role { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the DR protection group.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

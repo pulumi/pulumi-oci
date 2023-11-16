@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppBasedOnTemplate {
@@ -13,51 +15,51 @@ public final class GetDomainsAppBasedOnTemplate {
      * @return The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
      * 
      */
-    private String lastModified;
+    private @Nullable String lastModified;
     /**
      * @return URI of the AppRole.
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
     /**
      * @return Unique well-known identifier used to reference connector bundle.
      * 
      */
-    private String wellKnownId;
+    private @Nullable String wellKnownId;
 
     private GetDomainsAppBasedOnTemplate() {}
     /**
      * @return The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
      * 
      */
-    public String lastModified() {
-        return this.lastModified;
+    public Optional<String> lastModified() {
+        return Optional.ofNullable(this.lastModified);
     }
     /**
      * @return URI of the AppRole.
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
     /**
      * @return Unique well-known identifier used to reference connector bundle.
      * 
      */
-    public String wellKnownId() {
-        return this.wellKnownId;
+    public Optional<String> wellKnownId() {
+        return Optional.ofNullable(this.wellKnownId);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDomainsAppBasedOnTemplate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lastModified;
-        private String ref;
-        private String value;
-        private String wellKnownId;
+        private @Nullable String lastModified;
+        private @Nullable String ref;
+        private @Nullable String value;
+        private @Nullable String wellKnownId;
         public Builder() {}
         public Builder(GetDomainsAppBasedOnTemplate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDomainsAppBasedOnTemplate {
         }
 
         @CustomType.Setter
-        public Builder lastModified(String lastModified) {
-            this.lastModified = Objects.requireNonNull(lastModified);
+        public Builder lastModified(@Nullable String lastModified) {
+            this.lastModified = lastModified;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         @CustomType.Setter
-        public Builder wellKnownId(String wellKnownId) {
-            this.wellKnownId = Objects.requireNonNull(wellKnownId);
+        public Builder wellKnownId(@Nullable String wellKnownId) {
+            this.wellKnownId = wellKnownId;
             return this;
         }
         public GetDomainsAppBasedOnTemplate build() {

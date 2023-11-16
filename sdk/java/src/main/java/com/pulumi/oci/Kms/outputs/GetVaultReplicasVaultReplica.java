@@ -6,6 +6,8 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultReplicasVaultReplica {
@@ -13,51 +15,51 @@ public final class GetVaultReplicasVaultReplica {
      * @return The vault replica&#39;s crypto endpoint
      * 
      */
-    private String cryptoEndpoint;
+    private @Nullable String cryptoEndpoint;
     /**
      * @return The vault replica&#39;s management endpoint
      * 
      */
-    private String managementEndpoint;
+    private @Nullable String managementEndpoint;
     /**
      * @return Region to which vault is replicated to
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return Status of the Vault
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetVaultReplicasVaultReplica() {}
     /**
      * @return The vault replica&#39;s crypto endpoint
      * 
      */
-    public String cryptoEndpoint() {
-        return this.cryptoEndpoint;
+    public Optional<String> cryptoEndpoint() {
+        return Optional.ofNullable(this.cryptoEndpoint);
     }
     /**
      * @return The vault replica&#39;s management endpoint
      * 
      */
-    public String managementEndpoint() {
-        return this.managementEndpoint;
+    public Optional<String> managementEndpoint() {
+        return Optional.ofNullable(this.managementEndpoint);
     }
     /**
      * @return Region to which vault is replicated to
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return Status of the Vault
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetVaultReplicasVaultReplica {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cryptoEndpoint;
-        private String managementEndpoint;
-        private String region;
-        private String status;
+        private @Nullable String cryptoEndpoint;
+        private @Nullable String managementEndpoint;
+        private @Nullable String region;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetVaultReplicasVaultReplica defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetVaultReplicasVaultReplica {
         }
 
         @CustomType.Setter
-        public Builder cryptoEndpoint(String cryptoEndpoint) {
-            this.cryptoEndpoint = Objects.requireNonNull(cryptoEndpoint);
+        public Builder cryptoEndpoint(@Nullable String cryptoEndpoint) {
+            this.cryptoEndpoint = cryptoEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+        public Builder managementEndpoint(@Nullable String managementEndpoint) {
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetVaultReplicasVaultReplica build() {

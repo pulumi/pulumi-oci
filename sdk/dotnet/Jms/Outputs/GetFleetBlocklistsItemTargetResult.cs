@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         /// </summary>
-        public readonly string FleetId;
+        public readonly string? FleetId;
         /// <summary>
         /// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
         /// </summary>
-        public readonly string InstallationKey;
+        public readonly string? InstallationKey;
         /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
         /// </summary>
-        public readonly string ManagedInstanceId;
+        public readonly string? ManagedInstanceId;
 
         [OutputConstructor]
         private GetFleetBlocklistsItemTargetResult(
-            string fleetId,
+            string? fleetId,
 
-            string installationKey,
+            string? installationKey,
 
-            string managedInstanceId)
+            string? managedInstanceId)
         {
             FleetId = fleetId;
             InstallationKey = installationKey;

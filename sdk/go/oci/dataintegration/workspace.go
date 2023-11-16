@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
@@ -79,46 +78,46 @@ type Workspace struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user defined description for the workspace.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The IP of the custom DNS.
-	DnsServerIp pulumi.StringOutput `pulumi:"dnsServerIp"`
+	DnsServerIp pulumi.StringPtrOutput `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
-	DnsServerZone pulumi.StringOutput `pulumi:"dnsServerZone"`
+	DnsServerZone pulumi.StringPtrOutput `pulumi:"dnsServerZone"`
 	// DCMS PRivate Endpoint Compartment Identifier
-	EndpointCompartmentId pulumi.StringOutput `pulumi:"endpointCompartmentId"`
+	EndpointCompartmentId pulumi.StringPtrOutput `pulumi:"endpointCompartmentId"`
 	// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
-	EndpointId pulumi.StringOutput `pulumi:"endpointId"`
+	EndpointId pulumi.StringPtrOutput `pulumi:"endpointId"`
 	// DCMS Private Endpoint Name
-	EndpointName pulumi.StringOutput `pulumi:"endpointName"`
+	EndpointName pulumi.StringPtrOutput `pulumi:"endpointName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags     pulumi.MapOutput     `pulumi:"freeformTags"`
 	IsForceOperation pulumi.BoolPtrOutput `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
-	IsPrivateNetworkEnabled pulumi.BoolOutput `pulumi:"isPrivateNetworkEnabled"`
-	QuiesceTimeout          pulumi.IntOutput  `pulumi:"quiesceTimeout"`
+	IsPrivateNetworkEnabled pulumi.BoolPtrOutput `pulumi:"isPrivateNetworkEnabled"`
+	QuiesceTimeout          pulumi.IntPtrOutput  `pulumi:"quiesceTimeout"`
 	// DCMS Data Asset Registry Compartment Identifier
-	RegistryCompartmentId pulumi.StringOutput `pulumi:"registryCompartmentId"`
+	RegistryCompartmentId pulumi.StringPtrOutput `pulumi:"registryCompartmentId"`
 	// DCMS Data Asset Registry ID to which the workspace is associated
-	RegistryId pulumi.StringOutput `pulumi:"registryId"`
+	RegistryId pulumi.StringPtrOutput `pulumi:"registryId"`
 	// DCMS Data Asset Registry display name
-	RegistryName pulumi.StringOutput `pulumi:"registryName"`
+	RegistryName pulumi.StringPtrOutput `pulumi:"registryName"`
 	// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrOutput `pulumi:"stateMessage"`
 	// The OCID of the subnet for customer connected databases.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrOutput `pulumi:"subnetId"`
 	// The date and time the workspace was created, in the timestamp format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The OCID of the VCN the subnet is in.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VcnId pulumi.StringOutput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrOutput `pulumi:"vcnId"`
 }
 
 // NewWorkspace registers a new resource with the given unique name, arguments, and options.
@@ -360,12 +359,6 @@ func (i *Workspace) ToWorkspaceOutputWithContext(ctx context.Context) WorkspaceO
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceOutput)
 }
 
-func (i *Workspace) ToOutput(ctx context.Context) pulumix.Output[*Workspace] {
-	return pulumix.Output[*Workspace]{
-		OutputState: i.ToWorkspaceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceArrayInput is an input type that accepts WorkspaceArray and WorkspaceArrayOutput values.
 // You can construct a concrete instance of `WorkspaceArrayInput` via:
 //
@@ -389,12 +382,6 @@ func (i WorkspaceArray) ToWorkspaceArrayOutput() WorkspaceArrayOutput {
 
 func (i WorkspaceArray) ToWorkspaceArrayOutputWithContext(ctx context.Context) WorkspaceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceArrayOutput)
-}
-
-func (i WorkspaceArray) ToOutput(ctx context.Context) pulumix.Output[[]*Workspace] {
-	return pulumix.Output[[]*Workspace]{
-		OutputState: i.ToWorkspaceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // WorkspaceMapInput is an input type that accepts WorkspaceMap and WorkspaceMapOutput values.
@@ -422,12 +409,6 @@ func (i WorkspaceMap) ToWorkspaceMapOutputWithContext(ctx context.Context) Works
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceMapOutput)
 }
 
-func (i WorkspaceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Workspace] {
-	return pulumix.Output[map[string]*Workspace]{
-		OutputState: i.ToWorkspaceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceOutput) ElementType() reflect.Type {
@@ -442,12 +423,6 @@ func (o WorkspaceOutput) ToWorkspaceOutputWithContext(ctx context.Context) Works
 	return o
 }
 
-func (o WorkspaceOutput) ToOutput(ctx context.Context) pulumix.Output[*Workspace] {
-	return pulumix.Output[*Workspace]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment containing the workspace.
 func (o WorkspaceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -459,8 +434,8 @@ func (o WorkspaceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user defined description for the workspace.
-func (o WorkspaceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o WorkspaceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -469,28 +444,28 @@ func (o WorkspaceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The IP of the custom DNS.
-func (o WorkspaceOutput) DnsServerIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.DnsServerIp }).(pulumi.StringOutput)
+func (o WorkspaceOutput) DnsServerIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.DnsServerIp }).(pulumi.StringPtrOutput)
 }
 
 // The DNS zone of the custom DNS to use to resolve names.
-func (o WorkspaceOutput) DnsServerZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.DnsServerZone }).(pulumi.StringOutput)
+func (o WorkspaceOutput) DnsServerZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.DnsServerZone }).(pulumi.StringPtrOutput)
 }
 
 // DCMS PRivate Endpoint Compartment Identifier
-func (o WorkspaceOutput) EndpointCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.EndpointCompartmentId }).(pulumi.StringOutput)
+func (o WorkspaceOutput) EndpointCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.EndpointCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
-func (o WorkspaceOutput) EndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.EndpointId }).(pulumi.StringOutput)
+func (o WorkspaceOutput) EndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.EndpointId }).(pulumi.StringPtrOutput)
 }
 
 // DCMS Private Endpoint Name
-func (o WorkspaceOutput) EndpointName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.EndpointName }).(pulumi.StringOutput)
+func (o WorkspaceOutput) EndpointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.EndpointName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -503,60 +478,60 @@ func (o WorkspaceOutput) IsForceOperation() pulumi.BoolPtrOutput {
 }
 
 // Specifies whether the private network connection is enabled or disabled.
-func (o WorkspaceOutput) IsPrivateNetworkEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.BoolOutput { return v.IsPrivateNetworkEnabled }).(pulumi.BoolOutput)
+func (o WorkspaceOutput) IsPrivateNetworkEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.BoolPtrOutput { return v.IsPrivateNetworkEnabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o WorkspaceOutput) QuiesceTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.IntOutput { return v.QuiesceTimeout }).(pulumi.IntOutput)
+func (o WorkspaceOutput) QuiesceTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.IntPtrOutput { return v.QuiesceTimeout }).(pulumi.IntPtrOutput)
 }
 
 // DCMS Data Asset Registry Compartment Identifier
-func (o WorkspaceOutput) RegistryCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.RegistryCompartmentId }).(pulumi.StringOutput)
+func (o WorkspaceOutput) RegistryCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.RegistryCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // DCMS Data Asset Registry ID to which the workspace is associated
-func (o WorkspaceOutput) RegistryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.RegistryId }).(pulumi.StringOutput)
+func (o WorkspaceOutput) RegistryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.RegistryId }).(pulumi.StringPtrOutput)
 }
 
 // DCMS Data Asset Registry display name
-func (o WorkspaceOutput) RegistryName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.RegistryName }).(pulumi.StringOutput)
+func (o WorkspaceOutput) RegistryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.RegistryName }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
-func (o WorkspaceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o WorkspaceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-func (o WorkspaceOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.StateMessage }).(pulumi.StringOutput)
+func (o WorkspaceOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet for customer connected databases.
-func (o WorkspaceOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+func (o WorkspaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the workspace was created, in the timestamp format defined by RFC3339.
-func (o WorkspaceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o WorkspaceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o WorkspaceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o WorkspaceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the VCN the subnet is in.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o WorkspaceOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
+func (o WorkspaceOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringPtrOutput { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type WorkspaceArrayOutput struct{ *pulumi.OutputState }
@@ -571,12 +546,6 @@ func (o WorkspaceArrayOutput) ToWorkspaceArrayOutput() WorkspaceArrayOutput {
 
 func (o WorkspaceArrayOutput) ToWorkspaceArrayOutputWithContext(ctx context.Context) WorkspaceArrayOutput {
 	return o
-}
-
-func (o WorkspaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Workspace] {
-	return pulumix.Output[[]*Workspace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceArrayOutput) Index(i pulumi.IntInput) WorkspaceOutput {
@@ -597,12 +566,6 @@ func (o WorkspaceMapOutput) ToWorkspaceMapOutput() WorkspaceMapOutput {
 
 func (o WorkspaceMapOutput) ToWorkspaceMapOutputWithContext(ctx context.Context) WorkspaceMapOutput {
 	return o
-}
-
-func (o WorkspaceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Workspace] {
-	return pulumix.Output[map[string]*Workspace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceMapOutput) MapIndex(k pulumi.StringInput) WorkspaceOutput {

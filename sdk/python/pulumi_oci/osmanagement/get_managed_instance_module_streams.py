@@ -61,7 +61,7 @@ class GetManagedInstanceModuleStreamsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,25 +75,16 @@ class GetManagedInstanceModuleStreamsResult:
     @property
     @pulumi.getter(name="moduleName")
     def module_name(self) -> Optional[str]:
-        """
-        The name of the module that contains the stream profile
-        """
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter(name="moduleStreamOnManagedInstances")
-    def module_stream_on_managed_instances(self) -> Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult']:
-        """
-        The list of module_stream_on_managed_instances.
-        """
+    def module_stream_on_managed_instances(self) -> Optional[Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult']]:
         return pulumi.get(self, "module_stream_on_managed_instances")
 
     @property
     @pulumi.getter(name="streamName")
     def stream_name(self) -> Optional[str]:
-        """
-        The name of the stream.
-        """
         return pulumi.get(self, "stream_name")
 
     @property
@@ -126,55 +117,7 @@ def get_managed_instance_module_streams(compartment_id: Optional[str] = None,
                                         stream_status: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceModuleStreamsResult:
     """
-    This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
-
-    Retrieve a list of module streams, along with a summary of their
-    status, from a managed instance.  Filters may be applied to select
-    a subset of module streams based on the filter criteria.
-
-    The 'moduleName' attribute filters against the name of a module.
-    It accepts strings of the format "<module>".  If this attribute
-    is defined, only streams that belong to the specified module are
-    included in the result set.  If it is not defined, the request is
-    not subject to this filter.
-
-    The "status" attribute filters against the state of a module stream.
-    Valid values are "ENABLED", "DISABLED", and "ACTIVE".  If the
-    attribute is set to "ENABLED", only module streams that are enabled
-    are included in the result set.  If the attribute is set to "DISABLED",
-    only module streams that are not enabled are included in the result
-    set.  If the attribute is set to "ACTIVE", only module streams that
-    are active are included in the result set.  If the attribute is not
-    defined, the request is not subject to this filter.
-
-    When sorting by the display name, the result set is sorted first
-    by the module name and then by the stream name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_module_streams = oci.OsManagement.get_managed_instance_module_streams(managed_instance_id=var["managed_instance_id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["managed_instance_module_name"],
-        stream_name=var["managed_instance_module_stream_name"],
-        stream_status=var["managed_instance_module_stream_status"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
-    :param str managed_instance_id: OCID for the managed instance
-    :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-    :param str stream_status: The status of the stream
-           
-           A stream with the "ENABLED" status can be used as a source for installing profiles.  Streams with this status are also "ACTIVE".
-           
-           A stream with the "DISABLED" status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
-           
-           A stream with the "ACTIVE" status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -206,54 +149,6 @@ def get_managed_instance_module_streams_output(compartment_id: Optional[pulumi.I
                                                stream_status: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceModuleStreamsResult]:
     """
-    This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
-
-    Retrieve a list of module streams, along with a summary of their
-    status, from a managed instance.  Filters may be applied to select
-    a subset of module streams based on the filter criteria.
-
-    The 'moduleName' attribute filters against the name of a module.
-    It accepts strings of the format "<module>".  If this attribute
-    is defined, only streams that belong to the specified module are
-    included in the result set.  If it is not defined, the request is
-    not subject to this filter.
-
-    The "status" attribute filters against the state of a module stream.
-    Valid values are "ENABLED", "DISABLED", and "ACTIVE".  If the
-    attribute is set to "ENABLED", only module streams that are enabled
-    are included in the result set.  If the attribute is set to "DISABLED",
-    only module streams that are not enabled are included in the result
-    set.  If the attribute is set to "ACTIVE", only module streams that
-    are active are included in the result set.  If the attribute is not
-    defined, the request is not subject to this filter.
-
-    When sorting by the display name, the result set is sorted first
-    by the module name and then by the stream name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_module_streams = oci.OsManagement.get_managed_instance_module_streams(managed_instance_id=var["managed_instance_id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["managed_instance_module_name"],
-        stream_name=var["managed_instance_module_stream_name"],
-        stream_status=var["managed_instance_module_stream_status"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
-    :param str managed_instance_id: OCID for the managed instance
-    :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-    :param str stream_status: The status of the stream
-           
-           A stream with the "ENABLED" status can be used as a source for installing profiles.  Streams with this status are also "ACTIVE".
-           
-           A stream with the "DISABLED" status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
-           
-           A stream with the "ACTIVE" status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -77,7 +77,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// List of apps in the group.
         /// </summary>
         public readonly ImmutableArray<string> Apps;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the application Group.
         /// </summary>
@@ -86,25 +86,25 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this application group belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Count of total applications in the given application group.
         /// </summary>
-        public readonly int TotalApps;
+        public readonly int? TotalApps;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyApplicationGroupResult(
             ImmutableArray<string> apps,
 
-            string id,
+            string? id,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            int totalApps)
+            int? totalApps)
         {
             Apps = apps;
             Id = id;

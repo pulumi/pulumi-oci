@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlCollectionsSqlCollectionCollectionItem {
@@ -16,227 +18,227 @@ public final class GetSqlCollectionsSqlCollectionCollectionItem {
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A filter to return only items that match the specified user name.
      * 
      */
-    private String dbUserName;
+    private @Nullable String dbUserName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the SQL collection.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private Boolean generateSqlFirewallPolicyTrigger;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Boolean generateSqlFirewallPolicyTrigger;
     /**
      * @return The OCID of the SQL collection.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details about the current state of the SQL collection in Data Safe.
      * 
      */
-    private String lifecycleDetails;
-    private Boolean purgeLogsTrigger;
-    private Boolean refreshLogInsightsTrigger;
+    private @Nullable String lifecycleDetails;
+    private @Nullable Boolean purgeLogsTrigger;
+    private @Nullable Boolean refreshLogInsightsTrigger;
     /**
      * @return Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    private String sqlLevel;
-    private Boolean startTrigger;
+    private @Nullable String sqlLevel;
+    private @Nullable Boolean startTrigger;
     /**
      * @return The current state of the SQL collection.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
      * 
      */
-    private String status;
-    private Boolean stopTrigger;
+    private @Nullable String status;
+    private @Nullable Boolean stopTrigger;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The time that the SQL collection was created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      * 
      */
-    private String timeLastStarted;
+    private @Nullable String timeLastStarted;
     /**
      * @return The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      * 
      */
-    private String timeLastStopped;
+    private @Nullable String timeLastStopped;
     /**
      * @return The last date and time the SQL collection was updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetSqlCollectionsSqlCollectionCollectionItem() {}
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A filter to return only items that match the specified user name.
      * 
      */
-    public String dbUserName() {
-        return this.dbUserName;
+    public Optional<String> dbUserName() {
+        return Optional.ofNullable(this.dbUserName);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the SQL collection.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public Boolean generateSqlFirewallPolicyTrigger() {
-        return this.generateSqlFirewallPolicyTrigger;
+    public Optional<Boolean> generateSqlFirewallPolicyTrigger() {
+        return Optional.ofNullable(this.generateSqlFirewallPolicyTrigger);
     }
     /**
      * @return The OCID of the SQL collection.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details about the current state of the SQL collection in Data Safe.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public Boolean purgeLogsTrigger() {
-        return this.purgeLogsTrigger;
+    public Optional<Boolean> purgeLogsTrigger() {
+        return Optional.ofNullable(this.purgeLogsTrigger);
     }
-    public Boolean refreshLogInsightsTrigger() {
-        return this.refreshLogInsightsTrigger;
+    public Optional<Boolean> refreshLogInsightsTrigger() {
+        return Optional.ofNullable(this.refreshLogInsightsTrigger);
     }
     /**
      * @return Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    public String sqlLevel() {
-        return this.sqlLevel;
+    public Optional<String> sqlLevel() {
+        return Optional.ofNullable(this.sqlLevel);
     }
-    public Boolean startTrigger() {
-        return this.startTrigger;
+    public Optional<Boolean> startTrigger() {
+        return Optional.ofNullable(this.startTrigger);
     }
     /**
      * @return The current state of the SQL collection.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
-    public Boolean stopTrigger() {
-        return this.stopTrigger;
+    public Optional<Boolean> stopTrigger() {
+        return Optional.ofNullable(this.stopTrigger);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The time that the SQL collection was created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      * 
      */
-    public String timeLastStarted() {
-        return this.timeLastStarted;
+    public Optional<String> timeLastStarted() {
+        return Optional.ofNullable(this.timeLastStarted);
     }
     /**
      * @return The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      * 
      */
-    public String timeLastStopped() {
-        return this.timeLastStopped;
+    public Optional<String> timeLastStopped() {
+        return Optional.ofNullable(this.timeLastStopped);
     }
     /**
      * @return The last date and time the SQL collection was updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -248,28 +250,28 @@ public final class GetSqlCollectionsSqlCollectionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String dbUserName;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private Boolean generateSqlFirewallPolicyTrigger;
-        private String id;
-        private String lifecycleDetails;
-        private Boolean purgeLogsTrigger;
-        private Boolean refreshLogInsightsTrigger;
-        private String sqlLevel;
-        private Boolean startTrigger;
-        private String state;
-        private String status;
-        private Boolean stopTrigger;
-        private Map<String,Object> systemTags;
-        private String targetId;
-        private String timeCreated;
-        private String timeLastStarted;
-        private String timeLastStopped;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable String dbUserName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Boolean generateSqlFirewallPolicyTrigger;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Boolean purgeLogsTrigger;
+        private @Nullable Boolean refreshLogInsightsTrigger;
+        private @Nullable String sqlLevel;
+        private @Nullable Boolean startTrigger;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable Boolean stopTrigger;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String targetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastStarted;
+        private @Nullable String timeLastStopped;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetSqlCollectionsSqlCollectionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -298,113 +300,113 @@ public final class GetSqlCollectionsSqlCollectionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+        public Builder dbUserName(@Nullable String dbUserName) {
+            this.dbUserName = dbUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder generateSqlFirewallPolicyTrigger(Boolean generateSqlFirewallPolicyTrigger) {
-            this.generateSqlFirewallPolicyTrigger = Objects.requireNonNull(generateSqlFirewallPolicyTrigger);
+        public Builder generateSqlFirewallPolicyTrigger(@Nullable Boolean generateSqlFirewallPolicyTrigger) {
+            this.generateSqlFirewallPolicyTrigger = generateSqlFirewallPolicyTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder purgeLogsTrigger(Boolean purgeLogsTrigger) {
-            this.purgeLogsTrigger = Objects.requireNonNull(purgeLogsTrigger);
+        public Builder purgeLogsTrigger(@Nullable Boolean purgeLogsTrigger) {
+            this.purgeLogsTrigger = purgeLogsTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshLogInsightsTrigger(Boolean refreshLogInsightsTrigger) {
-            this.refreshLogInsightsTrigger = Objects.requireNonNull(refreshLogInsightsTrigger);
+        public Builder refreshLogInsightsTrigger(@Nullable Boolean refreshLogInsightsTrigger) {
+            this.refreshLogInsightsTrigger = refreshLogInsightsTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlLevel(String sqlLevel) {
-            this.sqlLevel = Objects.requireNonNull(sqlLevel);
+        public Builder sqlLevel(@Nullable String sqlLevel) {
+            this.sqlLevel = sqlLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder startTrigger(Boolean startTrigger) {
-            this.startTrigger = Objects.requireNonNull(startTrigger);
+        public Builder startTrigger(@Nullable Boolean startTrigger) {
+            this.startTrigger = startTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder stopTrigger(Boolean stopTrigger) {
-            this.stopTrigger = Objects.requireNonNull(stopTrigger);
+        public Builder stopTrigger(@Nullable Boolean stopTrigger) {
+            this.stopTrigger = stopTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastStarted(String timeLastStarted) {
-            this.timeLastStarted = Objects.requireNonNull(timeLastStarted);
+        public Builder timeLastStarted(@Nullable String timeLastStarted) {
+            this.timeLastStarted = timeLastStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastStopped(String timeLastStopped) {
-            this.timeLastStopped = Objects.requireNonNull(timeLastStopped);
+        public Builder timeLastStopped(@Nullable String timeLastStopped) {
+            this.timeLastStopped = timeLastStopped;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSqlCollectionsSqlCollectionCollectionItem build() {

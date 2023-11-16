@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
@@ -63,7 +62,7 @@ type GetTagStandardTagNamespaceTemplatesResult struct {
 	CompartmentId string                                      `pulumi:"compartmentId"`
 	Filters       []GetTagStandardTagNamespaceTemplatesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of standard_tag_namespace_templates.
 	StandardTagNamespaceTemplates []GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate `pulumi:"standardTagNamespaceTemplates"`
 }
@@ -107,12 +106,6 @@ func (o GetTagStandardTagNamespaceTemplatesResultOutput) ToGetTagStandardTagName
 	return o
 }
 
-func (o GetTagStandardTagNamespaceTemplatesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplatesResult] {
-	return pulumix.Output[GetTagStandardTagNamespaceTemplatesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTagStandardTagNamespaceTemplatesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplatesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -124,8 +117,8 @@ func (o GetTagStandardTagNamespaceTemplatesResultOutput) Filters() GetTagStandar
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTagStandardTagNamespaceTemplatesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplatesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTagStandardTagNamespaceTemplatesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplatesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of standard_tag_namespace_templates.

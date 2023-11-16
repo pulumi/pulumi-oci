@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         /// </summary>
-        public readonly string StackMonitoringConnectorId;
+        public readonly string? StackMonitoringConnectorId;
         /// <summary>
         /// The status of Stack Monitoring.
         /// </summary>
-        public readonly string StackMonitoringStatus;
+        public readonly string? StackMonitoringStatus;
 
         [OutputConstructor]
         private GetExternalNonContainerDatabaseStackMonitoringConfigResult(
-            string stackMonitoringConnectorId,
+            string? stackMonitoringConnectorId,
 
-            string stackMonitoringStatus)
+            string? stackMonitoringStatus)
         {
             StackMonitoringConnectorId = stackMonitoringConnectorId;
             StackMonitoringStatus = stackMonitoringStatus;

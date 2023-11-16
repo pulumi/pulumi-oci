@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -85,7 +84,7 @@ type LifecycleEnvironment struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) User specified information about the lifecycle environment.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -97,13 +96,13 @@ type LifecycleEnvironment struct {
 	// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
 	Stages LifecycleEnvironmentStageArrayOutput `pulumi:"stages"`
 	// The current state of the lifecycle environment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-	TimeModified pulumi.StringOutput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrOutput `pulumi:"timeModified"`
 	// The software source vendor name.
 	//
 	// ** IMPORTANT **
@@ -302,12 +301,6 @@ func (i *LifecycleEnvironment) ToLifecycleEnvironmentOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentOutput)
 }
 
-func (i *LifecycleEnvironment) ToOutput(ctx context.Context) pulumix.Output[*LifecycleEnvironment] {
-	return pulumix.Output[*LifecycleEnvironment]{
-		OutputState: i.ToLifecycleEnvironmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LifecycleEnvironmentArrayInput is an input type that accepts LifecycleEnvironmentArray and LifecycleEnvironmentArrayOutput values.
 // You can construct a concrete instance of `LifecycleEnvironmentArrayInput` via:
 //
@@ -331,12 +324,6 @@ func (i LifecycleEnvironmentArray) ToLifecycleEnvironmentArrayOutput() Lifecycle
 
 func (i LifecycleEnvironmentArray) ToLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) LifecycleEnvironmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentArrayOutput)
-}
-
-func (i LifecycleEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*LifecycleEnvironment] {
-	return pulumix.Output[[]*LifecycleEnvironment]{
-		OutputState: i.ToLifecycleEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LifecycleEnvironmentMapInput is an input type that accepts LifecycleEnvironmentMap and LifecycleEnvironmentMapOutput values.
@@ -364,12 +351,6 @@ func (i LifecycleEnvironmentMap) ToLifecycleEnvironmentMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentMapOutput)
 }
 
-func (i LifecycleEnvironmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LifecycleEnvironment] {
-	return pulumix.Output[map[string]*LifecycleEnvironment]{
-		OutputState: i.ToLifecycleEnvironmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LifecycleEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (LifecycleEnvironmentOutput) ElementType() reflect.Type {
@@ -382,12 +363,6 @@ func (o LifecycleEnvironmentOutput) ToLifecycleEnvironmentOutput() LifecycleEnvi
 
 func (o LifecycleEnvironmentOutput) ToLifecycleEnvironmentOutputWithContext(ctx context.Context) LifecycleEnvironmentOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[*LifecycleEnvironment] {
-	return pulumix.Output[*LifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CPU architecture of the managed instance(s) in the lifecycle environment.
@@ -406,8 +381,8 @@ func (o LifecycleEnvironmentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) User specified information about the lifecycle environment.
-func (o LifecycleEnvironmentOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o LifecycleEnvironmentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -438,8 +413,8 @@ func (o LifecycleEnvironmentOutput) Stages() LifecycleEnvironmentStageArrayOutpu
 }
 
 // The current state of the lifecycle environment.
-func (o LifecycleEnvironmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LifecycleEnvironmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -448,13 +423,13 @@ func (o LifecycleEnvironmentOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-func (o LifecycleEnvironmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LifecycleEnvironmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-func (o LifecycleEnvironmentOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.TimeModified }).(pulumi.StringOutput)
+func (o LifecycleEnvironmentOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringPtrOutput { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
@@ -479,12 +454,6 @@ func (o LifecycleEnvironmentArrayOutput) ToLifecycleEnvironmentArrayOutputWithCo
 	return o
 }
 
-func (o LifecycleEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LifecycleEnvironment] {
-	return pulumix.Output[[]*LifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) LifecycleEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LifecycleEnvironment {
 		return vs[0].([]*LifecycleEnvironment)[vs[1].(int)]
@@ -503,12 +472,6 @@ func (o LifecycleEnvironmentMapOutput) ToLifecycleEnvironmentMapOutput() Lifecyc
 
 func (o LifecycleEnvironmentMapOutput) ToLifecycleEnvironmentMapOutputWithContext(ctx context.Context) LifecycleEnvironmentMapOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LifecycleEnvironment] {
-	return pulumix.Output[map[string]*LifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LifecycleEnvironmentMapOutput) MapIndex(k pulumi.StringInput) LifecycleEnvironmentOutput {

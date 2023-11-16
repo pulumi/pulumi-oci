@@ -16,7 +16,7 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// AR Invoice Numbers comma separated under one invoice
         /// </summary>
-        public readonly string ArInvoices;
+        public readonly string? ArInvoices;
         /// <summary>
         /// Address.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// User that created the Payment term
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Currency details
         /// </summary>
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Payment Method
         /// </summary>
-        public readonly string PaymentMethod;
+        public readonly string? PaymentMethod;
         /// <summary>
         /// Payment Term details
         /// </summary>
@@ -56,43 +56,43 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Receipt Method of Payment Mode
         /// </summary>
-        public readonly string ReceiptMethod;
+        public readonly string? ReceiptMethod;
         /// <summary>
         /// SPM Document Number is an functional identifier for invoice in SPM
         /// </summary>
-        public readonly string SpmInvoiceNumber;
+        public readonly string? SpmInvoiceNumber;
         /// <summary>
         /// Document Status in SPM which depicts current state of invoice
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Invoice associated subscription plan number.
         /// </summary>
-        public readonly string SubscriptionNumber;
+        public readonly string? SubscriptionNumber;
         /// <summary>
         /// SPM Invocie creation date
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Invoice Date
         /// </summary>
-        public readonly string TimeInvoiceDate;
+        public readonly string? TimeInvoiceDate;
         /// <summary>
         /// SPM Invoice updated date
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// User that updated SPM Invoice
         /// </summary>
-        public readonly string UpdatedBy;
+        public readonly string? UpdatedBy;
 
         [OutputConstructor]
         private GetInvoicesInvoiceResult(
-            string arInvoices,
+            string? arInvoices,
 
             ImmutableArray<Outputs.GetInvoicesInvoiceBillToAddressResult> billToAddresses,
 
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.OneSubsription.Outputs
 
             ImmutableArray<Outputs.GetInvoicesInvoiceBillToCustomerResult> billToCustomers,
 
-            string createdBy,
+            string? createdBy,
 
             ImmutableArray<Outputs.GetInvoicesInvoiceCurrencyResult> currencies,
 
@@ -108,27 +108,27 @@ namespace Pulumi.Oci.OneSubsription.Outputs
 
             ImmutableArray<Outputs.GetInvoicesInvoiceOrganizationResult> organizations,
 
-            string paymentMethod,
+            string? paymentMethod,
 
             ImmutableArray<Outputs.GetInvoicesInvoicePaymentTermResult> paymentTerms,
 
-            string receiptMethod,
+            string? receiptMethod,
 
-            string spmInvoiceNumber,
+            string? spmInvoiceNumber,
 
-            string status,
+            string? status,
 
-            string subscriptionNumber,
+            string? subscriptionNumber,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeInvoiceDate,
+            string? timeInvoiceDate,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type,
+            string? type,
 
-            string updatedBy)
+            string? updatedBy)
         {
             ArInvoices = arInvoices;
             BillToAddresses = billToAddresses;

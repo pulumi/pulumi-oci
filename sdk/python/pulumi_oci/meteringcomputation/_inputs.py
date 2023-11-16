@@ -40,14 +40,6 @@ class CustomTableSavedCustomTableArgs:
                  group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgs']]]] = None,
                  row_group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  version: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) The name of the custom table.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] column_group_bies: (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param pulumi.Input[float] compartment_depth: (Updatable) The compartment depth level.
-        :param pulumi.Input[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgs']]] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] row_group_bies: (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param pulumi.Input[float] version: (Updatable) The version of the custom table.
-        """
         pulumi.set(__self__, "display_name", display_name)
         if column_group_bies is not None:
             pulumi.set(__self__, "column_group_bies", column_group_bies)
@@ -63,9 +55,6 @@ class CustomTableSavedCustomTableArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the custom table.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -75,9 +64,6 @@ class CustomTableSavedCustomTableArgs:
     @property
     @pulumi.getter(name="columnGroupBies")
     def column_group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
         return pulumi.get(self, "column_group_bies")
 
     @column_group_bies.setter
@@ -87,9 +73,6 @@ class CustomTableSavedCustomTableArgs:
     @property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The compartment depth level.
-        """
         return pulumi.get(self, "compartment_depth")
 
     @compartment_depth.setter
@@ -99,9 +82,6 @@ class CustomTableSavedCustomTableArgs:
     @property
     @pulumi.getter(name="groupByTags")
     def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgs']]]]:
-        """
-        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
         return pulumi.get(self, "group_by_tags")
 
     @group_by_tags.setter
@@ -111,9 +91,6 @@ class CustomTableSavedCustomTableArgs:
     @property
     @pulumi.getter(name="rowGroupBies")
     def row_group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
         return pulumi.get(self, "row_group_bies")
 
     @row_group_bies.setter
@@ -123,9 +100,6 @@ class CustomTableSavedCustomTableArgs:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The version of the custom table.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -139,11 +113,6 @@ class CustomTableSavedCustomTableGroupByTagArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: (Updatable) The tag key.
-        :param pulumi.Input[str] namespace: (Updatable) The tag namespace.
-        :param pulumi.Input[str] value: (Updatable) The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -154,9 +123,6 @@ class CustomTableSavedCustomTableGroupByTagArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag key.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -166,9 +132,6 @@ class CustomTableSavedCustomTableGroupByTagArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -178,9 +141,6 @@ class CustomTableSavedCustomTableGroupByTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -195,16 +155,6 @@ class QueryQueryDefinitionArgs:
                  display_name: pulumi.Input[str],
                  report_query: pulumi.Input['QueryQueryDefinitionReportQueryArgs'],
                  version: pulumi.Input[float]):
-        """
-        :param pulumi.Input['QueryQueryDefinitionCostAnalysisUiArgs'] cost_analysis_ui: (Updatable) The common fields for Cost Analysis UI rendering.
-        :param pulumi.Input[str] display_name: (Updatable) The query display name. Avoid entering confidential information.
-        :param pulumi.Input['QueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated Cost Analysis report.
-        :param pulumi.Input[float] version: (Updatable) The saved query version.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "cost_analysis_ui", cost_analysis_ui)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "report_query", report_query)
@@ -213,9 +163,6 @@ class QueryQueryDefinitionArgs:
     @property
     @pulumi.getter(name="costAnalysisUi")
     def cost_analysis_ui(self) -> pulumi.Input['QueryQueryDefinitionCostAnalysisUiArgs']:
-        """
-        (Updatable) The common fields for Cost Analysis UI rendering.
-        """
         return pulumi.get(self, "cost_analysis_ui")
 
     @cost_analysis_ui.setter
@@ -225,9 +172,6 @@ class QueryQueryDefinitionArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The query display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -237,9 +181,6 @@ class QueryQueryDefinitionArgs:
     @property
     @pulumi.getter(name="reportQuery")
     def report_query(self) -> pulumi.Input['QueryQueryDefinitionReportQueryArgs']:
-        """
-        (Updatable) The request of the generated Cost Analysis report.
-        """
         return pulumi.get(self, "report_query")
 
     @report_query.setter
@@ -249,13 +190,6 @@ class QueryQueryDefinitionArgs:
     @property
     @pulumi.getter
     def version(self) -> pulumi.Input[float]:
-        """
-        (Updatable) The saved query version.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -268,10 +202,6 @@ class QueryQueryDefinitionCostAnalysisUiArgs:
     def __init__(__self__, *,
                  graph: Optional[pulumi.Input[str]] = None,
                  is_cumulative_graph: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] graph: (Updatable) The graph type.
-        :param pulumi.Input[bool] is_cumulative_graph: (Updatable) A cumulative graph.
-        """
         if graph is not None:
             pulumi.set(__self__, "graph", graph)
         if is_cumulative_graph is not None:
@@ -280,9 +210,6 @@ class QueryQueryDefinitionCostAnalysisUiArgs:
     @property
     @pulumi.getter
     def graph(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The graph type.
-        """
         return pulumi.get(self, "graph")
 
     @graph.setter
@@ -292,9 +219,6 @@ class QueryQueryDefinitionCostAnalysisUiArgs:
     @property
     @pulumi.getter(name="isCumulativeGraph")
     def is_cumulative_graph(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A cumulative graph.
-        """
         return pulumi.get(self, "is_cumulative_graph")
 
     @is_cumulative_graph.setter
@@ -317,20 +241,6 @@ class QueryQueryDefinitionReportQueryArgs:
                  query_type: Optional[pulumi.Input[str]] = None,
                  time_usage_ended: Optional[pulumi.Input[str]] = None,
                  time_usage_started: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] granularity: (Updatable) The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        :param pulumi.Input[str] tenant_id: (Updatable) Tenant ID.
-        :param pulumi.Input[float] compartment_depth: (Updatable) The compartment depth level.
-        :param pulumi.Input[str] date_range_name: (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        :param pulumi.Input[str] filter: (Updatable) The filter object for query usage.
-        :param pulumi.Input['QueryQueryDefinitionReportQueryForecastArgs'] forecast: (Updatable) Forecast configuration of usage/cost.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param pulumi.Input[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgs']]] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param pulumi.Input[bool] is_aggregate_by_time: (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param pulumi.Input[str] query_type: (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        :param pulumi.Input[str] time_usage_ended: (Updatable) The usage end time.
-        :param pulumi.Input[str] time_usage_started: (Updatable) The usage start time.
-        """
         pulumi.set(__self__, "granularity", granularity)
         pulumi.set(__self__, "tenant_id", tenant_id)
         if compartment_depth is not None:
@@ -357,9 +267,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter
     def granularity(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        """
         return pulumi.get(self, "granularity")
 
     @granularity.setter
@@ -369,9 +276,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Tenant ID.
-        """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
@@ -381,9 +285,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The compartment depth level.
-        """
         return pulumi.get(self, "compartment_depth")
 
     @compartment_depth.setter
@@ -393,9 +294,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="dateRangeName")
     def date_range_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        """
         return pulumi.get(self, "date_range_name")
 
     @date_range_name.setter
@@ -405,9 +303,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The filter object for query usage.
-        """
         return pulumi.get(self, "filter")
 
     @filter.setter
@@ -417,9 +312,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter
     def forecast(self) -> Optional[pulumi.Input['QueryQueryDefinitionReportQueryForecastArgs']]:
-        """
-        (Updatable) Forecast configuration of usage/cost.
-        """
         return pulumi.get(self, "forecast")
 
     @forecast.setter
@@ -429,9 +321,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="groupBies")
     def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
         return pulumi.get(self, "group_bies")
 
     @group_bies.setter
@@ -441,9 +330,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="groupByTags")
     def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgs']]]]:
-        """
-        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
         return pulumi.get(self, "group_by_tags")
 
     @group_by_tags.setter
@@ -453,9 +339,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @is_aggregate_by_time.setter
@@ -465,9 +348,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        """
         return pulumi.get(self, "query_type")
 
     @query_type.setter
@@ -477,9 +357,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="timeUsageEnded")
     def time_usage_ended(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The usage end time.
-        """
         return pulumi.get(self, "time_usage_ended")
 
     @time_usage_ended.setter
@@ -489,9 +366,6 @@ class QueryQueryDefinitionReportQueryArgs:
     @property
     @pulumi.getter(name="timeUsageStarted")
     def time_usage_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The usage start time.
-        """
         return pulumi.get(self, "time_usage_started")
 
     @time_usage_started.setter
@@ -505,11 +379,6 @@ class QueryQueryDefinitionReportQueryForecastArgs:
                  time_forecast_ended: pulumi.Input[str],
                  forecast_type: Optional[pulumi.Input[str]] = None,
                  time_forecast_started: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] time_forecast_ended: (Updatable) The forecast end time.
-        :param pulumi.Input[str] forecast_type: (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        :param pulumi.Input[str] time_forecast_started: (Updatable) The forecast start time. Defaults to UTC-1 if not specified.
-        """
         pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
             pulumi.set(__self__, "forecast_type", forecast_type)
@@ -519,9 +388,6 @@ class QueryQueryDefinitionReportQueryForecastArgs:
     @property
     @pulumi.getter(name="timeForecastEnded")
     def time_forecast_ended(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The forecast end time.
-        """
         return pulumi.get(self, "time_forecast_ended")
 
     @time_forecast_ended.setter
@@ -531,9 +397,6 @@ class QueryQueryDefinitionReportQueryForecastArgs:
     @property
     @pulumi.getter(name="forecastType")
     def forecast_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        """
         return pulumi.get(self, "forecast_type")
 
     @forecast_type.setter
@@ -543,9 +406,6 @@ class QueryQueryDefinitionReportQueryForecastArgs:
     @property
     @pulumi.getter(name="timeForecastStarted")
     def time_forecast_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The forecast start time. Defaults to UTC-1 if not specified.
-        """
         return pulumi.get(self, "time_forecast_started")
 
     @time_forecast_started.setter
@@ -559,11 +419,6 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: (Updatable) The tag key.
-        :param pulumi.Input[str] namespace: (Updatable) The tag namespace.
-        :param pulumi.Input[str] value: (Updatable) The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -574,9 +429,6 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag key.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -586,9 +438,6 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -598,9 +447,6 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -619,16 +465,6 @@ class ScheduleQueryPropertiesArgs:
                  group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]] = None,
                  is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
                  query_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['ScheduleQueryPropertiesDateRangeArgs'] date_range: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        :param pulumi.Input[float] compartment_depth: The depth level of the compartment.
-        :param pulumi.Input[str] filter: The filter object for query usage.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        :param pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
         pulumi.set(__self__, "date_range", date_range)
         pulumi.set(__self__, "granularity", granularity)
         if compartment_depth is not None:
@@ -647,9 +483,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter(name="dateRange")
     def date_range(self) -> pulumi.Input['ScheduleQueryPropertiesDateRangeArgs']:
-        """
-        Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        """
         return pulumi.get(self, "date_range")
 
     @date_range.setter
@@ -659,9 +492,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter
     def granularity(self) -> pulumi.Input[str]:
-        """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        """
         return pulumi.get(self, "granularity")
 
     @granularity.setter
@@ -671,9 +501,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> Optional[pulumi.Input[float]]:
-        """
-        The depth level of the compartment.
-        """
         return pulumi.get(self, "compartment_depth")
 
     @compartment_depth.setter
@@ -683,9 +510,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input[str]]:
-        """
-        The filter object for query usage.
-        """
         return pulumi.get(self, "filter")
 
     @filter.setter
@@ -695,9 +519,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter(name="groupBies")
     def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        """
         return pulumi.get(self, "group_bies")
 
     @group_bies.setter
@@ -707,9 +528,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter(name="groupByTags")
     def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]]:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        """
         return pulumi.get(self, "group_by_tags")
 
     @group_by_tags.setter
@@ -719,9 +537,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @is_aggregate_by_time.setter
@@ -731,9 +546,6 @@ class ScheduleQueryPropertiesArgs:
     @property
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
         return pulumi.get(self, "query_type")
 
     @query_type.setter
@@ -748,11 +560,6 @@ class ScheduleQueryPropertiesDateRangeArgs:
                  dynamic_date_range_type: Optional[pulumi.Input[str]] = None,
                  time_usage_ended: Optional[pulumi.Input[str]] = None,
                  time_usage_started: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
-        :param pulumi.Input[str] time_usage_ended: The usage end time.
-        :param pulumi.Input[str] time_usage_started: The usage start time.
-        """
         pulumi.set(__self__, "date_range_type", date_range_type)
         if dynamic_date_range_type is not None:
             pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
@@ -764,9 +571,6 @@ class ScheduleQueryPropertiesDateRangeArgs:
     @property
     @pulumi.getter(name="dateRangeType")
     def date_range_type(self) -> pulumi.Input[str]:
-        """
-        Defines whether the schedule date range is STATIC or DYNAMIC.
-        """
         return pulumi.get(self, "date_range_type")
 
     @date_range_type.setter
@@ -785,9 +589,6 @@ class ScheduleQueryPropertiesDateRangeArgs:
     @property
     @pulumi.getter(name="timeUsageEnded")
     def time_usage_ended(self) -> Optional[pulumi.Input[str]]:
-        """
-        The usage end time.
-        """
         return pulumi.get(self, "time_usage_ended")
 
     @time_usage_ended.setter
@@ -797,9 +598,6 @@ class ScheduleQueryPropertiesDateRangeArgs:
     @property
     @pulumi.getter(name="timeUsageStarted")
     def time_usage_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The usage start time.
-        """
         return pulumi.get(self, "time_usage_started")
 
     @time_usage_started.setter
@@ -813,11 +611,6 @@ class ScheduleQueryPropertiesGroupByTagArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: The tag key.
-        :param pulumi.Input[str] namespace: (Updatable) The namespace needed to determine the object storage bucket.
-        :param pulumi.Input[str] value: The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -828,9 +621,6 @@ class ScheduleQueryPropertiesGroupByTagArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag key.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -840,9 +630,6 @@ class ScheduleQueryPropertiesGroupByTagArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The namespace needed to determine the object storage bucket.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -852,9 +639,6 @@ class ScheduleQueryPropertiesGroupByTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -869,12 +653,6 @@ class ScheduleResultLocationArgs:
                  location_type: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  region: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] bucket: (Updatable) The bucket name where usage or cost CSVs will be uploaded.
-        :param pulumi.Input[str] location_type: (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
-        :param pulumi.Input[str] namespace: (Updatable) The namespace needed to determine the object storage bucket.
-        :param pulumi.Input[str] region: (Updatable) The destination Object Store Region specified by the customer.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
         pulumi.set(__self__, "namespace", namespace)
@@ -883,9 +661,6 @@ class ScheduleResultLocationArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The bucket name where usage or cost CSVs will be uploaded.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -895,9 +670,6 @@ class ScheduleResultLocationArgs:
     @property
     @pulumi.getter(name="locationType")
     def location_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
-        """
         return pulumi.get(self, "location_type")
 
     @location_type.setter
@@ -907,9 +679,6 @@ class ScheduleResultLocationArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The namespace needed to determine the object storage bucket.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -919,9 +688,6 @@ class ScheduleResultLocationArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The destination Object Store Region specified by the customer.
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -935,11 +701,6 @@ class UsageForecastArgs:
                  time_forecast_ended: pulumi.Input[str],
                  forecast_type: Optional[pulumi.Input[str]] = None,
                  time_forecast_started: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] time_forecast_ended: The forecast end time.
-        :param pulumi.Input[str] forecast_type: BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        :param pulumi.Input[str] time_forecast_started: The forecast start time. Defaults to UTC-1 if not specified.
-        """
         pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
             pulumi.set(__self__, "forecast_type", forecast_type)
@@ -949,9 +710,6 @@ class UsageForecastArgs:
     @property
     @pulumi.getter(name="timeForecastEnded")
     def time_forecast_ended(self) -> pulumi.Input[str]:
-        """
-        The forecast end time.
-        """
         return pulumi.get(self, "time_forecast_ended")
 
     @time_forecast_ended.setter
@@ -961,9 +719,6 @@ class UsageForecastArgs:
     @property
     @pulumi.getter(name="forecastType")
     def forecast_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        """
         return pulumi.get(self, "forecast_type")
 
     @forecast_type.setter
@@ -973,9 +728,6 @@ class UsageForecastArgs:
     @property
     @pulumi.getter(name="timeForecastStarted")
     def time_forecast_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The forecast start time. Defaults to UTC-1 if not specified.
-        """
         return pulumi.get(self, "time_forecast_started")
 
     @time_forecast_started.setter
@@ -989,11 +741,6 @@ class UsageGroupByTagArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: The tag key.
-        :param pulumi.Input[str] namespace: The tag namespace.
-        :param pulumi.Input[str] value: The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -1004,9 +751,6 @@ class UsageGroupByTagArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag key.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -1016,9 +760,6 @@ class UsageGroupByTagArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -1028,9 +769,6 @@ class UsageGroupByTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1070,41 +808,6 @@ class UsageItemArgs:
                  unit: Optional[pulumi.Input[str]] = None,
                  unit_price: Optional[pulumi.Input[float]] = None,
                  weight: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[str] ad: The availability domain of the usage.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[str] compartment_name: The compartment name.
-        :param pulumi.Input[str] compartment_path: The compartment path, starting from root.
-        :param pulumi.Input[float] computed_amount: The computed cost.
-        :param pulumi.Input[float] computed_quantity: The usage number.
-        :param pulumi.Input[str] currency: The price currency.
-        :param pulumi.Input[float] discount: The discretionary discount applied to the SKU.
-        :param pulumi.Input[bool] is_forecast: The forecasted data.
-        :param pulumi.Input[float] list_rate: The SKU list rate (not discount).
-        :param pulumi.Input[str] overage: The overage usage.
-        :param pulumi.Input[str] overages_flag: The SPM OverageFlag.
-        :param pulumi.Input[str] platform: Platform for the cost.
-        :param pulumi.Input[str] region: The region of the usage.
-        :param pulumi.Input[str] resource_id: The resource OCID that is incurring the cost.
-        :param pulumi.Input[str] resource_name: The resource name that is incurring the cost.
-        :param pulumi.Input[str] service: The service name that is incurring the cost.
-        :param pulumi.Input[str] shape: The resource shape.
-        :param pulumi.Input[str] sku_name: The SKU friendly name.
-        :param pulumi.Input[str] sku_part_number: The SKU part number.
-        :param pulumi.Input[str] subscription_id: The subscription ID.
-        :param pulumi.Input[Sequence[pulumi.Input['UsageItemTagArgs']]] tags: For grouping, a tag definition. For filtering, a definition and key.
-        :param pulumi.Input[str] tenant_id: Tenant ID.
-        :param pulumi.Input[str] tenant_name: The tenancy name.
-        :param pulumi.Input[str] time_usage_ended: The usage end time.
-        :param pulumi.Input[str] time_usage_started: The usage start time.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] unit: The usage unit.
-        :param pulumi.Input[float] unit_price: The price per unit.
-        :param pulumi.Input[float] weight: The resource size being metered.
-        """
         if ad is not None:
             pulumi.set(__self__, "ad", ad)
         if compartment_id is not None:
@@ -1167,9 +870,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def ad(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the usage.
-        """
         return pulumi.get(self, "ad")
 
     @ad.setter
@@ -1179,9 +879,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -1191,9 +888,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="compartmentName")
     def compartment_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment name.
-        """
         return pulumi.get(self, "compartment_name")
 
     @compartment_name.setter
@@ -1203,9 +897,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="compartmentPath")
     def compartment_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment path, starting from root.
-        """
         return pulumi.get(self, "compartment_path")
 
     @compartment_path.setter
@@ -1215,9 +906,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="computedAmount")
     def computed_amount(self) -> Optional[pulumi.Input[float]]:
-        """
-        The computed cost.
-        """
         return pulumi.get(self, "computed_amount")
 
     @computed_amount.setter
@@ -1227,9 +915,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="computedQuantity")
     def computed_quantity(self) -> Optional[pulumi.Input[float]]:
-        """
-        The usage number.
-        """
         return pulumi.get(self, "computed_quantity")
 
     @computed_quantity.setter
@@ -1239,9 +924,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def currency(self) -> Optional[pulumi.Input[str]]:
-        """
-        The price currency.
-        """
         return pulumi.get(self, "currency")
 
     @currency.setter
@@ -1251,9 +933,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def discount(self) -> Optional[pulumi.Input[float]]:
-        """
-        The discretionary discount applied to the SKU.
-        """
         return pulumi.get(self, "discount")
 
     @discount.setter
@@ -1263,9 +942,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="isForecast")
     def is_forecast(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The forecasted data.
-        """
         return pulumi.get(self, "is_forecast")
 
     @is_forecast.setter
@@ -1275,9 +951,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="listRate")
     def list_rate(self) -> Optional[pulumi.Input[float]]:
-        """
-        The SKU list rate (not discount).
-        """
         return pulumi.get(self, "list_rate")
 
     @list_rate.setter
@@ -1287,9 +960,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def overage(self) -> Optional[pulumi.Input[str]]:
-        """
-        The overage usage.
-        """
         return pulumi.get(self, "overage")
 
     @overage.setter
@@ -1299,9 +969,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="overagesFlag")
     def overages_flag(self) -> Optional[pulumi.Input[str]]:
-        """
-        The SPM OverageFlag.
-        """
         return pulumi.get(self, "overages_flag")
 
     @overages_flag.setter
@@ -1311,9 +978,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def platform(self) -> Optional[pulumi.Input[str]]:
-        """
-        Platform for the cost.
-        """
         return pulumi.get(self, "platform")
 
     @platform.setter
@@ -1323,9 +987,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
-        """
-        The region of the usage.
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -1335,9 +996,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The resource OCID that is incurring the cost.
-        """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
@@ -1347,9 +1005,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="resourceName")
     def resource_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The resource name that is incurring the cost.
-        """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
@@ -1359,9 +1014,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service name that is incurring the cost.
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -1371,9 +1023,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The resource shape.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1383,9 +1032,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="skuName")
     def sku_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The SKU friendly name.
-        """
         return pulumi.get(self, "sku_name")
 
     @sku_name.setter
@@ -1395,9 +1041,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="skuPartNumber")
     def sku_part_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        The SKU part number.
-        """
         return pulumi.get(self, "sku_part_number")
 
     @sku_part_number.setter
@@ -1407,9 +1050,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subscription ID.
-        """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
@@ -1419,9 +1059,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageItemTagArgs']]]]:
-        """
-        For grouping, a tag definition. For filtering, a definition and key.
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -1431,9 +1068,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Tenant ID.
-        """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
@@ -1443,9 +1077,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="tenantName")
     def tenant_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tenancy name.
-        """
         return pulumi.get(self, "tenant_name")
 
     @tenant_name.setter
@@ -1455,9 +1086,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="timeUsageEnded")
     def time_usage_ended(self) -> Optional[pulumi.Input[str]]:
-        """
-        The usage end time.
-        """
         return pulumi.get(self, "time_usage_ended")
 
     @time_usage_ended.setter
@@ -1467,13 +1095,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="timeUsageStarted")
     def time_usage_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The usage start time.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_usage_started")
 
     @time_usage_started.setter
@@ -1483,9 +1104,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def unit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The usage unit.
-        """
         return pulumi.get(self, "unit")
 
     @unit.setter
@@ -1495,9 +1113,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter(name="unitPrice")
     def unit_price(self) -> Optional[pulumi.Input[float]]:
-        """
-        The price per unit.
-        """
         return pulumi.get(self, "unit_price")
 
     @unit_price.setter
@@ -1507,9 +1122,6 @@ class UsageItemArgs:
     @property
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[float]]:
-        """
-        The resource size being metered.
-        """
         return pulumi.get(self, "weight")
 
     @weight.setter
@@ -1523,11 +1135,6 @@ class UsageItemTagArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: The tag key.
-        :param pulumi.Input[str] namespace: The tag namespace.
-        :param pulumi.Input[str] value: The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -1538,9 +1145,6 @@ class UsageItemTagArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag key.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -1550,9 +1154,6 @@ class UsageItemTagArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -1562,9 +1163,6 @@ class UsageItemTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1695,9 +1293,6 @@ class GetSchedulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Query parameter for filtering by name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1706,9 +1301,6 @@ class GetSchedulesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Query parameter for filtering by name
-        """
         return pulumi.get(self, "name")
 
     @name.setter

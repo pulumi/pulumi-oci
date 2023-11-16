@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCpeDeviceShapeParameter {
@@ -13,39 +15,39 @@ public final class GetCpeDeviceShapeParameter {
      * @return A descriptive label for the question (for example, to display in a form in a graphical interface). Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A description or explanation of the question, to help the customer answer accurately.
      * 
      */
-    private String explanation;
+    private @Nullable String explanation;
     /**
      * @return A string that identifies the question.
      * 
      */
-    private String key;
+    private @Nullable String key;
 
     private GetCpeDeviceShapeParameter() {}
     /**
      * @return A descriptive label for the question (for example, to display in a form in a graphical interface). Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A description or explanation of the question, to help the customer answer accurately.
      * 
      */
-    public String explanation() {
-        return this.explanation;
+    public Optional<String> explanation() {
+        return Optional.ofNullable(this.explanation);
     }
     /**
      * @return A string that identifies the question.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetCpeDeviceShapeParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String explanation;
-        private String key;
+        private @Nullable String displayName;
+        private @Nullable String explanation;
+        private @Nullable String key;
         public Builder() {}
         public Builder(GetCpeDeviceShapeParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetCpeDeviceShapeParameter {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder explanation(String explanation) {
-            this.explanation = Objects.requireNonNull(explanation);
+        public Builder explanation(@Nullable String explanation) {
+            this.explanation = explanation;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         public GetCpeDeviceShapeParameter build() {

@@ -54,18 +54,12 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter
-    def certificates(self) -> Sequence['outputs.GetCertificatesCertificateResult']:
-        """
-        The list of certificates.
-        """
+    def certificates(self) -> Optional[Sequence['outputs.GetCertificatesCertificateResult']]:
         return pulumi.get(self, "certificates")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -80,7 +74,7 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -133,31 +127,7 @@ def get_certificates(compartment_id: Optional[str] = None,
                      time_created_less_than: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesResult:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of SSL certificates that can be used in a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.Waas.get_certificates(compartment_id=var["compartment_id"],
-        display_names=var["certificate_display_names"],
-        ids=var["certificate_ids"],
-        states=var["certificate_states"],
-        time_created_greater_than_or_equal_to=var["certificate_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["certificate_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter certificates using a list of display names.
-    :param Sequence[str] ids: Filter certificates using a list of certificates OCIDs.
-    :param Sequence[str] states: Filter certificates using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches certificates created on or after the specified date-time.
-    :param str time_created_less_than: A filter that matches certificates created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -192,30 +162,6 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificatesResult]:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of SSL certificates that can be used in a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.Waas.get_certificates(compartment_id=var["compartment_id"],
-        display_names=var["certificate_display_names"],
-        ids=var["certificate_ids"],
-        states=var["certificate_states"],
-        time_created_greater_than_or_equal_to=var["certificate_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["certificate_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter certificates using a list of display names.
-    :param Sequence[str] ids: Filter certificates using a list of certificates OCIDs.
-    :param Sequence[str] states: Filter certificates using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches certificates created on or after the specified date-time.
-    :param str time_created_less_than: A filter that matches certificates created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     ...

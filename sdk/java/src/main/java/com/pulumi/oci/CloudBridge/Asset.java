@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -174,14 +175,14 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="assetSourceIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> assetSourceIds;
+    private Output</* @Nullable */ List<String>> assetSourceIds;
 
     /**
      * @return (Updatable) List of asset source OCID.
      * 
      */
-    public Output<List<String>> assetSourceIds() {
-        return this.assetSourceIds;
+    public Output<Optional<List<String>>> assetSourceIds() {
+        return Codegen.optional(this.assetSourceIds);
     }
     /**
      * (Updatable) The type of asset.
@@ -216,42 +217,42 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compute", refs={AssetCompute.class}, tree="[0]")
-    private Output<AssetCompute> compute;
+    private Output</* @Nullable */ AssetCompute> compute;
 
     /**
      * @return (Updatable) Compute related properties.
      * 
      */
-    public Output<AssetCompute> compute() {
-        return this.compute;
+    public Output<Optional<AssetCompute>> compute() {
+        return Codegen.optional(this.compute);
     }
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Asset display name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Asset display name.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The key of the asset from the external environment.
@@ -272,14 +273,14 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Inventory ID to which an asset belongs.
@@ -314,98 +315,98 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the asset.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time when the asset was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time when the asset was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when the asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) Virtual machine related properties.
      * 
      */
     @Export(name="vm", refs={AssetVm.class}, tree="[0]")
-    private Output<AssetVm> vm;
+    private Output</* @Nullable */ AssetVm> vm;
 
     /**
      * @return (Updatable) Virtual machine related properties.
      * 
      */
-    public Output<AssetVm> vm() {
-        return this.vm;
+    public Output<Optional<AssetVm>> vm() {
+        return Codegen.optional(this.vm);
     }
     /**
      * (Updatable) VMware vCenter related properties.
      * 
      */
     @Export(name="vmwareVcenter", refs={AssetVmwareVcenter.class}, tree="[0]")
-    private Output<AssetVmwareVcenter> vmwareVcenter;
+    private Output</* @Nullable */ AssetVmwareVcenter> vmwareVcenter;
 
     /**
      * @return (Updatable) VMware vCenter related properties.
      * 
      */
-    public Output<AssetVmwareVcenter> vmwareVcenter() {
-        return this.vmwareVcenter;
+    public Output<Optional<AssetVmwareVcenter>> vmwareVcenter() {
+        return Codegen.optional(this.vmwareVcenter);
     }
     /**
      * (Updatable) VMware virtual machine related properties.
      * 
      */
     @Export(name="vmwareVm", refs={AssetVmwareVm.class}, tree="[0]")
-    private Output<AssetVmwareVm> vmwareVm;
+    private Output</* @Nullable */ AssetVmwareVm> vmwareVm;
 
     /**
      * @return (Updatable) VMware virtual machine related properties.
      * 
      */
-    public Output<AssetVmwareVm> vmwareVm() {
-        return this.vmwareVm;
+    public Output<Optional<AssetVmwareVm>> vmwareVm() {
+        return Codegen.optional(this.vmwareVm);
     }
 
     /**

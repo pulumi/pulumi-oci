@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -130,42 +131,42 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Discriminator.
@@ -200,34 +201,34 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="numOccurrences", refs={String.class}, tree="[0]")
-    private Output<String> numOccurrences;
+    private Output</* @Nullable */ String> numOccurrences;
 
     /**
      * @return Number of execution occurrences.
      * 
      */
-    public Output<String> numOccurrences() {
-        return this.numOccurrences;
+    public Output<Optional<String>> numOccurrences() {
+        return Codegen.optional(this.numOccurrences);
     }
     /**
      * The ManagementSavedSearch id [OCID] to be accelerated.
      * 
      */
     @Export(name="savedSearchId", refs={String.class}, tree="[0]")
-    private Output<String> savedSearchId;
+    private Output</* @Nullable */ String> savedSearchId;
 
     /**
      * @return The ManagementSavedSearch id [OCID] to be accelerated.
      * 
      */
-    public Output<String> savedSearchId() {
-        return this.savedSearchId;
+    public Output<Optional<String>> savedSearchId() {
+        return Codegen.optional(this.savedSearchId);
     }
     @Export(name="scheduledTaskId", refs={String.class}, tree="[0]")
-    private Output<String> scheduledTaskId;
+    private Output</* @Nullable */ String> scheduledTaskId;
 
-    public Output<String> scheduledTaskId() {
-        return this.scheduledTaskId;
+    public Output<Optional<String>> scheduledTaskId() {
+        return Codegen.optional(this.scheduledTaskId);
     }
     /**
      * (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
@@ -248,28 +249,28 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the scheduled task.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      * 
      */
     @Export(name="taskStatus", refs={String.class}, tree="[0]")
-    private Output<String> taskStatus;
+    private Output</* @Nullable */ String> taskStatus;
 
     /**
      * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      * 
      */
-    public Output<String> taskStatus() {
-        return this.taskStatus;
+    public Output<Optional<String>> taskStatus() {
+        return Codegen.optional(this.taskStatus);
     }
     /**
      * Task type.
@@ -296,42 +297,42 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the scheduled task was created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the scheduled task was last updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
     @Export(name="workRequestId", refs={String.class}, tree="[0]")
-    private Output<String> workRequestId;
+    private Output</* @Nullable */ String> workRequestId;
 
     /**
      * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
-    public Output<String> workRequestId() {
-        return this.workRequestId;
+    public Output<Optional<String>> workRequestId() {
+        return Codegen.optional(this.workRequestId);
     }
 
     /**

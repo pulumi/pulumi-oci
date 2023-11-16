@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputedUsagesComputedUsage {
@@ -17,307 +19,307 @@ public final class GetComputedUsagesComputedUsage {
      * @return Subscribed service commitmentId.
      * 
      */
-    private String commitmentServiceId;
+    private @Nullable String commitmentServiceId;
     /**
      * @return SPM Internal compute records source .
      * 
      */
-    private String computeSource;
-    private String computedUsageId;
+    private @Nullable String computeSource;
+    private @Nullable String computedUsageId;
     /**
      * @return Computed Line Amount not rounded
      * 
      */
-    private String cost;
+    private @Nullable String cost;
     /**
      * @return Computed Line Amount rounded.
      * 
      */
-    private String costRounded;
+    private @Nullable String costRounded;
     /**
      * @return Currency code
      * 
      */
-    private String currencyCode;
+    private @Nullable String currencyCode;
     /**
      * @return Data Center Attribute as sent by MQS to SPM.
      * 
      */
-    private String dataCenter;
+    private @Nullable String dataCenter;
     /**
      * @return SPM Internal computed usage Id , 32 character string
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Invoicing status for the aggregated compute usage
      * 
      */
-    private Boolean isInvoiced;
+    private @Nullable Boolean isInvoiced;
     /**
      * @return MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
      * 
      */
-    private String mqsMessageId;
+    private @Nullable String mqsMessageId;
     /**
      * @return Net Unit Price for the product in consideration, price actual.
      * 
      */
-    private String netUnitPrice;
+    private @Nullable String netUnitPrice;
     /**
      * @return SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
      * 
      */
-    private String originalUsageNumber;
+    private @Nullable String originalUsageNumber;
     /**
      * @return Product part number for subscribed service line, called parent product.
      * 
      */
-    private List<GetComputedUsagesComputedUsageParentProduct> parentProducts;
+    private @Nullable List<GetComputedUsagesComputedUsageParentProduct> parentProducts;
     /**
      * @return Subscribed service line parent id
      * 
      */
-    private String parentSubscribedServiceId;
+    private @Nullable String parentSubscribedServiceId;
     /**
      * @return Subscription plan number
      * 
      */
-    private String planNumber;
+    private @Nullable String planNumber;
     /**
      * @return Product description
      * 
      */
-    private List<GetComputedUsagesComputedUsageProduct> products;
+    private @Nullable List<GetComputedUsagesComputedUsageProduct> products;
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    private String quantity;
+    private @Nullable String quantity;
     /**
      * @return Ratecard Id at subscribed service level
      * 
      */
-    private String rateCardId;
+    private @Nullable String rateCardId;
     /**
      * @return References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
      * 
      */
-    private String rateCardTierdId;
+    private @Nullable String rateCardTierdId;
     /**
      * @return Computed Usage created time, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Metered Service date, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeMeteredOn;
+    private @Nullable String timeMeteredOn;
     /**
      * @return Usae computation date, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeOfArrival;
+    private @Nullable String timeOfArrival;
     /**
      * @return Computed Usage updated time, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Unit of Messure
      * 
      */
-    private String unitOfMeasure;
+    private @Nullable String unitOfMeasure;
     /**
      * @return SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
      * 
      */
-    private String usageNumber;
+    private @Nullable String usageNumber;
 
     private GetComputedUsagesComputedUsage() {}
     /**
      * @return Subscribed service commitmentId.
      * 
      */
-    public String commitmentServiceId() {
-        return this.commitmentServiceId;
+    public Optional<String> commitmentServiceId() {
+        return Optional.ofNullable(this.commitmentServiceId);
     }
     /**
      * @return SPM Internal compute records source .
      * 
      */
-    public String computeSource() {
-        return this.computeSource;
+    public Optional<String> computeSource() {
+        return Optional.ofNullable(this.computeSource);
     }
-    public String computedUsageId() {
-        return this.computedUsageId;
+    public Optional<String> computedUsageId() {
+        return Optional.ofNullable(this.computedUsageId);
     }
     /**
      * @return Computed Line Amount not rounded
      * 
      */
-    public String cost() {
-        return this.cost;
+    public Optional<String> cost() {
+        return Optional.ofNullable(this.cost);
     }
     /**
      * @return Computed Line Amount rounded.
      * 
      */
-    public String costRounded() {
-        return this.costRounded;
+    public Optional<String> costRounded() {
+        return Optional.ofNullable(this.costRounded);
     }
     /**
      * @return Currency code
      * 
      */
-    public String currencyCode() {
-        return this.currencyCode;
+    public Optional<String> currencyCode() {
+        return Optional.ofNullable(this.currencyCode);
     }
     /**
      * @return Data Center Attribute as sent by MQS to SPM.
      * 
      */
-    public String dataCenter() {
-        return this.dataCenter;
+    public Optional<String> dataCenter() {
+        return Optional.ofNullable(this.dataCenter);
     }
     /**
      * @return SPM Internal computed usage Id , 32 character string
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Invoicing status for the aggregated compute usage
      * 
      */
-    public Boolean isInvoiced() {
-        return this.isInvoiced;
+    public Optional<Boolean> isInvoiced() {
+        return Optional.ofNullable(this.isInvoiced);
     }
     /**
      * @return MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
      * 
      */
-    public String mqsMessageId() {
-        return this.mqsMessageId;
+    public Optional<String> mqsMessageId() {
+        return Optional.ofNullable(this.mqsMessageId);
     }
     /**
      * @return Net Unit Price for the product in consideration, price actual.
      * 
      */
-    public String netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<String> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
      * 
      */
-    public String originalUsageNumber() {
-        return this.originalUsageNumber;
+    public Optional<String> originalUsageNumber() {
+        return Optional.ofNullable(this.originalUsageNumber);
     }
     /**
      * @return Product part number for subscribed service line, called parent product.
      * 
      */
     public List<GetComputedUsagesComputedUsageParentProduct> parentProducts() {
-        return this.parentProducts;
+        return this.parentProducts == null ? List.of() : this.parentProducts;
     }
     /**
      * @return Subscribed service line parent id
      * 
      */
-    public String parentSubscribedServiceId() {
-        return this.parentSubscribedServiceId;
+    public Optional<String> parentSubscribedServiceId() {
+        return Optional.ofNullable(this.parentSubscribedServiceId);
     }
     /**
      * @return Subscription plan number
      * 
      */
-    public String planNumber() {
-        return this.planNumber;
+    public Optional<String> planNumber() {
+        return Optional.ofNullable(this.planNumber);
     }
     /**
      * @return Product description
      * 
      */
     public List<GetComputedUsagesComputedUsageProduct> products() {
-        return this.products;
+        return this.products == null ? List.of() : this.products;
     }
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    public String quantity() {
-        return this.quantity;
+    public Optional<String> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return Ratecard Id at subscribed service level
      * 
      */
-    public String rateCardId() {
-        return this.rateCardId;
+    public Optional<String> rateCardId() {
+        return Optional.ofNullable(this.rateCardId);
     }
     /**
      * @return References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
      * 
      */
-    public String rateCardTierdId() {
-        return this.rateCardTierdId;
+    public Optional<String> rateCardTierdId() {
+        return Optional.ofNullable(this.rateCardTierdId);
     }
     /**
      * @return Computed Usage created time, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Metered Service date, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeMeteredOn() {
-        return this.timeMeteredOn;
+    public Optional<String> timeMeteredOn() {
+        return Optional.ofNullable(this.timeMeteredOn);
     }
     /**
      * @return Usae computation date, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeOfArrival() {
-        return this.timeOfArrival;
+    public Optional<String> timeOfArrival() {
+        return Optional.ofNullable(this.timeOfArrival);
     }
     /**
      * @return Computed Usage updated time, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Unit of Messure
      * 
      */
-    public String unitOfMeasure() {
-        return this.unitOfMeasure;
+    public Optional<String> unitOfMeasure() {
+        return Optional.ofNullable(this.unitOfMeasure);
     }
     /**
      * @return SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
      * 
      */
-    public String usageNumber() {
-        return this.usageNumber;
+    public Optional<String> usageNumber() {
+        return Optional.ofNullable(this.usageNumber);
     }
 
     public static Builder builder() {
@@ -329,32 +331,32 @@ public final class GetComputedUsagesComputedUsage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commitmentServiceId;
-        private String computeSource;
-        private String computedUsageId;
-        private String cost;
-        private String costRounded;
-        private String currencyCode;
-        private String dataCenter;
-        private String id;
-        private Boolean isInvoiced;
-        private String mqsMessageId;
-        private String netUnitPrice;
-        private String originalUsageNumber;
-        private List<GetComputedUsagesComputedUsageParentProduct> parentProducts;
-        private String parentSubscribedServiceId;
-        private String planNumber;
-        private List<GetComputedUsagesComputedUsageProduct> products;
-        private String quantity;
-        private String rateCardId;
-        private String rateCardTierdId;
-        private String timeCreated;
-        private String timeMeteredOn;
-        private String timeOfArrival;
-        private String timeUpdated;
-        private String type;
-        private String unitOfMeasure;
-        private String usageNumber;
+        private @Nullable String commitmentServiceId;
+        private @Nullable String computeSource;
+        private @Nullable String computedUsageId;
+        private @Nullable String cost;
+        private @Nullable String costRounded;
+        private @Nullable String currencyCode;
+        private @Nullable String dataCenter;
+        private @Nullable String id;
+        private @Nullable Boolean isInvoiced;
+        private @Nullable String mqsMessageId;
+        private @Nullable String netUnitPrice;
+        private @Nullable String originalUsageNumber;
+        private @Nullable List<GetComputedUsagesComputedUsageParentProduct> parentProducts;
+        private @Nullable String parentSubscribedServiceId;
+        private @Nullable String planNumber;
+        private @Nullable List<GetComputedUsagesComputedUsageProduct> products;
+        private @Nullable String quantity;
+        private @Nullable String rateCardId;
+        private @Nullable String rateCardTierdId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeMeteredOn;
+        private @Nullable String timeOfArrival;
+        private @Nullable String timeUpdated;
+        private @Nullable String type;
+        private @Nullable String unitOfMeasure;
+        private @Nullable String usageNumber;
         public Builder() {}
         public Builder(GetComputedUsagesComputedUsage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -387,139 +389,139 @@ public final class GetComputedUsagesComputedUsage {
         }
 
         @CustomType.Setter
-        public Builder commitmentServiceId(String commitmentServiceId) {
-            this.commitmentServiceId = Objects.requireNonNull(commitmentServiceId);
+        public Builder commitmentServiceId(@Nullable String commitmentServiceId) {
+            this.commitmentServiceId = commitmentServiceId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeSource(String computeSource) {
-            this.computeSource = Objects.requireNonNull(computeSource);
+        public Builder computeSource(@Nullable String computeSource) {
+            this.computeSource = computeSource;
             return this;
         }
         @CustomType.Setter
-        public Builder computedUsageId(String computedUsageId) {
-            this.computedUsageId = Objects.requireNonNull(computedUsageId);
+        public Builder computedUsageId(@Nullable String computedUsageId) {
+            this.computedUsageId = computedUsageId;
             return this;
         }
         @CustomType.Setter
-        public Builder cost(String cost) {
-            this.cost = Objects.requireNonNull(cost);
+        public Builder cost(@Nullable String cost) {
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
-        public Builder costRounded(String costRounded) {
-            this.costRounded = Objects.requireNonNull(costRounded);
+        public Builder costRounded(@Nullable String costRounded) {
+            this.costRounded = costRounded;
             return this;
         }
         @CustomType.Setter
-        public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+        public Builder currencyCode(@Nullable String currencyCode) {
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
-        public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+        public Builder dataCenter(@Nullable String dataCenter) {
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isInvoiced(Boolean isInvoiced) {
-            this.isInvoiced = Objects.requireNonNull(isInvoiced);
+        public Builder isInvoiced(@Nullable Boolean isInvoiced) {
+            this.isInvoiced = isInvoiced;
             return this;
         }
         @CustomType.Setter
-        public Builder mqsMessageId(String mqsMessageId) {
-            this.mqsMessageId = Objects.requireNonNull(mqsMessageId);
+        public Builder mqsMessageId(@Nullable String mqsMessageId) {
+            this.mqsMessageId = mqsMessageId;
             return this;
         }
         @CustomType.Setter
-        public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable String netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder originalUsageNumber(String originalUsageNumber) {
-            this.originalUsageNumber = Objects.requireNonNull(originalUsageNumber);
+        public Builder originalUsageNumber(@Nullable String originalUsageNumber) {
+            this.originalUsageNumber = originalUsageNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder parentProducts(List<GetComputedUsagesComputedUsageParentProduct> parentProducts) {
-            this.parentProducts = Objects.requireNonNull(parentProducts);
+        public Builder parentProducts(@Nullable List<GetComputedUsagesComputedUsageParentProduct> parentProducts) {
+            this.parentProducts = parentProducts;
             return this;
         }
         public Builder parentProducts(GetComputedUsagesComputedUsageParentProduct... parentProducts) {
             return parentProducts(List.of(parentProducts));
         }
         @CustomType.Setter
-        public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
-            this.parentSubscribedServiceId = Objects.requireNonNull(parentSubscribedServiceId);
+        public Builder parentSubscribedServiceId(@Nullable String parentSubscribedServiceId) {
+            this.parentSubscribedServiceId = parentSubscribedServiceId;
             return this;
         }
         @CustomType.Setter
-        public Builder planNumber(String planNumber) {
-            this.planNumber = Objects.requireNonNull(planNumber);
+        public Builder planNumber(@Nullable String planNumber) {
+            this.planNumber = planNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder products(List<GetComputedUsagesComputedUsageProduct> products) {
-            this.products = Objects.requireNonNull(products);
+        public Builder products(@Nullable List<GetComputedUsagesComputedUsageProduct> products) {
+            this.products = products;
             return this;
         }
         public Builder products(GetComputedUsagesComputedUsageProduct... products) {
             return products(List.of(products));
         }
         @CustomType.Setter
-        public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable String quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder rateCardId(String rateCardId) {
-            this.rateCardId = Objects.requireNonNull(rateCardId);
+        public Builder rateCardId(@Nullable String rateCardId) {
+            this.rateCardId = rateCardId;
             return this;
         }
         @CustomType.Setter
-        public Builder rateCardTierdId(String rateCardTierdId) {
-            this.rateCardTierdId = Objects.requireNonNull(rateCardTierdId);
+        public Builder rateCardTierdId(@Nullable String rateCardTierdId) {
+            this.rateCardTierdId = rateCardTierdId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMeteredOn(String timeMeteredOn) {
-            this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
+        public Builder timeMeteredOn(@Nullable String timeMeteredOn) {
+            this.timeMeteredOn = timeMeteredOn;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfArrival(String timeOfArrival) {
-            this.timeOfArrival = Objects.requireNonNull(timeOfArrival);
+        public Builder timeOfArrival(@Nullable String timeOfArrival) {
+            this.timeOfArrival = timeOfArrival;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder unitOfMeasure(String unitOfMeasure) {
-            this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+        public Builder unitOfMeasure(@Nullable String unitOfMeasure) {
+            this.unitOfMeasure = unitOfMeasure;
             return this;
         }
         @CustomType.Setter
-        public Builder usageNumber(String usageNumber) {
-            this.usageNumber = Objects.requireNonNull(usageNumber);
+        public Builder usageNumber(@Nullable String usageNumber) {
+            this.usageNumber = usageNumber;
             return this;
         }
         public GetComputedUsagesComputedUsage build() {

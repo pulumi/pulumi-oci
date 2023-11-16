@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dedicated Vm Hosts in Oracle Cloud Infrastructure Core service.
@@ -91,7 +90,7 @@ type GetDedicatedVmHostsResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetDedicatedVmHostsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                                       string   `pulumi:"id"`
+	Id                                       *string  `pulumi:"id"`
 	InstanceShapeName                        *string  `pulumi:"instanceShapeName"`
 	RemainingMemoryInGbsGreaterThanOrEqualTo *float64 `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
 	RemainingOcpusGreaterThanOrEqualTo       *float64 `pulumi:"remainingOcpusGreaterThanOrEqualTo"`
@@ -150,12 +149,6 @@ func (o GetDedicatedVmHostsResultOutput) ToGetDedicatedVmHostsResultOutputWithCo
 	return o
 }
 
-func (o GetDedicatedVmHostsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVmHostsResult] {
-	return pulumix.Output[GetDedicatedVmHostsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
 func (o GetDedicatedVmHostsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedVmHostsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -181,8 +174,8 @@ func (o GetDedicatedVmHostsResultOutput) Filters() GetDedicatedVmHostsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDedicatedVmHostsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVmHostsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDedicatedVmHostsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVmHostsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDedicatedVmHostsResultOutput) InstanceShapeName() pulumi.StringPtrOutput {

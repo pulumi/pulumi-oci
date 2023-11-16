@@ -67,7 +67,7 @@ export interface GetDkimsResult {
     /**
      * The list of dkim_collection.
      */
-    readonly dkimCollections: outputs.Email.GetDkimsDkimCollection[];
+    readonly dkimCollections?: outputs.Email.GetDkimsDkimCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
      */

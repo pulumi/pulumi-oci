@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
@@ -77,7 +76,7 @@ type OpsiConfiguration struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
 	ConfigItemCustomStatuses pulumi.StringArrayOutput `pulumi:"configItemCustomStatuses"`
 	// Specifies the fields to return in a config item summary.
@@ -89,28 +88,28 @@ type OpsiConfiguration struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of OPSI configuration.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
 	OpsiConfigFields pulumi.StringArrayOutput `pulumi:"opsiConfigFields"`
 	// (Updatable) OPSI configuration type.
 	OpsiConfigType pulumi.StringOutput `pulumi:"opsiConfigType"`
 	// OPSI configuration resource lifecycle state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewOpsiConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -309,12 +308,6 @@ func (i *OpsiConfiguration) ToOpsiConfigurationOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationOutput)
 }
 
-func (i *OpsiConfiguration) ToOutput(ctx context.Context) pulumix.Output[*OpsiConfiguration] {
-	return pulumix.Output[*OpsiConfiguration]{
-		OutputState: i.ToOpsiConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpsiConfigurationArrayInput is an input type that accepts OpsiConfigurationArray and OpsiConfigurationArrayOutput values.
 // You can construct a concrete instance of `OpsiConfigurationArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i OpsiConfigurationArray) ToOpsiConfigurationArrayOutput() OpsiConfigurati
 
 func (i OpsiConfigurationArray) ToOpsiConfigurationArrayOutputWithContext(ctx context.Context) OpsiConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationArrayOutput)
-}
-
-func (i OpsiConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*OpsiConfiguration] {
-	return pulumix.Output[[]*OpsiConfiguration]{
-		OutputState: i.ToOpsiConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OpsiConfigurationMapInput is an input type that accepts OpsiConfigurationMap and OpsiConfigurationMapOutput values.
@@ -371,12 +358,6 @@ func (i OpsiConfigurationMap) ToOpsiConfigurationMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationMapOutput)
 }
 
-func (i OpsiConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OpsiConfiguration] {
-	return pulumix.Output[map[string]*OpsiConfiguration]{
-		OutputState: i.ToOpsiConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpsiConfigurationOutput struct{ *pulumi.OutputState }
 
 func (OpsiConfigurationOutput) ElementType() reflect.Type {
@@ -391,15 +372,9 @@ func (o OpsiConfigurationOutput) ToOpsiConfigurationOutputWithContext(ctx contex
 	return o
 }
 
-func (o OpsiConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*OpsiConfiguration] {
-	return pulumix.Output[*OpsiConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o OpsiConfigurationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o OpsiConfigurationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
@@ -428,13 +403,13 @@ func (o OpsiConfigurationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of OPSI configuration.
-func (o OpsiConfigurationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o OpsiConfigurationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-func (o OpsiConfigurationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o OpsiConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -443,8 +418,8 @@ func (o OpsiConfigurationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o OpsiConfigurationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o OpsiConfigurationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
@@ -458,8 +433,8 @@ func (o OpsiConfigurationOutput) OpsiConfigType() pulumi.StringOutput {
 }
 
 // OPSI configuration resource lifecycle state.
-func (o OpsiConfigurationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OpsiConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -471,13 +446,13 @@ func (o OpsiConfigurationOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o OpsiConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OpsiConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o OpsiConfigurationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o OpsiConfigurationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type OpsiConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -492,12 +467,6 @@ func (o OpsiConfigurationArrayOutput) ToOpsiConfigurationArrayOutput() OpsiConfi
 
 func (o OpsiConfigurationArrayOutput) ToOpsiConfigurationArrayOutputWithContext(ctx context.Context) OpsiConfigurationArrayOutput {
 	return o
-}
-
-func (o OpsiConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OpsiConfiguration] {
-	return pulumix.Output[[]*OpsiConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OpsiConfigurationArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationOutput {
@@ -518,12 +487,6 @@ func (o OpsiConfigurationMapOutput) ToOpsiConfigurationMapOutput() OpsiConfigura
 
 func (o OpsiConfigurationMapOutput) ToOpsiConfigurationMapOutputWithContext(ctx context.Context) OpsiConfigurationMapOutput {
 	return o
-}
-
-func (o OpsiConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OpsiConfiguration] {
-	return pulumix.Output[map[string]*OpsiConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OpsiConfigurationMapOutput) MapIndex(k pulumi.StringInput) OpsiConfigurationOutput {

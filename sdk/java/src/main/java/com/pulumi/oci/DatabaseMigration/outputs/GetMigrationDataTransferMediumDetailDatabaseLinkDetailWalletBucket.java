@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket {
@@ -13,27 +15,27 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletB
      * @return Bucket name.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Namespace name of the object store bucket.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
 
     private GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket() {}
     /**
      * @return Bucket name.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Namespace name of the object store bucket.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletB
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String namespace;
+        private @Nullable String bucket;
+        private @Nullable String namespace;
         public Builder() {}
         public Builder(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletB
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         public GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket build() {

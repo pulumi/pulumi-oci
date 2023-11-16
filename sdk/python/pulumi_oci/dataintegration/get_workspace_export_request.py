@@ -89,34 +89,22 @@ class GetWorkspaceExportRequestResult:
 
     @property
     @pulumi.getter(name="areReferencesIncluded")
-    def are_references_included(self) -> bool:
-        """
-        Controls if the references will be exported along with the objects
-        """
+    def are_references_included(self) -> Optional[bool]:
         return pulumi.get(self, "are_references_included")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage Bucket where the objects will be exported to
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        Name of the user who initiated export request.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
-        """
-        Contains key of the error
-        """
+    def error_messages(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "error_messages")
 
     @property
@@ -126,119 +114,77 @@ class GetWorkspaceExportRequestResult:
 
     @property
     @pulumi.getter(name="exportedItems")
-    def exported_items(self) -> Sequence['outputs.GetWorkspaceExportRequestExportedItemResult']:
-        """
-        The array of exported object details.
-        """
+    def exported_items(self) -> Optional[Sequence['outputs.GetWorkspaceExportRequestExportedItemResult']]:
         return pulumi.get(self, "exported_items")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        Name of the exported zip file.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
     @property
     @pulumi.getter
-    def filters(self) -> Sequence[str]:
-        """
-        Export multiple objects based on filters.
-        """
+    def filters(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isObjectOverwriteEnabled")
-    def is_object_overwrite_enabled(self) -> bool:
-        """
-        Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        """
+    def is_object_overwrite_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_object_overwrite_enabled")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Export object request key
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the export request.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectKeys")
-    def object_keys(self) -> Sequence[str]:
-        """
-        The list of the objects to be exported
-        """
+    def object_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "object_keys")
 
     @property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> str:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
+    def object_storage_region(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_region")
 
     @property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> str:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
+    def object_storage_tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @property
     @pulumi.getter(name="referencedItems")
-    def referenced_items(self) -> str:
-        """
-        The array of exported referenced objects.
-        """
+    def referenced_items(self) -> Optional[str]:
         return pulumi.get(self, "referenced_items")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Export Objects request status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> str:
-        """
-        Time at which the request was completely processed.
-        """
+    def time_ended_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_ended_in_millis")
 
     @property
     @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> str:
-        """
-        Time at which the request started getting processed.
-        """
+    def time_started_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_started_in_millis")
 
     @property
     @pulumi.getter(name="totalExportedObjectCount")
-    def total_exported_object_count(self) -> int:
-        """
-        Number of objects that are exported.
-        """
+    def total_exported_object_count(self) -> Optional[int]:
         return pulumi.get(self, "total_exported_object_count")
 
     @property
@@ -280,23 +226,7 @@ def get_workspace_export_request(export_request_key: Optional[str] = None,
                                  workspace_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceExportRequestResult:
     """
-    This data source provides details about a specific Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-    This endpoint can be used to get the summary/details of object being exported.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_export_request = oci.DataIntegration.get_workspace_export_request(export_request_key=var["workspace_export_request_export_request_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str export_request_key: The key of the object export object request
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['exportRequestKey'] = export_request_key
@@ -333,22 +263,6 @@ def get_workspace_export_request_output(export_request_key: Optional[pulumi.Inpu
                                         workspace_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceExportRequestResult]:
     """
-    This data source provides details about a specific Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-    This endpoint can be used to get the summary/details of object being exported.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_export_request = oci.DataIntegration.get_workspace_export_request(export_request_key=var["workspace_export_request_export_request_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str export_request_key: The key of the object export object request
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

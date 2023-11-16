@@ -82,7 +82,7 @@ export interface GetListingPackagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The ID of the listing that the specified package belongs to.
      */
@@ -90,7 +90,7 @@ export interface GetListingPackagesResult {
     /**
      * The list of listing_packages.
      */
-    readonly listingPackages: outputs.Marketplace.GetListingPackagesListingPackage[];
+    readonly listingPackages?: outputs.Marketplace.GetListingPackagesListingPackage[];
     /**
      * The specified package's type.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -63,20 +62,20 @@ type GetInstancePoolLoadBalancerAttachmentArgs struct {
 // A collection of values returned by getInstancePoolLoadBalancerAttachment.
 type GetInstancePoolLoadBalancerAttachmentResult struct {
 	// The name of the backend set on the load balancer.
-	BackendSetName string `pulumi:"backendSetName"`
+	BackendSetName *string `pulumi:"backendSetName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
 	InstancePoolId                       string `pulumi:"instancePoolId"`
 	InstancePoolLoadBalancerAttachmentId string `pulumi:"instancePoolLoadBalancerAttachmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// The port value used for the backends.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The status of the interaction between the instance pool and the load balancer.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-	VnicSelection string `pulumi:"vnicSelection"`
+	VnicSelection *string `pulumi:"vnicSelection"`
 }
 
 func GetInstancePoolLoadBalancerAttachmentOutput(ctx *pulumi.Context, args GetInstancePoolLoadBalancerAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetInstancePoolLoadBalancerAttachmentResultOutput {
@@ -119,20 +118,14 @@ func (o GetInstancePoolLoadBalancerAttachmentResultOutput) ToGetInstancePoolLoad
 	return o
 }
 
-func (o GetInstancePoolLoadBalancerAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstancePoolLoadBalancerAttachmentResult] {
-	return pulumix.Output[GetInstancePoolLoadBalancerAttachmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the backend set on the load balancer.
-func (o GetInstancePoolLoadBalancerAttachmentResultOutput) BackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) string { return v.BackendSetName }).(pulumi.StringOutput)
+func (o GetInstancePoolLoadBalancerAttachmentResultOutput) BackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) *string { return v.BackendSetName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstancePoolLoadBalancerAttachmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstancePoolLoadBalancerAttachmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
@@ -147,23 +140,23 @@ func (o GetInstancePoolLoadBalancerAttachmentResultOutput) InstancePoolLoadBalan
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
-func (o GetInstancePoolLoadBalancerAttachmentResultOutput) LoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+func (o GetInstancePoolLoadBalancerAttachmentResultOutput) LoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) *string { return v.LoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // The port value used for the backends.
-func (o GetInstancePoolLoadBalancerAttachmentResultOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) int { return v.Port }).(pulumi.IntOutput)
+func (o GetInstancePoolLoadBalancerAttachmentResultOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The status of the interaction between the instance pool and the load balancer.
-func (o GetInstancePoolLoadBalancerAttachmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetInstancePoolLoadBalancerAttachmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-func (o GetInstancePoolLoadBalancerAttachmentResultOutput) VnicSelection() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) string { return v.VnicSelection }).(pulumi.StringOutput)
+func (o GetInstancePoolLoadBalancerAttachmentResultOutput) VnicSelection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolLoadBalancerAttachmentResult) *string { return v.VnicSelection }).(pulumi.StringPtrOutput)
 }
 
 func init() {

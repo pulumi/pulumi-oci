@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// The OCID of the ingress gateway resource.
         /// </summary>
-        public readonly string IngressGatewayId;
+        public readonly string? IngressGatewayId;
         /// <summary>
         /// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
         /// </summary>
@@ -32,31 +32,31 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Protocol of the external service
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Traffic type of the target.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The OCID of the virtual service resource.
         /// </summary>
-        public readonly string VirtualServiceId;
+        public readonly string? VirtualServiceId;
 
         [OutputConstructor]
         private GetAccessPolicyRuleSourceResult(
             ImmutableArray<string> hostnames,
 
-            string ingressGatewayId,
+            string? ingressGatewayId,
 
             ImmutableArray<string> ipAddresses,
 
             ImmutableArray<int> ports,
 
-            string protocol,
+            string? protocol,
 
-            string type,
+            string? type,
 
-            string virtualServiceId)
+            string? virtualServiceId)
         {
             Hostnames = hostnames;
             IngressGatewayId = ingressGatewayId;

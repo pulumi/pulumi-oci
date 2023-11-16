@@ -47,68 +47,68 @@ export interface GetRecommendationResult {
     /**
      * The unique OCID associated with the category.
      */
-    readonly categoryId: string;
+    readonly categoryId?: string;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Text describing the recommendation.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The estimated cost savings, in dollars, for the recommendation.
      */
-    readonly estimatedCostSaving: number;
+    readonly estimatedCostSaving?: number;
     /**
      * Additional metadata key/value pairs for the recommendation.
      */
-    readonly extendedMetadata: {[key: string]: any};
+    readonly extendedMetadata?: {[key: string]: any};
     /**
      * The unique OCID associated with the recommendation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The level of importance assigned to the recommendation.
      */
-    readonly importance: string;
+    readonly importance?: string;
     /**
      * The name of the profile level.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly recommendationId: string;
     /**
      * An array of `ResourceCount` objects grouped by the status of the resource actions.
      */
-    readonly resourceCounts: outputs.Optimizer.GetRecommendationResourceCount[];
+    readonly resourceCounts?: outputs.Optimizer.GetRecommendationResourceCount[];
     /**
      * The recommendation's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The current status of the recommendation.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      */
-    readonly supportedLevels: outputs.Optimizer.GetRecommendationSupportedLevel[];
+    readonly supportedLevels?: outputs.Optimizer.GetRecommendationSupportedLevel[];
     /**
      * The date and time the recommendation details were created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      */
-    readonly timeStatusBegin: string;
+    readonly timeStatusBegin?: string;
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
      */
-    readonly timeStatusEnd: string;
+    readonly timeStatusEnd?: string;
     /**
      * The date and time the recommendation details were last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.

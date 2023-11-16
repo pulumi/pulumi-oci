@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The domain for which the cookie is set, defaults to WAAS policy domain.
         /// </summary>
-        public readonly string Domain;
+        public readonly string? Domain;
         /// <summary>
         /// The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
         /// </summary>
-        public readonly int ExpirationTimeInSeconds;
+        public readonly int? ExpirationTimeInSeconds;
         /// <summary>
         /// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
         /// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
@@ -31,17 +31,17 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The unique name of the whitelist.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetWaasPolicyPolicyConfigLoadBalancingMethodResult(
-            string domain,
+            string? domain,
 
-            int expirationTimeInSeconds,
+            int? expirationTimeInSeconds,
 
             string method,
 
-            string name)
+            string? name)
         {
             Domain = domain;
             ExpirationTimeInSeconds = expirationTimeInSeconds;

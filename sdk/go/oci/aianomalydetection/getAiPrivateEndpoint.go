@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -63,29 +62,29 @@ type LookupAiPrivateEndpointResult struct {
 	// The list of dataAssets using the private reverse connection endpoint.
 	AttachedDataAssets []string `pulumi:"attachedDataAssets"`
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Private Reverse Connection Endpoint display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones []string `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the private endpoint resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Subnet Identifier
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAiPrivateEndpointOutput(ctx *pulumi.Context, args LookupAiPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupAiPrivateEndpointResultOutput {
@@ -126,12 +125,6 @@ func (o LookupAiPrivateEndpointResultOutput) ToLookupAiPrivateEndpointResultOutp
 	return o
 }
 
-func (o LookupAiPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAiPrivateEndpointResult] {
-	return pulumix.Output[LookupAiPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAiPrivateEndpointResultOutput) AiPrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.AiPrivateEndpointId }).(pulumi.StringOutput)
 }
@@ -142,8 +135,8 @@ func (o LookupAiPrivateEndpointResultOutput) AttachedDataAssets() pulumi.StringA
 }
 
 // Compartment Identifier.
-func (o LookupAiPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -152,8 +145,8 @@ func (o LookupAiPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Private Reverse Connection Endpoint display name.
-func (o LookupAiPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
@@ -167,23 +160,23 @@ func (o LookupAiPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable.
-func (o LookupAiPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o LookupAiPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint resource.
-func (o LookupAiPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Subnet Identifier
-func (o LookupAiPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -192,13 +185,13 @@ func (o LookupAiPrivateEndpointResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupAiPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupAiPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAiPrivateEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

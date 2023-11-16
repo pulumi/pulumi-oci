@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
@@ -66,7 +65,7 @@ type GetByoipAllocatedRangesResult struct {
 	ByoipRangeId                   string                                                 `pulumi:"byoipRangeId"`
 	Filters                        []GetByoipAllocatedRangesFilter                        `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetByoipAllocatedRangesOutput(ctx *pulumi.Context, args GetByoipAllocatedRangesOutputArgs, opts ...pulumi.InvokeOption) GetByoipAllocatedRangesResultOutput {
@@ -108,12 +107,6 @@ func (o GetByoipAllocatedRangesResultOutput) ToGetByoipAllocatedRangesResultOutp
 	return o
 }
 
-func (o GetByoipAllocatedRangesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetByoipAllocatedRangesResult] {
-	return pulumix.Output[GetByoipAllocatedRangesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of byoip_allocated_range_collection.
 func (o GetByoipAllocatedRangesResultOutput) ByoipAllocatedRangeCollections() GetByoipAllocatedRangesByoipAllocatedRangeCollectionArrayOutput {
 	return o.ApplyT(func(v GetByoipAllocatedRangesResult) []GetByoipAllocatedRangesByoipAllocatedRangeCollection {
@@ -130,8 +123,8 @@ func (o GetByoipAllocatedRangesResultOutput) Filters() GetByoipAllocatedRangesFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetByoipAllocatedRangesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipAllocatedRangesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetByoipAllocatedRangesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipAllocatedRangesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

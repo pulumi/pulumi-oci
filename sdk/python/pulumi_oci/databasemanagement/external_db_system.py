@@ -23,11 +23,6 @@ class ExternalDbSystemArgs:
                  stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None):
         """
         The set of arguments for constructing a ExternalDbSystem resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        :param pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs'] database_management_config: The details required to enable Database Management for an external DB system.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs'] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
@@ -41,9 +36,6 @@ class ExternalDbSystemArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -53,9 +45,6 @@ class ExternalDbSystemArgs:
     @property
     @pulumi.getter(name="dbSystemDiscoveryId")
     def db_system_discovery_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        """
         return pulumi.get(self, "db_system_discovery_id")
 
     @db_system_discovery_id.setter
@@ -65,9 +54,6 @@ class ExternalDbSystemArgs:
     @property
     @pulumi.getter(name="databaseManagementConfig")
     def database_management_config(self) -> Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']]:
-        """
-        The details required to enable Database Management for an external DB system.
-        """
         return pulumi.get(self, "database_management_config")
 
     @database_management_config.setter
@@ -77,9 +63,6 @@ class ExternalDbSystemArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -89,9 +72,6 @@ class ExternalDbSystemArgs:
     @property
     @pulumi.getter(name="stackMonitoringConfig")
     def stack_monitoring_config(self) -> Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']]:
-        """
-        The details of the associated service that will be enabled or disabled for an external DB System.
-        """
         return pulumi.get(self, "stack_monitoring_config")
 
     @stack_monitoring_config.setter
@@ -116,18 +96,6 @@ class _ExternalDbSystemState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystem resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs'] database_management_config: The details required to enable Database Management for an external DB system.
-        :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        :param pulumi.Input[str] discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
-        :param pulumi.Input[bool] is_cluster: Indicates whether the DB system is a cluster DB system or not.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs'] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB system resource.
-        :param pulumi.Input[str] time_created: The date and time the external DB system was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB system was last updated.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -157,9 +125,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -169,9 +134,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="databaseManagementConfig")
     def database_management_config(self) -> Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']]:
-        """
-        The details required to enable Database Management for an external DB system.
-        """
         return pulumi.get(self, "database_management_config")
 
     @database_management_config.setter
@@ -181,9 +143,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="dbSystemDiscoveryId")
     def db_system_discovery_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        """
         return pulumi.get(self, "db_system_discovery_id")
 
     @db_system_discovery_id.setter
@@ -193,9 +152,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="discoveryAgentId")
     def discovery_agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
-        """
         return pulumi.get(self, "discovery_agent_id")
 
     @discovery_agent_id.setter
@@ -205,9 +161,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -217,9 +170,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="homeDirectory")
     def home_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
-        """
         return pulumi.get(self, "home_directory")
 
     @home_directory.setter
@@ -229,9 +179,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="isCluster")
     def is_cluster(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the DB system is a cluster DB system or not.
-        """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
@@ -241,9 +188,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -253,9 +197,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="stackMonitoringConfig")
     def stack_monitoring_config(self) -> Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']]:
-        """
-        The details of the associated service that will be enabled or disabled for an external DB System.
-        """
         return pulumi.get(self, "stack_monitoring_config")
 
     @stack_monitoring_config.setter
@@ -265,9 +206,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the external DB system resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -277,9 +215,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB system was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -289,9 +224,6 @@ class _ExternalDbSystemState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB system was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -311,44 +243,9 @@ class ExternalDbSystem(pulumi.CustomResource):
                  stack_monitoring_config: Optional[pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system and its related resources.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_db_system = oci.database_management.ExternalDbSystem("testExternalDbSystem",
-            compartment_id=var["compartment_id"],
-            db_system_discovery_id=oci_database_management_db_system_discovery["test_db_system_discovery"]["id"],
-            database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
-                license_model=var["external_db_system_database_management_config_license_model"],
-            ),
-            display_name=var["external_db_system_display_name"],
-            stack_monitoring_config=oci.database_management.ExternalDbSystemStackMonitoringConfigArgs(
-                is_enabled=var["external_db_system_stack_monitoring_config_is_enabled"],
-                metadata=var["external_db_system_stack_monitoring_config_metadata"],
-            ))
-        ```
-
-        ## Import
-
-        ExternalDbSystems can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
-        ```
-
+        Create a ExternalDbSystem resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']] database_management_config: The details required to enable Database Management for an external DB system.
-        :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         """
         ...
     @overload
@@ -357,37 +254,7 @@ class ExternalDbSystem(pulumi.CustomResource):
                  args: ExternalDbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system and its related resources.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_db_system = oci.database_management.ExternalDbSystem("testExternalDbSystem",
-            compartment_id=var["compartment_id"],
-            db_system_discovery_id=oci_database_management_db_system_discovery["test_db_system_discovery"]["id"],
-            database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
-                license_model=var["external_db_system_database_management_config_license_model"],
-            ),
-            display_name=var["external_db_system_display_name"],
-            stack_monitoring_config=oci.database_management.ExternalDbSystemStackMonitoringConfigArgs(
-                is_enabled=var["external_db_system_stack_monitoring_config_is_enabled"],
-                metadata=var["external_db_system_stack_monitoring_config_metadata"],
-            ))
-        ```
-
-        ## Import
-
-        ExternalDbSystems can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
-        ```
-
+        Create a ExternalDbSystem resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -462,18 +329,6 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']] database_management_config: The details required to enable Database Management for an external DB system.
-        :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        :param pulumi.Input[str] discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
-        :param pulumi.Input[bool] is_cluster: Indicates whether the DB system is a cluster DB system or not.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB system resource.
-        :param pulumi.Input[str] time_created: The date and time the external DB system was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB system was last updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -496,96 +351,60 @@ class ExternalDbSystem(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseManagementConfig")
-    def database_management_config(self) -> pulumi.Output['outputs.ExternalDbSystemDatabaseManagementConfig']:
-        """
-        The details required to enable Database Management for an external DB system.
-        """
+    def database_management_config(self) -> pulumi.Output[Optional['outputs.ExternalDbSystemDatabaseManagementConfig']]:
         return pulumi.get(self, "database_management_config")
 
     @property
     @pulumi.getter(name="dbSystemDiscoveryId")
     def db_system_discovery_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        """
         return pulumi.get(self, "db_system_discovery_id")
 
     @property
     @pulumi.getter(name="discoveryAgentId")
-    def discovery_agent_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
-        """
+    def discovery_agent_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "discovery_agent_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="homeDirectory")
-    def home_directory(self) -> pulumi.Output[str]:
-        """
-        The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
-        """
+    def home_directory(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "home_directory")
 
     @property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether the DB system is a cluster DB system or not.
-        """
+    def is_cluster(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_cluster")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="stackMonitoringConfig")
-    def stack_monitoring_config(self) -> pulumi.Output['outputs.ExternalDbSystemStackMonitoringConfig']:
-        """
-        The details of the associated service that will be enabled or disabled for an external DB System.
-        """
+    def stack_monitoring_config(self) -> pulumi.Output[Optional['outputs.ExternalDbSystemStackMonitoringConfig']]:
         return pulumi.get(self, "stack_monitoring_config")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the external DB system resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB system was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB system was last updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

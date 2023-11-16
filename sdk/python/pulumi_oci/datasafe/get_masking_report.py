@@ -85,15 +85,12 @@ class GetMaskingReportResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the masking report.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -101,34 +98,22 @@ class GetMaskingReportResult:
 
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")
-    def is_drop_temp_tables_enabled(self) -> bool:
-        """
-        Indicates if the temporary tables created during the masking operation were dropped after masking.
-        """
+    def is_drop_temp_tables_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @property
     @pulumi.getter(name="isRedoLoggingEnabled")
-    def is_redo_logging_enabled(self) -> bool:
-        """
-        Indicates if redo logging was enabled during the masking operation.
-        """
+    def is_redo_logging_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @property
     @pulumi.getter(name="isRefreshStatsEnabled")
-    def is_refresh_stats_enabled(self) -> bool:
-        """
-        Indicates if statistics gathering was enabled during the masking operation.
-        """
+    def is_refresh_stats_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> str:
-        """
-        The OCID of the masking policy used.
-        """
+    def masking_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "masking_policy_id")
 
     @property
@@ -138,106 +123,67 @@ class GetMaskingReportResult:
 
     @property
     @pulumi.getter(name="maskingWorkRequestId")
-    def masking_work_request_id(self) -> str:
-        """
-        The OCID of the masking work request that resulted in this masking report.
-        """
+    def masking_work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "masking_work_request_id")
 
     @property
     @pulumi.getter(name="parallelDegree")
-    def parallel_degree(self) -> str:
-        """
-        Indicates if parallel execution was enabled during the masking operation.
-        """
+    def parallel_degree(self) -> Optional[str]:
         return pulumi.get(self, "parallel_degree")
 
     @property
     @pulumi.getter
-    def recompile(self) -> str:
-        """
-        Indicates how invalid objects were recompiled post the masking operation.
-        """
+    def recompile(self) -> Optional[str]:
         return pulumi.get(self, "recompile")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the masking report.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target database masked.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMaskingFinished")
-    def time_masking_finished(self) -> str:
-        """
-        The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-        """
+    def time_masking_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_masking_finished")
 
     @property
     @pulumi.getter(name="timeMaskingStarted")
-    def time_masking_started(self) -> str:
-        """
-        The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-        """
+    def time_masking_started(self) -> Optional[str]:
         return pulumi.get(self, "time_masking_started")
 
     @property
     @pulumi.getter(name="totalMaskedColumns")
-    def total_masked_columns(self) -> str:
-        """
-        The total number of masked columns.
-        """
+    def total_masked_columns(self) -> Optional[str]:
         return pulumi.get(self, "total_masked_columns")
 
     @property
     @pulumi.getter(name="totalMaskedObjects")
-    def total_masked_objects(self) -> str:
-        """
-        The total number of unique objects (tables and editioning views) that contain the masked columns.
-        """
+    def total_masked_objects(self) -> Optional[str]:
         return pulumi.get(self, "total_masked_objects")
 
     @property
     @pulumi.getter(name="totalMaskedSchemas")
-    def total_masked_schemas(self) -> str:
-        """
-        The total number of unique schemas that contain the masked columns.
-        """
+    def total_masked_schemas(self) -> Optional[str]:
         return pulumi.get(self, "total_masked_schemas")
 
     @property
     @pulumi.getter(name="totalMaskedSensitiveTypes")
-    def total_masked_sensitive_types(self) -> str:
-        """
-        The total number of unique sensitive types associated with the masked columns.
-        """
+    def total_masked_sensitive_types(self) -> Optional[str]:
         return pulumi.get(self, "total_masked_sensitive_types")
 
     @property
     @pulumi.getter(name="totalMaskedValues")
-    def total_masked_values(self) -> str:
-        """
-        The total number of masked values.
-        """
+    def total_masked_values(self) -> Optional[str]:
         return pulumi.get(self, "total_masked_values")
 
 
@@ -272,21 +218,7 @@ class AwaitableGetMaskingReportResult(GetMaskingReportResult):
 def get_masking_report(masking_report_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingReportResult:
     """
-    This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified masking report.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"])
-    ```
-
-
-    :param str masking_report_id: The OCID of the masking report.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['maskingReportId'] = masking_report_id
@@ -320,20 +252,6 @@ def get_masking_report(masking_report_id: Optional[str] = None,
 def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportResult]:
     """
-    This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified masking report.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"])
-    ```
-
-
-    :param str masking_report_id: The OCID of the masking report.
+    Use this data source to access information about an existing resource.
     """
     ...

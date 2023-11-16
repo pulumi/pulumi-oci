@@ -16,59 +16,59 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Customer chain type.
         /// </summary>
-        public readonly string CustomerChainType;
+        public readonly string? CustomerChainType;
         /// <summary>
         /// The business partner is chain customer or not.
         /// </summary>
-        public readonly bool IsChainCustomer;
+        public readonly bool? IsChainCustomer;
         /// <summary>
         /// The business partner is part of the public sector or not.
         /// </summary>
-        public readonly bool IsPublicSector;
+        public readonly bool? IsPublicSector;
         /// <summary>
         /// Commercial name also called customer name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Phonetic name.
         /// </summary>
-        public readonly string NamePhonetic;
+        public readonly string? NamePhonetic;
         /// <summary>
         /// TCA customer account number.
         /// </summary>
-        public readonly string TcaCustAccountNumber;
+        public readonly string? TcaCustAccountNumber;
         /// <summary>
         /// TCA customer account ID.
         /// </summary>
-        public readonly string TcaCustomerAccountId;
+        public readonly string? TcaCustomerAccountId;
         /// <summary>
         /// TCA party ID.
         /// </summary>
-        public readonly string TcaPartyId;
+        public readonly string? TcaPartyId;
         /// <summary>
         /// TCA party number.
         /// </summary>
-        public readonly string TcaPartyNumber;
+        public readonly string? TcaPartyNumber;
 
         [OutputConstructor]
         private GetSubscribedServicesSubscribedServiceSoldToCustomerResult(
-            string customerChainType,
+            string? customerChainType,
 
-            bool isChainCustomer,
+            bool? isChainCustomer,
 
-            bool isPublicSector,
+            bool? isPublicSector,
 
-            string name,
+            string? name,
 
-            string namePhonetic,
+            string? namePhonetic,
 
-            string tcaCustAccountNumber,
+            string? tcaCustAccountNumber,
 
-            string tcaCustomerAccountId,
+            string? tcaCustomerAccountId,
 
-            string tcaPartyId,
+            string? tcaPartyId,
 
-            string tcaPartyNumber)
+            string? tcaPartyNumber)
         {
             CustomerChainType = customerChainType;
             IsChainCustomer = isChainCustomer;

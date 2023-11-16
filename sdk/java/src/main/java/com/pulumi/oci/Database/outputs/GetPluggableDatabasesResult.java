@@ -25,7 +25,7 @@ public final class GetPluggableDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      * 
@@ -35,7 +35,7 @@ public final class GetPluggableDatabasesResult {
      * @return The list of pluggable_databases.
      * 
      */
-    private List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases;
+    private @Nullable List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases;
     /**
      * @return The current state of the pluggable database.
      * 
@@ -60,8 +60,8 @@ public final class GetPluggableDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -75,7 +75,7 @@ public final class GetPluggableDatabasesResult {
      * 
      */
     public List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases() {
-        return this.pluggableDatabases;
+        return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
     }
     /**
      * @return The current state of the pluggable database.
@@ -97,9 +97,9 @@ public final class GetPluggableDatabasesResult {
         private @Nullable String compartmentId;
         private @Nullable String databaseId;
         private @Nullable List<GetPluggableDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String pdbName;
-        private List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases;
+        private @Nullable List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetPluggableDatabasesResult defaults) {
@@ -132,8 +132,8 @@ public final class GetPluggableDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -142,8 +142,8 @@ public final class GetPluggableDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder pluggableDatabases(List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases) {
-            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+        public Builder pluggableDatabases(@Nullable List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
             return this;
         }
         public Builder pluggableDatabases(GetPluggableDatabasesPluggableDatabase... pluggableDatabases) {

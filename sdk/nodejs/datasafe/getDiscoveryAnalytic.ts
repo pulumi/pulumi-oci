@@ -76,11 +76,11 @@ export interface GetDiscoveryAnalyticResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of discovery analytics summary objects.
      */
-    readonly items: outputs.DataSafe.GetDiscoveryAnalyticItem[];
+    readonly items?: outputs.DataSafe.GetDiscoveryAnalyticItem[];
     /**
      * The OCID of the sensitive data model.
      */

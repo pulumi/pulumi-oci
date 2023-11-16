@@ -108,7 +108,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Routing policy for the virtual service.
         /// </summary>
@@ -116,15 +116,15 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
         /// </summary>
@@ -132,15 +132,15 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The OCID of the service mesh in which this virtual service is created.
         /// </summary>
-        public readonly string MeshId;
+        public readonly string? MeshId;
         /// <summary>
         /// Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
         /// </summary>
@@ -148,56 +148,56 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The current state of the Resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time when this resource was created in an RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when this resource was updated in an RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         public readonly string VirtualServiceId;
 
         [OutputConstructor]
         private GetVirtualServiceResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetVirtualServiceDefaultRoutingPolicyResult> defaultRoutingPolicies,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<string> hosts,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string meshId,
+            string? meshId,
 
             ImmutableArray<Outputs.GetVirtualServiceMtlResult> mtls,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             string virtualServiceId)
         {

@@ -8,6 +8,8 @@ import com.pulumi.oci.ApiGateway.outputs.GetApiValidationValidationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiValidationValidation {
@@ -15,17 +17,17 @@ public final class GetApiValidationValidation {
      * @return Details of validation.
      * 
      */
-    private List<GetApiValidationValidationDetail> details;
+    private @Nullable List<GetApiValidationValidationDetail> details;
     /**
      * @return Name of the validation.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Result of the validation.
      * 
      */
-    private String result;
+    private @Nullable String result;
 
     private GetApiValidationValidation() {}
     /**
@@ -33,21 +35,21 @@ public final class GetApiValidationValidation {
      * 
      */
     public List<GetApiValidationValidationDetail> details() {
-        return this.details;
+        return this.details == null ? List.of() : this.details;
     }
     /**
      * @return Name of the validation.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Result of the validation.
      * 
      */
-    public String result() {
-        return this.result;
+    public Optional<String> result() {
+        return Optional.ofNullable(this.result);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetApiValidationValidation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApiValidationValidationDetail> details;
-        private String name;
-        private String result;
+        private @Nullable List<GetApiValidationValidationDetail> details;
+        private @Nullable String name;
+        private @Nullable String result;
         public Builder() {}
         public Builder(GetApiValidationValidation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetApiValidationValidation {
         }
 
         @CustomType.Setter
-        public Builder details(List<GetApiValidationValidationDetail> details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable List<GetApiValidationValidationDetail> details) {
+            this.details = details;
             return this;
         }
         public Builder details(GetApiValidationValidationDetail... details) {
             return details(List.of(details));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+        public Builder result(@Nullable String result) {
+            this.result = result;
             return this;
         }
         public GetApiValidationValidation build() {

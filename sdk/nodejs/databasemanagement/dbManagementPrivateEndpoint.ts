@@ -67,11 +67,11 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) The description of the private endpoint.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      */
-    public readonly isCluster!: pulumi.Output<boolean>;
+    public readonly isCluster!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The display name of the Database Management private endpoint.
      */
@@ -79,15 +79,15 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * The IP addresses assigned to the Database Management private endpoint.
      */
-    public /*out*/ readonly privateIp!: pulumi.Output<string>;
+    public /*out*/ readonly privateIp!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the Database Management private endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      *
@@ -99,11 +99,11 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
     /**
      * The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    public /*out*/ readonly vcnId!: pulumi.Output<string>;
+    public /*out*/ readonly vcnId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DbManagementPrivateEndpoint resource with the given unique name, arguments, and options.

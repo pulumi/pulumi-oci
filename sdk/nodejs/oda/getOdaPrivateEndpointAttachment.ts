@@ -45,32 +45,32 @@ export interface GetOdaPrivateEndpointAttachmentResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
      */
-    readonly odaInstanceId: string;
+    readonly odaInstanceId?: string;
     readonly odaPrivateEndpointAttachmentId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
      */
-    readonly odaPrivateEndpointId: string;
+    readonly odaPrivateEndpointId?: string;
     /**
      * The current state of the ODA Private Endpoint attachment.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.

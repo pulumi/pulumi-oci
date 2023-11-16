@@ -108,31 +108,31 @@ namespace Pulumi.Oci.Artifacts
         /// <summary>
         /// The compartment OCID to which the container image belongs. Inferred from the container repository.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the user or principal that pushed the version.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The sha256 digest of the image layer.
         /// </summary>
-        public readonly string Digest;
+        public readonly string? Digest;
         /// <summary>
         /// The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ImageId;
         /// <summary>
         /// Layers of which the image is composed, ordered by the layer digest.
@@ -141,43 +141,43 @@ namespace Pulumi.Oci.Artifacts
         /// <summary>
         /// The total size of the container image layers in bytes.
         /// </summary>
-        public readonly string LayersSizeInBytes;
+        public readonly string? LayersSizeInBytes;
         /// <summary>
         /// The size of the container image manifest in bytes.
         /// </summary>
-        public readonly int ManifestSizeInBytes;
+        public readonly int? ManifestSizeInBytes;
         /// <summary>
         /// Total number of pulls.
         /// </summary>
-        public readonly string PullCount;
+        public readonly string? PullCount;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
         /// </summary>
-        public readonly string RepositoryId;
+        public readonly string? RepositoryId;
         /// <summary>
         /// The container repository name.
         /// </summary>
-        public readonly string RepositoryName;
+        public readonly string? RepositoryName;
         /// <summary>
         /// The current state of the container image.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The creation time of the version.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An RFC 3339 timestamp indicating when the image was last pulled.
         /// </summary>
-        public readonly string TimeLastPulled;
+        public readonly string? TimeLastPulled;
         /// <summary>
         /// The version name.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
         /// <summary>
         /// The versions associated with this image.
         /// </summary>
@@ -185,43 +185,43 @@ namespace Pulumi.Oci.Artifacts
 
         [OutputConstructor]
         private GetContainerImageResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string digest,
+            string? digest,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             string imageId,
 
             ImmutableArray<Outputs.GetContainerImageLayerResult> layers,
 
-            string layersSizeInBytes,
+            string? layersSizeInBytes,
 
-            int manifestSizeInBytes,
+            int? manifestSizeInBytes,
 
-            string pullCount,
+            string? pullCount,
 
-            string repositoryId,
+            string? repositoryId,
 
-            string repositoryName,
+            string? repositoryName,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastPulled,
+            string? timeLastPulled,
 
-            string version,
+            string? version,
 
             ImmutableArray<Outputs.GetContainerImageVersionResult> versions)
         {

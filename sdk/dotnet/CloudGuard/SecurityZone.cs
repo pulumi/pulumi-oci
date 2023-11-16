@@ -64,13 +64,13 @@ namespace Pulumi.Oci.CloudGuard
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The security zone's description
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The security zone's name
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.CloudGuard
         /// Avoid entering confidential information.
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// List of inherited compartments
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         /// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
@@ -112,25 +112,25 @@ namespace Pulumi.Oci.CloudGuard
         /// The OCID of the target associated with the security zone
         /// </summary>
         [Output("securityZoneTargetId")]
-        public Output<string> SecurityZoneTargetId { get; private set; } = null!;
+        public Output<string?> SecurityZoneTargetId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the security zone
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the security zone was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the security zone was last updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

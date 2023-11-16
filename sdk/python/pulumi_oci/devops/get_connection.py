@@ -83,34 +83,22 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="accessToken")
-    def access_token(self) -> str:
-        """
-        The OCID of personal access token saved in secret store.
-        """
+    def access_token(self) -> Optional[str]:
         return pulumi.get(self, "access_token")
 
     @property
     @pulumi.getter(name="appPassword")
-    def app_password(self) -> str:
-        """
-        OCID of personal Bitbucket Cloud AppPassword saved in secret store
-        """
+    def app_password(self) -> Optional[str]:
         return pulumi.get(self, "app_password")
 
     @property
     @pulumi.getter(name="baseUrl")
-    def base_url(self) -> str:
-        """
-        The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
-        """
+    def base_url(self) -> Optional[str]:
         return pulumi.get(self, "base_url")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the connection.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -120,114 +108,72 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> str:
-        """
-        The type of connection.
-        """
+    def connection_type(self) -> Optional[str]:
         return pulumi.get(self, "connection_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Optional description about the connection.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lastConnectionValidationResults")
-    def last_connection_validation_results(self) -> Sequence['outputs.GetConnectionLastConnectionValidationResultResult']:
-        """
-        The result of validating the credentials of a connection.
-        """
+    def last_connection_validation_results(self) -> Optional[Sequence['outputs.GetConnectionLastConnectionValidationResultResult']]:
         return pulumi.get(self, "last_connection_validation_results")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of the DevOps project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the connection.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="tlsVerifyConfigs")
-    def tls_verify_configs(self) -> Sequence['outputs.GetConnectionTlsVerifyConfigResult']:
-        """
-        TLS configuration used by build service to verify TLS connection.
-        """
+    def tls_verify_configs(self) -> Optional[Sequence['outputs.GetConnectionTlsVerifyConfigResult']]:
         return pulumi.get(self, "tls_verify_configs")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
-        """
-        Public Bitbucket Cloud Username in plain text
-        """
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
 
@@ -261,21 +207,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
 def get_connection(connection_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionResult:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a connection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.DevOps.get_connection(connection_id=oci_devops_connection["test_connection"]["id"])
-    ```
-
-
-    :param str connection_id: Unique connection identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['connectionId'] = connection_id
@@ -308,20 +240,6 @@ def get_connection(connection_id: Optional[str] = None,
 def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a connection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.DevOps.get_connection(connection_id=oci_devops_connection["test_connection"]["id"])
-    ```
-
-
-    :param str connection_id: Unique connection identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.OspGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData {
@@ -13,27 +15,27 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerch
      * @return Cloud account name.
      * 
      */
-    private String cloudAccountName;
+    private @Nullable String cloudAccountName;
     /**
      * @return Promotion type code.
      * 
      */
-    private String promoType;
+    private @Nullable String promoType;
 
     private GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData() {}
     /**
      * @return Cloud account name.
      * 
      */
-    public String cloudAccountName() {
-        return this.cloudAccountName;
+    public Optional<String> cloudAccountName() {
+        return Optional.ofNullable(this.cloudAccountName);
     }
     /**
      * @return Promotion type code.
      * 
      */
-    public String promoType() {
-        return this.promoType;
+    public Optional<String> promoType() {
+        return Optional.ofNullable(this.promoType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerch
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cloudAccountName;
-        private String promoType;
+        private @Nullable String cloudAccountName;
+        private @Nullable String promoType;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerch
         }
 
         @CustomType.Setter
-        public Builder cloudAccountName(String cloudAccountName) {
-            this.cloudAccountName = Objects.requireNonNull(cloudAccountName);
+        public Builder cloudAccountName(@Nullable String cloudAccountName) {
+            this.cloudAccountName = cloudAccountName;
             return this;
         }
         @CustomType.Setter
-        public Builder promoType(String promoType) {
-            this.promoType = Objects.requireNonNull(promoType);
+        public Builder promoType(@Nullable String promoType) {
+            this.promoType = promoType;
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData build() {

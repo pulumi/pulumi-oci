@@ -109,12 +109,12 @@ namespace Pulumi.Oci.Core
         /// The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn 
         /// is created, we will create it asynchronously. It would be null until it is actually created.
         /// </summary>
-        public readonly string DnsResolverId;
+        public readonly string? DnsResolverId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
-        public readonly string State;
+        public readonly string? Id;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the VCN in the association.
         /// </summary>
@@ -122,11 +122,11 @@ namespace Pulumi.Oci.Core
 
         [OutputConstructor]
         private GetCnvDnsResolverAssociationResult(
-            string dnsResolverId,
+            string? dnsResolverId,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
             string vcnId)
         {

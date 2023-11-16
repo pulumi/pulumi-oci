@@ -78,7 +78,7 @@ export interface GetBuildPipelineStagesResult {
     /**
      * The list of build_pipeline_stage_collection.
      */
-    readonly buildPipelineStageCollections: outputs.DevOps.GetBuildPipelineStagesBuildPipelineStageCollection[];
+    readonly buildPipelineStageCollections?: outputs.DevOps.GetBuildPipelineStagesBuildPipelineStageCollection[];
     /**
      * The OCID of the compartment where the pipeline is created.
      */

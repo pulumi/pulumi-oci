@@ -6,30 +6,32 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
-    private String dbrsPolicyId;
+    private @Nullable String dbrsPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private String id;
-    private String type;
+    private @Nullable String id;
+    private @Nullable String type;
 
     private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
-    public String dbrsPolicyId() {
-        return this.dbrsPolicyId;
+    public Optional<String> dbrsPolicyId() {
+        return Optional.ofNullable(this.dbrsPolicyId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -41,9 +43,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbrsPolicyId;
-        private String id;
-        private String type;
+        private @Nullable String dbrsPolicyId;
+        private @Nullable String id;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -53,18 +55,18 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
         }
 
         @CustomType.Setter
-        public Builder dbrsPolicyId(String dbrsPolicyId) {
-            this.dbrsPolicyId = Objects.requireNonNull(dbrsPolicyId);
+        public Builder dbrsPolicyId(@Nullable String dbrsPolicyId) {
+            this.dbrsPolicyId = dbrsPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {

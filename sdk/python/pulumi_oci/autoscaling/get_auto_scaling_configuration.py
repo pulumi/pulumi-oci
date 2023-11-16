@@ -70,98 +70,62 @@ class GetAutoScalingConfigurationResult:
 
     @property
     @pulumi.getter(name="autoScalingResources")
-    def auto_scaling_resources(self) -> Sequence['outputs.GetAutoScalingConfigurationAutoScalingResourceResult']:
-        """
-        A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
-        """
+    def auto_scaling_resources(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationAutoScalingResourceResult']]:
         return pulumi.get(self, "auto_scaling_resources")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="coolDownInSeconds")
-    def cool_down_in_seconds(self) -> int:
-        """
-        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
-        """
+    def cool_down_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "cool_down_in_seconds")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether the autoscaling policy is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="maxResourceCount")
-    def max_resource_count(self) -> int:
-        """
-        The maximum number of resources to scale out to.
-        """
+    def max_resource_count(self) -> Optional[int]:
         return pulumi.get(self, "max_resource_count")
 
     @property
     @pulumi.getter(name="minResourceCount")
-    def min_resource_count(self) -> int:
-        """
-        The minimum number of resources to scale in to.
-        """
+    def min_resource_count(self) -> Optional[int]:
         return pulumi.get(self, "min_resource_count")
 
     @property
     @pulumi.getter
-    def policies(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyResult']:
-        """
-        Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
-        """
+    def policies(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyResult']]:
         return pulumi.get(self, "policies")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -189,21 +153,7 @@ class AwaitableGetAutoScalingConfigurationResult(GetAutoScalingConfigurationResu
 def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutoScalingConfigurationResult:
     """
-    This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
-
-    Gets information about the specified autoscaling configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auto_scaling_configuration = oci.Autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"])
-    ```
-
-
-    :param str auto_scaling_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autoScalingConfigurationId'] = auto_scaling_configuration_id
@@ -230,20 +180,6 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
 def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutoScalingConfigurationResult]:
     """
-    This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
-
-    Gets information about the specified autoscaling configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auto_scaling_configuration = oci.Autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"])
-    ```
-
-
-    :param str auto_scaling_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+    Use this data source to access information about an existing resource.
     """
     ...

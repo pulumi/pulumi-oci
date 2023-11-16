@@ -69,7 +69,7 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -87,10 +87,7 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult:
 
     @property
     @pulumi.getter(name="optimizerStatisticsCollectionAggregationsCollections")
-    def optimizer_statistics_collection_aggregations_collections(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionResult']:
-        """
-        The list of optimizer_statistics_collection_aggregations_collection.
-        """
+    def optimizer_statistics_collection_aggregations_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionResult']]:
         return pulumi.get(self, "optimizer_statistics_collection_aggregations_collections")
 
     @property
@@ -130,34 +127,7 @@ def get_managed_database_optimizer_statistics_collection_aggregations(end_time_l
                                                                       task_type: Optional[str] = None,
                                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult:
     """
-    This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
-    You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
-    Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
-    If the date-time range is not specified, then the operations in the last seven days are listed.
-    You can further filter the results by providing the optional type of TaskTypeQueryParam.
-    If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=var["managed_database_optimizer_statistics_collection_aggregation_group_type"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to"],
-        task_type=var["managed_database_optimizer_statistics_collection_aggregation_task_type"])
-    ```
-
-
-    :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str group_type: The optimizer statistics tasks grouped by type.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str start_time_greater_than_or_equal_to: The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str task_type: The filter types of the optimizer statistics tasks.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['endTimeLessThanOrEqualTo'] = end_time_less_than_or_equal_to
@@ -192,33 +162,6 @@ def get_managed_database_optimizer_statistics_collection_aggregations_output(end
                                                                              task_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult]:
     """
-    This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
-    You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
-    Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
-    If the date-time range is not specified, then the operations in the last seven days are listed.
-    You can further filter the results by providing the optional type of TaskTypeQueryParam.
-    If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=var["managed_database_optimizer_statistics_collection_aggregation_group_type"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to"],
-        task_type=var["managed_database_optimizer_statistics_collection_aggregation_task_type"])
-    ```
-
-
-    :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str group_type: The optimizer statistics tasks grouped by type.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str start_time_greater_than_or_equal_to: The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str task_type: The filter types of the optimizer statistics tasks.
+    Use this data source to access information about an existing resource.
     """
     ...

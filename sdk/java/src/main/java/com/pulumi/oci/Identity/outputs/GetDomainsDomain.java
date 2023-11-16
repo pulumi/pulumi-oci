@@ -11,226 +11,228 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsDomain {
-    private String adminEmail;
-    private String adminFirstName;
-    private String adminLastName;
-    private String adminUserName;
+    private @Nullable String adminEmail;
+    private @Nullable String adminFirstName;
+    private @Nullable String adminLastName;
+    private @Nullable String adminUserName;
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The domain descripition
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The mutable display name of the domain
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    private String homeRegion;
+    private @Nullable String homeRegion;
     /**
      * @return The region specific domain URL
      * 
      */
-    private String homeRegionUrl;
+    private @Nullable String homeRegionUrl;
     /**
      * @return The OCID of the domain
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicate if the domain is visible at login screen or not
      * 
      */
-    private Boolean isHiddenOnLogin;
-    private Boolean isNotificationBypassed;
-    private Boolean isPrimaryEmailRequired;
+    private @Nullable Boolean isHiddenOnLogin;
+    private @Nullable Boolean isNotificationBypassed;
+    private @Nullable Boolean isPrimaryEmailRequired;
     /**
      * @return The domain license type
      * 
      */
-    private String licenseType;
+    private @Nullable String licenseType;
     /**
      * @return Any additional details about the current state of the Domain.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The regions domain is replication to.
      * 
      */
-    private List<GetDomainsDomainReplicaRegion> replicaRegions;
+    private @Nullable List<GetDomainsDomainReplicaRegion> replicaRegions;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The domain type
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The region agnostic domain URL
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetDomainsDomain() {}
-    public String adminEmail() {
-        return this.adminEmail;
+    public Optional<String> adminEmail() {
+        return Optional.ofNullable(this.adminEmail);
     }
-    public String adminFirstName() {
-        return this.adminFirstName;
+    public Optional<String> adminFirstName() {
+        return Optional.ofNullable(this.adminFirstName);
     }
-    public String adminLastName() {
-        return this.adminLastName;
+    public Optional<String> adminLastName() {
+        return Optional.ofNullable(this.adminLastName);
     }
-    public String adminUserName() {
-        return this.adminUserName;
+    public Optional<String> adminUserName() {
+        return Optional.ofNullable(this.adminUserName);
     }
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The domain descripition
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The mutable display name of the domain
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    public String homeRegion() {
-        return this.homeRegion;
+    public Optional<String> homeRegion() {
+        return Optional.ofNullable(this.homeRegion);
     }
     /**
      * @return The region specific domain URL
      * 
      */
-    public String homeRegionUrl() {
-        return this.homeRegionUrl;
+    public Optional<String> homeRegionUrl() {
+        return Optional.ofNullable(this.homeRegionUrl);
     }
     /**
      * @return The OCID of the domain
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicate if the domain is visible at login screen or not
      * 
      */
-    public Boolean isHiddenOnLogin() {
-        return this.isHiddenOnLogin;
+    public Optional<Boolean> isHiddenOnLogin() {
+        return Optional.ofNullable(this.isHiddenOnLogin);
     }
-    public Boolean isNotificationBypassed() {
-        return this.isNotificationBypassed;
+    public Optional<Boolean> isNotificationBypassed() {
+        return Optional.ofNullable(this.isNotificationBypassed);
     }
-    public Boolean isPrimaryEmailRequired() {
-        return this.isPrimaryEmailRequired;
+    public Optional<Boolean> isPrimaryEmailRequired() {
+        return Optional.ofNullable(this.isPrimaryEmailRequired);
     }
     /**
      * @return The domain license type
      * 
      */
-    public String licenseType() {
-        return this.licenseType;
+    public Optional<String> licenseType() {
+        return Optional.ofNullable(this.licenseType);
     }
     /**
      * @return Any additional details about the current state of the Domain.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The regions domain is replication to.
      * 
      */
     public List<GetDomainsDomainReplicaRegion> replicaRegions() {
-        return this.replicaRegions;
+        return this.replicaRegions == null ? List.of() : this.replicaRegions;
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The domain type
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The region agnostic domain URL
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -242,28 +244,28 @@ public final class GetDomainsDomain {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminEmail;
-        private String adminFirstName;
-        private String adminLastName;
-        private String adminUserName;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String homeRegion;
-        private String homeRegionUrl;
-        private String id;
-        private Boolean isHiddenOnLogin;
-        private Boolean isNotificationBypassed;
-        private Boolean isPrimaryEmailRequired;
-        private String licenseType;
-        private String lifecycleDetails;
-        private List<GetDomainsDomainReplicaRegion> replicaRegions;
-        private String state;
-        private String timeCreated;
-        private String type;
-        private String url;
+        private @Nullable String adminEmail;
+        private @Nullable String adminFirstName;
+        private @Nullable String adminLastName;
+        private @Nullable String adminUserName;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String homeRegion;
+        private @Nullable String homeRegionUrl;
+        private @Nullable String id;
+        private @Nullable Boolean isHiddenOnLogin;
+        private @Nullable Boolean isNotificationBypassed;
+        private @Nullable Boolean isPrimaryEmailRequired;
+        private @Nullable String licenseType;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetDomainsDomainReplicaRegion> replicaRegions;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String type;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetDomainsDomain defaults) {
     	      Objects.requireNonNull(defaults);
@@ -292,116 +294,116 @@ public final class GetDomainsDomain {
         }
 
         @CustomType.Setter
-        public Builder adminEmail(String adminEmail) {
-            this.adminEmail = Objects.requireNonNull(adminEmail);
+        public Builder adminEmail(@Nullable String adminEmail) {
+            this.adminEmail = adminEmail;
             return this;
         }
         @CustomType.Setter
-        public Builder adminFirstName(String adminFirstName) {
-            this.adminFirstName = Objects.requireNonNull(adminFirstName);
+        public Builder adminFirstName(@Nullable String adminFirstName) {
+            this.adminFirstName = adminFirstName;
             return this;
         }
         @CustomType.Setter
-        public Builder adminLastName(String adminLastName) {
-            this.adminLastName = Objects.requireNonNull(adminLastName);
+        public Builder adminLastName(@Nullable String adminLastName) {
+            this.adminLastName = adminLastName;
             return this;
         }
         @CustomType.Setter
-        public Builder adminUserName(String adminUserName) {
-            this.adminUserName = Objects.requireNonNull(adminUserName);
+        public Builder adminUserName(@Nullable String adminUserName) {
+            this.adminUserName = adminUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder homeRegion(String homeRegion) {
-            this.homeRegion = Objects.requireNonNull(homeRegion);
+        public Builder homeRegion(@Nullable String homeRegion) {
+            this.homeRegion = homeRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder homeRegionUrl(String homeRegionUrl) {
-            this.homeRegionUrl = Objects.requireNonNull(homeRegionUrl);
+        public Builder homeRegionUrl(@Nullable String homeRegionUrl) {
+            this.homeRegionUrl = homeRegionUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isHiddenOnLogin(Boolean isHiddenOnLogin) {
-            this.isHiddenOnLogin = Objects.requireNonNull(isHiddenOnLogin);
+        public Builder isHiddenOnLogin(@Nullable Boolean isHiddenOnLogin) {
+            this.isHiddenOnLogin = isHiddenOnLogin;
             return this;
         }
         @CustomType.Setter
-        public Builder isNotificationBypassed(Boolean isNotificationBypassed) {
-            this.isNotificationBypassed = Objects.requireNonNull(isNotificationBypassed);
+        public Builder isNotificationBypassed(@Nullable Boolean isNotificationBypassed) {
+            this.isNotificationBypassed = isNotificationBypassed;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrimaryEmailRequired(Boolean isPrimaryEmailRequired) {
-            this.isPrimaryEmailRequired = Objects.requireNonNull(isPrimaryEmailRequired);
+        public Builder isPrimaryEmailRequired(@Nullable Boolean isPrimaryEmailRequired) {
+            this.isPrimaryEmailRequired = isPrimaryEmailRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+        public Builder licenseType(@Nullable String licenseType) {
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder replicaRegions(List<GetDomainsDomainReplicaRegion> replicaRegions) {
-            this.replicaRegions = Objects.requireNonNull(replicaRegions);
+        public Builder replicaRegions(@Nullable List<GetDomainsDomainReplicaRegion> replicaRegions) {
+            this.replicaRegions = replicaRegions;
             return this;
         }
         public Builder replicaRegions(GetDomainsDomainReplicaRegion... replicaRegions) {
             return replicaRegions(List.of(replicaRegions));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetDomainsDomain build() {

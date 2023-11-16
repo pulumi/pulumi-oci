@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The URI that corresponds to the member Resource of this device
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Type of the third party authentication factor
         /// </summary>
-        public readonly string ThirdPartyFactorType;
+        public readonly string? ThirdPartyFactorType;
         /// <summary>
         /// The vendor name of the third party factor
         /// </summary>
-        public readonly string ThirdPartyVendorName;
+        public readonly string? ThirdPartyVendorName;
         /// <summary>
         /// The identifier of the user
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyDevicesMyDeviceThirdPartyFactorResult(
-            string @ref,
+            string? @ref,
 
-            string thirdPartyFactorType,
+            string? thirdPartyFactorType,
 
-            string thirdPartyVendorName,
+            string? thirdPartyVendorName,
 
-            string value)
+            string? value)
         {
             Ref = @ref;
             ThirdPartyFactorType = thirdPartyFactorType;

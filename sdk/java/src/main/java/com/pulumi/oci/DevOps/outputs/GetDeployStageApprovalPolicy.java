@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageApprovalPolicy {
@@ -14,27 +16,27 @@ public final class GetDeployStageApprovalPolicy {
      * @return Approval policy type.
      * 
      */
-    private String approvalPolicyType;
+    private @Nullable String approvalPolicyType;
     /**
      * @return A minimum number of approvals required for stage to proceed.
      * 
      */
-    private Integer numberOfApprovalsRequired;
+    private @Nullable Integer numberOfApprovalsRequired;
 
     private GetDeployStageApprovalPolicy() {}
     /**
      * @return Approval policy type.
      * 
      */
-    public String approvalPolicyType() {
-        return this.approvalPolicyType;
+    public Optional<String> approvalPolicyType() {
+        return Optional.ofNullable(this.approvalPolicyType);
     }
     /**
      * @return A minimum number of approvals required for stage to proceed.
      * 
      */
-    public Integer numberOfApprovalsRequired() {
-        return this.numberOfApprovalsRequired;
+    public Optional<Integer> numberOfApprovalsRequired() {
+        return Optional.ofNullable(this.numberOfApprovalsRequired);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDeployStageApprovalPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String approvalPolicyType;
-        private Integer numberOfApprovalsRequired;
+        private @Nullable String approvalPolicyType;
+        private @Nullable Integer numberOfApprovalsRequired;
         public Builder() {}
         public Builder(GetDeployStageApprovalPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDeployStageApprovalPolicy {
         }
 
         @CustomType.Setter
-        public Builder approvalPolicyType(String approvalPolicyType) {
-            this.approvalPolicyType = Objects.requireNonNull(approvalPolicyType);
+        public Builder approvalPolicyType(@Nullable String approvalPolicyType) {
+            this.approvalPolicyType = approvalPolicyType;
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfApprovalsRequired(Integer numberOfApprovalsRequired) {
-            this.numberOfApprovalsRequired = Objects.requireNonNull(numberOfApprovalsRequired);
+        public Builder numberOfApprovalsRequired(@Nullable Integer numberOfApprovalsRequired) {
+            this.numberOfApprovalsRequired = numberOfApprovalsRequired;
             return this;
         }
         public GetDeployStageApprovalPolicy build() {

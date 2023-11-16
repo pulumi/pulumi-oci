@@ -49,7 +49,7 @@ class GetOpensearchVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetOpensearchVersionsResult:
 
     @property
     @pulumi.getter(name="opensearchVersionsCollections")
-    def opensearch_versions_collections(self) -> Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionResult']:
-        """
-        The list of opensearch_versions_collection.
-        """
+    def opensearch_versions_collections(self) -> Optional[Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionResult']]:
         return pulumi.get(self, "opensearch_versions_collections")
 
 
@@ -80,33 +77,7 @@ def get_opensearch_versions(compartment_id: Optional[str] = None,
                             filters: Optional[Sequence[pulumi.InputType['GetOpensearchVersionsFilterArgs']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpensearchVersionsResult:
     """
-    This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
-
-    Lists the supported Opensearch versions
-
-    ## Prerequisites
-
-    The below policies must be created in compartment before creating OpensearchCluster
-
-    ##### {Compartment-Name} - Name of  your compartment
-    ```python
-    import pulumi
-    ```
-
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -126,32 +97,6 @@ def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOpensearchVersionsFilterArgs']]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchVersionsResult]:
     """
-    This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
-
-    Lists the supported Opensearch versions
-
-    ## Prerequisites
-
-    The below policies must be created in compartment before creating OpensearchCluster
-
-    ##### {Compartment-Name} - Name of  your compartment
-    ```python
-    import pulumi
-    ```
-
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
@@ -68,30 +67,30 @@ type WorkspaceProject struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) A user defined description for the project.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceProjectMetadataArrayOutput `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType pulumi.StringOutput `pulumi:"modelType"`
+	ModelType pulumi.StringPtrOutput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
-	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrOutput `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus pulumi.IntOutput `pulumi:"objectStatus"`
+	ObjectStatus pulumi.IntPtrOutput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion pulumi.IntOutput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrOutput `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves WorkspaceProjectParentRefArrayOutput `pulumi:"parentReves"`
-	ProjectKey  pulumi.StringOutput                  `pulumi:"projectKey"`
+	ProjectKey  pulumi.StringPtrOutput               `pulumi:"projectKey"`
 	// (Updatable) Information about the object and its parent.
-	RegistryMetadata WorkspaceProjectRegistryMetadataOutput `pulumi:"registryMetadata"`
+	RegistryMetadata WorkspaceProjectRegistryMetadataPtrOutput `pulumi:"registryMetadata"`
 	// The workspace ID.
 	//
 	// ** IMPORTANT **
@@ -274,12 +273,6 @@ func (i *WorkspaceProject) ToWorkspaceProjectOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectOutput)
 }
 
-func (i *WorkspaceProject) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceProject] {
-	return pulumix.Output[*WorkspaceProject]{
-		OutputState: i.ToWorkspaceProjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceProjectArrayInput is an input type that accepts WorkspaceProjectArray and WorkspaceProjectArrayOutput values.
 // You can construct a concrete instance of `WorkspaceProjectArrayInput` via:
 //
@@ -303,12 +296,6 @@ func (i WorkspaceProjectArray) ToWorkspaceProjectArrayOutput() WorkspaceProjectA
 
 func (i WorkspaceProjectArray) ToWorkspaceProjectArrayOutputWithContext(ctx context.Context) WorkspaceProjectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectArrayOutput)
-}
-
-func (i WorkspaceProjectArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceProject] {
-	return pulumix.Output[[]*WorkspaceProject]{
-		OutputState: i.ToWorkspaceProjectArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // WorkspaceProjectMapInput is an input type that accepts WorkspaceProjectMap and WorkspaceProjectMapOutput values.
@@ -336,12 +323,6 @@ func (i WorkspaceProjectMap) ToWorkspaceProjectMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMapOutput)
 }
 
-func (i WorkspaceProjectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceProject] {
-	return pulumix.Output[map[string]*WorkspaceProject]{
-		OutputState: i.ToWorkspaceProjectMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceProjectOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectOutput) ElementType() reflect.Type {
@@ -356,15 +337,9 @@ func (o WorkspaceProjectOutput) ToWorkspaceProjectOutputWithContext(ctx context.
 	return o
 }
 
-func (o WorkspaceProjectOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceProject] {
-	return pulumix.Output[*WorkspaceProject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) A user defined description for the project.
-func (o WorkspaceProjectOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o WorkspaceProjectOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -373,8 +348,8 @@ func (o WorkspaceProjectOutput) Identifier() pulumi.StringOutput {
 }
 
 // (Updatable) The identifying key for the object.
-func (o WorkspaceProjectOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o WorkspaceProjectOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -388,13 +363,13 @@ func (o WorkspaceProjectOutput) Metadatas() WorkspaceProjectMetadataArrayOutput 
 }
 
 // The type of the object.
-func (o WorkspaceProjectOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
+func (o WorkspaceProjectOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringPtrOutput { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The model version of an object.
-func (o WorkspaceProjectOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
+func (o WorkspaceProjectOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringPtrOutput { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -403,13 +378,13 @@ func (o WorkspaceProjectOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o WorkspaceProjectOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.IntOutput { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o WorkspaceProjectOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.IntPtrOutput { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The version of the object that is used to track changes in the object instance.
-func (o WorkspaceProjectOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.IntOutput { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o WorkspaceProjectOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.IntPtrOutput { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.
@@ -417,13 +392,13 @@ func (o WorkspaceProjectOutput) ParentReves() WorkspaceProjectParentRefArrayOutp
 	return o.ApplyT(func(v *WorkspaceProject) WorkspaceProjectParentRefArrayOutput { return v.ParentReves }).(WorkspaceProjectParentRefArrayOutput)
 }
 
-func (o WorkspaceProjectOutput) ProjectKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringOutput { return v.ProjectKey }).(pulumi.StringOutput)
+func (o WorkspaceProjectOutput) ProjectKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringPtrOutput { return v.ProjectKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Information about the object and its parent.
-func (o WorkspaceProjectOutput) RegistryMetadata() WorkspaceProjectRegistryMetadataOutput {
-	return o.ApplyT(func(v *WorkspaceProject) WorkspaceProjectRegistryMetadataOutput { return v.RegistryMetadata }).(WorkspaceProjectRegistryMetadataOutput)
+func (o WorkspaceProjectOutput) RegistryMetadata() WorkspaceProjectRegistryMetadataPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProject) WorkspaceProjectRegistryMetadataPtrOutput { return v.RegistryMetadata }).(WorkspaceProjectRegistryMetadataPtrOutput)
 }
 
 // The workspace ID.
@@ -448,12 +423,6 @@ func (o WorkspaceProjectArrayOutput) ToWorkspaceProjectArrayOutputWithContext(ct
 	return o
 }
 
-func (o WorkspaceProjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceProject] {
-	return pulumix.Output[[]*WorkspaceProject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceProjectArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceProject {
 		return vs[0].([]*WorkspaceProject)[vs[1].(int)]
@@ -472,12 +441,6 @@ func (o WorkspaceProjectMapOutput) ToWorkspaceProjectMapOutput() WorkspaceProjec
 
 func (o WorkspaceProjectMapOutput) ToWorkspaceProjectMapOutputWithContext(ctx context.Context) WorkspaceProjectMapOutput {
 	return o
-}
-
-func (o WorkspaceProjectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceProject] {
-	return pulumix.Output[map[string]*WorkspaceProject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceProjectMapOutput) MapIndex(k pulumi.StringInput) WorkspaceProjectOutput {

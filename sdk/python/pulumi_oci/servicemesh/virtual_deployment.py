@@ -27,19 +27,6 @@ class VirtualDeploymentArgs:
                  service_discovery: Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']] = None):
         """
         The set of arguments for constructing a VirtualDeployment resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['VirtualDeploymentAccessLoggingArgs'] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]] listeners: (Updatable) The listeners for the virtual deployment.
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input['VirtualDeploymentServiceDiscoveryArgs'] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "virtual_service_id", virtual_service_id)
@@ -61,9 +48,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -73,13 +57,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter(name="virtualServiceId")
     def virtual_service_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "virtual_service_id")
 
     @virtual_service_id.setter
@@ -89,9 +66,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter(name="accessLogging")
     def access_logging(self) -> Optional[pulumi.Input['VirtualDeploymentAccessLoggingArgs']]:
-        """
-        (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-        """
         return pulumi.get(self, "access_logging")
 
     @access_logging.setter
@@ -101,9 +75,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -113,9 +84,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -125,9 +93,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -137,9 +102,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter
     def listeners(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]]:
-        """
-        (Updatable) The listeners for the virtual deployment.
-        """
         return pulumi.get(self, "listeners")
 
     @listeners.setter
@@ -149,9 +111,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -161,9 +120,6 @@ class VirtualDeploymentArgs:
     @property
     @pulumi.getter(name="serviceDiscovery")
     def service_discovery(self) -> Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']]:
-        """
-        (Updatable) Service Discovery configuration for virtual deployments.
-        """
         return pulumi.get(self, "service_discovery")
 
     @service_discovery.setter
@@ -190,24 +146,6 @@ class _VirtualDeploymentState:
                  virtual_service_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VirtualDeployment resources.
-        :param pulumi.Input['VirtualDeploymentAccessLoggingArgs'] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]] listeners: (Updatable) The listeners for the virtual deployment.
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input['VirtualDeploymentServiceDiscoveryArgs'] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if access_logging is not None:
             pulumi.set(__self__, "access_logging", access_logging)
@@ -241,9 +179,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="accessLogging")
     def access_logging(self) -> Optional[pulumi.Input['VirtualDeploymentAccessLoggingArgs']]:
-        """
-        (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-        """
         return pulumi.get(self, "access_logging")
 
     @access_logging.setter
@@ -253,9 +188,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -265,9 +197,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -277,9 +206,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -289,9 +215,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -301,9 +224,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -313,9 +233,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter
     def listeners(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]]:
-        """
-        (Updatable) The listeners for the virtual deployment.
-        """
         return pulumi.get(self, "listeners")
 
     @listeners.setter
@@ -325,9 +242,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -337,9 +251,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="serviceDiscovery")
     def service_discovery(self) -> Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']]:
-        """
-        (Updatable) Service Discovery configuration for virtual deployments.
-        """
         return pulumi.get(self, "service_discovery")
 
     @service_discovery.setter
@@ -349,9 +260,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -361,9 +269,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -373,9 +278,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -385,9 +287,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -397,13 +296,6 @@ class _VirtualDeploymentState:
     @property
     @pulumi.getter(name="virtualServiceId")
     def virtual_service_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "virtual_service_id")
 
     @virtual_service_id.setter
@@ -427,64 +319,9 @@ class VirtualDeployment(pulumi.CustomResource):
                  virtual_service_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new VirtualDeployment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_virtual_deployment = oci.service_mesh.VirtualDeployment("testVirtualDeployment",
-            compartment_id=var["compartment_id"],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-            access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=var["virtual_deployment_access_logging_is_enabled"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["virtual_deployment_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=var["virtual_deployment_listeners_port"],
-                protocol=var["virtual_deployment_listeners_protocol"],
-                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
-                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
-            )],
-            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=var["virtual_deployment_service_discovery_type"],
-                hostname=var["virtual_deployment_service_discovery_hostname"],
-            ))
-        ```
-
-        ## Import
-
-        VirtualDeployments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
-        ```
-
+        Create a VirtualDeployment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentAccessLoggingArgs']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualDeploymentListenerArgs']]]] listeners: (Updatable) The listeners for the virtual deployment.
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentServiceDiscoveryArgs']] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -493,49 +330,7 @@ class VirtualDeployment(pulumi.CustomResource):
                  args: VirtualDeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new VirtualDeployment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_virtual_deployment = oci.service_mesh.VirtualDeployment("testVirtualDeployment",
-            compartment_id=var["compartment_id"],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-            access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=var["virtual_deployment_access_logging_is_enabled"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["virtual_deployment_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=var["virtual_deployment_listeners_port"],
-                protocol=var["virtual_deployment_listeners_protocol"],
-                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
-                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
-            )],
-            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=var["virtual_deployment_service_discovery_type"],
-                hostname=var["virtual_deployment_service_discovery_hostname"],
-            ))
-        ```
-
-        ## Import
-
-        VirtualDeployments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
-        ```
-
+        Create a VirtualDeployment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VirtualDeploymentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -618,24 +413,6 @@ class VirtualDeployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentAccessLoggingArgs']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualDeploymentListenerArgs']]]] listeners: (Updatable) The listeners for the virtual deployment.
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentServiceDiscoveryArgs']] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -659,117 +436,71 @@ class VirtualDeployment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="accessLogging")
-    def access_logging(self) -> pulumi.Output['outputs.VirtualDeploymentAccessLogging']:
-        """
-        (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-        """
+    def access_logging(self) -> pulumi.Output[Optional['outputs.VirtualDeploymentAccessLogging']]:
         return pulumi.get(self, "access_logging")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def listeners(self) -> pulumi.Output[Sequence['outputs.VirtualDeploymentListener']]:
-        """
-        (Updatable) The listeners for the virtual deployment.
-        """
+    def listeners(self) -> pulumi.Output[Optional[Sequence['outputs.VirtualDeploymentListener']]]:
         return pulumi.get(self, "listeners")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="serviceDiscovery")
-    def service_discovery(self) -> pulumi.Output['outputs.VirtualDeploymentServiceDiscovery']:
-        """
-        (Updatable) Service Discovery configuration for virtual deployments.
-        """
+    def service_discovery(self) -> pulumi.Output[Optional['outputs.VirtualDeploymentServiceDiscovery']]:
         return pulumi.get(self, "service_discovery")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="virtualServiceId")
     def virtual_service_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "virtual_service_id")
 

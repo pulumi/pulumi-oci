@@ -71,11 +71,11 @@ export class ApiKey extends pulumi.CustomResource {
     /**
      * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      */
-    public /*out*/ readonly fingerprint!: pulumi.Output<string>;
+    public /*out*/ readonly fingerprint!: pulumi.Output<string | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveStatus!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveStatus!: pulumi.Output<string | undefined>;
     /**
      * The public key.  Must be an RSA key in PEM format.
      */
@@ -83,11 +83,11 @@ export class ApiKey extends pulumi.CustomResource {
     /**
      * The API key's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the user.
      *

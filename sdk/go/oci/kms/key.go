@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Key resource in Oracle Cloud Infrastructure Kms service.
@@ -37,27 +36,27 @@ type Key struct {
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-	CurrentKeyVersion pulumi.StringOutput `pulumi:"currentKeyVersion"`
+	CurrentKeyVersion pulumi.StringPtrOutput `pulumi:"currentKeyVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
-	DesiredState pulumi.StringOutput `pulumi:"desiredState"`
+	DesiredState pulumi.StringPtrOutput `pulumi:"desiredState"`
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// A reference to the key on external key manager.
-	ExternalKeyReference KeyExternalKeyReferenceOutput `pulumi:"externalKeyReference"`
+	ExternalKeyReference KeyExternalKeyReferencePtrOutput `pulumi:"externalKeyReference"`
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails KeyExternalKeyReferenceDetailArrayOutput `pulumi:"externalKeyReferenceDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
-	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
+	IsPrimary pulumi.BoolPtrOutput `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
 	KeyShape KeyKeyShapeOutput `pulumi:"keyShape"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint pulumi.StringOutput `pulumi:"managementEndpoint"`
 	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
+	ProtectionMode pulumi.StringPtrOutput `pulumi:"protectionMode"`
 	// Key replica details
 	ReplicaDetails KeyReplicaDetailArrayOutput `pulumi:"replicaDetails"`
 	// (Updatable) Details where key was backed up.
@@ -67,18 +66,18 @@ type Key struct {
 	// (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
 	RestoreTrigger pulumi.BoolPtrOutput `pulumi:"restoreTrigger"`
 	// The OCID of the key from which this key was restored.
-	RestoredFromKeyId pulumi.StringOutput `pulumi:"restoredFromKeyId"`
+	RestoredFromKeyId pulumi.StringPtrOutput `pulumi:"restoredFromKeyId"`
 	// The key's current lifecycle state.  Example: `ENABLED`
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrOutput `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key.
-	VaultId pulumi.StringOutput `pulumi:"vaultId"`
+	VaultId pulumi.StringPtrOutput `pulumi:"vaultId"`
 }
 
 // NewKey registers a new resource with the given unique name, arguments, and options.
@@ -310,12 +309,6 @@ func (i *Key) ToKeyOutputWithContext(ctx context.Context) KeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KeyOutput)
 }
 
-func (i *Key) ToOutput(ctx context.Context) pulumix.Output[*Key] {
-	return pulumix.Output[*Key]{
-		OutputState: i.ToKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyArrayInput is an input type that accepts KeyArray and KeyArrayOutput values.
 // You can construct a concrete instance of `KeyArrayInput` via:
 //
@@ -339,12 +332,6 @@ func (i KeyArray) ToKeyArrayOutput() KeyArrayOutput {
 
 func (i KeyArray) ToKeyArrayOutputWithContext(ctx context.Context) KeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KeyArrayOutput)
-}
-
-func (i KeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*Key] {
-	return pulumix.Output[[]*Key]{
-		OutputState: i.ToKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // KeyMapInput is an input type that accepts KeyMap and KeyMapOutput values.
@@ -372,12 +359,6 @@ func (i KeyMap) ToKeyMapOutputWithContext(ctx context.Context) KeyMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KeyMapOutput)
 }
 
-func (i KeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Key] {
-	return pulumix.Output[map[string]*Key]{
-		OutputState: i.ToKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyOutput struct{ *pulumi.OutputState }
 
 func (KeyOutput) ElementType() reflect.Type {
@@ -392,20 +373,14 @@ func (o KeyOutput) ToKeyOutputWithContext(ctx context.Context) KeyOutput {
 	return o
 }
 
-func (o KeyOutput) ToOutput(ctx context.Context) pulumix.Output[*Key] {
-	return pulumix.Output[*Key]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment where you want to create the master encryption key.
 func (o KeyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-func (o KeyOutput) CurrentKeyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.CurrentKeyVersion }).(pulumi.StringOutput)
+func (o KeyOutput) CurrentKeyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.CurrentKeyVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -414,8 +389,8 @@ func (o KeyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
-func (o KeyOutput) DesiredState() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.DesiredState }).(pulumi.StringOutput)
+func (o KeyOutput) DesiredState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.DesiredState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -424,8 +399,8 @@ func (o KeyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // A reference to the key on external key manager.
-func (o KeyOutput) ExternalKeyReference() KeyExternalKeyReferenceOutput {
-	return o.ApplyT(func(v *Key) KeyExternalKeyReferenceOutput { return v.ExternalKeyReference }).(KeyExternalKeyReferenceOutput)
+func (o KeyOutput) ExternalKeyReference() KeyExternalKeyReferencePtrOutput {
+	return o.ApplyT(func(v *Key) KeyExternalKeyReferencePtrOutput { return v.ExternalKeyReference }).(KeyExternalKeyReferencePtrOutput)
 }
 
 // Key reference data to be returned to the customer as a response.
@@ -439,8 +414,8 @@ func (o KeyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
-func (o KeyOutput) IsPrimary() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Key) pulumi.BoolOutput { return v.IsPrimary }).(pulumi.BoolOutput)
+func (o KeyOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.BoolPtrOutput { return v.IsPrimary }).(pulumi.BoolPtrOutput)
 }
 
 // The cryptographic properties of a key.
@@ -454,8 +429,8 @@ func (o KeyOutput) ManagementEndpoint() pulumi.StringOutput {
 }
 
 // The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-func (o KeyOutput) ProtectionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.ProtectionMode }).(pulumi.StringOutput)
+func (o KeyOutput) ProtectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.ProtectionMode }).(pulumi.StringPtrOutput)
 }
 
 // Key replica details
@@ -479,31 +454,31 @@ func (o KeyOutput) RestoreTrigger() pulumi.BoolPtrOutput {
 }
 
 // The OCID of the key from which this key was restored.
-func (o KeyOutput) RestoredFromKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.RestoredFromKeyId }).(pulumi.StringOutput)
+func (o KeyOutput) RestoredFromKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.RestoredFromKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The key's current lifecycle state.  Example: `ENABLED`
-func (o KeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o KeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-func (o KeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o KeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o KeyOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o KeyOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault that contains this key.
-func (o KeyOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
+func (o KeyOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringPtrOutput { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 type KeyArrayOutput struct{ *pulumi.OutputState }
@@ -518,12 +493,6 @@ func (o KeyArrayOutput) ToKeyArrayOutput() KeyArrayOutput {
 
 func (o KeyArrayOutput) ToKeyArrayOutputWithContext(ctx context.Context) KeyArrayOutput {
 	return o
-}
-
-func (o KeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Key] {
-	return pulumix.Output[[]*Key]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyArrayOutput) Index(i pulumi.IntInput) KeyOutput {
@@ -544,12 +513,6 @@ func (o KeyMapOutput) ToKeyMapOutput() KeyMapOutput {
 
 func (o KeyMapOutput) ToKeyMapOutputWithContext(ctx context.Context) KeyMapOutput {
 	return o
-}
-
-func (o KeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Key] {
-	return pulumix.Output[map[string]*Key]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyMapOutput) MapIndex(k pulumi.StringInput) KeyOutput {

@@ -19,13 +19,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
                  resource_ids: pulumi.Input[str]):
         """
         The set of arguments for constructing a MetricExtensionMetricExtensionOnGivenResourcesManagement resource.
-        :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
         """
         pulumi.set(__self__, "enable_metric_extension_on_given_resources", enable_metric_extension_on_given_resources)
         pulumi.set(__self__, "metric_extension_id", metric_extension_id)
@@ -34,13 +27,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
     @property
     @pulumi.getter(name="enableMetricExtensionOnGivenResources")
     def enable_metric_extension_on_given_resources(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_metric_extension_on_given_resources")
 
     @enable_metric_extension_on_given_resources.setter
@@ -50,9 +36,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
     @property
     @pulumi.getter(name="metricExtensionId")
     def metric_extension_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        """
         return pulumi.get(self, "metric_extension_id")
 
     @metric_extension_id.setter
@@ -62,9 +45,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
     @property
     @pulumi.getter(name="resourceIds")
     def resource_ids(self) -> pulumi.Input[str]:
-        """
-        List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
-        """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
@@ -80,13 +60,6 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
                  resource_ids: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MetricExtensionMetricExtensionOnGivenResourcesManagement resources.
-        :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
         """
         if enable_metric_extension_on_given_resources is not None:
             pulumi.set(__self__, "enable_metric_extension_on_given_resources", enable_metric_extension_on_given_resources)
@@ -98,13 +71,6 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
     @property
     @pulumi.getter(name="enableMetricExtensionOnGivenResources")
     def enable_metric_extension_on_given_resources(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_metric_extension_on_given_resources")
 
     @enable_metric_extension_on_given_resources.setter
@@ -114,9 +80,6 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
     @property
     @pulumi.getter(name="metricExtensionId")
     def metric_extension_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        """
         return pulumi.get(self, "metric_extension_id")
 
     @metric_extension_id.setter
@@ -126,9 +89,6 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
     @property
     @pulumi.getter(name="resourceIds")
     def resource_ids(self) -> Optional[pulumi.Input[str]]:
-        """
-        List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
-        """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
@@ -146,31 +106,9 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
                  resource_ids: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Metric Extension Metric Extension On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Submits a request to enable matching metric extension Id for the given Resource IDs
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_metric_extension_metric_extension_on_given_resources_management = oci.stack_monitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("testMetricExtensionMetricExtensionOnGivenResourcesManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extension_metric_extension_on_given_resources_management_resource_ids"],
-            enable_metric_extension_on_given_resources=var["enable_metric_extension_on_given_resources"])
-        ```
-
+        Create a MetricExtensionMetricExtensionOnGivenResourcesManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
         """
         ...
     @overload
@@ -179,22 +117,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
                  args: MetricExtensionMetricExtensionOnGivenResourcesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Metric Extension Metric Extension On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Submits a request to enable matching metric extension Id for the given Resource IDs
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_metric_extension_metric_extension_on_given_resources_management = oci.stack_monitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("testMetricExtensionMetricExtensionOnGivenResourcesManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extension_metric_extension_on_given_resources_management_resource_ids"],
-            enable_metric_extension_on_given_resources=var["enable_metric_extension_on_given_resources"])
-        ```
-
+        Create a MetricExtensionMetricExtensionOnGivenResourcesManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -251,13 +174,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -271,28 +187,15 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
     @property
     @pulumi.getter(name="enableMetricExtensionOnGivenResources")
     def enable_metric_extension_on_given_resources(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_metric_extension_on_given_resources")
 
     @property
     @pulumi.getter(name="metricExtensionId")
     def metric_extension_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        """
         return pulumi.get(self, "metric_extension_id")
 
     @property
     @pulumi.getter(name="resourceIds")
     def resource_ids(self) -> pulumi.Output[str]:
-        """
-        List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
-        """
         return pulumi.get(self, "resource_ids")
 

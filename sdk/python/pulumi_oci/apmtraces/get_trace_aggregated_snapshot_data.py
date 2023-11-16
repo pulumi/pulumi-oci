@@ -43,15 +43,12 @@ class GetTraceAggregatedSnapshotDataResult:
 
     @property
     @pulumi.getter
-    def details(self) -> Sequence['outputs.GetTraceAggregatedSnapshotDataDetailResult']:
-        """
-        Aggregated snapshot details.
-        """
+    def details(self) -> Optional[Sequence['outputs.GetTraceAggregatedSnapshotDataDetailResult']]:
         return pulumi.get(self, "details")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,23 +76,7 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
                                        trace_key: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTraceAggregatedSnapshotDataResult:
     """
-    This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
-
-    Gets the aggregated snapshot identified by trace ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_aggregated_snapshot_data_trace_key"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -115,22 +96,6 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
                                               trace_key: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceAggregatedSnapshotDataResult]:
     """
-    This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
-
-    Gets the aggregated snapshot identified by trace ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_aggregated_snapshot_data_trace_key"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
@@ -108,34 +107,34 @@ type NotebookSession struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details about the state of the notebook session.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Details for the notebook session configuration.
-	NotebookSessionConfigDetails NotebookSessionNotebookSessionConfigDetailsOutput `pulumi:"notebookSessionConfigDetails"`
+	NotebookSessionConfigDetails NotebookSessionNotebookSessionConfigDetailsPtrOutput `pulumi:"notebookSessionConfigDetails"`
 	// (Updatable) Details for the notebook session configuration.
-	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsOutput `pulumi:"notebookSessionConfigurationDetails"`
+	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsPtrOutput `pulumi:"notebookSessionConfigurationDetails"`
 	// (Updatable) Notebook Session runtime configuration details.
-	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsOutput `pulumi:"notebookSessionRuntimeConfigDetails"`
+	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
 	NotebookSessionStorageMountConfigurationDetailsLists NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The URL to interact with the notebook session.
-	NotebookSessionUrl pulumi.StringOutput `pulumi:"notebookSessionUrl"`
+	NotebookSessionUrl pulumi.StringPtrOutput `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the notebook session.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewNotebookSession registers a new resource with the given unique name, arguments, and options.
@@ -321,12 +320,6 @@ func (i *NotebookSession) ToNotebookSessionOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionOutput)
 }
 
-func (i *NotebookSession) ToOutput(ctx context.Context) pulumix.Output[*NotebookSession] {
-	return pulumix.Output[*NotebookSession]{
-		OutputState: i.ToNotebookSessionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NotebookSessionArrayInput is an input type that accepts NotebookSessionArray and NotebookSessionArrayOutput values.
 // You can construct a concrete instance of `NotebookSessionArrayInput` via:
 //
@@ -350,12 +343,6 @@ func (i NotebookSessionArray) ToNotebookSessionArrayOutput() NotebookSessionArra
 
 func (i NotebookSessionArray) ToNotebookSessionArrayOutputWithContext(ctx context.Context) NotebookSessionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionArrayOutput)
-}
-
-func (i NotebookSessionArray) ToOutput(ctx context.Context) pulumix.Output[[]*NotebookSession] {
-	return pulumix.Output[[]*NotebookSession]{
-		OutputState: i.ToNotebookSessionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NotebookSessionMapInput is an input type that accepts NotebookSessionMap and NotebookSessionMapOutput values.
@@ -383,12 +370,6 @@ func (i NotebookSessionMap) ToNotebookSessionMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionMapOutput)
 }
 
-func (i NotebookSessionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotebookSession] {
-	return pulumix.Output[map[string]*NotebookSession]{
-		OutputState: i.ToNotebookSessionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NotebookSessionOutput struct{ *pulumi.OutputState }
 
 func (NotebookSessionOutput) ElementType() reflect.Type {
@@ -403,20 +384,14 @@ func (o NotebookSessionOutput) ToNotebookSessionOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o NotebookSessionOutput) ToOutput(ctx context.Context) pulumix.Output[*NotebookSession] {
-	return pulumix.Output[*NotebookSession]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
 func (o NotebookSessionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-func (o NotebookSessionOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o NotebookSessionOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -425,8 +400,8 @@ func (o NotebookSessionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-func (o NotebookSessionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o NotebookSessionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -435,29 +410,29 @@ func (o NotebookSessionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details about the state of the notebook session.
-func (o NotebookSessionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o NotebookSessionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Details for the notebook session configuration.
-func (o NotebookSessionOutput) NotebookSessionConfigDetails() NotebookSessionNotebookSessionConfigDetailsOutput {
-	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionConfigDetailsOutput {
+func (o NotebookSessionOutput) NotebookSessionConfigDetails() NotebookSessionNotebookSessionConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionConfigDetailsPtrOutput {
 		return v.NotebookSessionConfigDetails
-	}).(NotebookSessionNotebookSessionConfigDetailsOutput)
+	}).(NotebookSessionNotebookSessionConfigDetailsPtrOutput)
 }
 
 // (Updatable) Details for the notebook session configuration.
-func (o NotebookSessionOutput) NotebookSessionConfigurationDetails() NotebookSessionNotebookSessionConfigurationDetailsOutput {
-	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionConfigurationDetailsOutput {
+func (o NotebookSessionOutput) NotebookSessionConfigurationDetails() NotebookSessionNotebookSessionConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionConfigurationDetailsPtrOutput {
 		return v.NotebookSessionConfigurationDetails
-	}).(NotebookSessionNotebookSessionConfigurationDetailsOutput)
+	}).(NotebookSessionNotebookSessionConfigurationDetailsPtrOutput)
 }
 
 // (Updatable) Notebook Session runtime configuration details.
-func (o NotebookSessionOutput) NotebookSessionRuntimeConfigDetails() NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
-	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
+func (o NotebookSessionOutput) NotebookSessionRuntimeConfigDetails() NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
 		return v.NotebookSessionRuntimeConfigDetails
-	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsOutput)
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput)
 }
 
 // (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
@@ -468,8 +443,8 @@ func (o NotebookSessionOutput) NotebookSessionStorageMountConfigurationDetailsLi
 }
 
 // The URL to interact with the notebook session.
-func (o NotebookSessionOutput) NotebookSessionUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.NotebookSessionUrl }).(pulumi.StringOutput)
+func (o NotebookSessionOutput) NotebookSessionUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringPtrOutput { return v.NotebookSessionUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -481,13 +456,13 @@ func (o NotebookSessionOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The state of the notebook session.
-func (o NotebookSessionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NotebookSessionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o NotebookSessionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NotebookSessionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type NotebookSessionArrayOutput struct{ *pulumi.OutputState }
@@ -502,12 +477,6 @@ func (o NotebookSessionArrayOutput) ToNotebookSessionArrayOutput() NotebookSessi
 
 func (o NotebookSessionArrayOutput) ToNotebookSessionArrayOutputWithContext(ctx context.Context) NotebookSessionArrayOutput {
 	return o
-}
-
-func (o NotebookSessionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NotebookSession] {
-	return pulumix.Output[[]*NotebookSession]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NotebookSessionArrayOutput) Index(i pulumi.IntInput) NotebookSessionOutput {
@@ -528,12 +497,6 @@ func (o NotebookSessionMapOutput) ToNotebookSessionMapOutput() NotebookSessionMa
 
 func (o NotebookSessionMapOutput) ToNotebookSessionMapOutputWithContext(ctx context.Context) NotebookSessionMapOutput {
 	return o
-}
-
-func (o NotebookSessionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotebookSession] {
-	return pulumix.Output[map[string]*NotebookSession]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NotebookSessionMapOutput) MapIndex(k pulumi.StringInput) NotebookSessionOutput {

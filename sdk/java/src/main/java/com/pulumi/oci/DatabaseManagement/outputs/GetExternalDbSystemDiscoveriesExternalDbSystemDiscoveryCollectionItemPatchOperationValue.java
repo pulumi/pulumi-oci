@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue {
@@ -16,51 +18,51 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
      * 
      */
-    private Boolean isSelectedForMonitoring;
+    private @Nullable Boolean isSelectedForMonitoring;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors() {
-        return this.connectors;
+        return this.connectors == null ? List.of() : this.connectors;
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
      * 
      */
-    public Boolean isSelectedForMonitoring() {
-        return this.isSelectedForMonitoring;
+    public Optional<Boolean> isSelectedForMonitoring() {
+        return Optional.ofNullable(this.isSelectedForMonitoring);
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors;
-        private String displayName;
-        private Boolean isSelectedForMonitoring;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors;
+        private @Nullable String displayName;
+        private @Nullable Boolean isSelectedForMonitoring;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,26 +88,26 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectors(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors) {
-            this.connectors = Objects.requireNonNull(connectors);
+        public Builder connectors(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors) {
+            this.connectors = connectors;
             return this;
         }
         public Builder connectors(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector... connectors) {
             return connectors(List.of(connectors));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder isSelectedForMonitoring(Boolean isSelectedForMonitoring) {
-            this.isSelectedForMonitoring = Objects.requireNonNull(isSelectedForMonitoring);
+        public Builder isSelectedForMonitoring(@Nullable Boolean isSelectedForMonitoring) {
+            this.isSelectedForMonitoring = isSelectedForMonitoring;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue build() {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The status of the associated service.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The associated service-specific inputs in JSON string format, which Database Management can identify.
         /// </summary>
-        public readonly string Metadata;
+        public readonly string? Metadata;
 
         [OutputConstructor]
         private GetExternalDbSystemStackMonitoringConfigResult(
-            bool isEnabled,
+            bool? isEnabled,
 
-            string metadata)
+            string? metadata)
         {
             IsEnabled = isEnabled;
             Metadata = metadata;

@@ -19,7 +19,7 @@ public final class GetResolverEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
@@ -29,7 +29,7 @@ public final class GetResolverEndpointsResult {
      * @return The list of resolver_endpoints.
      * 
      */
-    private List<GetResolverEndpointsResolverEndpoint> resolverEndpoints;
+    private @Nullable List<GetResolverEndpointsResolverEndpoint> resolverEndpoints;
     private String resolverId;
     private String scope;
     /**
@@ -46,8 +46,8 @@ public final class GetResolverEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
@@ -61,7 +61,7 @@ public final class GetResolverEndpointsResult {
      * 
      */
     public List<GetResolverEndpointsResolverEndpoint> resolverEndpoints() {
-        return this.resolverEndpoints;
+        return this.resolverEndpoints == null ? List.of() : this.resolverEndpoints;
     }
     public String resolverId() {
         return this.resolverId;
@@ -87,9 +87,9 @@ public final class GetResolverEndpointsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetResolverEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetResolverEndpointsResolverEndpoint> resolverEndpoints;
+        private @Nullable List<GetResolverEndpointsResolverEndpoint> resolverEndpoints;
         private String resolverId;
         private String scope;
         private @Nullable String state;
@@ -114,8 +114,8 @@ public final class GetResolverEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -124,8 +124,8 @@ public final class GetResolverEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder resolverEndpoints(List<GetResolverEndpointsResolverEndpoint> resolverEndpoints) {
-            this.resolverEndpoints = Objects.requireNonNull(resolverEndpoints);
+        public Builder resolverEndpoints(@Nullable List<GetResolverEndpointsResolverEndpoint> resolverEndpoints) {
+            this.resolverEndpoints = resolverEndpoints;
             return this;
         }
         public Builder resolverEndpoints(GetResolverEndpointsResolverEndpoint... resolverEndpoints) {

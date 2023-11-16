@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
@@ -72,7 +71,7 @@ type GetVirtualCircuitsResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetVirtualCircuitsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	State *string `pulumi:"state"`
 	// The list of virtual_circuits.
@@ -122,12 +121,6 @@ func (o GetVirtualCircuitsResultOutput) ToGetVirtualCircuitsResultOutputWithCont
 	return o
 }
 
-func (o GetVirtualCircuitsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsResult] {
-	return pulumix.Output[GetVirtualCircuitsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the virtual circuit.
 func (o GetVirtualCircuitsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualCircuitsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetVirtualCircuitsResultOutput) Filters() GetVirtualCircuitsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVirtualCircuitsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualCircuitsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualCircuitsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).

@@ -47,92 +47,92 @@ export interface GetSoftwareSourceResult {
     /**
      * The architecture type supported by the Software Source
      */
-    readonly archType: string;
+    readonly archType?: string;
     /**
      * list of the Managed Instances associated with this Software Sources
      */
-    readonly associatedManagedInstances: outputs.OsManagement.GetSoftwareSourceAssociatedManagedInstance[];
+    readonly associatedManagedInstances?: outputs.OsManagement.GetSoftwareSourceAssociatedManagedInstance[];
     /**
      * The yum repository checksum type used by this software source
      */
-    readonly checksumType: string;
+    readonly checksumType?: string;
     /**
      * OCID for the Compartment
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Information specified by the user about the software source
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * User friendly name for the software source
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Fingerprint of the GPG key for this software source
      */
-    readonly gpgKeyFingerprint: string;
+    readonly gpgKeyFingerprint?: string;
     /**
      * ID of the GPG key for this software source
      */
-    readonly gpgKeyId: string;
+    readonly gpgKeyId?: string;
     /**
      * URL of the GPG key for this software source
      */
-    readonly gpgKeyUrl: string;
+    readonly gpgKeyUrl?: string;
     /**
      * OCID for the Software Source
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Email address of the person maintaining this software source
      */
-    readonly maintainerEmail: string;
+    readonly maintainerEmail?: string;
     /**
      * Name of the person maintaining this software source
      */
-    readonly maintainerName: string;
+    readonly maintainerName?: string;
     /**
      * Phone number of the person maintaining this software source
      */
-    readonly maintainerPhone: string;
+    readonly maintainerPhone?: string;
     /**
      * Number of packages
      */
-    readonly packages: number;
+    readonly packages?: number;
     /**
      * OCID for the parent software source, if there is one
      */
-    readonly parentId: string;
+    readonly parentId?: string;
     /**
      * Display name the parent software source, if there is one
      */
-    readonly parentName: string;
+    readonly parentName?: string;
     /**
      * Type of the Software Source
      */
-    readonly repoType: string;
+    readonly repoType?: string;
     readonly softwareSourceId: string;
     /**
      * The current state of the Software Source.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * status of the software source.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * URL for the repostiory
      */
-    readonly url: string;
+    readonly url?: string;
 }
 /**
  * This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.

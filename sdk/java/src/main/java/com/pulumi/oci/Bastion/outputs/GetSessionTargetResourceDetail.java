@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSessionTargetResourceDetail {
@@ -14,87 +16,87 @@ public final class GetSessionTargetResourceDetail {
      * @return The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
      * 
      */
-    private String sessionType;
+    private @Nullable String sessionType;
     /**
      * @return The display name of the target Compute instance that the session connects to.
      * 
      */
-    private String targetResourceDisplayName;
+    private @Nullable String targetResourceDisplayName;
     /**
      * @return The Fully Qualified Domain Name of the target resource that the session connects to.
      * 
      */
-    private String targetResourceFqdn;
+    private @Nullable String targetResourceFqdn;
     /**
      * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
      */
-    private String targetResourceId;
+    private @Nullable String targetResourceId;
     /**
      * @return The name of the user on the target resource operating system that the session uses for the connection.
      * 
      */
-    private String targetResourceOperatingSystemUserName;
+    private @Nullable String targetResourceOperatingSystemUserName;
     /**
      * @return The port number to connect to on the target resource.
      * 
      */
-    private Integer targetResourcePort;
+    private @Nullable Integer targetResourcePort;
     /**
      * @return The private IP address of the target resource that the session connects to.
      * 
      */
-    private String targetResourcePrivateIpAddress;
+    private @Nullable String targetResourcePrivateIpAddress;
 
     private GetSessionTargetResourceDetail() {}
     /**
      * @return The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
      * 
      */
-    public String sessionType() {
-        return this.sessionType;
+    public Optional<String> sessionType() {
+        return Optional.ofNullable(this.sessionType);
     }
     /**
      * @return The display name of the target Compute instance that the session connects to.
      * 
      */
-    public String targetResourceDisplayName() {
-        return this.targetResourceDisplayName;
+    public Optional<String> targetResourceDisplayName() {
+        return Optional.ofNullable(this.targetResourceDisplayName);
     }
     /**
      * @return The Fully Qualified Domain Name of the target resource that the session connects to.
      * 
      */
-    public String targetResourceFqdn() {
-        return this.targetResourceFqdn;
+    public Optional<String> targetResourceFqdn() {
+        return Optional.ofNullable(this.targetResourceFqdn);
     }
     /**
      * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
      */
-    public String targetResourceId() {
-        return this.targetResourceId;
+    public Optional<String> targetResourceId() {
+        return Optional.ofNullable(this.targetResourceId);
     }
     /**
      * @return The name of the user on the target resource operating system that the session uses for the connection.
      * 
      */
-    public String targetResourceOperatingSystemUserName() {
-        return this.targetResourceOperatingSystemUserName;
+    public Optional<String> targetResourceOperatingSystemUserName() {
+        return Optional.ofNullable(this.targetResourceOperatingSystemUserName);
     }
     /**
      * @return The port number to connect to on the target resource.
      * 
      */
-    public Integer targetResourcePort() {
-        return this.targetResourcePort;
+    public Optional<Integer> targetResourcePort() {
+        return Optional.ofNullable(this.targetResourcePort);
     }
     /**
      * @return The private IP address of the target resource that the session connects to.
      * 
      */
-    public String targetResourcePrivateIpAddress() {
-        return this.targetResourcePrivateIpAddress;
+    public Optional<String> targetResourcePrivateIpAddress() {
+        return Optional.ofNullable(this.targetResourcePrivateIpAddress);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetSessionTargetResourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String sessionType;
-        private String targetResourceDisplayName;
-        private String targetResourceFqdn;
-        private String targetResourceId;
-        private String targetResourceOperatingSystemUserName;
-        private Integer targetResourcePort;
-        private String targetResourcePrivateIpAddress;
+        private @Nullable String sessionType;
+        private @Nullable String targetResourceDisplayName;
+        private @Nullable String targetResourceFqdn;
+        private @Nullable String targetResourceId;
+        private @Nullable String targetResourceOperatingSystemUserName;
+        private @Nullable Integer targetResourcePort;
+        private @Nullable String targetResourcePrivateIpAddress;
         public Builder() {}
         public Builder(GetSessionTargetResourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetSessionTargetResourceDetail {
         }
 
         @CustomType.Setter
-        public Builder sessionType(String sessionType) {
-            this.sessionType = Objects.requireNonNull(sessionType);
+        public Builder sessionType(@Nullable String sessionType) {
+            this.sessionType = sessionType;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourceDisplayName(String targetResourceDisplayName) {
-            this.targetResourceDisplayName = Objects.requireNonNull(targetResourceDisplayName);
+        public Builder targetResourceDisplayName(@Nullable String targetResourceDisplayName) {
+            this.targetResourceDisplayName = targetResourceDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourceFqdn(String targetResourceFqdn) {
-            this.targetResourceFqdn = Objects.requireNonNull(targetResourceFqdn);
+        public Builder targetResourceFqdn(@Nullable String targetResourceFqdn) {
+            this.targetResourceFqdn = targetResourceFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourceId(String targetResourceId) {
-            this.targetResourceId = Objects.requireNonNull(targetResourceId);
+        public Builder targetResourceId(@Nullable String targetResourceId) {
+            this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourceOperatingSystemUserName(String targetResourceOperatingSystemUserName) {
-            this.targetResourceOperatingSystemUserName = Objects.requireNonNull(targetResourceOperatingSystemUserName);
+        public Builder targetResourceOperatingSystemUserName(@Nullable String targetResourceOperatingSystemUserName) {
+            this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourcePort(Integer targetResourcePort) {
-            this.targetResourcePort = Objects.requireNonNull(targetResourcePort);
+        public Builder targetResourcePort(@Nullable Integer targetResourcePort) {
+            this.targetResourcePort = targetResourcePort;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourcePrivateIpAddress(String targetResourcePrivateIpAddress) {
-            this.targetResourcePrivateIpAddress = Objects.requireNonNull(targetResourcePrivateIpAddress);
+        public Builder targetResourcePrivateIpAddress(@Nullable String targetResourcePrivateIpAddress) {
+            this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             return this;
         }
         public GetSessionTargetResourceDetail build() {

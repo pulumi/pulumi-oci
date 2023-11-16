@@ -26,89 +26,89 @@ public final class GetDomainsAccountRecoverySettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return The account recovery factor used (for example, email, mobile number (SMS), security questions, mobile application push or TOTP) to verify the identity of the user and reset the user&#39;s password.
      * 
      */
-    private List<String> factors;
+    private @Nullable List<String> factors;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Indicates how many minutes to disable account recovery for the user. The default value is 30 metric minutes.
      * 
      */
-    private Integer lockoutDuration;
+    private @Nullable Integer lockoutDuration;
     /**
      * @return Indicates the maximum number of failed account recovery attempts allowed for the user.
      * 
      */
-    private Integer maxIncorrectAttempts;
+    private @Nullable Integer maxIncorrectAttempts;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsAccountRecoverySettingMeta> metas;
+    private @Nullable List<GetDomainsAccountRecoverySettingMeta> metas;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsAccountRecoverySettingTag> tags;
+    private @Nullable List<GetDomainsAccountRecoverySettingTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
 
     private GetDomainsAccountRecoverySettingResult() {}
     public String accountRecoverySettingId() {
@@ -127,50 +127,50 @@ public final class GetDomainsAccountRecoverySettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return The account recovery factor used (for example, email, mobile number (SMS), security questions, mobile application push or TOTP) to verify the identity of the user and reset the user&#39;s password.
      * 
      */
     public List<String> factors() {
-        return this.factors;
+        return this.factors == null ? List.of() : this.factors;
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -180,49 +180,49 @@ public final class GetDomainsAccountRecoverySettingResult {
      * 
      */
     public List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Indicates how many minutes to disable account recovery for the user. The default value is 30 metric minutes.
      * 
      */
-    public Integer lockoutDuration() {
-        return this.lockoutDuration;
+    public Optional<Integer> lockoutDuration() {
+        return Optional.ofNullable(this.lockoutDuration);
     }
     /**
      * @return Indicates the maximum number of failed account recovery attempts allowed for the user.
      * 
      */
-    public Integer maxIncorrectAttempts() {
-        return this.maxIncorrectAttempts;
+    public Optional<Integer> maxIncorrectAttempts() {
+        return Optional.ofNullable(this.maxIncorrectAttempts);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsAccountRecoverySettingMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -232,21 +232,21 @@ public final class GetDomainsAccountRecoverySettingResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsAccountRecoverySettingTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
 
     public static Builder builder() {
@@ -262,25 +262,25 @@ public final class GetDomainsAccountRecoverySettingResult {
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private String externalId;
-        private List<String> factors;
-        private String id;
-        private List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable String externalId;
+        private @Nullable List<String> factors;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Integer lockoutDuration;
-        private Integer maxIncorrectAttempts;
-        private List<GetDomainsAccountRecoverySettingMeta> metas;
-        private String ocid;
+        private @Nullable List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Integer lockoutDuration;
+        private @Nullable Integer maxIncorrectAttempts;
+        private @Nullable List<GetDomainsAccountRecoverySettingMeta> metas;
+        private @Nullable String ocid;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private List<GetDomainsAccountRecoverySettingTag> tags;
-        private String tenancyOcid;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsAccountRecoverySettingTag> tags;
+        private @Nullable String tenancyOcid;
         public Builder() {}
         public Builder(GetDomainsAccountRecoverySettingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -333,41 +333,41 @@ public final class GetDomainsAccountRecoverySettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder factors(List<String> factors) {
-            this.factors = Objects.requireNonNull(factors);
+        public Builder factors(@Nullable List<String> factors) {
+            this.factors = factors;
             return this;
         }
         public Builder factors(String... factors) {
             return factors(List.of(factors));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAccountRecoverySettingIdcsCreatedBy... idcsCreatedBies) {
@@ -379,47 +379,47 @@ public final class GetDomainsAccountRecoverySettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAccountRecoverySettingIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder lockoutDuration(Integer lockoutDuration) {
-            this.lockoutDuration = Objects.requireNonNull(lockoutDuration);
+        public Builder lockoutDuration(@Nullable Integer lockoutDuration) {
+            this.lockoutDuration = lockoutDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder maxIncorrectAttempts(Integer maxIncorrectAttempts) {
-            this.maxIncorrectAttempts = Objects.requireNonNull(maxIncorrectAttempts);
+        public Builder maxIncorrectAttempts(@Nullable Integer maxIncorrectAttempts) {
+            this.maxIncorrectAttempts = maxIncorrectAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsAccountRecoverySettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsAccountRecoverySettingMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAccountRecoverySettingMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
@@ -428,24 +428,24 @@ public final class GetDomainsAccountRecoverySettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsAccountRecoverySettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsAccountRecoverySettingTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAccountRecoverySettingTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsAccountRecoverySettingResult build() {

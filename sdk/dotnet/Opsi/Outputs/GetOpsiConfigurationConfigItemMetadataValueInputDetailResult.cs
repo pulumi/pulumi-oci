@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Allowed value type of configuration item.
         /// </summary>
-        public readonly string AllowedValueType;
+        public readonly string? AllowedValueType;
         /// <summary>
         /// Maximum value limit for the configuration item.
         /// </summary>
-        public readonly string MaxValue;
+        public readonly string? MaxValue;
         /// <summary>
         /// Minimum value limit for the configuration item.
         /// </summary>
-        public readonly string MinValue;
+        public readonly string? MinValue;
         /// <summary>
         /// Allowed values to pick for the configuration item.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Opsi.Outputs
 
         [OutputConstructor]
         private GetOpsiConfigurationConfigItemMetadataValueInputDetailResult(
-            string allowedValueType,
+            string? allowedValueType,
 
-            string maxValue,
+            string? maxValue,
 
-            string minValue,
+            string? minValue,
 
             ImmutableArray<string> possibleValues)
         {

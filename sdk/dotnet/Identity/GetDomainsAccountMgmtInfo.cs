@@ -197,11 +197,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Type of Account
         /// </summary>
-        public readonly string AccountType;
+        public readonly string? AccountType;
         /// <summary>
         /// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
         /// </summary>
-        public readonly bool Active;
+        public readonly bool? Active;
         /// <summary>
         /// Application on which the account is based
         /// </summary>
@@ -212,35 +212,35 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// Unique key for this AccountMgmtInfo, which is used to prevent duplicate AccountMgmtInfo resources. Key is composed of a subset of app, owner and accountType.
         /// </summary>
-        public readonly string CompositeKey;
+        public readonly string? CompositeKey;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// If true, a back-fill grant will not be created for a connected managed app as part of account creation.
         /// </summary>
-        public readonly bool DoNotBackFillGrants;
+        public readonly bool? DoNotBackFillGrants;
         /// <summary>
         /// If true, the operation will not be performed on the target
         /// </summary>
-        public readonly bool DoNotPerformActionOnTarget;
+        public readonly bool? DoNotPerformActionOnTarget;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// If true, this account has been marked as a favorite of the User who owns it
         /// </summary>
-        public readonly bool Favorite;
+        public readonly bool? Favorite;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -253,7 +253,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -261,11 +261,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application
         /// </summary>
-        public readonly bool IsAccount;
+        public readonly bool? IsAccount;
         /// <summary>
         /// Last accessed timestamp of an application
         /// </summary>
-        public readonly string LastAccessed;
+        public readonly string? LastAccessed;
         /// <summary>
         /// Matching owning users of the account
         /// </summary>
@@ -277,7 +277,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Name of the Account
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Object-class of the Account
         /// </summary>
@@ -285,11 +285,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// The context in which the operation is performed on the account.
         /// </summary>
-        public readonly string OperationContext;
+        public readonly string? OperationContext;
         /// <summary>
         /// Owning user of the account
         /// </summary>
@@ -297,7 +297,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, then the response to the account creation operation on a connected managed app returns a preview of the account data that is evaluated by the attribute value generation policy. Note that an account will not be created on the target application when this attribute is set to true.
         /// </summary>
-        public readonly bool PreviewOnly;
+        public readonly bool? PreviewOnly;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// Resource Type of the Account
@@ -310,15 +310,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Last recorded sync response for the account
         /// </summary>
-        public readonly string SyncResponse;
+        public readonly string? SyncResponse;
         /// <summary>
         /// Last recorded sync situation for the account
         /// </summary>
-        public readonly string SyncSituation;
+        public readonly string? SyncSituation;
         /// <summary>
         /// Last sync timestamp of the account
         /// </summary>
-        public readonly string SyncTimestamp;
+        public readonly string? SyncTimestamp;
         /// <summary>
         /// A list of tags on this resource.
         /// </summary>
@@ -326,11 +326,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Unique identifier of the Account
         /// </summary>
-        public readonly string Uid;
+        public readonly string? Uid;
         /// <summary>
         /// The UserWalletArtifact that contains the credentials that the system will use when performing Secure Form-Fill to log the user in to this application
         /// </summary>
@@ -340,9 +340,9 @@ namespace Pulumi.Oci.Identity
         private GetDomainsAccountMgmtInfoResult(
             string accountMgmtInfoId,
 
-            string accountType,
+            string? accountType,
 
-            bool active,
+            bool? active,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoAppResult> apps,
 
@@ -352,21 +352,21 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            string compositeKey,
+            string? compositeKey,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            bool doNotBackFillGrants,
+            bool? doNotBackFillGrants,
 
-            bool doNotPerformActionOnTarget,
+            bool? doNotPerformActionOnTarget,
 
-            string domainOcid,
+            string? domainOcid,
 
-            bool favorite,
+            bool? favorite,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoIdcsCreatedByResult> idcsCreatedBies,
 
@@ -374,29 +374,29 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            bool isAccount,
+            bool? isAccount,
 
-            string lastAccessed,
+            string? lastAccessed,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoMatchingOwnerResult> matchingOwners,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoMetaResult> metas,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoObjectClassResult> objectClasses,
 
-            string ocid,
+            string? ocid,
 
-            string operationContext,
+            string? operationContext,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoOwnerResult> owners,
 
-            bool previewOnly,
+            bool? previewOnly,
 
             string? resourceTypeSchemaVersion,
 
@@ -404,17 +404,17 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<string> schemas,
 
-            string syncResponse,
+            string? syncResponse,
 
-            string syncSituation,
+            string? syncSituation,
 
-            string syncTimestamp,
+            string? syncTimestamp,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
-            string uid,
+            string? uid,
 
             ImmutableArray<Outputs.GetDomainsAccountMgmtInfoUserWalletArtifactResult> userWalletArtifacts)
         {

@@ -77,7 +77,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
     /**
      * The list of database_tools_private_endpoint_collection.
      */
-    readonly databaseToolsPrivateEndpointCollections: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection[];
+    readonly databaseToolsPrivateEndpointCollections?: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -90,7 +90,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Database Tools private endpoint.
      */

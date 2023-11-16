@@ -51,11 +51,11 @@ export interface GetShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of shapes.
      */
-    readonly shapes: outputs.LoadBalancer.GetShapesShape[];
+    readonly shapes?: outputs.LoadBalancer.GetShapesShape[];
 }
 /**
  * This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.

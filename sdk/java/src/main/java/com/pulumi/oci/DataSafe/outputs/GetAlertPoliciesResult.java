@@ -20,7 +20,7 @@ public final class GetAlertPoliciesResult {
      * @return The list of alert_policy_collection.
      * 
      */
-    private List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections;
+    private @Nullable List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections;
     private @Nullable String alertPolicyId;
     /**
      * @return The OCID of the compartment that contains the alert policy.
@@ -38,7 +38,7 @@ public final class GetAlertPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if the alert policy is user-defined (true) or pre-defined (false).
      * 
@@ -62,7 +62,7 @@ public final class GetAlertPoliciesResult {
      * 
      */
     public List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections() {
-        return this.alertPolicyCollections;
+        return this.alertPolicyCollections == null ? List.of() : this.alertPolicyCollections;
     }
     public Optional<String> alertPolicyId() {
         return Optional.ofNullable(this.alertPolicyId);
@@ -91,8 +91,8 @@ public final class GetAlertPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if the alert policy is user-defined (true) or pre-defined (false).
@@ -128,13 +128,13 @@ public final class GetAlertPoliciesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
-        private List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections;
+        private @Nullable List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections;
         private @Nullable String alertPolicyId;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetAlertPoliciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isUserDefined;
         private @Nullable String state;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -164,8 +164,8 @@ public final class GetAlertPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder alertPolicyCollections(List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections) {
-            this.alertPolicyCollections = Objects.requireNonNull(alertPolicyCollections);
+        public Builder alertPolicyCollections(@Nullable List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections) {
+            this.alertPolicyCollections = alertPolicyCollections;
             return this;
         }
         public Builder alertPolicyCollections(GetAlertPoliciesAlertPolicyCollection... alertPolicyCollections) {
@@ -200,8 +200,8 @@ public final class GetAlertPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

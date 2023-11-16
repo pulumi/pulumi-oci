@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.UsageProxy.outputs.GetUsagelimitsUsageLimitCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUsagelimitsUsageLimitCollection {
@@ -14,7 +15,7 @@ public final class GetUsagelimitsUsageLimitCollection {
      * @return The list of usage limits.
      * 
      */
-    private List<GetUsagelimitsUsageLimitCollectionItem> items;
+    private @Nullable List<GetUsagelimitsUsageLimitCollectionItem> items;
 
     private GetUsagelimitsUsageLimitCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetUsagelimitsUsageLimitCollection {
      * 
      */
     public List<GetUsagelimitsUsageLimitCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetUsagelimitsUsageLimitCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetUsagelimitsUsageLimitCollectionItem> items;
+        private @Nullable List<GetUsagelimitsUsageLimitCollectionItem> items;
         public Builder() {}
         public Builder(GetUsagelimitsUsageLimitCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetUsagelimitsUsageLimitCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetUsagelimitsUsageLimitCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetUsagelimitsUsageLimitCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetUsagelimitsUsageLimitCollectionItem... items) {

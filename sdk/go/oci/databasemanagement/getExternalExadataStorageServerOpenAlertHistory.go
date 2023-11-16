@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
@@ -63,7 +62,7 @@ type GetExternalExadataStorageServerOpenAlertHistoryResult struct {
 	Alerts                         []GetExternalExadataStorageServerOpenAlertHistoryAlert `pulumi:"alerts"`
 	ExternalExadataStorageServerId string                                                 `pulumi:"externalExadataStorageServerId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalExadataStorageServerOpenAlertHistoryOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerOpenAlertHistoryOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerOpenAlertHistoryResultOutput {
@@ -104,12 +103,6 @@ func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) ToGetExtern
 	return o
 }
 
-func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServerOpenAlertHistoryResult] {
-	return pulumix.Output[GetExternalExadataStorageServerOpenAlertHistoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of open alerts.
 func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) Alerts() GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageServerOpenAlertHistoryResult) []GetExternalExadataStorageServerOpenAlertHistoryAlert {
@@ -124,8 +117,8 @@ func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) ExternalExa
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerOpenAlertHistoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerOpenAlertHistoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

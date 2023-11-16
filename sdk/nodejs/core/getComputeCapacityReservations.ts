@@ -78,7 +78,7 @@ export interface GetComputeCapacityReservationsResult {
     /**
      * The list of compute_capacity_reservations.
      */
-    readonly computeCapacityReservations: outputs.Core.GetComputeCapacityReservationsComputeCapacityReservation[];
+    readonly computeCapacityReservations?: outputs.Core.GetComputeCapacityReservationsComputeCapacityReservation[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -87,7 +87,7 @@ export interface GetComputeCapacityReservationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the compute capacity reservation.
      */

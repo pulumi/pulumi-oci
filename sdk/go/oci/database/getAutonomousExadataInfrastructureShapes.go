@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
@@ -69,7 +68,7 @@ type GetAutonomousExadataInfrastructureShapesResult struct {
 	CompartmentId                         string                                                                         `pulumi:"compartmentId"`
 	Filters                               []GetAutonomousExadataInfrastructureShapesFilter                               `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutonomousExadataInfrastructureShapesOutput(ctx *pulumi.Context, args GetAutonomousExadataInfrastructureShapesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousExadataInfrastructureShapesResultOutput {
@@ -113,12 +112,6 @@ func (o GetAutonomousExadataInfrastructureShapesResultOutput) ToGetAutonomousExa
 	return o
 }
 
-func (o GetAutonomousExadataInfrastructureShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousExadataInfrastructureShapesResult] {
-	return pulumix.Output[GetAutonomousExadataInfrastructureShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_exadata_infrastructure_shapes.
 func (o GetAutonomousExadataInfrastructureShapesResultOutput) AutonomousExadataInfrastructureShapes() GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArrayOutput {
 	return o.ApplyT(func(v GetAutonomousExadataInfrastructureShapesResult) []GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape {
@@ -141,8 +134,8 @@ func (o GetAutonomousExadataInfrastructureShapesResultOutput) Filters() GetAuton
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousExadataInfrastructureShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousExadataInfrastructureShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousExadataInfrastructureShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousExadataInfrastructureShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

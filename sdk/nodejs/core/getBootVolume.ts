@@ -47,90 +47,90 @@ export interface GetBootVolumeResult {
     /**
      * The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      */
-    readonly autoTunedVpusPerGb: string;
+    readonly autoTunedVpusPerGb?: string;
     /**
      * The list of autotune policies enabled for this volume.
      */
-    readonly autotunePolicies: outputs.Core.GetBootVolumeAutotunePolicy[];
+    readonly autotunePolicies?: outputs.Core.GetBootVolumeAutotunePolicy[];
     /**
      * The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    readonly backupPolicyId: string;
+    readonly backupPolicyId?: string;
     readonly bootVolumeId: string;
     /**
      * The list of boot volume replicas of this boot volume
      */
-    readonly bootVolumeReplicas: outputs.Core.GetBootVolumeBootVolumeReplica[];
-    readonly bootVolumeReplicasDeletion: boolean;
+    readonly bootVolumeReplicas?: outputs.Core.GetBootVolumeBootVolumeReplica[];
+    readonly bootVolumeReplicasDeletion?: boolean;
     /**
      * The OCID of the compartment that contains the boot volume.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the boot volume replica.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The image OCID used to create the boot volume.
      */
-    readonly imageId: string;
+    readonly imageId?: string;
     /**
      * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
-    readonly isAutoTuneEnabled: boolean;
+    readonly isAutoTuneEnabled?: boolean;
     /**
      * Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
      */
-    readonly isHydrated: boolean;
+    readonly isHydrated?: boolean;
     /**
      * The OCID of the Vault service master encryption key assigned to the boot volume.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * The size of the boot volume in GBs.
      */
-    readonly sizeInGbs: string;
+    readonly sizeInGbs?: string;
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      */
-    readonly sizeInMbs: string;
-    readonly sourceDetails: outputs.Core.GetBootVolumeSourceDetail[];
+    readonly sizeInMbs?: string;
+    readonly sourceDetails?: outputs.Core.GetBootVolumeSourceDetail[];
     /**
      * The current state of a boot volume.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The OCID of the source volume group.
      */
-    readonly volumeGroupId: string;
+    readonly volumeGroupId?: string;
     /**
      * The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      */
-    readonly vpusPerGb: string;
+    readonly vpusPerGb?: string;
 }
 /**
  * This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.

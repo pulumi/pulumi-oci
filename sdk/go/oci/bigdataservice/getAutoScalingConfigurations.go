@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAutoScalingConfigurations(ctx *pulumi.Context, args *GetAutoScalingConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetAutoScalingConfigurationsResult, error) {
@@ -39,7 +38,7 @@ type GetAutoScalingConfigurationsResult struct {
 	DisplayName               *string                                                `pulumi:"displayName"`
 	Filters                   []GetAutoScalingConfigurationsFilter                   `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string  `pulumi:"id"`
+	Id    *string `pulumi:"id"`
 	State *string `pulumi:"state"`
 }
 
@@ -84,12 +83,6 @@ func (o GetAutoScalingConfigurationsResultOutput) ToGetAutoScalingConfigurations
 	return o
 }
 
-func (o GetAutoScalingConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsResult] {
-	return pulumix.Output[GetAutoScalingConfigurationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutoScalingConfigurationsResultOutput) AutoScalingConfigurations() GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationsResult) []GetAutoScalingConfigurationsAutoScalingConfiguration {
 		return v.AutoScalingConfigurations
@@ -113,8 +106,8 @@ func (o GetAutoScalingConfigurationsResultOutput) Filters() GetAutoScalingConfig
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutoScalingConfigurationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutoScalingConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutoScalingConfigurationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAutoScalingConfigurationsResultOutput) State() pulumi.StringPtrOutput {

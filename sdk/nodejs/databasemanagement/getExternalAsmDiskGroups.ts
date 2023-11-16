@@ -49,13 +49,13 @@ export interface GetExternalAsmDiskGroupsResult {
     /**
      * The list of external_asm_disk_group_collection.
      */
-    readonly externalAsmDiskGroupCollections: outputs.DatabaseManagement.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection[];
+    readonly externalAsmDiskGroupCollections?: outputs.DatabaseManagement.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection[];
     readonly externalAsmId: string;
     readonly filters?: outputs.DatabaseManagement.GetExternalAsmDiskGroupsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.

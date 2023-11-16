@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
@@ -70,7 +69,7 @@ type GetFleetBlocklistsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
 	FleetId string `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The blocklist
 	Items []GetFleetBlocklistsItem `pulumi:"items"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
@@ -122,12 +121,6 @@ func (o GetFleetBlocklistsResultOutput) ToGetFleetBlocklistsResultOutputWithCont
 	return o
 }
 
-func (o GetFleetBlocklistsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsResult] {
-	return pulumix.Output[GetFleetBlocklistsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetBlocklistsResultOutput) Filters() GetFleetBlocklistsFilterArrayOutput {
 	return o.ApplyT(func(v GetFleetBlocklistsResult) []GetFleetBlocklistsFilter { return v.Filters }).(GetFleetBlocklistsFilterArrayOutput)
 }
@@ -138,8 +131,8 @@ func (o GetFleetBlocklistsResultOutput) FleetId() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetBlocklistsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetBlocklistsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetBlocklistsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetBlocklistsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The blocklist

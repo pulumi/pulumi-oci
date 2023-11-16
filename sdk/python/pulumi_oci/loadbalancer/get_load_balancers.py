@@ -49,9 +49,6 @@ class GetLoadBalancersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,9 +59,6 @@ class GetLoadBalancersResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `example_load_balancer`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +68,7 @@ class GetLoadBalancersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,18 +76,12 @@ class GetLoadBalancersResult:
 
     @property
     @pulumi.getter(name="loadBalancers")
-    def load_balancers(self) -> Sequence['outputs.GetLoadBalancersLoadBalancerResult']:
-        """
-        The list of load_balancers.
-        """
+    def load_balancers(self) -> Optional[Sequence['outputs.GetLoadBalancersLoadBalancerResult']]:
         return pulumi.get(self, "load_balancers")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the load balancer.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,31 +107,7 @@ def get_load_balancers(compartment_id: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLoadBalancersResult:
     """
-    This data source provides the list of Load Balancers in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all load balancers in the specified compartment.
-
-    ## Supported Aliases
-
-    * `oci_load_balancers`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancers = oci.LoadBalancer.get_load_balancers(compartment_id=var["compartment_id"],
-        detail=var["load_balancer_detail"],
-        display_name=var["load_balancer_display_name"],
-        state=var["load_balancer_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
-    :param str detail: The level of detail to return for each result. Can be `full` or `simple`.  Example: `full`
-    :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -172,30 +136,6 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLoadBalancersResult]:
     """
-    This data source provides the list of Load Balancers in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all load balancers in the specified compartment.
-
-    ## Supported Aliases
-
-    * `oci_load_balancers`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancers = oci.LoadBalancer.get_load_balancers(compartment_id=var["compartment_id"],
-        detail=var["load_balancer_detail"],
-        display_name=var["load_balancer_display_name"],
-        state=var["load_balancer_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
-    :param str detail: The level of detail to return for each result. Can be `full` or `simple`.  Example: `full`
-    :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
+    Use this data source to access information about an existing resource.
     """
     ...

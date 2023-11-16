@@ -49,10 +49,7 @@ class GetEnrollmentStatusResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,50 +59,32 @@ class GetEnrollmentStatusResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the enrollment status.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The enrollment status' current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current Cloud Advisor enrollment status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusReason")
-    def status_reason(self) -> str:
-        """
-        The reason for the enrollment status of the tenancy.
-        """
+    def status_reason(self) -> Optional[str]:
         return pulumi.get(self, "status_reason")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the enrollment status was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the enrollment status was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -128,21 +107,7 @@ class AwaitableGetEnrollmentStatusResult(GetEnrollmentStatusResult):
 def get_enrollment_status(enrollment_status_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnrollmentStatusResult:
     """
-    This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the Cloud Advisor enrollment status.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enrollment_status = oci.Optimizer.get_enrollment_status(enrollment_status_id=oci_optimizer_enrollment_status["test_enrollment_status"]["id"])
-    ```
-
-
-    :param str enrollment_status_id: The unique OCID associated with the enrollment status.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['enrollmentStatusId'] = enrollment_status_id
@@ -164,20 +129,6 @@ def get_enrollment_status(enrollment_status_id: Optional[str] = None,
 def get_enrollment_status_output(enrollment_status_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnrollmentStatusResult]:
     """
-    This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the Cloud Advisor enrollment status.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enrollment_status = oci.Optimizer.get_enrollment_status(enrollment_status_id=oci_optimizer_enrollment_status["test_enrollment_status"]["id"])
-    ```
-
-
-    :param str enrollment_status_id: The unique OCID associated with the enrollment status.
+    Use this data source to access information about an existing resource.
     """
     ...

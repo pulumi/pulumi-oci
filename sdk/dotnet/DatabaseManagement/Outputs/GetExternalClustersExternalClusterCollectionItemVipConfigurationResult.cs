@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The VIP name or IP address.
         /// </summary>
-        public readonly string Address;
+        public readonly string? Address;
         /// <summary>
         /// The network number from which VIPs are obtained.
         /// </summary>
-        public readonly int NetworkNumber;
+        public readonly int? NetworkNumber;
         /// <summary>
         /// The name of the node with the VIP.
         /// </summary>
-        public readonly string NodeName;
+        public readonly string? NodeName;
 
         [OutputConstructor]
         private GetExternalClustersExternalClusterCollectionItemVipConfigurationResult(
-            string address,
+            string? address,
 
-            int networkNumber,
+            int? networkNumber,
 
-            string nodeName)
+            string? nodeName)
         {
             Address = address;
             NetworkNumber = networkNumber;

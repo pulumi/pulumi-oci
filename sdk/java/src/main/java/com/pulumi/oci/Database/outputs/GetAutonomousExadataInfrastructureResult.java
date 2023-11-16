@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousExadataInfrastructureResult {
@@ -24,105 +26,105 @@ public final class GetAutonomousExadataInfrastructureResult {
      * 
      */
     @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
-    private Boolean createAsync;
+    private @Nullable String compartmentId;
+    private @Nullable Boolean createAsync;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the Autonomous Exadata Infrastructure.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The domain name for the Autonomous Exadata Infrastructure.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The host name for the Autonomous Exadata Infrastructure node.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The OCID of the Autonomous Exadata Infrastructure.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    private String lastMaintenanceRunId;
+    private @Nullable String lastMaintenanceRunId;
     /**
      * @return The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    private String lifecycleDetails;
-    private List<GetAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails;
+    private @Nullable String lifecycleDetails;
+    private @Nullable List<GetAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private List<GetAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows;
+    private @Nullable List<GetAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    private String nextMaintenanceRunId;
+    private @Nullable String nextMaintenanceRunId;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
      * 
      */
-    private String scanDnsName;
+    private @Nullable String scanDnsName;
     /**
      * @return The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the Autonomous Exadata Infrastructure was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
      * 
      */
-    private String zoneId;
+    private @Nullable String zoneId;
 
     private GetAutonomousExadataInfrastructureResult() {}
     public String autonomousExadataInfrastructureId() {
@@ -136,98 +138,98 @@ public final class GetAutonomousExadataInfrastructureResult {
      * 
      */
     @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
-    public Boolean createAsync() {
-        return this.createAsync;
+    public Optional<Boolean> createAsync() {
+        return Optional.ofNullable(this.createAsync);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name for the Autonomous Exadata Infrastructure.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The domain name for the Autonomous Exadata Infrastructure.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The host name for the Autonomous Exadata Infrastructure node.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The OCID of the Autonomous Exadata Infrastructure.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public String lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Optional<String> lastMaintenanceRunId() {
+        return Optional.ofNullable(this.lastMaintenanceRunId);
     }
     /**
      * @return The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public List<GetAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails() {
-        return this.maintenanceWindowDetails;
+        return this.maintenanceWindowDetails == null ? List.of() : this.maintenanceWindowDetails;
     }
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
     public List<GetAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows() {
-        return this.maintenanceWindows;
+        return this.maintenanceWindows == null ? List.of() : this.maintenanceWindows;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public String nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Optional<String> nextMaintenanceRunId() {
+        return Optional.ofNullable(this.nextMaintenanceRunId);
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -235,49 +237,49 @@ public final class GetAutonomousExadataInfrastructureResult {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
      * 
      */
-    public String scanDnsName() {
-        return this.scanDnsName;
+    public Optional<String> scanDnsName() {
+        return Optional.ofNullable(this.scanDnsName);
     }
     /**
      * @return The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the Autonomous Exadata Infrastructure was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
      * 
      */
-    public String zoneId() {
-        return this.zoneId;
+    public Optional<String> zoneId() {
+        return Optional.ofNullable(this.zoneId);
     }
 
     public static Builder builder() {
@@ -290,28 +292,28 @@ public final class GetAutonomousExadataInfrastructureResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousExadataInfrastructureId;
-        private String availabilityDomain;
-        private String compartmentId;
-        private Boolean createAsync;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String domain;
-        private Map<String,Object> freeformTags;
-        private String hostname;
-        private String id;
-        private String lastMaintenanceRunId;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private List<GetAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails;
-        private List<GetAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows;
-        private String nextMaintenanceRunId;
-        private List<String> nsgIds;
-        private String scanDnsName;
-        private String shape;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
-        private String zoneId;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Boolean createAsync;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String domain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostname;
+        private @Nullable String id;
+        private @Nullable String lastMaintenanceRunId;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails;
+        private @Nullable List<GetAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows;
+        private @Nullable String nextMaintenanceRunId;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String scanDnsName;
+        private @Nullable String shape;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String zoneId;
         public Builder() {}
         public Builder(GetAutonomousExadataInfrastructureResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -346,122 +348,122 @@ public final class GetAutonomousExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+        public Builder createAsync(@Nullable Boolean createAsync) {
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+        public Builder lastMaintenanceRunId(@Nullable String lastMaintenanceRunId) {
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceWindowDetails(List<GetAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails) {
-            this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
+        public Builder maintenanceWindowDetails(@Nullable List<GetAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
             return this;
         }
         public Builder maintenanceWindowDetails(GetAutonomousExadataInfrastructureMaintenanceWindowDetail... maintenanceWindowDetails) {
             return maintenanceWindowDetails(List.of(maintenanceWindowDetails));
         }
         @CustomType.Setter
-        public Builder maintenanceWindows(List<GetAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+        public Builder maintenanceWindows(@Nullable List<GetAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetAutonomousExadataInfrastructureMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
-        public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+        public Builder nextMaintenanceRunId(@Nullable String nextMaintenanceRunId) {
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder scanDnsName(String scanDnsName) {
-            this.scanDnsName = Objects.requireNonNull(scanDnsName);
+        public Builder scanDnsName(@Nullable String scanDnsName) {
+            this.scanDnsName = scanDnsName;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder zoneId(String zoneId) {
-            this.zoneId = Objects.requireNonNull(zoneId);
+        public Builder zoneId(@Nullable String zoneId) {
+            this.zoneId = zoneId;
             return this;
         }
         public GetAutonomousExadataInfrastructureResult build() {

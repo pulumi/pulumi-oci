@@ -49,33 +49,21 @@ class GetDeployStagesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment where the ContainerInstance will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deployPipelineId")
     def deploy_pipeline_id(self) -> Optional[str]:
-        """
-        The OCID of a pipeline.
-        """
         return pulumi.get(self, "deploy_pipeline_id")
 
     @property
     @pulumi.getter(name="deployStageCollections")
-    def deploy_stage_collections(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionResult']:
-        """
-        The list of deploy_stage_collection.
-        """
+    def deploy_stage_collections(self) -> Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionResult']]:
         return pulumi.get(self, "deploy_stage_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -86,17 +74,11 @@ class GetDeployStagesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the deployment stage.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_deploy_stages(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeployStagesResult:
     """
-    This data source provides the list of Deploy Stages in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a list of deployment stages.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deploy_stage_display_name"],
-        id=var["deploy_stage_id"],
-        state=var["deploy_stage_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str deploy_pipeline_id: The ID of the parent pipeline.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str state: A filter to return only deployment stages that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployStagesResult]:
     """
-    This data source provides the list of Deploy Stages in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a list of deployment stages.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deploy_stage_display_name"],
-        id=var["deploy_stage_id"],
-        state=var["deploy_stage_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str deploy_pipeline_id: The ID of the parent pipeline.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str state: A filter to return only deployment stages that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

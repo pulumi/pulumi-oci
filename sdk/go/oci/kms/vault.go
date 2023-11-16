@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vault resource in Oracle Cloud Infrastructure Kms service.
@@ -83,21 +82,21 @@ type Vault struct {
 	// (Updatable) The OCID of the compartment where you want to create this vault.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-	CryptoEndpoint pulumi.StringOutput `pulumi:"cryptoEndpoint"`
+	CryptoEndpoint pulumi.StringPtrOutput `pulumi:"cryptoEndpoint"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Metadata required for accessing External Key manager
-	ExternalKeyManagerMetadata VaultExternalKeyManagerMetadataOutput `pulumi:"externalKeyManagerMetadata"`
+	ExternalKeyManagerMetadata VaultExternalKeyManagerMetadataPtrOutput `pulumi:"externalKeyManagerMetadata"`
 	// Summary about metadata of external key manager to be returned to the customer as a response.
 	ExternalKeyManagerMetadataSummaries VaultExternalKeyManagerMetadataSummaryArrayOutput `pulumi:"externalKeyManagerMetadataSummaries"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
-	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
+	IsPrimary pulumi.BoolPtrOutput `pulumi:"isPrimary"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-	ManagementEndpoint pulumi.StringOutput `pulumi:"managementEndpoint"`
+	ManagementEndpoint pulumi.StringPtrOutput `pulumi:"managementEndpoint"`
 	// Vault replica details
 	ReplicaDetails VaultReplicaDetailArrayOutput `pulumi:"replicaDetails"`
 	// (Updatable) Details where vault was backed up.
@@ -106,16 +105,16 @@ type Vault struct {
 	RestoreFromObjectStore VaultRestoreFromObjectStorePtrOutput `pulumi:"restoreFromObjectStore"`
 	RestoreTrigger         pulumi.BoolPtrOutput                 `pulumi:"restoreTrigger"`
 	// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
-	RestoredFromVaultId pulumi.StringOutput `pulumi:"restoredFromVaultId"`
+	RestoredFromVaultId pulumi.StringPtrOutput `pulumi:"restoredFromVaultId"`
 	// The vault's current lifecycle state.  Example: `DELETED`
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrOutput `pulumi:"timeOfDeletion"`
 	// The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 	VaultType pulumi.StringOutput `pulumi:"vaultType"`
 }
@@ -318,12 +317,6 @@ func (i *Vault) ToVaultOutputWithContext(ctx context.Context) VaultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VaultOutput)
 }
 
-func (i *Vault) ToOutput(ctx context.Context) pulumix.Output[*Vault] {
-	return pulumix.Output[*Vault]{
-		OutputState: i.ToVaultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VaultArrayInput is an input type that accepts VaultArray and VaultArrayOutput values.
 // You can construct a concrete instance of `VaultArrayInput` via:
 //
@@ -347,12 +340,6 @@ func (i VaultArray) ToVaultArrayOutput() VaultArrayOutput {
 
 func (i VaultArray) ToVaultArrayOutputWithContext(ctx context.Context) VaultArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VaultArrayOutput)
-}
-
-func (i VaultArray) ToOutput(ctx context.Context) pulumix.Output[[]*Vault] {
-	return pulumix.Output[[]*Vault]{
-		OutputState: i.ToVaultArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VaultMapInput is an input type that accepts VaultMap and VaultMapOutput values.
@@ -380,12 +367,6 @@ func (i VaultMap) ToVaultMapOutputWithContext(ctx context.Context) VaultMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(VaultMapOutput)
 }
 
-func (i VaultMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vault] {
-	return pulumix.Output[map[string]*Vault]{
-		OutputState: i.ToVaultMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultOutput struct{ *pulumi.OutputState }
 
 func (VaultOutput) ElementType() reflect.Type {
@@ -400,20 +381,14 @@ func (o VaultOutput) ToVaultOutputWithContext(ctx context.Context) VaultOutput {
 	return o
 }
 
-func (o VaultOutput) ToOutput(ctx context.Context) pulumix.Output[*Vault] {
-	return pulumix.Output[*Vault]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment where you want to create this vault.
 func (o VaultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-func (o VaultOutput) CryptoEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.CryptoEndpoint }).(pulumi.StringOutput)
+func (o VaultOutput) CryptoEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringPtrOutput { return v.CryptoEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -427,8 +402,8 @@ func (o VaultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Metadata required for accessing External Key manager
-func (o VaultOutput) ExternalKeyManagerMetadata() VaultExternalKeyManagerMetadataOutput {
-	return o.ApplyT(func(v *Vault) VaultExternalKeyManagerMetadataOutput { return v.ExternalKeyManagerMetadata }).(VaultExternalKeyManagerMetadataOutput)
+func (o VaultOutput) ExternalKeyManagerMetadata() VaultExternalKeyManagerMetadataPtrOutput {
+	return o.ApplyT(func(v *Vault) VaultExternalKeyManagerMetadataPtrOutput { return v.ExternalKeyManagerMetadata }).(VaultExternalKeyManagerMetadataPtrOutput)
 }
 
 // Summary about metadata of external key manager to be returned to the customer as a response.
@@ -444,13 +419,13 @@ func (o VaultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
-func (o VaultOutput) IsPrimary() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Vault) pulumi.BoolOutput { return v.IsPrimary }).(pulumi.BoolOutput)
+func (o VaultOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Vault) pulumi.BoolPtrOutput { return v.IsPrimary }).(pulumi.BoolPtrOutput)
 }
 
 // The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-func (o VaultOutput) ManagementEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.ManagementEndpoint }).(pulumi.StringOutput)
+func (o VaultOutput) ManagementEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringPtrOutput { return v.ManagementEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // Vault replica details
@@ -473,26 +448,26 @@ func (o VaultOutput) RestoreTrigger() pulumi.BoolPtrOutput {
 }
 
 // The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
-func (o VaultOutput) RestoredFromVaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.RestoredFromVaultId }).(pulumi.StringOutput)
+func (o VaultOutput) RestoredFromVaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringPtrOutput { return v.RestoredFromVaultId }).(pulumi.StringPtrOutput)
 }
 
 // The vault's current lifecycle state.  Example: `DELETED`
-func (o VaultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VaultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-func (o VaultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VaultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VaultOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o VaultOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringPtrOutput { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
@@ -514,12 +489,6 @@ func (o VaultArrayOutput) ToVaultArrayOutputWithContext(ctx context.Context) Vau
 	return o
 }
 
-func (o VaultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Vault] {
-	return pulumix.Output[[]*Vault]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VaultArrayOutput) Index(i pulumi.IntInput) VaultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Vault {
 		return vs[0].([]*Vault)[vs[1].(int)]
@@ -538,12 +507,6 @@ func (o VaultMapOutput) ToVaultMapOutput() VaultMapOutput {
 
 func (o VaultMapOutput) ToVaultMapOutputWithContext(ctx context.Context) VaultMapOutput {
 	return o
-}
-
-func (o VaultMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vault] {
-	return pulumix.Output[map[string]*Vault]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultMapOutput) MapIndex(k pulumi.StringInput) VaultOutput {

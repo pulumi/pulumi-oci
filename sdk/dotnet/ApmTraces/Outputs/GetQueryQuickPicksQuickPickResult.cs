@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// <summary>
         /// Quick Pick name for the query.
         /// </summary>
-        public readonly string QuickPickName;
+        public readonly string? QuickPickName;
         /// <summary>
         /// Query for the Quick Pick.
         /// </summary>
-        public readonly string QuickPickQuery;
+        public readonly string? QuickPickQuery;
 
         [OutputConstructor]
         private GetQueryQuickPicksQuickPickResult(
-            string quickPickName,
+            string? quickPickName,
 
-            string quickPickQuery)
+            string? quickPickQuery)
         {
             QuickPickName = quickPickName;
             QuickPickQuery = quickPickQuery;

@@ -11,6 +11,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost {
@@ -18,37 +20,37 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
      * @return Cost estimation for compute
      * 
      */
-    private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute> computes;
+    private @Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute> computes;
     /**
      * @return Currency code in the ISO format.
      * 
      */
-    private String currencyCode;
+    private @Nullable String currencyCode;
     /**
      * @return Cost estimation for the OS image.
      * 
      */
-    private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage> osImages;
+    private @Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage> osImages;
     /**
      * @return Cost estimation for storage
      * 
      */
-    private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage> storages;
+    private @Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage> storages;
     /**
      * @return Subscription ID
      * 
      */
-    private String subscriptionId;
+    private @Nullable String subscriptionId;
     /**
      * @return Total estimation per month
      * 
      */
-    private Double totalEstimationPerMonth;
+    private @Nullable Double totalEstimationPerMonth;
     /**
      * @return Total estimation per month by subscription.
      * 
      */
-    private Double totalEstimationPerMonthBySubscription;
+    private @Nullable Double totalEstimationPerMonthBySubscription;
 
     private GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost() {}
     /**
@@ -56,49 +58,49 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
      * 
      */
     public List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute> computes() {
-        return this.computes;
+        return this.computes == null ? List.of() : this.computes;
     }
     /**
      * @return Currency code in the ISO format.
      * 
      */
-    public String currencyCode() {
-        return this.currencyCode;
+    public Optional<String> currencyCode() {
+        return Optional.ofNullable(this.currencyCode);
     }
     /**
      * @return Cost estimation for the OS image.
      * 
      */
     public List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage> osImages() {
-        return this.osImages;
+        return this.osImages == null ? List.of() : this.osImages;
     }
     /**
      * @return Cost estimation for storage
      * 
      */
     public List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage> storages() {
-        return this.storages;
+        return this.storages == null ? List.of() : this.storages;
     }
     /**
      * @return Subscription ID
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
     /**
      * @return Total estimation per month
      * 
      */
-    public Double totalEstimationPerMonth() {
-        return this.totalEstimationPerMonth;
+    public Optional<Double> totalEstimationPerMonth() {
+        return Optional.ofNullable(this.totalEstimationPerMonth);
     }
     /**
      * @return Total estimation per month by subscription.
      * 
      */
-    public Double totalEstimationPerMonthBySubscription() {
-        return this.totalEstimationPerMonthBySubscription;
+    public Optional<Double> totalEstimationPerMonthBySubscription() {
+        return Optional.ofNullable(this.totalEstimationPerMonthBySubscription);
     }
 
     public static Builder builder() {
@@ -110,13 +112,13 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute> computes;
-        private String currencyCode;
-        private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage> osImages;
-        private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage> storages;
-        private String subscriptionId;
-        private Double totalEstimationPerMonth;
-        private Double totalEstimationPerMonthBySubscription;
+        private @Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute> computes;
+        private @Nullable String currencyCode;
+        private @Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage> osImages;
+        private @Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage> storages;
+        private @Nullable String subscriptionId;
+        private @Nullable Double totalEstimationPerMonth;
+        private @Nullable Double totalEstimationPerMonthBySubscription;
         public Builder() {}
         public Builder(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost defaults) {
     	      Objects.requireNonNull(defaults);
@@ -130,47 +132,47 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
         }
 
         @CustomType.Setter
-        public Builder computes(List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute> computes) {
-            this.computes = Objects.requireNonNull(computes);
+        public Builder computes(@Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute> computes) {
+            this.computes = computes;
             return this;
         }
         public Builder computes(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute... computes) {
             return computes(List.of(computes));
         }
         @CustomType.Setter
-        public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+        public Builder currencyCode(@Nullable String currencyCode) {
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
-        public Builder osImages(List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage> osImages) {
-            this.osImages = Objects.requireNonNull(osImages);
+        public Builder osImages(@Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage> osImages) {
+            this.osImages = osImages;
             return this;
         }
         public Builder osImages(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage... osImages) {
             return osImages(List.of(osImages));
         }
         @CustomType.Setter
-        public Builder storages(List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage> storages) {
-            this.storages = Objects.requireNonNull(storages);
+        public Builder storages(@Nullable List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage> storages) {
+            this.storages = storages;
             return this;
         }
         public Builder storages(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage... storages) {
             return storages(List.of(storages));
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalEstimationPerMonth(Double totalEstimationPerMonth) {
-            this.totalEstimationPerMonth = Objects.requireNonNull(totalEstimationPerMonth);
+        public Builder totalEstimationPerMonth(@Nullable Double totalEstimationPerMonth) {
+            this.totalEstimationPerMonth = totalEstimationPerMonth;
             return this;
         }
         @CustomType.Setter
-        public Builder totalEstimationPerMonthBySubscription(Double totalEstimationPerMonthBySubscription) {
-            this.totalEstimationPerMonthBySubscription = Objects.requireNonNull(totalEstimationPerMonthBySubscription);
+        public Builder totalEstimationPerMonthBySubscription(@Nullable Double totalEstimationPerMonthBySubscription) {
+            this.totalEstimationPerMonthBySubscription = totalEstimationPerMonthBySubscription;
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost build() {

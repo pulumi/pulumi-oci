@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
@@ -60,41 +59,41 @@ type LookupDatabaseSoftwareImageArgs struct {
 // A collection of values returned by getDatabaseSoftwareImage.
 type LookupDatabaseSoftwareImageResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId           string `pulumi:"compartmentId"`
-	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
+	CompartmentId           *string `pulumi:"compartmentId"`
+	DatabaseSoftwareImageId string  `pulumi:"databaseSoftwareImageId"`
 	// List of one-off patches for Database Homes.
 	DatabaseSoftwareImageIncludedPatches []string `pulumi:"databaseSoftwareImageIncludedPatches"`
 	// List of one-off patches for Database Homes.
 	DatabaseSoftwareImageOneOffPatches []string `pulumi:"databaseSoftwareImageOneOffPatches"`
 	// The database version with which the database software image is to be built.
-	DatabaseVersion string `pulumi:"databaseVersion"`
+	DatabaseVersion *string `pulumi:"databaseVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the database software image. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// To what shape the image is meant for.
-	ImageShapeFamily string `pulumi:"imageShapeFamily"`
+	ImageShapeFamily *string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
-	ImageType string `pulumi:"imageType"`
+	ImageType *string `pulumi:"imageType"`
 	// The patches included in the image and the version of the image.
-	IncludedPatchesSummary string `pulumi:"includedPatchesSummary"`
+	IncludedPatchesSummary *string `pulumi:"includedPatchesSummary"`
 	// True if this Database software image is supported for Upgrade.
-	IsUpgradeSupported bool `pulumi:"isUpgradeSupported"`
+	IsUpgradeSupported *bool `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The output from the OPatch lsInventory command, which is passed as a string.
-	LsInventory string `pulumi:"lsInventory"`
+	LsInventory *string `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-	PatchSet       string `pulumi:"patchSet"`
-	SourceDbHomeId string `pulumi:"sourceDbHomeId"`
+	PatchSet       *string `pulumi:"patchSet"`
+	SourceDbHomeId *string `pulumi:"sourceDbHomeId"`
 	// The current state of the database software image.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the database software image was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupDatabaseSoftwareImageOutput(ctx *pulumi.Context, args LookupDatabaseSoftwareImageOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseSoftwareImageResultOutput {
@@ -135,15 +134,9 @@ func (o LookupDatabaseSoftwareImageResultOutput) ToLookupDatabaseSoftwareImageRe
 	return o
 }
 
-func (o LookupDatabaseSoftwareImageResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseSoftwareImageResult] {
-	return pulumix.Output[LookupDatabaseSoftwareImageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupDatabaseSoftwareImageResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDatabaseSoftwareImageResultOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
@@ -161,8 +154,8 @@ func (o LookupDatabaseSoftwareImageResultOutput) DatabaseSoftwareImageOneOffPatc
 }
 
 // The database version with which the database software image is to be built.
-func (o LookupDatabaseSoftwareImageResultOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -171,8 +164,8 @@ func (o LookupDatabaseSoftwareImageResultOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // The user-friendly name for the database software image. The name does not have to be unique.
-func (o LookupDatabaseSoftwareImageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -181,57 +174,57 @@ func (o LookupDatabaseSoftwareImageResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
-func (o LookupDatabaseSoftwareImageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // To what shape the image is meant for.
-func (o LookupDatabaseSoftwareImageResultOutput) ImageShapeFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.ImageShapeFamily }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) ImageShapeFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.ImageShapeFamily }).(pulumi.StringPtrOutput)
 }
 
 // The type of software image. Can be grid or database.
-func (o LookupDatabaseSoftwareImageResultOutput) ImageType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.ImageType }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) ImageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.ImageType }).(pulumi.StringPtrOutput)
 }
 
 // The patches included in the image and the version of the image.
-func (o LookupDatabaseSoftwareImageResultOutput) IncludedPatchesSummary() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.IncludedPatchesSummary }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) IncludedPatchesSummary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.IncludedPatchesSummary }).(pulumi.StringPtrOutput)
 }
 
 // True if this Database software image is supported for Upgrade.
-func (o LookupDatabaseSoftwareImageResultOutput) IsUpgradeSupported() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) bool { return v.IsUpgradeSupported }).(pulumi.BoolOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) IsUpgradeSupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *bool { return v.IsUpgradeSupported }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed message for the lifecycle state.
-func (o LookupDatabaseSoftwareImageResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The output from the OPatch lsInventory command, which is passed as a string.
-func (o LookupDatabaseSoftwareImageResultOutput) LsInventory() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.LsInventory }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) LsInventory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.LsInventory }).(pulumi.StringPtrOutput)
 }
 
 // The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-func (o LookupDatabaseSoftwareImageResultOutput) PatchSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.PatchSet }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) PatchSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.PatchSet }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseSoftwareImageResultOutput) SourceDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.SourceDbHomeId }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) SourceDbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.SourceDbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database software image.
-func (o LookupDatabaseSoftwareImageResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database software image was created.
-func (o LookupDatabaseSoftwareImageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDatabaseSoftwareImageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

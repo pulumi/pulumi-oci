@@ -9,6 +9,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestErrorsWorkRequestErr
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetWorkRequestErrorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of work_request_errors.
      * 
      */
-    private List<GetWorkRequestErrorsWorkRequestError> workRequestErrors;
+    private @Nullable List<GetWorkRequestErrorsWorkRequestError> workRequestErrors;
     private String workRequestId;
 
     private GetWorkRequestErrorsResult() {}
@@ -38,15 +39,15 @@ public final class GetWorkRequestErrorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of work_request_errors.
      * 
      */
     public List<GetWorkRequestErrorsWorkRequestError> workRequestErrors() {
-        return this.workRequestErrors;
+        return this.workRequestErrors == null ? List.of() : this.workRequestErrors;
     }
     public String workRequestId() {
         return this.workRequestId;
@@ -63,8 +64,8 @@ public final class GetWorkRequestErrorsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetWorkRequestErrorsFilter> filters;
-        private String id;
-        private List<GetWorkRequestErrorsWorkRequestError> workRequestErrors;
+        private @Nullable String id;
+        private @Nullable List<GetWorkRequestErrorsWorkRequestError> workRequestErrors;
         private String workRequestId;
         public Builder() {}
         public Builder(GetWorkRequestErrorsResult defaults) {
@@ -90,13 +91,13 @@ public final class GetWorkRequestErrorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestErrors(List<GetWorkRequestErrorsWorkRequestError> workRequestErrors) {
-            this.workRequestErrors = Objects.requireNonNull(workRequestErrors);
+        public Builder workRequestErrors(@Nullable List<GetWorkRequestErrorsWorkRequestError> workRequestErrors) {
+            this.workRequestErrors = workRequestErrors;
             return this;
         }
         public Builder workRequestErrors(GetWorkRequestErrorsWorkRequestError... workRequestErrors) {

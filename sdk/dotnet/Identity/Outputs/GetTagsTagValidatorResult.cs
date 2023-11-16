@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Specifies the type of validation: a static value (no validation) or a list.
         /// </summary>
-        public readonly string ValidatorType;
+        public readonly string? ValidatorType;
         /// <summary>
         /// The list of allowed values for a definedTag value.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetTagsTagValidatorResult(
-            string validatorType,
+            string? validatorType,
 
             ImmutableArray<string> values)
         {

@@ -8,6 +8,8 @@ import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsPreferenceItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsPreferenceResult {
@@ -15,12 +17,12 @@ public final class GetLogAnalyticsPreferenceResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of tenant preferences.
      * 
      */
-    private List<GetLogAnalyticsPreferenceItem> items;
+    private @Nullable List<GetLogAnalyticsPreferenceItem> items;
     private String namespace;
 
     private GetLogAnalyticsPreferenceResult() {}
@@ -28,15 +30,15 @@ public final class GetLogAnalyticsPreferenceResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of tenant preferences.
      * 
      */
     public List<GetLogAnalyticsPreferenceItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String namespace() {
         return this.namespace;
@@ -51,8 +53,8 @@ public final class GetLogAnalyticsPreferenceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetLogAnalyticsPreferenceItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetLogAnalyticsPreferenceItem> items;
         private String namespace;
         public Builder() {}
         public Builder(GetLogAnalyticsPreferenceResult defaults) {
@@ -63,13 +65,13 @@ public final class GetLogAnalyticsPreferenceResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetLogAnalyticsPreferenceItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetLogAnalyticsPreferenceItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsPreferenceItem... items) {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl {
@@ -14,27 +16,27 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * @return Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
      * 
      */
-    private Integer keySize;
+    private @Nullable Integer keySize;
     /**
      * @return The algorithm name.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl() {}
     /**
      * @return Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
      * 
      */
-    public Integer keySize() {
-        return this.keySize;
+    public Optional<Integer> keySize() {
+        return Optional.ofNullable(this.keySize);
     }
     /**
      * @return The algorithm name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer keySize;
-        private String name;
+        private @Nullable Integer keySize;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
 
         @CustomType.Setter
-        public Builder keySize(Integer keySize) {
-            this.keySize = Objects.requireNonNull(keySize);
+        public Builder keySize(@Nullable Integer keySize) {
+            this.keySize = keySize;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl build() {

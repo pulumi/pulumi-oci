@@ -91,7 +91,7 @@ export class NetworkSource extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
      */
@@ -99,11 +99,11 @@ export class NetworkSource extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveState!: pulumi.Output<string | undefined>;
     /**
      * The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      */
@@ -111,19 +111,19 @@ export class NetworkSource extends pulumi.CustomResource {
     /**
      * (Updatable) A list of allowed public IP addresses and CIDR ranges.
      */
-    public readonly publicSourceLists!: pulumi.Output<string[]>;
+    public readonly publicSourceLists!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
      */
-    public readonly services!: pulumi.Output<string[]>;
+    public readonly services!: pulumi.Output<string[] | undefined>;
     /**
      * The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
      *
@@ -131,7 +131,7 @@ export class NetworkSource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly virtualSourceLists!: pulumi.Output<outputs.Identity.NetworkSourceVirtualSourceList[]>;
+    public readonly virtualSourceLists!: pulumi.Output<outputs.Identity.NetworkSourceVirtualSourceList[] | undefined>;
 
     /**
      * Create a NetworkSource resource with the given unique name, arguments, and options.

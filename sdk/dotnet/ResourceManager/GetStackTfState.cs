@@ -106,13 +106,13 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LocalPath;
         public readonly string StackId;
 
         [OutputConstructor]
         private GetStackTfStateResult(
-            string id,
+            string? id,
 
             string localPath,
 

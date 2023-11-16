@@ -113,7 +113,7 @@ export interface GetProfilesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The operating system family.
      */
@@ -121,7 +121,7 @@ export interface GetProfilesResult {
     /**
      * The list of profile_collection.
      */
-    readonly profileCollections: outputs.OsManagementHub.GetProfilesProfileCollection[];
+    readonly profileCollections?: outputs.OsManagementHub.GetProfilesProfileCollection[];
     readonly profileId?: string;
     /**
      * The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.

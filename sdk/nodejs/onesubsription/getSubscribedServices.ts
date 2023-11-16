@@ -69,7 +69,7 @@ export interface GetSubscribedServicesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Sales Order Line Id associated to the subscribed service
      */
@@ -81,7 +81,7 @@ export interface GetSubscribedServicesResult {
     /**
      * The list of subscribed_services.
      */
-    readonly subscribedServices: outputs.OneSubsription.GetSubscribedServicesSubscribedService[];
+    readonly subscribedServices?: outputs.OneSubsription.GetSubscribedServicesSubscribedService[];
     /**
      * Subscription ID associated to the subscribed service
      */

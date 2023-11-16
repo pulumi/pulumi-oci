@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
@@ -73,7 +72,7 @@ type GetDedicatedVmHostShapesResult struct {
 	DedicatedVmHostShapes []GetDedicatedVmHostShapesDedicatedVmHostShape `pulumi:"dedicatedVmHostShapes"`
 	Filters               []GetDedicatedVmHostShapesFilter               `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string  `pulumi:"id"`
+	Id                *string `pulumi:"id"`
 	InstanceShapeName *string `pulumi:"instanceShapeName"`
 }
 
@@ -120,12 +119,6 @@ func (o GetDedicatedVmHostShapesResultOutput) ToGetDedicatedVmHostShapesResultOu
 	return o
 }
 
-func (o GetDedicatedVmHostShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVmHostShapesResult] {
-	return pulumix.Output[GetDedicatedVmHostShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The shape's availability domain.
 func (o GetDedicatedVmHostShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedVmHostShapesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -147,8 +140,8 @@ func (o GetDedicatedVmHostShapesResultOutput) Filters() GetDedicatedVmHostShapes
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDedicatedVmHostShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVmHostShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDedicatedVmHostShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVmHostShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDedicatedVmHostShapesResultOutput) InstanceShapeName() pulumi.StringPtrOutput {

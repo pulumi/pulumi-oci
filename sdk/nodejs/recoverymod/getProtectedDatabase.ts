@@ -47,92 +47,92 @@ export interface GetProtectedDatabaseResult {
     /**
      * The OCID of the compartment that contains the protected database.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The OCID of the protected database.
      */
-    readonly databaseId: string;
+    readonly databaseId?: string;
     /**
      * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      */
-    readonly databaseSize: string;
+    readonly databaseSize?: string;
     /**
      * The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
      */
-    readonly dbUniqueName: string;
+    readonly dbUniqueName?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The protected database name. You can change the displayName. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Indicates the protection status of the database. Allowed values are:
      * * HEALTHY
      * * WARNING
      * * ALERT
      */
-    readonly health: string;
+    readonly health?: string;
     /**
      * A message describing the current health of the protected database.
      */
-    readonly healthDetails: string;
+    readonly healthDetails?: string;
     /**
      * The OCID of the protected database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
      */
-    readonly isReadOnlyResource: boolean;
+    readonly isReadOnlyResource?: boolean;
     /**
      * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
      */
-    readonly isRedoLogsShipped: boolean;
+    readonly isRedoLogsShipped?: boolean;
     /**
      * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Backup performance and storage utilization metrics for the protected database.
      */
-    readonly metrics: outputs.RecoveryMod.GetProtectedDatabaseMetric[];
-    readonly password: string;
+    readonly metrics?: outputs.RecoveryMod.GetProtectedDatabaseMetric[];
+    readonly password?: string;
     readonly protectedDatabaseId: string;
     /**
      * The OCID of the protection policy associated with the protected database.
      */
-    readonly protectionPolicyId: string;
+    readonly protectionPolicyId?: string;
     /**
      * List of recovery service subnet resources associated with the protected database.
      */
-    readonly recoveryServiceSubnets: outputs.RecoveryMod.GetProtectedDatabaseRecoveryServiceSubnet[];
+    readonly recoveryServiceSubnets?: outputs.RecoveryMod.GetProtectedDatabaseRecoveryServiceSubnet[];
     /**
      * The current state of the Protected Database.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      */
-    readonly vpcUserName: string;
+    readonly vpcUserName?: string;
 }
 /**
  * This data source provides details about a specific Protected Database resource in Oracle Cloud Infrastructure Recovery service.

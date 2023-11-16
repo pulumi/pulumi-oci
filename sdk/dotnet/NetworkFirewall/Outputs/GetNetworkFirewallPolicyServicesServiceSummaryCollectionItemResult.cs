@@ -24,7 +24,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// OCID of the Network Firewall Policy this service belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// List of port-ranges used.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeResult> portRanges,
 

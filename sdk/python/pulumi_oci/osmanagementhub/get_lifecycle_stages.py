@@ -61,17 +61,11 @@ class GetLifecycleStagesResult:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[str]:
-        """
-        The CPU architecture of the target instances.
-        """
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the tenancy containing the lifecycle stage.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -82,9 +76,6 @@ class GetLifecycleStagesResult:
     @property
     @pulumi.getter(name="displayNames")
     def display_names(self) -> Optional[Sequence[str]]:
-        """
-        Software source name.
-        """
         return pulumi.get(self, "display_names")
 
     @property
@@ -94,7 +85,7 @@ class GetLifecycleStagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,10 +93,7 @@ class GetLifecycleStagesResult:
 
     @property
     @pulumi.getter(name="lifecycleStageCollections")
-    def lifecycle_stage_collections(self) -> Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionResult']:
-        """
-        The list of lifecycle_stage_collection.
-        """
+    def lifecycle_stage_collections(self) -> Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionResult']]:
         return pulumi.get(self, "lifecycle_stage_collections")
 
     @property
@@ -116,25 +104,16 @@ class GetLifecycleStagesResult:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
-        """
-        The operating system type of the target instances.
-        """
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> Optional[str]:
-        """
-        Identifying information for the specified software source.
-        """
         return pulumi.get(self, "software_source_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the lifecycle stage.
-        """
         return pulumi.get(self, "state")
 
 
@@ -168,20 +147,7 @@ def get_lifecycle_stages(arch_type: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLifecycleStagesResult:
     """
-    This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against
-    a variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_stage_id: The OCID of the lifecycle stage.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['archType'] = arch_type
@@ -222,19 +188,6 @@ def get_lifecycle_stages_output(arch_type: Optional[pulumi.Input[Optional[str]]]
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLifecycleStagesResult]:
     """
-    This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against
-    a variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_stage_id: The OCID of the lifecycle stage.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

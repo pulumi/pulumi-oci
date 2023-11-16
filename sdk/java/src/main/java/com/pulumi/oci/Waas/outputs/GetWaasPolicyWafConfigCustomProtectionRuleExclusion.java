@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPolicyWafConfigCustomProtectionRuleExclusion {
@@ -14,12 +16,12 @@ public final class GetWaasPolicyWafConfigCustomProtectionRuleExclusion {
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
-    private List<String> exclusions;
+    private @Nullable List<String> exclusions;
     /**
      * @return The target of the exclusion.
      * 
      */
-    private String target;
+    private @Nullable String target;
 
     private GetWaasPolicyWafConfigCustomProtectionRuleExclusion() {}
     /**
@@ -27,14 +29,14 @@ public final class GetWaasPolicyWafConfigCustomProtectionRuleExclusion {
      * 
      */
     public List<String> exclusions() {
-        return this.exclusions;
+        return this.exclusions == null ? List.of() : this.exclusions;
     }
     /**
      * @return The target of the exclusion.
      * 
      */
-    public String target() {
-        return this.target;
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetWaasPolicyWafConfigCustomProtectionRuleExclusion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> exclusions;
-        private String target;
+        private @Nullable List<String> exclusions;
+        private @Nullable String target;
         public Builder() {}
         public Builder(GetWaasPolicyWafConfigCustomProtectionRuleExclusion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +58,16 @@ public final class GetWaasPolicyWafConfigCustomProtectionRuleExclusion {
         }
 
         @CustomType.Setter
-        public Builder exclusions(List<String> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+        public Builder exclusions(@Nullable List<String> exclusions) {
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(String... exclusions) {
             return exclusions(List.of(exclusions));
         }
         @CustomType.Setter
-        public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+        public Builder target(@Nullable String target) {
+            this.target = target;
             return this;
         }
         public GetWaasPolicyWafConfigCustomProtectionRuleExclusion build() {

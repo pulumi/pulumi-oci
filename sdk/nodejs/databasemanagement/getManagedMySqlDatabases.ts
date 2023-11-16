@@ -54,11 +54,11 @@ export interface GetManagedMySqlDatabasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of managed_my_sql_database_collection.
      */
-    readonly managedMySqlDatabaseCollections: outputs.DatabaseManagement.GetManagedMySqlDatabasesManagedMySqlDatabaseCollection[];
+    readonly managedMySqlDatabaseCollections?: outputs.DatabaseManagement.GetManagedMySqlDatabasesManagedMySqlDatabaseCollection[];
 }
 /**
  * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.

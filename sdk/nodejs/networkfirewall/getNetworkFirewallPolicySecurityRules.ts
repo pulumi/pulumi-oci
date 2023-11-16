@@ -63,13 +63,13 @@ export interface GetNetworkFirewallPolicySecurityRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkFirewallPolicyId: string;
     readonly securityRulePriorityOrder?: number;
     /**
      * The list of security_rule_summary_collection.
      */
-    readonly securityRuleSummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection[];
+    readonly securityRuleSummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection[];
 }
 /**
  * This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.

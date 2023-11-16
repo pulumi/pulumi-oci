@@ -66,11 +66,11 @@ export class RunStatement extends pulumi.CustomResource {
     /**
      * The execution output of a statement.
      */
-    public /*out*/ readonly outputs!: pulumi.Output<outputs.DataFlow.RunStatementOutput[]>;
+    public /*out*/ readonly outputs!: pulumi.Output<outputs.DataFlow.RunStatementOutput[] | undefined>;
     /**
      * The execution progress.
      */
-    public /*out*/ readonly progress!: pulumi.Output<number>;
+    public /*out*/ readonly progress!: pulumi.Output<number | undefined>;
     /**
      * The unique ID for the run 
      *
@@ -82,15 +82,15 @@ export class RunStatement extends pulumi.CustomResource {
     /**
      * The current state of this statement.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCompleted!: pulumi.Output<string>;
+    public /*out*/ readonly timeCompleted!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a RunStatement resource with the given unique name, arguments, and options.

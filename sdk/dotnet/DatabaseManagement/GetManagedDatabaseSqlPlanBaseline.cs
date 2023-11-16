@@ -124,44 +124,44 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
         /// </summary>
-        public readonly string Accepted;
+        public readonly string? Accepted;
         /// <summary>
         /// The application action.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
         /// </summary>
-        public readonly string Adaptive;
+        public readonly string? Adaptive;
         /// <summary>
         /// Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
         /// </summary>
-        public readonly string AutoPurge;
+        public readonly string? AutoPurge;
         /// <summary>
         /// Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
         /// </summary>
-        public readonly string Enabled;
+        public readonly string? Enabled;
         /// <summary>
         /// The execution plan for the SQL statement.
         /// </summary>
-        public readonly string ExecutionPlan;
+        public readonly string? ExecutionPlan;
         /// <summary>
         /// Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
         /// </summary>
-        public readonly string Fixed;
+        public readonly string? Fixed;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The application module name.
         /// </summary>
-        public readonly string Module;
+        public readonly string? Module;
         /// <summary>
         /// The origin of the SQL plan baseline.
         /// </summary>
-        public readonly string Origin;
+        public readonly string? Origin;
         /// <summary>
         /// The unique plan identifier.
         /// </summary>
@@ -169,65 +169,65 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
         /// </summary>
-        public readonly string Reproduced;
+        public readonly string? Reproduced;
         /// <summary>
         /// The unique SQL identifier.
         /// </summary>
-        public readonly string SqlHandle;
+        public readonly string? SqlHandle;
         /// <summary>
         /// The SQL text.
         /// </summary>
-        public readonly string SqlText;
+        public readonly string? SqlText;
         /// <summary>
         /// The date and time when the plan baseline was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time when the plan baseline was last executed.
         /// </summary>
-        public readonly string TimeLastExecuted;
+        public readonly string? TimeLastExecuted;
         /// <summary>
         /// The date and time when the plan baseline was last modified.
         /// </summary>
-        public readonly string TimeLastModified;
+        public readonly string? TimeLastModified;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlPlanBaselineResult(
-            string accepted,
+            string? accepted,
 
-            string action,
+            string? action,
 
-            string adaptive,
+            string? adaptive,
 
-            string autoPurge,
+            string? autoPurge,
 
-            string enabled,
+            string? enabled,
 
-            string executionPlan,
+            string? executionPlan,
 
-            string @fixed,
+            string? @fixed,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 
-            string module,
+            string? module,
 
-            string origin,
+            string? origin,
 
             string planName,
 
-            string reproduced,
+            string? reproduced,
 
-            string sqlHandle,
+            string? sqlHandle,
 
-            string sqlText,
+            string? sqlText,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastExecuted,
+            string? timeLastExecuted,
 
-            string timeLastModified)
+            string? timeLastModified)
         {
             Accepted = accepted;
             Action = action;

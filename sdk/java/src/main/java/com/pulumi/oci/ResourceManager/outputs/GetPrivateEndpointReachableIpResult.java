@@ -6,6 +6,8 @@ package com.pulumi.oci.ResourceManager.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateEndpointReachableIpResult {
@@ -13,12 +15,12 @@ public final class GetPrivateEndpointReachableIpResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An IP address for the Resource Manager service to use for connection to the private resource.
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     private String privateEndpointId;
     private String privateIp;
 
@@ -27,15 +29,15 @@ public final class GetPrivateEndpointReachableIpResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An IP address for the Resource Manager service to use for connection to the private resource.
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     public String privateEndpointId() {
         return this.privateEndpointId;
@@ -53,8 +55,8 @@ public final class GetPrivateEndpointReachableIpResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String ipAddress;
+        private @Nullable String id;
+        private @Nullable String ipAddress;
         private String privateEndpointId;
         private String privateIp;
         public Builder() {}
@@ -67,13 +69,13 @@ public final class GetPrivateEndpointReachableIpResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter

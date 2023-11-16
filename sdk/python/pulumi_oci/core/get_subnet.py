@@ -94,146 +94,92 @@ class GetSubnetResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> str:
-        """
-        The subnet's CIDR block.  Example: `10.0.1.0/24`
-        """
+    def cidr_block(self) -> Optional[str]:
         return pulumi.get(self, "cidr_block")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dhcpOptionsId")
-    def dhcp_options_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
-        """
+    def dhcp_options_id(self) -> Optional[str]:
         return pulumi.get(self, "dhcp_options_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> str:
-        """
-        A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-        """
+    def dns_label(self) -> Optional[str]:
         return pulumi.get(self, "dns_label")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipv6cidrBlock")
-    def ipv6cidr_block(self) -> str:
-        """
-        For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
-        """
+    def ipv6cidr_block(self) -> Optional[str]:
         return pulumi.get(self, "ipv6cidr_block")
 
     @property
     @pulumi.getter(name="ipv6cidrBlocks")
-    def ipv6cidr_blocks(self) -> Sequence[str]:
-        """
-        The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
-        """
+    def ipv6cidr_blocks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @property
     @pulumi.getter(name="ipv6virtualRouterIp")
-    def ipv6virtual_router_ip(self) -> str:
-        """
-        For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
-        """
+    def ipv6virtual_router_ip(self) -> Optional[str]:
         return pulumi.get(self, "ipv6virtual_router_ip")
 
     @property
     @pulumi.getter(name="prohibitInternetIngress")
-    def prohibit_internet_ingress(self) -> bool:
-        """
-        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-        """
+    def prohibit_internet_ingress(self) -> Optional[bool]:
         return pulumi.get(self, "prohibit_internet_ingress")
 
     @property
     @pulumi.getter(name="prohibitPublicIpOnVnic")
-    def prohibit_public_ip_on_vnic(self) -> bool:
-        """
-        Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).  Example: `true`
-        """
+    def prohibit_public_ip_on_vnic(self) -> Optional[bool]:
         return pulumi.get(self, "prohibit_public_ip_on_vnic")
 
     @property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
-        """
+    def route_table_id(self) -> Optional[str]:
         return pulumi.get(self, "route_table_id")
 
     @property
     @pulumi.getter(name="securityListIds")
-    def security_list_ids(self) -> Sequence[str]:
-        """
-        The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
-        """
+    def security_list_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "security_list_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The subnet's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetDomainName")
-    def subnet_domain_name(self) -> str:
-        """
-        The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
-        """
+    def subnet_domain_name(self) -> Optional[str]:
         return pulumi.get(self, "subnet_domain_name")
 
     @property
@@ -243,34 +189,22 @@ class GetSubnetResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
     @property
     @pulumi.getter(name="virtualRouterIp")
-    def virtual_router_ip(self) -> str:
-        """
-        The IP address of the virtual router.  Example: `10.0.14.1`
-        """
+    def virtual_router_ip(self) -> Optional[str]:
         return pulumi.get(self, "virtual_router_ip")
 
     @property
     @pulumi.getter(name="virtualRouterMac")
-    def virtual_router_mac(self) -> str:
-        """
-        The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
-        """
+    def virtual_router_mac(self) -> Optional[str]:
         return pulumi.get(self, "virtual_router_mac")
 
 
@@ -308,21 +242,7 @@ class AwaitableGetSubnetResult(GetSubnetResult):
 def get_subnet(subnet_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubnetResult:
     """
-    This data source provides details about a specific Subnet resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified subnet's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subnet = oci.Core.get_subnet(subnet_id=oci_core_subnet["test_subnet"]["id"])
-    ```
-
-
-    :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['subnetId'] = subnet_id
@@ -359,20 +279,6 @@ def get_subnet(subnet_id: Optional[str] = None,
 def get_subnet_output(subnet_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubnetResult]:
     """
-    This data source provides details about a specific Subnet resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified subnet's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subnet = oci.Core.get_subnet(subnet_id=oci_core_subnet["test_subnet"]["id"])
-    ```
-
-
-    :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+    Use this data source to access information about an existing resource.
     """
     ...

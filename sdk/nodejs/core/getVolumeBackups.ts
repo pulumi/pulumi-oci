@@ -82,7 +82,7 @@ export interface GetVolumeBackupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the source volume backup.
      */
@@ -94,7 +94,7 @@ export interface GetVolumeBackupsResult {
     /**
      * The list of volume_backups.
      */
-    readonly volumeBackups: outputs.Core.GetVolumeBackupsVolumeBackup[];
+    readonly volumeBackups?: outputs.Core.GetVolumeBackupsVolumeBackup[];
     /**
      * The OCID of the volume.
      */

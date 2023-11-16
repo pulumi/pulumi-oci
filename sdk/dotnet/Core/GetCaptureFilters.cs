@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The capture filter's current administrative state.
         /// </summary>
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetCaptureFiltersFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

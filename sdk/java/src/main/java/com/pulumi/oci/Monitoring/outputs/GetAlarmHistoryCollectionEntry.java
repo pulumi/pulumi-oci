@@ -6,6 +6,8 @@ package com.pulumi.oci.Monitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlarmHistoryCollectionEntry {
@@ -13,39 +15,39 @@ public final class GetAlarmHistoryCollectionEntry {
      * @return Description for this alarm history entry.
      * 
      */
-    private String summary;
+    private @Nullable String summary;
     /**
      * @return Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
     /**
      * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
      * 
      */
-    private String timestampTriggered;
+    private @Nullable String timestampTriggered;
 
     private GetAlarmHistoryCollectionEntry() {}
     /**
      * @return Description for this alarm history entry.
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
     /**
      * @return Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
     /**
      * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
      * 
      */
-    public String timestampTriggered() {
-        return this.timestampTriggered;
+    public Optional<String> timestampTriggered() {
+        return Optional.ofNullable(this.timestampTriggered);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAlarmHistoryCollectionEntry {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String summary;
-        private String timestamp;
-        private String timestampTriggered;
+        private @Nullable String summary;
+        private @Nullable String timestamp;
+        private @Nullable String timestampTriggered;
         public Builder() {}
         public Builder(GetAlarmHistoryCollectionEntry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAlarmHistoryCollectionEntry {
         }
 
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder timestampTriggered(String timestampTriggered) {
-            this.timestampTriggered = Objects.requireNonNull(timestampTriggered);
+        public Builder timestampTriggered(@Nullable String timestampTriggered) {
+            this.timestampTriggered = timestampTriggered;
             return this;
         }
         public GetAlarmHistoryCollectionEntry build() {

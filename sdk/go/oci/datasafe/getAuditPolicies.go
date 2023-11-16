@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -103,7 +102,7 @@ type GetAuditPoliciesResult struct {
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetAuditPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the audit policy.
 	State *string `pulumi:"state"`
 	// The OCID of the target for which the audit policy is created.
@@ -161,12 +160,6 @@ func (o GetAuditPoliciesResultOutput) ToGetAuditPoliciesResultOutputWithContext(
 	return o
 }
 
-func (o GetAuditPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesResult] {
-	return pulumix.Output[GetAuditPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAuditPoliciesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditPoliciesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -201,8 +194,8 @@ func (o GetAuditPoliciesResultOutput) Filters() GetAuditPoliciesFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the audit policy.

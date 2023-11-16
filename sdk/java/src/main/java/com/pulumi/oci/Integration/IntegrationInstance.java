@@ -108,28 +108,28 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="alternateCustomEndpoints", refs={List.class,IntegrationInstanceAlternateCustomEndpoint.class}, tree="[0,1]")
-    private Output<List<IntegrationInstanceAlternateCustomEndpoint>> alternateCustomEndpoints;
+    private Output</* @Nullable */ List<IntegrationInstanceAlternateCustomEndpoint>> alternateCustomEndpoints;
 
     /**
      * @return (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      * 
      */
-    public Output<List<IntegrationInstanceAlternateCustomEndpoint>> alternateCustomEndpoints() {
-        return this.alternateCustomEndpoints;
+    public Output<Optional<List<IntegrationInstanceAlternateCustomEndpoint>>> alternateCustomEndpoints() {
+        return Codegen.optional(this.alternateCustomEndpoints);
     }
     /**
      * A list of associated attachments to other services
      * 
      */
     @Export(name="attachments", refs={List.class,IntegrationInstanceAttachment.class}, tree="[0,1]")
-    private Output<List<IntegrationInstanceAttachment>> attachments;
+    private Output</* @Nullable */ List<IntegrationInstanceAttachment>> attachments;
 
     /**
      * @return A list of associated attachments to other services
      * 
      */
-    public Output<List<IntegrationInstanceAttachment>> attachments() {
-        return this.attachments;
+    public Output<Optional<List<IntegrationInstanceAttachment>>> attachments() {
+        return Codegen.optional(this.attachments);
     }
     /**
      * (Updatable) Compartment Identifier.
@@ -150,42 +150,42 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="consumptionModel", refs={String.class}, tree="[0]")
-    private Output<String> consumptionModel;
+    private Output</* @Nullable */ String> consumptionModel;
 
     /**
      * @return Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      * 
      */
-    public Output<String> consumptionModel() {
-        return this.consumptionModel;
+    public Output<Optional<String>> consumptionModel() {
+        return Codegen.optional(this.consumptionModel);
     }
     /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      * 
      */
     @Export(name="customEndpoint", refs={IntegrationInstanceCustomEndpoint.class}, tree="[0]")
-    private Output<IntegrationInstanceCustomEndpoint> customEndpoint;
+    private Output</* @Nullable */ IntegrationInstanceCustomEndpoint> customEndpoint;
 
     /**
      * @return (Updatable) Details for a custom endpoint for the integration instance (update).
      * 
      */
-    public Output<IntegrationInstanceCustomEndpoint> customEndpoint() {
-        return this.customEndpoint;
+    public Output<Optional<IntegrationInstanceCustomEndpoint>> customEndpoint() {
+        return Codegen.optional(this.customEndpoint);
     }
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Integration Instance Identifier.
@@ -234,14 +234,14 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -262,28 +262,28 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsInfos", refs={List.class,IntegrationInstanceIdcsInfo.class}, tree="[0,1]")
-    private Output<List<IntegrationInstanceIdcsInfo>> idcsInfos;
+    private Output</* @Nullable */ List<IntegrationInstanceIdcsInfo>> idcsInfos;
 
     /**
      * @return Information for IDCS access
      * 
      */
-    public Output<List<IntegrationInstanceIdcsInfo>> idcsInfos() {
-        return this.idcsInfos;
+    public Output<Optional<List<IntegrationInstanceIdcsInfo>>> idcsInfos() {
+        return Codegen.optional(this.idcsInfos);
     }
     /**
      * The Integration Instance URL.
      * 
      */
     @Export(name="instanceUrl", refs={String.class}, tree="[0]")
-    private Output<String> instanceUrl;
+    private Output</* @Nullable */ String> instanceUrl;
 
     /**
      * @return The Integration Instance URL.
      * 
      */
-    public Output<String> instanceUrl() {
-        return this.instanceUrl;
+    public Output<Optional<String>> instanceUrl() {
+        return Codegen.optional(this.instanceUrl);
     }
     /**
      * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -318,28 +318,28 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isFileServerEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isFileServerEnabled;
+    private Output</* @Nullable */ Boolean> isFileServerEnabled;
 
     /**
      * @return (Updatable) The file server is enabled or not.
      * 
      */
-    public Output<Boolean> isFileServerEnabled() {
-        return this.isFileServerEnabled;
+    public Output<Optional<Boolean>> isFileServerEnabled() {
+        return Codegen.optional(this.isFileServerEnabled);
     }
     /**
      * (Updatable) Visual Builder is enabled or not.
      * 
      */
     @Export(name="isVisualBuilderEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isVisualBuilderEnabled;
+    private Output</* @Nullable */ Boolean> isVisualBuilderEnabled;
 
     /**
      * @return (Updatable) Visual Builder is enabled or not.
      * 
      */
-    public Output<Boolean> isVisualBuilderEnabled() {
-        return this.isVisualBuilderEnabled;
+    public Output<Optional<Boolean>> isVisualBuilderEnabled() {
+        return Codegen.optional(this.isVisualBuilderEnabled);
     }
     /**
      * (Updatable) The number of configured message packs
@@ -360,28 +360,28 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="networkEndpointDetails", refs={IntegrationInstanceNetworkEndpointDetails.class}, tree="[0]")
-    private Output<IntegrationInstanceNetworkEndpointDetails> networkEndpointDetails;
+    private Output</* @Nullable */ IntegrationInstanceNetworkEndpointDetails> networkEndpointDetails;
 
     /**
      * @return Base representation of a network endpoint.
      * 
      */
-    public Output<IntegrationInstanceNetworkEndpointDetails> networkEndpointDetails() {
-        return this.networkEndpointDetails;
+    public Output<Optional<IntegrationInstanceNetworkEndpointDetails>> networkEndpointDetails() {
+        return Codegen.optional(this.networkEndpointDetails);
     }
     /**
      * Shape
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return Shape
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
@@ -391,7 +391,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
@@ -400,50 +400,50 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="stateMessage", refs={String.class}, tree="[0]")
-    private Output<String> stateMessage;
+    private Output</* @Nullable */ String> stateMessage;
 
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> stateMessage() {
-        return this.stateMessage;
+    public Output<Optional<String>> stateMessage() {
+        return Codegen.optional(this.stateMessage);
     }
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -20,31 +20,31 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Name of the aggregation.
         /// </summary>
-        public readonly string MetricName;
+        public readonly string? MetricName;
         /// <summary>
         /// Total count of aggregated value.
         /// </summary>
-        public readonly string SqlCollectionLogInsightCount;
+        public readonly string? SqlCollectionLogInsightCount;
         /// <summary>
         /// An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemResult(
             ImmutableArray<Outputs.GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionResult> dimensions,
 
-            string metricName,
+            string? metricName,
 
-            string sqlCollectionLogInsightCount,
+            string? sqlCollectionLogInsightCount,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted)
+            string? timeStarted)
         {
             Dimensions = dimensions;
             MetricName = metricName;

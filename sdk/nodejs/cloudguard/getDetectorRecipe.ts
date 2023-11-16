@@ -47,68 +47,68 @@ export interface GetDetectorRecipeResult {
     /**
      * compartmentId of detector recipe
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description for DetectorRecipeDetectorRule.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * detector for the rule
      */
-    readonly detector: string;
+    readonly detector?: string;
     readonly detectorRecipeId: string;
     /**
      * List of detector rules for the detector type for recipe - user input
      */
-    readonly detectorRules: outputs.CloudGuard.GetDetectorRecipeDetectorRule[];
+    readonly detectorRules?: outputs.CloudGuard.GetDetectorRecipeDetectorRule[];
     /**
      * The display name of entity
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * List of effective detector rules for the detector type for recipe after applying defaults
      */
-    readonly effectiveDetectorRules: outputs.CloudGuard.GetDetectorRecipeEffectiveDetectorRule[];
+    readonly effectiveDetectorRules?: outputs.CloudGuard.GetDetectorRecipeEffectiveDetectorRule[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Ocid for detector recipe
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Owner of detector recipe
      */
-    readonly owner: string;
+    readonly owner?: string;
     /**
      * Recipe Ocid of the Source Recipe to be cloned
      */
-    readonly sourceDetectorRecipeId: string;
+    readonly sourceDetectorRecipeId?: string;
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The recipe attached to targets
      */
-    readonly targetIds: string[];
+    readonly targetIds?: string[];
     /**
      * The date and time the detector recipe was created. Format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the detector recipe was updated. Format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.

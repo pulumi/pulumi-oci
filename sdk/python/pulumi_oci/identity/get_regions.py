@@ -41,7 +41,7 @@ class GetRegionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetRegionsResult:
 
     @property
     @pulumi.getter
-    def regions(self) -> Sequence['outputs.GetRegionsRegionResult']:
-        """
-        The list of regions.
-        """
+    def regions(self) -> Optional[Sequence['outputs.GetRegionsRegionResult']]:
         return pulumi.get(self, "regions")
 
 
@@ -70,18 +67,7 @@ class AwaitableGetRegionsResult(GetRegionsResult):
 def get_regions(filters: Optional[Sequence[pulumi.InputType['GetRegionsFilterArgs']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRegionsResult:
     """
-    This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.
-
-    Lists all the regions offered by Oracle Cloud Infrastructure.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_regions = oci.Identity.get_regions()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -98,17 +84,6 @@ def get_regions(filters: Optional[Sequence[pulumi.InputType['GetRegionsFilterArg
 def get_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRegionsFilterArgs']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRegionsResult]:
     """
-    This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.
-
-    Lists all the regions offered by Oracle Cloud Infrastructure.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_regions = oci.Identity.get_regions()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

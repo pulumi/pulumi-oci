@@ -16,6 +16,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -99,56 +100,56 @@ public class Session extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="bastionName", refs={String.class}, tree="[0]")
-    private Output<String> bastionName;
+    private Output</* @Nullable */ String> bastionName;
 
     /**
      * @return The name of the bastion that is hosting this session.
      * 
      */
-    public Output<String> bastionName() {
-        return this.bastionName;
+    public Output<Optional<String>> bastionName() {
+        return Codegen.optional(this.bastionName);
     }
     /**
      * The public key of the bastion host. You can use this to verify that you&#39;re connecting to the correct bastion.
      * 
      */
     @Export(name="bastionPublicHostKeyInfo", refs={String.class}, tree="[0]")
-    private Output<String> bastionPublicHostKeyInfo;
+    private Output</* @Nullable */ String> bastionPublicHostKeyInfo;
 
     /**
      * @return The public key of the bastion host. You can use this to verify that you&#39;re connecting to the correct bastion.
      * 
      */
-    public Output<String> bastionPublicHostKeyInfo() {
-        return this.bastionPublicHostKeyInfo;
+    public Output<Optional<String>> bastionPublicHostKeyInfo() {
+        return Codegen.optional(this.bastionPublicHostKeyInfo);
     }
     /**
      * The username that the session uses to connect to the target resource.
      * 
      */
     @Export(name="bastionUserName", refs={String.class}, tree="[0]")
-    private Output<String> bastionUserName;
+    private Output</* @Nullable */ String> bastionUserName;
 
     /**
      * @return The username that the session uses to connect to the target resource.
      * 
      */
-    public Output<String> bastionUserName() {
-        return this.bastionUserName;
+    public Output<Optional<String>> bastionUserName() {
+        return Codegen.optional(this.bastionUserName);
     }
     /**
      * (Updatable) The name of the session.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The name of the session.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Public key details for a bastion session.
@@ -169,70 +170,70 @@ public class Session extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="keyType", refs={String.class}, tree="[0]")
-    private Output<String> keyType;
+    private Output</* @Nullable */ String> keyType;
 
     /**
      * @return The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      * 
      */
-    public Output<String> keyType() {
-        return this.keyType;
+    public Output<Optional<String>> keyType() {
+        return Codegen.optional(this.keyType);
     }
     /**
      * A message describing the current session state in more detail.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current session state in more detail.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The amount of time the session can remain active.
      * 
      */
     @Export(name="sessionTtlInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> sessionTtlInSeconds;
+    private Output</* @Nullable */ Integer> sessionTtlInSeconds;
 
     /**
      * @return The amount of time the session can remain active.
      * 
      */
-    public Output<Integer> sessionTtlInSeconds() {
-        return this.sessionTtlInSeconds;
+    public Output<Optional<Integer>> sessionTtlInSeconds() {
+        return Codegen.optional(this.sessionTtlInSeconds);
     }
     /**
      * The connection message for the session.
      * 
      */
     @Export(name="sshMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> sshMetadata;
+    private Output</* @Nullable */ Map<String,Object>> sshMetadata;
 
     /**
      * @return The connection message for the session.
      * 
      */
-    public Output<Map<String,Object>> sshMetadata() {
-        return this.sshMetadata;
+    public Output<Optional<Map<String,Object>>> sshMetadata() {
+        return Codegen.optional(this.sshMetadata);
     }
     /**
      * The current state of the session.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the session.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Details about a bastion session&#39;s target resource.
@@ -253,28 +254,28 @@ public class Session extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -11,6 +11,7 @@ import com.pulumi.oci.Identity.UserGroupMembershipArgs;
 import com.pulumi.oci.Identity.inputs.UserGroupMembershipState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -65,14 +66,14 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the tenancy containing the user, group, and membership object.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The OCID of the group.
@@ -93,42 +94,42 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="inactiveState", refs={String.class}, tree="[0]")
-    private Output<String> inactiveState;
+    private Output</* @Nullable */ String> inactiveState;
 
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public Output<String> inactiveState() {
-        return this.inactiveState;
+    public Output<Optional<String>> inactiveState() {
+        return Codegen.optional(this.inactiveState);
     }
     /**
      * The membership&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The membership&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The OCID of the user.

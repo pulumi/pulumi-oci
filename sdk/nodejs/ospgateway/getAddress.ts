@@ -58,113 +58,113 @@ export interface GetAddressResult {
     /**
      * Address identifier.
      */
-    readonly addressKey: string;
+    readonly addressKey?: string;
     /**
      * Name of the city.
      */
-    readonly city: string;
+    readonly city?: string;
     /**
      * Name of the customer company.
      */
-    readonly companyName: string;
+    readonly companyName?: string;
     readonly compartmentId: string;
     /**
      * Contributor class of the customer company.
      */
-    readonly contributorClass: string;
+    readonly contributorClass?: string;
     /**
      * Country of the address.
      */
-    readonly country: string;
+    readonly country?: string;
     /**
      * County of the address.
      */
-    readonly county: string;
+    readonly county?: string;
     /**
      * Department name of the customer company.
      */
-    readonly departmentName: string;
+    readonly departmentName?: string;
     /**
      * Contact person email address.
      */
-    readonly emailAddress: string;
+    readonly emailAddress?: string;
     /**
      * First name of the contact person.
      */
-    readonly firstName: string;
+    readonly firstName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Internal number of the customer company.
      */
-    readonly internalNumber: string;
+    readonly internalNumber?: string;
     /**
      * Job title of the contact person.
      */
-    readonly jobTitle: string;
+    readonly jobTitle?: string;
     /**
      * Last name of the contact person.
      */
-    readonly lastName: string;
+    readonly lastName?: string;
     /**
      * Address line 1.
      */
-    readonly line1: string;
+    readonly line1?: string;
     /**
      * Address line 2.
      */
-    readonly line2: string;
+    readonly line2?: string;
     /**
      * Address line 3.
      */
-    readonly line3: string;
+    readonly line3?: string;
     /**
      * Address line 4.
      */
-    readonly line4: string;
+    readonly line4?: string;
     /**
      * Middle name of the contact person.
      */
-    readonly middleName: string;
+    readonly middleName?: string;
     /**
      * Municipal Inscription.
      */
-    readonly municipalInscription: string;
+    readonly municipalInscription?: string;
     readonly ospHomeRegion: string;
     /**
      * Phone country code of the contact person.
      */
-    readonly phoneCountryCode: string;
+    readonly phoneCountryCode?: string;
     /**
      * Phone number of the contact person.
      */
-    readonly phoneNumber: string;
+    readonly phoneNumber?: string;
     /**
      * Post code of the address.
      */
-    readonly postalCode: string;
+    readonly postalCode?: string;
     /**
      * Province of the address.
      */
-    readonly province: string;
+    readonly province?: string;
     /**
      * State of the address.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * State Inscription.
      */
-    readonly stateInscription: string;
+    readonly stateInscription?: string;
     /**
      * Street name of the address.
      */
-    readonly streetName: string;
+    readonly streetName?: string;
     /**
      * Street number of the address.
      */
-    readonly streetNumber: string;
+    readonly streetNumber?: string;
 }
 /**
  * This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.

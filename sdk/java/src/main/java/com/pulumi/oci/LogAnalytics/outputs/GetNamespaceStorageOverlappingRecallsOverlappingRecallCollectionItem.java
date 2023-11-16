@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem {
@@ -13,99 +15,99 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
      * @return This is the user who initiated the recall request
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return This is the list of logsets associated with this recall
      * 
      */
-    private String logSets;
+    private @Nullable String logSets;
     /**
      * @return This is the purpose of the recall
      * 
      */
-    private String purpose;
+    private @Nullable String purpose;
     /**
      * @return This is the query associated with the recall
      * 
      */
-    private String queryString;
+    private @Nullable String queryString;
     /**
      * @return This is the status of the recall
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return This is the end of the time range for recalled data
      * 
      */
-    private String timeDataEnded;
+    private @Nullable String timeDataEnded;
     /**
      * @return This is the start of the time range for recalled data
      * 
      */
-    private String timeDataStarted;
+    private @Nullable String timeDataStarted;
     /**
      * @return This is the time when the recall operation was started for this recall request
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem() {}
     /**
      * @return This is the user who initiated the recall request
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return This is the list of logsets associated with this recall
      * 
      */
-    public String logSets() {
-        return this.logSets;
+    public Optional<String> logSets() {
+        return Optional.ofNullable(this.logSets);
     }
     /**
      * @return This is the purpose of the recall
      * 
      */
-    public String purpose() {
-        return this.purpose;
+    public Optional<String> purpose() {
+        return Optional.ofNullable(this.purpose);
     }
     /**
      * @return This is the query associated with the recall
      * 
      */
-    public String queryString() {
-        return this.queryString;
+    public Optional<String> queryString() {
+        return Optional.ofNullable(this.queryString);
     }
     /**
      * @return This is the status of the recall
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return This is the end of the time range for recalled data
      * 
      */
-    public String timeDataEnded() {
-        return this.timeDataEnded;
+    public Optional<String> timeDataEnded() {
+        return Optional.ofNullable(this.timeDataEnded);
     }
     /**
      * @return This is the start of the time range for recalled data
      * 
      */
-    public String timeDataStarted() {
-        return this.timeDataStarted;
+    public Optional<String> timeDataStarted() {
+        return Optional.ofNullable(this.timeDataStarted);
     }
     /**
      * @return This is the time when the recall operation was started for this recall request
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String createdBy;
-        private String logSets;
-        private String purpose;
-        private String queryString;
-        private String status;
-        private String timeDataEnded;
-        private String timeDataStarted;
-        private String timeStarted;
+        private @Nullable String createdBy;
+        private @Nullable String logSets;
+        private @Nullable String purpose;
+        private @Nullable String queryString;
+        private @Nullable String status;
+        private @Nullable String timeDataEnded;
+        private @Nullable String timeDataStarted;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
         }
 
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder logSets(String logSets) {
-            this.logSets = Objects.requireNonNull(logSets);
+        public Builder logSets(@Nullable String logSets) {
+            this.logSets = logSets;
             return this;
         }
         @CustomType.Setter
-        public Builder purpose(String purpose) {
-            this.purpose = Objects.requireNonNull(purpose);
+        public Builder purpose(@Nullable String purpose) {
+            this.purpose = purpose;
             return this;
         }
         @CustomType.Setter
-        public Builder queryString(String queryString) {
-            this.queryString = Objects.requireNonNull(queryString);
+        public Builder queryString(@Nullable String queryString) {
+            this.queryString = queryString;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDataEnded(String timeDataEnded) {
-            this.timeDataEnded = Objects.requireNonNull(timeDataEnded);
+        public Builder timeDataEnded(@Nullable String timeDataEnded) {
+            this.timeDataEnded = timeDataEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDataStarted(String timeDataStarted) {
-            this.timeDataStarted = Objects.requireNonNull(timeDataStarted);
+        public Builder timeDataStarted(@Nullable String timeDataStarted) {
+            this.timeDataStarted = timeDataStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem build() {

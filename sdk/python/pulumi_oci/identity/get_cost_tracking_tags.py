@@ -40,9 +40,6 @@ class GetCostTrackingTagsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the tag definition.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -52,7 +49,7 @@ class GetCostTrackingTagsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetCostTrackingTagsResult:
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetCostTrackingTagsTagResult']:
-        """
-        The list of tags.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetCostTrackingTagsTagResult']]:
         return pulumi.get(self, "tags")
 
 
@@ -83,22 +77,7 @@ def get_cost_tracking_tags(compartment_id: Optional[str] = None,
                            filters: Optional[Sequence[pulumi.InputType['GetCostTrackingTagsFilterArgs']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCostTrackingTagsResult:
     """
-    This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
-
-    Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
-    cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -118,21 +97,6 @@ def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCostTrackingTagsFilterArgs']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCostTrackingTagsResult]:
     """
-    This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
-
-    Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
-    cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     ...

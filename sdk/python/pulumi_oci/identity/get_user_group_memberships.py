@@ -46,9 +46,6 @@ class GetUserGroupMembershipsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the user, group, and membership object.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -59,14 +56,11 @@ class GetUserGroupMembershipsResult:
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[str]:
-        """
-        The OCID of the group.
-        """
         return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetUserGroupMembershipsResult:
 
     @property
     @pulumi.getter
-    def memberships(self) -> Sequence['outputs.GetUserGroupMembershipsMembershipResult']:
-        """
-        The list of memberships.
-        """
+    def memberships(self) -> Optional[Sequence['outputs.GetUserGroupMembershipsMembershipResult']]:
         return pulumi.get(self, "memberships")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[str]:
-        """
-        The OCID of the user.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -109,34 +97,7 @@ def get_user_group_memberships(compartment_id: Optional[str] = None,
                                user_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserGroupMembershipsResult:
     """
-    This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
-
-    Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
-    as the value for the compartment ID
-    (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five)).
-    You must also then filter the list in one of these ways:
-
-    - You can limit the results to just the memberships for a given user by specifying a `userId`.
-    - Similarly, you can limit the results to just the memberships for a given group by specifying a `groupId`.
-    - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
-      If the answer is no, the response is an empty list.
-    - Although`userId` and `groupId` are not individually required, you must set one of them.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=var["tenancy_ocid"],
-        group_id=oci_identity_group["test_group"]["id"],
-        user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str group_id: The OCID of the group.
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -162,33 +123,6 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[str]
                                       user_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupMembershipsResult]:
     """
-    This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
-
-    Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
-    as the value for the compartment ID
-    (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five)).
-    You must also then filter the list in one of these ways:
-
-    - You can limit the results to just the memberships for a given user by specifying a `userId`.
-    - Similarly, you can limit the results to just the memberships for a given group by specifying a `groupId`.
-    - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
-      If the answer is no, the response is an empty list.
-    - Although`userId` and `groupId` are not individually required, you must set one of them.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=var["tenancy_ocid"],
-        group_id=oci_identity_group["test_group"]["id"],
-        user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str group_id: The OCID of the group.
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

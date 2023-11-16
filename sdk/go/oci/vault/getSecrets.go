@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.
@@ -73,7 +72,7 @@ type GetSecretsResult struct {
 	CompartmentId string             `pulumi:"compartmentId"`
 	Filters       []GetSecretsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string  `pulumi:"id"`
+	Id   *string `pulumi:"id"`
 	Name *string `pulumi:"name"`
 	// The list of secrets.
 	Secrets []GetSecretsSecret `pulumi:"secrets"`
@@ -128,12 +127,6 @@ func (o GetSecretsResultOutput) ToGetSecretsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetSecretsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsResult] {
-	return pulumix.Output[GetSecretsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment where you want to create the secret.
 func (o GetSecretsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -144,8 +137,8 @@ func (o GetSecretsResultOutput) Filters() GetSecretsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecretsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecretsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecretsResultOutput) Name() pulumi.StringPtrOutput {

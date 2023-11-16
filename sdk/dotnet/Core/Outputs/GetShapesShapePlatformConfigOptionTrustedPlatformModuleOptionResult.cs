@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Whether virtualization instructions are enabled by default.
         /// </summary>
-        public readonly bool IsDefaultEnabled;
+        public readonly bool? IsDefaultEnabled;
 
         [OutputConstructor]
         private GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult(
             ImmutableArray<bool> allowedValues,
 
-            bool isDefaultEnabled)
+            bool? isDefaultEnabled)
         {
             AllowedValues = allowedValues;
             IsDefaultEnabled = isDefaultEnabled;

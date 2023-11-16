@@ -16,17 +16,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// A filter to return resources that match exact resource name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Property Value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

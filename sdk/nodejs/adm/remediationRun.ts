@@ -68,23 +68,23 @@ export class RemediationRun extends pulumi.CustomResource {
     /**
      * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The type of the current stage of the remediation run.
      */
-    public /*out*/ readonly currentStageType!: pulumi.Output<string>;
+    public /*out*/ readonly currentStageType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The name of the remediation run.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
      *
@@ -96,35 +96,35 @@ export class RemediationRun extends pulumi.CustomResource {
     /**
      * The source that triggered the Remediation Recipe.
      */
-    public /*out*/ readonly remediationRunSource!: pulumi.Output<string>;
+    public /*out*/ readonly remediationRunSource!: pulumi.Output<string | undefined>;
     /**
      * The list of remediation run stage summaries.
      */
-    public /*out*/ readonly stages!: pulumi.Output<outputs.Adm.RemediationRunStage[]>;
+    public /*out*/ readonly stages!: pulumi.Output<outputs.Adm.RemediationRunStage[] | undefined>;
     /**
      * The current lifecycle state of the remediation run.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    public /*out*/ readonly timeFinished!: pulumi.Output<string | undefined>;
     /**
      * The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
     /**
      * The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a RemediationRun resource with the given unique name, arguments, and options.

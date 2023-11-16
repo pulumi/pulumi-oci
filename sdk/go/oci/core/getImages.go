@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
@@ -97,7 +96,7 @@ type GetImagesResult struct {
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetImagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of images.
 	Images []GetImagesImage `pulumi:"images"`
 	// The image's operating system.  Example: `Oracle Linux`
@@ -164,12 +163,6 @@ func (o GetImagesResultOutput) ToGetImagesResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImagesResult] {
-	return pulumix.Output[GetImagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the instance you want to use as the basis for the image.
 func (o GetImagesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImagesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -185,8 +178,8 @@ func (o GetImagesResultOutput) Filters() GetImagesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetImagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetImagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of images.

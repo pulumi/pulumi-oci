@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
@@ -73,21 +72,21 @@ type AppFirewall struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) WebAppFirewall display name, can be renamed.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
 	// The current state of the WebAppFirewall.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
 	//
 	// ** IMPORTANT **
@@ -268,12 +267,6 @@ func (i *AppFirewall) ToAppFirewallOutputWithContext(ctx context.Context) AppFir
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallOutput)
 }
 
-func (i *AppFirewall) ToOutput(ctx context.Context) pulumix.Output[*AppFirewall] {
-	return pulumix.Output[*AppFirewall]{
-		OutputState: i.ToAppFirewallOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppFirewallArrayInput is an input type that accepts AppFirewallArray and AppFirewallArrayOutput values.
 // You can construct a concrete instance of `AppFirewallArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i AppFirewallArray) ToAppFirewallArrayOutput() AppFirewallArrayOutput {
 
 func (i AppFirewallArray) ToAppFirewallArrayOutputWithContext(ctx context.Context) AppFirewallArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallArrayOutput)
-}
-
-func (i AppFirewallArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppFirewall] {
-	return pulumix.Output[[]*AppFirewall]{
-		OutputState: i.ToAppFirewallArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppFirewallMapInput is an input type that accepts AppFirewallMap and AppFirewallMapOutput values.
@@ -330,12 +317,6 @@ func (i AppFirewallMap) ToAppFirewallMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallMapOutput)
 }
 
-func (i AppFirewallMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppFirewall] {
-	return pulumix.Output[map[string]*AppFirewall]{
-		OutputState: i.ToAppFirewallMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppFirewallOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o AppFirewallOutput) ToAppFirewallOutput() AppFirewallOutput {
 
 func (o AppFirewallOutput) ToAppFirewallOutputWithContext(ctx context.Context) AppFirewallOutput {
 	return o
-}
-
-func (o AppFirewallOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewall] {
-	return pulumix.Output[*AppFirewall]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -372,8 +347,8 @@ func (o AppFirewallOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) WebAppFirewall display name, can be renamed.
-func (o AppFirewallOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppFirewall) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AppFirewallOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppFirewall) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -382,8 +357,8 @@ func (o AppFirewallOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o AppFirewallOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppFirewall) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AppFirewallOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppFirewall) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
@@ -392,8 +367,8 @@ func (o AppFirewallOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // The current state of the WebAppFirewall.
-func (o AppFirewallOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppFirewall) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AppFirewallOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppFirewall) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -402,13 +377,13 @@ func (o AppFirewallOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
-func (o AppFirewallOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppFirewall) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AppFirewallOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppFirewall) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
-func (o AppFirewallOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppFirewall) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AppFirewallOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppFirewall) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
@@ -433,12 +408,6 @@ func (o AppFirewallArrayOutput) ToAppFirewallArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o AppFirewallArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppFirewall] {
-	return pulumix.Output[[]*AppFirewall]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppFirewallArrayOutput) Index(i pulumi.IntInput) AppFirewallOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppFirewall {
 		return vs[0].([]*AppFirewall)[vs[1].(int)]
@@ -457,12 +426,6 @@ func (o AppFirewallMapOutput) ToAppFirewallMapOutput() AppFirewallMapOutput {
 
 func (o AppFirewallMapOutput) ToAppFirewallMapOutputWithContext(ctx context.Context) AppFirewallMapOutput {
 	return o
-}
-
-func (o AppFirewallMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppFirewall] {
-	return pulumix.Output[map[string]*AppFirewall]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppFirewallMapOutput) MapIndex(k pulumi.StringInput) AppFirewallOutput {

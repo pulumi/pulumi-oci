@@ -86,19 +86,19 @@ namespace Pulumi.Oci.Database
         /// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
         /// </summary>
         [Output("applyLag")]
-        public Output<string> ApplyLag { get; private set; } = null!;
+        public Output<string?> ApplyLag { get; private set; } = null!;
 
         /// <summary>
         /// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         /// </summary>
         [Output("applyRate")]
-        public Output<string> ApplyRate { get; private set; } = null!;
+        public Output<string?> ApplyRate { get; private set; } = null!;
 
         /// <summary>
         /// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Database
         /// The number of OCPU cores available for AMD-based virtual machine DB systems.
         /// </summary>
         [Output("cpuCoreCount")]
-        public Output<int> CpuCoreCount { get; private set; } = null!;
+        public Output<int?> CpuCoreCount { get; private set; } = null!;
 
         [Output("createAsync")]
         public Output<bool?> CreateAsync { get; private set; } = null!;
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Database
         /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         [Output("dataCollectionOptions")]
-        public Output<Outputs.DataGuardAssociationDataCollectionOptions> DataCollectionOptions { get; private set; } = null!;
+        public Output<Outputs.DataGuardAssociationDataCollectionOptions?> DataCollectionOptions { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
@@ -184,7 +184,7 @@ namespace Pulumi.Oci.Database
         /// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.Database
         /// The hostname for the DB node.
         /// </summary>
         [Output("hostname")]
-        public Output<string> Hostname { get; private set; } = null!;
+        public Output<string?> Hostname { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) True if active Data Guard is enabled.
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.Database
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
@@ -241,25 +241,25 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
         /// </summary>
         [Output("peerDataGuardAssociationId")]
-        public Output<string> PeerDataGuardAssociationId { get; private set; } = null!;
+        public Output<string?> PeerDataGuardAssociationId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
         /// </summary>
         [Output("peerDatabaseId")]
-        public Output<string> PeerDatabaseId { get; private set; } = null!;
+        public Output<string?> PeerDatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
         /// </summary>
         [Output("peerDbHomeId")]
-        public Output<string> PeerDbHomeId { get; private set; } = null!;
+        public Output<string?> PeerDbHomeId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
         /// </summary>
         [Output("peerDbSystemId")]
-        public Output<string> PeerDbSystemId { get; private set; } = null!;
+        public Output<string?> PeerDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
@@ -271,7 +271,7 @@ namespace Pulumi.Oci.Database
         /// The role of the peer database in this Data Guard association.
         /// </summary>
         [Output("peerRole")]
-        public Output<string> PeerRole { get; private set; } = null!;
+        public Output<string?> PeerRole { get; private set; } = null!;
 
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
         /// </summary>
         [Output("peerVmClusterId")]
-        public Output<string> PeerVmClusterId { get; private set; } = null!;
+        public Output<string?> PeerVmClusterId { get; private set; } = null!;
 
         /// <summary>
         /// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
@@ -303,7 +303,7 @@ namespace Pulumi.Oci.Database
         /// The role of the reporting database in this Data Guard association.
         /// </summary>
         [Output("role")]
-        public Output<string> Role { get; private set; } = null!;
+        public Output<string?> Role { get; private set; } = null!;
 
         /// <summary>
         /// The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
@@ -311,19 +311,19 @@ namespace Pulumi.Oci.Database
         /// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Data Guard association.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         /// </summary>
         [Output("storageVolumePerformanceMode")]
-        public Output<string> StorageVolumePerformanceMode { get; private set; } = null!;
+        public Output<string?> StorageVolumePerformanceMode { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
@@ -332,13 +332,13 @@ namespace Pulumi.Oci.Database
         /// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
         /// </summary>
         [Output("subnetId")]
-        public Output<string> SubnetId { get; private set; } = null!;
+        public Output<string?> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Data Guard association was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

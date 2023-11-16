@@ -9,6 +9,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestLogEntriesWorkReques
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,13 +20,13 @@ public final class GetWorkRequestLogEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String workRequestId;
     /**
      * @return The list of work_request_log_entries.
      * 
      */
-    private List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries;
+    private @Nullable List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries;
 
     private GetWorkRequestLogEntriesResult() {}
     public String compartmentId() {
@@ -38,8 +39,8 @@ public final class GetWorkRequestLogEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String workRequestId() {
         return this.workRequestId;
@@ -49,7 +50,7 @@ public final class GetWorkRequestLogEntriesResult {
      * 
      */
     public List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries() {
-        return this.workRequestLogEntries;
+        return this.workRequestLogEntries == null ? List.of() : this.workRequestLogEntries;
     }
 
     public static Builder builder() {
@@ -63,9 +64,9 @@ public final class GetWorkRequestLogEntriesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetWorkRequestLogEntriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String workRequestId;
-        private List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries;
+        private @Nullable List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries;
         public Builder() {}
         public Builder(GetWorkRequestLogEntriesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,8 +91,8 @@ public final class GetWorkRequestLogEntriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -100,8 +101,8 @@ public final class GetWorkRequestLogEntriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestLogEntries(List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries) {
-            this.workRequestLogEntries = Objects.requireNonNull(workRequestLogEntries);
+        public Builder workRequestLogEntries(@Nullable List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries) {
+            this.workRequestLogEntries = workRequestLogEntries;
             return this;
         }
         public Builder workRequestLogEntries(GetWorkRequestLogEntriesWorkRequestLogEntry... workRequestLogEntries) {

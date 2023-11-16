@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -75,9 +74,9 @@ type BackendSet struct {
 	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthChecker BackendSetHealthCheckerOutput `pulumi:"healthChecker"`
 	// (Updatable) IP version associated with the backend set.
-	IpVersion pulumi.StringOutput `pulumi:"ipVersion"`
+	IpVersion pulumi.StringPtrOutput `pulumi:"ipVersion"`
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-	IsPreserveSource pulumi.BoolOutput `pulumi:"isPreserveSource"`
+	IsPreserveSource pulumi.BoolPtrOutput `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
 	//
 	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
@@ -251,12 +250,6 @@ func (i *BackendSet) ToBackendSetOutputWithContext(ctx context.Context) BackendS
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetOutput)
 }
 
-func (i *BackendSet) ToOutput(ctx context.Context) pulumix.Output[*BackendSet] {
-	return pulumix.Output[*BackendSet]{
-		OutputState: i.ToBackendSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackendSetArrayInput is an input type that accepts BackendSetArray and BackendSetArrayOutput values.
 // You can construct a concrete instance of `BackendSetArrayInput` via:
 //
@@ -280,12 +273,6 @@ func (i BackendSetArray) ToBackendSetArrayOutput() BackendSetArrayOutput {
 
 func (i BackendSetArray) ToBackendSetArrayOutputWithContext(ctx context.Context) BackendSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetArrayOutput)
-}
-
-func (i BackendSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*BackendSet] {
-	return pulumix.Output[[]*BackendSet]{
-		OutputState: i.ToBackendSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackendSetMapInput is an input type that accepts BackendSetMap and BackendSetMapOutput values.
@@ -313,12 +300,6 @@ func (i BackendSetMap) ToBackendSetMapOutputWithContext(ctx context.Context) Bac
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetMapOutput)
 }
 
-func (i BackendSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackendSet] {
-	return pulumix.Output[map[string]*BackendSet]{
-		OutputState: i.ToBackendSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetOutput struct{ *pulumi.OutputState }
 
 func (BackendSetOutput) ElementType() reflect.Type {
@@ -333,12 +314,6 @@ func (o BackendSetOutput) ToBackendSetOutputWithContext(ctx context.Context) Bac
 	return o
 }
 
-func (o BackendSetOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSet] {
-	return pulumix.Output[*BackendSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Array of backends.
 func (o BackendSetOutput) Backends() BackendSetBackendArrayOutput {
 	return o.ApplyT(func(v *BackendSet) BackendSetBackendArrayOutput { return v.Backends }).(BackendSetBackendArrayOutput)
@@ -350,13 +325,13 @@ func (o BackendSetOutput) HealthChecker() BackendSetHealthCheckerOutput {
 }
 
 // (Updatable) IP version associated with the backend set.
-func (o BackendSetOutput) IpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackendSet) pulumi.StringOutput { return v.IpVersion }).(pulumi.StringOutput)
+func (o BackendSetOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackendSet) pulumi.StringPtrOutput { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-func (o BackendSetOutput) IsPreserveSource() pulumi.BoolOutput {
-	return o.ApplyT(func(v *BackendSet) pulumi.BoolOutput { return v.IsPreserveSource }).(pulumi.BoolOutput)
+func (o BackendSetOutput) IsPreserveSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BackendSet) pulumi.BoolPtrOutput { return v.IsPreserveSource }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -395,12 +370,6 @@ func (o BackendSetArrayOutput) ToBackendSetArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o BackendSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BackendSet] {
-	return pulumix.Output[[]*BackendSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BackendSetArrayOutput) Index(i pulumi.IntInput) BackendSetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BackendSet {
 		return vs[0].([]*BackendSet)[vs[1].(int)]
@@ -419,12 +388,6 @@ func (o BackendSetMapOutput) ToBackendSetMapOutput() BackendSetMapOutput {
 
 func (o BackendSetMapOutput) ToBackendSetMapOutputWithContext(ctx context.Context) BackendSetMapOutput {
 	return o
-}
-
-func (o BackendSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackendSet] {
-	return pulumix.Output[map[string]*BackendSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetMapOutput) MapIndex(k pulumi.StringInput) BackendSetOutput {

@@ -68,16 +68,16 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsCompar
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The statistics of a SQL execution plan.
      */
-    readonly modifieds: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified[];
+    readonly modifieds?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified[];
     /**
      * The statistics of a SQL execution plan.
      */
-    readonly originals: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal[];
+    readonly originals?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal[];
     readonly sqlObjectId: string;
     readonly sqlTuningAdvisorTaskId: string;
 }

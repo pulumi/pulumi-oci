@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,7 +59,7 @@ type LookupReportDefinitionArgs struct {
 // A collection of values returned by getReportDefinition.
 type LookupReportDefinitionResult struct {
 	// Specifies the name of the category that this report belongs to.
-	Category string `pulumi:"category"`
+	Category *string `pulumi:"category"`
 	// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 	ColumnFilters []GetReportDefinitionColumnFilter `pulumi:"columnFilters"`
 	// An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
@@ -68,52 +67,52 @@ type LookupReportDefinitionResult struct {
 	// An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
 	ColumnSortings []GetReportDefinitionColumnSorting `pulumi:"columnSortings"`
 	// The OCID of the compartment containing the report definition.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 	ComplianceStandards []string `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
-	DataSource string `pulumi:"dataSource"`
+	DataSource *string `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the report definition.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Name of the report definition.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Specifies the order in which the summary must be displayed.
-	DisplayOrder int `pulumi:"displayOrder"`
+	DisplayOrder *int `pulumi:"displayOrder"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the report definition.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
-	IsSeeded bool `pulumi:"isSeeded"`
+	IsSeeded *bool `pulumi:"isSeeded"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
-	ParentId string `pulumi:"parentId"`
+	ParentId *string `pulumi:"parentId"`
 	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
-	RecordTimeSpan     string `pulumi:"recordTimeSpan"`
-	ReportDefinitionId string `pulumi:"reportDefinitionId"`
+	RecordTimeSpan     *string `pulumi:"recordTimeSpan"`
+	ReportDefinitionId string  `pulumi:"reportDefinitionId"`
 	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
-	Schedule string `pulumi:"schedule"`
+	Schedule *string `pulumi:"schedule"`
 	// The OCID of the compartment in which the scheduled resource should be created.
-	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
+	ScheduledReportCompartmentId *string `pulumi:"scheduledReportCompartmentId"`
 	// Specifies the format of the report ( either XLS or PDF )
-	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
+	ScheduledReportMimeType *string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
-	ScheduledReportName string `pulumi:"scheduledReportName"`
+	ScheduledReportName *string `pulumi:"scheduledReportName"`
 	// Specifies the limit on the number of rows in the report.
-	ScheduledReportRowLimit int `pulumi:"scheduledReportRowLimit"`
+	ScheduledReportRowLimit *int `pulumi:"scheduledReportRowLimit"`
 	// Additional scim filters used to get the specific summary.
-	ScimFilter string `pulumi:"scimFilter"`
+	ScimFilter *string `pulumi:"scimFilter"`
 	// The current state of the report.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
 	Summaries []GetReportDefinitionSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Specifies the data and time the report definition was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the report definition was update.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupReportDefinitionOutput(ctx *pulumi.Context, args LookupReportDefinitionOutputArgs, opts ...pulumi.InvokeOption) LookupReportDefinitionResultOutput {
@@ -154,15 +153,9 @@ func (o LookupReportDefinitionResultOutput) ToLookupReportDefinitionResultOutput
 	return o
 }
 
-func (o LookupReportDefinitionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupReportDefinitionResult] {
-	return pulumix.Output[LookupReportDefinitionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies the name of the category that this report belongs to.
-func (o LookupReportDefinitionResultOutput) Category() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Category }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
 // An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
@@ -181,8 +174,8 @@ func (o LookupReportDefinitionResultOutput) ColumnSortings() GetReportDefinition
 }
 
 // The OCID of the compartment containing the report definition.
-func (o LookupReportDefinitionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
@@ -191,8 +184,8 @@ func (o LookupReportDefinitionResultOutput) ComplianceStandards() pulumi.StringA
 }
 
 // Specifies the name of a resource that provides data for the report. For example alerts, events.
-func (o LookupReportDefinitionResultOutput) DataSource() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.DataSource }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) DataSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.DataSource }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -201,18 +194,18 @@ func (o LookupReportDefinitionResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A description of the report definition.
-func (o LookupReportDefinitionResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Name of the report definition.
-func (o LookupReportDefinitionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the order in which the summary must be displayed.
-func (o LookupReportDefinitionResultOutput) DisplayOrder() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) int { return v.DisplayOrder }).(pulumi.IntOutput)
+func (o LookupReportDefinitionResultOutput) DisplayOrder() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *int { return v.DisplayOrder }).(pulumi.IntPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -221,23 +214,23 @@ func (o LookupReportDefinitionResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the report definition.
-func (o LookupReportDefinitionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
-func (o LookupReportDefinitionResultOutput) IsSeeded() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) bool { return v.IsSeeded }).(pulumi.BoolOutput)
+func (o LookupReportDefinitionResultOutput) IsSeeded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *bool { return v.IsSeeded }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
-func (o LookupReportDefinitionResultOutput) ParentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ParentId }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) ParentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.ParentId }).(pulumi.StringPtrOutput)
 }
 
 // The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
-func (o LookupReportDefinitionResultOutput) RecordTimeSpan() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.RecordTimeSpan }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) RecordTimeSpan() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.RecordTimeSpan }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupReportDefinitionResultOutput) ReportDefinitionId() pulumi.StringOutput {
@@ -245,38 +238,38 @@ func (o LookupReportDefinitionResultOutput) ReportDefinitionId() pulumi.StringOu
 }
 
 // The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
-func (o LookupReportDefinitionResultOutput) Schedule() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Schedule }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) Schedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.Schedule }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment in which the scheduled resource should be created.
-func (o LookupReportDefinitionResultOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportCompartmentId }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) ScheduledReportCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.ScheduledReportCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the format of the report ( either XLS or PDF )
-func (o LookupReportDefinitionResultOutput) ScheduledReportMimeType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) ScheduledReportMimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.ScheduledReportMimeType }).(pulumi.StringPtrOutput)
 }
 
 // The name of the report to be scheduled.
-func (o LookupReportDefinitionResultOutput) ScheduledReportName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportName }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) ScheduledReportName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.ScheduledReportName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the limit on the number of rows in the report.
-func (o LookupReportDefinitionResultOutput) ScheduledReportRowLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) int { return v.ScheduledReportRowLimit }).(pulumi.IntOutput)
+func (o LookupReportDefinitionResultOutput) ScheduledReportRowLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *int { return v.ScheduledReportRowLimit }).(pulumi.IntPtrOutput)
 }
 
 // Additional scim filters used to get the specific summary.
-func (o LookupReportDefinitionResultOutput) ScimFilter() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScimFilter }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) ScimFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.ScimFilter }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the report.
-func (o LookupReportDefinitionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -290,13 +283,13 @@ func (o LookupReportDefinitionResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Specifies the data and time the report definition was created.
-func (o LookupReportDefinitionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the report definition was update.
-func (o LookupReportDefinitionResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupReportDefinitionResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

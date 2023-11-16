@@ -31,18 +31,12 @@ __all__ = [
 class ManagedInstanceAutonomouseArgs:
     def __init__(__self__, *,
                  is_auto_update_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_auto_update_enabled: True if daily updates are enabled
-        """
         if is_auto_update_enabled is not None:
             pulumi.set(__self__, "is_auto_update_enabled", is_auto_update_enabled)
 
     @property
     @pulumi.getter(name="isAutoUpdateEnabled")
     def is_auto_update_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True if daily updates are enabled
-        """
         return pulumi.get(self, "is_auto_update_enabled")
 
     @is_auto_update_enabled.setter
@@ -55,10 +49,6 @@ class ManagedInstanceChildSoftwareSourceArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: software source identifier
-        :param pulumi.Input[str] name: software source name
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
         if name is not None:
@@ -67,9 +57,6 @@ class ManagedInstanceChildSoftwareSourceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source identifier
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -79,9 +66,6 @@ class ManagedInstanceChildSoftwareSourceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -94,10 +78,6 @@ class ManagedInstanceGroupManagedInstanceArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
-        :param pulumi.Input[str] id: unique identifier that is immutable on creation
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -106,9 +86,6 @@ class ManagedInstanceGroupManagedInstanceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Managed Instance Group identifier
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -118,9 +95,6 @@ class ManagedInstanceGroupManagedInstanceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        unique identifier that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -133,10 +107,6 @@ class ManagedInstanceManagedInstanceGroupArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: User friendly name
-        :param pulumi.Input[str] id: software source identifier
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -145,9 +115,6 @@ class ManagedInstanceManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        User friendly name
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -157,9 +124,6 @@ class ManagedInstanceManagedInstanceGroupArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source identifier
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -172,14 +136,6 @@ class ManagedInstanceManagementChildSoftwareSourceArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: software source identifier
-        :param pulumi.Input[str] name: software source name
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
         if name is not None:
@@ -188,9 +144,6 @@ class ManagedInstanceManagementChildSoftwareSourceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source identifier
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -200,13 +153,6 @@ class ManagedInstanceManagementChildSoftwareSourceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source name
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -219,10 +165,6 @@ class ManagedInstanceManagementManagedInstanceGroupArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: User friendly name
-        :param pulumi.Input[str] id: software source identifier
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -231,9 +173,6 @@ class ManagedInstanceManagementManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        User friendly name
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -243,9 +182,6 @@ class ManagedInstanceManagementManagedInstanceGroupArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source identifier
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -258,14 +194,6 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: software source identifier
-        :param pulumi.Input[str] name: software source name
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
         if name is not None:
@@ -274,9 +202,6 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source identifier
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -286,13 +211,6 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source name
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -305,10 +223,6 @@ class ManagedInstanceParentSoftwareSourceArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: software source identifier
-        :param pulumi.Input[str] name: software source name
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
         if name is not None:
@@ -317,9 +231,6 @@ class ManagedInstanceParentSoftwareSourceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source identifier
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -329,9 +240,6 @@ class ManagedInstanceParentSoftwareSourceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        software source name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -344,10 +252,6 @@ class SoftwareSourceAssociatedManagedInstanceArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[str] id: OCID for the Software Source
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -356,9 +260,6 @@ class SoftwareSourceAssociatedManagedInstanceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User friendly name for the software source
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -368,9 +269,6 @@ class SoftwareSourceAssociatedManagedInstanceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID for the Software Source
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -501,9 +399,6 @@ class GetManagedInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: software source name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -512,9 +407,6 @@ class GetManagedInstancesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        software source name
-        """
         return pulumi.get(self, "name")
 
     @name.setter

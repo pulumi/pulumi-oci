@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// <summary>
         /// Number of spans with errors for serviceName in the trace.
         /// </summary>
-        public readonly string ErrorSpans;
+        public readonly string? ErrorSpans;
         /// <summary>
         /// Name associated with the service.
         /// </summary>
-        public readonly string SpanServiceName;
+        public readonly string? SpanServiceName;
         /// <summary>
         /// Number of spans for serviceName in the trace.
         /// </summary>
-        public readonly string TotalSpans;
+        public readonly string? TotalSpans;
 
         [OutputConstructor]
         private GetTraceSpanSummaryServiceSummaryResult(
-            string errorSpans,
+            string? errorSpans,
 
-            string spanServiceName,
+            string? spanServiceName,
 
-            string totalSpans)
+            string? totalSpans)
         {
             ErrorSpans = errorSpans;
             SpanServiceName = spanServiceName;

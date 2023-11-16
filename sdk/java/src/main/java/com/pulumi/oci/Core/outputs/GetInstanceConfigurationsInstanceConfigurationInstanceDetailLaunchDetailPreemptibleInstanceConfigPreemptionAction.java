@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction {
@@ -14,27 +16,27 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
-    private Boolean preserveBootVolume;
+    private @Nullable Boolean preserveBootVolume;
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction() {}
     /**
      * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
-    public Boolean preserveBootVolume() {
-        return this.preserveBootVolume;
+    public Optional<Boolean> preserveBootVolume() {
+        return Optional.ofNullable(this.preserveBootVolume);
     }
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean preserveBootVolume;
-        private String type;
+        private @Nullable Boolean preserveBootVolume;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         }
 
         @CustomType.Setter
-        public Builder preserveBootVolume(Boolean preserveBootVolume) {
-            this.preserveBootVolume = Objects.requireNonNull(preserveBootVolume);
+        public Builder preserveBootVolume(@Nullable Boolean preserveBootVolume) {
+            this.preserveBootVolume = preserveBootVolume;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction build() {

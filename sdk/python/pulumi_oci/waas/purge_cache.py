@@ -18,12 +18,6 @@ class PurgeCacheArgs:
                  resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a PurgeCache resource.
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] resources: A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
         """
         pulumi.set(__self__, "waas_policy_id", waas_policy_id)
         if resources is not None:
@@ -32,13 +26,6 @@ class PurgeCacheArgs:
     @property
     @pulumi.getter(name="waasPolicyId")
     def waas_policy_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "waas_policy_id")
 
     @waas_policy_id.setter
@@ -48,9 +35,6 @@ class PurgeCacheArgs:
     @property
     @pulumi.getter
     def resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
-        """
         return pulumi.get(self, "resources")
 
     @resources.setter
@@ -65,12 +49,6 @@ class _PurgeCacheState:
                  waas_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PurgeCache resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] resources: A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if resources is not None:
             pulumi.set(__self__, "resources", resources)
@@ -80,9 +58,6 @@ class _PurgeCacheState:
     @property
     @pulumi.getter
     def resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
-        """
         return pulumi.get(self, "resources")
 
     @resources.setter
@@ -92,13 +67,6 @@ class _PurgeCacheState:
     @property
     @pulumi.getter(name="waasPolicyId")
     def waas_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "waas_policy_id")
 
     @waas_policy_id.setter
@@ -115,34 +83,9 @@ class PurgeCache(pulumi.CustomResource):
                  waas_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Purge Cache resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Performs a purge of the cache for each specified resource. If no resources are passed, the cache for the entire Web Application Firewall will be purged.
-        For more information, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_purge_cache = oci.waas.PurgeCache("testPurgeCache",
-            waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
-            resources=var["purge_cache_resources"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a PurgeCache resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] resources: A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -151,26 +94,7 @@ class PurgeCache(pulumi.CustomResource):
                  args: PurgeCacheArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Purge Cache resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Performs a purge of the cache for each specified resource. If no resources are passed, the cache for the entire Web Application Firewall will be purged.
-        For more information, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_purge_cache = oci.waas.PurgeCache("testPurgeCache",
-            waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
-            resources=var["purge_cache_resources"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a PurgeCache resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PurgeCacheArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -220,12 +144,6 @@ class PurgeCache(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] resources: A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -238,20 +156,10 @@ class PurgeCache(pulumi.CustomResource):
     @property
     @pulumi.getter
     def resources(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
-        """
         return pulumi.get(self, "resources")
 
     @property
     @pulumi.getter(name="waasPolicyId")
     def waas_policy_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "waas_policy_id")
 

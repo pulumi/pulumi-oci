@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingTotpSetting {
@@ -14,123 +16,123 @@ public final class GetDomainsAuthenticationFactorSettingTotpSetting {
      * @return The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
      * 
      */
-    private Integer emailOtpValidityDurationInMins;
+    private @Nullable Integer emailOtpValidityDurationInMins;
     /**
      * @return Exact length of the email one-time passcode.
      * 
      */
-    private Integer emailPasscodeLength;
+    private @Nullable Integer emailPasscodeLength;
     /**
      * @return The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
      * 
      */
-    private String hashingAlgorithm;
+    private @Nullable String hashingAlgorithm;
     /**
      * @return The period of time (in seconds) that a JSON Web Token (JWT) is valid
      * 
      */
-    private Integer jwtValidityDurationInSecs;
+    private @Nullable Integer jwtValidityDurationInSecs;
     /**
      * @return The duration of time (in days) after which the shared secret has to be refreshed
      * 
      */
-    private Integer keyRefreshIntervalInDays;
+    private @Nullable Integer keyRefreshIntervalInDays;
     /**
      * @return Exact length of the One-Time Passcode that the system should generate
      * 
      */
-    private Integer passcodeLength;
+    private @Nullable Integer passcodeLength;
     /**
      * @return The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
      * 
      */
-    private Integer smsOtpValidityDurationInMins;
+    private @Nullable Integer smsOtpValidityDurationInMins;
     /**
      * @return Exact length of the Short Message Service (SMS) One-Time Passcode
      * 
      */
-    private Integer smsPasscodeLength;
+    private @Nullable Integer smsPasscodeLength;
     /**
      * @return Time (in secs) to be used as the time step
      * 
      */
-    private Integer timeStepInSecs;
+    private @Nullable Integer timeStepInSecs;
     /**
      * @return The tolerance/step-size that the system should use when validating a One-Time Passcode
      * 
      */
-    private Integer timeStepTolerance;
+    private @Nullable Integer timeStepTolerance;
 
     private GetDomainsAuthenticationFactorSettingTotpSetting() {}
     /**
      * @return The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
      * 
      */
-    public Integer emailOtpValidityDurationInMins() {
-        return this.emailOtpValidityDurationInMins;
+    public Optional<Integer> emailOtpValidityDurationInMins() {
+        return Optional.ofNullable(this.emailOtpValidityDurationInMins);
     }
     /**
      * @return Exact length of the email one-time passcode.
      * 
      */
-    public Integer emailPasscodeLength() {
-        return this.emailPasscodeLength;
+    public Optional<Integer> emailPasscodeLength() {
+        return Optional.ofNullable(this.emailPasscodeLength);
     }
     /**
      * @return The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
      * 
      */
-    public String hashingAlgorithm() {
-        return this.hashingAlgorithm;
+    public Optional<String> hashingAlgorithm() {
+        return Optional.ofNullable(this.hashingAlgorithm);
     }
     /**
      * @return The period of time (in seconds) that a JSON Web Token (JWT) is valid
      * 
      */
-    public Integer jwtValidityDurationInSecs() {
-        return this.jwtValidityDurationInSecs;
+    public Optional<Integer> jwtValidityDurationInSecs() {
+        return Optional.ofNullable(this.jwtValidityDurationInSecs);
     }
     /**
      * @return The duration of time (in days) after which the shared secret has to be refreshed
      * 
      */
-    public Integer keyRefreshIntervalInDays() {
-        return this.keyRefreshIntervalInDays;
+    public Optional<Integer> keyRefreshIntervalInDays() {
+        return Optional.ofNullable(this.keyRefreshIntervalInDays);
     }
     /**
      * @return Exact length of the One-Time Passcode that the system should generate
      * 
      */
-    public Integer passcodeLength() {
-        return this.passcodeLength;
+    public Optional<Integer> passcodeLength() {
+        return Optional.ofNullable(this.passcodeLength);
     }
     /**
      * @return The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
      * 
      */
-    public Integer smsOtpValidityDurationInMins() {
-        return this.smsOtpValidityDurationInMins;
+    public Optional<Integer> smsOtpValidityDurationInMins() {
+        return Optional.ofNullable(this.smsOtpValidityDurationInMins);
     }
     /**
      * @return Exact length of the Short Message Service (SMS) One-Time Passcode
      * 
      */
-    public Integer smsPasscodeLength() {
-        return this.smsPasscodeLength;
+    public Optional<Integer> smsPasscodeLength() {
+        return Optional.ofNullable(this.smsPasscodeLength);
     }
     /**
      * @return Time (in secs) to be used as the time step
      * 
      */
-    public Integer timeStepInSecs() {
-        return this.timeStepInSecs;
+    public Optional<Integer> timeStepInSecs() {
+        return Optional.ofNullable(this.timeStepInSecs);
     }
     /**
      * @return The tolerance/step-size that the system should use when validating a One-Time Passcode
      * 
      */
-    public Integer timeStepTolerance() {
-        return this.timeStepTolerance;
+    public Optional<Integer> timeStepTolerance() {
+        return Optional.ofNullable(this.timeStepTolerance);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetDomainsAuthenticationFactorSettingTotpSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer emailOtpValidityDurationInMins;
-        private Integer emailPasscodeLength;
-        private String hashingAlgorithm;
-        private Integer jwtValidityDurationInSecs;
-        private Integer keyRefreshIntervalInDays;
-        private Integer passcodeLength;
-        private Integer smsOtpValidityDurationInMins;
-        private Integer smsPasscodeLength;
-        private Integer timeStepInSecs;
-        private Integer timeStepTolerance;
+        private @Nullable Integer emailOtpValidityDurationInMins;
+        private @Nullable Integer emailPasscodeLength;
+        private @Nullable String hashingAlgorithm;
+        private @Nullable Integer jwtValidityDurationInSecs;
+        private @Nullable Integer keyRefreshIntervalInDays;
+        private @Nullable Integer passcodeLength;
+        private @Nullable Integer smsOtpValidityDurationInMins;
+        private @Nullable Integer smsPasscodeLength;
+        private @Nullable Integer timeStepInSecs;
+        private @Nullable Integer timeStepTolerance;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingTotpSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,53 +170,53 @@ public final class GetDomainsAuthenticationFactorSettingTotpSetting {
         }
 
         @CustomType.Setter
-        public Builder emailOtpValidityDurationInMins(Integer emailOtpValidityDurationInMins) {
-            this.emailOtpValidityDurationInMins = Objects.requireNonNull(emailOtpValidityDurationInMins);
+        public Builder emailOtpValidityDurationInMins(@Nullable Integer emailOtpValidityDurationInMins) {
+            this.emailOtpValidityDurationInMins = emailOtpValidityDurationInMins;
             return this;
         }
         @CustomType.Setter
-        public Builder emailPasscodeLength(Integer emailPasscodeLength) {
-            this.emailPasscodeLength = Objects.requireNonNull(emailPasscodeLength);
+        public Builder emailPasscodeLength(@Nullable Integer emailPasscodeLength) {
+            this.emailPasscodeLength = emailPasscodeLength;
             return this;
         }
         @CustomType.Setter
-        public Builder hashingAlgorithm(String hashingAlgorithm) {
-            this.hashingAlgorithm = Objects.requireNonNull(hashingAlgorithm);
+        public Builder hashingAlgorithm(@Nullable String hashingAlgorithm) {
+            this.hashingAlgorithm = hashingAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder jwtValidityDurationInSecs(Integer jwtValidityDurationInSecs) {
-            this.jwtValidityDurationInSecs = Objects.requireNonNull(jwtValidityDurationInSecs);
+        public Builder jwtValidityDurationInSecs(@Nullable Integer jwtValidityDurationInSecs) {
+            this.jwtValidityDurationInSecs = jwtValidityDurationInSecs;
             return this;
         }
         @CustomType.Setter
-        public Builder keyRefreshIntervalInDays(Integer keyRefreshIntervalInDays) {
-            this.keyRefreshIntervalInDays = Objects.requireNonNull(keyRefreshIntervalInDays);
+        public Builder keyRefreshIntervalInDays(@Nullable Integer keyRefreshIntervalInDays) {
+            this.keyRefreshIntervalInDays = keyRefreshIntervalInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder passcodeLength(Integer passcodeLength) {
-            this.passcodeLength = Objects.requireNonNull(passcodeLength);
+        public Builder passcodeLength(@Nullable Integer passcodeLength) {
+            this.passcodeLength = passcodeLength;
             return this;
         }
         @CustomType.Setter
-        public Builder smsOtpValidityDurationInMins(Integer smsOtpValidityDurationInMins) {
-            this.smsOtpValidityDurationInMins = Objects.requireNonNull(smsOtpValidityDurationInMins);
+        public Builder smsOtpValidityDurationInMins(@Nullable Integer smsOtpValidityDurationInMins) {
+            this.smsOtpValidityDurationInMins = smsOtpValidityDurationInMins;
             return this;
         }
         @CustomType.Setter
-        public Builder smsPasscodeLength(Integer smsPasscodeLength) {
-            this.smsPasscodeLength = Objects.requireNonNull(smsPasscodeLength);
+        public Builder smsPasscodeLength(@Nullable Integer smsPasscodeLength) {
+            this.smsPasscodeLength = smsPasscodeLength;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStepInSecs(Integer timeStepInSecs) {
-            this.timeStepInSecs = Objects.requireNonNull(timeStepInSecs);
+        public Builder timeStepInSecs(@Nullable Integer timeStepInSecs) {
+            this.timeStepInSecs = timeStepInSecs;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStepTolerance(Integer timeStepTolerance) {
-            this.timeStepTolerance = Objects.requireNonNull(timeStepTolerance);
+        public Builder timeStepTolerance(@Nullable Integer timeStepTolerance) {
+            this.timeStepTolerance = timeStepTolerance;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingTotpSetting build() {

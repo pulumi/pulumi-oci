@@ -51,19 +51,19 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
     /**
      * Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
      */
-    readonly applicationExecutionType: string;
+    readonly applicationExecutionType?: string;
     /**
      * The name of the application for which the Java migration analysis was performed.
      */
-    readonly applicationName: string;
+    readonly applicationName?: string;
     /**
      * The installation path of the application for which the Java migration analysis was performed.
      */
-    readonly applicationPath: string;
+    readonly applicationPath?: string;
     /**
      * The name of the object storage bucket that contains the results of the migration analysis.
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     /**
      * The fleet OCID.
      */
@@ -71,48 +71,48 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
     /**
      * The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly javaMigrationAnalysisResultId: string;
     /**
      * The managed instance OCID.
      */
-    readonly managedInstanceId: string;
+    readonly managedInstanceId?: string;
     /**
      * Additional info reserved for future use.
      */
-    readonly metadata: string;
+    readonly metadata?: string;
     /**
      * The object storage namespace that contains the results of the migration analysis.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * The names of the object storage objects that contain the results of the migration analysis.
      */
-    readonly objectLists: string[];
+    readonly objectLists?: string[];
     /**
      * The directory path of the object storage bucket that contains the results of the migration analysis.
      */
-    readonly objectStorageUploadDirPath: string;
+    readonly objectStorageUploadDirPath?: string;
     /**
      * The source JDK version of the application that's currently running.
      */
-    readonly sourceJdkVersion: string;
+    readonly sourceJdkVersion?: string;
     /**
      * The target JDK version of the application to be migrated.
      */
-    readonly targetJdkVersion: string;
+    readonly targetJdkVersion?: string;
     /**
      * The time the result is compiled.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The OCID of the work request of this analysis.
      */
-    readonly workRequestId: string;
+    readonly workRequestId?: string;
 }
 /**
  * This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.

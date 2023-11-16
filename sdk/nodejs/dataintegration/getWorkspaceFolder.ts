@@ -53,54 +53,54 @@ export interface GetWorkspaceFolderResult {
     /**
      * The category name.
      */
-    readonly categoryName: string;
+    readonly categoryName?: string;
     /**
      * The description of the aggregator.
      */
-    readonly description: string;
+    readonly description?: string;
     readonly folderKey: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * The identifier of the aggregator.
      */
-    readonly identifier: string;
+    readonly identifier?: string;
     /**
      * The key of the aggregator object.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    readonly keyMap: {[key: string]: any};
+    readonly keyMap?: {[key: string]: any};
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    readonly metadatas: outputs.DataIntegration.GetWorkspaceFolderMetadata[];
+    readonly metadatas?: outputs.DataIntegration.GetWorkspaceFolderMetadata[];
     /**
      * The type of the object.
      */
-    readonly modelType: string;
+    readonly modelType?: string;
     /**
      * The model version of an object.
      */
-    readonly modelVersion: string;
+    readonly modelVersion?: string;
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    readonly objectStatus: number;
+    readonly objectStatus?: number;
     /**
      * The version of the object that is used to track changes in the object instance.
      */
-    readonly objectVersion: number;
+    readonly objectVersion?: number;
     /**
      * A reference to the object's parent.
      */
-    readonly parentReves: outputs.DataIntegration.GetWorkspaceFolderParentRef[];
-    readonly registryMetadatas: outputs.DataIntegration.GetWorkspaceFolderRegistryMetadata[];
+    readonly parentReves?: outputs.DataIntegration.GetWorkspaceFolderParentRef[];
+    readonly registryMetadatas?: outputs.DataIntegration.GetWorkspaceFolderRegistryMetadata[];
     readonly workspaceId: string;
 }
 /**

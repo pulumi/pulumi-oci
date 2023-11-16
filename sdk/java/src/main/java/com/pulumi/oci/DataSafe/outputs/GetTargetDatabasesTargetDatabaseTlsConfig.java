@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesTargetDatabaseTlsConfig {
@@ -13,63 +15,63 @@ public final class GetTargetDatabasesTargetDatabaseTlsConfig {
      * @return The format of the certificate store.
      * 
      */
-    private String certificateStoreType;
+    private @Nullable String certificateStoreType;
     /**
      * @return Base64 encoded string of key store file content.
      * 
      */
-    private String keyStoreContent;
+    private @Nullable String keyStoreContent;
     /**
      * @return Status to represent whether the database connection is TLS enabled or not.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The password to read the trust store and key store files, if they are password protected.
      * 
      */
-    private String storePassword;
+    private @Nullable String storePassword;
     /**
      * @return Base64 encoded string of trust store file content.
      * 
      */
-    private String trustStoreContent;
+    private @Nullable String trustStoreContent;
 
     private GetTargetDatabasesTargetDatabaseTlsConfig() {}
     /**
      * @return The format of the certificate store.
      * 
      */
-    public String certificateStoreType() {
-        return this.certificateStoreType;
+    public Optional<String> certificateStoreType() {
+        return Optional.ofNullable(this.certificateStoreType);
     }
     /**
      * @return Base64 encoded string of key store file content.
      * 
      */
-    public String keyStoreContent() {
-        return this.keyStoreContent;
+    public Optional<String> keyStoreContent() {
+        return Optional.ofNullable(this.keyStoreContent);
     }
     /**
      * @return Status to represent whether the database connection is TLS enabled or not.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The password to read the trust store and key store files, if they are password protected.
      * 
      */
-    public String storePassword() {
-        return this.storePassword;
+    public Optional<String> storePassword() {
+        return Optional.ofNullable(this.storePassword);
     }
     /**
      * @return Base64 encoded string of trust store file content.
      * 
      */
-    public String trustStoreContent() {
-        return this.trustStoreContent;
+    public Optional<String> trustStoreContent() {
+        return Optional.ofNullable(this.trustStoreContent);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetTargetDatabasesTargetDatabaseTlsConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateStoreType;
-        private String keyStoreContent;
-        private String status;
-        private String storePassword;
-        private String trustStoreContent;
+        private @Nullable String certificateStoreType;
+        private @Nullable String keyStoreContent;
+        private @Nullable String status;
+        private @Nullable String storePassword;
+        private @Nullable String trustStoreContent;
         public Builder() {}
         public Builder(GetTargetDatabasesTargetDatabaseTlsConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetTargetDatabasesTargetDatabaseTlsConfig {
         }
 
         @CustomType.Setter
-        public Builder certificateStoreType(String certificateStoreType) {
-            this.certificateStoreType = Objects.requireNonNull(certificateStoreType);
+        public Builder certificateStoreType(@Nullable String certificateStoreType) {
+            this.certificateStoreType = certificateStoreType;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStoreContent(String keyStoreContent) {
-            this.keyStoreContent = Objects.requireNonNull(keyStoreContent);
+        public Builder keyStoreContent(@Nullable String keyStoreContent) {
+            this.keyStoreContent = keyStoreContent;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder storePassword(String storePassword) {
-            this.storePassword = Objects.requireNonNull(storePassword);
+        public Builder storePassword(@Nullable String storePassword) {
+            this.storePassword = storePassword;
             return this;
         }
         @CustomType.Setter
-        public Builder trustStoreContent(String trustStoreContent) {
-            this.trustStoreContent = Objects.requireNonNull(trustStoreContent);
+        public Builder trustStoreContent(@Nullable String trustStoreContent) {
+            this.trustStoreContent = trustStoreContent;
             return this;
         }
         public GetTargetDatabasesTargetDatabaseTlsConfig build() {

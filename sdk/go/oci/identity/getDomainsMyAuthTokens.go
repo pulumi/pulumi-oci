@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,9 +79,9 @@ type GetDomainsMyAuthTokensResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string  `pulumi:"id"`
+	Id                *string `pulumi:"id"`
 	IdcsEndpoint      string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage      int     `pulumi:"itemsPerPage"`
+	ItemsPerPage      *int    `pulumi:"itemsPerPage"`
 	MyAuthTokenCount  *int    `pulumi:"myAuthTokenCount"`
 	MyAuthTokenFilter *string `pulumi:"myAuthTokenFilter"`
 	// The list of my_auth_tokens.
@@ -93,7 +92,7 @@ type GetDomainsMyAuthTokensResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMyAuthTokensOutput(ctx *pulumi.Context, args GetDomainsMyAuthTokensOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyAuthTokensResultOutput {
@@ -147,12 +146,6 @@ func (o GetDomainsMyAuthTokensResultOutput) ToGetDomainsMyAuthTokensResultOutput
 	return o
 }
 
-func (o GetDomainsMyAuthTokensResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyAuthTokensResult] {
-	return pulumix.Output[GetDomainsMyAuthTokensResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyAuthTokensResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -162,16 +155,16 @@ func (o GetDomainsMyAuthTokensResultOutput) CompartmentId() pulumi.StringPtrOutp
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyAuthTokensResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyAuthTokensResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyAuthTokensResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMyAuthTokensResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyAuthTokensResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyAuthTokensResultOutput) MyAuthTokenCount() pulumi.IntPtrOutput {
@@ -208,8 +201,8 @@ func (o GetDomainsMyAuthTokensResultOutput) StartIndex() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMyAuthTokensResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyAuthTokensResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyAuthTokensResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

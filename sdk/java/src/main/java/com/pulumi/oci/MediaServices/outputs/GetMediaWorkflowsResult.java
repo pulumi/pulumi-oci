@@ -34,7 +34,7 @@ public final class GetMediaWorkflowsResult {
      * @return The list of media_workflow_collection.
      * 
      */
-    private List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections;
+    private @Nullable List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections;
     /**
      * @return The current state of the MediaWorkflow.
      * 
@@ -71,7 +71,7 @@ public final class GetMediaWorkflowsResult {
      * 
      */
     public List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections() {
-        return this.mediaWorkflowCollections;
+        return this.mediaWorkflowCollections == null ? List.of() : this.mediaWorkflowCollections;
     }
     /**
      * @return The current state of the MediaWorkflow.
@@ -94,7 +94,7 @@ public final class GetMediaWorkflowsResult {
         private @Nullable String displayName;
         private @Nullable List<GetMediaWorkflowsFilter> filters;
         private @Nullable String id;
-        private List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections;
+        private @Nullable List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMediaWorkflowsResult defaults) {
@@ -131,8 +131,8 @@ public final class GetMediaWorkflowsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowCollections(List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections) {
-            this.mediaWorkflowCollections = Objects.requireNonNull(mediaWorkflowCollections);
+        public Builder mediaWorkflowCollections(@Nullable List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections) {
+            this.mediaWorkflowCollections = mediaWorkflowCollections;
             return this;
         }
         public Builder mediaWorkflowCollections(GetMediaWorkflowsMediaWorkflowCollection... mediaWorkflowCollections) {

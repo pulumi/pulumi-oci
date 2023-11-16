@@ -137,9 +137,9 @@ namespace Pulumi.Oci.Nosql
         /// Compartment Identifier.
         /// </summary>
         public readonly string CompartmentId;
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IndexName;
-        public readonly bool IsIfNotExists;
+        public readonly bool? IsIfNotExists;
         /// <summary>
         /// A set of keys for a secondary index.
         /// </summary>
@@ -147,46 +147,46 @@ namespace Pulumi.Oci.Nosql
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Index name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The state of an index.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// the OCID of the table to which this index belongs.
         /// </summary>
-        public readonly string TableId;
+        public readonly string? TableId;
         /// <summary>
         /// The name of the table to which this index belongs.
         /// </summary>
-        public readonly string TableName;
+        public readonly string? TableName;
         public readonly string TableNameOrId;
 
         [OutputConstructor]
         private GetIndexResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             string indexName,
 
-            bool isIfNotExists,
+            bool? isIfNotExists,
 
             ImmutableArray<Outputs.GetIndexKeyResult> keys,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            string tableId,
+            string? tableId,
 
-            string tableName,
+            string? tableName,
 
             string tableNameOrId)
         {

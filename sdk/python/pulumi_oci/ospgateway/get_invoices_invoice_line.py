@@ -46,7 +46,7 @@ class GetInvoicesInvoiceLineResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,10 +59,7 @@ class GetInvoicesInvoiceLineResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetInvoicesInvoiceLineItemResult']:
-        """
-        Invoice line list elements
-        """
+    def items(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceLineItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -89,25 +86,7 @@ def get_invoices_invoice_line(compartment_id: Optional[str] = None,
                               osp_home_region: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoicesInvoiceLineResult:
     """
-    This data source provides details about a specific Invoices Invoice Line resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Returns the invoice product list by invoice id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoices_invoice_line = oci.OspGateway.get_invoices_invoice_line(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoices_invoice_line_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str internal_invoice_id: The identifier of the invoice.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -130,24 +109,6 @@ def get_invoices_invoice_line_output(compartment_id: Optional[pulumi.Input[str]]
                                      osp_home_region: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoicesInvoiceLineResult]:
     """
-    This data source provides details about a specific Invoices Invoice Line resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Returns the invoice product list by invoice id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoices_invoice_line = oci.OspGateway.get_invoices_invoice_line(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoices_invoice_line_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str internal_invoice_id: The identifier of the invoice.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     ...

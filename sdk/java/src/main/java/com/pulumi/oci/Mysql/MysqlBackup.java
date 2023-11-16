@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,70 +76,70 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="backupSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> backupSizeInGbs;
+    private Output</* @Nullable */ Integer> backupSizeInGbs;
 
     /**
      * @return The size of the backup in base-2 (IEC) gibibytes. (GiB).
      * 
      */
-    public Output<Integer> backupSizeInGbs() {
-        return this.backupSizeInGbs;
+    public Output<Optional<Integer>> backupSizeInGbs() {
+        return Codegen.optional(this.backupSizeInGbs);
     }
     /**
      * The type of backup.
      * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
-    private Output<String> backupType;
+    private Output</* @Nullable */ String> backupType;
 
     /**
      * @return The type of backup.
      * 
      */
-    public Output<String> backupType() {
-        return this.backupType;
+    public Output<Optional<String>> backupType() {
+        return Codegen.optional(this.backupType);
     }
     /**
      * (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Indicates how the backup was created: manually, automatic, or by an Operator.
      * 
      */
     @Export(name="creationType", refs={String.class}, tree="[0]")
-    private Output<String> creationType;
+    private Output</* @Nullable */ String> creationType;
 
     /**
      * @return Indicates how the backup was created: manually, automatic, or by an Operator.
      * 
      */
-    public Output<String> creationType() {
-        return this.creationType;
+    public Output<Optional<String>> creationType() {
+        return Codegen.optional(this.creationType);
     }
     /**
      * Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
     @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dataStorageSizeInGb;
+    private Output</* @Nullable */ Integer> dataStorageSizeInGb;
 
     /**
      * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
-    public Output<Integer> dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Output<Optional<Integer>> dataStorageSizeInGb() {
+        return Codegen.optional(this.dataStorageSizeInGb);
     }
     /**
      * The OCID of the DB System the Backup is associated with.
@@ -159,98 +160,98 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dbSystemSnapshots", refs={List.class,MysqlBackupDbSystemSnapshot.class}, tree="[0,1]")
-    private Output<List<MysqlBackupDbSystemSnapshot>> dbSystemSnapshots;
+    private Output</* @Nullable */ List<MysqlBackupDbSystemSnapshot>> dbSystemSnapshots;
 
     /**
      * @return Snapshot of the DbSystem details at the time of the backup
      * 
      */
-    public Output<List<MysqlBackupDbSystemSnapshot>> dbSystemSnapshots() {
-        return this.dbSystemSnapshots;
+    public Output<Optional<List<MysqlBackupDbSystemSnapshot>>> dbSystemSnapshots() {
+        return Codegen.optional(this.dbSystemSnapshots);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-supplied description for the backup.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A user-supplied description for the backup.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-supplied display name for the backup.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-supplied display name for the backup.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Additional information about the current lifecycleState.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The MySQL server version of the DB System used for backup.
      * 
      */
     @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
-    private Output<String> mysqlVersion;
+    private Output</* @Nullable */ String> mysqlVersion;
 
     /**
      * @return The MySQL server version of the DB System used for backup.
      * 
      */
-    public Output<String> mysqlVersion() {
-        return this.mysqlVersion;
+    public Output<Optional<String>> mysqlVersion() {
+        return Codegen.optional(this.mysqlVersion);
     }
     /**
      * (Updatable) Number of days to retain this backup.
@@ -260,7 +261,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="retentionInDays", refs={Integer.class}, tree="[0]")
-    private Output<Integer> retentionInDays;
+    private Output</* @Nullable */ Integer> retentionInDays;
 
     /**
      * @return (Updatable) Number of days to retain this backup.
@@ -269,64 +270,64 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> retentionInDays() {
-        return this.retentionInDays;
+    public Output<Optional<Integer>> retentionInDays() {
+        return Codegen.optional(this.retentionInDays);
     }
     /**
      * The shape of the DB System instance used for backup.
      * 
      */
     @Export(name="shapeName", refs={String.class}, tree="[0]")
-    private Output<String> shapeName;
+    private Output</* @Nullable */ String> shapeName;
 
     /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
-    public Output<String> shapeName() {
-        return this.shapeName;
+    public Output<Optional<String>> shapeName() {
+        return Codegen.optional(this.shapeName);
     }
     /**
      * The state of the backup.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the backup.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the backup record was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the backup record was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time at which the backup was updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time at which the backup was updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

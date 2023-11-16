@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the boot volume replica.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetBootVolumesBootVolumeSourceDetailResult(
-            string id,
+            string? id,
 
-            string type)
+            string? type)
         {
             Id = id;
             Type = type;

@@ -59,11 +59,11 @@ export interface GetLogAnalyticsEntityTopologyResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of log analytics entity summary.
      */
-    readonly items: outputs.LogAnalytics.GetLogAnalyticsEntityTopologyItem[];
+    readonly items?: outputs.LogAnalytics.GetLogAnalyticsEntityTopologyItem[];
     readonly logAnalyticsEntityId: string;
     readonly namespace: string;
     /**

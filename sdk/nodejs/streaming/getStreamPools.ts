@@ -84,7 +84,7 @@ export interface GetStreamPoolsResult {
     /**
      * The list of stream_pools.
      */
-    readonly streamPools: outputs.Streaming.GetStreamPoolsStreamPool[];
+    readonly streamPools?: outputs.Streaming.GetStreamPoolsStreamPool[];
 }
 /**
  * This data source provides the list of Stream Pools in Oracle Cloud Infrastructure Streaming service.

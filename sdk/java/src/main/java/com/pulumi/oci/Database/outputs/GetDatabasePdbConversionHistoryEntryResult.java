@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabasePdbConversionHistoryEntryResult {
@@ -17,60 +19,60 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
      * * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Additional container database parameter.
      * 
      */
-    private String additionalCdbParams;
+    private @Nullable String additionalCdbParams;
     /**
      * @return The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      * 
      */
-    private String cdbName;
+    private @Nullable String cdbName;
     private String databaseId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state for the conversion operation.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     private String pdbConversionHistoryEntryId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private String sourceDatabaseId;
+    private @Nullable String sourceDatabaseId;
     /**
      * @return Status of an operation performed during the conversion of a non-container database to a pluggable database.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
      * * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
      * 
      */
-    private String target;
+    private @Nullable String target;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private String targetDatabaseId;
+    private @Nullable String targetDatabaseId;
     /**
      * @return The date and time when the database conversion operation ended.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The date and time when the database conversion operation started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetDatabasePdbConversionHistoryEntryResult() {}
     /**
@@ -81,22 +83,22 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
      * * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Additional container database parameter.
      * 
      */
-    public String additionalCdbParams() {
-        return this.additionalCdbParams;
+    public Optional<String> additionalCdbParams() {
+        return Optional.ofNullable(this.additionalCdbParams);
     }
     /**
      * @return The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      * 
      */
-    public String cdbName() {
-        return this.cdbName;
+    public Optional<String> cdbName() {
+        return Optional.ofNullable(this.cdbName);
     }
     public String databaseId() {
         return this.databaseId;
@@ -105,15 +107,15 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state for the conversion operation.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public String pdbConversionHistoryEntryId() {
         return this.pdbConversionHistoryEntryId;
@@ -122,44 +124,44 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    public String sourceDatabaseId() {
-        return this.sourceDatabaseId;
+    public Optional<String> sourceDatabaseId() {
+        return Optional.ofNullable(this.sourceDatabaseId);
     }
     /**
      * @return Status of an operation performed during the conversion of a non-container database to a pluggable database.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
      * * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
      * 
      */
-    public String target() {
-        return this.target;
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    public String targetDatabaseId() {
-        return this.targetDatabaseId;
+    public Optional<String> targetDatabaseId() {
+        return Optional.ofNullable(this.targetDatabaseId);
     }
     /**
      * @return The date and time when the database conversion operation ended.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The date and time when the database conversion operation started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -171,19 +173,19 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String additionalCdbParams;
-        private String cdbName;
+        private @Nullable String action;
+        private @Nullable String additionalCdbParams;
+        private @Nullable String cdbName;
         private String databaseId;
-        private String id;
-        private String lifecycleDetails;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
         private String pdbConversionHistoryEntryId;
-        private String sourceDatabaseId;
-        private String state;
-        private String target;
-        private String targetDatabaseId;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String sourceDatabaseId;
+        private @Nullable String state;
+        private @Nullable String target;
+        private @Nullable String targetDatabaseId;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetDatabasePdbConversionHistoryEntryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -203,18 +205,18 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder additionalCdbParams(String additionalCdbParams) {
-            this.additionalCdbParams = Objects.requireNonNull(additionalCdbParams);
+        public Builder additionalCdbParams(@Nullable String additionalCdbParams) {
+            this.additionalCdbParams = additionalCdbParams;
             return this;
         }
         @CustomType.Setter
-        public Builder cdbName(String cdbName) {
-            this.cdbName = Objects.requireNonNull(cdbName);
+        public Builder cdbName(@Nullable String cdbName) {
+            this.cdbName = cdbName;
             return this;
         }
         @CustomType.Setter
@@ -223,13 +225,13 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -238,33 +240,33 @@ public final class GetDatabasePdbConversionHistoryEntryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDatabaseId(String sourceDatabaseId) {
-            this.sourceDatabaseId = Objects.requireNonNull(sourceDatabaseId);
+        public Builder sourceDatabaseId(@Nullable String sourceDatabaseId) {
+            this.sourceDatabaseId = sourceDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+        public Builder target(@Nullable String target) {
+            this.target = target;
             return this;
         }
         @CustomType.Setter
-        public Builder targetDatabaseId(String targetDatabaseId) {
-            this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
+        public Builder targetDatabaseId(@Nullable String targetDatabaseId) {
+            this.targetDatabaseId = targetDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDatabasePdbConversionHistoryEntryResult build() {

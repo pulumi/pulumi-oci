@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -97,28 +98,28 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="databaseId", refs={String.class}, tree="[0]")
-    private Output<String> databaseId;
+    private Output</* @Nullable */ String> databaseId;
 
     /**
      * @return The OCID of the protected database.
      * 
      */
-    public Output<String> databaseId() {
-        return this.databaseId;
+    public Output<Optional<String>> databaseId() {
+        return Codegen.optional(this.databaseId);
     }
     /**
      * (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      * 
      */
     @Export(name="databaseSize", refs={String.class}, tree="[0]")
-    private Output<String> databaseSize;
+    private Output</* @Nullable */ String> databaseSize;
 
     /**
      * @return (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      * 
      */
-    public Output<String> databaseSize() {
-        return this.databaseSize;
+    public Output<Optional<String>> databaseSize() {
+        return Codegen.optional(this.databaseSize);
     }
     /**
      * The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
@@ -139,14 +140,14 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
@@ -167,14 +168,14 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Indicates the protection status of the database. Allowed values are:
@@ -184,7 +185,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="health", refs={String.class}, tree="[0]")
-    private Output<String> health;
+    private Output</* @Nullable */ String> health;
 
     /**
      * @return Indicates the protection status of the database. Allowed values are:
@@ -193,78 +194,78 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * * ALERT
      * 
      */
-    public Output<String> health() {
-        return this.health;
+    public Output<Optional<String>> health() {
+        return Codegen.optional(this.health);
     }
     /**
      * A message describing the current health of the protected database.
      * 
      */
     @Export(name="healthDetails", refs={String.class}, tree="[0]")
-    private Output<String> healthDetails;
+    private Output</* @Nullable */ String> healthDetails;
 
     /**
      * @return A message describing the current health of the protected database.
      * 
      */
-    public Output<String> healthDetails() {
-        return this.healthDetails;
+    public Output<Optional<String>> healthDetails() {
+        return Codegen.optional(this.healthDetails);
     }
     /**
      * Indicates whether the protected database is created by Recovery Service or created manually. Set to &lt;b&gt;TRUE&lt;/b&gt; for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to &lt;b&gt;FALSE&lt;/b&gt; for a user-defined protected database.
      * 
      */
     @Export(name="isReadOnlyResource", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isReadOnlyResource;
+    private Output</* @Nullable */ Boolean> isReadOnlyResource;
 
     /**
      * @return Indicates whether the protected database is created by Recovery Service or created manually. Set to &lt;b&gt;TRUE&lt;/b&gt; for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to &lt;b&gt;FALSE&lt;/b&gt; for a user-defined protected database.
      * 
      */
-    public Output<Boolean> isReadOnlyResource() {
-        return this.isReadOnlyResource;
+    public Output<Optional<Boolean>> isReadOnlyResource() {
+        return Codegen.optional(this.isReadOnlyResource);
     }
     /**
      * (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      * 
      */
     @Export(name="isRedoLogsShipped", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRedoLogsShipped;
+    private Output</* @Nullable */ Boolean> isRedoLogsShipped;
 
     /**
      * @return (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      * 
      */
-    public Output<Boolean> isRedoLogsShipped() {
-        return this.isRedoLogsShipped;
+    public Output<Optional<Boolean>> isRedoLogsShipped() {
+        return Codegen.optional(this.isRedoLogsShipped);
     }
     /**
      * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Backup performance and storage utilization metrics for the protected database.
      * 
      */
     @Export(name="metrics", refs={List.class,ProtectedDatabaseMetric.class}, tree="[0,1]")
-    private Output<List<ProtectedDatabaseMetric>> metrics;
+    private Output</* @Nullable */ List<ProtectedDatabaseMetric>> metrics;
 
     /**
      * @return Backup performance and storage utilization metrics for the protected database.
      * 
      */
-    public Output<List<ProtectedDatabaseMetric>> metrics() {
-        return this.metrics;
+    public Output<Optional<List<ProtectedDatabaseMetric>>> metrics() {
+        return Codegen.optional(this.metrics);
     }
     /**
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
@@ -313,70 +314,70 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Protected Database.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      * 
      */
     @Export(name="vpcUserName", refs={String.class}, tree="[0]")
-    private Output<String> vpcUserName;
+    private Output</* @Nullable */ String> vpcUserName;
 
     /**
      * @return The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      * 
      */
-    public Output<String> vpcUserName() {
-        return this.vpcUserName;
+    public Output<Optional<String>> vpcUserName() {
+        return Codegen.optional(this.vpcUserName);
     }
 
     /**

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFunctionProvisionedConcurrencyConfig {
@@ -14,27 +16,27 @@ public final class GetFunctionProvisionedConcurrencyConfig {
      * @return Configuration specifying a constant amount of provisioned concurrency.
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
     /**
      * @return The strategy for provisioned concurrency to be used.
      * 
      */
-    private String strategy;
+    private @Nullable String strategy;
 
     private GetFunctionProvisionedConcurrencyConfig() {}
     /**
      * @return Configuration specifying a constant amount of provisioned concurrency.
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return The strategy for provisioned concurrency to be used.
      * 
      */
-    public String strategy() {
-        return this.strategy;
+    public Optional<String> strategy() {
+        return Optional.ofNullable(this.strategy);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetFunctionProvisionedConcurrencyConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private String strategy;
+        private @Nullable Integer count;
+        private @Nullable String strategy;
         public Builder() {}
         public Builder(GetFunctionProvisionedConcurrencyConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetFunctionProvisionedConcurrencyConfig {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder strategy(String strategy) {
-            this.strategy = Objects.requireNonNull(strategy);
+        public Builder strategy(@Nullable String strategy) {
+            this.strategy = strategy;
             return this;
         }
         public GetFunctionProvisionedConcurrencyConfig build() {

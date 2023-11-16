@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection {
@@ -14,7 +15,7 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
      * @return An array of properties along with their metadata summary.
      * 
      */
-    private List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem> items;
+    private @Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem> items;
 
     private GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
      * 
      */
     public List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem> items;
+        private @Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem... items) {

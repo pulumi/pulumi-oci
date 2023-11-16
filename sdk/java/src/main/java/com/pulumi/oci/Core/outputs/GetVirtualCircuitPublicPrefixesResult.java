@@ -19,7 +19,7 @@ public final class GetVirtualCircuitPublicPrefixesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.
      * 
@@ -30,7 +30,7 @@ public final class GetVirtualCircuitPublicPrefixesResult {
      * @return The list of virtual_circuit_public_prefixes.
      * 
      */
-    private List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes;
+    private @Nullable List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes;
 
     private GetVirtualCircuitPublicPrefixesResult() {}
     public List<GetVirtualCircuitPublicPrefixesFilter> filters() {
@@ -40,8 +40,8 @@ public final class GetVirtualCircuitPublicPrefixesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.
@@ -58,7 +58,7 @@ public final class GetVirtualCircuitPublicPrefixesResult {
      * 
      */
     public List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes() {
-        return this.virtualCircuitPublicPrefixes;
+        return this.virtualCircuitPublicPrefixes == null ? List.of() : this.virtualCircuitPublicPrefixes;
     }
 
     public static Builder builder() {
@@ -71,10 +71,10 @@ public final class GetVirtualCircuitPublicPrefixesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVirtualCircuitPublicPrefixesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String verificationState;
         private String virtualCircuitId;
-        private List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes;
+        private @Nullable List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes;
         public Builder() {}
         public Builder(GetVirtualCircuitPublicPrefixesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,8 +94,8 @@ public final class GetVirtualCircuitPublicPrefixesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -109,8 +109,8 @@ public final class GetVirtualCircuitPublicPrefixesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder virtualCircuitPublicPrefixes(List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes) {
-            this.virtualCircuitPublicPrefixes = Objects.requireNonNull(virtualCircuitPublicPrefixes);
+        public Builder virtualCircuitPublicPrefixes(@Nullable List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes) {
+            this.virtualCircuitPublicPrefixes = virtualCircuitPublicPrefixes;
             return this;
         }
         public Builder virtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix... virtualCircuitPublicPrefixes) {

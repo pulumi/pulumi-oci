@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayRouteTableRouteRuleDestination {
@@ -14,39 +16,39 @@ public final class GetIngressGatewayRouteTableRouteRuleDestination {
      * @return The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The OCID of the virtual service where the request will be routed.
      * 
      */
-    private String virtualServiceId;
+    private @Nullable String virtualServiceId;
     /**
      * @return Weight of traffic target.
      * 
      */
-    private Integer weight;
+    private @Nullable Integer weight;
 
     private GetIngressGatewayRouteTableRouteRuleDestination() {}
     /**
      * @return The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The OCID of the virtual service where the request will be routed.
      * 
      */
-    public String virtualServiceId() {
-        return this.virtualServiceId;
+    public Optional<String> virtualServiceId() {
+        return Optional.ofNullable(this.virtualServiceId);
     }
     /**
      * @return Weight of traffic target.
      * 
      */
-    public Integer weight() {
-        return this.weight;
+    public Optional<Integer> weight() {
+        return Optional.ofNullable(this.weight);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetIngressGatewayRouteTableRouteRuleDestination {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer port;
-        private String virtualServiceId;
-        private Integer weight;
+        private @Nullable Integer port;
+        private @Nullable String virtualServiceId;
+        private @Nullable Integer weight;
         public Builder() {}
         public Builder(GetIngressGatewayRouteTableRouteRuleDestination defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetIngressGatewayRouteTableRouteRuleDestination {
         }
 
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualServiceId(String virtualServiceId) {
-            this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
+        public Builder virtualServiceId(@Nullable String virtualServiceId) {
+            this.virtualServiceId = virtualServiceId;
             return this;
         }
         @CustomType.Setter
-        public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+        public Builder weight(@Nullable Integer weight) {
+            this.weight = weight;
             return this;
         }
         public GetIngressGatewayRouteTableRouteRuleDestination build() {

@@ -20,7 +20,7 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private @Nullable String eulaLink;
     /**
      * @return A filter to return only the listings that matches the given listing id.
@@ -31,7 +31,7 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return Listing resource id.
      * 
      */
-    private String listingResourceId;
+    private @Nullable String listingResourceId;
     /**
      * @return Listing resource version.
      * 
@@ -42,18 +42,18 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return Name of the publisher who published this listing.
      * 
      */
-    private String publisherName;
+    private @Nullable String publisherName;
     private String signature;
     /**
      * @return The short summary to the listing.
      * 
      */
-    private String summary;
+    private @Nullable String summary;
     /**
      * @return Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     private String timeRetrieved;
 
     private GetAppCatalogSubscriptionsAppCatalogSubscription() {}
@@ -68,8 +68,8 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public Optional<String> eulaLink() {
         return Optional.ofNullable(this.eulaLink);
@@ -85,8 +85,8 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return Listing resource id.
      * 
      */
-    public String listingResourceId() {
-        return this.listingResourceId;
+    public Optional<String> listingResourceId() {
+        return Optional.ofNullable(this.listingResourceId);
     }
     /**
      * @return Listing resource version.
@@ -102,8 +102,8 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return Name of the publisher who published this listing.
      * 
      */
-    public String publisherName() {
-        return this.publisherName;
+    public Optional<String> publisherName() {
+        return Optional.ofNullable(this.publisherName);
     }
     public String signature() {
         return this.signature;
@@ -112,15 +112,15 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return The short summary to the listing.
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
     /**
      * @return Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     public String timeRetrieved() {
         return this.timeRetrieved;
@@ -136,16 +136,16 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String displayName;
+        private @Nullable String displayName;
         private @Nullable String eulaLink;
         private String listingId;
-        private String listingResourceId;
+        private @Nullable String listingResourceId;
         private String listingResourceVersion;
         private String oracleTermsOfUseLink;
-        private String publisherName;
+        private @Nullable String publisherName;
         private String signature;
-        private String summary;
-        private String timeCreated;
+        private @Nullable String summary;
+        private @Nullable String timeCreated;
         private String timeRetrieved;
         public Builder() {}
         public Builder(GetAppCatalogSubscriptionsAppCatalogSubscription defaults) {
@@ -170,8 +170,8 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -185,8 +185,8 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
             return this;
         }
         @CustomType.Setter
-        public Builder listingResourceId(String listingResourceId) {
-            this.listingResourceId = Objects.requireNonNull(listingResourceId);
+        public Builder listingResourceId(@Nullable String listingResourceId) {
+            this.listingResourceId = listingResourceId;
             return this;
         }
         @CustomType.Setter
@@ -200,8 +200,8 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
             return this;
         }
         @CustomType.Setter
-        public Builder publisherName(String publisherName) {
-            this.publisherName = Objects.requireNonNull(publisherName);
+        public Builder publisherName(@Nullable String publisherName) {
+            this.publisherName = publisherName;
             return this;
         }
         @CustomType.Setter
@@ -210,13 +210,13 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
             return this;
         }
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter

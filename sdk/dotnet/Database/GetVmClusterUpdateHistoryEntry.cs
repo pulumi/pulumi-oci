@@ -124,57 +124,57 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Descriptive text providing additional details about the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current lifecycle state of the maintenance update operation.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time when the maintenance update action completed.
         /// </summary>
-        public readonly string TimeCompleted;
+        public readonly string? TimeCompleted;
         /// <summary>
         /// The date and time when the maintenance update action started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The update action performed using this maintenance update.
         /// </summary>
-        public readonly string UpdateAction;
+        public readonly string? UpdateAction;
         public readonly string UpdateHistoryEntryId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
         /// </summary>
-        public readonly string UpdateId;
+        public readonly string? UpdateId;
         /// <summary>
         /// The type of VM cluster maintenance update.
         /// </summary>
-        public readonly string UpdateType;
+        public readonly string? UpdateType;
         public readonly string VmClusterId;
 
         [OutputConstructor]
         private GetVmClusterUpdateHistoryEntryResult(
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeCompleted,
+            string? timeCompleted,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string updateAction,
+            string? updateAction,
 
             string updateHistoryEntryId,
 
-            string updateId,
+            string? updateId,
 
-            string updateType,
+            string? updateType,
 
             string vmClusterId)
         {

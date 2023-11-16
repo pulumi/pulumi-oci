@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPackagePricing {
@@ -16,63 +18,63 @@ public final class GetListingPackagePricing {
      * @return The currency of the pricing model.
      * 
      */
-    private String currency;
+    private @Nullable String currency;
     /**
      * @return The model for international market pricing.
      * 
      */
-    private List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices;
+    private @Nullable List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices;
     /**
      * @return The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
      * 
      */
-    private String payGoStrategy;
+    private @Nullable String payGoStrategy;
     /**
      * @return The pricing rate.
      * 
      */
-    private Double rate;
+    private @Nullable Double rate;
     /**
      * @return The type of the pricing model.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetListingPackagePricing() {}
     /**
      * @return The currency of the pricing model.
      * 
      */
-    public String currency() {
-        return this.currency;
+    public Optional<String> currency() {
+        return Optional.ofNullable(this.currency);
     }
     /**
      * @return The model for international market pricing.
      * 
      */
     public List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices() {
-        return this.internationalMarketPrices;
+        return this.internationalMarketPrices == null ? List.of() : this.internationalMarketPrices;
     }
     /**
      * @return The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
      * 
      */
-    public String payGoStrategy() {
-        return this.payGoStrategy;
+    public Optional<String> payGoStrategy() {
+        return Optional.ofNullable(this.payGoStrategy);
     }
     /**
      * @return The pricing rate.
      * 
      */
-    public Double rate() {
-        return this.rate;
+    public Optional<Double> rate() {
+        return Optional.ofNullable(this.rate);
     }
     /**
      * @return The type of the pricing model.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetListingPackagePricing {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String currency;
-        private List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices;
-        private String payGoStrategy;
-        private Double rate;
-        private String type;
+        private @Nullable String currency;
+        private @Nullable List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices;
+        private @Nullable String payGoStrategy;
+        private @Nullable Double rate;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetListingPackagePricing defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetListingPackagePricing {
         }
 
         @CustomType.Setter
-        public Builder currency(String currency) {
-            this.currency = Objects.requireNonNull(currency);
+        public Builder currency(@Nullable String currency) {
+            this.currency = currency;
             return this;
         }
         @CustomType.Setter
-        public Builder internationalMarketPrices(List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices) {
-            this.internationalMarketPrices = Objects.requireNonNull(internationalMarketPrices);
+        public Builder internationalMarketPrices(@Nullable List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices) {
+            this.internationalMarketPrices = internationalMarketPrices;
             return this;
         }
         public Builder internationalMarketPrices(GetListingPackagePricingInternationalMarketPrice... internationalMarketPrices) {
             return internationalMarketPrices(List.of(internationalMarketPrices));
         }
         @CustomType.Setter
-        public Builder payGoStrategy(String payGoStrategy) {
-            this.payGoStrategy = Objects.requireNonNull(payGoStrategy);
+        public Builder payGoStrategy(@Nullable String payGoStrategy) {
+            this.payGoStrategy = payGoStrategy;
             return this;
         }
         @CustomType.Setter
-        public Builder rate(Double rate) {
-            this.rate = Objects.requireNonNull(rate);
+        public Builder rate(@Nullable Double rate) {
+            this.rate = rate;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetListingPackagePricing build() {

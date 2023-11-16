@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +70,7 @@ type GetExternalExadataInfrastructuresResult struct {
 	ExternalExadataInfrastructureCollections []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection `pulumi:"externalExadataInfrastructureCollections"`
 	Filters                                  []GetExternalExadataInfrastructuresFilter                                  `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalExadataInfrastructuresOutput(ctx *pulumi.Context, args GetExternalExadataInfrastructuresOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataInfrastructuresResultOutput {
@@ -115,12 +114,6 @@ func (o GetExternalExadataInfrastructuresResultOutput) ToGetExternalExadataInfra
 	return o
 }
 
-func (o GetExternalExadataInfrastructuresResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataInfrastructuresResult] {
-	return pulumix.Output[GetExternalExadataInfrastructuresResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExternalExadataInfrastructuresResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataInfrastructuresResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -145,8 +138,8 @@ func (o GetExternalExadataInfrastructuresResultOutput) Filters() GetExternalExad
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataInfrastructuresResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataInfrastructuresResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataInfrastructuresResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

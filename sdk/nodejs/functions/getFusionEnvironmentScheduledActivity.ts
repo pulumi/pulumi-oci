@@ -53,15 +53,15 @@ export interface GetFusionEnvironmentScheduledActivityResult {
     /**
      * List of actions
      */
-    readonly actions: outputs.Functions.GetFusionEnvironmentScheduledActivityAction[];
+    readonly actions?: outputs.Functions.GetFusionEnvironmentScheduledActivityAction[];
     /**
      * Cumulative delay hours
      */
-    readonly delayInHours: number;
+    readonly delayInHours?: number;
     /**
      * scheduled activity display name, can be renamed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * FAaaS Environment Identifier.
      */
@@ -69,44 +69,44 @@ export interface GetFusionEnvironmentScheduledActivityResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * run cadence.
      */
-    readonly runCycle: string;
+    readonly runCycle?: string;
     readonly scheduledActivityId: string;
     /**
      * Service availability / impact during scheduled activity execution up down
      */
-    readonly serviceAvailability: string;
+    readonly serviceAvailability?: string;
     /**
      * The current state of the scheduledActivity.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the scheduled activity record was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
      */
-    readonly timeExpectedFinish: string;
+    readonly timeExpectedFinish?: string;
     /**
      * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
      */
-    readonly timeScheduledStart: string;
+    readonly timeScheduledStart?: string;
     /**
      * The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.

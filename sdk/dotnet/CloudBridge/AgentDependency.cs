@@ -69,7 +69,7 @@ namespace Pulumi.Oci.CloudBridge
         /// The checksum associated with the dependency object returned by Object Storage.
         /// </summary>
         [Output("checksum")]
-        public Output<string> Checksum { get; private set; } = null!;
+        public Output<string?> Checksum { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Compartment identifier.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.CloudBridge
         /// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
@@ -93,13 +93,13 @@ namespace Pulumi.Oci.CloudBridge
         /// (Updatable) Version of the Agent dependency.
         /// </summary>
         [Output("dependencyVersion")]
-        public Output<string> DependencyVersion { get; private set; } = null!;
+        public Output<string?> DependencyVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description about the Agent dependency.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Display name of the Agent dependency.
@@ -111,19 +111,19 @@ namespace Pulumi.Oci.CloudBridge
         /// The eTag associated with the dependency object returned by Object Storage.
         /// </summary>
         [Output("eTag")]
-        public Output<string> ETag { get; private set; } = null!;
+        public Output<string?> ETag { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Object storage namespace associated with the customer's tenancy.
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.CloudBridge
         /// The current state of AgentDependency.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
@@ -151,13 +151,13 @@ namespace Pulumi.Oci.CloudBridge
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

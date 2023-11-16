@@ -86,13 +86,13 @@ export interface GetNamespaceEffectivePropertiesResult {
     /**
      * The list of effective_property_collection.
      */
-    readonly effectivePropertyCollections: outputs.LogAnalytics.GetNamespaceEffectivePropertiesEffectivePropertyCollection[];
+    readonly effectivePropertyCollections?: outputs.LogAnalytics.GetNamespaceEffectivePropertiesEffectivePropertyCollection[];
     readonly entityId?: string;
     readonly filters?: outputs.LogAnalytics.GetNamespaceEffectivePropertiesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isIncludePatterns?: boolean;
     /**
      * The property name.

@@ -177,7 +177,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The VLAN's current state.
         /// </summary>
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetVlansFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

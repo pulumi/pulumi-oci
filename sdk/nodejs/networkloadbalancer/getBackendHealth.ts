@@ -61,11 +61,11 @@ export interface GetBackendHealthResult {
     /**
      * A list of the most recent health check results returned for the specified backend server.
      */
-    readonly healthCheckResults: outputs.NetworkLoadBalancer.GetBackendHealthHealthCheckResult[];
+    readonly healthCheckResults?: outputs.NetworkLoadBalancer.GetBackendHealthHealthCheckResult[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkLoadBalancerId: string;
     /**
      * The general health status of the specified backend server.
@@ -75,7 +75,7 @@ export interface GetBackendHealthResult {
      * *   **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
      * *   or the system is unable to retrieve metrics at this time.
      */
-    readonly status: string;
+    readonly status?: string;
 }
 /**
  * This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Network Load Balancer service.

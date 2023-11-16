@@ -57,164 +57,164 @@ export interface GetOpensearchClusterResult {
     /**
      * The availability domains to distribute the cluser nodes across.
      */
-    readonly availabilityDomains: string[];
+    readonly availabilityDomains?: string[];
     /**
      * The OCID of the compartment where the cluster is located.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The number of data nodes configured for the cluster.
      */
-    readonly dataNodeCount: number;
+    readonly dataNodeCount?: number;
     /**
      * The bare metal shape for the cluster's data nodes.
      */
-    readonly dataNodeHostBareMetalShape: string;
+    readonly dataNodeHostBareMetalShape?: string;
     /**
      * The amount of memory in GB, for the cluster's data nodes.
      */
-    readonly dataNodeHostMemoryGb: number;
+    readonly dataNodeHostMemoryGb?: number;
     /**
      * The number of OCPUs configured for the cluster's data nodes.
      */
-    readonly dataNodeHostOcpuCount: number;
+    readonly dataNodeHostOcpuCount?: number;
     /**
      * The instance type for the cluster's data nodes.
      */
-    readonly dataNodeHostType: string;
+    readonly dataNodeHostType?: string;
     /**
      * The amount of storage in GB, to configure per node for the cluster's data nodes.
      */
-    readonly dataNodeStorageGb: number;
+    readonly dataNodeStorageGb?: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The name of the cluster. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    readonly fqdn: string;
+    readonly fqdn?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the cluster.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state of the cluster.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The number of master nodes configured for the cluster.
      */
-    readonly masterNodeCount: number;
+    readonly masterNodeCount?: number;
     /**
      * The bare metal shape for the cluster's master nodes.
      */
-    readonly masterNodeHostBareMetalShape: string;
+    readonly masterNodeHostBareMetalShape?: string;
     /**
      * The amount of memory in GB, for the cluster's master nodes.
      */
-    readonly masterNodeHostMemoryGb: number;
+    readonly masterNodeHostMemoryGb?: number;
     /**
      * The number of OCPUs configured for cluster's master nodes.
      */
-    readonly masterNodeHostOcpuCount: number;
+    readonly masterNodeHostOcpuCount?: number;
     /**
      * The instance type for the cluster's master nodes.
      */
-    readonly masterNodeHostType: string;
+    readonly masterNodeHostType?: string;
     /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
-    readonly opendashboardFqdn: string;
+    readonly opendashboardFqdn?: string;
     /**
      * The number of OpenSearch Dashboard nodes configured for the cluster.
      */
-    readonly opendashboardNodeCount: number;
+    readonly opendashboardNodeCount?: number;
     /**
      * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
      */
-    readonly opendashboardNodeHostMemoryGb: number;
+    readonly opendashboardNodeHostMemoryGb?: number;
     /**
      * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
      */
-    readonly opendashboardNodeHostOcpuCount: number;
+    readonly opendashboardNodeHostOcpuCount?: number;
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
      */
-    readonly opendashboardPrivateIp: string;
+    readonly opendashboardPrivateIp?: string;
     readonly opensearchClusterId: string;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    readonly opensearchFqdn: string;
+    readonly opensearchFqdn?: string;
     /**
      * The cluster's private IP address.
      */
-    readonly opensearchPrivateIp: string;
+    readonly opensearchPrivateIp?: string;
     /**
      * The name of the master user that are used to manage security config
      */
-    readonly securityMasterUserName: string;
+    readonly securityMasterUserName?: string;
     /**
      * The password hash of the master user that are used to manage security config
      */
-    readonly securityMasterUserPasswordHash: string;
+    readonly securityMasterUserPasswordHash?: string;
     /**
      * The security mode of the cluster.
      */
-    readonly securityMode: string;
+    readonly securityMode?: string;
     /**
      * The software version the cluster is running.
      */
-    readonly softwareVersion: string;
+    readonly softwareVersion?: string;
     /**
      * The current state of the cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID for the compartment where the cluster's subnet is located.
      */
-    readonly subnetCompartmentId: string;
+    readonly subnetCompartmentId?: string;
     /**
      * The OCID of the cluster's subnet.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The amount of time in milliseconds since the cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    readonly timeDeleted: string;
+    readonly timeDeleted?: string;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The size in GB of the cluster's total storage.
      */
-    readonly totalStorageGb: number;
+    readonly totalStorageGb?: number;
     /**
      * The OCID for the compartment where the cluster's VCN is located.
      */
-    readonly vcnCompartmentId: string;
+    readonly vcnCompartmentId?: string;
     /**
      * The OCID of the cluster's VCN.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
 }
 /**
  * This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.

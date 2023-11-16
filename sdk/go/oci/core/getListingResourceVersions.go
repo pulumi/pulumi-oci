@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetListingResourceVersions(ctx *pulumi.Context, args *GetListingResourceVersionsArgs, opts ...pulumi.InvokeOption) (*GetListingResourceVersionsResult, error) {
@@ -33,8 +32,8 @@ type GetListingResourceVersionsResult struct {
 	AppCatalogListingResourceVersions []GetListingResourceVersionsAppCatalogListingResourceVersion `pulumi:"appCatalogListingResourceVersions"`
 	Filters                           []GetListingResourceVersionsFilter                           `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	ListingId string `pulumi:"listingId"`
+	Id        *string `pulumi:"id"`
+	ListingId string  `pulumi:"listingId"`
 }
 
 func GetListingResourceVersionsOutput(ctx *pulumi.Context, args GetListingResourceVersionsOutputArgs, opts ...pulumi.InvokeOption) GetListingResourceVersionsResultOutput {
@@ -75,12 +74,6 @@ func (o GetListingResourceVersionsResultOutput) ToGetListingResourceVersionsResu
 	return o
 }
 
-func (o GetListingResourceVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingResourceVersionsResult] {
-	return pulumix.Output[GetListingResourceVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListingResourceVersionsResultOutput) AppCatalogListingResourceVersions() GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput {
 	return o.ApplyT(func(v GetListingResourceVersionsResult) []GetListingResourceVersionsAppCatalogListingResourceVersion {
 		return v.AppCatalogListingResourceVersions
@@ -92,8 +85,8 @@ func (o GetListingResourceVersionsResultOutput) Filters() GetListingResourceVers
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListingResourceVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResourceVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListingResourceVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetListingResourceVersionsResultOutput) ListingId() pulumi.StringOutput {

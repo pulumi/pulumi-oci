@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
@@ -61,12 +60,12 @@ type GetInstanceCredentialsArgs struct {
 // A collection of values returned by getInstanceCredentials.
 type GetInstanceCredentialsResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	InstanceId string `pulumi:"instanceId"`
+	Id         *string `pulumi:"id"`
+	InstanceId string  `pulumi:"instanceId"`
 	// The password for the username.
-	Password string `pulumi:"password"`
+	Password *string `pulumi:"password"`
 	// The username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 func GetInstanceCredentialsOutput(ctx *pulumi.Context, args GetInstanceCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetInstanceCredentialsResultOutput {
@@ -107,15 +106,9 @@ func (o GetInstanceCredentialsResultOutput) ToGetInstanceCredentialsResultOutput
 	return o
 }
 
-func (o GetInstanceCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceCredentialsResult] {
-	return pulumix.Output[GetInstanceCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstanceCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstanceCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInstanceCredentialsResultOutput) InstanceId() pulumi.StringOutput {
@@ -123,13 +116,13 @@ func (o GetInstanceCredentialsResultOutput) InstanceId() pulumi.StringOutput {
 }
 
 // The password for the username.
-func (o GetInstanceCredentialsResultOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceCredentialsResult) string { return v.Password }).(pulumi.StringOutput)
+func (o GetInstanceCredentialsResultOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceCredentialsResult) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The username.
-func (o GetInstanceCredentialsResultOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceCredentialsResult) string { return v.Username }).(pulumi.StringOutput)
+func (o GetInstanceCredentialsResultOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceCredentialsResult) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 func init() {

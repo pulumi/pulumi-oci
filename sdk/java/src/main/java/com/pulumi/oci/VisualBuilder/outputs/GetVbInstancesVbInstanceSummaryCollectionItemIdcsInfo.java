@@ -6,6 +6,8 @@ package com.pulumi.oci.VisualBuilder.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
@@ -13,63 +15,63 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
      * @return The IDCS application display name associated with the instance
      * 
      */
-    private String idcsAppDisplayName;
+    private @Nullable String idcsAppDisplayName;
     /**
      * @return The IDCS application ID associated with the instance
      * 
      */
-    private String idcsAppId;
+    private @Nullable String idcsAppId;
     /**
      * @return URL for the location of the IDCS Application (used by IDCS APIs)
      * 
      */
-    private String idcsAppLocationUrl;
+    private @Nullable String idcsAppLocationUrl;
     /**
      * @return The IDCS application name associated with the instance
      * 
      */
-    private String idcsAppName;
+    private @Nullable String idcsAppName;
     /**
      * @return The URL used as the primary audience for visual builder flows in this instance type: string
      * 
      */
-    private String instancePrimaryAudienceUrl;
+    private @Nullable String instancePrimaryAudienceUrl;
 
     private GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo() {}
     /**
      * @return The IDCS application display name associated with the instance
      * 
      */
-    public String idcsAppDisplayName() {
-        return this.idcsAppDisplayName;
+    public Optional<String> idcsAppDisplayName() {
+        return Optional.ofNullable(this.idcsAppDisplayName);
     }
     /**
      * @return The IDCS application ID associated with the instance
      * 
      */
-    public String idcsAppId() {
-        return this.idcsAppId;
+    public Optional<String> idcsAppId() {
+        return Optional.ofNullable(this.idcsAppId);
     }
     /**
      * @return URL for the location of the IDCS Application (used by IDCS APIs)
      * 
      */
-    public String idcsAppLocationUrl() {
-        return this.idcsAppLocationUrl;
+    public Optional<String> idcsAppLocationUrl() {
+        return Optional.ofNullable(this.idcsAppLocationUrl);
     }
     /**
      * @return The IDCS application name associated with the instance
      * 
      */
-    public String idcsAppName() {
-        return this.idcsAppName;
+    public Optional<String> idcsAppName() {
+        return Optional.ofNullable(this.idcsAppName);
     }
     /**
      * @return The URL used as the primary audience for visual builder flows in this instance type: string
      * 
      */
-    public String instancePrimaryAudienceUrl() {
-        return this.instancePrimaryAudienceUrl;
+    public Optional<String> instancePrimaryAudienceUrl() {
+        return Optional.ofNullable(this.instancePrimaryAudienceUrl);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String idcsAppDisplayName;
-        private String idcsAppId;
-        private String idcsAppLocationUrl;
-        private String idcsAppName;
-        private String instancePrimaryAudienceUrl;
+        private @Nullable String idcsAppDisplayName;
+        private @Nullable String idcsAppId;
+        private @Nullable String idcsAppLocationUrl;
+        private @Nullable String idcsAppName;
+        private @Nullable String instancePrimaryAudienceUrl;
         public Builder() {}
         public Builder(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
         }
 
         @CustomType.Setter
-        public Builder idcsAppDisplayName(String idcsAppDisplayName) {
-            this.idcsAppDisplayName = Objects.requireNonNull(idcsAppDisplayName);
+        public Builder idcsAppDisplayName(@Nullable String idcsAppDisplayName) {
+            this.idcsAppDisplayName = idcsAppDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAppId(String idcsAppId) {
-            this.idcsAppId = Objects.requireNonNull(idcsAppId);
+        public Builder idcsAppId(@Nullable String idcsAppId) {
+            this.idcsAppId = idcsAppId;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAppLocationUrl(String idcsAppLocationUrl) {
-            this.idcsAppLocationUrl = Objects.requireNonNull(idcsAppLocationUrl);
+        public Builder idcsAppLocationUrl(@Nullable String idcsAppLocationUrl) {
+            this.idcsAppLocationUrl = idcsAppLocationUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAppName(String idcsAppName) {
-            this.idcsAppName = Objects.requireNonNull(idcsAppName);
+        public Builder idcsAppName(@Nullable String idcsAppName) {
+            this.idcsAppName = idcsAppName;
             return this;
         }
         @CustomType.Setter
-        public Builder instancePrimaryAudienceUrl(String instancePrimaryAudienceUrl) {
-            this.instancePrimaryAudienceUrl = Objects.requireNonNull(instancePrimaryAudienceUrl);
+        public Builder instancePrimaryAudienceUrl(@Nullable String instancePrimaryAudienceUrl) {
+            this.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
             return this;
         }
         public GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo build() {

@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlEndpointsSqlEndpointCollectionItem {
@@ -20,303 +22,303 @@ public final class GetSqlEndpointsSqlEndpointCollectionItem {
      * @return The OCID of the compartment in which to query resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the SQL Endpoint.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The query parameter for the Spark application name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The shape of the SQL Endpoint driver instance.
      * 
      */
-    private String driverShape;
+    private @Nullable String driverShape;
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    private List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs;
+    private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs;
     /**
      * @return The shape of the SQL Endpoint executor instance.
      * 
      */
-    private String executorShape;
+    private @Nullable String executorShape;
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    private List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs;
+    private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The provision identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      * 
      */
-    private String jdbcEndpointUrl;
+    private @Nullable String jdbcEndpointUrl;
     /**
      * @return The OCID of Oracle Cloud Infrastructure Lake.
      * 
      */
-    private String lakeId;
+    private @Nullable String lakeId;
     /**
      * @return This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      * 
      */
-    private String lastAcceptedRequestToken;
+    private @Nullable String lastAcceptedRequestToken;
     /**
      * @return The maximum number of executors.
      * 
      */
-    private Integer maxExecutorCount;
+    private @Nullable Integer maxExecutorCount;
     /**
      * @return The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
-    private String metastoreId;
+    private @Nullable String metastoreId;
     /**
      * @return The minimum number of executors.
      * 
      */
-    private Integer minExecutorCount;
+    private @Nullable Integer minExecutorCount;
     /**
      * @return The network configuration of a SQL Endpoint.
      * 
      */
-    private List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations;
+    private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations;
     /**
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    private Map<String,Object> sparkAdvancedConfigurations;
+    private @Nullable Map<String,Object> sparkAdvancedConfigurations;
     /**
      * @return The version of SQL Endpoint.
      * 
      */
-    private String sqlEndpointVersion;
+    private @Nullable String sqlEndpointVersion;
     /**
      * @return A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A message describing the reason why the resource is in it&#39;s current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      * 
      */
-    private String stateMessage;
+    private @Nullable String stateMessage;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      * 
      */
-    private String warehouseBucketUri;
+    private @Nullable String warehouseBucketUri;
 
     private GetSqlEndpointsSqlEndpointCollectionItem() {}
     /**
      * @return The OCID of the compartment in which to query resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the SQL Endpoint.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The query parameter for the Spark application name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The shape of the SQL Endpoint driver instance.
      * 
      */
-    public String driverShape() {
-        return this.driverShape;
+    public Optional<String> driverShape() {
+        return Optional.ofNullable(this.driverShape);
     }
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
     public List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs() {
-        return this.driverShapeConfigs;
+        return this.driverShapeConfigs == null ? List.of() : this.driverShapeConfigs;
     }
     /**
      * @return The shape of the SQL Endpoint executor instance.
      * 
      */
-    public String executorShape() {
-        return this.executorShape;
+    public Optional<String> executorShape() {
+        return Optional.ofNullable(this.executorShape);
     }
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
     public List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs() {
-        return this.executorShapeConfigs;
+        return this.executorShapeConfigs == null ? List.of() : this.executorShapeConfigs;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The provision identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      * 
      */
-    public String jdbcEndpointUrl() {
-        return this.jdbcEndpointUrl;
+    public Optional<String> jdbcEndpointUrl() {
+        return Optional.ofNullable(this.jdbcEndpointUrl);
     }
     /**
      * @return The OCID of Oracle Cloud Infrastructure Lake.
      * 
      */
-    public String lakeId() {
-        return this.lakeId;
+    public Optional<String> lakeId() {
+        return Optional.ofNullable(this.lakeId);
     }
     /**
      * @return This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      * 
      */
-    public String lastAcceptedRequestToken() {
-        return this.lastAcceptedRequestToken;
+    public Optional<String> lastAcceptedRequestToken() {
+        return Optional.ofNullable(this.lastAcceptedRequestToken);
     }
     /**
      * @return The maximum number of executors.
      * 
      */
-    public Integer maxExecutorCount() {
-        return this.maxExecutorCount;
+    public Optional<Integer> maxExecutorCount() {
+        return Optional.ofNullable(this.maxExecutorCount);
     }
     /**
      * @return The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
-    public String metastoreId() {
-        return this.metastoreId;
+    public Optional<String> metastoreId() {
+        return Optional.ofNullable(this.metastoreId);
     }
     /**
      * @return The minimum number of executors.
      * 
      */
-    public Integer minExecutorCount() {
-        return this.minExecutorCount;
+    public Optional<Integer> minExecutorCount() {
+        return Optional.ofNullable(this.minExecutorCount);
     }
     /**
      * @return The network configuration of a SQL Endpoint.
      * 
      */
     public List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations() {
-        return this.networkConfigurations;
+        return this.networkConfigurations == null ? List.of() : this.networkConfigurations;
     }
     /**
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     public Map<String,Object> sparkAdvancedConfigurations() {
-        return this.sparkAdvancedConfigurations;
+        return this.sparkAdvancedConfigurations == null ? Map.of() : this.sparkAdvancedConfigurations;
     }
     /**
      * @return The version of SQL Endpoint.
      * 
      */
-    public String sqlEndpointVersion() {
-        return this.sqlEndpointVersion;
+    public Optional<String> sqlEndpointVersion() {
+        return Optional.ofNullable(this.sqlEndpointVersion);
     }
     /**
      * @return A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A message describing the reason why the resource is in it&#39;s current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      * 
      */
-    public String stateMessage() {
-        return this.stateMessage;
+    public Optional<String> stateMessage() {
+        return Optional.ofNullable(this.stateMessage);
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      * 
      */
-    public String warehouseBucketUri() {
-        return this.warehouseBucketUri;
+    public Optional<String> warehouseBucketUri() {
+        return Optional.ofNullable(this.warehouseBucketUri);
     }
 
     public static Builder builder() {
@@ -328,31 +330,31 @@ public final class GetSqlEndpointsSqlEndpointCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private String driverShape;
-        private List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs;
-        private String executorShape;
-        private List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String jdbcEndpointUrl;
-        private String lakeId;
-        private String lastAcceptedRequestToken;
-        private Integer maxExecutorCount;
-        private String metastoreId;
-        private Integer minExecutorCount;
-        private List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations;
-        private Map<String,Object> sparkAdvancedConfigurations;
-        private String sqlEndpointVersion;
-        private String state;
-        private String stateMessage;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private String warehouseBucketUri;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String driverShape;
+        private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs;
+        private @Nullable String executorShape;
+        private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String jdbcEndpointUrl;
+        private @Nullable String lakeId;
+        private @Nullable String lastAcceptedRequestToken;
+        private @Nullable Integer maxExecutorCount;
+        private @Nullable String metastoreId;
+        private @Nullable Integer minExecutorCount;
+        private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations;
+        private @Nullable Map<String,Object> sparkAdvancedConfigurations;
+        private @Nullable String sqlEndpointVersion;
+        private @Nullable String state;
+        private @Nullable String stateMessage;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String warehouseBucketUri;
         public Builder() {}
         public Builder(GetSqlEndpointsSqlEndpointCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -384,137 +386,137 @@ public final class GetSqlEndpointsSqlEndpointCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder driverShape(String driverShape) {
-            this.driverShape = Objects.requireNonNull(driverShape);
+        public Builder driverShape(@Nullable String driverShape) {
+            this.driverShape = driverShape;
             return this;
         }
         @CustomType.Setter
-        public Builder driverShapeConfigs(List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs) {
-            this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
+        public Builder driverShapeConfigs(@Nullable List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs) {
+            this.driverShapeConfigs = driverShapeConfigs;
             return this;
         }
         public Builder driverShapeConfigs(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig... driverShapeConfigs) {
             return driverShapeConfigs(List.of(driverShapeConfigs));
         }
         @CustomType.Setter
-        public Builder executorShape(String executorShape) {
-            this.executorShape = Objects.requireNonNull(executorShape);
+        public Builder executorShape(@Nullable String executorShape) {
+            this.executorShape = executorShape;
             return this;
         }
         @CustomType.Setter
-        public Builder executorShapeConfigs(List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs) {
-            this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
+        public Builder executorShapeConfigs(@Nullable List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs) {
+            this.executorShapeConfigs = executorShapeConfigs;
             return this;
         }
         public Builder executorShapeConfigs(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig... executorShapeConfigs) {
             return executorShapeConfigs(List.of(executorShapeConfigs));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder jdbcEndpointUrl(String jdbcEndpointUrl) {
-            this.jdbcEndpointUrl = Objects.requireNonNull(jdbcEndpointUrl);
+        public Builder jdbcEndpointUrl(@Nullable String jdbcEndpointUrl) {
+            this.jdbcEndpointUrl = jdbcEndpointUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder lakeId(String lakeId) {
-            this.lakeId = Objects.requireNonNull(lakeId);
+        public Builder lakeId(@Nullable String lakeId) {
+            this.lakeId = lakeId;
             return this;
         }
         @CustomType.Setter
-        public Builder lastAcceptedRequestToken(String lastAcceptedRequestToken) {
-            this.lastAcceptedRequestToken = Objects.requireNonNull(lastAcceptedRequestToken);
+        public Builder lastAcceptedRequestToken(@Nullable String lastAcceptedRequestToken) {
+            this.lastAcceptedRequestToken = lastAcceptedRequestToken;
             return this;
         }
         @CustomType.Setter
-        public Builder maxExecutorCount(Integer maxExecutorCount) {
-            this.maxExecutorCount = Objects.requireNonNull(maxExecutorCount);
+        public Builder maxExecutorCount(@Nullable Integer maxExecutorCount) {
+            this.maxExecutorCount = maxExecutorCount;
             return this;
         }
         @CustomType.Setter
-        public Builder metastoreId(String metastoreId) {
-            this.metastoreId = Objects.requireNonNull(metastoreId);
+        public Builder metastoreId(@Nullable String metastoreId) {
+            this.metastoreId = metastoreId;
             return this;
         }
         @CustomType.Setter
-        public Builder minExecutorCount(Integer minExecutorCount) {
-            this.minExecutorCount = Objects.requireNonNull(minExecutorCount);
+        public Builder minExecutorCount(@Nullable Integer minExecutorCount) {
+            this.minExecutorCount = minExecutorCount;
             return this;
         }
         @CustomType.Setter
-        public Builder networkConfigurations(List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+        public Builder networkConfigurations(@Nullable List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations) {
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration... networkConfigurations) {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
-        public Builder sparkAdvancedConfigurations(Map<String,Object> sparkAdvancedConfigurations) {
-            this.sparkAdvancedConfigurations = Objects.requireNonNull(sparkAdvancedConfigurations);
+        public Builder sparkAdvancedConfigurations(@Nullable Map<String,Object> sparkAdvancedConfigurations) {
+            this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlEndpointVersion(String sqlEndpointVersion) {
-            this.sqlEndpointVersion = Objects.requireNonNull(sqlEndpointVersion);
+        public Builder sqlEndpointVersion(@Nullable String sqlEndpointVersion) {
+            this.sqlEndpointVersion = sqlEndpointVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+        public Builder stateMessage(@Nullable String stateMessage) {
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder warehouseBucketUri(String warehouseBucketUri) {
-            this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
+        public Builder warehouseBucketUri(@Nullable String warehouseBucketUri) {
+            this.warehouseBucketUri = warehouseBucketUri;
             return this;
         }
         public GetSqlEndpointsSqlEndpointCollectionItem build() {

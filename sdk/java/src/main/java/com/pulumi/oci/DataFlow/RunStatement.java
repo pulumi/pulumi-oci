@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -82,28 +83,28 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="outputs", refs={List.class,RunStatementOutput.class}, tree="[0,1]")
-    private Output<List<RunStatementOutput>> outputs;
+    private Output</* @Nullable */ List<RunStatementOutput>> outputs;
 
     /**
      * @return The execution output of a statement.
      * 
      */
-    public Output<List<RunStatementOutput>> outputs() {
-        return this.outputs;
+    public Output<Optional<List<RunStatementOutput>>> outputs() {
+        return Codegen.optional(this.outputs);
     }
     /**
      * The execution progress.
      * 
      */
     @Export(name="progress", refs={Double.class}, tree="[0]")
-    private Output<Double> progress;
+    private Output</* @Nullable */ Double> progress;
 
     /**
      * @return The execution progress.
      * 
      */
-    public Output<Double> progress() {
-        return this.progress;
+    public Output<Optional<Double>> progress() {
+        return Codegen.optional(this.progress);
     }
     /**
      * The unique ID for the run
@@ -130,42 +131,42 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of this statement.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      * 
      */
     @Export(name="timeCompleted", refs={String.class}, tree="[0]")
-    private Output<String> timeCompleted;
+    private Output</* @Nullable */ String> timeCompleted;
 
     /**
      * @return The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCompleted() {
-        return this.timeCompleted;
+    public Output<Optional<String>> timeCompleted() {
+        return Codegen.optional(this.timeCompleted);
     }
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

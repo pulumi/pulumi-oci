@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,140 +85,140 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="branchCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> branchCount;
+    private Output</* @Nullable */ Integer> branchCount;
 
     /**
      * @return The count of the branches present in the repository.
      * 
      */
-    public Output<Integer> branchCount() {
-        return this.branchCount;
+    public Output<Optional<Integer>> branchCount() {
+        return Codegen.optional(this.branchCount);
     }
     /**
      * The count of the commits present in the repository.
      * 
      */
     @Export(name="commitCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> commitCount;
+    private Output</* @Nullable */ Integer> commitCount;
 
     /**
      * @return The count of the commits present in the repository.
      * 
      */
-    public Output<Integer> commitCount() {
-        return this.commitCount;
+    public Output<Optional<Integer>> commitCount() {
+        return Codegen.optional(this.commitCount);
     }
     /**
      * The OCID of the repository&#39;s compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the repository&#39;s compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) The default branch of the repository.
      * 
      */
     @Export(name="defaultBranch", refs={String.class}, tree="[0]")
-    private Output<String> defaultBranch;
+    private Output</* @Nullable */ String> defaultBranch;
 
     /**
      * @return (Updatable) The default branch of the repository.
      * 
      */
-    public Output<String> defaultBranch() {
-        return this.defaultBranch;
+    public Output<Optional<String>> defaultBranch() {
+        return Codegen.optional(this.defaultBranch);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Details of the repository. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Details of the repository. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * HTTP URL that you use to git clone, pull and push.
      * 
      */
     @Export(name="httpUrl", refs={String.class}, tree="[0]")
-    private Output<String> httpUrl;
+    private Output</* @Nullable */ String> httpUrl;
 
     /**
      * @return HTTP URL that you use to git clone, pull and push.
      * 
      */
-    public Output<String> httpUrl() {
-        return this.httpUrl;
+    public Output<Optional<String>> httpUrl() {
+        return Codegen.optional(this.httpUrl);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecyleDetails;
+    private Output</* @Nullable */ String> lifecyleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecyleDetails() {
-        return this.lifecyleDetails;
+    public Output<Optional<String>> lifecyleDetails() {
+        return Codegen.optional(this.lifecyleDetails);
     }
     /**
      * (Updatable) Configuration information for mirroring the repository.
      * 
      */
     @Export(name="mirrorRepositoryConfig", refs={RepositoryMirrorRepositoryConfig.class}, tree="[0]")
-    private Output<RepositoryMirrorRepositoryConfig> mirrorRepositoryConfig;
+    private Output</* @Nullable */ RepositoryMirrorRepositoryConfig> mirrorRepositoryConfig;
 
     /**
      * @return (Updatable) Configuration information for mirroring the repository.
      * 
      */
-    public Output<RepositoryMirrorRepositoryConfig> mirrorRepositoryConfig() {
-        return this.mirrorRepositoryConfig;
+    public Output<Optional<RepositoryMirrorRepositoryConfig>> mirrorRepositoryConfig() {
+        return Codegen.optional(this.mirrorRepositoryConfig);
     }
     /**
      * (Updatable) Unique name of a repository.
@@ -238,14 +239,14 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
-    private Output<String> namespace;
+    private Output</* @Nullable */ String> namespace;
 
     /**
      * @return Tenancy unique namespace.
      * 
      */
-    public Output<String> namespace() {
-        return this.namespace;
+    public Output<Optional<String>> namespace() {
+        return Codegen.optional(this.namespace);
     }
     /**
      * The OCID of the DevOps project containing the repository.
@@ -266,14 +267,14 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
-    private Output<String> projectName;
+    private Output</* @Nullable */ String> projectName;
 
     /**
      * @return Unique project name in a namespace.
      * 
      */
-    public Output<String> projectName() {
-        return this.projectName;
+    public Output<Optional<String>> projectName() {
+        return Codegen.optional(this.projectName);
     }
     /**
      * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
@@ -300,98 +301,98 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sizeInBytes", refs={String.class}, tree="[0]")
-    private Output<String> sizeInBytes;
+    private Output</* @Nullable */ String> sizeInBytes;
 
     /**
      * @return The size of the repository in bytes.
      * 
      */
-    public Output<String> sizeInBytes() {
-        return this.sizeInBytes;
+    public Output<Optional<String>> sizeInBytes() {
+        return Codegen.optional(this.sizeInBytes);
     }
     /**
      * SSH URL that you use to git clone, pull and push.
      * 
      */
     @Export(name="sshUrl", refs={String.class}, tree="[0]")
-    private Output<String> sshUrl;
+    private Output</* @Nullable */ String> sshUrl;
 
     /**
      * @return SSH URL that you use to git clone, pull and push.
      * 
      */
-    public Output<String> sshUrl() {
-        return this.sshUrl;
+    public Output<Optional<String>> sshUrl() {
+        return Codegen.optional(this.sshUrl);
     }
     /**
      * The current state of the repository.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the repository.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     @Export(name="triggerBuildEvents", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> triggerBuildEvents;
+    private Output</* @Nullable */ List<String>> triggerBuildEvents;
 
     /**
      * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
-    public Output<List<String>> triggerBuildEvents() {
-        return this.triggerBuildEvents;
+    public Output<Optional<List<String>>> triggerBuildEvents() {
+        return Codegen.optional(this.triggerBuildEvents);
     }
 
     /**

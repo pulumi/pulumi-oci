@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute {
@@ -13,51 +15,51 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
      * @return Indicates the filter types that are supported for the Group assertion attributes.
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return Indicates the format of the assertion attribute.
      * 
      */
-    private String format;
+    private @Nullable String format;
     /**
      * @return Indicates the group name that are supported for the group assertion attributes.
      * 
      */
-    private String groupName;
+    private @Nullable String groupName;
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute() {}
     /**
      * @return Indicates the filter types that are supported for the Group assertion attributes.
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return Indicates the format of the assertion attribute.
      * 
      */
-    public String format() {
-        return this.format;
+    public Optional<String> format() {
+        return Optional.ofNullable(this.format);
     }
     /**
      * @return Indicates the group name that are supported for the group assertion attributes.
      * 
      */
-    public String groupName() {
-        return this.groupName;
+    public Optional<String> groupName() {
+        return Optional.ofNullable(this.groupName);
     }
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
     }
     @CustomType.Builder
     public static final class Builder {
-        private String condition;
-        private String format;
-        private String groupName;
-        private String name;
+        private @Nullable String condition;
+        private @Nullable String format;
+        private @Nullable String groupName;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
         }
 
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+        public Builder format(@Nullable String format) {
+            this.format = format;
             return this;
         }
         @CustomType.Setter
-        public Builder groupName(String groupName) {
-            this.groupName = Objects.requireNonNull(groupName);
+        public Builder groupName(@Nullable String groupName) {
+            this.groupName = groupName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute build() {

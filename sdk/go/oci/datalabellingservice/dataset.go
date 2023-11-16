@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -111,32 +110,32 @@ type Dataset struct {
 	// (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user provided description of the dataset
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
-	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationOutput `pulumi:"initialImportDatasetConfiguration"`
+	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationPtrOutput `pulumi:"initialImportDatasetConfiguration"`
 	// The initial generate records configuration. It generates records from the dataset's source.
-	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationOutput `pulumi:"initialRecordGenerationConfiguration"`
+	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationPtrOutput `pulumi:"initialRecordGenerationConfiguration"`
 	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSetOutput `pulumi:"labelSet"`
 	// (Updatable) The labeling instructions for human labelers in rich text format
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	LabelingInstructions pulumi.StringOutput `pulumi:"labelingInstructions"`
+	LabelingInstructions pulumi.StringPtrOutput `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
-	LifecycleSubstate pulumi.StringOutput `pulumi:"lifecycleSubstate"`
+	LifecycleSubstate pulumi.StringPtrOutput `pulumi:"lifecycleSubstate"`
 	// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the timestamp format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDataset registers a new resource with the given unique name, arguments, and options.
@@ -355,12 +354,6 @@ func (i *Dataset) ToDatasetOutputWithContext(ctx context.Context) DatasetOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetOutput)
 }
 
-func (i *Dataset) ToOutput(ctx context.Context) pulumix.Output[*Dataset] {
-	return pulumix.Output[*Dataset]{
-		OutputState: i.ToDatasetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatasetArrayInput is an input type that accepts DatasetArray and DatasetArrayOutput values.
 // You can construct a concrete instance of `DatasetArrayInput` via:
 //
@@ -384,12 +377,6 @@ func (i DatasetArray) ToDatasetArrayOutput() DatasetArrayOutput {
 
 func (i DatasetArray) ToDatasetArrayOutputWithContext(ctx context.Context) DatasetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetArrayOutput)
-}
-
-func (i DatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]*Dataset] {
-	return pulumix.Output[[]*Dataset]{
-		OutputState: i.ToDatasetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatasetMapInput is an input type that accepts DatasetMap and DatasetMapOutput values.
@@ -417,12 +404,6 @@ func (i DatasetMap) ToDatasetMapOutputWithContext(ctx context.Context) DatasetMa
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetMapOutput)
 }
 
-func (i DatasetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Dataset] {
-	return pulumix.Output[map[string]*Dataset]{
-		OutputState: i.ToDatasetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetOutput struct{ *pulumi.OutputState }
 
 func (DatasetOutput) ElementType() reflect.Type {
@@ -435,12 +416,6 @@ func (o DatasetOutput) ToDatasetOutput() DatasetOutput {
 
 func (o DatasetOutput) ToDatasetOutputWithContext(ctx context.Context) DatasetOutput {
 	return o
-}
-
-func (o DatasetOutput) ToOutput(ctx context.Context) pulumix.Output[*Dataset] {
-	return pulumix.Output[*Dataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
@@ -474,13 +449,13 @@ func (o DatasetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user provided description of the dataset
-func (o DatasetOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DatasetOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource.
-func (o DatasetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DatasetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
@@ -489,17 +464,17 @@ func (o DatasetOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Initial import dataset configuration. Allows user to create dataset from existing dataset files.
-func (o DatasetOutput) InitialImportDatasetConfiguration() DatasetInitialImportDatasetConfigurationOutput {
-	return o.ApplyT(func(v *Dataset) DatasetInitialImportDatasetConfigurationOutput {
+func (o DatasetOutput) InitialImportDatasetConfiguration() DatasetInitialImportDatasetConfigurationPtrOutput {
+	return o.ApplyT(func(v *Dataset) DatasetInitialImportDatasetConfigurationPtrOutput {
 		return v.InitialImportDatasetConfiguration
-	}).(DatasetInitialImportDatasetConfigurationOutput)
+	}).(DatasetInitialImportDatasetConfigurationPtrOutput)
 }
 
 // The initial generate records configuration. It generates records from the dataset's source.
-func (o DatasetOutput) InitialRecordGenerationConfiguration() DatasetInitialRecordGenerationConfigurationOutput {
-	return o.ApplyT(func(v *Dataset) DatasetInitialRecordGenerationConfigurationOutput {
+func (o DatasetOutput) InitialRecordGenerationConfiguration() DatasetInitialRecordGenerationConfigurationPtrOutput {
+	return o.ApplyT(func(v *Dataset) DatasetInitialRecordGenerationConfigurationPtrOutput {
 		return v.InitialRecordGenerationConfiguration
-	}).(DatasetInitialRecordGenerationConfigurationOutput)
+	}).(DatasetInitialRecordGenerationConfigurationPtrOutput)
 }
 
 // An ordered collection of labels that are unique by name.
@@ -511,33 +486,33 @@ func (o DatasetOutput) LabelSet() DatasetLabelSetOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DatasetOutput) LabelingInstructions() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.LabelingInstructions }).(pulumi.StringOutput)
+func (o DatasetOutput) LabelingInstructions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.LabelingInstructions }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-func (o DatasetOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DatasetOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
-func (o DatasetOutput) LifecycleSubstate() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.LifecycleSubstate }).(pulumi.StringOutput)
+func (o DatasetOutput) LifecycleSubstate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.LifecycleSubstate }).(pulumi.StringPtrOutput)
 }
 
 // The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
-func (o DatasetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DatasetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the timestamp format defined by RFC3339.
-func (o DatasetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DatasetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the timestamp format defined by RFC3339.
-func (o DatasetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DatasetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DatasetArrayOutput struct{ *pulumi.OutputState }
@@ -552,12 +527,6 @@ func (o DatasetArrayOutput) ToDatasetArrayOutput() DatasetArrayOutput {
 
 func (o DatasetArrayOutput) ToDatasetArrayOutputWithContext(ctx context.Context) DatasetArrayOutput {
 	return o
-}
-
-func (o DatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Dataset] {
-	return pulumix.Output[[]*Dataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetArrayOutput) Index(i pulumi.IntInput) DatasetOutput {
@@ -578,12 +547,6 @@ func (o DatasetMapOutput) ToDatasetMapOutput() DatasetMapOutput {
 
 func (o DatasetMapOutput) ToDatasetMapOutputWithContext(ctx context.Context) DatasetMapOutput {
 	return o
-}
-
-func (o DatasetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Dataset] {
-	return pulumix.Output[map[string]*Dataset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetMapOutput) MapIndex(k pulumi.StringInput) DatasetOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -153,20 +152,20 @@ type Connector struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the resource. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// (Updatable) An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
 	Source ConnectorSourceOutput `pulumi:"source"`
 	// (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// (Updatable) An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
@@ -174,9 +173,9 @@ type Connector struct {
 	// (Updatable) The list of tasks.
 	Tasks ConnectorTaskArrayOutput `pulumi:"tasks"`
 	// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewConnector registers a new resource with the given unique name, arguments, and options.
@@ -360,12 +359,6 @@ func (i *Connector) ToConnectorOutputWithContext(ctx context.Context) ConnectorO
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorOutput)
 }
 
-func (i *Connector) ToOutput(ctx context.Context) pulumix.Output[*Connector] {
-	return pulumix.Output[*Connector]{
-		OutputState: i.ToConnectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectorArrayInput is an input type that accepts ConnectorArray and ConnectorArrayOutput values.
 // You can construct a concrete instance of `ConnectorArrayInput` via:
 //
@@ -389,12 +382,6 @@ func (i ConnectorArray) ToConnectorArrayOutput() ConnectorArrayOutput {
 
 func (i ConnectorArray) ToConnectorArrayOutputWithContext(ctx context.Context) ConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorArrayOutput)
-}
-
-func (i ConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*Connector] {
-	return pulumix.Output[[]*Connector]{
-		OutputState: i.ToConnectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConnectorMapInput is an input type that accepts ConnectorMap and ConnectorMapOutput values.
@@ -422,12 +409,6 @@ func (i ConnectorMap) ToConnectorMapOutputWithContext(ctx context.Context) Conne
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorMapOutput)
 }
 
-func (i ConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connector] {
-	return pulumix.Output[map[string]*Connector]{
-		OutputState: i.ToConnectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorOutput struct{ *pulumi.OutputState }
 
 func (ConnectorOutput) ElementType() reflect.Type {
@@ -442,12 +423,6 @@ func (o ConnectorOutput) ToConnectorOutputWithContext(ctx context.Context) Conne
 	return o
 }
 
-func (o ConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*Connector] {
-	return pulumix.Output[*Connector]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
 func (o ConnectorOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -459,8 +434,8 @@ func (o ConnectorOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the resource. Avoid entering confidential information.
-func (o ConnectorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ConnectorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connector) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -474,8 +449,8 @@ func (o ConnectorOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-func (o ConnectorOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o ConnectorOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connector) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
@@ -487,8 +462,8 @@ func (o ConnectorOutput) Source() ConnectorSourceOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConnectorOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConnectorOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connector) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -507,13 +482,13 @@ func (o ConnectorOutput) Tasks() ConnectorTaskArrayOutput {
 }
 
 // The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o ConnectorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConnectorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connector) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o ConnectorOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConnectorOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connector) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ConnectorArrayOutput struct{ *pulumi.OutputState }
@@ -528,12 +503,6 @@ func (o ConnectorArrayOutput) ToConnectorArrayOutput() ConnectorArrayOutput {
 
 func (o ConnectorArrayOutput) ToConnectorArrayOutputWithContext(ctx context.Context) ConnectorArrayOutput {
 	return o
-}
-
-func (o ConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Connector] {
-	return pulumix.Output[[]*Connector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorArrayOutput) Index(i pulumi.IntInput) ConnectorOutput {
@@ -554,12 +523,6 @@ func (o ConnectorMapOutput) ToConnectorMapOutput() ConnectorMapOutput {
 
 func (o ConnectorMapOutput) ToConnectorMapOutputWithContext(ctx context.Context) ConnectorMapOutput {
 	return o
-}
-
-func (o ConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connector] {
-	return pulumix.Output[map[string]*Connector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorMapOutput) MapIndex(k pulumi.StringInput) ConnectorOutput {

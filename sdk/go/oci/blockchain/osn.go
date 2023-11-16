@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
@@ -64,11 +63,11 @@ type Osn struct {
 	// Unique service identifier.
 	BlockchainPlatformId pulumi.StringOutput `pulumi:"blockchainPlatformId"`
 	// (Updatable) OCPU allocation parameter
-	OcpuAllocationParam OsnOcpuAllocationParamOutput `pulumi:"ocpuAllocationParam"`
+	OcpuAllocationParam OsnOcpuAllocationParamPtrOutput `pulumi:"ocpuAllocationParam"`
 	// OSN identifier
-	OsnKey pulumi.StringOutput `pulumi:"osnKey"`
+	OsnKey pulumi.StringPtrOutput `pulumi:"osnKey"`
 	// The current state of the OSN.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewOsn registers a new resource with the given unique name, arguments, and options.
@@ -178,12 +177,6 @@ func (i *Osn) ToOsnOutputWithContext(ctx context.Context) OsnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OsnOutput)
 }
 
-func (i *Osn) ToOutput(ctx context.Context) pulumix.Output[*Osn] {
-	return pulumix.Output[*Osn]{
-		OutputState: i.ToOsnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OsnArrayInput is an input type that accepts OsnArray and OsnArrayOutput values.
 // You can construct a concrete instance of `OsnArrayInput` via:
 //
@@ -207,12 +200,6 @@ func (i OsnArray) ToOsnArrayOutput() OsnArrayOutput {
 
 func (i OsnArray) ToOsnArrayOutputWithContext(ctx context.Context) OsnArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OsnArrayOutput)
-}
-
-func (i OsnArray) ToOutput(ctx context.Context) pulumix.Output[[]*Osn] {
-	return pulumix.Output[[]*Osn]{
-		OutputState: i.ToOsnArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OsnMapInput is an input type that accepts OsnMap and OsnMapOutput values.
@@ -240,12 +227,6 @@ func (i OsnMap) ToOsnMapOutputWithContext(ctx context.Context) OsnMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OsnMapOutput)
 }
 
-func (i OsnMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Osn] {
-	return pulumix.Output[map[string]*Osn]{
-		OutputState: i.ToOsnMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OsnOutput struct{ *pulumi.OutputState }
 
 func (OsnOutput) ElementType() reflect.Type {
@@ -260,12 +241,6 @@ func (o OsnOutput) ToOsnOutputWithContext(ctx context.Context) OsnOutput {
 	return o
 }
 
-func (o OsnOutput) ToOutput(ctx context.Context) pulumix.Output[*Osn] {
-	return pulumix.Output[*Osn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Availability Domain to place new OSN
 func (o OsnOutput) Ad() pulumi.StringOutput {
 	return o.ApplyT(func(v *Osn) pulumi.StringOutput { return v.Ad }).(pulumi.StringOutput)
@@ -277,18 +252,18 @@ func (o OsnOutput) BlockchainPlatformId() pulumi.StringOutput {
 }
 
 // (Updatable) OCPU allocation parameter
-func (o OsnOutput) OcpuAllocationParam() OsnOcpuAllocationParamOutput {
-	return o.ApplyT(func(v *Osn) OsnOcpuAllocationParamOutput { return v.OcpuAllocationParam }).(OsnOcpuAllocationParamOutput)
+func (o OsnOutput) OcpuAllocationParam() OsnOcpuAllocationParamPtrOutput {
+	return o.ApplyT(func(v *Osn) OsnOcpuAllocationParamPtrOutput { return v.OcpuAllocationParam }).(OsnOcpuAllocationParamPtrOutput)
 }
 
 // OSN identifier
-func (o OsnOutput) OsnKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Osn) pulumi.StringOutput { return v.OsnKey }).(pulumi.StringOutput)
+func (o OsnOutput) OsnKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Osn) pulumi.StringPtrOutput { return v.OsnKey }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the OSN.
-func (o OsnOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Osn) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OsnOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Osn) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type OsnArrayOutput struct{ *pulumi.OutputState }
@@ -303,12 +278,6 @@ func (o OsnArrayOutput) ToOsnArrayOutput() OsnArrayOutput {
 
 func (o OsnArrayOutput) ToOsnArrayOutputWithContext(ctx context.Context) OsnArrayOutput {
 	return o
-}
-
-func (o OsnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Osn] {
-	return pulumix.Output[[]*Osn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OsnArrayOutput) Index(i pulumi.IntInput) OsnOutput {
@@ -329,12 +298,6 @@ func (o OsnMapOutput) ToOsnMapOutput() OsnMapOutput {
 
 func (o OsnMapOutput) ToOsnMapOutputWithContext(ctx context.Context) OsnMapOutput {
 	return o
-}
-
-func (o OsnMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Osn] {
-	return pulumix.Output[map[string]*Osn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OsnMapOutput) MapIndex(k pulumi.StringInput) OsnOutput {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The identifier of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            string name)
+            string? name)
         {
             CompartmentId = compartmentId;
             Id = id;

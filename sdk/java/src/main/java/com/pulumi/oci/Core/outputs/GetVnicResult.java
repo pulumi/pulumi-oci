@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVnicResult {
@@ -17,92 +19,92 @@ public final class GetVnicResult {
      * @return The VNIC&#39;s availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * 
      */
-    private String hostnameLabel;
+    private @Nullable String hostnameLabel;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
      * 
      */
-    private List<String> ipv6addresses;
+    private @Nullable List<String> ipv6addresses;
     /**
      * @return Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
      * 
      */
-    private Boolean isPrimary;
+    private @Nullable Boolean isPrimary;
     /**
      * @return The MAC address of the VNIC.
      * 
      */
-    private String macAddress;
+    private @Nullable String macAddress;
     /**
      * @return A list of the OCIDs of the network security groups that the VNIC belongs to.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The private IP address of the primary `privateIp` object on the VNIC. The address is within the CIDR of the VNIC&#39;s subnet.  Example: `10.0.3.3`
      * 
      */
-    private String privateIpAddress;
+    private @Nullable String privateIpAddress;
     /**
      * @return The public IP address of the VNIC, if one is assigned.
      * 
      */
-    private String publicIpAddress;
+    private @Nullable String publicIpAddress;
     /**
      * @return Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * 
      */
-    private Boolean skipSourceDestCheck;
+    private @Nullable Boolean skipSourceDestCheck;
     /**
      * @return The current state of the VNIC.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of belonging to a subnet), the `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan). If the VNIC is instead in a subnet, `subnetId` has a value.
      * 
      */
-    private String vlanId;
+    private @Nullable String vlanId;
     private String vnicId;
 
     private GetVnicResult() {}
@@ -110,127 +112,127 @@ public final class GetVnicResult {
      * @return The VNIC&#39;s availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * 
      */
-    public String hostnameLabel() {
-        return this.hostnameLabel;
+    public Optional<String> hostnameLabel() {
+        return Optional.ofNullable(this.hostnameLabel);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
      * 
      */
     public List<String> ipv6addresses() {
-        return this.ipv6addresses;
+        return this.ipv6addresses == null ? List.of() : this.ipv6addresses;
     }
     /**
      * @return Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
      * 
      */
-    public Boolean isPrimary() {
-        return this.isPrimary;
+    public Optional<Boolean> isPrimary() {
+        return Optional.ofNullable(this.isPrimary);
     }
     /**
      * @return The MAC address of the VNIC.
      * 
      */
-    public String macAddress() {
-        return this.macAddress;
+    public Optional<String> macAddress() {
+        return Optional.ofNullable(this.macAddress);
     }
     /**
      * @return A list of the OCIDs of the network security groups that the VNIC belongs to.
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The private IP address of the primary `privateIp` object on the VNIC. The address is within the CIDR of the VNIC&#39;s subnet.  Example: `10.0.3.3`
      * 
      */
-    public String privateIpAddress() {
-        return this.privateIpAddress;
+    public Optional<String> privateIpAddress() {
+        return Optional.ofNullable(this.privateIpAddress);
     }
     /**
      * @return The public IP address of the VNIC, if one is assigned.
      * 
      */
-    public String publicIpAddress() {
-        return this.publicIpAddress;
+    public Optional<String> publicIpAddress() {
+        return Optional.ofNullable(this.publicIpAddress);
     }
     /**
      * @return Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * 
      */
-    public Boolean skipSourceDestCheck() {
-        return this.skipSourceDestCheck;
+    public Optional<Boolean> skipSourceDestCheck() {
+        return Optional.ofNullable(this.skipSourceDestCheck);
     }
     /**
      * @return The current state of the VNIC.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of belonging to a subnet), the `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan). If the VNIC is instead in a subnet, `subnetId` has a value.
      * 
      */
-    public String vlanId() {
-        return this.vlanId;
+    public Optional<String> vlanId() {
+        return Optional.ofNullable(this.vlanId);
     }
     public String vnicId() {
         return this.vnicId;
@@ -245,24 +247,24 @@ public final class GetVnicResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String hostnameLabel;
-        private String id;
-        private List<String> ipv6addresses;
-        private Boolean isPrimary;
-        private String macAddress;
-        private List<String> nsgIds;
-        private String privateIpAddress;
-        private String publicIpAddress;
-        private Boolean skipSourceDestCheck;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
-        private String vlanId;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostnameLabel;
+        private @Nullable String id;
+        private @Nullable List<String> ipv6addresses;
+        private @Nullable Boolean isPrimary;
+        private @Nullable String macAddress;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String privateIpAddress;
+        private @Nullable String publicIpAddress;
+        private @Nullable Boolean skipSourceDestCheck;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String vlanId;
         private String vnicId;
         public Builder() {}
         public Builder(GetVnicResult defaults) {
@@ -289,99 +291,99 @@ public final class GetVnicResult {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+        public Builder hostnameLabel(@Nullable String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6addresses(List<String> ipv6addresses) {
-            this.ipv6addresses = Objects.requireNonNull(ipv6addresses);
+        public Builder ipv6addresses(@Nullable List<String> ipv6addresses) {
+            this.ipv6addresses = ipv6addresses;
             return this;
         }
         public Builder ipv6addresses(String... ipv6addresses) {
             return ipv6addresses(List.of(ipv6addresses));
         }
         @CustomType.Setter
-        public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+        public Builder isPrimary(@Nullable Boolean isPrimary) {
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
-        public Builder macAddress(String macAddress) {
-            this.macAddress = Objects.requireNonNull(macAddress);
+        public Builder macAddress(@Nullable String macAddress) {
+            this.macAddress = macAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder privateIpAddress(String privateIpAddress) {
-            this.privateIpAddress = Objects.requireNonNull(privateIpAddress);
+        public Builder privateIpAddress(@Nullable String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder publicIpAddress(String publicIpAddress) {
-            this.publicIpAddress = Objects.requireNonNull(publicIpAddress);
+        public Builder publicIpAddress(@Nullable String publicIpAddress) {
+            this.publicIpAddress = publicIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
-            this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
+        public Builder skipSourceDestCheck(@Nullable Boolean skipSourceDestCheck) {
+            this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+        public Builder vlanId(@Nullable String vlanId) {
+            this.vlanId = vlanId;
             return this;
         }
         @CustomType.Setter

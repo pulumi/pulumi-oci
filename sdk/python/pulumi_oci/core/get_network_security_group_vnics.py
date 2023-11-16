@@ -44,7 +44,7 @@ class GetNetworkSecurityGroupVnicsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetNetworkSecurityGroupVnicsResult:
 
     @property
     @pulumi.getter(name="networkSecurityGroupVnics")
-    def network_security_group_vnics(self) -> Sequence['outputs.GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicResult']:
-        """
-        The list of network_security_group_vnics.
-        """
+    def network_security_group_vnics(self) -> Optional[Sequence['outputs.GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicResult']]:
         return pulumi.get(self, "network_security_group_vnics")
 
 
@@ -80,21 +77,7 @@ def get_network_security_group_vnics(filters: Optional[Sequence[pulumi.InputType
                                      network_security_group_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityGroupVnicsResult:
     """
-    This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
-
-    Lists the VNICs in the specified network security group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"])
-    ```
-
-
-    :param str network_security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optio
                                             network_security_group_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupVnicsResult]:
     """
-    This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
-
-    Lists the VNICs in the specified network security group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"])
-    ```
-
-
-    :param str network_security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+    Use this data source to access information about an existing resource.
     """
     ...

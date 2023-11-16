@@ -198,9 +198,9 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IdcsEndpoint;
-        public readonly int ItemsPerPage;
+        public readonly int? ItemsPerPage;
         public readonly int? MySmtpCredentialCount;
         public readonly string? MySmtpCredentialFilter;
         /// <summary>
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.Identity
         public readonly string? SortBy;
         public readonly string? SortOrder;
         public readonly int? StartIndex;
-        public readonly int TotalResults;
+        public readonly int? TotalResults;
 
         [OutputConstructor]
         private GetDomainsMySmtpCredentialsResult(
@@ -223,11 +223,11 @@ namespace Pulumi.Oci.Identity
 
             string? compartmentId,
 
-            string id,
+            string? id,
 
             string idcsEndpoint,
 
-            int itemsPerPage,
+            int? itemsPerPage,
 
             int? mySmtpCredentialCount,
 
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.Identity
 
             int? startIndex,
 
-            int totalResults)
+            int? totalResults)
         {
             Authorization = authorization;
             CompartmentId = compartmentId;

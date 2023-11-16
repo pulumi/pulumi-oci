@@ -8,30 +8,32 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount {
-    private Boolean isReadOnly;
-    private String mountPath;
-    private Integer partition;
-    private String subPath;
-    private String volumeName;
+    private @Nullable Boolean isReadOnly;
+    private @Nullable String mountPath;
+    private @Nullable Integer partition;
+    private @Nullable String subPath;
+    private @Nullable String volumeName;
 
     private GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount() {}
-    public Boolean isReadOnly() {
-        return this.isReadOnly;
+    public Optional<Boolean> isReadOnly() {
+        return Optional.ofNullable(this.isReadOnly);
     }
-    public String mountPath() {
-        return this.mountPath;
+    public Optional<String> mountPath() {
+        return Optional.ofNullable(this.mountPath);
     }
-    public Integer partition() {
-        return this.partition;
+    public Optional<Integer> partition() {
+        return Optional.ofNullable(this.partition);
     }
-    public String subPath() {
-        return this.subPath;
+    public Optional<String> subPath() {
+        return Optional.ofNullable(this.subPath);
     }
-    public String volumeName() {
-        return this.volumeName;
+    public Optional<String> volumeName() {
+        return Optional.ofNullable(this.volumeName);
     }
 
     public static Builder builder() {
@@ -43,11 +45,11 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isReadOnly;
-        private String mountPath;
-        private Integer partition;
-        private String subPath;
-        private String volumeName;
+        private @Nullable Boolean isReadOnly;
+        private @Nullable String mountPath;
+        private @Nullable Integer partition;
+        private @Nullable String subPath;
+        private @Nullable String volumeName;
         public Builder() {}
         public Builder(GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,28 +61,28 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
 
         @CustomType.Setter
-        public Builder isReadOnly(Boolean isReadOnly) {
-            this.isReadOnly = Objects.requireNonNull(isReadOnly);
+        public Builder isReadOnly(@Nullable Boolean isReadOnly) {
+            this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
-        public Builder mountPath(String mountPath) {
-            this.mountPath = Objects.requireNonNull(mountPath);
+        public Builder mountPath(@Nullable String mountPath) {
+            this.mountPath = mountPath;
             return this;
         }
         @CustomType.Setter
-        public Builder partition(Integer partition) {
-            this.partition = Objects.requireNonNull(partition);
+        public Builder partition(@Nullable Integer partition) {
+            this.partition = partition;
             return this;
         }
         @CustomType.Setter
-        public Builder subPath(String subPath) {
-            this.subPath = Objects.requireNonNull(subPath);
+        public Builder subPath(@Nullable String subPath) {
+            this.subPath = subPath;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeName(String volumeName) {
-            this.volumeName = Objects.requireNonNull(volumeName);
+        public Builder volumeName(@Nullable String volumeName) {
+            this.volumeName = volumeName;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount build() {

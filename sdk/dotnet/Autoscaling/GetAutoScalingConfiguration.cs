@@ -113,39 +113,39 @@ namespace Pulumi.Oci.Autoscaling
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
         /// </summary>
-        public readonly int CoolDownInSeconds;
+        public readonly int? CoolDownInSeconds;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// ID of the condition that is assigned after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the autoscaling policy is enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The maximum number of resources to scale out to.
         /// </summary>
-        public readonly int MaxResourceCount;
+        public readonly int? MaxResourceCount;
         /// <summary>
         /// The minimum number of resources to scale in to.
         /// </summary>
-        public readonly int MinResourceCount;
+        public readonly int? MinResourceCount;
         /// <summary>
         /// Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Autoscaling
         /// <summary>
         /// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationResult(
@@ -161,27 +161,27 @@ namespace Pulumi.Oci.Autoscaling
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationAutoScalingResourceResult> autoScalingResources,
 
-            string compartmentId,
+            string? compartmentId,
 
-            int coolDownInSeconds,
+            int? coolDownInSeconds,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            int maxResourceCount,
+            int? maxResourceCount,
 
-            int minResourceCount,
+            int? minResourceCount,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyResult> policies,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AutoScalingConfigurationId = autoScalingConfigurationId;
             AutoScalingResources = autoScalingResources;

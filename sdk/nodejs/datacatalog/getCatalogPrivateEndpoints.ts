@@ -61,7 +61,7 @@ export interface GetCatalogPrivateEndpointsResult {
     /**
      * The list of catalog_private_endpoints.
      */
-    readonly catalogPrivateEndpoints: outputs.DataCatalog.GetCatalogPrivateEndpointsCatalogPrivateEndpoint[];
+    readonly catalogPrivateEndpoints?: outputs.DataCatalog.GetCatalogPrivateEndpointsCatalogPrivateEndpoint[];
     /**
      * Identifier of the compartment this private endpoint belongs to
      */
@@ -74,7 +74,7 @@ export interface GetCatalogPrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the private endpoint resource.
      */

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// Object content SHA256 Hash
         /// </summary>
-        public readonly string Checksum;
+        public readonly string? Checksum;
         /// <summary>
         /// Agent image resource id
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details of the Objectstorage object
         /// </summary>
@@ -28,59 +28,59 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// Object storage URL for download
         /// </summary>
-        public readonly string ObjectUrl;
+        public readonly string? ObjectUrl;
         /// <summary>
         /// The installation package target architecture type
         /// </summary>
-        public readonly string PackageArchitectureType;
+        public readonly string? PackageArchitectureType;
         /// <summary>
         /// The installation package type
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         /// <summary>
         /// Agent image platform display name
         /// </summary>
-        public readonly string PlatformName;
+        public readonly string? PlatformName;
         /// <summary>
         /// Agent image platform type
         /// </summary>
-        public readonly string PlatformType;
+        public readonly string? PlatformType;
         /// <summary>
         /// Agent image size in bytes
         /// </summary>
-        public readonly double Size;
+        public readonly double? Size;
         /// <summary>
         /// Filter to return only Management Agents in the particular lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Agent image version
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetManagementAgentImagesManagementAgentImageResult(
-            string checksum,
+            string? checksum,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult> imageObjectStorageDetails,
 
-            string objectUrl,
+            string? objectUrl,
 
-            string packageArchitectureType,
+            string? packageArchitectureType,
 
-            string packageType,
+            string? packageType,
 
-            string platformName,
+            string? platformName,
 
-            string platformType,
+            string? platformType,
 
-            double size,
+            double? size,
 
-            string state,
+            string? state,
 
-            string version)
+            string? version)
         {
             Checksum = checksum;
             Id = id;

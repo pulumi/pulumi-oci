@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
      * @return An array of consumer group privileges.
      * 
      */
-    private List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items;
 
     private GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
      * 
      */
     public List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem... items) {

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
      * @return An array of object privileges.
      * 
      */
-    private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items;
 
     private GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
      * 
      */
     public List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem... items) {

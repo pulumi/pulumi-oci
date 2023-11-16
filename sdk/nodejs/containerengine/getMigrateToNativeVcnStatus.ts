@@ -27,9 +27,9 @@ export interface GetMigrateToNativeVcnStatusResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
-    readonly state: string;
-    readonly timeDecommissionScheduled: string;
+    readonly id?: string;
+    readonly state?: string;
+    readonly timeDecommissionScheduled?: string;
 }
 export function getMigrateToNativeVcnStatusOutput(args: GetMigrateToNativeVcnStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrateToNativeVcnStatusResult> {
     return pulumi.output(args).apply((a: any) => getMigrateToNativeVcnStatus(a, opts))

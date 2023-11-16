@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRrsetsRrsetItem {
@@ -20,7 +22,7 @@ public final class GetRrsetsRrsetItem {
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    private Boolean isProtected;
+    private @Nullable Boolean isProtected;
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      * 
@@ -30,12 +32,12 @@ public final class GetRrsetsRrsetItem {
      * @return A unique identifier for the record within its zone.
      * 
      */
-    private String recordHash;
+    private @Nullable String recordHash;
     /**
      * @return The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    private String rrsetVersion;
+    private @Nullable String rrsetVersion;
     /**
      * @return Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      * 
@@ -59,8 +61,8 @@ public final class GetRrsetsRrsetItem {
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    public Boolean isProtected() {
-        return this.isProtected;
+    public Optional<Boolean> isProtected() {
+        return Optional.ofNullable(this.isProtected);
     }
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
@@ -73,15 +75,15 @@ public final class GetRrsetsRrsetItem {
      * @return A unique identifier for the record within its zone.
      * 
      */
-    public String recordHash() {
-        return this.recordHash;
+    public Optional<String> recordHash() {
+        return Optional.ofNullable(this.recordHash);
     }
     /**
      * @return The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    public String rrsetVersion() {
-        return this.rrsetVersion;
+    public Optional<String> rrsetVersion() {
+        return Optional.ofNullable(this.rrsetVersion);
     }
     /**
      * @return Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
@@ -108,10 +110,10 @@ public final class GetRrsetsRrsetItem {
     @CustomType.Builder
     public static final class Builder {
         private String domain;
-        private Boolean isProtected;
+        private @Nullable Boolean isProtected;
         private String rdata;
-        private String recordHash;
-        private String rrsetVersion;
+        private @Nullable String recordHash;
+        private @Nullable String rrsetVersion;
         private String rtype;
         private Integer ttl;
         public Builder() {}
@@ -132,8 +134,8 @@ public final class GetRrsetsRrsetItem {
             return this;
         }
         @CustomType.Setter
-        public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+        public Builder isProtected(@Nullable Boolean isProtected) {
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
@@ -142,13 +144,13 @@ public final class GetRrsetsRrsetItem {
             return this;
         }
         @CustomType.Setter
-        public Builder recordHash(String recordHash) {
-            this.recordHash = Objects.requireNonNull(recordHash);
+        public Builder recordHash(@Nullable String recordHash) {
+            this.recordHash = recordHash;
             return this;
         }
         @CustomType.Setter
-        public Builder rrsetVersion(String rrsetVersion) {
-            this.rrsetVersion = Objects.requireNonNull(rrsetVersion);
+        public Builder rrsetVersion(@Nullable String rrsetVersion) {
+            this.rrsetVersion = rrsetVersion;
             return this;
         }
         @CustomType.Setter

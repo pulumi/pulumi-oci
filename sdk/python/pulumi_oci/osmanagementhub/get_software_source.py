@@ -104,138 +104,87 @@ class GetSoftwareSourceResult:
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        The architecture type supported by the software source.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter
-    def availability(self) -> str:
-        """
-        Possible availabilities of a software source.
-        """
+    def availability(self) -> Optional[str]:
         return pulumi.get(self, "availability")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> str:
-        """
-        The yum repository checksum type used by this software source.
-        """
+    def checksum_type(self) -> Optional[str]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the software source.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="customSoftwareSourceFilters")
-    def custom_software_source_filters(self) -> Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterResult']:
-        """
-        Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-        """
+    def custom_software_source_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterResult']]:
         return pulumi.get(self, "custom_software_source_filters")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Information specified by the user about the software source.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gpgKeyFingerprint")
-    def gpg_key_fingerprint(self) -> str:
-        """
-        Fingerprint of the GPG key for this software source.
-        """
+    def gpg_key_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_fingerprint")
 
     @property
     @pulumi.getter(name="gpgKeyId")
-    def gpg_key_id(self) -> str:
-        """
-        ID of the GPG key for this software source.
-        """
+    def gpg_key_id(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_id")
 
     @property
     @pulumi.getter(name="gpgKeyUrl")
-    def gpg_key_url(self) -> str:
-        """
-        URL of the GPG key for this software source.
-        """
+    def gpg_key_url(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutomaticallyUpdated")
-    def is_automatically_updated(self) -> bool:
-        """
-        Indicates whether service should automatically update the custom software source for the user.
-        """
+    def is_automatically_updated(self) -> Optional[bool]:
         return pulumi.get(self, "is_automatically_updated")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        The OS family the software source belongs to.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="packageCount")
-    def package_count(self) -> str:
-        """
-        Number of packages.
-        """
+    def package_count(self) -> Optional[str]:
         return pulumi.get(self, "package_count")
 
     @property
     @pulumi.getter(name="repoId")
-    def repo_id(self) -> str:
-        """
-        The Repo ID for the software source.
-        """
+    def repo_id(self) -> Optional[str]:
         return pulumi.get(self, "repo_id")
 
     @property
@@ -245,66 +194,42 @@ class GetSoftwareSourceResult:
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
     @property
     @pulumi.getter(name="softwareSourceVersion")
-    def software_source_version(self) -> str:
-        """
-        The version to assign to this custom software source.
-        """
+    def software_source_version(self) -> Optional[str]:
         return pulumi.get(self, "software_source_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the software source.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        URL for the repository.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        Name of the vendor providing the software source.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
     @property
     @pulumi.getter(name="vendorSoftwareSources")
-    def vendor_software_sources(self) -> Sequence['outputs.GetSoftwareSourceVendorSoftwareSourceResult']:
-        """
-        List of vendor software sources.
-        """
+    def vendor_software_sources(self) -> Optional[Sequence['outputs.GetSoftwareSourceVendorSoftwareSourceResult']]:
         return pulumi.get(self, "vendor_software_sources")
 
 
@@ -345,21 +270,7 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
 def get_software_source(software_source_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceResult:
     """
-    This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified software source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source = oci.OsManagementHub.get_software_source(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['softwareSourceId'] = software_source_id
@@ -399,20 +310,6 @@ def get_software_source(software_source_id: Optional[str] = None,
 def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceResult]:
     """
-    This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified software source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source = oci.OsManagementHub.get_software_source(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// <summary>
         /// The result of the most recent health check.
         /// </summary>
-        public readonly string HealthCheckStatus;
+        public readonly string? HealthCheckStatus;
         /// <summary>
         /// The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
 
         [OutputConstructor]
         private GetBackendHealthHealthCheckResultResult(
-            string healthCheckStatus,
+            string? healthCheckStatus,
 
-            string timestamp)
+            string? timestamp)
         {
             HealthCheckStatus = healthCheckStatus;
             Timestamp = timestamp;

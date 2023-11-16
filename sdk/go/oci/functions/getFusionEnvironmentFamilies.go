@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environment Families in Oracle Cloud Infrastructure Fusion Apps service.
@@ -78,7 +77,7 @@ type GetFusionEnvironmentFamiliesResult struct {
 	FusionEnvironmentFamilyCollections []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection `pulumi:"fusionEnvironmentFamilyCollections"`
 	FusionEnvironmentFamilyId          *string                                                         `pulumi:"fusionEnvironmentFamilyId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the FusionEnvironmentFamily.
 	State *string `pulumi:"state"`
 }
@@ -128,12 +127,6 @@ func (o GetFusionEnvironmentFamiliesResultOutput) ToGetFusionEnvironmentFamilies
 	return o
 }
 
-func (o GetFusionEnvironmentFamiliesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesResult] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment where the environment family is located.
 func (o GetFusionEnvironmentFamiliesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentFamiliesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -160,8 +153,8 @@ func (o GetFusionEnvironmentFamiliesResultOutput) FusionEnvironmentFamilyId() pu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentFamiliesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamiliesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the FusionEnvironmentFamily.

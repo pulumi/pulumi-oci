@@ -54,10 +54,7 @@ class GetWorkspaceExportRequestsResult:
 
     @property
     @pulumi.getter(name="exportRequestSummaryCollections")
-    def export_request_summary_collections(self) -> Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionResult']:
-        """
-        The list of export_request_summary_collection.
-        """
+    def export_request_summary_collections(self) -> Optional[Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionResult']]:
         return pulumi.get(self, "export_request_summary_collections")
 
     @property
@@ -72,7 +69,7 @@ class GetWorkspaceExportRequestsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,9 +78,6 @@ class GetWorkspaceExportRequestsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the export request.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -94,17 +88,11 @@ class GetWorkspaceExportRequestsResult:
     @property
     @pulumi.getter(name="timeEndedInMillis")
     def time_ended_in_millis(self) -> Optional[str]:
-        """
-        Time at which the request was completely processed.
-        """
         return pulumi.get(self, "time_ended_in_millis")
 
     @property
     @pulumi.getter(name="timeStartedInMillis")
     def time_started_in_millis(self) -> Optional[str]:
-        """
-        Time at which the request started getting processed.
-        """
         return pulumi.get(self, "time_started_in_millis")
 
     @property
@@ -139,31 +127,7 @@ def get_workspace_export_requests(export_status: Optional[str] = None,
                                   workspace_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceExportRequestsResult:
     """
-    This data source provides the list of Workspace Export Requests in Oracle Cloud Infrastructure Data Integration service.
-
-    This endpoint can be used to get the list of export object requests.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        export_status=var["workspace_export_request_export_status"],
-        name=var["workspace_export_request_name"],
-        projection=var["workspace_export_request_projection"],
-        time_ended_in_millis=var["workspace_export_request_time_ended_in_millis"],
-        time_started_in_millis=var["workspace_export_request_time_started_in_millis"])
-    ```
-
-
-    :param str export_status: Specifies export status to use, either -  ALL, SUCCESSFUL, IN_PROGRESS, QUEUED, FAILED .
-    :param str name: Used to filter by the name of the object.
-    :param str projection: This parameter allows users to specify which view of the export object response to return. SUMMARY - Summary of the export object request will be returned. This is the default option when no value is specified. DETAILS - Details of export object request will be returned. This will include details of all the objects to be exported.
-    :param str time_ended_in_millis: Specifies end time of a copy object request.
-    :param str time_started_in_millis: Specifies start time of a copy object request.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['exportStatus'] = export_status
@@ -198,30 +162,6 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
                                          workspace_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceExportRequestsResult]:
     """
-    This data source provides the list of Workspace Export Requests in Oracle Cloud Infrastructure Data Integration service.
-
-    This endpoint can be used to get the list of export object requests.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        export_status=var["workspace_export_request_export_status"],
-        name=var["workspace_export_request_name"],
-        projection=var["workspace_export_request_projection"],
-        time_ended_in_millis=var["workspace_export_request_time_ended_in_millis"],
-        time_started_in_millis=var["workspace_export_request_time_started_in_millis"])
-    ```
-
-
-    :param str export_status: Specifies export status to use, either -  ALL, SUCCESSFUL, IN_PROGRESS, QUEUED, FAILED .
-    :param str name: Used to filter by the name of the object.
-    :param str projection: This parameter allows users to specify which view of the export object response to return. SUMMARY - Summary of the export object request will be returned. This is the default option when no value is specified. DETAILS - Details of export object request will be returned. This will include details of all the objects to be exported.
-    :param str time_ended_in_millis: Specifies end time of a copy object request.
-    :param str time_started_in_millis: Specifies start time of a copy object request.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

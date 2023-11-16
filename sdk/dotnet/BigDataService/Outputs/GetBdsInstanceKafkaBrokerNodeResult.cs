@@ -16,29 +16,29 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
-        public readonly string BlockVolumeSizeInGbs;
-        public readonly int NumberOfKafkaNodes;
+        public readonly string? BlockVolumeSizeInGbs;
+        public readonly int? NumberOfKafkaNodes;
         /// <summary>
         /// Shape of the node.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         public readonly ImmutableArray<Outputs.GetBdsInstanceKafkaBrokerNodeShapeConfigResult> ShapeConfigs;
         /// <summary>
         /// The OCID of the subnet in which the node is to be created.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetBdsInstanceKafkaBrokerNodeResult(
-            string blockVolumeSizeInGbs,
+            string? blockVolumeSizeInGbs,
 
-            int numberOfKafkaNodes,
+            int? numberOfKafkaNodes,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetBdsInstanceKafkaBrokerNodeShapeConfigResult> shapeConfigs,
 
-            string subnetId)
+            string? subnetId)
         {
             BlockVolumeSizeInGbs = blockVolumeSizeInGbs;
             NumberOfKafkaNodes = numberOfKafkaNodes;

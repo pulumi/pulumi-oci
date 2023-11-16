@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
@@ -101,7 +100,7 @@ type GetMetricDataResult struct {
 	EndTime                *string               `pulumi:"endTime"`
 	Filters                []GetMetricDataFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of metric_data.
 	MetricDatas []GetMetricDataMetricData `pulumi:"metricDatas"`
 	// The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `ociComputeagent`
@@ -173,12 +172,6 @@ func (o GetMetricDataResultOutput) ToGetMetricDataResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetMetricDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataResult] {
-	return pulumix.Output[GetMetricDataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources that the aggregated data was returned from.
 func (o GetMetricDataResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricDataResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -197,8 +190,8 @@ func (o GetMetricDataResultOutput) Filters() GetMetricDataFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMetricDataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricDataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMetricDataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricDataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of metric_data.

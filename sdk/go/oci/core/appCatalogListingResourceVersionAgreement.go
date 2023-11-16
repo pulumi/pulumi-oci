@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // The `Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
@@ -45,17 +44,17 @@ type AppCatalogListingResourceVersionAgreement struct {
 	pulumi.CustomResourceState
 
 	// EULA link
-	EulaLink pulumi.StringOutput `pulumi:"eulaLink"`
+	EulaLink pulumi.StringPtrOutput `pulumi:"eulaLink"`
 	// The OCID of the listing.
 	ListingId pulumi.StringOutput `pulumi:"listingId"`
 	// Listing Resource Version.
 	ListingResourceVersion pulumi.StringOutput `pulumi:"listingResourceVersion"`
 	// Oracle TOU link
-	OracleTermsOfUseLink pulumi.StringOutput `pulumi:"oracleTermsOfUseLink"`
+	OracleTermsOfUseLink pulumi.StringPtrOutput `pulumi:"oracleTermsOfUseLink"`
 	// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-	Signature pulumi.StringOutput `pulumi:"signature"`
+	Signature pulumi.StringPtrOutput `pulumi:"signature"`
 	// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
-	TimeRetrieved pulumi.StringOutput `pulumi:"timeRetrieved"`
+	TimeRetrieved pulumi.StringPtrOutput `pulumi:"timeRetrieved"`
 }
 
 // NewAppCatalogListingResourceVersionAgreement registers a new resource with the given unique name, arguments, and options.
@@ -165,12 +164,6 @@ func (i *AppCatalogListingResourceVersionAgreement) ToAppCatalogListingResourceV
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogListingResourceVersionAgreementOutput)
 }
 
-func (i *AppCatalogListingResourceVersionAgreement) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogListingResourceVersionAgreement] {
-	return pulumix.Output[*AppCatalogListingResourceVersionAgreement]{
-		OutputState: i.ToAppCatalogListingResourceVersionAgreementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppCatalogListingResourceVersionAgreementArrayInput is an input type that accepts AppCatalogListingResourceVersionAgreementArray and AppCatalogListingResourceVersionAgreementArrayOutput values.
 // You can construct a concrete instance of `AppCatalogListingResourceVersionAgreementArrayInput` via:
 //
@@ -194,12 +187,6 @@ func (i AppCatalogListingResourceVersionAgreementArray) ToAppCatalogListingResou
 
 func (i AppCatalogListingResourceVersionAgreementArray) ToAppCatalogListingResourceVersionAgreementArrayOutputWithContext(ctx context.Context) AppCatalogListingResourceVersionAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogListingResourceVersionAgreementArrayOutput)
-}
-
-func (i AppCatalogListingResourceVersionAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogListingResourceVersionAgreement] {
-	return pulumix.Output[[]*AppCatalogListingResourceVersionAgreement]{
-		OutputState: i.ToAppCatalogListingResourceVersionAgreementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppCatalogListingResourceVersionAgreementMapInput is an input type that accepts AppCatalogListingResourceVersionAgreementMap and AppCatalogListingResourceVersionAgreementMapOutput values.
@@ -227,12 +214,6 @@ func (i AppCatalogListingResourceVersionAgreementMap) ToAppCatalogListingResourc
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogListingResourceVersionAgreementMapOutput)
 }
 
-func (i AppCatalogListingResourceVersionAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement] {
-	return pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement]{
-		OutputState: i.ToAppCatalogListingResourceVersionAgreementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppCatalogListingResourceVersionAgreementOutput struct{ *pulumi.OutputState }
 
 func (AppCatalogListingResourceVersionAgreementOutput) ElementType() reflect.Type {
@@ -247,15 +228,9 @@ func (o AppCatalogListingResourceVersionAgreementOutput) ToAppCatalogListingReso
 	return o
 }
 
-func (o AppCatalogListingResourceVersionAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogListingResourceVersionAgreement] {
-	return pulumix.Output[*AppCatalogListingResourceVersionAgreement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // EULA link
-func (o AppCatalogListingResourceVersionAgreementOutput) EulaLink() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringOutput { return v.EulaLink }).(pulumi.StringOutput)
+func (o AppCatalogListingResourceVersionAgreementOutput) EulaLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringPtrOutput { return v.EulaLink }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the listing.
@@ -271,18 +246,20 @@ func (o AppCatalogListingResourceVersionAgreementOutput) ListingResourceVersion(
 }
 
 // Oracle TOU link
-func (o AppCatalogListingResourceVersionAgreementOutput) OracleTermsOfUseLink() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringOutput { return v.OracleTermsOfUseLink }).(pulumi.StringOutput)
+func (o AppCatalogListingResourceVersionAgreementOutput) OracleTermsOfUseLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringPtrOutput {
+		return v.OracleTermsOfUseLink
+	}).(pulumi.StringPtrOutput)
 }
 
 // A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-func (o AppCatalogListingResourceVersionAgreementOutput) Signature() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringOutput { return v.Signature }).(pulumi.StringOutput)
+func (o AppCatalogListingResourceVersionAgreementOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringPtrOutput { return v.Signature }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
-func (o AppCatalogListingResourceVersionAgreementOutput) TimeRetrieved() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringOutput { return v.TimeRetrieved }).(pulumi.StringOutput)
+func (o AppCatalogListingResourceVersionAgreementOutput) TimeRetrieved() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogListingResourceVersionAgreement) pulumi.StringPtrOutput { return v.TimeRetrieved }).(pulumi.StringPtrOutput)
 }
 
 type AppCatalogListingResourceVersionAgreementArrayOutput struct{ *pulumi.OutputState }
@@ -297,12 +274,6 @@ func (o AppCatalogListingResourceVersionAgreementArrayOutput) ToAppCatalogListin
 
 func (o AppCatalogListingResourceVersionAgreementArrayOutput) ToAppCatalogListingResourceVersionAgreementArrayOutputWithContext(ctx context.Context) AppCatalogListingResourceVersionAgreementArrayOutput {
 	return o
-}
-
-func (o AppCatalogListingResourceVersionAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogListingResourceVersionAgreement] {
-	return pulumix.Output[[]*AppCatalogListingResourceVersionAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppCatalogListingResourceVersionAgreementArrayOutput) Index(i pulumi.IntInput) AppCatalogListingResourceVersionAgreementOutput {
@@ -323,12 +294,6 @@ func (o AppCatalogListingResourceVersionAgreementMapOutput) ToAppCatalogListingR
 
 func (o AppCatalogListingResourceVersionAgreementMapOutput) ToAppCatalogListingResourceVersionAgreementMapOutputWithContext(ctx context.Context) AppCatalogListingResourceVersionAgreementMapOutput {
 	return o
-}
-
-func (o AppCatalogListingResourceVersionAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement] {
-	return pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppCatalogListingResourceVersionAgreementMapOutput) MapIndex(k pulumi.StringInput) AppCatalogListingResourceVersionAgreementOutput {

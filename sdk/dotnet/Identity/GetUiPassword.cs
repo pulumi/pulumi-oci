@@ -109,17 +109,17 @@ namespace Pulumi.Oci.Identity
     [OutputType]
     public sealed class GetUiPasswordResult
     {
-        public readonly string Id;
-        public readonly string InactiveStatus;
-        public readonly string Password;
+        public readonly string? Id;
+        public readonly string? InactiveStatus;
+        public readonly string? Password;
         /// <summary>
         /// The password's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The OCID of the user.
         /// </summary>
@@ -127,15 +127,15 @@ namespace Pulumi.Oci.Identity
 
         [OutputConstructor]
         private GetUiPasswordResult(
-            string id,
+            string? id,
 
-            string inactiveStatus,
+            string? inactiveStatus,
 
-            string password,
+            string? password,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
             string userId)
         {

@@ -76,39 +76,39 @@ export class DeployPipeline extends pulumi.CustomResource {
     /**
      * The OCID of the compartment where the pipeline is created.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * List of all artifacts used in the pipeline.
      */
-    public /*out*/ readonly deployPipelineArtifacts!: pulumi.Output<outputs.DevOps.DeployPipelineDeployPipelineArtifact[]>;
+    public /*out*/ readonly deployPipelineArtifacts!: pulumi.Output<outputs.DevOps.DeployPipelineDeployPipelineArtifact[] | undefined>;
     /**
      * List of all environments used in the pipeline.
      */
-    public /*out*/ readonly deployPipelineEnvironments!: pulumi.Output<outputs.DevOps.DeployPipelineDeployPipelineEnvironment[]>;
+    public /*out*/ readonly deployPipelineEnvironments!: pulumi.Output<outputs.DevOps.DeployPipelineDeployPipelineEnvironment[] | undefined>;
     /**
      * (Updatable) Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
      */
-    public readonly deployPipelineParameters!: pulumi.Output<outputs.DevOps.DeployPipelineDeployPipelineParameters>;
+    public readonly deployPipelineParameters!: pulumi.Output<outputs.DevOps.DeployPipelineDeployPipelineParameters | undefined>;
     /**
      * (Updatable) Optional description about the deployment pipeline.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Deployment pipeline display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The OCID of a project.
      *
@@ -120,19 +120,19 @@ export class DeployPipeline extends pulumi.CustomResource {
     /**
      * The current state of the deployment pipeline.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DeployPipeline resource with the given unique name, arguments, and options.

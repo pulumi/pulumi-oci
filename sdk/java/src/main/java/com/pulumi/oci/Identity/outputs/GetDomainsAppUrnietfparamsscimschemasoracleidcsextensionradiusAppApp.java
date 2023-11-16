@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp {
@@ -16,183 +18,183 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiu
      * @return If true, capture the client IP address from the RADIUS request packet. IP Address is used for auditing, policy-evaluation and country-code calculation.
      * 
      */
-    private Boolean captureClientIp;
+    private @Nullable Boolean captureClientIp;
     /**
      * @return This is the IP address of the RADIUS Client like Oracle Database server. It can be only IP address and not hostname.
      * 
      */
-    private String clientIp;
+    private @Nullable String clientIp;
     /**
      * @return Vendor-specific identifier of the attribute in the RADIUS response that will contain the end-user&#39;s country code. This is an integer-value in the range 1 to 255
      * 
      */
-    private String countryCodeResponseAttributeId;
+    private @Nullable String countryCodeResponseAttributeId;
     /**
      * @return The name of the attribute that contains the Internet Protocol address of the end-user.
      * 
      */
-    private String endUserIpAttribute;
+    private @Nullable String endUserIpAttribute;
     /**
      * @return RADIUS attribute that RADIUS-enabled system uses to pass the group membership
      * 
      */
-    private String groupMembershipRadiusAttribute;
+    private @Nullable String groupMembershipRadiusAttribute;
     /**
      * @return In a successful authentication response, Oracle Identity Cloud Service will pass user&#39;s group information restricted to groups persisted in this attribute, in the specified RADIUS attribute.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns;
     /**
      * @return Configure the groupNameFormat based on vendor in order to pass it to RADIUS infra
      * 
      */
-    private String groupNameFormat;
+    private @Nullable String groupNameFormat;
     /**
      * @return Indicates to include groups in RADIUS response
      * 
      */
-    private Boolean includeGroupInResponse;
+    private @Nullable Boolean includeGroupInResponse;
     /**
      * @return Indicates if password and OTP are passed in the same sign-in request or not.
      * 
      */
-    private Boolean passwordAndOtpTogether;
+    private @Nullable Boolean passwordAndOtpTogether;
     /**
      * @return This is the port of RADIUS Proxy which RADIUS client will connect to.
      * 
      */
-    private String port;
+    private @Nullable String port;
     /**
      * @return ID used to identify a particular vendor.
      * 
      */
-    private String radiusVendorSpecificId;
+    private @Nullable String radiusVendorSpecificId;
     /**
      * @return Configure the responseFormat based on vendor in order to pass it to RADIUS infra
      * 
      */
-    private String responseFormat;
+    private @Nullable String responseFormat;
     /**
      * @return The delimiter used if group membership responseFormat is a delimited list instead of repeating attributes
      * 
      */
-    private String responseFormatDelimiter;
+    private @Nullable String responseFormatDelimiter;
     /**
      * @return Secret key used to secure communication between RADIUS Proxy and RADIUS client
      * 
      */
-    private String secretKey;
+    private @Nullable String secretKey;
     /**
      * @return Value consists of type of RADIUS App. Type can be Oracle Database, VPN etc
      * 
      */
-    private String typeOfRadiusApp;
+    private @Nullable String typeOfRadiusApp;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp() {}
     /**
      * @return If true, capture the client IP address from the RADIUS request packet. IP Address is used for auditing, policy-evaluation and country-code calculation.
      * 
      */
-    public Boolean captureClientIp() {
-        return this.captureClientIp;
+    public Optional<Boolean> captureClientIp() {
+        return Optional.ofNullable(this.captureClientIp);
     }
     /**
      * @return This is the IP address of the RADIUS Client like Oracle Database server. It can be only IP address and not hostname.
      * 
      */
-    public String clientIp() {
-        return this.clientIp;
+    public Optional<String> clientIp() {
+        return Optional.ofNullable(this.clientIp);
     }
     /**
      * @return Vendor-specific identifier of the attribute in the RADIUS response that will contain the end-user&#39;s country code. This is an integer-value in the range 1 to 255
      * 
      */
-    public String countryCodeResponseAttributeId() {
-        return this.countryCodeResponseAttributeId;
+    public Optional<String> countryCodeResponseAttributeId() {
+        return Optional.ofNullable(this.countryCodeResponseAttributeId);
     }
     /**
      * @return The name of the attribute that contains the Internet Protocol address of the end-user.
      * 
      */
-    public String endUserIpAttribute() {
-        return this.endUserIpAttribute;
+    public Optional<String> endUserIpAttribute() {
+        return Optional.ofNullable(this.endUserIpAttribute);
     }
     /**
      * @return RADIUS attribute that RADIUS-enabled system uses to pass the group membership
      * 
      */
-    public String groupMembershipRadiusAttribute() {
-        return this.groupMembershipRadiusAttribute;
+    public Optional<String> groupMembershipRadiusAttribute() {
+        return Optional.ofNullable(this.groupMembershipRadiusAttribute);
     }
     /**
      * @return In a successful authentication response, Oracle Identity Cloud Service will pass user&#39;s group information restricted to groups persisted in this attribute, in the specified RADIUS attribute.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns() {
-        return this.groupMembershipToReturns;
+        return this.groupMembershipToReturns == null ? List.of() : this.groupMembershipToReturns;
     }
     /**
      * @return Configure the groupNameFormat based on vendor in order to pass it to RADIUS infra
      * 
      */
-    public String groupNameFormat() {
-        return this.groupNameFormat;
+    public Optional<String> groupNameFormat() {
+        return Optional.ofNullable(this.groupNameFormat);
     }
     /**
      * @return Indicates to include groups in RADIUS response
      * 
      */
-    public Boolean includeGroupInResponse() {
-        return this.includeGroupInResponse;
+    public Optional<Boolean> includeGroupInResponse() {
+        return Optional.ofNullable(this.includeGroupInResponse);
     }
     /**
      * @return Indicates if password and OTP are passed in the same sign-in request or not.
      * 
      */
-    public Boolean passwordAndOtpTogether() {
-        return this.passwordAndOtpTogether;
+    public Optional<Boolean> passwordAndOtpTogether() {
+        return Optional.ofNullable(this.passwordAndOtpTogether);
     }
     /**
      * @return This is the port of RADIUS Proxy which RADIUS client will connect to.
      * 
      */
-    public String port() {
-        return this.port;
+    public Optional<String> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return ID used to identify a particular vendor.
      * 
      */
-    public String radiusVendorSpecificId() {
-        return this.radiusVendorSpecificId;
+    public Optional<String> radiusVendorSpecificId() {
+        return Optional.ofNullable(this.radiusVendorSpecificId);
     }
     /**
      * @return Configure the responseFormat based on vendor in order to pass it to RADIUS infra
      * 
      */
-    public String responseFormat() {
-        return this.responseFormat;
+    public Optional<String> responseFormat() {
+        return Optional.ofNullable(this.responseFormat);
     }
     /**
      * @return The delimiter used if group membership responseFormat is a delimited list instead of repeating attributes
      * 
      */
-    public String responseFormatDelimiter() {
-        return this.responseFormatDelimiter;
+    public Optional<String> responseFormatDelimiter() {
+        return Optional.ofNullable(this.responseFormatDelimiter);
     }
     /**
      * @return Secret key used to secure communication between RADIUS Proxy and RADIUS client
      * 
      */
-    public String secretKey() {
-        return this.secretKey;
+    public Optional<String> secretKey() {
+        return Optional.ofNullable(this.secretKey);
     }
     /**
      * @return Value consists of type of RADIUS App. Type can be Oracle Database, VPN etc
      * 
      */
-    public String typeOfRadiusApp() {
-        return this.typeOfRadiusApp;
+    public Optional<String> typeOfRadiusApp() {
+        return Optional.ofNullable(this.typeOfRadiusApp);
     }
 
     public static Builder builder() {
@@ -204,21 +206,21 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiu
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean captureClientIp;
-        private String clientIp;
-        private String countryCodeResponseAttributeId;
-        private String endUserIpAttribute;
-        private String groupMembershipRadiusAttribute;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns;
-        private String groupNameFormat;
-        private Boolean includeGroupInResponse;
-        private Boolean passwordAndOtpTogether;
-        private String port;
-        private String radiusVendorSpecificId;
-        private String responseFormat;
-        private String responseFormatDelimiter;
-        private String secretKey;
-        private String typeOfRadiusApp;
+        private @Nullable Boolean captureClientIp;
+        private @Nullable String clientIp;
+        private @Nullable String countryCodeResponseAttributeId;
+        private @Nullable String endUserIpAttribute;
+        private @Nullable String groupMembershipRadiusAttribute;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns;
+        private @Nullable String groupNameFormat;
+        private @Nullable Boolean includeGroupInResponse;
+        private @Nullable Boolean passwordAndOtpTogether;
+        private @Nullable String port;
+        private @Nullable String radiusVendorSpecificId;
+        private @Nullable String responseFormat;
+        private @Nullable String responseFormatDelimiter;
+        private @Nullable String secretKey;
+        private @Nullable String typeOfRadiusApp;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -240,81 +242,81 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiu
         }
 
         @CustomType.Setter
-        public Builder captureClientIp(Boolean captureClientIp) {
-            this.captureClientIp = Objects.requireNonNull(captureClientIp);
+        public Builder captureClientIp(@Nullable Boolean captureClientIp) {
+            this.captureClientIp = captureClientIp;
             return this;
         }
         @CustomType.Setter
-        public Builder clientIp(String clientIp) {
-            this.clientIp = Objects.requireNonNull(clientIp);
+        public Builder clientIp(@Nullable String clientIp) {
+            this.clientIp = clientIp;
             return this;
         }
         @CustomType.Setter
-        public Builder countryCodeResponseAttributeId(String countryCodeResponseAttributeId) {
-            this.countryCodeResponseAttributeId = Objects.requireNonNull(countryCodeResponseAttributeId);
+        public Builder countryCodeResponseAttributeId(@Nullable String countryCodeResponseAttributeId) {
+            this.countryCodeResponseAttributeId = countryCodeResponseAttributeId;
             return this;
         }
         @CustomType.Setter
-        public Builder endUserIpAttribute(String endUserIpAttribute) {
-            this.endUserIpAttribute = Objects.requireNonNull(endUserIpAttribute);
+        public Builder endUserIpAttribute(@Nullable String endUserIpAttribute) {
+            this.endUserIpAttribute = endUserIpAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder groupMembershipRadiusAttribute(String groupMembershipRadiusAttribute) {
-            this.groupMembershipRadiusAttribute = Objects.requireNonNull(groupMembershipRadiusAttribute);
+        public Builder groupMembershipRadiusAttribute(@Nullable String groupMembershipRadiusAttribute) {
+            this.groupMembershipRadiusAttribute = groupMembershipRadiusAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder groupMembershipToReturns(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns) {
-            this.groupMembershipToReturns = Objects.requireNonNull(groupMembershipToReturns);
+        public Builder groupMembershipToReturns(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns) {
+            this.groupMembershipToReturns = groupMembershipToReturns;
             return this;
         }
         public Builder groupMembershipToReturns(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn... groupMembershipToReturns) {
             return groupMembershipToReturns(List.of(groupMembershipToReturns));
         }
         @CustomType.Setter
-        public Builder groupNameFormat(String groupNameFormat) {
-            this.groupNameFormat = Objects.requireNonNull(groupNameFormat);
+        public Builder groupNameFormat(@Nullable String groupNameFormat) {
+            this.groupNameFormat = groupNameFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder includeGroupInResponse(Boolean includeGroupInResponse) {
-            this.includeGroupInResponse = Objects.requireNonNull(includeGroupInResponse);
+        public Builder includeGroupInResponse(@Nullable Boolean includeGroupInResponse) {
+            this.includeGroupInResponse = includeGroupInResponse;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordAndOtpTogether(Boolean passwordAndOtpTogether) {
-            this.passwordAndOtpTogether = Objects.requireNonNull(passwordAndOtpTogether);
+        public Builder passwordAndOtpTogether(@Nullable Boolean passwordAndOtpTogether) {
+            this.passwordAndOtpTogether = passwordAndOtpTogether;
             return this;
         }
         @CustomType.Setter
-        public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable String port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder radiusVendorSpecificId(String radiusVendorSpecificId) {
-            this.radiusVendorSpecificId = Objects.requireNonNull(radiusVendorSpecificId);
+        public Builder radiusVendorSpecificId(@Nullable String radiusVendorSpecificId) {
+            this.radiusVendorSpecificId = radiusVendorSpecificId;
             return this;
         }
         @CustomType.Setter
-        public Builder responseFormat(String responseFormat) {
-            this.responseFormat = Objects.requireNonNull(responseFormat);
+        public Builder responseFormat(@Nullable String responseFormat) {
+            this.responseFormat = responseFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder responseFormatDelimiter(String responseFormatDelimiter) {
-            this.responseFormatDelimiter = Objects.requireNonNull(responseFormatDelimiter);
+        public Builder responseFormatDelimiter(@Nullable String responseFormatDelimiter) {
+            this.responseFormatDelimiter = responseFormatDelimiter;
             return this;
         }
         @CustomType.Setter
-        public Builder secretKey(String secretKey) {
-            this.secretKey = Objects.requireNonNull(secretKey);
+        public Builder secretKey(@Nullable String secretKey) {
+            this.secretKey = secretKey;
             return this;
         }
         @CustomType.Setter
-        public Builder typeOfRadiusApp(String typeOfRadiusApp) {
-            this.typeOfRadiusApp = Objects.requireNonNull(typeOfRadiusApp);
+        public Builder typeOfRadiusApp(@Nullable String typeOfRadiusApp) {
+            this.typeOfRadiusApp = typeOfRadiusApp;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp build() {

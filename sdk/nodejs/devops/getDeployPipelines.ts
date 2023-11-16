@@ -78,7 +78,7 @@ export interface GetDeployPipelinesResult {
     /**
      * The list of deploy_pipeline_collection.
      */
-    readonly deployPipelineCollections: outputs.DevOps.GetDeployPipelinesDeployPipelineCollection[];
+    readonly deployPipelineCollections?: outputs.DevOps.GetDeployPipelinesDeployPipelineCollection[];
     /**
      * Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */

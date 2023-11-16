@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i DrPlanExecutionExecutionOptionsArgs) ToDrPlanExecutionExecutionOptionsOu
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionExecutionOptionsOutput)
 }
 
-func (i DrPlanExecutionExecutionOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[DrPlanExecutionExecutionOptions]{
-		OutputState: i.ToDrPlanExecutionExecutionOptionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrPlanExecutionExecutionOptionsArgs) ToDrPlanExecutionExecutionOptionsPtrOutput() DrPlanExecutionExecutionOptionsPtrOutput {
 	return i.ToDrPlanExecutionExecutionOptionsPtrOutputWithContext(context.Background())
 }
@@ -102,12 +95,6 @@ func (i *drPlanExecutionExecutionOptionsPtrType) ToDrPlanExecutionExecutionOptio
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionExecutionOptionsPtrOutput)
 }
 
-func (i *drPlanExecutionExecutionOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[*DrPlanExecutionExecutionOptions]{
-		OutputState: i.ToDrPlanExecutionExecutionOptionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionExecutionOptionsOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionExecutionOptionsOutput) ElementType() reflect.Type {
@@ -130,12 +117,6 @@ func (o DrPlanExecutionExecutionOptionsOutput) ToDrPlanExecutionExecutionOptions
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrPlanExecutionExecutionOptions) *DrPlanExecutionExecutionOptions {
 		return &v
 	}).(DrPlanExecutionExecutionOptionsPtrOutput)
-}
-
-func (o DrPlanExecutionExecutionOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[DrPlanExecutionExecutionOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
@@ -165,12 +146,6 @@ func (o DrPlanExecutionExecutionOptionsPtrOutput) ToDrPlanExecutionExecutionOpti
 
 func (o DrPlanExecutionExecutionOptionsPtrOutput) ToDrPlanExecutionExecutionOptionsPtrOutputWithContext(ctx context.Context) DrPlanExecutionExecutionOptionsPtrOutput {
 	return o
-}
-
-func (o DrPlanExecutionExecutionOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[*DrPlanExecutionExecutionOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionExecutionOptionsPtrOutput) Elem() DrPlanExecutionExecutionOptionsOutput {
@@ -278,12 +253,6 @@ func (i DrPlanExecutionGroupExecutionArgs) ToDrPlanExecutionGroupExecutionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionGroupExecutionArrayInput is an input type that accepts DrPlanExecutionGroupExecutionArray and DrPlanExecutionGroupExecutionArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionGroupExecutionArrayInput` via:
 //
@@ -309,12 +278,6 @@ func (i DrPlanExecutionGroupExecutionArray) ToDrPlanExecutionGroupExecutionArray
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionArrayOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionGroupExecutionOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionGroupExecutionOutput) ElementType() reflect.Type {
@@ -327,12 +290,6 @@ func (o DrPlanExecutionGroupExecutionOutput) ToDrPlanExecutionGroupExecutionOutp
 
 func (o DrPlanExecutionGroupExecutionOutput) ToDrPlanExecutionGroupExecutionOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
@@ -394,12 +351,6 @@ func (o DrPlanExecutionGroupExecutionArrayOutput) ToDrPlanExecutionGroupExecutio
 
 func (o DrPlanExecutionGroupExecutionArrayOutput) ToDrPlanExecutionGroupExecutionArrayOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionArrayOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionGroupExecutionArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionGroupExecutionOutput {
@@ -477,12 +428,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionArgs) ToDrPlanExecutionGroupEx
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionGroupExecutionStepExecutionArrayInput is an input type that accepts DrPlanExecutionGroupExecutionStepExecutionArray and DrPlanExecutionGroupExecutionStepExecutionArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionGroupExecutionStepExecutionArrayInput` via:
 //
@@ -508,12 +453,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionArray) ToDrPlanExecutionGroupE
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionArrayOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionGroupExecutionStepExecutionOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionGroupExecutionStepExecutionOutput) ElementType() reflect.Type {
@@ -526,12 +465,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ToDrPlanExecutionGroup
 
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ToDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionStepExecutionOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
@@ -600,12 +533,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToDrPlanExecution
 	return o
 }
 
-func (o DrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrPlanExecutionGroupExecutionStepExecutionArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionGroupExecutionStepExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionGroupExecutionStepExecution {
 		return vs[0].([]DrPlanExecutionGroupExecutionStepExecution)[vs[1].(int)]
@@ -653,12 +580,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToDrPlanExecu
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput is an input type that accepts DrPlanExecutionGroupExecutionStepExecutionLogLocationArray and DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput` via:
 //
@@ -684,12 +605,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToDrPlanExec
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -702,12 +617,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToDrPlanExe
 
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -737,12 +646,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToDrPl
 
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
@@ -792,12 +695,6 @@ func (i DrPlanExecutionLogLocationArgs) ToDrPlanExecutionLogLocationOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionLogLocationOutput)
 }
 
-func (i DrPlanExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionLogLocationArrayInput is an input type that accepts DrPlanExecutionLogLocationArray and DrPlanExecutionLogLocationArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionLogLocationArrayInput` via:
 //
@@ -823,12 +720,6 @@ func (i DrPlanExecutionLogLocationArray) ToDrPlanExecutionLogLocationArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionLogLocationArrayOutput)
 }
 
-func (i DrPlanExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -841,12 +732,6 @@ func (o DrPlanExecutionLogLocationOutput) ToDrPlanExecutionLogLocationOutput() D
 
 func (o DrPlanExecutionLogLocationOutput) ToDrPlanExecutionLogLocationOutputWithContext(ctx context.Context) DrPlanExecutionLogLocationOutput {
 	return o
-}
-
-func (o DrPlanExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -876,12 +761,6 @@ func (o DrPlanExecutionLogLocationArrayOutput) ToDrPlanExecutionLogLocationArray
 
 func (o DrPlanExecutionLogLocationArrayOutput) ToDrPlanExecutionLogLocationArrayOutputWithContext(ctx context.Context) DrPlanExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o DrPlanExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionLogLocationOutput {
@@ -941,12 +820,6 @@ func (i DrPlanPlanGroupArgs) ToDrPlanPlanGroupOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupOutput)
 }
 
-func (i DrPlanPlanGroupArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroup] {
-	return pulumix.Output[DrPlanPlanGroup]{
-		OutputState: i.ToDrPlanPlanGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupArrayInput is an input type that accepts DrPlanPlanGroupArray and DrPlanPlanGroupArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupArrayInput` via:
 //
@@ -972,12 +845,6 @@ func (i DrPlanPlanGroupArray) ToDrPlanPlanGroupArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupArrayOutput)
 }
 
-func (i DrPlanPlanGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroup] {
-	return pulumix.Output[[]DrPlanPlanGroup]{
-		OutputState: i.ToDrPlanPlanGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupOutput) ElementType() reflect.Type {
@@ -990,12 +857,6 @@ func (o DrPlanPlanGroupOutput) ToDrPlanPlanGroupOutput() DrPlanPlanGroupOutput {
 
 func (o DrPlanPlanGroupOutput) ToDrPlanPlanGroupOutputWithContext(ctx context.Context) DrPlanPlanGroupOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroup] {
-	return pulumix.Output[DrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -1033,12 +894,6 @@ func (o DrPlanPlanGroupArrayOutput) ToDrPlanPlanGroupArrayOutput() DrPlanPlanGro
 
 func (o DrPlanPlanGroupArrayOutput) ToDrPlanPlanGroupArrayOutputWithContext(ctx context.Context) DrPlanPlanGroupArrayOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroup] {
-	return pulumix.Output[[]DrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanPlanGroupArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupOutput {
@@ -1118,12 +973,6 @@ func (i DrPlanPlanGroupStepArgs) ToDrPlanPlanGroupStepOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepOutput)
 }
 
-func (i DrPlanPlanGroupStepArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStep] {
-	return pulumix.Output[DrPlanPlanGroupStep]{
-		OutputState: i.ToDrPlanPlanGroupStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupStepArrayInput is an input type that accepts DrPlanPlanGroupStepArray and DrPlanPlanGroupStepArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupStepArrayInput` via:
 //
@@ -1149,12 +998,6 @@ func (i DrPlanPlanGroupStepArray) ToDrPlanPlanGroupStepArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepArrayOutput)
 }
 
-func (i DrPlanPlanGroupStepArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStep]{
-		OutputState: i.ToDrPlanPlanGroupStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupStepOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupStepOutput) ElementType() reflect.Type {
@@ -1167,12 +1010,6 @@ func (o DrPlanPlanGroupStepOutput) ToDrPlanPlanGroupStepOutput() DrPlanPlanGroup
 
 func (o DrPlanPlanGroupStepOutput) ToDrPlanPlanGroupStepOutputWithContext(ctx context.Context) DrPlanPlanGroupStepOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStep] {
-	return pulumix.Output[DrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -1235,12 +1072,6 @@ func (o DrPlanPlanGroupStepArrayOutput) ToDrPlanPlanGroupStepArrayOutput() DrPla
 
 func (o DrPlanPlanGroupStepArrayOutput) ToDrPlanPlanGroupStepArrayOutputWithContext(ctx context.Context) DrPlanPlanGroupStepArrayOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupStepOutput {
@@ -1314,12 +1145,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepArgs) ToDrPlanPlanGroupStepUserDefined
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupStepUserDefinedStepArrayInput is an input type that accepts DrPlanPlanGroupStepUserDefinedStepArray and DrPlanPlanGroupStepUserDefinedStepArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupStepUserDefinedStepArrayInput` via:
 //
@@ -1345,12 +1170,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepArray) ToDrPlanPlanGroupStepUserDefine
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepArrayOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupStepUserDefinedStepOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupStepUserDefinedStepOutput) ElementType() reflect.Type {
@@ -1363,12 +1182,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToDrPlanPlanGroupStepUserDefin
 
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx context.Context) DrPlanPlanGroupStepUserDefinedStepOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
@@ -1432,12 +1245,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepArrayOutput) ToDrPlanPlanGroupStepUser
 	return o
 }
 
-func (o DrPlanPlanGroupStepUserDefinedStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrPlanPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupStepUserDefinedStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanPlanGroupStepUserDefinedStep {
 		return vs[0].([]DrPlanPlanGroupStepUserDefinedStep)[vs[1].(int)]
@@ -1485,12 +1292,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToDrP
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput is an input type that accepts DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray and DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput` via:
 //
@@ -1516,12 +1317,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToDr
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ElementType() reflect.Type {
@@ -1534,12 +1329,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToD
 
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx context.Context) DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `customDrScripts`
@@ -1569,12 +1358,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput
 
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx context.Context) DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
@@ -1624,12 +1407,6 @@ func (i DrProtectionGroupAssociationArgs) ToDrProtectionGroupAssociationOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupAssociationOutput)
 }
 
-func (i DrProtectionGroupAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupAssociation] {
-	return pulumix.Output[DrProtectionGroupAssociation]{
-		OutputState: i.ToDrProtectionGroupAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupAssociationArgs) ToDrProtectionGroupAssociationPtrOutput() DrProtectionGroupAssociationPtrOutput {
 	return i.ToDrProtectionGroupAssociationPtrOutputWithContext(context.Background())
 }
@@ -1671,12 +1448,6 @@ func (i *drProtectionGroupAssociationPtrType) ToDrProtectionGroupAssociationPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupAssociationPtrOutput)
 }
 
-func (i *drProtectionGroupAssociationPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupAssociation] {
-	return pulumix.Output[*DrProtectionGroupAssociation]{
-		OutputState: i.ToDrProtectionGroupAssociationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupAssociationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupAssociationOutput) ElementType() reflect.Type {
@@ -1699,12 +1470,6 @@ func (o DrProtectionGroupAssociationOutput) ToDrProtectionGroupAssociationPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupAssociation) *DrProtectionGroupAssociation {
 		return &v
 	}).(DrProtectionGroupAssociationPtrOutput)
-}
-
-func (o DrProtectionGroupAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupAssociation] {
-	return pulumix.Output[DrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -1734,12 +1499,6 @@ func (o DrProtectionGroupAssociationPtrOutput) ToDrProtectionGroupAssociationPtr
 
 func (o DrProtectionGroupAssociationPtrOutput) ToDrProtectionGroupAssociationPtrOutputWithContext(ctx context.Context) DrProtectionGroupAssociationPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupAssociationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupAssociation] {
-	return pulumix.Output[*DrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupAssociationPtrOutput) Elem() DrProtectionGroupAssociationOutput {
@@ -1823,12 +1582,6 @@ func (i DrProtectionGroupLogLocationArgs) ToDrProtectionGroupLogLocationOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupLogLocationOutput)
 }
 
-func (i DrProtectionGroupLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupLogLocation] {
-	return pulumix.Output[DrProtectionGroupLogLocation]{
-		OutputState: i.ToDrProtectionGroupLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupLogLocationArgs) ToDrProtectionGroupLogLocationPtrOutput() DrProtectionGroupLogLocationPtrOutput {
 	return i.ToDrProtectionGroupLogLocationPtrOutputWithContext(context.Background())
 }
@@ -1870,12 +1623,6 @@ func (i *drProtectionGroupLogLocationPtrType) ToDrProtectionGroupLogLocationPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupLogLocationPtrOutput)
 }
 
-func (i *drProtectionGroupLogLocationPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupLogLocation] {
-	return pulumix.Output[*DrProtectionGroupLogLocation]{
-		OutputState: i.ToDrProtectionGroupLogLocationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupLogLocationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupLogLocationOutput) ElementType() reflect.Type {
@@ -1898,12 +1645,6 @@ func (o DrProtectionGroupLogLocationOutput) ToDrProtectionGroupLogLocationPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupLogLocation) *DrProtectionGroupLogLocation {
 		return &v
 	}).(DrProtectionGroupLogLocationPtrOutput)
-}
-
-func (o DrProtectionGroupLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupLogLocation] {
-	return pulumix.Output[DrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -1933,12 +1674,6 @@ func (o DrProtectionGroupLogLocationPtrOutput) ToDrProtectionGroupLogLocationPtr
 
 func (o DrProtectionGroupLogLocationPtrOutput) ToDrProtectionGroupLogLocationPtrOutputWithContext(ctx context.Context) DrProtectionGroupLogLocationPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupLogLocationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupLogLocation] {
-	return pulumix.Output[*DrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupLogLocationPtrOutput) Elem() DrProtectionGroupLogLocationOutput {
@@ -2082,12 +1817,6 @@ func (i DrProtectionGroupMemberArgs) ToDrProtectionGroupMemberOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberOutput)
 }
 
-func (i DrProtectionGroupMemberArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMember] {
-	return pulumix.Output[DrProtectionGroupMember]{
-		OutputState: i.ToDrProtectionGroupMemberOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberArrayInput is an input type that accepts DrProtectionGroupMemberArray and DrProtectionGroupMemberArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberArrayInput` via:
 //
@@ -2113,12 +1842,6 @@ func (i DrProtectionGroupMemberArray) ToDrProtectionGroupMemberArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberArrayOutput)
 }
 
-func (i DrProtectionGroupMemberArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMember] {
-	return pulumix.Output[[]DrProtectionGroupMember]{
-		OutputState: i.ToDrProtectionGroupMemberArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberOutput) ElementType() reflect.Type {
@@ -2131,12 +1854,6 @@ func (o DrProtectionGroupMemberOutput) ToDrProtectionGroupMemberOutput() DrProte
 
 func (o DrProtectionGroupMemberOutput) ToDrProtectionGroupMemberOutputWithContext(ctx context.Context) DrProtectionGroupMemberOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMember] {
-	return pulumix.Output[DrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
@@ -2249,12 +1966,6 @@ func (o DrProtectionGroupMemberArrayOutput) ToDrProtectionGroupMemberArrayOutput
 	return o
 }
 
-func (o DrProtectionGroupMemberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMember] {
-	return pulumix.Output[[]DrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMember {
 		return vs[0].([]DrProtectionGroupMember)[vs[1].(int)]
@@ -2302,12 +2013,6 @@ func (i DrProtectionGroupMemberBackendSetMappingArgs) ToDrProtectionGroupMemberB
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackendSetMappingOutput)
 }
 
-func (i DrProtectionGroupMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberBackendSetMappingArrayInput is an input type that accepts DrProtectionGroupMemberBackendSetMappingArray and DrProtectionGroupMemberBackendSetMappingArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberBackendSetMappingArrayInput` via:
 //
@@ -2333,12 +2038,6 @@ func (i DrProtectionGroupMemberBackendSetMappingArray) ToDrProtectionGroupMember
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackendSetMappingArrayOutput)
 }
 
-func (i DrProtectionGroupMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBackendSetMappingOutput) ElementType() reflect.Type {
@@ -2351,12 +2050,6 @@ func (o DrProtectionGroupMemberBackendSetMappingOutput) ToDrProtectionGroupMembe
 
 func (o DrProtectionGroupMemberBackendSetMappingOutput) ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
@@ -2386,12 +2079,6 @@ func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToDrProtectionGroup
 
 func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingArrayOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBackendSetMappingOutput {
@@ -2441,12 +2128,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationArgs) ToDrProtectionGroupMemb
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationOutput)
 }
 
-func (i DrProtectionGroupMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberBlockVolumeOperationArrayInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationArray and DrProtectionGroupMemberBlockVolumeOperationArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationArrayInput` via:
 //
@@ -2472,12 +2153,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationArray) ToDrProtectionGroupMem
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationArrayOutput)
 }
 
-func (i DrProtectionGroupMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
@@ -2490,12 +2165,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToDrProtectionGroupMe
 
 func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The details for creating a block volume attachment.
@@ -2529,12 +2198,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToDrProtectionGr
 
 func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBlockVolumeOperationOutput {
@@ -2574,12 +2237,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrPr
 
 func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput)
-}
-
-func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
@@ -2623,12 +2280,6 @@ func (i *drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) To
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ElementType() reflect.Type {
@@ -2653,12 +2304,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToDr
 	}).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) *string {
@@ -2678,12 +2323,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) T
 
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) Elem() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
@@ -2739,12 +2378,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtect
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput)
 }
 
-func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
 	return i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(context.Background())
 }
@@ -2786,12 +2419,6 @@ func (i *drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ToDrPro
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ElementType() reflect.Type {
@@ -2816,12 +2443,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToDrProte
 	}).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) MountPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationMountDetails) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
@@ -2839,12 +2460,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToDrPr
 
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) Elem() DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput {
@@ -2904,12 +2519,6 @@ func (i DrProtectionGroupMemberExportMappingArgs) ToDrProtectionGroupMemberExpor
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberExportMappingOutput)
 }
 
-func (i DrProtectionGroupMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[DrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToDrProtectionGroupMemberExportMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberExportMappingArrayInput is an input type that accepts DrProtectionGroupMemberExportMappingArray and DrProtectionGroupMemberExportMappingArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberExportMappingArrayInput` via:
 //
@@ -2935,12 +2544,6 @@ func (i DrProtectionGroupMemberExportMappingArray) ToDrProtectionGroupMemberExpo
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberExportMappingArrayOutput)
 }
 
-func (i DrProtectionGroupMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberExportMappingOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberExportMappingOutput) ElementType() reflect.Type {
@@ -2953,12 +2556,6 @@ func (o DrProtectionGroupMemberExportMappingOutput) ToDrProtectionGroupMemberExp
 
 func (o DrProtectionGroupMemberExportMappingOutput) ToDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[DrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -2983,12 +2580,6 @@ func (o DrProtectionGroupMemberExportMappingArrayOutput) ToDrProtectionGroupMemb
 
 func (o DrProtectionGroupMemberExportMappingArrayOutput) ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingArrayOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberExportMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberExportMappingOutput {
@@ -3046,12 +2637,6 @@ func (i DrProtectionGroupMemberFileSystemOperationArgs) ToDrProtectionGroupMembe
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationOutput)
 }
 
-func (i DrProtectionGroupMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberFileSystemOperationArrayInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationArray and DrProtectionGroupMemberFileSystemOperationArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationArrayInput` via:
 //
@@ -3077,12 +2662,6 @@ func (i DrProtectionGroupMemberFileSystemOperationArray) ToDrProtectionGroupMemb
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationArrayOutput)
 }
 
-func (i DrProtectionGroupMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberFileSystemOperationOutput) ElementType() reflect.Type {
@@ -3095,12 +2674,6 @@ func (o DrProtectionGroupMemberFileSystemOperationOutput) ToDrProtectionGroupMem
 
 func (o DrProtectionGroupMemberFileSystemOperationOutput) ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The export path of the file system.  Example: `/fs-export-path`
@@ -3146,12 +2719,6 @@ func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) ToDrProtectionGro
 	return o
 }
 
-func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberFileSystemOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberFileSystemOperation {
 		return vs[0].([]DrProtectionGroupMemberFileSystemOperation)[vs[1].(int)]
@@ -3189,12 +2756,6 @@ func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtecti
 
 func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationMountDetailsOutput)
-}
-
-func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
@@ -3238,12 +2799,6 @@ func (i *drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ToDrProt
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberFileSystemOperationMountDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ElementType() reflect.Type {
@@ -3268,12 +2823,6 @@ func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToDrProtec
 	}).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) MountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperationMountDetails) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
@@ -3291,12 +2840,6 @@ func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToDrPro
 
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) Elem() DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
@@ -3352,12 +2895,6 @@ func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtec
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput)
 }
 
-func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
 	return i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(context.Background())
 }
@@ -3399,12 +2936,6 @@ func (i *drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ToDrPr
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ElementType() reflect.Type {
@@ -3429,12 +2960,6 @@ func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToDrProt
 	}).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
 func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) MountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperationUnmountDetails) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
@@ -3452,12 +2977,6 @@ func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToDrP
 
 func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) Elem() DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput {
@@ -3529,12 +3048,6 @@ func (i DrProtectionGroupMemberVnicMappingArgs) ToDrProtectionGroupMemberVnicMap
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVnicMappingOutput)
 }
 
-func (i DrProtectionGroupMemberVnicMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[DrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToDrProtectionGroupMemberVnicMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberVnicMappingArrayInput is an input type that accepts DrProtectionGroupMemberVnicMappingArray and DrProtectionGroupMemberVnicMappingArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberVnicMappingArrayInput` via:
 //
@@ -3560,12 +3073,6 @@ func (i DrProtectionGroupMemberVnicMappingArray) ToDrProtectionGroupMemberVnicMa
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVnicMappingArrayOutput)
 }
 
-func (i DrProtectionGroupMemberVnicMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToDrProtectionGroupMemberVnicMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberVnicMappingOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberVnicMappingOutput) ElementType() reflect.Type {
@@ -3578,12 +3085,6 @@ func (o DrProtectionGroupMemberVnicMappingOutput) ToDrProtectionGroupMemberVnicM
 
 func (o DrProtectionGroupMemberVnicMappingOutput) ToDrProtectionGroupMemberVnicMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberVnicMappingOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberVnicMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[DrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
@@ -3625,12 +3126,6 @@ func (o DrProtectionGroupMemberVnicMappingArrayOutput) ToDrProtectionGroupMember
 	return o
 }
 
-func (o DrProtectionGroupMemberVnicMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberVnicMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberVnicMapping {
 		return vs[0].([]DrProtectionGroupMemberVnicMapping)[vs[1].(int)]
@@ -3639,11 +3134,11 @@ func (o DrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) 
 
 type GetDrPlanExecutionExecutionOption struct {
 	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
-	ArePrechecksEnabled bool `pulumi:"arePrechecksEnabled"`
+	ArePrechecksEnabled *bool `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
-	AreWarningsIgnored bool `pulumi:"areWarningsIgnored"`
+	AreWarningsIgnored *bool `pulumi:"areWarningsIgnored"`
 	// The type of the DR plan executed.
-	PlanExecutionType string `pulumi:"planExecutionType"`
+	PlanExecutionType *string `pulumi:"planExecutionType"`
 }
 
 // GetDrPlanExecutionExecutionOptionInput is an input type that accepts GetDrPlanExecutionExecutionOptionArgs and GetDrPlanExecutionExecutionOptionOutput values.
@@ -3659,11 +3154,11 @@ type GetDrPlanExecutionExecutionOptionInput interface {
 
 type GetDrPlanExecutionExecutionOptionArgs struct {
 	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
-	ArePrechecksEnabled pulumi.BoolInput `pulumi:"arePrechecksEnabled"`
+	ArePrechecksEnabled pulumi.BoolPtrInput `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
-	AreWarningsIgnored pulumi.BoolInput `pulumi:"areWarningsIgnored"`
+	AreWarningsIgnored pulumi.BoolPtrInput `pulumi:"areWarningsIgnored"`
 	// The type of the DR plan executed.
-	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
+	PlanExecutionType pulumi.StringPtrInput `pulumi:"planExecutionType"`
 }
 
 func (GetDrPlanExecutionExecutionOptionArgs) ElementType() reflect.Type {
@@ -3676,12 +3171,6 @@ func (i GetDrPlanExecutionExecutionOptionArgs) ToGetDrPlanExecutionExecutionOpti
 
 func (i GetDrPlanExecutionExecutionOptionArgs) ToGetDrPlanExecutionExecutionOptionOutputWithContext(ctx context.Context) GetDrPlanExecutionExecutionOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionExecutionOptionOutput)
-}
-
-func (i GetDrPlanExecutionExecutionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionExecutionOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionExecutionOptionArrayInput is an input type that accepts GetDrPlanExecutionExecutionOptionArray and GetDrPlanExecutionExecutionOptionArrayOutput values.
@@ -3709,12 +3198,6 @@ func (i GetDrPlanExecutionExecutionOptionArray) ToGetDrPlanExecutionExecutionOpt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionExecutionOptionArrayOutput)
 }
 
-func (i GetDrPlanExecutionExecutionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionExecutionOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionExecutionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionExecutionOptionOutput) ElementType() reflect.Type {
@@ -3729,25 +3212,19 @@ func (o GetDrPlanExecutionExecutionOptionOutput) ToGetDrPlanExecutionExecutionOp
 	return o
 }
 
-func (o GetDrPlanExecutionExecutionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionExecutionOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
-func (o GetDrPlanExecutionExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) bool { return v.ArePrechecksEnabled }).(pulumi.BoolOutput)
+func (o GetDrPlanExecutionExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) *bool { return v.ArePrechecksEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
-func (o GetDrPlanExecutionExecutionOptionOutput) AreWarningsIgnored() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) bool { return v.AreWarningsIgnored }).(pulumi.BoolOutput)
+func (o GetDrPlanExecutionExecutionOptionOutput) AreWarningsIgnored() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) *bool { return v.AreWarningsIgnored }).(pulumi.BoolPtrOutput)
 }
 
 // The type of the DR plan executed.
-func (o GetDrPlanExecutionExecutionOptionOutput) PlanExecutionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) string { return v.PlanExecutionType }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionExecutionOptionOutput) PlanExecutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) *string { return v.PlanExecutionType }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionExecutionOptionArrayOutput struct{ *pulumi.OutputState }
@@ -3764,12 +3241,6 @@ func (o GetDrPlanExecutionExecutionOptionArrayOutput) ToGetDrPlanExecutionExecut
 	return o
 }
 
-func (o GetDrPlanExecutionExecutionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionExecutionOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionExecutionOptionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionExecutionOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionExecutionOption {
 		return vs[0].([]GetDrPlanExecutionExecutionOption)[vs[1].(int)]
@@ -3778,23 +3249,23 @@ func (o GetDrPlanExecutionExecutionOptionArrayOutput) Index(i pulumi.IntInput) G
 
 type GetDrPlanExecutionGroupExecution struct {
 	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId string `pulumi:"groupId"`
+	GroupId *string `pulumi:"groupId"`
 	// The status of the step execution.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 	// A list of step executions in the group.
 	StepExecutions []GetDrPlanExecutionGroupExecutionStepExecution `pulumi:"stepExecutions"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetDrPlanExecutionGroupExecutionInput is an input type that accepts GetDrPlanExecutionGroupExecutionArgs and GetDrPlanExecutionGroupExecutionOutput values.
@@ -3810,23 +3281,23 @@ type GetDrPlanExecutionGroupExecutionInput interface {
 
 type GetDrPlanExecutionGroupExecutionArgs struct {
 	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId pulumi.StringInput `pulumi:"groupId"`
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The status of the step execution.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 	// A list of step executions in the group.
 	StepExecutions GetDrPlanExecutionGroupExecutionStepExecutionArrayInput `pulumi:"stepExecutions"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetDrPlanExecutionGroupExecutionArgs) ElementType() reflect.Type {
@@ -3839,12 +3310,6 @@ func (i GetDrPlanExecutionGroupExecutionArgs) ToGetDrPlanExecutionGroupExecution
 
 func (i GetDrPlanExecutionGroupExecutionArgs) ToGetDrPlanExecutionGroupExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionOutput)
-}
-
-func (i GetDrPlanExecutionGroupExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionGroupExecutionArrayInput is an input type that accepts GetDrPlanExecutionGroupExecutionArray and GetDrPlanExecutionGroupExecutionArrayOutput values.
@@ -3872,12 +3337,6 @@ func (i GetDrPlanExecutionGroupExecutionArray) ToGetDrPlanExecutionGroupExecutio
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionGroupExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionGroupExecutionOutput) ElementType() reflect.Type {
@@ -3892,35 +3351,29 @@ func (o GetDrPlanExecutionGroupExecutionOutput) ToGetDrPlanExecutionGroupExecuti
 	return o
 }
 
-func (o GetDrPlanExecutionGroupExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-func (o GetDrPlanExecutionGroupExecutionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The total duration in seconds taken to complete the step execution.  Example: `35`
-func (o GetDrPlanExecutionGroupExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *int { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
 // The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-func (o GetDrPlanExecutionGroupExecutionOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.GroupId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) GroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
 // The status of the step execution.
-func (o GetDrPlanExecutionGroupExecutionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-func (o GetDrPlanExecutionGroupExecutionOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // A list of step executions in the group.
@@ -3931,18 +3384,18 @@ func (o GetDrPlanExecutionGroupExecutionOutput) StepExecutions() GetDrPlanExecut
 }
 
 // The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionGroupExecutionOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionGroupExecutionOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The group type.  Example: `BUILT_IN`
-func (o GetDrPlanExecutionGroupExecutionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionGroupExecutionArrayOutput struct{ *pulumi.OutputState }
@@ -3959,12 +3412,6 @@ func (o GetDrPlanExecutionGroupExecutionArrayOutput) ToGetDrPlanExecutionGroupEx
 	return o
 }
 
-func (o GetDrPlanExecutionGroupExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionGroupExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionGroupExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionGroupExecution {
 		return vs[0].([]GetDrPlanExecutionGroupExecution)[vs[1].(int)]
@@ -3973,25 +3420,25 @@ func (o GetDrPlanExecutionGroupExecutionArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetDrPlanExecutionGroupExecutionStepExecution struct {
 	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId string `pulumi:"groupId"`
+	GroupId *string `pulumi:"groupId"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrPlanExecutionGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
 	// The status of the step execution.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
-	StepId string `pulumi:"stepId"`
+	StepId *string `pulumi:"stepId"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetDrPlanExecutionGroupExecutionStepExecutionInput is an input type that accepts GetDrPlanExecutionGroupExecutionStepExecutionArgs and GetDrPlanExecutionGroupExecutionStepExecutionOutput values.
@@ -4007,25 +3454,25 @@ type GetDrPlanExecutionGroupExecutionStepExecutionInput interface {
 
 type GetDrPlanExecutionGroupExecutionStepExecutionArgs struct {
 	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId pulumi.StringInput `pulumi:"groupId"`
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
 	// The status of the step execution.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
-	StepId pulumi.StringInput `pulumi:"stepId"`
+	StepId pulumi.StringPtrInput `pulumi:"stepId"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetDrPlanExecutionGroupExecutionStepExecutionArgs) ElementType() reflect.Type {
@@ -4038,12 +3485,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionArgs) ToGetDrPlanExecutionG
 
 func (i GetDrPlanExecutionGroupExecutionStepExecutionArgs) ToGetDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionStepExecutionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionOutput)
-}
-
-func (i GetDrPlanExecutionGroupExecutionStepExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionGroupExecutionStepExecutionArrayInput is an input type that accepts GetDrPlanExecutionGroupExecutionStepExecutionArray and GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput values.
@@ -4071,12 +3512,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionArray) ToGetDrPlanExecution
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionStepExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionGroupExecutionStepExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionGroupExecutionStepExecutionOutput) ElementType() reflect.Type {
@@ -4091,25 +3526,19 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ToGetDrPlanExecutio
 	return o
 }
 
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The total duration in seconds taken to complete the step execution.  Example: `35`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *int { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
 // The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.GroupId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) GroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
 // The details of an object storage log location for a DR protection group.
@@ -4120,33 +3549,33 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) LogLocations() GetD
 }
 
 // The status of the step execution.
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StepId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.StepId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StepId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.StepId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The group type.  Example: `BUILT_IN`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput struct{ *pulumi.OutputState }
@@ -4163,12 +3592,6 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToGetDrPlanExe
 	return o
 }
 
-func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionGroupExecutionStepExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionGroupExecutionStepExecution {
 		return vs[0].([]GetDrPlanExecutionGroupExecutionStepExecution)[vs[1].(int)]
@@ -4177,11 +3600,11 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) Index(i pulumi
 
 type GetDrPlanExecutionGroupExecutionStepExecutionLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrPlanExecutionGroupExecutionStepExecutionLogLocationInput is an input type that accepts GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs and GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput values.
@@ -4197,11 +3620,11 @@ type GetDrPlanExecutionGroupExecutionStepExecutionLogLocationInput interface {
 
 type GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ElementType() reflect.Type {
@@ -4214,12 +3637,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToGetDrPla
 
 func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToGetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput)
-}
-
-func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput is an input type that accepts GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArray and GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput values.
@@ -4247,12 +3664,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToGetDrPl
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -4267,25 +3678,19 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToGetDrP
 	return o
 }
 
-func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput struct{ *pulumi.OutputState }
@@ -4302,12 +3707,6 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToG
 	return o
 }
 
-func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionGroupExecutionStepExecutionLogLocation {
 		return vs[0].([]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation)[vs[1].(int)]
@@ -4316,11 +3715,11 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) Ind
 
 type GetDrPlanExecutionLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrPlanExecutionLogLocationInput is an input type that accepts GetDrPlanExecutionLogLocationArgs and GetDrPlanExecutionLogLocationOutput values.
@@ -4336,11 +3735,11 @@ type GetDrPlanExecutionLogLocationInput interface {
 
 type GetDrPlanExecutionLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrPlanExecutionLogLocationArgs) ElementType() reflect.Type {
@@ -4353,12 +3752,6 @@ func (i GetDrPlanExecutionLogLocationArgs) ToGetDrPlanExecutionLogLocationOutput
 
 func (i GetDrPlanExecutionLogLocationArgs) ToGetDrPlanExecutionLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionLogLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionLogLocationOutput)
-}
-
-func (i GetDrPlanExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionLogLocationArrayInput is an input type that accepts GetDrPlanExecutionLogLocationArray and GetDrPlanExecutionLogLocationArrayOutput values.
@@ -4386,12 +3779,6 @@ func (i GetDrPlanExecutionLogLocationArray) ToGetDrPlanExecutionLogLocationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -4406,25 +3793,19 @@ func (o GetDrPlanExecutionLogLocationOutput) ToGetDrPlanExecutionLogLocationOutp
 	return o
 }
 
-func (o GetDrPlanExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
-func (o GetDrPlanExecutionLogLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionLogLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrPlanExecutionLogLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionLogLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-func (o GetDrPlanExecutionLogLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionLogLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionLogLocationArrayOutput struct{ *pulumi.OutputState }
@@ -4439,12 +3820,6 @@ func (o GetDrPlanExecutionLogLocationArrayOutput) ToGetDrPlanExecutionLogLocatio
 
 func (o GetDrPlanExecutionLogLocationArrayOutput) ToGetDrPlanExecutionLogLocationArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionLogLocationOutput {
@@ -4484,12 +3859,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionArgs) ToGetDrPlanExecutionsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionArray and GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionArrayInput` via:
 //
@@ -4515,12 +3884,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionArray) ToGetDrPlanExecutions
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ElementType() reflect.Type {
@@ -4533,12 +3896,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ToGetDrPlanExecution
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) Items() GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput {
@@ -4561,12 +3918,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) ToGetDrPlanExec
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollection {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollection)[vs[1].(int)]
@@ -4575,15 +3926,15 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) Index(i pulumi.
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
+	DrProtectionGroupId *string `pulumi:"drProtectionGroupId"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
 	// The options for a plan execution.
 	ExecutionOptions []GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption `pulumi:"executionOptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
@@ -4591,31 +3942,31 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the DR plan execution's current state in more detail.
-	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation `pulumi:"logLocations"`
 	// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
+	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-	PeerRegion string `pulumi:"peerRegion"`
+	PeerRegion *string `pulumi:"peerRegion"`
 	// The type of the DR plan executed.
-	PlanExecutionType string `pulumi:"planExecutionType"`
+	PlanExecutionType *string `pulumi:"planExecutionType"`
 	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
-	PlanId string `pulumi:"planId"`
+	PlanId *string `pulumi:"planId"`
 	// A filter to return only DR plan executions that match the given lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput values.
@@ -4631,15 +3982,15 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemInput interface {
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	DrProtectionGroupId pulumi.StringInput `pulumi:"drProtectionGroupId"`
+	DrProtectionGroupId pulumi.StringPtrInput `pulumi:"drProtectionGroupId"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
 	// The options for a plan execution.
 	ExecutionOptions GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayInput `pulumi:"executionOptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
@@ -4647,31 +3998,31 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the DR plan execution's current state in more detail.
-	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails pulumi.StringPtrInput `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayInput `pulumi:"logLocations"`
 	// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerDrProtectionGroupId pulumi.StringInput `pulumi:"peerDrProtectionGroupId"`
+	PeerDrProtectionGroupId pulumi.StringPtrInput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
+	PeerRegion pulumi.StringPtrInput `pulumi:"peerRegion"`
 	// The type of the DR plan executed.
-	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
+	PlanExecutionType pulumi.StringPtrInput `pulumi:"planExecutionType"`
 	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
-	PlanId pulumi.StringInput `pulumi:"planId"`
+	PlanId pulumi.StringPtrInput `pulumi:"planId"`
 	// A filter to return only DR plan executions that match the given lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs) ElementType() reflect.Type {
@@ -4684,12 +4035,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs) ToGetDrPlanExecuti
 
 func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput)
-}
-
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput values.
@@ -4717,12 +4062,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArray) ToGetDrPlanExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ElementType() reflect.Type {
@@ -4737,15 +4076,9 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToGetDrPlanExecu
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -4754,18 +4087,18 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DefinedTags() pu
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.DrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The total duration in seconds taken to complete the step execution.  Example: `35`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ExecutionDurationInSec() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *int { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
 // The options for a plan execution.
@@ -4788,13 +4121,13 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) GroupExecutions(
 }
 
 // The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the DR plan execution's current state in more detail.
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) LifeCycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) LifeCycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.LifeCycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The details of an object storage log location for a DR protection group.
@@ -4805,28 +4138,28 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) LogLocations() G
 }
 
 // The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.PeerDrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PeerRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PeerRegion }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PeerRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
 // The type of the DR plan executed.
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanExecutionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PlanExecutionType }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanExecutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.PlanExecutionType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PlanId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.PlanId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only DR plan executions that match the given lifecycle state.
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4835,23 +4168,23 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) SystemTags() pul
 }
 
 // The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4868,12 +4201,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) ToGetDrPlan
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItem {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItem)[vs[1].(int)]
@@ -4882,11 +4209,11 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) Index(i pul
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption struct {
 	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
-	ArePrechecksEnabled bool `pulumi:"arePrechecksEnabled"`
+	ArePrechecksEnabled *bool `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
-	AreWarningsIgnored bool `pulumi:"areWarningsIgnored"`
+	AreWarningsIgnored *bool `pulumi:"areWarningsIgnored"`
 	// The type of the DR plan executed.
-	PlanExecutionType string `pulumi:"planExecutionType"`
+	PlanExecutionType *string `pulumi:"planExecutionType"`
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput values.
@@ -4902,11 +4229,11 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionInput interf
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs struct {
 	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
-	ArePrechecksEnabled pulumi.BoolInput `pulumi:"arePrechecksEnabled"`
+	ArePrechecksEnabled pulumi.BoolPtrInput `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
-	AreWarningsIgnored pulumi.BoolInput `pulumi:"areWarningsIgnored"`
+	AreWarningsIgnored pulumi.BoolPtrInput `pulumi:"areWarningsIgnored"`
 	// The type of the DR plan executed.
-	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
+	PlanExecutionType pulumi.StringPtrInput `pulumi:"planExecutionType"`
 }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs) ElementType() reflect.Type {
@@ -4919,12 +4246,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs) ToG
 
 func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput)
-}
-
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput values.
@@ -4952,12 +4273,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ElementType() reflect.Type {
@@ -4972,31 +4287,25 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) T
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) bool {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) *bool {
 		return v.ArePrechecksEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) AreWarningsIgnored() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) bool {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) AreWarningsIgnored() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) *bool {
 		return v.AreWarningsIgnored
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The type of the DR plan executed.
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) PlanExecutionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) PlanExecutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) *string {
 		return v.PlanExecutionType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput struct{ *pulumi.OutputState }
@@ -5013,12 +4322,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutp
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption)[vs[1].(int)]
@@ -5027,23 +4330,23 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutp
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId string `pulumi:"groupId"`
+	GroupId *string `pulumi:"groupId"`
 	// The status of the step execution.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 	// A list of step executions in the group.
 	StepExecutions []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution `pulumi:"stepExecutions"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput values.
@@ -5059,23 +4362,23 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionInput interfa
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId pulumi.StringInput `pulumi:"groupId"`
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The status of the step execution.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 	// A list of step executions in the group.
 	StepExecutions GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayInput `pulumi:"stepExecutions"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs) ElementType() reflect.Type {
@@ -5088,12 +4391,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs) ToGe
 
 func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput)
-}
-
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput values.
@@ -5121,12 +4418,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ElementType() reflect.Type {
@@ -5141,37 +4432,31 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) To
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The total duration in seconds taken to complete the step execution.  Example: `35`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) int {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *int {
 		return v.ExecutionDurationInSec
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.GroupId }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) GroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
 // The status of the step execution.
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // A list of step executions in the group.
@@ -5182,18 +4467,18 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) St
 }
 
 // The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The group type.  Example: `BUILT_IN`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput struct{ *pulumi.OutputState }
@@ -5210,12 +4495,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutpu
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution)[vs[1].(int)]
@@ -5224,25 +4503,25 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutpu
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId string `pulumi:"groupId"`
+	GroupId *string `pulumi:"groupId"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
 	// The status of the step execution.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
-	StepId string `pulumi:"stepId"`
+	StepId *string `pulumi:"stepId"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput values.
@@ -5258,25 +4537,25 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId pulumi.StringInput `pulumi:"groupId"`
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
 	// The status of the step execution.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
-	StepId pulumi.StringInput `pulumi:"stepId"`
+	StepId pulumi.StringPtrInput `pulumi:"stepId"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs) ElementType() reflect.Type {
@@ -5289,12 +4568,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 
 func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput)
-}
-
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput values.
@@ -5322,12 +4595,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ElementType() reflect.Type {
@@ -5342,31 +4609,25 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The total duration in seconds taken to complete the step execution.  Example: `35`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) int {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *int {
 		return v.ExecutionDurationInSec
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) GroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.GroupId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The details of an object storage log location for a DR protection group.
@@ -5377,45 +4638,45 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 }
 
 // The status of the step execution.
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.Status
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.StatusDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) StepId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) StepId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.StepId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.TimeEnded
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.TimeStarted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The group type.  Example: `BUILT_IN`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput struct{ *pulumi.OutputState }
@@ -5432,12 +4693,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution)[vs[1].(int)]
@@ -5446,11 +4701,11 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput values.
@@ -5466,11 +4721,11 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs) ElementType() reflect.Type {
@@ -5483,12 +4738,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 
 func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput)
-}
-
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput values.
@@ -5516,12 +4765,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -5536,31 +4779,25 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) *string {
 		return v.Bucket
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) *string {
 		return v.Namespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) string {
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) *string {
 		return v.Object
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput struct{ *pulumi.OutputState }
@@ -5577,12 +4814,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation)[vs[1].(int)]
@@ -5591,11 +4822,11 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput values.
@@ -5611,11 +4842,11 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationInput interface 
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs) ElementType() reflect.Type {
@@ -5628,12 +4859,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs) ToGetDr
 
 func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput)
-}
-
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput values.
@@ -5661,12 +4886,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArray) ToGetD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ElementType() reflect.Type {
@@ -5681,25 +4900,19 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ToGet
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput struct{ *pulumi.OutputState }
@@ -5714,12 +4927,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) 
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput {
@@ -5763,12 +4970,6 @@ func (i GetDrPlanExecutionsFilterArgs) ToGetDrPlanExecutionsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsFilterOutput)
 }
 
-func (i GetDrPlanExecutionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsFilter] {
-	return pulumix.Output[GetDrPlanExecutionsFilter]{
-		OutputState: i.ToGetDrPlanExecutionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsFilterArrayInput is an input type that accepts GetDrPlanExecutionsFilterArray and GetDrPlanExecutionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsFilterArrayInput` via:
 //
@@ -5794,12 +4995,6 @@ func (i GetDrPlanExecutionsFilterArray) ToGetDrPlanExecutionsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsFilterArrayOutput)
 }
 
-func (i GetDrPlanExecutionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsFilter] {
-	return pulumix.Output[[]GetDrPlanExecutionsFilter]{
-		OutputState: i.ToGetDrPlanExecutionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsFilterOutput) ElementType() reflect.Type {
@@ -5812,12 +5007,6 @@ func (o GetDrPlanExecutionsFilterOutput) ToGetDrPlanExecutionsFilterOutput() Get
 
 func (o GetDrPlanExecutionsFilterOutput) ToGetDrPlanExecutionsFilterOutputWithContext(ctx context.Context) GetDrPlanExecutionsFilterOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsFilter] {
-	return pulumix.Output[GetDrPlanExecutionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsFilterOutput) Name() pulumi.StringOutput {
@@ -5846,12 +5035,6 @@ func (o GetDrPlanExecutionsFilterArrayOutput) ToGetDrPlanExecutionsFilterArrayOu
 	return o
 }
 
-func (o GetDrPlanExecutionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsFilter] {
-	return pulumix.Output[[]GetDrPlanExecutionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsFilter {
 		return vs[0].([]GetDrPlanExecutionsFilter)[vs[1].(int)]
@@ -5860,13 +5043,13 @@ func (o GetDrPlanExecutionsFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlan
 
 type GetDrPlanPlanGroup struct {
 	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of steps in the group.
 	Steps []GetDrPlanPlanGroupStep `pulumi:"steps"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetDrPlanPlanGroupInput is an input type that accepts GetDrPlanPlanGroupArgs and GetDrPlanPlanGroupOutput values.
@@ -5882,13 +5065,13 @@ type GetDrPlanPlanGroupInput interface {
 
 type GetDrPlanPlanGroupArgs struct {
 	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The list of steps in the group.
 	Steps GetDrPlanPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of the DR plan.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetDrPlanPlanGroupArgs) ElementType() reflect.Type {
@@ -5901,12 +5084,6 @@ func (i GetDrPlanPlanGroupArgs) ToGetDrPlanPlanGroupOutput() GetDrPlanPlanGroupO
 
 func (i GetDrPlanPlanGroupArgs) ToGetDrPlanPlanGroupOutputWithContext(ctx context.Context) GetDrPlanPlanGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupOutput)
-}
-
-func (i GetDrPlanPlanGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroup] {
-	return pulumix.Output[GetDrPlanPlanGroup]{
-		OutputState: i.ToGetDrPlanPlanGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanPlanGroupArrayInput is an input type that accepts GetDrPlanPlanGroupArray and GetDrPlanPlanGroupArrayOutput values.
@@ -5934,12 +5111,6 @@ func (i GetDrPlanPlanGroupArray) ToGetDrPlanPlanGroupArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroup] {
-	return pulumix.Output[[]GetDrPlanPlanGroup]{
-		OutputState: i.ToGetDrPlanPlanGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupOutput) ElementType() reflect.Type {
@@ -5954,20 +5125,14 @@ func (o GetDrPlanPlanGroupOutput) ToGetDrPlanPlanGroupOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetDrPlanPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroup] {
-	return pulumix.Output[GetDrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the group.  Example: `DATABASE_SWITCHOVER`
-func (o GetDrPlanPlanGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-func (o GetDrPlanPlanGroupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of steps in the group.
@@ -5976,8 +5141,8 @@ func (o GetDrPlanPlanGroupOutput) Steps() GetDrPlanPlanGroupStepArrayOutput {
 }
 
 // The type of the DR plan.
-func (o GetDrPlanPlanGroupOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroup) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanPlanGroupArrayOutput struct{ *pulumi.OutputState }
@@ -5994,12 +5159,6 @@ func (o GetDrPlanPlanGroupArrayOutput) ToGetDrPlanPlanGroupArrayOutputWithContex
 	return o
 }
 
-func (o GetDrPlanPlanGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroup] {
-	return pulumix.Output[[]GetDrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanPlanGroupArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanPlanGroup {
 		return vs[0].([]GetDrPlanPlanGroup)[vs[1].(int)]
@@ -6008,21 +5167,21 @@ func (o GetDrPlanPlanGroupArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGro
 
 type GetDrPlanPlanGroupStep struct {
 	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The error mode for this step.
-	ErrorMode string `pulumi:"errorMode"`
+	ErrorMode *string `pulumi:"errorMode"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId string `pulumi:"groupId"`
+	GroupId *string `pulumi:"groupId"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
-	MemberId string `pulumi:"memberId"`
+	MemberId *string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
-	Timeout int `pulumi:"timeout"`
+	Timeout *int `pulumi:"timeout"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []GetDrPlanPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
@@ -6040,21 +5199,21 @@ type GetDrPlanPlanGroupStepInput interface {
 
 type GetDrPlanPlanGroupStepArgs struct {
 	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The error mode for this step.
-	ErrorMode pulumi.StringInput `pulumi:"errorMode"`
+	ErrorMode pulumi.StringPtrInput `pulumi:"errorMode"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId pulumi.StringInput `pulumi:"groupId"`
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
-	MemberId pulumi.StringInput `pulumi:"memberId"`
+	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
-	Timeout pulumi.IntInput `pulumi:"timeout"`
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
 	// The type of the DR plan.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps GetDrPlanPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
@@ -6069,12 +5228,6 @@ func (i GetDrPlanPlanGroupStepArgs) ToGetDrPlanPlanGroupStepOutput() GetDrPlanPl
 
 func (i GetDrPlanPlanGroupStepArgs) ToGetDrPlanPlanGroupStepOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepOutput)
-}
-
-func (i GetDrPlanPlanGroupStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanPlanGroupStepArrayInput is an input type that accepts GetDrPlanPlanGroupStepArray and GetDrPlanPlanGroupStepArrayOutput values.
@@ -6102,12 +5255,6 @@ func (i GetDrPlanPlanGroupStepArray) ToGetDrPlanPlanGroupStepArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupStepOutput) ElementType() reflect.Type {
@@ -6122,50 +5269,44 @@ func (o GetDrPlanPlanGroupStepOutput) ToGetDrPlanPlanGroupStepOutputWithContext(
 	return o
 }
 
-func (o GetDrPlanPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the group.  Example: `DATABASE_SWITCHOVER`
-func (o GetDrPlanPlanGroupStepOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The error mode for this step.
-func (o GetDrPlanPlanGroupStepOutput) ErrorMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.ErrorMode }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepOutput) ErrorMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *string { return v.ErrorMode }).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-func (o GetDrPlanPlanGroupStepOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.GroupId }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepOutput) GroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-func (o GetDrPlanPlanGroupStepOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A flag indicating whether this step should be enabled for execution.  Example: `true`
-func (o GetDrPlanPlanGroupStepOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetDrPlanPlanGroupStepOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
-func (o GetDrPlanPlanGroupStepOutput) MemberId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepOutput) MemberId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *string { return v.MemberId }).(pulumi.StringPtrOutput)
 }
 
 // The timeout in seconds for executing this step.  Example: `600`
-func (o GetDrPlanPlanGroupStepOutput) Timeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) int { return v.Timeout }).(pulumi.IntOutput)
+func (o GetDrPlanPlanGroupStepOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *int { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
 // The type of the DR plan.
-func (o GetDrPlanPlanGroupStepOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The details for a user-defined step in a DR plan.
@@ -6187,12 +5328,6 @@ func (o GetDrPlanPlanGroupStepArrayOutput) ToGetDrPlanPlanGroupStepArrayOutputWi
 	return o
 }
 
-func (o GetDrPlanPlanGroupStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanPlanGroupStep {
 		return vs[0].([]GetDrPlanPlanGroupStep)[vs[1].(int)]
@@ -6201,23 +5336,23 @@ func (o GetDrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanPla
 
 type GetDrPlanPlanGroupStepUserDefinedStep struct {
 	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
-	FunctionId string `pulumi:"functionId"`
+	FunctionId *string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
-	FunctionRegion string `pulumi:"functionRegion"`
+	FunctionRegion *string `pulumi:"functionRegion"`
 	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations []GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-	RequestBody string `pulumi:"requestBody"`
+	RequestBody *string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
-	RunAsUser string `pulumi:"runAsUser"`
+	RunAsUser *string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
-	RunOnInstanceId string `pulumi:"runOnInstanceId"`
+	RunOnInstanceId *string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
+	RunOnInstanceRegion *string `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
-	ScriptCommand string `pulumi:"scriptCommand"`
+	ScriptCommand *string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
-	StepType string `pulumi:"stepType"`
+	StepType *string `pulumi:"stepType"`
 }
 
 // GetDrPlanPlanGroupStepUserDefinedStepInput is an input type that accepts GetDrPlanPlanGroupStepUserDefinedStepArgs and GetDrPlanPlanGroupStepUserDefinedStepOutput values.
@@ -6233,23 +5368,23 @@ type GetDrPlanPlanGroupStepUserDefinedStepInput interface {
 
 type GetDrPlanPlanGroupStepUserDefinedStepArgs struct {
 	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
-	FunctionId pulumi.StringInput `pulumi:"functionId"`
+	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
-	FunctionRegion pulumi.StringInput `pulumi:"functionRegion"`
+	FunctionRegion pulumi.StringPtrInput `pulumi:"functionRegion"`
 	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-	RequestBody pulumi.StringInput `pulumi:"requestBody"`
+	RequestBody pulumi.StringPtrInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
-	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
+	RunAsUser pulumi.StringPtrInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
-	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
+	RunOnInstanceId pulumi.StringPtrInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
+	RunOnInstanceRegion pulumi.StringPtrInput `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
-	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
+	ScriptCommand pulumi.StringPtrInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
-	StepType pulumi.StringInput `pulumi:"stepType"`
+	StepType pulumi.StringPtrInput `pulumi:"stepType"`
 }
 
 func (GetDrPlanPlanGroupStepUserDefinedStepArgs) ElementType() reflect.Type {
@@ -6262,12 +5397,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepArgs) ToGetDrPlanPlanGroupStepUserD
 
 func (i GetDrPlanPlanGroupStepUserDefinedStepArgs) ToGetDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepUserDefinedStepOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepOutput)
-}
-
-func (i GetDrPlanPlanGroupStepUserDefinedStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanPlanGroupStepUserDefinedStepArrayInput is an input type that accepts GetDrPlanPlanGroupStepUserDefinedStepArray and GetDrPlanPlanGroupStepUserDefinedStepArrayOutput values.
@@ -6295,12 +5424,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepArray) ToGetDrPlanPlanGroupStepUser
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupStepUserDefinedStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupStepUserDefinedStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupStepUserDefinedStepOutput) ElementType() reflect.Type {
@@ -6315,20 +5438,14 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ToGetDrPlanPlanGroupStepUse
 	return o
 }
 
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.FunctionId }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
 
 // The region in which the function is deployed.  Example: `us-ashburn-1`
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) FunctionRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.FunctionRegion }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) FunctionRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.FunctionRegion }).(pulumi.StringPtrOutput)
 }
 
 // The details of an object storage script location for a user-defined step in a DR plan.
@@ -6339,33 +5456,33 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ObjectStorageScriptLocation
 }
 
 // The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RequestBody }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.RequestBody }).(pulumi.StringPtrOutput)
 }
 
 // The userid on the instance to be used for executing the script or command.  Example: `opc`
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.RunAsUser }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance on which this script or command should be executed.
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceId }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceRegion }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceRegion }).(pulumi.StringPtrOutput)
 }
 
 // The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.ScriptCommand }).(pulumi.StringPtrOutput)
 }
 
 // The type of the user-defined step.
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) StepType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.StepType }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) StepType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) *string { return v.StepType }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStepArrayOutput struct{ *pulumi.OutputState }
@@ -6382,12 +5499,6 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) ToGetDrPlanPlanGroupSt
 	return o
 }
 
-func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupStepUserDefinedStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanPlanGroupStepUserDefinedStep {
 		return vs[0].([]GetDrPlanPlanGroupStepUserDefinedStep)[vs[1].(int)]
@@ -6396,11 +5507,11 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInpu
 
 type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationInput is an input type that accepts GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs and GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput values.
@@ -6416,11 +5527,11 @@ type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationInput inter
 
 type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ElementType() reflect.Type {
@@ -6433,12 +5544,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) To
 
 func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput)
-}
-
-func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput is an input type that accepts GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray and GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput values.
@@ -6466,12 +5571,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ElementType() reflect.Type {
@@ -6486,25 +5585,19 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) 
 	return o
 }
 
-func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `customDrScripts`
-func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `validate_app_start.sh`
-func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput struct{ *pulumi.OutputState }
@@ -6519,12 +5612,6 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOut
 
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
@@ -6564,12 +5651,6 @@ func (i GetDrPlansDrPlanCollectionArgs) ToGetDrPlansDrPlanCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollection] {
-	return pulumix.Output[GetDrPlansDrPlanCollection]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansDrPlanCollectionArrayInput is an input type that accepts GetDrPlansDrPlanCollectionArray and GetDrPlansDrPlanCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansDrPlanCollectionArrayInput` via:
 //
@@ -6595,12 +5676,6 @@ func (i GetDrPlansDrPlanCollectionArray) ToGetDrPlansDrPlanCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollection] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollection]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionOutput) ElementType() reflect.Type {
@@ -6613,12 +5688,6 @@ func (o GetDrPlansDrPlanCollectionOutput) ToGetDrPlansDrPlanCollectionOutput() G
 
 func (o GetDrPlansDrPlanCollectionOutput) ToGetDrPlansDrPlanCollectionOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollection] {
-	return pulumix.Output[GetDrPlansDrPlanCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansDrPlanCollectionOutput) Items() GetDrPlansDrPlanCollectionItemArrayOutput {
@@ -6639,12 +5708,6 @@ func (o GetDrPlansDrPlanCollectionArrayOutput) ToGetDrPlansDrPlanCollectionArray
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollection] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansDrPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansDrPlanCollection {
 		return vs[0].([]GetDrPlansDrPlanCollection)[vs[1].(int)]
@@ -6653,35 +5716,35 @@ func (o GetDrPlansDrPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetDrPla
 
 type GetDrPlansDrPlanCollectionItem struct {
 	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
+	DrProtectionGroupId *string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
-	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
+	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-	PeerRegion string `pulumi:"peerRegion"`
+	PeerRegion *string `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
 	PlanGroups []GetDrPlansDrPlanCollectionItemPlanGroup `pulumi:"planGroups"`
 	// A filter to return only DR plans that match the given lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetDrPlansDrPlanCollectionItemInput is an input type that accepts GetDrPlansDrPlanCollectionItemArgs and GetDrPlansDrPlanCollectionItemOutput values.
@@ -6697,35 +5760,35 @@ type GetDrPlansDrPlanCollectionItemInput interface {
 
 type GetDrPlansDrPlanCollectionItemArgs struct {
 	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	DrProtectionGroupId pulumi.StringInput `pulumi:"drProtectionGroupId"`
+	DrProtectionGroupId pulumi.StringPtrInput `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
-	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails pulumi.StringPtrInput `pulumi:"lifeCycleDetails"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerDrProtectionGroupId pulumi.StringInput `pulumi:"peerDrProtectionGroupId"`
+	PeerDrProtectionGroupId pulumi.StringPtrInput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
+	PeerRegion pulumi.StringPtrInput `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
 	PlanGroups GetDrPlansDrPlanCollectionItemPlanGroupArrayInput `pulumi:"planGroups"`
 	// A filter to return only DR plans that match the given lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The type of the DR plan.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetDrPlansDrPlanCollectionItemArgs) ElementType() reflect.Type {
@@ -6738,12 +5801,6 @@ func (i GetDrPlansDrPlanCollectionItemArgs) ToGetDrPlansDrPlanCollectionItemOutp
 
 func (i GetDrPlansDrPlanCollectionItemArgs) ToGetDrPlansDrPlanCollectionItemOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemOutput)
-}
-
-func (i GetDrPlansDrPlanCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItem]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlansDrPlanCollectionItemArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemArray and GetDrPlansDrPlanCollectionItemArrayOutput values.
@@ -6771,12 +5828,6 @@ func (i GetDrPlansDrPlanCollectionItemArray) ToGetDrPlansDrPlanCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItem]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemOutput) ElementType() reflect.Type {
@@ -6791,15 +5842,9 @@ func (o GetDrPlansDrPlanCollectionItemOutput) ToGetDrPlansDrPlanCollectionItemOu
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -6808,13 +5853,13 @@ func (o GetDrPlansDrPlanCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-func (o GetDrPlansDrPlanCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemOutput) DrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) DrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.DrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
@@ -6823,23 +5868,23 @@ func (o GetDrPlansDrPlanCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the DR plan's current state in more detail.
-func (o GetDrPlansDrPlanCollectionItemOutput) LifeCycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) LifeCycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.LifeCycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.PeerDrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-func (o GetDrPlansDrPlanCollectionItemOutput) PeerRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.PeerRegion }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) PeerRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
 // The list of groups in this DR plan.
@@ -6848,8 +5893,8 @@ func (o GetDrPlansDrPlanCollectionItemOutput) PlanGroups() GetDrPlansDrPlanColle
 }
 
 // A filter to return only DR plans that match the given lifecycle state.
-func (o GetDrPlansDrPlanCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6858,18 +5903,18 @@ func (o GetDrPlansDrPlanCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlansDrPlanCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrPlansDrPlanCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The type of the DR plan.
-func (o GetDrPlansDrPlanCollectionItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlansDrPlanCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6886,12 +5931,6 @@ func (o GetDrPlansDrPlanCollectionItemArrayOutput) ToGetDrPlansDrPlanCollectionI
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansDrPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansDrPlanCollectionItem {
 		return vs[0].([]GetDrPlansDrPlanCollectionItem)[vs[1].(int)]
@@ -6900,13 +5939,13 @@ func (o GetDrPlansDrPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetD
 
 type GetDrPlansDrPlanCollectionItemPlanGroup struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of steps in the group.
 	Steps []GetDrPlansDrPlanCollectionItemPlanGroupStep `pulumi:"steps"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetDrPlansDrPlanCollectionItemPlanGroupInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupArgs and GetDrPlansDrPlanCollectionItemPlanGroupOutput values.
@@ -6922,13 +5961,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupInput interface {
 
 type GetDrPlansDrPlanCollectionItemPlanGroupArgs struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The list of steps in the group.
 	Steps GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of the DR plan.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupArgs) ElementType() reflect.Type {
@@ -6941,12 +5980,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupArgs) ToGetDrPlansDrPlanCollectio
 
 func (i GetDrPlansDrPlanCollectionItemPlanGroupArgs) ToGetDrPlansDrPlanCollectionItemPlanGroupOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupOutput)
-}
-
-func (i GetDrPlansDrPlanCollectionItemPlanGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlansDrPlanCollectionItemPlanGroupArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupArray and GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput values.
@@ -6974,12 +6007,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupArray) ToGetDrPlansDrPlanCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupOutput) ElementType() reflect.Type {
@@ -6994,20 +6021,14 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) ToGetDrPlansDrPlanCollect
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of steps in the group.
@@ -7018,8 +6039,8 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Steps() GetDrPlansDrPlanC
 }
 
 // The type of the DR plan.
-func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput struct{ *pulumi.OutputState }
@@ -7036,12 +6057,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) ToGetDrPlansDrPlanCo
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansDrPlanCollectionItemPlanGroup {
 		return vs[0].([]GetDrPlansDrPlanCollectionItemPlanGroup)[vs[1].(int)]
@@ -7050,21 +6065,21 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) Index(i pulumi.IntIn
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStep struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The error mode for this step.
-	ErrorMode string `pulumi:"errorMode"`
+	ErrorMode *string `pulumi:"errorMode"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId string `pulumi:"groupId"`
+	GroupId *string `pulumi:"groupId"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
-	MemberId string `pulumi:"memberId"`
+	MemberId *string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
-	Timeout int `pulumi:"timeout"`
+	Timeout *int `pulumi:"timeout"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
@@ -7082,21 +6097,21 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepInput interface {
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepArgs struct {
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The error mode for this step.
-	ErrorMode pulumi.StringInput `pulumi:"errorMode"`
+	ErrorMode pulumi.StringPtrInput `pulumi:"errorMode"`
 	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-	GroupId pulumi.StringInput `pulumi:"groupId"`
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
-	MemberId pulumi.StringInput `pulumi:"memberId"`
+	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
-	Timeout pulumi.IntInput `pulumi:"timeout"`
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
 	// The type of the DR plan.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
@@ -7111,12 +6126,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArgs) ToGetDrPlansDrPlanColle
 
 func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArgs) ToGetDrPlansDrPlanCollectionItemPlanGroupStepOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepOutput)
-}
-
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepArray and GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput values.
@@ -7144,12 +6153,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArray) ToGetDrPlansDrPlanColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ElementType() reflect.Type {
@@ -7164,50 +6167,44 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ToGetDrPlansDrPlanCol
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The error mode for this step.
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ErrorMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.ErrorMode }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ErrorMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *string { return v.ErrorMode }).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.GroupId }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) GroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A flag indicating whether this step should be enabled for execution.  Example: `true`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) MemberId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) MemberId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *string { return v.MemberId }).(pulumi.StringPtrOutput)
 }
 
 // The timeout in seconds for executing this step.  Example: `600`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Timeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) int { return v.Timeout }).(pulumi.IntOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *int { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
 // The type of the DR plan.
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The details for a user-defined step in a DR plan.
@@ -7231,12 +6228,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) ToGetDrPlansDrPl
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansDrPlanCollectionItemPlanGroupStep {
 		return vs[0].([]GetDrPlansDrPlanCollectionItemPlanGroupStep)[vs[1].(int)]
@@ -7245,23 +6236,23 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) Index(i pulumi.I
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep struct {
 	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
-	FunctionId string `pulumi:"functionId"`
+	FunctionId *string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
-	FunctionRegion string `pulumi:"functionRegion"`
+	FunctionRegion *string `pulumi:"functionRegion"`
 	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-	RequestBody string `pulumi:"requestBody"`
+	RequestBody *string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
-	RunAsUser string `pulumi:"runAsUser"`
+	RunAsUser *string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
-	RunOnInstanceId string `pulumi:"runOnInstanceId"`
+	RunOnInstanceId *string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
+	RunOnInstanceRegion *string `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
-	ScriptCommand string `pulumi:"scriptCommand"`
+	ScriptCommand *string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
-	StepType string `pulumi:"stepType"`
+	StepType *string `pulumi:"stepType"`
 }
 
 // GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs and GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput values.
@@ -7277,23 +6268,23 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepInput interface {
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs struct {
 	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
-	FunctionId pulumi.StringInput `pulumi:"functionId"`
+	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
-	FunctionRegion pulumi.StringInput `pulumi:"functionRegion"`
+	FunctionRegion pulumi.StringPtrInput `pulumi:"functionRegion"`
 	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-	RequestBody pulumi.StringInput `pulumi:"requestBody"`
+	RequestBody pulumi.StringPtrInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
-	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
+	RunAsUser pulumi.StringPtrInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
-	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
+	RunOnInstanceId pulumi.StringPtrInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
+	RunOnInstanceRegion pulumi.StringPtrInput `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
-	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
+	ScriptCommand pulumi.StringPtrInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
-	StepType pulumi.StringInput `pulumi:"stepType"`
+	StepType pulumi.StringPtrInput `pulumi:"stepType"`
 }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs) ElementType() reflect.Type {
@@ -7306,12 +6297,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs) ToGetDrP
 
 func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs) ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput)
-}
-
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArray and GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput values.
@@ -7339,12 +6324,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArray) ToGetDr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ElementType() reflect.Type {
@@ -7359,20 +6338,14 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ToGetD
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.FunctionId }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
 
 // The region in which the function is deployed.  Example: `us-ashburn-1`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) FunctionRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.FunctionRegion }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) FunctionRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string { return v.FunctionRegion }).(pulumi.StringPtrOutput)
 }
 
 // The details of an object storage script location for a user-defined step in a DR plan.
@@ -7383,35 +6356,35 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) Object
 }
 
 // The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RequestBody }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string { return v.RequestBody }).(pulumi.StringPtrOutput)
 }
 
 // The userid on the instance to be used for executing the script or command.  Example: `opc`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string { return v.RunAsUser }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance on which this script or command should be executed.
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceId }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string {
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string {
 		return v.RunOnInstanceRegion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string { return v.ScriptCommand }).(pulumi.StringPtrOutput)
 }
 
 // The type of the user-defined step.
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) StepType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.StepType }).(pulumi.StringOutput)
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) StepType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) *string { return v.StepType }).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput struct{ *pulumi.OutputState }
@@ -7428,12 +6401,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) T
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
 		return vs[0].([]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep)[vs[1].(int)]
@@ -7442,11 +6409,11 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) I
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs and GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput values.
@@ -7462,11 +6429,11 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScri
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ElementType() reflect.Type {
@@ -7479,12 +6446,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 
 func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput)
-}
-
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray and GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput values.
@@ -7512,12 +6473,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ElementType() reflect.Type {
@@ -7532,31 +6487,25 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `customDrScripts`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string {
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string {
 		return v.Bucket
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string {
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string {
 		return v.Namespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `validate_app_start.sh`
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string {
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string {
 		return v.Object
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput struct{ *pulumi.OutputState }
@@ -7571,12 +6520,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
@@ -7620,12 +6563,6 @@ func (i GetDrPlansFilterArgs) ToGetDrPlansFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansFilterOutput)
 }
 
-func (i GetDrPlansFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansFilter] {
-	return pulumix.Output[GetDrPlansFilter]{
-		OutputState: i.ToGetDrPlansFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansFilterArrayInput is an input type that accepts GetDrPlansFilterArray and GetDrPlansFilterArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansFilterArrayInput` via:
 //
@@ -7651,12 +6588,6 @@ func (i GetDrPlansFilterArray) ToGetDrPlansFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansFilterArrayOutput)
 }
 
-func (i GetDrPlansFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansFilter] {
-	return pulumix.Output[[]GetDrPlansFilter]{
-		OutputState: i.ToGetDrPlansFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansFilterOutput) ElementType() reflect.Type {
@@ -7669,12 +6600,6 @@ func (o GetDrPlansFilterOutput) ToGetDrPlansFilterOutput() GetDrPlansFilterOutpu
 
 func (o GetDrPlansFilterOutput) ToGetDrPlansFilterOutputWithContext(ctx context.Context) GetDrPlansFilterOutput {
 	return o
-}
-
-func (o GetDrPlansFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansFilter] {
-	return pulumix.Output[GetDrPlansFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansFilterOutput) Name() pulumi.StringOutput {
@@ -7703,12 +6628,6 @@ func (o GetDrPlansFilterArrayOutput) ToGetDrPlansFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetDrPlansFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansFilter] {
-	return pulumix.Output[[]GetDrPlansFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlansFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansFilter {
 		return vs[0].([]GetDrPlansFilter)[vs[1].(int)]
@@ -7717,11 +6636,11 @@ func (o GetDrPlansFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlansFilterOu
 
 type GetDrProtectionGroupAssociation struct {
 	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerId string `pulumi:"peerId"`
+	PeerId *string `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
-	PeerRegion string `pulumi:"peerRegion"`
+	PeerRegion *string `pulumi:"peerRegion"`
 	// The role of the DR protection group.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 }
 
 // GetDrProtectionGroupAssociationInput is an input type that accepts GetDrProtectionGroupAssociationArgs and GetDrProtectionGroupAssociationOutput values.
@@ -7737,11 +6656,11 @@ type GetDrProtectionGroupAssociationInput interface {
 
 type GetDrProtectionGroupAssociationArgs struct {
 	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerId pulumi.StringInput `pulumi:"peerId"`
+	PeerId pulumi.StringPtrInput `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
-	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
+	PeerRegion pulumi.StringPtrInput `pulumi:"peerRegion"`
 	// The role of the DR protection group.
-	Role pulumi.StringInput `pulumi:"role"`
+	Role pulumi.StringPtrInput `pulumi:"role"`
 }
 
 func (GetDrProtectionGroupAssociationArgs) ElementType() reflect.Type {
@@ -7754,12 +6673,6 @@ func (i GetDrProtectionGroupAssociationArgs) ToGetDrProtectionGroupAssociationOu
 
 func (i GetDrProtectionGroupAssociationArgs) ToGetDrProtectionGroupAssociationOutputWithContext(ctx context.Context) GetDrProtectionGroupAssociationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupAssociationOutput)
-}
-
-func (i GetDrProtectionGroupAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupAssociation] {
-	return pulumix.Output[GetDrProtectionGroupAssociation]{
-		OutputState: i.ToGetDrProtectionGroupAssociationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupAssociationArrayInput is an input type that accepts GetDrProtectionGroupAssociationArray and GetDrProtectionGroupAssociationArrayOutput values.
@@ -7787,12 +6700,6 @@ func (i GetDrProtectionGroupAssociationArray) ToGetDrProtectionGroupAssociationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupAssociationArrayOutput)
 }
 
-func (i GetDrProtectionGroupAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupAssociation]{
-		OutputState: i.ToGetDrProtectionGroupAssociationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupAssociationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupAssociationOutput) ElementType() reflect.Type {
@@ -7807,25 +6714,19 @@ func (o GetDrProtectionGroupAssociationOutput) ToGetDrProtectionGroupAssociation
 	return o
 }
 
-func (o GetDrProtectionGroupAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupAssociation] {
-	return pulumix.Output[GetDrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrProtectionGroupAssociationOutput) PeerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupAssociation) string { return v.PeerId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupAssociationOutput) PeerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupAssociation) *string { return v.PeerId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the peer DR protection group.  Example: `us-ashburn-1`
-func (o GetDrProtectionGroupAssociationOutput) PeerRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupAssociation) string { return v.PeerRegion }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupAssociationOutput) PeerRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupAssociation) *string { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
 // The role of the DR protection group.
-func (o GetDrProtectionGroupAssociationOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupAssociation) string { return v.Role }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupAssociationOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupAssociation) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupAssociationArrayOutput struct{ *pulumi.OutputState }
@@ -7842,12 +6743,6 @@ func (o GetDrProtectionGroupAssociationArrayOutput) ToGetDrProtectionGroupAssoci
 	return o
 }
 
-func (o GetDrProtectionGroupAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupAssociationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupAssociationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupAssociation {
 		return vs[0].([]GetDrProtectionGroupAssociation)[vs[1].(int)]
@@ -7856,11 +6751,11 @@ func (o GetDrProtectionGroupAssociationArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetDrProtectionGroupLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrProtectionGroupLogLocationInput is an input type that accepts GetDrProtectionGroupLogLocationArgs and GetDrProtectionGroupLogLocationOutput values.
@@ -7876,11 +6771,11 @@ type GetDrProtectionGroupLogLocationInput interface {
 
 type GetDrProtectionGroupLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrProtectionGroupLogLocationArgs) ElementType() reflect.Type {
@@ -7893,12 +6788,6 @@ func (i GetDrProtectionGroupLogLocationArgs) ToGetDrProtectionGroupLogLocationOu
 
 func (i GetDrProtectionGroupLogLocationArgs) ToGetDrProtectionGroupLogLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupLogLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupLogLocationOutput)
-}
-
-func (i GetDrProtectionGroupLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupLogLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupLogLocationArrayInput is an input type that accepts GetDrProtectionGroupLogLocationArray and GetDrProtectionGroupLogLocationArrayOutput values.
@@ -7926,12 +6815,6 @@ func (i GetDrProtectionGroupLogLocationArray) ToGetDrProtectionGroupLogLocationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupLogLocationArrayOutput)
 }
 
-func (i GetDrProtectionGroupLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupLogLocationOutput) ElementType() reflect.Type {
@@ -7946,25 +6829,19 @@ func (o GetDrProtectionGroupLogLocationOutput) ToGetDrProtectionGroupLogLocation
 	return o
 }
 
-func (o GetDrProtectionGroupLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
-func (o GetDrProtectionGroupLogLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupLogLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrProtectionGroupLogLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupLogLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-func (o GetDrProtectionGroupLogLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupLogLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupLogLocationArrayOutput struct{ *pulumi.OutputState }
@@ -7981,12 +6858,6 @@ func (o GetDrProtectionGroupLogLocationArrayOutput) ToGetDrProtectionGroupLogLoc
 	return o
 }
 
-func (o GetDrProtectionGroupLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupLogLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupLogLocation {
 		return vs[0].([]GetDrProtectionGroupLogLocation)[vs[1].(int)]
@@ -7999,33 +6870,33 @@ type GetDrProtectionGroupMember struct {
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
-	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
+	DestinationAvailabilityDomain *string `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
-	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
+	DestinationCapacityReservationId *string `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
-	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
+	DestinationCompartmentId *string `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
-	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
+	DestinationDedicatedVmHostId *string `pulumi:"destinationDedicatedVmHostId"`
 	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
+	DestinationLoadBalancerId *string `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	DestinationNetworkLoadBalancerId *string `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations []GetDrProtectionGroupMemberFileSystemOperation `pulumi:"fileSystemOperations"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
-	IsMovable bool `pulumi:"isMovable"`
+	IsMovable *bool `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
-	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
+	IsRetainFaultDomain *bool `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
-	IsStartStopEnabled bool `pulumi:"isStartStopEnabled"`
+	IsStartStopEnabled *bool `pulumi:"isStartStopEnabled"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
-	MemberId string `pulumi:"memberId"`
+	MemberId *string `pulumi:"memberId"`
 	// The type of the member.
-	MemberType string `pulumi:"memberType"`
+	MemberType *string `pulumi:"memberType"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -8049,33 +6920,33 @@ type GetDrProtectionGroupMemberArgs struct {
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
-	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
+	DestinationAvailabilityDomain pulumi.StringPtrInput `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
-	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
+	DestinationCapacityReservationId pulumi.StringPtrInput `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
-	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
+	DestinationCompartmentId pulumi.StringPtrInput `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
-	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
+	DestinationDedicatedVmHostId pulumi.StringPtrInput `pulumi:"destinationDedicatedVmHostId"`
 	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
+	DestinationLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	DestinationNetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations GetDrProtectionGroupMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
-	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
+	IsMovable pulumi.BoolPtrInput `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
-	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
+	IsRetainFaultDomain pulumi.BoolPtrInput `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
-	IsStartStopEnabled pulumi.BoolInput `pulumi:"isStartStopEnabled"`
+	IsStartStopEnabled pulumi.BoolPtrInput `pulumi:"isStartStopEnabled"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
-	MemberId pulumi.StringInput `pulumi:"memberId"`
+	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
 	// The type of the member.
-	MemberType pulumi.StringInput `pulumi:"memberType"`
+	MemberType pulumi.StringPtrInput `pulumi:"memberType"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -8092,12 +6963,6 @@ func (i GetDrProtectionGroupMemberArgs) ToGetDrProtectionGroupMemberOutput() Get
 
 func (i GetDrProtectionGroupMemberArgs) ToGetDrProtectionGroupMemberOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberOutput)
-}
-
-func (i GetDrProtectionGroupMemberArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMember] {
-	return pulumix.Output[GetDrProtectionGroupMember]{
-		OutputState: i.ToGetDrProtectionGroupMemberOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberArrayInput is an input type that accepts GetDrProtectionGroupMemberArray and GetDrProtectionGroupMemberArrayOutput values.
@@ -8125,12 +6990,6 @@ func (i GetDrProtectionGroupMemberArray) ToGetDrProtectionGroupMemberArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMember] {
-	return pulumix.Output[[]GetDrProtectionGroupMember]{
-		OutputState: i.ToGetDrProtectionGroupMemberArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberOutput) ElementType() reflect.Type {
@@ -8143,12 +7002,6 @@ func (o GetDrProtectionGroupMemberOutput) ToGetDrProtectionGroupMemberOutput() G
 
 func (o GetDrProtectionGroupMemberOutput) ToGetDrProtectionGroupMemberOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMember] {
-	return pulumix.Output[GetDrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of backend set mappings that are used to transfer or update backends during DR.
@@ -8166,33 +7019,33 @@ func (o GetDrProtectionGroupMemberOutput) BlockVolumeOperations() GetDrProtectio
 }
 
 // The availability domain of the destination mount target. Example: `BBTh:region-AD`
-func (o GetDrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationAvailabilityDomain }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.DestinationAvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberOutput) DestinationCapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationCapacityReservationId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) DestinationCapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.DestinationCapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberOutput) DestinationCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationCompartmentId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) DestinationCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.DestinationCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationDedicatedVmHostId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.DestinationDedicatedVmHostId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationLoadBalancerId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.DestinationLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationNetworkLoadBalancerId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.DestinationNetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // A list of mappings between the primary region file system export and destination region mount target.
@@ -8208,33 +7061,33 @@ func (o GetDrProtectionGroupMemberOutput) FileSystemOperations() GetDrProtection
 }
 
 // A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
-func (o GetDrProtectionGroupMemberOutput) IsMovable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsMovable }).(pulumi.BoolOutput)
+func (o GetDrProtectionGroupMemberOutput) IsMovable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *bool { return v.IsMovable }).(pulumi.BoolPtrOutput)
 }
 
 // A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
-func (o GetDrProtectionGroupMemberOutput) IsRetainFaultDomain() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsRetainFaultDomain }).(pulumi.BoolOutput)
+func (o GetDrProtectionGroupMemberOutput) IsRetainFaultDomain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *bool { return v.IsRetainFaultDomain }).(pulumi.BoolPtrOutput)
 }
 
 // A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
-func (o GetDrProtectionGroupMemberOutput) IsStartStopEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsStartStopEnabled }).(pulumi.BoolOutput)
+func (o GetDrProtectionGroupMemberOutput) IsStartStopEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *bool { return v.IsStartStopEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberOutput) MemberId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) MemberId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.MemberId }).(pulumi.StringPtrOutput)
 }
 
 // The type of the member.
-func (o GetDrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) MemberType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.MemberType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PasswordVaultSecretId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) *string { return v.PasswordVaultSecretId }).(pulumi.StringPtrOutput)
 }
 
 // A list of compute instance VNIC mappings.
@@ -8261,12 +7114,6 @@ func (o GetDrProtectionGroupMemberArrayOutput) ToGetDrProtectionGroupMemberArray
 	return o
 }
 
-func (o GetDrProtectionGroupMemberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMember] {
-	return pulumix.Output[[]GetDrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMember {
 		return vs[0].([]GetDrProtectionGroupMember)[vs[1].(int)]
@@ -8275,11 +7122,11 @@ func (o GetDrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) GetDrPro
 
 type GetDrProtectionGroupMemberBackendSetMapping struct {
 	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
-	DestinationBackendSetName string `pulumi:"destinationBackendSetName"`
+	DestinationBackendSetName *string `pulumi:"destinationBackendSetName"`
 	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
-	IsBackendSetForNonMovable bool `pulumi:"isBackendSetForNonMovable"`
+	IsBackendSetForNonMovable *bool `pulumi:"isBackendSetForNonMovable"`
 	// The name of the source backend set.  Example: `My_Source_Backend_Set`
-	SourceBackendSetName string `pulumi:"sourceBackendSetName"`
+	SourceBackendSetName *string `pulumi:"sourceBackendSetName"`
 }
 
 // GetDrProtectionGroupMemberBackendSetMappingInput is an input type that accepts GetDrProtectionGroupMemberBackendSetMappingArgs and GetDrProtectionGroupMemberBackendSetMappingOutput values.
@@ -8295,11 +7142,11 @@ type GetDrProtectionGroupMemberBackendSetMappingInput interface {
 
 type GetDrProtectionGroupMemberBackendSetMappingArgs struct {
 	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
-	DestinationBackendSetName pulumi.StringInput `pulumi:"destinationBackendSetName"`
+	DestinationBackendSetName pulumi.StringPtrInput `pulumi:"destinationBackendSetName"`
 	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
-	IsBackendSetForNonMovable pulumi.BoolInput `pulumi:"isBackendSetForNonMovable"`
+	IsBackendSetForNonMovable pulumi.BoolPtrInput `pulumi:"isBackendSetForNonMovable"`
 	// The name of the source backend set.  Example: `My_Source_Backend_Set`
-	SourceBackendSetName pulumi.StringInput `pulumi:"sourceBackendSetName"`
+	SourceBackendSetName pulumi.StringPtrInput `pulumi:"sourceBackendSetName"`
 }
 
 func (GetDrProtectionGroupMemberBackendSetMappingArgs) ElementType() reflect.Type {
@@ -8312,12 +7159,6 @@ func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToGetDrProtectionGroupM
 
 func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackendSetMappingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackendSetMappingOutput)
-}
-
-func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberBackendSetMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberBackendSetMappingArray and GetDrProtectionGroupMemberBackendSetMappingArrayOutput values.
@@ -8345,12 +7186,6 @@ func (i GetDrProtectionGroupMemberBackendSetMappingArray) ToGetDrProtectionGroup
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackendSetMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBackendSetMappingOutput) ElementType() reflect.Type {
@@ -8365,25 +7200,19 @@ func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToGetDrProtectionGrou
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the destination backend set.  Example: `My_Destination_Backend_Set`
-func (o GetDrProtectionGroupMemberBackendSetMappingOutput) DestinationBackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) string { return v.DestinationBackendSetName }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) DestinationBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) *string { return v.DestinationBackendSetName }).(pulumi.StringPtrOutput)
 }
 
 // This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
-func (o GetDrProtectionGroupMemberBackendSetMappingOutput) IsBackendSetForNonMovable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) bool { return v.IsBackendSetForNonMovable }).(pulumi.BoolOutput)
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) IsBackendSetForNonMovable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) *bool { return v.IsBackendSetForNonMovable }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the source backend set.  Example: `My_Source_Backend_Set`
-func (o GetDrProtectionGroupMemberBackendSetMappingOutput) SourceBackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) string { return v.SourceBackendSetName }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) SourceBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) *string { return v.SourceBackendSetName }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupMemberBackendSetMappingArrayOutput struct{ *pulumi.OutputState }
@@ -8400,12 +7229,6 @@ func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToGetDrProtectio
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBackendSetMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBackendSetMapping {
 		return vs[0].([]GetDrProtectionGroupMemberBackendSetMapping)[vs[1].(int)]
@@ -8416,7 +7239,7 @@ type GetDrProtectionGroupMemberBlockVolumeOperation struct {
 	// The details for attaching or detaching a block volume.
 	AttachmentDetails []GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-	BlockVolumeId string `pulumi:"blockVolumeId"`
+	BlockVolumeId *string `pulumi:"blockVolumeId"`
 	// Mount details of a file system.
 	MountDetails []GetDrProtectionGroupMemberBlockVolumeOperationMountDetail `pulumi:"mountDetails"`
 }
@@ -8436,7 +7259,7 @@ type GetDrProtectionGroupMemberBlockVolumeOperationArgs struct {
 	// The details for attaching or detaching a block volume.
 	AttachmentDetails GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	BlockVolumeId pulumi.StringPtrInput `pulumi:"blockVolumeId"`
 	// Mount details of a file system.
 	MountDetails GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput `pulumi:"mountDetails"`
 }
@@ -8451,12 +7274,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToGetDrProtectionGro
 
 func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationOutput)
-}
-
-func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberBlockVolumeOperationArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationArray and GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput values.
@@ -8484,12 +7301,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationArray) ToGetDrProtectionGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
@@ -8504,12 +7315,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToGetDrProtectionG
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The details for attaching or detaching a block volume.
 func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) AttachmentDetails() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperation) []GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail {
@@ -8518,8 +7323,8 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) AttachmentDetails(
 }
 
 // The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) BlockVolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperation) string { return v.BlockVolumeId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) BlockVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperation) *string { return v.BlockVolumeId }).(pulumi.StringPtrOutput)
 }
 
 // Mount details of a file system.
@@ -8543,12 +7348,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToGetDrProtec
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeOperation {
 		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeOperation)[vs[1].(int)]
@@ -8557,7 +7356,7 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulum
 
 type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail struct {
 	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
+	VolumeAttachmentReferenceInstanceId *string `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
 // GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs and GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput values.
@@ -8573,7 +7372,7 @@ type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput interfa
 
 type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs struct {
 	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+	VolumeAttachmentReferenceInstanceId pulumi.StringPtrInput `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ElementType() reflect.Type {
@@ -8586,12 +7385,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToGe
 
 func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput)
-}
-
-func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray and GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput values.
@@ -8619,12 +7412,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ElementType() reflect.Type {
@@ -8639,17 +7426,11 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) To
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail) string {
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail) *string {
 		return v.VolumeAttachmentReferenceInstanceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8666,12 +7447,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutpu
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail {
 		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail)[vs[1].(int)]
@@ -8680,7 +7455,7 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutpu
 
 type GetDrProtectionGroupMemberBlockVolumeOperationMountDetail struct {
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint string `pulumi:"mountPoint"`
+	MountPoint *string `pulumi:"mountPoint"`
 }
 
 // GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs and GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput values.
@@ -8696,7 +7471,7 @@ type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput interface {
 
 type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs struct {
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
 }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ElementType() reflect.Type {
@@ -8709,12 +7484,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToGetDrPr
 
 func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput)
-}
-
-func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray and GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput values.
@@ -8742,12 +7511,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ToGetDrP
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ElementType() reflect.Type {
@@ -8762,15 +7525,9 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToGetDr
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) MountPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperationMountDetail) string { return v.MountPoint }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperationMountDetail) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8787,12 +7544,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) To
 	return o
 }
 
-func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeOperationMountDetail {
 		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail)[vs[1].(int)]
@@ -8801,9 +7552,9 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) In
 
 type GetDrProtectionGroupMemberExportMapping struct {
 	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	DestinationMountTargetId string `pulumi:"destinationMountTargetId"`
+	DestinationMountTargetId *string `pulumi:"destinationMountTargetId"`
 	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
-	ExportId string `pulumi:"exportId"`
+	ExportId *string `pulumi:"exportId"`
 }
 
 // GetDrProtectionGroupMemberExportMappingInput is an input type that accepts GetDrProtectionGroupMemberExportMappingArgs and GetDrProtectionGroupMemberExportMappingOutput values.
@@ -8819,9 +7570,9 @@ type GetDrProtectionGroupMemberExportMappingInput interface {
 
 type GetDrProtectionGroupMemberExportMappingArgs struct {
 	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	DestinationMountTargetId pulumi.StringInput `pulumi:"destinationMountTargetId"`
+	DestinationMountTargetId pulumi.StringPtrInput `pulumi:"destinationMountTargetId"`
 	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
-	ExportId pulumi.StringInput `pulumi:"exportId"`
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
 }
 
 func (GetDrProtectionGroupMemberExportMappingArgs) ElementType() reflect.Type {
@@ -8834,12 +7585,6 @@ func (i GetDrProtectionGroupMemberExportMappingArgs) ToGetDrProtectionGroupMembe
 
 func (i GetDrProtectionGroupMemberExportMappingArgs) ToGetDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberExportMappingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberExportMappingOutput)
-}
-
-func (i GetDrProtectionGroupMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberExportMappingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberExportMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberExportMappingArray and GetDrProtectionGroupMemberExportMappingArrayOutput values.
@@ -8867,12 +7612,6 @@ func (i GetDrProtectionGroupMemberExportMappingArray) ToGetDrProtectionGroupMemb
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberExportMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberExportMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberExportMappingOutput) ElementType() reflect.Type {
@@ -8887,20 +7626,14 @@ func (o GetDrProtectionGroupMemberExportMappingOutput) ToGetDrProtectionGroupMem
 	return o
 }
 
-func (o GetDrProtectionGroupMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberExportMappingOutput) DestinationMountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberExportMapping) string { return v.DestinationMountTargetId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberExportMappingOutput) DestinationMountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberExportMapping) *string { return v.DestinationMountTargetId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberExportMappingOutput) ExportId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberExportMapping) string { return v.ExportId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberExportMappingOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberExportMapping) *string { return v.ExportId }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupMemberExportMappingArrayOutput struct{ *pulumi.OutputState }
@@ -8917,12 +7650,6 @@ func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToGetDrProtectionGro
 	return o
 }
 
-func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberExportMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberExportMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberExportMapping {
 		return vs[0].([]GetDrProtectionGroupMemberExportMapping)[vs[1].(int)]
@@ -8931,13 +7658,13 @@ func (o GetDrProtectionGroupMemberExportMappingArrayOutput) Index(i pulumi.IntIn
 
 type GetDrProtectionGroupMemberFileSystemOperation struct {
 	// The export path of the file system.  Example: `/fs-export-path`
-	ExportPath string `pulumi:"exportPath"`
+	ExportPath *string `pulumi:"exportPath"`
 	// Mount details of a file system.
 	MountDetails []GetDrProtectionGroupMemberFileSystemOperationMountDetail `pulumi:"mountDetails"`
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint string `pulumi:"mountPoint"`
+	MountPoint *string `pulumi:"mountPoint"`
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId string `pulumi:"mountTargetId"`
+	MountTargetId *string `pulumi:"mountTargetId"`
 	// Unmount details for a file system.
 	UnmountDetails []GetDrProtectionGroupMemberFileSystemOperationUnmountDetail `pulumi:"unmountDetails"`
 }
@@ -8955,13 +7682,13 @@ type GetDrProtectionGroupMemberFileSystemOperationInput interface {
 
 type GetDrProtectionGroupMemberFileSystemOperationArgs struct {
 	// The export path of the file system.  Example: `/fs-export-path`
-	ExportPath pulumi.StringInput `pulumi:"exportPath"`
+	ExportPath pulumi.StringPtrInput `pulumi:"exportPath"`
 	// Mount details of a file system.
 	MountDetails GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput `pulumi:"mountDetails"`
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
 	// Unmount details for a file system.
 	UnmountDetails GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput `pulumi:"unmountDetails"`
 }
@@ -8976,12 +7703,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToGetDrProtectionGrou
 
 func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationOutput)
-}
-
-func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberFileSystemOperationArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationArray and GetDrProtectionGroupMemberFileSystemOperationArrayOutput values.
@@ -9009,12 +7730,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationArray) ToGetDrProtectionGro
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberFileSystemOperationOutput) ElementType() reflect.Type {
@@ -9029,15 +7744,9 @@ func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToGetDrProtectionGr
 	return o
 }
 
-func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The export path of the file system.  Example: `/fs-export-path`
-func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ExportPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) string { return v.ExportPath }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ExportPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) *string { return v.ExportPath }).(pulumi.StringPtrOutput)
 }
 
 // Mount details of a file system.
@@ -9048,13 +7757,13 @@ func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountDetails() GetD
 }
 
 // The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) string { return v.MountPoint }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) string { return v.MountTargetId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
 }
 
 // Unmount details for a file system.
@@ -9078,12 +7787,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ToGetDrProtect
 	return o
 }
 
-func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberFileSystemOperation {
 		return vs[0].([]GetDrProtectionGroupMemberFileSystemOperation)[vs[1].(int)]
@@ -9092,7 +7795,7 @@ func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi
 
 type GetDrProtectionGroupMemberFileSystemOperationMountDetail struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId string `pulumi:"mountTargetId"`
+	MountTargetId *string `pulumi:"mountTargetId"`
 }
 
 // GetDrProtectionGroupMemberFileSystemOperationMountDetailInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs and GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput values.
@@ -9108,7 +7811,7 @@ type GetDrProtectionGroupMemberFileSystemOperationMountDetailInput interface {
 
 type GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
 }
 
 func (GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ElementType() reflect.Type {
@@ -9121,12 +7824,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToGetDrPro
 
 func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput)
-}
-
-func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationMountDetailArray and GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput values.
@@ -9154,12 +7851,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ToGetDrPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ElementType() reflect.Type {
@@ -9174,15 +7865,9 @@ func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToGetDrP
 	return o
 }
 
-func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperationMountDetail) string { return v.MountTargetId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperationMountDetail) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
@@ -9199,12 +7884,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToG
 	return o
 }
 
-func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberFileSystemOperationMountDetail {
 		return vs[0].([]GetDrProtectionGroupMemberFileSystemOperationMountDetail)[vs[1].(int)]
@@ -9213,7 +7892,7 @@ func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) Ind
 
 type GetDrProtectionGroupMemberFileSystemOperationUnmountDetail struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId string `pulumi:"mountTargetId"`
+	MountTargetId *string `pulumi:"mountTargetId"`
 }
 
 // GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs and GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput values.
@@ -9229,7 +7908,7 @@ type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput interface {
 
 type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
 }
 
 func (GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ElementType() reflect.Type {
@@ -9242,12 +7921,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToGetDrP
 
 func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput)
-}
-
-func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray and GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput values.
@@ -9275,12 +7948,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ToGetDr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ElementType() reflect.Type {
@@ -9295,15 +7962,9 @@ func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToGetD
 	return o
 }
 
-func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperationUnmountDetail) string { return v.MountTargetId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperationUnmountDetail) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput struct{ *pulumi.OutputState }
@@ -9320,12 +7981,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) T
 	return o
 }
 
-func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberFileSystemOperationUnmountDetail {
 		return vs[0].([]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail)[vs[1].(int)]
@@ -9336,13 +7991,13 @@ type GetDrProtectionGroupMemberVnicMapping struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
 	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
-	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	DestinationPrimaryPrivateIpAddress *string `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
-	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	DestinationPrimaryPrivateIpHostnameLabel *string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
-	DestinationSubnetId string `pulumi:"destinationSubnetId"`
+	DestinationSubnetId *string `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
-	SourceVnicId string `pulumi:"sourceVnicId"`
+	SourceVnicId *string `pulumi:"sourceVnicId"`
 }
 
 // GetDrProtectionGroupMemberVnicMappingInput is an input type that accepts GetDrProtectionGroupMemberVnicMappingArgs and GetDrProtectionGroupMemberVnicMappingOutput values.
@@ -9360,13 +8015,13 @@ type GetDrProtectionGroupMemberVnicMappingArgs struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
 	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
-	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	DestinationPrimaryPrivateIpAddress pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
-	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
-	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
+	DestinationSubnetId pulumi.StringPtrInput `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
-	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
+	SourceVnicId pulumi.StringPtrInput `pulumi:"sourceVnicId"`
 }
 
 func (GetDrProtectionGroupMemberVnicMappingArgs) ElementType() reflect.Type {
@@ -9379,12 +8034,6 @@ func (i GetDrProtectionGroupMemberVnicMappingArgs) ToGetDrProtectionGroupMemberV
 
 func (i GetDrProtectionGroupMemberVnicMappingArgs) ToGetDrProtectionGroupMemberVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVnicMappingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVnicMappingOutput)
-}
-
-func (i GetDrProtectionGroupMemberVnicMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberVnicMappingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupMemberVnicMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberVnicMappingArray and GetDrProtectionGroupMemberVnicMappingArrayOutput values.
@@ -9412,12 +8061,6 @@ func (i GetDrProtectionGroupMemberVnicMappingArray) ToGetDrProtectionGroupMember
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVnicMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberVnicMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberVnicMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberVnicMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberVnicMappingOutput) ElementType() reflect.Type {
@@ -9432,37 +8075,31 @@ func (o GetDrProtectionGroupMemberVnicMappingOutput) ToGetDrProtectionGroupMembe
 	return o
 }
 
-func (o GetDrProtectionGroupMemberVnicMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
 }
 
 // The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
-func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
-func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string {
+func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) *string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationSubnetId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) *string { return v.DestinationSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
-func (o GetDrProtectionGroupMemberVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.SourceVnicId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupMemberVnicMappingOutput) SourceVnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) *string { return v.SourceVnicId }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupMemberVnicMappingArrayOutput struct{ *pulumi.OutputState }
@@ -9477,12 +8114,6 @@ func (o GetDrProtectionGroupMemberVnicMappingArrayOutput) ToGetDrProtectionGroup
 
 func (o GetDrProtectionGroupMemberVnicMappingArrayOutput) ToGetDrProtectionGroupMemberVnicMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVnicMappingArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberVnicMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberVnicMappingOutput {
@@ -9522,12 +8153,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionArgs) ToGetDrProtectionG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionArray and GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionArrayInput` via:
 //
@@ -9553,12 +8178,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionArray) ToGetDrProtection
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ElementType() reflect.Type {
@@ -9571,12 +8190,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ToGetDrProtectio
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) Items() GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput {
@@ -9599,12 +8212,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) ToGetDrProt
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollection {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollection)[vs[1].(int)]
@@ -9614,38 +8221,38 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) Index(i pul
 type GetDrProtectionGroupsDrProtectionGroupCollectionItem struct {
 	Associations []GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation `pulumi:"associations"`
 	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags         map[string]interface{} `pulumi:"definedTags"`
-	DisassociateTrigger int                    `pulumi:"disassociateTrigger"`
+	DisassociateTrigger *int                   `pulumi:"disassociateTrigger"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
-	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
 	// A filter to return only DR protection groups that match the given lifecycle sub-state.
-	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation `pulumi:"logLocations"`
 	// A list of DR protection group members.
 	Members []GetDrProtectionGroupsDrProtectionGroupCollectionItemMember `pulumi:"members"`
 	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerId string `pulumi:"peerId"`
+	PeerId *string `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
-	PeerRegion string `pulumi:"peerRegion"`
+	PeerRegion *string `pulumi:"peerRegion"`
 	// The DR protection group Role.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 	// A filter to return only DR protection groups that match the given lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput values.
@@ -9662,38 +8269,38 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemInput interface {
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs struct {
 	Associations GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayInput `pulumi:"associations"`
 	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags         pulumi.MapInput `pulumi:"definedTags"`
-	DisassociateTrigger pulumi.IntInput `pulumi:"disassociateTrigger"`
+	DefinedTags         pulumi.MapInput    `pulumi:"definedTags"`
+	DisassociateTrigger pulumi.IntPtrInput `pulumi:"disassociateTrigger"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
-	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails pulumi.StringPtrInput `pulumi:"lifeCycleDetails"`
 	// A filter to return only DR protection groups that match the given lifecycle sub-state.
-	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	LifecycleSubState pulumi.StringPtrInput `pulumi:"lifecycleSubState"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayInput `pulumi:"logLocations"`
 	// A list of DR protection group members.
 	Members GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput `pulumi:"members"`
 	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerId pulumi.StringInput `pulumi:"peerId"`
+	PeerId pulumi.StringPtrInput `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
-	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
+	PeerRegion pulumi.StringPtrInput `pulumi:"peerRegion"`
 	// The DR protection group Role.
-	Role pulumi.StringInput `pulumi:"role"`
+	Role pulumi.StringPtrInput `pulumi:"role"`
 	// A filter to return only DR protection groups that match the given lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs) ElementType() reflect.Type {
@@ -9706,12 +8313,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs) ToGetDrProtect
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput values.
@@ -9739,12 +8340,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArray) ToGetDrProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) ElementType() reflect.Type {
@@ -9759,12 +8354,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) ToGetDrProte
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Associations() GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) []GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation {
 		return v.Associations
@@ -9772,8 +8361,8 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Associations
 }
 
 // The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -9783,13 +8372,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DefinedTags(
 	}).(pulumi.MapOutput)
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DisassociateTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) int { return v.DisassociateTrigger }).(pulumi.IntOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DisassociateTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *int { return v.DisassociateTrigger }).(pulumi.IntPtrOutput)
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
@@ -9800,18 +8389,18 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) FreeformTags
 }
 
 // The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the DR protection group's current state in more detail.
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) LifeCycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) LifeCycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.LifeCycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only DR protection groups that match the given lifecycle sub-state.
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) LifecycleSubState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) LifecycleSubState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.LifecycleSubState }).(pulumi.StringPtrOutput)
 }
 
 // The details of an object storage log location for a DR protection group.
@@ -9829,23 +8418,23 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Members() Ge
 }
 
 // The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.PeerId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.PeerId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the peer DR protection group.  Example: `us-ashburn-1`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.PeerRegion }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
 // The DR protection group Role.
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.Role }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only DR protection groups that match the given lifecycle state.
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -9856,13 +8445,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) SystemTags()
 }
 
 // The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9879,12 +8468,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) ToGetDr
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItem {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItem)[vs[1].(int)]
@@ -9893,11 +8476,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) Index(i
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation struct {
 	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerId string `pulumi:"peerId"`
+	PeerId *string `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
-	PeerRegion string `pulumi:"peerRegion"`
+	PeerRegion *string `pulumi:"peerRegion"`
 	// The DR protection group Role.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput values.
@@ -9913,11 +8496,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationInput interf
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs struct {
 	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerId pulumi.StringInput `pulumi:"peerId"`
+	PeerId pulumi.StringPtrInput `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
-	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
+	PeerRegion pulumi.StringPtrInput `pulumi:"peerRegion"`
 	// The DR protection group Role.
-	Role pulumi.StringInput `pulumi:"role"`
+	Role pulumi.StringPtrInput `pulumi:"role"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs) ElementType() reflect.Type {
@@ -9930,12 +8513,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs) ToG
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput values.
@@ -9963,12 +8540,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) ElementType() reflect.Type {
@@ -9983,25 +8554,19 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) T
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) PeerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.PeerId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) PeerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) *string { return v.PeerId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the peer DR protection group.  Example: `us-ashburn-1`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) PeerRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.PeerRegion }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) PeerRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) *string { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
 // The DR protection group Role.
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.Role }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput struct{ *pulumi.OutputState }
@@ -10018,12 +8583,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation)[vs[1].(int)]
@@ -10032,11 +8591,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput values.
@@ -10052,11 +8611,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationInput interf
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs) ElementType() reflect.Type {
@@ -10069,12 +8628,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs) ToG
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput values.
@@ -10102,12 +8655,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) ElementType() reflect.Type {
@@ -10122,25 +8669,19 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) T
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput struct{ *pulumi.OutputState }
@@ -10157,12 +8698,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutp
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation)[vs[1].(int)]
@@ -10175,33 +8710,33 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
-	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
+	DestinationAvailabilityDomain *string `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
-	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
+	DestinationCapacityReservationId *string `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
-	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
+	DestinationCompartmentId *string `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
-	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
+	DestinationDedicatedVmHostId *string `pulumi:"destinationDedicatedVmHostId"`
 	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
+	DestinationLoadBalancerId *string `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	DestinationNetworkLoadBalancerId *string `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation `pulumi:"fileSystemOperations"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
-	IsMovable bool `pulumi:"isMovable"`
+	IsMovable *bool `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
-	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
+	IsRetainFaultDomain *bool `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
-	IsStartStopEnabled bool `pulumi:"isStartStopEnabled"`
+	IsStartStopEnabled *bool `pulumi:"isStartStopEnabled"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
-	MemberId string `pulumi:"memberId"`
+	MemberId *string `pulumi:"memberId"`
 	// The type of the member.
-	MemberType string `pulumi:"memberType"`
+	MemberType *string `pulumi:"memberType"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -10225,33 +8760,33 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
-	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
+	DestinationAvailabilityDomain pulumi.StringPtrInput `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
-	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
+	DestinationCapacityReservationId pulumi.StringPtrInput `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
-	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
+	DestinationCompartmentId pulumi.StringPtrInput `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
-	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
+	DestinationDedicatedVmHostId pulumi.StringPtrInput `pulumi:"destinationDedicatedVmHostId"`
 	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
+	DestinationLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	DestinationNetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
-	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
+	IsMovable pulumi.BoolPtrInput `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
-	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
+	IsRetainFaultDomain pulumi.BoolPtrInput `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
-	IsStartStopEnabled pulumi.BoolInput `pulumi:"isStartStopEnabled"`
+	IsStartStopEnabled pulumi.BoolPtrInput `pulumi:"isStartStopEnabled"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
-	MemberId pulumi.StringInput `pulumi:"memberId"`
+	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
 	// The type of the member.
-	MemberType pulumi.StringInput `pulumi:"memberType"`
+	MemberType pulumi.StringPtrInput `pulumi:"memberType"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -10268,12 +8803,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs) ToGetDrP
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput values.
@@ -10301,12 +8830,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray) ToGetDr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ElementType() reflect.Type {
@@ -10319,12 +8842,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToGetD
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of backend set mappings that are used to transfer or update backends during DR.
@@ -10342,45 +8859,45 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockV
 }
 
 // The availability domain of the destination mount target. Example: `BBTh:region-AD`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationAvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationAvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string {
 		return v.DestinationAvailabilityDomain
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string {
 		return v.DestinationCapacityReservationId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string {
 		return v.DestinationCompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationDedicatedVmHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationDedicatedVmHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string {
 		return v.DestinationDedicatedVmHostId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string {
 		return v.DestinationLoadBalancerId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string {
 		return v.DestinationNetworkLoadBalancerId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A list of mappings between the primary region file system export and destination region mount target.
@@ -10398,35 +8915,35 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) FileSy
 }
 
 // A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsMovable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsMovable }).(pulumi.BoolOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsMovable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *bool { return v.IsMovable }).(pulumi.BoolPtrOutput)
 }
 
 // A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsRetainFaultDomain() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsRetainFaultDomain }).(pulumi.BoolOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsRetainFaultDomain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *bool { return v.IsRetainFaultDomain }).(pulumi.BoolPtrOutput)
 }
 
 // A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsStartStopEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsStartStopEnabled }).(pulumi.BoolOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsStartStopEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *bool { return v.IsStartStopEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) MemberId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberId }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) MemberId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string { return v.MemberId }).(pulumi.StringPtrOutput)
 }
 
 // The type of the member.
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) MemberType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberType }).(pulumi.StringOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) MemberType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string { return v.MemberType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) *string {
 		return v.PasswordVaultSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A list of compute instance VNIC mappings.
@@ -10457,12 +8974,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) T
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember)[vs[1].(int)]
@@ -10471,11 +8982,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) I
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping struct {
 	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
-	DestinationBackendSetName string `pulumi:"destinationBackendSetName"`
+	DestinationBackendSetName *string `pulumi:"destinationBackendSetName"`
 	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
-	IsBackendSetForNonMovable bool `pulumi:"isBackendSetForNonMovable"`
+	IsBackendSetForNonMovable *bool `pulumi:"isBackendSetForNonMovable"`
 	// The name of the source backend set.  Example: `My_Source_Backend_Set`
-	SourceBackendSetName string `pulumi:"sourceBackendSetName"`
+	SourceBackendSetName *string `pulumi:"sourceBackendSetName"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput values.
@@ -10491,11 +9002,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs struct {
 	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
-	DestinationBackendSetName pulumi.StringInput `pulumi:"destinationBackendSetName"`
+	DestinationBackendSetName pulumi.StringPtrInput `pulumi:"destinationBackendSetName"`
 	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
-	IsBackendSetForNonMovable pulumi.BoolInput `pulumi:"isBackendSetForNonMovable"`
+	IsBackendSetForNonMovable pulumi.BoolPtrInput `pulumi:"isBackendSetForNonMovable"`
 	// The name of the source backend set.  Example: `My_Source_Backend_Set`
-	SourceBackendSetName pulumi.StringInput `pulumi:"sourceBackendSetName"`
+	SourceBackendSetName pulumi.StringPtrInput `pulumi:"sourceBackendSetName"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ElementType() reflect.Type {
@@ -10508,12 +9019,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput values.
@@ -10541,12 +9046,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ElementType() reflect.Type {
@@ -10561,31 +9060,25 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the destination backend set.  Example: `My_Destination_Backend_Set`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) DestinationBackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) DestinationBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) *string {
 		return v.DestinationBackendSetName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) IsBackendSetForNonMovable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) bool {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) IsBackendSetForNonMovable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) *bool {
 		return v.IsBackendSetForNonMovable
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The name of the source backend set.  Example: `My_Source_Backend_Set`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) SourceBackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) SourceBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) *string {
 		return v.SourceBackendSetName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput struct{ *pulumi.OutputState }
@@ -10602,12 +9095,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping)[vs[1].(int)]
@@ -10618,7 +9105,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperat
 	// The details for attaching or detaching a block volume.
 	AttachmentDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-	BlockVolumeId string `pulumi:"blockVolumeId"`
+	BlockVolumeId *string `pulumi:"blockVolumeId"`
 	// Mount details of a file system.
 	MountDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail `pulumi:"mountDetails"`
 }
@@ -10638,7 +9125,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperat
 	// The details for attaching or detaching a block volume.
 	AttachmentDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	BlockVolumeId pulumi.StringPtrInput `pulumi:"blockVolumeId"`
 	// Mount details of a file system.
 	MountDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput `pulumi:"mountDetails"`
 }
@@ -10653,12 +9140,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput values.
@@ -10686,12 +9167,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
@@ -10706,12 +9181,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The details for attaching or detaching a block volume.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) AttachmentDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail {
@@ -10720,10 +9189,10 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 }
 
 // The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) BlockVolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) BlockVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation) *string {
 		return v.BlockVolumeId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Mount details of a file system.
@@ -10747,12 +9216,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation)[vs[1].(int)]
@@ -10761,7 +9224,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail struct {
 	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
+	VolumeAttachmentReferenceInstanceId *string `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput values.
@@ -10777,7 +9240,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperat
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs struct {
 	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+	VolumeAttachmentReferenceInstanceId pulumi.StringPtrInput `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ElementType() reflect.Type {
@@ -10790,12 +9253,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput values.
@@ -10823,12 +9280,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ElementType() reflect.Type {
@@ -10843,17 +9294,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail) *string {
 		return v.VolumeAttachmentReferenceInstanceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput struct{ *pulumi.OutputState }
@@ -10870,12 +9315,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail)[vs[1].(int)]
@@ -10884,7 +9323,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail struct {
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint string `pulumi:"mountPoint"`
+	MountPoint *string `pulumi:"mountPoint"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput values.
@@ -10900,7 +9339,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperat
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs struct {
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ElementType() reflect.Type {
@@ -10913,12 +9352,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput values.
@@ -10946,12 +9379,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ElementType() reflect.Type {
@@ -10966,17 +9393,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) MountPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail) *string {
 		return v.MountPoint
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
@@ -10993,12 +9414,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail)[vs[1].(int)]
@@ -11007,9 +9422,9 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping struct {
 	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	DestinationMountTargetId string `pulumi:"destinationMountTargetId"`
+	DestinationMountTargetId *string `pulumi:"destinationMountTargetId"`
 	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
-	ExportId string `pulumi:"exportId"`
+	ExportId *string `pulumi:"exportId"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput values.
@@ -11025,9 +9440,9 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInpu
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs struct {
 	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	DestinationMountTargetId pulumi.StringInput `pulumi:"destinationMountTargetId"`
+	DestinationMountTargetId pulumi.StringPtrInput `pulumi:"destinationMountTargetId"`
 	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
-	ExportId pulumi.StringInput `pulumi:"exportId"`
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ElementType() reflect.Type {
@@ -11040,12 +9455,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingA
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput values.
@@ -11073,12 +9482,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ElementType() reflect.Type {
@@ -11093,24 +9496,18 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingO
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) DestinationMountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) DestinationMountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping) *string {
 		return v.DestinationMountTargetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ExportId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping) *string {
 		return v.ExportId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput struct{ *pulumi.OutputState }
@@ -11127,12 +9524,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingA
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping)[vs[1].(int)]
@@ -11141,13 +9532,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingA
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation struct {
 	// The export path of the file system.  Example: `/fs-export-path`
-	ExportPath string `pulumi:"exportPath"`
+	ExportPath *string `pulumi:"exportPath"`
 	// Mount details of a file system.
 	MountDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail `pulumi:"mountDetails"`
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint string `pulumi:"mountPoint"`
+	MountPoint *string `pulumi:"mountPoint"`
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId string `pulumi:"mountTargetId"`
+	MountTargetId *string `pulumi:"mountTargetId"`
 	// Unmount details for a file system.
 	UnmountDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail `pulumi:"unmountDetails"`
 }
@@ -11165,13 +9556,13 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperati
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs struct {
 	// The export path of the file system.  Example: `/fs-export-path`
-	ExportPath pulumi.StringInput `pulumi:"exportPath"`
+	ExportPath pulumi.StringPtrInput `pulumi:"exportPath"`
 	// Mount details of a file system.
 	MountDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput `pulumi:"mountDetails"`
 	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
 	// Unmount details for a file system.
 	UnmountDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput `pulumi:"unmountDetails"`
 }
@@ -11186,12 +9577,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput values.
@@ -11219,12 +9604,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ElementType() reflect.Type {
@@ -11239,17 +9618,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The export path of the file system.  Example: `/fs-export-path`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ExportPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ExportPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) *string {
 		return v.ExportPath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Mount details of a file system.
@@ -11260,17 +9633,17 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 }
 
 // The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) MountPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) *string {
 		return v.MountPoint
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) *string {
 		return v.MountTargetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unmount details for a file system.
@@ -11294,12 +9667,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation)[vs[1].(int)]
@@ -11308,7 +9675,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId string `pulumi:"mountTargetId"`
+	MountTargetId *string `pulumi:"mountTargetId"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput values.
@@ -11324,7 +9691,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperati
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ElementType() reflect.Type {
@@ -11337,12 +9704,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput values.
@@ -11370,12 +9731,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ElementType() reflect.Type {
@@ -11390,17 +9745,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail) *string {
 		return v.MountTargetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
@@ -11417,12 +9766,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail)[vs[1].(int)]
@@ -11431,7 +9774,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId string `pulumi:"mountTargetId"`
+	MountTargetId *string `pulumi:"mountTargetId"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput values.
@@ -11447,7 +9790,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperati
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs struct {
 	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ElementType() reflect.Type {
@@ -11460,12 +9803,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput values.
@@ -11493,12 +9830,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ElementType() reflect.Type {
@@ -11513,17 +9844,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail) *string {
 		return v.MountTargetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput struct{ *pulumi.OutputState }
@@ -11540,12 +9865,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail)[vs[1].(int)]
@@ -11556,13 +9875,13 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping struc
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
 	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
-	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	DestinationPrimaryPrivateIpAddress *string `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
-	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	DestinationPrimaryPrivateIpHostnameLabel *string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
-	DestinationSubnetId string `pulumi:"destinationSubnetId"`
+	DestinationSubnetId *string `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
-	SourceVnicId string `pulumi:"sourceVnicId"`
+	SourceVnicId *string `pulumi:"sourceVnicId"`
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput values.
@@ -11580,13 +9899,13 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs s
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
 	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
-	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	DestinationPrimaryPrivateIpAddress pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
-	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
-	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
+	DestinationSubnetId pulumi.StringPtrInput `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
-	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
+	SourceVnicId pulumi.StringPtrInput `pulumi:"sourceVnicId"`
 }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs) ElementType() reflect.Type {
@@ -11599,12 +9918,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArg
 
 func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput)
-}
-
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput values.
@@ -11632,12 +9945,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) ElementType() reflect.Type {
@@ -11652,12 +9959,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOut
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) []string {
@@ -11666,31 +9967,31 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOut
 }
 
 // The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) *string {
 		return v.DestinationPrimaryPrivateIpAddress
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) *string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) *string {
 		return v.DestinationSubnetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) SourceVnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) *string {
 		return v.SourceVnicId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput struct{ *pulumi.OutputState }
@@ -11705,12 +10006,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArr
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput {
@@ -11754,12 +10049,6 @@ func (i GetDrProtectionGroupsFilterArgs) ToGetDrProtectionGroupsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsFilterOutput)
 }
 
-func (i GetDrProtectionGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsFilter] {
-	return pulumix.Output[GetDrProtectionGroupsFilter]{
-		OutputState: i.ToGetDrProtectionGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsFilterArrayInput is an input type that accepts GetDrProtectionGroupsFilterArray and GetDrProtectionGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsFilterArrayInput` via:
 //
@@ -11785,12 +10074,6 @@ func (i GetDrProtectionGroupsFilterArray) ToGetDrProtectionGroupsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsFilterArrayOutput)
 }
 
-func (i GetDrProtectionGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsFilter] {
-	return pulumix.Output[[]GetDrProtectionGroupsFilter]{
-		OutputState: i.ToGetDrProtectionGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsFilterOutput) ElementType() reflect.Type {
@@ -11803,12 +10086,6 @@ func (o GetDrProtectionGroupsFilterOutput) ToGetDrProtectionGroupsFilterOutput()
 
 func (o GetDrProtectionGroupsFilterOutput) ToGetDrProtectionGroupsFilterOutputWithContext(ctx context.Context) GetDrProtectionGroupsFilterOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsFilter] {
-	return pulumix.Output[GetDrProtectionGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -11835,12 +10112,6 @@ func (o GetDrProtectionGroupsFilterArrayOutput) ToGetDrProtectionGroupsFilterArr
 
 func (o GetDrProtectionGroupsFilterArrayOutput) ToGetDrProtectionGroupsFilterArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsFilterArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsFilter] {
-	return pulumix.Output[[]GetDrProtectionGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsFilterOutput {

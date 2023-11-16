@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -55,26 +54,26 @@ type ExportSet struct {
 	pulumi.CustomResourceState
 
 	// The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-	MaxFsStatBytes pulumi.StringOutput `pulumi:"maxFsStatBytes"`
+	MaxFsStatBytes pulumi.StringPtrOutput `pulumi:"maxFsStatBytes"`
 	// (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	MaxFsStatFiles pulumi.StringOutput `pulumi:"maxFsStatFiles"`
+	MaxFsStatFiles pulumi.StringPtrOutput `pulumi:"maxFsStatFiles"`
 	// (Updatable) The OCID of the mount target that the export set is associated with
 	MountTargetId pulumi.StringOutput `pulumi:"mountTargetId"`
 	// The current state of the export set.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-	VcnId pulumi.StringOutput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrOutput `pulumi:"vcnId"`
 }
 
 // NewExportSet registers a new resource with the given unique name, arguments, and options.
@@ -213,12 +212,6 @@ func (i *ExportSet) ToExportSetOutputWithContext(ctx context.Context) ExportSetO
 	return pulumi.ToOutputWithContext(ctx, i).(ExportSetOutput)
 }
 
-func (i *ExportSet) ToOutput(ctx context.Context) pulumix.Output[*ExportSet] {
-	return pulumix.Output[*ExportSet]{
-		OutputState: i.ToExportSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExportSetArrayInput is an input type that accepts ExportSetArray and ExportSetArrayOutput values.
 // You can construct a concrete instance of `ExportSetArrayInput` via:
 //
@@ -242,12 +235,6 @@ func (i ExportSetArray) ToExportSetArrayOutput() ExportSetArrayOutput {
 
 func (i ExportSetArray) ToExportSetArrayOutputWithContext(ctx context.Context) ExportSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExportSetArrayOutput)
-}
-
-func (i ExportSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExportSet] {
-	return pulumix.Output[[]*ExportSet]{
-		OutputState: i.ToExportSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExportSetMapInput is an input type that accepts ExportSetMap and ExportSetMapOutput values.
@@ -275,12 +262,6 @@ func (i ExportSetMap) ToExportSetMapOutputWithContext(ctx context.Context) Expor
 	return pulumi.ToOutputWithContext(ctx, i).(ExportSetMapOutput)
 }
 
-func (i ExportSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExportSet] {
-	return pulumix.Output[map[string]*ExportSet]{
-		OutputState: i.ToExportSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExportSetOutput struct{ *pulumi.OutputState }
 
 func (ExportSetOutput) ElementType() reflect.Type {
@@ -295,38 +276,32 @@ func (o ExportSetOutput) ToExportSetOutputWithContext(ctx context.Context) Expor
 	return o
 }
 
-func (o ExportSetOutput) ToOutput(ctx context.Context) pulumix.Output[*ExportSet] {
-	return pulumix.Output[*ExportSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-func (o ExportSetOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o ExportSetOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
-func (o ExportSetOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ExportSetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-func (o ExportSetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ExportSetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-func (o ExportSetOutput) MaxFsStatBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.MaxFsStatBytes }).(pulumi.StringOutput)
+func (o ExportSetOutput) MaxFsStatBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.MaxFsStatBytes }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExportSetOutput) MaxFsStatFiles() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.MaxFsStatFiles }).(pulumi.StringOutput)
+func (o ExportSetOutput) MaxFsStatFiles() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.MaxFsStatFiles }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the mount target that the export set is associated with
@@ -335,18 +310,18 @@ func (o ExportSetOutput) MountTargetId() pulumi.StringOutput {
 }
 
 // The current state of the export set.
-func (o ExportSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExportSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o ExportSetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExportSetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-func (o ExportSetOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExportSet) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
+func (o ExportSetOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExportSet) pulumi.StringPtrOutput { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type ExportSetArrayOutput struct{ *pulumi.OutputState }
@@ -361,12 +336,6 @@ func (o ExportSetArrayOutput) ToExportSetArrayOutput() ExportSetArrayOutput {
 
 func (o ExportSetArrayOutput) ToExportSetArrayOutputWithContext(ctx context.Context) ExportSetArrayOutput {
 	return o
-}
-
-func (o ExportSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExportSet] {
-	return pulumix.Output[[]*ExportSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExportSetArrayOutput) Index(i pulumi.IntInput) ExportSetOutput {
@@ -387,12 +356,6 @@ func (o ExportSetMapOutput) ToExportSetMapOutput() ExportSetMapOutput {
 
 func (o ExportSetMapOutput) ToExportSetMapOutputWithContext(ctx context.Context) ExportSetMapOutput {
 	return o
-}
-
-func (o ExportSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExportSet] {
-	return pulumix.Output[map[string]*ExportSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExportSetMapOutput) MapIndex(k pulumi.StringInput) ExportSetOutput {

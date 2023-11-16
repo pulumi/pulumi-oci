@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourcePackageGroupResult {
@@ -16,48 +18,48 @@ public final class GetSoftwareSourcePackageGroupResult {
      * @return description of the package group.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Indicates the order to display category or environment.
      * 
      */
-    private Integer displayOrder;
+    private @Nullable Integer displayOrder;
     /**
      * @return Indicates if this is a group, category or environment.
      * 
      */
-    private String groupType;
+    private @Nullable String groupType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if this package group is the default.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return Indicates if this package group is visible by users.
      * 
      */
-    private Boolean isUserVisible;
+    private @Nullable Boolean isUserVisible;
     /**
      * @return Package group name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     private String packageGroupId;
     /**
      * @return The list of packages in the package group.
      * 
      */
-    private List<String> packages;
+    private @Nullable List<String> packages;
     /**
      * @return the IDs of the package group&#39;s repositories.
      * 
      */
-    private List<String> repositories;
+    private @Nullable List<String> repositories;
     private String softwareSourceId;
 
     private GetSoftwareSourcePackageGroupResult() {}
@@ -65,50 +67,50 @@ public final class GetSoftwareSourcePackageGroupResult {
      * @return description of the package group.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Indicates the order to display category or environment.
      * 
      */
-    public Integer displayOrder() {
-        return this.displayOrder;
+    public Optional<Integer> displayOrder() {
+        return Optional.ofNullable(this.displayOrder);
     }
     /**
      * @return Indicates if this is a group, category or environment.
      * 
      */
-    public String groupType() {
-        return this.groupType;
+    public Optional<String> groupType() {
+        return Optional.ofNullable(this.groupType);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if this package group is the default.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return Indicates if this package group is visible by users.
      * 
      */
-    public Boolean isUserVisible() {
-        return this.isUserVisible;
+    public Optional<Boolean> isUserVisible() {
+        return Optional.ofNullable(this.isUserVisible);
     }
     /**
      * @return Package group name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String packageGroupId() {
         return this.packageGroupId;
@@ -118,14 +120,14 @@ public final class GetSoftwareSourcePackageGroupResult {
      * 
      */
     public List<String> packages() {
-        return this.packages;
+        return this.packages == null ? List.of() : this.packages;
     }
     /**
      * @return the IDs of the package group&#39;s repositories.
      * 
      */
     public List<String> repositories() {
-        return this.repositories;
+        return this.repositories == null ? List.of() : this.repositories;
     }
     public String softwareSourceId() {
         return this.softwareSourceId;
@@ -140,16 +142,16 @@ public final class GetSoftwareSourcePackageGroupResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private Integer displayOrder;
-        private String groupType;
-        private String id;
-        private Boolean isDefault;
-        private Boolean isUserVisible;
-        private String name;
+        private @Nullable String description;
+        private @Nullable Integer displayOrder;
+        private @Nullable String groupType;
+        private @Nullable String id;
+        private @Nullable Boolean isDefault;
+        private @Nullable Boolean isUserVisible;
+        private @Nullable String name;
         private String packageGroupId;
-        private List<String> packages;
-        private List<String> repositories;
+        private @Nullable List<String> packages;
+        private @Nullable List<String> repositories;
         private String softwareSourceId;
         public Builder() {}
         public Builder(GetSoftwareSourcePackageGroupResult defaults) {
@@ -168,38 +170,38 @@ public final class GetSoftwareSourcePackageGroupResult {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+        public Builder displayOrder(@Nullable Integer displayOrder) {
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
-        public Builder groupType(String groupType) {
-            this.groupType = Objects.requireNonNull(groupType);
+        public Builder groupType(@Nullable String groupType) {
+            this.groupType = groupType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder isUserVisible(Boolean isUserVisible) {
-            this.isUserVisible = Objects.requireNonNull(isUserVisible);
+        public Builder isUserVisible(@Nullable Boolean isUserVisible) {
+            this.isUserVisible = isUserVisible;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -208,16 +210,16 @@ public final class GetSoftwareSourcePackageGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder packages(List<String> packages) {
-            this.packages = Objects.requireNonNull(packages);
+        public Builder packages(@Nullable List<String> packages) {
+            this.packages = packages;
             return this;
         }
         public Builder packages(String... packages) {
             return packages(List.of(packages));
         }
         @CustomType.Setter
-        public Builder repositories(List<String> repositories) {
-            this.repositories = Objects.requireNonNull(repositories);
+        public Builder repositories(@Nullable List<String> repositories) {
+            this.repositories = repositories;
             return this;
         }
         public Builder repositories(String... repositories) {

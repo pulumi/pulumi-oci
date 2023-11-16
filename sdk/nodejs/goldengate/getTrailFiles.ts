@@ -67,11 +67,11 @@ export interface GetTrailFilesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of trail_file_collection.
      */
-    readonly trailFileCollections: outputs.GoldenGate.GetTrailFilesTrailFileCollection[];
+    readonly trailFileCollections?: outputs.GoldenGate.GetTrailFilesTrailFileCollection[];
     /**
      * The TrailFile Id.
      */

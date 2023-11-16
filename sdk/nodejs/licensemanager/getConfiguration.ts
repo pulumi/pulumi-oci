@@ -49,16 +49,16 @@ export interface GetConfigurationResult {
     /**
      * The list of associated configuration email IDs.
      */
-    readonly emailIds: string[];
-    readonly id: string;
+    readonly emailIds?: string[];
+    readonly id?: string;
     /**
      * The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure License Manager service.

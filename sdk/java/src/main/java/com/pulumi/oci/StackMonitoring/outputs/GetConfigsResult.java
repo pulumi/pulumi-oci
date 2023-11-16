@@ -23,7 +23,7 @@ public final class GetConfigsResult {
      * @return The list of config_collection.
      * 
      */
-    private List<GetConfigsConfigCollection> configCollections;
+    private @Nullable List<GetConfigsConfigCollection> configCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -34,7 +34,7 @@ public final class GetConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the configuration.
      * 
@@ -55,7 +55,7 @@ public final class GetConfigsResult {
      * 
      */
     public List<GetConfigsConfigCollection> configCollections() {
-        return this.configCollections;
+        return this.configCollections == null ? List.of() : this.configCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -71,8 +71,8 @@ public final class GetConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the configuration.
@@ -95,10 +95,10 @@ public final class GetConfigsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetConfigsConfigCollection> configCollections;
+        private @Nullable List<GetConfigsConfigCollection> configCollections;
         private @Nullable String displayName;
         private @Nullable List<GetConfigsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String type;
         public Builder() {}
@@ -119,8 +119,8 @@ public final class GetConfigsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder configCollections(List<GetConfigsConfigCollection> configCollections) {
-            this.configCollections = Objects.requireNonNull(configCollections);
+        public Builder configCollections(@Nullable List<GetConfigsConfigCollection> configCollections) {
+            this.configCollections = configCollections;
             return this;
         }
         public Builder configCollections(GetConfigsConfigCollection... configCollections) {
@@ -140,8 +140,8 @@ public final class GetConfigsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

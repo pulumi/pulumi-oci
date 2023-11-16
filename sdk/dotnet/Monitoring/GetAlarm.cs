@@ -127,15 +127,15 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
-        public readonly string Body;
+        public readonly string? Body;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
         /// </summary>
@@ -143,67 +143,67 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the alarm is enabled.  Example: `true`
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
         /// </summary>
-        public readonly bool IsNotificationsPerMetricDimensionEnabled;
+        public readonly bool? IsNotificationsPerMetricDimensionEnabled;
         /// <summary>
         /// The format to use for alarm notifications. The formats are:
         /// </summary>
-        public readonly string MessageFormat;
+        public readonly string? MessageFormat;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         /// </summary>
-        public readonly string MetricCompartmentId;
+        public readonly string? MetricCompartmentId;
         /// <summary>
         /// When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         /// </summary>
-        public readonly bool MetricCompartmentIdInSubtree;
+        public readonly bool? MetricCompartmentIdInSubtree;
         /// <summary>
         /// The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
         /// </summary>
-        public readonly string PendingDuration;
+        public readonly string? PendingDuration;
         /// <summary>
         /// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// </summary>
-        public readonly string Query;
+        public readonly string? Query;
         /// <summary>
         /// The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
         /// </summary>
-        public readonly string RepeatNotificationDuration;
+        public readonly string? RepeatNotificationDuration;
         /// <summary>
         /// The time between calculated aggregation windows for the alarm. Supported value: `1m`
         /// </summary>
-        public readonly string Resolution;
+        public readonly string? Resolution;
         /// <summary>
         /// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         /// </summary>
-        public readonly string ResourceGroup;
+        public readonly string? ResourceGroup;
         /// <summary>
         /// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
         /// <summary>
         /// The current lifecycle state of the alarm.  Example: `DELETED`
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The configuration details for suppressing an alarm.
         /// </summary>
@@ -211,61 +211,61 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetAlarmResult(
             string alarmId,
 
-            string body,
+            string? body,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<string> destinations,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            bool isNotificationsPerMetricDimensionEnabled,
+            bool? isNotificationsPerMetricDimensionEnabled,
 
-            string messageFormat,
+            string? messageFormat,
 
-            string metricCompartmentId,
+            string? metricCompartmentId,
 
-            bool metricCompartmentIdInSubtree,
+            bool? metricCompartmentIdInSubtree,
 
-            string @namespace,
+            string? @namespace,
 
-            string pendingDuration,
+            string? pendingDuration,
 
-            string query,
+            string? query,
 
-            string repeatNotificationDuration,
+            string? repeatNotificationDuration,
 
-            string resolution,
+            string? resolution,
 
-            string resourceGroup,
+            string? resourceGroup,
 
-            string severity,
+            string? severity,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetAlarmSuppressionResult> suppressions,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AlarmId = alarmId;
             Body = body;

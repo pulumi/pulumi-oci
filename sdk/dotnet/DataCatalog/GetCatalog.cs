@@ -113,51 +113,51 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// Compartment identifier.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Data catalog identifier, which can be renamed.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         /// </summary>
-        public readonly int NumberOfObjects;
+        public readonly int? NumberOfObjects;
         /// <summary>
         /// The REST front endpoint URL to the data catalog instance.
         /// </summary>
-        public readonly string ServiceApiUrl;
+        public readonly string? ServiceApiUrl;
         /// <summary>
         /// The console front endpoint URL to the data catalog instance.
         /// </summary>
-        public readonly string ServiceConsoleUrl;
+        public readonly string? ServiceConsoleUrl;
         /// <summary>
         /// The current state of the data catalog resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetCatalogResult(
@@ -165,29 +165,29 @@ namespace Pulumi.Oci.DataCatalog
 
             string catalogId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int numberOfObjects,
+            int? numberOfObjects,
 
-            string serviceApiUrl,
+            string? serviceApiUrl,
 
-            string serviceConsoleUrl,
+            string? serviceConsoleUrl,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AttachedCatalogPrivateEndpoints = attachedCatalogPrivateEndpoints;
             CatalogId = catalogId;

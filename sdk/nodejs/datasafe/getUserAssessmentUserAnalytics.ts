@@ -158,7 +158,7 @@ export interface GetUserAssessmentUserAnalyticsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly targetId?: string;
     readonly timeLastLoginGreaterThanOrEqualTo?: string;
     readonly timeLastLoginLessThan?: string;
@@ -169,7 +169,7 @@ export interface GetUserAssessmentUserAnalyticsResult {
     /**
      * The list of user_aggregations.
      */
-    readonly userAggregations: outputs.DataSafe.GetUserAssessmentUserAnalyticsUserAggregation[];
+    readonly userAggregations?: outputs.DataSafe.GetUserAssessmentUserAnalyticsUserAggregation[];
     readonly userAssessmentId: string;
     readonly userCategory?: string;
     readonly userKey?: string;

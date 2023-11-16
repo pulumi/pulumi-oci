@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of License Records in Oracle Cloud Infrastructure License Manager service.
@@ -62,7 +61,7 @@ type GetLicenseRecordsArgs struct {
 type GetLicenseRecordsResult struct {
 	Filters []GetLicenseRecordsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of license_record_collection.
 	LicenseRecordCollections []GetLicenseRecordsLicenseRecordCollection `pulumi:"licenseRecordCollections"`
 	// The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
@@ -108,19 +107,13 @@ func (o GetLicenseRecordsResultOutput) ToGetLicenseRecordsResultOutputWithContex
 	return o
 }
 
-func (o GetLicenseRecordsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsResult] {
-	return pulumix.Output[GetLicenseRecordsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLicenseRecordsResultOutput) Filters() GetLicenseRecordsFilterArrayOutput {
 	return o.ApplyT(func(v GetLicenseRecordsResult) []GetLicenseRecordsFilter { return v.Filters }).(GetLicenseRecordsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLicenseRecordsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseRecordsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLicenseRecordsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseRecordsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of license_record_collection.

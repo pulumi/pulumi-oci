@@ -46,38 +46,6 @@ class ApplicationArgs:
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Application resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        :param pulumi.Input[str] language: (Updatable) The Spark language.
-        :param pulumi.Input[int] num_executors: (Updatable) The number of executor VMs requested.
-        :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
-        :param pulumi.Input['ApplicationApplicationLogConfigArgs'] application_log_config: (Updatable) Logging details of Application logs for Data Flow Run.
-        :param pulumi.Input[str] archive_uri: (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        :param pulumi.Input[str] class_name: (Updatable) The class for the application.
-        :param pulumi.Input[Mapping[str, Any]] configuration: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input['ApplicationDriverShapeConfigArgs'] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        :param pulumi.Input['ApplicationExecutorShapeConfigArgs'] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] file_uri: (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        :param pulumi.Input[str] logs_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        :param pulumi.Input[str] metastore_id: (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        :param pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -132,9 +100,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -144,9 +109,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -156,9 +118,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="driverShape")
     def driver_shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        """
         return pulumi.get(self, "driver_shape")
 
     @driver_shape.setter
@@ -168,9 +127,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="executorShape")
     def executor_shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        """
         return pulumi.get(self, "executor_shape")
 
     @executor_shape.setter
@@ -180,9 +136,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def language(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The Spark language.
-        """
         return pulumi.get(self, "language")
 
     @language.setter
@@ -192,9 +145,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="numExecutors")
     def num_executors(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of executor VMs requested.
-        """
         return pulumi.get(self, "num_executors")
 
     @num_executors.setter
@@ -204,9 +154,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="sparkVersion")
     def spark_version(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The Spark version utilized to run the application.
-        """
         return pulumi.get(self, "spark_version")
 
     @spark_version.setter
@@ -216,9 +163,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="applicationLogConfig")
     def application_log_config(self) -> Optional[pulumi.Input['ApplicationApplicationLogConfigArgs']]:
-        """
-        (Updatable) Logging details of Application logs for Data Flow Run.
-        """
         return pulumi.get(self, "application_log_config")
 
     @application_log_config.setter
@@ -228,9 +172,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="archiveUri")
     def archive_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
         return pulumi.get(self, "archive_uri")
 
     @archive_uri.setter
@@ -240,9 +181,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        """
         return pulumi.get(self, "arguments")
 
     @arguments.setter
@@ -252,9 +190,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="className")
     def class_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The class for the application.
-        """
         return pulumi.get(self, "class_name")
 
     @class_name.setter
@@ -264,9 +199,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def configuration(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
@@ -276,9 +208,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -288,9 +217,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly description. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -300,9 +226,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="driverShapeConfig")
     def driver_shape_config(self) -> Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']]:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "driver_shape_config")
 
     @driver_shape_config.setter
@@ -312,9 +235,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def execute(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        """
         return pulumi.get(self, "execute")
 
     @execute.setter
@@ -324,9 +244,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="executorShapeConfig")
     def executor_shape_config(self) -> Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']]:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "executor_shape_config")
 
     @executor_shape_config.setter
@@ -336,9 +253,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="fileUri")
     def file_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
         return pulumi.get(self, "file_uri")
 
     @file_uri.setter
@@ -348,9 +262,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -360,9 +271,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
     def idle_timeout_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        """
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @idle_timeout_in_minutes.setter
@@ -372,9 +280,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="logsBucketUri")
     def logs_bucket_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
         return pulumi.get(self, "logs_bucket_uri")
 
     @logs_bucket_uri.setter
@@ -384,9 +289,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="maxDurationInMinutes")
     def max_duration_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        """
         return pulumi.get(self, "max_duration_in_minutes")
 
     @max_duration_in_minutes.setter
@@ -396,9 +298,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
@@ -408,9 +307,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]]]:
-        """
-        (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -420,9 +316,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="poolId")
     def pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        """
         return pulumi.get(self, "pool_id")
 
     @pool_id.setter
@@ -432,9 +325,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a private endpoint.
-        """
         return pulumi.get(self, "private_endpoint_id")
 
     @private_endpoint_id.setter
@@ -444,9 +334,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Spark application processing type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -456,13 +343,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "warehouse_bucket_uri")
 
     @warehouse_bucket_uri.setter
@@ -508,43 +388,6 @@ class _ApplicationState:
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Application resources.
-        :param pulumi.Input['ApplicationApplicationLogConfigArgs'] application_log_config: (Updatable) Logging details of Application logs for Data Flow Run.
-        :param pulumi.Input[str] archive_uri: (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        :param pulumi.Input[str] class_name: (Updatable) The class for the application.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] configuration: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        :param pulumi.Input['ApplicationDriverShapeConfigArgs'] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        :param pulumi.Input['ApplicationExecutorShapeConfigArgs'] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] file_uri: (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        :param pulumi.Input[str] language: (Updatable) The Spark language.
-        :param pulumi.Input[str] logs_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        :param pulumi.Input[str] metastore_id: (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        :param pulumi.Input[int] num_executors: (Updatable) The number of executor VMs requested.
-        :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
-        :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
-        :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
-        :param pulumi.Input[str] state: The current state of this application.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if application_log_config is not None:
             pulumi.set(__self__, "application_log_config", application_log_config)
@@ -616,9 +459,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="applicationLogConfig")
     def application_log_config(self) -> Optional[pulumi.Input['ApplicationApplicationLogConfigArgs']]:
-        """
-        (Updatable) Logging details of Application logs for Data Flow Run.
-        """
         return pulumi.get(self, "application_log_config")
 
     @application_log_config.setter
@@ -628,9 +468,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="archiveUri")
     def archive_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
         return pulumi.get(self, "archive_uri")
 
     @archive_uri.setter
@@ -640,9 +477,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        """
         return pulumi.get(self, "arguments")
 
     @arguments.setter
@@ -652,9 +486,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="className")
     def class_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The class for the application.
-        """
         return pulumi.get(self, "class_name")
 
     @class_name.setter
@@ -664,9 +495,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -676,9 +504,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def configuration(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
@@ -688,9 +513,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -700,9 +522,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly description. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -712,9 +531,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -724,9 +540,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="driverShape")
     def driver_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        """
         return pulumi.get(self, "driver_shape")
 
     @driver_shape.setter
@@ -736,9 +549,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="driverShapeConfig")
     def driver_shape_config(self) -> Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']]:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "driver_shape_config")
 
     @driver_shape_config.setter
@@ -748,9 +558,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def execute(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        """
         return pulumi.get(self, "execute")
 
     @execute.setter
@@ -760,9 +567,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="executorShape")
     def executor_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        """
         return pulumi.get(self, "executor_shape")
 
     @executor_shape.setter
@@ -772,9 +576,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="executorShapeConfig")
     def executor_shape_config(self) -> Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']]:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "executor_shape_config")
 
     @executor_shape_config.setter
@@ -784,9 +585,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="fileUri")
     def file_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
         return pulumi.get(self, "file_uri")
 
     @file_uri.setter
@@ -796,9 +594,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -808,9 +603,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
     def idle_timeout_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        """
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @idle_timeout_in_minutes.setter
@@ -820,9 +612,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def language(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Spark language.
-        """
         return pulumi.get(self, "language")
 
     @language.setter
@@ -832,9 +621,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="logsBucketUri")
     def logs_bucket_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
         return pulumi.get(self, "logs_bucket_uri")
 
     @logs_bucket_uri.setter
@@ -844,9 +630,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="maxDurationInMinutes")
     def max_duration_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        """
         return pulumi.get(self, "max_duration_in_minutes")
 
     @max_duration_in_minutes.setter
@@ -856,9 +639,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
@@ -868,9 +648,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="numExecutors")
     def num_executors(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of executor VMs requested.
-        """
         return pulumi.get(self, "num_executors")
 
     @num_executors.setter
@@ -880,9 +657,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="ownerPrincipalId")
     def owner_principal_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user who created the resource.
-        """
         return pulumi.get(self, "owner_principal_id")
 
     @owner_principal_id.setter
@@ -892,9 +666,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="ownerUserName")
     def owner_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
         return pulumi.get(self, "owner_user_name")
 
     @owner_user_name.setter
@@ -904,9 +675,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]]]:
-        """
-        (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -916,9 +684,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="poolId")
     def pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        """
         return pulumi.get(self, "pool_id")
 
     @pool_id.setter
@@ -928,9 +693,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a private endpoint.
-        """
         return pulumi.get(self, "private_endpoint_id")
 
     @private_endpoint_id.setter
@@ -940,9 +702,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="sparkVersion")
     def spark_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Spark version utilized to run the application.
-        """
         return pulumi.get(self, "spark_version")
 
     @spark_version.setter
@@ -952,9 +711,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of this application.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -964,9 +720,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -976,9 +729,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -988,9 +738,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Spark application processing type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1000,13 +747,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "warehouse_bucket_uri")
 
     @warehouse_bucket_uri.setter
@@ -1049,105 +789,9 @@ class Application(pulumi.CustomResource):
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Creates an application.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_application = oci.data_flow.Application("testApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["application_display_name"],
-            driver_shape=var["application_driver_shape"],
-            executor_shape=var["application_executor_shape"],
-            language=var["application_language"],
-            num_executors=var["application_num_executors"],
-            spark_version=var["application_spark_version"],
-            application_log_config=oci.data_flow.ApplicationApplicationLogConfigArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
-            ),
-            archive_uri=var["application_archive_uri"],
-            arguments=var["application_arguments"],
-            class_name=var["application_class_name"],
-            configuration=var["application_configuration"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["application_description"],
-            driver_shape_config=oci.data_flow.ApplicationDriverShapeConfigArgs(
-                memory_in_gbs=var["application_driver_shape_config_memory_in_gbs"],
-                ocpus=var["application_driver_shape_config_ocpus"],
-            ),
-            execute=var["application_execute"],
-            executor_shape_config=oci.data_flow.ApplicationExecutorShapeConfigArgs(
-                memory_in_gbs=var["application_executor_shape_config_memory_in_gbs"],
-                ocpus=var["application_executor_shape_config_ocpus"],
-            ),
-            file_uri=var["application_file_uri"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            idle_timeout_in_minutes=var["application_idle_timeout_in_minutes"],
-            logs_bucket_uri=var["application_logs_bucket_uri"],
-            max_duration_in_minutes=var["application_max_duration_in_minutes"],
-            metastore_id=var["metastore_id"],
-            parameters=[oci.data_flow.ApplicationParameterArgs(
-                name=var["application_parameters_name"],
-                value=var["application_parameters_value"],
-            )],
-            pool_id=oci_dataflow_pool["test_pool"]["id"],
-            private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-            type=var["application_type"],
-            warehouse_bucket_uri=var["application_warehouse_bucket_uri"])
-        ```
-
-        ## Import
-
-        Applications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/application:Application test_application "id"
-        ```
-
+        Create a Application resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ApplicationApplicationLogConfigArgs']] application_log_config: (Updatable) Logging details of Application logs for Data Flow Run.
-        :param pulumi.Input[str] archive_uri: (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        :param pulumi.Input[str] class_name: (Updatable) The class for the application.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] configuration: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        :param pulumi.Input[pulumi.InputType['ApplicationDriverShapeConfigArgs']] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        :param pulumi.Input[pulumi.InputType['ApplicationExecutorShapeConfigArgs']] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] file_uri: (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        :param pulumi.Input[str] language: (Updatable) The Spark language.
-        :param pulumi.Input[str] logs_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        :param pulumi.Input[str] metastore_id: (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        :param pulumi.Input[int] num_executors: (Updatable) The number of executor VMs requested.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApplicationParameterArgs']]]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
-        :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1156,71 +800,7 @@ class Application(pulumi.CustomResource):
                  args: ApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Creates an application.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_application = oci.data_flow.Application("testApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["application_display_name"],
-            driver_shape=var["application_driver_shape"],
-            executor_shape=var["application_executor_shape"],
-            language=var["application_language"],
-            num_executors=var["application_num_executors"],
-            spark_version=var["application_spark_version"],
-            application_log_config=oci.data_flow.ApplicationApplicationLogConfigArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
-            ),
-            archive_uri=var["application_archive_uri"],
-            arguments=var["application_arguments"],
-            class_name=var["application_class_name"],
-            configuration=var["application_configuration"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["application_description"],
-            driver_shape_config=oci.data_flow.ApplicationDriverShapeConfigArgs(
-                memory_in_gbs=var["application_driver_shape_config_memory_in_gbs"],
-                ocpus=var["application_driver_shape_config_ocpus"],
-            ),
-            execute=var["application_execute"],
-            executor_shape_config=oci.data_flow.ApplicationExecutorShapeConfigArgs(
-                memory_in_gbs=var["application_executor_shape_config_memory_in_gbs"],
-                ocpus=var["application_executor_shape_config_ocpus"],
-            ),
-            file_uri=var["application_file_uri"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            idle_timeout_in_minutes=var["application_idle_timeout_in_minutes"],
-            logs_bucket_uri=var["application_logs_bucket_uri"],
-            max_duration_in_minutes=var["application_max_duration_in_minutes"],
-            metastore_id=var["metastore_id"],
-            parameters=[oci.data_flow.ApplicationParameterArgs(
-                name=var["application_parameters_name"],
-                value=var["application_parameters_value"],
-            )],
-            pool_id=oci_dataflow_pool["test_pool"]["id"],
-            private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-            type=var["application_type"],
-            warehouse_bucket_uri=var["application_warehouse_bucket_uri"])
-        ```
-
-        ## Import
-
-        Applications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/application:Application test_application "id"
-        ```
-
+        Create a Application resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ApplicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1370,43 +950,6 @@ class Application(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ApplicationApplicationLogConfigArgs']] application_log_config: (Updatable) Logging details of Application logs for Data Flow Run.
-        :param pulumi.Input[str] archive_uri: (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        :param pulumi.Input[str] class_name: (Updatable) The class for the application.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] configuration: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        :param pulumi.Input[pulumi.InputType['ApplicationDriverShapeConfigArgs']] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        :param pulumi.Input[pulumi.InputType['ApplicationExecutorShapeConfigArgs']] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] file_uri: (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        :param pulumi.Input[str] language: (Updatable) The Spark language.
-        :param pulumi.Input[str] logs_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        :param pulumi.Input[str] metastore_id: (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        :param pulumi.Input[int] num_executors: (Updatable) The number of executor VMs requested.
-        :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
-        :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApplicationParameterArgs']]]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
-        :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
-        :param pulumi.Input[str] state: The current state of this application.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1449,269 +992,166 @@ class Application(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="applicationLogConfig")
-    def application_log_config(self) -> pulumi.Output['outputs.ApplicationApplicationLogConfig']:
-        """
-        (Updatable) Logging details of Application logs for Data Flow Run.
-        """
+    def application_log_config(self) -> pulumi.Output[Optional['outputs.ApplicationApplicationLogConfig']]:
         return pulumi.get(self, "application_log_config")
 
     @property
     @pulumi.getter(name="archiveUri")
     def archive_uri(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
         return pulumi.get(self, "archive_uri")
 
     @property
     @pulumi.getter
-    def arguments(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        """
+    def arguments(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "arguments")
 
     @property
     @pulumi.getter(name="className")
     def class_name(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The class for the application.
-        """
         return pulumi.get(self, "class_name")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configuration(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
+    def configuration(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "configuration")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly description. Avoid entering confidential information.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="driverShape")
     def driver_shape(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        """
         return pulumi.get(self, "driver_shape")
 
     @property
     @pulumi.getter(name="driverShapeConfig")
-    def driver_shape_config(self) -> pulumi.Output['outputs.ApplicationDriverShapeConfig']:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def driver_shape_config(self) -> pulumi.Output[Optional['outputs.ApplicationDriverShapeConfig']]:
         return pulumi.get(self, "driver_shape_config")
 
     @property
     @pulumi.getter
-    def execute(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        """
+    def execute(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "execute")
 
     @property
     @pulumi.getter(name="executorShape")
     def executor_shape(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        """
         return pulumi.get(self, "executor_shape")
 
     @property
     @pulumi.getter(name="executorShapeConfig")
-    def executor_shape_config(self) -> pulumi.Output['outputs.ApplicationExecutorShapeConfig']:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def executor_shape_config(self) -> pulumi.Output[Optional['outputs.ApplicationExecutorShapeConfig']]:
         return pulumi.get(self, "executor_shape_config")
 
     @property
     @pulumi.getter(name="fileUri")
-    def file_uri(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def file_uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "file_uri")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
-    def idle_timeout_in_minutes(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        """
+    def idle_timeout_in_minutes(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @property
     @pulumi.getter
     def language(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Spark language.
-        """
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter(name="logsBucketUri")
-    def logs_bucket_uri(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def logs_bucket_uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "logs_bucket_uri")
 
     @property
     @pulumi.getter(name="maxDurationInMinutes")
-    def max_duration_in_minutes(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        """
+    def max_duration_in_minutes(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "max_duration_in_minutes")
 
     @property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        """
+    def metastore_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="numExecutors")
     def num_executors(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of executor VMs requested.
-        """
         return pulumi.get(self, "num_executors")
 
     @property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user who created the resource.
-        """
+    def owner_principal_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> pulumi.Output[str]:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
+    def owner_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "owner_user_name")
 
     @property
     @pulumi.getter
-    def parameters(self) -> pulumi.Output[Sequence['outputs.ApplicationParameter']]:
-        """
-        (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        """
+    def parameters(self) -> pulumi.Output[Optional[Sequence['outputs.ApplicationParameter']]]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter(name="poolId")
-    def pool_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        """
+    def pool_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "pool_id")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of a private endpoint.
-        """
+    def private_endpoint_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="sparkVersion")
     def spark_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Spark version utilized to run the application.
-        """
         return pulumi.get(self, "spark_version")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of this application.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The Spark application processing type.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def warehouse_bucket_uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "warehouse_bucket_uri")
 

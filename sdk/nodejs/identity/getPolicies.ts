@@ -70,7 +70,7 @@ export interface GetPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
      */
@@ -78,7 +78,7 @@ export interface GetPoliciesResult {
     /**
      * The list of policies.
      */
-    readonly policies: outputs.Identity.GetPoliciesPolicy[];
+    readonly policies?: outputs.Identity.GetPoliciesPolicy[];
     /**
      * The policy's current state.
      */

@@ -58,11 +58,11 @@ export interface GetOsnsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of osn_collection.
      */
-    readonly osnCollections: outputs.Blockchain.GetOsnsOsnCollection[];
+    readonly osnCollections?: outputs.Blockchain.GetOsnsOsnCollection[];
 }
 /**
  * This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.

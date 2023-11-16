@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -92,7 +91,7 @@ type DiscoveryJob struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Client who submits discovery job.
-	DiscoveryClient pulumi.StringOutput `pulumi:"discoveryClient"`
+	DiscoveryClient pulumi.StringPtrOutput `pulumi:"discoveryClient"`
 	// The request of DiscoveryJob Resource details.
 	DiscoveryDetails DiscoveryJobDiscoveryDetailsOutput `pulumi:"discoveryDetails"`
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
@@ -103,21 +102,21 @@ type DiscoveryJob struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ShouldPropagateTagsToDiscoveredResources pulumi.BoolOutput `pulumi:"shouldPropagateTagsToDiscoveredResources"`
+	ShouldPropagateTagsToDiscoveredResources pulumi.BoolPtrOutput `pulumi:"shouldPropagateTagsToDiscoveredResources"`
 	// The current state of the DiscoveryJob Resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Specifies the status of the discovery job
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// The short summary of the status of the discovery job
-	StatusMessage pulumi.StringOutput `pulumi:"statusMessage"`
+	StatusMessage pulumi.StringPtrOutput `pulumi:"statusMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of Tenant
-	TenantId pulumi.StringOutput `pulumi:"tenantId"`
+	TenantId pulumi.StringPtrOutput `pulumi:"tenantId"`
 	// The time the discovery Job was updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The OCID of user in which the job is submitted
-	UserId pulumi.StringOutput `pulumi:"userId"`
+	UserId pulumi.StringPtrOutput `pulumi:"userId"`
 }
 
 // NewDiscoveryJob registers a new resource with the given unique name, arguments, and options.
@@ -291,12 +290,6 @@ func (i *DiscoveryJob) ToDiscoveryJobOutputWithContext(ctx context.Context) Disc
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobOutput)
 }
 
-func (i *DiscoveryJob) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJob] {
-	return pulumix.Output[*DiscoveryJob]{
-		OutputState: i.ToDiscoveryJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DiscoveryJobArrayInput is an input type that accepts DiscoveryJobArray and DiscoveryJobArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobArrayInput` via:
 //
@@ -320,12 +313,6 @@ func (i DiscoveryJobArray) ToDiscoveryJobArrayOutput() DiscoveryJobArrayOutput {
 
 func (i DiscoveryJobArray) ToDiscoveryJobArrayOutputWithContext(ctx context.Context) DiscoveryJobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobArrayOutput)
-}
-
-func (i DiscoveryJobArray) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryJob] {
-	return pulumix.Output[[]*DiscoveryJob]{
-		OutputState: i.ToDiscoveryJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DiscoveryJobMapInput is an input type that accepts DiscoveryJobMap and DiscoveryJobMapOutput values.
@@ -353,12 +340,6 @@ func (i DiscoveryJobMap) ToDiscoveryJobMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobMapOutput)
 }
 
-func (i DiscoveryJobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryJob] {
-	return pulumix.Output[map[string]*DiscoveryJob]{
-		OutputState: i.ToDiscoveryJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobOutput) ElementType() reflect.Type {
@@ -373,12 +354,6 @@ func (o DiscoveryJobOutput) ToDiscoveryJobOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o DiscoveryJobOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJob] {
-	return pulumix.Output[*DiscoveryJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of Compartment
 func (o DiscoveryJobOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -390,8 +365,8 @@ func (o DiscoveryJobOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Client who submits discovery job.
-func (o DiscoveryJobOutput) DiscoveryClient() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.DiscoveryClient }).(pulumi.StringOutput)
+func (o DiscoveryJobOutput) DiscoveryClient() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringPtrOutput { return v.DiscoveryClient }).(pulumi.StringPtrOutput)
 }
 
 // The request of DiscoveryJob Resource details.
@@ -413,23 +388,23 @@ func (o DiscoveryJobOutput) FreeformTags() pulumi.MapOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DiscoveryJobOutput) ShouldPropagateTagsToDiscoveredResources() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.BoolOutput { return v.ShouldPropagateTagsToDiscoveredResources }).(pulumi.BoolOutput)
+func (o DiscoveryJobOutput) ShouldPropagateTagsToDiscoveredResources() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.BoolPtrOutput { return v.ShouldPropagateTagsToDiscoveredResources }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the DiscoveryJob Resource.
-func (o DiscoveryJobOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DiscoveryJobOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the status of the discovery job
-func (o DiscoveryJobOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DiscoveryJobOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The short summary of the status of the discovery job
-func (o DiscoveryJobOutput) StatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.StatusMessage }).(pulumi.StringOutput)
+func (o DiscoveryJobOutput) StatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringPtrOutput { return v.StatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -438,18 +413,18 @@ func (o DiscoveryJobOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of Tenant
-func (o DiscoveryJobOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
+func (o DiscoveryJobOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringPtrOutput { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The time the discovery Job was updated.
-func (o DiscoveryJobOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DiscoveryJobOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of user in which the job is submitted
-func (o DiscoveryJobOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
+func (o DiscoveryJobOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringPtrOutput { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type DiscoveryJobArrayOutput struct{ *pulumi.OutputState }
@@ -464,12 +439,6 @@ func (o DiscoveryJobArrayOutput) ToDiscoveryJobArrayOutput() DiscoveryJobArrayOu
 
 func (o DiscoveryJobArrayOutput) ToDiscoveryJobArrayOutputWithContext(ctx context.Context) DiscoveryJobArrayOutput {
 	return o
-}
-
-func (o DiscoveryJobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryJob] {
-	return pulumix.Output[[]*DiscoveryJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobArrayOutput) Index(i pulumi.IntInput) DiscoveryJobOutput {
@@ -490,12 +459,6 @@ func (o DiscoveryJobMapOutput) ToDiscoveryJobMapOutput() DiscoveryJobMapOutput {
 
 func (o DiscoveryJobMapOutput) ToDiscoveryJobMapOutputWithContext(ctx context.Context) DiscoveryJobMapOutput {
 	return o
-}
-
-func (o DiscoveryJobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryJob] {
-	return pulumix.Output[map[string]*DiscoveryJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobMapOutput) MapIndex(k pulumi.StringInput) DiscoveryJobOutput {

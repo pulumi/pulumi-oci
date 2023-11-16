@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// It defines the format type of text files.
         /// </summary>
-        public readonly string FormatType;
+        public readonly string? FormatType;
         /// <summary>
         /// Metadata for files with text content.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
 
         [OutputConstructor]
         private GetDatasetsDatasetCollectionItemDatasetFormatDetailResult(
-            string formatType,
+            string? formatType,
 
             ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult> textFileTypeMetadatas)
         {

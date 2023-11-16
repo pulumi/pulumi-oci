@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
@@ -14,27 +16,27 @@ public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
      * @return Target selection.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return Types of Targets
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected() {}
     /**
      * @return Target selection.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return Types of Targets
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kind;
-        private List<String> values;
+        private @Nullable String kind;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
         }
 
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<String> values) {
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The state of the BGP IPv6 session.
         /// </summary>
-        public readonly string BgpIpv6state;
+        public readonly string? BgpIpv6state;
         /// <summary>
         /// The state of the BGP session.
         /// </summary>
-        public readonly string BgpState;
+        public readonly string? BgpState;
         /// <summary>
         /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
         /// </summary>
-        public readonly string CustomerBgpAsn;
+        public readonly string? CustomerBgpAsn;
         /// <summary>
         /// The IP address for the CPE end of the inside tunnel interface.
         /// </summary>
-        public readonly string CustomerInterfaceIp;
+        public readonly string? CustomerInterfaceIp;
         /// <summary>
         /// The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
         /// </summary>
-        public readonly string CustomerInterfaceIpv6;
+        public readonly string? CustomerInterfaceIpv6;
         /// <summary>
         /// The Oracle BGP ASN.
         /// </summary>
-        public readonly string OracleBgpAsn;
+        public readonly string? OracleBgpAsn;
         /// <summary>
         /// The IP address for the Oracle end of the inside tunnel interface.
         /// </summary>
-        public readonly string OracleInterfaceIp;
+        public readonly string? OracleInterfaceIp;
         /// <summary>
         /// The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
         /// </summary>
-        public readonly string OracleInterfaceIpv6;
+        public readonly string? OracleInterfaceIpv6;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoResult(
-            string bgpIpv6state,
+            string? bgpIpv6state,
 
-            string bgpState,
+            string? bgpState,
 
-            string customerBgpAsn,
+            string? customerBgpAsn,
 
-            string customerInterfaceIp,
+            string? customerInterfaceIp,
 
-            string customerInterfaceIpv6,
+            string? customerInterfaceIpv6,
 
-            string oracleBgpAsn,
+            string? oracleBgpAsn,
 
-            string oracleInterfaceIp,
+            string? oracleInterfaceIp,
 
-            string oracleInterfaceIpv6)
+            string? oracleInterfaceIpv6)
         {
             BgpIpv6state = bgpIpv6state;
             BgpState = bgpState;

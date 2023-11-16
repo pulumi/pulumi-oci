@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualServiceRouteTableRouteRule {
@@ -16,32 +18,32 @@ public final class GetVirtualServiceRouteTableRouteRule {
      * @return The destination of the request.
      * 
      */
-    private List<GetVirtualServiceRouteTableRouteRuleDestination> destinations;
+    private @Nullable List<GetVirtualServiceRouteTableRouteRuleDestination> destinations;
     /**
      * @return If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
      * 
      */
-    private Boolean isGrpc;
+    private @Nullable Boolean isGrpc;
     /**
      * @return Route to match
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return Match type for the route
      * 
      */
-    private String pathType;
+    private @Nullable String pathType;
     /**
      * @return The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
      * 
      */
-    private String requestTimeoutInMs;
+    private @Nullable String requestTimeoutInMs;
     /**
      * @return Type of protocol.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetVirtualServiceRouteTableRouteRule() {}
     /**
@@ -49,42 +51,42 @@ public final class GetVirtualServiceRouteTableRouteRule {
      * 
      */
     public List<GetVirtualServiceRouteTableRouteRuleDestination> destinations() {
-        return this.destinations;
+        return this.destinations == null ? List.of() : this.destinations;
     }
     /**
      * @return If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
      * 
      */
-    public Boolean isGrpc() {
-        return this.isGrpc;
+    public Optional<Boolean> isGrpc() {
+        return Optional.ofNullable(this.isGrpc);
     }
     /**
      * @return Route to match
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return Match type for the route
      * 
      */
-    public String pathType() {
-        return this.pathType;
+    public Optional<String> pathType() {
+        return Optional.ofNullable(this.pathType);
     }
     /**
      * @return The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
      * 
      */
-    public String requestTimeoutInMs() {
-        return this.requestTimeoutInMs;
+    public Optional<String> requestTimeoutInMs() {
+        return Optional.ofNullable(this.requestTimeoutInMs);
     }
     /**
      * @return Type of protocol.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetVirtualServiceRouteTableRouteRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetVirtualServiceRouteTableRouteRuleDestination> destinations;
-        private Boolean isGrpc;
-        private String path;
-        private String pathType;
-        private String requestTimeoutInMs;
-        private String type;
+        private @Nullable List<GetVirtualServiceRouteTableRouteRuleDestination> destinations;
+        private @Nullable Boolean isGrpc;
+        private @Nullable String path;
+        private @Nullable String pathType;
+        private @Nullable String requestTimeoutInMs;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetVirtualServiceRouteTableRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,36 +116,36 @@ public final class GetVirtualServiceRouteTableRouteRule {
         }
 
         @CustomType.Setter
-        public Builder destinations(List<GetVirtualServiceRouteTableRouteRuleDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+        public Builder destinations(@Nullable List<GetVirtualServiceRouteTableRouteRuleDestination> destinations) {
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetVirtualServiceRouteTableRouteRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
         @CustomType.Setter
-        public Builder isGrpc(Boolean isGrpc) {
-            this.isGrpc = Objects.requireNonNull(isGrpc);
+        public Builder isGrpc(@Nullable Boolean isGrpc) {
+            this.isGrpc = isGrpc;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder pathType(String pathType) {
-            this.pathType = Objects.requireNonNull(pathType);
+        public Builder pathType(@Nullable String pathType) {
+            this.pathType = pathType;
             return this;
         }
         @CustomType.Setter
-        public Builder requestTimeoutInMs(String requestTimeoutInMs) {
-            this.requestTimeoutInMs = Objects.requireNonNull(requestTimeoutInMs);
+        public Builder requestTimeoutInMs(@Nullable String requestTimeoutInMs) {
+            this.requestTimeoutInMs = requestTimeoutInMs;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetVirtualServiceRouteTableRouteRule build() {

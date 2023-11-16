@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Secrets
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of secret_bundle_versions.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Secrets
         private GetSecretbundleVersionsResult(
             ImmutableArray<Outputs.GetSecretbundleVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSecretbundleVersionsSecretBundleVersionResult> secretBundleVersions,
 

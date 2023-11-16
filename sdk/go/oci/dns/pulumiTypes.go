@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i ActionCreateZoneFromZoneFileExternalDownstreamArgs) ToActionCreateZoneFr
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalDownstreamOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileExternalDownstreamArgs) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileExternalDownstream] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileExternalDownstream]{
-		OutputState: i.ToActionCreateZoneFromZoneFileExternalDownstreamOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ActionCreateZoneFromZoneFileExternalDownstreamArrayInput is an input type that accepts ActionCreateZoneFromZoneFileExternalDownstreamArray and ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput values.
 // You can construct a concrete instance of `ActionCreateZoneFromZoneFileExternalDownstreamArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i ActionCreateZoneFromZoneFileExternalDownstreamArray) ToActionCreateZoneF
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileExternalDownstreamArray) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileExternalDownstream] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileExternalDownstream]{
-		OutputState: i.ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ActionCreateZoneFromZoneFileExternalDownstreamOutput struct{ *pulumi.OutputState }
 
 func (ActionCreateZoneFromZoneFileExternalDownstreamOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) ToActionCreateZone
 
 func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) ToActionCreateZoneFromZoneFileExternalDownstreamOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalDownstreamOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileExternalDownstream] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileExternalDownstream]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The server's IP address (IPv4 or IPv6).
@@ -139,12 +120,6 @@ func (o ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) ToActionCreat
 
 func (o ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileExternalDownstream] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileExternalDownstream]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileExternalDownstreamOutput {
@@ -194,12 +169,6 @@ func (i ActionCreateZoneFromZoneFileExternalMasterArgs) ToActionCreateZoneFromZo
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalMasterOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileExternalMasterArgs) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileExternalMaster] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileExternalMaster]{
-		OutputState: i.ToActionCreateZoneFromZoneFileExternalMasterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ActionCreateZoneFromZoneFileExternalMasterArrayInput is an input type that accepts ActionCreateZoneFromZoneFileExternalMasterArray and ActionCreateZoneFromZoneFileExternalMasterArrayOutput values.
 // You can construct a concrete instance of `ActionCreateZoneFromZoneFileExternalMasterArrayInput` via:
 //
@@ -225,12 +194,6 @@ func (i ActionCreateZoneFromZoneFileExternalMasterArray) ToActionCreateZoneFromZ
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalMasterArrayOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileExternalMasterArray) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileExternalMaster] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileExternalMaster]{
-		OutputState: i.ToActionCreateZoneFromZoneFileExternalMasterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ActionCreateZoneFromZoneFileExternalMasterOutput struct{ *pulumi.OutputState }
 
 func (ActionCreateZoneFromZoneFileExternalMasterOutput) ElementType() reflect.Type {
@@ -243,12 +206,6 @@ func (o ActionCreateZoneFromZoneFileExternalMasterOutput) ToActionCreateZoneFrom
 
 func (o ActionCreateZoneFromZoneFileExternalMasterOutput) ToActionCreateZoneFromZoneFileExternalMasterOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalMasterOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileExternalMasterOutput) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileExternalMaster] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileExternalMaster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The server's IP address (IPv4 or IPv6).
@@ -278,12 +235,6 @@ func (o ActionCreateZoneFromZoneFileExternalMasterArrayOutput) ToActionCreateZon
 
 func (o ActionCreateZoneFromZoneFileExternalMasterArrayOutput) ToActionCreateZoneFromZoneFileExternalMasterArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalMasterArrayOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileExternalMasterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileExternalMaster] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileExternalMaster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ActionCreateZoneFromZoneFileExternalMasterArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileExternalMasterOutput {
@@ -325,12 +276,6 @@ func (i ActionCreateZoneFromZoneFileNameserverArgs) ToActionCreateZoneFromZoneFi
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileNameserverOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileNameserverArgs) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileNameserver] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileNameserver]{
-		OutputState: i.ToActionCreateZoneFromZoneFileNameserverOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ActionCreateZoneFromZoneFileNameserverArrayInput is an input type that accepts ActionCreateZoneFromZoneFileNameserverArray and ActionCreateZoneFromZoneFileNameserverArrayOutput values.
 // You can construct a concrete instance of `ActionCreateZoneFromZoneFileNameserverArrayInput` via:
 //
@@ -356,12 +301,6 @@ func (i ActionCreateZoneFromZoneFileNameserverArray) ToActionCreateZoneFromZoneF
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileNameserverArrayOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileNameserverArray) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileNameserver] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileNameserver]{
-		OutputState: i.ToActionCreateZoneFromZoneFileNameserverArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ActionCreateZoneFromZoneFileNameserverOutput struct{ *pulumi.OutputState }
 
 func (ActionCreateZoneFromZoneFileNameserverOutput) ElementType() reflect.Type {
@@ -374,12 +313,6 @@ func (o ActionCreateZoneFromZoneFileNameserverOutput) ToActionCreateZoneFromZone
 
 func (o ActionCreateZoneFromZoneFileNameserverOutput) ToActionCreateZoneFromZoneFileNameserverOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileNameserverOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileNameserverOutput) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileNameserver] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileNameserver]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The hostname of the nameserver.
@@ -399,12 +332,6 @@ func (o ActionCreateZoneFromZoneFileNameserverArrayOutput) ToActionCreateZoneFro
 
 func (o ActionCreateZoneFromZoneFileNameserverArrayOutput) ToActionCreateZoneFromZoneFileNameserverArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileNameserverArrayOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileNameserverArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileNameserver] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileNameserver]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ActionCreateZoneFromZoneFileNameserverArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileNameserverOutput {
@@ -458,12 +385,6 @@ func (i ActionCreateZoneFromZoneFileZoneTransferServerArgs) ToActionCreateZoneFr
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileZoneTransferServerOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileZoneTransferServerArgs) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileZoneTransferServer] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileZoneTransferServer]{
-		OutputState: i.ToActionCreateZoneFromZoneFileZoneTransferServerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ActionCreateZoneFromZoneFileZoneTransferServerArrayInput is an input type that accepts ActionCreateZoneFromZoneFileZoneTransferServerArray and ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput values.
 // You can construct a concrete instance of `ActionCreateZoneFromZoneFileZoneTransferServerArrayInput` via:
 //
@@ -489,12 +410,6 @@ func (i ActionCreateZoneFromZoneFileZoneTransferServerArray) ToActionCreateZoneF
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileZoneTransferServerArray) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileZoneTransferServer] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileZoneTransferServer]{
-		OutputState: i.ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ActionCreateZoneFromZoneFileZoneTransferServerOutput struct{ *pulumi.OutputState }
 
 func (ActionCreateZoneFromZoneFileZoneTransferServerOutput) ElementType() reflect.Type {
@@ -507,12 +422,6 @@ func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) ToActionCreateZone
 
 func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) ToActionCreateZoneFromZoneFileZoneTransferServerOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileZoneTransferServerOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) ToOutput(ctx context.Context) pulumix.Output[ActionCreateZoneFromZoneFileZoneTransferServer] {
-	return pulumix.Output[ActionCreateZoneFromZoneFileZoneTransferServer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The server's IP address (IPv4 or IPv6).
@@ -547,12 +456,6 @@ func (o ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) ToActionCreat
 
 func (o ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ActionCreateZoneFromZoneFileZoneTransferServer] {
-	return pulumix.Output[[]ActionCreateZoneFromZoneFileZoneTransferServer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileZoneTransferServerOutput {
@@ -594,12 +497,6 @@ func (i ResolverAttachedViewArgs) ToResolverAttachedViewOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverAttachedViewOutput)
 }
 
-func (i ResolverAttachedViewArgs) ToOutput(ctx context.Context) pulumix.Output[ResolverAttachedView] {
-	return pulumix.Output[ResolverAttachedView]{
-		OutputState: i.ToResolverAttachedViewOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResolverAttachedViewArrayInput is an input type that accepts ResolverAttachedViewArray and ResolverAttachedViewArrayOutput values.
 // You can construct a concrete instance of `ResolverAttachedViewArrayInput` via:
 //
@@ -625,12 +522,6 @@ func (i ResolverAttachedViewArray) ToResolverAttachedViewArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverAttachedViewArrayOutput)
 }
 
-func (i ResolverAttachedViewArray) ToOutput(ctx context.Context) pulumix.Output[[]ResolverAttachedView] {
-	return pulumix.Output[[]ResolverAttachedView]{
-		OutputState: i.ToResolverAttachedViewArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResolverAttachedViewOutput struct{ *pulumi.OutputState }
 
 func (ResolverAttachedViewOutput) ElementType() reflect.Type {
@@ -643,12 +534,6 @@ func (o ResolverAttachedViewOutput) ToResolverAttachedViewOutput() ResolverAttac
 
 func (o ResolverAttachedViewOutput) ToResolverAttachedViewOutputWithContext(ctx context.Context) ResolverAttachedViewOutput {
 	return o
-}
-
-func (o ResolverAttachedViewOutput) ToOutput(ctx context.Context) pulumix.Output[ResolverAttachedView] {
-	return pulumix.Output[ResolverAttachedView]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the view.
@@ -668,12 +553,6 @@ func (o ResolverAttachedViewArrayOutput) ToResolverAttachedViewArrayOutput() Res
 
 func (o ResolverAttachedViewArrayOutput) ToResolverAttachedViewArrayOutputWithContext(ctx context.Context) ResolverAttachedViewArrayOutput {
 	return o
-}
-
-func (o ResolverAttachedViewArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResolverAttachedView] {
-	return pulumix.Output[[]ResolverAttachedView]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) ResolverAttachedViewOutput {
@@ -759,12 +638,6 @@ func (i ResolverEndpointTypeArgs) ToResolverEndpointTypeOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverEndpointTypeOutput)
 }
 
-func (i ResolverEndpointTypeArgs) ToOutput(ctx context.Context) pulumix.Output[ResolverEndpointType] {
-	return pulumix.Output[ResolverEndpointType]{
-		OutputState: i.ToResolverEndpointTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResolverEndpointTypeArrayInput is an input type that accepts ResolverEndpointTypeArray and ResolverEndpointTypeArrayOutput values.
 // You can construct a concrete instance of `ResolverEndpointTypeArrayInput` via:
 //
@@ -790,12 +663,6 @@ func (i ResolverEndpointTypeArray) ToResolverEndpointTypeArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverEndpointTypeArrayOutput)
 }
 
-func (i ResolverEndpointTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]ResolverEndpointType] {
-	return pulumix.Output[[]ResolverEndpointType]{
-		OutputState: i.ToResolverEndpointTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResolverEndpointTypeOutput struct{ *pulumi.OutputState }
 
 func (ResolverEndpointTypeOutput) ElementType() reflect.Type {
@@ -808,12 +675,6 @@ func (o ResolverEndpointTypeOutput) ToResolverEndpointTypeOutput() ResolverEndpo
 
 func (o ResolverEndpointTypeOutput) ToResolverEndpointTypeOutputWithContext(ctx context.Context) ResolverEndpointTypeOutput {
 	return o
-}
-
-func (o ResolverEndpointTypeOutput) ToOutput(ctx context.Context) pulumix.Output[ResolverEndpointType] {
-	return pulumix.Output[ResolverEndpointType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the owning compartment.
@@ -890,12 +751,6 @@ func (o ResolverEndpointTypeArrayOutput) ToResolverEndpointTypeArrayOutputWithCo
 	return o
 }
 
-func (o ResolverEndpointTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResolverEndpointType] {
-	return pulumix.Output[[]ResolverEndpointType]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ResolverEndpointTypeArrayOutput) Index(i pulumi.IntInput) ResolverEndpointTypeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ResolverEndpointType {
 		return vs[0].([]ResolverEndpointType)[vs[1].(int)]
@@ -951,12 +806,6 @@ func (i ResolverRuleArgs) ToResolverRuleOutputWithContext(ctx context.Context) R
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverRuleOutput)
 }
 
-func (i ResolverRuleArgs) ToOutput(ctx context.Context) pulumix.Output[ResolverRule] {
-	return pulumix.Output[ResolverRule]{
-		OutputState: i.ToResolverRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResolverRuleArrayInput is an input type that accepts ResolverRuleArray and ResolverRuleArrayOutput values.
 // You can construct a concrete instance of `ResolverRuleArrayInput` via:
 //
@@ -982,12 +831,6 @@ func (i ResolverRuleArray) ToResolverRuleArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverRuleArrayOutput)
 }
 
-func (i ResolverRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]ResolverRule] {
-	return pulumix.Output[[]ResolverRule]{
-		OutputState: i.ToResolverRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResolverRuleOutput struct{ *pulumi.OutputState }
 
 func (ResolverRuleOutput) ElementType() reflect.Type {
@@ -1000,12 +843,6 @@ func (o ResolverRuleOutput) ToResolverRuleOutput() ResolverRuleOutput {
 
 func (o ResolverRuleOutput) ToResolverRuleOutputWithContext(ctx context.Context) ResolverRuleOutput {
 	return o
-}
-
-func (o ResolverRuleOutput) ToOutput(ctx context.Context) pulumix.Output[ResolverRule] {
-	return pulumix.Output[ResolverRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
@@ -1045,12 +882,6 @@ func (o ResolverRuleArrayOutput) ToResolverRuleArrayOutput() ResolverRuleArrayOu
 
 func (o ResolverRuleArrayOutput) ToResolverRuleArrayOutputWithContext(ctx context.Context) ResolverRuleArrayOutput {
 	return o
-}
-
-func (o ResolverRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResolverRule] {
-	return pulumix.Output[[]ResolverRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResolverRuleArrayOutput) Index(i pulumi.IntInput) ResolverRuleOutput {
@@ -1116,12 +947,6 @@ func (i RrsetItemArgs) ToRrsetItemOutputWithContext(ctx context.Context) RrsetIt
 	return pulumi.ToOutputWithContext(ctx, i).(RrsetItemOutput)
 }
 
-func (i RrsetItemArgs) ToOutput(ctx context.Context) pulumix.Output[RrsetItem] {
-	return pulumix.Output[RrsetItem]{
-		OutputState: i.ToRrsetItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RrsetItemArrayInput is an input type that accepts RrsetItemArray and RrsetItemArrayOutput values.
 // You can construct a concrete instance of `RrsetItemArrayInput` via:
 //
@@ -1147,12 +972,6 @@ func (i RrsetItemArray) ToRrsetItemArrayOutputWithContext(ctx context.Context) R
 	return pulumi.ToOutputWithContext(ctx, i).(RrsetItemArrayOutput)
 }
 
-func (i RrsetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]RrsetItem] {
-	return pulumix.Output[[]RrsetItem]{
-		OutputState: i.ToRrsetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RrsetItemOutput struct{ *pulumi.OutputState }
 
 func (RrsetItemOutput) ElementType() reflect.Type {
@@ -1165,12 +984,6 @@ func (o RrsetItemOutput) ToRrsetItemOutput() RrsetItemOutput {
 
 func (o RrsetItemOutput) ToRrsetItemOutputWithContext(ctx context.Context) RrsetItemOutput {
 	return o
-}
-
-func (o RrsetItemOutput) ToOutput(ctx context.Context) pulumix.Output[RrsetItem] {
-	return pulumix.Output[RrsetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name where the record can be located.
@@ -1220,12 +1033,6 @@ func (o RrsetItemArrayOutput) ToRrsetItemArrayOutput() RrsetItemArrayOutput {
 
 func (o RrsetItemArrayOutput) ToRrsetItemArrayOutputWithContext(ctx context.Context) RrsetItemArrayOutput {
 	return o
-}
-
-func (o RrsetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RrsetItem] {
-	return pulumix.Output[[]RrsetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RrsetItemArrayOutput) Index(i pulumi.IntInput) RrsetItemOutput {
@@ -1283,12 +1090,6 @@ func (i SteeringPolicyAnswerArgs) ToSteeringPolicyAnswerOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyAnswerOutput)
 }
 
-func (i SteeringPolicyAnswerArgs) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyAnswer] {
-	return pulumix.Output[SteeringPolicyAnswer]{
-		OutputState: i.ToSteeringPolicyAnswerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SteeringPolicyAnswerArrayInput is an input type that accepts SteeringPolicyAnswerArray and SteeringPolicyAnswerArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyAnswerArrayInput` via:
 //
@@ -1314,12 +1115,6 @@ func (i SteeringPolicyAnswerArray) ToSteeringPolicyAnswerArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyAnswerArrayOutput)
 }
 
-func (i SteeringPolicyAnswerArray) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyAnswer] {
-	return pulumix.Output[[]SteeringPolicyAnswer]{
-		OutputState: i.ToSteeringPolicyAnswerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SteeringPolicyAnswerOutput struct{ *pulumi.OutputState }
 
 func (SteeringPolicyAnswerOutput) ElementType() reflect.Type {
@@ -1332,12 +1127,6 @@ func (o SteeringPolicyAnswerOutput) ToSteeringPolicyAnswerOutput() SteeringPolic
 
 func (o SteeringPolicyAnswerOutput) ToSteeringPolicyAnswerOutputWithContext(ctx context.Context) SteeringPolicyAnswerOutput {
 	return o
-}
-
-func (o SteeringPolicyAnswerOutput) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyAnswer] {
-	return pulumix.Output[SteeringPolicyAnswer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
@@ -1377,12 +1166,6 @@ func (o SteeringPolicyAnswerArrayOutput) ToSteeringPolicyAnswerArrayOutput() Ste
 
 func (o SteeringPolicyAnswerArrayOutput) ToSteeringPolicyAnswerArrayOutputWithContext(ctx context.Context) SteeringPolicyAnswerArrayOutput {
 	return o
-}
-
-func (o SteeringPolicyAnswerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyAnswer] {
-	return pulumix.Output[[]SteeringPolicyAnswer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SteeringPolicyAnswerArrayOutput) Index(i pulumi.IntInput) SteeringPolicyAnswerOutput {
@@ -1440,12 +1223,6 @@ func (i SteeringPolicyRuleArgs) ToSteeringPolicyRuleOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleOutput)
 }
 
-func (i SteeringPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRule] {
-	return pulumix.Output[SteeringPolicyRule]{
-		OutputState: i.ToSteeringPolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SteeringPolicyRuleArrayInput is an input type that accepts SteeringPolicyRuleArray and SteeringPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleArrayInput` via:
 //
@@ -1471,12 +1248,6 @@ func (i SteeringPolicyRuleArray) ToSteeringPolicyRuleArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleArrayOutput)
 }
 
-func (i SteeringPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRule] {
-	return pulumix.Output[[]SteeringPolicyRule]{
-		OutputState: i.ToSteeringPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SteeringPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (SteeringPolicyRuleOutput) ElementType() reflect.Type {
@@ -1489,12 +1260,6 @@ func (o SteeringPolicyRuleOutput) ToSteeringPolicyRuleOutput() SteeringPolicyRul
 
 func (o SteeringPolicyRuleOutput) ToSteeringPolicyRuleOutputWithContext(ctx context.Context) SteeringPolicyRuleOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRule] {
-	return pulumix.Output[SteeringPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
@@ -1534,12 +1299,6 @@ func (o SteeringPolicyRuleArrayOutput) ToSteeringPolicyRuleArrayOutput() Steerin
 
 func (o SteeringPolicyRuleArrayOutput) ToSteeringPolicyRuleArrayOutputWithContext(ctx context.Context) SteeringPolicyRuleArrayOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRule] {
-	return pulumix.Output[[]SteeringPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SteeringPolicyRuleArrayOutput) Index(i pulumi.IntInput) SteeringPolicyRuleOutput {
@@ -1589,12 +1348,6 @@ func (i SteeringPolicyRuleCaseArgs) ToSteeringPolicyRuleCaseOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleCaseOutput)
 }
 
-func (i SteeringPolicyRuleCaseArgs) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRuleCase] {
-	return pulumix.Output[SteeringPolicyRuleCase]{
-		OutputState: i.ToSteeringPolicyRuleCaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SteeringPolicyRuleCaseArrayInput is an input type that accepts SteeringPolicyRuleCaseArray and SteeringPolicyRuleCaseArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleCaseArrayInput` via:
 //
@@ -1620,12 +1373,6 @@ func (i SteeringPolicyRuleCaseArray) ToSteeringPolicyRuleCaseArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleCaseArrayOutput)
 }
 
-func (i SteeringPolicyRuleCaseArray) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRuleCase] {
-	return pulumix.Output[[]SteeringPolicyRuleCase]{
-		OutputState: i.ToSteeringPolicyRuleCaseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SteeringPolicyRuleCaseOutput struct{ *pulumi.OutputState }
 
 func (SteeringPolicyRuleCaseOutput) ElementType() reflect.Type {
@@ -1638,12 +1385,6 @@ func (o SteeringPolicyRuleCaseOutput) ToSteeringPolicyRuleCaseOutput() SteeringP
 
 func (o SteeringPolicyRuleCaseOutput) ToSteeringPolicyRuleCaseOutputWithContext(ctx context.Context) SteeringPolicyRuleCaseOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleCaseOutput) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRuleCase] {
-	return pulumix.Output[SteeringPolicyRuleCase]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of `SteeringPolicyPriorityAnswerData` objects.
@@ -1673,12 +1414,6 @@ func (o SteeringPolicyRuleCaseArrayOutput) ToSteeringPolicyRuleCaseArrayOutput()
 
 func (o SteeringPolicyRuleCaseArrayOutput) ToSteeringPolicyRuleCaseArrayOutputWithContext(ctx context.Context) SteeringPolicyRuleCaseArrayOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleCaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRuleCase] {
-	return pulumix.Output[[]SteeringPolicyRuleCase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SteeringPolicyRuleCaseArrayOutput) Index(i pulumi.IntInput) SteeringPolicyRuleCaseOutput {
@@ -1728,12 +1463,6 @@ func (i SteeringPolicyRuleCaseAnswerDataArgs) ToSteeringPolicyRuleCaseAnswerData
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleCaseAnswerDataOutput)
 }
 
-func (i SteeringPolicyRuleCaseAnswerDataArgs) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[SteeringPolicyRuleCaseAnswerData]{
-		OutputState: i.ToSteeringPolicyRuleCaseAnswerDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SteeringPolicyRuleCaseAnswerDataArrayInput is an input type that accepts SteeringPolicyRuleCaseAnswerDataArray and SteeringPolicyRuleCaseAnswerDataArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleCaseAnswerDataArrayInput` via:
 //
@@ -1759,12 +1488,6 @@ func (i SteeringPolicyRuleCaseAnswerDataArray) ToSteeringPolicyRuleCaseAnswerDat
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleCaseAnswerDataArrayOutput)
 }
 
-func (i SteeringPolicyRuleCaseAnswerDataArray) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[[]SteeringPolicyRuleCaseAnswerData]{
-		OutputState: i.ToSteeringPolicyRuleCaseAnswerDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SteeringPolicyRuleCaseAnswerDataOutput struct{ *pulumi.OutputState }
 
 func (SteeringPolicyRuleCaseAnswerDataOutput) ElementType() reflect.Type {
@@ -1777,12 +1500,6 @@ func (o SteeringPolicyRuleCaseAnswerDataOutput) ToSteeringPolicyRuleCaseAnswerDa
 
 func (o SteeringPolicyRuleCaseAnswerDataOutput) ToSteeringPolicyRuleCaseAnswerDataOutputWithContext(ctx context.Context) SteeringPolicyRuleCaseAnswerDataOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleCaseAnswerDataOutput) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[SteeringPolicyRuleCaseAnswerData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
@@ -1812,12 +1529,6 @@ func (o SteeringPolicyRuleCaseAnswerDataArrayOutput) ToSteeringPolicyRuleCaseAns
 
 func (o SteeringPolicyRuleCaseAnswerDataArrayOutput) ToSteeringPolicyRuleCaseAnswerDataArrayOutputWithContext(ctx context.Context) SteeringPolicyRuleCaseAnswerDataArrayOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleCaseAnswerDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[[]SteeringPolicyRuleCaseAnswerData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SteeringPolicyRuleCaseAnswerDataArrayOutput) Index(i pulumi.IntInput) SteeringPolicyRuleCaseAnswerDataOutput {
@@ -1867,12 +1578,6 @@ func (i SteeringPolicyRuleDefaultAnswerDataArgs) ToSteeringPolicyRuleDefaultAnsw
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleDefaultAnswerDataOutput)
 }
 
-func (i SteeringPolicyRuleDefaultAnswerDataArgs) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[SteeringPolicyRuleDefaultAnswerData]{
-		OutputState: i.ToSteeringPolicyRuleDefaultAnswerDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SteeringPolicyRuleDefaultAnswerDataArrayInput is an input type that accepts SteeringPolicyRuleDefaultAnswerDataArray and SteeringPolicyRuleDefaultAnswerDataArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleDefaultAnswerDataArrayInput` via:
 //
@@ -1898,12 +1603,6 @@ func (i SteeringPolicyRuleDefaultAnswerDataArray) ToSteeringPolicyRuleDefaultAns
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyRuleDefaultAnswerDataArrayOutput)
 }
 
-func (i SteeringPolicyRuleDefaultAnswerDataArray) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[[]SteeringPolicyRuleDefaultAnswerData]{
-		OutputState: i.ToSteeringPolicyRuleDefaultAnswerDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SteeringPolicyRuleDefaultAnswerDataOutput struct{ *pulumi.OutputState }
 
 func (SteeringPolicyRuleDefaultAnswerDataOutput) ElementType() reflect.Type {
@@ -1916,12 +1615,6 @@ func (o SteeringPolicyRuleDefaultAnswerDataOutput) ToSteeringPolicyRuleDefaultAn
 
 func (o SteeringPolicyRuleDefaultAnswerDataOutput) ToSteeringPolicyRuleDefaultAnswerDataOutputWithContext(ctx context.Context) SteeringPolicyRuleDefaultAnswerDataOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleDefaultAnswerDataOutput) ToOutput(ctx context.Context) pulumix.Output[SteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[SteeringPolicyRuleDefaultAnswerData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
@@ -1951,12 +1644,6 @@ func (o SteeringPolicyRuleDefaultAnswerDataArrayOutput) ToSteeringPolicyRuleDefa
 
 func (o SteeringPolicyRuleDefaultAnswerDataArrayOutput) ToSteeringPolicyRuleDefaultAnswerDataArrayOutputWithContext(ctx context.Context) SteeringPolicyRuleDefaultAnswerDataArrayOutput {
 	return o
-}
-
-func (o SteeringPolicyRuleDefaultAnswerDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[[]SteeringPolicyRuleDefaultAnswerData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SteeringPolicyRuleDefaultAnswerDataArrayOutput) Index(i pulumi.IntInput) SteeringPolicyRuleDefaultAnswerDataOutput {
@@ -2006,12 +1693,6 @@ func (i ZoneExternalDownstreamArgs) ToZoneExternalDownstreamOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneExternalDownstreamOutput)
 }
 
-func (i ZoneExternalDownstreamArgs) ToOutput(ctx context.Context) pulumix.Output[ZoneExternalDownstream] {
-	return pulumix.Output[ZoneExternalDownstream]{
-		OutputState: i.ToZoneExternalDownstreamOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ZoneExternalDownstreamArrayInput is an input type that accepts ZoneExternalDownstreamArray and ZoneExternalDownstreamArrayOutput values.
 // You can construct a concrete instance of `ZoneExternalDownstreamArrayInput` via:
 //
@@ -2037,12 +1718,6 @@ func (i ZoneExternalDownstreamArray) ToZoneExternalDownstreamArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneExternalDownstreamArrayOutput)
 }
 
-func (i ZoneExternalDownstreamArray) ToOutput(ctx context.Context) pulumix.Output[[]ZoneExternalDownstream] {
-	return pulumix.Output[[]ZoneExternalDownstream]{
-		OutputState: i.ToZoneExternalDownstreamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ZoneExternalDownstreamOutput struct{ *pulumi.OutputState }
 
 func (ZoneExternalDownstreamOutput) ElementType() reflect.Type {
@@ -2055,12 +1730,6 @@ func (o ZoneExternalDownstreamOutput) ToZoneExternalDownstreamOutput() ZoneExter
 
 func (o ZoneExternalDownstreamOutput) ToZoneExternalDownstreamOutputWithContext(ctx context.Context) ZoneExternalDownstreamOutput {
 	return o
-}
-
-func (o ZoneExternalDownstreamOutput) ToOutput(ctx context.Context) pulumix.Output[ZoneExternalDownstream] {
-	return pulumix.Output[ZoneExternalDownstream]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The server's IP address (IPv4 or IPv6).
@@ -2090,12 +1759,6 @@ func (o ZoneExternalDownstreamArrayOutput) ToZoneExternalDownstreamArrayOutput()
 
 func (o ZoneExternalDownstreamArrayOutput) ToZoneExternalDownstreamArrayOutputWithContext(ctx context.Context) ZoneExternalDownstreamArrayOutput {
 	return o
-}
-
-func (o ZoneExternalDownstreamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ZoneExternalDownstream] {
-	return pulumix.Output[[]ZoneExternalDownstream]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ZoneExternalDownstreamArrayOutput) Index(i pulumi.IntInput) ZoneExternalDownstreamOutput {
@@ -2145,12 +1808,6 @@ func (i ZoneExternalMasterArgs) ToZoneExternalMasterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneExternalMasterOutput)
 }
 
-func (i ZoneExternalMasterArgs) ToOutput(ctx context.Context) pulumix.Output[ZoneExternalMaster] {
-	return pulumix.Output[ZoneExternalMaster]{
-		OutputState: i.ToZoneExternalMasterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ZoneExternalMasterArrayInput is an input type that accepts ZoneExternalMasterArray and ZoneExternalMasterArrayOutput values.
 // You can construct a concrete instance of `ZoneExternalMasterArrayInput` via:
 //
@@ -2176,12 +1833,6 @@ func (i ZoneExternalMasterArray) ToZoneExternalMasterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneExternalMasterArrayOutput)
 }
 
-func (i ZoneExternalMasterArray) ToOutput(ctx context.Context) pulumix.Output[[]ZoneExternalMaster] {
-	return pulumix.Output[[]ZoneExternalMaster]{
-		OutputState: i.ToZoneExternalMasterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ZoneExternalMasterOutput struct{ *pulumi.OutputState }
 
 func (ZoneExternalMasterOutput) ElementType() reflect.Type {
@@ -2194,12 +1845,6 @@ func (o ZoneExternalMasterOutput) ToZoneExternalMasterOutput() ZoneExternalMaste
 
 func (o ZoneExternalMasterOutput) ToZoneExternalMasterOutputWithContext(ctx context.Context) ZoneExternalMasterOutput {
 	return o
-}
-
-func (o ZoneExternalMasterOutput) ToOutput(ctx context.Context) pulumix.Output[ZoneExternalMaster] {
-	return pulumix.Output[ZoneExternalMaster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The server's IP address (IPv4 or IPv6).
@@ -2229,12 +1874,6 @@ func (o ZoneExternalMasterArrayOutput) ToZoneExternalMasterArrayOutput() ZoneExt
 
 func (o ZoneExternalMasterArrayOutput) ToZoneExternalMasterArrayOutputWithContext(ctx context.Context) ZoneExternalMasterArrayOutput {
 	return o
-}
-
-func (o ZoneExternalMasterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ZoneExternalMaster] {
-	return pulumix.Output[[]ZoneExternalMaster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) ZoneExternalMasterOutput {
@@ -2276,12 +1915,6 @@ func (i ZoneNameserverArgs) ToZoneNameserverOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneNameserverOutput)
 }
 
-func (i ZoneNameserverArgs) ToOutput(ctx context.Context) pulumix.Output[ZoneNameserver] {
-	return pulumix.Output[ZoneNameserver]{
-		OutputState: i.ToZoneNameserverOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ZoneNameserverArrayInput is an input type that accepts ZoneNameserverArray and ZoneNameserverArrayOutput values.
 // You can construct a concrete instance of `ZoneNameserverArrayInput` via:
 //
@@ -2307,12 +1940,6 @@ func (i ZoneNameserverArray) ToZoneNameserverArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneNameserverArrayOutput)
 }
 
-func (i ZoneNameserverArray) ToOutput(ctx context.Context) pulumix.Output[[]ZoneNameserver] {
-	return pulumix.Output[[]ZoneNameserver]{
-		OutputState: i.ToZoneNameserverArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ZoneNameserverOutput struct{ *pulumi.OutputState }
 
 func (ZoneNameserverOutput) ElementType() reflect.Type {
@@ -2325,12 +1952,6 @@ func (o ZoneNameserverOutput) ToZoneNameserverOutput() ZoneNameserverOutput {
 
 func (o ZoneNameserverOutput) ToZoneNameserverOutputWithContext(ctx context.Context) ZoneNameserverOutput {
 	return o
-}
-
-func (o ZoneNameserverOutput) ToOutput(ctx context.Context) pulumix.Output[ZoneNameserver] {
-	return pulumix.Output[ZoneNameserver]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The hostname of the nameserver.
@@ -2350,12 +1971,6 @@ func (o ZoneNameserverArrayOutput) ToZoneNameserverArrayOutput() ZoneNameserverA
 
 func (o ZoneNameserverArrayOutput) ToZoneNameserverArrayOutputWithContext(ctx context.Context) ZoneNameserverArrayOutput {
 	return o
-}
-
-func (o ZoneNameserverArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ZoneNameserver] {
-	return pulumix.Output[[]ZoneNameserver]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ZoneNameserverArrayOutput) Index(i pulumi.IntInput) ZoneNameserverOutput {
@@ -2409,12 +2024,6 @@ func (i ZoneZoneTransferServerArgs) ToZoneZoneTransferServerOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneZoneTransferServerOutput)
 }
 
-func (i ZoneZoneTransferServerArgs) ToOutput(ctx context.Context) pulumix.Output[ZoneZoneTransferServer] {
-	return pulumix.Output[ZoneZoneTransferServer]{
-		OutputState: i.ToZoneZoneTransferServerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ZoneZoneTransferServerArrayInput is an input type that accepts ZoneZoneTransferServerArray and ZoneZoneTransferServerArrayOutput values.
 // You can construct a concrete instance of `ZoneZoneTransferServerArrayInput` via:
 //
@@ -2440,12 +2049,6 @@ func (i ZoneZoneTransferServerArray) ToZoneZoneTransferServerArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneZoneTransferServerArrayOutput)
 }
 
-func (i ZoneZoneTransferServerArray) ToOutput(ctx context.Context) pulumix.Output[[]ZoneZoneTransferServer] {
-	return pulumix.Output[[]ZoneZoneTransferServer]{
-		OutputState: i.ToZoneZoneTransferServerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ZoneZoneTransferServerOutput struct{ *pulumi.OutputState }
 
 func (ZoneZoneTransferServerOutput) ElementType() reflect.Type {
@@ -2458,12 +2061,6 @@ func (o ZoneZoneTransferServerOutput) ToZoneZoneTransferServerOutput() ZoneZoneT
 
 func (o ZoneZoneTransferServerOutput) ToZoneZoneTransferServerOutputWithContext(ctx context.Context) ZoneZoneTransferServerOutput {
 	return o
-}
-
-func (o ZoneZoneTransferServerOutput) ToOutput(ctx context.Context) pulumix.Output[ZoneZoneTransferServer] {
-	return pulumix.Output[ZoneZoneTransferServer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The server's IP address (IPv4 or IPv6).
@@ -2498,12 +2095,6 @@ func (o ZoneZoneTransferServerArrayOutput) ToZoneZoneTransferServerArrayOutput()
 
 func (o ZoneZoneTransferServerArrayOutput) ToZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) ZoneZoneTransferServerArrayOutput {
 	return o
-}
-
-func (o ZoneZoneTransferServerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ZoneZoneTransferServer] {
-	return pulumix.Output[[]ZoneZoneTransferServer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ZoneZoneTransferServerArrayOutput) Index(i pulumi.IntInput) ZoneZoneTransferServerOutput {
@@ -2547,12 +2138,6 @@ func (i GetRecordsFilterArgs) ToGetRecordsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecordsFilterOutput)
 }
 
-func (i GetRecordsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecordsFilter] {
-	return pulumix.Output[GetRecordsFilter]{
-		OutputState: i.ToGetRecordsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecordsFilterArrayInput is an input type that accepts GetRecordsFilterArray and GetRecordsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecordsFilterArrayInput` via:
 //
@@ -2578,12 +2163,6 @@ func (i GetRecordsFilterArray) ToGetRecordsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecordsFilterArrayOutput)
 }
 
-func (i GetRecordsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecordsFilter] {
-	return pulumix.Output[[]GetRecordsFilter]{
-		OutputState: i.ToGetRecordsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecordsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRecordsFilterOutput) ElementType() reflect.Type {
@@ -2596,12 +2175,6 @@ func (o GetRecordsFilterOutput) ToGetRecordsFilterOutput() GetRecordsFilterOutpu
 
 func (o GetRecordsFilterOutput) ToGetRecordsFilterOutputWithContext(ctx context.Context) GetRecordsFilterOutput {
 	return o
-}
-
-func (o GetRecordsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecordsFilter] {
-	return pulumix.Output[GetRecordsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecordsFilterOutput) Name() pulumi.StringOutput {
@@ -2630,12 +2203,6 @@ func (o GetRecordsFilterArrayOutput) ToGetRecordsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetRecordsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecordsFilter] {
-	return pulumix.Output[[]GetRecordsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecordsFilterArrayOutput) Index(i pulumi.IntInput) GetRecordsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecordsFilter {
 		return vs[0].([]GetRecordsFilter)[vs[1].(int)]
@@ -2650,13 +2217,13 @@ type GetRecordsRecord struct {
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	Domain string `pulumi:"domain"`
 	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-	IsProtected bool `pulumi:"isProtected"`
+	IsProtected *bool `pulumi:"isProtected"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
 	Rdata *string `pulumi:"rdata"`
 	// A unique identifier for the record within its zone.
-	RecordHash string `pulumi:"recordHash"`
+	RecordHash *string `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
-	RrsetVersion string `pulumi:"rrsetVersion"`
+	RrsetVersion *string `pulumi:"rrsetVersion"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
@@ -2688,13 +2255,13 @@ type GetRecordsRecordArgs struct {
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	Domain pulumi.StringInput `pulumi:"domain"`
 	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrInput `pulumi:"isProtected"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
 	Rdata pulumi.StringPtrInput `pulumi:"rdata"`
 	// A unique identifier for the record within its zone.
-	RecordHash pulumi.StringInput `pulumi:"recordHash"`
+	RecordHash pulumi.StringPtrInput `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
-	RrsetVersion pulumi.StringInput `pulumi:"rrsetVersion"`
+	RrsetVersion pulumi.StringPtrInput `pulumi:"rrsetVersion"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
@@ -2717,12 +2284,6 @@ func (i GetRecordsRecordArgs) ToGetRecordsRecordOutput() GetRecordsRecordOutput 
 
 func (i GetRecordsRecordArgs) ToGetRecordsRecordOutputWithContext(ctx context.Context) GetRecordsRecordOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecordsRecordOutput)
-}
-
-func (i GetRecordsRecordArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecordsRecord] {
-	return pulumix.Output[GetRecordsRecord]{
-		OutputState: i.ToGetRecordsRecordOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecordsRecordArrayInput is an input type that accepts GetRecordsRecordArray and GetRecordsRecordArrayOutput values.
@@ -2750,12 +2311,6 @@ func (i GetRecordsRecordArray) ToGetRecordsRecordArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecordsRecordArrayOutput)
 }
 
-func (i GetRecordsRecordArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecordsRecord] {
-	return pulumix.Output[[]GetRecordsRecord]{
-		OutputState: i.ToGetRecordsRecordArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecordsRecordOutput struct{ *pulumi.OutputState }
 
 func (GetRecordsRecordOutput) ElementType() reflect.Type {
@@ -2768,12 +2323,6 @@ func (o GetRecordsRecordOutput) ToGetRecordsRecordOutput() GetRecordsRecordOutpu
 
 func (o GetRecordsRecordOutput) ToGetRecordsRecordOutputWithContext(ctx context.Context) GetRecordsRecordOutput {
 	return o
-}
-
-func (o GetRecordsRecordOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecordsRecord] {
-	return pulumix.Output[GetRecordsRecord]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment the resource belongs to.
@@ -2789,8 +2338,8 @@ func (o GetRecordsRecordOutput) Domain() pulumi.StringOutput {
 }
 
 // A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-func (o GetRecordsRecordOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRecordsRecord) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o GetRecordsRecordOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecordsRecord) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
@@ -2799,13 +2348,13 @@ func (o GetRecordsRecordOutput) Rdata() pulumi.StringPtrOutput {
 }
 
 // A unique identifier for the record within its zone.
-func (o GetRecordsRecordOutput) RecordHash() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecordsRecord) string { return v.RecordHash }).(pulumi.StringOutput)
+func (o GetRecordsRecordOutput) RecordHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecordsRecord) *string { return v.RecordHash }).(pulumi.StringPtrOutput)
 }
 
 // The latest version of the record's zone in which its RRSet differs from the preceding version.
-func (o GetRecordsRecordOutput) RrsetVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecordsRecord) string { return v.RrsetVersion }).(pulumi.StringOutput)
+func (o GetRecordsRecordOutput) RrsetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecordsRecord) *string { return v.RrsetVersion }).(pulumi.StringPtrOutput)
 }
 
 // Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
@@ -2841,12 +2390,6 @@ func (o GetRecordsRecordArrayOutput) ToGetRecordsRecordArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetRecordsRecordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecordsRecord] {
-	return pulumix.Output[[]GetRecordsRecord]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecordsRecordArrayOutput) Index(i pulumi.IntInput) GetRecordsRecordOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecordsRecord {
 		return vs[0].([]GetRecordsRecord)[vs[1].(int)]
@@ -2855,7 +2398,7 @@ func (o GetRecordsRecordArrayOutput) Index(i pulumi.IntInput) GetRecordsRecordOu
 
 type GetResolverAttachedView struct {
 	// The OCID of the view.
-	ViewId string `pulumi:"viewId"`
+	ViewId *string `pulumi:"viewId"`
 }
 
 // GetResolverAttachedViewInput is an input type that accepts GetResolverAttachedViewArgs and GetResolverAttachedViewOutput values.
@@ -2871,7 +2414,7 @@ type GetResolverAttachedViewInput interface {
 
 type GetResolverAttachedViewArgs struct {
 	// The OCID of the view.
-	ViewId pulumi.StringInput `pulumi:"viewId"`
+	ViewId pulumi.StringPtrInput `pulumi:"viewId"`
 }
 
 func (GetResolverAttachedViewArgs) ElementType() reflect.Type {
@@ -2884,12 +2427,6 @@ func (i GetResolverAttachedViewArgs) ToGetResolverAttachedViewOutput() GetResolv
 
 func (i GetResolverAttachedViewArgs) ToGetResolverAttachedViewOutputWithContext(ctx context.Context) GetResolverAttachedViewOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverAttachedViewOutput)
-}
-
-func (i GetResolverAttachedViewArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolverAttachedView] {
-	return pulumix.Output[GetResolverAttachedView]{
-		OutputState: i.ToGetResolverAttachedViewOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolverAttachedViewArrayInput is an input type that accepts GetResolverAttachedViewArray and GetResolverAttachedViewArrayOutput values.
@@ -2917,12 +2454,6 @@ func (i GetResolverAttachedViewArray) ToGetResolverAttachedViewArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverAttachedViewArrayOutput)
 }
 
-func (i GetResolverAttachedViewArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverAttachedView] {
-	return pulumix.Output[[]GetResolverAttachedView]{
-		OutputState: i.ToGetResolverAttachedViewArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolverAttachedViewOutput struct{ *pulumi.OutputState }
 
 func (GetResolverAttachedViewOutput) ElementType() reflect.Type {
@@ -2937,15 +2468,9 @@ func (o GetResolverAttachedViewOutput) ToGetResolverAttachedViewOutputWithContex
 	return o
 }
 
-func (o GetResolverAttachedViewOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolverAttachedView] {
-	return pulumix.Output[GetResolverAttachedView]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the view.
-func (o GetResolverAttachedViewOutput) ViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverAttachedView) string { return v.ViewId }).(pulumi.StringOutput)
+func (o GetResolverAttachedViewOutput) ViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverAttachedView) *string { return v.ViewId }).(pulumi.StringPtrOutput)
 }
 
 type GetResolverAttachedViewArrayOutput struct{ *pulumi.OutputState }
@@ -2962,12 +2487,6 @@ func (o GetResolverAttachedViewArrayOutput) ToGetResolverAttachedViewArrayOutput
 	return o
 }
 
-func (o GetResolverAttachedViewArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverAttachedView] {
-	return pulumix.Output[[]GetResolverAttachedView]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) GetResolverAttachedViewOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolverAttachedView {
 		return vs[0].([]GetResolverAttachedView)[vs[1].(int)]
@@ -2976,29 +2495,29 @@ func (o GetResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) GetResolver
 
 type GetResolverEndpointType struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
-	EndpointType string `pulumi:"endpointType"`
+	EndpointType *string `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-	ForwardingAddress string `pulumi:"forwardingAddress"`
+	ForwardingAddress *string `pulumi:"forwardingAddress"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-	IsForwarding bool `pulumi:"isForwarding"`
+	IsForwarding *bool `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
-	IsListening bool `pulumi:"isListening"`
+	IsListening *bool `pulumi:"isListening"`
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-	ListeningAddress string `pulumi:"listeningAddress"`
+	ListeningAddress *string `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetResolverEndpointTypeInput is an input type that accepts GetResolverEndpointTypeArgs and GetResolverEndpointTypeOutput values.
@@ -3014,29 +2533,29 @@ type GetResolverEndpointTypeInput interface {
 
 type GetResolverEndpointTypeArgs struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
-	EndpointType pulumi.StringInput `pulumi:"endpointType"`
+	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-	ForwardingAddress pulumi.StringInput `pulumi:"forwardingAddress"`
+	ForwardingAddress pulumi.StringPtrInput `pulumi:"forwardingAddress"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-	IsForwarding pulumi.BoolInput `pulumi:"isForwarding"`
+	IsForwarding pulumi.BoolPtrInput `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
-	IsListening pulumi.BoolInput `pulumi:"isListening"`
+	IsListening pulumi.BoolPtrInput `pulumi:"isListening"`
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-	ListeningAddress pulumi.StringInput `pulumi:"listeningAddress"`
+	ListeningAddress pulumi.StringPtrInput `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The current state of the resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetResolverEndpointTypeArgs) ElementType() reflect.Type {
@@ -3049,12 +2568,6 @@ func (i GetResolverEndpointTypeArgs) ToGetResolverEndpointTypeOutput() GetResolv
 
 func (i GetResolverEndpointTypeArgs) ToGetResolverEndpointTypeOutputWithContext(ctx context.Context) GetResolverEndpointTypeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverEndpointTypeOutput)
-}
-
-func (i GetResolverEndpointTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointType] {
-	return pulumix.Output[GetResolverEndpointType]{
-		OutputState: i.ToGetResolverEndpointTypeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolverEndpointTypeArrayInput is an input type that accepts GetResolverEndpointTypeArray and GetResolverEndpointTypeArrayOutput values.
@@ -3082,12 +2595,6 @@ func (i GetResolverEndpointTypeArray) ToGetResolverEndpointTypeArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverEndpointTypeArrayOutput)
 }
 
-func (i GetResolverEndpointTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverEndpointType] {
-	return pulumix.Output[[]GetResolverEndpointType]{
-		OutputState: i.ToGetResolverEndpointTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolverEndpointTypeOutput struct{ *pulumi.OutputState }
 
 func (GetResolverEndpointTypeOutput) ElementType() reflect.Type {
@@ -3102,70 +2609,64 @@ func (o GetResolverEndpointTypeOutput) ToGetResolverEndpointTypeOutputWithContex
 	return o
 }
 
-func (o GetResolverEndpointTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointType] {
-	return pulumix.Output[GetResolverEndpointType]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-func (o GetResolverEndpointTypeOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The type of resolver endpoint. VNIC is currently the only supported type.
-func (o GetResolverEndpointTypeOutput) EndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.EndpointType }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
 // An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-func (o GetResolverEndpointTypeOutput) ForwardingAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.ForwardingAddress }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) ForwardingAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.ForwardingAddress }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-func (o GetResolverEndpointTypeOutput) IsForwarding() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) bool { return v.IsForwarding }).(pulumi.BoolOutput)
+func (o GetResolverEndpointTypeOutput) IsForwarding() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *bool { return v.IsForwarding }).(pulumi.BoolPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for listening.
-func (o GetResolverEndpointTypeOutput) IsListening() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) bool { return v.IsListening }).(pulumi.BoolOutput)
+func (o GetResolverEndpointTypeOutput) IsListening() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *bool { return v.IsListening }).(pulumi.BoolPtrOutput)
 }
 
 // An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-func (o GetResolverEndpointTypeOutput) ListeningAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.ListeningAddress }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) ListeningAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.ListeningAddress }).(pulumi.StringPtrOutput)
 }
 
 // The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-func (o GetResolverEndpointTypeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.Name }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o GetResolverEndpointTypeOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.Self }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o GetResolverEndpointTypeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.State }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-func (o GetResolverEndpointTypeOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolverEndpointTypeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolverEndpointTypeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointType) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetResolverEndpointTypeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetResolverEndpointTypeArrayOutput struct{ *pulumi.OutputState }
@@ -3180,12 +2681,6 @@ func (o GetResolverEndpointTypeArrayOutput) ToGetResolverEndpointTypeArrayOutput
 
 func (o GetResolverEndpointTypeArrayOutput) ToGetResolverEndpointTypeArrayOutputWithContext(ctx context.Context) GetResolverEndpointTypeArrayOutput {
 	return o
-}
-
-func (o GetResolverEndpointTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverEndpointType] {
-	return pulumix.Output[[]GetResolverEndpointType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResolverEndpointTypeArrayOutput) Index(i pulumi.IntInput) GetResolverEndpointTypeOutput {
@@ -3231,12 +2726,6 @@ func (i GetResolverEndpointsFilterArgs) ToGetResolverEndpointsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverEndpointsFilterOutput)
 }
 
-func (i GetResolverEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointsFilter] {
-	return pulumix.Output[GetResolverEndpointsFilter]{
-		OutputState: i.ToGetResolverEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResolverEndpointsFilterArrayInput is an input type that accepts GetResolverEndpointsFilterArray and GetResolverEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetResolverEndpointsFilterArrayInput` via:
 //
@@ -3262,12 +2751,6 @@ func (i GetResolverEndpointsFilterArray) ToGetResolverEndpointsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverEndpointsFilterArrayOutput)
 }
 
-func (i GetResolverEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverEndpointsFilter] {
-	return pulumix.Output[[]GetResolverEndpointsFilter]{
-		OutputState: i.ToGetResolverEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolverEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetResolverEndpointsFilterOutput) ElementType() reflect.Type {
@@ -3280,12 +2763,6 @@ func (o GetResolverEndpointsFilterOutput) ToGetResolverEndpointsFilterOutput() G
 
 func (o GetResolverEndpointsFilterOutput) ToGetResolverEndpointsFilterOutputWithContext(ctx context.Context) GetResolverEndpointsFilterOutput {
 	return o
-}
-
-func (o GetResolverEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointsFilter] {
-	return pulumix.Output[GetResolverEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of a resource.
@@ -3315,12 +2792,6 @@ func (o GetResolverEndpointsFilterArrayOutput) ToGetResolverEndpointsFilterArray
 	return o
 }
 
-func (o GetResolverEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverEndpointsFilter] {
-	return pulumix.Output[[]GetResolverEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolverEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetResolverEndpointsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolverEndpointsFilter {
 		return vs[0].([]GetResolverEndpointsFilter)[vs[1].(int)]
@@ -3329,17 +2800,17 @@ func (o GetResolverEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetResol
 
 type GetResolverEndpointsResolverEndpoint struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
-	EndpointType string `pulumi:"endpointType"`
+	EndpointType *string `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-	ForwardingAddress string `pulumi:"forwardingAddress"`
+	ForwardingAddress *string `pulumi:"forwardingAddress"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding bool `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
 	IsListening bool `pulumi:"isListening"`
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-	ListeningAddress string `pulumi:"listeningAddress"`
+	ListeningAddress *string `pulumi:"listeningAddress"`
 	// The name of a resource.
 	Name string `pulumi:"name"`
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
@@ -3349,15 +2820,15 @@ type GetResolverEndpointsResolverEndpoint struct {
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
 	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The state of a resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 	SubnetId string `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetResolverEndpointsResolverEndpointInput is an input type that accepts GetResolverEndpointsResolverEndpointArgs and GetResolverEndpointsResolverEndpointOutput values.
@@ -3373,17 +2844,17 @@ type GetResolverEndpointsResolverEndpointInput interface {
 
 type GetResolverEndpointsResolverEndpointArgs struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
-	EndpointType pulumi.StringInput `pulumi:"endpointType"`
+	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-	ForwardingAddress pulumi.StringInput `pulumi:"forwardingAddress"`
+	ForwardingAddress pulumi.StringPtrInput `pulumi:"forwardingAddress"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding pulumi.BoolInput `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
 	IsListening pulumi.BoolInput `pulumi:"isListening"`
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-	ListeningAddress pulumi.StringInput `pulumi:"listeningAddress"`
+	ListeningAddress pulumi.StringPtrInput `pulumi:"listeningAddress"`
 	// The name of a resource.
 	Name pulumi.StringInput `pulumi:"name"`
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
@@ -3393,15 +2864,15 @@ type GetResolverEndpointsResolverEndpointArgs struct {
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
 	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The state of a resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetResolverEndpointsResolverEndpointArgs) ElementType() reflect.Type {
@@ -3414,12 +2885,6 @@ func (i GetResolverEndpointsResolverEndpointArgs) ToGetResolverEndpointsResolver
 
 func (i GetResolverEndpointsResolverEndpointArgs) ToGetResolverEndpointsResolverEndpointOutputWithContext(ctx context.Context) GetResolverEndpointsResolverEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverEndpointsResolverEndpointOutput)
-}
-
-func (i GetResolverEndpointsResolverEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointsResolverEndpoint] {
-	return pulumix.Output[GetResolverEndpointsResolverEndpoint]{
-		OutputState: i.ToGetResolverEndpointsResolverEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolverEndpointsResolverEndpointArrayInput is an input type that accepts GetResolverEndpointsResolverEndpointArray and GetResolverEndpointsResolverEndpointArrayOutput values.
@@ -3447,12 +2912,6 @@ func (i GetResolverEndpointsResolverEndpointArray) ToGetResolverEndpointsResolve
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverEndpointsResolverEndpointArrayOutput)
 }
 
-func (i GetResolverEndpointsResolverEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverEndpointsResolverEndpoint] {
-	return pulumix.Output[[]GetResolverEndpointsResolverEndpoint]{
-		OutputState: i.ToGetResolverEndpointsResolverEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolverEndpointsResolverEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetResolverEndpointsResolverEndpointOutput) ElementType() reflect.Type {
@@ -3467,25 +2926,19 @@ func (o GetResolverEndpointsResolverEndpointOutput) ToGetResolverEndpointsResolv
 	return o
 }
 
-func (o GetResolverEndpointsResolverEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointsResolverEndpoint] {
-	return pulumix.Output[GetResolverEndpointsResolverEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-func (o GetResolverEndpointsResolverEndpointOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The type of resolver endpoint. VNIC is currently the only supported type.
-func (o GetResolverEndpointsResolverEndpointOutput) EndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
 // An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-func (o GetResolverEndpointsResolverEndpointOutput) ForwardingAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.ForwardingAddress }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) ForwardingAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.ForwardingAddress }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -3499,8 +2952,8 @@ func (o GetResolverEndpointsResolverEndpointOutput) IsListening() pulumi.BoolOut
 }
 
 // An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-func (o GetResolverEndpointsResolverEndpointOutput) ListeningAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.ListeningAddress }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) ListeningAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.ListeningAddress }).(pulumi.StringPtrOutput)
 }
 
 // The name of a resource.
@@ -3524,13 +2977,13 @@ func (o GetResolverEndpointsResolverEndpointOutput) Scope() pulumi.StringPtrOutp
 }
 
 // The canonical absolute URL of the resource.
-func (o GetResolverEndpointsResolverEndpointOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.Self }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The state of a resource.
-func (o GetResolverEndpointsResolverEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.State }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
@@ -3539,13 +2992,13 @@ func (o GetResolverEndpointsResolverEndpointOutput) SubnetId() pulumi.StringOutp
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolverEndpointsResolverEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolverEndpointsResolverEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetResolverEndpointsResolverEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -3562,12 +3015,6 @@ func (o GetResolverEndpointsResolverEndpointArrayOutput) ToGetResolverEndpointsR
 	return o
 }
 
-func (o GetResolverEndpointsResolverEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverEndpointsResolverEndpoint] {
-	return pulumix.Output[[]GetResolverEndpointsResolverEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolverEndpointsResolverEndpointArrayOutput) Index(i pulumi.IntInput) GetResolverEndpointsResolverEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolverEndpointsResolverEndpoint {
 		return vs[0].([]GetResolverEndpointsResolverEndpoint)[vs[1].(int)]
@@ -3576,7 +3023,7 @@ func (o GetResolverEndpointsResolverEndpointArrayOutput) Index(i pulumi.IntInput
 
 type GetResolverRule struct {
 	// The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
 	ClientAddressConditions []string `pulumi:"clientAddressConditions"`
 	// IP addresses to which queries should be forwarded. Currently limited to a single address.
@@ -3584,7 +3031,7 @@ type GetResolverRule struct {
 	// A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
 	QnameCoverConditions []string `pulumi:"qnameCoverConditions"`
 	// Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-	SourceEndpointName string `pulumi:"sourceEndpointName"`
+	SourceEndpointName *string `pulumi:"sourceEndpointName"`
 }
 
 // GetResolverRuleInput is an input type that accepts GetResolverRuleArgs and GetResolverRuleOutput values.
@@ -3600,7 +3047,7 @@ type GetResolverRuleInput interface {
 
 type GetResolverRuleArgs struct {
 	// The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
 	ClientAddressConditions pulumi.StringArrayInput `pulumi:"clientAddressConditions"`
 	// IP addresses to which queries should be forwarded. Currently limited to a single address.
@@ -3608,7 +3055,7 @@ type GetResolverRuleArgs struct {
 	// A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
 	QnameCoverConditions pulumi.StringArrayInput `pulumi:"qnameCoverConditions"`
 	// Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-	SourceEndpointName pulumi.StringInput `pulumi:"sourceEndpointName"`
+	SourceEndpointName pulumi.StringPtrInput `pulumi:"sourceEndpointName"`
 }
 
 func (GetResolverRuleArgs) ElementType() reflect.Type {
@@ -3621,12 +3068,6 @@ func (i GetResolverRuleArgs) ToGetResolverRuleOutput() GetResolverRuleOutput {
 
 func (i GetResolverRuleArgs) ToGetResolverRuleOutputWithContext(ctx context.Context) GetResolverRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverRuleOutput)
-}
-
-func (i GetResolverRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolverRule] {
-	return pulumix.Output[GetResolverRule]{
-		OutputState: i.ToGetResolverRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolverRuleArrayInput is an input type that accepts GetResolverRuleArray and GetResolverRuleArrayOutput values.
@@ -3654,12 +3095,6 @@ func (i GetResolverRuleArray) ToGetResolverRuleArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolverRuleArrayOutput)
 }
 
-func (i GetResolverRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverRule] {
-	return pulumix.Output[[]GetResolverRule]{
-		OutputState: i.ToGetResolverRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolverRuleOutput struct{ *pulumi.OutputState }
 
 func (GetResolverRuleOutput) ElementType() reflect.Type {
@@ -3674,15 +3109,9 @@ func (o GetResolverRuleOutput) ToGetResolverRuleOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetResolverRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolverRule] {
-	return pulumix.Output[GetResolverRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-func (o GetResolverRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetResolverRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
@@ -3701,8 +3130,8 @@ func (o GetResolverRuleOutput) QnameCoverConditions() pulumi.StringArrayOutput {
 }
 
 // Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-func (o GetResolverRuleOutput) SourceEndpointName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverRule) string { return v.SourceEndpointName }).(pulumi.StringOutput)
+func (o GetResolverRuleOutput) SourceEndpointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverRule) *string { return v.SourceEndpointName }).(pulumi.StringPtrOutput)
 }
 
 type GetResolverRuleArrayOutput struct{ *pulumi.OutputState }
@@ -3717,12 +3146,6 @@ func (o GetResolverRuleArrayOutput) ToGetResolverRuleArrayOutput() GetResolverRu
 
 func (o GetResolverRuleArrayOutput) ToGetResolverRuleArrayOutputWithContext(ctx context.Context) GetResolverRuleArrayOutput {
 	return o
-}
-
-func (o GetResolverRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolverRule] {
-	return pulumix.Output[[]GetResolverRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResolverRuleArrayOutput) Index(i pulumi.IntInput) GetResolverRuleOutput {
@@ -3766,12 +3189,6 @@ func (i GetResolversFilterArgs) ToGetResolversFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversFilterOutput)
 }
 
-func (i GetResolversFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolversFilter] {
-	return pulumix.Output[GetResolversFilter]{
-		OutputState: i.ToGetResolversFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResolversFilterArrayInput is an input type that accepts GetResolversFilterArray and GetResolversFilterArrayOutput values.
 // You can construct a concrete instance of `GetResolversFilterArrayInput` via:
 //
@@ -3797,12 +3214,6 @@ func (i GetResolversFilterArray) ToGetResolversFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversFilterArrayOutput)
 }
 
-func (i GetResolversFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversFilter] {
-	return pulumix.Output[[]GetResolversFilter]{
-		OutputState: i.ToGetResolversFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolversFilterOutput struct{ *pulumi.OutputState }
 
 func (GetResolversFilterOutput) ElementType() reflect.Type {
@@ -3815,12 +3226,6 @@ func (o GetResolversFilterOutput) ToGetResolversFilterOutput() GetResolversFilte
 
 func (o GetResolversFilterOutput) ToGetResolversFilterOutputWithContext(ctx context.Context) GetResolversFilterOutput {
 	return o
-}
-
-func (o GetResolversFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolversFilter] {
-	return pulumix.Output[GetResolversFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResolversFilterOutput) Name() pulumi.StringOutput {
@@ -3849,12 +3254,6 @@ func (o GetResolversFilterArrayOutput) ToGetResolversFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetResolversFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversFilter] {
-	return pulumix.Output[[]GetResolversFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolversFilterArrayOutput) Index(i pulumi.IntInput) GetResolversFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolversFilter {
 		return vs[0].([]GetResolversFilter)[vs[1].(int)]
@@ -3863,35 +3262,35 @@ func (o GetResolversFilterArrayOutput) Index(i pulumi.IntInput) GetResolversFilt
 
 type GetResolversResolver struct {
 	// The OCID of the attached VCN.
-	AttachedVcnId string                             `pulumi:"attachedVcnId"`
+	AttachedVcnId *string                            `pulumi:"attachedVcnId"`
 	AttachedViews []GetResolversResolverAttachedView `pulumi:"attachedViews"`
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the default view.
-	DefaultViewId string `pulumi:"defaultViewId"`
+	DefaultViewId *string `pulumi:"defaultViewId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName string                         `pulumi:"displayName"`
+	DisplayName *string                        `pulumi:"displayName"`
 	Endpoints   []GetResolversResolverEndpoint `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool                       `pulumi:"isProtected"`
-	ResolverId  string                     `pulumi:"resolverId"`
+	IsProtected *bool                      `pulumi:"isProtected"`
+	ResolverId  *string                    `pulumi:"resolverId"`
 	Rules       []GetResolversResolverRule `pulumi:"rules"`
 	// Value must be `PRIVATE` when listing private name resolvers.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The state of a resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetResolversResolverInput is an input type that accepts GetResolversResolverArgs and GetResolversResolverOutput values.
@@ -3907,35 +3306,35 @@ type GetResolversResolverInput interface {
 
 type GetResolversResolverArgs struct {
 	// The OCID of the attached VCN.
-	AttachedVcnId pulumi.StringInput                         `pulumi:"attachedVcnId"`
+	AttachedVcnId pulumi.StringPtrInput                      `pulumi:"attachedVcnId"`
 	AttachedViews GetResolversResolverAttachedViewArrayInput `pulumi:"attachedViews"`
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the default view.
-	DefaultViewId pulumi.StringInput `pulumi:"defaultViewId"`
+	DefaultViewId pulumi.StringPtrInput `pulumi:"defaultViewId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName pulumi.StringInput                     `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput                  `pulumi:"displayName"`
 	Endpoints   GetResolversResolverEndpointArrayInput `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of a resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolInput                   `pulumi:"isProtected"`
-	ResolverId  pulumi.StringInput                 `pulumi:"resolverId"`
+	IsProtected pulumi.BoolPtrInput                `pulumi:"isProtected"`
+	ResolverId  pulumi.StringPtrInput              `pulumi:"resolverId"`
 	Rules       GetResolversResolverRuleArrayInput `pulumi:"rules"`
 	// Value must be `PRIVATE` when listing private name resolvers.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The state of a resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetResolversResolverArgs) ElementType() reflect.Type {
@@ -3948,12 +3347,6 @@ func (i GetResolversResolverArgs) ToGetResolversResolverOutput() GetResolversRes
 
 func (i GetResolversResolverArgs) ToGetResolversResolverOutputWithContext(ctx context.Context) GetResolversResolverOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverOutput)
-}
-
-func (i GetResolversResolverArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolver] {
-	return pulumix.Output[GetResolversResolver]{
-		OutputState: i.ToGetResolversResolverOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolversResolverArrayInput is an input type that accepts GetResolversResolverArray and GetResolversResolverArrayOutput values.
@@ -3981,12 +3374,6 @@ func (i GetResolversResolverArray) ToGetResolversResolverArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverArrayOutput)
 }
 
-func (i GetResolversResolverArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolver] {
-	return pulumix.Output[[]GetResolversResolver]{
-		OutputState: i.ToGetResolversResolverArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolversResolverOutput struct{ *pulumi.OutputState }
 
 func (GetResolversResolverOutput) ElementType() reflect.Type {
@@ -4001,15 +3388,9 @@ func (o GetResolversResolverOutput) ToGetResolversResolverOutputWithContext(ctx 
 	return o
 }
 
-func (o GetResolversResolverOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolver] {
-	return pulumix.Output[GetResolversResolver]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the attached VCN.
-func (o GetResolversResolverOutput) AttachedVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.AttachedVcnId }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) AttachedVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.AttachedVcnId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResolversResolverOutput) AttachedViews() GetResolversResolverAttachedViewArrayOutput {
@@ -4017,13 +3398,13 @@ func (o GetResolversResolverOutput) AttachedViews() GetResolversResolverAttached
 }
 
 // The OCID of the compartment the resource belongs to.
-func (o GetResolversResolverOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the default view.
-func (o GetResolversResolverOutput) DefaultViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.DefaultViewId }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) DefaultViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.DefaultViewId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -4032,8 +3413,8 @@ func (o GetResolversResolverOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The displayName of a resource.
-func (o GetResolversResolverOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResolversResolverOutput) Endpoints() GetResolversResolverEndpointArrayOutput {
@@ -4046,17 +3427,17 @@ func (o GetResolversResolverOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of a resource.
-func (o GetResolversResolverOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o GetResolversResolverOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResolversResolver) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o GetResolversResolverOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetResolversResolverOutput) ResolverId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.ResolverId }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) ResolverId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.ResolverId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResolversResolverOutput) Rules() GetResolversResolverRuleArrayOutput {
@@ -4064,28 +3445,28 @@ func (o GetResolversResolverOutput) Rules() GetResolversResolverRuleArrayOutput 
 }
 
 // Value must be `PRIVATE` when listing private name resolvers.
-func (o GetResolversResolverOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.Scope }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o GetResolversResolverOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.Self }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The state of a resource.
-func (o GetResolversResolverOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.State }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolversResolverOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolversResolverOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolver) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetResolversResolverOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolver) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetResolversResolverArrayOutput struct{ *pulumi.OutputState }
@@ -4102,12 +3483,6 @@ func (o GetResolversResolverArrayOutput) ToGetResolversResolverArrayOutputWithCo
 	return o
 }
 
-func (o GetResolversResolverArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolver] {
-	return pulumix.Output[[]GetResolversResolver]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolversResolverArrayOutput) Index(i pulumi.IntInput) GetResolversResolverOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolversResolver {
 		return vs[0].([]GetResolversResolver)[vs[1].(int)]
@@ -4115,7 +3490,7 @@ func (o GetResolversResolverArrayOutput) Index(i pulumi.IntInput) GetResolversRe
 }
 
 type GetResolversResolverAttachedView struct {
-	ViewId string `pulumi:"viewId"`
+	ViewId *string `pulumi:"viewId"`
 }
 
 // GetResolversResolverAttachedViewInput is an input type that accepts GetResolversResolverAttachedViewArgs and GetResolversResolverAttachedViewOutput values.
@@ -4130,7 +3505,7 @@ type GetResolversResolverAttachedViewInput interface {
 }
 
 type GetResolversResolverAttachedViewArgs struct {
-	ViewId pulumi.StringInput `pulumi:"viewId"`
+	ViewId pulumi.StringPtrInput `pulumi:"viewId"`
 }
 
 func (GetResolversResolverAttachedViewArgs) ElementType() reflect.Type {
@@ -4143,12 +3518,6 @@ func (i GetResolversResolverAttachedViewArgs) ToGetResolversResolverAttachedView
 
 func (i GetResolversResolverAttachedViewArgs) ToGetResolversResolverAttachedViewOutputWithContext(ctx context.Context) GetResolversResolverAttachedViewOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverAttachedViewOutput)
-}
-
-func (i GetResolversResolverAttachedViewArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolverAttachedView] {
-	return pulumix.Output[GetResolversResolverAttachedView]{
-		OutputState: i.ToGetResolversResolverAttachedViewOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolversResolverAttachedViewArrayInput is an input type that accepts GetResolversResolverAttachedViewArray and GetResolversResolverAttachedViewArrayOutput values.
@@ -4176,12 +3545,6 @@ func (i GetResolversResolverAttachedViewArray) ToGetResolversResolverAttachedVie
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverAttachedViewArrayOutput)
 }
 
-func (i GetResolversResolverAttachedViewArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolverAttachedView] {
-	return pulumix.Output[[]GetResolversResolverAttachedView]{
-		OutputState: i.ToGetResolversResolverAttachedViewArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolversResolverAttachedViewOutput struct{ *pulumi.OutputState }
 
 func (GetResolversResolverAttachedViewOutput) ElementType() reflect.Type {
@@ -4196,14 +3559,8 @@ func (o GetResolversResolverAttachedViewOutput) ToGetResolversResolverAttachedVi
 	return o
 }
 
-func (o GetResolversResolverAttachedViewOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolverAttachedView] {
-	return pulumix.Output[GetResolversResolverAttachedView]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetResolversResolverAttachedViewOutput) ViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverAttachedView) string { return v.ViewId }).(pulumi.StringOutput)
+func (o GetResolversResolverAttachedViewOutput) ViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverAttachedView) *string { return v.ViewId }).(pulumi.StringPtrOutput)
 }
 
 type GetResolversResolverAttachedViewArrayOutput struct{ *pulumi.OutputState }
@@ -4220,12 +3577,6 @@ func (o GetResolversResolverAttachedViewArrayOutput) ToGetResolversResolverAttac
 	return o
 }
 
-func (o GetResolversResolverAttachedViewArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolverAttachedView] {
-	return pulumix.Output[[]GetResolversResolverAttachedView]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolversResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) GetResolversResolverAttachedViewOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolversResolverAttachedView {
 		return vs[0].([]GetResolversResolverAttachedView)[vs[1].(int)]
@@ -4234,22 +3585,22 @@ func (o GetResolversResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetResolversResolverEndpoint struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId     string `pulumi:"compartmentId"`
-	EndpointType      string `pulumi:"endpointType"`
-	ForwardingAddress string `pulumi:"forwardingAddress"`
-	IsForwarding      bool   `pulumi:"isForwarding"`
-	IsListening       bool   `pulumi:"isListening"`
-	ListeningAddress  string `pulumi:"listeningAddress"`
-	Name              string `pulumi:"name"`
+	CompartmentId     *string `pulumi:"compartmentId"`
+	EndpointType      *string `pulumi:"endpointType"`
+	ForwardingAddress *string `pulumi:"forwardingAddress"`
+	IsForwarding      *bool   `pulumi:"isForwarding"`
+	IsListening       *bool   `pulumi:"isListening"`
+	ListeningAddress  *string `pulumi:"listeningAddress"`
+	Name              *string `pulumi:"name"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The state of a resource.
-	State    string `pulumi:"state"`
-	SubnetId string `pulumi:"subnetId"`
+	State    *string `pulumi:"state"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetResolversResolverEndpointInput is an input type that accepts GetResolversResolverEndpointArgs and GetResolversResolverEndpointOutput values.
@@ -4265,22 +3616,22 @@ type GetResolversResolverEndpointInput interface {
 
 type GetResolversResolverEndpointArgs struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId     pulumi.StringInput `pulumi:"compartmentId"`
-	EndpointType      pulumi.StringInput `pulumi:"endpointType"`
-	ForwardingAddress pulumi.StringInput `pulumi:"forwardingAddress"`
-	IsForwarding      pulumi.BoolInput   `pulumi:"isForwarding"`
-	IsListening       pulumi.BoolInput   `pulumi:"isListening"`
-	ListeningAddress  pulumi.StringInput `pulumi:"listeningAddress"`
-	Name              pulumi.StringInput `pulumi:"name"`
+	CompartmentId     pulumi.StringPtrInput `pulumi:"compartmentId"`
+	EndpointType      pulumi.StringPtrInput `pulumi:"endpointType"`
+	ForwardingAddress pulumi.StringPtrInput `pulumi:"forwardingAddress"`
+	IsForwarding      pulumi.BoolPtrInput   `pulumi:"isForwarding"`
+	IsListening       pulumi.BoolPtrInput   `pulumi:"isListening"`
+	ListeningAddress  pulumi.StringPtrInput `pulumi:"listeningAddress"`
+	Name              pulumi.StringPtrInput `pulumi:"name"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The state of a resource.
-	State    pulumi.StringInput `pulumi:"state"`
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	State    pulumi.StringPtrInput `pulumi:"state"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetResolversResolverEndpointArgs) ElementType() reflect.Type {
@@ -4293,12 +3644,6 @@ func (i GetResolversResolverEndpointArgs) ToGetResolversResolverEndpointOutput()
 
 func (i GetResolversResolverEndpointArgs) ToGetResolversResolverEndpointOutputWithContext(ctx context.Context) GetResolversResolverEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverEndpointOutput)
-}
-
-func (i GetResolversResolverEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolverEndpoint] {
-	return pulumix.Output[GetResolversResolverEndpoint]{
-		OutputState: i.ToGetResolversResolverEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolversResolverEndpointArrayInput is an input type that accepts GetResolversResolverEndpointArray and GetResolversResolverEndpointArrayOutput values.
@@ -4326,12 +3671,6 @@ func (i GetResolversResolverEndpointArray) ToGetResolversResolverEndpointArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverEndpointArrayOutput)
 }
 
-func (i GetResolversResolverEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolverEndpoint] {
-	return pulumix.Output[[]GetResolversResolverEndpoint]{
-		OutputState: i.ToGetResolversResolverEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolversResolverEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetResolversResolverEndpointOutput) ElementType() reflect.Type {
@@ -4346,63 +3685,57 @@ func (o GetResolversResolverEndpointOutput) ToGetResolversResolverEndpointOutput
 	return o
 }
 
-func (o GetResolversResolverEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolverEndpoint] {
-	return pulumix.Output[GetResolversResolverEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment the resource belongs to.
-func (o GetResolversResolverEndpointOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetResolversResolverEndpointOutput) EndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetResolversResolverEndpointOutput) ForwardingAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.ForwardingAddress }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) ForwardingAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.ForwardingAddress }).(pulumi.StringPtrOutput)
 }
 
-func (o GetResolversResolverEndpointOutput) IsForwarding() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) bool { return v.IsForwarding }).(pulumi.BoolOutput)
+func (o GetResolversResolverEndpointOutput) IsForwarding() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *bool { return v.IsForwarding }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetResolversResolverEndpointOutput) IsListening() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) bool { return v.IsListening }).(pulumi.BoolOutput)
+func (o GetResolversResolverEndpointOutput) IsListening() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *bool { return v.IsListening }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetResolversResolverEndpointOutput) ListeningAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.ListeningAddress }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) ListeningAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.ListeningAddress }).(pulumi.StringPtrOutput)
 }
 
-func (o GetResolversResolverEndpointOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.Name }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o GetResolversResolverEndpointOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.Self }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The state of a resource.
-func (o GetResolversResolverEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.State }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o GetResolversResolverEndpointOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolversResolverEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetResolversResolverEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetResolversResolverEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetResolversResolverEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -4419,12 +3752,6 @@ func (o GetResolversResolverEndpointArrayOutput) ToGetResolversResolverEndpointA
 	return o
 }
 
-func (o GetResolversResolverEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolverEndpoint] {
-	return pulumix.Output[[]GetResolversResolverEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolversResolverEndpointArrayOutput) Index(i pulumi.IntInput) GetResolversResolverEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolversResolverEndpoint {
 		return vs[0].([]GetResolversResolverEndpoint)[vs[1].(int)]
@@ -4432,11 +3759,11 @@ func (o GetResolversResolverEndpointArrayOutput) Index(i pulumi.IntInput) GetRes
 }
 
 type GetResolversResolverRule struct {
-	Action                  string   `pulumi:"action"`
+	Action                  *string  `pulumi:"action"`
 	ClientAddressConditions []string `pulumi:"clientAddressConditions"`
 	DestinationAddresses    []string `pulumi:"destinationAddresses"`
 	QnameCoverConditions    []string `pulumi:"qnameCoverConditions"`
-	SourceEndpointName      string   `pulumi:"sourceEndpointName"`
+	SourceEndpointName      *string  `pulumi:"sourceEndpointName"`
 }
 
 // GetResolversResolverRuleInput is an input type that accepts GetResolversResolverRuleArgs and GetResolversResolverRuleOutput values.
@@ -4451,11 +3778,11 @@ type GetResolversResolverRuleInput interface {
 }
 
 type GetResolversResolverRuleArgs struct {
-	Action                  pulumi.StringInput      `pulumi:"action"`
+	Action                  pulumi.StringPtrInput   `pulumi:"action"`
 	ClientAddressConditions pulumi.StringArrayInput `pulumi:"clientAddressConditions"`
 	DestinationAddresses    pulumi.StringArrayInput `pulumi:"destinationAddresses"`
 	QnameCoverConditions    pulumi.StringArrayInput `pulumi:"qnameCoverConditions"`
-	SourceEndpointName      pulumi.StringInput      `pulumi:"sourceEndpointName"`
+	SourceEndpointName      pulumi.StringPtrInput   `pulumi:"sourceEndpointName"`
 }
 
 func (GetResolversResolverRuleArgs) ElementType() reflect.Type {
@@ -4468,12 +3795,6 @@ func (i GetResolversResolverRuleArgs) ToGetResolversResolverRuleOutput() GetReso
 
 func (i GetResolversResolverRuleArgs) ToGetResolversResolverRuleOutputWithContext(ctx context.Context) GetResolversResolverRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverRuleOutput)
-}
-
-func (i GetResolversResolverRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolverRule] {
-	return pulumix.Output[GetResolversResolverRule]{
-		OutputState: i.ToGetResolversResolverRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResolversResolverRuleArrayInput is an input type that accepts GetResolversResolverRuleArray and GetResolversResolverRuleArrayOutput values.
@@ -4501,12 +3822,6 @@ func (i GetResolversResolverRuleArray) ToGetResolversResolverRuleArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetResolversResolverRuleArrayOutput)
 }
 
-func (i GetResolversResolverRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolverRule] {
-	return pulumix.Output[[]GetResolversResolverRule]{
-		OutputState: i.ToGetResolversResolverRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResolversResolverRuleOutput struct{ *pulumi.OutputState }
 
 func (GetResolversResolverRuleOutput) ElementType() reflect.Type {
@@ -4521,14 +3836,8 @@ func (o GetResolversResolverRuleOutput) ToGetResolversResolverRuleOutputWithCont
 	return o
 }
 
-func (o GetResolversResolverRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolversResolverRule] {
-	return pulumix.Output[GetResolversResolverRule]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetResolversResolverRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetResolversResolverRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResolversResolverRuleOutput) ClientAddressConditions() pulumi.StringArrayOutput {
@@ -4543,8 +3852,8 @@ func (o GetResolversResolverRuleOutput) QnameCoverConditions() pulumi.StringArra
 	return o.ApplyT(func(v GetResolversResolverRule) []string { return v.QnameCoverConditions }).(pulumi.StringArrayOutput)
 }
 
-func (o GetResolversResolverRuleOutput) SourceEndpointName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolversResolverRule) string { return v.SourceEndpointName }).(pulumi.StringOutput)
+func (o GetResolversResolverRuleOutput) SourceEndpointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolversResolverRule) *string { return v.SourceEndpointName }).(pulumi.StringPtrOutput)
 }
 
 type GetResolversResolverRuleArrayOutput struct{ *pulumi.OutputState }
@@ -4561,12 +3870,6 @@ func (o GetResolversResolverRuleArrayOutput) ToGetResolversResolverRuleArrayOutp
 	return o
 }
 
-func (o GetResolversResolverRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResolversResolverRule] {
-	return pulumix.Output[[]GetResolversResolverRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolversResolverRuleArrayOutput) Index(i pulumi.IntInput) GetResolversResolverRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResolversResolverRule {
 		return vs[0].([]GetResolversResolverRule)[vs[1].(int)]
@@ -4575,19 +3878,19 @@ func (o GetResolversResolverRuleArrayOutput) Index(i pulumi.IntInput) GetResolve
 
 type GetRrsetItem struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-	IsProtected bool `pulumi:"isProtected"`
+	IsProtected *bool `pulumi:"isProtected"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-	Rdata string `pulumi:"rdata"`
+	Rdata *string `pulumi:"rdata"`
 	// A unique identifier for the record within its zone.
-	RecordHash string `pulumi:"recordHash"`
+	RecordHash *string `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
-	RrsetVersion string `pulumi:"rrsetVersion"`
+	RrsetVersion *string `pulumi:"rrsetVersion"`
 	// The type of the target RRSet within the target zone.
-	Rtype string `pulumi:"rtype"`
+	Rtype *string `pulumi:"rtype"`
 	// The Time To Live for the record, in seconds.
-	Ttl int `pulumi:"ttl"`
+	Ttl *int `pulumi:"ttl"`
 }
 
 // GetRrsetItemInput is an input type that accepts GetRrsetItemArgs and GetRrsetItemOutput values.
@@ -4603,19 +3906,19 @@ type GetRrsetItemInput interface {
 
 type GetRrsetItemArgs struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
-	Domain pulumi.StringInput `pulumi:"domain"`
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrInput `pulumi:"isProtected"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-	Rdata pulumi.StringInput `pulumi:"rdata"`
+	Rdata pulumi.StringPtrInput `pulumi:"rdata"`
 	// A unique identifier for the record within its zone.
-	RecordHash pulumi.StringInput `pulumi:"recordHash"`
+	RecordHash pulumi.StringPtrInput `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
-	RrsetVersion pulumi.StringInput `pulumi:"rrsetVersion"`
+	RrsetVersion pulumi.StringPtrInput `pulumi:"rrsetVersion"`
 	// The type of the target RRSet within the target zone.
-	Rtype pulumi.StringInput `pulumi:"rtype"`
+	Rtype pulumi.StringPtrInput `pulumi:"rtype"`
 	// The Time To Live for the record, in seconds.
-	Ttl pulumi.IntInput `pulumi:"ttl"`
+	Ttl pulumi.IntPtrInput `pulumi:"ttl"`
 }
 
 func (GetRrsetItemArgs) ElementType() reflect.Type {
@@ -4628,12 +3931,6 @@ func (i GetRrsetItemArgs) ToGetRrsetItemOutput() GetRrsetItemOutput {
 
 func (i GetRrsetItemArgs) ToGetRrsetItemOutputWithContext(ctx context.Context) GetRrsetItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetItemOutput)
-}
-
-func (i GetRrsetItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRrsetItem] {
-	return pulumix.Output[GetRrsetItem]{
-		OutputState: i.ToGetRrsetItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRrsetItemArrayInput is an input type that accepts GetRrsetItemArray and GetRrsetItemArrayOutput values.
@@ -4661,12 +3958,6 @@ func (i GetRrsetItemArray) ToGetRrsetItemArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetItemArrayOutput)
 }
 
-func (i GetRrsetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetItem] {
-	return pulumix.Output[[]GetRrsetItem]{
-		OutputState: i.ToGetRrsetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRrsetItemOutput struct{ *pulumi.OutputState }
 
 func (GetRrsetItemOutput) ElementType() reflect.Type {
@@ -4681,45 +3972,39 @@ func (o GetRrsetItemOutput) ToGetRrsetItemOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o GetRrsetItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRrsetItem] {
-	return pulumix.Output[GetRrsetItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The target fully-qualified domain name (FQDN) within the target zone.
-func (o GetRrsetItemOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetItem) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetRrsetItemOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetItem) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-func (o GetRrsetItemOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRrsetItem) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o GetRrsetItemOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRrsetItem) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-func (o GetRrsetItemOutput) Rdata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetItem) string { return v.Rdata }).(pulumi.StringOutput)
+func (o GetRrsetItemOutput) Rdata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetItem) *string { return v.Rdata }).(pulumi.StringPtrOutput)
 }
 
 // A unique identifier for the record within its zone.
-func (o GetRrsetItemOutput) RecordHash() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetItem) string { return v.RecordHash }).(pulumi.StringOutput)
+func (o GetRrsetItemOutput) RecordHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetItem) *string { return v.RecordHash }).(pulumi.StringPtrOutput)
 }
 
 // The latest version of the record's zone in which its RRSet differs from the preceding version.
-func (o GetRrsetItemOutput) RrsetVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetItem) string { return v.RrsetVersion }).(pulumi.StringOutput)
+func (o GetRrsetItemOutput) RrsetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetItem) *string { return v.RrsetVersion }).(pulumi.StringPtrOutput)
 }
 
 // The type of the target RRSet within the target zone.
-func (o GetRrsetItemOutput) Rtype() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetItem) string { return v.Rtype }).(pulumi.StringOutput)
+func (o GetRrsetItemOutput) Rtype() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetItem) *string { return v.Rtype }).(pulumi.StringPtrOutput)
 }
 
 // The Time To Live for the record, in seconds.
-func (o GetRrsetItemOutput) Ttl() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRrsetItem) int { return v.Ttl }).(pulumi.IntOutput)
+func (o GetRrsetItemOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRrsetItem) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
 type GetRrsetItemArrayOutput struct{ *pulumi.OutputState }
@@ -4734,12 +4019,6 @@ func (o GetRrsetItemArrayOutput) ToGetRrsetItemArrayOutput() GetRrsetItemArrayOu
 
 func (o GetRrsetItemArrayOutput) ToGetRrsetItemArrayOutputWithContext(ctx context.Context) GetRrsetItemArrayOutput {
 	return o
-}
-
-func (o GetRrsetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetItem] {
-	return pulumix.Output[[]GetRrsetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRrsetItemArrayOutput) Index(i pulumi.IntInput) GetRrsetItemOutput {
@@ -4783,12 +4062,6 @@ func (i GetRrsetsFilterArgs) ToGetRrsetsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsFilterOutput)
 }
 
-func (i GetRrsetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsFilter] {
-	return pulumix.Output[GetRrsetsFilter]{
-		OutputState: i.ToGetRrsetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRrsetsFilterArrayInput is an input type that accepts GetRrsetsFilterArray and GetRrsetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRrsetsFilterArrayInput` via:
 //
@@ -4814,12 +4087,6 @@ func (i GetRrsetsFilterArray) ToGetRrsetsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsFilterArrayOutput)
 }
 
-func (i GetRrsetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetsFilter] {
-	return pulumix.Output[[]GetRrsetsFilter]{
-		OutputState: i.ToGetRrsetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRrsetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRrsetsFilterOutput) ElementType() reflect.Type {
@@ -4832,12 +4099,6 @@ func (o GetRrsetsFilterOutput) ToGetRrsetsFilterOutput() GetRrsetsFilterOutput {
 
 func (o GetRrsetsFilterOutput) ToGetRrsetsFilterOutputWithContext(ctx context.Context) GetRrsetsFilterOutput {
 	return o
-}
-
-func (o GetRrsetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsFilter] {
-	return pulumix.Output[GetRrsetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRrsetsFilterOutput) Name() pulumi.StringOutput {
@@ -4864,12 +4125,6 @@ func (o GetRrsetsFilterArrayOutput) ToGetRrsetsFilterArrayOutput() GetRrsetsFilt
 
 func (o GetRrsetsFilterArrayOutput) ToGetRrsetsFilterArrayOutputWithContext(ctx context.Context) GetRrsetsFilterArrayOutput {
 	return o
-}
-
-func (o GetRrsetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetsFilter] {
-	return pulumix.Output[[]GetRrsetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRrsetsFilterArrayOutput) Index(i pulumi.IntInput) GetRrsetsFilterOutput {
@@ -4917,12 +4172,6 @@ func (i GetRrsetsRrsetArgs) ToGetRrsetsRrsetOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetOutput)
 }
 
-func (i GetRrsetsRrsetArgs) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsRrset] {
-	return pulumix.Output[GetRrsetsRrset]{
-		OutputState: i.ToGetRrsetsRrsetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRrsetsRrsetArrayInput is an input type that accepts GetRrsetsRrsetArray and GetRrsetsRrsetArrayOutput values.
 // You can construct a concrete instance of `GetRrsetsRrsetArrayInput` via:
 //
@@ -4948,12 +4197,6 @@ func (i GetRrsetsRrsetArray) ToGetRrsetsRrsetArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetArrayOutput)
 }
 
-func (i GetRrsetsRrsetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetsRrset] {
-	return pulumix.Output[[]GetRrsetsRrset]{
-		OutputState: i.ToGetRrsetsRrsetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRrsetsRrsetOutput struct{ *pulumi.OutputState }
 
 func (GetRrsetsRrsetOutput) ElementType() reflect.Type {
@@ -4966,12 +4209,6 @@ func (o GetRrsetsRrsetOutput) ToGetRrsetsRrsetOutput() GetRrsetsRrsetOutput {
 
 func (o GetRrsetsRrsetOutput) ToGetRrsetsRrsetOutputWithContext(ctx context.Context) GetRrsetsRrsetOutput {
 	return o
-}
-
-func (o GetRrsetsRrsetOutput) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsRrset] {
-	return pulumix.Output[GetRrsetsRrset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The target fully-qualified domain name (FQDN) within the target zone.
@@ -5002,12 +4239,6 @@ func (o GetRrsetsRrsetArrayOutput) ToGetRrsetsRrsetArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetRrsetsRrsetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetsRrset] {
-	return pulumix.Output[[]GetRrsetsRrset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRrsetsRrsetArrayOutput) Index(i pulumi.IntInput) GetRrsetsRrsetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRrsetsRrset {
 		return vs[0].([]GetRrsetsRrset)[vs[1].(int)]
@@ -5018,13 +4249,13 @@ type GetRrsetsRrsetItem struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain string `pulumi:"domain"`
 	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-	IsProtected bool `pulumi:"isProtected"`
+	IsProtected *bool `pulumi:"isProtected"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
 	Rdata string `pulumi:"rdata"`
 	// A unique identifier for the record within its zone.
-	RecordHash string `pulumi:"recordHash"`
+	RecordHash *string `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
-	RrsetVersion string `pulumi:"rrsetVersion"`
+	RrsetVersion *string `pulumi:"rrsetVersion"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	Rtype string `pulumi:"rtype"`
 	// The Time To Live for the record, in seconds.
@@ -5046,13 +4277,13 @@ type GetRrsetsRrsetItemArgs struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringInput `pulumi:"domain"`
 	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrInput `pulumi:"isProtected"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
 	Rdata pulumi.StringInput `pulumi:"rdata"`
 	// A unique identifier for the record within its zone.
-	RecordHash pulumi.StringInput `pulumi:"recordHash"`
+	RecordHash pulumi.StringPtrInput `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
-	RrsetVersion pulumi.StringInput `pulumi:"rrsetVersion"`
+	RrsetVersion pulumi.StringPtrInput `pulumi:"rrsetVersion"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	Rtype pulumi.StringInput `pulumi:"rtype"`
 	// The Time To Live for the record, in seconds.
@@ -5069,12 +4300,6 @@ func (i GetRrsetsRrsetItemArgs) ToGetRrsetsRrsetItemOutput() GetRrsetsRrsetItemO
 
 func (i GetRrsetsRrsetItemArgs) ToGetRrsetsRrsetItemOutputWithContext(ctx context.Context) GetRrsetsRrsetItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetItemOutput)
-}
-
-func (i GetRrsetsRrsetItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsRrsetItem] {
-	return pulumix.Output[GetRrsetsRrsetItem]{
-		OutputState: i.ToGetRrsetsRrsetItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRrsetsRrsetItemArrayInput is an input type that accepts GetRrsetsRrsetItemArray and GetRrsetsRrsetItemArrayOutput values.
@@ -5102,12 +4327,6 @@ func (i GetRrsetsRrsetItemArray) ToGetRrsetsRrsetItemArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetItemArrayOutput)
 }
 
-func (i GetRrsetsRrsetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetsRrsetItem] {
-	return pulumix.Output[[]GetRrsetsRrsetItem]{
-		OutputState: i.ToGetRrsetsRrsetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRrsetsRrsetItemOutput struct{ *pulumi.OutputState }
 
 func (GetRrsetsRrsetItemOutput) ElementType() reflect.Type {
@@ -5122,20 +4341,14 @@ func (o GetRrsetsRrsetItemOutput) ToGetRrsetsRrsetItemOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetRrsetsRrsetItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsRrsetItem] {
-	return pulumix.Output[GetRrsetsRrsetItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The target fully-qualified domain name (FQDN) within the target zone.
 func (o GetRrsetsRrsetItemOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.Domain }).(pulumi.StringOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-func (o GetRrsetsRrsetItemOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRrsetsRrsetItem) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o GetRrsetsRrsetItemOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
@@ -5144,13 +4357,13 @@ func (o GetRrsetsRrsetItemOutput) Rdata() pulumi.StringOutput {
 }
 
 // A unique identifier for the record within its zone.
-func (o GetRrsetsRrsetItemOutput) RecordHash() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.RecordHash }).(pulumi.StringOutput)
+func (o GetRrsetsRrsetItemOutput) RecordHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) *string { return v.RecordHash }).(pulumi.StringPtrOutput)
 }
 
 // The latest version of the record's zone in which its RRSet differs from the preceding version.
-func (o GetRrsetsRrsetItemOutput) RrsetVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.RrsetVersion }).(pulumi.StringOutput)
+func (o GetRrsetsRrsetItemOutput) RrsetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) *string { return v.RrsetVersion }).(pulumi.StringPtrOutput)
 }
 
 // Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
@@ -5175,12 +4388,6 @@ func (o GetRrsetsRrsetItemArrayOutput) ToGetRrsetsRrsetItemArrayOutput() GetRrse
 
 func (o GetRrsetsRrsetItemArrayOutput) ToGetRrsetsRrsetItemArrayOutputWithContext(ctx context.Context) GetRrsetsRrsetItemArrayOutput {
 	return o
-}
-
-func (o GetRrsetsRrsetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRrsetsRrsetItem] {
-	return pulumix.Output[[]GetRrsetsRrsetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRrsetsRrsetItemArrayOutput) Index(i pulumi.IntInput) GetRrsetsRrsetItemOutput {
@@ -5226,12 +4433,6 @@ func (i GetSteeringPoliciesFilterArgs) ToGetSteeringPoliciesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesFilterOutput)
 }
 
-func (i GetSteeringPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesFilter] {
-	return pulumix.Output[GetSteeringPoliciesFilter]{
-		OutputState: i.ToGetSteeringPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSteeringPoliciesFilterArrayInput is an input type that accepts GetSteeringPoliciesFilterArray and GetSteeringPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesFilterArrayInput` via:
 //
@@ -5257,12 +4458,6 @@ func (i GetSteeringPoliciesFilterArray) ToGetSteeringPoliciesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesFilterArrayOutput)
 }
 
-func (i GetSteeringPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesFilter] {
-	return pulumix.Output[[]GetSteeringPoliciesFilter]{
-		OutputState: i.ToGetSteeringPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPoliciesFilterOutput) ElementType() reflect.Type {
@@ -5275,12 +4470,6 @@ func (o GetSteeringPoliciesFilterOutput) ToGetSteeringPoliciesFilterOutput() Get
 
 func (o GetSteeringPoliciesFilterOutput) ToGetSteeringPoliciesFilterOutputWithContext(ctx context.Context) GetSteeringPoliciesFilterOutput {
 	return o
-}
-
-func (o GetSteeringPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesFilter] {
-	return pulumix.Output[GetSteeringPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
@@ -5310,12 +4499,6 @@ func (o GetSteeringPoliciesFilterArrayOutput) ToGetSteeringPoliciesFilterArrayOu
 	return o
 }
 
-func (o GetSteeringPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesFilter] {
-	return pulumix.Output[[]GetSteeringPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSteeringPoliciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPoliciesFilter {
 		return vs[0].([]GetSteeringPoliciesFilter)[vs[1].(int)]
@@ -5326,29 +4509,29 @@ type GetSteeringPoliciesSteeringPolicy struct {
 	// The set of all answers that can potentially issue from the steering policy.
 	Answers []GetSteeringPoliciesSteeringPolicyAnswer `pulumi:"answers"`
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
-	HealthCheckMonitorId string `pulumi:"healthCheckMonitorId"`
+	HealthCheckMonitorId *string `pulumi:"healthCheckMonitorId"`
 	// The OCID of a resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
 	Rules []GetSteeringPoliciesSteeringPolicyRule `pulumi:"rules"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The state of a resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Search by steering template type. Will match any resource whose template type matches the provided value.
-	Template string `pulumi:"template"`
+	Template *string `pulumi:"template"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-	Ttl int `pulumi:"ttl"`
+	Ttl *int `pulumi:"ttl"`
 }
 
 // GetSteeringPoliciesSteeringPolicyInput is an input type that accepts GetSteeringPoliciesSteeringPolicyArgs and GetSteeringPoliciesSteeringPolicyOutput values.
@@ -5366,29 +4549,29 @@ type GetSteeringPoliciesSteeringPolicyArgs struct {
 	// The set of all answers that can potentially issue from the steering policy.
 	Answers GetSteeringPoliciesSteeringPolicyAnswerArrayInput `pulumi:"answers"`
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
-	HealthCheckMonitorId pulumi.StringInput `pulumi:"healthCheckMonitorId"`
+	HealthCheckMonitorId pulumi.StringPtrInput `pulumi:"healthCheckMonitorId"`
 	// The OCID of a resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
 	Rules GetSteeringPoliciesSteeringPolicyRuleArrayInput `pulumi:"rules"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The state of a resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Search by steering template type. Will match any resource whose template type matches the provided value.
-	Template pulumi.StringInput `pulumi:"template"`
+	Template pulumi.StringPtrInput `pulumi:"template"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-	Ttl pulumi.IntInput `pulumi:"ttl"`
+	Ttl pulumi.IntPtrInput `pulumi:"ttl"`
 }
 
 func (GetSteeringPoliciesSteeringPolicyArgs) ElementType() reflect.Type {
@@ -5401,12 +4584,6 @@ func (i GetSteeringPoliciesSteeringPolicyArgs) ToGetSteeringPoliciesSteeringPoli
 
 func (i GetSteeringPoliciesSteeringPolicyArgs) ToGetSteeringPoliciesSteeringPolicyOutputWithContext(ctx context.Context) GetSteeringPoliciesSteeringPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyOutput)
-}
-
-func (i GetSteeringPoliciesSteeringPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicy] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicy]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPoliciesSteeringPolicyArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyArray and GetSteeringPoliciesSteeringPolicyArrayOutput values.
@@ -5434,12 +4611,6 @@ func (i GetSteeringPoliciesSteeringPolicyArray) ToGetSteeringPoliciesSteeringPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyArrayOutput)
 }
 
-func (i GetSteeringPoliciesSteeringPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicy] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicy]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPoliciesSteeringPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPoliciesSteeringPolicyOutput) ElementType() reflect.Type {
@@ -5454,20 +4625,14 @@ func (o GetSteeringPoliciesSteeringPolicyOutput) ToGetSteeringPoliciesSteeringPo
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicy] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The set of all answers that can potentially issue from the steering policy.
 func (o GetSteeringPoliciesSteeringPolicyOutput) Answers() GetSteeringPoliciesSteeringPolicyAnswerArrayOutput {
 	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) []GetSteeringPoliciesSteeringPolicyAnswer { return v.Answers }).(GetSteeringPoliciesSteeringPolicyAnswerArrayOutput)
 }
 
 // The OCID of the compartment the resource belongs to.
-func (o GetSteeringPoliciesSteeringPolicyOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -5476,8 +4641,8 @@ func (o GetSteeringPoliciesSteeringPolicyOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // The displayName of a resource.
-func (o GetSteeringPoliciesSteeringPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -5486,13 +4651,13 @@ func (o GetSteeringPoliciesSteeringPolicyOutput) FreeformTags() pulumi.MapOutput
 }
 
 // Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
-func (o GetSteeringPoliciesSteeringPolicyOutput) HealthCheckMonitorId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.HealthCheckMonitorId }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) HealthCheckMonitorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.HealthCheckMonitorId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a resource.
-func (o GetSteeringPoliciesSteeringPolicyOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
@@ -5501,28 +4666,28 @@ func (o GetSteeringPoliciesSteeringPolicyOutput) Rules() GetSteeringPoliciesStee
 }
 
 // The canonical absolute URL of the resource.
-func (o GetSteeringPoliciesSteeringPolicyOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.Self }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The state of a resource.
-func (o GetSteeringPoliciesSteeringPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.State }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Search by steering template type. Will match any resource whose template type matches the provided value.
-func (o GetSteeringPoliciesSteeringPolicyOutput) Template() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.Template }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) Template() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.Template }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in RFC 3339 timestamp format.
-func (o GetSteeringPoliciesSteeringPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-func (o GetSteeringPoliciesSteeringPolicyOutput) Ttl() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) int { return v.Ttl }).(pulumi.IntOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
 type GetSteeringPoliciesSteeringPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -5539,12 +4704,6 @@ func (o GetSteeringPoliciesSteeringPolicyArrayOutput) ToGetSteeringPoliciesSteer
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicy] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPoliciesSteeringPolicyArrayOutput) Index(i pulumi.IntInput) GetSteeringPoliciesSteeringPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPoliciesSteeringPolicy {
 		return vs[0].([]GetSteeringPoliciesSteeringPolicy)[vs[1].(int)]
@@ -5553,15 +4712,15 @@ func (o GetSteeringPoliciesSteeringPolicyArrayOutput) Index(i pulumi.IntInput) G
 
 type GetSteeringPoliciesSteeringPolicyAnswer struct {
 	// Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-	IsDisabled bool `pulumi:"isDisabled"`
+	IsDisabled *bool `pulumi:"isDisabled"`
 	// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-	Pool string `pulumi:"pool"`
+	Pool *string `pulumi:"pool"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rdata string `pulumi:"rdata"`
+	Rdata *string `pulumi:"rdata"`
 	// The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rtype string `pulumi:"rtype"`
+	Rtype *string `pulumi:"rtype"`
 }
 
 // GetSteeringPoliciesSteeringPolicyAnswerInput is an input type that accepts GetSteeringPoliciesSteeringPolicyAnswerArgs and GetSteeringPoliciesSteeringPolicyAnswerOutput values.
@@ -5577,15 +4736,15 @@ type GetSteeringPoliciesSteeringPolicyAnswerInput interface {
 
 type GetSteeringPoliciesSteeringPolicyAnswerArgs struct {
 	// Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-	IsDisabled pulumi.BoolInput `pulumi:"isDisabled"`
+	IsDisabled pulumi.BoolPtrInput `pulumi:"isDisabled"`
 	// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-	Pool pulumi.StringInput `pulumi:"pool"`
+	Pool pulumi.StringPtrInput `pulumi:"pool"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rdata pulumi.StringInput `pulumi:"rdata"`
+	Rdata pulumi.StringPtrInput `pulumi:"rdata"`
 	// The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rtype pulumi.StringInput `pulumi:"rtype"`
+	Rtype pulumi.StringPtrInput `pulumi:"rtype"`
 }
 
 func (GetSteeringPoliciesSteeringPolicyAnswerArgs) ElementType() reflect.Type {
@@ -5598,12 +4757,6 @@ func (i GetSteeringPoliciesSteeringPolicyAnswerArgs) ToGetSteeringPoliciesSteeri
 
 func (i GetSteeringPoliciesSteeringPolicyAnswerArgs) ToGetSteeringPoliciesSteeringPolicyAnswerOutputWithContext(ctx context.Context) GetSteeringPoliciesSteeringPolicyAnswerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyAnswerOutput)
-}
-
-func (i GetSteeringPoliciesSteeringPolicyAnswerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyAnswer] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyAnswer]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyAnswerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPoliciesSteeringPolicyAnswerArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyAnswerArray and GetSteeringPoliciesSteeringPolicyAnswerArrayOutput values.
@@ -5631,12 +4784,6 @@ func (i GetSteeringPoliciesSteeringPolicyAnswerArray) ToGetSteeringPoliciesSteer
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyAnswerArrayOutput)
 }
 
-func (i GetSteeringPoliciesSteeringPolicyAnswerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyAnswer] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyAnswer]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyAnswerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPoliciesSteeringPolicyAnswerOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPoliciesSteeringPolicyAnswerOutput) ElementType() reflect.Type {
@@ -5651,35 +4798,29 @@ func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) ToGetSteeringPoliciesStee
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyAnswer] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyAnswer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) IsDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) bool { return v.IsDisabled }).(pulumi.BoolOutput)
+func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) IsDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) *bool { return v.IsDisabled }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Pool() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) string { return v.Pool }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Pool() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) *string { return v.Pool }).(pulumi.StringPtrOutput)
 }
 
 // The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Rdata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) string { return v.Rdata }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Rdata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) *string { return v.Rdata }).(pulumi.StringPtrOutput)
 }
 
 // The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Rtype() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) string { return v.Rtype }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyAnswerOutput) Rtype() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyAnswer) *string { return v.Rtype }).(pulumi.StringPtrOutput)
 }
 
 type GetSteeringPoliciesSteeringPolicyAnswerArrayOutput struct{ *pulumi.OutputState }
@@ -5696,12 +4837,6 @@ func (o GetSteeringPoliciesSteeringPolicyAnswerArrayOutput) ToGetSteeringPolicie
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyAnswerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyAnswer] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyAnswer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPoliciesSteeringPolicyAnswerArrayOutput) Index(i pulumi.IntInput) GetSteeringPoliciesSteeringPolicyAnswerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPoliciesSteeringPolicyAnswer {
 		return vs[0].([]GetSteeringPoliciesSteeringPolicyAnswer)[vs[1].(int)]
@@ -5714,11 +4849,11 @@ type GetSteeringPoliciesSteeringPolicyRule struct {
 	// Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
 	DefaultAnswerDatas []GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData `pulumi:"defaultAnswerDatas"`
 	// Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-	DefaultCount int `pulumi:"defaultCount"`
+	DefaultCount *int `pulumi:"defaultCount"`
 	// A user-defined description of the rule's purpose or behavior.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleArgs and GetSteeringPoliciesSteeringPolicyRuleOutput values.
@@ -5738,11 +4873,11 @@ type GetSteeringPoliciesSteeringPolicyRuleArgs struct {
 	// Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
 	DefaultAnswerDatas GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayInput `pulumi:"defaultAnswerDatas"`
 	// Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-	DefaultCount pulumi.IntInput `pulumi:"defaultCount"`
+	DefaultCount pulumi.IntPtrInput `pulumi:"defaultCount"`
 	// A user-defined description of the rule's purpose or behavior.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 }
 
 func (GetSteeringPoliciesSteeringPolicyRuleArgs) ElementType() reflect.Type {
@@ -5755,12 +4890,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleArgs) ToGetSteeringPoliciesSteering
 
 func (i GetSteeringPoliciesSteeringPolicyRuleArgs) ToGetSteeringPoliciesSteeringPolicyRuleOutputWithContext(ctx context.Context) GetSteeringPoliciesSteeringPolicyRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleOutput)
-}
-
-func (i GetSteeringPoliciesSteeringPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRule] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRule]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleArray and GetSteeringPoliciesSteeringPolicyRuleArrayOutput values.
@@ -5788,12 +4917,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleArray) ToGetSteeringPoliciesSteerin
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleArrayOutput)
 }
 
-func (i GetSteeringPoliciesSteeringPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRule] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRule]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPoliciesSteeringPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPoliciesSteeringPolicyRuleOutput) ElementType() reflect.Type {
@@ -5806,12 +4929,6 @@ func (o GetSteeringPoliciesSteeringPolicyRuleOutput) ToGetSteeringPoliciesSteeri
 
 func (o GetSteeringPoliciesSteeringPolicyRuleOutput) ToGetSteeringPoliciesSteeringPolicyRuleOutputWithContext(ctx context.Context) GetSteeringPoliciesSteeringPolicyRuleOutput {
 	return o
-}
-
-func (o GetSteeringPoliciesSteeringPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRule] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
@@ -5829,18 +4946,18 @@ func (o GetSteeringPoliciesSteeringPolicyRuleOutput) DefaultAnswerDatas() GetSte
 }
 
 // Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-func (o GetSteeringPoliciesSteeringPolicyRuleOutput) DefaultCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRule) int { return v.DefaultCount }).(pulumi.IntOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleOutput) DefaultCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRule) *int { return v.DefaultCount }).(pulumi.IntPtrOutput)
 }
 
 // A user-defined description of the rule's purpose or behavior.
-func (o GetSteeringPoliciesSteeringPolicyRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The type of a rule determines its sorting/filtering behavior.
-func (o GetSteeringPoliciesSteeringPolicyRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRule) string { return v.RuleType }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 type GetSteeringPoliciesSteeringPolicyRuleArrayOutput struct{ *pulumi.OutputState }
@@ -5857,12 +4974,6 @@ func (o GetSteeringPoliciesSteeringPolicyRuleArrayOutput) ToGetSteeringPoliciesS
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRule] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPoliciesSteeringPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetSteeringPoliciesSteeringPolicyRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPoliciesSteeringPolicyRule {
 		return vs[0].([]GetSteeringPoliciesSteeringPolicyRule)[vs[1].(int)]
@@ -5873,9 +4984,9 @@ type GetSteeringPoliciesSteeringPolicyRuleCase struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas []GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData `pulumi:"answerDatas"`
 	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-	CaseCondition string `pulumi:"caseCondition"`
+	CaseCondition *string `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleCaseInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseArgs and GetSteeringPoliciesSteeringPolicyRuleCaseOutput values.
@@ -5893,9 +5004,9 @@ type GetSteeringPoliciesSteeringPolicyRuleCaseArgs struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayInput `pulumi:"answerDatas"`
 	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-	CaseCondition pulumi.StringInput `pulumi:"caseCondition"`
+	CaseCondition pulumi.StringPtrInput `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 }
 
 func (GetSteeringPoliciesSteeringPolicyRuleCaseArgs) ElementType() reflect.Type {
@@ -5908,12 +5019,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleCaseArgs) ToGetSteeringPoliciesStee
 
 func (i GetSteeringPoliciesSteeringPolicyRuleCaseArgs) ToGetSteeringPoliciesSteeringPolicyRuleCaseOutputWithContext(ctx context.Context) GetSteeringPoliciesSteeringPolicyRuleCaseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleCaseOutput)
-}
-
-func (i GetSteeringPoliciesSteeringPolicyRuleCaseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCase] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCase]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleCaseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleCaseArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseArray and GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput values.
@@ -5941,12 +5046,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleCaseArray) ToGetSteeringPoliciesSte
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput)
 }
 
-func (i GetSteeringPoliciesSteeringPolicyRuleCaseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCase] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCase]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleCaseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPoliciesSteeringPolicyRuleCaseOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPoliciesSteeringPolicyRuleCaseOutput) ElementType() reflect.Type {
@@ -5961,12 +5060,6 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) ToGetSteeringPoliciesSt
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCase] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of `SteeringPolicyPriorityAnswerData` objects.
 func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) AnswerDatas() GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput {
 	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCase) []GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData {
@@ -5975,13 +5068,13 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) AnswerDatas() GetSteeri
 }
 
 // An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) CaseCondition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCase) string { return v.CaseCondition }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) CaseCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCase) *string { return v.CaseCondition }).(pulumi.StringPtrOutput)
 }
 
 // The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCase) int { return v.Count }).(pulumi.IntOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCase) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 type GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput struct{ *pulumi.OutputState }
@@ -5998,12 +5091,6 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput) ToGetSteeringPolic
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCase] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCase]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput) Index(i pulumi.IntInput) GetSteeringPoliciesSteeringPolicyRuleCaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPoliciesSteeringPolicyRuleCase {
 		return vs[0].([]GetSteeringPoliciesSteeringPolicyRuleCase)[vs[1].(int)]
@@ -6012,11 +5099,11 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput) Index(i pulumi.Int
 
 type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition string `pulumi:"answerCondition"`
+	AnswerCondition *string `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep bool `pulumi:"shouldKeep"`
+	ShouldKeep *bool `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value int `pulumi:"value"`
+	Value *int `pulumi:"value"`
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs and GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput values.
@@ -6032,11 +5119,11 @@ type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataInput interface {
 
 type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition pulumi.StringInput `pulumi:"answerCondition"`
+	AnswerCondition pulumi.StringPtrInput `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep pulumi.BoolInput `pulumi:"shouldKeep"`
+	ShouldKeep pulumi.BoolPtrInput `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value pulumi.IntInput `pulumi:"value"`
+	Value pulumi.IntPtrInput `pulumi:"value"`
 }
 
 func (GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs) ElementType() reflect.Type {
@@ -6049,12 +5136,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs) ToGetSteeringPo
 
 func (i GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs) ToGetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutputWithContext(ctx context.Context) GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput)
-}
-
-func (i GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArray and GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput values.
@@ -6082,12 +5163,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArray) ToGetSteeringP
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput)
 }
 
-func (i GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) ElementType() reflect.Type {
@@ -6102,25 +5177,19 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) ToGetSteering
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) AnswerCondition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData) string { return v.AnswerCondition }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) AnswerCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData) *string { return v.AnswerCondition }).(pulumi.StringPtrOutput)
 }
 
 // Keeps the answer only if the value is `true`.
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) ShouldKeep() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData) bool { return v.ShouldKeep }).(pulumi.BoolOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) ShouldKeep() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData) *bool { return v.ShouldKeep }).(pulumi.BoolPtrOutput)
 }
 
 // The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) Value() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData) int { return v.Value }).(pulumi.IntOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData) *int { return v.Value }).(pulumi.IntPtrOutput)
 }
 
 type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput struct{ *pulumi.OutputState }
@@ -6137,12 +5206,6 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput) ToGetSte
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput) Index(i pulumi.IntInput) GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData {
 		return vs[0].([]GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData)[vs[1].(int)]
@@ -6151,11 +5214,11 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput) Index(i 
 
 type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition string `pulumi:"answerCondition"`
+	AnswerCondition *string `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep bool `pulumi:"shouldKeep"`
+	ShouldKeep *bool `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value int `pulumi:"value"`
+	Value *int `pulumi:"value"`
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs and GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput values.
@@ -6171,11 +5234,11 @@ type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataInput interface {
 
 type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition pulumi.StringInput `pulumi:"answerCondition"`
+	AnswerCondition pulumi.StringPtrInput `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep pulumi.BoolInput `pulumi:"shouldKeep"`
+	ShouldKeep pulumi.BoolPtrInput `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value pulumi.IntInput `pulumi:"value"`
+	Value pulumi.IntPtrInput `pulumi:"value"`
 }
 
 func (GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs) ElementType() reflect.Type {
@@ -6188,12 +5251,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs) ToGetSteerin
 
 func (i GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs) ToGetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutputWithContext(ctx context.Context) GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput)
-}
-
-func (i GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArray and GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput values.
@@ -6221,12 +5278,6 @@ func (i GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArray) ToGetSteeri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput)
 }
 
-func (i GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: i.ToGetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) ElementType() reflect.Type {
@@ -6241,25 +5292,19 @@ func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) ToGetSteer
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) AnswerCondition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData) string { return v.AnswerCondition }).(pulumi.StringOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) AnswerCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData) *string { return v.AnswerCondition }).(pulumi.StringPtrOutput)
 }
 
 // Keeps the answer only if the value is `true`.
-func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) ShouldKeep() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData) bool { return v.ShouldKeep }).(pulumi.BoolOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) ShouldKeep() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData) *bool { return v.ShouldKeep }).(pulumi.BoolPtrOutput)
 }
 
 // The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) Value() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData) int { return v.Value }).(pulumi.IntOutput)
+func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData) *int { return v.Value }).(pulumi.IntPtrOutput)
 }
 
 type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput struct{ *pulumi.OutputState }
@@ -6276,12 +5321,6 @@ func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput) ToGet
 	return o
 }
 
-func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[[]GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput) Index(i pulumi.IntInput) GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData {
 		return vs[0].([]GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData)[vs[1].(int)]
@@ -6290,15 +5329,15 @@ func (o GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput) Index
 
 type GetSteeringPolicyAnswer struct {
 	// Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-	IsDisabled bool `pulumi:"isDisabled"`
+	IsDisabled *bool `pulumi:"isDisabled"`
 	// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-	Pool string `pulumi:"pool"`
+	Pool *string `pulumi:"pool"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rdata string `pulumi:"rdata"`
+	Rdata *string `pulumi:"rdata"`
 	// The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rtype string `pulumi:"rtype"`
+	Rtype *string `pulumi:"rtype"`
 }
 
 // GetSteeringPolicyAnswerInput is an input type that accepts GetSteeringPolicyAnswerArgs and GetSteeringPolicyAnswerOutput values.
@@ -6314,15 +5353,15 @@ type GetSteeringPolicyAnswerInput interface {
 
 type GetSteeringPolicyAnswerArgs struct {
 	// Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-	IsDisabled pulumi.BoolInput `pulumi:"isDisabled"`
+	IsDisabled pulumi.BoolPtrInput `pulumi:"isDisabled"`
 	// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-	Pool pulumi.StringInput `pulumi:"pool"`
+	Pool pulumi.StringPtrInput `pulumi:"pool"`
 	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rdata pulumi.StringInput `pulumi:"rdata"`
+	Rdata pulumi.StringPtrInput `pulumi:"rdata"`
 	// The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-	Rtype pulumi.StringInput `pulumi:"rtype"`
+	Rtype pulumi.StringPtrInput `pulumi:"rtype"`
 }
 
 func (GetSteeringPolicyAnswerArgs) ElementType() reflect.Type {
@@ -6335,12 +5374,6 @@ func (i GetSteeringPolicyAnswerArgs) ToGetSteeringPolicyAnswerOutput() GetSteeri
 
 func (i GetSteeringPolicyAnswerArgs) ToGetSteeringPolicyAnswerOutputWithContext(ctx context.Context) GetSteeringPolicyAnswerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyAnswerOutput)
-}
-
-func (i GetSteeringPolicyAnswerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyAnswer] {
-	return pulumix.Output[GetSteeringPolicyAnswer]{
-		OutputState: i.ToGetSteeringPolicyAnswerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPolicyAnswerArrayInput is an input type that accepts GetSteeringPolicyAnswerArray and GetSteeringPolicyAnswerArrayOutput values.
@@ -6368,12 +5401,6 @@ func (i GetSteeringPolicyAnswerArray) ToGetSteeringPolicyAnswerArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyAnswerArrayOutput)
 }
 
-func (i GetSteeringPolicyAnswerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyAnswer] {
-	return pulumix.Output[[]GetSteeringPolicyAnswer]{
-		OutputState: i.ToGetSteeringPolicyAnswerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPolicyAnswerOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPolicyAnswerOutput) ElementType() reflect.Type {
@@ -6388,35 +5415,29 @@ func (o GetSteeringPolicyAnswerOutput) ToGetSteeringPolicyAnswerOutputWithContex
 	return o
 }
 
-func (o GetSteeringPolicyAnswerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyAnswer] {
-	return pulumix.Output[GetSteeringPolicyAnswer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-func (o GetSteeringPolicyAnswerOutput) IsDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAnswer) bool { return v.IsDisabled }).(pulumi.BoolOutput)
+func (o GetSteeringPolicyAnswerOutput) IsDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAnswer) *bool { return v.IsDisabled }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-func (o GetSteeringPolicyAnswerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAnswer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAnswerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAnswer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-func (o GetSteeringPolicyAnswerOutput) Pool() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAnswer) string { return v.Pool }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAnswerOutput) Pool() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAnswer) *string { return v.Pool }).(pulumi.StringPtrOutput)
 }
 
 // The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-func (o GetSteeringPolicyAnswerOutput) Rdata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAnswer) string { return v.Rdata }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAnswerOutput) Rdata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAnswer) *string { return v.Rdata }).(pulumi.StringPtrOutput)
 }
 
 // The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-func (o GetSteeringPolicyAnswerOutput) Rtype() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAnswer) string { return v.Rtype }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAnswerOutput) Rtype() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAnswer) *string { return v.Rtype }).(pulumi.StringPtrOutput)
 }
 
 type GetSteeringPolicyAnswerArrayOutput struct{ *pulumi.OutputState }
@@ -6431,12 +5452,6 @@ func (o GetSteeringPolicyAnswerArrayOutput) ToGetSteeringPolicyAnswerArrayOutput
 
 func (o GetSteeringPolicyAnswerArrayOutput) ToGetSteeringPolicyAnswerArrayOutputWithContext(ctx context.Context) GetSteeringPolicyAnswerArrayOutput {
 	return o
-}
-
-func (o GetSteeringPolicyAnswerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyAnswer] {
-	return pulumix.Output[[]GetSteeringPolicyAnswer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSteeringPolicyAnswerArrayOutput) Index(i pulumi.IntInput) GetSteeringPolicyAnswerOutput {
@@ -6480,12 +5495,6 @@ func (i GetSteeringPolicyAttachmentsFilterArgs) ToGetSteeringPolicyAttachmentsFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyAttachmentsFilterOutput)
 }
 
-func (i GetSteeringPolicyAttachmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyAttachmentsFilter] {
-	return pulumix.Output[GetSteeringPolicyAttachmentsFilter]{
-		OutputState: i.ToGetSteeringPolicyAttachmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSteeringPolicyAttachmentsFilterArrayInput is an input type that accepts GetSteeringPolicyAttachmentsFilterArray and GetSteeringPolicyAttachmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyAttachmentsFilterArrayInput` via:
 //
@@ -6511,12 +5520,6 @@ func (i GetSteeringPolicyAttachmentsFilterArray) ToGetSteeringPolicyAttachmentsF
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyAttachmentsFilterArrayOutput)
 }
 
-func (i GetSteeringPolicyAttachmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyAttachmentsFilter] {
-	return pulumix.Output[[]GetSteeringPolicyAttachmentsFilter]{
-		OutputState: i.ToGetSteeringPolicyAttachmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPolicyAttachmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPolicyAttachmentsFilterOutput) ElementType() reflect.Type {
@@ -6529,12 +5532,6 @@ func (o GetSteeringPolicyAttachmentsFilterOutput) ToGetSteeringPolicyAttachments
 
 func (o GetSteeringPolicyAttachmentsFilterOutput) ToGetSteeringPolicyAttachmentsFilterOutputWithContext(ctx context.Context) GetSteeringPolicyAttachmentsFilterOutput {
 	return o
-}
-
-func (o GetSteeringPolicyAttachmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyAttachmentsFilter] {
-	return pulumix.Output[GetSteeringPolicyAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSteeringPolicyAttachmentsFilterOutput) Name() pulumi.StringOutput {
@@ -6563,12 +5560,6 @@ func (o GetSteeringPolicyAttachmentsFilterArrayOutput) ToGetSteeringPolicyAttach
 	return o
 }
 
-func (o GetSteeringPolicyAttachmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyAttachmentsFilter] {
-	return pulumix.Output[[]GetSteeringPolicyAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPolicyAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetSteeringPolicyAttachmentsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPolicyAttachmentsFilter {
 		return vs[0].([]GetSteeringPolicyAttachmentsFilter)[vs[1].(int)]
@@ -6577,25 +5568,25 @@ func (o GetSteeringPolicyAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) 
 
 type GetSteeringPolicyAttachmentsSteeringPolicyAttachment struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The displayName of a resource.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The attached domain within the attached zone.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// The OCID of a resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
 	Rtypes []string `pulumi:"rtypes"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The state of a resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
-	SteeringPolicyId string `pulumi:"steeringPolicyId"`
+	SteeringPolicyId *string `pulumi:"steeringPolicyId"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Search by zone OCID. Will match any resource whose zone ID matches the provided value.
-	ZoneId string `pulumi:"zoneId"`
+	ZoneId *string `pulumi:"zoneId"`
 }
 
 // GetSteeringPolicyAttachmentsSteeringPolicyAttachmentInput is an input type that accepts GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs and GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput values.
@@ -6611,25 +5602,25 @@ type GetSteeringPolicyAttachmentsSteeringPolicyAttachmentInput interface {
 
 type GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The displayName of a resource.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The attached domain within the attached zone.
-	DomainName pulumi.StringInput `pulumi:"domainName"`
+	DomainName pulumi.StringPtrInput `pulumi:"domainName"`
 	// The OCID of a resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
 	Rtypes pulumi.StringArrayInput `pulumi:"rtypes"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The state of a resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
-	SteeringPolicyId pulumi.StringInput `pulumi:"steeringPolicyId"`
+	SteeringPolicyId pulumi.StringPtrInput `pulumi:"steeringPolicyId"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Search by zone OCID. Will match any resource whose zone ID matches the provided value.
-	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
 func (GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs) ElementType() reflect.Type {
@@ -6642,12 +5633,6 @@ func (i GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs) ToGetSteeringP
 
 func (i GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs) ToGetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutputWithContext(ctx context.Context) GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput)
-}
-
-func (i GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyAttachmentsSteeringPolicyAttachment] {
-	return pulumix.Output[GetSteeringPolicyAttachmentsSteeringPolicyAttachment]{
-		OutputState: i.ToGetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayInput is an input type that accepts GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArray and GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutput values.
@@ -6675,12 +5660,6 @@ func (i GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArray) ToGetSteering
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutput)
 }
 
-func (i GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyAttachmentsSteeringPolicyAttachment] {
-	return pulumix.Output[[]GetSteeringPolicyAttachmentsSteeringPolicyAttachment]{
-		OutputState: i.ToGetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) ElementType() reflect.Type {
@@ -6695,30 +5674,24 @@ func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) ToGetSteerin
 	return o
 }
 
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyAttachmentsSteeringPolicyAttachment] {
-	return pulumix.Output[GetSteeringPolicyAttachmentsSteeringPolicyAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment the resource belongs to.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The displayName of a resource.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The attached domain within the attached zone.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.DomainName }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a resource.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
@@ -6727,28 +5700,28 @@ func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) Rtypes() pul
 }
 
 // The canonical absolute URL of the resource.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.Self }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The state of a resource.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.State }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) SteeringPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.SteeringPolicyId }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) SteeringPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.SteeringPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in RFC 3339 timestamp format.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Search by zone OCID. Will match any resource whose zone ID matches the provided value.
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) string { return v.ZoneId }).(pulumi.StringOutput)
+func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyAttachmentsSteeringPolicyAttachment) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 type GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -6765,12 +5738,6 @@ func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutput) ToGetSt
 	return o
 }
 
-func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyAttachmentsSteeringPolicyAttachment] {
-	return pulumix.Output[[]GetSteeringPolicyAttachmentsSteeringPolicyAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutput) Index(i pulumi.IntInput) GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
 		return vs[0].([]GetSteeringPolicyAttachmentsSteeringPolicyAttachment)[vs[1].(int)]
@@ -6783,11 +5750,11 @@ type GetSteeringPolicyRule struct {
 	// Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
 	DefaultAnswerDatas []GetSteeringPolicyRuleDefaultAnswerData `pulumi:"defaultAnswerDatas"`
 	// Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-	DefaultCount int `pulumi:"defaultCount"`
+	DefaultCount *int `pulumi:"defaultCount"`
 	// A user-defined description of the rule's purpose or behavior.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 }
 
 // GetSteeringPolicyRuleInput is an input type that accepts GetSteeringPolicyRuleArgs and GetSteeringPolicyRuleOutput values.
@@ -6807,11 +5774,11 @@ type GetSteeringPolicyRuleArgs struct {
 	// Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
 	DefaultAnswerDatas GetSteeringPolicyRuleDefaultAnswerDataArrayInput `pulumi:"defaultAnswerDatas"`
 	// Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-	DefaultCount pulumi.IntInput `pulumi:"defaultCount"`
+	DefaultCount pulumi.IntPtrInput `pulumi:"defaultCount"`
 	// A user-defined description of the rule's purpose or behavior.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 }
 
 func (GetSteeringPolicyRuleArgs) ElementType() reflect.Type {
@@ -6824,12 +5791,6 @@ func (i GetSteeringPolicyRuleArgs) ToGetSteeringPolicyRuleOutput() GetSteeringPo
 
 func (i GetSteeringPolicyRuleArgs) ToGetSteeringPolicyRuleOutputWithContext(ctx context.Context) GetSteeringPolicyRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleOutput)
-}
-
-func (i GetSteeringPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRule] {
-	return pulumix.Output[GetSteeringPolicyRule]{
-		OutputState: i.ToGetSteeringPolicyRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPolicyRuleArrayInput is an input type that accepts GetSteeringPolicyRuleArray and GetSteeringPolicyRuleArrayOutput values.
@@ -6857,12 +5818,6 @@ func (i GetSteeringPolicyRuleArray) ToGetSteeringPolicyRuleArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleArrayOutput)
 }
 
-func (i GetSteeringPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRule] {
-	return pulumix.Output[[]GetSteeringPolicyRule]{
-		OutputState: i.ToGetSteeringPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPolicyRuleOutput) ElementType() reflect.Type {
@@ -6877,12 +5832,6 @@ func (o GetSteeringPolicyRuleOutput) ToGetSteeringPolicyRuleOutputWithContext(ct
 	return o
 }
 
-func (o GetSteeringPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRule] {
-	return pulumix.Output[GetSteeringPolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
 func (o GetSteeringPolicyRuleOutput) Cases() GetSteeringPolicyRuleCaseArrayOutput {
 	return o.ApplyT(func(v GetSteeringPolicyRule) []GetSteeringPolicyRuleCase { return v.Cases }).(GetSteeringPolicyRuleCaseArrayOutput)
@@ -6894,18 +5843,18 @@ func (o GetSteeringPolicyRuleOutput) DefaultAnswerDatas() GetSteeringPolicyRuleD
 }
 
 // Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-func (o GetSteeringPolicyRuleOutput) DefaultCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRule) int { return v.DefaultCount }).(pulumi.IntOutput)
+func (o GetSteeringPolicyRuleOutput) DefaultCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRule) *int { return v.DefaultCount }).(pulumi.IntPtrOutput)
 }
 
 // A user-defined description of the rule's purpose or behavior.
-func (o GetSteeringPolicyRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSteeringPolicyRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The type of a rule determines its sorting/filtering behavior.
-func (o GetSteeringPolicyRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRule) string { return v.RuleType }).(pulumi.StringOutput)
+func (o GetSteeringPolicyRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 type GetSteeringPolicyRuleArrayOutput struct{ *pulumi.OutputState }
@@ -6922,12 +5871,6 @@ func (o GetSteeringPolicyRuleArrayOutput) ToGetSteeringPolicyRuleArrayOutputWith
 	return o
 }
 
-func (o GetSteeringPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRule] {
-	return pulumix.Output[[]GetSteeringPolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetSteeringPolicyRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPolicyRule {
 		return vs[0].([]GetSteeringPolicyRule)[vs[1].(int)]
@@ -6938,9 +5881,9 @@ type GetSteeringPolicyRuleCase struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas []GetSteeringPolicyRuleCaseAnswerData `pulumi:"answerDatas"`
 	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-	CaseCondition string `pulumi:"caseCondition"`
+	CaseCondition *string `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 }
 
 // GetSteeringPolicyRuleCaseInput is an input type that accepts GetSteeringPolicyRuleCaseArgs and GetSteeringPolicyRuleCaseOutput values.
@@ -6958,9 +5901,9 @@ type GetSteeringPolicyRuleCaseArgs struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas GetSteeringPolicyRuleCaseAnswerDataArrayInput `pulumi:"answerDatas"`
 	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-	CaseCondition pulumi.StringInput `pulumi:"caseCondition"`
+	CaseCondition pulumi.StringPtrInput `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 }
 
 func (GetSteeringPolicyRuleCaseArgs) ElementType() reflect.Type {
@@ -6973,12 +5916,6 @@ func (i GetSteeringPolicyRuleCaseArgs) ToGetSteeringPolicyRuleCaseOutput() GetSt
 
 func (i GetSteeringPolicyRuleCaseArgs) ToGetSteeringPolicyRuleCaseOutputWithContext(ctx context.Context) GetSteeringPolicyRuleCaseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleCaseOutput)
-}
-
-func (i GetSteeringPolicyRuleCaseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRuleCase] {
-	return pulumix.Output[GetSteeringPolicyRuleCase]{
-		OutputState: i.ToGetSteeringPolicyRuleCaseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPolicyRuleCaseArrayInput is an input type that accepts GetSteeringPolicyRuleCaseArray and GetSteeringPolicyRuleCaseArrayOutput values.
@@ -7006,12 +5943,6 @@ func (i GetSteeringPolicyRuleCaseArray) ToGetSteeringPolicyRuleCaseArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleCaseArrayOutput)
 }
 
-func (i GetSteeringPolicyRuleCaseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRuleCase] {
-	return pulumix.Output[[]GetSteeringPolicyRuleCase]{
-		OutputState: i.ToGetSteeringPolicyRuleCaseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPolicyRuleCaseOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPolicyRuleCaseOutput) ElementType() reflect.Type {
@@ -7026,25 +5957,19 @@ func (o GetSteeringPolicyRuleCaseOutput) ToGetSteeringPolicyRuleCaseOutputWithCo
 	return o
 }
 
-func (o GetSteeringPolicyRuleCaseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRuleCase] {
-	return pulumix.Output[GetSteeringPolicyRuleCase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of `SteeringPolicyPriorityAnswerData` objects.
 func (o GetSteeringPolicyRuleCaseOutput) AnswerDatas() GetSteeringPolicyRuleCaseAnswerDataArrayOutput {
 	return o.ApplyT(func(v GetSteeringPolicyRuleCase) []GetSteeringPolicyRuleCaseAnswerData { return v.AnswerDatas }).(GetSteeringPolicyRuleCaseAnswerDataArrayOutput)
 }
 
 // An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-func (o GetSteeringPolicyRuleCaseOutput) CaseCondition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleCase) string { return v.CaseCondition }).(pulumi.StringOutput)
+func (o GetSteeringPolicyRuleCaseOutput) CaseCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleCase) *string { return v.CaseCondition }).(pulumi.StringPtrOutput)
 }
 
 // The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-func (o GetSteeringPolicyRuleCaseOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleCase) int { return v.Count }).(pulumi.IntOutput)
+func (o GetSteeringPolicyRuleCaseOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleCase) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 type GetSteeringPolicyRuleCaseArrayOutput struct{ *pulumi.OutputState }
@@ -7061,12 +5986,6 @@ func (o GetSteeringPolicyRuleCaseArrayOutput) ToGetSteeringPolicyRuleCaseArrayOu
 	return o
 }
 
-func (o GetSteeringPolicyRuleCaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRuleCase] {
-	return pulumix.Output[[]GetSteeringPolicyRuleCase]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPolicyRuleCaseArrayOutput) Index(i pulumi.IntInput) GetSteeringPolicyRuleCaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPolicyRuleCase {
 		return vs[0].([]GetSteeringPolicyRuleCase)[vs[1].(int)]
@@ -7075,11 +5994,11 @@ func (o GetSteeringPolicyRuleCaseArrayOutput) Index(i pulumi.IntInput) GetSteeri
 
 type GetSteeringPolicyRuleCaseAnswerData struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition string `pulumi:"answerCondition"`
+	AnswerCondition *string `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep bool `pulumi:"shouldKeep"`
+	ShouldKeep *bool `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value int `pulumi:"value"`
+	Value *int `pulumi:"value"`
 }
 
 // GetSteeringPolicyRuleCaseAnswerDataInput is an input type that accepts GetSteeringPolicyRuleCaseAnswerDataArgs and GetSteeringPolicyRuleCaseAnswerDataOutput values.
@@ -7095,11 +6014,11 @@ type GetSteeringPolicyRuleCaseAnswerDataInput interface {
 
 type GetSteeringPolicyRuleCaseAnswerDataArgs struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition pulumi.StringInput `pulumi:"answerCondition"`
+	AnswerCondition pulumi.StringPtrInput `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep pulumi.BoolInput `pulumi:"shouldKeep"`
+	ShouldKeep pulumi.BoolPtrInput `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value pulumi.IntInput `pulumi:"value"`
+	Value pulumi.IntPtrInput `pulumi:"value"`
 }
 
 func (GetSteeringPolicyRuleCaseAnswerDataArgs) ElementType() reflect.Type {
@@ -7112,12 +6031,6 @@ func (i GetSteeringPolicyRuleCaseAnswerDataArgs) ToGetSteeringPolicyRuleCaseAnsw
 
 func (i GetSteeringPolicyRuleCaseAnswerDataArgs) ToGetSteeringPolicyRuleCaseAnswerDataOutputWithContext(ctx context.Context) GetSteeringPolicyRuleCaseAnswerDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleCaseAnswerDataOutput)
-}
-
-func (i GetSteeringPolicyRuleCaseAnswerDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[GetSteeringPolicyRuleCaseAnswerData]{
-		OutputState: i.ToGetSteeringPolicyRuleCaseAnswerDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPolicyRuleCaseAnswerDataArrayInput is an input type that accepts GetSteeringPolicyRuleCaseAnswerDataArray and GetSteeringPolicyRuleCaseAnswerDataArrayOutput values.
@@ -7145,12 +6058,6 @@ func (i GetSteeringPolicyRuleCaseAnswerDataArray) ToGetSteeringPolicyRuleCaseAns
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleCaseAnswerDataArrayOutput)
 }
 
-func (i GetSteeringPolicyRuleCaseAnswerDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[[]GetSteeringPolicyRuleCaseAnswerData]{
-		OutputState: i.ToGetSteeringPolicyRuleCaseAnswerDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPolicyRuleCaseAnswerDataOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPolicyRuleCaseAnswerDataOutput) ElementType() reflect.Type {
@@ -7165,25 +6072,19 @@ func (o GetSteeringPolicyRuleCaseAnswerDataOutput) ToGetSteeringPolicyRuleCaseAn
 	return o
 }
 
-func (o GetSteeringPolicyRuleCaseAnswerDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[GetSteeringPolicyRuleCaseAnswerData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-func (o GetSteeringPolicyRuleCaseAnswerDataOutput) AnswerCondition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleCaseAnswerData) string { return v.AnswerCondition }).(pulumi.StringOutput)
+func (o GetSteeringPolicyRuleCaseAnswerDataOutput) AnswerCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleCaseAnswerData) *string { return v.AnswerCondition }).(pulumi.StringPtrOutput)
 }
 
 // Keeps the answer only if the value is `true`.
-func (o GetSteeringPolicyRuleCaseAnswerDataOutput) ShouldKeep() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleCaseAnswerData) bool { return v.ShouldKeep }).(pulumi.BoolOutput)
+func (o GetSteeringPolicyRuleCaseAnswerDataOutput) ShouldKeep() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleCaseAnswerData) *bool { return v.ShouldKeep }).(pulumi.BoolPtrOutput)
 }
 
 // The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-func (o GetSteeringPolicyRuleCaseAnswerDataOutput) Value() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleCaseAnswerData) int { return v.Value }).(pulumi.IntOutput)
+func (o GetSteeringPolicyRuleCaseAnswerDataOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleCaseAnswerData) *int { return v.Value }).(pulumi.IntPtrOutput)
 }
 
 type GetSteeringPolicyRuleCaseAnswerDataArrayOutput struct{ *pulumi.OutputState }
@@ -7200,12 +6101,6 @@ func (o GetSteeringPolicyRuleCaseAnswerDataArrayOutput) ToGetSteeringPolicyRuleC
 	return o
 }
 
-func (o GetSteeringPolicyRuleCaseAnswerDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRuleCaseAnswerData] {
-	return pulumix.Output[[]GetSteeringPolicyRuleCaseAnswerData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSteeringPolicyRuleCaseAnswerDataArrayOutput) Index(i pulumi.IntInput) GetSteeringPolicyRuleCaseAnswerDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSteeringPolicyRuleCaseAnswerData {
 		return vs[0].([]GetSteeringPolicyRuleCaseAnswerData)[vs[1].(int)]
@@ -7214,11 +6109,11 @@ func (o GetSteeringPolicyRuleCaseAnswerDataArrayOutput) Index(i pulumi.IntInput)
 
 type GetSteeringPolicyRuleDefaultAnswerData struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition string `pulumi:"answerCondition"`
+	AnswerCondition *string `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep bool `pulumi:"shouldKeep"`
+	ShouldKeep *bool `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value int `pulumi:"value"`
+	Value *int `pulumi:"value"`
 }
 
 // GetSteeringPolicyRuleDefaultAnswerDataInput is an input type that accepts GetSteeringPolicyRuleDefaultAnswerDataArgs and GetSteeringPolicyRuleDefaultAnswerDataOutput values.
@@ -7234,11 +6129,11 @@ type GetSteeringPolicyRuleDefaultAnswerDataInput interface {
 
 type GetSteeringPolicyRuleDefaultAnswerDataArgs struct {
 	// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-	AnswerCondition pulumi.StringInput `pulumi:"answerCondition"`
+	AnswerCondition pulumi.StringPtrInput `pulumi:"answerCondition"`
 	// Keeps the answer only if the value is `true`.
-	ShouldKeep pulumi.BoolInput `pulumi:"shouldKeep"`
+	ShouldKeep pulumi.BoolPtrInput `pulumi:"shouldKeep"`
 	// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-	Value pulumi.IntInput `pulumi:"value"`
+	Value pulumi.IntPtrInput `pulumi:"value"`
 }
 
 func (GetSteeringPolicyRuleDefaultAnswerDataArgs) ElementType() reflect.Type {
@@ -7251,12 +6146,6 @@ func (i GetSteeringPolicyRuleDefaultAnswerDataArgs) ToGetSteeringPolicyRuleDefau
 
 func (i GetSteeringPolicyRuleDefaultAnswerDataArgs) ToGetSteeringPolicyRuleDefaultAnswerDataOutputWithContext(ctx context.Context) GetSteeringPolicyRuleDefaultAnswerDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleDefaultAnswerDataOutput)
-}
-
-func (i GetSteeringPolicyRuleDefaultAnswerDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[GetSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: i.ToGetSteeringPolicyRuleDefaultAnswerDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSteeringPolicyRuleDefaultAnswerDataArrayInput is an input type that accepts GetSteeringPolicyRuleDefaultAnswerDataArray and GetSteeringPolicyRuleDefaultAnswerDataArrayOutput values.
@@ -7284,12 +6173,6 @@ func (i GetSteeringPolicyRuleDefaultAnswerDataArray) ToGetSteeringPolicyRuleDefa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSteeringPolicyRuleDefaultAnswerDataArrayOutput)
 }
 
-func (i GetSteeringPolicyRuleDefaultAnswerDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[[]GetSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: i.ToGetSteeringPolicyRuleDefaultAnswerDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSteeringPolicyRuleDefaultAnswerDataOutput struct{ *pulumi.OutputState }
 
 func (GetSteeringPolicyRuleDefaultAnswerDataOutput) ElementType() reflect.Type {
@@ -7304,25 +6187,19 @@ func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) ToGetSteeringPolicyRuleDef
 	return o
 }
 
-func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[GetSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) AnswerCondition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleDefaultAnswerData) string { return v.AnswerCondition }).(pulumi.StringOutput)
+func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) AnswerCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleDefaultAnswerData) *string { return v.AnswerCondition }).(pulumi.StringPtrOutput)
 }
 
 // Keeps the answer only if the value is `true`.
-func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) ShouldKeep() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleDefaultAnswerData) bool { return v.ShouldKeep }).(pulumi.BoolOutput)
+func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) ShouldKeep() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleDefaultAnswerData) *bool { return v.ShouldKeep }).(pulumi.BoolPtrOutput)
 }
 
 // The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) Value() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSteeringPolicyRuleDefaultAnswerData) int { return v.Value }).(pulumi.IntOutput)
+func (o GetSteeringPolicyRuleDefaultAnswerDataOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSteeringPolicyRuleDefaultAnswerData) *int { return v.Value }).(pulumi.IntPtrOutput)
 }
 
 type GetSteeringPolicyRuleDefaultAnswerDataArrayOutput struct{ *pulumi.OutputState }
@@ -7337,12 +6214,6 @@ func (o GetSteeringPolicyRuleDefaultAnswerDataArrayOutput) ToGetSteeringPolicyRu
 
 func (o GetSteeringPolicyRuleDefaultAnswerDataArrayOutput) ToGetSteeringPolicyRuleDefaultAnswerDataArrayOutputWithContext(ctx context.Context) GetSteeringPolicyRuleDefaultAnswerDataArrayOutput {
 	return o
-}
-
-func (o GetSteeringPolicyRuleDefaultAnswerDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSteeringPolicyRuleDefaultAnswerData] {
-	return pulumix.Output[[]GetSteeringPolicyRuleDefaultAnswerData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSteeringPolicyRuleDefaultAnswerDataArrayOutput) Index(i pulumi.IntInput) GetSteeringPolicyRuleDefaultAnswerDataOutput {
@@ -7388,12 +6259,6 @@ func (i GetTsigKeysFilterArgs) ToGetTsigKeysFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetTsigKeysFilterOutput)
 }
 
-func (i GetTsigKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTsigKeysFilter] {
-	return pulumix.Output[GetTsigKeysFilter]{
-		OutputState: i.ToGetTsigKeysFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetTsigKeysFilterArrayInput is an input type that accepts GetTsigKeysFilterArray and GetTsigKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetTsigKeysFilterArrayInput` via:
 //
@@ -7419,12 +6284,6 @@ func (i GetTsigKeysFilterArray) ToGetTsigKeysFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetTsigKeysFilterArrayOutput)
 }
 
-func (i GetTsigKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTsigKeysFilter] {
-	return pulumix.Output[[]GetTsigKeysFilter]{
-		OutputState: i.ToGetTsigKeysFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTsigKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTsigKeysFilterOutput) ElementType() reflect.Type {
@@ -7437,12 +6296,6 @@ func (o GetTsigKeysFilterOutput) ToGetTsigKeysFilterOutput() GetTsigKeysFilterOu
 
 func (o GetTsigKeysFilterOutput) ToGetTsigKeysFilterOutputWithContext(ctx context.Context) GetTsigKeysFilterOutput {
 	return o
-}
-
-func (o GetTsigKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTsigKeysFilter] {
-	return pulumix.Output[GetTsigKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of a resource.
@@ -7472,12 +6325,6 @@ func (o GetTsigKeysFilterArrayOutput) ToGetTsigKeysFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetTsigKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTsigKeysFilter] {
-	return pulumix.Output[[]GetTsigKeysFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTsigKeysFilterArrayOutput) Index(i pulumi.IntInput) GetTsigKeysFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTsigKeysFilter {
 		return vs[0].([]GetTsigKeysFilter)[vs[1].(int)]
@@ -7486,27 +6333,27 @@ func (o GetTsigKeysFilterArrayOutput) Index(i pulumi.IntInput) GetTsigKeysFilter
 
 type GetTsigKeysTsigKey struct {
 	// TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-	Algorithm string `pulumi:"algorithm"`
+	Algorithm *string `pulumi:"algorithm"`
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of a resource.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A base64 string encoding the binary shared secret.
-	Secret string `pulumi:"secret"`
+	Secret *string `pulumi:"secret"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The state of a resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetTsigKeysTsigKeyInput is an input type that accepts GetTsigKeysTsigKeyArgs and GetTsigKeysTsigKeyOutput values.
@@ -7522,27 +6369,27 @@ type GetTsigKeysTsigKeyInput interface {
 
 type GetTsigKeysTsigKeyArgs struct {
 	// TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of a resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The name of a resource.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A base64 string encoding the binary shared secret.
-	Secret pulumi.StringInput `pulumi:"secret"`
+	Secret pulumi.StringPtrInput `pulumi:"secret"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The state of a resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetTsigKeysTsigKeyArgs) ElementType() reflect.Type {
@@ -7555,12 +6402,6 @@ func (i GetTsigKeysTsigKeyArgs) ToGetTsigKeysTsigKeyOutput() GetTsigKeysTsigKeyO
 
 func (i GetTsigKeysTsigKeyArgs) ToGetTsigKeysTsigKeyOutputWithContext(ctx context.Context) GetTsigKeysTsigKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTsigKeysTsigKeyOutput)
-}
-
-func (i GetTsigKeysTsigKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetTsigKeysTsigKey] {
-	return pulumix.Output[GetTsigKeysTsigKey]{
-		OutputState: i.ToGetTsigKeysTsigKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTsigKeysTsigKeyArrayInput is an input type that accepts GetTsigKeysTsigKeyArray and GetTsigKeysTsigKeyArrayOutput values.
@@ -7588,12 +6429,6 @@ func (i GetTsigKeysTsigKeyArray) ToGetTsigKeysTsigKeyArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetTsigKeysTsigKeyArrayOutput)
 }
 
-func (i GetTsigKeysTsigKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTsigKeysTsigKey] {
-	return pulumix.Output[[]GetTsigKeysTsigKey]{
-		OutputState: i.ToGetTsigKeysTsigKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTsigKeysTsigKeyOutput struct{ *pulumi.OutputState }
 
 func (GetTsigKeysTsigKeyOutput) ElementType() reflect.Type {
@@ -7608,20 +6443,14 @@ func (o GetTsigKeysTsigKeyOutput) ToGetTsigKeysTsigKeyOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetTsigKeysTsigKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetTsigKeysTsigKey] {
-	return pulumix.Output[GetTsigKeysTsigKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-func (o GetTsigKeysTsigKeyOutput) Algorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment the resource belongs to.
-func (o GetTsigKeysTsigKeyOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -7635,38 +6464,38 @@ func (o GetTsigKeysTsigKeyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of a resource.
-func (o GetTsigKeysTsigKeyOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of a resource.
-func (o GetTsigKeysTsigKeyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.Name }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A base64 string encoding the binary shared secret.
-func (o GetTsigKeysTsigKeyOutput) Secret() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.Secret }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) Secret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.Secret }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o GetTsigKeysTsigKeyOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.Self }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The state of a resource.
-func (o GetTsigKeysTsigKeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.State }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in RFC 3339 timestamp format.
-func (o GetTsigKeysTsigKeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-func (o GetTsigKeysTsigKeyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetTsigKeysTsigKeyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetTsigKeysTsigKeyArrayOutput struct{ *pulumi.OutputState }
@@ -7681,12 +6510,6 @@ func (o GetTsigKeysTsigKeyArrayOutput) ToGetTsigKeysTsigKeyArrayOutput() GetTsig
 
 func (o GetTsigKeysTsigKeyArrayOutput) ToGetTsigKeysTsigKeyArrayOutputWithContext(ctx context.Context) GetTsigKeysTsigKeyArrayOutput {
 	return o
-}
-
-func (o GetTsigKeysTsigKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTsigKeysTsigKey] {
-	return pulumix.Output[[]GetTsigKeysTsigKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetTsigKeysTsigKeyArrayOutput) Index(i pulumi.IntInput) GetTsigKeysTsigKeyOutput {
@@ -7730,12 +6553,6 @@ func (i GetViewsFilterArgs) ToGetViewsFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetViewsFilterOutput)
 }
 
-func (i GetViewsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetViewsFilter] {
-	return pulumix.Output[GetViewsFilter]{
-		OutputState: i.ToGetViewsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetViewsFilterArrayInput is an input type that accepts GetViewsFilterArray and GetViewsFilterArrayOutput values.
 // You can construct a concrete instance of `GetViewsFilterArrayInput` via:
 //
@@ -7761,12 +6578,6 @@ func (i GetViewsFilterArray) ToGetViewsFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetViewsFilterArrayOutput)
 }
 
-func (i GetViewsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetViewsFilter] {
-	return pulumix.Output[[]GetViewsFilter]{
-		OutputState: i.ToGetViewsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetViewsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetViewsFilterOutput) ElementType() reflect.Type {
@@ -7779,12 +6590,6 @@ func (o GetViewsFilterOutput) ToGetViewsFilterOutput() GetViewsFilterOutput {
 
 func (o GetViewsFilterOutput) ToGetViewsFilterOutputWithContext(ctx context.Context) GetViewsFilterOutput {
 	return o
-}
-
-func (o GetViewsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetViewsFilter] {
-	return pulumix.Output[GetViewsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetViewsFilterOutput) Name() pulumi.StringOutput {
@@ -7813,12 +6618,6 @@ func (o GetViewsFilterArrayOutput) ToGetViewsFilterArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetViewsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetViewsFilter] {
-	return pulumix.Output[[]GetViewsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetViewsFilterArrayOutput) Index(i pulumi.IntInput) GetViewsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetViewsFilter {
 		return vs[0].([]GetViewsFilter)[vs[1].(int)]
@@ -7827,27 +6626,27 @@ func (o GetViewsFilterArrayOutput) Index(i pulumi.IntInput) GetViewsFilterOutput
 
 type GetViewsView struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool `pulumi:"isProtected"`
+	IsProtected *bool `pulumi:"isProtected"`
 	// Value must be `PRIVATE` when listing private views.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The state of a resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetViewsViewInput is an input type that accepts GetViewsViewArgs and GetViewsViewOutput values.
@@ -7863,27 +6662,27 @@ type GetViewsViewInput interface {
 
 type GetViewsViewArgs struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of a resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrInput `pulumi:"isProtected"`
 	// Value must be `PRIVATE` when listing private views.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The state of a resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetViewsViewArgs) ElementType() reflect.Type {
@@ -7896,12 +6695,6 @@ func (i GetViewsViewArgs) ToGetViewsViewOutput() GetViewsViewOutput {
 
 func (i GetViewsViewArgs) ToGetViewsViewOutputWithContext(ctx context.Context) GetViewsViewOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetViewsViewOutput)
-}
-
-func (i GetViewsViewArgs) ToOutput(ctx context.Context) pulumix.Output[GetViewsView] {
-	return pulumix.Output[GetViewsView]{
-		OutputState: i.ToGetViewsViewOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetViewsViewArrayInput is an input type that accepts GetViewsViewArray and GetViewsViewArrayOutput values.
@@ -7929,12 +6722,6 @@ func (i GetViewsViewArray) ToGetViewsViewArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetViewsViewArrayOutput)
 }
 
-func (i GetViewsViewArray) ToOutput(ctx context.Context) pulumix.Output[[]GetViewsView] {
-	return pulumix.Output[[]GetViewsView]{
-		OutputState: i.ToGetViewsViewArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetViewsViewOutput struct{ *pulumi.OutputState }
 
 func (GetViewsViewOutput) ElementType() reflect.Type {
@@ -7949,15 +6736,9 @@ func (o GetViewsViewOutput) ToGetViewsViewOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o GetViewsViewOutput) ToOutput(ctx context.Context) pulumix.Output[GetViewsView] {
-	return pulumix.Output[GetViewsView]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment the resource belongs to.
-func (o GetViewsViewOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -7966,8 +6747,8 @@ func (o GetViewsViewOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The displayName of a resource.
-func (o GetViewsViewOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -7976,38 +6757,38 @@ func (o GetViewsViewOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of a resource.
-func (o GetViewsViewOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.Id }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o GetViewsViewOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetViewsView) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o GetViewsViewOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // Value must be `PRIVATE` when listing private views.
-func (o GetViewsViewOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.Scope }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o GetViewsViewOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.Self }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The state of a resource.
-func (o GetViewsViewOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.State }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetViewsViewOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetViewsViewOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsView) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetViewsViewOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsView) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetViewsViewArrayOutput struct{ *pulumi.OutputState }
@@ -8022,12 +6803,6 @@ func (o GetViewsViewArrayOutput) ToGetViewsViewArrayOutput() GetViewsViewArrayOu
 
 func (o GetViewsViewArrayOutput) ToGetViewsViewArrayOutputWithContext(ctx context.Context) GetViewsViewArrayOutput {
 	return o
-}
-
-func (o GetViewsViewArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetViewsView] {
-	return pulumix.Output[[]GetViewsView]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetViewsViewArrayOutput) Index(i pulumi.IntInput) GetViewsViewOutput {
@@ -8073,12 +6848,6 @@ func (i GetZonesFilterArgs) ToGetZonesFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesFilterOutput)
 }
 
-func (i GetZonesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetZonesFilter] {
-	return pulumix.Output[GetZonesFilter]{
-		OutputState: i.ToGetZonesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetZonesFilterArrayInput is an input type that accepts GetZonesFilterArray and GetZonesFilterArrayOutput values.
 // You can construct a concrete instance of `GetZonesFilterArrayInput` via:
 //
@@ -8104,12 +6873,6 @@ func (i GetZonesFilterArray) ToGetZonesFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesFilterArrayOutput)
 }
 
-func (i GetZonesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesFilter] {
-	return pulumix.Output[[]GetZonesFilter]{
-		OutputState: i.ToGetZonesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetZonesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetZonesFilterOutput) ElementType() reflect.Type {
@@ -8122,12 +6885,6 @@ func (o GetZonesFilterOutput) ToGetZonesFilterOutput() GetZonesFilterOutput {
 
 func (o GetZonesFilterOutput) ToGetZonesFilterOutputWithContext(ctx context.Context) GetZonesFilterOutput {
 	return o
-}
-
-func (o GetZonesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesFilter] {
-	return pulumix.Output[GetZonesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
@@ -8157,12 +6914,6 @@ func (o GetZonesFilterArrayOutput) ToGetZonesFilterArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetZonesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesFilter] {
-	return pulumix.Output[[]GetZonesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetZonesFilterArrayOutput) Index(i pulumi.IntInput) GetZonesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesFilter {
 		return vs[0].([]GetZonesFilter)[vs[1].(int)]
@@ -8171,7 +6922,7 @@ func (o GetZonesFilterArrayOutput) Index(i pulumi.IntInput) GetZonesFilterOutput
 
 type GetZonesZone struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -8181,32 +6932,32 @@ type GetZonesZone struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the zone.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool `pulumi:"isProtected"`
+	IsProtected *bool `pulumi:"isProtected"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The authoritative nameservers for the zone.
 	Nameservers []GetZonesZoneNameserver `pulumi:"nameservers"`
 	// Specifies to operate only on resources that have a matching DNS scope. This value will be null
 	// for zones in the global DNS and `PRIVATE` when listing private zones.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current serial of the zone. As seen in the zone's SOA record.
-	Serial int `pulumi:"serial"`
+	Serial *int `pulumi:"serial"`
 	// The state of a resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 	// The OCID of the view the resource is associated with.
-	ViewId string `pulumi:"viewId"`
+	ViewId *string `pulumi:"viewId"`
 	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
 	ZoneTransferServers []GetZonesZoneZoneTransferServer `pulumi:"zoneTransferServers"`
 	// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
-	ZoneType string `pulumi:"zoneType"`
+	ZoneType *string `pulumi:"zoneType"`
 }
 
 // GetZonesZoneInput is an input type that accepts GetZonesZoneArgs and GetZonesZoneOutput values.
@@ -8222,7 +6973,7 @@ type GetZonesZoneInput interface {
 
 type GetZonesZoneArgs struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -8232,32 +6983,32 @@ type GetZonesZoneArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the zone.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrInput `pulumi:"isProtected"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The authoritative nameservers for the zone.
 	Nameservers GetZonesZoneNameserverArrayInput `pulumi:"nameservers"`
 	// Specifies to operate only on resources that have a matching DNS scope. This value will be null
 	// for zones in the global DNS and `PRIVATE` when listing private zones.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringInput `pulumi:"self"`
+	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The current serial of the zone. As seen in the zone's SOA record.
-	Serial pulumi.IntInput `pulumi:"serial"`
+	Serial pulumi.IntPtrInput `pulumi:"serial"`
 	// The state of a resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 	// The OCID of the view the resource is associated with.
-	ViewId pulumi.StringInput `pulumi:"viewId"`
+	ViewId pulumi.StringPtrInput `pulumi:"viewId"`
 	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
 	ZoneTransferServers GetZonesZoneZoneTransferServerArrayInput `pulumi:"zoneTransferServers"`
 	// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
-	ZoneType pulumi.StringInput `pulumi:"zoneType"`
+	ZoneType pulumi.StringPtrInput `pulumi:"zoneType"`
 }
 
 func (GetZonesZoneArgs) ElementType() reflect.Type {
@@ -8270,12 +7021,6 @@ func (i GetZonesZoneArgs) ToGetZonesZoneOutput() GetZonesZoneOutput {
 
 func (i GetZonesZoneArgs) ToGetZonesZoneOutputWithContext(ctx context.Context) GetZonesZoneOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneOutput)
-}
-
-func (i GetZonesZoneArgs) ToOutput(ctx context.Context) pulumix.Output[GetZonesZone] {
-	return pulumix.Output[GetZonesZone]{
-		OutputState: i.ToGetZonesZoneOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetZonesZoneArrayInput is an input type that accepts GetZonesZoneArray and GetZonesZoneArrayOutput values.
@@ -8303,12 +7048,6 @@ func (i GetZonesZoneArray) ToGetZonesZoneArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneArrayOutput)
 }
 
-func (i GetZonesZoneArray) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZone] {
-	return pulumix.Output[[]GetZonesZone]{
-		OutputState: i.ToGetZonesZoneArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetZonesZoneOutput struct{ *pulumi.OutputState }
 
 func (GetZonesZoneOutput) ElementType() reflect.Type {
@@ -8323,15 +7062,9 @@ func (o GetZonesZoneOutput) ToGetZonesZoneOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o GetZonesZoneOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesZone] {
-	return pulumix.Output[GetZonesZone]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment the resource belongs to.
-func (o GetZonesZoneOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -8355,18 +7088,18 @@ func (o GetZonesZoneOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the zone.
-func (o GetZonesZoneOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.Id }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o GetZonesZoneOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetZonesZone) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o GetZonesZoneOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-func (o GetZonesZoneOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.Name }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The authoritative nameservers for the zone.
@@ -8376,38 +7109,38 @@ func (o GetZonesZoneOutput) Nameservers() GetZonesZoneNameserverArrayOutput {
 
 // Specifies to operate only on resources that have a matching DNS scope. This value will be null
 // for zones in the global DNS and `PRIVATE` when listing private zones.
-func (o GetZonesZoneOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.Scope }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o GetZonesZoneOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.Self }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current serial of the zone. As seen in the zone's SOA record.
-func (o GetZonesZoneOutput) Serial() pulumi.IntOutput {
-	return o.ApplyT(func(v GetZonesZone) int { return v.Serial }).(pulumi.IntOutput)
+func (o GetZonesZoneOutput) Serial() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *int { return v.Serial }).(pulumi.IntPtrOutput)
 }
 
 // The state of a resource.
-func (o GetZonesZoneOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.State }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o GetZonesZoneOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-func (o GetZonesZoneOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.Version }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the view the resource is associated with.
-func (o GetZonesZoneOutput) ViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.ViewId }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) ViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.ViewId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
@@ -8416,8 +7149,8 @@ func (o GetZonesZoneOutput) ZoneTransferServers() GetZonesZoneZoneTransferServer
 }
 
 // Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
-func (o GetZonesZoneOutput) ZoneType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZone) string { return v.ZoneType }).(pulumi.StringOutput)
+func (o GetZonesZoneOutput) ZoneType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZone) *string { return v.ZoneType }).(pulumi.StringPtrOutput)
 }
 
 type GetZonesZoneArrayOutput struct{ *pulumi.OutputState }
@@ -8434,12 +7167,6 @@ func (o GetZonesZoneArrayOutput) ToGetZonesZoneArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetZonesZoneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZone] {
-	return pulumix.Output[[]GetZonesZone]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetZonesZoneArrayOutput) Index(i pulumi.IntInput) GetZonesZoneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZone {
 		return vs[0].([]GetZonesZone)[vs[1].(int)]
@@ -8448,11 +7175,11 @@ func (o GetZonesZoneArrayOutput) Index(i pulumi.IntInput) GetZonesZoneOutput {
 
 type GetZonesZoneExternalDownstream struct {
 	// The server's IP address (IPv4 or IPv6).
-	Address string `pulumi:"address"`
+	Address *string `pulumi:"address"`
 	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
-	TsigKeyId string `pulumi:"tsigKeyId"`
+	TsigKeyId *string `pulumi:"tsigKeyId"`
 }
 
 // GetZonesZoneExternalDownstreamInput is an input type that accepts GetZonesZoneExternalDownstreamArgs and GetZonesZoneExternalDownstreamOutput values.
@@ -8468,11 +7195,11 @@ type GetZonesZoneExternalDownstreamInput interface {
 
 type GetZonesZoneExternalDownstreamArgs struct {
 	// The server's IP address (IPv4 or IPv6).
-	Address pulumi.StringInput `pulumi:"address"`
+	Address pulumi.StringPtrInput `pulumi:"address"`
 	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
-	TsigKeyId pulumi.StringInput `pulumi:"tsigKeyId"`
+	TsigKeyId pulumi.StringPtrInput `pulumi:"tsigKeyId"`
 }
 
 func (GetZonesZoneExternalDownstreamArgs) ElementType() reflect.Type {
@@ -8485,12 +7212,6 @@ func (i GetZonesZoneExternalDownstreamArgs) ToGetZonesZoneExternalDownstreamOutp
 
 func (i GetZonesZoneExternalDownstreamArgs) ToGetZonesZoneExternalDownstreamOutputWithContext(ctx context.Context) GetZonesZoneExternalDownstreamOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneExternalDownstreamOutput)
-}
-
-func (i GetZonesZoneExternalDownstreamArgs) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneExternalDownstream] {
-	return pulumix.Output[GetZonesZoneExternalDownstream]{
-		OutputState: i.ToGetZonesZoneExternalDownstreamOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetZonesZoneExternalDownstreamArrayInput is an input type that accepts GetZonesZoneExternalDownstreamArray and GetZonesZoneExternalDownstreamArrayOutput values.
@@ -8518,12 +7239,6 @@ func (i GetZonesZoneExternalDownstreamArray) ToGetZonesZoneExternalDownstreamArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneExternalDownstreamArrayOutput)
 }
 
-func (i GetZonesZoneExternalDownstreamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneExternalDownstream] {
-	return pulumix.Output[[]GetZonesZoneExternalDownstream]{
-		OutputState: i.ToGetZonesZoneExternalDownstreamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetZonesZoneExternalDownstreamOutput struct{ *pulumi.OutputState }
 
 func (GetZonesZoneExternalDownstreamOutput) ElementType() reflect.Type {
@@ -8538,25 +7253,19 @@ func (o GetZonesZoneExternalDownstreamOutput) ToGetZonesZoneExternalDownstreamOu
 	return o
 }
 
-func (o GetZonesZoneExternalDownstreamOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneExternalDownstream] {
-	return pulumix.Output[GetZonesZoneExternalDownstream]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The server's IP address (IPv4 or IPv6).
-func (o GetZonesZoneExternalDownstreamOutput) Address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZoneExternalDownstream) string { return v.Address }).(pulumi.StringOutput)
+func (o GetZonesZoneExternalDownstreamOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalDownstream) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
 // The server's port. Port value must be a value of 53, otherwise omit the port value.
-func (o GetZonesZoneExternalDownstreamOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetZonesZoneExternalDownstream) int { return v.Port }).(pulumi.IntOutput)
+func (o GetZonesZoneExternalDownstreamOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalDownstream) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Search for zones that are associated with a TSIG key.
-func (o GetZonesZoneExternalDownstreamOutput) TsigKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZoneExternalDownstream) string { return v.TsigKeyId }).(pulumi.StringOutput)
+func (o GetZonesZoneExternalDownstreamOutput) TsigKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalDownstream) *string { return v.TsigKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetZonesZoneExternalDownstreamArrayOutput struct{ *pulumi.OutputState }
@@ -8573,12 +7282,6 @@ func (o GetZonesZoneExternalDownstreamArrayOutput) ToGetZonesZoneExternalDownstr
 	return o
 }
 
-func (o GetZonesZoneExternalDownstreamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneExternalDownstream] {
-	return pulumix.Output[[]GetZonesZoneExternalDownstream]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetZonesZoneExternalDownstreamArrayOutput) Index(i pulumi.IntInput) GetZonesZoneExternalDownstreamOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneExternalDownstream {
 		return vs[0].([]GetZonesZoneExternalDownstream)[vs[1].(int)]
@@ -8587,11 +7290,11 @@ func (o GetZonesZoneExternalDownstreamArrayOutput) Index(i pulumi.IntInput) GetZ
 
 type GetZonesZoneExternalMaster struct {
 	// The server's IP address (IPv4 or IPv6).
-	Address string `pulumi:"address"`
+	Address *string `pulumi:"address"`
 	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
-	TsigKeyId string `pulumi:"tsigKeyId"`
+	TsigKeyId *string `pulumi:"tsigKeyId"`
 }
 
 // GetZonesZoneExternalMasterInput is an input type that accepts GetZonesZoneExternalMasterArgs and GetZonesZoneExternalMasterOutput values.
@@ -8607,11 +7310,11 @@ type GetZonesZoneExternalMasterInput interface {
 
 type GetZonesZoneExternalMasterArgs struct {
 	// The server's IP address (IPv4 or IPv6).
-	Address pulumi.StringInput `pulumi:"address"`
+	Address pulumi.StringPtrInput `pulumi:"address"`
 	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
-	TsigKeyId pulumi.StringInput `pulumi:"tsigKeyId"`
+	TsigKeyId pulumi.StringPtrInput `pulumi:"tsigKeyId"`
 }
 
 func (GetZonesZoneExternalMasterArgs) ElementType() reflect.Type {
@@ -8624,12 +7327,6 @@ func (i GetZonesZoneExternalMasterArgs) ToGetZonesZoneExternalMasterOutput() Get
 
 func (i GetZonesZoneExternalMasterArgs) ToGetZonesZoneExternalMasterOutputWithContext(ctx context.Context) GetZonesZoneExternalMasterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneExternalMasterOutput)
-}
-
-func (i GetZonesZoneExternalMasterArgs) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneExternalMaster] {
-	return pulumix.Output[GetZonesZoneExternalMaster]{
-		OutputState: i.ToGetZonesZoneExternalMasterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetZonesZoneExternalMasterArrayInput is an input type that accepts GetZonesZoneExternalMasterArray and GetZonesZoneExternalMasterArrayOutput values.
@@ -8657,12 +7354,6 @@ func (i GetZonesZoneExternalMasterArray) ToGetZonesZoneExternalMasterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneExternalMasterArrayOutput)
 }
 
-func (i GetZonesZoneExternalMasterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneExternalMaster] {
-	return pulumix.Output[[]GetZonesZoneExternalMaster]{
-		OutputState: i.ToGetZonesZoneExternalMasterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetZonesZoneExternalMasterOutput struct{ *pulumi.OutputState }
 
 func (GetZonesZoneExternalMasterOutput) ElementType() reflect.Type {
@@ -8677,25 +7368,19 @@ func (o GetZonesZoneExternalMasterOutput) ToGetZonesZoneExternalMasterOutputWith
 	return o
 }
 
-func (o GetZonesZoneExternalMasterOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneExternalMaster] {
-	return pulumix.Output[GetZonesZoneExternalMaster]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The server's IP address (IPv4 or IPv6).
-func (o GetZonesZoneExternalMasterOutput) Address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZoneExternalMaster) string { return v.Address }).(pulumi.StringOutput)
+func (o GetZonesZoneExternalMasterOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalMaster) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
 // The server's port. Port value must be a value of 53, otherwise omit the port value.
-func (o GetZonesZoneExternalMasterOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetZonesZoneExternalMaster) int { return v.Port }).(pulumi.IntOutput)
+func (o GetZonesZoneExternalMasterOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalMaster) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Search for zones that are associated with a TSIG key.
-func (o GetZonesZoneExternalMasterOutput) TsigKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZoneExternalMaster) string { return v.TsigKeyId }).(pulumi.StringOutput)
+func (o GetZonesZoneExternalMasterOutput) TsigKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalMaster) *string { return v.TsigKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetZonesZoneExternalMasterArrayOutput struct{ *pulumi.OutputState }
@@ -8712,12 +7397,6 @@ func (o GetZonesZoneExternalMasterArrayOutput) ToGetZonesZoneExternalMasterArray
 	return o
 }
 
-func (o GetZonesZoneExternalMasterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneExternalMaster] {
-	return pulumix.Output[[]GetZonesZoneExternalMaster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetZonesZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) GetZonesZoneExternalMasterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneExternalMaster {
 		return vs[0].([]GetZonesZoneExternalMaster)[vs[1].(int)]
@@ -8726,7 +7405,7 @@ func (o GetZonesZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) GetZones
 
 type GetZonesZoneNameserver struct {
 	// The hostname of the nameserver.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetZonesZoneNameserverInput is an input type that accepts GetZonesZoneNameserverArgs and GetZonesZoneNameserverOutput values.
@@ -8742,7 +7421,7 @@ type GetZonesZoneNameserverInput interface {
 
 type GetZonesZoneNameserverArgs struct {
 	// The hostname of the nameserver.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetZonesZoneNameserverArgs) ElementType() reflect.Type {
@@ -8755,12 +7434,6 @@ func (i GetZonesZoneNameserverArgs) ToGetZonesZoneNameserverOutput() GetZonesZon
 
 func (i GetZonesZoneNameserverArgs) ToGetZonesZoneNameserverOutputWithContext(ctx context.Context) GetZonesZoneNameserverOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneNameserverOutput)
-}
-
-func (i GetZonesZoneNameserverArgs) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneNameserver] {
-	return pulumix.Output[GetZonesZoneNameserver]{
-		OutputState: i.ToGetZonesZoneNameserverOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetZonesZoneNameserverArrayInput is an input type that accepts GetZonesZoneNameserverArray and GetZonesZoneNameserverArrayOutput values.
@@ -8788,12 +7461,6 @@ func (i GetZonesZoneNameserverArray) ToGetZonesZoneNameserverArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneNameserverArrayOutput)
 }
 
-func (i GetZonesZoneNameserverArray) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneNameserver] {
-	return pulumix.Output[[]GetZonesZoneNameserver]{
-		OutputState: i.ToGetZonesZoneNameserverArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetZonesZoneNameserverOutput struct{ *pulumi.OutputState }
 
 func (GetZonesZoneNameserverOutput) ElementType() reflect.Type {
@@ -8808,15 +7475,9 @@ func (o GetZonesZoneNameserverOutput) ToGetZonesZoneNameserverOutputWithContext(
 	return o
 }
 
-func (o GetZonesZoneNameserverOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneNameserver] {
-	return pulumix.Output[GetZonesZoneNameserver]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostname of the nameserver.
-func (o GetZonesZoneNameserverOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZoneNameserver) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetZonesZoneNameserverOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneNameserver) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetZonesZoneNameserverArrayOutput struct{ *pulumi.OutputState }
@@ -8833,12 +7494,6 @@ func (o GetZonesZoneNameserverArrayOutput) ToGetZonesZoneNameserverArrayOutputWi
 	return o
 }
 
-func (o GetZonesZoneNameserverArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneNameserver] {
-	return pulumix.Output[[]GetZonesZoneNameserver]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetZonesZoneNameserverArrayOutput) Index(i pulumi.IntInput) GetZonesZoneNameserverOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneNameserver {
 		return vs[0].([]GetZonesZoneNameserver)[vs[1].(int)]
@@ -8847,13 +7502,13 @@ func (o GetZonesZoneNameserverArrayOutput) Index(i pulumi.IntInput) GetZonesZone
 
 type GetZonesZoneZoneTransferServer struct {
 	// The server's IP address (IPv4 or IPv6).
-	Address string `pulumi:"address"`
+	Address *string `pulumi:"address"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
-	IsTransferDestination bool `pulumi:"isTransferDestination"`
+	IsTransferDestination *bool `pulumi:"isTransferDestination"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer source.
-	IsTransferSource bool `pulumi:"isTransferSource"`
+	IsTransferSource *bool `pulumi:"isTransferSource"`
 	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 }
 
 // GetZonesZoneZoneTransferServerInput is an input type that accepts GetZonesZoneZoneTransferServerArgs and GetZonesZoneZoneTransferServerOutput values.
@@ -8869,13 +7524,13 @@ type GetZonesZoneZoneTransferServerInput interface {
 
 type GetZonesZoneZoneTransferServerArgs struct {
 	// The server's IP address (IPv4 or IPv6).
-	Address pulumi.StringInput `pulumi:"address"`
+	Address pulumi.StringPtrInput `pulumi:"address"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
-	IsTransferDestination pulumi.BoolInput `pulumi:"isTransferDestination"`
+	IsTransferDestination pulumi.BoolPtrInput `pulumi:"isTransferDestination"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer source.
-	IsTransferSource pulumi.BoolInput `pulumi:"isTransferSource"`
+	IsTransferSource pulumi.BoolPtrInput `pulumi:"isTransferSource"`
 	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
 func (GetZonesZoneZoneTransferServerArgs) ElementType() reflect.Type {
@@ -8888,12 +7543,6 @@ func (i GetZonesZoneZoneTransferServerArgs) ToGetZonesZoneZoneTransferServerOutp
 
 func (i GetZonesZoneZoneTransferServerArgs) ToGetZonesZoneZoneTransferServerOutputWithContext(ctx context.Context) GetZonesZoneZoneTransferServerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneZoneTransferServerOutput)
-}
-
-func (i GetZonesZoneZoneTransferServerArgs) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneZoneTransferServer] {
-	return pulumix.Output[GetZonesZoneZoneTransferServer]{
-		OutputState: i.ToGetZonesZoneZoneTransferServerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetZonesZoneZoneTransferServerArrayInput is an input type that accepts GetZonesZoneZoneTransferServerArray and GetZonesZoneZoneTransferServerArrayOutput values.
@@ -8921,12 +7570,6 @@ func (i GetZonesZoneZoneTransferServerArray) ToGetZonesZoneZoneTransferServerArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneZoneTransferServerArrayOutput)
 }
 
-func (i GetZonesZoneZoneTransferServerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneZoneTransferServer] {
-	return pulumix.Output[[]GetZonesZoneZoneTransferServer]{
-		OutputState: i.ToGetZonesZoneZoneTransferServerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetZonesZoneZoneTransferServerOutput struct{ *pulumi.OutputState }
 
 func (GetZonesZoneZoneTransferServerOutput) ElementType() reflect.Type {
@@ -8941,30 +7584,24 @@ func (o GetZonesZoneZoneTransferServerOutput) ToGetZonesZoneZoneTransferServerOu
 	return o
 }
 
-func (o GetZonesZoneZoneTransferServerOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesZoneZoneTransferServer] {
-	return pulumix.Output[GetZonesZoneZoneTransferServer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The server's IP address (IPv4 or IPv6).
-func (o GetZonesZoneZoneTransferServerOutput) Address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) string { return v.Address }).(pulumi.StringOutput)
+func (o GetZonesZoneZoneTransferServerOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the server is a zone data transfer destination.
-func (o GetZonesZoneZoneTransferServerOutput) IsTransferDestination() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) bool { return v.IsTransferDestination }).(pulumi.BoolOutput)
+func (o GetZonesZoneZoneTransferServerOutput) IsTransferDestination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) *bool { return v.IsTransferDestination }).(pulumi.BoolPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the server is a zone data transfer source.
-func (o GetZonesZoneZoneTransferServerOutput) IsTransferSource() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) bool { return v.IsTransferSource }).(pulumi.BoolOutput)
+func (o GetZonesZoneZoneTransferServerOutput) IsTransferSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) *bool { return v.IsTransferSource }).(pulumi.BoolPtrOutput)
 }
 
 // The server's port. Port value must be a value of 53, otherwise omit the port value.
-func (o GetZonesZoneZoneTransferServerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) int { return v.Port }).(pulumi.IntOutput)
+func (o GetZonesZoneZoneTransferServerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 type GetZonesZoneZoneTransferServerArrayOutput struct{ *pulumi.OutputState }
@@ -8979,12 +7616,6 @@ func (o GetZonesZoneZoneTransferServerArrayOutput) ToGetZonesZoneZoneTransferSer
 
 func (o GetZonesZoneZoneTransferServerArrayOutput) ToGetZonesZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) GetZonesZoneZoneTransferServerArrayOutput {
 	return o
-}
-
-func (o GetZonesZoneZoneTransferServerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetZonesZoneZoneTransferServer] {
-	return pulumix.Output[[]GetZonesZoneZoneTransferServer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetZonesZoneZoneTransferServerArrayOutput) Index(i pulumi.IntInput) GetZonesZoneZoneTransferServerOutput {

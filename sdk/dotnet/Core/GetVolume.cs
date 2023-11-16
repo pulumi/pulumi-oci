@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The number of Volume Performance Units per GB that this volume is effectively tuned to.
         /// </summary>
-        public readonly string AutoTunedVpusPerGb;
+        public readonly string? AutoTunedVpusPerGb;
         /// <summary>
         /// The list of autotune policies enabled for this volume.
         /// </summary>
@@ -116,126 +116,126 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
-        public readonly string BackupPolicyId;
+        public readonly string? AvailabilityDomain;
+        public readonly string? BackupPolicyId;
         /// <summary>
         /// The list of block volume replicas of this volume.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeBlockVolumeReplicaResult> BlockVolumeReplicas;
-        public readonly bool BlockVolumeReplicasDeletion;
+        public readonly bool? BlockVolumeReplicasDeletion;
         /// <summary>
         /// The OCID of the compartment that contains the volume.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the block volume replica.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
-        public readonly bool IsAutoTuneEnabled;
+        public readonly bool? IsAutoTuneEnabled;
         /// <summary>
         /// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         /// </summary>
-        public readonly bool IsHydrated;
+        public readonly bool? IsHydrated;
         /// <summary>
         /// The OCID of the Vault service key which is the master encryption key for the volume.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The size of the volume in GBs.
         /// </summary>
-        public readonly string SizeInGbs;
+        public readonly string? SizeInGbs;
         /// <summary>
         /// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
         /// </summary>
-        public readonly string SizeInMbs;
+        public readonly string? SizeInMbs;
         public readonly ImmutableArray<Outputs.GetVolumeSourceDetailResult> SourceDetails;
         /// <summary>
         /// The current state of a volume.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly string VolumeBackupId;
+        public readonly string? TimeCreated;
+        public readonly string? VolumeBackupId;
         /// <summary>
         /// The OCID of the source volume group.
         /// </summary>
-        public readonly string VolumeGroupId;
+        public readonly string? VolumeGroupId;
         public readonly string VolumeId;
         /// <summary>
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
-        public readonly string VpusPerGb;
+        public readonly string? VpusPerGb;
 
         [OutputConstructor]
         private GetVolumeResult(
-            string autoTunedVpusPerGb,
+            string? autoTunedVpusPerGb,
 
             ImmutableArray<Outputs.GetVolumeAutotunePolicyResult> autotunePolicies,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string backupPolicyId,
+            string? backupPolicyId,
 
             ImmutableArray<Outputs.GetVolumeBlockVolumeReplicaResult> blockVolumeReplicas,
 
-            bool blockVolumeReplicasDeletion,
+            bool? blockVolumeReplicasDeletion,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isAutoTuneEnabled,
+            bool? isAutoTuneEnabled,
 
-            bool isHydrated,
+            bool? isHydrated,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string sizeInGbs,
+            string? sizeInGbs,
 
-            string sizeInMbs,
+            string? sizeInMbs,
 
             ImmutableArray<Outputs.GetVolumeSourceDetailResult> sourceDetails,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string volumeBackupId,
+            string? volumeBackupId,
 
-            string volumeGroupId,
+            string? volumeGroupId,
 
             string volumeId,
 
-            string vpusPerGb)
+            string? vpusPerGb)
         {
             AutoTunedVpusPerGb = autoTunedVpusPerGb;
             AutotunePolicies = autotunePolicies;

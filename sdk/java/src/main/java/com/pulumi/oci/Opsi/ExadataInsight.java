@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -126,98 +127,98 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * OPSI Enterprise Manager Bridge OCID
      * 
      */
     @Export(name="enterpriseManagerBridgeId", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerBridgeId;
+    private Output</* @Nullable */ String> enterpriseManagerBridgeId;
 
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    public Output<String> enterpriseManagerBridgeId() {
-        return this.enterpriseManagerBridgeId;
+    public Output<Optional<String>> enterpriseManagerBridgeId() {
+        return Codegen.optional(this.enterpriseManagerBridgeId);
     }
     /**
      * Enterprise Manager Entity Display Name
      * 
      */
     @Export(name="enterpriseManagerEntityDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityDisplayName;
+    private Output</* @Nullable */ String> enterpriseManagerEntityDisplayName;
 
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    public Output<String> enterpriseManagerEntityDisplayName() {
-        return this.enterpriseManagerEntityDisplayName;
+    public Output<Optional<String>> enterpriseManagerEntityDisplayName() {
+        return Codegen.optional(this.enterpriseManagerEntityDisplayName);
     }
     /**
      * Enterprise Manager Entity Unique Identifier
      * 
      */
     @Export(name="enterpriseManagerEntityIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityIdentifier;
+    private Output</* @Nullable */ String> enterpriseManagerEntityIdentifier;
 
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerEntityIdentifier() {
-        return this.enterpriseManagerEntityIdentifier;
+    public Output<Optional<String>> enterpriseManagerEntityIdentifier() {
+        return Codegen.optional(this.enterpriseManagerEntityIdentifier);
     }
     /**
      * Enterprise Manager Entity Name
      * 
      */
     @Export(name="enterpriseManagerEntityName", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityName;
+    private Output</* @Nullable */ String> enterpriseManagerEntityName;
 
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    public Output<String> enterpriseManagerEntityName() {
-        return this.enterpriseManagerEntityName;
+    public Output<Optional<String>> enterpriseManagerEntityName() {
+        return Codegen.optional(this.enterpriseManagerEntityName);
     }
     /**
      * Enterprise Manager Entity Type
      * 
      */
     @Export(name="enterpriseManagerEntityType", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityType;
+    private Output</* @Nullable */ String> enterpriseManagerEntityType;
 
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    public Output<String> enterpriseManagerEntityType() {
-        return this.enterpriseManagerEntityType;
+    public Output<Optional<String>> enterpriseManagerEntityType() {
+        return Codegen.optional(this.enterpriseManagerEntityType);
     }
     /**
      * Enterprise Manager Unique Identifier
      * 
      */
     @Export(name="enterpriseManagerIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerIdentifier;
+    private Output</* @Nullable */ String> enterpriseManagerIdentifier;
 
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerIdentifier() {
-        return this.enterpriseManagerIdentifier;
+    public Output<Optional<String>> enterpriseManagerIdentifier() {
+        return Codegen.optional(this.enterpriseManagerIdentifier);
     }
     /**
      * Source of the database entity.
@@ -238,150 +239,150 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="exadataDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> exadataDisplayName;
+    private Output</* @Nullable */ String> exadataDisplayName;
 
     /**
      * @return The user-friendly name for the Exadata system. The name does not have to be unique.
      * 
      */
-    public Output<String> exadataDisplayName() {
-        return this.exadataDisplayName;
+    public Output<Optional<String>> exadataDisplayName() {
+        return Codegen.optional(this.exadataDisplayName);
     }
     @Export(name="exadataInfraId", refs={String.class}, tree="[0]")
-    private Output<String> exadataInfraId;
+    private Output</* @Nullable */ String> exadataInfraId;
 
-    public Output<String> exadataInfraId() {
-        return this.exadataInfraId;
+    public Output<Optional<String>> exadataInfraId() {
+        return Codegen.optional(this.exadataInfraId);
     }
     @Export(name="exadataInfraResourceType", refs={String.class}, tree="[0]")
-    private Output<String> exadataInfraResourceType;
+    private Output</* @Nullable */ String> exadataInfraResourceType;
 
-    public Output<String> exadataInfraResourceType() {
-        return this.exadataInfraResourceType;
+    public Output<Optional<String>> exadataInfraResourceType() {
+        return Codegen.optional(this.exadataInfraResourceType);
     }
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      * 
      */
     @Export(name="exadataName", refs={String.class}, tree="[0]")
-    private Output<String> exadataName;
+    private Output</* @Nullable */ String> exadataName;
 
     /**
      * @return The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      * 
      */
-    public Output<String> exadataName() {
-        return this.exadataName;
+    public Output<Optional<String>> exadataName() {
+        return Codegen.optional(this.exadataName);
     }
     /**
      * Exadata rack type.
      * 
      */
     @Export(name="exadataRackType", refs={String.class}, tree="[0]")
-    private Output<String> exadataRackType;
+    private Output</* @Nullable */ String> exadataRackType;
 
     /**
      * @return Exadata rack type.
      * 
      */
-    public Output<String> exadataRackType() {
-        return this.exadataRackType;
+    public Output<Optional<String>> exadataRackType() {
+        return Codegen.optional(this.exadataRackType);
     }
     @Export(name="exadataShape", refs={String.class}, tree="[0]")
-    private Output<String> exadataShape;
+    private Output</* @Nullable */ String> exadataShape;
 
-    public Output<String> exadataShape() {
-        return this.exadataShape;
+    public Output<Optional<String>> exadataShape() {
+        return Codegen.optional(this.exadataShape);
     }
     /**
      * Operations Insights internal representation of the the Exadata system type.
      * 
      */
     @Export(name="exadataType", refs={String.class}, tree="[0]")
-    private Output<String> exadataType;
+    private Output</* @Nullable */ String> exadataType;
 
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
      * 
      */
-    public Output<String> exadataType() {
-        return this.exadataType;
+    public Output<Optional<String>> exadataType() {
+        return Codegen.optional(this.exadataType);
     }
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      * 
      */
     @Export(name="isAutoSyncEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoSyncEnabled;
+    private Output</* @Nullable */ Boolean> isAutoSyncEnabled;
 
     /**
      * @return (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      * 
      */
-    public Output<Boolean> isAutoSyncEnabled() {
-        return this.isAutoSyncEnabled;
+    public Output<Optional<Boolean>> isAutoSyncEnabled() {
+        return Codegen.optional(this.isAutoSyncEnabled);
     }
     /**
      * true if virtualization is used in the Exadata system
      * 
      */
     @Export(name="isVirtualizedExadata", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isVirtualizedExadata;
+    private Output</* @Nullable */ Boolean> isVirtualizedExadata;
 
     /**
      * @return true if virtualization is used in the Exadata system
      * 
      */
-    public Output<Boolean> isVirtualizedExadata() {
-        return this.isVirtualizedExadata;
+    public Output<Optional<Boolean>> isVirtualizedExadata() {
+        return Codegen.optional(this.isVirtualizedExadata);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     @Export(name="memberVmClusterDetails", refs={List.class,ExadataInsightMemberVmClusterDetail.class}, tree="[0,1]")
-    private Output<List<ExadataInsightMemberVmClusterDetail>> memberVmClusterDetails;
+    private Output</* @Nullable */ List<ExadataInsightMemberVmClusterDetail>> memberVmClusterDetails;
 
-    public Output<List<ExadataInsightMemberVmClusterDetail>> memberVmClusterDetails() {
-        return this.memberVmClusterDetails;
+    public Output<Optional<List<ExadataInsightMemberVmClusterDetail>>> memberVmClusterDetails() {
+        return Codegen.optional(this.memberVmClusterDetails);
     }
     /**
      * The current state of the Exadata insight.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Exadata insight.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
@@ -391,7 +392,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
@@ -400,50 +401,50 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the Exadata insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

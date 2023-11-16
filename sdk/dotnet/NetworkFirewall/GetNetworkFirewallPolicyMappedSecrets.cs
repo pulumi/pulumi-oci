@@ -125,7 +125,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of mapped_secret_summary_collection.
         /// </summary>
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.NetworkFirewall
         private GetNetworkFirewallPolicyMappedSecretsResult(
             string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionResult> mappedSecretSummaryCollections,
 

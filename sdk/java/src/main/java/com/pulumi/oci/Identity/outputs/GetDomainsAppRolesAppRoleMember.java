@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppRolesAppRoleMember {
@@ -13,51 +15,51 @@ public final class GetDomainsAppRolesAppRoleMember {
      * @return Member display name
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return The URI corresponding to the member Resource of this Group
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Value of the tag.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppRolesAppRoleMember() {}
     /**
      * @return Member display name
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return The URI corresponding to the member Resource of this Group
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Value of the tag.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDomainsAppRolesAppRoleMember {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private String ref;
-        private String type;
-        private String value;
+        private @Nullable String display;
+        private @Nullable String ref;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppRolesAppRoleMember defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDomainsAppRolesAppRoleMember {
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppRolesAppRoleMember build() {

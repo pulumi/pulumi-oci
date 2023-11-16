@@ -44,7 +44,7 @@ class GetIdpGroupMappingsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -53,17 +53,11 @@ class GetIdpGroupMappingsResult:
     @property
     @pulumi.getter(name="identityProviderId")
     def identity_provider_id(self) -> str:
-        """
-        The OCID of the `IdentityProvider` this mapping belongs to.
-        """
         return pulumi.get(self, "identity_provider_id")
 
     @property
     @pulumi.getter(name="idpGroupMappings")
-    def idp_group_mappings(self) -> Sequence['outputs.GetIdpGroupMappingsIdpGroupMappingResult']:
-        """
-        The list of idp_group_mappings.
-        """
+    def idp_group_mappings(self) -> Optional[Sequence['outputs.GetIdpGroupMappingsIdpGroupMappingResult']]:
         return pulumi.get(self, "idp_group_mappings")
 
 
@@ -83,23 +77,7 @@ def get_idp_group_mappings(filters: Optional[Sequence[pulumi.InputType['GetIdpGr
                            identity_provider_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIdpGroupMappingsResult:
     """
-    This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
-
-    **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-    Lists the group mappings for the specified identity provider.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"])
-    ```
-
-
-    :param str identity_provider_id: The OCID of the identity provider.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -119,22 +97,6 @@ def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequen
                                   identity_provider_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIdpGroupMappingsResult]:
     """
-    This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
-
-    **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-    Lists the group mappings for the specified identity provider.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"])
-    ```
-
-
-    :param str identity_provider_id: The OCID of the identity provider.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -52,33 +52,21 @@ class GetConnectionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment containing the connection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionCollections")
-    def connection_collections(self) -> Sequence['outputs.GetConnectionsConnectionCollectionResult']:
-        """
-        The list of connection_collection.
-        """
+    def connection_collections(self) -> Optional[Sequence['outputs.GetConnectionsConnectionCollectionResult']]:
         return pulumi.get(self, "connection_collections")
 
     @property
     @pulumi.getter(name="connectionType")
     def connection_type(self) -> Optional[str]:
-        """
-        The type of connection.
-        """
         return pulumi.get(self, "connection_type")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -89,25 +77,16 @@ class GetConnectionsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The OCID of the DevOps project.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the connection.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_connections(compartment_id: Optional[str] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionsResult:
     """
-    This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of connections.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connections = oci.DevOps.get_connections(compartment_id=var["compartment_id"],
-        connection_type=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        id=var["connection_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["connection_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str connection_type: A filter to return only resources that match the given connection type.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only connections that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -194,30 +149,6 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionsResult]:
     """
-    This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of connections.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connections = oci.DevOps.get_connections(compartment_id=var["compartment_id"],
-        connection_type=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        id=var["connection_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["connection_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str connection_type: A filter to return only resources that match the given connection type.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only connections that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

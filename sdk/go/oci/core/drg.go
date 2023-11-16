@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg resource in Oracle Cloud Infrastructure Core service.
@@ -78,22 +77,22 @@ type Drg struct {
 	// The default DRG route table for this DRG. Each network type has a default DRG route table.
 	DefaultDrgRouteTables DrgDefaultDrgRouteTableArrayOutput `pulumi:"defaultDrgRouteTables"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DRG's default export route distribution for the DRG attachments.
-	DefaultExportDrgRouteDistributionId pulumi.StringOutput `pulumi:"defaultExportDrgRouteDistributionId"`
+	DefaultExportDrgRouteDistributionId pulumi.StringPtrOutput `pulumi:"defaultExportDrgRouteDistributionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The redundancy status of the DRG specified.
-	RedundancyStatus pulumi.StringOutput `pulumi:"redundancyStatus"`
+	RedundancyStatus pulumi.StringPtrOutput `pulumi:"redundancyStatus"`
 	// The DRG's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the DRG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewDrg registers a new resource with the given unique name, arguments, and options.
@@ -232,12 +231,6 @@ func (i *Drg) ToDrgOutputWithContext(ctx context.Context) DrgOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgOutput)
 }
 
-func (i *Drg) ToOutput(ctx context.Context) pulumix.Output[*Drg] {
-	return pulumix.Output[*Drg]{
-		OutputState: i.ToDrgOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgArrayInput is an input type that accepts DrgArray and DrgArrayOutput values.
 // You can construct a concrete instance of `DrgArrayInput` via:
 //
@@ -261,12 +254,6 @@ func (i DrgArray) ToDrgArrayOutput() DrgArrayOutput {
 
 func (i DrgArray) ToDrgArrayOutputWithContext(ctx context.Context) DrgArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgArrayOutput)
-}
-
-func (i DrgArray) ToOutput(ctx context.Context) pulumix.Output[[]*Drg] {
-	return pulumix.Output[[]*Drg]{
-		OutputState: i.ToDrgArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgMapInput is an input type that accepts DrgMap and DrgMapOutput values.
@@ -294,12 +281,6 @@ func (i DrgMap) ToDrgMapOutputWithContext(ctx context.Context) DrgMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgMapOutput)
 }
 
-func (i DrgMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Drg] {
-	return pulumix.Output[map[string]*Drg]{
-		OutputState: i.ToDrgMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgOutput struct{ *pulumi.OutputState }
 
 func (DrgOutput) ElementType() reflect.Type {
@@ -314,12 +295,6 @@ func (o DrgOutput) ToDrgOutputWithContext(ctx context.Context) DrgOutput {
 	return o
 }
 
-func (o DrgOutput) ToOutput(ctx context.Context) pulumix.Output[*Drg] {
-	return pulumix.Output[*Drg]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the DRG.
 func (o DrgOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Drg) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -331,8 +306,8 @@ func (o DrgOutput) DefaultDrgRouteTables() DrgDefaultDrgRouteTableArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DRG's default export route distribution for the DRG attachments.
-func (o DrgOutput) DefaultExportDrgRouteDistributionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Drg) pulumi.StringOutput { return v.DefaultExportDrgRouteDistributionId }).(pulumi.StringOutput)
+func (o DrgOutput) DefaultExportDrgRouteDistributionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Drg) pulumi.StringPtrOutput { return v.DefaultExportDrgRouteDistributionId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -341,8 +316,8 @@ func (o DrgOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o DrgOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Drg) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DrgOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Drg) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -354,18 +329,18 @@ func (o DrgOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The redundancy status of the DRG specified.
-func (o DrgOutput) RedundancyStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *Drg) pulumi.StringOutput { return v.RedundancyStatus }).(pulumi.StringOutput)
+func (o DrgOutput) RedundancyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Drg) pulumi.StringPtrOutput { return v.RedundancyStatus }).(pulumi.StringPtrOutput)
 }
 
 // The DRG's current state.
-func (o DrgOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Drg) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DrgOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Drg) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DRG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o DrgOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Drg) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DrgOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Drg) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type DrgArrayOutput struct{ *pulumi.OutputState }
@@ -380,12 +355,6 @@ func (o DrgArrayOutput) ToDrgArrayOutput() DrgArrayOutput {
 
 func (o DrgArrayOutput) ToDrgArrayOutputWithContext(ctx context.Context) DrgArrayOutput {
 	return o
-}
-
-func (o DrgArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Drg] {
-	return pulumix.Output[[]*Drg]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgArrayOutput) Index(i pulumi.IntInput) DrgOutput {
@@ -406,12 +375,6 @@ func (o DrgMapOutput) ToDrgMapOutput() DrgMapOutput {
 
 func (o DrgMapOutput) ToDrgMapOutputWithContext(ctx context.Context) DrgMapOutput {
 	return o
-}
-
-func (o DrgMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Drg] {
-	return pulumix.Output[map[string]*Drg]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgMapOutput) MapIndex(k pulumi.StringInput) DrgOutput {

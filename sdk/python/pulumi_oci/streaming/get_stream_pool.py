@@ -68,98 +68,62 @@ class GetStreamPoolResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment OCID that the pool belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="customEncryptionKeys")
-    def custom_encryption_keys(self) -> Sequence['outputs.GetStreamPoolCustomEncryptionKeyResult']:
-        """
-        Custom Encryption Key which will be used for encryption by all the streams in the pool.
-        """
+    def custom_encryption_keys(self) -> Optional[Sequence['outputs.GetStreamPoolCustomEncryptionKeyResult']]:
         return pulumi.get(self, "custom_encryption_keys")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="endpointFqdn")
-    def endpoint_fqdn(self) -> str:
-        """
-        The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
-        """
+    def endpoint_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the stream pool.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> bool:
-        """
-        True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-        """
+    def is_private(self) -> Optional[bool]:
         return pulumi.get(self, "is_private")
 
     @property
     @pulumi.getter(name="kafkaSettings")
-    def kafka_settings(self) -> Sequence['outputs.GetStreamPoolKafkaSettingResult']:
-        """
-        Settings for the Kafka compatibility layer.
-        """
+    def kafka_settings(self) -> Optional[Sequence['outputs.GetStreamPoolKafkaSettingResult']]:
         return pulumi.get(self, "kafka_settings")
 
     @property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> str:
-        """
-        Any additional details about the current state of the stream.
-        """
+    def lifecycle_state_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_state_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the stream pool.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="privateEndpointSettings")
-    def private_endpoint_settings(self) -> Sequence['outputs.GetStreamPoolPrivateEndpointSettingResult']:
-        """
-        Optional settings if the stream pool is private.
-        """
+    def private_endpoint_settings(self) -> Optional[Sequence['outputs.GetStreamPoolPrivateEndpointSettingResult']]:
         return pulumi.get(self, "private_endpoint_settings")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the stream pool.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -169,10 +133,7 @@ class GetStreamPoolResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetStreamPoolResult(GetStreamPoolResult):
 def get_stream_pool(stream_pool_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamPoolResult:
     """
-    This data source provides details about a specific Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
-
-    Gets detailed information about the stream pool, such as Kafka settings.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
-    ```
-
-
-    :param str stream_pool_id: The OCID of the stream pool.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['streamPoolId'] = stream_pool_id
@@ -243,20 +190,6 @@ def get_stream_pool(stream_pool_id: Optional[str] = None,
 def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamPoolResult]:
     """
-    This data source provides details about a specific Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
-
-    Gets detailed information about the stream pool, such as Kafka settings.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
-    ```
-
-
-    :param str stream_pool_id: The OCID of the stream pool.
+    Use this data source to access information about an existing resource.
     """
     ...

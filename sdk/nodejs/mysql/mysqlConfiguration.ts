@@ -159,27 +159,27 @@ export class MysqlConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) User-provided data about the Configuration.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the Configuration.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      */
-    public readonly initVariables!: pulumi.Output<outputs.Mysql.MysqlConfigurationInitVariables>;
+    public readonly initVariables!: pulumi.Output<outputs.Mysql.MysqlConfigurationInitVariables | undefined>;
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      */
-    public readonly parentConfigurationId!: pulumi.Output<string>;
+    public readonly parentConfigurationId!: pulumi.Output<string | undefined>;
     /**
      * The name of the associated Shape.
      */
@@ -187,23 +187,23 @@ export class MysqlConfiguration extends pulumi.CustomResource {
     /**
      * The current state of the Configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The Configuration type, DEFAULT or CUSTOM.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    public /*out*/ readonly type!: pulumi.Output<string | undefined>;
     /**
      * User-defined service variables.
      */
-    public readonly variables!: pulumi.Output<outputs.Mysql.MysqlConfigurationVariables>;
+    public readonly variables!: pulumi.Output<outputs.Mysql.MysqlConfigurationVariables | undefined>;
 
     /**
      * Create a MysqlConfiguration resource with the given unique name, arguments, and options.

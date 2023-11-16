@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// Size limit (kilobytes) for batch sent to invoke the function.
         /// </summary>
-        public readonly int BatchSizeInKbs;
+        public readonly int? BatchSizeInKbs;
         /// <summary>
         /// Time limit (seconds) for batch sent to invoke the function.
         /// </summary>
-        public readonly int BatchTimeInSec;
+        public readonly int? BatchTimeInSec;
         /// <summary>
         /// A filter or mask to limit the source used in the flow defined by the service connector.
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
         /// </summary>
-        public readonly string FunctionId;
+        public readonly string? FunctionId;
         /// <summary>
         /// The type descriminator.
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
 
         [OutputConstructor]
         private GetServiceConnectorTaskResult(
-            int batchSizeInKbs,
+            int? batchSizeInKbs,
 
-            int batchTimeInSec,
+            int? batchTimeInSec,
 
-            string condition,
+            string? condition,
 
-            string functionId,
+            string? functionId,
 
-            string kind)
+            string? kind)
         {
             BatchSizeInKbs = batchSizeInKbs;
             BatchTimeInSec = batchTimeInSec;

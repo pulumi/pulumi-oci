@@ -109,7 +109,7 @@ export interface GetTargetAlertPolicyAssociationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the target-alert policy association.
      */
@@ -117,7 +117,7 @@ export interface GetTargetAlertPolicyAssociationsResult {
     /**
      * The list of target_alert_policy_association_collection.
      */
-    readonly targetAlertPolicyAssociationCollections: outputs.DataSafe.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection[];
+    readonly targetAlertPolicyAssociationCollections?: outputs.DataSafe.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection[];
     readonly targetAlertPolicyAssociationId?: string;
     /**
      * The OCID of the target on which alert policy is to be applied.

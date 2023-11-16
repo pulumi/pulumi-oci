@@ -82,7 +82,7 @@ export class Listener extends pulumi.CustomResource {
     /**
      * (Updatable) Configuration details for the connection between the client and backend servers.
      */
-    public readonly connectionConfiguration!: pulumi.Output<outputs.LoadBalancer.ListenerConnectionConfiguration>;
+    public readonly connectionConfiguration!: pulumi.Output<outputs.LoadBalancer.ListenerConnectionConfiguration | undefined>;
     /**
      * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      */
@@ -90,7 +90,7 @@ export class Listener extends pulumi.CustomResource {
     /**
      * (Updatable) An array of hostname resource names.
      */
-    public readonly hostnameNames!: pulumi.Output<string[]>;
+    public readonly hostnameNames!: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
      */
@@ -106,7 +106,7 @@ export class Listener extends pulumi.CustomResource {
      *
      * Example: `examplePathRouteSet`
      */
-    public readonly pathRouteSetName!: pulumi.Output<string>;
+    public readonly pathRouteSetName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
      */
@@ -118,18 +118,18 @@ export class Listener extends pulumi.CustomResource {
     /**
      * (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
      */
-    public readonly routingPolicyName!: pulumi.Output<string>;
+    public readonly routingPolicyName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
      */
-    public readonly ruleSetNames!: pulumi.Output<string[]>;
+    public readonly ruleSetNames!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     public readonly sslConfiguration!: pulumi.Output<outputs.LoadBalancer.ListenerSslConfiguration | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Listener resource with the given unique name, arguments, and options.

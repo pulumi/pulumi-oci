@@ -55,34 +55,22 @@ class GetGroupResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the group.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description you assign to the group. Does not have to be unique, and it's changeable.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -92,42 +80,27 @@ class GetGroupResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the group.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> str:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_state(self) -> Optional[str]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The group's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -152,25 +125,7 @@ class AwaitableGetGroupResult(GetGroupResult):
 def get_group(group_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroupResult:
     """
-    This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified group's information.
-
-    This operation does not return a list of all the users in the group. To do that, use
-    [ListUserGroupMemberships](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships) and
-    provide the group's OCID as a query parameter in the request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_group = oci.Identity.get_group(group_id=oci_identity_group["test_group"]["id"])
-    ```
-
-
-    :param str group_id: The OCID of the group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['groupId'] = group_id
@@ -194,24 +149,6 @@ def get_group(group_id: Optional[str] = None,
 def get_group_output(group_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGroupResult]:
     """
-    This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified group's information.
-
-    This operation does not return a list of all the users in the group. To do that, use
-    [ListUserGroupMemberships](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships) and
-    provide the group's OCID as a query parameter in the request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_group = oci.Identity.get_group(group_id=oci_identity_group["test_group"]["id"])
-    ```
-
-
-    :param str group_id: The OCID of the group.
+    Use this data source to access information about an existing resource.
     """
     ...

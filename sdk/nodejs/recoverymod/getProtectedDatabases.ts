@@ -92,7 +92,7 @@ export interface GetProtectedDatabasesResult {
     /**
      * The list of protected_database_collection.
      */
-    readonly protectedDatabaseCollections: outputs.RecoveryMod.GetProtectedDatabasesProtectedDatabaseCollection[];
+    readonly protectedDatabaseCollections?: outputs.RecoveryMod.GetProtectedDatabasesProtectedDatabaseCollection[];
     /**
      * The OCID of the protection policy associated with the protected database.
      */

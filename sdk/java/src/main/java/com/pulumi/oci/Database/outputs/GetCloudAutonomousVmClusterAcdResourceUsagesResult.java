@@ -18,7 +18,7 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesResult {
      * @return The list of autonomous_container_database_resource_usages.
      * 
      */
-    private List<GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
+    private @Nullable List<GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
     private String cloudAutonomousVmClusterId;
     private @Nullable String compartmentId;
     private @Nullable List<GetCloudAutonomousVmClusterAcdResourceUsagesFilter> filters;
@@ -26,7 +26,7 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCloudAutonomousVmClusterAcdResourceUsagesResult() {}
     /**
@@ -34,7 +34,7 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesResult {
      * 
      */
     public List<GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages() {
-        return this.autonomousContainerDatabaseResourceUsages;
+        return this.autonomousContainerDatabaseResourceUsages == null ? List.of() : this.autonomousContainerDatabaseResourceUsages;
     }
     public String cloudAutonomousVmClusterId() {
         return this.cloudAutonomousVmClusterId;
@@ -49,8 +49,8 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -62,11 +62,11 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
+        private @Nullable List<GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
         private String cloudAutonomousVmClusterId;
         private @Nullable String compartmentId;
         private @Nullable List<GetCloudAutonomousVmClusterAcdResourceUsagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCloudAutonomousVmClusterAcdResourceUsagesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -78,8 +78,8 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseResourceUsages(List<GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages) {
-            this.autonomousContainerDatabaseResourceUsages = Objects.requireNonNull(autonomousContainerDatabaseResourceUsages);
+        public Builder autonomousContainerDatabaseResourceUsages(@Nullable List<GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages) {
+            this.autonomousContainerDatabaseResourceUsages = autonomousContainerDatabaseResourceUsages;
             return this;
         }
         public Builder autonomousContainerDatabaseResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage... autonomousContainerDatabaseResourceUsages) {
@@ -104,8 +104,8 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCloudAutonomousVmClusterAcdResourceUsagesResult build() {

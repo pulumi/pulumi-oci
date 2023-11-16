@@ -51,11 +51,11 @@ export interface GetModelDeploymentShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of model_deployment_shapes.
      */
-    readonly modelDeploymentShapes: outputs.DataScience.GetModelDeploymentShapesModelDeploymentShape[];
+    readonly modelDeploymentShapes?: outputs.DataScience.GetModelDeploymentShapesModelDeploymentShape[];
 }
 /**
  * This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.

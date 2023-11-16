@@ -141,27 +141,27 @@ export class UnifiedAgentConfiguration extends pulumi.CustomResource {
     /**
      * State of unified agent service configuration.
      */
-    public /*out*/ readonly configurationState!: pulumi.Output<string>;
+    public /*out*/ readonly configurationState!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Groups using the configuration.
      */
-    public readonly groupAssociation!: pulumi.Output<outputs.Logging.UnifiedAgentConfigurationGroupAssociation>;
+    public readonly groupAssociation!: pulumi.Output<outputs.Logging.UnifiedAgentConfigurationGroupAssociation | undefined>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */
@@ -173,15 +173,15 @@ export class UnifiedAgentConfiguration extends pulumi.CustomResource {
     /**
      * The pipeline state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Time the resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time the resource was last modified.
      */
-    public /*out*/ readonly timeLastModified!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastModified!: pulumi.Output<string | undefined>;
 
     /**
      * Create a UnifiedAgentConfiguration resource with the given unique name, arguments, and options.

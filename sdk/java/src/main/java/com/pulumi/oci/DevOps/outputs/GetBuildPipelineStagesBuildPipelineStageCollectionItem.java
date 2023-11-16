@@ -17,6 +17,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
@@ -24,72 +26,72 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
      * @return The OCID of the parent build pipeline.
      * 
      */
-    private String buildPipelineId;
+    private @Nullable String buildPipelineId;
     /**
      * @return The collection containing the predecessors of a stage.
      * 
      */
-    private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections;
+    private @Nullable List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections;
     /**
      * @return Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      * 
      */
-    private String buildPipelineStageType;
+    private @Nullable String buildPipelineStageType;
     /**
      * @return The information about build runner.
      * 
      */
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig;
+    private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig;
     /**
      * @return Collection of build sources.
      * 
      */
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection;
+    private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection;
     /**
      * @return The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      * 
      */
-    private String buildSpecFile;
+    private @Nullable String buildSpecFile;
     /**
      * @return The OCID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The type of source provider.
      * 
      */
-    private String connectionType;
+    private @Nullable String connectionType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Specifies an array of artifacts that need to be pushed to the artifactory stores.
      * 
      */
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection;
+    private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection;
     /**
      * @return A target deployment pipeline OCID that will run in this stage.
      * 
      */
-    private String deployPipelineId;
+    private @Nullable String deployPipelineId;
     /**
      * @return Optional description about the build stage.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier or OCID for listing a single resource by ID.
      * 
@@ -99,161 +101,161 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
      * @return Image name for the build environment.
      * 
      */
-    private String image;
+    private @Nullable String image;
     /**
      * @return A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      * 
      */
-    private Boolean isPassAllParametersEnabled;
+    private @Nullable Boolean isPassAllParametersEnabled;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
      * 
      */
-    private String primaryBuildSource;
+    private @Nullable String primaryBuildSource;
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig;
+    private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig;
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return Timeout for the build stage execution. Specify value in seconds.
      * 
      */
-    private Integer stageExecutionTimeoutInSeconds;
+    private @Nullable Integer stageExecutionTimeoutInSeconds;
     /**
      * @return A filter to return the stages that matches the given lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Specifies wait criteria for the Wait stage.
      * 
      */
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria;
+    private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria;
 
     private GetBuildPipelineStagesBuildPipelineStageCollectionItem() {}
     /**
      * @return The OCID of the parent build pipeline.
      * 
      */
-    public String buildPipelineId() {
-        return this.buildPipelineId;
+    public Optional<String> buildPipelineId() {
+        return Optional.ofNullable(this.buildPipelineId);
     }
     /**
      * @return The collection containing the predecessors of a stage.
      * 
      */
     public List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections() {
-        return this.buildPipelineStagePredecessorCollections;
+        return this.buildPipelineStagePredecessorCollections == null ? List.of() : this.buildPipelineStagePredecessorCollections;
     }
     /**
      * @return Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      * 
      */
-    public String buildPipelineStageType() {
-        return this.buildPipelineStageType;
+    public Optional<String> buildPipelineStageType() {
+        return Optional.ofNullable(this.buildPipelineStageType);
     }
     /**
      * @return The information about build runner.
      * 
      */
-    public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig() {
-        return this.buildRunnerShapeConfig;
+    public Optional<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig> buildRunnerShapeConfig() {
+        return Optional.ofNullable(this.buildRunnerShapeConfig);
     }
     /**
      * @return Collection of build sources.
      * 
      */
-    public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection() {
-        return this.buildSourceCollection;
+    public Optional<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection> buildSourceCollection() {
+        return Optional.ofNullable(this.buildSourceCollection);
     }
     /**
      * @return The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      * 
      */
-    public String buildSpecFile() {
-        return this.buildSpecFile;
+    public Optional<String> buildSpecFile() {
+        return Optional.ofNullable(this.buildSpecFile);
     }
     /**
      * @return The OCID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The type of source provider.
      * 
      */
-    public String connectionType() {
-        return this.connectionType;
+    public Optional<String> connectionType() {
+        return Optional.ofNullable(this.connectionType);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Specifies an array of artifacts that need to be pushed to the artifactory stores.
      * 
      */
-    public GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection() {
-        return this.deliverArtifactCollection;
+    public Optional<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection> deliverArtifactCollection() {
+        return Optional.ofNullable(this.deliverArtifactCollection);
     }
     /**
      * @return A target deployment pipeline OCID that will run in this stage.
      * 
      */
-    public String deployPipelineId() {
-        return this.deployPipelineId;
+    public Optional<String> deployPipelineId() {
+        return Optional.ofNullable(this.deployPipelineId);
     }
     /**
      * @return Optional description about the build stage.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier or OCID for listing a single resource by ID.
@@ -266,85 +268,85 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
      * @return Image name for the build environment.
      * 
      */
-    public String image() {
-        return this.image;
+    public Optional<String> image() {
+        return Optional.ofNullable(this.image);
     }
     /**
      * @return A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      * 
      */
-    public Boolean isPassAllParametersEnabled() {
-        return this.isPassAllParametersEnabled;
+    public Optional<Boolean> isPassAllParametersEnabled() {
+        return Optional.ofNullable(this.isPassAllParametersEnabled);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
      * 
      */
-    public String primaryBuildSource() {
-        return this.primaryBuildSource;
+    public Optional<String> primaryBuildSource() {
+        return Optional.ofNullable(this.primaryBuildSource);
     }
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    public GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig() {
-        return this.privateAccessConfig;
+    public Optional<GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig> privateAccessConfig() {
+        return Optional.ofNullable(this.privateAccessConfig);
     }
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return Timeout for the build stage execution. Specify value in seconds.
      * 
      */
-    public Integer stageExecutionTimeoutInSeconds() {
-        return this.stageExecutionTimeoutInSeconds;
+    public Optional<Integer> stageExecutionTimeoutInSeconds() {
+        return Optional.ofNullable(this.stageExecutionTimeoutInSeconds);
     }
     /**
      * @return A filter to return the stages that matches the given lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Specifies wait criteria for the Wait stage.
      * 
      */
-    public GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria() {
-        return this.waitCriteria;
+    public Optional<GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria> waitCriteria() {
+        return Optional.ofNullable(this.waitCriteria);
     }
 
     public static Builder builder() {
@@ -356,33 +358,33 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String buildPipelineId;
-        private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections;
-        private String buildPipelineStageType;
-        private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig;
-        private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection;
-        private String buildSpecFile;
-        private String compartmentId;
-        private String connectionType;
-        private Map<String,Object> definedTags;
-        private GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection;
-        private String deployPipelineId;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
+        private @Nullable String buildPipelineId;
+        private @Nullable List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections;
+        private @Nullable String buildPipelineStageType;
+        private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig;
+        private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection;
+        private @Nullable String buildSpecFile;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionType;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection;
+        private @Nullable String deployPipelineId;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
         private String id;
-        private String image;
-        private Boolean isPassAllParametersEnabled;
-        private String lifecycleDetails;
-        private String primaryBuildSource;
-        private GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig;
-        private String projectId;
-        private Integer stageExecutionTimeoutInSeconds;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria;
+        private @Nullable String image;
+        private @Nullable Boolean isPassAllParametersEnabled;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String primaryBuildSource;
+        private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig;
+        private @Nullable String projectId;
+        private @Nullable Integer stageExecutionTimeoutInSeconds;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria;
         public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -416,76 +418,76 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder buildPipelineId(String buildPipelineId) {
-            this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
+        public Builder buildPipelineId(@Nullable String buildPipelineId) {
+            this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
-        public Builder buildPipelineStagePredecessorCollections(List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections) {
-            this.buildPipelineStagePredecessorCollections = Objects.requireNonNull(buildPipelineStagePredecessorCollections);
+        public Builder buildPipelineStagePredecessorCollections(@Nullable List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections) {
+            this.buildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
             return this;
         }
         public Builder buildPipelineStagePredecessorCollections(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection... buildPipelineStagePredecessorCollections) {
             return buildPipelineStagePredecessorCollections(List.of(buildPipelineStagePredecessorCollections));
         }
         @CustomType.Setter
-        public Builder buildPipelineStageType(String buildPipelineStageType) {
-            this.buildPipelineStageType = Objects.requireNonNull(buildPipelineStageType);
+        public Builder buildPipelineStageType(@Nullable String buildPipelineStageType) {
+            this.buildPipelineStageType = buildPipelineStageType;
             return this;
         }
         @CustomType.Setter
-        public Builder buildRunnerShapeConfig(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig) {
-            this.buildRunnerShapeConfig = Objects.requireNonNull(buildRunnerShapeConfig);
+        public Builder buildRunnerShapeConfig(@Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig) {
+            this.buildRunnerShapeConfig = buildRunnerShapeConfig;
             return this;
         }
         @CustomType.Setter
-        public Builder buildSourceCollection(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection) {
-            this.buildSourceCollection = Objects.requireNonNull(buildSourceCollection);
+        public Builder buildSourceCollection(@Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection) {
+            this.buildSourceCollection = buildSourceCollection;
             return this;
         }
         @CustomType.Setter
-        public Builder buildSpecFile(String buildSpecFile) {
-            this.buildSpecFile = Objects.requireNonNull(buildSpecFile);
+        public Builder buildSpecFile(@Nullable String buildSpecFile) {
+            this.buildSpecFile = buildSpecFile;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+        public Builder connectionType(@Nullable String connectionType) {
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deliverArtifactCollection(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection) {
-            this.deliverArtifactCollection = Objects.requireNonNull(deliverArtifactCollection);
+        public Builder deliverArtifactCollection(@Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection) {
+            this.deliverArtifactCollection = deliverArtifactCollection;
             return this;
         }
         @CustomType.Setter
-        public Builder deployPipelineId(String deployPipelineId) {
-            this.deployPipelineId = Objects.requireNonNull(deployPipelineId);
+        public Builder deployPipelineId(@Nullable String deployPipelineId) {
+            this.deployPipelineId = deployPipelineId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -494,63 +496,63 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder image(String image) {
-            this.image = Objects.requireNonNull(image);
+        public Builder image(@Nullable String image) {
+            this.image = image;
             return this;
         }
         @CustomType.Setter
-        public Builder isPassAllParametersEnabled(Boolean isPassAllParametersEnabled) {
-            this.isPassAllParametersEnabled = Objects.requireNonNull(isPassAllParametersEnabled);
+        public Builder isPassAllParametersEnabled(@Nullable Boolean isPassAllParametersEnabled) {
+            this.isPassAllParametersEnabled = isPassAllParametersEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder primaryBuildSource(String primaryBuildSource) {
-            this.primaryBuildSource = Objects.requireNonNull(primaryBuildSource);
+        public Builder primaryBuildSource(@Nullable String primaryBuildSource) {
+            this.primaryBuildSource = primaryBuildSource;
             return this;
         }
         @CustomType.Setter
-        public Builder privateAccessConfig(GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig) {
-            this.privateAccessConfig = Objects.requireNonNull(privateAccessConfig);
+        public Builder privateAccessConfig(@Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig) {
+            this.privateAccessConfig = privateAccessConfig;
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder stageExecutionTimeoutInSeconds(Integer stageExecutionTimeoutInSeconds) {
-            this.stageExecutionTimeoutInSeconds = Objects.requireNonNull(stageExecutionTimeoutInSeconds);
+        public Builder stageExecutionTimeoutInSeconds(@Nullable Integer stageExecutionTimeoutInSeconds) {
+            this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder waitCriteria(GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria) {
-            this.waitCriteria = Objects.requireNonNull(waitCriteria);
+        public Builder waitCriteria(@Nullable GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria) {
+            this.waitCriteria = waitCriteria;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItem build() {

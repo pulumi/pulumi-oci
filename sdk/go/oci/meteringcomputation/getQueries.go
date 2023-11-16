@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -66,7 +65,7 @@ type GetQueriesResult struct {
 	// The filter object for query usage.
 	Filters []GetQueriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of query_collection.
 	QueryCollections []GetQueriesQueryCollection `pulumi:"queryCollections"`
 }
@@ -111,12 +110,6 @@ func (o GetQueriesResultOutput) ToGetQueriesResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetQueriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesResult] {
-	return pulumix.Output[GetQueriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID.
 func (o GetQueriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -128,8 +121,8 @@ func (o GetQueriesResultOutput) Filters() GetQueriesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetQueriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetQueriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of query_collection.

@@ -47,73 +47,73 @@ export interface GetPluggableDatabaseResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      */
-    readonly connectionStrings: outputs.Database.GetPluggableDatabaseConnectionString[];
-    readonly containerDatabaseAdminPassword: string;
+    readonly connectionStrings?: outputs.Database.GetPluggableDatabaseConnectionString[];
+    readonly containerDatabaseAdminPassword?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
-    readonly containerDatabaseId: string;
-    readonly convertToRegularTrigger: number;
+    readonly containerDatabaseId?: string;
+    readonly convertToRegularTrigger?: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
-    readonly isRestricted: boolean;
+    readonly isRestricted?: boolean;
     /**
      * Detailed message for the lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
-    readonly openMode: string;
-    readonly pdbAdminPassword: string;
-    readonly pdbCreationTypeDetails: outputs.Database.GetPluggableDatabasePdbCreationTypeDetail[];
+    readonly openMode?: string;
+    readonly pdbAdminPassword?: string;
+    readonly pdbCreationTypeDetails?: outputs.Database.GetPluggableDatabasePdbCreationTypeDetail[];
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    readonly pdbName: string;
+    readonly pdbName?: string;
     /**
      * Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
      */
-    readonly pdbNodeLevelDetails: outputs.Database.GetPluggableDatabasePdbNodeLevelDetail[];
+    readonly pdbNodeLevelDetails?: outputs.Database.GetPluggableDatabasePdbNodeLevelDetail[];
     readonly pluggableDatabaseId: string;
     /**
      * The configuration of the Pluggable Database Management service.
      */
-    readonly pluggableDatabaseManagementConfigs: outputs.Database.GetPluggableDatabasePluggableDatabaseManagementConfig[];
-    readonly refreshTrigger: number;
+    readonly pluggableDatabaseManagementConfigs?: outputs.Database.GetPluggableDatabasePluggableDatabaseManagementConfig[];
+    readonly refreshTrigger?: number;
     /**
      * Pluggable Database Refreshable Clone Configuration.
      */
-    readonly refreshableCloneConfigs: outputs.Database.GetPluggableDatabaseRefreshableCloneConfig[];
-    readonly rotateKeyTrigger: number;
-    readonly shouldCreatePdbBackup: boolean;
-    readonly shouldPdbAdminAccountBeLocked: boolean;
+    readonly refreshableCloneConfigs?: outputs.Database.GetPluggableDatabaseRefreshableCloneConfig[];
+    readonly rotateKeyTrigger?: number;
+    readonly shouldCreatePdbBackup?: boolean;
+    readonly shouldPdbAdminAccountBeLocked?: boolean;
     /**
      * The current state of the pluggable database.
      */
-    readonly state: string;
-    readonly tdeWalletPassword: string;
+    readonly state?: string;
+    readonly tdeWalletPassword?: string;
     /**
      * The date and time the pluggable database was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.

@@ -6,6 +6,8 @@ package com.pulumi.oci.Ocvp.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSddcsSddcCollectionHcxOnPremLicense {
@@ -13,39 +15,39 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
      * @return HCX on-premise license key value.
      * 
      */
-    private String activationKey;
+    private @Nullable String activationKey;
     /**
      * @return status of HCX on-premise license.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Name of the system that consumed the HCX on-premise license
      * 
      */
-    private String systemName;
+    private @Nullable String systemName;
 
     private GetSddcsSddcCollectionHcxOnPremLicense() {}
     /**
      * @return HCX on-premise license key value.
      * 
      */
-    public String activationKey() {
-        return this.activationKey;
+    public Optional<String> activationKey() {
+        return Optional.ofNullable(this.activationKey);
     }
     /**
      * @return status of HCX on-premise license.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Name of the system that consumed the HCX on-premise license
      * 
      */
-    public String systemName() {
-        return this.systemName;
+    public Optional<String> systemName() {
+        return Optional.ofNullable(this.systemName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String activationKey;
-        private String status;
-        private String systemName;
+        private @Nullable String activationKey;
+        private @Nullable String status;
+        private @Nullable String systemName;
         public Builder() {}
         public Builder(GetSddcsSddcCollectionHcxOnPremLicense defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
         }
 
         @CustomType.Setter
-        public Builder activationKey(String activationKey) {
-            this.activationKey = Objects.requireNonNull(activationKey);
+        public Builder activationKey(@Nullable String activationKey) {
+            this.activationKey = activationKey;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder systemName(String systemName) {
-            this.systemName = Objects.requireNonNull(systemName);
+        public Builder systemName(@Nullable String systemName) {
+            this.systemName = systemName;
             return this;
         }
         public GetSddcsSddcCollectionHcxOnPremLicense build() {

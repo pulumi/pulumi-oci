@@ -45,53 +45,53 @@ export interface GetBootVolumeReplicaResult {
     /**
      * The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The OCID of the source boot volume.
      */
-    readonly bootVolumeId: string;
+    readonly bootVolumeId?: string;
     readonly bootVolumeReplicaId: string;
     /**
      * The OCID of the compartment that contains the boot volume replica.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The image OCID used to create the boot volume the replica is replicated from.
      */
-    readonly imageId: string;
+    readonly imageId?: string;
     /**
      * The size of the source boot volume, in GBs.
      */
-    readonly sizeInGbs: string;
+    readonly sizeInGbs?: string;
     /**
      * The current state of a boot volume replica.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the boot volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the boot volume replica was last synced from the source boot volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeLastSynced: string;
-    readonly volumeGroupReplicaId: string;
+    readonly timeLastSynced?: string;
+    readonly volumeGroupReplicaId?: string;
 }
 /**
  * This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.

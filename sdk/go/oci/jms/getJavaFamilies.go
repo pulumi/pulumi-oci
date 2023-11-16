@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
@@ -70,7 +69,7 @@ type GetJavaFamiliesResult struct {
 	FamilyVersion *string                 `pulumi:"familyVersion"`
 	Filters       []GetJavaFamiliesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of java_family_collection.
 	JavaFamilyCollections []GetJavaFamiliesJavaFamilyCollection `pulumi:"javaFamilyCollections"`
 }
@@ -116,12 +115,6 @@ func (o GetJavaFamiliesResultOutput) ToGetJavaFamiliesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetJavaFamiliesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesResult] {
-	return pulumix.Output[GetJavaFamiliesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the release family.
 func (o GetJavaFamiliesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetJavaFamiliesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -137,8 +130,8 @@ func (o GetJavaFamiliesResultOutput) Filters() GetJavaFamiliesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetJavaFamiliesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamiliesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetJavaFamiliesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of java_family_collection.

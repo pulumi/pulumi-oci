@@ -108,44 +108,44 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The OCID of personal access token saved in secret store.
         /// </summary>
-        public readonly string AccessToken;
+        public readonly string? AccessToken;
         /// <summary>
         /// OCID of personal Bitbucket Cloud AppPassword saved in secret store
         /// </summary>
-        public readonly string AppPassword;
+        public readonly string? AppPassword;
         /// <summary>
         /// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
         /// </summary>
-        public readonly string BaseUrl;
+        public readonly string? BaseUrl;
         /// <summary>
         /// The OCID of the compartment containing the connection.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string ConnectionId;
         /// <summary>
         /// The type of connection.
         /// </summary>
-        public readonly string ConnectionType;
+        public readonly string? ConnectionType;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Optional description about the connection.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The result of validating the credentials of a connection.
         /// </summary>
@@ -153,23 +153,23 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The OCID of the DevOps project.
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// The current state of the connection.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// TLS configuration used by build service to verify TLS connection.
         /// </summary>
@@ -177,47 +177,47 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Public Bitbucket Cloud Username in plain text
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetConnectionResult(
-            string accessToken,
+            string? accessToken,
 
-            string appPassword,
+            string? appPassword,
 
-            string baseUrl,
+            string? baseUrl,
 
-            string compartmentId,
+            string? compartmentId,
 
             string connectionId,
 
-            string connectionType,
+            string? connectionType,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetConnectionLastConnectionValidationResultResult> lastConnectionValidationResults,
 
-            string projectId,
+            string? projectId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetConnectionTlsVerifyConfigResult> tlsVerifyConfigs,
 
-            string username)
+            string? username)
         {
             AccessToken = accessToken;
             AppPassword = appPassword;

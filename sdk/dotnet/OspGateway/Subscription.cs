@@ -29,13 +29,13 @@ namespace Pulumi.Oci.OspGateway
         /// (Updatable) Account type.
         /// </summary>
         [Output("accountType")]
-        public Output<string> AccountType { get; private set; } = null!;
+        public Output<string?> AccountType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Bill to customer Account id.
         /// </summary>
         [Output("billToCustAccountId")]
-        public Output<string> BillToCustAccountId { get; private set; } = null!;
+        public Output<string?> BillToCustAccountId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Address details model.
@@ -53,7 +53,7 @@ namespace Pulumi.Oci.OspGateway
         /// (Updatable) Currency code
         /// </summary>
         [Output("currencyCode")]
-        public Output<string> CurrencyCode { get; private set; } = null!;
+        public Output<string?> CurrencyCode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User email
@@ -65,25 +65,25 @@ namespace Pulumi.Oci.OspGateway
         /// (Updatable) GSI Subscription external code.
         /// </summary>
         [Output("gsiOrgCode")]
-        public Output<string> GsiOrgCode { get; private set; } = null!;
+        public Output<string?> GsiOrgCode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Payment intension.
         /// </summary>
         [Output("isIntentToPay")]
-        public Output<bool> IsIntentToPay { get; private set; } = null!;
+        public Output<bool?> IsIntentToPay { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Language short code (en, de, hu, etc)
         /// </summary>
         [Output("languageCode")]
-        public Output<string> LanguageCode { get; private set; } = null!;
+        public Output<string?> LanguageCode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) GSI organization external identifier.
         /// </summary>
         [Output("organizationId")]
-        public Output<string> OrganizationId { get; private set; } = null!;
+        public Output<string?> OrganizationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The home region's public name of the logged in user.
@@ -107,19 +107,19 @@ namespace Pulumi.Oci.OspGateway
         /// (Updatable) Subscription plan type.
         /// </summary>
         [Output("planType")]
-        public Output<string> PlanType { get; private set; } = null!;
+        public Output<string?> PlanType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Ship to customer account role.
         /// </summary>
         [Output("shipToCustAcctRoleId")]
-        public Output<string> ShipToCustAcctRoleId { get; private set; } = null!;
+        public Output<string?> ShipToCustAcctRoleId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Ship to customer account site address id.
         /// </summary>
         [Output("shipToCustAcctSiteId")]
-        public Output<string> ShipToCustAcctSiteId { get; private set; } = null!;
+        public Output<string?> ShipToCustAcctSiteId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Subscription details object which extends the SubscriptionSummary
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.OspGateway
         /// (Updatable) Subscription plan number.
         /// </summary>
         [Output("subscriptionPlanNumber")]
-        public Output<string> SubscriptionPlanNumber { get; private set; } = null!;
+        public Output<string?> SubscriptionPlanNumber { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Tax details.
@@ -153,31 +153,31 @@ namespace Pulumi.Oci.OspGateway
         /// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         /// </summary>
         [Output("timePersonalToCorporateConv")]
-        public Output<string> TimePersonalToCorporateConv { get; private set; } = null!;
+        public Output<string?> TimePersonalToCorporateConv { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         /// </summary>
         [Output("timePlanUpgrade")]
-        public Output<string> TimePlanUpgrade { get; private set; } = null!;
+        public Output<string?> TimePlanUpgrade { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Start date of the subscription.
         /// </summary>
         [Output("timeStart")]
-        public Output<string> TimeStart { get; private set; } = null!;
+        public Output<string?> TimeStart { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Status of the upgrade.
         /// </summary>
         [Output("upgradeState")]
-        public Output<string> UpgradeState { get; private set; } = null!;
+        public Output<string?> UpgradeState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         /// </summary>
         [Output("upgradeStateDetails")]
-        public Output<string> UpgradeStateDetails { get; private set; } = null!;
+        public Output<string?> UpgradeStateDetails { get; private set; } = null!;
 
 
         /// <summary>

@@ -43,19 +43,19 @@ export interface GetCloudGuardConfigurationArgs {
  */
 export interface GetCloudGuardConfigurationResult {
     readonly compartmentId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * The reporting region value
      */
-    readonly reportingRegion: string;
+    readonly reportingRegion?: string;
     /**
      * Identifies if Oracle managed resources were created by customers
      */
-    readonly selfManageResources: boolean;
+    readonly selfManageResources?: boolean;
     /**
      * Status of Cloud Guard Tenant
      */
-    readonly status: string;
+    readonly status?: string;
 }
 /**
  * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.

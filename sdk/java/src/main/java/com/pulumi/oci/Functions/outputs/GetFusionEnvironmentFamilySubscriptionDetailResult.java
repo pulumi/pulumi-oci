@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilySubscriptionDe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentFamilySubscriptionDetailResult {
@@ -16,12 +18,12 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of subscriptions.
      * 
      */
-    private List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions;
+    private @Nullable List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions;
 
     private GetFusionEnvironmentFamilySubscriptionDetailResult() {}
     public String fusionEnvironmentFamilyId() {
@@ -31,15 +33,15 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of subscriptions.
      * 
      */
     public List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions() {
-        return this.subscriptions;
+        return this.subscriptions == null ? List.of() : this.subscriptions;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailResult {
     @CustomType.Builder
     public static final class Builder {
         private String fusionEnvironmentFamilyId;
-        private String id;
-        private List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions;
+        private @Nullable String id;
+        private @Nullable List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions;
         public Builder() {}
         public Builder(GetFusionEnvironmentFamilySubscriptionDetailResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptions(List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions) {
-            this.subscriptions = Objects.requireNonNull(subscriptions);
+        public Builder subscriptions(@Nullable List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions) {
+            this.subscriptions = subscriptions;
             return this;
         }
         public Builder subscriptions(GetFusionEnvironmentFamilySubscriptionDetailSubscription... subscriptions) {

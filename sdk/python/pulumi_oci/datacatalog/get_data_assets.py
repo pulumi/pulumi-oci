@@ -61,33 +61,21 @@ class GetDataAssetsResult:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> str:
-        """
-        The data catalog's OCID.
-        """
         return pulumi.get(self, "catalog_id")
 
     @property
     @pulumi.getter(name="createdById")
     def created_by_id(self) -> Optional[str]:
-        """
-        OCID of the user who created the data asset.
-        """
         return pulumi.get(self, "created_by_id")
 
     @property
     @pulumi.getter(name="dataAssetCollections")
-    def data_asset_collections(self) -> Sequence['outputs.GetDataAssetsDataAssetCollectionResult']:
-        """
-        The list of data_asset_collection.
-        """
+    def data_asset_collections(self) -> Optional[Sequence['outputs.GetDataAssetsDataAssetCollectionResult']]:
         return pulumi.get(self, "data_asset_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -98,9 +86,6 @@ class GetDataAssetsResult:
     @property
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[str]:
-        """
-        External URI that can be used to reference the object. Format will differ based on the type of object.
-        """
         return pulumi.get(self, "external_key")
 
     @property
@@ -115,7 +100,7 @@ class GetDataAssetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -124,17 +109,11 @@ class GetDataAssetsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the data asset.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="typeKey")
     def type_key(self) -> Optional[str]:
-        """
-        The key of the object type. Type key's can be found via the '/types' endpoint.
-        """
         return pulumi.get(self, "type_key")
 
 
@@ -168,19 +147,7 @@ def get_data_assets(catalog_id: Optional[str] = None,
                     type_key: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataAssetsResult:
     """
-    This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of data assets within a data catalog.
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str created_by_id: OCID of the user who created the resource.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str display_name_contains: A filter to return only resources that match display name pattern given. The match is not case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
-    :param str external_key: Unique external identifier of this resource in the external source system.
-    :param Sequence[str] fields: Specifies the fields to return in a data asset summary response.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str type_key: The key of the object type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
@@ -221,18 +188,6 @@ def get_data_assets_output(catalog_id: Optional[pulumi.Input[str]] = None,
                            type_key: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataAssetsResult]:
     """
-    This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of data assets within a data catalog.
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str created_by_id: OCID of the user who created the resource.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str display_name_contains: A filter to return only resources that match display name pattern given. The match is not case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
-    :param str external_key: Unique external identifier of this resource in the external source system.
-    :param Sequence[str] fields: Specifies the fields to return in a data asset summary response.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str type_key: The key of the object type.
+    Use this data source to access information about an existing resource.
     """
     ...

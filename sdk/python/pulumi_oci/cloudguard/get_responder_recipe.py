@@ -74,74 +74,47 @@ class GetResponderRecipeResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        ResponderRule description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        ResponderRule display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="effectiveResponderRules")
-    def effective_responder_rules(self) -> Sequence['outputs.GetResponderRecipeEffectiveResponderRuleResult']:
-        """
-        List of responder rules associated with the recipe
-        """
+    def effective_responder_rules(self) -> Optional[Sequence['outputs.GetResponderRecipeEffectiveResponderRuleResult']]:
         return pulumi.get(self, "effective_responder_rules")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Identifier for ResponderRecipe.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def owner(self) -> str:
-        """
-        Owner of ResponderRecipe
-        """
+    def owner(self) -> Optional[str]:
         return pulumi.get(self, "owner")
 
     @property
@@ -151,50 +124,32 @@ class GetResponderRecipeResult:
 
     @property
     @pulumi.getter(name="responderRules")
-    def responder_rules(self) -> Sequence['outputs.GetResponderRecipeResponderRuleResult']:
-        """
-        List of responder rules associated with the recipe
-        """
+    def responder_rules(self) -> Optional[Sequence['outputs.GetResponderRecipeResponderRuleResult']]:
         return pulumi.get(self, "responder_rules")
 
     @property
     @pulumi.getter(name="sourceResponderRecipeId")
-    def source_responder_recipe_id(self) -> str:
-        """
-        The id of the source responder recipe.
-        """
+    def source_responder_recipe_id(self) -> Optional[str]:
         return pulumi.get(self, "source_responder_recipe_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Example.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the responder recipe was created. Format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the responder recipe was updated. Format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetResponderRecipeResult(GetResponderRecipeResult):
 def get_responder_recipe(responder_recipe_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResponderRecipeResult:
     """
-    This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Get a ResponderRecipe by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"])
-    ```
-
-
-    :param str responder_recipe_id: OCID of ResponderRecipe
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['responderRecipeId'] = responder_recipe_id
@@ -269,20 +210,6 @@ def get_responder_recipe(responder_recipe_id: Optional[str] = None,
 def get_responder_recipe_output(responder_recipe_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResponderRecipeResult]:
     """
-    This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Get a ResponderRecipe by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"])
-    ```
-
-
-    :param str responder_recipe_id: OCID of ResponderRecipe
+    Use this data source to access information about an existing resource.
     """
     ...

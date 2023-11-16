@@ -107,114 +107,72 @@ class GetManagedInstanceResult:
 
     @property
     @pulumi.getter
-    def autonomouses(self) -> Sequence['outputs.GetManagedInstanceAutonomouseResult']:
-        """
-        if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
-        """
+    def autonomouses(self) -> Optional[Sequence['outputs.GetManagedInstanceAutonomouseResult']]:
         return pulumi.get(self, "autonomouses")
 
     @property
     @pulumi.getter(name="bugUpdatesAvailable")
-    def bug_updates_available(self) -> int:
-        """
-        Number of bug fix type updates available to be installed
-        """
+    def bug_updates_available(self) -> Optional[int]:
         return pulumi.get(self, "bug_updates_available")
 
     @property
     @pulumi.getter(name="childSoftwareSources")
-    def child_software_sources(self) -> Sequence['outputs.GetManagedInstanceChildSoftwareSourceResult']:
-        """
-        list of child Software Sources attached to the Managed Instance
-        """
+    def child_software_sources(self) -> Optional[Sequence['outputs.GetManagedInstanceChildSoftwareSourceResult']]:
         return pulumi.get(self, "child_software_sources")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID for the Compartment
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Information specified by the user about the managed instance
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User friendly name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="enhancementUpdatesAvailable")
-    def enhancement_updates_available(self) -> int:
-        """
-        Number of enhancement type updates available to be installed
-        """
+    def enhancement_updates_available(self) -> Optional[int]:
         return pulumi.get(self, "enhancement_updates_available")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        software source identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isDataCollectionAuthorized")
-    def is_data_collection_authorized(self) -> bool:
-        """
-        True if user allow data collection for this instance
-        """
+    def is_data_collection_authorized(self) -> Optional[bool]:
         return pulumi.get(self, "is_data_collection_authorized")
 
     @property
     @pulumi.getter(name="isRebootRequired")
-    def is_reboot_required(self) -> bool:
-        """
-        Indicates whether a reboot is required to complete installation of updates.
-        """
+    def is_reboot_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_reboot_required")
 
     @property
     @pulumi.getter(name="kspliceEffectiveKernelVersion")
-    def ksplice_effective_kernel_version(self) -> str:
-        """
-        The ksplice effective kernel version
-        """
+    def ksplice_effective_kernel_version(self) -> Optional[str]:
         return pulumi.get(self, "ksplice_effective_kernel_version")
 
     @property
     @pulumi.getter(name="lastBoot")
-    def last_boot(self) -> str:
-        """
-        Time at which the instance last booted
-        """
+    def last_boot(self) -> Optional[str]:
         return pulumi.get(self, "last_boot")
 
     @property
     @pulumi.getter(name="lastCheckin")
-    def last_checkin(self) -> str:
-        """
-        Time at which the instance last checked in
-        """
+    def last_checkin(self) -> Optional[str]:
         return pulumi.get(self, "last_checkin")
 
     @property
     @pulumi.getter(name="managedInstanceGroups")
-    def managed_instance_groups(self) -> Sequence['outputs.GetManagedInstanceManagedInstanceGroupResult']:
-        """
-        The ids of the managed instance groups of which this instance is a member.
-        """
+    def managed_instance_groups(self) -> Optional[Sequence['outputs.GetManagedInstanceManagedInstanceGroupResult']]:
         return pulumi.get(self, "managed_instance_groups")
 
     @property
@@ -224,98 +182,62 @@ class GetManagedInstanceResult:
 
     @property
     @pulumi.getter(name="notificationTopicId")
-    def notification_topic_id(self) -> str:
-        """
-        OCID of the ONS topic used to send notification to users
-        """
+    def notification_topic_id(self) -> Optional[str]:
         return pulumi.get(self, "notification_topic_id")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        The Operating System type of the managed instance.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="osKernelVersion")
-    def os_kernel_version(self) -> str:
-        """
-        Operating System Kernel Version
-        """
+    def os_kernel_version(self) -> Optional[str]:
         return pulumi.get(self, "os_kernel_version")
 
     @property
     @pulumi.getter(name="osName")
-    def os_name(self) -> str:
-        """
-        Operating System Name
-        """
+    def os_name(self) -> Optional[str]:
         return pulumi.get(self, "os_name")
 
     @property
     @pulumi.getter(name="osVersion")
-    def os_version(self) -> str:
-        """
-        Operating System Version
-        """
+    def os_version(self) -> Optional[str]:
         return pulumi.get(self, "os_version")
 
     @property
     @pulumi.getter(name="otherUpdatesAvailable")
-    def other_updates_available(self) -> int:
-        """
-        Number of non-classified updates available to be installed
-        """
+    def other_updates_available(self) -> Optional[int]:
         return pulumi.get(self, "other_updates_available")
 
     @property
     @pulumi.getter(name="parentSoftwareSources")
-    def parent_software_sources(self) -> Sequence['outputs.GetManagedInstanceParentSoftwareSourceResult']:
-        """
-        the parent (base) Software Source attached to the Managed Instance
-        """
+    def parent_software_sources(self) -> Optional[Sequence['outputs.GetManagedInstanceParentSoftwareSourceResult']]:
         return pulumi.get(self, "parent_software_sources")
 
     @property
     @pulumi.getter(name="scheduledJobCount")
-    def scheduled_job_count(self) -> int:
-        """
-        Number of scheduled jobs associated with this instance
-        """
+    def scheduled_job_count(self) -> Optional[int]:
         return pulumi.get(self, "scheduled_job_count")
 
     @property
     @pulumi.getter(name="securityUpdatesAvailable")
-    def security_updates_available(self) -> int:
-        """
-        Number of security type updates available to be installed
-        """
+    def security_updates_available(self) -> Optional[int]:
         return pulumi.get(self, "security_updates_available")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        status of the managed instance.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="updatesAvailable")
-    def updates_available(self) -> int:
-        """
-        Number of updates available to be installed
-        """
+    def updates_available(self) -> Optional[int]:
         return pulumi.get(self, "updates_available")
 
     @property
     @pulumi.getter(name="workRequestCount")
-    def work_request_count(self) -> int:
-        """
-        Number of work requests associated with this instance
-        """
+    def work_request_count(self) -> Optional[int]:
         return pulumi.get(self, "work_request_count")
 
 
@@ -357,21 +279,7 @@ class AwaitableGetManagedInstanceResult(GetManagedInstanceResult):
 def get_managed_instance(managed_instance_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceResult:
     """
-    This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a specific Managed Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"])
-    ```
-
-
-    :param str managed_instance_id: OCID for the managed instance
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedInstanceId'] = managed_instance_id
@@ -412,20 +320,6 @@ def get_managed_instance(managed_instance_id: Optional[str] = None,
 def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceResult]:
     """
-    This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a specific Managed Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"])
-    ```
-
-
-    :param str managed_instance_id: OCID for the managed instance
+    Use this data source to access information about an existing resource.
     """
     ...

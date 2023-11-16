@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPbfListingsPbfListingsCollectionItem {
@@ -18,57 +20,57 @@ public final class GetPbfListingsPbfListingsCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A short overview of the PBF Listing: the purpose of the PBF and and associated information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A filter to return only resources that match the entire PBF name given.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Contains details about the publisher of this PBF Listing.
      * 
      */
-    private List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails;
+    private @Nullable List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the PbfListing was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The last time the PbfListing was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return An array of Trigger. A list of triggers that may activate the PBF.
      * 
      */
-    private List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers;
+    private @Nullable List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers;
 
     private GetPbfListingsPbfListingsCollectionItem() {}
     /**
@@ -76,77 +78,77 @@ public final class GetPbfListingsPbfListingsCollectionItem {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A short overview of the PBF Listing: the purpose of the PBF and and associated information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A filter to return only resources that match the entire PBF name given.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Contains details about the publisher of this PBF Listing.
      * 
      */
     public List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails() {
-        return this.publisherDetails;
+        return this.publisherDetails == null ? List.of() : this.publisherDetails;
     }
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the PbfListing was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The last time the PbfListing was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return An array of Trigger. A list of triggers that may activate the PBF.
      * 
      */
     public List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers() {
-        return this.triggers;
+        return this.triggers == null ? List.of() : this.triggers;
     }
 
     public static Builder builder() {
@@ -158,17 +160,17 @@ public final class GetPbfListingsPbfListingsCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String name;
-        private List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers;
         public Builder() {}
         public Builder(GetPbfListingsPbfListingsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -186,61 +188,61 @@ public final class GetPbfListingsPbfListingsCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder publisherDetails(List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails) {
-            this.publisherDetails = Objects.requireNonNull(publisherDetails);
+        public Builder publisherDetails(@Nullable List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails) {
+            this.publisherDetails = publisherDetails;
             return this;
         }
         public Builder publisherDetails(GetPbfListingsPbfListingsCollectionItemPublisherDetail... publisherDetails) {
             return publisherDetails(List.of(publisherDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder triggers(List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers) {
-            this.triggers = Objects.requireNonNull(triggers);
+        public Builder triggers(@Nullable List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers) {
+            this.triggers = triggers;
             return this;
         }
         public Builder triggers(GetPbfListingsPbfListingsCollectionItemTrigger... triggers) {

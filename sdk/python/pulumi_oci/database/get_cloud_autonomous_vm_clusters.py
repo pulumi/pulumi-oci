@@ -52,41 +52,26 @@ class GetCloudAutonomousVmClustersResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The name of the availability domain that the cloud Autonomous VM cluster is located in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusters")
-    def cloud_autonomous_vm_clusters(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult']:
-        """
-        The list of cloud_autonomous_vm_clusters.
-        """
+    def cloud_autonomous_vm_clusters(self) -> Optional[Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult']]:
         return pulumi.get(self, "cloud_autonomous_vm_clusters")
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
-        """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -96,7 +81,7 @@ class GetCloudAutonomousVmClustersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,9 +90,6 @@ class GetCloudAutonomousVmClustersResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the cloud Autonomous VM cluster.
-        """
         return pulumi.get(self, "state")
 
 
@@ -135,29 +117,7 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAutonomousVmClustersResult:
     """
-    This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
-
-    Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["cloud_autonomous_vm_cluster_availability_domain"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_autonomous_vm_cluster_display_name"],
-        state=var["cloud_autonomous_vm_cluster_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -189,28 +149,6 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClustersResult]:
     """
-    This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
-
-    Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["cloud_autonomous_vm_cluster_availability_domain"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_autonomous_vm_cluster_display_name"],
-        state=var["cloud_autonomous_vm_cluster_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
@@ -15,99 +17,99 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
      * 
      */
-    private List<String> ids;
+    private @Nullable List<String> ids;
     /**
      * @return The IPSec connection that contains the attached IPSec tunnel.
      * 
      */
-    private String ipsecConnectionId;
+    private @Nullable String ipsecConnectionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
      * 
      */
-    private String routeTableId;
+    private @Nullable String routeTableId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
      * 
      */
-    private String transportAttachmentId;
+    private @Nullable String transportAttachmentId;
     /**
      * @return Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
      * 
      */
-    private Boolean transportOnlyMode;
+    private @Nullable Boolean transportOnlyMode;
     /**
      * @return The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
      * 
      */
-    private String vcnRouteType;
+    private @Nullable String vcnRouteType;
 
     private GetDrgAttachmentsDrgAttachmentNetworkDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
      * 
      */
     public List<String> ids() {
-        return this.ids;
+        return this.ids == null ? List.of() : this.ids;
     }
     /**
      * @return The IPSec connection that contains the attached IPSec tunnel.
      * 
      */
-    public String ipsecConnectionId() {
-        return this.ipsecConnectionId;
+    public Optional<String> ipsecConnectionId() {
+        return Optional.ofNullable(this.ipsecConnectionId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
      * 
      */
-    public String routeTableId() {
-        return this.routeTableId;
+    public Optional<String> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
      * 
      */
-    public String transportAttachmentId() {
-        return this.transportAttachmentId;
+    public Optional<String> transportAttachmentId() {
+        return Optional.ofNullable(this.transportAttachmentId);
     }
     /**
      * @return Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
      * 
      */
-    public Boolean transportOnlyMode() {
-        return this.transportOnlyMode;
+    public Optional<Boolean> transportOnlyMode() {
+        return Optional.ofNullable(this.transportOnlyMode);
     }
     /**
      * @return The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
      * 
      */
-    public String vcnRouteType() {
-        return this.vcnRouteType;
+    public Optional<String> vcnRouteType() {
+        return Optional.ofNullable(this.vcnRouteType);
     }
 
     public static Builder builder() {
@@ -119,14 +121,14 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<String> ids;
-        private String ipsecConnectionId;
-        private String routeTableId;
-        private String transportAttachmentId;
-        private Boolean transportOnlyMode;
-        private String type;
-        private String vcnRouteType;
+        private @Nullable String id;
+        private @Nullable List<String> ids;
+        private @Nullable String ipsecConnectionId;
+        private @Nullable String routeTableId;
+        private @Nullable String transportAttachmentId;
+        private @Nullable Boolean transportOnlyMode;
+        private @Nullable String type;
+        private @Nullable String vcnRouteType;
         public Builder() {}
         public Builder(GetDrgAttachmentsDrgAttachmentNetworkDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -141,46 +143,46 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ids(List<String> ids) {
-            this.ids = Objects.requireNonNull(ids);
+        public Builder ids(@Nullable List<String> ids) {
+            this.ids = ids;
             return this;
         }
         public Builder ids(String... ids) {
             return ids(List.of(ids));
         }
         @CustomType.Setter
-        public Builder ipsecConnectionId(String ipsecConnectionId) {
-            this.ipsecConnectionId = Objects.requireNonNull(ipsecConnectionId);
+        public Builder ipsecConnectionId(@Nullable String ipsecConnectionId) {
+            this.ipsecConnectionId = ipsecConnectionId;
             return this;
         }
         @CustomType.Setter
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = Objects.requireNonNull(routeTableId);
+        public Builder routeTableId(@Nullable String routeTableId) {
+            this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
-        public Builder transportAttachmentId(String transportAttachmentId) {
-            this.transportAttachmentId = Objects.requireNonNull(transportAttachmentId);
+        public Builder transportAttachmentId(@Nullable String transportAttachmentId) {
+            this.transportAttachmentId = transportAttachmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder transportOnlyMode(Boolean transportOnlyMode) {
-            this.transportOnlyMode = Objects.requireNonNull(transportOnlyMode);
+        public Builder transportOnlyMode(@Nullable Boolean transportOnlyMode) {
+            this.transportOnlyMode = transportOnlyMode;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnRouteType(String vcnRouteType) {
-            this.vcnRouteType = Objects.requireNonNull(vcnRouteType);
+        public Builder vcnRouteType(@Nullable String vcnRouteType) {
+            this.vcnRouteType = vcnRouteType;
             return this;
         }
         public GetDrgAttachmentsDrgAttachmentNetworkDetail build() {

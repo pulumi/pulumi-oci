@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
@@ -80,7 +79,7 @@ type NewsReport struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringOutput `pulumi:"locale"`
 	// The news report name.
@@ -90,18 +89,18 @@ type NewsReport struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
 	OnsTopicId pulumi.StringOutput `pulumi:"onsTopicId"`
 	// The current state of the news report.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Defines if the news report will be enabled or disabled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewNewsReport registers a new resource with the given unique name, arguments, and options.
@@ -303,12 +302,6 @@ func (i *NewsReport) ToNewsReportOutputWithContext(ctx context.Context) NewsRepo
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportOutput)
 }
 
-func (i *NewsReport) ToOutput(ctx context.Context) pulumix.Output[*NewsReport] {
-	return pulumix.Output[*NewsReport]{
-		OutputState: i.ToNewsReportOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NewsReportArrayInput is an input type that accepts NewsReportArray and NewsReportArrayOutput values.
 // You can construct a concrete instance of `NewsReportArrayInput` via:
 //
@@ -332,12 +325,6 @@ func (i NewsReportArray) ToNewsReportArrayOutput() NewsReportArrayOutput {
 
 func (i NewsReportArray) ToNewsReportArrayOutputWithContext(ctx context.Context) NewsReportArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportArrayOutput)
-}
-
-func (i NewsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]*NewsReport] {
-	return pulumix.Output[[]*NewsReport]{
-		OutputState: i.ToNewsReportArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NewsReportMapInput is an input type that accepts NewsReportMap and NewsReportMapOutput values.
@@ -365,12 +352,6 @@ func (i NewsReportMap) ToNewsReportMapOutputWithContext(ctx context.Context) New
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportMapOutput)
 }
 
-func (i NewsReportMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NewsReport] {
-	return pulumix.Output[map[string]*NewsReport]{
-		OutputState: i.ToNewsReportMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NewsReportOutput struct{ *pulumi.OutputState }
 
 func (NewsReportOutput) ElementType() reflect.Type {
@@ -383,12 +364,6 @@ func (o NewsReportOutput) ToNewsReportOutput() NewsReportOutput {
 
 func (o NewsReportOutput) ToNewsReportOutputWithContext(ctx context.Context) NewsReportOutput {
 	return o
-}
-
-func (o NewsReportOutput) ToOutput(ctx context.Context) pulumix.Output[*NewsReport] {
-	return pulumix.Output[*NewsReport]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier where the news report will be created.
@@ -417,8 +392,8 @@ func (o NewsReportOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o NewsReportOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o NewsReportOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Language of the news report.
@@ -442,16 +417,16 @@ func (o NewsReportOutput) OnsTopicId() pulumi.StringOutput {
 }
 
 // The current state of the news report.
-func (o NewsReportOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NewsReportOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defines if the news report will be enabled or disabled.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o NewsReportOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o NewsReportOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -460,13 +435,13 @@ func (o NewsReportOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.
-func (o NewsReportOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NewsReportOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the news report was updated. An RFC3339 formatted datetime string.
-func (o NewsReportOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o NewsReportOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type NewsReportArrayOutput struct{ *pulumi.OutputState }
@@ -481,12 +456,6 @@ func (o NewsReportArrayOutput) ToNewsReportArrayOutput() NewsReportArrayOutput {
 
 func (o NewsReportArrayOutput) ToNewsReportArrayOutputWithContext(ctx context.Context) NewsReportArrayOutput {
 	return o
-}
-
-func (o NewsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NewsReport] {
-	return pulumix.Output[[]*NewsReport]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NewsReportArrayOutput) Index(i pulumi.IntInput) NewsReportOutput {
@@ -507,12 +476,6 @@ func (o NewsReportMapOutput) ToNewsReportMapOutput() NewsReportMapOutput {
 
 func (o NewsReportMapOutput) ToNewsReportMapOutputWithContext(ctx context.Context) NewsReportMapOutput {
 	return o
-}
-
-func (o NewsReportMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NewsReport] {
-	return pulumix.Output[map[string]*NewsReport]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NewsReportMapOutput) MapIndex(k pulumi.StringInput) NewsReportOutput {

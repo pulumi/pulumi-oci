@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceUsageResult {
@@ -16,48 +18,48 @@ public final class GetResourceUsageResult {
      * @return EmInstanceCount
      * 
      */
-    private Integer emInstanceCount;
+    private @Nullable Integer emInstanceCount;
     /**
      * @return List of emInstances
      * 
      */
-    private List<GetResourceUsageEmInstance> emInstances;
+    private @Nullable List<GetResourceUsageEmInstance> emInstances;
     private String emWarehouseId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    private String operationsInsightsWarehouseId;
+    private @Nullable String operationsInsightsWarehouseId;
     /**
      * @return schema name
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
     /**
      * @return EmInstance Target count
      * 
      */
-    private Integer targetsCount;
+    private @Nullable Integer targetsCount;
 
     private GetResourceUsageResult() {}
     /**
      * @return EmInstanceCount
      * 
      */
-    public Integer emInstanceCount() {
-        return this.emInstanceCount;
+    public Optional<Integer> emInstanceCount() {
+        return Optional.ofNullable(this.emInstanceCount);
     }
     /**
      * @return List of emInstances
      * 
      */
     public List<GetResourceUsageEmInstance> emInstances() {
-        return this.emInstances;
+        return this.emInstances == null ? List.of() : this.emInstances;
     }
     public String emWarehouseId() {
         return this.emWarehouseId;
@@ -66,29 +68,29 @@ public final class GetResourceUsageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    public String operationsInsightsWarehouseId() {
-        return this.operationsInsightsWarehouseId;
+    public Optional<String> operationsInsightsWarehouseId() {
+        return Optional.ofNullable(this.operationsInsightsWarehouseId);
     }
     /**
      * @return schema name
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
     /**
      * @return EmInstance Target count
      * 
      */
-    public Integer targetsCount() {
-        return this.targetsCount;
+    public Optional<Integer> targetsCount() {
+        return Optional.ofNullable(this.targetsCount);
     }
 
     public static Builder builder() {
@@ -100,13 +102,13 @@ public final class GetResourceUsageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer emInstanceCount;
-        private List<GetResourceUsageEmInstance> emInstances;
+        private @Nullable Integer emInstanceCount;
+        private @Nullable List<GetResourceUsageEmInstance> emInstances;
         private String emWarehouseId;
-        private String id;
-        private String operationsInsightsWarehouseId;
-        private String schemaName;
-        private Integer targetsCount;
+        private @Nullable String id;
+        private @Nullable String operationsInsightsWarehouseId;
+        private @Nullable String schemaName;
+        private @Nullable Integer targetsCount;
         public Builder() {}
         public Builder(GetResourceUsageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -120,13 +122,13 @@ public final class GetResourceUsageResult {
         }
 
         @CustomType.Setter
-        public Builder emInstanceCount(Integer emInstanceCount) {
-            this.emInstanceCount = Objects.requireNonNull(emInstanceCount);
+        public Builder emInstanceCount(@Nullable Integer emInstanceCount) {
+            this.emInstanceCount = emInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder emInstances(List<GetResourceUsageEmInstance> emInstances) {
-            this.emInstances = Objects.requireNonNull(emInstances);
+        public Builder emInstances(@Nullable List<GetResourceUsageEmInstance> emInstances) {
+            this.emInstances = emInstances;
             return this;
         }
         public Builder emInstances(GetResourceUsageEmInstance... emInstances) {
@@ -138,23 +140,23 @@ public final class GetResourceUsageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+        public Builder operationsInsightsWarehouseId(@Nullable String operationsInsightsWarehouseId) {
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
-        public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+        public Builder targetsCount(@Nullable Integer targetsCount) {
+            this.targetsCount = targetsCount;
             return this;
         }
         public GetResourceUsageResult build() {

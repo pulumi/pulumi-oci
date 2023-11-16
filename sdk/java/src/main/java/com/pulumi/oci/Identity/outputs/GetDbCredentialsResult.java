@@ -18,13 +18,13 @@ public final class GetDbCredentialsResult {
      * @return The list of db_credentials.
      * 
      */
-    private List<GetDbCredentialsDbCredential> dbCredentials;
+    private @Nullable List<GetDbCredentialsDbCredential> dbCredentials;
     private @Nullable List<GetDbCredentialsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String name;
     /**
      * @return The credential&#39;s current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
@@ -43,7 +43,7 @@ public final class GetDbCredentialsResult {
      * 
      */
     public List<GetDbCredentialsDbCredential> dbCredentials() {
-        return this.dbCredentials;
+        return this.dbCredentials == null ? List.of() : this.dbCredentials;
     }
     public List<GetDbCredentialsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -52,8 +52,8 @@ public final class GetDbCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -82,9 +82,9 @@ public final class GetDbCredentialsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbCredentialsDbCredential> dbCredentials;
+        private @Nullable List<GetDbCredentialsDbCredential> dbCredentials;
         private @Nullable List<GetDbCredentialsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         private String userId;
@@ -100,8 +100,8 @@ public final class GetDbCredentialsResult {
         }
 
         @CustomType.Setter
-        public Builder dbCredentials(List<GetDbCredentialsDbCredential> dbCredentials) {
-            this.dbCredentials = Objects.requireNonNull(dbCredentials);
+        public Builder dbCredentials(@Nullable List<GetDbCredentialsDbCredential> dbCredentials) {
+            this.dbCredentials = dbCredentials;
             return this;
         }
         public Builder dbCredentials(GetDbCredentialsDbCredential... dbCredentials) {
@@ -116,8 +116,8 @@ public final class GetDbCredentialsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

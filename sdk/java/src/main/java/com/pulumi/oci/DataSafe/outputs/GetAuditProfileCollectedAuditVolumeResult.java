@@ -22,12 +22,12 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of collected audit volume summary.
      * 
      */
-    private List<GetAuditProfileCollectedAuditVolumeItem> items;
+    private @Nullable List<GetAuditProfileCollectedAuditVolumeItem> items;
     private @Nullable String monthInConsiderationGreaterThan;
     private @Nullable String monthInConsiderationLessThan;
     private String workRequestId;
@@ -44,15 +44,15 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of collected audit volume summary.
      * 
      */
     public List<GetAuditProfileCollectedAuditVolumeItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> monthInConsiderationGreaterThan() {
         return Optional.ofNullable(this.monthInConsiderationGreaterThan);
@@ -74,8 +74,8 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
     @CustomType.Builder
     public static final class Builder {
         private String auditProfileId;
-        private String id;
-        private List<GetAuditProfileCollectedAuditVolumeItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAuditProfileCollectedAuditVolumeItem> items;
         private @Nullable String monthInConsiderationGreaterThan;
         private @Nullable String monthInConsiderationLessThan;
         private String workRequestId;
@@ -96,13 +96,13 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAuditProfileCollectedAuditVolumeItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAuditProfileCollectedAuditVolumeItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditProfileCollectedAuditVolumeItem... items) {

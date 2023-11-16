@@ -81,23 +81,23 @@ export class AppAccelerationPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) WebAppAccelerationPolicy display name, can be renamed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An object that specifies an HTTP response caching policy.
      */
-    public readonly responseCachingPolicy!: pulumi.Output<outputs.Waa.AppAccelerationPolicyResponseCachingPolicy>;
+    public readonly responseCachingPolicy!: pulumi.Output<outputs.Waa.AppAccelerationPolicyResponseCachingPolicy | undefined>;
     /**
      * (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
      *
@@ -105,11 +105,11 @@ export class AppAccelerationPolicy extends pulumi.CustomResource {
      *
      * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
      */
-    public readonly responseCompressionPolicy!: pulumi.Output<outputs.Waa.AppAccelerationPolicyResponseCompressionPolicy>;
+    public readonly responseCompressionPolicy!: pulumi.Output<outputs.Waa.AppAccelerationPolicyResponseCompressionPolicy | undefined>;
     /**
      * The current state of the WebAppAccelerationPolicy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -117,15 +117,15 @@ export class AppAccelerationPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppAccelerationPolicy resource with the given unique name, arguments, and options.

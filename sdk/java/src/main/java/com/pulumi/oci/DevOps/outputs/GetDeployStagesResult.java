@@ -28,7 +28,7 @@ public final class GetDeployStagesResult {
      * @return The list of deploy_stage_collection.
      * 
      */
-    private List<GetDeployStagesDeployStageCollection> deployStageCollections;
+    private @Nullable List<GetDeployStagesDeployStageCollection> deployStageCollections;
     /**
      * @return Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
@@ -66,7 +66,7 @@ public final class GetDeployStagesResult {
      * 
      */
     public List<GetDeployStagesDeployStageCollection> deployStageCollections() {
-        return this.deployStageCollections;
+        return this.deployStageCollections == null ? List.of() : this.deployStageCollections;
     }
     /**
      * @return Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -104,7 +104,7 @@ public final class GetDeployStagesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String deployPipelineId;
-        private List<GetDeployStagesDeployStageCollection> deployStageCollections;
+        private @Nullable List<GetDeployStagesDeployStageCollection> deployStageCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeployStagesFilter> filters;
         private @Nullable String id;
@@ -132,8 +132,8 @@ public final class GetDeployStagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deployStageCollections(List<GetDeployStagesDeployStageCollection> deployStageCollections) {
-            this.deployStageCollections = Objects.requireNonNull(deployStageCollections);
+        public Builder deployStageCollections(@Nullable List<GetDeployStagesDeployStageCollection> deployStageCollections) {
+            this.deployStageCollections = deployStageCollections;
             return this;
         }
         public Builder deployStageCollections(GetDeployStagesDeployStageCollection... deployStageCollections) {

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
         /// </summary>
-        public readonly string ApplicationId;
+        public readonly string? ApplicationId;
         /// <summary>
         /// The OCID of the compartment that contains the function.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Config;
+        public readonly ImmutableDictionary<string, object>? Config;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only functions with display names that match the display name string. Matching is exact.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A filter to return only functions with the specified OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
-        public readonly string Image;
+        public readonly string? Image;
         /// <summary>
         /// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         /// </summary>
-        public readonly string ImageDigest;
+        public readonly string? ImageDigest;
         /// <summary>
         /// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         /// </summary>
-        public readonly string InvokeEndpoint;
+        public readonly string? InvokeEndpoint;
         /// <summary>
         /// Maximum usable memory for the function (MiB).
         /// </summary>
-        public readonly string MemoryInMbs;
+        public readonly string? MemoryInMbs;
         /// <summary>
         /// Define the strategy for provisioned concurrency for the function.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The source details for the Function. The function can be created from various sources.
         /// </summary>
@@ -72,19 +72,19 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Timeout for executions of the function. Value in seconds.
         /// </summary>
-        public readonly int TimeoutInSeconds;
+        public readonly int? TimeoutInSeconds;
         /// <summary>
         /// Define the tracing configuration for a function.
         /// </summary>
@@ -92,41 +92,41 @@ namespace Pulumi.Oci.Functions.Outputs
 
         [OutputConstructor]
         private GetFunctionsFunctionResult(
-            string applicationId,
+            string? applicationId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> config,
+            ImmutableDictionary<string, object>? config,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string image,
+            string? image,
 
-            string imageDigest,
+            string? imageDigest,
 
-            string invokeEndpoint,
+            string? invokeEndpoint,
 
-            string memoryInMbs,
+            string? memoryInMbs,
 
             ImmutableArray<Outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult> provisionedConcurrencyConfigs,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailResult> sourceDetails,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int timeoutInSeconds,
+            int? timeoutInSeconds,
 
             ImmutableArray<Outputs.GetFunctionsFunctionTraceConfigResult> traceConfigs)
         {

@@ -20,13 +20,13 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Determines whether to enable client verification when API Consumer makes connection to the gateway.
         /// </summary>
-        public readonly bool IsVerifiedCertificateRequired;
+        public readonly bool? IsVerifiedCertificateRequired;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRequestPolicyMutualTlResult(
             ImmutableArray<string> allowedSans,
 
-            bool isVerifiedCertificateRequired)
+            bool? isVerifiedCertificateRequired)
         {
             AllowedSans = allowedSans;
             IsVerifiedCertificateRequired = isVerifiedCertificateRequired;

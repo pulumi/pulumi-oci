@@ -33,7 +33,7 @@ public final class GetExportSetsResult {
      * @return The list of export_sets.
      * 
      */
-    private List<GetExportSetsExportSet> exportSets;
+    private @Nullable List<GetExportSetsExportSet> exportSets;
     private @Nullable List<GetExportSetsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
@@ -73,7 +73,7 @@ public final class GetExportSetsResult {
      * 
      */
     public List<GetExportSetsExportSet> exportSets() {
-        return this.exportSets;
+        return this.exportSets == null ? List.of() : this.exportSets;
     }
     public List<GetExportSetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -105,7 +105,7 @@ public final class GetExportSetsResult {
         private String availabilityDomain;
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetExportSetsExportSet> exportSets;
+        private @Nullable List<GetExportSetsExportSet> exportSets;
         private @Nullable List<GetExportSetsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
@@ -137,8 +137,8 @@ public final class GetExportSetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder exportSets(List<GetExportSetsExportSet> exportSets) {
-            this.exportSets = Objects.requireNonNull(exportSets);
+        public Builder exportSets(@Nullable List<GetExportSetsExportSet> exportSets) {
+            this.exportSets = exportSets;
             return this;
         }
         public Builder exportSets(GetExportSetsExportSet... exportSets) {

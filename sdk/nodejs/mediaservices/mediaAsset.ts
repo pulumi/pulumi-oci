@@ -50,7 +50,7 @@ export class MediaAsset extends pulumi.CustomResource {
     /**
      * The name of the object storage bucket where this asset is located.
      */
-    public readonly bucket!: pulumi.Output<string>;
+    public readonly bucket!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -58,79 +58,79 @@ export class MediaAsset extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      */
-    public readonly masterMediaAssetId!: pulumi.Output<string>;
+    public readonly masterMediaAssetId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) list of tags for the MediaAsset.
      */
-    public readonly mediaAssetTags!: pulumi.Output<outputs.MediaServices.MediaAssetMediaAssetTag[]>;
+    public readonly mediaAssetTags!: pulumi.Output<outputs.MediaServices.MediaAssetMediaAssetTag[] | undefined>;
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
      */
-    public readonly mediaWorkflowJobId!: pulumi.Output<string>;
+    public readonly mediaWorkflowJobId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) JSON string containing the technial metadata for the media asset.
      */
-    public readonly metadatas!: pulumi.Output<outputs.MediaServices.MediaAssetMetadata[]>;
+    public readonly metadatas!: pulumi.Output<outputs.MediaServices.MediaAssetMetadata[] | undefined>;
     /**
      * The object storage namespace where this asset is located.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    public readonly namespace!: pulumi.Output<string | undefined>;
     /**
      * The object storage object name that identifies this asset.
      */
-    public readonly object!: pulumi.Output<string>;
+    public readonly object!: pulumi.Output<string | undefined>;
     /**
      * eTag of the underlying object storage object.
      */
-    public readonly objectEtag!: pulumi.Output<string>;
+    public readonly objectEtag!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The ID of the parent asset from which this asset is derived.
      */
-    public readonly parentMediaAssetId!: pulumi.Output<string>;
+    public readonly parentMediaAssetId!: pulumi.Output<string | undefined>;
     /**
      * The end index for video segment files.
      */
-    public readonly segmentRangeEndIndex!: pulumi.Output<string>;
+    public readonly segmentRangeEndIndex!: pulumi.Output<string | undefined>;
     /**
      * The start index for video segment files.
      */
-    public readonly segmentRangeStartIndex!: pulumi.Output<string>;
+    public readonly segmentRangeStartIndex!: pulumi.Output<string | undefined>;
     /**
      * The ID of the MediaWorkflow used to produce this asset.
      */
-    public readonly sourceMediaWorkflowId!: pulumi.Output<string>;
+    public readonly sourceMediaWorkflowId!: pulumi.Output<string | undefined>;
     /**
      * The version of the MediaWorkflow used to produce this asset.
      */
-    public readonly sourceMediaWorkflowVersion!: pulumi.Output<string>;
+    public readonly sourceMediaWorkflowVersion!: pulumi.Output<string | undefined>;
     /**
      * The current state of the MediaAsset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The type of the media asset.
      *

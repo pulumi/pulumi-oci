@@ -70,7 +70,7 @@ export interface GetExternalDbSystemConnectorsResult {
     /**
      * The list of external_db_system_connector_collection.
      */
-    readonly externalDbSystemConnectorCollections: outputs.DatabaseManagement.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection[];
+    readonly externalDbSystemConnectorCollections?: outputs.DatabaseManagement.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
      */
@@ -79,7 +79,7 @@ export interface GetExternalDbSystemConnectorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.

@@ -18,7 +18,7 @@ public final class GetAccessPoliciesResult {
      * @return The list of access_policy_collection.
      * 
      */
-    private List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections;
+    private @Nullable List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -52,7 +52,7 @@ public final class GetAccessPoliciesResult {
      * 
      */
     public List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections() {
-        return this.accessPolicyCollections;
+        return this.accessPolicyCollections == null ? List.of() : this.accessPolicyCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -102,7 +102,7 @@ public final class GetAccessPoliciesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections;
+        private @Nullable List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections;
         private String compartmentId;
         private @Nullable List<GetAccessPoliciesFilter> filters;
         private @Nullable String id;
@@ -122,8 +122,8 @@ public final class GetAccessPoliciesResult {
         }
 
         @CustomType.Setter
-        public Builder accessPolicyCollections(List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections) {
-            this.accessPolicyCollections = Objects.requireNonNull(accessPolicyCollections);
+        public Builder accessPolicyCollections(@Nullable List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections) {
+            this.accessPolicyCollections = accessPolicyCollections;
             return this;
         }
         public Builder accessPolicyCollections(GetAccessPoliciesAccessPolicyCollection... accessPolicyCollections) {

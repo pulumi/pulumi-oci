@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
@@ -76,7 +75,7 @@ type GetHttpMonitorsResult struct {
 	// The list of http_monitors.
 	HttpMonitors []GetHttpMonitorsHttpMonitor `pulumi:"httpMonitors"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetHttpMonitorsOutput(ctx *pulumi.Context, args GetHttpMonitorsOutputArgs, opts ...pulumi.InvokeOption) GetHttpMonitorsResultOutput {
@@ -122,12 +121,6 @@ func (o GetHttpMonitorsResultOutput) ToGetHttpMonitorsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetHttpMonitorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsResult] {
-	return pulumix.Output[GetHttpMonitorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
 func (o GetHttpMonitorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHttpMonitorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -153,8 +146,8 @@ func (o GetHttpMonitorsResultOutput) HttpMonitors() GetHttpMonitorsHttpMonitorAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetHttpMonitorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHttpMonitorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// A column delimiter
         /// </summary>
-        public readonly string ColumnDelimiter;
+        public readonly string? ColumnDelimiter;
         /// <summary>
         /// The index of a selected column. This is a zero-based index.
         /// </summary>
-        public readonly int ColumnIndex;
+        public readonly int? ColumnIndex;
         /// <summary>
         /// The name of a selected column.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// An escape character.
         /// </summary>
-        public readonly string EscapeCharacter;
+        public readonly string? EscapeCharacter;
         /// <summary>
         /// It defines the format type of text files.
         /// </summary>
-        public readonly string FormatType;
+        public readonly string? FormatType;
         /// <summary>
         /// A line delimiter.
         /// </summary>
-        public readonly string LineDelimiter;
+        public readonly string? LineDelimiter;
 
         [OutputConstructor]
         private GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult(
-            string columnDelimiter,
+            string? columnDelimiter,
 
-            int columnIndex,
+            int? columnIndex,
 
-            string columnName,
+            string? columnName,
 
-            string escapeCharacter,
+            string? escapeCharacter,
 
-            string formatType,
+            string? formatType,
 
-            string lineDelimiter)
+            string? lineDelimiter)
         {
             ColumnDelimiter = columnDelimiter;
             ColumnIndex = columnIndex;

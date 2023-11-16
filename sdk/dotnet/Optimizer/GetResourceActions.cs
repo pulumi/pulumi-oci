@@ -295,7 +295,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IncludeOrganization;
         /// <summary>
         /// The name assigned to the resource.
@@ -333,7 +333,7 @@ namespace Pulumi.Oci.Optimizer
 
             ImmutableArray<Outputs.GetResourceActionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? includeOrganization,
 

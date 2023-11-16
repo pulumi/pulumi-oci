@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
@@ -13,39 +15,39 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
      */
-    private String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return The name of the profile of the containing module stream
      * 
      */
-    private String profileName;
+    private @Nullable String profileName;
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    private String streamName;
+    private @Nullable String streamName;
 
     private GetSoftwareSourceStreamProfileModuleStreamProfile() {}
     /**
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
      */
-    public String moduleName() {
-        return this.moduleName;
+    public Optional<String> moduleName() {
+        return Optional.ofNullable(this.moduleName);
     }
     /**
      * @return The name of the profile of the containing module stream
      * 
      */
-    public String profileName() {
-        return this.profileName;
+    public Optional<String> profileName() {
+        return Optional.ofNullable(this.profileName);
     }
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    public String streamName() {
-        return this.streamName;
+    public Optional<String> streamName() {
+        return Optional.ofNullable(this.streamName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String moduleName;
-        private String profileName;
-        private String streamName;
+        private @Nullable String moduleName;
+        private @Nullable String profileName;
+        private @Nullable String streamName;
         public Builder() {}
         public Builder(GetSoftwareSourceStreamProfileModuleStreamProfile defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
         }
 
         @CustomType.Setter
-        public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+        public Builder moduleName(@Nullable String moduleName) {
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
-        public Builder profileName(String profileName) {
-            this.profileName = Objects.requireNonNull(profileName);
+        public Builder profileName(@Nullable String profileName) {
+            this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
-        public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+        public Builder streamName(@Nullable String streamName) {
+            this.streamName = streamName;
             return this;
         }
         public GetSoftwareSourceStreamProfileModuleStreamProfile build() {

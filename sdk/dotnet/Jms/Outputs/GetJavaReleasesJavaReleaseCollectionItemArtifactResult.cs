@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Approximate compressed file size in bytes.
         /// </summary>
-        public readonly string ApproximateFileSizeInBytes;
+        public readonly string? ApproximateFileSizeInBytes;
         /// <summary>
         /// Product content type of this artifact.
         /// </summary>
-        public readonly string ArtifactContentType;
+        public readonly string? ArtifactContentType;
         /// <summary>
         /// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
         /// </summary>
-        public readonly string ArtifactDescription;
+        public readonly string? ArtifactDescription;
         /// <summary>
         /// Unique identifier for the artifact.
         /// </summary>
-        public readonly string ArtifactId;
+        public readonly string? ArtifactId;
         /// <summary>
         /// SHA256 checksum of the artifact.
         /// </summary>
-        public readonly string Sha256;
+        public readonly string? Sha256;
 
         [OutputConstructor]
         private GetJavaReleasesJavaReleaseCollectionItemArtifactResult(
-            string approximateFileSizeInBytes,
+            string? approximateFileSizeInBytes,
 
-            string artifactContentType,
+            string? artifactContentType,
 
-            string artifactDescription,
+            string? artifactDescription,
 
-            string artifactId,
+            string? artifactId,
 
-            string sha256)
+            string? sha256)
         {
             ApproximateFileSizeInBytes = approximateFileSizeInBytes;
             ArtifactContentType = artifactContentType;

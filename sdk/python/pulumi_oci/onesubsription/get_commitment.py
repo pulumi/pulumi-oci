@@ -52,10 +52,7 @@ class GetCommitmentResult:
 
     @property
     @pulumi.getter(name="availableAmount")
-    def available_amount(self) -> str:
-        """
-        Commitment available amount
-        """
+    def available_amount(self) -> Optional[str]:
         return pulumi.get(self, "available_amount")
 
     @property
@@ -65,15 +62,12 @@ class GetCommitmentResult:
 
     @property
     @pulumi.getter(name="fundedAllocationValue")
-    def funded_allocation_value(self) -> str:
-        """
-        Funded Allocation line value example: 12000.00
-        """
+    def funded_allocation_value(self) -> Optional[str]:
         return pulumi.get(self, "funded_allocation_value")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,42 +75,27 @@ class GetCommitmentResult:
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Commitment quantity
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="subscribedServiceId")
-    def subscribed_service_id(self) -> str:
-        """
-        SPM internal Subscribed Service ID
-        """
+    def subscribed_service_id(self) -> Optional[str]:
         return pulumi.get(self, "subscribed_service_id")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Commitment end date
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Commitment start date
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="usedAmount")
-    def used_amount(self) -> str:
-        """
-        Commitment used amount
-        """
+    def used_amount(self) -> Optional[str]:
         return pulumi.get(self, "used_amount")
 
 
@@ -140,21 +119,7 @@ class AwaitableGetCommitmentResult(GetCommitmentResult):
 def get_commitment(commitment_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCommitmentResult:
     """
-    This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
-
-    This API returns the commitment details corresponding to the id provided
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_commitment = oci.OneSubsription.get_commitment(commitment_id=oci_onesubscription_commitment["test_commitment"]["id"])
-    ```
-
-
-    :param str commitment_id: The Commitment Id
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['commitmentId'] = commitment_id
@@ -177,20 +142,6 @@ def get_commitment(commitment_id: Optional[str] = None,
 def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentResult]:
     """
-    This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
-
-    This API returns the commitment details corresponding to the id provided
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_commitment = oci.OneSubsription.get_commitment(commitment_id=oci_onesubscription_commitment["test_commitment"]["id"])
-    ```
-
-
-    :param str commitment_id: The Commitment Id
+    Use this data source to access information about an existing resource.
     """
     ...

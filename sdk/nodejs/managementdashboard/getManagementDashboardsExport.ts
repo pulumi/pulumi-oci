@@ -48,11 +48,11 @@ export interface GetManagementDashboardsExportResult {
     /**
      * String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `exportDetails` can be used to pass as `importDetails` (CompartmentIds may have to be changed) in `oci.ManagementDashboard.ManagementDashboardsImport` resource.
      */
-    readonly exportDetails: string;
+    readonly exportDetails?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.

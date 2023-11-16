@@ -55,36 +55,22 @@ class GetTagDefaultResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the tag default.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> bool:
-        """
-        If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
-        * If the `isRequired` flag is set to "true", the value is set during resource creation.
-        * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
-        """
+    def is_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_required")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -94,42 +80,27 @@ class GetTagDefaultResult:
 
     @property
     @pulumi.getter(name="tagDefinitionId")
-    def tag_definition_id(self) -> str:
-        """
-        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
-        """
+    def tag_definition_id(self) -> Optional[str]:
         return pulumi.get(self, "tag_definition_id")
 
     @property
     @pulumi.getter(name="tagDefinitionName")
-    def tag_definition_name(self) -> str:
-        """
-        The name used in the tag definition. This field is informational in the context of the tag default.
-        """
+    def tag_definition_name(self) -> Optional[str]:
         return pulumi.get(self, "tag_definition_name")
 
     @property
     @pulumi.getter(name="tagNamespaceId")
-    def tag_namespace_id(self) -> str:
-        """
-        The OCID of the tag namespace that contains the tag definition.
-        """
+    def tag_namespace_id(self) -> Optional[str]:
         return pulumi.get(self, "tag_namespace_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The default value for the tag definition. This will be applied to all new resources created in the compartment.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -154,21 +125,7 @@ class AwaitableGetTagDefaultResult(GetTagDefaultResult):
 def get_tag_default(tag_default_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagDefaultResult:
     """
-    This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.
-
-    Retrieves the specified tag default.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_default = oci.Identity.get_tag_default(tag_default_id=oci_identity_tag_default["test_tag_default"]["id"])
-    ```
-
-
-    :param str tag_default_id: The OCID of the tag default.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['tagDefaultId'] = tag_default_id
@@ -192,20 +149,6 @@ def get_tag_default(tag_default_id: Optional[str] = None,
 def get_tag_default_output(tag_default_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagDefaultResult]:
     """
-    This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.
-
-    Retrieves the specified tag default.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_default = oci.Identity.get_tag_default(tag_default_id=oci_identity_tag_default["test_tag_default"]["id"])
-    ```
-
-
-    :param str tag_default_id: The OCID of the tag default.
+    Use this data source to access information about an existing resource.
     """
     ...

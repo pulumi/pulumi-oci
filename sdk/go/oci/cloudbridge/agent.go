@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -67,7 +66,7 @@ type Agent struct {
 	pulumi.CustomResourceState
 
 	// Resource principal public key.
-	AgentPubKey pulumi.StringOutput `pulumi:"agentPubKey"`
+	AgentPubKey pulumi.StringPtrOutput `pulumi:"agentPubKey"`
 	// Agent identifier.
 	AgentType pulumi.StringOutput `pulumi:"agentType"`
 	// Agent identifier.
@@ -83,9 +82,9 @@ type Agent struct {
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-	HeartBeatStatus pulumi.StringOutput `pulumi:"heartBeatStatus"`
+	HeartBeatStatus pulumi.StringPtrOutput `pulumi:"heartBeatStatus"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// OS version.
 	//
 	// ** IMPORTANT **
@@ -94,17 +93,17 @@ type Agent struct {
 	// List of plugins associated with the agent.
 	PluginLists AgentPluginListArrayOutput `pulumi:"pluginLists"`
 	// The current state of the Agent.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-	TimeExpireAgentKeyInMs pulumi.StringOutput `pulumi:"timeExpireAgentKeyInMs"`
+	TimeExpireAgentKeyInMs pulumi.StringPtrOutput `pulumi:"timeExpireAgentKeyInMs"`
 	// The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-	TimeLastSyncReceived pulumi.StringOutput `pulumi:"timeLastSyncReceived"`
+	TimeLastSyncReceived pulumi.StringPtrOutput `pulumi:"timeLastSyncReceived"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAgent registers a new resource with the given unique name, arguments, and options.
@@ -310,12 +309,6 @@ func (i *Agent) ToAgentOutputWithContext(ctx context.Context) AgentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AgentOutput)
 }
 
-func (i *Agent) ToOutput(ctx context.Context) pulumix.Output[*Agent] {
-	return pulumix.Output[*Agent]{
-		OutputState: i.ToAgentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AgentArrayInput is an input type that accepts AgentArray and AgentArrayOutput values.
 // You can construct a concrete instance of `AgentArrayInput` via:
 //
@@ -339,12 +332,6 @@ func (i AgentArray) ToAgentArrayOutput() AgentArrayOutput {
 
 func (i AgentArray) ToAgentArrayOutputWithContext(ctx context.Context) AgentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AgentArrayOutput)
-}
-
-func (i AgentArray) ToOutput(ctx context.Context) pulumix.Output[[]*Agent] {
-	return pulumix.Output[[]*Agent]{
-		OutputState: i.ToAgentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AgentMapInput is an input type that accepts AgentMap and AgentMapOutput values.
@@ -372,12 +359,6 @@ func (i AgentMap) ToAgentMapOutputWithContext(ctx context.Context) AgentMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AgentMapOutput)
 }
 
-func (i AgentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Agent] {
-	return pulumix.Output[map[string]*Agent]{
-		OutputState: i.ToAgentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AgentOutput struct{ *pulumi.OutputState }
 
 func (AgentOutput) ElementType() reflect.Type {
@@ -392,15 +373,9 @@ func (o AgentOutput) ToAgentOutputWithContext(ctx context.Context) AgentOutput {
 	return o
 }
 
-func (o AgentOutput) ToOutput(ctx context.Context) pulumix.Output[*Agent] {
-	return pulumix.Output[*Agent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Resource principal public key.
-func (o AgentOutput) AgentPubKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.AgentPubKey }).(pulumi.StringOutput)
+func (o AgentOutput) AgentPubKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.AgentPubKey }).(pulumi.StringPtrOutput)
 }
 
 // Agent identifier.
@@ -439,13 +414,13 @@ func (o AgentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-func (o AgentOutput) HeartBeatStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.HeartBeatStatus }).(pulumi.StringOutput)
+func (o AgentOutput) HeartBeatStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.HeartBeatStatus }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o AgentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AgentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // OS version.
@@ -462,8 +437,8 @@ func (o AgentOutput) PluginLists() AgentPluginListArrayOutput {
 }
 
 // The current state of the Agent.
-func (o AgentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AgentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -472,23 +447,23 @@ func (o AgentOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.
-func (o AgentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AgentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-func (o AgentOutput) TimeExpireAgentKeyInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.TimeExpireAgentKeyInMs }).(pulumi.StringOutput)
+func (o AgentOutput) TimeExpireAgentKeyInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.TimeExpireAgentKeyInMs }).(pulumi.StringPtrOutput)
 }
 
 // The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-func (o AgentOutput) TimeLastSyncReceived() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.TimeLastSyncReceived }).(pulumi.StringOutput)
+func (o AgentOutput) TimeLastSyncReceived() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.TimeLastSyncReceived }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was updated. An RFC3339 formatted datetime string.
-func (o AgentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AgentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AgentArrayOutput struct{ *pulumi.OutputState }
@@ -503,12 +478,6 @@ func (o AgentArrayOutput) ToAgentArrayOutput() AgentArrayOutput {
 
 func (o AgentArrayOutput) ToAgentArrayOutputWithContext(ctx context.Context) AgentArrayOutput {
 	return o
-}
-
-func (o AgentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Agent] {
-	return pulumix.Output[[]*Agent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentArrayOutput) Index(i pulumi.IntInput) AgentOutput {
@@ -529,12 +498,6 @@ func (o AgentMapOutput) ToAgentMapOutput() AgentMapOutput {
 
 func (o AgentMapOutput) ToAgentMapOutputWithContext(ctx context.Context) AgentMapOutput {
 	return o
-}
-
-func (o AgentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Agent] {
-	return pulumix.Output[map[string]*Agent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentMapOutput) MapIndex(k pulumi.StringInput) AgentOutput {

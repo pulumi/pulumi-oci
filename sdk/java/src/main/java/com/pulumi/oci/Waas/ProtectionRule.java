@@ -13,6 +13,7 @@ import com.pulumi.oci.Waas.inputs.ProtectionRuleState;
 import com.pulumi.oci.Waas.outputs.ProtectionRuleExclusion;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,42 +76,42 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="action", refs={String.class}, tree="[0]")
-    private Output<String> action;
+    private Output</* @Nullable */ String> action;
 
     /**
      * @return (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      * 
      */
-    public Output<String> action() {
-        return this.action;
+    public Output<Optional<String>> action() {
+        return Codegen.optional(this.action);
     }
     /**
      * The description of the protection rule.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return The description of the protection rule.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
     @Export(name="exclusions", refs={List.class,ProtectionRuleExclusion.class}, tree="[0,1]")
-    private Output<List<ProtectionRuleExclusion>> exclusions;
+    private Output</* @Nullable */ List<ProtectionRuleExclusion>> exclusions;
 
     /**
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
-    public Output<List<ProtectionRuleExclusion>> exclusions() {
-        return this.exclusions;
+    public Output<Optional<List<ProtectionRuleExclusion>>> exclusions() {
+        return Codegen.optional(this.exclusions);
     }
     /**
      * (Updatable) The unique key of the protection rule.
@@ -131,42 +132,42 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="labels", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> labels;
+    private Output</* @Nullable */ List<String>> labels;
 
     /**
      * @return The list of labels for the protection rule.
      * 
      */
-    public Output<List<String>> labels() {
-        return this.labels;
+    public Output<Optional<List<String>>> labels() {
+        return Codegen.optional(this.labels);
     }
     /**
      * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity&#39;s open source WAF rules, see [Mod Security&#39;s documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      * 
      */
     @Export(name="modSecurityRuleIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> modSecurityRuleIds;
+    private Output</* @Nullable */ List<String>> modSecurityRuleIds;
 
     /**
      * @return The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity&#39;s open source WAF rules, see [Mod Security&#39;s documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      * 
      */
-    public Output<List<String>> modSecurityRuleIds() {
-        return this.modSecurityRuleIds;
+    public Output<Optional<List<String>>> modSecurityRuleIds() {
+        return Codegen.optional(this.modSecurityRuleIds);
     }
     /**
      * The name of the protection rule.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return The name of the protection rule.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.

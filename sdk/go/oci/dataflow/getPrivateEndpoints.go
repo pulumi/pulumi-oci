@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
@@ -79,7 +78,7 @@ type GetPrivateEndpointsResult struct {
 	DisplayNameStartsWith *string                     `pulumi:"displayNameStartsWith"`
 	Filters               []GetPrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the user who created the resource.
 	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The list of private_endpoint_collection.
@@ -135,12 +134,6 @@ func (o GetPrivateEndpointsResultOutput) ToGetPrivateEndpointsResultOutputWithCo
 	return o
 }
 
-func (o GetPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsResult] {
-	return pulumix.Output[GetPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of a compartment.
 func (o GetPrivateEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -160,8 +153,8 @@ func (o GetPrivateEndpointsResultOutput) Filters() GetPrivateEndpointsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user who created the resource.

@@ -16,53 +16,53 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Character length.
         /// </summary>
-        public readonly int CharacterLength;
+        public readonly int? CharacterLength;
         /// <summary>
         /// A filter to return only a specific column based on column name.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// Data type of the column.
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// Length of the data represented by the column.
         /// </summary>
-        public readonly string Length;
+        public readonly string? Length;
         /// <summary>
         /// Precision of the column.
         /// </summary>
-        public readonly int Precision;
+        public readonly int? Precision;
         /// <summary>
         /// Scale of the column.
         /// </summary>
-        public readonly int Scale;
+        public readonly int? Scale;
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// A filter to return only items related to specific table name.
         /// </summary>
-        public readonly string TableName;
+        public readonly string? TableName;
 
         [OutputConstructor]
         private GetTargetDatabasesColumnsColumnResult(
-            int characterLength,
+            int? characterLength,
 
-            string columnName,
+            string? columnName,
 
-            string dataType,
+            string? dataType,
 
-            string length,
+            string? length,
 
-            int precision,
+            int? precision,
 
-            int scale,
+            int? scale,
 
-            string schemaName,
+            string? schemaName,
 
-            string tableName)
+            string? tableName)
         {
             CharacterLength = characterLength;
             ColumnName = columnName;

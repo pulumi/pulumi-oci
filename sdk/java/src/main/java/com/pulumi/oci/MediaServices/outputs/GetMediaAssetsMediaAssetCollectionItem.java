@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaAssetsMediaAssetCollectionItem {
@@ -18,279 +20,279 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
      * @return Filter MediaAsset by the bucket where the object is stored.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only the resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Unique MediaAsset identifier of the first asset upload.
      * 
      */
-    private String masterMediaAssetId;
+    private @Nullable String masterMediaAssetId;
     /**
      * @return List of tags for the MediaAsset.
      * 
      */
-    private List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags;
+    private @Nullable List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags;
     /**
      * @return The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
      * 
      */
-    private String mediaWorkflowJobId;
+    private @Nullable String mediaWorkflowJobId;
     /**
      * @return JSON string containing the technial metadata for the media asset.
      * 
      */
-    private List<GetMediaAssetsMediaAssetCollectionItemMetadata> metadatas;
+    private @Nullable List<GetMediaAssetsMediaAssetCollectionItemMetadata> metadatas;
     /**
      * @return The object storage namespace where this asset is located.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Filter MediaAsset by the name of the object in object storage.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return eTag of the underlying object storage object.
      * 
      */
-    private String objectEtag;
+    private @Nullable String objectEtag;
     /**
      * @return Unique MediaAsset identifier of the asset from which this asset is derived.
      * 
      */
-    private String parentMediaAssetId;
+    private @Nullable String parentMediaAssetId;
     /**
      * @return The end index of video segment files.
      * 
      */
-    private String segmentRangeEndIndex;
+    private @Nullable String segmentRangeEndIndex;
     /**
      * @return The start index for video segment files.
      * 
      */
-    private String segmentRangeStartIndex;
+    private @Nullable String segmentRangeStartIndex;
     /**
      * @return The ID of the MediaWorkflow used to produce this asset.
      * 
      */
-    private String sourceMediaWorkflowId;
+    private @Nullable String sourceMediaWorkflowId;
     /**
      * @return The version of the MediaWorkflow used to produce this asset.
      * 
      */
-    private String sourceMediaWorkflowVersion;
+    private @Nullable String sourceMediaWorkflowVersion;
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Filter MediaAsset by the asset type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMediaAssetsMediaAssetCollectionItem() {}
     /**
      * @return Filter MediaAsset by the bucket where the object is stored.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only the resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique MediaAsset identifier of the first asset upload.
      * 
      */
-    public String masterMediaAssetId() {
-        return this.masterMediaAssetId;
+    public Optional<String> masterMediaAssetId() {
+        return Optional.ofNullable(this.masterMediaAssetId);
     }
     /**
      * @return List of tags for the MediaAsset.
      * 
      */
     public List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags() {
-        return this.mediaAssetTags;
+        return this.mediaAssetTags == null ? List.of() : this.mediaAssetTags;
     }
     /**
      * @return The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
      * 
      */
-    public String mediaWorkflowJobId() {
-        return this.mediaWorkflowJobId;
+    public Optional<String> mediaWorkflowJobId() {
+        return Optional.ofNullable(this.mediaWorkflowJobId);
     }
     /**
      * @return JSON string containing the technial metadata for the media asset.
      * 
      */
     public List<GetMediaAssetsMediaAssetCollectionItemMetadata> metadatas() {
-        return this.metadatas;
+        return this.metadatas == null ? List.of() : this.metadatas;
     }
     /**
      * @return The object storage namespace where this asset is located.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Filter MediaAsset by the name of the object in object storage.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return eTag of the underlying object storage object.
      * 
      */
-    public String objectEtag() {
-        return this.objectEtag;
+    public Optional<String> objectEtag() {
+        return Optional.ofNullable(this.objectEtag);
     }
     /**
      * @return Unique MediaAsset identifier of the asset from which this asset is derived.
      * 
      */
-    public String parentMediaAssetId() {
-        return this.parentMediaAssetId;
+    public Optional<String> parentMediaAssetId() {
+        return Optional.ofNullable(this.parentMediaAssetId);
     }
     /**
      * @return The end index of video segment files.
      * 
      */
-    public String segmentRangeEndIndex() {
-        return this.segmentRangeEndIndex;
+    public Optional<String> segmentRangeEndIndex() {
+        return Optional.ofNullable(this.segmentRangeEndIndex);
     }
     /**
      * @return The start index for video segment files.
      * 
      */
-    public String segmentRangeStartIndex() {
-        return this.segmentRangeStartIndex;
+    public Optional<String> segmentRangeStartIndex() {
+        return Optional.ofNullable(this.segmentRangeStartIndex);
     }
     /**
      * @return The ID of the MediaWorkflow used to produce this asset.
      * 
      */
-    public String sourceMediaWorkflowId() {
-        return this.sourceMediaWorkflowId;
+    public Optional<String> sourceMediaWorkflowId() {
+        return Optional.ofNullable(this.sourceMediaWorkflowId);
     }
     /**
      * @return The version of the MediaWorkflow used to produce this asset.
      * 
      */
-    public String sourceMediaWorkflowVersion() {
-        return this.sourceMediaWorkflowVersion;
+    public Optional<String> sourceMediaWorkflowVersion() {
+        return Optional.ofNullable(this.sourceMediaWorkflowVersion);
     }
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Filter MediaAsset by the asset type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -302,29 +304,29 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String masterMediaAssetId;
-        private List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags;
-        private String mediaWorkflowJobId;
-        private List<GetMediaAssetsMediaAssetCollectionItemMetadata> metadatas;
-        private String namespace;
-        private String object;
-        private String objectEtag;
-        private String parentMediaAssetId;
-        private String segmentRangeEndIndex;
-        private String segmentRangeStartIndex;
-        private String sourceMediaWorkflowId;
-        private String sourceMediaWorkflowVersion;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private String type;
+        private @Nullable String bucket;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String masterMediaAssetId;
+        private @Nullable List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags;
+        private @Nullable String mediaWorkflowJobId;
+        private @Nullable List<GetMediaAssetsMediaAssetCollectionItemMetadata> metadatas;
+        private @Nullable String namespace;
+        private @Nullable String object;
+        private @Nullable String objectEtag;
+        private @Nullable String parentMediaAssetId;
+        private @Nullable String segmentRangeEndIndex;
+        private @Nullable String segmentRangeStartIndex;
+        private @Nullable String sourceMediaWorkflowId;
+        private @Nullable String sourceMediaWorkflowVersion;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMediaAssetsMediaAssetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -354,124 +356,124 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder masterMediaAssetId(String masterMediaAssetId) {
-            this.masterMediaAssetId = Objects.requireNonNull(masterMediaAssetId);
+        public Builder masterMediaAssetId(@Nullable String masterMediaAssetId) {
+            this.masterMediaAssetId = masterMediaAssetId;
             return this;
         }
         @CustomType.Setter
-        public Builder mediaAssetTags(List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags) {
-            this.mediaAssetTags = Objects.requireNonNull(mediaAssetTags);
+        public Builder mediaAssetTags(@Nullable List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags) {
+            this.mediaAssetTags = mediaAssetTags;
             return this;
         }
         public Builder mediaAssetTags(GetMediaAssetsMediaAssetCollectionItemMediaAssetTag... mediaAssetTags) {
             return mediaAssetTags(List.of(mediaAssetTags));
         }
         @CustomType.Setter
-        public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
-            this.mediaWorkflowJobId = Objects.requireNonNull(mediaWorkflowJobId);
+        public Builder mediaWorkflowJobId(@Nullable String mediaWorkflowJobId) {
+            this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
-        public Builder metadatas(List<GetMediaAssetsMediaAssetCollectionItemMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+        public Builder metadatas(@Nullable List<GetMediaAssetsMediaAssetCollectionItemMetadata> metadatas) {
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetMediaAssetsMediaAssetCollectionItemMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder objectEtag(String objectEtag) {
-            this.objectEtag = Objects.requireNonNull(objectEtag);
+        public Builder objectEtag(@Nullable String objectEtag) {
+            this.objectEtag = objectEtag;
             return this;
         }
         @CustomType.Setter
-        public Builder parentMediaAssetId(String parentMediaAssetId) {
-            this.parentMediaAssetId = Objects.requireNonNull(parentMediaAssetId);
+        public Builder parentMediaAssetId(@Nullable String parentMediaAssetId) {
+            this.parentMediaAssetId = parentMediaAssetId;
             return this;
         }
         @CustomType.Setter
-        public Builder segmentRangeEndIndex(String segmentRangeEndIndex) {
-            this.segmentRangeEndIndex = Objects.requireNonNull(segmentRangeEndIndex);
+        public Builder segmentRangeEndIndex(@Nullable String segmentRangeEndIndex) {
+            this.segmentRangeEndIndex = segmentRangeEndIndex;
             return this;
         }
         @CustomType.Setter
-        public Builder segmentRangeStartIndex(String segmentRangeStartIndex) {
-            this.segmentRangeStartIndex = Objects.requireNonNull(segmentRangeStartIndex);
+        public Builder segmentRangeStartIndex(@Nullable String segmentRangeStartIndex) {
+            this.segmentRangeStartIndex = segmentRangeStartIndex;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceMediaWorkflowId(String sourceMediaWorkflowId) {
-            this.sourceMediaWorkflowId = Objects.requireNonNull(sourceMediaWorkflowId);
+        public Builder sourceMediaWorkflowId(@Nullable String sourceMediaWorkflowId) {
+            this.sourceMediaWorkflowId = sourceMediaWorkflowId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceMediaWorkflowVersion(String sourceMediaWorkflowVersion) {
-            this.sourceMediaWorkflowVersion = Objects.requireNonNull(sourceMediaWorkflowVersion);
+        public Builder sourceMediaWorkflowVersion(@Nullable String sourceMediaWorkflowVersion) {
+            this.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMediaAssetsMediaAssetCollectionItem build() {

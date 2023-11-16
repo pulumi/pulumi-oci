@@ -16,27 +16,27 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// Management Agent Plugin description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Filter to return only Management Agent Plugins having the particular display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Management Agent Plugin Id
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
         /// </summary>
-        public readonly bool IsConsoleDeployable;
+        public readonly bool? IsConsoleDeployable;
         /// <summary>
         /// Management Agent Plugin Name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Filter to return only Management Agents in the particular lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Supported Platform Types
         /// </summary>
@@ -44,25 +44,25 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// Management Agent Plugin Version
         /// </summary>
-        public readonly int Version;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetManagementAgentPluginsManagementAgentPluginResult(
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isConsoleDeployable,
+            bool? isConsoleDeployable,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> supportedPlatformTypes,
 
-            int version)
+            int? version)
         {
             Description = description;
             DisplayName = displayName;

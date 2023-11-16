@@ -6,6 +6,8 @@ package com.pulumi.oci.ComputeCloud.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode {
@@ -13,27 +15,27 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
      * @return Hostname for interface to the management node.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return Address of the management node.
      * 
      */
-    private String ip;
+    private @Nullable String ip;
 
     private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode() {}
     /**
      * @return Hostname for interface to the management node.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return Address of the management node.
      * 
      */
-    public String ip() {
-        return this.ip;
+    public Optional<String> ip() {
+        return Optional.ofNullable(this.ip);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
-        private String ip;
+        private @Nullable String hostname;
+        private @Nullable String ip;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder ip(String ip) {
-            this.ip = Objects.requireNonNull(ip);
+        public Builder ip(@Nullable String ip) {
+            this.ip = ip;
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode build() {

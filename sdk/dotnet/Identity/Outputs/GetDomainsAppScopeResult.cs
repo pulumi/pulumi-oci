@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The description of the AppRole.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The fully qualified value of this scope within this App. A fully qualified scope combines the 'value' of each scope with the value of 'audience'. Each value of 'fqs' must be unique across the system. Used only when this App acts as an OAuth Resource.
         /// </summary>
-        public readonly string Fqs;
+        public readonly string? Fqs;
         /// <summary>
         /// If true, indicates that this value must be protected.
         /// </summary>
-        public readonly bool ReadOnly;
+        public readonly bool? ReadOnly;
         /// <summary>
         /// If true, indicates that a user must provide consent to access this scope. Note: Used only when this App acts as an OAuth Resource.
         /// </summary>
-        public readonly bool RequiresConsent;
+        public readonly bool? RequiresConsent;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppScopeResult(
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string fqs,
+            string? fqs,
 
-            bool readOnly,
+            bool? readOnly,
 
-            bool requiresConsent,
+            bool? requiresConsent,
 
-            string value)
+            string? value)
         {
             Description = description;
             DisplayName = displayName;

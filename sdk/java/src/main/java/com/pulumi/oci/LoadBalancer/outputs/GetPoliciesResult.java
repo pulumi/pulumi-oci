@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetPoliciesPolicy;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of policies.
      * 
      */
-    private List<GetPoliciesPolicy> policies;
+    private @Nullable List<GetPoliciesPolicy> policies;
 
     private GetPoliciesResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of policies.
      * 
      */
     public List<GetPoliciesPolicy> policies() {
-        return this.policies;
+        return this.policies == null ? List.of() : this.policies;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetPoliciesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetPoliciesFilter> filters;
-        private String id;
-        private List<GetPoliciesPolicy> policies;
+        private @Nullable String id;
+        private @Nullable List<GetPoliciesPolicy> policies;
         public Builder() {}
         public Builder(GetPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder policies(List<GetPoliciesPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+        public Builder policies(@Nullable List<GetPoliciesPolicy> policies) {
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetPoliciesPolicy... policies) {

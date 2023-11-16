@@ -42,7 +42,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// OCID of the Network Firewall Policy this security rule belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// An object which defines the position of the rule.
         /// </summary>
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionResult> positions,
 

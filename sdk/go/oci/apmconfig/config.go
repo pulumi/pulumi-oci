@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
@@ -100,43 +99,43 @@ type Config struct {
 	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A description of the metric.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayOutput `pulumi:"dimensions"`
 	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag pulumi.StringOutput `pulumi:"etag"`
+	Etag pulumi.StringPtrOutput `pulumi:"etag"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-	FilterId pulumi.StringOutput `pulumi:"filterId"`
+	FilterId pulumi.StringPtrOutput `pulumi:"filterId"`
 	// (Updatable) The string that defines the Span Filter expression.
-	FilterText pulumi.StringOutput `pulumi:"filterText"`
+	FilterText pulumi.StringPtrOutput `pulumi:"filterText"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
-	Group pulumi.StringOutput `pulumi:"group"`
+	Group pulumi.StringPtrOutput `pulumi:"group"`
 	// The list of configuration items that reference the span filter.
 	InUseBies ConfigInUseByArrayOutput `pulumi:"inUseBies"`
 	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayOutput `pulumi:"metrics"`
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
-	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrOutput `pulumi:"namespace"`
 	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
-	OpcDryRun pulumi.StringOutput `pulumi:"opcDryRun"`
+	OpcDryRun pulumi.StringPtrOutput `pulumi:"opcDryRun"`
 	// (Updatable) The options are stored here as JSON.
-	Options pulumi.StringOutput `pulumi:"options"`
+	Options pulumi.StringPtrOutput `pulumi:"options"`
 	// (Updatable)
 	Rules ConfigRuleArrayOutput `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-	UpdatedBy pulumi.StringOutput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrOutput `pulumi:"updatedBy"`
 }
 
 // NewConfig registers a new resource with the given unique name, arguments, and options.
@@ -365,12 +364,6 @@ func (i *Config) ToConfigOutputWithContext(ctx context.Context) ConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigOutput)
 }
 
-func (i *Config) ToOutput(ctx context.Context) pulumix.Output[*Config] {
-	return pulumix.Output[*Config]{
-		OutputState: i.ToConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigArrayInput is an input type that accepts ConfigArray and ConfigArrayOutput values.
 // You can construct a concrete instance of `ConfigArrayInput` via:
 //
@@ -394,12 +387,6 @@ func (i ConfigArray) ToConfigArrayOutput() ConfigArrayOutput {
 
 func (i ConfigArray) ToConfigArrayOutputWithContext(ctx context.Context) ConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigArrayOutput)
-}
-
-func (i ConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*Config] {
-	return pulumix.Output[[]*Config]{
-		OutputState: i.ToConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConfigMapInput is an input type that accepts ConfigMap and ConfigMapOutput values.
@@ -427,12 +414,6 @@ func (i ConfigMap) ToConfigMapOutputWithContext(ctx context.Context) ConfigMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMapOutput)
 }
 
-func (i ConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Config] {
-	return pulumix.Output[map[string]*Config]{
-		OutputState: i.ToConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigOutput struct{ *pulumi.OutputState }
 
 func (ConfigOutput) ElementType() reflect.Type {
@@ -447,12 +428,6 @@ func (o ConfigOutput) ToConfigOutputWithContext(ctx context.Context) ConfigOutpu
 	return o
 }
 
-func (o ConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*Config] {
-	return pulumix.Output[*Config]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The APM Domain ID the request is intended for.
 func (o ConfigOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ApmDomainId }).(pulumi.StringOutput)
@@ -464,8 +439,8 @@ func (o ConfigOutput) ConfigType() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-func (o ConfigOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o ConfigOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -474,8 +449,8 @@ func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A description of the metric.
-func (o ConfigOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ConfigOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of dimensions for the metric. This variable should not be used.
@@ -489,18 +464,18 @@ func (o ConfigOutput) DisplayName() pulumi.StringOutput {
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o ConfigOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Etag }).(pulumi.StringOutput)
+func (o ConfigOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-func (o ConfigOutput) FilterId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.FilterId }).(pulumi.StringOutput)
+func (o ConfigOutput) FilterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.FilterId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The string that defines the Span Filter expression.
-func (o ConfigOutput) FilterText() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.FilterText }).(pulumi.StringOutput)
+func (o ConfigOutput) FilterText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.FilterText }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -509,8 +484,8 @@ func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) A string that specifies the group that an OPTIONS item belongs to.
-func (o ConfigOutput) Group() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
+func (o ConfigOutput) Group() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.Group }).(pulumi.StringPtrOutput)
 }
 
 // The list of configuration items that reference the span filter.
@@ -524,18 +499,18 @@ func (o ConfigOutput) Metrics() ConfigMetricArrayOutput {
 }
 
 // (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
-func (o ConfigOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
+func (o ConfigOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
-func (o ConfigOutput) OpcDryRun() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.OpcDryRun }).(pulumi.StringOutput)
+func (o ConfigOutput) OpcDryRun() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.OpcDryRun }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The options are stored here as JSON.
-func (o ConfigOutput) Options() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Options }).(pulumi.StringOutput)
+func (o ConfigOutput) Options() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.Options }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable)
@@ -544,18 +519,18 @@ func (o ConfigOutput) Rules() ConfigRuleArrayOutput {
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o ConfigOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConfigOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o ConfigOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConfigOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-func (o ConfigOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o ConfigOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 type ConfigArrayOutput struct{ *pulumi.OutputState }
@@ -570,12 +545,6 @@ func (o ConfigArrayOutput) ToConfigArrayOutput() ConfigArrayOutput {
 
 func (o ConfigArrayOutput) ToConfigArrayOutputWithContext(ctx context.Context) ConfigArrayOutput {
 	return o
-}
-
-func (o ConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Config] {
-	return pulumix.Output[[]*Config]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigArrayOutput) Index(i pulumi.IntInput) ConfigOutput {
@@ -596,12 +565,6 @@ func (o ConfigMapOutput) ToConfigMapOutput() ConfigMapOutput {
 
 func (o ConfigMapOutput) ToConfigMapOutputWithContext(ctx context.Context) ConfigMapOutput {
 	return o
-}
-
-func (o ConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Config] {
-	return pulumix.Output[map[string]*Config]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigMapOutput) MapIndex(k pulumi.StringInput) ConfigOutput {

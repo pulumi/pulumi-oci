@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -72,7 +71,7 @@ type GetServiceConnectorsResult struct {
 	DisplayName *string                      `pulumi:"displayName"`
 	Filters     []GetServiceConnectorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of service_connector_collection.
 	ServiceConnectorCollections []GetServiceConnectorsServiceConnectorCollection `pulumi:"serviceConnectorCollections"`
 	// The current state of the service connector.
@@ -122,12 +121,6 @@ func (o GetServiceConnectorsResultOutput) ToGetServiceConnectorsResultOutputWith
 	return o
 }
 
-func (o GetServiceConnectorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsResult] {
-	return pulumix.Output[GetServiceConnectorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
 func (o GetServiceConnectorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetServiceConnectorsResultOutput) Filters() GetServiceConnectorsFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetServiceConnectorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceConnectorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of service_connector_collection.

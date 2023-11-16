@@ -16,30 +16,30 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Log object category.
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// The unique identifier of the resource emitting the log.
         /// </summary>
-        public readonly string Resource;
+        public readonly string? Resource;
         /// <summary>
         /// Service generating log.
         /// </summary>
-        public readonly string Service;
+        public readonly string? Service;
         /// <summary>
         /// The log source.
         /// * **OCISERVICE:** Oracle Service.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetLogsLogConfigurationSourceResult(
-            string category,
+            string? category,
 
-            string resource,
+            string? resource,
 
-            string service,
+            string? service,
 
-            string sourceType)
+            string? sourceType)
         {
             Category = category;
             Resource = resource;

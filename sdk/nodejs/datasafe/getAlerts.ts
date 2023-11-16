@@ -82,7 +82,7 @@ export interface GetAlertsResult {
     /**
      * The list of alert_collection.
      */
-    readonly alertCollections: outputs.DataSafe.GetAlertsAlertCollection[];
+    readonly alertCollections?: outputs.DataSafe.GetAlertsAlertCollection[];
     /**
      * The OCID of the compartment that contains the alert.
      */

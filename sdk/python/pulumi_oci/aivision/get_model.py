@@ -110,98 +110,62 @@ class GetModelResult:
 
     @property
     @pulumi.getter(name="averagePrecision")
-    def average_precision(self) -> float:
-        """
-        Average precision of the trained model
-        """
+    def average_precision(self) -> Optional[float]:
         return pulumi.get(self, "average_precision")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="confidenceThreshold")
-    def confidence_threshold(self) -> float:
-        """
-        Confidence ratio of the calculation
-        """
+    def confidence_threshold(self) -> Optional[float]:
         return pulumi.get(self, "confidence_threshold")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Model Identifier, can be renamed
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isQuickMode")
-    def is_quick_mode(self) -> bool:
-        """
-        If It's true, Training is set for recommended epochs needed for quick training.
-        """
+    def is_quick_mode(self) -> Optional[bool]:
         return pulumi.get(self, "is_quick_mode")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxTrainingDurationInHours")
-    def max_training_duration_in_hours(self) -> float:
-        """
-        The maximum duration in hours for which the training will run.
-        """
+    def max_training_duration_in_hours(self) -> Optional[float]:
         return pulumi.get(self, "max_training_duration_in_hours")
 
     @property
     @pulumi.getter
-    def metrics(self) -> str:
-        """
-        Complete Training Metrics for successful trained model
-        """
+    def metrics(self) -> Optional[str]:
         return pulumi.get(self, "metrics")
 
     @property
@@ -211,122 +175,77 @@ class GetModelResult:
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        Type of the Model.
-        """
+    def model_type(self) -> Optional[str]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> str:
-        """
-        The version of the model
-        """
+    def model_version(self) -> Optional[str]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter
-    def precision(self) -> float:
-        """
-        Precision of the trained model
-        """
+    def precision(self) -> Optional[float]:
         return pulumi.get(self, "precision")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def recall(self) -> float:
-        """
-        Recall of the trained model
-        """
+    def recall(self) -> Optional[float]:
         return pulumi.get(self, "recall")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Model.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="testImageCount")
-    def test_image_count(self) -> int:
-        """
-        Total number of testing Images
-        """
+    def test_image_count(self) -> Optional[int]:
         return pulumi.get(self, "test_image_count")
 
     @property
     @pulumi.getter(name="testingDatasets")
-    def testing_datasets(self) -> Sequence['outputs.GetModelTestingDatasetResult']:
-        """
-        The base entity for a Dataset, which is the input for Model creation.
-        """
+    def testing_datasets(self) -> Optional[Sequence['outputs.GetModelTestingDatasetResult']]:
         return pulumi.get(self, "testing_datasets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Model was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Model was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalImageCount")
-    def total_image_count(self) -> int:
-        """
-        Total number of training Images
-        """
+    def total_image_count(self) -> Optional[int]:
         return pulumi.get(self, "total_image_count")
 
     @property
     @pulumi.getter(name="trainedDurationInHours")
-    def trained_duration_in_hours(self) -> float:
-        """
-        Total hours actually used for training
-        """
+    def trained_duration_in_hours(self) -> Optional[float]:
         return pulumi.get(self, "trained_duration_in_hours")
 
     @property
     @pulumi.getter(name="trainingDatasets")
-    def training_datasets(self) -> Sequence['outputs.GetModelTrainingDatasetResult']:
-        """
-        The base entity for a Dataset, which is the input for Model creation.
-        """
+    def training_datasets(self) -> Optional[Sequence['outputs.GetModelTrainingDatasetResult']]:
         return pulumi.get(self, "training_datasets")
 
     @property
     @pulumi.getter(name="validationDatasets")
-    def validation_datasets(self) -> Sequence['outputs.GetModelValidationDatasetResult']:
-        """
-        The base entity for a Dataset, which is the input for Model creation.
-        """
+    def validation_datasets(self) -> Optional[Sequence['outputs.GetModelValidationDatasetResult']]:
         return pulumi.get(self, "validation_datasets")
 
 
@@ -369,21 +288,7 @@ class AwaitableGetModelResult(GetModelResult):
 def get_model(model_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelResult:
     """
-    This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
-
-    Gets a Model by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model = oci.AiVision.get_model(model_id=oci_ai_vision_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: unique Model identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['modelId'] = model_id
@@ -425,20 +330,6 @@ def get_model(model_id: Optional[str] = None,
 def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelResult]:
     """
-    This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
-
-    Gets a Model by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model = oci.AiVision.get_model(model_id=oci_ai_vision_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: unique Model identifier
+    Use this data source to access information about an existing resource.
     """
     ...

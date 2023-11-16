@@ -44,22 +44,16 @@ class GetCrossConnectStatusResult:
     @property
     @pulumi.getter(name="crossConnectId")
     def cross_connect_id(self) -> str:
-        """
-        The OCID of the cross-connect.
-        """
         return pulumi.get(self, "cross_connect_id")
 
     @property
     @pulumi.getter(name="encryptionStatus")
-    def encryption_status(self) -> str:
-        """
-        Encryption status of the CrossConnect
-        """
+    def encryption_status(self) -> Optional[str]:
         return pulumi.get(self, "encryption_status")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,31 +61,17 @@ class GetCrossConnectStatusResult:
 
     @property
     @pulumi.getter(name="interfaceState")
-    def interface_state(self) -> str:
-        """
-        Whether Oracle's side of the interface is up or down.
-        """
+    def interface_state(self) -> Optional[str]:
         return pulumi.get(self, "interface_state")
 
     @property
     @pulumi.getter(name="lightLevelIndBm")
-    def light_level_ind_bm(self) -> float:
-        """
-        The light level of the cross-connect (in dBm).  Example: `14.0`
-        """
+    def light_level_ind_bm(self) -> Optional[float]:
         return pulumi.get(self, "light_level_ind_bm")
 
     @property
     @pulumi.getter(name="lightLevelIndicator")
-    def light_level_indicator(self) -> str:
-        """
-        Status indicator corresponding to the light level.
-        * **NO_LIGHT:** No measurable light
-        * **LOW_WARN:** There's measurable light but it's too low
-        * **HIGH_WARN:** Light level is too high
-        * **BAD:** There's measurable light but the signal-to-noise ratio is bad
-        * **GOOD:** Good light level
-        """
+    def light_level_indicator(self) -> Optional[str]:
         return pulumi.get(self, "light_level_indicator")
 
 
@@ -112,21 +92,7 @@ class AwaitableGetCrossConnectStatusResult(GetCrossConnectStatusResult):
 def get_cross_connect_status(cross_connect_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectStatusResult:
     """
-    This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the status of the specified cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
-    ```
-
-
-    :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['crossConnectId'] = cross_connect_id
@@ -146,20 +112,6 @@ def get_cross_connect_status(cross_connect_id: Optional[str] = None,
 def get_cross_connect_status_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectStatusResult]:
     """
-    This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the status of the specified cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
-    ```
-
-
-    :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+    Use this data source to access information about an existing resource.
     """
     ...

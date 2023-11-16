@@ -45,48 +45,48 @@ export interface GetReplicationScheduleResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule exists.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A name of the replication schedule.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Recurrence specification for the replication schedule execution.
      */
-    readonly executionRecurrences: string;
+    readonly executionRecurrences?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The detailed state of the replication schedule.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly replicationScheduleId: string;
     /**
      * Current state of the replication schedule.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the replication schedule was created in RFC3339 format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the replication schedule was last updated in RFC3339 format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetLabelSetItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetLabelSet {
@@ -14,7 +15,7 @@ public final class GetDatasetLabelSet {
      * @return An ordered collection of labels that are unique by name.
      * 
      */
-    private List<GetDatasetLabelSetItem> items;
+    private @Nullable List<GetDatasetLabelSetItem> items;
 
     private GetDatasetLabelSet() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDatasetLabelSet {
      * 
      */
     public List<GetDatasetLabelSetItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDatasetLabelSet {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatasetLabelSetItem> items;
+        private @Nullable List<GetDatasetLabelSetItem> items;
         public Builder() {}
         public Builder(GetDatasetLabelSet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDatasetLabelSet {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDatasetLabelSetItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDatasetLabelSetItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDatasetLabelSetItem... items) {

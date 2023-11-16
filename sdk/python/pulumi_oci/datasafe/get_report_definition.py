@@ -110,130 +110,82 @@ class GetReportDefinitionResult:
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        Specifies the name of the category that this report belongs to.
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="columnFilters")
-    def column_filters(self) -> Sequence['outputs.GetReportDefinitionColumnFilterResult']:
-        """
-        An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
-        """
+    def column_filters(self) -> Optional[Sequence['outputs.GetReportDefinitionColumnFilterResult']]:
         return pulumi.get(self, "column_filters")
 
     @property
     @pulumi.getter(name="columnInfos")
-    def column_infos(self) -> Sequence['outputs.GetReportDefinitionColumnInfoResult']:
-        """
-        An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
-        """
+    def column_infos(self) -> Optional[Sequence['outputs.GetReportDefinitionColumnInfoResult']]:
         return pulumi.get(self, "column_infos")
 
     @property
     @pulumi.getter(name="columnSortings")
-    def column_sortings(self) -> Sequence['outputs.GetReportDefinitionColumnSortingResult']:
-        """
-        An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
-        """
+    def column_sortings(self) -> Optional[Sequence['outputs.GetReportDefinitionColumnSortingResult']]:
         return pulumi.get(self, "column_sortings")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the report definition.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="complianceStandards")
-    def compliance_standards(self) -> Sequence[str]:
-        """
-        The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
-        """
+    def compliance_standards(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "compliance_standards")
 
     @property
     @pulumi.getter(name="dataSource")
-    def data_source(self) -> str:
-        """
-        Specifies the name of a resource that provides data for the report. For example alerts, events.
-        """
+    def data_source(self) -> Optional[str]:
         return pulumi.get(self, "data_source")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the report definition.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Name of the report definition.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="displayOrder")
-    def display_order(self) -> int:
-        """
-        Specifies the order in which the summary must be displayed.
-        """
+    def display_order(self) -> Optional[int]:
         return pulumi.get(self, "display_order")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the report definition.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isSeeded")
-    def is_seeded(self) -> bool:
-        """
-        Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
-        """
+    def is_seeded(self) -> Optional[bool]:
         return pulumi.get(self, "is_seeded")
 
     @property
     @pulumi.getter(name="parentId")
-    def parent_id(self) -> str:
-        """
-        The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
-        """
+    def parent_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_id")
 
     @property
     @pulumi.getter(name="recordTimeSpan")
-    def record_time_span(self) -> str:
-        """
-        The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
-        """
+    def record_time_span(self) -> Optional[str]:
         return pulumi.get(self, "record_time_span")
 
     @property
@@ -243,90 +195,57 @@ class GetReportDefinitionResult:
 
     @property
     @pulumi.getter
-    def schedule(self) -> str:
-        """
-        The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
-        """
+    def schedule(self) -> Optional[str]:
         return pulumi.get(self, "schedule")
 
     @property
     @pulumi.getter(name="scheduledReportCompartmentId")
-    def scheduled_report_compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which the scheduled resource should be created.
-        """
+    def scheduled_report_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "scheduled_report_compartment_id")
 
     @property
     @pulumi.getter(name="scheduledReportMimeType")
-    def scheduled_report_mime_type(self) -> str:
-        """
-        Specifies the format of the report ( either XLS or PDF )
-        """
+    def scheduled_report_mime_type(self) -> Optional[str]:
         return pulumi.get(self, "scheduled_report_mime_type")
 
     @property
     @pulumi.getter(name="scheduledReportName")
-    def scheduled_report_name(self) -> str:
-        """
-        The name of the report to be scheduled.
-        """
+    def scheduled_report_name(self) -> Optional[str]:
         return pulumi.get(self, "scheduled_report_name")
 
     @property
     @pulumi.getter(name="scheduledReportRowLimit")
-    def scheduled_report_row_limit(self) -> int:
-        """
-        Specifies the limit on the number of rows in the report.
-        """
+    def scheduled_report_row_limit(self) -> Optional[int]:
         return pulumi.get(self, "scheduled_report_row_limit")
 
     @property
     @pulumi.getter(name="scimFilter")
-    def scim_filter(self) -> str:
-        """
-        Additional scim filters used to get the specific summary.
-        """
+    def scim_filter(self) -> Optional[str]:
         return pulumi.get(self, "scim_filter")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the report.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def summaries(self) -> Sequence['outputs.GetReportDefinitionSummaryResult']:
-        """
-        An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
-        """
+    def summaries(self) -> Optional[Sequence['outputs.GetReportDefinitionSummaryResult']]:
         return pulumi.get(self, "summaries")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Specifies the data and time the report definition was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the report definition was update.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -369,21 +288,7 @@ class AwaitableGetReportDefinitionResult(GetReportDefinitionResult):
 def get_report_definition(report_definition_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportDefinitionResult:
     """
-    This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of report definition specified by the identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_report_definition = oci.DataSafe.get_report_definition(report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"])
-    ```
-
-
-    :param str report_definition_id: Unique report definition identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['reportDefinitionId'] = report_definition_id
@@ -425,20 +330,6 @@ def get_report_definition(report_definition_id: Optional[str] = None,
 def get_report_definition_output(report_definition_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportDefinitionResult]:
     """
-    This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of report definition specified by the identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_report_definition = oci.DataSafe.get_report_definition(report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"])
-    ```
-
-
-    :param str report_definition_id: Unique report definition identifier
+    Use this data source to access information about an existing resource.
     """
     ...

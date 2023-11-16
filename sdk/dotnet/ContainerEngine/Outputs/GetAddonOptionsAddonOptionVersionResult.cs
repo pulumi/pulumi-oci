@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Information about the addon version.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The range of kubernetes versions an addon can be configured.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Version number, need be comparable within an addon.
         /// </summary>
-        public readonly string VersionNumber;
+        public readonly string? VersionNumber;
 
         [OutputConstructor]
         private GetAddonOptionsAddonOptionVersionResult(
             ImmutableArray<Outputs.GetAddonOptionsAddonOptionVersionConfigurationResult> configurations,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult> kubernetesVersionFilters,
 
-            string status,
+            string? status,
 
-            string versionNumber)
+            string? versionNumber)
         {
             Configurations = configurations;
             Description = description;

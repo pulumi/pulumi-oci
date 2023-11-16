@@ -75,7 +75,7 @@ export interface GetSoftwareSourceModuleStreamsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether this module stream is the latest.
      */
@@ -88,7 +88,7 @@ export interface GetSoftwareSourceModuleStreamsResult {
     /**
      * The list of module_stream_collection.
      */
-    readonly moduleStreamCollections: outputs.OsManagementHub.GetSoftwareSourceModuleStreamsModuleStreamCollection[];
+    readonly moduleStreamCollections?: outputs.OsManagementHub.GetSoftwareSourceModuleStreamsModuleStreamCollection[];
     /**
      * The name of the stream.
      */

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -136,43 +135,43 @@ type NodePool struct {
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels NodePoolInitialNodeLabelArrayOutput `pulumi:"initialNodeLabels"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-	KubernetesVersion pulumi.StringOutput `pulumi:"kubernetesVersion"`
+	KubernetesVersion pulumi.StringPtrOutput `pulumi:"kubernetesVersion"`
 	// Details about the state of the node.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-	NodeConfigDetails NodePoolNodeConfigDetailsOutput `pulumi:"nodeConfigDetails"`
+	NodeConfigDetails NodePoolNodeConfigDetailsPtrOutput `pulumi:"nodeConfigDetails"`
 	// (Updatable) Node Eviction Details configuration
-	NodeEvictionNodePoolSettings NodePoolNodeEvictionNodePoolSettingsOutput `pulumi:"nodeEvictionNodePoolSettings"`
+	NodeEvictionNodePoolSettings NodePoolNodeEvictionNodePoolSettingsPtrOutput `pulumi:"nodeEvictionNodePoolSettings"`
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageId pulumi.StringOutput `pulumi:"nodeImageId"`
+	NodeImageId pulumi.StringPtrOutput `pulumi:"nodeImageId"`
 	// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
 	//
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageName pulumi.StringOutput `pulumi:"nodeImageName"`
+	NodeImageName pulumi.StringPtrOutput `pulumi:"nodeImageName"`
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata pulumi.MapOutput `pulumi:"nodeMetadata"`
 	// (Updatable) Node Pool Cycling Details
-	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsOutput `pulumi:"nodePoolCyclingDetails"`
+	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsPtrOutput `pulumi:"nodePoolCyclingDetails"`
 	// (Updatable) The name of the node shape of the nodes in the node pool.
 	NodeShape pulumi.StringOutput `pulumi:"nodeShape"`
 	// (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-	NodeShapeConfig NodePoolNodeShapeConfigOutput `pulumi:"nodeShapeConfig"`
+	NodeShapeConfig NodePoolNodeShapeConfigPtrOutput `pulumi:"nodeShapeConfig"`
 	// (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-	NodeSourceDetails NodePoolNodeSourceDetailsOutput `pulumi:"nodeSourceDetails"`
+	NodeSourceDetails NodePoolNodeSourceDetailsPtrOutput `pulumi:"nodeSourceDetails"`
 	// Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
 	NodeSources NodePoolNodeSourceArrayOutput `pulumi:"nodeSources"`
 	// The nodes in the node pool.
 	Nodes NodePoolNodeArrayOutput `pulumi:"nodes"`
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-	QuantityPerSubnet pulumi.IntOutput `pulumi:"quantityPerSubnet"`
+	QuantityPerSubnet pulumi.IntPtrOutput `pulumi:"quantityPerSubnet"`
 	// (Updatable) The SSH public key on each node in the node pool on launch.
-	SshPublicKey pulumi.StringOutput `pulumi:"sshPublicKey"`
+	SshPublicKey pulumi.StringPtrOutput `pulumi:"sshPublicKey"`
 	// The state of the nodepool.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	//
 	// ** IMPORTANT **
@@ -454,12 +453,6 @@ func (i *NodePool) ToNodePoolOutputWithContext(ctx context.Context) NodePoolOutp
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolOutput)
 }
 
-func (i *NodePool) ToOutput(ctx context.Context) pulumix.Output[*NodePool] {
-	return pulumix.Output[*NodePool]{
-		OutputState: i.ToNodePoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NodePoolArrayInput is an input type that accepts NodePoolArray and NodePoolArrayOutput values.
 // You can construct a concrete instance of `NodePoolArrayInput` via:
 //
@@ -483,12 +476,6 @@ func (i NodePoolArray) ToNodePoolArrayOutput() NodePoolArrayOutput {
 
 func (i NodePoolArray) ToNodePoolArrayOutputWithContext(ctx context.Context) NodePoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolArrayOutput)
-}
-
-func (i NodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*NodePool] {
-	return pulumix.Output[[]*NodePool]{
-		OutputState: i.ToNodePoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NodePoolMapInput is an input type that accepts NodePoolMap and NodePoolMapOutput values.
@@ -516,12 +503,6 @@ func (i NodePoolMap) ToNodePoolMapOutputWithContext(ctx context.Context) NodePoo
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolMapOutput)
 }
 
-func (i NodePoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NodePool] {
-	return pulumix.Output[map[string]*NodePool]{
-		OutputState: i.ToNodePoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolOutput struct{ *pulumi.OutputState }
 
 func (NodePoolOutput) ElementType() reflect.Type {
@@ -534,12 +515,6 @@ func (o NodePoolOutput) ToNodePoolOutput() NodePoolOutput {
 
 func (o NodePoolOutput) ToNodePoolOutputWithContext(ctx context.Context) NodePoolOutput {
 	return o
-}
-
-func (o NodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePool] {
-	return pulumix.Output[*NodePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the cluster to which this node pool is attached.
@@ -568,13 +543,13 @@ func (o NodePoolOutput) InitialNodeLabels() NodePoolInitialNodeLabelArrayOutput 
 }
 
 // (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-func (o NodePoolOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o NodePoolOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringPtrOutput { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the node.
-func (o NodePoolOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o NodePoolOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the node pool. Avoid entering confidential information.
@@ -583,27 +558,27 @@ func (o NodePoolOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-func (o NodePoolOutput) NodeConfigDetails() NodePoolNodeConfigDetailsOutput {
-	return o.ApplyT(func(v *NodePool) NodePoolNodeConfigDetailsOutput { return v.NodeConfigDetails }).(NodePoolNodeConfigDetailsOutput)
+func (o NodePoolOutput) NodeConfigDetails() NodePoolNodeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolNodeConfigDetailsPtrOutput { return v.NodeConfigDetails }).(NodePoolNodeConfigDetailsPtrOutput)
 }
 
 // (Updatable) Node Eviction Details configuration
-func (o NodePoolOutput) NodeEvictionNodePoolSettings() NodePoolNodeEvictionNodePoolSettingsOutput {
-	return o.ApplyT(func(v *NodePool) NodePoolNodeEvictionNodePoolSettingsOutput { return v.NodeEvictionNodePoolSettings }).(NodePoolNodeEvictionNodePoolSettingsOutput)
+func (o NodePoolOutput) NodeEvictionNodePoolSettings() NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolNodeEvictionNodePoolSettingsPtrOutput { return v.NodeEvictionNodePoolSettings }).(NodePoolNodeEvictionNodePoolSettingsPtrOutput)
 }
 
 // Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 //
 // Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-func (o NodePoolOutput) NodeImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.NodeImageId }).(pulumi.StringOutput)
+func (o NodePoolOutput) NodeImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringPtrOutput { return v.NodeImageId }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
 //
 // Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-func (o NodePoolOutput) NodeImageName() pulumi.StringOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.NodeImageName }).(pulumi.StringOutput)
+func (o NodePoolOutput) NodeImageName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringPtrOutput { return v.NodeImageName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -612,8 +587,8 @@ func (o NodePoolOutput) NodeMetadata() pulumi.MapOutput {
 }
 
 // (Updatable) Node Pool Cycling Details
-func (o NodePoolOutput) NodePoolCyclingDetails() NodePoolNodePoolCyclingDetailsOutput {
-	return o.ApplyT(func(v *NodePool) NodePoolNodePoolCyclingDetailsOutput { return v.NodePoolCyclingDetails }).(NodePoolNodePoolCyclingDetailsOutput)
+func (o NodePoolOutput) NodePoolCyclingDetails() NodePoolNodePoolCyclingDetailsPtrOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolNodePoolCyclingDetailsPtrOutput { return v.NodePoolCyclingDetails }).(NodePoolNodePoolCyclingDetailsPtrOutput)
 }
 
 // (Updatable) The name of the node shape of the nodes in the node pool.
@@ -622,13 +597,13 @@ func (o NodePoolOutput) NodeShape() pulumi.StringOutput {
 }
 
 // (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-func (o NodePoolOutput) NodeShapeConfig() NodePoolNodeShapeConfigOutput {
-	return o.ApplyT(func(v *NodePool) NodePoolNodeShapeConfigOutput { return v.NodeShapeConfig }).(NodePoolNodeShapeConfigOutput)
+func (o NodePoolOutput) NodeShapeConfig() NodePoolNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolNodeShapeConfigPtrOutput { return v.NodeShapeConfig }).(NodePoolNodeShapeConfigPtrOutput)
 }
 
 // (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-func (o NodePoolOutput) NodeSourceDetails() NodePoolNodeSourceDetailsOutput {
-	return o.ApplyT(func(v *NodePool) NodePoolNodeSourceDetailsOutput { return v.NodeSourceDetails }).(NodePoolNodeSourceDetailsOutput)
+func (o NodePoolOutput) NodeSourceDetails() NodePoolNodeSourceDetailsPtrOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolNodeSourceDetailsPtrOutput { return v.NodeSourceDetails }).(NodePoolNodeSourceDetailsPtrOutput)
 }
 
 // Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
@@ -642,18 +617,18 @@ func (o NodePoolOutput) Nodes() NodePoolNodeArrayOutput {
 }
 
 // (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-func (o NodePoolOutput) QuantityPerSubnet() pulumi.IntOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.IntOutput { return v.QuantityPerSubnet }).(pulumi.IntOutput)
+func (o NodePoolOutput) QuantityPerSubnet() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.IntPtrOutput { return v.QuantityPerSubnet }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The SSH public key on each node in the node pool on launch.
-func (o NodePoolOutput) SshPublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.SshPublicKey }).(pulumi.StringOutput)
+func (o NodePoolOutput) SshPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringPtrOutput { return v.SshPublicKey }).(pulumi.StringPtrOutput)
 }
 
 // The state of the nodepool.
-func (o NodePoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NodePoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -678,12 +653,6 @@ func (o NodePoolArrayOutput) ToNodePoolArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o NodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NodePool] {
-	return pulumix.Output[[]*NodePool]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NodePoolArrayOutput) Index(i pulumi.IntInput) NodePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NodePool {
 		return vs[0].([]*NodePool)[vs[1].(int)]
@@ -702,12 +671,6 @@ func (o NodePoolMapOutput) ToNodePoolMapOutput() NodePoolMapOutput {
 
 func (o NodePoolMapOutput) ToNodePoolMapOutputWithContext(ctx context.Context) NodePoolMapOutput {
 	return o
-}
-
-func (o NodePoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NodePool] {
-	return pulumix.Output[map[string]*NodePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolMapOutput) MapIndex(k pulumi.StringInput) NodePoolOutput {

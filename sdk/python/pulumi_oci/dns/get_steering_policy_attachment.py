@@ -58,58 +58,37 @@ class GetSteeringPolicyAttachmentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the steering policy attachment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainName")
-    def domain_name(self) -> str:
-        """
-        The attached domain within the attached zone.
-        """
+    def domain_name(self) -> Optional[str]:
         return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def rtypes(self) -> Sequence[str]:
-        """
-        The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
-        """
+    def rtypes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "rtypes")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -119,26 +98,17 @@ class GetSteeringPolicyAttachmentResult:
 
     @property
     @pulumi.getter(name="steeringPolicyId")
-    def steering_policy_id(self) -> str:
-        """
-        The OCID of the attached steering policy.
-        """
+    def steering_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "steering_policy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> str:
-        """
-        The OCID of the attached zone.
-        """
+    def zone_id(self) -> Optional[str]:
         return pulumi.get(self, "zone_id")
 
 
@@ -164,21 +134,7 @@ class AwaitableGetSteeringPolicyAttachmentResult(GetSteeringPolicyAttachmentResu
 def get_steering_policy_attachment(steering_policy_attachment_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSteeringPolicyAttachmentResult:
     """
-    This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about the specified steering policy attachment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policy_attachment = oci.Dns.get_steering_policy_attachment(steering_policy_attachment_id=oci_dns_steering_policy_attachment["test_steering_policy_attachment"]["id"])
-    ```
-
-
-    :param str steering_policy_attachment_id: The OCID of the target steering policy attachment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['steeringPolicyAttachmentId'] = steering_policy_attachment_id
@@ -203,20 +159,6 @@ def get_steering_policy_attachment(steering_policy_attachment_id: Optional[str] 
 def get_steering_policy_attachment_output(steering_policy_attachment_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPolicyAttachmentResult]:
     """
-    This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about the specified steering policy attachment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policy_attachment = oci.Dns.get_steering_policy_attachment(steering_policy_attachment_id=oci_dns_steering_policy_attachment["test_steering_policy_attachment"]["id"])
-    ```
-
-
-    :param str steering_policy_attachment_id: The OCID of the target steering policy attachment.
+    Use this data source to access information about an existing resource.
     """
     ...

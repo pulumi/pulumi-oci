@@ -30,7 +30,7 @@ public final class GetExadataInsightsResult {
      * @return The list of exadata_insight_summary_collection.
      * 
      */
-    private List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections;
+    private @Nullable List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections;
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
      * 
@@ -76,7 +76,7 @@ public final class GetExadataInsightsResult {
      * 
      */
     public List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections() {
-        return this.exadataInsightSummaryCollections;
+        return this.exadataInsightSummaryCollections == null ? List.of() : this.exadataInsightSummaryCollections;
     }
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
@@ -122,7 +122,7 @@ public final class GetExadataInsightsResult {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String enterpriseManagerBridgeId;
-        private List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections;
+        private @Nullable List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections;
         private @Nullable List<String> exadataTypes;
         private @Nullable List<GetExadataInsightsFilter> filters;
         private @Nullable String id;
@@ -158,8 +158,8 @@ public final class GetExadataInsightsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInsightSummaryCollections(List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections) {
-            this.exadataInsightSummaryCollections = Objects.requireNonNull(exadataInsightSummaryCollections);
+        public Builder exadataInsightSummaryCollections(@Nullable List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections) {
+            this.exadataInsightSummaryCollections = exadataInsightSummaryCollections;
             return this;
         }
         public Builder exadataInsightSummaryCollections(GetExadataInsightsExadataInsightSummaryCollection... exadataInsightSummaryCollections) {

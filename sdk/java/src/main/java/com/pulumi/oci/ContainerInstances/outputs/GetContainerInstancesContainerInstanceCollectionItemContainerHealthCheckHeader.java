@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader {
@@ -13,19 +15,19 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
-    private String name;
-    private String value;
+    private @Nullable String name;
+    private @Nullable String value;
 
     private GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader() {}
     /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -37,8 +39,8 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String value;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,13 +49,13 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader build() {

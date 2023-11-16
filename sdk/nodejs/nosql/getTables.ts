@@ -66,7 +66,7 @@ export interface GetTablesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Human-friendly table name, immutable.
      */
@@ -78,7 +78,7 @@ export interface GetTablesResult {
     /**
      * The list of table_collection.
      */
-    readonly tableCollections: outputs.Nosql.GetTablesTableCollection[];
+    readonly tableCollections?: outputs.Nosql.GetTablesTableCollection[];
 }
 /**
  * This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.

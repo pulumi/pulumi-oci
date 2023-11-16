@@ -16,6 +16,7 @@ import com.pulumi.oci.VnMonitoring.outputs.PathAnalysiQueryOptions;
 import com.pulumi.oci.VnMonitoring.outputs.PathAnalysiSourceEndpoint;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -116,112 +117,112 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="cacheControl", refs={String.class}, tree="[0]")
-    private Output<String> cacheControl;
+    private Output</* @Nullable */ String> cacheControl;
 
     /**
      * @return The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
      * 
      */
-    public Output<String> cacheControl() {
-        return this.cacheControl;
+    public Output<Optional<String>> cacheControl() {
+        return Codegen.optional(this.cacheControl);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
     @Export(name="destinationEndpoint", refs={PathAnalysiDestinationEndpoint.class}, tree="[0]")
-    private Output<PathAnalysiDestinationEndpoint> destinationEndpoint;
+    private Output</* @Nullable */ PathAnalysiDestinationEndpoint> destinationEndpoint;
 
     /**
      * @return Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    public Output<PathAnalysiDestinationEndpoint> destinationEndpoint() {
-        return this.destinationEndpoint;
+    public Output<Optional<PathAnalysiDestinationEndpoint>> destinationEndpoint() {
+        return Codegen.optional(this.destinationEndpoint);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
      * 
      */
     @Export(name="pathAnalyzerTestId", refs={String.class}, tree="[0]")
-    private Output<String> pathAnalyzerTestId;
+    private Output</* @Nullable */ String> pathAnalyzerTestId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
      * 
      */
-    public Output<String> pathAnalyzerTestId() {
-        return this.pathAnalyzerTestId;
+    public Output<Optional<String>> pathAnalyzerTestId() {
+        return Codegen.optional(this.pathAnalyzerTestId);
     }
     /**
      * The IP protocol to used for the path analysis.
      * 
      */
     @Export(name="protocol", refs={Integer.class}, tree="[0]")
-    private Output<Integer> protocol;
+    private Output</* @Nullable */ Integer> protocol;
 
     /**
      * @return The IP protocol to used for the path analysis.
      * 
      */
-    public Output<Integer> protocol() {
-        return this.protocol;
+    public Output<Optional<Integer>> protocol() {
+        return Codegen.optional(this.protocol);
     }
     /**
      * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      * 
      */
     @Export(name="protocolParameters", refs={PathAnalysiProtocolParameters.class}, tree="[0]")
-    private Output<PathAnalysiProtocolParameters> protocolParameters;
+    private Output</* @Nullable */ PathAnalysiProtocolParameters> protocolParameters;
 
     /**
      * @return Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      * 
      */
-    public Output<PathAnalysiProtocolParameters> protocolParameters() {
-        return this.protocolParameters;
+    public Output<Optional<PathAnalysiProtocolParameters>> protocolParameters() {
+        return Codegen.optional(this.protocolParameters);
     }
     /**
      * Defines the query options required for a `PathAnalyzerTest` resource.
      * 
      */
     @Export(name="queryOptions", refs={PathAnalysiQueryOptions.class}, tree="[0]")
-    private Output<PathAnalysiQueryOptions> queryOptions;
+    private Output</* @Nullable */ PathAnalysiQueryOptions> queryOptions;
 
     /**
      * @return Defines the query options required for a `PathAnalyzerTest` resource.
      * 
      */
-    public Output<PathAnalysiQueryOptions> queryOptions() {
-        return this.queryOptions;
+    public Output<Optional<PathAnalysiQueryOptions>> queryOptions() {
+        return Codegen.optional(this.queryOptions);
     }
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
     @Export(name="sourceEndpoint", refs={PathAnalysiSourceEndpoint.class}, tree="[0]")
-    private Output<PathAnalysiSourceEndpoint> sourceEndpoint;
+    private Output</* @Nullable */ PathAnalysiSourceEndpoint> sourceEndpoint;
 
     /**
      * @return Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    public Output<PathAnalysiSourceEndpoint> sourceEndpoint() {
-        return this.sourceEndpoint;
+    public Output<Optional<PathAnalysiSourceEndpoint>> sourceEndpoint() {
+        return Codegen.optional(this.sourceEndpoint);
     }
     /**
      * The type of the `PathAnalysis` query.

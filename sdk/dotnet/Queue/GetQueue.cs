@@ -108,116 +108,116 @@ namespace Pulumi.Oci.Queue
         /// <summary>
         /// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         /// </summary>
-        public readonly int ChannelConsumptionLimit;
+        public readonly int? ChannelConsumptionLimit;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         /// </summary>
-        public readonly string CustomEncryptionKeyId;
+        public readonly string? CustomEncryptionKeyId;
         /// <summary>
         /// The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         /// </summary>
-        public readonly int DeadLetterQueueDeliveryCount;
+        public readonly int? DeadLetterQueueDeliveryCount;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A unique identifier for the queue that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Any additional details about the current state of the queue.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The endpoint to use to consume or publish messages in the queue.
         /// </summary>
-        public readonly string MessagesEndpoint;
-        public readonly bool PurgeQueue;
-        public readonly string PurgeType;
+        public readonly string? MessagesEndpoint;
+        public readonly bool? PurgeQueue;
+        public readonly string? PurgeType;
         public readonly string QueueId;
         /// <summary>
         /// The retention period of the messages in the queue, in seconds.
         /// </summary>
-        public readonly int RetentionInSeconds;
+        public readonly int? RetentionInSeconds;
         /// <summary>
         /// The current state of the queue.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The default polling timeout of the messages in the queue, in seconds.
         /// </summary>
-        public readonly int TimeoutInSeconds;
+        public readonly int? TimeoutInSeconds;
         /// <summary>
         /// The default visibility timeout of the messages consumed from the queue, in seconds.
         /// </summary>
-        public readonly int VisibilityInSeconds;
+        public readonly int? VisibilityInSeconds;
 
         [OutputConstructor]
         private GetQueueResult(
-            int channelConsumptionLimit,
+            int? channelConsumptionLimit,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string customEncryptionKeyId,
+            string? customEncryptionKeyId,
 
-            int deadLetterQueueDeliveryCount,
+            int? deadLetterQueueDeliveryCount,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string messagesEndpoint,
+            string? messagesEndpoint,
 
-            bool purgeQueue,
+            bool? purgeQueue,
 
-            string purgeType,
+            string? purgeType,
 
             string queueId,
 
-            int retentionInSeconds,
+            int? retentionInSeconds,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int timeoutInSeconds,
+            int? timeoutInSeconds,
 
-            int visibilityInSeconds)
+            int? visibilityInSeconds)
         {
             ChannelConsumptionLimit = channelConsumptionLimit;
             CompartmentId = compartmentId;

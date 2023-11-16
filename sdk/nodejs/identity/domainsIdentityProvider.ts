@@ -63,7 +63,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    public readonly assertionAttribute!: pulumi.Output<string>;
+    public readonly assertionAttribute!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -85,7 +85,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly authnRequestBinding!: pulumi.Output<string>;
+    public readonly authnRequestBinding!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
@@ -103,7 +103,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Correlation policy
      *
@@ -119,7 +119,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly correlationPolicy!: pulumi.Output<outputs.Identity.DomainsIdentityProviderCorrelationPolicy>;
+    public readonly correlationPolicy!: pulumi.Output<outputs.Identity.DomainsIdentityProviderCorrelationPolicy | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -133,7 +133,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Description
      *
@@ -147,7 +147,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -161,7 +161,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Set to true to indicate Partner enabled.
      *
@@ -189,7 +189,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly encryptionCertificate!: pulumi.Output<string>;
+    public readonly encryptionCertificate!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -202,7 +202,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    public readonly externalId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Identity Provider Icon URL.
      *
@@ -215,7 +215,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly iconUrl!: pulumi.Output<string>;
+    public readonly iconUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -227,7 +227,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -243,7 +243,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -257,7 +257,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -270,7 +270,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Identity Provider SSO URL
      *
@@ -284,7 +284,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly idpSsoUrl!: pulumi.Output<string>;
+    public readonly idpSsoUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Set to true to include the signing certificate in the signature.
      *
@@ -298,7 +298,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly includeSigningCertInSignature!: pulumi.Output<boolean>;
+    public readonly includeSigningCertInSignature!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
      *
@@ -314,7 +314,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly jitUserProvAssignedGroups!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup[]>;
+    public readonly jitUserProvAssignedGroups!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup[] | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -330,7 +330,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvAttributeUpdateEnabled!: pulumi.Output<boolean>;
+    public readonly jitUserProvAttributeUpdateEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Assertion To User Mapping
      *
@@ -346,7 +346,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly jitUserProvAttributes!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAttributes>;
+    public readonly jitUserProvAttributes!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAttributes | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -362,7 +362,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvCreateUserEnabled!: pulumi.Output<boolean>;
+    public readonly jitUserProvCreateUserEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning is enabled
      *
@@ -378,7 +378,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvEnabled!: pulumi.Output<boolean>;
+    public readonly jitUserProvEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
      *
@@ -394,7 +394,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupAssertionAttributeEnabled!: pulumi.Output<boolean>;
+    public readonly jitUserProvGroupAssertionAttributeEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
      *
@@ -410,7 +410,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupAssignmentMethod!: pulumi.Output<string>;
+    public readonly jitUserProvGroupAssignmentMethod!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Property to indicate the mode of group mapping
      *
@@ -426,7 +426,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupMappingMode!: pulumi.Output<string>;
+    public readonly jitUserProvGroupMappingMode!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
      *
@@ -441,7 +441,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupMappings!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping[]>;
+    public readonly jitUserProvGroupMappings!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping[] | undefined>;
     /**
      * (Updatable) Name of the assertion attribute containing the users groups
      *
@@ -457,7 +457,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupSamlAttributeName!: pulumi.Output<string>;
+    public readonly jitUserProvGroupSamlAttributeName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
      *
@@ -473,7 +473,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupStaticListEnabled!: pulumi.Output<boolean>;
+    public readonly jitUserProvGroupStaticListEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate ignoring absence of group while provisioning
      *
@@ -490,7 +490,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvIgnoreErrorOnAbsentGroups!: pulumi.Output<boolean>;
+    public readonly jitUserProvIgnoreErrorOnAbsentGroups!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
      *
@@ -506,7 +506,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public /*out*/ readonly lastNotificationSentTime!: pulumi.Output<string>;
+    public /*out*/ readonly lastNotificationSentTime!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) HTTP binding to use for logout.
      *
@@ -520,7 +520,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutBinding!: pulumi.Output<string>;
+    public readonly logoutBinding!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Set to true to enable logout.
      *
@@ -534,7 +534,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly logoutEnabled!: pulumi.Output<boolean>;
+    public readonly logoutEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Logout request URL
      *
@@ -548,7 +548,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutRequestUrl!: pulumi.Output<string>;
+    public readonly logoutRequestUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Logout response URL
      *
@@ -562,7 +562,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutResponseUrl!: pulumi.Output<string>;
+    public readonly logoutResponseUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Metadata
      *
@@ -576,7 +576,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly metadata!: pulumi.Output<string>;
+    public readonly metadata!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -590,7 +590,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsIdentityProviderMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsIdentityProviderMeta[] | undefined>;
     /**
      * (Updatable) Default authentication request name ID format.
      *
@@ -604,7 +604,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly nameIdFormat!: pulumi.Output<string>;
+    public readonly nameIdFormat!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -618,7 +618,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Unique name of the trusted Identity Provider.
      *
@@ -646,7 +646,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly partnerProviderId!: pulumi.Output<string>;
+    public readonly partnerProviderId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) SAML SP authentication type.
      *
@@ -662,7 +662,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly requestedAuthenticationContexts!: pulumi.Output<string[]>;
+    public readonly requestedAuthenticationContexts!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
      *
@@ -678,7 +678,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly requireForceAuthn!: pulumi.Output<boolean>;
+    public readonly requireForceAuthn!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) SAML SP must accept encrypted assertion only.
      *
@@ -694,7 +694,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly requiresEncryptedAssertion!: pulumi.Output<boolean>;
+    public readonly requiresEncryptedAssertion!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -714,7 +714,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly samlHoKrequired!: pulumi.Output<boolean>;
+    public readonly samlHoKrequired!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -744,7 +744,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly serviceInstanceIdentifier!: pulumi.Output<string>;
+    public readonly serviceInstanceIdentifier!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Set to true to indicate whether to show IdP in login page or not.
      *
@@ -758,7 +758,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly shownOnLoginPage!: pulumi.Output<boolean>;
+    public readonly shownOnLoginPage!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Signature hash algorithm.
      *
@@ -772,7 +772,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly signatureHashAlgorithm!: pulumi.Output<string>;
+    public readonly signatureHashAlgorithm!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Signing certificate
      *
@@ -786,7 +786,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly signingCertificate!: pulumi.Output<string>;
+    public readonly signingCertificate!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Succinct ID
      *
@@ -800,7 +800,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly succinctId!: pulumi.Output<string>;
+    public readonly succinctId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -814,7 +814,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsIdentityProviderTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsIdentityProviderTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -828,7 +828,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
      *
@@ -844,7 +844,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenantProviderId!: pulumi.Output<string>;
+    public /*out*/ readonly tenantProviderId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Identity Provider Type
      *
@@ -860,15 +860,15 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly type!: pulumi.Output<string>;
+    public readonly type!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Social Identity Provider Extension Schema
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider!: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider!: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider | undefined>;
     /**
      * (Updatable) X509 Identity Provider Extension Schema
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionx509identityProvider!: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionx509identityProvider!: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider | undefined>;
     /**
      * (Updatable) User mapping method.
      *
@@ -885,7 +885,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    public readonly userMappingMethod!: pulumi.Output<string>;
+    public readonly userMappingMethod!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
      *
@@ -906,7 +906,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userMappingStoreAttribute!: pulumi.Output<string>;
+    public readonly userMappingStoreAttribute!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DomainsIdentityProvider resource with the given unique name, arguments, and options.

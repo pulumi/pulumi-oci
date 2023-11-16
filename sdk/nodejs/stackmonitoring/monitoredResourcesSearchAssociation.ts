@@ -88,7 +88,7 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
     /**
      * List of Monitored Resource Associations.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchAssociationItem[]>;
+    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchAssociationItem[] | undefined>;
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

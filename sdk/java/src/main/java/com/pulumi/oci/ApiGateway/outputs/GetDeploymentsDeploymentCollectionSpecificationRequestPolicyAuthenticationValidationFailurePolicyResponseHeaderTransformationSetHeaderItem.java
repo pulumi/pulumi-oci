@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem {
@@ -14,39 +16,39 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * @return If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
      * 
      */
-    private String ifExists;
+    private @Nullable String ifExists;
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem() {}
     /**
      * @return If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
      * 
      */
-    public String ifExists() {
-        return this.ifExists;
+    public Optional<String> ifExists() {
+        return Optional.ofNullable(this.ifExists);
     }
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ifExists;
-        private String name;
-        private List<String> values;
+        private @Nullable String ifExists;
+        private @Nullable String name;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
 
         @CustomType.Setter
-        public Builder ifExists(String ifExists) {
-            this.ifExists = Objects.requireNonNull(ifExists);
+        public Builder ifExists(@Nullable String ifExists) {
+            this.ifExists = ifExists;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<String> values) {
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

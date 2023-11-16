@@ -55,13 +55,13 @@ export interface GetBackendsResult {
     /**
      * The list of backend_collection.
      */
-    readonly backendCollections: outputs.NetworkLoadBalancer.GetBackendsBackendCollection[];
+    readonly backendCollections?: outputs.NetworkLoadBalancer.GetBackendsBackendCollection[];
     readonly backendSetName: string;
     readonly filters?: outputs.NetworkLoadBalancer.GetBackendsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkLoadBalancerId: string;
 }
 /**

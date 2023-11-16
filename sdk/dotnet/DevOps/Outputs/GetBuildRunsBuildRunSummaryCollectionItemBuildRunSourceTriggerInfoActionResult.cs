@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Unique build pipeline identifier.
         /// </summary>
-        public readonly string BuildPipelineId;
+        public readonly string? BuildPipelineId;
         /// <summary>
         /// The filters for the trigger.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionResult(
-            string buildPipelineId,
+            string? buildPipelineId,
 
             ImmutableArray<Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterResult> filters,
 
-            string type)
+            string? type)
         {
             BuildPipelineId = buildPipelineId;
             Filters = filters;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -61,39 +60,39 @@ type LookupAgentDependencyArgs struct {
 type LookupAgentDependencyResult struct {
 	AgentDependencyId string `pulumi:"agentDependencyId"`
 	// Object storage bucket where the Agent dependency is uploaded.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The checksum associated with the dependency object returned by Object Storage.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// Compartment identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Name of the dependency type. This should match the whitelisted enum of dependency names.
-	DependencyName string `pulumi:"dependencyName"`
+	DependencyName *string `pulumi:"dependencyName"`
 	// Version of the Agent dependency.
-	DependencyVersion string `pulumi:"dependencyVersion"`
+	DependencyVersion *string `pulumi:"dependencyVersion"`
 	// Description about the Agent dependency.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Display name of the Agent dependency.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The eTag associated with the dependency object returned by Object Storage.
-	ETag string `pulumi:"eTag"`
+	ETag *string `pulumi:"eTag"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object storage namespace associated with the customer's tenancy.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Name of the dependency object uploaded by the customer.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// The current state of AgentDependency.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupAgentDependencyOutput(ctx *pulumi.Context, args LookupAgentDependencyOutputArgs, opts ...pulumi.InvokeOption) LookupAgentDependencyResultOutput {
@@ -134,29 +133,23 @@ func (o LookupAgentDependencyResultOutput) ToLookupAgentDependencyResultOutputWi
 	return o
 }
 
-func (o LookupAgentDependencyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAgentDependencyResult] {
-	return pulumix.Output[LookupAgentDependencyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAgentDependencyResultOutput) AgentDependencyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.AgentDependencyId }).(pulumi.StringOutput)
 }
 
 // Object storage bucket where the Agent dependency is uploaded.
-func (o LookupAgentDependencyResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The checksum associated with the dependency object returned by Object Storage.
-func (o LookupAgentDependencyResultOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.Checksum }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // Compartment identifier
-func (o LookupAgentDependencyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -165,28 +158,28 @@ func (o LookupAgentDependencyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Name of the dependency type. This should match the whitelisted enum of dependency names.
-func (o LookupAgentDependencyResultOutput) DependencyName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.DependencyName }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) DependencyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.DependencyName }).(pulumi.StringPtrOutput)
 }
 
 // Version of the Agent dependency.
-func (o LookupAgentDependencyResultOutput) DependencyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.DependencyVersion }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) DependencyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.DependencyVersion }).(pulumi.StringPtrOutput)
 }
 
 // Description about the Agent dependency.
-func (o LookupAgentDependencyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Display name of the Agent dependency.
-func (o LookupAgentDependencyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The eTag associated with the dependency object returned by Object Storage.
-func (o LookupAgentDependencyResultOutput) ETag() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.ETag }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) ETag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.ETag }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -195,28 +188,28 @@ func (o LookupAgentDependencyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupAgentDependencyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o LookupAgentDependencyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object storage namespace associated with the customer's tenancy.
-func (o LookupAgentDependencyResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Name of the dependency object uploaded by the customer.
-func (o LookupAgentDependencyResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.Object }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // The current state of AgentDependency.
-func (o LookupAgentDependencyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -225,8 +218,8 @@ func (o LookupAgentDependencyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-func (o LookupAgentDependencyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAgentDependencyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

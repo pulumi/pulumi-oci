@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetUserSpecShapeConfig {
@@ -14,39 +16,39 @@ public final class GetTargetAssetUserSpecShapeConfig {
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
-    private String baselineOcpuUtilization;
+    private @Nullable String baselineOcpuUtilization;
     /**
      * @return The total amount of memory in gigabytes that is available to the instance.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
-    private Double ocpus;
+    private @Nullable Double ocpus;
 
     private GetTargetAssetUserSpecShapeConfig() {}
     /**
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
-    public String baselineOcpuUtilization() {
-        return this.baselineOcpuUtilization;
+    public Optional<String> baselineOcpuUtilization() {
+        return Optional.ofNullable(this.baselineOcpuUtilization);
     }
     /**
      * @return The total amount of memory in gigabytes that is available to the instance.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
-    public Double ocpus() {
-        return this.ocpus;
+    public Optional<Double> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetTargetAssetUserSpecShapeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String baselineOcpuUtilization;
-        private Double memoryInGbs;
-        private Double ocpus;
+        private @Nullable String baselineOcpuUtilization;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double ocpus;
         public Builder() {}
         public Builder(GetTargetAssetUserSpecShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetTargetAssetUserSpecShapeConfig {
         }
 
         @CustomType.Setter
-        public Builder baselineOcpuUtilization(String baselineOcpuUtilization) {
-            this.baselineOcpuUtilization = Objects.requireNonNull(baselineOcpuUtilization);
+        public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
+            this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Double ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetTargetAssetUserSpecShapeConfig build() {

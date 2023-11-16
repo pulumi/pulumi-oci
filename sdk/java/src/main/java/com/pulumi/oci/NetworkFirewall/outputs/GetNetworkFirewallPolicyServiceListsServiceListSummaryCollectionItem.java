@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItem {
@@ -25,7 +27,7 @@ public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollect
      * @return OCID of the Network Firewall Policy this serviceList belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return List of services in the group.
      * 
@@ -35,7 +37,7 @@ public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollect
      * @return Count of total services in the given service List.
      * 
      */
-    private Integer totalServices;
+    private @Nullable Integer totalServices;
 
     private GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItem() {}
     /**
@@ -56,8 +58,8 @@ public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollect
      * @return OCID of the Network Firewall Policy this serviceList belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return List of services in the group.
@@ -70,8 +72,8 @@ public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollect
      * @return Count of total services in the given service List.
      * 
      */
-    public Integer totalServices() {
-        return this.totalServices;
+    public Optional<Integer> totalServices() {
+        return Optional.ofNullable(this.totalServices);
     }
 
     public static Builder builder() {
@@ -85,9 +87,9 @@ public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollect
     public static final class Builder {
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
+        private @Nullable String parentResourceId;
         private List<String> services;
-        private Integer totalServices;
+        private @Nullable Integer totalServices;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -109,8 +111,8 @@ public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollect
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
@@ -122,8 +124,8 @@ public final class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollect
             return services(List.of(services));
         }
         @CustomType.Setter
-        public Builder totalServices(Integer totalServices) {
-            this.totalServices = Objects.requireNonNull(totalServices);
+        public Builder totalServices(@Nullable Integer totalServices) {
+            this.totalServices = totalServices;
             return this;
         }
         public GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItem build() {

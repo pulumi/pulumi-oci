@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The DateTime the Resource was added to the Service Provider
         /// </summary>
-        public readonly string Created;
+        public readonly string? Created;
         /// <summary>
         /// The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
         /// </summary>
-        public readonly string LastModified;
+        public readonly string? LastModified;
         /// <summary>
         /// The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
         /// </summary>
-        public readonly string Location;
+        public readonly string? Location;
         /// <summary>
         /// Name of the resource type of the resource--for example, Users or Groups
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetDomainsMyApiKeysMyApiKeyMetaResult(
-            string created,
+            string? created,
 
-            string lastModified,
+            string? lastModified,
 
-            string location,
+            string? location,
 
-            string resourceType,
+            string? resourceType,
 
-            string version)
+            string? version)
         {
             Created = created;
             LastModified = lastModified;

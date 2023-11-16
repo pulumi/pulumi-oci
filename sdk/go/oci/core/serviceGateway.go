@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Service Gateway resource in Oracle Cloud Infrastructure Core service.
@@ -78,13 +77,13 @@ type ServiceGateway struct {
 	pulumi.CustomResourceState
 
 	// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
-	BlockTraffic pulumi.BoolOutput `pulumi:"blockTraffic"`
+	BlockTraffic pulumi.BoolPtrOutput `pulumi:"blockTraffic"`
 	// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
@@ -92,15 +91,15 @@ type ServiceGateway struct {
 	// If you don't specify a route table here, the service gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the service gateway.
 	//
 	// For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
+	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don't want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
 	//
 	// For each enabled `Service`, make sure there's a route rule with the `Service` object's `cidrBlock` as the rule's destination and the service gateway as the rule's target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
 	Services ServiceGatewayServiceArrayOutput `pulumi:"services"`
 	// The service gateway's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the service gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	//
 	// ** IMPORTANT **
@@ -290,12 +289,6 @@ func (i *ServiceGateway) ToServiceGatewayOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGatewayOutput)
 }
 
-func (i *ServiceGateway) ToOutput(ctx context.Context) pulumix.Output[*ServiceGateway] {
-	return pulumix.Output[*ServiceGateway]{
-		OutputState: i.ToServiceGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ServiceGatewayArrayInput is an input type that accepts ServiceGatewayArray and ServiceGatewayArrayOutput values.
 // You can construct a concrete instance of `ServiceGatewayArrayInput` via:
 //
@@ -319,12 +312,6 @@ func (i ServiceGatewayArray) ToServiceGatewayArrayOutput() ServiceGatewayArrayOu
 
 func (i ServiceGatewayArray) ToServiceGatewayArrayOutputWithContext(ctx context.Context) ServiceGatewayArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGatewayArrayOutput)
-}
-
-func (i ServiceGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGateway] {
-	return pulumix.Output[[]*ServiceGateway]{
-		OutputState: i.ToServiceGatewayArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ServiceGatewayMapInput is an input type that accepts ServiceGatewayMap and ServiceGatewayMapOutput values.
@@ -352,12 +339,6 @@ func (i ServiceGatewayMap) ToServiceGatewayMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGatewayMapOutput)
 }
 
-func (i ServiceGatewayMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGateway] {
-	return pulumix.Output[map[string]*ServiceGateway]{
-		OutputState: i.ToServiceGatewayMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ServiceGatewayOutput struct{ *pulumi.OutputState }
 
 func (ServiceGatewayOutput) ElementType() reflect.Type {
@@ -372,15 +353,9 @@ func (o ServiceGatewayOutput) ToServiceGatewayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ServiceGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[*ServiceGateway] {
-	return pulumix.Output[*ServiceGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
-func (o ServiceGatewayOutput) BlockTraffic() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ServiceGateway) pulumi.BoolOutput { return v.BlockTraffic }).(pulumi.BoolOutput)
+func (o ServiceGatewayOutput) BlockTraffic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceGateway) pulumi.BoolPtrOutput { return v.BlockTraffic }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
@@ -394,8 +369,8 @@ func (o ServiceGatewayOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o ServiceGatewayOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ServiceGateway) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ServiceGatewayOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceGateway) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -408,8 +383,8 @@ func (o ServiceGatewayOutput) FreeformTags() pulumi.MapOutput {
 // If you don't specify a route table here, the service gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the service gateway.
 //
 // For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-func (o ServiceGatewayOutput) RouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ServiceGateway) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
+func (o ServiceGatewayOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceGateway) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don't want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
@@ -420,13 +395,13 @@ func (o ServiceGatewayOutput) Services() ServiceGatewayServiceArrayOutput {
 }
 
 // The service gateway's current state.
-func (o ServiceGatewayOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ServiceGateway) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ServiceGatewayOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceGateway) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the service gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ServiceGatewayOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ServiceGateway) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ServiceGatewayOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceGateway) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -451,12 +426,6 @@ func (o ServiceGatewayArrayOutput) ToServiceGatewayArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ServiceGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGateway] {
-	return pulumix.Output[[]*ServiceGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ServiceGatewayArrayOutput) Index(i pulumi.IntInput) ServiceGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ServiceGateway {
 		return vs[0].([]*ServiceGateway)[vs[1].(int)]
@@ -475,12 +444,6 @@ func (o ServiceGatewayMapOutput) ToServiceGatewayMapOutput() ServiceGatewayMapOu
 
 func (o ServiceGatewayMapOutput) ToServiceGatewayMapOutputWithContext(ctx context.Context) ServiceGatewayMapOutput {
 	return o
-}
-
-func (o ServiceGatewayMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGateway] {
-	return pulumix.Output[map[string]*ServiceGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ServiceGatewayMapOutput) MapIndex(k pulumi.StringInput) ServiceGatewayOutput {

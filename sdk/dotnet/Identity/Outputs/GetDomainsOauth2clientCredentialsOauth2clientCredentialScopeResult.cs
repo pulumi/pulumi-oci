@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Audience
         /// </summary>
-        public readonly string Audience;
+        public readonly string? Audience;
         /// <summary>
         /// Scope
         /// </summary>
-        public readonly string Scope;
+        public readonly string? Scope;
 
         [OutputConstructor]
         private GetDomainsOauth2clientCredentialsOauth2clientCredentialScopeResult(
-            string audience,
+            string? audience,
 
-            string scope)
+            string? scope)
         {
             Audience = audience;
             Scope = scope;

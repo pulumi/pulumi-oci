@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -80,70 +81,70 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Export(name="drProtectionGroupId", refs={String.class}, tree="[0]")
-    private Output<String> drProtectionGroupId;
+    private Output</* @Nullable */ String> drProtectionGroupId;
 
     /**
      * @return The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    public Output<String> drProtectionGroupId() {
-        return this.drProtectionGroupId;
+    public Output<Optional<String>> drProtectionGroupId() {
+        return Codegen.optional(this.drProtectionGroupId);
     }
     /**
      * The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     @Export(name="executionDurationInSec", refs={Integer.class}, tree="[0]")
-    private Output<Integer> executionDurationInSec;
+    private Output</* @Nullable */ Integer> executionDurationInSec;
 
     /**
      * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
-    public Output<Integer> executionDurationInSec() {
-        return this.executionDurationInSec;
+    public Output<Optional<Integer>> executionDurationInSec() {
+        return Codegen.optional(this.executionDurationInSec);
     }
     /**
      * The options for a plan execution.
@@ -164,98 +165,98 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A list of groups executed in this DR plan execution.
      * 
      */
     @Export(name="groupExecutions", refs={List.class,DrPlanExecutionGroupExecution.class}, tree="[0,1]")
-    private Output<List<DrPlanExecutionGroupExecution>> groupExecutions;
+    private Output</* @Nullable */ List<DrPlanExecutionGroupExecution>> groupExecutions;
 
     /**
      * @return A list of groups executed in this DR plan execution.
      * 
      */
-    public Output<List<DrPlanExecutionGroupExecution>> groupExecutions() {
-        return this.groupExecutions;
+    public Output<Optional<List<DrPlanExecutionGroupExecution>>> groupExecutions() {
+        return Codegen.optional(this.groupExecutions);
     }
     /**
      * A message describing the DR plan execution&#39;s current state in more detail.
      * 
      */
     @Export(name="lifeCycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifeCycleDetails;
+    private Output</* @Nullable */ String> lifeCycleDetails;
 
     /**
      * @return A message describing the DR plan execution&#39;s current state in more detail.
      * 
      */
-    public Output<String> lifeCycleDetails() {
-        return this.lifeCycleDetails;
+    public Output<Optional<String>> lifeCycleDetails() {
+        return Codegen.optional(this.lifeCycleDetails);
     }
     /**
      * The details of an object storage log location for a DR protection group.
      * 
      */
     @Export(name="logLocations", refs={List.class,DrPlanExecutionLogLocation.class}, tree="[0,1]")
-    private Output<List<DrPlanExecutionLogLocation>> logLocations;
+    private Output</* @Nullable */ List<DrPlanExecutionLogLocation>> logLocations;
 
     /**
      * @return The details of an object storage log location for a DR protection group.
      * 
      */
-    public Output<List<DrPlanExecutionLogLocation>> logLocations() {
-        return this.logLocations;
+    public Output<Optional<List<DrPlanExecutionLogLocation>>> logLocations() {
+        return Codegen.optional(this.logLocations);
     }
     /**
      * The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Export(name="peerDrProtectionGroupId", refs={String.class}, tree="[0]")
-    private Output<String> peerDrProtectionGroupId;
+    private Output</* @Nullable */ String> peerDrProtectionGroupId;
 
     /**
      * @return The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    public Output<String> peerDrProtectionGroupId() {
-        return this.peerDrProtectionGroupId;
+    public Output<Optional<String>> peerDrProtectionGroupId() {
+        return Codegen.optional(this.peerDrProtectionGroupId);
     }
     /**
      * The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Export(name="peerRegion", refs={String.class}, tree="[0]")
-    private Output<String> peerRegion;
+    private Output</* @Nullable */ String> peerRegion;
 
     /**
      * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
-    public Output<String> peerRegion() {
-        return this.peerRegion;
+    public Output<Optional<String>> peerRegion() {
+        return Codegen.optional(this.peerRegion);
     }
     /**
      * The type of the plan execution.
      * 
      */
     @Export(name="planExecutionType", refs={String.class}, tree="[0]")
-    private Output<String> planExecutionType;
+    private Output</* @Nullable */ String> planExecutionType;
 
     /**
      * @return The type of the plan execution.
      * 
      */
-    public Output<String> planExecutionType() {
-        return this.planExecutionType;
+    public Output<Optional<String>> planExecutionType() {
+        return Codegen.optional(this.planExecutionType);
     }
     /**
      * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
@@ -282,84 +283,84 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the DR plan execution.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeEnded", refs={String.class}, tree="[0]")
-    private Output<String> timeEnded;
+    private Output</* @Nullable */ String> timeEnded;
 
     /**
      * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public Output<String> timeEnded() {
-        return this.timeEnded;
+    public Output<Optional<String>> timeEnded() {
+        return Codegen.optional(this.timeEnded);
     }
     /**
      * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
     /**
      * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -118,7 +117,7 @@ type BackendSet struct {
 	// **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-	LbCookieSessionPersistenceConfiguration BackendSetLbCookieSessionPersistenceConfigurationOutput `pulumi:"lbCookieSessionPersistenceConfiguration"`
+	LbCookieSessionPersistenceConfiguration BackendSetLbCookieSessionPersistenceConfigurationPtrOutput `pulumi:"lbCookieSessionPersistenceConfiguration"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
@@ -142,12 +141,12 @@ type BackendSet struct {
 	// **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-	SessionPersistenceConfiguration BackendSetSessionPersistenceConfigurationOutput `pulumi:"sessionPersistenceConfiguration"`
+	SessionPersistenceConfiguration BackendSetSessionPersistenceConfigurationPtrOutput `pulumi:"sessionPersistenceConfiguration"`
 	// (Updatable) The load balancer's SSL handling configuration details.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	SslConfiguration BackendSetSslConfigurationPtrOutput `pulumi:"sslConfiguration"`
-	State            pulumi.StringOutput                 `pulumi:"state"`
+	State            pulumi.StringPtrOutput              `pulumi:"state"`
 }
 
 // NewBackendSet registers a new resource with the given unique name, arguments, and options.
@@ -416,12 +415,6 @@ func (i *BackendSet) ToBackendSetOutputWithContext(ctx context.Context) BackendS
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetOutput)
 }
 
-func (i *BackendSet) ToOutput(ctx context.Context) pulumix.Output[*BackendSet] {
-	return pulumix.Output[*BackendSet]{
-		OutputState: i.ToBackendSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackendSetArrayInput is an input type that accepts BackendSetArray and BackendSetArrayOutput values.
 // You can construct a concrete instance of `BackendSetArrayInput` via:
 //
@@ -445,12 +438,6 @@ func (i BackendSetArray) ToBackendSetArrayOutput() BackendSetArrayOutput {
 
 func (i BackendSetArray) ToBackendSetArrayOutputWithContext(ctx context.Context) BackendSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetArrayOutput)
-}
-
-func (i BackendSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*BackendSet] {
-	return pulumix.Output[[]*BackendSet]{
-		OutputState: i.ToBackendSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackendSetMapInput is an input type that accepts BackendSetMap and BackendSetMapOutput values.
@@ -478,12 +465,6 @@ func (i BackendSetMap) ToBackendSetMapOutputWithContext(ctx context.Context) Bac
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetMapOutput)
 }
 
-func (i BackendSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackendSet] {
-	return pulumix.Output[map[string]*BackendSet]{
-		OutputState: i.ToBackendSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetOutput struct{ *pulumi.OutputState }
 
 func (BackendSetOutput) ElementType() reflect.Type {
@@ -496,12 +477,6 @@ func (o BackendSetOutput) ToBackendSetOutput() BackendSetOutput {
 
 func (o BackendSetOutput) ToBackendSetOutputWithContext(ctx context.Context) BackendSetOutput {
 	return o
-}
-
-func (o BackendSetOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSet] {
-	return pulumix.Output[*BackendSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetOutput) Backends() BackendSetBackendArrayOutput {
@@ -528,10 +503,10 @@ func (o BackendSetOutput) HealthChecker() BackendSetHealthCheckerOutput {
 // **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
 //
 // **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-func (o BackendSetOutput) LbCookieSessionPersistenceConfiguration() BackendSetLbCookieSessionPersistenceConfigurationOutput {
-	return o.ApplyT(func(v *BackendSet) BackendSetLbCookieSessionPersistenceConfigurationOutput {
+func (o BackendSetOutput) LbCookieSessionPersistenceConfiguration() BackendSetLbCookieSessionPersistenceConfigurationPtrOutput {
+	return o.ApplyT(func(v *BackendSet) BackendSetLbCookieSessionPersistenceConfigurationPtrOutput {
 		return v.LbCookieSessionPersistenceConfiguration
-	}).(BackendSetLbCookieSessionPersistenceConfigurationOutput)
+	}).(BackendSetLbCookieSessionPersistenceConfigurationPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
@@ -566,10 +541,10 @@ func (o BackendSetOutput) Policy() pulumi.StringOutput {
 // **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
 //
 // **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-func (o BackendSetOutput) SessionPersistenceConfiguration() BackendSetSessionPersistenceConfigurationOutput {
-	return o.ApplyT(func(v *BackendSet) BackendSetSessionPersistenceConfigurationOutput {
+func (o BackendSetOutput) SessionPersistenceConfiguration() BackendSetSessionPersistenceConfigurationPtrOutput {
+	return o.ApplyT(func(v *BackendSet) BackendSetSessionPersistenceConfigurationPtrOutput {
 		return v.SessionPersistenceConfiguration
-	}).(BackendSetSessionPersistenceConfigurationOutput)
+	}).(BackendSetSessionPersistenceConfigurationPtrOutput)
 }
 
 // (Updatable) The load balancer's SSL handling configuration details.
@@ -579,8 +554,8 @@ func (o BackendSetOutput) SslConfiguration() BackendSetSslConfigurationPtrOutput
 	return o.ApplyT(func(v *BackendSet) BackendSetSslConfigurationPtrOutput { return v.SslConfiguration }).(BackendSetSslConfigurationPtrOutput)
 }
 
-func (o BackendSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackendSet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BackendSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackendSet) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type BackendSetArrayOutput struct{ *pulumi.OutputState }
@@ -595,12 +570,6 @@ func (o BackendSetArrayOutput) ToBackendSetArrayOutput() BackendSetArrayOutput {
 
 func (o BackendSetArrayOutput) ToBackendSetArrayOutputWithContext(ctx context.Context) BackendSetArrayOutput {
 	return o
-}
-
-func (o BackendSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BackendSet] {
-	return pulumix.Output[[]*BackendSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetArrayOutput) Index(i pulumi.IntInput) BackendSetOutput {
@@ -621,12 +590,6 @@ func (o BackendSetMapOutput) ToBackendSetMapOutput() BackendSetMapOutput {
 
 func (o BackendSetMapOutput) ToBackendSetMapOutputWithContext(ctx context.Context) BackendSetMapOutput {
 	return o
-}
-
-func (o BackendSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackendSet] {
-	return pulumix.Output[map[string]*BackendSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetMapOutput) MapIndex(k pulumi.StringInput) BackendSetOutput {

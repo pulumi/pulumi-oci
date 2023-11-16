@@ -95,54 +95,42 @@ class GetDomainResult:
 
     @property
     @pulumi.getter(name="adminEmail")
-    def admin_email(self) -> str:
+    def admin_email(self) -> Optional[str]:
         return pulumi.get(self, "admin_email")
 
     @property
     @pulumi.getter(name="adminFirstName")
-    def admin_first_name(self) -> str:
+    def admin_first_name(self) -> Optional[str]:
         return pulumi.get(self, "admin_first_name")
 
     @property
     @pulumi.getter(name="adminLastName")
-    def admin_last_name(self) -> str:
+    def admin_last_name(self) -> Optional[str]:
         return pulumi.get(self, "admin_last_name")
 
     @property
     @pulumi.getter(name="adminUserName")
-    def admin_user_name(self) -> str:
+    def admin_user_name(self) -> Optional[str]:
         return pulumi.get(self, "admin_user_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the domain.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The domain descripition
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The mutable display name of the domain
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -152,108 +140,72 @@ class GetDomainResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeRegion")
-    def home_region(self) -> str:
-        """
-        The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-        """
+    def home_region(self) -> Optional[str]:
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter(name="homeRegionUrl")
-    def home_region_url(self) -> str:
-        """
-        Region specific domain URL.
-        """
+    def home_region_url(self) -> Optional[str]:
         return pulumi.get(self, "home_region_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the domain
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isHiddenOnLogin")
-    def is_hidden_on_login(self) -> bool:
-        """
-        Indicates whether domain is hidden on login screen or not.
-        """
+    def is_hidden_on_login(self) -> Optional[bool]:
         return pulumi.get(self, "is_hidden_on_login")
 
     @property
     @pulumi.getter(name="isNotificationBypassed")
-    def is_notification_bypassed(self) -> bool:
+    def is_notification_bypassed(self) -> Optional[bool]:
         return pulumi.get(self, "is_notification_bypassed")
 
     @property
     @pulumi.getter(name="isPrimaryEmailRequired")
-    def is_primary_email_required(self) -> bool:
+    def is_primary_email_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_primary_email_required")
 
     @property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> str:
-        """
-        The License type of Domain
-        """
+    def license_type(self) -> Optional[str]:
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Any additional details about the current state of the Domain.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="replicaRegions")
-    def replica_regions(self) -> Sequence['outputs.GetDomainReplicaRegionResult']:
-        """
-        The regions domain is replication to.
-        """
+    def replica_regions(self) -> Optional[Sequence['outputs.GetDomainReplicaRegionResult']]:
         return pulumi.get(self, "replica_regions")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the domain.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        Region agnostic domain URL.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
@@ -291,24 +243,7 @@ class AwaitableGetDomainResult(GetDomainResult):
 def get_domain(domain_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainResult:
     """
-    This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Identity service.
-
-    Get the specified domain's information.
-
-    - If the domain doesn't exists, returns 404 NOT FOUND.
-    - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_domain = oci.Identity.get_domain(domain_id=oci_identity_domain["test_domain"]["id"])
-    ```
-
-
-    :param str domain_id: The OCID of the domain
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['domainId'] = domain_id
@@ -345,23 +280,6 @@ def get_domain(domain_id: Optional[str] = None,
 def get_domain_output(domain_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainResult]:
     """
-    This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Identity service.
-
-    Get the specified domain's information.
-
-    - If the domain doesn't exists, returns 404 NOT FOUND.
-    - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_domain = oci.Identity.get_domain(domain_id=oci_identity_domain["test_domain"]["id"])
-    ```
-
-
-    :param str domain_id: The OCID of the domain
+    Use this data source to access information about an existing resource.
     """
     ...

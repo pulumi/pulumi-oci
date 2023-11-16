@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The name of the host machine.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The name of the database instance.
         /// </summary>
-        public readonly string InstanceName;
+        public readonly string? InstanceName;
         /// <summary>
         /// The instance number of the database instance.
         /// </summary>
-        public readonly int InstanceNumber;
+        public readonly int? InstanceNumber;
 
         [OutputConstructor]
         private GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult(
-            string hostName,
+            string? hostName,
 
-            string instanceName,
+            string? instanceName,
 
-            int instanceNumber)
+            int? instanceNumber)
         {
             HostName = hostName;
             InstanceName = instanceName;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure API Gateway service.
@@ -60,33 +59,33 @@ type LookupCertificateArgs struct {
 // A collection of values returned by getCertificate.
 type LookupCertificateResult struct {
 	// The data of the leaf certificate in pem format.
-	Certificate   string `pulumi:"certificate"`
-	CertificateId string `pulumi:"certificateId"`
+	Certificate   *string `pulumi:"certificate"`
+	CertificateId string  `pulumi:"certificateId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The intermediate certificate data associated with the certificate in pem format.
-	IntermediateCertificates string `pulumi:"intermediateCertificates"`
+	IntermediateCertificates *string `pulumi:"intermediateCertificates"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	PrivateKey       string `pulumi:"privateKey"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	PrivateKey       *string `pulumi:"privateKey"`
 	// The current state of the certificate.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
 	SubjectNames []string `pulumi:"subjectNames"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
-	TimeNotValidAfter string `pulumi:"timeNotValidAfter"`
+	TimeNotValidAfter *string `pulumi:"timeNotValidAfter"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupCertificateOutput(ctx *pulumi.Context, args LookupCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupCertificateResultOutput {
@@ -127,15 +126,9 @@ func (o LookupCertificateResultOutput) ToLookupCertificateResultOutputWithContex
 	return o
 }
 
-func (o LookupCertificateResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCertificateResult] {
-	return pulumix.Output[LookupCertificateResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data of the leaf certificate in pem format.
-func (o LookupCertificateResultOutput) Certificate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.Certificate }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.Certificate }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
@@ -143,8 +136,8 @@ func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -153,8 +146,8 @@ func (o LookupCertificateResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o LookupCertificateResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -163,27 +156,27 @@ func (o LookupCertificateResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o LookupCertificateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The intermediate certificate data associated with the certificate in pem format.
-func (o LookupCertificateResultOutput) IntermediateCertificates() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.IntermediateCertificates }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) IntermediateCertificates() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.IntermediateCertificates }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o LookupCertificateResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupCertificateResultOutput) PrivateKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.PrivateKey }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.PrivateKey }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the certificate.
-func (o LookupCertificateResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The entity to be secured by the certificate and additional host names.
@@ -192,18 +185,18 @@ func (o LookupCertificateResultOutput) SubjectNames() pulumi.StringArrayOutput {
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o LookupCertificateResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will expire.
-func (o LookupCertificateResultOutput) TimeNotValidAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeNotValidAfter }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeNotValidAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeNotValidAfter }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o LookupCertificateResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

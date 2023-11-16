@@ -140,297 +140,192 @@ class GetMysqlDbSystemResult:
 
     @property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> str:
+    def admin_password(self) -> Optional[str]:
         return pulumi.get(self, "admin_password")
 
     @property
     @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> str:
+    def admin_username(self) -> Optional[str]:
         return pulumi.get(self, "admin_username")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain in which the DB System is placed.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupPolicies")
-    def backup_policies(self) -> Sequence['outputs.GetMysqlDbSystemBackupPolicyResult']:
-        """
-        The Backup policy for the DB System.
-        """
+    def backup_policies(self) -> Optional[Sequence['outputs.GetMysqlDbSystemBackupPolicyResult']]:
         return pulumi.get(self, "backup_policies")
 
     @property
     @pulumi.getter
-    def channels(self) -> Sequence['outputs.GetMysqlDbSystemChannelResult']:
-        """
-        A list with a summary of all the Channels attached to the DB System.
-        """
+    def channels(self) -> Optional[Sequence['outputs.GetMysqlDbSystemChannelResult']]:
         return pulumi.get(self, "channels")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the DB System belongs in.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationId")
-    def configuration_id(self) -> str:
-        """
-        The OCID of the Configuration to be used for Instances in this DB System.
-        """
+    def configuration_id(self) -> Optional[str]:
         return pulumi.get(self, "configuration_id")
 
     @property
     @pulumi.getter(name="crashRecovery")
-    def crash_recovery(self) -> str:
-        """
-        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        """
+    def crash_recovery(self) -> Optional[str]:
         return pulumi.get(self, "crash_recovery")
 
     @property
     @pulumi.getter(name="currentPlacements")
-    def current_placements(self) -> Sequence['outputs.GetMysqlDbSystemCurrentPlacementResult']:
-        """
-        The availability domain and fault domain a DB System is placed in.
-        """
+    def current_placements(self) -> Optional[Sequence['outputs.GetMysqlDbSystemCurrentPlacementResult']]:
         return pulumi.get(self, "current_placements")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> int:
-        """
-        Initial size of the data volume in GiBs that will be created and attached.
-        """
+    def data_storage_size_in_gb(self) -> Optional[int]:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="databaseManagement")
-    def database_management(self) -> str:
-        """
-        Whether to enable monitoring via the Database Management service.
-        """
+    def database_management(self) -> Optional[str]:
         return pulumi.get(self, "database_management")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
-        """
-        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deletionPolicies")
-    def deletion_policies(self) -> Sequence['outputs.GetMysqlDbSystemDeletionPolicyResult']:
-        """
-        The Deletion policy for the DB System.
-        """
+    def deletion_policies(self) -> Optional[Sequence['outputs.GetMysqlDbSystemDeletionPolicyResult']]:
         return pulumi.get(self, "deletion_policies")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        User-provided data about the DB System.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the DB System. It does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoints(self) -> Sequence['outputs.GetMysqlDbSystemEndpointResult']:
-        """
-        The network endpoints available for this DB System.
-        """
+    def endpoints(self) -> Optional[Sequence['outputs.GetMysqlDbSystemEndpointResult']]:
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="heatWaveClusters")
-    def heat_wave_clusters(self) -> Sequence['outputs.GetMysqlDbSystemHeatWaveClusterResult']:
-        """
-        A summary of a HeatWave cluster.
-        """
+    def heat_wave_clusters(self) -> Optional[Sequence['outputs.GetMysqlDbSystemHeatWaveClusterResult']]:
         return pulumi.get(self, "heat_wave_clusters")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> str:
-        """
-        The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-        """
+    def hostname_label(self) -> Optional[str]:
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the DB System.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> str:
-        """
-        The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        """
+    def ip_address(self) -> Optional[str]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="isHeatWaveClusterAttached")
-    def is_heat_wave_cluster_attached(self) -> bool:
-        """
-        If the DB System has a HeatWave Cluster attached.
-        """
+    def is_heat_wave_cluster_attached(self) -> Optional[bool]:
         return pulumi.get(self, "is_heat_wave_cluster_attached")
 
     @property
     @pulumi.getter(name="isHighlyAvailable")
-    def is_highly_available(self) -> bool:
-        """
-        Specifies if the DB System is highly available.
-        """
+    def is_highly_available(self) -> Optional[bool]:
         return pulumi.get(self, "is_highly_available")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycleState.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def maintenances(self) -> Sequence['outputs.GetMysqlDbSystemMaintenanceResult']:
-        """
-        The Maintenance Policy for the DB System or Read Replica that this model is included in.
-        """
+    def maintenances(self) -> Optional[Sequence['outputs.GetMysqlDbSystemMaintenanceResult']]:
         return pulumi.get(self, "maintenances")
 
     @property
     @pulumi.getter(name="mysqlVersion")
-    def mysql_version(self) -> str:
-        """
-        Name of the MySQL Version in use for the DB System.
-        """
+    def mysql_version(self) -> Optional[str]:
         return pulumi.get(self, "mysql_version")
 
     @property
     @pulumi.getter(name="pointInTimeRecoveryDetails")
-    def point_in_time_recovery_details(self) -> Sequence['outputs.GetMysqlDbSystemPointInTimeRecoveryDetailResult']:
-        """
-        Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
-        """
+    def point_in_time_recovery_details(self) -> Optional[Sequence['outputs.GetMysqlDbSystemPointInTimeRecoveryDetailResult']]:
         return pulumi.get(self, "point_in_time_recovery_details")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port for primary endpoint of the DB System to listen on.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="portX")
-    def port_x(self) -> int:
-        """
-        The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        """
+    def port_x(self) -> Optional[int]:
         return pulumi.get(self, "port_x")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="shutdownType")
-    def shutdown_type(self) -> str:
+    def shutdown_type(self) -> Optional[str]:
         return pulumi.get(self, "shutdown_type")
 
     @property
     @pulumi.getter
-    def sources(self) -> Sequence['outputs.GetMysqlDbSystemSourceResult']:
-        """
-        Parameters detailing how to provision the initial data of the DB System.
-        """
+    def sources(self) -> Optional[Sequence['outputs.GetMysqlDbSystemSourceResult']]:
         return pulumi.get(self, "sources")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the DB System.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the subnet the DB System is associated with.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the DB System was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the DB System was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -483,21 +378,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
 def get_mysql_db_system(db_system_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlDbSystemResult:
     """
-    This data source provides details about a specific Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get information about the specified DB System.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -549,20 +430,6 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
 def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlDbSystemResult]:
     """
-    This data source provides details about a specific Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get information about the specified DB System.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

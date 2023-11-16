@@ -68,42 +68,27 @@ class GetFusionEnvironmentFamilyResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the environment family is located.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="familyMaintenancePolicies")
-    def family_maintenance_policies(self) -> Sequence['outputs.GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult']:
-        """
-        The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        """
+    def family_maintenance_policies(self) -> Optional[Sequence['outputs.GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult']]:
         return pulumi.get(self, "family_maintenance_policies")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -113,63 +98,42 @@ class GetFusionEnvironmentFamilyResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier (OCID) of the environment family. Can't be changed after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isSubscriptionUpdateNeeded")
-    def is_subscription_update_needed(self) -> bool:
-        """
-        When set to True, a subscription update is required for the environment family.
-        """
+    def is_subscription_update_needed(self) -> Optional[bool]:
         return pulumi.get(self, "is_subscription_update_needed")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the FusionEnvironmentFamily.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subscriptionIds")
-    def subscription_ids(self) -> Sequence[str]:
-        """
-        The list of the IDs of the applications subscriptions that are associated with the environment family.
-        """
+    def subscription_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "subscription_ids")
 
     @property
     @pulumi.getter(name="systemName")
-    def system_name(self) -> str:
-        """
-        Environment Specific Guid/ System Name
-        """
+    def system_name(self) -> Optional[str]:
         return pulumi.get(self, "system_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -198,21 +162,7 @@ class AwaitableGetFusionEnvironmentFamilyResult(GetFusionEnvironmentFamilyResult
 def get_fusion_environment_family(fusion_environment_family_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentFamilyResult:
     """
-    This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Retrieves a fusion environment family identified by its OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
-    ```
-
-
-    :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentFamilyId'] = fusion_environment_family_id
@@ -240,20 +190,6 @@ def get_fusion_environment_family(fusion_environment_family_id: Optional[str] = 
 def get_fusion_environment_family_output(fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentFamilyResult]:
     """
-    This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Retrieves a fusion environment family identified by its OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
-    ```
-
-
-    :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
+    Use this data source to access information about an existing resource.
     """
     ...

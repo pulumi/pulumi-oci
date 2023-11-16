@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.
@@ -60,42 +59,42 @@ type LookupConnectionArgs struct {
 // A collection of values returned by getConnection.
 type LookupConnectionResult struct {
 	// The OCID of personal access token saved in secret store.
-	AccessToken string `pulumi:"accessToken"`
+	AccessToken *string `pulumi:"accessToken"`
 	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
-	AppPassword string `pulumi:"appPassword"`
+	AppPassword *string `pulumi:"appPassword"`
 	// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
-	BaseUrl string `pulumi:"baseUrl"`
+	BaseUrl *string `pulumi:"baseUrl"`
 	// The OCID of the compartment containing the connection.
-	CompartmentId string `pulumi:"compartmentId"`
-	ConnectionId  string `pulumi:"connectionId"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	ConnectionId  string  `pulumi:"connectionId"`
 	// The type of connection.
-	ConnectionType string `pulumi:"connectionType"`
+	ConnectionType *string `pulumi:"connectionType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Optional description about the connection.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The result of validating the credentials of a connection.
 	LastConnectionValidationResults []GetConnectionLastConnectionValidationResult `pulumi:"lastConnectionValidationResults"`
 	// The OCID of the DevOps project.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The current state of the connection.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// TLS configuration used by build service to verify TLS connection.
 	TlsVerifyConfigs []GetConnectionTlsVerifyConfig `pulumi:"tlsVerifyConfigs"`
 	// Public Bitbucket Cloud Username in plain text
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 func LookupConnectionOutput(ctx *pulumi.Context, args LookupConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupConnectionResultOutput {
@@ -136,30 +135,24 @@ func (o LookupConnectionResultOutput) ToLookupConnectionResultOutputWithContext(
 	return o
 }
 
-func (o LookupConnectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConnectionResult] {
-	return pulumix.Output[LookupConnectionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of personal access token saved in secret store.
-func (o LookupConnectionResultOutput) AccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccessToken }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
 }
 
 // OCID of personal Bitbucket Cloud AppPassword saved in secret store
-func (o LookupConnectionResultOutput) AppPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.AppPassword }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) AppPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.AppPassword }).(pulumi.StringPtrOutput)
 }
 
 // The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
-func (o LookupConnectionResultOutput) BaseUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.BaseUrl }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) BaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.BaseUrl }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment containing the connection.
-func (o LookupConnectionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupConnectionResultOutput) ConnectionId() pulumi.StringOutput {
@@ -167,8 +160,8 @@ func (o LookupConnectionResultOutput) ConnectionId() pulumi.StringOutput {
 }
 
 // The type of connection.
-func (o LookupConnectionResultOutput) ConnectionType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionType }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) ConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.ConnectionType }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -177,13 +170,13 @@ func (o LookupConnectionResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Optional description about the connection.
-func (o LookupConnectionResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-func (o LookupConnectionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -192,8 +185,8 @@ func (o LookupConnectionResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupConnectionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The result of validating the credentials of a connection.
@@ -204,13 +197,13 @@ func (o LookupConnectionResultOutput) LastConnectionValidationResults() GetConne
 }
 
 // The OCID of the DevOps project.
-func (o LookupConnectionResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the connection.
-func (o LookupConnectionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -219,13 +212,13 @@ func (o LookupConnectionResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // TLS configuration used by build service to verify TLS connection.
@@ -234,8 +227,8 @@ func (o LookupConnectionResultOutput) TlsVerifyConfigs() GetConnectionTlsVerifyC
 }
 
 // Public Bitbucket Cloud Username in plain text
-func (o LookupConnectionResultOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.Username }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -132,7 +132,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetFleetDiagnosesResult(
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Jms
 
             string fleetId,
 
-            string id)
+            string? id)
         {
             Filters = filters;
             FleetDiagnosisCollections = fleetDiagnosisCollections;

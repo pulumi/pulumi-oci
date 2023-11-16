@@ -8,6 +8,8 @@ import com.pulumi.oci.DataFlow.outputs.GetRunStatementOutputData;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRunStatementOutput {
@@ -15,27 +17,27 @@ public final class GetRunStatementOutput {
      * @return An object representing execution output of a statement.
      * 
      */
-    private List<GetRunStatementOutputData> datas;
+    private @Nullable List<GetRunStatementOutputData> datas;
     /**
      * @return The name of the error in the statement output.
      * 
      */
-    private String errorName;
+    private @Nullable String errorName;
     /**
      * @return The value of the error in the statement output.
      * 
      */
-    private String errorValue;
+    private @Nullable String errorValue;
     /**
      * @return Status of the statement output.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The traceback of the statement output.
      * 
      */
-    private List<String> tracebacks;
+    private @Nullable List<String> tracebacks;
 
     private GetRunStatementOutput() {}
     /**
@@ -43,35 +45,35 @@ public final class GetRunStatementOutput {
      * 
      */
     public List<GetRunStatementOutputData> datas() {
-        return this.datas;
+        return this.datas == null ? List.of() : this.datas;
     }
     /**
      * @return The name of the error in the statement output.
      * 
      */
-    public String errorName() {
-        return this.errorName;
+    public Optional<String> errorName() {
+        return Optional.ofNullable(this.errorName);
     }
     /**
      * @return The value of the error in the statement output.
      * 
      */
-    public String errorValue() {
-        return this.errorValue;
+    public Optional<String> errorValue() {
+        return Optional.ofNullable(this.errorValue);
     }
     /**
      * @return Status of the statement output.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The traceback of the statement output.
      * 
      */
     public List<String> tracebacks() {
-        return this.tracebacks;
+        return this.tracebacks == null ? List.of() : this.tracebacks;
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetRunStatementOutput {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRunStatementOutputData> datas;
-        private String errorName;
-        private String errorValue;
-        private String status;
-        private List<String> tracebacks;
+        private @Nullable List<GetRunStatementOutputData> datas;
+        private @Nullable String errorName;
+        private @Nullable String errorValue;
+        private @Nullable String status;
+        private @Nullable List<String> tracebacks;
         public Builder() {}
         public Builder(GetRunStatementOutput defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetRunStatementOutput {
         }
 
         @CustomType.Setter
-        public Builder datas(List<GetRunStatementOutputData> datas) {
-            this.datas = Objects.requireNonNull(datas);
+        public Builder datas(@Nullable List<GetRunStatementOutputData> datas) {
+            this.datas = datas;
             return this;
         }
         public Builder datas(GetRunStatementOutputData... datas) {
             return datas(List.of(datas));
         }
         @CustomType.Setter
-        public Builder errorName(String errorName) {
-            this.errorName = Objects.requireNonNull(errorName);
+        public Builder errorName(@Nullable String errorName) {
+            this.errorName = errorName;
             return this;
         }
         @CustomType.Setter
-        public Builder errorValue(String errorValue) {
-            this.errorValue = Objects.requireNonNull(errorValue);
+        public Builder errorValue(@Nullable String errorValue) {
+            this.errorValue = errorValue;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder tracebacks(List<String> tracebacks) {
-            this.tracebacks = Objects.requireNonNull(tracebacks);
+        public Builder tracebacks(@Nullable List<String> tracebacks) {
+            this.tracebacks = tracebacks;
             return this;
         }
         public Builder tracebacks(String... tracebacks) {

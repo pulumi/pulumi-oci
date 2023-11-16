@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -60,101 +59,101 @@ type LookupCloudVmClusterArgs struct {
 // A collection of values returned by getCloudVmCluster.
 type LookupCloudVmClusterResult struct {
 	// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-	BackupSubnetId string `pulumi:"backupSubnetId"`
+	BackupSubnetId *string `pulumi:"backupSubnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
-	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
-	CloudVmClusterId             string `pulumi:"cloudVmClusterId"`
+	CloudExadataInfrastructureId *string `pulumi:"cloudExadataInfrastructureId"`
+	CloudVmClusterId             string  `pulumi:"cloudVmClusterId"`
 	// The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-	ClusterName string `pulumi:"clusterName"`
+	ClusterName *string `pulumi:"clusterName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the cloud VM cluster.
-	CpuCoreCount int  `pulumi:"cpuCoreCount"`
-	CreateAsync  bool `pulumi:"createAsync"`
+	CpuCoreCount *int  `pulumi:"cpuCoreCount"`
+	CreateAsync  *bool `pulumi:"createAsync"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []GetCloudVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-	DataStoragePercentage int `pulumi:"dataStoragePercentage"`
+	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// The data disk group size to be allocated in TBs.
-	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage to be allocated in GBs.
-	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The list of DB servers.
 	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-	DiskRedundancy string `pulumi:"diskRedundancy"`
+	DiskRedundancy *string `pulumi:"diskRedundancy"`
 	// The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The domain name for the cloud VM cluster.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
-	GiVersion string `pulumi:"giVersion"`
+	GiVersion *string `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []GetCloudVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
 	// If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
-	IsSparseDiskgroupEnabled bool `pulumi:"isSparseDiskgroupEnabled"`
+	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
-	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
+	LastUpdateHistoryEntryId *string `pulumi:"lastUpdateHistoryEntryId"`
 	// The Oracle license model that applies to the cloud VM cluster. The default is LICENSE_INCLUDED.
-	LicenseModel string `pulumi:"licenseModel"`
+	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the cloud VM cluster.
-	ListenerPort string `pulumi:"listenerPort"`
+	ListenerPort *string `pulumi:"listenerPort"`
 	// The memory to be allocated in GBs.
-	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The number of nodes in the cloud VM cluster.
-	NodeCount int `pulumi:"nodeCount"`
+	NodeCount *int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount     float64 `pulumi:"ocpuCount"`
-	PrivateZoneId string  `pulumi:"privateZoneId"`
+	OcpuCount     *float64 `pulumi:"ocpuCount"`
+	PrivateZoneId *string  `pulumi:"privateZoneId"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-	ScanDnsName string `pulumi:"scanDnsName"`
+	ScanDnsName *string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-	ScanDnsRecordId string `pulumi:"scanDnsRecordId"`
+	ScanDnsRecordId *string `pulumi:"scanDnsRecordId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 	ScanIpIds []string `pulumi:"scanIpIds"`
 	// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 	// The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+	ScanListenerPortTcpSsl *int `pulumi:"scanListenerPortTcpSsl"`
 	// The model name of the Exadata hardware running the cloud VM cluster.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the cloud VM cluster.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The storage allocation for the disk group, in gigabytes (GB).
-	StorageSizeInGbs int `pulumi:"storageSizeInGbs"`
+	StorageSizeInGbs *int `pulumi:"storageSizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Operating system version of the image.
-	SystemVersion string `pulumi:"systemVersion"`
+	SystemVersion *string `pulumi:"systemVersion"`
 	// The date and time that the cloud VM cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
 	// The OCID of the zone the cloud VM cluster is associated with.
-	ZoneId string `pulumi:"zoneId"`
+	ZoneId *string `pulumi:"zoneId"`
 }
 
 func LookupCloudVmClusterOutput(ctx *pulumi.Context, args LookupCloudVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupCloudVmClusterResultOutput {
@@ -195,15 +194,9 @@ func (o LookupCloudVmClusterResultOutput) ToLookupCloudVmClusterResultOutputWith
 	return o
 }
 
-func (o LookupCloudVmClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudVmClusterResult] {
-	return pulumix.Output[LookupCloudVmClusterResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain that the cloud Exadata infrastructure resource is located in.
-func (o LookupCloudVmClusterResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -212,13 +205,13 @@ func (o LookupCloudVmClusterResultOutput) BackupNetworkNsgIds() pulumi.StringArr
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) BackupSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.BackupSubnetId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) BackupSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.BackupSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
-func (o LookupCloudVmClusterResultOutput) CloudExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.CloudExadataInfrastructureId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) CloudExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.CloudExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupCloudVmClusterResultOutput) CloudVmClusterId() pulumi.StringOutput {
@@ -226,22 +219,22 @@ func (o LookupCloudVmClusterResultOutput) CloudVmClusterId() pulumi.StringOutput
 }
 
 // The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-func (o LookupCloudVmClusterResultOutput) ClusterName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ClusterName }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) ClusterName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.ClusterName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupCloudVmClusterResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPU cores enabled on the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
-func (o LookupCloudVmClusterResultOutput) CreateAsync() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) bool { return v.CreateAsync }).(pulumi.BoolOutput)
+func (o LookupCloudVmClusterResultOutput) CreateAsync() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *bool { return v.CreateAsync }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -252,18 +245,18 @@ func (o LookupCloudVmClusterResultOutput) DataCollectionOptions() GetCloudVmClus
 }
 
 // The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-func (o LookupCloudVmClusterResultOutput) DataStoragePercentage() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.DataStoragePercentage }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) DataStoragePercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.DataStoragePercentage }).(pulumi.IntPtrOutput)
 }
 
 // The data disk group size to be allocated in TBs.
-func (o LookupCloudVmClusterResultOutput) DataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o LookupCloudVmClusterResultOutput) DataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The local node storage to be allocated in GBs.
-func (o LookupCloudVmClusterResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The list of DB servers.
@@ -277,18 +270,18 @@ func (o LookupCloudVmClusterResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-func (o LookupCloudVmClusterResultOutput) DiskRedundancy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.DiskRedundancy }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) DiskRedundancy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.DiskRedundancy }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-func (o LookupCloudVmClusterResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain name for the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Domain }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -297,18 +290,18 @@ func (o LookupCloudVmClusterResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A valid Oracle Grid Infrastructure (GI) software version.
-func (o LookupCloudVmClusterResultOutput) GiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.GiVersion }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) GiVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.GiVersion }).(pulumi.StringPtrOutput)
 }
 
 // The hostname for the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Hostname }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IORM settings of the Exadata DB system.
@@ -317,43 +310,43 @@ func (o LookupCloudVmClusterResultOutput) IormConfigCaches() GetCloudVmClusterIo
 }
 
 // If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) bool { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+func (o LookupCloudVmClusterResultOutput) IsLocalBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *bool { return v.IsLocalBackupEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
-func (o LookupCloudVmClusterResultOutput) IsSparseDiskgroupEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) bool { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolOutput)
+func (o LookupCloudVmClusterResultOutput) IsSparseDiskgroupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *bool { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
-func (o LookupCloudVmClusterResultOutput) LastUpdateHistoryEntryId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.LastUpdateHistoryEntryId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) LastUpdateHistoryEntryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.LastUpdateHistoryEntryId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle license model that applies to the cloud VM cluster. The default is LICENSE_INCLUDED.
-func (o LookupCloudVmClusterResultOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.LicenseModel }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupCloudVmClusterResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The port number configured for the listener on the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) ListenerPort() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ListenerPort }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) ListenerPort() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.ListenerPort }).(pulumi.StringPtrOutput)
 }
 
 // The memory to be allocated in GBs.
-func (o LookupCloudVmClusterResultOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The number of nodes in the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) NodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.NodeCount }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -363,22 +356,22 @@ func (o LookupCloudVmClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-func (o LookupCloudVmClusterResultOutput) OcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+func (o LookupCloudVmClusterResultOutput) OcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *float64 { return v.OcpuCount }).(pulumi.Float64PtrOutput)
 }
 
-func (o LookupCloudVmClusterResultOutput) PrivateZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.PrivateZoneId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) PrivateZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.PrivateZoneId }).(pulumi.StringPtrOutput)
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) ScanDnsName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ScanDnsName }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) ScanDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.ScanDnsName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) ScanDnsRecordId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ScanDnsRecordId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) ScanDnsRecordId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.ScanDnsRecordId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -387,18 +380,18 @@ func (o LookupCloudVmClusterResultOutput) ScanIpIds() pulumi.StringArrayOutput {
 }
 
 // The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-func (o LookupCloudVmClusterResultOutput) ScanListenerPortTcp() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) ScanListenerPortTcp() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.ScanListenerPortTcp }).(pulumi.IntPtrOutput)
 }
 
 // The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-func (o LookupCloudVmClusterResultOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) ScanListenerPortTcpSsl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.ScanListenerPortTcpSsl }).(pulumi.IntPtrOutput)
 }
 
 // The model name of the Exadata hardware running the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
@@ -407,33 +400,33 @@ func (o LookupCloudVmClusterResultOutput) SshPublicKeys() pulumi.StringArrayOutp
 }
 
 // The current state of the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The storage allocation for the disk group, in gigabytes (GB).
-func (o LookupCloudVmClusterResultOutput) StorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.StorageSizeInGbs }).(pulumi.IntOutput)
+func (o LookupCloudVmClusterResultOutput) StorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *int { return v.StorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-func (o LookupCloudVmClusterResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Operating system version of the image.
-func (o LookupCloudVmClusterResultOutput) SystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.SystemVersion }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) SystemVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.SystemVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the cloud VM cluster was created.
-func (o LookupCloudVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-func (o LookupCloudVmClusterResultOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -442,8 +435,8 @@ func (o LookupCloudVmClusterResultOutput) VipIds() pulumi.StringArrayOutput {
 }
 
 // The OCID of the zone the cloud VM cluster is associated with.
-func (o LookupCloudVmClusterResultOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ZoneId }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterResultOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -28,20 +28,6 @@ class OutboundConnectorArgs:
                  password_secret_version: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a OutboundConnector resource.
-        :param pulumi.Input[str] availability_domain: The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] bind_distinguished_name: The LDAP Distinguished Name of the bind account.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-        :param pulumi.Input[str] connector_type: The account type of this outbound connector.
-        :param pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "bind_distinguished_name", bind_distinguished_name)
@@ -62,9 +48,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -74,9 +57,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="bindDistinguishedName")
     def bind_distinguished_name(self) -> pulumi.Input[str]:
-        """
-        The LDAP Distinguished Name of the bind account.
-        """
         return pulumi.get(self, "bind_distinguished_name")
 
     @bind_distinguished_name.setter
@@ -86,9 +66,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -98,9 +75,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> pulumi.Input[str]:
-        """
-        The account type of this outbound connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -110,9 +84,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter
     def endpoints(self) -> pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]:
-        """
-        Array of server endpoints to use when connecting with the LDAP bind account.
-        """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
@@ -122,9 +93,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -134,9 +102,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -146,9 +111,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -158,9 +120,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -170,13 +129,6 @@ class OutboundConnectorArgs:
     @property
     @pulumi.getter(name="passwordSecretVersion")
     def password_secret_version(self) -> Optional[pulumi.Input[int]]:
-        """
-        Version of the password secret in the Vault to use.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "password_secret_version")
 
     @password_secret_version.setter
@@ -201,22 +153,6 @@ class _OutboundConnectorState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OutboundConnector resources.
-        :param pulumi.Input[str] availability_domain: The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] bind_distinguished_name: The LDAP Distinguished Name of the bind account.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-        :param pulumi.Input[str] connector_type: The account type of this outbound connector.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        :param pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of this outbound connector.
-        :param pulumi.Input[str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -246,9 +182,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -258,9 +191,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="bindDistinguishedName")
     def bind_distinguished_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The LDAP Distinguished Name of the bind account.
-        """
         return pulumi.get(self, "bind_distinguished_name")
 
     @bind_distinguished_name.setter
@@ -270,9 +200,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -282,9 +209,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The account type of this outbound connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -294,9 +218,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -306,9 +227,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -318,9 +236,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter
     def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]]:
-        """
-        Array of server endpoints to use when connecting with the LDAP bind account.
-        """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
@@ -330,9 +245,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -342,9 +254,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -354,13 +263,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="passwordSecretVersion")
     def password_secret_version(self) -> Optional[pulumi.Input[int]]:
-        """
-        Version of the password secret in the Vault to use.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "password_secret_version")
 
     @password_secret_version.setter
@@ -370,9 +272,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of this outbound connector.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -382,9 +281,6 @@ class _OutboundConnectorState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -409,79 +305,9 @@ class OutboundConnector(pulumi.CustomResource):
                  password_secret_version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new outbound connector in the specified compartment.
-        You can associate an outbound connector with a mount target only when
-        they exist in the same availability domain.
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        outbound connectors, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_outbound_connector = oci.file_storage.OutboundConnector("testOutboundConnector",
-            availability_domain=var["outbound_connector_availability_domain"],
-            bind_distinguished_name=var["outbound_connector_bind_distinguished_name"],
-            compartment_id=var["compartment_id"],
-            connector_type=var["outbound_connector_connector_type"],
-            endpoints=[oci.file_storage.OutboundConnectorEndpointArgs(
-                hostname=var["outbound_connector_endpoints_hostname"],
-                port=var["outbound_connector_endpoints_port"],
-            )],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["outbound_connector_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            password_secret_id=oci_vault_secret["test_secret"]["id"],
-            password_secret_version=var["outbound_connector_password_secret_version"])
-        ```
-
-        ## Import
-
-        OutboundConnectors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
-        ```
-
+        Create a OutboundConnector resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] bind_distinguished_name: The LDAP Distinguished Name of the bind account.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-        :param pulumi.Input[str] connector_type: The account type of this outbound connector.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OutboundConnectorEndpointArgs']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -490,63 +316,7 @@ class OutboundConnector(pulumi.CustomResource):
                  args: OutboundConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new outbound connector in the specified compartment.
-        You can associate an outbound connector with a mount target only when
-        they exist in the same availability domain.
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        outbound connectors, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_outbound_connector = oci.file_storage.OutboundConnector("testOutboundConnector",
-            availability_domain=var["outbound_connector_availability_domain"],
-            bind_distinguished_name=var["outbound_connector_bind_distinguished_name"],
-            compartment_id=var["compartment_id"],
-            connector_type=var["outbound_connector_connector_type"],
-            endpoints=[oci.file_storage.OutboundConnectorEndpointArgs(
-                hostname=var["outbound_connector_endpoints_hostname"],
-                port=var["outbound_connector_endpoints_port"],
-            )],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["outbound_connector_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            password_secret_id=oci_vault_secret["test_secret"]["id"],
-            password_secret_version=var["outbound_connector_password_secret_version"])
-        ```
-
-        ## Import
-
-        OutboundConnectors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
-        ```
-
+        Create a OutboundConnector resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OutboundConnectorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -632,22 +402,6 @@ class OutboundConnector(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] bind_distinguished_name: The LDAP Distinguished Name of the bind account.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-        :param pulumi.Input[str] connector_type: The account type of this outbound connector.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OutboundConnectorEndpointArgs']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of this outbound connector.
-        :param pulumi.Input[str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -670,100 +424,60 @@ class OutboundConnector(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="bindDistinguishedName")
     def bind_distinguished_name(self) -> pulumi.Output[str]:
-        """
-        The LDAP Distinguished Name of the bind account.
-        """
         return pulumi.get(self, "bind_distinguished_name")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> pulumi.Output[str]:
-        """
-        The account type of this outbound connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def endpoints(self) -> pulumi.Output[Sequence['outputs.OutboundConnectorEndpoint']]:
-        """
-        Array of server endpoints to use when connecting with the LDAP bind account.
-        """
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-        """
+    def password_secret_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter(name="passwordSecretVersion")
-    def password_secret_version(self) -> pulumi.Output[int]:
-        """
-        Version of the password secret in the Vault to use.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def password_secret_version(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "password_secret_version")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of this outbound connector.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

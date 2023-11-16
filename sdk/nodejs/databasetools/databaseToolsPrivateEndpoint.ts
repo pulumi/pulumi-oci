@@ -73,7 +73,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * A list of additional FQDNs that can be also be used for the private endpoint.
      */
-    public /*out*/ readonly additionalFqdns!: pulumi.Output<string[]>;
+    public /*out*/ readonly additionalFqdns!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
@@ -81,11 +81,11 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A description of the Database Tools private endpoint.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -93,7 +93,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * Then FQDN to use for the private endpoint.
      */
-    public /*out*/ readonly endpointFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly endpointFqdn!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      */
@@ -101,31 +101,31 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * The private IP address that represents the access point for the associated endpoint service.
      */
-    public readonly privateEndpointIp!: pulumi.Output<string>;
+    public readonly privateEndpointIp!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
      */
-    public /*out*/ readonly privateEndpointVnicId!: pulumi.Output<string>;
+    public /*out*/ readonly privateEndpointVnicId!: pulumi.Output<string | undefined>;
     /**
      * Reverse connection configuration details of the private endpoint.
      */
-    public /*out*/ readonly reverseConnectionConfigurations!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration[]>;
+    public /*out*/ readonly reverseConnectionConfigurations!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration[] | undefined>;
     /**
      * The current state of the Database Tools private endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
      *
@@ -137,19 +137,19 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
      */
-    public /*out*/ readonly vcnId!: pulumi.Output<string>;
+    public /*out*/ readonly vcnId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DatabaseToolsPrivateEndpoint resource with the given unique name, arguments, and options.

@@ -9,6 +9,7 @@ import com.pulumi.oci.OneSubsription.outputs.GetOrganizationSubscriptionsOrganiz
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetOrganizationSubscriptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of organization_subscriptions.
      * 
      */
-    private List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions;
+    private @Nullable List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions;
 
     private GetOrganizationSubscriptionsResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetOrganizationSubscriptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of organization_subscriptions.
      * 
      */
     public List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions() {
-        return this.organizationSubscriptions;
+        return this.organizationSubscriptions == null ? List.of() : this.organizationSubscriptions;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetOrganizationSubscriptionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetOrganizationSubscriptionsFilter> filters;
-        private String id;
-        private List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions;
+        private @Nullable String id;
+        private @Nullable List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions;
         public Builder() {}
         public Builder(GetOrganizationSubscriptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetOrganizationSubscriptionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder organizationSubscriptions(List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions) {
-            this.organizationSubscriptions = Objects.requireNonNull(organizationSubscriptions);
+        public Builder organizationSubscriptions(@Nullable List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions) {
+            this.organizationSubscriptions = organizationSubscriptions;
             return this;
         }
         public Builder organizationSubscriptions(GetOrganizationSubscriptionsOrganizationSubscription... organizationSubscriptions) {

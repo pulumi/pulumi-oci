@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
@@ -94,7 +93,7 @@ type GetConnectionsResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Possible lifecycle states for connection.
 	State *string `pulumi:"state"`
 	// The Kafka (e.g. Confluent) Schema Registry technology type.
@@ -154,12 +153,6 @@ func (o GetConnectionsResultOutput) ToGetConnectionsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsResult] {
-	return pulumix.Output[GetConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConnectionsResultOutput) AssignableDeploymentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConnectionsResult) *string { return v.AssignableDeploymentId }).(pulumi.StringPtrOutput)
 }
@@ -197,8 +190,8 @@ func (o GetConnectionsResultOutput) Filters() GetConnectionsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states for connection.

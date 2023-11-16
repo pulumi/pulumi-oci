@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollection
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSetting {
@@ -16,39 +18,39 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSetting {
      * @return ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
      */
-    private Integer acceptableLag;
+    private @Nullable Integer acceptableLag;
     /**
      * @return Parameters for Extract processes.
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts;
+    private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts;
     /**
      * @return Parameters for Replicat processes.
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats;
+    private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats;
 
     private GetMigrationsMigrationCollectionItemGoldenGateDetailSetting() {}
     /**
      * @return ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
      */
-    public Integer acceptableLag() {
-        return this.acceptableLag;
+    public Optional<Integer> acceptableLag() {
+        return Optional.ofNullable(this.acceptableLag);
     }
     /**
      * @return Parameters for Extract processes.
      * 
      */
     public List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts() {
-        return this.extracts;
+        return this.extracts == null ? List.of() : this.extracts;
     }
     /**
      * @return Parameters for Replicat processes.
      * 
      */
     public List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats() {
-        return this.replicats;
+        return this.replicats == null ? List.of() : this.replicats;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer acceptableLag;
-        private List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts;
-        private List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats;
+        private @Nullable Integer acceptableLag;
+        private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts;
+        private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateDetailSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSetting {
         }
 
         @CustomType.Setter
-        public Builder acceptableLag(Integer acceptableLag) {
-            this.acceptableLag = Objects.requireNonNull(acceptableLag);
+        public Builder acceptableLag(@Nullable Integer acceptableLag) {
+            this.acceptableLag = acceptableLag;
             return this;
         }
         @CustomType.Setter
-        public Builder extracts(List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts) {
-            this.extracts = Objects.requireNonNull(extracts);
+        public Builder extracts(@Nullable List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts) {
+            this.extracts = extracts;
             return this;
         }
         public Builder extracts(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract... extracts) {
             return extracts(List.of(extracts));
         }
         @CustomType.Setter
-        public Builder replicats(List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats) {
-            this.replicats = Objects.requireNonNull(replicats);
+        public Builder replicats(@Nullable List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats) {
+            this.replicats = replicats;
             return this;
         }
         public Builder replicats(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat... replicats) {

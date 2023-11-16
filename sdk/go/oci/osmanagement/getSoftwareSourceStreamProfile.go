@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
@@ -87,7 +86,7 @@ type GetSoftwareSourceStreamProfileResult struct {
 	CompartmentId *string                                `pulumi:"compartmentId"`
 	Filters       []GetSoftwareSourceStreamProfileFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the module that contains the stream profile
 	ModuleName *string `pulumi:"moduleName"`
 	// The list of module_stream_profiles.
@@ -146,12 +145,6 @@ func (o GetSoftwareSourceStreamProfileResultOutput) ToGetSoftwareSourceStreamPro
 	return o
 }
 
-func (o GetSoftwareSourceStreamProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileResult] {
-	return pulumix.Output[GetSoftwareSourceStreamProfileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceStreamProfileResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSoftwareSourceStreamProfileResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -161,8 +154,8 @@ func (o GetSoftwareSourceStreamProfileResultOutput) Filters() GetSoftwareSourceS
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceStreamProfileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceStreamProfileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceStreamProfileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the module that contains the stream profile

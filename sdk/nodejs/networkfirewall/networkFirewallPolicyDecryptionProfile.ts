@@ -69,39 +69,39 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
     /**
      * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
-    public readonly areCertificateExtensionsRestricted!: pulumi.Output<boolean>;
+    public readonly areCertificateExtensionsRestricted!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */
-    public readonly isAutoIncludeAltName!: pulumi.Output<boolean>;
+    public readonly isAutoIncludeAltName!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is expired.
      */
-    public readonly isExpiredCertificateBlocked!: pulumi.Output<boolean>;
+    public readonly isExpiredCertificateBlocked!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      */
-    public readonly isOutOfCapacityBlocked!: pulumi.Output<boolean>;
+    public readonly isOutOfCapacityBlocked!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      */
-    public readonly isRevocationStatusTimeoutBlocked!: pulumi.Output<boolean>;
+    public readonly isRevocationStatusTimeoutBlocked!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
      */
-    public readonly isUnknownRevocationStatusBlocked!: pulumi.Output<boolean>;
+    public readonly isUnknownRevocationStatusBlocked!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if SSL cipher suite is not supported.
      */
-    public readonly isUnsupportedCipherBlocked!: pulumi.Output<boolean>;
+    public readonly isUnsupportedCipherBlocked!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if SSL version is not supported.
      */
-    public readonly isUnsupportedVersionBlocked!: pulumi.Output<boolean>;
+    public readonly isUnsupportedVersionBlocked!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
      */
-    public readonly isUntrustedIssuerBlocked!: pulumi.Output<boolean>;
+    public readonly isUntrustedIssuerBlocked!: pulumi.Output<boolean | undefined>;
     /**
      * Name of the decryption profile.
      */
@@ -117,7 +117,7 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
     /**
      * OCID of the Network Firewall Policy this decryption profile belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
      */

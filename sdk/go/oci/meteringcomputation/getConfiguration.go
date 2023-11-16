@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -60,7 +59,7 @@ type GetConfigurationArgs struct {
 // A collection of values returned by getConfiguration.
 type GetConfigurationResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of available configurations.
 	Items    []GetConfigurationItem `pulumi:"items"`
 	TenantId string                 `pulumi:"tenantId"`
@@ -104,15 +103,9 @@ func (o GetConfigurationResultOutput) ToGetConfigurationResultOutputWithContext(
 	return o
 }
 
-func (o GetConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigurationResult] {
-	return pulumix.Output[GetConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of available configurations.

@@ -115,15 +115,15 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The objective of the IORM plan.
         /// </summary>
-        public readonly string PlanObjective;
+        public readonly string? PlanObjective;
         /// <summary>
         /// The status of the IORM plan.
         /// </summary>
-        public readonly string PlanStatus;
+        public readonly string? PlanStatus;
 
         [OutputConstructor]
         private GetExternalExadataStorageServerIormPlanResult(
@@ -131,11 +131,11 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string externalExadataStorageServerId,
 
-            string id,
+            string? id,
 
-            string planObjective,
+            string? planObjective,
 
-            string planStatus)
+            string? planStatus)
         {
             DbPlans = dbPlans;
             ExternalExadataStorageServerId = externalExadataStorageServerId;

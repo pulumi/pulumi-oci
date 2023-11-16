@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? PublisherId;
         /// <summary>
         /// The list of publishers.
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Marketplace
 
             ImmutableArray<Outputs.GetPublishersFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? publisherId,
 

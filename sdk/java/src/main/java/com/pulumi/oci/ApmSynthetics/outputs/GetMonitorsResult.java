@@ -26,14 +26,14 @@ public final class GetMonitorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isMaintenanceWindowActive;
     private @Nullable Boolean isMaintenanceWindowSet;
     /**
      * @return The list of monitor_collection.
      * 
      */
-    private List<GetMonitorsMonitorCollection> monitorCollections;
+    private @Nullable List<GetMonitorsMonitorCollection> monitorCollections;
     /**
      * @return Type of monitor.
      * 
@@ -69,8 +69,8 @@ public final class GetMonitorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isMaintenanceWindowActive() {
         return Optional.ofNullable(this.isMaintenanceWindowActive);
@@ -83,7 +83,7 @@ public final class GetMonitorsResult {
      * 
      */
     public List<GetMonitorsMonitorCollection> monitorCollections() {
-        return this.monitorCollections;
+        return this.monitorCollections == null ? List.of() : this.monitorCollections;
     }
     /**
      * @return Type of monitor.
@@ -122,10 +122,10 @@ public final class GetMonitorsResult {
         private String apmDomainId;
         private @Nullable String displayName;
         private @Nullable List<GetMonitorsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isMaintenanceWindowActive;
         private @Nullable Boolean isMaintenanceWindowSet;
-        private List<GetMonitorsMonitorCollection> monitorCollections;
+        private @Nullable List<GetMonitorsMonitorCollection> monitorCollections;
         private @Nullable String monitorType;
         private @Nullable String scriptId;
         private @Nullable String status;
@@ -165,8 +165,8 @@ public final class GetMonitorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -180,8 +180,8 @@ public final class GetMonitorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder monitorCollections(List<GetMonitorsMonitorCollection> monitorCollections) {
-            this.monitorCollections = Objects.requireNonNull(monitorCollections);
+        public Builder monitorCollections(@Nullable List<GetMonitorsMonitorCollection> monitorCollections) {
+            this.monitorCollections = monitorCollections;
             return this;
         }
         public Builder monitorCollections(GetMonitorsMonitorCollection... monitorCollections) {

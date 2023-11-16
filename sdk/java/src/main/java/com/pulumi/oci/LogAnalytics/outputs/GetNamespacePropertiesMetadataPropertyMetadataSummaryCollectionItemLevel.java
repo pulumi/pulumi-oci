@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel {
@@ -13,27 +15,27 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
      * @return The constraints that apply to the properties at a certain level.
      * 
      */
-    private String constraints;
+    private @Nullable String constraints;
     /**
      * @return The property name used for filtering.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel() {}
     /**
      * @return The constraints that apply to the properties at a certain level.
      * 
      */
-    public String constraints() {
-        return this.constraints;
+    public Optional<String> constraints() {
+        return Optional.ofNullable(this.constraints);
     }
     /**
      * @return The property name used for filtering.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
     }
     @CustomType.Builder
     public static final class Builder {
-        private String constraints;
-        private String name;
+        private @Nullable String constraints;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
         }
 
         @CustomType.Setter
-        public Builder constraints(String constraints) {
-            this.constraints = Objects.requireNonNull(constraints);
+        public Builder constraints(@Nullable String constraints) {
+            this.constraints = constraints;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel build() {

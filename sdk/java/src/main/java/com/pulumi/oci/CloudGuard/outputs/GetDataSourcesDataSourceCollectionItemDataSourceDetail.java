@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
@@ -17,123 +19,123 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
      * @return The additional entities count used for data source query.
      * 
      */
-    private Integer additionalEntitiesCount;
+    private @Nullable Integer additionalEntitiesCount;
     /**
      * @return A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
      * 
      */
-    private String dataSourceFeedProvider;
+    private @Nullable String dataSourceFeedProvider;
     /**
      * @return Interval in minutes that query is run periodically.
      * 
      */
-    private Integer intervalInMinutes;
+    private @Nullable Integer intervalInMinutes;
     /**
      * @return Additional details specific to the data source type (Sighting/Insight).
      * 
      */
-    private List<GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail> loggingQueryDetails;
+    private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail> loggingQueryDetails;
     /**
      * @return A filter to return only resources their query type matches the given LoggingQueryType.
      * 
      */
-    private String loggingQueryType;
+    private @Nullable String loggingQueryType;
     /**
      * @return Operator used in Data Soruce
      * 
      */
-    private String operator;
+    private @Nullable String operator;
     /**
      * @return The continuous query expression that is run periodically.
      * 
      */
-    private String query;
+    private @Nullable String query;
     /**
      * @return Time when the query can start, if not specified it can start immediately.
      * 
      */
-    private List<GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime> queryStartTimes;
+    private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime> queryStartTimes;
     /**
      * @return Logging Query regions
      * 
      */
-    private List<String> regions;
+    private @Nullable List<String> regions;
     /**
      * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
      * 
      */
-    private Integer threshold;
+    private @Nullable Integer threshold;
 
     private GetDataSourcesDataSourceCollectionItemDataSourceDetail() {}
     /**
      * @return The additional entities count used for data source query.
      * 
      */
-    public Integer additionalEntitiesCount() {
-        return this.additionalEntitiesCount;
+    public Optional<Integer> additionalEntitiesCount() {
+        return Optional.ofNullable(this.additionalEntitiesCount);
     }
     /**
      * @return A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
      * 
      */
-    public String dataSourceFeedProvider() {
-        return this.dataSourceFeedProvider;
+    public Optional<String> dataSourceFeedProvider() {
+        return Optional.ofNullable(this.dataSourceFeedProvider);
     }
     /**
      * @return Interval in minutes that query is run periodically.
      * 
      */
-    public Integer intervalInMinutes() {
-        return this.intervalInMinutes;
+    public Optional<Integer> intervalInMinutes() {
+        return Optional.ofNullable(this.intervalInMinutes);
     }
     /**
      * @return Additional details specific to the data source type (Sighting/Insight).
      * 
      */
     public List<GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail> loggingQueryDetails() {
-        return this.loggingQueryDetails;
+        return this.loggingQueryDetails == null ? List.of() : this.loggingQueryDetails;
     }
     /**
      * @return A filter to return only resources their query type matches the given LoggingQueryType.
      * 
      */
-    public String loggingQueryType() {
-        return this.loggingQueryType;
+    public Optional<String> loggingQueryType() {
+        return Optional.ofNullable(this.loggingQueryType);
     }
     /**
      * @return Operator used in Data Soruce
      * 
      */
-    public String operator() {
-        return this.operator;
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
     /**
      * @return The continuous query expression that is run periodically.
      * 
      */
-    public String query() {
-        return this.query;
+    public Optional<String> query() {
+        return Optional.ofNullable(this.query);
     }
     /**
      * @return Time when the query can start, if not specified it can start immediately.
      * 
      */
     public List<GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime> queryStartTimes() {
-        return this.queryStartTimes;
+        return this.queryStartTimes == null ? List.of() : this.queryStartTimes;
     }
     /**
      * @return Logging Query regions
      * 
      */
     public List<String> regions() {
-        return this.regions;
+        return this.regions == null ? List.of() : this.regions;
     }
     /**
      * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
      * 
      */
-    public Integer threshold() {
-        return this.threshold;
+    public Optional<Integer> threshold() {
+        return Optional.ofNullable(this.threshold);
     }
 
     public static Builder builder() {
@@ -145,16 +147,16 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer additionalEntitiesCount;
-        private String dataSourceFeedProvider;
-        private Integer intervalInMinutes;
-        private List<GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail> loggingQueryDetails;
-        private String loggingQueryType;
-        private String operator;
-        private String query;
-        private List<GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime> queryStartTimes;
-        private List<String> regions;
-        private Integer threshold;
+        private @Nullable Integer additionalEntitiesCount;
+        private @Nullable String dataSourceFeedProvider;
+        private @Nullable Integer intervalInMinutes;
+        private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail> loggingQueryDetails;
+        private @Nullable String loggingQueryType;
+        private @Nullable String operator;
+        private @Nullable String query;
+        private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime> queryStartTimes;
+        private @Nullable List<String> regions;
+        private @Nullable Integer threshold;
         public Builder() {}
         public Builder(GetDataSourcesDataSourceCollectionItemDataSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -171,62 +173,62 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder additionalEntitiesCount(Integer additionalEntitiesCount) {
-            this.additionalEntitiesCount = Objects.requireNonNull(additionalEntitiesCount);
+        public Builder additionalEntitiesCount(@Nullable Integer additionalEntitiesCount) {
+            this.additionalEntitiesCount = additionalEntitiesCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
-            this.dataSourceFeedProvider = Objects.requireNonNull(dataSourceFeedProvider);
+        public Builder dataSourceFeedProvider(@Nullable String dataSourceFeedProvider) {
+            this.dataSourceFeedProvider = dataSourceFeedProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder intervalInMinutes(Integer intervalInMinutes) {
-            this.intervalInMinutes = Objects.requireNonNull(intervalInMinutes);
+        public Builder intervalInMinutes(@Nullable Integer intervalInMinutes) {
+            this.intervalInMinutes = intervalInMinutes;
             return this;
         }
         @CustomType.Setter
-        public Builder loggingQueryDetails(List<GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail> loggingQueryDetails) {
-            this.loggingQueryDetails = Objects.requireNonNull(loggingQueryDetails);
+        public Builder loggingQueryDetails(@Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail> loggingQueryDetails) {
+            this.loggingQueryDetails = loggingQueryDetails;
             return this;
         }
         public Builder loggingQueryDetails(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail... loggingQueryDetails) {
             return loggingQueryDetails(List.of(loggingQueryDetails));
         }
         @CustomType.Setter
-        public Builder loggingQueryType(String loggingQueryType) {
-            this.loggingQueryType = Objects.requireNonNull(loggingQueryType);
+        public Builder loggingQueryType(@Nullable String loggingQueryType) {
+            this.loggingQueryType = loggingQueryType;
             return this;
         }
         @CustomType.Setter
-        public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
-        public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+        public Builder query(@Nullable String query) {
+            this.query = query;
             return this;
         }
         @CustomType.Setter
-        public Builder queryStartTimes(List<GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime> queryStartTimes) {
-            this.queryStartTimes = Objects.requireNonNull(queryStartTimes);
+        public Builder queryStartTimes(@Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime> queryStartTimes) {
+            this.queryStartTimes = queryStartTimes;
             return this;
         }
         public Builder queryStartTimes(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime... queryStartTimes) {
             return queryStartTimes(List.of(queryStartTimes));
         }
         @CustomType.Setter
-        public Builder regions(List<String> regions) {
-            this.regions = Objects.requireNonNull(regions);
+        public Builder regions(@Nullable List<String> regions) {
+            this.regions = regions;
             return this;
         }
         public Builder regions(String... regions) {
             return regions(List.of(regions));
         }
         @CustomType.Setter
-        public Builder threshold(Integer threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+        public Builder threshold(@Nullable Integer threshold) {
+            this.threshold = threshold;
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemDataSourceDetail build() {

@@ -20,19 +20,19 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// Total test documents in the label.
         /// </summary>
-        public readonly int DocumentCount;
+        public readonly int? DocumentCount;
         /// <summary>
         /// Mean average precision under different thresholds
         /// </summary>
-        public readonly double MeanAveragePrecision;
+        public readonly double? MeanAveragePrecision;
 
         [OutputConstructor]
         private GetModelsModelCollectionItemMetricOverallMetricsReportResult(
             ImmutableArray<Outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult> confidenceEntries,
 
-            int documentCount,
+            int? documentCount,
 
-            double meanAveragePrecision)
+            double? meanAveragePrecision)
         {
             ConfidenceEntries = confidenceEntries;
             DocumentCount = documentCount;

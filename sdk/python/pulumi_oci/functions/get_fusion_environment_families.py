@@ -49,17 +49,11 @@ class GetFusionEnvironmentFamiliesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the environment family is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,10 +63,7 @@ class GetFusionEnvironmentFamiliesResult:
 
     @property
     @pulumi.getter(name="fusionEnvironmentFamilyCollections")
-    def fusion_environment_family_collections(self) -> Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionResult']:
-        """
-        The list of fusion_environment_family_collection.
-        """
+    def fusion_environment_family_collections(self) -> Optional[Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionResult']]:
         return pulumi.get(self, "fusion_environment_family_collections")
 
     @property
@@ -82,7 +73,7 @@ class GetFusionEnvironmentFamiliesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +82,6 @@ class GetFusionEnvironmentFamiliesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the FusionEnvironmentFamily.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_fusion_environment_families(compartment_id: Optional[str] = None,
                                     state: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentFamiliesResult:
     """
-    This data source provides the list of Fusion Environment Families in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of FusionEnvironmentFamilies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_families = oci.Functions.get_fusion_environment_families(compartment_id=var["compartment_id"],
-        display_name=var["fusion_environment_family_display_name"],
-        fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
-        state=var["fusion_environment_family_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_family_id: The ID of the fusion environment family in which to list resources.
-    :param str state: A filter that returns all resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_fusion_environment_families_output(compartment_id: Optional[pulumi.Input
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentFamiliesResult]:
     """
-    This data source provides the list of Fusion Environment Families in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of FusionEnvironmentFamilies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_families = oci.Functions.get_fusion_environment_families(compartment_id=var["compartment_id"],
-        display_name=var["fusion_environment_family_display_name"],
-        fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
-        state=var["fusion_environment_family_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_family_id: The ID of the fusion environment family in which to list resources.
-    :param str state: A filter that returns all resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

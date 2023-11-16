@@ -42,10 +42,7 @@ class GetAutonomousVmClusterAcdResourceUsagesResult:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseResourceUsages")
-    def autonomous_container_database_resource_usages(self) -> Sequence['outputs.GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult']:
-        """
-        The list of autonomous_container_database_resource_usages.
-        """
+    def autonomous_container_database_resource_usages(self) -> Optional[Sequence['outputs.GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult']]:
         return pulumi.get(self, "autonomous_container_database_resource_usages")
 
     @property
@@ -65,7 +62,7 @@ class GetAutonomousVmClusterAcdResourceUsagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
                                                   filters: Optional[Sequence[pulumi.InputType['GetAutonomousVmClusterAcdResourceUsagesFilterArgs']]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVmClusterAcdResourceUsagesResult:
     """
-    This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
-
-    Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousVmClusterId'] = autonomous_vm_cluster_id
@@ -129,22 +110,6 @@ def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_i
                                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousVmClusterAcdResourceUsagesFilterArgs']]]]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVmClusterAcdResourceUsagesResult]:
     """
-    This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
-
-    Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

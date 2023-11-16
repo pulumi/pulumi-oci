@@ -45,15 +45,15 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
     /**
      * Name of the Object Storage bucket.
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Flag that specifies if this configuration is enabled or not.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * Object Storage namespace.
      */
@@ -61,11 +61,11 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
     /**
      * The time when this record is created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The latest time when this record is updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.

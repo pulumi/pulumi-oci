@@ -23,19 +23,6 @@ class AlarmSuppressionArgs:
                  time_suppress_from: pulumi.Input[str],
                  time_suppress_until: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] description: (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-               
-               Oracle recommends including tracking information for the event or associated work, such as a ticket number.
-               
-               Example: `Planned outage due to change IT-1234.`
-        """
         pulumi.set(__self__, "time_suppress_from", time_suppress_from)
         pulumi.set(__self__, "time_suppress_until", time_suppress_until)
         if description is not None:
@@ -44,9 +31,6 @@ class AlarmSuppressionArgs:
     @property
     @pulumi.getter(name="timeSuppressFrom")
     def time_suppress_from(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
         return pulumi.get(self, "time_suppress_from")
 
     @time_suppress_from.setter
@@ -56,13 +40,6 @@ class AlarmSuppressionArgs:
     @property
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_suppress_until")
 
     @time_suppress_until.setter
@@ -72,13 +49,6 @@ class AlarmSuppressionArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-
-        Oracle recommends including tracking information for the event or associated work, such as a ticket number.
-
-        Example: `Planned outage due to change IT-1234.`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -170,9 +140,6 @@ class GetMetricDataFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the metric.  Example: `CpuUtilization`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -181,9 +148,6 @@ class GetMetricDataFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the metric.  Example: `CpuUtilization`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -215,9 +179,6 @@ class GetMetricsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -226,9 +187,6 @@ class GetMetricsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-        """
         return pulumi.get(self, "name")
 
     @name.setter

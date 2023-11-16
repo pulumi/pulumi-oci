@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -71,38 +70,38 @@ type LookupConnectionResult struct {
 	CatalogId     string `pulumi:"catalogId"`
 	ConnectionKey string `pulumi:"connectionKey"`
 	// OCID of the user who created the connection.
-	CreatedById string `pulumi:"createdById"`
+	CreatedById *string `pulumi:"createdById"`
 	// Unique key of the parent data asset.
 	DataAssetKey string `pulumi:"dataAssetKey"`
 	// A description of the connection.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName   string                 `pulumi:"displayName"`
+	DisplayName   *string                `pulumi:"displayName"`
 	EncProperties map[string]interface{} `pulumi:"encProperties"`
 	// Unique external key of this object from the source system.
-	ExternalKey string   `pulumi:"externalKey"`
+	ExternalKey *string  `pulumi:"externalKey"`
 	Fields      []string `pulumi:"fields"`
-	Id          string   `pulumi:"id"`
+	Id          *string  `pulumi:"id"`
 	// Indicates whether this connection is the default connection.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// Unique connection key that is immutable.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// The current state of the connection.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+	TimeStatusUpdated *string `pulumi:"timeStatusUpdated"`
 	// The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
-	TypeKey string `pulumi:"typeKey"`
+	TypeKey *string `pulumi:"typeKey"`
 	// OCID of the user who modified the connection.
-	UpdatedById string `pulumi:"updatedById"`
+	UpdatedById *string `pulumi:"updatedById"`
 	// URI to the connection instance in the API.
-	Uri string `pulumi:"uri"`
+	Uri *string `pulumi:"uri"`
 }
 
 func LookupConnectionOutput(ctx *pulumi.Context, args LookupConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupConnectionResultOutput {
@@ -149,12 +148,6 @@ func (o LookupConnectionResultOutput) ToLookupConnectionResultOutputWithContext(
 	return o
 }
 
-func (o LookupConnectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConnectionResult] {
-	return pulumix.Output[LookupConnectionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupConnectionResultOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -164,8 +157,8 @@ func (o LookupConnectionResultOutput) ConnectionKey() pulumi.StringOutput {
 }
 
 // OCID of the user who created the connection.
-func (o LookupConnectionResultOutput) CreatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.CreatedById }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) CreatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.CreatedById }).(pulumi.StringPtrOutput)
 }
 
 // Unique key of the parent data asset.
@@ -174,13 +167,13 @@ func (o LookupConnectionResultOutput) DataAssetKey() pulumi.StringOutput {
 }
 
 // A description of the connection.
-func (o LookupConnectionResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupConnectionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupConnectionResultOutput) EncProperties() pulumi.MapOutput {
@@ -188,26 +181,26 @@ func (o LookupConnectionResultOutput) EncProperties() pulumi.MapOutput {
 }
 
 // Unique external key of this object from the source system.
-func (o LookupConnectionResultOutput) ExternalKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.ExternalKey }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) ExternalKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupConnectionResultOutput) Fields() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupConnectionResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupConnectionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this connection is the default connection.
-func (o LookupConnectionResultOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupConnectionResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o LookupConnectionResultOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // Unique connection key that is immutable.
-func (o LookupConnectionResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
@@ -216,38 +209,38 @@ func (o LookupConnectionResultOutput) Properties() pulumi.MapOutput {
 }
 
 // The current state of the connection.
-func (o LookupConnectionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupConnectionResultOutput) TimeStatusUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object type. Type key's can be found via the '/types' endpoint.
-func (o LookupConnectionResultOutput) TypeKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.TypeKey }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) TypeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.TypeKey }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the user who modified the connection.
-func (o LookupConnectionResultOutput) UpdatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.UpdatedById }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) UpdatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.UpdatedById }).(pulumi.StringPtrOutput)
 }
 
 // URI to the connection instance in the API.
-func (o LookupConnectionResultOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionResult) string { return v.Uri }).(pulumi.StringOutput)
+func (o LookupConnectionResultOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionResult) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 func init() {

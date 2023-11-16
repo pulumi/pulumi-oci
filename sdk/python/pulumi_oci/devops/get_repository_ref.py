@@ -52,71 +52,47 @@ class GetRepositoryRefResult:
 
     @property
     @pulumi.getter(name="commitId")
-    def commit_id(self) -> str:
-        """
-        Commit ID pointed to by the new branch.
-        """
+    def commit_id(self) -> Optional[str]:
         return pulumi.get(self, "commit_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="fullRefName")
-    def full_ref_name(self) -> str:
-        """
-        Unique full reference name inside a repository.
-        """
+    def full_ref_name(self) -> Optional[str]:
         return pulumi.get(self, "full_ref_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="objectId")
-    def object_id(self) -> str:
-        """
-        SHA-1 hash value of the object pointed to by the tag.
-        """
+    def object_id(self) -> Optional[str]:
         return pulumi.get(self, "object_id")
 
     @property
     @pulumi.getter(name="refName")
     def ref_name(self) -> str:
-        """
-        Unique reference name inside a repository.
-        """
         return pulumi.get(self, "ref_name")
 
     @property
     @pulumi.getter(name="refType")
-    def ref_type(self) -> str:
-        """
-        The type of reference (BRANCH or TAG).
-        """
+    def ref_type(self) -> Optional[str]:
         return pulumi.get(self, "ref_type")
 
     @property
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> str:
-        """
-        The OCID of the repository containing the reference.
-        """
         return pulumi.get(self, "repository_id")
 
 
@@ -141,23 +117,7 @@ def get_repository_ref(ref_name: Optional[str] = None,
                        repository_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryRefResult:
     """
-    This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like "heads/<name>" or "tags/<name>".
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_ref = oci.DevOps.get_repository_ref(ref_name=var["repository_ref_ref_name"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['refName'] = ref_name
@@ -182,22 +142,6 @@ def get_repository_ref_output(ref_name: Optional[pulumi.Input[str]] = None,
                               repository_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryRefResult]:
     """
-    This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like "heads/<name>" or "tags/<name>".
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_ref = oci.DevOps.get_repository_ref(ref_name=var["repository_ref_ref_name"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

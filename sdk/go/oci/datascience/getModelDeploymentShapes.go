@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
@@ -63,7 +62,7 @@ type GetModelDeploymentShapesResult struct {
 	CompartmentId string                           `pulumi:"compartmentId"`
 	Filters       []GetModelDeploymentShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of model_deployment_shapes.
 	ModelDeploymentShapes []GetModelDeploymentShapesModelDeploymentShape `pulumi:"modelDeploymentShapes"`
 }
@@ -107,12 +106,6 @@ func (o GetModelDeploymentShapesResultOutput) ToGetModelDeploymentShapesResultOu
 	return o
 }
 
-func (o GetModelDeploymentShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelDeploymentShapesResult] {
-	return pulumix.Output[GetModelDeploymentShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetModelDeploymentShapesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDeploymentShapesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -122,8 +115,8 @@ func (o GetModelDeploymentShapesResultOutput) Filters() GetModelDeploymentShapes
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetModelDeploymentShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelDeploymentShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetModelDeploymentShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelDeploymentShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of model_deployment_shapes.

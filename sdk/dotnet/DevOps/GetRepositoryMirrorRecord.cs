@@ -124,47 +124,47 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string MirrorRecordType;
         /// <summary>
         /// Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
         /// </summary>
-        public readonly string MirrorStatus;
+        public readonly string? MirrorStatus;
         public readonly string RepositoryId;
         /// <summary>
         /// The time taken to complete a mirror operation. Value is null if not completed.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The time to enqueue a mirror operation.
         /// </summary>
-        public readonly string TimeEnqueued;
+        public readonly string? TimeEnqueued;
         /// <summary>
         /// The time to start a mirror operation.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// Workrequest ID to track current mirror operation.
         /// </summary>
-        public readonly string WorkRequestId;
+        public readonly string? WorkRequestId;
 
         [OutputConstructor]
         private GetRepositoryMirrorRecordResult(
-            string id,
+            string? id,
 
             string mirrorRecordType,
 
-            string mirrorStatus,
+            string? mirrorStatus,
 
             string repositoryId,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeEnqueued,
+            string? timeEnqueued,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string workRequestId)
+            string? workRequestId)
         {
             Id = id;
             MirrorRecordType = mirrorRecordType;

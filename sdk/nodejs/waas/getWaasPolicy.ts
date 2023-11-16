@@ -47,60 +47,60 @@ export interface GetWaasPolicyResult {
     /**
      * An array of additional domains for this web application.
      */
-    readonly additionalDomains: string[];
+    readonly additionalDomains?: string[];
     /**
      * The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      */
-    readonly cname: string;
+    readonly cname?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The domain for which the cookie is set, defaults to WAAS policy domain.
      */
-    readonly domain: string;
+    readonly domain?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      */
-    readonly originGroups: outputs.Waas.GetWaasPolicyOriginGroup[];
+    readonly originGroups?: outputs.Waas.GetWaasPolicyOriginGroup[];
     /**
      * A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
      */
-    readonly origins: outputs.Waas.GetWaasPolicyOrigin[];
+    readonly origins?: outputs.Waas.GetWaasPolicyOrigin[];
     /**
      * The configuration details for the WAAS policy.
      */
-    readonly policyConfigs: outputs.Waas.GetWaasPolicyPolicyConfig[];
+    readonly policyConfigs?: outputs.Waas.GetWaasPolicyPolicyConfig[];
     /**
      * The current lifecycle state of the WAAS policy.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     readonly waasPolicyId: string;
     /**
      * The Web Application Firewall configuration for the WAAS policy.
      */
-    readonly wafConfigs: outputs.Waas.GetWaasPolicyWafConfig[];
+    readonly wafConfigs?: outputs.Waas.GetWaasPolicyWafConfig[];
 }
 /**
  * This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.

@@ -62,7 +62,7 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
     /**
      * Flag that specifies if this configuration is enabled or not.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    public readonly isEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The Logging Analytics namespace used for the request. 
      *
@@ -74,11 +74,11 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
     /**
      * The time when this record is created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The latest time when this record is updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a LogAnalyticsUnprocessedDataBucketManagement resource with the given unique name, arguments, and options.

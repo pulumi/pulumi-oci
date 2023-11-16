@@ -6,6 +6,8 @@ package com.pulumi.oci.Oda.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOdaPrivateEndpointAttachmentResult {
@@ -13,60 +15,60 @@ public final class GetOdaPrivateEndpointAttachmentResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
      * 
      */
-    private String odaInstanceId;
+    private @Nullable String odaInstanceId;
     private String odaPrivateEndpointAttachmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
      * 
      */
-    private String odaPrivateEndpointId;
+    private @Nullable String odaPrivateEndpointId;
     /**
      * @return The current state of the ODA Private Endpoint attachment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetOdaPrivateEndpointAttachmentResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
      * 
      */
-    public String odaInstanceId() {
-        return this.odaInstanceId;
+    public Optional<String> odaInstanceId() {
+        return Optional.ofNullable(this.odaInstanceId);
     }
     public String odaPrivateEndpointAttachmentId() {
         return this.odaPrivateEndpointAttachmentId;
@@ -75,29 +77,29 @@ public final class GetOdaPrivateEndpointAttachmentResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
      * 
      */
-    public String odaPrivateEndpointId() {
-        return this.odaPrivateEndpointId;
+    public Optional<String> odaPrivateEndpointId() {
+        return Optional.ofNullable(this.odaPrivateEndpointId);
     }
     /**
      * @return The current state of the ODA Private Endpoint attachment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -109,14 +111,14 @@ public final class GetOdaPrivateEndpointAttachmentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private String odaInstanceId;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable String odaInstanceId;
         private String odaPrivateEndpointAttachmentId;
-        private String odaPrivateEndpointId;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String odaPrivateEndpointId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetOdaPrivateEndpointAttachmentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -131,18 +133,18 @@ public final class GetOdaPrivateEndpointAttachmentResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder odaInstanceId(String odaInstanceId) {
-            this.odaInstanceId = Objects.requireNonNull(odaInstanceId);
+        public Builder odaInstanceId(@Nullable String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
             return this;
         }
         @CustomType.Setter
@@ -151,23 +153,23 @@ public final class GetOdaPrivateEndpointAttachmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder odaPrivateEndpointId(String odaPrivateEndpointId) {
-            this.odaPrivateEndpointId = Objects.requireNonNull(odaPrivateEndpointId);
+        public Builder odaPrivateEndpointId(@Nullable String odaPrivateEndpointId) {
+            this.odaPrivateEndpointId = odaPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOdaPrivateEndpointAttachmentResult build() {

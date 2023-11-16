@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Document service.
@@ -60,28 +59,28 @@ type LookupProjectArgs struct {
 // A collection of values returned by getProject.
 type LookupProjectResult struct {
 	// The compartment identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// An optional description of the project.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A human-friendly name for the project, which can be changed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A unique identifier that is immutable after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	ProjectId        string `pulumi:"projectId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	ProjectId        string  `pulumi:"projectId"`
 	// The current state of the project.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// When the project was created, as an RFC3339 datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the project was updated, as an RFC3339 datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupProjectOutput(ctx *pulumi.Context, args LookupProjectOutputArgs, opts ...pulumi.InvokeOption) LookupProjectResultOutput {
@@ -122,15 +121,9 @@ func (o LookupProjectResultOutput) ToLookupProjectResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupProjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProjectResult] {
-	return pulumix.Output[LookupProjectResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment identifier.
-func (o LookupProjectResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -139,13 +132,13 @@ func (o LookupProjectResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // An optional description of the project.
-func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A human-friendly name for the project, which can be changed.
-func (o LookupProjectResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
@@ -154,13 +147,13 @@ func (o LookupProjectResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A unique identifier that is immutable after creation.
-func (o LookupProjectResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail, that can provide actionable information if creation failed.
-func (o LookupProjectResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {
@@ -168,8 +161,8 @@ func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The current state of the project.
-func (o LookupProjectResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -178,13 +171,13 @@ func (o LookupProjectResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // When the project was created, as an RFC3339 datetime string.
-func (o LookupProjectResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the project was updated, as an RFC3339 datetime string.
-func (o LookupProjectResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProjectResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupProjectResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProjectResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

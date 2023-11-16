@@ -97,7 +97,7 @@ export interface GetReplicationsResult {
     /**
      * The list of replications.
      */
-    readonly replications: outputs.FileStorage.GetReplicationsReplication[];
+    readonly replications?: outputs.FileStorage.GetReplicationsReplication[];
     /**
      * The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      */

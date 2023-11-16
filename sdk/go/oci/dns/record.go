@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // **Deprecated. Use Dns.Rrset instead.**
@@ -67,13 +66,13 @@ type Record struct {
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrOutput `pulumi:"isProtected"`
 	// (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
 	Rdata pulumi.StringPtrOutput `pulumi:"rdata"`
 	// A unique identifier for the record within its zone.
-	RecordHash pulumi.StringOutput `pulumi:"recordHash"`
+	RecordHash pulumi.StringPtrOutput `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
-	RrsetVersion pulumi.StringOutput `pulumi:"rrsetVersion"`
+	RrsetVersion pulumi.StringPtrOutput `pulumi:"rrsetVersion"`
 	// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
@@ -263,12 +262,6 @@ func (i *Record) ToRecordOutputWithContext(ctx context.Context) RecordOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RecordOutput)
 }
 
-func (i *Record) ToOutput(ctx context.Context) pulumix.Output[*Record] {
-	return pulumix.Output[*Record]{
-		OutputState: i.ToRecordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecordArrayInput is an input type that accepts RecordArray and RecordArrayOutput values.
 // You can construct a concrete instance of `RecordArrayInput` via:
 //
@@ -292,12 +285,6 @@ func (i RecordArray) ToRecordArrayOutput() RecordArrayOutput {
 
 func (i RecordArray) ToRecordArrayOutputWithContext(ctx context.Context) RecordArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RecordArrayOutput)
-}
-
-func (i RecordArray) ToOutput(ctx context.Context) pulumix.Output[[]*Record] {
-	return pulumix.Output[[]*Record]{
-		OutputState: i.ToRecordArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RecordMapInput is an input type that accepts RecordMap and RecordMapOutput values.
@@ -325,12 +312,6 @@ func (i RecordMap) ToRecordMapOutputWithContext(ctx context.Context) RecordMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(RecordMapOutput)
 }
 
-func (i RecordMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Record] {
-	return pulumix.Output[map[string]*Record]{
-		OutputState: i.ToRecordMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecordOutput struct{ *pulumi.OutputState }
 
 func (RecordOutput) ElementType() reflect.Type {
@@ -343,12 +324,6 @@ func (o RecordOutput) ToRecordOutput() RecordOutput {
 
 func (o RecordOutput) ToRecordOutputWithContext(ctx context.Context) RecordOutput {
 	return o
-}
-
-func (o RecordOutput) ToOutput(ctx context.Context) pulumix.Output[*Record] {
-	return pulumix.Output[*Record]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
@@ -364,8 +339,8 @@ func (o RecordOutput) Domain() pulumi.StringOutput {
 }
 
 // A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-func (o RecordOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Record) pulumi.BoolOutput { return v.IsProtected }).(pulumi.BoolOutput)
+func (o RecordOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Record) pulumi.BoolPtrOutput { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
@@ -374,13 +349,13 @@ func (o RecordOutput) Rdata() pulumi.StringPtrOutput {
 }
 
 // A unique identifier for the record within its zone.
-func (o RecordOutput) RecordHash() pulumi.StringOutput {
-	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.RecordHash }).(pulumi.StringOutput)
+func (o RecordOutput) RecordHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Record) pulumi.StringPtrOutput { return v.RecordHash }).(pulumi.StringPtrOutput)
 }
 
 // The latest version of the record's zone in which its RRSet differs from the preceding version.
-func (o RecordOutput) RrsetVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.RrsetVersion }).(pulumi.StringOutput)
+func (o RecordOutput) RrsetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Record) pulumi.StringPtrOutput { return v.RrsetVersion }).(pulumi.StringPtrOutput)
 }
 
 // The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
@@ -419,12 +394,6 @@ func (o RecordArrayOutput) ToRecordArrayOutputWithContext(ctx context.Context) R
 	return o
 }
 
-func (o RecordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Record] {
-	return pulumix.Output[[]*Record]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RecordArrayOutput) Index(i pulumi.IntInput) RecordOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Record {
 		return vs[0].([]*Record)[vs[1].(int)]
@@ -443,12 +412,6 @@ func (o RecordMapOutput) ToRecordMapOutput() RecordMapOutput {
 
 func (o RecordMapOutput) ToRecordMapOutputWithContext(ctx context.Context) RecordMapOutput {
 	return o
-}
-
-func (o RecordMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Record] {
-	return pulumix.Output[map[string]*Record]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecordMapOutput) MapIndex(k pulumi.StringInput) RecordOutput {

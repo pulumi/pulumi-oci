@@ -20,31 +20,31 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Name of the column that must be sorted.
         /// </summary>
-        public readonly string FieldName;
+        public readonly string? FieldName;
         /// <summary>
         /// Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         /// </summary>
-        public readonly bool IsHidden;
+        public readonly bool? IsHidden;
         /// <summary>
         /// Specifies the type of operator that must be applied for example in, eq etc.
         /// </summary>
-        public readonly string Operator;
+        public readonly string? Operator;
 
         [OutputConstructor]
         private GetReportDefinitionColumnFilterResult(
             ImmutableArray<string> expressions,
 
-            string fieldName,
+            string? fieldName,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            bool isHidden,
+            bool? isHidden,
 
-            string @operator)
+            string? @operator)
         {
             Expressions = expressions;
             FieldName = fieldName;

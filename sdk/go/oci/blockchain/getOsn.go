@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.
@@ -63,16 +62,16 @@ type LookupOsnArgs struct {
 // A collection of values returned by getOsn.
 type LookupOsnResult struct {
 	// Availability Domain of OSN
-	Ad                   string `pulumi:"ad"`
-	BlockchainPlatformId string `pulumi:"blockchainPlatformId"`
-	Id                   string `pulumi:"id"`
+	Ad                   *string `pulumi:"ad"`
+	BlockchainPlatformId string  `pulumi:"blockchainPlatformId"`
+	Id                   *string `pulumi:"id"`
 	// OCPU allocation parameter
 	OcpuAllocationParams []GetOsnOcpuAllocationParam `pulumi:"ocpuAllocationParams"`
 	OsnId                string                      `pulumi:"osnId"`
 	// OSN identifier
-	OsnKey string `pulumi:"osnKey"`
+	OsnKey *string `pulumi:"osnKey"`
 	// The current state of the OSN.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 func LookupOsnOutput(ctx *pulumi.Context, args LookupOsnOutputArgs, opts ...pulumi.InvokeOption) LookupOsnResultOutput {
@@ -115,23 +114,17 @@ func (o LookupOsnResultOutput) ToLookupOsnResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o LookupOsnResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOsnResult] {
-	return pulumix.Output[LookupOsnResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Availability Domain of OSN
-func (o LookupOsnResultOutput) Ad() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOsnResult) string { return v.Ad }).(pulumi.StringOutput)
+func (o LookupOsnResultOutput) Ad() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOsnResult) *string { return v.Ad }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOsnResultOutput) BlockchainPlatformId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOsnResult) string { return v.BlockchainPlatformId }).(pulumi.StringOutput)
 }
 
-func (o LookupOsnResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOsnResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOsnResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOsnResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // OCPU allocation parameter
@@ -144,13 +137,13 @@ func (o LookupOsnResultOutput) OsnId() pulumi.StringOutput {
 }
 
 // OSN identifier
-func (o LookupOsnResultOutput) OsnKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOsnResult) string { return v.OsnKey }).(pulumi.StringOutput)
+func (o LookupOsnResultOutput) OsnKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOsnResult) *string { return v.OsnKey }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the OSN.
-func (o LookupOsnResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOsnResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOsnResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOsnResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

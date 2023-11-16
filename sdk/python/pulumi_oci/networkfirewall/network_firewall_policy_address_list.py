@@ -20,14 +20,6 @@ class NetworkFirewallPolicyAddressListArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyAddressList resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) List of addresses.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] type: Type of address List. The accepted values are - * FQDN * IP
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: Unique name to identify the group of addresses to be used in the policy rules.
         """
         pulumi.set(__self__, "addresses", addresses)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
@@ -38,9 +30,6 @@ class NetworkFirewallPolicyAddressListArgs:
     @property
     @pulumi.getter
     def addresses(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) List of addresses.
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -50,9 +39,6 @@ class NetworkFirewallPolicyAddressListArgs:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -62,13 +48,6 @@ class NetworkFirewallPolicyAddressListArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Type of address List. The accepted values are - * FQDN * IP
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -78,9 +57,6 @@ class NetworkFirewallPolicyAddressListArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique name to identify the group of addresses to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -99,16 +75,6 @@ class _NetworkFirewallPolicyAddressListState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyAddressList resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) List of addresses.
-        :param pulumi.Input[str] name: Unique name to identify the group of addresses to be used in the policy rules.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this Address List belongs to.
-        :param pulumi.Input[int] total_addresses: Count of total addresses in the AddressList
-        :param pulumi.Input[str] type: Type of address List. The accepted values are - * FQDN * IP
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
@@ -126,9 +92,6 @@ class _NetworkFirewallPolicyAddressListState:
     @property
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of addresses.
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -138,9 +101,6 @@ class _NetworkFirewallPolicyAddressListState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique name to identify the group of addresses to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -150,9 +110,6 @@ class _NetworkFirewallPolicyAddressListState:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -162,9 +119,6 @@ class _NetworkFirewallPolicyAddressListState:
     @property
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Network Firewall Policy this Address List belongs to.
-        """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
@@ -174,9 +128,6 @@ class _NetworkFirewallPolicyAddressListState:
     @property
     @pulumi.getter(name="totalAddresses")
     def total_addresses(self) -> Optional[pulumi.Input[int]]:
-        """
-        Count of total addresses in the AddressList
-        """
         return pulumi.get(self, "total_addresses")
 
     @total_addresses.setter
@@ -186,13 +137,6 @@ class _NetworkFirewallPolicyAddressListState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of address List. The accepted values are - * FQDN * IP
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -211,40 +155,9 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Address List for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_address_list = oci.network_firewall.NetworkFirewallPolicyAddressList("testNetworkFirewallPolicyAddressList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_address_list_type"],
-            addresses=var["network_firewall_policy_address_list_addresses"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyAddressLists can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
-        ```
-
+        Create a NetworkFirewallPolicyAddressList resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) List of addresses.
-        :param pulumi.Input[str] name: Unique name to identify the group of addresses to be used in the policy rules.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] type: Type of address List. The accepted values are - * FQDN * IP
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -253,30 +166,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
                  args: NetworkFirewallPolicyAddressListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Address List for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_address_list = oci.network_firewall.NetworkFirewallPolicyAddressList("testNetworkFirewallPolicyAddressList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_address_list_type"],
-            addresses=var["network_firewall_policy_address_list_addresses"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyAddressLists can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
-        ```
-
+        Create a NetworkFirewallPolicyAddressList resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyAddressListArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -340,16 +230,6 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) List of addresses.
-        :param pulumi.Input[str] name: Unique name to identify the group of addresses to be used in the policy rules.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this Address List belongs to.
-        :param pulumi.Input[int] total_addresses: Count of total addresses in the AddressList
-        :param pulumi.Input[str] type: Type of address List. The accepted values are - * FQDN * IP
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -366,52 +246,30 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
     @property
     @pulumi.getter
     def addresses(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of addresses.
-        """
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Unique name to identify the group of addresses to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Network Firewall Policy this Address List belongs to.
-        """
+    def parent_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter(name="totalAddresses")
-    def total_addresses(self) -> pulumi.Output[int]:
-        """
-        Count of total addresses in the AddressList
-        """
+    def total_addresses(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_addresses")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Type of address List. The accepted values are - * FQDN * IP
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 

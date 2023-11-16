@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunsScheduledRunCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScheduledRunsScheduledRunCollection {
-    private List<GetScheduledRunsScheduledRunCollectionItem> items;
+    private @Nullable List<GetScheduledRunsScheduledRunCollectionItem> items;
 
     private GetScheduledRunsScheduledRunCollection() {}
     public List<GetScheduledRunsScheduledRunCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetScheduledRunsScheduledRunCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetScheduledRunsScheduledRunCollectionItem> items;
+        private @Nullable List<GetScheduledRunsScheduledRunCollectionItem> items;
         public Builder() {}
         public Builder(GetScheduledRunsScheduledRunCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetScheduledRunsScheduledRunCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetScheduledRunsScheduledRunCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetScheduledRunsScheduledRunCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetScheduledRunsScheduledRunCollectionItem... items) {

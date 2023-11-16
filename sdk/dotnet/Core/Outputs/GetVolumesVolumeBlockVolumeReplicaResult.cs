@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The block volume replica's Oracle ID (OCID).
         /// </summary>
-        public readonly string BlockVolumeReplicaId;
+        public readonly string? BlockVolumeReplicaId;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
 
         [OutputConstructor]
         private GetVolumesVolumeBlockVolumeReplicaResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string blockVolumeReplicaId,
+            string? blockVolumeReplicaId,
 
-            string displayName)
+            string? displayName)
         {
             AvailabilityDomain = availabilityDomain;
             BlockVolumeReplicaId = blockVolumeReplicaId;

@@ -73,23 +73,23 @@ export class DrPlanExecution extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly drProtectionGroupId!: pulumi.Output<string>;
+    public /*out*/ readonly drProtectionGroupId!: pulumi.Output<string | undefined>;
     /**
      * The total duration in seconds taken to complete the step execution.  Example: `35`
      */
-    public /*out*/ readonly executionDurationInSec!: pulumi.Output<number>;
+    public /*out*/ readonly executionDurationInSec!: pulumi.Output<number | undefined>;
     /**
      * The options for a plan execution.
      */
@@ -97,31 +97,31 @@ export class DrPlanExecution extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A list of groups executed in this DR plan execution.
      */
-    public /*out*/ readonly groupExecutions!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionGroupExecution[]>;
+    public /*out*/ readonly groupExecutions!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionGroupExecution[] | undefined>;
     /**
      * A message describing the DR plan execution's current state in more detail.
      */
-    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The details of an object storage log location for a DR protection group.
      */
-    public /*out*/ readonly logLocations!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionLogLocation[]>;
+    public /*out*/ readonly logLocations!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionLogLocation[] | undefined>;
     /**
      * The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string>;
+    public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string | undefined>;
     /**
      * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
-    public /*out*/ readonly peerRegion!: pulumi.Output<string>;
+    public /*out*/ readonly peerRegion!: pulumi.Output<string | undefined>;
     /**
      * The type of the plan execution.
      */
-    public /*out*/ readonly planExecutionType!: pulumi.Output<string>;
+    public /*out*/ readonly planExecutionType!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
      *
@@ -133,27 +133,27 @@ export class DrPlanExecution extends pulumi.CustomResource {
     /**
      * The current state of the DR plan execution.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    public /*out*/ readonly timeEnded!: pulumi.Output<string | undefined>;
     /**
      * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
     /**
      * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DrPlanExecution resource with the given unique name, arguments, and options.

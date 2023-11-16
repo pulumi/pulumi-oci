@@ -25,12 +25,12 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of maintenance_run_histories.
      * 
      */
-    private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories;
+    private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories;
     /**
      * @return Maintenance type.
      * 
@@ -70,15 +70,15 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of maintenance_run_histories.
      * 
      */
     public List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories() {
-        return this.maintenanceRunHistories;
+        return this.maintenanceRunHistories == null ? List.of() : this.maintenanceRunHistories;
     }
     /**
      * @return Maintenance type.
@@ -121,8 +121,8 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetDatabaseMaintenanceRunHistoriesFilter> filters;
-        private String id;
-        private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories;
+        private @Nullable String id;
+        private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories;
         private @Nullable String maintenanceType;
         private @Nullable String state;
         private @Nullable String targetResourceId;
@@ -160,13 +160,13 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceRunHistories(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories) {
-            this.maintenanceRunHistories = Objects.requireNonNull(maintenanceRunHistories);
+        public Builder maintenanceRunHistories(@Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories) {
+            this.maintenanceRunHistories = maintenanceRunHistories;
             return this;
         }
         public Builder maintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory... maintenanceRunHistories) {

@@ -16,53 +16,53 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// <summary>
         /// The maximum amount of time the mount target is allowed to use a cached entry.
         /// </summary>
-        public readonly int CacheLifetimeSeconds;
+        public readonly int? CacheLifetimeSeconds;
         /// <summary>
         /// The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
         /// </summary>
-        public readonly int CacheRefreshIntervalSeconds;
+        public readonly int? CacheRefreshIntervalSeconds;
         /// <summary>
         /// All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
         /// </summary>
-        public readonly string GroupSearchBase;
+        public readonly string? GroupSearchBase;
         /// <summary>
         /// The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
         /// </summary>
-        public readonly int NegativeCacheLifetimeSeconds;
+        public readonly int? NegativeCacheLifetimeSeconds;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
         /// </summary>
-        public readonly string OutboundConnector1id;
+        public readonly string? OutboundConnector1id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
         /// </summary>
-        public readonly string OutboundConnector2id;
+        public readonly string? OutboundConnector2id;
         /// <summary>
         /// Schema type of the LDAP account.
         /// </summary>
-        public readonly string SchemaType;
+        public readonly string? SchemaType;
         /// <summary>
         /// All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
         /// </summary>
-        public readonly string UserSearchBase;
+        public readonly string? UserSearchBase;
 
         [OutputConstructor]
         private GetMountTargetsMountTargetLdapIdmapResult(
-            int cacheLifetimeSeconds,
+            int? cacheLifetimeSeconds,
 
-            int cacheRefreshIntervalSeconds,
+            int? cacheRefreshIntervalSeconds,
 
-            string groupSearchBase,
+            string? groupSearchBase,
 
-            int negativeCacheLifetimeSeconds,
+            int? negativeCacheLifetimeSeconds,
 
-            string outboundConnector1id,
+            string? outboundConnector1id,
 
-            string outboundConnector2id,
+            string? outboundConnector2id,
 
-            string schemaType,
+            string? schemaType,
 
-            string userSearchBase)
+            string? userSearchBase)
         {
             CacheLifetimeSeconds = cacheLifetimeSeconds;
             CacheRefreshIntervalSeconds = cacheRefreshIntervalSeconds;

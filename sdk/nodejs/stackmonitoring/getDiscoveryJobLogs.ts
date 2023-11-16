@@ -56,12 +56,12 @@ export interface GetDiscoveryJobLogsResult {
     /**
      * The list of discovery_job_log_collection.
      */
-    readonly discoveryJobLogCollections: outputs.StackMonitoring.GetDiscoveryJobLogsDiscoveryJobLogCollection[];
+    readonly discoveryJobLogCollections?: outputs.StackMonitoring.GetDiscoveryJobLogsDiscoveryJobLogCollection[];
     readonly filters?: outputs.StackMonitoring.GetDiscoveryJobLogsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Type of log (INFO, WARNING, ERROR or SUCCESS)
      */

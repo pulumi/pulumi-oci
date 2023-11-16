@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
         /// </summary>
-        public readonly bool IsPaidUsageEnabled;
+        public readonly bool? IsPaidUsageEnabled;
 
         [OutputConstructor]
-        private GetAuditProfileAnalyticItemDimensionResult(bool isPaidUsageEnabled)
+        private GetAuditProfileAnalyticItemDimensionResult(bool? isPaidUsageEnabled)
         {
             IsPaidUsageEnabled = isPaidUsageEnabled;
         }

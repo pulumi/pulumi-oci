@@ -103,11 +103,11 @@ export interface GetMetricsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of metrics.
      */
-    readonly metrics: outputs.Monitoring.GetMetricsMetric[];
+    readonly metrics?: outputs.Monitoring.GetMetricsMetric[];
     /**
      * The name of the metric.  Example: `CpuUtilization`
      */

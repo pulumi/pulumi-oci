@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Image Capability Schemas in Oracle Cloud Infrastructure Core service.
@@ -74,7 +73,7 @@ type GetComputeImageCapabilitySchemasResult struct {
 	DisplayName *string                                  `pulumi:"displayName"`
 	Filters     []GetComputeImageCapabilitySchemasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the image associated with this compute image capability schema
 	ImageId *string `pulumi:"imageId"`
 }
@@ -122,12 +121,6 @@ func (o GetComputeImageCapabilitySchemasResultOutput) ToGetComputeImageCapabilit
 	return o
 }
 
-func (o GetComputeImageCapabilitySchemasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeImageCapabilitySchemasResult] {
-	return pulumix.Output[GetComputeImageCapabilitySchemasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the compute global image capability schema
 func (o GetComputeImageCapabilitySchemasResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeImageCapabilitySchemasResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -152,8 +145,8 @@ func (o GetComputeImageCapabilitySchemasResultOutput) Filters() GetComputeImageC
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeImageCapabilitySchemasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeImageCapabilitySchemasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeImageCapabilitySchemasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeImageCapabilitySchemasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the image associated with this compute image capability schema

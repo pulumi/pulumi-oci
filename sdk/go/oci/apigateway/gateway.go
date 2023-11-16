@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Gateway resource in Oracle Cloud Infrastructure API Gateway service.
@@ -92,38 +91,38 @@ type Gateway struct {
 	// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 	CaBundles GatewayCaBundleArrayOutput `pulumi:"caBundles"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrOutput `pulumi:"certificateId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
 	EndpointType pulumi.StringOutput `pulumi:"endpointType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The hostname for APIs deployed on the gateway.
-	Hostname pulumi.StringOutput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrOutput `pulumi:"hostname"`
 	// An array of IP addresses associated with the gateway.
 	IpAddresses GatewayIpAddressArrayOutput `pulumi:"ipAddresses"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Base Gateway response cache.
-	ResponseCacheDetails GatewayResponseCacheDetailsOutput `pulumi:"responseCacheDetails"`
+	ResponseCacheDetails GatewayResponseCacheDetailsPtrOutput `pulumi:"responseCacheDetails"`
 	// The current state of the gateway.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewGateway registers a new resource with the given unique name, arguments, and options.
@@ -320,12 +319,6 @@ func (i *Gateway) ToGatewayOutputWithContext(ctx context.Context) GatewayOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(GatewayOutput)
 }
 
-func (i *Gateway) ToOutput(ctx context.Context) pulumix.Output[*Gateway] {
-	return pulumix.Output[*Gateway]{
-		OutputState: i.ToGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GatewayArrayInput is an input type that accepts GatewayArray and GatewayArrayOutput values.
 // You can construct a concrete instance of `GatewayArrayInput` via:
 //
@@ -349,12 +342,6 @@ func (i GatewayArray) ToGatewayArrayOutput() GatewayArrayOutput {
 
 func (i GatewayArray) ToGatewayArrayOutputWithContext(ctx context.Context) GatewayArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GatewayArrayOutput)
-}
-
-func (i GatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]*Gateway] {
-	return pulumix.Output[[]*Gateway]{
-		OutputState: i.ToGatewayArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GatewayMapInput is an input type that accepts GatewayMap and GatewayMapOutput values.
@@ -382,12 +369,6 @@ func (i GatewayMap) ToGatewayMapOutputWithContext(ctx context.Context) GatewayMa
 	return pulumi.ToOutputWithContext(ctx, i).(GatewayMapOutput)
 }
 
-func (i GatewayMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Gateway] {
-	return pulumix.Output[map[string]*Gateway]{
-		OutputState: i.ToGatewayMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GatewayOutput struct{ *pulumi.OutputState }
 
 func (GatewayOutput) ElementType() reflect.Type {
@@ -402,20 +383,14 @@ func (o GatewayOutput) ToGatewayOutputWithContext(ctx context.Context) GatewayOu
 	return o
 }
 
-func (o GatewayOutput) ToOutput(ctx context.Context) pulumix.Output[*Gateway] {
-	return pulumix.Output[*Gateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 func (o GatewayOutput) CaBundles() GatewayCaBundleArrayOutput {
 	return o.ApplyT(func(v *Gateway) GatewayCaBundleArrayOutput { return v.CaBundles }).(GatewayCaBundleArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o GatewayOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
+func (o GatewayOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringPtrOutput { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -429,8 +404,8 @@ func (o GatewayOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o GatewayOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o GatewayOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
@@ -444,8 +419,8 @@ func (o GatewayOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The hostname for APIs deployed on the gateway.
-func (o GatewayOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
+func (o GatewayOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringPtrOutput { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // An array of IP addresses associated with the gateway.
@@ -454,8 +429,8 @@ func (o GatewayOutput) IpAddresses() GatewayIpAddressArrayOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GatewayOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GatewayOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -464,13 +439,13 @@ func (o GatewayOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Base Gateway response cache.
-func (o GatewayOutput) ResponseCacheDetails() GatewayResponseCacheDetailsOutput {
-	return o.ApplyT(func(v *Gateway) GatewayResponseCacheDetailsOutput { return v.ResponseCacheDetails }).(GatewayResponseCacheDetailsOutput)
+func (o GatewayOutput) ResponseCacheDetails() GatewayResponseCacheDetailsPtrOutput {
+	return o.ApplyT(func(v *Gateway) GatewayResponseCacheDetailsPtrOutput { return v.ResponseCacheDetails }).(GatewayResponseCacheDetailsPtrOutput)
 }
 
 // The current state of the gateway.
-func (o GatewayOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o GatewayOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
@@ -482,13 +457,13 @@ func (o GatewayOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o GatewayOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GatewayOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o GatewayOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GatewayOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GatewayArrayOutput struct{ *pulumi.OutputState }
@@ -503,12 +478,6 @@ func (o GatewayArrayOutput) ToGatewayArrayOutput() GatewayArrayOutput {
 
 func (o GatewayArrayOutput) ToGatewayArrayOutputWithContext(ctx context.Context) GatewayArrayOutput {
 	return o
-}
-
-func (o GatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Gateway] {
-	return pulumix.Output[[]*Gateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GatewayArrayOutput) Index(i pulumi.IntInput) GatewayOutput {
@@ -529,12 +498,6 @@ func (o GatewayMapOutput) ToGatewayMapOutput() GatewayMapOutput {
 
 func (o GatewayMapOutput) ToGatewayMapOutputWithContext(ctx context.Context) GatewayMapOutput {
 	return o
-}
-
-func (o GatewayMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Gateway] {
-	return pulumix.Output[map[string]*Gateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GatewayMapOutput) MapIndex(k pulumi.StringInput) GatewayOutput {

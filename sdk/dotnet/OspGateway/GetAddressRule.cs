@@ -149,7 +149,7 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string OspHomeRegion;
         /// <summary>
         /// Tax type rule information
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.OspGateway
 
             string countryCode,
 
-            string id,
+            string? id,
 
             string ospHomeRegion,
 

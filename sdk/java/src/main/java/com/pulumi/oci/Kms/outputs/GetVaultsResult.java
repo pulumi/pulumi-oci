@@ -9,6 +9,7 @@ import com.pulumi.oci.Kms.outputs.GetVaultsVault;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,12 +24,12 @@ public final class GetVaultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of vaults.
      * 
      */
-    private List<GetVaultsVault> vaults;
+    private @Nullable List<GetVaultsVault> vaults;
 
     private GetVaultsResult() {}
     /**
@@ -45,15 +46,15 @@ public final class GetVaultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of vaults.
      * 
      */
     public List<GetVaultsVault> vaults() {
-        return this.vaults;
+        return this.vaults == null ? List.of() : this.vaults;
     }
 
     public static Builder builder() {
@@ -67,8 +68,8 @@ public final class GetVaultsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetVaultsFilter> filters;
-        private String id;
-        private List<GetVaultsVault> vaults;
+        private @Nullable String id;
+        private @Nullable List<GetVaultsVault> vaults;
         public Builder() {}
         public Builder(GetVaultsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,13 +93,13 @@ public final class GetVaultsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder vaults(List<GetVaultsVault> vaults) {
-            this.vaults = Objects.requireNonNull(vaults);
+        public Builder vaults(@Nullable List<GetVaultsVault> vaults) {
+            this.vaults = vaults;
             return this;
         }
         public Builder vaults(GetVaultsVault... vaults) {

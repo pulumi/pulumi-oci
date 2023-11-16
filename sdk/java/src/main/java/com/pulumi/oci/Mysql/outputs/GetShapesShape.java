@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapesShape {
@@ -15,51 +17,51 @@ public final class GetShapesShape {
      * @return The number of CPU Cores the Instance provides. These are &#34;OCPU&#34;s.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return Return shapes that are supported by the service feature.
      * 
      */
-    private List<String> isSupportedFors;
+    private @Nullable List<String> isSupportedFors;
     /**
      * @return The amount of RAM the Instance provides. This is an IEC base-2 number.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return Name
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetShapesShape() {}
     /**
      * @return The number of CPU Cores the Instance provides. These are &#34;OCPU&#34;s.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return Return shapes that are supported by the service feature.
      * 
      */
     public List<String> isSupportedFors() {
-        return this.isSupportedFors;
+        return this.isSupportedFors == null ? List.of() : this.isSupportedFors;
     }
     /**
      * @return The amount of RAM the Instance provides. This is an IEC base-2 number.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return Name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetShapesShape {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer cpuCoreCount;
-        private List<String> isSupportedFors;
-        private Integer memorySizeInGbs;
-        private String name;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable List<String> isSupportedFors;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetShapesShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetShapesShape {
         }
 
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder isSupportedFors(List<String> isSupportedFors) {
-            this.isSupportedFors = Objects.requireNonNull(isSupportedFors);
+        public Builder isSupportedFors(@Nullable List<String> isSupportedFors) {
+            this.isSupportedFors = isSupportedFors;
             return this;
         }
         public Builder isSupportedFors(String... isSupportedFors) {
             return isSupportedFors(List.of(isSupportedFors));
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetShapesShape build() {

@@ -16,19 +16,19 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         /// </summary>
-        public readonly bool IsPvEncryptionInTransitEnabled;
+        public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
         /// The OCID of the Key Management Service key assigned to the boot volume.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The CNI related configuration of pods in the node pool.
         /// </summary>
@@ -44,17 +44,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The number of nodes in the node pool.
         /// </summary>
-        public readonly int Size;
+        public readonly int? Size;
 
         [OutputConstructor]
         private GetNodePoolNodeConfigDetailResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            bool isPvEncryptionInTransitEnabled,
+            bool? isPvEncryptionInTransitEnabled,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
             ImmutableArray<Outputs.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult> nodePoolPodNetworkOptionDetails,
 
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<Outputs.GetNodePoolNodeConfigDetailPlacementConfigResult> placementConfigs,
 
-            int size)
+            int? size)
         {
             DefinedTags = definedTags;
             FreeformTags = freeformTags;

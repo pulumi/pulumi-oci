@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyAppsMyAppUserWalletArtifact {
@@ -13,27 +15,27 @@ public final class GetDomainsMyAppsMyAppUserWalletArtifact {
      * @return UserWalletArtifact URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return UserWalletArtifact identifier
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsMyAppsMyAppUserWalletArtifact() {}
     /**
      * @return UserWalletArtifact URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return UserWalletArtifact identifier
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsMyAppsMyAppUserWalletArtifact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ref;
-        private String value;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsMyAppsMyAppUserWalletArtifact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsMyAppsMyAppUserWalletArtifact {
         }
 
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsMyAppsMyAppUserWalletArtifact build() {

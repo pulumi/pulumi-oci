@@ -52,9 +52,6 @@ class GetJavaReleasesResult:
     @property
     @pulumi.getter(name="familyVersion")
     def family_version(self) -> Optional[str]:
-        """
-        Java release family identifier.
-        """
         return pulumi.get(self, "family_version")
 
     @property
@@ -64,7 +61,7 @@ class GetJavaReleasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,10 +69,7 @@ class GetJavaReleasesResult:
 
     @property
     @pulumi.getter(name="javaReleaseCollections")
-    def java_release_collections(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionResult']:
-        """
-        The list of java_release_collection.
-        """
+    def java_release_collections(self) -> Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionResult']]:
         return pulumi.get(self, "java_release_collections")
 
     @property
@@ -86,25 +80,16 @@ class GetJavaReleasesResult:
     @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> Optional[str]:
-        """
-        License type for the Java version.
-        """
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter(name="releaseType")
     def release_type(self) -> Optional[str]:
-        """
-        Release category of the Java version.
-        """
         return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter(name="releaseVersion")
     def release_version(self) -> Optional[str]:
-        """
-        Java release version identifier.
-        """
         return pulumi.get(self, "release_version")
 
 
@@ -132,29 +117,7 @@ def get_java_releases(family_version: Optional[str] = None,
                       release_version: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaReleasesResult:
     """
-    This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of Java releases.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_releases = oci.Jms.get_java_releases(family_version=var["java_release_family_version"],
-        jre_security_status=var["java_release_jre_security_status"],
-        license_type=var["java_release_license_type"],
-        release_type=var["java_release_release_type"],
-        release_version=var["java_release_release_version"])
-    ```
-
-
-    :param str family_version: The version identifier for the Java family.
-    :param str jre_security_status: The security status of the Java Runtime.
-    :param str license_type: Java license type.
-    :param str release_type: Java release type.
-    :param str release_version: Unique Java release version identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['familyVersion'] = family_version
@@ -186,28 +149,6 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]
                              release_version: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaReleasesResult]:
     """
-    This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of Java releases.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_releases = oci.Jms.get_java_releases(family_version=var["java_release_family_version"],
-        jre_security_status=var["java_release_jre_security_status"],
-        license_type=var["java_release_license_type"],
-        release_type=var["java_release_release_type"],
-        release_version=var["java_release_release_version"])
-    ```
-
-
-    :param str family_version: The version identifier for the Java family.
-    :param str jre_security_status: The security status of the Java Runtime.
-    :param str license_type: Java license type.
-    :param str release_type: Java release type.
-    :param str release_version: Unique Java release version identifier
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -80,74 +80,47 @@ class GetNetworkLoadBalancerResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        OCID of the reserved public IP address created with the virtual cloud network.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Sequence['outputs.GetNetworkLoadBalancerIpAddressResult']:
-        """
-        An array of IP addresses.
-        """
+    def ip_addresses(self) -> Optional[Sequence['outputs.GetNetworkLoadBalancerIpAddressResult']]:
         return pulumi.get(self, "ip_addresses")
 
     @property
     @pulumi.getter(name="isPreserveSourceDestination")
-    def is_preserve_source_destination(self) -> bool:
-        """
-        When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
-        """
+    def is_preserve_source_destination(self) -> Optional[bool]:
         return pulumi.get(self, "is_preserve_source_destination")
 
     @property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> bool:
-        """
-        Whether the network load balancer has a virtual cloud network-local (private) IP address.
-        """
+    def is_private(self) -> Optional[bool]:
         return pulumi.get(self, "is_private")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -157,63 +130,42 @@ class GetNetworkLoadBalancerResult:
 
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Sequence[str]:
-        """
-        An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
-        """
+    def network_security_group_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "network_security_group_ids")
 
     @property
     @pulumi.getter(name="nlbIpVersion")
-    def nlb_ip_version(self) -> str:
-        """
-        IP version associated with the NLB.
-        """
+    def nlb_ip_version(self) -> Optional[str]:
         return pulumi.get(self, "nlb_ip_version")
 
     @property
     @pulumi.getter(name="reservedIps")
-    def reserved_ips(self) -> Sequence['outputs.GetNetworkLoadBalancerReservedIpResult']:
+    def reserved_ips(self) -> Optional[Sequence['outputs.GetNetworkLoadBalancerReservedIpResult']]:
         return pulumi.get(self, "reserved_ips")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the network load balancer.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -246,21 +198,7 @@ class AwaitableGetNetworkLoadBalancerResult(GetNetworkLoadBalancerResult):
 def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancerResult:
     """
-    This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves network load balancer configuration information by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancer = oci.NetworkLoadBalancer.get_network_load_balancer(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['networkLoadBalancerId'] = network_load_balancer_id
@@ -292,20 +230,6 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
 def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancerResult]:
     """
-    This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves network load balancer configuration information by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancer = oci.NetworkLoadBalancer.get_network_load_balancer(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     ...

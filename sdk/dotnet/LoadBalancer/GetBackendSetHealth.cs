@@ -127,7 +127,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LoadBalancerId;
         /// <summary>
         /// Overall health status of the backend set.
@@ -136,11 +136,11 @@ namespace Pulumi.Oci.LoadBalancer
         /// *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
         /// *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The total number of backend servers in this backend set.  Example: `7`
         /// </summary>
-        public readonly int TotalBackendCount;
+        public readonly int? TotalBackendCount;
         /// <summary>
         /// A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`
         /// </summary>
@@ -156,13 +156,13 @@ namespace Pulumi.Oci.LoadBalancer
 
             ImmutableArray<string> criticalStateBackendNames,
 
-            string id,
+            string? id,
 
             string loadBalancerId,
 
-            string status,
+            string? status,
 
-            int totalBackendCount,
+            int? totalBackendCount,
 
             ImmutableArray<string> unknownStateBackendNames,
 

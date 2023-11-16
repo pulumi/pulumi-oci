@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
@@ -60,18 +59,18 @@ type LookupRecoveryServiceSubnetArgs struct {
 // A collection of values returned by getRecoveryServiceSubnet.
 type LookupRecoveryServiceSubnetResult struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-provided name for the recovery service subnet.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The recovery service subnet OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-	LifecycleDetails        string `pulumi:"lifecycleDetails"`
-	RecoveryServiceSubnetId string `pulumi:"recoveryServiceSubnetId"`
+	LifecycleDetails        *string `pulumi:"lifecycleDetails"`
+	RecoveryServiceSubnetId string  `pulumi:"recoveryServiceSubnetId"`
 	// The current state of the recovery service subnet. Allowed values are:
 	// * CREATING
 	// * UPDATING
@@ -79,17 +78,17 @@ type LookupRecoveryServiceSubnetResult struct {
 	// * DELETING
 	// * DELETED
 	// * FAILED
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet used as the recovery service subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// VCN Identifier.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupRecoveryServiceSubnetOutput(ctx *pulumi.Context, args LookupRecoveryServiceSubnetOutputArgs, opts ...pulumi.InvokeOption) LookupRecoveryServiceSubnetResultOutput {
@@ -130,15 +129,9 @@ func (o LookupRecoveryServiceSubnetResultOutput) ToLookupRecoveryServiceSubnetRe
 	return o
 }
 
-func (o LookupRecoveryServiceSubnetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRecoveryServiceSubnetResult] {
-	return pulumix.Output[LookupRecoveryServiceSubnetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID.
-func (o LookupRecoveryServiceSubnetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -147,8 +140,8 @@ func (o LookupRecoveryServiceSubnetResultOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // A user-provided name for the recovery service subnet.
-func (o LookupRecoveryServiceSubnetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -157,13 +150,13 @@ func (o LookupRecoveryServiceSubnetResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // The recovery service subnet OCID.
-func (o LookupRecoveryServiceSubnetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-func (o LookupRecoveryServiceSubnetResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupRecoveryServiceSubnetResultOutput) RecoveryServiceSubnetId() pulumi.StringOutput {
@@ -177,13 +170,13 @@ func (o LookupRecoveryServiceSubnetResultOutput) RecoveryServiceSubnetId() pulum
 // * DELETING
 // * DELETED
 // * FAILED
-func (o LookupRecoveryServiceSubnetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet used as the recovery service subnet.
-func (o LookupRecoveryServiceSubnetResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -192,18 +185,18 @@ func (o LookupRecoveryServiceSubnetResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-func (o LookupRecoveryServiceSubnetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-func (o LookupRecoveryServiceSubnetResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // VCN Identifier.
-func (o LookupRecoveryServiceSubnetResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupRecoveryServiceSubnetResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

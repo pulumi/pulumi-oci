@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dynamic Resource Groups in Oracle Cloud Infrastructure Identity Domains service.
@@ -92,16 +91,16 @@ type GetDomainsDynamicResourceGroupsResult struct {
 	// The list of dynamic_resource_groups.
 	DynamicResourceGroups []GetDomainsDynamicResourceGroupsDynamicResourceGroup `pulumi:"dynamicResourceGroups"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string  `pulumi:"id"`
+	Id                        *string `pulumi:"id"`
 	IdcsEndpoint              string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage              int     `pulumi:"itemsPerPage"`
+	ItemsPerPage              *int    `pulumi:"itemsPerPage"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas      []string `pulumi:"schemas"`
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsDynamicResourceGroupsOutput(ctx *pulumi.Context, args GetDomainsDynamicResourceGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsDynamicResourceGroupsResultOutput {
@@ -159,12 +158,6 @@ func (o GetDomainsDynamicResourceGroupsResultOutput) ToGetDomainsDynamicResource
 	return o
 }
 
-func (o GetDomainsDynamicResourceGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsDynamicResourceGroupsResult] {
-	return pulumix.Output[GetDomainsDynamicResourceGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsDynamicResourceGroupsResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -197,16 +190,16 @@ func (o GetDomainsDynamicResourceGroupsResultOutput) DynamicResourceGroups() Get
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsDynamicResourceGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsDynamicResourceGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsDynamicResourceGroupsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsDynamicResourceGroupsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsDynamicResourceGroupsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsDynamicResourceGroupsResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -230,8 +223,8 @@ func (o GetDomainsDynamicResourceGroupsResultOutput) StartIndex() pulumi.IntPtrO
 	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsDynamicResourceGroupsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsDynamicResourceGroupsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsDynamicResourceGroupsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

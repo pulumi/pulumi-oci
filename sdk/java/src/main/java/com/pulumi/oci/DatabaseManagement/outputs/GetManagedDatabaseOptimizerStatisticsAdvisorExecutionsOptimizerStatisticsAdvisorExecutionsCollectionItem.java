@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem {
@@ -17,52 +19,52 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The summary of the Managed Database resource.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases;
     /**
      * @return The errors in the Optimizer Statistics Advisor execution, if any.
      * 
      */
-    private String errorMessage;
+    private @Nullable String errorMessage;
     /**
      * @return The name of the Optimizer Statistics Advisor execution.
      * 
      */
-    private String executionName;
+    private @Nullable String executionName;
     /**
      * @return The list of findings for the rule.
      * 
      */
-    private Integer findings;
+    private @Nullable Integer findings;
     /**
      * @return A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports;
     /**
      * @return The status of the Optimizer Statistics Advisor execution.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The Optimizer Statistics Advisor execution status message, if any.
      * 
      */
-    private String statusMessage;
+    private @Nullable String statusMessage;
     /**
      * @return The name of the Optimizer Statistics Advisor task.
      * 
      */
-    private String taskName;
+    private @Nullable String taskName;
     /**
      * @return The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is &#34;yyyy-MM-dd&#39;T&#39;hh:mm:ss.sss&#39;Z&#39;&#34;.
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is &#34;yyyy-MM-dd&#39;T&#39;hh:mm:ss.sss&#39;Z&#39;&#34;.
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem() {}
     /**
@@ -70,70 +72,70 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases() {
-        return this.databases;
+        return this.databases == null ? List.of() : this.databases;
     }
     /**
      * @return The errors in the Optimizer Statistics Advisor execution, if any.
      * 
      */
-    public String errorMessage() {
-        return this.errorMessage;
+    public Optional<String> errorMessage() {
+        return Optional.ofNullable(this.errorMessage);
     }
     /**
      * @return The name of the Optimizer Statistics Advisor execution.
      * 
      */
-    public String executionName() {
-        return this.executionName;
+    public Optional<String> executionName() {
+        return Optional.ofNullable(this.executionName);
     }
     /**
      * @return The list of findings for the rule.
      * 
      */
-    public Integer findings() {
-        return this.findings;
+    public Optional<Integer> findings() {
+        return Optional.ofNullable(this.findings);
     }
     /**
      * @return A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports() {
-        return this.reports;
+        return this.reports == null ? List.of() : this.reports;
     }
     /**
      * @return The status of the Optimizer Statistics Advisor execution.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The Optimizer Statistics Advisor execution status message, if any.
      * 
      */
-    public String statusMessage() {
-        return this.statusMessage;
+    public Optional<String> statusMessage() {
+        return Optional.ofNullable(this.statusMessage);
     }
     /**
      * @return The name of the Optimizer Statistics Advisor task.
      * 
      */
-    public String taskName() {
-        return this.taskName;
+    public Optional<String> taskName() {
+        return Optional.ofNullable(this.taskName);
     }
     /**
      * @return The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is &#34;yyyy-MM-dd&#39;T&#39;hh:mm:ss.sss&#39;Z&#39;&#34;.
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is &#34;yyyy-MM-dd&#39;T&#39;hh:mm:ss.sss&#39;Z&#39;&#34;.
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -145,16 +147,16 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases;
-        private String errorMessage;
-        private String executionName;
-        private Integer findings;
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports;
-        private String status;
-        private String statusMessage;
-        private String taskName;
-        private String timeEnd;
-        private String timeStart;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases;
+        private @Nullable String errorMessage;
+        private @Nullable String executionName;
+        private @Nullable Integer findings;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports;
+        private @Nullable String status;
+        private @Nullable String statusMessage;
+        private @Nullable String taskName;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -171,59 +173,59 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         }
 
         @CustomType.Setter
-        public Builder databases(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+        public Builder databases(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases) {
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase... databases) {
             return databases(List.of(databases));
         }
         @CustomType.Setter
-        public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+        public Builder errorMessage(@Nullable String errorMessage) {
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder executionName(String executionName) {
-            this.executionName = Objects.requireNonNull(executionName);
+        public Builder executionName(@Nullable String executionName) {
+            this.executionName = executionName;
             return this;
         }
         @CustomType.Setter
-        public Builder findings(Integer findings) {
-            this.findings = Objects.requireNonNull(findings);
+        public Builder findings(@Nullable Integer findings) {
+            this.findings = findings;
             return this;
         }
         @CustomType.Setter
-        public Builder reports(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports) {
-            this.reports = Objects.requireNonNull(reports);
+        public Builder reports(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports) {
+            this.reports = reports;
             return this;
         }
         public Builder reports(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport... reports) {
             return reports(List.of(reports));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder statusMessage(String statusMessage) {
-            this.statusMessage = Objects.requireNonNull(statusMessage);
+        public Builder statusMessage(@Nullable String statusMessage) {
+            this.statusMessage = statusMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder taskName(String taskName) {
-            this.taskName = Objects.requireNonNull(taskName);
+        public Builder taskName(@Nullable String taskName) {
+            this.taskName = taskName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem build() {

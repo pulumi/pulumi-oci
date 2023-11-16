@@ -209,7 +209,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsRegularExpression;
         /// <summary>
         /// An array of the counts of different urgency or type of alert logs.
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedDatabaseAlertLogCountResult(
             string? groupBy,
 
-            string id,
+            string? id,
 
             bool? isRegularExpression,
 

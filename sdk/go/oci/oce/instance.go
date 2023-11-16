@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
@@ -83,25 +82,25 @@ type Instance struct {
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) OceInstance description
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) disaster recovery paired ragion name
-	DrRegion pulumi.StringOutput `pulumi:"drRegion"`
+	DrRegion pulumi.StringPtrOutput `pulumi:"drRegion"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Unique GUID identifier that is immutable on creation
-	Guid pulumi.StringOutput `pulumi:"guid"`
+	Guid pulumi.StringPtrOutput `pulumi:"guid"`
 	// Identity Cloud Service access token identifying a stripe and service administrator user
 	IdcsAccessToken pulumi.StringOutput `pulumi:"idcsAccessToken"`
 	// IDCS Tenancy Identifier
-	IdcsTenancy pulumi.StringOutput `pulumi:"idcsTenancy"`
+	IdcsTenancy pulumi.StringPtrOutput `pulumi:"idcsTenancy"`
 	// Flag indicating whether the instance access is private or public
-	InstanceAccessType pulumi.StringOutput `pulumi:"instanceAccessType"`
+	InstanceAccessType pulumi.StringPtrOutput `pulumi:"instanceAccessType"`
 	// (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-	InstanceLicenseType pulumi.StringOutput `pulumi:"instanceLicenseType"`
+	InstanceLicenseType pulumi.StringPtrOutput `pulumi:"instanceLicenseType"`
 	// (Updatable) Instance type based on its usage
-	InstanceUsageType pulumi.StringOutput `pulumi:"instanceUsageType"`
+	InstanceUsageType pulumi.StringPtrOutput `pulumi:"instanceUsageType"`
 	// Details of the current state of the instance lifecycle
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// OceInstance Name
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Object Storage Namespace of Tenancy
@@ -109,9 +108,9 @@ type Instance struct {
 	// SERVICE data. Example: `{"service": {"IDCS": "value"}}`
 	Service pulumi.MapOutput `pulumi:"service"`
 	// The current state of the instance lifecycle.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrOutput `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Tenancy Identifier
@@ -119,16 +118,16 @@ type Instance struct {
 	// Tenancy Name
 	TenancyName pulumi.StringOutput `pulumi:"tenancyName"`
 	// The time the the OceInstance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the OceInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-	UpgradeSchedule pulumi.StringOutput `pulumi:"upgradeSchedule"`
+	UpgradeSchedule pulumi.StringPtrOutput `pulumi:"upgradeSchedule"`
 	// (Updatable) Web Application Firewall(WAF) primary domain
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	WafPrimaryDomain pulumi.StringOutput `pulumi:"wafPrimaryDomain"`
+	WafPrimaryDomain pulumi.StringPtrOutput `pulumi:"wafPrimaryDomain"`
 }
 
 // NewInstance registers a new resource with the given unique name, arguments, and options.
@@ -409,12 +408,6 @@ func (i *Instance) ToInstanceOutputWithContext(ctx context.Context) InstanceOutp
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceOutput)
 }
 
-func (i *Instance) ToOutput(ctx context.Context) pulumix.Output[*Instance] {
-	return pulumix.Output[*Instance]{
-		OutputState: i.ToInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstanceArrayInput is an input type that accepts InstanceArray and InstanceArrayOutput values.
 // You can construct a concrete instance of `InstanceArrayInput` via:
 //
@@ -438,12 +431,6 @@ func (i InstanceArray) ToInstanceArrayOutput() InstanceArrayOutput {
 
 func (i InstanceArray) ToInstanceArrayOutputWithContext(ctx context.Context) InstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceArrayOutput)
-}
-
-func (i InstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*Instance] {
-	return pulumix.Output[[]*Instance]{
-		OutputState: i.ToInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstanceMapInput is an input type that accepts InstanceMap and InstanceMapOutput values.
@@ -471,12 +458,6 @@ func (i InstanceMap) ToInstanceMapOutputWithContext(ctx context.Context) Instanc
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceMapOutput)
 }
 
-func (i InstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Instance] {
-	return pulumix.Output[map[string]*Instance]{
-		OutputState: i.ToInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstanceOutput struct{ *pulumi.OutputState }
 
 func (InstanceOutput) ElementType() reflect.Type {
@@ -489,12 +470,6 @@ func (o InstanceOutput) ToInstanceOutput() InstanceOutput {
 
 func (o InstanceOutput) ToInstanceOutputWithContext(ctx context.Context) InstanceOutput {
 	return o
-}
-
-func (o InstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*Instance] {
-	return pulumix.Output[*Instance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) a list of add-on features for the ocm instance
@@ -518,13 +493,13 @@ func (o InstanceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) OceInstance description
-func (o InstanceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o InstanceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) disaster recovery paired ragion name
-func (o InstanceOutput) DrRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DrRegion }).(pulumi.StringOutput)
+func (o InstanceOutput) DrRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.DrRegion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -533,8 +508,8 @@ func (o InstanceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique GUID identifier that is immutable on creation
-func (o InstanceOutput) Guid() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Guid }).(pulumi.StringOutput)
+func (o InstanceOutput) Guid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.Guid }).(pulumi.StringPtrOutput)
 }
 
 // Identity Cloud Service access token identifying a stripe and service administrator user
@@ -543,28 +518,28 @@ func (o InstanceOutput) IdcsAccessToken() pulumi.StringOutput {
 }
 
 // IDCS Tenancy Identifier
-func (o InstanceOutput) IdcsTenancy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.IdcsTenancy }).(pulumi.StringOutput)
+func (o InstanceOutput) IdcsTenancy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.IdcsTenancy }).(pulumi.StringPtrOutput)
 }
 
 // Flag indicating whether the instance access is private or public
-func (o InstanceOutput) InstanceAccessType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceAccessType }).(pulumi.StringOutput)
+func (o InstanceOutput) InstanceAccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.InstanceAccessType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-func (o InstanceOutput) InstanceLicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceLicenseType }).(pulumi.StringOutput)
+func (o InstanceOutput) InstanceLicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.InstanceLicenseType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Instance type based on its usage
-func (o InstanceOutput) InstanceUsageType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceUsageType }).(pulumi.StringOutput)
+func (o InstanceOutput) InstanceUsageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.InstanceUsageType }).(pulumi.StringPtrOutput)
 }
 
 // Details of the current state of the instance lifecycle
-func (o InstanceOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o InstanceOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // OceInstance Name
@@ -583,13 +558,13 @@ func (o InstanceOutput) Service() pulumi.MapOutput {
 }
 
 // The current state of the instance lifecycle.
-func (o InstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o InstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o InstanceOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StateMessage }).(pulumi.StringOutput)
+func (o InstanceOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -608,26 +583,26 @@ func (o InstanceOutput) TenancyName() pulumi.StringOutput {
 }
 
 // The time the the OceInstance was created. An RFC3339 formatted datetime string
-func (o InstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o InstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the OceInstance was updated. An RFC3339 formatted datetime string
-func (o InstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o InstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-func (o InstanceOutput) UpgradeSchedule() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.UpgradeSchedule }).(pulumi.StringOutput)
+func (o InstanceOutput) UpgradeSchedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.UpgradeSchedule }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Web Application Firewall(WAF) primary domain
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o InstanceOutput) WafPrimaryDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.WafPrimaryDomain }).(pulumi.StringOutput)
+func (o InstanceOutput) WafPrimaryDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.WafPrimaryDomain }).(pulumi.StringPtrOutput)
 }
 
 type InstanceArrayOutput struct{ *pulumi.OutputState }
@@ -642,12 +617,6 @@ func (o InstanceArrayOutput) ToInstanceArrayOutput() InstanceArrayOutput {
 
 func (o InstanceArrayOutput) ToInstanceArrayOutputWithContext(ctx context.Context) InstanceArrayOutput {
 	return o
-}
-
-func (o InstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Instance] {
-	return pulumix.Output[[]*Instance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstanceArrayOutput) Index(i pulumi.IntInput) InstanceOutput {
@@ -668,12 +637,6 @@ func (o InstanceMapOutput) ToInstanceMapOutput() InstanceMapOutput {
 
 func (o InstanceMapOutput) ToInstanceMapOutputWithContext(ctx context.Context) InstanceMapOutput {
 	return o
-}
-
-func (o InstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Instance] {
-	return pulumix.Output[map[string]*Instance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstanceMapOutput) MapIndex(k pulumi.StringInput) InstanceOutput {

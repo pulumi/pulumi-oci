@@ -8,6 +8,8 @@ import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsItemTarget;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetBlocklistsItem {
@@ -15,51 +17,51 @@ public final class GetFleetBlocklistsItem {
      * @return The unique identifier of this blocklist record.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The operation type.
      * 
      */
-    private String operation;
+    private @Nullable String operation;
     /**
      * @return The reason why the operation is blocklisted.
      * 
      */
-    private String reason;
+    private @Nullable String reason;
     /**
      * @return A resource to blocklist for certain operation.
      * 
      */
-    private List<GetFleetBlocklistsItemTarget> targets;
+    private @Nullable List<GetFleetBlocklistsItemTarget> targets;
 
     private GetFleetBlocklistsItem() {}
     /**
      * @return The unique identifier of this blocklist record.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The operation type.
      * 
      */
-    public String operation() {
-        return this.operation;
+    public Optional<String> operation() {
+        return Optional.ofNullable(this.operation);
     }
     /**
      * @return The reason why the operation is blocklisted.
      * 
      */
-    public String reason() {
-        return this.reason;
+    public Optional<String> reason() {
+        return Optional.ofNullable(this.reason);
     }
     /**
      * @return A resource to blocklist for certain operation.
      * 
      */
     public List<GetFleetBlocklistsItemTarget> targets() {
-        return this.targets;
+        return this.targets == null ? List.of() : this.targets;
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetFleetBlocklistsItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String key;
-        private String operation;
-        private String reason;
-        private List<GetFleetBlocklistsItemTarget> targets;
+        private @Nullable String key;
+        private @Nullable String operation;
+        private @Nullable String reason;
+        private @Nullable List<GetFleetBlocklistsItemTarget> targets;
         public Builder() {}
         public Builder(GetFleetBlocklistsItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetFleetBlocklistsItem {
         }
 
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+        public Builder operation(@Nullable String operation) {
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
-        public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+        public Builder reason(@Nullable String reason) {
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
-        public Builder targets(List<GetFleetBlocklistsItemTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+        public Builder targets(@Nullable List<GetFleetBlocklistsItemTarget> targets) {
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetFleetBlocklistsItemTarget... targets) {

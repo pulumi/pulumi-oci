@@ -30,7 +30,7 @@ public final class GetNotificationTopicsResult {
      * @return The list of notification_topics.
      * 
      */
-    private List<GetNotificationTopicsNotificationTopic> notificationTopics;
+    private @Nullable List<GetNotificationTopicsNotificationTopic> notificationTopics;
     /**
      * @return The lifecycle state of the topic.
      * 
@@ -63,7 +63,7 @@ public final class GetNotificationTopicsResult {
      * 
      */
     public List<GetNotificationTopicsNotificationTopic> notificationTopics() {
-        return this.notificationTopics;
+        return this.notificationTopics == null ? List.of() : this.notificationTopics;
     }
     /**
      * @return The lifecycle state of the topic.
@@ -86,7 +86,7 @@ public final class GetNotificationTopicsResult {
         private @Nullable List<GetNotificationTopicsFilter> filters;
         private @Nullable String id;
         private @Nullable String name;
-        private List<GetNotificationTopicsNotificationTopic> notificationTopics;
+        private @Nullable List<GetNotificationTopicsNotificationTopic> notificationTopics;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetNotificationTopicsResult defaults) {
@@ -123,8 +123,8 @@ public final class GetNotificationTopicsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder notificationTopics(List<GetNotificationTopicsNotificationTopic> notificationTopics) {
-            this.notificationTopics = Objects.requireNonNull(notificationTopics);
+        public Builder notificationTopics(@Nullable List<GetNotificationTopicsNotificationTopic> notificationTopics) {
+            this.notificationTopics = notificationTopics;
             return this;
         }
         public Builder notificationTopics(GetNotificationTopicsNotificationTopic... notificationTopics) {

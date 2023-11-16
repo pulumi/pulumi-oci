@@ -66,7 +66,7 @@ export interface GetProfilesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name assigned to the profile. Avoid entering confidential information.
      */
@@ -74,7 +74,7 @@ export interface GetProfilesResult {
     /**
      * The list of profile_collection.
      */
-    readonly profileCollections: outputs.Optimizer.GetProfilesProfileCollection[];
+    readonly profileCollections?: outputs.Optimizer.GetProfilesProfileCollection[];
     /**
      * The profile's current state.
      */

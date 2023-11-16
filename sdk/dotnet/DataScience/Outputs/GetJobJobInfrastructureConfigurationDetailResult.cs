@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The size of the block storage volume to attach to the instance running the job
         /// </summary>
-        public readonly int BlockStorageSizeInGbs;
+        public readonly int? BlockStorageSizeInGbs;
         /// <summary>
         /// The infrastructure type used for job run.
         /// </summary>
-        public readonly string JobInfrastructureType;
+        public readonly string? JobInfrastructureType;
         /// <summary>
         /// Details for the job run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The shape used to launch the job run instances.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
         /// <summary>
         /// The subnet to create a secondary vnic in to attach to the instance running the job
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetJobJobInfrastructureConfigurationDetailResult(
-            int blockStorageSizeInGbs,
+            int? blockStorageSizeInGbs,
 
-            string jobInfrastructureType,
+            string? jobInfrastructureType,
 
             ImmutableArray<Outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult> jobShapeConfigDetails,
 
-            string shapeName,
+            string? shapeName,
 
-            string subnetId)
+            string? subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
             JobInfrastructureType = jobInfrastructureType;

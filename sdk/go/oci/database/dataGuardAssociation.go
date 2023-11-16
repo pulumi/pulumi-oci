@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
@@ -92,20 +91,20 @@ type DataGuardAssociation struct {
 	pulumi.CustomResourceState
 
 	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
-	ApplyLag pulumi.StringOutput `pulumi:"applyLag"`
+	ApplyLag pulumi.StringPtrOutput `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-	ApplyRate pulumi.StringOutput `pulumi:"applyRate"`
+	ApplyRate pulumi.StringPtrOutput `pulumi:"applyRate"`
 	// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayOutput `pulumi:"backupNetworkNsgIds"`
 	// The number of OCPU cores available for AMD-based virtual machine DB systems.
-	CpuCoreCount pulumi.IntOutput     `pulumi:"cpuCoreCount"`
+	CpuCoreCount pulumi.IntPtrOutput  `pulumi:"cpuCoreCount"`
 	CreateAsync  pulumi.BoolPtrOutput `pulumi:"createAsync"`
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
 	CreationType pulumi.StringOutput `pulumi:"creationType"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-	DataCollectionOptions DataGuardAssociationDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
+	DataCollectionOptions DataGuardAssociationDataCollectionOptionsPtrOutput `pulumi:"dataCollectionOptions"`
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 	//
 	// The password must contain no fewer than nine characters and include:
@@ -130,7 +129,7 @@ type DataGuardAssociation struct {
 	DbSystemFreeformTags        pulumi.MapOutput    `pulumi:"dbSystemFreeformTags"`
 	DeleteStandbyDbHomeOnDelete pulumi.StringOutput `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 	//
 	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
@@ -142,34 +141,34 @@ type DataGuardAssociation struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomains pulumi.StringArrayOutput `pulumi:"faultDomains"`
 	// The hostname for the DB node.
-	Hostname pulumi.StringOutput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrOutput `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrOutput `pulumi:"isActiveDataGuardEnabled"`
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
 	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrOutput `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
-	PeerDataGuardAssociationId pulumi.StringOutput `pulumi:"peerDataGuardAssociationId"`
+	PeerDataGuardAssociationId pulumi.StringPtrOutput `pulumi:"peerDataGuardAssociationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
-	PeerDatabaseId pulumi.StringOutput `pulumi:"peerDatabaseId"`
+	PeerDatabaseId pulumi.StringPtrOutput `pulumi:"peerDatabaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
-	PeerDbHomeId pulumi.StringOutput `pulumi:"peerDbHomeId"`
+	PeerDbHomeId pulumi.StringPtrOutput `pulumi:"peerDbHomeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
-	PeerDbSystemId pulumi.StringOutput `pulumi:"peerDbSystemId"`
+	PeerDbSystemId pulumi.StringPtrOutput `pulumi:"peerDbSystemId"`
 	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
 	PeerDbUniqueName pulumi.StringPtrOutput `pulumi:"peerDbUniqueName"`
 	// The role of the peer database in this Data Guard association.
-	PeerRole pulumi.StringOutput `pulumi:"peerRole"`
+	PeerRole pulumi.StringPtrOutput `pulumi:"peerRole"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	PeerSidPrefix pulumi.StringPtrOutput `pulumi:"peerSidPrefix"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
-	PeerVmClusterId pulumi.StringOutput `pulumi:"peerVmClusterId"`
+	PeerVmClusterId pulumi.StringPtrOutput `pulumi:"peerVmClusterId"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrOutput `pulumi:"privateIp"`
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -177,22 +176,22 @@ type DataGuardAssociation struct {
 	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
-	Role pulumi.StringOutput `pulumi:"role"`
+	Role pulumi.StringPtrOutput `pulumi:"role"`
 	// The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
 	//
 	// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// The current state of the Data Guard association.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
-	StorageVolumePerformanceMode pulumi.StringOutput `pulumi:"storageVolumePerformanceMode"`
+	StorageVolumePerformanceMode pulumi.StringPtrOutput `pulumi:"storageVolumePerformanceMode"`
 	// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrOutput `pulumi:"subnetId"`
 	// The date and time the Data Guard association was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrOutput `pulumi:"timeZone"`
 	// (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -731,12 +730,6 @@ func (i *DataGuardAssociation) ToDataGuardAssociationOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(DataGuardAssociationOutput)
 }
 
-func (i *DataGuardAssociation) ToOutput(ctx context.Context) pulumix.Output[*DataGuardAssociation] {
-	return pulumix.Output[*DataGuardAssociation]{
-		OutputState: i.ToDataGuardAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataGuardAssociationArrayInput is an input type that accepts DataGuardAssociationArray and DataGuardAssociationArrayOutput values.
 // You can construct a concrete instance of `DataGuardAssociationArrayInput` via:
 //
@@ -760,12 +753,6 @@ func (i DataGuardAssociationArray) ToDataGuardAssociationArrayOutput() DataGuard
 
 func (i DataGuardAssociationArray) ToDataGuardAssociationArrayOutputWithContext(ctx context.Context) DataGuardAssociationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataGuardAssociationArrayOutput)
-}
-
-func (i DataGuardAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataGuardAssociation] {
-	return pulumix.Output[[]*DataGuardAssociation]{
-		OutputState: i.ToDataGuardAssociationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataGuardAssociationMapInput is an input type that accepts DataGuardAssociationMap and DataGuardAssociationMapOutput values.
@@ -793,12 +780,6 @@ func (i DataGuardAssociationMap) ToDataGuardAssociationMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(DataGuardAssociationMapOutput)
 }
 
-func (i DataGuardAssociationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataGuardAssociation] {
-	return pulumix.Output[map[string]*DataGuardAssociation]{
-		OutputState: i.ToDataGuardAssociationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataGuardAssociationOutput struct{ *pulumi.OutputState }
 
 func (DataGuardAssociationOutput) ElementType() reflect.Type {
@@ -813,25 +794,19 @@ func (o DataGuardAssociationOutput) ToDataGuardAssociationOutputWithContext(ctx 
 	return o
 }
 
-func (o DataGuardAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[*DataGuardAssociation] {
-	return pulumix.Output[*DataGuardAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
-func (o DataGuardAssociationOutput) ApplyLag() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.ApplyLag }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) ApplyLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.ApplyLag }).(pulumi.StringPtrOutput)
 }
 
 // The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-func (o DataGuardAssociationOutput) ApplyRate() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.ApplyRate }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) ApplyRate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.ApplyRate }).(pulumi.StringPtrOutput)
 }
 
 // The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
-func (o DataGuardAssociationOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -840,8 +815,8 @@ func (o DataGuardAssociationOutput) BackupNetworkNsgIds() pulumi.StringArrayOutp
 }
 
 // The number of OCPU cores available for AMD-based virtual machine DB systems.
-func (o DataGuardAssociationOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o DataGuardAssociationOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.IntPtrOutput { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 func (o DataGuardAssociationOutput) CreateAsync() pulumi.BoolPtrOutput {
@@ -854,10 +829,10 @@ func (o DataGuardAssociationOutput) CreationType() pulumi.StringOutput {
 }
 
 // Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-func (o DataGuardAssociationOutput) DataCollectionOptions() DataGuardAssociationDataCollectionOptionsOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) DataGuardAssociationDataCollectionOptionsOutput {
+func (o DataGuardAssociationOutput) DataCollectionOptions() DataGuardAssociationDataCollectionOptionsPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) DataGuardAssociationDataCollectionOptionsPtrOutput {
 		return v.DataCollectionOptions
-	}).(DataGuardAssociationDataCollectionOptionsOutput)
+	}).(DataGuardAssociationDataCollectionOptionsPtrOutput)
 }
 
 // (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
@@ -908,8 +883,8 @@ func (o DataGuardAssociationOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringO
 }
 
 // The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
-func (o DataGuardAssociationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -926,8 +901,8 @@ func (o DataGuardAssociationOutput) FaultDomains() pulumi.StringArrayOutput {
 }
 
 // The hostname for the DB node.
-func (o DataGuardAssociationOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) True if active Data Guard is enabled.
@@ -941,8 +916,8 @@ func (o DataGuardAssociationOutput) LicenseModel() pulumi.StringPtrOutput {
 }
 
 // Additional information about the current lifecycleState, if available.
-func (o DataGuardAssociationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
@@ -957,23 +932,23 @@ func (o DataGuardAssociationOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
-func (o DataGuardAssociationOutput) PeerDataGuardAssociationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.PeerDataGuardAssociationId }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) PeerDataGuardAssociationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.PeerDataGuardAssociationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
-func (o DataGuardAssociationOutput) PeerDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.PeerDatabaseId }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) PeerDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.PeerDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
-func (o DataGuardAssociationOutput) PeerDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.PeerDbHomeId }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) PeerDbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.PeerDbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
-func (o DataGuardAssociationOutput) PeerDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.PeerDbSystemId }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) PeerDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.PeerDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
@@ -982,8 +957,8 @@ func (o DataGuardAssociationOutput) PeerDbUniqueName() pulumi.StringPtrOutput {
 }
 
 // The role of the peer database in this Data Guard association.
-func (o DataGuardAssociationOutput) PeerRole() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.PeerRole }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) PeerRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.PeerRole }).(pulumi.StringPtrOutput)
 }
 
 // Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -992,8 +967,8 @@ func (o DataGuardAssociationOutput) PeerSidPrefix() pulumi.StringPtrOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
-func (o DataGuardAssociationOutput) PeerVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.PeerVmClusterId }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) PeerVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.PeerVmClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
@@ -1009,38 +984,38 @@ func (o DataGuardAssociationOutput) ProtectionMode() pulumi.StringOutput {
 }
 
 // The role of the reporting database in this Data Guard association.
-func (o DataGuardAssociationOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
 //
 // To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
-func (o DataGuardAssociationOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Data Guard association.
-func (o DataGuardAssociationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
-func (o DataGuardAssociationOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.StorageVolumePerformanceMode }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) StorageVolumePerformanceMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.StorageVolumePerformanceMode }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 // * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 //
 // These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-func (o DataGuardAssociationOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Data Guard association was created.
-func (o DataGuardAssociationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DataGuardAssociationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -1077,12 +1052,6 @@ func (o DataGuardAssociationArrayOutput) ToDataGuardAssociationArrayOutputWithCo
 	return o
 }
 
-func (o DataGuardAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataGuardAssociation] {
-	return pulumix.Output[[]*DataGuardAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DataGuardAssociationArrayOutput) Index(i pulumi.IntInput) DataGuardAssociationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataGuardAssociation {
 		return vs[0].([]*DataGuardAssociation)[vs[1].(int)]
@@ -1101,12 +1070,6 @@ func (o DataGuardAssociationMapOutput) ToDataGuardAssociationMapOutput() DataGua
 
 func (o DataGuardAssociationMapOutput) ToDataGuardAssociationMapOutputWithContext(ctx context.Context) DataGuardAssociationMapOutput {
 	return o
-}
-
-func (o DataGuardAssociationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataGuardAssociation] {
-	return pulumix.Output[map[string]*DataGuardAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataGuardAssociationMapOutput) MapIndex(k pulumi.StringInput) DataGuardAssociationOutput {

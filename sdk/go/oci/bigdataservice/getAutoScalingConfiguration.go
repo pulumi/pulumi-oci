@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -62,26 +61,26 @@ type LookupAutoScalingConfigurationArgs struct {
 
 // A collection of values returned by getAutoScalingConfiguration.
 type LookupAutoScalingConfigurationResult struct {
-	AutoScalingConfigurationId string `pulumi:"autoScalingConfigurationId"`
-	BdsInstanceId              string `pulumi:"bdsInstanceId"`
-	ClusterAdminPassword       string `pulumi:"clusterAdminPassword"`
+	AutoScalingConfigurationId string  `pulumi:"autoScalingConfigurationId"`
+	BdsInstanceId              string  `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword       *string `pulumi:"clusterAdminPassword"`
 	// A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The unique identifier for the autoscale configuration.
-	Id        string `pulumi:"id"`
-	IsEnabled bool   `pulumi:"isEnabled"`
+	Id        *string `pulumi:"id"`
+	IsEnabled *bool   `pulumi:"isEnabled"`
 	// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
-	NodeType string `pulumi:"nodeType"`
+	NodeType *string `pulumi:"nodeType"`
 	// This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policies []GetAutoScalingConfigurationPolicy `pulumi:"policies"`
 	// Details of an autoscale policy.
 	PolicyDetails []GetAutoScalingConfigurationPolicyDetail `pulumi:"policyDetails"`
 	// The state of the autoscale configuration.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAutoScalingConfigurationOutput(ctx *pulumi.Context, args LookupAutoScalingConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupAutoScalingConfigurationResultOutput {
@@ -124,12 +123,6 @@ func (o LookupAutoScalingConfigurationResultOutput) ToLookupAutoScalingConfigura
 	return o
 }
 
-func (o LookupAutoScalingConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutoScalingConfigurationResult] {
-	return pulumix.Output[LookupAutoScalingConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAutoScalingConfigurationResultOutput) AutoScalingConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.AutoScalingConfigurationId }).(pulumi.StringOutput)
 }
@@ -138,27 +131,27 @@ func (o LookupAutoScalingConfigurationResultOutput) BdsInstanceId() pulumi.Strin
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
 
-func (o LookupAutoScalingConfigurationResultOutput) ClusterAdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.ClusterAdminPassword }).(pulumi.StringOutput)
+func (o LookupAutoScalingConfigurationResultOutput) ClusterAdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *string { return v.ClusterAdminPassword }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-func (o LookupAutoScalingConfigurationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAutoScalingConfigurationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the autoscale configuration.
-func (o LookupAutoScalingConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAutoScalingConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutoScalingConfigurationResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupAutoScalingConfigurationResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
-func (o LookupAutoScalingConfigurationResultOutput) NodeType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.NodeType }).(pulumi.StringOutput)
+func (o LookupAutoScalingConfigurationResultOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
 // This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
@@ -174,18 +167,18 @@ func (o LookupAutoScalingConfigurationResultOutput) PolicyDetails() GetAutoScali
 }
 
 // The state of the autoscale configuration.
-func (o LookupAutoScalingConfigurationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAutoScalingConfigurationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-func (o LookupAutoScalingConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAutoScalingConfigurationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
-func (o LookupAutoScalingConfigurationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAutoScalingConfigurationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

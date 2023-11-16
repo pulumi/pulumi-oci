@@ -74,7 +74,7 @@ namespace Pulumi.Oci.HealthChecks
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.HealthChecks
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A dictionary of HTTP request headers.
@@ -94,13 +94,13 @@ namespace Pulumi.Oci.HealthChecks
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
         [Output("headers")]
-        public Output<ImmutableDictionary<string, object>> Headers { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Headers { get; private set; } = null!;
 
         /// <summary>
         /// The region where updates must be made and where results must be fetched from.
         /// </summary>
         [Output("homeRegion")]
-        public Output<string> HomeRegion { get; private set; } = null!;
+        public Output<string?> HomeRegion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -112,25 +112,25 @@ namespace Pulumi.Oci.HealthChecks
         /// (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
         /// </summary>
         [Output("isEnabled")]
-        public Output<bool> IsEnabled { get; private set; } = null!;
+        public Output<bool?> IsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The supported HTTP methods available for probes.
         /// </summary>
         [Output("method")]
-        public Output<string> Method { get; private set; } = null!;
+        public Output<string?> Method { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The optional URL path to probe, including query parameters.
         /// </summary>
         [Output("path")]
-        public Output<string> Path { get; private set; } = null!;
+        public Output<string?> Path { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
         /// </summary>
         [Output("port")]
-        public Output<int> Port { get; private set; } = null!;
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The supported protocols available for HTTP probes.
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.HealthChecks
         /// A URL for fetching the probe results.
         /// </summary>
         [Output("resultsUrl")]
-        public Output<string> ResultsUrl { get; private set; } = null!;
+        public Output<string?> ResultsUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of targets (hostnames or IP addresses) of the probe.
@@ -154,13 +154,13 @@ namespace Pulumi.Oci.HealthChecks
         /// The RFC 3339-formatted creation date and time of the probe.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         /// </summary>
         [Output("timeoutInSeconds")]
-        public Output<int> TimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> TimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of names of vantage points from which to execute the probe.

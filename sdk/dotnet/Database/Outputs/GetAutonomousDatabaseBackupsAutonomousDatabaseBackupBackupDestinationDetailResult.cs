@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Proxy URL to connect to object store.
         /// </summary>
-        public readonly string InternetProxy;
+        public readonly string? InternetProxy;
         /// <summary>
         /// A filter to return only backups that matches with the given type of Backup.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         /// </summary>
-        public readonly string VpcPassword;
+        public readonly string? VpcPassword;
         /// <summary>
         /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         /// </summary>
-        public readonly string VpcUser;
+        public readonly string? VpcUser;
 
         [OutputConstructor]
         private GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult(
-            string id,
+            string? id,
 
-            string internetProxy,
+            string? internetProxy,
 
-            string type,
+            string? type,
 
-            string vpcPassword,
+            string? vpcPassword,
 
-            string vpcUser)
+            string? vpcUser)
         {
             Id = id;
             InternetProxy = internetProxy;

@@ -8,18 +8,20 @@ import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationPolicyRuleM
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyRuleMetric {
-    private String metricType;
-    private List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
+    private @Nullable String metricType;
+    private @Nullable List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
 
     private GetAutoScalingConfigurationPolicyRuleMetric() {}
-    public String metricType() {
-        return this.metricType;
+    public Optional<String> metricType() {
+        return Optional.ofNullable(this.metricType);
     }
     public List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds() {
-        return this.thresholds;
+        return this.thresholds == null ? List.of() : this.thresholds;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetAutoScalingConfigurationPolicyRuleMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String metricType;
-        private List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
+        private @Nullable String metricType;
+        private @Nullable List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyRuleMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetAutoScalingConfigurationPolicyRuleMetric {
         }
 
         @CustomType.Setter
-        public Builder metricType(String metricType) {
-            this.metricType = Objects.requireNonNull(metricType);
+        public Builder metricType(@Nullable String metricType) {
+            this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
-        public Builder thresholds(List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds) {
-            this.thresholds = Objects.requireNonNull(thresholds);
+        public Builder thresholds(@Nullable List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds) {
+            this.thresholds = thresholds;
             return this;
         }
         public Builder thresholds(GetAutoScalingConfigurationPolicyRuleMetricThreshold... thresholds) {

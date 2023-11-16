@@ -34,12 +34,12 @@ public final class GetGatewaysResult {
      * @return The list of gateway_collection.
      * 
      */
-    private List<GetGatewaysGatewayCollection> gatewayCollections;
+    private @Nullable List<GetGatewaysGatewayCollection> gatewayCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the gateway.
      * 
@@ -76,14 +76,14 @@ public final class GetGatewaysResult {
      * 
      */
     public List<GetGatewaysGatewayCollection> gatewayCollections() {
-        return this.gatewayCollections;
+        return this.gatewayCollections == null ? List.of() : this.gatewayCollections;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the gateway.
@@ -106,8 +106,8 @@ public final class GetGatewaysResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetGatewaysFilter> filters;
-        private List<GetGatewaysGatewayCollection> gatewayCollections;
-        private String id;
+        private @Nullable List<GetGatewaysGatewayCollection> gatewayCollections;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetGatewaysResult defaults) {
@@ -145,16 +145,16 @@ public final class GetGatewaysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder gatewayCollections(List<GetGatewaysGatewayCollection> gatewayCollections) {
-            this.gatewayCollections = Objects.requireNonNull(gatewayCollections);
+        public Builder gatewayCollections(@Nullable List<GetGatewaysGatewayCollection> gatewayCollections) {
+            this.gatewayCollections = gatewayCollections;
             return this;
         }
         public Builder gatewayCollections(GetGatewaysGatewayCollection... gatewayCollections) {
             return gatewayCollections(List.of(gatewayCollections));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

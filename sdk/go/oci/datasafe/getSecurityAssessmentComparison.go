@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
@@ -63,17 +62,17 @@ type GetSecurityAssessmentComparisonArgs struct {
 // A collection of values returned by getSecurityAssessmentComparison.
 type GetSecurityAssessmentComparisonResult struct {
 	// The OCID of the security assessment that is set as a baseline.
-	BaselineId                     string `pulumi:"baselineId"`
-	ComparisonSecurityAssessmentId string `pulumi:"comparisonSecurityAssessmentId"`
+	BaselineId                     *string `pulumi:"baselineId"`
+	ComparisonSecurityAssessmentId string  `pulumi:"comparisonSecurityAssessmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string `pulumi:"id"`
-	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
+	Id                   *string `pulumi:"id"`
+	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	// The current state of the security assessment comparison.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A target-based comparison between two security assessments.
 	Targets []GetSecurityAssessmentComparisonTarget `pulumi:"targets"`
 	// The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func GetSecurityAssessmentComparisonOutput(ctx *pulumi.Context, args GetSecurityAssessmentComparisonOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentComparisonResultOutput {
@@ -116,15 +115,9 @@ func (o GetSecurityAssessmentComparisonResultOutput) ToGetSecurityAssessmentComp
 	return o
 }
 
-func (o GetSecurityAssessmentComparisonResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonResult] {
-	return pulumix.Output[GetSecurityAssessmentComparisonResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the security assessment that is set as a baseline.
-func (o GetSecurityAssessmentComparisonResultOutput) BaselineId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) string { return v.BaselineId }).(pulumi.StringOutput)
+func (o GetSecurityAssessmentComparisonResultOutput) BaselineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) *string { return v.BaselineId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentComparisonResultOutput) ComparisonSecurityAssessmentId() pulumi.StringOutput {
@@ -132,8 +125,8 @@ func (o GetSecurityAssessmentComparisonResultOutput) ComparisonSecurityAssessmen
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityAssessmentComparisonResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityAssessmentComparisonResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentComparisonResultOutput) SecurityAssessmentId() pulumi.StringOutput {
@@ -141,8 +134,8 @@ func (o GetSecurityAssessmentComparisonResultOutput) SecurityAssessmentId() pulu
 }
 
 // The current state of the security assessment comparison.
-func (o GetSecurityAssessmentComparisonResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetSecurityAssessmentComparisonResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A target-based comparison between two security assessments.
@@ -153,8 +146,8 @@ func (o GetSecurityAssessmentComparisonResultOutput) Targets() GetSecurityAssess
 }
 
 // The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetSecurityAssessmentComparisonResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSecurityAssessmentComparisonResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

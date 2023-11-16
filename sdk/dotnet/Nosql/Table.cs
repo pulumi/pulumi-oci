@@ -73,37 +73,37 @@ namespace Pulumi.Oci.Nosql
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// True if table can be reclaimed after an idle period.
         /// </summary>
         [Output("isAutoReclaimable")]
-        public Output<bool> IsAutoReclaimable { get; private set; } = null!;
+        public Output<bool?> IsAutoReclaimable { get; private set; } = null!;
 
         /// <summary>
         /// True if this table is currently a member of a replication set.
         /// </summary>
         [Output("isMultiRegion")]
-        public Output<bool> IsMultiRegion { get; private set; } = null!;
+        public Output<bool?> IsMultiRegion { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
         /// </summary>
         [Output("localReplicaInitializationInPercent")]
-        public Output<int> LocalReplicaInitializationInPercent { get; private set; } = null!;
+        public Output<int?> LocalReplicaInitializationInPercent { get; private set; } = null!;
 
         /// <summary>
         /// Table name.
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Nosql
         /// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
         /// </summary>
         [Output("schemaState")]
-        public Output<string> SchemaState { get; private set; } = null!;
+        public Output<string?> SchemaState { get; private set; } = null!;
 
         /// <summary>
         /// The table schema information as a JSON object.
@@ -133,37 +133,37 @@ namespace Pulumi.Oci.Nosql
         /// The state of a table.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         /// </summary>
         [Output("tableLimits")]
-        public Output<Outputs.TableTableLimits> TableLimits { get; private set; } = null!;
+        public Output<Outputs.TableTableLimits?> TableLimits { get; private set; } = null!;
 
         /// <summary>
         /// The time the the table was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeOfExpiration")]
-        public Output<string> TimeOfExpiration { get; private set; } = null!;
+        public Output<string?> TimeOfExpiration { get; private set; } = null!;
 
         /// <summary>
         /// The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

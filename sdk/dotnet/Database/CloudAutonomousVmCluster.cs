@@ -93,37 +93,37 @@ namespace Pulumi.Oci.Database
         /// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
         /// </summary>
         [Output("autonomousDataStoragePercentage")]
-        public Output<double> AutonomousDataStoragePercentage { get; private set; } = null!;
+        public Output<double?> AutonomousDataStoragePercentage { get; private set; } = null!;
 
         /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Output("autonomousDataStorageSizeInTbs")]
-        public Output<double> AutonomousDataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> AutonomousDataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The name of the availability domain that the cloud Autonomous VM cluster is located in.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// The data disk group size available for Autonomous Databases, in TBs.
         /// </summary>
         [Output("availableAutonomousDataStorageSizeInTbs")]
-        public Output<double> AvailableAutonomousDataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> AvailableAutonomousDataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The number of Autonomous Container Databases that can be created with the currently available local storage.
         /// </summary>
         [Output("availableContainerDatabases")]
-        public Output<int> AvailableContainerDatabases { get; private set; } = null!;
+        public Output<int?> AvailableContainerDatabases { get; private set; } = null!;
 
         /// <summary>
         /// CPU cores available for allocation to Autonomous Databases.
         /// </summary>
         [Output("availableCpus")]
-        public Output<double> AvailableCpus { get; private set; } = null!;
+        public Output<double?> AvailableCpus { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Database
         /// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Output("clusterTimeZone")]
-        public Output<string> ClusterTimeZone { get; private set; } = null!;
+        public Output<string?> ClusterTimeZone { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -147,43 +147,43 @@ namespace Pulumi.Oci.Database
         /// The compute model of the Cloud Autonomous VM Cluster.
         /// </summary>
         [Output("computeModel")]
-        public Output<string> ComputeModel { get; private set; } = null!;
+        public Output<string?> ComputeModel { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores on the cloud Autonomous VM cluster.
         /// </summary>
         [Output("cpuCoreCount")]
-        public Output<int> CpuCoreCount { get; private set; } = null!;
+        public Output<int?> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores to be enabled per VM cluster node.
         /// </summary>
         [Output("cpuCoreCountPerNode")]
-        public Output<int> CpuCoreCountPerNode { get; private set; } = null!;
+        public Output<int?> CpuCoreCountPerNode { get; private set; } = null!;
 
         /// <summary>
         /// The percentage of total number of CPUs used in an Autonomous VM Cluster.
         /// </summary>
         [Output("cpuPercentage")]
-        public Output<double> CpuPercentage { get; private set; } = null!;
+        public Output<double?> CpuPercentage { get; private set; } = null!;
 
         /// <summary>
         /// The total data storage allocated, in gigabytes (GB).
         /// </summary>
         [Output("dataStorageSizeInGb")]
-        public Output<double> DataStorageSizeInGb { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// The total data storage allocated, in terabytes (TB).
         /// </summary>
         [Output("dataStorageSizeInTbs")]
-        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
         [Output("dbNodeStorageSizeInGbs")]
-        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The list of database servers.
@@ -195,13 +195,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User defined description of the cloud Autonomous VM cluster.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
@@ -213,37 +213,37 @@ namespace Pulumi.Oci.Database
         /// The domain name for the cloud Autonomous VM cluster.
         /// </summary>
         [Output("domain")]
-        public Output<string> Domain { get; private set; } = null!;
+        public Output<string?> Domain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The hostname for the cloud Autonomous VM cluster.
         /// </summary>
         [Output("hostname")]
-        public Output<string> Hostname { get; private set; } = null!;
+        public Output<string?> Hostname { get; private set; } = null!;
 
         /// <summary>
         /// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         /// </summary>
         [Output("isMtlsEnabledVmCluster")]
-        public Output<bool> IsMtlsEnabledVmCluster { get; private set; } = null!;
+        public Output<bool?> IsMtlsEnabledVmCluster { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         [Output("lastMaintenanceRunId")]
-        public Output<string> LastMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> LastMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
         /// </summary>
         [Output("lastUpdateHistoryEntryId")]
-        public Output<string> LastUpdateHistoryEntryId { get; private set; } = null!;
+        public Output<string?> LastUpdateHistoryEntryId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
@@ -251,13 +251,13 @@ namespace Pulumi.Oci.Database
         /// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
         /// </summary>
         [Output("licenseModel")]
-        public Output<string> LicenseModel { get; private set; } = null!;
+        public Output<string?> LicenseModel { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -275,31 +275,31 @@ namespace Pulumi.Oci.Database
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
-        public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
+        public Output<int?> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
-        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+        public Output<int?> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Output("nextMaintenanceRunId")]
-        public Output<string> NextMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> NextMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// The number of database servers in the cloud VM cluster.
         /// </summary>
         [Output("nodeCount")]
-        public Output<int> NodeCount { get; private set; } = null!;
+        public Output<int?> NodeCount { get; private set; } = null!;
 
         /// <summary>
         /// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
         [Output("nonProvisionableAutonomousContainerDatabases")]
-        public Output<int> NonProvisionableAutonomousContainerDatabases { get; private set; } = null!;
+        public Output<int?> NonProvisionableAutonomousContainerDatabases { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -312,25 +312,25 @@ namespace Pulumi.Oci.Database
         /// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         [Output("ocpuCount")]
-        public Output<double> OcpuCount { get; private set; } = null!;
+        public Output<double?> OcpuCount { get; private set; } = null!;
 
         /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
         [Output("provisionableAutonomousContainerDatabases")]
-        public Output<int> ProvisionableAutonomousContainerDatabases { get; private set; } = null!;
+        public Output<int?> ProvisionableAutonomousContainerDatabases { get; private set; } = null!;
 
         /// <summary>
         /// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
         [Output("provisionedAutonomousContainerDatabases")]
-        public Output<int> ProvisionedAutonomousContainerDatabases { get; private set; } = null!;
+        public Output<int?> ProvisionedAutonomousContainerDatabases { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous VM Cluster.
         /// </summary>
         [Output("provisionedCpus")]
-        public Output<double> ProvisionedCpus { get; private set; } = null!;
+        public Output<double?> ProvisionedCpus { get; private set; } = null!;
 
         /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -338,37 +338,37 @@ namespace Pulumi.Oci.Database
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         [Output("reclaimableCpus")]
-        public Output<double> ReclaimableCpus { get; private set; } = null!;
+        public Output<double?> ReclaimableCpus { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPUs reserved in an Autonomous VM Cluster.
         /// </summary>
         [Output("reservedCpus")]
-        public Output<double> ReservedCpus { get; private set; } = null!;
+        public Output<double?> ReservedCpus { get; private set; } = null!;
 
         /// <summary>
         /// The SCAN Listener Non TLS port. Default is 1521.
         /// </summary>
         [Output("scanListenerPortNonTls")]
-        public Output<int> ScanListenerPortNonTls { get; private set; } = null!;
+        public Output<int?> ScanListenerPortNonTls { get; private set; } = null!;
 
         /// <summary>
         /// The SCAN Listener TLS port. Default is 2484.
         /// </summary>
         [Output("scanListenerPortTls")]
-        public Output<int> ScanListenerPortTls { get; private set; } = null!;
+        public Output<int?> ScanListenerPortTls { get; private set; } = null!;
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the cloud Autonomous VM cluster.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -380,7 +380,7 @@ namespace Pulumi.Oci.Database
         /// The date and time that the cloud Autonomous VM cluster was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The last date and time that the cloud Autonomous VM cluster was updated.
@@ -392,7 +392,7 @@ namespace Pulumi.Oci.Database
         /// The total data disk group size for Autonomous Databases, in TBs.
         /// </summary>
         [Output("totalAutonomousDataStorageInTbs")]
-        public Output<double> TotalAutonomousDataStorageInTbs { get; private set; } = null!;
+        public Output<double?> TotalAutonomousDataStorageInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
@@ -401,13 +401,13 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("totalContainerDatabases")]
-        public Output<int> TotalContainerDatabases { get; private set; } = null!;
+        public Output<int?> TotalContainerDatabases { get; private set; } = null!;
 
         /// <summary>
         /// The total number of CPUs in an Autonomous VM Cluster.
         /// </summary>
         [Output("totalCpus")]
-        public Output<double> TotalCpus { get; private set; } = null!;
+        public Output<double?> TotalCpus { get; private set; } = null!;
 
 
         /// <summary>

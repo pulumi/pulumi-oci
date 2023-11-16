@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTasksFilt
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetManagedDatabaseAddmTasksResult {
      * @return The list of addm_tasks_collection.
      * 
      */
-    private List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections;
+    private @Nullable List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections;
     private @Nullable List<GetManagedDatabaseAddmTasksFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
@@ -38,7 +39,7 @@ public final class GetManagedDatabaseAddmTasksResult {
      * 
      */
     public List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections() {
-        return this.addmTasksCollections;
+        return this.addmTasksCollections == null ? List.of() : this.addmTasksCollections;
     }
     public List<GetManagedDatabaseAddmTasksFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -47,8 +48,8 @@ public final class GetManagedDatabaseAddmTasksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -73,9 +74,9 @@ public final class GetManagedDatabaseAddmTasksResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections;
+        private @Nullable List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections;
         private @Nullable List<GetManagedDatabaseAddmTasksFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private String timeEnd;
         private String timeStart;
@@ -91,8 +92,8 @@ public final class GetManagedDatabaseAddmTasksResult {
         }
 
         @CustomType.Setter
-        public Builder addmTasksCollections(List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections) {
-            this.addmTasksCollections = Objects.requireNonNull(addmTasksCollections);
+        public Builder addmTasksCollections(@Nullable List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections) {
+            this.addmTasksCollections = addmTasksCollections;
             return this;
         }
         public Builder addmTasksCollections(GetManagedDatabaseAddmTasksAddmTasksCollection... addmTasksCollections) {
@@ -107,8 +108,8 @@ public final class GetManagedDatabaseAddmTasksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

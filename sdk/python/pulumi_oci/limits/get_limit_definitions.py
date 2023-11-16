@@ -55,7 +55,7 @@ class GetLimitDefinitionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,26 +63,17 @@ class GetLimitDefinitionsResult:
 
     @property
     @pulumi.getter(name="limitDefinitions")
-    def limit_definitions(self) -> Sequence['outputs.GetLimitDefinitionsLimitDefinitionResult']:
-        """
-        The list of limit_definitions.
-        """
+    def limit_definitions(self) -> Optional[Sequence['outputs.GetLimitDefinitionsLimitDefinitionResult']]:
         return pulumi.get(self, "limit_definitions")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[str]:
-        """
-        The service name of the limit.
-        """
         return pulumi.get(self, "service_name")
 
 
@@ -106,27 +97,7 @@ def get_limit_definitions(compartment_id: Optional[str] = None,
                           service_name: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLimitDefinitionsResult:
     """
-    This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
-
-    Includes a list of resource limits that are currently supported.
-    If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-    compartment level.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=var["tenancy_ocid"],
-        name=var["limit_definition_name"],
-        service_name=oci_limits_service["test_service"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param str name: Optional field, filter for a specific resource limit.
-    :param str service_name: The target service name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -152,26 +123,6 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  service_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLimitDefinitionsResult]:
     """
-    This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
-
-    Includes a list of resource limits that are currently supported.
-    If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-    compartment level.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=var["tenancy_ocid"],
-        name=var["limit_definition_name"],
-        service_name=oci_limits_service["test_service"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param str name: Optional field, filter for a specific resource limit.
-    :param str service_name: The target service name.
+    Use this data source to access information about an existing resource.
     """
     ...

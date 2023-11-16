@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
@@ -14,12 +15,12 @@ public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
      */
-    private List<String> destinationAddresses;
+    private @Nullable List<String> destinationAddresses;
     /**
      * @return An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
-    private List<String> sourceAddresses;
+    private @Nullable List<String> sourceAddresses;
 
     private GetNetworkFirewallPolicyDecryptionRuleCondition() {}
     /**
@@ -27,14 +28,14 @@ public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
      * 
      */
     public List<String> destinationAddresses() {
-        return this.destinationAddresses;
+        return this.destinationAddresses == null ? List.of() : this.destinationAddresses;
     }
     /**
      * @return An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
     public List<String> sourceAddresses() {
-        return this.sourceAddresses;
+        return this.sourceAddresses == null ? List.of() : this.sourceAddresses;
     }
 
     public static Builder builder() {
@@ -46,8 +47,8 @@ public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> destinationAddresses;
-        private List<String> sourceAddresses;
+        private @Nullable List<String> destinationAddresses;
+        private @Nullable List<String> sourceAddresses;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +57,16 @@ public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
         }
 
         @CustomType.Setter
-        public Builder destinationAddresses(List<String> destinationAddresses) {
-            this.destinationAddresses = Objects.requireNonNull(destinationAddresses);
+        public Builder destinationAddresses(@Nullable List<String> destinationAddresses) {
+            this.destinationAddresses = destinationAddresses;
             return this;
         }
         public Builder destinationAddresses(String... destinationAddresses) {
             return destinationAddresses(List.of(destinationAddresses));
         }
         @CustomType.Setter
-        public Builder sourceAddresses(List<String> sourceAddresses) {
-            this.sourceAddresses = Objects.requireNonNull(sourceAddresses);
+        public Builder sourceAddresses(@Nullable List<String> sourceAddresses) {
+            this.sourceAddresses = sourceAddresses;
             return this;
         }
         public Builder sourceAddresses(String... sourceAddresses) {

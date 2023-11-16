@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -74,11 +73,11 @@ type Catalog struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The lifecycle state of the service catalog.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewCatalog registers a new resource with the given unique name, arguments, and options.
@@ -212,12 +211,6 @@ func (i *Catalog) ToCatalogOutputWithContext(ctx context.Context) CatalogOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogOutput)
 }
 
-func (i *Catalog) ToOutput(ctx context.Context) pulumix.Output[*Catalog] {
-	return pulumix.Output[*Catalog]{
-		OutputState: i.ToCatalogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CatalogArrayInput is an input type that accepts CatalogArray and CatalogArrayOutput values.
 // You can construct a concrete instance of `CatalogArrayInput` via:
 //
@@ -241,12 +234,6 @@ func (i CatalogArray) ToCatalogArrayOutput() CatalogArrayOutput {
 
 func (i CatalogArray) ToCatalogArrayOutputWithContext(ctx context.Context) CatalogArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogArrayOutput)
-}
-
-func (i CatalogArray) ToOutput(ctx context.Context) pulumix.Output[[]*Catalog] {
-	return pulumix.Output[[]*Catalog]{
-		OutputState: i.ToCatalogArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CatalogMapInput is an input type that accepts CatalogMap and CatalogMapOutput values.
@@ -274,12 +261,6 @@ func (i CatalogMap) ToCatalogMapOutputWithContext(ctx context.Context) CatalogMa
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogMapOutput)
 }
 
-func (i CatalogMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Catalog] {
-	return pulumix.Output[map[string]*Catalog]{
-		OutputState: i.ToCatalogMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CatalogOutput struct{ *pulumi.OutputState }
 
 func (CatalogOutput) ElementType() reflect.Type {
@@ -292,12 +273,6 @@ func (o CatalogOutput) ToCatalogOutput() CatalogOutput {
 
 func (o CatalogOutput) ToCatalogOutputWithContext(ctx context.Context) CatalogOutput {
 	return o
-}
-
-func (o CatalogOutput) ToOutput(ctx context.Context) pulumix.Output[*Catalog] {
-	return pulumix.Output[*Catalog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The unique identifier for the compartment where the service catalog will be created.
@@ -324,18 +299,18 @@ func (o CatalogOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The lifecycle state of the service catalog.
-func (o CatalogOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CatalogOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-func (o CatalogOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CatalogOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-func (o CatalogOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o CatalogOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type CatalogArrayOutput struct{ *pulumi.OutputState }
@@ -350,12 +325,6 @@ func (o CatalogArrayOutput) ToCatalogArrayOutput() CatalogArrayOutput {
 
 func (o CatalogArrayOutput) ToCatalogArrayOutputWithContext(ctx context.Context) CatalogArrayOutput {
 	return o
-}
-
-func (o CatalogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Catalog] {
-	return pulumix.Output[[]*Catalog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogArrayOutput) Index(i pulumi.IntInput) CatalogOutput {
@@ -376,12 +345,6 @@ func (o CatalogMapOutput) ToCatalogMapOutput() CatalogMapOutput {
 
 func (o CatalogMapOutput) ToCatalogMapOutputWithContext(ctx context.Context) CatalogMapOutput {
 	return o
-}
-
-func (o CatalogMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Catalog] {
-	return pulumix.Output[map[string]*Catalog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogMapOutput) MapIndex(k pulumi.StringInput) CatalogOutput {

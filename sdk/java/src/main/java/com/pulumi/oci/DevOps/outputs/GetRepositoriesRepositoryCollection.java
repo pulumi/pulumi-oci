@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetRepositoriesRepositoryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoriesRepositoryCollection {
-    private List<GetRepositoriesRepositoryCollectionItem> items;
+    private @Nullable List<GetRepositoriesRepositoryCollectionItem> items;
 
     private GetRepositoriesRepositoryCollection() {}
     public List<GetRepositoriesRepositoryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetRepositoriesRepositoryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRepositoriesRepositoryCollectionItem> items;
+        private @Nullable List<GetRepositoriesRepositoryCollectionItem> items;
         public Builder() {}
         public Builder(GetRepositoriesRepositoryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetRepositoriesRepositoryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRepositoriesRepositoryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRepositoriesRepositoryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRepositoriesRepositoryCollectionItem... items) {

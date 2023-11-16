@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -60,23 +59,23 @@ type LookupVirtualNodePoolArgs struct {
 // A collection of values returned by getVirtualNodePool.
 type LookupVirtualNodePoolResult struct {
 	// The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
-	ClusterId string `pulumi:"clusterId"`
+	ClusterId *string `pulumi:"clusterId"`
 	// Compartment of the virtual node pool.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Display name of the virtual node pool. This is a non-unique value.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the virtual node pool.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
 	InitialVirtualNodeLabels []GetVirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the Virtual Node Pool.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of network security group IDs applied to the Pod VNIC.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
@@ -84,18 +83,18 @@ type LookupVirtualNodePoolResult struct {
 	// The pod configuration for pods run on virtual nodes of this virtual node pool.
 	PodConfigurations []GetVirtualNodePoolPodConfiguration `pulumi:"podConfigurations"`
 	// The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
-	Size int `pulumi:"size"`
+	Size *int `pulumi:"size"`
 	// The state of the Virtual Node Pool.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints []GetVirtualNodePoolTaint `pulumi:"taints"`
 	// The time the virtual node pool was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
-	TimeUpdated       string `pulumi:"timeUpdated"`
-	VirtualNodePoolId string `pulumi:"virtualNodePoolId"`
+	TimeUpdated       *string `pulumi:"timeUpdated"`
+	VirtualNodePoolId string  `pulumi:"virtualNodePoolId"`
 	// The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags []GetVirtualNodePoolVirtualNodeTag `pulumi:"virtualNodeTags"`
 }
@@ -138,20 +137,14 @@ func (o LookupVirtualNodePoolResultOutput) ToLookupVirtualNodePoolResultOutputWi
 	return o
 }
 
-func (o LookupVirtualNodePoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVirtualNodePoolResult] {
-	return pulumix.Output[LookupVirtualNodePoolResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
-func (o LookupVirtualNodePoolResultOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.ClusterId }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
 // Compartment of the virtual node pool.
-func (o LookupVirtualNodePoolResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -160,8 +153,8 @@ func (o LookupVirtualNodePoolResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Display name of the virtual node pool. This is a non-unique value.
-func (o LookupVirtualNodePoolResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -170,8 +163,8 @@ func (o LookupVirtualNodePoolResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the virtual node pool.
-func (o LookupVirtualNodePoolResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
@@ -182,13 +175,13 @@ func (o LookupVirtualNodePoolResultOutput) InitialVirtualNodeLabels() GetVirtual
 }
 
 // The version of Kubernetes running on the nodes in the node pool.
-func (o LookupVirtualNodePoolResultOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the Virtual Node Pool.
-func (o LookupVirtualNodePoolResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // List of network security group IDs applied to the Pod VNIC.
@@ -209,13 +202,13 @@ func (o LookupVirtualNodePoolResultOutput) PodConfigurations() GetVirtualNodePoo
 }
 
 // The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
-func (o LookupVirtualNodePoolResultOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) int { return v.Size }).(pulumi.IntOutput)
+func (o LookupVirtualNodePoolResultOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
 // The state of the Virtual Node Pool.
-func (o LookupVirtualNodePoolResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -229,13 +222,13 @@ func (o LookupVirtualNodePoolResultOutput) Taints() GetVirtualNodePoolTaintArray
 }
 
 // The time the virtual node pool was created.
-func (o LookupVirtualNodePoolResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the virtual node pool was updated.
-func (o LookupVirtualNodePoolResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupVirtualNodePoolResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupVirtualNodePoolResultOutput) VirtualNodePoolId() pulumi.StringOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.ManagementDashboard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementDashboardsExportResult {
@@ -14,12 +16,12 @@ public final class GetManagementDashboardsExportResult {
      * @return String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `export_details` can be used to pass as `import_details` (CompartmentIds may have to be changed) in `oci.ManagementDashboard.ManagementDashboardsImport` resource.
      * 
      */
-    private String exportDetails;
+    private @Nullable String exportDetails;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetManagementDashboardsExportResult() {}
     public String exportDashboardId() {
@@ -29,15 +31,15 @@ public final class GetManagementDashboardsExportResult {
      * @return String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `export_details` can be used to pass as `import_details` (CompartmentIds may have to be changed) in `oci.ManagementDashboard.ManagementDashboardsImport` resource.
      * 
      */
-    public String exportDetails() {
-        return this.exportDetails;
+    public Optional<String> exportDetails() {
+        return Optional.ofNullable(this.exportDetails);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -50,8 +52,8 @@ public final class GetManagementDashboardsExportResult {
     @CustomType.Builder
     public static final class Builder {
         private String exportDashboardId;
-        private String exportDetails;
-        private String id;
+        private @Nullable String exportDetails;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetManagementDashboardsExportResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -66,13 +68,13 @@ public final class GetManagementDashboardsExportResult {
             return this;
         }
         @CustomType.Setter
-        public Builder exportDetails(String exportDetails) {
-            this.exportDetails = Objects.requireNonNull(exportDetails);
+        public Builder exportDetails(@Nullable String exportDetails) {
+            this.exportDetails = exportDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetManagementDashboardsExportResult build() {

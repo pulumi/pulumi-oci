@@ -20,13 +20,6 @@ class ExportSetArgs:
                  max_fs_stat_files: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExportSet resource.
-        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target that the export set is associated with
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        :param pulumi.Input[str] max_fs_stat_bytes: (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        :param pulumi.Input[str] max_fs_stat_files: (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "mount_target_id", mount_target_id)
         if display_name is not None:
@@ -39,9 +32,6 @@ class ExportSetArgs:
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the mount target that the export set is associated with
-        """
         return pulumi.get(self, "mount_target_id")
 
     @mount_target_id.setter
@@ -51,9 +41,6 @@ class ExportSetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -63,9 +50,6 @@ class ExportSetArgs:
     @property
     @pulumi.getter(name="maxFsStatBytes")
     def max_fs_stat_bytes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        """
         return pulumi.get(self, "max_fs_stat_bytes")
 
     @max_fs_stat_bytes.setter
@@ -75,12 +59,6 @@ class ExportSetArgs:
     @property
     @pulumi.getter(name="maxFsStatFiles")
     def max_fs_stat_files(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "max_fs_stat_files")
 
     @max_fs_stat_files.setter
@@ -102,18 +80,6 @@ class _ExportSetState:
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExportSet resources.
-        :param pulumi.Input[str] availability_domain: The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        :param pulumi.Input[str] max_fs_stat_bytes: (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        :param pulumi.Input[str] max_fs_stat_files: (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target that the export set is associated with
-        :param pulumi.Input[str] state: The current state of the export set.
-        :param pulumi.Input[str] time_created: The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -137,9 +103,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -149,9 +112,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -161,9 +121,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -173,9 +130,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="maxFsStatBytes")
     def max_fs_stat_bytes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        """
         return pulumi.get(self, "max_fs_stat_bytes")
 
     @max_fs_stat_bytes.setter
@@ -185,12 +139,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="maxFsStatFiles")
     def max_fs_stat_files(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "max_fs_stat_files")
 
     @max_fs_stat_files.setter
@@ -200,9 +148,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the mount target that the export set is associated with
-        """
         return pulumi.get(self, "mount_target_id")
 
     @mount_target_id.setter
@@ -212,9 +157,6 @@ class _ExportSetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the export set.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -224,9 +166,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -236,9 +175,6 @@ class _ExportSetState:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -257,36 +193,9 @@ class ExportSet(pulumi.CustomResource):
                  mount_target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_export_set = oci.file_storage.ExportSet("testExportSet",
-            mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-            display_name=var["export_set_name"],
-            max_fs_stat_bytes="23843202333",
-            max_fs_stat_files="223442")
-        ```
-
-        ## Import
-
-        ExportSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
-        ```
-
+        Create a ExportSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        :param pulumi.Input[str] max_fs_stat_bytes: (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        :param pulumi.Input[str] max_fs_stat_files: (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target that the export set is associated with
         """
         ...
     @overload
@@ -295,27 +204,7 @@ class ExportSet(pulumi.CustomResource):
                  args: ExportSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_export_set = oci.file_storage.ExportSet("testExportSet",
-            mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-            display_name=var["export_set_name"],
-            max_fs_stat_bytes="23843202333",
-            max_fs_stat_files="223442")
-        ```
-
-        ## Import
-
-        ExportSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
-        ```
-
+        Create a ExportSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExportSetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -381,18 +270,6 @@ class ExportSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        :param pulumi.Input[str] max_fs_stat_bytes: (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        :param pulumi.Input[str] max_fs_stat_files: (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target that the export set is associated with
-        :param pulumi.Input[str] state: The current state of the export set.
-        :param pulumi.Input[str] time_created: The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -411,76 +288,46 @@ class ExportSet(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="maxFsStatBytes")
-    def max_fs_stat_bytes(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-        """
+    def max_fs_stat_bytes(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "max_fs_stat_bytes")
 
     @property
     @pulumi.getter(name="maxFsStatFiles")
-    def max_fs_stat_files(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def max_fs_stat_files(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "max_fs_stat_files")
 
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the mount target that the export set is associated with
-        """
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the export set.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-        """
+    def vcn_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vcn_id")
 

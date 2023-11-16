@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked {
@@ -15,51 +17,51 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
-    private Boolean expired;
+    private @Nullable Boolean expired;
     /**
      * @return The date and time that the current resource was locked.
      * 
      */
-    private String lockDate;
+    private @Nullable String lockDate;
     /**
      * @return Indicates that the recovery is locked.
      * 
      */
-    private Boolean on;
+    private @Nullable Boolean on;
     /**
      * @return Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      */
-    private Integer reason;
+    private @Nullable Integer reason;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked() {}
     /**
      * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
-    public Boolean expired() {
-        return this.expired;
+    public Optional<Boolean> expired() {
+        return Optional.ofNullable(this.expired);
     }
     /**
      * @return The date and time that the current resource was locked.
      * 
      */
-    public String lockDate() {
-        return this.lockDate;
+    public Optional<String> lockDate() {
+        return Optional.ofNullable(this.lockDate);
     }
     /**
      * @return Indicates that the recovery is locked.
      * 
      */
-    public Boolean on() {
-        return this.on;
+    public Optional<Boolean> on() {
+        return Optional.ofNullable(this.on);
     }
     /**
      * @return Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      */
-    public Integer reason() {
-        return this.reason;
+    public Optional<Integer> reason() {
+        return Optional.ofNullable(this.reason);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean expired;
-        private String lockDate;
-        private Boolean on;
-        private Integer reason;
+        private @Nullable Boolean expired;
+        private @Nullable String lockDate;
+        private @Nullable Boolean on;
+        private @Nullable Integer reason;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder expired(Boolean expired) {
-            this.expired = Objects.requireNonNull(expired);
+        public Builder expired(@Nullable Boolean expired) {
+            this.expired = expired;
             return this;
         }
         @CustomType.Setter
-        public Builder lockDate(String lockDate) {
-            this.lockDate = Objects.requireNonNull(lockDate);
+        public Builder lockDate(@Nullable String lockDate) {
+            this.lockDate = lockDate;
             return this;
         }
         @CustomType.Setter
-        public Builder on(Boolean on) {
-            this.on = Objects.requireNonNull(on);
+        public Builder on(@Nullable Boolean on) {
+            this.on = on;
             return this;
         }
         @CustomType.Setter
-        public Builder reason(Integer reason) {
-            this.reason = Objects.requireNonNull(reason);
+        public Builder reason(@Nullable Integer reason) {
+            this.reason = reason;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked build() {

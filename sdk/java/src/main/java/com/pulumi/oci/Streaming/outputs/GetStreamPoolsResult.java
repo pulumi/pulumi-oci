@@ -39,7 +39,7 @@ public final class GetStreamPoolsResult {
      * @return The list of stream_pools.
      * 
      */
-    private List<GetStreamPoolsStreamPool> streamPools;
+    private @Nullable List<GetStreamPoolsStreamPool> streamPools;
 
     private GetStreamPoolsResult() {}
     /**
@@ -78,7 +78,7 @@ public final class GetStreamPoolsResult {
      * 
      */
     public List<GetStreamPoolsStreamPool> streamPools() {
-        return this.streamPools;
+        return this.streamPools == null ? List.of() : this.streamPools;
     }
 
     public static Builder builder() {
@@ -95,7 +95,7 @@ public final class GetStreamPoolsResult {
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetStreamPoolsStreamPool> streamPools;
+        private @Nullable List<GetStreamPoolsStreamPool> streamPools;
         public Builder() {}
         public Builder(GetStreamPoolsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -136,8 +136,8 @@ public final class GetStreamPoolsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder streamPools(List<GetStreamPoolsStreamPool> streamPools) {
-            this.streamPools = Objects.requireNonNull(streamPools);
+        public Builder streamPools(@Nullable List<GetStreamPoolsStreamPool> streamPools) {
+            this.streamPools = streamPools;
             return this;
         }
         public Builder streamPools(GetStreamPoolsStreamPool... streamPools) {

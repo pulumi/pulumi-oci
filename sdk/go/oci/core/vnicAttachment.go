@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -75,36 +74,36 @@ type VnicAttachment struct {
 	pulumi.CustomResourceState
 
 	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	CreateVnicDetails VnicAttachmentCreateVnicDetailsOutput `pulumi:"createVnicDetails"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The OCID of the instance.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	NicIndex pulumi.IntOutput `pulumi:"nicIndex"`
+	NicIndex pulumi.IntPtrOutput `pulumi:"nicIndex"`
 	// The current state of the VNIC attachment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
 	//
 	// If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrOutput `pulumi:"subnetId"`
 	// The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 	//
 	// Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-	VlanId pulumi.StringOutput `pulumi:"vlanId"`
+	VlanId pulumi.StringPtrOutput `pulumi:"vlanId"`
 	// The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
-	VlanTag pulumi.IntOutput `pulumi:"vlanTag"`
+	VlanTag pulumi.IntPtrOutput `pulumi:"vlanTag"`
 	// The OCID of the VNIC. Available after the attachment process is complete.
-	VnicId pulumi.StringOutput `pulumi:"vnicId"`
+	VnicId pulumi.StringPtrOutput `pulumi:"vnicId"`
 }
 
 // NewVnicAttachment registers a new resource with the given unique name, arguments, and options.
@@ -266,12 +265,6 @@ func (i *VnicAttachment) ToVnicAttachmentOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(VnicAttachmentOutput)
 }
 
-func (i *VnicAttachment) ToOutput(ctx context.Context) pulumix.Output[*VnicAttachment] {
-	return pulumix.Output[*VnicAttachment]{
-		OutputState: i.ToVnicAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VnicAttachmentArrayInput is an input type that accepts VnicAttachmentArray and VnicAttachmentArrayOutput values.
 // You can construct a concrete instance of `VnicAttachmentArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i VnicAttachmentArray) ToVnicAttachmentArrayOutput() VnicAttachmentArrayOu
 
 func (i VnicAttachmentArray) ToVnicAttachmentArrayOutputWithContext(ctx context.Context) VnicAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VnicAttachmentArrayOutput)
-}
-
-func (i VnicAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*VnicAttachment] {
-	return pulumix.Output[[]*VnicAttachment]{
-		OutputState: i.ToVnicAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VnicAttachmentMapInput is an input type that accepts VnicAttachmentMap and VnicAttachmentMapOutput values.
@@ -328,12 +315,6 @@ func (i VnicAttachmentMap) ToVnicAttachmentMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(VnicAttachmentMapOutput)
 }
 
-func (i VnicAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VnicAttachment] {
-	return pulumix.Output[map[string]*VnicAttachment]{
-		OutputState: i.ToVnicAttachmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VnicAttachmentOutput struct{ *pulumi.OutputState }
 
 func (VnicAttachmentOutput) ElementType() reflect.Type {
@@ -348,20 +329,14 @@ func (o VnicAttachmentOutput) ToVnicAttachmentOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o VnicAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*VnicAttachment] {
-	return pulumix.Output[*VnicAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-func (o VnicAttachmentOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-func (o VnicAttachmentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -370,8 +345,8 @@ func (o VnicAttachmentOutput) CreateVnicDetails() VnicAttachmentCreateVnicDetail
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VnicAttachmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance.
@@ -383,42 +358,42 @@ func (o VnicAttachmentOutput) InstanceId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VnicAttachmentOutput) NicIndex() pulumi.IntOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.IntOutput { return v.NicIndex }).(pulumi.IntOutput)
+func (o VnicAttachmentOutput) NicIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.IntPtrOutput { return v.NicIndex }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the VNIC attachment.
-func (o VnicAttachmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
 //
 // If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-func (o VnicAttachmentOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o VnicAttachmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 //
 // Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-func (o VnicAttachmentOutput) VlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.VlanId }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) VlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.VlanId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
-func (o VnicAttachmentOutput) VlanTag() pulumi.IntOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.IntOutput { return v.VlanTag }).(pulumi.IntOutput)
+func (o VnicAttachmentOutput) VlanTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.IntPtrOutput { return v.VlanTag }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the VNIC. Available after the attachment process is complete.
-func (o VnicAttachmentOutput) VnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VnicAttachment) pulumi.StringOutput { return v.VnicId }).(pulumi.StringOutput)
+func (o VnicAttachmentOutput) VnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VnicAttachment) pulumi.StringPtrOutput { return v.VnicId }).(pulumi.StringPtrOutput)
 }
 
 type VnicAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -433,12 +408,6 @@ func (o VnicAttachmentArrayOutput) ToVnicAttachmentArrayOutput() VnicAttachmentA
 
 func (o VnicAttachmentArrayOutput) ToVnicAttachmentArrayOutputWithContext(ctx context.Context) VnicAttachmentArrayOutput {
 	return o
-}
-
-func (o VnicAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VnicAttachment] {
-	return pulumix.Output[[]*VnicAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VnicAttachmentArrayOutput) Index(i pulumi.IntInput) VnicAttachmentOutput {
@@ -459,12 +428,6 @@ func (o VnicAttachmentMapOutput) ToVnicAttachmentMapOutput() VnicAttachmentMapOu
 
 func (o VnicAttachmentMapOutput) ToVnicAttachmentMapOutputWithContext(ctx context.Context) VnicAttachmentMapOutput {
 	return o
-}
-
-func (o VnicAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VnicAttachment] {
-	return pulumix.Output[map[string]*VnicAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VnicAttachmentMapOutput) MapIndex(k pulumi.StringInput) VnicAttachmentOutput {

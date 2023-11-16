@@ -16,15 +16,15 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// A Boolean that determines whether this rule is currently enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The name of the lifecycle rule to be applied.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
         /// </summary>
@@ -32,31 +32,31 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
         /// </summary>
-        public readonly string TimeAmount;
+        public readonly string? TimeAmount;
         /// <summary>
         /// The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
         /// </summary>
-        public readonly string TimeUnit;
+        public readonly string? TimeUnit;
 
         [OutputConstructor]
         private GetObjectLifecyclePolicyRuleResult(
-            string action,
+            string? action,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetObjectLifecyclePolicyRuleObjectNameFilterResult> objectNameFilters,
 
-            string target,
+            string? target,
 
-            string timeAmount,
+            string? timeAmount,
 
-            string timeUnit)
+            string? timeUnit)
         {
             Action = action;
             IsEnabled = isEnabled;

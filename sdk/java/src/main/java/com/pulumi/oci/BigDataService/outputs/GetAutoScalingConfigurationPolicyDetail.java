@@ -12,6 +12,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetail {
@@ -19,111 +21,111 @@ public final class GetAutoScalingConfigurationPolicyDetail {
      * @return The type of autoscaling action to take.
      * 
      */
-    private String actionType;
+    private @Nullable String actionType;
     /**
      * @return Type of autoscaling policy.
      * 
      */
-    private String policyType;
+    private @Nullable String policyType;
     /**
      * @return Configration for a metric based vertical scale-down policy.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs;
     /**
      * @return Configration for a metric based horizontal scale-in policy.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs;
     /**
      * @return Configration for a metric based horizontal scale-out policy.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs;
     /**
      * @return Configration for a metric based vertical scale-up policy.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs;
     /**
      * @return Details of a horizontal scaling schedule.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
     /**
      * @return The time zone of the execution schedule, in IANA time zone database name format
      * 
      */
-    private String timezone;
+    private @Nullable String timezone;
     /**
      * @return The type of autoscaling trigger.
      * 
      */
-    private String triggerType;
+    private @Nullable String triggerType;
 
     private GetAutoScalingConfigurationPolicyDetail() {}
     /**
      * @return The type of autoscaling action to take.
      * 
      */
-    public String actionType() {
-        return this.actionType;
+    public Optional<String> actionType() {
+        return Optional.ofNullable(this.actionType);
     }
     /**
      * @return Type of autoscaling policy.
      * 
      */
-    public String policyType() {
-        return this.policyType;
+    public Optional<String> policyType() {
+        return Optional.ofNullable(this.policyType);
     }
     /**
      * @return Configration for a metric based vertical scale-down policy.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs() {
-        return this.scaleDownConfigs;
+        return this.scaleDownConfigs == null ? List.of() : this.scaleDownConfigs;
     }
     /**
      * @return Configration for a metric based horizontal scale-in policy.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs() {
-        return this.scaleInConfigs;
+        return this.scaleInConfigs == null ? List.of() : this.scaleInConfigs;
     }
     /**
      * @return Configration for a metric based horizontal scale-out policy.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs() {
-        return this.scaleOutConfigs;
+        return this.scaleOutConfigs == null ? List.of() : this.scaleOutConfigs;
     }
     /**
      * @return Configration for a metric based vertical scale-up policy.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs() {
-        return this.scaleUpConfigs;
+        return this.scaleUpConfigs == null ? List.of() : this.scaleUpConfigs;
     }
     /**
      * @return Details of a horizontal scaling schedule.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails() {
-        return this.scheduleDetails;
+        return this.scheduleDetails == null ? List.of() : this.scheduleDetails;
     }
     /**
      * @return The time zone of the execution schedule, in IANA time zone database name format
      * 
      */
-    public String timezone() {
-        return this.timezone;
+    public Optional<String> timezone() {
+        return Optional.ofNullable(this.timezone);
     }
     /**
      * @return The type of autoscaling trigger.
      * 
      */
-    public String triggerType() {
-        return this.triggerType;
+    public Optional<String> triggerType() {
+        return Optional.ofNullable(this.triggerType);
     }
 
     public static Builder builder() {
@@ -135,15 +137,15 @@ public final class GetAutoScalingConfigurationPolicyDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String actionType;
-        private String policyType;
-        private List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs;
-        private List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs;
-        private List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs;
-        private List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs;
-        private List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
-        private String timezone;
-        private String triggerType;
+        private @Nullable String actionType;
+        private @Nullable String policyType;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
+        private @Nullable String timezone;
+        private @Nullable String triggerType;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -159,63 +161,63 @@ public final class GetAutoScalingConfigurationPolicyDetail {
         }
 
         @CustomType.Setter
-        public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+        public Builder actionType(@Nullable String actionType) {
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
-        public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+        public Builder policyType(@Nullable String policyType) {
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
-        public Builder scaleDownConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs) {
-            this.scaleDownConfigs = Objects.requireNonNull(scaleDownConfigs);
+        public Builder scaleDownConfigs(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs) {
+            this.scaleDownConfigs = scaleDownConfigs;
             return this;
         }
         public Builder scaleDownConfigs(GetAutoScalingConfigurationPolicyDetailScaleDownConfig... scaleDownConfigs) {
             return scaleDownConfigs(List.of(scaleDownConfigs));
         }
         @CustomType.Setter
-        public Builder scaleInConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs) {
-            this.scaleInConfigs = Objects.requireNonNull(scaleInConfigs);
+        public Builder scaleInConfigs(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs) {
+            this.scaleInConfigs = scaleInConfigs;
             return this;
         }
         public Builder scaleInConfigs(GetAutoScalingConfigurationPolicyDetailScaleInConfig... scaleInConfigs) {
             return scaleInConfigs(List.of(scaleInConfigs));
         }
         @CustomType.Setter
-        public Builder scaleOutConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs) {
-            this.scaleOutConfigs = Objects.requireNonNull(scaleOutConfigs);
+        public Builder scaleOutConfigs(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs) {
+            this.scaleOutConfigs = scaleOutConfigs;
             return this;
         }
         public Builder scaleOutConfigs(GetAutoScalingConfigurationPolicyDetailScaleOutConfig... scaleOutConfigs) {
             return scaleOutConfigs(List.of(scaleOutConfigs));
         }
         @CustomType.Setter
-        public Builder scaleUpConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs) {
-            this.scaleUpConfigs = Objects.requireNonNull(scaleUpConfigs);
+        public Builder scaleUpConfigs(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs) {
+            this.scaleUpConfigs = scaleUpConfigs;
             return this;
         }
         public Builder scaleUpConfigs(GetAutoScalingConfigurationPolicyDetailScaleUpConfig... scaleUpConfigs) {
             return scaleUpConfigs(List.of(scaleUpConfigs));
         }
         @CustomType.Setter
-        public Builder scheduleDetails(List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails) {
-            this.scheduleDetails = Objects.requireNonNull(scheduleDetails);
+        public Builder scheduleDetails(@Nullable List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails) {
+            this.scheduleDetails = scheduleDetails;
             return this;
         }
         public Builder scheduleDetails(GetAutoScalingConfigurationPolicyDetailScheduleDetail... scheduleDetails) {
             return scheduleDetails(List.of(scheduleDetails));
         }
         @CustomType.Setter
-        public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+        public Builder timezone(@Nullable String timezone) {
+            this.timezone = timezone;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerType(String triggerType) {
-            this.triggerType = Objects.requireNonNull(triggerType);
+        public Builder triggerType(@Nullable String triggerType) {
+            this.triggerType = triggerType;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetail build() {

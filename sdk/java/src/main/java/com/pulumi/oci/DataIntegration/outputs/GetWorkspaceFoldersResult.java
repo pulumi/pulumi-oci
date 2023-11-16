@@ -25,12 +25,12 @@ public final class GetWorkspaceFoldersResult {
      * @return The list of folder_summary_collection.
      * 
      */
-    private List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections;
+    private @Nullable List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The identifier of the aggregator.
      * 
@@ -63,14 +63,14 @@ public final class GetWorkspaceFoldersResult {
      * 
      */
     public List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections() {
-        return this.folderSummaryCollections;
+        return this.folderSummaryCollections == null ? List.of() : this.folderSummaryCollections;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The identifier of the aggregator.
@@ -105,8 +105,8 @@ public final class GetWorkspaceFoldersResult {
         private @Nullable String aggregatorKey;
         private @Nullable List<String> fields;
         private @Nullable List<GetWorkspaceFoldersFilter> filters;
-        private List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections;
-        private String id;
+        private @Nullable List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections;
+        private @Nullable String id;
         private @Nullable List<String> identifiers;
         private @Nullable String name;
         private @Nullable String nameContains;
@@ -147,16 +147,16 @@ public final class GetWorkspaceFoldersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder folderSummaryCollections(List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections) {
-            this.folderSummaryCollections = Objects.requireNonNull(folderSummaryCollections);
+        public Builder folderSummaryCollections(@Nullable List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections) {
+            this.folderSummaryCollections = folderSummaryCollections;
             return this;
         }
         public Builder folderSummaryCollections(GetWorkspaceFoldersFolderSummaryCollection... folderSummaryCollections) {
             return folderSummaryCollections(List.of(folderSummaryCollections));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

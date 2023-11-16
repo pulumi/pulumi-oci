@@ -46,9 +46,6 @@ class GetProfilesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetProfilesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +64,16 @@ class GetProfilesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name assigned to the profile. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="profileCollections")
-    def profile_collections(self) -> Sequence['outputs.GetProfilesProfileCollectionResult']:
-        """
-        The list of profile_collection.
-        """
+    def profile_collections(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionResult']]:
         return pulumi.get(self, "profile_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The profile's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_profiles(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProfilesResult:
     """
-    This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the existing profiles.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=var["compartment_id"],
-        name=var["profile_name"],
-        state=var["profile_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfilesResult]:
     """
-    This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the existing profiles.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=var["compartment_id"],
-        name=var["profile_name"],
-        state=var["profile_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
+    Use this data source to access information about an existing resource.
     """
     ...

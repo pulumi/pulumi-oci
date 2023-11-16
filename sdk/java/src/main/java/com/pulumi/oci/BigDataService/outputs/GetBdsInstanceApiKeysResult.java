@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceApiKeysResult {
-    private List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
+    private @Nullable List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
     private String bdsInstanceId;
     private @Nullable String displayName;
     private @Nullable List<GetBdsInstanceApiKeysFilter> filters;
@@ -22,7 +22,7 @@ public final class GetBdsInstanceApiKeysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current status of the API key.
      * 
@@ -36,7 +36,7 @@ public final class GetBdsInstanceApiKeysResult {
 
     private GetBdsInstanceApiKeysResult() {}
     public List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys() {
-        return this.bdsApiKeys;
+        return this.bdsApiKeys == null ? List.of() : this.bdsApiKeys;
     }
     public String bdsInstanceId() {
         return this.bdsInstanceId;
@@ -51,8 +51,8 @@ public final class GetBdsInstanceApiKeysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current status of the API key.
@@ -78,11 +78,11 @@ public final class GetBdsInstanceApiKeysResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
+        private @Nullable List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
         private String bdsInstanceId;
         private @Nullable String displayName;
         private @Nullable List<GetBdsInstanceApiKeysFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String userId;
         public Builder() {}
@@ -98,8 +98,8 @@ public final class GetBdsInstanceApiKeysResult {
         }
 
         @CustomType.Setter
-        public Builder bdsApiKeys(List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys) {
-            this.bdsApiKeys = Objects.requireNonNull(bdsApiKeys);
+        public Builder bdsApiKeys(@Nullable List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys) {
+            this.bdsApiKeys = bdsApiKeys;
             return this;
         }
         public Builder bdsApiKeys(GetBdsInstanceApiKeysBdsApiKey... bdsApiKeys) {
@@ -124,8 +124,8 @@ public final class GetBdsInstanceApiKeysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

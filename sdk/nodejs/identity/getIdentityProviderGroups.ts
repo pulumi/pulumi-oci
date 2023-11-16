@@ -64,11 +64,11 @@ export interface GetIdentityProviderGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of identity_provider_groups.
      */
-    readonly identityProviderGroups: outputs.Identity.GetIdentityProviderGroupsIdentityProviderGroup[];
+    readonly identityProviderGroups?: outputs.Identity.GetIdentityProviderGroupsIdentityProviderGroup[];
     /**
      * The OCID of the `IdentityProvider` this group belongs to.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -67,30 +66,30 @@ type GetDatabasePdbConversionHistoryEntryResult struct {
 	// * Use `CONVERT` to convert a non-container database into a pluggable database.
 	// * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
 	// * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Additional container database parameter.
-	AdditionalCdbParams string `pulumi:"additionalCdbParams"`
+	AdditionalCdbParams *string `pulumi:"additionalCdbParams"`
 	// The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
-	CdbName    string `pulumi:"cdbName"`
-	DatabaseId string `pulumi:"databaseId"`
+	CdbName    *string `pulumi:"cdbName"`
+	DatabaseId string  `pulumi:"databaseId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state for the conversion operation.
-	LifecycleDetails            string `pulumi:"lifecycleDetails"`
-	PdbConversionHistoryEntryId string `pulumi:"pdbConversionHistoryEntryId"`
+	LifecycleDetails            *string `pulumi:"lifecycleDetails"`
+	PdbConversionHistoryEntryId string  `pulumi:"pdbConversionHistoryEntryId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-	SourceDatabaseId string `pulumi:"sourceDatabaseId"`
+	SourceDatabaseId *string `pulumi:"sourceDatabaseId"`
 	// Status of an operation performed during the conversion of a non-container database to a pluggable database.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
 	// * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-	TargetDatabaseId string `pulumi:"targetDatabaseId"`
+	TargetDatabaseId *string `pulumi:"targetDatabaseId"`
 	// The date and time when the database conversion operation ended.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time when the database conversion operation started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 func GetDatabasePdbConversionHistoryEntryOutput(ctx *pulumi.Context, args GetDatabasePdbConversionHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetDatabasePdbConversionHistoryEntryResultOutput {
@@ -133,29 +132,23 @@ func (o GetDatabasePdbConversionHistoryEntryResultOutput) ToGetDatabasePdbConver
 	return o
 }
 
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabasePdbConversionHistoryEntryResult] {
-	return pulumix.Output[GetDatabasePdbConversionHistoryEntryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operations used to convert a non-container database to a pluggable database.
 // * Use `PRECHECK` to run a pre-check operation on non-container database prior to converting it into a pluggable database.
 // * Use `CONVERT` to convert a non-container database into a pluggable database.
 // * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
 // * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.Action }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Additional container database parameter.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) AdditionalCdbParams() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.AdditionalCdbParams }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) AdditionalCdbParams() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.AdditionalCdbParams }).(pulumi.StringPtrOutput)
 }
 
 // The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) CdbName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.CdbName }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) CdbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.CdbName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatabasePdbConversionHistoryEntryResultOutput) DatabaseId() pulumi.StringOutput {
@@ -163,13 +156,13 @@ func (o GetDatabasePdbConversionHistoryEntryResultOutput) DatabaseId() pulumi.St
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state for the conversion operation.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatabasePdbConversionHistoryEntryResultOutput) PdbConversionHistoryEntryId() pulumi.StringOutput {
@@ -177,34 +170,34 @@ func (o GetDatabasePdbConversionHistoryEntryResultOutput) PdbConversionHistoryEn
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) SourceDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.SourceDatabaseId }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) SourceDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.SourceDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Status of an operation performed during the conversion of a non-container database to a pluggable database.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
 // * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.Target }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) TargetDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.TargetDatabaseId }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) TargetDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.TargetDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the database conversion operation ended.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the database conversion operation started.
-func (o GetDatabasePdbConversionHistoryEntryResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntryResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

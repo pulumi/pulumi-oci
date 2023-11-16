@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetCostTrackingTagsTag;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,12 +24,12 @@ public final class GetCostTrackingTagsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of tags.
      * 
      */
-    private List<GetCostTrackingTagsTag> tags;
+    private @Nullable List<GetCostTrackingTagsTag> tags;
 
     private GetCostTrackingTagsResult() {}
     /**
@@ -45,15 +46,15 @@ public final class GetCostTrackingTagsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of tags.
      * 
      */
     public List<GetCostTrackingTagsTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
 
     public static Builder builder() {
@@ -67,8 +68,8 @@ public final class GetCostTrackingTagsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetCostTrackingTagsFilter> filters;
-        private String id;
-        private List<GetCostTrackingTagsTag> tags;
+        private @Nullable String id;
+        private @Nullable List<GetCostTrackingTagsTag> tags;
         public Builder() {}
         public Builder(GetCostTrackingTagsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,13 +93,13 @@ public final class GetCostTrackingTagsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetCostTrackingTagsTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetCostTrackingTagsTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetCostTrackingTagsTag... tags) {

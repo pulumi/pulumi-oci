@@ -124,11 +124,11 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
         /// </summary>
-        public readonly string ApplyLag;
+        public readonly string? ApplyLag;
         /// <summary>
         /// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         /// </summary>
-        public readonly string ApplyRate;
+        public readonly string? ApplyRate;
         public readonly string AutonomousDatabaseDataguardAssociationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
@@ -137,73 +137,73 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
         /// </summary>
-        public readonly string PeerAutonomousDatabaseId;
+        public readonly string? PeerAutonomousDatabaseId;
         /// <summary>
         /// The current state of the Autonomous Dataguard.
         /// </summary>
-        public readonly string PeerAutonomousDatabaseLifeCycleState;
+        public readonly string? PeerAutonomousDatabaseLifeCycleState;
         /// <summary>
         /// The role of the Autonomous Dataguard enabled Autonomous Container Database.
         /// </summary>
-        public readonly string PeerRole;
+        public readonly string? PeerRole;
         /// <summary>
         /// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
-        public readonly string ProtectionMode;
+        public readonly string? ProtectionMode;
         /// <summary>
         /// The role of the Autonomous Dataguard enabled Autonomous Container Database.
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
         /// <summary>
         /// The current state of the Autonomous Dataguard.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the Data Guard association was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time when the last role change action happened.
         /// </summary>
-        public readonly string TimeLastRoleChanged;
+        public readonly string? TimeLastRoleChanged;
 
         [OutputConstructor]
         private GetAutonomousDatabaseDataguardAssociationResult(
-            string applyLag,
+            string? applyLag,
 
-            string applyRate,
+            string? applyRate,
 
             string autonomousDatabaseDataguardAssociationId,
 
             string autonomousDatabaseId,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string peerAutonomousDatabaseId,
+            string? peerAutonomousDatabaseId,
 
-            string peerAutonomousDatabaseLifeCycleState,
+            string? peerAutonomousDatabaseLifeCycleState,
 
-            string peerRole,
+            string? peerRole,
 
-            string protectionMode,
+            string? protectionMode,
 
-            string role,
+            string? role,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastRoleChanged)
+            string? timeLastRoleChanged)
         {
             ApplyLag = applyLag;
             ApplyRate = applyRate;

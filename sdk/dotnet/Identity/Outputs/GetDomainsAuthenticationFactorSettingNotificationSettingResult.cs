@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
         /// </summary>
-        public readonly bool PullEnabled;
+        public readonly bool? PullEnabled;
 
         [OutputConstructor]
-        private GetDomainsAuthenticationFactorSettingNotificationSettingResult(bool pullEnabled)
+        private GetDomainsAuthenticationFactorSettingNotificationSettingResult(bool? pullEnabled)
         {
             PullEnabled = pullEnabled;
         }

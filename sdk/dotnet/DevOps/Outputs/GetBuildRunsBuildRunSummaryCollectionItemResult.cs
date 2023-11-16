@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Specifies list of arguments passed along with the build run.
         /// </summary>
-        public readonly Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult BuildRunArguments;
+        public readonly Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult? BuildRunArguments;
         public readonly ImmutableArray<Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryResult> BuildRunProgressSummaries;
         /// <summary>
         /// The source from which the build run is triggered.
@@ -29,23 +29,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Commit details that need to be used for the build run.
         /// </summary>
-        public readonly Outputs.GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult CommitInfo;
+        public readonly Outputs.GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult? CommitInfo;
         /// <summary>
         /// The OCID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier or OCID for listing a single resource by ID.
         /// </summary>
@@ -53,61 +53,61 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// unique project identifier
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// A filter to return only build runs that matches the given lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetBuildRunsBuildRunSummaryCollectionItemResult(
             string buildPipelineId,
 
-            Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult buildRunArguments,
+            Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult? buildRunArguments,
 
             ImmutableArray<Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryResult> buildRunProgressSummaries,
 
             ImmutableArray<Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceResult> buildRunSources,
 
-            Outputs.GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult commitInfo,
+            Outputs.GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult? commitInfo,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             string id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string projectId,
+            string? projectId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             BuildPipelineId = buildPipelineId;
             BuildRunArguments = buildRunArguments;

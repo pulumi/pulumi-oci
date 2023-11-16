@@ -16,67 +16,67 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the protected database.
         /// </summary>
-        public readonly string DatabaseId;
+        public readonly string? DatabaseId;
         /// <summary>
         /// The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         /// </summary>
-        public readonly string DatabaseSize;
+        public readonly string? DatabaseSize;
         /// <summary>
         /// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
         /// </summary>
-        public readonly string DbUniqueName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Indicates the protection status of the database. Allowed values are:
         /// * HEALTHY
         /// * WARNING
         /// * ALERT
         /// </summary>
-        public readonly string Health;
+        public readonly string? Health;
         /// <summary>
         /// A message describing the current health of the protected database.
         /// </summary>
-        public readonly string HealthDetails;
+        public readonly string? HealthDetails;
         /// <summary>
         /// The protected database OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the protected database is created by Recovery Service or created manually. Set to &lt;b&gt;TRUE&lt;/b&gt; for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to &lt;b&gt;FALSE&lt;/b&gt; for a user-defined protected database.
         /// </summary>
-        public readonly bool IsReadOnlyResource;
+        public readonly bool? IsReadOnlyResource;
         /// <summary>
         /// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
         /// </summary>
-        public readonly bool IsRedoLogsShipped;
+        public readonly bool? IsRedoLogsShipped;
         /// <summary>
         /// Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Backup performance and storage utilization metrics for the protected database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult> Metrics;
-        public readonly string Password;
+        public readonly string? Password;
         /// <summary>
         /// The protection policy OCID.
         /// </summary>
-        public readonly string ProtectionPolicyId;
+        public readonly string? ProtectionPolicyId;
         /// <summary>
         /// List of recovery service subnet resources associated with the protected database.
         /// </summary>
@@ -84,69 +84,69 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// <summary>
         /// A filter to return only the resources that match the specified lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
         /// </summary>
-        public readonly string VpcUserName;
+        public readonly string? VpcUserName;
 
         [OutputConstructor]
         private GetProtectedDatabasesProtectedDatabaseCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseId,
+            string? databaseId,
 
-            string databaseSize,
+            string? databaseSize,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string health,
+            string? health,
 
-            string healthDetails,
+            string? healthDetails,
 
-            string id,
+            string? id,
 
-            bool isReadOnlyResource,
+            bool? isReadOnlyResource,
 
-            bool isRedoLogsShipped,
+            bool? isRedoLogsShipped,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult> metrics,
 
-            string password,
+            string? password,
 
-            string protectionPolicyId,
+            string? protectionPolicyId,
 
             ImmutableArray<Outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult> recoveryServiceSubnets,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string vpcUserName)
+            string? vpcUserName)
         {
             CompartmentId = compartmentId;
             DatabaseId = databaseId;

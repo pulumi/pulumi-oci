@@ -152,23 +152,23 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The name of the Managed Database.
         /// </summary>
-        public readonly string DatabaseName;
+        public readonly string? DatabaseName;
         /// <summary>
         /// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         /// </summary>
-        public readonly string DatabaseSubType;
+        public readonly string? DatabaseSubType;
         /// <summary>
         /// The type of Oracle Database installation.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// The Oracle Database version.
         /// </summary>
-        public readonly string DatabaseVersion;
+        public readonly string? DatabaseVersion;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsAllowedValuesIncluded;
         /// <summary>
         /// An array of DatabaseParameterSummary objects.
@@ -183,15 +183,15 @@ namespace Pulumi.Oci.DatabaseManagement
 
         [OutputConstructor]
         private GetManagedDatabasesDatabaseParameterResult(
-            string databaseName,
+            string? databaseName,
 
-            string databaseSubType,
+            string? databaseSubType,
 
-            string databaseType,
+            string? databaseType,
 
-            string databaseVersion,
+            string? databaseVersion,
 
-            string id,
+            string? id,
 
             bool? isAllowedValuesIncluded,
 

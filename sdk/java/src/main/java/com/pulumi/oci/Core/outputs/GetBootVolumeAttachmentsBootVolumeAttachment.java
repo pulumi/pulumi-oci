@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBootVolumeAttachmentsBootVolumeAttachment {
@@ -14,7 +16,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the boot volume.
      * 
@@ -24,22 +26,22 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      * 
      */
-    private String encryptionInTransitType;
+    private @Nullable String encryptionInTransitType;
     /**
      * @return The OCID of the boot volume attachment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the instance.
      * 
@@ -49,25 +51,25 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      * @return Whether in-transit encryption for the boot volume&#39;s paravirtualized attachment is enabled or not.
      * 
      */
-    private Boolean isPvEncryptionInTransitEnabled;
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return The current state of the boot volume attachment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetBootVolumeAttachmentsBootVolumeAttachment() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The OCID of the boot volume.
@@ -80,29 +82,29 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      * 
      */
-    public String encryptionInTransitType() {
-        return this.encryptionInTransitType;
+    public Optional<String> encryptionInTransitType() {
+        return Optional.ofNullable(this.encryptionInTransitType);
     }
     /**
      * @return The OCID of the boot volume attachment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the instance.
@@ -115,22 +117,22 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      * @return Whether in-transit encryption for the boot volume&#39;s paravirtualized attachment is enabled or not.
      * 
      */
-    public Boolean isPvEncryptionInTransitEnabled() {
-        return this.isPvEncryptionInTransitEnabled;
+    public Optional<Boolean> isPvEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
     }
     /**
      * @return The current state of the boot volume attachment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
+        private @Nullable String availabilityDomain;
         private String bootVolumeId;
-        private String compartmentId;
-        private String displayName;
-        private String encryptionInTransitType;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable String displayName;
+        private @Nullable String encryptionInTransitType;
+        private @Nullable String id;
         private String instanceId;
-        private Boolean isPvEncryptionInTransitEnabled;
-        private String state;
-        private String timeCreated;
+        private @Nullable Boolean isPvEncryptionInTransitEnabled;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetBootVolumeAttachmentsBootVolumeAttachment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,8 +170,8 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
@@ -178,23 +180,23 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder encryptionInTransitType(String encryptionInTransitType) {
-            this.encryptionInTransitType = Objects.requireNonNull(encryptionInTransitType);
+        public Builder encryptionInTransitType(@Nullable String encryptionInTransitType) {
+            this.encryptionInTransitType = encryptionInTransitType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -203,18 +205,18 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
             return this;
         }
         @CustomType.Setter
-        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+        public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetBootVolumeAttachmentsBootVolumeAttachment build() {

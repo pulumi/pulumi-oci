@@ -36,28 +36,6 @@ class MonitoredResourceArgs:
                  resource_time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MonitoredResource resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        :param pulumi.Input['MonitoredResourceAliasesArgs'] aliases: (Updatable) Monitored Resource Alias Credential Details
-        :param pulumi.Input['MonitoredResourceCredentialsArgs'] credentials: (Updatable) Monitored Resource Credential Details.
-        :param pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs'] database_connection_details: (Updatable) Connection details for the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
-        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
-        :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
-        :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "type", type)
@@ -97,9 +75,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -109,13 +84,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -125,9 +93,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="additionalAliases")
     def additional_aliases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]:
-        """
-        (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        """
         return pulumi.get(self, "additional_aliases")
 
     @additional_aliases.setter
@@ -137,9 +102,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="additionalCredentials")
     def additional_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]:
-        """
-        (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        """
         return pulumi.get(self, "additional_credentials")
 
     @additional_credentials.setter
@@ -149,9 +111,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter
     def aliases(self) -> Optional[pulumi.Input['MonitoredResourceAliasesArgs']]:
-        """
-        (Updatable) Monitored Resource Alias Credential Details
-        """
         return pulumi.get(self, "aliases")
 
     @aliases.setter
@@ -161,9 +120,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['MonitoredResourceCredentialsArgs']]:
-        """
-        (Updatable) Monitored Resource Credential Details.
-        """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
@@ -173,9 +129,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="databaseConnectionDetails")
     def database_connection_details(self) -> Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']]:
-        """
-        (Updatable) Connection details for the database.
-        """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
@@ -185,9 +138,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -197,9 +147,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Monitored resource display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -209,9 +156,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
@@ -221,9 +165,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="externalResourceId")
     def external_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        """
         return pulumi.get(self, "external_resource_id")
 
     @external_resource_id.setter
@@ -233,9 +174,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -245,9 +183,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Host name of the monitored resource.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -257,9 +192,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter
     def license(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
-        """
         return pulumi.get(self, "license")
 
     @license.setter
@@ -269,9 +201,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
@@ -281,9 +210,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Property Name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -293,9 +219,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]:
-        """
-        (Updatable) List of monitored resource properties.
-        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -305,9 +228,6 @@ class MonitoredResourceArgs:
     @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
-        """
         return pulumi.get(self, "resource_time_zone")
 
     @resource_time_zone.setter
@@ -343,33 +263,6 @@ class _MonitoredResourceState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResource resources.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        :param pulumi.Input['MonitoredResourceAliasesArgs'] aliases: (Updatable) Monitored Resource Alias Credential Details
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input['MonitoredResourceCredentialsArgs'] credentials: (Updatable) Monitored Resource Credential Details.
-        :param pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs'] database_connection_details: (Updatable) Connection details for the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
-        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
-        :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
-        :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
-        :param pulumi.Input[str] state: Lifecycle state of the monitored resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] time_created: The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] time_updated: The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if additional_aliases is not None:
             pulumi.set(__self__, "additional_aliases", additional_aliases)
@@ -421,9 +314,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="additionalAliases")
     def additional_aliases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]:
-        """
-        (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        """
         return pulumi.get(self, "additional_aliases")
 
     @additional_aliases.setter
@@ -433,9 +323,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="additionalCredentials")
     def additional_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]:
-        """
-        (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        """
         return pulumi.get(self, "additional_credentials")
 
     @additional_credentials.setter
@@ -445,9 +332,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter
     def aliases(self) -> Optional[pulumi.Input['MonitoredResourceAliasesArgs']]:
-        """
-        (Updatable) Monitored Resource Alias Credential Details
-        """
         return pulumi.get(self, "aliases")
 
     @aliases.setter
@@ -457,9 +341,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -469,9 +350,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['MonitoredResourceCredentialsArgs']]:
-        """
-        (Updatable) Monitored Resource Credential Details.
-        """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
@@ -481,9 +359,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="databaseConnectionDetails")
     def database_connection_details(self) -> Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']]:
-        """
-        (Updatable) Connection details for the database.
-        """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
@@ -493,9 +368,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -505,9 +377,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Monitored resource display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -517,9 +386,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
@@ -529,9 +395,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="externalResourceId")
     def external_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        """
         return pulumi.get(self, "external_resource_id")
 
     @external_resource_id.setter
@@ -541,9 +404,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -553,9 +413,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Host name of the monitored resource.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -565,9 +422,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter
     def license(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
-        """
         return pulumi.get(self, "license")
 
     @license.setter
@@ -577,9 +431,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
@@ -589,9 +440,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Property Name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -601,9 +449,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]:
-        """
-        (Updatable) List of monitored resource properties.
-        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -613,9 +458,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
-        """
         return pulumi.get(self, "resource_time_zone")
 
     @resource_time_zone.setter
@@ -625,9 +467,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Lifecycle state of the monitored resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -637,9 +476,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -649,9 +485,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
@@ -661,9 +494,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -673,9 +503,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -685,13 +512,6 @@ class _MonitoredResourceState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -724,123 +544,9 @@ class MonitoredResource(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new monitored resource for the given resource type with the details and submits
-        a work request for promoting the resource to agent. Once the resource is successfully
-        added to agent, resource state will be marked active.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resource = oci.stack_monitoring.MonitoredResource("testMonitoredResource",
-            compartment_id=var["compartment_id"],
-            type=var["monitored_resource_type"],
-            additional_aliases=[oci.stack_monitoring.MonitoredResourceAdditionalAliasArgs(
-                credential=oci.stack_monitoring.MonitoredResourceAdditionalAliasCredentialArgs(
-                    name=var["monitored_resource_additional_aliases_credential_name"],
-                    service=var["monitored_resource_additional_aliases_credential_service"],
-                    source=var["monitored_resource_additional_aliases_credential_source"],
-                ),
-                name=var["monitored_resource_additional_aliases_name"],
-                source=var["monitored_resource_additional_aliases_source"],
-            )],
-            additional_credentials=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialArgs(
-                credential_type=var["monitored_resource_additional_credentials_credential_type"],
-                description=var["monitored_resource_additional_credentials_description"],
-                key_id=oci_kms_key["test_key"]["id"],
-                name=var["monitored_resource_additional_credentials_name"],
-                properties=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialPropertyArgs(
-                    name=var["monitored_resource_additional_credentials_properties_name"],
-                    value=var["monitored_resource_additional_credentials_properties_value"],
-                )],
-                source=var["monitored_resource_additional_credentials_source"],
-                type=var["monitored_resource_additional_credentials_type"],
-            )],
-            aliases=oci.stack_monitoring.MonitoredResourceAliasesArgs(
-                credential=oci.stack_monitoring.MonitoredResourceAliasesCredentialArgs(
-                    name=var["monitored_resource_aliases_credential_name"],
-                    service=var["monitored_resource_aliases_credential_service"],
-                    source=var["monitored_resource_aliases_credential_source"],
-                ),
-                name=var["monitored_resource_aliases_name"],
-                source=var["monitored_resource_aliases_source"],
-            ),
-            credentials=oci.stack_monitoring.MonitoredResourceCredentialsArgs(
-                credential_type=var["monitored_resource_credentials_credential_type"],
-                description=var["monitored_resource_credentials_description"],
-                key_id=var["monitored_resource_credentials_key_id"],
-                name=var["monitored_resource_credentials_name"],
-                properties=[oci.stack_monitoring.MonitoredResourceCredentialsPropertyArgs(
-                    name=var["monitored_resource_credentials_properties_name"],
-                    value=var["monitored_resource_credentials_properties_value"],
-                )],
-                source=var["monitored_resource_credentials_source"],
-                type=var["monitored_resource_credentials_type"],
-            ),
-            database_connection_details=oci.stack_monitoring.MonitoredResourceDatabaseConnectionDetailsArgs(
-                port=var["monitored_resource_database_connection_details_port"],
-                protocol=var["monitored_resource_database_connection_details_protocol"],
-                service_name=var["monitored_resource_database_service_name"],
-                connector_id=var["monitored_resource_database_connector_id"],
-                db_id=var["monitored_resource_database_id"],
-                db_unique_name=var["monitored_resource_database_connection_details_db_unique_name"],
-                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["monitored_resource_display_name"],
-            external_resource_id=var["monitored_resource_external_resource_id"],
-            external_id=oci_stack_monitoring_external["test_external"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            host_name=var["monitored_resource_host_name"],
-            license=var["monitored_resource_license"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
-                name=var["monitored_resource_properties_name"],
-                value=var["monitored_resource_properties_value"],
-            )],
-            resource_time_zone=var["monitored_resource_resource_time_zone"])
-        ```
-
-        ## Import
-
-        MonitoredResources can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
-        ```
-
+        Create a MonitoredResource resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourceAdditionalAliasArgs']]]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourceAdditionalCredentialArgs']]]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceAliasesArgs']] aliases: (Updatable) Monitored Resource Alias Credential Details
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceCredentialsArgs']] credentials: (Updatable) Monitored Resource Credential Details.
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceDatabaseConnectionDetailsArgs']] database_connection_details: (Updatable) Connection details for the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
-        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
-        :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]] properties: (Updatable) List of monitored resource properties.
-        :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -849,99 +555,7 @@ class MonitoredResource(pulumi.CustomResource):
                  args: MonitoredResourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new monitored resource for the given resource type with the details and submits
-        a work request for promoting the resource to agent. Once the resource is successfully
-        added to agent, resource state will be marked active.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resource = oci.stack_monitoring.MonitoredResource("testMonitoredResource",
-            compartment_id=var["compartment_id"],
-            type=var["monitored_resource_type"],
-            additional_aliases=[oci.stack_monitoring.MonitoredResourceAdditionalAliasArgs(
-                credential=oci.stack_monitoring.MonitoredResourceAdditionalAliasCredentialArgs(
-                    name=var["monitored_resource_additional_aliases_credential_name"],
-                    service=var["monitored_resource_additional_aliases_credential_service"],
-                    source=var["monitored_resource_additional_aliases_credential_source"],
-                ),
-                name=var["monitored_resource_additional_aliases_name"],
-                source=var["monitored_resource_additional_aliases_source"],
-            )],
-            additional_credentials=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialArgs(
-                credential_type=var["monitored_resource_additional_credentials_credential_type"],
-                description=var["monitored_resource_additional_credentials_description"],
-                key_id=oci_kms_key["test_key"]["id"],
-                name=var["monitored_resource_additional_credentials_name"],
-                properties=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialPropertyArgs(
-                    name=var["monitored_resource_additional_credentials_properties_name"],
-                    value=var["monitored_resource_additional_credentials_properties_value"],
-                )],
-                source=var["monitored_resource_additional_credentials_source"],
-                type=var["monitored_resource_additional_credentials_type"],
-            )],
-            aliases=oci.stack_monitoring.MonitoredResourceAliasesArgs(
-                credential=oci.stack_monitoring.MonitoredResourceAliasesCredentialArgs(
-                    name=var["monitored_resource_aliases_credential_name"],
-                    service=var["monitored_resource_aliases_credential_service"],
-                    source=var["monitored_resource_aliases_credential_source"],
-                ),
-                name=var["monitored_resource_aliases_name"],
-                source=var["monitored_resource_aliases_source"],
-            ),
-            credentials=oci.stack_monitoring.MonitoredResourceCredentialsArgs(
-                credential_type=var["monitored_resource_credentials_credential_type"],
-                description=var["monitored_resource_credentials_description"],
-                key_id=var["monitored_resource_credentials_key_id"],
-                name=var["monitored_resource_credentials_name"],
-                properties=[oci.stack_monitoring.MonitoredResourceCredentialsPropertyArgs(
-                    name=var["monitored_resource_credentials_properties_name"],
-                    value=var["monitored_resource_credentials_properties_value"],
-                )],
-                source=var["monitored_resource_credentials_source"],
-                type=var["monitored_resource_credentials_type"],
-            ),
-            database_connection_details=oci.stack_monitoring.MonitoredResourceDatabaseConnectionDetailsArgs(
-                port=var["monitored_resource_database_connection_details_port"],
-                protocol=var["monitored_resource_database_connection_details_protocol"],
-                service_name=var["monitored_resource_database_service_name"],
-                connector_id=var["monitored_resource_database_connector_id"],
-                db_id=var["monitored_resource_database_id"],
-                db_unique_name=var["monitored_resource_database_connection_details_db_unique_name"],
-                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["monitored_resource_display_name"],
-            external_resource_id=var["monitored_resource_external_resource_id"],
-            external_id=oci_stack_monitoring_external["test_external"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            host_name=var["monitored_resource_host_name"],
-            license=var["monitored_resource_license"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
-                name=var["monitored_resource_properties_name"],
-                value=var["monitored_resource_properties_value"],
-            )],
-            resource_time_zone=var["monitored_resource_resource_time_zone"])
-        ```
-
-        ## Import
-
-        MonitoredResources can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
-        ```
-
+        Create a MonitoredResource resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MonitoredResourceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1051,33 +665,6 @@ class MonitoredResource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourceAdditionalAliasArgs']]]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourceAdditionalCredentialArgs']]]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceAliasesArgs']] aliases: (Updatable) Monitored Resource Alias Credential Details
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceCredentialsArgs']] credentials: (Updatable) Monitored Resource Credential Details.
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceDatabaseConnectionDetailsArgs']] database_connection_details: (Updatable) Connection details for the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
-        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
-        :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]] properties: (Updatable) List of monitored resource properties.
-        :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
-        :param pulumi.Input[str] state: Lifecycle state of the monitored resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] time_created: The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] time_updated: The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1111,188 +698,115 @@ class MonitoredResource(pulumi.CustomResource):
     @property
     @pulumi.getter(name="additionalAliases")
     def additional_aliases(self) -> pulumi.Output[Optional[Sequence['outputs.MonitoredResourceAdditionalAlias']]]:
-        """
-        (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        """
         return pulumi.get(self, "additional_aliases")
 
     @property
     @pulumi.getter(name="additionalCredentials")
     def additional_credentials(self) -> pulumi.Output[Optional[Sequence['outputs.MonitoredResourceAdditionalCredential']]]:
-        """
-        (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        """
         return pulumi.get(self, "additional_credentials")
 
     @property
     @pulumi.getter
     def aliases(self) -> pulumi.Output[Optional['outputs.MonitoredResourceAliases']]:
-        """
-        (Updatable) Monitored Resource Alias Credential Details
-        """
         return pulumi.get(self, "aliases")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
     def credentials(self) -> pulumi.Output[Optional['outputs.MonitoredResourceCredentials']]:
-        """
-        (Updatable) Monitored Resource Credential Details.
-        """
         return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="databaseConnectionDetails")
     def database_connection_details(self) -> pulumi.Output[Optional['outputs.MonitoredResourceDatabaseConnectionDetails']]:
-        """
-        (Updatable) Connection details for the database.
-        """
         return pulumi.get(self, "database_connection_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Monitored resource display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        """
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="externalResourceId")
     def external_resource_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        """
         return pulumi.get(self, "external_resource_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Host name of the monitored resource.
-        """
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def license(self) -> pulumi.Output[str]:
-        """
-        (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
-        """
+    def license(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license")
 
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Property Name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def properties(self) -> pulumi.Output[Optional[Sequence['outputs.MonitoredResourceProperty']]]:
-        """
-        (Updatable) List of monitored resource properties.
-        """
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
-        """
         return pulumi.get(self, "resource_time_zone")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Lifecycle state of the monitored resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Output[str]:
-        """
-        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def tenant_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 

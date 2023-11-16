@@ -73,61 +73,61 @@ namespace Pulumi.Oci.DataCatalog
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Data catalog identifier.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         /// </summary>
         [Output("numberOfObjects")]
-        public Output<int> NumberOfObjects { get; private set; } = null!;
+        public Output<int?> NumberOfObjects { get; private set; } = null!;
 
         /// <summary>
         /// The REST front endpoint URL to the data catalog instance.
         /// </summary>
         [Output("serviceApiUrl")]
-        public Output<string> ServiceApiUrl { get; private set; } = null!;
+        public Output<string?> ServiceApiUrl { get; private set; } = null!;
 
         /// <summary>
         /// The console front endpoint URL to the data catalog instance.
         /// </summary>
         [Output("serviceConsoleUrl")]
-        public Output<string> ServiceConsoleUrl { get; private set; } = null!;
+        public Output<string?> ServiceConsoleUrl { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the data catalog resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

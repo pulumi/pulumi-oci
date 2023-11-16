@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the block volume replica.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetVolumeSourceDetailResult(
-            string id,
+            string? id,
 
-            string type)
+            string? type)
         {
             Id = id;
             Type = type;

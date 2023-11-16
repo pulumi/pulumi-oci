@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
@@ -60,239 +59,239 @@ type LookupAutonomousDatabaseArgs struct {
 // A collection of values returned by getAutonomousDatabase.
 type LookupAutonomousDatabaseResult struct {
 	// The current amount of storage in use for user and system data, in terabytes (TB).
-	ActualUsedDataStorageSizeInTbs float64 `pulumi:"actualUsedDataStorageSizeInTbs"`
-	AdminPassword                  string  `pulumi:"adminPassword"`
+	ActualUsedDataStorageSizeInTbs *float64 `pulumi:"actualUsedDataStorageSizeInTbs"`
+	AdminPassword                  *string  `pulumi:"adminPassword"`
 	// The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
-	AllocatedStorageSizeInTbs float64 `pulumi:"allocatedStorageSizeInTbs"`
+	AllocatedStorageSizeInTbs *float64 `pulumi:"allocatedStorageSizeInTbs"`
 	// Information about Oracle APEX Application Development.
 	ApexDetails []GetAutonomousDatabaseApexDetail `pulumi:"apexDetails"`
 	// This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
-	ArePrimaryWhitelistedIpsUsed bool `pulumi:"arePrimaryWhitelistedIpsUsed"`
+	ArePrimaryWhitelistedIpsUsed *bool `pulumi:"arePrimaryWhitelistedIpsUsed"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
-	AutonomousDatabaseBackupId    string `pulumi:"autonomousDatabaseBackupId"`
-	AutonomousDatabaseId          string `pulumi:"autonomousDatabaseId"`
+	AutonomousContainerDatabaseId *string `pulumi:"autonomousContainerDatabaseId"`
+	AutonomousDatabaseBackupId    *string `pulumi:"autonomousDatabaseBackupId"`
+	AutonomousDatabaseId          string  `pulumi:"autonomousDatabaseId"`
 	// The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
-	AutonomousMaintenanceScheduleType string `pulumi:"autonomousMaintenanceScheduleType"`
+	AutonomousMaintenanceScheduleType *string `pulumi:"autonomousMaintenanceScheduleType"`
 	// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs []GetAutonomousDatabaseBackupConfig `pulumi:"backupConfigs"`
 	// Retention period, in days, for backups.
-	BackupRetentionPeriodInDays int `pulumi:"backupRetentionPeriodInDays"`
+	BackupRetentionPeriodInDays *int `pulumi:"backupRetentionPeriodInDays"`
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
-	CharacterSet string `pulumi:"characterSet"`
-	CloneType    string `pulumi:"cloneType"`
+	CharacterSet *string `pulumi:"characterSet"`
+	CloneType    *string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
-	ComputeCount float64 `pulumi:"computeCount"`
+	ComputeCount *float64 `pulumi:"computeCount"`
 	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
-	ComputeModel string `pulumi:"computeModel"`
+	ComputeModel *string `pulumi:"computeModel"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
 	ConnectionStrings []GetAutonomousDatabaseConnectionString `pulumi:"connectionStrings"`
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
 	ConnectionUrls []GetAutonomousDatabaseConnectionUrl `pulumi:"connectionUrls"`
 	// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// Customer Contacts.
 	CustomerContacts []GetAutonomousDatabaseCustomerContact `pulumi:"customerContacts"`
 	// Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
-	DataSafeStatus string `pulumi:"dataSafeStatus"`
+	DataSafeStatus *string `pulumi:"dataSafeStatus"`
 	// The quantity of data in the database, in gigabytes.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// The quantity of data in the database, in terabytes.
-	DataStorageSizeInTbs int `pulumi:"dataStorageSizeInTbs"`
+	DataStorageSizeInTbs *int `pulumi:"dataStorageSizeInTbs"`
 	// The Oracle Database Edition that applies to the Autonomous databases.
-	DatabaseEdition string `pulumi:"databaseEdition"`
+	DatabaseEdition *string `pulumi:"databaseEdition"`
 	// Status of Database Management for this Autonomous Database.
-	DatabaseManagementStatus string `pulumi:"databaseManagementStatus"`
+	DatabaseManagementStatus *string `pulumi:"databaseManagementStatus"`
 	// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
-	DataguardRegionType string `pulumi:"dataguardRegionType"`
+	DataguardRegionType *string `pulumi:"dataguardRegionType"`
 	// The database name.
-	DbName string `pulumi:"dbName"`
+	DbName *string `pulumi:"dbName"`
 	// A valid Oracle Database version for Autonomous Database.
-	DbVersion string `pulumi:"dbVersion"`
+	DbVersion *string `pulumi:"dbVersion"`
 	// The Autonomous Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous Transaction Processing database
 	// * DW - indicates an Autonomous Data Warehouse database
 	// * AJD - indicates an Autonomous JSON Database
 	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-	DbWorkload string `pulumi:"dbWorkload"`
+	DbWorkload *string `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
-	DisasterRecoveryRegionType string `pulumi:"disasterRecoveryRegionType"`
+	DisasterRecoveryRegionType *string `pulumi:"disasterRecoveryRegionType"`
 	// The user-friendly name for the Autonomous Database. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
-	FailedDataRecoveryInSeconds int `pulumi:"failedDataRecoveryInSeconds"`
+	FailedDataRecoveryInSeconds *int `pulumi:"failedDataRecoveryInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The area assigned to In-Memory tables in Autonomous Database.
-	InMemoryAreaInGbs int `pulumi:"inMemoryAreaInGbs"`
+	InMemoryAreaInGbs *int `pulumi:"inMemoryAreaInGbs"`
 	// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
-	InMemoryPercentage int `pulumi:"inMemoryPercentage"`
+	InMemoryPercentage *int `pulumi:"inMemoryPercentage"`
 	// The infrastructure type this resource belongs to.
-	InfrastructureType string `pulumi:"infrastructureType"`
+	InfrastructureType *string `pulumi:"infrastructureType"`
 	// Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
-	IsAccessControlEnabled bool `pulumi:"isAccessControlEnabled"`
+	IsAccessControlEnabled *bool `pulumi:"isAccessControlEnabled"`
 	// Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
-	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
+	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-	IsAutoScalingForStorageEnabled bool `pulumi:"isAutoScalingForStorageEnabled"`
+	IsAutoScalingForStorageEnabled *bool `pulumi:"isAutoScalingForStorageEnabled"`
 	// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-	IsDataGuardEnabled bool `pulumi:"isDataGuardEnabled"`
+	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-	IsDedicated bool `pulumi:"isDedicated"`
+	IsDedicated *bool `pulumi:"isDedicated"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
-	IsFreeTier bool `pulumi:"isFreeTier"`
+	IsFreeTier *bool `pulumi:"isFreeTier"`
 	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-	IsLocalDataGuardEnabled bool `pulumi:"isLocalDataGuardEnabled"`
+	IsLocalDataGuardEnabled *bool `pulumi:"isLocalDataGuardEnabled"`
 	// Specifies if the Autonomous Database requires mTLS connections.
-	IsMtlsConnectionRequired bool `pulumi:"isMtlsConnectionRequired"`
+	IsMtlsConnectionRequired *bool `pulumi:"isMtlsConnectionRequired"`
 	// Indicates if the Autonomous Database version is a preview version.
-	IsPreview                                bool `pulumi:"isPreview"`
-	IsPreviewVersionWithServiceTermsAccepted bool `pulumi:"isPreviewVersionWithServiceTermsAccepted"`
+	IsPreview                                *bool `pulumi:"isPreview"`
+	IsPreviewVersionWithServiceTermsAccepted *bool `pulumi:"isPreviewVersionWithServiceTermsAccepted"`
 	// Indicates if the refreshable clone can be reconnected to its source database.
-	IsReconnectCloneEnabled bool `pulumi:"isReconnectCloneEnabled"`
+	IsReconnectCloneEnabled *bool `pulumi:"isReconnectCloneEnabled"`
 	// Indicates if the Autonomous Database is a refreshable clone.
-	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
+	IsRefreshableClone *bool `pulumi:"isRefreshableClone"`
 	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
-	IsShrinkOnly             bool `pulumi:"isShrinkOnly"`
+	IsRemoteDataGuardEnabled *bool `pulumi:"isRemoteDataGuardEnabled"`
+	IsShrinkOnly             *bool `pulumi:"isShrinkOnly"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-	KeyStoreId string `pulumi:"keyStoreId"`
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
+	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// KMS key lifecycle details.
-	KmsKeyLifecycleDetails string `pulumi:"kmsKeyLifecycleDetails"`
+	KmsKeyLifecycleDetails *string `pulumi:"kmsKeyLifecycleDetails"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
-	LicenseModel string `pulumi:"licenseModel"`
+	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
-	LocalAdgAutoFailoverMaxDataLossLimit int `pulumi:"localAdgAutoFailoverMaxDataLossLimit"`
+	LocalAdgAutoFailoverMaxDataLossLimit *int `pulumi:"localAdgAutoFailoverMaxDataLossLimit"`
 	// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-	LocalDisasterRecoveryType string `pulumi:"localDisasterRecoveryType"`
+	LocalDisasterRecoveryType *string `pulumi:"localDisasterRecoveryType"`
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs []GetAutonomousDatabaseLocalStandbyDb `pulumi:"localStandbyDbs"`
 	// Details for the long-term backup schedule.
 	LongTermBackupSchedules []GetAutonomousDatabaseLongTermBackupSchedule `pulumi:"longTermBackupSchedules"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-	MaxCpuCoreCount int `pulumi:"maxCpuCoreCount"`
+	MaxCpuCoreCount *int `pulumi:"maxCpuCoreCount"`
 	// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
-	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-	NcharacterSet string `pulumi:"ncharacterSet"`
+	NcharacterSet *string `pulumi:"ncharacterSet"`
 	// The date and time when the next long-term backup would be created.
-	NextLongTermBackupTimeStamp string `pulumi:"nextLongTermBackupTimeStamp"`
+	NextLongTermBackupTimeStamp *string `pulumi:"nextLongTermBackupTimeStamp"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to be made available to the database.
-	OcpuCount float64 `pulumi:"ocpuCount"`
+	OcpuCount *float64 `pulumi:"ocpuCount"`
 	// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
-	OpenMode string `pulumi:"openMode"`
+	OpenMode *string `pulumi:"openMode"`
 	// Status of Operations Insights for this Autonomous Database.
-	OperationsInsightsStatus string `pulumi:"operationsInsightsStatus"`
+	OperationsInsightsStatus *string `pulumi:"operationsInsightsStatus"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
 	PeerDbIds []string `pulumi:"peerDbIds"`
 	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
-	PermissionLevel string `pulumi:"permissionLevel"`
+	PermissionLevel *string `pulumi:"permissionLevel"`
 	// The private endpoint for the resource.
-	PrivateEndpoint string `pulumi:"privateEndpoint"`
+	PrivateEndpoint *string `pulumi:"privateEndpoint"`
 	// The private endpoint Ip address for the resource.
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// The private endpoint label for the resource.
-	PrivateEndpointLabel string `pulumi:"privateEndpointLabel"`
+	PrivateEndpointLabel *string `pulumi:"privateEndpointLabel"`
 	// An array of CPU values that an Autonomous Database can be scaled to.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-	RefreshableMode string `pulumi:"refreshableMode"`
+	RefreshableMode *string `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
-	RefreshableStatus string `pulumi:"refreshableStatus"`
+	RefreshableStatus *string `pulumi:"refreshableStatus"`
 	// Configurations of a Disaster Recovery.
 	RemoteDisasterRecoveryConfigurations []GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration `pulumi:"remoteDisasterRecoveryConfigurations"`
-	RemoteDisasterRecoveryType           string                                                     `pulumi:"remoteDisasterRecoveryType"`
+	RemoteDisasterRecoveryType           *string                                                    `pulumi:"remoteDisasterRecoveryType"`
 	// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	ResourcePoolLeaderId string `pulumi:"resourcePoolLeaderId"`
+	ResourcePoolLeaderId *string `pulumi:"resourcePoolLeaderId"`
 	// The configuration details for resource pool
 	ResourcePoolSummaries []GetAutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummaries"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-	Role             string `pulumi:"role"`
-	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
+	Role             *string `pulumi:"role"`
+	RotateKeyTrigger *bool   `pulumi:"rotateKeyTrigger"`
 	// The list of scheduled operations.
 	ScheduledOperations []GetAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
-	SecretId            string                                    `pulumi:"secretId"`
-	SecretVersionNumber int                                       `pulumi:"secretVersionNumber"`
+	SecretId            *string                                   `pulumi:"secretId"`
+	SecretVersionNumber *int                                      `pulumi:"secretVersionNumber"`
 	// The URL of the Service Console for the Autonomous Database.
-	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
-	Source            string `pulumi:"source"`
+	ServiceConsoleUrl *string `pulumi:"serviceConsoleUrl"`
+	Source            *string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
-	SourceId string `pulumi:"sourceId"`
+	SourceId *string `pulumi:"sourceId"`
 	// **Deprecated** Autonomous Data Guard standby database details.
 	StandbyDbs []GetAutonomousDatabaseStandbyDb `pulumi:"standbyDbs"`
 	// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 	StandbyWhitelistedIps []string `pulumi:"standbyWhitelistedIps"`
 	// The current state of the Autonomous Database.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
 	SupportedRegionsToCloneTos []string `pulumi:"supportedRegionsToCloneTos"`
-	SwitchoverTo               string   `pulumi:"switchoverTo"`
-	SwitchoverToRemotePeerId   string   `pulumi:"switchoverToRemotePeerId"`
+	SwitchoverTo               *string  `pulumi:"switchoverTo"`
+	SwitchoverToRemotePeerId   *string  `pulumi:"switchoverToRemotePeerId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the Autonomous Database was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-	TimeDataGuardRoleChanged string `pulumi:"timeDataGuardRoleChanged"`
+	TimeDataGuardRoleChanged *string `pulumi:"timeDataGuardRoleChanged"`
 	// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
-	TimeDeletionOfFreeAutonomousDatabase string `pulumi:"timeDeletionOfFreeAutonomousDatabase"`
+	TimeDeletionOfFreeAutonomousDatabase *string `pulumi:"timeDeletionOfFreeAutonomousDatabase"`
 	// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-	TimeDisasterRecoveryRoleChanged string `pulumi:"timeDisasterRecoveryRoleChanged"`
+	TimeDisasterRecoveryRoleChanged *string `pulumi:"timeDisasterRecoveryRoleChanged"`
 	// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
-	TimeLocalDataGuardEnabled string `pulumi:"timeLocalDataGuardEnabled"`
+	TimeLocalDataGuardEnabled *string `pulumi:"timeLocalDataGuardEnabled"`
 	// The date and time when maintenance will begin.
-	TimeMaintenanceBegin string `pulumi:"timeMaintenanceBegin"`
+	TimeMaintenanceBegin *string `pulumi:"timeMaintenanceBegin"`
 	// The date and time when maintenance will end.
-	TimeMaintenanceEnd string `pulumi:"timeMaintenanceEnd"`
+	TimeMaintenanceEnd *string `pulumi:"timeMaintenanceEnd"`
 	// The time the member joined the resource pool.
-	TimeOfJoiningResourcePool string `pulumi:"timeOfJoiningResourcePool"`
+	TimeOfJoiningResourcePool *string `pulumi:"timeOfJoiningResourcePool"`
 	// The timestamp of the last failover operation.
-	TimeOfLastFailover string `pulumi:"timeOfLastFailover"`
+	TimeOfLastFailover *string `pulumi:"timeOfLastFailover"`
 	// The date and time when last refresh happened.
-	TimeOfLastRefresh string `pulumi:"timeOfLastRefresh"`
+	TimeOfLastRefresh *string `pulumi:"timeOfLastRefresh"`
 	// The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
-	TimeOfLastRefreshPoint string `pulumi:"timeOfLastRefreshPoint"`
+	TimeOfLastRefreshPoint *string `pulumi:"timeOfLastRefreshPoint"`
 	// The timestamp of the last switchover operation for the Autonomous Database.
-	TimeOfLastSwitchover string `pulumi:"timeOfLastSwitchover"`
+	TimeOfLastSwitchover *string `pulumi:"timeOfLastSwitchover"`
 	// The date and time of next refresh.
-	TimeOfNextRefresh string `pulumi:"timeOfNextRefresh"`
+	TimeOfNextRefresh *string `pulumi:"timeOfNextRefresh"`
 	// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
-	TimeReclamationOfFreeAutonomousDatabase string `pulumi:"timeReclamationOfFreeAutonomousDatabase"`
+	TimeReclamationOfFreeAutonomousDatabase *string `pulumi:"timeReclamationOfFreeAutonomousDatabase"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
-	TimeUntilReconnectCloneEnabled string `pulumi:"timeUntilReconnectCloneEnabled"`
-	Timestamp                      string `pulumi:"timestamp"`
+	TimeUntilReconnectCloneEnabled *string `pulumi:"timeUntilReconnectCloneEnabled"`
+	Timestamp                      *string `pulumi:"timestamp"`
 	// The backup storage to the database.
-	TotalBackupStorageSizeInGbs       float64 `pulumi:"totalBackupStorageSizeInGbs"`
-	UseLatestAvailableBackupTimeStamp bool    `pulumi:"useLatestAvailableBackupTimeStamp"`
+	TotalBackupStorageSizeInGbs       *float64 `pulumi:"totalBackupStorageSizeInGbs"`
+	UseLatestAvailableBackupTimeStamp *bool    `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The storage space consumed by Autonomous Database in GBs.
-	UsedDataStorageSizeInGbs int `pulumi:"usedDataStorageSizeInGbs"`
+	UsedDataStorageSizeInGbs *int `pulumi:"usedDataStorageSizeInGbs"`
 	// The amount of storage that has been used, in terabytes.
-	UsedDataStorageSizeInTbs int `pulumi:"usedDataStorageSizeInTbs"`
+	UsedDataStorageSizeInTbs *int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId string `pulumi:"vaultId"`
+	VaultId *string `pulumi:"vaultId"`
 	// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
@@ -335,24 +334,18 @@ func (o LookupAutonomousDatabaseResultOutput) ToLookupAutonomousDatabaseResultOu
 	return o
 }
 
-func (o LookupAutonomousDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseResult] {
-	return pulumix.Output[LookupAutonomousDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The current amount of storage in use for user and system data, in terabytes (TB).
-func (o LookupAutonomousDatabaseResultOutput) ActualUsedDataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.ActualUsedDataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o LookupAutonomousDatabaseResultOutput) ActualUsedDataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *float64 { return v.ActualUsedDataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) AdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AdminPassword }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) AdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.AdminPassword }).(pulumi.StringPtrOutput)
 }
 
 // The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
-func (o LookupAutonomousDatabaseResultOutput) AllocatedStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.AllocatedStorageSizeInTbs }).(pulumi.Float64Output)
+func (o LookupAutonomousDatabaseResultOutput) AllocatedStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *float64 { return v.AllocatedStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // Information about Oracle APEX Application Development.
@@ -361,17 +354,17 @@ func (o LookupAutonomousDatabaseResultOutput) ApexDetails() GetAutonomousDatabas
 }
 
 // This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
-func (o LookupAutonomousDatabaseResultOutput) ArePrimaryWhitelistedIpsUsed() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.ArePrimaryWhitelistedIpsUsed }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) ArePrimaryWhitelistedIpsUsed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.ArePrimaryWhitelistedIpsUsed }).(pulumi.BoolPtrOutput)
 }
 
 // The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupAutonomousDatabaseResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) AutonomousContainerDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.AutonomousContainerDatabaseId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousDatabaseBackupId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.AutonomousDatabaseBackupId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
@@ -379,8 +372,8 @@ func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseId() pulumi.Stri
 }
 
 // The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
-func (o LookupAutonomousDatabaseResultOutput) AutonomousMaintenanceScheduleType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousMaintenanceScheduleType }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) AutonomousMaintenanceScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.AutonomousMaintenanceScheduleType }).(pulumi.StringPtrOutput)
 }
 
 // List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -394,32 +387,32 @@ func (o LookupAutonomousDatabaseResultOutput) BackupConfigs() GetAutonomousDatab
 }
 
 // Retention period, in days, for backups.
-func (o LookupAutonomousDatabaseResultOutput) BackupRetentionPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.BackupRetentionPeriodInDays }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) BackupRetentionPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.BackupRetentionPeriodInDays }).(pulumi.IntPtrOutput)
 }
 
 // The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
-func (o LookupAutonomousDatabaseResultOutput) CharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.CharacterSet }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) CharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.CharacterSet }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) CloneType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.CloneType }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) CloneType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.CloneType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupAutonomousDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
-func (o LookupAutonomousDatabaseResultOutput) ComputeCount() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.ComputeCount }).(pulumi.Float64Output)
+func (o LookupAutonomousDatabaseResultOutput) ComputeCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *float64 { return v.ComputeCount }).(pulumi.Float64PtrOutput)
 }
 
 // The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
-func (o LookupAutonomousDatabaseResultOutput) ComputeModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) ComputeModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.ComputeModel }).(pulumi.StringPtrOutput)
 }
 
 // The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -435,8 +428,8 @@ func (o LookupAutonomousDatabaseResultOutput) ConnectionUrls() GetAutonomousData
 }
 
 // The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-func (o LookupAutonomousDatabaseResultOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // Customer Contacts.
@@ -447,43 +440,43 @@ func (o LookupAutonomousDatabaseResultOutput) CustomerContacts() GetAutonomousDa
 }
 
 // Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
-func (o LookupAutonomousDatabaseResultOutput) DataSafeStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DataSafeStatus }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DataSafeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DataSafeStatus }).(pulumi.StringPtrOutput)
 }
 
 // The quantity of data in the database, in gigabytes.
-func (o LookupAutonomousDatabaseResultOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // The quantity of data in the database, in terabytes.
-func (o LookupAutonomousDatabaseResultOutput) DataStorageSizeInTbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.DataStorageSizeInTbs }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) DataStorageSizeInTbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.DataStorageSizeInTbs }).(pulumi.IntPtrOutput)
 }
 
 // The Oracle Database Edition that applies to the Autonomous databases.
-func (o LookupAutonomousDatabaseResultOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DatabaseEdition }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // Status of Database Management for this Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) DatabaseManagementStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DatabaseManagementStatus }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DatabaseManagementStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DatabaseManagementStatus }).(pulumi.StringPtrOutput)
 }
 
 // The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
-func (o LookupAutonomousDatabaseResultOutput) DataguardRegionType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DataguardRegionType }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DataguardRegionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DataguardRegionType }).(pulumi.StringPtrOutput)
 }
 
 // The database name.
-func (o LookupAutonomousDatabaseResultOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
 
 // A valid Oracle Database version for Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) DbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DbVersion }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
 // The Autonomous Database workload type. The following values are valid:
@@ -491,8 +484,8 @@ func (o LookupAutonomousDatabaseResultOutput) DbVersion() pulumi.StringOutput {
 // * DW - indicates an Autonomous Data Warehouse database
 // * AJD - indicates an Autonomous JSON Database
 // * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-func (o LookupAutonomousDatabaseResultOutput) DbWorkload() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DbWorkload }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DbWorkload() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DbWorkload }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -501,18 +494,18 @@ func (o LookupAutonomousDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
-func (o LookupAutonomousDatabaseResultOutput) DisasterRecoveryRegionType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisasterRecoveryRegionType }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DisasterRecoveryRegionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DisasterRecoveryRegionType }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the Autonomous Database. The name does not have to be unique.
-func (o LookupAutonomousDatabaseResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the number of seconds of data loss for a Data Guard failover.
-func (o LookupAutonomousDatabaseResultOutput) FailedDataRecoveryInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.FailedDataRecoveryInSeconds }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) FailedDataRecoveryInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.FailedDataRecoveryInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -521,91 +514,91 @@ func (o LookupAutonomousDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-func (o LookupAutonomousDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The area assigned to In-Memory tables in Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) InMemoryAreaInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.InMemoryAreaInGbs }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) InMemoryAreaInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.InMemoryAreaInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) InMemoryPercentage() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.InMemoryPercentage }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) InMemoryPercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.InMemoryPercentage }).(pulumi.IntPtrOutput)
 }
 
 // The infrastructure type this resource belongs to.
-func (o LookupAutonomousDatabaseResultOutput) InfrastructureType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.InfrastructureType }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) InfrastructureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
-func (o LookupAutonomousDatabaseResultOutput) IsAccessControlEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsAccessControlEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsAccessControlEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsAccessControlEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
-func (o LookupAutonomousDatabaseResultOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsAutoScalingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsAutoScalingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-func (o LookupAutonomousDatabaseResultOutput) IsAutoScalingForStorageEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsAutoScalingForStorageEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsAutoScalingForStorageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsAutoScalingForStorageEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-func (o LookupAutonomousDatabaseResultOutput) IsDataGuardEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDataGuardEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsDataGuardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-func (o LookupAutonomousDatabaseResultOutput) IsDedicated() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDedicated }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsDedicated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsDedicated }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
-func (o LookupAutonomousDatabaseResultOutput) IsFreeTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsFreeTier }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsFreeTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsFreeTier }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-func (o LookupAutonomousDatabaseResultOutput) IsLocalDataGuardEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsLocalDataGuardEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsLocalDataGuardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsLocalDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies if the Autonomous Database requires mTLS connections.
-func (o LookupAutonomousDatabaseResultOutput) IsMtlsConnectionRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsMtlsConnectionRequired }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsMtlsConnectionRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsMtlsConnectionRequired }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the Autonomous Database version is a preview version.
-func (o LookupAutonomousDatabaseResultOutput) IsPreview() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsPreview }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsPreview() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsPreview }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) IsPreviewVersionWithServiceTermsAccepted() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsPreviewVersionWithServiceTermsAccepted }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsPreviewVersionWithServiceTermsAccepted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsPreviewVersionWithServiceTermsAccepted }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the refreshable clone can be reconnected to its source database.
-func (o LookupAutonomousDatabaseResultOutput) IsReconnectCloneEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsReconnectCloneEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsReconnectCloneEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsReconnectCloneEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the Autonomous Database is a refreshable clone.
-func (o LookupAutonomousDatabaseResultOutput) IsRefreshableClone() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsRefreshableClone }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsRefreshableClone() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsRefreshableClone }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-func (o LookupAutonomousDatabaseResultOutput) IsRemoteDataGuardEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsRemoteDataGuardEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsRemoteDataGuardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsRemoteDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) IsShrinkOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsShrinkOnly }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) IsShrinkOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.IsShrinkOnly }).(pulumi.BoolPtrOutput)
 }
 
 // Key History Entry.
@@ -616,48 +609,48 @@ func (o LookupAutonomousDatabaseResultOutput) KeyHistoryEntries() GetAutonomousD
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-func (o LookupAutonomousDatabaseResultOutput) KeyStoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KeyStoreId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.KeyStoreId }).(pulumi.StringPtrOutput)
 }
 
 // The wallet name for Oracle Key Vault.
-func (o LookupAutonomousDatabaseResultOutput) KeyStoreWalletName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) KeyStoreWalletName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.KeyStoreWalletName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o LookupAutonomousDatabaseResultOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // KMS key lifecycle details.
-func (o LookupAutonomousDatabaseResultOutput) KmsKeyLifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KmsKeyLifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) KmsKeyLifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.KmsKeyLifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-func (o LookupAutonomousDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
-func (o LookupAutonomousDatabaseResultOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LicenseModel }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupAutonomousDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
-func (o LookupAutonomousDatabaseResultOutput) LocalAdgAutoFailoverMaxDataLossLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.LocalAdgAutoFailoverMaxDataLossLimit }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) LocalAdgAutoFailoverMaxDataLossLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.LocalAdgAutoFailoverMaxDataLossLimit }).(pulumi.IntPtrOutput)
 }
 
 // Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-func (o LookupAutonomousDatabaseResultOutput) LocalDisasterRecoveryType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LocalDisasterRecoveryType }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) LocalDisasterRecoveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.LocalDisasterRecoveryType }).(pulumi.StringPtrOutput)
 }
 
 // Autonomous Data Guard standby database details.
@@ -673,23 +666,23 @@ func (o LookupAutonomousDatabaseResultOutput) LongTermBackupSchedules() GetAuton
 }
 
 // The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-func (o LookupAutonomousDatabaseResultOutput) MaxCpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) MaxCpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.MaxCpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
-func (o LookupAutonomousDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-func (o LookupAutonomousDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) NcharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.NcharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the next long-term backup would be created.
-func (o LookupAutonomousDatabaseResultOutput) NextLongTermBackupTimeStamp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.NextLongTermBackupTimeStamp }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) NextLongTermBackupTimeStamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.NextLongTermBackupTimeStamp }).(pulumi.StringPtrOutput)
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -699,18 +692,18 @@ func (o LookupAutonomousDatabaseResultOutput) NsgIds() pulumi.StringArrayOutput 
 }
 
 // The number of OCPU cores to be made available to the database.
-func (o LookupAutonomousDatabaseResultOutput) OcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+func (o LookupAutonomousDatabaseResultOutput) OcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *float64 { return v.OcpuCount }).(pulumi.Float64PtrOutput)
 }
 
 // Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
-func (o LookupAutonomousDatabaseResultOutput) OpenMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.OpenMode }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) OpenMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.OpenMode }).(pulumi.StringPtrOutput)
 }
 
 // Status of Operations Insights for this Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) OperationsInsightsStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.OperationsInsightsStatus }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) OperationsInsightsStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.OperationsInsightsStatus }).(pulumi.StringPtrOutput)
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
@@ -719,23 +712,23 @@ func (o LookupAutonomousDatabaseResultOutput) PeerDbIds() pulumi.StringArrayOutp
 }
 
 // The Autonomous Database permission level. Restricted mode allows access only by admin users.
-func (o LookupAutonomousDatabaseResultOutput) PermissionLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.PermissionLevel }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) PermissionLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.PermissionLevel }).(pulumi.StringPtrOutput)
 }
 
 // The private endpoint for the resource.
-func (o LookupAutonomousDatabaseResultOutput) PrivateEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.PrivateEndpoint }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) PrivateEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.PrivateEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The private endpoint Ip address for the resource.
-func (o LookupAutonomousDatabaseResultOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The private endpoint label for the resource.
-func (o LookupAutonomousDatabaseResultOutput) PrivateEndpointLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.PrivateEndpointLabel }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) PrivateEndpointLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.PrivateEndpointLabel }).(pulumi.StringPtrOutput)
 }
 
 // An array of CPU values that an Autonomous Database can be scaled to.
@@ -744,13 +737,13 @@ func (o LookupAutonomousDatabaseResultOutput) ProvisionableCpuses() pulumi.Float
 }
 
 // The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) RefreshableMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.RefreshableMode }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) RefreshableMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.RefreshableMode }).(pulumi.StringPtrOutput)
 }
 
 // The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) RefreshableStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.RefreshableStatus }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) RefreshableStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.RefreshableStatus }).(pulumi.StringPtrOutput)
 }
 
 // Configurations of a Disaster Recovery.
@@ -760,13 +753,13 @@ func (o LookupAutonomousDatabaseResultOutput) RemoteDisasterRecoveryConfiguratio
 	}).(GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) RemoteDisasterRecoveryType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.RemoteDisasterRecoveryType }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) RemoteDisasterRecoveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.RemoteDisasterRecoveryType }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupAutonomousDatabaseResultOutput) ResourcePoolLeaderId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ResourcePoolLeaderId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) ResourcePoolLeaderId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.ResourcePoolLeaderId }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details for resource pool
@@ -777,12 +770,12 @@ func (o LookupAutonomousDatabaseResultOutput) ResourcePoolSummaries() GetAutonom
 }
 
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-func (o LookupAutonomousDatabaseResultOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Role }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) RotateKeyTrigger() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.RotateKeyTrigger }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) RotateKeyTrigger() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.RotateKeyTrigger }).(pulumi.BoolPtrOutput)
 }
 
 // The list of scheduled operations.
@@ -792,26 +785,26 @@ func (o LookupAutonomousDatabaseResultOutput) ScheduledOperations() GetAutonomou
 	}).(GetAutonomousDatabaseScheduledOperationArrayOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SecretId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) SecretVersionNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.SecretVersionNumber }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) SecretVersionNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.SecretVersionNumber }).(pulumi.IntPtrOutput)
 }
 
 // The URL of the Service Console for the Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) ServiceConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ServiceConsoleUrl }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) ServiceConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.ServiceConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Source }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SourceId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // **Deprecated** Autonomous Data Guard standby database details.
@@ -825,13 +818,13 @@ func (o LookupAutonomousDatabaseResultOutput) StandbyWhitelistedIps() pulumi.Str
 }
 
 // The current state of the Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
-func (o LookupAutonomousDatabaseResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
@@ -839,12 +832,12 @@ func (o LookupAutonomousDatabaseResultOutput) SupportedRegionsToCloneTos() pulum
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []string { return v.SupportedRegionsToCloneTos }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) SwitchoverTo() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SwitchoverTo }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) SwitchoverTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.SwitchoverTo }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) SwitchoverToRemotePeerId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SwitchoverToRemotePeerId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) SwitchoverToRemotePeerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.SwitchoverToRemotePeerId }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -853,106 +846,106 @@ func (o LookupAutonomousDatabaseResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the Autonomous Database was created.
-func (o LookupAutonomousDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-func (o LookupAutonomousDatabaseResultOutput) TimeDataGuardRoleChanged() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeDataGuardRoleChanged }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeDataGuardRoleChanged() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeDataGuardRoleChanged }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
-func (o LookupAutonomousDatabaseResultOutput) TimeDeletionOfFreeAutonomousDatabase() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeDeletionOfFreeAutonomousDatabase }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeDeletionOfFreeAutonomousDatabase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeDeletionOfFreeAutonomousDatabase }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) TimeDisasterRecoveryRoleChanged() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeDisasterRecoveryRoleChanged }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeDisasterRecoveryRoleChanged() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeDisasterRecoveryRoleChanged }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
-func (o LookupAutonomousDatabaseResultOutput) TimeLocalDataGuardEnabled() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeLocalDataGuardEnabled }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeLocalDataGuardEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeLocalDataGuardEnabled }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when maintenance will begin.
-func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeMaintenanceBegin }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeMaintenanceBegin }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when maintenance will end.
-func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeMaintenanceEnd }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeMaintenanceEnd }).(pulumi.StringPtrOutput)
 }
 
 // The time the member joined the resource pool.
-func (o LookupAutonomousDatabaseResultOutput) TimeOfJoiningResourcePool() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfJoiningResourcePool }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeOfJoiningResourcePool() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeOfJoiningResourcePool }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the last failover operation.
-func (o LookupAutonomousDatabaseResultOutput) TimeOfLastFailover() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfLastFailover }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeOfLastFailover() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeOfLastFailover }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when last refresh happened.
-func (o LookupAutonomousDatabaseResultOutput) TimeOfLastRefresh() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfLastRefresh }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeOfLastRefresh() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeOfLastRefresh }).(pulumi.StringPtrOutput)
 }
 
 // The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
-func (o LookupAutonomousDatabaseResultOutput) TimeOfLastRefreshPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfLastRefreshPoint }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeOfLastRefreshPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeOfLastRefreshPoint }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the last switchover operation for the Autonomous Database.
-func (o LookupAutonomousDatabaseResultOutput) TimeOfLastSwitchover() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfLastSwitchover }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeOfLastSwitchover() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeOfLastSwitchover }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of next refresh.
-func (o LookupAutonomousDatabaseResultOutput) TimeOfNextRefresh() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfNextRefresh }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeOfNextRefresh() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeOfNextRefresh }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
-func (o LookupAutonomousDatabaseResultOutput) TimeReclamationOfFreeAutonomousDatabase() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeReclamationOfFreeAutonomousDatabase }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeReclamationOfFreeAutonomousDatabase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeReclamationOfFreeAutonomousDatabase }).(pulumi.StringPtrOutput)
 }
 
 // The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
-func (o LookupAutonomousDatabaseResultOutput) TimeUntilReconnectCloneEnabled() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeUntilReconnectCloneEnabled }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) TimeUntilReconnectCloneEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.TimeUntilReconnectCloneEnabled }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 // The backup storage to the database.
-func (o LookupAutonomousDatabaseResultOutput) TotalBackupStorageSizeInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.TotalBackupStorageSizeInGbs }).(pulumi.Float64Output)
+func (o LookupAutonomousDatabaseResultOutput) TotalBackupStorageSizeInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *float64 { return v.TotalBackupStorageSizeInGbs }).(pulumi.Float64PtrOutput)
 }
 
-func (o LookupAutonomousDatabaseResultOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.UseLatestAvailableBackupTimeStamp }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseResultOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *bool { return v.UseLatestAvailableBackupTimeStamp }).(pulumi.BoolPtrOutput)
 }
 
 // The storage space consumed by Autonomous Database in GBs.
-func (o LookupAutonomousDatabaseResultOutput) UsedDataStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.UsedDataStorageSizeInGbs }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) UsedDataStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.UsedDataStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The amount of storage that has been used, in terabytes.
-func (o LookupAutonomousDatabaseResultOutput) UsedDataStorageSizeInTbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.UsedDataStorageSizeInTbs }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseResultOutput) UsedDataStorageSizeInTbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *int { return v.UsedDataStorageSizeInTbs }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-func (o LookupAutonomousDatabaseResultOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.VaultId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseResultOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 // The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.

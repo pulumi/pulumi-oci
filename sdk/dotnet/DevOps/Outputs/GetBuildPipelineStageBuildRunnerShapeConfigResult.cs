@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
         /// </summary>
-        public readonly string BuildRunnerType;
+        public readonly string? BuildRunnerType;
         /// <summary>
         /// The total amount of memory set for the instance in gigabytes.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The total number of OCPUs set for the instance.
         /// </summary>
-        public readonly int Ocpus;
+        public readonly int? Ocpus;
 
         [OutputConstructor]
         private GetBuildPipelineStageBuildRunnerShapeConfigResult(
-            string buildRunnerType,
+            string? buildRunnerType,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            int ocpus)
+            int? ocpus)
         {
             BuildRunnerType = buildRunnerType;
             MemoryInGbs = memoryInGbs;

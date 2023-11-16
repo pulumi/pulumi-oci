@@ -134,7 +134,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAlertPolicyRulesResult(
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetAlertPolicyRulesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AlertPolicyId = alertPolicyId;
             AlertPolicyRuleCollections = alertPolicyRuleCollections;

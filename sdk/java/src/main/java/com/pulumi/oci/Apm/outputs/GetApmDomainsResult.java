@@ -18,7 +18,7 @@ public final class GetApmDomainsResult {
      * @return The list of apm_domains.
      * 
      */
-    private List<GetApmDomainsApmDomain> apmDomains;
+    private @Nullable List<GetApmDomainsApmDomain> apmDomains;
     /**
      * @return The OCID of the compartment corresponding to the APM domain.
      * 
@@ -34,7 +34,7 @@ public final class GetApmDomainsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the APM domain.
      * 
@@ -47,7 +47,7 @@ public final class GetApmDomainsResult {
      * 
      */
     public List<GetApmDomainsApmDomain> apmDomains() {
-        return this.apmDomains;
+        return this.apmDomains == null ? List.of() : this.apmDomains;
     }
     /**
      * @return The OCID of the compartment corresponding to the APM domain.
@@ -70,8 +70,8 @@ public final class GetApmDomainsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current lifecycle state of the APM domain.
@@ -90,11 +90,11 @@ public final class GetApmDomainsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApmDomainsApmDomain> apmDomains;
+        private @Nullable List<GetApmDomainsApmDomain> apmDomains;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetApmDomainsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetApmDomainsResult defaults) {
@@ -108,8 +108,8 @@ public final class GetApmDomainsResult {
         }
 
         @CustomType.Setter
-        public Builder apmDomains(List<GetApmDomainsApmDomain> apmDomains) {
-            this.apmDomains = Objects.requireNonNull(apmDomains);
+        public Builder apmDomains(@Nullable List<GetApmDomainsApmDomain> apmDomains) {
+            this.apmDomains = apmDomains;
             return this;
         }
         public Builder apmDomains(GetApmDomainsApmDomain... apmDomains) {
@@ -134,8 +134,8 @@ public final class GetApmDomainsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

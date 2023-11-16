@@ -66,9 +66,6 @@ class GetMonitorsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -78,7 +75,7 @@ class GetMonitorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,34 +93,22 @@ class GetMonitorsResult:
 
     @property
     @pulumi.getter(name="monitorCollections")
-    def monitor_collections(self) -> Sequence['outputs.GetMonitorsMonitorCollectionResult']:
-        """
-        The list of monitor_collection.
-        """
+    def monitor_collections(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionResult']]:
         return pulumi.get(self, "monitor_collections")
 
     @property
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> Optional[str]:
-        """
-        Type of monitor.
-        """
         return pulumi.get(self, "monitor_type")
 
     @property
     @pulumi.getter(name="scriptId")
     def script_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        """
         return pulumi.get(self, "script_id")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        Enables or disables the monitor.
-        """
         return pulumi.get(self, "status")
 
     @property
@@ -162,35 +147,7 @@ def get_monitors(apm_domain_id: Optional[str] = None,
                  vantage_point: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitorsResult:
     """
-    This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of monitors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["monitor_display_name"],
-        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
-        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
-        monitor_type=var["monitor_monitor_type"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"],
-        vantage_point=var["monitor_vantage_point"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only the resources that match the entire display name.
-    :param bool is_maintenance_window_active: A filter to return the monitors whose maintenance window is currently active.
-    :param bool is_maintenance_window_set: A filter to return the monitors whose maintenance window is set.
-    :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-    :param str script_id: A filter to return only monitors using scriptId.
-    :param str status: A filter to return only monitors that match the status given.
-    :param str vantage_point: The name of the public or dedicated vantage point.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -231,34 +188,6 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                         vantage_point: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitorsResult]:
     """
-    This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of monitors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["monitor_display_name"],
-        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
-        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
-        monitor_type=var["monitor_monitor_type"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"],
-        vantage_point=var["monitor_vantage_point"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only the resources that match the entire display name.
-    :param bool is_maintenance_window_active: A filter to return the monitors whose maintenance window is currently active.
-    :param bool is_maintenance_window_set: A filter to return the monitors whose maintenance window is set.
-    :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-    :param str script_id: A filter to return only monitors using scriptId.
-    :param str status: A filter to return only monitors that match the status given.
-    :param str vantage_point: The name of the public or dedicated vantage point.
+    Use this data source to access information about an existing resource.
     """
     ...

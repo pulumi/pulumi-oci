@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
@@ -93,7 +92,7 @@ type GetDeploymentsResult struct {
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// Possible lifecycle states.
@@ -154,12 +153,6 @@ func (o GetDeploymentsResultOutput) ToGetDeploymentsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetDeploymentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentsResult] {
-	return pulumix.Output[GetDeploymentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDeploymentsResultOutput) AssignableConnectionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.AssignableConnectionId }).(pulumi.StringPtrOutput)
 }
@@ -193,8 +186,8 @@ func (o GetDeploymentsResultOutput) Fqdn() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDeploymentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDeploymentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Possible GGS lifecycle sub-states.

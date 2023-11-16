@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -70,9 +69,9 @@ type Repository struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the repository. It can be updated later.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
@@ -83,9 +82,9 @@ type Repository struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringOutput `pulumi:"repositoryType"`
 	// The current state of the repository.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewRepository registers a new resource with the given unique name, arguments, and options.
@@ -242,12 +241,6 @@ func (i *Repository) ToRepositoryOutputWithContext(ctx context.Context) Reposito
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryOutput)
 }
 
-func (i *Repository) ToOutput(ctx context.Context) pulumix.Output[*Repository] {
-	return pulumix.Output[*Repository]{
-		OutputState: i.ToRepositoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RepositoryArrayInput is an input type that accepts RepositoryArray and RepositoryArrayOutput values.
 // You can construct a concrete instance of `RepositoryArrayInput` via:
 //
@@ -271,12 +264,6 @@ func (i RepositoryArray) ToRepositoryArrayOutput() RepositoryArrayOutput {
 
 func (i RepositoryArray) ToRepositoryArrayOutputWithContext(ctx context.Context) RepositoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryArrayOutput)
-}
-
-func (i RepositoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*Repository] {
-	return pulumix.Output[[]*Repository]{
-		OutputState: i.ToRepositoryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RepositoryMapInput is an input type that accepts RepositoryMap and RepositoryMapOutput values.
@@ -304,12 +291,6 @@ func (i RepositoryMap) ToRepositoryMapOutputWithContext(ctx context.Context) Rep
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryMapOutput)
 }
 
-func (i RepositoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Repository] {
-	return pulumix.Output[map[string]*Repository]{
-		OutputState: i.ToRepositoryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RepositoryOutput struct{ *pulumi.OutputState }
 
 func (RepositoryOutput) ElementType() reflect.Type {
@@ -324,12 +305,6 @@ func (o RepositoryOutput) ToRepositoryOutputWithContext(ctx context.Context) Rep
 	return o
 }
 
-func (o RepositoryOutput) ToOutput(ctx context.Context) pulumix.Output[*Repository] {
-	return pulumix.Output[*Repository]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 func (o RepositoryOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -341,13 +316,13 @@ func (o RepositoryOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the repository. It can be updated later.
-func (o RepositoryOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o RepositoryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
-func (o RepositoryOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o RepositoryOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -369,13 +344,13 @@ func (o RepositoryOutput) RepositoryType() pulumi.StringOutput {
 }
 
 // The current state of the repository.
-func (o RepositoryOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RepositoryOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o RepositoryOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RepositoryOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type RepositoryArrayOutput struct{ *pulumi.OutputState }
@@ -390,12 +365,6 @@ func (o RepositoryArrayOutput) ToRepositoryArrayOutput() RepositoryArrayOutput {
 
 func (o RepositoryArrayOutput) ToRepositoryArrayOutputWithContext(ctx context.Context) RepositoryArrayOutput {
 	return o
-}
-
-func (o RepositoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Repository] {
-	return pulumix.Output[[]*Repository]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RepositoryArrayOutput) Index(i pulumi.IntInput) RepositoryOutput {
@@ -416,12 +385,6 @@ func (o RepositoryMapOutput) ToRepositoryMapOutput() RepositoryMapOutput {
 
 func (o RepositoryMapOutput) ToRepositoryMapOutputWithContext(ctx context.Context) RepositoryMapOutput {
 	return o
-}
-
-func (o RepositoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Repository] {
-	return pulumix.Output[map[string]*Repository]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RepositoryMapOutput) MapIndex(k pulumi.StringInput) RepositoryOutput {

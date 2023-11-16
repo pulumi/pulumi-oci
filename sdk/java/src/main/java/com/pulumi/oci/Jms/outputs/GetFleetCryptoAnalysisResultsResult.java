@@ -23,7 +23,7 @@ public final class GetFleetCryptoAnalysisResultsResult {
      * @return The list of crypto_analysis_result_collection.
      * 
      */
-    private List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections;
+    private @Nullable List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections;
     private @Nullable List<GetFleetCryptoAnalysisResultsFilter> filters;
     /**
      * @return The fleet OCID.
@@ -34,7 +34,7 @@ public final class GetFleetCryptoAnalysisResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The managed instance OCID.
      * 
@@ -56,7 +56,7 @@ public final class GetFleetCryptoAnalysisResultsResult {
      * 
      */
     public List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections() {
-        return this.cryptoAnalysisResultCollections;
+        return this.cryptoAnalysisResultCollections == null ? List.of() : this.cryptoAnalysisResultCollections;
     }
     public List<GetFleetCryptoAnalysisResultsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -72,8 +72,8 @@ public final class GetFleetCryptoAnalysisResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The managed instance OCID.
@@ -99,10 +99,10 @@ public final class GetFleetCryptoAnalysisResultsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String aggregationMode;
-        private List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections;
+        private @Nullable List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections;
         private @Nullable List<GetFleetCryptoAnalysisResultsFilter> filters;
         private String fleetId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String managedInstanceId;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
@@ -125,8 +125,8 @@ public final class GetFleetCryptoAnalysisResultsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cryptoAnalysisResultCollections(List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections) {
-            this.cryptoAnalysisResultCollections = Objects.requireNonNull(cryptoAnalysisResultCollections);
+        public Builder cryptoAnalysisResultCollections(@Nullable List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections) {
+            this.cryptoAnalysisResultCollections = cryptoAnalysisResultCollections;
             return this;
         }
         public Builder cryptoAnalysisResultCollections(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection... cryptoAnalysisResultCollections) {
@@ -146,8 +146,8 @@ public final class GetFleetCryptoAnalysisResultsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

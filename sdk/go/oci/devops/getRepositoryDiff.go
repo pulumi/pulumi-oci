@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Diff resource in Oracle Cloud Infrastructure Devops service.
@@ -72,28 +71,28 @@ type GetRepositoryDiffArgs struct {
 // A collection of values returned by getRepositoryDiff.
 type GetRepositoryDiffResult struct {
 	// Indicates whether the changed file contains conflicts.
-	AreConflictsInFile bool   `pulumi:"areConflictsInFile"`
+	AreConflictsInFile *bool  `pulumi:"areConflictsInFile"`
 	BaseVersion        string `pulumi:"baseVersion"`
 	// List of changed section in the file.
 	Changes  []GetRepositoryDiffChange `pulumi:"changes"`
 	FilePath string                    `pulumi:"filePath"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the file is binary.
-	IsBinary                  bool  `pulumi:"isBinary"`
+	IsBinary                  *bool `pulumi:"isBinary"`
 	IsComparisonFromMergeBase *bool `pulumi:"isComparisonFromMergeBase"`
 	// Indicates whether the file is large.
-	IsLarge bool `pulumi:"isLarge"`
+	IsLarge *bool `pulumi:"isLarge"`
 	// The ID of the changed object on the target version.
-	NewId string `pulumi:"newId"`
+	NewId *string `pulumi:"newId"`
 	// The path on the target version to the changed object.
-	NewPath string `pulumi:"newPath"`
+	NewPath *string `pulumi:"newPath"`
 	// The ID of the changed object on the base version.
-	OldId string `pulumi:"oldId"`
+	OldId *string `pulumi:"oldId"`
 	// The path on the base version to the changed object.
-	OldPath       string `pulumi:"oldPath"`
-	RepositoryId  string `pulumi:"repositoryId"`
-	TargetVersion string `pulumi:"targetVersion"`
+	OldPath       *string `pulumi:"oldPath"`
+	RepositoryId  string  `pulumi:"repositoryId"`
+	TargetVersion string  `pulumi:"targetVersion"`
 }
 
 func GetRepositoryDiffOutput(ctx *pulumi.Context, args GetRepositoryDiffOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryDiffResultOutput {
@@ -142,15 +141,9 @@ func (o GetRepositoryDiffResultOutput) ToGetRepositoryDiffResultOutputWithContex
 	return o
 }
 
-func (o GetRepositoryDiffResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryDiffResult] {
-	return pulumix.Output[GetRepositoryDiffResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Indicates whether the changed file contains conflicts.
-func (o GetRepositoryDiffResultOutput) AreConflictsInFile() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) bool { return v.AreConflictsInFile }).(pulumi.BoolOutput)
+func (o GetRepositoryDiffResultOutput) AreConflictsInFile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *bool { return v.AreConflictsInFile }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetRepositoryDiffResultOutput) BaseVersion() pulumi.StringOutput {
@@ -167,13 +160,13 @@ func (o GetRepositoryDiffResultOutput) FilePath() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryDiffResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryDiffResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the file is binary.
-func (o GetRepositoryDiffResultOutput) IsBinary() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) bool { return v.IsBinary }).(pulumi.BoolOutput)
+func (o GetRepositoryDiffResultOutput) IsBinary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *bool { return v.IsBinary }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetRepositoryDiffResultOutput) IsComparisonFromMergeBase() pulumi.BoolPtrOutput {
@@ -181,28 +174,28 @@ func (o GetRepositoryDiffResultOutput) IsComparisonFromMergeBase() pulumi.BoolPt
 }
 
 // Indicates whether the file is large.
-func (o GetRepositoryDiffResultOutput) IsLarge() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) bool { return v.IsLarge }).(pulumi.BoolOutput)
+func (o GetRepositoryDiffResultOutput) IsLarge() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *bool { return v.IsLarge }).(pulumi.BoolPtrOutput)
 }
 
 // The ID of the changed object on the target version.
-func (o GetRepositoryDiffResultOutput) NewId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) string { return v.NewId }).(pulumi.StringOutput)
+func (o GetRepositoryDiffResultOutput) NewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *string { return v.NewId }).(pulumi.StringPtrOutput)
 }
 
 // The path on the target version to the changed object.
-func (o GetRepositoryDiffResultOutput) NewPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) string { return v.NewPath }).(pulumi.StringOutput)
+func (o GetRepositoryDiffResultOutput) NewPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *string { return v.NewPath }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the changed object on the base version.
-func (o GetRepositoryDiffResultOutput) OldId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) string { return v.OldId }).(pulumi.StringOutput)
+func (o GetRepositoryDiffResultOutput) OldId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *string { return v.OldId }).(pulumi.StringPtrOutput)
 }
 
 // The path on the base version to the changed object.
-func (o GetRepositoryDiffResultOutput) OldPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryDiffResult) string { return v.OldPath }).(pulumi.StringOutput)
+func (o GetRepositoryDiffResultOutput) OldPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffResult) *string { return v.OldPath }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryDiffResultOutput) RepositoryId() pulumi.StringOutput {

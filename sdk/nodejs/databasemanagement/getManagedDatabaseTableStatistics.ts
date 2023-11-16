@@ -51,12 +51,12 @@ export interface GetManagedDatabaseTableStatisticsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The list of table_statistics_collection.
      */
-    readonly tableStatisticsCollections: outputs.DatabaseManagement.GetManagedDatabaseTableStatisticsTableStatisticsCollection[];
+    readonly tableStatisticsCollections?: outputs.DatabaseManagement.GetManagedDatabaseTableStatisticsTableStatisticsCollection[];
 }
 /**
  * This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.

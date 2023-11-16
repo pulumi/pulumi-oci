@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i GetOrganizationSubscriptionsFilterArgs) ToGetOrganizationSubscriptionsFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsFilterOutput)
 }
 
-func (i GetOrganizationSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[GetOrganizationSubscriptionsFilter]{
-		OutputState: i.ToGetOrganizationSubscriptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOrganizationSubscriptionsFilterArrayInput is an input type that accepts GetOrganizationSubscriptionsFilterArray and GetOrganizationSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsFilterArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i GetOrganizationSubscriptionsFilterArray) ToGetOrganizationSubscriptionsF
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsFilterArrayOutput)
 }
 
-func (i GetOrganizationSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsFilter]{
-		OutputState: i.ToGetOrganizationSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOrganizationSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o GetOrganizationSubscriptionsFilterOutput) ToGetOrganizationSubscriptions
 
 func (o GetOrganizationSubscriptionsFilterOutput) ToGetOrganizationSubscriptionsFilterOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsFilterOutput {
 	return o
-}
-
-func (o GetOrganizationSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[GetOrganizationSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Currency name
@@ -135,12 +116,6 @@ func (o GetOrganizationSubscriptionsFilterArrayOutput) ToGetOrganizationSubscrip
 	return o
 }
 
-func (o GetOrganizationSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOrganizationSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOrganizationSubscriptionsFilter {
 		return vs[0].([]GetOrganizationSubscriptionsFilter)[vs[1].(int)]
@@ -151,19 +126,19 @@ type GetOrganizationSubscriptionsSubscription struct {
 	// Currency details
 	Currencies []GetOrganizationSubscriptionsSubscriptionCurrency `pulumi:"currencies"`
 	// SPM internal Subscription ID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Customer friendly service name provided by PRG
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// Status of the plan
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-	TotalValue string `pulumi:"totalValue"`
+	TotalValue *string `pulumi:"totalValue"`
 	// Subscription Type i.e. IAAS,SAAS,PAAS
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetOrganizationSubscriptionsSubscriptionInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionArgs and GetOrganizationSubscriptionsSubscriptionOutput values.
@@ -181,19 +156,19 @@ type GetOrganizationSubscriptionsSubscriptionArgs struct {
 	// Currency details
 	Currencies GetOrganizationSubscriptionsSubscriptionCurrencyArrayInput `pulumi:"currencies"`
 	// SPM internal Subscription ID
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Customer friendly service name provided by PRG
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// Status of the plan
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-	TotalValue pulumi.StringInput `pulumi:"totalValue"`
+	TotalValue pulumi.StringPtrInput `pulumi:"totalValue"`
 	// Subscription Type i.e. IAAS,SAAS,PAAS
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetOrganizationSubscriptionsSubscriptionArgs) ElementType() reflect.Type {
@@ -206,12 +181,6 @@ func (i GetOrganizationSubscriptionsSubscriptionArgs) ToGetOrganizationSubscript
 
 func (i GetOrganizationSubscriptionsSubscriptionArgs) ToGetOrganizationSubscriptionsSubscriptionOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionOutput)
-}
-
-func (i GetOrganizationSubscriptionsSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscription] {
-	return pulumix.Output[GetOrganizationSubscriptionsSubscription]{
-		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOrganizationSubscriptionsSubscriptionArrayInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionArray and GetOrganizationSubscriptionsSubscriptionArrayOutput values.
@@ -239,12 +208,6 @@ func (i GetOrganizationSubscriptionsSubscriptionArray) ToGetOrganizationSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionArrayOutput)
 }
 
-func (i GetOrganizationSubscriptionsSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscription] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsSubscription]{
-		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOrganizationSubscriptionsSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsSubscriptionOutput) ElementType() reflect.Type {
@@ -259,12 +222,6 @@ func (o GetOrganizationSubscriptionsSubscriptionOutput) ToGetOrganizationSubscri
 	return o
 }
 
-func (o GetOrganizationSubscriptionsSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscription] {
-	return pulumix.Output[GetOrganizationSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetOrganizationSubscriptionsSubscriptionOutput) Currencies() GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput {
 	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) []GetOrganizationSubscriptionsSubscriptionCurrency {
@@ -273,38 +230,38 @@ func (o GetOrganizationSubscriptionsSubscriptionOutput) Currencies() GetOrganiza
 }
 
 // SPM internal Subscription ID
-func (o GetOrganizationSubscriptionsSubscriptionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Customer friendly service name provided by PRG
-func (o GetOrganizationSubscriptionsSubscriptionOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Status of the plan
-func (o GetOrganizationSubscriptionsSubscriptionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) string { return v.Status }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetOrganizationSubscriptionsSubscriptionOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetOrganizationSubscriptionsSubscriptionOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-func (o GetOrganizationSubscriptionsSubscriptionOutput) TotalValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) string { return v.TotalValue }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionOutput) TotalValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) *string { return v.TotalValue }).(pulumi.StringPtrOutput)
 }
 
 // Subscription Type i.e. IAAS,SAAS,PAAS
-func (o GetOrganizationSubscriptionsSubscriptionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) string { return v.Type }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscription) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetOrganizationSubscriptionsSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -321,12 +278,6 @@ func (o GetOrganizationSubscriptionsSubscriptionArrayOutput) ToGetOrganizationSu
 	return o
 }
 
-func (o GetOrganizationSubscriptionsSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscription] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOrganizationSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOrganizationSubscriptionsSubscription {
 		return vs[0].([]GetOrganizationSubscriptionsSubscription)[vs[1].(int)]
@@ -335,11 +286,11 @@ func (o GetOrganizationSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntI
 
 type GetOrganizationSubscriptionsSubscriptionCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Currency name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetOrganizationSubscriptionsSubscriptionCurrencyInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionCurrencyArgs and GetOrganizationSubscriptionsSubscriptionCurrencyOutput values.
@@ -355,11 +306,11 @@ type GetOrganizationSubscriptionsSubscriptionCurrencyInput interface {
 
 type GetOrganizationSubscriptionsSubscriptionCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Currency name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetOrganizationSubscriptionsSubscriptionCurrencyArgs) ElementType() reflect.Type {
@@ -372,12 +323,6 @@ func (i GetOrganizationSubscriptionsSubscriptionCurrencyArgs) ToGetOrganizationS
 
 func (i GetOrganizationSubscriptionsSubscriptionCurrencyArgs) ToGetOrganizationSubscriptionsSubscriptionCurrencyOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsSubscriptionCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionCurrencyOutput)
-}
-
-func (i GetOrganizationSubscriptionsSubscriptionCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency]{
-		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOrganizationSubscriptionsSubscriptionCurrencyArrayInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionCurrencyArray and GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput values.
@@ -405,12 +350,6 @@ func (i GetOrganizationSubscriptionsSubscriptionCurrencyArray) ToGetOrganization
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput)
 }
 
-func (i GetOrganizationSubscriptionsSubscriptionCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency]{
-		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOrganizationSubscriptionsSubscriptionCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsSubscriptionCurrencyOutput) ElementType() reflect.Type {
@@ -425,25 +364,19 @@ func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) ToGetOrganizatio
 	return o
 }
 
-func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscriptionCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscriptionCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Currency name
-func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscriptionCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscriptionCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscriptionCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsSubscriptionCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -458,12 +391,6 @@ func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) ToGetOrgani
 
 func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) ToGetOrganizationSubscriptionsSubscriptionCurrencyArrayOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput {
 	return o
-}
-
-func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsSubscriptionCurrencyOutput {

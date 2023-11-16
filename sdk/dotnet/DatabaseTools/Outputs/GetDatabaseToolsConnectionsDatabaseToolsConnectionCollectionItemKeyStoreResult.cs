@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// The key store type.
         /// </summary>
-        public readonly string KeyStoreType;
+        public readonly string? KeyStoreType;
 
         [OutputConstructor]
         private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
 
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult> keyStorePasswords,
 
-            string keyStoreType)
+            string? keyStoreType)
         {
             KeyStoreContents = keyStoreContents;
             KeyStorePasswords = keyStorePasswords;

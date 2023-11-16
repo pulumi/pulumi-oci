@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// The name of a column to be included as an index key.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         /// </summary>
-        public readonly string JsonFieldType;
+        public readonly string? JsonFieldType;
         /// <summary>
         /// If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         /// </summary>
-        public readonly string JsonPath;
+        public readonly string? JsonPath;
 
         [OutputConstructor]
         private GetIndexKeyResult(
-            string columnName,
+            string? columnName,
 
-            string jsonFieldType,
+            string? jsonFieldType,
 
-            string jsonPath)
+            string? jsonPath)
         {
             ColumnName = columnName;
             JsonFieldType = jsonFieldType;

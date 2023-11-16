@@ -17,6 +17,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -106,14 +107,14 @@ public class Function extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment that contains the function.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
@@ -122,7 +123,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="config", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> config;
+    private Output</* @Nullable */ Map<String,Object>> config;
 
     /**
      * @return (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
@@ -130,22 +131,22 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      * 
      */
-    public Output<Map<String,Object>> config() {
-        return this.config;
+    public Output<Optional<Map<String,Object>>> config() {
+        return Codegen.optional(this.config);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
@@ -166,56 +167,56 @@ public class Function extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
     @Export(name="image", refs={String.class}, tree="[0]")
-    private Output<String> image;
+    private Output</* @Nullable */ String> image;
 
     /**
      * @return (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
-    public Output<String> image() {
-        return this.image;
+    public Output<Optional<String>> image() {
+        return Codegen.optional(this.image);
     }
     /**
      * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
     @Export(name="imageDigest", refs={String.class}, tree="[0]")
-    private Output<String> imageDigest;
+    private Output</* @Nullable */ String> imageDigest;
 
     /**
      * @return (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
-    public Output<String> imageDigest() {
-        return this.imageDigest;
+    public Output<Optional<String>> imageDigest() {
+        return Codegen.optional(this.imageDigest);
     }
     /**
      * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      * 
      */
     @Export(name="invokeEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> invokeEndpoint;
+    private Output</* @Nullable */ String> invokeEndpoint;
 
     /**
      * @return The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      * 
      */
-    public Output<String> invokeEndpoint() {
-        return this.invokeEndpoint;
+    public Output<Optional<String>> invokeEndpoint() {
+        return Codegen.optional(this.invokeEndpoint);
     }
     /**
      * (Updatable) Maximum usable memory for the function (MiB).
@@ -236,112 +237,112 @@ public class Function extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="provisionedConcurrencyConfig", refs={FunctionProvisionedConcurrencyConfig.class}, tree="[0]")
-    private Output<FunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfig;
+    private Output</* @Nullable */ FunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfig;
 
     /**
      * @return (Updatable) Define the strategy for provisioned concurrency for the function.
      * 
      */
-    public Output<FunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfig() {
-        return this.provisionedConcurrencyConfig;
+    public Output<Optional<FunctionProvisionedConcurrencyConfig>> provisionedConcurrencyConfig() {
+        return Codegen.optional(this.provisionedConcurrencyConfig);
     }
     /**
      * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * The source details for the Function. The function can be created from various sources.
      * 
      */
     @Export(name="sourceDetails", refs={FunctionSourceDetails.class}, tree="[0]")
-    private Output<FunctionSourceDetails> sourceDetails;
+    private Output</* @Nullable */ FunctionSourceDetails> sourceDetails;
 
     /**
      * @return The source details for the Function. The function can be created from various sources.
      * 
      */
-    public Output<FunctionSourceDetails> sourceDetails() {
-        return this.sourceDetails;
+    public Output<Optional<FunctionSourceDetails>> sourceDetails() {
+        return Codegen.optional(this.sourceDetails);
     }
     /**
      * The current state of the function.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the function.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      * 
      */
     @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> timeoutInSeconds;
+    private Output</* @Nullable */ Integer> timeoutInSeconds;
 
     /**
      * @return (Updatable) Timeout for executions of the function. Value in seconds.
      * 
      */
-    public Output<Integer> timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Output<Optional<Integer>> timeoutInSeconds() {
+        return Codegen.optional(this.timeoutInSeconds);
     }
     /**
      * (Updatable) Define the tracing configuration for a function.
      * 
      */
     @Export(name="traceConfig", refs={FunctionTraceConfig.class}, tree="[0]")
-    private Output<FunctionTraceConfig> traceConfig;
+    private Output</* @Nullable */ FunctionTraceConfig> traceConfig;
 
     /**
      * @return (Updatable) Define the tracing configuration for a function.
      * 
      */
-    public Output<FunctionTraceConfig> traceConfig() {
-        return this.traceConfig;
+    public Output<Optional<FunctionTraceConfig>> traceConfig() {
+        return Codegen.optional(this.traceConfig);
     }
 
     /**

@@ -150,11 +150,11 @@ export interface GetUserAssessmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    readonly ignoredTargets: outputs.DataSafe.GetUserAssessmentsIgnoredTarget[];
+    readonly ignoredTargets?: outputs.DataSafe.GetUserAssessmentsIgnoredTarget[];
     /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      */
@@ -179,7 +179,7 @@ export interface GetUserAssessmentsResult {
     /**
      * The list of user_assessments.
      */
-    readonly userAssessments: outputs.DataSafe.GetUserAssessmentsUserAssessment[];
+    readonly userAssessments?: outputs.DataSafe.GetUserAssessmentsUserAssessment[];
 }
 /**
  * This data source provides the list of User Assessments in Oracle Cloud Infrastructure Data Safe service.

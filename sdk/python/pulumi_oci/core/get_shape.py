@@ -60,7 +60,7 @@ class GetShapeResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,7 +73,7 @@ class GetShapeResult:
 
     @property
     @pulumi.getter
-    def shapes(self) -> Sequence['outputs.GetShapeShapeResult']:
+    def shapes(self) -> Optional[Sequence['outputs.GetShapeShapeResult']]:
         return pulumi.get(self, "shapes")
 
 

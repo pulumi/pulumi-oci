@@ -53,12 +53,12 @@ export interface GetBackendSetsResult {
     /**
      * The list of backendsets.
      */
-    readonly backendsets: outputs.LoadBalancer.GetBackendSetsBackendset[];
+    readonly backendsets?: outputs.LoadBalancer.GetBackendSetsBackendset[];
     readonly filters?: outputs.LoadBalancer.GetBackendSetsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
 }
 /**

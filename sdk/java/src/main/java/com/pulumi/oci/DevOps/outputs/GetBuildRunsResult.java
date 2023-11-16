@@ -23,7 +23,7 @@ public final class GetBuildRunsResult {
      * @return The list of build_run_summary_collection.
      * 
      */
-    private List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections;
+    private @Nullable List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections;
     /**
      * @return The OCID of the compartment where the build is running.
      * 
@@ -68,7 +68,7 @@ public final class GetBuildRunsResult {
      * 
      */
     public List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections() {
-        return this.buildRunSummaryCollections;
+        return this.buildRunSummaryCollections == null ? List.of() : this.buildRunSummaryCollections;
     }
     /**
      * @return The OCID of the compartment where the build is running.
@@ -123,7 +123,7 @@ public final class GetBuildRunsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String buildPipelineId;
-        private List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections;
+        private @Nullable List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBuildRunsFilter> filters;
@@ -149,8 +149,8 @@ public final class GetBuildRunsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder buildRunSummaryCollections(List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections) {
-            this.buildRunSummaryCollections = Objects.requireNonNull(buildRunSummaryCollections);
+        public Builder buildRunSummaryCollections(@Nullable List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections) {
+            this.buildRunSummaryCollections = buildRunSummaryCollections;
             return this;
         }
         public Builder buildRunSummaryCollections(GetBuildRunsBuildRunSummaryCollection... buildRunSummaryCollections) {

@@ -24,7 +24,7 @@ public final class GetWorkspacesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String name;
     /**
      * @return Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
@@ -35,7 +35,7 @@ public final class GetWorkspacesResult {
      * @return The list of workspaces.
      * 
      */
-    private List<GetWorkspacesWorkspace> workspaces;
+    private @Nullable List<GetWorkspacesWorkspace> workspaces;
 
     private GetWorkspacesResult() {}
     /**
@@ -52,8 +52,8 @@ public final class GetWorkspacesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -70,7 +70,7 @@ public final class GetWorkspacesResult {
      * 
      */
     public List<GetWorkspacesWorkspace> workspaces() {
-        return this.workspaces;
+        return this.workspaces == null ? List.of() : this.workspaces;
     }
 
     public static Builder builder() {
@@ -84,10 +84,10 @@ public final class GetWorkspacesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetWorkspacesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetWorkspacesWorkspace> workspaces;
+        private @Nullable List<GetWorkspacesWorkspace> workspaces;
         public Builder() {}
         public Builder(GetWorkspacesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,8 +113,8 @@ public final class GetWorkspacesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -128,8 +128,8 @@ public final class GetWorkspacesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder workspaces(List<GetWorkspacesWorkspace> workspaces) {
-            this.workspaces = Objects.requireNonNull(workspaces);
+        public Builder workspaces(@Nullable List<GetWorkspacesWorkspace> workspaces) {
+            this.workspaces = workspaces;
             return this;
         }
         public Builder workspaces(GetWorkspacesWorkspace... workspaces) {

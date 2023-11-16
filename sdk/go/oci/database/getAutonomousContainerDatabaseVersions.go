@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
@@ -68,8 +67,8 @@ type GetAutonomousContainerDatabaseVersionsResult struct {
 	CompartmentId                       string                                                                     `pulumi:"compartmentId"`
 	Filters                             []GetAutonomousContainerDatabaseVersionsFilter                             `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string `pulumi:"id"`
-	ServiceComponent string `pulumi:"serviceComponent"`
+	Id               *string `pulumi:"id"`
+	ServiceComponent string  `pulumi:"serviceComponent"`
 }
 
 func GetAutonomousContainerDatabaseVersionsOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseVersionsResultOutput {
@@ -113,12 +112,6 @@ func (o GetAutonomousContainerDatabaseVersionsResultOutput) ToGetAutonomousConta
 	return o
 }
 
-func (o GetAutonomousContainerDatabaseVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerDatabaseVersionsResult] {
-	return pulumix.Output[GetAutonomousContainerDatabaseVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_container_database_versions.
 func (o GetAutonomousContainerDatabaseVersionsResultOutput) AutonomousContainerDatabaseVersions() GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionArrayOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseVersionsResult) []GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion {
@@ -137,8 +130,8 @@ func (o GetAutonomousContainerDatabaseVersionsResultOutput) Filters() GetAutonom
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousContainerDatabaseVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousContainerDatabaseVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAutonomousContainerDatabaseVersionsResultOutput) ServiceComponent() pulumi.StringOutput {

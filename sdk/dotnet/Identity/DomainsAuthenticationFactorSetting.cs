@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("autoEnrollEmailFactorDisabled")]
-        public Output<bool> AutoEnrollEmailFactorDisabled { get; private set; } = null!;
+        public Output<bool?> AutoEnrollEmailFactorDisabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that Bypass Code is enabled for authentication
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("emailEnabled")]
-        public Output<bool> EmailEnabled { get; private set; } = null!;
+        public Output<bool?> EmailEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
@@ -207,7 +207,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("emailSettings")]
-        public Output<Outputs.DomainsAuthenticationFactorSettingEmailSettings> EmailSettings { get; private set; } = null!;
+        public Output<Outputs.DomainsAuthenticationFactorSettingEmailSettings?> EmailSettings { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
@@ -239,7 +239,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("fidoAuthenticatorEnabled")]
-        public Output<bool> FidoAuthenticatorEnabled { get; private set; } = null!;
+        public Output<bool?> FidoAuthenticatorEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("hideBackupFactorEnabled")]
-        public Output<bool> HideBackupFactorEnabled { get; private set; } = null!;
+        public Output<bool?> HideBackupFactorEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
@@ -306,7 +306,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -336,7 +336,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("identityStoreSettings")]
-        public Output<Outputs.DomainsAuthenticationFactorSettingIdentityStoreSettings> IdentityStoreSettings { get; private set; } = null!;
+        public Output<Outputs.DomainsAuthenticationFactorSettingIdentityStoreSettings?> IdentityStoreSettings { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -369,7 +369,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("mfaEnabledCategory")]
-        public Output<string> MfaEnabledCategory { get; private set; } = null!;
+        public Output<string?> MfaEnabledCategory { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
@@ -421,7 +421,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
@@ -438,7 +438,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("phoneCallEnabled")]
-        public Output<bool> PhoneCallEnabled { get; private set; } = null!;
+        public Output<bool?> PhoneCallEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
@@ -537,7 +537,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Settings related to third-party factor
@@ -554,7 +554,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("thirdPartyFactor")]
-        public Output<Outputs.DomainsAuthenticationFactorSettingThirdPartyFactor> ThirdPartyFactor { get; private set; } = null!;
+        public Output<Outputs.DomainsAuthenticationFactorSettingThirdPartyFactor?> ThirdPartyFactor { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
@@ -590,13 +590,13 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings")]
-        public Output<Outputs.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings> UrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings { get; private set; } = null!;
+        public Output<Outputs.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings?> UrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings")]
-        public Output<Outputs.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings> UrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings { get; private set; } = null!;
+        public Output<Outputs.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings?> UrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Factors for which enrollment should be blocked for End User
@@ -634,7 +634,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("yubicoOtpEnabled")]
-        public Output<bool> YubicoOtpEnabled { get; private set; } = null!;
+        public Output<bool?> YubicoOtpEnabled { get; private set; } = null!;
 
 
         /// <summary>

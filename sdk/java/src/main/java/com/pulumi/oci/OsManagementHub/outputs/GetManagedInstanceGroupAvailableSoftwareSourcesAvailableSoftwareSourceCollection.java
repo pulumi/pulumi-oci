@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection {
@@ -14,7 +15,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
      * @return List of available software sources.
      * 
      */
-    private List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem> items;
+    private @Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem> items;
 
     private GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
      * 
      */
     public List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem> items;
+        private @Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem... items) {

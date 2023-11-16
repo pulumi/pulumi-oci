@@ -43,25 +43,16 @@ class GetExternalExadataInfrastructuresResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalExadataInfrastructureCollections")
-    def external_exadata_infrastructure_collections(self) -> Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionResult']:
-        """
-        The list of external_exadata_infrastructure_collection.
-        """
+    def external_exadata_infrastructure_collections(self) -> Optional[Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionResult']]:
         return pulumi.get(self, "external_exadata_infrastructure_collections")
 
     @property
@@ -71,7 +62,7 @@ class GetExternalExadataInfrastructuresResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,23 +87,7 @@ def get_external_exadata_infrastructures(compartment_id: Optional[str] = None,
                                          filters: Optional[Sequence[pulumi.InputType['GetExternalExadataInfrastructuresFilterArgs']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataInfrastructuresResult:
     """
-    This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the Exadata infrastructure resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_infrastructures = oci.DatabaseManagement.get_external_exadata_infrastructures(compartment_id=var["compartment_id"],
-        display_name=var["external_exadata_infrastructure_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: The optional single value query filter parameter on the entity display name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_external_exadata_infrastructures_output(compartment_id: Optional[pulumi.
                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalExadataInfrastructuresFilterArgs']]]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataInfrastructuresResult]:
     """
-    This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the Exadata infrastructure resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_infrastructures = oci.DatabaseManagement.get_external_exadata_infrastructures(compartment_id=var["compartment_id"],
-        display_name=var["external_exadata_infrastructure_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: The optional single value query filter parameter on the entity display name.
+    Use this data source to access information about an existing resource.
     """
     ...

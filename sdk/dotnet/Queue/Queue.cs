@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Queue
         /// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         /// </summary>
         [Output("channelConsumptionLimit")]
-        public Output<int> ChannelConsumptionLimit { get; private set; } = null!;
+        public Output<int?> ChannelConsumptionLimit { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
@@ -74,19 +74,19 @@ namespace Pulumi.Oci.Queue
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         /// </summary>
         [Output("customEncryptionKeyId")]
-        public Output<string> CustomEncryptionKeyId { get; private set; } = null!;
+        public Output<string?> CustomEncryptionKeyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         /// </summary>
         [Output("deadLetterQueueDeliveryCount")]
-        public Output<int> DeadLetterQueueDeliveryCount { get; private set; } = null!;
+        public Output<int?> DeadLetterQueueDeliveryCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name of the queue.
@@ -98,19 +98,19 @@ namespace Pulumi.Oci.Queue
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Any additional details about the current state of the queue.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The endpoint to use to consume or publish messages in the queue.
         /// </summary>
         [Output("messagesEndpoint")]
-        public Output<string> MessagesEndpoint { get; private set; } = null!;
+        public Output<string?> MessagesEndpoint { get; private set; } = null!;
 
         [Output("purgeQueue")]
         public Output<bool?> PurgeQueue { get; private set; } = null!;
@@ -122,43 +122,43 @@ namespace Pulumi.Oci.Queue
         /// The retention period of messages in the queue, in seconds.
         /// </summary>
         [Output("retentionInSeconds")]
-        public Output<int> RetentionInSeconds { get; private set; } = null!;
+        public Output<int?> RetentionInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the queue.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The default polling timeout of the messages in the queue, in seconds.
         /// </summary>
         [Output("timeoutInSeconds")]
-        public Output<int> TimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> TimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         /// </summary>
         [Output("visibilityInSeconds")]
-        public Output<int> VisibilityInSeconds { get; private set; } = null!;
+        public Output<int?> VisibilityInSeconds { get; private set; } = null!;
 
 
         /// <summary>

@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -308,28 +309,28 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalDomains", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> additionalDomains;
+    private Output</* @Nullable */ List<String>> additionalDomains;
 
     /**
      * @return (Updatable) An array of additional domains for the specified web application.
      * 
      */
-    public Output<List<String>> additionalDomains() {
-        return this.additionalDomains;
+    public Output<Optional<List<String>>> additionalDomains() {
+        return Codegen.optional(this.additionalDomains);
     }
     /**
      * The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      * 
      */
     @Export(name="cname", refs={String.class}, tree="[0]")
-    private Output<String> cname;
+    private Output</* @Nullable */ String> cname;
 
     /**
      * @return The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      * 
      */
-    public Output<String> cname() {
-        return this.cname;
+    public Output<Optional<String>> cname() {
+        return Codegen.optional(this.cname);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
@@ -350,28 +351,28 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -392,98 +393,98 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
     @Export(name="originGroups", refs={List.class,PolicyOriginGroup.class}, tree="[0,1]")
-    private Output<List<PolicyOriginGroup>> originGroups;
+    private Output</* @Nullable */ List<PolicyOriginGroup>> originGroups;
 
     /**
      * @return (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
-    public Output<List<PolicyOriginGroup>> originGroups() {
-        return this.originGroups;
+    public Output<Optional<List<PolicyOriginGroup>>> originGroups() {
+        return Codegen.optional(this.originGroups);
     }
     /**
      * (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      * 
      */
     @Export(name="origins", refs={List.class,PolicyOrigin.class}, tree="[0,1]")
-    private Output<List<PolicyOrigin>> origins;
+    private Output</* @Nullable */ List<PolicyOrigin>> origins;
 
     /**
      * @return (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      * 
      */
-    public Output<List<PolicyOrigin>> origins() {
-        return this.origins;
+    public Output<Optional<List<PolicyOrigin>>> origins() {
+        return Codegen.optional(this.origins);
     }
     /**
      * (Updatable) The configuration details for the WAAS policy.
      * 
      */
     @Export(name="policyConfig", refs={PolicyPolicyConfig.class}, tree="[0]")
-    private Output<PolicyPolicyConfig> policyConfig;
+    private Output</* @Nullable */ PolicyPolicyConfig> policyConfig;
 
     /**
      * @return (Updatable) The configuration details for the WAAS policy.
      * 
      */
-    public Output<PolicyPolicyConfig> policyConfig() {
-        return this.policyConfig;
+    public Output<Optional<PolicyPolicyConfig>> policyConfig() {
+        return Codegen.optional(this.policyConfig);
     }
     /**
      * The current lifecycle state of the WAAS policy.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the WAAS policy.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the policy was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
      * 
      */
     @Export(name="wafConfig", refs={PolicyWafConfig.class}, tree="[0]")
-    private Output<PolicyWafConfig> wafConfig;
+    private Output</* @Nullable */ PolicyWafConfig> wafConfig;
 
     /**
      * @return (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
      * 
      */
-    public Output<PolicyWafConfig> wafConfig() {
-        return this.wafConfig;
+    public Output<Optional<PolicyWafConfig>> wafConfig() {
+        return Codegen.optional(this.wafConfig);
     }
 
     /**

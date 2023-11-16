@@ -33,7 +33,7 @@ public final class GetFileSystemsResult {
      * @return The list of file_systems.
      * 
      */
-    private List<GetFileSystemsFileSystem> fileSystems;
+    private @Nullable List<GetFileSystemsFileSystem> fileSystems;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
      * 
@@ -88,7 +88,7 @@ public final class GetFileSystemsResult {
      * 
      */
     public List<GetFileSystemsFileSystem> fileSystems() {
-        return this.fileSystems;
+        return this.fileSystems == null ? List.of() : this.fileSystems;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -141,7 +141,7 @@ public final class GetFileSystemsResult {
         private String availabilityDomain;
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetFileSystemsFileSystem> fileSystems;
+        private @Nullable List<GetFileSystemsFileSystem> fileSystems;
         private @Nullable String filesystemSnapshotPolicyId;
         private @Nullable List<GetFileSystemsFilter> filters;
         private @Nullable String id;
@@ -179,8 +179,8 @@ public final class GetFileSystemsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder fileSystems(List<GetFileSystemsFileSystem> fileSystems) {
-            this.fileSystems = Objects.requireNonNull(fileSystems);
+        public Builder fileSystems(@Nullable List<GetFileSystemsFileSystem> fileSystems) {
+            this.fileSystems = fileSystems;
             return this;
         }
         public Builder fileSystems(GetFileSystemsFileSystem... fileSystems) {

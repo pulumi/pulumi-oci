@@ -72,27 +72,27 @@ export interface GetTraceSnapshotDataResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isSummarized?: boolean;
     /**
      * Name of the property.
      */
-    readonly key: string;
+    readonly key?: string;
     readonly snapshotTime?: string;
     readonly threadId?: string;
     /**
      * End time of the trace.
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * Start time of the trace.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     readonly traceKey: string;
     /**
      * Trace snapshots properties.
      */
-    readonly traceSnapshotDetails: outputs.ApmTraces.GetTraceSnapshotDataTraceSnapshotDetail[];
+    readonly traceSnapshotDetails?: outputs.ApmTraces.GetTraceSnapshotDataTraceSnapshotDetail[];
 }
 /**
  * This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.

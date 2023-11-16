@@ -44,7 +44,7 @@ class GetManagedPreferredCredentialsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetManagedPreferredCredentialsResult:
 
     @property
     @pulumi.getter(name="preferredCredentialCollections")
-    def preferred_credential_collections(self) -> Sequence['outputs.GetManagedPreferredCredentialsPreferredCredentialCollectionResult']:
-        """
-        The list of preferred_credential_collection.
-        """
+    def preferred_credential_collections(self) -> Optional[Sequence['outputs.GetManagedPreferredCredentialsPreferredCredentialCollectionResult']]:
         return pulumi.get(self, "preferred_credential_collections")
 
 
@@ -80,21 +77,7 @@ def get_managed_preferred_credentials(filters: Optional[Sequence[pulumi.InputTyp
                                       managed_database_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedPreferredCredentialsResult:
     """
-    This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of preferred credentials for a given Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_preferred_credentials = oci.Database.get_managed_preferred_credentials(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Opti
                                              managed_database_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedPreferredCredentialsResult]:
     """
-    This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of preferred credentials for a given Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_preferred_credentials = oci.Database.get_managed_preferred_credentials(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     ...

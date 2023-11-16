@@ -52,12 +52,12 @@ export interface GetCrossConnectPortSpeedShapeResult {
     /**
      * The list of cross_connect_port_speed_shapes.
      */
-    readonly crossConnectPortSpeedShapes: outputs.Core.GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape[];
+    readonly crossConnectPortSpeedShapes?: outputs.Core.GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape[];
     readonly filters?: outputs.Core.GetCrossConnectPortSpeedShapeFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.

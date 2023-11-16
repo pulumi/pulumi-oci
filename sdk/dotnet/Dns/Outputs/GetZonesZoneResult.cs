@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the zone.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         /// </summary>
-        public readonly bool IsProtected;
+        public readonly bool? IsProtected;
         /// <summary>
         /// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The authoritative nameservers for the zone.
         /// </summary>
@@ -53,31 +53,31 @@ namespace Pulumi.Oci.Dns.Outputs
         /// Specifies to operate only on resources that have a matching DNS scope. This value will be null 
         /// for zones in the global DNS and `PRIVATE` when listing private zones.
         /// </summary>
-        public readonly string Scope;
+        public readonly string? Scope;
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
-        public readonly string Self;
+        public readonly string? Self;
         /// <summary>
         /// The current serial of the zone. As seen in the zone's SOA record.
         /// </summary>
-        public readonly int Serial;
+        public readonly int? Serial;
         /// <summary>
         /// The state of a resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
         /// <summary>
         /// The OCID of the view the resource is associated with.
         /// </summary>
-        public readonly string ViewId;
+        public readonly string? ViewId;
         /// <summary>
         /// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         /// </summary>
@@ -85,45 +85,45 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
         /// </summary>
-        public readonly string ZoneType;
+        public readonly string? ZoneType;
 
         [OutputConstructor]
         private GetZonesZoneResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetZonesZoneExternalDownstreamResult> externalDownstreams,
 
             ImmutableArray<Outputs.GetZonesZoneExternalMasterResult> externalMasters,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isProtected,
+            bool? isProtected,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetZonesZoneNameserverResult> nameservers,
 
-            string scope,
+            string? scope,
 
-            string self,
+            string? self,
 
-            int serial,
+            int? serial,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string version,
+            string? version,
 
-            string viewId,
+            string? viewId,
 
             ImmutableArray<Outputs.GetZonesZoneZoneTransferServerResult> zoneTransferServers,
 
-            string zoneType)
+            string? zoneType)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -66,8 +65,8 @@ type GetTraceAggregatedSnapshotDataResult struct {
 	// Aggregated snapshot details.
 	Details []GetTraceAggregatedSnapshotDataDetail `pulumi:"details"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	TraceKey string `pulumi:"traceKey"`
+	Id       *string `pulumi:"id"`
+	TraceKey string  `pulumi:"traceKey"`
 }
 
 func GetTraceAggregatedSnapshotDataOutput(ctx *pulumi.Context, args GetTraceAggregatedSnapshotDataOutputArgs, opts ...pulumi.InvokeOption) GetTraceAggregatedSnapshotDataResultOutput {
@@ -110,12 +109,6 @@ func (o GetTraceAggregatedSnapshotDataResultOutput) ToGetTraceAggregatedSnapshot
 	return o
 }
 
-func (o GetTraceAggregatedSnapshotDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceAggregatedSnapshotDataResult] {
-	return pulumix.Output[GetTraceAggregatedSnapshotDataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceAggregatedSnapshotDataResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -126,8 +119,8 @@ func (o GetTraceAggregatedSnapshotDataResultOutput) Details() GetTraceAggregated
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTraceAggregatedSnapshotDataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTraceAggregatedSnapshotDataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTraceAggregatedSnapshotDataResultOutput) TraceKey() pulumi.StringOutput {

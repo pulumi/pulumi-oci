@@ -74,12 +74,12 @@ export interface GetExternalListenersResult {
     /**
      * The list of external_listener_collection.
      */
-    readonly externalListenerCollections: outputs.DatabaseManagement.GetExternalListenersExternalListenerCollection[];
+    readonly externalListenerCollections?: outputs.DatabaseManagement.GetExternalListenersExternalListenerCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalListenersFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.

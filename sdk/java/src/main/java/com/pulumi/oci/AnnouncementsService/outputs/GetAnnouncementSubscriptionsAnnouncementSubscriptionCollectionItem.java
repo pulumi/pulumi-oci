@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem {
@@ -17,183 +19,183 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A description of the announcement subscription. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
      * 
      */
-    private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups;
+    private @Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the announcement subscription.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
      * 
      */
-    private String onsTopicId;
+    private @Nullable String onsTopicId;
     /**
      * @return (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
      * 
      */
-    private String preferredLanguage;
+    private @Nullable String preferredLanguage;
     /**
      * @return The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
      * 
      */
-    private String preferredTimeZone;
+    private @Nullable String preferredTimeZone;
     /**
      * @return A filter to return only announcement subscriptions that match the given lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem() {}
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A description of the announcement subscription. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
      * 
      */
     public List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups() {
-        return this.filterGroups;
+        return this.filterGroups == null ? List.of() : this.filterGroups;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the announcement subscription.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
      * 
      */
-    public String onsTopicId() {
-        return this.onsTopicId;
+    public Optional<String> onsTopicId() {
+        return Optional.ofNullable(this.onsTopicId);
     }
     /**
      * @return (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
      * 
      */
-    public String preferredLanguage() {
-        return this.preferredLanguage;
+    public Optional<String> preferredLanguage() {
+        return Optional.ofNullable(this.preferredLanguage);
     }
     /**
      * @return The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
      * 
      */
-    public String preferredTimeZone() {
-        return this.preferredTimeZone;
+    public Optional<String> preferredTimeZone() {
+        return Optional.ofNullable(this.preferredTimeZone);
     }
     /**
      * @return A filter to return only announcement subscriptions that match the given lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -205,21 +207,21 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String onsTopicId;
-        private String preferredLanguage;
-        private String preferredTimeZone;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String onsTopicId;
+        private @Nullable String preferredLanguage;
+        private @Nullable String preferredTimeZone;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -241,81 +243,81 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder filterGroups(List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups) {
-            this.filterGroups = Objects.requireNonNull(filterGroups);
+        public Builder filterGroups(@Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups) {
+            this.filterGroups = filterGroups;
             return this;
         }
         public Builder filterGroups(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup... filterGroups) {
             return filterGroups(List.of(filterGroups));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder onsTopicId(String onsTopicId) {
-            this.onsTopicId = Objects.requireNonNull(onsTopicId);
+        public Builder onsTopicId(@Nullable String onsTopicId) {
+            this.onsTopicId = onsTopicId;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredLanguage(String preferredLanguage) {
-            this.preferredLanguage = Objects.requireNonNull(preferredLanguage);
+        public Builder preferredLanguage(@Nullable String preferredLanguage) {
+            this.preferredLanguage = preferredLanguage;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredTimeZone(String preferredTimeZone) {
-            this.preferredTimeZone = Objects.requireNonNull(preferredTimeZone);
+        public Builder preferredTimeZone(@Nullable String preferredTimeZone) {
+            this.preferredTimeZone = preferredTimeZone;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem build() {

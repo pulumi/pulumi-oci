@@ -51,26 +51,26 @@ export interface GetListenerResult {
     /**
      * The name of the associated backend set.  Example: `exampleBackendSet`
      */
-    readonly defaultBackendSetName: string;
-    readonly id: string;
+    readonly defaultBackendSetName?: string;
+    readonly id?: string;
     /**
      * IP version associated with the listener.
      */
-    readonly ipVersion: string;
+    readonly ipVersion?: string;
     readonly listenerName: string;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
-    readonly name: string;
+    readonly name?: string;
     readonly networkLoadBalancerId: string;
     /**
      * The communication port for the listener.  Example: `80`
      */
-    readonly port: number;
+    readonly port?: number;
     /**
      * The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
      */
-    readonly protocol: string;
+    readonly protocol?: string;
 }
 /**
  * This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.

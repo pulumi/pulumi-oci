@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Audit
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string StartTime;
 
         [OutputConstructor]
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.Audit
 
             ImmutableArray<Outputs.GetEventsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string startTime)
         {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
@@ -116,18 +115,18 @@ type VmClusterNetwork struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps pulumi.StringArrayOutput `pulumi:"ntps"`
 	// (Updatable) The SCAN details.
 	Scans VmClusterNetworkScanArrayOutput `pulumi:"scans"`
 	// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time when the VM cluster network was created.
-	TimeCreated              pulumi.StringOutput  `pulumi:"timeCreated"`
-	ValidateVmClusterNetwork pulumi.BoolPtrOutput `pulumi:"validateVmClusterNetwork"`
+	TimeCreated              pulumi.StringPtrOutput `pulumi:"timeCreated"`
+	ValidateVmClusterNetwork pulumi.BoolPtrOutput   `pulumi:"validateVmClusterNetwork"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-	VmClusterId pulumi.StringOutput `pulumi:"vmClusterId"`
+	VmClusterId pulumi.StringPtrOutput `pulumi:"vmClusterId"`
 	// (Updatable) Details of the client and backup networks.
 	VmNetworks VmClusterNetworkVmNetworkArrayOutput `pulumi:"vmNetworks"`
 }
@@ -320,12 +319,6 @@ func (i *VmClusterNetwork) ToVmClusterNetworkOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterNetworkOutput)
 }
 
-func (i *VmClusterNetwork) ToOutput(ctx context.Context) pulumix.Output[*VmClusterNetwork] {
-	return pulumix.Output[*VmClusterNetwork]{
-		OutputState: i.ToVmClusterNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VmClusterNetworkArrayInput is an input type that accepts VmClusterNetworkArray and VmClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `VmClusterNetworkArrayInput` via:
 //
@@ -349,12 +342,6 @@ func (i VmClusterNetworkArray) ToVmClusterNetworkArrayOutput() VmClusterNetworkA
 
 func (i VmClusterNetworkArray) ToVmClusterNetworkArrayOutputWithContext(ctx context.Context) VmClusterNetworkArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterNetworkArrayOutput)
-}
-
-func (i VmClusterNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterNetwork] {
-	return pulumix.Output[[]*VmClusterNetwork]{
-		OutputState: i.ToVmClusterNetworkArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VmClusterNetworkMapInput is an input type that accepts VmClusterNetworkMap and VmClusterNetworkMapOutput values.
@@ -382,12 +369,6 @@ func (i VmClusterNetworkMap) ToVmClusterNetworkMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterNetworkMapOutput)
 }
 
-func (i VmClusterNetworkMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterNetwork] {
-	return pulumix.Output[map[string]*VmClusterNetwork]{
-		OutputState: i.ToVmClusterNetworkMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VmClusterNetworkOutput struct{ *pulumi.OutputState }
 
 func (VmClusterNetworkOutput) ElementType() reflect.Type {
@@ -400,12 +381,6 @@ func (o VmClusterNetworkOutput) ToVmClusterNetworkOutput() VmClusterNetworkOutpu
 
 func (o VmClusterNetworkOutput) ToVmClusterNetworkOutputWithContext(ctx context.Context) VmClusterNetworkOutput {
 	return o
-}
-
-func (o VmClusterNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[*VmClusterNetwork] {
-	return pulumix.Output[*VmClusterNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VmClusterNetworkOutput) Action() pulumi.StringPtrOutput {
@@ -448,8 +423,8 @@ func (o VmClusterNetworkOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Additional information about the current lifecycle state.
-func (o VmClusterNetworkOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o VmClusterNetworkOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -463,13 +438,13 @@ func (o VmClusterNetworkOutput) Scans() VmClusterNetworkScanArrayOutput {
 }
 
 // (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-func (o VmClusterNetworkOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VmClusterNetworkOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the VM cluster network was created.
-func (o VmClusterNetworkOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VmClusterNetworkOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o VmClusterNetworkOutput) ValidateVmClusterNetwork() pulumi.BoolPtrOutput {
@@ -477,8 +452,8 @@ func (o VmClusterNetworkOutput) ValidateVmClusterNetwork() pulumi.BoolPtrOutput 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-func (o VmClusterNetworkOutput) VmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringOutput { return v.VmClusterId }).(pulumi.StringOutput)
+func (o VmClusterNetworkOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringPtrOutput { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Details of the client and backup networks.
@@ -500,12 +475,6 @@ func (o VmClusterNetworkArrayOutput) ToVmClusterNetworkArrayOutputWithContext(ct
 	return o
 }
 
-func (o VmClusterNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterNetwork] {
-	return pulumix.Output[[]*VmClusterNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VmClusterNetworkArrayOutput) Index(i pulumi.IntInput) VmClusterNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VmClusterNetwork {
 		return vs[0].([]*VmClusterNetwork)[vs[1].(int)]
@@ -524,12 +493,6 @@ func (o VmClusterNetworkMapOutput) ToVmClusterNetworkMapOutput() VmClusterNetwor
 
 func (o VmClusterNetworkMapOutput) ToVmClusterNetworkMapOutputWithContext(ctx context.Context) VmClusterNetworkMapOutput {
 	return o
-}
-
-func (o VmClusterNetworkMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterNetwork] {
-	return pulumix.Output[map[string]*VmClusterNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VmClusterNetworkMapOutput) MapIndex(k pulumi.StringInput) VmClusterNetworkOutput {

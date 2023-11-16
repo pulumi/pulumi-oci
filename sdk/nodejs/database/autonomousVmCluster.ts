@@ -90,27 +90,27 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
         return obj['__pulumiType'] === AutonomousVmCluster.__pulumiType;
     }
 
-    public /*out*/ readonly autonomousDataStoragePercentage!: pulumi.Output<number>;
+    public /*out*/ readonly autonomousDataStoragePercentage!: pulumi.Output<number | undefined>;
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
-    public readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number>;
+    public readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
      */
-    public /*out*/ readonly availableAutonomousDataStorageSizeInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly availableAutonomousDataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * The number of Autonomous Container Databases that can be created with the currently available local storage.
      */
-    public /*out*/ readonly availableContainerDatabases!: pulumi.Output<number>;
+    public /*out*/ readonly availableContainerDatabases!: pulumi.Output<number | undefined>;
     /**
      * The numnber of CPU cores available.
      */
-    public /*out*/ readonly availableCpus!: pulumi.Output<number>;
+    public /*out*/ readonly availableCpus!: pulumi.Output<number | undefined>;
     /**
      * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
      */
-    public /*out*/ readonly availableDataStorageSizeInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly availableDataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -118,33 +118,33 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
     /**
      * The compute model of the Autonomous VM Cluster.
      */
-    public readonly computeModel!: pulumi.Output<string>;
+    public readonly computeModel!: pulumi.Output<string | undefined>;
     /**
      * The number of CPU cores to enable per VM cluster node.
      */
-    public readonly cpuCoreCountPerNode!: pulumi.Output<number>;
-    public /*out*/ readonly cpuPercentage!: pulumi.Output<number>;
+    public readonly cpuCoreCountPerNode!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly cpuPercentage!: pulumi.Output<number | undefined>;
     /**
      * The number of enabled CPU cores.
      */
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
-    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    public /*out*/ readonly cpusEnabled!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number | undefined>;
     /**
      * The total data storage allocated in TBs
      */
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      */
-    public readonly dbServers!: pulumi.Output<string[]>;
+    public readonly dbServers!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      */
@@ -156,98 +156,98 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
      */
-    public readonly isLocalBackupEnabled!: pulumi.Output<boolean>;
+    public readonly isLocalBackupEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      */
-    public readonly isMtlsEnabled!: pulumi.Output<boolean>;
+    public readonly isMtlsEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public readonly maintenanceWindowDetails!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindowDetail[]>;
+    public readonly maintenanceWindowDetails!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindowDetail[] | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindow[]>;
+    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindow[] | undefined>;
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
-    public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
+    public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string | undefined>;
     /**
      * The number of nodes in the Autonomous VM Cluster.
      */
-    public /*out*/ readonly nodeCount!: pulumi.Output<number>;
-    public /*out*/ readonly nonProvisionableAutonomousContainerDatabases!: pulumi.Output<number>;
+    public /*out*/ readonly nodeCount!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly nonProvisionableAutonomousContainerDatabases!: pulumi.Output<number | undefined>;
     /**
      * The number of enabled OCPU cores.
      */
-    public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
-    public /*out*/ readonly provisionedAutonomousContainerDatabases!: pulumi.Output<number>;
-    public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
+    public /*out*/ readonly ocpusEnabled!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly provisionedAutonomousContainerDatabases!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly provisionedCpus!: pulumi.Output<number | undefined>;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
-    public /*out*/ readonly reservedCpus!: pulumi.Output<number>;
+    public /*out*/ readonly reclaimableCpus!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly reservedCpus!: pulumi.Output<number | undefined>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
-    public readonly scanListenerPortNonTls!: pulumi.Output<number>;
+    public readonly scanListenerPortNonTls!: pulumi.Output<number | undefined>;
     /**
      * The SCAN Listener TLS port number. Default value is 2484.
      */
-    public readonly scanListenerPortTls!: pulumi.Output<number>;
+    public readonly scanListenerPortTls!: pulumi.Output<number | undefined>;
     /**
      * The current state of the Autonomous VM cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time that the Autonomous VM cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time of Database SSL certificate expiration.
      */
-    public /*out*/ readonly timeDatabaseSslCertificateExpires!: pulumi.Output<string>;
+    public /*out*/ readonly timeDatabaseSslCertificateExpires!: pulumi.Output<string | undefined>;
     /**
      * The date and time of ORDS certificate expiration.
      */
-    public /*out*/ readonly timeOrdsCertificateExpires!: pulumi.Output<string>;
+    public /*out*/ readonly timeOrdsCertificateExpires!: pulumi.Output<string | undefined>;
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public readonly timeZone!: pulumi.Output<string>;
-    public /*out*/ readonly totalAutonomousDataStorageInTbs!: pulumi.Output<number>;
+    public readonly timeZone!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly totalAutonomousDataStorageInTbs!: pulumi.Output<number | undefined>;
     /**
      * The total number of Autonomous Container Databases that can be created.
      */
-    public readonly totalContainerDatabases!: pulumi.Output<number>;
+    public readonly totalContainerDatabases!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      *

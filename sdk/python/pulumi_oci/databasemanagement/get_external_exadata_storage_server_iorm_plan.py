@@ -41,10 +41,7 @@ class GetExternalExadataStorageServerIormPlanResult:
 
     @property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetExternalExadataStorageServerIormPlanDbPlanResult']:
-        """
-        The resource allocation directives must all use the share attribute, or they must all use the level and allocation attributes. If you use the share attribute to allocate I/O resources, then the database plan can have a maximum of 1024 directives. If you use the level and allocation attributes to allocate I/O resources, then the database plan can have a maximum of 32 directives. Only one directive is allowed for each database name and each profile name.
-        """
+    def db_plans(self) -> Optional[Sequence['outputs.GetExternalExadataStorageServerIormPlanDbPlanResult']]:
         return pulumi.get(self, "db_plans")
 
     @property
@@ -54,7 +51,7 @@ class GetExternalExadataStorageServerIormPlanResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,18 +59,12 @@ class GetExternalExadataStorageServerIormPlanResult:
 
     @property
     @pulumi.getter(name="planObjective")
-    def plan_objective(self) -> str:
-        """
-        The objective of the IORM plan.
-        """
+    def plan_objective(self) -> Optional[str]:
         return pulumi.get(self, "plan_objective")
 
     @property
     @pulumi.getter(name="planStatus")
-    def plan_status(self) -> str:
-        """
-        The status of the IORM plan.
-        """
+    def plan_status(self) -> Optional[str]:
         return pulumi.get(self, "plan_status")
 
 
@@ -93,21 +84,7 @@ class AwaitableGetExternalExadataStorageServerIormPlanResult(GetExternalExadataS
 def get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id: Optional[str] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataStorageServerIormPlanResult:
     """
-    This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
-
-    Get the IORM plan from the specific Exadata storage server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_server_iorm_plan = oci.DatabaseManagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
@@ -126,20 +103,6 @@ def get_external_exadata_storage_server_iorm_plan(external_exadata_storage_serve
 def get_external_exadata_storage_server_iorm_plan_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerIormPlanResult]:
     """
-    This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
-
-    Get the IORM plan from the specific Exadata storage server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_server_iorm_plan = oci.DatabaseManagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+    Use this data source to access information about an existing resource.
     """
     ...

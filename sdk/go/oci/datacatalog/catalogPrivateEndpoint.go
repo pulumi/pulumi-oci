@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -71,24 +70,24 @@ type CatalogPrivateEndpoint struct {
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Display name of the private endpoint resource being created.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones pulumi.StringArrayOutput `pulumi:"dnsZones"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the private endpoint resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewCatalogPrivateEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -249,12 +248,6 @@ func (i *CatalogPrivateEndpoint) ToCatalogPrivateEndpointOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointOutput)
 }
 
-func (i *CatalogPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*CatalogPrivateEndpoint] {
-	return pulumix.Output[*CatalogPrivateEndpoint]{
-		OutputState: i.ToCatalogPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CatalogPrivateEndpointArrayInput is an input type that accepts CatalogPrivateEndpointArray and CatalogPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `CatalogPrivateEndpointArrayInput` via:
 //
@@ -278,12 +271,6 @@ func (i CatalogPrivateEndpointArray) ToCatalogPrivateEndpointArrayOutput() Catal
 
 func (i CatalogPrivateEndpointArray) ToCatalogPrivateEndpointArrayOutputWithContext(ctx context.Context) CatalogPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointArrayOutput)
-}
-
-func (i CatalogPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*CatalogPrivateEndpoint] {
-	return pulumix.Output[[]*CatalogPrivateEndpoint]{
-		OutputState: i.ToCatalogPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CatalogPrivateEndpointMapInput is an input type that accepts CatalogPrivateEndpointMap and CatalogPrivateEndpointMapOutput values.
@@ -311,12 +298,6 @@ func (i CatalogPrivateEndpointMap) ToCatalogPrivateEndpointMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointMapOutput)
 }
 
-func (i CatalogPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CatalogPrivateEndpoint] {
-	return pulumix.Output[map[string]*CatalogPrivateEndpoint]{
-		OutputState: i.ToCatalogPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CatalogPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (CatalogPrivateEndpointOutput) ElementType() reflect.Type {
@@ -329,12 +310,6 @@ func (o CatalogPrivateEndpointOutput) ToCatalogPrivateEndpointOutput() CatalogPr
 
 func (o CatalogPrivateEndpointOutput) ToCatalogPrivateEndpointOutputWithContext(ctx context.Context) CatalogPrivateEndpointOutput {
 	return o
-}
-
-func (o CatalogPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*CatalogPrivateEndpoint] {
-	return pulumix.Output[*CatalogPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of catalogs using the private reverse connection endpoint
@@ -353,8 +328,8 @@ func (o CatalogPrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Display name of the private endpoint resource being created.
-func (o CatalogPrivateEndpointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o CatalogPrivateEndpointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
@@ -368,13 +343,13 @@ func (o CatalogPrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o CatalogPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o CatalogPrivateEndpointOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint resource.
-func (o CatalogPrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CatalogPrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of subnet to which the reverse connection is to be created
@@ -386,13 +361,13 @@ func (o CatalogPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o CatalogPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CatalogPrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o CatalogPrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o CatalogPrivateEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type CatalogPrivateEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -407,12 +382,6 @@ func (o CatalogPrivateEndpointArrayOutput) ToCatalogPrivateEndpointArrayOutput()
 
 func (o CatalogPrivateEndpointArrayOutput) ToCatalogPrivateEndpointArrayOutputWithContext(ctx context.Context) CatalogPrivateEndpointArrayOutput {
 	return o
-}
-
-func (o CatalogPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CatalogPrivateEndpoint] {
-	return pulumix.Output[[]*CatalogPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogPrivateEndpointArrayOutput) Index(i pulumi.IntInput) CatalogPrivateEndpointOutput {
@@ -433,12 +402,6 @@ func (o CatalogPrivateEndpointMapOutput) ToCatalogPrivateEndpointMapOutput() Cat
 
 func (o CatalogPrivateEndpointMapOutput) ToCatalogPrivateEndpointMapOutputWithContext(ctx context.Context) CatalogPrivateEndpointMapOutput {
 	return o
-}
-
-func (o CatalogPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CatalogPrivateEndpoint] {
-	return pulumix.Output[map[string]*CatalogPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) CatalogPrivateEndpointOutput {

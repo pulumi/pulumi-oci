@@ -18,7 +18,7 @@ public final class GetCaptureFiltersResult {
      * @return The list of capture_filters.
      * 
      */
-    private List<GetCaptureFiltersCaptureFilter> captureFilters;
+    private @Nullable List<GetCaptureFiltersCaptureFilter> captureFilters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
      * 
@@ -39,7 +39,7 @@ public final class GetCaptureFiltersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The capture filter&#39;s current administrative state.
      * 
@@ -52,7 +52,7 @@ public final class GetCaptureFiltersResult {
      * 
      */
     public List<GetCaptureFiltersCaptureFilter> captureFilters() {
-        return this.captureFilters;
+        return this.captureFilters == null ? List.of() : this.captureFilters;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
@@ -82,8 +82,8 @@ public final class GetCaptureFiltersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The capture filter&#39;s current administrative state.
@@ -102,12 +102,12 @@ public final class GetCaptureFiltersResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCaptureFiltersCaptureFilter> captureFilters;
+        private @Nullable List<GetCaptureFiltersCaptureFilter> captureFilters;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable String filterType;
         private @Nullable List<GetCaptureFiltersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetCaptureFiltersResult defaults) {
@@ -122,8 +122,8 @@ public final class GetCaptureFiltersResult {
         }
 
         @CustomType.Setter
-        public Builder captureFilters(List<GetCaptureFiltersCaptureFilter> captureFilters) {
-            this.captureFilters = Objects.requireNonNull(captureFilters);
+        public Builder captureFilters(@Nullable List<GetCaptureFiltersCaptureFilter> captureFilters) {
+            this.captureFilters = captureFilters;
             return this;
         }
         public Builder captureFilters(GetCaptureFiltersCaptureFilter... captureFilters) {
@@ -153,8 +153,8 @@ public final class GetCaptureFiltersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -26,20 +26,6 @@ class IdentityProviderArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IdentityProvider resource.
-        :param pulumi.Input[str] compartment_id: The OCID of your tenancy.
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[str] metadata: (Updatable) The XML that contains the information required for federating.
-        :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
-        :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_attributes: (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
@@ -59,9 +45,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of your tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -71,9 +54,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -83,9 +63,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter
     def metadata(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The XML that contains the information required for federating.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -95,9 +72,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter(name="metadataUrl")
     def metadata_url(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
-        """
         return pulumi.get(self, "metadata_url")
 
     @metadata_url.setter
@@ -107,9 +81,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter(name="productType")
     def product_type(self) -> pulumi.Input[str]:
-        """
-        The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        """
         return pulumi.get(self, "product_type")
 
     @product_type.setter
@@ -119,13 +90,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The protocol used for federation.  Example: `SAML2` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -135,9 +99,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -147,9 +108,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter(name="freeformAttributes")
     def freeform_attributes(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
-        """
         return pulumi.get(self, "freeform_attributes")
 
     @freeform_attributes.setter
@@ -159,9 +117,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -171,9 +126,6 @@ class IdentityProviderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -201,25 +153,6 @@ class _IdentityProviderState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IdentityProvider resources.
-        :param pulumi.Input[str] compartment_id: The OCID of your tenancy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_attributes: (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] metadata: (Updatable) The XML that contains the information required for federating.
-        :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
-        :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-        :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] redirect_url: The URL to redirect federated users to for authentication with the identity provider.
-        :param pulumi.Input[str] signing_certificate: The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
-        :param pulumi.Input[str] state: The current state.
-        :param pulumi.Input[str] time_created: Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -255,9 +188,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of your tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -267,9 +197,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -279,9 +206,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -291,9 +215,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="freeformAttributes")
     def freeform_attributes(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
-        """
         return pulumi.get(self, "freeform_attributes")
 
     @freeform_attributes.setter
@@ -303,9 +224,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -315,9 +233,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="inactiveState")
     def inactive_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
         return pulumi.get(self, "inactive_state")
 
     @inactive_state.setter
@@ -327,9 +242,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The XML that contains the information required for federating.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -339,9 +251,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="metadataUrl")
     def metadata_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
-        """
         return pulumi.get(self, "metadata_url")
 
     @metadata_url.setter
@@ -351,9 +260,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -363,9 +269,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="productType")
     def product_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        """
         return pulumi.get(self, "product_type")
 
     @product_type.setter
@@ -375,13 +278,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The protocol used for federation.  Example: `SAML2` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -391,9 +287,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="redirectUrl")
     def redirect_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL to redirect federated users to for authentication with the identity provider.
-        """
         return pulumi.get(self, "redirect_url")
 
     @redirect_url.setter
@@ -403,9 +296,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="signingCertificate")
     def signing_certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
-        """
         return pulumi.get(self, "signing_certificate")
 
     @signing_certificate.setter
@@ -415,9 +305,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -427,9 +314,6 @@ class _IdentityProviderState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -454,71 +338,9 @@ class IdentityProvider(pulumi.CustomResource):
                  protocol: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.
-
-        **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-        Creates a new identity provider in your tenancy. For more information, see
-        [Identity Providers and Federation](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
-
-        You must specify your tenancy's OCID as the compartment ID in the request object.
-        Remember that the tenancy is simply the root compartment. For information about
-        OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You must also specify a *name* for the `IdentityProvider`, which must be unique
-        across all `IdentityProvider` objects in your tenancy and cannot be changed.
-
-        You must also specify a *description* for the `IdentityProvider` (although
-        it can be an empty string). It does not have to be unique, and you can change
-        it anytime with
-        [UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_identity_provider = oci.identity.IdentityProvider("testIdentityProvider",
-            compartment_id=var["tenancy_ocid"],
-            description=var["identity_provider_description"],
-            metadata=var["identity_provider_metadata"],
-            metadata_url=var["identity_provider_metadata_url"],
-            product_type=var["identity_provider_product_type"],
-            protocol=var["identity_provider_protocol"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_attributes=var["identity_provider_freeform_attributes"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        IdentityProviders can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
-        ```
-
+        Create a IdentityProvider resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of your tenancy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_attributes: (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] metadata: (Updatable) The XML that contains the information required for federating.
-        :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
-        :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-        :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -527,55 +349,7 @@ class IdentityProvider(pulumi.CustomResource):
                  args: IdentityProviderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.
-
-        **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-        Creates a new identity provider in your tenancy. For more information, see
-        [Identity Providers and Federation](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
-
-        You must specify your tenancy's OCID as the compartment ID in the request object.
-        Remember that the tenancy is simply the root compartment. For information about
-        OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You must also specify a *name* for the `IdentityProvider`, which must be unique
-        across all `IdentityProvider` objects in your tenancy and cannot be changed.
-
-        You must also specify a *description* for the `IdentityProvider` (although
-        it can be an empty string). It does not have to be unique, and you can change
-        it anytime with
-        [UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_identity_provider = oci.identity.IdentityProvider("testIdentityProvider",
-            compartment_id=var["tenancy_ocid"],
-            description=var["identity_provider_description"],
-            metadata=var["identity_provider_metadata"],
-            metadata_url=var["identity_provider_metadata_url"],
-            product_type=var["identity_provider_product_type"],
-            protocol=var["identity_provider_protocol"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_attributes=var["identity_provider_freeform_attributes"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        IdentityProviders can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
-        ```
-
+        Create a IdentityProvider resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param IdentityProviderArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -669,25 +443,6 @@ class IdentityProvider(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of your tenancy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_attributes: (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] metadata: (Updatable) The XML that contains the information required for federating.
-        :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
-        :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-        :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] redirect_url: The URL to redirect federated users to for authentication with the identity provider.
-        :param pulumi.Input[str] signing_certificate: The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
-        :param pulumi.Input[str] state: The current state.
-        :param pulumi.Input[str] time_created: Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -713,124 +468,75 @@ class IdentityProvider(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of your tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformAttributes")
-    def freeform_attributes(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
-        """
+    def freeform_attributes(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_attributes")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> pulumi.Output[str]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter
     def metadata(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The XML that contains the information required for federating.
-        """
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter(name="metadataUrl")
     def metadata_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
-        """
         return pulumi.get(self, "metadata_url")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="productType")
     def product_type(self) -> pulumi.Output[str]:
-        """
-        The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
-        """
         return pulumi.get(self, "product_type")
 
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The protocol used for federation.  Example: `SAML2` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="redirectUrl")
-    def redirect_url(self) -> pulumi.Output[str]:
-        """
-        The URL to redirect federated users to for authentication with the identity provider.
-        """
+    def redirect_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "redirect_url")
 
     @property
     @pulumi.getter(name="signingCertificate")
-    def signing_certificate(self) -> pulumi.Output[str]:
-        """
-        The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
-        """
+    def signing_certificate(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "signing_certificate")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

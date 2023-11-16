@@ -13,38 +13,38 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetImageImageSourceDetailResult
     {
-        public readonly string BucketName;
-        public readonly string NamespaceName;
-        public readonly string ObjectName;
+        public readonly string? BucketName;
+        public readonly string? NamespaceName;
+        public readonly string? ObjectName;
         /// <summary>
         /// The image's operating system.  Example: `Oracle Linux`
         /// </summary>
-        public readonly string OperatingSystem;
+        public readonly string? OperatingSystem;
         /// <summary>
         /// The image's operating system version.  Example: `7.2`
         /// </summary>
-        public readonly string OperatingSystemVersion;
-        public readonly string SourceImageType;
-        public readonly string SourceType;
-        public readonly string SourceUri;
+        public readonly string? OperatingSystemVersion;
+        public readonly string? SourceImageType;
+        public readonly string? SourceType;
+        public readonly string? SourceUri;
 
         [OutputConstructor]
         private GetImageImageSourceDetailResult(
-            string bucketName,
+            string? bucketName,
 
-            string namespaceName,
+            string? namespaceName,
 
-            string objectName,
+            string? objectName,
 
-            string operatingSystem,
+            string? operatingSystem,
 
-            string operatingSystemVersion,
+            string? operatingSystemVersion,
 
-            string sourceImageType,
+            string? sourceImageType,
 
-            string sourceType,
+            string? sourceType,
 
-            string sourceUri)
+            string? sourceUri)
         {
             BucketName = bucketName;
             NamespaceName = namespaceName;

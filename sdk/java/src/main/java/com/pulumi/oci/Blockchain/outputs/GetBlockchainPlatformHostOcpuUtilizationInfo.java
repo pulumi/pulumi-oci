@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
@@ -14,39 +16,39 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
      * @return Host name of VM
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return Number of total OCPU capacity on the host
      * 
      */
-    private Double ocpuCapacityNumber;
+    private @Nullable Double ocpuCapacityNumber;
     /**
      * @return Number of OCPU utilized
      * 
      */
-    private Double ocpuUtilizationNumber;
+    private @Nullable Double ocpuUtilizationNumber;
 
     private GetBlockchainPlatformHostOcpuUtilizationInfo() {}
     /**
      * @return Host name of VM
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return Number of total OCPU capacity on the host
      * 
      */
-    public Double ocpuCapacityNumber() {
-        return this.ocpuCapacityNumber;
+    public Optional<Double> ocpuCapacityNumber() {
+        return Optional.ofNullable(this.ocpuCapacityNumber);
     }
     /**
      * @return Number of OCPU utilized
      * 
      */
-    public Double ocpuUtilizationNumber() {
-        return this.ocpuUtilizationNumber;
+    public Optional<Double> ocpuUtilizationNumber() {
+        return Optional.ofNullable(this.ocpuUtilizationNumber);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String host;
-        private Double ocpuCapacityNumber;
-        private Double ocpuUtilizationNumber;
+        private @Nullable String host;
+        private @Nullable Double ocpuCapacityNumber;
+        private @Nullable Double ocpuUtilizationNumber;
         public Builder() {}
         public Builder(GetBlockchainPlatformHostOcpuUtilizationInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
         }
 
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuCapacityNumber(Double ocpuCapacityNumber) {
-            this.ocpuCapacityNumber = Objects.requireNonNull(ocpuCapacityNumber);
+        public Builder ocpuCapacityNumber(@Nullable Double ocpuCapacityNumber) {
+            this.ocpuCapacityNumber = ocpuCapacityNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuUtilizationNumber(Double ocpuUtilizationNumber) {
-            this.ocpuUtilizationNumber = Objects.requireNonNull(ocpuUtilizationNumber);
+        public Builder ocpuUtilizationNumber(@Nullable Double ocpuUtilizationNumber) {
+            this.ocpuUtilizationNumber = ocpuUtilizationNumber;
             return this;
         }
         public GetBlockchainPlatformHostOcpuUtilizationInfo build() {

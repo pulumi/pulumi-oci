@@ -16,17 +16,17 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The encryption algorithm for the stream packaging configuration.
         /// </summary>
-        public readonly string Algorithm;
+        public readonly string? Algorithm;
         /// <summary>
         /// The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
 
         [OutputConstructor]
         private GetStreamPackagingConfigEncryptionResult(
-            string algorithm,
+            string? algorithm,
 
-            string kmsKeyId)
+            string? kmsKeyId)
         {
             Algorithm = algorithm;
             KmsKeyId = kmsKeyId;

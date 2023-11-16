@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo {
@@ -14,99 +16,99 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
      * @return The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the SQL Tuning Advisor task.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The owner of the SQL Tuning Advisor task.
      * 
      */
-    private String owner;
+    private @Nullable String owner;
     /**
      * @return The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    private Integer runningTime;
+    private @Nullable Integer runningTime;
     /**
      * @return The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The end time of the task execution.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The start time of the task execution.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo() {}
     /**
      * @return The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the SQL Tuning Advisor task.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The owner of the SQL Tuning Advisor task.
      * 
      */
-    public String owner() {
-        return this.owner;
+    public Optional<String> owner() {
+        return Optional.ofNullable(this.owner);
     }
     /**
      * @return The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    public Integer runningTime() {
-        return this.runningTime;
+    public Optional<Integer> runningTime() {
+        return Optional.ofNullable(this.runningTime);
     }
     /**
      * @return The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The end time of the task execution.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The start time of the task execution.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -118,14 +120,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String id;
-        private String name;
-        private String owner;
-        private Integer runningTime;
-        private String status;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String owner;
+        private @Nullable Integer runningTime;
+        private @Nullable String status;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,43 +142,43 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+        public Builder owner(@Nullable String owner) {
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
-        public Builder runningTime(Integer runningTime) {
-            this.runningTime = Objects.requireNonNull(runningTime);
+        public Builder runningTime(@Nullable Integer runningTime) {
+            this.runningTime = runningTime;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo build() {

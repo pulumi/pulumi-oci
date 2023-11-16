@@ -18,14 +18,14 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
      * @return The list of decryption_profile_summary_collection.
      * 
      */
-    private List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections;
+    private @Nullable List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections;
     private @Nullable String displayName;
     private @Nullable List<GetNetworkFirewallPolicyDecryptionProfilesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkFirewallPolicyId;
 
     private GetNetworkFirewallPolicyDecryptionProfilesResult() {}
@@ -34,7 +34,7 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
      * 
      */
     public List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections() {
-        return this.decryptionProfileSummaryCollections;
+        return this.decryptionProfileSummaryCollections == null ? List.of() : this.decryptionProfileSummaryCollections;
     }
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -46,8 +46,8 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkFirewallPolicyId() {
         return this.networkFirewallPolicyId;
@@ -62,10 +62,10 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections;
+        private @Nullable List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections;
         private @Nullable String displayName;
         private @Nullable List<GetNetworkFirewallPolicyDecryptionProfilesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkFirewallPolicyId;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionProfilesResult defaults) {
@@ -78,8 +78,8 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
         }
 
         @CustomType.Setter
-        public Builder decryptionProfileSummaryCollections(List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections) {
-            this.decryptionProfileSummaryCollections = Objects.requireNonNull(decryptionProfileSummaryCollections);
+        public Builder decryptionProfileSummaryCollections(@Nullable List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections) {
+            this.decryptionProfileSummaryCollections = decryptionProfileSummaryCollections;
             return this;
         }
         public Builder decryptionProfileSummaryCollections(GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection... decryptionProfileSummaryCollections) {
@@ -99,8 +99,8 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -87,7 +87,7 @@ export interface GetSoftwareSourceStreamProfileResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the module that contains the stream profile
      */
@@ -95,7 +95,7 @@ export interface GetSoftwareSourceStreamProfileResult {
     /**
      * The list of module_stream_profiles.
      */
-    readonly moduleStreamProfiles: outputs.OsManagement.GetSoftwareSourceStreamProfileModuleStreamProfile[];
+    readonly moduleStreamProfiles?: outputs.OsManagement.GetSoftwareSourceStreamProfileModuleStreamProfile[];
     /**
      * The name of the profile
      */

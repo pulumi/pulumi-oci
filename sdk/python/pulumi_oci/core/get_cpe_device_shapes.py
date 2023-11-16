@@ -36,10 +36,7 @@ class GetCpeDeviceShapesResult:
 
     @property
     @pulumi.getter(name="cpeDeviceShapes")
-    def cpe_device_shapes(self) -> Sequence['outputs.GetCpeDeviceShapesCpeDeviceShapeResult']:
-        """
-        The list of cpe_device_shapes.
-        """
+    def cpe_device_shapes(self) -> Optional[Sequence['outputs.GetCpeDeviceShapesCpeDeviceShapeResult']]:
         return pulumi.get(self, "cpe_device_shapes")
 
     @property
@@ -49,7 +46,7 @@ class GetCpeDeviceShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,30 +67,7 @@ class AwaitableGetCpeDeviceShapesResult(GetCpeDeviceShapesResult):
 def get_cpe_device_shapes(filters: Optional[Sequence[pulumi.InputType['GetCpeDeviceShapesFilterArgs']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpeDeviceShapesResult:
     """
-    This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the CPE device types that the Networking service provides CPE configuration
-    content for (example: Cisco ASA). The content helps a network engineer configure
-    the actual CPE device represented by a [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-
-    If you want to generate CPE configuration content for one of the returned CPE device types,
-    ensure that the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object's `cpeDeviceShapeId` attribute is set
-    to the CPE device type's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
-
-    For information about generating CPE configuration content, see these operations:
-
-      * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-      * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-      * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cpe_device_shapes = oci.Core.get_cpe_device_shapes()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -110,29 +84,6 @@ def get_cpe_device_shapes(filters: Optional[Sequence[pulumi.InputType['GetCpeDev
 def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCpeDeviceShapesFilterArgs']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpeDeviceShapesResult]:
     """
-    This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the CPE device types that the Networking service provides CPE configuration
-    content for (example: Cisco ASA). The content helps a network engineer configure
-    the actual CPE device represented by a [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-
-    If you want to generate CPE configuration content for one of the returned CPE device types,
-    ensure that the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object's `cpeDeviceShapeId` attribute is set
-    to the CPE device type's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
-
-    For information about generating CPE configuration content, see these operations:
-
-      * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-      * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-      * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cpe_device_shapes = oci.Core.get_cpe_device_shapes()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

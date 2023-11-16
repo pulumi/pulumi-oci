@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -60,24 +59,24 @@ type LookupAddressListArgs struct {
 // A collection of values returned by getAddressList.
 type LookupAddressListResult struct {
 	// The total number of unique IP addresses in the address list.
-	AddressCount  float64 `pulumi:"addressCount"`
-	AddressListId string  `pulumi:"addressListId"`
+	AddressCount  *float64 `pulumi:"addressCount"`
+	AddressListId string   `pulumi:"addressListId"`
 	// The list of IP addresses or CIDR notations.
 	Addresses []string `pulumi:"addresses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the address list.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the address list.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the address list was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupAddressListOutput(ctx *pulumi.Context, args LookupAddressListOutputArgs, opts ...pulumi.InvokeOption) LookupAddressListResultOutput {
@@ -118,15 +117,9 @@ func (o LookupAddressListResultOutput) ToLookupAddressListResultOutputWithContex
 	return o
 }
 
-func (o LookupAddressListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAddressListResult] {
-	return pulumix.Output[LookupAddressListResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The total number of unique IP addresses in the address list.
-func (o LookupAddressListResultOutput) AddressCount() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAddressListResult) float64 { return v.AddressCount }).(pulumi.Float64Output)
+func (o LookupAddressListResultOutput) AddressCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAddressListResult) *float64 { return v.AddressCount }).(pulumi.Float64PtrOutput)
 }
 
 func (o LookupAddressListResultOutput) AddressListId() pulumi.StringOutput {
@@ -139,8 +132,8 @@ func (o LookupAddressListResultOutput) Addresses() pulumi.StringArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list's compartment.
-func (o LookupAddressListResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddressListResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAddressListResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddressListResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -149,8 +142,8 @@ func (o LookupAddressListResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the address list.
-func (o LookupAddressListResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddressListResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAddressListResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddressListResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -159,18 +152,18 @@ func (o LookupAddressListResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
-func (o LookupAddressListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddressListResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAddressListResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddressListResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the address list.
-func (o LookupAddressListResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddressListResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAddressListResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddressListResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the address list was created, expressed in RFC 3339 timestamp format.
-func (o LookupAddressListResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddressListResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAddressListResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddressListResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

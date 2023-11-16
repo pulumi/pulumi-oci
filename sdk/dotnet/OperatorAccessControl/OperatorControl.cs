@@ -53,13 +53,13 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the operator control.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of emailId.
@@ -71,13 +71,13 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Whether the operator control is a default Operator Control.
         /// </summary>
         [Output("isDefaultOperatorControl")]
-        public Output<bool> IsDefaultOperatorControl { get; private set; } = null!;
+        public Output<bool?> IsDefaultOperatorControl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// Description associated with the latest modification of the operator control.
         /// </summary>
         [Output("lastModifiedInfo")]
-        public Output<string> LastModifiedInfo { get; private set; } = null!;
+        public Output<string?> LastModifiedInfo { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the operator control.
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// The current lifecycle state of the operator control.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
@@ -123,25 +123,25 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("systemMessage")]
-        public Output<string> SystemMessage { get; private set; } = null!;
+        public Output<string?> SystemMessage { get; private set; } = null!;
 
         /// <summary>
         /// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeOfCreation")]
-        public Output<string> TimeOfCreation { get; private set; } = null!;
+        public Output<string?> TimeOfCreation { get; private set; } = null!;
 
         /// <summary>
         /// Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
         /// </summary>
         [Output("timeOfDeletion")]
-        public Output<string> TimeOfDeletion { get; private set; } = null!;
+        public Output<string?> TimeOfDeletion { get; private set; } = null!;
 
         /// <summary>
         /// Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeOfModification")]
-        public Output<string> TimeOfModification { get; private set; } = null!;
+        public Output<string?> TimeOfModification { get; private set; } = null!;
 
 
         /// <summary>

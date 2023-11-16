@@ -69,7 +69,7 @@ namespace Pulumi.Oci.FusionApps
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
@@ -81,31 +81,31 @@ namespace Pulumi.Oci.FusionApps
         /// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         /// </summary>
         [Output("familyMaintenancePolicy")]
-        public Output<Outputs.FusionEnvironmentFamilyFamilyMaintenancePolicy> FamilyMaintenancePolicy { get; private set; } = null!;
+        public Output<Outputs.FusionEnvironmentFamilyFamilyMaintenancePolicy?> FamilyMaintenancePolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// When set to True, a subscription update is required for the environment family.
         /// </summary>
         [Output("isSubscriptionUpdateNeeded")]
-        public Output<bool> IsSubscriptionUpdateNeeded { get; private set; } = null!;
+        public Output<bool?> IsSubscriptionUpdateNeeded { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the FusionEnvironmentFamily.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
@@ -121,13 +121,13 @@ namespace Pulumi.Oci.FusionApps
         /// Environment Specific Guid/ System Name
         /// </summary>
         [Output("systemName")]
-        public Output<string> SystemName { get; private set; } = null!;
+        public Output<string?> SystemName { get; private set; } = null!;
 
         /// <summary>
         /// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         [Output("timeUpdated")]
         public Output<string?> TimeUpdated { get; private set; } = null!;

@@ -74,34 +74,22 @@ class GetDiscoveryJobResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the Compartment
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="discoveryClient")
-    def discovery_client(self) -> str:
-        """
-        Client who submits discovery job.
-        """
+    def discovery_client(self) -> Optional[str]:
         return pulumi.get(self, "discovery_client")
 
     @property
     @pulumi.getter(name="discoveryDetails")
-    def discovery_details(self) -> Sequence['outputs.GetDiscoveryJobDiscoveryDetailResult']:
-        """
-        The request of DiscoveryJob Resource details.
-        """
+    def discovery_details(self) -> Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailResult']]:
         return pulumi.get(self, "discovery_details")
 
     @property
@@ -111,87 +99,57 @@ class GetDiscoveryJobResult:
 
     @property
     @pulumi.getter(name="discoveryType")
-    def discovery_type(self) -> str:
-        """
-        Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        """
+    def discovery_type(self) -> Optional[str]:
         return pulumi.get(self, "discovery_type")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of Discovery job
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
-    def should_propagate_tags_to_discovered_resources(self) -> bool:
+    def should_propagate_tags_to_discovered_resources(self) -> Optional[bool]:
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the DiscoveryJob Resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Specifies the status of the discovery job
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusMessage")
-    def status_message(self) -> str:
-        """
-        The short summary of the status of the discovery job
-        """
+    def status_message(self) -> Optional[str]:
         return pulumi.get(self, "status_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> str:
-        """
-        The OCID of Tenant
-        """
+    def tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the discovery Job was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        The OCID of user in which the job is submitted
-        """
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
 
@@ -222,21 +180,7 @@ class AwaitableGetDiscoveryJobResult(GetDiscoveryJobResult):
 def get_discovery_job(discovery_job_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobResult:
     """
-    This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    API to get the details of discovery Job by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_job = oci.StackMonitoring.get_discovery_job(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"])
-    ```
-
-
-    :param str discovery_job_id: The Discovery Job ID
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['discoveryJobId'] = discovery_job_id
@@ -266,20 +210,6 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
 def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobResult]:
     """
-    This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    API to get the details of discovery Job by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_job = oci.StackMonitoring.get_discovery_job(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"])
-    ```
-
-
-    :param str discovery_job_id: The Discovery Job ID
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -40,9 +40,6 @@ class GetManagedMySqlDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -52,7 +49,7 @@ class GetManagedMySqlDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetManagedMySqlDatabasesResult:
 
     @property
     @pulumi.getter(name="managedMySqlDatabaseCollections")
-    def managed_my_sql_database_collections(self) -> Sequence['outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionResult']:
-        """
-        The list of managed_my_sql_database_collection.
-        """
+    def managed_my_sql_database_collections(self) -> Optional[Sequence['outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionResult']]:
         return pulumi.get(self, "managed_my_sql_database_collections")
 
 
@@ -83,21 +77,7 @@ def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
                                  filters: Optional[Sequence[pulumi.InputType['GetManagedMySqlDatabasesFilterArgs']]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabasesResult:
     """
-    This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of Managed MySQL Databases in a specific compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -117,20 +97,6 @@ def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[st
                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedMySqlDatabasesFilterArgs']]]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabasesResult]:
     """
-    This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of Managed MySQL Databases in a specific compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i GetEmWarehousesEmWarehouseCollectionArgs) ToGetEmWarehousesEmWarehouseCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionOutput)
 }
 
-func (i GetEmWarehousesEmWarehouseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollection] {
-	return pulumix.Output[GetEmWarehousesEmWarehouseCollection]{
-		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEmWarehousesEmWarehouseCollectionArrayInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionArray and GetEmWarehousesEmWarehouseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesEmWarehouseCollectionArrayInput` via:
 //
@@ -76,12 +69,6 @@ func (i GetEmWarehousesEmWarehouseCollectionArray) ToGetEmWarehousesEmWarehouseC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionArrayOutput)
 }
 
-func (i GetEmWarehousesEmWarehouseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollection] {
-	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollection]{
-		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEmWarehousesEmWarehouseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEmWarehousesEmWarehouseCollectionOutput) ElementType() reflect.Type {
@@ -94,12 +81,6 @@ func (o GetEmWarehousesEmWarehouseCollectionOutput) ToGetEmWarehousesEmWarehouse
 
 func (o GetEmWarehousesEmWarehouseCollectionOutput) ToGetEmWarehousesEmWarehouseCollectionOutputWithContext(ctx context.Context) GetEmWarehousesEmWarehouseCollectionOutput {
 	return o
-}
-
-func (o GetEmWarehousesEmWarehouseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollection] {
-	return pulumix.Output[GetEmWarehousesEmWarehouseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEmWarehousesEmWarehouseCollectionOutput) Items() GetEmWarehousesEmWarehouseCollectionItemArrayOutput {
@@ -122,12 +103,6 @@ func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) ToGetEmWarehousesEmWare
 	return o
 }
 
-func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollection] {
-	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) Index(i pulumi.IntInput) GetEmWarehousesEmWarehouseCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmWarehousesEmWarehouseCollection {
 		return vs[0].([]GetEmWarehousesEmWarehouseCollection)[vs[1].(int)]
@@ -136,37 +111,37 @@ func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) Index(i pulumi.IntInput
 
 type GetEmWarehousesEmWarehouseCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// EMBridge Identifier
-	EmBridgeId string `pulumi:"emBridgeId"`
+	EmBridgeId *string `pulumi:"emBridgeId"`
 	// Type of the EmWarehouse.
-	EmWarehouseType string `pulumi:"emWarehouseType"`
+	EmWarehouseType *string `pulumi:"emWarehouseType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique EmWarehouse identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Data Flow Run Status Message
-	LatestEtlRunMessage string `pulumi:"latestEtlRunMessage"`
+	LatestEtlRunMessage *string `pulumi:"latestEtlRunMessage"`
 	// Data Flow Run Status
-	LatestEtlRunStatus string `pulumi:"latestEtlRunStatus"`
+	LatestEtlRunStatus *string `pulumi:"latestEtlRunStatus"`
 	// Data Flow Run Total Time
-	LatestEtlRunTime string `pulumi:"latestEtlRunTime"`
+	LatestEtlRunTime *string `pulumi:"latestEtlRunTime"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// unique operationsInsightsWarehouseId identifier
-	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetEmWarehousesEmWarehouseCollectionItemInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionItemArgs and GetEmWarehousesEmWarehouseCollectionItemOutput values.
@@ -182,37 +157,37 @@ type GetEmWarehousesEmWarehouseCollectionItemInput interface {
 
 type GetEmWarehousesEmWarehouseCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// EMBridge Identifier
-	EmBridgeId pulumi.StringInput `pulumi:"emBridgeId"`
+	EmBridgeId pulumi.StringPtrInput `pulumi:"emBridgeId"`
 	// Type of the EmWarehouse.
-	EmWarehouseType pulumi.StringInput `pulumi:"emWarehouseType"`
+	EmWarehouseType pulumi.StringPtrInput `pulumi:"emWarehouseType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique EmWarehouse identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Data Flow Run Status Message
-	LatestEtlRunMessage pulumi.StringInput `pulumi:"latestEtlRunMessage"`
+	LatestEtlRunMessage pulumi.StringPtrInput `pulumi:"latestEtlRunMessage"`
 	// Data Flow Run Status
-	LatestEtlRunStatus pulumi.StringInput `pulumi:"latestEtlRunStatus"`
+	LatestEtlRunStatus pulumi.StringPtrInput `pulumi:"latestEtlRunStatus"`
 	// Data Flow Run Total Time
-	LatestEtlRunTime pulumi.StringInput `pulumi:"latestEtlRunTime"`
+	LatestEtlRunTime pulumi.StringPtrInput `pulumi:"latestEtlRunTime"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// unique operationsInsightsWarehouseId identifier
-	OperationsInsightsWarehouseId pulumi.StringInput `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseId pulumi.StringPtrInput `pulumi:"operationsInsightsWarehouseId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetEmWarehousesEmWarehouseCollectionItemArgs) ElementType() reflect.Type {
@@ -225,12 +200,6 @@ func (i GetEmWarehousesEmWarehouseCollectionItemArgs) ToGetEmWarehousesEmWarehou
 
 func (i GetEmWarehousesEmWarehouseCollectionItemArgs) ToGetEmWarehousesEmWarehouseCollectionItemOutputWithContext(ctx context.Context) GetEmWarehousesEmWarehouseCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionItemOutput)
-}
-
-func (i GetEmWarehousesEmWarehouseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem] {
-	return pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem]{
-		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEmWarehousesEmWarehouseCollectionItemArrayInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionItemArray and GetEmWarehousesEmWarehouseCollectionItemArrayOutput values.
@@ -258,12 +227,6 @@ func (i GetEmWarehousesEmWarehouseCollectionItemArray) ToGetEmWarehousesEmWareho
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionItemArrayOutput)
 }
 
-func (i GetEmWarehousesEmWarehouseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem] {
-	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem]{
-		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEmWarehousesEmWarehouseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEmWarehousesEmWarehouseCollectionItemOutput) ElementType() reflect.Type {
@@ -278,15 +241,9 @@ func (o GetEmWarehousesEmWarehouseCollectionItemOutput) ToGetEmWarehousesEmWareh
 	return o
 }
 
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem] {
-	return pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -295,18 +252,18 @@ func (o GetEmWarehousesEmWarehouseCollectionItemOutput) DefinedTags() pulumi.Map
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // EMBridge Identifier
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) EmBridgeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.EmBridgeId }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) EmBridgeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.EmBridgeId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the EmWarehouse.
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) EmWarehouseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.EmWarehouseType }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) EmWarehouseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.EmWarehouseType }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -315,38 +272,38 @@ func (o GetEmWarehousesEmWarehouseCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // unique EmWarehouse identifier
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Data Flow Run Status Message
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LatestEtlRunMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.LatestEtlRunMessage }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LatestEtlRunMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.LatestEtlRunMessage }).(pulumi.StringPtrOutput)
 }
 
 // Data Flow Run Status
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LatestEtlRunStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.LatestEtlRunStatus }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LatestEtlRunStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.LatestEtlRunStatus }).(pulumi.StringPtrOutput)
 }
 
 // Data Flow Run Total Time
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LatestEtlRunTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.LatestEtlRunTime }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LatestEtlRunTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.LatestEtlRunTime }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // unique operationsInsightsWarehouseId identifier
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) OperationsInsightsWarehouseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.OperationsInsightsWarehouseId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -355,13 +312,13 @@ func (o GetEmWarehousesEmWarehouseCollectionItemOutput) SystemTags() pulumi.MapO
 }
 
 // The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-func (o GetEmWarehousesEmWarehouseCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmWarehousesEmWarehouseCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetEmWarehousesEmWarehouseCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -376,12 +333,6 @@ func (o GetEmWarehousesEmWarehouseCollectionItemArrayOutput) ToGetEmWarehousesEm
 
 func (o GetEmWarehousesEmWarehouseCollectionItemArrayOutput) ToGetEmWarehousesEmWarehouseCollectionItemArrayOutputWithContext(ctx context.Context) GetEmWarehousesEmWarehouseCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetEmWarehousesEmWarehouseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem] {
-	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEmWarehousesEmWarehouseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEmWarehousesEmWarehouseCollectionItemOutput {
@@ -425,12 +376,6 @@ func (i GetEmWarehousesFilterArgs) ToGetEmWarehousesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesFilterOutput)
 }
 
-func (i GetEmWarehousesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesFilter] {
-	return pulumix.Output[GetEmWarehousesFilter]{
-		OutputState: i.ToGetEmWarehousesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEmWarehousesFilterArrayInput is an input type that accepts GetEmWarehousesFilterArray and GetEmWarehousesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesFilterArrayInput` via:
 //
@@ -456,12 +401,6 @@ func (i GetEmWarehousesFilterArray) ToGetEmWarehousesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesFilterArrayOutput)
 }
 
-func (i GetEmWarehousesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesFilter] {
-	return pulumix.Output[[]GetEmWarehousesFilter]{
-		OutputState: i.ToGetEmWarehousesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEmWarehousesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEmWarehousesFilterOutput) ElementType() reflect.Type {
@@ -474,12 +413,6 @@ func (o GetEmWarehousesFilterOutput) ToGetEmWarehousesFilterOutput() GetEmWareho
 
 func (o GetEmWarehousesFilterOutput) ToGetEmWarehousesFilterOutputWithContext(ctx context.Context) GetEmWarehousesFilterOutput {
 	return o
-}
-
-func (o GetEmWarehousesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesFilter] {
-	return pulumix.Output[GetEmWarehousesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEmWarehousesFilterOutput) Name() pulumi.StringOutput {
@@ -508,12 +441,6 @@ func (o GetEmWarehousesFilterArrayOutput) ToGetEmWarehousesFilterArrayOutputWith
 	return o
 }
 
-func (o GetEmWarehousesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesFilter] {
-	return pulumix.Output[[]GetEmWarehousesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEmWarehousesFilterArrayOutput) Index(i pulumi.IntInput) GetEmWarehousesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmWarehousesFilter {
 		return vs[0].([]GetEmWarehousesFilter)[vs[1].(int)]
@@ -522,27 +449,27 @@ func (o GetEmWarehousesFilterArrayOutput) Index(i pulumi.IntInput) GetEmWarehous
 
 type GetEtlRunItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Data read by the dataflow run
-	DataReadInBytes string `pulumi:"dataReadInBytes"`
+	DataReadInBytes *string `pulumi:"dataReadInBytes"`
 	// Data written by the dataflow run
-	DataWritten string `pulumi:"dataWritten"`
+	DataWritten *string `pulumi:"dataWritten"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Details of the lifecycle state
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Dataflow run duration
-	RunDurationInMilliseconds string `pulumi:"runDurationInMilliseconds"`
+	RunDurationInMilliseconds *string `pulumi:"runDurationInMilliseconds"`
 	// The current state of the etlRun.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time when the dataflow run was created
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the dataflow run was updated
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetEtlRunItemInput is an input type that accepts GetEtlRunItemArgs and GetEtlRunItemOutput values.
@@ -558,27 +485,27 @@ type GetEtlRunItemInput interface {
 
 type GetEtlRunItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Data read by the dataflow run
-	DataReadInBytes pulumi.StringInput `pulumi:"dataReadInBytes"`
+	DataReadInBytes pulumi.StringPtrInput `pulumi:"dataReadInBytes"`
 	// Data written by the dataflow run
-	DataWritten pulumi.StringInput `pulumi:"dataWritten"`
+	DataWritten pulumi.StringPtrInput `pulumi:"dataWritten"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Details of the lifecycle state
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Dataflow run duration
-	RunDurationInMilliseconds pulumi.StringInput `pulumi:"runDurationInMilliseconds"`
+	RunDurationInMilliseconds pulumi.StringPtrInput `pulumi:"runDurationInMilliseconds"`
 	// The current state of the etlRun.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Time when the dataflow run was created
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Time when the dataflow run was updated
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetEtlRunItemArgs) ElementType() reflect.Type {
@@ -591,12 +518,6 @@ func (i GetEtlRunItemArgs) ToGetEtlRunItemOutput() GetEtlRunItemOutput {
 
 func (i GetEtlRunItemArgs) ToGetEtlRunItemOutputWithContext(ctx context.Context) GetEtlRunItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunItemOutput)
-}
-
-func (i GetEtlRunItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunItem] {
-	return pulumix.Output[GetEtlRunItem]{
-		OutputState: i.ToGetEtlRunItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEtlRunItemArrayInput is an input type that accepts GetEtlRunItemArray and GetEtlRunItemArrayOutput values.
@@ -624,12 +545,6 @@ func (i GetEtlRunItemArray) ToGetEtlRunItemArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunItemArrayOutput)
 }
 
-func (i GetEtlRunItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunItem] {
-	return pulumix.Output[[]GetEtlRunItem]{
-		OutputState: i.ToGetEtlRunItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEtlRunItemOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunItemOutput) ElementType() reflect.Type {
@@ -644,25 +559,19 @@ func (o GetEtlRunItemOutput) ToGetEtlRunItemOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetEtlRunItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunItem] {
-	return pulumix.Output[GetEtlRunItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetEtlRunItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Data read by the dataflow run
-func (o GetEtlRunItemOutput) DataReadInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.DataReadInBytes }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) DataReadInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.DataReadInBytes }).(pulumi.StringPtrOutput)
 }
 
 // Data written by the dataflow run
-func (o GetEtlRunItemOutput) DataWritten() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.DataWritten }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) DataWritten() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.DataWritten }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -671,8 +580,8 @@ func (o GetEtlRunItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetEtlRunItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -681,28 +590,28 @@ func (o GetEtlRunItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details of the lifecycle state
-func (o GetEtlRunItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Dataflow run duration
-func (o GetEtlRunItemOutput) RunDurationInMilliseconds() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.RunDurationInMilliseconds }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) RunDurationInMilliseconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.RunDurationInMilliseconds }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the etlRun.
-func (o GetEtlRunItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time when the dataflow run was created
-func (o GetEtlRunItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time when the dataflow run was updated
-func (o GetEtlRunItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetEtlRunItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetEtlRunItemArrayOutput struct{ *pulumi.OutputState }
@@ -717,12 +626,6 @@ func (o GetEtlRunItemArrayOutput) ToGetEtlRunItemArrayOutput() GetEtlRunItemArra
 
 func (o GetEtlRunItemArrayOutput) ToGetEtlRunItemArrayOutputWithContext(ctx context.Context) GetEtlRunItemArrayOutput {
 	return o
-}
-
-func (o GetEtlRunItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunItem] {
-	return pulumix.Output[[]GetEtlRunItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEtlRunItemArrayOutput) Index(i pulumi.IntInput) GetEtlRunItemOutput {
@@ -764,12 +667,6 @@ func (i GetEtlRunsEtlRunCollectionArgs) ToGetEtlRunsEtlRunCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionOutput)
 }
 
-func (i GetEtlRunsEtlRunCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollection] {
-	return pulumix.Output[GetEtlRunsEtlRunCollection]{
-		OutputState: i.ToGetEtlRunsEtlRunCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEtlRunsEtlRunCollectionArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionArray and GetEtlRunsEtlRunCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionArrayInput` via:
 //
@@ -795,12 +692,6 @@ func (i GetEtlRunsEtlRunCollectionArray) ToGetEtlRunsEtlRunCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionArrayOutput)
 }
 
-func (i GetEtlRunsEtlRunCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollection] {
-	return pulumix.Output[[]GetEtlRunsEtlRunCollection]{
-		OutputState: i.ToGetEtlRunsEtlRunCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEtlRunsEtlRunCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsEtlRunCollectionOutput) ElementType() reflect.Type {
@@ -813,12 +704,6 @@ func (o GetEtlRunsEtlRunCollectionOutput) ToGetEtlRunsEtlRunCollectionOutput() G
 
 func (o GetEtlRunsEtlRunCollectionOutput) ToGetEtlRunsEtlRunCollectionOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionOutput {
 	return o
-}
-
-func (o GetEtlRunsEtlRunCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollection] {
-	return pulumix.Output[GetEtlRunsEtlRunCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of runs
@@ -838,12 +723,6 @@ func (o GetEtlRunsEtlRunCollectionArrayOutput) ToGetEtlRunsEtlRunCollectionArray
 
 func (o GetEtlRunsEtlRunCollectionArrayOutput) ToGetEtlRunsEtlRunCollectionArrayOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionArrayOutput {
 	return o
-}
-
-func (o GetEtlRunsEtlRunCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollection] {
-	return pulumix.Output[[]GetEtlRunsEtlRunCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEtlRunsEtlRunCollectionArrayOutput) Index(i pulumi.IntInput) GetEtlRunsEtlRunCollectionOutput {
@@ -885,12 +764,6 @@ func (i GetEtlRunsEtlRunCollectionItemArgs) ToGetEtlRunsEtlRunCollectionItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemOutput)
 }
 
-func (i GetEtlRunsEtlRunCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItem] {
-	return pulumix.Output[GetEtlRunsEtlRunCollectionItem]{
-		OutputState: i.ToGetEtlRunsEtlRunCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEtlRunsEtlRunCollectionItemArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionItemArray and GetEtlRunsEtlRunCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionItemArrayInput` via:
 //
@@ -916,12 +789,6 @@ func (i GetEtlRunsEtlRunCollectionItemArray) ToGetEtlRunsEtlRunCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemArrayOutput)
 }
 
-func (i GetEtlRunsEtlRunCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItem] {
-	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItem]{
-		OutputState: i.ToGetEtlRunsEtlRunCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEtlRunsEtlRunCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsEtlRunCollectionItemOutput) ElementType() reflect.Type {
@@ -934,12 +801,6 @@ func (o GetEtlRunsEtlRunCollectionItemOutput) ToGetEtlRunsEtlRunCollectionItemOu
 
 func (o GetEtlRunsEtlRunCollectionItemOutput) ToGetEtlRunsEtlRunCollectionItemOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionItemOutput {
 	return o
-}
-
-func (o GetEtlRunsEtlRunCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItem] {
-	return pulumix.Output[GetEtlRunsEtlRunCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of runs
@@ -961,12 +822,6 @@ func (o GetEtlRunsEtlRunCollectionItemArrayOutput) ToGetEtlRunsEtlRunCollectionI
 	return o
 }
 
-func (o GetEtlRunsEtlRunCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItem] {
-	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEtlRunsEtlRunCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEtlRunsEtlRunCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEtlRunsEtlRunCollectionItem {
 		return vs[0].([]GetEtlRunsEtlRunCollectionItem)[vs[1].(int)]
@@ -975,27 +830,27 @@ func (o GetEtlRunsEtlRunCollectionItemArrayOutput) Index(i pulumi.IntInput) GetE
 
 type GetEtlRunsEtlRunCollectionItemItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Data read by the dataflow run
-	DataReadInBytes string `pulumi:"dataReadInBytes"`
+	DataReadInBytes *string `pulumi:"dataReadInBytes"`
 	// Data written by the dataflow run
-	DataWritten string `pulumi:"dataWritten"`
+	DataWritten *string `pulumi:"dataWritten"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Details of the lifecycle state
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Dataflow run duration
-	RunDurationInMilliseconds string `pulumi:"runDurationInMilliseconds"`
+	RunDurationInMilliseconds *string `pulumi:"runDurationInMilliseconds"`
 	// The current state of the etlRun.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time when the dataflow run was created
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the dataflow run was updated
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetEtlRunsEtlRunCollectionItemItemInput is an input type that accepts GetEtlRunsEtlRunCollectionItemItemArgs and GetEtlRunsEtlRunCollectionItemItemOutput values.
@@ -1011,27 +866,27 @@ type GetEtlRunsEtlRunCollectionItemItemInput interface {
 
 type GetEtlRunsEtlRunCollectionItemItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Data read by the dataflow run
-	DataReadInBytes pulumi.StringInput `pulumi:"dataReadInBytes"`
+	DataReadInBytes pulumi.StringPtrInput `pulumi:"dataReadInBytes"`
 	// Data written by the dataflow run
-	DataWritten pulumi.StringInput `pulumi:"dataWritten"`
+	DataWritten pulumi.StringPtrInput `pulumi:"dataWritten"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Details of the lifecycle state
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Dataflow run duration
-	RunDurationInMilliseconds pulumi.StringInput `pulumi:"runDurationInMilliseconds"`
+	RunDurationInMilliseconds pulumi.StringPtrInput `pulumi:"runDurationInMilliseconds"`
 	// The current state of the etlRun.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Time when the dataflow run was created
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Time when the dataflow run was updated
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetEtlRunsEtlRunCollectionItemItemArgs) ElementType() reflect.Type {
@@ -1044,12 +899,6 @@ func (i GetEtlRunsEtlRunCollectionItemItemArgs) ToGetEtlRunsEtlRunCollectionItem
 
 func (i GetEtlRunsEtlRunCollectionItemItemArgs) ToGetEtlRunsEtlRunCollectionItemItemOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemItemOutput)
-}
-
-func (i GetEtlRunsEtlRunCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItemItem] {
-	return pulumix.Output[GetEtlRunsEtlRunCollectionItemItem]{
-		OutputState: i.ToGetEtlRunsEtlRunCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEtlRunsEtlRunCollectionItemItemArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionItemItemArray and GetEtlRunsEtlRunCollectionItemItemArrayOutput values.
@@ -1077,12 +926,6 @@ func (i GetEtlRunsEtlRunCollectionItemItemArray) ToGetEtlRunsEtlRunCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemItemArrayOutput)
 }
 
-func (i GetEtlRunsEtlRunCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem] {
-	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem]{
-		OutputState: i.ToGetEtlRunsEtlRunCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEtlRunsEtlRunCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsEtlRunCollectionItemItemOutput) ElementType() reflect.Type {
@@ -1097,25 +940,19 @@ func (o GetEtlRunsEtlRunCollectionItemItemOutput) ToGetEtlRunsEtlRunCollectionIt
 	return o
 }
 
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItemItem] {
-	return pulumix.Output[GetEtlRunsEtlRunCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Data read by the dataflow run
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) DataReadInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.DataReadInBytes }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) DataReadInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.DataReadInBytes }).(pulumi.StringPtrOutput)
 }
 
 // Data written by the dataflow run
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) DataWritten() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.DataWritten }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) DataWritten() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.DataWritten }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1124,8 +961,8 @@ func (o GetEtlRunsEtlRunCollectionItemItemOutput) DefinedTags() pulumi.MapOutput
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1134,28 +971,28 @@ func (o GetEtlRunsEtlRunCollectionItemItemOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // Details of the lifecycle state
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Dataflow run duration
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) RunDurationInMilliseconds() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.RunDurationInMilliseconds }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) RunDurationInMilliseconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.RunDurationInMilliseconds }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the etlRun.
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time when the dataflow run was created
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time when the dataflow run was updated
-func (o GetEtlRunsEtlRunCollectionItemItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsEtlRunCollectionItemItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetEtlRunsEtlRunCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -1170,12 +1007,6 @@ func (o GetEtlRunsEtlRunCollectionItemItemArrayOutput) ToGetEtlRunsEtlRunCollect
 
 func (o GetEtlRunsEtlRunCollectionItemItemArrayOutput) ToGetEtlRunsEtlRunCollectionItemItemArrayOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionItemItemArrayOutput {
 	return o
-}
-
-func (o GetEtlRunsEtlRunCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem] {
-	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEtlRunsEtlRunCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetEtlRunsEtlRunCollectionItemItemOutput {
@@ -1219,12 +1050,6 @@ func (i GetEtlRunsFilterArgs) ToGetEtlRunsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsFilterOutput)
 }
 
-func (i GetEtlRunsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsFilter] {
-	return pulumix.Output[GetEtlRunsFilter]{
-		OutputState: i.ToGetEtlRunsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEtlRunsFilterArrayInput is an input type that accepts GetEtlRunsFilterArray and GetEtlRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsFilterArrayInput` via:
 //
@@ -1250,12 +1075,6 @@ func (i GetEtlRunsFilterArray) ToGetEtlRunsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsFilterArrayOutput)
 }
 
-func (i GetEtlRunsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsFilter] {
-	return pulumix.Output[[]GetEtlRunsFilter]{
-		OutputState: i.ToGetEtlRunsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEtlRunsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsFilterOutput) ElementType() reflect.Type {
@@ -1268,12 +1087,6 @@ func (o GetEtlRunsFilterOutput) ToGetEtlRunsFilterOutput() GetEtlRunsFilterOutpu
 
 func (o GetEtlRunsFilterOutput) ToGetEtlRunsFilterOutputWithContext(ctx context.Context) GetEtlRunsFilterOutput {
 	return o
-}
-
-func (o GetEtlRunsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsFilter] {
-	return pulumix.Output[GetEtlRunsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEtlRunsFilterOutput) Name() pulumi.StringOutput {
@@ -1302,12 +1115,6 @@ func (o GetEtlRunsFilterArrayOutput) ToGetEtlRunsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetEtlRunsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsFilter] {
-	return pulumix.Output[[]GetEtlRunsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEtlRunsFilterArrayOutput) Index(i pulumi.IntInput) GetEtlRunsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEtlRunsFilter {
 		return vs[0].([]GetEtlRunsFilter)[vs[1].(int)]
@@ -1316,13 +1123,13 @@ func (o GetEtlRunsFilterArrayOutput) Index(i pulumi.IntInput) GetEtlRunsFilterOu
 
 type GetResourceUsageEmInstance struct {
 	// emdDiscoverer url
-	EmDiscovererUrl string `pulumi:"emDiscovererUrl"`
+	EmDiscovererUrl *string `pulumi:"emDiscovererUrl"`
 	// emHost name
-	EmHost string `pulumi:"emHost"`
+	EmHost *string `pulumi:"emHost"`
 	// operations Insights Warehouse Identifier
-	EmId string `pulumi:"emId"`
+	EmId *string `pulumi:"emId"`
 	// EmInstance Target count
-	TargetsCount int `pulumi:"targetsCount"`
+	TargetsCount *int `pulumi:"targetsCount"`
 }
 
 // GetResourceUsageEmInstanceInput is an input type that accepts GetResourceUsageEmInstanceArgs and GetResourceUsageEmInstanceOutput values.
@@ -1338,13 +1145,13 @@ type GetResourceUsageEmInstanceInput interface {
 
 type GetResourceUsageEmInstanceArgs struct {
 	// emdDiscoverer url
-	EmDiscovererUrl pulumi.StringInput `pulumi:"emDiscovererUrl"`
+	EmDiscovererUrl pulumi.StringPtrInput `pulumi:"emDiscovererUrl"`
 	// emHost name
-	EmHost pulumi.StringInput `pulumi:"emHost"`
+	EmHost pulumi.StringPtrInput `pulumi:"emHost"`
 	// operations Insights Warehouse Identifier
-	EmId pulumi.StringInput `pulumi:"emId"`
+	EmId pulumi.StringPtrInput `pulumi:"emId"`
 	// EmInstance Target count
-	TargetsCount pulumi.IntInput `pulumi:"targetsCount"`
+	TargetsCount pulumi.IntPtrInput `pulumi:"targetsCount"`
 }
 
 func (GetResourceUsageEmInstanceArgs) ElementType() reflect.Type {
@@ -1357,12 +1164,6 @@ func (i GetResourceUsageEmInstanceArgs) ToGetResourceUsageEmInstanceOutput() Get
 
 func (i GetResourceUsageEmInstanceArgs) ToGetResourceUsageEmInstanceOutputWithContext(ctx context.Context) GetResourceUsageEmInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceUsageEmInstanceOutput)
-}
-
-func (i GetResourceUsageEmInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceUsageEmInstance] {
-	return pulumix.Output[GetResourceUsageEmInstance]{
-		OutputState: i.ToGetResourceUsageEmInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourceUsageEmInstanceArrayInput is an input type that accepts GetResourceUsageEmInstanceArray and GetResourceUsageEmInstanceArrayOutput values.
@@ -1390,12 +1191,6 @@ func (i GetResourceUsageEmInstanceArray) ToGetResourceUsageEmInstanceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceUsageEmInstanceArrayOutput)
 }
 
-func (i GetResourceUsageEmInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceUsageEmInstance] {
-	return pulumix.Output[[]GetResourceUsageEmInstance]{
-		OutputState: i.ToGetResourceUsageEmInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceUsageEmInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetResourceUsageEmInstanceOutput) ElementType() reflect.Type {
@@ -1410,30 +1205,24 @@ func (o GetResourceUsageEmInstanceOutput) ToGetResourceUsageEmInstanceOutputWith
 	return o
 }
 
-func (o GetResourceUsageEmInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceUsageEmInstance] {
-	return pulumix.Output[GetResourceUsageEmInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // emdDiscoverer url
-func (o GetResourceUsageEmInstanceOutput) EmDiscovererUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceUsageEmInstance) string { return v.EmDiscovererUrl }).(pulumi.StringOutput)
+func (o GetResourceUsageEmInstanceOutput) EmDiscovererUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageEmInstance) *string { return v.EmDiscovererUrl }).(pulumi.StringPtrOutput)
 }
 
 // emHost name
-func (o GetResourceUsageEmInstanceOutput) EmHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceUsageEmInstance) string { return v.EmHost }).(pulumi.StringOutput)
+func (o GetResourceUsageEmInstanceOutput) EmHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageEmInstance) *string { return v.EmHost }).(pulumi.StringPtrOutput)
 }
 
 // operations Insights Warehouse Identifier
-func (o GetResourceUsageEmInstanceOutput) EmId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceUsageEmInstance) string { return v.EmId }).(pulumi.StringOutput)
+func (o GetResourceUsageEmInstanceOutput) EmId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageEmInstance) *string { return v.EmId }).(pulumi.StringPtrOutput)
 }
 
 // EmInstance Target count
-func (o GetResourceUsageEmInstanceOutput) TargetsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetResourceUsageEmInstance) int { return v.TargetsCount }).(pulumi.IntOutput)
+func (o GetResourceUsageEmInstanceOutput) TargetsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageEmInstance) *int { return v.TargetsCount }).(pulumi.IntPtrOutput)
 }
 
 type GetResourceUsageEmInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -1448,12 +1237,6 @@ func (o GetResourceUsageEmInstanceArrayOutput) ToGetResourceUsageEmInstanceArray
 
 func (o GetResourceUsageEmInstanceArrayOutput) ToGetResourceUsageEmInstanceArrayOutputWithContext(ctx context.Context) GetResourceUsageEmInstanceArrayOutput {
 	return o
-}
-
-func (o GetResourceUsageEmInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceUsageEmInstance] {
-	return pulumix.Output[[]GetResourceUsageEmInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceUsageEmInstanceArrayOutput) Index(i pulumi.IntInput) GetResourceUsageEmInstanceOutput {

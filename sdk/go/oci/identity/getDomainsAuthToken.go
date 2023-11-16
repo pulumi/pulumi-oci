@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -79,39 +78,39 @@ type LookupDomainsAuthTokenResult struct {
 	AuthTokenId   string   `pulumi:"authTokenId"`
 	Authorization *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// When the user's credential expire.
-	ExpiresOn string `pulumi:"expiresOn"`
+	ExpiresOn *string `pulumi:"expiresOn"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsAuthTokenIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                             `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsAuthTokenIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsAuthTokenMeta `pulumi:"metas"`
 	// The user's OCID.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// The user's credential status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsAuthTokenTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers []GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUsers"`
 	// The user linked to the Auth token.
@@ -166,12 +165,6 @@ func (o LookupDomainsAuthTokenResultOutput) ToLookupDomainsAuthTokenResultOutput
 	return o
 }
 
-func (o LookupDomainsAuthTokenResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAuthTokenResult] {
-	return pulumix.Output[LookupDomainsAuthTokenResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsAuthTokenResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsAuthTokenResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -189,33 +182,33 @@ func (o LookupDomainsAuthTokenResultOutput) Authorization() pulumi.StringPtrOutp
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsAuthTokenResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsAuthTokenResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthTokenResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
-func (o LookupDomainsAuthTokenResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsAuthTokenResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // When the user's credential expire.
-func (o LookupDomainsAuthTokenResultOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsAuthTokenResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -235,8 +228,8 @@ func (o LookupDomainsAuthTokenResultOutput) IdcsLastModifiedBies() GetDomainsAut
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsAuthTokenResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -250,8 +243,8 @@ func (o LookupDomainsAuthTokenResultOutput) Metas() GetDomainsAuthTokenMetaArray
 }
 
 // The user's OCID.
-func (o LookupDomainsAuthTokenResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsAuthTokenResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -264,8 +257,8 @@ func (o LookupDomainsAuthTokenResultOutput) Schemas() pulumi.StringArrayOutput {
 }
 
 // The user's credential status.
-func (o LookupDomainsAuthTokenResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -274,8 +267,8 @@ func (o LookupDomainsAuthTokenResultOutput) Tags() GetDomainsAuthTokenTagArrayOu
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsAuthTokenResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthTokenResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs

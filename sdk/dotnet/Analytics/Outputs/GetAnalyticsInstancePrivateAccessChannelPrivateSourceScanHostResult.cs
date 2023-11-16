@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// <summary>
         /// Description of private source scan host zone.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
         /// </summary>
-        public readonly string ScanHostname;
+        public readonly string? ScanHostname;
         /// <summary>
         /// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
         /// </summary>
-        public readonly int ScanPort;
+        public readonly int? ScanPort;
 
         [OutputConstructor]
         private GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(
-            string description,
+            string? description,
 
-            string scanHostname,
+            string? scanHostname,
 
-            int scanPort)
+            int? scanPort)
         {
             Description = description;
             ScanHostname = scanHostname;

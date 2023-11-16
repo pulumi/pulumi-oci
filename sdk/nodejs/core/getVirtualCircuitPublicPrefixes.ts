@@ -59,7 +59,7 @@ export interface GetVirtualCircuitPublicPrefixesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.
      */
@@ -68,7 +68,7 @@ export interface GetVirtualCircuitPublicPrefixesResult {
     /**
      * The list of virtual_circuit_public_prefixes.
      */
-    readonly virtualCircuitPublicPrefixes: outputs.Core.GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix[];
+    readonly virtualCircuitPublicPrefixes?: outputs.Core.GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix[];
 }
 /**
  * This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.

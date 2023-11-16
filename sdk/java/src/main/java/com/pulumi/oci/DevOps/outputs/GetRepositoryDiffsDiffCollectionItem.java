@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryDiffsDiffCollectionItem {
@@ -18,103 +20,103 @@ public final class GetRepositoryDiffsDiffCollectionItem {
      * @return Indicates whether the changed file contains conflicts.
      * 
      */
-    private Boolean areConflictsInFile;
+    private @Nullable Boolean areConflictsInFile;
     /**
      * @return List of changed section in the file.
      * 
      */
-    private List<GetRepositoryDiffsDiffCollectionItemChange> changes;
-    private Map<String,Object> freeformTags;
+    private @Nullable List<GetRepositoryDiffsDiffCollectionItemChange> changes;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Indicates whether the file is binary.
      * 
      */
-    private Boolean isBinary;
+    private @Nullable Boolean isBinary;
     /**
      * @return Indicates whether the file is large.
      * 
      */
-    private Boolean isLarge;
+    private @Nullable Boolean isLarge;
     /**
      * @return The ID of the changed object on the target version.
      * 
      */
-    private String newId;
+    private @Nullable String newId;
     /**
      * @return The path on the target version to the changed object.
      * 
      */
-    private String newPath;
+    private @Nullable String newPath;
     /**
      * @return The ID of the changed object on the base version.
      * 
      */
-    private String oldId;
+    private @Nullable String oldId;
     /**
      * @return The path on the base version to the changed object.
      * 
      */
-    private String oldPath;
+    private @Nullable String oldPath;
 
     private GetRepositoryDiffsDiffCollectionItem() {}
     /**
      * @return Indicates whether the changed file contains conflicts.
      * 
      */
-    public Boolean areConflictsInFile() {
-        return this.areConflictsInFile;
+    public Optional<Boolean> areConflictsInFile() {
+        return Optional.ofNullable(this.areConflictsInFile);
     }
     /**
      * @return List of changed section in the file.
      * 
      */
     public List<GetRepositoryDiffsDiffCollectionItemChange> changes() {
-        return this.changes;
+        return this.changes == null ? List.of() : this.changes;
     }
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Indicates whether the file is binary.
      * 
      */
-    public Boolean isBinary() {
-        return this.isBinary;
+    public Optional<Boolean> isBinary() {
+        return Optional.ofNullable(this.isBinary);
     }
     /**
      * @return Indicates whether the file is large.
      * 
      */
-    public Boolean isLarge() {
-        return this.isLarge;
+    public Optional<Boolean> isLarge() {
+        return Optional.ofNullable(this.isLarge);
     }
     /**
      * @return The ID of the changed object on the target version.
      * 
      */
-    public String newId() {
-        return this.newId;
+    public Optional<String> newId() {
+        return Optional.ofNullable(this.newId);
     }
     /**
      * @return The path on the target version to the changed object.
      * 
      */
-    public String newPath() {
-        return this.newPath;
+    public Optional<String> newPath() {
+        return Optional.ofNullable(this.newPath);
     }
     /**
      * @return The ID of the changed object on the base version.
      * 
      */
-    public String oldId() {
-        return this.oldId;
+    public Optional<String> oldId() {
+        return Optional.ofNullable(this.oldId);
     }
     /**
      * @return The path on the base version to the changed object.
      * 
      */
-    public String oldPath() {
-        return this.oldPath;
+    public Optional<String> oldPath() {
+        return Optional.ofNullable(this.oldPath);
     }
 
     public static Builder builder() {
@@ -126,15 +128,15 @@ public final class GetRepositoryDiffsDiffCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areConflictsInFile;
-        private List<GetRepositoryDiffsDiffCollectionItemChange> changes;
-        private Map<String,Object> freeformTags;
-        private Boolean isBinary;
-        private Boolean isLarge;
-        private String newId;
-        private String newPath;
-        private String oldId;
-        private String oldPath;
+        private @Nullable Boolean areConflictsInFile;
+        private @Nullable List<GetRepositoryDiffsDiffCollectionItemChange> changes;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Boolean isBinary;
+        private @Nullable Boolean isLarge;
+        private @Nullable String newId;
+        private @Nullable String newPath;
+        private @Nullable String oldId;
+        private @Nullable String oldPath;
         public Builder() {}
         public Builder(GetRepositoryDiffsDiffCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -150,51 +152,51 @@ public final class GetRepositoryDiffsDiffCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder areConflictsInFile(Boolean areConflictsInFile) {
-            this.areConflictsInFile = Objects.requireNonNull(areConflictsInFile);
+        public Builder areConflictsInFile(@Nullable Boolean areConflictsInFile) {
+            this.areConflictsInFile = areConflictsInFile;
             return this;
         }
         @CustomType.Setter
-        public Builder changes(List<GetRepositoryDiffsDiffCollectionItemChange> changes) {
-            this.changes = Objects.requireNonNull(changes);
+        public Builder changes(@Nullable List<GetRepositoryDiffsDiffCollectionItemChange> changes) {
+            this.changes = changes;
             return this;
         }
         public Builder changes(GetRepositoryDiffsDiffCollectionItemChange... changes) {
             return changes(List.of(changes));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder isBinary(Boolean isBinary) {
-            this.isBinary = Objects.requireNonNull(isBinary);
+        public Builder isBinary(@Nullable Boolean isBinary) {
+            this.isBinary = isBinary;
             return this;
         }
         @CustomType.Setter
-        public Builder isLarge(Boolean isLarge) {
-            this.isLarge = Objects.requireNonNull(isLarge);
+        public Builder isLarge(@Nullable Boolean isLarge) {
+            this.isLarge = isLarge;
             return this;
         }
         @CustomType.Setter
-        public Builder newId(String newId) {
-            this.newId = Objects.requireNonNull(newId);
+        public Builder newId(@Nullable String newId) {
+            this.newId = newId;
             return this;
         }
         @CustomType.Setter
-        public Builder newPath(String newPath) {
-            this.newPath = Objects.requireNonNull(newPath);
+        public Builder newPath(@Nullable String newPath) {
+            this.newPath = newPath;
             return this;
         }
         @CustomType.Setter
-        public Builder oldId(String oldId) {
-            this.oldId = Objects.requireNonNull(oldId);
+        public Builder oldId(@Nullable String oldId) {
+            this.oldId = oldId;
             return this;
         }
         @CustomType.Setter
-        public Builder oldPath(String oldPath) {
-            this.oldPath = Objects.requireNonNull(oldPath);
+        public Builder oldPath(@Nullable String oldPath) {
+            this.oldPath = oldPath;
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItem build() {

@@ -47,10 +47,7 @@ class GetDiscoveryJobLogsResult:
 
     @property
     @pulumi.getter(name="discoveryJobLogCollections")
-    def discovery_job_log_collections(self) -> Sequence['outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionResult']:
-        """
-        The list of discovery_job_log_collection.
-        """
+    def discovery_job_log_collections(self) -> Optional[Sequence['outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionResult']]:
         return pulumi.get(self, "discovery_job_log_collections")
 
     @property
@@ -60,7 +57,7 @@ class GetDiscoveryJobLogsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,9 +66,6 @@ class GetDiscoveryJobLogsResult:
     @property
     @pulumi.getter(name="logType")
     def log_type(self) -> Optional[str]:
-        """
-        Type of log (INFO, WARNING, ERROR or SUCCESS)
-        """
         return pulumi.get(self, "log_type")
 
 
@@ -93,23 +87,7 @@ def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
                            log_type: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobLogsResult:
     """
-    This data source provides the list of Discovery Job Logs in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    API to get all the logs of a Discovery Job.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"],
-        log_type=var["discovery_job_log_log_type"])
-    ```
-
-
-    :param str discovery_job_id: The Discovery Job ID
-    :param str log_type: The log type like INFO, WARNING, ERROR, SUCCESS
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['discoveryJobId'] = discovery_job_id
@@ -132,22 +110,6 @@ def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[str]] 
                                   log_type: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobLogsResult]:
     """
-    This data source provides the list of Discovery Job Logs in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    API to get all the logs of a Discovery Job.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"],
-        log_type=var["discovery_job_log_log_type"])
-    ```
-
-
-    :param str discovery_job_id: The Discovery Job ID
-    :param str log_type: The log type like INFO, WARNING, ERROR, SUCCESS
+    Use this data source to access information about an existing resource.
     """
     ...

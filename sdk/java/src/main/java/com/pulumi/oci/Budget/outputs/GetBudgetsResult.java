@@ -18,7 +18,7 @@ public final class GetBudgetsResult {
      * @return The list of budgets.
      * 
      */
-    private List<GetBudgetsBudget> budgets;
+    private @Nullable List<GetBudgetsBudget> budgets;
     /**
      * @return The OCID of the compartment.
      * 
@@ -34,7 +34,7 @@ public final class GetBudgetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the budget.
      * 
@@ -52,7 +52,7 @@ public final class GetBudgetsResult {
      * 
      */
     public List<GetBudgetsBudget> budgets() {
-        return this.budgets;
+        return this.budgets == null ? List.of() : this.budgets;
     }
     /**
      * @return The OCID of the compartment.
@@ -75,8 +75,8 @@ public final class GetBudgetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the budget.
@@ -102,11 +102,11 @@ public final class GetBudgetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBudgetsBudget> budgets;
+        private @Nullable List<GetBudgetsBudget> budgets;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBudgetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String targetType;
         public Builder() {}
@@ -122,8 +122,8 @@ public final class GetBudgetsResult {
         }
 
         @CustomType.Setter
-        public Builder budgets(List<GetBudgetsBudget> budgets) {
-            this.budgets = Objects.requireNonNull(budgets);
+        public Builder budgets(@Nullable List<GetBudgetsBudget> budgets) {
+            this.budgets = budgets;
             return this;
         }
         public Builder budgets(GetBudgetsBudget... budgets) {
@@ -148,8 +148,8 @@ public final class GetBudgetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

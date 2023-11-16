@@ -25,13 +25,13 @@ public final class GetProductLicensesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return The list of product_license_collection.
      * 
      */
-    private List<GetProductLicensesProductLicenseCollection> productLicenseCollections;
+    private @Nullable List<GetProductLicensesProductLicenseCollection> productLicenseCollections;
 
     private GetProductLicensesResult() {}
     /**
@@ -48,8 +48,8 @@ public final class GetProductLicensesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCompartmentIdInSubtree() {
         return Optional.ofNullable(this.isCompartmentIdInSubtree);
@@ -59,7 +59,7 @@ public final class GetProductLicensesResult {
      * 
      */
     public List<GetProductLicensesProductLicenseCollection> productLicenseCollections() {
-        return this.productLicenseCollections;
+        return this.productLicenseCollections == null ? List.of() : this.productLicenseCollections;
     }
 
     public static Builder builder() {
@@ -73,9 +73,9 @@ public final class GetProductLicensesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProductLicensesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
-        private List<GetProductLicensesProductLicenseCollection> productLicenseCollections;
+        private @Nullable List<GetProductLicensesProductLicenseCollection> productLicenseCollections;
         public Builder() {}
         public Builder(GetProductLicensesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,8 +100,8 @@ public final class GetProductLicensesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -110,8 +110,8 @@ public final class GetProductLicensesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder productLicenseCollections(List<GetProductLicensesProductLicenseCollection> productLicenseCollections) {
-            this.productLicenseCollections = Objects.requireNonNull(productLicenseCollections);
+        public Builder productLicenseCollections(@Nullable List<GetProductLicensesProductLicenseCollection> productLicenseCollections) {
+            this.productLicenseCollections = productLicenseCollections;
             return this;
         }
         public Builder productLicenseCollections(GetProductLicensesProductLicenseCollection... productLicenseCollections) {

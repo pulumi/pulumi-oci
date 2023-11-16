@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudMigrations.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage {
@@ -13,27 +15,27 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage 
      * @return Total price per hour
      * 
      */
-    private Double totalPerHour;
+    private @Nullable Double totalPerHour;
     /**
      * @return Total price per hour by subscription
      * 
      */
-    private Double totalPerHourBySubscription;
+    private @Nullable Double totalPerHourBySubscription;
 
     private GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage() {}
     /**
      * @return Total price per hour
      * 
      */
-    public Double totalPerHour() {
-        return this.totalPerHour;
+    public Optional<Double> totalPerHour() {
+        return Optional.ofNullable(this.totalPerHour);
     }
     /**
      * @return Total price per hour by subscription
      * 
      */
-    public Double totalPerHourBySubscription() {
-        return this.totalPerHourBySubscription;
+    public Optional<Double> totalPerHourBySubscription() {
+        return Optional.ofNullable(this.totalPerHourBySubscription);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage 
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double totalPerHour;
-        private Double totalPerHourBySubscription;
+        private @Nullable Double totalPerHour;
+        private @Nullable Double totalPerHourBySubscription;
         public Builder() {}
         public Builder(GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage 
         }
 
         @CustomType.Setter
-        public Builder totalPerHour(Double totalPerHour) {
-            this.totalPerHour = Objects.requireNonNull(totalPerHour);
+        public Builder totalPerHour(@Nullable Double totalPerHour) {
+            this.totalPerHour = totalPerHour;
             return this;
         }
         @CustomType.Setter
-        public Builder totalPerHourBySubscription(Double totalPerHourBySubscription) {
-            this.totalPerHourBySubscription = Objects.requireNonNull(totalPerHourBySubscription);
+        public Builder totalPerHourBySubscription(@Nullable Double totalPerHourBySubscription) {
+            this.totalPerHourBySubscription = totalPerHourBySubscription;
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage build() {

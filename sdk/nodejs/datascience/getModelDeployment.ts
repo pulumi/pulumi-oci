@@ -47,60 +47,60 @@ export interface GetModelDeploymentResult {
     /**
      * The log details for each category.
      */
-    readonly categoryLogDetails: outputs.DataScience.GetModelDeploymentCategoryLogDetail[];
+    readonly categoryLogDetails?: outputs.DataScience.GetModelDeploymentCategoryLogDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A short description of the model deployment.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the state of the model deployment.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The model deployment configuration details.
      */
-    readonly modelDeploymentConfigurationDetails: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetail[];
+    readonly modelDeploymentConfigurationDetails?: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetail[];
     readonly modelDeploymentId: string;
     /**
      * The URL to interact with the model deployment.
      */
-    readonly modelDeploymentUrl: string;
+    readonly modelDeploymentUrl?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The state of the model deployment.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.

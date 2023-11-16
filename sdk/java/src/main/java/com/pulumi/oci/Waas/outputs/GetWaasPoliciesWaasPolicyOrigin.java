@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyOrigin {
@@ -16,23 +18,23 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
      * @return A list of HTTP headers to forward to your origin.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders;
+    private @Nullable List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders;
     /**
      * @return The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
      * 
      */
-    private Integer httpPort;
+    private @Nullable Integer httpPort;
     /**
      * @return The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
      * 
      */
-    private Integer httpsPort;
-    private String label;
+    private @Nullable Integer httpsPort;
+    private @Nullable String label;
     /**
      * @return The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
      * 
      */
-    private String uri;
+    private @Nullable String uri;
 
     private GetWaasPoliciesWaasPolicyOrigin() {}
     /**
@@ -40,31 +42,31 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
      * 
      */
     public List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders() {
-        return this.customHeaders;
+        return this.customHeaders == null ? List.of() : this.customHeaders;
     }
     /**
      * @return The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
      * 
      */
-    public Integer httpPort() {
-        return this.httpPort;
+    public Optional<Integer> httpPort() {
+        return Optional.ofNullable(this.httpPort);
     }
     /**
      * @return The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
      * 
      */
-    public Integer httpsPort() {
-        return this.httpsPort;
+    public Optional<Integer> httpsPort() {
+        return Optional.ofNullable(this.httpsPort);
     }
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     /**
      * @return The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
      * 
      */
-    public String uri() {
-        return this.uri;
+    public Optional<String> uri() {
+        return Optional.ofNullable(this.uri);
     }
 
     public static Builder builder() {
@@ -76,11 +78,11 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders;
-        private Integer httpPort;
-        private Integer httpsPort;
-        private String label;
-        private String uri;
+        private @Nullable List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders;
+        private @Nullable Integer httpPort;
+        private @Nullable Integer httpsPort;
+        private @Nullable String label;
+        private @Nullable String uri;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyOrigin defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,31 +94,31 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
         }
 
         @CustomType.Setter
-        public Builder customHeaders(List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders) {
-            this.customHeaders = Objects.requireNonNull(customHeaders);
+        public Builder customHeaders(@Nullable List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders) {
+            this.customHeaders = customHeaders;
             return this;
         }
         public Builder customHeaders(GetWaasPoliciesWaasPolicyOriginCustomHeader... customHeaders) {
             return customHeaders(List.of(customHeaders));
         }
         @CustomType.Setter
-        public Builder httpPort(Integer httpPort) {
-            this.httpPort = Objects.requireNonNull(httpPort);
+        public Builder httpPort(@Nullable Integer httpPort) {
+            this.httpPort = httpPort;
             return this;
         }
         @CustomType.Setter
-        public Builder httpsPort(Integer httpsPort) {
-            this.httpsPort = Objects.requireNonNull(httpsPort);
+        public Builder httpsPort(@Nullable Integer httpsPort) {
+            this.httpsPort = httpsPort;
             return this;
         }
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+        public Builder uri(@Nullable String uri) {
+            this.uri = uri;
             return this;
         }
         public GetWaasPoliciesWaasPolicyOrigin build() {

@@ -88,7 +88,7 @@ export class LoadBalancerRoutingPolicy extends pulumi.CustomResource {
      * (Updatable) The list of routing rules.
      */
     public readonly rules!: pulumi.Output<outputs.LoadBalancer.LoadBalancerRoutingPolicyRule[]>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a LoadBalancerRoutingPolicy resource with the given unique name, arguments, and options.

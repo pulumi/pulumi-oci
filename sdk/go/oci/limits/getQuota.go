@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
@@ -60,27 +59,27 @@ type LookupQuotaArgs struct {
 // A collection of values returned by getQuota.
 type LookupQuotaResult struct {
 	// The OCID of the compartment containing the resource this quota applies to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description you assign to the quota.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the quota.
-	Id             string `pulumi:"id"`
-	IsLockOverride bool   `pulumi:"isLockOverride"`
+	Id             *string `pulumi:"id"`
+	IsLockOverride *bool   `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks []GetQuotaLock `pulumi:"locks"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-	Name    string `pulumi:"name"`
-	QuotaId string `pulumi:"quotaId"`
+	Name    *string `pulumi:"name"`
+	QuotaId string  `pulumi:"quotaId"`
 	// The quota's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An array of one or more quota statements written in the declarative quota statement language.
 	Statements []string `pulumi:"statements"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupQuotaOutput(ctx *pulumi.Context, args LookupQuotaOutputArgs, opts ...pulumi.InvokeOption) LookupQuotaResultOutput {
@@ -121,15 +120,9 @@ func (o LookupQuotaResultOutput) ToLookupQuotaResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupQuotaResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupQuotaResult] {
-	return pulumix.Output[LookupQuotaResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the resource this quota applies to.
-func (o LookupQuotaResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQuotaResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupQuotaResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQuotaResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -138,8 +131,8 @@ func (o LookupQuotaResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description you assign to the quota.
-func (o LookupQuotaResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQuotaResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupQuotaResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQuotaResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -148,12 +141,12 @@ func (o LookupQuotaResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the quota.
-func (o LookupQuotaResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQuotaResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupQuotaResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQuotaResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupQuotaResultOutput) IsLockOverride() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupQuotaResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+func (o LookupQuotaResultOutput) IsLockOverride() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupQuotaResult) *bool { return v.IsLockOverride }).(pulumi.BoolPtrOutput)
 }
 
 // Locks associated with this resource.
@@ -162,8 +155,8 @@ func (o LookupQuotaResultOutput) Locks() GetQuotaLockArrayOutput {
 }
 
 // The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-func (o LookupQuotaResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQuotaResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupQuotaResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQuotaResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupQuotaResultOutput) QuotaId() pulumi.StringOutput {
@@ -171,8 +164,8 @@ func (o LookupQuotaResultOutput) QuotaId() pulumi.StringOutput {
 }
 
 // The quota's current state.
-func (o LookupQuotaResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQuotaResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupQuotaResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQuotaResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An array of one or more quota statements written in the declarative quota statement language.
@@ -181,8 +174,8 @@ func (o LookupQuotaResultOutput) Statements() pulumi.StringArrayOutput {
 }
 
 // Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-func (o LookupQuotaResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQuotaResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupQuotaResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQuotaResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

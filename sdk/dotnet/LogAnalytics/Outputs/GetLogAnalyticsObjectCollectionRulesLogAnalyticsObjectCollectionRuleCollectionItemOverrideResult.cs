@@ -13,20 +13,20 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
     [OutputType]
     public sealed class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult
     {
-        public readonly string MatchType;
-        public readonly string MatchValue;
-        public readonly string PropertyName;
-        public readonly string PropertyValue;
+        public readonly string? MatchType;
+        public readonly string? MatchValue;
+        public readonly string? PropertyName;
+        public readonly string? PropertyValue;
 
         [OutputConstructor]
         private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult(
-            string matchType,
+            string? matchType,
 
-            string matchValue,
+            string? matchValue,
 
-            string propertyName,
+            string? propertyName,
 
-            string propertyValue)
+            string? propertyValue)
         {
             MatchType = matchType;
             MatchValue = matchValue;

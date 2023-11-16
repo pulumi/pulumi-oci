@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
@@ -63,16 +62,16 @@ type GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs struct {
 // A collection of values returned by getSecurityPolicyDeploymentSecurityPolicyEntryState.
 type GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult struct {
 	// The current deployment status of the security policy deployment and the security policy entry associated.
-	DeploymentStatus string `pulumi:"deploymentStatus"`
+	DeploymentStatus *string `pulumi:"deploymentStatus"`
 	// Details specific to the security policy entry.
 	EntryDetails []GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail `pulumi:"entryDetails"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the security policy deployment associated.
 	SecurityPolicyDeploymentId string `pulumi:"securityPolicyDeploymentId"`
 	// The OCID of the security policy entry type associated.
-	SecurityPolicyEntryId      string `pulumi:"securityPolicyEntryId"`
-	SecurityPolicyEntryStateId string `pulumi:"securityPolicyEntryStateId"`
+	SecurityPolicyEntryId      *string `pulumi:"securityPolicyEntryId"`
+	SecurityPolicyEntryStateId string  `pulumi:"securityPolicyEntryStateId"`
 }
 
 func GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutput(ctx *pulumi.Context, args GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput {
@@ -115,15 +114,9 @@ func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) ToGetSe
 	return o
 }
 
-func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult] {
-	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The current deployment status of the security policy deployment and the security policy entry associated.
-func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) DeploymentStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string { return v.DeploymentStatus }).(pulumi.StringOutput)
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) DeploymentStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) *string { return v.DeploymentStatus }).(pulumi.StringPtrOutput)
 }
 
 // Details specific to the security policy entry.
@@ -134,8 +127,8 @@ func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) EntryDe
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the security policy deployment associated.
@@ -146,10 +139,10 @@ func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) Securit
 }
 
 // The OCID of the security policy entry type associated.
-func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) SecurityPolicyEntryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string {
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) SecurityPolicyEntryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) *string {
 		return v.SecurityPolicyEntryId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) SecurityPolicyEntryStateId() pulumi.StringOutput {

@@ -67,7 +67,7 @@ export interface GetAutonomousVmClustersResult {
     /**
      * The list of autonomous_vm_clusters.
      */
-    readonly autonomousVmClusters: outputs.Database.GetAutonomousVmClustersAutonomousVmCluster[];
+    readonly autonomousVmClusters?: outputs.Database.GetAutonomousVmClustersAutonomousVmCluster[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -84,7 +84,7 @@ export interface GetAutonomousVmClustersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Autonomous VM cluster.
      */

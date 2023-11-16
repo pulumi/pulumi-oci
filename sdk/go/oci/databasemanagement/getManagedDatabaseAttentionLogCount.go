@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
@@ -82,8 +81,8 @@ type GetManagedDatabaseAttentionLogCountArgs struct {
 type GetManagedDatabaseAttentionLogCountResult struct {
 	GroupBy *string `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	IsRegularExpression *bool  `pulumi:"isRegularExpression"`
+	Id                  *string `pulumi:"id"`
+	IsRegularExpression *bool   `pulumi:"isRegularExpression"`
 	// An array of the counts of different urgency or type of attention logs.
 	Items         []GetManagedDatabaseAttentionLogCountItem `pulumi:"items"`
 	LogSearchText *string                                   `pulumi:"logSearchText"`
@@ -147,19 +146,13 @@ func (o GetManagedDatabaseAttentionLogCountResultOutput) ToGetManagedDatabaseAtt
 	return o
 }
 
-func (o GetManagedDatabaseAttentionLogCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAttentionLogCountResult] {
-	return pulumix.Output[GetManagedDatabaseAttentionLogCountResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseAttentionLogCountResultOutput) GroupBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountResult) *string { return v.GroupBy }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseAttentionLogCountResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseAttentionLogCountResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseAttentionLogCountResultOutput) IsRegularExpression() pulumi.BoolPtrOutput {

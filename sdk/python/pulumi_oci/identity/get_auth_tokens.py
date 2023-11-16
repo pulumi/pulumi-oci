@@ -44,7 +44,7 @@ class GetAuthTokensResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,18 +52,12 @@ class GetAuthTokensResult:
 
     @property
     @pulumi.getter
-    def tokens(self) -> Sequence['outputs.GetAuthTokensTokenResult']:
-        """
-        The list of tokens.
-        """
+    def tokens(self) -> Optional[Sequence['outputs.GetAuthTokensTokenResult']]:
         return pulumi.get(self, "tokens")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
-        """
-        The OCID of the user the auth token belongs to.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -83,22 +77,7 @@ def get_auth_tokens(filters: Optional[Sequence[pulumi.InputType['GetAuthTokensFi
                     user_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthTokensResult:
     """
-    This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity service.
-
-    Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
-    the token itself. The actual token is returned only upon creation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -118,21 +97,6 @@ def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
                            user_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthTokensResult]:
     """
-    This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity service.
-
-    Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
-    the token itself. The actual token is returned only upon creation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

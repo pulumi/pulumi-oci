@@ -18,7 +18,7 @@ public final class GetBootVolumeBackupsResult {
      * @return The list of boot_volume_backups.
      * 
      */
-    private List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups;
+    private @Nullable List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups;
     /**
      * @return The OCID of the boot volume.
      * 
@@ -39,7 +39,7 @@ public final class GetBootVolumeBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the source boot volume backup.
      * 
@@ -57,7 +57,7 @@ public final class GetBootVolumeBackupsResult {
      * 
      */
     public List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups() {
-        return this.bootVolumeBackups;
+        return this.bootVolumeBackups == null ? List.of() : this.bootVolumeBackups;
     }
     /**
      * @return The OCID of the boot volume.
@@ -87,8 +87,8 @@ public final class GetBootVolumeBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the source boot volume backup.
@@ -114,12 +114,12 @@ public final class GetBootVolumeBackupsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups;
+        private @Nullable List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups;
         private @Nullable String bootVolumeId;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBootVolumeBackupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String sourceBootVolumeBackupId;
         private @Nullable String state;
         public Builder() {}
@@ -136,8 +136,8 @@ public final class GetBootVolumeBackupsResult {
         }
 
         @CustomType.Setter
-        public Builder bootVolumeBackups(List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups) {
-            this.bootVolumeBackups = Objects.requireNonNull(bootVolumeBackups);
+        public Builder bootVolumeBackups(@Nullable List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups) {
+            this.bootVolumeBackups = bootVolumeBackups;
             return this;
         }
         public Builder bootVolumeBackups(GetBootVolumeBackupsBootVolumeBackup... bootVolumeBackups) {
@@ -167,8 +167,8 @@ public final class GetBootVolumeBackupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

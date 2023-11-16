@@ -23,12 +23,12 @@ public final class GetSecurityAssessmentFindingsResult {
      * @return The list of findings.
      * 
      */
-    private List<GetSecurityAssessmentFindingsFinding> findings;
+    private @Nullable List<GetSecurityAssessmentFindingsFinding> findings;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      * 
@@ -59,14 +59,14 @@ public final class GetSecurityAssessmentFindingsResult {
      * 
      */
     public List<GetSecurityAssessmentFindingsFinding> findings() {
-        return this.findings;
+        return this.findings == null ? List.of() : this.findings;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
@@ -99,8 +99,8 @@ public final class GetSecurityAssessmentFindingsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetSecurityAssessmentFindingsFilter> filters;
         private @Nullable String findingKey;
-        private List<GetSecurityAssessmentFindingsFinding> findings;
-        private String id;
+        private @Nullable List<GetSecurityAssessmentFindingsFinding> findings;
+        private @Nullable String id;
         private @Nullable String references;
         private String securityAssessmentId;
         private @Nullable String severity;
@@ -142,16 +142,16 @@ public final class GetSecurityAssessmentFindingsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder findings(List<GetSecurityAssessmentFindingsFinding> findings) {
-            this.findings = Objects.requireNonNull(findings);
+        public Builder findings(@Nullable List<GetSecurityAssessmentFindingsFinding> findings) {
+            this.findings = findings;
             return this;
         }
         public Builder findings(GetSecurityAssessmentFindingsFinding... findings) {
             return findings(List.of(findings));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

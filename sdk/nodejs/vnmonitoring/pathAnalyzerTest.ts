@@ -105,7 +105,7 @@ export class PathAnalyzerTest extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
@@ -113,11 +113,11 @@ export class PathAnalyzerTest extends pulumi.CustomResource {
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
      */
@@ -125,11 +125,11 @@ export class PathAnalyzerTest extends pulumi.CustomResource {
     /**
      * (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    public readonly protocolParameters!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestProtocolParameters>;
+    public readonly protocolParameters!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestProtocolParameters | undefined>;
     /**
      * (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    public readonly queryOptions!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestQueryOptions>;
+    public readonly queryOptions!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestQueryOptions | undefined>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
@@ -137,19 +137,19 @@ export class PathAnalyzerTest extends pulumi.CustomResource {
     /**
      * The current state of the `PathAnalyzerTest` resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a PathAnalyzerTest resource with the given unique name, arguments, and options.

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
      * @return A list of SQL Tuning Advisor tasks.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem... items) {

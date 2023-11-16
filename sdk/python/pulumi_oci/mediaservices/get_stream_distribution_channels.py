@@ -46,17 +46,11 @@ class GetStreamDistributionChannelsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Stream Distribution Channel display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetStreamDistributionChannelsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Stream Distribution Channel.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streamDistributionChannelCollections")
-    def stream_distribution_channel_collections(self) -> Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionResult']:
-        """
-        The list of stream_distribution_channel_collection.
-        """
+    def stream_distribution_channel_collections(self) -> Optional[Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionResult']]:
         return pulumi.get(self, "stream_distribution_channel_collections")
 
 
@@ -110,27 +95,7 @@ def get_stream_distribution_channels(compartment_id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamDistributionChannelsResult:
     """
-    This data source provides the list of Stream Distribution Channels in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the Stream Distribution Channels.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=var["compartment_id"],
-        display_name=var["stream_distribution_channel_display_name"],
-        id=var["stream_distribution_channel_id"],
-        state=var["stream_distribution_channel_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: Unique Stream Distribution Channel identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_stream_distribution_channels_output(compartment_id: Optional[pulumi.Inpu
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamDistributionChannelsResult]:
     """
-    This data source provides the list of Stream Distribution Channels in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the Stream Distribution Channels.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=var["compartment_id"],
-        display_name=var["stream_distribution_channel_display_name"],
-        id=var["stream_distribution_channel_id"],
-        state=var["stream_distribution_channel_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: Unique Stream Distribution Channel identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

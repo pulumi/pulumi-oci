@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         [Output("body")]
-        public Output<string> Body { get; private set; } = null!;
+        public Output<string?> Body { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the alarm is enabled.  Example: `true`
@@ -133,13 +133,13 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
         /// </summary>
         [Output("isNotificationsPerMetricDimensionEnabled")]
-        public Output<bool> IsNotificationsPerMetricDimensionEnabled { get; private set; } = null!;
+        public Output<bool?> IsNotificationsPerMetricDimensionEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The format to use for alarm notifications. The formats are:
         /// </summary>
         [Output("messageFormat")]
-        public Output<string> MessageFormat { get; private set; } = null!;
+        public Output<string?> MessageFormat { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.Monitoring
         /// (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         /// </summary>
         [Output("metricCompartmentIdInSubtree")]
-        public Output<bool> MetricCompartmentIdInSubtree { get; private set; } = null!;
+        public Output<bool?> MetricCompartmentIdInSubtree { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Monitoring
         /// Example: `PT5M`
         /// </summary>
         [Output("pendingDuration")]
-        public Output<string> PendingDuration { get; private set; } = null!;
+        public Output<string?> PendingDuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -203,19 +203,19 @@ namespace Pulumi.Oci.Monitoring
         /// Example: `PT2H`
         /// </summary>
         [Output("repeatNotificationDuration")]
-        public Output<string> RepeatNotificationDuration { get; private set; } = null!;
+        public Output<string?> RepeatNotificationDuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         /// </summary>
         [Output("resolution")]
-        public Output<string> Resolution { get; private set; } = null!;
+        public Output<string?> Resolution { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         /// </summary>
         [Output("resourceGroup")]
-        public Output<string> ResourceGroup { get; private set; } = null!;
+        public Output<string?> ResourceGroup { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -227,25 +227,25 @@ namespace Pulumi.Oci.Monitoring
         /// The current lifecycle state of the alarm.  Example: `DELETED`
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The configuration details for suppressing an alarm.
         /// </summary>
         [Output("suppression")]
-        public Output<Outputs.AlarmSuppression> Suppression { get; private set; } = null!;
+        public Output<Outputs.AlarmSuppression?> Suppression { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

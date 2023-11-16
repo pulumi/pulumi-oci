@@ -64,7 +64,7 @@ class GetAuditProfileAnalyticResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,10 +72,7 @@ class GetAuditProfileAnalyticResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAuditProfileAnalyticItemResult']:
-        """
-        Array of audit profile aggregration data.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAuditProfileAnalyticItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -99,39 +96,7 @@ def get_audit_profile_analytic(access_level: Optional[str] = None,
                                group_bies: Optional[Sequence[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditProfileAnalyticResult:
     """
-    This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of audit profile aggregated details . A audit profile  aggregation helps understand the overall  state of audit profile profiles.
-    As an example, it helps understand how many audit profiles have paid usage. It is especially useful to create dashboards or to support analytics.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform AuditProfileAnalytics on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_profile_analytic = oci.DataSafe.get_audit_profile_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_profile_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_profile_analytic_group_by"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter for summarize operation on audit.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -157,38 +122,6 @@ def get_audit_profile_analytic_output(access_level: Optional[pulumi.Input[Option
                                       group_bies: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfileAnalyticResult]:
     """
-    This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of audit profile aggregated details . A audit profile  aggregation helps understand the overall  state of audit profile profiles.
-    As an example, it helps understand how many audit profiles have paid usage. It is especially useful to create dashboards or to support analytics.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform AuditProfileAnalytics on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_profile_analytic = oci.DataSafe.get_audit_profile_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_profile_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_profile_analytic_group_by"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter for summarize operation on audit.
+    Use this data source to access information about an existing resource.
     """
     ...

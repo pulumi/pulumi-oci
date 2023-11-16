@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -83,7 +82,7 @@ type NetworkLoadBalancer struct {
 	// An array of IP addresses.
 	IpAddresses NetworkLoadBalancerIpAddressArrayOutput `pulumi:"ipAddresses"`
 	// (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
-	IsPreserveSourceDestination pulumi.BoolOutput `pulumi:"isPreserveSourceDestination"`
+	IsPreserveSourceDestination pulumi.BoolPtrOutput `pulumi:"isPreserveSourceDestination"`
 	// Whether the network load balancer has a virtual cloud network-local (private) IP address.
 	//
 	// If "true", then the service assigns a private IP address to the network load balancer.
@@ -93,9 +92,9 @@ type NetworkLoadBalancer struct {
 	// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
 	//
 	// Example: `true`
-	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
+	IsPrivate pulumi.BoolPtrOutput `pulumi:"isPrivate"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
 	//
 	// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
@@ -107,11 +106,11 @@ type NetworkLoadBalancer struct {
 	// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) IP version associated with the NLB.
-	NlbIpVersion pulumi.StringOutput `pulumi:"nlbIpVersion"`
+	NlbIpVersion pulumi.StringPtrOutput `pulumi:"nlbIpVersion"`
 	// An array of reserved Ips.
 	ReservedIps NetworkLoadBalancerReservedIpArrayOutput `pulumi:"reservedIps"`
 	// The current state of the network load balancer.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	//
 	// ** IMPORTANT **
@@ -120,9 +119,9 @@ type NetworkLoadBalancer struct {
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewNetworkLoadBalancer registers a new resource with the given unique name, arguments, and options.
@@ -383,12 +382,6 @@ func (i *NetworkLoadBalancer) ToNetworkLoadBalancerOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerOutput)
 }
 
-func (i *NetworkLoadBalancer) ToOutput(ctx context.Context) pulumix.Output[*NetworkLoadBalancer] {
-	return pulumix.Output[*NetworkLoadBalancer]{
-		OutputState: i.ToNetworkLoadBalancerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkLoadBalancerArrayInput is an input type that accepts NetworkLoadBalancerArray and NetworkLoadBalancerArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerArrayInput` via:
 //
@@ -412,12 +405,6 @@ func (i NetworkLoadBalancerArray) ToNetworkLoadBalancerArrayOutput() NetworkLoad
 
 func (i NetworkLoadBalancerArray) ToNetworkLoadBalancerArrayOutputWithContext(ctx context.Context) NetworkLoadBalancerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerArrayOutput)
-}
-
-func (i NetworkLoadBalancerArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkLoadBalancer] {
-	return pulumix.Output[[]*NetworkLoadBalancer]{
-		OutputState: i.ToNetworkLoadBalancerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkLoadBalancerMapInput is an input type that accepts NetworkLoadBalancerMap and NetworkLoadBalancerMapOutput values.
@@ -445,12 +432,6 @@ func (i NetworkLoadBalancerMap) ToNetworkLoadBalancerMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerMapOutput)
 }
 
-func (i NetworkLoadBalancerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkLoadBalancer] {
-	return pulumix.Output[map[string]*NetworkLoadBalancer]{
-		OutputState: i.ToNetworkLoadBalancerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkLoadBalancerOutput struct{ *pulumi.OutputState }
 
 func (NetworkLoadBalancerOutput) ElementType() reflect.Type {
@@ -463,12 +444,6 @@ func (o NetworkLoadBalancerOutput) ToNetworkLoadBalancerOutput() NetworkLoadBala
 
 func (o NetworkLoadBalancerOutput) ToNetworkLoadBalancerOutputWithContext(ctx context.Context) NetworkLoadBalancerOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkLoadBalancer] {
-	return pulumix.Output[*NetworkLoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
@@ -497,8 +472,8 @@ func (o NetworkLoadBalancerOutput) IpAddresses() NetworkLoadBalancerIpAddressArr
 }
 
 // (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
-func (o NetworkLoadBalancerOutput) IsPreserveSourceDestination() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.BoolOutput { return v.IsPreserveSourceDestination }).(pulumi.BoolOutput)
+func (o NetworkLoadBalancerOutput) IsPreserveSourceDestination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.BoolPtrOutput { return v.IsPreserveSourceDestination }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -510,13 +485,13 @@ func (o NetworkLoadBalancerOutput) IsPreserveSourceDestination() pulumi.BoolOutp
 // A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
 //
 // Example: `true`
-func (o NetworkLoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o NetworkLoadBalancerOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.BoolPtrOutput { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o NetworkLoadBalancerOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o NetworkLoadBalancerOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -533,8 +508,8 @@ func (o NetworkLoadBalancerOutput) NetworkSecurityGroupIds() pulumi.StringArrayO
 }
 
 // (Updatable) IP version associated with the NLB.
-func (o NetworkLoadBalancerOutput) NlbIpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.NlbIpVersion }).(pulumi.StringOutput)
+func (o NetworkLoadBalancerOutput) NlbIpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.NlbIpVersion }).(pulumi.StringPtrOutput)
 }
 
 // An array of reserved Ips.
@@ -543,8 +518,8 @@ func (o NetworkLoadBalancerOutput) ReservedIps() NetworkLoadBalancerReservedIpAr
 }
 
 // The current state of the network load balancer.
-func (o NetworkLoadBalancerOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NetworkLoadBalancerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -561,13 +536,13 @@ func (o NetworkLoadBalancerOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-func (o NetworkLoadBalancerOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NetworkLoadBalancerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-func (o NetworkLoadBalancerOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o NetworkLoadBalancerOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type NetworkLoadBalancerArrayOutput struct{ *pulumi.OutputState }
@@ -582,12 +557,6 @@ func (o NetworkLoadBalancerArrayOutput) ToNetworkLoadBalancerArrayOutput() Netwo
 
 func (o NetworkLoadBalancerArrayOutput) ToNetworkLoadBalancerArrayOutputWithContext(ctx context.Context) NetworkLoadBalancerArrayOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkLoadBalancer] {
-	return pulumix.Output[[]*NetworkLoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkLoadBalancerArrayOutput) Index(i pulumi.IntInput) NetworkLoadBalancerOutput {
@@ -608,12 +577,6 @@ func (o NetworkLoadBalancerMapOutput) ToNetworkLoadBalancerMapOutput() NetworkLo
 
 func (o NetworkLoadBalancerMapOutput) ToNetworkLoadBalancerMapOutputWithContext(ctx context.Context) NetworkLoadBalancerMapOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkLoadBalancer] {
-	return pulumix.Output[map[string]*NetworkLoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkLoadBalancerMapOutput) MapIndex(k pulumi.StringInput) NetworkLoadBalancerOutput {

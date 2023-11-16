@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
@@ -66,18 +65,18 @@ type GetSummarizeResourceInventoryArgs struct {
 // A collection of values returned by getSummarizeResourceInventory.
 type GetSummarizeResourceInventoryResult struct {
 	// The number of _active_ fleets.
-	ActiveFleetCount int `pulumi:"activeFleetCount"`
+	ActiveFleetCount *int `pulumi:"activeFleetCount"`
 	// The number of applications.
-	ApplicationCount int     `pulumi:"applicationCount"`
+	ApplicationCount *int    `pulumi:"applicationCount"`
 	CompartmentId    *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The number of Java installations.
-	InstallationCount int `pulumi:"installationCount"`
+	InstallationCount *int `pulumi:"installationCount"`
 	// The number of Java Runtimes.
-	JreCount int `pulumi:"jreCount"`
+	JreCount *int `pulumi:"jreCount"`
 	// The number of managed instances.
-	ManagedInstanceCount int     `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount *int    `pulumi:"managedInstanceCount"`
 	TimeEnd              *string `pulumi:"timeEnd"`
 	TimeStart            *string `pulumi:"timeStart"`
 }
@@ -124,20 +123,14 @@ func (o GetSummarizeResourceInventoryResultOutput) ToGetSummarizeResourceInvento
 	return o
 }
 
-func (o GetSummarizeResourceInventoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSummarizeResourceInventoryResult] {
-	return pulumix.Output[GetSummarizeResourceInventoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of _active_ fleets.
-func (o GetSummarizeResourceInventoryResultOutput) ActiveFleetCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) int { return v.ActiveFleetCount }).(pulumi.IntOutput)
+func (o GetSummarizeResourceInventoryResultOutput) ActiveFleetCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) *int { return v.ActiveFleetCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of applications.
-func (o GetSummarizeResourceInventoryResultOutput) ApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) int { return v.ApplicationCount }).(pulumi.IntOutput)
+func (o GetSummarizeResourceInventoryResultOutput) ApplicationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) *int { return v.ApplicationCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetSummarizeResourceInventoryResultOutput) CompartmentId() pulumi.StringPtrOutput {
@@ -145,23 +138,23 @@ func (o GetSummarizeResourceInventoryResultOutput) CompartmentId() pulumi.String
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSummarizeResourceInventoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSummarizeResourceInventoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The number of Java installations.
-func (o GetSummarizeResourceInventoryResultOutput) InstallationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) int { return v.InstallationCount }).(pulumi.IntOutput)
+func (o GetSummarizeResourceInventoryResultOutput) InstallationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) *int { return v.InstallationCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of Java Runtimes.
-func (o GetSummarizeResourceInventoryResultOutput) JreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) int { return v.JreCount }).(pulumi.IntOutput)
+func (o GetSummarizeResourceInventoryResultOutput) JreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) *int { return v.JreCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of managed instances.
-func (o GetSummarizeResourceInventoryResultOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o GetSummarizeResourceInventoryResultOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSummarizeResourceInventoryResult) *int { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetSummarizeResourceInventoryResultOutput) TimeEnd() pulumi.StringPtrOutput {

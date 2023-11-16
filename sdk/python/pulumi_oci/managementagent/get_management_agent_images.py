@@ -58,7 +58,7 @@ class GetManagementAgentImagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,10 +71,7 @@ class GetManagementAgentImagesResult:
 
     @property
     @pulumi.getter(name="managementAgentImages")
-    def management_agent_images(self) -> Sequence['outputs.GetManagementAgentImagesManagementAgentImageResult']:
-        """
-        The list of management_agent_images.
-        """
+    def management_agent_images(self) -> Optional[Sequence['outputs.GetManagementAgentImagesManagementAgentImageResult']]:
         return pulumi.get(self, "management_agent_images")
 
     @property
@@ -85,9 +82,6 @@ class GetManagementAgentImagesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of Management Agent Image
-        """
         return pulumi.get(self, "state")
 
 
@@ -113,27 +107,7 @@ def get_management_agent_images(compartment_id: Optional[str] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentImagesResult:
     """
-    This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
-
-    Get supported agent image information
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=var["compartment_id"],
-        install_type=var["management_agent_image_install_type"],
-        name=var["management_agent_image_name"],
-        state=var["management_agent_image_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-    :param str name: A filter to return only resources that match the entire platform name given.
-    :param str state: Filter to return only Management Agents in the particular lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -162,26 +136,6 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentImagesResult]:
     """
-    This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
-
-    Get supported agent image information
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=var["compartment_id"],
-        install_type=var["management_agent_image_install_type"],
-        name=var["management_agent_image_name"],
-        state=var["management_agent_image_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-    :param str name: A filter to return only resources that match the entire platform name given.
-    :param str state: Filter to return only Management Agents in the particular lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

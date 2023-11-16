@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
@@ -64,7 +63,7 @@ type GetIdpGroupMappingsArgs struct {
 type GetIdpGroupMappingsResult struct {
 	Filters []GetIdpGroupMappingsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the `IdentityProvider` this mapping belongs to.
 	IdentityProviderId string `pulumi:"identityProviderId"`
 	// The list of idp_group_mappings.
@@ -110,19 +109,13 @@ func (o GetIdpGroupMappingsResultOutput) ToGetIdpGroupMappingsResultOutputWithCo
 	return o
 }
 
-func (o GetIdpGroupMappingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdpGroupMappingsResult] {
-	return pulumix.Output[GetIdpGroupMappingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIdpGroupMappingsResultOutput) Filters() GetIdpGroupMappingsFilterArrayOutput {
 	return o.ApplyT(func(v GetIdpGroupMappingsResult) []GetIdpGroupMappingsFilter { return v.Filters }).(GetIdpGroupMappingsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIdpGroupMappingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIdpGroupMappingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIdpGroupMappingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the `IdentityProvider` this mapping belongs to.

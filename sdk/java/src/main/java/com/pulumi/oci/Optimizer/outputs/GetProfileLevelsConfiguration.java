@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetProfileLevelsConfigurationItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfileLevelsConfiguration {
@@ -14,7 +15,7 @@ public final class GetProfileLevelsConfiguration {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private List<GetProfileLevelsConfigurationItem> items;
+    private @Nullable List<GetProfileLevelsConfigurationItem> items;
 
     private GetProfileLevelsConfiguration() {}
     /**
@@ -22,7 +23,7 @@ public final class GetProfileLevelsConfiguration {
      * 
      */
     public List<GetProfileLevelsConfigurationItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetProfileLevelsConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetProfileLevelsConfigurationItem> items;
+        private @Nullable List<GetProfileLevelsConfigurationItem> items;
         public Builder() {}
         public Builder(GetProfileLevelsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetProfileLevelsConfiguration {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetProfileLevelsConfigurationItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProfileLevelsConfigurationItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProfileLevelsConfigurationItem... items) {

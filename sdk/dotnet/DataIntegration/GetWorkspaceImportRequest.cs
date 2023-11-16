@@ -124,20 +124,20 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// The name of the Object Storage Bucket where the objects will be imported from
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Name of the user who initiated import request.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Contains key of the error
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ErrorMessages;
+        public readonly ImmutableDictionary<string, object>? ErrorMessages;
         /// <summary>
         /// Name of the zip file from which objects will be imported.
         /// </summary>
-        public readonly string FileName;
-        public readonly string Id;
+        public readonly string? FileName;
+        public readonly string? Id;
         /// <summary>
         /// Import Objects Conflict resolution.
         /// </summary>
@@ -150,52 +150,52 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// Import object request key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Name of the import request.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Key of the object inside which all the objects will be imported
         /// </summary>
-        public readonly string ObjectKeyForImport;
+        public readonly string? ObjectKeyForImport;
         /// <summary>
         /// Region of the object storage (if using object storage of different region)
         /// </summary>
-        public readonly string ObjectStorageRegion;
+        public readonly string? ObjectStorageRegion;
         /// <summary>
         /// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         /// </summary>
-        public readonly string ObjectStorageTenancyId;
+        public readonly string? ObjectStorageTenancyId;
         /// <summary>
         /// Import Objects request status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Time at which the request was completely processed.
         /// </summary>
-        public readonly string TimeEndedInMillis;
+        public readonly string? TimeEndedInMillis;
         /// <summary>
         /// Time at which the request started getting processed.
         /// </summary>
-        public readonly string TimeStartedInMillis;
+        public readonly string? TimeStartedInMillis;
         /// <summary>
         /// Number of objects that are imported.
         /// </summary>
-        public readonly int TotalImportedObjectCount;
+        public readonly int? TotalImportedObjectCount;
         public readonly string WorkspaceId;
 
         [OutputConstructor]
         private GetWorkspaceImportRequestResult(
-            string bucket,
+            string? bucket,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> errorMessages,
+            ImmutableDictionary<string, object>? errorMessages,
 
-            string fileName,
+            string? fileName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetWorkspaceImportRequestImportConflictResolutionResult> importConflictResolutions,
 
@@ -203,23 +203,23 @@ namespace Pulumi.Oci.DataIntegration
 
             ImmutableArray<Outputs.GetWorkspaceImportRequestImportedObjectResult> importedObjects,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
-            string objectKeyForImport,
+            string? objectKeyForImport,
 
-            string objectStorageRegion,
+            string? objectStorageRegion,
 
-            string objectStorageTenancyId,
+            string? objectStorageTenancyId,
 
-            string status,
+            string? status,
 
-            string timeEndedInMillis,
+            string? timeEndedInMillis,
 
-            string timeStartedInMillis,
+            string? timeStartedInMillis,
 
-            int totalImportedObjectCount,
+            int? totalImportedObjectCount,
 
             string workspaceId)
         {

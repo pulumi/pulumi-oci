@@ -35,7 +35,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// The name of the profile used to create the certificate, which depends on the type of certificate you need.
         /// </summary>
         [Output("certificateProfileType")]
-        public Output<string> CertificateProfileType { get; private set; } = null!;
+        public Output<string?> CertificateProfileType { get; private set; } = null!;
 
         /// <summary>
         /// The details of the certificate revocation list (CRL).
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// (Updatable) The origin of the certificate.
         /// </summary>
         [Output("configType")]
-        public Output<string> ConfigType { get; private set; } = null!;
+        public Output<string?> ConfigType { get; private set; } = null!;
 
         /// <summary>
         /// The details of the certificate version. This object does not contain the certificate contents.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -83,25 +83,25 @@ namespace Pulumi.Oci.CertificatesManagement
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the private CA.
         /// </summary>
         [Output("issuerCertificateAuthorityId")]
-        public Output<string> IssuerCertificateAuthorityId { get; private set; } = null!;
+        public Output<string?> IssuerCertificateAuthorityId { get; private set; } = null!;
 
         /// <summary>
         /// The algorithm to use to create key pairs.
         /// </summary>
         [Output("keyAlgorithm")]
-        public Output<string> KeyAlgorithm { get; private set; } = null!;
+        public Output<string?> KeyAlgorithm { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state of the certificate.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. 
@@ -117,13 +117,13 @@ namespace Pulumi.Oci.CertificatesManagement
         /// The algorithm to use to sign the public key certificate.
         /// </summary>
         [Output("signatureAlgorithm")]
-        public Output<string> SignatureAlgorithm { get; private set; } = null!;
+        public Output<string?> SignatureAlgorithm { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the certificate.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -135,13 +135,13 @@ namespace Pulumi.Oci.CertificatesManagement
         /// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeOfDeletion")]
-        public Output<string> TimeOfDeletion { get; private set; } = null!;
+        public Output<string?> TimeOfDeletion { get; private set; } = null!;
 
 
         /// <summary>

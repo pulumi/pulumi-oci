@@ -211,7 +211,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? IndexHashFilter;
         /// <summary>
         /// An array of the findings for a tuning task.
@@ -233,7 +233,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string? findingFilter,
 
-            string id,
+            string? id,
 
             string? indexHashFilter,
 

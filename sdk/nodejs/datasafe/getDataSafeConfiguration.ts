@@ -51,36 +51,36 @@ export interface GetDataSafeConfigurationResult {
     /**
      * The Oracle Data Safe's NAT Gateway IP Address.
      */
-    readonly dataSafeNatGatewayIpAddress: string;
+    readonly dataSafeNatGatewayIpAddress?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Details of the tenancy level global settings in Data Safe.
      */
-    readonly globalSettings: outputs.DataSafe.GetDataSafeConfigurationGlobalSetting[];
-    readonly id: string;
+    readonly globalSettings?: outputs.DataSafe.GetDataSafeConfigurationGlobalSetting[];
+    readonly id?: string;
     /**
      * Indicates if Data Safe is enabled.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * The current state of Data Safe.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeEnabled: string;
+    readonly timeEnabled?: string;
     /**
      * The URL of the Data Safe service.
      */
-    readonly url: string;
+    readonly url?: string;
 }
 /**
  * This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.

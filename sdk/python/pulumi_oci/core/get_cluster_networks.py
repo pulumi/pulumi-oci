@@ -45,26 +45,17 @@ class GetClusterNetworksResult:
 
     @property
     @pulumi.getter(name="clusterNetworks")
-    def cluster_networks(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkResult']:
-        """
-        The list of cluster_networks.
-        """
+    def cluster_networks(self) -> Optional[Sequence['outputs.GetClusterNetworksClusterNetworkResult']]:
         return pulumi.get(self, "cluster_networks")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetClusterNetworksResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetClusterNetworksResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the cluster network.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,26 +97,7 @@ def get_cluster_networks(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterNetworksResult:
     """
-    This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
-
-    Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
-    in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_networks = oci.Core.get_cluster_networks(compartment_id=var["compartment_id"],
-        display_name=var["cluster_network_display_name"],
-        state=var["cluster_network_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -154,25 +123,6 @@ def get_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterNetworksResult]:
     """
-    This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
-
-    Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
-    in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_networks = oci.Core.get_cluster_networks(compartment_id=var["compartment_id"],
-        display_name=var["cluster_network_display_name"],
-        state=var["cluster_network_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection {
@@ -14,7 +15,7 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
      * @return List of available packages.
      * 
      */
-    private List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem> items;
+    private @Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem> items;
 
     private GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
      * 
      */
     public List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem> items;
+        private @Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem... items) {

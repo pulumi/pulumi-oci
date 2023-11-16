@@ -73,21 +73,6 @@ class PathAnalysiDestinationEndpointArgs:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] address: The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        :param pulumi.Input[str] listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        :param pulumi.Input[str] vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
-        """
         pulumi.set(__self__, "type", type)
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -111,13 +96,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -127,9 +105,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -139,9 +114,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -151,9 +123,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        """
         return pulumi.get(self, "listener_id")
 
     @listener_id.setter
@@ -163,9 +132,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -175,9 +141,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter(name="networkLoadBalancerId")
     def network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
@@ -196,9 +159,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -208,9 +168,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -220,9 +177,6 @@ class PathAnalysiDestinationEndpointArgs:
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
-        """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
@@ -238,17 +192,6 @@ class PathAnalysiProtocolParametersArgs:
                  icmp_code: Optional[pulumi.Input[int]] = None,
                  icmp_type: Optional[pulumi.Input[int]] = None,
                  source_port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[int] destination_port: The destination port to use in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[int] icmp_code: The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
-        :param pulumi.Input[int] icmp_type: The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
-        :param pulumi.Input[int] source_port: The source port to use in a `PathAnalyzerTest` resource.
-        """
         pulumi.set(__self__, "type", type)
         if destination_port is not None:
             pulumi.set(__self__, "destination_port", destination_port)
@@ -262,13 +205,6 @@ class PathAnalysiProtocolParametersArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -278,9 +214,6 @@ class PathAnalysiProtocolParametersArgs:
     @property
     @pulumi.getter(name="destinationPort")
     def destination_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The destination port to use in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "destination_port")
 
     @destination_port.setter
@@ -290,9 +223,6 @@ class PathAnalysiProtocolParametersArgs:
     @property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
-        """
         return pulumi.get(self, "icmp_code")
 
     @icmp_code.setter
@@ -302,9 +232,6 @@ class PathAnalysiProtocolParametersArgs:
     @property
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> Optional[pulumi.Input[int]]:
-        """
-        The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
-        """
         return pulumi.get(self, "icmp_type")
 
     @icmp_type.setter
@@ -314,9 +241,6 @@ class PathAnalysiProtocolParametersArgs:
     @property
     @pulumi.getter(name="sourcePort")
     def source_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The source port to use in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "source_port")
 
     @source_port.setter
@@ -328,18 +252,12 @@ class PathAnalysiProtocolParametersArgs:
 class PathAnalysiQueryOptionsArgs:
     def __init__(__self__, *,
                  is_bi_directional_analysis: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_bi_directional_analysis: If true, a path analysis is done for both the forward and reverse routes.
-        """
         if is_bi_directional_analysis is not None:
             pulumi.set(__self__, "is_bi_directional_analysis", is_bi_directional_analysis)
 
     @property
     @pulumi.getter(name="isBiDirectionalAnalysis")
     def is_bi_directional_analysis(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, a path analysis is done for both the forward and reverse routes.
-        """
         return pulumi.get(self, "is_bi_directional_analysis")
 
     @is_bi_directional_analysis.setter
@@ -360,21 +278,6 @@ class PathAnalysiSourceEndpointArgs:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] address: The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        :param pulumi.Input[str] listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        :param pulumi.Input[str] vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
-        """
         pulumi.set(__self__, "type", type)
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -398,13 +301,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -414,9 +310,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -426,9 +319,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -438,9 +328,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        """
         return pulumi.get(self, "listener_id")
 
     @listener_id.setter
@@ -450,9 +337,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -462,9 +346,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter(name="networkLoadBalancerId")
     def network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
@@ -483,9 +364,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -495,9 +373,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -507,9 +382,6 @@ class PathAnalysiSourceEndpointArgs:
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
-        """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
@@ -530,22 +402,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of the `Endpoint`.
-        :param pulumi.Input[str] address: (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        :param pulumi.Input[str] instance_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        :param pulumi.Input[str] listener_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        :param pulumi.Input[str] load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        :param pulumi.Input[str] network_load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        :param pulumi.Input[str] vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        :param pulumi.Input[str] vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "type", type)
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -569,9 +425,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the `Endpoint`.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -581,9 +434,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -593,9 +443,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -605,9 +452,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        """
         return pulumi.get(self, "listener_id")
 
     @listener_id.setter
@@ -617,9 +461,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -629,9 +470,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter(name="networkLoadBalancerId")
     def network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
@@ -641,9 +479,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -653,9 +488,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -665,9 +497,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -677,13 +506,6 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
@@ -699,13 +521,6 @@ class PathAnalyzerTestProtocolParametersArgs:
                  icmp_code: Optional[pulumi.Input[int]] = None,
                  icmp_type: Optional[pulumi.Input[int]] = None,
                  source_port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of the `Endpoint`.
-        :param pulumi.Input[int] destination_port: (Updatable) The destination port to use in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[int] icmp_code: (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
-        :param pulumi.Input[int] icmp_type: (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
-        :param pulumi.Input[int] source_port: (Updatable) The source port to use in a `PathAnalyzerTest` resource.
-        """
         pulumi.set(__self__, "type", type)
         if destination_port is not None:
             pulumi.set(__self__, "destination_port", destination_port)
@@ -719,9 +534,6 @@ class PathAnalyzerTestProtocolParametersArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the `Endpoint`.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -731,9 +543,6 @@ class PathAnalyzerTestProtocolParametersArgs:
     @property
     @pulumi.getter(name="destinationPort")
     def destination_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The destination port to use in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "destination_port")
 
     @destination_port.setter
@@ -743,9 +552,6 @@ class PathAnalyzerTestProtocolParametersArgs:
     @property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
-        """
         return pulumi.get(self, "icmp_code")
 
     @icmp_code.setter
@@ -755,9 +561,6 @@ class PathAnalyzerTestProtocolParametersArgs:
     @property
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
-        """
         return pulumi.get(self, "icmp_type")
 
     @icmp_type.setter
@@ -767,9 +570,6 @@ class PathAnalyzerTestProtocolParametersArgs:
     @property
     @pulumi.getter(name="sourcePort")
     def source_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The source port to use in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "source_port")
 
     @source_port.setter
@@ -781,18 +581,12 @@ class PathAnalyzerTestProtocolParametersArgs:
 class PathAnalyzerTestQueryOptionsArgs:
     def __init__(__self__, *,
                  is_bi_directional_analysis: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_bi_directional_analysis: (Updatable) If true, a path analysis is done for both the forward and reverse routes.
-        """
         if is_bi_directional_analysis is not None:
             pulumi.set(__self__, "is_bi_directional_analysis", is_bi_directional_analysis)
 
     @property
     @pulumi.getter(name="isBiDirectionalAnalysis")
     def is_bi_directional_analysis(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, a path analysis is done for both the forward and reverse routes.
-        """
         return pulumi.get(self, "is_bi_directional_analysis")
 
     @is_bi_directional_analysis.setter
@@ -813,22 +607,6 @@ class PathAnalyzerTestSourceEndpointArgs:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of the `Endpoint`.
-        :param pulumi.Input[str] address: (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        :param pulumi.Input[str] instance_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        :param pulumi.Input[str] listener_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        :param pulumi.Input[str] load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        :param pulumi.Input[str] network_load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        :param pulumi.Input[str] vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        :param pulumi.Input[str] vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "type", type)
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -852,9 +630,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the `Endpoint`.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -864,9 +639,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -876,9 +648,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -888,9 +657,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
-        """
         return pulumi.get(self, "listener_id")
 
     @listener_id.setter
@@ -900,9 +666,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -912,9 +675,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter(name="networkLoadBalancerId")
     def network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
-        """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
@@ -924,9 +684,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -936,9 +693,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -948,9 +702,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -960,13 +711,6 @@ class PathAnalyzerTestSourceEndpointArgs:
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter

@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Type of action
         /// </summary>
-        public readonly string ActionType;
+        public readonly string? ActionType;
         /// <summary>
         /// patch that delivered the vertex update prerequisite
         /// </summary>
-        public readonly string Artifact;
+        public readonly string? Artifact;
         /// <summary>
         /// patch artifact category
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A string that describeds whether the change is applied hot or cold
         /// </summary>
-        public readonly string Mode;
+        public readonly string? Mode;
         /// <summary>
         /// month qualifier
         /// </summary>
-        public readonly string Qualifier;
+        public readonly string? Qualifier;
         /// <summary>
         /// Unique identifier of the object that represents the action
         /// </summary>
-        public readonly string ReferenceKey;
+        public readonly string? ReferenceKey;
         /// <summary>
         /// A filter that returns all resources that match the specified status
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// name of the repo
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult(
-            string actionType,
+            string? actionType,
 
-            string artifact,
+            string? artifact,
 
-            string category,
+            string? category,
 
-            string description,
+            string? description,
 
-            string mode,
+            string? mode,
 
-            string qualifier,
+            string? qualifier,
 
-            string referenceKey,
+            string? referenceKey,
 
-            string state,
+            string? state,
 
-            string version)
+            string? version)
         {
             ActionType = actionType;
             Artifact = artifact;

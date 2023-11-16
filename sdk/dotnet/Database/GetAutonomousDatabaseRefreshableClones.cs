@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of refreshable_clone_collection.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousDatabaseRefreshableClonesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult> refreshableCloneCollections)
         {

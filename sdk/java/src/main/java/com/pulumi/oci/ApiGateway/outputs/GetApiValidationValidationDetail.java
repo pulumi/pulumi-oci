@@ -8,6 +8,8 @@ import com.pulumi.oci.ApiGateway.outputs.GetApiValidationValidationDetailSrc;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiValidationValidationDetail {
@@ -15,39 +17,39 @@ public final class GetApiValidationValidationDetail {
      * @return Description of the warning/error.
      * 
      */
-    private String msg;
+    private @Nullable String msg;
     /**
      * @return Severity of the issue.
      * 
      */
-    private String severity;
+    private @Nullable String severity;
     /**
      * @return Position of the issue in the specification file (line, column).
      * 
      */
-    private List<GetApiValidationValidationDetailSrc> srcs;
+    private @Nullable List<GetApiValidationValidationDetailSrc> srcs;
 
     private GetApiValidationValidationDetail() {}
     /**
      * @return Description of the warning/error.
      * 
      */
-    public String msg() {
-        return this.msg;
+    public Optional<String> msg() {
+        return Optional.ofNullable(this.msg);
     }
     /**
      * @return Severity of the issue.
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
     /**
      * @return Position of the issue in the specification file (line, column).
      * 
      */
     public List<GetApiValidationValidationDetailSrc> srcs() {
-        return this.srcs;
+        return this.srcs == null ? List.of() : this.srcs;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetApiValidationValidationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String msg;
-        private String severity;
-        private List<GetApiValidationValidationDetailSrc> srcs;
+        private @Nullable String msg;
+        private @Nullable String severity;
+        private @Nullable List<GetApiValidationValidationDetailSrc> srcs;
         public Builder() {}
         public Builder(GetApiValidationValidationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetApiValidationValidationDetail {
         }
 
         @CustomType.Setter
-        public Builder msg(String msg) {
-            this.msg = Objects.requireNonNull(msg);
+        public Builder msg(@Nullable String msg) {
+            this.msg = msg;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
-        public Builder srcs(List<GetApiValidationValidationDetailSrc> srcs) {
-            this.srcs = Objects.requireNonNull(srcs);
+        public Builder srcs(@Nullable List<GetApiValidationValidationDetailSrc> srcs) {
+            this.srcs = srcs;
             return this;
         }
         public Builder srcs(GetApiValidationValidationDetailSrc... srcs) {

@@ -60,7 +60,7 @@ class GetVirtualNetworksResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,7 +73,7 @@ class GetVirtualNetworksResult:
 
     @property
     @pulumi.getter(name="virtualNetworks")
-    def virtual_networks(self) -> Sequence['outputs.GetVirtualNetworksVirtualNetworkResult']:
+    def virtual_networks(self) -> Optional[Sequence['outputs.GetVirtualNetworksVirtualNetworkResult']]:
         return pulumi.get(self, "virtual_networks")
 
 

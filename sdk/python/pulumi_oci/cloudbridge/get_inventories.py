@@ -43,9 +43,6 @@ class GetInventoriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenantId.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -55,7 +52,7 @@ class GetInventoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,18 +60,12 @@ class GetInventoriesResult:
 
     @property
     @pulumi.getter(name="inventoryCollections")
-    def inventory_collections(self) -> Sequence['outputs.GetInventoriesInventoryCollectionResult']:
-        """
-        The list of inventory_collection.
-        """
+    def inventory_collections(self) -> Optional[Sequence['outputs.GetInventoriesInventoryCollectionResult']]:
         return pulumi.get(self, "inventory_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the inventory.
-        """
         return pulumi.get(self, "state")
 
 
@@ -96,23 +87,7 @@ def get_inventories(compartment_id: Optional[str] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInventoriesResult:
     """
-    This data source provides the list of Inventories in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of inventories.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=var["compartment_id"],
-        state=var["inventory_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str state: A filter to return inventory if the lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_inventories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInventoriesResult]:
     """
-    This data source provides the list of Inventories in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of inventories.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=var["compartment_id"],
-        state=var["inventory_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str state: A filter to return inventory if the lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

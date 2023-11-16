@@ -55,17 +55,11 @@ class GetCustomProtectionRulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="customProtectionRules")
-    def custom_protection_rules(self) -> Sequence['outputs.GetCustomProtectionRulesCustomProtectionRuleResult']:
-        """
-        The list of custom_protection_rules.
-        """
+    def custom_protection_rules(self) -> Optional[Sequence['outputs.GetCustomProtectionRulesCustomProtectionRuleResult']]:
         return pulumi.get(self, "custom_protection_rules")
 
     @property
@@ -80,7 +74,7 @@ class GetCustomProtectionRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -133,31 +127,7 @@ def get_custom_protection_rules(compartment_id: Optional[str] = None,
                                 time_created_less_than: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCustomProtectionRulesResult:
     """
-    This data source provides the list of Custom Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of custom protection rules for the specified Web Application Firewall.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=var["compartment_id"],
-        display_names=var["custom_protection_rule_display_names"],
-        ids=var["custom_protection_rule_ids"],
-        states=var["custom_protection_rule_states"],
-        time_created_greater_than_or_equal_to=var["custom_protection_rule_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["custom_protection_rule_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter custom protection rules using a list of display names.
-    :param Sequence[str] ids: Filter custom protection rules using a list of custom protection rule OCIDs.
-    :param Sequence[str] states: Filter Custom Protection rules using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches Custom Protection rules created on or after the specified date-time.
-    :param str time_created_less_than: A filter that matches custom protection rules created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -192,30 +162,6 @@ def get_custom_protection_rules_output(compartment_id: Optional[pulumi.Input[str
                                        time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomProtectionRulesResult]:
     """
-    This data source provides the list of Custom Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of custom protection rules for the specified Web Application Firewall.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=var["compartment_id"],
-        display_names=var["custom_protection_rule_display_names"],
-        ids=var["custom_protection_rule_ids"],
-        states=var["custom_protection_rule_states"],
-        time_created_greater_than_or_equal_to=var["custom_protection_rule_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["custom_protection_rule_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter custom protection rules using a list of display names.
-    :param Sequence[str] ids: Filter custom protection rules using a list of custom protection rule OCIDs.
-    :param Sequence[str] states: Filter Custom Protection rules using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches Custom Protection rules created on or after the specified date-time.
-    :param str time_created_less_than: A filter that matches custom protection rules created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     ...

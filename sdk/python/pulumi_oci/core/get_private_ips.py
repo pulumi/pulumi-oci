@@ -53,7 +53,7 @@ class GetPrivateIpsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,41 +62,26 @@ class GetPrivateIpsResult:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[str]:
-        """
-        The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
-        """
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="privateIps")
-    def private_ips(self) -> Sequence['outputs.GetPrivateIpsPrivateIpResult']:
-        """
-        The list of private_ips.
-        """
+    def private_ips(self) -> Optional[Sequence['outputs.GetPrivateIpsPrivateIpResult']]:
         return pulumi.get(self, "private_ips")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[str]:
-        """
-        Applicable only if the `PrivateIp` object is being used with a VLAN as part of the Oracle Cloud VMware Solution. The `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        """
         return pulumi.get(self, "vlan_id")
 
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet. However, if the `PrivateIp` object is being used with a VLAN as part of the Oracle Cloud VMware Solution, the `vnicId` is null.
-        """
         return pulumi.get(self, "vnic_id")
 
 
@@ -122,54 +107,7 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
                     vnic_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateIpsResult:
     """
-    This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
-
-    Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
-    on one of these filters:
-
-      - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-      - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-      - Both private IP address and subnet OCID: This lets
-          you get a `privateIP` object based on its private IP
-          address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-          [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-          requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    If you're listing all the private IPs associated with a given subnet
-    or VNIC, the response includes both primary and secondary private IPs.
-
-    If you are an Oracle Cloud VMware Solution customer and have VLANs
-    in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
-    ```
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
-    ```
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=var["private_ip_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
-    ```
-
-
-    :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
-    :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
-    :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
-    :param str vnic_id: The OCID of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -198,53 +136,6 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
                            vnic_id: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateIpsResult]:
     """
-    This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
-
-    Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
-    on one of these filters:
-
-      - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-      - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-      - Both private IP address and subnet OCID: This lets
-          you get a `privateIP` object based on its private IP
-          address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-          [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-          requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    If you're listing all the private IPs associated with a given subnet
-    or VNIC, the response includes both primary and secondary private IPs.
-
-    If you are an Oracle Cloud VMware Solution customer and have VLANs
-    in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
-    ```
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
-    ```
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=var["private_ip_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
-    ```
-
-
-    :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
-    :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
-    :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
-    :param str vnic_id: The OCID of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     ...

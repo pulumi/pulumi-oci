@@ -77,7 +77,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly autoEnrollEmailFactorDisabled!: pulumi.Output<boolean>;
+    public readonly autoEnrollEmailFactorDisabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that Bypass Code is enabled for authentication
      *
@@ -130,7 +130,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
      *
@@ -158,7 +158,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -172,7 +172,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
      *
@@ -187,7 +187,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly emailEnabled!: pulumi.Output<boolean>;
+    public readonly emailEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      *
@@ -202,7 +202,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly emailSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingEmailSettings>;
+    public readonly emailSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingEmailSettings | undefined>;
     /**
      * (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      *
@@ -230,7 +230,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly fidoAuthenticatorEnabled!: pulumi.Output<boolean>;
+    public readonly fidoAuthenticatorEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
      *
@@ -245,7 +245,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly hideBackupFactorEnabled!: pulumi.Output<boolean>;
+    public readonly hideBackupFactorEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -257,7 +257,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -273,7 +273,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -287,7 +287,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -300,7 +300,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Settings related to the use of a user's profile details from the identity store
      *
@@ -313,7 +313,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly identityStoreSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings>;
+    public readonly identityStoreSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -327,7 +327,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingMeta[] | undefined>;
     /**
      * (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
      *
@@ -342,7 +342,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly mfaEnabledCategory!: pulumi.Output<string>;
+    public /*out*/ readonly mfaEnabledCategory!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      *
@@ -388,7 +388,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      *
@@ -403,7 +403,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly phoneCallEnabled!: pulumi.Output<boolean>;
+    public readonly phoneCallEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      *
@@ -474,7 +474,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -488,7 +488,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Settings related to third-party factor
      *
@@ -503,7 +503,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly thirdPartyFactor!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor>;
+    public readonly thirdPartyFactor!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor | undefined>;
     /**
      * (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      *
@@ -533,11 +533,11 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings | undefined>;
     /**
      * (Updatable) Factors for which enrollment should be blocked for End User
      *
@@ -552,7 +552,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly userEnrollmentDisabledFactors!: pulumi.Output<string[]>;
+    public readonly userEnrollmentDisabledFactors!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
      *
@@ -571,7 +571,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly yubicoOtpEnabled!: pulumi.Output<boolean>;
+    public readonly yubicoOtpEnabled!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a DomainsAuthenticationFactorSetting resource with the given unique name, arguments, and options.

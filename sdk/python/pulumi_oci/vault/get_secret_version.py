@@ -55,15 +55,12 @@ class GetSecretVersionResult:
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        The content type of the secret version's secret contents.
-        """
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,18 +68,12 @@ class GetSecretVersionResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the secret version. A name is unique across versions of a secret.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> str:
-        """
-        The OCID of the secret.
-        """
         return pulumi.get(self, "secret_id")
 
     @property
@@ -92,42 +83,27 @@ class GetSecretVersionResult:
 
     @property
     @pulumi.getter
-    def stages(self) -> Sequence[str]:
-        """
-        A list of possible rotation states for the secret version. A secret version marked `CURRENT` is currently in use. A secret version marked `PENDING` is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated into current, active use. The secret most recently uploaded to a vault is always marked `LATEST`. (The first version of a secret is always marked as both `CURRENT` and `LATEST`.) A secret version marked `PREVIOUS` is the secret version that was most recently marked `CURRENT`, before the last secret version rotation. A secret version marked `DEPRECATED` is neither current, pending, nor the previous one in use. Only secret versions marked `DEPRECATED` can be scheduled for deletion.
-        """
+    def stages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfCurrentVersionExpiry")
-    def time_of_current_version_expiry(self) -> str:
-        """
-        An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_current_version_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_of_current_version_expiry")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="versionNumber")
-    def version_number(self) -> str:
-        """
-        The version number of the secret.
-        """
+    def version_number(self) -> Optional[str]:
         return pulumi.get(self, "version_number")
 
 
@@ -153,23 +129,7 @@ def get_secret_version(secret_id: Optional[str] = None,
                        secret_version_number: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecretVersionResult:
     """
-    This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
-
-    Gets information about the specified version of a secret.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secret_version = oci.Vault.get_secret_version(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_number=var["secret_version_secret_version_number"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
-    :param str secret_version_number: The version number of the secret.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['secretId'] = secret_id
@@ -195,22 +155,6 @@ def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
                               secret_version_number: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretVersionResult]:
     """
-    This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
-
-    Gets information about the specified version of a secret.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secret_version = oci.Vault.get_secret_version(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_number=var["secret_version_secret_version_number"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
-    :param str secret_version_number: The version number of the secret.
+    Use this data source to access information about an existing resource.
     """
     ...

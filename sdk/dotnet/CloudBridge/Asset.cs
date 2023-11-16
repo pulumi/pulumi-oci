@@ -194,19 +194,19 @@ namespace Pulumi.Oci.CloudBridge
         /// (Updatable) Compute related properties.
         /// </summary>
         [Output("compute")]
-        public Output<Outputs.AssetCompute> Compute { get; private set; } = null!;
+        public Output<Outputs.AssetCompute?> Compute { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Asset display name.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The key of the asset from the external environment.
@@ -218,7 +218,7 @@ namespace Pulumi.Oci.CloudBridge
         /// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Inventory ID to which an asset belongs.
@@ -236,43 +236,43 @@ namespace Pulumi.Oci.CloudBridge
         /// The current state of the asset.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time when the asset was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when the asset was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Virtual machine related properties.
         /// </summary>
         [Output("vm")]
-        public Output<Outputs.AssetVm> Vm { get; private set; } = null!;
+        public Output<Outputs.AssetVm?> Vm { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) VMware vCenter related properties.
         /// </summary>
         [Output("vmwareVcenter")]
-        public Output<Outputs.AssetVmwareVcenter> VmwareVcenter { get; private set; } = null!;
+        public Output<Outputs.AssetVmwareVcenter?> VmwareVcenter { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) VMware virtual machine related properties.
         /// </summary>
         [Output("vmwareVm")]
-        public Output<Outputs.AssetVmwareVm> VmwareVm { get; private set; } = null!;
+        public Output<Outputs.AssetVmwareVm?> VmwareVm { get; private set; } = null!;
 
 
         /// <summary>

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Currency Code
         /// </summary>
-        public readonly string IsoCode;
+        public readonly string? IsoCode;
         /// <summary>
         /// Commercial name also called customer name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Standard Precision of the Currency
         /// </summary>
-        public readonly string StdPrecision;
+        public readonly string? StdPrecision;
 
         [OutputConstructor]
         private GetSubscribedServiceRateCardCurrencyResult(
-            string isoCode,
+            string? isoCode,
 
-            string name,
+            string? name,
 
-            string stdPrecision)
+            string? stdPrecision)
         {
             IsoCode = isoCode;
             Name = name;

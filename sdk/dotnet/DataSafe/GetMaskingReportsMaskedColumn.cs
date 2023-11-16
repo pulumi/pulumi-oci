@@ -258,7 +258,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of masking column summary objects.
         /// </summary>
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.DataSafe
         private GetMaskingReportsMaskedColumnResult(
             ImmutableArray<string> columnNames,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMaskingReportsMaskedColumnItemResult> items,
 

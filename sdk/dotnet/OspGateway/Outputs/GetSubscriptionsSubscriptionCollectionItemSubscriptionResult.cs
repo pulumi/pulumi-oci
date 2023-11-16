@@ -16,11 +16,11 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Account type.
         /// </summary>
-        public readonly string AccountType;
+        public readonly string? AccountType;
         /// <summary>
         /// Bill to customer Account id.
         /// </summary>
-        public readonly string BillToCustAccountId;
+        public readonly string? BillToCustAccountId;
         /// <summary>
         /// Address details model.
         /// </summary>
@@ -28,27 +28,27 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Currency code
         /// </summary>
-        public readonly string CurrencyCode;
+        public readonly string? CurrencyCode;
         /// <summary>
         /// GSI Subscription external code.
         /// </summary>
-        public readonly string GsiOrgCode;
+        public readonly string? GsiOrgCode;
         /// <summary>
         /// Subscription id identifier (OCID).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Payment intension.
         /// </summary>
-        public readonly bool IsIntentToPay;
+        public readonly bool? IsIntentToPay;
         /// <summary>
         /// Language short code (en, de, hu, etc)
         /// </summary>
-        public readonly string LanguageCode;
+        public readonly string? LanguageCode;
         /// <summary>
         /// GSI organization external identifier.
         /// </summary>
-        public readonly string OrganizationId;
+        public readonly string? OrganizationId;
         /// <summary>
         /// Payment gateway details.
         /// </summary>
@@ -60,19 +60,19 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Subscription plan type.
         /// </summary>
-        public readonly string PlanType;
+        public readonly string? PlanType;
         /// <summary>
         /// Ship to customer account role.
         /// </summary>
-        public readonly string ShipToCustAcctRoleId;
+        public readonly string? ShipToCustAcctRoleId;
         /// <summary>
         /// Ship to customer account site address id.
         /// </summary>
-        public readonly string ShipToCustAcctSiteId;
+        public readonly string? ShipToCustAcctSiteId;
         /// <summary>
         /// Subscription plan number.
         /// </summary>
-        public readonly string SubscriptionPlanNumber;
+        public readonly string? SubscriptionPlanNumber;
         /// <summary>
         /// Tax details.
         /// </summary>
@@ -80,67 +80,67 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         /// </summary>
-        public readonly string TimePersonalToCorporateConv;
+        public readonly string? TimePersonalToCorporateConv;
         /// <summary>
         /// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         /// </summary>
-        public readonly string TimePlanUpgrade;
+        public readonly string? TimePlanUpgrade;
         /// <summary>
         /// Start date of the subscription.
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// Status of the upgrade.
         /// </summary>
-        public readonly string UpgradeState;
+        public readonly string? UpgradeState;
         /// <summary>
         /// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         /// </summary>
-        public readonly string UpgradeStateDetails;
+        public readonly string? UpgradeStateDetails;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(
-            string accountType,
+            string? accountType,
 
-            string billToCustAccountId,
+            string? billToCustAccountId,
 
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult> billingAddresses,
 
-            string currencyCode,
+            string? currencyCode,
 
-            string gsiOrgCode,
+            string? gsiOrgCode,
 
-            string id,
+            string? id,
 
-            bool isIntentToPay,
+            bool? isIntentToPay,
 
-            string languageCode,
+            string? languageCode,
 
-            string organizationId,
+            string? organizationId,
 
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult> paymentGateways,
 
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult> paymentOptions,
 
-            string planType,
+            string? planType,
 
-            string shipToCustAcctRoleId,
+            string? shipToCustAcctRoleId,
 
-            string shipToCustAcctSiteId,
+            string? shipToCustAcctSiteId,
 
-            string subscriptionPlanNumber,
+            string? subscriptionPlanNumber,
 
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult> taxInfos,
 
-            string timePersonalToCorporateConv,
+            string? timePersonalToCorporateConv,
 
-            string timePlanUpgrade,
+            string? timePlanUpgrade,
 
-            string timeStart,
+            string? timeStart,
 
-            string upgradeState,
+            string? upgradeState,
 
-            string upgradeStateDetails)
+            string? upgradeStateDetails)
         {
             AccountType = accountType;
             BillToCustAccountId = billToCustAccountId;

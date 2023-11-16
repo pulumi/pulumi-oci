@@ -119,7 +119,7 @@ namespace Pulumi.Oci.LoadBalancer
     [OutputType]
     public sealed class GetRuleSetResult
     {
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of rules that compose the rule set.
         /// </summary>
@@ -129,11 +129,11 @@ namespace Pulumi.Oci.LoadBalancer
         /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         /// </summary>
         public readonly string Name;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetRuleSetResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRuleSetItemResult> items,
 
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.LoadBalancer
 
             string name,
 
-            string state)
+            string? state)
         {
             Id = id;
             Items = items;

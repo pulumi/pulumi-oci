@@ -18,7 +18,7 @@ public final class GetCatalogPrivateEndpointsResult {
      * @return The list of catalog_private_endpoints.
      * 
      */
-    private List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints;
+    private @Nullable List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints;
     /**
      * @return Identifier of the compartment this private endpoint belongs to
      * 
@@ -34,7 +34,7 @@ public final class GetCatalogPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the private endpoint resource.
      * 
@@ -47,7 +47,7 @@ public final class GetCatalogPrivateEndpointsResult {
      * 
      */
     public List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints() {
-        return this.catalogPrivateEndpoints;
+        return this.catalogPrivateEndpoints == null ? List.of() : this.catalogPrivateEndpoints;
     }
     /**
      * @return Identifier of the compartment this private endpoint belongs to
@@ -70,8 +70,8 @@ public final class GetCatalogPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the private endpoint resource.
@@ -90,11 +90,11 @@ public final class GetCatalogPrivateEndpointsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints;
+        private @Nullable List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetCatalogPrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetCatalogPrivateEndpointsResult defaults) {
@@ -108,8 +108,8 @@ public final class GetCatalogPrivateEndpointsResult {
         }
 
         @CustomType.Setter
-        public Builder catalogPrivateEndpoints(List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints) {
-            this.catalogPrivateEndpoints = Objects.requireNonNull(catalogPrivateEndpoints);
+        public Builder catalogPrivateEndpoints(@Nullable List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints) {
+            this.catalogPrivateEndpoints = catalogPrivateEndpoints;
             return this;
         }
         public Builder catalogPrivateEndpoints(GetCatalogPrivateEndpointsCatalogPrivateEndpoint... catalogPrivateEndpoints) {
@@ -134,8 +134,8 @@ public final class GetCatalogPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

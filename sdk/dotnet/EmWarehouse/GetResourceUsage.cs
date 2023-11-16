@@ -108,7 +108,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// <summary>
         /// EmInstanceCount
         /// </summary>
-        public readonly int EmInstanceCount;
+        public readonly int? EmInstanceCount;
         /// <summary>
         /// List of emInstances
         /// </summary>
@@ -117,35 +117,35 @@ namespace Pulumi.Oci.EmWarehouse
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// operations Insights Warehouse Identifier
         /// </summary>
-        public readonly string OperationsInsightsWarehouseId;
+        public readonly string? OperationsInsightsWarehouseId;
         /// <summary>
         /// schema name
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// EmInstance Target count
         /// </summary>
-        public readonly int TargetsCount;
+        public readonly int? TargetsCount;
 
         [OutputConstructor]
         private GetResourceUsageResult(
-            int emInstanceCount,
+            int? emInstanceCount,
 
             ImmutableArray<Outputs.GetResourceUsageEmInstanceResult> emInstances,
 
             string emWarehouseId,
 
-            string id,
+            string? id,
 
-            string operationsInsightsWarehouseId,
+            string? operationsInsightsWarehouseId,
 
-            string schemaName,
+            string? schemaName,
 
-            int targetsCount)
+            int? targetsCount)
         {
             EmInstanceCount = emInstanceCount;
             EmInstances = emInstances;

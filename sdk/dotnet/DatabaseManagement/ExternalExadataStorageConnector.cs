@@ -58,7 +58,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("additionalDetails")]
-        public Output<ImmutableDictionary<string, object>> AdditionalDetails { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdditionalDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
@@ -88,37 +88,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
         [Output("exadataInfrastructureId")]
-        public Output<string> ExadataInfrastructureId { get; private set; } = null!;
+        public Output<string?> ExadataInfrastructureId { get; private set; } = null!;
 
         /// <summary>
         /// The internal ID of the Exadata resource.
         /// </summary>
         [Output("internalId")]
-        public Output<string> InternalId { get; private set; } = null!;
+        public Output<string?> InternalId { get; private set; } = null!;
 
         /// <summary>
         /// The details of the lifecycle state of the Exadata resource.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the database resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The status of the Exadata resource.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
@@ -134,19 +134,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The timestamp of the creation of the Exadata resource.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp of the last update of the Exadata resource.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The version of the Exadata resource.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

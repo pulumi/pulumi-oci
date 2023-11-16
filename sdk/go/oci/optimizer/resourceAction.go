@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
@@ -37,44 +36,44 @@ type ResourceAction struct {
 	// Details about the recommended action.
 	Actions ResourceActionActionArrayOutput `pulumi:"actions"`
 	// The unique OCID associated with the category.
-	CategoryId pulumi.StringOutput `pulumi:"categoryId"`
+	CategoryId pulumi.StringPtrOutput `pulumi:"categoryId"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The name associated with the compartment.
-	CompartmentName pulumi.StringOutput `pulumi:"compartmentName"`
+	CompartmentName pulumi.StringPtrOutput `pulumi:"compartmentName"`
 	// The estimated cost savings, in dollars, for the resource action.
-	EstimatedCostSaving pulumi.Float64Output `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving pulumi.Float64PtrOutput `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 	ExtendedMetadata pulumi.MapOutput `pulumi:"extendedMetadata"`
 	// Custom metadata key/value pairs for the resource action.
 	Metadata pulumi.MapOutput `pulumi:"metadata"`
 	// The name assigned to the resource.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId pulumi.StringOutput `pulumi:"recommendationId"`
+	RecommendationId pulumi.StringPtrOutput `pulumi:"recommendationId"`
 	// The unique OCID associated with the resource action.
 	ResourceActionId pulumi.StringOutput `pulumi:"resourceActionId"`
 	// The unique OCID associated with the resource.
-	ResourceId pulumi.StringOutput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrOutput `pulumi:"resourceId"`
 	// The kind of resource.
-	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrOutput `pulumi:"resourceType"`
 	// The resource action's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The status of the resource action.
 	Status pulumi.StringOutput `pulumi:"status"`
 	// The date and time the resource action details were created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time that the resource action entered its current status. The format is defined by RFC3339.
-	TimeStatusBegin pulumi.StringOutput `pulumi:"timeStatusBegin"`
+	TimeStatusBegin pulumi.StringPtrOutput `pulumi:"timeStatusBegin"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 	//
 	// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeStatusEnd pulumi.StringOutput `pulumi:"timeStatusEnd"`
+	TimeStatusEnd pulumi.StringPtrOutput `pulumi:"timeStatusEnd"`
 	// The date and time the resource action details were last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewResourceAction registers a new resource with the given unique name, arguments, and options.
@@ -256,12 +255,6 @@ func (i *ResourceAction) ToResourceActionOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionOutput)
 }
 
-func (i *ResourceAction) ToOutput(ctx context.Context) pulumix.Output[*ResourceAction] {
-	return pulumix.Output[*ResourceAction]{
-		OutputState: i.ToResourceActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResourceActionArrayInput is an input type that accepts ResourceActionArray and ResourceActionArrayOutput values.
 // You can construct a concrete instance of `ResourceActionArrayInput` via:
 //
@@ -285,12 +278,6 @@ func (i ResourceActionArray) ToResourceActionArrayOutput() ResourceActionArrayOu
 
 func (i ResourceActionArray) ToResourceActionArrayOutputWithContext(ctx context.Context) ResourceActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionArrayOutput)
-}
-
-func (i ResourceActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*ResourceAction] {
-	return pulumix.Output[[]*ResourceAction]{
-		OutputState: i.ToResourceActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ResourceActionMapInput is an input type that accepts ResourceActionMap and ResourceActionMapOutput values.
@@ -318,12 +305,6 @@ func (i ResourceActionMap) ToResourceActionMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionMapOutput)
 }
 
-func (i ResourceActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResourceAction] {
-	return pulumix.Output[map[string]*ResourceAction]{
-		OutputState: i.ToResourceActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResourceActionOutput struct{ *pulumi.OutputState }
 
 func (ResourceActionOutput) ElementType() reflect.Type {
@@ -338,35 +319,29 @@ func (o ResourceActionOutput) ToResourceActionOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ResourceActionOutput) ToOutput(ctx context.Context) pulumix.Output[*ResourceAction] {
-	return pulumix.Output[*ResourceAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details about the recommended action.
 func (o ResourceActionOutput) Actions() ResourceActionActionArrayOutput {
 	return o.ApplyT(func(v *ResourceAction) ResourceActionActionArrayOutput { return v.Actions }).(ResourceActionActionArrayOutput)
 }
 
 // The unique OCID associated with the category.
-func (o ResourceActionOutput) CategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.CategoryId }).(pulumi.StringOutput)
+func (o ResourceActionOutput) CategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.CategoryId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o ResourceActionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ResourceActionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name associated with the compartment.
-func (o ResourceActionOutput) CompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.CompartmentName }).(pulumi.StringOutput)
+func (o ResourceActionOutput) CompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.CompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the resource action.
-func (o ResourceActionOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v *ResourceAction) pulumi.Float64Output { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o ResourceActionOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.Float64PtrOutput { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
@@ -380,13 +355,13 @@ func (o ResourceActionOutput) Metadata() pulumi.MapOutput {
 }
 
 // The name assigned to the resource.
-func (o ResourceActionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o ResourceActionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the recommendation.
-func (o ResourceActionOutput) RecommendationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.RecommendationId }).(pulumi.StringOutput)
+func (o ResourceActionOutput) RecommendationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.RecommendationId }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the resource action.
@@ -395,18 +370,18 @@ func (o ResourceActionOutput) ResourceActionId() pulumi.StringOutput {
 }
 
 // The unique OCID associated with the resource.
-func (o ResourceActionOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.ResourceId }).(pulumi.StringOutput)
+func (o ResourceActionOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The kind of resource.
-func (o ResourceActionOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
+func (o ResourceActionOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The resource action's current state.
-func (o ResourceActionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ResourceActionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The status of the resource action.
@@ -415,13 +390,13 @@ func (o ResourceActionOutput) Status() pulumi.StringOutput {
 }
 
 // The date and time the resource action details were created, in the format defined by RFC3339.
-func (o ResourceActionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ResourceActionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the resource action entered its current status. The format is defined by RFC3339.
-func (o ResourceActionOutput) TimeStatusBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.TimeStatusBegin }).(pulumi.StringOutput)
+func (o ResourceActionOutput) TimeStatusBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.TimeStatusBegin }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -430,13 +405,13 @@ func (o ResourceActionOutput) TimeStatusBegin() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ResourceActionOutput) TimeStatusEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.TimeStatusEnd }).(pulumi.StringOutput)
+func (o ResourceActionOutput) TimeStatusEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.TimeStatusEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource action details were last updated, in the format defined by RFC3339.
-func (o ResourceActionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ResourceActionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ResourceActionArrayOutput struct{ *pulumi.OutputState }
@@ -451,12 +426,6 @@ func (o ResourceActionArrayOutput) ToResourceActionArrayOutput() ResourceActionA
 
 func (o ResourceActionArrayOutput) ToResourceActionArrayOutputWithContext(ctx context.Context) ResourceActionArrayOutput {
 	return o
-}
-
-func (o ResourceActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ResourceAction] {
-	return pulumix.Output[[]*ResourceAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResourceActionArrayOutput) Index(i pulumi.IntInput) ResourceActionOutput {
@@ -477,12 +446,6 @@ func (o ResourceActionMapOutput) ToResourceActionMapOutput() ResourceActionMapOu
 
 func (o ResourceActionMapOutput) ToResourceActionMapOutputWithContext(ctx context.Context) ResourceActionMapOutput {
 	return o
-}
-
-func (o ResourceActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResourceAction] {
-	return pulumix.Output[map[string]*ResourceAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResourceActionMapOutput) MapIndex(k pulumi.StringInput) ResourceActionOutput {

@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Waas
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetEdgeSubnetsResult(
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Waas
 
             ImmutableArray<Outputs.GetEdgeSubnetsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             EdgeSubnets = edgeSubnets;
             Filters = filters;

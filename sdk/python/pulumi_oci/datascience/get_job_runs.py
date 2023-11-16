@@ -52,25 +52,16 @@ class GetJobRunsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
-        """
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -81,33 +72,21 @@ class GetJobRunsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="jobId")
     def job_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-        """
         return pulumi.get(self, "job_id")
 
     @property
     @pulumi.getter(name="jobRuns")
-    def job_runs(self) -> Sequence['outputs.GetJobRunsJobRunResult']:
-        """
-        The list of job_runs.
-        """
+    def job_runs(self) -> Optional[Sequence['outputs.GetJobRunsJobRunResult']]:
         return pulumi.get(self, "job_runs")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the job run.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_job_runs(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobRunsResult:
     """
-    This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
-
-    List out job runs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_runs = oci.DataScience.get_job_runs(compartment_id=var["compartment_id"],
-        created_by=var["job_run_created_by"],
-        display_name=var["job_run_display_name"],
-        id=var["job_run_id"],
-        job_id=oci_datascience_job["test_job"]["id"],
-        state=var["job_run_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -194,30 +149,6 @@ def get_job_runs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobRunsResult]:
     """
-    This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
-
-    List out job runs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_runs = oci.DataScience.get_job_runs(compartment_id=var["compartment_id"],
-        created_by=var["job_run_created_by"],
-        display_name=var["job_run_display_name"],
-        id=var["job_run_id"],
-        job_id=oci_datascience_job["test_job"]["id"],
-        state=var["job_run_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

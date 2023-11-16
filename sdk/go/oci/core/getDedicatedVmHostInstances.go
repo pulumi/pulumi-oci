@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
@@ -75,7 +74,7 @@ type GetDedicatedVmHostInstancesResult struct {
 	DedicatedVmHostInstances []GetDedicatedVmHostInstancesDedicatedVmHostInstance `pulumi:"dedicatedVmHostInstances"`
 	Filters                  []GetDedicatedVmHostInstancesFilter                  `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDedicatedVmHostInstancesOutput(ctx *pulumi.Context, args GetDedicatedVmHostInstancesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostInstancesResultOutput {
@@ -121,12 +120,6 @@ func (o GetDedicatedVmHostInstancesResultOutput) ToGetDedicatedVmHostInstancesRe
 	return o
 }
 
-func (o GetDedicatedVmHostInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVmHostInstancesResult] {
-	return pulumix.Output[GetDedicatedVmHostInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the virtual machine instance is running in.  Example: `Uocm:PHX-AD-1`
 func (o GetDedicatedVmHostInstancesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedVmHostInstancesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -153,8 +146,8 @@ func (o GetDedicatedVmHostInstancesResultOutput) Filters() GetDedicatedVmHostIns
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDedicatedVmHostInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVmHostInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDedicatedVmHostInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVmHostInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

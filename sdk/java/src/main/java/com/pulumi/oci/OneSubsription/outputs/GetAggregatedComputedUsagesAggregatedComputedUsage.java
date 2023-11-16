@@ -9,6 +9,8 @@ import com.pulumi.oci.OneSubsription.outputs.GetAggregatedComputedUsagesAggregat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
@@ -16,52 +18,52 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
      * @return Aggregation of computed usages for the subscribed service.
      * 
      */
-    private List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages;
+    private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages;
     /**
      * @return Currency code
      * 
      */
-    private String currencyCode;
+    private @Nullable String currencyCode;
     /**
      * @return Product part number for subscribed service line, called parent product.
      * 
      */
-    private List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts;
+    private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts;
     /**
      * @return Subscribed service line parent id
      * 
      */
-    private String parentSubscribedServiceId;
+    private @Nullable String parentSubscribedServiceId;
     /**
      * @return Subscribed service asociated subscription plan number.
      * 
      */
-    private String planNumber;
+    private @Nullable String planNumber;
     /**
      * @return Subscribed services pricing model
      * 
      */
-    private String pricingModel;
+    private @Nullable String pricingModel;
     /**
      * @return Inernal SPM Ratecard Id at line level
      * 
      */
-    private String rateCardId;
+    private @Nullable String rateCardId;
     /**
      * @return Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
      * 
      */
-    private String subscriptionId;
+    private @Nullable String subscriptionId;
     /**
      * @return Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetAggregatedComputedUsagesAggregatedComputedUsage() {}
     /**
@@ -69,70 +71,70 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
      * 
      */
     public List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages() {
-        return this.aggregatedComputedUsages;
+        return this.aggregatedComputedUsages == null ? List.of() : this.aggregatedComputedUsages;
     }
     /**
      * @return Currency code
      * 
      */
-    public String currencyCode() {
-        return this.currencyCode;
+    public Optional<String> currencyCode() {
+        return Optional.ofNullable(this.currencyCode);
     }
     /**
      * @return Product part number for subscribed service line, called parent product.
      * 
      */
     public List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts() {
-        return this.parentProducts;
+        return this.parentProducts == null ? List.of() : this.parentProducts;
     }
     /**
      * @return Subscribed service line parent id
      * 
      */
-    public String parentSubscribedServiceId() {
-        return this.parentSubscribedServiceId;
+    public Optional<String> parentSubscribedServiceId() {
+        return Optional.ofNullable(this.parentSubscribedServiceId);
     }
     /**
      * @return Subscribed service asociated subscription plan number.
      * 
      */
-    public String planNumber() {
-        return this.planNumber;
+    public Optional<String> planNumber() {
+        return Optional.ofNullable(this.planNumber);
     }
     /**
      * @return Subscribed services pricing model
      * 
      */
-    public String pricingModel() {
-        return this.pricingModel;
+    public Optional<String> pricingModel() {
+        return Optional.ofNullable(this.pricingModel);
     }
     /**
      * @return Inernal SPM Ratecard Id at line level
      * 
      */
-    public String rateCardId() {
-        return this.rateCardId;
+    public Optional<String> rateCardId() {
+        return Optional.ofNullable(this.rateCardId);
     }
     /**
      * @return Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
     /**
      * @return Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -144,16 +146,16 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages;
-        private String currencyCode;
-        private List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts;
-        private String parentSubscribedServiceId;
-        private String planNumber;
-        private String pricingModel;
-        private String rateCardId;
-        private String subscriptionId;
-        private String timeEnd;
-        private String timeStart;
+        private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages;
+        private @Nullable String currencyCode;
+        private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts;
+        private @Nullable String parentSubscribedServiceId;
+        private @Nullable String planNumber;
+        private @Nullable String pricingModel;
+        private @Nullable String rateCardId;
+        private @Nullable String subscriptionId;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetAggregatedComputedUsagesAggregatedComputedUsage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -170,59 +172,59 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
         }
 
         @CustomType.Setter
-        public Builder aggregatedComputedUsages(List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages) {
-            this.aggregatedComputedUsages = Objects.requireNonNull(aggregatedComputedUsages);
+        public Builder aggregatedComputedUsages(@Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages) {
+            this.aggregatedComputedUsages = aggregatedComputedUsages;
             return this;
         }
         public Builder aggregatedComputedUsages(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage... aggregatedComputedUsages) {
             return aggregatedComputedUsages(List.of(aggregatedComputedUsages));
         }
         @CustomType.Setter
-        public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+        public Builder currencyCode(@Nullable String currencyCode) {
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
-        public Builder parentProducts(List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts) {
-            this.parentProducts = Objects.requireNonNull(parentProducts);
+        public Builder parentProducts(@Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts) {
+            this.parentProducts = parentProducts;
             return this;
         }
         public Builder parentProducts(GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct... parentProducts) {
             return parentProducts(List.of(parentProducts));
         }
         @CustomType.Setter
-        public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
-            this.parentSubscribedServiceId = Objects.requireNonNull(parentSubscribedServiceId);
+        public Builder parentSubscribedServiceId(@Nullable String parentSubscribedServiceId) {
+            this.parentSubscribedServiceId = parentSubscribedServiceId;
             return this;
         }
         @CustomType.Setter
-        public Builder planNumber(String planNumber) {
-            this.planNumber = Objects.requireNonNull(planNumber);
+        public Builder planNumber(@Nullable String planNumber) {
+            this.planNumber = planNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder pricingModel(String pricingModel) {
-            this.pricingModel = Objects.requireNonNull(pricingModel);
+        public Builder pricingModel(@Nullable String pricingModel) {
+            this.pricingModel = pricingModel;
             return this;
         }
         @CustomType.Setter
-        public Builder rateCardId(String rateCardId) {
-            this.rateCardId = Objects.requireNonNull(rateCardId);
+        public Builder rateCardId(@Nullable String rateCardId) {
+            this.rateCardId = rateCardId;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetAggregatedComputedUsagesAggregatedComputedUsage build() {

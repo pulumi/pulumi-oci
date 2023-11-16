@@ -16,33 +16,33 @@ public final class GetSummarizeResourceInventoryResult {
      * @return The number of _active_ fleets.
      * 
      */
-    private Integer activeFleetCount;
+    private @Nullable Integer activeFleetCount;
     /**
      * @return The number of applications.
      * 
      */
-    private Integer applicationCount;
+    private @Nullable Integer applicationCount;
     private @Nullable String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The number of Java installations.
      * 
      */
-    private Integer installationCount;
+    private @Nullable Integer installationCount;
     /**
      * @return The number of Java Runtimes.
      * 
      */
-    private Integer jreCount;
+    private @Nullable Integer jreCount;
     /**
      * @return The number of managed instances.
      * 
      */
-    private Integer managedInstanceCount;
+    private @Nullable Integer managedInstanceCount;
     private @Nullable String timeEnd;
     private @Nullable String timeStart;
 
@@ -51,15 +51,15 @@ public final class GetSummarizeResourceInventoryResult {
      * @return The number of _active_ fleets.
      * 
      */
-    public Integer activeFleetCount() {
-        return this.activeFleetCount;
+    public Optional<Integer> activeFleetCount() {
+        return Optional.ofNullable(this.activeFleetCount);
     }
     /**
      * @return The number of applications.
      * 
      */
-    public Integer applicationCount() {
-        return this.applicationCount;
+    public Optional<Integer> applicationCount() {
+        return Optional.ofNullable(this.applicationCount);
     }
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
@@ -68,29 +68,29 @@ public final class GetSummarizeResourceInventoryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The number of Java installations.
      * 
      */
-    public Integer installationCount() {
-        return this.installationCount;
+    public Optional<Integer> installationCount() {
+        return Optional.ofNullable(this.installationCount);
     }
     /**
      * @return The number of Java Runtimes.
      * 
      */
-    public Integer jreCount() {
-        return this.jreCount;
+    public Optional<Integer> jreCount() {
+        return Optional.ofNullable(this.jreCount);
     }
     /**
      * @return The number of managed instances.
      * 
      */
-    public Integer managedInstanceCount() {
-        return this.managedInstanceCount;
+    public Optional<Integer> managedInstanceCount() {
+        return Optional.ofNullable(this.managedInstanceCount);
     }
     public Optional<String> timeEnd() {
         return Optional.ofNullable(this.timeEnd);
@@ -108,13 +108,13 @@ public final class GetSummarizeResourceInventoryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer activeFleetCount;
-        private Integer applicationCount;
+        private @Nullable Integer activeFleetCount;
+        private @Nullable Integer applicationCount;
         private @Nullable String compartmentId;
-        private String id;
-        private Integer installationCount;
-        private Integer jreCount;
-        private Integer managedInstanceCount;
+        private @Nullable String id;
+        private @Nullable Integer installationCount;
+        private @Nullable Integer jreCount;
+        private @Nullable Integer managedInstanceCount;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetSummarizeResourceInventoryResult {
         }
 
         @CustomType.Setter
-        public Builder activeFleetCount(Integer activeFleetCount) {
-            this.activeFleetCount = Objects.requireNonNull(activeFleetCount);
+        public Builder activeFleetCount(@Nullable Integer activeFleetCount) {
+            this.activeFleetCount = activeFleetCount;
             return this;
         }
         @CustomType.Setter
-        public Builder applicationCount(Integer applicationCount) {
-            this.applicationCount = Objects.requireNonNull(applicationCount);
+        public Builder applicationCount(@Nullable Integer applicationCount) {
+            this.applicationCount = applicationCount;
             return this;
         }
         @CustomType.Setter
@@ -147,23 +147,23 @@ public final class GetSummarizeResourceInventoryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder installationCount(Integer installationCount) {
-            this.installationCount = Objects.requireNonNull(installationCount);
+        public Builder installationCount(@Nullable Integer installationCount) {
+            this.installationCount = installationCount;
             return this;
         }
         @CustomType.Setter
-        public Builder jreCount(Integer jreCount) {
-            this.jreCount = Objects.requireNonNull(jreCount);
+        public Builder jreCount(@Nullable Integer jreCount) {
+            this.jreCount = jreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceCount(Integer managedInstanceCount) {
-            this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
+        public Builder managedInstanceCount(@Nullable Integer managedInstanceCount) {
+            this.managedInstanceCount = managedInstanceCount;
             return this;
         }
         @CustomType.Setter

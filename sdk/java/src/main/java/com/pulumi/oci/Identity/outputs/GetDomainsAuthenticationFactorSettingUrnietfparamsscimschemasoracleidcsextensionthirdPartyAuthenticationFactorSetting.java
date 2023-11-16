@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting {
@@ -14,7 +15,7 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
      * @return Settings related to Duo Security
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings;
 
     private GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings() {
-        return this.duoSecuritySettings;
+        return this.duoSecuritySettings == null ? List.of() : this.duoSecuritySettings;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
         }
 
         @CustomType.Setter
-        public Builder duoSecuritySettings(List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings) {
-            this.duoSecuritySettings = Objects.requireNonNull(duoSecuritySettings);
+        public Builder duoSecuritySettings(@Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings) {
+            this.duoSecuritySettings = duoSecuritySettings;
             return this;
         }
         public Builder duoSecuritySettings(GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting... duoSecuritySettings) {

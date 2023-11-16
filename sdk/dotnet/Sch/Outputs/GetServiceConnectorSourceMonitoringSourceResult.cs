@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Discriminator for namespaces in the compartment-specific list.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Sch.Outputs
 
         [OutputConstructor]
         private GetServiceConnectorSourceMonitoringSourceResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult> namespaceDetails)
         {

@@ -17,12 +17,12 @@ public final class GetManagedDatabaseUserObjectPrivilegeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of object privileges.
      * 
      */
-    private List<GetManagedDatabaseUserObjectPrivilegeItem> items;
+    private @Nullable List<GetManagedDatabaseUserObjectPrivilegeItem> items;
     private String managedDatabaseId;
     /**
      * @return The name of the privilege on the object.
@@ -36,15 +36,15 @@ public final class GetManagedDatabaseUserObjectPrivilegeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of object privileges.
      * 
      */
     public List<GetManagedDatabaseUserObjectPrivilegeItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -69,8 +69,8 @@ public final class GetManagedDatabaseUserObjectPrivilegeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetManagedDatabaseUserObjectPrivilegeItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetManagedDatabaseUserObjectPrivilegeItem> items;
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
@@ -85,13 +85,13 @@ public final class GetManagedDatabaseUserObjectPrivilegeResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseUserObjectPrivilegeItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseUserObjectPrivilegeItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUserObjectPrivilegeItem... items) {

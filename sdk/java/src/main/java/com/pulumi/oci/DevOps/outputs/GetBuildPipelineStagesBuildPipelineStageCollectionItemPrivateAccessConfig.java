@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig {
@@ -19,7 +20,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivate
      * @return An array of network security group OCIDs.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The OCID of the subnet where VNIC resources will be created for private endpoint.
      * 
@@ -39,7 +40,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivate
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The OCID of the subnet where VNIC resources will be created for private endpoint.
@@ -59,7 +60,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivate
     @CustomType.Builder
     public static final class Builder {
         private String networkChannelType;
-        private List<String> nsgIds;
+        private @Nullable List<String> nsgIds;
         private String subnetId;
         public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig defaults) {
@@ -75,8 +76,8 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivate
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {

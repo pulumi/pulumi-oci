@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
@@ -35,42 +34,42 @@ type Recommendation struct {
 	pulumi.CustomResourceState
 
 	// The unique OCID associated with the category.
-	CategoryId pulumi.StringOutput `pulumi:"categoryId"`
+	CategoryId pulumi.StringPtrOutput `pulumi:"categoryId"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Text describing the recommendation.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the recommendation.
-	EstimatedCostSaving pulumi.Float64Output `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving pulumi.Float64PtrOutput `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
 	ExtendedMetadata pulumi.MapOutput `pulumi:"extendedMetadata"`
 	// The level of importance assigned to the recommendation.
-	Importance pulumi.StringOutput `pulumi:"importance"`
+	Importance pulumi.StringPtrOutput `pulumi:"importance"`
 	// The name of the profile level.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
 	RecommendationId pulumi.StringOutput `pulumi:"recommendationId"`
 	// An array of `ResourceCount` objects grouped by the status of the resource actions.
 	ResourceCounts RecommendationResourceCountArrayOutput `pulumi:"resourceCounts"`
 	// The recommendation's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The status of the recommendation.
 	Status pulumi.StringOutput `pulumi:"status"`
 	// Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
 	SupportedLevels RecommendationSupportedLevelArrayOutput `pulumi:"supportedLevels"`
 	// The date and time the recommendation details were created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-	TimeStatusBegin pulumi.StringOutput `pulumi:"timeStatusBegin"`
+	TimeStatusBegin pulumi.StringPtrOutput `pulumi:"timeStatusBegin"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 	//
 	// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeStatusEnd pulumi.StringOutput `pulumi:"timeStatusEnd"`
+	TimeStatusEnd pulumi.StringPtrOutput `pulumi:"timeStatusEnd"`
 	// The date and time the recommendation details were last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewRecommendation registers a new resource with the given unique name, arguments, and options.
@@ -244,12 +243,6 @@ func (i *Recommendation) ToRecommendationOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationOutput)
 }
 
-func (i *Recommendation) ToOutput(ctx context.Context) pulumix.Output[*Recommendation] {
-	return pulumix.Output[*Recommendation]{
-		OutputState: i.ToRecommendationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecommendationArrayInput is an input type that accepts RecommendationArray and RecommendationArrayOutput values.
 // You can construct a concrete instance of `RecommendationArrayInput` via:
 //
@@ -273,12 +266,6 @@ func (i RecommendationArray) ToRecommendationArrayOutput() RecommendationArrayOu
 
 func (i RecommendationArray) ToRecommendationArrayOutputWithContext(ctx context.Context) RecommendationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationArrayOutput)
-}
-
-func (i RecommendationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Recommendation] {
-	return pulumix.Output[[]*Recommendation]{
-		OutputState: i.ToRecommendationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RecommendationMapInput is an input type that accepts RecommendationMap and RecommendationMapOutput values.
@@ -306,12 +293,6 @@ func (i RecommendationMap) ToRecommendationMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationMapOutput)
 }
 
-func (i RecommendationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Recommendation] {
-	return pulumix.Output[map[string]*Recommendation]{
-		OutputState: i.ToRecommendationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecommendationOutput struct{ *pulumi.OutputState }
 
 func (RecommendationOutput) ElementType() reflect.Type {
@@ -326,30 +307,24 @@ func (o RecommendationOutput) ToRecommendationOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o RecommendationOutput) ToOutput(ctx context.Context) pulumix.Output[*Recommendation] {
-	return pulumix.Output[*Recommendation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique OCID associated with the category.
-func (o RecommendationOutput) CategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.CategoryId }).(pulumi.StringOutput)
+func (o RecommendationOutput) CategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.CategoryId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy. The tenancy is the root compartment.
-func (o RecommendationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o RecommendationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Text describing the recommendation.
-func (o RecommendationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o RecommendationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the recommendation.
-func (o RecommendationOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v *Recommendation) pulumi.Float64Output { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o RecommendationOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.Float64PtrOutput { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs for the recommendation.
@@ -358,13 +333,13 @@ func (o RecommendationOutput) ExtendedMetadata() pulumi.MapOutput {
 }
 
 // The level of importance assigned to the recommendation.
-func (o RecommendationOutput) Importance() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.Importance }).(pulumi.StringOutput)
+func (o RecommendationOutput) Importance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.Importance }).(pulumi.StringPtrOutput)
 }
 
 // The name of the profile level.
-func (o RecommendationOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o RecommendationOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the recommendation.
@@ -378,8 +353,8 @@ func (o RecommendationOutput) ResourceCounts() RecommendationResourceCountArrayO
 }
 
 // The recommendation's current state.
-func (o RecommendationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RecommendationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The status of the recommendation.
@@ -393,13 +368,13 @@ func (o RecommendationOutput) SupportedLevels() RecommendationSupportedLevelArra
 }
 
 // The date and time the recommendation details were created, in the format defined by RFC3339.
-func (o RecommendationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RecommendationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-func (o RecommendationOutput) TimeStatusBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.TimeStatusBegin }).(pulumi.StringOutput)
+func (o RecommendationOutput) TimeStatusBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.TimeStatusBegin }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -408,13 +383,13 @@ func (o RecommendationOutput) TimeStatusBegin() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o RecommendationOutput) TimeStatusEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.TimeStatusEnd }).(pulumi.StringOutput)
+func (o RecommendationOutput) TimeStatusEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.TimeStatusEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the recommendation details were last updated, in the format defined by RFC3339.
-func (o RecommendationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o RecommendationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type RecommendationArrayOutput struct{ *pulumi.OutputState }
@@ -429,12 +404,6 @@ func (o RecommendationArrayOutput) ToRecommendationArrayOutput() RecommendationA
 
 func (o RecommendationArrayOutput) ToRecommendationArrayOutputWithContext(ctx context.Context) RecommendationArrayOutput {
 	return o
-}
-
-func (o RecommendationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Recommendation] {
-	return pulumix.Output[[]*Recommendation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationArrayOutput) Index(i pulumi.IntInput) RecommendationOutput {
@@ -455,12 +424,6 @@ func (o RecommendationMapOutput) ToRecommendationMapOutput() RecommendationMapOu
 
 func (o RecommendationMapOutput) ToRecommendationMapOutputWithContext(ctx context.Context) RecommendationMapOutput {
 	return o
-}
-
-func (o RecommendationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Recommendation] {
-	return pulumix.Output[map[string]*Recommendation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationMapOutput) MapIndex(k pulumi.StringInput) RecommendationOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Optimizer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceActionsResourceActionCollectionItemAction {
@@ -13,39 +15,39 @@ public final class GetResourceActionsResourceActionCollectionItemAction {
      * @return Text describing the recommended action.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The status of the resource action.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The URL path to documentation that explains how to perform the action.
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetResourceActionsResourceActionCollectionItemAction() {}
     /**
      * @return Text describing the recommended action.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The status of the resource action.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The URL path to documentation that explains how to perform the action.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetResourceActionsResourceActionCollectionItemAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String type;
-        private String url;
+        private @Nullable String description;
+        private @Nullable String type;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetResourceActionsResourceActionCollectionItemAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetResourceActionsResourceActionCollectionItemAction {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetResourceActionsResourceActionCollectionItemAction build() {

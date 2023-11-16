@@ -42,10 +42,7 @@ class GetCommitmentsResult:
 
     @property
     @pulumi.getter
-    def commitments(self) -> Sequence['outputs.GetCommitmentsCommitmentResult']:
-        """
-        The list of commitments.
-        """
+    def commitments(self) -> Optional[Sequence['outputs.GetCommitmentsCommitmentResult']]:
         return pulumi.get(self, "commitments")
 
     @property
@@ -60,7 +57,7 @@ class GetCommitmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,9 +66,6 @@ class GetCommitmentsResult:
     @property
     @pulumi.getter(name="subscribedServiceId")
     def subscribed_service_id(self) -> str:
-        """
-        SPM internal Subscribed Service ID
-        """
         return pulumi.get(self, "subscribed_service_id")
 
 
@@ -93,23 +87,7 @@ def get_commitments(compartment_id: Optional[str] = None,
                     subscribed_service_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCommitmentsResult:
     """
-    This data source provides the list of Commitments in Oracle Cloud Infrastructure Onesubscription service.
-
-    This list API returns all commitments for a particular Subscribed Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_commitments = oci.OneSubsription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str subscribed_service_id: This param is used to get the commitments for a particular subscribed service
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -132,22 +110,6 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            subscribed_service_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentsResult]:
     """
-    This data source provides the list of Commitments in Oracle Cloud Infrastructure Onesubscription service.
-
-    This list API returns all commitments for a particular Subscribed Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_commitments = oci.OneSubsription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str subscribed_service_id: This param is used to get the commitments for a particular subscribed service
+    Use this data source to access information about an existing resource.
     """
     ...

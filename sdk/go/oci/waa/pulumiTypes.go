@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -67,12 +66,6 @@ func (i AppAccelerationPolicyResponseCachingPolicyArgs) ToAppAccelerationPolicyR
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyResponseCachingPolicyOutput)
 }
 
-func (i AppAccelerationPolicyResponseCachingPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[AppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[AppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: i.ToAppAccelerationPolicyResponseCachingPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AppAccelerationPolicyResponseCachingPolicyArgs) ToAppAccelerationPolicyResponseCachingPolicyPtrOutput() AppAccelerationPolicyResponseCachingPolicyPtrOutput {
 	return i.ToAppAccelerationPolicyResponseCachingPolicyPtrOutputWithContext(context.Background())
 }
@@ -114,12 +107,6 @@ func (i *appAccelerationPolicyResponseCachingPolicyPtrType) ToAppAccelerationPol
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyResponseCachingPolicyPtrOutput)
 }
 
-func (i *appAccelerationPolicyResponseCachingPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[*AppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: i.ToAppAccelerationPolicyResponseCachingPolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppAccelerationPolicyResponseCachingPolicyOutput struct{ *pulumi.OutputState }
 
 func (AppAccelerationPolicyResponseCachingPolicyOutput) ElementType() reflect.Type {
@@ -142,12 +129,6 @@ func (o AppAccelerationPolicyResponseCachingPolicyOutput) ToAppAccelerationPolic
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppAccelerationPolicyResponseCachingPolicy) *AppAccelerationPolicyResponseCachingPolicy {
 		return &v
 	}).(AppAccelerationPolicyResponseCachingPolicyPtrOutput)
-}
-
-func (o AppAccelerationPolicyResponseCachingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[AppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[AppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) When false, responses will not be cached by the backend based on response headers.
@@ -177,12 +158,6 @@ func (o AppAccelerationPolicyResponseCachingPolicyPtrOutput) ToAppAccelerationPo
 
 func (o AppAccelerationPolicyResponseCachingPolicyPtrOutput) ToAppAccelerationPolicyResponseCachingPolicyPtrOutputWithContext(ctx context.Context) AppAccelerationPolicyResponseCachingPolicyPtrOutput {
 	return o
-}
-
-func (o AppAccelerationPolicyResponseCachingPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[*AppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppAccelerationPolicyResponseCachingPolicyPtrOutput) Elem() AppAccelerationPolicyResponseCachingPolicyOutput {
@@ -248,12 +223,6 @@ func (i AppAccelerationPolicyResponseCompressionPolicyArgs) ToAppAccelerationPol
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyResponseCompressionPolicyOutput)
 }
 
-func (i AppAccelerationPolicyResponseCompressionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[AppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[AppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: i.ToAppAccelerationPolicyResponseCompressionPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AppAccelerationPolicyResponseCompressionPolicyArgs) ToAppAccelerationPolicyResponseCompressionPolicyPtrOutput() AppAccelerationPolicyResponseCompressionPolicyPtrOutput {
 	return i.ToAppAccelerationPolicyResponseCompressionPolicyPtrOutputWithContext(context.Background())
 }
@@ -295,12 +264,6 @@ func (i *appAccelerationPolicyResponseCompressionPolicyPtrType) ToAppAcceleratio
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyResponseCompressionPolicyPtrOutput)
 }
 
-func (i *appAccelerationPolicyResponseCompressionPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: i.ToAppAccelerationPolicyResponseCompressionPolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppAccelerationPolicyResponseCompressionPolicyOutput struct{ *pulumi.OutputState }
 
 func (AppAccelerationPolicyResponseCompressionPolicyOutput) ElementType() reflect.Type {
@@ -325,12 +288,6 @@ func (o AppAccelerationPolicyResponseCompressionPolicyOutput) ToAppAccelerationP
 	}).(AppAccelerationPolicyResponseCompressionPolicyPtrOutput)
 }
 
-func (o AppAccelerationPolicyResponseCompressionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[AppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[AppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) An object that specifies the gzip compression policy.
 func (o AppAccelerationPolicyResponseCompressionPolicyOutput) GzipCompression() AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput {
 	return o.ApplyT(func(v AppAccelerationPolicyResponseCompressionPolicy) *AppAccelerationPolicyResponseCompressionPolicyGzipCompression {
@@ -350,12 +307,6 @@ func (o AppAccelerationPolicyResponseCompressionPolicyPtrOutput) ToAppAccelerati
 
 func (o AppAccelerationPolicyResponseCompressionPolicyPtrOutput) ToAppAccelerationPolicyResponseCompressionPolicyPtrOutputWithContext(ctx context.Context) AppAccelerationPolicyResponseCompressionPolicyPtrOutput {
 	return o
-}
-
-func (o AppAccelerationPolicyResponseCompressionPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppAccelerationPolicyResponseCompressionPolicyPtrOutput) Elem() AppAccelerationPolicyResponseCompressionPolicyOutput {
@@ -415,12 +366,6 @@ func (i AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) ToApp
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput)
 }
 
-func (i AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) ToOutput(ctx context.Context) pulumix.Output[AppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[AppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: i.ToAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) ToAppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput() AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput {
 	return i.ToAppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutputWithContext(context.Background())
 }
@@ -462,12 +407,6 @@ func (i *appAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrType) T
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput)
 }
 
-func (i *appAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: i.ToAppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput struct{ *pulumi.OutputState }
 
 func (AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) ElementType() reflect.Type {
@@ -492,12 +431,6 @@ func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) ToA
 	}).(AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput)
 }
 
-func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) ToOutput(ctx context.Context) pulumix.Output[AppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[AppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
 //
 // When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
@@ -517,12 +450,6 @@ func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput) 
 
 func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput) ToAppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutputWithContext(ctx context.Context) AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput {
 	return o
-}
-
-func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[*AppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput) Elem() AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput {
@@ -582,12 +509,6 @@ func (i GetAppAccelerationPoliciesFilterArgs) ToGetAppAccelerationPoliciesFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesFilterOutput)
 }
 
-func (i GetAppAccelerationPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesFilter] {
-	return pulumix.Output[GetAppAccelerationPoliciesFilter]{
-		OutputState: i.ToGetAppAccelerationPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAppAccelerationPoliciesFilterArrayInput is an input type that accepts GetAppAccelerationPoliciesFilterArray and GetAppAccelerationPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesFilterArrayInput` via:
 //
@@ -613,12 +534,6 @@ func (i GetAppAccelerationPoliciesFilterArray) ToGetAppAccelerationPoliciesFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesFilterArrayOutput)
 }
 
-func (i GetAppAccelerationPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesFilter] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesFilter]{
-		OutputState: i.ToGetAppAccelerationPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPoliciesFilterOutput) ElementType() reflect.Type {
@@ -631,12 +546,6 @@ func (o GetAppAccelerationPoliciesFilterOutput) ToGetAppAccelerationPoliciesFilt
 
 func (o GetAppAccelerationPoliciesFilterOutput) ToGetAppAccelerationPoliciesFilterOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesFilterOutput {
 	return o
-}
-
-func (o GetAppAccelerationPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesFilter] {
-	return pulumix.Output[GetAppAccelerationPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -663,12 +572,6 @@ func (o GetAppAccelerationPoliciesFilterArrayOutput) ToGetAppAccelerationPolicie
 
 func (o GetAppAccelerationPoliciesFilterArrayOutput) ToGetAppAccelerationPoliciesFilterArrayOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesFilterArrayOutput {
 	return o
-}
-
-func (o GetAppAccelerationPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesFilter] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPoliciesFilterOutput {
@@ -708,12 +611,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput)
 }
 
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayInput` via:
 //
@@ -739,12 +636,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutput)
 }
 
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput) ElementType() reflect.Type {
@@ -757,12 +648,6 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput) ToGe
 
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput) ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput {
 	return o
-}
-
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput) Items() GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutput {
@@ -785,12 +670,6 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutput)
 	return o
 }
 
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection {
 		return vs[0].([]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection)[vs[1].(int)]
@@ -799,29 +678,29 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutput)
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only the WebAppAccelerationPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicies []GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy `pulumi:"responseCachingPolicies"`
 	// An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
 	ResponseCompressionPolicies []GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy `pulumi:"responseCompressionPolicies"`
 	// A filter to return only resources that match the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput values.
@@ -837,29 +716,29 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemInput inter
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only the WebAppAccelerationPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicies GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayInput `pulumi:"responseCachingPolicies"`
 	// An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
 	ResponseCompressionPolicies GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayInput `pulumi:"responseCompressionPolicies"`
 	// A filter to return only resources that match the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs) ElementType() reflect.Type {
@@ -872,12 +751,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs) To
 
 func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs) ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput)
-}
-
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutput values.
@@ -905,12 +778,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutput)
 }
 
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -925,17 +792,11 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) 
 	return o
 }
 
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) string {
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -946,8 +807,8 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) 
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -958,15 +819,15 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) 
 }
 
 // A filter to return only the WebAppAccelerationPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) string {
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // An object that specifies an HTTP response caching policy.
@@ -984,8 +845,8 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) 
 }
 
 // A filter to return only resources that match the given lifecycleState.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -996,13 +857,13 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) 
 }
 
 // The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1019,12 +880,6 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOut
 	return o
 }
 
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem {
 		return vs[0].([]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem)[vs[1].(int)]
@@ -1033,7 +888,7 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOut
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy struct {
 	// When false, responses will not be cached by the backend based on response headers.
-	IsResponseHeaderBasedCachingEnabled bool `pulumi:"isResponseHeaderBasedCachingEnabled"`
+	IsResponseHeaderBasedCachingEnabled *bool `pulumi:"isResponseHeaderBasedCachingEnabled"`
 }
 
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput values.
@@ -1049,7 +904,7 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCac
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs struct {
 	// When false, responses will not be cached by the backend based on response headers.
-	IsResponseHeaderBasedCachingEnabled pulumi.BoolInput `pulumi:"isResponseHeaderBasedCachingEnabled"`
+	IsResponseHeaderBasedCachingEnabled pulumi.BoolPtrInput `pulumi:"isResponseHeaderBasedCachingEnabled"`
 }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs) ElementType() reflect.Type {
@@ -1062,12 +917,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 
 func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs) ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput)
-}
-
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput values.
@@ -1095,12 +944,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput)
 }
 
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput) ElementType() reflect.Type {
@@ -1115,17 +958,11 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return o
 }
 
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When false, responses will not be cached by the backend based on response headers.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput) IsResponseHeaderBasedCachingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy) bool {
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput) IsResponseHeaderBasedCachingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy) *bool {
 		return v.IsResponseHeaderBasedCachingEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -1140,12 +977,6 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput) ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput {
 	return o
-}
-
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput {
@@ -1187,12 +1018,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput)
 }
 
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayInput` via:
 //
@@ -1218,12 +1043,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayOutput)
 }
 
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput) ElementType() reflect.Type {
@@ -1236,12 +1055,6 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput) ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput {
 	return o
-}
-
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An object that specifies the gzip compression policy.
@@ -1265,12 +1078,6 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return o
 }
 
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy {
 		return vs[0].([]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy)[vs[1].(int)]
@@ -1279,7 +1086,7 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression struct {
 	// When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput values.
@@ -1295,7 +1102,7 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCom
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs struct {
 	// When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs) ElementType() reflect.Type {
@@ -1308,12 +1115,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 
 func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs) ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutputWithContext(ctx context.Context) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput)
-}
-
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayOutput values.
@@ -1341,12 +1142,6 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayOutput)
 }
 
-func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression]{
-		OutputState: i.ToGetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput) ElementType() reflect.Type {
@@ -1361,17 +1156,11 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return o
 }
 
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression) bool {
+func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression) *bool {
 		return v.IsEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayOutput struct{ *pulumi.OutputState }
@@ -1388,12 +1177,6 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 	return o
 }
 
-func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[[]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression {
 		return vs[0].([]GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression)[vs[1].(int)]
@@ -1402,7 +1185,7 @@ func (o GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 
 type GetAppAccelerationPolicyResponseCachingPolicy struct {
 	// When false, responses will not be cached by the backend based on response headers.
-	IsResponseHeaderBasedCachingEnabled bool `pulumi:"isResponseHeaderBasedCachingEnabled"`
+	IsResponseHeaderBasedCachingEnabled *bool `pulumi:"isResponseHeaderBasedCachingEnabled"`
 }
 
 // GetAppAccelerationPolicyResponseCachingPolicyInput is an input type that accepts GetAppAccelerationPolicyResponseCachingPolicyArgs and GetAppAccelerationPolicyResponseCachingPolicyOutput values.
@@ -1418,7 +1201,7 @@ type GetAppAccelerationPolicyResponseCachingPolicyInput interface {
 
 type GetAppAccelerationPolicyResponseCachingPolicyArgs struct {
 	// When false, responses will not be cached by the backend based on response headers.
-	IsResponseHeaderBasedCachingEnabled pulumi.BoolInput `pulumi:"isResponseHeaderBasedCachingEnabled"`
+	IsResponseHeaderBasedCachingEnabled pulumi.BoolPtrInput `pulumi:"isResponseHeaderBasedCachingEnabled"`
 }
 
 func (GetAppAccelerationPolicyResponseCachingPolicyArgs) ElementType() reflect.Type {
@@ -1431,12 +1214,6 @@ func (i GetAppAccelerationPolicyResponseCachingPolicyArgs) ToGetAppAccelerationP
 
 func (i GetAppAccelerationPolicyResponseCachingPolicyArgs) ToGetAppAccelerationPolicyResponseCachingPolicyOutputWithContext(ctx context.Context) GetAppAccelerationPolicyResponseCachingPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPolicyResponseCachingPolicyOutput)
-}
-
-func (i GetAppAccelerationPolicyResponseCachingPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[GetAppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: i.ToGetAppAccelerationPolicyResponseCachingPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAppAccelerationPolicyResponseCachingPolicyArrayInput is an input type that accepts GetAppAccelerationPolicyResponseCachingPolicyArray and GetAppAccelerationPolicyResponseCachingPolicyArrayOutput values.
@@ -1464,12 +1241,6 @@ func (i GetAppAccelerationPolicyResponseCachingPolicyArray) ToGetAppAcceleration
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPolicyResponseCachingPolicyArrayOutput)
 }
 
-func (i GetAppAccelerationPolicyResponseCachingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: i.ToGetAppAccelerationPolicyResponseCachingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPolicyResponseCachingPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPolicyResponseCachingPolicyOutput) ElementType() reflect.Type {
@@ -1484,17 +1255,11 @@ func (o GetAppAccelerationPolicyResponseCachingPolicyOutput) ToGetAppAcceleratio
 	return o
 }
 
-func (o GetAppAccelerationPolicyResponseCachingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[GetAppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When false, responses will not be cached by the backend based on response headers.
-func (o GetAppAccelerationPolicyResponseCachingPolicyOutput) IsResponseHeaderBasedCachingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAppAccelerationPolicyResponseCachingPolicy) bool {
+func (o GetAppAccelerationPolicyResponseCachingPolicyOutput) IsResponseHeaderBasedCachingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPolicyResponseCachingPolicy) *bool {
 		return v.IsResponseHeaderBasedCachingEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 type GetAppAccelerationPolicyResponseCachingPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -1509,12 +1274,6 @@ func (o GetAppAccelerationPolicyResponseCachingPolicyArrayOutput) ToGetAppAccele
 
 func (o GetAppAccelerationPolicyResponseCachingPolicyArrayOutput) ToGetAppAccelerationPolicyResponseCachingPolicyArrayOutputWithContext(ctx context.Context) GetAppAccelerationPolicyResponseCachingPolicyArrayOutput {
 	return o
-}
-
-func (o GetAppAccelerationPolicyResponseCachingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPolicyResponseCachingPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPolicyResponseCachingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationPolicyResponseCachingPolicyArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPolicyResponseCachingPolicyOutput {
@@ -1556,12 +1315,6 @@ func (i GetAppAccelerationPolicyResponseCompressionPolicyArgs) ToGetAppAccelerat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPolicyResponseCompressionPolicyOutput)
 }
 
-func (i GetAppAccelerationPolicyResponseCompressionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: i.ToGetAppAccelerationPolicyResponseCompressionPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAppAccelerationPolicyResponseCompressionPolicyArrayInput is an input type that accepts GetAppAccelerationPolicyResponseCompressionPolicyArray and GetAppAccelerationPolicyResponseCompressionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPolicyResponseCompressionPolicyArrayInput` via:
 //
@@ -1587,12 +1340,6 @@ func (i GetAppAccelerationPolicyResponseCompressionPolicyArray) ToGetAppAccelera
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPolicyResponseCompressionPolicyArrayOutput)
 }
 
-func (i GetAppAccelerationPolicyResponseCompressionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: i.ToGetAppAccelerationPolicyResponseCompressionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPolicyResponseCompressionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPolicyResponseCompressionPolicyOutput) ElementType() reflect.Type {
@@ -1605,12 +1352,6 @@ func (o GetAppAccelerationPolicyResponseCompressionPolicyOutput) ToGetAppAcceler
 
 func (o GetAppAccelerationPolicyResponseCompressionPolicyOutput) ToGetAppAccelerationPolicyResponseCompressionPolicyOutputWithContext(ctx context.Context) GetAppAccelerationPolicyResponseCompressionPolicyOutput {
 	return o
-}
-
-func (o GetAppAccelerationPolicyResponseCompressionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An object that specifies the gzip compression policy.
@@ -1634,12 +1375,6 @@ func (o GetAppAccelerationPolicyResponseCompressionPolicyArrayOutput) ToGetAppAc
 	return o
 }
 
-func (o GetAppAccelerationPolicyResponseCompressionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicy] {
-	return pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAppAccelerationPolicyResponseCompressionPolicyArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPolicyResponseCompressionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppAccelerationPolicyResponseCompressionPolicy {
 		return vs[0].([]GetAppAccelerationPolicyResponseCompressionPolicy)[vs[1].(int)]
@@ -1648,7 +1383,7 @@ func (o GetAppAccelerationPolicyResponseCompressionPolicyArrayOutput) Index(i pu
 
 type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression struct {
 	// When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput is an input type that accepts GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs and GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput values.
@@ -1664,7 +1399,7 @@ type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput inter
 
 type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs struct {
 	// When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) ElementType() reflect.Type {
@@ -1677,12 +1412,6 @@ func (i GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) To
 
 func (i GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) ToGetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutputWithContext(ctx context.Context) GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput)
-}
-
-func (i GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: i.ToGetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayInput is an input type that accepts GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArray and GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput values.
@@ -1710,12 +1439,6 @@ func (i GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput)
 }
 
-func (i GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: i.ToGetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) ElementType() reflect.Type {
@@ -1730,15 +1453,9 @@ func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) 
 	return o
 }
 
-func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
-func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput struct{ *pulumi.OutputState }
@@ -1753,12 +1470,6 @@ func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOut
 
 func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput) ToGetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutputWithContext(ctx context.Context) GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput {
 	return o
-}
-
-func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression] {
-	return pulumix.Output[[]GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput {
@@ -1802,12 +1513,6 @@ func (i GetAppAccelerationsFilterArgs) ToGetAppAccelerationsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationsFilterOutput)
 }
 
-func (i GetAppAccelerationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationsFilter] {
-	return pulumix.Output[GetAppAccelerationsFilter]{
-		OutputState: i.ToGetAppAccelerationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAppAccelerationsFilterArrayInput is an input type that accepts GetAppAccelerationsFilterArray and GetAppAccelerationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsFilterArrayInput` via:
 //
@@ -1833,12 +1538,6 @@ func (i GetAppAccelerationsFilterArray) ToGetAppAccelerationsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationsFilterArrayOutput)
 }
 
-func (i GetAppAccelerationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationsFilter] {
-	return pulumix.Output[[]GetAppAccelerationsFilter]{
-		OutputState: i.ToGetAppAccelerationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationsFilterOutput) ElementType() reflect.Type {
@@ -1851,12 +1550,6 @@ func (o GetAppAccelerationsFilterOutput) ToGetAppAccelerationsFilterOutput() Get
 
 func (o GetAppAccelerationsFilterOutput) ToGetAppAccelerationsFilterOutputWithContext(ctx context.Context) GetAppAccelerationsFilterOutput {
 	return o
-}
-
-func (o GetAppAccelerationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationsFilter] {
-	return pulumix.Output[GetAppAccelerationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationsFilterOutput) Name() pulumi.StringOutput {
@@ -1883,12 +1576,6 @@ func (o GetAppAccelerationsFilterArrayOutput) ToGetAppAccelerationsFilterArrayOu
 
 func (o GetAppAccelerationsFilterArrayOutput) ToGetAppAccelerationsFilterArrayOutputWithContext(ctx context.Context) GetAppAccelerationsFilterArrayOutput {
 	return o
-}
-
-func (o GetAppAccelerationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationsFilter] {
-	return pulumix.Output[[]GetAppAccelerationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationsFilterArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationsFilterOutput {
@@ -1928,12 +1615,6 @@ func (i GetAppAccelerationsWebAppAccelerationCollectionArgs) ToGetAppAcceleratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationsWebAppAccelerationCollectionOutput)
 }
 
-func (i GetAppAccelerationsWebAppAccelerationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationsWebAppAccelerationCollection] {
-	return pulumix.Output[GetAppAccelerationsWebAppAccelerationCollection]{
-		OutputState: i.ToGetAppAccelerationsWebAppAccelerationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAppAccelerationsWebAppAccelerationCollectionArrayInput is an input type that accepts GetAppAccelerationsWebAppAccelerationCollectionArray and GetAppAccelerationsWebAppAccelerationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsWebAppAccelerationCollectionArrayInput` via:
 //
@@ -1959,12 +1640,6 @@ func (i GetAppAccelerationsWebAppAccelerationCollectionArray) ToGetAppAccelerati
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationsWebAppAccelerationCollectionArrayOutput)
 }
 
-func (i GetAppAccelerationsWebAppAccelerationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollection] {
-	return pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollection]{
-		OutputState: i.ToGetAppAccelerationsWebAppAccelerationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationsWebAppAccelerationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationsWebAppAccelerationCollectionOutput) ElementType() reflect.Type {
@@ -1977,12 +1652,6 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionOutput) ToGetAppAccelerat
 
 func (o GetAppAccelerationsWebAppAccelerationCollectionOutput) ToGetAppAccelerationsWebAppAccelerationCollectionOutputWithContext(ctx context.Context) GetAppAccelerationsWebAppAccelerationCollectionOutput {
 	return o
-}
-
-func (o GetAppAccelerationsWebAppAccelerationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationsWebAppAccelerationCollection] {
-	return pulumix.Output[GetAppAccelerationsWebAppAccelerationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationsWebAppAccelerationCollectionOutput) Items() GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput {
@@ -2005,12 +1674,6 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionArrayOutput) ToGetAppAcce
 	return o
 }
 
-func (o GetAppAccelerationsWebAppAccelerationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollection] {
-	return pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAppAccelerationsWebAppAccelerationCollectionArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationsWebAppAccelerationCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppAccelerationsWebAppAccelerationCollection {
 		return vs[0].([]GetAppAccelerationsWebAppAccelerationCollection)[vs[1].(int)]
@@ -2019,31 +1682,31 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionArrayOutput) Index(i pulu
 
 type GetAppAccelerationsWebAppAccelerationCollectionItem struct {
 	// Type of the WebAppFirewall, as example LOAD_BALANCER.
-	BackendType string `pulumi:"backendType"`
+	BackendType *string `pulumi:"backendType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// A filter to return only resources that match the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
-	WebAppAccelerationPolicyId string `pulumi:"webAppAccelerationPolicyId"`
+	WebAppAccelerationPolicyId *string `pulumi:"webAppAccelerationPolicyId"`
 }
 
 // GetAppAccelerationsWebAppAccelerationCollectionItemInput is an input type that accepts GetAppAccelerationsWebAppAccelerationCollectionItemArgs and GetAppAccelerationsWebAppAccelerationCollectionItemOutput values.
@@ -2059,31 +1722,31 @@ type GetAppAccelerationsWebAppAccelerationCollectionItemInput interface {
 
 type GetAppAccelerationsWebAppAccelerationCollectionItemArgs struct {
 	// Type of the WebAppFirewall, as example LOAD_BALANCER.
-	BackendType pulumi.StringInput `pulumi:"backendType"`
+	BackendType pulumi.StringPtrInput `pulumi:"backendType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
-	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
+	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// A filter to return only resources that match the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
-	WebAppAccelerationPolicyId pulumi.StringInput `pulumi:"webAppAccelerationPolicyId"`
+	WebAppAccelerationPolicyId pulumi.StringPtrInput `pulumi:"webAppAccelerationPolicyId"`
 }
 
 func (GetAppAccelerationsWebAppAccelerationCollectionItemArgs) ElementType() reflect.Type {
@@ -2096,12 +1759,6 @@ func (i GetAppAccelerationsWebAppAccelerationCollectionItemArgs) ToGetAppAcceler
 
 func (i GetAppAccelerationsWebAppAccelerationCollectionItemArgs) ToGetAppAccelerationsWebAppAccelerationCollectionItemOutputWithContext(ctx context.Context) GetAppAccelerationsWebAppAccelerationCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationsWebAppAccelerationCollectionItemOutput)
-}
-
-func (i GetAppAccelerationsWebAppAccelerationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationsWebAppAccelerationCollectionItem] {
-	return pulumix.Output[GetAppAccelerationsWebAppAccelerationCollectionItem]{
-		OutputState: i.ToGetAppAccelerationsWebAppAccelerationCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAppAccelerationsWebAppAccelerationCollectionItemArrayInput is an input type that accepts GetAppAccelerationsWebAppAccelerationCollectionItemArray and GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput values.
@@ -2129,12 +1786,6 @@ func (i GetAppAccelerationsWebAppAccelerationCollectionItemArray) ToGetAppAccele
 	return pulumi.ToOutputWithContext(ctx, i).(GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput)
 }
 
-func (i GetAppAccelerationsWebAppAccelerationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollectionItem] {
-	return pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollectionItem]{
-		OutputState: i.ToGetAppAccelerationsWebAppAccelerationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAppAccelerationsWebAppAccelerationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAppAccelerationsWebAppAccelerationCollectionItemOutput) ElementType() reflect.Type {
@@ -2149,20 +1800,14 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) ToGetAppAccel
 	return o
 }
 
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationsWebAppAccelerationCollectionItem] {
-	return pulumix.Output[GetAppAccelerationsWebAppAccelerationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of the WebAppFirewall, as example LOAD_BALANCER.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) BackendType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.BackendType }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) BackendType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.BackendType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2173,8 +1818,8 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) DefinedTags()
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2185,23 +1830,23 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) FreeformTags(
 }
 
 // A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) LoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) LoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.LoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given lifecycleState.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2212,20 +1857,20 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) SystemTags() 
 }
 
 // The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) WebAppAccelerationPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) string {
+func (o GetAppAccelerationsWebAppAccelerationCollectionItemOutput) WebAppAccelerationPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppAccelerationsWebAppAccelerationCollectionItem) *string {
 		return v.WebAppAccelerationPolicyId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2240,12 +1885,6 @@ func (o GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput) ToGetApp
 
 func (o GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput) ToGetAppAccelerationsWebAppAccelerationCollectionItemArrayOutputWithContext(ctx context.Context) GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollectionItem] {
-	return pulumix.Output[[]GetAppAccelerationsWebAppAccelerationCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAppAccelerationsWebAppAccelerationCollectionItemOutput {

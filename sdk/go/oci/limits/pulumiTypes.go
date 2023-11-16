@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -59,12 +58,6 @@ func (i QuotaLockArgs) ToQuotaLockOutputWithContext(ctx context.Context) QuotaLo
 	return pulumi.ToOutputWithContext(ctx, i).(QuotaLockOutput)
 }
 
-func (i QuotaLockArgs) ToOutput(ctx context.Context) pulumix.Output[QuotaLock] {
-	return pulumix.Output[QuotaLock]{
-		OutputState: i.ToQuotaLockOutputWithContext(ctx).OutputState,
-	}
-}
-
 // QuotaLockArrayInput is an input type that accepts QuotaLockArray and QuotaLockArrayOutput values.
 // You can construct a concrete instance of `QuotaLockArrayInput` via:
 //
@@ -90,12 +83,6 @@ func (i QuotaLockArray) ToQuotaLockArrayOutputWithContext(ctx context.Context) Q
 	return pulumi.ToOutputWithContext(ctx, i).(QuotaLockArrayOutput)
 }
 
-func (i QuotaLockArray) ToOutput(ctx context.Context) pulumix.Output[[]QuotaLock] {
-	return pulumix.Output[[]QuotaLock]{
-		OutputState: i.ToQuotaLockArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QuotaLockOutput struct{ *pulumi.OutputState }
 
 func (QuotaLockOutput) ElementType() reflect.Type {
@@ -108,12 +95,6 @@ func (o QuotaLockOutput) ToQuotaLockOutput() QuotaLockOutput {
 
 func (o QuotaLockOutput) ToQuotaLockOutputWithContext(ctx context.Context) QuotaLockOutput {
 	return o
-}
-
-func (o QuotaLockOutput) ToOutput(ctx context.Context) pulumix.Output[QuotaLock] {
-	return pulumix.Output[QuotaLock]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -148,12 +129,6 @@ func (o QuotaLockArrayOutput) ToQuotaLockArrayOutput() QuotaLockArrayOutput {
 
 func (o QuotaLockArrayOutput) ToQuotaLockArrayOutputWithContext(ctx context.Context) QuotaLockArrayOutput {
 	return o
-}
-
-func (o QuotaLockArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]QuotaLock] {
-	return pulumix.Output[[]QuotaLock]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QuotaLockArrayOutput) Index(i pulumi.IntInput) QuotaLockOutput {
@@ -199,12 +174,6 @@ func (i GetLimitDefinitionsFilterArgs) ToGetLimitDefinitionsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsFilterOutput)
 }
 
-func (i GetLimitDefinitionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsFilter] {
-	return pulumix.Output[GetLimitDefinitionsFilter]{
-		OutputState: i.ToGetLimitDefinitionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLimitDefinitionsFilterArrayInput is an input type that accepts GetLimitDefinitionsFilterArray and GetLimitDefinitionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLimitDefinitionsFilterArrayInput` via:
 //
@@ -230,12 +199,6 @@ func (i GetLimitDefinitionsFilterArray) ToGetLimitDefinitionsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsFilterArrayOutput)
 }
 
-func (i GetLimitDefinitionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsFilter] {
-	return pulumix.Output[[]GetLimitDefinitionsFilter]{
-		OutputState: i.ToGetLimitDefinitionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLimitDefinitionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLimitDefinitionsFilterOutput) ElementType() reflect.Type {
@@ -248,12 +211,6 @@ func (o GetLimitDefinitionsFilterOutput) ToGetLimitDefinitionsFilterOutput() Get
 
 func (o GetLimitDefinitionsFilterOutput) ToGetLimitDefinitionsFilterOutputWithContext(ctx context.Context) GetLimitDefinitionsFilterOutput {
 	return o
-}
-
-func (o GetLimitDefinitionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsFilter] {
-	return pulumix.Output[GetLimitDefinitionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional field, filter for a specific resource limit.
@@ -283,12 +240,6 @@ func (o GetLimitDefinitionsFilterArrayOutput) ToGetLimitDefinitionsFilterArrayOu
 	return o
 }
 
-func (o GetLimitDefinitionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsFilter] {
-	return pulumix.Output[[]GetLimitDefinitionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLimitDefinitionsFilterArrayOutput) Index(i pulumi.IntInput) GetLimitDefinitionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLimitDefinitionsFilter {
 		return vs[0].([]GetLimitDefinitionsFilter)[vs[1].(int)]
@@ -297,23 +248,23 @@ func (o GetLimitDefinitionsFilterArrayOutput) Index(i pulumi.IntInput) GetLimitD
 
 type GetLimitDefinitionsLimitDefinition struct {
 	// If true, quota policies can be created on top of this resource limit.
-	AreQuotasSupported bool `pulumi:"areQuotasSupported"`
+	AreQuotasSupported *bool `pulumi:"areQuotasSupported"`
 	// The limit description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Indicates if the limit has been deprecated.
-	IsDeprecated bool `pulumi:"isDeprecated"`
+	IsDeprecated *bool `pulumi:"isDeprecated"`
 	// The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
-	IsDynamic bool `pulumi:"isDynamic"`
+	IsDynamic *bool `pulumi:"isDynamic"`
 	// Indicates if the customer can request a limit increase for this resource.
-	IsEligibleForLimitIncrease bool `pulumi:"isEligibleForLimitIncrease"`
+	IsEligibleForLimitIncrease *bool `pulumi:"isEligibleForLimitIncrease"`
 	// Reflects whether or not the GetResourceAvailability API is supported for this limit. If not, the API returns an empty JSON response.
-	IsResourceAvailabilitySupported bool `pulumi:"isResourceAvailabilitySupported"`
+	IsResourceAvailabilitySupported *bool `pulumi:"isResourceAvailabilitySupported"`
 	// Optional field, filter for a specific resource limit.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
-	ScopeType string `pulumi:"scopeType"`
+	ScopeType *string `pulumi:"scopeType"`
 	// The target service name.
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 }
 
 // GetLimitDefinitionsLimitDefinitionInput is an input type that accepts GetLimitDefinitionsLimitDefinitionArgs and GetLimitDefinitionsLimitDefinitionOutput values.
@@ -329,23 +280,23 @@ type GetLimitDefinitionsLimitDefinitionInput interface {
 
 type GetLimitDefinitionsLimitDefinitionArgs struct {
 	// If true, quota policies can be created on top of this resource limit.
-	AreQuotasSupported pulumi.BoolInput `pulumi:"areQuotasSupported"`
+	AreQuotasSupported pulumi.BoolPtrInput `pulumi:"areQuotasSupported"`
 	// The limit description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Indicates if the limit has been deprecated.
-	IsDeprecated pulumi.BoolInput `pulumi:"isDeprecated"`
+	IsDeprecated pulumi.BoolPtrInput `pulumi:"isDeprecated"`
 	// The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
-	IsDynamic pulumi.BoolInput `pulumi:"isDynamic"`
+	IsDynamic pulumi.BoolPtrInput `pulumi:"isDynamic"`
 	// Indicates if the customer can request a limit increase for this resource.
-	IsEligibleForLimitIncrease pulumi.BoolInput `pulumi:"isEligibleForLimitIncrease"`
+	IsEligibleForLimitIncrease pulumi.BoolPtrInput `pulumi:"isEligibleForLimitIncrease"`
 	// Reflects whether or not the GetResourceAvailability API is supported for this limit. If not, the API returns an empty JSON response.
-	IsResourceAvailabilitySupported pulumi.BoolInput `pulumi:"isResourceAvailabilitySupported"`
+	IsResourceAvailabilitySupported pulumi.BoolPtrInput `pulumi:"isResourceAvailabilitySupported"`
 	// Optional field, filter for a specific resource limit.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
-	ScopeType pulumi.StringInput `pulumi:"scopeType"`
+	ScopeType pulumi.StringPtrInput `pulumi:"scopeType"`
 	// The target service name.
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 }
 
 func (GetLimitDefinitionsLimitDefinitionArgs) ElementType() reflect.Type {
@@ -358,12 +309,6 @@ func (i GetLimitDefinitionsLimitDefinitionArgs) ToGetLimitDefinitionsLimitDefini
 
 func (i GetLimitDefinitionsLimitDefinitionArgs) ToGetLimitDefinitionsLimitDefinitionOutputWithContext(ctx context.Context) GetLimitDefinitionsLimitDefinitionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsLimitDefinitionOutput)
-}
-
-func (i GetLimitDefinitionsLimitDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsLimitDefinition] {
-	return pulumix.Output[GetLimitDefinitionsLimitDefinition]{
-		OutputState: i.ToGetLimitDefinitionsLimitDefinitionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLimitDefinitionsLimitDefinitionArrayInput is an input type that accepts GetLimitDefinitionsLimitDefinitionArray and GetLimitDefinitionsLimitDefinitionArrayOutput values.
@@ -391,12 +336,6 @@ func (i GetLimitDefinitionsLimitDefinitionArray) ToGetLimitDefinitionsLimitDefin
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsLimitDefinitionArrayOutput)
 }
 
-func (i GetLimitDefinitionsLimitDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsLimitDefinition] {
-	return pulumix.Output[[]GetLimitDefinitionsLimitDefinition]{
-		OutputState: i.ToGetLimitDefinitionsLimitDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLimitDefinitionsLimitDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetLimitDefinitionsLimitDefinitionOutput) ElementType() reflect.Type {
@@ -411,55 +350,49 @@ func (o GetLimitDefinitionsLimitDefinitionOutput) ToGetLimitDefinitionsLimitDefi
 	return o
 }
 
-func (o GetLimitDefinitionsLimitDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsLimitDefinition] {
-	return pulumix.Output[GetLimitDefinitionsLimitDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If true, quota policies can be created on top of this resource limit.
-func (o GetLimitDefinitionsLimitDefinitionOutput) AreQuotasSupported() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) bool { return v.AreQuotasSupported }).(pulumi.BoolOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) AreQuotasSupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *bool { return v.AreQuotasSupported }).(pulumi.BoolPtrOutput)
 }
 
 // The limit description.
-func (o GetLimitDefinitionsLimitDefinitionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the limit has been deprecated.
-func (o GetLimitDefinitionsLimitDefinitionOutput) IsDeprecated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) bool { return v.IsDeprecated }).(pulumi.BoolOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) IsDeprecated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *bool { return v.IsDeprecated }).(pulumi.BoolPtrOutput)
 }
 
 // The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
-func (o GetLimitDefinitionsLimitDefinitionOutput) IsDynamic() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) bool { return v.IsDynamic }).(pulumi.BoolOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) IsDynamic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *bool { return v.IsDynamic }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the customer can request a limit increase for this resource.
-func (o GetLimitDefinitionsLimitDefinitionOutput) IsEligibleForLimitIncrease() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) bool { return v.IsEligibleForLimitIncrease }).(pulumi.BoolOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) IsEligibleForLimitIncrease() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *bool { return v.IsEligibleForLimitIncrease }).(pulumi.BoolPtrOutput)
 }
 
 // Reflects whether or not the GetResourceAvailability API is supported for this limit. If not, the API returns an empty JSON response.
-func (o GetLimitDefinitionsLimitDefinitionOutput) IsResourceAvailabilitySupported() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) bool { return v.IsResourceAvailabilitySupported }).(pulumi.BoolOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) IsResourceAvailabilitySupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *bool { return v.IsResourceAvailabilitySupported }).(pulumi.BoolPtrOutput)
 }
 
 // Optional field, filter for a specific resource limit.
-func (o GetLimitDefinitionsLimitDefinitionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
-func (o GetLimitDefinitionsLimitDefinitionOutput) ScopeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) string { return v.ScopeType }).(pulumi.StringOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) ScopeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *string { return v.ScopeType }).(pulumi.StringPtrOutput)
 }
 
 // The target service name.
-func (o GetLimitDefinitionsLimitDefinitionOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetLimitDefinitionsLimitDefinitionOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 type GetLimitDefinitionsLimitDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -474,12 +407,6 @@ func (o GetLimitDefinitionsLimitDefinitionArrayOutput) ToGetLimitDefinitionsLimi
 
 func (o GetLimitDefinitionsLimitDefinitionArrayOutput) ToGetLimitDefinitionsLimitDefinitionArrayOutputWithContext(ctx context.Context) GetLimitDefinitionsLimitDefinitionArrayOutput {
 	return o
-}
-
-func (o GetLimitDefinitionsLimitDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsLimitDefinition] {
-	return pulumix.Output[[]GetLimitDefinitionsLimitDefinition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLimitDefinitionsLimitDefinitionArrayOutput) Index(i pulumi.IntInput) GetLimitDefinitionsLimitDefinitionOutput {
@@ -525,12 +452,6 @@ func (i GetLimitValuesFilterArgs) ToGetLimitValuesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesFilterOutput)
 }
 
-func (i GetLimitValuesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesFilter] {
-	return pulumix.Output[GetLimitValuesFilter]{
-		OutputState: i.ToGetLimitValuesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLimitValuesFilterArrayInput is an input type that accepts GetLimitValuesFilterArray and GetLimitValuesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLimitValuesFilterArrayInput` via:
 //
@@ -556,12 +477,6 @@ func (i GetLimitValuesFilterArray) ToGetLimitValuesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesFilterArrayOutput)
 }
 
-func (i GetLimitValuesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesFilter] {
-	return pulumix.Output[[]GetLimitValuesFilter]{
-		OutputState: i.ToGetLimitValuesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLimitValuesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLimitValuesFilterOutput) ElementType() reflect.Type {
@@ -574,12 +489,6 @@ func (o GetLimitValuesFilterOutput) ToGetLimitValuesFilterOutput() GetLimitValue
 
 func (o GetLimitValuesFilterOutput) ToGetLimitValuesFilterOutputWithContext(ctx context.Context) GetLimitValuesFilterOutput {
 	return o
-}
-
-func (o GetLimitValuesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesFilter] {
-	return pulumix.Output[GetLimitValuesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional field, can be used to see a specific resource limit value.
@@ -609,12 +518,6 @@ func (o GetLimitValuesFilterArrayOutput) ToGetLimitValuesFilterArrayOutputWithCo
 	return o
 }
 
-func (o GetLimitValuesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesFilter] {
-	return pulumix.Output[[]GetLimitValuesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLimitValuesFilterArrayOutput) Index(i pulumi.IntInput) GetLimitValuesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLimitValuesFilter {
 		return vs[0].([]GetLimitValuesFilter)[vs[1].(int)]
@@ -623,13 +526,13 @@ func (o GetLimitValuesFilterArrayOutput) Index(i pulumi.IntInput) GetLimitValues
 
 type GetLimitValuesLimitValue struct {
 	// Filter entries by availability domain. This implies that only AD-specific values are returned.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Optional field, can be used to see a specific resource limit value.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Filter entries by scope type.
-	ScopeType string `pulumi:"scopeType"`
+	ScopeType *string `pulumi:"scopeType"`
 	// The resource limit value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetLimitValuesLimitValueInput is an input type that accepts GetLimitValuesLimitValueArgs and GetLimitValuesLimitValueOutput values.
@@ -645,13 +548,13 @@ type GetLimitValuesLimitValueInput interface {
 
 type GetLimitValuesLimitValueArgs struct {
 	// Filter entries by availability domain. This implies that only AD-specific values are returned.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// Optional field, can be used to see a specific resource limit value.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Filter entries by scope type.
-	ScopeType pulumi.StringInput `pulumi:"scopeType"`
+	ScopeType pulumi.StringPtrInput `pulumi:"scopeType"`
 	// The resource limit value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetLimitValuesLimitValueArgs) ElementType() reflect.Type {
@@ -664,12 +567,6 @@ func (i GetLimitValuesLimitValueArgs) ToGetLimitValuesLimitValueOutput() GetLimi
 
 func (i GetLimitValuesLimitValueArgs) ToGetLimitValuesLimitValueOutputWithContext(ctx context.Context) GetLimitValuesLimitValueOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesLimitValueOutput)
-}
-
-func (i GetLimitValuesLimitValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesLimitValue] {
-	return pulumix.Output[GetLimitValuesLimitValue]{
-		OutputState: i.ToGetLimitValuesLimitValueOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLimitValuesLimitValueArrayInput is an input type that accepts GetLimitValuesLimitValueArray and GetLimitValuesLimitValueArrayOutput values.
@@ -697,12 +594,6 @@ func (i GetLimitValuesLimitValueArray) ToGetLimitValuesLimitValueArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesLimitValueArrayOutput)
 }
 
-func (i GetLimitValuesLimitValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesLimitValue] {
-	return pulumix.Output[[]GetLimitValuesLimitValue]{
-		OutputState: i.ToGetLimitValuesLimitValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLimitValuesLimitValueOutput struct{ *pulumi.OutputState }
 
 func (GetLimitValuesLimitValueOutput) ElementType() reflect.Type {
@@ -717,30 +608,24 @@ func (o GetLimitValuesLimitValueOutput) ToGetLimitValuesLimitValueOutputWithCont
 	return o
 }
 
-func (o GetLimitValuesLimitValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesLimitValue] {
-	return pulumix.Output[GetLimitValuesLimitValue]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filter entries by availability domain. This implies that only AD-specific values are returned.
-func (o GetLimitValuesLimitValueOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitValuesLimitValue) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetLimitValuesLimitValueOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitValuesLimitValue) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // Optional field, can be used to see a specific resource limit value.
-func (o GetLimitValuesLimitValueOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitValuesLimitValue) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLimitValuesLimitValueOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitValuesLimitValue) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Filter entries by scope type.
-func (o GetLimitValuesLimitValueOutput) ScopeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitValuesLimitValue) string { return v.ScopeType }).(pulumi.StringOutput)
+func (o GetLimitValuesLimitValueOutput) ScopeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitValuesLimitValue) *string { return v.ScopeType }).(pulumi.StringPtrOutput)
 }
 
 // The resource limit value.
-func (o GetLimitValuesLimitValueOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitValuesLimitValue) string { return v.Value }).(pulumi.StringOutput)
+func (o GetLimitValuesLimitValueOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitValuesLimitValue) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetLimitValuesLimitValueArrayOutput struct{ *pulumi.OutputState }
@@ -757,12 +642,6 @@ func (o GetLimitValuesLimitValueArrayOutput) ToGetLimitValuesLimitValueArrayOutp
 	return o
 }
 
-func (o GetLimitValuesLimitValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesLimitValue] {
-	return pulumix.Output[[]GetLimitValuesLimitValue]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLimitValuesLimitValueArrayOutput) Index(i pulumi.IntInput) GetLimitValuesLimitValueOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLimitValuesLimitValue {
 		return vs[0].([]GetLimitValuesLimitValue)[vs[1].(int)]
@@ -771,13 +650,13 @@ func (o GetLimitValuesLimitValueArrayOutput) Index(i pulumi.IntInput) GetLimitVa
 
 type GetQuotaLock struct {
 	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-	RelatedResourceId string `pulumi:"relatedResourceId"`
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Lock type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetQuotaLockInput is an input type that accepts GetQuotaLockArgs and GetQuotaLockOutput values.
@@ -793,13 +672,13 @@ type GetQuotaLockInput interface {
 
 type GetQuotaLockArgs struct {
 	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Lock type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetQuotaLockArgs) ElementType() reflect.Type {
@@ -812,12 +691,6 @@ func (i GetQuotaLockArgs) ToGetQuotaLockOutput() GetQuotaLockOutput {
 
 func (i GetQuotaLockArgs) ToGetQuotaLockOutputWithContext(ctx context.Context) GetQuotaLockOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotaLockOutput)
-}
-
-func (i GetQuotaLockArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotaLock] {
-	return pulumix.Output[GetQuotaLock]{
-		OutputState: i.ToGetQuotaLockOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQuotaLockArrayInput is an input type that accepts GetQuotaLockArray and GetQuotaLockArrayOutput values.
@@ -845,12 +718,6 @@ func (i GetQuotaLockArray) ToGetQuotaLockArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotaLockArrayOutput)
 }
 
-func (i GetQuotaLockArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotaLock] {
-	return pulumix.Output[[]GetQuotaLock]{
-		OutputState: i.ToGetQuotaLockArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQuotaLockOutput struct{ *pulumi.OutputState }
 
 func (GetQuotaLockOutput) ElementType() reflect.Type {
@@ -865,30 +732,24 @@ func (o GetQuotaLockOutput) ToGetQuotaLockOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o GetQuotaLockOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotaLock] {
-	return pulumix.Output[GetQuotaLock]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-func (o GetQuotaLockOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotaLock) string { return v.Message }).(pulumi.StringOutput)
+func (o GetQuotaLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotaLock) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-func (o GetQuotaLockOutput) RelatedResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotaLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+func (o GetQuotaLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotaLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-func (o GetQuotaLockOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotaLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetQuotaLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotaLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Lock type.
-func (o GetQuotaLockOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotaLock) string { return v.Type }).(pulumi.StringOutput)
+func (o GetQuotaLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotaLock) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetQuotaLockArrayOutput struct{ *pulumi.OutputState }
@@ -903,12 +764,6 @@ func (o GetQuotaLockArrayOutput) ToGetQuotaLockArrayOutput() GetQuotaLockArrayOu
 
 func (o GetQuotaLockArrayOutput) ToGetQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotaLockArrayOutput {
 	return o
-}
-
-func (o GetQuotaLockArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotaLock] {
-	return pulumix.Output[[]GetQuotaLock]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQuotaLockArrayOutput) Index(i pulumi.IntInput) GetQuotaLockOutput {
@@ -954,12 +809,6 @@ func (i GetQuotasFilterArgs) ToGetQuotasFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasFilterOutput)
 }
 
-func (i GetQuotasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotasFilter] {
-	return pulumix.Output[GetQuotasFilter]{
-		OutputState: i.ToGetQuotasFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetQuotasFilterArrayInput is an input type that accepts GetQuotasFilterArray and GetQuotasFilterArrayOutput values.
 // You can construct a concrete instance of `GetQuotasFilterArrayInput` via:
 //
@@ -985,12 +834,6 @@ func (i GetQuotasFilterArray) ToGetQuotasFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasFilterArrayOutput)
 }
 
-func (i GetQuotasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasFilter] {
-	return pulumix.Output[[]GetQuotasFilter]{
-		OutputState: i.ToGetQuotasFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQuotasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetQuotasFilterOutput) ElementType() reflect.Type {
@@ -1003,12 +846,6 @@ func (o GetQuotasFilterOutput) ToGetQuotasFilterOutput() GetQuotasFilterOutput {
 
 func (o GetQuotasFilterOutput) ToGetQuotasFilterOutputWithContext(ctx context.Context) GetQuotasFilterOutput {
 	return o
-}
-
-func (o GetQuotasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasFilter] {
-	return pulumix.Output[GetQuotasFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // name
@@ -1038,12 +875,6 @@ func (o GetQuotasFilterArrayOutput) ToGetQuotasFilterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetQuotasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasFilter] {
-	return pulumix.Output[[]GetQuotasFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQuotasFilterArrayOutput) Index(i pulumi.IntInput) GetQuotasFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQuotasFilter {
 		return vs[0].([]GetQuotasFilter)[vs[1].(int)]
@@ -1052,26 +883,26 @@ func (o GetQuotasFilterArrayOutput) Index(i pulumi.IntInput) GetQuotasFilterOutp
 
 type GetQuotasQuota struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description you assign to the quota.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the quota.
-	Id             string `pulumi:"id"`
-	IsLockOverride bool   `pulumi:"isLockOverride"`
+	Id             *string `pulumi:"id"`
+	IsLockOverride *bool   `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks []GetQuotasQuotaLock `pulumi:"locks"`
 	// name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Filters returned quotas based on the given state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An array of one or more quota statements written in the declarative quota statement language.
 	Statements []string `pulumi:"statements"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetQuotasQuotaInput is an input type that accepts GetQuotasQuotaArgs and GetQuotasQuotaOutput values.
@@ -1087,26 +918,26 @@ type GetQuotasQuotaInput interface {
 
 type GetQuotasQuotaArgs struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description you assign to the quota.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the quota.
-	Id             pulumi.StringInput `pulumi:"id"`
-	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
+	Id             pulumi.StringPtrInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolPtrInput   `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks GetQuotasQuotaLockArrayInput `pulumi:"locks"`
 	// name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Filters returned quotas based on the given state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// An array of one or more quota statements written in the declarative quota statement language.
 	Statements pulumi.StringArrayInput `pulumi:"statements"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetQuotasQuotaArgs) ElementType() reflect.Type {
@@ -1119,12 +950,6 @@ func (i GetQuotasQuotaArgs) ToGetQuotasQuotaOutput() GetQuotasQuotaOutput {
 
 func (i GetQuotasQuotaArgs) ToGetQuotasQuotaOutputWithContext(ctx context.Context) GetQuotasQuotaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaOutput)
-}
-
-func (i GetQuotasQuotaArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuota] {
-	return pulumix.Output[GetQuotasQuota]{
-		OutputState: i.ToGetQuotasQuotaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQuotasQuotaArrayInput is an input type that accepts GetQuotasQuotaArray and GetQuotasQuotaArrayOutput values.
@@ -1152,12 +977,6 @@ func (i GetQuotasQuotaArray) ToGetQuotasQuotaArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaArrayOutput)
 }
 
-func (i GetQuotasQuotaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuota] {
-	return pulumix.Output[[]GetQuotasQuota]{
-		OutputState: i.ToGetQuotasQuotaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQuotasQuotaOutput struct{ *pulumi.OutputState }
 
 func (GetQuotasQuotaOutput) ElementType() reflect.Type {
@@ -1172,15 +991,9 @@ func (o GetQuotasQuotaOutput) ToGetQuotasQuotaOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetQuotasQuotaOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuota] {
-	return pulumix.Output[GetQuotasQuota]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-func (o GetQuotasQuotaOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuota) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetQuotasQuotaOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuota) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1189,8 +1002,8 @@ func (o GetQuotasQuotaOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description you assign to the quota.
-func (o GetQuotasQuotaOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuota) string { return v.Description }).(pulumi.StringOutput)
+func (o GetQuotasQuotaOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuota) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -1199,12 +1012,12 @@ func (o GetQuotasQuotaOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the quota.
-func (o GetQuotasQuotaOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuota) string { return v.Id }).(pulumi.StringOutput)
+func (o GetQuotasQuotaOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuota) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetQuotasQuotaOutput) IsLockOverride() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetQuotasQuota) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+func (o GetQuotasQuotaOutput) IsLockOverride() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuota) *bool { return v.IsLockOverride }).(pulumi.BoolPtrOutput)
 }
 
 // Locks associated with this resource.
@@ -1213,13 +1026,13 @@ func (o GetQuotasQuotaOutput) Locks() GetQuotasQuotaLockArrayOutput {
 }
 
 // name
-func (o GetQuotasQuotaOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuota) string { return v.Name }).(pulumi.StringOutput)
+func (o GetQuotasQuotaOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuota) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Filters returned quotas based on the given state.
-func (o GetQuotasQuotaOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuota) string { return v.State }).(pulumi.StringOutput)
+func (o GetQuotasQuotaOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuota) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An array of one or more quota statements written in the declarative quota statement language.
@@ -1228,8 +1041,8 @@ func (o GetQuotasQuotaOutput) Statements() pulumi.StringArrayOutput {
 }
 
 // Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-func (o GetQuotasQuotaOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuota) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetQuotasQuotaOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuota) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetQuotasQuotaArrayOutput struct{ *pulumi.OutputState }
@@ -1246,12 +1059,6 @@ func (o GetQuotasQuotaArrayOutput) ToGetQuotasQuotaArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetQuotasQuotaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuota] {
-	return pulumix.Output[[]GetQuotasQuota]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQuotasQuotaArrayOutput) Index(i pulumi.IntInput) GetQuotasQuotaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQuotasQuota {
 		return vs[0].([]GetQuotasQuota)[vs[1].(int)]
@@ -1260,13 +1067,13 @@ func (o GetQuotasQuotaArrayOutput) Index(i pulumi.IntInput) GetQuotasQuotaOutput
 
 type GetQuotasQuotaLock struct {
 	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-	RelatedResourceId string `pulumi:"relatedResourceId"`
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Lock type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetQuotasQuotaLockInput is an input type that accepts GetQuotasQuotaLockArgs and GetQuotasQuotaLockOutput values.
@@ -1282,13 +1089,13 @@ type GetQuotasQuotaLockInput interface {
 
 type GetQuotasQuotaLockArgs struct {
 	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Lock type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetQuotasQuotaLockArgs) ElementType() reflect.Type {
@@ -1301,12 +1108,6 @@ func (i GetQuotasQuotaLockArgs) ToGetQuotasQuotaLockOutput() GetQuotasQuotaLockO
 
 func (i GetQuotasQuotaLockArgs) ToGetQuotasQuotaLockOutputWithContext(ctx context.Context) GetQuotasQuotaLockOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaLockOutput)
-}
-
-func (i GetQuotasQuotaLockArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuotaLock] {
-	return pulumix.Output[GetQuotasQuotaLock]{
-		OutputState: i.ToGetQuotasQuotaLockOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQuotasQuotaLockArrayInput is an input type that accepts GetQuotasQuotaLockArray and GetQuotasQuotaLockArrayOutput values.
@@ -1334,12 +1135,6 @@ func (i GetQuotasQuotaLockArray) ToGetQuotasQuotaLockArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaLockArrayOutput)
 }
 
-func (i GetQuotasQuotaLockArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuotaLock] {
-	return pulumix.Output[[]GetQuotasQuotaLock]{
-		OutputState: i.ToGetQuotasQuotaLockArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQuotasQuotaLockOutput struct{ *pulumi.OutputState }
 
 func (GetQuotasQuotaLockOutput) ElementType() reflect.Type {
@@ -1354,30 +1149,24 @@ func (o GetQuotasQuotaLockOutput) ToGetQuotasQuotaLockOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetQuotasQuotaLockOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuotaLock] {
-	return pulumix.Output[GetQuotasQuotaLock]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-func (o GetQuotasQuotaLockOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.Message }).(pulumi.StringOutput)
+func (o GetQuotasQuotaLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-func (o GetQuotasQuotaLockOutput) RelatedResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+func (o GetQuotasQuotaLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-func (o GetQuotasQuotaLockOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetQuotasQuotaLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Lock type.
-func (o GetQuotasQuotaLockOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.Type }).(pulumi.StringOutput)
+func (o GetQuotasQuotaLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetQuotasQuotaLockArrayOutput struct{ *pulumi.OutputState }
@@ -1392,12 +1181,6 @@ func (o GetQuotasQuotaLockArrayOutput) ToGetQuotasQuotaLockArrayOutput() GetQuot
 
 func (o GetQuotasQuotaLockArrayOutput) ToGetQuotasQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotasQuotaLockArrayOutput {
 	return o
-}
-
-func (o GetQuotasQuotaLockArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuotaLock] {
-	return pulumix.Output[[]GetQuotasQuotaLock]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQuotasQuotaLockArrayOutput) Index(i pulumi.IntInput) GetQuotasQuotaLockOutput {
@@ -1443,12 +1226,6 @@ func (i GetServicesFilterArgs) ToGetServicesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterOutput)
 }
 
-func (i GetServicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServicesFilter] {
-	return pulumix.Output[GetServicesFilter]{
-		OutputState: i.ToGetServicesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServicesFilterArrayInput is an input type that accepts GetServicesFilterArray and GetServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetServicesFilterArrayInput` via:
 //
@@ -1474,12 +1251,6 @@ func (i GetServicesFilterArray) ToGetServicesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterArrayOutput)
 }
 
-func (i GetServicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesFilter] {
-	return pulumix.Output[[]GetServicesFilter]{
-		OutputState: i.ToGetServicesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServicesFilterOutput) ElementType() reflect.Type {
@@ -1492,12 +1263,6 @@ func (o GetServicesFilterOutput) ToGetServicesFilterOutput() GetServicesFilterOu
 
 func (o GetServicesFilterOutput) ToGetServicesFilterOutputWithContext(ctx context.Context) GetServicesFilterOutput {
 	return o
-}
-
-func (o GetServicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesFilter] {
-	return pulumix.Output[GetServicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The service name. Use this when calling other APIs.
@@ -1527,12 +1292,6 @@ func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetServicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesFilter] {
-	return pulumix.Output[[]GetServicesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServicesFilterArrayOutput) Index(i pulumi.IntInput) GetServicesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServicesFilter {
 		return vs[0].([]GetServicesFilter)[vs[1].(int)]
@@ -1541,9 +1300,9 @@ func (o GetServicesFilterArrayOutput) Index(i pulumi.IntInput) GetServicesFilter
 
 type GetServicesService struct {
 	// The friendly service name.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The service name. Use this when calling other APIs.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetServicesServiceInput is an input type that accepts GetServicesServiceArgs and GetServicesServiceOutput values.
@@ -1559,9 +1318,9 @@ type GetServicesServiceInput interface {
 
 type GetServicesServiceArgs struct {
 	// The friendly service name.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The service name. Use this when calling other APIs.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetServicesServiceArgs) ElementType() reflect.Type {
@@ -1574,12 +1333,6 @@ func (i GetServicesServiceArgs) ToGetServicesServiceOutput() GetServicesServiceO
 
 func (i GetServicesServiceArgs) ToGetServicesServiceOutputWithContext(ctx context.Context) GetServicesServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceOutput)
-}
-
-func (i GetServicesServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServicesService] {
-	return pulumix.Output[GetServicesService]{
-		OutputState: i.ToGetServicesServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetServicesServiceArrayInput is an input type that accepts GetServicesServiceArray and GetServicesServiceArrayOutput values.
@@ -1607,12 +1360,6 @@ func (i GetServicesServiceArray) ToGetServicesServiceArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceArrayOutput)
 }
 
-func (i GetServicesServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesService] {
-	return pulumix.Output[[]GetServicesService]{
-		OutputState: i.ToGetServicesServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServicesServiceOutput struct{ *pulumi.OutputState }
 
 func (GetServicesServiceOutput) ElementType() reflect.Type {
@@ -1627,20 +1374,14 @@ func (o GetServicesServiceOutput) ToGetServicesServiceOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetServicesServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesService] {
-	return pulumix.Output[GetServicesService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The friendly service name.
-func (o GetServicesServiceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServicesService) string { return v.Description }).(pulumi.StringOutput)
+func (o GetServicesServiceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServicesService) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The service name. Use this when calling other APIs.
-func (o GetServicesServiceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServicesService) string { return v.Name }).(pulumi.StringOutput)
+func (o GetServicesServiceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServicesService) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetServicesServiceArrayOutput struct{ *pulumi.OutputState }
@@ -1655,12 +1396,6 @@ func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutput() GetServ
 
 func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutputWithContext(ctx context.Context) GetServicesServiceArrayOutput {
 	return o
-}
-
-func (o GetServicesServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesService] {
-	return pulumix.Output[[]GetServicesService]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServicesServiceArrayOutput) Index(i pulumi.IntInput) GetServicesServiceOutput {

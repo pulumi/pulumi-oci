@@ -22,10 +22,6 @@ class ProtectionRuleArgs:
                  exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None):
         """
         The set of arguments for constructing a ProtectionRule resource.
-        :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-        :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "waas_policy_id", waas_policy_id)
@@ -37,9 +33,6 @@ class ProtectionRuleArgs:
     @property
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique key of the protection rule.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -49,9 +42,6 @@ class ProtectionRuleArgs:
     @property
     @pulumi.getter(name="waasPolicyId")
     def waas_policy_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-        """
         return pulumi.get(self, "waas_policy_id")
 
     @waas_policy_id.setter
@@ -61,9 +51,6 @@ class ProtectionRuleArgs:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -73,9 +60,6 @@ class ProtectionRuleArgs:
     @property
     @pulumi.getter
     def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
-        """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
@@ -96,14 +80,6 @@ class _ProtectionRuleState:
                  waas_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ProtectionRule resources.
-        :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        :param pulumi.Input[str] description: The description of the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The list of labels for the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] mod_security_rule_ids: The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-        :param pulumi.Input[str] name: The name of the protection rule.
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -125,9 +101,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -137,9 +110,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        The description of the protection rule.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -149,9 +119,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter
     def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
-        """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
@@ -161,9 +128,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique key of the protection rule.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -173,9 +137,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of labels for the protection rule.
-        """
         return pulumi.get(self, "labels")
 
     @labels.setter
@@ -185,9 +146,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter(name="modSecurityRuleIds")
     def mod_security_rule_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-        """
         return pulumi.get(self, "mod_security_rule_ids")
 
     @mod_security_rule_ids.setter
@@ -197,9 +155,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the protection rule.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -209,9 +164,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter(name="waasPolicyId")
     def waas_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-        """
         return pulumi.get(self, "waas_policy_id")
 
     @waas_policy_id.setter
@@ -230,26 +182,9 @@ class ProtectionRule(pulumi.CustomResource):
                  waas_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Updates the action for each specified protection rule. Requests can either be allowed, blocked, or trigger an alert if they meet the parameters of an applied rule. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
-        This operation can update or disable protection rules depending on the structure of the request body.
-        Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
-
-        ## Import
-
-        ProtectionRules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
-        ```
-
+        Create a ProtectionRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleExclusionArgs']]]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         """
         ...
     @overload
@@ -258,20 +193,7 @@ class ProtectionRule(pulumi.CustomResource):
                  args: ProtectionRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Updates the action for each specified protection rule. Requests can either be allowed, blocked, or trigger an alert if they meet the parameters of an applied rule. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
-        This operation can update or disable protection rules depending on the structure of the request body.
-        Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
-
-        ## Import
-
-        ProtectionRules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
-        ```
-
+        Create a ProtectionRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ProtectionRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -337,14 +259,6 @@ class ProtectionRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        :param pulumi.Input[str] description: The description of the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleExclusionArgs']]]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The list of labels for the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] mod_security_rule_ids: The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-        :param pulumi.Input[str] name: The name of the protection rule.
-        :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -362,65 +276,41 @@ class ProtectionRule(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def action(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        """
+    def action(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        The description of the protection rule.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def exclusions(self) -> pulumi.Output[Sequence['outputs.ProtectionRuleExclusion']]:
-        """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
+    def exclusions(self) -> pulumi.Output[Optional[Sequence['outputs.ProtectionRuleExclusion']]]:
         return pulumi.get(self, "exclusions")
 
     @property
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The unique key of the protection rule.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of labels for the protection rule.
-        """
+    def labels(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="modSecurityRuleIds")
-    def mod_security_rule_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-        """
+    def mod_security_rule_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "mod_security_rule_ids")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        """
-        The name of the protection rule.
-        """
+    def name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="waasPolicyId")
     def waas_policy_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
-        """
         return pulumi.get(self, "waas_policy_id")
 

@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemMetricLabelMetricsReport {
@@ -17,22 +19,22 @@ public final class GetModelsModelCollectionItemMetricLabelMetricsReport {
      * @return List of document classification confidence report.
      * 
      */
-    private List<GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry> confidenceEntries;
+    private @Nullable List<GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry> confidenceEntries;
     /**
      * @return Total test documents in the label.
      * 
      */
-    private Integer documentCount;
+    private @Nullable Integer documentCount;
     /**
      * @return Label name
      * 
      */
-    private String label;
+    private @Nullable String label;
     /**
      * @return Mean average precision under different thresholds
      * 
      */
-    private Double meanAveragePrecision;
+    private @Nullable Double meanAveragePrecision;
 
     private GetModelsModelCollectionItemMetricLabelMetricsReport() {}
     /**
@@ -40,28 +42,28 @@ public final class GetModelsModelCollectionItemMetricLabelMetricsReport {
      * 
      */
     public List<GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry> confidenceEntries() {
-        return this.confidenceEntries;
+        return this.confidenceEntries == null ? List.of() : this.confidenceEntries;
     }
     /**
      * @return Total test documents in the label.
      * 
      */
-    public Integer documentCount() {
-        return this.documentCount;
+    public Optional<Integer> documentCount() {
+        return Optional.ofNullable(this.documentCount);
     }
     /**
      * @return Label name
      * 
      */
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     /**
      * @return Mean average precision under different thresholds
      * 
      */
-    public Double meanAveragePrecision() {
-        return this.meanAveragePrecision;
+    public Optional<Double> meanAveragePrecision() {
+        return Optional.ofNullable(this.meanAveragePrecision);
     }
 
     public static Builder builder() {
@@ -73,10 +75,10 @@ public final class GetModelsModelCollectionItemMetricLabelMetricsReport {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry> confidenceEntries;
-        private Integer documentCount;
-        private String label;
-        private Double meanAveragePrecision;
+        private @Nullable List<GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry> confidenceEntries;
+        private @Nullable Integer documentCount;
+        private @Nullable String label;
+        private @Nullable Double meanAveragePrecision;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemMetricLabelMetricsReport defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,26 +89,26 @@ public final class GetModelsModelCollectionItemMetricLabelMetricsReport {
         }
 
         @CustomType.Setter
-        public Builder confidenceEntries(List<GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry> confidenceEntries) {
-            this.confidenceEntries = Objects.requireNonNull(confidenceEntries);
+        public Builder confidenceEntries(@Nullable List<GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry> confidenceEntries) {
+            this.confidenceEntries = confidenceEntries;
             return this;
         }
         public Builder confidenceEntries(GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry... confidenceEntries) {
             return confidenceEntries(List.of(confidenceEntries));
         }
         @CustomType.Setter
-        public Builder documentCount(Integer documentCount) {
-            this.documentCount = Objects.requireNonNull(documentCount);
+        public Builder documentCount(@Nullable Integer documentCount) {
+            this.documentCount = documentCount;
             return this;
         }
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder meanAveragePrecision(Double meanAveragePrecision) {
-            this.meanAveragePrecision = Objects.requireNonNull(meanAveragePrecision);
+        public Builder meanAveragePrecision(@Nullable Double meanAveragePrecision) {
+            this.meanAveragePrecision = meanAveragePrecision;
             return this;
         }
         public GetModelsModelCollectionItemMetricLabelMetricsReport build() {

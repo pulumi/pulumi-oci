@@ -16,23 +16,23 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
         /// </summary>
-        public readonly int DurationInMinutes;
+        public readonly int? DurationInMinutes;
         /// <summary>
         /// The comparison operator to use. Options are greater than (GT) or less than (LT).
         /// </summary>
-        public readonly string Operator;
+        public readonly string? Operator;
         /// <summary>
         /// Integer non-negative value. 0 &lt; value &lt; 100
         /// </summary>
-        public readonly int Value;
+        public readonly int? Value;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdResult(
-            int durationInMinutes,
+            int? durationInMinutes,
 
-            string @operator,
+            string? @operator,
 
-            int value)
+            int? value)
         {
             DurationInMinutes = durationInMinutes;
             Operator = @operator;

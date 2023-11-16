@@ -28,7 +28,7 @@ public final class GetExternalAsmsResult {
      * @return The list of external_asm_collection.
      * 
      */
-    private List<GetExternalAsmsExternalAsmCollection> externalAsmCollections;
+    private @Nullable List<GetExternalAsmsExternalAsmCollection> externalAsmCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
      * 
@@ -39,7 +39,7 @@ public final class GetExternalAsmsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalAsmsResult() {}
     /**
@@ -61,7 +61,7 @@ public final class GetExternalAsmsResult {
      * 
      */
     public List<GetExternalAsmsExternalAsmCollection> externalAsmCollections() {
-        return this.externalAsmCollections;
+        return this.externalAsmCollections == null ? List.of() : this.externalAsmCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
@@ -77,8 +77,8 @@ public final class GetExternalAsmsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -92,10 +92,10 @@ public final class GetExternalAsmsResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalAsmsExternalAsmCollection> externalAsmCollections;
+        private @Nullable List<GetExternalAsmsExternalAsmCollection> externalAsmCollections;
         private @Nullable String externalDbSystemId;
         private @Nullable List<GetExternalAsmsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalAsmsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetExternalAsmsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalAsmCollections(List<GetExternalAsmsExternalAsmCollection> externalAsmCollections) {
-            this.externalAsmCollections = Objects.requireNonNull(externalAsmCollections);
+        public Builder externalAsmCollections(@Nullable List<GetExternalAsmsExternalAsmCollection> externalAsmCollections) {
+            this.externalAsmCollections = externalAsmCollections;
             return this;
         }
         public Builder externalAsmCollections(GetExternalAsmsExternalAsmCollection... externalAsmCollections) {
@@ -139,8 +139,8 @@ public final class GetExternalAsmsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalAsmsResult build() {

@@ -57,78 +57,51 @@ class GetDataSafeConfigurationResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy used to enable Data Safe.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataSafeNatGatewayIpAddress")
-    def data_safe_nat_gateway_ip_address(self) -> str:
-        """
-        The Oracle Data Safe's NAT Gateway IP Address.
-        """
+    def data_safe_nat_gateway_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "data_safe_nat_gateway_ip_address")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="globalSettings")
-    def global_settings(self) -> Sequence['outputs.GetDataSafeConfigurationGlobalSettingResult']:
-        """
-        Details of the tenancy level global settings in Data Safe.
-        """
+    def global_settings(self) -> Optional[Sequence['outputs.GetDataSafeConfigurationGlobalSettingResult']]:
         return pulumi.get(self, "global_settings")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Indicates if Data Safe is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of Data Safe.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeEnabled")
-    def time_enabled(self) -> str:
-        """
-        The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_enabled(self) -> Optional[str]:
         return pulumi.get(self, "time_enabled")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL of the Data Safe service.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
@@ -153,21 +126,7 @@ class AwaitableGetDataSafeConfigurationResult(GetDataSafeConfigurationResult):
 def get_data_safe_configuration(compartment_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataSafeConfigurationResult:
     """
-    This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the Data Safe configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_safe_configuration = oci.DataSafe.get_data_safe_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -191,20 +150,6 @@ def get_data_safe_configuration(compartment_id: Optional[str] = None,
 def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSafeConfigurationResult]:
     """
-    This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the Data Safe configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_safe_configuration = oci.DataSafe.get_data_safe_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

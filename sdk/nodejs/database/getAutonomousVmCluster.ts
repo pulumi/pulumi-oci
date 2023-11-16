@@ -44,173 +44,173 @@ export interface GetAutonomousVmClusterArgs {
  * A collection of values returned by getAutonomousVmCluster.
  */
 export interface GetAutonomousVmClusterResult {
-    readonly autonomousDataStoragePercentage: number;
+    readonly autonomousDataStoragePercentage?: number;
     /**
      * The data disk group size allocated for Autonomous Databases, in TBs.
      */
-    readonly autonomousDataStorageSizeInTbs: number;
+    readonly autonomousDataStorageSizeInTbs?: number;
     readonly autonomousVmClusterId: string;
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
      */
-    readonly availableAutonomousDataStorageSizeInTbs: number;
+    readonly availableAutonomousDataStorageSizeInTbs?: number;
     /**
      * The number of Autonomous Container Databases that can be created with the currently available local storage.
      */
-    readonly availableContainerDatabases: number;
+    readonly availableContainerDatabases?: number;
     /**
      * The numnber of CPU cores available.
      */
-    readonly availableCpus: number;
+    readonly availableCpus?: number;
     /**
      * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
      */
-    readonly availableDataStorageSizeInTbs: number;
+    readonly availableDataStorageSizeInTbs?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The compute model of the Autonomous VM Cluster.
      */
-    readonly computeModel: string;
+    readonly computeModel?: string;
     /**
      * The number of CPU cores enabled per VM cluster node.
      */
-    readonly cpuCoreCountPerNode: number;
-    readonly cpuPercentage: number;
+    readonly cpuCoreCountPerNode?: number;
+    readonly cpuPercentage?: number;
     /**
      * The number of enabled CPU cores.
      */
-    readonly cpusEnabled: number;
+    readonly cpusEnabled?: number;
     /**
      * The total data storage allocated in GBs.
      */
-    readonly dataStorageSizeInGb: number;
+    readonly dataStorageSizeInGb?: number;
     /**
      * The total data storage allocated in TBs
      */
-    readonly dataStorageSizeInTbs: number;
+    readonly dataStorageSizeInTbs?: number;
     /**
      * The local node storage allocated in GBs.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      */
-    readonly dbServers: string[];
+    readonly dbServers?: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    readonly exadataInfrastructureId: string;
+    readonly exadataInfrastructureId?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
      */
-    readonly isLocalBackupEnabled: boolean;
+    readonly isLocalBackupEnabled?: boolean;
     /**
      * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      */
-    readonly isMtlsEnabled: boolean;
+    readonly isMtlsEnabled?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    readonly lastMaintenanceRunId: string;
+    readonly lastMaintenanceRunId?: string;
     /**
      * The Oracle license model that applies to the Autonomous VM cluster. The default is LICENSE_INCLUDED.
      */
-    readonly licenseModel: string;
+    readonly licenseModel?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
-    readonly maintenanceWindowDetails: outputs.Database.GetAutonomousVmClusterMaintenanceWindowDetail[];
+    readonly lifecycleDetails?: string;
+    readonly maintenanceWindowDetails?: outputs.Database.GetAutonomousVmClusterMaintenanceWindowDetail[];
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    readonly maintenanceWindows: outputs.Database.GetAutonomousVmClusterMaintenanceWindow[];
+    readonly maintenanceWindows?: outputs.Database.GetAutonomousVmClusterMaintenanceWindow[];
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
-    readonly memoryPerOracleComputeUnitInGbs: number;
+    readonly memoryPerOracleComputeUnitInGbs?: number;
     /**
      * The memory allocated in GBs.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    readonly nextMaintenanceRunId: string;
+    readonly nextMaintenanceRunId?: string;
     /**
      * The number of nodes in the Autonomous VM Cluster.
      */
-    readonly nodeCount: number;
-    readonly nonProvisionableAutonomousContainerDatabases: number;
+    readonly nodeCount?: number;
+    readonly nonProvisionableAutonomousContainerDatabases?: number;
     /**
      * The number of enabled OCPU cores.
      */
-    readonly ocpusEnabled: number;
-    readonly provisionedAutonomousContainerDatabases: number;
-    readonly provisionedCpus: number;
+    readonly ocpusEnabled?: number;
+    readonly provisionedAutonomousContainerDatabases?: number;
+    readonly provisionedCpus?: number;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    readonly reclaimableCpus: number;
-    readonly reservedCpus: number;
+    readonly reclaimableCpus?: number;
+    readonly reservedCpus?: number;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
-    readonly scanListenerPortNonTls: number;
+    readonly scanListenerPortNonTls?: number;
     /**
      * The SCAN Listener TLS port number. Default value is 2484.
      */
-    readonly scanListenerPortTls: number;
+    readonly scanListenerPortTls?: number;
     /**
      * The current state of the Autonomous VM cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time that the Autonomous VM cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time of Database SSL certificate expiration.
      */
-    readonly timeDatabaseSslCertificateExpires: string;
+    readonly timeDatabaseSslCertificateExpires?: string;
     /**
      * The date and time of ORDS certificate expiration.
      */
-    readonly timeOrdsCertificateExpires: string;
+    readonly timeOrdsCertificateExpires?: string;
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    readonly timeZone: string;
-    readonly totalAutonomousDataStorageInTbs: number;
+    readonly timeZone?: string;
+    readonly totalAutonomousDataStorageInTbs?: number;
     /**
      * The total number of Autonomous Container Databases that can be created.
      */
-    readonly totalContainerDatabases: number;
+    readonly totalContainerDatabases?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
-    readonly vmClusterNetworkId: string;
+    readonly vmClusterNetworkId?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.

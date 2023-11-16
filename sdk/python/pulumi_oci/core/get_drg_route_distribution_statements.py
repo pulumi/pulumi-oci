@@ -44,10 +44,7 @@ class GetDrgRouteDistributionStatementsResult:
 
     @property
     @pulumi.getter(name="drgRouteDistributionStatements")
-    def drg_route_distribution_statements(self) -> Sequence['outputs.GetDrgRouteDistributionStatementsDrgRouteDistributionStatementResult']:
-        """
-        The list of drg_route_distribution_statements.
-        """
+    def drg_route_distribution_statements(self) -> Optional[Sequence['outputs.GetDrgRouteDistributionStatementsDrgRouteDistributionStatementResult']]:
         return pulumi.get(self, "drg_route_distribution_statements")
 
     @property
@@ -57,7 +54,7 @@ class GetDrgRouteDistributionStatementsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[st
                                           filters: Optional[Sequence[pulumi.InputType['GetDrgRouteDistributionStatementsFilterArgs']]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteDistributionStatementsResult:
     """
-    This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
-
-    Lists the statements for the specified route distribution.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_distribution_statements = oci.Core.get_drg_route_distribution_statements(drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"])
-    ```
-
-
-    :param str drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['drgRouteDistributionId'] = drg_route_distribution_id
@@ -114,20 +97,6 @@ def get_drg_route_distribution_statements_output(drg_route_distribution_id: Opti
                                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDrgRouteDistributionStatementsFilterArgs']]]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionStatementsResult]:
     """
-    This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
-
-    Lists the statements for the specified route distribution.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_distribution_statements = oci.Core.get_drg_route_distribution_statements(drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"])
-    ```
-
-
-    :param str drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+    Use this data source to access information about an existing resource.
     """
     ...

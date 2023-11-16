@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -60,23 +59,23 @@ type LookupNodePoolArgs struct {
 // A collection of values returned by getNodePool.
 type LookupNodePoolResult struct {
 	// The OCID of the cluster to which this node pool is attached.
-	ClusterId string `pulumi:"clusterId"`
+	ClusterId *string `pulumi:"clusterId"`
 	// The OCID of the compartment in which the node pool exists.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels []GetNodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// The version of Kubernetes this node is running.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the node.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name of the node.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails []GetNodePoolNodeConfigDetail `pulumi:"nodeConfigDetails"`
 	// Node Eviction Details configuration
@@ -84,11 +83,11 @@ type LookupNodePoolResult struct {
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageId string `pulumi:"nodeImageId"`
+	NodeImageId *string `pulumi:"nodeImageId"`
 	// Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageName string `pulumi:"nodeImageName"`
+	NodeImageName *string `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
@@ -96,7 +95,7 @@ type LookupNodePoolResult struct {
 	// The OCID of the node pool to which this node belongs.
 	NodePoolId string `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
-	NodeShape string `pulumi:"nodeShape"`
+	NodeShape *string `pulumi:"nodeShape"`
 	// The shape configuration of the nodes.
 	NodeShapeConfigs []GetNodePoolNodeShapeConfig `pulumi:"nodeShapeConfigs"`
 	// Source running on the nodes in the node pool.
@@ -106,11 +105,11 @@ type LookupNodePoolResult struct {
 	// The nodes in the node pool.
 	Nodes []GetNodePoolNode `pulumi:"nodes"`
 	// The number of nodes in each subnet.
-	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
+	QuantityPerSubnet *int `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
-	SshPublicKey string `pulumi:"sshPublicKey"`
+	SshPublicKey *string `pulumi:"sshPublicKey"`
 	// The state of the nodepool.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds []string `pulumi:"subnetIds"`
 }
@@ -153,20 +152,14 @@ func (o LookupNodePoolResultOutput) ToLookupNodePoolResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupNodePoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNodePoolResult] {
-	return pulumix.Output[LookupNodePoolResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster to which this node pool is attached.
-func (o LookupNodePoolResultOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.ClusterId }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment in which the node pool exists.
-func (o LookupNodePoolResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -180,8 +173,8 @@ func (o LookupNodePoolResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the compute instance backing this node.
-func (o LookupNodePoolResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
@@ -190,18 +183,18 @@ func (o LookupNodePoolResultOutput) InitialNodeLabels() GetNodePoolInitialNodeLa
 }
 
 // The version of Kubernetes this node is running.
-func (o LookupNodePoolResultOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the node.
-func (o LookupNodePoolResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The name of the node.
-func (o LookupNodePoolResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of nodes in the node pool.
@@ -219,15 +212,15 @@ func (o LookupNodePoolResultOutput) NodeEvictionNodePoolSettings() GetNodePoolNo
 // Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 //
 // Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-func (o LookupNodePoolResultOutput) NodeImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.NodeImageId }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) NodeImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.NodeImageId }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 //
 // Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-func (o LookupNodePoolResultOutput) NodeImageName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.NodeImageName }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) NodeImageName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.NodeImageName }).(pulumi.StringPtrOutput)
 }
 
 // A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -246,8 +239,8 @@ func (o LookupNodePoolResultOutput) NodePoolId() pulumi.StringOutput {
 }
 
 // The name of the node shape of the nodes in the node pool.
-func (o LookupNodePoolResultOutput) NodeShape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.NodeShape }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) NodeShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.NodeShape }).(pulumi.StringPtrOutput)
 }
 
 // The shape configuration of the nodes.
@@ -271,18 +264,18 @@ func (o LookupNodePoolResultOutput) Nodes() GetNodePoolNodeArrayOutput {
 }
 
 // The number of nodes in each subnet.
-func (o LookupNodePoolResultOutput) QuantityPerSubnet() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) int { return v.QuantityPerSubnet }).(pulumi.IntOutput)
+func (o LookupNodePoolResultOutput) QuantityPerSubnet() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *int { return v.QuantityPerSubnet }).(pulumi.IntPtrOutput)
 }
 
 // The SSH public key on each node in the node pool on launch.
-func (o LookupNodePoolResultOutput) SshPublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.SshPublicKey }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) SshPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.SshPublicKey }).(pulumi.StringPtrOutput)
 }
 
 // The state of the nodepool.
-func (o LookupNodePoolResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNodePoolResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCIDs of the subnets in which to place nodes for this node pool.

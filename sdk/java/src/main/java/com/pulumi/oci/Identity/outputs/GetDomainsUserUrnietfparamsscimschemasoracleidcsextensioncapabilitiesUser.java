@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser {
@@ -13,99 +15,99 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapa
      * @return Indicates whether a user can use API keys.
      * 
      */
-    private Boolean canUseApiKeys;
+    private @Nullable Boolean canUseApiKeys;
     /**
      * @return Indicates whether a user can use Auth tokens.
      * 
      */
-    private Boolean canUseAuthTokens;
+    private @Nullable Boolean canUseAuthTokens;
     /**
      * @return Specifies whether user can access the Console.
      * 
      */
-    private Boolean canUseConsole;
+    private @Nullable Boolean canUseConsole;
     /**
      * @return Indicates whether a user can use Console passwords.
      * 
      */
-    private Boolean canUseConsolePassword;
+    private @Nullable Boolean canUseConsolePassword;
     /**
      * @return Indicates whether a user can use customer secret keys.
      * 
      */
-    private Boolean canUseCustomerSecretKeys;
+    private @Nullable Boolean canUseCustomerSecretKeys;
     /**
      * @return Indicates whether a user can use database credentials.
      * 
      */
-    private Boolean canUseDbCredentials;
+    private @Nullable Boolean canUseDbCredentials;
     /**
      * @return Indicates whether a user can use OAuth2 client credentials.
      * 
      */
-    private Boolean canUseOauth2clientCredentials;
+    private @Nullable Boolean canUseOauth2clientCredentials;
     /**
      * @return Indicates whether a user can use SMTP credentials.
      * 
      */
-    private Boolean canUseSmtpCredentials;
+    private @Nullable Boolean canUseSmtpCredentials;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser() {}
     /**
      * @return Indicates whether a user can use API keys.
      * 
      */
-    public Boolean canUseApiKeys() {
-        return this.canUseApiKeys;
+    public Optional<Boolean> canUseApiKeys() {
+        return Optional.ofNullable(this.canUseApiKeys);
     }
     /**
      * @return Indicates whether a user can use Auth tokens.
      * 
      */
-    public Boolean canUseAuthTokens() {
-        return this.canUseAuthTokens;
+    public Optional<Boolean> canUseAuthTokens() {
+        return Optional.ofNullable(this.canUseAuthTokens);
     }
     /**
      * @return Specifies whether user can access the Console.
      * 
      */
-    public Boolean canUseConsole() {
-        return this.canUseConsole;
+    public Optional<Boolean> canUseConsole() {
+        return Optional.ofNullable(this.canUseConsole);
     }
     /**
      * @return Indicates whether a user can use Console passwords.
      * 
      */
-    public Boolean canUseConsolePassword() {
-        return this.canUseConsolePassword;
+    public Optional<Boolean> canUseConsolePassword() {
+        return Optional.ofNullable(this.canUseConsolePassword);
     }
     /**
      * @return Indicates whether a user can use customer secret keys.
      * 
      */
-    public Boolean canUseCustomerSecretKeys() {
-        return this.canUseCustomerSecretKeys;
+    public Optional<Boolean> canUseCustomerSecretKeys() {
+        return Optional.ofNullable(this.canUseCustomerSecretKeys);
     }
     /**
      * @return Indicates whether a user can use database credentials.
      * 
      */
-    public Boolean canUseDbCredentials() {
-        return this.canUseDbCredentials;
+    public Optional<Boolean> canUseDbCredentials() {
+        return Optional.ofNullable(this.canUseDbCredentials);
     }
     /**
      * @return Indicates whether a user can use OAuth2 client credentials.
      * 
      */
-    public Boolean canUseOauth2clientCredentials() {
-        return this.canUseOauth2clientCredentials;
+    public Optional<Boolean> canUseOauth2clientCredentials() {
+        return Optional.ofNullable(this.canUseOauth2clientCredentials);
     }
     /**
      * @return Indicates whether a user can use SMTP credentials.
      * 
      */
-    public Boolean canUseSmtpCredentials() {
-        return this.canUseSmtpCredentials;
+    public Optional<Boolean> canUseSmtpCredentials() {
+        return Optional.ofNullable(this.canUseSmtpCredentials);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapa
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean canUseApiKeys;
-        private Boolean canUseAuthTokens;
-        private Boolean canUseConsole;
-        private Boolean canUseConsolePassword;
-        private Boolean canUseCustomerSecretKeys;
-        private Boolean canUseDbCredentials;
-        private Boolean canUseOauth2clientCredentials;
-        private Boolean canUseSmtpCredentials;
+        private @Nullable Boolean canUseApiKeys;
+        private @Nullable Boolean canUseAuthTokens;
+        private @Nullable Boolean canUseConsole;
+        private @Nullable Boolean canUseConsolePassword;
+        private @Nullable Boolean canUseCustomerSecretKeys;
+        private @Nullable Boolean canUseDbCredentials;
+        private @Nullable Boolean canUseOauth2clientCredentials;
+        private @Nullable Boolean canUseSmtpCredentials;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapa
         }
 
         @CustomType.Setter
-        public Builder canUseApiKeys(Boolean canUseApiKeys) {
-            this.canUseApiKeys = Objects.requireNonNull(canUseApiKeys);
+        public Builder canUseApiKeys(@Nullable Boolean canUseApiKeys) {
+            this.canUseApiKeys = canUseApiKeys;
             return this;
         }
         @CustomType.Setter
-        public Builder canUseAuthTokens(Boolean canUseAuthTokens) {
-            this.canUseAuthTokens = Objects.requireNonNull(canUseAuthTokens);
+        public Builder canUseAuthTokens(@Nullable Boolean canUseAuthTokens) {
+            this.canUseAuthTokens = canUseAuthTokens;
             return this;
         }
         @CustomType.Setter
-        public Builder canUseConsole(Boolean canUseConsole) {
-            this.canUseConsole = Objects.requireNonNull(canUseConsole);
+        public Builder canUseConsole(@Nullable Boolean canUseConsole) {
+            this.canUseConsole = canUseConsole;
             return this;
         }
         @CustomType.Setter
-        public Builder canUseConsolePassword(Boolean canUseConsolePassword) {
-            this.canUseConsolePassword = Objects.requireNonNull(canUseConsolePassword);
+        public Builder canUseConsolePassword(@Nullable Boolean canUseConsolePassword) {
+            this.canUseConsolePassword = canUseConsolePassword;
             return this;
         }
         @CustomType.Setter
-        public Builder canUseCustomerSecretKeys(Boolean canUseCustomerSecretKeys) {
-            this.canUseCustomerSecretKeys = Objects.requireNonNull(canUseCustomerSecretKeys);
+        public Builder canUseCustomerSecretKeys(@Nullable Boolean canUseCustomerSecretKeys) {
+            this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             return this;
         }
         @CustomType.Setter
-        public Builder canUseDbCredentials(Boolean canUseDbCredentials) {
-            this.canUseDbCredentials = Objects.requireNonNull(canUseDbCredentials);
+        public Builder canUseDbCredentials(@Nullable Boolean canUseDbCredentials) {
+            this.canUseDbCredentials = canUseDbCredentials;
             return this;
         }
         @CustomType.Setter
-        public Builder canUseOauth2clientCredentials(Boolean canUseOauth2clientCredentials) {
-            this.canUseOauth2clientCredentials = Objects.requireNonNull(canUseOauth2clientCredentials);
+        public Builder canUseOauth2clientCredentials(@Nullable Boolean canUseOauth2clientCredentials) {
+            this.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
             return this;
         }
         @CustomType.Setter
-        public Builder canUseSmtpCredentials(Boolean canUseSmtpCredentials) {
-            this.canUseSmtpCredentials = Objects.requireNonNull(canUseSmtpCredentials);
+        public Builder canUseSmtpCredentials(@Nullable Boolean canUseSmtpCredentials) {
+            this.canUseSmtpCredentials = canUseSmtpCredentials;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser build() {

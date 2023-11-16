@@ -100,7 +100,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsOracleMaintained;
         public readonly string? RoleNameContains;
         public readonly ImmutableArray<string> RoleNames;
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetTargetDatabaseRoleFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isOracleMaintained,
 

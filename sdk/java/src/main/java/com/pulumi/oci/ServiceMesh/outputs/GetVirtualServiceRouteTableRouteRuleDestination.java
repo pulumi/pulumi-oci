@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualServiceRouteTableRouteRuleDestination {
@@ -14,39 +16,39 @@ public final class GetVirtualServiceRouteTableRouteRuleDestination {
      * @return Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The OCID of the virtual deployment where the request will be routed.
      * 
      */
-    private String virtualDeploymentId;
+    private @Nullable String virtualDeploymentId;
     /**
      * @return Weight of traffic target.
      * 
      */
-    private Integer weight;
+    private @Nullable Integer weight;
 
     private GetVirtualServiceRouteTableRouteRuleDestination() {}
     /**
      * @return Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The OCID of the virtual deployment where the request will be routed.
      * 
      */
-    public String virtualDeploymentId() {
-        return this.virtualDeploymentId;
+    public Optional<String> virtualDeploymentId() {
+        return Optional.ofNullable(this.virtualDeploymentId);
     }
     /**
      * @return Weight of traffic target.
      * 
      */
-    public Integer weight() {
-        return this.weight;
+    public Optional<Integer> weight() {
+        return Optional.ofNullable(this.weight);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetVirtualServiceRouteTableRouteRuleDestination {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer port;
-        private String virtualDeploymentId;
-        private Integer weight;
+        private @Nullable Integer port;
+        private @Nullable String virtualDeploymentId;
+        private @Nullable Integer weight;
         public Builder() {}
         public Builder(GetVirtualServiceRouteTableRouteRuleDestination defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetVirtualServiceRouteTableRouteRuleDestination {
         }
 
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualDeploymentId(String virtualDeploymentId) {
-            this.virtualDeploymentId = Objects.requireNonNull(virtualDeploymentId);
+        public Builder virtualDeploymentId(@Nullable String virtualDeploymentId) {
+            this.virtualDeploymentId = virtualDeploymentId;
             return this;
         }
         @CustomType.Setter
-        public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+        public Builder weight(@Nullable Integer weight) {
+            this.weight = weight;
             return this;
         }
         public GetVirtualServiceRouteTableRouteRuleDestination build() {

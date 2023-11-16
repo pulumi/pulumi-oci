@@ -47,56 +47,56 @@ export interface GetSteeringPolicyResult {
     /**
      * The set of all answers that can potentially issue from the steering policy.
      */
-    readonly answers: outputs.Dns.GetSteeringPolicyAnswer[];
+    readonly answers?: outputs.Dns.GetSteeringPolicyAnswer[];
     /**
      * The OCID of the compartment containing the steering policy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      */
-    readonly healthCheckMonitorId: string;
+    readonly healthCheckMonitorId?: string;
     /**
      * The OCID of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      */
-    readonly rules: outputs.Dns.GetSteeringPolicyRule[];
+    readonly rules?: outputs.Dns.GetSteeringPolicyRule[];
     /**
      * The canonical absolute URL of the resource.
      */
-    readonly self: string;
+    readonly self?: string;
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     readonly steeringPolicyId: string;
     /**
      * A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
      */
-    readonly template: string;
+    readonly template?: string;
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
      */
-    readonly ttl: number;
+    readonly ttl?: number;
 }
 /**
  * This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.

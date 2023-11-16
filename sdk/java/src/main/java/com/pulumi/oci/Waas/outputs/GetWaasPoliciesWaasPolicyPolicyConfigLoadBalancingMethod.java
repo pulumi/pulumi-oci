@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod {
@@ -14,12 +16,12 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod {
      * @return The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
      * 
      */
-    private Integer expirationTimeInSeconds;
+    private @Nullable Integer expirationTimeInSeconds;
     /**
      * @return Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
      * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
@@ -27,27 +29,27 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod {
      * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
      * 
      */
-    private String method;
+    private @Nullable String method;
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod() {}
     /**
      * @return The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
      * 
      */
-    public Integer expirationTimeInSeconds() {
-        return this.expirationTimeInSeconds;
+    public Optional<Integer> expirationTimeInSeconds() {
+        return Optional.ofNullable(this.expirationTimeInSeconds);
     }
     /**
      * @return Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
@@ -56,15 +58,15 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod {
      * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
      * 
      */
-    public String method() {
-        return this.method;
+    public Optional<String> method() {
+        return Optional.ofNullable(this.method);
     }
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -76,10 +78,10 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String domain;
-        private Integer expirationTimeInSeconds;
-        private String method;
-        private String name;
+        private @Nullable String domain;
+        private @Nullable Integer expirationTimeInSeconds;
+        private @Nullable String method;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,23 +92,23 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod {
         }
 
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder expirationTimeInSeconds(Integer expirationTimeInSeconds) {
-            this.expirationTimeInSeconds = Objects.requireNonNull(expirationTimeInSeconds);
+        public Builder expirationTimeInSeconds(@Nullable Integer expirationTimeInSeconds) {
+            this.expirationTimeInSeconds = expirationTimeInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder method(String method) {
-            this.method = Objects.requireNonNull(method);
+        public Builder method(@Nullable String method) {
+            this.method = method;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod build() {

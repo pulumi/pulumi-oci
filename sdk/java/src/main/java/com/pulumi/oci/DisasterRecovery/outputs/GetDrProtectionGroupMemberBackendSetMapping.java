@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupMemberBackendSetMapping {
@@ -14,39 +16,39 @@ public final class GetDrProtectionGroupMemberBackendSetMapping {
      * @return The name of the destination backend set.  Example: `My_Destination_Backend_Set`
      * 
      */
-    private String destinationBackendSetName;
+    private @Nullable String destinationBackendSetName;
     /**
      * @return This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to &#39;true&#39;. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to &#39;false&#39;.   Example: `true`
      * 
      */
-    private Boolean isBackendSetForNonMovable;
+    private @Nullable Boolean isBackendSetForNonMovable;
     /**
      * @return The name of the source backend set.  Example: `My_Source_Backend_Set`
      * 
      */
-    private String sourceBackendSetName;
+    private @Nullable String sourceBackendSetName;
 
     private GetDrProtectionGroupMemberBackendSetMapping() {}
     /**
      * @return The name of the destination backend set.  Example: `My_Destination_Backend_Set`
      * 
      */
-    public String destinationBackendSetName() {
-        return this.destinationBackendSetName;
+    public Optional<String> destinationBackendSetName() {
+        return Optional.ofNullable(this.destinationBackendSetName);
     }
     /**
      * @return This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to &#39;true&#39;. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to &#39;false&#39;.   Example: `true`
      * 
      */
-    public Boolean isBackendSetForNonMovable() {
-        return this.isBackendSetForNonMovable;
+    public Optional<Boolean> isBackendSetForNonMovable() {
+        return Optional.ofNullable(this.isBackendSetForNonMovable);
     }
     /**
      * @return The name of the source backend set.  Example: `My_Source_Backend_Set`
      * 
      */
-    public String sourceBackendSetName() {
-        return this.sourceBackendSetName;
+    public Optional<String> sourceBackendSetName() {
+        return Optional.ofNullable(this.sourceBackendSetName);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDrProtectionGroupMemberBackendSetMapping {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String destinationBackendSetName;
-        private Boolean isBackendSetForNonMovable;
-        private String sourceBackendSetName;
+        private @Nullable String destinationBackendSetName;
+        private @Nullable Boolean isBackendSetForNonMovable;
+        private @Nullable String sourceBackendSetName;
         public Builder() {}
         public Builder(GetDrProtectionGroupMemberBackendSetMapping defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDrProtectionGroupMemberBackendSetMapping {
         }
 
         @CustomType.Setter
-        public Builder destinationBackendSetName(String destinationBackendSetName) {
-            this.destinationBackendSetName = Objects.requireNonNull(destinationBackendSetName);
+        public Builder destinationBackendSetName(@Nullable String destinationBackendSetName) {
+            this.destinationBackendSetName = destinationBackendSetName;
             return this;
         }
         @CustomType.Setter
-        public Builder isBackendSetForNonMovable(Boolean isBackendSetForNonMovable) {
-            this.isBackendSetForNonMovable = Objects.requireNonNull(isBackendSetForNonMovable);
+        public Builder isBackendSetForNonMovable(@Nullable Boolean isBackendSetForNonMovable) {
+            this.isBackendSetForNonMovable = isBackendSetForNonMovable;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceBackendSetName(String sourceBackendSetName) {
-            this.sourceBackendSetName = Objects.requireNonNull(sourceBackendSetName);
+        public Builder sourceBackendSetName(@Nullable String sourceBackendSetName) {
+            this.sourceBackendSetName = sourceBackendSetName;
             return this;
         }
         public GetDrProtectionGroupMemberBackendSetMapping build() {

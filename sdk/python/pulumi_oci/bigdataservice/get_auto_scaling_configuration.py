@@ -72,76 +72,52 @@ class GetAutoScalingConfigurationResult:
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> str:
+    def cluster_admin_password(self) -> Optional[str]:
         return pulumi.get(self, "cluster_admin_password")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the autoscale configuration.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="nodeType")
-    def node_type(self) -> str:
-        """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
-        """
+    def node_type(self) -> Optional[str]:
         return pulumi.get(self, "node_type")
 
     @property
     @pulumi.getter
-    def policies(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyResult']:
-        """
-        This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        """
+    def policies(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyResult']]:
         return pulumi.get(self, "policies")
 
     @property
     @pulumi.getter(name="policyDetails")
-    def policy_details(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyDetailResult']:
-        """
-        Details of an autoscale policy.
-        """
+    def policy_details(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyDetailResult']]:
         return pulumi.get(self, "policy_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the autoscale configuration.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -169,23 +145,7 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
                                    bds_instance_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutoScalingConfigurationResult:
     """
-    This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns details of the autoscale configuration identified by the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auto_scaling_configuration = oci.BigDataService.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"],
-        bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str auto_scaling_configuration_id: Unique Oracle-assigned identifier of the autoscale configuration.
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autoScalingConfigurationId'] = auto_scaling_configuration_id
@@ -213,22 +173,6 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
                                           bds_instance_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutoScalingConfigurationResult]:
     """
-    This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns details of the autoscale configuration identified by the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auto_scaling_configuration = oci.BigDataService.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"],
-        bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str auto_scaling_configuration_id: Unique Oracle-assigned identifier of the autoscale configuration.
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

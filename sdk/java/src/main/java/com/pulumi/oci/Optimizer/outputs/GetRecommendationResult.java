@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationResult {
@@ -19,140 +21,140 @@ public final class GetRecommendationResult {
      * @return The unique OCID associated with the category.
      * 
      */
-    private String categoryId;
+    private @Nullable String categoryId;
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Text describing the recommendation.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The estimated cost savings, in dollars, for the recommendation.
      * 
      */
-    private Double estimatedCostSaving;
+    private @Nullable Double estimatedCostSaving;
     /**
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private @Nullable Map<String,Object> extendedMetadata;
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The level of importance assigned to the recommendation.
      * 
      */
-    private String importance;
+    private @Nullable String importance;
     /**
      * @return The name of the profile level.
      * 
      */
-    private String name;
+    private @Nullable String name;
     private String recommendationId;
     /**
      * @return An array of `ResourceCount` objects grouped by the status of the resource actions.
      * 
      */
-    private List<GetRecommendationResourceCount> resourceCounts;
+    private @Nullable List<GetRecommendationResourceCount> resourceCounts;
     /**
      * @return The recommendation&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The current status of the recommendation.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      * 
      */
-    private List<GetRecommendationSupportedLevel> supportedLevels;
+    private @Nullable List<GetRecommendationSupportedLevel> supportedLevels;
     /**
      * @return The date and time the recommendation details were created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      * 
      */
-    private String timeStatusBegin;
+    private @Nullable String timeStatusBegin;
     /**
      * @return The date and time the current status will change. The format is defined by RFC3339.
      * 
      */
-    private String timeStatusEnd;
+    private @Nullable String timeStatusEnd;
     /**
      * @return The date and time the recommendation details were last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetRecommendationResult() {}
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    public String categoryId() {
-        return this.categoryId;
+    public Optional<String> categoryId() {
+        return Optional.ofNullable(this.categoryId);
     }
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Text describing the recommendation.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The estimated cost savings, in dollars, for the recommendation.
      * 
      */
-    public Double estimatedCostSaving() {
-        return this.estimatedCostSaving;
+    public Optional<Double> estimatedCostSaving() {
+        return Optional.ofNullable(this.estimatedCostSaving);
     }
     /**
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
     public Map<String,Object> extendedMetadata() {
-        return this.extendedMetadata;
+        return this.extendedMetadata == null ? Map.of() : this.extendedMetadata;
     }
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The level of importance assigned to the recommendation.
      * 
      */
-    public String importance() {
-        return this.importance;
+    public Optional<String> importance() {
+        return Optional.ofNullable(this.importance);
     }
     /**
      * @return The name of the profile level.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String recommendationId() {
         return this.recommendationId;
@@ -162,56 +164,56 @@ public final class GetRecommendationResult {
      * 
      */
     public List<GetRecommendationResourceCount> resourceCounts() {
-        return this.resourceCounts;
+        return this.resourceCounts == null ? List.of() : this.resourceCounts;
     }
     /**
      * @return The recommendation&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The current status of the recommendation.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      * 
      */
     public List<GetRecommendationSupportedLevel> supportedLevels() {
-        return this.supportedLevels;
+        return this.supportedLevels == null ? List.of() : this.supportedLevels;
     }
     /**
      * @return The date and time the recommendation details were created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      * 
      */
-    public String timeStatusBegin() {
-        return this.timeStatusBegin;
+    public Optional<String> timeStatusBegin() {
+        return Optional.ofNullable(this.timeStatusBegin);
     }
     /**
      * @return The date and time the current status will change. The format is defined by RFC3339.
      * 
      */
-    public String timeStatusEnd() {
-        return this.timeStatusEnd;
+    public Optional<String> timeStatusEnd() {
+        return Optional.ofNullable(this.timeStatusEnd);
     }
     /**
      * @return The date and time the recommendation details were last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -223,23 +225,23 @@ public final class GetRecommendationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String categoryId;
-        private String compartmentId;
-        private String description;
-        private Double estimatedCostSaving;
-        private Map<String,Object> extendedMetadata;
-        private String id;
-        private String importance;
-        private String name;
+        private @Nullable String categoryId;
+        private @Nullable String compartmentId;
+        private @Nullable String description;
+        private @Nullable Double estimatedCostSaving;
+        private @Nullable Map<String,Object> extendedMetadata;
+        private @Nullable String id;
+        private @Nullable String importance;
+        private @Nullable String name;
         private String recommendationId;
-        private List<GetRecommendationResourceCount> resourceCounts;
-        private String state;
-        private String status;
-        private List<GetRecommendationSupportedLevel> supportedLevels;
-        private String timeCreated;
-        private String timeStatusBegin;
-        private String timeStatusEnd;
-        private String timeUpdated;
+        private @Nullable List<GetRecommendationResourceCount> resourceCounts;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable List<GetRecommendationSupportedLevel> supportedLevels;
+        private @Nullable String timeCreated;
+        private @Nullable String timeStatusBegin;
+        private @Nullable String timeStatusEnd;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetRecommendationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -263,43 +265,43 @@ public final class GetRecommendationResult {
         }
 
         @CustomType.Setter
-        public Builder categoryId(String categoryId) {
-            this.categoryId = Objects.requireNonNull(categoryId);
+        public Builder categoryId(@Nullable String categoryId) {
+            this.categoryId = categoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedCostSaving(Double estimatedCostSaving) {
-            this.estimatedCostSaving = Objects.requireNonNull(estimatedCostSaving);
+        public Builder estimatedCostSaving(@Nullable Double estimatedCostSaving) {
+            this.estimatedCostSaving = estimatedCostSaving;
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
-            this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
+        public Builder extendedMetadata(@Nullable Map<String,Object> extendedMetadata) {
+            this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder importance(String importance) {
-            this.importance = Objects.requireNonNull(importance);
+        public Builder importance(@Nullable String importance) {
+            this.importance = importance;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -308,49 +310,49 @@ public final class GetRecommendationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder resourceCounts(List<GetRecommendationResourceCount> resourceCounts) {
-            this.resourceCounts = Objects.requireNonNull(resourceCounts);
+        public Builder resourceCounts(@Nullable List<GetRecommendationResourceCount> resourceCounts) {
+            this.resourceCounts = resourceCounts;
             return this;
         }
         public Builder resourceCounts(GetRecommendationResourceCount... resourceCounts) {
             return resourceCounts(List.of(resourceCounts));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedLevels(List<GetRecommendationSupportedLevel> supportedLevels) {
-            this.supportedLevels = Objects.requireNonNull(supportedLevels);
+        public Builder supportedLevels(@Nullable List<GetRecommendationSupportedLevel> supportedLevels) {
+            this.supportedLevels = supportedLevels;
             return this;
         }
         public Builder supportedLevels(GetRecommendationSupportedLevel... supportedLevels) {
             return supportedLevels(List.of(supportedLevels));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusBegin(String timeStatusBegin) {
-            this.timeStatusBegin = Objects.requireNonNull(timeStatusBegin);
+        public Builder timeStatusBegin(@Nullable String timeStatusBegin) {
+            this.timeStatusBegin = timeStatusBegin;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusEnd(String timeStatusEnd) {
-            this.timeStatusEnd = Objects.requireNonNull(timeStatusEnd);
+        public Builder timeStatusEnd(@Nullable String timeStatusEnd) {
+            this.timeStatusEnd = timeStatusEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetRecommendationResult build() {

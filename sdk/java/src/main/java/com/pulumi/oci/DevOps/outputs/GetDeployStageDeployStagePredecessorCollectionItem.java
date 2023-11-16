@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageDeployStagePredecessorCollectionItem {
@@ -13,15 +15,15 @@ public final class GetDeployStageDeployStagePredecessorCollectionItem {
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDeployStageDeployStagePredecessorCollectionItem() {}
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDeployStageDeployStagePredecessorCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDeployStageDeployStagePredecessorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDeployStageDeployStagePredecessorCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDeployStageDeployStagePredecessorCollectionItem build() {

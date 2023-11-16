@@ -122,19 +122,19 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
         /// </summary>
-        public readonly string ApplicationExecutionType;
+        public readonly string? ApplicationExecutionType;
         /// <summary>
         /// The name of the application for which the Java migration analysis was performed.
         /// </summary>
-        public readonly string ApplicationName;
+        public readonly string? ApplicationName;
         /// <summary>
         /// The installation path of the application for which the Java migration analysis was performed.
         /// </summary>
-        public readonly string ApplicationPath;
+        public readonly string? ApplicationPath;
         /// <summary>
         /// The name of the object storage bucket that contains the results of the migration analysis.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The fleet OCID.
         /// </summary>
@@ -142,24 +142,24 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string JavaMigrationAnalysisResultId;
         /// <summary>
         /// The managed instance OCID.
         /// </summary>
-        public readonly string ManagedInstanceId;
+        public readonly string? ManagedInstanceId;
         /// <summary>
         /// Additional info reserved for future use.
         /// </summary>
-        public readonly string Metadata;
+        public readonly string? Metadata;
         /// <summary>
         /// The object storage namespace that contains the results of the migration analysis.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The names of the object storage objects that contain the results of the migration analysis.
         /// </summary>
@@ -167,59 +167,59 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The directory path of the object storage bucket that contains the results of the migration analysis.
         /// </summary>
-        public readonly string ObjectStorageUploadDirPath;
+        public readonly string? ObjectStorageUploadDirPath;
         /// <summary>
         /// The source JDK version of the application that's currently running.
         /// </summary>
-        public readonly string SourceJdkVersion;
+        public readonly string? SourceJdkVersion;
         /// <summary>
         /// The target JDK version of the application to be migrated.
         /// </summary>
-        public readonly string TargetJdkVersion;
+        public readonly string? TargetJdkVersion;
         /// <summary>
         /// The time the result is compiled.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The OCID of the work request of this analysis.
         /// </summary>
-        public readonly string WorkRequestId;
+        public readonly string? WorkRequestId;
 
         [OutputConstructor]
         private GetFleetJavaMigrationAnalysisResultResult(
-            string applicationExecutionType,
+            string? applicationExecutionType,
 
-            string applicationName,
+            string? applicationName,
 
-            string applicationPath,
+            string? applicationPath,
 
-            string bucket,
+            string? bucket,
 
             string fleetId,
 
-            string hostName,
+            string? hostName,
 
-            string id,
+            string? id,
 
             string javaMigrationAnalysisResultId,
 
-            string managedInstanceId,
+            string? managedInstanceId,
 
-            string metadata,
+            string? metadata,
 
-            string @namespace,
+            string? @namespace,
 
             ImmutableArray<string> objectLists,
 
-            string objectStorageUploadDirPath,
+            string? objectStorageUploadDirPath,
 
-            string sourceJdkVersion,
+            string? sourceJdkVersion,
 
-            string targetJdkVersion,
+            string? targetJdkVersion,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string workRequestId)
+            string? workRequestId)
         {
             ApplicationExecutionType = applicationExecutionType;
             ApplicationName = applicationName;

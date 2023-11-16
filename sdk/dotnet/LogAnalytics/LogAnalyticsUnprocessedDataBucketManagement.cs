@@ -52,7 +52,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// Flag that specifies if this configuration is enabled or not.
         /// </summary>
         [Output("isEnabled")]
-        public Output<bool> IsEnabled { get; private set; } = null!;
+        public Output<bool?> IsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The Logging Analytics namespace used for the request. 
@@ -68,13 +68,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// The time when this record is created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The latest time when this record is updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

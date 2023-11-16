@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
         /// </summary>
-        public readonly double Adw;
+        public readonly double? Adw;
         /// <summary>
         /// The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
         /// </summary>
-        public readonly double Atp;
+        public readonly double? Atp;
 
         [OutputConstructor]
         private GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult(
-            double adw,
+            double? adw,
 
-            double atp)
+            double? atp)
         {
             Adw = adw;
             Atp = atp;

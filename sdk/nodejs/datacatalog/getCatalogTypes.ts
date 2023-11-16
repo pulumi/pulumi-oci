@@ -107,7 +107,7 @@ export interface GetCatalogTypesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the type is approved for use as a classifying object.
      */
@@ -135,7 +135,7 @@ export interface GetCatalogTypesResult {
     /**
      * The list of type_collection.
      */
-    readonly typeCollections: outputs.DataCatalog.GetCatalogTypesTypeCollection[];
+    readonly typeCollections?: outputs.DataCatalog.GetCatalogTypesTypeCollection[];
 }
 /**
  * This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.

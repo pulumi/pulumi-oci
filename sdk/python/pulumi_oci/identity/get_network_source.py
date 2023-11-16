@@ -65,58 +65,37 @@ class GetNetworkSourceResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the network source. The tenancy is the root compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description you assign to the network source. Does not have to be unique, and it's changeable.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the network source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> str:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_state(self) -> Optional[str]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -126,42 +105,27 @@ class GetNetworkSourceResult:
 
     @property
     @pulumi.getter(name="publicSourceLists")
-    def public_source_lists(self) -> Sequence[str]:
-        """
-        A list of allowed public IP addresses and CIDR ranges.
-        """
+    def public_source_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "public_source_lists")
 
     @property
     @pulumi.getter
-    def services(self) -> Sequence[str]:
-        """
-        A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
-        """
+    def services(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "services")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="virtualSourceLists")
-    def virtual_source_lists(self) -> Sequence['outputs.GetNetworkSourceVirtualSourceListResult']:
-        """
-        A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
-        """
+    def virtual_source_lists(self) -> Optional[Sequence['outputs.GetNetworkSourceVirtualSourceListResult']]:
         return pulumi.get(self, "virtual_source_lists")
 
 
@@ -189,21 +153,7 @@ class AwaitableGetNetworkSourceResult(GetNetworkSourceResult):
 def get_network_source(network_source_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSourceResult:
     """
-    This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified network source's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
-    ```
-
-
-    :param str network_source_id: The OCID of the network source.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['networkSourceId'] = network_source_id
@@ -230,20 +180,6 @@ def get_network_source(network_source_id: Optional[str] = None,
 def get_network_source_output(network_source_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSourceResult]:
     """
-    This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified network source's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
-    ```
-
-
-    :param str network_source_id: The OCID of the network source.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -108,23 +108,23 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The OCID of a compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the SQL Endpoint.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The SQL Endpoint name, which can be changed.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The shape of the SQL Endpoint driver instance.
         /// </summary>
-        public readonly string DriverShape;
+        public readonly string? DriverShape;
         /// <summary>
         /// This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The shape of the SQL Endpoint executor instance.
         /// </summary>
-        public readonly string ExecutorShape;
+        public readonly string? ExecutorShape;
         /// <summary>
         /// This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
@@ -140,35 +140,35 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The provision identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
         /// </summary>
-        public readonly string JdbcEndpointUrl;
+        public readonly string? JdbcEndpointUrl;
         /// <summary>
         /// The OCID of Oracle Cloud Infrastructure Lake.
         /// </summary>
-        public readonly string LakeId;
+        public readonly string? LakeId;
         /// <summary>
         /// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
         /// </summary>
-        public readonly string LastAcceptedRequestToken;
+        public readonly string? LastAcceptedRequestToken;
         /// <summary>
         /// The maximum number of executors.
         /// </summary>
-        public readonly int MaxExecutorCount;
+        public readonly int? MaxExecutorCount;
         /// <summary>
         /// The OCID of Oracle Cloud Infrastructure Hive Metastore.
         /// </summary>
-        public readonly string MetastoreId;
+        public readonly string? MetastoreId;
         /// <summary>
         /// The minimum number of executors.
         /// </summary>
-        public readonly int MinExecutorCount;
+        public readonly int? MinExecutorCount;
         /// <summary>
         /// The network configuration of a SQL Endpoint.
         /// </summary>
@@ -176,90 +176,90 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SparkAdvancedConfigurations;
+        public readonly ImmutableDictionary<string, object>? SparkAdvancedConfigurations;
         public readonly string SqlEndpointId;
         /// <summary>
         /// The version of SQL Endpoint.
         /// </summary>
-        public readonly string SqlEndpointVersion;
+        public readonly string? SqlEndpointVersion;
         /// <summary>
         /// The current state of the Sql Endpoint.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
-        public readonly string StateMessage;
+        public readonly string? StateMessage;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
         /// </summary>
-        public readonly string WarehouseBucketUri;
+        public readonly string? WarehouseBucketUri;
 
         [OutputConstructor]
         private GetSqlEndpointResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string driverShape,
+            string? driverShape,
 
             ImmutableArray<Outputs.GetSqlEndpointDriverShapeConfigResult> driverShapeConfigs,
 
-            string executorShape,
+            string? executorShape,
 
             ImmutableArray<Outputs.GetSqlEndpointExecutorShapeConfigResult> executorShapeConfigs,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string jdbcEndpointUrl,
+            string? jdbcEndpointUrl,
 
-            string lakeId,
+            string? lakeId,
 
-            string lastAcceptedRequestToken,
+            string? lastAcceptedRequestToken,
 
-            int maxExecutorCount,
+            int? maxExecutorCount,
 
-            string metastoreId,
+            string? metastoreId,
 
-            int minExecutorCount,
+            int? minExecutorCount,
 
             ImmutableArray<Outputs.GetSqlEndpointNetworkConfigurationResult> networkConfigurations,
 
-            ImmutableDictionary<string, object> sparkAdvancedConfigurations,
+            ImmutableDictionary<string, object>? sparkAdvancedConfigurations,
 
             string sqlEndpointId,
 
-            string sqlEndpointVersion,
+            string? sqlEndpointVersion,
 
-            string state,
+            string? state,
 
-            string stateMessage,
+            string? stateMessage,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string warehouseBucketUri)
+            string? warehouseBucketUri)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

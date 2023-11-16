@@ -64,17 +64,11 @@ class GetCatalogTypesResult:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> str:
-        """
-        The data catalog's OCID.
-        """
         return pulumi.get(self, "catalog_id")
 
     @property
     @pulumi.getter(name="externalTypeName")
     def external_type_name(self) -> Optional[str]:
-        """
-        Mapping type equivalence in the external system.
-        """
         return pulumi.get(self, "external_type_name")
 
     @property
@@ -89,7 +83,7 @@ class GetCatalogTypesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -98,57 +92,36 @@ class GetCatalogTypesResult:
     @property
     @pulumi.getter(name="isApproved")
     def is_approved(self) -> Optional[str]:
-        """
-        Indicates whether the type is approved for use as a classifying object.
-        """
         return pulumi.get(self, "is_approved")
 
     @property
     @pulumi.getter(name="isInternal")
     def is_internal(self) -> Optional[str]:
-        """
-        Indicates whether the type is internal, making it unavailable for use by metadata elements.
-        """
         return pulumi.get(self, "is_internal")
 
     @property
     @pulumi.getter(name="isTag")
     def is_tag(self) -> Optional[str]:
-        """
-        Indicates whether the type can be used for tagging metadata elements.
-        """
         return pulumi.get(self, "is_tag")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The immutable name of the type.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the type.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="typeCategory")
     def type_category(self) -> Optional[str]:
-        """
-        Indicates the category this type belongs to. For instance, data assets, connections.
-        """
         return pulumi.get(self, "type_category")
 
     @property
     @pulumi.getter(name="typeCollections")
-    def type_collections(self) -> Sequence['outputs.GetCatalogTypesTypeCollectionResult']:
-        """
-        The list of type_collection.
-        """
+    def type_collections(self) -> Optional[Sequence['outputs.GetCatalogTypesTypeCollectionResult']]:
         return pulumi.get(self, "type_collections")
 
 
@@ -184,37 +157,7 @@ def get_catalog_types(catalog_id: Optional[str] = None,
                       type_category: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogTypesResult:
     """
-    This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all types within a data catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        external_type_name=var["catalog_type_external_type_name"],
-        fields=var["catalog_type_fields"],
-        is_approved=var["catalog_type_is_approved"],
-        is_internal=var["catalog_type_is_internal"],
-        is_tag=var["catalog_type_is_tag"],
-        name=var["catalog_type_name"],
-        state=var["catalog_type_state"],
-        type_category=var["catalog_type_type_category"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str external_type_name: Data type as defined in an external system.
-    :param Sequence[str] fields: Specifies the fields to return in a type summary response.
-    :param str is_approved: Indicates whether the type is approved for use as a classifying object.
-    :param str is_internal: Indicates whether the type is internal, making it unavailable for use by metadata elements.
-    :param str is_tag: Indicates whether the type can be used for tagging metadata elements.
-    :param str name: Immutable resource name.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str type_category: Indicates the category of this type . For example, data assets or connections.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
@@ -258,36 +201,6 @@ def get_catalog_types_output(catalog_id: Optional[pulumi.Input[str]] = None,
                              type_category: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogTypesResult]:
     """
-    This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all types within a data catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        external_type_name=var["catalog_type_external_type_name"],
-        fields=var["catalog_type_fields"],
-        is_approved=var["catalog_type_is_approved"],
-        is_internal=var["catalog_type_is_internal"],
-        is_tag=var["catalog_type_is_tag"],
-        name=var["catalog_type_name"],
-        state=var["catalog_type_state"],
-        type_category=var["catalog_type_type_category"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str external_type_name: Data type as defined in an external system.
-    :param Sequence[str] fields: Specifies the fields to return in a type summary response.
-    :param str is_approved: Indicates whether the type is approved for use as a classifying object.
-    :param str is_internal: Indicates whether the type is internal, making it unavailable for use by metadata elements.
-    :param str is_tag: Indicates whether the type can be used for tagging metadata elements.
-    :param str name: Immutable resource name.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str type_category: Indicates the category of this type . For example, data assets or connections.
+    Use this data source to access information about an existing resource.
     """
     ...

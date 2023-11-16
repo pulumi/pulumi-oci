@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -67,7 +66,7 @@ type GetClusterOptionResult struct {
 	ClusterPodNetworkOptions []GetClusterOptionClusterPodNetworkOption `pulumi:"clusterPodNetworkOptions"`
 	CompartmentId            *string                                   `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Available Kubernetes versions.
 	KubernetesVersions []string `pulumi:"kubernetesVersions"`
 }
@@ -112,12 +111,6 @@ func (o GetClusterOptionResultOutput) ToGetClusterOptionResultOutputWithContext(
 	return o
 }
 
-func (o GetClusterOptionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterOptionResult] {
-	return pulumix.Output[GetClusterOptionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClusterOptionResultOutput) ClusterOptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionResult) string { return v.ClusterOptionId }).(pulumi.StringOutput)
 }
@@ -134,8 +127,8 @@ func (o GetClusterOptionResultOutput) CompartmentId() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetClusterOptionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterOptionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClusterOptionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterOptionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Available Kubernetes versions.

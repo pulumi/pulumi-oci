@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
@@ -68,7 +67,7 @@ type GetVirtualCircuitPublicPrefixesArgs struct {
 type GetVirtualCircuitPublicPrefixesResult struct {
 	Filters []GetVirtualCircuitPublicPrefixesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.
 	VerificationState *string `pulumi:"verificationState"`
 	VirtualCircuitId  string  `pulumi:"virtualCircuitId"`
@@ -119,12 +118,6 @@ func (o GetVirtualCircuitPublicPrefixesResultOutput) ToGetVirtualCircuitPublicPr
 	return o
 }
 
-func (o GetVirtualCircuitPublicPrefixesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefixesResult] {
-	return pulumix.Output[GetVirtualCircuitPublicPrefixesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualCircuitPublicPrefixesResultOutput) Filters() GetVirtualCircuitPublicPrefixesFilterArrayOutput {
 	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesResult) []GetVirtualCircuitPublicPrefixesFilter {
 		return v.Filters
@@ -132,8 +125,8 @@ func (o GetVirtualCircuitPublicPrefixesResultOutput) Filters() GetVirtualCircuit
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVirtualCircuitPublicPrefixesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualCircuitPublicPrefixesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.

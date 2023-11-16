@@ -60,11 +60,11 @@ export interface GetMonitoredResourceTasksResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of monitored_resource_tasks_collection.
      */
-    readonly monitoredResourceTasksCollections: outputs.StackMonitoring.GetMonitoredResourceTasksMonitoredResourceTasksCollection[];
+    readonly monitoredResourceTasksCollections?: outputs.StackMonitoring.GetMonitoredResourceTasksMonitoredResourceTasksCollection[];
     readonly status?: string;
 }
 /**

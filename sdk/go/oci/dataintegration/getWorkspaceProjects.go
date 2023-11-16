@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspace Projects in Oracle Cloud Infrastructure Data Integration service.
@@ -75,7 +74,7 @@ type GetWorkspaceProjectsResult struct {
 	Fields  []string                     `pulumi:"fields"`
 	Filters []GetWorkspaceProjectsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The identifier of the aggregator.
 	Identifiers []string `pulumi:"identifiers"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -133,12 +132,6 @@ func (o GetWorkspaceProjectsResultOutput) ToGetWorkspaceProjectsResultOutputWith
 	return o
 }
 
-func (o GetWorkspaceProjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsResult] {
-	return pulumix.Output[GetWorkspaceProjectsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectsResultOutput) Fields() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWorkspaceProjectsResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
 }
@@ -148,8 +141,8 @@ func (o GetWorkspaceProjectsResultOutput) Filters() GetWorkspaceProjectsFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkspaceProjectsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the aggregator.

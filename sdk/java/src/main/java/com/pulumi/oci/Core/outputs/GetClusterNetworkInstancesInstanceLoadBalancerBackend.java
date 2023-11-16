@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
@@ -13,63 +15,63 @@ public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
      * @return The health of the backend as observed by the load balancer.
      * 
      */
-    private String backendHealthStatus;
+    private @Nullable String backendHealthStatus;
     /**
      * @return The name of the backend in the backend set.
      * 
      */
-    private String backendName;
+    private @Nullable String backendName;
     /**
      * @return The name of the backend set on the load balancer.
      * 
      */
-    private String backendSetName;
+    private @Nullable String backendSetName;
     /**
      * @return The OCID of the load balancer attached to the instance pool.
      * 
      */
-    private String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return The current state of the instance pool instance.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetClusterNetworkInstancesInstanceLoadBalancerBackend() {}
     /**
      * @return The health of the backend as observed by the load balancer.
      * 
      */
-    public String backendHealthStatus() {
-        return this.backendHealthStatus;
+    public Optional<String> backendHealthStatus() {
+        return Optional.ofNullable(this.backendHealthStatus);
     }
     /**
      * @return The name of the backend in the backend set.
      * 
      */
-    public String backendName() {
-        return this.backendName;
+    public Optional<String> backendName() {
+        return Optional.ofNullable(this.backendName);
     }
     /**
      * @return The name of the backend set on the load balancer.
      * 
      */
-    public String backendSetName() {
-        return this.backendSetName;
+    public Optional<String> backendSetName() {
+        return Optional.ofNullable(this.backendSetName);
     }
     /**
      * @return The OCID of the load balancer attached to the instance pool.
      * 
      */
-    public String loadBalancerId() {
-        return this.loadBalancerId;
+    public Optional<String> loadBalancerId() {
+        return Optional.ofNullable(this.loadBalancerId);
     }
     /**
      * @return The current state of the instance pool instance.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String backendHealthStatus;
-        private String backendName;
-        private String backendSetName;
-        private String loadBalancerId;
-        private String state;
+        private @Nullable String backendHealthStatus;
+        private @Nullable String backendName;
+        private @Nullable String backendSetName;
+        private @Nullable String loadBalancerId;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetClusterNetworkInstancesInstanceLoadBalancerBackend defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
         }
 
         @CustomType.Setter
-        public Builder backendHealthStatus(String backendHealthStatus) {
-            this.backendHealthStatus = Objects.requireNonNull(backendHealthStatus);
+        public Builder backendHealthStatus(@Nullable String backendHealthStatus) {
+            this.backendHealthStatus = backendHealthStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder backendName(String backendName) {
-            this.backendName = Objects.requireNonNull(backendName);
+        public Builder backendName(@Nullable String backendName) {
+            this.backendName = backendName;
             return this;
         }
         @CustomType.Setter
-        public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+        public Builder backendSetName(@Nullable String backendSetName) {
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+        public Builder loadBalancerId(@Nullable String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetClusterNetworkInstancesInstanceLoadBalancerBackend build() {

@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// ShapeType of the DbSystems,INTEL or AMD
         /// </summary>
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDbSystemStoragePerformancesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? shapeType,
 

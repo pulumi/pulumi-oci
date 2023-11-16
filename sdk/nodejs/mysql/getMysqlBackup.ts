@@ -48,79 +48,79 @@ export interface GetMysqlBackupResult {
     /**
      * The size of the backup in base-2 (IEC) gibibytes. (GiB).
      */
-    readonly backupSizeInGbs: number;
+    readonly backupSizeInGbs?: number;
     /**
      * The type of backup.
      */
-    readonly backupType: string;
+    readonly backupType?: string;
     /**
      * The OCID of the compartment the DB System belongs in.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Indicates how the backup was created: manually, automatic, or by an Operator.
      */
-    readonly creationType: string;
+    readonly creationType?: string;
     /**
      * Initial size of the data volume in GiBs that will be created and attached.
      */
-    readonly dataStorageSizeInGb: number;
+    readonly dataStorageSizeInGb?: number;
     /**
      * The OCID of the DB System the backup is associated with.
      */
-    readonly dbSystemId: string;
+    readonly dbSystemId?: string;
     /**
      * Snapshot of the DbSystem details at the time of the backup
      */
-    readonly dbSystemSnapshots: outputs.Mysql.GetMysqlBackupDbSystemSnapshot[];
+    readonly dbSystemSnapshots?: outputs.Mysql.GetMysqlBackupDbSystemSnapshot[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-supplied description for the backup.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-supplied display name for the backup.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * OCID of the backup itself
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycleState.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The MySQL server version of the DB System used for backup.
      */
-    readonly mysqlVersion: string;
+    readonly mysqlVersion?: string;
     /**
      * Number of days to retain this backup.
      */
-    readonly retentionInDays: number;
+    readonly retentionInDays?: number;
     /**
      * The shape of the DB System instance used for backup.
      */
-    readonly shapeName: string;
+    readonly shapeName?: string;
     /**
      * The state of the backup.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the backup record was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time at which the backup was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.

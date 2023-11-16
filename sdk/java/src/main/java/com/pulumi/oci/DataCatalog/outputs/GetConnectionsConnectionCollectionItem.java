@@ -9,6 +9,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -22,7 +23,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return OCID of the user who created the resource.
      * 
      */
-    private String createdById;
+    private @Nullable String createdById;
     /**
      * @return Unique data asset key.
      * 
@@ -32,7 +33,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return A description of the connection.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
@@ -43,17 +44,17 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return Unique external identifier of this resource in the external source system.
      * 
      */
-    private String externalKey;
+    private @Nullable String externalKey;
     /**
      * @return Indicates whether this connection is the default connection.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return Unique connection key that is immutable.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;username&#34;: &#34;user1&#34;}}}`
      * 
@@ -63,22 +64,22 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time that the resource&#39;s status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeStatusUpdated;
+    private @Nullable String timeStatusUpdated;
     /**
      * @return Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
      * 
@@ -88,12 +89,12 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return OCID of the user who updated the resource.
      * 
      */
-    private String updatedById;
+    private @Nullable String updatedById;
     /**
      * @return URI to the connection instance in the API.
      * 
      */
-    private String uri;
+    private @Nullable String uri;
 
     private GetConnectionsConnectionCollectionItem() {}
     /**
@@ -107,8 +108,8 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return OCID of the user who created the resource.
      * 
      */
-    public String createdById() {
-        return this.createdById;
+    public Optional<String> createdById() {
+        return Optional.ofNullable(this.createdById);
     }
     /**
      * @return Unique data asset key.
@@ -121,8 +122,8 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return A description of the connection.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -138,22 +139,22 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return Unique external identifier of this resource in the external source system.
      * 
      */
-    public String externalKey() {
-        return this.externalKey;
+    public Optional<String> externalKey() {
+        return Optional.ofNullable(this.externalKey);
     }
     /**
      * @return Indicates whether this connection is the default connection.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return Unique connection key that is immutable.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;username&#34;: &#34;user1&#34;}}}`
@@ -166,29 +167,29 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time that the resource&#39;s status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeStatusUpdated() {
-        return this.timeStatusUpdated;
+    public Optional<String> timeStatusUpdated() {
+        return Optional.ofNullable(this.timeStatusUpdated);
     }
     /**
      * @return Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
@@ -201,15 +202,15 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return OCID of the user who updated the resource.
      * 
      */
-    public String updatedById() {
-        return this.updatedById;
+    public Optional<String> updatedById() {
+        return Optional.ofNullable(this.updatedById);
     }
     /**
      * @return URI to the connection instance in the API.
      * 
      */
-    public String uri() {
-        return this.uri;
+    public Optional<String> uri() {
+        return Optional.ofNullable(this.uri);
     }
 
     public static Builder builder() {
@@ -222,22 +223,22 @@ public final class GetConnectionsConnectionCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String catalogId;
-        private String createdById;
+        private @Nullable String createdById;
         private String dataAssetKey;
-        private String description;
+        private @Nullable String description;
         private String displayName;
         private @Nullable Map<String,Object> encProperties;
-        private String externalKey;
-        private Boolean isDefault;
-        private String key;
+        private @Nullable String externalKey;
+        private @Nullable Boolean isDefault;
+        private @Nullable String key;
         private Map<String,Object> properties;
-        private String state;
-        private String timeCreated;
-        private String timeStatusUpdated;
-        private String timeUpdated;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeStatusUpdated;
+        private @Nullable String timeUpdated;
         private String typeKey;
-        private String updatedById;
-        private String uri;
+        private @Nullable String updatedById;
+        private @Nullable String uri;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -266,8 +267,8 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder createdById(String createdById) {
-            this.createdById = Objects.requireNonNull(createdById);
+        public Builder createdById(@Nullable String createdById) {
+            this.createdById = createdById;
             return this;
         }
         @CustomType.Setter
@@ -276,8 +277,8 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -291,18 +292,18 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder externalKey(String externalKey) {
-            this.externalKey = Objects.requireNonNull(externalKey);
+        public Builder externalKey(@Nullable String externalKey) {
+            this.externalKey = externalKey;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
@@ -311,23 +312,23 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusUpdated(String timeStatusUpdated) {
-            this.timeStatusUpdated = Objects.requireNonNull(timeStatusUpdated);
+        public Builder timeStatusUpdated(@Nullable String timeStatusUpdated) {
+            this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
@@ -336,13 +337,13 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder updatedById(String updatedById) {
-            this.updatedById = Objects.requireNonNull(updatedById);
+        public Builder updatedById(@Nullable String updatedById) {
+            this.updatedById = updatedById;
             return this;
         }
         @CustomType.Setter
-        public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+        public Builder uri(@Nullable String uri) {
+            this.uri = uri;
             return this;
         }
         public GetConnectionsConnectionCollectionItem build() {

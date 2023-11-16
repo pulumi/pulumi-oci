@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -69,7 +68,7 @@ type GetDiscoveryJobsResult struct {
 	DiscoveryJobCollections []GetDiscoveryJobsDiscoveryJobCollection `pulumi:"discoveryJobCollections"`
 	Filters                 []GetDiscoveryJobsFilter                 `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string  `pulumi:"id"`
+	Id   *string `pulumi:"id"`
 	Name *string `pulumi:"name"`
 }
 
@@ -114,12 +113,6 @@ func (o GetDiscoveryJobsResultOutput) ToGetDiscoveryJobsResultOutputWithContext(
 	return o
 }
 
-func (o GetDiscoveryJobsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResult] {
-	return pulumix.Output[GetDiscoveryJobsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the Compartment
 func (o GetDiscoveryJobsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -137,8 +130,8 @@ func (o GetDiscoveryJobsResultOutput) Filters() GetDiscoveryJobsFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDiscoveryJobsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDiscoveryJobsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDiscoveryJobsResultOutput) Name() pulumi.StringPtrOutput {

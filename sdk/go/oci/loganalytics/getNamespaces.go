@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
@@ -65,7 +64,7 @@ type GetNamespacesResult struct {
 	CompartmentId string                `pulumi:"compartmentId"`
 	Filters       []GetNamespacesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of namespace_collection.
 	NamespaceCollections []GetNamespacesNamespaceCollection `pulumi:"namespaceCollections"`
 }
@@ -109,12 +108,6 @@ func (o GetNamespacesResultOutput) ToGetNamespacesResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetNamespacesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesResult] {
-	return pulumix.Output[GetNamespacesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The is the tenancy ID
 func (o GetNamespacesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespacesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -125,8 +118,8 @@ func (o GetNamespacesResultOutput) Filters() GetNamespacesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespacesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespacesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of namespace_collection.

@@ -28,20 +28,6 @@ class NewsReportArgs:
                  status: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NewsReport resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input['NewsReportContentTypesArgs'] content_types: (Updatable) Content types that the news report can handle.
-        :param pulumi.Input[str] description: The description of the news report.
-        :param pulumi.Input[str] locale: (Updatable) Language of the news report.
-        :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
-        :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: The news report name.
-        :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "content_types", content_types)
@@ -61,9 +47,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier where the news report will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -73,9 +56,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter(name="contentTypes")
     def content_types(self) -> pulumi.Input['NewsReportContentTypesArgs']:
-        """
-        (Updatable) Content types that the news report can handle.
-        """
         return pulumi.get(self, "content_types")
 
     @content_types.setter
@@ -85,9 +65,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        The description of the news report.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -97,9 +74,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter
     def locale(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Language of the news report.
-        """
         return pulumi.get(self, "locale")
 
     @locale.setter
@@ -109,9 +83,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter(name="newsFrequency")
     def news_frequency(self) -> pulumi.Input[str]:
-        """
-        (Updatable) News report frequency.
-        """
         return pulumi.get(self, "news_frequency")
 
     @news_frequency.setter
@@ -121,9 +92,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter(name="onsTopicId")
     def ons_topic_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        """
         return pulumi.get(self, "ons_topic_id")
 
     @ons_topic_id.setter
@@ -133,9 +101,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -145,9 +110,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -157,9 +119,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The news report name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -169,13 +128,6 @@ class NewsReportArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Defines if the news report will be enabled or disabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -203,25 +155,6 @@ class _NewsReportState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NewsReport resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input['NewsReportContentTypesArgs'] content_types: (Updatable) Content types that the news report can handle.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The description of the news report.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] locale: (Updatable) Language of the news report.
-        :param pulumi.Input[str] name: The news report name.
-        :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
-        :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        :param pulumi.Input[str] state: The current state of the news report.
-        :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -257,9 +190,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier where the news report will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -269,9 +199,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="contentTypes")
     def content_types(self) -> Optional[pulumi.Input['NewsReportContentTypesArgs']]:
-        """
-        (Updatable) Content types that the news report can handle.
-        """
         return pulumi.get(self, "content_types")
 
     @content_types.setter
@@ -281,9 +208,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -293,9 +217,6 @@ class _NewsReportState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        The description of the news report.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -305,9 +226,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -317,9 +235,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -329,9 +244,6 @@ class _NewsReportState:
     @property
     @pulumi.getter
     def locale(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Language of the news report.
-        """
         return pulumi.get(self, "locale")
 
     @locale.setter
@@ -341,9 +253,6 @@ class _NewsReportState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The news report name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -353,9 +262,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="newsFrequency")
     def news_frequency(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) News report frequency.
-        """
         return pulumi.get(self, "news_frequency")
 
     @news_frequency.setter
@@ -365,9 +271,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="onsTopicId")
     def ons_topic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        """
         return pulumi.get(self, "ons_topic_id")
 
     @ons_topic_id.setter
@@ -377,9 +280,6 @@ class _NewsReportState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the news report.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -389,13 +289,6 @@ class _NewsReportState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Defines if the news report will be enabled or disabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -405,9 +298,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -417,9 +307,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the news report was first enabled. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -429,9 +316,6 @@ class _NewsReportState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the news report was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -456,58 +340,9 @@ class NewsReport(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_news_report = oci.opsi.NewsReport("testNewsReport",
-            compartment_id=var["compartment_id"],
-            content_types=oci.opsi.NewsReportContentTypesArgs(
-                capacity_planning_resources=var["news_report_content_types_capacity_planning_resources"],
-            ),
-            description=var["news_report_description"],
-            locale=var["news_report_locale"],
-            news_frequency=var["news_report_news_frequency"],
-            ons_topic_id=oci_opsi_ons_topic["test_ons_topic"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            status=var["news_report_status"])
-        ```
-
-        ## Import
-
-        NewsReports can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
-        ```
-
+        Create a NewsReport resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']] content_types: (Updatable) Content types that the news report can handle.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The description of the news report.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] locale: (Updatable) Language of the news report.
-        :param pulumi.Input[str] name: The news report name.
-        :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
-        :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -516,42 +351,7 @@ class NewsReport(pulumi.CustomResource):
                  args: NewsReportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_news_report = oci.opsi.NewsReport("testNewsReport",
-            compartment_id=var["compartment_id"],
-            content_types=oci.opsi.NewsReportContentTypesArgs(
-                capacity_planning_resources=var["news_report_content_types_capacity_planning_resources"],
-            ),
-            description=var["news_report_description"],
-            locale=var["news_report_locale"],
-            news_frequency=var["news_report_news_frequency"],
-            ons_topic_id=oci_opsi_ons_topic["test_ons_topic"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            status=var["news_report_status"])
-        ```
-
-        ## Import
-
-        NewsReports can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
-        ```
-
+        Create a NewsReport resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NewsReportArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -645,25 +445,6 @@ class NewsReport(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']] content_types: (Updatable) Content types that the news report can handle.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The description of the news report.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] locale: (Updatable) Language of the news report.
-        :param pulumi.Input[str] name: The news report name.
-        :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
-        :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        :param pulumi.Input[str] state: The current state of the news report.
-        :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -689,124 +470,75 @@ class NewsReport(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier where the news report will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="contentTypes")
     def content_types(self) -> pulumi.Output['outputs.NewsReportContentTypes']:
-        """
-        (Updatable) Content types that the news report can handle.
-        """
         return pulumi.get(self, "content_types")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        The description of the news report.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def locale(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Language of the news report.
-        """
         return pulumi.get(self, "locale")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The news report name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="newsFrequency")
     def news_frequency(self) -> pulumi.Output[str]:
-        """
-        (Updatable) News report frequency.
-        """
         return pulumi.get(self, "news_frequency")
 
     @property
     @pulumi.getter(name="onsTopicId")
     def ons_topic_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        """
         return pulumi.get(self, "ons_topic_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the news report.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Defines if the news report will be enabled or disabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the news report was first enabled. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the news report was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

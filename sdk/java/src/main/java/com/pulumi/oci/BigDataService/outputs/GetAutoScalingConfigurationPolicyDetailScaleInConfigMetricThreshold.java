@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold {
@@ -14,39 +16,39 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThr
      * @return This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
-    private Integer durationInMinutes;
+    private @Nullable Integer durationInMinutes;
     /**
      * @return The comparison operator to use. Options are greater than (GT) or less than (LT).
      * 
      */
-    private String operator;
+    private @Nullable String operator;
     /**
      * @return Integer non-negative value. 0 &lt; value &lt; 100
      * 
      */
-    private Integer value;
+    private @Nullable Integer value;
 
     private GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold() {}
     /**
      * @return This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
-    public Integer durationInMinutes() {
-        return this.durationInMinutes;
+    public Optional<Integer> durationInMinutes() {
+        return Optional.ofNullable(this.durationInMinutes);
     }
     /**
      * @return The comparison operator to use. Options are greater than (GT) or less than (LT).
      * 
      */
-    public String operator() {
-        return this.operator;
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
     /**
      * @return Integer non-negative value. 0 &lt; value &lt; 100
      * 
      */
-    public Integer value() {
-        return this.value;
+    public Optional<Integer> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThr
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer durationInMinutes;
-        private String operator;
-        private Integer value;
+        private @Nullable Integer durationInMinutes;
+        private @Nullable String operator;
+        private @Nullable Integer value;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThr
         }
 
         @CustomType.Setter
-        public Builder durationInMinutes(Integer durationInMinutes) {
-            this.durationInMinutes = Objects.requireNonNull(durationInMinutes);
+        public Builder durationInMinutes(@Nullable Integer durationInMinutes) {
+            this.durationInMinutes = durationInMinutes;
             return this;
         }
         @CustomType.Setter
-        public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Integer value) {
+            this.value = value;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold build() {

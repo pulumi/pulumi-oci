@@ -16,10 +16,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         /// </summary>
-        public readonly string IngressIp;
+        public readonly string? IngressIp;
 
         [OutputConstructor]
-        private GetConnectionsConnectionCollectionItemIngressIpResult(string ingressIp)
+        private GetConnectionsConnectionCollectionItemIngressIpResult(string? ingressIp)
         {
             IngressIp = ingressIp;
         }

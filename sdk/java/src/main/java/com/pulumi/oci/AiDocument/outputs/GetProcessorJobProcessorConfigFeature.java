@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProcessorJobProcessorConfigFeature {
@@ -15,63 +17,63 @@ public final class GetProcessorJobProcessorConfigFeature {
      * @return The type of document analysis requested. The allowed values are:
      * 
      */
-    private String featureType;
+    private @Nullable String featureType;
     /**
      * @return Whether or not to generate a searchable PDF file.
      * 
      */
-    private Boolean generateSearchablePdf;
+    private @Nullable Boolean generateSearchablePdf;
     /**
      * @return The maximum number of results to return.
      * 
      */
-    private Integer maxResults;
+    private @Nullable Integer maxResults;
     /**
      * @return The custom model ID.
      * 
      */
-    private String modelId;
+    private @Nullable String modelId;
     /**
      * @return The custom model tenancy ID when modelId represents aliasName.
      * 
      */
-    private String tenancyId;
+    private @Nullable String tenancyId;
 
     private GetProcessorJobProcessorConfigFeature() {}
     /**
      * @return The type of document analysis requested. The allowed values are:
      * 
      */
-    public String featureType() {
-        return this.featureType;
+    public Optional<String> featureType() {
+        return Optional.ofNullable(this.featureType);
     }
     /**
      * @return Whether or not to generate a searchable PDF file.
      * 
      */
-    public Boolean generateSearchablePdf() {
-        return this.generateSearchablePdf;
+    public Optional<Boolean> generateSearchablePdf() {
+        return Optional.ofNullable(this.generateSearchablePdf);
     }
     /**
      * @return The maximum number of results to return.
      * 
      */
-    public Integer maxResults() {
-        return this.maxResults;
+    public Optional<Integer> maxResults() {
+        return Optional.ofNullable(this.maxResults);
     }
     /**
      * @return The custom model ID.
      * 
      */
-    public String modelId() {
-        return this.modelId;
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
     /**
      * @return The custom model tenancy ID when modelId represents aliasName.
      * 
      */
-    public String tenancyId() {
-        return this.tenancyId;
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetProcessorJobProcessorConfigFeature {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String featureType;
-        private Boolean generateSearchablePdf;
-        private Integer maxResults;
-        private String modelId;
-        private String tenancyId;
+        private @Nullable String featureType;
+        private @Nullable Boolean generateSearchablePdf;
+        private @Nullable Integer maxResults;
+        private @Nullable String modelId;
+        private @Nullable String tenancyId;
         public Builder() {}
         public Builder(GetProcessorJobProcessorConfigFeature defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetProcessorJobProcessorConfigFeature {
         }
 
         @CustomType.Setter
-        public Builder featureType(String featureType) {
-            this.featureType = Objects.requireNonNull(featureType);
+        public Builder featureType(@Nullable String featureType) {
+            this.featureType = featureType;
             return this;
         }
         @CustomType.Setter
-        public Builder generateSearchablePdf(Boolean generateSearchablePdf) {
-            this.generateSearchablePdf = Objects.requireNonNull(generateSearchablePdf);
+        public Builder generateSearchablePdf(@Nullable Boolean generateSearchablePdf) {
+            this.generateSearchablePdf = generateSearchablePdf;
             return this;
         }
         @CustomType.Setter
-        public Builder maxResults(Integer maxResults) {
-            this.maxResults = Objects.requireNonNull(maxResults);
+        public Builder maxResults(@Nullable Integer maxResults) {
+            this.maxResults = maxResults;
             return this;
         }
         @CustomType.Setter
-        public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+        public Builder modelId(@Nullable String modelId) {
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
             return this;
         }
         public GetProcessorJobProcessorConfigFeature build() {

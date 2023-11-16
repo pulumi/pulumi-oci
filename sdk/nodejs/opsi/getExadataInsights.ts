@@ -96,7 +96,7 @@ export interface GetExadataInsightsResult {
     /**
      * The list of exadata_insight_summary_collection.
      */
-    readonly exadataInsightSummaryCollections: outputs.Opsi.GetExadataInsightsExadataInsightSummaryCollection[];
+    readonly exadataInsightSummaryCollections?: outputs.Opsi.GetExadataInsightsExadataInsightSummaryCollection[];
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */

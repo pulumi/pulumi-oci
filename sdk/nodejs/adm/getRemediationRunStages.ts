@@ -62,7 +62,7 @@ export interface GetRemediationRunStagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      */
@@ -70,7 +70,7 @@ export interface GetRemediationRunStagesResult {
     /**
      * The list of remediation_run_stage_collection.
      */
-    readonly remediationRunStageCollections: outputs.Adm.GetRemediationRunStagesRemediationRunStageCollection[];
+    readonly remediationRunStageCollections?: outputs.Adm.GetRemediationRunStagesRemediationRunStageCollection[];
     /**
      * The current status of a remediation run stage.
      */

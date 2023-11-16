@@ -49,13 +49,13 @@ export interface GetAddonsResult {
     /**
      * The list of addons.
      */
-    readonly addons: outputs.ContainerEngine.GetAddonsAddon[];
+    readonly addons?: outputs.ContainerEngine.GetAddonsAddon[];
     readonly clusterId: string;
     readonly filters?: outputs.ContainerEngine.GetAddonsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.

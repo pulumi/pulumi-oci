@@ -46,17 +46,11 @@ class GetDetectionProjectsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID for the project's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetDetectionProjectsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetDetectionProjectsResult:
 
     @property
     @pulumi.getter(name="projectCollections")
-    def project_collections(self) -> Sequence['outputs.GetDetectionProjectsProjectCollectionResult']:
-        """
-        The list of project_collection.
-        """
+    def project_collections(self) -> Optional[Sequence['outputs.GetDetectionProjectsProjectCollectionResult']]:
         return pulumi.get(self, "project_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The lifecycle state of the Project.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_detection_projects(compartment_id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectionProjectsResult:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of  Projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.AiAnomalyDetection.get_detection_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_detection_projects_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionProjectsResult]:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of  Projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.AiAnomalyDetection.get_detection_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

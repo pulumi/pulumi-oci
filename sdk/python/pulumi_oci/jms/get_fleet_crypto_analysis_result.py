@@ -79,18 +79,12 @@ class GetFleetCryptoAnalysisResultResult:
 
     @property
     @pulumi.getter(name="aggregationMode")
-    def aggregation_mode(self) -> str:
-        """
-        The result aggregation mode
-        """
+    def aggregation_mode(self) -> Optional[str]:
         return pulumi.get(self, "aggregation_mode")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The Object Storage bucket name of this analysis result.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
@@ -100,39 +94,27 @@ class GetFleetCryptoAnalysisResultResult:
 
     @property
     @pulumi.getter(name="cryptoRoadmapVersion")
-    def crypto_roadmap_version(self) -> str:
-        """
-        The Crypto Roadmap version used to perform the analysis.
-        """
+    def crypto_roadmap_version(self) -> Optional[str]:
         return pulumi.get(self, "crypto_roadmap_version")
 
     @property
     @pulumi.getter(name="findingCount")
-    def finding_count(self) -> int:
-        """
-        Total number of findings with the analysis.
-        """
+    def finding_count(self) -> Optional[int]:
         return pulumi.get(self, "finding_count")
 
     @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
-        """
-        The fleet OCID.
-        """
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The hostname of the managed instance.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -140,82 +122,52 @@ class GetFleetCryptoAnalysisResultResult:
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The managed instance OCID.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Object Storage namespace of this analysis result.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="nonCompliantFindingCount")
-    def non_compliant_finding_count(self) -> int:
-        """
-        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-        """
+    def non_compliant_finding_count(self) -> Optional[int]:
         return pulumi.get(self, "non_compliant_finding_count")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The Object Storage object name of this analysis result.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="summarizedEventCount")
-    def summarized_event_count(self) -> int:
-        """
-        Total number of summarized events. Summarized events are deduplicated events of interest.
-        """
+    def summarized_event_count(self) -> Optional[int]:
         return pulumi.get(self, "summarized_event_count")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the result is compiled.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFirstEvent")
-    def time_first_event(self) -> str:
-        """
-        Time of the first event in the analysis.
-        """
+    def time_first_event(self) -> Optional[str]:
         return pulumi.get(self, "time_first_event")
 
     @property
     @pulumi.getter(name="timeLastEvent")
-    def time_last_event(self) -> str:
-        """
-        Time of the last event in the analysis.
-        """
+    def time_last_event(self) -> Optional[str]:
         return pulumi.get(self, "time_last_event")
 
     @property
     @pulumi.getter(name="totalEventCount")
-    def total_event_count(self) -> int:
-        """
-        Total number of events in the analysis.
-        """
+    def total_event_count(self) -> Optional[int]:
         return pulumi.get(self, "total_event_count")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        The OCID of the work request to start the analysis.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -249,23 +201,7 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
                                      fleet_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetCryptoAnalysisResultResult:
     """
-    This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve the metadata for the result of a Crypto event analysis.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"],
-        fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str crypto_analysis_result_id: The OCID of the analysis result.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cryptoAnalysisResultId'] = crypto_analysis_result_id
@@ -299,22 +235,6 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
                                             fleet_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultResult]:
     """
-    This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve the metadata for the result of a Crypto event analysis.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"],
-        fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str crypto_analysis_result_id: The OCID of the analysis result.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     ...

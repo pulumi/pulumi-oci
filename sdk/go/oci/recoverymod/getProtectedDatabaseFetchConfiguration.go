@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
@@ -67,10 +66,10 @@ type GetProtectedDatabaseFetchConfigurationResult struct {
 	Base64EncodeContent *bool   `pulumi:"base64EncodeContent"`
 	ConfigurationType   *string `pulumi:"configurationType"`
 	// content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base64EncodeContent` to false.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	ProtectedDatabaseId string `pulumi:"protectedDatabaseId"`
+	Id                  *string `pulumi:"id"`
+	ProtectedDatabaseId string  `pulumi:"protectedDatabaseId"`
 }
 
 func GetProtectedDatabaseFetchConfigurationOutput(ctx *pulumi.Context, args GetProtectedDatabaseFetchConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetProtectedDatabaseFetchConfigurationResultOutput {
@@ -114,12 +113,6 @@ func (o GetProtectedDatabaseFetchConfigurationResultOutput) ToGetProtectedDataba
 	return o
 }
 
-func (o GetProtectedDatabaseFetchConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseFetchConfigurationResult] {
-	return pulumix.Output[GetProtectedDatabaseFetchConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectedDatabaseFetchConfigurationResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetProtectedDatabaseFetchConfigurationResult) *bool { return v.Base64EncodeContent }).(pulumi.BoolPtrOutput)
 }
@@ -129,13 +122,13 @@ func (o GetProtectedDatabaseFetchConfigurationResultOutput) ConfigurationType() 
 }
 
 // content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base64EncodeContent` to false.
-func (o GetProtectedDatabaseFetchConfigurationResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabaseFetchConfigurationResult) string { return v.Content }).(pulumi.StringOutput)
+func (o GetProtectedDatabaseFetchConfigurationResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseFetchConfigurationResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetProtectedDatabaseFetchConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabaseFetchConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProtectedDatabaseFetchConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseFetchConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetProtectedDatabaseFetchConfigurationResultOutput) ProtectedDatabaseId() pulumi.StringOutput {

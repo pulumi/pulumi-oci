@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -63,18 +62,18 @@ type LookupListenerArgs struct {
 // A collection of values returned by getListener.
 type LookupListenerResult struct {
 	// The name of the associated backend set.  Example: `exampleBackendSet`
-	DefaultBackendSetName string `pulumi:"defaultBackendSetName"`
-	Id                    string `pulumi:"id"`
+	DefaultBackendSetName *string `pulumi:"defaultBackendSetName"`
+	Id                    *string `pulumi:"id"`
 	// IP version associated with the listener.
-	IpVersion    string `pulumi:"ipVersion"`
-	ListenerName string `pulumi:"listenerName"`
+	IpVersion    *string `pulumi:"ipVersion"`
+	ListenerName string  `pulumi:"listenerName"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
-	Name                  string `pulumi:"name"`
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	Name                  *string `pulumi:"name"`
+	NetworkLoadBalancerId string  `pulumi:"networkLoadBalancerId"`
 	// The communication port for the listener.  Example: `80`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 }
 
 func LookupListenerOutput(ctx *pulumi.Context, args LookupListenerOutputArgs, opts ...pulumi.InvokeOption) LookupListenerResultOutput {
@@ -117,24 +116,18 @@ func (o LookupListenerResultOutput) ToLookupListenerResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupListenerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupListenerResult] {
-	return pulumix.Output[LookupListenerResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the associated backend set.  Example: `exampleBackendSet`
-func (o LookupListenerResultOutput) DefaultBackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupListenerResult) string { return v.DefaultBackendSetName }).(pulumi.StringOutput)
+func (o LookupListenerResultOutput) DefaultBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupListenerResult) *string { return v.DefaultBackendSetName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupListenerResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupListenerResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupListenerResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupListenerResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // IP version associated with the listener.
-func (o LookupListenerResultOutput) IpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupListenerResult) string { return v.IpVersion }).(pulumi.StringOutput)
+func (o LookupListenerResultOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupListenerResult) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupListenerResultOutput) ListenerName() pulumi.StringOutput {
@@ -142,8 +135,8 @@ func (o LookupListenerResultOutput) ListenerName() pulumi.StringOutput {
 }
 
 // A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
-func (o LookupListenerResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupListenerResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupListenerResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupListenerResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupListenerResultOutput) NetworkLoadBalancerId() pulumi.StringOutput {
@@ -151,13 +144,13 @@ func (o LookupListenerResultOutput) NetworkLoadBalancerId() pulumi.StringOutput 
 }
 
 // The communication port for the listener.  Example: `80`
-func (o LookupListenerResultOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupListenerResult) int { return v.Port }).(pulumi.IntOutput)
+func (o LookupListenerResultOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupListenerResult) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
-func (o LookupListenerResultOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupListenerResult) string { return v.Protocol }).(pulumi.StringOutput)
+func (o LookupListenerResultOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupListenerResult) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -103,17 +103,17 @@ export interface GetObjectVersionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of object version summaries.
      */
-    readonly items: outputs.ObjectStorage.GetObjectVersionsItem[];
+    readonly items?: outputs.ObjectStorage.GetObjectVersionsItem[];
     readonly namespace: string;
     readonly prefix?: string;
     /**
      * Prefixes that are common to the results returned by the request if the request specified a delimiter.
      */
-    readonly prefixes: string[];
+    readonly prefixes?: string[];
     readonly start?: string;
     readonly startAfter?: string;
 }

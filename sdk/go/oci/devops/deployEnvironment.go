@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
@@ -82,40 +81,40 @@ type DeployEnvironment struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of the Kubernetes cluster.
-	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
+	ClusterId pulumi.StringPtrOutput `pulumi:"clusterId"`
 	// The OCID of a compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-	ComputeInstanceGroupSelectors DeployEnvironmentComputeInstanceGroupSelectorsOutput `pulumi:"computeInstanceGroupSelectors"`
+	ComputeInstanceGroupSelectors DeployEnvironmentComputeInstanceGroupSelectorsPtrOutput `pulumi:"computeInstanceGroupSelectors"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Deployment environment type.
 	DeployEnvironmentType pulumi.StringOutput `pulumi:"deployEnvironmentType"`
 	// (Updatable) Optional description about the deployment environment.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Deployment environment display name. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the Function.
-	FunctionId pulumi.StringOutput `pulumi:"functionId"`
+	FunctionId pulumi.StringPtrOutput `pulumi:"functionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-	NetworkChannel DeployEnvironmentNetworkChannelOutput `pulumi:"networkChannel"`
+	NetworkChannel DeployEnvironmentNetworkChannelPtrOutput `pulumi:"networkChannel"`
 	// The OCID of a project.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the deployment environment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDeployEnvironment registers a new resource with the given unique name, arguments, and options.
@@ -309,12 +308,6 @@ func (i *DeployEnvironment) ToDeployEnvironmentOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(DeployEnvironmentOutput)
 }
 
-func (i *DeployEnvironment) ToOutput(ctx context.Context) pulumix.Output[*DeployEnvironment] {
-	return pulumix.Output[*DeployEnvironment]{
-		OutputState: i.ToDeployEnvironmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DeployEnvironmentArrayInput is an input type that accepts DeployEnvironmentArray and DeployEnvironmentArrayOutput values.
 // You can construct a concrete instance of `DeployEnvironmentArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i DeployEnvironmentArray) ToDeployEnvironmentArrayOutput() DeployEnvironme
 
 func (i DeployEnvironmentArray) ToDeployEnvironmentArrayOutputWithContext(ctx context.Context) DeployEnvironmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeployEnvironmentArrayOutput)
-}
-
-func (i DeployEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeployEnvironment] {
-	return pulumix.Output[[]*DeployEnvironment]{
-		OutputState: i.ToDeployEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DeployEnvironmentMapInput is an input type that accepts DeployEnvironmentMap and DeployEnvironmentMapOutput values.
@@ -371,12 +358,6 @@ func (i DeployEnvironmentMap) ToDeployEnvironmentMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(DeployEnvironmentMapOutput)
 }
 
-func (i DeployEnvironmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployEnvironment] {
-	return pulumix.Output[map[string]*DeployEnvironment]{
-		OutputState: i.ToDeployEnvironmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DeployEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (DeployEnvironmentOutput) ElementType() reflect.Type {
@@ -391,27 +372,21 @@ func (o DeployEnvironmentOutput) ToDeployEnvironmentOutputWithContext(ctx contex
 	return o
 }
 
-func (o DeployEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[*DeployEnvironment] {
-	return pulumix.Output[*DeployEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the Kubernetes cluster.
-func (o DeployEnvironmentOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a compartment.
-func (o DeployEnvironmentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-func (o DeployEnvironmentOutput) ComputeInstanceGroupSelectors() DeployEnvironmentComputeInstanceGroupSelectorsOutput {
-	return o.ApplyT(func(v *DeployEnvironment) DeployEnvironmentComputeInstanceGroupSelectorsOutput {
+func (o DeployEnvironmentOutput) ComputeInstanceGroupSelectors() DeployEnvironmentComputeInstanceGroupSelectorsPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) DeployEnvironmentComputeInstanceGroupSelectorsPtrOutput {
 		return v.ComputeInstanceGroupSelectors
-	}).(DeployEnvironmentComputeInstanceGroupSelectorsOutput)
+	}).(DeployEnvironmentComputeInstanceGroupSelectorsPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -425,13 +400,13 @@ func (o DeployEnvironmentOutput) DeployEnvironmentType() pulumi.StringOutput {
 }
 
 // (Updatable) Optional description about the deployment environment.
-func (o DeployEnvironmentOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Deployment environment display name. Avoid entering confidential information.
-func (o DeployEnvironmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -440,18 +415,18 @@ func (o DeployEnvironmentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The OCID of the Function.
-func (o DeployEnvironmentOutput) FunctionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.FunctionId }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) FunctionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o DeployEnvironmentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-func (o DeployEnvironmentOutput) NetworkChannel() DeployEnvironmentNetworkChannelOutput {
-	return o.ApplyT(func(v *DeployEnvironment) DeployEnvironmentNetworkChannelOutput { return v.NetworkChannel }).(DeployEnvironmentNetworkChannelOutput)
+func (o DeployEnvironmentOutput) NetworkChannel() DeployEnvironmentNetworkChannelPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) DeployEnvironmentNetworkChannelPtrOutput { return v.NetworkChannel }).(DeployEnvironmentNetworkChannelPtrOutput)
 }
 
 // The OCID of a project.
@@ -463,8 +438,8 @@ func (o DeployEnvironmentOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The current state of the deployment environment.
-func (o DeployEnvironmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -473,13 +448,13 @@ func (o DeployEnvironmentOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o DeployEnvironmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o DeployEnvironmentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DeployEnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -494,12 +469,6 @@ func (o DeployEnvironmentArrayOutput) ToDeployEnvironmentArrayOutput() DeployEnv
 
 func (o DeployEnvironmentArrayOutput) ToDeployEnvironmentArrayOutputWithContext(ctx context.Context) DeployEnvironmentArrayOutput {
 	return o
-}
-
-func (o DeployEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeployEnvironment] {
-	return pulumix.Output[[]*DeployEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployEnvironmentArrayOutput) Index(i pulumi.IntInput) DeployEnvironmentOutput {
@@ -520,12 +489,6 @@ func (o DeployEnvironmentMapOutput) ToDeployEnvironmentMapOutput() DeployEnviron
 
 func (o DeployEnvironmentMapOutput) ToDeployEnvironmentMapOutputWithContext(ctx context.Context) DeployEnvironmentMapOutput {
 	return o
-}
-
-func (o DeployEnvironmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployEnvironment] {
-	return pulumix.Output[map[string]*DeployEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployEnvironmentMapOutput) MapIndex(k pulumi.StringInput) DeployEnvironmentOutput {

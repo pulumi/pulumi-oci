@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
@@ -69,16 +68,16 @@ type PublicIpPool struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The public IP pool's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewPublicIpPool registers a new resource with the given unique name, arguments, and options.
@@ -209,12 +208,6 @@ func (i *PublicIpPool) ToPublicIpPoolOutputWithContext(ctx context.Context) Publ
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolOutput)
 }
 
-func (i *PublicIpPool) ToOutput(ctx context.Context) pulumix.Output[*PublicIpPool] {
-	return pulumix.Output[*PublicIpPool]{
-		OutputState: i.ToPublicIpPoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PublicIpPoolArrayInput is an input type that accepts PublicIpPoolArray and PublicIpPoolArrayOutput values.
 // You can construct a concrete instance of `PublicIpPoolArrayInput` via:
 //
@@ -238,12 +231,6 @@ func (i PublicIpPoolArray) ToPublicIpPoolArrayOutput() PublicIpPoolArrayOutput {
 
 func (i PublicIpPoolArray) ToPublicIpPoolArrayOutputWithContext(ctx context.Context) PublicIpPoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolArrayOutput)
-}
-
-func (i PublicIpPoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIpPool] {
-	return pulumix.Output[[]*PublicIpPool]{
-		OutputState: i.ToPublicIpPoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PublicIpPoolMapInput is an input type that accepts PublicIpPoolMap and PublicIpPoolMapOutput values.
@@ -271,12 +258,6 @@ func (i PublicIpPoolMap) ToPublicIpPoolMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolMapOutput)
 }
 
-func (i PublicIpPoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIpPool] {
-	return pulumix.Output[map[string]*PublicIpPool]{
-		OutputState: i.ToPublicIpPoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PublicIpPoolOutput struct{ *pulumi.OutputState }
 
 func (PublicIpPoolOutput) ElementType() reflect.Type {
@@ -289,12 +270,6 @@ func (o PublicIpPoolOutput) ToPublicIpPoolOutput() PublicIpPoolOutput {
 
 func (o PublicIpPoolOutput) ToPublicIpPoolOutputWithContext(ctx context.Context) PublicIpPoolOutput {
 	return o
-}
-
-func (o PublicIpPoolOutput) ToOutput(ctx context.Context) pulumix.Output[*PublicIpPool] {
-	return pulumix.Output[*PublicIpPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
@@ -313,8 +288,8 @@ func (o PublicIpPoolOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o PublicIpPoolOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIpPool) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o PublicIpPoolOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIpPool) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -326,13 +301,13 @@ func (o PublicIpPoolOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The public IP pool's current state.
-func (o PublicIpPoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIpPool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PublicIpPoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIpPool) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o PublicIpPoolOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIpPool) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PublicIpPoolOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIpPool) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type PublicIpPoolArrayOutput struct{ *pulumi.OutputState }
@@ -347,12 +322,6 @@ func (o PublicIpPoolArrayOutput) ToPublicIpPoolArrayOutput() PublicIpPoolArrayOu
 
 func (o PublicIpPoolArrayOutput) ToPublicIpPoolArrayOutputWithContext(ctx context.Context) PublicIpPoolArrayOutput {
 	return o
-}
-
-func (o PublicIpPoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIpPool] {
-	return pulumix.Output[[]*PublicIpPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PublicIpPoolArrayOutput) Index(i pulumi.IntInput) PublicIpPoolOutput {
@@ -373,12 +342,6 @@ func (o PublicIpPoolMapOutput) ToPublicIpPoolMapOutput() PublicIpPoolMapOutput {
 
 func (o PublicIpPoolMapOutput) ToPublicIpPoolMapOutputWithContext(ctx context.Context) PublicIpPoolMapOutput {
 	return o
-}
-
-func (o PublicIpPoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIpPool] {
-	return pulumix.Output[map[string]*PublicIpPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PublicIpPoolMapOutput) MapIndex(k pulumi.StringInput) PublicIpPoolOutput {

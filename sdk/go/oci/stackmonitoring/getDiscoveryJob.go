@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -60,35 +59,35 @@ type LookupDiscoveryJobArgs struct {
 // A collection of values returned by getDiscoveryJob.
 type LookupDiscoveryJobResult struct {
 	// The OCID of the Compartment
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Client who submits discovery job.
-	DiscoveryClient string `pulumi:"discoveryClient"`
+	DiscoveryClient *string `pulumi:"discoveryClient"`
 	// The request of DiscoveryJob Resource details.
 	DiscoveryDetails []GetDiscoveryJobDiscoveryDetail `pulumi:"discoveryDetails"`
 	DiscoveryJobId   string                           `pulumi:"discoveryJobId"`
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-	DiscoveryType string `pulumi:"discoveryType"`
+	DiscoveryType *string `pulumi:"discoveryType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of Discovery job
-	Id                                       string `pulumi:"id"`
-	ShouldPropagateTagsToDiscoveredResources bool   `pulumi:"shouldPropagateTagsToDiscoveredResources"`
+	Id                                       *string `pulumi:"id"`
+	ShouldPropagateTagsToDiscoveredResources *bool   `pulumi:"shouldPropagateTagsToDiscoveredResources"`
 	// The current state of the DiscoveryJob Resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Specifies the status of the discovery job
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The short summary of the status of the discovery job
-	StatusMessage string `pulumi:"statusMessage"`
+	StatusMessage *string `pulumi:"statusMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of Tenant
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// The time the discovery Job was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of user in which the job is submitted
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 func LookupDiscoveryJobOutput(ctx *pulumi.Context, args LookupDiscoveryJobOutputArgs, opts ...pulumi.InvokeOption) LookupDiscoveryJobResultOutput {
@@ -129,15 +128,9 @@ func (o LookupDiscoveryJobResultOutput) ToLookupDiscoveryJobResultOutputWithCont
 	return o
 }
 
-func (o LookupDiscoveryJobResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDiscoveryJobResult] {
-	return pulumix.Output[LookupDiscoveryJobResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the Compartment
-func (o LookupDiscoveryJobResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -146,8 +139,8 @@ func (o LookupDiscoveryJobResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Client who submits discovery job.
-func (o LookupDiscoveryJobResultOutput) DiscoveryClient() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.DiscoveryClient }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) DiscoveryClient() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.DiscoveryClient }).(pulumi.StringPtrOutput)
 }
 
 // The request of DiscoveryJob Resource details.
@@ -160,8 +153,8 @@ func (o LookupDiscoveryJobResultOutput) DiscoveryJobId() pulumi.StringOutput {
 }
 
 // Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-func (o LookupDiscoveryJobResultOutput) DiscoveryType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.DiscoveryType }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) DiscoveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.DiscoveryType }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -170,27 +163,27 @@ func (o LookupDiscoveryJobResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of Discovery job
-func (o LookupDiscoveryJobResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDiscoveryJobResultOutput) ShouldPropagateTagsToDiscoveredResources() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) bool { return v.ShouldPropagateTagsToDiscoveredResources }).(pulumi.BoolOutput)
+func (o LookupDiscoveryJobResultOutput) ShouldPropagateTagsToDiscoveredResources() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *bool { return v.ShouldPropagateTagsToDiscoveredResources }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the DiscoveryJob Resource.
-func (o LookupDiscoveryJobResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the status of the discovery job
-func (o LookupDiscoveryJobResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The short summary of the status of the discovery job
-func (o LookupDiscoveryJobResultOutput) StatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.StatusMessage }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) StatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.StatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -199,18 +192,18 @@ func (o LookupDiscoveryJobResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of Tenant
-func (o LookupDiscoveryJobResultOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.TenantId }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The time the discovery Job was updated.
-func (o LookupDiscoveryJobResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of user in which the job is submitted
-func (o LookupDiscoveryJobResultOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.UserId }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobResultOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

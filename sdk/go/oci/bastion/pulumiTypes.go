@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i SessionKeyDetailsArgs) ToSessionKeyDetailsOutput() SessionKeyDetailsOutp
 
 func (i SessionKeyDetailsArgs) ToSessionKeyDetailsOutputWithContext(ctx context.Context) SessionKeyDetailsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SessionKeyDetailsOutput)
-}
-
-func (i SessionKeyDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[SessionKeyDetails] {
-	return pulumix.Output[SessionKeyDetails]{
-		OutputState: i.ToSessionKeyDetailsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i SessionKeyDetailsArgs) ToSessionKeyDetailsPtrOutput() SessionKeyDetailsPtrOutput {
@@ -94,12 +87,6 @@ func (i *sessionKeyDetailsPtrType) ToSessionKeyDetailsPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(SessionKeyDetailsPtrOutput)
 }
 
-func (i *sessionKeyDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*SessionKeyDetails] {
-	return pulumix.Output[*SessionKeyDetails]{
-		OutputState: i.ToSessionKeyDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SessionKeyDetailsOutput struct{ *pulumi.OutputState }
 
 func (SessionKeyDetailsOutput) ElementType() reflect.Type {
@@ -124,12 +111,6 @@ func (o SessionKeyDetailsOutput) ToSessionKeyDetailsPtrOutputWithContext(ctx con
 	}).(SessionKeyDetailsPtrOutput)
 }
 
-func (o SessionKeyDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[SessionKeyDetails] {
-	return pulumix.Output[SessionKeyDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
 func (o SessionKeyDetailsOutput) PublicKeyContent() pulumi.StringOutput {
 	return o.ApplyT(func(v SessionKeyDetails) string { return v.PublicKeyContent }).(pulumi.StringOutput)
@@ -147,12 +128,6 @@ func (o SessionKeyDetailsPtrOutput) ToSessionKeyDetailsPtrOutput() SessionKeyDet
 
 func (o SessionKeyDetailsPtrOutput) ToSessionKeyDetailsPtrOutputWithContext(ctx context.Context) SessionKeyDetailsPtrOutput {
 	return o
-}
-
-func (o SessionKeyDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SessionKeyDetails] {
-	return pulumix.Output[*SessionKeyDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SessionKeyDetailsPtrOutput) Elem() SessionKeyDetailsOutput {
@@ -238,12 +213,6 @@ func (i SessionTargetResourceDetailsArgs) ToSessionTargetResourceDetailsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(SessionTargetResourceDetailsOutput)
 }
 
-func (i SessionTargetResourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[SessionTargetResourceDetails] {
-	return pulumix.Output[SessionTargetResourceDetails]{
-		OutputState: i.ToSessionTargetResourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SessionTargetResourceDetailsArgs) ToSessionTargetResourceDetailsPtrOutput() SessionTargetResourceDetailsPtrOutput {
 	return i.ToSessionTargetResourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -285,12 +254,6 @@ func (i *sessionTargetResourceDetailsPtrType) ToSessionTargetResourceDetailsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(SessionTargetResourceDetailsPtrOutput)
 }
 
-func (i *sessionTargetResourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*SessionTargetResourceDetails] {
-	return pulumix.Output[*SessionTargetResourceDetails]{
-		OutputState: i.ToSessionTargetResourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SessionTargetResourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (SessionTargetResourceDetailsOutput) ElementType() reflect.Type {
@@ -313,12 +276,6 @@ func (o SessionTargetResourceDetailsOutput) ToSessionTargetResourceDetailsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SessionTargetResourceDetails) *SessionTargetResourceDetails {
 		return &v
 	}).(SessionTargetResourceDetailsPtrOutput)
-}
-
-func (o SessionTargetResourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[SessionTargetResourceDetails] {
-	return pulumix.Output[SessionTargetResourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The session type.
@@ -371,12 +328,6 @@ func (o SessionTargetResourceDetailsPtrOutput) ToSessionTargetResourceDetailsPtr
 
 func (o SessionTargetResourceDetailsPtrOutput) ToSessionTargetResourceDetailsPtrOutputWithContext(ctx context.Context) SessionTargetResourceDetailsPtrOutput {
 	return o
-}
-
-func (o SessionTargetResourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SessionTargetResourceDetails] {
-	return pulumix.Output[*SessionTargetResourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SessionTargetResourceDetailsPtrOutput) Elem() SessionTargetResourceDetailsOutput {
@@ -464,45 +415,45 @@ func (o SessionTargetResourceDetailsPtrOutput) TargetResourcePrivateIpAddress() 
 
 type GetBastionsBastion struct {
 	// The type of bastion.
-	BastionType string `pulumi:"bastionType"`
+	BastionType *string `pulumi:"bastionType"`
 	// A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
 	ClientCidrBlockAllowLists []string `pulumi:"clientCidrBlockAllowLists"`
 	// The unique identifier (OCID) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-	DnsProxyStatus string `pulumi:"dnsProxyStatus"`
+	DnsProxyStatus *string `pulumi:"dnsProxyStatus"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the bastion, which can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The maximum amount of time that any session on the bastion can remain active.
-	MaxSessionTtlInSeconds int `pulumi:"maxSessionTtlInSeconds"`
+	MaxSessionTtlInSeconds *int `pulumi:"maxSessionTtlInSeconds"`
 	// The maximum number of active sessions allowed on the bastion.
-	MaxSessionsAllowed int `pulumi:"maxSessionsAllowed"`
+	MaxSessionsAllowed *int `pulumi:"maxSessionsAllowed"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-	PhoneBookEntry string `pulumi:"phoneBookEntry"`
+	PhoneBookEntry *string `pulumi:"phoneBookEntry"`
 	// The private IP address of the created private endpoint.
-	PrivateEndpointIpAddress string `pulumi:"privateEndpointIpAddress"`
+	PrivateEndpointIpAddress *string `pulumi:"privateEndpointIpAddress"`
 	// The current state of the bastion.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses []string `pulumi:"staticJumpHostIpAddresses"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
-	TargetSubnetId string `pulumi:"targetSubnetId"`
+	TargetSubnetId *string `pulumi:"targetSubnetId"`
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-	TargetVcnId string `pulumi:"targetVcnId"`
+	TargetVcnId *string `pulumi:"targetVcnId"`
 	// The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetBastionsBastionInput is an input type that accepts GetBastionsBastionArgs and GetBastionsBastionOutput values.
@@ -518,45 +469,45 @@ type GetBastionsBastionInput interface {
 
 type GetBastionsBastionArgs struct {
 	// The type of bastion.
-	BastionType pulumi.StringInput `pulumi:"bastionType"`
+	BastionType pulumi.StringPtrInput `pulumi:"bastionType"`
 	// A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
 	ClientCidrBlockAllowLists pulumi.StringArrayInput `pulumi:"clientCidrBlockAllowLists"`
 	// The unique identifier (OCID) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-	DnsProxyStatus pulumi.StringInput `pulumi:"dnsProxyStatus"`
+	DnsProxyStatus pulumi.StringPtrInput `pulumi:"dnsProxyStatus"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the bastion, which can't be changed after creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The maximum amount of time that any session on the bastion can remain active.
-	MaxSessionTtlInSeconds pulumi.IntInput `pulumi:"maxSessionTtlInSeconds"`
+	MaxSessionTtlInSeconds pulumi.IntPtrInput `pulumi:"maxSessionTtlInSeconds"`
 	// The maximum number of active sessions allowed on the bastion.
-	MaxSessionsAllowed pulumi.IntInput `pulumi:"maxSessionsAllowed"`
+	MaxSessionsAllowed pulumi.IntPtrInput `pulumi:"maxSessionsAllowed"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-	PhoneBookEntry pulumi.StringInput `pulumi:"phoneBookEntry"`
+	PhoneBookEntry pulumi.StringPtrInput `pulumi:"phoneBookEntry"`
 	// The private IP address of the created private endpoint.
-	PrivateEndpointIpAddress pulumi.StringInput `pulumi:"privateEndpointIpAddress"`
+	PrivateEndpointIpAddress pulumi.StringPtrInput `pulumi:"privateEndpointIpAddress"`
 	// The current state of the bastion.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses pulumi.StringArrayInput `pulumi:"staticJumpHostIpAddresses"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
-	TargetSubnetId pulumi.StringInput `pulumi:"targetSubnetId"`
+	TargetSubnetId pulumi.StringPtrInput `pulumi:"targetSubnetId"`
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-	TargetVcnId pulumi.StringInput `pulumi:"targetVcnId"`
+	TargetVcnId pulumi.StringPtrInput `pulumi:"targetVcnId"`
 	// The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetBastionsBastionArgs) ElementType() reflect.Type {
@@ -569,12 +520,6 @@ func (i GetBastionsBastionArgs) ToGetBastionsBastionOutput() GetBastionsBastionO
 
 func (i GetBastionsBastionArgs) ToGetBastionsBastionOutputWithContext(ctx context.Context) GetBastionsBastionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsBastionOutput)
-}
-
-func (i GetBastionsBastionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBastionsBastion] {
-	return pulumix.Output[GetBastionsBastion]{
-		OutputState: i.ToGetBastionsBastionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBastionsBastionArrayInput is an input type that accepts GetBastionsBastionArray and GetBastionsBastionArrayOutput values.
@@ -602,12 +547,6 @@ func (i GetBastionsBastionArray) ToGetBastionsBastionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsBastionArrayOutput)
 }
 
-func (i GetBastionsBastionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsBastion] {
-	return pulumix.Output[[]GetBastionsBastion]{
-		OutputState: i.ToGetBastionsBastionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBastionsBastionOutput struct{ *pulumi.OutputState }
 
 func (GetBastionsBastionOutput) ElementType() reflect.Type {
@@ -622,15 +561,9 @@ func (o GetBastionsBastionOutput) ToGetBastionsBastionOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetBastionsBastionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBastionsBastion] {
-	return pulumix.Output[GetBastionsBastion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of bastion.
-func (o GetBastionsBastionOutput) BastionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.BastionType }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) BastionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.BastionType }).(pulumi.StringPtrOutput)
 }
 
 // A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
@@ -639,8 +572,8 @@ func (o GetBastionsBastionOutput) ClientCidrBlockAllowLists() pulumi.StringArray
 }
 
 // The unique identifier (OCID) of the compartment in which to list resources.
-func (o GetBastionsBastionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -649,8 +582,8 @@ func (o GetBastionsBastionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-func (o GetBastionsBastionOutput) DnsProxyStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.DnsProxyStatus }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) DnsProxyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.DnsProxyStatus }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -659,43 +592,43 @@ func (o GetBastionsBastionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique identifier (OCID) of the bastion, which can't be changed after creation.
-func (o GetBastionsBastionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail.
-func (o GetBastionsBastionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The maximum amount of time that any session on the bastion can remain active.
-func (o GetBastionsBastionOutput) MaxSessionTtlInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBastionsBastion) int { return v.MaxSessionTtlInSeconds }).(pulumi.IntOutput)
+func (o GetBastionsBastionOutput) MaxSessionTtlInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *int { return v.MaxSessionTtlInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The maximum number of active sessions allowed on the bastion.
-func (o GetBastionsBastionOutput) MaxSessionsAllowed() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBastionsBastion) int { return v.MaxSessionsAllowed }).(pulumi.IntOutput)
+func (o GetBastionsBastionOutput) MaxSessionsAllowed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *int { return v.MaxSessionsAllowed }).(pulumi.IntPtrOutput)
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetBastionsBastionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-func (o GetBastionsBastionOutput) PhoneBookEntry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.PhoneBookEntry }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) PhoneBookEntry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.PhoneBookEntry }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of the created private endpoint.
-func (o GetBastionsBastionOutput) PrivateEndpointIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.PrivateEndpointIpAddress }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) PrivateEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.PrivateEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the bastion.
-func (o GetBastionsBastionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.State }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
@@ -709,23 +642,23 @@ func (o GetBastionsBastionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The unique identifier (OCID) of the subnet that the bastion connects to.
-func (o GetBastionsBastionOutput) TargetSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.TargetSubnetId }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) TargetSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.TargetSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-func (o GetBastionsBastionOutput) TargetVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.TargetVcnId }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) TargetVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.TargetVcnId }).(pulumi.StringPtrOutput)
 }
 
 // The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o GetBastionsBastionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o GetBastionsBastionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsBastion) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetBastionsBastionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsBastion) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetBastionsBastionArrayOutput struct{ *pulumi.OutputState }
@@ -740,12 +673,6 @@ func (o GetBastionsBastionArrayOutput) ToGetBastionsBastionArrayOutput() GetBast
 
 func (o GetBastionsBastionArrayOutput) ToGetBastionsBastionArrayOutputWithContext(ctx context.Context) GetBastionsBastionArrayOutput {
 	return o
-}
-
-func (o GetBastionsBastionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsBastion] {
-	return pulumix.Output[[]GetBastionsBastion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBastionsBastionArrayOutput) Index(i pulumi.IntInput) GetBastionsBastionOutput {
@@ -791,12 +718,6 @@ func (i GetBastionsFilterArgs) ToGetBastionsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsFilterOutput)
 }
 
-func (i GetBastionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBastionsFilter] {
-	return pulumix.Output[GetBastionsFilter]{
-		OutputState: i.ToGetBastionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBastionsFilterArrayInput is an input type that accepts GetBastionsFilterArray and GetBastionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBastionsFilterArrayInput` via:
 //
@@ -822,12 +743,6 @@ func (i GetBastionsFilterArray) ToGetBastionsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsFilterArrayOutput)
 }
 
-func (i GetBastionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsFilter] {
-	return pulumix.Output[[]GetBastionsFilter]{
-		OutputState: i.ToGetBastionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBastionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBastionsFilterOutput) ElementType() reflect.Type {
@@ -840,12 +755,6 @@ func (o GetBastionsFilterOutput) ToGetBastionsFilterOutput() GetBastionsFilterOu
 
 func (o GetBastionsFilterOutput) ToGetBastionsFilterOutputWithContext(ctx context.Context) GetBastionsFilterOutput {
 	return o
-}
-
-func (o GetBastionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBastionsFilter] {
-	return pulumix.Output[GetBastionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -875,12 +784,6 @@ func (o GetBastionsFilterArrayOutput) ToGetBastionsFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetBastionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsFilter] {
-	return pulumix.Output[[]GetBastionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBastionsFilterArrayOutput) Index(i pulumi.IntInput) GetBastionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBastionsFilter {
 		return vs[0].([]GetBastionsFilter)[vs[1].(int)]
@@ -889,7 +792,7 @@ func (o GetBastionsFilterArrayOutput) Index(i pulumi.IntInput) GetBastionsFilter
 
 type GetSessionKeyDetail struct {
 	// The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-	PublicKeyContent string `pulumi:"publicKeyContent"`
+	PublicKeyContent *string `pulumi:"publicKeyContent"`
 }
 
 // GetSessionKeyDetailInput is an input type that accepts GetSessionKeyDetailArgs and GetSessionKeyDetailOutput values.
@@ -905,7 +808,7 @@ type GetSessionKeyDetailInput interface {
 
 type GetSessionKeyDetailArgs struct {
 	// The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-	PublicKeyContent pulumi.StringInput `pulumi:"publicKeyContent"`
+	PublicKeyContent pulumi.StringPtrInput `pulumi:"publicKeyContent"`
 }
 
 func (GetSessionKeyDetailArgs) ElementType() reflect.Type {
@@ -918,12 +821,6 @@ func (i GetSessionKeyDetailArgs) ToGetSessionKeyDetailOutput() GetSessionKeyDeta
 
 func (i GetSessionKeyDetailArgs) ToGetSessionKeyDetailOutputWithContext(ctx context.Context) GetSessionKeyDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionKeyDetailOutput)
-}
-
-func (i GetSessionKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionKeyDetail] {
-	return pulumix.Output[GetSessionKeyDetail]{
-		OutputState: i.ToGetSessionKeyDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSessionKeyDetailArrayInput is an input type that accepts GetSessionKeyDetailArray and GetSessionKeyDetailArrayOutput values.
@@ -951,12 +848,6 @@ func (i GetSessionKeyDetailArray) ToGetSessionKeyDetailArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionKeyDetailArrayOutput)
 }
 
-func (i GetSessionKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionKeyDetail]{
-		OutputState: i.ToGetSessionKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionKeyDetailOutput) ElementType() reflect.Type {
@@ -971,15 +862,9 @@ func (o GetSessionKeyDetailOutput) ToGetSessionKeyDetailOutputWithContext(ctx co
 	return o
 }
 
-func (o GetSessionKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionKeyDetail] {
-	return pulumix.Output[GetSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-func (o GetSessionKeyDetailOutput) PublicKeyContent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionKeyDetail) string { return v.PublicKeyContent }).(pulumi.StringOutput)
+func (o GetSessionKeyDetailOutput) PublicKeyContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionKeyDetail) *string { return v.PublicKeyContent }).(pulumi.StringPtrOutput)
 }
 
 type GetSessionKeyDetailArrayOutput struct{ *pulumi.OutputState }
@@ -996,12 +881,6 @@ func (o GetSessionKeyDetailArrayOutput) ToGetSessionKeyDetailArrayOutputWithCont
 	return o
 }
 
-func (o GetSessionKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSessionKeyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSessionKeyDetail {
 		return vs[0].([]GetSessionKeyDetail)[vs[1].(int)]
@@ -1010,19 +889,19 @@ func (o GetSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSessionKeyDe
 
 type GetSessionTargetResourceDetail struct {
 	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-	SessionType string `pulumi:"sessionType"`
+	SessionType *string `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
-	TargetResourceDisplayName string `pulumi:"targetResourceDisplayName"`
+	TargetResourceDisplayName *string `pulumi:"targetResourceDisplayName"`
 	// The Fully Qualified Domain Name of the target resource that the session connects to.
-	TargetResourceFqdn string `pulumi:"targetResourceFqdn"`
+	TargetResourceFqdn *string `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-	TargetResourceId string `pulumi:"targetResourceId"`
+	TargetResourceId *string `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
-	TargetResourceOperatingSystemUserName string `pulumi:"targetResourceOperatingSystemUserName"`
+	TargetResourceOperatingSystemUserName *string `pulumi:"targetResourceOperatingSystemUserName"`
 	// The port number to connect to on the target resource.
-	TargetResourcePort int `pulumi:"targetResourcePort"`
+	TargetResourcePort *int `pulumi:"targetResourcePort"`
 	// The private IP address of the target resource that the session connects to.
-	TargetResourcePrivateIpAddress string `pulumi:"targetResourcePrivateIpAddress"`
+	TargetResourcePrivateIpAddress *string `pulumi:"targetResourcePrivateIpAddress"`
 }
 
 // GetSessionTargetResourceDetailInput is an input type that accepts GetSessionTargetResourceDetailArgs and GetSessionTargetResourceDetailOutput values.
@@ -1038,19 +917,19 @@ type GetSessionTargetResourceDetailInput interface {
 
 type GetSessionTargetResourceDetailArgs struct {
 	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-	SessionType pulumi.StringInput `pulumi:"sessionType"`
+	SessionType pulumi.StringPtrInput `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
-	TargetResourceDisplayName pulumi.StringInput `pulumi:"targetResourceDisplayName"`
+	TargetResourceDisplayName pulumi.StringPtrInput `pulumi:"targetResourceDisplayName"`
 	// The Fully Qualified Domain Name of the target resource that the session connects to.
-	TargetResourceFqdn pulumi.StringInput `pulumi:"targetResourceFqdn"`
+	TargetResourceFqdn pulumi.StringPtrInput `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
+	TargetResourceId pulumi.StringPtrInput `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
-	TargetResourceOperatingSystemUserName pulumi.StringInput `pulumi:"targetResourceOperatingSystemUserName"`
+	TargetResourceOperatingSystemUserName pulumi.StringPtrInput `pulumi:"targetResourceOperatingSystemUserName"`
 	// The port number to connect to on the target resource.
-	TargetResourcePort pulumi.IntInput `pulumi:"targetResourcePort"`
+	TargetResourcePort pulumi.IntPtrInput `pulumi:"targetResourcePort"`
 	// The private IP address of the target resource that the session connects to.
-	TargetResourcePrivateIpAddress pulumi.StringInput `pulumi:"targetResourcePrivateIpAddress"`
+	TargetResourcePrivateIpAddress pulumi.StringPtrInput `pulumi:"targetResourcePrivateIpAddress"`
 }
 
 func (GetSessionTargetResourceDetailArgs) ElementType() reflect.Type {
@@ -1063,12 +942,6 @@ func (i GetSessionTargetResourceDetailArgs) ToGetSessionTargetResourceDetailOutp
 
 func (i GetSessionTargetResourceDetailArgs) ToGetSessionTargetResourceDetailOutputWithContext(ctx context.Context) GetSessionTargetResourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionTargetResourceDetailOutput)
-}
-
-func (i GetSessionTargetResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionTargetResourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSessionTargetResourceDetailArrayInput is an input type that accepts GetSessionTargetResourceDetailArray and GetSessionTargetResourceDetailArrayOutput values.
@@ -1096,12 +969,6 @@ func (i GetSessionTargetResourceDetailArray) ToGetSessionTargetResourceDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionTargetResourceDetailArrayOutput)
 }
 
-func (i GetSessionTargetResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionTargetResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionTargetResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionTargetResourceDetailOutput) ElementType() reflect.Type {
@@ -1116,45 +983,39 @@ func (o GetSessionTargetResourceDetailOutput) ToGetSessionTargetResourceDetailOu
 	return o
 }
 
-func (o GetSessionTargetResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-func (o GetSessionTargetResourceDetailOutput) SessionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.SessionType }).(pulumi.StringOutput)
+func (o GetSessionTargetResourceDetailOutput) SessionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) *string { return v.SessionType }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the target Compute instance that the session connects to.
-func (o GetSessionTargetResourceDetailOutput) TargetResourceDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.TargetResourceDisplayName }).(pulumi.StringOutput)
+func (o GetSessionTargetResourceDetailOutput) TargetResourceDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) *string { return v.TargetResourceDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The Fully Qualified Domain Name of the target resource that the session connects to.
-func (o GetSessionTargetResourceDetailOutput) TargetResourceFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.TargetResourceFqdn }).(pulumi.StringOutput)
+func (o GetSessionTargetResourceDetailOutput) TargetResourceFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) *string { return v.TargetResourceFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-func (o GetSessionTargetResourceDetailOutput) TargetResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.TargetResourceId }).(pulumi.StringOutput)
+func (o GetSessionTargetResourceDetailOutput) TargetResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) *string { return v.TargetResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the user on the target resource operating system that the session uses for the connection.
-func (o GetSessionTargetResourceDetailOutput) TargetResourceOperatingSystemUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.TargetResourceOperatingSystemUserName }).(pulumi.StringOutput)
+func (o GetSessionTargetResourceDetailOutput) TargetResourceOperatingSystemUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) *string { return v.TargetResourceOperatingSystemUserName }).(pulumi.StringPtrOutput)
 }
 
 // The port number to connect to on the target resource.
-func (o GetSessionTargetResourceDetailOutput) TargetResourcePort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSessionTargetResourceDetail) int { return v.TargetResourcePort }).(pulumi.IntOutput)
+func (o GetSessionTargetResourceDetailOutput) TargetResourcePort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) *int { return v.TargetResourcePort }).(pulumi.IntPtrOutput)
 }
 
 // The private IP address of the target resource that the session connects to.
-func (o GetSessionTargetResourceDetailOutput) TargetResourcePrivateIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.TargetResourcePrivateIpAddress }).(pulumi.StringOutput)
+func (o GetSessionTargetResourceDetailOutput) TargetResourcePrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) *string { return v.TargetResourcePrivateIpAddress }).(pulumi.StringPtrOutput)
 }
 
 type GetSessionTargetResourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1169,12 +1030,6 @@ func (o GetSessionTargetResourceDetailArrayOutput) ToGetSessionTargetResourceDet
 
 func (o GetSessionTargetResourceDetailArrayOutput) ToGetSessionTargetResourceDetailArrayOutputWithContext(ctx context.Context) GetSessionTargetResourceDetailArrayOutput {
 	return o
-}
-
-func (o GetSessionTargetResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionTargetResourceDetailArrayOutput) Index(i pulumi.IntInput) GetSessionTargetResourceDetailOutput {
@@ -1218,12 +1073,6 @@ func (i GetSessionsFilterArgs) ToGetSessionsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsFilterOutput)
 }
 
-func (i GetSessionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsFilter] {
-	return pulumix.Output[GetSessionsFilter]{
-		OutputState: i.ToGetSessionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSessionsFilterArrayInput is an input type that accepts GetSessionsFilterArray and GetSessionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSessionsFilterArrayInput` via:
 //
@@ -1249,12 +1098,6 @@ func (i GetSessionsFilterArray) ToGetSessionsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsFilterArrayOutput)
 }
 
-func (i GetSessionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsFilter] {
-	return pulumix.Output[[]GetSessionsFilter]{
-		OutputState: i.ToGetSessionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsFilterOutput) ElementType() reflect.Type {
@@ -1267,12 +1110,6 @@ func (o GetSessionsFilterOutput) ToGetSessionsFilterOutput() GetSessionsFilterOu
 
 func (o GetSessionsFilterOutput) ToGetSessionsFilterOutputWithContext(ctx context.Context) GetSessionsFilterOutput {
 	return o
-}
-
-func (o GetSessionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsFilter] {
-	return pulumix.Output[GetSessionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionsFilterOutput) Name() pulumi.StringOutput {
@@ -1301,12 +1138,6 @@ func (o GetSessionsFilterArrayOutput) ToGetSessionsFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetSessionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsFilter] {
-	return pulumix.Output[[]GetSessionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSessionsFilterArrayOutput) Index(i pulumi.IntInput) GetSessionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSessionsFilter {
 		return vs[0].([]GetSessionsFilter)[vs[1].(int)]
@@ -1315,35 +1146,35 @@ func (o GetSessionsFilterArrayOutput) Index(i pulumi.IntInput) GetSessionsFilter
 
 type GetSessionsSession struct {
 	// The unique identifier (OCID) of the bastion in which to list sessions.
-	BastionId string `pulumi:"bastionId"`
+	BastionId *string `pulumi:"bastionId"`
 	// The name of the bastion that is hosting this session.
-	BastionName string `pulumi:"bastionName"`
+	BastionName *string `pulumi:"bastionName"`
 	// The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-	BastionPublicHostKeyInfo string `pulumi:"bastionPublicHostKeyInfo"`
+	BastionPublicHostKeyInfo *string `pulumi:"bastionPublicHostKeyInfo"`
 	// The username that the session uses to connect to the target resource.
-	BastionUserName string `pulumi:"bastionUserName"`
+	BastionUserName *string `pulumi:"bastionUserName"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The unique identifier (OCID) of the session, which can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Public key details for a bastion session.
 	KeyDetails []GetSessionsSessionKeyDetail `pulumi:"keyDetails"`
 	// The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-	KeyType string `pulumi:"keyType"`
+	KeyType *string `pulumi:"keyType"`
 	// A message describing the current session state in more detail.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The amount of time the session can remain active.
-	SessionTtlInSeconds int `pulumi:"sessionTtlInSeconds"`
+	SessionTtlInSeconds *int `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
 	SshMetadata map[string]interface{} `pulumi:"sshMetadata"`
 	// The current state of the session.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Details about a bastion session's target resource.
 	TargetResourceDetails []GetSessionsSessionTargetResourceDetail `pulumi:"targetResourceDetails"`
 	// The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetSessionsSessionInput is an input type that accepts GetSessionsSessionArgs and GetSessionsSessionOutput values.
@@ -1359,35 +1190,35 @@ type GetSessionsSessionInput interface {
 
 type GetSessionsSessionArgs struct {
 	// The unique identifier (OCID) of the bastion in which to list sessions.
-	BastionId pulumi.StringInput `pulumi:"bastionId"`
+	BastionId pulumi.StringPtrInput `pulumi:"bastionId"`
 	// The name of the bastion that is hosting this session.
-	BastionName pulumi.StringInput `pulumi:"bastionName"`
+	BastionName pulumi.StringPtrInput `pulumi:"bastionName"`
 	// The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-	BastionPublicHostKeyInfo pulumi.StringInput `pulumi:"bastionPublicHostKeyInfo"`
+	BastionPublicHostKeyInfo pulumi.StringPtrInput `pulumi:"bastionPublicHostKeyInfo"`
 	// The username that the session uses to connect to the target resource.
-	BastionUserName pulumi.StringInput `pulumi:"bastionUserName"`
+	BastionUserName pulumi.StringPtrInput `pulumi:"bastionUserName"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The unique identifier (OCID) of the session, which can't be changed after creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Public key details for a bastion session.
 	KeyDetails GetSessionsSessionKeyDetailArrayInput `pulumi:"keyDetails"`
 	// The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-	KeyType pulumi.StringInput `pulumi:"keyType"`
+	KeyType pulumi.StringPtrInput `pulumi:"keyType"`
 	// A message describing the current session state in more detail.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The amount of time the session can remain active.
-	SessionTtlInSeconds pulumi.IntInput `pulumi:"sessionTtlInSeconds"`
+	SessionTtlInSeconds pulumi.IntPtrInput `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
 	SshMetadata pulumi.MapInput `pulumi:"sshMetadata"`
 	// The current state of the session.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Details about a bastion session's target resource.
 	TargetResourceDetails GetSessionsSessionTargetResourceDetailArrayInput `pulumi:"targetResourceDetails"`
 	// The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetSessionsSessionArgs) ElementType() reflect.Type {
@@ -1400,12 +1231,6 @@ func (i GetSessionsSessionArgs) ToGetSessionsSessionOutput() GetSessionsSessionO
 
 func (i GetSessionsSessionArgs) ToGetSessionsSessionOutputWithContext(ctx context.Context) GetSessionsSessionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionOutput)
-}
-
-func (i GetSessionsSessionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSession] {
-	return pulumix.Output[GetSessionsSession]{
-		OutputState: i.ToGetSessionsSessionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSessionsSessionArrayInput is an input type that accepts GetSessionsSessionArray and GetSessionsSessionArrayOutput values.
@@ -1433,12 +1258,6 @@ func (i GetSessionsSessionArray) ToGetSessionsSessionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionArrayOutput)
 }
 
-func (i GetSessionsSessionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSession] {
-	return pulumix.Output[[]GetSessionsSession]{
-		OutputState: i.ToGetSessionsSessionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsSessionOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsSessionOutput) ElementType() reflect.Type {
@@ -1453,40 +1272,34 @@ func (o GetSessionsSessionOutput) ToGetSessionsSessionOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetSessionsSessionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSession] {
-	return pulumix.Output[GetSessionsSession]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique identifier (OCID) of the bastion in which to list sessions.
-func (o GetSessionsSessionOutput) BastionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.BastionId }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) BastionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.BastionId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the bastion that is hosting this session.
-func (o GetSessionsSessionOutput) BastionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.BastionName }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) BastionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.BastionName }).(pulumi.StringPtrOutput)
 }
 
 // The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-func (o GetSessionsSessionOutput) BastionPublicHostKeyInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.BastionPublicHostKeyInfo }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) BastionPublicHostKeyInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.BastionPublicHostKeyInfo }).(pulumi.StringPtrOutput)
 }
 
 // The username that the session uses to connect to the target resource.
-func (o GetSessionsSessionOutput) BastionUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.BastionUserName }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) BastionUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.BastionUserName }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetSessionsSessionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier (OCID) of the session, which can't be changed after creation.
-func (o GetSessionsSessionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Public key details for a bastion session.
@@ -1495,18 +1308,18 @@ func (o GetSessionsSessionOutput) KeyDetails() GetSessionsSessionKeyDetailArrayO
 }
 
 // The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-func (o GetSessionsSessionOutput) KeyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.KeyType }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) KeyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.KeyType }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current session state in more detail.
-func (o GetSessionsSessionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time the session can remain active.
-func (o GetSessionsSessionOutput) SessionTtlInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSessionsSession) int { return v.SessionTtlInSeconds }).(pulumi.IntOutput)
+func (o GetSessionsSessionOutput) SessionTtlInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *int { return v.SessionTtlInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The connection message for the session.
@@ -1515,8 +1328,8 @@ func (o GetSessionsSessionOutput) SshMetadata() pulumi.MapOutput {
 }
 
 // The current state of the session.
-func (o GetSessionsSessionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.State }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Details about a bastion session's target resource.
@@ -1525,13 +1338,13 @@ func (o GetSessionsSessionOutput) TargetResourceDetails() GetSessionsSessionTarg
 }
 
 // The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o GetSessionsSessionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o GetSessionsSessionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSession) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSessionsSessionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSession) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetSessionsSessionArrayOutput struct{ *pulumi.OutputState }
@@ -1548,12 +1361,6 @@ func (o GetSessionsSessionArrayOutput) ToGetSessionsSessionArrayOutputWithContex
 	return o
 }
 
-func (o GetSessionsSessionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSession] {
-	return pulumix.Output[[]GetSessionsSession]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSessionsSessionArrayOutput) Index(i pulumi.IntInput) GetSessionsSessionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSessionsSession {
 		return vs[0].([]GetSessionsSession)[vs[1].(int)]
@@ -1562,7 +1369,7 @@ func (o GetSessionsSessionArrayOutput) Index(i pulumi.IntInput) GetSessionsSessi
 
 type GetSessionsSessionKeyDetail struct {
 	// The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-	PublicKeyContent string `pulumi:"publicKeyContent"`
+	PublicKeyContent *string `pulumi:"publicKeyContent"`
 }
 
 // GetSessionsSessionKeyDetailInput is an input type that accepts GetSessionsSessionKeyDetailArgs and GetSessionsSessionKeyDetailOutput values.
@@ -1578,7 +1385,7 @@ type GetSessionsSessionKeyDetailInput interface {
 
 type GetSessionsSessionKeyDetailArgs struct {
 	// The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-	PublicKeyContent pulumi.StringInput `pulumi:"publicKeyContent"`
+	PublicKeyContent pulumi.StringPtrInput `pulumi:"publicKeyContent"`
 }
 
 func (GetSessionsSessionKeyDetailArgs) ElementType() reflect.Type {
@@ -1591,12 +1398,6 @@ func (i GetSessionsSessionKeyDetailArgs) ToGetSessionsSessionKeyDetailOutput() G
 
 func (i GetSessionsSessionKeyDetailArgs) ToGetSessionsSessionKeyDetailOutputWithContext(ctx context.Context) GetSessionsSessionKeyDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionKeyDetailOutput)
-}
-
-func (i GetSessionsSessionKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionKeyDetail] {
-	return pulumix.Output[GetSessionsSessionKeyDetail]{
-		OutputState: i.ToGetSessionsSessionKeyDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSessionsSessionKeyDetailArrayInput is an input type that accepts GetSessionsSessionKeyDetailArray and GetSessionsSessionKeyDetailArrayOutput values.
@@ -1624,12 +1425,6 @@ func (i GetSessionsSessionKeyDetailArray) ToGetSessionsSessionKeyDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionKeyDetailArrayOutput)
 }
 
-func (i GetSessionsSessionKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionsSessionKeyDetail]{
-		OutputState: i.ToGetSessionsSessionKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsSessionKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsSessionKeyDetailOutput) ElementType() reflect.Type {
@@ -1644,15 +1439,9 @@ func (o GetSessionsSessionKeyDetailOutput) ToGetSessionsSessionKeyDetailOutputWi
 	return o
 }
 
-func (o GetSessionsSessionKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionKeyDetail] {
-	return pulumix.Output[GetSessionsSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-func (o GetSessionsSessionKeyDetailOutput) PublicKeyContent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSessionKeyDetail) string { return v.PublicKeyContent }).(pulumi.StringOutput)
+func (o GetSessionsSessionKeyDetailOutput) PublicKeyContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionKeyDetail) *string { return v.PublicKeyContent }).(pulumi.StringPtrOutput)
 }
 
 type GetSessionsSessionKeyDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1669,12 +1458,6 @@ func (o GetSessionsSessionKeyDetailArrayOutput) ToGetSessionsSessionKeyDetailArr
 	return o
 }
 
-func (o GetSessionsSessionKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionsSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSessionsSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSessionsSessionKeyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSessionsSessionKeyDetail {
 		return vs[0].([]GetSessionsSessionKeyDetail)[vs[1].(int)]
@@ -1683,19 +1466,19 @@ func (o GetSessionsSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSess
 
 type GetSessionsSessionTargetResourceDetail struct {
 	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-	SessionType string `pulumi:"sessionType"`
+	SessionType *string `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
-	TargetResourceDisplayName string `pulumi:"targetResourceDisplayName"`
+	TargetResourceDisplayName *string `pulumi:"targetResourceDisplayName"`
 	// The Fully Qualified Domain Name of the target resource that the session connects to.
-	TargetResourceFqdn string `pulumi:"targetResourceFqdn"`
+	TargetResourceFqdn *string `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-	TargetResourceId string `pulumi:"targetResourceId"`
+	TargetResourceId *string `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
-	TargetResourceOperatingSystemUserName string `pulumi:"targetResourceOperatingSystemUserName"`
+	TargetResourceOperatingSystemUserName *string `pulumi:"targetResourceOperatingSystemUserName"`
 	// The port number to connect to on the target resource.
-	TargetResourcePort int `pulumi:"targetResourcePort"`
+	TargetResourcePort *int `pulumi:"targetResourcePort"`
 	// The private IP address of the target resource that the session connects to.
-	TargetResourcePrivateIpAddress string `pulumi:"targetResourcePrivateIpAddress"`
+	TargetResourcePrivateIpAddress *string `pulumi:"targetResourcePrivateIpAddress"`
 }
 
 // GetSessionsSessionTargetResourceDetailInput is an input type that accepts GetSessionsSessionTargetResourceDetailArgs and GetSessionsSessionTargetResourceDetailOutput values.
@@ -1711,19 +1494,19 @@ type GetSessionsSessionTargetResourceDetailInput interface {
 
 type GetSessionsSessionTargetResourceDetailArgs struct {
 	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-	SessionType pulumi.StringInput `pulumi:"sessionType"`
+	SessionType pulumi.StringPtrInput `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
-	TargetResourceDisplayName pulumi.StringInput `pulumi:"targetResourceDisplayName"`
+	TargetResourceDisplayName pulumi.StringPtrInput `pulumi:"targetResourceDisplayName"`
 	// The Fully Qualified Domain Name of the target resource that the session connects to.
-	TargetResourceFqdn pulumi.StringInput `pulumi:"targetResourceFqdn"`
+	TargetResourceFqdn pulumi.StringPtrInput `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
+	TargetResourceId pulumi.StringPtrInput `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
-	TargetResourceOperatingSystemUserName pulumi.StringInput `pulumi:"targetResourceOperatingSystemUserName"`
+	TargetResourceOperatingSystemUserName pulumi.StringPtrInput `pulumi:"targetResourceOperatingSystemUserName"`
 	// The port number to connect to on the target resource.
-	TargetResourcePort pulumi.IntInput `pulumi:"targetResourcePort"`
+	TargetResourcePort pulumi.IntPtrInput `pulumi:"targetResourcePort"`
 	// The private IP address of the target resource that the session connects to.
-	TargetResourcePrivateIpAddress pulumi.StringInput `pulumi:"targetResourcePrivateIpAddress"`
+	TargetResourcePrivateIpAddress pulumi.StringPtrInput `pulumi:"targetResourcePrivateIpAddress"`
 }
 
 func (GetSessionsSessionTargetResourceDetailArgs) ElementType() reflect.Type {
@@ -1736,12 +1519,6 @@ func (i GetSessionsSessionTargetResourceDetailArgs) ToGetSessionsSessionTargetRe
 
 func (i GetSessionsSessionTargetResourceDetailArgs) ToGetSessionsSessionTargetResourceDetailOutputWithContext(ctx context.Context) GetSessionsSessionTargetResourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionTargetResourceDetailOutput)
-}
-
-func (i GetSessionsSessionTargetResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionsSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionsSessionTargetResourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSessionsSessionTargetResourceDetailArrayInput is an input type that accepts GetSessionsSessionTargetResourceDetailArray and GetSessionsSessionTargetResourceDetailArrayOutput values.
@@ -1769,12 +1546,6 @@ func (i GetSessionsSessionTargetResourceDetailArray) ToGetSessionsSessionTargetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionTargetResourceDetailArrayOutput)
 }
 
-func (i GetSessionsSessionTargetResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionsSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionsSessionTargetResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsSessionTargetResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsSessionTargetResourceDetailOutput) ElementType() reflect.Type {
@@ -1789,45 +1560,39 @@ func (o GetSessionsSessionTargetResourceDetailOutput) ToGetSessionsSessionTarget
 	return o
 }
 
-func (o GetSessionsSessionTargetResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionsSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-func (o GetSessionsSessionTargetResourceDetailOutput) SessionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.SessionType }).(pulumi.StringOutput)
+func (o GetSessionsSessionTargetResourceDetailOutput) SessionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) *string { return v.SessionType }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the target Compute instance that the session connects to.
-func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.TargetResourceDisplayName }).(pulumi.StringOutput)
+func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) *string { return v.TargetResourceDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The Fully Qualified Domain Name of the target resource that the session connects to.
-func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.TargetResourceFqdn }).(pulumi.StringOutput)
+func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) *string { return v.TargetResourceFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.TargetResourceId }).(pulumi.StringOutput)
+func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) *string { return v.TargetResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the user on the target resource operating system that the session uses for the connection.
-func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceOperatingSystemUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.TargetResourceOperatingSystemUserName }).(pulumi.StringOutput)
+func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceOperatingSystemUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) *string { return v.TargetResourceOperatingSystemUserName }).(pulumi.StringPtrOutput)
 }
 
 // The port number to connect to on the target resource.
-func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourcePort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) int { return v.TargetResourcePort }).(pulumi.IntOutput)
+func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourcePort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) *int { return v.TargetResourcePort }).(pulumi.IntPtrOutput)
 }
 
 // The private IP address of the target resource that the session connects to.
-func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourcePrivateIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.TargetResourcePrivateIpAddress }).(pulumi.StringOutput)
+func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourcePrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) *string { return v.TargetResourcePrivateIpAddress }).(pulumi.StringPtrOutput)
 }
 
 type GetSessionsSessionTargetResourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1842,12 +1607,6 @@ func (o GetSessionsSessionTargetResourceDetailArrayOutput) ToGetSessionsSessionT
 
 func (o GetSessionsSessionTargetResourceDetailArrayOutput) ToGetSessionsSessionTargetResourceDetailArrayOutputWithContext(ctx context.Context) GetSessionsSessionTargetResourceDetailArrayOutput {
 	return o
-}
-
-func (o GetSessionsSessionTargetResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionsSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionsSessionTargetResourceDetailArrayOutput) Index(i pulumi.IntInput) GetSessionsSessionTargetResourceDetailOutput {

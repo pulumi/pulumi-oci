@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         /// </summary>
-        public readonly string SecretId;
+        public readonly string? SecretId;
         /// <summary>
         /// The value type of the user password.
         /// </summary>
-        public readonly string ValueType;
+        public readonly string? ValueType;
 
         [OutputConstructor]
         private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult(
-            string secretId,
+            string? secretId,
 
-            string valueType)
+            string? valueType)
         {
             SecretId = secretId;
             ValueType = valueType;

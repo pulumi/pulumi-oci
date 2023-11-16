@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorAvailabilityConfiguration {
@@ -13,27 +15,27 @@ public final class GetMonitorAvailabilityConfiguration {
      * @return Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
      * 
      */
-    private Integer maxAllowedFailuresPerInterval;
+    private @Nullable Integer maxAllowedFailuresPerInterval;
     /**
      * @return Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
      * 
      */
-    private Integer minAllowedRunsPerInterval;
+    private @Nullable Integer minAllowedRunsPerInterval;
 
     private GetMonitorAvailabilityConfiguration() {}
     /**
      * @return Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
      * 
      */
-    public Integer maxAllowedFailuresPerInterval() {
-        return this.maxAllowedFailuresPerInterval;
+    public Optional<Integer> maxAllowedFailuresPerInterval() {
+        return Optional.ofNullable(this.maxAllowedFailuresPerInterval);
     }
     /**
      * @return Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
      * 
      */
-    public Integer minAllowedRunsPerInterval() {
-        return this.minAllowedRunsPerInterval;
+    public Optional<Integer> minAllowedRunsPerInterval() {
+        return Optional.ofNullable(this.minAllowedRunsPerInterval);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMonitorAvailabilityConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maxAllowedFailuresPerInterval;
-        private Integer minAllowedRunsPerInterval;
+        private @Nullable Integer maxAllowedFailuresPerInterval;
+        private @Nullable Integer minAllowedRunsPerInterval;
         public Builder() {}
         public Builder(GetMonitorAvailabilityConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMonitorAvailabilityConfiguration {
         }
 
         @CustomType.Setter
-        public Builder maxAllowedFailuresPerInterval(Integer maxAllowedFailuresPerInterval) {
-            this.maxAllowedFailuresPerInterval = Objects.requireNonNull(maxAllowedFailuresPerInterval);
+        public Builder maxAllowedFailuresPerInterval(@Nullable Integer maxAllowedFailuresPerInterval) {
+            this.maxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
             return this;
         }
         @CustomType.Setter
-        public Builder minAllowedRunsPerInterval(Integer minAllowedRunsPerInterval) {
-            this.minAllowedRunsPerInterval = Objects.requireNonNull(minAllowedRunsPerInterval);
+        public Builder minAllowedRunsPerInterval(@Nullable Integer minAllowedRunsPerInterval) {
+            this.minAllowedRunsPerInterval = minAllowedRunsPerInterval;
             return this;
         }
         public GetMonitorAvailabilityConfiguration build() {

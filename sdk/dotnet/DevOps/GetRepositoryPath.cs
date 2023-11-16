@@ -168,7 +168,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of objects describing files or directories in a repository.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.DevOps
 
             string? folderPath,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRepositoryPathItemResult> items,
 

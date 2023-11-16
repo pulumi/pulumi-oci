@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting {
@@ -14,39 +16,39 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSettingAttribut
      * @return End User mutability
      * 
      */
-    private String endUserMutability;
+    private @Nullable String endUserMutability;
     /**
      * @return Specifies the list of User mutabilities allowed.
      * 
      */
-    private List<String> endUserMutabilityCanonicalValues;
+    private @Nullable List<String> endUserMutabilityCanonicalValues;
     /**
      * @return Fully-qualified attribute or complex mapping Name
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting() {}
     /**
      * @return End User mutability
      * 
      */
-    public String endUserMutability() {
-        return this.endUserMutability;
+    public Optional<String> endUserMutability() {
+        return Optional.ofNullable(this.endUserMutability);
     }
     /**
      * @return Specifies the list of User mutabilities allowed.
      * 
      */
     public List<String> endUserMutabilityCanonicalValues() {
-        return this.endUserMutabilityCanonicalValues;
+        return this.endUserMutabilityCanonicalValues == null ? List.of() : this.endUserMutabilityCanonicalValues;
     }
     /**
      * @return Fully-qualified attribute or complex mapping Name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSettingAttribut
     }
     @CustomType.Builder
     public static final class Builder {
-        private String endUserMutability;
-        private List<String> endUserMutabilityCanonicalValues;
-        private String name;
+        private @Nullable String endUserMutability;
+        private @Nullable List<String> endUserMutabilityCanonicalValues;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,21 +72,21 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSettingAttribut
         }
 
         @CustomType.Setter
-        public Builder endUserMutability(String endUserMutability) {
-            this.endUserMutability = Objects.requireNonNull(endUserMutability);
+        public Builder endUserMutability(@Nullable String endUserMutability) {
+            this.endUserMutability = endUserMutability;
             return this;
         }
         @CustomType.Setter
-        public Builder endUserMutabilityCanonicalValues(List<String> endUserMutabilityCanonicalValues) {
-            this.endUserMutabilityCanonicalValues = Objects.requireNonNull(endUserMutabilityCanonicalValues);
+        public Builder endUserMutabilityCanonicalValues(@Nullable List<String> endUserMutabilityCanonicalValues) {
+            this.endUserMutabilityCanonicalValues = endUserMutabilityCanonicalValues;
             return this;
         }
         public Builder endUserMutabilityCanonicalValues(String... endUserMutabilityCanonicalValues) {
             return endUserMutabilityCanonicalValues(List.of(endUserMutabilityCanonicalValues));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting build() {

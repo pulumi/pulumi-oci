@@ -21,7 +21,7 @@ public final class GetAuditProfilesResult {
      * @return The list of audit_profile_collection.
      * 
      */
-    private List<GetAuditProfilesAuditProfileCollection> auditProfileCollections;
+    private @Nullable List<GetAuditProfilesAuditProfileCollection> auditProfileCollections;
     /**
      * @return The OCID of the  parent audit.
      * 
@@ -43,7 +43,7 @@ public final class GetAuditProfilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      * 
@@ -77,7 +77,7 @@ public final class GetAuditProfilesResult {
      * 
      */
     public List<GetAuditProfilesAuditProfileCollection> auditProfileCollections() {
-        return this.auditProfileCollections;
+        return this.auditProfileCollections == null ? List.of() : this.auditProfileCollections;
     }
     /**
      * @return The OCID of the  parent audit.
@@ -110,8 +110,8 @@ public final class GetAuditProfilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
@@ -153,13 +153,13 @@ public final class GetAuditProfilesResult {
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String auditCollectedVolumeGreaterThanOrEqualTo;
-        private List<GetAuditProfilesAuditProfileCollection> auditProfileCollections;
+        private @Nullable List<GetAuditProfilesAuditProfileCollection> auditProfileCollections;
         private @Nullable String auditProfileId;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetAuditProfilesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isOverrideGlobalRetentionSetting;
         private @Nullable Boolean isPaidUsageEnabled;
         private @Nullable String state;
@@ -193,8 +193,8 @@ public final class GetAuditProfilesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder auditProfileCollections(List<GetAuditProfilesAuditProfileCollection> auditProfileCollections) {
-            this.auditProfileCollections = Objects.requireNonNull(auditProfileCollections);
+        public Builder auditProfileCollections(@Nullable List<GetAuditProfilesAuditProfileCollection> auditProfileCollections) {
+            this.auditProfileCollections = auditProfileCollections;
             return this;
         }
         public Builder auditProfileCollections(GetAuditProfilesAuditProfileCollection... auditProfileCollections) {
@@ -229,8 +229,8 @@ public final class GetAuditProfilesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

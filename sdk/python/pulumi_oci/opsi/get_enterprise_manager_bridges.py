@@ -49,9 +49,6 @@ class GetEnterpriseManagerBridgesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment identifier of the Enterprise Manager bridge
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,17 +59,11 @@ class GetEnterpriseManagerBridgesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeCollections")
-    def enterprise_manager_bridge_collections(self) -> Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult']:
-        """
-        The list of enterprise_manager_bridge_collection.
-        """
+    def enterprise_manager_bridge_collections(self) -> Optional[Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult']]:
         return pulumi.get(self, "enterprise_manager_bridge_collections")
 
     @property
@@ -83,17 +74,11 @@ class GetEnterpriseManagerBridgesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Enterprise Manager bridge identifier
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the Enterprise Manager bridge.
-        """
         return pulumi.get(self, "states")
 
 
@@ -120,30 +105,7 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
                                    states: Optional[Sequence[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnterpriseManagerBridgesResult:
     """
-    This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["enterprise_manager_bridge_compartment_id_in_subtree"],
-        display_name=var["enterprise_manager_bridge_display_name"],
-        id=var["enterprise_manager_bridge_id"],
-        states=var["enterprise_manager_bridge_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Enterprise Manager bridge identifier
-    :param Sequence[str] states: Lifecycle states
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -174,29 +136,6 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
                                           states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnterpriseManagerBridgesResult]:
     """
-    This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["enterprise_manager_bridge_compartment_id_in_subtree"],
-        display_name=var["enterprise_manager_bridge_display_name"],
-        id=var["enterprise_manager_bridge_id"],
-        states=var["enterprise_manager_bridge_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Enterprise Manager bridge identifier
-    :param Sequence[str] states: Lifecycle states
+    Use this data source to access information about an existing resource.
     """
     ...

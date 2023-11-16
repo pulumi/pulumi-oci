@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem {
@@ -14,7 +16,7 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
      * @return The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
-    private Integer icmpCode;
+    private @Nullable Integer icmpCode;
     /**
      * @return The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
@@ -34,7 +36,7 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
      * @return OCID of the Network Firewall Policy this application belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Describes the type of Application.
      * 
@@ -46,8 +48,8 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
      * @return The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
-    public Integer icmpCode() {
-        return this.icmpCode;
+    public Optional<Integer> icmpCode() {
+        return Optional.ofNullable(this.icmpCode);
     }
     /**
      * @return The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
@@ -74,8 +76,8 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
      * @return OCID of the Network Firewall Policy this application belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Describes the type of Application.
@@ -94,11 +96,11 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer icmpCode;
+        private @Nullable Integer icmpCode;
         private Integer icmpType;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
+        private @Nullable String parentResourceId;
         private String type;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem defaults) {
@@ -112,8 +114,8 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
         }
 
         @CustomType.Setter
-        public Builder icmpCode(Integer icmpCode) {
-            this.icmpCode = Objects.requireNonNull(icmpCode);
+        public Builder icmpCode(@Nullable Integer icmpCode) {
+            this.icmpCode = icmpCode;
             return this;
         }
         @CustomType.Setter
@@ -132,8 +134,8 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter

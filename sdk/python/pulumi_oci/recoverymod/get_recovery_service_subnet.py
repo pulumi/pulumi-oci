@@ -64,50 +64,32 @@ class GetRecoveryServiceSubnetResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment OCID.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-provided name for the recovery service subnet.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The recovery service subnet OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -117,56 +99,32 @@ class GetRecoveryServiceSubnetResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the recovery service subnet. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the subnet used as the recovery service subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        VCN Identifier.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -194,21 +152,7 @@ class AwaitableGetRecoveryServiceSubnetResult(GetRecoveryServiceSubnetResult):
 def get_recovery_service_subnet(recovery_service_subnet_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecoveryServiceSubnetResult:
     """
-    This data source provides details about a specific Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
-
-    Gets information about a specified recovery service subnet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recovery_service_subnet = oci.RecoveryMod.get_recovery_service_subnet(recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"])
-    ```
-
-
-    :param str recovery_service_subnet_id: The recovery service subnet OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['recoveryServiceSubnetId'] = recovery_service_subnet_id
@@ -235,20 +179,6 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[str] = None
 def get_recovery_service_subnet_output(recovery_service_subnet_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecoveryServiceSubnetResult]:
     """
-    This data source provides details about a specific Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
-
-    Gets information about a specified recovery service subnet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recovery_service_subnet = oci.RecoveryMod.get_recovery_service_subnet(recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"])
-    ```
-
-
-    :param str recovery_service_subnet_id: The recovery service subnet OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

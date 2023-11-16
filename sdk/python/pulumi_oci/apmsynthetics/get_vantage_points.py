@@ -51,9 +51,6 @@ class GetVantagePointsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -63,7 +60,7 @@ class GetVantagePointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,17 +69,11 @@ class GetVantagePointsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Unique permanent name of the vantage point.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="publicVantagePointCollections")
-    def public_vantage_point_collections(self) -> Sequence['outputs.GetVantagePointsPublicVantagePointCollectionResult']:
-        """
-        The list of public_vantage_point_collection.
-        """
+    def public_vantage_point_collections(self) -> Optional[Sequence['outputs.GetVantagePointsPublicVantagePointCollectionResult']]:
         return pulumi.get(self, "public_vantage_point_collections")
 
 
@@ -106,25 +97,7 @@ def get_vantage_points(apm_domain_id: Optional[str] = None,
                        name: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVantagePointsResult:
     """
-    This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of public vantage points.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_public_vantage_points = oci.ApmSynthetics.get_vantage_points(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["public_vantage_point_display_name"],
-        name=var["public_vantage_point_name"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only the resources that match the entire display name.
-    :param str name: A filter to return only the resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -150,24 +123,6 @@ def get_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVantagePointsResult]:
     """
-    This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of public vantage points.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_public_vantage_points = oci.ApmSynthetics.get_vantage_points(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["public_vantage_point_display_name"],
-        name=var["public_vantage_point_name"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only the resources that match the entire display name.
-    :param str name: A filter to return only the resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     ...

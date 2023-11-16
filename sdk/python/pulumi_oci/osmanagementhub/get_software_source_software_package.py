@@ -77,63 +77,42 @@ class GetSoftwareSourceSoftwarePackageResult:
 
     @property
     @pulumi.getter
-    def architecture(self) -> str:
-        """
-        The architecture for which this software was built
-        """
+    def architecture(self) -> Optional[str]:
         return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter
-    def checksum(self) -> str:
-        """
-        Checksum of the file.
-        """
+    def checksum(self) -> Optional[str]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> str:
-        """
-        Type of the checksum.
-        """
+    def checksum_type(self) -> Optional[str]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter
-    def dependencies(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackageDependencyResult']:
-        """
-        List of dependencies for the software package.
-        """
+    def dependencies(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackageDependencyResult']]:
         return pulumi.get(self, "dependencies")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def files(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackageFileResult']:
-        """
-        List of files for the software package.
-        """
+    def files(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackageFileResult']]:
         return pulumi.get(self, "files")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -141,34 +120,22 @@ class GetSoftwareSourceSoftwarePackageResult:
 
     @property
     @pulumi.getter(name="isLatest")
-    def is_latest(self) -> bool:
-        """
-        Indicates whether this package is the latest version.
-        """
+    def is_latest(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="lastModifiedDate")
-    def last_modified_date(self) -> str:
-        """
-        Date of the last update to the package.
-        """
+    def last_modified_date(self) -> Optional[str]:
         return pulumi.get(self, "last_modified_date")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Unique identifier for the package. NOTE - This is not an OCID.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        Size of the package in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
@@ -183,26 +150,17 @@ class GetSoftwareSourceSoftwarePackageResult:
 
     @property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackageSoftwareSourceResult']:
-        """
-        List of software sources that provide the software package.
-        """
+    def software_sources(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackageSoftwareSourceResult']]:
         return pulumi.get(self, "software_sources")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the package.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Version of the package.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -235,23 +193,7 @@ def get_software_source_software_package(software_package_name: Optional[str] = 
                                          software_source_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceSoftwarePackageResult:
     """
-    This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified software package.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=var["software_source_software_package_software_package_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str software_package_name: The name of the software package.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['softwarePackageName'] = software_package_name
@@ -284,22 +226,6 @@ def get_software_source_software_package_output(software_package_name: Optional[
                                                 software_source_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceSoftwarePackageResult]:
     """
-    This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified software package.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=var["software_source_software_package_software_package_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str software_package_name: The name of the software package.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

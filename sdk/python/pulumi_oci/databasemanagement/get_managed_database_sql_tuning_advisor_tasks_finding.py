@@ -71,7 +71,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -84,10 +84,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingItemResult']:
-        """
-        An array of the findings for a tuning task.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -103,9 +100,6 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult:
     @property
     @pulumi.getter(name="sqlTuningAdvisorTaskId")
     def sql_tuning_advisor_task_id(self) -> str:
-        """
-        The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "sql_tuning_advisor_task_id")
 
     @property
@@ -142,35 +136,7 @@ def get_managed_database_sql_tuning_advisor_tasks_finding(begin_exec_id: Optiona
                                                           stats_hash_filter: Optional[str] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningAdvisorTasksFindingResult:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Finding resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets an array of the details of the findings that match specific filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id=oci_database_management_begin_exec["test_begin_exec"]["id"],
-        end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
-        finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
-        index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
-        stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
-    ```
-
-
-    :param str begin_exec_id: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
-    :param str end_exec_id: The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
-    :param str finding_filter: The filter used to display specific findings in the report.
-    :param str index_hash_filter: The hash value of the index table name.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str search_period: The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str stats_hash_filter: The hash value of the object for the statistic finding search.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['beginExecId'] = begin_exec_id
@@ -208,34 +174,6 @@ def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: 
                                                                  stats_hash_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksFindingResult]:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Finding resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets an array of the details of the findings that match specific filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id=oci_database_management_begin_exec["test_begin_exec"]["id"],
-        end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
-        finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
-        index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
-        stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
-    ```
-
-
-    :param str begin_exec_id: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
-    :param str end_exec_id: The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
-    :param str finding_filter: The filter used to display specific findings in the report.
-    :param str index_hash_filter: The hash value of the index table name.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str search_period: The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str stats_hash_filter: The hash value of the object for the statistic finding search.
+    Use this data source to access information about an existing resource.
     """
     ...

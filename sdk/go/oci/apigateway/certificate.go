@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Certificate resource in Oracle Cloud Infrastructure API Gateway service.
@@ -72,28 +71,28 @@ type Certificate struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The intermediate certificate data associated with the certificate in pem format.
-	IntermediateCertificates pulumi.StringOutput `pulumi:"intermediateCertificates"`
+	IntermediateCertificates pulumi.StringPtrOutput `pulumi:"intermediateCertificates"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// The current state of the certificate.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
 	SubjectNames pulumi.StringArrayOutput `pulumi:"subjectNames"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
-	TimeNotValidAfter pulumi.StringOutput `pulumi:"timeNotValidAfter"`
+	TimeNotValidAfter pulumi.StringPtrOutput `pulumi:"timeNotValidAfter"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewCertificate registers a new resource with the given unique name, arguments, and options.
@@ -273,12 +272,6 @@ func (i *Certificate) ToCertificateOutputWithContext(ctx context.Context) Certif
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateOutput)
 }
 
-func (i *Certificate) ToOutput(ctx context.Context) pulumix.Output[*Certificate] {
-	return pulumix.Output[*Certificate]{
-		OutputState: i.ToCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateArrayInput is an input type that accepts CertificateArray and CertificateArrayOutput values.
 // You can construct a concrete instance of `CertificateArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i CertificateArray) ToCertificateArrayOutput() CertificateArrayOutput {
 
 func (i CertificateArray) ToCertificateArrayOutputWithContext(ctx context.Context) CertificateArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateArrayOutput)
-}
-
-func (i CertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]*Certificate] {
-	return pulumix.Output[[]*Certificate]{
-		OutputState: i.ToCertificateArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CertificateMapInput is an input type that accepts CertificateMap and CertificateMapOutput values.
@@ -335,12 +322,6 @@ func (i CertificateMap) ToCertificateMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateMapOutput)
 }
 
-func (i CertificateMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Certificate] {
-	return pulumix.Output[map[string]*Certificate]{
-		OutputState: i.ToCertificateMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateOutput struct{ *pulumi.OutputState }
 
 func (CertificateOutput) ElementType() reflect.Type {
@@ -353,12 +334,6 @@ func (o CertificateOutput) ToCertificateOutput() CertificateOutput {
 
 func (o CertificateOutput) ToCertificateOutputWithContext(ctx context.Context) CertificateOutput {
 	return o
-}
-
-func (o CertificateOutput) ToOutput(ctx context.Context) pulumix.Output[*Certificate] {
-	return pulumix.Output[*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The data of the leaf certificate in pem format.
@@ -377,8 +352,8 @@ func (o CertificateOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o CertificateOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o CertificateOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -387,13 +362,13 @@ func (o CertificateOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The intermediate certificate data associated with the certificate in pem format.
-func (o CertificateOutput) IntermediateCertificates() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.IntermediateCertificates }).(pulumi.StringOutput)
+func (o CertificateOutput) IntermediateCertificates() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.IntermediateCertificates }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o CertificateOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o CertificateOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The private key associated with the certificate in pem format.
@@ -405,8 +380,8 @@ func (o CertificateOutput) PrivateKey() pulumi.StringOutput {
 }
 
 // The current state of the certificate.
-func (o CertificateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CertificateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The entity to be secured by the certificate and additional host names.
@@ -415,18 +390,18 @@ func (o CertificateOutput) SubjectNames() pulumi.StringArrayOutput {
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o CertificateOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CertificateOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will expire.
-func (o CertificateOutput) TimeNotValidAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.TimeNotValidAfter }).(pulumi.StringOutput)
+func (o CertificateOutput) TimeNotValidAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.TimeNotValidAfter }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o CertificateOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o CertificateOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type CertificateArrayOutput struct{ *pulumi.OutputState }
@@ -441,12 +416,6 @@ func (o CertificateArrayOutput) ToCertificateArrayOutput() CertificateArrayOutpu
 
 func (o CertificateArrayOutput) ToCertificateArrayOutputWithContext(ctx context.Context) CertificateArrayOutput {
 	return o
-}
-
-func (o CertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Certificate] {
-	return pulumix.Output[[]*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateArrayOutput) Index(i pulumi.IntInput) CertificateOutput {
@@ -467,12 +436,6 @@ func (o CertificateMapOutput) ToCertificateMapOutput() CertificateMapOutput {
 
 func (o CertificateMapOutput) ToCertificateMapOutputWithContext(ctx context.Context) CertificateMapOutput {
 	return o
-}
-
-func (o CertificateMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Certificate] {
-	return pulumix.Output[map[string]*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateMapOutput) MapIndex(k pulumi.StringInput) CertificateOutput {

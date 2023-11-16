@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVnicAttachmentsVnicAttachment {
@@ -16,151 +18,151 @@ public final class GetVnicAttachmentsVnicAttachment {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
-    private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The OCID of the VNIC attachment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
-    private Integer nicIndex;
+    private @Nullable Integer nicIndex;
     /**
      * @return The current state of the VNIC attachment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the subnet to create the VNIC in.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      */
-    private String vlanId;
+    private @Nullable String vlanId;
     /**
      * @return The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
      * 
      */
-    private Integer vlanTag;
+    private @Nullable Integer vlanTag;
     /**
      * @return The OCID of the VNIC.
      * 
      */
-    private String vnicId;
+    private @Nullable String vnicId;
 
     private GetVnicAttachmentsVnicAttachment() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails() {
-        return this.createVnicDetails;
+        return this.createVnicDetails == null ? List.of() : this.createVnicDetails;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The OCID of the VNIC attachment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the instance.
      * 
      */
-    public String instanceId() {
-        return this.instanceId;
+    public Optional<String> instanceId() {
+        return Optional.ofNullable(this.instanceId);
     }
     /**
      * @return Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
-    public Integer nicIndex() {
-        return this.nicIndex;
+    public Optional<Integer> nicIndex() {
+        return Optional.ofNullable(this.nicIndex);
     }
     /**
      * @return The current state of the VNIC attachment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the subnet to create the VNIC in.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      */
-    public String vlanId() {
-        return this.vlanId;
+    public Optional<String> vlanId() {
+        return Optional.ofNullable(this.vlanId);
     }
     /**
      * @return The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
      * 
      */
-    public Integer vlanTag() {
-        return this.vlanTag;
+    public Optional<Integer> vlanTag() {
+        return Optional.ofNullable(this.vlanTag);
     }
     /**
      * @return The OCID of the VNIC.
      * 
      */
-    public String vnicId() {
-        return this.vnicId;
+    public Optional<String> vnicId() {
+        return Optional.ofNullable(this.vnicId);
     }
 
     public static Builder builder() {
@@ -172,19 +174,19 @@ public final class GetVnicAttachmentsVnicAttachment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails;
-        private String displayName;
-        private String id;
-        private String instanceId;
-        private Integer nicIndex;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
-        private String vlanId;
-        private Integer vlanTag;
-        private String vnicId;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable String instanceId;
+        private @Nullable Integer nicIndex;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String vlanId;
+        private @Nullable Integer vlanTag;
+        private @Nullable String vnicId;
         public Builder() {}
         public Builder(GetVnicAttachmentsVnicAttachment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -204,71 +206,71 @@ public final class GetVnicAttachmentsVnicAttachment {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createVnicDetails(List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails) {
-            this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
+        public Builder createVnicDetails(@Nullable List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails) {
+            this.createVnicDetails = createVnicDetails;
             return this;
         }
         public Builder createVnicDetails(GetVnicAttachmentsVnicAttachmentCreateVnicDetail... createVnicDetails) {
             return createVnicDetails(List.of(createVnicDetails));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+        public Builder instanceId(@Nullable String instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder nicIndex(Integer nicIndex) {
-            this.nicIndex = Objects.requireNonNull(nicIndex);
+        public Builder nicIndex(@Nullable Integer nicIndex) {
+            this.nicIndex = nicIndex;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+        public Builder vlanId(@Nullable String vlanId) {
+            this.vlanId = vlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder vlanTag(Integer vlanTag) {
-            this.vlanTag = Objects.requireNonNull(vlanTag);
+        public Builder vlanTag(@Nullable Integer vlanTag) {
+            this.vlanTag = vlanTag;
             return this;
         }
         @CustomType.Setter
-        public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+        public Builder vnicId(@Nullable String vnicId) {
+            this.vnicId = vnicId;
             return this;
         }
         public GetVnicAttachmentsVnicAttachment build() {

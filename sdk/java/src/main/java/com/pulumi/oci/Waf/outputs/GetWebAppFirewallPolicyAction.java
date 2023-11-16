@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPolicyAction {
@@ -17,27 +19,27 @@ public final class GetWebAppFirewallPolicyAction {
      * @return Type of returned HTTP response body.
      * 
      */
-    private List<GetWebAppFirewallPolicyActionBody> bodies;
+    private @Nullable List<GetWebAppFirewallPolicyActionBody> bodies;
     /**
      * @return Response code.
      * 
      */
-    private Integer code;
+    private @Nullable Integer code;
     /**
      * @return Adds headers defined in this array for HTTP response.
      * 
      */
-    private List<GetWebAppFirewallPolicyActionHeader> headers;
+    private @Nullable List<GetWebAppFirewallPolicyActionHeader> headers;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetWebAppFirewallPolicyAction() {}
     /**
@@ -45,35 +47,35 @@ public final class GetWebAppFirewallPolicyAction {
      * 
      */
     public List<GetWebAppFirewallPolicyActionBody> bodies() {
-        return this.bodies;
+        return this.bodies == null ? List.of() : this.bodies;
     }
     /**
      * @return Response code.
      * 
      */
-    public Integer code() {
-        return this.code;
+    public Optional<Integer> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return Adds headers defined in this array for HTTP response.
      * 
      */
     public List<GetWebAppFirewallPolicyActionHeader> headers() {
-        return this.headers;
+        return this.headers == null ? List.of() : this.headers;
     }
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetWebAppFirewallPolicyAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWebAppFirewallPolicyActionBody> bodies;
-        private Integer code;
-        private List<GetWebAppFirewallPolicyActionHeader> headers;
-        private String name;
-        private String type;
+        private @Nullable List<GetWebAppFirewallPolicyActionBody> bodies;
+        private @Nullable Integer code;
+        private @Nullable List<GetWebAppFirewallPolicyActionHeader> headers;
+        private @Nullable String name;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,34 +103,34 @@ public final class GetWebAppFirewallPolicyAction {
         }
 
         @CustomType.Setter
-        public Builder bodies(List<GetWebAppFirewallPolicyActionBody> bodies) {
-            this.bodies = Objects.requireNonNull(bodies);
+        public Builder bodies(@Nullable List<GetWebAppFirewallPolicyActionBody> bodies) {
+            this.bodies = bodies;
             return this;
         }
         public Builder bodies(GetWebAppFirewallPolicyActionBody... bodies) {
             return bodies(List.of(bodies));
         }
         @CustomType.Setter
-        public Builder code(Integer code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable Integer code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder headers(List<GetWebAppFirewallPolicyActionHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable List<GetWebAppFirewallPolicyActionHeader> headers) {
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetWebAppFirewallPolicyActionHeader... headers) {
             return headers(List.of(headers));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetWebAppFirewallPolicyAction build() {

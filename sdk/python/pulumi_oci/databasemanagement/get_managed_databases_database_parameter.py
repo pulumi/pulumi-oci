@@ -56,39 +56,27 @@ class GetManagedDatabasesDatabaseParameterResult:
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        The name of the Managed Database.
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> str:
-        """
-        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
-        """
+    def database_sub_type(self) -> Optional[str]:
         return pulumi.get(self, "database_sub_type")
 
     @property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> str:
-        """
-        The type of Oracle Database installation.
-        """
+    def database_type(self) -> Optional[str]:
         return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> str:
-        """
-        The Oracle Database version.
-        """
+    def database_version(self) -> Optional[str]:
         return pulumi.get(self, "database_version")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -101,10 +89,7 @@ class GetManagedDatabasesDatabaseParameterResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabasesDatabaseParameterItemResult']:
-        """
-        An array of DatabaseParameterSummary objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabasesDatabaseParameterItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -115,9 +100,6 @@ class GetManagedDatabasesDatabaseParameterResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The parameter name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -150,27 +132,7 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
                                              source: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesDatabaseParameterResult:
     """
-    This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_database_parameter = oci.DatabaseManagement.get_managed_databases_database_parameter(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
-        name=var["managed_databases_database_parameter_name"],
-        source=var["managed_databases_database_parameter_source"])
-    ```
-
-
-    :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return all parameters that have the text given in their names.
-    :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['isAllowedValuesIncluded'] = is_allowed_values_included
@@ -200,26 +162,6 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
                                                     source: Optional[pulumi.Input[Optional[str]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParameterResult]:
     """
-    This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_database_parameter = oci.DatabaseManagement.get_managed_databases_database_parameter(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
-        name=var["managed_databases_database_parameter_name"],
-        source=var["managed_databases_database_parameter_source"])
-    ```
-
-
-    :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return all parameters that have the text given in their names.
-    :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
+    Use this data source to access information about an existing resource.
     """
     ...

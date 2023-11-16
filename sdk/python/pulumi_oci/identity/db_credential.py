@@ -19,13 +19,6 @@ class DbCredentialArgs:
                  user_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a DbCredential resource.
-        :param pulumi.Input[str] description: The description you assign to the DB credentials during creation.
-        :param pulumi.Input[str] password: The password for the DB credentials during creation.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "password", password)
@@ -34,9 +27,6 @@ class DbCredentialArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        The description you assign to the DB credentials during creation.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -46,9 +36,6 @@ class DbCredentialArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        The password for the DB credentials during creation.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -58,13 +45,6 @@ class DbCredentialArgs:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -84,17 +64,6 @@ class _DbCredentialState:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DbCredential resources.
-        :param pulumi.Input[str] description: The description you assign to the DB credentials during creation.
-        :param pulumi.Input[str] lifecycle_details: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] password: The password for the DB credentials during creation.
-        :param pulumi.Input[str] state: The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-        :param pulumi.Input[str] time_created: Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_expires: Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -114,9 +83,6 @@ class _DbCredentialState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        The description you assign to the DB credentials during creation.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -126,9 +92,6 @@ class _DbCredentialState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -138,9 +101,6 @@ class _DbCredentialState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password for the DB credentials during creation.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -150,9 +110,6 @@ class _DbCredentialState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -162,9 +119,6 @@ class _DbCredentialState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -174,9 +128,6 @@ class _DbCredentialState:
     @property
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_expires")
 
     @time_expires.setter
@@ -186,13 +137,6 @@ class _DbCredentialState:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -210,35 +154,9 @@ class DbCredential(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new DB credential for the specified user.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_db_credential = oci.identity.DbCredential("testDbCredential",
-            description=var["db_credential_description"],
-            password=var["db_credential_password"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DbCredential resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: The description you assign to the DB credentials during creation.
-        :param pulumi.Input[str] password: The password for the DB credentials during creation.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -247,26 +165,7 @@ class DbCredential(pulumi.CustomResource):
                  args: DbCredentialArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new DB credential for the specified user.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_db_credential = oci.identity.DbCredential("testDbCredential",
-            description=var["db_credential_description"],
-            password=var["db_credential_password"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DbCredential resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DbCredentialArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -333,17 +232,6 @@ class DbCredential(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: The description you assign to the DB credentials during creation.
-        :param pulumi.Input[str] lifecycle_details: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] password: The password for the DB credentials during creation.
-        :param pulumi.Input[str] state: The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-        :param pulumi.Input[str] time_created: Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_expires: Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -361,60 +249,35 @@ class DbCredential(pulumi.CustomResource):
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        The description you assign to the DB credentials during creation.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Output[str]:
-        """
-        The password for the DB credentials during creation.
-        """
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> pulumi.Output[str]:
-        """
-        Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_expires(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_expires")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy {
@@ -14,27 +16,27 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      * @return The number of instances for the model deployment.
      * 
      */
-    private Integer instanceCount;
+    private @Nullable Integer instanceCount;
     /**
      * @return The type of scaling policy.
      * 
      */
-    private String policyType;
+    private @Nullable String policyType;
 
     private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy() {}
     /**
      * @return The number of instances for the model deployment.
      * 
      */
-    public Integer instanceCount() {
-        return this.instanceCount;
+    public Optional<Integer> instanceCount() {
+        return Optional.ofNullable(this.instanceCount);
     }
     /**
      * @return The type of scaling policy.
      * 
      */
-    public String policyType() {
-        return this.policyType;
+    public Optional<String> policyType() {
+        return Optional.ofNullable(this.policyType);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer instanceCount;
-        private String policyType;
+        private @Nullable Integer instanceCount;
+        private @Nullable String policyType;
         public Builder() {}
         public Builder(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
         }
 
         @CustomType.Setter
-        public Builder instanceCount(Integer instanceCount) {
-            this.instanceCount = Objects.requireNonNull(instanceCount);
+        public Builder instanceCount(@Nullable Integer instanceCount) {
+            this.instanceCount = instanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+        public Builder policyType(@Nullable String policyType) {
+            this.policyType = policyType;
             return this;
         }
         public GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy build() {

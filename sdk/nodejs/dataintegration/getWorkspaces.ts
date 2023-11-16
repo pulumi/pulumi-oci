@@ -66,7 +66,7 @@ export interface GetWorkspacesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly name?: string;
     /**
      * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
@@ -75,7 +75,7 @@ export interface GetWorkspacesResult {
     /**
      * The list of workspaces.
      */
-    readonly workspaces: outputs.DataIntegration.GetWorkspacesWorkspace[];
+    readonly workspaces?: outputs.DataIntegration.GetWorkspacesWorkspace[];
 }
 /**
  * This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.

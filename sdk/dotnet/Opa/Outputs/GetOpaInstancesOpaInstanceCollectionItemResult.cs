@@ -20,124 +20,124 @@ namespace Pulumi.Oci.Opa.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The entitlement used for billing purposes
         /// </summary>
-        public readonly string ConsumptionModel;
+        public readonly string? ConsumptionModel;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Description of the Process Automation instance.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// unique OpaInstance identifier
         /// </summary>
-        public readonly string Id;
-        public readonly string IdcsAt;
+        public readonly string? Id;
+        public readonly string? IdcsAt;
         /// <summary>
         /// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
-        public readonly string IdentityAppDisplayName;
+        public readonly string? IdentityAppDisplayName;
         /// <summary>
         /// This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
-        public readonly string IdentityAppGuid;
+        public readonly string? IdentityAppGuid;
         /// <summary>
         /// This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
-        public readonly string IdentityAppOpcServiceInstanceGuid;
+        public readonly string? IdentityAppOpcServiceInstanceGuid;
         /// <summary>
         /// This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
-        public readonly string IdentityDomainUrl;
+        public readonly string? IdentityDomainUrl;
         /// <summary>
         /// OPA Instance URL
         /// </summary>
-        public readonly string InstanceUrl;
+        public readonly string? InstanceUrl;
         /// <summary>
         /// indicates if breakGlass is enabled for the opa instance.
         /// </summary>
-        public readonly bool IsBreakglassEnabled;
+        public readonly bool? IsBreakglassEnabled;
         /// <summary>
         /// MeteringType Identifier
         /// </summary>
-        public readonly string MeteringType;
+        public readonly string? MeteringType;
         /// <summary>
         /// Shape of the instance.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
         /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time when OpaInstance was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the OpaInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetOpaInstancesOpaInstanceCollectionItemResult(
             ImmutableArray<Outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult> attachments,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string consumptionModel,
+            string? consumptionModel,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string idcsAt,
+            string? idcsAt,
 
-            string identityAppDisplayName,
+            string? identityAppDisplayName,
 
-            string identityAppGuid,
+            string? identityAppGuid,
 
-            string identityAppOpcServiceInstanceGuid,
+            string? identityAppOpcServiceInstanceGuid,
 
-            string identityDomainUrl,
+            string? identityDomainUrl,
 
-            string instanceUrl,
+            string? instanceUrl,
 
-            bool isBreakglassEnabled,
+            bool? isBreakglassEnabled,
 
-            string meteringType,
+            string? meteringType,
 
-            string shapeName,
+            string? shapeName,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Attachments = attachments;
             CompartmentId = compartmentId;

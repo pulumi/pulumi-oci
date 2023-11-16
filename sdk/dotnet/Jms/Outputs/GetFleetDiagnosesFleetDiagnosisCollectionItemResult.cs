@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The diagnosis message.
         /// </summary>
-        public readonly string ResourceDiagnosis;
+        public readonly string? ResourceDiagnosis;
         /// <summary>
         /// The OCID of the external resouce needed by the fleet.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
         /// </summary>
-        public readonly string ResourceState;
+        public readonly string? ResourceState;
         /// <summary>
         /// The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
 
         [OutputConstructor]
         private GetFleetDiagnosesFleetDiagnosisCollectionItemResult(
-            string resourceDiagnosis,
+            string? resourceDiagnosis,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceState,
+            string? resourceState,
 
-            string resourceType)
+            string? resourceType)
         {
             ResourceDiagnosis = resourceDiagnosis;
             ResourceId = resourceId;

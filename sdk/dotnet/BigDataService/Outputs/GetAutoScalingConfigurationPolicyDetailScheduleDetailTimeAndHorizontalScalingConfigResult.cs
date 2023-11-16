@@ -16,17 +16,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// This value is the desired number of nodes in the cluster.
         /// </summary>
-        public readonly int TargetNodeCount;
+        public readonly int? TargetNodeCount;
         /// <summary>
         /// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
         /// </summary>
-        public readonly string TimeRecurrence;
+        public readonly string? TimeRecurrence;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigResult(
-            int targetNodeCount,
+            int? targetNodeCount,
 
-            string timeRecurrence)
+            string? timeRecurrence)
         {
             TargetNodeCount = targetNodeCount;
             TimeRecurrence = timeRecurrence;

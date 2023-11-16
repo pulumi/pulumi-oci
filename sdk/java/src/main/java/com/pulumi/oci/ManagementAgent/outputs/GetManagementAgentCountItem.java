@@ -8,6 +8,8 @@ import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentCountItemDimensi
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentCountItem {
@@ -15,27 +17,27 @@ public final class GetManagementAgentCountItem {
      * @return The number of Management Agents in this group
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
     /**
      * @return The Aggregation of Management Agent Dimensions
      * 
      */
-    private List<GetManagementAgentCountItemDimension> dimensions;
+    private @Nullable List<GetManagementAgentCountItemDimension> dimensions;
 
     private GetManagementAgentCountItem() {}
     /**
      * @return The number of Management Agents in this group
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return The Aggregation of Management Agent Dimensions
      * 
      */
     public List<GetManagementAgentCountItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetManagementAgentCountItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private List<GetManagementAgentCountItemDimension> dimensions;
+        private @Nullable Integer count;
+        private @Nullable List<GetManagementAgentCountItemDimension> dimensions;
         public Builder() {}
         public Builder(GetManagementAgentCountItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetManagementAgentCountItem {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetManagementAgentCountItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetManagementAgentCountItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetManagementAgentCountItemDimension... dimensions) {

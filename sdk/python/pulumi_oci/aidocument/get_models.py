@@ -49,17 +49,11 @@ class GetModelsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A human-friendly name for the model, which can be changed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,33 +64,21 @@ class GetModelsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        A unique identifier that is immutable after creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="modelCollections")
-    def model_collections(self) -> Sequence['outputs.GetModelsModelCollectionResult']:
-        """
-        The list of model_collection.
-        """
+    def model_collections(self) -> Optional[Sequence['outputs.GetModelsModelCollectionResult']]:
         return pulumi.get(self, "model_collections")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the model.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_models(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelsResult:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Ai Document service.
-
-    Returns a list of models in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_models = oci.AiDocument.get_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        id=var["model_id"],
-        project_id=oci_ai_document_project["test_project"]["id"],
-        state=var["model_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The filter to find the model with the given identifier.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: The filter to match models with the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelsResult]:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Ai Document service.
-
-    Returns a list of models in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_models = oci.AiDocument.get_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        id=var["model_id"],
-        project_id=oci_ai_document_project["test_project"]["id"],
-        state=var["model_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The filter to find the model with the given identifier.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: The filter to match models with the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

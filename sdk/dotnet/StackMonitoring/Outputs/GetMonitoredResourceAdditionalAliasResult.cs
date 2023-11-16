@@ -20,19 +20,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Property Name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
 
         [OutputConstructor]
         private GetMonitoredResourceAdditionalAliasResult(
             ImmutableArray<Outputs.GetMonitoredResourceAdditionalAliasCredentialResult> credentials,
 
-            string name,
+            string? name,
 
-            string source)
+            string? source)
         {
             Credentials = credentials;
             Name = name;

@@ -47,69 +47,69 @@ export interface GetNetworkLoadBalancerResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name, which does not have to be unique, and can be changed.  Example: `exampleLoadBalancer`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * OCID of the reserved public IP address created with the virtual cloud network.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of IP addresses.
      */
-    readonly ipAddresses: outputs.NetworkLoadBalancer.GetNetworkLoadBalancerIpAddress[];
+    readonly ipAddresses?: outputs.NetworkLoadBalancer.GetNetworkLoadBalancerIpAddress[];
     /**
      * When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
      */
-    readonly isPreserveSourceDestination: boolean;
+    readonly isPreserveSourceDestination?: boolean;
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
      */
-    readonly isPrivate: boolean;
+    readonly isPrivate?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly networkLoadBalancerId: string;
     /**
      * An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
      */
-    readonly networkSecurityGroupIds: string[];
+    readonly networkSecurityGroupIds?: string[];
     /**
      * IP version associated with the NLB.
      */
-    readonly nlbIpVersion: string;
-    readonly reservedIps: outputs.NetworkLoadBalancer.GetNetworkLoadBalancerReservedIp[];
+    readonly nlbIpVersion?: string;
+    readonly reservedIps?: outputs.NetworkLoadBalancer.GetNetworkLoadBalancerReservedIp[];
     /**
      * The current state of the network load balancer.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.

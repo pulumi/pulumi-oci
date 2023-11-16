@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -70,29 +69,29 @@ type SensitiveDataModelsSensitiveColumn struct {
 	// (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
 	AppDefinedChildColumnKeys pulumi.StringArrayOutput `pulumi:"appDefinedChildColumnKeys"`
 	// The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically populated with the value provided for the schemaName attribute.
-	AppName pulumi.StringOutput `pulumi:"appName"`
+	AppName pulumi.StringPtrOutput `pulumi:"appName"`
 	// The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
 	ColumnGroups pulumi.StringArrayOutput `pulumi:"columnGroups"`
 	// The name of the sensitive column.
 	ColumnName pulumi.StringOutput `pulumi:"columnName"`
 	// (Updatable) The data type of the sensitive column.
-	DataType pulumi.StringOutput `pulumi:"dataType"`
+	DataType pulumi.StringPtrOutput `pulumi:"dataType"`
 	// (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
 	DbDefinedChildColumnKeys pulumi.StringArrayOutput `pulumi:"dbDefinedChildColumnKeys"`
 	// The estimated number of data values the column has in the associated database.
-	EstimatedDataValueCount pulumi.StringOutput `pulumi:"estimatedDataValueCount"`
+	EstimatedDataValueCount pulumi.StringPtrOutput `pulumi:"estimatedDataValueCount"`
 	// The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// Details about the current state of the sensitive column.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The database object that contains the sensitive column.
 	Object pulumi.StringOutput `pulumi:"object"`
 	// The type of the database object that contains the sensitive column.
-	ObjectType pulumi.StringOutput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrOutput `pulumi:"objectType"`
 	// (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
 	ParentColumnKeys pulumi.StringArrayOutput `pulumi:"parentColumnKeys"`
 	// (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-	RelationType pulumi.StringOutput `pulumi:"relationType"`
+	RelationType pulumi.StringPtrOutput `pulumi:"relationType"`
 	// Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
 	SampleDataValues pulumi.StringArrayOutput `pulumi:"sampleDataValues"`
 	// The database schema that contains the sensitive column.
@@ -100,20 +99,20 @@ type SensitiveDataModelsSensitiveColumn struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringOutput `pulumi:"sensitiveDataModelId"`
 	// (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
-	SensitiveTypeId pulumi.StringOutput `pulumi:"sensitiveTypeId"`
+	SensitiveTypeId pulumi.StringPtrOutput `pulumi:"sensitiveTypeId"`
 	// The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
-	Source pulumi.StringOutput `pulumi:"source"`
+	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// The current state of the sensitive column.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewSensitiveDataModelsSensitiveColumn registers a new resource with the given unique name, arguments, and options.
@@ -349,12 +348,6 @@ func (i *SensitiveDataModelsSensitiveColumn) ToSensitiveDataModelsSensitiveColum
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsSensitiveColumnOutput)
 }
 
-func (i *SensitiveDataModelsSensitiveColumn) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[*SensitiveDataModelsSensitiveColumn]{
-		OutputState: i.ToSensitiveDataModelsSensitiveColumnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SensitiveDataModelsSensitiveColumnArrayInput is an input type that accepts SensitiveDataModelsSensitiveColumnArray and SensitiveDataModelsSensitiveColumnArrayOutput values.
 // You can construct a concrete instance of `SensitiveDataModelsSensitiveColumnArrayInput` via:
 //
@@ -378,12 +371,6 @@ func (i SensitiveDataModelsSensitiveColumnArray) ToSensitiveDataModelsSensitiveC
 
 func (i SensitiveDataModelsSensitiveColumnArray) ToSensitiveDataModelsSensitiveColumnArrayOutputWithContext(ctx context.Context) SensitiveDataModelsSensitiveColumnArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsSensitiveColumnArrayOutput)
-}
-
-func (i SensitiveDataModelsSensitiveColumnArray) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[[]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: i.ToSensitiveDataModelsSensitiveColumnArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SensitiveDataModelsSensitiveColumnMapInput is an input type that accepts SensitiveDataModelsSensitiveColumnMap and SensitiveDataModelsSensitiveColumnMapOutput values.
@@ -411,12 +398,6 @@ func (i SensitiveDataModelsSensitiveColumnMap) ToSensitiveDataModelsSensitiveCol
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsSensitiveColumnMapOutput)
 }
 
-func (i SensitiveDataModelsSensitiveColumnMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: i.ToSensitiveDataModelsSensitiveColumnMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SensitiveDataModelsSensitiveColumnOutput struct{ *pulumi.OutputState }
 
 func (SensitiveDataModelsSensitiveColumnOutput) ElementType() reflect.Type {
@@ -431,12 +412,6 @@ func (o SensitiveDataModelsSensitiveColumnOutput) ToSensitiveDataModelsSensitive
 	return o
 }
 
-func (o SensitiveDataModelsSensitiveColumnOutput) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[*SensitiveDataModelsSensitiveColumn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
 func (o SensitiveDataModelsSensitiveColumnOutput) AppDefinedChildColumnKeys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringArrayOutput {
@@ -445,8 +420,8 @@ func (o SensitiveDataModelsSensitiveColumnOutput) AppDefinedChildColumnKeys() pu
 }
 
 // The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically populated with the value provided for the schemaName attribute.
-func (o SensitiveDataModelsSensitiveColumnOutput) AppName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.AppName }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) AppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.AppName }).(pulumi.StringPtrOutput)
 }
 
 // The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
@@ -460,8 +435,8 @@ func (o SensitiveDataModelsSensitiveColumnOutput) ColumnName() pulumi.StringOutp
 }
 
 // (Updatable) The data type of the sensitive column.
-func (o SensitiveDataModelsSensitiveColumnOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.DataType }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -472,18 +447,18 @@ func (o SensitiveDataModelsSensitiveColumnOutput) DbDefinedChildColumnKeys() pul
 }
 
 // The estimated number of data values the column has in the associated database.
-func (o SensitiveDataModelsSensitiveColumnOutput) EstimatedDataValueCount() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.EstimatedDataValueCount }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) EstimatedDataValueCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.EstimatedDataValueCount }).(pulumi.StringPtrOutput)
 }
 
 // The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
-func (o SensitiveDataModelsSensitiveColumnOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the sensitive column.
-func (o SensitiveDataModelsSensitiveColumnOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The database object that contains the sensitive column.
@@ -492,8 +467,8 @@ func (o SensitiveDataModelsSensitiveColumnOutput) Object() pulumi.StringOutput {
 }
 
 // The type of the database object that contains the sensitive column.
-func (o SensitiveDataModelsSensitiveColumnOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.ObjectType }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
@@ -502,8 +477,8 @@ func (o SensitiveDataModelsSensitiveColumnOutput) ParentColumnKeys() pulumi.Stri
 }
 
 // (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-func (o SensitiveDataModelsSensitiveColumnOutput) RelationType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.RelationType }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) RelationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.RelationType }).(pulumi.StringPtrOutput)
 }
 
 // Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
@@ -522,36 +497,36 @@ func (o SensitiveDataModelsSensitiveColumnOutput) SensitiveDataModelId() pulumi.
 }
 
 // (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
-func (o SensitiveDataModelsSensitiveColumnOutput) SensitiveTypeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.SensitiveTypeId }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
 }
 
 // The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
-func (o SensitiveDataModelsSensitiveColumnOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the sensitive column.
-func (o SensitiveDataModelsSensitiveColumnOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o SensitiveDataModelsSensitiveColumnOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
-func (o SensitiveDataModelsSensitiveColumnOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
-func (o SensitiveDataModelsSensitiveColumnOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SensitiveDataModelsSensitiveColumnOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type SensitiveDataModelsSensitiveColumnArrayOutput struct{ *pulumi.OutputState }
@@ -566,12 +541,6 @@ func (o SensitiveDataModelsSensitiveColumnArrayOutput) ToSensitiveDataModelsSens
 
 func (o SensitiveDataModelsSensitiveColumnArrayOutput) ToSensitiveDataModelsSensitiveColumnArrayOutputWithContext(ctx context.Context) SensitiveDataModelsSensitiveColumnArrayOutput {
 	return o
-}
-
-func (o SensitiveDataModelsSensitiveColumnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[[]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SensitiveDataModelsSensitiveColumnArrayOutput) Index(i pulumi.IntInput) SensitiveDataModelsSensitiveColumnOutput {
@@ -592,12 +561,6 @@ func (o SensitiveDataModelsSensitiveColumnMapOutput) ToSensitiveDataModelsSensit
 
 func (o SensitiveDataModelsSensitiveColumnMapOutput) ToSensitiveDataModelsSensitiveColumnMapOutputWithContext(ctx context.Context) SensitiveDataModelsSensitiveColumnMapOutput {
 	return o
-}
-
-func (o SensitiveDataModelsSensitiveColumnMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SensitiveDataModelsSensitiveColumnMapOutput) MapIndex(k pulumi.StringInput) SensitiveDataModelsSensitiveColumnOutput {

@@ -16,56 +16,56 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The OCID of the SMTP credential.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
-        public readonly string InactiveState;
-        public readonly string Password;
+        public readonly string? InactiveState;
+        public readonly string? Password;
         /// <summary>
         /// The credential's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeExpires;
+        public readonly string? TimeExpires;
         /// <summary>
         /// The OCID of the user.
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
         /// <summary>
         /// The SMTP user name.
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetSmtpCredentialsSmtpCredentialResult(
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string inactiveState,
+            string? inactiveState,
 
-            string password,
+            string? password,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeExpires,
+            string? timeExpires,
 
-            string userId,
+            string? userId,
 
-            string username)
+            string? username)
         {
             Description = description;
             Id = id;

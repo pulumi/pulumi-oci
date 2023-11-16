@@ -18,7 +18,7 @@ public final class GetAddressListsResult {
      * @return The list of address_lists.
      * 
      */
-    private List<GetAddressListsAddressList> addressLists;
+    private @Nullable List<GetAddressListsAddressList> addressLists;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list&#39;s compartment.
      * 
@@ -29,7 +29,7 @@ public final class GetAddressListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable List<String> ids;
     private @Nullable List<String> names;
     private @Nullable List<String> states;
@@ -42,7 +42,7 @@ public final class GetAddressListsResult {
      * 
      */
     public List<GetAddressListsAddressList> addressLists() {
-        return this.addressLists;
+        return this.addressLists == null ? List.of() : this.addressLists;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list&#39;s compartment.
@@ -58,8 +58,8 @@ public final class GetAddressListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<String> ids() {
         return this.ids == null ? List.of() : this.ids;
@@ -86,10 +86,10 @@ public final class GetAddressListsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddressListsAddressList> addressLists;
+        private @Nullable List<GetAddressListsAddressList> addressLists;
         private String compartmentId;
         private @Nullable List<GetAddressListsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> ids;
         private @Nullable List<String> names;
         private @Nullable List<String> states;
@@ -110,8 +110,8 @@ public final class GetAddressListsResult {
         }
 
         @CustomType.Setter
-        public Builder addressLists(List<GetAddressListsAddressList> addressLists) {
-            this.addressLists = Objects.requireNonNull(addressLists);
+        public Builder addressLists(@Nullable List<GetAddressListsAddressList> addressLists) {
+            this.addressLists = addressLists;
             return this;
         }
         public Builder addressLists(GetAddressListsAddressList... addressLists) {
@@ -131,8 +131,8 @@ public final class GetAddressListsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

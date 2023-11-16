@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
@@ -30,44 +29,44 @@ type AutonomousContainerDatabaseDataguardAssociation struct {
 	pulumi.CustomResourceState
 
 	// The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
-	ApplyLag pulumi.StringOutput `pulumi:"applyLag"`
+	ApplyLag pulumi.StringPtrOutput `pulumi:"applyLag"`
 	// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
-	ApplyRate pulumi.StringOutput `pulumi:"applyRate"`
+	ApplyRate pulumi.StringPtrOutput `pulumi:"applyRate"`
 	// The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseDataguardAssociationId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseId"`
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-	FastStartFailOverLagLimitInSeconds pulumi.IntOutput `pulumi:"fastStartFailOverLagLimitInSeconds"`
+	FastStartFailOverLagLimitInSeconds pulumi.IntPtrOutput `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
-	IsAutomaticFailoverEnabled pulumi.BoolOutput `pulumi:"isAutomaticFailoverEnabled"`
+	IsAutomaticFailoverEnabled pulumi.BoolPtrOutput `pulumi:"isAutomaticFailoverEnabled"`
 	// Additional information about the current lifecycleState, if available.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
-	PeerAutonomousContainerDatabaseDataguardAssociationId pulumi.StringOutput `pulumi:"peerAutonomousContainerDatabaseDataguardAssociationId"`
+	PeerAutonomousContainerDatabaseDataguardAssociationId pulumi.StringPtrOutput `pulumi:"peerAutonomousContainerDatabaseDataguardAssociationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
-	PeerAutonomousContainerDatabaseId pulumi.StringOutput `pulumi:"peerAutonomousContainerDatabaseId"`
+	PeerAutonomousContainerDatabaseId pulumi.StringPtrOutput `pulumi:"peerAutonomousContainerDatabaseId"`
 	// The current state of Autonomous Data Guard.
-	PeerLifecycleState pulumi.StringOutput `pulumi:"peerLifecycleState"`
+	PeerLifecycleState pulumi.StringPtrOutput `pulumi:"peerLifecycleState"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-	PeerRole pulumi.StringOutput `pulumi:"peerRole"`
+	PeerRole pulumi.StringPtrOutput `pulumi:"peerRole"`
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
+	ProtectionMode pulumi.StringPtrOutput `pulumi:"protectionMode"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-	Role pulumi.StringOutput `pulumi:"role"`
+	Role pulumi.StringPtrOutput `pulumi:"role"`
 	// The current state of Autonomous Data Guard.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the Autonomous DataGuard association was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time when the last role change action happened.
-	TimeLastRoleChanged pulumi.StringOutput `pulumi:"timeLastRoleChanged"`
+	TimeLastRoleChanged pulumi.StringPtrOutput `pulumi:"timeLastRoleChanged"`
 	// The date and time of the last update to the apply lag, apply rate, and transport lag values.
-	TimeLastSynced pulumi.StringOutput `pulumi:"timeLastSynced"`
+	TimeLastSynced pulumi.StringPtrOutput `pulumi:"timeLastSynced"`
 	// The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
-	TransportLag pulumi.StringOutput `pulumi:"transportLag"`
+	TransportLag pulumi.StringPtrOutput `pulumi:"transportLag"`
 }
 
 // NewAutonomousContainerDatabaseDataguardAssociation registers a new resource with the given unique name, arguments, and options.
@@ -249,12 +248,6 @@ func (i *AutonomousContainerDatabaseDataguardAssociation) ToAutonomousContainerD
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardAssociationOutput)
 }
 
-func (i *AutonomousContainerDatabaseDataguardAssociation) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabaseDataguardAssociation] {
-	return pulumix.Output[*AutonomousContainerDatabaseDataguardAssociation]{
-		OutputState: i.ToAutonomousContainerDatabaseDataguardAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutonomousContainerDatabaseDataguardAssociationArrayInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationArray and AutonomousContainerDatabaseDataguardAssociationArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseDataguardAssociationArrayInput` via:
 //
@@ -278,12 +271,6 @@ func (i AutonomousContainerDatabaseDataguardAssociationArray) ToAutonomousContai
 
 func (i AutonomousContainerDatabaseDataguardAssociationArray) ToAutonomousContainerDatabaseDataguardAssociationArrayOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardAssociationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardAssociationArrayOutput)
-}
-
-func (i AutonomousContainerDatabaseDataguardAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociation] {
-	return pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociation]{
-		OutputState: i.ToAutonomousContainerDatabaseDataguardAssociationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutonomousContainerDatabaseDataguardAssociationMapInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationMap and AutonomousContainerDatabaseDataguardAssociationMapOutput values.
@@ -311,12 +298,6 @@ func (i AutonomousContainerDatabaseDataguardAssociationMap) ToAutonomousContaine
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardAssociationMapOutput)
 }
 
-func (i AutonomousContainerDatabaseDataguardAssociationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociation] {
-	return pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociation]{
-		OutputState: i.ToAutonomousContainerDatabaseDataguardAssociationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutonomousContainerDatabaseDataguardAssociationOutput struct{ *pulumi.OutputState }
 
 func (AutonomousContainerDatabaseDataguardAssociationOutput) ElementType() reflect.Type {
@@ -331,20 +312,14 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) ToAutonomousConta
 	return o
 }
 
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabaseDataguardAssociation] {
-	return pulumix.Output[*AutonomousContainerDatabaseDataguardAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) ApplyLag() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.ApplyLag }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) ApplyLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput { return v.ApplyLag }).(pulumi.StringPtrOutput)
 }
 
 // The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) ApplyRate() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.ApplyRate }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) ApplyRate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput { return v.ApplyRate }).(pulumi.StringPtrOutput)
 }
 
 // The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -362,90 +337,94 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) AutonomousContain
 }
 
 // (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.IntOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.IntPtrOutput {
 		return v.FastStartFailOverLagLimitInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) IsAutomaticFailoverEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.BoolOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) IsAutomaticFailoverEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.BoolPtrOutput {
 		return v.IsAutomaticFailoverEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycleState, if available.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerAutonomousContainerDatabaseDataguardAssociationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerAutonomousContainerDatabaseDataguardAssociationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput {
 		return v.PeerAutonomousContainerDatabaseDataguardAssociationId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerAutonomousContainerDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerAutonomousContainerDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput {
 		return v.PeerAutonomousContainerDatabaseId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The current state of Autonomous Data Guard.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerLifecycleState() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerLifecycleState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput {
 		return v.PeerLifecycleState
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerRole() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.PeerRole }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput { return v.PeerRole }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) ProtectionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.ProtectionMode }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) ProtectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput {
+		return v.ProtectionMode
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // The current state of Autonomous Data Guard.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Autonomous DataGuard association was created.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the last role change action happened.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) TimeLastRoleChanged() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) TimeLastRoleChanged() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput {
 		return v.TimeLastRoleChanged
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the last update to the apply lag, apply rate, and transport lag values.
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) TimeLastSynced() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.TimeLastSynced }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) TimeLastSynced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput {
+		return v.TimeLastSynced
+	}).(pulumi.StringPtrOutput)
 }
 
 // The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) TransportLag() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.TransportLag }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) TransportLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringPtrOutput { return v.TransportLag }).(pulumi.StringPtrOutput)
 }
 
 type AutonomousContainerDatabaseDataguardAssociationArrayOutput struct{ *pulumi.OutputState }
@@ -460,12 +439,6 @@ func (o AutonomousContainerDatabaseDataguardAssociationArrayOutput) ToAutonomous
 
 func (o AutonomousContainerDatabaseDataguardAssociationArrayOutput) ToAutonomousContainerDatabaseDataguardAssociationArrayOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardAssociationArrayOutput {
 	return o
-}
-
-func (o AutonomousContainerDatabaseDataguardAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociation] {
-	return pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousContainerDatabaseDataguardAssociationArrayOutput) Index(i pulumi.IntInput) AutonomousContainerDatabaseDataguardAssociationOutput {
@@ -486,12 +459,6 @@ func (o AutonomousContainerDatabaseDataguardAssociationMapOutput) ToAutonomousCo
 
 func (o AutonomousContainerDatabaseDataguardAssociationMapOutput) ToAutonomousContainerDatabaseDataguardAssociationMapOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardAssociationMapOutput {
 	return o
-}
-
-func (o AutonomousContainerDatabaseDataguardAssociationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociation] {
-	return pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousContainerDatabaseDataguardAssociationMapOutput) MapIndex(k pulumi.StringInput) AutonomousContainerDatabaseDataguardAssociationOutput {

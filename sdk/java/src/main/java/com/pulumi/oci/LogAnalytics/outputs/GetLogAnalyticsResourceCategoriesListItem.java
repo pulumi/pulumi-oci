@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsResourceCategoriesListItem {
@@ -14,51 +16,51 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
      * @return The category name to which this resource belongs.
      * 
      */
-    private String categoryName;
+    private @Nullable String categoryName;
     /**
      * @return The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
      * 
      */
-    private Boolean isSystem;
+    private @Nullable Boolean isSystem;
     /**
      * @return The unique identifier of the resource, usually a name or ocid.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The resource type.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
 
     private GetLogAnalyticsResourceCategoriesListItem() {}
     /**
      * @return The category name to which this resource belongs.
      * 
      */
-    public String categoryName() {
-        return this.categoryName;
+    public Optional<String> categoryName() {
+        return Optional.ofNullable(this.categoryName);
     }
     /**
      * @return The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
      * 
      */
-    public Boolean isSystem() {
-        return this.isSystem;
+    public Optional<Boolean> isSystem() {
+        return Optional.ofNullable(this.isSystem);
     }
     /**
      * @return The unique identifier of the resource, usually a name or ocid.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The resource type.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String categoryName;
-        private Boolean isSystem;
-        private String resourceId;
-        private String resourceType;
+        private @Nullable String categoryName;
+        private @Nullable Boolean isSystem;
+        private @Nullable String resourceId;
+        private @Nullable String resourceType;
         public Builder() {}
         public Builder(GetLogAnalyticsResourceCategoriesListItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
         }
 
         @CustomType.Setter
-        public Builder categoryName(String categoryName) {
-            this.categoryName = Objects.requireNonNull(categoryName);
+        public Builder categoryName(@Nullable String categoryName) {
+            this.categoryName = categoryName;
             return this;
         }
         @CustomType.Setter
-        public Builder isSystem(Boolean isSystem) {
-            this.isSystem = Objects.requireNonNull(isSystem);
+        public Builder isSystem(@Nullable Boolean isSystem) {
+            this.isSystem = isSystem;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         public GetLogAnalyticsResourceCategoriesListItem build() {

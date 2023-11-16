@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -59,12 +58,6 @@ func (i SecretSecretContentArgs) ToSecretSecretContentOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretContentOutput)
 }
 
-func (i SecretSecretContentArgs) ToOutput(ctx context.Context) pulumix.Output[SecretSecretContent] {
-	return pulumix.Output[SecretSecretContent]{
-		OutputState: i.ToSecretSecretContentOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SecretSecretContentArgs) ToSecretSecretContentPtrOutput() SecretSecretContentPtrOutput {
 	return i.ToSecretSecretContentPtrOutputWithContext(context.Background())
 }
@@ -106,12 +99,6 @@ func (i *secretSecretContentPtrType) ToSecretSecretContentPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretContentPtrOutput)
 }
 
-func (i *secretSecretContentPtrType) ToOutput(ctx context.Context) pulumix.Output[*SecretSecretContent] {
-	return pulumix.Output[*SecretSecretContent]{
-		OutputState: i.ToSecretSecretContentPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecretSecretContentOutput struct{ *pulumi.OutputState }
 
 func (SecretSecretContentOutput) ElementType() reflect.Type {
@@ -134,12 +121,6 @@ func (o SecretSecretContentOutput) ToSecretSecretContentPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretSecretContent) *SecretSecretContent {
 		return &v
 	}).(SecretSecretContentPtrOutput)
-}
-
-func (o SecretSecretContentOutput) ToOutput(ctx context.Context) pulumix.Output[SecretSecretContent] {
-	return pulumix.Output[SecretSecretContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The base64-encoded content of the secret.
@@ -174,12 +155,6 @@ func (o SecretSecretContentPtrOutput) ToSecretSecretContentPtrOutput() SecretSec
 
 func (o SecretSecretContentPtrOutput) ToSecretSecretContentPtrOutputWithContext(ctx context.Context) SecretSecretContentPtrOutput {
 	return o
-}
-
-func (o SecretSecretContentPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SecretSecretContent] {
-	return pulumix.Output[*SecretSecretContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecretSecretContentPtrOutput) Elem() SecretSecretContentOutput {
@@ -281,12 +256,6 @@ func (i SecretSecretRuleArgs) ToSecretSecretRuleOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRuleOutput)
 }
 
-func (i SecretSecretRuleArgs) ToOutput(ctx context.Context) pulumix.Output[SecretSecretRule] {
-	return pulumix.Output[SecretSecretRule]{
-		OutputState: i.ToSecretSecretRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecretSecretRuleArrayInput is an input type that accepts SecretSecretRuleArray and SecretSecretRuleArrayOutput values.
 // You can construct a concrete instance of `SecretSecretRuleArrayInput` via:
 //
@@ -312,12 +281,6 @@ func (i SecretSecretRuleArray) ToSecretSecretRuleArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRuleArrayOutput)
 }
 
-func (i SecretSecretRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]SecretSecretRule] {
-	return pulumix.Output[[]SecretSecretRule]{
-		OutputState: i.ToSecretSecretRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecretSecretRuleOutput struct{ *pulumi.OutputState }
 
 func (SecretSecretRuleOutput) ElementType() reflect.Type {
@@ -330,12 +293,6 @@ func (o SecretSecretRuleOutput) ToSecretSecretRuleOutput() SecretSecretRuleOutpu
 
 func (o SecretSecretRuleOutput) ToSecretSecretRuleOutputWithContext(ctx context.Context) SecretSecretRuleOutput {
 	return o
-}
-
-func (o SecretSecretRuleOutput) ToOutput(ctx context.Context) pulumix.Output[SecretSecretRule] {
-	return pulumix.Output[SecretSecretRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
@@ -377,12 +334,6 @@ func (o SecretSecretRuleArrayOutput) ToSecretSecretRuleArrayOutputWithContext(ct
 	return o
 }
 
-func (o SecretSecretRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecretSecretRule] {
-	return pulumix.Output[[]SecretSecretRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SecretSecretRuleArrayOutput) Index(i pulumi.IntInput) SecretSecretRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecretSecretRule {
 		return vs[0].([]SecretSecretRule)[vs[1].(int)]
@@ -390,10 +341,10 @@ func (o SecretSecretRuleArrayOutput) Index(i pulumi.IntInput) SecretSecretRuleOu
 }
 
 type GetSecretSecretContent struct {
-	Content     string `pulumi:"content"`
-	ContentType string `pulumi:"contentType"`
-	Name        string `pulumi:"name"`
-	Stage       string `pulumi:"stage"`
+	Content     *string `pulumi:"content"`
+	ContentType *string `pulumi:"contentType"`
+	Name        *string `pulumi:"name"`
+	Stage       *string `pulumi:"stage"`
 }
 
 // GetSecretSecretContentInput is an input type that accepts GetSecretSecretContentArgs and GetSecretSecretContentOutput values.
@@ -408,10 +359,10 @@ type GetSecretSecretContentInput interface {
 }
 
 type GetSecretSecretContentArgs struct {
-	Content     pulumi.StringInput `pulumi:"content"`
-	ContentType pulumi.StringInput `pulumi:"contentType"`
-	Name        pulumi.StringInput `pulumi:"name"`
-	Stage       pulumi.StringInput `pulumi:"stage"`
+	Content     pulumi.StringPtrInput `pulumi:"content"`
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	Name        pulumi.StringPtrInput `pulumi:"name"`
+	Stage       pulumi.StringPtrInput `pulumi:"stage"`
 }
 
 func (GetSecretSecretContentArgs) ElementType() reflect.Type {
@@ -424,12 +375,6 @@ func (i GetSecretSecretContentArgs) ToGetSecretSecretContentOutput() GetSecretSe
 
 func (i GetSecretSecretContentArgs) ToGetSecretSecretContentOutputWithContext(ctx context.Context) GetSecretSecretContentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretContentOutput)
-}
-
-func (i GetSecretSecretContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretContent] {
-	return pulumix.Output[GetSecretSecretContent]{
-		OutputState: i.ToGetSecretSecretContentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSecretSecretContentArrayInput is an input type that accepts GetSecretSecretContentArray and GetSecretSecretContentArrayOutput values.
@@ -457,12 +402,6 @@ func (i GetSecretSecretContentArray) ToGetSecretSecretContentArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretContentArrayOutput)
 }
 
-func (i GetSecretSecretContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretContent] {
-	return pulumix.Output[[]GetSecretSecretContent]{
-		OutputState: i.ToGetSecretSecretContentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretSecretContentOutput struct{ *pulumi.OutputState }
 
 func (GetSecretSecretContentOutput) ElementType() reflect.Type {
@@ -477,26 +416,20 @@ func (o GetSecretSecretContentOutput) ToGetSecretSecretContentOutputWithContext(
 	return o
 }
 
-func (o GetSecretSecretContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretContent] {
-	return pulumix.Output[GetSecretSecretContent]{
-		OutputState: o.OutputState,
-	}
+func (o GetSecretSecretContentOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretContent) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecretSecretContentOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretSecretContent) string { return v.Content }).(pulumi.StringOutput)
+func (o GetSecretSecretContentOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretContent) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecretSecretContentOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretSecretContent) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetSecretSecretContentOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretContent) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecretSecretContentOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretSecretContent) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetSecretSecretContentOutput) Stage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretSecretContent) string { return v.Stage }).(pulumi.StringOutput)
+func (o GetSecretSecretContentOutput) Stage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretContent) *string { return v.Stage }).(pulumi.StringPtrOutput)
 }
 
 type GetSecretSecretContentArrayOutput struct{ *pulumi.OutputState }
@@ -513,12 +446,6 @@ func (o GetSecretSecretContentArrayOutput) ToGetSecretSecretContentArrayOutputWi
 	return o
 }
 
-func (o GetSecretSecretContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretContent] {
-	return pulumix.Output[[]GetSecretSecretContent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSecretSecretContentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretSecretContent {
 		return vs[0].([]GetSecretSecretContent)[vs[1].(int)]
@@ -527,15 +454,15 @@ func (o GetSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSecretSec
 
 type GetSecretSecretRule struct {
 	// A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-	IsEnforcedOnDeletedSecretVersions bool `pulumi:"isEnforcedOnDeletedSecretVersions"`
+	IsEnforcedOnDeletedSecretVersions *bool `pulumi:"isEnforcedOnDeletedSecretVersions"`
 	// A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-	IsSecretContentRetrievalBlockedOnExpiry bool `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
+	IsSecretContentRetrievalBlockedOnExpiry *bool `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-	SecretVersionExpiryInterval string `pulumi:"secretVersionExpiryInterval"`
+	SecretVersionExpiryInterval *string `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfAbsoluteExpiry string `pulumi:"timeOfAbsoluteExpiry"`
+	TimeOfAbsoluteExpiry *string `pulumi:"timeOfAbsoluteExpiry"`
 }
 
 // GetSecretSecretRuleInput is an input type that accepts GetSecretSecretRuleArgs and GetSecretSecretRuleOutput values.
@@ -551,15 +478,15 @@ type GetSecretSecretRuleInput interface {
 
 type GetSecretSecretRuleArgs struct {
 	// A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-	IsEnforcedOnDeletedSecretVersions pulumi.BoolInput `pulumi:"isEnforcedOnDeletedSecretVersions"`
+	IsEnforcedOnDeletedSecretVersions pulumi.BoolPtrInput `pulumi:"isEnforcedOnDeletedSecretVersions"`
 	// A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-	IsSecretContentRetrievalBlockedOnExpiry pulumi.BoolInput `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
+	IsSecretContentRetrievalBlockedOnExpiry pulumi.BoolPtrInput `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-	SecretVersionExpiryInterval pulumi.StringInput `pulumi:"secretVersionExpiryInterval"`
+	SecretVersionExpiryInterval pulumi.StringPtrInput `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfAbsoluteExpiry pulumi.StringInput `pulumi:"timeOfAbsoluteExpiry"`
+	TimeOfAbsoluteExpiry pulumi.StringPtrInput `pulumi:"timeOfAbsoluteExpiry"`
 }
 
 func (GetSecretSecretRuleArgs) ElementType() reflect.Type {
@@ -572,12 +499,6 @@ func (i GetSecretSecretRuleArgs) ToGetSecretSecretRuleOutput() GetSecretSecretRu
 
 func (i GetSecretSecretRuleArgs) ToGetSecretSecretRuleOutputWithContext(ctx context.Context) GetSecretSecretRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretRuleOutput)
-}
-
-func (i GetSecretSecretRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretRule] {
-	return pulumix.Output[GetSecretSecretRule]{
-		OutputState: i.ToGetSecretSecretRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSecretSecretRuleArrayInput is an input type that accepts GetSecretSecretRuleArray and GetSecretSecretRuleArrayOutput values.
@@ -605,12 +526,6 @@ func (i GetSecretSecretRuleArray) ToGetSecretSecretRuleArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretRuleArrayOutput)
 }
 
-func (i GetSecretSecretRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretRule] {
-	return pulumix.Output[[]GetSecretSecretRule]{
-		OutputState: i.ToGetSecretSecretRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretSecretRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSecretSecretRuleOutput) ElementType() reflect.Type {
@@ -625,35 +540,29 @@ func (o GetSecretSecretRuleOutput) ToGetSecretSecretRuleOutputWithContext(ctx co
 	return o
 }
 
-func (o GetSecretSecretRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretRule] {
-	return pulumix.Output[GetSecretSecretRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-func (o GetSecretSecretRuleOutput) IsEnforcedOnDeletedSecretVersions() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSecretSecretRule) bool { return v.IsEnforcedOnDeletedSecretVersions }).(pulumi.BoolOutput)
+func (o GetSecretSecretRuleOutput) IsEnforcedOnDeletedSecretVersions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretRule) *bool { return v.IsEnforcedOnDeletedSecretVersions }).(pulumi.BoolPtrOutput)
 }
 
 // A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-func (o GetSecretSecretRuleOutput) IsSecretContentRetrievalBlockedOnExpiry() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSecretSecretRule) bool { return v.IsSecretContentRetrievalBlockedOnExpiry }).(pulumi.BoolOutput)
+func (o GetSecretSecretRuleOutput) IsSecretContentRetrievalBlockedOnExpiry() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretRule) *bool { return v.IsSecretContentRetrievalBlockedOnExpiry }).(pulumi.BoolPtrOutput)
 }
 
 // The type of rule, which either controls when the secret contents expire or whether they can be reused.
-func (o GetSecretSecretRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretSecretRule) string { return v.RuleType }).(pulumi.StringOutput)
+func (o GetSecretSecretRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-func (o GetSecretSecretRuleOutput) SecretVersionExpiryInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretSecretRule) string { return v.SecretVersionExpiryInterval }).(pulumi.StringOutput)
+func (o GetSecretSecretRuleOutput) SecretVersionExpiryInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretRule) *string { return v.SecretVersionExpiryInterval }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretSecretRuleOutput) TimeOfAbsoluteExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretSecretRule) string { return v.TimeOfAbsoluteExpiry }).(pulumi.StringOutput)
+func (o GetSecretSecretRuleOutput) TimeOfAbsoluteExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretSecretRule) *string { return v.TimeOfAbsoluteExpiry }).(pulumi.StringPtrOutput)
 }
 
 type GetSecretSecretRuleArrayOutput struct{ *pulumi.OutputState }
@@ -668,12 +577,6 @@ func (o GetSecretSecretRuleArrayOutput) ToGetSecretSecretRuleArrayOutput() GetSe
 
 func (o GetSecretSecretRuleArrayOutput) ToGetSecretSecretRuleArrayOutputWithContext(ctx context.Context) GetSecretSecretRuleArrayOutput {
 	return o
-}
-
-func (o GetSecretSecretRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretRule] {
-	return pulumix.Output[[]GetSecretSecretRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecretSecretRuleArrayOutput) Index(i pulumi.IntInput) GetSecretSecretRuleOutput {
@@ -719,12 +622,6 @@ func (i GetSecretsFilterArgs) ToGetSecretsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsFilterOutput)
 }
 
-func (i GetSecretsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsFilter] {
-	return pulumix.Output[GetSecretsFilter]{
-		OutputState: i.ToGetSecretsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecretsFilterArrayInput is an input type that accepts GetSecretsFilterArray and GetSecretsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecretsFilterArrayInput` via:
 //
@@ -750,12 +647,6 @@ func (i GetSecretsFilterArray) ToGetSecretsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsFilterArrayOutput)
 }
 
-func (i GetSecretsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsFilter] {
-	return pulumix.Output[[]GetSecretsFilter]{
-		OutputState: i.ToGetSecretsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsFilterOutput) ElementType() reflect.Type {
@@ -768,12 +659,6 @@ func (o GetSecretsFilterOutput) ToGetSecretsFilterOutput() GetSecretsFilterOutpu
 
 func (o GetSecretsFilterOutput) ToGetSecretsFilterOutputWithContext(ctx context.Context) GetSecretsFilterOutput {
 	return o
-}
-
-func (o GetSecretsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsFilter] {
-	return pulumix.Output[GetSecretsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The secret name.
@@ -803,12 +688,6 @@ func (o GetSecretsFilterArrayOutput) ToGetSecretsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetSecretsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsFilter] {
-	return pulumix.Output[[]GetSecretsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecretsFilterArrayOutput) Index(i pulumi.IntInput) GetSecretsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsFilter {
 		return vs[0].([]GetSecretsFilter)[vs[1].(int)]
@@ -817,38 +696,38 @@ func (o GetSecretsFilterArrayOutput) Index(i pulumi.IntInput) GetSecretsFilterOu
 
 type GetSecretsSecret struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The version number of the secret version that's currently in use.
-	CurrentVersionNumber string `pulumi:"currentVersionNumber"`
+	CurrentVersionNumber *string `pulumi:"currentVersionNumber"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A brief description of the secret. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the secret.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the master encryption key that is used to encrypt the secret.
-	KeyId string `pulumi:"keyId"`
+	KeyId *string `pulumi:"keyId"`
 	// Additional information about the current lifecycle state of the secret.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
 	Metadata       map[string]interface{}          `pulumi:"metadata"`
 	SecretContents []GetSecretsSecretSecretContent `pulumi:"secretContents"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
-	SecretName string `pulumi:"secretName"`
+	SecretName *string `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
 	SecretRules []GetSecretsSecretSecretRule `pulumi:"secretRules"`
 	// A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfCurrentVersionExpiry string `pulumi:"timeOfCurrentVersionExpiry"`
+	TimeOfCurrentVersionExpiry *string `pulumi:"timeOfCurrentVersionExpiry"`
 	// An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The OCID of the vault.
-	VaultId string `pulumi:"vaultId"`
+	VaultId *string `pulumi:"vaultId"`
 }
 
 // GetSecretsSecretInput is an input type that accepts GetSecretsSecretArgs and GetSecretsSecretOutput values.
@@ -864,38 +743,38 @@ type GetSecretsSecretInput interface {
 
 type GetSecretsSecretArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The version number of the secret version that's currently in use.
-	CurrentVersionNumber pulumi.StringInput `pulumi:"currentVersionNumber"`
+	CurrentVersionNumber pulumi.StringPtrInput `pulumi:"currentVersionNumber"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A brief description of the secret. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the secret.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the master encryption key that is used to encrypt the secret.
-	KeyId pulumi.StringInput `pulumi:"keyId"`
+	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
 	// Additional information about the current lifecycle state of the secret.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
 	Metadata       pulumi.MapInput                         `pulumi:"metadata"`
 	SecretContents GetSecretsSecretSecretContentArrayInput `pulumi:"secretContents"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
-	SecretName pulumi.StringInput `pulumi:"secretName"`
+	SecretName pulumi.StringPtrInput `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
 	SecretRules GetSecretsSecretSecretRuleArrayInput `pulumi:"secretRules"`
 	// A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfCurrentVersionExpiry pulumi.StringInput `pulumi:"timeOfCurrentVersionExpiry"`
+	TimeOfCurrentVersionExpiry pulumi.StringPtrInput `pulumi:"timeOfCurrentVersionExpiry"`
 	// An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// The OCID of the vault.
-	VaultId pulumi.StringInput `pulumi:"vaultId"`
+	VaultId pulumi.StringPtrInput `pulumi:"vaultId"`
 }
 
 func (GetSecretsSecretArgs) ElementType() reflect.Type {
@@ -908,12 +787,6 @@ func (i GetSecretsSecretArgs) ToGetSecretsSecretOutput() GetSecretsSecretOutput 
 
 func (i GetSecretsSecretArgs) ToGetSecretsSecretOutputWithContext(ctx context.Context) GetSecretsSecretOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretOutput)
-}
-
-func (i GetSecretsSecretArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecret] {
-	return pulumix.Output[GetSecretsSecret]{
-		OutputState: i.ToGetSecretsSecretOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSecretsSecretArrayInput is an input type that accepts GetSecretsSecretArray and GetSecretsSecretArrayOutput values.
@@ -941,12 +814,6 @@ func (i GetSecretsSecretArray) ToGetSecretsSecretArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretArrayOutput)
 }
 
-func (i GetSecretsSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecret] {
-	return pulumix.Output[[]GetSecretsSecret]{
-		OutputState: i.ToGetSecretsSecretArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretsSecretOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsSecretOutput) ElementType() reflect.Type {
@@ -961,20 +828,14 @@ func (o GetSecretsSecretOutput) ToGetSecretsSecretOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetSecretsSecretOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecret] {
-	return pulumix.Output[GetSecretsSecret]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetSecretsSecretOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the secret version that's currently in use.
-func (o GetSecretsSecretOutput) CurrentVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.CurrentVersionNumber }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) CurrentVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.CurrentVersionNumber }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -983,8 +844,8 @@ func (o GetSecretsSecretOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A brief description of the secret. Avoid entering confidential information.
-func (o GetSecretsSecretOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -993,18 +854,18 @@ func (o GetSecretsSecretOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the secret.
-func (o GetSecretsSecretOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the master encryption key that is used to encrypt the secret.
-func (o GetSecretsSecretOutput) KeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.KeyId }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.KeyId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the secret.
-func (o GetSecretsSecretOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
@@ -1017,8 +878,8 @@ func (o GetSecretsSecretOutput) SecretContents() GetSecretsSecretSecretContentAr
 }
 
 // The user-friendly name of the secret. Avoid entering confidential information.
-func (o GetSecretsSecretOutput) SecretName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.SecretName }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) SecretName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.SecretName }).(pulumi.StringPtrOutput)
 }
 
 // A list of rules that control how the secret is used and managed.
@@ -1027,28 +888,28 @@ func (o GetSecretsSecretOutput) SecretRules() GetSecretsSecretSecretRuleArrayOut
 }
 
 // A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
-func (o GetSecretsSecretOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.State }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretsSecretOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretsSecretOutput) TimeOfCurrentVersionExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.TimeOfCurrentVersionExpiry }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) TimeOfCurrentVersionExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.TimeOfCurrentVersionExpiry }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretsSecretOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault.
-func (o GetSecretsSecretOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecret) string { return v.VaultId }).(pulumi.StringOutput)
+func (o GetSecretsSecretOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecret) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 type GetSecretsSecretArrayOutput struct{ *pulumi.OutputState }
@@ -1065,12 +926,6 @@ func (o GetSecretsSecretArrayOutput) ToGetSecretsSecretArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetSecretsSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecret] {
-	return pulumix.Output[[]GetSecretsSecret]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecretsSecretArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecret {
 		return vs[0].([]GetSecretsSecret)[vs[1].(int)]
@@ -1078,11 +933,11 @@ func (o GetSecretsSecretArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretOu
 }
 
 type GetSecretsSecretSecretContent struct {
-	Content     string `pulumi:"content"`
-	ContentType string `pulumi:"contentType"`
+	Content     *string `pulumi:"content"`
+	ContentType *string `pulumi:"contentType"`
 	// The secret name.
-	Name  string `pulumi:"name"`
-	Stage string `pulumi:"stage"`
+	Name  *string `pulumi:"name"`
+	Stage *string `pulumi:"stage"`
 }
 
 // GetSecretsSecretSecretContentInput is an input type that accepts GetSecretsSecretSecretContentArgs and GetSecretsSecretSecretContentOutput values.
@@ -1097,11 +952,11 @@ type GetSecretsSecretSecretContentInput interface {
 }
 
 type GetSecretsSecretSecretContentArgs struct {
-	Content     pulumi.StringInput `pulumi:"content"`
-	ContentType pulumi.StringInput `pulumi:"contentType"`
+	Content     pulumi.StringPtrInput `pulumi:"content"`
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
 	// The secret name.
-	Name  pulumi.StringInput `pulumi:"name"`
-	Stage pulumi.StringInput `pulumi:"stage"`
+	Name  pulumi.StringPtrInput `pulumi:"name"`
+	Stage pulumi.StringPtrInput `pulumi:"stage"`
 }
 
 func (GetSecretsSecretSecretContentArgs) ElementType() reflect.Type {
@@ -1114,12 +969,6 @@ func (i GetSecretsSecretSecretContentArgs) ToGetSecretsSecretSecretContentOutput
 
 func (i GetSecretsSecretSecretContentArgs) ToGetSecretsSecretSecretContentOutputWithContext(ctx context.Context) GetSecretsSecretSecretContentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretContentOutput)
-}
-
-func (i GetSecretsSecretSecretContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretContent] {
-	return pulumix.Output[GetSecretsSecretSecretContent]{
-		OutputState: i.ToGetSecretsSecretSecretContentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSecretsSecretSecretContentArrayInput is an input type that accepts GetSecretsSecretSecretContentArray and GetSecretsSecretSecretContentArrayOutput values.
@@ -1147,12 +996,6 @@ func (i GetSecretsSecretSecretContentArray) ToGetSecretsSecretSecretContentArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretContentArrayOutput)
 }
 
-func (i GetSecretsSecretSecretContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretContent] {
-	return pulumix.Output[[]GetSecretsSecretSecretContent]{
-		OutputState: i.ToGetSecretsSecretSecretContentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretsSecretSecretContentOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsSecretSecretContentOutput) ElementType() reflect.Type {
@@ -1167,27 +1010,21 @@ func (o GetSecretsSecretSecretContentOutput) ToGetSecretsSecretSecretContentOutp
 	return o
 }
 
-func (o GetSecretsSecretSecretContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretContent] {
-	return pulumix.Output[GetSecretsSecretSecretContent]{
-		OutputState: o.OutputState,
-	}
+func (o GetSecretsSecretSecretContentOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretContent) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecretsSecretSecretContentOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretContent) string { return v.Content }).(pulumi.StringOutput)
-}
-
-func (o GetSecretsSecretSecretContentOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretContent) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetSecretsSecretSecretContentOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretContent) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 // The secret name.
-func (o GetSecretsSecretSecretContentOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretContent) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSecretsSecretSecretContentOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretContent) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecretsSecretSecretContentOutput) Stage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretContent) string { return v.Stage }).(pulumi.StringOutput)
+func (o GetSecretsSecretSecretContentOutput) Stage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretContent) *string { return v.Stage }).(pulumi.StringPtrOutput)
 }
 
 type GetSecretsSecretSecretContentArrayOutput struct{ *pulumi.OutputState }
@@ -1204,12 +1041,6 @@ func (o GetSecretsSecretSecretContentArrayOutput) ToGetSecretsSecretSecretConten
 	return o
 }
 
-func (o GetSecretsSecretSecretContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretContent] {
-	return pulumix.Output[[]GetSecretsSecretSecretContent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecretsSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretSecretContentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecretSecretContent {
 		return vs[0].([]GetSecretsSecretSecretContent)[vs[1].(int)]
@@ -1218,15 +1049,15 @@ func (o GetSecretsSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSe
 
 type GetSecretsSecretSecretRule struct {
 	// A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-	IsEnforcedOnDeletedSecretVersions bool `pulumi:"isEnforcedOnDeletedSecretVersions"`
+	IsEnforcedOnDeletedSecretVersions *bool `pulumi:"isEnforcedOnDeletedSecretVersions"`
 	// A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-	IsSecretContentRetrievalBlockedOnExpiry bool `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
+	IsSecretContentRetrievalBlockedOnExpiry *bool `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-	SecretVersionExpiryInterval string `pulumi:"secretVersionExpiryInterval"`
+	SecretVersionExpiryInterval *string `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfAbsoluteExpiry string `pulumi:"timeOfAbsoluteExpiry"`
+	TimeOfAbsoluteExpiry *string `pulumi:"timeOfAbsoluteExpiry"`
 }
 
 // GetSecretsSecretSecretRuleInput is an input type that accepts GetSecretsSecretSecretRuleArgs and GetSecretsSecretSecretRuleOutput values.
@@ -1242,15 +1073,15 @@ type GetSecretsSecretSecretRuleInput interface {
 
 type GetSecretsSecretSecretRuleArgs struct {
 	// A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-	IsEnforcedOnDeletedSecretVersions pulumi.BoolInput `pulumi:"isEnforcedOnDeletedSecretVersions"`
+	IsEnforcedOnDeletedSecretVersions pulumi.BoolPtrInput `pulumi:"isEnforcedOnDeletedSecretVersions"`
 	// A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-	IsSecretContentRetrievalBlockedOnExpiry pulumi.BoolInput `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
+	IsSecretContentRetrievalBlockedOnExpiry pulumi.BoolPtrInput `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-	SecretVersionExpiryInterval pulumi.StringInput `pulumi:"secretVersionExpiryInterval"`
+	SecretVersionExpiryInterval pulumi.StringPtrInput `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfAbsoluteExpiry pulumi.StringInput `pulumi:"timeOfAbsoluteExpiry"`
+	TimeOfAbsoluteExpiry pulumi.StringPtrInput `pulumi:"timeOfAbsoluteExpiry"`
 }
 
 func (GetSecretsSecretSecretRuleArgs) ElementType() reflect.Type {
@@ -1263,12 +1094,6 @@ func (i GetSecretsSecretSecretRuleArgs) ToGetSecretsSecretSecretRuleOutput() Get
 
 func (i GetSecretsSecretSecretRuleArgs) ToGetSecretsSecretSecretRuleOutputWithContext(ctx context.Context) GetSecretsSecretSecretRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretRuleOutput)
-}
-
-func (i GetSecretsSecretSecretRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretRule] {
-	return pulumix.Output[GetSecretsSecretSecretRule]{
-		OutputState: i.ToGetSecretsSecretSecretRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSecretsSecretSecretRuleArrayInput is an input type that accepts GetSecretsSecretSecretRuleArray and GetSecretsSecretSecretRuleArrayOutput values.
@@ -1296,12 +1121,6 @@ func (i GetSecretsSecretSecretRuleArray) ToGetSecretsSecretSecretRuleArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretRuleArrayOutput)
 }
 
-func (i GetSecretsSecretSecretRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretRule] {
-	return pulumix.Output[[]GetSecretsSecretSecretRule]{
-		OutputState: i.ToGetSecretsSecretSecretRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecretsSecretSecretRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsSecretSecretRuleOutput) ElementType() reflect.Type {
@@ -1316,35 +1135,29 @@ func (o GetSecretsSecretSecretRuleOutput) ToGetSecretsSecretSecretRuleOutputWith
 	return o
 }
 
-func (o GetSecretsSecretSecretRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretRule] {
-	return pulumix.Output[GetSecretsSecretSecretRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-func (o GetSecretsSecretSecretRuleOutput) IsEnforcedOnDeletedSecretVersions() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretRule) bool { return v.IsEnforcedOnDeletedSecretVersions }).(pulumi.BoolOutput)
+func (o GetSecretsSecretSecretRuleOutput) IsEnforcedOnDeletedSecretVersions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretRule) *bool { return v.IsEnforcedOnDeletedSecretVersions }).(pulumi.BoolPtrOutput)
 }
 
 // A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-func (o GetSecretsSecretSecretRuleOutput) IsSecretContentRetrievalBlockedOnExpiry() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretRule) bool { return v.IsSecretContentRetrievalBlockedOnExpiry }).(pulumi.BoolOutput)
+func (o GetSecretsSecretSecretRuleOutput) IsSecretContentRetrievalBlockedOnExpiry() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretRule) *bool { return v.IsSecretContentRetrievalBlockedOnExpiry }).(pulumi.BoolPtrOutput)
 }
 
 // The type of rule, which either controls when the secret contents expire or whether they can be reused.
-func (o GetSecretsSecretSecretRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretRule) string { return v.RuleType }).(pulumi.StringOutput)
+func (o GetSecretsSecretSecretRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-func (o GetSecretsSecretSecretRuleOutput) SecretVersionExpiryInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretRule) string { return v.SecretVersionExpiryInterval }).(pulumi.StringOutput)
+func (o GetSecretsSecretSecretRuleOutput) SecretVersionExpiryInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretRule) *string { return v.SecretVersionExpiryInterval }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretsSecretSecretRuleOutput) TimeOfAbsoluteExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretsSecretSecretRule) string { return v.TimeOfAbsoluteExpiry }).(pulumi.StringOutput)
+func (o GetSecretsSecretSecretRuleOutput) TimeOfAbsoluteExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretRule) *string { return v.TimeOfAbsoluteExpiry }).(pulumi.StringPtrOutput)
 }
 
 type GetSecretsSecretSecretRuleArrayOutput struct{ *pulumi.OutputState }
@@ -1359,12 +1172,6 @@ func (o GetSecretsSecretSecretRuleArrayOutput) ToGetSecretsSecretSecretRuleArray
 
 func (o GetSecretsSecretSecretRuleArrayOutput) ToGetSecretsSecretSecretRuleArrayOutputWithContext(ctx context.Context) GetSecretsSecretSecretRuleArrayOutput {
 	return o
-}
-
-func (o GetSecretsSecretSecretRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretRule] {
-	return pulumix.Output[[]GetSecretsSecretSecretRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecretsSecretSecretRuleArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretSecretRuleOutput {

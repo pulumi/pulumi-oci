@@ -73,7 +73,7 @@ export interface GetShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * What service features the shape is supported for.
      */
@@ -85,7 +85,7 @@ export interface GetShapesResult {
     /**
      * The list of shapes.
      */
-    readonly shapes: outputs.Mysql.GetShapesShape[];
+    readonly shapes?: outputs.Mysql.GetShapesShape[];
 }
 /**
  * This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.

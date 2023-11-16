@@ -6,6 +6,8 @@ package com.pulumi.oci.Streaming.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStreamPoolCustomEncryptionKey {
@@ -13,27 +15,27 @@ public final class GetStreamPoolCustomEncryptionKey {
      * @return Life cycle State of the custom key
      * 
      */
-    private String keyState;
+    private @Nullable String keyState;
     /**
      * @return Custom Encryption Key (Master Key) ocid.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
 
     private GetStreamPoolCustomEncryptionKey() {}
     /**
      * @return Life cycle State of the custom key
      * 
      */
-    public String keyState() {
-        return this.keyState;
+    public Optional<String> keyState() {
+        return Optional.ofNullable(this.keyState);
     }
     /**
      * @return Custom Encryption Key (Master Key) ocid.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetStreamPoolCustomEncryptionKey {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String keyState;
-        private String kmsKeyId;
+        private @Nullable String keyState;
+        private @Nullable String kmsKeyId;
         public Builder() {}
         public Builder(GetStreamPoolCustomEncryptionKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetStreamPoolCustomEncryptionKey {
         }
 
         @CustomType.Setter
-        public Builder keyState(String keyState) {
-            this.keyState = Objects.requireNonNull(keyState);
+        public Builder keyState(@Nullable String keyState) {
+            this.keyState = keyState;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         public GetStreamPoolCustomEncryptionKey build() {

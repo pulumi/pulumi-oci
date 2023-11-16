@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
         /// </summary>
-        public readonly string ManualBackupBucketName;
+        public readonly string? ManualBackupBucketName;
         /// <summary>
         /// The manual backup destination type.
         /// </summary>
-        public readonly string ManualBackupType;
+        public readonly string? ManualBackupType;
 
         [OutputConstructor]
         private GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult(
-            string manualBackupBucketName,
+            string? manualBackupBucketName,
 
-            string manualBackupType)
+            string? manualBackupType)
         {
             ManualBackupBucketName = manualBackupBucketName;
             ManualBackupType = manualBackupType;

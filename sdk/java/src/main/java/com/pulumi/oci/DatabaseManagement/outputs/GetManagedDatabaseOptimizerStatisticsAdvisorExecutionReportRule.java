@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule {
@@ -15,39 +17,39 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The description of the rule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The list of findings for the rule.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings;
     /**
      * @return The name of the rule.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule() {}
     /**
      * @return The description of the rule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The list of findings for the rule.
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings() {
-        return this.findings;
+        return this.findings == null ? List.of() : this.findings;
     }
     /**
      * @return The name of the rule.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings;
-        private String name;
+        private @Nullable String description;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder findings(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings) {
-            this.findings = Objects.requireNonNull(findings);
+        public Builder findings(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings) {
+            this.findings = findings;
             return this;
         }
         public Builder findings(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding... findings) {
             return findings(List.of(findings));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule build() {

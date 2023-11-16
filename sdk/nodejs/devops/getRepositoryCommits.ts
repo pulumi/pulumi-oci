@@ -102,12 +102,12 @@ export interface GetRepositoryCommitsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly refName?: string;
     /**
      * The list of repository_commit_collection.
      */
-    readonly repositoryCommitCollections: outputs.DevOps.GetRepositoryCommitsRepositoryCommitCollection[];
+    readonly repositoryCommitCollections?: outputs.DevOps.GetRepositoryCommitsRepositoryCommitCollection[];
     readonly repositoryId: string;
     readonly timestampGreaterThanOrEqualTo?: string;
     readonly timestampLessThanOrEqualTo?: string;

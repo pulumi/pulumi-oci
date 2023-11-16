@@ -16,23 +16,23 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly string MetricName;
+        public readonly string? CompartmentId;
+        public readonly string? MetricName;
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
-        public readonly string Namespace;
-        public readonly string ResourceGroup;
+        public readonly string? Namespace;
+        public readonly string? ResourceGroup;
 
         [OutputConstructor]
         private GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string metricName,
+            string? metricName,
 
-            string @namespace,
+            string? @namespace,
 
-            string resourceGroup)
+            string? resourceGroup)
         {
             CompartmentId = compartmentId;
             MetricName = metricName;

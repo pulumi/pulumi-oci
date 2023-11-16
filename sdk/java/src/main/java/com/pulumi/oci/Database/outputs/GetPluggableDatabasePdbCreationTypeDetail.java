@@ -8,34 +8,36 @@ import com.pulumi.oci.Database.outputs.GetPluggableDatabasePdbCreationTypeDetail
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPluggableDatabasePdbCreationTypeDetail {
-    private String creationType;
-    private String dblinkUserPassword;
-    private String dblinkUsername;
-    private List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
-    private String sourceContainerDatabaseAdminPassword;
-    private String sourcePluggableDatabaseId;
+    private @Nullable String creationType;
+    private @Nullable String dblinkUserPassword;
+    private @Nullable String dblinkUsername;
+    private @Nullable List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
+    private @Nullable String sourceContainerDatabaseAdminPassword;
+    private @Nullable String sourcePluggableDatabaseId;
 
     private GetPluggableDatabasePdbCreationTypeDetail() {}
-    public String creationType() {
-        return this.creationType;
+    public Optional<String> creationType() {
+        return Optional.ofNullable(this.creationType);
     }
-    public String dblinkUserPassword() {
-        return this.dblinkUserPassword;
+    public Optional<String> dblinkUserPassword() {
+        return Optional.ofNullable(this.dblinkUserPassword);
     }
-    public String dblinkUsername() {
-        return this.dblinkUsername;
+    public Optional<String> dblinkUsername() {
+        return Optional.ofNullable(this.dblinkUsername);
     }
     public List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails() {
-        return this.refreshableCloneDetails;
+        return this.refreshableCloneDetails == null ? List.of() : this.refreshableCloneDetails;
     }
-    public String sourceContainerDatabaseAdminPassword() {
-        return this.sourceContainerDatabaseAdminPassword;
+    public Optional<String> sourceContainerDatabaseAdminPassword() {
+        return Optional.ofNullable(this.sourceContainerDatabaseAdminPassword);
     }
-    public String sourcePluggableDatabaseId() {
-        return this.sourcePluggableDatabaseId;
+    public Optional<String> sourcePluggableDatabaseId() {
+        return Optional.ofNullable(this.sourcePluggableDatabaseId);
     }
 
     public static Builder builder() {
@@ -47,12 +49,12 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String creationType;
-        private String dblinkUserPassword;
-        private String dblinkUsername;
-        private List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
-        private String sourceContainerDatabaseAdminPassword;
-        private String sourcePluggableDatabaseId;
+        private @Nullable String creationType;
+        private @Nullable String dblinkUserPassword;
+        private @Nullable String dblinkUsername;
+        private @Nullable List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
+        private @Nullable String sourceContainerDatabaseAdminPassword;
+        private @Nullable String sourcePluggableDatabaseId;
         public Builder() {}
         public Builder(GetPluggableDatabasePdbCreationTypeDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,36 +67,36 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
         }
 
         @CustomType.Setter
-        public Builder creationType(String creationType) {
-            this.creationType = Objects.requireNonNull(creationType);
+        public Builder creationType(@Nullable String creationType) {
+            this.creationType = creationType;
             return this;
         }
         @CustomType.Setter
-        public Builder dblinkUserPassword(String dblinkUserPassword) {
-            this.dblinkUserPassword = Objects.requireNonNull(dblinkUserPassword);
+        public Builder dblinkUserPassword(@Nullable String dblinkUserPassword) {
+            this.dblinkUserPassword = dblinkUserPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder dblinkUsername(String dblinkUsername) {
-            this.dblinkUsername = Objects.requireNonNull(dblinkUsername);
+        public Builder dblinkUsername(@Nullable String dblinkUsername) {
+            this.dblinkUsername = dblinkUsername;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshableCloneDetails(List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails) {
-            this.refreshableCloneDetails = Objects.requireNonNull(refreshableCloneDetails);
+        public Builder refreshableCloneDetails(@Nullable List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails) {
+            this.refreshableCloneDetails = refreshableCloneDetails;
             return this;
         }
         public Builder refreshableCloneDetails(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail... refreshableCloneDetails) {
             return refreshableCloneDetails(List.of(refreshableCloneDetails));
         }
         @CustomType.Setter
-        public Builder sourceContainerDatabaseAdminPassword(String sourceContainerDatabaseAdminPassword) {
-            this.sourceContainerDatabaseAdminPassword = Objects.requireNonNull(sourceContainerDatabaseAdminPassword);
+        public Builder sourceContainerDatabaseAdminPassword(@Nullable String sourceContainerDatabaseAdminPassword) {
+            this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder sourcePluggableDatabaseId(String sourcePluggableDatabaseId) {
-            this.sourcePluggableDatabaseId = Objects.requireNonNull(sourcePluggableDatabaseId);
+        public Builder sourcePluggableDatabaseId(@Nullable String sourcePluggableDatabaseId) {
+            this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
             return this;
         }
         public GetPluggableDatabasePdbCreationTypeDetail build() {

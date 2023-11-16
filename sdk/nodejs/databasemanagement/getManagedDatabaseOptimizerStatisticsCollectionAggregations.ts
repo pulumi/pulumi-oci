@@ -83,13 +83,13 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResu
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly limit?: number;
     readonly managedDatabaseId: string;
     /**
      * The list of optimizer_statistics_collection_aggregations_collection.
      */
-    readonly optimizerStatisticsCollectionAggregationsCollections: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection[];
+    readonly optimizerStatisticsCollectionAggregationsCollections?: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection[];
     readonly startTimeGreaterThanOrEqualTo?: string;
     readonly taskType?: string;
 }

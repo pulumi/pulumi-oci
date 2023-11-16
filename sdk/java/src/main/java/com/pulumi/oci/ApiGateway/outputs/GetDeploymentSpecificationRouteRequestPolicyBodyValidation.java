@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
@@ -16,17 +18,17 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
      * @return The content of the request body.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
     /**
      * @return Determines if the parameter is required in the request.
      * 
      */
-    private Boolean required;
+    private @Nullable Boolean required;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private String validationMode;
+    private @Nullable String validationMode;
 
     private GetDeploymentSpecificationRouteRequestPolicyBodyValidation() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents() {
-        return this.contents;
+        return this.contents == null ? List.of() : this.contents;
     }
     /**
      * @return Determines if the parameter is required in the request.
      * 
      */
-    public Boolean required() {
-        return this.required;
+    public Optional<Boolean> required() {
+        return Optional.ofNullable(this.required);
     }
     /**
      * @return Validation behavior mode.
      * 
      */
-    public String validationMode() {
-        return this.validationMode;
+    public Optional<String> validationMode() {
+        return Optional.ofNullable(this.validationMode);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
-        private Boolean required;
-        private String validationMode;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
+        private @Nullable Boolean required;
+        private @Nullable String validationMode;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyBodyValidation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
         }
 
         @CustomType.Setter
-        public Builder contents(List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents) {
-            this.contents = Objects.requireNonNull(contents);
+        public Builder contents(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents) {
+            this.contents = contents;
             return this;
         }
         public Builder contents(GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent... contents) {
             return contents(List.of(contents));
         }
         @CustomType.Setter
-        public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+        public Builder required(@Nullable Boolean required) {
+            this.required = required;
             return this;
         }
         @CustomType.Setter
-        public Builder validationMode(String validationMode) {
-            this.validationMode = Objects.requireNonNull(validationMode);
+        public Builder validationMode(@Nullable String validationMode) {
+            this.validationMode = validationMode;
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyBodyValidation build() {

@@ -66,7 +66,7 @@ export interface GetPreauthrequestsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -75,7 +75,7 @@ export interface GetPreauthrequestsResult {
     /**
      * The list of preauthenticated_requests.
      */
-    readonly preauthenticatedRequests: outputs.ObjectStorage.GetPreauthrequestsPreauthenticatedRequest[];
+    readonly preauthenticatedRequests?: outputs.ObjectStorage.GetPreauthrequestsPreauthenticatedRequest[];
 }
 /**
  * This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.

@@ -11,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseBackupResult {
@@ -19,113 +21,113 @@ public final class GetAutonomousDatabaseBackupResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      * 
      */
-    private String autonomousDatabaseId;
+    private @Nullable String autonomousDatabaseId;
     /**
      * @return Backup destination details
      * 
      */
-    private List<GetAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails;
+    private @Nullable List<GetAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The size of the database in terabytes at the time the backup was taken.
      * 
      */
-    private Double databaseSizeInTbs;
+    private @Nullable Double databaseSizeInTbs;
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the backup is user-initiated or automatic.
      * 
      */
-    private Boolean isAutomatic;
-    private Boolean isLongTermBackup;
+    private @Nullable Boolean isAutomatic;
+    private @Nullable Boolean isLongTermBackup;
     /**
      * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
      * 
      */
-    private Boolean isRestorable;
+    private @Nullable Boolean isRestorable;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private String keyStoreId;
+    private @Nullable String keyStoreId;
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    private String keyStoreWalletName;
+    private @Nullable String keyStoreWalletName;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private String kmsKeyVersionId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Retention period, in days, for long-term backups
      * 
      */
-    private Integer retentionPeriodInDays;
+    private @Nullable Integer retentionPeriodInDays;
     /**
      * @return The backup size in terrabytes (TB).
      * 
      */
-    private Double sizeInTbs;
+    private @Nullable Double sizeInTbs;
     /**
      * @return The current state of the backup.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Timestamp until when the backup will be available
      * 
      */
-    private String timeAvailableTill;
+    private @Nullable String timeAvailableTill;
     /**
      * @return The date and time the backup completed.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The date and time the backup started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return The type of backup.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
 
     private GetAutonomousDatabaseBackupResult() {}
     public String autonomousDatabaseBackupId() {
@@ -135,158 +137,158 @@ public final class GetAutonomousDatabaseBackupResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      * 
      */
-    public String autonomousDatabaseId() {
-        return this.autonomousDatabaseId;
+    public Optional<String> autonomousDatabaseId() {
+        return Optional.ofNullable(this.autonomousDatabaseId);
     }
     /**
      * @return Backup destination details
      * 
      */
     public List<GetAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails() {
-        return this.backupDestinationDetails;
+        return this.backupDestinationDetails == null ? List.of() : this.backupDestinationDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The size of the database in terabytes at the time the backup was taken.
      * 
      */
-    public Double databaseSizeInTbs() {
-        return this.databaseSizeInTbs;
+    public Optional<Double> databaseSizeInTbs() {
+        return Optional.ofNullable(this.databaseSizeInTbs);
     }
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the backup is user-initiated or automatic.
      * 
      */
-    public Boolean isAutomatic() {
-        return this.isAutomatic;
+    public Optional<Boolean> isAutomatic() {
+        return Optional.ofNullable(this.isAutomatic);
     }
-    public Boolean isLongTermBackup() {
-        return this.isLongTermBackup;
+    public Optional<Boolean> isLongTermBackup() {
+        return Optional.ofNullable(this.isLongTermBackup);
     }
     /**
      * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
      * 
      */
-    public Boolean isRestorable() {
-        return this.isRestorable;
+    public Optional<Boolean> isRestorable() {
+        return Optional.ofNullable(this.isRestorable);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public String keyStoreId() {
-        return this.keyStoreId;
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
     }
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public String keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Optional<String> keyStoreWalletName() {
+        return Optional.ofNullable(this.keyStoreWalletName);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public String kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Optional<String> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Retention period, in days, for long-term backups
      * 
      */
-    public Integer retentionPeriodInDays() {
-        return this.retentionPeriodInDays;
+    public Optional<Integer> retentionPeriodInDays() {
+        return Optional.ofNullable(this.retentionPeriodInDays);
     }
     /**
      * @return The backup size in terrabytes (TB).
      * 
      */
-    public Double sizeInTbs() {
-        return this.sizeInTbs;
+    public Optional<Double> sizeInTbs() {
+        return Optional.ofNullable(this.sizeInTbs);
     }
     /**
      * @return The current state of the backup.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Timestamp until when the backup will be available
      * 
      */
-    public String timeAvailableTill() {
-        return this.timeAvailableTill;
+    public Optional<String> timeAvailableTill() {
+        return Optional.ofNullable(this.timeAvailableTill);
     }
     /**
      * @return The date and time the backup completed.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The date and time the backup started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return The type of backup.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
 
     public static Builder builder() {
@@ -299,29 +301,29 @@ public final class GetAutonomousDatabaseBackupResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousDatabaseBackupId;
-        private String autonomousDatabaseId;
-        private List<GetAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails;
-        private String compartmentId;
-        private Double databaseSizeInTbs;
-        private String dbVersion;
-        private String displayName;
-        private String id;
-        private Boolean isAutomatic;
-        private Boolean isLongTermBackup;
-        private Boolean isRestorable;
-        private String keyStoreId;
-        private String keyStoreWalletName;
-        private String kmsKeyId;
-        private String kmsKeyVersionId;
-        private String lifecycleDetails;
-        private Integer retentionPeriodInDays;
-        private Double sizeInTbs;
-        private String state;
-        private String timeAvailableTill;
-        private String timeEnded;
-        private String timeStarted;
-        private String type;
-        private String vaultId;
+        private @Nullable String autonomousDatabaseId;
+        private @Nullable List<GetAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails;
+        private @Nullable String compartmentId;
+        private @Nullable Double databaseSizeInTbs;
+        private @Nullable String dbVersion;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable Boolean isAutomatic;
+        private @Nullable Boolean isLongTermBackup;
+        private @Nullable Boolean isRestorable;
+        private @Nullable String keyStoreId;
+        private @Nullable String keyStoreWalletName;
+        private @Nullable String kmsKeyId;
+        private @Nullable String kmsKeyVersionId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer retentionPeriodInDays;
+        private @Nullable Double sizeInTbs;
+        private @Nullable String state;
+        private @Nullable String timeAvailableTill;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
+        private @Nullable String type;
+        private @Nullable String vaultId;
         public Builder() {}
         public Builder(GetAutonomousDatabaseBackupResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -357,121 +359,121 @@ public final class GetAutonomousDatabaseBackupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+        public Builder autonomousDatabaseId(@Nullable String autonomousDatabaseId) {
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder backupDestinationDetails(List<GetAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+        public Builder backupDestinationDetails(@Nullable List<GetAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetAutonomousDatabaseBackupBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSizeInTbs(Double databaseSizeInTbs) {
-            this.databaseSizeInTbs = Objects.requireNonNull(databaseSizeInTbs);
+        public Builder databaseSizeInTbs(@Nullable Double databaseSizeInTbs) {
+            this.databaseSizeInTbs = databaseSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutomatic(Boolean isAutomatic) {
-            this.isAutomatic = Objects.requireNonNull(isAutomatic);
+        public Builder isAutomatic(@Nullable Boolean isAutomatic) {
+            this.isAutomatic = isAutomatic;
             return this;
         }
         @CustomType.Setter
-        public Builder isLongTermBackup(Boolean isLongTermBackup) {
-            this.isLongTermBackup = Objects.requireNonNull(isLongTermBackup);
+        public Builder isLongTermBackup(@Nullable Boolean isLongTermBackup) {
+            this.isLongTermBackup = isLongTermBackup;
             return this;
         }
         @CustomType.Setter
-        public Builder isRestorable(Boolean isRestorable) {
-            this.isRestorable = Objects.requireNonNull(isRestorable);
+        public Builder isRestorable(@Nullable Boolean isRestorable) {
+            this.isRestorable = isRestorable;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+        public Builder keyStoreWalletName(@Nullable String keyStoreWalletName) {
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+        public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
-            this.retentionPeriodInDays = Objects.requireNonNull(retentionPeriodInDays);
+        public Builder retentionPeriodInDays(@Nullable Integer retentionPeriodInDays) {
+            this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInTbs(Double sizeInTbs) {
-            this.sizeInTbs = Objects.requireNonNull(sizeInTbs);
+        public Builder sizeInTbs(@Nullable Double sizeInTbs) {
+            this.sizeInTbs = sizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAvailableTill(String timeAvailableTill) {
-            this.timeAvailableTill = Objects.requireNonNull(timeAvailableTill);
+        public Builder timeAvailableTill(@Nullable String timeAvailableTill) {
+            this.timeAvailableTill = timeAvailableTill;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         public GetAutonomousDatabaseBackupResult build() {

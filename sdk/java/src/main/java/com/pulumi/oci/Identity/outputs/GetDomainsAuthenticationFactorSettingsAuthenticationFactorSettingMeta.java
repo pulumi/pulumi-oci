@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingMeta {
@@ -13,63 +15,63 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
      * @return The DateTime the Resource was added to the Service Provider
      * 
      */
-    private String created;
+    private @Nullable String created;
     /**
      * @return The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
      * 
      */
-    private String lastModified;
+    private @Nullable String lastModified;
     /**
      * @return The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
      * 
      */
-    private String location;
+    private @Nullable String location;
     /**
      * @return Name of the resource type of the resource--for example, Users or Groups
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingMeta() {}
     /**
      * @return The DateTime the Resource was added to the Service Provider
      * 
      */
-    public String created() {
-        return this.created;
+    public Optional<String> created() {
+        return Optional.ofNullable(this.created);
     }
     /**
      * @return The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
      * 
      */
-    public String lastModified() {
-        return this.lastModified;
+    public Optional<String> lastModified() {
+        return Optional.ofNullable(this.lastModified);
     }
     /**
      * @return The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
      * 
      */
-    public String location() {
-        return this.location;
+    public Optional<String> location() {
+        return Optional.ofNullable(this.location);
     }
     /**
      * @return Name of the resource type of the resource--for example, Users or Groups
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
     }
     @CustomType.Builder
     public static final class Builder {
-        private String created;
-        private String lastModified;
-        private String location;
-        private String resourceType;
-        private String version;
+        private @Nullable String created;
+        private @Nullable String lastModified;
+        private @Nullable String location;
+        private @Nullable String resourceType;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingMeta defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
 
         @CustomType.Setter
-        public Builder created(String created) {
-            this.created = Objects.requireNonNull(created);
+        public Builder created(@Nullable String created) {
+            this.created = created;
             return this;
         }
         @CustomType.Setter
-        public Builder lastModified(String lastModified) {
-            this.lastModified = Objects.requireNonNull(lastModified);
+        public Builder lastModified(@Nullable String lastModified) {
+            this.lastModified = lastModified;
             return this;
         }
         @CustomType.Setter
-        public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+        public Builder location(@Nullable String location) {
+            this.location = location;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingMeta build() {

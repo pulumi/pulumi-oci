@@ -13,29 +13,29 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
     [OutputType]
     public sealed class GetBucketSummariesBucketSummaryRetentionRuleResult
     {
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetBucketSummariesBucketSummaryRetentionRuleDurationResult> Durations;
-        public readonly string RetentionRuleId;
+        public readonly string? RetentionRuleId;
         /// <summary>
         /// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly string TimeModified;
-        public readonly string TimeRuleLocked;
+        public readonly string? TimeCreated;
+        public readonly string? TimeModified;
+        public readonly string? TimeRuleLocked;
 
         [OutputConstructor]
         private GetBucketSummariesBucketSummaryRetentionRuleResult(
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetBucketSummariesBucketSummaryRetentionRuleDurationResult> durations,
 
-            string retentionRuleId,
+            string? retentionRuleId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeModified,
+            string? timeModified,
 
-            string timeRuleLocked)
+            string? timeRuleLocked)
         {
             DisplayName = displayName;
             Durations = durations;

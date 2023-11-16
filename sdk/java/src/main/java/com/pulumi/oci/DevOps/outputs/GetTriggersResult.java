@@ -48,7 +48,7 @@ public final class GetTriggersResult {
      * @return The list of trigger_collection.
      * 
      */
-    private List<GetTriggersTriggerCollection> triggerCollections;
+    private @Nullable List<GetTriggersTriggerCollection> triggerCollections;
 
     private GetTriggersResult() {}
     /**
@@ -98,7 +98,7 @@ public final class GetTriggersResult {
      * 
      */
     public List<GetTriggersTriggerCollection> triggerCollections() {
-        return this.triggerCollections;
+        return this.triggerCollections == null ? List.of() : this.triggerCollections;
     }
 
     public static Builder builder() {
@@ -116,7 +116,7 @@ public final class GetTriggersResult {
         private @Nullable String id;
         private @Nullable String projectId;
         private @Nullable String state;
-        private List<GetTriggersTriggerCollection> triggerCollections;
+        private @Nullable List<GetTriggersTriggerCollection> triggerCollections;
         public Builder() {}
         public Builder(GetTriggersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -163,8 +163,8 @@ public final class GetTriggersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder triggerCollections(List<GetTriggersTriggerCollection> triggerCollections) {
-            this.triggerCollections = Objects.requireNonNull(triggerCollections);
+        public Builder triggerCollections(@Nullable List<GetTriggersTriggerCollection> triggerCollections) {
+            this.triggerCollections = triggerCollections;
             return this;
         }
         public Builder triggerCollections(GetTriggersTriggerCollection... triggerCollections) {

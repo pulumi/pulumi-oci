@@ -56,95 +56,95 @@ export interface GetAlarmResult {
     /**
      * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      */
-    readonly body: string;
+    readonly body?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
      */
-    readonly destinations: string[];
+    readonly destinations?: string[];
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether the alarm is enabled.  Example: `true`
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
      */
-    readonly isNotificationsPerMetricDimensionEnabled: boolean;
+    readonly isNotificationsPerMetricDimensionEnabled?: boolean;
     /**
      * The format to use for alarm notifications. The formats are:
      */
-    readonly messageFormat: string;
+    readonly messageFormat?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
      */
-    readonly metricCompartmentId: string;
+    readonly metricCompartmentId?: string;
     /**
      * When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
      */
-    readonly metricCompartmentIdInSubtree: boolean;
+    readonly metricCompartmentIdInSubtree?: boolean;
     /**
      * The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
      */
-    readonly pendingDuration: string;
+    readonly pendingDuration?: string;
     /**
      * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      */
-    readonly query: string;
+    readonly query?: string;
     /**
      * The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
      */
-    readonly repeatNotificationDuration: string;
+    readonly repeatNotificationDuration?: string;
     /**
      * The time between calculated aggregation windows for the alarm. Supported value: `1m`
      */
-    readonly resolution: string;
+    readonly resolution?: string;
     /**
      * Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      */
-    readonly resourceGroup: string;
+    readonly resourceGroup?: string;
     /**
      * The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
      */
-    readonly severity: string;
+    readonly severity?: string;
     /**
      * The current lifecycle state of the alarm.  Example: `DELETED`
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The configuration details for suppressing an alarm.
      */
-    readonly suppressions: outputs.Monitoring.GetAlarmSuppression[];
+    readonly suppressions?: outputs.Monitoring.GetAlarmSuppression[];
     /**
      * The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.

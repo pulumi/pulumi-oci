@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalPluggableDatabaseOperationsInsightsConfig {
@@ -13,27 +15,27 @@ public final class GetExternalPluggableDatabaseOperationsInsightsConfig {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    private String operationsInsightsConnectorId;
+    private @Nullable String operationsInsightsConnectorId;
     /**
      * @return The status of Operations Insights
      * 
      */
-    private String operationsInsightsStatus;
+    private @Nullable String operationsInsightsStatus;
 
     private GetExternalPluggableDatabaseOperationsInsightsConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    public String operationsInsightsConnectorId() {
-        return this.operationsInsightsConnectorId;
+    public Optional<String> operationsInsightsConnectorId() {
+        return Optional.ofNullable(this.operationsInsightsConnectorId);
     }
     /**
      * @return The status of Operations Insights
      * 
      */
-    public String operationsInsightsStatus() {
-        return this.operationsInsightsStatus;
+    public Optional<String> operationsInsightsStatus() {
+        return Optional.ofNullable(this.operationsInsightsStatus);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetExternalPluggableDatabaseOperationsInsightsConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String operationsInsightsConnectorId;
-        private String operationsInsightsStatus;
+        private @Nullable String operationsInsightsConnectorId;
+        private @Nullable String operationsInsightsStatus;
         public Builder() {}
         public Builder(GetExternalPluggableDatabaseOperationsInsightsConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetExternalPluggableDatabaseOperationsInsightsConfig {
         }
 
         @CustomType.Setter
-        public Builder operationsInsightsConnectorId(String operationsInsightsConnectorId) {
-            this.operationsInsightsConnectorId = Objects.requireNonNull(operationsInsightsConnectorId);
+        public Builder operationsInsightsConnectorId(@Nullable String operationsInsightsConnectorId) {
+            this.operationsInsightsConnectorId = operationsInsightsConnectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsStatus(String operationsInsightsStatus) {
-            this.operationsInsightsStatus = Objects.requireNonNull(operationsInsightsStatus);
+        public Builder operationsInsightsStatus(@Nullable String operationsInsightsStatus) {
+            this.operationsInsightsStatus = operationsInsightsStatus;
             return this;
         }
         public GetExternalPluggableDatabaseOperationsInsightsConfig build() {

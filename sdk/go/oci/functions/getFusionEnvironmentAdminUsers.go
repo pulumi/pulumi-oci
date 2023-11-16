@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.
@@ -65,7 +64,7 @@ type GetFusionEnvironmentAdminUsersResult struct {
 	Filters              []GetFusionEnvironmentAdminUsersFilter              `pulumi:"filters"`
 	FusionEnvironmentId  string                                              `pulumi:"fusionEnvironmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetFusionEnvironmentAdminUsersOutput(ctx *pulumi.Context, args GetFusionEnvironmentAdminUsersOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentAdminUsersResultOutput {
@@ -107,12 +106,6 @@ func (o GetFusionEnvironmentAdminUsersResultOutput) ToGetFusionEnvironmentAdminU
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersResult] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of admin_user_collection.
 func (o GetFusionEnvironmentAdminUsersResultOutput) AdminUserCollections() GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersResult) []GetFusionEnvironmentAdminUsersAdminUserCollection {
@@ -129,8 +122,8 @@ func (o GetFusionEnvironmentAdminUsersResultOutput) FusionEnvironmentId() pulumi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentAdminUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

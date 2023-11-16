@@ -16,15 +16,15 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The default property value.
         /// </summary>
-        public readonly string DefaultValue;
+        public readonly string? DefaultValue;
         /// <summary>
         /// The property description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The property display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A list of levels at which the property could be defined.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The property name used for filtering.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult(
-            string defaultValue,
+            string? defaultValue,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult> levels,
 
-            string name)
+            string? name)
         {
             DefaultValue = defaultValue;
             Description = description;

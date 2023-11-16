@@ -56,12 +56,12 @@ export interface GetMaskingPolicyMaskingSchemasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly maskingPolicyId: string;
     /**
      * The list of masking_schema_collection.
      */
-    readonly maskingSchemaCollections: outputs.DataSafe.GetMaskingPolicyMaskingSchemasMaskingSchemaCollection[];
+    readonly maskingSchemaCollections?: outputs.DataSafe.GetMaskingPolicyMaskingSchemasMaskingSchemaCollection[];
     /**
      * The database schema that contains the masking column.
      */

@@ -90,11 +90,11 @@ export class Vault extends pulumi.CustomResource {
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
      */
-    public /*out*/ readonly cryptoEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly cryptoEndpoint!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
@@ -102,27 +102,27 @@ export class Vault extends pulumi.CustomResource {
     /**
      * Metadata required for accessing External Key manager
      */
-    public readonly externalKeyManagerMetadata!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadata>;
+    public readonly externalKeyManagerMetadata!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadata | undefined>;
     /**
      * Summary about metadata of external key manager to be returned to the customer as a response.
      */
-    public /*out*/ readonly externalKeyManagerMetadataSummaries!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadataSummary[]>;
+    public /*out*/ readonly externalKeyManagerMetadataSummaries!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadataSummary[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      */
-    public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
+    public /*out*/ readonly isPrimary!: pulumi.Output<boolean | undefined>;
     /**
      * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      */
-    public /*out*/ readonly managementEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly managementEndpoint!: pulumi.Output<string | undefined>;
     /**
      * Vault replica details
      */
-    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.VaultReplicaDetail[]>;
+    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.VaultReplicaDetail[] | undefined>;
     /**
      * (Updatable) Details where vault was backed up.
      */
@@ -135,22 +135,22 @@ export class Vault extends pulumi.CustomResource {
     /**
      * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      */
-    public /*out*/ readonly restoredFromVaultId!: pulumi.Output<string>;
+    public /*out*/ readonly restoredFromVaultId!: pulumi.Output<string | undefined>;
     /**
      * The vault's current lifecycle state.  Example: `DELETED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeOfDeletion!: pulumi.Output<string>;
+    public readonly timeOfDeletion!: pulumi.Output<string | undefined>;
     /**
      * The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      */

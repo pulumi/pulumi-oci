@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Repository Ref resource in Oracle Cloud Infrastructure Devops service.
@@ -60,15 +59,15 @@ type RepositoryRef struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Commit ID pointed to by the new branch.
-	CommitId pulumi.StringOutput `pulumi:"commitId"`
+	CommitId pulumi.StringPtrOutput `pulumi:"commitId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Unique full reference name inside a repository.
-	FullRefName pulumi.StringOutput `pulumi:"fullRefName"`
+	FullRefName pulumi.StringPtrOutput `pulumi:"fullRefName"`
 	// (Updatable) SHA-1 hash value of the object pointed to by the tag.
-	ObjectId pulumi.StringOutput `pulumi:"objectId"`
+	ObjectId pulumi.StringPtrOutput `pulumi:"objectId"`
 	// A filter to return only resources that match the given reference name.
 	RefName pulumi.StringOutput `pulumi:"refName"`
 	// (Updatable) The type of reference (BRANCH or TAG).
@@ -222,12 +221,6 @@ func (i *RepositoryRef) ToRepositoryRefOutputWithContext(ctx context.Context) Re
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryRefOutput)
 }
 
-func (i *RepositoryRef) ToOutput(ctx context.Context) pulumix.Output[*RepositoryRef] {
-	return pulumix.Output[*RepositoryRef]{
-		OutputState: i.ToRepositoryRefOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RepositoryRefArrayInput is an input type that accepts RepositoryRefArray and RepositoryRefArrayOutput values.
 // You can construct a concrete instance of `RepositoryRefArrayInput` via:
 //
@@ -251,12 +244,6 @@ func (i RepositoryRefArray) ToRepositoryRefArrayOutput() RepositoryRefArrayOutpu
 
 func (i RepositoryRefArray) ToRepositoryRefArrayOutputWithContext(ctx context.Context) RepositoryRefArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryRefArrayOutput)
-}
-
-func (i RepositoryRefArray) ToOutput(ctx context.Context) pulumix.Output[[]*RepositoryRef] {
-	return pulumix.Output[[]*RepositoryRef]{
-		OutputState: i.ToRepositoryRefArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RepositoryRefMapInput is an input type that accepts RepositoryRefMap and RepositoryRefMapOutput values.
@@ -284,12 +271,6 @@ func (i RepositoryRefMap) ToRepositoryRefMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryRefMapOutput)
 }
 
-func (i RepositoryRefMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RepositoryRef] {
-	return pulumix.Output[map[string]*RepositoryRef]{
-		OutputState: i.ToRepositoryRefMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RepositoryRefOutput struct{ *pulumi.OutputState }
 
 func (RepositoryRefOutput) ElementType() reflect.Type {
@@ -304,15 +285,9 @@ func (o RepositoryRefOutput) ToRepositoryRefOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o RepositoryRefOutput) ToOutput(ctx context.Context) pulumix.Output[*RepositoryRef] {
-	return pulumix.Output[*RepositoryRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Commit ID pointed to by the new branch.
-func (o RepositoryRefOutput) CommitId() pulumi.StringOutput {
-	return o.ApplyT(func(v *RepositoryRef) pulumi.StringOutput { return v.CommitId }).(pulumi.StringOutput)
+func (o RepositoryRefOutput) CommitId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RepositoryRef) pulumi.StringPtrOutput { return v.CommitId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -326,13 +301,13 @@ func (o RepositoryRefOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique full reference name inside a repository.
-func (o RepositoryRefOutput) FullRefName() pulumi.StringOutput {
-	return o.ApplyT(func(v *RepositoryRef) pulumi.StringOutput { return v.FullRefName }).(pulumi.StringOutput)
+func (o RepositoryRefOutput) FullRefName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RepositoryRef) pulumi.StringPtrOutput { return v.FullRefName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) SHA-1 hash value of the object pointed to by the tag.
-func (o RepositoryRefOutput) ObjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v *RepositoryRef) pulumi.StringOutput { return v.ObjectId }).(pulumi.StringOutput)
+func (o RepositoryRefOutput) ObjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RepositoryRef) pulumi.StringPtrOutput { return v.ObjectId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given reference name.
@@ -367,12 +342,6 @@ func (o RepositoryRefArrayOutput) ToRepositoryRefArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o RepositoryRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RepositoryRef] {
-	return pulumix.Output[[]*RepositoryRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RepositoryRefArrayOutput) Index(i pulumi.IntInput) RepositoryRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RepositoryRef {
 		return vs[0].([]*RepositoryRef)[vs[1].(int)]
@@ -391,12 +360,6 @@ func (o RepositoryRefMapOutput) ToRepositoryRefMapOutput() RepositoryRefMapOutpu
 
 func (o RepositoryRefMapOutput) ToRepositoryRefMapOutputWithContext(ctx context.Context) RepositoryRefMapOutput {
 	return o
-}
-
-func (o RepositoryRefMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RepositoryRef] {
-	return pulumix.Output[map[string]*RepositoryRef]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RepositoryRefMapOutput) MapIndex(k pulumi.StringInput) RepositoryRefOutput {

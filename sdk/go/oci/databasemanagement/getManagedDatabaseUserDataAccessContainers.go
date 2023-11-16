@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database User Data Access Containers in Oracle Cloud Infrastructure Database Management service.
@@ -70,8 +69,8 @@ type GetManagedDatabaseUserDataAccessContainersResult struct {
 	DataAccessContainerCollections []GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection `pulumi:"dataAccessContainerCollections"`
 	Filters                        []GetManagedDatabaseUserDataAccessContainersFilter                        `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The name of the container included in the attribute.
 	Name     *string `pulumi:"name"`
 	UserName string  `pulumi:"userName"`
@@ -120,12 +119,6 @@ func (o GetManagedDatabaseUserDataAccessContainersResultOutput) ToGetManagedData
 	return o
 }
 
-func (o GetManagedDatabaseUserDataAccessContainersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserDataAccessContainersResult] {
-	return pulumix.Output[GetManagedDatabaseUserDataAccessContainersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of data_access_container_collection.
 func (o GetManagedDatabaseUserDataAccessContainersResultOutput) DataAccessContainerCollections() GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUserDataAccessContainersResult) []GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection {
@@ -140,8 +133,8 @@ func (o GetManagedDatabaseUserDataAccessContainersResultOutput) Filters() GetMan
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseUserDataAccessContainersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserDataAccessContainersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserDataAccessContainersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserDataAccessContainersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUserDataAccessContainersResultOutput) ManagedDatabaseId() pulumi.StringOutput {

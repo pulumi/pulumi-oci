@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
@@ -61,30 +60,30 @@ type GetFastConnectProviderServiceArgs struct {
 // A collection of values returned by getFastConnectProviderService.
 type GetFastConnectProviderServiceResult struct {
 	// Who is responsible for managing the virtual circuit bandwidth.
-	BandwithShapeManagement string `pulumi:"bandwithShapeManagement"`
+	BandwithShapeManagement *string `pulumi:"bandwithShapeManagement"`
 	// Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
-	CustomerAsnManagement string `pulumi:"customerAsnManagement"`
+	CustomerAsnManagement *string `pulumi:"customerAsnManagement"`
 	// The location of the provider's website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Who is responsible for managing the private peering BGP information.
-	PrivatePeeringBgpManagement string `pulumi:"privatePeeringBgpManagement"`
+	PrivatePeeringBgpManagement *string `pulumi:"privatePeeringBgpManagement"`
 	// The name of the provider.
-	ProviderName      string `pulumi:"providerName"`
-	ProviderServiceId string `pulumi:"providerServiceId"`
+	ProviderName      *string `pulumi:"providerName"`
+	ProviderServiceId string  `pulumi:"providerServiceId"`
 	// Who is responsible for managing the provider service key.
-	ProviderServiceKeyManagement string `pulumi:"providerServiceKeyManagement"`
+	ProviderServiceKeyManagement *string `pulumi:"providerServiceKeyManagement"`
 	// The name of the service offered by the provider.
-	ProviderServiceName string `pulumi:"providerServiceName"`
+	ProviderServiceName *string `pulumi:"providerServiceName"`
 	// Who is responsible for managing the public peering BGP information.
-	PublicPeeringBgpManagement string `pulumi:"publicPeeringBgpManagement"`
+	PublicPeeringBgpManagement *string `pulumi:"publicPeeringBgpManagement"`
 	// Total number of cross-connect or cross-connect groups required for the virtual circuit.
-	RequiredTotalCrossConnects int `pulumi:"requiredTotalCrossConnects"`
+	RequiredTotalCrossConnects *int `pulumi:"requiredTotalCrossConnects"`
 	// An array of virtual circuit types supported by this service.
 	SupportedVirtualCircuitTypes []string `pulumi:"supportedVirtualCircuitTypes"`
 	// Provider service type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func GetFastConnectProviderServiceOutput(ctx *pulumi.Context, args GetFastConnectProviderServiceOutputArgs, opts ...pulumi.InvokeOption) GetFastConnectProviderServiceResultOutput {
@@ -125,40 +124,34 @@ func (o GetFastConnectProviderServiceResultOutput) ToGetFastConnectProviderServi
 	return o
 }
 
-func (o GetFastConnectProviderServiceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFastConnectProviderServiceResult] {
-	return pulumix.Output[GetFastConnectProviderServiceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Who is responsible for managing the virtual circuit bandwidth.
-func (o GetFastConnectProviderServiceResultOutput) BandwithShapeManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.BandwithShapeManagement }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) BandwithShapeManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.BandwithShapeManagement }).(pulumi.StringPtrOutput)
 }
 
 // Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
-func (o GetFastConnectProviderServiceResultOutput) CustomerAsnManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.CustomerAsnManagement }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) CustomerAsnManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.CustomerAsnManagement }).(pulumi.StringPtrOutput)
 }
 
 // The location of the provider's website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
-func (o GetFastConnectProviderServiceResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFastConnectProviderServiceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Who is responsible for managing the private peering BGP information.
-func (o GetFastConnectProviderServiceResultOutput) PrivatePeeringBgpManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.PrivatePeeringBgpManagement }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) PrivatePeeringBgpManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.PrivatePeeringBgpManagement }).(pulumi.StringPtrOutput)
 }
 
 // The name of the provider.
-func (o GetFastConnectProviderServiceResultOutput) ProviderName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.ProviderName }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) ProviderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.ProviderName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFastConnectProviderServiceResultOutput) ProviderServiceId() pulumi.StringOutput {
@@ -166,23 +159,23 @@ func (o GetFastConnectProviderServiceResultOutput) ProviderServiceId() pulumi.St
 }
 
 // Who is responsible for managing the provider service key.
-func (o GetFastConnectProviderServiceResultOutput) ProviderServiceKeyManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.ProviderServiceKeyManagement }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) ProviderServiceKeyManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.ProviderServiceKeyManagement }).(pulumi.StringPtrOutput)
 }
 
 // The name of the service offered by the provider.
-func (o GetFastConnectProviderServiceResultOutput) ProviderServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.ProviderServiceName }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) ProviderServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.ProviderServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Who is responsible for managing the public peering BGP information.
-func (o GetFastConnectProviderServiceResultOutput) PublicPeeringBgpManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.PublicPeeringBgpManagement }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) PublicPeeringBgpManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.PublicPeeringBgpManagement }).(pulumi.StringPtrOutput)
 }
 
 // Total number of cross-connect or cross-connect groups required for the virtual circuit.
-func (o GetFastConnectProviderServiceResultOutput) RequiredTotalCrossConnects() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) int { return v.RequiredTotalCrossConnects }).(pulumi.IntOutput)
+func (o GetFastConnectProviderServiceResultOutput) RequiredTotalCrossConnects() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *int { return v.RequiredTotalCrossConnects }).(pulumi.IntPtrOutput)
 }
 
 // An array of virtual circuit types supported by this service.
@@ -191,8 +184,8 @@ func (o GetFastConnectProviderServiceResultOutput) SupportedVirtualCircuitTypes(
 }
 
 // Provider service type.
-func (o GetFastConnectProviderServiceResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

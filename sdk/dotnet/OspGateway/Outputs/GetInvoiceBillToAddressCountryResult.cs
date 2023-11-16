@@ -16,35 +16,35 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Country code in ISO-3166-1 3-letter format
         /// </summary>
-        public readonly string Ascii3countryCode;
+        public readonly string? Ascii3countryCode;
         /// <summary>
         /// Country code in ISO-3166-1 2-letter format
         /// </summary>
-        public readonly string CountryCode;
+        public readonly string? CountryCode;
         /// <summary>
         /// Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
         /// </summary>
-        public readonly double CountryId;
+        public readonly double? CountryId;
         /// <summary>
         /// Name of the country
         /// </summary>
-        public readonly string CountryName;
+        public readonly string? CountryName;
         /// <summary>
         /// Language identifier
         /// </summary>
-        public readonly double LanguageId;
+        public readonly double? LanguageId;
 
         [OutputConstructor]
         private GetInvoiceBillToAddressCountryResult(
-            string ascii3countryCode,
+            string? ascii3countryCode,
 
-            string countryCode,
+            string? countryCode,
 
-            double countryId,
+            double? countryId,
 
-            string countryName,
+            string? countryName,
 
-            double languageId)
+            double? languageId)
         {
             Ascii3countryCode = ascii3countryCode;
             CountryCode = countryCode;

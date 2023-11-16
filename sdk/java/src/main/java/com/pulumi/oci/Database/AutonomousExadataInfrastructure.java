@@ -135,112 +135,112 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don&#39;t provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
-    private Output<String> domain;
+    private Output</* @Nullable */ String> domain;
 
     /**
      * @return A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don&#39;t provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      * 
      */
-    public Output<String> domain() {
-        return this.domain;
+    public Output<Optional<String>> domain() {
+        return Codegen.optional(this.domain);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The host name for the Autonomous Exadata Infrastructure node.
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
-    private Output<String> hostname;
+    private Output</* @Nullable */ String> hostname;
 
     /**
      * @return The host name for the Autonomous Exadata Infrastructure node.
      * 
      */
-    public Output<String> hostname() {
-        return this.hostname;
+    public Output<Optional<String>> hostname() {
+        return Codegen.optional(this.hostname);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
     @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> lastMaintenanceRunId;
+    private Output</* @Nullable */ String> lastMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public Output<String> lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Output<Optional<String>> lastMaintenanceRunId() {
+        return Codegen.optional(this.lastMaintenanceRunId);
     }
     /**
      * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
     /**
      * Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -261,28 +261,28 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="maintenanceWindows", refs={List.class,AutonomousExadataInfrastructureMaintenanceWindow.class}, tree="[0,1]")
-    private Output<List<AutonomousExadataInfrastructureMaintenanceWindow>> maintenanceWindows;
+    private Output</* @Nullable */ List<AutonomousExadataInfrastructureMaintenanceWindow>> maintenanceWindows;
 
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    public Output<List<AutonomousExadataInfrastructureMaintenanceWindow>> maintenanceWindows() {
-        return this.maintenanceWindows;
+    public Output<Optional<List<AutonomousExadataInfrastructureMaintenanceWindow>>> maintenanceWindows() {
+        return Codegen.optional(this.maintenanceWindows);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
     @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> nextMaintenanceRunId;
+    private Output</* @Nullable */ String> nextMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public Output<String> nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Output<Optional<String>> nextMaintenanceRunId() {
+        return Codegen.optional(this.nextMaintenanceRunId);
     }
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -305,14 +305,14 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="scanDnsName", refs={String.class}, tree="[0]")
-    private Output<String> scanDnsName;
+    private Output</* @Nullable */ String> scanDnsName;
 
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
      * 
      */
-    public Output<String> scanDnsName() {
-        return this.scanDnsName;
+    public Output<Optional<String>> scanDnsName() {
+        return Codegen.optional(this.scanDnsName);
     }
     /**
      * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
@@ -333,14 +333,14 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
@@ -377,28 +377,28 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Autonomous Exadata Infrastructure was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
-    private Output<String> zoneId;
+    private Output</* @Nullable */ String> zoneId;
 
     /**
      * @return The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
      * 
      */
-    public Output<String> zoneId() {
-        return this.zoneId;
+    public Output<Optional<String>> zoneId() {
+        return Codegen.optional(this.zoneId);
     }
 
     /**

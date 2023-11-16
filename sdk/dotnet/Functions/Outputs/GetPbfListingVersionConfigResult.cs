@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Details about why this policy is required and what it will be used for.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Is this a required config or an optional one. Requests with required config params missing will be rejected.
         /// </summary>
-        public readonly bool IsOptional;
+        public readonly bool? IsOptional;
         /// <summary>
         /// The key name of the config param.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
 
         [OutputConstructor]
         private GetPbfListingVersionConfigResult(
-            string description,
+            string? description,
 
-            bool isOptional,
+            bool? isOptional,
 
-            string key)
+            string? key)
         {
             Description = description;
             IsOptional = isOptional;

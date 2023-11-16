@@ -108,11 +108,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The name of the entity authorized by this Letter of Authority.
         /// </summary>
-        public readonly string AuthorizedEntityName;
+        public readonly string? AuthorizedEntityName;
         /// <summary>
         /// The type of cross-connect fiber, termination, and optical specification.
         /// </summary>
-        public readonly string CircuitType;
+        public readonly string? CircuitType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
         /// </summary>
@@ -120,41 +120,41 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The address of the FastConnect location.
         /// </summary>
-        public readonly string FacilityLocation;
+        public readonly string? FacilityLocation;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The meet-me room port for this cross-connect.
         /// </summary>
-        public readonly string PortName;
+        public readonly string? PortName;
         /// <summary>
         /// The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeExpires;
+        public readonly string? TimeExpires;
         /// <summary>
         /// The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeIssued;
+        public readonly string? TimeIssued;
 
         [OutputConstructor]
         private GetLetterOfAuthorityResult(
-            string authorizedEntityName,
+            string? authorizedEntityName,
 
-            string circuitType,
+            string? circuitType,
 
             string crossConnectId,
 
-            string facilityLocation,
+            string? facilityLocation,
 
-            string id,
+            string? id,
 
-            string portName,
+            string? portName,
 
-            string timeExpires,
+            string? timeExpires,
 
-            string timeIssued)
+            string? timeIssued)
         {
             AuthorizedEntityName = authorizedEntityName;
             CircuitType = circuitType;

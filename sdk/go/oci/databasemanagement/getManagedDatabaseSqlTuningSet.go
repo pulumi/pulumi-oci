@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
@@ -66,7 +65,7 @@ type GetManagedDatabaseSqlTuningSetArgs struct {
 // A collection of values returned by getManagedDatabaseSqlTuningSet.
 type GetManagedDatabaseSqlTuningSetResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The details in the SQL tuning set summary.
 	Items []GetManagedDatabaseSqlTuningSetItem `pulumi:"items"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -118,15 +117,9 @@ func (o GetManagedDatabaseSqlTuningSetResultOutput) ToGetManagedDatabaseSqlTunin
 	return o
 }
 
-func (o GetManagedDatabaseSqlTuningSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningSetResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningSetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlTuningSetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlTuningSetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The details in the SQL tuning set summary.

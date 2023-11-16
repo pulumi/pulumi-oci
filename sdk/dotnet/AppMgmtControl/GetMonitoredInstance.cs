@@ -108,68 +108,68 @@ namespace Pulumi.Oci.AppMgmtControl
         /// <summary>
         /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm). DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
         /// </summary>
-        public readonly string InstanceId;
+        public readonly string? InstanceId;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
         /// </summary>
-        public readonly string ManagementAgentId;
+        public readonly string? ManagementAgentId;
         public readonly string MonitoredInstanceId;
         /// <summary>
         /// Monitoring status. Can be either enabled or disabled.
         /// </summary>
-        public readonly string MonitoringState;
+        public readonly string? MonitoringState;
         /// <summary>
         /// The current state of the monitored instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the MonitoredInstance was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMonitoredInstanceResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string instanceId,
+            string? instanceId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string managementAgentId,
+            string? managementAgentId,
 
             string monitoredInstanceId,
 
-            string monitoringState,
+            string? monitoringState,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

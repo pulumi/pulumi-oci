@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension {
@@ -13,39 +15,39 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
      * @return The IP addresses for the SQL collection.
      * 
      */
-    private String clientIp;
+    private @Nullable String clientIp;
     /**
      * @return The operating system user names for the SQL collection.
      * 
      */
-    private String clientOsUserName;
+    private @Nullable String clientOsUserName;
     /**
      * @return The allowed client programs for the SQL collection.
      * 
      */
-    private String clientProgram;
+    private @Nullable String clientProgram;
 
     private GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension() {}
     /**
      * @return The IP addresses for the SQL collection.
      * 
      */
-    public String clientIp() {
-        return this.clientIp;
+    public Optional<String> clientIp() {
+        return Optional.ofNullable(this.clientIp);
     }
     /**
      * @return The operating system user names for the SQL collection.
      * 
      */
-    public String clientOsUserName() {
-        return this.clientOsUserName;
+    public Optional<String> clientOsUserName() {
+        return Optional.ofNullable(this.clientOsUserName);
     }
     /**
      * @return The allowed client programs for the SQL collection.
      * 
      */
-    public String clientProgram() {
-        return this.clientProgram;
+    public Optional<String> clientProgram() {
+        return Optional.ofNullable(this.clientProgram);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
     }
     @CustomType.Builder
     public static final class Builder {
-        private String clientIp;
-        private String clientOsUserName;
-        private String clientProgram;
+        private @Nullable String clientIp;
+        private @Nullable String clientOsUserName;
+        private @Nullable String clientProgram;
         public Builder() {}
         public Builder(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
         }
 
         @CustomType.Setter
-        public Builder clientIp(String clientIp) {
-            this.clientIp = Objects.requireNonNull(clientIp);
+        public Builder clientIp(@Nullable String clientIp) {
+            this.clientIp = clientIp;
             return this;
         }
         @CustomType.Setter
-        public Builder clientOsUserName(String clientOsUserName) {
-            this.clientOsUserName = Objects.requireNonNull(clientOsUserName);
+        public Builder clientOsUserName(@Nullable String clientOsUserName) {
+            this.clientOsUserName = clientOsUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder clientProgram(String clientProgram) {
-            this.clientProgram = Objects.requireNonNull(clientProgram);
+        public Builder clientProgram(@Nullable String clientProgram) {
+            this.clientProgram = clientProgram;
             return this;
         }
         public GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension build() {

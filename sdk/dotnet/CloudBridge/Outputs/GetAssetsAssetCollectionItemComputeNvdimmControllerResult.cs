@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Bus number.
         /// </summary>
-        public readonly int BusNumber;
+        public readonly int? BusNumber;
         /// <summary>
         /// Provides a label and summary information for the device.
         /// </summary>
-        public readonly string Label;
+        public readonly string? Label;
 
         [OutputConstructor]
         private GetAssetsAssetCollectionItemComputeNvdimmControllerResult(
-            int busNumber,
+            int? busNumber,
 
-            string label)
+            string? label)
         {
             BusNumber = busNumber;
             Label = label;

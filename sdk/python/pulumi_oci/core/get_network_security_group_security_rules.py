@@ -43,9 +43,6 @@ class GetNetworkSecurityGroupSecurityRulesResult:
     @property
     @pulumi.getter
     def direction(self) -> Optional[str]:
-        """
-        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
-        """
         return pulumi.get(self, "direction")
 
     @property
@@ -55,7 +52,7 @@ class GetNetworkSecurityGroupSecurityRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,10 +65,7 @@ class GetNetworkSecurityGroupSecurityRulesResult:
 
     @property
     @pulumi.getter(name="securityRules")
-    def security_rules(self) -> Sequence['outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleResult']:
-        """
-        The list of security_rules.
-        """
+    def security_rules(self) -> Optional[Sequence['outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleResult']]:
         return pulumi.get(self, "security_rules")
 
 
@@ -93,23 +87,7 @@ def get_network_security_group_security_rules(direction: Optional[str] = None,
                                               network_security_group_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityGroupSecurityRulesResult:
     """
-    This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
-
-    Lists the security rules in the specified network security group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
-        direction=var["network_security_group_security_rule_direction"])
-    ```
-
-
-    :param str direction: Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
-    :param str network_security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['direction'] = direction
@@ -132,22 +110,6 @@ def get_network_security_group_security_rules_output(direction: Optional[pulumi.
                                                      network_security_group_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupSecurityRulesResult]:
     """
-    This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
-
-    Lists the security rules in the specified network security group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
-        direction=var["network_security_group_security_rule_direction"])
-    ```
-
-
-    :param str direction: Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
-    :param str network_security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+    Use this data source to access information about an existing resource.
     """
     ...

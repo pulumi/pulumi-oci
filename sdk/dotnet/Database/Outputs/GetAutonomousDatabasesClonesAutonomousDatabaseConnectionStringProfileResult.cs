@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Consumer group used by the connection.
         /// </summary>
-        public readonly string ConsumerGroup;
+        public readonly string? ConsumerGroup;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Host format used in connection string.
         /// </summary>
-        public readonly string HostFormat;
+        public readonly string? HostFormat;
         /// <summary>
         /// Protocol used by the connection.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
         /// </summary>
-        public readonly string SessionMode;
+        public readonly string? SessionMode;
         /// <summary>
         /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         /// </summary>
-        public readonly string SyntaxFormat;
+        public readonly string? SyntaxFormat;
         /// <summary>
         /// Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         /// </summary>
-        public readonly string TlsAuthentication;
+        public readonly string? TlsAuthentication;
         /// <summary>
         /// Connection string value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResult(
-            string consumerGroup,
+            string? consumerGroup,
 
-            string displayName,
+            string? displayName,
 
-            string hostFormat,
+            string? hostFormat,
 
-            string protocol,
+            string? protocol,
 
-            string sessionMode,
+            string? sessionMode,
 
-            string syntaxFormat,
+            string? syntaxFormat,
 
-            string tlsAuthentication,
+            string? tlsAuthentication,
 
-            string value)
+            string? value)
         {
             ConsumerGroup = consumerGroup;
             DisplayName = displayName;

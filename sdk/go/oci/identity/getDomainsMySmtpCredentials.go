@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,9 +79,9 @@ type GetDomainsMySmtpCredentialsResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string  `pulumi:"id"`
+	Id                     *string `pulumi:"id"`
 	IdcsEndpoint           string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage           int     `pulumi:"itemsPerPage"`
+	ItemsPerPage           *int    `pulumi:"itemsPerPage"`
 	MySmtpCredentialCount  *int    `pulumi:"mySmtpCredentialCount"`
 	MySmtpCredentialFilter *string `pulumi:"mySmtpCredentialFilter"`
 	// The list of my_smtp_credentials.
@@ -93,7 +92,7 @@ type GetDomainsMySmtpCredentialsResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMySmtpCredentialsOutput(ctx *pulumi.Context, args GetDomainsMySmtpCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMySmtpCredentialsResultOutput {
@@ -147,12 +146,6 @@ func (o GetDomainsMySmtpCredentialsResultOutput) ToGetDomainsMySmtpCredentialsRe
 	return o
 }
 
-func (o GetDomainsMySmtpCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMySmtpCredentialsResult] {
-	return pulumix.Output[GetDomainsMySmtpCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMySmtpCredentialsResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -162,16 +155,16 @@ func (o GetDomainsMySmtpCredentialsResultOutput) CompartmentId() pulumi.StringPt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMySmtpCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMySmtpCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMySmtpCredentialsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMySmtpCredentialsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMySmtpCredentialsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMySmtpCredentialsResultOutput) MySmtpCredentialCount() pulumi.IntPtrOutput {
@@ -210,8 +203,8 @@ func (o GetDomainsMySmtpCredentialsResultOutput) StartIndex() pulumi.IntPtrOutpu
 	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMySmtpCredentialsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMySmtpCredentialsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMySmtpCredentialsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

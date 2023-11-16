@@ -49,17 +49,11 @@ class GetModelsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the model's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,33 +64,21 @@ class GetModelsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier model OCID of a model that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="modelCollections")
-    def model_collections(self) -> Sequence['outputs.GetModelsModelCollectionResult']:
-        """
-        The list of model_collection.
-        """
+    def model_collections(self) -> Optional[Sequence['outputs.GetModelsModelCollectionResult']]:
         return pulumi.get(self, "model_collections")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the model.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,16 +105,7 @@ def get_models(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelsResult:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
-
-    Returns a list of models.
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier model OCID of a model that is immutable on creation
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -163,15 +136,6 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelsResult]:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
-
-    Returns a list of models.
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier model OCID of a model that is immutable on creation
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

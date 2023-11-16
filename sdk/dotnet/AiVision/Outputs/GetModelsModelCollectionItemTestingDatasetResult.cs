@@ -16,32 +16,32 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// <summary>
         /// The name of the ObjectStorage bucket that contains the input data file.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The OCID of the Data Science Labeling Dataset.
         /// </summary>
-        public readonly string DatasetId;
+        public readonly string? DatasetId;
         /// <summary>
         /// Type of the Dataset.
         /// </summary>
-        public readonly string DatasetType;
-        public readonly string NamespaceName;
+        public readonly string? DatasetType;
+        public readonly string? NamespaceName;
         /// <summary>
         /// The object name of the input data file.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
 
         [OutputConstructor]
         private GetModelsModelCollectionItemTestingDatasetResult(
-            string bucket,
+            string? bucket,
 
-            string datasetId,
+            string? datasetId,
 
-            string datasetType,
+            string? datasetType,
 
-            string namespaceName,
+            string? namespaceName,
 
-            string @object)
+            string? @object)
         {
             Bucket = bucket;
             DatasetId = datasetId;

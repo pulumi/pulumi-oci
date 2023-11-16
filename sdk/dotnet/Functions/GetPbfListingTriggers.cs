@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A brief descriptive name for the PBF trigger.
         /// </summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Functions
         private GetPbfListingTriggersResult(
             ImmutableArray<Outputs.GetPbfListingTriggersFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

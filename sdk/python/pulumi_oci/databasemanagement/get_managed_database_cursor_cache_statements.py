@@ -45,10 +45,7 @@ class GetManagedDatabaseCursorCacheStatementsResult:
 
     @property
     @pulumi.getter(name="cursorCacheStatementCollections")
-    def cursor_cache_statement_collections(self) -> Sequence['outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionResult']:
-        """
-        The list of cursor_cache_statement_collection.
-        """
+    def cursor_cache_statement_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionResult']]:
         return pulumi.get(self, "cursor_cache_statement_collections")
 
     @property
@@ -58,7 +55,7 @@ class GetManagedDatabaseCursorCacheStatementsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,9 +74,6 @@ class GetManagedDatabaseCursorCacheStatementsResult:
     @property
     @pulumi.getter(name="sqlText")
     def sql_text(self) -> Optional[str]:
-        """
-        The first thousand characters of the SQL text.
-        """
         return pulumi.get(self, "sql_text")
 
 
@@ -103,23 +97,7 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
                                                  sql_text: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseCursorCacheStatementsResult:
     """
-    This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL statements from shared SQL area, also called the cursor cache.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_text=var["managed_database_cursor_cache_statement_sql_text"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -145,22 +123,6 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
                                                         sql_text: Optional[pulumi.Input[Optional[str]]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseCursorCacheStatementsResult]:
     """
-    This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL statements from shared SQL area, also called the cursor cache.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_text=var["managed_database_cursor_cache_statement_sql_text"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    Use this data source to access information about an existing resource.
     """
     ...

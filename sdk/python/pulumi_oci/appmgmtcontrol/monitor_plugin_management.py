@@ -17,24 +17,12 @@ class MonitorPluginManagementArgs:
                  monitored_instance_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a MonitorPluginManagement resource.
-        :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "monitored_instance_id", monitored_instance_id)
 
     @property
     @pulumi.getter(name="monitoredInstanceId")
     def monitored_instance_id(self) -> pulumi.Input[str]:
-        """
-        OCID of monitored instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "monitored_instance_id")
 
     @monitored_instance_id.setter
@@ -53,11 +41,6 @@ class _MonitorPluginManagementState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitorPluginManagement resources.
-        :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -102,13 +85,6 @@ class _MonitorPluginManagementState:
     @property
     @pulumi.getter(name="monitoredInstanceId")
     def monitored_instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of monitored instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "monitored_instance_id")
 
     @monitored_instance_id.setter
@@ -142,32 +118,9 @@ class MonitorPluginManagement(pulumi.CustomResource):
                  monitored_instance_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Monitor Plugin Management resource in Oracle Cloud Infrastructure Appmgmt Control service.
-
-        Activates Resource Plugin for compute instance identified by the instance ocid.
-        Stores monitored instances Id and its state. Tries to enable Resource Monitoring plugin by making
-        remote calls to Oracle Cloud Agent and Management Agent Cloud Service.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("testMonitorPluginManagement", monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a MonitorPluginManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -176,25 +129,7 @@ class MonitorPluginManagement(pulumi.CustomResource):
                  args: MonitorPluginManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitor Plugin Management resource in Oracle Cloud Infrastructure Appmgmt Control service.
-
-        Activates Resource Plugin for compute instance identified by the instance ocid.
-        Stores monitored instances Id and its state. Tries to enable Resource Monitoring plugin by making
-        remote calls to Oracle Cloud Agent and Management Agent Cloud Service.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("testMonitorPluginManagement", monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a MonitorPluginManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MonitorPluginManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -251,11 +186,6 @@ class MonitorPluginManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -271,38 +201,31 @@ class MonitorPluginManagement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="monitoredInstanceDescription")
-    def monitored_instance_description(self) -> pulumi.Output[str]:
+    def monitored_instance_description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "monitored_instance_description")
 
     @property
     @pulumi.getter(name="monitoredInstanceDisplayName")
-    def monitored_instance_display_name(self) -> pulumi.Output[str]:
+    def monitored_instance_display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "monitored_instance_display_name")
 
     @property
     @pulumi.getter(name="monitoredInstanceId")
     def monitored_instance_id(self) -> pulumi.Output[str]:
-        """
-        OCID of monitored instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "monitored_instance_id")
 
     @property
     @pulumi.getter(name="monitoredInstanceManagementAgentId")
-    def monitored_instance_management_agent_id(self) -> pulumi.Output[str]:
+    def monitored_instance_management_agent_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "monitored_instance_management_agent_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

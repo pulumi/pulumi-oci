@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapesShapeRecommendedAlternative {
@@ -13,15 +15,15 @@ public final class GetShapesShapeRecommendedAlternative {
      * @return The name of the shape.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
 
     private GetShapesShapeRecommendedAlternative() {}
     /**
      * @return The name of the shape.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetShapesShapeRecommendedAlternative {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String shapeName;
+        private @Nullable String shapeName;
         public Builder() {}
         public Builder(GetShapesShapeRecommendedAlternative defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetShapesShapeRecommendedAlternative {
         }
 
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         public GetShapesShapeRecommendedAlternative build() {

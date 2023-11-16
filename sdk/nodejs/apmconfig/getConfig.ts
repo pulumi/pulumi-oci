@@ -55,81 +55,81 @@ export interface GetConfigResult {
     /**
      * The type of configuration item.
      */
-    readonly configType: string;
+    readonly configType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A description of the metric.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A list of dimensions for the metric. This variable should not be used.
      */
-    readonly dimensions: outputs.ApmConfig.GetConfigDimension[];
+    readonly dimensions?: outputs.ApmConfig.GetConfigDimension[];
     /**
      * The name by which a configuration entity is displayed to the end user.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * For optimistic concurrency control. See `if-match`.
      */
-    readonly etag: string;
+    readonly etag?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
-    readonly filterId: string;
+    readonly filterId?: string;
     /**
      * The string that defines the Span Filter expression.
      */
-    readonly filterText: string;
+    readonly filterText?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A string that specifies the group that an OPTIONS item belongs to.
      */
-    readonly group: string;
+    readonly group?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of configuration items that reference the span filter.
      */
-    readonly inUseBies: outputs.ApmConfig.GetConfigInUseBy[];
+    readonly inUseBies?: outputs.ApmConfig.GetConfigInUseBy[];
     /**
      * The list of metrics in this group.
      */
-    readonly metrics: outputs.ApmConfig.GetConfigMetric[];
+    readonly metrics?: outputs.ApmConfig.GetConfigMetric[];
     /**
      * The namespace to which the metrics are published. It must be one of several predefined namespaces.
      */
-    readonly namespace: string;
-    readonly opcDryRun: string;
+    readonly namespace?: string;
+    readonly opcDryRun?: string;
     /**
      * The options are stored here as JSON.
      */
-    readonly options: string;
-    readonly rules: outputs.ApmConfig.GetConfigRule[];
+    readonly options?: string;
+    readonly rules?: outputs.ApmConfig.GetConfigRule[];
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
-    readonly updatedBy: string;
+    readonly updatedBy?: string;
 }
 /**
  * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.

@@ -25,7 +25,7 @@ public final class GetContainerImagesResult {
      * @return The list of container_image_collection.
      * 
      */
-    private List<GetContainerImagesContainerImageCollection> containerImageCollections;
+    private @Nullable List<GetContainerImagesContainerImageCollection> containerImageCollections;
     /**
      * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      * 
@@ -36,7 +36,7 @@ public final class GetContainerImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String imageId;
     private @Nullable Boolean isVersioned;
     /**
@@ -76,7 +76,7 @@ public final class GetContainerImagesResult {
      * 
      */
     public List<GetContainerImagesContainerImageCollection> containerImageCollections() {
-        return this.containerImageCollections;
+        return this.containerImageCollections == null ? List.of() : this.containerImageCollections;
     }
     /**
      * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
@@ -92,8 +92,8 @@ public final class GetContainerImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
@@ -141,10 +141,10 @@ public final class GetContainerImagesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetContainerImagesContainerImageCollection> containerImageCollections;
+        private @Nullable List<GetContainerImagesContainerImageCollection> containerImageCollections;
         private @Nullable String displayName;
         private @Nullable List<GetContainerImagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String imageId;
         private @Nullable Boolean isVersioned;
         private @Nullable String repositoryId;
@@ -179,8 +179,8 @@ public final class GetContainerImagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder containerImageCollections(List<GetContainerImagesContainerImageCollection> containerImageCollections) {
-            this.containerImageCollections = Objects.requireNonNull(containerImageCollections);
+        public Builder containerImageCollections(@Nullable List<GetContainerImagesContainerImageCollection> containerImageCollections) {
+            this.containerImageCollections = containerImageCollections;
             return this;
         }
         public Builder containerImageCollections(GetContainerImagesContainerImageCollection... containerImageCollections) {
@@ -200,8 +200,8 @@ public final class GetContainerImagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// <summary>
         /// A description of the software in the bundle.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A short, unique string that identifies the version of bundled software.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetSupportedVmwareSoftwareVersionsItemResult(
-            string description,
+            string? description,
 
-            string version)
+            string? version)
         {
             Description = description;
             Version = version;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
@@ -63,11 +62,11 @@ type GetAutonomousExadataInfrastructureOcpuResult struct {
 	// The number of consumed OCPUs, by database workload type.
 	ByWorkloadTypes []GetAutonomousExadataInfrastructureOcpuByWorkloadType `pulumi:"byWorkloadTypes"`
 	// The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
-	ConsumedCpu float64 `pulumi:"consumedCpu"`
+	ConsumedCpu *float64 `pulumi:"consumedCpu"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
-	TotalCpu float64 `pulumi:"totalCpu"`
+	TotalCpu *float64 `pulumi:"totalCpu"`
 }
 
 func GetAutonomousExadataInfrastructureOcpuOutput(ctx *pulumi.Context, args GetAutonomousExadataInfrastructureOcpuOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousExadataInfrastructureOcpuResultOutput {
@@ -108,12 +107,6 @@ func (o GetAutonomousExadataInfrastructureOcpuResultOutput) ToGetAutonomousExada
 	return o
 }
 
-func (o GetAutonomousExadataInfrastructureOcpuResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousExadataInfrastructureOcpuResult] {
-	return pulumix.Output[GetAutonomousExadataInfrastructureOcpuResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutonomousExadataInfrastructureOcpuResultOutput) AutonomousExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousExadataInfrastructureOcpuResult) string {
 		return v.AutonomousExadataInfrastructureId
@@ -128,18 +121,18 @@ func (o GetAutonomousExadataInfrastructureOcpuResultOutput) ByWorkloadTypes() Ge
 }
 
 // The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
-func (o GetAutonomousExadataInfrastructureOcpuResultOutput) ConsumedCpu() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousExadataInfrastructureOcpuResult) float64 { return v.ConsumedCpu }).(pulumi.Float64Output)
+func (o GetAutonomousExadataInfrastructureOcpuResultOutput) ConsumedCpu() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousExadataInfrastructureOcpuResult) *float64 { return v.ConsumedCpu }).(pulumi.Float64PtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousExadataInfrastructureOcpuResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousExadataInfrastructureOcpuResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousExadataInfrastructureOcpuResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousExadataInfrastructureOcpuResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
-func (o GetAutonomousExadataInfrastructureOcpuResultOutput) TotalCpu() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousExadataInfrastructureOcpuResult) float64 { return v.TotalCpu }).(pulumi.Float64Output)
+func (o GetAutonomousExadataInfrastructureOcpuResultOutput) TotalCpu() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousExadataInfrastructureOcpuResult) *float64 { return v.TotalCpu }).(pulumi.Float64PtrOutput)
 }
 
 func init() {

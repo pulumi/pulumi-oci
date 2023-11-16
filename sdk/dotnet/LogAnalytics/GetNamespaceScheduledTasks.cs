@@ -175,7 +175,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
         /// <summary>
         /// The list of scheduled_task_collection.
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetNamespaceScheduledTasksFilterResult> filters,
 
-            string id,
+            string? id,
 
             string @namespace,
 

@@ -55,13 +55,13 @@ namespace Pulumi.Oci.Core
         /// The availability domain the instance is running in.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         [Output("decrementSizeOnDelete")]
         public Output<bool?> DecrementSizeOnDelete { get; private set; } = null!;
@@ -70,19 +70,19 @@ namespace Pulumi.Oci.Core
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The fault domain the instance is running in.
         /// </summary>
         [Output("faultDomain")]
-        public Output<string> FaultDomain { get; private set; } = null!;
+        public Output<string?> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
         /// </summary>
         [Output("instanceConfigurationId")]
-        public Output<string> InstanceConfigurationId { get; private set; } = null!;
+        public Output<string?> InstanceConfigurationId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -110,25 +110,25 @@ namespace Pulumi.Oci.Core
         /// The region that contains the availability domain the instance is running in.
         /// </summary>
         [Output("region")]
-        public Output<string> Region { get; private set; } = null!;
+        public Output<string?> Region { get; private set; } = null!;
 
         /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

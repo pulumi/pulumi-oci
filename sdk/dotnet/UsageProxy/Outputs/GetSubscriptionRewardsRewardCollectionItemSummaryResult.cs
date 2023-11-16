@@ -16,41 +16,41 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// The currency unit for the reward amount.
         /// </summary>
-        public readonly string Currency;
+        public readonly string? Currency;
         /// <summary>
         /// The redemption code used in the Billing Center during the reward redemption process.
         /// </summary>
-        public readonly string RedemptionCode;
+        public readonly string? RedemptionCode;
         /// <summary>
         /// The current Rewards percentage in decimal format.
         /// </summary>
-        public readonly double RewardsRate;
+        public readonly double? RewardsRate;
         /// <summary>
         /// The subscription ID for which rewards information is requested for.
         /// </summary>
-        public readonly string SubscriptionId;
+        public readonly string? SubscriptionId;
         /// <summary>
         /// The OCID of the tenancy.
         /// </summary>
-        public readonly string TenancyId;
+        public readonly string? TenancyId;
         /// <summary>
         /// The total number of available rewards for a given subscription ID.
         /// </summary>
-        public readonly double TotalRewardsAvailable;
+        public readonly double? TotalRewardsAvailable;
 
         [OutputConstructor]
         private GetSubscriptionRewardsRewardCollectionItemSummaryResult(
-            string currency,
+            string? currency,
 
-            string redemptionCode,
+            string? redemptionCode,
 
-            double rewardsRate,
+            double? rewardsRate,
 
-            string subscriptionId,
+            string? subscriptionId,
 
-            string tenancyId,
+            string? tenancyId,
 
-            double totalRewardsAvailable)
+            double? totalRewardsAvailable)
         {
             Currency = currency;
             RedemptionCode = redemptionCode;

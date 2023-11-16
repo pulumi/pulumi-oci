@@ -81,7 +81,7 @@ export interface GetTagDefaultsResult {
     /**
      * The list of tag_defaults.
      */
-    readonly tagDefaults: outputs.Identity.GetTagDefaultsTagDefault[];
+    readonly tagDefaults?: outputs.Identity.GetTagDefaultsTagDefault[];
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      */

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBootVolumeBackupSourceDetail {
@@ -13,31 +15,31 @@ public final class GetBootVolumeBackupSourceDetail {
      * @return The OCID of the boot volume backup.
      * 
      */
-    private String bootVolumeBackupId;
+    private @Nullable String bootVolumeBackupId;
     /**
      * @return The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    private String kmsKeyId;
-    private String region;
+    private @Nullable String kmsKeyId;
+    private @Nullable String region;
 
     private GetBootVolumeBackupSourceDetail() {}
     /**
      * @return The OCID of the boot volume backup.
      * 
      */
-    public String bootVolumeBackupId() {
-        return this.bootVolumeBackupId;
+    public Optional<String> bootVolumeBackupId() {
+        return Optional.ofNullable(this.bootVolumeBackupId);
     }
     /**
      * @return The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
 
     public static Builder builder() {
@@ -49,9 +51,9 @@ public final class GetBootVolumeBackupSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bootVolumeBackupId;
-        private String kmsKeyId;
-        private String region;
+        private @Nullable String bootVolumeBackupId;
+        private @Nullable String kmsKeyId;
+        private @Nullable String region;
         public Builder() {}
         public Builder(GetBootVolumeBackupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -61,18 +63,18 @@ public final class GetBootVolumeBackupSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder bootVolumeBackupId(String bootVolumeBackupId) {
-            this.bootVolumeBackupId = Objects.requireNonNull(bootVolumeBackupId);
+        public Builder bootVolumeBackupId(@Nullable String bootVolumeBackupId) {
+            this.bootVolumeBackupId = bootVolumeBackupId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         public GetBootVolumeBackupSourceDetail build() {

@@ -10,6 +10,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilyLimitsAndUsage
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
@@ -17,23 +19,23 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
      * @return The limit and usage for a specific environment type, for example, production, development, or test.
      * 
      */
-    private List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages;
+    private @Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages;
     private String fusionEnvironmentFamilyId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The limit and usage for a specific environment type, for example, production, development, or test.
      * 
      */
-    private List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages;
+    private @Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages;
     /**
      * @return The limit and usage for a specific environment type, for example, production, development, or test.
      * 
      */
-    private List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages;
+    private @Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages;
 
     private GetFusionEnvironmentFamilyLimitsAndUsageResult() {}
     /**
@@ -41,7 +43,7 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
      * 
      */
     public List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages() {
-        return this.developmentLimitAndUsages;
+        return this.developmentLimitAndUsages == null ? List.of() : this.developmentLimitAndUsages;
     }
     public String fusionEnvironmentFamilyId() {
         return this.fusionEnvironmentFamilyId;
@@ -50,22 +52,22 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The limit and usage for a specific environment type, for example, production, development, or test.
      * 
      */
     public List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages() {
-        return this.productionLimitAndUsages;
+        return this.productionLimitAndUsages == null ? List.of() : this.productionLimitAndUsages;
     }
     /**
      * @return The limit and usage for a specific environment type, for example, production, development, or test.
      * 
      */
     public List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages() {
-        return this.testLimitAndUsages;
+        return this.testLimitAndUsages == null ? List.of() : this.testLimitAndUsages;
     }
 
     public static Builder builder() {
@@ -77,11 +79,11 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages;
+        private @Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages;
         private String fusionEnvironmentFamilyId;
-        private String id;
-        private List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages;
-        private List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages;
+        private @Nullable String id;
+        private @Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages;
+        private @Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages;
         public Builder() {}
         public Builder(GetFusionEnvironmentFamilyLimitsAndUsageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -93,8 +95,8 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
         }
 
         @CustomType.Setter
-        public Builder developmentLimitAndUsages(List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages) {
-            this.developmentLimitAndUsages = Objects.requireNonNull(developmentLimitAndUsages);
+        public Builder developmentLimitAndUsages(@Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages) {
+            this.developmentLimitAndUsages = developmentLimitAndUsages;
             return this;
         }
         public Builder developmentLimitAndUsages(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage... developmentLimitAndUsages) {
@@ -106,21 +108,21 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder productionLimitAndUsages(List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages) {
-            this.productionLimitAndUsages = Objects.requireNonNull(productionLimitAndUsages);
+        public Builder productionLimitAndUsages(@Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages) {
+            this.productionLimitAndUsages = productionLimitAndUsages;
             return this;
         }
         public Builder productionLimitAndUsages(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage... productionLimitAndUsages) {
             return productionLimitAndUsages(List.of(productionLimitAndUsages));
         }
         @CustomType.Setter
-        public Builder testLimitAndUsages(List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages) {
-            this.testLimitAndUsages = Objects.requireNonNull(testLimitAndUsages);
+        public Builder testLimitAndUsages(@Nullable List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages) {
+            this.testLimitAndUsages = testLimitAndUsages;
             return this;
         }
         public Builder testLimitAndUsages(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage... testLimitAndUsages) {

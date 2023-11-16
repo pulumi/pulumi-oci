@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceShapeConfig {
@@ -15,151 +17,151 @@ public final class GetInstanceShapeConfig {
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
-    private String baselineOcpuUtilization;
+    private @Nullable String baselineOcpuUtilization;
     /**
      * @return A short description of the instance&#39;s graphics processing unit (GPU).
      * 
      */
-    private String gpuDescription;
+    private @Nullable String gpuDescription;
     /**
      * @return The number of GPUs available to the instance.
      * 
      */
-    private Integer gpus;
+    private @Nullable Integer gpus;
     /**
      * @return A short description of the local disks available to this instance.
      * 
      */
-    private String localDiskDescription;
+    private @Nullable String localDiskDescription;
     /**
      * @return The number of local disks available to the instance.
      * 
      */
-    private Integer localDisks;
+    private @Nullable Integer localDisks;
     /**
      * @return The aggregate size of all local disks, in gigabytes.
      * 
      */
-    private Double localDisksTotalSizeInGbs;
+    private @Nullable Double localDisksTotalSizeInGbs;
     /**
      * @return The maximum number of VNIC attachments for the instance.
      * 
      */
-    private Integer maxVnicAttachments;
+    private @Nullable Integer maxVnicAttachments;
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The networking bandwidth available to the instance, in gigabits per second.
      * 
      */
-    private Double networkingBandwidthInGbps;
-    private Integer nvmes;
+    private @Nullable Double networkingBandwidthInGbps;
+    private @Nullable Integer nvmes;
     /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
-    private Double ocpus;
+    private @Nullable Double ocpus;
     /**
      * @return A short description of the instance&#39;s processor (CPU).
      * 
      */
-    private String processorDescription;
+    private @Nullable String processorDescription;
     /**
      * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
-    private Integer vcpus;
+    private @Nullable Integer vcpus;
 
     private GetInstanceShapeConfig() {}
     /**
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
-    public String baselineOcpuUtilization() {
-        return this.baselineOcpuUtilization;
+    public Optional<String> baselineOcpuUtilization() {
+        return Optional.ofNullable(this.baselineOcpuUtilization);
     }
     /**
      * @return A short description of the instance&#39;s graphics processing unit (GPU).
      * 
      */
-    public String gpuDescription() {
-        return this.gpuDescription;
+    public Optional<String> gpuDescription() {
+        return Optional.ofNullable(this.gpuDescription);
     }
     /**
      * @return The number of GPUs available to the instance.
      * 
      */
-    public Integer gpus() {
-        return this.gpus;
+    public Optional<Integer> gpus() {
+        return Optional.ofNullable(this.gpus);
     }
     /**
      * @return A short description of the local disks available to this instance.
      * 
      */
-    public String localDiskDescription() {
-        return this.localDiskDescription;
+    public Optional<String> localDiskDescription() {
+        return Optional.ofNullable(this.localDiskDescription);
     }
     /**
      * @return The number of local disks available to the instance.
      * 
      */
-    public Integer localDisks() {
-        return this.localDisks;
+    public Optional<Integer> localDisks() {
+        return Optional.ofNullable(this.localDisks);
     }
     /**
      * @return The aggregate size of all local disks, in gigabytes.
      * 
      */
-    public Double localDisksTotalSizeInGbs() {
-        return this.localDisksTotalSizeInGbs;
+    public Optional<Double> localDisksTotalSizeInGbs() {
+        return Optional.ofNullable(this.localDisksTotalSizeInGbs);
     }
     /**
      * @return The maximum number of VNIC attachments for the instance.
      * 
      */
-    public Integer maxVnicAttachments() {
-        return this.maxVnicAttachments;
+    public Optional<Integer> maxVnicAttachments() {
+        return Optional.ofNullable(this.maxVnicAttachments);
     }
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The networking bandwidth available to the instance, in gigabits per second.
      * 
      */
-    public Double networkingBandwidthInGbps() {
-        return this.networkingBandwidthInGbps;
+    public Optional<Double> networkingBandwidthInGbps() {
+        return Optional.ofNullable(this.networkingBandwidthInGbps);
     }
-    public Integer nvmes() {
-        return this.nvmes;
+    public Optional<Integer> nvmes() {
+        return Optional.ofNullable(this.nvmes);
     }
     /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
-    public Double ocpus() {
-        return this.ocpus;
+    public Optional<Double> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
     /**
      * @return A short description of the instance&#39;s processor (CPU).
      * 
      */
-    public String processorDescription() {
-        return this.processorDescription;
+    public Optional<String> processorDescription() {
+        return Optional.ofNullable(this.processorDescription);
     }
     /**
      * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
-    public Integer vcpus() {
-        return this.vcpus;
+    public Optional<Integer> vcpus() {
+        return Optional.ofNullable(this.vcpus);
     }
 
     public static Builder builder() {
@@ -171,19 +173,19 @@ public final class GetInstanceShapeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String baselineOcpuUtilization;
-        private String gpuDescription;
-        private Integer gpus;
-        private String localDiskDescription;
-        private Integer localDisks;
-        private Double localDisksTotalSizeInGbs;
-        private Integer maxVnicAttachments;
-        private Double memoryInGbs;
-        private Double networkingBandwidthInGbps;
-        private Integer nvmes;
-        private Double ocpus;
-        private String processorDescription;
-        private Integer vcpus;
+        private @Nullable String baselineOcpuUtilization;
+        private @Nullable String gpuDescription;
+        private @Nullable Integer gpus;
+        private @Nullable String localDiskDescription;
+        private @Nullable Integer localDisks;
+        private @Nullable Double localDisksTotalSizeInGbs;
+        private @Nullable Integer maxVnicAttachments;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double networkingBandwidthInGbps;
+        private @Nullable Integer nvmes;
+        private @Nullable Double ocpus;
+        private @Nullable String processorDescription;
+        private @Nullable Integer vcpus;
         public Builder() {}
         public Builder(GetInstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -203,68 +205,68 @@ public final class GetInstanceShapeConfig {
         }
 
         @CustomType.Setter
-        public Builder baselineOcpuUtilization(String baselineOcpuUtilization) {
-            this.baselineOcpuUtilization = Objects.requireNonNull(baselineOcpuUtilization);
+        public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
+            this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
         @CustomType.Setter
-        public Builder gpuDescription(String gpuDescription) {
-            this.gpuDescription = Objects.requireNonNull(gpuDescription);
+        public Builder gpuDescription(@Nullable String gpuDescription) {
+            this.gpuDescription = gpuDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder gpus(Integer gpus) {
-            this.gpus = Objects.requireNonNull(gpus);
+        public Builder gpus(@Nullable Integer gpus) {
+            this.gpus = gpus;
             return this;
         }
         @CustomType.Setter
-        public Builder localDiskDescription(String localDiskDescription) {
-            this.localDiskDescription = Objects.requireNonNull(localDiskDescription);
+        public Builder localDiskDescription(@Nullable String localDiskDescription) {
+            this.localDiskDescription = localDiskDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder localDisks(Integer localDisks) {
-            this.localDisks = Objects.requireNonNull(localDisks);
+        public Builder localDisks(@Nullable Integer localDisks) {
+            this.localDisks = localDisks;
             return this;
         }
         @CustomType.Setter
-        public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
-            this.localDisksTotalSizeInGbs = Objects.requireNonNull(localDisksTotalSizeInGbs);
+        public Builder localDisksTotalSizeInGbs(@Nullable Double localDisksTotalSizeInGbs) {
+            this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxVnicAttachments(Integer maxVnicAttachments) {
-            this.maxVnicAttachments = Objects.requireNonNull(maxVnicAttachments);
+        public Builder maxVnicAttachments(@Nullable Integer maxVnicAttachments) {
+            this.maxVnicAttachments = maxVnicAttachments;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
-            this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
+        public Builder networkingBandwidthInGbps(@Nullable Double networkingBandwidthInGbps) {
+            this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder nvmes(Integer nvmes) {
-            this.nvmes = Objects.requireNonNull(nvmes);
+        public Builder nvmes(@Nullable Integer nvmes) {
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Double ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
-        public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+        public Builder processorDescription(@Nullable String processorDescription) {
+            this.processorDescription = processorDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder vcpus(Integer vcpus) {
-            this.vcpus = Objects.requireNonNull(vcpus);
+        public Builder vcpus(@Nullable Integer vcpus) {
+            this.vcpus = vcpus;
             return this;
         }
         public GetInstanceShapeConfig build() {

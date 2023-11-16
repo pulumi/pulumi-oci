@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Applications in Oracle Cloud Infrastructure Data Flow service.
@@ -81,7 +80,7 @@ type GetApplicationsResult struct {
 	DisplayNameStartsWith *string                 `pulumi:"displayNameStartsWith"`
 	Filters               []GetApplicationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the user who created the resource.
 	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The Spark version utilized to run the application.
@@ -135,12 +134,6 @@ func (o GetApplicationsResultOutput) ToGetApplicationsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsResult] {
-	return pulumix.Output[GetApplicationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of applications.
 func (o GetApplicationsResultOutput) Applications() GetApplicationsApplicationArrayOutput {
 	return o.ApplyT(func(v GetApplicationsResult) []GetApplicationsApplication { return v.Applications }).(GetApplicationsApplicationArrayOutput)
@@ -165,8 +158,8 @@ func (o GetApplicationsResultOutput) Filters() GetApplicationsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApplicationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApplicationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user who created the resource.

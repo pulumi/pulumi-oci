@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The configuration details of a pipeline.
         /// </summary>
@@ -28,28 +28,28 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly bool DeleteRelatedJobRuns;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly bool? DeleteRelatedJobRuns;
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by its user-friendly name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details of the state of the step run.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The pipeline log configuration details.
         /// </summary>
@@ -61,15 +61,15 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
         /// </summary>
-        public readonly string PipelineId;
+        public readonly string? PipelineId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// The current state of the PipelineRun.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Array of step override details. Only Step Configuration is allowed to be overridden.
         /// </summary>
@@ -81,69 +81,69 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeAccepted;
+        public readonly string? TimeAccepted;
         /// <summary>
         /// The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetPipelineRunsPipelineRunResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunConfigurationDetailResult> configurationDetails,
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult> configurationOverrideDetails,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            bool deleteRelatedJobRuns,
+            bool? deleteRelatedJobRuns,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult> logConfigurationOverrideDetails,
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunLogDetailResult> logDetails,
 
-            string pipelineId,
+            string? pipelineId,
 
-            string projectId,
+            string? projectId,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult> stepOverrideDetails,
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunStepRunResult> stepRuns,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeAccepted,
+            string? timeAccepted,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             ConfigurationDetails = configurationDetails;

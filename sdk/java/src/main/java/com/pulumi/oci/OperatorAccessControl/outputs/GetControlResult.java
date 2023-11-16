@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetControlResult {
@@ -17,103 +19,103 @@ public final class GetControlResult {
      * @return List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
      * 
      */
-    private List<String> approvalRequiredOpActionLists;
+    private @Nullable List<String> approvalRequiredOpActionLists;
     /**
      * @return List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
      * 
      */
-    private List<String> approverGroupsLists;
+    private @Nullable List<String> approverGroupsLists;
     /**
      * @return List of users who can approve an access request associated with a target resource under the governance of this operator control.
      * 
      */
-    private List<String> approversLists;
+    private @Nullable List<String> approversLists;
     /**
      * @return The OCID of the compartment that contains the operator control.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description of operator control.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return List of emailId.
      * 
      */
-    private List<String> emailIdLists;
+    private @Nullable List<String> emailIdLists;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the operator control.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether the operator control is a default Operator Control.
      * 
      */
-    private Boolean isDefaultOperatorControl;
+    private @Nullable Boolean isDefaultOperatorControl;
     /**
      * @return Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */
-    private Boolean isFullyPreApproved;
+    private @Nullable Boolean isFullyPreApproved;
     /**
      * @return Description associated with the latest modification of the operator control.
      * 
      */
-    private String lastModifiedInfo;
+    private @Nullable String lastModifiedInfo;
     private String operatorControlId;
     /**
      * @return Name of the operator control. The name must be unique.
      * 
      */
-    private String operatorControlName;
+    private @Nullable String operatorControlName;
     /**
      * @return List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
      * 
      */
-    private List<String> preApprovedOpActionLists;
+    private @Nullable List<String> preApprovedOpActionLists;
     /**
      * @return resourceType for which the OperatorControl is applicable
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The current lifecycle state of the operator control.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
      * 
      */
-    private String systemMessage;
+    private @Nullable String systemMessage;
     /**
      * @return Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private String timeOfCreation;
+    private @Nullable String timeOfCreation;
     /**
      * @return Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      * 
      */
-    private String timeOfDeletion;
+    private @Nullable String timeOfDeletion;
     /**
      * @return Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private String timeOfModification;
+    private @Nullable String timeOfModification;
 
     private GetControlResult() {}
     /**
@@ -121,84 +123,84 @@ public final class GetControlResult {
      * 
      */
     public List<String> approvalRequiredOpActionLists() {
-        return this.approvalRequiredOpActionLists;
+        return this.approvalRequiredOpActionLists == null ? List.of() : this.approvalRequiredOpActionLists;
     }
     /**
      * @return List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
      * 
      */
     public List<String> approverGroupsLists() {
-        return this.approverGroupsLists;
+        return this.approverGroupsLists == null ? List.of() : this.approverGroupsLists;
     }
     /**
      * @return List of users who can approve an access request associated with a target resource under the governance of this operator control.
      * 
      */
     public List<String> approversLists() {
-        return this.approversLists;
+        return this.approversLists == null ? List.of() : this.approversLists;
     }
     /**
      * @return The OCID of the compartment that contains the operator control.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description of operator control.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return List of emailId.
      * 
      */
     public List<String> emailIdLists() {
-        return this.emailIdLists;
+        return this.emailIdLists == null ? List.of() : this.emailIdLists;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the operator control.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the operator control is a default Operator Control.
      * 
      */
-    public Boolean isDefaultOperatorControl() {
-        return this.isDefaultOperatorControl;
+    public Optional<Boolean> isDefaultOperatorControl() {
+        return Optional.ofNullable(this.isDefaultOperatorControl);
     }
     /**
      * @return Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */
-    public Boolean isFullyPreApproved() {
-        return this.isFullyPreApproved;
+    public Optional<Boolean> isFullyPreApproved() {
+        return Optional.ofNullable(this.isFullyPreApproved);
     }
     /**
      * @return Description associated with the latest modification of the operator control.
      * 
      */
-    public String lastModifiedInfo() {
-        return this.lastModifiedInfo;
+    public Optional<String> lastModifiedInfo() {
+        return Optional.ofNullable(this.lastModifiedInfo);
     }
     public String operatorControlId() {
         return this.operatorControlId;
@@ -207,57 +209,57 @@ public final class GetControlResult {
      * @return Name of the operator control. The name must be unique.
      * 
      */
-    public String operatorControlName() {
-        return this.operatorControlName;
+    public Optional<String> operatorControlName() {
+        return Optional.ofNullable(this.operatorControlName);
     }
     /**
      * @return List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
      * 
      */
     public List<String> preApprovedOpActionLists() {
-        return this.preApprovedOpActionLists;
+        return this.preApprovedOpActionLists == null ? List.of() : this.preApprovedOpActionLists;
     }
     /**
      * @return resourceType for which the OperatorControl is applicable
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return The current lifecycle state of the operator control.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
      * 
      */
-    public String systemMessage() {
-        return this.systemMessage;
+    public Optional<String> systemMessage() {
+        return Optional.ofNullable(this.systemMessage);
     }
     /**
      * @return Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public String timeOfCreation() {
-        return this.timeOfCreation;
+    public Optional<String> timeOfCreation() {
+        return Optional.ofNullable(this.timeOfCreation);
     }
     /**
      * @return Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      * 
      */
-    public String timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Optional<String> timeOfDeletion() {
+        return Optional.ofNullable(this.timeOfDeletion);
     }
     /**
      * @return Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public String timeOfModification() {
-        return this.timeOfModification;
+    public Optional<String> timeOfModification() {
+        return Optional.ofNullable(this.timeOfModification);
     }
 
     public static Builder builder() {
@@ -269,27 +271,27 @@ public final class GetControlResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> approvalRequiredOpActionLists;
-        private List<String> approverGroupsLists;
-        private List<String> approversLists;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private List<String> emailIdLists;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isDefaultOperatorControl;
-        private Boolean isFullyPreApproved;
-        private String lastModifiedInfo;
+        private @Nullable List<String> approvalRequiredOpActionLists;
+        private @Nullable List<String> approverGroupsLists;
+        private @Nullable List<String> approversLists;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable List<String> emailIdLists;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isDefaultOperatorControl;
+        private @Nullable Boolean isFullyPreApproved;
+        private @Nullable String lastModifiedInfo;
         private String operatorControlId;
-        private String operatorControlName;
-        private List<String> preApprovedOpActionLists;
-        private String resourceType;
-        private String state;
-        private String systemMessage;
-        private String timeOfCreation;
-        private String timeOfDeletion;
-        private String timeOfModification;
+        private @Nullable String operatorControlName;
+        private @Nullable List<String> preApprovedOpActionLists;
+        private @Nullable String resourceType;
+        private @Nullable String state;
+        private @Nullable String systemMessage;
+        private @Nullable String timeOfCreation;
+        private @Nullable String timeOfDeletion;
+        private @Nullable String timeOfModification;
         public Builder() {}
         public Builder(GetControlResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -317,75 +319,75 @@ public final class GetControlResult {
         }
 
         @CustomType.Setter
-        public Builder approvalRequiredOpActionLists(List<String> approvalRequiredOpActionLists) {
-            this.approvalRequiredOpActionLists = Objects.requireNonNull(approvalRequiredOpActionLists);
+        public Builder approvalRequiredOpActionLists(@Nullable List<String> approvalRequiredOpActionLists) {
+            this.approvalRequiredOpActionLists = approvalRequiredOpActionLists;
             return this;
         }
         public Builder approvalRequiredOpActionLists(String... approvalRequiredOpActionLists) {
             return approvalRequiredOpActionLists(List.of(approvalRequiredOpActionLists));
         }
         @CustomType.Setter
-        public Builder approverGroupsLists(List<String> approverGroupsLists) {
-            this.approverGroupsLists = Objects.requireNonNull(approverGroupsLists);
+        public Builder approverGroupsLists(@Nullable List<String> approverGroupsLists) {
+            this.approverGroupsLists = approverGroupsLists;
             return this;
         }
         public Builder approverGroupsLists(String... approverGroupsLists) {
             return approverGroupsLists(List.of(approverGroupsLists));
         }
         @CustomType.Setter
-        public Builder approversLists(List<String> approversLists) {
-            this.approversLists = Objects.requireNonNull(approversLists);
+        public Builder approversLists(@Nullable List<String> approversLists) {
+            this.approversLists = approversLists;
             return this;
         }
         public Builder approversLists(String... approversLists) {
             return approversLists(List.of(approversLists));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder emailIdLists(List<String> emailIdLists) {
-            this.emailIdLists = Objects.requireNonNull(emailIdLists);
+        public Builder emailIdLists(@Nullable List<String> emailIdLists) {
+            this.emailIdLists = emailIdLists;
             return this;
         }
         public Builder emailIdLists(String... emailIdLists) {
             return emailIdLists(List.of(emailIdLists));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefaultOperatorControl(Boolean isDefaultOperatorControl) {
-            this.isDefaultOperatorControl = Objects.requireNonNull(isDefaultOperatorControl);
+        public Builder isDefaultOperatorControl(@Nullable Boolean isDefaultOperatorControl) {
+            this.isDefaultOperatorControl = isDefaultOperatorControl;
             return this;
         }
         @CustomType.Setter
-        public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
-            this.isFullyPreApproved = Objects.requireNonNull(isFullyPreApproved);
+        public Builder isFullyPreApproved(@Nullable Boolean isFullyPreApproved) {
+            this.isFullyPreApproved = isFullyPreApproved;
             return this;
         }
         @CustomType.Setter
-        public Builder lastModifiedInfo(String lastModifiedInfo) {
-            this.lastModifiedInfo = Objects.requireNonNull(lastModifiedInfo);
+        public Builder lastModifiedInfo(@Nullable String lastModifiedInfo) {
+            this.lastModifiedInfo = lastModifiedInfo;
             return this;
         }
         @CustomType.Setter
@@ -394,46 +396,46 @@ public final class GetControlResult {
             return this;
         }
         @CustomType.Setter
-        public Builder operatorControlName(String operatorControlName) {
-            this.operatorControlName = Objects.requireNonNull(operatorControlName);
+        public Builder operatorControlName(@Nullable String operatorControlName) {
+            this.operatorControlName = operatorControlName;
             return this;
         }
         @CustomType.Setter
-        public Builder preApprovedOpActionLists(List<String> preApprovedOpActionLists) {
-            this.preApprovedOpActionLists = Objects.requireNonNull(preApprovedOpActionLists);
+        public Builder preApprovedOpActionLists(@Nullable List<String> preApprovedOpActionLists) {
+            this.preApprovedOpActionLists = preApprovedOpActionLists;
             return this;
         }
         public Builder preApprovedOpActionLists(String... preApprovedOpActionLists) {
             return preApprovedOpActionLists(List.of(preApprovedOpActionLists));
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemMessage(String systemMessage) {
-            this.systemMessage = Objects.requireNonNull(systemMessage);
+        public Builder systemMessage(@Nullable String systemMessage) {
+            this.systemMessage = systemMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfCreation(String timeOfCreation) {
-            this.timeOfCreation = Objects.requireNonNull(timeOfCreation);
+        public Builder timeOfCreation(@Nullable String timeOfCreation) {
+            this.timeOfCreation = timeOfCreation;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+        public Builder timeOfDeletion(@Nullable String timeOfDeletion) {
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfModification(String timeOfModification) {
-            this.timeOfModification = Objects.requireNonNull(timeOfModification);
+        public Builder timeOfModification(@Nullable String timeOfModification) {
+            this.timeOfModification = timeOfModification;
             return this;
         }
         public GetControlResult build() {

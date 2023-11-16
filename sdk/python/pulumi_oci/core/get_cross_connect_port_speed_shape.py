@@ -44,10 +44,7 @@ class GetCrossConnectPortSpeedShapeResult:
 
     @property
     @pulumi.getter(name="crossConnectPortSpeedShapes")
-    def cross_connect_port_speed_shapes(self) -> Sequence['outputs.GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShapeResult']:
-        """
-        The list of cross_connect_port_speed_shapes.
-        """
+    def cross_connect_port_speed_shapes(self) -> Optional[Sequence['outputs.GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShapeResult']]:
         return pulumi.get(self, "cross_connect_port_speed_shapes")
 
     @property
@@ -57,7 +54,7 @@ class GetCrossConnectPortSpeedShapeResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,23 +77,7 @@ def get_cross_connect_port_speed_shape(compartment_id: Optional[str] = None,
                                        filters: Optional[Sequence[pulumi.InputType['GetCrossConnectPortSpeedShapeFilterArgs']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectPortSpeedShapeResult:
     """
-    This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the available port speeds for cross-connects. You need this information
-    so you can specify your desired port speed (that is, shape) when you create a
-    cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_port_speed_shapes = oci.Core.get_cross_connect_port_speed_shape(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -116,22 +97,6 @@ def get_cross_connect_port_speed_shape_output(compartment_id: Optional[pulumi.In
                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCrossConnectPortSpeedShapeFilterArgs']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectPortSpeedShapeResult]:
     """
-    This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the available port speeds for cross-connects. You need this information
-    so you can specify your desired port speed (that is, shape) when you create a
-    cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_port_speed_shapes = oci.Core.get_cross_connect_port_speed_shape(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

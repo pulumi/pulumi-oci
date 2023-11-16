@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -60,40 +59,40 @@ type LookupDetectAnomalyJobArgs struct {
 // A collection of values returned by getDetectAnomalyJob.
 type LookupDetectAnomalyJobResult struct {
 	// The OCID of the compartment that starts the job.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Detect anomaly job description.
-	Description        string `pulumi:"description"`
-	DetectAnomalyJobId string `pulumi:"detectAnomalyJobId"`
+	Description        *string `pulumi:"description"`
+	DetectAnomalyJobId string  `pulumi:"detectAnomalyJobId"`
 	// Detect anomaly job display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Id of the job.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Input details for detect anomaly job.
 	InputDetails []GetDetectAnomalyJobInputDetail `pulumi:"inputDetails"`
 	// The current state details of the batch document job.
-	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// The OCID of the trained model.
-	ModelId string `pulumi:"modelId"`
+	ModelId *string `pulumi:"modelId"`
 	// Output details for detect anomaly job.
 	OutputDetails []GetDetectAnomalyJobOutputDetail `pulumi:"outputDetails"`
 	// The OCID of the project.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The value that customer can adjust to control the sensitivity of anomaly detection
-	Sensitivity float64 `pulumi:"sensitivity"`
+	Sensitivity *float64 `pulumi:"sensitivity"`
 	// The current state of the batch document job.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Job accepted time
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// Job finished time
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// Job started time
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 func LookupDetectAnomalyJobOutput(ctx *pulumi.Context, args LookupDetectAnomalyJobOutputArgs, opts ...pulumi.InvokeOption) LookupDetectAnomalyJobResultOutput {
@@ -134,15 +133,9 @@ func (o LookupDetectAnomalyJobResultOutput) ToLookupDetectAnomalyJobResultOutput
 	return o
 }
 
-func (o LookupDetectAnomalyJobResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDetectAnomalyJobResult] {
-	return pulumix.Output[LookupDetectAnomalyJobResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that starts the job.
-func (o LookupDetectAnomalyJobResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -151,8 +144,8 @@ func (o LookupDetectAnomalyJobResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Detect anomaly job description.
-func (o LookupDetectAnomalyJobResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDetectAnomalyJobResultOutput) DetectAnomalyJobId() pulumi.StringOutput {
@@ -160,8 +153,8 @@ func (o LookupDetectAnomalyJobResultOutput) DetectAnomalyJobId() pulumi.StringOu
 }
 
 // Detect anomaly job display name.
-func (o LookupDetectAnomalyJobResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -170,8 +163,8 @@ func (o LookupDetectAnomalyJobResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Id of the job.
-func (o LookupDetectAnomalyJobResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Input details for detect anomaly job.
@@ -180,13 +173,13 @@ func (o LookupDetectAnomalyJobResultOutput) InputDetails() GetDetectAnomalyJobIn
 }
 
 // The current state details of the batch document job.
-func (o LookupDetectAnomalyJobResultOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the trained model.
-func (o LookupDetectAnomalyJobResultOutput) ModelId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.ModelId }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.ModelId }).(pulumi.StringPtrOutput)
 }
 
 // Output details for detect anomaly job.
@@ -195,18 +188,18 @@ func (o LookupDetectAnomalyJobResultOutput) OutputDetails() GetDetectAnomalyJobO
 }
 
 // The OCID of the project.
-func (o LookupDetectAnomalyJobResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The value that customer can adjust to control the sensitivity of anomaly detection
-func (o LookupDetectAnomalyJobResultOutput) Sensitivity() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) float64 { return v.Sensitivity }).(pulumi.Float64Output)
+func (o LookupDetectAnomalyJobResultOutput) Sensitivity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *float64 { return v.Sensitivity }).(pulumi.Float64PtrOutput)
 }
 
 // The current state of the batch document job.
-func (o LookupDetectAnomalyJobResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -215,18 +208,18 @@ func (o LookupDetectAnomalyJobResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Job accepted time
-func (o LookupDetectAnomalyJobResultOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // Job finished time
-func (o LookupDetectAnomalyJobResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // Job started time
-func (o LookupDetectAnomalyJobResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o LookupDetectAnomalyJobResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -61,7 +61,7 @@ export interface GetApisResult {
     /**
      * The list of api_collection.
      */
-    readonly apiCollections: outputs.ApiGateway.GetApisApiCollection[];
+    readonly apiCollections?: outputs.ApiGateway.GetApisApiCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      */
@@ -74,7 +74,7 @@ export interface GetApisResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the API.
      */

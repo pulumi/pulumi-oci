@@ -67,37 +67,37 @@ namespace Pulumi.Oci.Email
         /// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
         /// </summary>
         [Output("errorDetail")]
-        public Output<string> ErrorDetail { get; private set; } = null!;
+        public Output<string?> ErrorDetail { get; private set; } = null!;
 
         /// <summary>
         /// DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
         /// </summary>
         [Output("errorSource")]
-        public Output<string> ErrorSource { get; private set; } = null!;
+        public Output<string?> ErrorSource { get; private set; } = null!;
 
         /// <summary>
         /// The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
         /// </summary>
         [Output("messageId")]
-        public Output<string> MessageId { get; private set; } = null!;
+        public Output<string?> MessageId { get; private set; } = null!;
 
         /// <summary>
         /// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
         /// </summary>
         [Output("reason")]
-        public Output<string> Reason { get; private set; } = null!;
+        public Output<string?> Reason { get; private set; } = null!;
 
         /// <summary>
         /// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         [Output("timeLastSuppressed")]
-        public Output<string> TimeLastSuppressed { get; private set; } = null!;
+        public Output<string?> TimeLastSuppressed { get; private set; } = null!;
 
 
         /// <summary>

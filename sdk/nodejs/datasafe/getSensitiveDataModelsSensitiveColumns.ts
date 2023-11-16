@@ -159,7 +159,7 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCaseInSensitive?: boolean;
     /**
      * The type of the database object that contains the sensitive column.
@@ -181,7 +181,7 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
     /**
      * The list of sensitive_column_collection.
      */
-    readonly sensitiveColumnCollections: outputs.DataSafe.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection[];
+    readonly sensitiveColumnCollections?: outputs.DataSafe.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection[];
     readonly sensitiveColumnLifecycleState?: string;
     /**
      * The OCID of the sensitive data model that contains the sensitive column.

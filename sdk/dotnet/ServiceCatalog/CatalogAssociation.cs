@@ -55,7 +55,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// The type of the entity that is associated with the service catalog.
         /// </summary>
         [Output("entityType")]
-        public Output<string> EntityType { get; private set; } = null!;
+        public Output<string?> EntityType { get; private set; } = null!;
 
         /// <summary>
         /// Identifier of the service catalog.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// Timestamp of when the resource was associated with service catalog.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

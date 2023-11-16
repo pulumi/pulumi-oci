@@ -9,6 +9,7 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingObjectsMaskingObje
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetMaskingPolicyMaskingObjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of masking_object_collection.
      * 
      */
-    private List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections;
+    private @Nullable List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections;
     private String maskingPolicyId;
     /**
      * @return The type of the database object that contains the masking column.
@@ -49,15 +50,15 @@ public final class GetMaskingPolicyMaskingObjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of masking_object_collection.
      * 
      */
     public List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections() {
-        return this.maskingObjectCollections;
+        return this.maskingObjectCollections == null ? List.of() : this.maskingObjectCollections;
     }
     public String maskingPolicyId() {
         return this.maskingPolicyId;
@@ -94,8 +95,8 @@ public final class GetMaskingPolicyMaskingObjectsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetMaskingPolicyMaskingObjectsFilter> filters;
-        private String id;
-        private List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections;
         private String maskingPolicyId;
         private @Nullable List<String> objectTypes;
         private @Nullable List<String> objects;
@@ -121,13 +122,13 @@ public final class GetMaskingPolicyMaskingObjectsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingObjectCollections(List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections) {
-            this.maskingObjectCollections = Objects.requireNonNull(maskingObjectCollections);
+        public Builder maskingObjectCollections(@Nullable List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections) {
+            this.maskingObjectCollections = maskingObjectCollections;
             return this;
         }
         public Builder maskingObjectCollections(GetMaskingPolicyMaskingObjectsMaskingObjectCollection... maskingObjectCollections) {

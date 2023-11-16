@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail {
@@ -14,51 +16,51 @@ public final class GetModelsModelCollectionItemTestStrategyValidationDatasetLoca
      * @return Object storage bucket name
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Possible object storage location types
      * 
      */
-    private String locationType;
+    private @Nullable String locationType;
     /**
      * @return Object storage namespace
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Array of files which need to be processed in the bucket
      * 
      */
-    private List<String> objectNames;
+    private @Nullable List<String> objectNames;
 
     private GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail() {}
     /**
      * @return Object storage bucket name
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Possible object storage location types
      * 
      */
-    public String locationType() {
-        return this.locationType;
+    public Optional<String> locationType() {
+        return Optional.ofNullable(this.locationType);
     }
     /**
      * @return Object storage namespace
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Array of files which need to be processed in the bucket
      * 
      */
     public List<String> objectNames() {
-        return this.objectNames;
+        return this.objectNames == null ? List.of() : this.objectNames;
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetModelsModelCollectionItemTestStrategyValidationDatasetLoca
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String locationType;
-        private String namespace;
-        private List<String> objectNames;
+        private @Nullable String bucket;
+        private @Nullable String locationType;
+        private @Nullable String namespace;
+        private @Nullable List<String> objectNames;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetModelsModelCollectionItemTestStrategyValidationDatasetLoca
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder locationType(String locationType) {
-            this.locationType = Objects.requireNonNull(locationType);
+        public Builder locationType(@Nullable String locationType) {
+            this.locationType = locationType;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder objectNames(List<String> objectNames) {
-            this.objectNames = Objects.requireNonNull(objectNames);
+        public Builder objectNames(@Nullable List<String> objectNames) {
+            this.objectNames = objectNames;
             return this;
         }
         public Builder objectNames(String... objectNames) {

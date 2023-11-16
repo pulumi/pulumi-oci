@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultsVault {
@@ -22,199 +24,199 @@ public final class GetVaultsVault {
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
      * 
      */
-    private String cryptoEndpoint;
+    private @Nullable String cryptoEndpoint;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Summary about metadata of external key manager to be returned to the customer as a response.
      * 
      */
-    private List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries;
-    private List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas;
+    private @Nullable List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries;
+    private @Nullable List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the vault.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
-    private Boolean isPrimary;
+    private @Nullable Boolean isPrimary;
     /**
      * @return The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
-    private String managementEndpoint;
+    private @Nullable String managementEndpoint;
     /**
      * @return Vault replica details
      * 
      */
-    private List<GetVaultsVaultReplicaDetail> replicaDetails;
-    private List<GetVaultsVaultRestoreFromFile> restoreFromFiles;
-    private List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores;
-    private Boolean restoreTrigger;
+    private @Nullable List<GetVaultsVaultReplicaDetail> replicaDetails;
+    private @Nullable List<GetVaultsVaultRestoreFromFile> restoreFromFiles;
+    private @Nullable List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores;
+    private @Nullable Boolean restoreTrigger;
     /**
      * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
-    private String restoredFromVaultId;
+    private @Nullable String restoredFromVaultId;
     /**
      * @return The vault&#39;s current lifecycle state.  Example: `DELETED`
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An optional property to indicate when to delete the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfDeletion;
+    private @Nullable String timeOfDeletion;
     /**
      * @return The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      * 
      */
-    private String vaultType;
+    private @Nullable String vaultType;
 
     private GetVaultsVault() {}
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
      * 
      */
-    public String cryptoEndpoint() {
-        return this.cryptoEndpoint;
+    public Optional<String> cryptoEndpoint() {
+        return Optional.ofNullable(this.cryptoEndpoint);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Summary about metadata of external key manager to be returned to the customer as a response.
      * 
      */
     public List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries() {
-        return this.externalKeyManagerMetadataSummaries;
+        return this.externalKeyManagerMetadataSummaries == null ? List.of() : this.externalKeyManagerMetadataSummaries;
     }
     public List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas() {
-        return this.externalKeyManagerMetadatas;
+        return this.externalKeyManagerMetadatas == null ? List.of() : this.externalKeyManagerMetadatas;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the vault.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
-    public Boolean isPrimary() {
-        return this.isPrimary;
+    public Optional<Boolean> isPrimary() {
+        return Optional.ofNullable(this.isPrimary);
     }
     /**
      * @return The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
-    public String managementEndpoint() {
-        return this.managementEndpoint;
+    public Optional<String> managementEndpoint() {
+        return Optional.ofNullable(this.managementEndpoint);
     }
     /**
      * @return Vault replica details
      * 
      */
     public List<GetVaultsVaultReplicaDetail> replicaDetails() {
-        return this.replicaDetails;
+        return this.replicaDetails == null ? List.of() : this.replicaDetails;
     }
     public List<GetVaultsVaultRestoreFromFile> restoreFromFiles() {
-        return this.restoreFromFiles;
+        return this.restoreFromFiles == null ? List.of() : this.restoreFromFiles;
     }
     public List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores() {
-        return this.restoreFromObjectStores;
+        return this.restoreFromObjectStores == null ? List.of() : this.restoreFromObjectStores;
     }
-    public Boolean restoreTrigger() {
-        return this.restoreTrigger;
+    public Optional<Boolean> restoreTrigger() {
+        return Optional.ofNullable(this.restoreTrigger);
     }
     /**
      * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
-    public String restoredFromVaultId() {
-        return this.restoredFromVaultId;
+    public Optional<String> restoredFromVaultId() {
+        return Optional.ofNullable(this.restoredFromVaultId);
     }
     /**
      * @return The vault&#39;s current lifecycle state.  Example: `DELETED`
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return An optional property to indicate when to delete the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Optional<String> timeOfDeletion() {
+        return Optional.ofNullable(this.timeOfDeletion);
     }
     /**
      * @return The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      * 
      */
-    public String vaultType() {
-        return this.vaultType;
+    public Optional<String> vaultType() {
+        return Optional.ofNullable(this.vaultType);
     }
 
     public static Builder builder() {
@@ -226,25 +228,25 @@ public final class GetVaultsVault {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String cryptoEndpoint;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries;
-        private List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isPrimary;
-        private String managementEndpoint;
-        private List<GetVaultsVaultReplicaDetail> replicaDetails;
-        private List<GetVaultsVaultRestoreFromFile> restoreFromFiles;
-        private List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores;
-        private Boolean restoreTrigger;
-        private String restoredFromVaultId;
-        private String state;
-        private String timeCreated;
-        private String timeOfDeletion;
-        private String vaultType;
+        private @Nullable String compartmentId;
+        private @Nullable String cryptoEndpoint;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries;
+        private @Nullable List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isPrimary;
+        private @Nullable String managementEndpoint;
+        private @Nullable List<GetVaultsVaultReplicaDetail> replicaDetails;
+        private @Nullable List<GetVaultsVaultRestoreFromFile> restoreFromFiles;
+        private @Nullable List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores;
+        private @Nullable Boolean restoreTrigger;
+        private @Nullable String restoredFromVaultId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeOfDeletion;
+        private @Nullable String vaultType;
         public Builder() {}
         public Builder(GetVaultsVault defaults) {
     	      Objects.requireNonNull(defaults);
@@ -270,113 +272,113 @@ public final class GetVaultsVault {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cryptoEndpoint(String cryptoEndpoint) {
-            this.cryptoEndpoint = Objects.requireNonNull(cryptoEndpoint);
+        public Builder cryptoEndpoint(@Nullable String cryptoEndpoint) {
+            this.cryptoEndpoint = cryptoEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalKeyManagerMetadataSummaries(List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries) {
-            this.externalKeyManagerMetadataSummaries = Objects.requireNonNull(externalKeyManagerMetadataSummaries);
+        public Builder externalKeyManagerMetadataSummaries(@Nullable List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries) {
+            this.externalKeyManagerMetadataSummaries = externalKeyManagerMetadataSummaries;
             return this;
         }
         public Builder externalKeyManagerMetadataSummaries(GetVaultsVaultExternalKeyManagerMetadataSummary... externalKeyManagerMetadataSummaries) {
             return externalKeyManagerMetadataSummaries(List.of(externalKeyManagerMetadataSummaries));
         }
         @CustomType.Setter
-        public Builder externalKeyManagerMetadatas(List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas) {
-            this.externalKeyManagerMetadatas = Objects.requireNonNull(externalKeyManagerMetadatas);
+        public Builder externalKeyManagerMetadatas(@Nullable List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas) {
+            this.externalKeyManagerMetadatas = externalKeyManagerMetadatas;
             return this;
         }
         public Builder externalKeyManagerMetadatas(GetVaultsVaultExternalKeyManagerMetadata... externalKeyManagerMetadatas) {
             return externalKeyManagerMetadatas(List.of(externalKeyManagerMetadatas));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+        public Builder isPrimary(@Nullable Boolean isPrimary) {
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
-        public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+        public Builder managementEndpoint(@Nullable String managementEndpoint) {
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder replicaDetails(List<GetVaultsVaultReplicaDetail> replicaDetails) {
-            this.replicaDetails = Objects.requireNonNull(replicaDetails);
+        public Builder replicaDetails(@Nullable List<GetVaultsVaultReplicaDetail> replicaDetails) {
+            this.replicaDetails = replicaDetails;
             return this;
         }
         public Builder replicaDetails(GetVaultsVaultReplicaDetail... replicaDetails) {
             return replicaDetails(List.of(replicaDetails));
         }
         @CustomType.Setter
-        public Builder restoreFromFiles(List<GetVaultsVaultRestoreFromFile> restoreFromFiles) {
-            this.restoreFromFiles = Objects.requireNonNull(restoreFromFiles);
+        public Builder restoreFromFiles(@Nullable List<GetVaultsVaultRestoreFromFile> restoreFromFiles) {
+            this.restoreFromFiles = restoreFromFiles;
             return this;
         }
         public Builder restoreFromFiles(GetVaultsVaultRestoreFromFile... restoreFromFiles) {
             return restoreFromFiles(List.of(restoreFromFiles));
         }
         @CustomType.Setter
-        public Builder restoreFromObjectStores(List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores) {
-            this.restoreFromObjectStores = Objects.requireNonNull(restoreFromObjectStores);
+        public Builder restoreFromObjectStores(@Nullable List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores) {
+            this.restoreFromObjectStores = restoreFromObjectStores;
             return this;
         }
         public Builder restoreFromObjectStores(GetVaultsVaultRestoreFromObjectStore... restoreFromObjectStores) {
             return restoreFromObjectStores(List.of(restoreFromObjectStores));
         }
         @CustomType.Setter
-        public Builder restoreTrigger(Boolean restoreTrigger) {
-            this.restoreTrigger = Objects.requireNonNull(restoreTrigger);
+        public Builder restoreTrigger(@Nullable Boolean restoreTrigger) {
+            this.restoreTrigger = restoreTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder restoredFromVaultId(String restoredFromVaultId) {
-            this.restoredFromVaultId = Objects.requireNonNull(restoredFromVaultId);
+        public Builder restoredFromVaultId(@Nullable String restoredFromVaultId) {
+            this.restoredFromVaultId = restoredFromVaultId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+        public Builder timeOfDeletion(@Nullable String timeOfDeletion) {
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultType(String vaultType) {
-            this.vaultType = Objects.requireNonNull(vaultType);
+        public Builder vaultType(@Nullable String vaultType) {
+            this.vaultType = vaultType;
             return this;
         }
         public GetVaultsVault build() {

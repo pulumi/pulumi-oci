@@ -47,20 +47,20 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
     /**
      * The limit and usage for a specific environment type, for example, production, development, or test.
      */
-    readonly developmentLimitAndUsages: outputs.Functions.GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage[];
+    readonly developmentLimitAndUsages?: outputs.Functions.GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage[];
     readonly fusionEnvironmentFamilyId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The limit and usage for a specific environment type, for example, production, development, or test.
      */
-    readonly productionLimitAndUsages: outputs.Functions.GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage[];
+    readonly productionLimitAndUsages?: outputs.Functions.GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage[];
     /**
      * The limit and usage for a specific environment type, for example, production, development, or test.
      */
-    readonly testLimitAndUsages: outputs.Functions.GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage[];
+    readonly testLimitAndUsages?: outputs.Functions.GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage[];
 }
 /**
  * This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.

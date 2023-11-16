@@ -20,19 +20,19 @@ namespace Pulumi.Oci.Streaming.Outputs
         /// <summary>
         /// The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
         /// </summary>
-        public readonly string PrivateEndpointIp;
+        public readonly string? PrivateEndpointIp;
         /// <summary>
         /// The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetStreamPoolPrivateEndpointSettingResult(
             ImmutableArray<string> nsgIds,
 
-            string privateEndpointIp,
+            string? privateEndpointIp,
 
-            string subnetId)
+            string? subnetId)
         {
             NsgIds = nsgIds;
             PrivateEndpointIp = privateEndpointIp;

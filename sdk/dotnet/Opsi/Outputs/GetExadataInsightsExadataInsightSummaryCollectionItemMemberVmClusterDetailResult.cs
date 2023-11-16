@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly string DbmPrivateEndpointId;
+        public readonly string? CompartmentId;
+        public readonly string? DbmPrivateEndpointId;
         public readonly ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult> MemberDatabaseDetails;
-        public readonly string OpsiPrivateEndpointId;
-        public readonly string VmclusterId;
+        public readonly string? OpsiPrivateEndpointId;
+        public readonly string? VmclusterId;
 
         [OutputConstructor]
         private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string dbmPrivateEndpointId,
+            string? dbmPrivateEndpointId,
 
             ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult> memberDatabaseDetails,
 
-            string opsiPrivateEndpointId,
+            string? opsiPrivateEndpointId,
 
-            string vmclusterId)
+            string? vmclusterId)
         {
             CompartmentId = compartmentId;
             DbmPrivateEndpointId = dbmPrivateEndpointId;

@@ -29,17 +29,17 @@ export function getAutonomousDatabaseRegionalWalletManagement(opts?: pulumi.Invo
  * A collection of values returned by getAutonomousDatabaseRegionalWalletManagement.
  */
 export interface GetAutonomousDatabaseRegionalWalletManagementResult {
-    readonly gracePeriod: number;
-    readonly id: string;
-    readonly shouldRotate: boolean;
+    readonly gracePeriod?: number;
+    readonly id?: string;
+    readonly shouldRotate?: boolean;
     /**
      * The current lifecycle state of the Autonomous Database wallet.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the wallet was last rotated.
      */
-    readonly timeRotated: string;
+    readonly timeRotated?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.

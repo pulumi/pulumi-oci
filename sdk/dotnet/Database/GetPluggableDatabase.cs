@@ -108,47 +108,47 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Connection strings to connect to an Oracle Pluggable Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPluggableDatabaseConnectionStringResult> ConnectionStrings;
-        public readonly string ContainerDatabaseAdminPassword;
+        public readonly string? ContainerDatabaseAdminPassword;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
         /// </summary>
-        public readonly string ContainerDatabaseId;
-        public readonly int ConvertToRegularTrigger;
+        public readonly string? ContainerDatabaseId;
+        public readonly int? ConvertToRegularTrigger;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         /// </summary>
-        public readonly bool IsRestricted;
+        public readonly bool? IsRestricted;
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         /// </summary>
-        public readonly string OpenMode;
-        public readonly string PdbAdminPassword;
+        public readonly string? OpenMode;
+        public readonly string? PdbAdminPassword;
         public readonly ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailResult> PdbCreationTypeDetails;
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         /// </summary>
-        public readonly string PdbName;
+        public readonly string? PdbName;
         /// <summary>
         /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
         /// </summary>
@@ -158,53 +158,53 @@ namespace Pulumi.Oci.Database
         /// The configuration of the Pluggable Database Management service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> PluggableDatabaseManagementConfigs;
-        public readonly int RefreshTrigger;
+        public readonly int? RefreshTrigger;
         /// <summary>
         /// Pluggable Database Refreshable Clone Configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPluggableDatabaseRefreshableCloneConfigResult> RefreshableCloneConfigs;
-        public readonly int RotateKeyTrigger;
-        public readonly bool ShouldCreatePdbBackup;
-        public readonly bool ShouldPdbAdminAccountBeLocked;
+        public readonly int? RotateKeyTrigger;
+        public readonly bool? ShouldCreatePdbBackup;
+        public readonly bool? ShouldPdbAdminAccountBeLocked;
         /// <summary>
         /// The current state of the pluggable database.
         /// </summary>
-        public readonly string State;
-        public readonly string TdeWalletPassword;
+        public readonly string? State;
+        public readonly string? TdeWalletPassword;
         /// <summary>
         /// The date and time the pluggable database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetPluggableDatabaseResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetPluggableDatabaseConnectionStringResult> connectionStrings,
 
-            string containerDatabaseAdminPassword,
+            string? containerDatabaseAdminPassword,
 
-            string containerDatabaseId,
+            string? containerDatabaseId,
 
-            int convertToRegularTrigger,
+            int? convertToRegularTrigger,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isRestricted,
+            bool? isRestricted,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string openMode,
+            string? openMode,
 
-            string pdbAdminPassword,
+            string? pdbAdminPassword,
 
             ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailResult> pdbCreationTypeDetails,
 
-            string pdbName,
+            string? pdbName,
 
             ImmutableArray<Outputs.GetPluggableDatabasePdbNodeLevelDetailResult> pdbNodeLevelDetails,
 
@@ -212,21 +212,21 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> pluggableDatabaseManagementConfigs,
 
-            int refreshTrigger,
+            int? refreshTrigger,
 
             ImmutableArray<Outputs.GetPluggableDatabaseRefreshableCloneConfigResult> refreshableCloneConfigs,
 
-            int rotateKeyTrigger,
+            int? rotateKeyTrigger,
 
-            bool shouldCreatePdbBackup,
+            bool? shouldCreatePdbBackup,
 
-            bool shouldPdbAdminAccountBeLocked,
+            bool? shouldPdbAdminAccountBeLocked,
 
-            string state,
+            string? state,
 
-            string tdeWalletPassword,
+            string? tdeWalletPassword,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             ConnectionStrings = connectionStrings;

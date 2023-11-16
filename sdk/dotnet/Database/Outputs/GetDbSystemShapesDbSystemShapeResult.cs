@@ -16,137 +16,137 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The maximum number of CPU cores that can be enabled on the DB system for this shape.
         /// </summary>
-        public readonly int AvailableCoreCount;
+        public readonly int? AvailableCoreCount;
         /// <summary>
         /// The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
         /// </summary>
-        public readonly int AvailableCoreCountPerNode;
+        public readonly int? AvailableCoreCountPerNode;
         /// <summary>
         /// The maximum DATA storage that can be enabled for this shape.
         /// </summary>
-        public readonly int AvailableDataStorageInTbs;
+        public readonly int? AvailableDataStorageInTbs;
         /// <summary>
         /// The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
         /// </summary>
-        public readonly double AvailableDataStoragePerServerInTbs;
+        public readonly double? AvailableDataStoragePerServerInTbs;
         /// <summary>
         /// The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
         /// </summary>
-        public readonly int AvailableDbNodePerNodeInGbs;
+        public readonly int? AvailableDbNodePerNodeInGbs;
         /// <summary>
         /// The maximum Db Node storage that can be enabled for this shape.
         /// </summary>
-        public readonly int AvailableDbNodeStorageInGbs;
+        public readonly int? AvailableDbNodeStorageInGbs;
         /// <summary>
         /// The maximum memory that can be enabled for this shape.
         /// </summary>
-        public readonly int AvailableMemoryInGbs;
+        public readonly int? AvailableMemoryInGbs;
         /// <summary>
         /// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
         /// </summary>
-        public readonly int AvailableMemoryPerNodeInGbs;
+        public readonly int? AvailableMemoryPerNodeInGbs;
         /// <summary>
         /// The discrete number by which the CPU core count for this shape can be increased or decreased.
         /// </summary>
-        public readonly int CoreCountIncrement;
+        public readonly int? CoreCountIncrement;
         /// <summary>
         /// The maximum number of Exadata storage servers available for the Exadata infrastructure.
         /// </summary>
-        public readonly int MaxStorageCount;
+        public readonly int? MaxStorageCount;
         /// <summary>
         /// The maximum number of compute servers available for this shape.
         /// </summary>
-        public readonly int MaximumNodeCount;
+        public readonly int? MaximumNodeCount;
         /// <summary>
         /// The minimum number of CPU cores that can be enabled per node for this shape.
         /// </summary>
-        public readonly int MinCoreCountPerNode;
+        public readonly int? MinCoreCountPerNode;
         /// <summary>
         /// The minimum data storage that need be allocated for this shape.
         /// </summary>
-        public readonly int MinDataStorageInTbs;
+        public readonly int? MinDataStorageInTbs;
         /// <summary>
         /// The minimum Db Node storage that need be allocated per node for this shape.
         /// </summary>
-        public readonly int MinDbNodeStoragePerNodeInGbs;
+        public readonly int? MinDbNodeStoragePerNodeInGbs;
         /// <summary>
         /// The minimum memory that need be allocated per node for this shape.
         /// </summary>
-        public readonly int MinMemoryPerNodeInGbs;
+        public readonly int? MinMemoryPerNodeInGbs;
         /// <summary>
         /// The minimum number of Exadata storage servers available for the Exadata infrastructure.
         /// </summary>
-        public readonly int MinStorageCount;
+        public readonly int? MinStorageCount;
         /// <summary>
         /// The minimum number of CPU cores that can be enabled on the DB system for this shape.
         /// </summary>
-        public readonly int MinimumCoreCount;
+        public readonly int? MinimumCoreCount;
         /// <summary>
         /// The minimum number of compute servers available for this shape.
         /// </summary>
-        public readonly int MinimumNodeCount;
+        public readonly int? MinimumNodeCount;
         /// <summary>
         /// The name of the shape used for the DB system.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Deprecated. Use `name` instead of `shape`.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The family of the shape used for the DB system.
         /// </summary>
-        public readonly string ShapeFamily;
+        public readonly string? ShapeFamily;
         /// <summary>
         /// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
         /// </summary>
-        public readonly string ShapeType;
+        public readonly string? ShapeType;
 
         [OutputConstructor]
         private GetDbSystemShapesDbSystemShapeResult(
-            int availableCoreCount,
+            int? availableCoreCount,
 
-            int availableCoreCountPerNode,
+            int? availableCoreCountPerNode,
 
-            int availableDataStorageInTbs,
+            int? availableDataStorageInTbs,
 
-            double availableDataStoragePerServerInTbs,
+            double? availableDataStoragePerServerInTbs,
 
-            int availableDbNodePerNodeInGbs,
+            int? availableDbNodePerNodeInGbs,
 
-            int availableDbNodeStorageInGbs,
+            int? availableDbNodeStorageInGbs,
 
-            int availableMemoryInGbs,
+            int? availableMemoryInGbs,
 
-            int availableMemoryPerNodeInGbs,
+            int? availableMemoryPerNodeInGbs,
 
-            int coreCountIncrement,
+            int? coreCountIncrement,
 
-            int maxStorageCount,
+            int? maxStorageCount,
 
-            int maximumNodeCount,
+            int? maximumNodeCount,
 
-            int minCoreCountPerNode,
+            int? minCoreCountPerNode,
 
-            int minDataStorageInTbs,
+            int? minDataStorageInTbs,
 
-            int minDbNodeStoragePerNodeInGbs,
+            int? minDbNodeStoragePerNodeInGbs,
 
-            int minMemoryPerNodeInGbs,
+            int? minMemoryPerNodeInGbs,
 
-            int minStorageCount,
+            int? minStorageCount,
 
-            int minimumCoreCount,
+            int? minimumCoreCount,
 
-            int minimumNodeCount,
+            int? minimumNodeCount,
 
-            string name,
+            string? name,
 
-            string shape,
+            string? shape,
 
-            string shapeFamily,
+            string? shapeFamily,
 
-            string shapeType)
+            string? shapeType)
         {
             AvailableCoreCount = availableCoreCount;
             AvailableCoreCountPerNode = availableCoreCountPerNode;

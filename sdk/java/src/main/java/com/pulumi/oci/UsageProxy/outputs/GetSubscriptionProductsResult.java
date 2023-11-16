@@ -19,12 +19,12 @@ public final class GetSubscriptionProductsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of product_collection.
      * 
      */
-    private List<GetSubscriptionProductsProductCollection> productCollections;
+    private @Nullable List<GetSubscriptionProductsProductCollection> productCollections;
     private @Nullable String producttype;
     private String subscriptionId;
     private String tenancyId;
@@ -38,15 +38,15 @@ public final class GetSubscriptionProductsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of product_collection.
      * 
      */
     public List<GetSubscriptionProductsProductCollection> productCollections() {
-        return this.productCollections;
+        return this.productCollections == null ? List.of() : this.productCollections;
     }
     public Optional<String> producttype() {
         return Optional.ofNullable(this.producttype);
@@ -71,8 +71,8 @@ public final class GetSubscriptionProductsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSubscriptionProductsFilter> filters;
-        private String id;
-        private List<GetSubscriptionProductsProductCollection> productCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSubscriptionProductsProductCollection> productCollections;
         private @Nullable String producttype;
         private String subscriptionId;
         private String tenancyId;
@@ -98,13 +98,13 @@ public final class GetSubscriptionProductsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder productCollections(List<GetSubscriptionProductsProductCollection> productCollections) {
-            this.productCollections = Objects.requireNonNull(productCollections);
+        public Builder productCollections(@Nullable List<GetSubscriptionProductsProductCollection> productCollections) {
+            this.productCollections = productCollections;
             return this;
         }
         public Builder productCollections(GetSubscriptionProductsProductCollection... productCollections) {

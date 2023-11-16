@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// True if this version of the Oracle Database software is the latest version for a release.
         /// </summary>
-        public readonly bool IsLatestForMajorVersion;
+        public readonly bool? IsLatestForMajorVersion;
         /// <summary>
         /// True if this version of the Oracle Database software is the preview version.
         /// </summary>
-        public readonly bool IsPreviewDbVersion;
+        public readonly bool? IsPreviewDbVersion;
         /// <summary>
         /// If provided, filters the results to the set of database versions which are supported for Upgrade.
         /// </summary>
-        public readonly bool IsUpgradeSupported;
+        public readonly bool? IsUpgradeSupported;
         /// <summary>
         /// True if this version of the Oracle Database software supports pluggable databases.
         /// </summary>
-        public readonly bool SupportsPdb;
+        public readonly bool? SupportsPdb;
         /// <summary>
         /// A valid Oracle Database version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetDbVersionsDbVersionResult(
-            bool isLatestForMajorVersion,
+            bool? isLatestForMajorVersion,
 
-            bool isPreviewDbVersion,
+            bool? isPreviewDbVersion,
 
-            bool isUpgradeSupported,
+            bool? isUpgradeSupported,
 
-            bool supportsPdb,
+            bool? supportsPdb,
 
-            string version)
+            string? version)
         {
             IsLatestForMajorVersion = isLatestForMajorVersion;
             IsPreviewDbVersion = isPreviewDbVersion;

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// The vault replica's crypto endpoint
         /// </summary>
-        public readonly string CryptoEndpoint;
+        public readonly string? CryptoEndpoint;
         /// <summary>
         /// The vault replica's management endpoint
         /// </summary>
-        public readonly string ManagementEndpoint;
+        public readonly string? ManagementEndpoint;
         /// <summary>
         /// Region to which vault is replicated to
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// Status of the Vault
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetVaultReplicasVaultReplicaResult(
-            string cryptoEndpoint,
+            string? cryptoEndpoint,
 
-            string managementEndpoint,
+            string? managementEndpoint,
 
-            string region,
+            string? region,
 
-            string status)
+            string? status)
         {
             CryptoEndpoint = cryptoEndpoint;
             ManagementEndpoint = managementEndpoint;

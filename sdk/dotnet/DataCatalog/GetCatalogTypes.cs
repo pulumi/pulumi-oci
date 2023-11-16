@@ -258,7 +258,7 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the type is approved for use as a classifying object.
         /// </summary>
@@ -298,7 +298,7 @@ namespace Pulumi.Oci.DataCatalog
 
             ImmutableArray<Outputs.GetCatalogTypesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? isApproved,
 

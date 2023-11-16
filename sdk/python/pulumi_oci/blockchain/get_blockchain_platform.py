@@ -118,217 +118,142 @@ class GetBlockchainPlatformResult:
 
     @property
     @pulumi.getter(name="caCertArchiveText")
-    def ca_cert_archive_text(self) -> str:
+    def ca_cert_archive_text(self) -> Optional[str]:
         return pulumi.get(self, "ca_cert_archive_text")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentDetails")
-    def component_details(self) -> Sequence['outputs.GetBlockchainPlatformComponentDetailResult']:
-        """
-        Blockchain Platform component details.
-        """
+    def component_details(self) -> Optional[Sequence['outputs.GetBlockchainPlatformComponentDetailResult']]:
         return pulumi.get(self, "component_details")
 
     @property
     @pulumi.getter(name="computeShape")
-    def compute_shape(self) -> str:
-        """
-        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
-        """
+    def compute_shape(self) -> Optional[str]:
         return pulumi.get(self, "compute_shape")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Platform Instance Description
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Platform Instance Display name, can be renamed
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="federatedUserId")
-    def federated_user_id(self) -> str:
+    def federated_user_id(self) -> Optional[str]:
         return pulumi.get(self, "federated_user_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostOcpuUtilizationInfos")
-    def host_ocpu_utilization_infos(self) -> Sequence['outputs.GetBlockchainPlatformHostOcpuUtilizationInfoResult']:
-        """
-        List of OcpuUtilization for all hosts
-        """
+    def host_ocpu_utilization_infos(self) -> Optional[Sequence['outputs.GetBlockchainPlatformHostOcpuUtilizationInfoResult']]:
         return pulumi.get(self, "host_ocpu_utilization_infos")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> str:
+    def idcs_access_token(self) -> Optional[str]:
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="isByol")
-    def is_byol(self) -> bool:
-        """
-        Bring your own license
-        """
+    def is_byol(self) -> Optional[bool]:
         return pulumi.get(self, "is_byol")
 
     @property
     @pulumi.getter(name="isMultiAd")
-    def is_multi_ad(self) -> bool:
-        """
-        True for multi-AD blockchain plaforms, false for single-AD
-        """
+    def is_multi_ad(self) -> Optional[bool]:
         return pulumi.get(self, "is_multi_ad")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="loadBalancerShape")
-    def load_balancer_shape(self) -> str:
-        """
-        Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-        """
+    def load_balancer_shape(self) -> Optional[str]:
         return pulumi.get(self, "load_balancer_shape")
 
     @property
     @pulumi.getter(name="platformRole")
-    def platform_role(self) -> str:
-        """
-        Role of platform - FOUNDER or PARTICIPANT
-        """
+    def platform_role(self) -> Optional[str]:
         return pulumi.get(self, "platform_role")
 
     @property
     @pulumi.getter(name="platformShapeType")
-    def platform_shape_type(self) -> str:
-        """
-        Type of Platform shape - DEFAULT or CUSTOM
-        """
+    def platform_shape_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_shape_type")
 
     @property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> str:
-        """
-        Platform Version
-        """
+    def platform_version(self) -> Optional[str]:
         return pulumi.get(self, "platform_version")
 
     @property
     @pulumi.getter
-    def replicas(self) -> Sequence['outputs.GetBlockchainPlatformReplicaResult']:
-        """
-        Number of replicas of service components like Rest Proxy, CA and Console
-        """
+    def replicas(self) -> Optional[Sequence['outputs.GetBlockchainPlatformReplicaResult']]:
         return pulumi.get(self, "replicas")
 
     @property
     @pulumi.getter(name="serviceEndpoint")
-    def service_endpoint(self) -> str:
-        """
-        Service endpoint URL, valid post-provisioning
-        """
+    def service_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "service_endpoint")
 
     @property
     @pulumi.getter(name="serviceVersion")
-    def service_version(self) -> str:
-        """
-        The version of the Platform Instance.
-        """
+    def service_version(self) -> Optional[str]:
         return pulumi.get(self, "service_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Platform Instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageSizeInTbs")
-    def storage_size_in_tbs(self) -> float:
-        """
-        Storage size in TBs
-        """
+    def storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="storageUsedInTbs")
-    def storage_used_in_tbs(self) -> float:
-        """
-        Storage used in TBs
-        """
+    def storage_used_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "storage_used_in_tbs")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the Platform Instance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Platform Instance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalOcpuCapacity")
-    def total_ocpu_capacity(self) -> int:
-        """
-        Number of total OCPUs allocated to the platform cluster
-        """
+    def total_ocpu_capacity(self) -> Optional[int]:
         return pulumi.get(self, "total_ocpu_capacity")
 
 
@@ -372,21 +297,7 @@ class AwaitableGetBlockchainPlatformResult(GetBlockchainPlatformResult):
 def get_blockchain_platform(blockchain_platform_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBlockchainPlatformResult:
     """
-    This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-
-    Gets information about a Blockchain Platform identified by the specific id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
@@ -429,20 +340,6 @@ def get_blockchain_platform(blockchain_platform_id: Optional[str] = None,
 def get_blockchain_platform_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockchainPlatformResult]:
     """
-    This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-
-    Gets information about a Blockchain Platform identified by the specific id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

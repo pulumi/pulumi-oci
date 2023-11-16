@@ -18,7 +18,7 @@ public final class GetApplicationsResult {
      * @return The list of applications.
      * 
      */
-    private List<GetApplicationsApplication> applications;
+    private @Nullable List<GetApplicationsApplication> applications;
     /**
      * @return The OCID of the compartment that contains the application.
      * 
@@ -47,7 +47,7 @@ public final class GetApplicationsResult {
      * 
      */
     public List<GetApplicationsApplication> applications() {
-        return this.applications;
+        return this.applications == null ? List.of() : this.applications;
     }
     /**
      * @return The OCID of the compartment that contains the application.
@@ -90,7 +90,7 @@ public final class GetApplicationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApplicationsApplication> applications;
+        private @Nullable List<GetApplicationsApplication> applications;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetApplicationsFilter> filters;
@@ -108,8 +108,8 @@ public final class GetApplicationsResult {
         }
 
         @CustomType.Setter
-        public Builder applications(List<GetApplicationsApplication> applications) {
-            this.applications = Objects.requireNonNull(applications);
+        public Builder applications(@Nullable List<GetApplicationsApplication> applications) {
+            this.applications = applications;
             return this;
         }
         public Builder applications(GetApplicationsApplication... applications) {

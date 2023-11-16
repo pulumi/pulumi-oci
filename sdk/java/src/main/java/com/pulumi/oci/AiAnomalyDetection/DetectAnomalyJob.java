@@ -16,6 +16,7 @@ import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -112,56 +113,56 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A short description of the detect anomaly job.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A short description of the detect anomaly job.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Detect anomaly job display name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Detect anomaly job display name.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Detect anomaly asynchronous job details.
@@ -182,14 +183,14 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleStateDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleStateDetails;
+    private Output</* @Nullable */ String> lifecycleStateDetails;
 
     /**
      * @return The current state details of the batch document job.
      * 
      */
-    public Output<String> lifecycleStateDetails() {
-        return this.lifecycleStateDetails;
+    public Output<Optional<String>> lifecycleStateDetails() {
+        return Codegen.optional(this.lifecycleStateDetails);
     }
     /**
      * The OCID of the trained model.
@@ -224,14 +225,14 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
-    private Output<String> projectId;
+    private Output</* @Nullable */ String> projectId;
 
     /**
      * @return The OCID of the project.
      * 
      */
-    public Output<String> projectId() {
-        return this.projectId;
+    public Output<Optional<String>> projectId() {
+        return Codegen.optional(this.projectId);
     }
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
@@ -241,7 +242,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sensitivity", refs={Double.class}, tree="[0]")
-    private Output<Double> sensitivity;
+    private Output</* @Nullable */ Double> sensitivity;
 
     /**
      * @return The value that customer can adjust to control the sensitivity of anomaly detection
@@ -250,78 +251,78 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Double> sensitivity() {
-        return this.sensitivity;
+    public Output<Optional<Double>> sensitivity() {
+        return Codegen.optional(this.sensitivity);
     }
     /**
      * The current state of the batch document job.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the batch document job.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * Job accepted time
      * 
      */
     @Export(name="timeAccepted", refs={String.class}, tree="[0]")
-    private Output<String> timeAccepted;
+    private Output</* @Nullable */ String> timeAccepted;
 
     /**
      * @return Job accepted time
      * 
      */
-    public Output<String> timeAccepted() {
-        return this.timeAccepted;
+    public Output<Optional<String>> timeAccepted() {
+        return Codegen.optional(this.timeAccepted);
     }
     /**
      * Job finished time
      * 
      */
     @Export(name="timeFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeFinished;
+    private Output</* @Nullable */ String> timeFinished;
 
     /**
      * @return Job finished time
      * 
      */
-    public Output<String> timeFinished() {
-        return this.timeFinished;
+    public Output<Optional<String>> timeFinished() {
+        return Codegen.optional(this.timeFinished);
     }
     /**
      * Job started time
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return Job started time
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
 
     /**

@@ -58,23 +58,17 @@ class GetSoftwareSourceModuleStreamResult:
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        The architecture for which the packages in this module stream were built.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the contents of the module stream.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,58 +76,37 @@ class GetSoftwareSourceModuleStreamResult:
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Indicates if this stream is the default for its module.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter(name="isLatest")
-    def is_latest(self) -> bool:
-        """
-        Indicates whether this module stream is the latest.
-        """
+    def is_latest(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="moduleName")
     def module_name(self) -> str:
-        """
-        The name of the module that contains the stream.
-        """
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the stream.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def packages(self) -> Sequence[str]:
-        """
-        A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
-        """
+    def packages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter
-    def profiles(self) -> Sequence[str]:
-        """
-        A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
-        """
+    def profiles(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "profiles")
 
     @property
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> str:
-        """
-        The OCID of the software source that provides this module stream.
-        """
         return pulumi.get(self, "software_source_id")
 
     @property
@@ -166,25 +139,7 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
                                       stream_name: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceModuleStreamResult:
     """
-    This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified module stream in a software source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_module_stream = oci.OsManagementHub.get_software_source_module_stream(module_name=var["software_source_module_stream_module_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        stream_name=oci_streaming_stream["test_stream"]["name"])
-    ```
-
-
-    :param str module_name: The name of the module.
-    :param str software_source_id: The software source OCID.
-    :param str stream_name: The name of the stream of the containing module.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['moduleName'] = module_name
@@ -213,24 +168,6 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
                                              stream_name: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamResult]:
     """
-    This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified module stream in a software source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_module_stream = oci.OsManagementHub.get_software_source_module_stream(module_name=var["software_source_module_stream_module_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        stream_name=oci_streaming_stream["test_stream"]["name"])
-    ```
-
-
-    :param str module_name: The name of the module.
-    :param str software_source_id: The software source OCID.
-    :param str stream_name: The name of the stream of the containing module.
+    Use this data source to access information about an existing resource.
     """
     ...

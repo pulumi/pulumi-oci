@@ -46,9 +46,6 @@ class GetInstVbsInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment of the service instance
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -59,33 +56,21 @@ class GetInstVbsInstancesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Service instance name (unique identifier)
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the VbsInstance.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vbsInstanceSummaryCollections")
-    def vbs_instance_summary_collections(self) -> Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionResult']:
-        """
-        The list of vbs_instance_summary_collection.
-        """
+    def vbs_instance_summary_collections(self) -> Optional[Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionResult']]:
         return pulumi.get(self, "vbs_instance_summary_collections")
 
 
@@ -110,27 +95,7 @@ def get_inst_vbs_instances(compartment_id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstVbsInstancesResult:
     """
-    This data source provides the list of Vbs Instances in Oracle Cloud Infrastructure Vbs Inst service.
-
-    Returns a list of VbsInstances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=var["compartment_id"],
-        id=var["vbs_instance_id"],
-        name=var["vbs_instance_name"],
-        state=var["vbs_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: unique VbsInstance identifier
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_inst_vbs_instances_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstVbsInstancesResult]:
     """
-    This data source provides the list of Vbs Instances in Oracle Cloud Infrastructure Vbs Inst service.
-
-    Returns a list of VbsInstances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=var["compartment_id"],
-        id=var["vbs_instance_id"],
-        name=var["vbs_instance_name"],
-        state=var["vbs_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: unique VbsInstance identifier
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
@@ -60,42 +59,42 @@ type LookupFunctionArgs struct {
 // A collection of values returned by getFunction.
 type LookupFunctionResult struct {
 	// The OCID of the application the function belongs to.
-	ApplicationId string `pulumi:"applicationId"`
+	ApplicationId *string `pulumi:"applicationId"`
 	// The OCID of the compartment that contains the function.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 	Config map[string]interface{} `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of the function. The display name is unique within the application containing the function.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	FunctionId   string                 `pulumi:"functionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-	Image string `pulumi:"image"`
+	Image *string `pulumi:"image"`
 	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-	ImageDigest string `pulumi:"imageDigest"`
+	ImageDigest *string `pulumi:"imageDigest"`
 	// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-	InvokeEndpoint string `pulumi:"invokeEndpoint"`
+	InvokeEndpoint *string `pulumi:"invokeEndpoint"`
 	// Maximum usable memory for the function (MiB).
-	MemoryInMbs string `pulumi:"memoryInMbs"`
+	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs []GetFunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfigs"`
 	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails []GetFunctionSourceDetail `pulumi:"sourceDetails"`
 	// The current state of the function.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Timeout for executions of the function. Value in seconds.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Define the tracing configuration for a function.
 	TraceConfigs []GetFunctionTraceConfig `pulumi:"traceConfigs"`
 }
@@ -138,20 +137,14 @@ func (o LookupFunctionResultOutput) ToLookupFunctionResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupFunctionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFunctionResult] {
-	return pulumix.Output[LookupFunctionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the application the function belongs to.
-func (o LookupFunctionResultOutput) ApplicationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.ApplicationId }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) ApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the function.
-func (o LookupFunctionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
@@ -165,8 +158,8 @@ func (o LookupFunctionResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The display name of the function. The display name is unique within the application containing the function.
-func (o LookupFunctionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -179,28 +172,28 @@ func (o LookupFunctionResultOutput) FunctionId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
-func (o LookupFunctionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-func (o LookupFunctionResultOutput) Image() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.Image }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.Image }).(pulumi.StringPtrOutput)
 }
 
 // The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-func (o LookupFunctionResultOutput) ImageDigest() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.ImageDigest }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
 }
 
 // The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-func (o LookupFunctionResultOutput) InvokeEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.InvokeEndpoint }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) InvokeEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.InvokeEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // Maximum usable memory for the function (MiB).
-func (o LookupFunctionResultOutput) MemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.MemoryInMbs }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) MemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.MemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Define the strategy for provisioned concurrency for the function.
@@ -211,8 +204,8 @@ func (o LookupFunctionResultOutput) ProvisionedConcurrencyConfigs() GetFunctionP
 }
 
 // The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-func (o LookupFunctionResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The source details for the Function. The function can be created from various sources.
@@ -221,23 +214,23 @@ func (o LookupFunctionResultOutput) SourceDetails() GetFunctionSourceDetailArray
 }
 
 // The current state of the function.
-func (o LookupFunctionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o LookupFunctionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o LookupFunctionResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFunctionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupFunctionResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Timeout for executions of the function. Value in seconds.
-func (o LookupFunctionResultOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupFunctionResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o LookupFunctionResultOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupFunctionResult) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Define the tracing configuration for a function.

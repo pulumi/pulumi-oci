@@ -8,6 +8,8 @@ import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollection
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail {
@@ -15,27 +17,27 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
      * @return The type descriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return The namespaces for the compartment-specific list.
      * 
      */
-    private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
+    private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
 
     private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail() {}
     /**
      * @return The type descriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return The namespaces for the compartment-specific list.
      * 
      */
     public List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace> namespaces() {
-        return this.namespaces;
+        return this.namespaces == null ? List.of() : this.namespaces;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kind;
-        private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
+        private @Nullable String kind;
+        private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
         public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
         }
 
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaces(List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace> namespaces) {
-            this.namespaces = Objects.requireNonNull(namespaces);
+        public Builder namespaces(@Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace> namespaces) {
+            this.namespaces = namespaces;
             return this;
         }
         public Builder namespaces(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace... namespaces) {

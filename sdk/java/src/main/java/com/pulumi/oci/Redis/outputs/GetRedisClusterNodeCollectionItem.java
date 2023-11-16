@@ -6,6 +6,8 @@ package com.pulumi.oci.Redis.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRedisClusterNodeCollectionItem {
@@ -13,39 +15,39 @@ public final class GetRedisClusterNodeCollectionItem {
      * @return A user-friendly name of a Redis cluster node.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
      * 
      */
-    private String privateEndpointFqdn;
+    private @Nullable String privateEndpointFqdn;
     /**
      * @return The private IP address of the API endpoint to access a specific node.
      * 
      */
-    private String privateEndpointIpAddress;
+    private @Nullable String privateEndpointIpAddress;
 
     private GetRedisClusterNodeCollectionItem() {}
     /**
      * @return A user-friendly name of a Redis cluster node.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
      * 
      */
-    public String privateEndpointFqdn() {
-        return this.privateEndpointFqdn;
+    public Optional<String> privateEndpointFqdn() {
+        return Optional.ofNullable(this.privateEndpointFqdn);
     }
     /**
      * @return The private IP address of the API endpoint to access a specific node.
      * 
      */
-    public String privateEndpointIpAddress() {
-        return this.privateEndpointIpAddress;
+    public Optional<String> privateEndpointIpAddress() {
+        return Optional.ofNullable(this.privateEndpointIpAddress);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetRedisClusterNodeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String privateEndpointFqdn;
-        private String privateEndpointIpAddress;
+        private @Nullable String displayName;
+        private @Nullable String privateEndpointFqdn;
+        private @Nullable String privateEndpointIpAddress;
         public Builder() {}
         public Builder(GetRedisClusterNodeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetRedisClusterNodeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointFqdn(String privateEndpointFqdn) {
-            this.privateEndpointFqdn = Objects.requireNonNull(privateEndpointFqdn);
+        public Builder privateEndpointFqdn(@Nullable String privateEndpointFqdn) {
+            this.privateEndpointFqdn = privateEndpointFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointIpAddress(String privateEndpointIpAddress) {
-            this.privateEndpointIpAddress = Objects.requireNonNull(privateEndpointIpAddress);
+        public Builder privateEndpointIpAddress(@Nullable String privateEndpointIpAddress) {
+            this.privateEndpointIpAddress = privateEndpointIpAddress;
             return this;
         }
         public GetRedisClusterNodeCollectionItem build() {

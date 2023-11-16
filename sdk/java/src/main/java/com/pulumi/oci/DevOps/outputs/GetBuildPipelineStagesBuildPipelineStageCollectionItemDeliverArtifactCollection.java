@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection {
@@ -14,7 +15,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items;
+    private @Nullable List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items;
 
     private GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
      * 
      */
     public List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items;
+        private @Nullable List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items;
         public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem... items) {

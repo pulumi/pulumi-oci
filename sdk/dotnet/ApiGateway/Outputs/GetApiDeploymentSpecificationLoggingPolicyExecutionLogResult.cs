@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Whether this policy is currently enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         /// </summary>
-        public readonly string LogLevel;
+        public readonly string? LogLevel;
 
         [OutputConstructor]
         private GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult(
-            bool isEnabled,
+            bool? isEnabled,
 
-            string logLevel)
+            string? logLevel)
         {
             IsEnabled = isEnabled;
             LogLevel = logLevel;

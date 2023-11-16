@@ -76,74 +76,47 @@ class GetOperationsInsightsPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment OCID of the Private service accessed database.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the private endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the private endpoint.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Private service accessed database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isUsedForRacDbs")
-    def is_used_for_rac_dbs(self) -> bool:
-        """
-        The flag is to identify if private endpoint is used for rac database or not
-        """
+    def is_used_for_rac_dbs(self) -> Optional[bool]:
         return pulumi.get(self, "is_used_for_rac_dbs")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        The OCIDs of the network security groups that the private endpoint belongs to.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
@@ -153,58 +126,37 @@ class GetOperationsInsightsPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="privateEndpointStatusDetails")
-    def private_endpoint_status_details(self) -> str:
-        """
-        A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-        """
+    def private_endpoint_status_details(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_status_details")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The OCID of the VCN.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -236,21 +188,7 @@ class AwaitableGetOperationsInsightsPrivateEndpointResult(GetOperationsInsightsP
 def get_operations_insights_private_endpoint(operations_insights_private_endpoint_id: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOperationsInsightsPrivateEndpointResult:
     """
-    This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets the details of the specified private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=oci_opsi_operations_insights_private_endpoint["test_operations_insights_private_endpoint"]["id"])
-    ```
-
-
-    :param str operations_insights_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['operationsInsightsPrivateEndpointId'] = operations_insights_private_endpoint_id
@@ -281,20 +219,6 @@ def get_operations_insights_private_endpoint(operations_insights_private_endpoin
 def get_operations_insights_private_endpoint_output(operations_insights_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsPrivateEndpointResult]:
     """
-    This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets the details of the specified private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=oci_opsi_operations_insights_private_endpoint["test_operations_insights_private_endpoint"]["id"])
-    ```
-
-
-    :param str operations_insights_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

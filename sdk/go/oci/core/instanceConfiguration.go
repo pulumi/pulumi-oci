@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
@@ -432,12 +431,12 @@ type InstanceConfiguration struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    pulumi.MapOutput                           `pulumi:"freeformTags"`
-	InstanceDetails InstanceConfigurationInstanceDetailsOutput `pulumi:"instanceDetails"`
+	FreeformTags    pulumi.MapOutput                              `pulumi:"freeformTags"`
+	InstanceDetails InstanceConfigurationInstanceDetailsPtrOutput `pulumi:"instanceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
+	InstanceId pulumi.StringPtrOutput `pulumi:"instanceId"`
 	// The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
 	//
 	// When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
@@ -447,9 +446,9 @@ type InstanceConfiguration struct {
 	// To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 	//
 	// The following values are supported:
-	Source pulumi.StringOutput `pulumi:"source"`
+	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewInstanceConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -616,12 +615,6 @@ func (i *InstanceConfiguration) ToInstanceConfigurationOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConfigurationOutput)
 }
 
-func (i *InstanceConfiguration) ToOutput(ctx context.Context) pulumix.Output[*InstanceConfiguration] {
-	return pulumix.Output[*InstanceConfiguration]{
-		OutputState: i.ToInstanceConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstanceConfigurationArrayInput is an input type that accepts InstanceConfigurationArray and InstanceConfigurationArrayOutput values.
 // You can construct a concrete instance of `InstanceConfigurationArrayInput` via:
 //
@@ -645,12 +638,6 @@ func (i InstanceConfigurationArray) ToInstanceConfigurationArrayOutput() Instanc
 
 func (i InstanceConfigurationArray) ToInstanceConfigurationArrayOutputWithContext(ctx context.Context) InstanceConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConfigurationArrayOutput)
-}
-
-func (i InstanceConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConfiguration] {
-	return pulumix.Output[[]*InstanceConfiguration]{
-		OutputState: i.ToInstanceConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstanceConfigurationMapInput is an input type that accepts InstanceConfigurationMap and InstanceConfigurationMapOutput values.
@@ -678,12 +665,6 @@ func (i InstanceConfigurationMap) ToInstanceConfigurationMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConfigurationMapOutput)
 }
 
-func (i InstanceConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConfiguration] {
-	return pulumix.Output[map[string]*InstanceConfiguration]{
-		OutputState: i.ToInstanceConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstanceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (InstanceConfigurationOutput) ElementType() reflect.Type {
@@ -696,12 +677,6 @@ func (o InstanceConfigurationOutput) ToInstanceConfigurationOutput() InstanceCon
 
 func (o InstanceConfigurationOutput) ToInstanceConfigurationOutputWithContext(ctx context.Context) InstanceConfigurationOutput {
 	return o
-}
-
-func (o InstanceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*InstanceConfiguration] {
-	return pulumix.Output[*InstanceConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment containing images to search
@@ -720,8 +695,8 @@ func (o InstanceConfigurationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o InstanceConfigurationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o InstanceConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -729,13 +704,13 @@ func (o InstanceConfigurationOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *InstanceConfiguration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o InstanceConfigurationOutput) InstanceDetails() InstanceConfigurationInstanceDetailsOutput {
-	return o.ApplyT(func(v *InstanceConfiguration) InstanceConfigurationInstanceDetailsOutput { return v.InstanceDetails }).(InstanceConfigurationInstanceDetailsOutput)
+func (o InstanceConfigurationOutput) InstanceDetails() InstanceConfigurationInstanceDetailsPtrOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) InstanceConfigurationInstanceDetailsPtrOutput { return v.InstanceDetails }).(InstanceConfigurationInstanceDetailsPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-func (o InstanceConfigurationOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
+func (o InstanceConfigurationOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringPtrOutput { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
 // The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
@@ -747,13 +722,13 @@ func (o InstanceConfigurationOutput) InstanceId() pulumi.StringOutput {
 // To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 //
 // The following values are supported:
-func (o InstanceConfigurationOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+func (o InstanceConfigurationOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o InstanceConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o InstanceConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type InstanceConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -768,12 +743,6 @@ func (o InstanceConfigurationArrayOutput) ToInstanceConfigurationArrayOutput() I
 
 func (o InstanceConfigurationArrayOutput) ToInstanceConfigurationArrayOutputWithContext(ctx context.Context) InstanceConfigurationArrayOutput {
 	return o
-}
-
-func (o InstanceConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConfiguration] {
-	return pulumix.Output[[]*InstanceConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstanceConfigurationArrayOutput) Index(i pulumi.IntInput) InstanceConfigurationOutput {
@@ -794,12 +763,6 @@ func (o InstanceConfigurationMapOutput) ToInstanceConfigurationMapOutput() Insta
 
 func (o InstanceConfigurationMapOutput) ToInstanceConfigurationMapOutputWithContext(ctx context.Context) InstanceConfigurationMapOutput {
 	return o
-}
-
-func (o InstanceConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConfiguration] {
-	return pulumix.Output[map[string]*InstanceConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstanceConfigurationMapOutput) MapIndex(k pulumi.StringInput) InstanceConfigurationOutput {

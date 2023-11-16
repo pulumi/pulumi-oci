@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
@@ -74,10 +73,10 @@ type GetRepositoryDiffsResult struct {
 	DiffCollections []GetRepositoryDiffsDiffCollection `pulumi:"diffCollections"`
 	Filters         []GetRepositoryDiffsFilter         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string `pulumi:"id"`
-	IsComparisonFromMergeBase *bool  `pulumi:"isComparisonFromMergeBase"`
-	RepositoryId              string `pulumi:"repositoryId"`
-	TargetVersion             string `pulumi:"targetVersion"`
+	Id                        *string `pulumi:"id"`
+	IsComparisonFromMergeBase *bool   `pulumi:"isComparisonFromMergeBase"`
+	RepositoryId              string  `pulumi:"repositoryId"`
+	TargetVersion             string  `pulumi:"targetVersion"`
 }
 
 func GetRepositoryDiffsOutput(ctx *pulumi.Context, args GetRepositoryDiffsOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryDiffsResultOutput {
@@ -125,12 +124,6 @@ func (o GetRepositoryDiffsResultOutput) ToGetRepositoryDiffsResultOutputWithCont
 	return o
 }
 
-func (o GetRepositoryDiffsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryDiffsResult] {
-	return pulumix.Output[GetRepositoryDiffsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoryDiffsResultOutput) BaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoryDiffsResult) string { return v.BaseVersion }).(pulumi.StringOutput)
 }
@@ -145,8 +138,8 @@ func (o GetRepositoryDiffsResultOutput) Filters() GetRepositoryDiffsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryDiffsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryDiffsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryDiffsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryDiffsResultOutput) IsComparisonFromMergeBase() pulumi.BoolPtrOutput {

@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
         /// </summary>
-        public readonly bool AreAllPluginsDisabled;
+        public readonly bool? AreAllPluginsDisabled;
         /// <summary>
         /// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
         /// </summary>
-        public readonly bool IsManagementDisabled;
+        public readonly bool? IsManagementDisabled;
         /// <summary>
         /// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
         /// </summary>
-        public readonly bool IsMonitoringDisabled;
+        public readonly bool? IsMonitoringDisabled;
         /// <summary>
         /// The configuration of plugins associated with this instance.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigResult(
-            bool areAllPluginsDisabled,
+            bool? areAllPluginsDisabled,
 
-            bool isManagementDisabled,
+            bool? isManagementDisabled,
 
-            bool isMonitoringDisabled,
+            bool? isMonitoringDisabled,
 
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigResult> pluginsConfigs)
         {

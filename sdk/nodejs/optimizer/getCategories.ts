@@ -91,7 +91,7 @@ export interface GetCategoriesResult {
     /**
      * The list of category_collection.
      */
-    readonly categoryCollections: outputs.Optimizer.GetCategoriesCategoryCollection[];
+    readonly categoryCollections?: outputs.Optimizer.GetCategoriesCategoryCollection[];
     readonly childTenancyIds?: string[];
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
@@ -102,7 +102,7 @@ export interface GetCategoriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly includeOrganization?: boolean;
     /**
      * The name assigned to the category.

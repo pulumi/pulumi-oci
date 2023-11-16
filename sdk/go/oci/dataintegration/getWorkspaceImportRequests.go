@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspace Import Requests in Oracle Cloud Infrastructure Data Integration service.
@@ -77,7 +76,7 @@ type GetWorkspaceImportRequestsArgs struct {
 type GetWorkspaceImportRequestsResult struct {
 	Filters []GetWorkspaceImportRequestsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of import_request_summary_collection.
 	ImportRequestSummaryCollections []GetWorkspaceImportRequestsImportRequestSummaryCollection `pulumi:"importRequestSummaryCollections"`
 	ImportStatus                    *string                                                    `pulumi:"importStatus"`
@@ -140,19 +139,13 @@ func (o GetWorkspaceImportRequestsResultOutput) ToGetWorkspaceImportRequestsResu
 	return o
 }
 
-func (o GetWorkspaceImportRequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsResult] {
-	return pulumix.Output[GetWorkspaceImportRequestsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceImportRequestsResultOutput) Filters() GetWorkspaceImportRequestsFilterArrayOutput {
 	return o.ApplyT(func(v GetWorkspaceImportRequestsResult) []GetWorkspaceImportRequestsFilter { return v.Filters }).(GetWorkspaceImportRequestsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkspaceImportRequestsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of import_request_summary_collection.

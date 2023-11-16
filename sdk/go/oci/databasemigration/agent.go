@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Agent resource in Oracle Cloud Infrastructure Database Migration service.
@@ -32,32 +31,32 @@ type Agent struct {
 	// The OCID of the agent
 	AgentId pulumi.StringOutput `pulumi:"agentId"`
 	// (Updatable) OCID of the compartment
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) ODMS Agent name
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) ODMS Agent public key.
-	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
+	PublicKey pulumi.StringPtrOutput `pulumi:"publicKey"`
 	// The current state of the ODMS on-premises Agent.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The OCID of the Stream
-	StreamId pulumi.StringOutput `pulumi:"streamId"`
+	StreamId pulumi.StringPtrOutput `pulumi:"streamId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time of the last Agent details update. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) ODMS Agent version
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewAgent registers a new resource with the given unique name, arguments, and options.
@@ -228,12 +227,6 @@ func (i *Agent) ToAgentOutputWithContext(ctx context.Context) AgentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AgentOutput)
 }
 
-func (i *Agent) ToOutput(ctx context.Context) pulumix.Output[*Agent] {
-	return pulumix.Output[*Agent]{
-		OutputState: i.ToAgentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AgentArrayInput is an input type that accepts AgentArray and AgentArrayOutput values.
 // You can construct a concrete instance of `AgentArrayInput` via:
 //
@@ -257,12 +250,6 @@ func (i AgentArray) ToAgentArrayOutput() AgentArrayOutput {
 
 func (i AgentArray) ToAgentArrayOutputWithContext(ctx context.Context) AgentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AgentArrayOutput)
-}
-
-func (i AgentArray) ToOutput(ctx context.Context) pulumix.Output[[]*Agent] {
-	return pulumix.Output[[]*Agent]{
-		OutputState: i.ToAgentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AgentMapInput is an input type that accepts AgentMap and AgentMapOutput values.
@@ -290,12 +277,6 @@ func (i AgentMap) ToAgentMapOutputWithContext(ctx context.Context) AgentMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AgentMapOutput)
 }
 
-func (i AgentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Agent] {
-	return pulumix.Output[map[string]*Agent]{
-		OutputState: i.ToAgentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AgentOutput struct{ *pulumi.OutputState }
 
 func (AgentOutput) ElementType() reflect.Type {
@@ -310,20 +291,14 @@ func (o AgentOutput) ToAgentOutputWithContext(ctx context.Context) AgentOutput {
 	return o
 }
 
-func (o AgentOutput) ToOutput(ctx context.Context) pulumix.Output[*Agent] {
-	return pulumix.Output[*Agent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the agent
 func (o AgentOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.AgentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) OCID of the compartment
-func (o AgentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o AgentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -332,8 +307,8 @@ func (o AgentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) ODMS Agent name
-func (o AgentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AgentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -342,23 +317,23 @@ func (o AgentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o AgentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AgentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) ODMS Agent public key.
-func (o AgentOutput) PublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.PublicKey }).(pulumi.StringOutput)
+func (o AgentOutput) PublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.PublicKey }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the ODMS on-premises Agent.
-func (o AgentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AgentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the Stream
-func (o AgentOutput) StreamId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.StreamId }).(pulumi.StringOutput)
+func (o AgentOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.StreamId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -367,21 +342,21 @@ func (o AgentOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the Agent was created. An RFC3339 formatted datetime string.
-func (o AgentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AgentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of the last Agent details update. An RFC3339 formatted datetime string.
-func (o AgentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AgentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) ODMS Agent version
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AgentOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o AgentOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type AgentArrayOutput struct{ *pulumi.OutputState }
@@ -396,12 +371,6 @@ func (o AgentArrayOutput) ToAgentArrayOutput() AgentArrayOutput {
 
 func (o AgentArrayOutput) ToAgentArrayOutputWithContext(ctx context.Context) AgentArrayOutput {
 	return o
-}
-
-func (o AgentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Agent] {
-	return pulumix.Output[[]*Agent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentArrayOutput) Index(i pulumi.IntInput) AgentOutput {
@@ -422,12 +391,6 @@ func (o AgentMapOutput) ToAgentMapOutput() AgentMapOutput {
 
 func (o AgentMapOutput) ToAgentMapOutputWithContext(ctx context.Context) AgentMapOutput {
 	return o
-}
-
-func (o AgentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Agent] {
-	return pulumix.Output[map[string]*Agent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentMapOutput) MapIndex(k pulumi.StringInput) AgentOutput {

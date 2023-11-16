@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem {
@@ -18,327 +20,327 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      * @return An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      * 
      */
-    private String charEncoding;
+    private @Nullable String charEncoding;
     /**
      * @return The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      * 
      */
-    private String collectionType;
+    private @Nullable String collectionType;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Logging Analytics entity OCID to associate the processed logs with.
      * 
      */
-    private String entityId;
+    private @Nullable String entityId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether or not this rule is currently enabled.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return A detailed status of the life cycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Logging Analytics Log group OCID to associate the processed logs with.
      * 
      */
-    private String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      * 
      */
-    private String logSet;
+    private @Nullable String logSet;
     /**
      * @return The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      * 
      */
-    private String logSetExtRegex;
+    private @Nullable String logSetExtRegex;
     /**
      * @return An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
      * 
      */
-    private String logSetKey;
+    private @Nullable String logSetKey;
     /**
      * @return Name of the Logging Analytics Source to use for the processing.
      * 
      */
-    private String logSourceName;
+    private @Nullable String logSourceName;
     /**
      * @return A filter to return rules only matching with this name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard &#34;*&#34;. For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
      * 
      */
-    private List<String> objectNameFilters;
+    private @Nullable List<String> objectNameFilters;
     /**
      * @return Name of the Object Storage bucket.
      * 
      */
-    private String osBucketName;
+    private @Nullable String osBucketName;
     /**
      * @return Object Storage namespace.
      * 
      */
-    private String osNamespace;
+    private @Nullable String osNamespace;
     /**
      * @return Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
      * 
      */
-    private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride> overrides;
+    private @Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride> overrides;
     /**
      * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
-    private String pollSince;
+    private @Nullable String pollSince;
     /**
      * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
      * 
      */
-    private String pollTill;
+    private @Nullable String pollTill;
     /**
      * @return Lifecycle state filter.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time when this rule was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time when this rule was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
      * 
      */
-    private String timezone;
+    private @Nullable String timezone;
 
     private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem() {}
     /**
      * @return An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      * 
      */
-    public String charEncoding() {
-        return this.charEncoding;
+    public Optional<String> charEncoding() {
+        return Optional.ofNullable(this.charEncoding);
     }
     /**
      * @return The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      * 
      */
-    public String collectionType() {
-        return this.collectionType;
+    public Optional<String> collectionType() {
+        return Optional.ofNullable(this.collectionType);
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Logging Analytics entity OCID to associate the processed logs with.
      * 
      */
-    public String entityId() {
-        return this.entityId;
+    public Optional<String> entityId() {
+        return Optional.ofNullable(this.entityId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether or not this rule is currently enabled.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return A detailed status of the life cycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Logging Analytics Log group OCID to associate the processed logs with.
      * 
      */
-    public String logGroupId() {
-        return this.logGroupId;
+    public Optional<String> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
     }
     /**
      * @return The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      * 
      */
-    public String logSet() {
-        return this.logSet;
+    public Optional<String> logSet() {
+        return Optional.ofNullable(this.logSet);
     }
     /**
      * @return The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      * 
      */
-    public String logSetExtRegex() {
-        return this.logSetExtRegex;
+    public Optional<String> logSetExtRegex() {
+        return Optional.ofNullable(this.logSetExtRegex);
     }
     /**
      * @return An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
      * 
      */
-    public String logSetKey() {
-        return this.logSetKey;
+    public Optional<String> logSetKey() {
+        return Optional.ofNullable(this.logSetKey);
     }
     /**
      * @return Name of the Logging Analytics Source to use for the processing.
      * 
      */
-    public String logSourceName() {
-        return this.logSourceName;
+    public Optional<String> logSourceName() {
+        return Optional.ofNullable(this.logSourceName);
     }
     /**
      * @return A filter to return rules only matching with this name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard &#34;*&#34;. For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
      * 
      */
     public List<String> objectNameFilters() {
-        return this.objectNameFilters;
+        return this.objectNameFilters == null ? List.of() : this.objectNameFilters;
     }
     /**
      * @return Name of the Object Storage bucket.
      * 
      */
-    public String osBucketName() {
-        return this.osBucketName;
+    public Optional<String> osBucketName() {
+        return Optional.ofNullable(this.osBucketName);
     }
     /**
      * @return Object Storage namespace.
      * 
      */
-    public String osNamespace() {
-        return this.osNamespace;
+    public Optional<String> osNamespace() {
+        return Optional.ofNullable(this.osNamespace);
     }
     /**
      * @return Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
      * 
      */
     public List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride> overrides() {
-        return this.overrides;
+        return this.overrides == null ? List.of() : this.overrides;
     }
     /**
      * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
-    public String pollSince() {
-        return this.pollSince;
+    public Optional<String> pollSince() {
+        return Optional.ofNullable(this.pollSince);
     }
     /**
      * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
      * 
      */
-    public String pollTill() {
-        return this.pollTill;
+    public Optional<String> pollTill() {
+        return Optional.ofNullable(this.pollTill);
     }
     /**
      * @return Lifecycle state filter.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time when this rule was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time when this rule was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
      * 
      */
-    public String timezone() {
-        return this.timezone;
+    public Optional<String> timezone() {
+        return Optional.ofNullable(this.timezone);
     }
 
     public static Builder builder() {
@@ -350,33 +352,33 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String charEncoding;
-        private String collectionType;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String entityId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isEnabled;
-        private String lifecycleDetails;
-        private String logGroupId;
-        private String logSet;
-        private String logSetExtRegex;
-        private String logSetKey;
-        private String logSourceName;
-        private String name;
-        private String namespace;
-        private List<String> objectNameFilters;
-        private String osBucketName;
-        private String osNamespace;
-        private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride> overrides;
-        private String pollSince;
-        private String pollTill;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
-        private String timezone;
+        private @Nullable String charEncoding;
+        private @Nullable String collectionType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String entityId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String logGroupId;
+        private @Nullable String logSet;
+        private @Nullable String logSetExtRegex;
+        private @Nullable String logSetKey;
+        private @Nullable String logSourceName;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable List<String> objectNameFilters;
+        private @Nullable String osBucketName;
+        private @Nullable String osNamespace;
+        private @Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride> overrides;
+        private @Nullable String pollSince;
+        private @Nullable String pollTill;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String timezone;
         public Builder() {}
         public Builder(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -410,144 +412,144 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         }
 
         @CustomType.Setter
-        public Builder charEncoding(String charEncoding) {
-            this.charEncoding = Objects.requireNonNull(charEncoding);
+        public Builder charEncoding(@Nullable String charEncoding) {
+            this.charEncoding = charEncoding;
             return this;
         }
         @CustomType.Setter
-        public Builder collectionType(String collectionType) {
-            this.collectionType = Objects.requireNonNull(collectionType);
+        public Builder collectionType(@Nullable String collectionType) {
+            this.collectionType = collectionType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder entityId(String entityId) {
-            this.entityId = Objects.requireNonNull(entityId);
+        public Builder entityId(@Nullable String entityId) {
+            this.entityId = entityId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+        public Builder logGroupId(@Nullable String logGroupId) {
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder logSet(String logSet) {
-            this.logSet = Objects.requireNonNull(logSet);
+        public Builder logSet(@Nullable String logSet) {
+            this.logSet = logSet;
             return this;
         }
         @CustomType.Setter
-        public Builder logSetExtRegex(String logSetExtRegex) {
-            this.logSetExtRegex = Objects.requireNonNull(logSetExtRegex);
+        public Builder logSetExtRegex(@Nullable String logSetExtRegex) {
+            this.logSetExtRegex = logSetExtRegex;
             return this;
         }
         @CustomType.Setter
-        public Builder logSetKey(String logSetKey) {
-            this.logSetKey = Objects.requireNonNull(logSetKey);
+        public Builder logSetKey(@Nullable String logSetKey) {
+            this.logSetKey = logSetKey;
             return this;
         }
         @CustomType.Setter
-        public Builder logSourceName(String logSourceName) {
-            this.logSourceName = Objects.requireNonNull(logSourceName);
+        public Builder logSourceName(@Nullable String logSourceName) {
+            this.logSourceName = logSourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder objectNameFilters(List<String> objectNameFilters) {
-            this.objectNameFilters = Objects.requireNonNull(objectNameFilters);
+        public Builder objectNameFilters(@Nullable List<String> objectNameFilters) {
+            this.objectNameFilters = objectNameFilters;
             return this;
         }
         public Builder objectNameFilters(String... objectNameFilters) {
             return objectNameFilters(List.of(objectNameFilters));
         }
         @CustomType.Setter
-        public Builder osBucketName(String osBucketName) {
-            this.osBucketName = Objects.requireNonNull(osBucketName);
+        public Builder osBucketName(@Nullable String osBucketName) {
+            this.osBucketName = osBucketName;
             return this;
         }
         @CustomType.Setter
-        public Builder osNamespace(String osNamespace) {
-            this.osNamespace = Objects.requireNonNull(osNamespace);
+        public Builder osNamespace(@Nullable String osNamespace) {
+            this.osNamespace = osNamespace;
             return this;
         }
         @CustomType.Setter
-        public Builder overrides(List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride> overrides) {
-            this.overrides = Objects.requireNonNull(overrides);
+        public Builder overrides(@Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride> overrides) {
+            this.overrides = overrides;
             return this;
         }
         public Builder overrides(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride... overrides) {
             return overrides(List.of(overrides));
         }
         @CustomType.Setter
-        public Builder pollSince(String pollSince) {
-            this.pollSince = Objects.requireNonNull(pollSince);
+        public Builder pollSince(@Nullable String pollSince) {
+            this.pollSince = pollSince;
             return this;
         }
         @CustomType.Setter
-        public Builder pollTill(String pollTill) {
-            this.pollTill = Objects.requireNonNull(pollTill);
+        public Builder pollTill(@Nullable String pollTill) {
+            this.pollTill = pollTill;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+        public Builder timezone(@Nullable String timezone) {
+            this.timezone = timezone;
             return this;
         }
         public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem build() {

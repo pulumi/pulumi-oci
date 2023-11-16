@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of services.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Limits
 
             ImmutableArray<Outputs.GetServicesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetServicesServiceResult> services)
         {

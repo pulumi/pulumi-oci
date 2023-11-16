@@ -79,28 +79,28 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The availability domain the instance is running in.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     @Export(name="decrementSizeOnDelete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> decrementSizeOnDelete;
@@ -113,42 +113,42 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The fault domain the instance is running in.
      * 
      */
     @Export(name="faultDomain", refs={String.class}, tree="[0]")
-    private Output<String> faultDomain;
+    private Output</* @Nullable */ String> faultDomain;
 
     /**
      * @return The fault domain the instance is running in.
      * 
      */
-    public Output<String> faultDomain() {
-        return this.faultDomain;
+    public Output<Optional<String>> faultDomain() {
+        return Codegen.optional(this.faultDomain);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
      * 
      */
     @Export(name="instanceConfigurationId", refs={String.class}, tree="[0]")
-    private Output<String> instanceConfigurationId;
+    private Output</* @Nullable */ String> instanceConfigurationId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
      * 
      */
-    public Output<String> instanceConfigurationId() {
-        return this.instanceConfigurationId;
+    public Output<Optional<String>> instanceConfigurationId() {
+        return Codegen.optional(this.instanceConfigurationId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -189,70 +189,70 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="loadBalancerBackends", refs={List.class,InstancePoolInstanceLoadBalancerBackend.class}, tree="[0,1]")
-    private Output<List<InstancePoolInstanceLoadBalancerBackend>> loadBalancerBackends;
+    private Output</* @Nullable */ List<InstancePoolInstanceLoadBalancerBackend>> loadBalancerBackends;
 
     /**
      * @return The load balancer backends that are configured for the instance pool instance.
      * 
      */
-    public Output<List<InstancePoolInstanceLoadBalancerBackend>> loadBalancerBackends() {
-        return this.loadBalancerBackends;
+    public Output<Optional<List<InstancePoolInstanceLoadBalancerBackend>>> loadBalancerBackends() {
+        return Codegen.optional(this.loadBalancerBackends);
     }
     /**
      * The region that contains the availability domain the instance is running in.
      * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
-    private Output<String> region;
+    private Output</* @Nullable */ String> region;
 
     /**
      * @return The region that contains the availability domain the instance is running in.
      * 
      */
-    public Output<String> region() {
-        return this.region;
+    public Output<Optional<String>> region() {
+        return Codegen.optional(this.region);
     }
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

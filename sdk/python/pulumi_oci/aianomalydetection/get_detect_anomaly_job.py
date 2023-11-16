@@ -80,26 +80,17 @@ class GetDetectAnomalyJobResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that starts the job.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Detect anomaly job description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
@@ -109,114 +100,72 @@ class GetDetectAnomalyJobResult:
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Detect anomaly job display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Id of the job.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inputDetails")
-    def input_details(self) -> Sequence['outputs.GetDetectAnomalyJobInputDetailResult']:
-        """
-        Input details for detect anomaly job.
-        """
+    def input_details(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobInputDetailResult']]:
         return pulumi.get(self, "input_details")
 
     @property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> str:
-        """
-        The current state details of the batch document job.
-        """
+    def lifecycle_state_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_state_details")
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        The OCID of the trained model.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="outputDetails")
-    def output_details(self) -> Sequence['outputs.GetDetectAnomalyJobOutputDetailResult']:
-        """
-        Output details for detect anomaly job.
-        """
+    def output_details(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobOutputDetailResult']]:
         return pulumi.get(self, "output_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of the project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def sensitivity(self) -> float:
-        """
-        The value that customer can adjust to control the sensitivity of anomaly detection
-        """
+    def sensitivity(self) -> Optional[float]:
         return pulumi.get(self, "sensitivity")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the batch document job.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        Job accepted time
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        Job finished time
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Job started time
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -249,21 +198,7 @@ class AwaitableGetDetectAnomalyJobResult(GetDetectAnomalyJobResult):
 def get_detect_anomaly_job(detect_anomaly_job_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectAnomalyJobResult:
     """
-    This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Gets a detect anomaly asynchronous job by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detect_anomaly_job = oci.AiAnomalyDetection.get_detect_anomaly_job(detect_anomaly_job_id=oci_ai_anomaly_detection_detect_anomaly_job["test_detect_anomaly_job"]["id"])
-    ```
-
-
-    :param str detect_anomaly_job_id: Unique asynchronous job identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['detectAnomalyJobId'] = detect_anomaly_job_id
@@ -295,20 +230,6 @@ def get_detect_anomaly_job(detect_anomaly_job_id: Optional[str] = None,
 def get_detect_anomaly_job_output(detect_anomaly_job_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectAnomalyJobResult]:
     """
-    This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Gets a detect anomaly asynchronous job by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detect_anomaly_job = oci.AiAnomalyDetection.get_detect_anomaly_job(detect_anomaly_job_id=oci_ai_anomaly_detection_detect_anomaly_job["test_detect_anomaly_job"]["id"])
-    ```
-
-
-    :param str detect_anomaly_job_id: Unique asynchronous job identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

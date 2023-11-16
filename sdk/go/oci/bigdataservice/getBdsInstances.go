@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
@@ -74,7 +73,7 @@ type GetBdsInstancesResult struct {
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetBdsInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The state of the cluster.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetBdsInstancesResultOutput) ToGetBdsInstancesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetBdsInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesResult] {
-	return pulumix.Output[GetBdsInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of bds_instances.
 func (o GetBdsInstancesResultOutput) BdsInstances() GetBdsInstancesBdsInstanceArrayOutput {
 	return o.ApplyT(func(v GetBdsInstancesResult) []GetBdsInstancesBdsInstance { return v.BdsInstances }).(GetBdsInstancesBdsInstanceArrayOutput)
@@ -148,8 +141,8 @@ func (o GetBdsInstancesResultOutput) Filters() GetBdsInstancesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBdsInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBdsInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The state of the cluster.

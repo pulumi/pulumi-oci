@@ -46,55 +46,55 @@ export interface GetAutonomousVirtualMachineResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
      */
-    readonly autonomousVmClusterId: string;
+    readonly autonomousVmClusterId?: string;
     /**
      * Client IP Address.
      */
-    readonly clientIpAddress: string;
+    readonly clientIpAddress?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The number of CPU cores enabled on the Autonomous Virtual Machine.
      */
-    readonly cpuCoreCount: number;
+    readonly cpuCoreCount?: number;
     /**
      * The allocated local node storage in GBs on the Autonomous Virtual Machine.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The display name of the dbServer associated with the Autonomous Virtual Machine.
      */
-    readonly dbServerDisplayName: string;
+    readonly dbServerDisplayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
      */
-    readonly dbServerId: string;
+    readonly dbServerId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The allocated memory in GBs on the Autonomous Virtual Machine.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The current state of the Autonomous Virtual Machine.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The name of the Autonomous Virtual Machine.
      */
-    readonly vmName: string;
+    readonly vmName?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.

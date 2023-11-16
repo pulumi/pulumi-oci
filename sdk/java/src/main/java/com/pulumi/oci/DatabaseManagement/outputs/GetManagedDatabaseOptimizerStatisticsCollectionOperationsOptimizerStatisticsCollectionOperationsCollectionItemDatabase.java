@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase {
@@ -13,87 +15,87 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    private String dbDeploymentType;
+    private @Nullable String dbDeploymentType;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    private String dbSubType;
+    private @Nullable String dbSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private String dbType;
+    private @Nullable String dbType;
     /**
      * @return The version of the Oracle Database.
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return The ID of the operation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the Managed Database.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    public String dbDeploymentType() {
-        return this.dbDeploymentType;
+    public Optional<String> dbDeploymentType() {
+        return Optional.ofNullable(this.dbDeploymentType);
     }
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    public String dbSubType() {
-        return this.dbSubType;
+    public Optional<String> dbSubType() {
+        return Optional.ofNullable(this.dbSubType);
     }
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    public String dbType() {
-        return this.dbType;
+    public Optional<String> dbType() {
+        return Optional.ofNullable(this.dbType);
     }
     /**
      * @return The version of the Oracle Database.
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return The ID of the operation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the Managed Database.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String dbDeploymentType;
-        private String dbSubType;
-        private String dbType;
-        private String dbVersion;
-        private String id;
-        private String name;
+        private @Nullable String compartmentId;
+        private @Nullable String dbDeploymentType;
+        private @Nullable String dbSubType;
+        private @Nullable String dbType;
+        private @Nullable String dbVersion;
+        private @Nullable String id;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbDeploymentType(String dbDeploymentType) {
-            this.dbDeploymentType = Objects.requireNonNull(dbDeploymentType);
+        public Builder dbDeploymentType(@Nullable String dbDeploymentType) {
+            this.dbDeploymentType = dbDeploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSubType(String dbSubType) {
-            this.dbSubType = Objects.requireNonNull(dbSubType);
+        public Builder dbSubType(@Nullable String dbSubType) {
+            this.dbSubType = dbSubType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbType(String dbType) {
-            this.dbType = Objects.requireNonNull(dbType);
+        public Builder dbType(@Nullable String dbType) {
+            this.dbType = dbType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase build() {

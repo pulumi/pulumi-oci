@@ -91,13 +91,13 @@ export interface GetManagedDatabaseAttentionLogCountsResult {
     /**
      * The list of attention_log_counts_collection.
      */
-    readonly attentionLogCountsCollections: outputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection[];
+    readonly attentionLogCountsCollections?: outputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountsFilter[];
     readonly groupBy?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isRegularExpression?: boolean;
     readonly logSearchText?: string;
     /**

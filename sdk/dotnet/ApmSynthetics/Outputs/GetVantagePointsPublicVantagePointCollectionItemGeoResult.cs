@@ -16,41 +16,41 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
         /// </summary>
-        public readonly string AdminDivCode;
+        public readonly string? AdminDivCode;
         /// <summary>
         /// Common English-language name for the city.
         /// </summary>
-        public readonly string CityName;
+        public readonly string? CityName;
         /// <summary>
         /// The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
         /// </summary>
-        public readonly string CountryCode;
+        public readonly string? CountryCode;
         /// <summary>
         /// The common English-language name for the country.
         /// </summary>
-        public readonly string CountryName;
+        public readonly string? CountryName;
         /// <summary>
         /// Degrees north of the equator.
         /// </summary>
-        public readonly double Latitude;
+        public readonly double? Latitude;
         /// <summary>
         /// Degrees east of the prime meridian.
         /// </summary>
-        public readonly double Longitude;
+        public readonly double? Longitude;
 
         [OutputConstructor]
         private GetVantagePointsPublicVantagePointCollectionItemGeoResult(
-            string adminDivCode,
+            string? adminDivCode,
 
-            string cityName,
+            string? cityName,
 
-            string countryCode,
+            string? countryCode,
 
-            string countryName,
+            string? countryName,
 
-            double latitude,
+            double? latitude,
 
-            double longitude)
+            double? longitude)
         {
             AdminDivCode = adminDivCode;
             CityName = cityName;

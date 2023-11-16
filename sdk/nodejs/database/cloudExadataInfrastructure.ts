@@ -89,11 +89,11 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
+    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number | undefined>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number>;
+    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number | undefined>;
     /**
      * The availability domain where the cloud Exadata infrastructure is located.
      */
@@ -101,7 +101,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    public /*out*/ readonly availableStorageSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly availableStorageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -109,31 +109,31 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) The number of compute servers for the cloud Exadata infrastructure.
      */
-    public readonly computeCount!: pulumi.Output<number>;
+    public readonly computeCount!: pulumi.Output<number | undefined>;
     /**
      * The total number of CPU cores allocated.
      */
-    public /*out*/ readonly cpuCount!: pulumi.Output<number>;
+    public /*out*/ readonly cpuCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Customer contacts.
      */
-    public readonly customerContacts!: pulumi.Output<outputs.Database.CloudExadataInfrastructureCustomerContact[]>;
+    public readonly customerContacts!: pulumi.Output<outputs.Database.CloudExadataInfrastructureCustomerContact[] | undefined>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly dbServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly dbServerVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      */
@@ -141,51 +141,51 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public readonly maintenanceWindow!: pulumi.Output<outputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
+    public readonly maintenanceWindow!: pulumi.Output<outputs.Database.CloudExadataInfrastructureMaintenanceWindow | undefined>;
     /**
      * The total number of CPU cores available.
      */
-    public /*out*/ readonly maxCpuCount!: pulumi.Output<number>;
+    public /*out*/ readonly maxCpuCount!: pulumi.Output<number | undefined>;
     /**
      * The total available DATA disk group size.
      */
-    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number | undefined>;
     /**
      * The total local node storage available in GBs.
      */
-    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number | undefined>;
     /**
      * The total memory available in GBs.
      */
-    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string | undefined>;
     /**
      * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly monthlyStorageServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly monthlyStorageServerVersion!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string | undefined>;
     /**
      * The shape of the cloud Exadata infrastructure resource.
      */
@@ -193,7 +193,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The current lifecycle state of the cloud Exadata infrastructure resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      *
@@ -201,19 +201,19 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly storageCount!: pulumi.Output<number>;
+    public readonly storageCount!: pulumi.Output<number | undefined>;
     /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly storageServerVersion!: pulumi.Output<string | undefined>;
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    public /*out*/ readonly totalStorageSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly totalStorageSizeInGbs!: pulumi.Output<number | undefined>;
 
     /**
      * Create a CloudExadataInfrastructure resource with the given unique name, arguments, and options.

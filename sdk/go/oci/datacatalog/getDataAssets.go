@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
@@ -62,7 +61,7 @@ type GetDataAssetsResult struct {
 	Fields      []string              `pulumi:"fields"`
 	Filters     []GetDataAssetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the data asset.
 	State *string `pulumi:"state"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
@@ -122,12 +121,6 @@ func (o GetDataAssetsResultOutput) ToGetDataAssetsResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetDataAssetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataAssetsResult] {
-	return pulumix.Output[GetDataAssetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data catalog's OCID.
 func (o GetDataAssetsResultOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataAssetsResult) string { return v.CatalogId }).(pulumi.StringOutput)
@@ -166,8 +159,8 @@ func (o GetDataAssetsResultOutput) Filters() GetDataAssetsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDataAssetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataAssetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the data asset.

@@ -86,11 +86,11 @@ export class ManagementStation extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Details describing the Management Station config.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Management Station name
      */
@@ -98,7 +98,7 @@ export class ManagementStation extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Name of the host
      */
@@ -106,7 +106,7 @@ export class ManagementStation extends pulumi.CustomResource {
     /**
      * OCID for the Instance associated with the Management Station.
      */
-    public /*out*/ readonly managedInstanceId!: pulumi.Output<string>;
+    public /*out*/ readonly managedInstanceId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Information for creating a mirror configuration
      */
@@ -114,23 +114,23 @@ export class ManagementStation extends pulumi.CustomResource {
     /**
      * A decimal number representing the mirror capacity
      */
-    public /*out*/ readonly mirrorCapacity!: pulumi.Output<number>;
+    public /*out*/ readonly mirrorCapacity!: pulumi.Output<number | undefined>;
     /**
      * Status summary of all repos
      */
-    public /*out*/ readonly mirrorSyncStatuses!: pulumi.Output<outputs.OsManagementHub.ManagementStationMirrorSyncStatus[]>;
+    public /*out*/ readonly mirrorSyncStatuses!: pulumi.Output<outputs.OsManagementHub.ManagementStationMirrorSyncStatus[] | undefined>;
     /**
      * A decimal number representing the completeness percentage
      */
-    public /*out*/ readonly overallPercentage!: pulumi.Output<number>;
+    public /*out*/ readonly overallPercentage!: pulumi.Output<number | undefined>;
     /**
      * Current state of the mirroring
      */
-    public /*out*/ readonly overallState!: pulumi.Output<string>;
+    public /*out*/ readonly overallState!: pulumi.Output<string | undefined>;
     /**
      * OCID of the Profile associated with the Station
      */
-    public /*out*/ readonly profileId!: pulumi.Output<string>;
+    public /*out*/ readonly profileId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Information for creating a proxy configuration
      */
@@ -138,19 +138,19 @@ export class ManagementStation extends pulumi.CustomResource {
     /**
      * OCID of the Scheduled Job for mirror sync
      */
-    public /*out*/ readonly scheduledJobId!: pulumi.Output<string>;
+    public /*out*/ readonly scheduledJobId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the Management Station config.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A decimal number representing the total of repos
      */
-    public /*out*/ readonly totalMirrors!: pulumi.Output<number>;
+    public /*out*/ readonly totalMirrors!: pulumi.Output<number | undefined>;
 
     /**
      * Create a ManagementStation resource with the given unique name, arguments, and options.

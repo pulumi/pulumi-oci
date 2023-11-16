@@ -80,98 +80,98 @@ export interface GetDomainsIdentitySettingResult {
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
      */
-    readonly emitLockedMessageWhenUserIsLocked: boolean;
+    readonly emitLockedMessageWhenUserIsLocked?: boolean;
     /**
      * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      */
-    readonly externalId: string;
+    readonly externalId?: string;
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsIdentitySettingIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsIdentitySettingIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsIdentitySettingIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsIdentitySettingIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     readonly identitySettingId: string;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsIdentitySettingMeta[];
+    readonly metas?: outputs.Identity.GetDomainsIdentitySettingMeta[];
     /**
      * Whether to allow users to update their own profile.
      */
-    readonly myProfiles: outputs.Identity.GetDomainsIdentitySettingMyProfile[];
+    readonly myProfiles?: outputs.Identity.GetDomainsIdentitySettingMyProfile[];
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     /**
      * A list of Posix Gid settings.
      */
-    readonly posixGids: outputs.Identity.GetDomainsIdentitySettingPosixGid[];
+    readonly posixGids?: outputs.Identity.GetDomainsIdentitySettingPosixGid[];
     /**
      * A list of Posix Uid settings.
      */
-    readonly posixUids: outputs.Identity.GetDomainsIdentitySettingPosixUid[];
+    readonly posixUids?: outputs.Identity.GetDomainsIdentitySettingPosixUid[];
     /**
      * Indicates whether the primary email is required.
      */
-    readonly primaryEmailRequired: boolean;
+    readonly primaryEmailRequired?: boolean;
     /**
      * Indicates whether to remove non-RFC5322 compliant emails before creating a user.
      */
-    readonly removeInvalidEmails: boolean;
+    readonly removeInvalidEmails?: boolean;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * **Added In:** 2302092332
      */
-    readonly returnInactiveOverLockedMessage: boolean;
+    readonly returnInactiveOverLockedMessage?: boolean;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsIdentitySettingTag[];
+    readonly tags?: outputs.Identity.GetDomainsIdentitySettingTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * A list of tokens and their expiry length.
      */
-    readonly tokens: outputs.Identity.GetDomainsIdentitySettingToken[];
+    readonly tokens?: outputs.Identity.GetDomainsIdentitySettingToken[];
     /**
      * Indicates whether a user is allowed to change their own recovery email.
      */
-    readonly userAllowedToSetRecoveryEmail: boolean;
+    readonly userAllowedToSetRecoveryEmail?: boolean;
 }
 /**
  * This data source provides details about a specific Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.

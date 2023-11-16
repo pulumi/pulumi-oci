@@ -119,7 +119,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="app", refs={DomainsGrantApp.class}, tree="[0]")
-    private Output<DomainsGrantApp> app;
+    private Output</* @Nullable */ DomainsGrantApp> app;
 
     /**
      * @return Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
@@ -135,8 +135,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<DomainsGrantApp> app() {
-        return this.app;
+    public Output<Optional<DomainsGrantApp>> app() {
+        return Codegen.optional(this.app);
     }
     /**
      * Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
@@ -154,7 +154,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="appEntitlementCollection", refs={DomainsGrantAppEntitlementCollection.class}, tree="[0]")
-    private Output<DomainsGrantAppEntitlementCollection> appEntitlementCollection;
+    private Output</* @Nullable */ DomainsGrantAppEntitlementCollection> appEntitlementCollection;
 
     /**
      * @return Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
@@ -171,8 +171,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<DomainsGrantAppEntitlementCollection> appEntitlementCollection() {
-        return this.appEntitlementCollection;
+    public Output<Optional<DomainsGrantAppEntitlementCollection>> appEntitlementCollection() {
+        return Codegen.optional(this.appEntitlementCollection);
     }
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -231,7 +231,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -247,8 +247,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
@@ -267,7 +267,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compositeKey", refs={String.class}, tree="[0]")
-    private Output<String> compositeKey;
+    private Output</* @Nullable */ String> compositeKey;
 
     /**
      * @return (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
@@ -285,8 +285,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: server
      * 
      */
-    public Output<String> compositeKey() {
-        return this.compositeKey;
+    public Output<Optional<String>> compositeKey() {
+        return Codegen.optional(this.compositeKey);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -303,7 +303,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -319,8 +319,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -337,7 +337,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -353,8 +353,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * The entitlement or privilege that is being granted
@@ -370,7 +370,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="entitlement", refs={DomainsGrantEntitlement.class}, tree="[0]")
-    private Output<DomainsGrantEntitlement> entitlement;
+    private Output</* @Nullable */ DomainsGrantEntitlement> entitlement;
 
     /**
      * @return The entitlement or privilege that is being granted
@@ -385,8 +385,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<DomainsGrantEntitlement> entitlement() {
-        return this.entitlement;
+    public Output<Optional<DomainsGrantEntitlement>> entitlement() {
+        return Codegen.optional(this.entitlement);
     }
     /**
      * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:
@@ -446,7 +446,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="grantedAttributeValuesJson", refs={String.class}, tree="[0]")
-    private Output<String> grantedAttributeValuesJson;
+    private Output</* @Nullable */ String> grantedAttributeValuesJson;
 
     /**
      * @return Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
@@ -463,8 +463,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> grantedAttributeValuesJson() {
-        return this.grantedAttributeValuesJson;
+    public Output<Optional<String>> grantedAttributeValuesJson() {
+        return Codegen.optional(this.grantedAttributeValuesJson);
     }
     /**
      * Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
@@ -514,7 +514,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="grantors", refs={List.class,DomainsGrantGrantor.class}, tree="[0,1]")
-    private Output<List<DomainsGrantGrantor>> grantors;
+    private Output</* @Nullable */ List<DomainsGrantGrantor>> grantors;
 
     /**
      * @return (Updatable) User conferring the grant to the beneficiary
@@ -529,8 +529,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsGrantGrantor>> grantors() {
-        return this.grantors;
+    public Output<Optional<List<DomainsGrantGrantor>>> grantors() {
+        return Codegen.optional(this.grantors);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -545,7 +545,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsGrantIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsGrantIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsGrantIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -559,8 +559,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsGrantIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsGrantIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -589,7 +589,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsGrantIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsGrantIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsGrantIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -603,8 +603,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsGrantIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsGrantIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -621,7 +621,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -637,8 +637,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -654,7 +654,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -669,8 +669,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) If true, this Grant has been fulfilled successfully.
@@ -686,7 +686,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isFulfilled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isFulfilled;
+    private Output</* @Nullable */ Boolean> isFulfilled;
 
     /**
      * @return (Updatable) If true, this Grant has been fulfilled successfully.
@@ -701,8 +701,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isFulfilled() {
-        return this.isFulfilled;
+    public Output<Optional<Boolean>> isFulfilled() {
+        return Codegen.optional(this.isFulfilled);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -719,7 +719,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metas", refs={List.class,DomainsGrantMeta.class}, tree="[0,1]")
-    private Output<List<DomainsGrantMeta>> metas;
+    private Output</* @Nullable */ List<DomainsGrantMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -735,8 +735,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsGrantMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsGrantMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -753,7 +753,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -769,22 +769,22 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
     @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
-    private Output<String> resourceTypeSchemaVersion;
+    private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    public Output<String> resourceTypeSchemaVersion() {
-        return this.resourceTypeSchemaVersion;
+    public Output<Optional<String>> resourceTypeSchemaVersion() {
+        return Codegen.optional(this.resourceTypeSchemaVersion);
     }
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -835,7 +835,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tags", refs={List.class,DomainsGrantTag.class}, tree="[0,1]")
-    private Output<List<DomainsGrantTag>> tags;
+    private Output</* @Nullable */ List<DomainsGrantTag>> tags;
 
     /**
      * @return A list of tags on this resource.
@@ -851,8 +851,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsGrantTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsGrantTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -872,7 +872,7 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -891,8 +891,8 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
 
     /**

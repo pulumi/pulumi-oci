@@ -49,33 +49,21 @@ class GetExternalPluggableDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the external database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalContainerDatabaseId")
     def external_container_database_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalContainerDatabaseDetails) that contains the specified [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
-        """
         return pulumi.get(self, "external_container_database_id")
 
     @property
     @pulumi.getter(name="externalPluggableDatabases")
-    def external_pluggable_databases(self) -> Sequence['outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseResult']:
-        """
-        The list of external_pluggable_databases.
-        """
+    def external_pluggable_databases(self) -> Optional[Sequence['outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseResult']]:
         return pulumi.get(self, "external_pluggable_databases")
 
     @property
@@ -85,7 +73,7 @@ class GetExternalPluggableDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetExternalPluggableDatabasesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Oracle Cloud Infrastructure external database resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,28 +107,7 @@ def get_external_pluggable_databases(compartment_id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalPluggableDatabasesResult:
     """
-    This data source provides the list of External Pluggable Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
-    resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_pluggable_databases = oci.Database.get_external_pluggable_databases(compartment_id=var["compartment_id"],
-        display_name=var["external_pluggable_database_display_name"],
-        external_container_database_id=oci_database_external_container_database["test_external_container_database"]["id"],
-        state=var["external_pluggable_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -172,27 +136,6 @@ def get_external_pluggable_databases_output(compartment_id: Optional[pulumi.Inpu
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalPluggableDatabasesResult]:
     """
-    This data source provides the list of External Pluggable Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
-    resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_pluggable_databases = oci.Database.get_external_pluggable_databases(compartment_id=var["compartment_id"],
-        display_name=var["external_pluggable_database_display_name"],
-        external_container_database_id=oci_database_external_container_database["test_external_container_database"]["id"],
-        state=var["external_pluggable_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

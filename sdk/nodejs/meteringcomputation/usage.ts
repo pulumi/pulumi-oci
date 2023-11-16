@@ -75,7 +75,7 @@ export class Usage extends pulumi.CustomResource {
     /**
      * The compartment depth level.
      */
-    public readonly compartmentDepth!: pulumi.Output<number>;
+    public readonly compartmentDepth!: pulumi.Output<number | undefined>;
     /**
      * The filter object for query usage.
      */
@@ -83,7 +83,7 @@ export class Usage extends pulumi.CustomResource {
     /**
      * Forecast configuration of usage/cost.
      */
-    public readonly forecast!: pulumi.Output<outputs.MeteringComputation.UsageForecast>;
+    public readonly forecast!: pulumi.Output<outputs.MeteringComputation.UsageForecast | undefined>;
     /**
      * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
      */
@@ -91,23 +91,23 @@ export class Usage extends pulumi.CustomResource {
     /**
      * Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
      */
-    public readonly groupBies!: pulumi.Output<string[]>;
+    public readonly groupBies!: pulumi.Output<string[] | undefined>;
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
      */
-    public readonly groupByTags!: pulumi.Output<outputs.MeteringComputation.UsageGroupByTag[]>;
+    public readonly groupByTags!: pulumi.Output<outputs.MeteringComputation.UsageGroupByTag[] | undefined>;
     /**
      * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      */
-    public readonly isAggregateByTime!: pulumi.Output<boolean>;
+    public readonly isAggregateByTime!: pulumi.Output<boolean | undefined>;
     /**
      * A list of usage items.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.MeteringComputation.UsageItem[]>;
+    public /*out*/ readonly items!: pulumi.Output<outputs.MeteringComputation.UsageItem[] | undefined>;
     /**
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
      */
-    public readonly queryType!: pulumi.Output<string>;
+    public readonly queryType!: pulumi.Output<string | undefined>;
     /**
      * Tenant ID.
      */

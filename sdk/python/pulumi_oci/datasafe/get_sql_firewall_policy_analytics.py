@@ -85,7 +85,7 @@ class GetSqlFirewallPolicyAnalyticsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,25 +94,16 @@ class GetSqlFirewallPolicyAnalyticsResult:
     @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[str]:
-        """
-        The OCID of the security policy corresponding to the SQL firewall policy.
-        """
         return pulumi.get(self, "security_policy_id")
 
     @property
     @pulumi.getter(name="sqlFirewallPolicyAnalyticsCollections")
-    def sql_firewall_policy_analytics_collections(self) -> Sequence['outputs.GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionResult']:
-        """
-        The list of sql_firewall_policy_analytics_collection.
-        """
+    def sql_firewall_policy_analytics_collections(self) -> Optional[Sequence['outputs.GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionResult']]:
         return pulumi.get(self, "sql_firewall_policy_analytics_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the SQL firewall policy.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -156,46 +147,7 @@ def get_sql_firewall_policy_analytics(access_level: Optional[str] = None,
                                       time_started: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlFirewallPolicyAnalyticsResult:
     """
-    This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of aggregated SQL firewall policy details.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform SummarizedSqlFirewallPolicyInfo on the specified
-    `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_firewall_policy_analytics = oci.DataSafe.get_sql_firewall_policy_analytics(compartment_id=var["compartment_id"],
-        access_level=var["sql_firewall_policy_analytic_access_level"],
-        compartment_id_in_subtree=var["sql_firewall_policy_analytic_compartment_id_in_subtree"],
-        group_bies=var["sql_firewall_policy_analytic_group_by"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["sql_firewall_policy_analytic_state"],
-        time_ended=var["sql_firewall_policy_analytic_time_ended"],
-        time_started=var["sql_firewall_policy_analytic_time_started"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter to summarize SQL firewall policy aggregation.
-    :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
-    :param str state: The current state of the SQL firewall policy.
-    :param str time_ended: An optional filter to return the summary of the SQL firewall policies created before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return the summary of the SQL firewall policies created after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -236,45 +188,6 @@ def get_sql_firewall_policy_analytics_output(access_level: Optional[pulumi.Input
                                              time_started: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallPolicyAnalyticsResult]:
     """
-    This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of aggregated SQL firewall policy details.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform SummarizedSqlFirewallPolicyInfo on the specified
-    `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_firewall_policy_analytics = oci.DataSafe.get_sql_firewall_policy_analytics(compartment_id=var["compartment_id"],
-        access_level=var["sql_firewall_policy_analytic_access_level"],
-        compartment_id_in_subtree=var["sql_firewall_policy_analytic_compartment_id_in_subtree"],
-        group_bies=var["sql_firewall_policy_analytic_group_by"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["sql_firewall_policy_analytic_state"],
-        time_ended=var["sql_firewall_policy_analytic_time_ended"],
-        time_started=var["sql_firewall_policy_analytic_time_started"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter to summarize SQL firewall policy aggregation.
-    :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
-    :param str state: The current state of the SQL firewall policy.
-    :param str time_ended: An optional filter to return the summary of the SQL firewall policies created before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return the summary of the SQL firewall policies created after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     ...

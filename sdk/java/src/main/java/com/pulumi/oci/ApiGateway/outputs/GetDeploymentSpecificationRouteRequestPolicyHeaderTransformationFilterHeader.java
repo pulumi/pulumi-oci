@@ -8,6 +8,8 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteRequestP
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader {
@@ -15,12 +17,12 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
      * @return The list of headers.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader() {}
     /**
@@ -28,14 +30,14 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items;
-        private String type;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader build() {

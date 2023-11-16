@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
@@ -72,8 +71,8 @@ type GetSqlCollectionLogInsightsResult struct {
 	Filters []GetSqlCollectionLogInsightsFilter `pulumi:"filters"`
 	GroupBy *string                             `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string `pulumi:"id"`
-	SqlCollectionId string `pulumi:"sqlCollectionId"`
+	Id              *string `pulumi:"id"`
+	SqlCollectionId string  `pulumi:"sqlCollectionId"`
 	// The list of sql_collection_log_insights_collection.
 	SqlCollectionLogInsightsCollections []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection `pulumi:"sqlCollectionLogInsightsCollections"`
 	// The time at which the aggregation ended.
@@ -127,12 +126,6 @@ func (o GetSqlCollectionLogInsightsResultOutput) ToGetSqlCollectionLogInsightsRe
 	return o
 }
 
-func (o GetSqlCollectionLogInsightsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsResult] {
-	return pulumix.Output[GetSqlCollectionLogInsightsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlCollectionLogInsightsResultOutput) Filters() GetSqlCollectionLogInsightsFilterArrayOutput {
 	return o.ApplyT(func(v GetSqlCollectionLogInsightsResult) []GetSqlCollectionLogInsightsFilter { return v.Filters }).(GetSqlCollectionLogInsightsFilterArrayOutput)
 }
@@ -142,8 +135,8 @@ func (o GetSqlCollectionLogInsightsResultOutput) GroupBy() pulumi.StringPtrOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSqlCollectionLogInsightsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlCollectionLogInsightsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlCollectionLogInsightsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSqlCollectionLogInsightsResultOutput) SqlCollectionId() pulumi.StringOutput {

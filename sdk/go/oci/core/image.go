@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Image resource in Oracle Cloud Infrastructure Core service.
@@ -157,13 +156,13 @@ type Image struct {
 	// Oracle Cloud Agent features supported on the image.
 	AgentFeatures ImageAgentFeatureArrayOutput `pulumi:"agentFeatures"`
 	// The OCID of the image originally used to launch the instance.
-	BaseImageId pulumi.StringOutput `pulumi:"baseImageId"`
+	BaseImageId pulumi.StringPtrOutput `pulumi:"baseImageId"`
 	// The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-	BillableSizeInGbs pulumi.StringOutput `pulumi:"billableSizeInGbs"`
+	BillableSizeInGbs pulumi.StringPtrOutput `pulumi:"billableSizeInGbs"`
 	// (Updatable) The OCID of the compartment you want the image to be created in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-	CreateImageAllowed pulumi.BoolOutput `pulumi:"createImageAllowed"`
+	CreateImageAllowed pulumi.BoolPtrOutput `pulumi:"createImageAllowed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -171,28 +170,28 @@ type Image struct {
 	// You cannot use a platform image name as a custom image name.
 	//
 	// Example: `My Oracle Linux image`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags       pulumi.MapOutput                 `pulumi:"freeformTags"`
 	ImageSourceDetails ImageImageSourceDetailsPtrOutput `pulumi:"imageSourceDetails"`
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId pulumi.StringPtrOutput `pulumi:"instanceId"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-	LaunchMode pulumi.StringOutput `pulumi:"launchMode"`
+	LaunchMode pulumi.StringPtrOutput `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions ImageLaunchOptionArrayOutput `pulumi:"launchOptions"`
 	// The listing type of the image. The default value is "NONE".
-	ListingType pulumi.StringOutput `pulumi:"listingType"`
+	ListingType pulumi.StringPtrOutput `pulumi:"listingType"`
 	// The image's operating system.  Example: `Oracle Linux`
-	OperatingSystem pulumi.StringOutput `pulumi:"operatingSystem"`
+	OperatingSystem pulumi.StringPtrOutput `pulumi:"operatingSystem"`
 	// The image's operating system version.  Example: `7.2`
-	OperatingSystemVersion pulumi.StringOutput `pulumi:"operatingSystemVersion"`
+	OperatingSystemVersion pulumi.StringPtrOutput `pulumi:"operatingSystemVersion"`
 	// The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-	SizeInMbs pulumi.StringOutput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrOutput `pulumi:"sizeInMbs"`
 	// The current state of the image.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewImage registers a new resource with the given unique name, arguments, and options.
@@ -379,12 +378,6 @@ func (i *Image) ToImageOutputWithContext(ctx context.Context) ImageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ImageOutput)
 }
 
-func (i *Image) ToOutput(ctx context.Context) pulumix.Output[*Image] {
-	return pulumix.Output[*Image]{
-		OutputState: i.ToImageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ImageArrayInput is an input type that accepts ImageArray and ImageArrayOutput values.
 // You can construct a concrete instance of `ImageArrayInput` via:
 //
@@ -408,12 +401,6 @@ func (i ImageArray) ToImageArrayOutput() ImageArrayOutput {
 
 func (i ImageArray) ToImageArrayOutputWithContext(ctx context.Context) ImageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ImageArrayOutput)
-}
-
-func (i ImageArray) ToOutput(ctx context.Context) pulumix.Output[[]*Image] {
-	return pulumix.Output[[]*Image]{
-		OutputState: i.ToImageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ImageMapInput is an input type that accepts ImageMap and ImageMapOutput values.
@@ -441,12 +428,6 @@ func (i ImageMap) ToImageMapOutputWithContext(ctx context.Context) ImageMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ImageMapOutput)
 }
 
-func (i ImageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Image] {
-	return pulumix.Output[map[string]*Image]{
-		OutputState: i.ToImageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ImageOutput struct{ *pulumi.OutputState }
 
 func (ImageOutput) ElementType() reflect.Type {
@@ -461,25 +442,19 @@ func (o ImageOutput) ToImageOutputWithContext(ctx context.Context) ImageOutput {
 	return o
 }
 
-func (o ImageOutput) ToOutput(ctx context.Context) pulumix.Output[*Image] {
-	return pulumix.Output[*Image]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Oracle Cloud Agent features supported on the image.
 func (o ImageOutput) AgentFeatures() ImageAgentFeatureArrayOutput {
 	return o.ApplyT(func(v *Image) ImageAgentFeatureArrayOutput { return v.AgentFeatures }).(ImageAgentFeatureArrayOutput)
 }
 
 // The OCID of the image originally used to launch the instance.
-func (o ImageOutput) BaseImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.BaseImageId }).(pulumi.StringOutput)
+func (o ImageOutput) BaseImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.BaseImageId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-func (o ImageOutput) BillableSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.BillableSizeInGbs }).(pulumi.StringOutput)
+func (o ImageOutput) BillableSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.BillableSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment you want the image to be created in.
@@ -488,8 +463,8 @@ func (o ImageOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-func (o ImageOutput) CreateImageAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Image) pulumi.BoolOutput { return v.CreateImageAllowed }).(pulumi.BoolOutput)
+func (o ImageOutput) CreateImageAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.BoolPtrOutput { return v.CreateImageAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -502,8 +477,8 @@ func (o ImageOutput) DefinedTags() pulumi.MapOutput {
 // You cannot use a platform image name as a custom image name.
 //
 // Example: `My Oracle Linux image`
-func (o ImageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ImageOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -521,8 +496,8 @@ func (o ImageOutput) InstanceId() pulumi.StringPtrOutput {
 }
 
 // Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-func (o ImageOutput) LaunchMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.LaunchMode }).(pulumi.StringOutput)
+func (o ImageOutput) LaunchMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.LaunchMode }).(pulumi.StringPtrOutput)
 }
 
 // Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -531,33 +506,33 @@ func (o ImageOutput) LaunchOptions() ImageLaunchOptionArrayOutput {
 }
 
 // The listing type of the image. The default value is "NONE".
-func (o ImageOutput) ListingType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.ListingType }).(pulumi.StringOutput)
+func (o ImageOutput) ListingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.ListingType }).(pulumi.StringPtrOutput)
 }
 
 // The image's operating system.  Example: `Oracle Linux`
-func (o ImageOutput) OperatingSystem() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.OperatingSystem }).(pulumi.StringOutput)
+func (o ImageOutput) OperatingSystem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.OperatingSystem }).(pulumi.StringPtrOutput)
 }
 
 // The image's operating system version.  Example: `7.2`
-func (o ImageOutput) OperatingSystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.OperatingSystemVersion }).(pulumi.StringOutput)
+func (o ImageOutput) OperatingSystemVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.OperatingSystemVersion }).(pulumi.StringPtrOutput)
 }
 
 // The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-func (o ImageOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o ImageOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the image.
-func (o ImageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ImageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ImageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ImageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ImageArrayOutput struct{ *pulumi.OutputState }
@@ -572,12 +547,6 @@ func (o ImageArrayOutput) ToImageArrayOutput() ImageArrayOutput {
 
 func (o ImageArrayOutput) ToImageArrayOutputWithContext(ctx context.Context) ImageArrayOutput {
 	return o
-}
-
-func (o ImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Image] {
-	return pulumix.Output[[]*Image]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ImageArrayOutput) Index(i pulumi.IntInput) ImageOutput {
@@ -598,12 +567,6 @@ func (o ImageMapOutput) ToImageMapOutput() ImageMapOutput {
 
 func (o ImageMapOutput) ToImageMapOutputWithContext(ctx context.Context) ImageMapOutput {
 	return o
-}
-
-func (o ImageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Image] {
-	return pulumix.Output[map[string]*Image]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ImageMapOutput) MapIndex(k pulumi.StringInput) ImageOutput {

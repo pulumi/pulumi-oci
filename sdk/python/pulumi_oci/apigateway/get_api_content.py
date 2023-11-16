@@ -39,12 +39,12 @@ class GetApiContentResult:
 
     @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,21 +65,7 @@ class AwaitableGetApiContentResult(GetApiContentResult):
 def get_api_content(api_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiContentResult:
     """
-    This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Get the raw API content.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_content = oci.ApiGateway.get_api_content(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apiId'] = api_id
@@ -96,20 +82,6 @@ def get_api_content(api_id: Optional[str] = None,
 def get_api_content_output(api_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiContentResult]:
     """
-    This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Get the raw API content.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_content = oci.ApiGateway.get_api_content(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     ...

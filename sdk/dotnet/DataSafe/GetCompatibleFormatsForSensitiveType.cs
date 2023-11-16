@@ -151,7 +151,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetCompatibleFormatsForSensitiveTypeResult(
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult> formatsForSensitiveTypes,
 
-            string id)
+            string? id)
         {
             AccessLevel = accessLevel;
             CompartmentId = compartmentId;

@@ -49,25 +49,16 @@ class GetConfigsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the configuration.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configCollections")
-    def config_collections(self) -> Sequence['outputs.GetConfigsConfigCollectionResult']:
-        """
-        The list of config_collection.
-        """
+    def config_collections(self) -> Optional[Sequence['outputs.GetConfigsConfigCollectionResult']]:
         return pulumi.get(self, "config_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +68,7 @@ class GetConfigsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,9 +77,6 @@ class GetConfigsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the configuration.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -119,27 +107,7 @@ def get_configs(compartment_id: Optional[str] = None,
                 type: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigsResult:
     """
-    This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Get a list of configurations in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=var["compartment_id"],
-        display_name=var["config_display_name"],
-        state=var["config_state"],
-        type=var["config_type"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the Config.
-    :param str type: A filter to return only configuration items for a given config type. The only valid config type is `"AUTO_PROMOTE"`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_configs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        type: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigsResult]:
     """
-    This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Get a list of configurations in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=var["compartment_id"],
-        display_name=var["config_display_name"],
-        state=var["config_state"],
-        type=var["config_type"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the Config.
-    :param str type: A filter to return only configuration items for a given config type. The only valid config type is `"AUTO_PROMOTE"`
+    Use this data source to access information about an existing resource.
     """
     ...

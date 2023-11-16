@@ -149,7 +149,7 @@ namespace Pulumi.Oci.HealthChecks
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The unique, permanent name for the vantage point.
         /// </summary>
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.HealthChecks
 
             ImmutableArray<Outputs.GetVantagePointsHealthChecksVantagePointResult> healthChecksVantagePoints,
 
-            string id,
+            string? id,
 
             string? name)
         {

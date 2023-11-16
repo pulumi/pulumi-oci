@@ -9,6 +9,7 @@ import com.pulumi.oci.GoldenGate.outputs.GetTrailSequencesTrailSequenceCollectio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -24,13 +25,13 @@ public final class GetTrailSequencesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String trailFileId;
     /**
      * @return The list of trail_sequence_collection.
      * 
      */
-    private List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections;
+    private @Nullable List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections;
     private String trailSequenceId;
 
     private GetTrailSequencesResult() {}
@@ -51,8 +52,8 @@ public final class GetTrailSequencesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String trailFileId() {
         return this.trailFileId;
@@ -62,7 +63,7 @@ public final class GetTrailSequencesResult {
      * 
      */
     public List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections() {
-        return this.trailSequenceCollections;
+        return this.trailSequenceCollections == null ? List.of() : this.trailSequenceCollections;
     }
     public String trailSequenceId() {
         return this.trailSequenceId;
@@ -80,9 +81,9 @@ public final class GetTrailSequencesResult {
         private String deploymentId;
         private String displayName;
         private @Nullable List<GetTrailSequencesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String trailFileId;
-        private List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections;
+        private @Nullable List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections;
         private String trailSequenceId;
         public Builder() {}
         public Builder(GetTrailSequencesResult defaults) {
@@ -115,8 +116,8 @@ public final class GetTrailSequencesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -125,8 +126,8 @@ public final class GetTrailSequencesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder trailSequenceCollections(List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections) {
-            this.trailSequenceCollections = Objects.requireNonNull(trailSequenceCollections);
+        public Builder trailSequenceCollections(@Nullable List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections) {
+            this.trailSequenceCollections = trailSequenceCollections;
             return this;
         }
         public Builder trailSequenceCollections(GetTrailSequencesTrailSequenceCollection... trailSequenceCollections) {

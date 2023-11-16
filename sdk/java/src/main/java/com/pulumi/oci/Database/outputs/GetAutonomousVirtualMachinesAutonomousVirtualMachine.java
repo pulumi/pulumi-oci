@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousVirtualMachinesAutonomousVirtualMachine {
@@ -16,159 +18,159 @@ public final class GetAutonomousVirtualMachinesAutonomousVirtualMachine {
      * @return The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String autonomousVmClusterId;
+    private @Nullable String autonomousVmClusterId;
     /**
      * @return Client IP Address.
      * 
      */
-    private String clientIpAddress;
+    private @Nullable String clientIpAddress;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The number of CPU cores enabled on the Autonomous Virtual Machine.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return The allocated local node storage in GBs on the Autonomous Virtual Machine.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     /**
      * @return The display name of the dbServer associated with the Autonomous Virtual Machine.
      * 
      */
-    private String dbServerDisplayName;
+    private @Nullable String dbServerDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
      * 
      */
-    private String dbServerId;
+    private @Nullable String dbServerId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machine.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The allocated memory in GBs on the Autonomous Virtual Machine.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The name of the Autonomous Virtual Machine.
      * 
      */
-    private String vmName;
+    private @Nullable String vmName;
 
     private GetAutonomousVirtualMachinesAutonomousVirtualMachine() {}
     /**
      * @return The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String autonomousVmClusterId() {
-        return this.autonomousVmClusterId;
+    public Optional<String> autonomousVmClusterId() {
+        return Optional.ofNullable(this.autonomousVmClusterId);
     }
     /**
      * @return Client IP Address.
      * 
      */
-    public String clientIpAddress() {
-        return this.clientIpAddress;
+    public Optional<String> clientIpAddress() {
+        return Optional.ofNullable(this.clientIpAddress);
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The number of CPU cores enabled on the Autonomous Virtual Machine.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return The allocated local node storage in GBs on the Autonomous Virtual Machine.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     /**
      * @return The display name of the dbServer associated with the Autonomous Virtual Machine.
      * 
      */
-    public String dbServerDisplayName() {
-        return this.dbServerDisplayName;
+    public Optional<String> dbServerDisplayName() {
+        return Optional.ofNullable(this.dbServerDisplayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
      * 
      */
-    public String dbServerId() {
-        return this.dbServerId;
+    public Optional<String> dbServerId() {
+        return Optional.ofNullable(this.dbServerId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machine.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The allocated memory in GBs on the Autonomous Virtual Machine.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The name of the Autonomous Virtual Machine.
      * 
      */
-    public String vmName() {
-        return this.vmName;
+    public Optional<String> vmName() {
+        return Optional.ofNullable(this.vmName);
     }
 
     public static Builder builder() {
@@ -180,19 +182,19 @@ public final class GetAutonomousVirtualMachinesAutonomousVirtualMachine {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String autonomousVmClusterId;
-        private String clientIpAddress;
-        private String compartmentId;
-        private Integer cpuCoreCount;
-        private Integer dbNodeStorageSizeInGbs;
-        private String dbServerDisplayName;
-        private String dbServerId;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Integer memorySizeInGbs;
-        private String state;
-        private String vmName;
+        private @Nullable String autonomousVmClusterId;
+        private @Nullable String clientIpAddress;
+        private @Nullable String compartmentId;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
+        private @Nullable String dbServerDisplayName;
+        private @Nullable String dbServerId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable String state;
+        private @Nullable String vmName;
         public Builder() {}
         public Builder(GetAutonomousVirtualMachinesAutonomousVirtualMachine defaults) {
     	      Objects.requireNonNull(defaults);
@@ -212,68 +214,68 @@ public final class GetAutonomousVirtualMachinesAutonomousVirtualMachine {
         }
 
         @CustomType.Setter
-        public Builder autonomousVmClusterId(String autonomousVmClusterId) {
-            this.autonomousVmClusterId = Objects.requireNonNull(autonomousVmClusterId);
+        public Builder autonomousVmClusterId(@Nullable String autonomousVmClusterId) {
+            this.autonomousVmClusterId = autonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder clientIpAddress(String clientIpAddress) {
-            this.clientIpAddress = Objects.requireNonNull(clientIpAddress);
+        public Builder clientIpAddress(@Nullable String clientIpAddress) {
+            this.clientIpAddress = clientIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbServerDisplayName(String dbServerDisplayName) {
-            this.dbServerDisplayName = Objects.requireNonNull(dbServerDisplayName);
+        public Builder dbServerDisplayName(@Nullable String dbServerDisplayName) {
+            this.dbServerDisplayName = dbServerDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbServerId(String dbServerId) {
-            this.dbServerId = Objects.requireNonNull(dbServerId);
+        public Builder dbServerId(@Nullable String dbServerId) {
+            this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder vmName(String vmName) {
-            this.vmName = Objects.requireNonNull(vmName);
+        public Builder vmName(@Nullable String vmName) {
+            this.vmName = vmName;
             return this;
         }
         public GetAutonomousVirtualMachinesAutonomousVirtualMachine build() {

@@ -164,7 +164,7 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// OCID of the user who created the connection.
         /// </summary>
-        public readonly string CreatedById;
+        public readonly string? CreatedById;
         /// <summary>
         /// Unique key of the parent data asset.
         /// </summary>
@@ -172,58 +172,58 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// A description of the connection.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> EncProperties;
+        public readonly string? DisplayName;
+        public readonly ImmutableDictionary<string, object>? EncProperties;
         /// <summary>
         /// Unique external key of this object from the source system.
         /// </summary>
-        public readonly string ExternalKey;
+        public readonly string? ExternalKey;
         public readonly ImmutableArray<string> Fields;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether this connection is the default connection.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// Unique connection key that is immutable.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, object>? Properties;
         /// <summary>
         /// The current state of the connection.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeStatusUpdated;
+        public readonly string? TimeStatusUpdated;
         /// <summary>
         /// The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The key of the object type. Type key's can be found via the '/types' endpoint.
         /// </summary>
-        public readonly string TypeKey;
+        public readonly string? TypeKey;
         /// <summary>
         /// OCID of the user who modified the connection.
         /// </summary>
-        public readonly string UpdatedById;
+        public readonly string? UpdatedById;
         /// <summary>
         /// URI to the connection instance in the API.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetConnectionResult(
@@ -231,41 +231,41 @@ namespace Pulumi.Oci.DataCatalog
 
             string connectionKey,
 
-            string createdById,
+            string? createdById,
 
             string dataAssetKey,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> encProperties,
+            ImmutableDictionary<string, object>? encProperties,
 
-            string externalKey,
+            string? externalKey,
 
             ImmutableArray<string> fields,
 
-            string id,
+            string? id,
 
-            bool isDefault,
+            bool? isDefault,
 
-            string key,
+            string? key,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, object>? properties,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeStatusUpdated,
+            string? timeStatusUpdated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string typeKey,
+            string? typeKey,
 
-            string updatedById,
+            string? updatedById,
 
-            string uri)
+            string? uri)
         {
             CatalogId = catalogId;
             ConnectionKey = connectionKey;

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceMeasuredBootReportMeasurementPolicy {
@@ -13,39 +15,39 @@ public final class GetInstanceMeasuredBootReportMeasurementPolicy {
      * @return The type of algorithm used to calculate the hash.
      * 
      */
-    private String hashAlgorithm;
+    private @Nullable String hashAlgorithm;
     /**
      * @return The index of the policy.
      * 
      */
-    private String pcrIndex;
+    private @Nullable String pcrIndex;
     /**
      * @return The hashed PCR value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetInstanceMeasuredBootReportMeasurementPolicy() {}
     /**
      * @return The type of algorithm used to calculate the hash.
      * 
      */
-    public String hashAlgorithm() {
-        return this.hashAlgorithm;
+    public Optional<String> hashAlgorithm() {
+        return Optional.ofNullable(this.hashAlgorithm);
     }
     /**
      * @return The index of the policy.
      * 
      */
-    public String pcrIndex() {
-        return this.pcrIndex;
+    public Optional<String> pcrIndex() {
+        return Optional.ofNullable(this.pcrIndex);
     }
     /**
      * @return The hashed PCR value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetInstanceMeasuredBootReportMeasurementPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hashAlgorithm;
-        private String pcrIndex;
-        private String value;
+        private @Nullable String hashAlgorithm;
+        private @Nullable String pcrIndex;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetInstanceMeasuredBootReportMeasurementPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetInstanceMeasuredBootReportMeasurementPolicy {
         }
 
         @CustomType.Setter
-        public Builder hashAlgorithm(String hashAlgorithm) {
-            this.hashAlgorithm = Objects.requireNonNull(hashAlgorithm);
+        public Builder hashAlgorithm(@Nullable String hashAlgorithm) {
+            this.hashAlgorithm = hashAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder pcrIndex(String pcrIndex) {
-            this.pcrIndex = Objects.requireNonNull(pcrIndex);
+        public Builder pcrIndex(@Nullable String pcrIndex) {
+            this.pcrIndex = pcrIndex;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetInstanceMeasuredBootReportMeasurementPolicy build() {

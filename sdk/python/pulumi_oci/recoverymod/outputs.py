@@ -67,15 +67,6 @@ class ProtectedDatabaseMetric(dict):
                  is_redo_logs_enabled: Optional[bool] = None,
                  retention_period_in_days: Optional[float] = None,
                  unprotected_window_in_seconds: Optional[float] = None):
-        """
-        :param float backup_space_estimate_in_gbs: The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        :param float backup_space_used_in_gbs: Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        :param float current_retention_period_in_seconds: Number of seconds backups are currently retained for this database.
-        :param float db_size_in_gbs: The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        :param bool is_redo_logs_enabled: The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param float retention_period_in_days: The maximum number of days to retain backups for a protected database.
-        :param float unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
         if backup_space_estimate_in_gbs is not None:
             pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         if backup_space_used_in_gbs is not None:
@@ -94,57 +85,36 @@ class ProtectedDatabaseMetric(dict):
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
     def backup_space_estimate_in_gbs(self) -> Optional[float]:
-        """
-        The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        """
         return pulumi.get(self, "backup_space_estimate_in_gbs")
 
     @property
     @pulumi.getter(name="backupSpaceUsedInGbs")
     def backup_space_used_in_gbs(self) -> Optional[float]:
-        """
-        Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        """
         return pulumi.get(self, "backup_space_used_in_gbs")
 
     @property
     @pulumi.getter(name="currentRetentionPeriodInSeconds")
     def current_retention_period_in_seconds(self) -> Optional[float]:
-        """
-        Number of seconds backups are currently retained for this database.
-        """
         return pulumi.get(self, "current_retention_period_in_seconds")
 
     @property
     @pulumi.getter(name="dbSizeInGbs")
     def db_size_in_gbs(self) -> Optional[float]:
-        """
-        The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        """
         return pulumi.get(self, "db_size_in_gbs")
 
     @property
     @pulumi.getter(name="isRedoLogsEnabled")
     def is_redo_logs_enabled(self) -> Optional[bool]:
-        """
-        The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
         return pulumi.get(self, "is_redo_logs_enabled")
 
     @property
     @pulumi.getter(name="retentionPeriodInDays")
     def retention_period_in_days(self) -> Optional[float]:
-        """
-        The maximum number of days to retain backups for a protected database.
-        """
         return pulumi.get(self, "retention_period_in_days")
 
     @property
     @pulumi.getter(name="unprotectedWindowInSeconds")
     def unprotected_window_in_seconds(self) -> Optional[float]:
-        """
-        This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
         return pulumi.get(self, "unprotected_window_in_seconds")
 
 
@@ -170,14 +140,6 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
     def __init__(__self__, *,
                  recovery_service_subnet_id: str,
                  state: Optional[str] = None):
-        """
-        :param str recovery_service_subnet_id: (Updatable) The recovery service subnet OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str state: The current state of the Protected Database.
-        """
         pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
@@ -185,134 +147,93 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
     def recovery_service_subnet_id(self) -> str:
-        """
-        (Updatable) The recovery service subnet OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "recovery_service_subnet_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Protected Database.
-        """
         return pulumi.get(self, "state")
 
 
 @pulumi.output_type
 class GetProtectedDatabaseMetricResult(dict):
     def __init__(__self__, *,
-                 backup_space_estimate_in_gbs: float,
-                 backup_space_used_in_gbs: float,
-                 current_retention_period_in_seconds: float,
-                 db_size_in_gbs: float,
-                 is_redo_logs_enabled: bool,
-                 retention_period_in_days: float,
-                 unprotected_window_in_seconds: float):
-        """
-        :param float backup_space_estimate_in_gbs: The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        :param float backup_space_used_in_gbs: Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        :param float current_retention_period_in_seconds: Number of seconds backups are currently retained for this database.
-        :param float db_size_in_gbs: The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        :param bool is_redo_logs_enabled: The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param float retention_period_in_days: The maximum number of days to retain backups for a protected database.
-        :param float unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
-        pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
-        pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
-        pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
-        pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
-        pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
-        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
-        pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
+                 backup_space_estimate_in_gbs: Optional[float] = None,
+                 backup_space_used_in_gbs: Optional[float] = None,
+                 current_retention_period_in_seconds: Optional[float] = None,
+                 db_size_in_gbs: Optional[float] = None,
+                 is_redo_logs_enabled: Optional[bool] = None,
+                 retention_period_in_days: Optional[float] = None,
+                 unprotected_window_in_seconds: Optional[float] = None):
+        if backup_space_estimate_in_gbs is not None:
+            pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
+        if backup_space_used_in_gbs is not None:
+            pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
+        if current_retention_period_in_seconds is not None:
+            pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
+        if db_size_in_gbs is not None:
+            pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
+        if is_redo_logs_enabled is not None:
+            pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if unprotected_window_in_seconds is not None:
+            pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
 
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
-    def backup_space_estimate_in_gbs(self) -> float:
-        """
-        The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        """
+    def backup_space_estimate_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "backup_space_estimate_in_gbs")
 
     @property
     @pulumi.getter(name="backupSpaceUsedInGbs")
-    def backup_space_used_in_gbs(self) -> float:
-        """
-        Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        """
+    def backup_space_used_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "backup_space_used_in_gbs")
 
     @property
     @pulumi.getter(name="currentRetentionPeriodInSeconds")
-    def current_retention_period_in_seconds(self) -> float:
-        """
-        Number of seconds backups are currently retained for this database.
-        """
+    def current_retention_period_in_seconds(self) -> Optional[float]:
         return pulumi.get(self, "current_retention_period_in_seconds")
 
     @property
     @pulumi.getter(name="dbSizeInGbs")
-    def db_size_in_gbs(self) -> float:
-        """
-        The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        """
+    def db_size_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "db_size_in_gbs")
 
     @property
     @pulumi.getter(name="isRedoLogsEnabled")
-    def is_redo_logs_enabled(self) -> bool:
-        """
-        The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
+    def is_redo_logs_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_redo_logs_enabled")
 
     @property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> float:
-        """
-        The maximum number of days to retain backups for a protected database.
-        """
+    def retention_period_in_days(self) -> Optional[float]:
         return pulumi.get(self, "retention_period_in_days")
 
     @property
     @pulumi.getter(name="unprotectedWindowInSeconds")
-    def unprotected_window_in_seconds(self) -> float:
-        """
-        This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
+    def unprotected_window_in_seconds(self) -> Optional[float]:
         return pulumi.get(self, "unprotected_window_in_seconds")
 
 
 @pulumi.output_type
 class GetProtectedDatabaseRecoveryServiceSubnetResult(dict):
     def __init__(__self__, *,
-                 recovery_service_subnet_id: str,
-                 state: str):
-        """
-        :param str recovery_service_subnet_id: Recovery Service Subnet Identifier.
-        :param str state: The current state of the Protected Database.
-        """
-        pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
-        pulumi.set(__self__, "state", state)
+                 recovery_service_subnet_id: Optional[str] = None,
+                 state: Optional[str] = None):
+        if recovery_service_subnet_id is not None:
+            pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
-    def recovery_service_subnet_id(self) -> str:
-        """
-        Recovery Service Subnet Identifier.
-        """
+    def recovery_service_subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "recovery_service_subnet_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Protected Database.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -346,376 +267,276 @@ class GetProtectedDatabasesFilterResult(dict):
 @pulumi.output_type
 class GetProtectedDatabasesProtectedDatabaseCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProtectedDatabasesProtectedDatabaseCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 database_id: str,
-                 database_size: str,
-                 db_unique_name: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 health: str,
-                 health_details: str,
-                 id: str,
-                 is_read_only_resource: bool,
-                 is_redo_logs_shipped: bool,
-                 lifecycle_details: str,
-                 metrics: Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult'],
-                 password: str,
-                 protection_policy_id: str,
-                 recovery_service_subnets: Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 vpc_user_name: str):
-        """
-        :param str compartment_id: The compartment OCID.
-        :param str database_id: The OCID of the protected database.
-        :param str database_size: The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        :param str db_unique_name: The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str health: Indicates the protection status of the database. Allowed values are:
-               * HEALTHY
-               * WARNING
-               * ALERT
-        :param str health_details: A message describing the current health of the protected database.
-        :param str id: The protected database OCID.
-        :param bool is_read_only_resource: Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-        :param bool is_redo_logs_shipped: The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
-        :param str lifecycle_details: Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param Sequence['GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs'] metrics: Backup performance and storage utilization metrics for the protected database.
-        :param str protection_policy_id: The protection policy OCID.
-        :param Sequence['GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs'] recovery_service_subnets: List of recovery service subnet resources associated with the protected database.
-        :param str state: A filter to return only the resources that match the specified lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param str time_created: An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        :param str time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        :param str vpc_user_name: The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_size", database_size)
-        pulumi.set(__self__, "db_unique_name", db_unique_name)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health", health)
-        pulumi.set(__self__, "health_details", health_details)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_read_only_resource", is_read_only_resource)
-        pulumi.set(__self__, "is_redo_logs_shipped", is_redo_logs_shipped)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "protection_policy_id", protection_policy_id)
-        pulumi.set(__self__, "recovery_service_subnets", recovery_service_subnets)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vpc_user_name", vpc_user_name)
+                 compartment_id: Optional[str] = None,
+                 database_id: Optional[str] = None,
+                 database_size: Optional[str] = None,
+                 db_unique_name: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 health: Optional[str] = None,
+                 health_details: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_read_only_resource: Optional[bool] = None,
+                 is_redo_logs_shipped: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 metrics: Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult']] = None,
+                 password: Optional[str] = None,
+                 protection_policy_id: Optional[str] = None,
+                 recovery_service_subnets: Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 vpc_user_name: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_size is not None:
+            pulumi.set(__self__, "database_size", database_size)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if health is not None:
+            pulumi.set(__self__, "health", health)
+        if health_details is not None:
+            pulumi.set(__self__, "health_details", health_details)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_read_only_resource is not None:
+            pulumi.set(__self__, "is_read_only_resource", is_read_only_resource)
+        if is_redo_logs_shipped is not None:
+            pulumi.set(__self__, "is_redo_logs_shipped", is_redo_logs_shipped)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if protection_policy_id is not None:
+            pulumi.set(__self__, "protection_policy_id", protection_policy_id)
+        if recovery_service_subnets is not None:
+            pulumi.set(__self__, "recovery_service_subnets", recovery_service_subnets)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vpc_user_name is not None:
+            pulumi.set(__self__, "vpc_user_name", vpc_user_name)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment OCID.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
-        """
-        The OCID of the protected database.
-        """
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseSize")
-    def database_size(self) -> str:
-        """
-        The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        """
+    def database_size(self) -> Optional[str]:
         return pulumi.get(self, "database_size")
 
     @property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> str:
-        """
-        The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
-        """
+    def db_unique_name(self) -> Optional[str]:
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire 'displayname' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def health(self) -> str:
-        """
-        Indicates the protection status of the database. Allowed values are:
-        * HEALTHY
-        * WARNING
-        * ALERT
-        """
+    def health(self) -> Optional[str]:
         return pulumi.get(self, "health")
 
     @property
     @pulumi.getter(name="healthDetails")
-    def health_details(self) -> str:
-        """
-        A message describing the current health of the protected database.
-        """
+    def health_details(self) -> Optional[str]:
         return pulumi.get(self, "health_details")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The protected database OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isReadOnlyResource")
-    def is_read_only_resource(self) -> bool:
-        """
-        Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-        """
+    def is_read_only_resource(self) -> Optional[bool]:
         return pulumi.get(self, "is_read_only_resource")
 
     @property
     @pulumi.getter(name="isRedoLogsShipped")
-    def is_redo_logs_shipped(self) -> bool:
-        """
-        The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
-        """
+    def is_redo_logs_shipped(self) -> Optional[bool]:
         return pulumi.get(self, "is_redo_logs_shipped")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult']:
-        """
-        Backup performance and storage utilization metrics for the protected database.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult']]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="protectionPolicyId")
-    def protection_policy_id(self) -> str:
-        """
-        The protection policy OCID.
-        """
+    def protection_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "protection_policy_id")
 
     @property
     @pulumi.getter(name="recoveryServiceSubnets")
-    def recovery_service_subnets(self) -> Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult']:
-        """
-        List of recovery service subnet resources associated with the protected database.
-        """
+    def recovery_service_subnets(self) -> Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult']]:
         return pulumi.get(self, "recovery_service_subnets")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources that match the specified lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vpcUserName")
-    def vpc_user_name(self) -> str:
-        """
-        The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-        """
+    def vpc_user_name(self) -> Optional[str]:
         return pulumi.get(self, "vpc_user_name")
 
 
 @pulumi.output_type
 class GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult(dict):
     def __init__(__self__, *,
-                 backup_space_estimate_in_gbs: float,
-                 backup_space_used_in_gbs: float,
-                 current_retention_period_in_seconds: float,
-                 db_size_in_gbs: float,
-                 is_redo_logs_enabled: bool,
-                 retention_period_in_days: float,
-                 unprotected_window_in_seconds: float):
-        """
-        :param float backup_space_estimate_in_gbs: The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        :param float backup_space_used_in_gbs: Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        :param float current_retention_period_in_seconds: Number of seconds backups are currently retained for this database.
-        :param float db_size_in_gbs: The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        :param bool is_redo_logs_enabled: The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param float retention_period_in_days: The maximum number of days to retain backups for a protected database.
-        :param float unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
-        pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
-        pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
-        pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
-        pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
-        pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
-        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
-        pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
+                 backup_space_estimate_in_gbs: Optional[float] = None,
+                 backup_space_used_in_gbs: Optional[float] = None,
+                 current_retention_period_in_seconds: Optional[float] = None,
+                 db_size_in_gbs: Optional[float] = None,
+                 is_redo_logs_enabled: Optional[bool] = None,
+                 retention_period_in_days: Optional[float] = None,
+                 unprotected_window_in_seconds: Optional[float] = None):
+        if backup_space_estimate_in_gbs is not None:
+            pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
+        if backup_space_used_in_gbs is not None:
+            pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
+        if current_retention_period_in_seconds is not None:
+            pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
+        if db_size_in_gbs is not None:
+            pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
+        if is_redo_logs_enabled is not None:
+            pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if unprotected_window_in_seconds is not None:
+            pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
 
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
-    def backup_space_estimate_in_gbs(self) -> float:
-        """
-        The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        """
+    def backup_space_estimate_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "backup_space_estimate_in_gbs")
 
     @property
     @pulumi.getter(name="backupSpaceUsedInGbs")
-    def backup_space_used_in_gbs(self) -> float:
-        """
-        Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        """
+    def backup_space_used_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "backup_space_used_in_gbs")
 
     @property
     @pulumi.getter(name="currentRetentionPeriodInSeconds")
-    def current_retention_period_in_seconds(self) -> float:
-        """
-        Number of seconds backups are currently retained for this database.
-        """
+    def current_retention_period_in_seconds(self) -> Optional[float]:
         return pulumi.get(self, "current_retention_period_in_seconds")
 
     @property
     @pulumi.getter(name="dbSizeInGbs")
-    def db_size_in_gbs(self) -> float:
-        """
-        The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        """
+    def db_size_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "db_size_in_gbs")
 
     @property
     @pulumi.getter(name="isRedoLogsEnabled")
-    def is_redo_logs_enabled(self) -> bool:
-        """
-        The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
+    def is_redo_logs_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_redo_logs_enabled")
 
     @property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> float:
-        """
-        The maximum number of days to retain backups for a protected database.
-        """
+    def retention_period_in_days(self) -> Optional[float]:
         return pulumi.get(self, "retention_period_in_days")
 
     @property
     @pulumi.getter(name="unprotectedWindowInSeconds")
-    def unprotected_window_in_seconds(self) -> float:
-        """
-        This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
+    def unprotected_window_in_seconds(self) -> Optional[float]:
         return pulumi.get(self, "unprotected_window_in_seconds")
 
 
 @pulumi.output_type
 class GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult(dict):
     def __init__(__self__, *,
-                 recovery_service_subnet_id: str,
-                 state: str):
-        """
-        :param str recovery_service_subnet_id: The recovery service subnet OCID.
-        :param str state: A filter to return only the resources that match the specified lifecycle state.
-        """
-        pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
-        pulumi.set(__self__, "state", state)
+                 recovery_service_subnet_id: Optional[str] = None,
+                 state: Optional[str] = None):
+        if recovery_service_subnet_id is not None:
+            pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
-    def recovery_service_subnet_id(self) -> str:
-        """
-        The recovery service subnet OCID.
-        """
+    def recovery_service_subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "recovery_service_subnet_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources that match the specified lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -749,151 +570,114 @@ class GetProtectionPoliciesFilterResult(dict):
 @pulumi.output_type
 class GetProtectionPoliciesProtectionPolicyCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
     def __init__(__self__, *,
-                 backup_retention_period_in_days: int,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_predefined_policy: bool,
-                 lifecycle_details: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param int backup_retention_period_in_days: The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-        :param str compartment_id: The compartment OCID.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The protection policy OCID.
-        :param bool is_predefined_policy: Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-        :param str lifecycle_details: Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param str time_created: An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-        :param str time_updated: An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-        """
-        pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_predefined_policy", is_predefined_policy)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 backup_retention_period_in_days: Optional[int] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_predefined_policy: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if backup_retention_period_in_days is not None:
+            pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_predefined_policy is not None:
+            pulumi.set(__self__, "is_predefined_policy", is_predefined_policy)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupRetentionPeriodInDays")
-    def backup_retention_period_in_days(self) -> int:
-        """
-        The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-        """
+    def backup_retention_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "backup_retention_period_in_days")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment OCID.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire 'displayname' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The protection policy OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isPredefinedPolicy")
-    def is_predefined_policy(self) -> bool:
-        """
-        Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-        """
+    def is_predefined_policy(self) -> Optional[bool]:
         return pulumi.get(self, "is_predefined_policy")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -927,163 +711,114 @@ class GetRecoveryServiceSubnetsFilterResult(dict):
 @pulumi.output_type
 class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 state: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 vcn_id: str):
-        """
-        :param str compartment_id: The compartment OCID.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The recovery service subnet OCID.
-        :param str lifecycle_details: Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-        :param str state: A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-               * CREATING
-               * UPDATING
-               * ACTIVE
-               * DELETING
-               * DELETED
-               * FAILED
-        :param str subnet_id: The OCID of the subnet used as the recovery service subnet.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param str time_created: An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-        :param str time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-        :param str vcn_id: The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment OCID.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire 'displayname' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The recovery service subnet OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the subnet used as the recovery service subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 

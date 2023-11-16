@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetProblemEntitiesProblemEntityCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProblemEntitiesProblemEntityCollection {
@@ -14,7 +15,7 @@ public final class GetProblemEntitiesProblemEntityCollection {
      * @return List of problem entities summaries related to a data source.
      * 
      */
-    private List<GetProblemEntitiesProblemEntityCollectionItem> items;
+    private @Nullable List<GetProblemEntitiesProblemEntityCollectionItem> items;
 
     private GetProblemEntitiesProblemEntityCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetProblemEntitiesProblemEntityCollection {
      * 
      */
     public List<GetProblemEntitiesProblemEntityCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetProblemEntitiesProblemEntityCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetProblemEntitiesProblemEntityCollectionItem> items;
+        private @Nullable List<GetProblemEntitiesProblemEntityCollectionItem> items;
         public Builder() {}
         public Builder(GetProblemEntitiesProblemEntityCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetProblemEntitiesProblemEntityCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetProblemEntitiesProblemEntityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProblemEntitiesProblemEntityCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProblemEntitiesProblemEntityCollectionItem... items) {

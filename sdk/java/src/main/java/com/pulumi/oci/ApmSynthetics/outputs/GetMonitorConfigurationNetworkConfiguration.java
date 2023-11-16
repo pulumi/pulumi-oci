@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorConfigurationNetworkConfiguration {
@@ -14,63 +16,63 @@ public final class GetMonitorConfigurationNetworkConfiguration {
      * @return Number of hops.
      * 
      */
-    private Integer numberOfHops;
+    private @Nullable Integer numberOfHops;
     /**
      * @return Type of probe mode when TCP protocol is selected.
      * 
      */
-    private String probeMode;
+    private @Nullable String probeMode;
     /**
      * @return Number of probes per hop.
      * 
      */
-    private Integer probePerHop;
+    private @Nullable Integer probePerHop;
     /**
      * @return Type of protocol.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Number of probe packets sent out simultaneously.
      * 
      */
-    private Integer transmissionRate;
+    private @Nullable Integer transmissionRate;
 
     private GetMonitorConfigurationNetworkConfiguration() {}
     /**
      * @return Number of hops.
      * 
      */
-    public Integer numberOfHops() {
-        return this.numberOfHops;
+    public Optional<Integer> numberOfHops() {
+        return Optional.ofNullable(this.numberOfHops);
     }
     /**
      * @return Type of probe mode when TCP protocol is selected.
      * 
      */
-    public String probeMode() {
-        return this.probeMode;
+    public Optional<String> probeMode() {
+        return Optional.ofNullable(this.probeMode);
     }
     /**
      * @return Number of probes per hop.
      * 
      */
-    public Integer probePerHop() {
-        return this.probePerHop;
+    public Optional<Integer> probePerHop() {
+        return Optional.ofNullable(this.probePerHop);
     }
     /**
      * @return Type of protocol.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Number of probe packets sent out simultaneously.
      * 
      */
-    public Integer transmissionRate() {
-        return this.transmissionRate;
+    public Optional<Integer> transmissionRate() {
+        return Optional.ofNullable(this.transmissionRate);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetMonitorConfigurationNetworkConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer numberOfHops;
-        private String probeMode;
-        private Integer probePerHop;
-        private String protocol;
-        private Integer transmissionRate;
+        private @Nullable Integer numberOfHops;
+        private @Nullable String probeMode;
+        private @Nullable Integer probePerHop;
+        private @Nullable String protocol;
+        private @Nullable Integer transmissionRate;
         public Builder() {}
         public Builder(GetMonitorConfigurationNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetMonitorConfigurationNetworkConfiguration {
         }
 
         @CustomType.Setter
-        public Builder numberOfHops(Integer numberOfHops) {
-            this.numberOfHops = Objects.requireNonNull(numberOfHops);
+        public Builder numberOfHops(@Nullable Integer numberOfHops) {
+            this.numberOfHops = numberOfHops;
             return this;
         }
         @CustomType.Setter
-        public Builder probeMode(String probeMode) {
-            this.probeMode = Objects.requireNonNull(probeMode);
+        public Builder probeMode(@Nullable String probeMode) {
+            this.probeMode = probeMode;
             return this;
         }
         @CustomType.Setter
-        public Builder probePerHop(Integer probePerHop) {
-            this.probePerHop = Objects.requireNonNull(probePerHop);
+        public Builder probePerHop(@Nullable Integer probePerHop) {
+            this.probePerHop = probePerHop;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder transmissionRate(Integer transmissionRate) {
-            this.transmissionRate = Objects.requireNonNull(transmissionRate);
+        public Builder transmissionRate(@Nullable Integer transmissionRate) {
+            this.transmissionRate = transmissionRate;
             return this;
         }
         public GetMonitorConfigurationNetworkConfiguration build() {

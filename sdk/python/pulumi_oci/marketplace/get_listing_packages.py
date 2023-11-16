@@ -58,7 +58,7 @@ class GetListingPackagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +67,16 @@ class GetListingPackagesResult:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> str:
-        """
-        The ID of the listing that the specified package belongs to.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="listingPackages")
-    def listing_packages(self) -> Sequence['outputs.GetListingPackagesListingPackageResult']:
-        """
-        The list of listing_packages.
-        """
+    def listing_packages(self) -> Optional[Sequence['outputs.GetListingPackagesListingPackageResult']]:
         return pulumi.get(self, "listing_packages")
 
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> Optional[str]:
-        """
-        The specified package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @property
@@ -116,40 +107,7 @@ def get_listing_packages(compartment_id: Optional[str] = None,
                          package_version: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingPackagesResult:
     """
-    This data source provides the list of Listing Packages in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the list of packages for a listing.
-
-    If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
-    you launch the instance, you also need to provide the image ID of the listing resource version that you want.
-
-    Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
-    listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
-    The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
-    its signature, is returned in the response. With the signature for the terms of use agreement for the desired
-    listing resource version, create a subscription by issuing a
-    [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
-
-    To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
-    Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing_packages = oci.Marketplace.get_listing_packages(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"],
-        package_type=var["listing_package_package_type"],
-        package_version=var["listing_package_package_version"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_id: The unique identifier for the listing.
-    :param str package_type: A filter to return only packages that match the given package type exactly.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -178,39 +136,6 @@ def get_listing_packages_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 package_version: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingPackagesResult]:
     """
-    This data source provides the list of Listing Packages in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the list of packages for a listing.
-
-    If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
-    you launch the instance, you also need to provide the image ID of the listing resource version that you want.
-
-    Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
-    listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
-    The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
-    its signature, is returned in the response. With the signature for the terms of use agreement for the desired
-    listing resource version, create a subscription by issuing a
-    [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
-
-    To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
-    Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing_packages = oci.Marketplace.get_listing_packages(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"],
-        package_type=var["listing_package_package_type"],
-        package_version=var["listing_package_package_version"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_id: The unique identifier for the listing.
-    :param str package_type: A filter to return only packages that match the given package type exactly.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
+    Use this data source to access information about an existing resource.
     """
     ...

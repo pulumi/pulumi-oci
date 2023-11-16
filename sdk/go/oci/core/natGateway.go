@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Nat Gateway resource in Oracle Cloud Infrastructure Core service.
@@ -68,27 +67,27 @@ type NatGateway struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
-	BlockTraffic pulumi.BoolOutput `pulumi:"blockTraffic"`
+	BlockTraffic pulumi.BoolPtrOutput `pulumi:"blockTraffic"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the NAT gateway.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The IP address associated with the NAT gateway.
-	NatIp pulumi.StringOutput `pulumi:"natIp"`
+	NatIp pulumi.StringPtrOutput `pulumi:"natIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
-	PublicIpId pulumi.StringOutput `pulumi:"publicIpId"`
+	PublicIpId pulumi.StringPtrOutput `pulumi:"publicIpId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
 	//
 	// If you don't specify a route table here, the NAT gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the NAT gateway.
-	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
+	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// The NAT gateway's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
 	//
 	// ** IMPORTANT **
@@ -267,12 +266,6 @@ func (i *NatGateway) ToNatGatewayOutputWithContext(ctx context.Context) NatGatew
 	return pulumi.ToOutputWithContext(ctx, i).(NatGatewayOutput)
 }
 
-func (i *NatGateway) ToOutput(ctx context.Context) pulumix.Output[*NatGateway] {
-	return pulumix.Output[*NatGateway]{
-		OutputState: i.ToNatGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NatGatewayArrayInput is an input type that accepts NatGatewayArray and NatGatewayArrayOutput values.
 // You can construct a concrete instance of `NatGatewayArrayInput` via:
 //
@@ -296,12 +289,6 @@ func (i NatGatewayArray) ToNatGatewayArrayOutput() NatGatewayArrayOutput {
 
 func (i NatGatewayArray) ToNatGatewayArrayOutputWithContext(ctx context.Context) NatGatewayArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NatGatewayArrayOutput)
-}
-
-func (i NatGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]*NatGateway] {
-	return pulumix.Output[[]*NatGateway]{
-		OutputState: i.ToNatGatewayArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NatGatewayMapInput is an input type that accepts NatGatewayMap and NatGatewayMapOutput values.
@@ -329,12 +316,6 @@ func (i NatGatewayMap) ToNatGatewayMapOutputWithContext(ctx context.Context) Nat
 	return pulumi.ToOutputWithContext(ctx, i).(NatGatewayMapOutput)
 }
 
-func (i NatGatewayMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NatGateway] {
-	return pulumix.Output[map[string]*NatGateway]{
-		OutputState: i.ToNatGatewayMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NatGatewayOutput struct{ *pulumi.OutputState }
 
 func (NatGatewayOutput) ElementType() reflect.Type {
@@ -349,15 +330,9 @@ func (o NatGatewayOutput) ToNatGatewayOutputWithContext(ctx context.Context) Nat
 	return o
 }
 
-func (o NatGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[*NatGateway] {
-	return pulumix.Output[*NatGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
-func (o NatGatewayOutput) BlockTraffic() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NatGateway) pulumi.BoolOutput { return v.BlockTraffic }).(pulumi.BoolOutput)
+func (o NatGatewayOutput) BlockTraffic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NatGateway) pulumi.BoolPtrOutput { return v.BlockTraffic }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the NAT gateway.
@@ -371,8 +346,8 @@ func (o NatGatewayOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o NatGatewayOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *NatGateway) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o NatGatewayOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NatGateway) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -381,30 +356,30 @@ func (o NatGatewayOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The IP address associated with the NAT gateway.
-func (o NatGatewayOutput) NatIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *NatGateway) pulumi.StringOutput { return v.NatIp }).(pulumi.StringOutput)
+func (o NatGatewayOutput) NatIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NatGateway) pulumi.StringPtrOutput { return v.NatIp }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
-func (o NatGatewayOutput) PublicIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NatGateway) pulumi.StringOutput { return v.PublicIpId }).(pulumi.StringOutput)
+func (o NatGatewayOutput) PublicIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NatGateway) pulumi.StringPtrOutput { return v.PublicIpId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
 //
 // If you don't specify a route table here, the NAT gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the NAT gateway.
-func (o NatGatewayOutput) RouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NatGateway) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
+func (o NatGatewayOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NatGateway) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The NAT gateway's current state.
-func (o NatGatewayOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NatGateway) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NatGatewayOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NatGateway) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o NatGatewayOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NatGateway) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NatGatewayOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NatGateway) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
@@ -429,12 +404,6 @@ func (o NatGatewayArrayOutput) ToNatGatewayArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o NatGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NatGateway] {
-	return pulumix.Output[[]*NatGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NatGatewayArrayOutput) Index(i pulumi.IntInput) NatGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NatGateway {
 		return vs[0].([]*NatGateway)[vs[1].(int)]
@@ -453,12 +422,6 @@ func (o NatGatewayMapOutput) ToNatGatewayMapOutput() NatGatewayMapOutput {
 
 func (o NatGatewayMapOutput) ToNatGatewayMapOutputWithContext(ctx context.Context) NatGatewayMapOutput {
 	return o
-}
-
-func (o NatGatewayMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NatGateway] {
-	return pulumix.Output[map[string]*NatGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NatGatewayMapOutput) MapIndex(k pulumi.StringInput) NatGatewayOutput {

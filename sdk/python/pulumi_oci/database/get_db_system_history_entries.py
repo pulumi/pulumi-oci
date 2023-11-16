@@ -49,7 +49,7 @@ class GetDbSystemHistoryEntriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetDbSystemHistoryEntriesResult:
 
     @property
     @pulumi.getter(name="patchHistoryEntries")
-    def patch_history_entries(self) -> Sequence['outputs.GetDbSystemHistoryEntriesPatchHistoryEntryResult']:
-        """
-        The list of patch_history_entries.
-        """
+    def patch_history_entries(self) -> Optional[Sequence['outputs.GetDbSystemHistoryEntriesPatchHistoryEntryResult']]:
         return pulumi.get(self, "patch_history_entries")
 
 
@@ -80,21 +77,7 @@ def get_db_system_history_entries(db_system_id: Optional[str] = None,
                                   filters: Optional[Sequence[pulumi.InputType['GetDbSystemHistoryEntriesFilterArgs']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemHistoryEntriesResult:
     """
-    This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the patch actions performed on the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_patch_history_entries = oci.Database.get_db_system_history_entries(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -114,20 +97,6 @@ def get_db_system_history_entries_output(db_system_id: Optional[pulumi.Input[str
                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemHistoryEntriesFilterArgs']]]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemHistoryEntriesResult]:
     """
-    This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the patch actions performed on the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_patch_history_entries = oci.Database.get_db_system_history_entries(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

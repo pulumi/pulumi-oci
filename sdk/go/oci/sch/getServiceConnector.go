@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -60,24 +59,24 @@ type GetServiceConnectorArgs struct {
 // A collection of values returned by getServiceConnector.
 type GetServiceConnectorResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the resource. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-	LifecyleDetails    string `pulumi:"lifecyleDetails"`
-	ServiceConnectorId string `pulumi:"serviceConnectorId"`
+	LifecyleDetails    *string `pulumi:"lifecyleDetails"`
+	ServiceConnectorId string  `pulumi:"serviceConnectorId"`
 	// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
 	Sources []GetServiceConnectorSource `pulumi:"sources"`
 	// The current state of the service connector.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
@@ -85,9 +84,9 @@ type GetServiceConnectorResult struct {
 	// The list of tasks.
 	Tasks []GetServiceConnectorTask `pulumi:"tasks"`
 	// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetServiceConnectorOutput(ctx *pulumi.Context, args GetServiceConnectorOutputArgs, opts ...pulumi.InvokeOption) GetServiceConnectorResultOutput {
@@ -128,15 +127,9 @@ func (o GetServiceConnectorResultOutput) ToGetServiceConnectorResultOutputWithCo
 	return o
 }
 
-func (o GetServiceConnectorResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorResult] {
-	return pulumix.Output[GetServiceConnectorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-func (o GetServiceConnectorResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -145,13 +138,13 @@ func (o GetServiceConnectorResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the resource. Avoid entering confidential information.
-func (o GetServiceConnectorResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-func (o GetServiceConnectorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -160,13 +153,13 @@ func (o GetServiceConnectorResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
-func (o GetServiceConnectorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-func (o GetServiceConnectorResultOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o GetServiceConnectorResultOutput) ServiceConnectorId() pulumi.StringOutput {
@@ -179,8 +172,8 @@ func (o GetServiceConnectorResultOutput) Sources() GetServiceConnectorSourceArra
 }
 
 // The current state of the service connector.
-func (o GetServiceConnectorResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -199,13 +192,13 @@ func (o GetServiceConnectorResultOutput) Tasks() GetServiceConnectorTaskArrayOut
 }
 
 // The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o GetServiceConnectorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o GetServiceConnectorResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetServiceConnectorResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

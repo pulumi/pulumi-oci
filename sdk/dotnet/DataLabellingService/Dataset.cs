@@ -99,7 +99,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         [Output("additionalProperties")]
-        public Output<ImmutableDictionary<string, object>> AdditionalProperties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdditionalProperties { get; private set; } = null!;
 
         /// <summary>
         /// The annotation format name required for labeling records.
@@ -129,37 +129,37 @@ namespace Pulumi.Oci.DataLabellingService
         /// (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user provided description of the dataset
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly display name for the resource.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         /// </summary>
         [Output("initialImportDatasetConfiguration")]
-        public Output<Outputs.DatasetInitialImportDatasetConfiguration> InitialImportDatasetConfiguration { get; private set; } = null!;
+        public Output<Outputs.DatasetInitialImportDatasetConfiguration?> InitialImportDatasetConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         [Output("initialRecordGenerationConfiguration")]
-        public Output<Outputs.DatasetInitialRecordGenerationConfiguration> InitialRecordGenerationConfiguration { get; private set; } = null!;
+        public Output<Outputs.DatasetInitialRecordGenerationConfiguration?> InitialRecordGenerationConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// An ordered collection of labels that are unique by name.
@@ -175,37 +175,37 @@ namespace Pulumi.Oci.DataLabellingService
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("labelingInstructions")]
-        public Output<string> LabelingInstructions { get; private set; } = null!;
+        public Output<string?> LabelingInstructions { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
         /// </summary>
         [Output("lifecycleSubstate")]
-        public Output<string> LifecycleSubstate { get; private set; } = null!;
+        public Output<string?> LifecycleSubstate { get; private set; } = null!;
 
         /// <summary>
         /// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created, in the timestamp format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

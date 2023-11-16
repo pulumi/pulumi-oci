@@ -8,6 +8,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEventsAuditEventDataStateChange {
@@ -15,12 +16,12 @@ public final class GetEventsAuditEventDataStateChange {
      * @return Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
      * 
      */
-    private Map<String,Object> current;
+    private @Nullable Map<String,Object> current;
     /**
      * @return Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
      * 
      */
-    private Map<String,Object> previous;
+    private @Nullable Map<String,Object> previous;
 
     private GetEventsAuditEventDataStateChange() {}
     /**
@@ -28,14 +29,14 @@ public final class GetEventsAuditEventDataStateChange {
      * 
      */
     public Map<String,Object> current() {
-        return this.current;
+        return this.current == null ? Map.of() : this.current;
     }
     /**
      * @return Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
      * 
      */
     public Map<String,Object> previous() {
-        return this.previous;
+        return this.previous == null ? Map.of() : this.previous;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetEventsAuditEventDataStateChange {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> current;
-        private Map<String,Object> previous;
+        private @Nullable Map<String,Object> current;
+        private @Nullable Map<String,Object> previous;
         public Builder() {}
         public Builder(GetEventsAuditEventDataStateChange defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +58,13 @@ public final class GetEventsAuditEventDataStateChange {
         }
 
         @CustomType.Setter
-        public Builder current(Map<String,Object> current) {
-            this.current = Objects.requireNonNull(current);
+        public Builder current(@Nullable Map<String,Object> current) {
+            this.current = current;
             return this;
         }
         @CustomType.Setter
-        public Builder previous(Map<String,Object> previous) {
-            this.previous = Objects.requireNonNull(previous);
+        public Builder previous(@Nullable Map<String,Object> previous) {
+            this.previous = previous;
             return this;
         }
         public GetEventsAuditEventDataStateChange build() {

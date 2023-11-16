@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
@@ -60,50 +59,50 @@ type LookupSoftwareSourceArgs struct {
 // A collection of values returned by getSoftwareSource.
 type LookupSoftwareSourceResult struct {
 	// The architecture type supported by the Software Source
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// list of the Managed Instances associated with this Software Sources
 	AssociatedManagedInstances []GetSoftwareSourceAssociatedManagedInstance `pulumi:"associatedManagedInstances"`
 	// The yum repository checksum type used by this software source
-	ChecksumType string `pulumi:"checksumType"`
+	ChecksumType *string `pulumi:"checksumType"`
 	// OCID for the Compartment
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Information specified by the user about the software source
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User friendly name for the software source
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
-	GpgKeyFingerprint string `pulumi:"gpgKeyFingerprint"`
+	GpgKeyFingerprint *string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
-	GpgKeyId string `pulumi:"gpgKeyId"`
+	GpgKeyId *string `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source
-	GpgKeyUrl string `pulumi:"gpgKeyUrl"`
+	GpgKeyUrl *string `pulumi:"gpgKeyUrl"`
 	// OCID for the Software Source
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Email address of the person maintaining this software source
-	MaintainerEmail string `pulumi:"maintainerEmail"`
+	MaintainerEmail *string `pulumi:"maintainerEmail"`
 	// Name of the person maintaining this software source
-	MaintainerName string `pulumi:"maintainerName"`
+	MaintainerName *string `pulumi:"maintainerName"`
 	// Phone number of the person maintaining this software source
-	MaintainerPhone string `pulumi:"maintainerPhone"`
+	MaintainerPhone *string `pulumi:"maintainerPhone"`
 	// Number of packages
-	Packages int `pulumi:"packages"`
+	Packages *int `pulumi:"packages"`
 	// OCID for the parent software source, if there is one
-	ParentId string `pulumi:"parentId"`
+	ParentId *string `pulumi:"parentId"`
 	// Display name the parent software source, if there is one
-	ParentName string `pulumi:"parentName"`
+	ParentName *string `pulumi:"parentName"`
 	// Type of the Software Source
-	RepoType         string `pulumi:"repoType"`
-	SoftwareSourceId string `pulumi:"softwareSourceId"`
+	RepoType         *string `pulumi:"repoType"`
+	SoftwareSourceId string  `pulumi:"softwareSourceId"`
 	// The current state of the Software Source.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// status of the software source.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// URL for the repostiory
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 func LookupSoftwareSourceOutput(ctx *pulumi.Context, args LookupSoftwareSourceOutputArgs, opts ...pulumi.InvokeOption) LookupSoftwareSourceResultOutput {
@@ -144,15 +143,9 @@ func (o LookupSoftwareSourceResultOutput) ToLookupSoftwareSourceResultOutputWith
 	return o
 }
 
-func (o LookupSoftwareSourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSoftwareSourceResult] {
-	return pulumix.Output[LookupSoftwareSourceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture type supported by the Software Source
-func (o LookupSoftwareSourceResultOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.ArchType }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // list of the Managed Instances associated with this Software Sources
@@ -163,13 +156,13 @@ func (o LookupSoftwareSourceResultOutput) AssociatedManagedInstances() GetSoftwa
 }
 
 // The yum repository checksum type used by this software source
-func (o LookupSoftwareSourceResultOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.ChecksumType }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the Compartment
-func (o LookupSoftwareSourceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -178,13 +171,13 @@ func (o LookupSoftwareSourceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Information specified by the user about the software source
-func (o LookupSoftwareSourceResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User friendly name for the software source
-func (o LookupSoftwareSourceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -193,58 +186,58 @@ func (o LookupSoftwareSourceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Fingerprint of the GPG key for this software source
-func (o LookupSoftwareSourceResultOutput) GpgKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.GpgKeyFingerprint }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) GpgKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.GpgKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // ID of the GPG key for this software source
-func (o LookupSoftwareSourceResultOutput) GpgKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.GpgKeyId }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) GpgKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.GpgKeyId }).(pulumi.StringPtrOutput)
 }
 
 // URL of the GPG key for this software source
-func (o LookupSoftwareSourceResultOutput) GpgKeyUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.GpgKeyUrl }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) GpgKeyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.GpgKeyUrl }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the Software Source
-func (o LookupSoftwareSourceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Email address of the person maintaining this software source
-func (o LookupSoftwareSourceResultOutput) MaintainerEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.MaintainerEmail }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) MaintainerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.MaintainerEmail }).(pulumi.StringPtrOutput)
 }
 
 // Name of the person maintaining this software source
-func (o LookupSoftwareSourceResultOutput) MaintainerName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.MaintainerName }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) MaintainerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.MaintainerName }).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the person maintaining this software source
-func (o LookupSoftwareSourceResultOutput) MaintainerPhone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.MaintainerPhone }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) MaintainerPhone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.MaintainerPhone }).(pulumi.StringPtrOutput)
 }
 
 // Number of packages
-func (o LookupSoftwareSourceResultOutput) Packages() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) int { return v.Packages }).(pulumi.IntOutput)
+func (o LookupSoftwareSourceResultOutput) Packages() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *int { return v.Packages }).(pulumi.IntPtrOutput)
 }
 
 // OCID for the parent software source, if there is one
-func (o LookupSoftwareSourceResultOutput) ParentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.ParentId }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) ParentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.ParentId }).(pulumi.StringPtrOutput)
 }
 
 // Display name the parent software source, if there is one
-func (o LookupSoftwareSourceResultOutput) ParentName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.ParentName }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) ParentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.ParentName }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Software Source
-func (o LookupSoftwareSourceResultOutput) RepoType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.RepoType }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) RepoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.RepoType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSoftwareSourceResultOutput) SoftwareSourceId() pulumi.StringOutput {
@@ -252,18 +245,18 @@ func (o LookupSoftwareSourceResultOutput) SoftwareSourceId() pulumi.StringOutput
 }
 
 // The current state of the Software Source.
-func (o LookupSoftwareSourceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // status of the software source.
-func (o LookupSoftwareSourceResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // URL for the repostiory
-func (o LookupSoftwareSourceResultOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Url }).(pulumi.StringOutput)
+func (o LookupSoftwareSourceResultOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -126,40 +126,40 @@ namespace Pulumi.Oci.Autoscaling
         /// For schedule-based autoscaling policies, this value is not used.
         /// </summary>
         [Output("coolDownInSeconds")]
-        public Output<int> CoolDownInSeconds { get; private set; } = null!;
+        public Output<int?> CoolDownInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Whether the autoscaling policy is enabled.
         /// </summary>
         [Output("isEnabled")]
-        public Output<bool> IsEnabled { get; private set; } = null!;
+        public Output<bool?> IsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The maximum number of resources to scale out to.
         /// </summary>
         [Output("maxResourceCount")]
-        public Output<int> MaxResourceCount { get; private set; } = null!;
+        public Output<int?> MaxResourceCount { get; private set; } = null!;
 
         /// <summary>
         /// The minimum number of resources to scale in to.
         /// </summary>
         [Output("minResourceCount")]
-        public Output<int> MinResourceCount { get; private set; } = null!;
+        public Output<int?> MinResourceCount { get; private set; } = null!;
 
         /// <summary>
         /// Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Autoscaling
         /// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

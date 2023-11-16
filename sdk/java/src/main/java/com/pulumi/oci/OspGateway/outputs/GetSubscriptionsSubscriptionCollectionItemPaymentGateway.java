@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OspGateway.outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
@@ -14,7 +15,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
      * @return Merchant details.
      * 
      */
-    private List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
+    private @Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
 
     private GetSubscriptionsSubscriptionCollectionItemPaymentGateway() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
      * 
      */
     public List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas() {
-        return this.merchantDefinedDatas;
+        return this.merchantDefinedDatas == null ? List.of() : this.merchantDefinedDatas;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
+        private @Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItemPaymentGateway defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
         }
 
         @CustomType.Setter
-        public Builder merchantDefinedDatas(List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
-            this.merchantDefinedDatas = Objects.requireNonNull(merchantDefinedDatas);
+        public Builder merchantDefinedDatas(@Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
+            this.merchantDefinedDatas = merchantDefinedDatas;
             return this;
         }
         public Builder merchantDefinedDatas(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData... merchantDefinedDatas) {

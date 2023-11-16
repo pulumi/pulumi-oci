@@ -16,16 +16,16 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// <summary>
         /// An IP address.  Example: `192.168.0.3`
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// IP version associated with this IP address.
         /// </summary>
-        public readonly string IpVersion;
+        public readonly string? IpVersion;
         /// <summary>
         /// Whether the IP address is public or private.
         /// If "true", then the IP address is public and accessible from the internet.
         /// </summary>
-        public readonly bool IsPublic;
+        public readonly bool? IsPublic;
         /// <summary>
         /// An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         /// </summary>
@@ -33,11 +33,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
         [OutputConstructor]
         private GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult(
-            string ipAddress,
+            string? ipAddress,
 
-            string ipVersion,
+            string? ipVersion,
 
-            bool isPublic,
+            bool? isPublic,
 
             ImmutableArray<Outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpResult> reservedIps)
         {

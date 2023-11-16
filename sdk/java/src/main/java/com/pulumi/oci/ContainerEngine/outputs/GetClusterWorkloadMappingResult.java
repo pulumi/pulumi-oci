@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterWorkloadMappingResult {
@@ -20,42 +22,42 @@ public final class GetClusterWorkloadMappingResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The ocid of the workloadMapping.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the mapped customer compartment.
      * 
      */
-    private String mappedCompartmentId;
+    private @Nullable String mappedCompartmentId;
     /**
      * @return The OCID of the mapped customer tenancy.
      * 
      */
-    private String mappedTenancyId;
+    private @Nullable String mappedTenancyId;
     /**
      * @return The namespace of the workloadMapping.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The state of the workloadMapping.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     private String workloadMappingId;
 
     private GetClusterWorkloadMappingResult() {}
@@ -71,56 +73,56 @@ public final class GetClusterWorkloadMappingResult {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The ocid of the workloadMapping.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the mapped customer compartment.
      * 
      */
-    public String mappedCompartmentId() {
-        return this.mappedCompartmentId;
+    public Optional<String> mappedCompartmentId() {
+        return Optional.ofNullable(this.mappedCompartmentId);
     }
     /**
      * @return The OCID of the mapped customer tenancy.
      * 
      */
-    public String mappedTenancyId() {
-        return this.mappedTenancyId;
+    public Optional<String> mappedTenancyId() {
+        return Optional.ofNullable(this.mappedTenancyId);
     }
     /**
      * @return The namespace of the workloadMapping.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The state of the workloadMapping.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     public String workloadMappingId() {
         return this.workloadMappingId;
@@ -136,14 +138,14 @@ public final class GetClusterWorkloadMappingResult {
     @CustomType.Builder
     public static final class Builder {
         private String clusterId;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String mappedCompartmentId;
-        private String mappedTenancyId;
-        private String namespace;
-        private String state;
-        private String timeCreated;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String mappedCompartmentId;
+        private @Nullable String mappedTenancyId;
+        private @Nullable String namespace;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         private String workloadMappingId;
         public Builder() {}
         public Builder(GetClusterWorkloadMappingResult defaults) {
@@ -166,43 +168,43 @@ public final class GetClusterWorkloadMappingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder mappedCompartmentId(String mappedCompartmentId) {
-            this.mappedCompartmentId = Objects.requireNonNull(mappedCompartmentId);
+        public Builder mappedCompartmentId(@Nullable String mappedCompartmentId) {
+            this.mappedCompartmentId = mappedCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder mappedTenancyId(String mappedTenancyId) {
-            this.mappedTenancyId = Objects.requireNonNull(mappedTenancyId);
+        public Builder mappedTenancyId(@Nullable String mappedTenancyId) {
+            this.mappedTenancyId = mappedTenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter

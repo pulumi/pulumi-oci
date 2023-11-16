@@ -9,6 +9,7 @@ import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollection;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -27,12 +28,12 @@ public final class GetQueriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of query_collection.
      * 
      */
-    private List<GetQueriesQueryCollection> queryCollections;
+    private @Nullable List<GetQueriesQueryCollection> queryCollections;
 
     private GetQueriesResult() {}
     /**
@@ -53,15 +54,15 @@ public final class GetQueriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of query_collection.
      * 
      */
     public List<GetQueriesQueryCollection> queryCollections() {
-        return this.queryCollections;
+        return this.queryCollections == null ? List.of() : this.queryCollections;
     }
 
     public static Builder builder() {
@@ -75,8 +76,8 @@ public final class GetQueriesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetQueriesFilter> filters;
-        private String id;
-        private List<GetQueriesQueryCollection> queryCollections;
+        private @Nullable String id;
+        private @Nullable List<GetQueriesQueryCollection> queryCollections;
         public Builder() {}
         public Builder(GetQueriesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,13 +101,13 @@ public final class GetQueriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder queryCollections(List<GetQueriesQueryCollection> queryCollections) {
-            this.queryCollections = Objects.requireNonNull(queryCollections);
+        public Builder queryCollections(@Nullable List<GetQueriesQueryCollection> queryCollections) {
+            this.queryCollections = queryCollections;
             return this;
         }
         public Builder queryCollections(GetQueriesQueryCollection... queryCollections) {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscribedServicePaymentTerm {
@@ -14,99 +16,99 @@ public final class GetSubscribedServicePaymentTerm {
      * @return User that created the Payment term
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Payment term Description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Payment term active flag
      * 
      */
-    private Boolean isActive;
+    private @Nullable Boolean isActive;
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Subscribed service creation date
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Subscribed service last update date
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return User that updated the subscribed service
      * 
      */
-    private String updatedBy;
+    private @Nullable String updatedBy;
     /**
      * @return Payment Term value
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetSubscribedServicePaymentTerm() {}
     /**
      * @return User that created the Payment term
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Payment term Description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Payment term active flag
      * 
      */
-    public Boolean isActive() {
-        return this.isActive;
+    public Optional<Boolean> isActive() {
+        return Optional.ofNullable(this.isActive);
     }
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Subscribed service creation date
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Subscribed service last update date
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return User that updated the subscribed service
      * 
      */
-    public String updatedBy() {
-        return this.updatedBy;
+    public Optional<String> updatedBy() {
+        return Optional.ofNullable(this.updatedBy);
     }
     /**
      * @return Payment Term value
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -118,14 +120,14 @@ public final class GetSubscribedServicePaymentTerm {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String createdBy;
-        private String description;
-        private Boolean isActive;
-        private String name;
-        private String timeCreated;
-        private String timeUpdated;
-        private String updatedBy;
-        private String value;
+        private @Nullable String createdBy;
+        private @Nullable String description;
+        private @Nullable Boolean isActive;
+        private @Nullable String name;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String updatedBy;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetSubscribedServicePaymentTerm defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,43 +142,43 @@ public final class GetSubscribedServicePaymentTerm {
         }
 
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isActive(Boolean isActive) {
-            this.isActive = Objects.requireNonNull(isActive);
+        public Builder isActive(@Nullable Boolean isActive) {
+            this.isActive = isActive;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+        public Builder updatedBy(@Nullable String updatedBy) {
+            this.updatedBy = updatedBy;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetSubscribedServicePaymentTerm build() {

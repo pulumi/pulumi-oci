@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelineInfrastructureConfigurationDetail {
@@ -16,39 +18,39 @@ public final class GetPipelineInfrastructureConfigurationDetail {
      * @return The size of the block storage volume to attach to the instance.
      * 
      */
-    private Integer blockStorageSizeInGbs;
+    private @Nullable Integer blockStorageSizeInGbs;
     /**
      * @return Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
-    private List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails;
+    private @Nullable List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails;
     /**
      * @return The shape used to launch the instance for all step runs in the pipeline.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
 
     private GetPipelineInfrastructureConfigurationDetail() {}
     /**
      * @return The size of the block storage volume to attach to the instance.
      * 
      */
-    public Integer blockStorageSizeInGbs() {
-        return this.blockStorageSizeInGbs;
+    public Optional<Integer> blockStorageSizeInGbs() {
+        return Optional.ofNullable(this.blockStorageSizeInGbs);
     }
     /**
      * @return Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
     public List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails() {
-        return this.shapeConfigDetails;
+        return this.shapeConfigDetails == null ? List.of() : this.shapeConfigDetails;
     }
     /**
      * @return The shape used to launch the instance for all step runs in the pipeline.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetPipelineInfrastructureConfigurationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer blockStorageSizeInGbs;
-        private List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails;
-        private String shapeName;
+        private @Nullable Integer blockStorageSizeInGbs;
+        private @Nullable List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails;
+        private @Nullable String shapeName;
         public Builder() {}
         public Builder(GetPipelineInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetPipelineInfrastructureConfigurationDetail {
         }
 
         @CustomType.Setter
-        public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+        public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeConfigDetails(List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails) {
-            this.shapeConfigDetails = Objects.requireNonNull(shapeConfigDetails);
+        public Builder shapeConfigDetails(@Nullable List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails) {
+            this.shapeConfigDetails = shapeConfigDetails;
             return this;
         }
         public Builder shapeConfigDetails(GetPipelineInfrastructureConfigurationDetailShapeConfigDetail... shapeConfigDetails) {
             return shapeConfigDetails(List.of(shapeConfigDetails));
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         public GetPipelineInfrastructureConfigurationDetail build() {

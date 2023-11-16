@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
@@ -65,21 +64,21 @@ type GetVmClusterPatchResult struct {
 	// Actions that can possibly be performed using this patch.
 	AvailableActions []string `pulumi:"availableActions"`
 	// The text describing this patch package.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Action that is currently being performed or was completed last.
-	LastAction string `pulumi:"lastAction"`
+	LastAction *string `pulumi:"lastAction"`
 	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	PatchId          string `pulumi:"patchId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	PatchId          string  `pulumi:"patchId"`
 	// The current state of the patch as a result of lastAction.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time that the patch was released.
-	TimeReleased string `pulumi:"timeReleased"`
+	TimeReleased *string `pulumi:"timeReleased"`
 	// The version of this patch package.
-	Version     string `pulumi:"version"`
-	VmClusterId string `pulumi:"vmClusterId"`
+	Version     *string `pulumi:"version"`
+	VmClusterId string  `pulumi:"vmClusterId"`
 }
 
 func GetVmClusterPatchOutput(ctx *pulumi.Context, args GetVmClusterPatchOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterPatchResultOutput {
@@ -122,35 +121,29 @@ func (o GetVmClusterPatchResultOutput) ToGetVmClusterPatchResultOutputWithContex
 	return o
 }
 
-func (o GetVmClusterPatchResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchResult] {
-	return pulumix.Output[GetVmClusterPatchResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Actions that can possibly be performed using this patch.
 func (o GetVmClusterPatchResultOutput) AvailableActions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVmClusterPatchResult) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
 }
 
 // The text describing this patch package.
-func (o GetVmClusterPatchResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetVmClusterPatchResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterPatchResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterPatchResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Action that is currently being performed or was completed last.
-func (o GetVmClusterPatchResultOutput) LastAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchResult) string { return v.LastAction }).(pulumi.StringOutput)
+func (o GetVmClusterPatchResultOutput) LastAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchResult) *string { return v.LastAction }).(pulumi.StringPtrOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-func (o GetVmClusterPatchResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterPatchResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterPatchResultOutput) PatchId() pulumi.StringOutput {
@@ -158,18 +151,18 @@ func (o GetVmClusterPatchResultOutput) PatchId() pulumi.StringOutput {
 }
 
 // The current state of the patch as a result of lastAction.
-func (o GetVmClusterPatchResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterPatchResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the patch was released.
-func (o GetVmClusterPatchResultOutput) TimeReleased() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchResult) string { return v.TimeReleased }).(pulumi.StringOutput)
+func (o GetVmClusterPatchResultOutput) TimeReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchResult) *string { return v.TimeReleased }).(pulumi.StringPtrOutput)
 }
 
 // The version of this patch package.
-func (o GetVmClusterPatchResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetVmClusterPatchResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterPatchResultOutput) VmClusterId() pulumi.StringOutput {

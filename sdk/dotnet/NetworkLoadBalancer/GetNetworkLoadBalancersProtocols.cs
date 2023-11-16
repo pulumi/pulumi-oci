@@ -111,7 +111,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of network_load_balancers_protocol_collection.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         private GetNetworkLoadBalancersProtocolsResult(
             ImmutableArray<Outputs.GetNetworkLoadBalancersProtocolsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionResult> networkLoadBalancersProtocolCollections)
         {

@@ -6,6 +6,8 @@ package com.pulumi.oci.UsageProxy.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem {
@@ -18,12 +20,12 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemIte
      * @return The first name of the user that can redeem rewards.
      * 
      */
-    private String firstName;
+    private @Nullable String firstName;
     /**
      * @return The last name of the user that can redeem rewards.
      * 
      */
-    private String lastName;
+    private @Nullable String lastName;
 
     private GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem() {}
     /**
@@ -37,15 +39,15 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemIte
      * @return The first name of the user that can redeem rewards.
      * 
      */
-    public String firstName() {
-        return this.firstName;
+    public Optional<String> firstName() {
+        return Optional.ofNullable(this.firstName);
     }
     /**
      * @return The last name of the user that can redeem rewards.
      * 
      */
-    public String lastName() {
-        return this.lastName;
+    public Optional<String> lastName() {
+        return Optional.ofNullable(this.lastName);
     }
 
     public static Builder builder() {
@@ -58,8 +60,8 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemIte
     @CustomType.Builder
     public static final class Builder {
         private String emailId;
-        private String firstName;
-        private String lastName;
+        private @Nullable String firstName;
+        private @Nullable String lastName;
         public Builder() {}
         public Builder(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -74,13 +76,13 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemIte
             return this;
         }
         @CustomType.Setter
-        public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+        public Builder firstName(@Nullable String firstName) {
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
-        public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+        public Builder lastName(@Nullable String lastName) {
+            this.lastName = lastName;
             return this;
         }
         public GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem build() {

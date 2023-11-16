@@ -26,16 +26,16 @@ export interface GetBackendSetHealthArgs {
  */
 export interface GetBackendSetHealthResult {
     readonly backendSetName: string;
-    readonly criticalStateBackendNames: string[];
+    readonly criticalStateBackendNames?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkLoadBalancerId: string;
-    readonly status: string;
-    readonly totalBackendCount: number;
-    readonly unknownStateBackendNames: string[];
-    readonly warningStateBackendNames: string[];
+    readonly status?: string;
+    readonly totalBackendCount?: number;
+    readonly unknownStateBackendNames?: string[];
+    readonly warningStateBackendNames?: string[];
 }
 export function getBackendSetHealthOutput(args: GetBackendSetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetHealthResult> {
     return pulumi.output(args).apply((a: any) => getBackendSetHealth(a, opts))

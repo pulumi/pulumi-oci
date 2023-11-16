@@ -112,16 +112,16 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
         /// </summary>
-        public readonly string AgentId;
+        public readonly string? AgentId;
         /// <summary>
         /// OCID of the compartment where the secret containing the credentials will be created.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         /// </summary>
-        public readonly string CredentialsSecretId;
-        public readonly string CsvText;
+        public readonly string? CredentialsSecretId;
+        public readonly string? CsvText;
         /// <summary>
         /// Data Transfer Medium details for the Migration.
         /// </summary>
@@ -134,11 +134,11 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Migration Display Name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Optional additional properties for dump transfer.
         /// </summary>
@@ -150,11 +150,11 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// OCID of the current ODMS Job in execution for the Migration, if any.
         /// </summary>
-        public readonly string ExecutingJobId;
+        public readonly string? ExecutingJobId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Details about Oracle GoldenGate Microservices.
         /// </summary>
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The OCID of the resource
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Database objects to include from migration.
         /// </summary>
@@ -174,44 +174,44 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// Additional status related to the execution and current state of the Migration.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly string MigrationId;
         /// <summary>
         /// The OCID of the Source Container Database Connection.
         /// </summary>
-        public readonly string SourceContainerDatabaseConnectionId;
+        public readonly string? SourceContainerDatabaseConnectionId;
         /// <summary>
         /// The OCID of the Source Database Connection.
         /// </summary>
-        public readonly string SourceDatabaseConnectionId;
+        public readonly string? SourceDatabaseConnectionId;
         /// <summary>
         /// The current state of the Migration resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The OCID of the Target Database Connection.
         /// </summary>
-        public readonly string TargetDatabaseConnectionId;
+        public readonly string? TargetDatabaseConnectionId;
         /// <summary>
         /// The time the Migration was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time of last Migration. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeLastMigration;
+        public readonly string? TimeLastMigration;
         /// <summary>
         /// The time of the last Migration details update. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Migration type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         /// </summary>
@@ -219,19 +219,19 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
         /// </summary>
-        public readonly string WaitAfter;
+        public readonly string? WaitAfter;
 
         [OutputConstructor]
         private GetMigrationResult(
             ImmutableArray<Outputs.GetMigrationAdvisorSettingResult> advisorSettings,
 
-            string agentId,
+            string? agentId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string credentialsSecretId,
+            string? credentialsSecretId,
 
-            string csvText,
+            string? csvText,
 
             ImmutableArray<Outputs.GetMigrationDataTransferMediumDetailResult> dataTransferMediumDetails,
 
@@ -239,51 +239,51 @@ namespace Pulumi.Oci.DatabaseMigration
 
             ImmutableArray<Outputs.GetMigrationDatapumpSettingResult> datapumpSettings,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetMigrationDumpTransferDetailResult> dumpTransferDetails,
 
             ImmutableArray<Outputs.GetMigrationExcludeObjectResult> excludeObjects,
 
-            string executingJobId,
+            string? executingJobId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<Outputs.GetMigrationGoldenGateDetailResult> goldenGateDetails,
 
             ImmutableArray<Outputs.GetMigrationGoldenGateServiceDetailResult> goldenGateServiceDetails,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMigrationIncludeObjectResult> includeObjects,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             string migrationId,
 
-            string sourceContainerDatabaseConnectionId,
+            string? sourceContainerDatabaseConnectionId,
 
-            string sourceDatabaseConnectionId,
+            string? sourceDatabaseConnectionId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetDatabaseConnectionId,
+            string? targetDatabaseConnectionId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastMigration,
+            string? timeLastMigration,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type,
+            string? type,
 
             ImmutableArray<Outputs.GetMigrationVaultDetailResult> vaultDetails,
 
-            string waitAfter)
+            string? waitAfter)
         {
             AdvisorSettings = advisorSettings;
             AgentId = agentId;

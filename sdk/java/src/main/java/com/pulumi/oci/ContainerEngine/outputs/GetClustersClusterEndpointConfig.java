@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersClusterEndpointConfig {
@@ -15,39 +17,39 @@ public final class GetClustersClusterEndpointConfig {
      * @return Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
      * 
      */
-    private Boolean isPublicIpEnabled;
+    private @Nullable Boolean isPublicIpEnabled;
     /**
      * @return A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The OCID of the regional subnet in which to place the Cluster endpoint.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetClustersClusterEndpointConfig() {}
     /**
      * @return Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
      * 
      */
-    public Boolean isPublicIpEnabled() {
-        return this.isPublicIpEnabled;
+    public Optional<Boolean> isPublicIpEnabled() {
+        return Optional.ofNullable(this.isPublicIpEnabled);
     }
     /**
      * @return A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The OCID of the regional subnet in which to place the Cluster endpoint.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetClustersClusterEndpointConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isPublicIpEnabled;
-        private List<String> nsgIds;
-        private String subnetId;
+        private @Nullable Boolean isPublicIpEnabled;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetClustersClusterEndpointConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetClustersClusterEndpointConfig {
         }
 
         @CustomType.Setter
-        public Builder isPublicIpEnabled(Boolean isPublicIpEnabled) {
-            this.isPublicIpEnabled = Objects.requireNonNull(isPublicIpEnabled);
+        public Builder isPublicIpEnabled(@Nullable Boolean isPublicIpEnabled) {
+            this.isPublicIpEnabled = isPublicIpEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetClustersClusterEndpointConfig build() {

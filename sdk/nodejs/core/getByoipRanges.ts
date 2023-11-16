@@ -62,7 +62,7 @@ export interface GetByoipRangesResult {
     /**
      * The list of byoip_range_collection.
      */
-    readonly byoipRangeCollections: outputs.Core.GetByoipRangesByoipRangeCollection[];
+    readonly byoipRangeCollections?: outputs.Core.GetByoipRangesByoipRangeCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      */
@@ -75,7 +75,7 @@ export interface GetByoipRangesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The `ByoipRange` resource's current state.
      */

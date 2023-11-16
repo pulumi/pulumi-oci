@@ -55,9 +55,6 @@ class GetHttpRedirectsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -72,15 +69,12 @@ class GetHttpRedirectsResult:
 
     @property
     @pulumi.getter(name="httpRedirects")
-    def http_redirects(self) -> Sequence['outputs.GetHttpRedirectsHttpRedirectResult']:
-        """
-        The list of http_redirects.
-        """
+    def http_redirects(self) -> Optional[Sequence['outputs.GetHttpRedirectsHttpRedirectResult']]:
         return pulumi.get(self, "http_redirects")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -133,31 +127,7 @@ def get_http_redirects(compartment_id: Optional[str] = None,
                        time_created_less_than: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHttpRedirectsResult:
     """
-    This data source provides the list of Http Redirects in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of HTTP Redirects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=var["compartment_id"],
-        display_names=var["http_redirect_display_names"],
-        ids=var["http_redirect_ids"],
-        states=var["http_redirect_states"],
-        time_created_greater_than_or_equal_to=var["http_redirect_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["http_redirect_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter redirects using a display name.
-    :param Sequence[str] ids: Filter redirects using a list of redirect OCIDs.
-    :param Sequence[str] states: Filter redirects using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches redirects created on or after the specified date and time.
-    :param str time_created_less_than: A filter that matches redirects created before the specified date-time. Default to 1 day before now.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -192,30 +162,6 @@ def get_http_redirects_output(compartment_id: Optional[pulumi.Input[str]] = None
                               time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHttpRedirectsResult]:
     """
-    This data source provides the list of Http Redirects in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of HTTP Redirects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=var["compartment_id"],
-        display_names=var["http_redirect_display_names"],
-        ids=var["http_redirect_ids"],
-        states=var["http_redirect_states"],
-        time_created_greater_than_or_equal_to=var["http_redirect_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["http_redirect_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter redirects using a display name.
-    :param Sequence[str] ids: Filter redirects using a list of redirect OCIDs.
-    :param Sequence[str] states: Filter redirects using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches redirects created on or after the specified date and time.
-    :param str time_created_less_than: A filter that matches redirects created before the specified date-time. Default to 1 day before now.
+    Use this data source to access information about an existing resource.
     """
     ...

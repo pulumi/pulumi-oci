@@ -51,14 +51,11 @@ class GetFleetBlocklistsResult:
     @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
-        """
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,26 +63,17 @@ class GetFleetBlocklistsResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFleetBlocklistsItemResult']:
-        """
-        The blocklist
-        """
+    def items(self) -> Optional[Sequence['outputs.GetFleetBlocklistsItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
-        """
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter
     def operation(self) -> Optional[str]:
-        """
-        The operation type
-        """
         return pulumi.get(self, "operation")
 
 
@@ -109,25 +97,7 @@ def get_fleet_blocklists(filters: Optional[Sequence[pulumi.InputType['GetFleetBl
                          operation: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetBlocklistsResult:
     """
-    This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of blocklist entities contained by a fleet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_blocklists = oci.Jms.get_fleet_blocklists(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        operation=var["fleet_blocklist_operation"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str operation: The operation type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -153,24 +123,6 @@ def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence
                                 operation: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetBlocklistsResult]:
     """
-    This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of blocklist entities contained by a fleet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_blocklists = oci.Jms.get_fleet_blocklists(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        operation=var["fleet_blocklist_operation"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str operation: The operation type.
+    Use this data source to access information about an existing resource.
     """
     ...

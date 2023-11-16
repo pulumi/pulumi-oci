@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseKeyHistoryEntry {
@@ -13,51 +15,51 @@ public final class GetAutonomousDatabaseKeyHistoryEntry {
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private String kmsKeyVersionId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return The date and time the kms key activated.
      * 
      */
-    private String timeActivated;
+    private @Nullable String timeActivated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
 
     private GetAutonomousDatabaseKeyHistoryEntry() {}
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public String kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Optional<String> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
      * @return The date and time the kms key activated.
      * 
      */
-    public String timeActivated() {
-        return this.timeActivated;
+    public Optional<String> timeActivated() {
+        return Optional.ofNullable(this.timeActivated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetAutonomousDatabaseKeyHistoryEntry {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String kmsKeyVersionId;
-        private String timeActivated;
-        private String vaultId;
+        private @Nullable String id;
+        private @Nullable String kmsKeyVersionId;
+        private @Nullable String timeActivated;
+        private @Nullable String vaultId;
         public Builder() {}
         public Builder(GetAutonomousDatabaseKeyHistoryEntry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetAutonomousDatabaseKeyHistoryEntry {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+        public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeActivated(String timeActivated) {
-            this.timeActivated = Objects.requireNonNull(timeActivated);
+        public Builder timeActivated(@Nullable String timeActivated) {
+            this.timeActivated = timeActivated;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         public GetAutonomousDatabaseKeyHistoryEntry build() {

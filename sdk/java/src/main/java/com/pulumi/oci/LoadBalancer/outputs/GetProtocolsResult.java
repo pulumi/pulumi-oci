@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetProtocolsProtocol;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetProtocolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of protocols.
      * 
      */
-    private List<GetProtocolsProtocol> protocols;
+    private @Nullable List<GetProtocolsProtocol> protocols;
 
     private GetProtocolsResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetProtocolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of protocols.
      * 
      */
     public List<GetProtocolsProtocol> protocols() {
-        return this.protocols;
+        return this.protocols == null ? List.of() : this.protocols;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetProtocolsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProtocolsFilter> filters;
-        private String id;
-        private List<GetProtocolsProtocol> protocols;
+        private @Nullable String id;
+        private @Nullable List<GetProtocolsProtocol> protocols;
         public Builder() {}
         public Builder(GetProtocolsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetProtocolsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder protocols(List<GetProtocolsProtocol> protocols) {
-            this.protocols = Objects.requireNonNull(protocols);
+        public Builder protocols(@Nullable List<GetProtocolsProtocol> protocols) {
+            this.protocols = protocols;
             return this;
         }
         public Builder protocols(GetProtocolsProtocol... protocols) {

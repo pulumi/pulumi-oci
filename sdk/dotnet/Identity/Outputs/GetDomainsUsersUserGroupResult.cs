@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Date when the member is Added to the group
         /// </summary>
-        public readonly string DateAdded;
+        public readonly string? DateAdded;
         /// <summary>
         /// A human readable name, primarily used for display purposes.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
         /// </summary>
-        public readonly string ExternalId;
+        public readonly string? ExternalId;
         /// <summary>
         /// The membership OCID.
         /// </summary>
-        public readonly string MembershipOcid;
+        public readonly string? MembershipOcid;
         /// <summary>
         /// A human readable name for Group as defined by the Service Consumer. READ-ONLY.
         /// </summary>
-        public readonly string NonUniqueDisplay;
+        public readonly string? NonUniqueDisplay;
         /// <summary>
         /// The OCID of the user's support account.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// A label indicating the attribute's function.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUsersUserGroupResult(
-            string dateAdded,
+            string? dateAdded,
 
-            string display,
+            string? display,
 
-            string externalId,
+            string? externalId,
 
-            string membershipOcid,
+            string? membershipOcid,
 
-            string nonUniqueDisplay,
+            string? nonUniqueDisplay,
 
-            string ocid,
+            string? ocid,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             DateAdded = dateAdded;
             Display = display;

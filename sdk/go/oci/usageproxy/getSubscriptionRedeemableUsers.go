@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
@@ -65,7 +64,7 @@ type GetSubscriptionRedeemableUsersArgs struct {
 type GetSubscriptionRedeemableUsersResult struct {
 	Filters []GetSubscriptionRedeemableUsersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of redeemable_user_collection.
 	RedeemableUserCollections []GetSubscriptionRedeemableUsersRedeemableUserCollection `pulumi:"redeemableUserCollections"`
 	SubscriptionId            string                                                   `pulumi:"subscriptionId"`
@@ -113,19 +112,13 @@ func (o GetSubscriptionRedeemableUsersResultOutput) ToGetSubscriptionRedeemableU
 	return o
 }
 
-func (o GetSubscriptionRedeemableUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersResult] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRedeemableUsersResultOutput) Filters() GetSubscriptionRedeemableUsersFilterArrayOutput {
 	return o.ApplyT(func(v GetSubscriptionRedeemableUsersResult) []GetSubscriptionRedeemableUsersFilter { return v.Filters }).(GetSubscriptionRedeemableUsersFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSubscriptionRedeemableUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedeemableUsersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionRedeemableUsersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUsersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of redeemable_user_collection.

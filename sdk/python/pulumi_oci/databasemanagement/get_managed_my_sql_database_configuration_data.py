@@ -44,7 +44,7 @@ class GetManagedMySqlDatabaseConfigurationDataResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetManagedMySqlDatabaseConfigurationDataResult:
 
     @property
     @pulumi.getter(name="mySqlConfigurationDataCollections")
-    def my_sql_configuration_data_collections(self) -> Sequence['outputs.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionResult']:
-        """
-        The list of my_sql_configuration_data_collection.
-        """
+    def my_sql_configuration_data_collections(self) -> Optional[Sequence['outputs.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionResult']]:
         return pulumi.get(self, "my_sql_configuration_data_collections")
 
 
@@ -80,21 +77,7 @@ def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[pu
                                                    managed_my_sql_database_id: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseConfigurationDataResult:
     """
-    This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves Configuration Data for given MySQL Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_database_configuration_data = oci.DatabaseManagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=oci_database_management_managed_my_sql_database["test_managed_my_sql_database"]["id"])
-    ```
-
-
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_managed_my_sql_database_configuration_data_output(filters: Optional[pulu
                                                           managed_my_sql_database_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabaseConfigurationDataResult]:
     """
-    This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves Configuration Data for given MySQL Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_database_configuration_data = oci.DatabaseManagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=oci_database_management_managed_my_sql_database["test_managed_my_sql_database"]["id"])
-    ```
-
-
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
+    Use this data source to access information about an existing resource.
     """
     ...

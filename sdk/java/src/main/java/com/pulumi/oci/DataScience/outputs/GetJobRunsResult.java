@@ -44,7 +44,7 @@ public final class GetJobRunsResult {
      * @return The list of job_runs.
      * 
      */
-    private List<GetJobRunsJobRun> jobRuns;
+    private @Nullable List<GetJobRunsJobRun> jobRuns;
     /**
      * @return The state of the job run.
      * 
@@ -95,7 +95,7 @@ public final class GetJobRunsResult {
      * 
      */
     public List<GetJobRunsJobRun> jobRuns() {
-        return this.jobRuns;
+        return this.jobRuns == null ? List.of() : this.jobRuns;
     }
     /**
      * @return The state of the job run.
@@ -120,7 +120,7 @@ public final class GetJobRunsResult {
         private @Nullable List<GetJobRunsFilter> filters;
         private @Nullable String id;
         private @Nullable String jobId;
-        private List<GetJobRunsJobRun> jobRuns;
+        private @Nullable List<GetJobRunsJobRun> jobRuns;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetJobRunsResult defaults) {
@@ -169,8 +169,8 @@ public final class GetJobRunsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder jobRuns(List<GetJobRunsJobRun> jobRuns) {
-            this.jobRuns = Objects.requireNonNull(jobRuns);
+        public Builder jobRuns(@Nullable List<GetJobRunsJobRun> jobRuns) {
+            this.jobRuns = jobRuns;
             return this;
         }
         public Builder jobRuns(GetJobRunsJobRun... jobRuns) {

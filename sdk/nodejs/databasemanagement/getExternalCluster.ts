@@ -47,76 +47,76 @@ export interface GetExternalClusterResult {
     /**
      * The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name of the external cluster.
      */
-    readonly componentName: string;
+    readonly componentName?: string;
     /**
      * The user-friendly name for the external cluster. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalClusterId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    readonly externalConnectorId: string;
+    readonly externalConnectorId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      */
-    readonly externalDbSystemId: string;
+    readonly externalDbSystemId?: string;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    readonly gridHome: string;
+    readonly gridHome?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the cluster is Oracle Flex Cluster or not.
      */
-    readonly isFlexCluster: boolean;
+    readonly isFlexCluster?: boolean;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The list of network address configurations of the external cluster.
      */
-    readonly networkConfigurations: outputs.DatabaseManagement.GetExternalClusterNetworkConfiguration[];
+    readonly networkConfigurations?: outputs.DatabaseManagement.GetExternalClusterNetworkConfiguration[];
     /**
      * The location of the Oracle Cluster Registry (OCR).
      */
-    readonly ocrFileLocation: string;
+    readonly ocrFileLocation?: string;
     /**
      * The list of Single Client Access Name (SCAN) configurations of the external cluster.
      */
-    readonly scanConfigurations: outputs.DatabaseManagement.GetExternalClusterScanConfiguration[];
+    readonly scanConfigurations?: outputs.DatabaseManagement.GetExternalClusterScanConfiguration[];
     /**
      * The current lifecycle state of the external cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external cluster was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The cluster version.
      */
-    readonly version: string;
+    readonly version?: string;
     /**
      * The list of Virtual IP (VIP) configurations of the external cluster.
      */
-    readonly vipConfigurations: outputs.DatabaseManagement.GetExternalClusterVipConfiguration[];
+    readonly vipConfigurations?: outputs.DatabaseManagement.GetExternalClusterVipConfiguration[];
 }
 /**
  * This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Default value of the parameter.
         /// </summary>
-        public readonly string DefaultValue;
+        public readonly string? DefaultValue;
         /// <summary>
         /// Optional description about the deployment pipeline.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetDeployPipelineDeployPipelineParameterItemResult(
-            string defaultValue,
+            string? defaultValue,
 
-            string description,
+            string? description,
 
-            string name)
+            string? name)
         {
             DefaultValue = defaultValue;
             Description = description;

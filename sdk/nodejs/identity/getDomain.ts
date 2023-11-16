@@ -47,77 +47,77 @@ export interface GetDomainArgs {
  * A collection of values returned by getDomain.
  */
 export interface GetDomainResult {
-    readonly adminEmail: string;
-    readonly adminFirstName: string;
-    readonly adminLastName: string;
-    readonly adminUserName: string;
+    readonly adminEmail?: string;
+    readonly adminFirstName?: string;
+    readonly adminLastName?: string;
+    readonly adminUserName?: string;
     /**
      * The OCID of the compartment containing the domain.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The domain descripition
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The mutable display name of the domain
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly domainId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      */
-    readonly homeRegion: string;
+    readonly homeRegion?: string;
     /**
      * Region specific domain URL.
      */
-    readonly homeRegionUrl: string;
+    readonly homeRegionUrl?: string;
     /**
      * The OCID of the domain
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether domain is hidden on login screen or not.
      */
-    readonly isHiddenOnLogin: boolean;
-    readonly isNotificationBypassed: boolean;
-    readonly isPrimaryEmailRequired: boolean;
+    readonly isHiddenOnLogin?: boolean;
+    readonly isNotificationBypassed?: boolean;
+    readonly isPrimaryEmailRequired?: boolean;
     /**
      * The License type of Domain
      */
-    readonly licenseType: string;
+    readonly licenseType?: string;
     /**
      * Any additional details about the current state of the Domain.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The regions domain is replication to.
      */
-    readonly replicaRegions: outputs.Identity.GetDomainReplicaRegion[];
+    readonly replicaRegions?: outputs.Identity.GetDomainReplicaRegion[];
     /**
      * The current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The type of the domain.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * Region agnostic domain URL.
      */
-    readonly url: string;
+    readonly url?: string;
 }
 /**
  * This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Identity service.

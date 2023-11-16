@@ -16,47 +16,47 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Address first line.
         /// </summary>
-        public readonly string Address1;
+        public readonly string? Address1;
         /// <summary>
         /// Address second line.
         /// </summary>
-        public readonly string Address2;
+        public readonly string? Address2;
         /// <summary>
         /// City.
         /// </summary>
-        public readonly string City;
+        public readonly string? City;
         /// <summary>
         /// Country.
         /// </summary>
-        public readonly string Country;
+        public readonly string? Country;
         /// <summary>
         /// Postal code.
         /// </summary>
-        public readonly string PostalCode;
+        public readonly string? PostalCode;
         /// <summary>
         /// Region.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// Region.
         /// </summary>
-        public readonly string TcaLocationId;
+        public readonly string? TcaLocationId;
 
         [OutputConstructor]
         private GetSubscribedServicesSubscribedServiceEndUserAddressLocationResult(
-            string address1,
+            string? address1,
 
-            string address2,
+            string? address2,
 
-            string city,
+            string? city,
 
-            string country,
+            string? country,
 
-            string postalCode,
+            string? postalCode,
 
-            string region,
+            string? region,
 
-            string tcaLocationId)
+            string? tcaLocationId)
         {
             Address1 = address1;
             Address2 = address2;

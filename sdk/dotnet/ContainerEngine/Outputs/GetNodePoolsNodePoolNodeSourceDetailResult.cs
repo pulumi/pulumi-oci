@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
         /// </summary>
-        public readonly string BootVolumeSizeInGbs;
+        public readonly string? BootVolumeSizeInGbs;
         /// <summary>
         /// The OCID of the image used to boot the node.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetNodePoolsNodePoolNodeSourceDetailResult(
-            string bootVolumeSizeInGbs,
+            string? bootVolumeSizeInGbs,
 
-            string imageId,
+            string? imageId,
 
-            string sourceType)
+            string? sourceType)
         {
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;
             ImageId = imageId;

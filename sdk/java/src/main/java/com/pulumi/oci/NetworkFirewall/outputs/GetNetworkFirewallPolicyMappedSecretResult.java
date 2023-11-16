@@ -7,10 +7,12 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyMappedSecretResult {
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the secret.
      * 
@@ -21,31 +23,31 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
      * @return OCID of the Network Firewall Policy this Mapped Secret belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Source of the secrets, where the secrets are stored.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return Type of the secrets mapped based on the policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return OCID for the Vault Secret to be used.
      * 
      */
-    private String vaultSecretId;
+    private @Nullable String vaultSecretId;
     /**
      * @return Version number of the secret to be used.
      * 
      */
-    private Integer versionNumber;
+    private @Nullable Integer versionNumber;
 
     private GetNetworkFirewallPolicyMappedSecretResult() {}
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the secret.
@@ -61,36 +63,36 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
      * @return OCID of the Network Firewall Policy this Mapped Secret belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Source of the secrets, where the secrets are stored.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return Type of the secrets mapped based on the policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return OCID for the Vault Secret to be used.
      * 
      */
-    public String vaultSecretId() {
-        return this.vaultSecretId;
+    public Optional<String> vaultSecretId() {
+        return Optional.ofNullable(this.vaultSecretId);
     }
     /**
      * @return Version number of the secret to be used.
      * 
      */
-    public Integer versionNumber() {
-        return this.versionNumber;
+    public Optional<Integer> versionNumber() {
+        return Optional.ofNullable(this.versionNumber);
     }
 
     public static Builder builder() {
@@ -102,14 +104,14 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private String source;
-        private String type;
-        private String vaultSecretId;
-        private Integer versionNumber;
+        private @Nullable String parentResourceId;
+        private @Nullable String source;
+        private @Nullable String type;
+        private @Nullable String vaultSecretId;
+        private @Nullable Integer versionNumber;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyMappedSecretResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -124,8 +126,8 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -139,28 +141,28 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultSecretId(String vaultSecretId) {
-            this.vaultSecretId = Objects.requireNonNull(vaultSecretId);
+        public Builder vaultSecretId(@Nullable String vaultSecretId) {
+            this.vaultSecretId = vaultSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder versionNumber(Integer versionNumber) {
-            this.versionNumber = Objects.requireNonNull(versionNumber);
+        public Builder versionNumber(@Nullable Integer versionNumber) {
+            this.versionNumber = versionNumber;
             return this;
         }
         public GetNetworkFirewallPolicyMappedSecretResult build() {

@@ -127,7 +127,7 @@ export interface GetListingsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly imageId?: string;
     /**
      * Indicates whether the listing is included in Featured Listings.
@@ -138,7 +138,7 @@ export interface GetListingsResult {
     /**
      * The list of listings.
      */
-    readonly listings: outputs.Marketplace.GetListingsListing[];
+    readonly listings?: outputs.Marketplace.GetListingsListing[];
     /**
      * Text that describes the resource.
      */

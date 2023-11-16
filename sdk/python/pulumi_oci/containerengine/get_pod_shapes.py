@@ -60,7 +60,7 @@ class GetPodShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,17 +69,11 @@ class GetPodShapesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the identifying shape.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="podShapes")
-    def pod_shapes(self) -> Sequence['outputs.GetPodShapesPodShapeResult']:
-        """
-        The list of pod_shapes.
-        """
+    def pod_shapes(self) -> Optional[Sequence['outputs.GetPodShapesPodShapeResult']]:
         return pulumi.get(self, "pod_shapes")
 
 
@@ -103,25 +97,7 @@ def get_pod_shapes(availability_domain: Optional[str] = None,
                    name: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPodShapesResult:
     """
-    This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the Pod Shapes in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["pod_shape_availability_domain"],
-        name=var["pod_shape_name"])
-    ```
-
-
-    :param str availability_domain: The availability domain of the pod shape.
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The name to filter on.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -147,24 +123,6 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[st
                           name: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPodShapesResult]:
     """
-    This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the Pod Shapes in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["pod_shape_availability_domain"],
-        name=var["pod_shape_name"])
-    ```
-
-
-    :param str availability_domain: The availability domain of the pod shape.
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The name to filter on.
+    Use this data source to access information about an existing resource.
     """
     ...

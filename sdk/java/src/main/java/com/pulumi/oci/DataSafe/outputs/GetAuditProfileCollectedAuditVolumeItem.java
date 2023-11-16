@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditProfileCollectedAuditVolumeItem {
@@ -13,51 +15,51 @@ public final class GetAuditProfileCollectedAuditVolumeItem {
      * @return The audit data volume collected by Data Safe and is available in archive storage.
      * 
      */
-    private String archivedVolume;
+    private @Nullable String archivedVolume;
     /**
      * @return The OCID of the audit.
      * 
      */
-    private String auditProfileId;
+    private @Nullable String auditProfileId;
     /**
      * @return Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      * 
      */
-    private String monthInConsideration;
+    private @Nullable String monthInConsideration;
     /**
      * @return The audit data volume collected by Data Safe and is available online in repository.
      * 
      */
-    private String onlineVolume;
+    private @Nullable String onlineVolume;
 
     private GetAuditProfileCollectedAuditVolumeItem() {}
     /**
      * @return The audit data volume collected by Data Safe and is available in archive storage.
      * 
      */
-    public String archivedVolume() {
-        return this.archivedVolume;
+    public Optional<String> archivedVolume() {
+        return Optional.ofNullable(this.archivedVolume);
     }
     /**
      * @return The OCID of the audit.
      * 
      */
-    public String auditProfileId() {
-        return this.auditProfileId;
+    public Optional<String> auditProfileId() {
+        return Optional.ofNullable(this.auditProfileId);
     }
     /**
      * @return Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      * 
      */
-    public String monthInConsideration() {
-        return this.monthInConsideration;
+    public Optional<String> monthInConsideration() {
+        return Optional.ofNullable(this.monthInConsideration);
     }
     /**
      * @return The audit data volume collected by Data Safe and is available online in repository.
      * 
      */
-    public String onlineVolume() {
-        return this.onlineVolume;
+    public Optional<String> onlineVolume() {
+        return Optional.ofNullable(this.onlineVolume);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetAuditProfileCollectedAuditVolumeItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archivedVolume;
-        private String auditProfileId;
-        private String monthInConsideration;
-        private String onlineVolume;
+        private @Nullable String archivedVolume;
+        private @Nullable String auditProfileId;
+        private @Nullable String monthInConsideration;
+        private @Nullable String onlineVolume;
         public Builder() {}
         public Builder(GetAuditProfileCollectedAuditVolumeItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetAuditProfileCollectedAuditVolumeItem {
         }
 
         @CustomType.Setter
-        public Builder archivedVolume(String archivedVolume) {
-            this.archivedVolume = Objects.requireNonNull(archivedVolume);
+        public Builder archivedVolume(@Nullable String archivedVolume) {
+            this.archivedVolume = archivedVolume;
             return this;
         }
         @CustomType.Setter
-        public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+        public Builder auditProfileId(@Nullable String auditProfileId) {
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
-        public Builder monthInConsideration(String monthInConsideration) {
-            this.monthInConsideration = Objects.requireNonNull(monthInConsideration);
+        public Builder monthInConsideration(@Nullable String monthInConsideration) {
+            this.monthInConsideration = monthInConsideration;
             return this;
         }
         @CustomType.Setter
-        public Builder onlineVolume(String onlineVolume) {
-            this.onlineVolume = Objects.requireNonNull(onlineVolume);
+        public Builder onlineVolume(@Nullable String onlineVolume) {
+            this.onlineVolume = onlineVolume;
             return this;
         }
         public GetAuditProfileCollectedAuditVolumeItem build() {

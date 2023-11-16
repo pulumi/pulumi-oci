@@ -86,95 +86,62 @@ class GetPipelineResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> Sequence['outputs.GetPipelineConfigurationDetailResult']:
-        """
-        The configuration details of a pipeline.
-        """
+    def configuration_details(self) -> Optional[Sequence['outputs.GetPipelineConfigurationDetailResult']]:
         return pulumi.get(self, "configuration_details")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deleteRelatedPipelineRuns")
-    def delete_related_pipeline_runs(self) -> bool:
+    def delete_related_pipeline_runs(self) -> Optional[bool]:
         return pulumi.get(self, "delete_related_pipeline_runs")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the step.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="infrastructureConfigurationDetails")
-    def infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelineInfrastructureConfigurationDetailResult']:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
+    def infrastructure_configuration_details(self) -> Optional[Sequence['outputs.GetPipelineInfrastructureConfigurationDetailResult']]:
         return pulumi.get(self, "infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logConfigurationDetails")
-    def log_configuration_details(self) -> Sequence['outputs.GetPipelineLogConfigurationDetailResult']:
-        """
-        The pipeline log configuration details.
-        """
+    def log_configuration_details(self) -> Optional[Sequence['outputs.GetPipelineLogConfigurationDetailResult']]:
         return pulumi.get(self, "log_configuration_details")
 
     @property
@@ -184,55 +151,37 @@ class GetPipelineResult:
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the pipeline.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stepArtifacts")
-    def step_artifacts(self) -> Sequence['outputs.GetPipelineStepArtifactResult']:
+    def step_artifacts(self) -> Optional[Sequence['outputs.GetPipelineStepArtifactResult']]:
         return pulumi.get(self, "step_artifacts")
 
     @property
     @pulumi.getter(name="stepDetails")
-    def step_details(self) -> Sequence['outputs.GetPipelineStepDetailResult']:
-        """
-        Array of step details for each step.
-        """
+    def step_details(self) -> Optional[Sequence['outputs.GetPipelineStepDetailResult']]:
         return pulumi.get(self, "step_details")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -267,21 +216,7 @@ class AwaitableGetPipelineResult(GetPipelineResult):
 def get_pipeline(pipeline_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPipelineResult:
     """
-    This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets a Pipeline by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"])
-    ```
-
-
-    :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['pipelineId'] = pipeline_id
@@ -315,20 +250,6 @@ def get_pipeline(pipeline_id: Optional[str] = None,
 def get_pipeline_output(pipeline_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPipelineResult]:
     """
-    This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets a Pipeline by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"])
-    ```
-
-
-    :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+    Use this data source to access information about an existing resource.
     """
     ...

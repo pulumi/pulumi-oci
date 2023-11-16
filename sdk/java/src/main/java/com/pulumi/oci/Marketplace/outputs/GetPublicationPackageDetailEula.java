@@ -6,18 +6,20 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicationPackageDetailEula {
-    private String eulaType;
-    private String licenseText;
+    private @Nullable String eulaType;
+    private @Nullable String licenseText;
 
     private GetPublicationPackageDetailEula() {}
-    public String eulaType() {
-        return this.eulaType;
+    public Optional<String> eulaType() {
+        return Optional.ofNullable(this.eulaType);
     }
-    public String licenseText() {
-        return this.licenseText;
+    public Optional<String> licenseText() {
+        return Optional.ofNullable(this.licenseText);
     }
 
     public static Builder builder() {
@@ -29,8 +31,8 @@ public final class GetPublicationPackageDetailEula {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String eulaType;
-        private String licenseText;
+        private @Nullable String eulaType;
+        private @Nullable String licenseText;
         public Builder() {}
         public Builder(GetPublicationPackageDetailEula defaults) {
     	      Objects.requireNonNull(defaults);
@@ -39,13 +41,13 @@ public final class GetPublicationPackageDetailEula {
         }
 
         @CustomType.Setter
-        public Builder eulaType(String eulaType) {
-            this.eulaType = Objects.requireNonNull(eulaType);
+        public Builder eulaType(@Nullable String eulaType) {
+            this.eulaType = eulaType;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseText(String licenseText) {
-            this.licenseText = Objects.requireNonNull(licenseText);
+        public Builder licenseText(@Nullable String licenseText) {
+            this.licenseText = licenseText;
             return this;
         }
         public GetPublicationPackageDetailEula build() {

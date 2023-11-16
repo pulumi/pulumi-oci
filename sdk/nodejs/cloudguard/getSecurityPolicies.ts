@@ -80,7 +80,7 @@ export interface GetSecurityPoliciesResult {
     /**
      * The list of security_policy_collection.
      */
-    readonly securityPolicyCollections: outputs.CloudGuard.GetSecurityPoliciesSecurityPolicyCollection[];
+    readonly securityPolicyCollections?: outputs.CloudGuard.GetSecurityPoliciesSecurityPolicyCollection[];
     /**
      * The current state of the security policy
      */

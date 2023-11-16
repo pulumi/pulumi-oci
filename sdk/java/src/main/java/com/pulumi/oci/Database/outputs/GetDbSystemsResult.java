@@ -29,7 +29,7 @@ public final class GetDbSystemsResult {
      * @return The list of db_systems.
      * 
      */
-    private List<GetDbSystemsDbSystem> dbSystems;
+    private @Nullable List<GetDbSystemsDbSystem> dbSystems;
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
@@ -40,7 +40,7 @@ public final class GetDbSystemsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the DB system.
      * 
@@ -70,7 +70,7 @@ public final class GetDbSystemsResult {
      * 
      */
     public List<GetDbSystemsDbSystem> dbSystems() {
-        return this.dbSystems;
+        return this.dbSystems == null ? List.of() : this.dbSystems;
     }
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
@@ -86,8 +86,8 @@ public final class GetDbSystemsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the DB system.
@@ -109,10 +109,10 @@ public final class GetDbSystemsResult {
         private @Nullable String availabilityDomain;
         private @Nullable String backupId;
         private String compartmentId;
-        private List<GetDbSystemsDbSystem> dbSystems;
+        private @Nullable List<GetDbSystemsDbSystem> dbSystems;
         private @Nullable String displayName;
         private @Nullable List<GetDbSystemsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDbSystemsResult defaults) {
@@ -143,8 +143,8 @@ public final class GetDbSystemsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystems(List<GetDbSystemsDbSystem> dbSystems) {
-            this.dbSystems = Objects.requireNonNull(dbSystems);
+        public Builder dbSystems(@Nullable List<GetDbSystemsDbSystem> dbSystems) {
+            this.dbSystems = dbSystems;
             return this;
         }
         public Builder dbSystems(GetDbSystemsDbSystem... dbSystems) {
@@ -164,8 +164,8 @@ public final class GetDbSystemsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

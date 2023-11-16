@@ -65,15 +65,15 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
     /**
      * An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
      */
-    readonly categories: outputs.LogAnalytics.GetLogAnalyticsResourceCategoriesListCategory[];
+    readonly categories?: outputs.LogAnalytics.GetLogAnalyticsResourceCategoriesListCategory[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of resources and their category assignments
      */
-    readonly items: outputs.LogAnalytics.GetLogAnalyticsResourceCategoriesListItem[];
+    readonly items?: outputs.LogAnalytics.GetLogAnalyticsResourceCategoriesListItem[];
     readonly namespace: string;
     readonly resourceCategories?: string;
     readonly resourceIds?: string;

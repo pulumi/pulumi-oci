@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The connector details used to connect to the external DB system component.
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The unique identifier of the parent Container Database (CDB).
         /// </summary>
-        public readonly string ContainerDatabaseId;
+        public readonly string? ContainerDatabaseId;
         /// <summary>
         /// The unique identifier of the PDB.
         /// </summary>
-        public readonly string Guid;
+        public readonly string? Guid;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult> connectors,
 
-            string containerDatabaseId,
+            string? containerDatabaseId,
 
-            string guid)
+            string? guid)
         {
             CompartmentId = compartmentId;
             Connectors = connectors;

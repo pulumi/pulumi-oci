@@ -20,49 +20,49 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The text describing this patch package.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Action that is currently being performed or was completed last.
         /// </summary>
-        public readonly string LastAction;
+        public readonly string? LastAction;
         /// <summary>
         /// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current state of the patch as a result of lastAction.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time that the patch was released.
         /// </summary>
-        public readonly string TimeReleased;
+        public readonly string? TimeReleased;
         /// <summary>
         /// The version of this patch package.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetVmClusterPatchesPatchResult(
             ImmutableArray<string> availableActions,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string lastAction,
+            string? lastAction,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeReleased,
+            string? timeReleased,
 
-            string version)
+            string? version)
         {
             AvailableActions = availableActions;
             Description = description;

@@ -47,55 +47,55 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The OCID of the compartment containing the SQL firewall policy.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The database user name.
         /// </summary>
         [Output("dbUserName")]
-        public Output<string> DbUserName { get; private set; } = null!;
+        public Output<string?> DbUserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the SQL firewall policy.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the SQL firewall policy enforcement option.
         /// </summary>
         [Output("enforcementScope")]
-        public Output<string> EnforcementScope { get; private set; } = null!;
+        public Output<string?> EnforcementScope { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the SQL firewall policy in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the security policy corresponding to the SQL firewall policy.
         /// </summary>
         [Output("securityPolicyId")]
-        public Output<string> SecurityPolicyId { get; private set; } = null!;
+        public Output<string?> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the SQL firewall policy resource.
@@ -107,43 +107,43 @@ namespace Pulumi.Oci.DataSafe
         /// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
         /// </summary>
         [Output("sqlLevel")]
-        public Output<string> SqlLevel { get; private set; } = null!;
+        public Output<string?> SqlLevel { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the SQL firewall policy.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time that the SQL firewall policy was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
         /// </summary>
         [Output("violationAction")]
-        public Output<string> ViolationAction { get; private set; } = null!;
+        public Output<string?> ViolationAction { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DataSafe
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("violationAudit")]
-        public Output<string> ViolationAudit { get; private set; } = null!;
+        public Output<string?> ViolationAudit { get; private set; } = null!;
 
 
         /// <summary>

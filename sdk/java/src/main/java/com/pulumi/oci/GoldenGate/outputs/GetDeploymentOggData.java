@@ -6,102 +6,104 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentOggData {
-    private String adminPassword;
+    private @Nullable String adminPassword;
     /**
      * @return The GoldenGate deployment console username.
      * 
      */
-    private String adminUsername;
+    private @Nullable String adminUsername;
     /**
      * @return A PEM-encoded SSL certificate.
      * 
      */
-    private String certificate;
+    private @Nullable String certificate;
     /**
      * @return The type of credential store for OGG.
      * 
      */
-    private String credentialStore;
+    private @Nullable String credentialStore;
     /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
-    private String deploymentName;
+    private @Nullable String deploymentName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      * 
      */
-    private String identityDomainId;
-    private String key;
+    private @Nullable String identityDomainId;
+    private @Nullable String key;
     /**
      * @return Version of OGG
      * 
      */
-    private String oggVersion;
+    private @Nullable String oggVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
      * 
      */
-    private String passwordSecretId;
+    private @Nullable String passwordSecretId;
 
     private GetDeploymentOggData() {}
-    public String adminPassword() {
-        return this.adminPassword;
+    public Optional<String> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
     /**
      * @return The GoldenGate deployment console username.
      * 
      */
-    public String adminUsername() {
-        return this.adminUsername;
+    public Optional<String> adminUsername() {
+        return Optional.ofNullable(this.adminUsername);
     }
     /**
      * @return A PEM-encoded SSL certificate.
      * 
      */
-    public String certificate() {
-        return this.certificate;
+    public Optional<String> certificate() {
+        return Optional.ofNullable(this.certificate);
     }
     /**
      * @return The type of credential store for OGG.
      * 
      */
-    public String credentialStore() {
-        return this.credentialStore;
+    public Optional<String> credentialStore() {
+        return Optional.ofNullable(this.credentialStore);
     }
     /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
-    public String deploymentName() {
-        return this.deploymentName;
+    public Optional<String> deploymentName() {
+        return Optional.ofNullable(this.deploymentName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      * 
      */
-    public String identityDomainId() {
-        return this.identityDomainId;
+    public Optional<String> identityDomainId() {
+        return Optional.ofNullable(this.identityDomainId);
     }
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Version of OGG
      * 
      */
-    public String oggVersion() {
-        return this.oggVersion;
+    public Optional<String> oggVersion() {
+        return Optional.ofNullable(this.oggVersion);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
      * 
      */
-    public String passwordSecretId() {
-        return this.passwordSecretId;
+    public Optional<String> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
     }
 
     public static Builder builder() {
@@ -113,15 +115,15 @@ public final class GetDeploymentOggData {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminPassword;
-        private String adminUsername;
-        private String certificate;
-        private String credentialStore;
-        private String deploymentName;
-        private String identityDomainId;
-        private String key;
-        private String oggVersion;
-        private String passwordSecretId;
+        private @Nullable String adminPassword;
+        private @Nullable String adminUsername;
+        private @Nullable String certificate;
+        private @Nullable String credentialStore;
+        private @Nullable String deploymentName;
+        private @Nullable String identityDomainId;
+        private @Nullable String key;
+        private @Nullable String oggVersion;
+        private @Nullable String passwordSecretId;
         public Builder() {}
         public Builder(GetDeploymentOggData defaults) {
     	      Objects.requireNonNull(defaults);
@@ -137,48 +139,48 @@ public final class GetDeploymentOggData {
         }
 
         @CustomType.Setter
-        public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+        public Builder adminPassword(@Nullable String adminPassword) {
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder adminUsername(String adminUsername) {
-            this.adminUsername = Objects.requireNonNull(adminUsername);
+        public Builder adminUsername(@Nullable String adminUsername) {
+            this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
-        public Builder certificate(String certificate) {
-            this.certificate = Objects.requireNonNull(certificate);
+        public Builder certificate(@Nullable String certificate) {
+            this.certificate = certificate;
             return this;
         }
         @CustomType.Setter
-        public Builder credentialStore(String credentialStore) {
-            this.credentialStore = Objects.requireNonNull(credentialStore);
+        public Builder credentialStore(@Nullable String credentialStore) {
+            this.credentialStore = credentialStore;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentName(String deploymentName) {
-            this.deploymentName = Objects.requireNonNull(deploymentName);
+        public Builder deploymentName(@Nullable String deploymentName) {
+            this.deploymentName = deploymentName;
             return this;
         }
         @CustomType.Setter
-        public Builder identityDomainId(String identityDomainId) {
-            this.identityDomainId = Objects.requireNonNull(identityDomainId);
+        public Builder identityDomainId(@Nullable String identityDomainId) {
+            this.identityDomainId = identityDomainId;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+        public Builder oggVersion(@Nullable String oggVersion) {
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+        public Builder passwordSecretId(@Nullable String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         public GetDeploymentOggData build() {

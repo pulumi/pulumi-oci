@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
@@ -78,7 +77,7 @@ type GetPbfListingsArgs struct {
 type GetPbfListingsResult struct {
 	Filters []GetPbfListingsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A brief descriptive name for the PBF trigger.
 	Name           *string `pulumi:"name"`
 	NameContains   *string `pulumi:"nameContains"`
@@ -140,19 +139,13 @@ func (o GetPbfListingsResultOutput) ToGetPbfListingsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetPbfListingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsResult] {
-	return pulumix.Output[GetPbfListingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingsResultOutput) Filters() GetPbfListingsFilterArrayOutput {
 	return o.ApplyT(func(v GetPbfListingsResult) []GetPbfListingsFilter { return v.Filters }).(GetPbfListingsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPbfListingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPbfListingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A brief descriptive name for the PBF trigger.

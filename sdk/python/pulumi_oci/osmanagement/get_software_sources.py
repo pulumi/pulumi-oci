@@ -46,17 +46,11 @@ class GetSoftwareSourcesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User friendly name for the software source
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetSoftwareSourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetSoftwareSourcesResult:
 
     @property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceResult']:
-        """
-        The list of software_sources.
-        """
+    def software_sources(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceResult']]:
         return pulumi.get(self, "software_sources")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Software Source.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_software_sources(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourcesResult:
     """
-    This data source provides the list of Software Sources in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a list of all Software Sources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_sources = oci.OsManagement.get_software_sources(compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        state=var["software_source_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: The current lifecycle state for the object.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_software_sources_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourcesResult]:
     """
-    This data source provides the list of Software Sources in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a list of all Software Sources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_sources = oci.OsManagement.get_software_sources(compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        state=var["software_source_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: The current lifecycle state for the object.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -83,87 +83,57 @@ class GetMaskingPolicyResult:
 
     @property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
-    def add_masking_columns_from_sdm_trigger(self) -> int:
+    def add_masking_columns_from_sdm_trigger(self) -> Optional[int]:
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
     @property
     @pulumi.getter(name="columnSources")
-    def column_sources(self) -> Sequence['outputs.GetMaskingPolicyColumnSourceResult']:
-        """
-        The source of masking columns.
-        """
+    def column_sources(self) -> Optional[Sequence['outputs.GetMaskingPolicyColumnSourceResult']]:
         return pulumi.get(self, "column_sources")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the masking policy.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the masking policy.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the masking policy.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the masking policy.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")
-    def is_drop_temp_tables_enabled(self) -> bool:
-        """
-        Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        """
+    def is_drop_temp_tables_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @property
     @pulumi.getter(name="isRedoLoggingEnabled")
-    def is_redo_logging_enabled(self) -> bool:
-        """
-        Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        """
+    def is_redo_logging_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @property
     @pulumi.getter(name="isRefreshStatsEnabled")
-    def is_refresh_stats_enabled(self) -> bool:
-        """
-        Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        """
+    def is_refresh_stats_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @property
@@ -173,58 +143,37 @@ class GetMaskingPolicyResult:
 
     @property
     @pulumi.getter(name="parallelDegree")
-    def parallel_degree(self) -> str:
-        """
-        Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        """
+    def parallel_degree(self) -> Optional[str]:
         return pulumi.get(self, "parallel_degree")
 
     @property
     @pulumi.getter(name="postMaskingScript")
-    def post_masking_script(self) -> str:
-        """
-        A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        """
+    def post_masking_script(self) -> Optional[str]:
         return pulumi.get(self, "post_masking_script")
 
     @property
     @pulumi.getter(name="preMaskingScript")
-    def pre_masking_script(self) -> str:
-        """
-        A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        """
+    def pre_masking_script(self) -> Optional[str]:
         return pulumi.get(self, "pre_masking_script")
 
     @property
     @pulumi.getter
-    def recompile(self) -> str:
-        """
-        Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-        """
+    def recompile(self) -> Optional[str]:
         return pulumi.get(self, "recompile")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the masking policy.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -258,21 +207,7 @@ class AwaitableGetMaskingPolicyResult(GetMaskingPolicyResult):
 def get_masking_policy(masking_policy_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPolicyResult:
     """
-    This data source provides details about a specific Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified masking policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
-    ```
-
-
-    :param str masking_policy_id: The OCID of the masking policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['maskingPolicyId'] = masking_policy_id
@@ -305,20 +240,6 @@ def get_masking_policy(masking_policy_id: Optional[str] = None,
 def get_masking_policy_output(masking_policy_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPolicyResult]:
     """
-    This data source provides details about a specific Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified masking policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
-    ```
-
-
-    :param str masking_policy_id: The OCID of the masking policy.
+    Use this data source to access information about an existing resource.
     """
     ...

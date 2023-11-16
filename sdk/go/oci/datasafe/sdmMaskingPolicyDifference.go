@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
@@ -73,9 +72,9 @@ type SdmMaskingPolicyDifference struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-	DifferenceType pulumi.StringOutput `pulumi:"differenceType"`
+	DifferenceType pulumi.StringPtrOutput `pulumi:"differenceType"`
 	// (Updatable) A user-friendly name for the SDM masking policy difference. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed.
@@ -84,15 +83,15 @@ type SdmMaskingPolicyDifference struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaskingPolicyId pulumi.StringOutput `pulumi:"maskingPolicyId"`
 	// The OCID of the sensitive data model associated with the SDM masking policy difference.
-	SensitiveDataModelId pulumi.StringOutput `pulumi:"sensitiveDataModelId"`
+	SensitiveDataModelId pulumi.StringPtrOutput `pulumi:"sensitiveDataModelId"`
 	// The current state of the SDM masking policy difference.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreationStarted pulumi.StringOutput `pulumi:"timeCreationStarted"`
+	TimeCreationStarted pulumi.StringPtrOutput `pulumi:"timeCreationStarted"`
 }
 
 // NewSdmMaskingPolicyDifference registers a new resource with the given unique name, arguments, and options.
@@ -250,12 +249,6 @@ func (i *SdmMaskingPolicyDifference) ToSdmMaskingPolicyDifferenceOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(SdmMaskingPolicyDifferenceOutput)
 }
 
-func (i *SdmMaskingPolicyDifference) ToOutput(ctx context.Context) pulumix.Output[*SdmMaskingPolicyDifference] {
-	return pulumix.Output[*SdmMaskingPolicyDifference]{
-		OutputState: i.ToSdmMaskingPolicyDifferenceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SdmMaskingPolicyDifferenceArrayInput is an input type that accepts SdmMaskingPolicyDifferenceArray and SdmMaskingPolicyDifferenceArrayOutput values.
 // You can construct a concrete instance of `SdmMaskingPolicyDifferenceArrayInput` via:
 //
@@ -279,12 +272,6 @@ func (i SdmMaskingPolicyDifferenceArray) ToSdmMaskingPolicyDifferenceArrayOutput
 
 func (i SdmMaskingPolicyDifferenceArray) ToSdmMaskingPolicyDifferenceArrayOutputWithContext(ctx context.Context) SdmMaskingPolicyDifferenceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SdmMaskingPolicyDifferenceArrayOutput)
-}
-
-func (i SdmMaskingPolicyDifferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]*SdmMaskingPolicyDifference] {
-	return pulumix.Output[[]*SdmMaskingPolicyDifference]{
-		OutputState: i.ToSdmMaskingPolicyDifferenceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SdmMaskingPolicyDifferenceMapInput is an input type that accepts SdmMaskingPolicyDifferenceMap and SdmMaskingPolicyDifferenceMapOutput values.
@@ -312,12 +299,6 @@ func (i SdmMaskingPolicyDifferenceMap) ToSdmMaskingPolicyDifferenceMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(SdmMaskingPolicyDifferenceMapOutput)
 }
 
-func (i SdmMaskingPolicyDifferenceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SdmMaskingPolicyDifference] {
-	return pulumix.Output[map[string]*SdmMaskingPolicyDifference]{
-		OutputState: i.ToSdmMaskingPolicyDifferenceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SdmMaskingPolicyDifferenceOutput struct{ *pulumi.OutputState }
 
 func (SdmMaskingPolicyDifferenceOutput) ElementType() reflect.Type {
@@ -332,12 +313,6 @@ func (o SdmMaskingPolicyDifferenceOutput) ToSdmMaskingPolicyDifferenceOutputWith
 	return o
 }
 
-func (o SdmMaskingPolicyDifferenceOutput) ToOutput(ctx context.Context) pulumix.Output[*SdmMaskingPolicyDifference] {
-	return pulumix.Output[*SdmMaskingPolicyDifference]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
 func (o SdmMaskingPolicyDifferenceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -349,13 +324,13 @@ func (o SdmMaskingPolicyDifferenceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-func (o SdmMaskingPolicyDifferenceOutput) DifferenceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.DifferenceType }).(pulumi.StringOutput)
+func (o SdmMaskingPolicyDifferenceOutput) DifferenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringPtrOutput { return v.DifferenceType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name for the SDM masking policy difference. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-func (o SdmMaskingPolicyDifferenceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SdmMaskingPolicyDifferenceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -372,13 +347,13 @@ func (o SdmMaskingPolicyDifferenceOutput) MaskingPolicyId() pulumi.StringOutput 
 }
 
 // The OCID of the sensitive data model associated with the SDM masking policy difference.
-func (o SdmMaskingPolicyDifferenceOutput) SensitiveDataModelId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.SensitiveDataModelId }).(pulumi.StringOutput)
+func (o SdmMaskingPolicyDifferenceOutput) SensitiveDataModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringPtrOutput { return v.SensitiveDataModelId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the SDM masking policy difference.
-func (o SdmMaskingPolicyDifferenceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SdmMaskingPolicyDifferenceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -387,13 +362,13 @@ func (o SdmMaskingPolicyDifferenceOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o SdmMaskingPolicyDifferenceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SdmMaskingPolicyDifferenceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o SdmMaskingPolicyDifferenceOutput) TimeCreationStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.TimeCreationStarted }).(pulumi.StringOutput)
+func (o SdmMaskingPolicyDifferenceOutput) TimeCreationStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringPtrOutput { return v.TimeCreationStarted }).(pulumi.StringPtrOutput)
 }
 
 type SdmMaskingPolicyDifferenceArrayOutput struct{ *pulumi.OutputState }
@@ -408,12 +383,6 @@ func (o SdmMaskingPolicyDifferenceArrayOutput) ToSdmMaskingPolicyDifferenceArray
 
 func (o SdmMaskingPolicyDifferenceArrayOutput) ToSdmMaskingPolicyDifferenceArrayOutputWithContext(ctx context.Context) SdmMaskingPolicyDifferenceArrayOutput {
 	return o
-}
-
-func (o SdmMaskingPolicyDifferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SdmMaskingPolicyDifference] {
-	return pulumix.Output[[]*SdmMaskingPolicyDifference]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SdmMaskingPolicyDifferenceArrayOutput) Index(i pulumi.IntInput) SdmMaskingPolicyDifferenceOutput {
@@ -434,12 +403,6 @@ func (o SdmMaskingPolicyDifferenceMapOutput) ToSdmMaskingPolicyDifferenceMapOutp
 
 func (o SdmMaskingPolicyDifferenceMapOutput) ToSdmMaskingPolicyDifferenceMapOutputWithContext(ctx context.Context) SdmMaskingPolicyDifferenceMapOutput {
 	return o
-}
-
-func (o SdmMaskingPolicyDifferenceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SdmMaskingPolicyDifference] {
-	return pulumix.Output[map[string]*SdmMaskingPolicyDifference]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SdmMaskingPolicyDifferenceMapOutput) MapIndex(k pulumi.StringInput) SdmMaskingPolicyDifferenceOutput {

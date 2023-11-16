@@ -49,7 +49,7 @@ class GetTagStandardTagNamespaceTemplatesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetTagStandardTagNamespaceTemplatesResult:
 
     @property
     @pulumi.getter(name="standardTagNamespaceTemplates")
-    def standard_tag_namespace_templates(self) -> Sequence['outputs.GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateResult']:
-        """
-        The list of standard_tag_namespace_templates.
-        """
+    def standard_tag_namespace_templates(self) -> Optional[Sequence['outputs.GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateResult']]:
         return pulumi.get(self, "standard_tag_namespace_templates")
 
 
@@ -80,21 +77,7 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[str] = Non
                                              filters: Optional[Sequence[pulumi.InputType['GetTagStandardTagNamespaceTemplatesFilterArgs']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagStandardTagNamespaceTemplatesResult:
     """
-    This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
-
-    Lists available standard tag namespaces that users can create.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_tag_standard_tag_namespace_templates_output(compartment_id: Optional[pul
                                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTagStandardTagNamespaceTemplatesFilterArgs']]]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplatesResult]:
     """
-    This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
-
-    Lists available standard tag namespaces that users can create.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     ...

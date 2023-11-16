@@ -74,7 +74,7 @@ export class OpaInstance extends pulumi.CustomResource {
     /**
      * A list of associated attachments to other services
      */
-    public /*out*/ readonly attachments!: pulumi.Output<outputs.Opa.OpaInstanceAttachment[]>;
+    public /*out*/ readonly attachments!: pulumi.Output<outputs.Opa.OpaInstanceAttachment[] | undefined>;
     /**
      * (Updatable) Compartment Identifier
      */
@@ -82,15 +82,15 @@ export class OpaInstance extends pulumi.CustomResource {
     /**
      * Parameter specifying which entitlement to use for billing purposes
      */
-    public readonly consumptionModel!: pulumi.Output<string>;
+    public readonly consumptionModel!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description of the Oracle Process Automation instance.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      */
@@ -98,39 +98,39 @@ export class OpaInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
      */
-    public readonly idcsAt!: pulumi.Output<string>;
+    public readonly idcsAt!: pulumi.Output<string | undefined>;
     /**
      * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly identityAppDisplayName!: pulumi.Output<string | undefined>;
     /**
      * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppGuid!: pulumi.Output<string>;
+    public /*out*/ readonly identityAppGuid!: pulumi.Output<string | undefined>;
     /**
      * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppOpcServiceInstanceGuid!: pulumi.Output<string>;
+    public /*out*/ readonly identityAppOpcServiceInstanceGuid!: pulumi.Output<string | undefined>;
     /**
      * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityDomainUrl!: pulumi.Output<string>;
+    public /*out*/ readonly identityDomainUrl!: pulumi.Output<string | undefined>;
     /**
      * OPA Instance URL
      */
-    public /*out*/ readonly instanceUrl!: pulumi.Output<string>;
+    public /*out*/ readonly instanceUrl!: pulumi.Output<string | undefined>;
     /**
      * indicates if breakGlass is enabled for the opa instance.
      */
-    public readonly isBreakglassEnabled!: pulumi.Output<boolean>;
+    public readonly isBreakglassEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * MeteringType Identifier
      */
-    public readonly meteringType!: pulumi.Output<string>;
+    public readonly meteringType!: pulumi.Output<string | undefined>;
     /**
      * Shape of the instance.
      *
@@ -142,19 +142,19 @@ export class OpaInstance extends pulumi.CustomResource {
     /**
      * The current state of the OpaInstance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time when OpaInstance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a OpaInstance resource with the given unique name, arguments, and options.

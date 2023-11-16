@@ -144,7 +144,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LoadBalancerId;
 
         [OutputConstructor]
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.LoadBalancer
 
             ImmutableArray<Outputs.GetBackendsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string loadBalancerId)
         {

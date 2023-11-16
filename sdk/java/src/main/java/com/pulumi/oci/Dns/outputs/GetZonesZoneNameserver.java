@@ -6,6 +6,8 @@ package com.pulumi.oci.Dns.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetZonesZoneNameserver {
@@ -13,15 +15,15 @@ public final class GetZonesZoneNameserver {
      * @return The hostname of the nameserver.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
 
     private GetZonesZoneNameserver() {}
     /**
      * @return The hostname of the nameserver.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetZonesZoneNameserver {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
+        private @Nullable String hostname;
         public Builder() {}
         public Builder(GetZonesZoneNameserver defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetZonesZoneNameserver {
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         public GetZonesZoneNameserver build() {

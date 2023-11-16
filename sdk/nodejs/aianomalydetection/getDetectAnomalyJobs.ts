@@ -83,7 +83,7 @@ export interface GetDetectAnomalyJobsResult {
     /**
      * The list of detect_anomaly_job_collection.
      */
-    readonly detectAnomalyJobCollections: outputs.AiAnomalyDetection.GetDetectAnomalyJobsDetectAnomalyJobCollection[];
+    readonly detectAnomalyJobCollections?: outputs.AiAnomalyDetection.GetDetectAnomalyJobsDetectAnomalyJobCollection[];
     readonly detectAnomalyJobId?: string;
     /**
      * Detect anomaly job display name.
@@ -93,7 +93,7 @@ export interface GetDetectAnomalyJobsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the trained model.
      */

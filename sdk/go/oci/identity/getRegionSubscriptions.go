@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Region Subscriptions in Oracle Cloud Infrastructure Identity service.
@@ -62,7 +61,7 @@ type GetRegionSubscriptionsArgs struct {
 type GetRegionSubscriptionsResult struct {
 	Filters []GetRegionSubscriptionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of region_subscriptions.
 	RegionSubscriptions []GetRegionSubscriptionsRegionSubscription `pulumi:"regionSubscriptions"`
 	TenancyId           string                                     `pulumi:"tenancyId"`
@@ -107,19 +106,13 @@ func (o GetRegionSubscriptionsResultOutput) ToGetRegionSubscriptionsResultOutput
 	return o
 }
 
-func (o GetRegionSubscriptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRegionSubscriptionsResult] {
-	return pulumix.Output[GetRegionSubscriptionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRegionSubscriptionsResultOutput) Filters() GetRegionSubscriptionsFilterArrayOutput {
 	return o.ApplyT(func(v GetRegionSubscriptionsResult) []GetRegionSubscriptionsFilter { return v.Filters }).(GetRegionSubscriptionsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRegionSubscriptionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRegionSubscriptionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRegionSubscriptionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of region_subscriptions.

@@ -18,14 +18,14 @@ public final class GetWorkspaceApplicationsResult {
      * @return The list of application_summary_collection.
      * 
      */
-    private List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
+    private @Nullable List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
     private @Nullable List<String> fields;
     private @Nullable List<GetWorkspaceApplicationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
@@ -49,7 +49,7 @@ public final class GetWorkspaceApplicationsResult {
      * 
      */
     public List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections() {
-        return this.applicationSummaryCollections;
+        return this.applicationSummaryCollections == null ? List.of() : this.applicationSummaryCollections;
     }
     public List<String> fields() {
         return this.fields == null ? List.of() : this.fields;
@@ -61,8 +61,8 @@ public final class GetWorkspaceApplicationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -98,10 +98,10 @@ public final class GetWorkspaceApplicationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
+        private @Nullable List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
         private @Nullable List<String> fields;
         private @Nullable List<GetWorkspaceApplicationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> identifiers;
         private @Nullable String name;
         private @Nullable String nameContains;
@@ -120,8 +120,8 @@ public final class GetWorkspaceApplicationsResult {
         }
 
         @CustomType.Setter
-        public Builder applicationSummaryCollections(List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections) {
-            this.applicationSummaryCollections = Objects.requireNonNull(applicationSummaryCollections);
+        public Builder applicationSummaryCollections(@Nullable List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections) {
+            this.applicationSummaryCollections = applicationSummaryCollections;
             return this;
         }
         public Builder applicationSummaryCollections(GetWorkspaceApplicationsApplicationSummaryCollection... applicationSummaryCollections) {
@@ -144,8 +144,8 @@ public final class GetWorkspaceApplicationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
         /// </summary>
-        public readonly string FilterType;
+        public readonly string? FilterType;
         /// <summary>
         /// Module name.
         /// </summary>
-        public readonly string ModuleName;
+        public readonly string? ModuleName;
         /// <summary>
         /// Profile name.
         /// </summary>
-        public readonly string ProfileName;
+        public readonly string? ProfileName;
         /// <summary>
         /// Stream name.
         /// </summary>
-        public readonly string StreamName;
+        public readonly string? StreamName;
 
         [OutputConstructor]
         private GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult(
-            string filterType,
+            string? filterType,
 
-            string moduleName,
+            string? moduleName,
 
-            string profileName,
+            string? profileName,
 
-            string streamName)
+            string? streamName)
         {
             FilterType = filterType;
             ModuleName = moduleName;

@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The target of the exclusion.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
 
         [OutputConstructor]
         private GetProtectionRulesProtectionRuleExclusionResult(
             ImmutableArray<string> exclusions,
 
-            string target)
+            string? target)
         {
             Exclusions = exclusions;
             Target = target;

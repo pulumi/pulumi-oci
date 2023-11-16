@@ -13,15 +13,15 @@ namespace Pulumi.Oci.Dns.Outputs
     [OutputType]
     public sealed class GetResolversResolverRuleResult
     {
-        public readonly string Action;
+        public readonly string? Action;
         public readonly ImmutableArray<string> ClientAddressConditions;
         public readonly ImmutableArray<string> DestinationAddresses;
         public readonly ImmutableArray<string> QnameCoverConditions;
-        public readonly string SourceEndpointName;
+        public readonly string? SourceEndpointName;
 
         [OutputConstructor]
         private GetResolversResolverRuleResult(
-            string action,
+            string? action,
 
             ImmutableArray<string> clientAddressConditions,
 
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Dns.Outputs
 
             ImmutableArray<string> qnameCoverConditions,
 
-            string sourceEndpointName)
+            string? sourceEndpointName)
         {
             Action = action;
             ClientAddressConditions = clientAddressConditions;

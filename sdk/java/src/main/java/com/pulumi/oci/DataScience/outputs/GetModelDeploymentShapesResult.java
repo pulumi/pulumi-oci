@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.GetModelDeploymentShapesModelDeploymen
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetModelDeploymentShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of model_deployment_shapes.
      * 
      */
-    private List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes;
+    private @Nullable List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes;
 
     private GetModelDeploymentShapesResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetModelDeploymentShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of model_deployment_shapes.
      * 
      */
     public List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes() {
-        return this.modelDeploymentShapes;
+        return this.modelDeploymentShapes == null ? List.of() : this.modelDeploymentShapes;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetModelDeploymentShapesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetModelDeploymentShapesFilter> filters;
-        private String id;
-        private List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes;
+        private @Nullable String id;
+        private @Nullable List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes;
         public Builder() {}
         public Builder(GetModelDeploymentShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetModelDeploymentShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder modelDeploymentShapes(List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes) {
-            this.modelDeploymentShapes = Objects.requireNonNull(modelDeploymentShapes);
+        public Builder modelDeploymentShapes(@Nullable List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes) {
+            this.modelDeploymentShapes = modelDeploymentShapes;
             return this;
         }
         public Builder modelDeploymentShapes(GetModelDeploymentShapesModelDeploymentShape... modelDeploymentShapes) {

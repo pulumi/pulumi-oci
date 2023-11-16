@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -79,20 +78,20 @@ type VmCluster struct {
 	pulumi.CustomResourceState
 
 	// The name of the availability domain that the VM cluster is located in.
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	CpuCoreCount  pulumi.IntOutput    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
-	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
+	CpusEnabled pulumi.IntPtrOutput `pulumi:"cpusEnabled"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-	DataCollectionOptions VmClusterDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
+	DataCollectionOptions VmClusterDataCollectionOptionsPtrOutput `pulumi:"dataCollectionOptions"`
 	// (Updatable) The data disk group size to be allocated in GBs.
-	DataStorageSizeInGb pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.Float64PtrOutput `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) The data disk group size to be allocated in TBs.
-	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
+	DataStorageSizeInTbs pulumi.Float64PtrOutput `pulumi:"dataStorageSizeInTbs"`
 	// (Updatable) The local node storage to be allocated in GBs.
-	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs pulumi.IntPtrOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The list of Db server.
 	DbServers pulumi.StringArrayOutput `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -106,31 +105,31 @@ type VmCluster struct {
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion pulumi.StringOutput `pulumi:"giVersion"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled pulumi.BoolPtrOutput `pulumi:"isLocalBackupEnabled"`
 	// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
-	IsSparseDiskgroupEnabled pulumi.BoolOutput `pulumi:"isSparseDiskgroupEnabled"`
+	IsSparseDiskgroupEnabled pulumi.BoolPtrOutput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-	LastPatchHistoryEntryId pulumi.StringOutput `pulumi:"lastPatchHistoryEntryId"`
+	LastPatchHistoryEntryId pulumi.StringPtrOutput `pulumi:"lastPatchHistoryEntryId"`
 	// (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The memory to be allocated in GBs.
-	MemorySizeInGbs pulumi.IntOutput     `pulumi:"memorySizeInGbs"`
-	OcpuCount       pulumi.Float64Output `pulumi:"ocpuCount"`
-	OcpusEnabled    pulumi.Float64Output `pulumi:"ocpusEnabled"`
+	MemorySizeInGbs pulumi.IntPtrOutput     `pulumi:"memorySizeInGbs"`
+	OcpuCount       pulumi.Float64PtrOutput `pulumi:"ocpuCount"`
+	OcpusEnabled    pulumi.Float64PtrOutput `pulumi:"ocpusEnabled"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the VM cluster.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Operating system version of the image.
-	SystemVersion pulumi.StringOutput `pulumi:"systemVersion"`
+	SystemVersion pulumi.StringPtrOutput `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrOutput `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	//
 	// ** IMPORTANT **
@@ -426,12 +425,6 @@ func (i *VmCluster) ToVmClusterOutputWithContext(ctx context.Context) VmClusterO
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterOutput)
 }
 
-func (i *VmCluster) ToOutput(ctx context.Context) pulumix.Output[*VmCluster] {
-	return pulumix.Output[*VmCluster]{
-		OutputState: i.ToVmClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VmClusterArrayInput is an input type that accepts VmClusterArray and VmClusterArrayOutput values.
 // You can construct a concrete instance of `VmClusterArrayInput` via:
 //
@@ -455,12 +448,6 @@ func (i VmClusterArray) ToVmClusterArrayOutput() VmClusterArrayOutput {
 
 func (i VmClusterArray) ToVmClusterArrayOutputWithContext(ctx context.Context) VmClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterArrayOutput)
-}
-
-func (i VmClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*VmCluster] {
-	return pulumix.Output[[]*VmCluster]{
-		OutputState: i.ToVmClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VmClusterMapInput is an input type that accepts VmClusterMap and VmClusterMapOutput values.
@@ -488,12 +475,6 @@ func (i VmClusterMap) ToVmClusterMapOutputWithContext(ctx context.Context) VmClu
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterMapOutput)
 }
 
-func (i VmClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmCluster] {
-	return pulumix.Output[map[string]*VmCluster]{
-		OutputState: i.ToVmClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VmClusterOutput struct{ *pulumi.OutputState }
 
 func (VmClusterOutput) ElementType() reflect.Type {
@@ -508,15 +489,9 @@ func (o VmClusterOutput) ToVmClusterOutputWithContext(ctx context.Context) VmClu
 	return o
 }
 
-func (o VmClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*VmCluster] {
-	return pulumix.Output[*VmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain that the VM cluster is located in.
-func (o VmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o VmClusterOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -529,28 +504,28 @@ func (o VmClusterOutput) CpuCoreCount() pulumi.IntOutput {
 }
 
 // The number of enabled CPU cores.
-func (o VmClusterOutput) CpusEnabled() pulumi.IntOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
+func (o VmClusterOutput) CpusEnabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.IntPtrOutput { return v.CpusEnabled }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-func (o VmClusterOutput) DataCollectionOptions() VmClusterDataCollectionOptionsOutput {
-	return o.ApplyT(func(v *VmCluster) VmClusterDataCollectionOptionsOutput { return v.DataCollectionOptions }).(VmClusterDataCollectionOptionsOutput)
+func (o VmClusterOutput) DataCollectionOptions() VmClusterDataCollectionOptionsPtrOutput {
+	return o.ApplyT(func(v *VmCluster) VmClusterDataCollectionOptionsPtrOutput { return v.DataCollectionOptions }).(VmClusterDataCollectionOptionsPtrOutput)
 }
 
 // (Updatable) The data disk group size to be allocated in GBs.
-func (o VmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
-	return o.ApplyT(func(v *VmCluster) pulumi.Float64Output { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
+func (o VmClusterOutput) DataStorageSizeInGb() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.Float64PtrOutput { return v.DataStorageSizeInGb }).(pulumi.Float64PtrOutput)
 }
 
 // (Updatable) The data disk group size to be allocated in TBs.
-func (o VmClusterOutput) DataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *VmCluster) pulumi.Float64Output { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o VmClusterOutput) DataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.Float64PtrOutput { return v.DataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // (Updatable) The local node storage to be allocated in GBs.
-func (o VmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o VmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.IntPtrOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The list of Db server.
@@ -584,46 +559,46 @@ func (o VmClusterOutput) GiVersion() pulumi.StringOutput {
 }
 
 // If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-func (o VmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.BoolOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+func (o VmClusterOutput) IsLocalBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.BoolPtrOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
-func (o VmClusterOutput) IsSparseDiskgroupEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.BoolOutput { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolOutput)
+func (o VmClusterOutput) IsSparseDiskgroupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.BoolPtrOutput { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-func (o VmClusterOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.LastPatchHistoryEntryId }).(pulumi.StringOutput)
+func (o VmClusterOutput) LastPatchHistoryEntryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.LastPatchHistoryEntryId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-func (o VmClusterOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
+func (o VmClusterOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o VmClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o VmClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The memory to be allocated in GBs.
-func (o VmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o VmClusterOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.IntPtrOutput { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
-func (o VmClusterOutput) OcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v *VmCluster) pulumi.Float64Output { return v.OcpuCount }).(pulumi.Float64Output)
+func (o VmClusterOutput) OcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.Float64PtrOutput { return v.OcpuCount }).(pulumi.Float64PtrOutput)
 }
 
-func (o VmClusterOutput) OcpusEnabled() pulumi.Float64Output {
-	return o.ApplyT(func(v *VmCluster) pulumi.Float64Output { return v.OcpusEnabled }).(pulumi.Float64Output)
+func (o VmClusterOutput) OcpusEnabled() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.Float64PtrOutput { return v.OcpusEnabled }).(pulumi.Float64PtrOutput)
 }
 
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-func (o VmClusterOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o VmClusterOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
@@ -632,23 +607,23 @@ func (o VmClusterOutput) SshPublicKeys() pulumi.StringArrayOutput {
 }
 
 // The current state of the VM cluster.
-func (o VmClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VmClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Operating system version of the image.
-func (o VmClusterOutput) SystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.SystemVersion }).(pulumi.StringOutput)
+func (o VmClusterOutput) SystemVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.SystemVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the VM cluster was created.
-func (o VmClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VmClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-func (o VmClusterOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o VmClusterOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringPtrOutput { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -673,12 +648,6 @@ func (o VmClusterArrayOutput) ToVmClusterArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o VmClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VmCluster] {
-	return pulumix.Output[[]*VmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VmClusterArrayOutput) Index(i pulumi.IntInput) VmClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VmCluster {
 		return vs[0].([]*VmCluster)[vs[1].(int)]
@@ -697,12 +666,6 @@ func (o VmClusterMapOutput) ToVmClusterMapOutput() VmClusterMapOutput {
 
 func (o VmClusterMapOutput) ToVmClusterMapOutputWithContext(ctx context.Context) VmClusterMapOutput {
 	return o
-}
-
-func (o VmClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmCluster] {
-	return pulumix.Output[map[string]*VmCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VmClusterMapOutput) MapIndex(k pulumi.StringInput) VmClusterOutput {

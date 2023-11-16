@@ -16,71 +16,71 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name of the external DB home.
         /// </summary>
-        public readonly string ComponentName;
+        public readonly string? ComponentName;
         /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         /// </summary>
-        public readonly string ExternalDbSystemId;
+        public readonly string? ExternalDbSystemId;
         /// <summary>
         /// The location of the DB home.
         /// </summary>
-        public readonly string HomeDirectory;
+        public readonly string? HomeDirectory;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current lifecycle state of the external DB home.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external DB home was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external DB home was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetExternalDbHomesExternalDbHomeCollectionItemResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string componentName,
+            string? componentName,
 
-            string displayName,
+            string? displayName,
 
-            string externalDbSystemId,
+            string? externalDbSystemId,
 
-            string homeDirectory,
+            string? homeDirectory,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AdditionalDetails = additionalDetails;
             CompartmentId = compartmentId;

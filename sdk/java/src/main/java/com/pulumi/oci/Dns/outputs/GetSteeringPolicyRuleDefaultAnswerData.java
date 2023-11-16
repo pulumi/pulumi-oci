@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSteeringPolicyRuleDefaultAnswerData {
@@ -15,39 +17,39 @@ public final class GetSteeringPolicyRuleDefaultAnswerData {
      * @return An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
      * 
      */
-    private String answerCondition;
+    private @Nullable String answerCondition;
     /**
      * @return Keeps the answer only if the value is `true`.
      * 
      */
-    private Boolean shouldKeep;
+    private @Nullable Boolean shouldKeep;
     /**
      * @return The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
      * 
      */
-    private Integer value;
+    private @Nullable Integer value;
 
     private GetSteeringPolicyRuleDefaultAnswerData() {}
     /**
      * @return An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
      * 
      */
-    public String answerCondition() {
-        return this.answerCondition;
+    public Optional<String> answerCondition() {
+        return Optional.ofNullable(this.answerCondition);
     }
     /**
      * @return Keeps the answer only if the value is `true`.
      * 
      */
-    public Boolean shouldKeep() {
-        return this.shouldKeep;
+    public Optional<Boolean> shouldKeep() {
+        return Optional.ofNullable(this.shouldKeep);
     }
     /**
      * @return The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
      * 
      */
-    public Integer value() {
-        return this.value;
+    public Optional<Integer> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetSteeringPolicyRuleDefaultAnswerData {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String answerCondition;
-        private Boolean shouldKeep;
-        private Integer value;
+        private @Nullable String answerCondition;
+        private @Nullable Boolean shouldKeep;
+        private @Nullable Integer value;
         public Builder() {}
         public Builder(GetSteeringPolicyRuleDefaultAnswerData defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetSteeringPolicyRuleDefaultAnswerData {
         }
 
         @CustomType.Setter
-        public Builder answerCondition(String answerCondition) {
-            this.answerCondition = Objects.requireNonNull(answerCondition);
+        public Builder answerCondition(@Nullable String answerCondition) {
+            this.answerCondition = answerCondition;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldKeep(Boolean shouldKeep) {
-            this.shouldKeep = Objects.requireNonNull(shouldKeep);
+        public Builder shouldKeep(@Nullable Boolean shouldKeep) {
+            this.shouldKeep = shouldKeep;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Integer value) {
+            this.value = value;
             return this;
         }
         public GetSteeringPolicyRuleDefaultAnswerData build() {

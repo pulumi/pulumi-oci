@@ -50,7 +50,7 @@ export interface GetImageShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -58,7 +58,7 @@ export interface GetImageShapesResult {
     /**
      * The list of image_shape_compatibilities.
      */
-    readonly imageShapeCompatibilities: outputs.Core.GetImageShapesImageShapeCompatibility[];
+    readonly imageShapeCompatibilities?: outputs.Core.GetImageShapesImageShapeCompatibility[];
 }
 /**
  * This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.

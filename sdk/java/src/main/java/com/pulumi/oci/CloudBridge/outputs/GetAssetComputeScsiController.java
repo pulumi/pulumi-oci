@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetComputeScsiController {
@@ -14,39 +16,39 @@ public final class GetAssetComputeScsiController {
      * @return Provides a label and summary information for the device.
      * 
      */
-    private String label;
+    private @Nullable String label;
     /**
      * @return Shared bus.
      * 
      */
-    private String sharedBus;
+    private @Nullable String sharedBus;
     /**
      * @return The unit number of the SCSI controller.
      * 
      */
-    private Integer unitNumber;
+    private @Nullable Integer unitNumber;
 
     private GetAssetComputeScsiController() {}
     /**
      * @return Provides a label and summary information for the device.
      * 
      */
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     /**
      * @return Shared bus.
      * 
      */
-    public String sharedBus() {
-        return this.sharedBus;
+    public Optional<String> sharedBus() {
+        return Optional.ofNullable(this.sharedBus);
     }
     /**
      * @return The unit number of the SCSI controller.
      * 
      */
-    public Integer unitNumber() {
-        return this.unitNumber;
+    public Optional<Integer> unitNumber() {
+        return Optional.ofNullable(this.unitNumber);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetAssetComputeScsiController {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String label;
-        private String sharedBus;
-        private Integer unitNumber;
+        private @Nullable String label;
+        private @Nullable String sharedBus;
+        private @Nullable Integer unitNumber;
         public Builder() {}
         public Builder(GetAssetComputeScsiController defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetAssetComputeScsiController {
         }
 
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder sharedBus(String sharedBus) {
-            this.sharedBus = Objects.requireNonNull(sharedBus);
+        public Builder sharedBus(@Nullable String sharedBus) {
+            this.sharedBus = sharedBus;
             return this;
         }
         @CustomType.Setter
-        public Builder unitNumber(Integer unitNumber) {
-            this.unitNumber = Objects.requireNonNull(unitNumber);
+        public Builder unitNumber(@Nullable Integer unitNumber) {
+            this.unitNumber = unitNumber;
             return this;
         }
         public GetAssetComputeScsiController build() {

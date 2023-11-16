@@ -81,27 +81,27 @@ export class Table extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * True if table can be reclaimed after an idle period.
      */
-    public readonly isAutoReclaimable!: pulumi.Output<boolean>;
+    public readonly isAutoReclaimable!: pulumi.Output<boolean | undefined>;
     /**
      * True if this table is currently a member of a replication set.
      */
-    public /*out*/ readonly isMultiRegion!: pulumi.Output<boolean>;
+    public /*out*/ readonly isMultiRegion!: pulumi.Output<boolean | undefined>;
     /**
      * A message describing the current state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
      */
-    public /*out*/ readonly localReplicaInitializationInPercent!: pulumi.Output<number>;
+    public /*out*/ readonly localReplicaInitializationInPercent!: pulumi.Output<number | undefined>;
     /**
      * Table name.
      */
@@ -109,39 +109,39 @@ export class Table extends pulumi.CustomResource {
     /**
      * An array of Replica listing this table's replicas, if any
      */
-    public /*out*/ readonly replicas!: pulumi.Output<outputs.Nosql.TableReplica[]>;
+    public /*out*/ readonly replicas!: pulumi.Output<outputs.Nosql.TableReplica[] | undefined>;
     /**
      * The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      */
-    public /*out*/ readonly schemaState!: pulumi.Output<string>;
+    public /*out*/ readonly schemaState!: pulumi.Output<string | undefined>;
     /**
      * The table schema information as a JSON object.
      */
-    public /*out*/ readonly schemas!: pulumi.Output<outputs.Nosql.TableSchema[]>;
+    public /*out*/ readonly schemas!: pulumi.Output<outputs.Nosql.TableSchema[] | undefined>;
     /**
      * The state of a table.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */
-    public readonly tableLimits!: pulumi.Output<outputs.Nosql.TableTableLimits>;
+    public readonly tableLimits!: pulumi.Output<outputs.Nosql.TableTableLimits | undefined>;
     /**
      * The time the the table was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeOfExpiration!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfExpiration!: pulumi.Output<string | undefined>;
     /**
      * The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Table resource with the given unique name, arguments, and options.

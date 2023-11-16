@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
-        public readonly string CaBundleId;
+        public readonly string? CaBundleId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
-        public readonly string CertificateAuthorityId;
+        public readonly string? CertificateAuthorityId;
         /// <summary>
         /// Type of the Response Cache.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetGatewayCaBundleResult(
-            string caBundleId,
+            string? caBundleId,
 
-            string certificateAuthorityId,
+            string? certificateAuthorityId,
 
-            string type)
+            string? type)
         {
             CaBundleId = caBundleId;
             CertificateAuthorityId = certificateAuthorityId;

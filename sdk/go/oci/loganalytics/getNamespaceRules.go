@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -78,7 +77,7 @@ type GetNamespaceRulesResult struct {
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetNamespaceRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The kind of rule - either an ingest time rule or a scheduled task.
 	Kind      *string `pulumi:"kind"`
 	Namespace string  `pulumi:"namespace"`
@@ -135,12 +134,6 @@ func (o GetNamespaceRulesResultOutput) ToGetNamespaceRulesResultOutputWithContex
 	return o
 }
 
-func (o GetNamespaceRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesResult] {
-	return pulumix.Output[GetNamespaceRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetNamespaceRulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceRulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -156,8 +149,8 @@ func (o GetNamespaceRulesResultOutput) Filters() GetNamespaceRulesFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The kind of rule - either an ingest time rule or a scheduled task.

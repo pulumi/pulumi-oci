@@ -24,11 +24,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The network configuration for access to the Cluster control plane.
         /// </summary>
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the cluster.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image verification policy for signature validation.
         /// </summary>
@@ -52,15 +52,15 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The version of Kubernetes running on the cluster masters.
         /// </summary>
-        public readonly string KubernetesVersion;
+        public readonly string? KubernetesVersion;
         /// <summary>
         /// Details about the state of the cluster masters.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Metadata about the cluster.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The name to filter on.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Optional attributes for the cluster.
         /// </summary>
@@ -76,15 +76,15 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) in which the cluster exists.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetClustersClusterResult(
@@ -92,37 +92,37 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<Outputs.GetClustersClusterClusterPodNetworkOptionResult> clusterPodNetworkOptions,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetClustersClusterEndpointConfigResult> endpointConfigs,
 
             ImmutableArray<Outputs.GetClustersClusterEndpointResult> endpoints,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetClustersClusterImagePolicyConfigResult> imagePolicyConfigs,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kubernetesVersion,
+            string? kubernetesVersion,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetClustersClusterMetadataResult> metadatas,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetClustersClusterOptionResult> options,
 
-            string state,
+            string? state,
 
-            string type,
+            string? type,
 
-            string vcnId)
+            string? vcnId)
         {
             AvailableKubernetesUpgrades = availableKubernetesUpgrades;
             ClusterPodNetworkOptions = clusterPodNetworkOptions;

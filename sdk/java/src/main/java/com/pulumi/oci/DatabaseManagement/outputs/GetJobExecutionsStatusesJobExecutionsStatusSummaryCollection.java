@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection {
@@ -14,7 +15,7 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection 
      * @return A list of JobExecutionsSummary objects.
      * 
      */
-    private List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items;
+    private @Nullable List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items;
 
     private GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection 
      * 
      */
     public List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection 
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items;
+        private @Nullable List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection 
         }
 
         @CustomType.Setter
-        public Builder items(List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem... items) {

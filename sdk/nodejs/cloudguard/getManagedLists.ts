@@ -109,7 +109,7 @@ export interface GetManagedListsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * type of the list
      */
@@ -117,7 +117,7 @@ export interface GetManagedListsResult {
     /**
      * The list of managed_list_collection.
      */
-    readonly managedListCollections: outputs.CloudGuard.GetManagedListsManagedListCollection[];
+    readonly managedListCollections?: outputs.CloudGuard.GetManagedListsManagedListCollection[];
     readonly resourceMetadataOnly?: boolean;
     /**
      * The current state of the resource.

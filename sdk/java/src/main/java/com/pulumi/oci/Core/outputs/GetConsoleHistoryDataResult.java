@@ -17,12 +17,12 @@ public final class GetConsoleHistoryDataResult {
      * @return The console history data.
      * 
      */
-    private String data;
+    private @Nullable String data;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Integer length;
     private @Nullable Integer offset;
 
@@ -34,15 +34,15 @@ public final class GetConsoleHistoryDataResult {
      * @return The console history data.
      * 
      */
-    public String data() {
-        return this.data;
+    public Optional<String> data() {
+        return Optional.ofNullable(this.data);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Integer> length() {
         return Optional.ofNullable(this.length);
@@ -61,8 +61,8 @@ public final class GetConsoleHistoryDataResult {
     @CustomType.Builder
     public static final class Builder {
         private String consoleHistoryId;
-        private String data;
-        private String id;
+        private @Nullable String data;
+        private @Nullable String id;
         private @Nullable Integer length;
         private @Nullable Integer offset;
         public Builder() {}
@@ -81,13 +81,13 @@ public final class GetConsoleHistoryDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder data(String data) {
-            this.data = Objects.requireNonNull(data);
+        public Builder data(@Nullable String data) {
+            this.data = data;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

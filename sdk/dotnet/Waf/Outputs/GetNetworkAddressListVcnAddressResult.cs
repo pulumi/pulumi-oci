@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// A private IP address or CIDR IP address range.
         /// </summary>
-        public readonly string Addresses;
+        public readonly string? Addresses;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetNetworkAddressListVcnAddressResult(
-            string addresses,
+            string? addresses,
 
-            string vcnId)
+            string? vcnId)
         {
             Addresses = addresses;
             VcnId = vcnId;

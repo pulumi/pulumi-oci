@@ -55,13 +55,13 @@ namespace Pulumi.Oci.Dns
         /// The OCID of the compartment containing the steering policy attachment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The attached domain within the attached zone. `domain_name` is case insensitive.
@@ -79,13 +79,13 @@ namespace Pulumi.Oci.Dns
         /// The canonical absolute URL of the resource.
         /// </summary>
         [Output("self")]
-        public Output<string> Self { get; private set; } = null!;
+        public Output<string?> Self { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the attached steering policy.
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Dns
         /// The date and time the resource was created, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the attached zone.

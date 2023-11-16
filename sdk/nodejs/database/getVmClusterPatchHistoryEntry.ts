@@ -51,32 +51,32 @@ export interface GetVmClusterPatchHistoryEntryResult {
     /**
      * The action being performed or was completed.
      */
-    readonly action: string;
+    readonly action?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly patchHistoryEntryId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      */
-    readonly patchId: string;
+    readonly patchId?: string;
     /**
      * The current state of the action.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time when the patch action completed
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * The date and time when the patch action started.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     readonly vmClusterId: string;
 }
 /**

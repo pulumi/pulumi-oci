@@ -32,13 +32,6 @@ class ConnectorSourceArgs:
                  log_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]] = None,
                  monitoring_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]] = None,
                  stream_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        :param pulumi.Input['ConnectorSourceCursorArgs'] cursor: (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
-        :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]] log_sources: (Updatable) The logs for this Logging source.
-        :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]] monitoring_sources: (Updatable) The list of metric namespaces to retrieve data from.
-        :param pulumi.Input[str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
-        """
         pulumi.set(__self__, "kind", kind)
         if cursor is not None:
             pulumi.set(__self__, "cursor", cursor)
@@ -52,9 +45,6 @@ class ConnectorSourceArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type descriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -64,9 +54,6 @@ class ConnectorSourceArgs:
     @property
     @pulumi.getter
     def cursor(self) -> Optional[pulumi.Input['ConnectorSourceCursorArgs']]:
-        """
-        (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
-        """
         return pulumi.get(self, "cursor")
 
     @cursor.setter
@@ -76,9 +63,6 @@ class ConnectorSourceArgs:
     @property
     @pulumi.getter(name="logSources")
     def log_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]]:
-        """
-        (Updatable) The logs for this Logging source.
-        """
         return pulumi.get(self, "log_sources")
 
     @log_sources.setter
@@ -88,9 +72,6 @@ class ConnectorSourceArgs:
     @property
     @pulumi.getter(name="monitoringSources")
     def monitoring_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]]:
-        """
-        (Updatable) The list of metric namespaces to retrieve data from.
-        """
         return pulumi.get(self, "monitoring_sources")
 
     @monitoring_sources.setter
@@ -100,9 +81,6 @@ class ConnectorSourceArgs:
     @property
     @pulumi.getter(name="streamId")
     def stream_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
-        """
         return pulumi.get(self, "stream_id")
 
     @stream_id.setter
@@ -114,18 +92,12 @@ class ConnectorSourceArgs:
 class ConnectorSourceCursorArgs:
     def __init__(__self__, *,
                  kind: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        """
         if kind is not None:
             pulumi.set(__self__, "kind", kind)
 
     @property
     @pulumi.getter
     def kind(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type descriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -139,11 +111,6 @@ class ConnectorSourceLogSourceArgs:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
-        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if log_group_id is not None:
@@ -154,9 +121,6 @@ class ConnectorSourceLogSourceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -166,9 +130,6 @@ class ConnectorSourceLogSourceArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -178,9 +139,6 @@ class ConnectorSourceLogSourceArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -193,10 +151,6 @@ class ConnectorSourceMonitoringSourceArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  namespace_details: Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        :param pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs'] namespace_details: (Updatable) Discriminator for namespaces in the compartment-specific list.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if namespace_details is not None:
@@ -205,9 +159,6 @@ class ConnectorSourceMonitoringSourceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -217,9 +168,6 @@ class ConnectorSourceMonitoringSourceArgs:
     @property
     @pulumi.getter(name="namespaceDetails")
     def namespace_details(self) -> Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']]:
-        """
-        (Updatable) Discriminator for namespaces in the compartment-specific list.
-        """
         return pulumi.get(self, "namespace_details")
 
     @namespace_details.setter
@@ -232,19 +180,12 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsArgs:
     def __init__(__self__, *,
                  kind: pulumi.Input[str],
                  namespaces: pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]]):
-        """
-        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]] namespaces: (Updatable) The namespaces for the compartment-specific list.
-        """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "namespaces", namespaces)
 
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type descriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -254,9 +195,6 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsArgs:
     @property
     @pulumi.getter
     def namespaces(self) -> pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]]:
-        """
-        (Updatable) The namespaces for the compartment-specific list.
-        """
         return pulumi.get(self, "namespaces")
 
     @namespaces.setter
@@ -269,19 +207,12 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
     def __init__(__self__, *,
                  metrics: pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs'],
                  namespace: pulumi.Input[str]):
-        """
-        :param pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs'] metrics: (Updatable) The metrics to query for the specified metric namespace.
-        :param pulumi.Input[str] namespace: (Updatable) The namespace.
-        """
         pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "namespace", namespace)
 
     @property
     @pulumi.getter
     def metrics(self) -> pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs']:
-        """
-        (Updatable) The metrics to query for the specified metric namespace.
-        """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
@@ -291,9 +222,6 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -305,17 +233,11 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
 class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs:
     def __init__(__self__, *,
                  kind: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        """
         pulumi.set(__self__, "kind", kind)
 
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type descriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -342,24 +264,6 @@ class ConnectorTargetArgs:
                  object_name_prefix: Optional[pulumi.Input[str]] = None,
                  stream_id: Optional[pulumi.Input[str]] = None,
                  topic_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        :param pulumi.Input[int] batch_rollover_size_in_mbs: (Updatable) The batch rollover size in megabytes.
-        :param pulumi.Input[int] batch_rollover_time_in_ms: (Updatable) The batch rollover time in milliseconds.
-        :param pulumi.Input[str] bucket: (Updatable) The name of the bucket. Avoid entering confidential information.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        :param pulumi.Input[Sequence[pulumi.Input['ConnectorTargetDimensionArgs']]] dimensions: (Updatable) List of dimension names and values.
-        :param pulumi.Input[bool] enable_formatted_messaging: (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
-        :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
-        :param pulumi.Input[str] log_source_identifier: (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
-        :param pulumi.Input[str] metric: (Updatable) The name of the metric.  Example: `CpuUtilization`
-        :param pulumi.Input[str] metric_namespace: (Updatable) The namespace of the metric.  Example: `oci_computeagent`
-        :param pulumi.Input[str] namespace: (Updatable) The namespace.
-        :param pulumi.Input[str] object_name_prefix: (Updatable) The prefix of the objects. Avoid entering confidential information.
-        :param pulumi.Input[str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
-        :param pulumi.Input[str] topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-        """
         pulumi.set(__self__, "kind", kind)
         if batch_rollover_size_in_mbs is not None:
             pulumi.set(__self__, "batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
@@ -395,9 +299,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type descriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -407,9 +308,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="batchRolloverSizeInMbs")
     def batch_rollover_size_in_mbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The batch rollover size in megabytes.
-        """
         return pulumi.get(self, "batch_rollover_size_in_mbs")
 
     @batch_rollover_size_in_mbs.setter
@@ -419,9 +317,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="batchRolloverTimeInMs")
     def batch_rollover_time_in_ms(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The batch rollover time in milliseconds.
-        """
         return pulumi.get(self, "batch_rollover_time_in_ms")
 
     @batch_rollover_time_in_ms.setter
@@ -431,9 +326,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the bucket. Avoid entering confidential information.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -443,9 +335,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -455,9 +344,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter
     def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTargetDimensionArgs']]]]:
-        """
-        (Updatable) List of dimension names and values.
-        """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
@@ -467,9 +353,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="enableFormattedMessaging")
     def enable_formatted_messaging(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
-        """
         return pulumi.get(self, "enable_formatted_messaging")
 
     @enable_formatted_messaging.setter
@@ -479,9 +362,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -491,9 +371,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -503,9 +380,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="logSourceIdentifier")
     def log_source_identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
-        """
         return pulumi.get(self, "log_source_identifier")
 
     @log_source_identifier.setter
@@ -515,9 +389,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the metric.  Example: `CpuUtilization`
-        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -527,9 +398,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="metricNamespace")
     def metric_namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The namespace of the metric.  Example: `oci_computeagent`
-        """
         return pulumi.get(self, "metric_namespace")
 
     @metric_namespace.setter
@@ -539,9 +407,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -551,9 +416,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="objectNamePrefix")
     def object_name_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The prefix of the objects. Avoid entering confidential information.
-        """
         return pulumi.get(self, "object_name_prefix")
 
     @object_name_prefix.setter
@@ -563,9 +425,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="streamId")
     def stream_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
-        """
         return pulumi.get(self, "stream_id")
 
     @stream_id.setter
@@ -575,9 +434,6 @@ class ConnectorTargetArgs:
     @property
     @pulumi.getter(name="topicId")
     def topic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-        """
         return pulumi.get(self, "topic_id")
 
     @topic_id.setter
@@ -590,10 +446,6 @@ class ConnectorTargetDimensionArgs:
     def __init__(__self__, *,
                  dimension_value: Optional[pulumi.Input['ConnectorTargetDimensionDimensionValueArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['ConnectorTargetDimensionDimensionValueArgs'] dimension_value: (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
-        :param pulumi.Input[str] name: (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
-        """
         if dimension_value is not None:
             pulumi.set(__self__, "dimension_value", dimension_value)
         if name is not None:
@@ -602,9 +454,6 @@ class ConnectorTargetDimensionArgs:
     @property
     @pulumi.getter(name="dimensionValue")
     def dimension_value(self) -> Optional[pulumi.Input['ConnectorTargetDimensionDimensionValueArgs']]:
-        """
-        (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
-        """
         return pulumi.get(self, "dimension_value")
 
     @dimension_value.setter
@@ -614,9 +463,6 @@ class ConnectorTargetDimensionArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -630,11 +476,6 @@ class ConnectorTargetDimensionDimensionValueArgs:
                  kind: pulumi.Input[str],
                  path: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        :param pulumi.Input[str] path: (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
-        :param pulumi.Input[str] value: (Updatable) The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
-        """
         pulumi.set(__self__, "kind", kind)
         if path is not None:
             pulumi.set(__self__, "path", path)
@@ -644,9 +485,6 @@ class ConnectorTargetDimensionDimensionValueArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type descriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -656,9 +494,6 @@ class ConnectorTargetDimensionDimensionValueArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -668,9 +503,6 @@ class ConnectorTargetDimensionDimensionValueArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -686,13 +518,6 @@ class ConnectorTaskArgs:
                  batch_time_in_sec: Optional[pulumi.Input[int]] = None,
                  condition: Optional[pulumi.Input[str]] = None,
                  function_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        :param pulumi.Input[int] batch_size_in_kbs: (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
-        :param pulumi.Input[int] batch_time_in_sec: (Updatable) Time limit (seconds) for batch sent to invoke the function.
-        :param pulumi.Input[str] condition: (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
-        :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        """
         pulumi.set(__self__, "kind", kind)
         if batch_size_in_kbs is not None:
             pulumi.set(__self__, "batch_size_in_kbs", batch_size_in_kbs)
@@ -706,9 +531,6 @@ class ConnectorTaskArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type descriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -718,9 +540,6 @@ class ConnectorTaskArgs:
     @property
     @pulumi.getter(name="batchSizeInKbs")
     def batch_size_in_kbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
-        """
         return pulumi.get(self, "batch_size_in_kbs")
 
     @batch_size_in_kbs.setter
@@ -730,9 +549,6 @@ class ConnectorTaskArgs:
     @property
     @pulumi.getter(name="batchTimeInSec")
     def batch_time_in_sec(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Time limit (seconds) for batch sent to invoke the function.
-        """
         return pulumi.get(self, "batch_time_in_sec")
 
     @batch_time_in_sec.setter
@@ -742,9 +558,6 @@ class ConnectorTaskArgs:
     @property
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -754,9 +567,6 @@ class ConnectorTaskArgs:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -770,9 +580,6 @@ class GetServiceConnectorsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -781,9 +588,6 @@ class GetServiceConnectorsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
-        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -8,6 +8,8 @@ import com.pulumi.oci.Monitoring.outputs.GetAlarmStatusesAlarmStatusSuppression;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlarmStatusesAlarmStatus {
@@ -15,75 +17,75 @@ public final class GetAlarmStatusesAlarmStatus {
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The configured severity of the alarm.  Example: `CRITICAL`
      * 
      */
-    private String severity;
+    private @Nullable String severity;
     /**
      * @return The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to &#34;FIRING&#34; to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams&#39; status.  Example: `FIRING`
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The configuration details for suppressing an alarm.
      * 
      */
-    private List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
+    private @Nullable List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
     /**
      * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private String timestampTriggered;
+    private @Nullable String timestampTriggered;
 
     private GetAlarmStatusesAlarmStatus() {}
     /**
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The configured severity of the alarm.  Example: `CRITICAL`
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
     /**
      * @return The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to &#34;FIRING&#34; to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams&#39; status.  Example: `FIRING`
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The configuration details for suppressing an alarm.
      * 
      */
     public List<GetAlarmStatusesAlarmStatusSuppression> suppressions() {
-        return this.suppressions;
+        return this.suppressions == null ? List.of() : this.suppressions;
     }
     /**
      * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    public String timestampTriggered() {
-        return this.timestampTriggered;
+    public Optional<String> timestampTriggered() {
+        return Optional.ofNullable(this.timestampTriggered);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetAlarmStatusesAlarmStatus {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String id;
-        private String severity;
-        private String status;
-        private List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
-        private String timestampTriggered;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable String severity;
+        private @Nullable String status;
+        private @Nullable List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
+        private @Nullable String timestampTriggered;
         public Builder() {}
         public Builder(GetAlarmStatusesAlarmStatus defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetAlarmStatusesAlarmStatus {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder suppressions(List<GetAlarmStatusesAlarmStatusSuppression> suppressions) {
-            this.suppressions = Objects.requireNonNull(suppressions);
+        public Builder suppressions(@Nullable List<GetAlarmStatusesAlarmStatusSuppression> suppressions) {
+            this.suppressions = suppressions;
             return this;
         }
         public Builder suppressions(GetAlarmStatusesAlarmStatusSuppression... suppressions) {
             return suppressions(List.of(suppressions));
         }
         @CustomType.Setter
-        public Builder timestampTriggered(String timestampTriggered) {
-            this.timestampTriggered = Objects.requireNonNull(timestampTriggered);
+        public Builder timestampTriggered(@Nullable String timestampTriggered) {
+            this.timestampTriggered = timestampTriggered;
             return this;
         }
         public GetAlarmStatusesAlarmStatus build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
@@ -47,45 +46,45 @@ type ExadataInfrastructureCompute struct {
 	pulumi.CustomResourceState
 
 	// The requested number of additional storage servers activated for the Exadata infrastructure.
-	ActivatedStorageCount pulumi.IntOutput       `pulumi:"activatedStorageCount"`
+	ActivatedStorageCount pulumi.IntPtrOutput    `pulumi:"activatedStorageCount"`
 	ActivationFile        pulumi.StringPtrOutput `pulumi:"activationFile"`
 	// The number of additional compute servers for the Exadata infrastructure.
-	AdditionalComputeCount                       pulumi.IntOutput    `pulumi:"additionalComputeCount"`
+	AdditionalComputeCount                       pulumi.IntPtrOutput `pulumi:"additionalComputeCount"`
 	AdditionalComputeCountComputeManagedResource pulumi.IntPtrOutput `pulumi:"additionalComputeCountComputeManagedResource"`
 	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
-	AdditionalComputeSystemModel                       pulumi.StringOutput    `pulumi:"additionalComputeSystemModel"`
+	AdditionalComputeSystemModel                       pulumi.StringPtrOutput `pulumi:"additionalComputeSystemModel"`
 	AdditionalComputeSystemModelComputeManagedResource pulumi.StringPtrOutput `pulumi:"additionalComputeSystemModelComputeManagedResource"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
-	AdditionalStorageCount pulumi.IntOutput `pulumi:"additionalStorageCount"`
+	AdditionalStorageCount pulumi.IntPtrOutput `pulumi:"additionalStorageCount"`
 	// The CIDR block for the Exadata administration network.
-	AdminNetworkCidr pulumi.StringOutput `pulumi:"adminNetworkCidr"`
+	AdminNetworkCidr pulumi.StringPtrOutput `pulumi:"adminNetworkCidr"`
 	// The IP address for the first control plane server.
-	CloudControlPlaneServer1 pulumi.StringOutput `pulumi:"cloudControlPlaneServer1"`
+	CloudControlPlaneServer1 pulumi.StringPtrOutput `pulumi:"cloudControlPlaneServer1"`
 	// The IP address for the second control plane server.
-	CloudControlPlaneServer2 pulumi.StringOutput `pulumi:"cloudControlPlaneServer2"`
+	CloudControlPlaneServer2 pulumi.StringPtrOutput `pulumi:"cloudControlPlaneServer2"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
-	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
+	ComputeCount pulumi.IntPtrOutput `pulumi:"computeCount"`
 	// The list of contacts for the Exadata infrastructure.
 	Contacts ExadataInfrastructureComputeContactArrayOutput `pulumi:"contacts"`
 	// The corporate network proxy for access to the control plane network.
-	CorporateProxy pulumi.StringOutput `pulumi:"corporateProxy"`
+	CorporateProxy pulumi.StringPtrOutput `pulumi:"corporateProxy"`
 	// The number of enabled CPU cores.
-	CpusEnabled pulumi.IntOutput  `pulumi:"cpusEnabled"`
-	CreateAsync pulumi.BoolOutput `pulumi:"createAsync"`
+	CpusEnabled pulumi.IntPtrOutput  `pulumi:"cpusEnabled"`
+	CreateAsync pulumi.BoolPtrOutput `pulumi:"createAsync"`
 	// The CSI Number of the Exadata infrastructure.
-	CsiNumber pulumi.StringOutput `pulumi:"csiNumber"`
+	CsiNumber pulumi.StringPtrOutput `pulumi:"csiNumber"`
 	// Size, in terabytes, of the DATA disk group.
-	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
+	DataStorageSizeInTbs pulumi.Float64PtrOutput `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
-	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs pulumi.IntPtrOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
-	DbServerVersion pulumi.StringOutput `pulumi:"dbServerVersion"`
+	DbServerVersion pulumi.StringPtrOutput `pulumi:"dbServerVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers pulumi.StringArrayOutput `pulumi:"dnsServers"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -93,45 +92,45 @@ type ExadataInfrastructureCompute struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The gateway for the control plane network.
-	Gateway pulumi.StringOutput `pulumi:"gateway"`
+	Gateway pulumi.StringPtrOutput `pulumi:"gateway"`
 	// The CIDR block for the Exadata InfiniBand interconnect.
-	InfiniBandNetworkCidr pulumi.StringOutput `pulumi:"infiniBandNetworkCidr"`
+	InfiniBandNetworkCidr pulumi.StringPtrOutput `pulumi:"infiniBandNetworkCidr"`
 	// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
-	IsCpsOfflineReportEnabled pulumi.BoolOutput `pulumi:"isCpsOfflineReportEnabled"`
+	IsCpsOfflineReportEnabled pulumi.BoolPtrOutput `pulumi:"isCpsOfflineReportEnabled"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
-	MaintenanceSloStatus pulumi.StringOutput `pulumi:"maintenanceSloStatus"`
+	MaintenanceSloStatus pulumi.StringPtrOutput `pulumi:"maintenanceSloStatus"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows ExadataInfrastructureComputeMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
 	// The total number of CPU cores available.
-	MaxCpuCount pulumi.IntOutput `pulumi:"maxCpuCount"`
+	MaxCpuCount pulumi.IntPtrOutput `pulumi:"maxCpuCount"`
 	// The total available DATA disk group size.
-	MaxDataStorageInTbs pulumi.Float64Output `pulumi:"maxDataStorageInTbs"`
+	MaxDataStorageInTbs pulumi.Float64PtrOutput `pulumi:"maxDataStorageInTbs"`
 	// The total local node storage available in GBs.
-	MaxDbNodeStorageInGbs pulumi.IntOutput `pulumi:"maxDbNodeStorageInGbs"`
+	MaxDbNodeStorageInGbs pulumi.IntPtrOutput `pulumi:"maxDbNodeStorageInGbs"`
 	// The total memory available in GBs.
-	MaxMemoryInGbs pulumi.IntOutput `pulumi:"maxMemoryInGbs"`
+	MaxMemoryInGbs pulumi.IntPtrOutput `pulumi:"maxMemoryInGbs"`
 	// The memory allocated in GBs.
-	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs pulumi.IntPtrOutput `pulumi:"memorySizeInGbs"`
 	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
-	MonthlyDbServerVersion pulumi.StringOutput `pulumi:"monthlyDbServerVersion"`
+	MonthlyDbServerVersion pulumi.StringPtrOutput `pulumi:"monthlyDbServerVersion"`
 	// The netmask for the control plane network.
-	Netmask pulumi.StringOutput `pulumi:"netmask"`
+	Netmask pulumi.StringPtrOutput `pulumi:"netmask"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers pulumi.StringArrayOutput `pulumi:"ntpServers"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// The current lifecycle state of the Exadata infrastructure.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The number of Exadata storage servers for the Exadata infrastructure.
-	StorageCount pulumi.IntOutput `pulumi:"storageCount"`
+	StorageCount pulumi.IntPtrOutput `pulumi:"storageCount"`
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
-	StorageServerVersion pulumi.StringOutput `pulumi:"storageServerVersion"`
+	StorageServerVersion pulumi.StringPtrOutput `pulumi:"storageServerVersion"`
 	// The date and time the Exadata infrastructure was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrOutput `pulumi:"timeZone"`
 }
 
 // NewExadataInfrastructureCompute registers a new resource with the given unique name, arguments, and options.
@@ -388,12 +387,6 @@ func (i *ExadataInfrastructureCompute) ToExadataInfrastructureComputeOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureComputeOutput)
 }
 
-func (i *ExadataInfrastructureCompute) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureCompute] {
-	return pulumix.Output[*ExadataInfrastructureCompute]{
-		OutputState: i.ToExadataInfrastructureComputeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExadataInfrastructureComputeArrayInput is an input type that accepts ExadataInfrastructureComputeArray and ExadataInfrastructureComputeArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureComputeArrayInput` via:
 //
@@ -417,12 +410,6 @@ func (i ExadataInfrastructureComputeArray) ToExadataInfrastructureComputeArrayOu
 
 func (i ExadataInfrastructureComputeArray) ToExadataInfrastructureComputeArrayOutputWithContext(ctx context.Context) ExadataInfrastructureComputeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureComputeArrayOutput)
-}
-
-func (i ExadataInfrastructureComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureCompute] {
-	return pulumix.Output[[]*ExadataInfrastructureCompute]{
-		OutputState: i.ToExadataInfrastructureComputeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExadataInfrastructureComputeMapInput is an input type that accepts ExadataInfrastructureComputeMap and ExadataInfrastructureComputeMapOutput values.
@@ -450,12 +437,6 @@ func (i ExadataInfrastructureComputeMap) ToExadataInfrastructureComputeMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureComputeMapOutput)
 }
 
-func (i ExadataInfrastructureComputeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureCompute] {
-	return pulumix.Output[map[string]*ExadataInfrastructureCompute]{
-		OutputState: i.ToExadataInfrastructureComputeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInfrastructureComputeOutput struct{ *pulumi.OutputState }
 
 func (ExadataInfrastructureComputeOutput) ElementType() reflect.Type {
@@ -470,15 +451,9 @@ func (o ExadataInfrastructureComputeOutput) ToExadataInfrastructureComputeOutput
 	return o
 }
 
-func (o ExadataInfrastructureComputeOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureCompute] {
-	return pulumix.Output[*ExadataInfrastructureCompute]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The requested number of additional storage servers activated for the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) ActivatedStorageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.ActivatedStorageCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) ActivatedStorageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.ActivatedStorageCount }).(pulumi.IntPtrOutput)
 }
 
 func (o ExadataInfrastructureComputeOutput) ActivationFile() pulumi.StringPtrOutput {
@@ -486,8 +461,8 @@ func (o ExadataInfrastructureComputeOutput) ActivationFile() pulumi.StringPtrOut
 }
 
 // The number of additional compute servers for the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) AdditionalComputeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.AdditionalComputeCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) AdditionalComputeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.AdditionalComputeCount }).(pulumi.IntPtrOutput)
 }
 
 func (o ExadataInfrastructureComputeOutput) AdditionalComputeCountComputeManagedResource() pulumi.IntPtrOutput {
@@ -497,8 +472,8 @@ func (o ExadataInfrastructureComputeOutput) AdditionalComputeCountComputeManaged
 }
 
 // Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
-func (o ExadataInfrastructureComputeOutput) AdditionalComputeSystemModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.AdditionalComputeSystemModel }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) AdditionalComputeSystemModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.AdditionalComputeSystemModel }).(pulumi.StringPtrOutput)
 }
 
 func (o ExadataInfrastructureComputeOutput) AdditionalComputeSystemModelComputeManagedResource() pulumi.StringPtrOutput {
@@ -508,33 +483,33 @@ func (o ExadataInfrastructureComputeOutput) AdditionalComputeSystemModelComputeM
 }
 
 // The requested number of additional storage servers for the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) AdditionalStorageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.AdditionalStorageCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) AdditionalStorageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.AdditionalStorageCount }).(pulumi.IntPtrOutput)
 }
 
 // The CIDR block for the Exadata administration network.
-func (o ExadataInfrastructureComputeOutput) AdminNetworkCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.AdminNetworkCidr }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) AdminNetworkCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.AdminNetworkCidr }).(pulumi.StringPtrOutput)
 }
 
 // The IP address for the first control plane server.
-func (o ExadataInfrastructureComputeOutput) CloudControlPlaneServer1() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.CloudControlPlaneServer1 }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) CloudControlPlaneServer1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.CloudControlPlaneServer1 }).(pulumi.StringPtrOutput)
 }
 
 // The IP address for the second control plane server.
-func (o ExadataInfrastructureComputeOutput) CloudControlPlaneServer2() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.CloudControlPlaneServer2 }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) CloudControlPlaneServer2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.CloudControlPlaneServer2 }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o ExadataInfrastructureComputeOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of compute servers for the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) ComputeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) ComputeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.ComputeCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of contacts for the Exadata infrastructure.
@@ -545,37 +520,37 @@ func (o ExadataInfrastructureComputeOutput) Contacts() ExadataInfrastructureComp
 }
 
 // The corporate network proxy for access to the control plane network.
-func (o ExadataInfrastructureComputeOutput) CorporateProxy() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.CorporateProxy }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) CorporateProxy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.CorporateProxy }).(pulumi.StringPtrOutput)
 }
 
 // The number of enabled CPU cores.
-func (o ExadataInfrastructureComputeOutput) CpusEnabled() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) CpusEnabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.CpusEnabled }).(pulumi.IntPtrOutput)
 }
 
-func (o ExadataInfrastructureComputeOutput) CreateAsync() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.BoolOutput { return v.CreateAsync }).(pulumi.BoolOutput)
+func (o ExadataInfrastructureComputeOutput) CreateAsync() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.BoolPtrOutput { return v.CreateAsync }).(pulumi.BoolPtrOutput)
 }
 
 // The CSI Number of the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) CsiNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.CsiNumber }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) CsiNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.CsiNumber }).(pulumi.StringPtrOutput)
 }
 
 // Size, in terabytes, of the DATA disk group.
-func (o ExadataInfrastructureComputeOutput) DataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.Float64Output { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o ExadataInfrastructureComputeOutput) DataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.Float64PtrOutput { return v.DataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The local node storage allocated in GBs.
-func (o ExadataInfrastructureComputeOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The software version of the database servers (dom0) in the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) DbServerVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.DbServerVersion }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) DbServerVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.DbServerVersion }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -584,8 +559,8 @@ func (o ExadataInfrastructureComputeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
-func (o ExadataInfrastructureComputeOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -604,28 +579,28 @@ func (o ExadataInfrastructureComputeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The gateway for the control plane network.
-func (o ExadataInfrastructureComputeOutput) Gateway() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.Gateway }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) Gateway() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.Gateway }).(pulumi.StringPtrOutput)
 }
 
 // The CIDR block for the Exadata InfiniBand interconnect.
-func (o ExadataInfrastructureComputeOutput) InfiniBandNetworkCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.InfiniBandNetworkCidr }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) InfiniBandNetworkCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.InfiniBandNetworkCidr }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
-func (o ExadataInfrastructureComputeOutput) IsCpsOfflineReportEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.BoolOutput { return v.IsCpsOfflineReportEnabled }).(pulumi.BoolOutput)
+func (o ExadataInfrastructureComputeOutput) IsCpsOfflineReportEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.BoolPtrOutput { return v.IsCpsOfflineReportEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o ExadataInfrastructureComputeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
-func (o ExadataInfrastructureComputeOutput) MaintenanceSloStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.MaintenanceSloStatus }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) MaintenanceSloStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.MaintenanceSloStatus }).(pulumi.StringPtrOutput)
 }
 
 // The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -636,38 +611,38 @@ func (o ExadataInfrastructureComputeOutput) MaintenanceWindows() ExadataInfrastr
 }
 
 // The total number of CPU cores available.
-func (o ExadataInfrastructureComputeOutput) MaxCpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.MaxCpuCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) MaxCpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.MaxCpuCount }).(pulumi.IntPtrOutput)
 }
 
 // The total available DATA disk group size.
-func (o ExadataInfrastructureComputeOutput) MaxDataStorageInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.Float64Output { return v.MaxDataStorageInTbs }).(pulumi.Float64Output)
+func (o ExadataInfrastructureComputeOutput) MaxDataStorageInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.Float64PtrOutput { return v.MaxDataStorageInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total local node storage available in GBs.
-func (o ExadataInfrastructureComputeOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) MaxDbNodeStorageInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.MaxDbNodeStorageInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The total memory available in GBs.
-func (o ExadataInfrastructureComputeOutput) MaxMemoryInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) MaxMemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.MaxMemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The memory allocated in GBs.
-func (o ExadataInfrastructureComputeOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The monthly software version of the database servers (dom0) in the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) MonthlyDbServerVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.MonthlyDbServerVersion }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) MonthlyDbServerVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.MonthlyDbServerVersion }).(pulumi.StringPtrOutput)
 }
 
 // The netmask for the control plane network.
-func (o ExadataInfrastructureComputeOutput) Netmask() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.Netmask }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) Netmask() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.Netmask }).(pulumi.StringPtrOutput)
 }
 
 // The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -676,33 +651,33 @@ func (o ExadataInfrastructureComputeOutput) NtpServers() pulumi.StringArrayOutpu
 }
 
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-func (o ExadataInfrastructureComputeOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The number of Exadata storage servers for the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) StorageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntOutput { return v.StorageCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureComputeOutput) StorageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.IntPtrOutput { return v.StorageCount }).(pulumi.IntPtrOutput)
 }
 
 // The software version of the storage servers (cells) in the Exadata infrastructure.
-func (o ExadataInfrastructureComputeOutput) StorageServerVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.StorageServerVersion }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) StorageServerVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.StorageServerVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Exadata infrastructure was created.
-func (o ExadataInfrastructureComputeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-func (o ExadataInfrastructureComputeOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o ExadataInfrastructureComputeOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureCompute) pulumi.StringPtrOutput { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 type ExadataInfrastructureComputeArrayOutput struct{ *pulumi.OutputState }
@@ -717,12 +692,6 @@ func (o ExadataInfrastructureComputeArrayOutput) ToExadataInfrastructureComputeA
 
 func (o ExadataInfrastructureComputeArrayOutput) ToExadataInfrastructureComputeArrayOutputWithContext(ctx context.Context) ExadataInfrastructureComputeArrayOutput {
 	return o
-}
-
-func (o ExadataInfrastructureComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureCompute] {
-	return pulumix.Output[[]*ExadataInfrastructureCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInfrastructureComputeArrayOutput) Index(i pulumi.IntInput) ExadataInfrastructureComputeOutput {
@@ -743,12 +712,6 @@ func (o ExadataInfrastructureComputeMapOutput) ToExadataInfrastructureComputeMap
 
 func (o ExadataInfrastructureComputeMapOutput) ToExadataInfrastructureComputeMapOutputWithContext(ctx context.Context) ExadataInfrastructureComputeMapOutput {
 	return o
-}
-
-func (o ExadataInfrastructureComputeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureCompute] {
-	return pulumix.Output[map[string]*ExadataInfrastructureCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInfrastructureComputeMapOutput) MapIndex(k pulumi.StringInput) ExadataInfrastructureComputeOutput {

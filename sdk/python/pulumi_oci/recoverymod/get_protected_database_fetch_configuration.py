@@ -50,15 +50,12 @@ class GetProtectedDatabaseFetchConfigurationResult:
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base_64_encode_content` to false.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,24 +85,7 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[b
                                                protected_database_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectedDatabaseFetchConfigurationResult:
     """
-    This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
-
-    Downloads the network service configuration file 'tnsnames.ora' for a specified protected database. Applies to user-defined recovery systems only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=oci_recovery_protected_database["test_protected_database"]["id"],
-        base64_encode_content=True,
-        configuration_type=var["protected_database_fetch_configuration_configuration_type"])
-    ```
-
-
-    :param str configuration_type: Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
-    :param str protected_database_id: The protected database OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['base64EncodeContent'] = base64_encode_content
@@ -128,23 +108,6 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
                                                       protected_database_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectedDatabaseFetchConfigurationResult]:
     """
-    This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
-
-    Downloads the network service configuration file 'tnsnames.ora' for a specified protected database. Applies to user-defined recovery systems only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=oci_recovery_protected_database["test_protected_database"]["id"],
-        base64_encode_content=True,
-        configuration_type=var["protected_database_fetch_configuration_configuration_type"])
-    ```
-
-
-    :param str configuration_type: Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
-    :param str protected_database_id: The protected database OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

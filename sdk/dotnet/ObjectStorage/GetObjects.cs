@@ -174,7 +174,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
         /// <summary>
         /// The list of list_objects.
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.ObjectStorage
 
             ImmutableArray<Outputs.GetObjectsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string @namespace,
 

@@ -115,12 +115,12 @@ export interface GetInstallationSiteResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly installationPath?: string;
     /**
      * A list of Java installation sites.
      */
-    readonly items: outputs.Jms.GetInstallationSiteItem[];
+    readonly items?: outputs.Jms.GetInstallationSiteItem[];
     readonly jreDistribution?: string;
     readonly jreSecurityStatus?: string;
     readonly jreVendor?: string;

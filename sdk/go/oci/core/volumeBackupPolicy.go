@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume Backup Policy resource in Oracle Cloud Infrastructure Core service.
@@ -85,15 +84,15 @@ type VolumeBackupPolicy struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
-	DestinationRegion pulumi.StringOutput `pulumi:"destinationRegion"`
+	DestinationRegion pulumi.StringPtrOutput `pulumi:"destinationRegion"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The collection of schedules for the volume backup policy. See see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
 	Schedules VolumeBackupPolicyScheduleArrayOutput `pulumi:"schedules"`
 	// The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewVolumeBackupPolicy registers a new resource with the given unique name, arguments, and options.
@@ -220,12 +219,6 @@ func (i *VolumeBackupPolicy) ToVolumeBackupPolicyOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyOutput)
 }
 
-func (i *VolumeBackupPolicy) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackupPolicy] {
-	return pulumix.Output[*VolumeBackupPolicy]{
-		OutputState: i.ToVolumeBackupPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VolumeBackupPolicyArrayInput is an input type that accepts VolumeBackupPolicyArray and VolumeBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `VolumeBackupPolicyArrayInput` via:
 //
@@ -249,12 +242,6 @@ func (i VolumeBackupPolicyArray) ToVolumeBackupPolicyArrayOutput() VolumeBackupP
 
 func (i VolumeBackupPolicyArray) ToVolumeBackupPolicyArrayOutputWithContext(ctx context.Context) VolumeBackupPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyArrayOutput)
-}
-
-func (i VolumeBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackupPolicy] {
-	return pulumix.Output[[]*VolumeBackupPolicy]{
-		OutputState: i.ToVolumeBackupPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VolumeBackupPolicyMapInput is an input type that accepts VolumeBackupPolicyMap and VolumeBackupPolicyMapOutput values.
@@ -282,12 +269,6 @@ func (i VolumeBackupPolicyMap) ToVolumeBackupPolicyMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyMapOutput)
 }
 
-func (i VolumeBackupPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackupPolicy] {
-	return pulumix.Output[map[string]*VolumeBackupPolicy]{
-		OutputState: i.ToVolumeBackupPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VolumeBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (VolumeBackupPolicyOutput) ElementType() reflect.Type {
@@ -302,12 +283,6 @@ func (o VolumeBackupPolicyOutput) ToVolumeBackupPolicyOutputWithContext(ctx cont
 	return o
 }
 
-func (o VolumeBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackupPolicy] {
-	return pulumix.Output[*VolumeBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
 func (o VolumeBackupPolicyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeBackupPolicy) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -319,13 +294,13 @@ func (o VolumeBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
-func (o VolumeBackupPolicyOutput) DestinationRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackupPolicy) pulumi.StringOutput { return v.DestinationRegion }).(pulumi.StringOutput)
+func (o VolumeBackupPolicyOutput) DestinationRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackupPolicy) pulumi.StringPtrOutput { return v.DestinationRegion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VolumeBackupPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackupPolicy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VolumeBackupPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackupPolicy) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -339,8 +314,8 @@ func (o VolumeBackupPolicyOutput) Schedules() VolumeBackupPolicyScheduleArrayOut
 }
 
 // The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o VolumeBackupPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackupPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VolumeBackupPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackupPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type VolumeBackupPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -355,12 +330,6 @@ func (o VolumeBackupPolicyArrayOutput) ToVolumeBackupPolicyArrayOutput() VolumeB
 
 func (o VolumeBackupPolicyArrayOutput) ToVolumeBackupPolicyArrayOutputWithContext(ctx context.Context) VolumeBackupPolicyArrayOutput {
 	return o
-}
-
-func (o VolumeBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackupPolicy] {
-	return pulumix.Output[[]*VolumeBackupPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeBackupPolicyArrayOutput) Index(i pulumi.IntInput) VolumeBackupPolicyOutput {
@@ -381,12 +350,6 @@ func (o VolumeBackupPolicyMapOutput) ToVolumeBackupPolicyMapOutput() VolumeBacku
 
 func (o VolumeBackupPolicyMapOutput) ToVolumeBackupPolicyMapOutputWithContext(ctx context.Context) VolumeBackupPolicyMapOutput {
 	return o
-}
-
-func (o VolumeBackupPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackupPolicy] {
-	return pulumix.Output[map[string]*VolumeBackupPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeBackupPolicyMapOutput) MapIndex(k pulumi.StringInput) VolumeBackupPolicyOutput {

@@ -47,90 +47,90 @@ export interface GetConnectionResult {
     /**
      * Database Administrator Credentials details.
      */
-    readonly adminCredentials: outputs.DatabaseMigration.GetConnectionAdminCredential[];
+    readonly adminCredentials?: outputs.DatabaseMigration.GetConnectionAdminCredential[];
     /**
      * This name is the distinguished name used while creating the certificate on target database.
      */
-    readonly certificateTdn: string;
+    readonly certificateTdn?: string;
     /**
      * OCID of the compartment where the secret containing the credentials will be created.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Connect Descriptor details.
      */
-    readonly connectDescriptors: outputs.DatabaseMigration.GetConnectionConnectDescriptor[];
+    readonly connectDescriptors?: outputs.DatabaseMigration.GetConnectionConnectDescriptor[];
     readonly connectionId: string;
     /**
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      */
-    readonly credentialsSecretId: string;
+    readonly credentialsSecretId?: string;
     /**
      * The OCID of the cloud database.
      */
-    readonly databaseId: string;
+    readonly databaseId?: string;
     /**
      * Database connection type.
      */
-    readonly databaseType: string;
+    readonly databaseType?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Database Connection display name identifier.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * An array of Network Security Group OCIDs used to define network access for Connections.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * Oracle Cloud Infrastructure Private Endpoint configuration details.
      */
-    readonly privateEndpoints: outputs.DatabaseMigration.GetConnectionPrivateEndpoint[];
+    readonly privateEndpoints?: outputs.DatabaseMigration.GetConnectionPrivateEndpoint[];
     /**
      * Database Administrator Credentials details.
      */
-    readonly replicationCredentials: outputs.DatabaseMigration.GetConnectionReplicationCredential[];
+    readonly replicationCredentials?: outputs.DatabaseMigration.GetConnectionReplicationCredential[];
     /**
      * Details of the SSH key that will be used.
      */
-    readonly sshDetails: outputs.DatabaseMigration.GetConnectionSshDetail[];
+    readonly sshDetails?: outputs.DatabaseMigration.GetConnectionSshDetail[];
     /**
      * The current state of the Connection resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the Connection resource was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
-    readonly tlsKeystore: string;
-    readonly tlsWallet: string;
+    readonly timeUpdated?: string;
+    readonly tlsKeystore?: string;
+    readonly tlsWallet?: string;
     /**
      * Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      */
-    readonly vaultDetails: outputs.DatabaseMigration.GetConnectionVaultDetail[];
+    readonly vaultDetails?: outputs.DatabaseMigration.GetConnectionVaultDetail[];
 }
 /**
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.

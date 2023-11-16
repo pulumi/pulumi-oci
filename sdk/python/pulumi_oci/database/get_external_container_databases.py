@@ -46,25 +46,16 @@ class GetExternalContainerDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the external database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalContainerDatabases")
-    def external_container_databases(self) -> Sequence['outputs.GetExternalContainerDatabasesExternalContainerDatabaseResult']:
-        """
-        The list of external_container_databases.
-        """
+    def external_container_databases(self) -> Optional[Sequence['outputs.GetExternalContainerDatabasesExternalContainerDatabaseResult']]:
         return pulumi.get(self, "external_container_databases")
 
     @property
@@ -74,7 +65,7 @@ class GetExternalContainerDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetExternalContainerDatabasesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Oracle Cloud Infrastructure external database resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_external_container_databases(compartment_id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalContainerDatabasesResult:
     """
-    This data source provides the list of External Container Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the external container databases in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_container_databases = oci.Database.get_external_container_databases(compartment_id=var["compartment_id"],
-        display_name=var["external_container_database_display_name"],
-        state=var["external_container_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_external_container_databases_output(compartment_id: Optional[pulumi.Inpu
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalContainerDatabasesResult]:
     """
-    This data source provides the list of External Container Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the external container databases in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_container_databases = oci.Database.get_external_container_databases(compartment_id=var["compartment_id"],
-        display_name=var["external_container_database_display_name"],
-        state=var["external_container_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

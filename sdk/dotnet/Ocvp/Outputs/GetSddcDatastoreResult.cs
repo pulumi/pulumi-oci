@@ -20,19 +20,19 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// <summary>
         /// Size of the Block Storage Volume in GB.
         /// </summary>
-        public readonly double Capacity;
+        public readonly double? Capacity;
         /// <summary>
         /// Type of the datastore.
         /// </summary>
-        public readonly string DatastoreType;
+        public readonly string? DatastoreType;
 
         [OutputConstructor]
         private GetSddcDatastoreResult(
             ImmutableArray<string> blockVolumeIds,
 
-            double capacity,
+            double? capacity,
 
-            string datastoreType)
+            string? datastoreType)
         {
             BlockVolumeIds = blockVolumeIds;
             Capacity = capacity;

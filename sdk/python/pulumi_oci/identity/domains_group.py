@@ -35,100 +35,6 @@ class DomainsGroupArgs:
                  urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None):
         """
         The set of arguments for constructing a DomainsGroup resource.
-        :param pulumi.Input[str] display_name: (Updatable) The Group display name.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * idcsPaginateResponse: true
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] non_unique_display_name: (Updatable) A human readable name for the group as defined by the Service Consumer.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Non-Unique Display Name
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: string
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupTagArgs']]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs'] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs'] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs'] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs'] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
@@ -165,21 +71,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The Group display name.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Display Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -189,9 +80,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Input[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -201,19 +89,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -223,9 +98,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -235,9 +107,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -247,9 +116,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -259,19 +125,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
@@ -281,22 +134,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]]]:
-        """
-        (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [value]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * idcsPaginateResponse: true
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "members")
 
     @members.setter
@@ -306,21 +143,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="nonUniqueDisplayName")
     def non_unique_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A human readable name for the group as defined by the Service Consumer.
-
-        **Added In:** 2011192329
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Non-Unique Display Name
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: string
-        """
         return pulumi.get(self, "non_unique_display_name")
 
     @non_unique_display_name.setter
@@ -330,19 +152,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -352,9 +161,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -364,19 +170,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupTagArgs']]]]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -386,9 +179,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
     def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
@@ -398,9 +188,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondynamicGroup")
     def urnietfparamsscimschemasoracleidcsextensiondynamic_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']]:
-        """
-        (Updatable) Dynamic Group
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondynamic_group")
 
     @urnietfparamsscimschemasoracleidcsextensiondynamic_group.setter
@@ -410,9 +197,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiongroupGroup")
     def urnietfparamsscimschemasoracleidcsextensiongroup_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']]:
-        """
-        (Updatable) Oracle Identity Cloud Service Group
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiongroup_group")
 
     @urnietfparamsscimschemasoracleidcsextensiongroup_group.setter
@@ -422,9 +206,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixGroup")
     def urnietfparamsscimschemasoracleidcsextensionposix_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']]:
-        """
-        (Updatable) POSIX Group extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_group")
 
     @urnietfparamsscimschemasoracleidcsextensionposix_group.setter
@@ -434,9 +215,6 @@ class DomainsGroupArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableGroup")
     def urnietfparamsscimschemasoracleidcsextensionrequestable_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']]:
-        """
-        (Updatable) Requestable Group
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_group")
 
     @urnietfparamsscimschemasoracleidcsextensionrequestable_group.setter
@@ -476,195 +254,6 @@ class _DomainsGroupState:
                  urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsGroup resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The Group display name.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * idcsPaginateResponse: true
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[str] non_unique_display_name: (Updatable) A human readable name for the group as defined by the Service Consumer.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Non-Unique Display Name
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: string
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupTagArgs']]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs']]] urnietfparamsscimschemasoracleidcsextensiondbcs_groups: (Updatable) Schema for Database Service  Resource
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs'] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs'] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs'] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
-        :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs'] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
         if attribute_sets is not None:
             pulumi.set(__self__, "attribute_sets", attribute_sets)
@@ -724,9 +313,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -736,9 +322,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -748,9 +331,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -760,19 +340,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="compartmentOcid")
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
@@ -782,19 +349,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="deleteInProgress")
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
@@ -804,21 +358,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Group display name.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Display Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -828,19 +367,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="domainOcid")
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
@@ -850,19 +376,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
@@ -872,17 +385,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="idcsCreatedBies")
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsCreatedByArgs']]]]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
@@ -892,9 +394,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -904,17 +403,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsLastModifiedByArgs']]]]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
@@ -924,19 +412,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
@@ -946,18 +421,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="idcsPreventedOperations")
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
@@ -967,22 +430,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]]]:
-        """
-        (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [value]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * idcsPaginateResponse: true
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "members")
 
     @members.setter
@@ -992,19 +439,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupMetaArgs']]]]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
         return pulumi.get(self, "metas")
 
     @metas.setter
@@ -1014,21 +448,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="nonUniqueDisplayName")
     def non_unique_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A human readable name for the group as defined by the Service Consumer.
-
-        **Added In:** 2011192329
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Non-Unique Display Name
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: string
-        """
         return pulumi.get(self, "non_unique_display_name")
 
     @non_unique_display_name.setter
@@ -1038,19 +457,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -1060,9 +466,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -1072,19 +475,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -1094,19 +484,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupTagArgs']]]]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -1116,19 +493,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="tenancyOcid")
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
@@ -1138,9 +502,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
     def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
@@ -1150,9 +511,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsGroups")
     def urnietfparamsscimschemasoracleidcsextensiondbcs_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs']]]]:
-        """
-        (Updatable) Schema for Database Service  Resource
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_groups")
 
     @urnietfparamsscimschemasoracleidcsextensiondbcs_groups.setter
@@ -1162,9 +520,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondynamicGroup")
     def urnietfparamsscimschemasoracleidcsextensiondynamic_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']]:
-        """
-        (Updatable) Dynamic Group
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondynamic_group")
 
     @urnietfparamsscimschemasoracleidcsextensiondynamic_group.setter
@@ -1174,9 +529,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiongroupGroup")
     def urnietfparamsscimschemasoracleidcsextensiongroup_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']]:
-        """
-        (Updatable) Oracle Identity Cloud Service Group
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiongroup_group")
 
     @urnietfparamsscimschemasoracleidcsextensiongroup_group.setter
@@ -1186,9 +538,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixGroup")
     def urnietfparamsscimschemasoracleidcsextensionposix_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']]:
-        """
-        (Updatable) POSIX Group extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_group")
 
     @urnietfparamsscimschemasoracleidcsextensionposix_group.setter
@@ -1198,9 +547,6 @@ class _DomainsGroupState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableGroup")
     def urnietfparamsscimschemasoracleidcsextensionrequestable_group(self) -> Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']]:
-        """
-        (Updatable) Requestable Group
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_group")
 
     @urnietfparamsscimschemasoracleidcsextensionrequestable_group.setter
@@ -1232,114 +578,9 @@ class DomainsGroup(pulumi.CustomResource):
                  urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a group.
-
-        ## Import
-
-        Groups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsGroup:DomainsGroup test_group "idcsEndpoint/{idcsEndpoint}/groups/{groupId}"
-        ```
-
+        Create a DomainsGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] display_name: (Updatable) The Group display name.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMemberArgs']]]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * idcsPaginateResponse: true
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] non_unique_display_name: (Updatable) A human readable name for the group as defined by the Service Consumer.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Non-Unique Display Name
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: string
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupTagArgs']]]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
         ...
     @overload
@@ -1348,18 +589,7 @@ class DomainsGroup(pulumi.CustomResource):
                  args: DomainsGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a group.
-
-        ## Import
-
-        Groups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsGroup:DomainsGroup test_group "idcsEndpoint/{idcsEndpoint}/groups/{groupId}"
-        ```
-
+        Create a DomainsGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DomainsGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1478,195 +708,6 @@ class DomainsGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The Group display name.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Display Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMemberArgs']]]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * idcsPaginateResponse: true
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[str] non_unique_display_name: (Updatable) A human readable name for the group as defined by the Service Consumer.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Non-Unique Display Name
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: string
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupTagArgs']]]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs']]]] urnietfparamsscimschemasoracleidcsextensiondbcs_groups: (Updatable) Schema for Database Service  Resource
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1704,378 +745,135 @@ class DomainsGroup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @property
     @pulumi.getter
     def attributes(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def compartment_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def delete_in_progress(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Group display name.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Display Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def domain_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def external_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsGroupIdcsCreatedBy']]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
+    def idcs_created_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGroupIdcsCreatedBy']]]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Output[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsGroupIdcsLastModifiedBy']]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def idcs_last_modified_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGroupIdcsLastModifiedBy']]]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_last_upgraded_in_release(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_prevented_operations(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter
-    def members(self) -> pulumi.Output[Sequence['outputs.DomainsGroupMember']]:
-        """
-        (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [value]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * idcsPaginateResponse: true
-        * type: complex
-        * uniqueness: none
-        """
+    def members(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGroupMember']]]:
         return pulumi.get(self, "members")
 
     @property
     @pulumi.getter
-    def metas(self) -> pulumi.Output[Sequence['outputs.DomainsGroupMeta']]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
+    def metas(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGroupMeta']]]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="nonUniqueDisplayName")
-    def non_unique_display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A human readable name for the group as defined by the Service Consumer.
-
-        **Added In:** 2011192329
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Non-Unique Display Name
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: string
-        """
+    def non_unique_display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "non_unique_display_name")
 
     @property
     @pulumi.getter
-    def ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
+    def ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> pulumi.Output[Sequence['outputs.DomainsGroupTag']]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def tags(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGroupTag']]]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def tenancy_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Output['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Output[Optional['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsGroups")
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_groups(self) -> pulumi.Output[Sequence['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup']]:
-        """
-        (Updatable) Schema for Database Service  Resource
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_groups(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup']]]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_groups")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondynamicGroup")
-    def urnietfparamsscimschemasoracleidcsextensiondynamic_group(self) -> pulumi.Output['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup']:
-        """
-        (Updatable) Dynamic Group
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondynamic_group(self) -> pulumi.Output[Optional['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondynamic_group")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiongroupGroup")
-    def urnietfparamsscimschemasoracleidcsextensiongroup_group(self) -> pulumi.Output['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup']:
-        """
-        (Updatable) Oracle Identity Cloud Service Group
-        """
+    def urnietfparamsscimschemasoracleidcsextensiongroup_group(self) -> pulumi.Output[Optional['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiongroup_group")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixGroup")
-    def urnietfparamsscimschemasoracleidcsextensionposix_group(self) -> pulumi.Output['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup']:
-        """
-        (Updatable) POSIX Group extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionposix_group(self) -> pulumi.Output[Optional['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_group")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableGroup")
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_group(self) -> pulumi.Output['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup']:
-        """
-        (Updatable) Requestable Group
-        """
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_group(self) -> pulumi.Output[Optional['outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_group")
 

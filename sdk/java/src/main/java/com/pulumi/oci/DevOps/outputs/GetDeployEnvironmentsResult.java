@@ -23,7 +23,7 @@ public final class GetDeployEnvironmentsResult {
      * @return The list of deploy_environment_collection.
      * 
      */
-    private List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections;
+    private @Nullable List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections;
     /**
      * @return Deployment environment display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
@@ -59,7 +59,7 @@ public final class GetDeployEnvironmentsResult {
      * 
      */
     public List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections() {
-        return this.deployEnvironmentCollections;
+        return this.deployEnvironmentCollections == null ? List.of() : this.deployEnvironmentCollections;
     }
     /**
      * @return Deployment environment display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -103,7 +103,7 @@ public final class GetDeployEnvironmentsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections;
+        private @Nullable List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeployEnvironmentsFilter> filters;
         private @Nullable String id;
@@ -127,8 +127,8 @@ public final class GetDeployEnvironmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deployEnvironmentCollections(List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections) {
-            this.deployEnvironmentCollections = Objects.requireNonNull(deployEnvironmentCollections);
+        public Builder deployEnvironmentCollections(@Nullable List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections) {
+            this.deployEnvironmentCollections = deployEnvironmentCollections;
             return this;
         }
         public Builder deployEnvironmentCollections(GetDeployEnvironmentsDeployEnvironmentCollection... deployEnvironmentCollections) {

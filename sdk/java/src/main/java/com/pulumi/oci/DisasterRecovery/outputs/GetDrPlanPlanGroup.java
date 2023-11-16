@@ -8,6 +8,8 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanPlanGroupStep;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrPlanPlanGroup {
@@ -15,51 +17,51 @@ public final class GetDrPlanPlanGroup {
      * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of steps in the group.
      * 
      */
-    private List<GetDrPlanPlanGroupStep> steps;
+    private @Nullable List<GetDrPlanPlanGroupStep> steps;
     /**
      * @return The type of the DR plan.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDrPlanPlanGroup() {}
     /**
      * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of steps in the group.
      * 
      */
     public List<GetDrPlanPlanGroupStep> steps() {
-        return this.steps;
+        return this.steps == null ? List.of() : this.steps;
     }
     /**
      * @return The type of the DR plan.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetDrPlanPlanGroup {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String id;
-        private List<GetDrPlanPlanGroupStep> steps;
-        private String type;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable List<GetDrPlanPlanGroupStep> steps;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDrPlanPlanGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetDrPlanPlanGroup {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder steps(List<GetDrPlanPlanGroupStep> steps) {
-            this.steps = Objects.requireNonNull(steps);
+        public Builder steps(@Nullable List<GetDrPlanPlanGroupStep> steps) {
+            this.steps = steps;
             return this;
         }
         public Builder steps(GetDrPlanPlanGroupStep... steps) {
             return steps(List.of(steps));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDrPlanPlanGroup build() {

@@ -22,15 +22,6 @@ class ReplicationPolicyArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ReplicationPolicy resource.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "destination_bucket_name", destination_bucket_name)
@@ -47,9 +38,6 @@ class ReplicationPolicyArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -59,9 +47,6 @@ class ReplicationPolicyArgs:
     @property
     @pulumi.getter(name="destinationBucketName")
     def destination_bucket_name(self) -> pulumi.Input[str]:
-        """
-        The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        """
         return pulumi.get(self, "destination_bucket_name")
 
     @destination_bucket_name.setter
@@ -71,9 +56,6 @@ class ReplicationPolicyArgs:
     @property
     @pulumi.getter(name="destinationRegionName")
     def destination_region_name(self) -> pulumi.Input[str]:
-        """
-        The destination region to replicate to, for example "us-ashburn-1".
-        """
         return pulumi.get(self, "destination_region_name")
 
     @destination_region_name.setter
@@ -83,13 +65,6 @@ class ReplicationPolicyArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Object Storage namespace used for the request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -111,9 +86,6 @@ class ReplicationPolicyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the policy. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -136,19 +108,6 @@ class _ReplicationPolicyState:
                  time_last_sync: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ReplicationPolicy resources.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
-        :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] status: The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-        :param pulumi.Input[str] status_message: A human-readable description of the status.
-        :param pulumi.Input[str] time_created: The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_last_sync: Changes made to the source bucket before this time has been replicated.
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -177,9 +136,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -201,9 +157,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter(name="destinationBucketName")
     def destination_bucket_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        """
         return pulumi.get(self, "destination_bucket_name")
 
     @destination_bucket_name.setter
@@ -213,9 +166,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter(name="destinationRegionName")
     def destination_region_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The destination region to replicate to, for example "us-ashburn-1".
-        """
         return pulumi.get(self, "destination_region_name")
 
     @destination_region_name.setter
@@ -225,9 +175,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the policy. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -237,13 +184,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Object Storage namespace used for the request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -253,9 +193,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -265,9 +202,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter(name="statusMessage")
     def status_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        A human-readable description of the status.
-        """
         return pulumi.get(self, "status_message")
 
     @status_message.setter
@@ -277,9 +211,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -289,9 +220,6 @@ class _ReplicationPolicyState:
     @property
     @pulumi.getter(name="timeLastSync")
     def time_last_sync(self) -> Optional[pulumi.Input[str]]:
-        """
-        Changes made to the source bucket before this time has been replicated.
-        """
         return pulumi.get(self, "time_last_sync")
 
     @time_last_sync.setter
@@ -312,42 +240,9 @@ class ReplicationPolicy(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a replication policy for the specified bucket.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replication_policy = oci.object_storage.ReplicationPolicy("testReplicationPolicy",
-            bucket=var["replication_policy_bucket"],
-            destination_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            destination_region_name=oci_identity_region["test_region"]["name"],
-            namespace=var["replication_policy_namespace"])
-        ```
-
-        ## Import
-
-        ReplicationPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
-        ```
-
+        Create a ReplicationPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
-        :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -356,31 +251,7 @@ class ReplicationPolicy(pulumi.CustomResource):
                  args: ReplicationPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a replication policy for the specified bucket.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replication_policy = oci.object_storage.ReplicationPolicy("testReplicationPolicy",
-            bucket=var["replication_policy_bucket"],
-            destination_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            destination_region_name=oci_identity_region["test_region"]["name"],
-            namespace=var["replication_policy_namespace"])
-        ```
-
-        ## Import
-
-        ReplicationPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
-        ```
-
+        Create a ReplicationPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ReplicationPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -456,19 +327,6 @@ class ReplicationPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
-        :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] status: The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-        :param pulumi.Input[str] status_message: A human-readable description of the status.
-        :param pulumi.Input[str] time_created: The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_last_sync: Changes made to the source bucket before this time has been replicated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -489,9 +347,6 @@ class ReplicationPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @property
@@ -505,68 +360,40 @@ class ReplicationPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter(name="destinationBucketName")
     def destination_bucket_name(self) -> pulumi.Output[str]:
-        """
-        The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        """
         return pulumi.get(self, "destination_bucket_name")
 
     @property
     @pulumi.getter(name="destinationRegionName")
     def destination_region_name(self) -> pulumi.Output[str]:
-        """
-        The destination region to replicate to, for example "us-ashburn-1".
-        """
         return pulumi.get(self, "destination_region_name")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name of the policy. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Object Storage namespace used for the request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusMessage")
-    def status_message(self) -> pulumi.Output[str]:
-        """
-        A human-readable description of the status.
-        """
+    def status_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status_message")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastSync")
-    def time_last_sync(self) -> pulumi.Output[str]:
-        """
-        Changes made to the source bucket before this time has been replicated.
-        """
+    def time_last_sync(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_sync")
 

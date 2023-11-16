@@ -8,6 +8,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceMeasuredBootReportMeasurementActua
 import com.pulumi.oci.Core.outputs.GetInstanceMeasuredBootReportMeasurementPolicy;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceMeasuredBootReportMeasurement {
@@ -15,12 +16,12 @@ public final class GetInstanceMeasuredBootReportMeasurement {
      * @return The list of actual PCR entries measured during boot.
      * 
      */
-    private List<GetInstanceMeasuredBootReportMeasurementActual> actuals;
+    private @Nullable List<GetInstanceMeasuredBootReportMeasurementActual> actuals;
     /**
      * @return The list of expected PCR entries to use during verification.
      * 
      */
-    private List<GetInstanceMeasuredBootReportMeasurementPolicy> policies;
+    private @Nullable List<GetInstanceMeasuredBootReportMeasurementPolicy> policies;
 
     private GetInstanceMeasuredBootReportMeasurement() {}
     /**
@@ -28,14 +29,14 @@ public final class GetInstanceMeasuredBootReportMeasurement {
      * 
      */
     public List<GetInstanceMeasuredBootReportMeasurementActual> actuals() {
-        return this.actuals;
+        return this.actuals == null ? List.of() : this.actuals;
     }
     /**
      * @return The list of expected PCR entries to use during verification.
      * 
      */
     public List<GetInstanceMeasuredBootReportMeasurementPolicy> policies() {
-        return this.policies;
+        return this.policies == null ? List.of() : this.policies;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetInstanceMeasuredBootReportMeasurement {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstanceMeasuredBootReportMeasurementActual> actuals;
-        private List<GetInstanceMeasuredBootReportMeasurementPolicy> policies;
+        private @Nullable List<GetInstanceMeasuredBootReportMeasurementActual> actuals;
+        private @Nullable List<GetInstanceMeasuredBootReportMeasurementPolicy> policies;
         public Builder() {}
         public Builder(GetInstanceMeasuredBootReportMeasurement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetInstanceMeasuredBootReportMeasurement {
         }
 
         @CustomType.Setter
-        public Builder actuals(List<GetInstanceMeasuredBootReportMeasurementActual> actuals) {
-            this.actuals = Objects.requireNonNull(actuals);
+        public Builder actuals(@Nullable List<GetInstanceMeasuredBootReportMeasurementActual> actuals) {
+            this.actuals = actuals;
             return this;
         }
         public Builder actuals(GetInstanceMeasuredBootReportMeasurementActual... actuals) {
             return actuals(List.of(actuals));
         }
         @CustomType.Setter
-        public Builder policies(List<GetInstanceMeasuredBootReportMeasurementPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+        public Builder policies(@Nullable List<GetInstanceMeasuredBootReportMeasurementPolicy> policies) {
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetInstanceMeasuredBootReportMeasurementPolicy... policies) {

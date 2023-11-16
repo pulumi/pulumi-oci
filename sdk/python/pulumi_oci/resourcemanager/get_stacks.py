@@ -46,17 +46,11 @@ class GetStacksResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Human-readable display name for the stack.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetStacksResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the stack.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def stacks(self) -> Sequence['outputs.GetStacksStackResult']:
-        """
-        The list of stacks.
-        """
+    def stacks(self) -> Optional[Sequence['outputs.GetStacksStackResult']]:
         return pulumi.get(self, "stacks")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the stack.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,35 +95,7 @@ def get_stacks(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStacksResult:
     """
-    This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
-
-    Returns a list of stacks.
-    - If called using the compartment ID, returns all stacks in the specified compartment.
-    - If called using the stack ID, returns the specified stack.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=var["compartment_id"],
-        display_name=var["stack_display_name"],
-        id=var["stack_id"],
-        state=var["stack_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
-    :param str display_name: Display name on which to query.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
-    :param str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-           
-           Allowable values:
-           * CREATING
-           * ACTIVE
-           * DELETING
-           * DELETED
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -166,34 +123,6 @@ def get_stacks_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStacksResult]:
     """
-    This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
-
-    Returns a list of stacks.
-    - If called using the compartment ID, returns all stacks in the specified compartment.
-    - If called using the stack ID, returns the specified stack.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=var["compartment_id"],
-        display_name=var["stack_display_name"],
-        id=var["stack_id"],
-        state=var["stack_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
-    :param str display_name: Display name on which to query.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
-    :param str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-           
-           Allowable values:
-           * CREATING
-           * ACTIVE
-           * DELETING
-           * DELETED
+    Use this data source to access information about an existing resource.
     """
     ...

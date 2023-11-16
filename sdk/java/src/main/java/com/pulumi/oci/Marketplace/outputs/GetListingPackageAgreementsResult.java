@@ -18,7 +18,7 @@ public final class GetListingPackageAgreementsResult {
      * @return The list of agreements.
      * 
      */
-    private List<GetListingPackageAgreementsAgreement> agreements;
+    private @Nullable List<GetListingPackageAgreementsAgreement> agreements;
     /**
      * @return The unique identifier for the compartment.
      * 
@@ -29,7 +29,7 @@ public final class GetListingPackageAgreementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String listingId;
     private String packageVersion;
 
@@ -39,7 +39,7 @@ public final class GetListingPackageAgreementsResult {
      * 
      */
     public List<GetListingPackageAgreementsAgreement> agreements() {
-        return this.agreements;
+        return this.agreements == null ? List.of() : this.agreements;
     }
     /**
      * @return The unique identifier for the compartment.
@@ -55,8 +55,8 @@ public final class GetListingPackageAgreementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String listingId() {
         return this.listingId;
@@ -74,10 +74,10 @@ public final class GetListingPackageAgreementsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetListingPackageAgreementsAgreement> agreements;
+        private @Nullable List<GetListingPackageAgreementsAgreement> agreements;
         private @Nullable String compartmentId;
         private @Nullable List<GetListingPackageAgreementsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String listingId;
         private String packageVersion;
         public Builder() {}
@@ -92,8 +92,8 @@ public final class GetListingPackageAgreementsResult {
         }
 
         @CustomType.Setter
-        public Builder agreements(List<GetListingPackageAgreementsAgreement> agreements) {
-            this.agreements = Objects.requireNonNull(agreements);
+        public Builder agreements(@Nullable List<GetListingPackageAgreementsAgreement> agreements) {
+            this.agreements = agreements;
             return this;
         }
         public Builder agreements(GetListingPackageAgreementsAgreement... agreements) {
@@ -113,8 +113,8 @@ public final class GetListingPackageAgreementsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

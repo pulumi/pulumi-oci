@@ -47,72 +47,72 @@ export interface GetPrivateEndpointResult {
     /**
      * The OCID of a compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly description. Avoid entering confidential information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
      */
-    readonly dnsZones: string[];
+    readonly dnsZones?: string[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of a private endpoint.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The detailed messages about the lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
      */
-    readonly maxHostCount: number;
+    readonly maxHostCount?: number;
     /**
      * An array of network security group OCIDs.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The OCID of the user who created the resource.
      */
-    readonly ownerPrincipalId: string;
+    readonly ownerPrincipalId?: string;
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      */
-    readonly ownerUserName: string;
+    readonly ownerUserName?: string;
     readonly privateEndpointId: string;
     /**
      * An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
      */
-    readonly scanDetails: outputs.DataFlow.GetPrivateEndpointScanDetail[];
+    readonly scanDetails?: outputs.DataFlow.GetPrivateEndpointScanDetail[];
     /**
      * The current state of this private endpoint.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of a subnet.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.

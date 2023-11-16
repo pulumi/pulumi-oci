@@ -127,7 +127,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string RepositoryId;
         /// <summary>
         /// The list of repository_mirror_record_collection.
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.DevOps
         private GetRepositoryMirrorRecordsResult(
             ImmutableArray<Outputs.GetRepositoryMirrorRecordsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string repositoryId,
 

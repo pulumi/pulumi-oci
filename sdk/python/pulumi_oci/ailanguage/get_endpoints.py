@@ -52,25 +52,16 @@ class GetEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="endpointCollections")
-    def endpoint_collections(self) -> Sequence['outputs.GetEndpointsEndpointCollectionResult']:
-        """
-        The list of endpoint_collection.
-        """
+    def endpoint_collections(self) -> Optional[Sequence['outputs.GetEndpointsEndpointCollectionResult']]:
         return pulumi.get(self, "endpoint_collections")
 
     @property
@@ -81,33 +72,21 @@ class GetEndpointsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier endpoint OCID of an endpoint that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
-        """
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the Endpoint.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the endpoint.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,17 +115,7 @@ def get_endpoints(compartment_id: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEndpointsResult:
     """
-    This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
-
-    Returns a list of Endpoints.
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier endpoint OCID of an endpoint that is immutable on creation.
-    :param str model_id: The ID of the trained model for which to list the endpoints.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -180,16 +149,6 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEndpointsResult]:
     """
-    This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
-
-    Returns a list of Endpoints.
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier endpoint OCID of an endpoint that is immutable on creation.
-    :param str model_id: The ID of the trained model for which to list the endpoints.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

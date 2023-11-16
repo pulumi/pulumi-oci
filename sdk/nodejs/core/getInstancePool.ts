@@ -44,39 +44,39 @@ export interface GetInstancePoolArgs {
  * A collection of values returned by getInstancePool.
  */
 export interface GetInstancePoolResult {
-    readonly actualSize: number;
+    readonly actualSize?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      */
-    readonly instanceConfigurationId: string;
+    readonly instanceConfigurationId?: string;
     /**
      * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
      */
-    readonly instanceDisplayNameFormatter: string;
+    readonly instanceDisplayNameFormatter?: string;
     /**
      * A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
-    readonly instanceHostnameFormatter: string;
+    readonly instanceHostnameFormatter?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      */
@@ -84,23 +84,23 @@ export interface GetInstancePoolResult {
     /**
      * The load balancers attached to the instance pool.
      */
-    readonly loadBalancers: outputs.Core.GetInstancePoolLoadBalancer[];
+    readonly loadBalancers?: outputs.Core.GetInstancePoolLoadBalancer[];
     /**
      * The placement configurations for the instance pool.
      */
-    readonly placementConfigurations: outputs.Core.GetInstancePoolPlacementConfiguration[];
+    readonly placementConfigurations?: outputs.Core.GetInstancePoolPlacementConfiguration[];
     /**
      * The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      */
-    readonly size: number;
+    readonly size?: number;
     /**
      * The current state of the instance pool.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.

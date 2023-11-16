@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The number at which the Posix Uid Manual assignment ends.
         /// </summary>
-        public readonly int ManualAssignmentEndsAt;
+        public readonly int? ManualAssignmentEndsAt;
         /// <summary>
         /// The number from which the Posix Uid Manual assignment starts.
         /// </summary>
-        public readonly int ManualAssignmentStartsFrom;
+        public readonly int? ManualAssignmentStartsFrom;
 
         [OutputConstructor]
         private GetDomainsIdentitySettingsIdentitySettingPosixUidResult(
-            int manualAssignmentEndsAt,
+            int? manualAssignmentEndsAt,
 
-            int manualAssignmentStartsFrom)
+            int? manualAssignmentStartsFrom)
         {
             ManualAssignmentEndsAt = manualAssignmentEndsAt;
             ManualAssignmentStartsFrom = manualAssignmentStartsFrom;

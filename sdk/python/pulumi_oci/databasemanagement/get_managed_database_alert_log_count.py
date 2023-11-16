@@ -61,7 +61,7 @@ class GetManagedDatabaseAlertLogCountResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,10 +74,7 @@ class GetManagedDatabaseAlertLogCountResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseAlertLogCountItemResult']:
-        """
-        An array of the counts of different urgency or type of alert logs.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseAlertLogCountItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -93,9 +90,6 @@ class GetManagedDatabaseAlertLogCountResult:
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @property
@@ -142,35 +136,7 @@ def get_managed_database_alert_log_count(group_by: Optional[str] = None,
                                          type_filter: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseAlertLogCountResult:
     """
-    This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
-
-    Get the counts of alert logs for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_alert_log_count = oci.DatabaseManagement.get_managed_database_alert_log_count(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        group_by=var["managed_database_alert_log_count_group_by"],
-        is_regular_expression=var["managed_database_alert_log_count_is_regular_expression"],
-        level_filter=var["managed_database_alert_log_count_level_filter"],
-        log_search_text=var["managed_database_alert_log_count_log_search_text"],
-        time_greater_than_or_equal_to=var["managed_database_alert_log_count_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_alert_log_count_time_less_than_or_equal_to"],
-        type_filter=var["managed_database_alert_log_count_type_filter"])
-    ```
-
-
-    :param str group_by: The optional parameter used to group different alert logs.
-    :param bool is_regular_expression: The flag to indicate whether the search text is regular expression or not.
-    :param str level_filter: The optional parameter to filter the alert logs by log level.
-    :param str log_search_text: The optional query parameter to filter the attention or alert logs by search text.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to timestamp to filter the logs.
-    :param str time_less_than_or_equal_to: The optional less than or equal to timestamp to filter the logs.
-    :param str type_filter: The optional parameter to filter the attention or alert logs by type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['groupBy'] = group_by
@@ -208,34 +174,6 @@ def get_managed_database_alert_log_count_output(group_by: Optional[pulumi.Input[
                                                 type_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseAlertLogCountResult]:
     """
-    This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
-
-    Get the counts of alert logs for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_alert_log_count = oci.DatabaseManagement.get_managed_database_alert_log_count(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        group_by=var["managed_database_alert_log_count_group_by"],
-        is_regular_expression=var["managed_database_alert_log_count_is_regular_expression"],
-        level_filter=var["managed_database_alert_log_count_level_filter"],
-        log_search_text=var["managed_database_alert_log_count_log_search_text"],
-        time_greater_than_or_equal_to=var["managed_database_alert_log_count_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_alert_log_count_time_less_than_or_equal_to"],
-        type_filter=var["managed_database_alert_log_count_type_filter"])
-    ```
-
-
-    :param str group_by: The optional parameter used to group different alert logs.
-    :param bool is_regular_expression: The flag to indicate whether the search text is regular expression or not.
-    :param str level_filter: The optional parameter to filter the alert logs by log level.
-    :param str log_search_text: The optional query parameter to filter the attention or alert logs by search text.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to timestamp to filter the logs.
-    :param str time_less_than_or_equal_to: The optional less than or equal to timestamp to filter the logs.
-    :param str type_filter: The optional parameter to filter the attention or alert logs by type.
+    Use this data source to access information about an existing resource.
     """
     ...

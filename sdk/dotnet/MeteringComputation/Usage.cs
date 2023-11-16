@@ -66,7 +66,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// The compartment depth level.
         /// </summary>
         [Output("compartmentDepth")]
-        public Output<double> CompartmentDepth { get; private set; } = null!;
+        public Output<double?> CompartmentDepth { get; private set; } = null!;
 
         /// <summary>
         /// The filter object for query usage.
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// Forecast configuration of usage/cost.
         /// </summary>
         [Output("forecast")]
-        public Output<Outputs.UsageForecast> Forecast { get; private set; } = null!;
+        public Output<Outputs.UsageForecast?> Forecast { get; private set; } = null!;
 
         /// <summary>
         /// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
         /// </summary>
         [Output("isAggregateByTime")]
-        public Output<bool> IsAggregateByTime { get; private set; } = null!;
+        public Output<bool?> IsAggregateByTime { get; private set; } = null!;
 
         /// <summary>
         /// A list of usage items.
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
         /// </summary>
         [Output("queryType")]
-        public Output<string> QueryType { get; private set; } = null!;
+        public Output<string?> QueryType { get; private set; } = null!;
 
         /// <summary>
         /// Tenant ID.

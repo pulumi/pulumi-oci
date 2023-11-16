@@ -95,7 +95,7 @@ export interface GetAlarmStatusesResult {
     /**
      * The list of alarm_statuses.
      */
-    readonly alarmStatuses: outputs.Monitoring.GetAlarmStatusesAlarmStatus[];
+    readonly alarmStatuses?: outputs.Monitoring.GetAlarmStatusesAlarmStatus[];
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
     /**
@@ -107,7 +107,7 @@ export interface GetAlarmStatusesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly resourceId?: string;
     readonly serviceName?: string;
     /**

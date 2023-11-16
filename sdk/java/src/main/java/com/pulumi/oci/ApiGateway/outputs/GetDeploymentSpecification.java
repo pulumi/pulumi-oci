@@ -9,6 +9,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicy
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRoute;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecification {
@@ -16,17 +17,17 @@ public final class GetDeploymentSpecification {
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies;
+    private @Nullable List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies;
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicy> requestPolicies;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicy> requestPolicies;
     /**
      * @return A list of routes that this API exposes.
      * 
      */
-    private List<GetDeploymentSpecificationRoute> routes;
+    private @Nullable List<GetDeploymentSpecificationRoute> routes;
 
     private GetDeploymentSpecification() {}
     /**
@@ -34,21 +35,21 @@ public final class GetDeploymentSpecification {
      * 
      */
     public List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies() {
-        return this.loggingPolicies;
+        return this.loggingPolicies == null ? List.of() : this.loggingPolicies;
     }
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicy> requestPolicies() {
-        return this.requestPolicies;
+        return this.requestPolicies == null ? List.of() : this.requestPolicies;
     }
     /**
      * @return A list of routes that this API exposes.
      * 
      */
     public List<GetDeploymentSpecificationRoute> routes() {
-        return this.routes;
+        return this.routes == null ? List.of() : this.routes;
     }
 
     public static Builder builder() {
@@ -60,9 +61,9 @@ public final class GetDeploymentSpecification {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies;
-        private List<GetDeploymentSpecificationRequestPolicy> requestPolicies;
-        private List<GetDeploymentSpecificationRoute> routes;
+        private @Nullable List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicy> requestPolicies;
+        private @Nullable List<GetDeploymentSpecificationRoute> routes;
         public Builder() {}
         public Builder(GetDeploymentSpecification defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +73,24 @@ public final class GetDeploymentSpecification {
         }
 
         @CustomType.Setter
-        public Builder loggingPolicies(List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies) {
-            this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
+        public Builder loggingPolicies(@Nullable List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies) {
+            this.loggingPolicies = loggingPolicies;
             return this;
         }
         public Builder loggingPolicies(GetDeploymentSpecificationLoggingPolicy... loggingPolicies) {
             return loggingPolicies(List.of(loggingPolicies));
         }
         @CustomType.Setter
-        public Builder requestPolicies(List<GetDeploymentSpecificationRequestPolicy> requestPolicies) {
-            this.requestPolicies = Objects.requireNonNull(requestPolicies);
+        public Builder requestPolicies(@Nullable List<GetDeploymentSpecificationRequestPolicy> requestPolicies) {
+            this.requestPolicies = requestPolicies;
             return this;
         }
         public Builder requestPolicies(GetDeploymentSpecificationRequestPolicy... requestPolicies) {
             return requestPolicies(List.of(requestPolicies));
         }
         @CustomType.Setter
-        public Builder routes(List<GetDeploymentSpecificationRoute> routes) {
-            this.routes = Objects.requireNonNull(routes);
+        public Builder routes(@Nullable List<GetDeploymentSpecificationRoute> routes) {
+            this.routes = routes;
             return this;
         }
         public Builder routes(GetDeploymentSpecificationRoute... routes) {

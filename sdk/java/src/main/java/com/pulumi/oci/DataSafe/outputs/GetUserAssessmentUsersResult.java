@@ -32,7 +32,7 @@ public final class GetUserAssessmentUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the target database.
      * 
@@ -67,7 +67,7 @@ public final class GetUserAssessmentUsersResult {
      * @return The list of users.
      * 
      */
-    private List<GetUserAssessmentUsersUser> users;
+    private @Nullable List<GetUserAssessmentUsersUser> users;
 
     private GetUserAssessmentUsersResult() {}
     public Optional<String> accessLevel() {
@@ -97,8 +97,8 @@ public final class GetUserAssessmentUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the target database.
@@ -163,7 +163,7 @@ public final class GetUserAssessmentUsersResult {
      * 
      */
     public List<GetUserAssessmentUsersUser> users() {
-        return this.users;
+        return this.users == null ? List.of() : this.users;
     }
 
     public static Builder builder() {
@@ -180,7 +180,7 @@ public final class GetUserAssessmentUsersResult {
         private @Nullable String authenticationType;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetUserAssessmentUsersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String targetId;
         private @Nullable String timeLastLoginGreaterThanOrEqualTo;
         private @Nullable String timeLastLoginLessThan;
@@ -195,7 +195,7 @@ public final class GetUserAssessmentUsersResult {
         private @Nullable String userProfile;
         private @Nullable String userRole;
         private @Nullable String userType;
-        private List<GetUserAssessmentUsersUser> users;
+        private @Nullable List<GetUserAssessmentUsersUser> users;
         public Builder() {}
         public Builder(GetUserAssessmentUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -251,8 +251,8 @@ public final class GetUserAssessmentUsersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -326,8 +326,8 @@ public final class GetUserAssessmentUsersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder users(List<GetUserAssessmentUsersUser> users) {
-            this.users = Objects.requireNonNull(users);
+        public Builder users(@Nullable List<GetUserAssessmentUsersUser> users) {
+            this.users = users;
             return this;
         }
         public Builder users(GetUserAssessmentUsersUser... users) {

@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveTypesSensitiveTypeCollectionItem {
@@ -15,231 +17,231 @@ public final class GetSensitiveTypesSensitiveTypeCollectionItem {
      * @return A regular expression to be used by data discovery for matching column comments.
      * 
      */
-    private String commentPattern;
+    private @Nullable String commentPattern;
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A regular expression to be used by data discovery for matching column data values.
      * 
      */
-    private String dataPattern;
+    private @Nullable String dataPattern;
     /**
      * @return A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
      * 
      */
-    private String defaultMaskingFormatId;
+    private @Nullable String defaultMaskingFormatId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the sensitive type.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A filter to return the sensitive type resources based on the value of their entityType attribute.
      * 
      */
-    private String entityType;
+    private @Nullable String entityType;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the sensitive type.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A regular expression to be used by data discovery for matching column names.
      * 
      */
-    private String namePattern;
+    private @Nullable String namePattern;
     /**
      * @return A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
      * 
      */
-    private String parentCategoryId;
+    private @Nullable String parentCategoryId;
     /**
      * @return The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      * 
      */
-    private String searchType;
+    private @Nullable String searchType;
     /**
      * @return The short name of the sensitive type.
      * 
      */
-    private String shortName;
+    private @Nullable String shortName;
     /**
      * @return Specifies whether the sensitive type is user-defined or predefined.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetSensitiveTypesSensitiveTypeCollectionItem() {}
     /**
      * @return A regular expression to be used by data discovery for matching column comments.
      * 
      */
-    public String commentPattern() {
-        return this.commentPattern;
+    public Optional<String> commentPattern() {
+        return Optional.ofNullable(this.commentPattern);
     }
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A regular expression to be used by data discovery for matching column data values.
      * 
      */
-    public String dataPattern() {
-        return this.dataPattern;
+    public Optional<String> dataPattern() {
+        return Optional.ofNullable(this.dataPattern);
     }
     /**
      * @return A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
      * 
      */
-    public String defaultMaskingFormatId() {
-        return this.defaultMaskingFormatId;
+    public Optional<String> defaultMaskingFormatId() {
+        return Optional.ofNullable(this.defaultMaskingFormatId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the sensitive type.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A filter to return the sensitive type resources based on the value of their entityType attribute.
      * 
      */
-    public String entityType() {
-        return this.entityType;
+    public Optional<String> entityType() {
+        return Optional.ofNullable(this.entityType);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the sensitive type.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A regular expression to be used by data discovery for matching column names.
      * 
      */
-    public String namePattern() {
-        return this.namePattern;
+    public Optional<String> namePattern() {
+        return Optional.ofNullable(this.namePattern);
     }
     /**
      * @return A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
      * 
      */
-    public String parentCategoryId() {
-        return this.parentCategoryId;
+    public Optional<String> parentCategoryId() {
+        return Optional.ofNullable(this.parentCategoryId);
     }
     /**
      * @return The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      * 
      */
-    public String searchType() {
-        return this.searchType;
+    public Optional<String> searchType() {
+        return Optional.ofNullable(this.searchType);
     }
     /**
      * @return The short name of the sensitive type.
      * 
      */
-    public String shortName() {
-        return this.shortName;
+    public Optional<String> shortName() {
+        return Optional.ofNullable(this.shortName);
     }
     /**
      * @return Specifies whether the sensitive type is user-defined or predefined.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -251,25 +253,25 @@ public final class GetSensitiveTypesSensitiveTypeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commentPattern;
-        private String compartmentId;
-        private String dataPattern;
-        private String defaultMaskingFormatId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private String entityType;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String namePattern;
-        private String parentCategoryId;
-        private String searchType;
-        private String shortName;
-        private String source;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String commentPattern;
+        private @Nullable String compartmentId;
+        private @Nullable String dataPattern;
+        private @Nullable String defaultMaskingFormatId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String entityType;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String namePattern;
+        private @Nullable String parentCategoryId;
+        private @Nullable String searchType;
+        private @Nullable String shortName;
+        private @Nullable String source;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetSensitiveTypesSensitiveTypeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -295,98 +297,98 @@ public final class GetSensitiveTypesSensitiveTypeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder commentPattern(String commentPattern) {
-            this.commentPattern = Objects.requireNonNull(commentPattern);
+        public Builder commentPattern(@Nullable String commentPattern) {
+            this.commentPattern = commentPattern;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dataPattern(String dataPattern) {
-            this.dataPattern = Objects.requireNonNull(dataPattern);
+        public Builder dataPattern(@Nullable String dataPattern) {
+            this.dataPattern = dataPattern;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultMaskingFormatId(String defaultMaskingFormatId) {
-            this.defaultMaskingFormatId = Objects.requireNonNull(defaultMaskingFormatId);
+        public Builder defaultMaskingFormatId(@Nullable String defaultMaskingFormatId) {
+            this.defaultMaskingFormatId = defaultMaskingFormatId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+        public Builder entityType(@Nullable String entityType) {
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder namePattern(String namePattern) {
-            this.namePattern = Objects.requireNonNull(namePattern);
+        public Builder namePattern(@Nullable String namePattern) {
+            this.namePattern = namePattern;
             return this;
         }
         @CustomType.Setter
-        public Builder parentCategoryId(String parentCategoryId) {
-            this.parentCategoryId = Objects.requireNonNull(parentCategoryId);
+        public Builder parentCategoryId(@Nullable String parentCategoryId) {
+            this.parentCategoryId = parentCategoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder searchType(String searchType) {
-            this.searchType = Objects.requireNonNull(searchType);
+        public Builder searchType(@Nullable String searchType) {
+            this.searchType = searchType;
             return this;
         }
         @CustomType.Setter
-        public Builder shortName(String shortName) {
-            this.shortName = Objects.requireNonNull(shortName);
+        public Builder shortName(@Nullable String shortName) {
+            this.shortName = shortName;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSensitiveTypesSensitiveTypeCollectionItem build() {

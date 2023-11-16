@@ -59,11 +59,11 @@ export interface GetInfrastructureTargetVersionResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The history entry of the target system software version for the database server patching operation.
      */
-    readonly targetDbVersionHistoryEntries: string[];
+    readonly targetDbVersionHistoryEntries?: string[];
     /**
      * The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
      */
@@ -75,7 +75,7 @@ export interface GetInfrastructureTargetVersionResult {
     /**
      * The history entry of the target storage cell system software version for the storage cell patching operation.
      */
-    readonly targetStorageVersionHistoryEntries: string[];
+    readonly targetStorageVersionHistoryEntries?: string[];
 }
 /**
  * This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.

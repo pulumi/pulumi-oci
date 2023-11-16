@@ -359,7 +359,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OS family the software source belongs to.
         /// </summary>
@@ -398,7 +398,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetSoftwareSourcesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> osFamilies,
 

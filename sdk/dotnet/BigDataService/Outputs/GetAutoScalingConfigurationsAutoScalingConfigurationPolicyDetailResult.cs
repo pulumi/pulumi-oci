@@ -13,21 +13,21 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult
     {
-        public readonly string ActionType;
-        public readonly string PolicyType;
+        public readonly string? ActionType;
+        public readonly string? PolicyType;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigResult> ScaleDownConfigs;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigResult> ScaleInConfigs;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigResult> ScaleOutConfigs;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigResult> ScaleUpConfigs;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailResult> ScheduleDetails;
-        public readonly string Timezone;
-        public readonly string TriggerType;
+        public readonly string? Timezone;
+        public readonly string? TriggerType;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult(
-            string actionType,
+            string? actionType,
 
-            string policyType,
+            string? policyType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigResult> scaleDownConfigs,
 
@@ -39,9 +39,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailResult> scheduleDetails,
 
-            string timezone,
+            string? timezone,
 
-            string triggerType)
+            string? triggerType)
         {
             ActionType = actionType;
             PolicyType = policyType;

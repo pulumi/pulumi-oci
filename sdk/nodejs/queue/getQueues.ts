@@ -81,7 +81,7 @@ export interface GetQueuesResult {
     /**
      * The list of queue_collection.
      */
-    readonly queueCollections: outputs.Queue.GetQueuesQueueCollection[];
+    readonly queueCollections?: outputs.Queue.GetQueuesQueueCollection[];
     /**
      * The current state of the queue.
      */

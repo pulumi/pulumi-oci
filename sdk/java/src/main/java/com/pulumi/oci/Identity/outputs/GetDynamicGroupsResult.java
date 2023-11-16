@@ -23,13 +23,13 @@ public final class GetDynamicGroupsResult {
      * @return The list of dynamic_groups.
      * 
      */
-    private List<GetDynamicGroupsDynamicGroup> dynamicGroups;
+    private @Nullable List<GetDynamicGroupsDynamicGroup> dynamicGroups;
     private @Nullable List<GetDynamicGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      * 
@@ -54,7 +54,7 @@ public final class GetDynamicGroupsResult {
      * 
      */
     public List<GetDynamicGroupsDynamicGroup> dynamicGroups() {
-        return this.dynamicGroups;
+        return this.dynamicGroups == null ? List.of() : this.dynamicGroups;
     }
     public List<GetDynamicGroupsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -63,8 +63,8 @@ public final class GetDynamicGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -91,9 +91,9 @@ public final class GetDynamicGroupsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDynamicGroupsDynamicGroup> dynamicGroups;
+        private @Nullable List<GetDynamicGroupsDynamicGroup> dynamicGroups;
         private @Nullable List<GetDynamicGroupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -113,8 +113,8 @@ public final class GetDynamicGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dynamicGroups(List<GetDynamicGroupsDynamicGroup> dynamicGroups) {
-            this.dynamicGroups = Objects.requireNonNull(dynamicGroups);
+        public Builder dynamicGroups(@Nullable List<GetDynamicGroupsDynamicGroup> dynamicGroups) {
+            this.dynamicGroups = dynamicGroups;
             return this;
         }
         public Builder dynamicGroups(GetDynamicGroupsDynamicGroup... dynamicGroups) {
@@ -129,8 +129,8 @@ public final class GetDynamicGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

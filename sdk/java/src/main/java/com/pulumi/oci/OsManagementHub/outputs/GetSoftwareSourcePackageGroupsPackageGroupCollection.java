@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourcePackageGroupsPackageGroupCollection {
-    private List<GetSoftwareSourcePackageGroupsPackageGroupCollectionItem> items;
+    private @Nullable List<GetSoftwareSourcePackageGroupsPackageGroupCollectionItem> items;
 
     private GetSoftwareSourcePackageGroupsPackageGroupCollection() {}
     public List<GetSoftwareSourcePackageGroupsPackageGroupCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSoftwareSourcePackageGroupsPackageGroupCollectionItem> items;
+        private @Nullable List<GetSoftwareSourcePackageGroupsPackageGroupCollectionItem> items;
         public Builder() {}
         public Builder(GetSoftwareSourcePackageGroupsPackageGroupCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSoftwareSourcePackageGroupsPackageGroupCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSoftwareSourcePackageGroupsPackageGroupCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSoftwareSourcePackageGroupsPackageGroupCollectionItem... items) {

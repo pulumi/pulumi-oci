@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetComputeNvdimmController {
@@ -14,27 +16,27 @@ public final class GetAssetComputeNvdimmController {
      * @return Bus number.
      * 
      */
-    private Integer busNumber;
+    private @Nullable Integer busNumber;
     /**
      * @return Provides a label and summary information for the device.
      * 
      */
-    private String label;
+    private @Nullable String label;
 
     private GetAssetComputeNvdimmController() {}
     /**
      * @return Bus number.
      * 
      */
-    public Integer busNumber() {
-        return this.busNumber;
+    public Optional<Integer> busNumber() {
+        return Optional.ofNullable(this.busNumber);
     }
     /**
      * @return Provides a label and summary information for the device.
      * 
      */
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetAssetComputeNvdimmController {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer busNumber;
-        private String label;
+        private @Nullable Integer busNumber;
+        private @Nullable String label;
         public Builder() {}
         public Builder(GetAssetComputeNvdimmController defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetAssetComputeNvdimmController {
         }
 
         @CustomType.Setter
-        public Builder busNumber(Integer busNumber) {
-            this.busNumber = Objects.requireNonNull(busNumber);
+        public Builder busNumber(@Nullable Integer busNumber) {
+            this.busNumber = busNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         public GetAssetComputeNvdimmController build() {

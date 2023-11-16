@@ -16,43 +16,43 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
         /// </summary>
-        public readonly string CpeId;
+        public readonly string? CpeId;
         /// <summary>
         /// Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier here must correspond to the value for `cpeLocalIdentifierType`.
         /// </summary>
-        public readonly string CpeLocalIdentifier;
+        public readonly string? CpeLocalIdentifier;
         /// <summary>
         /// The type of identifier for your CPE device. The value here must correspond to the value for `cpeLocalIdentifier`.
         /// </summary>
-        public readonly string CpeLocalIdentifierType;
+        public readonly string? CpeLocalIdentifierType;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         /// </summary>
-        public readonly string DrgId;
+        public readonly string? DrgId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The IPSec connection's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Static routes to the CPE. The CIDR must not be a multicast address or class E address.
         /// </summary>
@@ -60,39 +60,39 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The transport type used for the IPSec connection.
         /// </summary>
-        public readonly string TransportType;
+        public readonly string? TransportType;
 
         [OutputConstructor]
         private GetIpsecConnectionsConnectionResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string cpeId,
+            string? cpeId,
 
-            string cpeLocalIdentifier,
+            string? cpeLocalIdentifier,
 
-            string cpeLocalIdentifierType,
+            string? cpeLocalIdentifierType,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string drgId,
+            string? drgId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> staticRoutes,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string transportType)
+            string? transportType)
         {
             CompartmentId = compartmentId;
             CpeId = cpeId;

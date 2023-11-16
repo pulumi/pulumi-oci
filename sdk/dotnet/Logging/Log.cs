@@ -71,19 +71,19 @@ namespace Pulumi.Oci.Logging
         /// The OCID of the compartment that the resource belongs to.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Log object configuration.
         /// </summary>
         [Output("configuration")]
-        public Output<Outputs.LogConfiguration> Configuration { get; private set; } = null!;
+        public Output<Outputs.LogConfiguration?> Configuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -95,13 +95,13 @@ namespace Pulumi.Oci.Logging
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether or not this resource is currently enabled.
         /// </summary>
         [Output("isEnabled")]
-        public Output<bool> IsEnabled { get; private set; } = null!;
+        public Output<bool?> IsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OCID of a log group to work with.
@@ -123,31 +123,31 @@ namespace Pulumi.Oci.Logging
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("retentionDuration")]
-        public Output<int> RetentionDuration { get; private set; } = null!;
+        public Output<int?> RetentionDuration { get; private set; } = null!;
 
         /// <summary>
         /// The pipeline state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the tenancy.
         /// </summary>
         [Output("tenancyId")]
-        public Output<string> TenancyId { get; private set; } = null!;
+        public Output<string?> TenancyId { get; private set; } = null!;
 
         /// <summary>
         /// Time the resource was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Time the resource was last modified.
         /// </summary>
         [Output("timeLastModified")]
-        public Output<string> TimeLastModified { get; private set; } = null!;
+        public Output<string?> TimeLastModified { get; private set; } = null!;
 
 
         /// <summary>

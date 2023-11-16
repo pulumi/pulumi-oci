@@ -72,11 +72,11 @@ export class EmWarehouse extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * EmWarehouse Identifier
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) EMBridge Identifier
      */
@@ -84,27 +84,27 @@ export class EmWarehouse extends pulumi.CustomResource {
     /**
      * Type of the EmWarehouse.
      */
-    public /*out*/ readonly emWarehouseType!: pulumi.Output<string>;
+    public /*out*/ readonly emWarehouseType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Data Flow Run Status Message
      */
-    public /*out*/ readonly latestEtlRunMessage!: pulumi.Output<string>;
+    public /*out*/ readonly latestEtlRunMessage!: pulumi.Output<string | undefined>;
     /**
      * Data Flow Run Status
      */
-    public /*out*/ readonly latestEtlRunStatus!: pulumi.Output<string>;
+    public /*out*/ readonly latestEtlRunStatus!: pulumi.Output<string | undefined>;
     /**
      * Data Flow Run Total Time
      */
-    public /*out*/ readonly latestEtlRunTime!: pulumi.Output<string>;
+    public /*out*/ readonly latestEtlRunTime!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * operations Insights Warehouse Identifier
      *
@@ -116,19 +116,19 @@ export class EmWarehouse extends pulumi.CustomResource {
     /**
      * The current state of the EmWarehouse.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the the EmWarehouse was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the EmWarehouse was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a EmWarehouse resource with the given unique name, arguments, and options.

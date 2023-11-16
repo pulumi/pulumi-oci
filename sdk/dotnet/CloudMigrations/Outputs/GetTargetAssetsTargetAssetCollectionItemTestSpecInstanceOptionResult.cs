@@ -16,10 +16,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         /// </summary>
-        public readonly bool AreLegacyImdsEndpointsDisabled;
+        public readonly bool? AreLegacyImdsEndpointsDisabled;
 
         [OutputConstructor]
-        private GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionResult(bool areLegacyImdsEndpointsDisabled)
+        private GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionResult(bool? areLegacyImdsEndpointsDisabled)
         {
             AreLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
         }

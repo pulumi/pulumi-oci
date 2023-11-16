@@ -26,18 +26,6 @@ class PrivateApplicationArgs:
                  long_description: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PrivateApplication resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the private application.
-        :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -55,9 +43,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +52,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the private application.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -79,9 +61,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="packageDetails")
     def package_details(self) -> pulumi.Input['PrivateApplicationPackageDetailsArgs']:
-        """
-        A base object for creating a private application package.
-        """
         return pulumi.get(self, "package_details")
 
     @package_details.setter
@@ -91,13 +70,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="shortDescription")
     def short_description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A short description of the private application.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "short_description")
 
     @short_description.setter
@@ -107,9 +79,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -119,9 +88,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -131,9 +97,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="logoFileBase64encoded")
     def logo_file_base64encoded(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        """
         return pulumi.get(self, "logo_file_base64encoded")
 
     @logo_file_base64encoded.setter
@@ -143,9 +106,6 @@ class PrivateApplicationArgs:
     @property
     @pulumi.getter(name="longDescription")
     def long_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A long description of the private application.
-        """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
@@ -171,23 +131,6 @@ class _PrivateApplicationState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PrivateApplication resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the private application.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        :param pulumi.Input[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]] logos: The model for uploaded binary data, like logos and images.
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
-        :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
-        :param pulumi.Input[str] package_type: The package's type.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The lifecycle state of the private application.
-        :param pulumi.Input[str] time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -219,9 +162,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -231,9 +171,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -243,9 +180,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the private application.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -255,9 +189,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -267,9 +198,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="logoFileBase64encoded")
     def logo_file_base64encoded(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        """
         return pulumi.get(self, "logo_file_base64encoded")
 
     @logo_file_base64encoded.setter
@@ -279,9 +207,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter
     def logos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]]:
-        """
-        The model for uploaded binary data, like logos and images.
-        """
         return pulumi.get(self, "logos")
 
     @logos.setter
@@ -291,9 +216,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="longDescription")
     def long_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A long description of the private application.
-        """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
@@ -303,9 +225,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="packageDetails")
     def package_details(self) -> Optional[pulumi.Input['PrivateApplicationPackageDetailsArgs']]:
-        """
-        A base object for creating a private application package.
-        """
         return pulumi.get(self, "package_details")
 
     @package_details.setter
@@ -315,9 +234,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @package_type.setter
@@ -327,13 +243,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="shortDescription")
     def short_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the private application.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "short_description")
 
     @short_description.setter
@@ -343,9 +252,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle state of the private application.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -355,9 +261,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -367,9 +270,6 @@ class _PrivateApplicationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -392,57 +292,9 @@ class PrivateApplication(pulumi.CustomResource):
                  short_description: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates a private application along with a single package to be hosted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_private_application = oci.service_catalog.PrivateApplication("testPrivateApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_application_display_name"],
-            package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=var["private_application_package_details_package_type"],
-                version=var["private_application_package_details_version"],
-                zip_file_base64encoded=var["private_application_package_details_zip_file_base64encoded"],
-            ),
-            short_description=var["private_application_short_description"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
-            long_description=var["private_application_long_description"])
-        ```
-
-        ## Import
-
-        PrivateApplications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
-        ```
-
+        Create a PrivateApplication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the private application.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
-        :param pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']] package_details: A base object for creating a private application package.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -451,43 +303,7 @@ class PrivateApplication(pulumi.CustomResource):
                  args: PrivateApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates a private application along with a single package to be hosted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_private_application = oci.service_catalog.PrivateApplication("testPrivateApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_application_display_name"],
-            package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=var["private_application_package_details_package_type"],
-                version=var["private_application_package_details_version"],
-                zip_file_base64encoded=var["private_application_package_details_zip_file_base64encoded"],
-            ),
-            short_description=var["private_application_short_description"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
-            long_description=var["private_application_long_description"])
-        ```
-
-        ## Import
-
-        PrivateApplications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
-        ```
-
+        Create a PrivateApplication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PrivateApplicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -571,23 +387,6 @@ class PrivateApplication(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the private application.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PrivateApplicationLogoArgs']]]] logos: The model for uploaded binary data, like logos and images.
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
-        :param pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']] package_details: A base object for creating a private application package.
-        :param pulumi.Input[str] package_type: The package's type.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The lifecycle state of the private application.
-        :param pulumi.Input[str] time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -611,108 +410,65 @@ class PrivateApplication(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the private application.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="logoFileBase64encoded")
-    def logo_file_base64encoded(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        """
+    def logo_file_base64encoded(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "logo_file_base64encoded")
 
     @property
     @pulumi.getter
-    def logos(self) -> pulumi.Output[Sequence['outputs.PrivateApplicationLogo']]:
-        """
-        The model for uploaded binary data, like logos and images.
-        """
+    def logos(self) -> pulumi.Output[Optional[Sequence['outputs.PrivateApplicationLogo']]]:
         return pulumi.get(self, "logos")
 
     @property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A long description of the private application.
-        """
+    def long_description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "long_description")
 
     @property
     @pulumi.getter(name="packageDetails")
     def package_details(self) -> pulumi.Output['outputs.PrivateApplicationPackageDetails']:
-        """
-        A base object for creating a private application package.
-        """
         return pulumi.get(self, "package_details")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> pulumi.Output[str]:
-        """
-        The package's type.
-        """
+    def package_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="shortDescription")
     def short_description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A short description of the private application.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "short_description")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The lifecycle state of the private application.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

@@ -69,25 +69,25 @@ namespace Pulumi.Oci.Bastion
         /// The name of the bastion that is hosting this session.
         /// </summary>
         [Output("bastionName")]
-        public Output<string> BastionName { get; private set; } = null!;
+        public Output<string?> BastionName { get; private set; } = null!;
 
         /// <summary>
         /// The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
         /// </summary>
         [Output("bastionPublicHostKeyInfo")]
-        public Output<string> BastionPublicHostKeyInfo { get; private set; } = null!;
+        public Output<string?> BastionPublicHostKeyInfo { get; private set; } = null!;
 
         /// <summary>
         /// The username that the session uses to connect to the target resource.
         /// </summary>
         [Output("bastionUserName")]
-        public Output<string> BastionUserName { get; private set; } = null!;
+        public Output<string?> BastionUserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the session.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Public key details for a bastion session.
@@ -99,31 +99,31 @@ namespace Pulumi.Oci.Bastion
         /// The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         /// </summary>
         [Output("keyType")]
-        public Output<string> KeyType { get; private set; } = null!;
+        public Output<string?> KeyType { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current session state in more detail.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The amount of time the session can remain active.
         /// </summary>
         [Output("sessionTtlInSeconds")]
-        public Output<int> SessionTtlInSeconds { get; private set; } = null!;
+        public Output<int?> SessionTtlInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// The connection message for the session.
         /// </summary>
         [Output("sshMetadata")]
-        public Output<ImmutableDictionary<string, object>> SshMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SshMetadata { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the session.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Details about a bastion session's target resource.
@@ -135,13 +135,13 @@ namespace Pulumi.Oci.Bastion
         /// The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

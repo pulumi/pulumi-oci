@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Em Warehouse Etl Runs in Oracle Cloud Infrastructure Em Warehouse service.
@@ -75,7 +74,7 @@ type GetEtlRunsResult struct {
 	EtlRunCollections []GetEtlRunsEtlRunCollection `pulumi:"etlRunCollections"`
 	Filters           []GetEtlRunsFilter           `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetEtlRunsOutput(ctx *pulumi.Context, args GetEtlRunsOutputArgs, opts ...pulumi.InvokeOption) GetEtlRunsResultOutput {
@@ -121,12 +120,6 @@ func (o GetEtlRunsResultOutput) ToGetEtlRunsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetEtlRunsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsResult] {
-	return pulumix.Output[GetEtlRunsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
 func (o GetEtlRunsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetEtlRunsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -151,8 +144,8 @@ func (o GetEtlRunsResultOutput) Filters() GetEtlRunsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetEtlRunsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEtlRunsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEtlRunsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEtlRunsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

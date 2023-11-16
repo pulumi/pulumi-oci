@@ -9,6 +9,7 @@ import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetBackendSetsResult {
      * @return The list of backend_set_collection.
      * 
      */
-    private List<GetBackendSetsBackendSetCollection> backendSetCollections;
+    private @Nullable List<GetBackendSetsBackendSetCollection> backendSetCollections;
     private @Nullable List<GetBackendSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkLoadBalancerId;
 
     private GetBackendSetsResult() {}
@@ -32,7 +33,7 @@ public final class GetBackendSetsResult {
      * 
      */
     public List<GetBackendSetsBackendSetCollection> backendSetCollections() {
-        return this.backendSetCollections;
+        return this.backendSetCollections == null ? List.of() : this.backendSetCollections;
     }
     public List<GetBackendSetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -41,8 +42,8 @@ public final class GetBackendSetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkLoadBalancerId() {
         return this.networkLoadBalancerId;
@@ -57,9 +58,9 @@ public final class GetBackendSetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackendSetsBackendSetCollection> backendSetCollections;
+        private @Nullable List<GetBackendSetsBackendSetCollection> backendSetCollections;
         private @Nullable List<GetBackendSetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkLoadBalancerId;
         public Builder() {}
         public Builder(GetBackendSetsResult defaults) {
@@ -71,8 +72,8 @@ public final class GetBackendSetsResult {
         }
 
         @CustomType.Setter
-        public Builder backendSetCollections(List<GetBackendSetsBackendSetCollection> backendSetCollections) {
-            this.backendSetCollections = Objects.requireNonNull(backendSetCollections);
+        public Builder backendSetCollections(@Nullable List<GetBackendSetsBackendSetCollection> backendSetCollections) {
+            this.backendSetCollections = backendSetCollections;
             return this;
         }
         public Builder backendSetCollections(GetBackendSetsBackendSetCollection... backendSetCollections) {
@@ -87,8 +88,8 @@ public final class GetBackendSetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

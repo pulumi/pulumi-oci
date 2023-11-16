@@ -16,27 +16,27 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only the resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// unique MediaWorkflowJob identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The lifecycle details of MediaWorkflowJob task.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Configurations to be applied to this run of the workflow.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Unique MediaWorkflow identifier.
         /// </summary>
-        public readonly string MediaWorkflowId;
-        public readonly string MediaWorkflowName;
+        public readonly string? MediaWorkflowId;
+        public readonly string? MediaWorkflowName;
         /// <summary>
         /// A list of JobOutput for the workflowJob.
         /// </summary>
@@ -53,19 +53,19 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         /// </summary>
-        public readonly string Parameters;
+        public readonly string? Parameters;
         /// <summary>
         /// A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
         /// </summary>
-        public readonly string Runnable;
+        public readonly string? Runnable;
         /// <summary>
         /// A filter to return only the resources with lifecycleState matching the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Status of each task.
         /// </summary>
@@ -73,62 +73,62 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Creation time of the job. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time when the job finished. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// Time when the job started to execute. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// Updated time of the job. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
-        public readonly string WorkflowIdentifierType;
+        public readonly string? TimeUpdated;
+        public readonly string? WorkflowIdentifierType;
 
         [OutputConstructor]
         private GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> mediaWorkflowConfigurationIds,
 
-            string mediaWorkflowId,
+            string? mediaWorkflowId,
 
-            string mediaWorkflowName,
+            string? mediaWorkflowName,
 
             ImmutableArray<Outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult> outputs,
 
-            string parameters,
+            string? parameters,
 
-            string runnable,
+            string? runnable,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             ImmutableArray<Outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult> taskLifecycleStates,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string workflowIdentifierType)
+            string? workflowIdentifierType)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -77,11 +77,11 @@ export interface GetInvoicesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of invoices.
      */
-    readonly invoices: outputs.OneSubsription.GetInvoicesInvoice[];
+    readonly invoices?: outputs.OneSubsription.GetInvoicesInvoice[];
     readonly timeFrom?: string;
     readonly timeTo?: string;
 }

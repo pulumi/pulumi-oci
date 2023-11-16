@@ -49,9 +49,6 @@ class GetPrivateApplicationPackagesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the package.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -61,7 +58,7 @@ class GetPrivateApplicationPackagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,25 +67,16 @@ class GetPrivateApplicationPackagesResult:
     @property
     @pulumi.getter(name="packageTypes")
     def package_types(self) -> Optional[Sequence[str]]:
-        """
-        The specified package's type.
-        """
         return pulumi.get(self, "package_types")
 
     @property
     @pulumi.getter(name="privateApplicationId")
     def private_application_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
-        """
         return pulumi.get(self, "private_application_id")
 
     @property
     @pulumi.getter(name="privateApplicationPackageCollections")
-    def private_application_package_collections(self) -> Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionResult']:
-        """
-        The list of private_application_package_collection.
-        """
+    def private_application_package_collections(self) -> Optional[Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionResult']]:
         return pulumi.get(self, "private_application_package_collections")
 
     @property
@@ -119,27 +107,7 @@ def get_private_application_packages(display_name: Optional[str] = None,
                                      private_application_package_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateApplicationPackagesResult:
     """
-    This data source provides the list of Private Application Packages in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists the packages in the specified private application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"],
-        display_name=var["private_application_package_display_name"],
-        package_types=var["private_application_package_package_type"],
-        private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
-    ```
-
-
-    :param str display_name: Exact match name filter.
-    :param Sequence[str] package_types: Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
-    :param str private_application_id: The unique identifier for the private application.
-    :param str private_application_package_id: The unique identifier for the private application package.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -168,26 +136,6 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
                                             private_application_package_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationPackagesResult]:
     """
-    This data source provides the list of Private Application Packages in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists the packages in the specified private application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"],
-        display_name=var["private_application_package_display_name"],
-        package_types=var["private_application_package_package_type"],
-        private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
-    ```
-
-
-    :param str display_name: Exact match name filter.
-    :param Sequence[str] package_types: Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
-    :param str private_application_id: The unique identifier for the private application.
-    :param str private_application_package_id: The unique identifier for the private application package.
+    Use this data source to access information about an existing resource.
     """
     ...

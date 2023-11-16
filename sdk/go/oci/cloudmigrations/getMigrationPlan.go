@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -62,28 +61,28 @@ type LookupMigrationPlanResult struct {
 	// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
 	CalculatedLimits map[string]interface{} `pulumi:"calculatedLimits"`
 	// The OCID of the compartment containing the migration plan.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique Oracle ID (OCID) that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the associated migration.
-	MigrationId     string `pulumi:"migrationId"`
-	MigrationPlanId string `pulumi:"migrationPlanId"`
+	MigrationId     *string `pulumi:"migrationId"`
+	MigrationPlanId string  `pulumi:"migrationPlanId"`
 	// Status of the migration plan.
 	MigrationPlanStats []GetMigrationPlanMigrationPlanStat `pulumi:"migrationPlanStats"`
 	// OCID of the referenced ORM job.
-	ReferenceToRmsStack string `pulumi:"referenceToRmsStack"`
+	ReferenceToRmsStack *string `pulumi:"referenceToRmsStack"`
 	// Source migraiton plan ID to be cloned.
-	SourceMigrationPlanId string `pulumi:"sourceMigrationPlanId"`
+	SourceMigrationPlanId *string `pulumi:"sourceMigrationPlanId"`
 	// The current state of the migration plan.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// List of strategies for the resources to be migrated.
 	Strategies []GetMigrationPlanStrategy `pulumi:"strategies"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -91,9 +90,9 @@ type LookupMigrationPlanResult struct {
 	// List of target environments.
 	TargetEnvironments []GetMigrationPlanTargetEnvironment `pulumi:"targetEnvironments"`
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupMigrationPlanOutput(ctx *pulumi.Context, args LookupMigrationPlanOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationPlanResultOutput {
@@ -134,20 +133,14 @@ func (o LookupMigrationPlanResultOutput) ToLookupMigrationPlanResultOutputWithCo
 	return o
 }
 
-func (o LookupMigrationPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMigrationPlanResult] {
-	return pulumix.Output[LookupMigrationPlanResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
 func (o LookupMigrationPlanResultOutput) CalculatedLimits() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]interface{} { return v.CalculatedLimits }).(pulumi.MapOutput)
 }
 
 // The OCID of the compartment containing the migration plan.
-func (o LookupMigrationPlanResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -156,8 +149,8 @@ func (o LookupMigrationPlanResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupMigrationPlanResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
@@ -166,18 +159,18 @@ func (o LookupMigrationPlanResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique Oracle ID (OCID) that is immutable on creation.
-func (o LookupMigrationPlanResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o LookupMigrationPlanResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the associated migration.
-func (o LookupMigrationPlanResultOutput) MigrationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.MigrationId }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) MigrationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.MigrationId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMigrationPlanResultOutput) MigrationPlanId() pulumi.StringOutput {
@@ -190,18 +183,18 @@ func (o LookupMigrationPlanResultOutput) MigrationPlanStats() GetMigrationPlanMi
 }
 
 // OCID of the referenced ORM job.
-func (o LookupMigrationPlanResultOutput) ReferenceToRmsStack() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.ReferenceToRmsStack }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) ReferenceToRmsStack() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.ReferenceToRmsStack }).(pulumi.StringPtrOutput)
 }
 
 // Source migraiton plan ID to be cloned.
-func (o LookupMigrationPlanResultOutput) SourceMigrationPlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.SourceMigrationPlanId }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) SourceMigrationPlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.SourceMigrationPlanId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the migration plan.
-func (o LookupMigrationPlanResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // List of strategies for the resources to be migrated.
@@ -220,13 +213,13 @@ func (o LookupMigrationPlanResultOutput) TargetEnvironments() GetMigrationPlanTa
 }
 
 // The time when the migration plan was created. An RFC3339 formatted datetime string.
-func (o LookupMigrationPlanResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
-func (o LookupMigrationPlanResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMigrationPlanResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

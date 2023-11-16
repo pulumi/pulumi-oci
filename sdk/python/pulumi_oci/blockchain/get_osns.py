@@ -57,7 +57,7 @@ class GetOsnsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetOsnsResult:
 
     @property
     @pulumi.getter(name="osnCollections")
-    def osn_collections(self) -> Sequence['outputs.GetOsnsOsnCollectionResult']:
-        """
-        The list of osn_collection.
-        """
+    def osn_collections(self) -> Optional[Sequence['outputs.GetOsnsOsnCollectionResult']]:
         return pulumi.get(self, "osn_collections")
 
 
@@ -90,23 +87,7 @@ def get_osns(blockchain_platform_id: Optional[str] = None,
              filters: Optional[Sequence[pulumi.InputType['GetOsnsFilterArgs']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOsnsResult:
     """
-    This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
-
-    List Blockchain Platform OSNs
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_osns = oci.Blockchain.get_osns(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        display_name=var["osn_display_name"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
@@ -129,22 +110,6 @@ def get_osns_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOsnsFilterArgs']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOsnsResult]:
     """
-    This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
-
-    List Blockchain Platform OSNs
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_osns = oci.Blockchain.get_osns(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        display_name=var["osn_display_name"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
+    Use this data source to access information about an existing resource.
     """
     ...

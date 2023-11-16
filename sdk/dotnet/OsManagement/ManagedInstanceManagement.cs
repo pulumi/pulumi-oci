@@ -81,31 +81,31 @@ namespace Pulumi.Oci.OsManagement
         /// OCID for the Compartment
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Information specified by the user about the managed instance
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// User friendly name
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the instance last booted
         /// </summary>
         [Output("lastBoot")]
-        public Output<string> LastBoot { get; private set; } = null!;
+        public Output<string?> LastBoot { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the instance last checked in
         /// </summary>
         [Output("lastCheckin")]
-        public Output<string> LastCheckin { get; private set; } = null!;
+        public Output<string?> LastCheckin { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The ids of the managed instance groups of which this instance is a member.
@@ -123,37 +123,37 @@ namespace Pulumi.Oci.OsManagement
         /// Operating System Kernel Version
         /// </summary>
         [Output("osKernelVersion")]
-        public Output<string> OsKernelVersion { get; private set; } = null!;
+        public Output<string?> OsKernelVersion { get; private set; } = null!;
 
         /// <summary>
         /// Operating System Name
         /// </summary>
         [Output("osName")]
-        public Output<string> OsName { get; private set; } = null!;
+        public Output<string?> OsName { get; private set; } = null!;
 
         /// <summary>
         /// Operating System Version
         /// </summary>
         [Output("osVersion")]
-        public Output<string> OsVersion { get; private set; } = null!;
+        public Output<string?> OsVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) the parent (base) Software Source attached to the Managed Instance
         /// </summary>
         [Output("parentSoftwareSource")]
-        public Output<Outputs.ManagedInstanceManagementParentSoftwareSource> ParentSoftwareSource { get; private set; } = null!;
+        public Output<Outputs.ManagedInstanceManagementParentSoftwareSource?> ParentSoftwareSource { get; private set; } = null!;
 
         /// <summary>
         /// status of the managed instance.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// Number of updates available to be installed
         /// </summary>
         [Output("updatesAvailable")]
-        public Output<int> UpdatesAvailable { get; private set; } = null!;
+        public Output<int?> UpdatesAvailable { get; private set; } = null!;
 
 
         /// <summary>

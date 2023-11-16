@@ -42,10 +42,7 @@ class GetDrgRouteTableRouteRulesResult:
 
     @property
     @pulumi.getter(name="drgRouteRules")
-    def drg_route_rules(self) -> Sequence['outputs.GetDrgRouteTableRouteRulesDrgRouteRuleResult']:
-        """
-        The list of drg_route_rules.
-        """
+    def drg_route_rules(self) -> Optional[Sequence['outputs.GetDrgRouteTableRouteRulesDrgRouteRuleResult']]:
         return pulumi.get(self, "drg_route_rules")
 
     @property
@@ -60,7 +57,7 @@ class GetDrgRouteTableRouteRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,9 +66,6 @@ class GetDrgRouteTableRouteRulesResult:
     @property
     @pulumi.getter(name="routeType")
     def route_type(self) -> Optional[str]:
-        """
-        You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
-        """
         return pulumi.get(self, "route_type")
 
 
@@ -93,23 +87,7 @@ def get_drg_route_table_route_rules(drg_route_table_id: Optional[str] = None,
                                     route_type: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteTableRouteRulesResult:
     """
-    This data source provides the list of Drg Route Table Route Rules in Oracle Cloud Infrastructure Core service.
-
-    Lists the route rules in the specified DRG route table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_table_route_rules = oci.Core.get_drg_route_table_route_rules(drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-        route_type=var["drg_route_table_route_rule_route_type"])
-    ```
-
-
-    :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-    :param str route_type: Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['drgRouteTableId'] = drg_route_table_id
@@ -132,22 +110,6 @@ def get_drg_route_table_route_rules_output(drg_route_table_id: Optional[pulumi.I
                                            route_type: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteTableRouteRulesResult]:
     """
-    This data source provides the list of Drg Route Table Route Rules in Oracle Cloud Infrastructure Core service.
-
-    Lists the route rules in the specified DRG route table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_table_route_rules = oci.Core.get_drg_route_table_route_rules(drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-        route_type=var["drg_route_table_route_rule_route_type"])
-    ```
-
-
-    :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-    :param str route_type: Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
+    Use this data source to access information about an existing resource.
     """
     ...

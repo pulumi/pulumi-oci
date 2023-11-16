@@ -40,7 +40,7 @@ class GetFusionEnvironmentTimeAvailableForRefreshResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetFusionEnvironmentTimeAvailableForRefreshResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFusionEnvironmentTimeAvailableForRefreshItemResult']:
-        """
-        A list of available refresh time objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetFusionEnvironmentTimeAvailableForRefreshItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -69,21 +66,7 @@ class AwaitableGetFusionEnvironmentTimeAvailableForRefreshResult(GetFusionEnviro
 def get_fusion_environment_time_available_for_refresh(fusion_environment_id: Optional[str] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentTimeAvailableForRefreshResult:
     """
-    This data source provides details about a specific Fusion Environment Time Available For Refresh resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets available refresh time for this fusion environment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_time_available_for_refresh = oci.Functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
@@ -100,20 +83,6 @@ def get_fusion_environment_time_available_for_refresh(fusion_environment_id: Opt
 def get_fusion_environment_time_available_for_refresh_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshResult]:
     """
-    This data source provides details about a specific Fusion Environment Time Available For Refresh resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets available refresh time for this fusion environment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_time_available_for_refresh = oci.Functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -64,17 +64,11 @@ class GetSteeringPolicyAttachmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the steering policy attachment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -95,33 +89,21 @@ class GetSteeringPolicyAttachmentsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the resource.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="steeringPolicyAttachments")
-    def steering_policy_attachments(self) -> Sequence['outputs.GetSteeringPolicyAttachmentsSteeringPolicyAttachmentResult']:
-        """
-        The list of steering_policy_attachments.
-        """
+    def steering_policy_attachments(self) -> Optional[Sequence['outputs.GetSteeringPolicyAttachmentsSteeringPolicyAttachmentResult']]:
         return pulumi.get(self, "steering_policy_attachments")
 
     @property
     @pulumi.getter(name="steeringPolicyId")
     def steering_policy_id(self) -> Optional[str]:
-        """
-        The OCID of the attached steering policy.
-        """
         return pulumi.get(self, "steering_policy_id")
 
     @property
@@ -137,9 +119,6 @@ class GetSteeringPolicyAttachmentsResult:
     @property
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[str]:
-        """
-        The OCID of the attached zone.
-        """
         return pulumi.get(self, "zone_id")
 
 
@@ -176,39 +155,7 @@ def get_steering_policy_attachments(compartment_id: Optional[str] = None,
                                     zone_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSteeringPolicyAttachmentsResult:
     """
-    This data source provides the list of Steering Policy Attachments in Oracle Cloud Infrastructure DNS service.
-
-    Lists the steering policy attachments in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_attachment_display_name"],
-        domain=var["steering_policy_attachment_domain"],
-        domain_contains=var["steering_policy_attachment_domain_contains"],
-        id=var["steering_policy_attachment_id"],
-        state=var["steering_policy_attachment_state"],
-        steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
-        time_created_greater_than_or_equal_to=var["steering_policy_attachment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
-        zone_id=oci_dns_zone["test_zone"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
-    :param str domain_contains: Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
-    :param str id: The OCID of a resource.
-    :param str state: The state of a resource.
-    :param str steering_policy_id: Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
-    :param str time_created_greater_than_or_equal_to: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
-    :param str time_created_less_than: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
-    :param str zone_id: Search by zone OCID. Will match any resource whose zone ID matches the provided value.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -254,38 +201,6 @@ def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input
                                            zone_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPolicyAttachmentsResult]:
     """
-    This data source provides the list of Steering Policy Attachments in Oracle Cloud Infrastructure DNS service.
-
-    Lists the steering policy attachments in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_attachment_display_name"],
-        domain=var["steering_policy_attachment_domain"],
-        domain_contains=var["steering_policy_attachment_domain_contains"],
-        id=var["steering_policy_attachment_id"],
-        state=var["steering_policy_attachment_state"],
-        steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
-        time_created_greater_than_or_equal_to=var["steering_policy_attachment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
-        zone_id=oci_dns_zone["test_zone"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
-    :param str domain_contains: Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
-    :param str id: The OCID of a resource.
-    :param str state: The state of a resource.
-    :param str steering_policy_id: Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
-    :param str time_created_greater_than_or_equal_to: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
-    :param str time_created_less_than: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
-    :param str zone_id: Search by zone OCID. Will match any resource whose zone ID matches the provided value.
+    Use this data source to access information about an existing resource.
     """
     ...

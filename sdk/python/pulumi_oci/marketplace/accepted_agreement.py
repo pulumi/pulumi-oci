@@ -24,18 +24,6 @@ class AcceptedAgreementArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AcceptedAgreement resource.
-        :param pulumi.Input[str] agreement_id: The agreement to accept.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment where the agreement will be accepted.
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing associated with the agreement.
-        :param pulumi.Input[str] package_version: The package version associated with the agreement.
-        :param pulumi.Input[str] signature: A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A display name for the accepted agreement.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "agreement_id", agreement_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,9 +40,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter(name="agreementId")
     def agreement_id(self) -> pulumi.Input[str]:
-        """
-        The agreement to accept.
-        """
         return pulumi.get(self, "agreement_id")
 
     @agreement_id.setter
@@ -64,9 +49,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The unique identifier for the compartment where the agreement will be accepted.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -76,9 +58,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Input[str]:
-        """
-        The unique identifier for the listing associated with the agreement.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -88,9 +67,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> pulumi.Input[str]:
-        """
-        The package version associated with the agreement.
-        """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
@@ -100,13 +76,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter
     def signature(self) -> pulumi.Input[str]:
-        """
-        A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -116,9 +85,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -128,9 +94,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A display name for the accepted agreement.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -140,9 +103,6 @@ class AcceptedAgreementArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -164,19 +124,6 @@ class _AcceptedAgreementState:
                  time_accepted: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AcceptedAgreement resources.
-        :param pulumi.Input[str] agreement_id: The agreement to accept.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment where the agreement will be accepted.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A display name for the accepted agreement.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing associated with the agreement.
-        :param pulumi.Input[str] package_version: The package version associated with the agreement.
-        :param pulumi.Input[str] signature: A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_accepted: The time the agreement was accepted.
         """
         if agreement_id is not None:
             pulumi.set(__self__, "agreement_id", agreement_id)
@@ -200,9 +147,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="agreementId")
     def agreement_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The agreement to accept.
-        """
         return pulumi.get(self, "agreement_id")
 
     @agreement_id.setter
@@ -212,9 +156,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the compartment where the agreement will be accepted.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -224,9 +165,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -236,9 +174,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A display name for the accepted agreement.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -248,9 +183,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -260,9 +192,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the listing associated with the agreement.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -272,9 +201,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The package version associated with the agreement.
-        """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
@@ -284,13 +210,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter
     def signature(self) -> Optional[pulumi.Input[str]]:
-        """
-        A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -300,9 +219,6 @@ class _AcceptedAgreementState:
     @property
     @pulumi.getter(name="timeAccepted")
     def time_accepted(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the agreement was accepted.
-        """
         return pulumi.get(self, "time_accepted")
 
     @time_accepted.setter
@@ -325,54 +241,9 @@ class AcceptedAgreement(pulumi.CustomResource):
                  signature: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Accepts a terms of use agreement for a specific package version of a listing. You must accept all
-        terms of use for a package before you can deploy the package.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_accepted_agreement = oci.marketplace.AcceptedAgreement("testAcceptedAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            compartment_id=var["compartment_id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["accepted_agreement_package_version"],
-            signature=var["accepted_agreement_signature"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["accepted_agreement_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        AcceptedAgreements can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
-        ```
-
+        Create a AcceptedAgreement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agreement_id: The agreement to accept.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment where the agreement will be accepted.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A display name for the accepted agreement.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing associated with the agreement.
-        :param pulumi.Input[str] package_version: The package version associated with the agreement.
-        :param pulumi.Input[str] signature: A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -381,40 +252,7 @@ class AcceptedAgreement(pulumi.CustomResource):
                  args: AcceptedAgreementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Accepts a terms of use agreement for a specific package version of a listing. You must accept all
-        terms of use for a package before you can deploy the package.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_accepted_agreement = oci.marketplace.AcceptedAgreement("testAcceptedAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            compartment_id=var["compartment_id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["accepted_agreement_package_version"],
-            signature=var["accepted_agreement_signature"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["accepted_agreement_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        AcceptedAgreements can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
-        ```
-
+        Create a AcceptedAgreement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AcceptedAgreementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -492,19 +330,6 @@ class AcceptedAgreement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agreement_id: The agreement to accept.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment where the agreement will be accepted.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A display name for the accepted agreement.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing associated with the agreement.
-        :param pulumi.Input[str] package_version: The package version associated with the agreement.
-        :param pulumi.Input[str] signature: A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_accepted: The time the agreement was accepted.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -524,76 +349,45 @@ class AcceptedAgreement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="agreementId")
     def agreement_id(self) -> pulumi.Output[str]:
-        """
-        The agreement to accept.
-        """
         return pulumi.get(self, "agreement_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier for the compartment where the agreement will be accepted.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A display name for the accepted agreement.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier for the listing associated with the agreement.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> pulumi.Output[str]:
-        """
-        The package version associated with the agreement.
-        """
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter
     def signature(self) -> pulumi.Output[str]:
-        """
-        A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "signature")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> pulumi.Output[str]:
-        """
-        The time the agreement was accepted.
-        """
+    def time_accepted(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_accepted")
 

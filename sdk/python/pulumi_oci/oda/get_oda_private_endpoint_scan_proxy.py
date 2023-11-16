@@ -50,10 +50,7 @@ class GetOdaPrivateEndpointScanProxyResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -68,42 +65,27 @@ class GetOdaPrivateEndpointScanProxyResult:
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocol used for communication between client, scanProxy and RAC's scan listeners
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="scanListenerInfos")
-    def scan_listener_infos(self) -> Sequence['outputs.GetOdaPrivateEndpointScanProxyScanListenerInfoResult']:
-        """
-        The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        """
+    def scan_listener_infos(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxyScanListenerInfoResult']]:
         return pulumi.get(self, "scan_listener_infos")
 
     @property
     @pulumi.getter(name="scanListenerType")
-    def scan_listener_type(self) -> str:
-        """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs
-        """
+    def scan_listener_type(self) -> Optional[str]:
         return pulumi.get(self, "scan_listener_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the ODA Private Endpoint Scan Proxy.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -127,23 +109,7 @@ def get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id: Optional[str] =
                                         oda_private_endpoint_scan_proxy_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointScanProxyResult:
     """
-    This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Gets the specified ODA Private Endpoint Scan Proxy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        oda_private_endpoint_scan_proxy_id=oci_oda_oda_private_endpoint_scan_proxy["test_oda_private_endpoint_scan_proxy"]["id"])
-    ```
-
-
-    :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str oda_private_endpoint_scan_proxy_id: Unique ODA Private Endpoint Scan Proxy identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['odaPrivateEndpointId'] = oda_private_endpoint_id
@@ -167,22 +133,6 @@ def get_oda_private_endpoint_scan_proxy_output(oda_private_endpoint_id: Optional
                                                oda_private_endpoint_scan_proxy_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointScanProxyResult]:
     """
-    This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Gets the specified ODA Private Endpoint Scan Proxy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        oda_private_endpoint_scan_proxy_id=oci_oda_oda_private_endpoint_scan_proxy["test_oda_private_endpoint_scan_proxy"]["id"])
-    ```
-
-
-    :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str oda_private_endpoint_scan_proxy_id: Unique ODA Private Endpoint Scan Proxy identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

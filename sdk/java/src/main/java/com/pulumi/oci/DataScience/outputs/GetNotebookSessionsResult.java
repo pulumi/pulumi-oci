@@ -39,7 +39,7 @@ public final class GetNotebookSessionsResult {
      * @return The list of notebook_sessions.
      * 
      */
-    private List<GetNotebookSessionsNotebookSession> notebookSessions;
+    private @Nullable List<GetNotebookSessionsNotebookSession> notebookSessions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
      * 
@@ -88,7 +88,7 @@ public final class GetNotebookSessionsResult {
      * 
      */
     public List<GetNotebookSessionsNotebookSession> notebookSessions() {
-        return this.notebookSessions;
+        return this.notebookSessions == null ? List.of() : this.notebookSessions;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
@@ -119,7 +119,7 @@ public final class GetNotebookSessionsResult {
         private @Nullable String displayName;
         private @Nullable List<GetNotebookSessionsFilter> filters;
         private @Nullable String id;
-        private List<GetNotebookSessionsNotebookSession> notebookSessions;
+        private @Nullable List<GetNotebookSessionsNotebookSession> notebookSessions;
         private @Nullable String projectId;
         private @Nullable String state;
         public Builder() {}
@@ -164,8 +164,8 @@ public final class GetNotebookSessionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder notebookSessions(List<GetNotebookSessionsNotebookSession> notebookSessions) {
-            this.notebookSessions = Objects.requireNonNull(notebookSessions);
+        public Builder notebookSessions(@Nullable List<GetNotebookSessionsNotebookSession> notebookSessions) {
+            this.notebookSessions = notebookSessions;
             return this;
         }
         public Builder notebookSessions(GetNotebookSessionsNotebookSession... notebookSessions) {

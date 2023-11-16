@@ -108,12 +108,12 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ReportId;
 
         [OutputConstructor]
         private GetReportContentResult(
-            string id,
+            string? id,
 
             string reportId)
         {

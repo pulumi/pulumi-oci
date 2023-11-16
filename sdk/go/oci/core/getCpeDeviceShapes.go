@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
@@ -72,7 +71,7 @@ type GetCpeDeviceShapesResult struct {
 	CpeDeviceShapes []GetCpeDeviceShapesCpeDeviceShape `pulumi:"cpeDeviceShapes"`
 	Filters         []GetCpeDeviceShapesFilter         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetCpeDeviceShapesOutput(ctx *pulumi.Context, args GetCpeDeviceShapesOutputArgs, opts ...pulumi.InvokeOption) GetCpeDeviceShapesResultOutput {
@@ -112,12 +111,6 @@ func (o GetCpeDeviceShapesResultOutput) ToGetCpeDeviceShapesResultOutputWithCont
 	return o
 }
 
-func (o GetCpeDeviceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpeDeviceShapesResult] {
-	return pulumix.Output[GetCpeDeviceShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of cpe_device_shapes.
 func (o GetCpeDeviceShapesResultOutput) CpeDeviceShapes() GetCpeDeviceShapesCpeDeviceShapeArrayOutput {
 	return o.ApplyT(func(v GetCpeDeviceShapesResult) []GetCpeDeviceShapesCpeDeviceShape { return v.CpeDeviceShapes }).(GetCpeDeviceShapesCpeDeviceShapeArrayOutput)
@@ -128,8 +121,8 @@ func (o GetCpeDeviceShapesResultOutput) Filters() GetCpeDeviceShapesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCpeDeviceShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpeDeviceShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCpeDeviceShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCpeDeviceShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

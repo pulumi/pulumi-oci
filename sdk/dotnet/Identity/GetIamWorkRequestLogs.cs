@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetIamWorkRequestLogsResult(
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetIamWorkRequestLogsIamWorkRequestLogResult> iamWorkRequestLogs,
 
-            string id)
+            string? id)
         {
             Filters = filters;
             IamWorkRequestId = iamWorkRequestId;

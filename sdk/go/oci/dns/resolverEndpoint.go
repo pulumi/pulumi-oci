@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
@@ -72,17 +71,17 @@ type ResolverEndpoint struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-	EndpointType pulumi.StringOutput `pulumi:"endpointType"`
+	EndpointType pulumi.StringPtrOutput `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-	ForwardingAddress pulumi.StringOutput `pulumi:"forwardingAddress"`
+	ForwardingAddress pulumi.StringPtrOutput `pulumi:"forwardingAddress"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding pulumi.BoolOutput `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
 	IsListening pulumi.BoolOutput `pulumi:"isListening"`
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-	ListeningAddress pulumi.StringOutput `pulumi:"listeningAddress"`
+	ListeningAddress pulumi.StringPtrOutput `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
@@ -92,18 +91,18 @@ type ResolverEndpoint struct {
 	// Value must be `PRIVATE` when creating private name resolver endpoints.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringOutput `pulumi:"self"`
+	Self pulumi.StringPtrOutput `pulumi:"self"`
 	// The current state of the resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewResolverEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -299,12 +298,6 @@ func (i *ResolverEndpoint) ToResolverEndpointOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverEndpointOutput)
 }
 
-func (i *ResolverEndpoint) ToOutput(ctx context.Context) pulumix.Output[*ResolverEndpoint] {
-	return pulumix.Output[*ResolverEndpoint]{
-		OutputState: i.ToResolverEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResolverEndpointArrayInput is an input type that accepts ResolverEndpointArray and ResolverEndpointArrayOutput values.
 // You can construct a concrete instance of `ResolverEndpointArrayInput` via:
 //
@@ -328,12 +321,6 @@ func (i ResolverEndpointArray) ToResolverEndpointArrayOutput() ResolverEndpointA
 
 func (i ResolverEndpointArray) ToResolverEndpointArrayOutputWithContext(ctx context.Context) ResolverEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverEndpointArrayOutput)
-}
-
-func (i ResolverEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*ResolverEndpoint] {
-	return pulumix.Output[[]*ResolverEndpoint]{
-		OutputState: i.ToResolverEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ResolverEndpointMapInput is an input type that accepts ResolverEndpointMap and ResolverEndpointMapOutput values.
@@ -361,12 +348,6 @@ func (i ResolverEndpointMap) ToResolverEndpointMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverEndpointMapOutput)
 }
 
-func (i ResolverEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResolverEndpoint] {
-	return pulumix.Output[map[string]*ResolverEndpoint]{
-		OutputState: i.ToResolverEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResolverEndpointOutput struct{ *pulumi.OutputState }
 
 func (ResolverEndpointOutput) ElementType() reflect.Type {
@@ -381,25 +362,19 @@ func (o ResolverEndpointOutput) ToResolverEndpointOutputWithContext(ctx context.
 	return o
 }
 
-func (o ResolverEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*ResolverEndpoint] {
-	return pulumix.Output[*ResolverEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-func (o ResolverEndpointOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-func (o ResolverEndpointOutput) EndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.EndpointType }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
 // An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-func (o ResolverEndpointOutput) ForwardingAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.ForwardingAddress }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) ForwardingAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.ForwardingAddress }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -413,8 +388,8 @@ func (o ResolverEndpointOutput) IsListening() pulumi.BoolOutput {
 }
 
 // An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-func (o ResolverEndpointOutput) ListeningAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.ListeningAddress }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) ListeningAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.ListeningAddress }).(pulumi.StringPtrOutput)
 }
 
 // The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
@@ -438,13 +413,13 @@ func (o ResolverEndpointOutput) Scope() pulumi.StringPtrOutput {
 }
 
 // The canonical absolute URL of the resource.
-func (o ResolverEndpointOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.Self }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o ResolverEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
@@ -456,13 +431,13 @@ func (o ResolverEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ResolverEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ResolverEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ResolverEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -477,12 +452,6 @@ func (o ResolverEndpointArrayOutput) ToResolverEndpointArrayOutput() ResolverEnd
 
 func (o ResolverEndpointArrayOutput) ToResolverEndpointArrayOutputWithContext(ctx context.Context) ResolverEndpointArrayOutput {
 	return o
-}
-
-func (o ResolverEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ResolverEndpoint] {
-	return pulumix.Output[[]*ResolverEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResolverEndpointArrayOutput) Index(i pulumi.IntInput) ResolverEndpointOutput {
@@ -503,12 +472,6 @@ func (o ResolverEndpointMapOutput) ToResolverEndpointMapOutput() ResolverEndpoin
 
 func (o ResolverEndpointMapOutput) ToResolverEndpointMapOutputWithContext(ctx context.Context) ResolverEndpointMapOutput {
 	return o
-}
-
-func (o ResolverEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResolverEndpoint] {
-	return pulumix.Output[map[string]*ResolverEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResolverEndpointMapOutput) MapIndex(k pulumi.StringInput) ResolverEndpointOutput {

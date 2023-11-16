@@ -82,55 +82,37 @@ class GetVnicResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The VNIC's availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> str:
-        """
-        The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-        """
+    def hostname_label(self) -> Optional[str]:
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -138,90 +120,57 @@ class GetVnicResult:
 
     @property
     @pulumi.getter
-    def ipv6addresses(self) -> Sequence[str]:
-        """
-        List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
-        """
+    def ipv6addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ipv6addresses")
 
     @property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> bool:
-        """
-        Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
-        """
+    def is_primary(self) -> Optional[bool]:
         return pulumi.get(self, "is_primary")
 
     @property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> str:
-        """
-        The MAC address of the VNIC.
-        """
+    def mac_address(self) -> Optional[str]:
         return pulumi.get(self, "mac_address")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        A list of the OCIDs of the network security groups that the VNIC belongs to.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateIpAddress")
-    def private_ip_address(self) -> str:
-        """
-        The private IP address of the primary `privateIp` object on the VNIC. The address is within the CIDR of the VNIC's subnet.  Example: `10.0.3.3`
-        """
+    def private_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "private_ip_address")
 
     @property
     @pulumi.getter(name="publicIpAddress")
-    def public_ip_address(self) -> str:
-        """
-        The public IP address of the VNIC, if one is assigned.
-        """
+    def public_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "public_ip_address")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
-    def skip_source_dest_check(self) -> bool:
-        """
-        Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-        """
+    def skip_source_dest_check(self) -> Optional[bool]:
         return pulumi.get(self, "skip_source_dest_check")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the VNIC.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> str:
-        """
-        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of belonging to a subnet), the `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan). If the VNIC is instead in a subnet, `subnetId` has a value.
-        """
+    def vlan_id(self) -> Optional[str]:
         return pulumi.get(self, "vlan_id")
 
     @property
@@ -260,24 +209,7 @@ class AwaitableGetVnicResult(GetVnicResult):
 def get_vnic(vnic_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVnicResult:
     """
-    This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the information for the specified virtual network interface card (VNIC).
-    You can get the VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from the
-    [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
-    operation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vnic = oci.Core.get_vnic(vnic_id=oci_core_vnic["test_vnic"]["id"])
-    ```
-
-
-    :param str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vnicId'] = vnic_id
@@ -310,23 +242,6 @@ def get_vnic(vnic_id: Optional[str] = None,
 def get_vnic_output(vnic_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVnicResult]:
     """
-    This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the information for the specified virtual network interface card (VNIC).
-    You can get the VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from the
-    [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
-    operation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vnic = oci.Core.get_vnic(vnic_id=oci_core_vnic["test_vnic"]["id"])
-    ```
-
-
-    :param str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+    Use this data source to access information about an existing resource.
     """
     ...

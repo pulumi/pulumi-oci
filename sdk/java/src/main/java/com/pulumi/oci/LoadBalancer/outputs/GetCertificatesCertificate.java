@@ -15,7 +15,7 @@ public final class GetCertificatesCertificate {
      * @return The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
      * 
      */
-    private String caCertificate;
+    private @Nullable String caCertificate;
     /**
      * @return A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
      * 
@@ -27,21 +27,21 @@ public final class GetCertificatesCertificate {
      */
     private String loadBalancerId;
     private @Nullable String passphrase;
-    private String privateKey;
+    private @Nullable String privateKey;
     /**
      * @return The public certificate, in PEM format, that you received from your SSL certificate provider.
      * 
      */
-    private String publicCertificate;
-    private String state;
+    private @Nullable String publicCertificate;
+    private @Nullable String state;
 
     private GetCertificatesCertificate() {}
     /**
      * @return The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
      * 
      */
-    public String caCertificate() {
-        return this.caCertificate;
+    public Optional<String> caCertificate() {
+        return Optional.ofNullable(this.caCertificate);
     }
     /**
      * @return A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
@@ -60,18 +60,18 @@ public final class GetCertificatesCertificate {
     public Optional<String> passphrase() {
         return Optional.ofNullable(this.passphrase);
     }
-    public String privateKey() {
-        return this.privateKey;
+    public Optional<String> privateKey() {
+        return Optional.ofNullable(this.privateKey);
     }
     /**
      * @return The public certificate, in PEM format, that you received from your SSL certificate provider.
      * 
      */
-    public String publicCertificate() {
-        return this.publicCertificate;
+    public Optional<String> publicCertificate() {
+        return Optional.ofNullable(this.publicCertificate);
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -83,13 +83,13 @@ public final class GetCertificatesCertificate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String caCertificate;
+        private @Nullable String caCertificate;
         private String certificateName;
         private String loadBalancerId;
         private @Nullable String passphrase;
-        private String privateKey;
-        private String publicCertificate;
-        private String state;
+        private @Nullable String privateKey;
+        private @Nullable String publicCertificate;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetCertificatesCertificate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -103,8 +103,8 @@ public final class GetCertificatesCertificate {
         }
 
         @CustomType.Setter
-        public Builder caCertificate(String caCertificate) {
-            this.caCertificate = Objects.requireNonNull(caCertificate);
+        public Builder caCertificate(@Nullable String caCertificate) {
+            this.caCertificate = caCertificate;
             return this;
         }
         @CustomType.Setter
@@ -123,18 +123,18 @@ public final class GetCertificatesCertificate {
             return this;
         }
         @CustomType.Setter
-        public Builder privateKey(String privateKey) {
-            this.privateKey = Objects.requireNonNull(privateKey);
+        public Builder privateKey(@Nullable String privateKey) {
+            this.privateKey = privateKey;
             return this;
         }
         @CustomType.Setter
-        public Builder publicCertificate(String publicCertificate) {
-            this.publicCertificate = Objects.requireNonNull(publicCertificate);
+        public Builder publicCertificate(@Nullable String publicCertificate) {
+            this.publicCertificate = publicCertificate;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetCertificatesCertificate build() {

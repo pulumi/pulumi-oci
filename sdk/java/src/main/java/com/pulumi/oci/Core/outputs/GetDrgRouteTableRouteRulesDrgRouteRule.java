@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgRouteTableRouteRulesDrgRouteRule {
@@ -16,47 +18,47 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
      * @return Additional properties for the route, computed by the service.
      * 
      */
-    private Map<String,Object> attributes;
+    private @Nullable Map<String,Object> attributes;
     /**
      * @return Represents the range of IP addresses to match against when routing traffic.
      * 
      */
-    private String destination;
+    private @Nullable String destination;
     /**
      * @return The type of destination for the rule.
      * 
      */
-    private String destinationType;
+    private @Nullable String destinationType;
     /**
      * @return The Oracle-assigned ID of the DRG route rule.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      * 
      */
-    private Boolean isBlackhole;
+    private @Nullable Boolean isBlackhole;
     /**
      * @return Indicates that the route was not imported due to a conflict between route rules.
      * 
      */
-    private Boolean isConflict;
+    private @Nullable Boolean isConflict;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible for reaching the network destination.
      * 
      */
-    private String nextHopDrgAttachmentId;
+    private @Nullable String nextHopDrgAttachmentId;
     /**
      * @return The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route&#39;s provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      * 
      */
-    private String routeProvenance;
+    private @Nullable String routeProvenance;
     /**
      * @return Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
      * 
      */
-    private String routeType;
+    private @Nullable String routeType;
 
     private GetDrgRouteTableRouteRulesDrgRouteRule() {}
     /**
@@ -64,63 +66,63 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
      * 
      */
     public Map<String,Object> attributes() {
-        return this.attributes;
+        return this.attributes == null ? Map.of() : this.attributes;
     }
     /**
      * @return Represents the range of IP addresses to match against when routing traffic.
      * 
      */
-    public String destination() {
-        return this.destination;
+    public Optional<String> destination() {
+        return Optional.ofNullable(this.destination);
     }
     /**
      * @return The type of destination for the rule.
      * 
      */
-    public String destinationType() {
-        return this.destinationType;
+    public Optional<String> destinationType() {
+        return Optional.ofNullable(this.destinationType);
     }
     /**
      * @return The Oracle-assigned ID of the DRG route rule.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      * 
      */
-    public Boolean isBlackhole() {
-        return this.isBlackhole;
+    public Optional<Boolean> isBlackhole() {
+        return Optional.ofNullable(this.isBlackhole);
     }
     /**
      * @return Indicates that the route was not imported due to a conflict between route rules.
      * 
      */
-    public Boolean isConflict() {
-        return this.isConflict;
+    public Optional<Boolean> isConflict() {
+        return Optional.ofNullable(this.isConflict);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible for reaching the network destination.
      * 
      */
-    public String nextHopDrgAttachmentId() {
-        return this.nextHopDrgAttachmentId;
+    public Optional<String> nextHopDrgAttachmentId() {
+        return Optional.ofNullable(this.nextHopDrgAttachmentId);
     }
     /**
      * @return The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route&#39;s provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      * 
      */
-    public String routeProvenance() {
-        return this.routeProvenance;
+    public Optional<String> routeProvenance() {
+        return Optional.ofNullable(this.routeProvenance);
     }
     /**
      * @return Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
      * 
      */
-    public String routeType() {
-        return this.routeType;
+    public Optional<String> routeType() {
+        return Optional.ofNullable(this.routeType);
     }
 
     public static Builder builder() {
@@ -132,15 +134,15 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> attributes;
-        private String destination;
-        private String destinationType;
-        private String id;
-        private Boolean isBlackhole;
-        private Boolean isConflict;
-        private String nextHopDrgAttachmentId;
-        private String routeProvenance;
-        private String routeType;
+        private @Nullable Map<String,Object> attributes;
+        private @Nullable String destination;
+        private @Nullable String destinationType;
+        private @Nullable String id;
+        private @Nullable Boolean isBlackhole;
+        private @Nullable Boolean isConflict;
+        private @Nullable String nextHopDrgAttachmentId;
+        private @Nullable String routeProvenance;
+        private @Nullable String routeType;
         public Builder() {}
         public Builder(GetDrgRouteTableRouteRulesDrgRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,48 +158,48 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
         }
 
         @CustomType.Setter
-        public Builder attributes(Map<String,Object> attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+        public Builder attributes(@Nullable Map<String,Object> attributes) {
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
-        public Builder destination(String destination) {
-            this.destination = Objects.requireNonNull(destination);
+        public Builder destination(@Nullable String destination) {
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
-        public Builder destinationType(String destinationType) {
-            this.destinationType = Objects.requireNonNull(destinationType);
+        public Builder destinationType(@Nullable String destinationType) {
+            this.destinationType = destinationType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isBlackhole(Boolean isBlackhole) {
-            this.isBlackhole = Objects.requireNonNull(isBlackhole);
+        public Builder isBlackhole(@Nullable Boolean isBlackhole) {
+            this.isBlackhole = isBlackhole;
             return this;
         }
         @CustomType.Setter
-        public Builder isConflict(Boolean isConflict) {
-            this.isConflict = Objects.requireNonNull(isConflict);
+        public Builder isConflict(@Nullable Boolean isConflict) {
+            this.isConflict = isConflict;
             return this;
         }
         @CustomType.Setter
-        public Builder nextHopDrgAttachmentId(String nextHopDrgAttachmentId) {
-            this.nextHopDrgAttachmentId = Objects.requireNonNull(nextHopDrgAttachmentId);
+        public Builder nextHopDrgAttachmentId(@Nullable String nextHopDrgAttachmentId) {
+            this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder routeProvenance(String routeProvenance) {
-            this.routeProvenance = Objects.requireNonNull(routeProvenance);
+        public Builder routeProvenance(@Nullable String routeProvenance) {
+            this.routeProvenance = routeProvenance;
             return this;
         }
         @CustomType.Setter
-        public Builder routeType(String routeType) {
-            this.routeType = Objects.requireNonNull(routeType);
+        public Builder routeType(@Nullable String routeType) {
+            this.routeType = routeType;
             return this;
         }
         public GetDrgRouteTableRouteRulesDrgRouteRule build() {

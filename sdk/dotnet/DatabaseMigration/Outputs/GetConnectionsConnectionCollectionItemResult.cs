@@ -20,11 +20,11 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// This name is the distinguished name used while creating the certificate on target database.
         /// </summary>
-        public readonly string CertificateTdn;
+        public readonly string? CertificateTdn;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Connect Descriptor details.
         /// </summary>
@@ -32,35 +32,35 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
         /// </summary>
-        public readonly string CredentialsSecretId;
+        public readonly string? CredentialsSecretId;
         /// <summary>
         /// The OCID of the cloud database.
         /// </summary>
-        public readonly string DatabaseId;
+        public readonly string? DatabaseId;
         /// <summary>
         /// Database connection type.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// An array of Network Security Group OCIDs used to define network access for Connections.
         /// </summary>
@@ -80,21 +80,21 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// The current state of the Database Migration Deployment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the Connection resource was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time of the last Connection resource details update. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
-        public readonly string TlsKeystore;
-        public readonly string TlsWallet;
+        public readonly string? TimeUpdated;
+        public readonly string? TlsKeystore;
+        public readonly string? TlsWallet;
         /// <summary>
         /// Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         /// </summary>
@@ -104,27 +104,27 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         private GetConnectionsConnectionCollectionItemResult(
             ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemAdminCredentialResult> adminCredentials,
 
-            string certificateTdn,
+            string? certificateTdn,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemConnectDescriptorResult> connectDescriptors,
 
-            string credentialsSecretId,
+            string? credentialsSecretId,
 
-            string databaseId,
+            string? databaseId,
 
-            string databaseType,
+            string? databaseType,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> nsgIds,
 
@@ -134,17 +134,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemSshDetailResult> sshDetails,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string tlsKeystore,
+            string? tlsKeystore,
 
-            string tlsWallet,
+            string? tlsWallet,
 
             ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemVaultDetailResult> vaultDetails)
         {

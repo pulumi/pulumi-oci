@@ -84,7 +84,7 @@ export interface GetBdsInstanceMetastoreConfigsResult {
     /**
      * The list of bds_metastore_configurations.
      */
-    readonly bdsMetastoreConfigurations: outputs.BigDataService.GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration[];
+    readonly bdsMetastoreConfigurations?: outputs.BigDataService.GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration[];
     /**
      * The display name of metastore configuration
      */
@@ -93,7 +93,7 @@ export interface GetBdsInstanceMetastoreConfigsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
      */

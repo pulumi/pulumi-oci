@@ -128,7 +128,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Available Kubernetes versions.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             string? compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> kubernetesVersions)
         {

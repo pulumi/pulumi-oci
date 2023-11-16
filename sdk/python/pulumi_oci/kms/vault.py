@@ -28,18 +28,6 @@ class VaultArgs:
                  time_of_deletion: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Vault resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create this vault.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input['VaultExternalKeyManagerMetadataArgs'] external_key_manager_metadata: Metadata required for accessing External Key manager
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['VaultRestoreFromFileArgs'] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input['VaultRestoreFromObjectStoreArgs'] restore_from_object_store: (Updatable) Details where vault was backed up
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -62,9 +50,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment where you want to create this vault.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -74,9 +59,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -86,9 +68,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="vaultType")
     def vault_type(self) -> pulumi.Input[str]:
-        """
-        The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
-        """
         return pulumi.get(self, "vault_type")
 
     @vault_type.setter
@@ -98,9 +77,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -110,9 +86,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="externalKeyManagerMetadata")
     def external_key_manager_metadata(self) -> Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']]:
-        """
-        Metadata required for accessing External Key manager
-        """
         return pulumi.get(self, "external_key_manager_metadata")
 
     @external_key_manager_metadata.setter
@@ -122,9 +95,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -134,9 +104,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="restoreFromFile")
     def restore_from_file(self) -> Optional[pulumi.Input['VaultRestoreFromFileArgs']]:
-        """
-        (Updatable) Details where vault was backed up.
-        """
         return pulumi.get(self, "restore_from_file")
 
     @restore_from_file.setter
@@ -146,9 +113,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="restoreFromObjectStore")
     def restore_from_object_store(self) -> Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']]:
-        """
-        (Updatable) Details where vault was backed up
-        """
         return pulumi.get(self, "restore_from_object_store")
 
     @restore_from_object_store.setter
@@ -167,12 +131,6 @@ class VaultArgs:
     @property
     @pulumi.getter(name="timeOfDeletion")
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
@@ -203,26 +161,6 @@ class _VaultState:
                  vault_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Vault resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create this vault.
-        :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input['VaultExternalKeyManagerMetadataArgs'] external_key_manager_metadata: Metadata required for accessing External Key manager
-        :param pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
-        :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-        :param pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]] replica_details: Vault replica details
-        :param pulumi.Input['VaultRestoreFromFileArgs'] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input['VaultRestoreFromObjectStoreArgs'] restore_from_object_store: (Updatable) Details where vault was backed up
-        :param pulumi.Input[str] restored_from_vault_id: The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
-        :param pulumi.Input[str] state: The vault's current lifecycle state.  Example: `DELETED`
-        :param pulumi.Input[str] time_created: The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -264,9 +202,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment where you want to create this vault.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -276,9 +211,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="cryptoEndpoint")
     def crypto_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-        """
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
@@ -288,9 +220,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -300,9 +229,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -312,9 +238,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="externalKeyManagerMetadata")
     def external_key_manager_metadata(self) -> Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']]:
-        """
-        Metadata required for accessing External Key manager
-        """
         return pulumi.get(self, "external_key_manager_metadata")
 
     @external_key_manager_metadata.setter
@@ -324,9 +247,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="externalKeyManagerMetadataSummaries")
     def external_key_manager_metadata_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]]:
-        """
-        Summary about metadata of external key manager to be returned to the customer as a response.
-        """
         return pulumi.get(self, "external_key_manager_metadata_summaries")
 
     @external_key_manager_metadata_summaries.setter
@@ -336,9 +256,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -348,9 +265,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
-        """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
@@ -360,9 +274,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="managementEndpoint")
     def management_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-        """
         return pulumi.get(self, "management_endpoint")
 
     @management_endpoint.setter
@@ -372,9 +283,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="replicaDetails")
     def replica_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]]:
-        """
-        Vault replica details
-        """
         return pulumi.get(self, "replica_details")
 
     @replica_details.setter
@@ -384,9 +292,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="restoreFromFile")
     def restore_from_file(self) -> Optional[pulumi.Input['VaultRestoreFromFileArgs']]:
-        """
-        (Updatable) Details where vault was backed up.
-        """
         return pulumi.get(self, "restore_from_file")
 
     @restore_from_file.setter
@@ -396,9 +301,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="restoreFromObjectStore")
     def restore_from_object_store(self) -> Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']]:
-        """
-        (Updatable) Details where vault was backed up
-        """
         return pulumi.get(self, "restore_from_object_store")
 
     @restore_from_object_store.setter
@@ -417,9 +319,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="restoredFromVaultId")
     def restored_from_vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
-        """
         return pulumi.get(self, "restored_from_vault_id")
 
     @restored_from_vault_id.setter
@@ -429,9 +328,6 @@ class _VaultState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The vault's current lifecycle state.  Example: `DELETED`
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -441,9 +337,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -453,12 +346,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="timeOfDeletion")
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
@@ -468,9 +355,6 @@ class _VaultState:
     @property
     @pulumi.getter(name="vaultType")
     def vault_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
-        """
         return pulumi.get(self, "vault_type")
 
     @vault_type.setter
@@ -495,67 +379,9 @@ class Vault(pulumi.CustomResource):
                  vault_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Vault resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a new vault. The type of vault you create determines key placement, pricing, and
-        available options. Options include storage isolation, a dedicated service endpoint instead
-        of a shared service endpoint for API calls, and either a dedicated hardware security module
-        (HSM) or a multitenant HSM.
-
-        As a provisioning operation, this call is subject to a Key Management limit that applies to
-        the total number of requests across all provisioning write operations. Key Management might
-        throttle this call to reject an otherwise valid request when the total rate of provisioning
-        write operations exceeds 10 requests per second for a given tenancy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vault = oci.kms.Vault("testVault",
-            compartment_id=var["compartment_id"],
-            display_name=var["vault_display_name"],
-            vault_type=var["vault_vault_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            external_key_manager_metadata=oci.kms.VaultExternalKeyManagerMetadataArgs(
-                external_vault_endpoint_url=var["vault_external_key_manager_metadata_external_vault_endpoint_url"],
-                oauth_metadata=oci.kms.VaultExternalKeyManagerMetadataOauthMetadataArgs(
-                    client_app_id=oci_kms_client_app["test_client_app"]["id"],
-                    client_app_secret=var["vault_external_key_manager_metadata_oauth_metadata_client_app_secret"],
-                    idcs_account_name_url=var["vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url"],
-                ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-            ),
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        Vaults can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Kms/vault:Vault test_vault "id"
-        ```
-
+        Create a Vault resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create this vault.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataArgs']] external_key_manager_metadata: Metadata required for accessing External Key manager
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where vault was backed up
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
         ...
     @overload
@@ -564,53 +390,7 @@ class Vault(pulumi.CustomResource):
                  args: VaultArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vault resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a new vault. The type of vault you create determines key placement, pricing, and
-        available options. Options include storage isolation, a dedicated service endpoint instead
-        of a shared service endpoint for API calls, and either a dedicated hardware security module
-        (HSM) or a multitenant HSM.
-
-        As a provisioning operation, this call is subject to a Key Management limit that applies to
-        the total number of requests across all provisioning write operations. Key Management might
-        throttle this call to reject an otherwise valid request when the total rate of provisioning
-        write operations exceeds 10 requests per second for a given tenancy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vault = oci.kms.Vault("testVault",
-            compartment_id=var["compartment_id"],
-            display_name=var["vault_display_name"],
-            vault_type=var["vault_vault_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            external_key_manager_metadata=oci.kms.VaultExternalKeyManagerMetadataArgs(
-                external_vault_endpoint_url=var["vault_external_key_manager_metadata_external_vault_endpoint_url"],
-                oauth_metadata=oci.kms.VaultExternalKeyManagerMetadataOauthMetadataArgs(
-                    client_app_id=oci_kms_client_app["test_client_app"]["id"],
-                    client_app_secret=var["vault_external_key_manager_metadata_oauth_metadata_client_app_secret"],
-                    idcs_account_name_url=var["vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url"],
-                ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-            ),
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        Vaults can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Kms/vault:Vault test_vault "id"
-        ```
-
+        Create a Vault resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VaultArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -704,26 +484,6 @@ class Vault(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create this vault.
-        :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataArgs']] external_key_manager_metadata: Metadata required for accessing External Key manager
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataSummaryArgs']]]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
-        :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VaultReplicaDetailArgs']]]] replica_details: Vault replica details
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where vault was backed up
-        :param pulumi.Input[str] restored_from_vault_id: The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
-        :param pulumi.Input[str] state: The vault's current lifecycle state.  Example: `DELETED`
-        :param pulumi.Input[str] time_created: The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -752,97 +512,61 @@ class Vault(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment where you want to create this vault.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
-    def crypto_endpoint(self) -> pulumi.Output[str]:
-        """
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-        """
+    def crypto_endpoint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "crypto_endpoint")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalKeyManagerMetadata")
-    def external_key_manager_metadata(self) -> pulumi.Output['outputs.VaultExternalKeyManagerMetadata']:
-        """
-        Metadata required for accessing External Key manager
-        """
+    def external_key_manager_metadata(self) -> pulumi.Output[Optional['outputs.VaultExternalKeyManagerMetadata']]:
         return pulumi.get(self, "external_key_manager_metadata")
 
     @property
     @pulumi.getter(name="externalKeyManagerMetadataSummaries")
-    def external_key_manager_metadata_summaries(self) -> pulumi.Output[Sequence['outputs.VaultExternalKeyManagerMetadataSummary']]:
-        """
-        Summary about metadata of external key manager to be returned to the customer as a response.
-        """
+    def external_key_manager_metadata_summaries(self) -> pulumi.Output[Optional[Sequence['outputs.VaultExternalKeyManagerMetadataSummary']]]:
         return pulumi.get(self, "external_key_manager_metadata_summaries")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> pulumi.Output[bool]:
-        """
-        A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
-        """
+    def is_primary(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_primary")
 
     @property
     @pulumi.getter(name="managementEndpoint")
-    def management_endpoint(self) -> pulumi.Output[str]:
-        """
-        The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-        """
+    def management_endpoint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "management_endpoint")
 
     @property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> pulumi.Output[Sequence['outputs.VaultReplicaDetail']]:
-        """
-        Vault replica details
-        """
+    def replica_details(self) -> pulumi.Output[Optional[Sequence['outputs.VaultReplicaDetail']]]:
         return pulumi.get(self, "replica_details")
 
     @property
     @pulumi.getter(name="restoreFromFile")
     def restore_from_file(self) -> pulumi.Output[Optional['outputs.VaultRestoreFromFile']]:
-        """
-        (Updatable) Details where vault was backed up.
-        """
         return pulumi.get(self, "restore_from_file")
 
     @property
     @pulumi.getter(name="restoreFromObjectStore")
     def restore_from_object_store(self) -> pulumi.Output[Optional['outputs.VaultRestoreFromObjectStore']]:
-        """
-        (Updatable) Details where vault was backed up
-        """
         return pulumi.get(self, "restore_from_object_store")
 
     @property
@@ -852,44 +576,26 @@ class Vault(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="restoredFromVaultId")
-    def restored_from_vault_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
-        """
+    def restored_from_vault_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "restored_from_vault_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The vault's current lifecycle state.  Example: `DELETED`
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def time_of_deletion(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="vaultType")
     def vault_type(self) -> pulumi.Output[str]:
-        """
-        The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
-        """
         return pulumi.get(self, "vault_type")
 

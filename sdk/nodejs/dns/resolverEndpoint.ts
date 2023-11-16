@@ -72,15 +72,15 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     /**
      * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
      */
-    public readonly endpointType!: pulumi.Output<string>;
+    public readonly endpointType!: pulumi.Output<string | undefined>;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
-    public readonly forwardingAddress!: pulumi.Output<string>;
+    public readonly forwardingAddress!: pulumi.Output<string | undefined>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
@@ -92,7 +92,7 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      */
-    public readonly listeningAddress!: pulumi.Output<string>;
+    public readonly listeningAddress!: pulumi.Output<string | undefined>;
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      */
@@ -112,11 +112,11 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    public /*out*/ readonly self!: pulumi.Output<string | undefined>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      *
@@ -128,11 +128,11 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ResolverEndpoint resource with the given unique name, arguments, and options.

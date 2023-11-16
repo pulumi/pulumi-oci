@@ -139,7 +139,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? RefName;
         public readonly string RepositoryId;
 
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.DevOps
         private GetRepositoryArchiveContentResult(
             string? format,
 
-            string id,
+            string? id,
 
             string? refName,
 

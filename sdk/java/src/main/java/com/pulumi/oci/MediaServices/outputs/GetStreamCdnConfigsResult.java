@@ -39,7 +39,7 @@ public final class GetStreamCdnConfigsResult {
      * @return The list of stream_cdn_config_collection.
      * 
      */
-    private List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections;
+    private @Nullable List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections;
 
     private GetStreamCdnConfigsResult() {}
     /**
@@ -78,7 +78,7 @@ public final class GetStreamCdnConfigsResult {
      * 
      */
     public List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections() {
-        return this.streamCdnConfigCollections;
+        return this.streamCdnConfigCollections == null ? List.of() : this.streamCdnConfigCollections;
     }
 
     public static Builder builder() {
@@ -95,7 +95,7 @@ public final class GetStreamCdnConfigsResult {
         private @Nullable List<GetStreamCdnConfigsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-        private List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections;
+        private @Nullable List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections;
         public Builder() {}
         public Builder(GetStreamCdnConfigsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -136,8 +136,8 @@ public final class GetStreamCdnConfigsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder streamCdnConfigCollections(List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections) {
-            this.streamCdnConfigCollections = Objects.requireNonNull(streamCdnConfigCollections);
+        public Builder streamCdnConfigCollections(@Nullable List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections) {
+            this.streamCdnConfigCollections = streamCdnConfigCollections;
             return this;
         }
         public Builder streamCdnConfigCollections(GetStreamCdnConfigsStreamCdnConfigCollection... streamCdnConfigCollections) {

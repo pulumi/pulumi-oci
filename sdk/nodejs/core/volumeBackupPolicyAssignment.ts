@@ -74,7 +74,7 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
     /**
      * The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a VolumeBackupPolicyAssignment resource with the given unique name, arguments, and options.

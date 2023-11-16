@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -60,28 +59,28 @@ type LookupDiscoveryScheduleArgs struct {
 // A collection of values returned by getDiscoverySchedule.
 type LookupDiscoveryScheduleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule exists.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags         map[string]interface{} `pulumi:"definedTags"`
 	DiscoveryScheduleId string                 `pulumi:"discoveryScheduleId"`
 	// A user-friendly name for the discovery schedule. Does not have to be unique, and it's mutable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Recurrence specification for the discovery schedule execution.
-	ExecutionRecurrences string `pulumi:"executionRecurrences"`
+	ExecutionRecurrences *string `pulumi:"executionRecurrences"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The detailed state of the discovery schedule.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Current state of the discovery schedule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the discovery schedule was created in RFC3339 format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the discovery schedule was last updated in RFC3339 format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDiscoveryScheduleOutput(ctx *pulumi.Context, args LookupDiscoveryScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupDiscoveryScheduleResultOutput {
@@ -122,15 +121,9 @@ func (o LookupDiscoveryScheduleResultOutput) ToLookupDiscoveryScheduleResultOutp
 	return o
 }
 
-func (o LookupDiscoveryScheduleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDiscoveryScheduleResult] {
-	return pulumix.Output[LookupDiscoveryScheduleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule exists.
-func (o LookupDiscoveryScheduleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -143,13 +136,13 @@ func (o LookupDiscoveryScheduleResultOutput) DiscoveryScheduleId() pulumi.String
 }
 
 // A user-friendly name for the discovery schedule. Does not have to be unique, and it's mutable. Avoid entering confidential information.
-func (o LookupDiscoveryScheduleResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Recurrence specification for the discovery schedule execution.
-func (o LookupDiscoveryScheduleResultOutput) ExecutionRecurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.ExecutionRecurrences }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) ExecutionRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.ExecutionRecurrences }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -158,18 +151,18 @@ func (o LookupDiscoveryScheduleResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
-func (o LookupDiscoveryScheduleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The detailed state of the discovery schedule.
-func (o LookupDiscoveryScheduleResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Current state of the discovery schedule.
-func (o LookupDiscoveryScheduleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -178,13 +171,13 @@ func (o LookupDiscoveryScheduleResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the discovery schedule was created in RFC3339 format.
-func (o LookupDiscoveryScheduleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the discovery schedule was last updated in RFC3339 format.
-func (o LookupDiscoveryScheduleResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDiscoveryScheduleResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

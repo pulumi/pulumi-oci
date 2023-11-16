@@ -35,7 +35,7 @@ class GetJobOutputResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -43,10 +43,7 @@ class GetJobOutputResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetJobOutputItemResult']:
-        """
-        Items in collection.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetJobOutputItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -69,21 +66,7 @@ class AwaitableGetJobOutputResult(GetJobOutputResult):
 def get_job_output(job_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobOutputResult:
     """
-    This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
-
-    List the Job Outputs
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_output = oci.DatabaseMigration.get_job_output(job_id=oci_database_migration_job["test_job"]["id"])
-    ```
-
-
-    :param str job_id: The OCID of the job
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['jobId'] = job_id
@@ -100,20 +83,6 @@ def get_job_output(job_id: Optional[str] = None,
 def get_job_output_output(job_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobOutputResult]:
     """
-    This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
-
-    List the Job Outputs
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_output = oci.DatabaseMigration.get_job_output(job_id=oci_database_migration_job["test_job"]["id"])
-    ```
-
-
-    :param str job_id: The OCID of the job
+    Use this data source to access information about an existing resource.
     """
     ...

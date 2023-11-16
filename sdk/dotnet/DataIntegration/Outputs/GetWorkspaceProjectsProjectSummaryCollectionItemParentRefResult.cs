@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// Key of the parent object.
         /// </summary>
-        public readonly string Parent;
+        public readonly string? Parent;
         /// <summary>
         /// Key of the root document object.
         /// </summary>
-        public readonly string RootDocId;
+        public readonly string? RootDocId;
 
         [OutputConstructor]
         private GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult(
-            string parent,
+            string? parent,
 
-            string rootDocId)
+            string? rootDocId)
         {
             Parent = parent;
             RootDocId = rootDocId;

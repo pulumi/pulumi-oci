@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity service.
@@ -63,7 +62,7 @@ type GetAuthTokensArgs struct {
 type GetAuthTokensResult struct {
 	Filters []GetAuthTokensFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of tokens.
 	Tokens []GetAuthTokensToken `pulumi:"tokens"`
 	// The OCID of the user the auth token belongs to.
@@ -109,19 +108,13 @@ func (o GetAuthTokensResultOutput) ToGetAuthTokensResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetAuthTokensResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuthTokensResult] {
-	return pulumix.Output[GetAuthTokensResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAuthTokensResultOutput) Filters() GetAuthTokensFilterArrayOutput {
 	return o.ApplyT(func(v GetAuthTokensResult) []GetAuthTokensFilter { return v.Filters }).(GetAuthTokensFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuthTokensResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuthTokensResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuthTokensResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuthTokensResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of tokens.

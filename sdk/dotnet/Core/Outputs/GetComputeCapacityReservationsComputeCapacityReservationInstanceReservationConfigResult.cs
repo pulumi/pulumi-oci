@@ -20,11 +20,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         /// </summary>
-        public readonly string InstanceShape;
+        public readonly string? InstanceShape;
         /// <summary>
         /// The shape configuration requested when launching instances in a compute capacity reservation.
         /// </summary>
@@ -32,25 +32,25 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The total number of instances that can be launched from the capacity configuration.
         /// </summary>
-        public readonly string ReservedCount;
+        public readonly string? ReservedCount;
         /// <summary>
         /// The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         /// </summary>
-        public readonly string UsedCount;
+        public readonly string? UsedCount;
 
         [OutputConstructor]
         private GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigResult(
             ImmutableArray<Outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfigResult> clusterConfigs,
 
-            string faultDomain,
+            string? faultDomain,
 
-            string instanceShape,
+            string? instanceShape,
 
             ImmutableArray<Outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult> instanceShapeConfigs,
 
-            string reservedCount,
+            string? reservedCount,
 
-            string usedCount)
+            string? usedCount)
         {
             ClusterConfigs = clusterConfigs;
             FaultDomain = faultDomain;

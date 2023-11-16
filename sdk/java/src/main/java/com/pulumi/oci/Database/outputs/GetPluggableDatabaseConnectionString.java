@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPluggableDatabaseConnectionString {
@@ -15,17 +17,17 @@ public final class GetPluggableDatabaseConnectionString {
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    private Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,Object> allConnectionStrings;
     /**
      * @return A host name-based PDB connection string.
      * 
      */
-    private String pdbDefault;
+    private @Nullable String pdbDefault;
     /**
      * @return An IP-based PDB connection string.
      * 
      */
-    private String pdbIpDefault;
+    private @Nullable String pdbIpDefault;
 
     private GetPluggableDatabaseConnectionString() {}
     /**
@@ -33,21 +35,21 @@ public final class GetPluggableDatabaseConnectionString {
      * 
      */
     public Map<String,Object> allConnectionStrings() {
-        return this.allConnectionStrings;
+        return this.allConnectionStrings == null ? Map.of() : this.allConnectionStrings;
     }
     /**
      * @return A host name-based PDB connection string.
      * 
      */
-    public String pdbDefault() {
-        return this.pdbDefault;
+    public Optional<String> pdbDefault() {
+        return Optional.ofNullable(this.pdbDefault);
     }
     /**
      * @return An IP-based PDB connection string.
      * 
      */
-    public String pdbIpDefault() {
-        return this.pdbIpDefault;
+    public Optional<String> pdbIpDefault() {
+        return Optional.ofNullable(this.pdbIpDefault);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetPluggableDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> allConnectionStrings;
-        private String pdbDefault;
-        private String pdbIpDefault;
+        private @Nullable Map<String,Object> allConnectionStrings;
+        private @Nullable String pdbDefault;
+        private @Nullable String pdbIpDefault;
         public Builder() {}
         public Builder(GetPluggableDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetPluggableDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
-            this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
+        public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+            this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
-        public Builder pdbDefault(String pdbDefault) {
-            this.pdbDefault = Objects.requireNonNull(pdbDefault);
+        public Builder pdbDefault(@Nullable String pdbDefault) {
+            this.pdbDefault = pdbDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder pdbIpDefault(String pdbIpDefault) {
-            this.pdbIpDefault = Objects.requireNonNull(pdbIpDefault);
+        public Builder pdbIpDefault(@Nullable String pdbIpDefault) {
+            this.pdbIpDefault = pdbIpDefault;
             return this;
         }
         public GetPluggableDatabaseConnectionString build() {

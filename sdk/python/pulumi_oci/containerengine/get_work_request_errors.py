@@ -52,7 +52,7 @@ class GetWorkRequestErrorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +60,7 @@ class GetWorkRequestErrorsResult:
 
     @property
     @pulumi.getter(name="workRequestErrors")
-    def work_request_errors(self) -> Sequence['outputs.GetWorkRequestErrorsWorkRequestErrorResult']:
-        """
-        The list of work_request_errors.
-        """
+    def work_request_errors(self) -> Optional[Sequence['outputs.GetWorkRequestErrorsWorkRequestErrorResult']]:
         return pulumi.get(self, "work_request_errors")
 
     @property
@@ -90,23 +87,7 @@ def get_work_request_errors(compartment_id: Optional[str] = None,
                             work_request_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkRequestErrorsResult:
     """
-    This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the errors of a work request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_work_request_errors = oci.ContainerEngine.get_work_request_errors(compartment_id=var["compartment_id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str work_request_id: The OCID of the work request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,22 +110,6 @@ def get_work_request_errors_output(compartment_id: Optional[pulumi.Input[str]] =
                                    work_request_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkRequestErrorsResult]:
     """
-    This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the errors of a work request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_work_request_errors = oci.ContainerEngine.get_work_request_errors(compartment_id=var["compartment_id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str work_request_id: The OCID of the work request.
+    Use this data source to access information about an existing resource.
     """
     ...

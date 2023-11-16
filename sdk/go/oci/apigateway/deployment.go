@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deployment resource in Oracle Cloud Infrastructure API Gateway service.
@@ -575,25 +574,25 @@ type Deployment struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The endpoint to access this deployment on the gateway.
-	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
+	Endpoint pulumi.StringPtrOutput `pulumi:"endpoint"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	GatewayId pulumi.StringOutput `pulumi:"gatewayId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix pulumi.StringOutput `pulumi:"pathPrefix"`
 	// (Updatable) The logical configuration of the API exposed by a deployment.
 	Specification DeploymentSpecificationOutput `pulumi:"specification"`
 	// The current state of the deployment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDeployment registers a new resource with the given unique name, arguments, and options.
@@ -753,12 +752,6 @@ func (i *Deployment) ToDeploymentOutputWithContext(ctx context.Context) Deployme
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentOutput)
 }
 
-func (i *Deployment) ToOutput(ctx context.Context) pulumix.Output[*Deployment] {
-	return pulumix.Output[*Deployment]{
-		OutputState: i.ToDeploymentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DeploymentArrayInput is an input type that accepts DeploymentArray and DeploymentArrayOutput values.
 // You can construct a concrete instance of `DeploymentArrayInput` via:
 //
@@ -782,12 +775,6 @@ func (i DeploymentArray) ToDeploymentArrayOutput() DeploymentArrayOutput {
 
 func (i DeploymentArray) ToDeploymentArrayOutputWithContext(ctx context.Context) DeploymentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentArrayOutput)
-}
-
-func (i DeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]*Deployment] {
-	return pulumix.Output[[]*Deployment]{
-		OutputState: i.ToDeploymentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DeploymentMapInput is an input type that accepts DeploymentMap and DeploymentMapOutput values.
@@ -815,12 +802,6 @@ func (i DeploymentMap) ToDeploymentMapOutputWithContext(ctx context.Context) Dep
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentMapOutput)
 }
 
-func (i DeploymentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Deployment] {
-	return pulumix.Output[map[string]*Deployment]{
-		OutputState: i.ToDeploymentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DeploymentOutput struct{ *pulumi.OutputState }
 
 func (DeploymentOutput) ElementType() reflect.Type {
@@ -835,12 +816,6 @@ func (o DeploymentOutput) ToDeploymentOutputWithContext(ctx context.Context) Dep
 	return o
 }
 
-func (o DeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[*Deployment] {
-	return pulumix.Output[*Deployment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 func (o DeploymentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -852,13 +827,13 @@ func (o DeploymentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o DeploymentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DeploymentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint to access this deployment on the gateway.
-func (o DeploymentOutput) Endpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
+func (o DeploymentOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringPtrOutput { return v.Endpoint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -872,8 +847,8 @@ func (o DeploymentOutput) GatewayId() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o DeploymentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DeploymentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
@@ -887,18 +862,18 @@ func (o DeploymentOutput) Specification() DeploymentSpecificationOutput {
 }
 
 // The current state of the deployment.
-func (o DeploymentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DeploymentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o DeploymentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DeploymentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o DeploymentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DeploymentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DeploymentArrayOutput struct{ *pulumi.OutputState }
@@ -913,12 +888,6 @@ func (o DeploymentArrayOutput) ToDeploymentArrayOutput() DeploymentArrayOutput {
 
 func (o DeploymentArrayOutput) ToDeploymentArrayOutputWithContext(ctx context.Context) DeploymentArrayOutput {
 	return o
-}
-
-func (o DeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Deployment] {
-	return pulumix.Output[[]*Deployment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeploymentArrayOutput) Index(i pulumi.IntInput) DeploymentOutput {
@@ -939,12 +908,6 @@ func (o DeploymentMapOutput) ToDeploymentMapOutput() DeploymentMapOutput {
 
 func (o DeploymentMapOutput) ToDeploymentMapOutputWithContext(ctx context.Context) DeploymentMapOutput {
 	return o
-}
-
-func (o DeploymentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Deployment] {
-	return pulumix.Output[map[string]*Deployment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeploymentMapOutput) MapIndex(k pulumi.StringInput) DeploymentOutput {

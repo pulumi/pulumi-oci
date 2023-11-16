@@ -56,7 +56,7 @@ export interface GetBackupsResult {
     /**
      * The list of backups.
      */
-    readonly backups: outputs.Database.GetBackupsBackup[];
+    readonly backups?: outputs.Database.GetBackupsBackup[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -69,7 +69,7 @@ export interface GetBackupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.

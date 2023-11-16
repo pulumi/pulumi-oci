@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Time Available For Refresh resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -61,7 +60,7 @@ type GetFusionEnvironmentTimeAvailableForRefreshArgs struct {
 type GetFusionEnvironmentTimeAvailableForRefreshResult struct {
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of available refresh time objects.
 	Items []GetFusionEnvironmentTimeAvailableForRefreshItem `pulumi:"items"`
 }
@@ -104,19 +103,13 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) ToGetFusionEnvi
 	return o
 }
 
-func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshResult] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) FusionEnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshResult) string { return v.FusionEnvironmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of available refresh time objects.

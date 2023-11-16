@@ -45,72 +45,72 @@ export interface GetReplicationResult {
     /**
      * The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Percentage progress of the current replication cycle.
      */
-    readonly deltaProgress: string;
+    readonly deltaProgress?: string;
     /**
      * The current state of the snapshot during replication operations.
      */
-    readonly deltaStatus: string;
+    readonly deltaStatus?: string;
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My replication`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      */
-    readonly lastSnapshotId: string;
+    readonly lastSnapshotId?: string;
     /**
      * Additional information about the current 'lifecycleState'.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      */
-    readonly recoveryPointTime: string;
+    readonly recoveryPointTime?: string;
     readonly replicationId: string;
     /**
      * Duration in minutes between replication snapshots.
      */
-    readonly replicationInterval: string;
+    readonly replicationInterval?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
      */
-    readonly replicationTargetId: string;
+    readonly replicationTargetId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
      */
-    readonly sourceId: string;
+    readonly sourceId?: string;
     /**
      * The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.

@@ -50,477 +50,351 @@ class GetOpensearchClustersFilterResult(dict):
 @pulumi.output_type
 class GetOpensearchClustersOpensearchClusterCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
     def __init__(__self__, *,
-                 availability_domains: Sequence[str],
-                 compartment_id: str,
-                 data_node_count: int,
-                 data_node_host_bare_metal_shape: str,
-                 data_node_host_memory_gb: int,
-                 data_node_host_ocpu_count: int,
-                 data_node_host_type: str,
-                 data_node_storage_gb: int,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 fqdn: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 master_node_count: int,
-                 master_node_host_bare_metal_shape: str,
-                 master_node_host_memory_gb: int,
-                 master_node_host_ocpu_count: int,
-                 master_node_host_type: str,
-                 opendashboard_fqdn: str,
-                 opendashboard_node_count: int,
-                 opendashboard_node_host_memory_gb: int,
-                 opendashboard_node_host_ocpu_count: int,
-                 opendashboard_private_ip: str,
-                 opensearch_fqdn: str,
-                 opensearch_private_ip: str,
-                 security_master_user_name: str,
-                 security_master_user_password_hash: str,
-                 security_mode: str,
-                 software_version: str,
-                 state: str,
-                 subnet_compartment_id: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_deleted: str,
-                 time_updated: str,
-                 total_storage_gb: int,
-                 vcn_compartment_id: str,
-                 vcn_id: str):
-        """
-        :param Sequence[str] availability_domains: The availability domains to distribute the cluser nodes across.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param int data_node_count: The number of data nodes configured for the cluster.
-        :param str data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param int data_node_host_memory_gb: The amount of memory in GB, for the cluster's data nodes.
-        :param int data_node_host_ocpu_count: The number of OCPUs configured for the cluster's data nodes.
-        :param str data_node_host_type: The instance type for the cluster's data nodes.
-        :param int data_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique OpensearchCluster identifier
-        :param str lifecycle_details: Additional information about the current lifecycle state of the cluster.
-        :param int master_node_count: The number of master nodes configured for the cluster.
-        :param str master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param int master_node_host_memory_gb: The amount of memory in GB, for the cluster's master nodes.
-        :param int master_node_host_ocpu_count: The number of OCPUs configured for cluster's master nodes.
-        :param str master_node_host_type: The instance type for the cluster's master nodes.
-        :param str opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        :param int opendashboard_node_count: The number of OpenSearch Dashboard nodes configured for the cluster.
-        :param int opendashboard_node_host_memory_gb: The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-        :param int opendashboard_node_host_ocpu_count: The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-        :param str opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
-        :param str opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param str opensearch_private_ip: The cluster's private IP address.
-        :param str security_master_user_name: The name of the master user that are used to manage security config
-        :param str security_master_user_password_hash: The password hash of the master user that are used to manage security config
-        :param str security_mode: The security mode of the cluster.
-        :param str software_version: The software version the cluster is running.
-        :param str state: A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
-        :param str subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
-        :param str subnet_id: The OCID of the cluster's subnet.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The amount of time in milliseconds since the cluster was created.
-        :param str time_deleted: The amount of time in milliseconds since the cluster was updated.
-        :param str time_updated: The amount of time in milliseconds since the cluster was updated.
-        :param int total_storage_gb: The size in GB of the cluster's total storage.
-        :param str vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
-        :param str vcn_id: The OCID of the cluster's VCN.
-        """
-        pulumi.set(__self__, "availability_domains", availability_domains)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_node_count", data_node_count)
-        pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
-        pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
-        pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
-        pulumi.set(__self__, "data_node_host_type", data_node_host_type)
-        pulumi.set(__self__, "data_node_storage_gb", data_node_storage_gb)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "master_node_count", master_node_count)
-        pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
-        pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
-        pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
-        pulumi.set(__self__, "master_node_host_type", master_node_host_type)
-        pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
-        pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
-        pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
-        pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
-        pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
-        pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
-        pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
-        pulumi.set(__self__, "security_master_user_name", security_master_user_name)
-        pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
-        pulumi.set(__self__, "security_mode", security_mode)
-        pulumi.set(__self__, "software_version", software_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_deleted", time_deleted)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_storage_gb", total_storage_gb)
-        pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 availability_domains: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 data_node_count: Optional[int] = None,
+                 data_node_host_bare_metal_shape: Optional[str] = None,
+                 data_node_host_memory_gb: Optional[int] = None,
+                 data_node_host_ocpu_count: Optional[int] = None,
+                 data_node_host_type: Optional[str] = None,
+                 data_node_storage_gb: Optional[int] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 fqdn: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 master_node_count: Optional[int] = None,
+                 master_node_host_bare_metal_shape: Optional[str] = None,
+                 master_node_host_memory_gb: Optional[int] = None,
+                 master_node_host_ocpu_count: Optional[int] = None,
+                 master_node_host_type: Optional[str] = None,
+                 opendashboard_fqdn: Optional[str] = None,
+                 opendashboard_node_count: Optional[int] = None,
+                 opendashboard_node_host_memory_gb: Optional[int] = None,
+                 opendashboard_node_host_ocpu_count: Optional[int] = None,
+                 opendashboard_private_ip: Optional[str] = None,
+                 opensearch_fqdn: Optional[str] = None,
+                 opensearch_private_ip: Optional[str] = None,
+                 security_master_user_name: Optional[str] = None,
+                 security_master_user_password_hash: Optional[str] = None,
+                 security_mode: Optional[str] = None,
+                 software_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_compartment_id: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_deleted: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 total_storage_gb: Optional[int] = None,
+                 vcn_compartment_id: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if availability_domains is not None:
+            pulumi.set(__self__, "availability_domains", availability_domains)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_node_count is not None:
+            pulumi.set(__self__, "data_node_count", data_node_count)
+        if data_node_host_bare_metal_shape is not None:
+            pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
+        if data_node_host_memory_gb is not None:
+            pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
+        if data_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
+        if data_node_host_type is not None:
+            pulumi.set(__self__, "data_node_host_type", data_node_host_type)
+        if data_node_storage_gb is not None:
+            pulumi.set(__self__, "data_node_storage_gb", data_node_storage_gb)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if master_node_count is not None:
+            pulumi.set(__self__, "master_node_count", master_node_count)
+        if master_node_host_bare_metal_shape is not None:
+            pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+        if master_node_host_memory_gb is not None:
+            pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
+        if master_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
+        if master_node_host_type is not None:
+            pulumi.set(__self__, "master_node_host_type", master_node_host_type)
+        if opendashboard_fqdn is not None:
+            pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
+        if opendashboard_node_count is not None:
+            pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
+        if opendashboard_node_host_memory_gb is not None:
+            pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
+        if opendashboard_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+        if opendashboard_private_ip is not None:
+            pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
+        if opensearch_fqdn is not None:
+            pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
+        if opensearch_private_ip is not None:
+            pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
+        if security_master_user_name is not None:
+            pulumi.set(__self__, "security_master_user_name", security_master_user_name)
+        if security_master_user_password_hash is not None:
+            pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
+        if security_mode is not None:
+            pulumi.set(__self__, "security_mode", security_mode)
+        if software_version is not None:
+            pulumi.set(__self__, "software_version", software_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_compartment_id is not None:
+            pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_deleted is not None:
+            pulumi.set(__self__, "time_deleted", time_deleted)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if total_storage_gb is not None:
+            pulumi.set(__self__, "total_storage_gb", total_storage_gb)
+        if vcn_compartment_id is not None:
+            pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availabilityDomains")
-    def availability_domains(self) -> Sequence[str]:
-        """
-        The availability domains to distribute the cluser nodes across.
-        """
+    def availability_domains(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "availability_domains")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataNodeCount")
-    def data_node_count(self) -> int:
-        """
-        The number of data nodes configured for the cluster.
-        """
+    def data_node_count(self) -> Optional[int]:
         return pulumi.get(self, "data_node_count")
 
     @property
     @pulumi.getter(name="dataNodeHostBareMetalShape")
-    def data_node_host_bare_metal_shape(self) -> str:
-        """
-        The bare metal shape for the cluster's data nodes.
-        """
+    def data_node_host_bare_metal_shape(self) -> Optional[str]:
         return pulumi.get(self, "data_node_host_bare_metal_shape")
 
     @property
     @pulumi.getter(name="dataNodeHostMemoryGb")
-    def data_node_host_memory_gb(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's data nodes.
-        """
+    def data_node_host_memory_gb(self) -> Optional[int]:
         return pulumi.get(self, "data_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="dataNodeHostOcpuCount")
-    def data_node_host_ocpu_count(self) -> int:
-        """
-        The number of OCPUs configured for the cluster's data nodes.
-        """
+    def data_node_host_ocpu_count(self) -> Optional[int]:
         return pulumi.get(self, "data_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="dataNodeHostType")
-    def data_node_host_type(self) -> str:
-        """
-        The instance type for the cluster's data nodes.
-        """
+    def data_node_host_type(self) -> Optional[str]:
         return pulumi.get(self, "data_node_host_type")
 
     @property
     @pulumi.getter(name="dataNodeStorageGb")
-    def data_node_storage_gb(self) -> int:
-        """
-        The amount of storage in GB, to configure per node for the cluster's data nodes.
-        """
+    def data_node_storage_gb(self) -> Optional[int]:
         return pulumi.get(self, "data_node_storage_gb")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique OpensearchCluster identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state of the cluster.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="masterNodeCount")
-    def master_node_count(self) -> int:
-        """
-        The number of master nodes configured for the cluster.
-        """
+    def master_node_count(self) -> Optional[int]:
         return pulumi.get(self, "master_node_count")
 
     @property
     @pulumi.getter(name="masterNodeHostBareMetalShape")
-    def master_node_host_bare_metal_shape(self) -> str:
-        """
-        The bare metal shape for the cluster's master nodes.
-        """
+    def master_node_host_bare_metal_shape(self) -> Optional[str]:
         return pulumi.get(self, "master_node_host_bare_metal_shape")
 
     @property
     @pulumi.getter(name="masterNodeHostMemoryGb")
-    def master_node_host_memory_gb(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's master nodes.
-        """
+    def master_node_host_memory_gb(self) -> Optional[int]:
         return pulumi.get(self, "master_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="masterNodeHostOcpuCount")
-    def master_node_host_ocpu_count(self) -> int:
-        """
-        The number of OCPUs configured for cluster's master nodes.
-        """
+    def master_node_host_ocpu_count(self) -> Optional[int]:
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="masterNodeHostType")
-    def master_node_host_type(self) -> str:
-        """
-        The instance type for the cluster's master nodes.
-        """
+    def master_node_host_type(self) -> Optional[str]:
         return pulumi.get(self, "master_node_host_type")
 
     @property
     @pulumi.getter(name="opendashboardFqdn")
-    def opendashboard_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        """
+    def opendashboard_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "opendashboard_fqdn")
 
     @property
     @pulumi.getter(name="opendashboardNodeCount")
-    def opendashboard_node_count(self) -> int:
-        """
-        The number of OpenSearch Dashboard nodes configured for the cluster.
-        """
+    def opendashboard_node_count(self) -> Optional[int]:
         return pulumi.get(self, "opendashboard_node_count")
 
     @property
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
-    def opendashboard_node_host_memory_gb(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-        """
+    def opendashboard_node_host_memory_gb(self) -> Optional[int]:
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
-    def opendashboard_node_host_ocpu_count(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-        """
+    def opendashboard_node_host_ocpu_count(self) -> Optional[int]:
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
-    def opendashboard_private_ip(self) -> str:
-        """
-        The private IP address for the cluster's OpenSearch Dashboard.
-        """
+    def opendashboard_private_ip(self) -> Optional[str]:
         return pulumi.get(self, "opendashboard_private_ip")
 
     @property
     @pulumi.getter(name="opensearchFqdn")
-    def opensearch_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
+    def opensearch_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "opensearch_fqdn")
 
     @property
     @pulumi.getter(name="opensearchPrivateIp")
-    def opensearch_private_ip(self) -> str:
-        """
-        The cluster's private IP address.
-        """
+    def opensearch_private_ip(self) -> Optional[str]:
         return pulumi.get(self, "opensearch_private_ip")
 
     @property
     @pulumi.getter(name="securityMasterUserName")
-    def security_master_user_name(self) -> str:
-        """
-        The name of the master user that are used to manage security config
-        """
+    def security_master_user_name(self) -> Optional[str]:
         return pulumi.get(self, "security_master_user_name")
 
     @property
     @pulumi.getter(name="securityMasterUserPasswordHash")
-    def security_master_user_password_hash(self) -> str:
-        """
-        The password hash of the master user that are used to manage security config
-        """
+    def security_master_user_password_hash(self) -> Optional[str]:
         return pulumi.get(self, "security_master_user_password_hash")
 
     @property
     @pulumi.getter(name="securityMode")
-    def security_mode(self) -> str:
-        """
-        The security mode of the cluster.
-        """
+    def security_mode(self) -> Optional[str]:
         return pulumi.get(self, "security_mode")
 
     @property
     @pulumi.getter(name="softwareVersion")
-    def software_version(self) -> str:
-        """
-        The software version the cluster is running.
-        """
+    def software_version(self) -> Optional[str]:
         return pulumi.get(self, "software_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetCompartmentId")
-    def subnet_compartment_id(self) -> str:
-        """
-        The OCID for the compartment where the cluster's subnet is located.
-        """
+    def subnet_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_compartment_id")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the cluster's subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The amount of time in milliseconds since the cluster was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeDeleted")
-    def time_deleted(self) -> str:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
+    def time_deleted(self) -> Optional[str]:
         return pulumi.get(self, "time_deleted")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalStorageGb")
-    def total_storage_gb(self) -> int:
-        """
-        The size in GB of the cluster's total storage.
-        """
+    def total_storage_gb(self) -> Optional[int]:
         return pulumi.get(self, "total_storage_gb")
 
     @property
     @pulumi.getter(name="vcnCompartmentId")
-    def vcn_compartment_id(self) -> str:
-        """
-        The OCID for the compartment where the cluster's VCN is located.
-        """
+    def vcn_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_compartment_id")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The OCID of the cluster's VCN.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
 @pulumi.output_type
 class GetOpensearchVersionItemResult(dict):
     def __init__(__self__, *,
-                 version: str):
-        """
-        :param str version: The version of OpenSearch.
-        """
-        pulumi.set(__self__, "version", version)
+                 version: Optional[str] = None):
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of OpenSearch.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -554,36 +428,26 @@ class GetOpensearchVersionsFilterResult(dict):
 @pulumi.output_type
 class GetOpensearchVersionsOpensearchVersionsCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult']):
-        """
-        :param Sequence['GetOpensearchVersionsOpensearchVersionsCollectionItemArgs'] items: A list of OpenSearch versions.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult']:
-        """
-        A list of OpenSearch versions.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOpensearchVersionsOpensearchVersionsCollectionItemResult(dict):
     def __init__(__self__, *,
-                 version: str):
-        """
-        :param str version: The version of OpenSearch.
-        """
-        pulumi.set(__self__, "version", version)
+                 version: Optional[str] = None):
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of OpenSearch.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 

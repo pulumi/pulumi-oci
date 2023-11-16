@@ -134,7 +134,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be "1"
         /// </summary>
-        public readonly int AdNumber;
+        public readonly int? AdNumber;
         /// <summary>
         /// The OCID of the tenancy.
         /// </summary>
@@ -142,21 +142,21 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The OCID of the Availability Domain.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the Availability Domain.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAvailabilityDomainResult(
-            int adNumber,
+            int? adNumber,
 
             string compartmentId,
 
-            string id,
+            string? id,
 
-            string name)
+            string? name)
         {
             AdNumber = adNumber;
             CompartmentId = compartmentId;

@@ -202,7 +202,7 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the export request.
         /// </summary>
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.DataIntegration
 
             ImmutableArray<Outputs.GetWorkspaceExportRequestsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

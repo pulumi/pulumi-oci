@@ -49,19 +49,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
-        public readonly string State;
-        public readonly string TimeDecommissionScheduled;
+        public readonly string? Id;
+        public readonly string? State;
+        public readonly string? TimeDecommissionScheduled;
 
         [OutputConstructor]
         private GetMigrateToNativeVcnStatusResult(
             string clusterId,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
-            string timeDecommissionScheduled)
+            string? timeDecommissionScheduled)
         {
             ClusterId = clusterId;
             Id = id;

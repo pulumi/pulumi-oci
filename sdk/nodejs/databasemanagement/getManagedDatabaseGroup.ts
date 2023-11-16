@@ -47,36 +47,36 @@ export interface GetManagedDatabaseGroupResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The information specified by the user about the Managed Database Group.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseGroupId: string;
     /**
      * A list of Managed Databases in the Managed Database Group.
      */
-    readonly managedDatabases: outputs.DatabaseManagement.GetManagedDatabaseGroupManagedDatabase[];
+    readonly managedDatabases?: outputs.DatabaseManagement.GetManagedDatabaseGroupManagedDatabase[];
     /**
      * The name of the Managed Database Group.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The current lifecycle state of the Managed Database Group.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the Managed Database Group was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the Managed Database Group was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.

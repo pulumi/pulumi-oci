@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Osub Usage service.
@@ -69,58 +68,58 @@ type GetComputedUsageArgs struct {
 // A collection of values returned by getComputedUsage.
 type GetComputedUsageResult struct {
 	// Subscribed service commitmentId.
-	CommitmentServiceId string `pulumi:"commitmentServiceId"`
-	CompartmentId       string `pulumi:"compartmentId"`
+	CommitmentServiceId *string `pulumi:"commitmentServiceId"`
+	CompartmentId       string  `pulumi:"compartmentId"`
 	// SPM Internal compute records source .
-	ComputeSource   string `pulumi:"computeSource"`
-	ComputedUsageId string `pulumi:"computedUsageId"`
+	ComputeSource   *string `pulumi:"computeSource"`
+	ComputedUsageId string  `pulumi:"computedUsageId"`
 	// Computed Line Amount not rounded
-	Cost string `pulumi:"cost"`
+	Cost *string `pulumi:"cost"`
 	// Computed Line Amount rounded.
-	CostRounded string `pulumi:"costRounded"`
+	CostRounded *string `pulumi:"costRounded"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter string   `pulumi:"dataCenter"`
+	DataCenter *string  `pulumi:"dataCenter"`
 	Fields     []string `pulumi:"fields"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Invoicing status for the aggregated compute usage
-	IsInvoiced bool `pulumi:"isInvoiced"`
+	IsInvoiced *bool `pulumi:"isInvoiced"`
 	// MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-	MqsMessageId string `pulumi:"mqsMessageId"`
+	MqsMessageId *string `pulumi:"mqsMessageId"`
 	// Net Unit Price for the product in consideration, price actual.
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-	OriginalUsageNumber string `pulumi:"originalUsageNumber"`
+	OriginalUsageNumber *string `pulumi:"originalUsageNumber"`
 	// Product description
 	ParentProducts []GetComputedUsageParentProduct `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId string `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId *string `pulumi:"parentSubscribedServiceId"`
 	// Subscription plan number
-	PlanNumber string `pulumi:"planNumber"`
+	PlanNumber *string `pulumi:"planNumber"`
 	// Product description
 	Products []GetComputedUsageProduct `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Ratecard Id at subscribed service level
-	RateCardId string `pulumi:"rateCardId"`
+	RateCardId *string `pulumi:"rateCardId"`
 	// References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-	RateCardTierdId string `pulumi:"rateCardTierdId"`
+	RateCardTierdId *string `pulumi:"rateCardTierdId"`
 	// Computed Usage created time, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Metered Service date, expressed in RFC 3339 timestamp format.
-	TimeMeteredOn string `pulumi:"timeMeteredOn"`
+	TimeMeteredOn *string `pulumi:"timeMeteredOn"`
 	// Usae computation date, expressed in RFC 3339 timestamp format.
-	TimeOfArrival string `pulumi:"timeOfArrival"`
+	TimeOfArrival *string `pulumi:"timeOfArrival"`
 	// Computed Usage updated time, expressed in RFC 3339 timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Usage compute type in SPM.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 	// SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-	UsageNumber      string  `pulumi:"usageNumber"`
+	UsageNumber      *string `pulumi:"usageNumber"`
 	XOneOriginRegion *string `pulumi:"xOneOriginRegion"`
 }
 
@@ -168,15 +167,9 @@ func (o GetComputedUsageResultOutput) ToGetComputedUsageResultOutputWithContext(
 	return o
 }
 
-func (o GetComputedUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageResult] {
-	return pulumix.Output[GetComputedUsageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Subscribed service commitmentId.
-func (o GetComputedUsageResultOutput) CommitmentServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.CommitmentServiceId }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) CommitmentServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.CommitmentServiceId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetComputedUsageResultOutput) CompartmentId() pulumi.StringOutput {
@@ -184,8 +177,8 @@ func (o GetComputedUsageResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // SPM Internal compute records source .
-func (o GetComputedUsageResultOutput) ComputeSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.ComputeSource }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) ComputeSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.ComputeSource }).(pulumi.StringPtrOutput)
 }
 
 func (o GetComputedUsageResultOutput) ComputedUsageId() pulumi.StringOutput {
@@ -193,23 +186,23 @@ func (o GetComputedUsageResultOutput) ComputedUsageId() pulumi.StringOutput {
 }
 
 // Computed Line Amount not rounded
-func (o GetComputedUsageResultOutput) Cost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.Cost }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) Cost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.Cost }).(pulumi.StringPtrOutput)
 }
 
 // Computed Line Amount rounded.
-func (o GetComputedUsageResultOutput) CostRounded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.CostRounded }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) CostRounded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.CostRounded }).(pulumi.StringPtrOutput)
 }
 
 // Currency code
-func (o GetComputedUsageResultOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Data Center Attribute as sent by MQS to SPM.
-func (o GetComputedUsageResultOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 func (o GetComputedUsageResultOutput) Fields() pulumi.StringArrayOutput {
@@ -217,28 +210,28 @@ func (o GetComputedUsageResultOutput) Fields() pulumi.StringArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputedUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Invoicing status for the aggregated compute usage
-func (o GetComputedUsageResultOutput) IsInvoiced() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) bool { return v.IsInvoiced }).(pulumi.BoolOutput)
+func (o GetComputedUsageResultOutput) IsInvoiced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *bool { return v.IsInvoiced }).(pulumi.BoolPtrOutput)
 }
 
 // MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-func (o GetComputedUsageResultOutput) MqsMessageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.MqsMessageId }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) MqsMessageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.MqsMessageId }).(pulumi.StringPtrOutput)
 }
 
 // Net Unit Price for the product in consideration, price actual.
-func (o GetComputedUsageResultOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-func (o GetComputedUsageResultOutput) OriginalUsageNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.OriginalUsageNumber }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) OriginalUsageNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.OriginalUsageNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -247,13 +240,13 @@ func (o GetComputedUsageResultOutput) ParentProducts() GetComputedUsageParentPro
 }
 
 // Subscribed service line parent id
-func (o GetComputedUsageResultOutput) ParentSubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.ParentSubscribedServiceId }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) ParentSubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.ParentSubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription plan number
-func (o GetComputedUsageResultOutput) PlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.PlanNumber }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) PlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.PlanNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -262,53 +255,53 @@ func (o GetComputedUsageResultOutput) Products() GetComputedUsageProductArrayOut
 }
 
 // Total Quantity that was used for computation
-func (o GetComputedUsageResultOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Ratecard Id at subscribed service level
-func (o GetComputedUsageResultOutput) RateCardId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.RateCardId }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) RateCardId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.RateCardId }).(pulumi.StringPtrOutput)
 }
 
 // References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-func (o GetComputedUsageResultOutput) RateCardTierdId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.RateCardTierdId }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) RateCardTierdId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.RateCardTierdId }).(pulumi.StringPtrOutput)
 }
 
 // Computed Usage created time, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Metered Service date, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsageResultOutput) TimeMeteredOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.TimeMeteredOn }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) TimeMeteredOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.TimeMeteredOn }).(pulumi.StringPtrOutput)
 }
 
 // Usae computation date, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsageResultOutput) TimeOfArrival() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.TimeOfArrival }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) TimeOfArrival() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.TimeOfArrival }).(pulumi.StringPtrOutput)
 }
 
 // Computed Usage updated time, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsageResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Usage compute type in SPM.
-func (o GetComputedUsageResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsageResultOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-func (o GetComputedUsageResultOutput) UsageNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageResult) string { return v.UsageNumber }).(pulumi.StringOutput)
+func (o GetComputedUsageResultOutput) UsageNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageResult) *string { return v.UsageNumber }).(pulumi.StringPtrOutput)
 }
 
 func (o GetComputedUsageResultOutput) XOneOriginRegion() pulumi.StringPtrOutput {

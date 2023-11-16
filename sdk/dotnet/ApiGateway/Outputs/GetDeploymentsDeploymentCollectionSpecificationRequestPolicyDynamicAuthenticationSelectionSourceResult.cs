@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// String describing the context variable used as selector.
         /// </summary>
-        public readonly string Selector;
+        public readonly string? Selector;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult(
-            string selector,
+            string? selector,
 
-            string type)
+            string? type)
         {
             Selector = selector;
             Type = type;

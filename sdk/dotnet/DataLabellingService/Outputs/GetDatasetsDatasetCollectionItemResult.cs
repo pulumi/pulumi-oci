@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalProperties;
+        public readonly ImmutableDictionary<string, object>? AdditionalProperties;
         /// <summary>
         /// A filter to return only resources that match the entire annotation format given.
         /// </summary>
-        public readonly string AnnotationFormat;
+        public readonly string? AnnotationFormat;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         /// </summary>
@@ -36,23 +36,23 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user provided description of the dataset
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique Dataset OCID
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         /// </summary>
@@ -68,49 +68,49 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// The labeling instructions for human labelers in rich text format
         /// </summary>
-        public readonly string LabelingInstructions;
+        public readonly string? LabelingInstructions;
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
         /// </summary>
-        public readonly string LifecycleSubstate;
+        public readonly string? LifecycleSubstate;
         /// <summary>
         /// A filter to return only resources whose lifecycleState matches this query param.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created, in the timestamp format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDatasetsDatasetCollectionItemResult(
-            ImmutableDictionary<string, object> additionalProperties,
+            ImmutableDictionary<string, object>? additionalProperties,
 
-            string annotationFormat,
+            string? annotationFormat,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult> datasetFormatDetails,
 
             ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemDatasetSourceDetailResult> datasetSourceDetails,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult> initialImportDatasetConfigurations,
 
@@ -118,17 +118,17 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
 
             ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemLabelSetResult> labelSets,
 
-            string labelingInstructions,
+            string? labelingInstructions,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string lifecycleSubstate,
+            string? lifecycleSubstate,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AdditionalProperties = additionalProperties;
             AnnotationFormat = annotationFormat;

@@ -11,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration {
@@ -18,77 +20,77 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
      * @return The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
      * 
      */
-    private List<String> dnsIps;
+    private @Nullable List<String> dnsIps;
     /**
      * @return Dynamic routing information for the Compute Cloud@Customer infrastructure.
      * 
      */
-    private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics;
+    private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics;
     /**
      * @return Static routing information for a rack.
      * 
      */
-    private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics;
+    private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics;
     /**
      * @return Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
      * 
      */
-    private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode> managementNodes;
+    private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode> managementNodes;
     /**
      * @return The hostname corresponding to the virtual IP (VIP) address of the management nodes.
      * 
      */
-    private String mgmtVipHostname;
+    private @Nullable String mgmtVipHostname;
     /**
      * @return The IP address used as the virtual IP (VIP) address of the management nodes.
      * 
      */
-    private String mgmtVipIp;
+    private @Nullable String mgmtVipIp;
     /**
      * @return Addresses of the network spine switches.
      * 
      */
-    private List<String> spineIps;
+    private @Nullable List<String> spineIps;
     /**
      * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
      * 
      */
-    private String spineVip;
+    private @Nullable String spineVip;
     /**
      * @return Domain name to be used as the base domain for the internal network and by  public facing services.
      * 
      */
-    private String uplinkDomain;
+    private @Nullable String uplinkDomain;
     /**
      * @return Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
      * 
      */
-    private String uplinkGatewayIp;
+    private @Nullable String uplinkGatewayIp;
     /**
      * @return Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
      * 
      */
-    private String uplinkNetmask;
+    private @Nullable String uplinkNetmask;
     /**
      * @return Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
      * 
      */
-    private Integer uplinkPortCount;
+    private @Nullable Integer uplinkPortCount;
     /**
      * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
      * 
      */
-    private String uplinkPortForwardErrorCorrection;
+    private @Nullable String uplinkPortForwardErrorCorrection;
     /**
      * @return Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
      * 
      */
-    private Integer uplinkPortSpeedInGbps;
+    private @Nullable Integer uplinkPortSpeedInGbps;
     /**
      * @return The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
      * 
      */
-    private Integer uplinkVlanMtu;
+    private @Nullable Integer uplinkVlanMtu;
 
     private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration() {}
     /**
@@ -96,105 +98,105 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
      * 
      */
     public List<String> dnsIps() {
-        return this.dnsIps;
+        return this.dnsIps == null ? List.of() : this.dnsIps;
     }
     /**
      * @return Dynamic routing information for the Compute Cloud@Customer infrastructure.
      * 
      */
     public List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics() {
-        return this.infrastructureRoutingDynamics;
+        return this.infrastructureRoutingDynamics == null ? List.of() : this.infrastructureRoutingDynamics;
     }
     /**
      * @return Static routing information for a rack.
      * 
      */
     public List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics() {
-        return this.infrastructureRoutingStatics;
+        return this.infrastructureRoutingStatics == null ? List.of() : this.infrastructureRoutingStatics;
     }
     /**
      * @return Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
      * 
      */
     public List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode> managementNodes() {
-        return this.managementNodes;
+        return this.managementNodes == null ? List.of() : this.managementNodes;
     }
     /**
      * @return The hostname corresponding to the virtual IP (VIP) address of the management nodes.
      * 
      */
-    public String mgmtVipHostname() {
-        return this.mgmtVipHostname;
+    public Optional<String> mgmtVipHostname() {
+        return Optional.ofNullable(this.mgmtVipHostname);
     }
     /**
      * @return The IP address used as the virtual IP (VIP) address of the management nodes.
      * 
      */
-    public String mgmtVipIp() {
-        return this.mgmtVipIp;
+    public Optional<String> mgmtVipIp() {
+        return Optional.ofNullable(this.mgmtVipIp);
     }
     /**
      * @return Addresses of the network spine switches.
      * 
      */
     public List<String> spineIps() {
-        return this.spineIps;
+        return this.spineIps == null ? List.of() : this.spineIps;
     }
     /**
      * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
      * 
      */
-    public String spineVip() {
-        return this.spineVip;
+    public Optional<String> spineVip() {
+        return Optional.ofNullable(this.spineVip);
     }
     /**
      * @return Domain name to be used as the base domain for the internal network and by  public facing services.
      * 
      */
-    public String uplinkDomain() {
-        return this.uplinkDomain;
+    public Optional<String> uplinkDomain() {
+        return Optional.ofNullable(this.uplinkDomain);
     }
     /**
      * @return Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
      * 
      */
-    public String uplinkGatewayIp() {
-        return this.uplinkGatewayIp;
+    public Optional<String> uplinkGatewayIp() {
+        return Optional.ofNullable(this.uplinkGatewayIp);
     }
     /**
      * @return Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
      * 
      */
-    public String uplinkNetmask() {
-        return this.uplinkNetmask;
+    public Optional<String> uplinkNetmask() {
+        return Optional.ofNullable(this.uplinkNetmask);
     }
     /**
      * @return Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
      * 
      */
-    public Integer uplinkPortCount() {
-        return this.uplinkPortCount;
+    public Optional<Integer> uplinkPortCount() {
+        return Optional.ofNullable(this.uplinkPortCount);
     }
     /**
      * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
      * 
      */
-    public String uplinkPortForwardErrorCorrection() {
-        return this.uplinkPortForwardErrorCorrection;
+    public Optional<String> uplinkPortForwardErrorCorrection() {
+        return Optional.ofNullable(this.uplinkPortForwardErrorCorrection);
     }
     /**
      * @return Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
      * 
      */
-    public Integer uplinkPortSpeedInGbps() {
-        return this.uplinkPortSpeedInGbps;
+    public Optional<Integer> uplinkPortSpeedInGbps() {
+        return Optional.ofNullable(this.uplinkPortSpeedInGbps);
     }
     /**
      * @return The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
      * 
      */
-    public Integer uplinkVlanMtu() {
-        return this.uplinkVlanMtu;
+    public Optional<Integer> uplinkVlanMtu() {
+        return Optional.ofNullable(this.uplinkVlanMtu);
     }
 
     public static Builder builder() {
@@ -206,21 +208,21 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> dnsIps;
-        private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics;
-        private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics;
-        private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode> managementNodes;
-        private String mgmtVipHostname;
-        private String mgmtVipIp;
-        private List<String> spineIps;
-        private String spineVip;
-        private String uplinkDomain;
-        private String uplinkGatewayIp;
-        private String uplinkNetmask;
-        private Integer uplinkPortCount;
-        private String uplinkPortForwardErrorCorrection;
-        private Integer uplinkPortSpeedInGbps;
-        private Integer uplinkVlanMtu;
+        private @Nullable List<String> dnsIps;
+        private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics;
+        private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics;
+        private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode> managementNodes;
+        private @Nullable String mgmtVipHostname;
+        private @Nullable String mgmtVipIp;
+        private @Nullable List<String> spineIps;
+        private @Nullable String spineVip;
+        private @Nullable String uplinkDomain;
+        private @Nullable String uplinkGatewayIp;
+        private @Nullable String uplinkNetmask;
+        private @Nullable Integer uplinkPortCount;
+        private @Nullable String uplinkPortForwardErrorCorrection;
+        private @Nullable Integer uplinkPortSpeedInGbps;
+        private @Nullable Integer uplinkVlanMtu;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -242,93 +244,93 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
         }
 
         @CustomType.Setter
-        public Builder dnsIps(List<String> dnsIps) {
-            this.dnsIps = Objects.requireNonNull(dnsIps);
+        public Builder dnsIps(@Nullable List<String> dnsIps) {
+            this.dnsIps = dnsIps;
             return this;
         }
         public Builder dnsIps(String... dnsIps) {
             return dnsIps(List.of(dnsIps));
         }
         @CustomType.Setter
-        public Builder infrastructureRoutingDynamics(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics) {
-            this.infrastructureRoutingDynamics = Objects.requireNonNull(infrastructureRoutingDynamics);
+        public Builder infrastructureRoutingDynamics(@Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics) {
+            this.infrastructureRoutingDynamics = infrastructureRoutingDynamics;
             return this;
         }
         public Builder infrastructureRoutingDynamics(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic... infrastructureRoutingDynamics) {
             return infrastructureRoutingDynamics(List.of(infrastructureRoutingDynamics));
         }
         @CustomType.Setter
-        public Builder infrastructureRoutingStatics(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics) {
-            this.infrastructureRoutingStatics = Objects.requireNonNull(infrastructureRoutingStatics);
+        public Builder infrastructureRoutingStatics(@Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics) {
+            this.infrastructureRoutingStatics = infrastructureRoutingStatics;
             return this;
         }
         public Builder infrastructureRoutingStatics(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic... infrastructureRoutingStatics) {
             return infrastructureRoutingStatics(List.of(infrastructureRoutingStatics));
         }
         @CustomType.Setter
-        public Builder managementNodes(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode> managementNodes) {
-            this.managementNodes = Objects.requireNonNull(managementNodes);
+        public Builder managementNodes(@Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode> managementNodes) {
+            this.managementNodes = managementNodes;
             return this;
         }
         public Builder managementNodes(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode... managementNodes) {
             return managementNodes(List.of(managementNodes));
         }
         @CustomType.Setter
-        public Builder mgmtVipHostname(String mgmtVipHostname) {
-            this.mgmtVipHostname = Objects.requireNonNull(mgmtVipHostname);
+        public Builder mgmtVipHostname(@Nullable String mgmtVipHostname) {
+            this.mgmtVipHostname = mgmtVipHostname;
             return this;
         }
         @CustomType.Setter
-        public Builder mgmtVipIp(String mgmtVipIp) {
-            this.mgmtVipIp = Objects.requireNonNull(mgmtVipIp);
+        public Builder mgmtVipIp(@Nullable String mgmtVipIp) {
+            this.mgmtVipIp = mgmtVipIp;
             return this;
         }
         @CustomType.Setter
-        public Builder spineIps(List<String> spineIps) {
-            this.spineIps = Objects.requireNonNull(spineIps);
+        public Builder spineIps(@Nullable List<String> spineIps) {
+            this.spineIps = spineIps;
             return this;
         }
         public Builder spineIps(String... spineIps) {
             return spineIps(List.of(spineIps));
         }
         @CustomType.Setter
-        public Builder spineVip(String spineVip) {
-            this.spineVip = Objects.requireNonNull(spineVip);
+        public Builder spineVip(@Nullable String spineVip) {
+            this.spineVip = spineVip;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkDomain(String uplinkDomain) {
-            this.uplinkDomain = Objects.requireNonNull(uplinkDomain);
+        public Builder uplinkDomain(@Nullable String uplinkDomain) {
+            this.uplinkDomain = uplinkDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkGatewayIp(String uplinkGatewayIp) {
-            this.uplinkGatewayIp = Objects.requireNonNull(uplinkGatewayIp);
+        public Builder uplinkGatewayIp(@Nullable String uplinkGatewayIp) {
+            this.uplinkGatewayIp = uplinkGatewayIp;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkNetmask(String uplinkNetmask) {
-            this.uplinkNetmask = Objects.requireNonNull(uplinkNetmask);
+        public Builder uplinkNetmask(@Nullable String uplinkNetmask) {
+            this.uplinkNetmask = uplinkNetmask;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkPortCount(Integer uplinkPortCount) {
-            this.uplinkPortCount = Objects.requireNonNull(uplinkPortCount);
+        public Builder uplinkPortCount(@Nullable Integer uplinkPortCount) {
+            this.uplinkPortCount = uplinkPortCount;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkPortForwardErrorCorrection(String uplinkPortForwardErrorCorrection) {
-            this.uplinkPortForwardErrorCorrection = Objects.requireNonNull(uplinkPortForwardErrorCorrection);
+        public Builder uplinkPortForwardErrorCorrection(@Nullable String uplinkPortForwardErrorCorrection) {
+            this.uplinkPortForwardErrorCorrection = uplinkPortForwardErrorCorrection;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkPortSpeedInGbps(Integer uplinkPortSpeedInGbps) {
-            this.uplinkPortSpeedInGbps = Objects.requireNonNull(uplinkPortSpeedInGbps);
+        public Builder uplinkPortSpeedInGbps(@Nullable Integer uplinkPortSpeedInGbps) {
+            this.uplinkPortSpeedInGbps = uplinkPortSpeedInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkVlanMtu(Integer uplinkVlanMtu) {
-            this.uplinkVlanMtu = Objects.requireNonNull(uplinkVlanMtu);
+        public Builder uplinkVlanMtu(@Nullable Integer uplinkVlanMtu) {
+            this.uplinkVlanMtu = uplinkVlanMtu;
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration build() {

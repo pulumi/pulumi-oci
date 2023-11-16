@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
@@ -122,7 +121,7 @@ type GetSecurityAssessmentsResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetSecurityAssessmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
 	IsBaseline           *bool   `pulumi:"isBaseline"`
 	IsScheduleAssessment *bool   `pulumi:"isScheduleAssessment"`
@@ -207,12 +206,6 @@ func (o GetSecurityAssessmentsResultOutput) ToGetSecurityAssessmentsResultOutput
 	return o
 }
 
-func (o GetSecurityAssessmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsResult] {
-	return pulumix.Output[GetSecurityAssessmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecurityAssessmentsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -236,8 +229,8 @@ func (o GetSecurityAssessmentsResultOutput) Filters() GetSecurityAssessmentsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityAssessmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityAssessmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.

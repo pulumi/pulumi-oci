@@ -49,17 +49,11 @@ class GetStreamPackagingConfigsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the stream packaging configuration. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionChannelId")
     def distribution_channel_id(self) -> str:
-        """
-        Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
-        """
         return pulumi.get(self, "distribution_channel_id")
 
     @property
@@ -69,7 +63,7 @@ class GetStreamPackagingConfigsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,17 +72,11 @@ class GetStreamPackagingConfigsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Packaging Configuration.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streamPackagingConfigCollections")
-    def stream_packaging_config_collections(self) -> Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionResult']:
-        """
-        The list of stream_packaging_config_collection.
-        """
+    def stream_packaging_config_collections(self) -> Optional[Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionResult']]:
         return pulumi.get(self, "stream_packaging_config_collections")
 
     @property
@@ -119,27 +107,7 @@ def get_stream_packaging_configs(display_name: Optional[str] = None,
                                  stream_packaging_config_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamPackagingConfigsResult:
     """
-    This data source provides the list of Stream Packaging Configs in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the Stream Packaging Configurations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_packaging_config_display_name"],
-        state=var["stream_packaging_config_state"],
-        stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
-    ```
-
-
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str distribution_channel_id: Unique Stream Distribution Channel identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-    :param str stream_packaging_config_id: Unique Stream Packaging Configuration identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -168,26 +136,6 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
                                         stream_packaging_config_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamPackagingConfigsResult]:
     """
-    This data source provides the list of Stream Packaging Configs in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the Stream Packaging Configurations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_packaging_config_display_name"],
-        state=var["stream_packaging_config_state"],
-        stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
-    ```
-
-
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str distribution_channel_id: Unique Stream Distribution Channel identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-    :param str stream_packaging_config_id: Unique Stream Packaging Configuration identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

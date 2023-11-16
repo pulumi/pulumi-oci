@@ -53,65 +53,65 @@ export interface GetSoftwareSourceSoftwarePackageResult {
     /**
      * The architecture for which this software was built
      */
-    readonly architecture: string;
+    readonly architecture?: string;
     /**
      * Checksum of the file.
      */
-    readonly checksum: string;
+    readonly checksum?: string;
     /**
      * Type of the checksum.
      */
-    readonly checksumType: string;
+    readonly checksumType?: string;
     /**
      * List of dependencies for the software package.
      */
-    readonly dependencies: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackageDependency[];
+    readonly dependencies?: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackageDependency[];
     /**
      * Software source description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Software source name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * List of files for the software package.
      */
-    readonly files: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackageFile[];
+    readonly files?: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackageFile[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether this package is the latest version.
      */
-    readonly isLatest: boolean;
+    readonly isLatest?: boolean;
     /**
      * Date of the last update to the package.
      */
-    readonly lastModifiedDate: string;
+    readonly lastModifiedDate?: string;
     /**
      * Unique identifier for the package. NOTE - This is not an OCID.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Size of the package in bytes.
      */
-    readonly sizeInBytes: string;
+    readonly sizeInBytes?: string;
     readonly softwarePackageName: string;
     readonly softwareSourceId: string;
     /**
      * List of software sources that provide the software package.
      */
-    readonly softwareSources: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackageSoftwareSource[];
+    readonly softwareSources?: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackageSoftwareSource[];
     /**
      * Type of the package.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * Version of the package.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.

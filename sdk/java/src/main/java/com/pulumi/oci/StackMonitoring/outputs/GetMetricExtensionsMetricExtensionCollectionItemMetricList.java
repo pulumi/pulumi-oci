@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionsMetricExtensionCollectionItemMetricList {
@@ -14,99 +16,99 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemMetricList {
      * @return Compute Expression to calculate the value of this metric
      * 
      */
-    private String computeExpression;
+    private @Nullable String computeExpression;
     /**
      * @return Data type of value of this metric
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return Display name of the metric.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Current metric need to be included as dimension or not
      * 
      */
-    private Boolean isDimension;
+    private @Nullable Boolean isDimension;
     /**
      * @return Flag to marks whether a metric has to be uploaded or not. When isHidden = false &gt; Metric is uploaded, isHidden = true &gt; Metric is NOT uploaded
      * 
      */
-    private Boolean isHidden;
+    private @Nullable Boolean isHidden;
     /**
      * @return Metric category
      * 
      */
-    private String metricCategory;
+    private @Nullable String metricCategory;
     /**
      * @return A filter to return resources based on name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Unit of metric value
      * 
      */
-    private String unit;
+    private @Nullable String unit;
 
     private GetMetricExtensionsMetricExtensionCollectionItemMetricList() {}
     /**
      * @return Compute Expression to calculate the value of this metric
      * 
      */
-    public String computeExpression() {
-        return this.computeExpression;
+    public Optional<String> computeExpression() {
+        return Optional.ofNullable(this.computeExpression);
     }
     /**
      * @return Data type of value of this metric
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return Display name of the metric.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Current metric need to be included as dimension or not
      * 
      */
-    public Boolean isDimension() {
-        return this.isDimension;
+    public Optional<Boolean> isDimension() {
+        return Optional.ofNullable(this.isDimension);
     }
     /**
      * @return Flag to marks whether a metric has to be uploaded or not. When isHidden = false &gt; Metric is uploaded, isHidden = true &gt; Metric is NOT uploaded
      * 
      */
-    public Boolean isHidden() {
-        return this.isHidden;
+    public Optional<Boolean> isHidden() {
+        return Optional.ofNullable(this.isHidden);
     }
     /**
      * @return Metric category
      * 
      */
-    public String metricCategory() {
-        return this.metricCategory;
+    public Optional<String> metricCategory() {
+        return Optional.ofNullable(this.metricCategory);
     }
     /**
      * @return A filter to return resources based on name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Unit of metric value
      * 
      */
-    public String unit() {
-        return this.unit;
+    public Optional<String> unit() {
+        return Optional.ofNullable(this.unit);
     }
 
     public static Builder builder() {
@@ -118,14 +120,14 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemMetricList {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String computeExpression;
-        private String dataType;
-        private String displayName;
-        private Boolean isDimension;
-        private Boolean isHidden;
-        private String metricCategory;
-        private String name;
-        private String unit;
+        private @Nullable String computeExpression;
+        private @Nullable String dataType;
+        private @Nullable String displayName;
+        private @Nullable Boolean isDimension;
+        private @Nullable Boolean isHidden;
+        private @Nullable String metricCategory;
+        private @Nullable String name;
+        private @Nullable String unit;
         public Builder() {}
         public Builder(GetMetricExtensionsMetricExtensionCollectionItemMetricList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,43 +142,43 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemMetricList {
         }
 
         @CustomType.Setter
-        public Builder computeExpression(String computeExpression) {
-            this.computeExpression = Objects.requireNonNull(computeExpression);
+        public Builder computeExpression(@Nullable String computeExpression) {
+            this.computeExpression = computeExpression;
             return this;
         }
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder isDimension(Boolean isDimension) {
-            this.isDimension = Objects.requireNonNull(isDimension);
+        public Builder isDimension(@Nullable Boolean isDimension) {
+            this.isDimension = isDimension;
             return this;
         }
         @CustomType.Setter
-        public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+        public Builder isHidden(@Nullable Boolean isHidden) {
+            this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
-        public Builder metricCategory(String metricCategory) {
-            this.metricCategory = Objects.requireNonNull(metricCategory);
+        public Builder metricCategory(@Nullable String metricCategory) {
+            this.metricCategory = metricCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder unit(String unit) {
-            this.unit = Objects.requireNonNull(unit);
+        public Builder unit(@Nullable String unit) {
+            this.unit = unit;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemMetricList build() {

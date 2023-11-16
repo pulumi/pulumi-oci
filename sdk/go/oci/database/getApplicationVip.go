@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
@@ -61,28 +60,28 @@ type LookupApplicationVipArgs struct {
 type LookupApplicationVipResult struct {
 	ApplicationVipId string `pulumi:"applicationVipId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
-	CloudVmClusterId string `pulumi:"cloudVmClusterId"`
+	CloudVmClusterId *string `pulumi:"cloudVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
-	DbNodeId      string `pulumi:"dbNodeId"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	DbNodeId      *string `pulumi:"dbNodeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname of the application virtual IP (VIP) address.
-	HostnameLabel string `pulumi:"hostnameLabel"`
+	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The application virtual IP (VIP) address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the application virtual IP (VIP) address.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time when the create operation for the application virtual IP (VIP) address completed.
-	TimeAssigned string `pulumi:"timeAssigned"`
+	TimeAssigned *string `pulumi:"timeAssigned"`
 }
 
 func LookupApplicationVipOutput(ctx *pulumi.Context, args LookupApplicationVipOutputArgs, opts ...pulumi.InvokeOption) LookupApplicationVipResultOutput {
@@ -123,28 +122,22 @@ func (o LookupApplicationVipResultOutput) ToLookupApplicationVipResultOutputWith
 	return o
 }
 
-func (o LookupApplicationVipResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupApplicationVipResult] {
-	return pulumix.Output[LookupApplicationVipResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupApplicationVipResultOutput) ApplicationVipId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.ApplicationVipId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
-func (o LookupApplicationVipResultOutput) CloudVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.CloudVmClusterId }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) CloudVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.CloudVmClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupApplicationVipResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupApplicationVipResultOutput) DbNodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.DbNodeId }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) DbNodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.DbNodeId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -158,38 +151,38 @@ func (o LookupApplicationVipResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The hostname of the application virtual IP (VIP) address.
-func (o LookupApplicationVipResultOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
-func (o LookupApplicationVipResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The application virtual IP (VIP) address.
-func (o LookupApplicationVipResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the application virtual IP (VIP) address.
-func (o LookupApplicationVipResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the application virtual IP (VIP) address.
-func (o LookupApplicationVipResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
-func (o LookupApplicationVipResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the create operation for the application virtual IP (VIP) address completed.
-func (o LookupApplicationVipResultOutput) TimeAssigned() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.TimeAssigned }).(pulumi.StringOutput)
+func (o LookupApplicationVipResultOutput) TimeAssigned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) *string { return v.TimeAssigned }).(pulumi.StringPtrOutput)
 }
 
 func init() {

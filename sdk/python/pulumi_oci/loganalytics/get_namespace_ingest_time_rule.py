@@ -68,66 +68,42 @@ class GetNamespaceIngestTimeRuleResult:
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetNamespaceIngestTimeRuleActionResult']:
-        """
-        The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetNamespaceIngestTimeRuleActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def conditions(self) -> Sequence['outputs.GetNamespaceIngestTimeRuleConditionResult']:
-        """
-        The condition(s) to evaluate for an ingest time rule.
-        """
+    def conditions(self) -> Optional[Sequence['outputs.GetNamespaceIngestTimeRuleConditionResult']]:
         return pulumi.get(self, "conditions")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description for this resource.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The ingest time rule display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -137,42 +113,27 @@ class GetNamespaceIngestTimeRuleResult:
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        A flag indicating whether or not the ingest time rule is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the ingest time rule.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -202,23 +163,7 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[str] = None,
                                    namespace: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceIngestTimeRuleResult:
     """
-    This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=oci_events_rule["test_rule"]["id"],
-        namespace=var["namespace_ingest_time_rule_namespace"])
-    ```
-
-
-    :param str ingest_time_rule_id: Unique ocid of the ingest time rule.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['ingestTimeRuleId'] = ingest_time_rule_id
@@ -248,22 +193,6 @@ def get_namespace_ingest_time_rule_output(ingest_time_rule_id: Optional[pulumi.I
                                           namespace: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceIngestTimeRuleResult]:
     """
-    This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=oci_events_rule["test_rule"]["id"],
-        namespace=var["namespace_ingest_time_rule_namespace"])
-    ```
-
-
-    :param str ingest_time_rule_id: Unique ocid of the ingest time rule.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

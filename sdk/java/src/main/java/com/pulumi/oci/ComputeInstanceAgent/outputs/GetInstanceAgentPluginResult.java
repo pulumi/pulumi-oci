@@ -6,6 +6,8 @@ package com.pulumi.oci.ComputeInstanceAgent.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceAgentPluginResult {
@@ -14,29 +16,29 @@ public final class GetInstanceAgentPluginResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String instanceagentId;
     /**
      * @return The optional message from the agent plugin
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The plugin name
      * 
      */
-    private String name;
+    private @Nullable String name;
     private String pluginName;
     /**
      * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The last update time of the plugin in UTC
      * 
      */
-    private String timeLastUpdatedUtc;
+    private @Nullable String timeLastUpdatedUtc;
 
     private GetInstanceAgentPluginResult() {}
     public String compartmentId() {
@@ -46,8 +48,8 @@ public final class GetInstanceAgentPluginResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String instanceagentId() {
         return this.instanceagentId;
@@ -56,15 +58,15 @@ public final class GetInstanceAgentPluginResult {
      * @return The optional message from the agent plugin
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The plugin name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String pluginName() {
         return this.pluginName;
@@ -73,15 +75,15 @@ public final class GetInstanceAgentPluginResult {
      * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The last update time of the plugin in UTC
      * 
      */
-    public String timeLastUpdatedUtc() {
-        return this.timeLastUpdatedUtc;
+    public Optional<String> timeLastUpdatedUtc() {
+        return Optional.ofNullable(this.timeLastUpdatedUtc);
     }
 
     public static Builder builder() {
@@ -94,13 +96,13 @@ public final class GetInstanceAgentPluginResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
+        private @Nullable String id;
         private String instanceagentId;
-        private String message;
-        private String name;
+        private @Nullable String message;
+        private @Nullable String name;
         private String pluginName;
-        private String status;
-        private String timeLastUpdatedUtc;
+        private @Nullable String status;
+        private @Nullable String timeLastUpdatedUtc;
         public Builder() {}
         public Builder(GetInstanceAgentPluginResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -120,8 +122,8 @@ public final class GetInstanceAgentPluginResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -130,13 +132,13 @@ public final class GetInstanceAgentPluginResult {
             return this;
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -145,13 +147,13 @@ public final class GetInstanceAgentPluginResult {
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastUpdatedUtc(String timeLastUpdatedUtc) {
-            this.timeLastUpdatedUtc = Objects.requireNonNull(timeLastUpdatedUtc);
+        public Builder timeLastUpdatedUtc(@Nullable String timeLastUpdatedUtc) {
+            this.timeLastUpdatedUtc = timeLastUpdatedUtc;
             return this;
         }
         public GetInstanceAgentPluginResult build() {

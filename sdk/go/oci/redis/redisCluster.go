@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
@@ -75,7 +74,7 @@ type RedisCluster struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The collection of Redis cluster nodes.
 	NodeCollections RedisClusterNodeCollectionArrayOutput `pulumi:"nodeCollections"`
 	// (Updatable) The number of nodes in the Redis cluster.
@@ -83,17 +82,17 @@ type RedisCluster struct {
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64Output `pulumi:"nodeMemoryInGbs"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
-	PrimaryEndpointIpAddress pulumi.StringOutput `pulumi:"primaryEndpointIpAddress"`
+	PrimaryEndpointIpAddress pulumi.StringPtrOutput `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-	PrimaryFqdn pulumi.StringOutput `pulumi:"primaryFqdn"`
+	PrimaryFqdn pulumi.StringPtrOutput `pulumi:"primaryFqdn"`
 	// The private IP address of the API endpoint for the Redis cluster's replica nodes.
-	ReplicasEndpointIpAddress pulumi.StringOutput `pulumi:"replicasEndpointIpAddress"`
+	ReplicasEndpointIpAddress pulumi.StringPtrOutput `pulumi:"replicasEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-	ReplicasFqdn pulumi.StringOutput `pulumi:"replicasFqdn"`
+	ReplicasFqdn pulumi.StringPtrOutput `pulumi:"replicasFqdn"`
 	// The Redis version that the cluster is running.
 	SoftwareVersion pulumi.StringOutput `pulumi:"softwareVersion"`
 	// The current state of the Redis cluster.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
 	//
 	// ** IMPORTANT **
@@ -102,9 +101,9 @@ type RedisCluster struct {
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewRedisCluster registers a new resource with the given unique name, arguments, and options.
@@ -310,12 +309,6 @@ func (i *RedisCluster) ToRedisClusterOutputWithContext(ctx context.Context) Redi
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterOutput)
 }
 
-func (i *RedisCluster) ToOutput(ctx context.Context) pulumix.Output[*RedisCluster] {
-	return pulumix.Output[*RedisCluster]{
-		OutputState: i.ToRedisClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RedisClusterArrayInput is an input type that accepts RedisClusterArray and RedisClusterArrayOutput values.
 // You can construct a concrete instance of `RedisClusterArrayInput` via:
 //
@@ -339,12 +332,6 @@ func (i RedisClusterArray) ToRedisClusterArrayOutput() RedisClusterArrayOutput {
 
 func (i RedisClusterArray) ToRedisClusterArrayOutputWithContext(ctx context.Context) RedisClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterArrayOutput)
-}
-
-func (i RedisClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*RedisCluster] {
-	return pulumix.Output[[]*RedisCluster]{
-		OutputState: i.ToRedisClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RedisClusterMapInput is an input type that accepts RedisClusterMap and RedisClusterMapOutput values.
@@ -372,12 +359,6 @@ func (i RedisClusterMap) ToRedisClusterMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterMapOutput)
 }
 
-func (i RedisClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RedisCluster] {
-	return pulumix.Output[map[string]*RedisCluster]{
-		OutputState: i.ToRedisClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RedisClusterOutput struct{ *pulumi.OutputState }
 
 func (RedisClusterOutput) ElementType() reflect.Type {
@@ -390,12 +371,6 @@ func (o RedisClusterOutput) ToRedisClusterOutput() RedisClusterOutput {
 
 func (o RedisClusterOutput) ToRedisClusterOutputWithContext(ctx context.Context) RedisClusterOutput {
 	return o
-}
-
-func (o RedisClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*RedisCluster] {
-	return pulumix.Output[*RedisCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
@@ -419,8 +394,8 @@ func (o RedisClusterOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-func (o RedisClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o RedisClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The collection of Redis cluster nodes.
@@ -439,23 +414,23 @@ func (o RedisClusterOutput) NodeMemoryInGbs() pulumi.Float64Output {
 }
 
 // The private IP address of the API endpoint for the Redis cluster's primary node.
-func (o RedisClusterOutput) PrimaryEndpointIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.PrimaryEndpointIpAddress }).(pulumi.StringOutput)
+func (o RedisClusterOutput) PrimaryEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.PrimaryEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-func (o RedisClusterOutput) PrimaryFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.PrimaryFqdn }).(pulumi.StringOutput)
+func (o RedisClusterOutput) PrimaryFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.PrimaryFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of the API endpoint for the Redis cluster's replica nodes.
-func (o RedisClusterOutput) ReplicasEndpointIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.ReplicasEndpointIpAddress }).(pulumi.StringOutput)
+func (o RedisClusterOutput) ReplicasEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.ReplicasEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-func (o RedisClusterOutput) ReplicasFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.ReplicasFqdn }).(pulumi.StringOutput)
+func (o RedisClusterOutput) ReplicasFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.ReplicasFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The Redis version that the cluster is running.
@@ -464,8 +439,8 @@ func (o RedisClusterOutput) SoftwareVersion() pulumi.StringOutput {
 }
 
 // The current state of the Redis cluster.
-func (o RedisClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RedisClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
@@ -482,13 +457,13 @@ func (o RedisClusterOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-func (o RedisClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RedisClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-func (o RedisClusterOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o RedisClusterOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type RedisClusterArrayOutput struct{ *pulumi.OutputState }
@@ -503,12 +478,6 @@ func (o RedisClusterArrayOutput) ToRedisClusterArrayOutput() RedisClusterArrayOu
 
 func (o RedisClusterArrayOutput) ToRedisClusterArrayOutputWithContext(ctx context.Context) RedisClusterArrayOutput {
 	return o
-}
-
-func (o RedisClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RedisCluster] {
-	return pulumix.Output[[]*RedisCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RedisClusterArrayOutput) Index(i pulumi.IntInput) RedisClusterOutput {
@@ -529,12 +498,6 @@ func (o RedisClusterMapOutput) ToRedisClusterMapOutput() RedisClusterMapOutput {
 
 func (o RedisClusterMapOutput) ToRedisClusterMapOutputWithContext(ctx context.Context) RedisClusterMapOutput {
 	return o
-}
-
-func (o RedisClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RedisCluster] {
-	return pulumix.Output[map[string]*RedisCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RedisClusterMapOutput) MapIndex(k pulumi.StringInput) RedisClusterOutput {

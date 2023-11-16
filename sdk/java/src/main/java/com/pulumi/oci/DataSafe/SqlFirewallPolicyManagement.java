@@ -14,141 +14,142 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement")
 public class SqlFirewallPolicyManagement extends com.pulumi.resources.CustomResource {
     @Export(name="allowedClientIps", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> allowedClientIps;
+    private Output</* @Nullable */ List<String>> allowedClientIps;
 
-    public Output<List<String>> allowedClientIps() {
-        return this.allowedClientIps;
+    public Output<Optional<List<String>>> allowedClientIps() {
+        return Codegen.optional(this.allowedClientIps);
     }
     @Export(name="allowedClientOsUsernames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> allowedClientOsUsernames;
+    private Output</* @Nullable */ List<String>> allowedClientOsUsernames;
 
-    public Output<List<String>> allowedClientOsUsernames() {
-        return this.allowedClientOsUsernames;
+    public Output<Optional<List<String>>> allowedClientOsUsernames() {
+        return Codegen.optional(this.allowedClientOsUsernames);
     }
     @Export(name="allowedClientPrograms", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> allowedClientPrograms;
+    private Output</* @Nullable */ List<String>> allowedClientPrograms;
 
-    public Output<List<String>> allowedClientPrograms() {
-        return this.allowedClientPrograms;
+    public Output<Optional<List<String>>> allowedClientPrograms() {
+        return Codegen.optional(this.allowedClientPrograms);
     }
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     @Export(name="dbUserName", refs={String.class}, tree="[0]")
-    private Output<String> dbUserName;
+    private Output</* @Nullable */ String> dbUserName;
 
-    public Output<String> dbUserName() {
-        return this.dbUserName;
+    public Output<Optional<String>> dbUserName() {
+        return Codegen.optional(this.dbUserName);
     }
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     @Export(name="enforcementScope", refs={String.class}, tree="[0]")
-    private Output<String> enforcementScope;
+    private Output</* @Nullable */ String> enforcementScope;
 
-    public Output<String> enforcementScope() {
-        return this.enforcementScope;
+    public Output<Optional<String>> enforcementScope() {
+        return Codegen.optional(this.enforcementScope);
     }
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
-    private Output<String> securityPolicyId;
+    private Output</* @Nullable */ String> securityPolicyId;
 
-    public Output<String> securityPolicyId() {
-        return this.securityPolicyId;
+    public Output<Optional<String>> securityPolicyId() {
+        return Codegen.optional(this.securityPolicyId);
     }
     @Export(name="sqlFirewallPolicyId", refs={String.class}, tree="[0]")
-    private Output<String> sqlFirewallPolicyId;
+    private Output</* @Nullable */ String> sqlFirewallPolicyId;
 
-    public Output<String> sqlFirewallPolicyId() {
-        return this.sqlFirewallPolicyId;
+    public Output<Optional<String>> sqlFirewallPolicyId() {
+        return Codegen.optional(this.sqlFirewallPolicyId);
     }
     @Export(name="sqlLevel", refs={String.class}, tree="[0]")
-    private Output<String> sqlLevel;
+    private Output</* @Nullable */ String> sqlLevel;
 
-    public Output<String> sqlLevel() {
-        return this.sqlLevel;
+    public Output<Optional<String>> sqlLevel() {
+        return Codegen.optional(this.sqlLevel);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     @Export(name="targetId", refs={String.class}, tree="[0]")
-    private Output<String> targetId;
+    private Output</* @Nullable */ String> targetId;
 
-    public Output<String> targetId() {
-        return this.targetId;
+    public Output<Optional<String>> targetId() {
+        return Codegen.optional(this.targetId);
     }
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     @Export(name="violationAction", refs={String.class}, tree="[0]")
-    private Output<String> violationAction;
+    private Output</* @Nullable */ String> violationAction;
 
-    public Output<String> violationAction() {
-        return this.violationAction;
+    public Output<Optional<String>> violationAction() {
+        return Codegen.optional(this.violationAction);
     }
     @Export(name="violationAudit", refs={String.class}, tree="[0]")
-    private Output<String> violationAudit;
+    private Output</* @Nullable */ String> violationAudit;
 
-    public Output<String> violationAudit() {
-        return this.violationAudit;
+    public Output<Optional<String>> violationAudit() {
+        return Codegen.optional(this.violationAudit);
     }
 
     /**

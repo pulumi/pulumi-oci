@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Access Policy resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -91,11 +90,11 @@ type AccessPolicy struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the service mesh in which this access policy is created.
 	MeshId pulumi.StringOutput `pulumi:"meshId"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
@@ -103,13 +102,13 @@ type AccessPolicy struct {
 	// (Updatable) List of applicable rules
 	Rules AccessPolicyRuleArrayOutput `pulumi:"rules"`
 	// The current state of the Resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAccessPolicy registers a new resource with the given unique name, arguments, and options.
@@ -266,12 +265,6 @@ func (i *AccessPolicy) ToAccessPolicyOutputWithContext(ctx context.Context) Acce
 	return pulumi.ToOutputWithContext(ctx, i).(AccessPolicyOutput)
 }
 
-func (i *AccessPolicy) ToOutput(ctx context.Context) pulumix.Output[*AccessPolicy] {
-	return pulumix.Output[*AccessPolicy]{
-		OutputState: i.ToAccessPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AccessPolicyArrayInput is an input type that accepts AccessPolicyArray and AccessPolicyArrayOutput values.
 // You can construct a concrete instance of `AccessPolicyArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i AccessPolicyArray) ToAccessPolicyArrayOutput() AccessPolicyArrayOutput {
 
 func (i AccessPolicyArray) ToAccessPolicyArrayOutputWithContext(ctx context.Context) AccessPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AccessPolicyArrayOutput)
-}
-
-func (i AccessPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AccessPolicy] {
-	return pulumix.Output[[]*AccessPolicy]{
-		OutputState: i.ToAccessPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AccessPolicyMapInput is an input type that accepts AccessPolicyMap and AccessPolicyMapOutput values.
@@ -328,12 +315,6 @@ func (i AccessPolicyMap) ToAccessPolicyMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(AccessPolicyMapOutput)
 }
 
-func (i AccessPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AccessPolicy] {
-	return pulumix.Output[map[string]*AccessPolicy]{
-		OutputState: i.ToAccessPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AccessPolicyOutput struct{ *pulumi.OutputState }
 
 func (AccessPolicyOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o AccessPolicyOutput) ToAccessPolicyOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o AccessPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*AccessPolicy] {
-	return pulumix.Output[*AccessPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o AccessPolicyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AccessPolicy) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -365,8 +340,8 @@ func (o AccessPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o AccessPolicyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *AccessPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o AccessPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AccessPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -375,8 +350,8 @@ func (o AccessPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o AccessPolicyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AccessPolicy) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AccessPolicyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AccessPolicy) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the service mesh in which this access policy is created.
@@ -395,8 +370,8 @@ func (o AccessPolicyOutput) Rules() AccessPolicyRuleArrayOutput {
 }
 
 // The current state of the Resource.
-func (o AccessPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AccessPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AccessPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AccessPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -405,13 +380,13 @@ func (o AccessPolicyOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o AccessPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AccessPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AccessPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AccessPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o AccessPolicyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AccessPolicy) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AccessPolicyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AccessPolicy) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AccessPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -426,12 +401,6 @@ func (o AccessPolicyArrayOutput) ToAccessPolicyArrayOutput() AccessPolicyArrayOu
 
 func (o AccessPolicyArrayOutput) ToAccessPolicyArrayOutputWithContext(ctx context.Context) AccessPolicyArrayOutput {
 	return o
-}
-
-func (o AccessPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AccessPolicy] {
-	return pulumix.Output[[]*AccessPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AccessPolicyArrayOutput) Index(i pulumi.IntInput) AccessPolicyOutput {
@@ -452,12 +421,6 @@ func (o AccessPolicyMapOutput) ToAccessPolicyMapOutput() AccessPolicyMapOutput {
 
 func (o AccessPolicyMapOutput) ToAccessPolicyMapOutputWithContext(ctx context.Context) AccessPolicyMapOutput {
 	return o
-}
-
-func (o AccessPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AccessPolicy] {
-	return pulumix.Output[map[string]*AccessPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AccessPolicyMapOutput) MapIndex(k pulumi.StringInput) AccessPolicyOutput {

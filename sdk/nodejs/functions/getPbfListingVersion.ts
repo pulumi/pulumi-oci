@@ -47,56 +47,56 @@ export interface GetPbfListingVersionResult {
     /**
      * Details changes are included in this version.
      */
-    readonly changeSummary: string;
+    readonly changeSummary?: string;
     /**
      * Details about the required and optional Function configurations needed for proper performance of the PBF.
      */
-    readonly configs: outputs.Functions.GetPbfListingVersionConfig[];
+    readonly configs?: outputs.Functions.GetPbfListingVersionConfig[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A brief descriptive name for the PBF trigger.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The OCID of the PbfListing this resource version belongs to.
      */
-    readonly pbfListingId: string;
+    readonly pbfListingId?: string;
     readonly pbfListingVersionId: string;
     /**
      * Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
      */
-    readonly requirements: outputs.Functions.GetPbfListingVersionRequirement[];
+    readonly requirements?: outputs.Functions.GetPbfListingVersionRequirement[];
     /**
      * The current state of the PBF resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * An array of Trigger. A list of triggers that may activate the PBF.
      */
-    readonly triggers: outputs.Functions.GetPbfListingVersionTrigger[];
+    readonly triggers?: outputs.Functions.GetPbfListingVersionTrigger[];
 }
 /**
  * This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.

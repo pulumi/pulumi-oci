@@ -181,7 +181,7 @@ namespace Pulumi.Oci.HealthChecks
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of ping_probe_results.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.HealthChecks
         private GetPingProbeResultsResult(
             ImmutableArray<Outputs.GetPingProbeResultsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPingProbeResultsPingProbeResultResult> pingProbeResults,
 

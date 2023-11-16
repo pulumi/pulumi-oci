@@ -24,7 +24,7 @@ public final class GetMysqlConfigurationsResult {
      * @return The list of configurations.
      * 
      */
-    private List<GetMysqlConfigurationsConfiguration> configurations;
+    private @Nullable List<GetMysqlConfigurationsConfiguration> configurations;
     /**
      * @return The display name of the Configuration.
      * 
@@ -35,7 +35,7 @@ public final class GetMysqlConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the associated Shape.
      * 
@@ -68,7 +68,7 @@ public final class GetMysqlConfigurationsResult {
      * 
      */
     public List<GetMysqlConfigurationsConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return The display name of the Configuration.
@@ -84,8 +84,8 @@ public final class GetMysqlConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the associated Shape.
@@ -120,10 +120,10 @@ public final class GetMysqlConfigurationsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String configurationId;
-        private List<GetMysqlConfigurationsConfiguration> configurations;
+        private @Nullable List<GetMysqlConfigurationsConfiguration> configurations;
         private @Nullable String displayName;
         private @Nullable List<GetMysqlConfigurationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String shapeName;
         private @Nullable String state;
         private @Nullable List<String> types;
@@ -152,8 +152,8 @@ public final class GetMysqlConfigurationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder configurations(List<GetMysqlConfigurationsConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetMysqlConfigurationsConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetMysqlConfigurationsConfiguration... configurations) {
@@ -173,8 +173,8 @@ public final class GetMysqlConfigurationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

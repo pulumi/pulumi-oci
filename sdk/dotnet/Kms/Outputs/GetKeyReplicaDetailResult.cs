@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// ReplicationId associated with a key operation
         /// </summary>
-        public readonly string ReplicationId;
+        public readonly string? ReplicationId;
 
         [OutputConstructor]
-        private GetKeyReplicaDetailResult(string replicationId)
+        private GetKeyReplicaDetailResult(string? replicationId)
         {
             ReplicationId = replicationId;
         }

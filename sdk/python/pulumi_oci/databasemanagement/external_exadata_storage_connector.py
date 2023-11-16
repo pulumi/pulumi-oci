@@ -23,15 +23,6 @@ class ExternalExadataStorageConnectorArgs:
                  storage_server_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a ExternalExadataStorageConnector resource.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
-        :param pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs'] credential_info: (Updatable) The user credential information.
-        :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "agent_id", agent_id)
         pulumi.set(__self__, "connection_uri", connection_uri)
@@ -42,9 +33,6 @@ class ExternalExadataStorageConnectorArgs:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -54,9 +42,6 @@ class ExternalExadataStorageConnectorArgs:
     @property
     @pulumi.getter(name="connectionUri")
     def connection_uri(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        """
         return pulumi.get(self, "connection_uri")
 
     @connection_uri.setter
@@ -66,9 +51,6 @@ class ExternalExadataStorageConnectorArgs:
     @property
     @pulumi.getter(name="connectorName")
     def connector_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the Exadata storage server connector.
-        """
         return pulumi.get(self, "connector_name")
 
     @connector_name.setter
@@ -78,9 +60,6 @@ class ExternalExadataStorageConnectorArgs:
     @property
     @pulumi.getter(name="credentialInfo")
     def credential_info(self) -> pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs']:
-        """
-        (Updatable) The user credential information.
-        """
         return pulumi.get(self, "credential_info")
 
     @credential_info.setter
@@ -90,13 +69,6 @@ class ExternalExadataStorageConnectorArgs:
     @property
     @pulumi.getter(name="storageServerId")
     def storage_server_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "storage_server_id")
 
     @storage_server_id.setter
@@ -124,25 +96,6 @@ class _ExternalExadataStorageConnectorState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalExadataStorageConnector resources.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
-        :param pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs'] credential_info: (Updatable) The user credential information.
-        :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
-        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
-        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
-        :param pulumi.Input[str] status: The status of the Exadata resource.
-        :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
-        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
-        :param pulumi.Input[str] version: The version of the Exadata resource.
         """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
@@ -178,9 +131,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
@@ -190,9 +140,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -202,9 +149,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="connectionUri")
     def connection_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        """
         return pulumi.get(self, "connection_uri")
 
     @connection_uri.setter
@@ -214,9 +158,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="connectorName")
     def connector_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the Exadata storage server connector.
-        """
         return pulumi.get(self, "connector_name")
 
     @connector_name.setter
@@ -226,9 +167,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="credentialInfo")
     def credential_info(self) -> Optional[pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs']]:
-        """
-        (Updatable) The user credential information.
-        """
         return pulumi.get(self, "credential_info")
 
     @credential_info.setter
@@ -238,9 +176,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -250,9 +185,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
@@ -262,9 +194,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="internalId")
     def internal_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The internal ID of the Exadata resource.
-        """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
@@ -274,9 +203,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -286,9 +212,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the database resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -298,9 +221,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Exadata resource.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -310,13 +230,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="storageServerId")
     def storage_server_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "storage_server_id")
 
     @storage_server_id.setter
@@ -326,9 +239,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -338,9 +248,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -350,9 +257,6 @@ class _ExternalExadataStorageConnectorState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the Exadata resource.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -372,49 +276,9 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  storage_server_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates the Exadata storage server connector after validating the connection information.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_exadata_storage_connector = oci.database_management.ExternalExadataStorageConnector("testExternalExadataStorageConnector",
-            agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-            connection_uri=var["external_exadata_storage_connector_connection_uri"],
-            connector_name=var["external_exadata_storage_connector_connector_name"],
-            credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=var["external_exadata_storage_connector_credential_info_password"],
-                username=var["external_exadata_storage_connector_credential_info_username"],
-                ssl_trust_store_location=var["external_exadata_storage_connector_credential_info_ssl_trust_store_location"],
-                ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
-                ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
-            ),
-            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"])
-        ```
-
-        ## Import
-
-        ExternalExadataStorageConnectors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
-        ```
-
+        Create a ExternalExadataStorageConnector resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
-        :param pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']] credential_info: (Updatable) The user credential information.
-        :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -423,38 +287,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  args: ExternalExadataStorageConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates the Exadata storage server connector after validating the connection information.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_exadata_storage_connector = oci.database_management.ExternalExadataStorageConnector("testExternalExadataStorageConnector",
-            agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-            connection_uri=var["external_exadata_storage_connector_connection_uri"],
-            connector_name=var["external_exadata_storage_connector_connector_name"],
-            credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=var["external_exadata_storage_connector_credential_info_password"],
-                username=var["external_exadata_storage_connector_credential_info_username"],
-                ssl_trust_store_location=var["external_exadata_storage_connector_credential_info_ssl_trust_store_location"],
-                ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
-                ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
-            ),
-            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"])
-        ```
-
-        ## Import
-
-        ExternalExadataStorageConnectors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
-        ```
-
+        Create a ExternalExadataStorageConnector resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalExadataStorageConnectorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -541,25 +374,6 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
-        :param pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']] credential_info: (Updatable) The user credential information.
-        :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
-        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
-        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
-        :param pulumi.Input[str] status: The status of the Exadata resource.
-        :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
-        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
-        :param pulumi.Input[str] version: The version of the Exadata resource.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -584,125 +398,76 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        """
         return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="connectionUri")
     def connection_uri(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        """
         return pulumi.get(self, "connection_uri")
 
     @property
     @pulumi.getter(name="connectorName")
     def connector_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the Exadata storage server connector.
-        """
         return pulumi.get(self, "connector_name")
 
     @property
     @pulumi.getter(name="credentialInfo")
     def credential_info(self) -> pulumi.Output['outputs.ExternalExadataStorageConnectorCredentialInfo']:
-        """
-        (Updatable) The user credential information.
-        """
         return pulumi.get(self, "credential_info")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
+    def exadata_infrastructure_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> pulumi.Output[str]:
-        """
-        The internal ID of the Exadata resource.
-        """
+    def internal_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "internal_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the database resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        The status of the Exadata resource.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="storageServerId")
     def storage_server_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "storage_server_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        The version of the Exadata resource.
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 

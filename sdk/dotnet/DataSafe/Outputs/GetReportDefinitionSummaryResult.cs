@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Name of the key or count of object.
         /// </summary>
-        public readonly string CountOf;
+        public readonly string? CountOf;
         /// <summary>
         /// Specifies the order in which the summary must be displayed.
         /// </summary>
-        public readonly int DisplayOrder;
+        public readonly int? DisplayOrder;
         /// <summary>
         /// A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
         /// </summary>
-        public readonly string GroupByFieldName;
+        public readonly string? GroupByFieldName;
         /// <summary>
         /// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         /// </summary>
-        public readonly bool IsHidden;
+        public readonly bool? IsHidden;
         /// <summary>
         /// Name of the report summary.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Additional scim filters used to get the specific summary.
         /// </summary>
-        public readonly string ScimFilter;
+        public readonly string? ScimFilter;
 
         [OutputConstructor]
         private GetReportDefinitionSummaryResult(
-            string countOf,
+            string? countOf,
 
-            int displayOrder,
+            int? displayOrder,
 
-            string groupByFieldName,
+            string? groupByFieldName,
 
-            bool isHidden,
+            bool? isHidden,
 
-            string name,
+            string? name,
 
-            string scimFilter)
+            string? scimFilter)
         {
             CountOf = countOf;
             DisplayOrder = displayOrder;

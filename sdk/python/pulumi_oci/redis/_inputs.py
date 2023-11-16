@@ -19,18 +19,12 @@ __all__ = [
 class RedisClusterNodeCollectionArgs:
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]] items: Collection of node objects.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]:
-        """
-        Collection of node objects.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -44,11 +38,6 @@ class RedisClusterNodeCollectionItemArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  private_endpoint_fqdn: Optional[pulumi.Input[str]] = None,
                  private_endpoint_ip_address: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] private_endpoint_fqdn: The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        :param pulumi.Input[str] private_endpoint_ip_address: The private IP address of the API endpoint to access a specific node.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if private_endpoint_fqdn is not None:
@@ -59,9 +48,6 @@ class RedisClusterNodeCollectionItemArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -71,9 +57,6 @@ class RedisClusterNodeCollectionItemArgs:
     @property
     @pulumi.getter(name="privateEndpointFqdn")
     def private_endpoint_fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        """
         return pulumi.get(self, "private_endpoint_fqdn")
 
     @private_endpoint_fqdn.setter
@@ -83,9 +66,6 @@ class RedisClusterNodeCollectionItemArgs:
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
     def private_endpoint_ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address of the API endpoint to access a specific node.
-        """
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @private_endpoint_ip_address.setter

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The action to be taken if the value of the attribute is not as expected
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The name of the attribute being evaluated
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingCompliancePolicyResult(
-            string action,
+            string? action,
 
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Action = action;
             Name = name;

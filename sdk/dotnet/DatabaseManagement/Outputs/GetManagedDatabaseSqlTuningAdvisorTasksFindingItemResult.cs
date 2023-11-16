@@ -16,107 +16,107 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The time benefit (in seconds) for the highest-rated finding for this object.
         /// </summary>
-        public readonly double DbTimeBenefit;
+        public readonly double? DbTimeBenefit;
         /// <summary>
         /// Indicates whether an alternative execution plan was reported for this SQL statement.
         /// </summary>
-        public readonly bool IsAlternativePlanFindingPresent;
+        public readonly bool? IsAlternativePlanFindingPresent;
         /// <summary>
         /// Indicates whether there is an error in this SQL statement.
         /// </summary>
-        public readonly bool IsErrorFindingPresent;
+        public readonly bool? IsErrorFindingPresent;
         /// <summary>
         /// Indicates whether an index recommendation was reported for this SQL statement.
         /// </summary>
-        public readonly bool IsIndexFindingPresent;
+        public readonly bool? IsIndexFindingPresent;
         /// <summary>
         /// Indicates whether a miscellaneous finding was reported for this SQL statement.
         /// </summary>
-        public readonly bool IsMiscellaneousFindingPresent;
+        public readonly bool? IsMiscellaneousFindingPresent;
         /// <summary>
         /// Indicates whether a restructure SQL recommendation was reported for this SQL statement.
         /// </summary>
-        public readonly bool IsRestructureSqlFindingPresent;
+        public readonly bool? IsRestructureSqlFindingPresent;
         /// <summary>
         /// Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
         /// </summary>
-        public readonly bool IsSqlProfileFindingImplemented;
+        public readonly bool? IsSqlProfileFindingImplemented;
         /// <summary>
         /// Indicates whether a SQL Profile recommendation was reported for this SQL statement.
         /// </summary>
-        public readonly bool IsSqlProfileFindingPresent;
+        public readonly bool? IsSqlProfileFindingPresent;
         /// <summary>
         /// Indicates whether a statistics recommendation was reported for this SQL statement.
         /// </summary>
-        public readonly bool IsStatsFindingPresent;
+        public readonly bool? IsStatsFindingPresent;
         /// <summary>
         /// Indicates whether the task timed out.
         /// </summary>
-        public readonly bool IsTimeoutFindingPresent;
+        public readonly bool? IsTimeoutFindingPresent;
         /// <summary>
         /// The parsing schema of the object.
         /// </summary>
-        public readonly string ParsingSchema;
+        public readonly string? ParsingSchema;
         /// <summary>
         /// The per-execution percentage benefit.
         /// </summary>
-        public readonly int PerExecutionPercentage;
+        public readonly int? PerExecutionPercentage;
         /// <summary>
         /// The unique key of this SQL statement.
         /// </summary>
-        public readonly string SqlKey;
+        public readonly string? SqlKey;
         /// <summary>
         /// The text of the SQL statement.
         /// </summary>
-        public readonly string SqlText;
+        public readonly string? SqlText;
         /// <summary>
         /// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string SqlTuningAdvisorTaskId;
+        public readonly string? SqlTuningAdvisorTaskId;
         /// <summary>
         /// The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string SqlTuningAdvisorTaskObjectExecutionId;
+        public readonly string? SqlTuningAdvisorTaskObjectExecutionId;
         /// <summary>
         /// The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string SqlTuningAdvisorTaskObjectId;
+        public readonly string? SqlTuningAdvisorTaskObjectId;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksFindingItemResult(
-            double dbTimeBenefit,
+            double? dbTimeBenefit,
 
-            bool isAlternativePlanFindingPresent,
+            bool? isAlternativePlanFindingPresent,
 
-            bool isErrorFindingPresent,
+            bool? isErrorFindingPresent,
 
-            bool isIndexFindingPresent,
+            bool? isIndexFindingPresent,
 
-            bool isMiscellaneousFindingPresent,
+            bool? isMiscellaneousFindingPresent,
 
-            bool isRestructureSqlFindingPresent,
+            bool? isRestructureSqlFindingPresent,
 
-            bool isSqlProfileFindingImplemented,
+            bool? isSqlProfileFindingImplemented,
 
-            bool isSqlProfileFindingPresent,
+            bool? isSqlProfileFindingPresent,
 
-            bool isStatsFindingPresent,
+            bool? isStatsFindingPresent,
 
-            bool isTimeoutFindingPresent,
+            bool? isTimeoutFindingPresent,
 
-            string parsingSchema,
+            string? parsingSchema,
 
-            int perExecutionPercentage,
+            int? perExecutionPercentage,
 
-            string sqlKey,
+            string? sqlKey,
 
-            string sqlText,
+            string? sqlText,
 
-            string sqlTuningAdvisorTaskId,
+            string? sqlTuningAdvisorTaskId,
 
-            string sqlTuningAdvisorTaskObjectExecutionId,
+            string? sqlTuningAdvisorTaskObjectExecutionId,
 
-            string sqlTuningAdvisorTaskObjectId)
+            string? sqlTuningAdvisorTaskObjectId)
         {
             DbTimeBenefit = dbTimeBenefit;
             IsAlternativePlanFindingPresent = isAlternativePlanFindingPresent;

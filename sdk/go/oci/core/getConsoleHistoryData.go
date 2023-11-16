@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Console History Content resource in Oracle Cloud Infrastructure Core service.
@@ -69,11 +68,11 @@ type GetConsoleHistoryDataArgs struct {
 type GetConsoleHistoryDataResult struct {
 	ConsoleHistoryId string `pulumi:"consoleHistoryId"`
 	// The console history data.
-	Data string `pulumi:"data"`
+	Data *string `pulumi:"data"`
 	// The provider-assigned unique ID for this managed resource.
-	Id     string `pulumi:"id"`
-	Length *int   `pulumi:"length"`
-	Offset *int   `pulumi:"offset"`
+	Id     *string `pulumi:"id"`
+	Length *int    `pulumi:"length"`
+	Offset *int    `pulumi:"offset"`
 }
 
 func GetConsoleHistoryDataOutput(ctx *pulumi.Context, args GetConsoleHistoryDataOutputArgs, opts ...pulumi.InvokeOption) GetConsoleHistoryDataResultOutput {
@@ -118,24 +117,18 @@ func (o GetConsoleHistoryDataResultOutput) ToGetConsoleHistoryDataResultOutputWi
 	return o
 }
 
-func (o GetConsoleHistoryDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConsoleHistoryDataResult] {
-	return pulumix.Output[GetConsoleHistoryDataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConsoleHistoryDataResultOutput) ConsoleHistoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConsoleHistoryDataResult) string { return v.ConsoleHistoryId }).(pulumi.StringOutput)
 }
 
 // The console history data.
-func (o GetConsoleHistoryDataResultOutput) Data() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConsoleHistoryDataResult) string { return v.Data }).(pulumi.StringOutput)
+func (o GetConsoleHistoryDataResultOutput) Data() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConsoleHistoryDataResult) *string { return v.Data }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetConsoleHistoryDataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConsoleHistoryDataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConsoleHistoryDataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConsoleHistoryDataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetConsoleHistoryDataResultOutput) Length() pulumi.IntPtrOutput {

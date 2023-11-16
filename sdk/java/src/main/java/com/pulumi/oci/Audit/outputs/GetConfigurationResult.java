@@ -7,30 +7,32 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigurationResult {
     private String compartmentId;
-    private String id;
+    private @Nullable String id;
     /**
      * @return The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      * 
      */
-    private Integer retentionPeriodDays;
+    private @Nullable Integer retentionPeriodDays;
 
     private GetConfigurationResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      * 
      */
-    public Integer retentionPeriodDays() {
-        return this.retentionPeriodDays;
+    public Optional<Integer> retentionPeriodDays() {
+        return Optional.ofNullable(this.retentionPeriodDays);
     }
 
     public static Builder builder() {
@@ -43,8 +45,8 @@ public final class GetConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private Integer retentionPeriodDays;
+        private @Nullable String id;
+        private @Nullable Integer retentionPeriodDays;
         public Builder() {}
         public Builder(GetConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,13 +61,13 @@ public final class GetConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionPeriodDays(Integer retentionPeriodDays) {
-            this.retentionPeriodDays = Objects.requireNonNull(retentionPeriodDays);
+        public Builder retentionPeriodDays(@Nullable Integer retentionPeriodDays) {
+            this.retentionPeriodDays = retentionPeriodDays;
             return this;
         }
         public GetConfigurationResult build() {

@@ -61,7 +61,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly active!: pulumi.Output<boolean>;
+    public readonly active!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
      *
@@ -76,7 +76,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly addresses!: pulumi.Output<outputs.Identity.DomainsUserAddress[]>;
+    public readonly addresses!: pulumi.Output<outputs.Identity.DomainsUserAddress[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -102,7 +102,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -116,7 +116,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Description of the user
      *
@@ -133,7 +133,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
      *
@@ -146,7 +146,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -160,7 +160,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A complex attribute representing emails
      *
@@ -175,7 +175,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly emails!: pulumi.Output<outputs.Identity.DomainsUserEmail[]>;
+    public readonly emails!: pulumi.Output<outputs.Identity.DomainsUserEmail[] | undefined>;
     /**
      * (Updatable) A list of entitlements for the User that represent a thing the User has.
      *
@@ -188,7 +188,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly entitlements!: pulumi.Output<outputs.Identity.DomainsUserEntitlement[]>;
+    public readonly entitlements!: pulumi.Output<outputs.Identity.DomainsUserEntitlement[] | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      *
@@ -203,7 +203,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    public readonly externalId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      *
@@ -217,7 +217,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly groups!: pulumi.Output<outputs.Identity.DomainsUserGroup[]>;
+    public /*out*/ readonly groups!: pulumi.Output<outputs.Identity.DomainsUserGroup[] | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -229,7 +229,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsUserIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsUserIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -245,7 +245,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsUserIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsUserIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -259,7 +259,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -272,7 +272,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) User's instant messaging addresses
      *
@@ -286,7 +286,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly ims!: pulumi.Output<outputs.Identity.DomainsUserIm[]>;
+    public readonly ims!: pulumi.Output<outputs.Identity.DomainsUserIm[] | undefined>;
     /**
      * (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
@@ -302,7 +302,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly locale!: pulumi.Output<string>;
+    public readonly locale!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -316,7 +316,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsUserMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsUserMeta[] | undefined>;
     /**
      * (Updatable) Name of the account assigned to the User.
      *
@@ -349,7 +349,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly nickName!: pulumi.Output<string>;
+    public readonly nickName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the user's support account.
      *
@@ -365,7 +365,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Password attribute. Max length for password is controlled via Password Policy.
      *
@@ -382,7 +382,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly password!: pulumi.Output<string>;
+    public readonly password!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Phone numbers
      *
@@ -397,7 +397,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly phoneNumbers!: pulumi.Output<outputs.Identity.DomainsUserPhoneNumber[]>;
+    public readonly phoneNumbers!: pulumi.Output<outputs.Identity.DomainsUserPhoneNumber[] | undefined>;
     /**
      * (Updatable) URLs of photos for the User
      *
@@ -411,7 +411,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly photos!: pulumi.Output<outputs.Identity.DomainsUserPhoto[]>;
+    public readonly photos!: pulumi.Output<outputs.Identity.DomainsUserPhoto[] | undefined>;
     /**
      * (Updatable) User's preferred written or spoken language used for localized user interfaces
      *
@@ -427,7 +427,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly preferredLanguage!: pulumi.Output<string>;
+    public readonly preferredLanguage!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A fully-qualified URL to a page representing the User's online profile
      *
@@ -444,7 +444,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: reference
      * * uniqueness: none
      */
-    public readonly profileUrl!: pulumi.Output<string>;
+    public readonly profileUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -461,7 +461,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly roles!: pulumi.Output<outputs.Identity.DomainsUserRole[]>;
+    public readonly roles!: pulumi.Output<outputs.Identity.DomainsUserRole[] | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -489,7 +489,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsUserTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsUserTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -503,7 +503,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) User's timezone
      *
@@ -521,7 +521,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly timezone!: pulumi.Output<string>;
+    public readonly timezone!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Title
      *
@@ -538,87 +538,87 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly title!: pulumi.Output<string>;
+    public readonly title!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Enterprise User
      */
-    public readonly urnietfparamsscimschemasextensionenterprise20user!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user>;
+    public readonly urnietfparamsscimschemasextensionenterprise20user!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
     /**
      * (Updatable) This extension defines attributes to manage user's risk score.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionadaptiveUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionadaptiveUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser | undefined>;
     /**
      * (Updatable) User's Capabilities
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser | undefined>;
     /**
      * (Updatable) The database credentials user extension.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser | undefined>;
     /**
      * (Updatable) DB User extension
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbUserUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser[]>;
+    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbUserUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser[] | undefined>;
     /**
      * (Updatable) Kerberos User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionkerberosUserUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionkerberosUserUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionmfaUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionmfaUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser[]>;
+    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser[] | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionpasswordlessUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionpasswordlessUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser | undefined>;
     /**
      * (Updatable) POSIX User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionposixUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionposixUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser | undefined>;
     /**
      * (Updatable) This extension defines the attributes used to store the security questions of a user.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser | undefined>;
     /**
      * (Updatable) Controls whether a user can update themselves or not via User related APIs
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser | undefined>;
     /**
      * (Updatable) SFF Auth Keys User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsffUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionsffUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser | undefined>;
     /**
      * (Updatable) Social User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsocialAccountUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionsocialAccountUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser | undefined>;
     /**
      * (Updatable) Terms Of Use extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser | undefined>;
     /**
      * (Updatable) User's credentials
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser[]>;
+    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser[] | undefined>;
     /**
      * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionuserStateUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionuserStateUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser | undefined>;
     /**
      * (Updatable) Oracle Identity Cloud Service User
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionuserUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionuserUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser | undefined>;
     /**
      * (Updatable) User name
      *
@@ -652,7 +652,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly userType!: pulumi.Output<string>;
+    public readonly userType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of certificates issued to the User.
      *
@@ -665,7 +665,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly x509certificates!: pulumi.Output<outputs.Identity.DomainsUserX509certificate[]>;
+    public readonly x509certificates!: pulumi.Output<outputs.Identity.DomainsUserX509certificate[] | undefined>;
 
     /**
      * Create a DomainsUser resource with the given unique name, arguments, and options.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
@@ -70,11 +69,11 @@ type GetClusterKubeConfigArgs struct {
 type GetClusterKubeConfigResult struct {
 	ClusterId string `pulumi:"clusterId"`
 	// content of the Kubeconfig YAML for the cluster.
-	Content    string  `pulumi:"content"`
+	Content    *string `pulumi:"content"`
 	Endpoint   *string `pulumi:"endpoint"`
 	Expiration *int    `pulumi:"expiration"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string  `pulumi:"id"`
+	Id           *string `pulumi:"id"`
 	TokenVersion *string `pulumi:"tokenVersion"`
 }
 
@@ -122,19 +121,13 @@ func (o GetClusterKubeConfigResultOutput) ToGetClusterKubeConfigResultOutputWith
 	return o
 }
 
-func (o GetClusterKubeConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterKubeConfigResult] {
-	return pulumix.Output[GetClusterKubeConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClusterKubeConfigResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterKubeConfigResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
 // content of the Kubeconfig YAML for the cluster.
-func (o GetClusterKubeConfigResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterKubeConfigResult) string { return v.Content }).(pulumi.StringOutput)
+func (o GetClusterKubeConfigResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterKubeConfigResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 func (o GetClusterKubeConfigResultOutput) Endpoint() pulumi.StringPtrOutput {
@@ -146,8 +139,8 @@ func (o GetClusterKubeConfigResultOutput) Expiration() pulumi.IntPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetClusterKubeConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterKubeConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClusterKubeConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterKubeConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetClusterKubeConfigResultOutput) TokenVersion() pulumi.StringPtrOutput {

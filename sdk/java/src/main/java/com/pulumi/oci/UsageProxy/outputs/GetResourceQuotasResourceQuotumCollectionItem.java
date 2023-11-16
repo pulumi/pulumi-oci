@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceQuotasResourceQuotumCollectionItem {
@@ -15,99 +17,99 @@ public final class GetResourceQuotasResourceQuotumCollectionItem {
      * @return The affected resource name.
      * 
      */
-    private String affectedResource;
+    private @Nullable String affectedResource;
     /**
      * @return The quota balance.
      * 
      */
-    private Double balance;
+    private @Nullable Double balance;
     /**
      * @return Used to indicate if further quota consumption isAllowed.
      * 
      */
-    private Boolean isAllowed;
+    private @Nullable Boolean isAllowed;
     /**
      * @return Used to indicate any resource dependencies.
      * 
      */
-    private Boolean isDependency;
+    private @Nullable Boolean isDependency;
     /**
      * @return Used to indicate if overages are incurred.
      * 
      */
-    private Boolean isOverage;
+    private @Nullable Boolean isOverage;
     /**
      * @return The resource name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The purchased quota limit.
      * 
      */
-    private Double purchasedLimit;
+    private @Nullable Double purchasedLimit;
     /**
      * @return The service name.
      * 
      */
-    private String service;
+    private @Nullable String service;
 
     private GetResourceQuotasResourceQuotumCollectionItem() {}
     /**
      * @return The affected resource name.
      * 
      */
-    public String affectedResource() {
-        return this.affectedResource;
+    public Optional<String> affectedResource() {
+        return Optional.ofNullable(this.affectedResource);
     }
     /**
      * @return The quota balance.
      * 
      */
-    public Double balance() {
-        return this.balance;
+    public Optional<Double> balance() {
+        return Optional.ofNullable(this.balance);
     }
     /**
      * @return Used to indicate if further quota consumption isAllowed.
      * 
      */
-    public Boolean isAllowed() {
-        return this.isAllowed;
+    public Optional<Boolean> isAllowed() {
+        return Optional.ofNullable(this.isAllowed);
     }
     /**
      * @return Used to indicate any resource dependencies.
      * 
      */
-    public Boolean isDependency() {
-        return this.isDependency;
+    public Optional<Boolean> isDependency() {
+        return Optional.ofNullable(this.isDependency);
     }
     /**
      * @return Used to indicate if overages are incurred.
      * 
      */
-    public Boolean isOverage() {
-        return this.isOverage;
+    public Optional<Boolean> isOverage() {
+        return Optional.ofNullable(this.isOverage);
     }
     /**
      * @return The resource name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The purchased quota limit.
      * 
      */
-    public Double purchasedLimit() {
-        return this.purchasedLimit;
+    public Optional<Double> purchasedLimit() {
+        return Optional.ofNullable(this.purchasedLimit);
     }
     /**
      * @return The service name.
      * 
      */
-    public String service() {
-        return this.service;
+    public Optional<String> service() {
+        return Optional.ofNullable(this.service);
     }
 
     public static Builder builder() {
@@ -119,14 +121,14 @@ public final class GetResourceQuotasResourceQuotumCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String affectedResource;
-        private Double balance;
-        private Boolean isAllowed;
-        private Boolean isDependency;
-        private Boolean isOverage;
-        private String name;
-        private Double purchasedLimit;
-        private String service;
+        private @Nullable String affectedResource;
+        private @Nullable Double balance;
+        private @Nullable Boolean isAllowed;
+        private @Nullable Boolean isDependency;
+        private @Nullable Boolean isOverage;
+        private @Nullable String name;
+        private @Nullable Double purchasedLimit;
+        private @Nullable String service;
         public Builder() {}
         public Builder(GetResourceQuotasResourceQuotumCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -141,43 +143,43 @@ public final class GetResourceQuotasResourceQuotumCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder affectedResource(String affectedResource) {
-            this.affectedResource = Objects.requireNonNull(affectedResource);
+        public Builder affectedResource(@Nullable String affectedResource) {
+            this.affectedResource = affectedResource;
             return this;
         }
         @CustomType.Setter
-        public Builder balance(Double balance) {
-            this.balance = Objects.requireNonNull(balance);
+        public Builder balance(@Nullable Double balance) {
+            this.balance = balance;
             return this;
         }
         @CustomType.Setter
-        public Builder isAllowed(Boolean isAllowed) {
-            this.isAllowed = Objects.requireNonNull(isAllowed);
+        public Builder isAllowed(@Nullable Boolean isAllowed) {
+            this.isAllowed = isAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder isDependency(Boolean isDependency) {
-            this.isDependency = Objects.requireNonNull(isDependency);
+        public Builder isDependency(@Nullable Boolean isDependency) {
+            this.isDependency = isDependency;
             return this;
         }
         @CustomType.Setter
-        public Builder isOverage(Boolean isOverage) {
-            this.isOverage = Objects.requireNonNull(isOverage);
+        public Builder isOverage(@Nullable Boolean isOverage) {
+            this.isOverage = isOverage;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder purchasedLimit(Double purchasedLimit) {
-            this.purchasedLimit = Objects.requireNonNull(purchasedLimit);
+        public Builder purchasedLimit(@Nullable Double purchasedLimit) {
+            this.purchasedLimit = purchasedLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder service(String service) {
-            this.service = Objects.requireNonNull(service);
+        public Builder service(@Nullable String service) {
+            this.service = service;
             return this;
         }
         public GetResourceQuotasResourceQuotumCollectionItem build() {

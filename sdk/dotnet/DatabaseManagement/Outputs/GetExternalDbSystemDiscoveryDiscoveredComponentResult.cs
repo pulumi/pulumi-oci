@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         /// </summary>
-        public readonly string AdrHomeDirectory;
+        public readonly string? AdrHomeDirectory;
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult> AsmInstances;
         /// <summary>
         /// The list of associated components.
@@ -25,24 +25,24 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The unique identifier of the Oracle cluster.
         /// </summary>
-        public readonly string ClusterId;
+        public readonly string? ClusterId;
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult> ClusterInstances;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The identifier of the discovered DB system component.
         /// </summary>
-        public readonly string ComponentId;
+        public readonly string? ComponentId;
         /// <summary>
         /// The name of the discovered DB system component.
         /// </summary>
-        public readonly string ComponentName;
+        public readonly string? ComponentName;
         /// <summary>
         /// The component type.
         /// </summary>
-        public readonly string ComponentType;
+        public readonly string? ComponentType;
         /// <summary>
         /// The connector details used to connect to the external DB system component.
         /// </summary>
@@ -50,51 +50,51 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The unique identifier of the parent Container Database (CDB).
         /// </summary>
-        public readonly string ContainerDatabaseId;
+        public readonly string? ContainerDatabaseId;
         /// <summary>
         /// The number of CPU cores available on the DB node.
         /// </summary>
-        public readonly double CpuCoreCount;
+        public readonly double? CpuCoreCount;
         /// <summary>
         /// The Oracle base location of Cluster Ready Services (CRS).
         /// </summary>
-        public readonly string CrsBaseDirectory;
+        public readonly string? CrsBaseDirectory;
         /// <summary>
         /// The Oracle Database edition.
         /// </summary>
-        public readonly string DbEdition;
+        public readonly string? DbEdition;
         /// <summary>
         /// The Oracle Database ID.
         /// </summary>
-        public readonly string DbId;
+        public readonly string? DbId;
         /// <summary>
         /// The name of the DB node.
         /// </summary>
-        public readonly string DbNodeName;
+        public readonly string? DbNodeName;
         /// <summary>
         /// The database packs licensed for the external Oracle Database.
         /// </summary>
-        public readonly string DbPacks;
+        public readonly string? DbPacks;
         /// <summary>
         /// The role of the Oracle Database in Oracle Data Guard configuration.
         /// </summary>
-        public readonly string DbRole;
+        public readonly string? DbRole;
         /// <summary>
         /// The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         /// </summary>
-        public readonly string DbType;
+        public readonly string? DbType;
         /// <summary>
         /// The `DB_UNIQUE_NAME` of the external database.
         /// </summary>
-        public readonly string DbUniqueName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// The Oracle Database version.
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The list of protocol addresses the listener is configured to listen on.
         /// </summary>
@@ -102,55 +102,55 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
-        public readonly string GridHome;
+        public readonly string? GridHome;
         /// <summary>
         /// The unique identifier of the PDB.
         /// </summary>
-        public readonly string Guid;
+        public readonly string? Guid;
         /// <summary>
         /// The location of the DB home.
         /// </summary>
-        public readonly string HomeDirectory;
+        public readonly string? HomeDirectory;
         /// <summary>
         /// The host name of the database or the SCAN name in case of a RAC database.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The name of the ASM instance.
         /// </summary>
-        public readonly string InstanceName;
+        public readonly string? InstanceName;
         /// <summary>
         /// Indicates whether the Oracle Database is part of a cluster.
         /// </summary>
-        public readonly bool IsCluster;
+        public readonly bool? IsCluster;
         /// <summary>
         /// Indicates whether the cluster is an Oracle Flex Cluster or not.
         /// </summary>
-        public readonly bool IsFlexCluster;
+        public readonly bool? IsFlexCluster;
         /// <summary>
         /// Indicates whether Oracle Flex ASM is enabled or not.
         /// </summary>
-        public readonly bool IsFlexEnabled;
+        public readonly bool? IsFlexEnabled;
         /// <summary>
         /// Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
         /// </summary>
-        public readonly bool IsSelectedForMonitoring;
+        public readonly bool? IsSelectedForMonitoring;
         /// <summary>
         /// The listener alias.
         /// </summary>
-        public readonly string ListenerAlias;
+        public readonly string? ListenerAlias;
         /// <summary>
         /// The type of listener.
         /// </summary>
-        public readonly string ListenerType;
+        public readonly string? ListenerType;
         /// <summary>
         /// The destination directory of the listener log file.
         /// </summary>
-        public readonly string LogDirectory;
+        public readonly string? LogDirectory;
         /// <summary>
         /// The total memory in gigabytes (GB) on the DB node.
         /// </summary>
-        public readonly double MemorySizeInGbs;
+        public readonly double? MemorySizeInGbs;
         /// <summary>
         /// The list of network address configurations of the external cluster.
         /// </summary>
@@ -158,15 +158,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The role of the cluster node.
         /// </summary>
-        public readonly string NodeRole;
+        public readonly string? NodeRole;
         /// <summary>
         /// The location of the Oracle Cluster Registry (OCR) file.
         /// </summary>
-        public readonly string OcrFileLocation;
+        public readonly string? OcrFileLocation;
         /// <summary>
         /// The Oracle home location of the listener.
         /// </summary>
-        public readonly string OracleHome;
+        public readonly string? OracleHome;
         /// <summary>
         /// The list of Pluggable Databases.
         /// </summary>
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The list of Single Client Access Name (SCAN) configurations of the external cluster.
         /// </summary>
@@ -182,15 +182,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The state of the discovered DB system component.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The destination directory of the listener trace file.
         /// </summary>
-        public readonly string TraceDirectory;
+        public readonly string? TraceDirectory;
         /// <summary>
         /// The version of Oracle Clusterware running in the cluster.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
         /// <summary>
         /// The list of Virtual IP (VIP) configurations of the external cluster.
         /// </summary>
@@ -198,97 +198,97 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryDiscoveredComponentResult(
-            string adrHomeDirectory,
+            string? adrHomeDirectory,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult> asmInstances,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult> associatedComponents,
 
-            string clusterId,
+            string? clusterId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult> clusterInstances,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string componentId,
+            string? componentId,
 
-            string componentName,
+            string? componentName,
 
-            string componentType,
+            string? componentType,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorResult> connectors,
 
-            string containerDatabaseId,
+            string? containerDatabaseId,
 
-            double cpuCoreCount,
+            double? cpuCoreCount,
 
-            string crsBaseDirectory,
+            string? crsBaseDirectory,
 
-            string dbEdition,
+            string? dbEdition,
 
-            string dbId,
+            string? dbId,
 
-            string dbNodeName,
+            string? dbNodeName,
 
-            string dbPacks,
+            string? dbPacks,
 
-            string dbRole,
+            string? dbRole,
 
-            string dbType,
+            string? dbType,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            string dbVersion,
+            string? dbVersion,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentEndpointResult> endpoints,
 
-            string gridHome,
+            string? gridHome,
 
-            string guid,
+            string? guid,
 
-            string homeDirectory,
+            string? homeDirectory,
 
-            string hostName,
+            string? hostName,
 
-            string instanceName,
+            string? instanceName,
 
-            bool isCluster,
+            bool? isCluster,
 
-            bool isFlexCluster,
+            bool? isFlexCluster,
 
-            bool isFlexEnabled,
+            bool? isFlexEnabled,
 
-            bool isSelectedForMonitoring,
+            bool? isSelectedForMonitoring,
 
-            string listenerAlias,
+            string? listenerAlias,
 
-            string listenerType,
+            string? listenerType,
 
-            string logDirectory,
+            string? logDirectory,
 
-            double memorySizeInGbs,
+            double? memorySizeInGbs,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult> networkConfigurations,
 
-            string nodeRole,
+            string? nodeRole,
 
-            string ocrFileLocation,
+            string? ocrFileLocation,
 
-            string oracleHome,
+            string? oracleHome,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult> pluggableDatabases,
 
-            string resourceId,
+            string? resourceId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationResult> scanConfigurations,
 
-            string status,
+            string? status,
 
-            string traceDirectory,
+            string? traceDirectory,
 
-            string version,
+            string? version,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationResult> vipConfigurations)
         {

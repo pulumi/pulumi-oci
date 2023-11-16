@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         /// </summary>
@@ -24,19 +24,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         /// </summary>
-        public readonly string BackupSubnetId;
+        public readonly string? BackupSubnetId;
         /// <summary>
         /// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         /// </summary>
-        public readonly string ClusterName;
+        public readonly string? ClusterName;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The number of CPU cores enabled on the DB system.
         /// </summary>
-        public readonly int CpuCoreCount;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
@@ -44,15 +44,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         /// </summary>
-        public readonly int DataStoragePercentage;
+        public readonly int? DataStoragePercentage;
         /// <summary>
         /// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
         /// </summary>
-        public readonly int DataStorageSizeInGb;
+        public readonly int? DataStorageSizeInGb;
         /// <summary>
         /// The Oracle Database edition that applies to all the databases on the DB system.
         /// </summary>
-        public readonly string DatabaseEdition;
+        public readonly string? DatabaseEdition;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemDbHomeResult> DbHomes;
         /// <summary>
         /// The DB system options.
@@ -61,19 +61,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         /// </summary>
-        public readonly string DiskRedundancy;
+        public readonly string? DiskRedundancy;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The domain name for the DB system.
         /// </summary>
-        public readonly string Domain;
+        public readonly string? Domain;
         /// <summary>
         /// List of the Fault Domains in which this DB system is provisioned.
         /// </summary>
@@ -81,41 +81,41 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The hostname for the DB system.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCachResult> IormConfigCaches;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
-        public readonly string LastMaintenanceRunId;
+        public readonly string? LastMaintenanceRunId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         /// </summary>
-        public readonly string LastPatchHistoryEntryId;
+        public readonly string? LastPatchHistoryEntryId;
         /// <summary>
         /// The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The port number configured for the listener on the DB system.
         /// </summary>
-        public readonly int ListenerPort;
+        public readonly int? ListenerPort;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemMaintenanceWindowDetailResult> MaintenanceWindowDetails;
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -124,15 +124,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Memory allocated to the DB system, in gigabytes.
         /// </summary>
-        public readonly int MemorySizeInGbs;
+        public readonly int? MemorySizeInGbs;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
-        public readonly string NextMaintenanceRunId;
+        public readonly string? NextMaintenanceRunId;
         /// <summary>
         /// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
         /// </summary>
-        public readonly int NodeCount;
+        public readonly int? NodeCount;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -141,24 +141,24 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The most recent OS Patch Version applied on the DB system.
         /// </summary>
-        public readonly string OsVersion;
+        public readonly string? OsVersion;
         /// <summary>
         /// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string PointInTimeDataDiskCloneTimestamp;
-        public readonly string PrivateIp;
+        public readonly string? PointInTimeDataDiskCloneTimestamp;
+        public readonly string? PrivateIp;
         /// <summary>
         /// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         /// </summary>
-        public readonly int RecoStorageSizeInGb;
+        public readonly int? RecoStorageSizeInGb;
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         /// </summary>
-        public readonly string ScanDnsName;
+        public readonly string? ScanDnsName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
         /// </summary>
-        public readonly string ScanDnsRecordId;
+        public readonly string? ScanDnsRecordId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         /// </summary>
@@ -168,16 +168,16 @@ namespace Pulumi.Oci.Database.Outputs
         /// * For virtual machine shapes, the number of CPU cores and memory
         /// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
         /// </summary>
-        public readonly string Shape;
-        public readonly string Source;
+        public readonly string? Shape;
+        public readonly string? Source;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
-        public readonly string SourceDbSystemId;
+        public readonly string? SourceDbSystemId;
         /// <summary>
         /// True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured. Only applied for Exadata shape.
         /// </summary>
-        public readonly bool SparseDiskgroup;
+        public readonly bool? SparseDiskgroup;
         /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the DB system.
         /// </summary>
@@ -185,27 +185,27 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         /// </summary>
-        public readonly string StorageVolumePerformanceMode;
+        public readonly string? StorageVolumePerformanceMode;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the DB system was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
-        public readonly string TimeZone;
+        public readonly string? TimeZone;
         /// <summary>
         /// The Oracle Database version of the DB system.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         /// </summary>
@@ -213,117 +213,117 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The OCID of the zone the DB system is associated with.
         /// </summary>
-        public readonly string ZoneId;
+        public readonly string? ZoneId;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<string> backupNetworkNsgIds,
 
-            string backupSubnetId,
+            string? backupSubnetId,
 
-            string clusterName,
+            string? clusterName,
 
-            string compartmentId,
+            string? compartmentId,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemDataCollectionOptionResult> dataCollectionOptions,
 
-            int dataStoragePercentage,
+            int? dataStoragePercentage,
 
-            int dataStorageSizeInGb,
+            int? dataStorageSizeInGb,
 
-            string databaseEdition,
+            string? databaseEdition,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemDbHomeResult> dbHomes,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemDbSystemOptionResult> dbSystemOptions,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string diskRedundancy,
+            string? diskRedundancy,
 
-            string displayName,
+            string? displayName,
 
-            string domain,
+            string? domain,
 
             ImmutableArray<string> faultDomains,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostname,
+            string? hostname,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCachResult> iormConfigCaches,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string lastMaintenanceRunId,
+            string? lastMaintenanceRunId,
 
-            string lastPatchHistoryEntryId,
+            string? lastPatchHistoryEntryId,
 
-            string licenseModel,
+            string? licenseModel,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int listenerPort,
+            int? listenerPort,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemMaintenanceWindowDetailResult> maintenanceWindowDetails,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemMaintenanceWindowResult> maintenanceWindows,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            string nextMaintenanceRunId,
+            string? nextMaintenanceRunId,
 
-            int nodeCount,
+            int? nodeCount,
 
             ImmutableArray<string> nsgIds,
 
-            string osVersion,
+            string? osVersion,
 
-            string pointInTimeDataDiskCloneTimestamp,
+            string? pointInTimeDataDiskCloneTimestamp,
 
-            string privateIp,
+            string? privateIp,
 
-            int recoStorageSizeInGb,
+            int? recoStorageSizeInGb,
 
-            string scanDnsName,
+            string? scanDnsName,
 
-            string scanDnsRecordId,
+            string? scanDnsRecordId,
 
             ImmutableArray<string> scanIpIds,
 
-            string shape,
+            string? shape,
 
-            string source,
+            string? source,
 
-            string sourceDbSystemId,
+            string? sourceDbSystemId,
 
-            bool sparseDiskgroup,
+            bool? sparseDiskgroup,
 
             ImmutableArray<string> sshPublicKeys,
 
-            string state,
+            string? state,
 
-            string storageVolumePerformanceMode,
+            string? storageVolumePerformanceMode,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeZone,
+            string? timeZone,
 
-            string version,
+            string? version,
 
             ImmutableArray<string> vipIds,
 
-            string zoneId)
+            string? zoneId)
         {
             AvailabilityDomain = availabilityDomain;
             BackupNetworkNsgIds = backupNetworkNsgIds;

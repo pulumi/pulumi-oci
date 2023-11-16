@@ -8,6 +8,8 @@ import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestHistoryItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAccessRequestHistoryResult {
@@ -16,12 +18,12 @@ public final class GetAccessRequestHistoryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return contains AccessRequestHistorySummary
      * 
      */
-    private List<GetAccessRequestHistoryItem> items;
+    private @Nullable List<GetAccessRequestHistoryItem> items;
 
     private GetAccessRequestHistoryResult() {}
     public String accessRequestId() {
@@ -31,15 +33,15 @@ public final class GetAccessRequestHistoryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return contains AccessRequestHistorySummary
      * 
      */
     public List<GetAccessRequestHistoryItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetAccessRequestHistoryResult {
     @CustomType.Builder
     public static final class Builder {
         private String accessRequestId;
-        private String id;
-        private List<GetAccessRequestHistoryItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAccessRequestHistoryItem> items;
         public Builder() {}
         public Builder(GetAccessRequestHistoryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetAccessRequestHistoryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAccessRequestHistoryItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAccessRequestHistoryItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAccessRequestHistoryItem... items) {

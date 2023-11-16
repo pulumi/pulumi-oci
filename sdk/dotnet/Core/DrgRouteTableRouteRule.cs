@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Core
         /// Additional properties for the route, computed by the service.
         /// </summary>
         [Output("attributes")]
-        public Output<ImmutableDictionary<string, object>> Attributes { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Attributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
@@ -80,13 +80,13 @@ namespace Pulumi.Oci.Core
         /// Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
         /// </summary>
         [Output("isBlackhole")]
-        public Output<bool> IsBlackhole { get; private set; } = null!;
+        public Output<bool?> IsBlackhole { get; private set; } = null!;
 
         /// <summary>
         /// Indicates that the route was not imported due to a conflict between route rules.
         /// </summary>
         [Output("isConflict")]
-        public Output<bool> IsConflict { get; private set; } = null!;
+        public Output<bool?> IsConflict { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
@@ -101,13 +101,13 @@ namespace Pulumi.Oci.Core
         /// The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
         /// </summary>
         [Output("routeProvenance")]
-        public Output<string> RouteProvenance { get; private set; } = null!;
+        public Output<string?> RouteProvenance { get; private set; } = null!;
 
         /// <summary>
         /// You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
         /// </summary>
         [Output("routeType")]
-        public Output<string> RouteType { get; private set; } = null!;
+        public Output<string?> RouteType { get; private set; } = null!;
 
 
         /// <summary>

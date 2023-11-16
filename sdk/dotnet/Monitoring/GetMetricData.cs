@@ -259,7 +259,7 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of metric_data.
         /// </summary>
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.Monitoring
 
             ImmutableArray<Outputs.GetMetricDataFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMetricDataMetricDataResult> metricDatas,
 

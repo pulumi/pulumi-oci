@@ -46,17 +46,11 @@ class GetSecurityRecipesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The id of the compartment that contains the recipe
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The recipe's name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetSecurityRecipesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="securityRecipeCollections")
-    def security_recipe_collections(self) -> Sequence['outputs.GetSecurityRecipesSecurityRecipeCollectionResult']:
-        """
-        The list of security_recipe_collection.
-        """
+    def security_recipe_collections(self) -> Optional[Sequence['outputs.GetSecurityRecipesSecurityRecipeCollectionResult']]:
         return pulumi.get(self, "security_recipe_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the recipe
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_security_recipes(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityRecipesResult:
     """
-    This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a list of all security zone recipes in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=var["compartment_id"],
-        display_name=var["security_recipe_display_name"],
-        id=var["security_recipe_id"],
-        state=var["security_recipe_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_security_recipes_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityRecipesResult]:
     """
-    This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a list of all security zone recipes in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=var["compartment_id"],
-        display_name=var["security_recipe_display_name"],
-        id=var["security_recipe_id"],
-        state=var["security_recipe_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     ...

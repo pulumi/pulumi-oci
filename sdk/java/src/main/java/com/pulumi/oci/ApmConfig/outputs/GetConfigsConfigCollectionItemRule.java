@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigsConfigCollectionItemRule {
@@ -15,87 +17,87 @@ public final class GetConfigsConfigCollectionItemRule {
      * @return A filter to return resources that match the given display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The string that defines the Span Filter expression.
      * 
      */
-    private String filterText;
+    private @Nullable String filterText;
     /**
      * @return Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
-    private Boolean isApplyToErrorSpans;
+    private @Nullable Boolean isApplyToErrorSpans;
     /**
      * @return Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
      * 
      */
-    private Integer priority;
+    private @Nullable Integer priority;
     /**
      * @return The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
-    private Integer satisfiedResponseTime;
+    private @Nullable Integer satisfiedResponseTime;
     /**
      * @return The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
-    private Integer toleratingResponseTime;
+    private @Nullable Integer toleratingResponseTime;
 
     private GetConfigsConfigCollectionItemRule() {}
     /**
      * @return A filter to return resources that match the given display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The string that defines the Span Filter expression.
      * 
      */
-    public String filterText() {
-        return this.filterText;
+    public Optional<String> filterText() {
+        return Optional.ofNullable(this.filterText);
     }
     /**
      * @return Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
-    public Boolean isApplyToErrorSpans() {
-        return this.isApplyToErrorSpans;
+    public Optional<Boolean> isApplyToErrorSpans() {
+        return Optional.ofNullable(this.isApplyToErrorSpans);
     }
     /**
      * @return Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
      * 
      */
-    public Integer priority() {
-        return this.priority;
+    public Optional<Integer> priority() {
+        return Optional.ofNullable(this.priority);
     }
     /**
      * @return The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
-    public Integer satisfiedResponseTime() {
-        return this.satisfiedResponseTime;
+    public Optional<Integer> satisfiedResponseTime() {
+        return Optional.ofNullable(this.satisfiedResponseTime);
     }
     /**
      * @return The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
-    public Integer toleratingResponseTime() {
-        return this.toleratingResponseTime;
+    public Optional<Integer> toleratingResponseTime() {
+        return Optional.ofNullable(this.toleratingResponseTime);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetConfigsConfigCollectionItemRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String filterText;
-        private Boolean isApplyToErrorSpans;
-        private Boolean isEnabled;
-        private Integer priority;
-        private Integer satisfiedResponseTime;
-        private Integer toleratingResponseTime;
+        private @Nullable String displayName;
+        private @Nullable String filterText;
+        private @Nullable Boolean isApplyToErrorSpans;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Integer priority;
+        private @Nullable Integer satisfiedResponseTime;
+        private @Nullable Integer toleratingResponseTime;
         public Builder() {}
         public Builder(GetConfigsConfigCollectionItemRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,38 +129,38 @@ public final class GetConfigsConfigCollectionItemRule {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder filterText(String filterText) {
-            this.filterText = Objects.requireNonNull(filterText);
+        public Builder filterText(@Nullable String filterText) {
+            this.filterText = filterText;
             return this;
         }
         @CustomType.Setter
-        public Builder isApplyToErrorSpans(Boolean isApplyToErrorSpans) {
-            this.isApplyToErrorSpans = Objects.requireNonNull(isApplyToErrorSpans);
+        public Builder isApplyToErrorSpans(@Nullable Boolean isApplyToErrorSpans) {
+            this.isApplyToErrorSpans = isApplyToErrorSpans;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+        public Builder priority(@Nullable Integer priority) {
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
-        public Builder satisfiedResponseTime(Integer satisfiedResponseTime) {
-            this.satisfiedResponseTime = Objects.requireNonNull(satisfiedResponseTime);
+        public Builder satisfiedResponseTime(@Nullable Integer satisfiedResponseTime) {
+            this.satisfiedResponseTime = satisfiedResponseTime;
             return this;
         }
         @CustomType.Setter
-        public Builder toleratingResponseTime(Integer toleratingResponseTime) {
-            this.toleratingResponseTime = Objects.requireNonNull(toleratingResponseTime);
+        public Builder toleratingResponseTime(@Nullable Integer toleratingResponseTime) {
+            this.toleratingResponseTime = toleratingResponseTime;
             return this;
         }
         public GetConfigsConfigCollectionItemRule build() {

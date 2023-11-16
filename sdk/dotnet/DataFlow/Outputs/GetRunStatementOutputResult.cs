@@ -20,15 +20,15 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The name of the error in the statement output.
         /// </summary>
-        public readonly string ErrorName;
+        public readonly string? ErrorName;
         /// <summary>
         /// The value of the error in the statement output.
         /// </summary>
-        public readonly string ErrorValue;
+        public readonly string? ErrorValue;
         /// <summary>
         /// Status of the statement output.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The traceback of the statement output.
         /// </summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.DataFlow.Outputs
         private GetRunStatementOutputResult(
             ImmutableArray<Outputs.GetRunStatementOutputDataResult> datas,
 
-            string errorName,
+            string? errorName,
 
-            string errorValue,
+            string? errorValue,
 
-            string status,
+            string? status,
 
             ImmutableArray<string> tracebacks)
         {

@@ -24,12 +24,12 @@ public final class GetMigrationPlanAvailableShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Available shapes list.
      * 
      */
-    private List<GetMigrationPlanAvailableShapeItem> items;
+    private @Nullable List<GetMigrationPlanAvailableShapeItem> items;
     private String migrationPlanId;
     private @Nullable String reservedCapacityId;
 
@@ -51,15 +51,15 @@ public final class GetMigrationPlanAvailableShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Available shapes list.
      * 
      */
     public List<GetMigrationPlanAvailableShapeItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String migrationPlanId() {
         return this.migrationPlanId;
@@ -80,8 +80,8 @@ public final class GetMigrationPlanAvailableShapeResult {
         private @Nullable String availabilityDomain;
         private @Nullable String compartmentId;
         private @Nullable String dvhHostId;
-        private String id;
-        private List<GetMigrationPlanAvailableShapeItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetMigrationPlanAvailableShapeItem> items;
         private String migrationPlanId;
         private @Nullable String reservedCapacityId;
         public Builder() {}
@@ -112,13 +112,13 @@ public final class GetMigrationPlanAvailableShapeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetMigrationPlanAvailableShapeItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMigrationPlanAvailableShapeItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationPlanAvailableShapeItem... items) {

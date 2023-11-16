@@ -49,25 +49,16 @@ class GetConsoleHistoriesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consoleHistories")
-    def console_histories(self) -> Sequence['outputs.GetConsoleHistoriesConsoleHistoryResult']:
-        """
-        The list of console_histories.
-        """
+    def console_histories(self) -> Optional[Sequence['outputs.GetConsoleHistoriesConsoleHistoryResult']]:
         return pulumi.get(self, "console_histories")
 
     @property
@@ -77,7 +68,7 @@ class GetConsoleHistoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,17 +77,11 @@ class GetConsoleHistoriesResult:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[str]:
-        """
-        The OCID of the instance this console history was fetched from.
-        """
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the console history.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_console_histories(availability_domain: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConsoleHistoriesResult:
     """
-    This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
-
-    Lists the console history metadata for the specified compartment or instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_console_histories = oci.Core.get_console_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["console_history_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        state=var["console_history_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -171,26 +136,6 @@ def get_console_histories_output(availability_domain: Optional[pulumi.Input[Opti
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConsoleHistoriesResult]:
     """
-    This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
-
-    Lists the console history metadata for the specified compartment or instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_console_histories = oci.Core.get_console_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["console_history_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        state=var["console_history_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

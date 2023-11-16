@@ -45,10 +45,7 @@ class GetVmClusterNetworkDownloadConfigFileResult:
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
@@ -58,7 +55,7 @@ class GetVmClusterNetworkDownloadConfigFileResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,24 +85,7 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
                                                 vm_cluster_network_id: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterNetworkDownloadConfigFileResult:
     """
-    This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
-
-    Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
-        base64_encode_content=False)
-    ```
-
-
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['base64EncodeContent'] = base64_encode_content
@@ -128,23 +108,6 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
                                                        vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterNetworkDownloadConfigFileResult]:
     """
-    This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
-
-    Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
-        base64_encode_content=False)
-    ```
-
-
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

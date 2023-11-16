@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -60,47 +59,47 @@ type LookupMetricExtensionArgs struct {
 // A collection of values returned by getMetricExtension.
 type LookupMetricExtensionResult struct {
 	// Type of possible collection methods.
-	CollectionMethod string `pulumi:"collectionMethod"`
+	CollectionMethod *string `pulumi:"collectionMethod"`
 	// Schedule of metric extension should use RFC 5545 format > recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
-	CollectionRecurrences string `pulumi:"collectionRecurrences"`
+	CollectionRecurrences *string `pulumi:"collectionRecurrences"`
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Created by user
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Description of the metric extension.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Display name of the metric.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of resource objects on which this metric extension is enabled.
 	EnabledOnResources []GetMetricExtensionEnabledOnResource `pulumi:"enabledOnResources"`
 	// Count of resources on which this metric extension is enabled.
-	EnabledOnResourcesCount int `pulumi:"enabledOnResourcesCount"`
+	EnabledOnResourcesCount *int `pulumi:"enabledOnResourcesCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Last updated by user
-	LastUpdatedBy     string `pulumi:"lastUpdatedBy"`
-	MetricExtensionId string `pulumi:"metricExtensionId"`
+	LastUpdatedBy     *string `pulumi:"lastUpdatedBy"`
+	MetricExtensionId string  `pulumi:"metricExtensionId"`
 	// List of metrics which are part of this metric extension
 	MetricLists []GetMetricExtensionMetricList `pulumi:"metricLists"`
 	// Name of the script file
-	Name           string `pulumi:"name"`
-	PublishTrigger bool   `pulumi:"publishTrigger"`
+	Name           *string `pulumi:"name"`
+	PublishTrigger *bool   `pulumi:"publishTrigger"`
 	// Collection method and query properties details of metric extension
 	QueryProperties []GetMetricExtensionQueryProperty `pulumi:"queryProperties"`
 	// Resource type to which Metric Extension applies
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The URI path that the user can do a GET on to access the metric extension metadata
-	ResourceUri string `pulumi:"resourceUri"`
+	ResourceUri *string `pulumi:"resourceUri"`
 	// The current lifecycle state of the metric extension
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The current status of the metric extension i.e. whether it is Draft or Published
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// Metric Extension creation time. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Metric Extension update time. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupMetricExtensionOutput(ctx *pulumi.Context, args LookupMetricExtensionOutputArgs, opts ...pulumi.InvokeOption) LookupMetricExtensionResultOutput {
@@ -141,40 +140,34 @@ func (o LookupMetricExtensionResultOutput) ToLookupMetricExtensionResultOutputWi
 	return o
 }
 
-func (o LookupMetricExtensionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMetricExtensionResult] {
-	return pulumix.Output[LookupMetricExtensionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of possible collection methods.
-func (o LookupMetricExtensionResultOutput) CollectionMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.CollectionMethod }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) CollectionMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.CollectionMethod }).(pulumi.StringPtrOutput)
 }
 
 // Schedule of metric extension should use RFC 5545 format > recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
-func (o LookupMetricExtensionResultOutput) CollectionRecurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.CollectionRecurrences }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) CollectionRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.CollectionRecurrences }).(pulumi.StringPtrOutput)
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-func (o LookupMetricExtensionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Created by user
-func (o LookupMetricExtensionResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Description of the metric extension.
-func (o LookupMetricExtensionResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Display name of the metric.
-func (o LookupMetricExtensionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of resource objects on which this metric extension is enabled.
@@ -183,18 +176,18 @@ func (o LookupMetricExtensionResultOutput) EnabledOnResources() GetMetricExtensi
 }
 
 // Count of resources on which this metric extension is enabled.
-func (o LookupMetricExtensionResultOutput) EnabledOnResourcesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) int { return v.EnabledOnResourcesCount }).(pulumi.IntOutput)
+func (o LookupMetricExtensionResultOutput) EnabledOnResourcesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *int { return v.EnabledOnResourcesCount }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
-func (o LookupMetricExtensionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Last updated by user
-func (o LookupMetricExtensionResultOutput) LastUpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) LastUpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.LastUpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMetricExtensionResultOutput) MetricExtensionId() pulumi.StringOutput {
@@ -207,12 +200,12 @@ func (o LookupMetricExtensionResultOutput) MetricLists() GetMetricExtensionMetri
 }
 
 // Name of the script file
-func (o LookupMetricExtensionResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupMetricExtensionResultOutput) PublishTrigger() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) bool { return v.PublishTrigger }).(pulumi.BoolOutput)
+func (o LookupMetricExtensionResultOutput) PublishTrigger() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *bool { return v.PublishTrigger }).(pulumi.BoolPtrOutput)
 }
 
 // Collection method and query properties details of metric extension
@@ -221,38 +214,38 @@ func (o LookupMetricExtensionResultOutput) QueryProperties() GetMetricExtensionQ
 }
 
 // Resource type to which Metric Extension applies
-func (o LookupMetricExtensionResultOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The URI path that the user can do a GET on to access the metric extension metadata
-func (o LookupMetricExtensionResultOutput) ResourceUri() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.ResourceUri }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) ResourceUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.ResourceUri }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the metric extension
-func (o LookupMetricExtensionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The current status of the metric extension i.e. whether it is Draft or Published
-func (o LookupMetricExtensionResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-func (o LookupMetricExtensionResultOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.TenantId }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // Metric Extension creation time. An RFC3339 formatted datetime string.
-func (o LookupMetricExtensionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Metric Extension update time. An RFC3339 formatted datetime string.
-func (o LookupMetricExtensionResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMetricExtensionResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetricExtensionResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -63,7 +63,7 @@ export class DrgAttachmentsList extends pulumi.CustomResource {
     /**
      * The list of drg_attachments.
      */
-    public /*out*/ readonly drgAllAttachments!: pulumi.Output<outputs.Core.DrgAttachmentsListDrgAllAttachment[]>;
+    public /*out*/ readonly drgAllAttachments!: pulumi.Output<outputs.Core.DrgAttachmentsListDrgAllAttachment[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */

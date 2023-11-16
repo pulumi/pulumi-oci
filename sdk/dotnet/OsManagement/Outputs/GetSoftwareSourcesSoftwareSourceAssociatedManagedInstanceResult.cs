@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// OCID for the Software Source
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult(
-            string displayName,
+            string? displayName,
 
-            string id)
+            string? id)
         {
             DisplayName = displayName;
             Id = id;

@@ -13,10 +13,10 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetVirtualCircuitPublicPrefixResult
     {
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
 
         [OutputConstructor]
-        private GetVirtualCircuitPublicPrefixResult(string cidrBlock)
+        private GetVirtualCircuitPublicPrefixResult(string? cidrBlock)
         {
             CidrBlock = cidrBlock;
         }

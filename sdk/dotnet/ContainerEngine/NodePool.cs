@@ -145,13 +145,13 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
@@ -163,13 +163,13 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         /// </summary>
         [Output("kubernetesVersion")]
-        public Output<string> KubernetesVersion { get; private set; } = null!;
+        public Output<string?> KubernetesVersion { get; private set; } = null!;
 
         /// <summary>
         /// Details about the state of the node.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the node pool. Avoid entering confidential information.
@@ -181,37 +181,37 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         /// </summary>
         [Output("nodeConfigDetails")]
-        public Output<Outputs.NodePoolNodeConfigDetails> NodeConfigDetails { get; private set; } = null!;
+        public Output<Outputs.NodePoolNodeConfigDetails?> NodeConfigDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Node Eviction Details configuration
         /// </summary>
         [Output("nodeEvictionNodePoolSettings")]
-        public Output<Outputs.NodePoolNodeEvictionNodePoolSettings> NodeEvictionNodePoolSettings { get; private set; } = null!;
+        public Output<Outputs.NodePoolNodeEvictionNodePoolSettings?> NodeEvictionNodePoolSettings { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         /// </summary>
         [Output("nodeImageId")]
-        public Output<string> NodeImageId { get; private set; } = null!;
+        public Output<string?> NodeImageId { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         /// </summary>
         [Output("nodeImageName")]
-        public Output<string> NodeImageName { get; private set; } = null!;
+        public Output<string?> NodeImageName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         /// </summary>
         [Output("nodeMetadata")]
-        public Output<ImmutableDictionary<string, object>> NodeMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> NodeMetadata { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Node Pool Cycling Details
         /// </summary>
         [Output("nodePoolCyclingDetails")]
-        public Output<Outputs.NodePoolNodePoolCyclingDetails> NodePoolCyclingDetails { get; private set; } = null!;
+        public Output<Outputs.NodePoolNodePoolCyclingDetails?> NodePoolCyclingDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the node shape of the nodes in the node pool.
@@ -223,13 +223,13 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         /// </summary>
         [Output("nodeShapeConfig")]
-        public Output<Outputs.NodePoolNodeShapeConfig> NodeShapeConfig { get; private set; } = null!;
+        public Output<Outputs.NodePoolNodeShapeConfig?> NodeShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
         /// </summary>
         [Output("nodeSourceDetails")]
-        public Output<Outputs.NodePoolNodeSourceDetails> NodeSourceDetails { get; private set; } = null!;
+        public Output<Outputs.NodePoolNodeSourceDetails?> NodeSourceDetails { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
@@ -247,19 +247,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         /// </summary>
         [Output("quantityPerSubnet")]
-        public Output<int> QuantityPerSubnet { get; private set; } = null!;
+        public Output<int?> QuantityPerSubnet { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The SSH public key on each node in the node pool on launch.
         /// </summary>
         [Output("sshPublicKey")]
-        public Output<string> SshPublicKey { get; private set; } = null!;
+        public Output<string?> SshPublicKey { get; private set; } = null!;
 
         /// <summary>
         /// The state of the nodepool.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 

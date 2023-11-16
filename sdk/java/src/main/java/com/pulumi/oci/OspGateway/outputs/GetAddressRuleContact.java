@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleContactField;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddressRuleContact {
@@ -14,7 +15,7 @@ public final class GetAddressRuleContact {
      * @return Tax type rule fields
      * 
      */
-    private List<GetAddressRuleContactField> fields;
+    private @Nullable List<GetAddressRuleContactField> fields;
 
     private GetAddressRuleContact() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAddressRuleContact {
      * 
      */
     public List<GetAddressRuleContactField> fields() {
-        return this.fields;
+        return this.fields == null ? List.of() : this.fields;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAddressRuleContact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddressRuleContactField> fields;
+        private @Nullable List<GetAddressRuleContactField> fields;
         public Builder() {}
         public Builder(GetAddressRuleContact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAddressRuleContact {
         }
 
         @CustomType.Setter
-        public Builder fields(List<GetAddressRuleContactField> fields) {
-            this.fields = Objects.requireNonNull(fields);
+        public Builder fields(@Nullable List<GetAddressRuleContactField> fields) {
+            this.fields = fields;
             return this;
         }
         public Builder fields(GetAddressRuleContactField... fields) {

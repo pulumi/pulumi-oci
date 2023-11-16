@@ -13,17 +13,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     [OutputType]
     public sealed class GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialResult
     {
-        public readonly string Password;
+        public readonly string? Password;
         /// <summary>
         /// Administrator username
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialResult(
-            string password,
+            string? password,
 
-            string username)
+            string? username)
         {
             Password = password;
             Username = username;

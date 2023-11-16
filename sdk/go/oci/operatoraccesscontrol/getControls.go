@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
@@ -74,7 +73,7 @@ type GetControlsResult struct {
 	DisplayName   *string             `pulumi:"displayName"`
 	Filters       []GetControlsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of operator_control_collection.
 	OperatorControlCollections []GetControlsOperatorControlCollection `pulumi:"operatorControlCollections"`
 	// resourceType for which the OperatorControl is applicable
@@ -128,12 +127,6 @@ func (o GetControlsResultOutput) ToGetControlsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetControlsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsResult] {
-	return pulumix.Output[GetControlsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the operator control.
 func (o GetControlsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -148,8 +141,8 @@ func (o GetControlsResultOutput) Filters() GetControlsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetControlsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetControlsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of operator_control_collection.

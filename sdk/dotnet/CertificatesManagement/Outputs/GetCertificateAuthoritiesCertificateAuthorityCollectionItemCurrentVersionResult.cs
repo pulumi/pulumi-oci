@@ -16,11 +16,11 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
         /// </summary>
-        public readonly string CertificateAuthorityId;
+        public readonly string? CertificateAuthorityId;
         /// <summary>
         /// The version number of the issuing CA.
         /// </summary>
-        public readonly string IssuerCaVersionNumber;
+        public readonly string? IssuerCaVersionNumber;
         /// <summary>
         /// The current revocation status of the entity.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
         /// </summary>
-        public readonly string SerialNumber;
+        public readonly string? SerialNumber;
         /// <summary>
         /// A list of rotation states for this CA version.
         /// </summary>
@@ -36,11 +36,11 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         /// </summary>
@@ -48,33 +48,33 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         /// </summary>
-        public readonly string VersionName;
+        public readonly string? VersionName;
         /// <summary>
         /// The version number of the CA.
         /// </summary>
-        public readonly string VersionNumber;
+        public readonly string? VersionNumber;
 
         [OutputConstructor]
         private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionResult(
-            string certificateAuthorityId,
+            string? certificateAuthorityId,
 
-            string issuerCaVersionNumber,
+            string? issuerCaVersionNumber,
 
             ImmutableArray<Outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusResult> revocationStatuses,
 
-            string serialNumber,
+            string? serialNumber,
 
             ImmutableArray<string> stages,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
             ImmutableArray<Outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityResult> validities,
 
-            string versionName,
+            string? versionName,
 
-            string versionNumber)
+            string? versionNumber)
         {
             CertificateAuthorityId = certificateAuthorityId;
             IssuerCaVersionNumber = issuerCaVersionNumber;

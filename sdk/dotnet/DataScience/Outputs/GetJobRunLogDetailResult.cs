@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The log group id for where log objects will be for job runs.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The log id of the log object the job run logs will be shipped to.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetJobRunLogDetailResult(
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             LogGroupId = logGroupId;
             LogId = logId;

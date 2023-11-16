@@ -108,28 +108,28 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string CrossConnectGroupId;
         /// <summary>
         /// A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         /// </summary>
-        public readonly string CustomerReferenceName;
+        public readonly string? CustomerReferenceName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The cross-connect group's Oracle ID (OCID).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Properties used for MACsec (if capable).
         /// </summary>
@@ -137,45 +137,45 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         /// </summary>
-        public readonly string OciLogicalDeviceName;
+        public readonly string? OciLogicalDeviceName;
         /// <summary>
         /// The FastConnect device that terminates the physical connection.
         /// </summary>
-        public readonly string OciPhysicalDeviceName;
+        public readonly string? OciPhysicalDeviceName;
         /// <summary>
         /// The cross-connect group's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetCrossConnectGroupResult(
-            string compartmentId,
+            string? compartmentId,
 
             string crossConnectGroupId,
 
-            string customerReferenceName,
+            string? customerReferenceName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetCrossConnectGroupMacsecPropertyResult> macsecProperties,
 
-            string ociLogicalDeviceName,
+            string? ociLogicalDeviceName,
 
-            string ociPhysicalDeviceName,
+            string? ociPhysicalDeviceName,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             CrossConnectGroupId = crossConnectGroupId;

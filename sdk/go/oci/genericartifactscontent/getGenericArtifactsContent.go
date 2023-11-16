@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
@@ -61,7 +60,7 @@ type GetGenericArtifactsContentArgs struct {
 type GetGenericArtifactsContentResult struct {
 	ArtifactId string `pulumi:"artifactId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetGenericArtifactsContentOutput(ctx *pulumi.Context, args GetGenericArtifactsContentOutputArgs, opts ...pulumi.InvokeOption) GetGenericArtifactsContentResultOutput {
@@ -102,19 +101,13 @@ func (o GetGenericArtifactsContentResultOutput) ToGetGenericArtifactsContentResu
 	return o
 }
 
-func (o GetGenericArtifactsContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsContentResult] {
-	return pulumix.Output[GetGenericArtifactsContentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGenericArtifactsContentResultOutput) ArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGenericArtifactsContentResult) string { return v.ArtifactId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetGenericArtifactsContentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsContentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetGenericArtifactsContentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsContentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

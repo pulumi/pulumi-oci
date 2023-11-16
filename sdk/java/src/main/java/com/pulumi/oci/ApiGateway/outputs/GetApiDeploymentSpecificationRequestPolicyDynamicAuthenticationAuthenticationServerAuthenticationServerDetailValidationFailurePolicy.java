@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy {
@@ -19,72 +21,72 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
      * @return Client App Credential details.
      * 
      */
-    private List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails;
+    private @Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails;
     /**
      * @return The path to be used as fallback after OAuth2.
      * 
      */
-    private String fallbackRedirectPath;
+    private @Nullable String fallbackRedirectPath;
     /**
      * @return The path to be used as logout.
      * 
      */
-    private String logoutPath;
+    private @Nullable String logoutPath;
     /**
      * @return The duration for which the OAuth2 success token should be cached before it is fetched again.
      * 
      */
-    private Integer maxExpiryDurationInHours;
+    private @Nullable Integer maxExpiryDurationInHours;
     /**
      * @return HTTP response code, can include context variables.
      * 
      */
-    private String responseCode;
+    private @Nullable String responseCode;
     /**
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
-    private List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations;
+    private @Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations;
     /**
      * @return HTTP response message.
      * 
      */
-    private String responseMessage;
+    private @Nullable String responseMessage;
     /**
      * @return Response Type.
      * 
      */
-    private String responseType;
+    private @Nullable String responseType;
     /**
      * @return List of scopes.
      * 
      */
-    private List<String> scopes;
+    private @Nullable List<String> scopes;
     /**
      * @return Auth endpoint details.
      * 
      */
-    private List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails;
+    private @Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Defines whether or not to use cookies for OAuth2 intermediate steps.
      * 
      */
-    private Boolean useCookiesForIntermediateSteps;
+    private @Nullable Boolean useCookiesForIntermediateSteps;
     /**
      * @return Defines whether or not to use cookies for session maintenance.
      * 
      */
-    private Boolean useCookiesForSession;
+    private @Nullable Boolean useCookiesForSession;
     /**
      * @return Defines whether or not to support PKCE.
      * 
      */
-    private Boolean usePkce;
+    private @Nullable Boolean usePkce;
 
     private GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy() {}
     /**
@@ -92,98 +94,98 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
      * 
      */
     public List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails() {
-        return this.clientDetails;
+        return this.clientDetails == null ? List.of() : this.clientDetails;
     }
     /**
      * @return The path to be used as fallback after OAuth2.
      * 
      */
-    public String fallbackRedirectPath() {
-        return this.fallbackRedirectPath;
+    public Optional<String> fallbackRedirectPath() {
+        return Optional.ofNullable(this.fallbackRedirectPath);
     }
     /**
      * @return The path to be used as logout.
      * 
      */
-    public String logoutPath() {
-        return this.logoutPath;
+    public Optional<String> logoutPath() {
+        return Optional.ofNullable(this.logoutPath);
     }
     /**
      * @return The duration for which the OAuth2 success token should be cached before it is fetched again.
      * 
      */
-    public Integer maxExpiryDurationInHours() {
-        return this.maxExpiryDurationInHours;
+    public Optional<Integer> maxExpiryDurationInHours() {
+        return Optional.ofNullable(this.maxExpiryDurationInHours);
     }
     /**
      * @return HTTP response code, can include context variables.
      * 
      */
-    public String responseCode() {
-        return this.responseCode;
+    public Optional<String> responseCode() {
+        return Optional.ofNullable(this.responseCode);
     }
     /**
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
     public List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations() {
-        return this.responseHeaderTransformations;
+        return this.responseHeaderTransformations == null ? List.of() : this.responseHeaderTransformations;
     }
     /**
      * @return HTTP response message.
      * 
      */
-    public String responseMessage() {
-        return this.responseMessage;
+    public Optional<String> responseMessage() {
+        return Optional.ofNullable(this.responseMessage);
     }
     /**
      * @return Response Type.
      * 
      */
-    public String responseType() {
-        return this.responseType;
+    public Optional<String> responseType() {
+        return Optional.ofNullable(this.responseType);
     }
     /**
      * @return List of scopes.
      * 
      */
     public List<String> scopes() {
-        return this.scopes;
+        return this.scopes == null ? List.of() : this.scopes;
     }
     /**
      * @return Auth endpoint details.
      * 
      */
     public List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails() {
-        return this.sourceUriDetails;
+        return this.sourceUriDetails == null ? List.of() : this.sourceUriDetails;
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Defines whether or not to use cookies for OAuth2 intermediate steps.
      * 
      */
-    public Boolean useCookiesForIntermediateSteps() {
-        return this.useCookiesForIntermediateSteps;
+    public Optional<Boolean> useCookiesForIntermediateSteps() {
+        return Optional.ofNullable(this.useCookiesForIntermediateSteps);
     }
     /**
      * @return Defines whether or not to use cookies for session maintenance.
      * 
      */
-    public Boolean useCookiesForSession() {
-        return this.useCookiesForSession;
+    public Optional<Boolean> useCookiesForSession() {
+        return Optional.ofNullable(this.useCookiesForSession);
     }
     /**
      * @return Defines whether or not to support PKCE.
      * 
      */
-    public Boolean usePkce() {
-        return this.usePkce;
+    public Optional<Boolean> usePkce() {
+        return Optional.ofNullable(this.usePkce);
     }
 
     public static Builder builder() {
@@ -195,20 +197,20 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails;
-        private String fallbackRedirectPath;
-        private String logoutPath;
-        private Integer maxExpiryDurationInHours;
-        private String responseCode;
-        private List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations;
-        private String responseMessage;
-        private String responseType;
-        private List<String> scopes;
-        private List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails;
-        private String type;
-        private Boolean useCookiesForIntermediateSteps;
-        private Boolean useCookiesForSession;
-        private Boolean usePkce;
+        private @Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails;
+        private @Nullable String fallbackRedirectPath;
+        private @Nullable String logoutPath;
+        private @Nullable Integer maxExpiryDurationInHours;
+        private @Nullable String responseCode;
+        private @Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations;
+        private @Nullable String responseMessage;
+        private @Nullable String responseType;
+        private @Nullable List<String> scopes;
+        private @Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails;
+        private @Nullable String type;
+        private @Nullable Boolean useCookiesForIntermediateSteps;
+        private @Nullable Boolean useCookiesForSession;
+        private @Nullable Boolean usePkce;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -229,85 +231,85 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
         }
 
         @CustomType.Setter
-        public Builder clientDetails(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails) {
-            this.clientDetails = Objects.requireNonNull(clientDetails);
+        public Builder clientDetails(@Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails) {
+            this.clientDetails = clientDetails;
             return this;
         }
         public Builder clientDetails(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail... clientDetails) {
             return clientDetails(List.of(clientDetails));
         }
         @CustomType.Setter
-        public Builder fallbackRedirectPath(String fallbackRedirectPath) {
-            this.fallbackRedirectPath = Objects.requireNonNull(fallbackRedirectPath);
+        public Builder fallbackRedirectPath(@Nullable String fallbackRedirectPath) {
+            this.fallbackRedirectPath = fallbackRedirectPath;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutPath(String logoutPath) {
-            this.logoutPath = Objects.requireNonNull(logoutPath);
+        public Builder logoutPath(@Nullable String logoutPath) {
+            this.logoutPath = logoutPath;
             return this;
         }
         @CustomType.Setter
-        public Builder maxExpiryDurationInHours(Integer maxExpiryDurationInHours) {
-            this.maxExpiryDurationInHours = Objects.requireNonNull(maxExpiryDurationInHours);
+        public Builder maxExpiryDurationInHours(@Nullable Integer maxExpiryDurationInHours) {
+            this.maxExpiryDurationInHours = maxExpiryDurationInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder responseCode(String responseCode) {
-            this.responseCode = Objects.requireNonNull(responseCode);
+        public Builder responseCode(@Nullable String responseCode) {
+            this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
-        public Builder responseHeaderTransformations(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations) {
-            this.responseHeaderTransformations = Objects.requireNonNull(responseHeaderTransformations);
+        public Builder responseHeaderTransformations(@Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations) {
+            this.responseHeaderTransformations = responseHeaderTransformations;
             return this;
         }
         public Builder responseHeaderTransformations(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation... responseHeaderTransformations) {
             return responseHeaderTransformations(List.of(responseHeaderTransformations));
         }
         @CustomType.Setter
-        public Builder responseMessage(String responseMessage) {
-            this.responseMessage = Objects.requireNonNull(responseMessage);
+        public Builder responseMessage(@Nullable String responseMessage) {
+            this.responseMessage = responseMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder responseType(String responseType) {
-            this.responseType = Objects.requireNonNull(responseType);
+        public Builder responseType(@Nullable String responseType) {
+            this.responseType = responseType;
             return this;
         }
         @CustomType.Setter
-        public Builder scopes(List<String> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+        public Builder scopes(@Nullable List<String> scopes) {
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(String... scopes) {
             return scopes(List.of(scopes));
         }
         @CustomType.Setter
-        public Builder sourceUriDetails(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails) {
-            this.sourceUriDetails = Objects.requireNonNull(sourceUriDetails);
+        public Builder sourceUriDetails(@Nullable List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails) {
+            this.sourceUriDetails = sourceUriDetails;
             return this;
         }
         public Builder sourceUriDetails(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail... sourceUriDetails) {
             return sourceUriDetails(List.of(sourceUriDetails));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder useCookiesForIntermediateSteps(Boolean useCookiesForIntermediateSteps) {
-            this.useCookiesForIntermediateSteps = Objects.requireNonNull(useCookiesForIntermediateSteps);
+        public Builder useCookiesForIntermediateSteps(@Nullable Boolean useCookiesForIntermediateSteps) {
+            this.useCookiesForIntermediateSteps = useCookiesForIntermediateSteps;
             return this;
         }
         @CustomType.Setter
-        public Builder useCookiesForSession(Boolean useCookiesForSession) {
-            this.useCookiesForSession = Objects.requireNonNull(useCookiesForSession);
+        public Builder useCookiesForSession(@Nullable Boolean useCookiesForSession) {
+            this.useCookiesForSession = useCookiesForSession;
             return this;
         }
         @CustomType.Setter
-        public Builder usePkce(Boolean usePkce) {
-            this.usePkce = Objects.requireNonNull(usePkce);
+        public Builder usePkce(@Nullable Boolean usePkce) {
+            this.usePkce = usePkce;
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy build() {

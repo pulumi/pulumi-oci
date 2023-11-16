@@ -20,11 +20,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Source from which this group got created.
         /// </summary>
-        public readonly string CreationMechanism;
+        public readonly string? CreationMechanism;
         /// <summary>
         /// Group description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Grants assigned to group
         /// </summary>
@@ -46,9 +46,9 @@ namespace Pulumi.Oci.Identity.Outputs
         private GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupResult(
             ImmutableArray<Outputs.GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleResult> appRoles,
 
-            string creationMechanism,
+            string? creationMechanism,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantResult> grants,
 

@@ -49,10 +49,7 @@ class GetComputeGlobalImageCapabilitySchemaResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the compute global image capability schema
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,39 +59,27 @@ class GetComputeGlobalImageCapabilitySchemaResult:
 
     @property
     @pulumi.getter(name="currentVersionName")
-    def current_version_name(self) -> str:
-        """
-        The name of the global capabilities version resource that is considered the current version.
-        """
+    def current_version_name(self) -> Optional[str]:
         return pulumi.get(self, "current_version_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,10 +87,7 @@ class GetComputeGlobalImageCapabilitySchemaResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the compute global image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -128,21 +110,7 @@ class AwaitableGetComputeGlobalImageCapabilitySchemaResult(GetComputeGlobalImage
 def get_compute_global_image_capability_schema(compute_global_image_capability_schema_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGlobalImageCapabilitySchemaResult:
     """
-    This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified Compute Global Image Capability Schema
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_global_image_capability_schema = oci.Core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"])
-    ```
-
-
-    :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['computeGlobalImageCapabilitySchemaId'] = compute_global_image_capability_schema_id
@@ -164,20 +132,6 @@ def get_compute_global_image_capability_schema(compute_global_image_capability_s
 def get_compute_global_image_capability_schema_output(compute_global_image_capability_schema_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemaResult]:
     """
-    This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified Compute Global Image Capability Schema
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_global_image_capability_schema = oci.Core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"])
-    ```
-
-
-    :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
+    Use this data source to access information about an existing resource.
     """
     ...

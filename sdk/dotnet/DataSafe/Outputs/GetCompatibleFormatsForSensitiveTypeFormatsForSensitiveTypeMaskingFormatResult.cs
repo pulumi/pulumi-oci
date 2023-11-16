@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The description of the masking format.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The OCID of the masking format.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the masking format.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult(
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string name)
+            string? name)
         {
             Description = description;
             Id = id;

@@ -61,7 +61,7 @@ export interface GetBlockchainPlatformsResult {
     /**
      * The list of blockchain_platform_collection.
      */
-    readonly blockchainPlatformCollections: outputs.Blockchain.GetBlockchainPlatformsBlockchainPlatformCollection[];
+    readonly blockchainPlatformCollections?: outputs.Blockchain.GetBlockchainPlatformsBlockchainPlatformCollection[];
     /**
      * Compartment Identifier
      */
@@ -74,7 +74,7 @@ export interface GetBlockchainPlatformsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Platform Instance.
      */

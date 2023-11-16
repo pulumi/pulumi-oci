@@ -24,16 +24,6 @@ class FusionEnvironmentAdminUserArgs:
                  username: pulumi.Input[str]):
         """
         The set of arguments for constructing a FusionEnvironmentAdminUser resource.
-        :param pulumi.Input[str] email_address: The email address for the administrator.
-        :param pulumi.Input[str] first_name: The administrator's first name.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[str] last_name: The administrator's last name.
-        :param pulumi.Input[str] password: The password for the administrator.
-        :param pulumi.Input[str] username: The username for the administrator.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
@@ -45,9 +35,6 @@ class FusionEnvironmentAdminUserArgs:
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> pulumi.Input[str]:
-        """
-        The email address for the administrator.
-        """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
@@ -57,9 +44,6 @@ class FusionEnvironmentAdminUserArgs:
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> pulumi.Input[str]:
-        """
-        The administrator's first name.
-        """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
@@ -69,9 +53,6 @@ class FusionEnvironmentAdminUserArgs:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> pulumi.Input[str]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
@@ -81,9 +62,6 @@ class FusionEnvironmentAdminUserArgs:
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> pulumi.Input[str]:
-        """
-        The administrator's last name.
-        """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
@@ -93,9 +71,6 @@ class FusionEnvironmentAdminUserArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        The password for the administrator.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -105,13 +80,6 @@ class FusionEnvironmentAdminUserArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        The username for the administrator.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -131,17 +99,6 @@ class _FusionEnvironmentAdminUserState:
                  username: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentAdminUser resources.
-        :param pulumi.Input[str] email_address: The email address for the administrator.
-        :param pulumi.Input[str] first_name: The administrator's first name.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdminUserItemArgs']]] items: A page of AdminUserSummary objects.
-        :param pulumi.Input[str] last_name: The administrator's last name.
-        :param pulumi.Input[str] password: The password for the administrator.
-        :param pulumi.Input[str] username: The username for the administrator.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if email_address is not None:
             pulumi.set(__self__, "email_address", email_address)
@@ -161,9 +118,6 @@ class _FusionEnvironmentAdminUserState:
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The email address for the administrator.
-        """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
@@ -173,9 +127,6 @@ class _FusionEnvironmentAdminUserState:
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The administrator's first name.
-        """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
@@ -185,9 +136,6 @@ class _FusionEnvironmentAdminUserState:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
@@ -197,9 +145,6 @@ class _FusionEnvironmentAdminUserState:
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdminUserItemArgs']]]]:
-        """
-        A page of AdminUserSummary objects.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -209,9 +154,6 @@ class _FusionEnvironmentAdminUserState:
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The administrator's last name.
-        """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
@@ -221,9 +163,6 @@ class _FusionEnvironmentAdminUserState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password for the administrator.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -233,13 +172,6 @@ class _FusionEnvironmentAdminUserState:
     @property
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username for the administrator.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -260,45 +192,9 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  username: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Create a FusionEnvironment admin user
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_admin_user = oci.fusion_apps.FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser",
-            email_address=var["fusion_environment_admin_user_email_address"],
-            first_name=var["fusion_environment_admin_user_first_name"],
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            last_name=var["fusion_environment_admin_user_last_name"],
-            password=var["fusion_environment_admin_user_password"],
-            username=var["fusion_environment_admin_user_username"])
-        ```
-
-        ## Import
-
-        FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
-        ```
-
+        Create a FusionEnvironmentAdminUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] email_address: The email address for the administrator.
-        :param pulumi.Input[str] first_name: The administrator's first name.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[str] last_name: The administrator's last name.
-        :param pulumi.Input[str] password: The password for the administrator.
-        :param pulumi.Input[str] username: The username for the administrator.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -307,33 +203,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  args: FusionEnvironmentAdminUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Create a FusionEnvironment admin user
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_admin_user = oci.fusion_apps.FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser",
-            email_address=var["fusion_environment_admin_user_email_address"],
-            first_name=var["fusion_environment_admin_user_first_name"],
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            last_name=var["fusion_environment_admin_user_last_name"],
-            password=var["fusion_environment_admin_user_password"],
-            username=var["fusion_environment_admin_user_username"])
-        ```
-
-        ## Import
-
-        FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
-        ```
-
+        Create a FusionEnvironmentAdminUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentAdminUserArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -409,17 +279,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] email_address: The email address for the administrator.
-        :param pulumi.Input[str] first_name: The administrator's first name.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentAdminUserItemArgs']]]] items: A page of AdminUserSummary objects.
-        :param pulumi.Input[str] last_name: The administrator's last name.
-        :param pulumi.Input[str] password: The password for the administrator.
-        :param pulumi.Input[str] username: The username for the administrator.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -437,60 +296,35 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> pulumi.Output[str]:
-        """
-        The email address for the administrator.
-        """
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> pulumi.Output[str]:
-        """
-        The administrator's first name.
-        """
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> pulumi.Output[str]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter
-    def items(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentAdminUserItem']]:
-        """
-        A page of AdminUserSummary objects.
-        """
+    def items(self) -> pulumi.Output[Optional[Sequence['outputs.FusionEnvironmentAdminUserItem']]]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> pulumi.Output[str]:
-        """
-        The administrator's last name.
-        """
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Output[str]:
-        """
-        The password for the administrator.
-        """
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter
     def username(self) -> pulumi.Output[str]:
-        """
-        The username for the administrator.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "username")
 

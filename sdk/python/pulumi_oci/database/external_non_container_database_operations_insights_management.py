@@ -19,12 +19,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagementArgs:
                  external_non_container_database_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a ExternalNonContainerDatabaseOperationsInsightsManagement resource.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] external_non_container_database_id: The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         pulumi.set(__self__, "enable_operations_insights", enable_operations_insights)
         pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
@@ -33,12 +27,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagementArgs:
     @property
     @pulumi.getter(name="enableOperationsInsights")
     def enable_operations_insights(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_operations_insights")
 
     @enable_operations_insights.setter
@@ -48,9 +36,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagementArgs:
     @property
     @pulumi.getter(name="externalDatabaseConnectorId")
     def external_database_connector_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "external_database_connector_id")
 
     @external_database_connector_id.setter
@@ -60,9 +45,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagementArgs:
     @property
     @pulumi.getter(name="externalNonContainerDatabaseId")
     def external_non_container_database_id(self) -> pulumi.Input[str]:
-        """
-        The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "external_non_container_database_id")
 
     @external_non_container_database_id.setter
@@ -78,12 +60,6 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
                  external_non_container_database_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalNonContainerDatabaseOperationsInsightsManagement resources.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] external_non_container_database_id: The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         if enable_operations_insights is not None:
             pulumi.set(__self__, "enable_operations_insights", enable_operations_insights)
@@ -95,12 +71,6 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
     @property
     @pulumi.getter(name="enableOperationsInsights")
     def enable_operations_insights(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_operations_insights")
 
     @enable_operations_insights.setter
@@ -110,9 +80,6 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
     @property
     @pulumi.getter(name="externalDatabaseConnectorId")
     def external_database_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "external_database_connector_id")
 
     @external_database_connector_id.setter
@@ -122,9 +89,6 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
     @property
     @pulumi.getter(name="externalNonContainerDatabaseId")
     def external_non_container_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "external_non_container_database_id")
 
     @external_non_container_database_id.setter
@@ -142,35 +106,9 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
                  external_non_container_database_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the External Non Container Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Operations Insights for the external non-container database.
-        When deleting this resource block , we call disable if it was in enabled state .
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_non_container_database_operations_insights_management = oci.database.ExternalNonContainerDatabaseOperationsInsightsManagement("testExternalNonContainerDatabaseOperationsInsightsManagement",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
-            enable_operations_insights=True)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ExternalNonContainerDatabaseOperationsInsightsManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] external_non_container_database_id: The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         ...
     @overload
@@ -179,27 +117,7 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
                  args: ExternalNonContainerDatabaseOperationsInsightsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Non Container Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Operations Insights for the external non-container database.
-        When deleting this resource block , we call disable if it was in enabled state .
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_non_container_database_operations_insights_management = oci.database.ExternalNonContainerDatabaseOperationsInsightsManagement("testExternalNonContainerDatabaseOperationsInsightsManagement",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
-            enable_operations_insights=True)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ExternalNonContainerDatabaseOperationsInsightsManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalNonContainerDatabaseOperationsInsightsManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -256,12 +174,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] external_non_container_database_id: The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -275,27 +187,15 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
     @property
     @pulumi.getter(name="enableOperationsInsights")
     def enable_operations_insights(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_operations_insights")
 
     @property
     @pulumi.getter(name="externalDatabaseConnectorId")
     def external_database_connector_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "external_database_connector_id")
 
     @property
     @pulumi.getter(name="externalNonContainerDatabaseId")
     def external_non_container_database_id(self) -> pulumi.Output[str]:
-        """
-        The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "external_non_container_database_id")
 

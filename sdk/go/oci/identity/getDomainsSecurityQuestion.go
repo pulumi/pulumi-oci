@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -77,33 +76,33 @@ type LookupDomainsSecurityQuestionArgs struct {
 // A collection of values returned by getDomainsSecurityQuestion.
 type LookupDomainsSecurityQuestionResult struct {
 	// This indicates if the question is selected by the Security Admin and is available for the end user.
-	Active        bool     `pulumi:"active"`
+	Active        *bool    `pulumi:"active"`
 	AttributeSets []string `pulumi:"attributeSets"`
 	Attributes    *string  `pulumi:"attributes"`
 	Authorization *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId *string `pulumi:"externalId"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsSecurityQuestionIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                    `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsSecurityQuestionIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsSecurityQuestionMeta `pulumi:"metas"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// Locale values for the Question
 	QuestionTexts             []GetDomainsSecurityQuestionQuestionText `pulumi:"questionTexts"`
 	ResourceTypeSchemaVersion *string                                  `pulumi:"resourceTypeSchemaVersion"`
@@ -113,9 +112,9 @@ type LookupDomainsSecurityQuestionResult struct {
 	// A list of tags on this resource.
 	Tags []GetDomainsSecurityQuestionTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// This indicates if the question is a Custom Question added by the Security Admin.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupDomainsSecurityQuestionOutput(ctx *pulumi.Context, args LookupDomainsSecurityQuestionOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsSecurityQuestionResultOutput {
@@ -166,15 +165,9 @@ func (o LookupDomainsSecurityQuestionResultOutput) ToLookupDomainsSecurityQuesti
 	return o
 }
 
-func (o LookupDomainsSecurityQuestionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsSecurityQuestionResult] {
-	return pulumix.Output[LookupDomainsSecurityQuestionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // This indicates if the question is selected by the Security Admin and is available for the end user.
-func (o LookupDomainsSecurityQuestionResultOutput) Active() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) bool { return v.Active }).(pulumi.BoolOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *bool { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupDomainsSecurityQuestionResultOutput) AttributeSets() pulumi.StringArrayOutput {
@@ -190,28 +183,28 @@ func (o LookupDomainsSecurityQuestionResultOutput) Authorization() pulumi.String
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsSecurityQuestionResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsSecurityQuestionResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsSecurityQuestionResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-func (o LookupDomainsSecurityQuestionResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsSecurityQuestionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -233,8 +226,8 @@ func (o LookupDomainsSecurityQuestionResultOutput) IdcsLastModifiedBies() GetDom
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsSecurityQuestionResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -248,8 +241,8 @@ func (o LookupDomainsSecurityQuestionResultOutput) Metas() GetDomainsSecurityQue
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsSecurityQuestionResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // Locale values for the Question
@@ -278,13 +271,13 @@ func (o LookupDomainsSecurityQuestionResultOutput) Tags() GetDomainsSecurityQues
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsSecurityQuestionResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // This indicates if the question is a Custom Question added by the Security Admin.
-func (o LookupDomainsSecurityQuestionResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupDomainsSecurityQuestionResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsSecurityQuestionResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

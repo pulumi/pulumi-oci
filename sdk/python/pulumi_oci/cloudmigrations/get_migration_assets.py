@@ -49,9 +49,6 @@ class GetMigrationAssetsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -61,7 +58,7 @@ class GetMigrationAssetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,10 +66,7 @@ class GetMigrationAssetsResult:
 
     @property
     @pulumi.getter(name="migrationAssetCollections")
-    def migration_asset_collections(self) -> Sequence['outputs.GetMigrationAssetsMigrationAssetCollectionResult']:
-        """
-        The list of migration_asset_collection.
-        """
+    def migration_asset_collections(self) -> Optional[Sequence['outputs.GetMigrationAssetsMigrationAssetCollectionResult']]:
         return pulumi.get(self, "migration_asset_collections")
 
     @property
@@ -83,17 +77,11 @@ class GetMigrationAssetsResult:
     @property
     @pulumi.getter(name="migrationId")
     def migration_id(self) -> Optional[str]:
-        """
-        OCID of the associated migration.
-        """
         return pulumi.get(self, "migration_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the migration asset.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_migration_assets(display_name: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationAssetsResult:
     """
-    This data source provides the list of Migration Assets in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of migration assets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=var["migration_asset_display_name"],
-        migration_asset_id=oci_cloud_migrations_migration_asset["test_migration_asset"]["id"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        state=var["migration_asset_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str migration_asset_id: Unique migration asset identifier
-    :param str migration_id: Unique migration identifier
-    :param str state: The current state of the migration asset.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -168,26 +136,6 @@ def get_migration_assets_output(display_name: Optional[pulumi.Input[Optional[str
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationAssetsResult]:
     """
-    This data source provides the list of Migration Assets in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of migration assets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=var["migration_asset_display_name"],
-        migration_asset_id=oci_cloud_migrations_migration_asset["test_migration_asset"]["id"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        state=var["migration_asset_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str migration_asset_id: Unique migration asset identifier
-    :param str migration_id: Unique migration identifier
-    :param str state: The current state of the migration asset.
+    Use this data source to access information about an existing resource.
     """
     ...

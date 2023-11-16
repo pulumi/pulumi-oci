@@ -24,12 +24,12 @@ public final class GetFleetBlocklistsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The blocklist
      * 
      */
-    private List<GetFleetBlocklistsItem> items;
+    private @Nullable List<GetFleetBlocklistsItem> items;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
      * 
@@ -56,15 +56,15 @@ public final class GetFleetBlocklistsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The blocklist
      * 
      */
     public List<GetFleetBlocklistsItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
@@ -92,8 +92,8 @@ public final class GetFleetBlocklistsResult {
     public static final class Builder {
         private @Nullable List<GetFleetBlocklistsFilter> filters;
         private String fleetId;
-        private String id;
-        private List<GetFleetBlocklistsItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetFleetBlocklistsItem> items;
         private @Nullable String managedInstanceId;
         private @Nullable String operation;
         public Builder() {}
@@ -121,13 +121,13 @@ public final class GetFleetBlocklistsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetFleetBlocklistsItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFleetBlocklistsItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFleetBlocklistsItem... items) {

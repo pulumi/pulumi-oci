@@ -103,7 +103,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      */
@@ -111,11 +111,11 @@ export class VmClusterNetwork extends pulumi.CustomResource {
     /**
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    public readonly dns!: pulumi.Output<string[]>;
+    public readonly dns!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The SCAN details for DR network
      */
-    public readonly drScans!: pulumi.Output<outputs.Database.VmClusterNetworkDrScan[]>;
+    public readonly drScans!: pulumi.Output<outputs.Database.VmClusterNetworkDrScan[] | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -123,15 +123,15 @@ export class VmClusterNetwork extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    public readonly ntps!: pulumi.Output<string[]>;
+    public readonly ntps!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The SCAN details.
      */
@@ -139,16 +139,16 @@ export class VmClusterNetwork extends pulumi.CustomResource {
     /**
      * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time when the VM cluster network was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     public readonly validateVmClusterNetwork!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      */
-    public /*out*/ readonly vmClusterId!: pulumi.Output<string>;
+    public /*out*/ readonly vmClusterId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Details of the client and backup networks.
      */

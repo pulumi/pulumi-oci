@@ -9,6 +9,7 @@ import com.pulumi.oci.Kms.outputs.GetKeyVersionsKeyVersion;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,7 +19,7 @@ public final class GetKeyVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the master encryption key associated with this key version.
      * 
@@ -28,7 +29,7 @@ public final class GetKeyVersionsResult {
      * @return The list of key_versions.
      * 
      */
-    private List<GetKeyVersionsKeyVersion> keyVersions;
+    private @Nullable List<GetKeyVersionsKeyVersion> keyVersions;
     private String managementEndpoint;
 
     private GetKeyVersionsResult() {}
@@ -39,8 +40,8 @@ public final class GetKeyVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the master encryption key associated with this key version.
@@ -54,7 +55,7 @@ public final class GetKeyVersionsResult {
      * 
      */
     public List<GetKeyVersionsKeyVersion> keyVersions() {
-        return this.keyVersions;
+        return this.keyVersions == null ? List.of() : this.keyVersions;
     }
     public String managementEndpoint() {
         return this.managementEndpoint;
@@ -70,9 +71,9 @@ public final class GetKeyVersionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetKeyVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String keyId;
-        private List<GetKeyVersionsKeyVersion> keyVersions;
+        private @Nullable List<GetKeyVersionsKeyVersion> keyVersions;
         private String managementEndpoint;
         public Builder() {}
         public Builder(GetKeyVersionsResult defaults) {
@@ -93,8 +94,8 @@ public final class GetKeyVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -103,8 +104,8 @@ public final class GetKeyVersionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder keyVersions(List<GetKeyVersionsKeyVersion> keyVersions) {
-            this.keyVersions = Objects.requireNonNull(keyVersions);
+        public Builder keyVersions(@Nullable List<GetKeyVersionsKeyVersion> keyVersions) {
+            this.keyVersions = keyVersions;
             return this;
         }
         public Builder keyVersions(GetKeyVersionsKeyVersion... keyVersions) {

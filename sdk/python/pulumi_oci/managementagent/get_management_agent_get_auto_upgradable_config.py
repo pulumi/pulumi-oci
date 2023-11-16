@@ -39,7 +39,7 @@ class GetManagementAgentGetAutoUpgradableConfigResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -47,10 +47,7 @@ class GetManagementAgentGetAutoUpgradableConfigResult:
 
     @property
     @pulumi.getter(name="isAgentAutoUpgradable")
-    def is_agent_auto_upgradable(self) -> bool:
-        """
-        true if the agents can be upgraded automatically; false if they must be upgraded manually.
-        """
+    def is_agent_auto_upgradable(self) -> Optional[bool]:
         return pulumi.get(self, "is_agent_auto_upgradable")
 
 
@@ -68,22 +65,7 @@ class AwaitableGetManagementAgentGetAutoUpgradableConfigResult(GetManagementAgen
 def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentGetAutoUpgradableConfigResult:
     """
-    This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Get the AutoUpgradable configuration for all agents in a tenancy.
-    The supplied compartmentId must be a tenancy root.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -100,21 +82,6 @@ def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[str
 def get_management_agent_get_auto_upgradable_config_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentGetAutoUpgradableConfigResult]:
     """
-    This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Get the AutoUpgradable configuration for all agents in a tenancy.
-    The supplied compartmentId must be a tenancy root.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
+    Use this data source to access information about an existing resource.
     """
     ...

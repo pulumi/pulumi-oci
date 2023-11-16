@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -65,13 +64,13 @@ type LookupCloudVmClusterIormConfigResult struct {
 	CloudVmClusterId string `pulumi:"cloudVmClusterId"`
 	// An array of IORM settings for all the database in the cloud vm cluster.
 	DbPlans []GetCloudVmClusterIormConfigDbPlan `pulumi:"dbPlans"`
-	Id      string                              `pulumi:"id"`
+	Id      *string                             `pulumi:"id"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current value for the IORM objective. The default is `AUTO`.
-	Objective string `pulumi:"objective"`
+	Objective *string `pulumi:"objective"`
 	// The current state of IORM configuration for the cloud vm cluster.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 func LookupCloudVmClusterIormConfigOutput(ctx *pulumi.Context, args LookupCloudVmClusterIormConfigOutputArgs, opts ...pulumi.InvokeOption) LookupCloudVmClusterIormConfigResultOutput {
@@ -112,12 +111,6 @@ func (o LookupCloudVmClusterIormConfigResultOutput) ToLookupCloudVmClusterIormCo
 	return o
 }
 
-func (o LookupCloudVmClusterIormConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudVmClusterIormConfigResult] {
-	return pulumix.Output[LookupCloudVmClusterIormConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupCloudVmClusterIormConfigResultOutput) CloudVmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) string { return v.CloudVmClusterId }).(pulumi.StringOutput)
 }
@@ -127,23 +120,23 @@ func (o LookupCloudVmClusterIormConfigResultOutput) DbPlans() GetCloudVmClusterI
 	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) []GetCloudVmClusterIormConfigDbPlan { return v.DbPlans }).(GetCloudVmClusterIormConfigDbPlanArrayOutput)
 }
 
-func (o LookupCloudVmClusterIormConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterIormConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current `lifecycleState`.
-func (o LookupCloudVmClusterIormConfigResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterIormConfigResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current value for the IORM objective. The default is `AUTO`.
-func (o LookupCloudVmClusterIormConfigResultOutput) Objective() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) string { return v.Objective }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterIormConfigResultOutput) Objective() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) *string { return v.Objective }).(pulumi.StringPtrOutput)
 }
 
 // The current state of IORM configuration for the cloud vm cluster.
-func (o LookupCloudVmClusterIormConfigResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCloudVmClusterIormConfigResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterIormConfigResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

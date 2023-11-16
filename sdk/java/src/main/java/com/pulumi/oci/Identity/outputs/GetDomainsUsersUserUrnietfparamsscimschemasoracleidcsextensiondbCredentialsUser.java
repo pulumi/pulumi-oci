@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser {
@@ -14,27 +16,27 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
      */
-    private Integer dbLoginAttempts;
+    private @Nullable Integer dbLoginAttempts;
     /**
      * @return The database username.
      * 
      */
-    private String dbUserName;
+    private @Nullable String dbUserName;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() {}
     /**
      * @return The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
      */
-    public Integer dbLoginAttempts() {
-        return this.dbLoginAttempts;
+    public Optional<Integer> dbLoginAttempts() {
+        return Optional.ofNullable(this.dbLoginAttempts);
     }
     /**
      * @return The database username.
      * 
      */
-    public String dbUserName() {
-        return this.dbUserName;
+    public Optional<String> dbUserName() {
+        return Optional.ofNullable(this.dbUserName);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer dbLoginAttempts;
-        private String dbUserName;
+        private @Nullable Integer dbLoginAttempts;
+        private @Nullable String dbUserName;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder dbLoginAttempts(Integer dbLoginAttempts) {
-            this.dbLoginAttempts = Objects.requireNonNull(dbLoginAttempts);
+        public Builder dbLoginAttempts(@Nullable Integer dbLoginAttempts) {
+            this.dbLoginAttempts = dbLoginAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+        public Builder dbUserName(@Nullable String dbUserName) {
+            this.dbUserName = dbUserName;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser build() {

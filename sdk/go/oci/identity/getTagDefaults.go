@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
@@ -125,12 +124,6 @@ func (o GetTagDefaultsResultOutput) ToGetTagDefaultsResultOutput() GetTagDefault
 
 func (o GetTagDefaultsResultOutput) ToGetTagDefaultsResultOutputWithContext(ctx context.Context) GetTagDefaultsResultOutput {
 	return o
-}
-
-func (o GetTagDefaultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagDefaultsResult] {
-	return pulumix.Output[GetTagDefaultsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.

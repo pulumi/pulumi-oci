@@ -141,7 +141,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The state of the Virtual Node Pool.
         /// </summary>
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetVirtualNodePoolsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> states,
 

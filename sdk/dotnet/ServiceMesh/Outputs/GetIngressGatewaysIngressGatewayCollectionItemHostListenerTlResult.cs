@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
         /// </summary>
-        public readonly string Mode;
+        public readonly string? Mode;
         /// <summary>
         /// Resource representing the location of the TLS certificate.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         private GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult(
             ImmutableArray<Outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationResult> clientValidations,
 
-            string mode,
+            string? mode,
 
             ImmutableArray<Outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateResult> serverCertificates)
         {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyDevicesMyDeviceNonCompliance {
@@ -13,39 +15,39 @@ public final class GetDomainsMyDevicesMyDeviceNonCompliance {
      * @return Device Compliance Action
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Device Compliance name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The identifier of the user
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsMyDevicesMyDeviceNonCompliance() {}
     /**
      * @return Device Compliance Action
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Device Compliance name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The identifier of the user
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainsMyDevicesMyDeviceNonCompliance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String name;
-        private String value;
+        private @Nullable String action;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsMyDevicesMyDeviceNonCompliance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainsMyDevicesMyDeviceNonCompliance {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsMyDevicesMyDeviceNonCompliance build() {

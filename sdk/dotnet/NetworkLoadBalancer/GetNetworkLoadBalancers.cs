@@ -163,7 +163,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of network_load_balancer_collection.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             ImmutableArray<Outputs.GetNetworkLoadBalancersFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionResult> networkLoadBalancerCollections,
 

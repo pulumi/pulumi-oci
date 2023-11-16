@@ -61,154 +61,154 @@ public class Model extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="componentModels", refs={List.class,ModelComponentModel.class}, tree="[0,1]")
-    private Output<List<ModelComponentModel>> componentModels;
+    private Output</* @Nullable */ List<ModelComponentModel>> componentModels;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
      * 
      */
-    public Output<List<ModelComponentModel>> componentModels() {
-        return this.componentModels;
+    public Output<Optional<List<ModelComponentModel>>> componentModels() {
+        return Codegen.optional(this.componentModels);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) An optional description of the model.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) An optional description of the model.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Set to true when the model is created by using multiple key value extraction models.
      * 
      */
     @Export(name="isComposedModel", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isComposedModel;
+    private Output</* @Nullable */ Boolean> isComposedModel;
 
     /**
      * @return Set to true when the model is created by using multiple key value extraction models.
      * 
      */
-    public Output<Boolean> isComposedModel() {
-        return this.isComposedModel;
+    public Output<Optional<Boolean>> isComposedModel() {
+        return Codegen.optional(this.isComposedModel);
     }
     /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     @Export(name="isQuickMode", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isQuickMode;
+    private Output</* @Nullable */ Boolean> isQuickMode;
 
     /**
      * @return Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
-    public Output<Boolean> isQuickMode() {
-        return this.isQuickMode;
+    public Output<Optional<Boolean>> isQuickMode() {
+        return Codegen.optional(this.isQuickMode);
     }
     /**
      * The collection of labels used to train the custom model.
      * 
      */
     @Export(name="labels", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> labels;
+    private Output</* @Nullable */ List<String>> labels;
 
     /**
      * @return The collection of labels used to train the custom model.
      * 
      */
-    public Output<List<String>> labels() {
-        return this.labels;
+    public Output<Optional<List<String>>> labels() {
+        return Codegen.optional(this.labels);
     }
     /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
      * 
      */
     @Export(name="maxTrainingTimeInHours", refs={Double.class}, tree="[0]")
-    private Output<Double> maxTrainingTimeInHours;
+    private Output</* @Nullable */ Double> maxTrainingTimeInHours;
 
     /**
      * @return The maximum model training time in hours, expressed as a decimal fraction.
      * 
      */
-    public Output<Double> maxTrainingTimeInHours() {
-        return this.maxTrainingTimeInHours;
+    public Output<Optional<Double>> maxTrainingTimeInHours() {
+        return Codegen.optional(this.maxTrainingTimeInHours);
     }
     /**
      * Trained Model Metrics.
      * 
      */
     @Export(name="metrics", refs={List.class,ModelMetric.class}, tree="[0,1]")
-    private Output<List<ModelMetric>> metrics;
+    private Output</* @Nullable */ List<ModelMetric>> metrics;
 
     /**
      * @return Trained Model Metrics.
      * 
      */
-    public Output<List<ModelMetric>> metrics() {
-        return this.metrics;
+    public Output<Optional<List<ModelMetric>>> metrics() {
+        return Codegen.optional(this.metrics);
     }
     @Export(name="modelId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> modelId;
@@ -235,14 +235,14 @@ public class Model extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="modelVersion", refs={String.class}, tree="[0]")
-    private Output<String> modelVersion;
+    private Output</* @Nullable */ String> modelVersion;
 
     /**
      * @return The model version
      * 
      */
-    public Output<String> modelVersion() {
-        return this.modelVersion;
+    public Output<Optional<String>> modelVersion() {
+        return Codegen.optional(this.modelVersion);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -263,126 +263,126 @@ public class Model extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the model.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The tenancy id of the model.
      * 
      */
     @Export(name="tenancyId", refs={String.class}, tree="[0]")
-    private Output<String> tenancyId;
+    private Output</* @Nullable */ String> tenancyId;
 
     /**
      * @return The tenancy id of the model.
      * 
      */
-    public Output<String> tenancyId() {
-        return this.tenancyId;
+    public Output<Optional<String>> tenancyId() {
+        return Codegen.optional(this.tenancyId);
     }
     /**
      * The base entity which is the input for creating and training a model.
      * 
      */
     @Export(name="testingDataset", refs={ModelTestingDataset.class}, tree="[0]")
-    private Output<ModelTestingDataset> testingDataset;
+    private Output</* @Nullable */ ModelTestingDataset> testingDataset;
 
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
-    public Output<ModelTestingDataset> testingDataset() {
-        return this.testingDataset;
+    public Output<Optional<ModelTestingDataset>> testingDataset() {
+        return Codegen.optional(this.testingDataset);
     }
     /**
      * When the model was created, as an RFC3339 datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return When the model was created, as an RFC3339 datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * When the model was updated, as an RFC3339 datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return When the model was updated, as an RFC3339 datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The total hours actually used for model training.
      * 
      */
     @Export(name="trainedTimeInHours", refs={Double.class}, tree="[0]")
-    private Output<Double> trainedTimeInHours;
+    private Output</* @Nullable */ Double> trainedTimeInHours;
 
     /**
      * @return The total hours actually used for model training.
      * 
      */
-    public Output<Double> trainedTimeInHours() {
-        return this.trainedTimeInHours;
+    public Output<Optional<Double>> trainedTimeInHours() {
+        return Codegen.optional(this.trainedTimeInHours);
     }
     /**
      * The base entity which is the input for creating and training a model.
      * 
      */
     @Export(name="trainingDataset", refs={ModelTrainingDataset.class}, tree="[0]")
-    private Output<ModelTrainingDataset> trainingDataset;
+    private Output</* @Nullable */ ModelTrainingDataset> trainingDataset;
 
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
-    public Output<ModelTrainingDataset> trainingDataset() {
-        return this.trainingDataset;
+    public Output<Optional<ModelTrainingDataset>> trainingDataset() {
+        return Codegen.optional(this.trainingDataset);
     }
     /**
      * The base entity which is the input for creating and training a model.
      * 
      */
     @Export(name="validationDataset", refs={ModelValidationDataset.class}, tree="[0]")
-    private Output<ModelValidationDataset> validationDataset;
+    private Output</* @Nullable */ ModelValidationDataset> validationDataset;
 
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
-    public Output<ModelValidationDataset> validationDataset() {
-        return this.validationDataset;
+    public Output<Optional<ModelValidationDataset>> validationDataset() {
+        return Codegen.optional(this.validationDataset);
     }
 
     /**

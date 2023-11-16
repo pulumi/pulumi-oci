@@ -9,18 +9,17 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type GetServiceEnvironmentServiceDefinition struct {
 	// Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Short display name of the service. For example, "Retail Order Management".
-	ShortDisplayName string `pulumi:"shortDisplayName"`
+	ShortDisplayName *string `pulumi:"shortDisplayName"`
 	// The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetServiceEnvironmentServiceDefinitionInput is an input type that accepts GetServiceEnvironmentServiceDefinitionArgs and GetServiceEnvironmentServiceDefinitionOutput values.
@@ -36,11 +35,11 @@ type GetServiceEnvironmentServiceDefinitionInput interface {
 
 type GetServiceEnvironmentServiceDefinitionArgs struct {
 	// Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Short display name of the service. For example, "Retail Order Management".
-	ShortDisplayName pulumi.StringInput `pulumi:"shortDisplayName"`
+	ShortDisplayName pulumi.StringPtrInput `pulumi:"shortDisplayName"`
 	// The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetServiceEnvironmentServiceDefinitionArgs) ElementType() reflect.Type {
@@ -53,12 +52,6 @@ func (i GetServiceEnvironmentServiceDefinitionArgs) ToGetServiceEnvironmentServi
 
 func (i GetServiceEnvironmentServiceDefinitionArgs) ToGetServiceEnvironmentServiceDefinitionOutputWithContext(ctx context.Context) GetServiceEnvironmentServiceDefinitionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentServiceDefinitionOutput)
-}
-
-func (i GetServiceEnvironmentServiceDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentServiceDefinition] {
-	return pulumix.Output[GetServiceEnvironmentServiceDefinition]{
-		OutputState: i.ToGetServiceEnvironmentServiceDefinitionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetServiceEnvironmentServiceDefinitionArrayInput is an input type that accepts GetServiceEnvironmentServiceDefinitionArray and GetServiceEnvironmentServiceDefinitionArrayOutput values.
@@ -86,12 +79,6 @@ func (i GetServiceEnvironmentServiceDefinitionArray) ToGetServiceEnvironmentServ
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentServiceDefinitionArrayOutput)
 }
 
-func (i GetServiceEnvironmentServiceDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentServiceDefinition] {
-	return pulumix.Output[[]GetServiceEnvironmentServiceDefinition]{
-		OutputState: i.ToGetServiceEnvironmentServiceDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceEnvironmentServiceDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceEnvironmentServiceDefinitionOutput) ElementType() reflect.Type {
@@ -106,25 +93,19 @@ func (o GetServiceEnvironmentServiceDefinitionOutput) ToGetServiceEnvironmentSer
 	return o
 }
 
-func (o GetServiceEnvironmentServiceDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentServiceDefinition] {
-	return pulumix.Output[GetServiceEnvironmentServiceDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
-func (o GetServiceEnvironmentServiceDefinitionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentServiceDefinition) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentServiceDefinitionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentServiceDefinition) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Short display name of the service. For example, "Retail Order Management".
-func (o GetServiceEnvironmentServiceDefinitionOutput) ShortDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentServiceDefinition) string { return v.ShortDisplayName }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentServiceDefinitionOutput) ShortDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentServiceDefinition) *string { return v.ShortDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-func (o GetServiceEnvironmentServiceDefinitionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentServiceDefinition) string { return v.Type }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentServiceDefinitionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentServiceDefinition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetServiceEnvironmentServiceDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -141,12 +122,6 @@ func (o GetServiceEnvironmentServiceDefinitionArrayOutput) ToGetServiceEnvironme
 	return o
 }
 
-func (o GetServiceEnvironmentServiceDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentServiceDefinition] {
-	return pulumix.Output[[]GetServiceEnvironmentServiceDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceEnvironmentServiceDefinitionArrayOutput) Index(i pulumi.IntInput) GetServiceEnvironmentServiceDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceEnvironmentServiceDefinition {
 		return vs[0].([]GetServiceEnvironmentServiceDefinition)[vs[1].(int)]
@@ -155,11 +130,11 @@ func (o GetServiceEnvironmentServiceDefinitionArrayOutput) Index(i pulumi.IntInp
 
 type GetServiceEnvironmentServiceEnvironmentEndpoint struct {
 	// Description of the environment link
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Service environment endpoint type.
-	EnvironmentType string `pulumi:"environmentType"`
+	EnvironmentType *string `pulumi:"environmentType"`
 	// Service environment instance URL.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetServiceEnvironmentServiceEnvironmentEndpointInput is an input type that accepts GetServiceEnvironmentServiceEnvironmentEndpointArgs and GetServiceEnvironmentServiceEnvironmentEndpointOutput values.
@@ -175,11 +150,11 @@ type GetServiceEnvironmentServiceEnvironmentEndpointInput interface {
 
 type GetServiceEnvironmentServiceEnvironmentEndpointArgs struct {
 	// Description of the environment link
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Service environment endpoint type.
-	EnvironmentType pulumi.StringInput `pulumi:"environmentType"`
+	EnvironmentType pulumi.StringPtrInput `pulumi:"environmentType"`
 	// Service environment instance URL.
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetServiceEnvironmentServiceEnvironmentEndpointArgs) ElementType() reflect.Type {
@@ -192,12 +167,6 @@ func (i GetServiceEnvironmentServiceEnvironmentEndpointArgs) ToGetServiceEnviron
 
 func (i GetServiceEnvironmentServiceEnvironmentEndpointArgs) ToGetServiceEnvironmentServiceEnvironmentEndpointOutputWithContext(ctx context.Context) GetServiceEnvironmentServiceEnvironmentEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentServiceEnvironmentEndpointOutput)
-}
-
-func (i GetServiceEnvironmentServiceEnvironmentEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentServiceEnvironmentEndpoint] {
-	return pulumix.Output[GetServiceEnvironmentServiceEnvironmentEndpoint]{
-		OutputState: i.ToGetServiceEnvironmentServiceEnvironmentEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetServiceEnvironmentServiceEnvironmentEndpointArrayInput is an input type that accepts GetServiceEnvironmentServiceEnvironmentEndpointArray and GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput values.
@@ -225,12 +194,6 @@ func (i GetServiceEnvironmentServiceEnvironmentEndpointArray) ToGetServiceEnviro
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput)
 }
 
-func (i GetServiceEnvironmentServiceEnvironmentEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentServiceEnvironmentEndpoint] {
-	return pulumix.Output[[]GetServiceEnvironmentServiceEnvironmentEndpoint]{
-		OutputState: i.ToGetServiceEnvironmentServiceEnvironmentEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceEnvironmentServiceEnvironmentEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetServiceEnvironmentServiceEnvironmentEndpointOutput) ElementType() reflect.Type {
@@ -245,25 +208,19 @@ func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) ToGetServiceEnvir
 	return o
 }
 
-func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentServiceEnvironmentEndpoint] {
-	return pulumix.Output[GetServiceEnvironmentServiceEnvironmentEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Description of the environment link
-func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentServiceEnvironmentEndpoint) string { return v.Description }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentServiceEnvironmentEndpoint) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Service environment endpoint type.
-func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) EnvironmentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentServiceEnvironmentEndpoint) string { return v.EnvironmentType }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) EnvironmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentServiceEnvironmentEndpoint) *string { return v.EnvironmentType }).(pulumi.StringPtrOutput)
 }
 
 // Service environment instance URL.
-func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentServiceEnvironmentEndpoint) string { return v.Url }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentServiceEnvironmentEndpointOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentServiceEnvironmentEndpoint) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -278,12 +235,6 @@ func (o GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput) ToGetService
 
 func (o GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput) ToGetServiceEnvironmentServiceEnvironmentEndpointArrayOutputWithContext(ctx context.Context) GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput {
 	return o
-}
-
-func (o GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentServiceEnvironmentEndpoint] {
-	return pulumix.Output[[]GetServiceEnvironmentServiceEnvironmentEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput) Index(i pulumi.IntInput) GetServiceEnvironmentServiceEnvironmentEndpointOutput {
@@ -327,12 +278,6 @@ func (i GetServiceEnvironmentsFilterArgs) ToGetServiceEnvironmentsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsFilterOutput)
 }
 
-func (i GetServiceEnvironmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsFilter] {
-	return pulumix.Output[GetServiceEnvironmentsFilter]{
-		OutputState: i.ToGetServiceEnvironmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceEnvironmentsFilterArrayInput is an input type that accepts GetServiceEnvironmentsFilterArray and GetServiceEnvironmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsFilterArrayInput` via:
 //
@@ -358,12 +303,6 @@ func (i GetServiceEnvironmentsFilterArray) ToGetServiceEnvironmentsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsFilterArrayOutput)
 }
 
-func (i GetServiceEnvironmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsFilter] {
-	return pulumix.Output[[]GetServiceEnvironmentsFilter]{
-		OutputState: i.ToGetServiceEnvironmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceEnvironmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServiceEnvironmentsFilterOutput) ElementType() reflect.Type {
@@ -376,12 +315,6 @@ func (o GetServiceEnvironmentsFilterOutput) ToGetServiceEnvironmentsFilterOutput
 
 func (o GetServiceEnvironmentsFilterOutput) ToGetServiceEnvironmentsFilterOutputWithContext(ctx context.Context) GetServiceEnvironmentsFilterOutput {
 	return o
-}
-
-func (o GetServiceEnvironmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsFilter] {
-	return pulumix.Output[GetServiceEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceEnvironmentsFilterOutput) Name() pulumi.StringOutput {
@@ -408,12 +341,6 @@ func (o GetServiceEnvironmentsFilterArrayOutput) ToGetServiceEnvironmentsFilterA
 
 func (o GetServiceEnvironmentsFilterArrayOutput) ToGetServiceEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetServiceEnvironmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetServiceEnvironmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsFilter] {
-	return pulumix.Output[[]GetServiceEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetServiceEnvironmentsFilterOutput {
@@ -453,12 +380,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionArgs) ToGetServiceEnvi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionOutput)
 }
 
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollection] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollection]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceEnvironmentsServiceEnvironmentCollectionArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionArray and GetServiceEnvironmentsServiceEnvironmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionArrayInput` via:
 //
@@ -484,12 +405,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionArray) ToGetServiceEnv
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionArrayOutput)
 }
 
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollection] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollection]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceEnvironmentsServiceEnvironmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceEnvironmentsServiceEnvironmentCollectionOutput) ElementType() reflect.Type {
@@ -502,12 +417,6 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionOutput) ToGetServiceEn
 
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionOutput) ToGetServiceEnvironmentsServiceEnvironmentCollectionOutputWithContext(ctx context.Context) GetServiceEnvironmentsServiceEnvironmentCollectionOutput {
 	return o
-}
-
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollection] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionOutput) Items() GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput {
@@ -530,12 +439,6 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionArrayOutput) ToGetServ
 	return o
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollection] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetServiceEnvironmentsServiceEnvironmentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceEnvironmentsServiceEnvironmentCollection {
 		return vs[0].([]GetServiceEnvironmentsServiceEnvironmentCollection)[vs[1].(int)]
@@ -544,21 +447,21 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionArrayOutput) Index(i p
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The URL for the console.
-	ConsoleUrl   string                 `pulumi:"consoleUrl"`
+	ConsoleUrl   *string                `pulumi:"consoleUrl"`
 	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unqiue identifier for the entitlement related to the environment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details for a service definition.
 	ServiceDefinitions []GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition `pulumi:"serviceDefinitions"`
 	// Array of service environment end points.
 	ServiceEnvironmentEndpoints []GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint `pulumi:"serviceEnvironmentEndpoints"`
 	// Status of the entitlement registration for the service.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The unique subscription ID associated with the service environment ID.
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs and GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput values.
@@ -574,21 +477,21 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItemInput interface {
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The URL for the console.
-	ConsoleUrl   pulumi.StringInput `pulumi:"consoleUrl"`
-	DefinedTags  pulumi.MapInput    `pulumi:"definedTags"`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
+	ConsoleUrl   pulumi.StringPtrInput `pulumi:"consoleUrl"`
+	DefinedTags  pulumi.MapInput       `pulumi:"definedTags"`
+	FreeformTags pulumi.MapInput       `pulumi:"freeformTags"`
 	// Unqiue identifier for the entitlement related to the environment.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Details for a service definition.
 	ServiceDefinitions GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayInput `pulumi:"serviceDefinitions"`
 	// Array of service environment end points.
 	ServiceEnvironmentEndpoints GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayInput `pulumi:"serviceEnvironmentEndpoints"`
 	// Status of the entitlement registration for the service.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The unique subscription ID associated with the service environment ID.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 
 func (GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs) ElementType() reflect.Type {
@@ -601,12 +504,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs) ToGetService
 
 func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs) ToGetServiceEnvironmentsServiceEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput)
-}
-
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItem] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItem]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemArray and GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput values.
@@ -634,12 +531,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemArray) ToGetServic
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput)
 }
 
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItem]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) ElementType() reflect.Type {
@@ -654,20 +545,14 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) ToGetServi
 	return o
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItem] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The URL for the console.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) ConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) string { return v.ConsoleUrl }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) ConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) *string { return v.ConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
@@ -683,8 +568,8 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) FreeformTa
 }
 
 // Unqiue identifier for the entitlement related to the environment.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details for a service definition.
@@ -702,13 +587,13 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) ServiceEnv
 }
 
 // Status of the entitlement registration for the service.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The unique subscription ID associated with the service environment ID.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -725,12 +610,6 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput) ToGet
 	return o
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceEnvironmentsServiceEnvironmentCollectionItem {
 		return vs[0].([]GetServiceEnvironmentsServiceEnvironmentCollectionItem)[vs[1].(int)]
@@ -739,11 +618,11 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput) Index
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition struct {
 	// The display name of the resource.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Short display name of the service. For example, "Retail Order Management".
-	ShortDisplayName string `pulumi:"shortDisplayName"`
+	ShortDisplayName *string `pulumi:"shortDisplayName"`
 	// The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput values.
@@ -759,11 +638,11 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionInpu
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs struct {
 	// The display name of the resource.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Short display name of the service. For example, "Retail Order Management".
-	ShortDisplayName pulumi.StringInput `pulumi:"shortDisplayName"`
+	ShortDisplayName pulumi.StringPtrInput `pulumi:"shortDisplayName"`
 	// The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs) ElementType() reflect.Type {
@@ -776,12 +655,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionA
 
 func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs) ToGetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutputWithContext(ctx context.Context) GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput)
-}
-
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArray and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayOutput values.
@@ -809,12 +682,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayOutput)
 }
 
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) ElementType() reflect.Type {
@@ -829,29 +696,23 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionO
 	return o
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the resource.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition) string {
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Short display name of the service. For example, "Retail Order Management".
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) ShortDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition) string {
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) ShortDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition) *string {
 		return v.ShortDisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition) string { return v.Type }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -868,12 +729,6 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionA
 	return o
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayOutput) Index(i pulumi.IntInput) GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition {
 		return vs[0].([]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition)[vs[1].(int)]
@@ -882,11 +737,11 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionA
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint struct {
 	// Description of the environment link
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Service environment endpoint type.
-	EnvironmentType string `pulumi:"environmentType"`
+	EnvironmentType *string `pulumi:"environmentType"`
 	// Service environment instance URL.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput values.
@@ -902,11 +757,11 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEnd
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs struct {
 	// Description of the environment link
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Service environment endpoint type.
-	EnvironmentType pulumi.StringInput `pulumi:"environmentType"`
+	EnvironmentType pulumi.StringPtrInput `pulumi:"environmentType"`
 	// Service environment instance URL.
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs) ElementType() reflect.Type {
@@ -919,12 +774,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironment
 
 func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs) ToGetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutputWithContext(ctx context.Context) GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput)
-}
-
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArray and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput values.
@@ -952,12 +801,6 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironment
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput)
 }
 
-func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint]{
-		OutputState: i.ToGetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) ElementType() reflect.Type {
@@ -972,31 +815,25 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironment
 	return o
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint] {
-	return pulumix.Output[GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Description of the environment link
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint) string {
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Service environment endpoint type.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) EnvironmentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint) string {
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) EnvironmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint) *string {
 		return v.EnvironmentType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Service environment instance URL.
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint) string {
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint) *string {
 		return v.Url
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -1011,12 +848,6 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironment
 
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput) ToGetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutputWithContext(ctx context.Context) GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput {
 	return o
-}
-
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint] {
-	return pulumix.Output[[]GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput) Index(i pulumi.IntInput) GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput {

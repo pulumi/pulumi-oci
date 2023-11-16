@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The category to which the audit policy belongs.
         /// </summary>
-        public readonly string AuditPolicyCategory;
+        public readonly string? AuditPolicyCategory;
         /// <summary>
         /// Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         /// </summary>
-        public readonly string AuditPolicyName;
+        public readonly string? AuditPolicyName;
         /// <summary>
         /// Indicates the names of corresponding database policy ( or policies) in the target database.
         /// </summary>
@@ -28,59 +28,59 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
         /// </summary>
-        public readonly string EnableStatus;
+        public readonly string? EnableStatus;
         /// <summary>
         /// Indicates on whom the audit policy is enabled.
         /// </summary>
-        public readonly string EnabledEntities;
+        public readonly string? EnabledEntities;
         /// <summary>
         /// Indicates whether the policy is already created on the target database.
         /// </summary>
-        public readonly bool IsCreated;
+        public readonly bool? IsCreated;
         /// <summary>
         /// Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
         /// </summary>
-        public readonly bool IsEnabledForAllUsers;
+        public readonly bool? IsEnabledForAllUsers;
         /// <summary>
         /// Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
         /// </summary>
-        public readonly bool IsSeededInDataSafe;
+        public readonly bool? IsSeededInDataSafe;
         /// <summary>
         /// Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
         /// </summary>
-        public readonly bool IsSeededInTarget;
+        public readonly bool? IsSeededInTarget;
         /// <summary>
         /// Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         /// </summary>
-        public readonly bool IsViewOnly;
+        public readonly bool? IsViewOnly;
         /// <summary>
         /// Provides information about the policy that has been only partially enabled.
         /// </summary>
-        public readonly string PartiallyEnabledMsg;
+        public readonly string? PartiallyEnabledMsg;
 
         [OutputConstructor]
         private GetAuditPolicyAuditSpecificationResult(
-            string auditPolicyCategory,
+            string? auditPolicyCategory,
 
-            string auditPolicyName,
+            string? auditPolicyName,
 
             ImmutableArray<string> databasePolicyNames,
 
-            string enableStatus,
+            string? enableStatus,
 
-            string enabledEntities,
+            string? enabledEntities,
 
-            bool isCreated,
+            bool? isCreated,
 
-            bool isEnabledForAllUsers,
+            bool? isEnabledForAllUsers,
 
-            bool isSeededInDataSafe,
+            bool? isSeededInDataSafe,
 
-            bool isSeededInTarget,
+            bool? isSeededInTarget,
 
-            bool isViewOnly,
+            bool? isViewOnly,
 
-            string partiallyEnabledMsg)
+            string? partiallyEnabledMsg)
         {
             AuditPolicyCategory = auditPolicyCategory;
             AuditPolicyName = auditPolicyName;

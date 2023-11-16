@@ -13,62 +13,62 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetInstanceCreateVnicDetailResult
     {
-        public readonly bool AssignIpv6ip;
-        public readonly bool AssignPrivateDnsRecord;
-        public readonly string AssignPublicIp;
+        public readonly bool? AssignIpv6ip;
+        public readonly bool? AssignPrivateDnsRecord;
+        public readonly string? AssignPublicIp;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The hostname for the instance VNIC's primary private IP.
         /// </summary>
-        public readonly string HostnameLabel;
+        public readonly string? HostnameLabel;
         public readonly ImmutableArray<Outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
         /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         /// </summary>
-        public readonly string PrivateIp;
-        public readonly bool SkipSourceDestCheck;
-        public readonly string SubnetId;
-        public readonly string VlanId;
+        public readonly string? PrivateIp;
+        public readonly bool? SkipSourceDestCheck;
+        public readonly string? SubnetId;
+        public readonly string? VlanId;
 
         [OutputConstructor]
         private GetInstanceCreateVnicDetailResult(
-            bool assignIpv6ip,
+            bool? assignIpv6ip,
 
-            bool assignPrivateDnsRecord,
+            bool? assignPrivateDnsRecord,
 
-            string assignPublicIp,
+            string? assignPublicIp,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostnameLabel,
+            string? hostnameLabel,
 
             ImmutableArray<Outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> ipv6addressIpv6subnetCidrPairDetails,
 
             ImmutableArray<string> nsgIds,
 
-            string privateIp,
+            string? privateIp,
 
-            bool skipSourceDestCheck,
+            bool? skipSourceDestCheck,
 
-            string subnetId,
+            string? subnetId,
 
-            string vlanId)
+            string? vlanId)
         {
             AssignIpv6ip = assignIpv6ip;
             AssignPrivateDnsRecord = assignPrivateDnsRecord;

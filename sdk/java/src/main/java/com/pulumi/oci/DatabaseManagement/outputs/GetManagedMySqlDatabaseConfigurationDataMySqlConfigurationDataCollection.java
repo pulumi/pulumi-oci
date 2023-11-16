@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection {
@@ -14,7 +15,7 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
      * @return List of ConfigurationDataSummary.
      * 
      */
-    private List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem> items;
+    private @Nullable List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem> items;
 
     private GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
      * 
      */
     public List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem> items;
+        private @Nullable List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem... items) {

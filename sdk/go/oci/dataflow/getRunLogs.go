@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
@@ -62,8 +61,8 @@ type GetRunLogsArgs struct {
 type GetRunLogsResult struct {
 	Filters []GetRunLogsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string `pulumi:"id"`
-	RunId string `pulumi:"runId"`
+	Id    *string `pulumi:"id"`
+	RunId string  `pulumi:"runId"`
 	// The list of run_logs.
 	RunLogs []GetRunLogsRunLog `pulumi:"runLogs"`
 }
@@ -107,19 +106,13 @@ func (o GetRunLogsResultOutput) ToGetRunLogsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetRunLogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunLogsResult] {
-	return pulumix.Output[GetRunLogsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunLogsResultOutput) Filters() GetRunLogsFilterArrayOutput {
 	return o.ApplyT(func(v GetRunLogsResult) []GetRunLogsFilter { return v.Filters }).(GetRunLogsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRunLogsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRunLogsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRunLogsResultOutput) RunId() pulumi.StringOutput {

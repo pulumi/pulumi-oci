@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
@@ -38,22 +37,22 @@ type ExternalDbSystemDiscovery struct {
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents ExternalDbSystemDiscoveryDiscoveredComponentArrayOutput `pulumi:"discoveredComponents"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-	DisplayName                 pulumi.StringOutput `pulumi:"displayName"`
-	ExternalDbSystemDiscoveryId pulumi.StringOutput `pulumi:"externalDbSystemDiscoveryId"`
+	DisplayName                 pulumi.StringPtrOutput `pulumi:"displayName"`
+	ExternalDbSystemDiscoveryId pulumi.StringPtrOutput `pulumi:"externalDbSystemDiscoveryId"`
 	// The directory in which Oracle Grid Infrastructure is installed.
-	GridHome pulumi.StringOutput `pulumi:"gridHome"`
+	GridHome pulumi.StringPtrOutput `pulumi:"gridHome"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable)
 	PatchOperations ExternalDbSystemDiscoveryPatchOperationArrayOutput `pulumi:"patchOperations"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-	ResourceId pulumi.StringOutput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrOutput `pulumi:"resourceId"`
 	// The current lifecycle state of the external DB system discovery resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the external DB system discovery was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the external DB system discovery was last updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewExternalDbSystemDiscovery registers a new resource with the given unique name, arguments, and options.
@@ -193,12 +192,6 @@ func (i *ExternalDbSystemDiscovery) ToExternalDbSystemDiscoveryOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryOutput)
 }
 
-func (i *ExternalDbSystemDiscovery) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemDiscovery] {
-	return pulumix.Output[*ExternalDbSystemDiscovery]{
-		OutputState: i.ToExternalDbSystemDiscoveryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalDbSystemDiscoveryArrayInput is an input type that accepts ExternalDbSystemDiscoveryArray and ExternalDbSystemDiscoveryArrayOutput values.
 // You can construct a concrete instance of `ExternalDbSystemDiscoveryArrayInput` via:
 //
@@ -222,12 +215,6 @@ func (i ExternalDbSystemDiscoveryArray) ToExternalDbSystemDiscoveryArrayOutput()
 
 func (i ExternalDbSystemDiscoveryArray) ToExternalDbSystemDiscoveryArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryArrayOutput)
-}
-
-func (i ExternalDbSystemDiscoveryArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[[]*ExternalDbSystemDiscovery]{
-		OutputState: i.ToExternalDbSystemDiscoveryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalDbSystemDiscoveryMapInput is an input type that accepts ExternalDbSystemDiscoveryMap and ExternalDbSystemDiscoveryMapOutput values.
@@ -255,12 +242,6 @@ func (i ExternalDbSystemDiscoveryMap) ToExternalDbSystemDiscoveryMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryMapOutput)
 }
 
-func (i ExternalDbSystemDiscoveryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[map[string]*ExternalDbSystemDiscovery]{
-		OutputState: i.ToExternalDbSystemDiscoveryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalDbSystemDiscoveryOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemDiscoveryOutput) ElementType() reflect.Type {
@@ -273,12 +254,6 @@ func (o ExternalDbSystemDiscoveryOutput) ToExternalDbSystemDiscoveryOutput() Ext
 
 func (o ExternalDbSystemDiscoveryOutput) ToExternalDbSystemDiscoveryOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryOutput {
 	return o
-}
-
-func (o ExternalDbSystemDiscoveryOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemDiscovery] {
-	return pulumix.Output[*ExternalDbSystemDiscovery]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
@@ -299,22 +274,22 @@ func (o ExternalDbSystemDiscoveryOutput) DiscoveredComponents() ExternalDbSystem
 }
 
 // (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-func (o ExternalDbSystemDiscoveryOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o ExternalDbSystemDiscoveryOutput) ExternalDbSystemDiscoveryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.ExternalDbSystemDiscoveryId }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) ExternalDbSystemDiscoveryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.ExternalDbSystemDiscoveryId }).(pulumi.StringPtrOutput)
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.
-func (o ExternalDbSystemDiscoveryOutput) GridHome() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.GridHome }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) GridHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.GridHome }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o ExternalDbSystemDiscoveryOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable)
@@ -325,23 +300,23 @@ func (o ExternalDbSystemDiscoveryOutput) PatchOperations() ExternalDbSystemDisco
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-func (o ExternalDbSystemDiscoveryOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.ResourceId }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external DB system discovery resource.
-func (o ExternalDbSystemDiscoveryOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system discovery was created.
-func (o ExternalDbSystemDiscoveryOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system discovery was last updated.
-func (o ExternalDbSystemDiscoveryOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ExternalDbSystemDiscoveryOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ExternalDbSystemDiscoveryArrayOutput struct{ *pulumi.OutputState }
@@ -356,12 +331,6 @@ func (o ExternalDbSystemDiscoveryArrayOutput) ToExternalDbSystemDiscoveryArrayOu
 
 func (o ExternalDbSystemDiscoveryArrayOutput) ToExternalDbSystemDiscoveryArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryArrayOutput {
 	return o
-}
-
-func (o ExternalDbSystemDiscoveryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[[]*ExternalDbSystemDiscovery]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbSystemDiscoveryArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemDiscoveryOutput {
@@ -382,12 +351,6 @@ func (o ExternalDbSystemDiscoveryMapOutput) ToExternalDbSystemDiscoveryMapOutput
 
 func (o ExternalDbSystemDiscoveryMapOutput) ToExternalDbSystemDiscoveryMapOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryMapOutput {
 	return o
-}
-
-func (o ExternalDbSystemDiscoveryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[map[string]*ExternalDbSystemDiscovery]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbSystemDiscoveryMapOutput) MapIndex(k pulumi.StringInput) ExternalDbSystemDiscoveryOutput {

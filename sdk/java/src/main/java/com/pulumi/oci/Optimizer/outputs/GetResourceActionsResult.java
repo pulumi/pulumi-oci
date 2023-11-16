@@ -27,7 +27,7 @@ public final class GetResourceActionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean includeOrganization;
     /**
      * @return The name assigned to the resource.
@@ -44,7 +44,7 @@ public final class GetResourceActionsResult {
      * @return The list of resource_action_collection.
      * 
      */
-    private List<GetResourceActionsResourceActionCollection> resourceActionCollections;
+    private @Nullable List<GetResourceActionsResourceActionCollection> resourceActionCollections;
     /**
      * @return The kind of resource.
      * 
@@ -82,8 +82,8 @@ public final class GetResourceActionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> includeOrganization() {
         return Optional.ofNullable(this.includeOrganization);
@@ -110,7 +110,7 @@ public final class GetResourceActionsResult {
      * 
      */
     public List<GetResourceActionsResourceActionCollection> resourceActionCollections() {
-        return this.resourceActionCollections;
+        return this.resourceActionCollections == null ? List.of() : this.resourceActionCollections;
     }
     /**
      * @return The kind of resource.
@@ -147,12 +147,12 @@ public final class GetResourceActionsResult {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetResourceActionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean includeOrganization;
         private @Nullable String name;
         private @Nullable String recommendationId;
         private @Nullable String recommendationName;
-        private List<GetResourceActionsResourceActionCollection> resourceActionCollections;
+        private @Nullable List<GetResourceActionsResourceActionCollection> resourceActionCollections;
         private @Nullable String resourceType;
         private @Nullable String state;
         private @Nullable String status;
@@ -201,8 +201,8 @@ public final class GetResourceActionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -226,8 +226,8 @@ public final class GetResourceActionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder resourceActionCollections(List<GetResourceActionsResourceActionCollection> resourceActionCollections) {
-            this.resourceActionCollections = Objects.requireNonNull(resourceActionCollections);
+        public Builder resourceActionCollections(@Nullable List<GetResourceActionsResourceActionCollection> resourceActionCollections) {
+            this.resourceActionCollections = resourceActionCollections;
             return this;
         }
         public Builder resourceActionCollections(GetResourceActionsResourceActionCollection... resourceActionCollections) {

@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -78,14 +79,14 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> additionalDetails;
+    private Output</* @Nullable */ Map<String,Object>> additionalDetails;
 
     /**
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> additionalDetails() {
-        return this.additionalDetails;
+    public Output<Optional<Map<String,Object>>> additionalDetails() {
+        return Codegen.optional(this.additionalDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
@@ -148,84 +149,84 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
     @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
-    private Output<String> exadataInfrastructureId;
+    private Output</* @Nullable */ String> exadataInfrastructureId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    public Output<String> exadataInfrastructureId() {
-        return this.exadataInfrastructureId;
+    public Output<Optional<String>> exadataInfrastructureId() {
+        return Codegen.optional(this.exadataInfrastructureId);
     }
     /**
      * The internal ID of the Exadata resource.
      * 
      */
     @Export(name="internalId", refs={String.class}, tree="[0]")
-    private Output<String> internalId;
+    private Output</* @Nullable */ String> internalId;
 
     /**
      * @return The internal ID of the Exadata resource.
      * 
      */
-    public Output<String> internalId() {
-        return this.internalId;
+    public Output<Optional<String>> internalId() {
+        return Codegen.optional(this.internalId);
     }
     /**
      * The details of the lifecycle state of the Exadata resource.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return The details of the lifecycle state of the Exadata resource.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The current lifecycle state of the database resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the database resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The status of the Exadata resource.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return The status of the Exadata resource.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
@@ -252,42 +253,42 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The timestamp of the last update of the Exadata resource.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The timestamp of the last update of the Exadata resource.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The version of the Exadata resource.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return The version of the Exadata resource.
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

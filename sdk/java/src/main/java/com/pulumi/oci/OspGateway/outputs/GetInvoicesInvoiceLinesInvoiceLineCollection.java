@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
@@ -14,7 +15,7 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
      * @return Invoice line list elements
      * 
      */
-    private List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items;
+    private @Nullable List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items;
 
     private GetInvoicesInvoiceLinesInvoiceLineCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
      * 
      */
     public List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items;
+        private @Nullable List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items;
         public Builder() {}
         public Builder(GetInvoicesInvoiceLinesInvoiceLineCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetInvoicesInvoiceLinesInvoiceLineCollectionItem... items) {

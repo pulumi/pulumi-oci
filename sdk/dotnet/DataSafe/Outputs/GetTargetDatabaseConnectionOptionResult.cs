@@ -18,23 +18,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
         /// * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
         /// </summary>
-        public readonly string ConnectionType;
+        public readonly string? ConnectionType;
         /// <summary>
         /// The OCID of the Data Safe private endpoint.
         /// </summary>
-        public readonly string DatasafePrivateEndpointId;
+        public readonly string? DatasafePrivateEndpointId;
         /// <summary>
         /// The OCID of the on-premises connector.
         /// </summary>
-        public readonly string OnPremConnectorId;
+        public readonly string? OnPremConnectorId;
 
         [OutputConstructor]
         private GetTargetDatabaseConnectionOptionResult(
-            string connectionType,
+            string? connectionType,
 
-            string datasafePrivateEndpointId,
+            string? datasafePrivateEndpointId,
 
-            string onPremConnectorId)
+            string? onPremConnectorId)
         {
             ConnectionType = connectionType;
             DatasafePrivateEndpointId = datasafePrivateEndpointId;

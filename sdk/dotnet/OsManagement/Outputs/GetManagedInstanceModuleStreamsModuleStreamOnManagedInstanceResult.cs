@@ -16,7 +16,7 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// The name of a module.  This parameter is required if a streamName is specified.
         /// </summary>
-        public readonly string ModuleName;
+        public readonly string? ModuleName;
         /// <summary>
         /// The set of profiles that the module stream contains.
         /// </summary>
@@ -24,33 +24,33 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// The OCID of the software source that provides this module stream.
         /// </summary>
-        public readonly string SoftwareSourceId;
+        public readonly string? SoftwareSourceId;
         /// <summary>
         /// The status of the stream
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         /// </summary>
-        public readonly string StreamName;
+        public readonly string? StreamName;
         /// <summary>
         /// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
 
         [OutputConstructor]
         private GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult(
-            string moduleName,
+            string? moduleName,
 
             ImmutableArray<Outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult> profiles,
 
-            string softwareSourceId,
+            string? softwareSourceId,
 
-            string status,
+            string? status,
 
-            string streamName,
+            string? streamName,
 
-            string timeModified)
+            string? timeModified)
         {
             ModuleName = moduleName;
             Profiles = profiles;

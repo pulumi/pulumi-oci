@@ -95,76 +95,52 @@ class GetKeyResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains this master encryption key.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="currentKeyVersion")
-    def current_key_version(self) -> str:
-        """
-        The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-        """
+    def current_key_version(self) -> Optional[str]:
         return pulumi.get(self, "current_key_version")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="desiredState")
-    def desired_state(self) -> str:
+    def desired_state(self) -> Optional[str]:
         return pulumi.get(self, "desired_state")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalKeyReferenceDetails")
-    def external_key_reference_details(self) -> Sequence['outputs.GetKeyExternalKeyReferenceDetailResult']:
-        """
-        Key reference data to be returned to the customer as a response.
-        """
+    def external_key_reference_details(self) -> Optional[Sequence['outputs.GetKeyExternalKeyReferenceDetailResult']]:
         return pulumi.get(self, "external_key_reference_details")
 
     @property
     @pulumi.getter(name="externalKeyReferences")
-    def external_key_references(self) -> Sequence['outputs.GetKeyExternalKeyReferenceResult']:
+    def external_key_references(self) -> Optional[Sequence['outputs.GetKeyExternalKeyReferenceResult']]:
         return pulumi.get(self, "external_key_references")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the key.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> bool:
-        """
-        A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
-        """
+    def is_primary(self) -> Optional[bool]:
         return pulumi.get(self, "is_primary")
 
     @property
@@ -174,10 +150,7 @@ class GetKeyResult:
 
     @property
     @pulumi.getter(name="keyShapes")
-    def key_shapes(self) -> Sequence['outputs.GetKeyKeyShapeResult']:
-        """
-        The cryptographic properties of a key.
-        """
+    def key_shapes(self) -> Optional[Sequence['outputs.GetKeyKeyShapeResult']]:
         return pulumi.get(self, "key_shapes")
 
     @property
@@ -187,82 +160,52 @@ class GetKeyResult:
 
     @property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> str:
-        """
-        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-        """
+    def protection_mode(self) -> Optional[str]:
         return pulumi.get(self, "protection_mode")
 
     @property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> Sequence['outputs.GetKeyReplicaDetailResult']:
-        """
-        Key replica details
-        """
+    def replica_details(self) -> Optional[Sequence['outputs.GetKeyReplicaDetailResult']]:
         return pulumi.get(self, "replica_details")
 
     @property
     @pulumi.getter(name="restoreFromFiles")
-    def restore_from_files(self) -> Sequence['outputs.GetKeyRestoreFromFileResult']:
-        """
-        Details where key was backed up.
-        """
+    def restore_from_files(self) -> Optional[Sequence['outputs.GetKeyRestoreFromFileResult']]:
         return pulumi.get(self, "restore_from_files")
 
     @property
     @pulumi.getter(name="restoreFromObjectStores")
-    def restore_from_object_stores(self) -> Sequence['outputs.GetKeyRestoreFromObjectStoreResult']:
-        """
-        Details where key was backed up
-        """
+    def restore_from_object_stores(self) -> Optional[Sequence['outputs.GetKeyRestoreFromObjectStoreResult']]:
         return pulumi.get(self, "restore_from_object_stores")
 
     @property
     @pulumi.getter(name="restoreTrigger")
-    def restore_trigger(self) -> bool:
-        """
-        When flipped, triggers restore if restore options are provided. Values of 0 or 1 are supported.
-        """
+    def restore_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "restore_trigger")
 
     @property
     @pulumi.getter(name="restoredFromKeyId")
-    def restored_from_key_id(self) -> str:
-        """
-        The OCID of the key from which this key was restored.
-        """
+    def restored_from_key_id(self) -> Optional[str]:
         return pulumi.get(self, "restored_from_key_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The key's current lifecycle state.  Example: `ENABLED`
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        The OCID of the vault that contains this key.
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
 
@@ -301,28 +244,7 @@ def get_key(key_id: Optional[str] = None,
             management_endpoint: Optional[str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKeyResult:
     """
-    This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets information about the specified master encryption key.
-
-    As a management operation, this call is subject to a Key Management limit that applies to the total number
-    of requests across all management read operations. Key Management might throttle this call to reject an
-    otherwise valid request when the total rate of management read operations exceeds 10 requests per second for
-    a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_key = oci.Kms.get_key(key_id=oci_kms_key["test_key"]["id"],
-        management_endpoint=var["key_management_endpoint"])
-    ```
-
-
-    :param str key_id: The OCID of the key.
-    :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['keyId'] = key_id
@@ -361,27 +283,6 @@ def get_key_output(key_id: Optional[pulumi.Input[str]] = None,
                    management_endpoint: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyResult]:
     """
-    This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.
-
-    Gets information about the specified master encryption key.
-
-    As a management operation, this call is subject to a Key Management limit that applies to the total number
-    of requests across all management read operations. Key Management might throttle this call to reject an
-    otherwise valid request when the total rate of management read operations exceeds 10 requests per second for
-    a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_key = oci.Kms.get_key(key_id=oci_kms_key["test_key"]["id"],
-        management_endpoint=var["key_management_endpoint"])
-    ```
-
-
-    :param str key_id: The OCID of the key.
-    :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

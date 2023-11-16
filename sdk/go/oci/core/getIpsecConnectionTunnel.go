@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
@@ -65,31 +64,31 @@ type GetIpsecConnectionTunnelResult struct {
 	// Information needed to establish a BGP Session on an interface.
 	BgpSessionInfos []GetIpsecConnectionTunnelBgpSessionInfo `pulumi:"bgpSessionInfos"`
 	// The OCID of the compartment containing the tunnel.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The IP address of Cpe headend.  Example: `129.146.17.50`
-	CpeIp string `pulumi:"cpeIp"`
+	CpeIp *string `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Configuration information used by the encryption domain policy.
 	EncryptionDomainConfigs []GetIpsecConnectionTunnelEncryptionDomainConfig `pulumi:"encryptionDomainConfigs"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Internet Key Exchange protocol version.
-	IkeVersion string `pulumi:"ikeVersion"`
-	IpsecId    string `pulumi:"ipsecId"`
+	IkeVersion *string `pulumi:"ikeVersion"`
+	IpsecId    string  `pulumi:"ipsecId"`
 	// the routing strategy used for this tunnel, either static route or BGP dynamic routing
-	Routing string `pulumi:"routing"`
+	Routing *string `pulumi:"routing"`
 	// The IPSec connection's tunnel's lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The tunnel's current state.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
-	TunnelId          string `pulumi:"tunnelId"`
+	TimeStatusUpdated *string `pulumi:"timeStatusUpdated"`
+	TunnelId          string  `pulumi:"tunnelId"`
 	// The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
-	VpnIp string `pulumi:"vpnIp"`
+	VpnIp *string `pulumi:"vpnIp"`
 }
 
 func GetIpsecConnectionTunnelOutput(ctx *pulumi.Context, args GetIpsecConnectionTunnelOutputArgs, opts ...pulumi.InvokeOption) GetIpsecConnectionTunnelResultOutput {
@@ -132,12 +131,6 @@ func (o GetIpsecConnectionTunnelResultOutput) ToGetIpsecConnectionTunnelResultOu
 	return o
 }
 
-func (o GetIpsecConnectionTunnelResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelResult] {
-	return pulumix.Output[GetIpsecConnectionTunnelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Information needed to establish a BGP Session on an interface.
 func (o GetIpsecConnectionTunnelResultOutput) BgpSessionInfos() GetIpsecConnectionTunnelBgpSessionInfoArrayOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) []GetIpsecConnectionTunnelBgpSessionInfo {
@@ -146,18 +139,18 @@ func (o GetIpsecConnectionTunnelResultOutput) BgpSessionInfos() GetIpsecConnecti
 }
 
 // The OCID of the compartment containing the tunnel.
-func (o GetIpsecConnectionTunnelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The IP address of Cpe headend.  Example: `129.146.17.50`
-func (o GetIpsecConnectionTunnelResultOutput) CpeIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.CpeIp }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) CpeIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.CpeIp }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetIpsecConnectionTunnelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Configuration information used by the encryption domain policy.
@@ -168,13 +161,13 @@ func (o GetIpsecConnectionTunnelResultOutput) EncryptionDomainConfigs() GetIpsec
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpsecConnectionTunnelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Internet Key Exchange protocol version.
-func (o GetIpsecConnectionTunnelResultOutput) IkeVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.IkeVersion }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) IkeVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.IkeVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIpsecConnectionTunnelResultOutput) IpsecId() pulumi.StringOutput {
@@ -182,28 +175,28 @@ func (o GetIpsecConnectionTunnelResultOutput) IpsecId() pulumi.StringOutput {
 }
 
 // the routing strategy used for this tunnel, either static route or BGP dynamic routing
-func (o GetIpsecConnectionTunnelResultOutput) Routing() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.Routing }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) Routing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.Routing }).(pulumi.StringPtrOutput)
 }
 
 // The IPSec connection's tunnel's lifecycle state.
-func (o GetIpsecConnectionTunnelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The tunnel's current state.
-func (o GetIpsecConnectionTunnelResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetIpsecConnectionTunnelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetIpsecConnectionTunnelResultOutput) TimeStatusUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIpsecConnectionTunnelResultOutput) TunnelId() pulumi.StringOutput {
@@ -211,8 +204,8 @@ func (o GetIpsecConnectionTunnelResultOutput) TunnelId() pulumi.StringOutput {
 }
 
 // The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
-func (o GetIpsecConnectionTunnelResultOutput) VpnIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.VpnIp }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelResultOutput) VpnIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) *string { return v.VpnIp }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -19,7 +19,7 @@ public final class GetRemediationRunStagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * 
@@ -29,7 +29,7 @@ public final class GetRemediationRunStagesResult {
      * @return The list of remediation_run_stage_collection.
      * 
      */
-    private List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections;
+    private @Nullable List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections;
     /**
      * @return The current status of a remediation run stage.
      * 
@@ -49,8 +49,8 @@ public final class GetRemediationRunStagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
@@ -64,7 +64,7 @@ public final class GetRemediationRunStagesResult {
      * 
      */
     public List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections() {
-        return this.remediationRunStageCollections;
+        return this.remediationRunStageCollections == null ? List.of() : this.remediationRunStageCollections;
     }
     /**
      * @return The current status of a remediation run stage.
@@ -91,9 +91,9 @@ public final class GetRemediationRunStagesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRemediationRunStagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String remediationRunId;
-        private List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections;
+        private @Nullable List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections;
         private @Nullable String status;
         private @Nullable String type;
         public Builder() {}
@@ -116,8 +116,8 @@ public final class GetRemediationRunStagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -126,8 +126,8 @@ public final class GetRemediationRunStagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder remediationRunStageCollections(List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections) {
-            this.remediationRunStageCollections = Objects.requireNonNull(remediationRunStageCollections);
+        public Builder remediationRunStageCollections(@Nullable List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections) {
+            this.remediationRunStageCollections = remediationRunStageCollections;
             return this;
         }
         public Builder remediationRunStageCollections(GetRemediationRunStagesRemediationRunStageCollection... remediationRunStageCollections) {

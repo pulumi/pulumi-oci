@@ -61,7 +61,7 @@ class GetDecryptedDataResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +74,12 @@ class GetDecryptedDataResult:
 
     @property
     @pulumi.getter
-    def plaintext(self) -> str:
-        """
-        The decrypted data, in the form of a base64-encoded value.
-        """
+    def plaintext(self) -> Optional[str]:
         return pulumi.get(self, "plaintext")
 
     @property
     @pulumi.getter(name="plaintextChecksum")
-    def plaintext_checksum(self) -> str:
-        """
-        Checksum of the decrypted data.
-        """
+    def plaintext_checksum(self) -> Optional[str]:
         return pulumi.get(self, "plaintext_checksum")
 
 
@@ -110,27 +104,7 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
                        key_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDecryptedDataResult:
     """
-    The `kms_get_decrypted_data` data source provides details about a specific DecryptedData
-
-    Decrypts data using the given DecryptDataDetails resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=var["decrypted_data_ciphertext"],
-        crypto_endpoint=var["decrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        associated_data=var["decrypted_data_associated_data"])
-    ```
-
-
-    :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the  encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-    :param str ciphertext: The encrypted data to decrypt.
-    :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-    :param str key_id: The OCID of the key used to encrypt the ciphertext.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['associatedData'] = associated_data
@@ -157,26 +131,6 @@ def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
                               key_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDecryptedDataResult]:
     """
-    The `kms_get_decrypted_data` data source provides details about a specific DecryptedData
-
-    Decrypts data using the given DecryptDataDetails resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=var["decrypted_data_ciphertext"],
-        crypto_endpoint=var["decrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        associated_data=var["decrypted_data_associated_data"])
-    ```
-
-
-    :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the  encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-    :param str ciphertext: The encrypted data to decrypt.
-    :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-    :param str key_id: The OCID of the key used to encrypt the ciphertext.
+    Use this data source to access information about an existing resource.
     """
     ...

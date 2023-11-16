@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.
@@ -67,8 +66,8 @@ type GetVaultReplicasArgs struct {
 type GetVaultReplicasResult struct {
 	Filters []GetVaultReplicasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
-	VaultId string `pulumi:"vaultId"`
+	Id      *string `pulumi:"id"`
+	VaultId string  `pulumi:"vaultId"`
 	// The list of vault_replicas.
 	VaultReplicas []GetVaultReplicasVaultReplica `pulumi:"vaultReplicas"`
 }
@@ -112,19 +111,13 @@ func (o GetVaultReplicasResultOutput) ToGetVaultReplicasResultOutputWithContext(
 	return o
 }
 
-func (o GetVaultReplicasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasResult] {
-	return pulumix.Output[GetVaultReplicasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVaultReplicasResultOutput) Filters() GetVaultReplicasFilterArrayOutput {
 	return o.ApplyT(func(v GetVaultReplicasResult) []GetVaultReplicasFilter { return v.Filters }).(GetVaultReplicasFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVaultReplicasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVaultReplicasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVaultReplicasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVaultReplicasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVaultReplicasResultOutput) VaultId() pulumi.StringOutput {

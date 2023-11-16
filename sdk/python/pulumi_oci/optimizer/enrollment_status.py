@@ -18,12 +18,6 @@ class EnrollmentStatusArgs:
                  status: pulumi.Input[str]):
         """
         The set of arguments for constructing a EnrollmentStatus resource.
-        :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
-        :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "enrollment_status_id", enrollment_status_id)
         pulumi.set(__self__, "status", status)
@@ -31,9 +25,6 @@ class EnrollmentStatusArgs:
     @property
     @pulumi.getter(name="enrollmentStatusId")
     def enrollment_status_id(self) -> pulumi.Input[str]:
-        """
-        The unique OCID associated with the enrollment status.
-        """
         return pulumi.get(self, "enrollment_status_id")
 
     @enrollment_status_id.setter
@@ -43,13 +34,6 @@ class EnrollmentStatusArgs:
     @property
     @pulumi.getter
     def status(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The Cloud Advisor enrollment status.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -69,17 +53,6 @@ class _EnrollmentStatusState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EnrollmentStatus resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
-        :param pulumi.Input[str] state: The enrollment status' current state.
-        :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] status_reason: The reason for the enrollment status of the tenancy.
-        :param pulumi.Input[str] time_created: The date and time the enrollment status was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the enrollment status was last updated, in the format defined by RFC3339.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -99,9 +72,6 @@ class _EnrollmentStatusState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -111,9 +81,6 @@ class _EnrollmentStatusState:
     @property
     @pulumi.getter(name="enrollmentStatusId")
     def enrollment_status_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique OCID associated with the enrollment status.
-        """
         return pulumi.get(self, "enrollment_status_id")
 
     @enrollment_status_id.setter
@@ -123,9 +90,6 @@ class _EnrollmentStatusState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The enrollment status' current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -135,13 +99,6 @@ class _EnrollmentStatusState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Cloud Advisor enrollment status.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -151,9 +108,6 @@ class _EnrollmentStatusState:
     @property
     @pulumi.getter(name="statusReason")
     def status_reason(self) -> Optional[pulumi.Input[str]]:
-        """
-        The reason for the enrollment status of the tenancy.
-        """
         return pulumi.get(self, "status_reason")
 
     @status_reason.setter
@@ -163,9 +117,6 @@ class _EnrollmentStatusState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the enrollment status was created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -175,9 +126,6 @@ class _EnrollmentStatusState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the enrollment status was last updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -194,26 +142,9 @@ class EnrollmentStatus(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the enrollment status of the tenancy.
-
-        ## Import
-
-        EnrollmentStatus can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
-        ```
-
+        Create a EnrollmentStatus resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
-        :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -222,18 +153,7 @@ class EnrollmentStatus(pulumi.CustomResource):
                  args: EnrollmentStatusArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the enrollment status of the tenancy.
-
-        ## Import
-
-        EnrollmentStatus can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
-        ```
-
+        Create a EnrollmentStatus resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param EnrollmentStatusArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -295,17 +215,6 @@ class EnrollmentStatus(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
-        :param pulumi.Input[str] state: The enrollment status' current state.
-        :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] status_reason: The reason for the enrollment status of the tenancy.
-        :param pulumi.Input[str] time_created: The date and time the enrollment status was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the enrollment status was last updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -322,61 +231,36 @@ class EnrollmentStatus(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="enrollmentStatusId")
     def enrollment_status_id(self) -> pulumi.Output[str]:
-        """
-        The unique OCID associated with the enrollment status.
-        """
         return pulumi.get(self, "enrollment_status_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The enrollment status' current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Cloud Advisor enrollment status.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusReason")
-    def status_reason(self) -> pulumi.Output[str]:
-        """
-        The reason for the enrollment status of the tenancy.
-        """
+    def status_reason(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status_reason")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the enrollment status was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the enrollment status was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

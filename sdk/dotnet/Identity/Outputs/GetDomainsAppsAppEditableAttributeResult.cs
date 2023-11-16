@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetDomainsAppsAppEditableAttributeResult(string name)
+        private GetDomainsAppsAppEditableAttributeResult(string? name)
         {
             Name = name;
         }

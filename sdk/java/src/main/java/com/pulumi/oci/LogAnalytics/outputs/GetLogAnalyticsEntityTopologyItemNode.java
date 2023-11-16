@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyItemNodeItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntityTopologyItemNode {
@@ -14,7 +15,7 @@ public final class GetLogAnalyticsEntityTopologyItemNode {
      * @return Array of log analytics entity summary.
      * 
      */
-    private List<GetLogAnalyticsEntityTopologyItemNodeItem> items;
+    private @Nullable List<GetLogAnalyticsEntityTopologyItemNodeItem> items;
 
     private GetLogAnalyticsEntityTopologyItemNode() {}
     /**
@@ -22,7 +23,7 @@ public final class GetLogAnalyticsEntityTopologyItemNode {
      * 
      */
     public List<GetLogAnalyticsEntityTopologyItemNodeItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetLogAnalyticsEntityTopologyItemNode {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetLogAnalyticsEntityTopologyItemNodeItem> items;
+        private @Nullable List<GetLogAnalyticsEntityTopologyItemNodeItem> items;
         public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyItemNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetLogAnalyticsEntityTopologyItemNode {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetLogAnalyticsEntityTopologyItemNodeItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetLogAnalyticsEntityTopologyItemNodeItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsEntityTopologyItemNodeItem... items) {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -37,7 +36,7 @@ type DomainsCustomerSecretKey struct {
 	// * mutability: readOnly
 	// * required: false
 	// * returned: default
-	AccessKey pulumi.StringOutput `pulumi:"accessKey"`
+	AccessKey pulumi.StringPtrOutput `pulumi:"accessKey"`
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayOutput `pulumi:"attributeSets"`
 	// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -55,7 +54,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -67,7 +66,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// Description
 	//
 	// **SCIM++ Properties:**
@@ -76,7 +75,7 @@ type DomainsCustomerSecretKey struct {
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Display Name
 	//
 	// **SCIM++ Properties:**
@@ -85,7 +84,7 @@ type DomainsCustomerSecretKey struct {
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -97,7 +96,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
@@ -111,7 +110,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: default
 	// * type: dateTime
 	// * uniqueness: none
-	ExpiresOn pulumi.StringOutput `pulumi:"expiresOn"`
+	ExpiresOn pulumi.StringPtrOutput `pulumi:"expiresOn"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -145,7 +144,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -180,7 +179,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -208,7 +207,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: never
 	// * type: string
 	// * uniqueness: none
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -232,9 +231,9 @@ type DomainsCustomerSecretKey struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
-	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
+	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// User linked to customer secret key
 	//
 	// **SCIM++ Properties:**
@@ -246,7 +245,7 @@ type DomainsCustomerSecretKey struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	User DomainsCustomerSecretKeyUserOutput `pulumi:"user"`
+	User DomainsCustomerSecretKeyUserPtrOutput `pulumi:"user"`
 }
 
 // NewDomainsCustomerSecretKey registers a new resource with the given unique name, arguments, and options.
@@ -972,12 +971,6 @@ func (i *DomainsCustomerSecretKey) ToDomainsCustomerSecretKeyOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsCustomerSecretKeyOutput)
 }
 
-func (i *DomainsCustomerSecretKey) ToOutput(ctx context.Context) pulumix.Output[*DomainsCustomerSecretKey] {
-	return pulumix.Output[*DomainsCustomerSecretKey]{
-		OutputState: i.ToDomainsCustomerSecretKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsCustomerSecretKeyArrayInput is an input type that accepts DomainsCustomerSecretKeyArray and DomainsCustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `DomainsCustomerSecretKeyArrayInput` via:
 //
@@ -1001,12 +994,6 @@ func (i DomainsCustomerSecretKeyArray) ToDomainsCustomerSecretKeyArrayOutput() D
 
 func (i DomainsCustomerSecretKeyArray) ToDomainsCustomerSecretKeyArrayOutputWithContext(ctx context.Context) DomainsCustomerSecretKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsCustomerSecretKeyArrayOutput)
-}
-
-func (i DomainsCustomerSecretKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsCustomerSecretKey] {
-	return pulumix.Output[[]*DomainsCustomerSecretKey]{
-		OutputState: i.ToDomainsCustomerSecretKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsCustomerSecretKeyMapInput is an input type that accepts DomainsCustomerSecretKeyMap and DomainsCustomerSecretKeyMapOutput values.
@@ -1034,12 +1021,6 @@ func (i DomainsCustomerSecretKeyMap) ToDomainsCustomerSecretKeyMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsCustomerSecretKeyMapOutput)
 }
 
-func (i DomainsCustomerSecretKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsCustomerSecretKey] {
-	return pulumix.Output[map[string]*DomainsCustomerSecretKey]{
-		OutputState: i.ToDomainsCustomerSecretKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsCustomerSecretKeyOutput struct{ *pulumi.OutputState }
 
 func (DomainsCustomerSecretKeyOutput) ElementType() reflect.Type {
@@ -1054,12 +1035,6 @@ func (o DomainsCustomerSecretKeyOutput) ToDomainsCustomerSecretKeyOutputWithCont
 	return o
 }
 
-func (o DomainsCustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsCustomerSecretKey] {
-	return pulumix.Output[*DomainsCustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The access key.
 //
 // **SCIM++ Properties:**
@@ -1068,8 +1043,8 @@ func (o DomainsCustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Ou
 // * mutability: readOnly
 // * required: false
 // * returned: default
-func (o DomainsCustomerSecretKeyOutput) AccessKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.AccessKey }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) AccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.AccessKey }).(pulumi.StringPtrOutput)
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1098,8 +1073,8 @@ func (o DomainsCustomerSecretKeyOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1113,8 +1088,8 @@ func (o DomainsCustomerSecretKeyOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsCustomerSecretKeyOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
@@ -1125,8 +1100,8 @@ func (o DomainsCustomerSecretKeyOutput) DeleteInProgress() pulumi.BoolOutput {
 // * mutability: readWrite
 // * required: false
 // * returned: default
-func (o DomainsCustomerSecretKeyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Display Name
@@ -1137,8 +1112,8 @@ func (o DomainsCustomerSecretKeyOutput) Description() pulumi.StringOutput {
 // * mutability: readWrite
 // * required: false
 // * returned: default
-func (o DomainsCustomerSecretKeyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1152,8 +1127,8 @@ func (o DomainsCustomerSecretKeyOutput) DisplayName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // When the user's credential expire.
@@ -1169,8 +1144,8 @@ func (o DomainsCustomerSecretKeyOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: dateTime
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1219,8 +1194,8 @@ func (o DomainsCustomerSecretKeyOutput) IdcsLastModifiedBies() DomainsCustomerSe
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1263,8 +1238,8 @@ func (o DomainsCustomerSecretKeyOutput) Metas() DomainsCustomerSecretKeyMetaArra
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1300,8 +1275,8 @@ func (o DomainsCustomerSecretKeyOutput) Schemas() pulumi.StringArrayOutput {
 // * returned: never
 // * type: string
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -1330,15 +1305,15 @@ func (o DomainsCustomerSecretKeyOutput) Tags() DomainsCustomerSecretKeyTagArrayO
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsCustomerSecretKeyOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs
-func (o DomainsCustomerSecretKeyOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+func (o DomainsCustomerSecretKeyOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionselfChangeUser
-	}).(DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+	}).(DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput)
 }
 
 // User linked to customer secret key
@@ -1352,8 +1327,8 @@ func (o DomainsCustomerSecretKeyOutput) Urnietfparamsscimschemasoracleidcsextens
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsCustomerSecretKeyOutput) User() DomainsCustomerSecretKeyUserOutput {
-	return o.ApplyT(func(v *DomainsCustomerSecretKey) DomainsCustomerSecretKeyUserOutput { return v.User }).(DomainsCustomerSecretKeyUserOutput)
+func (o DomainsCustomerSecretKeyOutput) User() DomainsCustomerSecretKeyUserPtrOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) DomainsCustomerSecretKeyUserPtrOutput { return v.User }).(DomainsCustomerSecretKeyUserPtrOutput)
 }
 
 type DomainsCustomerSecretKeyArrayOutput struct{ *pulumi.OutputState }
@@ -1368,12 +1343,6 @@ func (o DomainsCustomerSecretKeyArrayOutput) ToDomainsCustomerSecretKeyArrayOutp
 
 func (o DomainsCustomerSecretKeyArrayOutput) ToDomainsCustomerSecretKeyArrayOutputWithContext(ctx context.Context) DomainsCustomerSecretKeyArrayOutput {
 	return o
-}
-
-func (o DomainsCustomerSecretKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsCustomerSecretKey] {
-	return pulumix.Output[[]*DomainsCustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsCustomerSecretKeyArrayOutput) Index(i pulumi.IntInput) DomainsCustomerSecretKeyOutput {
@@ -1394,12 +1363,6 @@ func (o DomainsCustomerSecretKeyMapOutput) ToDomainsCustomerSecretKeyMapOutput()
 
 func (o DomainsCustomerSecretKeyMapOutput) ToDomainsCustomerSecretKeyMapOutputWithContext(ctx context.Context) DomainsCustomerSecretKeyMapOutput {
 	return o
-}
-
-func (o DomainsCustomerSecretKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsCustomerSecretKey] {
-	return pulumix.Output[map[string]*DomainsCustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsCustomerSecretKeyMapOutput) MapIndex(k pulumi.StringInput) DomainsCustomerSecretKeyOutput {

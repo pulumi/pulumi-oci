@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIntegrationInstancesIntegrationInstance {
@@ -23,115 +25,115 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * @return A list of alternate custom endpoints used for the integration instance URL.
      * 
      */
-    private List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+    private @Nullable List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
     /**
      * @return A list of associated attachments to other services
      * 
      */
-    private List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
+    private @Nullable List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The entitlement used for billing purposes.
      * 
      */
-    private String consumptionModel;
+    private @Nullable String consumptionModel;
     /**
      * @return Details for a custom endpoint for the integration instance.
      * 
      */
-    private List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
+    private @Nullable List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private String displayName;
-    private String domainId;
-    private Integer enableProcessAutomationTrigger;
+    private @Nullable String displayName;
+    private @Nullable String domainId;
+    private @Nullable Integer enableProcessAutomationTrigger;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private String id;
-    private String idcsAt;
+    private @Nullable String id;
+    private @Nullable String idcsAt;
     /**
      * @return Information for IDCS access
      * 
      */
-    private List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
+    private @Nullable List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
     /**
      * @return The Integration Instance URL.
      * 
      */
-    private String instanceUrl;
+    private @Nullable String instanceUrl;
     /**
      * @return Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
-    private String integrationInstanceType;
+    private @Nullable String integrationInstanceType;
     /**
      * @return Bring your own license.
      * 
      */
-    private Boolean isByol;
+    private @Nullable Boolean isByol;
     /**
      * @return The file server is enabled or not.
      * 
      */
-    private Boolean isFileServerEnabled;
+    private @Nullable Boolean isFileServerEnabled;
     /**
      * @return Visual Builder is enabled or not.
      * 
      */
-    private Boolean isVisualBuilderEnabled;
+    private @Nullable Boolean isVisualBuilderEnabled;
     /**
      * @return The number of configured message packs (if any)
      * 
      */
-    private Integer messagePacks;
+    private @Nullable Integer messagePacks;
     /**
      * @return Base representation of a network endpoint.
      * 
      */
-    private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
+    private @Nullable List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
     /**
      * @return Shape
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return Life cycle state to query on.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String stateMessage;
+    private @Nullable String stateMessage;
     /**
      * @return The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetIntegrationInstancesIntegrationInstance() {}
     /**
@@ -139,163 +141,163 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     public List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints() {
-        return this.alternateCustomEndpoints;
+        return this.alternateCustomEndpoints == null ? List.of() : this.alternateCustomEndpoints;
     }
     /**
      * @return A list of associated attachments to other services
      * 
      */
     public List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments() {
-        return this.attachments;
+        return this.attachments == null ? List.of() : this.attachments;
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The entitlement used for billing purposes.
      * 
      */
-    public String consumptionModel() {
-        return this.consumptionModel;
+    public Optional<String> consumptionModel() {
+        return Optional.ofNullable(this.consumptionModel);
     }
     /**
      * @return Details for a custom endpoint for the integration instance.
      * 
      */
     public List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints() {
-        return this.customEndpoints;
+        return this.customEndpoints == null ? List.of() : this.customEndpoints;
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public String domainId() {
-        return this.domainId;
+    public Optional<String> domainId() {
+        return Optional.ofNullable(this.domainId);
     }
-    public Integer enableProcessAutomationTrigger() {
-        return this.enableProcessAutomationTrigger;
+    public Optional<Integer> enableProcessAutomationTrigger() {
+        return Optional.ofNullable(this.enableProcessAutomationTrigger);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String idcsAt() {
-        return this.idcsAt;
+    public Optional<String> idcsAt() {
+        return Optional.ofNullable(this.idcsAt);
     }
     /**
      * @return Information for IDCS access
      * 
      */
     public List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos() {
-        return this.idcsInfos;
+        return this.idcsInfos == null ? List.of() : this.idcsInfos;
     }
     /**
      * @return The Integration Instance URL.
      * 
      */
-    public String instanceUrl() {
-        return this.instanceUrl;
+    public Optional<String> instanceUrl() {
+        return Optional.ofNullable(this.instanceUrl);
     }
     /**
      * @return Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
-    public String integrationInstanceType() {
-        return this.integrationInstanceType;
+    public Optional<String> integrationInstanceType() {
+        return Optional.ofNullable(this.integrationInstanceType);
     }
     /**
      * @return Bring your own license.
      * 
      */
-    public Boolean isByol() {
-        return this.isByol;
+    public Optional<Boolean> isByol() {
+        return Optional.ofNullable(this.isByol);
     }
     /**
      * @return The file server is enabled or not.
      * 
      */
-    public Boolean isFileServerEnabled() {
-        return this.isFileServerEnabled;
+    public Optional<Boolean> isFileServerEnabled() {
+        return Optional.ofNullable(this.isFileServerEnabled);
     }
     /**
      * @return Visual Builder is enabled or not.
      * 
      */
-    public Boolean isVisualBuilderEnabled() {
-        return this.isVisualBuilderEnabled;
+    public Optional<Boolean> isVisualBuilderEnabled() {
+        return Optional.ofNullable(this.isVisualBuilderEnabled);
     }
     /**
      * @return The number of configured message packs (if any)
      * 
      */
-    public Integer messagePacks() {
-        return this.messagePacks;
+    public Optional<Integer> messagePacks() {
+        return Optional.ofNullable(this.messagePacks);
     }
     /**
      * @return Base representation of a network endpoint.
      * 
      */
     public List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails() {
-        return this.networkEndpointDetails;
+        return this.networkEndpointDetails == null ? List.of() : this.networkEndpointDetails;
     }
     /**
      * @return Shape
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return Life cycle state to query on.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String stateMessage() {
-        return this.stateMessage;
+    public Optional<String> stateMessage() {
+        return Optional.ofNullable(this.stateMessage);
     }
     /**
      * @return The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -307,31 +309,31 @@ public final class GetIntegrationInstancesIntegrationInstance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
-        private List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
-        private String compartmentId;
-        private String consumptionModel;
-        private List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String domainId;
-        private Integer enableProcessAutomationTrigger;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String idcsAt;
-        private List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
-        private String instanceUrl;
-        private String integrationInstanceType;
-        private Boolean isByol;
-        private Boolean isFileServerEnabled;
-        private Boolean isVisualBuilderEnabled;
-        private Integer messagePacks;
-        private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
-        private String shape;
-        private String state;
-        private String stateMessage;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+        private @Nullable List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
+        private @Nullable String compartmentId;
+        private @Nullable String consumptionModel;
+        private @Nullable List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String domainId;
+        private @Nullable Integer enableProcessAutomationTrigger;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String idcsAt;
+        private @Nullable List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
+        private @Nullable String instanceUrl;
+        private @Nullable String integrationInstanceType;
+        private @Nullable Boolean isByol;
+        private @Nullable Boolean isFileServerEnabled;
+        private @Nullable Boolean isVisualBuilderEnabled;
+        private @Nullable Integer messagePacks;
+        private @Nullable List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
+        private @Nullable String shape;
+        private @Nullable String state;
+        private @Nullable String stateMessage;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetIntegrationInstancesIntegrationInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -363,143 +365,143 @@ public final class GetIntegrationInstancesIntegrationInstance {
         }
 
         @CustomType.Setter
-        public Builder alternateCustomEndpoints(List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints) {
-            this.alternateCustomEndpoints = Objects.requireNonNull(alternateCustomEndpoints);
+        public Builder alternateCustomEndpoints(@Nullable List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints) {
+            this.alternateCustomEndpoints = alternateCustomEndpoints;
             return this;
         }
         public Builder alternateCustomEndpoints(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
         }
         @CustomType.Setter
-        public Builder attachments(List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments) {
-            this.attachments = Objects.requireNonNull(attachments);
+        public Builder attachments(@Nullable List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments) {
+            this.attachments = attachments;
             return this;
         }
         public Builder attachments(GetIntegrationInstancesIntegrationInstanceAttachment... attachments) {
             return attachments(List.of(attachments));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder consumptionModel(String consumptionModel) {
-            this.consumptionModel = Objects.requireNonNull(consumptionModel);
+        public Builder consumptionModel(@Nullable String consumptionModel) {
+            this.consumptionModel = consumptionModel;
             return this;
         }
         @CustomType.Setter
-        public Builder customEndpoints(List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints) {
-            this.customEndpoints = Objects.requireNonNull(customEndpoints);
+        public Builder customEndpoints(@Nullable List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints) {
+            this.customEndpoints = customEndpoints;
             return this;
         }
         public Builder customEndpoints(GetIntegrationInstancesIntegrationInstanceCustomEndpoint... customEndpoints) {
             return customEndpoints(List.of(customEndpoints));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domainId(String domainId) {
-            this.domainId = Objects.requireNonNull(domainId);
+        public Builder domainId(@Nullable String domainId) {
+            this.domainId = domainId;
             return this;
         }
         @CustomType.Setter
-        public Builder enableProcessAutomationTrigger(Integer enableProcessAutomationTrigger) {
-            this.enableProcessAutomationTrigger = Objects.requireNonNull(enableProcessAutomationTrigger);
+        public Builder enableProcessAutomationTrigger(@Nullable Integer enableProcessAutomationTrigger) {
+            this.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAt(String idcsAt) {
-            this.idcsAt = Objects.requireNonNull(idcsAt);
+        public Builder idcsAt(@Nullable String idcsAt) {
+            this.idcsAt = idcsAt;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsInfos(List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos) {
-            this.idcsInfos = Objects.requireNonNull(idcsInfos);
+        public Builder idcsInfos(@Nullable List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos) {
+            this.idcsInfos = idcsInfos;
             return this;
         }
         public Builder idcsInfos(GetIntegrationInstancesIntegrationInstanceIdcsInfo... idcsInfos) {
             return idcsInfos(List.of(idcsInfos));
         }
         @CustomType.Setter
-        public Builder instanceUrl(String instanceUrl) {
-            this.instanceUrl = Objects.requireNonNull(instanceUrl);
+        public Builder instanceUrl(@Nullable String instanceUrl) {
+            this.instanceUrl = instanceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder integrationInstanceType(String integrationInstanceType) {
-            this.integrationInstanceType = Objects.requireNonNull(integrationInstanceType);
+        public Builder integrationInstanceType(@Nullable String integrationInstanceType) {
+            this.integrationInstanceType = integrationInstanceType;
             return this;
         }
         @CustomType.Setter
-        public Builder isByol(Boolean isByol) {
-            this.isByol = Objects.requireNonNull(isByol);
+        public Builder isByol(@Nullable Boolean isByol) {
+            this.isByol = isByol;
             return this;
         }
         @CustomType.Setter
-        public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
-            this.isFileServerEnabled = Objects.requireNonNull(isFileServerEnabled);
+        public Builder isFileServerEnabled(@Nullable Boolean isFileServerEnabled) {
+            this.isFileServerEnabled = isFileServerEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
-            this.isVisualBuilderEnabled = Objects.requireNonNull(isVisualBuilderEnabled);
+        public Builder isVisualBuilderEnabled(@Nullable Boolean isVisualBuilderEnabled) {
+            this.isVisualBuilderEnabled = isVisualBuilderEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder messagePacks(Integer messagePacks) {
-            this.messagePacks = Objects.requireNonNull(messagePacks);
+        public Builder messagePacks(@Nullable Integer messagePacks) {
+            this.messagePacks = messagePacks;
             return this;
         }
         @CustomType.Setter
-        public Builder networkEndpointDetails(List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails) {
-            this.networkEndpointDetails = Objects.requireNonNull(networkEndpointDetails);
+        public Builder networkEndpointDetails(@Nullable List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
             return this;
         }
         public Builder networkEndpointDetails(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail... networkEndpointDetails) {
             return networkEndpointDetails(List.of(networkEndpointDetails));
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+        public Builder stateMessage(@Nullable String stateMessage) {
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetIntegrationInstancesIntegrationInstance build() {

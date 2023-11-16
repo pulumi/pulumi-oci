@@ -49,25 +49,16 @@ class GetDetectionDataAssetsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the DataAsset.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataAssetCollections")
-    def data_asset_collections(self) -> Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionResult']:
-        """
-        The list of data_asset_collection.
-        """
+    def data_asset_collections(self) -> Optional[Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionResult']]:
         return pulumi.get(self, "data_asset_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +68,7 @@ class GetDetectionDataAssetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,17 +77,11 @@ class GetDetectionDataAssetsResult:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The Unique project id which is created at project creation that is immutable on creation.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The lifecycle state of the Data Asset.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_detection_data_assets(compartment_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectionDataAssetsResult:
     """
-    This data source provides the list of Data Assets in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of DataAssets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_assets = oci.AiAnomalyDetection.get_detection_data_assets(compartment_id=var["compartment_id"],
-        display_name=var["data_asset_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["data_asset_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_detection_data_assets_output(compartment_id: Optional[pulumi.Input[str]]
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionDataAssetsResult]:
     """
-    This data source provides the list of Data Assets in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of DataAssets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_assets = oci.AiAnomalyDetection.get_detection_data_assets(compartment_id=var["compartment_id"],
-        display_name=var["data_asset_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["data_asset_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

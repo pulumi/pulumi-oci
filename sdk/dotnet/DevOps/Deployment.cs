@@ -29,19 +29,19 @@ namespace Pulumi.Oci.DevOps
         /// The OCID of a compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the list of artifact override arguments at the time of deployment.
         /// </summary>
         [Output("deployArtifactOverrideArguments")]
-        public Output<Outputs.DeploymentDeployArtifactOverrideArguments> DeployArtifactOverrideArguments { get; private set; } = null!;
+        public Output<Outputs.DeploymentDeployArtifactOverrideArguments?> DeployArtifactOverrideArguments { get; private set; } = null!;
 
         /// <summary>
         /// List of all artifacts used in the pipeline.
@@ -65,19 +65,19 @@ namespace Pulumi.Oci.DevOps
         /// The OCID of the stage.
         /// </summary>
         [Output("deployStageId")]
-        public Output<string> DeployStageId { get; private set; } = null!;
+        public Output<string?> DeployStageId { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the list of arguments to be overriden per Stage at the time of deployment.
         /// </summary>
         [Output("deployStageOverrideArguments")]
-        public Output<Outputs.DeploymentDeployStageOverrideArguments> DeployStageOverrideArguments { get; private set; } = null!;
+        public Output<Outputs.DeploymentDeployStageOverrideArguments?> DeployStageOverrideArguments { get; private set; } = null!;
 
         /// <summary>
         /// Specifies list of arguments passed along with the deployment.
         /// </summary>
         [Output("deploymentArguments")]
-        public Output<Outputs.DeploymentDeploymentArguments> DeploymentArguments { get; private set; } = null!;
+        public Output<Outputs.DeploymentDeploymentArguments?> DeploymentArguments { get; private set; } = null!;
 
         /// <summary>
         /// The execution progress details of a deployment.
@@ -95,55 +95,55 @@ namespace Pulumi.Oci.DevOps
         /// (Updatable) Deployment display name. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the OCID of the previous deployment to be redeployed.
         /// </summary>
         [Output("previousDeploymentId")]
-        public Output<string> PreviousDeploymentId { get; private set; } = null!;
+        public Output<string?> PreviousDeploymentId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of a project.
         /// </summary>
         [Output("projectId")]
-        public Output<string> ProjectId { get; private set; } = null!;
+        public Output<string?> ProjectId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the deployment.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 

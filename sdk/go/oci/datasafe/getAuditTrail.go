@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,45 +59,45 @@ type LookupAuditTrailArgs struct {
 // A collection of values returned by getAuditTrail.
 type LookupAuditTrailResult struct {
 	// The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-	AuditCollectionStartTime string `pulumi:"auditCollectionStartTime"`
+	AuditCollectionStartTime *string `pulumi:"auditCollectionStartTime"`
 	// The OCID of the  parent audit.
-	AuditProfileId string `pulumi:"auditProfileId"`
-	AuditTrailId   string `pulumi:"auditTrailId"`
+	AuditProfileId *string `pulumi:"auditProfileId"`
+	AuditTrailId   string  `pulumi:"auditTrailId"`
 	// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the audit trail.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the audit trail.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the audit trail.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
-	IsAutoPurgeEnabled bool `pulumi:"isAutoPurgeEnabled"`
+	IsAutoPurgeEnabled *bool `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit trail in Data Safe.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	ResumeTrigger    int    `pulumi:"resumeTrigger"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	ResumeTrigger    *int    `pulumi:"resumeTrigger"`
 	// The current state of the audit trail.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The current sub-state of the audit trail.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the Data Safe target for which the audit trail is created.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
-	TimeLastCollected string `pulumi:"timeLastCollected"`
+	TimeLastCollected *string `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
-	TrailLocation string `pulumi:"trailLocation"`
+	TrailLocation *string `pulumi:"trailLocation"`
 	// The OCID of the workrequest for audit trail which collects audit records.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 func LookupAuditTrailOutput(ctx *pulumi.Context, args LookupAuditTrailOutputArgs, opts ...pulumi.InvokeOption) LookupAuditTrailResultOutput {
@@ -139,20 +138,14 @@ func (o LookupAuditTrailResultOutput) ToLookupAuditTrailResultOutputWithContext(
 	return o
 }
 
-func (o LookupAuditTrailResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAuditTrailResult] {
-	return pulumix.Output[LookupAuditTrailResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-func (o LookupAuditTrailResultOutput) AuditCollectionStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.AuditCollectionStartTime }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) AuditCollectionStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.AuditCollectionStartTime }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the  parent audit.
-func (o LookupAuditTrailResultOutput) AuditProfileId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.AuditProfileId }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) AuditProfileId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.AuditProfileId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAuditTrailResultOutput) AuditTrailId() pulumi.StringOutput {
@@ -160,8 +153,8 @@ func (o LookupAuditTrailResultOutput) AuditTrailId() pulumi.StringOutput {
 }
 
 // The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
-func (o LookupAuditTrailResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -170,13 +163,13 @@ func (o LookupAuditTrailResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the audit trail.
-func (o LookupAuditTrailResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the audit trail.
-func (o LookupAuditTrailResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -185,32 +178,32 @@ func (o LookupAuditTrailResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the audit trail.
-func (o LookupAuditTrailResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
-func (o LookupAuditTrailResultOutput) IsAutoPurgeEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) bool { return v.IsAutoPurgeEnabled }).(pulumi.BoolOutput)
+func (o LookupAuditTrailResultOutput) IsAutoPurgeEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *bool { return v.IsAutoPurgeEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Details about the current state of the audit trail in Data Safe.
-func (o LookupAuditTrailResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAuditTrailResultOutput) ResumeTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) int { return v.ResumeTrigger }).(pulumi.IntOutput)
+func (o LookupAuditTrailResultOutput) ResumeTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *int { return v.ResumeTrigger }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the audit trail.
-func (o LookupAuditTrailResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The current sub-state of the audit trail.
-func (o LookupAuditTrailResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -219,33 +212,33 @@ func (o LookupAuditTrailResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the Data Safe target for which the audit trail is created.
-func (o LookupAuditTrailResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the audit trail was created, in the format defined by RFC3339.
-func (o LookupAuditTrailResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
-func (o LookupAuditTrailResultOutput) TimeLastCollected() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TimeLastCollected }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) TimeLastCollected() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.TimeLastCollected }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the audit trail was updated, in the format defined by RFC3339.
-func (o LookupAuditTrailResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
-func (o LookupAuditTrailResultOutput) TrailLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TrailLocation }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) TrailLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.TrailLocation }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the workrequest for audit trail which collects audit records.
-func (o LookupAuditTrailResultOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o LookupAuditTrailResultOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) *string { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

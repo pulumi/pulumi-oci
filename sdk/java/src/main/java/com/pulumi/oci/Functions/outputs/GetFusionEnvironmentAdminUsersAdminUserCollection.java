@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentAdminUsersAdminUserCollection {
@@ -14,7 +15,7 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollection {
      * @return A page of AdminUserSummary objects.
      * 
      */
-    private List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items;
+    private @Nullable List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items;
 
     private GetFusionEnvironmentAdminUsersAdminUserCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollection {
      * 
      */
     public List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items;
+        private @Nullable List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentAdminUsersAdminUserCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentAdminUsersAdminUserCollectionItem... items) {

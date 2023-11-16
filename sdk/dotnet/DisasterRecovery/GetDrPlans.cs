@@ -195,7 +195,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the DR plan.
         /// </summary>
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.DisasterRecovery
 
             ImmutableArray<Outputs.GetDrPlansFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

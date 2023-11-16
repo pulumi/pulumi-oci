@@ -21,6 +21,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceResult {
@@ -29,128 +31,128 @@ public final class GetBdsInstanceResult {
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
      */
-    private String bootstrapScriptUrl;
+    private @Nullable String bootstrapScriptUrl;
     /**
      * @return The information about added Cloud SQL capability
      * 
      */
-    private List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
-    private String clusterAdminPassword;
+    private @Nullable List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
+    private @Nullable String clusterAdminPassword;
     /**
      * @return Specific info about a Hadoop cluster
      * 
      */
-    private List<GetBdsInstanceClusterDetail> clusterDetails;
+    private @Nullable List<GetBdsInstanceClusterDetail> clusterDetails;
     /**
      * @return Profile of the Big Data Service cluster.
      * 
      */
-    private String clusterProfile;
-    private String clusterPublicKey;
+    private @Nullable String clusterProfile;
+    private @Nullable String clusterPublicKey;
     /**
      * @return Version of the Hadoop distribution.
      * 
      */
-    private String clusterVersion;
+    private @Nullable String clusterVersion;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
-    private List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
     /**
      * @return The user who created the cluster.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The name of the node.
      * 
      */
-    private String displayName;
-    private List<GetBdsInstanceEdgeNode> edgeNodes;
+    private @Nullable String displayName;
+    private @Nullable List<GetBdsInstanceEdgeNode> edgeNodes;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Big Data Service resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Boolean flag specifying whether or not Cloud SQL should be configured.
      * 
      */
-    private Boolean isCloudSqlConfigured;
-    private Boolean isForceStopJobs;
+    private @Nullable Boolean isCloudSqlConfigured;
+    private @Nullable Boolean isForceStopJobs;
     /**
      * @return Boolean flag specifying whether or not the cluster is highly available (HA)
      * 
      */
-    private Boolean isHighAvailability;
+    private @Nullable Boolean isHighAvailability;
     /**
      * @return Boolean flag specifying whether or not Kafka should be configured.
      * 
      */
-    private Boolean isKafkaConfigured;
+    private @Nullable Boolean isKafkaConfigured;
     /**
      * @return Boolean flag specifying whether or not the cluster should be set up as secure.
      * 
      */
-    private Boolean isSecure;
-    private List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes;
-    private String kerberosRealmName;
+    private @Nullable Boolean isSecure;
+    private @Nullable List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes;
+    private @Nullable String kerberosRealmName;
     /**
      * @return The OCID of the Key Management master encryption key.
      * 
      */
-    private String kmsKeyId;
-    private List<GetBdsInstanceMasterNode> masterNodes;
+    private @Nullable String kmsKeyId;
+    private @Nullable List<GetBdsInstanceMasterNode> masterNodes;
     /**
      * @return Additional configuration of the user&#39;s network.
      * 
      */
-    private List<GetBdsInstanceNetworkConfig> networkConfigs;
+    private @Nullable List<GetBdsInstanceNetworkConfig> networkConfigs;
     /**
      * @return The list of nodes in the cluster.
      * 
      */
-    private List<GetBdsInstanceNode> nodes;
+    private @Nullable List<GetBdsInstanceNode> nodes;
     /**
      * @return The number of nodes that form the cluster.
      * 
      */
-    private Integer numberOfNodes;
+    private @Nullable Integer numberOfNodes;
     /**
      * @return Number of nodes that require a maintenance reboot
      * 
      */
-    private Integer numberOfNodesRequiringMaintenanceReboot;
-    private String osPatchVersion;
+    private @Nullable Integer numberOfNodesRequiringMaintenanceReboot;
+    private @Nullable String osPatchVersion;
     /**
      * @return The state of the cluster.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
-    private List<GetBdsInstanceUtilNode> utilNodes;
-    private List<GetBdsInstanceWorkerNode> workerNodes;
+    private @Nullable String timeUpdated;
+    private @Nullable List<GetBdsInstanceUtilNode> utilNodes;
+    private @Nullable List<GetBdsInstanceWorkerNode> workerNodes;
 
     private GetBdsInstanceResult() {}
     public String bdsInstanceId() {
@@ -160,195 +162,195 @@ public final class GetBdsInstanceResult {
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
      */
-    public String bootstrapScriptUrl() {
-        return this.bootstrapScriptUrl;
+    public Optional<String> bootstrapScriptUrl() {
+        return Optional.ofNullable(this.bootstrapScriptUrl);
     }
     /**
      * @return The information about added Cloud SQL capability
      * 
      */
     public List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails() {
-        return this.cloudSqlDetails;
+        return this.cloudSqlDetails == null ? List.of() : this.cloudSqlDetails;
     }
-    public String clusterAdminPassword() {
-        return this.clusterAdminPassword;
+    public Optional<String> clusterAdminPassword() {
+        return Optional.ofNullable(this.clusterAdminPassword);
     }
     /**
      * @return Specific info about a Hadoop cluster
      * 
      */
     public List<GetBdsInstanceClusterDetail> clusterDetails() {
-        return this.clusterDetails;
+        return this.clusterDetails == null ? List.of() : this.clusterDetails;
     }
     /**
      * @return Profile of the Big Data Service cluster.
      * 
      */
-    public String clusterProfile() {
-        return this.clusterProfile;
+    public Optional<String> clusterProfile() {
+        return Optional.ofNullable(this.clusterProfile);
     }
-    public String clusterPublicKey() {
-        return this.clusterPublicKey;
+    public Optional<String> clusterPublicKey() {
+        return Optional.ofNullable(this.clusterPublicKey);
     }
     /**
      * @return Version of the Hadoop distribution.
      * 
      */
-    public String clusterVersion() {
-        return this.clusterVersion;
+    public Optional<String> clusterVersion() {
+        return Optional.ofNullable(this.clusterVersion);
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes() {
-        return this.computeOnlyWorkerNodes;
+        return this.computeOnlyWorkerNodes == null ? List.of() : this.computeOnlyWorkerNodes;
     }
     /**
      * @return The user who created the cluster.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The name of the node.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public List<GetBdsInstanceEdgeNode> edgeNodes() {
-        return this.edgeNodes;
+        return this.edgeNodes == null ? List.of() : this.edgeNodes;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the Big Data Service resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Boolean flag specifying whether or not Cloud SQL should be configured.
      * 
      */
-    public Boolean isCloudSqlConfigured() {
-        return this.isCloudSqlConfigured;
+    public Optional<Boolean> isCloudSqlConfigured() {
+        return Optional.ofNullable(this.isCloudSqlConfigured);
     }
-    public Boolean isForceStopJobs() {
-        return this.isForceStopJobs;
+    public Optional<Boolean> isForceStopJobs() {
+        return Optional.ofNullable(this.isForceStopJobs);
     }
     /**
      * @return Boolean flag specifying whether or not the cluster is highly available (HA)
      * 
      */
-    public Boolean isHighAvailability() {
-        return this.isHighAvailability;
+    public Optional<Boolean> isHighAvailability() {
+        return Optional.ofNullable(this.isHighAvailability);
     }
     /**
      * @return Boolean flag specifying whether or not Kafka should be configured.
      * 
      */
-    public Boolean isKafkaConfigured() {
-        return this.isKafkaConfigured;
+    public Optional<Boolean> isKafkaConfigured() {
+        return Optional.ofNullable(this.isKafkaConfigured);
     }
     /**
      * @return Boolean flag specifying whether or not the cluster should be set up as secure.
      * 
      */
-    public Boolean isSecure() {
-        return this.isSecure;
+    public Optional<Boolean> isSecure() {
+        return Optional.ofNullable(this.isSecure);
     }
     public List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes() {
-        return this.kafkaBrokerNodes;
+        return this.kafkaBrokerNodes == null ? List.of() : this.kafkaBrokerNodes;
     }
-    public String kerberosRealmName() {
-        return this.kerberosRealmName;
+    public Optional<String> kerberosRealmName() {
+        return Optional.ofNullable(this.kerberosRealmName);
     }
     /**
      * @return The OCID of the Key Management master encryption key.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     public List<GetBdsInstanceMasterNode> masterNodes() {
-        return this.masterNodes;
+        return this.masterNodes == null ? List.of() : this.masterNodes;
     }
     /**
      * @return Additional configuration of the user&#39;s network.
      * 
      */
     public List<GetBdsInstanceNetworkConfig> networkConfigs() {
-        return this.networkConfigs;
+        return this.networkConfigs == null ? List.of() : this.networkConfigs;
     }
     /**
      * @return The list of nodes in the cluster.
      * 
      */
     public List<GetBdsInstanceNode> nodes() {
-        return this.nodes;
+        return this.nodes == null ? List.of() : this.nodes;
     }
     /**
      * @return The number of nodes that form the cluster.
      * 
      */
-    public Integer numberOfNodes() {
-        return this.numberOfNodes;
+    public Optional<Integer> numberOfNodes() {
+        return Optional.ofNullable(this.numberOfNodes);
     }
     /**
      * @return Number of nodes that require a maintenance reboot
      * 
      */
-    public Integer numberOfNodesRequiringMaintenanceReboot() {
-        return this.numberOfNodesRequiringMaintenanceReboot;
+    public Optional<Integer> numberOfNodesRequiringMaintenanceReboot() {
+        return Optional.ofNullable(this.numberOfNodesRequiringMaintenanceReboot);
     }
-    public String osPatchVersion() {
-        return this.osPatchVersion;
+    public Optional<String> osPatchVersion() {
+        return Optional.ofNullable(this.osPatchVersion);
     }
     /**
      * @return The state of the cluster.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     public List<GetBdsInstanceUtilNode> utilNodes() {
-        return this.utilNodes;
+        return this.utilNodes == null ? List.of() : this.utilNodes;
     }
     public List<GetBdsInstanceWorkerNode> workerNodes() {
-        return this.workerNodes;
+        return this.workerNodes == null ? List.of() : this.workerNodes;
     }
 
     public static Builder builder() {
@@ -361,40 +363,40 @@ public final class GetBdsInstanceResult {
     @CustomType.Builder
     public static final class Builder {
         private String bdsInstanceId;
-        private String bootstrapScriptUrl;
-        private List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
-        private String clusterAdminPassword;
-        private List<GetBdsInstanceClusterDetail> clusterDetails;
-        private String clusterProfile;
-        private String clusterPublicKey;
-        private String clusterVersion;
-        private String compartmentId;
-        private List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetBdsInstanceEdgeNode> edgeNodes;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCloudSqlConfigured;
-        private Boolean isForceStopJobs;
-        private Boolean isHighAvailability;
-        private Boolean isKafkaConfigured;
-        private Boolean isSecure;
-        private List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes;
-        private String kerberosRealmName;
-        private String kmsKeyId;
-        private List<GetBdsInstanceMasterNode> masterNodes;
-        private List<GetBdsInstanceNetworkConfig> networkConfigs;
-        private List<GetBdsInstanceNode> nodes;
-        private Integer numberOfNodes;
-        private Integer numberOfNodesRequiringMaintenanceReboot;
-        private String osPatchVersion;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<GetBdsInstanceUtilNode> utilNodes;
-        private List<GetBdsInstanceWorkerNode> workerNodes;
+        private @Nullable String bootstrapScriptUrl;
+        private @Nullable List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
+        private @Nullable String clusterAdminPassword;
+        private @Nullable List<GetBdsInstanceClusterDetail> clusterDetails;
+        private @Nullable String clusterProfile;
+        private @Nullable String clusterPublicKey;
+        private @Nullable String clusterVersion;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetBdsInstanceEdgeNode> edgeNodes;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCloudSqlConfigured;
+        private @Nullable Boolean isForceStopJobs;
+        private @Nullable Boolean isHighAvailability;
+        private @Nullable Boolean isKafkaConfigured;
+        private @Nullable Boolean isSecure;
+        private @Nullable List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes;
+        private @Nullable String kerberosRealmName;
+        private @Nullable String kmsKeyId;
+        private @Nullable List<GetBdsInstanceMasterNode> masterNodes;
+        private @Nullable List<GetBdsInstanceNetworkConfig> networkConfigs;
+        private @Nullable List<GetBdsInstanceNode> nodes;
+        private @Nullable Integer numberOfNodes;
+        private @Nullable Integer numberOfNodesRequiringMaintenanceReboot;
+        private @Nullable String osPatchVersion;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetBdsInstanceUtilNode> utilNodes;
+        private @Nullable List<GetBdsInstanceWorkerNode> workerNodes;
         public Builder() {}
         public Builder(GetBdsInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -441,200 +443,200 @@ public final class GetBdsInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
-            this.bootstrapScriptUrl = Objects.requireNonNull(bootstrapScriptUrl);
+        public Builder bootstrapScriptUrl(@Nullable String bootstrapScriptUrl) {
+            this.bootstrapScriptUrl = bootstrapScriptUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder cloudSqlDetails(List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails) {
-            this.cloudSqlDetails = Objects.requireNonNull(cloudSqlDetails);
+        public Builder cloudSqlDetails(@Nullable List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails) {
+            this.cloudSqlDetails = cloudSqlDetails;
             return this;
         }
         public Builder cloudSqlDetails(GetBdsInstanceCloudSqlDetail... cloudSqlDetails) {
             return cloudSqlDetails(List.of(cloudSqlDetails));
         }
         @CustomType.Setter
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
-            this.clusterAdminPassword = Objects.requireNonNull(clusterAdminPassword);
+        public Builder clusterAdminPassword(@Nullable String clusterAdminPassword) {
+            this.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterDetails(List<GetBdsInstanceClusterDetail> clusterDetails) {
-            this.clusterDetails = Objects.requireNonNull(clusterDetails);
+        public Builder clusterDetails(@Nullable List<GetBdsInstanceClusterDetail> clusterDetails) {
+            this.clusterDetails = clusterDetails;
             return this;
         }
         public Builder clusterDetails(GetBdsInstanceClusterDetail... clusterDetails) {
             return clusterDetails(List.of(clusterDetails));
         }
         @CustomType.Setter
-        public Builder clusterProfile(String clusterProfile) {
-            this.clusterProfile = Objects.requireNonNull(clusterProfile);
+        public Builder clusterProfile(@Nullable String clusterProfile) {
+            this.clusterProfile = clusterProfile;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterPublicKey(String clusterPublicKey) {
-            this.clusterPublicKey = Objects.requireNonNull(clusterPublicKey);
+        public Builder clusterPublicKey(@Nullable String clusterPublicKey) {
+            this.clusterPublicKey = clusterPublicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterVersion(String clusterVersion) {
-            this.clusterVersion = Objects.requireNonNull(clusterVersion);
+        public Builder clusterVersion(@Nullable String clusterVersion) {
+            this.clusterVersion = clusterVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeOnlyWorkerNodes(List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes) {
-            this.computeOnlyWorkerNodes = Objects.requireNonNull(computeOnlyWorkerNodes);
+        public Builder computeOnlyWorkerNodes(@Nullable List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes) {
+            this.computeOnlyWorkerNodes = computeOnlyWorkerNodes;
             return this;
         }
         public Builder computeOnlyWorkerNodes(GetBdsInstanceComputeOnlyWorkerNode... computeOnlyWorkerNodes) {
             return computeOnlyWorkerNodes(List.of(computeOnlyWorkerNodes));
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder edgeNodes(List<GetBdsInstanceEdgeNode> edgeNodes) {
-            this.edgeNodes = Objects.requireNonNull(edgeNodes);
+        public Builder edgeNodes(@Nullable List<GetBdsInstanceEdgeNode> edgeNodes) {
+            this.edgeNodes = edgeNodes;
             return this;
         }
         public Builder edgeNodes(GetBdsInstanceEdgeNode... edgeNodes) {
             return edgeNodes(List.of(edgeNodes));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
-            this.isCloudSqlConfigured = Objects.requireNonNull(isCloudSqlConfigured);
+        public Builder isCloudSqlConfigured(@Nullable Boolean isCloudSqlConfigured) {
+            this.isCloudSqlConfigured = isCloudSqlConfigured;
             return this;
         }
         @CustomType.Setter
-        public Builder isForceStopJobs(Boolean isForceStopJobs) {
-            this.isForceStopJobs = Objects.requireNonNull(isForceStopJobs);
+        public Builder isForceStopJobs(@Nullable Boolean isForceStopJobs) {
+            this.isForceStopJobs = isForceStopJobs;
             return this;
         }
         @CustomType.Setter
-        public Builder isHighAvailability(Boolean isHighAvailability) {
-            this.isHighAvailability = Objects.requireNonNull(isHighAvailability);
+        public Builder isHighAvailability(@Nullable Boolean isHighAvailability) {
+            this.isHighAvailability = isHighAvailability;
             return this;
         }
         @CustomType.Setter
-        public Builder isKafkaConfigured(Boolean isKafkaConfigured) {
-            this.isKafkaConfigured = Objects.requireNonNull(isKafkaConfigured);
+        public Builder isKafkaConfigured(@Nullable Boolean isKafkaConfigured) {
+            this.isKafkaConfigured = isKafkaConfigured;
             return this;
         }
         @CustomType.Setter
-        public Builder isSecure(Boolean isSecure) {
-            this.isSecure = Objects.requireNonNull(isSecure);
+        public Builder isSecure(@Nullable Boolean isSecure) {
+            this.isSecure = isSecure;
             return this;
         }
         @CustomType.Setter
-        public Builder kafkaBrokerNodes(List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes) {
-            this.kafkaBrokerNodes = Objects.requireNonNull(kafkaBrokerNodes);
+        public Builder kafkaBrokerNodes(@Nullable List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes) {
+            this.kafkaBrokerNodes = kafkaBrokerNodes;
             return this;
         }
         public Builder kafkaBrokerNodes(GetBdsInstanceKafkaBrokerNode... kafkaBrokerNodes) {
             return kafkaBrokerNodes(List.of(kafkaBrokerNodes));
         }
         @CustomType.Setter
-        public Builder kerberosRealmName(String kerberosRealmName) {
-            this.kerberosRealmName = Objects.requireNonNull(kerberosRealmName);
+        public Builder kerberosRealmName(@Nullable String kerberosRealmName) {
+            this.kerberosRealmName = kerberosRealmName;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder masterNodes(List<GetBdsInstanceMasterNode> masterNodes) {
-            this.masterNodes = Objects.requireNonNull(masterNodes);
+        public Builder masterNodes(@Nullable List<GetBdsInstanceMasterNode> masterNodes) {
+            this.masterNodes = masterNodes;
             return this;
         }
         public Builder masterNodes(GetBdsInstanceMasterNode... masterNodes) {
             return masterNodes(List.of(masterNodes));
         }
         @CustomType.Setter
-        public Builder networkConfigs(List<GetBdsInstanceNetworkConfig> networkConfigs) {
-            this.networkConfigs = Objects.requireNonNull(networkConfigs);
+        public Builder networkConfigs(@Nullable List<GetBdsInstanceNetworkConfig> networkConfigs) {
+            this.networkConfigs = networkConfigs;
             return this;
         }
         public Builder networkConfigs(GetBdsInstanceNetworkConfig... networkConfigs) {
             return networkConfigs(List.of(networkConfigs));
         }
         @CustomType.Setter
-        public Builder nodes(List<GetBdsInstanceNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+        public Builder nodes(@Nullable List<GetBdsInstanceNode> nodes) {
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(GetBdsInstanceNode... nodes) {
             return nodes(List.of(nodes));
         }
         @CustomType.Setter
-        public Builder numberOfNodes(Integer numberOfNodes) {
-            this.numberOfNodes = Objects.requireNonNull(numberOfNodes);
+        public Builder numberOfNodes(@Nullable Integer numberOfNodes) {
+            this.numberOfNodes = numberOfNodes;
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfNodesRequiringMaintenanceReboot(Integer numberOfNodesRequiringMaintenanceReboot) {
-            this.numberOfNodesRequiringMaintenanceReboot = Objects.requireNonNull(numberOfNodesRequiringMaintenanceReboot);
+        public Builder numberOfNodesRequiringMaintenanceReboot(@Nullable Integer numberOfNodesRequiringMaintenanceReboot) {
+            this.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             return this;
         }
         @CustomType.Setter
-        public Builder osPatchVersion(String osPatchVersion) {
-            this.osPatchVersion = Objects.requireNonNull(osPatchVersion);
+        public Builder osPatchVersion(@Nullable String osPatchVersion) {
+            this.osPatchVersion = osPatchVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder utilNodes(List<GetBdsInstanceUtilNode> utilNodes) {
-            this.utilNodes = Objects.requireNonNull(utilNodes);
+        public Builder utilNodes(@Nullable List<GetBdsInstanceUtilNode> utilNodes) {
+            this.utilNodes = utilNodes;
             return this;
         }
         public Builder utilNodes(GetBdsInstanceUtilNode... utilNodes) {
             return utilNodes(List.of(utilNodes));
         }
         @CustomType.Setter
-        public Builder workerNodes(List<GetBdsInstanceWorkerNode> workerNodes) {
-            this.workerNodes = Objects.requireNonNull(workerNodes);
+        public Builder workerNodes(@Nullable List<GetBdsInstanceWorkerNode> workerNodes) {
+            this.workerNodes = workerNodes;
             return this;
         }
         public Builder workerNodes(GetBdsInstanceWorkerNode... workerNodes) {

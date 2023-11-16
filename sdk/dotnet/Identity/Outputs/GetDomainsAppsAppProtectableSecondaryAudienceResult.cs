@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that this value must be protected.
         /// </summary>
-        public readonly bool ReadOnly;
+        public readonly bool? ReadOnly;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppsAppProtectableSecondaryAudienceResult(
-            bool readOnly,
+            bool? readOnly,
 
-            string value)
+            string? value)
         {
             ReadOnly = readOnly;
             Value = value;

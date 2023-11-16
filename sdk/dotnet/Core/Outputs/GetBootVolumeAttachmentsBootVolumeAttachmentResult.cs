@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the boot volume.
         /// </summary>
@@ -24,19 +24,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         /// </summary>
-        public readonly string EncryptionInTransitType;
+        public readonly string? EncryptionInTransitType;
         /// <summary>
         /// The OCID of the boot volume attachment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the instance.
         /// </summary>
@@ -44,37 +44,37 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
         /// </summary>
-        public readonly bool IsPvEncryptionInTransitEnabled;
+        public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
         /// The current state of the boot volume attachment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetBootVolumeAttachmentsBootVolumeAttachmentResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
             string bootVolumeId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string displayName,
+            string? displayName,
 
-            string encryptionInTransitType,
+            string? encryptionInTransitType,
 
-            string id,
+            string? id,
 
             string instanceId,
 
-            bool isPvEncryptionInTransitEnabled,
+            bool? isPvEncryptionInTransitEnabled,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AvailabilityDomain = availabilityDomain;
             BootVolumeId = bootVolumeId;

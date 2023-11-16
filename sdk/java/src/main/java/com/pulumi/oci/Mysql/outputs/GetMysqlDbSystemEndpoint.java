@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemEndpoint {
@@ -15,111 +17,111 @@ public final class GetMysqlDbSystemEndpoint {
      * @return The network address of the DB System.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. This will be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return The access modes from the client that this endpoint supports.
      * 
      */
-    private List<String> modes;
+    private @Nullable List<String> modes;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      * 
      */
-    private Integer portX;
+    private @Nullable Integer portX;
     /**
      * @return The OCID of the resource that this endpoint is attached to.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The type of endpoint that clients and connectors can connect to.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Additional information about the current endpoint status.
      * 
      */
-    private String statusDetails;
+    private @Nullable String statusDetails;
 
     private GetMysqlDbSystemEndpoint() {}
     /**
      * @return The network address of the DB System.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. This will be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return The access modes from the client that this endpoint supports.
      * 
      */
     public List<String> modes() {
-        return this.modes;
+        return this.modes == null ? List.of() : this.modes;
     }
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      * 
      */
-    public Integer portX() {
-        return this.portX;
+    public Optional<Integer> portX() {
+        return Optional.ofNullable(this.portX);
     }
     /**
      * @return The OCID of the resource that this endpoint is attached to.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The type of endpoint that clients and connectors can connect to.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Additional information about the current endpoint status.
      * 
      */
-    public String statusDetails() {
-        return this.statusDetails;
+    public Optional<String> statusDetails() {
+        return Optional.ofNullable(this.statusDetails);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetMysqlDbSystemEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
-        private String ipAddress;
-        private List<String> modes;
-        private Integer port;
-        private Integer portX;
-        private String resourceId;
-        private String resourceType;
-        private String status;
-        private String statusDetails;
+        private @Nullable String hostname;
+        private @Nullable String ipAddress;
+        private @Nullable List<String> modes;
+        private @Nullable Integer port;
+        private @Nullable Integer portX;
+        private @Nullable String resourceId;
+        private @Nullable String resourceType;
+        private @Nullable String status;
+        private @Nullable String statusDetails;
         public Builder() {}
         public Builder(GetMysqlDbSystemEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,51 +157,51 @@ public final class GetMysqlDbSystemEndpoint {
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder modes(List<String> modes) {
-            this.modes = Objects.requireNonNull(modes);
+        public Builder modes(@Nullable List<String> modes) {
+            this.modes = modes;
             return this;
         }
         public Builder modes(String... modes) {
             return modes(List.of(modes));
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder portX(Integer portX) {
-            this.portX = Objects.requireNonNull(portX);
+        public Builder portX(@Nullable Integer portX) {
+            this.portX = portX;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder statusDetails(String statusDetails) {
-            this.statusDetails = Objects.requireNonNull(statusDetails);
+        public Builder statusDetails(@Nullable String statusDetails) {
+            this.statusDetails = statusDetails;
             return this;
         }
         public GetMysqlDbSystemEndpoint build() {

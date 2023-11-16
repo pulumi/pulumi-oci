@@ -70,13 +70,13 @@ export interface GetExternalDatabasesResult {
     /**
      * The list of external_database_collection.
      */
-    readonly externalDatabaseCollections: outputs.DatabaseManagement.GetExternalDatabasesExternalDatabaseCollection[];
+    readonly externalDatabaseCollections?: outputs.DatabaseManagement.GetExternalDatabasesExternalDatabaseCollection[];
     readonly externalDbSystemId?: string;
     readonly filters?: outputs.DatabaseManagement.GetExternalDatabasesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.

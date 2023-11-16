@@ -80,7 +80,7 @@ export interface GetMaskingReportsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the masking policy used.
      */
@@ -88,7 +88,7 @@ export interface GetMaskingReportsResult {
     /**
      * The list of masking_report_collection.
      */
-    readonly maskingReportCollections: outputs.DataSafe.GetMaskingReportsMaskingReportCollection[];
+    readonly maskingReportCollections?: outputs.DataSafe.GetMaskingReportsMaskingReportCollection[];
     /**
      * The OCID of the target database masked.
      */

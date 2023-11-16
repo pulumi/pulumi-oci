@@ -52,20 +52,17 @@ class GetPrivateApplicationPackageResult:
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the package.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,23 +70,17 @@ class GetPrivateApplicationPackageResult:
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        The specified package's type.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="privateApplicationId")
-    def private_application_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
-        """
+    def private_application_id(self) -> Optional[str]:
         return pulumi.get(self, "private_application_id")
 
     @property
@@ -99,18 +90,12 @@ class GetPrivateApplicationPackageResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The package version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -134,21 +119,7 @@ class AwaitableGetPrivateApplicationPackageResult(GetPrivateApplicationPackageRe
 def get_private_application_package(private_application_package_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateApplicationPackageResult:
     """
-    This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
-
-    Gets the details of a specific package within a given private application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
-    ```
-
-
-    :param str private_application_package_id: The unique identifier for the private application package.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['privateApplicationPackageId'] = private_application_package_id
@@ -171,20 +142,6 @@ def get_private_application_package(private_application_package_id: Optional[str
 def get_private_application_package_output(private_application_package_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationPackageResult]:
     """
-    This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
-
-    Gets the details of a specific package within a given private application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
-    ```
-
-
-    :param str private_application_package_id: The unique identifier for the private application package.
+    Use this data source to access information about an existing resource.
     """
     ...

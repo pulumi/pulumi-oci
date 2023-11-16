@@ -16,29 +16,29 @@ namespace Pulumi.Oci.EmWarehouse.Outputs
         /// <summary>
         /// emdDiscoverer url
         /// </summary>
-        public readonly string EmDiscovererUrl;
+        public readonly string? EmDiscovererUrl;
         /// <summary>
         /// emHost name
         /// </summary>
-        public readonly string EmHost;
+        public readonly string? EmHost;
         /// <summary>
         /// operations Insights Warehouse Identifier
         /// </summary>
-        public readonly string EmId;
+        public readonly string? EmId;
         /// <summary>
         /// EmInstance Target count
         /// </summary>
-        public readonly int TargetsCount;
+        public readonly int? TargetsCount;
 
         [OutputConstructor]
         private GetResourceUsageEmInstanceResult(
-            string emDiscovererUrl,
+            string? emDiscovererUrl,
 
-            string emHost,
+            string? emHost,
 
-            string emId,
+            string? emId,
 
-            int targetsCount)
+            int? targetsCount)
         {
             EmDiscovererUrl = emDiscovererUrl;
             EmHost = emHost;

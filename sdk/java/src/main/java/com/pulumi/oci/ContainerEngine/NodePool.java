@@ -23,6 +23,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -169,70 +170,70 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      * 
      */
     @Export(name="initialNodeLabels", refs={List.class,NodePoolInitialNodeLabel.class}, tree="[0,1]")
-    private Output<List<NodePoolInitialNodeLabel>> initialNodeLabels;
+    private Output</* @Nullable */ List<NodePoolInitialNodeLabel>> initialNodeLabels;
 
     /**
      * @return (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      * 
      */
-    public Output<List<NodePoolInitialNodeLabel>> initialNodeLabels() {
-        return this.initialNodeLabels;
+    public Output<Optional<List<NodePoolInitialNodeLabel>>> initialNodeLabels() {
+        return Codegen.optional(this.initialNodeLabels);
     }
     /**
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      * 
      */
     @Export(name="kubernetesVersion", refs={String.class}, tree="[0]")
-    private Output<String> kubernetesVersion;
+    private Output</* @Nullable */ String> kubernetesVersion;
 
     /**
      * @return (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      * 
      */
-    public Output<String> kubernetesVersion() {
-        return this.kubernetesVersion;
+    public Output<Optional<String>> kubernetesVersion() {
+        return Codegen.optional(this.kubernetesVersion);
     }
     /**
      * Details about the state of the node.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the state of the node.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
@@ -253,28 +254,28 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="nodeConfigDetails", refs={NodePoolNodeConfigDetails.class}, tree="[0]")
-    private Output<NodePoolNodeConfigDetails> nodeConfigDetails;
+    private Output</* @Nullable */ NodePoolNodeConfigDetails> nodeConfigDetails;
 
     /**
      * @return (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      * 
      */
-    public Output<NodePoolNodeConfigDetails> nodeConfigDetails() {
-        return this.nodeConfigDetails;
+    public Output<Optional<NodePoolNodeConfigDetails>> nodeConfigDetails() {
+        return Codegen.optional(this.nodeConfigDetails);
     }
     /**
      * (Updatable) Node Eviction Details configuration
      * 
      */
     @Export(name="nodeEvictionNodePoolSettings", refs={NodePoolNodeEvictionNodePoolSettings.class}, tree="[0]")
-    private Output<NodePoolNodeEvictionNodePoolSettings> nodeEvictionNodePoolSettings;
+    private Output</* @Nullable */ NodePoolNodeEvictionNodePoolSettings> nodeEvictionNodePoolSettings;
 
     /**
      * @return (Updatable) Node Eviction Details configuration
      * 
      */
-    public Output<NodePoolNodeEvictionNodePoolSettings> nodeEvictionNodePoolSettings() {
-        return this.nodeEvictionNodePoolSettings;
+    public Output<Optional<NodePoolNodeEvictionNodePoolSettings>> nodeEvictionNodePoolSettings() {
+        return Codegen.optional(this.nodeEvictionNodePoolSettings);
     }
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -285,14 +286,14 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
     @Export(name="nodeImageId", refs={String.class}, tree="[0]")
-    private Output<String> nodeImageId;
+    private Output</* @Nullable */ String> nodeImageId;
 
     /**
      * @return Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      * 
      */
-    public Output<String> nodeImageId() {
-        return this.nodeImageId;
+    public Output<Optional<String>> nodeImageId() {
+        return Codegen.optional(this.nodeImageId);
     }
     /**
      * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
@@ -303,42 +304,42 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
     @Export(name="nodeImageName", refs={String.class}, tree="[0]")
-    private Output<String> nodeImageName;
+    private Output</* @Nullable */ String> nodeImageName;
 
     /**
      * @return Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
      * 
      */
-    public Output<String> nodeImageName() {
-        return this.nodeImageName;
+    public Output<Optional<String>> nodeImageName() {
+        return Codegen.optional(this.nodeImageName);
     }
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      * 
      */
     @Export(name="nodeMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> nodeMetadata;
+    private Output</* @Nullable */ Map<String,Object>> nodeMetadata;
 
     /**
      * @return (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      * 
      */
-    public Output<Map<String,Object>> nodeMetadata() {
-        return this.nodeMetadata;
+    public Output<Optional<Map<String,Object>>> nodeMetadata() {
+        return Codegen.optional(this.nodeMetadata);
     }
     /**
      * (Updatable) Node Pool Cycling Details
      * 
      */
     @Export(name="nodePoolCyclingDetails", refs={NodePoolNodePoolCyclingDetails.class}, tree="[0]")
-    private Output<NodePoolNodePoolCyclingDetails> nodePoolCyclingDetails;
+    private Output</* @Nullable */ NodePoolNodePoolCyclingDetails> nodePoolCyclingDetails;
 
     /**
      * @return (Updatable) Node Pool Cycling Details
      * 
      */
-    public Output<NodePoolNodePoolCyclingDetails> nodePoolCyclingDetails() {
-        return this.nodePoolCyclingDetails;
+    public Output<Optional<NodePoolNodePoolCyclingDetails>> nodePoolCyclingDetails() {
+        return Codegen.optional(this.nodePoolCyclingDetails);
     }
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
@@ -359,98 +360,98 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="nodeShapeConfig", refs={NodePoolNodeShapeConfig.class}, tree="[0]")
-    private Output<NodePoolNodeShapeConfig> nodeShapeConfig;
+    private Output</* @Nullable */ NodePoolNodeShapeConfig> nodeShapeConfig;
 
     /**
      * @return (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
      * 
      */
-    public Output<NodePoolNodeShapeConfig> nodeShapeConfig() {
-        return this.nodeShapeConfig;
+    public Output<Optional<NodePoolNodeShapeConfig>> nodeShapeConfig() {
+        return Codegen.optional(this.nodeShapeConfig);
     }
     /**
      * (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      * 
      */
     @Export(name="nodeSourceDetails", refs={NodePoolNodeSourceDetails.class}, tree="[0]")
-    private Output<NodePoolNodeSourceDetails> nodeSourceDetails;
+    private Output</* @Nullable */ NodePoolNodeSourceDetails> nodeSourceDetails;
 
     /**
      * @return (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      * 
      */
-    public Output<NodePoolNodeSourceDetails> nodeSourceDetails() {
-        return this.nodeSourceDetails;
+    public Output<Optional<NodePoolNodeSourceDetails>> nodeSourceDetails() {
+        return Codegen.optional(this.nodeSourceDetails);
     }
     /**
      * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      * 
      */
     @Export(name="nodeSources", refs={List.class,NodePoolNodeSource.class}, tree="[0,1]")
-    private Output<List<NodePoolNodeSource>> nodeSources;
+    private Output</* @Nullable */ List<NodePoolNodeSource>> nodeSources;
 
     /**
      * @return Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      * 
      */
-    public Output<List<NodePoolNodeSource>> nodeSources() {
-        return this.nodeSources;
+    public Output<Optional<List<NodePoolNodeSource>>> nodeSources() {
+        return Codegen.optional(this.nodeSources);
     }
     /**
      * The nodes in the node pool.
      * 
      */
     @Export(name="nodes", refs={List.class,NodePoolNode.class}, tree="[0,1]")
-    private Output<List<NodePoolNode>> nodes;
+    private Output</* @Nullable */ List<NodePoolNode>> nodes;
 
     /**
      * @return The nodes in the node pool.
      * 
      */
-    public Output<List<NodePoolNode>> nodes() {
-        return this.nodes;
+    public Output<Optional<List<NodePoolNode>>> nodes() {
+        return Codegen.optional(this.nodes);
     }
     /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      * 
      */
     @Export(name="quantityPerSubnet", refs={Integer.class}, tree="[0]")
-    private Output<Integer> quantityPerSubnet;
+    private Output</* @Nullable */ Integer> quantityPerSubnet;
 
     /**
      * @return (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      * 
      */
-    public Output<Integer> quantityPerSubnet() {
-        return this.quantityPerSubnet;
+    public Output<Optional<Integer>> quantityPerSubnet() {
+        return Codegen.optional(this.quantityPerSubnet);
     }
     /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      * 
      */
     @Export(name="sshPublicKey", refs={String.class}, tree="[0]")
-    private Output<String> sshPublicKey;
+    private Output</* @Nullable */ String> sshPublicKey;
 
     /**
      * @return (Updatable) The SSH public key on each node in the node pool on launch.
      * 
      */
-    public Output<String> sshPublicKey() {
-        return this.sshPublicKey;
+    public Output<Optional<String>> sshPublicKey() {
+        return Codegen.optional(this.sshPublicKey);
     }
     /**
      * The state of the nodepool.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the nodepool.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -460,7 +461,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> subnetIds;
+    private Output</* @Nullable */ List<String>> subnetIds;
 
     /**
      * @return (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -469,8 +470,8 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> subnetIds() {
-        return this.subnetIds;
+    public Output<Optional<List<String>>> subnetIds() {
+        return Codegen.optional(this.subnetIds);
     }
 
     /**

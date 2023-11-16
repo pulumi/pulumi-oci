@@ -153,7 +153,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsCurrent;
         /// <summary>
         /// List of MediaWorkflowTaskDeclaration objects.
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.MediaServices
         private GetMediaWorkflowTaskDeclarationResult(
             string? compartmentId,
 
-            string id,
+            string? id,
 
             bool? isCurrent,
 

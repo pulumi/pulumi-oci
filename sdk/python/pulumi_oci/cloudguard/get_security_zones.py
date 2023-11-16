@@ -52,17 +52,11 @@ class GetSecurityZonesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment for the security zone
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The security zone's name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -73,9 +67,6 @@ class GetSecurityZonesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
@@ -90,18 +81,12 @@ class GetSecurityZonesResult:
 
     @property
     @pulumi.getter(name="securityZoneCollections")
-    def security_zone_collections(self) -> Sequence['outputs.GetSecurityZonesSecurityZoneCollectionResult']:
-        """
-        The list of security_zone_collection.
-        """
+    def security_zone_collections(self) -> Optional[Sequence['outputs.GetSecurityZonesSecurityZoneCollectionResult']]:
         return pulumi.get(self, "security_zone_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the security zone
-        """
         return pulumi.get(self, "state")
 
 
@@ -130,31 +115,7 @@ def get_security_zones(compartment_id: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityZonesResult:
     """
-    This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a list of all security zones in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=var["compartment_id"],
-        display_name=var["security_zone_display_name"],
-        id=var["security_zone_id"],
-        is_required_security_zones_in_subtree=var["security_zone_is_required_security_zones_in_subtree"],
-        security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"],
-        state=var["security_zone_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone (`SecurityZone`)
-    :param bool is_required_security_zones_in_subtree: security zones in the subtree
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -188,30 +149,6 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityZonesResult]:
     """
-    This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a list of all security zones in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=var["compartment_id"],
-        display_name=var["security_zone_display_name"],
-        id=var["security_zone_id"],
-        is_required_security_zones_in_subtree=var["security_zone_is_required_security_zones_in_subtree"],
-        security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"],
-        state=var["security_zone_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone (`SecurityZone`)
-    :param bool is_required_security_zones_in_subtree: security zones in the subtree
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     ...

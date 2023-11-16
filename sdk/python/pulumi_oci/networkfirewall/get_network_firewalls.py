@@ -52,25 +52,16 @@ class GetNetworkFirewallsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use the [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -81,33 +72,21 @@ class GetNetworkFirewallsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="networkFirewallCollections")
-    def network_firewall_collections(self) -> Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionResult']:
-        """
-        The list of network_firewall_collection.
-        """
+    def network_firewall_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionResult']]:
         return pulumi.get(self, "network_firewall_collections")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Network Firewall.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_network_firewalls(availability_domain: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallsResult:
     """
-    This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of NetworkFirewalls.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewalls = oci.NetworkFirewall.get_network_firewalls(compartment_id=var["compartment_id"],
-        availability_domain=var["network_firewall_availability_domain"],
-        display_name=var["network_firewall_display_name"],
-        id=var["network_firewall_id"],
-        network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        state=var["network_firewall_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
-    :param str network_firewall_policy_id: A filter to return only resources that match the entire networkFirewallPolicyId given.
-    :param str state: A filter to return only resources with a lifecycleState matching the given value.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -194,30 +149,6 @@ def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Opti
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallsResult]:
     """
-    This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of NetworkFirewalls.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewalls = oci.NetworkFirewall.get_network_firewalls(compartment_id=var["compartment_id"],
-        availability_domain=var["network_firewall_availability_domain"],
-        display_name=var["network_firewall_display_name"],
-        id=var["network_firewall_id"],
-        network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        state=var["network_firewall_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
-    :param str network_firewall_policy_id: A filter to return only resources that match the entire networkFirewallPolicyId given.
-    :param str state: A filter to return only resources with a lifecycleState matching the given value.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -77,7 +77,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="caCertificate", refs={String.class}, tree="[0]")
-    private Output<String> caCertificate;
+    private Output</* @Nullable */ String> caCertificate;
 
     /**
      * @return The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
@@ -93,8 +93,8 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * -----END CERTIFICATE-----
      * 
      */
-    public Output<String> caCertificate() {
-        return this.caCertificate;
+    public Output<Optional<String>> caCertificate() {
+        return Codegen.optional(this.caCertificate);
     }
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
@@ -153,7 +153,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
-    private Output<String> privateKey;
+    private Output</* @Nullable */ String> privateKey;
 
     /**
      * @return The SSL private key for your certificate, in PEM format.
@@ -169,8 +169,8 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * -----END RSA PRIVATE KEY-----
      * 
      */
-    public Output<String> privateKey() {
-        return this.privateKey;
+    public Output<Optional<String>> privateKey() {
+        return Codegen.optional(this.privateKey);
     }
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
@@ -190,7 +190,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="publicCertificate", refs={String.class}, tree="[0]")
-    private Output<String> publicCertificate;
+    private Output</* @Nullable */ String> publicCertificate;
 
     /**
      * @return The public certificate, in PEM format, that you received from your SSL certificate provider.
@@ -209,14 +209,14 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> publicCertificate() {
-        return this.publicCertificate;
+    public Output<Optional<String>> publicCertificate() {
+        return Codegen.optional(this.publicCertificate);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

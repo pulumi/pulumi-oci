@@ -105,12 +105,12 @@ namespace Pulumi.Oci.Mysql
     [OutputType]
     public sealed class GetMysqlDbSystemResult
     {
-        public readonly string AdminPassword;
-        public readonly string AdminUsername;
+        public readonly string? AdminPassword;
+        public readonly string? AdminUsername;
         /// <summary>
         /// The availability domain in which the DB System is placed.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The Backup policy for the DB System.
         /// </summary>
@@ -122,15 +122,15 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The OCID of the compartment the DB System belongs in.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the Configuration to be used for Instances in this DB System.
         /// </summary>
-        public readonly string ConfigurationId;
+        public readonly string? ConfigurationId;
         /// <summary>
         /// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         /// </summary>
-        public readonly string CrashRecovery;
+        public readonly string? CrashRecovery;
         /// <summary>
         /// The availability domain and fault domain a DB System is placed in.
         /// </summary>
@@ -138,11 +138,11 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// Initial size of the data volume in GiBs that will be created and attached.
         /// </summary>
-        public readonly int DataStorageSizeInGb;
+        public readonly int? DataStorageSizeInGb;
         /// <summary>
         /// Whether to enable monitoring via the Database Management service.
         /// </summary>
-        public readonly string DatabaseManagement;
+        public readonly string? DatabaseManagement;
         /// <summary>
         /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The Deletion policy for the DB System.
         /// </summary>
@@ -158,11 +158,11 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// User-provided data about the DB System.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The user-friendly name for the DB System. It does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The network endpoints available for this DB System.
         /// </summary>
@@ -170,11 +170,11 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A summary of a HeatWave cluster.
         /// </summary>
@@ -182,27 +182,27 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         /// </summary>
-        public readonly string HostnameLabel;
+        public readonly string? HostnameLabel;
         /// <summary>
         /// The OCID of the DB System.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
-        public readonly bool IsHeatWaveClusterAttached;
+        public readonly bool? IsHeatWaveClusterAttached;
         /// <summary>
         /// Specifies if the DB System is highly available.
         /// </summary>
-        public readonly bool IsHighlyAvailable;
+        public readonly bool? IsHighlyAvailable;
         /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The Maintenance Policy for the DB System or Read Replica that this model is included in.
         /// </summary>
@@ -210,7 +210,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// Name of the MySQL Version in use for the DB System.
         /// </summary>
-        public readonly string MysqlVersion;
+        public readonly string? MysqlVersion;
         /// <summary>
         /// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         /// </summary>
@@ -218,16 +218,16 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The port for primary endpoint of the DB System to listen on.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         /// </summary>
-        public readonly int PortX;
+        public readonly int? PortX;
         /// <summary>
         /// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
         /// </summary>
-        public readonly string ShapeName;
-        public readonly string ShutdownType;
+        public readonly string? ShapeName;
+        public readonly string? ShutdownType;
         /// <summary>
         /// Parameters detailing how to provision the initial data of the DB System.
         /// </summary>
@@ -235,97 +235,97 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The current state of the DB System.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the subnet the DB System is associated with.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the DB System was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the DB System was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMysqlDbSystemResult(
-            string adminPassword,
+            string? adminPassword,
 
-            string adminUsername,
+            string? adminUsername,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<Outputs.GetMysqlDbSystemBackupPolicyResult> backupPolicies,
 
             ImmutableArray<Outputs.GetMysqlDbSystemChannelResult> channels,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string configurationId,
+            string? configurationId,
 
-            string crashRecovery,
+            string? crashRecovery,
 
             ImmutableArray<Outputs.GetMysqlDbSystemCurrentPlacementResult> currentPlacements,
 
-            int dataStorageSizeInGb,
+            int? dataStorageSizeInGb,
 
-            string databaseManagement,
+            string? databaseManagement,
 
             string dbSystemId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetMysqlDbSystemDeletionPolicyResult> deletionPolicies,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetMysqlDbSystemEndpointResult> endpoints,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<Outputs.GetMysqlDbSystemHeatWaveClusterResult> heatWaveClusters,
 
-            string hostnameLabel,
+            string? hostnameLabel,
 
-            string id,
+            string? id,
 
-            string ipAddress,
+            string? ipAddress,
 
-            bool isHeatWaveClusterAttached,
+            bool? isHeatWaveClusterAttached,
 
-            bool isHighlyAvailable,
+            bool? isHighlyAvailable,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetMysqlDbSystemMaintenanceResult> maintenances,
 
-            string mysqlVersion,
+            string? mysqlVersion,
 
             ImmutableArray<Outputs.GetMysqlDbSystemPointInTimeRecoveryDetailResult> pointInTimeRecoveryDetails,
 
-            int port,
+            int? port,
 
-            int portX,
+            int? portX,
 
-            string shapeName,
+            string? shapeName,
 
-            string shutdownType,
+            string? shutdownType,
 
             ImmutableArray<Outputs.GetMysqlDbSystemSourceResult> sources,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AdminPassword = adminPassword;
             AdminUsername = adminUsername;

@@ -49,9 +49,6 @@ class GetIndexesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -61,7 +58,7 @@ class GetIndexesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,26 +66,17 @@ class GetIndexesResult:
 
     @property
     @pulumi.getter(name="indexCollections")
-    def index_collections(self) -> Sequence['outputs.GetIndexesIndexCollectionResult']:
-        """
-        The list of index_collection.
-        """
+    def index_collections(self) -> Optional[Sequence['outputs.GetIndexesIndexCollectionResult']]:
         return pulumi.get(self, "index_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Index name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of an index.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -119,27 +107,7 @@ def get_indexes(compartment_id: Optional[str] = None,
                 table_name_or_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIndexesResult:
     """
-    This data source provides the list of Indexes in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get a list of indexes on a table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["index_name"],
-        state=var["index_state"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
-    :param str name: A shell-globbing-style (*?[]) filter for names.
-    :param str state: Filter list by the lifecycle state of the item.
-    :param str table_name_or_id: A table name within the compartment, or a table OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        table_name_or_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIndexesResult]:
     """
-    This data source provides the list of Indexes in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get a list of indexes on a table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["index_name"],
-        state=var["index_state"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
-    :param str name: A shell-globbing-style (*?[]) filter for names.
-    :param str state: Filter list by the lifecycle state of the item.
-    :param str table_name_or_id: A table name within the compartment, or a table OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

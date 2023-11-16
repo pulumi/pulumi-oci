@@ -130,7 +130,7 @@ namespace Pulumi.Oci.ApmTraces
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of quick_picks.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.ApmTraces
 
             ImmutableArray<Outputs.GetQueryQuickPicksFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetQueryQuickPicksQuickPickResult> quickPicks)
         {

@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetBackendSetsResult {
      * @return The list of backendsets.
      * 
      */
-    private List<GetBackendSetsBackendset> backendsets;
+    private @Nullable List<GetBackendSetsBackendset> backendsets;
     private @Nullable List<GetBackendSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String loadBalancerId;
 
     private GetBackendSetsResult() {}
@@ -32,7 +33,7 @@ public final class GetBackendSetsResult {
      * 
      */
     public List<GetBackendSetsBackendset> backendsets() {
-        return this.backendsets;
+        return this.backendsets == null ? List.of() : this.backendsets;
     }
     public List<GetBackendSetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -41,8 +42,8 @@ public final class GetBackendSetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -57,9 +58,9 @@ public final class GetBackendSetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackendSetsBackendset> backendsets;
+        private @Nullable List<GetBackendSetsBackendset> backendsets;
         private @Nullable List<GetBackendSetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String loadBalancerId;
         public Builder() {}
         public Builder(GetBackendSetsResult defaults) {
@@ -71,8 +72,8 @@ public final class GetBackendSetsResult {
         }
 
         @CustomType.Setter
-        public Builder backendsets(List<GetBackendSetsBackendset> backendsets) {
-            this.backendsets = Objects.requireNonNull(backendsets);
+        public Builder backendsets(@Nullable List<GetBackendSetsBackendset> backendsets) {
+            this.backendsets = backendsets;
             return this;
         }
         public Builder backendsets(GetBackendSetsBackendset... backendsets) {
@@ -87,8 +88,8 @@ public final class GetBackendSetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

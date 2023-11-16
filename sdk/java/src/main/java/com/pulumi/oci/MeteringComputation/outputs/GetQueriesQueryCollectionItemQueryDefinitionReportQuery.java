@@ -11,6 +11,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
@@ -18,147 +20,147 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
      * @return The compartment depth level.
      * 
      */
-    private Double compartmentDepth;
+    private @Nullable Double compartmentDepth;
     /**
      * @return The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      * 
      */
-    private String dateRangeName;
+    private @Nullable String dateRangeName;
     /**
      * @return The filter object for query usage.
      * 
      */
-    private String filter;
+    private @Nullable String filter;
     /**
      * @return Forecast configuration of usage/cost.
      * 
      */
-    private List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts;
+    private @Nullable List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts;
     /**
      * @return The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
      * 
      */
-    private String granularity;
+    private @Nullable String granularity;
     /**
      * @return Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
-    private List<String> groupBies;
+    private @Nullable List<String> groupBies;
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
-    private List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags;
+    private @Nullable List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags;
     /**
      * @return Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
-    private Boolean isAggregateByTime;
+    private @Nullable Boolean isAggregateByTime;
     /**
      * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
      * 
      */
-    private String queryType;
+    private @Nullable String queryType;
     /**
      * @return Tenant ID.
      * 
      */
-    private String tenantId;
+    private @Nullable String tenantId;
     /**
      * @return The usage end time.
      * 
      */
-    private String timeUsageEnded;
+    private @Nullable String timeUsageEnded;
     /**
      * @return The usage start time.
      * 
      */
-    private String timeUsageStarted;
+    private @Nullable String timeUsageStarted;
 
     private GetQueriesQueryCollectionItemQueryDefinitionReportQuery() {}
     /**
      * @return The compartment depth level.
      * 
      */
-    public Double compartmentDepth() {
-        return this.compartmentDepth;
+    public Optional<Double> compartmentDepth() {
+        return Optional.ofNullable(this.compartmentDepth);
     }
     /**
      * @return The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      * 
      */
-    public String dateRangeName() {
-        return this.dateRangeName;
+    public Optional<String> dateRangeName() {
+        return Optional.ofNullable(this.dateRangeName);
     }
     /**
      * @return The filter object for query usage.
      * 
      */
-    public String filter() {
-        return this.filter;
+    public Optional<String> filter() {
+        return Optional.ofNullable(this.filter);
     }
     /**
      * @return Forecast configuration of usage/cost.
      * 
      */
     public List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts() {
-        return this.forecasts;
+        return this.forecasts == null ? List.of() : this.forecasts;
     }
     /**
      * @return The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
      * 
      */
-    public String granularity() {
-        return this.granularity;
+    public Optional<String> granularity() {
+        return Optional.ofNullable(this.granularity);
     }
     /**
      * @return Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     public List<String> groupBies() {
-        return this.groupBies;
+        return this.groupBies == null ? List.of() : this.groupBies;
     }
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
     public List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags() {
-        return this.groupByTags;
+        return this.groupByTags == null ? List.of() : this.groupByTags;
     }
     /**
      * @return Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
-    public Boolean isAggregateByTime() {
-        return this.isAggregateByTime;
+    public Optional<Boolean> isAggregateByTime() {
+        return Optional.ofNullable(this.isAggregateByTime);
     }
     /**
      * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
      * 
      */
-    public String queryType() {
-        return this.queryType;
+    public Optional<String> queryType() {
+        return Optional.ofNullable(this.queryType);
     }
     /**
      * @return Tenant ID.
      * 
      */
-    public String tenantId() {
-        return this.tenantId;
+    public Optional<String> tenantId() {
+        return Optional.ofNullable(this.tenantId);
     }
     /**
      * @return The usage end time.
      * 
      */
-    public String timeUsageEnded() {
-        return this.timeUsageEnded;
+    public Optional<String> timeUsageEnded() {
+        return Optional.ofNullable(this.timeUsageEnded);
     }
     /**
      * @return The usage start time.
      * 
      */
-    public String timeUsageStarted() {
-        return this.timeUsageStarted;
+    public Optional<String> timeUsageStarted() {
+        return Optional.ofNullable(this.timeUsageStarted);
     }
 
     public static Builder builder() {
@@ -170,18 +172,18 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double compartmentDepth;
-        private String dateRangeName;
-        private String filter;
-        private List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts;
-        private String granularity;
-        private List<String> groupBies;
-        private List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags;
-        private Boolean isAggregateByTime;
-        private String queryType;
-        private String tenantId;
-        private String timeUsageEnded;
-        private String timeUsageStarted;
+        private @Nullable Double compartmentDepth;
+        private @Nullable String dateRangeName;
+        private @Nullable String filter;
+        private @Nullable List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts;
+        private @Nullable String granularity;
+        private @Nullable List<String> groupBies;
+        private @Nullable List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags;
+        private @Nullable Boolean isAggregateByTime;
+        private @Nullable String queryType;
+        private @Nullable String tenantId;
+        private @Nullable String timeUsageEnded;
+        private @Nullable String timeUsageStarted;
         public Builder() {}
         public Builder(GetQueriesQueryCollectionItemQueryDefinitionReportQuery defaults) {
     	      Objects.requireNonNull(defaults);
@@ -200,72 +202,72 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
         }
 
         @CustomType.Setter
-        public Builder compartmentDepth(Double compartmentDepth) {
-            this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
+        public Builder compartmentDepth(@Nullable Double compartmentDepth) {
+            this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
-        public Builder dateRangeName(String dateRangeName) {
-            this.dateRangeName = Objects.requireNonNull(dateRangeName);
+        public Builder dateRangeName(@Nullable String dateRangeName) {
+            this.dateRangeName = dateRangeName;
             return this;
         }
         @CustomType.Setter
-        public Builder filter(String filter) {
-            this.filter = Objects.requireNonNull(filter);
+        public Builder filter(@Nullable String filter) {
+            this.filter = filter;
             return this;
         }
         @CustomType.Setter
-        public Builder forecasts(List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts) {
-            this.forecasts = Objects.requireNonNull(forecasts);
+        public Builder forecasts(@Nullable List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts) {
+            this.forecasts = forecasts;
             return this;
         }
         public Builder forecasts(GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast... forecasts) {
             return forecasts(List.of(forecasts));
         }
         @CustomType.Setter
-        public Builder granularity(String granularity) {
-            this.granularity = Objects.requireNonNull(granularity);
+        public Builder granularity(@Nullable String granularity) {
+            this.granularity = granularity;
             return this;
         }
         @CustomType.Setter
-        public Builder groupBies(List<String> groupBies) {
-            this.groupBies = Objects.requireNonNull(groupBies);
+        public Builder groupBies(@Nullable List<String> groupBies) {
+            this.groupBies = groupBies;
             return this;
         }
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder groupByTags(List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags) {
-            this.groupByTags = Objects.requireNonNull(groupByTags);
+        public Builder groupByTags(@Nullable List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags) {
+            this.groupByTags = groupByTags;
             return this;
         }
         public Builder groupByTags(GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag... groupByTags) {
             return groupByTags(List.of(groupByTags));
         }
         @CustomType.Setter
-        public Builder isAggregateByTime(Boolean isAggregateByTime) {
-            this.isAggregateByTime = Objects.requireNonNull(isAggregateByTime);
+        public Builder isAggregateByTime(@Nullable Boolean isAggregateByTime) {
+            this.isAggregateByTime = isAggregateByTime;
             return this;
         }
         @CustomType.Setter
-        public Builder queryType(String queryType) {
-            this.queryType = Objects.requireNonNull(queryType);
+        public Builder queryType(@Nullable String queryType) {
+            this.queryType = queryType;
             return this;
         }
         @CustomType.Setter
-        public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+        public Builder tenantId(@Nullable String tenantId) {
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUsageEnded(String timeUsageEnded) {
-            this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
+        public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
+            this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUsageStarted(String timeUsageStarted) {
-            this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
+        public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
+            this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         public GetQueriesQueryCollectionItemQueryDefinitionReportQuery build() {

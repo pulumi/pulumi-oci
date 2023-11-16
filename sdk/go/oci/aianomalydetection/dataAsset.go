@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -100,26 +99,26 @@ type DataAsset struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the Ai data asset
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// OCID of Private Endpoint.
-	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
+	PrivateEndpointId pulumi.StringPtrOutput `pulumi:"privateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The lifecycle state of the Data Asset.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the DataAsset was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the the DataAsset was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDataAsset registers a new resource with the given unique name, arguments, and options.
@@ -292,12 +291,6 @@ func (i *DataAsset) ToDataAssetOutputWithContext(ctx context.Context) DataAssetO
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetOutput)
 }
 
-func (i *DataAsset) ToOutput(ctx context.Context) pulumix.Output[*DataAsset] {
-	return pulumix.Output[*DataAsset]{
-		OutputState: i.ToDataAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataAssetArrayInput is an input type that accepts DataAssetArray and DataAssetArrayOutput values.
 // You can construct a concrete instance of `DataAssetArrayInput` via:
 //
@@ -321,12 +314,6 @@ func (i DataAssetArray) ToDataAssetArrayOutput() DataAssetArrayOutput {
 
 func (i DataAssetArray) ToDataAssetArrayOutputWithContext(ctx context.Context) DataAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetArrayOutput)
-}
-
-func (i DataAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataAsset] {
-	return pulumix.Output[[]*DataAsset]{
-		OutputState: i.ToDataAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataAssetMapInput is an input type that accepts DataAssetMap and DataAssetMapOutput values.
@@ -354,12 +341,6 @@ func (i DataAssetMap) ToDataAssetMapOutputWithContext(ctx context.Context) DataA
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetMapOutput)
 }
 
-func (i DataAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataAsset] {
-	return pulumix.Output[map[string]*DataAsset]{
-		OutputState: i.ToDataAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataAssetOutput struct{ *pulumi.OutputState }
 
 func (DataAssetOutput) ElementType() reflect.Type {
@@ -372,12 +353,6 @@ func (o DataAssetOutput) ToDataAssetOutput() DataAssetOutput {
 
 func (o DataAssetOutput) ToDataAssetOutputWithContext(ctx context.Context) DataAssetOutput {
 	return o
-}
-
-func (o DataAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*DataAsset] {
-	return pulumix.Output[*DataAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID for the data asset's compartment.
@@ -396,13 +371,13 @@ func (o DataAssetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the Ai data asset
-func (o DataAssetOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DataAssetOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-func (o DataAssetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DataAssetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -411,8 +386,8 @@ func (o DataAssetOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // OCID of Private Endpoint.
-func (o DataAssetOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o DataAssetOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringPtrOutput { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
@@ -424,8 +399,8 @@ func (o DataAssetOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The lifecycle state of the Data Asset.
-func (o DataAssetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DataAssetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -434,13 +409,13 @@ func (o DataAssetOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the DataAsset was created. An RFC3339 formatted datetime string
-func (o DataAssetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DataAssetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the the DataAsset was updated. An RFC3339 formatted datetime string
-func (o DataAssetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DataAssetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DataAssetArrayOutput struct{ *pulumi.OutputState }
@@ -455,12 +430,6 @@ func (o DataAssetArrayOutput) ToDataAssetArrayOutput() DataAssetArrayOutput {
 
 func (o DataAssetArrayOutput) ToDataAssetArrayOutputWithContext(ctx context.Context) DataAssetArrayOutput {
 	return o
-}
-
-func (o DataAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataAsset] {
-	return pulumix.Output[[]*DataAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataAssetArrayOutput) Index(i pulumi.IntInput) DataAssetOutput {
@@ -481,12 +450,6 @@ func (o DataAssetMapOutput) ToDataAssetMapOutput() DataAssetMapOutput {
 
 func (o DataAssetMapOutput) ToDataAssetMapOutputWithContext(ctx context.Context) DataAssetMapOutput {
 	return o
-}
-
-func (o DataAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataAsset] {
-	return pulumix.Output[map[string]*DataAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataAssetMapOutput) MapIndex(k pulumi.StringInput) DataAssetOutput {

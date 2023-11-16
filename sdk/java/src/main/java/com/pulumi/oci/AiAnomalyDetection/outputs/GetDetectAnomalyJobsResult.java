@@ -23,7 +23,7 @@ public final class GetDetectAnomalyJobsResult {
      * @return The list of detect_anomaly_job_collection.
      * 
      */
-    private List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections;
+    private @Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections;
     private @Nullable String detectAnomalyJobId;
     /**
      * @return Detect anomaly job display name.
@@ -35,7 +35,7 @@ public final class GetDetectAnomalyJobsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the trained model.
      * 
@@ -65,7 +65,7 @@ public final class GetDetectAnomalyJobsResult {
      * 
      */
     public List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections() {
-        return this.detectAnomalyJobCollections;
+        return this.detectAnomalyJobCollections == null ? List.of() : this.detectAnomalyJobCollections;
     }
     public Optional<String> detectAnomalyJobId() {
         return Optional.ofNullable(this.detectAnomalyJobId);
@@ -84,8 +84,8 @@ public final class GetDetectAnomalyJobsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the trained model.
@@ -119,11 +119,11 @@ public final class GetDetectAnomalyJobsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections;
+        private @Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections;
         private @Nullable String detectAnomalyJobId;
         private @Nullable String displayName;
         private @Nullable List<GetDetectAnomalyJobsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String modelId;
         private @Nullable String projectId;
         private @Nullable String state;
@@ -147,8 +147,8 @@ public final class GetDetectAnomalyJobsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder detectAnomalyJobCollections(List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections) {
-            this.detectAnomalyJobCollections = Objects.requireNonNull(detectAnomalyJobCollections);
+        public Builder detectAnomalyJobCollections(@Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections) {
+            this.detectAnomalyJobCollections = detectAnomalyJobCollections;
             return this;
         }
         public Builder detectAnomalyJobCollections(GetDetectAnomalyJobsDetectAnomalyJobCollection... detectAnomalyJobCollections) {
@@ -173,8 +173,8 @@ public final class GetDetectAnomalyJobsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

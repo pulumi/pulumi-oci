@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The minimum network bandwidth for the model deployment.
         /// </summary>
-        public readonly int BandwidthMbps;
+        public readonly int? BandwidthMbps;
         /// <summary>
         /// The model deployment instance configuration
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The OCID of the model you want to deploy.
         /// </summary>
-        public readonly string ModelId;
+        public readonly string? ModelId;
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult(
-            int bandwidthMbps,
+            int? bandwidthMbps,
 
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult> instanceConfigurations,
 
-            string modelId,
+            string? modelId,
 
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult> scalingPolicies)
         {

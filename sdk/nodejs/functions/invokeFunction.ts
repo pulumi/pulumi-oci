@@ -60,15 +60,15 @@ export class InvokeFunction extends pulumi.CustomResource {
     /**
      * Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    public /*out*/ readonly content!: pulumi.Output<string>;
+    public /*out*/ readonly content!: pulumi.Output<string | undefined>;
     /**
      * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
      */
-    public readonly fnIntent!: pulumi.Output<string>;
+    public readonly fnIntent!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
      */
-    public readonly fnInvokeType!: pulumi.Output<string>;
+    public readonly fnInvokeType!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
      */
@@ -80,12 +80,12 @@ export class InvokeFunction extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly inputBodySourcePath!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly invokeEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly invokeEndpoint!: pulumi.Output<string | undefined>;
     /**
      * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
      */
-    public readonly invokeFunctionBody!: pulumi.Output<string>;
-    public readonly invokeFunctionBodyBase64Encoded!: pulumi.Output<string>;
+    public readonly invokeFunctionBody!: pulumi.Output<string | undefined>;
+    public readonly invokeFunctionBodyBase64Encoded!: pulumi.Output<string | undefined>;
 
     /**
      * Create a InvokeFunction resource with the given unique name, arguments, and options.

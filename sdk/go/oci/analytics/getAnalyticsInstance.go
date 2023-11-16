@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -63,36 +62,36 @@ type LookupAnalyticsInstanceResult struct {
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacities []GetAnalyticsInstanceCapacity `pulumi:"capacities"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the vanity url.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Email address receiving notifications.
-	EmailNotification string `pulumi:"emailNotification"`
+	EmailNotification *string `pulumi:"emailNotification"`
 	// Analytics feature set.
-	FeatureSet string `pulumi:"featureSet"`
+	FeatureSet *string `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
-	Id              string `pulumi:"id"`
-	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	Id              *string `pulumi:"id"`
+	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The license used for the service.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetAnalyticsInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// URL of the Analytics service.
-	ServiceUrl string `pulumi:"serviceUrl"`
+	ServiceUrl *string `pulumi:"serviceUrl"`
 	// The current state of an instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAnalyticsInstanceOutput(ctx *pulumi.Context, args LookupAnalyticsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstanceResultOutput {
@@ -133,12 +132,6 @@ func (o LookupAnalyticsInstanceResultOutput) ToLookupAnalyticsInstanceResultOutp
 	return o
 }
 
-func (o LookupAnalyticsInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAnalyticsInstanceResult] {
-	return pulumix.Output[LookupAnalyticsInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAnalyticsInstanceResultOutput) AnalyticsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.AnalyticsInstanceId }).(pulumi.StringOutput)
 }
@@ -149,8 +142,8 @@ func (o LookupAnalyticsInstanceResultOutput) Capacities() GetAnalyticsInstanceCa
 }
 
 // The OCID of the compartment.
-func (o LookupAnalyticsInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -159,18 +152,18 @@ func (o LookupAnalyticsInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the vanity url.
-func (o LookupAnalyticsInstanceResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Email address receiving notifications.
-func (o LookupAnalyticsInstanceResultOutput) EmailNotification() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.EmailNotification }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) EmailNotification() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.EmailNotification }).(pulumi.StringPtrOutput)
 }
 
 // Analytics feature set.
-func (o LookupAnalyticsInstanceResultOutput) FeatureSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.FeatureSet }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) FeatureSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.FeatureSet }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -179,27 +172,27 @@ func (o LookupAnalyticsInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Virtual Cloud Network OCID.
-func (o LookupAnalyticsInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAnalyticsInstanceResultOutput) IdcsAccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) IdcsAccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.IdcsAccessToken }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-func (o LookupAnalyticsInstanceResultOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The license used for the service.
-func (o LookupAnalyticsInstanceResultOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-func (o LookupAnalyticsInstanceResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Base representation of a network endpoint.
@@ -210,23 +203,23 @@ func (o LookupAnalyticsInstanceResultOutput) NetworkEndpointDetails() GetAnalyti
 }
 
 // URL of the Analytics service.
-func (o LookupAnalyticsInstanceResultOutput) ServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.ServiceUrl }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) ServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.ServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The current state of an instance.
-func (o LookupAnalyticsInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupAnalyticsInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-func (o LookupAnalyticsInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

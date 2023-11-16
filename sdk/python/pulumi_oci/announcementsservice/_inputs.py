@@ -21,10 +21,6 @@ class AnnouncementSubscriptionFilterGroupsArgs:
     def __init__(__self__, *,
                  filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]],
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
-        :param pulumi.Input[str] name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-        """
         pulumi.set(__self__, "filters", filters)
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -32,9 +28,6 @@ class AnnouncementSubscriptionFilterGroupsArgs:
     @property
     @pulumi.getter
     def filters(self) -> pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]]:
-        """
-        A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -44,9 +37,6 @@ class AnnouncementSubscriptionFilterGroupsArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -59,19 +49,12 @@ class AnnouncementSubscriptionFilterGroupsFilterArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] type: The type of filter.
-        :param pulumi.Input[str] value: The value of the filter.
-        """
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of filter.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -81,9 +64,6 @@ class AnnouncementSubscriptionFilterGroupsFilterArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        The value of the filter.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -96,19 +76,12 @@ class AnnouncementSubscriptionsFilterGroupFilterArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of filter.
-        :param pulumi.Input[str] value: (Updatable) The value of the filter.
-        """
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of filter.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -118,9 +91,6 @@ class AnnouncementSubscriptionsFilterGroupFilterArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the filter.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -134,9 +104,6 @@ class GetAnnouncementSubscriptionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -145,9 +112,6 @@ class GetAnnouncementSubscriptionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

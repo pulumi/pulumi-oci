@@ -6,6 +6,8 @@ package com.pulumi.oci.DataFlow.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule {
@@ -13,39 +15,39 @@ public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationA
      * @return The type of IP notation.
      * 
      */
-    private String ipNotation;
+    private @Nullable String ipNotation;
     /**
      * @return The associated value of the selected IP notation.
      * 
      */
-    private String value;
+    private @Nullable String value;
     /**
      * @return A comma-separated IP or CIDR address for VCN OCID IP notation selection.
      * 
      */
-    private String vcnIps;
+    private @Nullable String vcnIps;
 
     private GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule() {}
     /**
      * @return The type of IP notation.
      * 
      */
-    public String ipNotation() {
-        return this.ipNotation;
+    public Optional<String> ipNotation() {
+        return Optional.ofNullable(this.ipNotation);
     }
     /**
      * @return The associated value of the selected IP notation.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
     /**
      * @return A comma-separated IP or CIDR address for VCN OCID IP notation selection.
      * 
      */
-    public String vcnIps() {
-        return this.vcnIps;
+    public Optional<String> vcnIps() {
+        return Optional.ofNullable(this.vcnIps);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationA
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipNotation;
-        private String value;
-        private String vcnIps;
+        private @Nullable String ipNotation;
+        private @Nullable String value;
+        private @Nullable String vcnIps;
         public Builder() {}
         public Builder(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationA
         }
 
         @CustomType.Setter
-        public Builder ipNotation(String ipNotation) {
-            this.ipNotation = Objects.requireNonNull(ipNotation);
+        public Builder ipNotation(@Nullable String ipNotation) {
+            this.ipNotation = ipNotation;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnIps(String vcnIps) {
-            this.vcnIps = Objects.requireNonNull(vcnIps);
+        public Builder vcnIps(@Nullable String vcnIps) {
+            this.vcnIps = vcnIps;
             return this;
         }
         public GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule build() {

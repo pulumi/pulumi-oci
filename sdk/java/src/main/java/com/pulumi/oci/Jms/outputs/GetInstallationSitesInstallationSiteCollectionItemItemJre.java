@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
@@ -13,51 +15,51 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
      */
-    private String distribution;
+    private @Nullable String distribution;
     /**
      * @return The unique identifier for a Java Runtime.
      * 
      */
-    private String jreKey;
+    private @Nullable String jreKey;
     /**
      * @return The vendor of the Java Runtime.
      * 
      */
-    private String vendor;
+    private @Nullable String vendor;
     /**
      * @return The version of the operating system as provided by the Java system property os.version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetInstallationSitesInstallationSiteCollectionItemItemJre() {}
     /**
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
      */
-    public String distribution() {
-        return this.distribution;
+    public Optional<String> distribution() {
+        return Optional.ofNullable(this.distribution);
     }
     /**
      * @return The unique identifier for a Java Runtime.
      * 
      */
-    public String jreKey() {
-        return this.jreKey;
+    public Optional<String> jreKey() {
+        return Optional.ofNullable(this.jreKey);
     }
     /**
      * @return The vendor of the Java Runtime.
      * 
      */
-    public String vendor() {
-        return this.vendor;
+    public Optional<String> vendor() {
+        return Optional.ofNullable(this.vendor);
     }
     /**
      * @return The version of the operating system as provided by the Java system property os.version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String distribution;
-        private String jreKey;
-        private String vendor;
-        private String version;
+        private @Nullable String distribution;
+        private @Nullable String jreKey;
+        private @Nullable String vendor;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollectionItemItemJre defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
         }
 
         @CustomType.Setter
-        public Builder distribution(String distribution) {
-            this.distribution = Objects.requireNonNull(distribution);
+        public Builder distribution(@Nullable String distribution) {
+            this.distribution = distribution;
             return this;
         }
         @CustomType.Setter
-        public Builder jreKey(String jreKey) {
-            this.jreKey = Objects.requireNonNull(jreKey);
+        public Builder jreKey(@Nullable String jreKey) {
+            this.jreKey = jreKey;
             return this;
         }
         @CustomType.Setter
-        public Builder vendor(String vendor) {
-            this.vendor = Objects.requireNonNull(vendor);
+        public Builder vendor(@Nullable String vendor) {
+            this.vendor = vendor;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItemItemJre build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore {
@@ -14,87 +16,87 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return Last update timestamp for the risk score
      * 
      */
-    private String lastUpdateTimestamp;
+    private @Nullable String lastUpdateTimestamp;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Risk Level
      * 
      */
-    private String riskLevel;
+    private @Nullable String riskLevel;
     /**
      * @return Risk Score value
      * 
      */
-    private Integer score;
+    private @Nullable Integer score;
     /**
      * @return Risk Provider Profile Source
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore() {}
     /**
      * @return Last update timestamp for the risk score
      * 
      */
-    public String lastUpdateTimestamp() {
-        return this.lastUpdateTimestamp;
+    public Optional<String> lastUpdateTimestamp() {
+        return Optional.ofNullable(this.lastUpdateTimestamp);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Risk Level
      * 
      */
-    public String riskLevel() {
-        return this.riskLevel;
+    public Optional<String> riskLevel() {
+        return Optional.ofNullable(this.riskLevel);
     }
     /**
      * @return Risk Score value
      * 
      */
-    public Integer score() {
-        return this.score;
+    public Optional<Integer> score() {
+        return Optional.ofNullable(this.score);
     }
     /**
      * @return Risk Provider Profile Source
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lastUpdateTimestamp;
-        private String ref;
-        private String riskLevel;
-        private Integer score;
-        private String source;
-        private String status;
-        private String value;
+        private @Nullable String lastUpdateTimestamp;
+        private @Nullable String ref;
+        private @Nullable String riskLevel;
+        private @Nullable Integer score;
+        private @Nullable String source;
+        private @Nullable String status;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder lastUpdateTimestamp(String lastUpdateTimestamp) {
-            this.lastUpdateTimestamp = Objects.requireNonNull(lastUpdateTimestamp);
+        public Builder lastUpdateTimestamp(@Nullable String lastUpdateTimestamp) {
+            this.lastUpdateTimestamp = lastUpdateTimestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+        public Builder riskLevel(@Nullable String riskLevel) {
+            this.riskLevel = riskLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder score(Integer score) {
-            this.score = Objects.requireNonNull(score);
+        public Builder score(@Nullable Integer score) {
+            this.score = score;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore build() {

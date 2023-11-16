@@ -8,18 +8,20 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoSca
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule {
-    private String action;
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
+    private @Nullable String action;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule() {}
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
+        private @Nullable String action;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric... metrics) {

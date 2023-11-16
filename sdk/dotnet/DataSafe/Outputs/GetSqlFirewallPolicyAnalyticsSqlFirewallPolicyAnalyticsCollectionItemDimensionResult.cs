@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Specifies the SQL firewall policy enforcement option.
         /// </summary>
-        public readonly string EnforcementScope;
+        public readonly string? EnforcementScope;
         /// <summary>
         /// An optional filter to return only resources that match the specified OCID of the security policy resource.
         /// </summary>
-        public readonly string SecurityPolicyId;
+        public readonly string? SecurityPolicyId;
         /// <summary>
         /// The current state of the SQL firewall policy.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Specifies the mode in which the SQL firewall policy is enabled.
         /// </summary>
-        public readonly string ViolationAction;
+        public readonly string? ViolationAction;
 
         [OutputConstructor]
         private GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionResult(
-            string enforcementScope,
+            string? enforcementScope,
 
-            string securityPolicyId,
+            string? securityPolicyId,
 
-            string state,
+            string? state,
 
-            string violationAction)
+            string? violationAction)
         {
             EnforcementScope = enforcementScope;
             SecurityPolicyId = securityPolicyId;

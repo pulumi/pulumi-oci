@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstallationSitesInstallationSiteCollectionItemItemBlocklist {
@@ -13,27 +15,27 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemBlockli
      * @return The operation type.
      * 
      */
-    private String operation;
+    private @Nullable String operation;
     /**
      * @return The reason why the operation is blocklisted.
      * 
      */
-    private String reason;
+    private @Nullable String reason;
 
     private GetInstallationSitesInstallationSiteCollectionItemItemBlocklist() {}
     /**
      * @return The operation type.
      * 
      */
-    public String operation() {
-        return this.operation;
+    public Optional<String> operation() {
+        return Optional.ofNullable(this.operation);
     }
     /**
      * @return The reason why the operation is blocklisted.
      * 
      */
-    public String reason() {
-        return this.reason;
+    public Optional<String> reason() {
+        return Optional.ofNullable(this.reason);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemBlockli
     }
     @CustomType.Builder
     public static final class Builder {
-        private String operation;
-        private String reason;
+        private @Nullable String operation;
+        private @Nullable String reason;
         public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollectionItemItemBlocklist defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemBlockli
         }
 
         @CustomType.Setter
-        public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+        public Builder operation(@Nullable String operation) {
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
-        public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+        public Builder reason(@Nullable String reason) {
+            this.reason = reason;
             return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItemItemBlocklist build() {

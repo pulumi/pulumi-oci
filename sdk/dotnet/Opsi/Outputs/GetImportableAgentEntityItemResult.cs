@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Source of the importable agent entity.
         /// </summary>
-        public readonly string EntitySource;
+        public readonly string? EntitySource;
         /// <summary>
         /// The host name. The host name is unique amongst the hosts managed by the same management agent.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
         /// </summary>
-        public readonly string ManagementAgentDisplayName;
+        public readonly string? ManagementAgentDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         /// </summary>
-        public readonly string ManagementAgentId;
+        public readonly string? ManagementAgentId;
         /// <summary>
         /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
         /// </summary>
-        public readonly string PlatformType;
+        public readonly string? PlatformType;
 
         [OutputConstructor]
         private GetImportableAgentEntityItemResult(
-            string entitySource,
+            string? entitySource,
 
-            string hostName,
+            string? hostName,
 
-            string managementAgentDisplayName,
+            string? managementAgentDisplayName,
 
-            string managementAgentId,
+            string? managementAgentId,
 
-            string platformType)
+            string? platformType)
         {
             EntitySource = entitySource;
             HostName = hostName;

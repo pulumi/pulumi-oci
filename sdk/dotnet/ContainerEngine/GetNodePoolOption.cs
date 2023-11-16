@@ -123,7 +123,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `node_image_name` property.
         /// </summary>
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.ContainerEngine
         private GetNodePoolOptionResult(
             string? compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> images,
 

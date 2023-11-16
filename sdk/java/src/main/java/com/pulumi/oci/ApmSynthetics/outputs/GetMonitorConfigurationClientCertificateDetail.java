@@ -8,6 +8,7 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationClientCertifi
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationClientCertificateDetailPrivateKey;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorConfigurationClientCertificateDetail {
@@ -15,12 +16,12 @@ public final class GetMonitorConfigurationClientCertificateDetail {
      * @return Client certificate in PEM format.
      * 
      */
-    private List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates;
+    private @Nullable List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates;
     /**
      * @return The private key associated with the client certificate in PEM format.
      * 
      */
-    private List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys;
+    private @Nullable List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys;
 
     private GetMonitorConfigurationClientCertificateDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetMonitorConfigurationClientCertificateDetail {
      * 
      */
     public List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates() {
-        return this.clientCertificates;
+        return this.clientCertificates == null ? List.of() : this.clientCertificates;
     }
     /**
      * @return The private key associated with the client certificate in PEM format.
      * 
      */
     public List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys() {
-        return this.privateKeys;
+        return this.privateKeys == null ? List.of() : this.privateKeys;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetMonitorConfigurationClientCertificateDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates;
-        private List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys;
+        private @Nullable List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates;
+        private @Nullable List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys;
         public Builder() {}
         public Builder(GetMonitorConfigurationClientCertificateDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetMonitorConfigurationClientCertificateDetail {
         }
 
         @CustomType.Setter
-        public Builder clientCertificates(List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates) {
-            this.clientCertificates = Objects.requireNonNull(clientCertificates);
+        public Builder clientCertificates(@Nullable List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates) {
+            this.clientCertificates = clientCertificates;
             return this;
         }
         public Builder clientCertificates(GetMonitorConfigurationClientCertificateDetailClientCertificate... clientCertificates) {
             return clientCertificates(List.of(clientCertificates));
         }
         @CustomType.Setter
-        public Builder privateKeys(List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys) {
-            this.privateKeys = Objects.requireNonNull(privateKeys);
+        public Builder privateKeys(@Nullable List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys) {
+            this.privateKeys = privateKeys;
             return this;
         }
         public Builder privateKeys(GetMonitorConfigurationClientCertificateDetailPrivateKey... privateKeys) {

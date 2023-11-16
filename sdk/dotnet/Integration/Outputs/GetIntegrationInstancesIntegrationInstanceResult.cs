@@ -24,11 +24,11 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The entitlement used for billing purposes.
         /// </summary>
-        public readonly string ConsumptionModel;
+        public readonly string? ConsumptionModel;
         /// <summary>
         /// Details for a custom endpoint for the integration instance.
         /// </summary>
@@ -36,22 +36,22 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
-        public readonly string DomainId;
-        public readonly int EnableProcessAutomationTrigger;
+        public readonly string? DisplayName;
+        public readonly string? DomainId;
+        public readonly int? EnableProcessAutomationTrigger;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The Virtual Cloud Network OCID.
         /// </summary>
-        public readonly string Id;
-        public readonly string IdcsAt;
+        public readonly string? Id;
+        public readonly string? IdcsAt;
         /// <summary>
         /// Information for IDCS access
         /// </summary>
@@ -59,27 +59,27 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// The Integration Instance URL.
         /// </summary>
-        public readonly string InstanceUrl;
+        public readonly string? InstanceUrl;
         /// <summary>
         /// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
-        public readonly string IntegrationInstanceType;
+        public readonly string? IntegrationInstanceType;
         /// <summary>
         /// Bring your own license.
         /// </summary>
-        public readonly bool IsByol;
+        public readonly bool? IsByol;
         /// <summary>
         /// The file server is enabled or not.
         /// </summary>
-        public readonly bool IsFileServerEnabled;
+        public readonly bool? IsFileServerEnabled;
         /// <summary>
         /// Visual Builder is enabled or not.
         /// </summary>
-        public readonly bool IsVisualBuilderEnabled;
+        public readonly bool? IsVisualBuilderEnabled;
         /// <summary>
         /// The number of configured message packs (if any)
         /// </summary>
-        public readonly int MessagePacks;
+        public readonly int? MessagePacks;
         /// <summary>
         /// Base representation of a network endpoint.
         /// </summary>
@@ -87,23 +87,23 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// Shape
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// Life cycle state to query on.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string StateMessage;
+        public readonly string? StateMessage;
         /// <summary>
         /// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetIntegrationInstancesIntegrationInstanceResult(
@@ -111,51 +111,51 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult> attachments,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string consumptionModel,
+            string? consumptionModel,
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult> customEndpoints,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string domainId,
+            string? domainId,
 
-            int enableProcessAutomationTrigger,
+            int? enableProcessAutomationTrigger,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string idcsAt,
+            string? idcsAt,
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfoResult> idcsInfos,
 
-            string instanceUrl,
+            string? instanceUrl,
 
-            string integrationInstanceType,
+            string? integrationInstanceType,
 
-            bool isByol,
+            bool? isByol,
 
-            bool isFileServerEnabled,
+            bool? isFileServerEnabled,
 
-            bool isVisualBuilderEnabled,
+            bool? isVisualBuilderEnabled,
 
-            int messagePacks,
+            int? messagePacks,
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult> networkEndpointDetails,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            string stateMessage,
+            string? stateMessage,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AlternateCustomEndpoints = alternateCustomEndpoints;
             Attachments = attachments;

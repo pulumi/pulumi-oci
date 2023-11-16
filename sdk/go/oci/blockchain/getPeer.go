@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
@@ -63,22 +62,22 @@ type LookupPeerArgs struct {
 // A collection of values returned by getPeer.
 type LookupPeerResult struct {
 	// Availability Domain of peer
-	Ad string `pulumi:"ad"`
+	Ad *string `pulumi:"ad"`
 	// peer alias
-	Alias                string `pulumi:"alias"`
-	BlockchainPlatformId string `pulumi:"blockchainPlatformId"`
+	Alias                *string `pulumi:"alias"`
+	BlockchainPlatformId string  `pulumi:"blockchainPlatformId"`
 	// Host on which the Peer exists
-	Host string `pulumi:"host"`
-	Id   string `pulumi:"id"`
+	Host *string `pulumi:"host"`
+	Id   *string `pulumi:"id"`
 	// OCPU allocation parameter
 	OcpuAllocationParams []GetPeerOcpuAllocationParam `pulumi:"ocpuAllocationParams"`
 	PeerId               string                       `pulumi:"peerId"`
 	// peer identifier
-	PeerKey string `pulumi:"peerKey"`
+	PeerKey *string `pulumi:"peerKey"`
 	// Peer role
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 	// The current state of the peer.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 func LookupPeerOutput(ctx *pulumi.Context, args LookupPeerOutputArgs, opts ...pulumi.InvokeOption) LookupPeerResultOutput {
@@ -121,20 +120,14 @@ func (o LookupPeerResultOutput) ToLookupPeerResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o LookupPeerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPeerResult] {
-	return pulumix.Output[LookupPeerResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Availability Domain of peer
-func (o LookupPeerResultOutput) Ad() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPeerResult) string { return v.Ad }).(pulumi.StringOutput)
+func (o LookupPeerResultOutput) Ad() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPeerResult) *string { return v.Ad }).(pulumi.StringPtrOutput)
 }
 
 // peer alias
-func (o LookupPeerResultOutput) Alias() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPeerResult) string { return v.Alias }).(pulumi.StringOutput)
+func (o LookupPeerResultOutput) Alias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPeerResult) *string { return v.Alias }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPeerResultOutput) BlockchainPlatformId() pulumi.StringOutput {
@@ -142,12 +135,12 @@ func (o LookupPeerResultOutput) BlockchainPlatformId() pulumi.StringOutput {
 }
 
 // Host on which the Peer exists
-func (o LookupPeerResultOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPeerResult) string { return v.Host }).(pulumi.StringOutput)
+func (o LookupPeerResultOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPeerResult) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupPeerResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPeerResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPeerResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPeerResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // OCPU allocation parameter
@@ -160,18 +153,18 @@ func (o LookupPeerResultOutput) PeerId() pulumi.StringOutput {
 }
 
 // peer identifier
-func (o LookupPeerResultOutput) PeerKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPeerResult) string { return v.PeerKey }).(pulumi.StringOutput)
+func (o LookupPeerResultOutput) PeerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPeerResult) *string { return v.PeerKey }).(pulumi.StringPtrOutput)
 }
 
 // Peer role
-func (o LookupPeerResultOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPeerResult) string { return v.Role }).(pulumi.StringOutput)
+func (o LookupPeerResultOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPeerResult) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the peer.
-func (o LookupPeerResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPeerResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPeerResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPeerResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

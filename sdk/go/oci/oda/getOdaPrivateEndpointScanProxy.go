@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -63,19 +62,19 @@ type LookupOdaPrivateEndpointScanProxyArgs struct {
 // A collection of values returned by getOdaPrivateEndpointScanProxy.
 type LookupOdaPrivateEndpointScanProxyResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-	Id                            string `pulumi:"id"`
-	OdaPrivateEndpointId          string `pulumi:"odaPrivateEndpointId"`
-	OdaPrivateEndpointScanProxyId string `pulumi:"odaPrivateEndpointScanProxyId"`
+	Id                            *string `pulumi:"id"`
+	OdaPrivateEndpointId          string  `pulumi:"odaPrivateEndpointId"`
+	OdaPrivateEndpointScanProxyId string  `pulumi:"odaPrivateEndpointScanProxyId"`
 	// The protocol used for communication between client, scanProxy and RAC's scan listeners
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos []GetOdaPrivateEndpointScanProxyScanListenerInfo `pulumi:"scanListenerInfos"`
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
-	ScanListenerType string `pulumi:"scanListenerType"`
+	ScanListenerType *string `pulumi:"scanListenerType"`
 	// The current state of the ODA Private Endpoint Scan Proxy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupOdaPrivateEndpointScanProxyOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointScanProxyOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointScanProxyResultOutput {
@@ -118,15 +117,9 @@ func (o LookupOdaPrivateEndpointScanProxyResultOutput) ToLookupOdaPrivateEndpoin
 	return o
 }
 
-func (o LookupOdaPrivateEndpointScanProxyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOdaPrivateEndpointScanProxyResult] {
-	return pulumix.Output[LookupOdaPrivateEndpointScanProxyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-func (o LookupOdaPrivateEndpointScanProxyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointScanProxyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOdaPrivateEndpointScanProxyResultOutput) OdaPrivateEndpointId() pulumi.StringOutput {
@@ -138,8 +131,8 @@ func (o LookupOdaPrivateEndpointScanProxyResultOutput) OdaPrivateEndpointScanPro
 }
 
 // The protocol used for communication between client, scanProxy and RAC's scan listeners
-func (o LookupOdaPrivateEndpointScanProxyResultOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) string { return v.Protocol }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointScanProxyResultOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -150,18 +143,18 @@ func (o LookupOdaPrivateEndpointScanProxyResultOutput) ScanListenerInfos() GetOd
 }
 
 // Type indicating whether Scan listener is specified by its FQDN or list of IPs
-func (o LookupOdaPrivateEndpointScanProxyResultOutput) ScanListenerType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) string { return v.ScanListenerType }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointScanProxyResultOutput) ScanListenerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) *string { return v.ScanListenerType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the ODA Private Endpoint Scan Proxy.
-func (o LookupOdaPrivateEndpointScanProxyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointScanProxyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o LookupOdaPrivateEndpointScanProxyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointScanProxyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointScanProxyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

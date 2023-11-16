@@ -77,11 +77,11 @@ export interface GetReplicationSchedulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of replication_schedule_collection.
      */
-    readonly replicationScheduleCollections: outputs.CloudMigrations.GetReplicationSchedulesReplicationScheduleCollection[];
+    readonly replicationScheduleCollections?: outputs.CloudMigrations.GetReplicationSchedulesReplicationScheduleCollection[];
     readonly replicationScheduleId?: string;
     /**
      * Current state of the replication schedule.

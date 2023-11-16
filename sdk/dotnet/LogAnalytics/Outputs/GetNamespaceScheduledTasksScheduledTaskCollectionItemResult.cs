@@ -20,37 +20,37 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
         /// </summary>
-        public readonly string Id;
-        public readonly string Kind;
+        public readonly string? Id;
+        public readonly string? Kind;
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Number of execution occurrences.
         /// </summary>
-        public readonly string NumOccurrences;
+        public readonly string? NumOccurrences;
         /// <summary>
         /// The ManagementSavedSearch id [OCID] utilized in the action.
         /// </summary>
-        public readonly string SavedSearchId;
-        public readonly string ScheduledTaskId;
+        public readonly string? SavedSearchId;
+        public readonly string? ScheduledTaskId;
         /// <summary>
         /// Schedules.
         /// </summary>
@@ -58,65 +58,65 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The current state of the scheduled task.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
         /// </summary>
-        public readonly string TaskStatus;
+        public readonly string? TaskStatus;
         /// <summary>
         /// Required parameter to specify schedule task type.
         /// </summary>
-        public readonly string TaskType;
+        public readonly string? TaskType;
         /// <summary>
         /// The date and time the scheduled task was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the scheduled task was last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         /// </summary>
-        public readonly string WorkRequestId;
+        public readonly string? WorkRequestId;
 
         [OutputConstructor]
         private GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(
             ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult> actions,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string kind,
+            string? kind,
 
-            string @namespace,
+            string? @namespace,
 
-            string numOccurrences,
+            string? numOccurrences,
 
-            string savedSearchId,
+            string? savedSearchId,
 
-            string scheduledTaskId,
+            string? scheduledTaskId,
 
             ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult> schedules,
 
-            string state,
+            string? state,
 
-            string taskStatus,
+            string? taskStatus,
 
-            string taskType,
+            string? taskType,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string workRequestId)
+            string? workRequestId)
         {
             Actions = actions;
             CompartmentId = compartmentId;

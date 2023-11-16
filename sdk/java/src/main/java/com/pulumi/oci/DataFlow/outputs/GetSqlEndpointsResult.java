@@ -29,12 +29,12 @@ public final class GetSqlEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of sql_endpoint_collection.
      * 
      */
-    private List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections;
+    private @Nullable List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections;
     private @Nullable String sqlEndpointId;
     /**
      * @return The current state of the Sql Endpoint.
@@ -64,15 +64,15 @@ public final class GetSqlEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of sql_endpoint_collection.
      * 
      */
     public List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections() {
-        return this.sqlEndpointCollections;
+        return this.sqlEndpointCollections == null ? List.of() : this.sqlEndpointCollections;
     }
     public Optional<String> sqlEndpointId() {
         return Optional.ofNullable(this.sqlEndpointId);
@@ -97,8 +97,8 @@ public final class GetSqlEndpointsResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetSqlEndpointsFilter> filters;
-        private String id;
-        private List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections;
         private @Nullable String sqlEndpointId;
         private @Nullable String state;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetSqlEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlEndpointCollections(List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections) {
-            this.sqlEndpointCollections = Objects.requireNonNull(sqlEndpointCollections);
+        public Builder sqlEndpointCollections(@Nullable List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections) {
+            this.sqlEndpointCollections = sqlEndpointCollections;
             return this;
         }
         public Builder sqlEndpointCollections(GetSqlEndpointsSqlEndpointCollection... sqlEndpointCollections) {

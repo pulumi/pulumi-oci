@@ -25,19 +25,6 @@ class ComputeCapacityReservationArgs:
                  is_default_reservation: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a ComputeCapacityReservation resource.
-        :param pulumi.Input[str] availability_domain: The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
-        :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigArgs']]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation.
-               
-               To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_default_reservation: (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,9 +41,6 @@ class ComputeCapacityReservationArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -66,9 +50,6 @@ class ComputeCapacityReservationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -78,11 +59,6 @@ class ComputeCapacityReservationArgs:
     @property
     @pulumi.getter(name="instanceReservationConfigs")
     def instance_reservation_configs(self) -> pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigArgs']]]:
-        """
-        (Updatable) The capacity configurations for the capacity reservation.
-
-        To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
-        """
         return pulumi.get(self, "instance_reservation_configs")
 
     @instance_reservation_configs.setter
@@ -92,9 +68,6 @@ class ComputeCapacityReservationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -104,9 +77,6 @@ class ComputeCapacityReservationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -116,9 +86,6 @@ class ComputeCapacityReservationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -128,13 +95,6 @@ class ComputeCapacityReservationArgs:
     @property
     @pulumi.getter(name="isDefaultReservation")
     def is_default_reservation(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_default_reservation")
 
     @is_default_reservation.setter
@@ -159,24 +119,6 @@ class _ComputeCapacityReservationState:
                  used_instance_count: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ComputeCapacityReservation resources.
-        :param pulumi.Input[str] availability_domain: The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigArgs']]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation.
-               
-               To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
-        :param pulumi.Input[bool] is_default_reservation: (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] reserved_instance_count: The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        :param pulumi.Input[str] state: The current state of the compute capacity reservation.
-        :param pulumi.Input[str] time_created: The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] used_instance_count: The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -206,9 +148,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -218,9 +157,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -230,9 +166,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -242,9 +175,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -254,9 +184,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -266,11 +193,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="instanceReservationConfigs")
     def instance_reservation_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigArgs']]]]:
-        """
-        (Updatable) The capacity configurations for the capacity reservation.
-
-        To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
-        """
         return pulumi.get(self, "instance_reservation_configs")
 
     @instance_reservation_configs.setter
@@ -280,13 +202,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="isDefaultReservation")
     def is_default_reservation(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_default_reservation")
 
     @is_default_reservation.setter
@@ -296,9 +211,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="reservedInstanceCount")
     def reserved_instance_count(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        """
         return pulumi.get(self, "reserved_instance_count")
 
     @reserved_instance_count.setter
@@ -308,9 +220,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the compute capacity reservation.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -320,9 +229,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -332,9 +238,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -344,9 +247,6 @@ class _ComputeCapacityReservationState:
     @property
     @pulumi.getter(name="usedInstanceCount")
     def used_instance_count(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        """
         return pulumi.get(self, "used_instance_count")
 
     @used_instance_count.setter
@@ -368,69 +268,9 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                  is_default_reservation: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new compute capacity reservation in the specified compartment and availability domain.
-        Compute capacity reservations let you reserve instances in a compartment.
-        When you launch an instance using this reservation, you are assured that you have enough space for your instance,
-        and you won't get out of capacity errors.
-        For more information, see [Reserved Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compute_capacity_reservation = oci.core.ComputeCapacityReservation("testComputeCapacityReservation",
-            availability_domain=var["compute_capacity_reservation_availability_domain"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["compute_capacity_reservation_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
-                instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
-                reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
-                cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
-                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
-                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
-                ),
-                fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
-                instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],
-                    ocpus=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus"],
-                ),
-            )],
-            is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
-        ```
-
-        ## Import
-
-        ComputeCapacityReservations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
-        ```
-
+        Create a ComputeCapacityReservation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReservationInstanceReservationConfigArgs']]]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation.
-               
-               To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
-        :param pulumi.Input[bool] is_default_reservation: (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -439,54 +279,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                  args: ComputeCapacityReservationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new compute capacity reservation in the specified compartment and availability domain.
-        Compute capacity reservations let you reserve instances in a compartment.
-        When you launch an instance using this reservation, you are assured that you have enough space for your instance,
-        and you won't get out of capacity errors.
-        For more information, see [Reserved Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compute_capacity_reservation = oci.core.ComputeCapacityReservation("testComputeCapacityReservation",
-            availability_domain=var["compute_capacity_reservation_availability_domain"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["compute_capacity_reservation_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
-                instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
-                reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
-                cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
-                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
-                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
-                ),
-                fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
-                instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],
-                    ocpus=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus"],
-                ),
-            )],
-            is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
-        ```
-
-        ## Import
-
-        ComputeCapacityReservations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
-        ```
-
+        Create a ComputeCapacityReservation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ComputeCapacityReservationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -565,24 +358,6 @@ class ComputeCapacityReservation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReservationInstanceReservationConfigArgs']]]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation.
-               
-               To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
-        :param pulumi.Input[bool] is_default_reservation: (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] reserved_instance_count: The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        :param pulumi.Input[str] state: The current state of the compute capacity reservation.
-        :param pulumi.Input[str] time_created: The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] used_instance_count: The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -605,102 +380,60 @@ class ComputeCapacityReservation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="instanceReservationConfigs")
     def instance_reservation_configs(self) -> pulumi.Output[Sequence['outputs.ComputeCapacityReservationInstanceReservationConfig']]:
-        """
-        (Updatable) The capacity configurations for the capacity reservation.
-
-        To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
-        """
         return pulumi.get(self, "instance_reservation_configs")
 
     @property
     @pulumi.getter(name="isDefaultReservation")
-    def is_default_reservation(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def is_default_reservation(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_default_reservation")
 
     @property
     @pulumi.getter(name="reservedInstanceCount")
-    def reserved_instance_count(self) -> pulumi.Output[str]:
-        """
-        The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        """
+    def reserved_instance_count(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "reserved_instance_count")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the compute capacity reservation.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="usedInstanceCount")
-    def used_instance_count(self) -> pulumi.Output[str]:
-        """
-        The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        """
+    def used_instance_count(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "used_instance_count")
 

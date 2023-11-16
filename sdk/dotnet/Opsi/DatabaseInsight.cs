@@ -31,13 +31,13 @@ namespace Pulumi.Oci.Opsi
         /// User credential details to connect to the database. This is supplied via the External Database Service.
         /// </summary>
         [Output("connectionCredentialDetails")]
-        public Output<Outputs.DatabaseInsightConnectionCredentialDetails> ConnectionCredentialDetails { get; private set; } = null!;
+        public Output<Outputs.DatabaseInsightConnectionCredentialDetails?> ConnectionCredentialDetails { get; private set; } = null!;
 
         /// <summary>
         /// Connection details of the private endpoints.
         /// </summary>
         [Output("connectionDetails")]
-        public Output<Outputs.DatabaseInsightConnectionDetails> ConnectionDetails { get; private set; } = null!;
+        public Output<Outputs.DatabaseInsightConnectionDetails?> ConnectionDetails { get; private set; } = null!;
 
         /// <summary>
         /// User credential details to connect to the database. This is supplied via the External Database Service.
@@ -49,97 +49,97 @@ namespace Pulumi.Oci.Opsi
         /// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         /// </summary>
         [Output("databaseConnectionStatusDetails")]
-        public Output<string> DatabaseConnectionStatusDetails { get; private set; } = null!;
+        public Output<string?> DatabaseConnectionStatusDetails { get; private set; } = null!;
 
         /// <summary>
         /// Display name of database
         /// </summary>
         [Output("databaseDisplayName")]
-        public Output<string> DatabaseDisplayName { get; private set; } = null!;
+        public Output<string?> DatabaseDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
         [Output("databaseId")]
-        public Output<string> DatabaseId { get; private set; } = null!;
+        public Output<string?> DatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// Name of database
         /// </summary>
         [Output("databaseName")]
-        public Output<string> DatabaseName { get; private set; } = null!;
+        public Output<string?> DatabaseName { get; private set; } = null!;
 
         /// <summary>
         /// Oracle Cloud Infrastructure database resource type
         /// </summary>
         [Output("databaseResourceType")]
-        public Output<string> DatabaseResourceType { get; private set; } = null!;
+        public Output<string?> DatabaseResourceType { get; private set; } = null!;
 
         /// <summary>
         /// Operations Insights internal representation of the database type.
         /// </summary>
         [Output("databaseType")]
-        public Output<string> DatabaseType { get; private set; } = null!;
+        public Output<string?> DatabaseType { get; private set; } = null!;
 
         /// <summary>
         /// The version of the database.
         /// </summary>
         [Output("databaseVersion")]
-        public Output<string> DatabaseVersion { get; private set; } = null!;
+        public Output<string?> DatabaseVersion { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         /// </summary>
         [Output("dbmPrivateEndpointId")]
-        public Output<string> DbmPrivateEndpointId { get; private set; } = null!;
+        public Output<string?> DbmPrivateEndpointId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Database Deployment Type
         /// </summary>
         [Output("deploymentType")]
-        public Output<string> DeploymentType { get; private set; } = null!;
+        public Output<string?> DeploymentType { get; private set; } = null!;
 
         /// <summary>
         /// OPSI Enterprise Manager Bridge OCID
         /// </summary>
         [Output("enterpriseManagerBridgeId")]
-        public Output<string> EnterpriseManagerBridgeId { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerBridgeId { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Display Name
         /// </summary>
         [Output("enterpriseManagerEntityDisplayName")]
-        public Output<string> EnterpriseManagerEntityDisplayName { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Unique Identifier
         /// </summary>
         [Output("enterpriseManagerEntityIdentifier")]
-        public Output<string> EnterpriseManagerEntityIdentifier { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Name
         /// </summary>
         [Output("enterpriseManagerEntityName")]
-        public Output<string> EnterpriseManagerEntityName { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityName { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Type
         /// </summary>
         [Output("enterpriseManagerEntityType")]
-        public Output<string> EnterpriseManagerEntityType { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityType { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Unique Identifier
         /// </summary>
         [Output("enterpriseManagerIdentifier")]
-        public Output<string> EnterpriseManagerIdentifier { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Source of the database entity.
@@ -151,55 +151,55 @@ namespace Pulumi.Oci.Opsi
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
         /// </summary>
         [Output("exadataInsightId")]
-        public Output<string> ExadataInsightId { get; private set; } = null!;
+        public Output<string?> ExadataInsightId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         /// </summary>
         [Output("opsiPrivateEndpointId")]
-        public Output<string> OpsiPrivateEndpointId { get; private set; } = null!;
+        public Output<string?> OpsiPrivateEndpointId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
         /// </summary>
         [Output("parentId")]
-        public Output<string> ParentId { get; private set; } = null!;
+        public Output<string?> ParentId { get; private set; } = null!;
 
         /// <summary>
         /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         /// </summary>
         [Output("processorCount")]
-        public Output<int> ProcessorCount { get; private set; } = null!;
+        public Output<int?> ProcessorCount { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         /// </summary>
         [Output("rootId")]
-        public Output<string> RootId { get; private set; } = null!;
+        public Output<string?> RootId { get; private set; } = null!;
 
         /// <summary>
         /// Database service name used for connection requests.
         /// </summary>
         [Output("serviceName")]
-        public Output<string> ServiceName { get; private set; } = null!;
+        public Output<string?> ServiceName { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the database.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -208,25 +208,25 @@ namespace Pulumi.Oci.Opsi
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the database insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the database insight was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

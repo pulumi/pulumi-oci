@@ -45,36 +45,36 @@ export interface GetConnectionAssignmentResult {
     /**
      * Credential store alias.
      */
-    readonly aliasName: string;
+    readonly aliasName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly connectionAssignmentId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      */
-    readonly connectionId: string;
+    readonly connectionId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    readonly deploymentId: string;
+    readonly deploymentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Possible lifecycle states for connection assignments.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.

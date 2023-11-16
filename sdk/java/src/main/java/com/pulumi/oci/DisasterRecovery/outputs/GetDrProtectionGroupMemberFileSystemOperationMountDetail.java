@@ -6,6 +6,8 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupMemberFileSystemOperationMountDetail {
@@ -13,15 +15,15 @@ public final class GetDrProtectionGroupMemberFileSystemOperationMountDetail {
      * @return The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
-    private String mountTargetId;
+    private @Nullable String mountTargetId;
 
     private GetDrProtectionGroupMemberFileSystemOperationMountDetail() {}
     /**
      * @return The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
-    public String mountTargetId() {
-        return this.mountTargetId;
+    public Optional<String> mountTargetId() {
+        return Optional.ofNullable(this.mountTargetId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDrProtectionGroupMemberFileSystemOperationMountDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String mountTargetId;
+        private @Nullable String mountTargetId;
         public Builder() {}
         public Builder(GetDrProtectionGroupMemberFileSystemOperationMountDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDrProtectionGroupMemberFileSystemOperationMountDetail {
         }
 
         @CustomType.Setter
-        public Builder mountTargetId(String mountTargetId) {
-            this.mountTargetId = Objects.requireNonNull(mountTargetId);
+        public Builder mountTargetId(@Nullable String mountTargetId) {
+            this.mountTargetId = mountTargetId;
             return this;
         }
         public GetDrProtectionGroupMemberFileSystemOperationMountDetail build() {

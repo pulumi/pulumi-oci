@@ -18,7 +18,7 @@ public final class GetCertificateAuthoritiesResult {
      * @return The list of certificate_authority_collection.
      * 
      */
-    private List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections;
+    private @Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections;
     /**
      * @return The OCID of the CA.
      * 
@@ -34,7 +34,7 @@ public final class GetCertificateAuthoritiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
@@ -57,7 +57,7 @@ public final class GetCertificateAuthoritiesResult {
      * 
      */
     public List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections() {
-        return this.certificateAuthorityCollections;
+        return this.certificateAuthorityCollections == null ? List.of() : this.certificateAuthorityCollections;
     }
     /**
      * @return The OCID of the CA.
@@ -80,8 +80,8 @@ public final class GetCertificateAuthoritiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
@@ -114,11 +114,11 @@ public final class GetCertificateAuthoritiesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections;
+        private @Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections;
         private @Nullable String certificateAuthorityId;
         private @Nullable String compartmentId;
         private @Nullable List<GetCertificateAuthoritiesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String issuerCertificateAuthorityId;
         private @Nullable String name;
         private @Nullable String state;
@@ -136,8 +136,8 @@ public final class GetCertificateAuthoritiesResult {
         }
 
         @CustomType.Setter
-        public Builder certificateAuthorityCollections(List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections) {
-            this.certificateAuthorityCollections = Objects.requireNonNull(certificateAuthorityCollections);
+        public Builder certificateAuthorityCollections(@Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections) {
+            this.certificateAuthorityCollections = certificateAuthorityCollections;
             return this;
         }
         public Builder certificateAuthorityCollections(GetCertificateAuthoritiesCertificateAuthorityCollection... certificateAuthorityCollections) {
@@ -162,8 +162,8 @@ public final class GetCertificateAuthoritiesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

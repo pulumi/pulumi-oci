@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
@@ -62,18 +61,18 @@ type GetTenancyResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the tenancy.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The region key for the tenancy's home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`
-	HomeRegionKey string `pulumi:"homeRegionKey"`
+	HomeRegionKey *string `pulumi:"homeRegionKey"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the tenancy.
-	Name      string `pulumi:"name"`
-	TenancyId string `pulumi:"tenancyId"`
+	Name      *string `pulumi:"name"`
+	TenancyId string  `pulumi:"tenancyId"`
 	// Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
-	UpiIdcsCompatibilityLayerEndpoint string `pulumi:"upiIdcsCompatibilityLayerEndpoint"`
+	UpiIdcsCompatibilityLayerEndpoint *string `pulumi:"upiIdcsCompatibilityLayerEndpoint"`
 }
 
 func GetTenancyOutput(ctx *pulumi.Context, args GetTenancyOutputArgs, opts ...pulumi.InvokeOption) GetTenancyResultOutput {
@@ -114,20 +113,14 @@ func (o GetTenancyResultOutput) ToGetTenancyResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetTenancyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTenancyResult] {
-	return pulumix.Output[GetTenancyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o GetTenancyResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetTenancyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The description of the tenancy.
-func (o GetTenancyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTenancyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetTenancyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTenancyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -136,18 +129,18 @@ func (o GetTenancyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The region key for the tenancy's home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`
-func (o GetTenancyResultOutput) HomeRegionKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTenancyResult) string { return v.HomeRegionKey }).(pulumi.StringOutput)
+func (o GetTenancyResultOutput) HomeRegionKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTenancyResult) *string { return v.HomeRegionKey }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTenancyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTenancyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTenancyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTenancyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the tenancy.
-func (o GetTenancyResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTenancyResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetTenancyResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTenancyResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTenancyResultOutput) TenancyId() pulumi.StringOutput {
@@ -155,8 +148,8 @@ func (o GetTenancyResultOutput) TenancyId() pulumi.StringOutput {
 }
 
 // Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
-func (o GetTenancyResultOutput) UpiIdcsCompatibilityLayerEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTenancyResult) string { return v.UpiIdcsCompatibilityLayerEndpoint }).(pulumi.StringOutput)
+func (o GetTenancyResultOutput) UpiIdcsCompatibilityLayerEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTenancyResult) *string { return v.UpiIdcsCompatibilityLayerEndpoint }).(pulumi.StringPtrOutput)
 }
 
 func init() {

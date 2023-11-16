@@ -25,12 +25,12 @@ public final class GetAuditEventResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of audit event summary.
      * 
      */
-    private List<GetAuditEventItem> items;
+    private @Nullable List<GetAuditEventItem> items;
     private @Nullable String scimQuery;
 
     private GetAuditEventResult() {}
@@ -51,15 +51,15 @@ public final class GetAuditEventResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of audit event summary.
      * 
      */
     public List<GetAuditEventItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> scimQuery() {
         return Optional.ofNullable(this.scimQuery);
@@ -77,8 +77,8 @@ public final class GetAuditEventResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private String id;
-        private List<GetAuditEventItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAuditEventItem> items;
         private @Nullable String scimQuery;
         public Builder() {}
         public Builder(GetAuditEventResult defaults) {
@@ -107,13 +107,13 @@ public final class GetAuditEventResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAuditEventItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAuditEventItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditEventItem... items) {

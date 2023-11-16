@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Unique identifier for the pull or merge request created in the recommend stage.
         /// </summary>
-        public readonly string PullRequestIdentifier;
+        public readonly string? PullRequestIdentifier;
         /// <summary>
         /// The web link to the pull or merge request created in the recommend stage.
         /// </summary>
-        public readonly string PullRequestUrl;
+        public readonly string? PullRequestUrl;
 
         [OutputConstructor]
         private GetRemediationRunStagePullRequestPropertyResult(
-            string pullRequestIdentifier,
+            string? pullRequestIdentifier,
 
-            string pullRequestUrl)
+            string? pullRequestUrl)
         {
             PullRequestIdentifier = pullRequestIdentifier;
             PullRequestUrl = pullRequestUrl;

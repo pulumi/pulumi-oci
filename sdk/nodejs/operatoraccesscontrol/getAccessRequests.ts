@@ -79,7 +79,7 @@ export interface GetAccessRequestsResult {
     /**
      * The list of access_request_collection.
      */
-    readonly accessRequestCollections: outputs.OperatorAccessControl.GetAccessRequestsAccessRequestCollection[];
+    readonly accessRequestCollections?: outputs.OperatorAccessControl.GetAccessRequestsAccessRequestCollection[];
     /**
      * The OCID of the compartment that contains the access request.
      */
@@ -88,7 +88,7 @@ export interface GetAccessRequestsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the target resource.
      */

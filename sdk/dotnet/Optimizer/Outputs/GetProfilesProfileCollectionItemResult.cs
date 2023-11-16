@@ -16,27 +16,27 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The time period over which to collect data for the recommendations, measured in number of days.
         /// </summary>
-        public readonly int AggregationIntervalInDays;
+        public readonly int? AggregationIntervalInDays;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Text describing the profile. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The unique OCID of the profile.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of configuration levels for each recommendation.
         /// </summary>
@@ -44,11 +44,11 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A filter that returns results that match the lifecycle state specified.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Optional. The compartments specified in the profile override for a recommendation.
         /// </summary>
@@ -60,39 +60,39 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The date and time the profile was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the profile was last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetProfilesProfileCollectionItemResult(
-            int aggregationIntervalInDays,
+            int? aggregationIntervalInDays,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult> levelsConfigurations,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemTargetCompartmentResult> targetCompartments,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemTargetTagResult> targetTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AggregationIntervalInDays = aggregationIntervalInDays;
             CompartmentId = compartmentId;

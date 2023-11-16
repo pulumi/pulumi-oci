@@ -55,9 +55,6 @@ class GetFusionEnvironmentScheduledActivitiesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        scheduled activity display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -68,14 +65,11 @@ class GetFusionEnvironmentScheduledActivitiesResult:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> str:
-        """
-        FAaaS Environment Identifier.
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -84,25 +78,16 @@ class GetFusionEnvironmentScheduledActivitiesResult:
     @property
     @pulumi.getter(name="runCycle")
     def run_cycle(self) -> Optional[str]:
-        """
-        run cadence.
-        """
         return pulumi.get(self, "run_cycle")
 
     @property
     @pulumi.getter(name="scheduledActivityCollections")
-    def scheduled_activity_collections(self) -> Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionResult']:
-        """
-        The list of scheduled_activity_collection.
-        """
+    def scheduled_activity_collections(self) -> Optional[Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionResult']]:
         return pulumi.get(self, "scheduled_activity_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the scheduledActivity.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -142,31 +127,7 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[str] = No
                                                 time_scheduled_start_greater_than_or_equal_to: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentScheduledActivitiesResult:
     """
-    This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of ScheduledActivities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_scheduled_activity_display_name"],
-        run_cycle=var["fusion_environment_scheduled_activity_run_cycle"],
-        state=var["fusion_environment_scheduled_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str run_cycle: A filter that returns all resources that match the specified run cycle.
-    :param str state: A filter that returns all resources that match the specified status
-    :param str time_expected_finish_less_than_or_equal_to: A filter that returns all resources that end before this date
-    :param str time_scheduled_start_greater_than_or_equal_to: A filter that returns all resources that are scheduled after this date
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -201,30 +162,6 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
                                                        time_scheduled_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivitiesResult]:
     """
-    This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of ScheduledActivities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_scheduled_activity_display_name"],
-        run_cycle=var["fusion_environment_scheduled_activity_run_cycle"],
-        state=var["fusion_environment_scheduled_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str run_cycle: A filter that returns all resources that match the specified run cycle.
-    :param str state: A filter that returns all resources that match the specified status
-    :param str time_expected_finish_less_than_or_equal_to: A filter that returns all resources that end before this date
-    :param str time_scheduled_start_greater_than_or_equal_to: A filter that returns all resources that are scheduled after this date
+    Use this data source to access information about an existing resource.
     """
     ...

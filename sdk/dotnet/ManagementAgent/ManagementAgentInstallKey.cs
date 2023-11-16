@@ -51,7 +51,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// Total number of install for this keys
         /// </summary>
         [Output("allowedKeyInstallCount")]
-        public Output<int> AllowedKeyInstallCount { get; private set; } = null!;
+        public Output<int?> AllowedKeyInstallCount { get; private set; } = null!;
 
         /// <summary>
         /// Compartment Identifier
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.ManagementAgent
         /// Principal id of user who created the Agent Install key
         /// </summary>
         [Output("createdByPrincipalId")]
-        public Output<string> CreatedByPrincipalId { get; private set; } = null!;
+        public Output<string?> CreatedByPrincipalId { get; private set; } = null!;
 
         /// <summary>
         /// Total number of install for this keys
         /// </summary>
         [Output("currentKeyInstallCount")]
-        public Output<int> CurrentKeyInstallCount { get; private set; } = null!;
+        public Output<int?> CurrentKeyInstallCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Management Agent install Key Name
@@ -81,31 +81,31 @@ namespace Pulumi.Oci.ManagementAgent
         /// If set to true, the install key has no expiration date or usage limit. Defaults to false
         /// </summary>
         [Output("isUnlimited")]
-        public Output<bool> IsUnlimited { get; private set; } = null!;
+        public Output<bool?> IsUnlimited { get; private set; } = null!;
 
         /// <summary>
         /// Management Agent Install Key
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Status of Key
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time when Management Agent install Key was created. An RFC3339 formatted date time string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// date after which key would expire after creation
@@ -115,13 +115,13 @@ namespace Pulumi.Oci.ManagementAgent
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeExpires")]
-        public Output<string> TimeExpires { get; private set; } = null!;
+        public Output<string?> TimeExpires { get; private set; } = null!;
 
         /// <summary>
         /// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

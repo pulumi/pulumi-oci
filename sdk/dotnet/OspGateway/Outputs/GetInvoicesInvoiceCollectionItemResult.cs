@@ -24,84 +24,84 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Transaction identifier
         /// </summary>
-        public readonly string InternalInvoiceId;
+        public readonly string? InternalInvoiceId;
         /// <summary>
         /// Total amount of invoice
         /// </summary>
-        public readonly double InvoiceAmount;
+        public readonly double? InvoiceAmount;
         /// <summary>
         /// Invoice amount adjust
         /// </summary>
-        public readonly double InvoiceAmountAdjusted;
+        public readonly double? InvoiceAmountAdjusted;
         /// <summary>
         /// Invoice amount applied
         /// </summary>
-        public readonly double InvoiceAmountApplied;
+        public readonly double? InvoiceAmountApplied;
         /// <summary>
         /// Invoice amount credit
         /// </summary>
-        public readonly double InvoiceAmountCredited;
+        public readonly double? InvoiceAmountCredited;
         /// <summary>
         /// Balance of invoice
         /// </summary>
-        public readonly double InvoiceAmountDue;
-        public readonly double InvoiceAmountInDispute;
+        public readonly double? InvoiceAmountDue;
+        public readonly double? InvoiceAmountInDispute;
         /// <summary>
         /// The invoice query param (not unique).
         /// </summary>
-        public readonly string InvoiceId;
+        public readonly string? InvoiceId;
         /// <summary>
         /// Invoice external reference
         /// </summary>
-        public readonly string InvoiceNumber;
+        public readonly string? InvoiceNumber;
         /// <summary>
         /// Invoice PO number
         /// </summary>
-        public readonly string InvoicePoNumber;
+        public readonly string? InvoicePoNumber;
         /// <summary>
         /// Invoice reference number
         /// </summary>
-        public readonly string InvoiceRefNumber;
+        public readonly string? InvoiceRefNumber;
         /// <summary>
         /// Invoice status
         /// </summary>
-        public readonly string InvoiceStatus;
+        public readonly string? InvoiceStatus;
         /// <summary>
         /// Type of invoice
         /// </summary>
-        public readonly string InvoiceType;
+        public readonly string? InvoiceType;
         /// <summary>
         /// Is credit card payment eligible
         /// </summary>
-        public readonly bool IsCreditCardPayable;
+        public readonly bool? IsCreditCardPayable;
         /// <summary>
         /// Is pdf download access allowed
         /// </summary>
-        public readonly bool IsDisplayDownloadPdf;
-        public readonly bool IsDisplayViewPdf;
-        public readonly bool IsPaid;
+        public readonly bool? IsDisplayDownloadPdf;
+        public readonly bool? IsDisplayViewPdf;
+        public readonly bool? IsPaid;
         /// <summary>
         /// Whether invoice can be payed
         /// </summary>
-        public readonly bool IsPayable;
-        public readonly bool IsPaymentFailed;
+        public readonly bool? IsPayable;
+        public readonly bool? IsPaymentFailed;
         /// <summary>
         /// Is emailing pdf allowed
         /// </summary>
-        public readonly bool IsPdfEmailAvailable;
+        public readonly bool? IsPdfEmailAvailable;
         /// <summary>
         /// Payment related details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult> LastPaymentDetails;
-        public readonly string PartyName;
+        public readonly string? PartyName;
         /// <summary>
         /// Payment terms
         /// </summary>
-        public readonly string PaymentTerms;
+        public readonly string? PaymentTerms;
         /// <summary>
         /// Preferred Email on the invoice
         /// </summary>
-        public readonly string PreferredEmail;
+        public readonly string? PreferredEmail;
         /// <summary>
         /// List of subscription identifiers
         /// </summary>
@@ -109,15 +109,15 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Tax of invoice amount
         /// </summary>
-        public readonly double Tax;
+        public readonly double? Tax;
         /// <summary>
         /// Date of invoice
         /// </summary>
-        public readonly string TimeInvoice;
+        public readonly string? TimeInvoice;
         /// <summary>
         /// Due date of invoice
         /// </summary>
-        public readonly string TimeInvoiceDue;
+        public readonly string? TimeInvoiceDue;
 
         [OutputConstructor]
         private GetInvoicesInvoiceCollectionItemResult(
@@ -125,61 +125,61 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
             ImmutableArray<Outputs.GetInvoicesInvoiceCollectionItemCurrencyResult> currencies,
 
-            string internalInvoiceId,
+            string? internalInvoiceId,
 
-            double invoiceAmount,
+            double? invoiceAmount,
 
-            double invoiceAmountAdjusted,
+            double? invoiceAmountAdjusted,
 
-            double invoiceAmountApplied,
+            double? invoiceAmountApplied,
 
-            double invoiceAmountCredited,
+            double? invoiceAmountCredited,
 
-            double invoiceAmountDue,
+            double? invoiceAmountDue,
 
-            double invoiceAmountInDispute,
+            double? invoiceAmountInDispute,
 
-            string invoiceId,
+            string? invoiceId,
 
-            string invoiceNumber,
+            string? invoiceNumber,
 
-            string invoicePoNumber,
+            string? invoicePoNumber,
 
-            string invoiceRefNumber,
+            string? invoiceRefNumber,
 
-            string invoiceStatus,
+            string? invoiceStatus,
 
-            string invoiceType,
+            string? invoiceType,
 
-            bool isCreditCardPayable,
+            bool? isCreditCardPayable,
 
-            bool isDisplayDownloadPdf,
+            bool? isDisplayDownloadPdf,
 
-            bool isDisplayViewPdf,
+            bool? isDisplayViewPdf,
 
-            bool isPaid,
+            bool? isPaid,
 
-            bool isPayable,
+            bool? isPayable,
 
-            bool isPaymentFailed,
+            bool? isPaymentFailed,
 
-            bool isPdfEmailAvailable,
+            bool? isPdfEmailAvailable,
 
             ImmutableArray<Outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult> lastPaymentDetails,
 
-            string partyName,
+            string? partyName,
 
-            string paymentTerms,
+            string? paymentTerms,
 
-            string preferredEmail,
+            string? preferredEmail,
 
             ImmutableArray<string> subscriptionIds,
 
-            double tax,
+            double? tax,
 
-            string timeInvoice,
+            string? timeInvoice,
 
-            string timeInvoiceDue)
+            string? timeInvoiceDue)
         {
             BillToAddresses = billToAddresses;
             Currencies = currencies;

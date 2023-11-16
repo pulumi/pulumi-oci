@@ -55,9 +55,6 @@ class GetMetricExtensionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -72,7 +69,7 @@ class GetMetricExtensionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,42 +77,27 @@ class GetMetricExtensionsResult:
 
     @property
     @pulumi.getter(name="metricExtensionCollections")
-    def metric_extension_collections(self) -> Sequence['outputs.GetMetricExtensionsMetricExtensionCollectionResult']:
-        """
-        The list of metric_extension_collection.
-        """
+    def metric_extension_collections(self) -> Optional[Sequence['outputs.GetMetricExtensionsMetricExtensionCollectionResult']]:
         return pulumi.get(self, "metric_extension_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the script file
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
-        """
-        Resource type to which Metric Extension applies
-        """
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the metric extension
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        The current status of the metric extension i.e. whether it is Draft or Published
-        """
         return pulumi.get(self, "status")
 
 
@@ -145,31 +127,7 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
                           status: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMetricExtensionsResult:
     """
-    This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns a list of metric extensions
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=var["compartment_id"],
-        enabled_on_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-        name=var["metric_extension_name"],
-        resource_type=var["metric_extension_resource_type"],
-        state=var["metric_extension_state"],
-        status=var["metric_extension_status"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str enabled_on_resource_id: A filter to return metric extensions based on input resource Id on which metric extension is enabled
-    :param str name: A filter to return resources based on name.
-    :param str resource_type: A filter to return resources based on resource type.
-    :param str state: A filter to return metric extensions based on Lifecycle State
-    :param str status: A filter to return resources based on status e.g. Draft or Published
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -204,30 +162,6 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  status: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricExtensionsResult]:
     """
-    This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns a list of metric extensions
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=var["compartment_id"],
-        enabled_on_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-        name=var["metric_extension_name"],
-        resource_type=var["metric_extension_resource_type"],
-        state=var["metric_extension_state"],
-        status=var["metric_extension_status"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str enabled_on_resource_id: A filter to return metric extensions based on input resource Id on which metric extension is enabled
-    :param str name: A filter to return resources based on name.
-    :param str resource_type: A filter to return resources based on resource type.
-    :param str state: A filter to return metric extensions based on Lifecycle State
-    :param str status: A filter to return resources based on status e.g. Draft or Published
+    Use this data source to access information about an existing resource.
     """
     ...

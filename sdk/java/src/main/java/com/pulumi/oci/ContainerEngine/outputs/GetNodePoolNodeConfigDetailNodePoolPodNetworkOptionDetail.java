@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
@@ -15,51 +17,51 @@ public final class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
      * @return The CNI plugin used by this node pool
      * 
      */
-    private String cniType;
+    private @Nullable String cniType;
     /**
      * @return The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
      * 
      */
-    private Integer maxPodsPerNode;
+    private @Nullable Integer maxPodsPerNode;
     /**
      * @return The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private List<String> podNsgIds;
+    private @Nullable List<String> podNsgIds;
     /**
      * @return The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
      * 
      */
-    private List<String> podSubnetIds;
+    private @Nullable List<String> podSubnetIds;
 
     private GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail() {}
     /**
      * @return The CNI plugin used by this node pool
      * 
      */
-    public String cniType() {
-        return this.cniType;
+    public Optional<String> cniType() {
+        return Optional.ofNullable(this.cniType);
     }
     /**
      * @return The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
      * 
      */
-    public Integer maxPodsPerNode() {
-        return this.maxPodsPerNode;
+    public Optional<Integer> maxPodsPerNode() {
+        return Optional.ofNullable(this.maxPodsPerNode);
     }
     /**
      * @return The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
     public List<String> podNsgIds() {
-        return this.podNsgIds;
+        return this.podNsgIds == null ? List.of() : this.podNsgIds;
     }
     /**
      * @return The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
      * 
      */
     public List<String> podSubnetIds() {
-        return this.podSubnetIds;
+        return this.podSubnetIds == null ? List.of() : this.podSubnetIds;
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cniType;
-        private Integer maxPodsPerNode;
-        private List<String> podNsgIds;
-        private List<String> podSubnetIds;
+        private @Nullable String cniType;
+        private @Nullable Integer maxPodsPerNode;
+        private @Nullable List<String> podNsgIds;
+        private @Nullable List<String> podSubnetIds;
         public Builder() {}
         public Builder(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
         }
 
         @CustomType.Setter
-        public Builder cniType(String cniType) {
-            this.cniType = Objects.requireNonNull(cniType);
+        public Builder cniType(@Nullable String cniType) {
+            this.cniType = cniType;
             return this;
         }
         @CustomType.Setter
-        public Builder maxPodsPerNode(Integer maxPodsPerNode) {
-            this.maxPodsPerNode = Objects.requireNonNull(maxPodsPerNode);
+        public Builder maxPodsPerNode(@Nullable Integer maxPodsPerNode) {
+            this.maxPodsPerNode = maxPodsPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder podNsgIds(List<String> podNsgIds) {
-            this.podNsgIds = Objects.requireNonNull(podNsgIds);
+        public Builder podNsgIds(@Nullable List<String> podNsgIds) {
+            this.podNsgIds = podNsgIds;
             return this;
         }
         public Builder podNsgIds(String... podNsgIds) {
             return podNsgIds(List.of(podNsgIds));
         }
         @CustomType.Setter
-        public Builder podSubnetIds(List<String> podSubnetIds) {
-            this.podSubnetIds = Objects.requireNonNull(podSubnetIds);
+        public Builder podSubnetIds(@Nullable List<String> podSubnetIds) {
+            this.podSubnetIds = podSubnetIds;
             return this;
         }
         public Builder podSubnetIds(String... podSubnetIds) {

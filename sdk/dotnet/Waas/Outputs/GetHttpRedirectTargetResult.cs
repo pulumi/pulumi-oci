@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The host portion of the redirect.
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// Port number of the target destination of the redirect, default to match protocol
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The protocol used for the target, http or https.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
         /// </summary>
-        public readonly string Query;
+        public readonly string? Query;
 
         [OutputConstructor]
         private GetHttpRedirectTargetResult(
-            string host,
+            string? host,
 
-            string path,
+            string? path,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string query)
+            string? query)
         {
             Host = host;
             Path = path;

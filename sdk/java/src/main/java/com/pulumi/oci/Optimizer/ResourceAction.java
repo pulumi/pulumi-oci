@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -44,126 +45,126 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="actions", refs={List.class,ResourceActionAction.class}, tree="[0,1]")
-    private Output<List<ResourceActionAction>> actions;
+    private Output</* @Nullable */ List<ResourceActionAction>> actions;
 
     /**
      * @return Details about the recommended action.
      * 
      */
-    public Output<List<ResourceActionAction>> actions() {
-        return this.actions;
+    public Output<Optional<List<ResourceActionAction>>> actions() {
+        return Codegen.optional(this.actions);
     }
     /**
      * The unique OCID associated with the category.
      * 
      */
     @Export(name="categoryId", refs={String.class}, tree="[0]")
-    private Output<String> categoryId;
+    private Output</* @Nullable */ String> categoryId;
 
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    public Output<String> categoryId() {
-        return this.categoryId;
+    public Output<Optional<String>> categoryId() {
+        return Codegen.optional(this.categoryId);
     }
     /**
      * The OCID of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The name associated with the compartment.
      * 
      */
     @Export(name="compartmentName", refs={String.class}, tree="[0]")
-    private Output<String> compartmentName;
+    private Output</* @Nullable */ String> compartmentName;
 
     /**
      * @return The name associated with the compartment.
      * 
      */
-    public Output<String> compartmentName() {
-        return this.compartmentName;
+    public Output<Optional<String>> compartmentName() {
+        return Codegen.optional(this.compartmentName);
     }
     /**
      * The estimated cost savings, in dollars, for the resource action.
      * 
      */
     @Export(name="estimatedCostSaving", refs={Double.class}, tree="[0]")
-    private Output<Double> estimatedCostSaving;
+    private Output</* @Nullable */ Double> estimatedCostSaving;
 
     /**
      * @return The estimated cost savings, in dollars, for the resource action.
      * 
      */
-    public Output<Double> estimatedCostSaving() {
-        return this.estimatedCostSaving;
+    public Output<Optional<Double>> estimatedCostSaving() {
+        return Codegen.optional(this.estimatedCostSaving);
     }
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
     @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> extendedMetadata;
+    private Output</* @Nullable */ Map<String,Object>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Output<Map<String,Object>> extendedMetadata() {
-        return this.extendedMetadata;
+    public Output<Optional<Map<String,Object>>> extendedMetadata() {
+        return Codegen.optional(this.extendedMetadata);
     }
     /**
      * Custom metadata key/value pairs for the resource action.
      * 
      */
     @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> metadata;
+    private Output</* @Nullable */ Map<String,Object>> metadata;
 
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    public Output<Map<String,Object>> metadata() {
-        return this.metadata;
+    public Output<Optional<Map<String,Object>>> metadata() {
+        return Codegen.optional(this.metadata);
     }
     /**
      * The name assigned to the resource.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return The name assigned to the resource.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * The unique OCID associated with the recommendation.
      * 
      */
     @Export(name="recommendationId", refs={String.class}, tree="[0]")
-    private Output<String> recommendationId;
+    private Output</* @Nullable */ String> recommendationId;
 
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    public Output<String> recommendationId() {
-        return this.recommendationId;
+    public Output<Optional<String>> recommendationId() {
+        return Codegen.optional(this.recommendationId);
     }
     /**
      * The unique OCID associated with the resource action.
@@ -184,42 +185,42 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="resourceId", refs={String.class}, tree="[0]")
-    private Output<String> resourceId;
+    private Output</* @Nullable */ String> resourceId;
 
     /**
      * @return The unique OCID associated with the resource.
      * 
      */
-    public Output<String> resourceId() {
-        return this.resourceId;
+    public Output<Optional<String>> resourceId() {
+        return Codegen.optional(this.resourceId);
     }
     /**
      * The kind of resource.
      * 
      */
     @Export(name="resourceType", refs={String.class}, tree="[0]")
-    private Output<String> resourceType;
+    private Output</* @Nullable */ String> resourceType;
 
     /**
      * @return The kind of resource.
      * 
      */
-    public Output<String> resourceType() {
-        return this.resourceType;
+    public Output<Optional<String>> resourceType() {
+        return Codegen.optional(this.resourceType);
     }
     /**
      * The resource action&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The resource action&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The status of the resource action.
@@ -240,28 +241,28 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource action details were created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time that the resource action entered its current status. The format is defined by RFC3339.
      * 
      */
     @Export(name="timeStatusBegin", refs={String.class}, tree="[0]")
-    private Output<String> timeStatusBegin;
+    private Output</* @Nullable */ String> timeStatusBegin;
 
     /**
      * @return The date and time that the resource action entered its current status. The format is defined by RFC3339.
      * 
      */
-    public Output<String> timeStatusBegin() {
-        return this.timeStatusBegin;
+    public Output<Optional<String>> timeStatusBegin() {
+        return Codegen.optional(this.timeStatusBegin);
     }
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -273,7 +274,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeStatusEnd", refs={String.class}, tree="[0]")
-    private Output<String> timeStatusEnd;
+    private Output</* @Nullable */ String> timeStatusEnd;
 
     /**
      * @return (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -284,22 +285,22 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeStatusEnd() {
-        return this.timeStatusEnd;
+    public Output<Optional<String>> timeStatusEnd() {
+        return Codegen.optional(this.timeStatusEnd);
     }
     /**
      * The date and time the resource action details were last updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource action details were last updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

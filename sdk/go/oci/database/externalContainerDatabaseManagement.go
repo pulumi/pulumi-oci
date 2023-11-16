@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Container Database Management resource in Oracle Cloud Infrastructure Database service.
@@ -34,7 +33,7 @@ type ExternalContainerDatabaseManagement struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 }
 
 // NewExternalContainerDatabaseManagement registers a new resource with the given unique name, arguments, and options.
@@ -155,12 +154,6 @@ func (i *ExternalContainerDatabaseManagement) ToExternalContainerDatabaseManagem
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseManagementOutput)
 }
 
-func (i *ExternalContainerDatabaseManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabaseManagement] {
-	return pulumix.Output[*ExternalContainerDatabaseManagement]{
-		OutputState: i.ToExternalContainerDatabaseManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalContainerDatabaseManagementArrayInput is an input type that accepts ExternalContainerDatabaseManagementArray and ExternalContainerDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseManagementArrayInput` via:
 //
@@ -184,12 +177,6 @@ func (i ExternalContainerDatabaseManagementArray) ToExternalContainerDatabaseMan
 
 func (i ExternalContainerDatabaseManagementArray) ToExternalContainerDatabaseManagementArrayOutputWithContext(ctx context.Context) ExternalContainerDatabaseManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseManagementArrayOutput)
-}
-
-func (i ExternalContainerDatabaseManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabaseManagement] {
-	return pulumix.Output[[]*ExternalContainerDatabaseManagement]{
-		OutputState: i.ToExternalContainerDatabaseManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalContainerDatabaseManagementMapInput is an input type that accepts ExternalContainerDatabaseManagementMap and ExternalContainerDatabaseManagementMapOutput values.
@@ -217,12 +204,6 @@ func (i ExternalContainerDatabaseManagementMap) ToExternalContainerDatabaseManag
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseManagementMapOutput)
 }
 
-func (i ExternalContainerDatabaseManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabaseManagement] {
-	return pulumix.Output[map[string]*ExternalContainerDatabaseManagement]{
-		OutputState: i.ToExternalContainerDatabaseManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalContainerDatabaseManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalContainerDatabaseManagementOutput) ElementType() reflect.Type {
@@ -235,12 +216,6 @@ func (o ExternalContainerDatabaseManagementOutput) ToExternalContainerDatabaseMa
 
 func (o ExternalContainerDatabaseManagementOutput) ToExternalContainerDatabaseManagementOutputWithContext(ctx context.Context) ExternalContainerDatabaseManagementOutput {
 	return o
-}
-
-func (o ExternalContainerDatabaseManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabaseManagement] {
-	return pulumix.Output[*ExternalContainerDatabaseManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalContainerDatabaseManagementOutput) EnableManagement() pulumi.BoolOutput {
@@ -261,8 +236,8 @@ func (o ExternalContainerDatabaseManagementOutput) ExternalDatabaseConnectorId()
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExternalContainerDatabaseManagementOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabaseManagement) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseManagementOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabaseManagement) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 type ExternalContainerDatabaseManagementArrayOutput struct{ *pulumi.OutputState }
@@ -277,12 +252,6 @@ func (o ExternalContainerDatabaseManagementArrayOutput) ToExternalContainerDatab
 
 func (o ExternalContainerDatabaseManagementArrayOutput) ToExternalContainerDatabaseManagementArrayOutputWithContext(ctx context.Context) ExternalContainerDatabaseManagementArrayOutput {
 	return o
-}
-
-func (o ExternalContainerDatabaseManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabaseManagement] {
-	return pulumix.Output[[]*ExternalContainerDatabaseManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalContainerDatabaseManagementArrayOutput) Index(i pulumi.IntInput) ExternalContainerDatabaseManagementOutput {
@@ -303,12 +272,6 @@ func (o ExternalContainerDatabaseManagementMapOutput) ToExternalContainerDatabas
 
 func (o ExternalContainerDatabaseManagementMapOutput) ToExternalContainerDatabaseManagementMapOutputWithContext(ctx context.Context) ExternalContainerDatabaseManagementMapOutput {
 	return o
-}
-
-func (o ExternalContainerDatabaseManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabaseManagement] {
-	return pulumix.Output[map[string]*ExternalContainerDatabaseManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalContainerDatabaseManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalContainerDatabaseManagementOutput {

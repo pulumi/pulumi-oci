@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter {
@@ -16,63 +18,63 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTa
      * @return The global time limit in seconds. This is the total time allowed for the task.
      * 
      */
-    private Integer allowedTimeLimit;
+    private @Nullable Integer allowedTimeLimit;
     /**
      * @return Determines which alternative plans should be loaded.
      * 
      */
-    private List<String> alternatePlanBaselines;
+    private @Nullable List<String> alternatePlanBaselines;
     /**
      * @return Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
      * 
      */
-    private Integer alternatePlanLimit;
+    private @Nullable Integer alternatePlanLimit;
     /**
      * @return Determines which sources to search for additional plans.
      * 
      */
-    private List<String> alternatePlanSources;
+    private @Nullable List<String> alternatePlanSources;
     /**
      * @return Specifies whether to accept recommended plans automatically.
      * 
      */
-    private Boolean arePlansAutoAccepted;
+    private @Nullable Boolean arePlansAutoAccepted;
 
     private GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter() {}
     /**
      * @return The global time limit in seconds. This is the total time allowed for the task.
      * 
      */
-    public Integer allowedTimeLimit() {
-        return this.allowedTimeLimit;
+    public Optional<Integer> allowedTimeLimit() {
+        return Optional.ofNullable(this.allowedTimeLimit);
     }
     /**
      * @return Determines which alternative plans should be loaded.
      * 
      */
     public List<String> alternatePlanBaselines() {
-        return this.alternatePlanBaselines;
+        return this.alternatePlanBaselines == null ? List.of() : this.alternatePlanBaselines;
     }
     /**
      * @return Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
      * 
      */
-    public Integer alternatePlanLimit() {
-        return this.alternatePlanLimit;
+    public Optional<Integer> alternatePlanLimit() {
+        return Optional.ofNullable(this.alternatePlanLimit);
     }
     /**
      * @return Determines which sources to search for additional plans.
      * 
      */
     public List<String> alternatePlanSources() {
-        return this.alternatePlanSources;
+        return this.alternatePlanSources == null ? List.of() : this.alternatePlanSources;
     }
     /**
      * @return Specifies whether to accept recommended plans automatically.
      * 
      */
-    public Boolean arePlansAutoAccepted() {
-        return this.arePlansAutoAccepted;
+    public Optional<Boolean> arePlansAutoAccepted() {
+        return Optional.ofNullable(this.arePlansAutoAccepted);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTa
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer allowedTimeLimit;
-        private List<String> alternatePlanBaselines;
-        private Integer alternatePlanLimit;
-        private List<String> alternatePlanSources;
-        private Boolean arePlansAutoAccepted;
+        private @Nullable Integer allowedTimeLimit;
+        private @Nullable List<String> alternatePlanBaselines;
+        private @Nullable Integer alternatePlanLimit;
+        private @Nullable List<String> alternatePlanSources;
+        private @Nullable Boolean arePlansAutoAccepted;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,34 +102,34 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTa
         }
 
         @CustomType.Setter
-        public Builder allowedTimeLimit(Integer allowedTimeLimit) {
-            this.allowedTimeLimit = Objects.requireNonNull(allowedTimeLimit);
+        public Builder allowedTimeLimit(@Nullable Integer allowedTimeLimit) {
+            this.allowedTimeLimit = allowedTimeLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder alternatePlanBaselines(List<String> alternatePlanBaselines) {
-            this.alternatePlanBaselines = Objects.requireNonNull(alternatePlanBaselines);
+        public Builder alternatePlanBaselines(@Nullable List<String> alternatePlanBaselines) {
+            this.alternatePlanBaselines = alternatePlanBaselines;
             return this;
         }
         public Builder alternatePlanBaselines(String... alternatePlanBaselines) {
             return alternatePlanBaselines(List.of(alternatePlanBaselines));
         }
         @CustomType.Setter
-        public Builder alternatePlanLimit(Integer alternatePlanLimit) {
-            this.alternatePlanLimit = Objects.requireNonNull(alternatePlanLimit);
+        public Builder alternatePlanLimit(@Nullable Integer alternatePlanLimit) {
+            this.alternatePlanLimit = alternatePlanLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder alternatePlanSources(List<String> alternatePlanSources) {
-            this.alternatePlanSources = Objects.requireNonNull(alternatePlanSources);
+        public Builder alternatePlanSources(@Nullable List<String> alternatePlanSources) {
+            this.alternatePlanSources = alternatePlanSources;
             return this;
         }
         public Builder alternatePlanSources(String... alternatePlanSources) {
             return alternatePlanSources(List.of(alternatePlanSources));
         }
         @CustomType.Setter
-        public Builder arePlansAutoAccepted(Boolean arePlansAutoAccepted) {
-            this.arePlansAutoAccepted = Objects.requireNonNull(arePlansAutoAccepted);
+        public Builder arePlansAutoAccepted(@Nullable Boolean arePlansAutoAccepted) {
+            this.arePlansAutoAccepted = arePlansAutoAccepted;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter build() {

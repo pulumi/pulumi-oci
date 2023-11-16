@@ -24,12 +24,12 @@ public final class GetInventoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of inventory_collection.
      * 
      */
-    private List<GetInventoriesInventoryCollection> inventoryCollections;
+    private @Nullable List<GetInventoriesInventoryCollection> inventoryCollections;
     /**
      * @return The current state of the inventory.
      * 
@@ -51,15 +51,15 @@ public final class GetInventoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of inventory_collection.
      * 
      */
     public List<GetInventoriesInventoryCollection> inventoryCollections() {
-        return this.inventoryCollections;
+        return this.inventoryCollections == null ? List.of() : this.inventoryCollections;
     }
     /**
      * @return The current state of the inventory.
@@ -80,8 +80,8 @@ public final class GetInventoriesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInventoriesFilter> filters;
-        private String id;
-        private List<GetInventoriesInventoryCollection> inventoryCollections;
+        private @Nullable String id;
+        private @Nullable List<GetInventoriesInventoryCollection> inventoryCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetInventoriesResult defaults) {
@@ -107,13 +107,13 @@ public final class GetInventoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inventoryCollections(List<GetInventoriesInventoryCollection> inventoryCollections) {
-            this.inventoryCollections = Objects.requireNonNull(inventoryCollections);
+        public Builder inventoryCollections(@Nullable List<GetInventoriesInventoryCollection> inventoryCollections) {
+            this.inventoryCollections = inventoryCollections;
             return this;
         }
         public Builder inventoryCollections(GetInventoriesInventoryCollection... inventoryCollections) {

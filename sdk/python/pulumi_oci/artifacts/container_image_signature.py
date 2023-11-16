@@ -25,19 +25,6 @@ class ContainerImageSignatureArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a ContainerImageSignature resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        :param pulumi.Input[str] image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
-        :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "image_id", image_id)
@@ -54,9 +41,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -66,9 +50,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -78,9 +59,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -90,9 +68,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -102,9 +77,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter
     def message(self) -> pulumi.Input[str]:
-        """
-        The base64 encoded signature payload that was signed.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -114,9 +86,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter
     def signature(self) -> pulumi.Input[str]:
-        """
-        The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -126,13 +95,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> pulumi.Input[str]:
-        """
-        The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "signing_algorithm")
 
     @signing_algorithm.setter
@@ -142,9 +104,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -154,9 +113,6 @@ class ContainerImageSignatureArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -183,24 +139,6 @@ class _ContainerImageSignatureState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ContainerImageSignature resources.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        :param pulumi.Input[str] created_by: The id of the user or principal that created the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
-        :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the container image signature.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the image was created.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -234,9 +172,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -246,9 +181,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        The id of the user or principal that created the resource.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -258,9 +190,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -270,9 +199,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -282,9 +208,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -294,9 +217,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -306,9 +226,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -318,9 +235,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -330,9 +244,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        The base64 encoded signature payload that was signed.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -342,9 +253,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter
     def signature(self) -> Optional[pulumi.Input[str]]:
-        """
-        The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -354,13 +262,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> Optional[pulumi.Input[str]]:
-        """
-        The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "signing_algorithm")
 
     @signing_algorithm.setter
@@ -370,9 +271,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the container image signature.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -382,9 +280,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -394,9 +289,6 @@ class _ContainerImageSignatureState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        An RFC 3339 timestamp indicating when the image was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -420,55 +312,9 @@ class ContainerImageSignature(pulumi.CustomResource):
                  signing_algorithm: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Upload a signature to an image.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_image_signature = oci.artifacts.ContainerImageSignature("testContainerImageSignature",
-            compartment_id=var["compartment_id"],
-            image_id=oci_core_image["test_image"]["id"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message=var["container_image_signature_message"],
-            signature=var["container_image_signature_signature"],
-            signing_algorithm=var["container_image_signature_signing_algorithm"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ContainerImageSignatures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
-        ```
-
+        Create a ContainerImageSignature resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
-        :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -477,40 +323,7 @@ class ContainerImageSignature(pulumi.CustomResource):
                  args: ContainerImageSignatureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Upload a signature to an image.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_image_signature = oci.artifacts.ContainerImageSignature("testContainerImageSignature",
-            compartment_id=var["compartment_id"],
-            image_id=oci_core_image["test_image"]["id"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message=var["container_image_signature_message"],
-            signature=var["container_image_signature_signature"],
-            signing_algorithm=var["container_image_signature_signing_algorithm"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ContainerImageSignatures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
-        ```
-
+        Create a ContainerImageSignature resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ContainerImageSignatureArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -603,24 +416,6 @@ class ContainerImageSignature(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        :param pulumi.Input[str] created_by: The id of the user or principal that created the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        :param pulumi.Input[str] kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
-        :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the container image signature.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the image was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -645,116 +440,70 @@ class ContainerImageSignature(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        The id of the user or principal that created the resource.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter
     def message(self) -> pulumi.Output[str]:
-        """
-        The base64 encoded signature payload that was signed.
-        """
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter
     def signature(self) -> pulumi.Output[str]:
-        """
-        The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        """
         return pulumi.get(self, "signature")
 
     @property
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> pulumi.Output[str]:
-        """
-        The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "signing_algorithm")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the container image signature.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        An RFC 3339 timestamp indicating when the image was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

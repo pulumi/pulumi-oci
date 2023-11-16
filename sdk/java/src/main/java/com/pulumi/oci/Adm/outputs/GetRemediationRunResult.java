@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRunResult {
@@ -17,128 +19,128 @@ public final class GetRemediationRunResult {
      * @return The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The type of the current stage of the remediation run.
      * 
      */
-    private String currentStageType;
+    private @Nullable String currentStageType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The name of the remediation run.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
      * 
      */
-    private String remediationRecipeId;
+    private @Nullable String remediationRecipeId;
     private String remediationRunId;
     /**
      * @return The source that triggered the Remediation Recipe.
      * 
      */
-    private String remediationRunSource;
+    private @Nullable String remediationRunSource;
     /**
      * @return The list of remediation run stage summaries.
      * 
      */
-    private List<GetRemediationRunStage> stages;
+    private @Nullable List<GetRemediationRunStage> stages;
     /**
      * @return The current lifecycle state of the remediation run.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetRemediationRunResult() {}
     /**
      * @return The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The type of the current stage of the remediation run.
      * 
      */
-    public String currentStageType() {
-        return this.currentStageType;
+    public Optional<String> currentStageType() {
+        return Optional.ofNullable(this.currentStageType);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The name of the remediation run.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
      * 
      */
-    public String remediationRecipeId() {
-        return this.remediationRecipeId;
+    public Optional<String> remediationRecipeId() {
+        return Optional.ofNullable(this.remediationRecipeId);
     }
     public String remediationRunId() {
         return this.remediationRunId;
@@ -147,57 +149,57 @@ public final class GetRemediationRunResult {
      * @return The source that triggered the Remediation Recipe.
      * 
      */
-    public String remediationRunSource() {
-        return this.remediationRunSource;
+    public Optional<String> remediationRunSource() {
+        return Optional.ofNullable(this.remediationRunSource);
     }
     /**
      * @return The list of remediation run stage summaries.
      * 
      */
     public List<GetRemediationRunStage> stages() {
-        return this.stages;
+        return this.stages == null ? List.of() : this.stages;
     }
     /**
      * @return The current lifecycle state of the remediation run.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -209,22 +211,22 @@ public final class GetRemediationRunResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String currentStageType;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String remediationRecipeId;
+        private @Nullable String compartmentId;
+        private @Nullable String currentStageType;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String remediationRecipeId;
         private String remediationRunId;
-        private String remediationRunSource;
-        private List<GetRemediationRunStage> stages;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeFinished;
-        private String timeStarted;
-        private String timeUpdated;
+        private @Nullable String remediationRunSource;
+        private @Nullable List<GetRemediationRunStage> stages;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetRemediationRunResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -247,38 +249,38 @@ public final class GetRemediationRunResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder currentStageType(String currentStageType) {
-            this.currentStageType = Objects.requireNonNull(currentStageType);
+        public Builder currentStageType(@Nullable String currentStageType) {
+            this.currentStageType = currentStageType;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder remediationRecipeId(String remediationRecipeId) {
-            this.remediationRecipeId = Objects.requireNonNull(remediationRecipeId);
+        public Builder remediationRecipeId(@Nullable String remediationRecipeId) {
+            this.remediationRecipeId = remediationRecipeId;
             return this;
         }
         @CustomType.Setter
@@ -287,46 +289,46 @@ public final class GetRemediationRunResult {
             return this;
         }
         @CustomType.Setter
-        public Builder remediationRunSource(String remediationRunSource) {
-            this.remediationRunSource = Objects.requireNonNull(remediationRunSource);
+        public Builder remediationRunSource(@Nullable String remediationRunSource) {
+            this.remediationRunSource = remediationRunSource;
             return this;
         }
         @CustomType.Setter
-        public Builder stages(List<GetRemediationRunStage> stages) {
-            this.stages = Objects.requireNonNull(stages);
+        public Builder stages(@Nullable List<GetRemediationRunStage> stages) {
+            this.stages = stages;
             return this;
         }
         public Builder stages(GetRemediationRunStage... stages) {
             return stages(List.of(stages));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetRemediationRunResult build() {

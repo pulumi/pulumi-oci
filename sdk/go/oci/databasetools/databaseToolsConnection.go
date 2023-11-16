@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
@@ -93,7 +92,7 @@ type DatabaseToolsConnection struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
-	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
+	ConnectionString pulumi.StringPtrOutput `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -103,25 +102,25 @@ type DatabaseToolsConnection struct {
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayOutput `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
-	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
+	PrivateEndpointId pulumi.StringPtrOutput `pulumi:"privateEndpointId"`
 	// (Updatable) The related resource
-	RelatedResource DatabaseToolsConnectionRelatedResourceOutput `pulumi:"relatedResource"`
+	RelatedResource DatabaseToolsConnectionRelatedResourcePtrOutput `pulumi:"relatedResource"`
 	// The current state of the Database Tools connection.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The DatabaseToolsConnection type.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) The database user name.
-	UserName pulumi.StringOutput `pulumi:"userName"`
+	UserName pulumi.StringPtrOutput `pulumi:"userName"`
 	// (Updatable) The user password.
-	UserPassword DatabaseToolsConnectionUserPasswordOutput `pulumi:"userPassword"`
+	UserPassword DatabaseToolsConnectionUserPasswordPtrOutput `pulumi:"userPassword"`
 }
 
 // NewDatabaseToolsConnection registers a new resource with the given unique name, arguments, and options.
@@ -318,12 +317,6 @@ func (i *DatabaseToolsConnection) ToDatabaseToolsConnectionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionOutput)
 }
 
-func (i *DatabaseToolsConnection) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnection] {
-	return pulumix.Output[*DatabaseToolsConnection]{
-		OutputState: i.ToDatabaseToolsConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseToolsConnectionArrayInput is an input type that accepts DatabaseToolsConnectionArray and DatabaseToolsConnectionArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionArrayInput` via:
 //
@@ -347,12 +340,6 @@ func (i DatabaseToolsConnectionArray) ToDatabaseToolsConnectionArrayOutput() Dat
 
 func (i DatabaseToolsConnectionArray) ToDatabaseToolsConnectionArrayOutputWithContext(ctx context.Context) DatabaseToolsConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionArrayOutput)
-}
-
-func (i DatabaseToolsConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseToolsConnection] {
-	return pulumix.Output[[]*DatabaseToolsConnection]{
-		OutputState: i.ToDatabaseToolsConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseToolsConnectionMapInput is an input type that accepts DatabaseToolsConnectionMap and DatabaseToolsConnectionMapOutput values.
@@ -380,12 +367,6 @@ func (i DatabaseToolsConnectionMap) ToDatabaseToolsConnectionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionMapOutput)
 }
 
-func (i DatabaseToolsConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseToolsConnection] {
-	return pulumix.Output[map[string]*DatabaseToolsConnection]{
-		OutputState: i.ToDatabaseToolsConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsConnectionOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsConnectionOutput) ElementType() reflect.Type {
@@ -400,12 +381,6 @@ func (o DatabaseToolsConnectionOutput) ToDatabaseToolsConnectionOutputWithContex
 	return o
 }
 
-func (o DatabaseToolsConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnection] {
-	return pulumix.Output[*DatabaseToolsConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 func (o DatabaseToolsConnectionOutput) AdvancedProperties() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.MapOutput { return v.AdvancedProperties }).(pulumi.MapOutput)
@@ -417,8 +392,8 @@ func (o DatabaseToolsConnectionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
-func (o DatabaseToolsConnectionOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.ConnectionString }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.ConnectionString }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -442,25 +417,25 @@ func (o DatabaseToolsConnectionOutput) KeyStores() DatabaseToolsConnectionKeySto
 }
 
 // A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-func (o DatabaseToolsConnectionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
-func (o DatabaseToolsConnectionOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The related resource
-func (o DatabaseToolsConnectionOutput) RelatedResource() DatabaseToolsConnectionRelatedResourceOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionRelatedResourceOutput {
+func (o DatabaseToolsConnectionOutput) RelatedResource() DatabaseToolsConnectionRelatedResourcePtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionRelatedResourcePtrOutput {
 		return v.RelatedResource
-	}).(DatabaseToolsConnectionRelatedResourceOutput)
+	}).(DatabaseToolsConnectionRelatedResourcePtrOutput)
 }
 
 // The current state of the Database Tools connection.
-func (o DatabaseToolsConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -469,13 +444,13 @@ func (o DatabaseToolsConnectionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-func (o DatabaseToolsConnectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
-func (o DatabaseToolsConnectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The DatabaseToolsConnection type.
@@ -484,13 +459,13 @@ func (o DatabaseToolsConnectionOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) The database user name.
-func (o DatabaseToolsConnectionOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The user password.
-func (o DatabaseToolsConnectionOutput) UserPassword() DatabaseToolsConnectionUserPasswordOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionUserPasswordOutput { return v.UserPassword }).(DatabaseToolsConnectionUserPasswordOutput)
+func (o DatabaseToolsConnectionOutput) UserPassword() DatabaseToolsConnectionUserPasswordPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionUserPasswordPtrOutput { return v.UserPassword }).(DatabaseToolsConnectionUserPasswordPtrOutput)
 }
 
 type DatabaseToolsConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -505,12 +480,6 @@ func (o DatabaseToolsConnectionArrayOutput) ToDatabaseToolsConnectionArrayOutput
 
 func (o DatabaseToolsConnectionArrayOutput) ToDatabaseToolsConnectionArrayOutputWithContext(ctx context.Context) DatabaseToolsConnectionArrayOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseToolsConnection] {
-	return pulumix.Output[[]*DatabaseToolsConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionArrayOutput) Index(i pulumi.IntInput) DatabaseToolsConnectionOutput {
@@ -531,12 +500,6 @@ func (o DatabaseToolsConnectionMapOutput) ToDatabaseToolsConnectionMapOutput() D
 
 func (o DatabaseToolsConnectionMapOutput) ToDatabaseToolsConnectionMapOutputWithContext(ctx context.Context) DatabaseToolsConnectionMapOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseToolsConnection] {
-	return pulumix.Output[map[string]*DatabaseToolsConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionMapOutput) MapIndex(k pulumi.StringInput) DatabaseToolsConnectionOutput {

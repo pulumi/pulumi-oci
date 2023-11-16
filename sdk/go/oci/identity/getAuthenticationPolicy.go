@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -61,8 +60,8 @@ type LookupAuthenticationPolicyArgs struct {
 // A collection of values returned by getAuthenticationPolicy.
 type LookupAuthenticationPolicyResult struct {
 	// Compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
-	Id            string `pulumi:"id"`
+	CompartmentId string  `pulumi:"compartmentId"`
+	Id            *string `pulumi:"id"`
 	// Network policy, Consists of a list of Network Source ids.
 	NetworkPolicies []GetAuthenticationPolicyNetworkPolicy `pulumi:"networkPolicies"`
 	// Password policy, currently set for the given compartment.
@@ -107,19 +106,13 @@ func (o LookupAuthenticationPolicyResultOutput) ToLookupAuthenticationPolicyResu
 	return o
 }
 
-func (o LookupAuthenticationPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAuthenticationPolicyResult] {
-	return pulumix.Output[LookupAuthenticationPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment OCID.
 func (o LookupAuthenticationPolicyResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthenticationPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o LookupAuthenticationPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuthenticationPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAuthenticationPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuthenticationPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Network policy, Consists of a list of Network Source ids.

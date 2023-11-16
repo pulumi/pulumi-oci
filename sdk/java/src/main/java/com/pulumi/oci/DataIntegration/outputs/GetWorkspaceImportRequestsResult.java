@@ -19,12 +19,12 @@ public final class GetWorkspaceImportRequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of import_request_summary_collection.
      * 
      */
-    private List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections;
+    private @Nullable List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections;
     private @Nullable String importStatus;
     /**
      * @return Name of the import request.
@@ -52,15 +52,15 @@ public final class GetWorkspaceImportRequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of import_request_summary_collection.
      * 
      */
     public List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections() {
-        return this.importRequestSummaryCollections;
+        return this.importRequestSummaryCollections == null ? List.of() : this.importRequestSummaryCollections;
     }
     public Optional<String> importStatus() {
         return Optional.ofNullable(this.importStatus);
@@ -103,8 +103,8 @@ public final class GetWorkspaceImportRequestsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetWorkspaceImportRequestsFilter> filters;
-        private String id;
-        private List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections;
+        private @Nullable String id;
+        private @Nullable List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections;
         private @Nullable String importStatus;
         private @Nullable String name;
         private @Nullable String projection;
@@ -134,13 +134,13 @@ public final class GetWorkspaceImportRequestsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder importRequestSummaryCollections(List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections) {
-            this.importRequestSummaryCollections = Objects.requireNonNull(importRequestSummaryCollections);
+        public Builder importRequestSummaryCollections(@Nullable List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections) {
+            this.importRequestSummaryCollections = importRequestSummaryCollections;
             return this;
         }
         public Builder importRequestSummaryCollections(GetWorkspaceImportRequestsImportRequestSummaryCollection... importRequestSummaryCollections) {

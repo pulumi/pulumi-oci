@@ -62,66 +62,42 @@ class GetTagResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description you assign to the tag.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the tag definition.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCostTracking")
-    def is_cost_tracking(self) -> bool:
-        """
-        Indicates whether the tag is enabled for cost tracking.
-        """
+    def is_cost_tracking(self) -> Optional[bool]:
         return pulumi.get(self, "is_cost_tracking")
 
     @property
     @pulumi.getter(name="isRetired")
-    def is_retired(self) -> bool:
-        """
-        Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-        """
+    def is_retired(self) -> Optional[bool]:
         return pulumi.get(self, "is_retired")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -132,25 +108,16 @@ class GetTagResult:
     @property
     @pulumi.getter(name="tagNamespaceId")
     def tag_namespace_id(self) -> str:
-        """
-        The OCID of the namespace that contains the tag definition.
-        """
         return pulumi.get(self, "tag_namespace_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def validators(self) -> Sequence['outputs.GetTagValidatorResult']:
-        """
-        Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-        """
+    def validators(self) -> Optional[Sequence['outputs.GetTagValidatorResult']]:
         return pulumi.get(self, "validators")
 
 
@@ -178,23 +145,7 @@ def get_tag(tag_name: Optional[str] = None,
             tag_namespace_id: Optional[str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagResult:
     """
-    This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified tag's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag = oci.Identity.get_tag(tag_name=oci_identity_tag["test_tag"]["name"],
-        tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"])
-    ```
-
-
-    :param str tag_name: The name of the tag.
-    :param str tag_namespace_id: The OCID of the tag namespace.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['tagName'] = tag_name
@@ -222,22 +173,6 @@ def get_tag_output(tag_name: Optional[pulumi.Input[str]] = None,
                    tag_namespace_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagResult]:
     """
-    This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified tag's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag = oci.Identity.get_tag(tag_name=oci_identity_tag["test_tag"]["name"],
-        tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"])
-    ```
-
-
-    :param str tag_name: The name of the tag.
-    :param str tag_namespace_id: The OCID of the tag namespace.
+    Use this data source to access information about an existing resource.
     """
     ...

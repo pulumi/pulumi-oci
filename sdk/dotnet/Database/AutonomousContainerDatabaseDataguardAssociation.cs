@@ -29,13 +29,13 @@ namespace Pulumi.Oci.Database
         /// The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
         /// </summary>
         [Output("applyLag")]
-        public Output<string> ApplyLag { get; private set; } = null!;
+        public Output<string?> ApplyLag { get; private set; } = null!;
 
         /// <summary>
         /// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         /// </summary>
         [Output("applyRate")]
-        public Output<string> ApplyRate { get; private set; } = null!;
+        public Output<string?> ApplyRate { get; private set; } = null!;
 
         /// <summary>
         /// The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -53,43 +53,43 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Output("fastStartFailOverLagLimitInSeconds")]
-        public Output<int> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
+        public Output<int?> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
-        public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
+        public Output<bool?> IsAutomaticFailoverEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         /// </summary>
         [Output("peerAutonomousContainerDatabaseDataguardAssociationId")]
-        public Output<string> PeerAutonomousContainerDatabaseDataguardAssociationId { get; private set; } = null!;
+        public Output<string?> PeerAutonomousContainerDatabaseDataguardAssociationId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         /// </summary>
         [Output("peerAutonomousContainerDatabaseId")]
-        public Output<string> PeerAutonomousContainerDatabaseId { get; private set; } = null!;
+        public Output<string?> PeerAutonomousContainerDatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of Autonomous Data Guard.
         /// </summary>
         [Output("peerLifecycleState")]
-        public Output<string> PeerLifecycleState { get; private set; } = null!;
+        public Output<string?> PeerLifecycleState { get; private set; } = null!;
 
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Output("peerRole")]
-        public Output<string> PeerRole { get; private set; } = null!;
+        public Output<string?> PeerRole { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
@@ -99,43 +99,43 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("protectionMode")]
-        public Output<string> ProtectionMode { get; private set; } = null!;
+        public Output<string?> ProtectionMode { get; private set; } = null!;
 
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Output("role")]
-        public Output<string> Role { get; private set; } = null!;
+        public Output<string?> Role { get; private set; } = null!;
 
         /// <summary>
         /// The current state of Autonomous Data Guard.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous DataGuard association was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when the last role change action happened.
         /// </summary>
         [Output("timeLastRoleChanged")]
-        public Output<string> TimeLastRoleChanged { get; private set; } = null!;
+        public Output<string?> TimeLastRoleChanged { get; private set; } = null!;
 
         /// <summary>
         /// The date and time of the last update to the apply lag, apply rate, and transport lag values.
         /// </summary>
         [Output("timeLastSynced")]
-        public Output<string> TimeLastSynced { get; private set; } = null!;
+        public Output<string?> TimeLastSynced { get; private set; } = null!;
 
         /// <summary>
         /// The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
         /// </summary>
         [Output("transportLag")]
-        public Output<string> TransportLag { get; private set; } = null!;
+        public Output<string?> TransportLag { get; private set; } = null!;
 
 
         /// <summary>

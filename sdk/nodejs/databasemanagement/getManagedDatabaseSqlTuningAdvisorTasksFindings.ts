@@ -95,14 +95,14 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly indexHashFilter?: string;
     readonly managedDatabaseId: string;
     readonly searchPeriod?: string;
     /**
      * The list of sql_tuning_advisor_task_finding_collection.
      */
-    readonly sqlTuningAdvisorTaskFindingCollections: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection[];
+    readonly sqlTuningAdvisorTaskFindingCollections?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection[];
     /**
      * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

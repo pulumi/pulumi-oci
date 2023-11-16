@@ -23,12 +23,12 @@ public final class GetAwrHubAwrSourcesSummaryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of AwrSource summary objects.
      * 
      */
-    private List<GetAwrHubAwrSourcesSummaryItem> items;
+    private @Nullable List<GetAwrHubAwrSourcesSummaryItem> items;
     /**
      * @return Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
      * 
@@ -50,15 +50,15 @@ public final class GetAwrHubAwrSourcesSummaryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of AwrSource summary objects.
      * 
      */
     public List<GetAwrHubAwrSourcesSummaryItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
@@ -79,8 +79,8 @@ public final class GetAwrHubAwrSourcesSummaryResult {
     public static final class Builder {
         private String awrHubId;
         private @Nullable String compartmentId;
-        private String id;
-        private List<GetAwrHubAwrSourcesSummaryItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAwrHubAwrSourcesSummaryItem> items;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetAwrHubAwrSourcesSummaryResult defaults) {
@@ -103,13 +103,13 @@ public final class GetAwrHubAwrSourcesSummaryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAwrHubAwrSourcesSummaryItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAwrHubAwrSourcesSummaryItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAwrHubAwrSourcesSummaryItem... items) {

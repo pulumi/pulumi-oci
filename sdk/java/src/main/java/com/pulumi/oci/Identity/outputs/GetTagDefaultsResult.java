@@ -34,7 +34,7 @@ public final class GetTagDefaultsResult {
      * @return The list of tag_defaults.
      * 
      */
-    private List<GetTagDefaultsTagDefault> tagDefaults;
+    private @Nullable List<GetTagDefaultsTagDefault> tagDefaults;
     /**
      * @return The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      * 
@@ -71,7 +71,7 @@ public final class GetTagDefaultsResult {
      * 
      */
     public List<GetTagDefaultsTagDefault> tagDefaults() {
-        return this.tagDefaults;
+        return this.tagDefaults == null ? List.of() : this.tagDefaults;
     }
     /**
      * @return The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
@@ -94,7 +94,7 @@ public final class GetTagDefaultsResult {
         private @Nullable List<GetTagDefaultsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-        private List<GetTagDefaultsTagDefault> tagDefaults;
+        private @Nullable List<GetTagDefaultsTagDefault> tagDefaults;
         private @Nullable String tagDefinitionId;
         public Builder() {}
         public Builder(GetTagDefaultsResult defaults) {
@@ -131,8 +131,8 @@ public final class GetTagDefaultsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tagDefaults(List<GetTagDefaultsTagDefault> tagDefaults) {
-            this.tagDefaults = Objects.requireNonNull(tagDefaults);
+        public Builder tagDefaults(@Nullable List<GetTagDefaultsTagDefault> tagDefaults) {
+            this.tagDefaults = tagDefaults;
             return this;
         }
         public Builder tagDefaults(GetTagDefaultsTagDefault... tagDefaults) {

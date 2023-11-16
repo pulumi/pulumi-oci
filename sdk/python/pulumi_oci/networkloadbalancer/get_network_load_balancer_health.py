@@ -46,15 +46,12 @@ class GetNetworkLoadBalancerHealthResult:
 
     @property
     @pulumi.getter(name="criticalStateBackendSetNames")
-    def critical_state_backend_set_names(self) -> Sequence[str]:
-        """
-        A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set`
-        """
+    def critical_state_backend_set_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "critical_state_backend_set_names")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,42 +64,22 @@ class GetNetworkLoadBalancerHealthResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The overall health status of the network load balancer.
-        *  **OK:** All backend sets associated with the network load balancer return a status of `OK`.
-        *  **WARNING:** At least one of the backend sets associated with the network load balancer returns a status of `WARNING`, no backend sets return a status of `CRITICAL`, and the network load balancer life cycle state is `ACTIVE`.
-        *  **CRITICAL:** One or more of the backend sets associated with the network load balancer return a status of `CRITICAL`.
-        *  **UNKNOWN:** If any one of the following conditions is true:
-        *  The network load balancer life cycle state is not `ACTIVE`.
-        *  No backend sets are defined for the network load balancer.
-        *  More than half of the backend sets associated with the network load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the network load balancer life cycle state is `ACTIVE`.
-        *  The system could not retrieve metrics for any reason.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="totalBackendSetCount")
-    def total_backend_set_count(self) -> int:
-        """
-        The total number of backend sets associated with this network load balancer.  Example: `4`
-        """
+    def total_backend_set_count(self) -> Optional[int]:
         return pulumi.get(self, "total_backend_set_count")
 
     @property
     @pulumi.getter(name="unknownStateBackendSetNames")
-    def unknown_state_backend_set_names(self) -> Sequence[str]:
-        """
-        A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set2`
-        """
+    def unknown_state_backend_set_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "unknown_state_backend_set_names")
 
     @property
     @pulumi.getter(name="warningStateBackendSetNames")
-    def warning_state_backend_set_names(self) -> Sequence[str]:
-        """
-        A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set3`
-        """
+    def warning_state_backend_set_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "warning_state_backend_set_names")
 
 
@@ -124,21 +101,7 @@ class AwaitableGetNetworkLoadBalancerHealthResult(GetNetworkLoadBalancerHealthRe
 def get_network_load_balancer_health(network_load_balancer_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancerHealthResult:
     """
-    This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves the health status for the specified network load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['networkLoadBalancerId'] = network_load_balancer_id
@@ -159,20 +122,6 @@ def get_network_load_balancer_health(network_load_balancer_id: Optional[str] = N
 def get_network_load_balancer_health_output(network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancerHealthResult]:
     """
-    This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves the health status for the specified network load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     ...

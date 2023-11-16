@@ -18,7 +18,7 @@ public final class GetBdsInstancesResult {
      * @return The list of bds_instances.
      * 
      */
-    private List<GetBdsInstancesBdsInstance> bdsInstances;
+    private @Nullable List<GetBdsInstancesBdsInstance> bdsInstances;
     /**
      * @return The OCID of the compartment.
      * 
@@ -34,7 +34,7 @@ public final class GetBdsInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The state of the cluster.
      * 
@@ -47,7 +47,7 @@ public final class GetBdsInstancesResult {
      * 
      */
     public List<GetBdsInstancesBdsInstance> bdsInstances() {
-        return this.bdsInstances;
+        return this.bdsInstances == null ? List.of() : this.bdsInstances;
     }
     /**
      * @return The OCID of the compartment.
@@ -70,8 +70,8 @@ public final class GetBdsInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The state of the cluster.
@@ -90,11 +90,11 @@ public final class GetBdsInstancesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBdsInstancesBdsInstance> bdsInstances;
+        private @Nullable List<GetBdsInstancesBdsInstance> bdsInstances;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBdsInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetBdsInstancesResult defaults) {
@@ -108,8 +108,8 @@ public final class GetBdsInstancesResult {
         }
 
         @CustomType.Setter
-        public Builder bdsInstances(List<GetBdsInstancesBdsInstance> bdsInstances) {
-            this.bdsInstances = Objects.requireNonNull(bdsInstances);
+        public Builder bdsInstances(@Nullable List<GetBdsInstancesBdsInstance> bdsInstances) {
+            this.bdsInstances = bdsInstances;
             return this;
         }
         public Builder bdsInstances(GetBdsInstancesBdsInstance... bdsInstances) {
@@ -134,8 +134,8 @@ public final class GetBdsInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

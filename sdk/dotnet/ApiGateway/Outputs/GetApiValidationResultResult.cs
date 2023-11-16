@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Name of the validation.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Result of the validation.
         /// </summary>
-        public readonly string Result;
+        public readonly string? Result;
 
         [OutputConstructor]
         private GetApiValidationResultResult(
-            string name,
+            string? name,
 
-            string result)
+            string? result)
         {
             Name = name;
             Result = result;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
@@ -65,7 +64,7 @@ type GetCostTrackingTagsResult struct {
 	CompartmentId string                      `pulumi:"compartmentId"`
 	Filters       []GetCostTrackingTagsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of tags.
 	Tags []GetCostTrackingTagsTag `pulumi:"tags"`
 }
@@ -109,12 +108,6 @@ func (o GetCostTrackingTagsResultOutput) ToGetCostTrackingTagsResultOutputWithCo
 	return o
 }
 
-func (o GetCostTrackingTagsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCostTrackingTagsResult] {
-	return pulumix.Output[GetCostTrackingTagsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the tag definition.
 func (o GetCostTrackingTagsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCostTrackingTagsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -125,8 +118,8 @@ func (o GetCostTrackingTagsResultOutput) Filters() GetCostTrackingTagsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCostTrackingTagsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCostTrackingTagsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCostTrackingTagsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCostTrackingTagsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of tags.

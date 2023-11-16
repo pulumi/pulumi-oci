@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -34,23 +33,23 @@ type EsxiHost struct {
 	pulumi.CustomResourceState
 
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-	BillingContractEndDate pulumi.StringOutput `pulumi:"billingContractEndDate"`
+	BillingContractEndDate pulumi.StringPtrOutput `pulumi:"billingContractEndDate"`
 	// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 	//
 	// Deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.
-	BillingDonorHostId pulumi.StringOutput `pulumi:"billingDonorHostId"`
+	BillingDonorHostId pulumi.StringPtrOutput `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-	CapacityReservationId pulumi.StringOutput `pulumi:"capacityReservationId"`
+	CapacityReservationId pulumi.StringPtrOutput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
-	ComputeAvailabilityDomain pulumi.StringOutput `pulumi:"computeAvailabilityDomain"`
+	ComputeAvailabilityDomain pulumi.StringPtrOutput `pulumi:"computeAvailabilityDomain"`
 	// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-	ComputeInstanceId pulumi.StringOutput `pulumi:"computeInstanceId"`
+	ComputeInstanceId pulumi.StringPtrOutput `pulumi:"computeInstanceId"`
 	// (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
-	CurrentSku pulumi.StringOutput `pulumi:"currentSku"`
+	CurrentSku pulumi.StringPtrOutput `pulumi:"currentSku"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
@@ -58,31 +57,31 @@ type EsxiHost struct {
 	// If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
 	//
 	// Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
 	//
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
-	FailedEsxiHostId pulumi.StringOutput `pulumi:"failedEsxiHostId"`
+	FailedEsxiHostId pulumi.StringPtrOutput `pulumi:"failedEsxiHostId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
-	GracePeriodEndDate pulumi.StringOutput `pulumi:"gracePeriodEndDate"`
+	GracePeriodEndDate pulumi.StringPtrOutput `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
-	HostOcpuCount pulumi.Float64Output `pulumi:"hostOcpuCount"`
+	HostOcpuCount pulumi.Float64PtrOutput `pulumi:"hostOcpuCount"`
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-	HostShapeName pulumi.StringOutput `pulumi:"hostShapeName"`
+	HostShapeName pulumi.StringPtrOutput `pulumi:"hostShapeName"`
 	// Indicates whether this host is in the progress of billing continuation.
-	IsBillingContinuationInProgress pulumi.BoolOutput `pulumi:"isBillingContinuationInProgress"`
+	IsBillingContinuationInProgress pulumi.BoolPtrOutput `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
-	IsBillingSwappingInProgress pulumi.BoolOutput `pulumi:"isBillingSwappingInProgress"`
+	IsBillingSwappingInProgress pulumi.BoolPtrOutput `pulumi:"isBillingSwappingInProgress"`
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
-	NextSku pulumi.StringOutput `pulumi:"nextSku"`
+	NextSku pulumi.StringPtrOutput `pulumi:"nextSku"`
 	// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
 	//
 	// Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
-	NonUpgradedEsxiHostId pulumi.StringOutput `pulumi:"nonUpgradedEsxiHostId"`
+	NonUpgradedEsxiHostId pulumi.StringPtrOutput `pulumi:"nonUpgradedEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-	ReplacementEsxiHostId pulumi.StringOutput `pulumi:"replacementEsxiHostId"`
+	ReplacementEsxiHostId pulumi.StringPtrOutput `pulumi:"replacementEsxiHostId"`
 	// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `Ocvp.EsxiHost` resource.
 	//
 	// ** IMPORTANT **
@@ -91,17 +90,17 @@ type EsxiHost struct {
 	// Deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
 	SddcId pulumi.StringPtrOutput `pulumi:"sddcId"`
 	// The current state of the ESXi host.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-	SwapBillingHostId pulumi.StringOutput `pulumi:"swapBillingHostId"`
+	SwapBillingHostId pulumi.StringPtrOutput `pulumi:"swapBillingHostId"`
 	// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
-	UpgradedReplacementEsxiHostId pulumi.StringOutput `pulumi:"upgradedReplacementEsxiHostId"`
+	UpgradedReplacementEsxiHostId pulumi.StringPtrOutput `pulumi:"upgradedReplacementEsxiHostId"`
 	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
-	VmwareSoftwareVersion pulumi.StringOutput `pulumi:"vmwareSoftwareVersion"`
+	VmwareSoftwareVersion pulumi.StringPtrOutput `pulumi:"vmwareSoftwareVersion"`
 }
 
 // NewEsxiHost registers a new resource with the given unique name, arguments, and options.
@@ -401,12 +400,6 @@ func (i *EsxiHost) ToEsxiHostOutputWithContext(ctx context.Context) EsxiHostOutp
 	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostOutput)
 }
 
-func (i *EsxiHost) ToOutput(ctx context.Context) pulumix.Output[*EsxiHost] {
-	return pulumix.Output[*EsxiHost]{
-		OutputState: i.ToEsxiHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EsxiHostArrayInput is an input type that accepts EsxiHostArray and EsxiHostArrayOutput values.
 // You can construct a concrete instance of `EsxiHostArrayInput` via:
 //
@@ -430,12 +423,6 @@ func (i EsxiHostArray) ToEsxiHostArrayOutput() EsxiHostArrayOutput {
 
 func (i EsxiHostArray) ToEsxiHostArrayOutputWithContext(ctx context.Context) EsxiHostArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostArrayOutput)
-}
-
-func (i EsxiHostArray) ToOutput(ctx context.Context) pulumix.Output[[]*EsxiHost] {
-	return pulumix.Output[[]*EsxiHost]{
-		OutputState: i.ToEsxiHostArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EsxiHostMapInput is an input type that accepts EsxiHostMap and EsxiHostMapOutput values.
@@ -463,12 +450,6 @@ func (i EsxiHostMap) ToEsxiHostMapOutputWithContext(ctx context.Context) EsxiHos
 	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostMapOutput)
 }
 
-func (i EsxiHostMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EsxiHost] {
-	return pulumix.Output[map[string]*EsxiHost]{
-		OutputState: i.ToEsxiHostMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EsxiHostOutput struct{ *pulumi.OutputState }
 
 func (EsxiHostOutput) ElementType() reflect.Type {
@@ -483,49 +464,43 @@ func (o EsxiHostOutput) ToEsxiHostOutputWithContext(ctx context.Context) EsxiHos
 	return o
 }
 
-func (o EsxiHostOutput) ToOutput(ctx context.Context) pulumix.Output[*EsxiHost] {
-	return pulumix.Output[*EsxiHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-func (o EsxiHostOutput) BillingContractEndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.BillingContractEndDate }).(pulumi.StringOutput)
+func (o EsxiHostOutput) BillingContractEndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.BillingContractEndDate }).(pulumi.StringPtrOutput)
 }
 
 // (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 //
 // Deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.
-func (o EsxiHostOutput) BillingDonorHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.BillingDonorHostId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) BillingDonorHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.BillingDonorHostId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-func (o EsxiHostOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
-func (o EsxiHostOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
-func (o EsxiHostOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+func (o EsxiHostOutput) ComputeAvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.ComputeAvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-func (o EsxiHostOutput) ComputeInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.ComputeInstanceId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) ComputeInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.ComputeInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 //
 // Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
-func (o EsxiHostOutput) CurrentSku() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.CurrentSku }).(pulumi.StringOutput)
+func (o EsxiHostOutput) CurrentSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.CurrentSku }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -538,15 +513,15 @@ func (o EsxiHostOutput) DefinedTags() pulumi.MapOutput {
 // If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
 //
 // Avoid entering confidential information.
-func (o EsxiHostOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o EsxiHostOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
 //
 // Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
-func (o EsxiHostOutput) FailedEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.FailedEsxiHostId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) FailedEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.FailedEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -555,45 +530,45 @@ func (o EsxiHostOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
-func (o EsxiHostOutput) GracePeriodEndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.GracePeriodEndDate }).(pulumi.StringOutput)
+func (o EsxiHostOutput) GracePeriodEndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.GracePeriodEndDate }).(pulumi.StringPtrOutput)
 }
 
 // The OCPU count of the ESXi host.
-func (o EsxiHostOutput) HostOcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v *EsxiHost) pulumi.Float64Output { return v.HostOcpuCount }).(pulumi.Float64Output)
+func (o EsxiHostOutput) HostOcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.Float64PtrOutput { return v.HostOcpuCount }).(pulumi.Float64PtrOutput)
 }
 
 // The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-func (o EsxiHostOutput) HostShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.HostShapeName }).(pulumi.StringOutput)
+func (o EsxiHostOutput) HostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.HostShapeName }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this host is in the progress of billing continuation.
-func (o EsxiHostOutput) IsBillingContinuationInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.BoolOutput { return v.IsBillingContinuationInProgress }).(pulumi.BoolOutput)
+func (o EsxiHostOutput) IsBillingContinuationInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.BoolPtrOutput { return v.IsBillingContinuationInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether this host is in the progress of swapping billing.
-func (o EsxiHostOutput) IsBillingSwappingInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.BoolOutput { return v.IsBillingSwappingInProgress }).(pulumi.BoolOutput)
+func (o EsxiHostOutput) IsBillingSwappingInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.BoolPtrOutput { return v.IsBillingSwappingInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
-func (o EsxiHostOutput) NextSku() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.NextSku }).(pulumi.StringOutput)
+func (o EsxiHostOutput) NextSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.NextSku }).(pulumi.StringPtrOutput)
 }
 
 // (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
 //
 // Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
-func (o EsxiHostOutput) NonUpgradedEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.NonUpgradedEsxiHostId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) NonUpgradedEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.NonUpgradedEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-func (o EsxiHostOutput) ReplacementEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.ReplacementEsxiHostId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) ReplacementEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.ReplacementEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `Ocvp.EsxiHost` resource.
@@ -607,33 +582,33 @@ func (o EsxiHostOutput) SddcId() pulumi.StringPtrOutput {
 }
 
 // The current state of the ESXi host.
-func (o EsxiHostOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EsxiHostOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-func (o EsxiHostOutput) SwapBillingHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.SwapBillingHostId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) SwapBillingHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.SwapBillingHostId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o EsxiHostOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EsxiHostOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o EsxiHostOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o EsxiHostOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
-func (o EsxiHostOutput) UpgradedReplacementEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
+func (o EsxiHostOutput) UpgradedReplacementEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
-func (o EsxiHostOutput) VmwareSoftwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
+func (o EsxiHostOutput) VmwareSoftwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringPtrOutput { return v.VmwareSoftwareVersion }).(pulumi.StringPtrOutput)
 }
 
 type EsxiHostArrayOutput struct{ *pulumi.OutputState }
@@ -648,12 +623,6 @@ func (o EsxiHostArrayOutput) ToEsxiHostArrayOutput() EsxiHostArrayOutput {
 
 func (o EsxiHostArrayOutput) ToEsxiHostArrayOutputWithContext(ctx context.Context) EsxiHostArrayOutput {
 	return o
-}
-
-func (o EsxiHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EsxiHost] {
-	return pulumix.Output[[]*EsxiHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EsxiHostArrayOutput) Index(i pulumi.IntInput) EsxiHostOutput {
@@ -674,12 +643,6 @@ func (o EsxiHostMapOutput) ToEsxiHostMapOutput() EsxiHostMapOutput {
 
 func (o EsxiHostMapOutput) ToEsxiHostMapOutputWithContext(ctx context.Context) EsxiHostMapOutput {
 	return o
-}
-
-func (o EsxiHostMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EsxiHost] {
-	return pulumix.Output[map[string]*EsxiHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EsxiHostMapOutput) MapIndex(k pulumi.StringInput) EsxiHostOutput {

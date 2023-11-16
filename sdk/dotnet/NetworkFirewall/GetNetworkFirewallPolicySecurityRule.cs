@@ -80,18 +80,18 @@ namespace Pulumi.Oci.NetworkFirewall
         /// * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
         /// * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRuleConditionResult> Conditions;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
         /// * INTRUSION_DETECTION - Intrusion Detection.
         /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         /// </summary>
-        public readonly string Inspection;
+        public readonly string? Inspection;
         /// <summary>
         /// Name for the Security rule, must be unique within the policy.
         /// </summary>
@@ -100,32 +100,32 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this security rule belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// An object which defines the position of the rule.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRulePositionResult> Positions;
-        public readonly string PriorityOrder;
+        public readonly string? PriorityOrder;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicySecurityRuleResult(
-            string action,
+            string? action,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRuleConditionResult> conditions,
 
-            string id,
+            string? id,
 
-            string inspection,
+            string? inspection,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRulePositionResult> positions,
 
-            string priorityOrder)
+            string? priorityOrder)
         {
             Action = action;
             Conditions = conditions;

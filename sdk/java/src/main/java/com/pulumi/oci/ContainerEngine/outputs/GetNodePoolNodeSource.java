@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolNodeSource {
@@ -13,39 +15,39 @@ public final class GetNodePoolNodeSource {
      * @return The OCID of the image used to boot the node.
      * 
      */
-    private String imageId;
+    private @Nullable String imageId;
     /**
      * @return The user-friendly name of the entity corresponding to the OCID.
      * 
      */
-    private String sourceName;
+    private @Nullable String sourceName;
     /**
      * @return The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetNodePoolNodeSource() {}
     /**
      * @return The OCID of the image used to boot the node.
      * 
      */
-    public String imageId() {
-        return this.imageId;
+    public Optional<String> imageId() {
+        return Optional.ofNullable(this.imageId);
     }
     /**
      * @return The user-friendly name of the entity corresponding to the OCID.
      * 
      */
-    public String sourceName() {
-        return this.sourceName;
+    public Optional<String> sourceName() {
+        return Optional.ofNullable(this.sourceName);
     }
     /**
      * @return The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetNodePoolNodeSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String imageId;
-        private String sourceName;
-        private String sourceType;
+        private @Nullable String imageId;
+        private @Nullable String sourceName;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetNodePoolNodeSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetNodePoolNodeSource {
         }
 
         @CustomType.Setter
-        public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+        public Builder imageId(@Nullable String imageId) {
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceName(String sourceName) {
-            this.sourceName = Objects.requireNonNull(sourceName);
+        public Builder sourceName(@Nullable String sourceName) {
+            this.sourceName = sourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetNodePoolNodeSource build() {

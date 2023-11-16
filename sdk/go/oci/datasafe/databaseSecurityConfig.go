@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -30,38 +29,38 @@ type DatabaseSecurityConfig struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of the compartment containing the database security config.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The OCID of the database security configuration resource.
 	DatabaseSecurityConfigId pulumi.StringOutput `pulumi:"databaseSecurityConfigId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the database security config in Data Safe.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RefreshTrigger pulumi.IntPtrOutput `pulumi:"refreshTrigger"`
 	// (Updatable) Details to update the SQL firewall config.
-	SqlFirewallConfig DatabaseSecurityConfigSqlFirewallConfigOutput `pulumi:"sqlFirewallConfig"`
+	SqlFirewallConfig DatabaseSecurityConfigSqlFirewallConfigPtrOutput `pulumi:"sqlFirewallConfig"`
 	// The current state of the database security config.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The target OCID corresponding to the database security config.
-	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// The time that the database security config was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The last date and time the database security config was refreshed, in the format defined by RFC3339.
-	TimeLastRefreshed pulumi.StringOutput `pulumi:"timeLastRefreshed"`
+	TimeLastRefreshed pulumi.StringPtrOutput `pulumi:"timeLastRefreshed"`
 	// The date and time the database security configuration was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDatabaseSecurityConfig registers a new resource with the given unique name, arguments, and options.
@@ -240,12 +239,6 @@ func (i *DatabaseSecurityConfig) ToDatabaseSecurityConfigOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigOutput)
 }
 
-func (i *DatabaseSecurityConfig) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfig] {
-	return pulumix.Output[*DatabaseSecurityConfig]{
-		OutputState: i.ToDatabaseSecurityConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseSecurityConfigArrayInput is an input type that accepts DatabaseSecurityConfigArray and DatabaseSecurityConfigArrayOutput values.
 // You can construct a concrete instance of `DatabaseSecurityConfigArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i DatabaseSecurityConfigArray) ToDatabaseSecurityConfigArrayOutput() Datab
 
 func (i DatabaseSecurityConfigArray) ToDatabaseSecurityConfigArrayOutputWithContext(ctx context.Context) DatabaseSecurityConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigArrayOutput)
-}
-
-func (i DatabaseSecurityConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfig] {
-	return pulumix.Output[[]*DatabaseSecurityConfig]{
-		OutputState: i.ToDatabaseSecurityConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseSecurityConfigMapInput is an input type that accepts DatabaseSecurityConfigMap and DatabaseSecurityConfigMapOutput values.
@@ -302,12 +289,6 @@ func (i DatabaseSecurityConfigMap) ToDatabaseSecurityConfigMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigMapOutput)
 }
 
-func (i DatabaseSecurityConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfig] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfig]{
-		OutputState: i.ToDatabaseSecurityConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseSecurityConfigOutput struct{ *pulumi.OutputState }
 
 func (DatabaseSecurityConfigOutput) ElementType() reflect.Type {
@@ -322,15 +303,9 @@ func (o DatabaseSecurityConfigOutput) ToDatabaseSecurityConfigOutputWithContext(
 	return o
 }
 
-func (o DatabaseSecurityConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfig] {
-	return pulumix.Output[*DatabaseSecurityConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment containing the database security config.
-func (o DatabaseSecurityConfigOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the database security configuration resource.
@@ -344,13 +319,13 @@ func (o DatabaseSecurityConfigOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the security policy.
-func (o DatabaseSecurityConfigOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
-func (o DatabaseSecurityConfigOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -359,8 +334,8 @@ func (o DatabaseSecurityConfigOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details about the current state of the database security config in Data Safe.
-func (o DatabaseSecurityConfigOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -372,15 +347,15 @@ func (o DatabaseSecurityConfigOutput) RefreshTrigger() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Details to update the SQL firewall config.
-func (o DatabaseSecurityConfigOutput) SqlFirewallConfig() DatabaseSecurityConfigSqlFirewallConfigOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) DatabaseSecurityConfigSqlFirewallConfigOutput {
+func (o DatabaseSecurityConfigOutput) SqlFirewallConfig() DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
 		return v.SqlFirewallConfig
-	}).(DatabaseSecurityConfigSqlFirewallConfigOutput)
+	}).(DatabaseSecurityConfigSqlFirewallConfigPtrOutput)
 }
 
 // The current state of the database security config.
-func (o DatabaseSecurityConfigOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -389,23 +364,23 @@ func (o DatabaseSecurityConfigOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The target OCID corresponding to the database security config.
-func (o DatabaseSecurityConfigOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The time that the database security config was created, in the format defined by RFC3339.
-func (o DatabaseSecurityConfigOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the database security config was refreshed, in the format defined by RFC3339.
-func (o DatabaseSecurityConfigOutput) TimeLastRefreshed() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.TimeLastRefreshed }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) TimeLastRefreshed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.TimeLastRefreshed }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database security configuration was last updated, in the format defined by RFC3339.
-func (o DatabaseSecurityConfigOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DatabaseSecurityConfigArrayOutput struct{ *pulumi.OutputState }
@@ -420,12 +395,6 @@ func (o DatabaseSecurityConfigArrayOutput) ToDatabaseSecurityConfigArrayOutput()
 
 func (o DatabaseSecurityConfigArrayOutput) ToDatabaseSecurityConfigArrayOutputWithContext(ctx context.Context) DatabaseSecurityConfigArrayOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfig] {
-	return pulumix.Output[[]*DatabaseSecurityConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSecurityConfigArrayOutput) Index(i pulumi.IntInput) DatabaseSecurityConfigOutput {
@@ -446,12 +415,6 @@ func (o DatabaseSecurityConfigMapOutput) ToDatabaseSecurityConfigMapOutput() Dat
 
 func (o DatabaseSecurityConfigMapOutput) ToDatabaseSecurityConfigMapOutputWithContext(ctx context.Context) DatabaseSecurityConfigMapOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfig] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSecurityConfigMapOutput) MapIndex(k pulumi.StringInput) DatabaseSecurityConfigOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
@@ -88,7 +87,7 @@ type GetOpensearchVersionsResult struct {
 	CompartmentId string                        `pulumi:"compartmentId"`
 	Filters       []GetOpensearchVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of opensearch_versions_collection.
 	OpensearchVersionsCollections []GetOpensearchVersionsOpensearchVersionsCollection `pulumi:"opensearchVersionsCollections"`
 }
@@ -132,12 +131,6 @@ func (o GetOpensearchVersionsResultOutput) ToGetOpensearchVersionsResultOutputWi
 	return o
 }
 
-func (o GetOpensearchVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsResult] {
-	return pulumix.Output[GetOpensearchVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpensearchVersionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchVersionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -147,8 +140,8 @@ func (o GetOpensearchVersionsResultOutput) Filters() GetOpensearchVersionsFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOpensearchVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOpensearchVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of opensearch_versions_collection.

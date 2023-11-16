@@ -61,13 +61,13 @@ export interface GetAutonomousCharacterSetsResult {
     /**
      * The list of autonomous_database_character_sets.
      */
-    readonly autonomousDatabaseCharacterSets: outputs.Database.GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet[];
+    readonly autonomousDatabaseCharacterSets?: outputs.Database.GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet[];
     readonly characterSetType?: string;
     readonly filters?: outputs.Database.GetAutonomousCharacterSetsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isDedicated?: boolean;
     readonly isShared?: boolean;
 }

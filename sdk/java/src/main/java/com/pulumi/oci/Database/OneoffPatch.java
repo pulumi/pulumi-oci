@@ -104,14 +104,14 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * One-off patch name.
@@ -152,42 +152,42 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Detailed message for the lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Detailed message for the lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * List of one-off patches for Database Homes.
      * 
      */
     @Export(name="oneOffPatches", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> oneOffPatches;
+    private Output</* @Nullable */ List<String>> oneOffPatches;
 
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    public Output<List<String>> oneOffPatches() {
-        return this.oneOffPatches;
+    public Output<Optional<List<String>>> oneOffPatches() {
+        return Codegen.optional(this.oneOffPatches);
     }
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
@@ -208,84 +208,84 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sha256sum", refs={String.class}, tree="[0]")
-    private Output<String> sha256sum;
+    private Output</* @Nullable */ String> sha256sum;
 
     /**
      * @return SHA-256 checksum of the one-off patch.
      * 
      */
-    public Output<String> sha256sum() {
-        return this.sha256sum;
+    public Output<Optional<String>> sha256sum() {
+        return Codegen.optional(this.sha256sum);
     }
     /**
      * The size of one-off patch in kilobytes.
      * 
      */
     @Export(name="sizeInKbs", refs={Double.class}, tree="[0]")
-    private Output<Double> sizeInKbs;
+    private Output</* @Nullable */ Double> sizeInKbs;
 
     /**
      * @return The size of one-off patch in kilobytes.
      * 
      */
-    public Output<Double> sizeInKbs() {
-        return this.sizeInKbs;
+    public Output<Optional<Double>> sizeInKbs() {
+        return Codegen.optional(this.sizeInKbs);
     }
     /**
      * The current state of the one-off patch.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the one-off patch.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time one-off patch was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time one-off patch was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time until which the one-off patch will be available for download.
      * 
      */
     @Export(name="timeOfExpiration", refs={String.class}, tree="[0]")
-    private Output<String> timeOfExpiration;
+    private Output</* @Nullable */ String> timeOfExpiration;
 
     /**
      * @return The date and time until which the one-off patch will be available for download.
      * 
      */
-    public Output<String> timeOfExpiration() {
-        return this.timeOfExpiration;
+    public Output<Optional<String>> timeOfExpiration() {
+        return Codegen.optional(this.timeOfExpiration);
     }
     /**
      * The date and time one-off patch was updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time one-off patch was updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -56,7 +56,7 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of the job.
@@ -65,7 +65,7 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
     /**
      * The list of sql_plan_baseline_job_collection.
      */
-    readonly sqlPlanBaselineJobCollections: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection[];
+    readonly sqlPlanBaselineJobCollections?: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection[];
 }
 /**
  * This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.

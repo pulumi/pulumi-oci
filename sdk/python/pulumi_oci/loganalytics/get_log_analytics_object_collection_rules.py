@@ -49,9 +49,6 @@ class GetLogAnalyticsObjectCollectionRulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -61,7 +58,7 @@ class GetLogAnalyticsObjectCollectionRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,18 +66,12 @@ class GetLogAnalyticsObjectCollectionRulesResult:
 
     @property
     @pulumi.getter(name="logAnalyticsObjectCollectionRuleCollections")
-    def log_analytics_object_collection_rule_collections(self) -> Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionResult']:
-        """
-        The list of log_analytics_object_collection_rule_collection.
-        """
+    def log_analytics_object_collection_rule_collections(self) -> Optional[Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionResult']]:
         return pulumi.get(self, "log_analytics_object_collection_rule_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -91,9 +82,6 @@ class GetLogAnalyticsObjectCollectionRulesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the rule.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[str] = No
                                               state: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsObjectCollectionRulesResult:
     """
-    This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets list of configuration details of Object Storage based collection rules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"],
-        name=var["log_analytics_object_collection_rule_name"],
-        state=var["log_analytics_object_collection_rule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str name: A filter to return rules only matching with this name.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: Lifecycle state filter.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
                                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRulesResult]:
     """
-    This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets list of configuration details of Object Storage based collection rules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"],
-        name=var["log_analytics_object_collection_rule_name"],
-        state=var["log_analytics_object_collection_rule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str name: A filter to return rules only matching with this name.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: Lifecycle state filter.
+    Use this data source to access information about an existing resource.
     """
     ...

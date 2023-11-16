@@ -42,26 +42,17 @@ class GetBackupsResult:
 
     @property
     @pulumi.getter
-    def backups(self) -> Sequence['outputs.GetBackupsBackupResult']:
-        """
-        The list of backups.
-        """
+    def backups(self) -> Optional[Sequence['outputs.GetBackupsBackupResult']]:
         return pulumi.get(self, "backups")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "database_id")
 
     @property
@@ -71,7 +62,7 @@ class GetBackupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,23 +87,7 @@ def get_backups(compartment_id: Optional[str] = None,
                 filters: Optional[Sequence[pulumi.InputType['GetBackupsFilterArgs']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackupsResult:
     """
-    This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backups = oci.Database.get_backups(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBackupsFilterArgs']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupsResult]:
     """
-    This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backups = oci.Database.get_backups(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    Use this data source to access information about an existing resource.
     """
     ...

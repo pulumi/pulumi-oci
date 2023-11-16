@@ -122,44 +122,44 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The name of the associated backend set.  Example: `example_backend_set`
         /// </summary>
-        public readonly string DefaultBackendSetName;
-        public readonly string Id;
+        public readonly string? DefaultBackendSetName;
+        public readonly string? Id;
         /// <summary>
         /// IP version associated with the listener.
         /// </summary>
-        public readonly string IpVersion;
+        public readonly string? IpVersion;
         public readonly string ListenerName;
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string NetworkLoadBalancerId;
         /// <summary>
         /// The communication port for the listener.  Example: `80`
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
 
         [OutputConstructor]
         private GetListenerResult(
-            string defaultBackendSetName,
+            string? defaultBackendSetName,
 
-            string id,
+            string? id,
 
-            string ipVersion,
+            string? ipVersion,
 
             string listenerName,
 
-            string name,
+            string? name,
 
             string networkLoadBalancerId,
 
-            int port,
+            int? port,
 
-            string protocol)
+            string? protocol)
         {
             DefaultBackendSetName = defaultBackendSetName;
             Id = id;

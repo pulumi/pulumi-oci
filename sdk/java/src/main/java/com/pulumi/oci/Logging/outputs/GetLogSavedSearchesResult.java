@@ -24,13 +24,13 @@ public final class GetLogSavedSearchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String logSavedSearchId;
     /**
      * @return The list of log_saved_search_summary_collection.
      * 
      */
-    private List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections;
+    private @Nullable List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections;
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -52,8 +52,8 @@ public final class GetLogSavedSearchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> logSavedSearchId() {
         return Optional.ofNullable(this.logSavedSearchId);
@@ -63,7 +63,7 @@ public final class GetLogSavedSearchesResult {
      * 
      */
     public List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections() {
-        return this.logSavedSearchSummaryCollections;
+        return this.logSavedSearchSummaryCollections == null ? List.of() : this.logSavedSearchSummaryCollections;
     }
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
@@ -84,9 +84,9 @@ public final class GetLogSavedSearchesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetLogSavedSearchesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String logSavedSearchId;
-        private List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections;
+        private @Nullable List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetLogSavedSearchesResult defaults) {
@@ -113,8 +113,8 @@ public final class GetLogSavedSearchesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -123,8 +123,8 @@ public final class GetLogSavedSearchesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder logSavedSearchSummaryCollections(List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections) {
-            this.logSavedSearchSummaryCollections = Objects.requireNonNull(logSavedSearchSummaryCollections);
+        public Builder logSavedSearchSummaryCollections(@Nullable List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections) {
+            this.logSavedSearchSummaryCollections = logSavedSearchSummaryCollections;
             return this;
         }
         public Builder logSavedSearchSummaryCollections(GetLogSavedSearchesLogSavedSearchSummaryCollection... logSavedSearchSummaryCollections) {

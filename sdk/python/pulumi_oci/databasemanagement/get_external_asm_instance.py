@@ -67,42 +67,27 @@ class GetExternalAsmInstanceResult:
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> str:
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
-        """
+    def adr_home_directory(self) -> Optional[str]:
         return pulumi.get(self, "adr_home_directory")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> str:
-        """
-        The name of the external ASM instance.
-        """
+    def component_name(self) -> Optional[str]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the ASM instance. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalAsmId")
-    def external_asm_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM that the ASM instance belongs to.
-        """
+    def external_asm_id(self) -> Optional[str]:
         return pulumi.get(self, "external_asm_id")
 
     @property
@@ -112,31 +97,22 @@ class GetExternalAsmInstanceResult:
 
     @property
     @pulumi.getter(name="externalDbNodeId")
-    def external_db_node_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
-        """
+    def external_db_node_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_node_id")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
-        """
+    def external_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The name of the host on which the ASM instance is running.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -144,34 +120,22 @@ class GetExternalAsmInstanceResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external ASM instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external ASM instance was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external ASM instance was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -200,21 +164,7 @@ class AwaitableGetExternalAsmInstanceResult(GetExternalAsmInstanceResult):
 def get_external_asm_instance(external_asm_instance_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmInstanceResult:
     """
-    This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_instance = oci.DatabaseManagement.get_external_asm_instance(external_asm_instance_id=oci_database_management_external_asm_instance["test_external_asm_instance"]["id"])
-    ```
-
-
-    :param str external_asm_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalAsmInstanceId'] = external_asm_instance_id
@@ -242,20 +192,6 @@ def get_external_asm_instance(external_asm_instance_id: Optional[str] = None,
 def get_external_asm_instance_output(external_asm_instance_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmInstanceResult]:
     """
-    This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_instance = oci.DatabaseManagement.get_external_asm_instance(external_asm_instance_id=oci_database_management_external_asm_instance["test_external_asm_instance"]["id"])
-    ```
-
-
-    :param str external_asm_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
+    Use this data source to access information about an existing resource.
     """
     ...

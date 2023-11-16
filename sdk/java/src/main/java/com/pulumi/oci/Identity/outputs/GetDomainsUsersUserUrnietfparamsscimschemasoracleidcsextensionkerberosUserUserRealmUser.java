@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser {
@@ -13,51 +15,51 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
-    private String principalName;
+    private @Nullable String principalName;
     /**
      * @return Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
-    private String realmName;
+    private @Nullable String realmName;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser() {}
     /**
      * @return Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
-    public String principalName() {
-        return this.principalName;
+    public Optional<String> principalName() {
+        return Optional.ofNullable(this.principalName);
     }
     /**
      * @return Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
-    public String realmName() {
-        return this.realmName;
+    public Optional<String> realmName() {
+        return Optional.ofNullable(this.realmName);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String principalName;
-        private String realmName;
-        private String ref;
-        private String value;
+        private @Nullable String principalName;
+        private @Nullable String realmName;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder principalName(String principalName) {
-            this.principalName = Objects.requireNonNull(principalName);
+        public Builder principalName(@Nullable String principalName) {
+            this.principalName = principalName;
             return this;
         }
         @CustomType.Setter
-        public Builder realmName(String realmName) {
-            this.realmName = Objects.requireNonNull(realmName);
+        public Builder realmName(@Nullable String realmName) {
+            this.realmName = realmName;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser build() {

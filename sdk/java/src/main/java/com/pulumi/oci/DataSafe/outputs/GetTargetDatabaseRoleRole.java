@@ -7,38 +7,40 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabaseRoleRole {
-    private String authenticationType;
-    private Boolean isCommon;
-    private Boolean isImplicit;
-    private Boolean isInherited;
-    private Boolean isOracleMaintained;
-    private Boolean isPasswordRequired;
-    private String roleName;
+    private @Nullable String authenticationType;
+    private @Nullable Boolean isCommon;
+    private @Nullable Boolean isImplicit;
+    private @Nullable Boolean isInherited;
+    private @Nullable Boolean isOracleMaintained;
+    private @Nullable Boolean isPasswordRequired;
+    private @Nullable String roleName;
 
     private GetTargetDatabaseRoleRole() {}
-    public String authenticationType() {
-        return this.authenticationType;
+    public Optional<String> authenticationType() {
+        return Optional.ofNullable(this.authenticationType);
     }
-    public Boolean isCommon() {
-        return this.isCommon;
+    public Optional<Boolean> isCommon() {
+        return Optional.ofNullable(this.isCommon);
     }
-    public Boolean isImplicit() {
-        return this.isImplicit;
+    public Optional<Boolean> isImplicit() {
+        return Optional.ofNullable(this.isImplicit);
     }
-    public Boolean isInherited() {
-        return this.isInherited;
+    public Optional<Boolean> isInherited() {
+        return Optional.ofNullable(this.isInherited);
     }
-    public Boolean isOracleMaintained() {
-        return this.isOracleMaintained;
+    public Optional<Boolean> isOracleMaintained() {
+        return Optional.ofNullable(this.isOracleMaintained);
     }
-    public Boolean isPasswordRequired() {
-        return this.isPasswordRequired;
+    public Optional<Boolean> isPasswordRequired() {
+        return Optional.ofNullable(this.isPasswordRequired);
     }
-    public String roleName() {
-        return this.roleName;
+    public Optional<String> roleName() {
+        return Optional.ofNullable(this.roleName);
     }
 
     public static Builder builder() {
@@ -50,13 +52,13 @@ public final class GetTargetDatabaseRoleRole {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authenticationType;
-        private Boolean isCommon;
-        private Boolean isImplicit;
-        private Boolean isInherited;
-        private Boolean isOracleMaintained;
-        private Boolean isPasswordRequired;
-        private String roleName;
+        private @Nullable String authenticationType;
+        private @Nullable Boolean isCommon;
+        private @Nullable Boolean isImplicit;
+        private @Nullable Boolean isInherited;
+        private @Nullable Boolean isOracleMaintained;
+        private @Nullable Boolean isPasswordRequired;
+        private @Nullable String roleName;
         public Builder() {}
         public Builder(GetTargetDatabaseRoleRole defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,38 +72,38 @@ public final class GetTargetDatabaseRoleRole {
         }
 
         @CustomType.Setter
-        public Builder authenticationType(String authenticationType) {
-            this.authenticationType = Objects.requireNonNull(authenticationType);
+        public Builder authenticationType(@Nullable String authenticationType) {
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
-        public Builder isCommon(Boolean isCommon) {
-            this.isCommon = Objects.requireNonNull(isCommon);
+        public Builder isCommon(@Nullable Boolean isCommon) {
+            this.isCommon = isCommon;
             return this;
         }
         @CustomType.Setter
-        public Builder isImplicit(Boolean isImplicit) {
-            this.isImplicit = Objects.requireNonNull(isImplicit);
+        public Builder isImplicit(@Nullable Boolean isImplicit) {
+            this.isImplicit = isImplicit;
             return this;
         }
         @CustomType.Setter
-        public Builder isInherited(Boolean isInherited) {
-            this.isInherited = Objects.requireNonNull(isInherited);
+        public Builder isInherited(@Nullable Boolean isInherited) {
+            this.isInherited = isInherited;
             return this;
         }
         @CustomType.Setter
-        public Builder isOracleMaintained(Boolean isOracleMaintained) {
-            this.isOracleMaintained = Objects.requireNonNull(isOracleMaintained);
+        public Builder isOracleMaintained(@Nullable Boolean isOracleMaintained) {
+            this.isOracleMaintained = isOracleMaintained;
             return this;
         }
         @CustomType.Setter
-        public Builder isPasswordRequired(Boolean isPasswordRequired) {
-            this.isPasswordRequired = Objects.requireNonNull(isPasswordRequired);
+        public Builder isPasswordRequired(@Nullable Boolean isPasswordRequired) {
+            this.isPasswordRequired = isPasswordRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder roleName(String roleName) {
-            this.roleName = Objects.requireNonNull(roleName);
+        public Builder roleName(@Nullable String roleName) {
+            this.roleName = roleName;
             return this;
         }
         public GetTargetDatabaseRoleRole build() {

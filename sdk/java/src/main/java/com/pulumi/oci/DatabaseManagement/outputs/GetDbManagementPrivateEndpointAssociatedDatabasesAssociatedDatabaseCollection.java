@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection {
@@ -14,7 +15,7 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
      * @return A list of databases using a Database Management private endpoint.
      * 
      */
-    private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items;
+    private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items;
 
     private GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
      * 
      */
     public List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items;
+        private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items;
         public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem... items) {

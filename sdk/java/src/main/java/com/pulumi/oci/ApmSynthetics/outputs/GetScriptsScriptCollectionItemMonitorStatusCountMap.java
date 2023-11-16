@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScriptsScriptCollectionItemMonitorStatusCountMap {
@@ -13,51 +15,51 @@ public final class GetScriptsScriptCollectionItemMonitorStatusCountMap {
      * @return Number of disabled monitors using the script.
      * 
      */
-    private Integer disabled;
+    private @Nullable Integer disabled;
     /**
      * @return Number of enabled monitors using the script.
      * 
      */
-    private Integer enabled;
+    private @Nullable Integer enabled;
     /**
      * @return Number of invalid monitors using the script.
      * 
      */
-    private Integer invalid;
+    private @Nullable Integer invalid;
     /**
      * @return Total number of monitors using the script.
      * 
      */
-    private Integer total;
+    private @Nullable Integer total;
 
     private GetScriptsScriptCollectionItemMonitorStatusCountMap() {}
     /**
      * @return Number of disabled monitors using the script.
      * 
      */
-    public Integer disabled() {
-        return this.disabled;
+    public Optional<Integer> disabled() {
+        return Optional.ofNullable(this.disabled);
     }
     /**
      * @return Number of enabled monitors using the script.
      * 
      */
-    public Integer enabled() {
-        return this.enabled;
+    public Optional<Integer> enabled() {
+        return Optional.ofNullable(this.enabled);
     }
     /**
      * @return Number of invalid monitors using the script.
      * 
      */
-    public Integer invalid() {
-        return this.invalid;
+    public Optional<Integer> invalid() {
+        return Optional.ofNullable(this.invalid);
     }
     /**
      * @return Total number of monitors using the script.
      * 
      */
-    public Integer total() {
-        return this.total;
+    public Optional<Integer> total() {
+        return Optional.ofNullable(this.total);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetScriptsScriptCollectionItemMonitorStatusCountMap {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer disabled;
-        private Integer enabled;
-        private Integer invalid;
-        private Integer total;
+        private @Nullable Integer disabled;
+        private @Nullable Integer enabled;
+        private @Nullable Integer invalid;
+        private @Nullable Integer total;
         public Builder() {}
         public Builder(GetScriptsScriptCollectionItemMonitorStatusCountMap defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetScriptsScriptCollectionItemMonitorStatusCountMap {
         }
 
         @CustomType.Setter
-        public Builder disabled(Integer disabled) {
-            this.disabled = Objects.requireNonNull(disabled);
+        public Builder disabled(@Nullable Integer disabled) {
+            this.disabled = disabled;
             return this;
         }
         @CustomType.Setter
-        public Builder enabled(Integer enabled) {
-            this.enabled = Objects.requireNonNull(enabled);
+        public Builder enabled(@Nullable Integer enabled) {
+            this.enabled = enabled;
             return this;
         }
         @CustomType.Setter
-        public Builder invalid(Integer invalid) {
-            this.invalid = Objects.requireNonNull(invalid);
+        public Builder invalid(@Nullable Integer invalid) {
+            this.invalid = invalid;
             return this;
         }
         @CustomType.Setter
-        public Builder total(Integer total) {
-            this.total = Objects.requireNonNull(total);
+        public Builder total(@Nullable Integer total) {
+            this.total = total;
             return this;
         }
         public GetScriptsScriptCollectionItemMonitorStatusCountMap build() {

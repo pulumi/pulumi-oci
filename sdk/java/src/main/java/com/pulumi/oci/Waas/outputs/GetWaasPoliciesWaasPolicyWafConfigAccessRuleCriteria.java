@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria {
@@ -30,17 +32,17 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria {
      * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return When enabled, the condition will be matched with case-sensitive rules.
      * 
      */
-    private Boolean isCaseSensitive;
+    private @Nullable Boolean isCaseSensitive;
     /**
      * @return The value of the header.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria() {}
     /**
@@ -63,22 +65,22 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria {
      * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return When enabled, the condition will be matched with case-sensitive rules.
      * 
      */
-    public Boolean isCaseSensitive() {
-        return this.isCaseSensitive;
+    public Optional<Boolean> isCaseSensitive() {
+        return Optional.ofNullable(this.isCaseSensitive);
     }
     /**
      * @return The value of the header.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -90,9 +92,9 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String condition;
-        private Boolean isCaseSensitive;
-        private String value;
+        private @Nullable String condition;
+        private @Nullable Boolean isCaseSensitive;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,18 +104,18 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria {
         }
 
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder isCaseSensitive(Boolean isCaseSensitive) {
-            this.isCaseSensitive = Objects.requireNonNull(isCaseSensitive);
+        public Builder isCaseSensitive(@Nullable Boolean isCaseSensitive) {
+            this.isCaseSensitive = isCaseSensitive;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfileTargetTagItem {
@@ -14,51 +16,51 @@ public final class GetProfileTargetTagItem {
      * @return The name you use to refer to the tag, also known as the tag key.
      * 
      */
-    private String tagDefinitionName;
+    private @Nullable String tagDefinitionName;
     /**
      * @return The name of the tag namespace.
      * 
      */
-    private String tagNamespaceName;
+    private @Nullable String tagNamespaceName;
     /**
      * @return Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
      * 
      */
-    private String tagValueType;
+    private @Nullable String tagValueType;
     /**
      * @return The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
      * 
      */
-    private List<String> tagValues;
+    private @Nullable List<String> tagValues;
 
     private GetProfileTargetTagItem() {}
     /**
      * @return The name you use to refer to the tag, also known as the tag key.
      * 
      */
-    public String tagDefinitionName() {
-        return this.tagDefinitionName;
+    public Optional<String> tagDefinitionName() {
+        return Optional.ofNullable(this.tagDefinitionName);
     }
     /**
      * @return The name of the tag namespace.
      * 
      */
-    public String tagNamespaceName() {
-        return this.tagNamespaceName;
+    public Optional<String> tagNamespaceName() {
+        return Optional.ofNullable(this.tagNamespaceName);
     }
     /**
      * @return Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
      * 
      */
-    public String tagValueType() {
-        return this.tagValueType;
+    public Optional<String> tagValueType() {
+        return Optional.ofNullable(this.tagValueType);
     }
     /**
      * @return The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
      * 
      */
     public List<String> tagValues() {
-        return this.tagValues;
+        return this.tagValues == null ? List.of() : this.tagValues;
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetProfileTargetTagItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String tagDefinitionName;
-        private String tagNamespaceName;
-        private String tagValueType;
-        private List<String> tagValues;
+        private @Nullable String tagDefinitionName;
+        private @Nullable String tagNamespaceName;
+        private @Nullable String tagValueType;
+        private @Nullable List<String> tagValues;
         public Builder() {}
         public Builder(GetProfileTargetTagItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetProfileTargetTagItem {
         }
 
         @CustomType.Setter
-        public Builder tagDefinitionName(String tagDefinitionName) {
-            this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
+        public Builder tagDefinitionName(@Nullable String tagDefinitionName) {
+            this.tagDefinitionName = tagDefinitionName;
             return this;
         }
         @CustomType.Setter
-        public Builder tagNamespaceName(String tagNamespaceName) {
-            this.tagNamespaceName = Objects.requireNonNull(tagNamespaceName);
+        public Builder tagNamespaceName(@Nullable String tagNamespaceName) {
+            this.tagNamespaceName = tagNamespaceName;
             return this;
         }
         @CustomType.Setter
-        public Builder tagValueType(String tagValueType) {
-            this.tagValueType = Objects.requireNonNull(tagValueType);
+        public Builder tagValueType(@Nullable String tagValueType) {
+            this.tagValueType = tagValueType;
             return this;
         }
         @CustomType.Setter
-        public Builder tagValues(List<String> tagValues) {
-            this.tagValues = Objects.requireNonNull(tagValues);
+        public Builder tagValues(@Nullable List<String> tagValues) {
+            this.tagValues = tagValues;
             return this;
         }
         public Builder tagValues(String... tagValues) {

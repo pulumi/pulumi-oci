@@ -9,6 +9,7 @@ import com.pulumi.oci.ObjectStorage.outputs.GetBucketSummariesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetBucketSummariesResult {
      * @return The list of bucket_summaries.
      * 
      */
-    private List<GetBucketSummariesBucketSummary> bucketSummaries;
+    private @Nullable List<GetBucketSummariesBucketSummary> bucketSummaries;
     /**
      * @return The compartment ID in which the bucket is authorized.
      * 
@@ -28,7 +29,7 @@ public final class GetBucketSummariesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The Object Storage namespace in which the bucket resides.
      * 
@@ -41,7 +42,7 @@ public final class GetBucketSummariesResult {
      * 
      */
     public List<GetBucketSummariesBucketSummary> bucketSummaries() {
-        return this.bucketSummaries;
+        return this.bucketSummaries == null ? List.of() : this.bucketSummaries;
     }
     /**
      * @return The compartment ID in which the bucket is authorized.
@@ -57,8 +58,8 @@ public final class GetBucketSummariesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The Object Storage namespace in which the bucket resides.
@@ -77,10 +78,10 @@ public final class GetBucketSummariesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBucketSummariesBucketSummary> bucketSummaries;
+        private @Nullable List<GetBucketSummariesBucketSummary> bucketSummaries;
         private String compartmentId;
         private @Nullable List<GetBucketSummariesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String namespace;
         public Builder() {}
         public Builder(GetBucketSummariesResult defaults) {
@@ -93,8 +94,8 @@ public final class GetBucketSummariesResult {
         }
 
         @CustomType.Setter
-        public Builder bucketSummaries(List<GetBucketSummariesBucketSummary> bucketSummaries) {
-            this.bucketSummaries = Objects.requireNonNull(bucketSummaries);
+        public Builder bucketSummaries(@Nullable List<GetBucketSummariesBucketSummary> bucketSummaries) {
+            this.bucketSummaries = bucketSummaries;
             return this;
         }
         public Builder bucketSummaries(GetBucketSummariesBucketSummary... bucketSummaries) {
@@ -114,8 +115,8 @@ public final class GetBucketSummariesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

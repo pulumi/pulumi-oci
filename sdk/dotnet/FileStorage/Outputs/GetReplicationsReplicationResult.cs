@@ -16,107 +16,107 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Percentage progress of the current replication cycle.
         /// </summary>
-        public readonly string DeltaProgress;
+        public readonly string? DeltaProgress;
         /// <summary>
         /// The current state of the snapshot during replication operations.
         /// </summary>
-        public readonly string DeltaStatus;
+        public readonly string? DeltaStatus;
         /// <summary>
         /// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         /// </summary>
-        public readonly string LastSnapshotId;
+        public readonly string? LastSnapshotId;
         /// <summary>
         /// Additional information about the current 'lifecycleState'.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         /// </summary>
-        public readonly string RecoveryPointTime;
+        public readonly string? RecoveryPointTime;
         /// <summary>
         /// Duration in minutes between replication snapshots.
         /// </summary>
-        public readonly string ReplicationInterval;
+        public readonly string? ReplicationInterval;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
         /// </summary>
-        public readonly string ReplicationTargetId;
+        public readonly string? ReplicationTargetId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
         /// </summary>
-        public readonly string SourceId;
+        public readonly string? SourceId;
         /// <summary>
         /// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetReplicationsReplicationResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string deltaProgress,
+            string? deltaProgress,
 
-            string deltaStatus,
+            string? deltaStatus,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lastSnapshotId,
+            string? lastSnapshotId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string recoveryPointTime,
+            string? recoveryPointTime,
 
-            string replicationInterval,
+            string? replicationInterval,
 
-            string replicationTargetId,
+            string? replicationTargetId,
 
-            string sourceId,
+            string? sourceId,
 
-            string state,
+            string? state,
 
-            string targetId,
+            string? targetId,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

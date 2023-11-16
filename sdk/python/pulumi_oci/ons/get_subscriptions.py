@@ -43,9 +43,6 @@ class GetSubscriptionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -55,7 +52,7 @@ class GetSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,18 +60,12 @@ class GetSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def subscriptions(self) -> Sequence['outputs.GetSubscriptionsSubscriptionResult']:
-        """
-        The list of subscriptions.
-        """
+    def subscriptions(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionResult']]:
         return pulumi.get(self, "subscriptions")
 
     @property
     @pulumi.getter(name="topicId")
     def topic_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
-        """
         return pulumi.get(self, "topic_id")
 
 
@@ -96,25 +87,7 @@ def get_subscriptions(compartment_id: Optional[str] = None,
                       topic_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionsResult:
     """
-    This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Notifications service.
-
-    Lists the subscriptions in the specified compartment or topic.
-
-    Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscriptions = oci.Ons.get_subscriptions(compartment_id=var["compartment_id"],
-        topic_id=oci_ons_notification_topic["test_notification_topic"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str topic_id: Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -137,24 +110,6 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              topic_id: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
-    This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Notifications service.
-
-    Lists the subscriptions in the specified compartment or topic.
-
-    Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscriptions = oci.Ons.get_subscriptions(compartment_id=var["compartment_id"],
-        topic_id=oci_ons_notification_topic["test_notification_topic"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str topic_id: Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
+    Use this data source to access information about an existing resource.
     """
     ...

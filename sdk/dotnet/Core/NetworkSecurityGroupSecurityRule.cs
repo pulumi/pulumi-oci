@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Core
         /// An optional description of your choice for the rule. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Core
         /// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
         /// </summary>
         [Output("destination")]
-        public Output<string> Destination { get; private set; } = null!;
+        public Output<string?> Destination { get; private set; } = null!;
 
         /// <summary>
         /// Type of destination for the rule. Required if `direction` = `EGRESS`.
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.Core
         /// Allowed values:
         /// </summary>
         [Output("destinationType")]
-        public Output<string> DestinationType { get; private set; } = null!;
+        public Output<string?> DestinationType { get; private set; } = null!;
 
         /// <summary>
         /// Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Core
         /// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
         /// </summary>
         [Output("isValid")]
-        public Output<bool> IsValid { get; private set; } = null!;
+        public Output<bool?> IsValid { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -156,13 +156,13 @@ namespace Pulumi.Oci.Core
         /// Type of source for the rule. Required if `direction` = `INGRESS`.
         /// </summary>
         [Output("sourceType")]
-        public Output<string> SourceType { get; private set; } = null!;
+        public Output<string?> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         /// </summary>
         [Output("stateless")]
-        public Output<bool> Stateless { get; private set; } = null!;
+        public Output<bool?> Stateless { get; private set; } = null!;
 
         /// <summary>
         /// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Core
         /// The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.

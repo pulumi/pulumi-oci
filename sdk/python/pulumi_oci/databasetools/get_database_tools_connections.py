@@ -49,25 +49,16 @@ class GetDatabaseToolsConnectionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseToolsConnectionCollections")
-    def database_tools_connection_collections(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult']:
-        """
-        The list of database_tools_connection_collection.
-        """
+    def database_tools_connection_collections(self) -> Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult']]:
         return pulumi.get(self, "database_tools_connection_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +68,7 @@ class GetDatabaseToolsConnectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,17 +77,11 @@ class GetDatabaseToolsConnectionsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Database Tools connection.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def types(self) -> Optional[Sequence[str]]:
-        """
-        The Database Tools connection type.
-        """
         return pulumi.get(self, "types")
 
 
@@ -122,27 +107,7 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
                                    types: Optional[Sequence[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsConnectionsResult:
     """
-    This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
-
-    Returns a list of Database Tools connections.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_connection_display_name"],
-        state=var["database_tools_connection_state"],
-        types=var["database_tools_connection_type"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire specified display name.
-    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-    :param Sequence[str] types: A filter to return only resources their type matches the specified type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
                                           types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsConnectionsResult]:
     """
-    This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
-
-    Returns a list of Database Tools connections.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_connection_display_name"],
-        state=var["database_tools_connection_state"],
-        types=var["database_tools_connection_type"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire specified display name.
-    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-    :param Sequence[str] types: A filter to return only resources their type matches the specified type.
+    Use this data source to access information about an existing resource.
     """
     ...

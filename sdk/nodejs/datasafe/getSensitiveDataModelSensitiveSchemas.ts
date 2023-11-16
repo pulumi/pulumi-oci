@@ -56,7 +56,7 @@ export interface GetSensitiveDataModelSensitiveSchemasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The database schema that contains the sensitive column.
      */
@@ -65,7 +65,7 @@ export interface GetSensitiveDataModelSensitiveSchemasResult {
     /**
      * The list of sensitive_schema_collection.
      */
-    readonly sensitiveSchemaCollections: outputs.DataSafe.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection[];
+    readonly sensitiveSchemaCollections?: outputs.DataSafe.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection[];
 }
 /**
  * This data source provides the list of Sensitive Data Model Sensitive Schemas in Oracle Cloud Infrastructure Data Safe service.

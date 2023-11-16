@@ -46,17 +46,11 @@ class GetOdaPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User-defined name for the ODA private endpoint. Avoid entering confidential information. You can change this value.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetOdaPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetOdaPrivateEndpointsResult:
 
     @property
     @pulumi.getter(name="odaPrivateEndpointCollections")
-    def oda_private_endpoint_collections(self) -> Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionResult']:
-        """
-        The list of oda_private_endpoint_collection.
-        """
+    def oda_private_endpoint_collections(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionResult']]:
         return pulumi.get(self, "oda_private_endpoint_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the ODA private endpoint.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,30 +97,7 @@ def get_oda_private_endpoints(compartment_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointsResult:
     """
-    This data source provides the list of Oda Private Endpoints in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of ODA Private Endpoints that belong to the specified
-    compartment.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["oda_private_endpoint_display_name"],
-        state=var["oda_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: List the ODA Private Endpoints that belong to this compartment.
-    :param str display_name: List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-    :param str state: List only the ODA Private Endpoints that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,29 +123,6 @@ def get_oda_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]]
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointsResult]:
     """
-    This data source provides the list of Oda Private Endpoints in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of ODA Private Endpoints that belong to the specified
-    compartment.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["oda_private_endpoint_display_name"],
-        state=var["oda_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: List the ODA Private Endpoints that belong to this compartment.
-    :param str display_name: List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-    :param str state: List only the ODA Private Endpoints that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

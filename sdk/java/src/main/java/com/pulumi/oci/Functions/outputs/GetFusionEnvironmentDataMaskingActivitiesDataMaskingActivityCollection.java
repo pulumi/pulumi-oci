@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection {
-    private List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items;
+    private @Nullable List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items;
 
     private GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection() {}
     public List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items;
+        private @Nullable List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem... items) {

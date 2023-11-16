@@ -11,6 +11,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProcessorJobResult {
@@ -18,120 +20,120 @@ public final class GetProcessorJobResult {
      * @return The compartment identifier.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The display name of the processor job.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The id of the processor job.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The location of the inputs.
      * 
      */
-    private List<GetProcessorJobInputLocation> inputLocations;
+    private @Nullable List<GetProcessorJobInputLocation> inputLocations;
     /**
      * @return The detailed status of FAILED state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The object storage location where to store analysis results.
      * 
      */
-    private List<GetProcessorJobOutputLocation> outputLocations;
+    private @Nullable List<GetProcessorJobOutputLocation> outputLocations;
     /**
      * @return How much progress the operation has made, compared to the total amount of work to be performed.
      * 
      */
-    private Double percentComplete;
+    private @Nullable Double percentComplete;
     /**
      * @return The configuration of a processor.
      * 
      */
-    private List<GetProcessorJobProcessorConfig> processorConfigs;
+    private @Nullable List<GetProcessorJobProcessorConfig> processorConfigs;
     private String processorJobId;
     /**
      * @return The current state of the processor job.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The job acceptance time.
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
     /**
      * @return The job finish time.
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The job start time.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetProcessorJobResult() {}
     /**
      * @return The compartment identifier.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The display name of the processor job.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The id of the processor job.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The location of the inputs.
      * 
      */
     public List<GetProcessorJobInputLocation> inputLocations() {
-        return this.inputLocations;
+        return this.inputLocations == null ? List.of() : this.inputLocations;
     }
     /**
      * @return The detailed status of FAILED state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The object storage location where to store analysis results.
      * 
      */
     public List<GetProcessorJobOutputLocation> outputLocations() {
-        return this.outputLocations;
+        return this.outputLocations == null ? List.of() : this.outputLocations;
     }
     /**
      * @return How much progress the operation has made, compared to the total amount of work to be performed.
      * 
      */
-    public Double percentComplete() {
-        return this.percentComplete;
+    public Optional<Double> percentComplete() {
+        return Optional.ofNullable(this.percentComplete);
     }
     /**
      * @return The configuration of a processor.
      * 
      */
     public List<GetProcessorJobProcessorConfig> processorConfigs() {
-        return this.processorConfigs;
+        return this.processorConfigs == null ? List.of() : this.processorConfigs;
     }
     public String processorJobId() {
         return this.processorJobId;
@@ -140,29 +142,29 @@ public final class GetProcessorJobResult {
      * @return The current state of the processor job.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The job acceptance time.
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return The job finish time.
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The job start time.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -174,19 +176,19 @@ public final class GetProcessorJobResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String displayName;
-        private String id;
-        private List<GetProcessorJobInputLocation> inputLocations;
-        private String lifecycleDetails;
-        private List<GetProcessorJobOutputLocation> outputLocations;
-        private Double percentComplete;
-        private List<GetProcessorJobProcessorConfig> processorConfigs;
+        private @Nullable String compartmentId;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable List<GetProcessorJobInputLocation> inputLocations;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetProcessorJobOutputLocation> outputLocations;
+        private @Nullable Double percentComplete;
+        private @Nullable List<GetProcessorJobProcessorConfig> processorConfigs;
         private String processorJobId;
-        private String state;
-        private String timeAccepted;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable String state;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetProcessorJobResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -206,49 +208,49 @@ public final class GetProcessorJobResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inputLocations(List<GetProcessorJobInputLocation> inputLocations) {
-            this.inputLocations = Objects.requireNonNull(inputLocations);
+        public Builder inputLocations(@Nullable List<GetProcessorJobInputLocation> inputLocations) {
+            this.inputLocations = inputLocations;
             return this;
         }
         public Builder inputLocations(GetProcessorJobInputLocation... inputLocations) {
             return inputLocations(List.of(inputLocations));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder outputLocations(List<GetProcessorJobOutputLocation> outputLocations) {
-            this.outputLocations = Objects.requireNonNull(outputLocations);
+        public Builder outputLocations(@Nullable List<GetProcessorJobOutputLocation> outputLocations) {
+            this.outputLocations = outputLocations;
             return this;
         }
         public Builder outputLocations(GetProcessorJobOutputLocation... outputLocations) {
             return outputLocations(List.of(outputLocations));
         }
         @CustomType.Setter
-        public Builder percentComplete(Double percentComplete) {
-            this.percentComplete = Objects.requireNonNull(percentComplete);
+        public Builder percentComplete(@Nullable Double percentComplete) {
+            this.percentComplete = percentComplete;
             return this;
         }
         @CustomType.Setter
-        public Builder processorConfigs(List<GetProcessorJobProcessorConfig> processorConfigs) {
-            this.processorConfigs = Objects.requireNonNull(processorConfigs);
+        public Builder processorConfigs(@Nullable List<GetProcessorJobProcessorConfig> processorConfigs) {
+            this.processorConfigs = processorConfigs;
             return this;
         }
         public Builder processorConfigs(GetProcessorJobProcessorConfig... processorConfigs) {
@@ -260,23 +262,23 @@ public final class GetProcessorJobResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetProcessorJobResult build() {

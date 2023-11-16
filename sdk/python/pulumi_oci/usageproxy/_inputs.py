@@ -26,11 +26,6 @@ class SubscriptionRedeemableUserItemArgs:
                  email_id: pulumi.Input[str],
                  first_name: Optional[pulumi.Input[str]] = None,
                  last_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] email_id: The email ID for a user that can redeem rewards.
-        :param pulumi.Input[str] first_name: The first name of the user that can redeem rewards.
-        :param pulumi.Input[str] last_name: The last name of the user that can redeem rewards.
-        """
         pulumi.set(__self__, "email_id", email_id)
         if first_name is not None:
             pulumi.set(__self__, "first_name", first_name)
@@ -40,9 +35,6 @@ class SubscriptionRedeemableUserItemArgs:
     @property
     @pulumi.getter(name="emailId")
     def email_id(self) -> pulumi.Input[str]:
-        """
-        The email ID for a user that can redeem rewards.
-        """
         return pulumi.get(self, "email_id")
 
     @email_id.setter
@@ -52,9 +44,6 @@ class SubscriptionRedeemableUserItemArgs:
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The first name of the user that can redeem rewards.
-        """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
@@ -64,9 +53,6 @@ class SubscriptionRedeemableUserItemArgs:
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last name of the user that can redeem rewards.
-        """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
@@ -80,9 +66,6 @@ class GetResourceQuotasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The resource name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -91,9 +74,6 @@ class GetResourceQuotasFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The resource name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -125,9 +105,6 @@ class GetResourcesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the resource.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -136,9 +113,6 @@ class GetResourcesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the resource.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

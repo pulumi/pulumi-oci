@@ -9,6 +9,8 @@ import com.pulumi.oci.ServiceMesh.outputs.GetAccessPolicyRuleSource;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAccessPolicyRule {
@@ -16,39 +18,39 @@ public final class GetAccessPolicyRule {
      * @return Action for the traffic between the source and the destination.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private List<GetAccessPolicyRuleDestination> destinations;
+    private @Nullable List<GetAccessPolicyRuleDestination> destinations;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private List<GetAccessPolicyRuleSource> sources;
+    private @Nullable List<GetAccessPolicyRuleSource> sources;
 
     private GetAccessPolicyRule() {}
     /**
      * @return Action for the traffic between the source and the destination.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
     public List<GetAccessPolicyRuleDestination> destinations() {
-        return this.destinations;
+        return this.destinations == null ? List.of() : this.destinations;
     }
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
     public List<GetAccessPolicyRuleSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetAccessPolicyRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<GetAccessPolicyRuleDestination> destinations;
-        private List<GetAccessPolicyRuleSource> sources;
+        private @Nullable String action;
+        private @Nullable List<GetAccessPolicyRuleDestination> destinations;
+        private @Nullable List<GetAccessPolicyRuleSource> sources;
         public Builder() {}
         public Builder(GetAccessPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetAccessPolicyRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder destinations(List<GetAccessPolicyRuleDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+        public Builder destinations(@Nullable List<GetAccessPolicyRuleDestination> destinations) {
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetAccessPolicyRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
         @CustomType.Setter
-        public Builder sources(List<GetAccessPolicyRuleSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+        public Builder sources(@Nullable List<GetAccessPolicyRuleSource> sources) {
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetAccessPolicyRuleSource... sources) {

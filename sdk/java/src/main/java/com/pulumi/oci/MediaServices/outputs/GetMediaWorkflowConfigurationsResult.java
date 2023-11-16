@@ -34,7 +34,7 @@ public final class GetMediaWorkflowConfigurationsResult {
      * @return The list of media_workflow_configuration_collection.
      * 
      */
-    private List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections;
+    private @Nullable List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections;
     /**
      * @return The current state of the MediaWorkflowConfiguration.
      * 
@@ -71,7 +71,7 @@ public final class GetMediaWorkflowConfigurationsResult {
      * 
      */
     public List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections() {
-        return this.mediaWorkflowConfigurationCollections;
+        return this.mediaWorkflowConfigurationCollections == null ? List.of() : this.mediaWorkflowConfigurationCollections;
     }
     /**
      * @return The current state of the MediaWorkflowConfiguration.
@@ -94,7 +94,7 @@ public final class GetMediaWorkflowConfigurationsResult {
         private @Nullable String displayName;
         private @Nullable List<GetMediaWorkflowConfigurationsFilter> filters;
         private @Nullable String id;
-        private List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections;
+        private @Nullable List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMediaWorkflowConfigurationsResult defaults) {
@@ -131,8 +131,8 @@ public final class GetMediaWorkflowConfigurationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowConfigurationCollections(List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections) {
-            this.mediaWorkflowConfigurationCollections = Objects.requireNonNull(mediaWorkflowConfigurationCollections);
+        public Builder mediaWorkflowConfigurationCollections(@Nullable List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections) {
+            this.mediaWorkflowConfigurationCollections = mediaWorkflowConfigurationCollections;
             return this;
         }
         public Builder mediaWorkflowConfigurationCollections(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection... mediaWorkflowConfigurationCollections) {

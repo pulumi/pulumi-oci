@@ -18,18 +18,18 @@ public final class GetClusterOptionResult {
      * @return Available CNIs and network options for existing and new node pools of the cluster
      * 
      */
-    private List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions;
+    private @Nullable List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions;
     private @Nullable String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Available Kubernetes versions.
      * 
      */
-    private List<String> kubernetesVersions;
+    private @Nullable List<String> kubernetesVersions;
 
     private GetClusterOptionResult() {}
     public String clusterOptionId() {
@@ -40,7 +40,7 @@ public final class GetClusterOptionResult {
      * 
      */
     public List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions() {
-        return this.clusterPodNetworkOptions;
+        return this.clusterPodNetworkOptions == null ? List.of() : this.clusterPodNetworkOptions;
     }
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
@@ -49,15 +49,15 @@ public final class GetClusterOptionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Available Kubernetes versions.
      * 
      */
     public List<String> kubernetesVersions() {
-        return this.kubernetesVersions;
+        return this.kubernetesVersions == null ? List.of() : this.kubernetesVersions;
     }
 
     public static Builder builder() {
@@ -70,10 +70,10 @@ public final class GetClusterOptionResult {
     @CustomType.Builder
     public static final class Builder {
         private String clusterOptionId;
-        private List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions;
+        private @Nullable List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions;
         private @Nullable String compartmentId;
-        private String id;
-        private List<String> kubernetesVersions;
+        private @Nullable String id;
+        private @Nullable List<String> kubernetesVersions;
         public Builder() {}
         public Builder(GetClusterOptionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,8 +90,8 @@ public final class GetClusterOptionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder clusterPodNetworkOptions(List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions) {
-            this.clusterPodNetworkOptions = Objects.requireNonNull(clusterPodNetworkOptions);
+        public Builder clusterPodNetworkOptions(@Nullable List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions) {
+            this.clusterPodNetworkOptions = clusterPodNetworkOptions;
             return this;
         }
         public Builder clusterPodNetworkOptions(GetClusterOptionClusterPodNetworkOption... clusterPodNetworkOptions) {
@@ -103,13 +103,13 @@ public final class GetClusterOptionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder kubernetesVersions(List<String> kubernetesVersions) {
-            this.kubernetesVersions = Objects.requireNonNull(kubernetesVersions);
+        public Builder kubernetesVersions(@Nullable List<String> kubernetesVersions) {
+            this.kubernetesVersions = kubernetesVersions;
             return this;
         }
         public Builder kubernetesVersions(String... kubernetesVersions) {

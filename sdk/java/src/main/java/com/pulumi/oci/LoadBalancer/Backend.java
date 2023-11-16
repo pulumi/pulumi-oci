@@ -110,14 +110,14 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="drain", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> drain;
+    private Output</* @Nullable */ Boolean> drain;
 
     /**
      * @return (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
-    public Output<Boolean> drain() {
-        return this.drain;
+    public Output<Optional<Boolean>> drain() {
+        return Codegen.optional(this.drain);
     }
     /**
      * The IP address of the backend server.  Example: `10.0.0.3`
@@ -152,28 +152,28 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     @Export(name="offline", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> offline;
+    private Output</* @Nullable */ Boolean> offline;
 
     /**
      * @return (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    public Output<Boolean> offline() {
-        return this.offline;
+    public Output<Optional<Boolean>> offline() {
+        return Codegen.optional(this.offline);
     }
     /**
      * The communication port for the backend server.  Example: `8080`
@@ -190,10 +190,10 @@ public class Backend extends com.pulumi.resources.CustomResource {
         return this.port;
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
@@ -203,7 +203,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="weight", refs={Integer.class}, tree="[0]")
-    private Output<Integer> weight;
+    private Output</* @Nullable */ Integer> weight;
 
     /**
      * @return (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
@@ -212,8 +212,8 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> weight() {
-        return this.weight;
+    public Output<Optional<Integer>> weight() {
+        return Codegen.optional(this.weight);
     }
 
     /**

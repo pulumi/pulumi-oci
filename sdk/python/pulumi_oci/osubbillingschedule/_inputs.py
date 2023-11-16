@@ -19,9 +19,6 @@ class GetBillingScheduleFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -30,9 +27,6 @@ class GetBillingScheduleFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @name.setter

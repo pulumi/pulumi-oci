@@ -6,22 +6,24 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultsVaultRestoreFromFile {
-    private String contentLength;
-    private String contentMd5;
-    private String restoreVaultFromFileDetails;
+    private @Nullable String contentLength;
+    private @Nullable String contentMd5;
+    private @Nullable String restoreVaultFromFileDetails;
 
     private GetVaultsVaultRestoreFromFile() {}
-    public String contentLength() {
-        return this.contentLength;
+    public Optional<String> contentLength() {
+        return Optional.ofNullable(this.contentLength);
     }
-    public String contentMd5() {
-        return this.contentMd5;
+    public Optional<String> contentMd5() {
+        return Optional.ofNullable(this.contentMd5);
     }
-    public String restoreVaultFromFileDetails() {
-        return this.restoreVaultFromFileDetails;
+    public Optional<String> restoreVaultFromFileDetails() {
+        return Optional.ofNullable(this.restoreVaultFromFileDetails);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetVaultsVaultRestoreFromFile {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contentLength;
-        private String contentMd5;
-        private String restoreVaultFromFileDetails;
+        private @Nullable String contentLength;
+        private @Nullable String contentMd5;
+        private @Nullable String restoreVaultFromFileDetails;
         public Builder() {}
         public Builder(GetVaultsVaultRestoreFromFile defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetVaultsVaultRestoreFromFile {
         }
 
         @CustomType.Setter
-        public Builder contentLength(String contentLength) {
-            this.contentLength = Objects.requireNonNull(contentLength);
+        public Builder contentLength(@Nullable String contentLength) {
+            this.contentLength = contentLength;
             return this;
         }
         @CustomType.Setter
-        public Builder contentMd5(String contentMd5) {
-            this.contentMd5 = Objects.requireNonNull(contentMd5);
+        public Builder contentMd5(@Nullable String contentMd5) {
+            this.contentMd5 = contentMd5;
             return this;
         }
         @CustomType.Setter
-        public Builder restoreVaultFromFileDetails(String restoreVaultFromFileDetails) {
-            this.restoreVaultFromFileDetails = Objects.requireNonNull(restoreVaultFromFileDetails);
+        public Builder restoreVaultFromFileDetails(@Nullable String restoreVaultFromFileDetails) {
+            this.restoreVaultFromFileDetails = restoreVaultFromFileDetails;
             return this;
         }
         public GetVaultsVaultRestoreFromFile build() {

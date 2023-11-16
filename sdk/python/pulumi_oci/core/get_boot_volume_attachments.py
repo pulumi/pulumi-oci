@@ -49,33 +49,21 @@ class GetBootVolumeAttachmentsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
-        """
-        The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="bootVolumeAttachments")
-    def boot_volume_attachments(self) -> Sequence['outputs.GetBootVolumeAttachmentsBootVolumeAttachmentResult']:
-        """
-        The list of boot_volume_attachments.
-        """
+    def boot_volume_attachments(self) -> Optional[Sequence['outputs.GetBootVolumeAttachmentsBootVolumeAttachmentResult']]:
         return pulumi.get(self, "boot_volume_attachments")
 
     @property
     @pulumi.getter(name="bootVolumeId")
     def boot_volume_id(self) -> Optional[str]:
-        """
-        The OCID of the boot volume.
-        """
         return pulumi.get(self, "boot_volume_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -85,7 +73,7 @@ class GetBootVolumeAttachmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetBootVolumeAttachmentsResult:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[str]:
-        """
-        The OCID of the instance the boot volume is attached to.
-        """
         return pulumi.get(self, "instance_id")
 
 
@@ -123,11 +108,6 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeAttachmentsResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str boot_volume_id: The OCID of the boot volume.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -157,10 +137,5 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeAttachmentsResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str boot_volume_id: The OCID of the boot volume.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
     """
     ...

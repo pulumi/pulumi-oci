@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Assessment User Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -128,7 +127,7 @@ type GetUserAssessmentUserAnalyticsResult struct {
 	CompartmentIdInSubtree *bool                                  `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetUserAssessmentUserAnalyticsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                                          string  `pulumi:"id"`
+	Id                                          *string `pulumi:"id"`
 	TargetId                                    *string `pulumi:"targetId"`
 	TimeLastLoginGreaterThanOrEqualTo           *string `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
 	TimeLastLoginLessThan                       *string `pulumi:"timeLastLoginLessThan"`
@@ -217,12 +216,6 @@ func (o GetUserAssessmentUserAnalyticsResultOutput) ToGetUserAssessmentUserAnaly
 	return o
 }
 
-func (o GetUserAssessmentUserAnalyticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUserAnalyticsResult] {
-	return pulumix.Output[GetUserAssessmentUserAnalyticsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUserAssessmentUserAnalyticsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentUserAnalyticsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -244,8 +237,8 @@ func (o GetUserAssessmentUserAnalyticsResultOutput) Filters() GetUserAssessmentU
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserAssessmentUserAnalyticsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentUserAnalyticsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUserAssessmentUserAnalyticsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAnalyticsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetUserAssessmentUserAnalyticsResultOutput) TargetId() pulumi.StringPtrOutput {

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// To enable Duo Security factor
         /// </summary>
-        public readonly bool DuoSecurity;
+        public readonly bool? DuoSecurity;
 
         [OutputConstructor]
-        private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingThirdPartyFactorResult(bool duoSecurity)
+        private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingThirdPartyFactorResult(bool? duoSecurity)
         {
             DuoSecurity = duoSecurity;
         }

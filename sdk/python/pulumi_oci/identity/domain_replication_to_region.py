@@ -18,12 +18,6 @@ class DomainReplicationToRegionArgs:
                  replica_region: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DomainReplicationToRegion resource.
-        :param pulumi.Input[str] domain_id: The OCID of the domain
-        :param pulumi.Input[str] replica_region: A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "domain_id", domain_id)
         if replica_region is not None:
@@ -32,9 +26,6 @@ class DomainReplicationToRegionArgs:
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the domain
-        """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
@@ -44,13 +35,6 @@ class DomainReplicationToRegionArgs:
     @property
     @pulumi.getter(name="replicaRegion")
     def replica_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "replica_region")
 
     @replica_region.setter
@@ -65,12 +49,6 @@ class _DomainReplicationToRegionState:
                  replica_region: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DomainReplicationToRegion resources.
-        :param pulumi.Input[str] domain_id: The OCID of the domain
-        :param pulumi.Input[str] replica_region: A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if domain_id is not None:
             pulumi.set(__self__, "domain_id", domain_id)
@@ -80,9 +58,6 @@ class _DomainReplicationToRegionState:
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the domain
-        """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
@@ -92,13 +67,6 @@ class _DomainReplicationToRegionState:
     @property
     @pulumi.getter(name="replicaRegion")
     def replica_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "replica_region")
 
     @replica_region.setter
@@ -115,45 +83,9 @@ class DomainReplicationToRegion(pulumi.CustomResource):
                  replica_region: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Domain Replication To Region resource in Oracle Cloud Infrastructure Identity service.
-
-        Replicate domain to a new region. This is an asynchronous call - where, at start,
-        {@code state} of this domain in replica region is set to ENABLING_REPLICATION.
-        On domain replication completion the {@code state} will be set to REPLICATION_ENABLED.
-
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
-
-        If the replica region's {@code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
-        returns 409 CONFLICT.
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If home region is same as replication region, return 400 BAD REQUEST.
-        - If Domain is not active or being updated, returns 400 BAD REQUEST.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_domain_replication_to_region = oci.identity.DomainReplicationToRegion("testDomainReplicationToRegion",
-            domain_id=oci_identity_domain["test_domain"]["id"],
-            replica_region=var["domain_replication_to_region_replica_region"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DomainReplicationToRegion resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] domain_id: The OCID of the domain
-        :param pulumi.Input[str] replica_region: A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -162,37 +94,7 @@ class DomainReplicationToRegion(pulumi.CustomResource):
                  args: DomainReplicationToRegionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Domain Replication To Region resource in Oracle Cloud Infrastructure Identity service.
-
-        Replicate domain to a new region. This is an asynchronous call - where, at start,
-        {@code state} of this domain in replica region is set to ENABLING_REPLICATION.
-        On domain replication completion the {@code state} will be set to REPLICATION_ENABLED.
-
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
-
-        If the replica region's {@code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
-        returns 409 CONFLICT.
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If home region is same as replication region, return 400 BAD REQUEST.
-        - If Domain is not active or being updated, returns 400 BAD REQUEST.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_domain_replication_to_region = oci.identity.DomainReplicationToRegion("testDomainReplicationToRegion",
-            domain_id=oci_identity_domain["test_domain"]["id"],
-            replica_region=var["domain_replication_to_region_replica_region"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DomainReplicationToRegion resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DomainReplicationToRegionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -242,12 +144,6 @@ class DomainReplicationToRegion(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] domain_id: The OCID of the domain
-        :param pulumi.Input[str] replica_region: A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -260,20 +156,10 @@ class DomainReplicationToRegion(pulumi.CustomResource):
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the domain
-        """
         return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="replicaRegion")
-    def replica_region(self) -> pulumi.Output[str]:
-        """
-        A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def replica_region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "replica_region")
 

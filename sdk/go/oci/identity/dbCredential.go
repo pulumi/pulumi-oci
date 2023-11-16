@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
@@ -54,15 +53,15 @@ type DbCredential struct {
 	// The description you assign to the DB credentials during creation.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The detailed status of INACTIVE lifecycleState.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The password for the DB credentials during creation.
 	Password pulumi.StringOutput `pulumi:"password"`
 	// The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrOutput `pulumi:"timeExpires"`
 	// The OCID of the user.
 	//
 	// ** IMPORTANT **
@@ -207,12 +206,6 @@ func (i *DbCredential) ToDbCredentialOutputWithContext(ctx context.Context) DbCr
 	return pulumi.ToOutputWithContext(ctx, i).(DbCredentialOutput)
 }
 
-func (i *DbCredential) ToOutput(ctx context.Context) pulumix.Output[*DbCredential] {
-	return pulumix.Output[*DbCredential]{
-		OutputState: i.ToDbCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbCredentialArrayInput is an input type that accepts DbCredentialArray and DbCredentialArrayOutput values.
 // You can construct a concrete instance of `DbCredentialArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i DbCredentialArray) ToDbCredentialArrayOutput() DbCredentialArrayOutput {
 
 func (i DbCredentialArray) ToDbCredentialArrayOutputWithContext(ctx context.Context) DbCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbCredentialArrayOutput)
-}
-
-func (i DbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbCredential] {
-	return pulumix.Output[[]*DbCredential]{
-		OutputState: i.ToDbCredentialArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbCredentialMapInput is an input type that accepts DbCredentialMap and DbCredentialMapOutput values.
@@ -269,12 +256,6 @@ func (i DbCredentialMap) ToDbCredentialMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DbCredentialMapOutput)
 }
 
-func (i DbCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbCredential] {
-	return pulumix.Output[map[string]*DbCredential]{
-		OutputState: i.ToDbCredentialMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbCredentialOutput struct{ *pulumi.OutputState }
 
 func (DbCredentialOutput) ElementType() reflect.Type {
@@ -289,20 +270,14 @@ func (o DbCredentialOutput) ToDbCredentialOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o DbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DbCredential] {
-	return pulumix.Output[*DbCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description you assign to the DB credentials during creation.
 func (o DbCredentialOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbCredential) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o DbCredentialOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbCredential) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DbCredentialOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbCredential) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The password for the DB credentials during creation.
@@ -311,18 +286,18 @@ func (o DbCredentialOutput) Password() pulumi.StringOutput {
 }
 
 // The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-func (o DbCredentialOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbCredential) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DbCredentialOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbCredential) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o DbCredentialOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbCredential) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DbCredentialOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbCredential) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-func (o DbCredentialOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbCredential) pulumi.StringOutput { return v.TimeExpires }).(pulumi.StringOutput)
+func (o DbCredentialOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbCredential) pulumi.StringPtrOutput { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.
@@ -347,12 +322,6 @@ func (o DbCredentialArrayOutput) ToDbCredentialArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o DbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbCredential] {
-	return pulumix.Output[[]*DbCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DbCredentialArrayOutput) Index(i pulumi.IntInput) DbCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DbCredential {
 		return vs[0].([]*DbCredential)[vs[1].(int)]
@@ -371,12 +340,6 @@ func (o DbCredentialMapOutput) ToDbCredentialMapOutput() DbCredentialMapOutput {
 
 func (o DbCredentialMapOutput) ToDbCredentialMapOutputWithContext(ctx context.Context) DbCredentialMapOutput {
 	return o
-}
-
-func (o DbCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbCredential] {
-	return pulumix.Output[map[string]*DbCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbCredentialMapOutput) MapIndex(k pulumi.StringInput) DbCredentialOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem {
@@ -13,135 +15,135 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolic
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    private String columnName;
+    private @Nullable String columnName;
     /**
      * @return A filter to return only the SDM masking policy difference columns that match the specified difference type
      * 
      */
-    private String differenceType;
+    private @Nullable String differenceType;
     /**
      * @return The unique key that identifies the SDM masking policy difference column.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The unique key that identifies the masking column represented by the SDM masking policy difference column.
      * 
      */
-    private String maskingColumnkey;
+    private @Nullable String maskingColumnkey;
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return A filter to return only the SDM masking policy difference columns that match the specified planned action.
      * 
      */
-    private String plannedAction;
+    private @Nullable String plannedAction;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
     /**
      * @return The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
      * 
      */
-    private String sensitiveColumnkey;
+    private @Nullable String sensitiveColumnkey;
     /**
      * @return The OCID of the sensitive type associated with the difference column.
      * 
      */
-    private String sensitiveTypeId;
+    private @Nullable String sensitiveTypeId;
     /**
      * @return A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
      * 
      */
-    private String syncStatus;
+    private @Nullable String syncStatus;
     /**
      * @return The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeLastSynced;
+    private @Nullable String timeLastSynced;
 
     private GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem() {}
     /**
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    public String columnName() {
-        return this.columnName;
+    public Optional<String> columnName() {
+        return Optional.ofNullable(this.columnName);
     }
     /**
      * @return A filter to return only the SDM masking policy difference columns that match the specified difference type
      * 
      */
-    public String differenceType() {
-        return this.differenceType;
+    public Optional<String> differenceType() {
+        return Optional.ofNullable(this.differenceType);
     }
     /**
      * @return The unique key that identifies the SDM masking policy difference column.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The unique key that identifies the masking column represented by the SDM masking policy difference column.
      * 
      */
-    public String maskingColumnkey() {
-        return this.maskingColumnkey;
+    public Optional<String> maskingColumnkey() {
+        return Optional.ofNullable(this.maskingColumnkey);
     }
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return A filter to return only the SDM masking policy difference columns that match the specified planned action.
      * 
      */
-    public String plannedAction() {
-        return this.plannedAction;
+    public Optional<String> plannedAction() {
+        return Optional.ofNullable(this.plannedAction);
     }
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
     /**
      * @return The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
      * 
      */
-    public String sensitiveColumnkey() {
-        return this.sensitiveColumnkey;
+    public Optional<String> sensitiveColumnkey() {
+        return Optional.ofNullable(this.sensitiveColumnkey);
     }
     /**
      * @return The OCID of the sensitive type associated with the difference column.
      * 
      */
-    public String sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
     }
     /**
      * @return A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
      * 
      */
-    public String syncStatus() {
-        return this.syncStatus;
+    public Optional<String> syncStatus() {
+        return Optional.ofNullable(this.syncStatus);
     }
     /**
      * @return The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeLastSynced() {
-        return this.timeLastSynced;
+    public Optional<String> timeLastSynced() {
+        return Optional.ofNullable(this.timeLastSynced);
     }
 
     public static Builder builder() {
@@ -153,17 +155,17 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolic
     }
     @CustomType.Builder
     public static final class Builder {
-        private String columnName;
-        private String differenceType;
-        private String key;
-        private String maskingColumnkey;
-        private String object;
-        private String plannedAction;
-        private String schemaName;
-        private String sensitiveColumnkey;
-        private String sensitiveTypeId;
-        private String syncStatus;
-        private String timeLastSynced;
+        private @Nullable String columnName;
+        private @Nullable String differenceType;
+        private @Nullable String key;
+        private @Nullable String maskingColumnkey;
+        private @Nullable String object;
+        private @Nullable String plannedAction;
+        private @Nullable String schemaName;
+        private @Nullable String sensitiveColumnkey;
+        private @Nullable String sensitiveTypeId;
+        private @Nullable String syncStatus;
+        private @Nullable String timeLastSynced;
         public Builder() {}
         public Builder(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -181,58 +183,58 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolic
         }
 
         @CustomType.Setter
-        public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+        public Builder columnName(@Nullable String columnName) {
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
-        public Builder differenceType(String differenceType) {
-            this.differenceType = Objects.requireNonNull(differenceType);
+        public Builder differenceType(@Nullable String differenceType) {
+            this.differenceType = differenceType;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingColumnkey(String maskingColumnkey) {
-            this.maskingColumnkey = Objects.requireNonNull(maskingColumnkey);
+        public Builder maskingColumnkey(@Nullable String maskingColumnkey) {
+            this.maskingColumnkey = maskingColumnkey;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder plannedAction(String plannedAction) {
-            this.plannedAction = Objects.requireNonNull(plannedAction);
+        public Builder plannedAction(@Nullable String plannedAction) {
+            this.plannedAction = plannedAction;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveColumnkey(String sensitiveColumnkey) {
-            this.sensitiveColumnkey = Objects.requireNonNull(sensitiveColumnkey);
+        public Builder sensitiveColumnkey(@Nullable String sensitiveColumnkey) {
+            this.sensitiveColumnkey = sensitiveColumnkey;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
-        public Builder syncStatus(String syncStatus) {
-            this.syncStatus = Objects.requireNonNull(syncStatus);
+        public Builder syncStatus(@Nullable String syncStatus) {
+            this.syncStatus = syncStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastSynced(String timeLastSynced) {
-            this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
+        public Builder timeLastSynced(@Nullable String timeLastSynced) {
+            this.timeLastSynced = timeLastSynced;
             return this;
         }
         public GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem build() {

@@ -36,194 +36,194 @@ public final class GetDomainsAuthenticationFactorSettingResult {
      * @return If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
      * 
      */
-    private Boolean autoEnrollEmailFactorDisabled;
+    private @Nullable Boolean autoEnrollEmailFactorDisabled;
     /**
      * @return If true, indicates that Bypass Code is enabled for authentication
      * 
      */
-    private Boolean bypassCodeEnabled;
+    private @Nullable Boolean bypassCodeEnabled;
     /**
      * @return Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings;
     /**
      * @return Settings related to compliance, Personal Identification Number (PIN) policy, and so on
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingClientAppSetting> clientAppSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingClientAppSetting> clientAppSettings;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return Compliance Policy that defines actions to be taken when a condition is violated
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingCompliancePolicy> compliancePolicies;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingCompliancePolicy> compliancePolicies;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return If true, indicates that the EMAIL channel is enabled for authentication
      * 
      */
-    private Boolean emailEnabled;
+    private @Nullable Boolean emailEnabled;
     /**
      * @return Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingEmailSetting> emailSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingEmailSetting> emailSettings;
     /**
      * @return Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions;
     /**
      * @return If true, indicates that the Fido Authenticator channels are enabled for authentication
      * 
      */
-    private Boolean fidoAuthenticatorEnabled;
+    private @Nullable Boolean fidoAuthenticatorEnabled;
     /**
      * @return If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
      * 
      */
-    private Boolean hideBackupFactorEnabled;
+    private @Nullable Boolean hideBackupFactorEnabled;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Settings related to the use of a user&#39;s profile details from the identity store
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingMeta> metas;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingMeta> metas;
     /**
      * @return Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
      * 
      */
-    private String mfaEnabledCategory;
+    private @Nullable String mfaEnabledCategory;
     /**
      * @return Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      * 
      */
-    private String mfaEnrollmentType;
+    private @Nullable String mfaEnrollmentType;
     /**
      * @return Settings related to the Mobile App Notification channel, such as pull
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingNotificationSetting> notificationSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingNotificationSetting> notificationSettings;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      * 
      */
-    private Boolean phoneCallEnabled;
+    private @Nullable Boolean phoneCallEnabled;
     /**
      * @return If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      * 
      */
-    private Boolean pushEnabled;
+    private @Nullable Boolean pushEnabled;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return If true, indicates that Security Questions are enabled for authentication
      * 
      */
-    private Boolean securityQuestionsEnabled;
+    private @Nullable Boolean securityQuestionsEnabled;
     /**
      * @return If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
      * 
      */
-    private Boolean smsEnabled;
+    private @Nullable Boolean smsEnabled;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingTag> tags;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return Settings related to third-party factor
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors;
     /**
      * @return If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      * 
      */
-    private Boolean totpEnabled;
+    private @Nullable Boolean totpEnabled;
     /**
      * @return Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingTotpSetting> totpSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingTotpSetting> totpSettings;
     /**
      * @return This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
     /**
      * @return This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      * 
      */
-    private List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+    private @Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
     /**
      * @return Factors for which enrollment should be blocked for End User
      * 
      */
-    private List<String> userEnrollmentDisabledFactors;
+    private @Nullable List<String> userEnrollmentDisabledFactors;
     /**
      * @return If true, indicates that the Yubico OTP is enabled for authentication
      * 
      */
-    private Boolean yubicoOtpEnabled;
+    private @Nullable Boolean yubicoOtpEnabled;
 
     private GetDomainsAuthenticationFactorSettingResult() {}
     public List<String> attributeSets() {
@@ -242,106 +242,106 @@ public final class GetDomainsAuthenticationFactorSettingResult {
      * @return If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
      * 
      */
-    public Boolean autoEnrollEmailFactorDisabled() {
-        return this.autoEnrollEmailFactorDisabled;
+    public Optional<Boolean> autoEnrollEmailFactorDisabled() {
+        return Optional.ofNullable(this.autoEnrollEmailFactorDisabled);
     }
     /**
      * @return If true, indicates that Bypass Code is enabled for authentication
      * 
      */
-    public Boolean bypassCodeEnabled() {
-        return this.bypassCodeEnabled;
+    public Optional<Boolean> bypassCodeEnabled() {
+        return Optional.ofNullable(this.bypassCodeEnabled);
     }
     /**
      * @return Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings() {
-        return this.bypassCodeSettings;
+        return this.bypassCodeSettings == null ? List.of() : this.bypassCodeSettings;
     }
     /**
      * @return Settings related to compliance, Personal Identification Number (PIN) policy, and so on
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingClientAppSetting> clientAppSettings() {
-        return this.clientAppSettings;
+        return this.clientAppSettings == null ? List.of() : this.clientAppSettings;
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return Compliance Policy that defines actions to be taken when a condition is violated
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingCompliancePolicy> compliancePolicies() {
-        return this.compliancePolicies;
+        return this.compliancePolicies == null ? List.of() : this.compliancePolicies;
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return If true, indicates that the EMAIL channel is enabled for authentication
      * 
      */
-    public Boolean emailEnabled() {
-        return this.emailEnabled;
+    public Optional<Boolean> emailEnabled() {
+        return Optional.ofNullable(this.emailEnabled);
     }
     /**
      * @return Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingEmailSetting> emailSettings() {
-        return this.emailSettings;
+        return this.emailSettings == null ? List.of() : this.emailSettings;
     }
     /**
      * @return Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions() {
-        return this.endpointRestrictions;
+        return this.endpointRestrictions == null ? List.of() : this.endpointRestrictions;
     }
     /**
      * @return If true, indicates that the Fido Authenticator channels are enabled for authentication
      * 
      */
-    public Boolean fidoAuthenticatorEnabled() {
-        return this.fidoAuthenticatorEnabled;
+    public Optional<Boolean> fidoAuthenticatorEnabled() {
+        return Optional.ofNullable(this.fidoAuthenticatorEnabled);
     }
     /**
      * @return If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
      * 
      */
-    public Boolean hideBackupFactorEnabled() {
-        return this.hideBackupFactorEnabled;
+    public Optional<Boolean> hideBackupFactorEnabled() {
+        return Optional.ofNullable(this.hideBackupFactorEnabled);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -351,77 +351,77 @@ public final class GetDomainsAuthenticationFactorSettingResult {
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Settings related to the use of a user&#39;s profile details from the identity store
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings() {
-        return this.identityStoreSettings;
+        return this.identityStoreSettings == null ? List.of() : this.identityStoreSettings;
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
      * 
      */
-    public String mfaEnabledCategory() {
-        return this.mfaEnabledCategory;
+    public Optional<String> mfaEnabledCategory() {
+        return Optional.ofNullable(this.mfaEnabledCategory);
     }
     /**
      * @return Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      * 
      */
-    public String mfaEnrollmentType() {
-        return this.mfaEnrollmentType;
+    public Optional<String> mfaEnrollmentType() {
+        return Optional.ofNullable(this.mfaEnrollmentType);
     }
     /**
      * @return Settings related to the Mobile App Notification channel, such as pull
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingNotificationSetting> notificationSettings() {
-        return this.notificationSettings;
+        return this.notificationSettings == null ? List.of() : this.notificationSettings;
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      * 
      */
-    public Boolean phoneCallEnabled() {
-        return this.phoneCallEnabled;
+    public Optional<Boolean> phoneCallEnabled() {
+        return Optional.ofNullable(this.phoneCallEnabled);
     }
     /**
      * @return If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      * 
      */
-    public Boolean pushEnabled() {
-        return this.pushEnabled;
+    public Optional<Boolean> pushEnabled() {
+        return Optional.ofNullable(this.pushEnabled);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -431,84 +431,84 @@ public final class GetDomainsAuthenticationFactorSettingResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return If true, indicates that Security Questions are enabled for authentication
      * 
      */
-    public Boolean securityQuestionsEnabled() {
-        return this.securityQuestionsEnabled;
+    public Optional<Boolean> securityQuestionsEnabled() {
+        return Optional.ofNullable(this.securityQuestionsEnabled);
     }
     /**
      * @return If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
      * 
      */
-    public Boolean smsEnabled() {
-        return this.smsEnabled;
+    public Optional<Boolean> smsEnabled() {
+        return Optional.ofNullable(this.smsEnabled);
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return Settings related to third-party factor
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors() {
-        return this.thirdPartyFactors;
+        return this.thirdPartyFactors == null ? List.of() : this.thirdPartyFactors;
     }
     /**
      * @return If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      * 
      */
-    public Boolean totpEnabled() {
-        return this.totpEnabled;
+    public Optional<Boolean> totpEnabled() {
+        return Optional.ofNullable(this.totpEnabled);
     }
     /**
      * @return Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingTotpSetting> totpSettings() {
-        return this.totpSettings;
+        return this.totpSettings == null ? List.of() : this.totpSettings;
     }
     /**
      * @return This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings() {
-        return this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+        return this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
     }
     /**
      * @return This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      * 
      */
     public List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings() {
-        return this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+        return this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
     }
     /**
      * @return Factors for which enrollment should be blocked for End User
      * 
      */
     public List<String> userEnrollmentDisabledFactors() {
-        return this.userEnrollmentDisabledFactors;
+        return this.userEnrollmentDisabledFactors == null ? List.of() : this.userEnrollmentDisabledFactors;
     }
     /**
      * @return If true, indicates that the Yubico OTP is enabled for authentication
      * 
      */
-    public Boolean yubicoOtpEnabled() {
-        return this.yubicoOtpEnabled;
+    public Optional<Boolean> yubicoOtpEnabled() {
+        return Optional.ofNullable(this.yubicoOtpEnabled);
     }
 
     public static Builder builder() {
@@ -524,46 +524,46 @@ public final class GetDomainsAuthenticationFactorSettingResult {
         private @Nullable String attributes;
         private @Nullable String authenticationFactorSettingId;
         private @Nullable String authorization;
-        private Boolean autoEnrollEmailFactorDisabled;
-        private Boolean bypassCodeEnabled;
-        private List<GetDomainsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings;
-        private List<GetDomainsAuthenticationFactorSettingClientAppSetting> clientAppSettings;
-        private String compartmentOcid;
-        private List<GetDomainsAuthenticationFactorSettingCompliancePolicy> compliancePolicies;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private Boolean emailEnabled;
-        private List<GetDomainsAuthenticationFactorSettingEmailSetting> emailSettings;
-        private List<GetDomainsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions;
-        private Boolean fidoAuthenticatorEnabled;
-        private Boolean hideBackupFactorEnabled;
-        private String id;
-        private List<GetDomainsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable Boolean autoEnrollEmailFactorDisabled;
+        private @Nullable Boolean bypassCodeEnabled;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingClientAppSetting> clientAppSettings;
+        private @Nullable String compartmentOcid;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingCompliancePolicy> compliancePolicies;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable Boolean emailEnabled;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingEmailSetting> emailSettings;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions;
+        private @Nullable Boolean fidoAuthenticatorEnabled;
+        private @Nullable Boolean hideBackupFactorEnabled;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private List<GetDomainsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings;
-        private List<GetDomainsAuthenticationFactorSettingMeta> metas;
-        private String mfaEnabledCategory;
-        private String mfaEnrollmentType;
-        private List<GetDomainsAuthenticationFactorSettingNotificationSetting> notificationSettings;
-        private String ocid;
-        private Boolean phoneCallEnabled;
-        private Boolean pushEnabled;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingMeta> metas;
+        private @Nullable String mfaEnabledCategory;
+        private @Nullable String mfaEnrollmentType;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingNotificationSetting> notificationSettings;
+        private @Nullable String ocid;
+        private @Nullable Boolean phoneCallEnabled;
+        private @Nullable Boolean pushEnabled;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private Boolean securityQuestionsEnabled;
-        private Boolean smsEnabled;
-        private List<GetDomainsAuthenticationFactorSettingTag> tags;
-        private String tenancyOcid;
-        private List<GetDomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors;
-        private Boolean totpEnabled;
-        private List<GetDomainsAuthenticationFactorSettingTotpSetting> totpSettings;
-        private List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
-        private List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
-        private List<String> userEnrollmentDisabledFactors;
-        private Boolean yubicoOtpEnabled;
+        private @Nullable List<String> schemas;
+        private @Nullable Boolean securityQuestionsEnabled;
+        private @Nullable Boolean smsEnabled;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors;
+        private @Nullable Boolean totpEnabled;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingTotpSetting> totpSettings;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+        private @Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+        private @Nullable List<String> userEnrollmentDisabledFactors;
+        private @Nullable Boolean yubicoOtpEnabled;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -637,93 +637,93 @@ public final class GetDomainsAuthenticationFactorSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder autoEnrollEmailFactorDisabled(Boolean autoEnrollEmailFactorDisabled) {
-            this.autoEnrollEmailFactorDisabled = Objects.requireNonNull(autoEnrollEmailFactorDisabled);
+        public Builder autoEnrollEmailFactorDisabled(@Nullable Boolean autoEnrollEmailFactorDisabled) {
+            this.autoEnrollEmailFactorDisabled = autoEnrollEmailFactorDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder bypassCodeEnabled(Boolean bypassCodeEnabled) {
-            this.bypassCodeEnabled = Objects.requireNonNull(bypassCodeEnabled);
+        public Builder bypassCodeEnabled(@Nullable Boolean bypassCodeEnabled) {
+            this.bypassCodeEnabled = bypassCodeEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder bypassCodeSettings(List<GetDomainsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings) {
-            this.bypassCodeSettings = Objects.requireNonNull(bypassCodeSettings);
+        public Builder bypassCodeSettings(@Nullable List<GetDomainsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings) {
+            this.bypassCodeSettings = bypassCodeSettings;
             return this;
         }
         public Builder bypassCodeSettings(GetDomainsAuthenticationFactorSettingBypassCodeSetting... bypassCodeSettings) {
             return bypassCodeSettings(List.of(bypassCodeSettings));
         }
         @CustomType.Setter
-        public Builder clientAppSettings(List<GetDomainsAuthenticationFactorSettingClientAppSetting> clientAppSettings) {
-            this.clientAppSettings = Objects.requireNonNull(clientAppSettings);
+        public Builder clientAppSettings(@Nullable List<GetDomainsAuthenticationFactorSettingClientAppSetting> clientAppSettings) {
+            this.clientAppSettings = clientAppSettings;
             return this;
         }
         public Builder clientAppSettings(GetDomainsAuthenticationFactorSettingClientAppSetting... clientAppSettings) {
             return clientAppSettings(List.of(clientAppSettings));
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder compliancePolicies(List<GetDomainsAuthenticationFactorSettingCompliancePolicy> compliancePolicies) {
-            this.compliancePolicies = Objects.requireNonNull(compliancePolicies);
+        public Builder compliancePolicies(@Nullable List<GetDomainsAuthenticationFactorSettingCompliancePolicy> compliancePolicies) {
+            this.compliancePolicies = compliancePolicies;
             return this;
         }
         public Builder compliancePolicies(GetDomainsAuthenticationFactorSettingCompliancePolicy... compliancePolicies) {
             return compliancePolicies(List.of(compliancePolicies));
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder emailEnabled(Boolean emailEnabled) {
-            this.emailEnabled = Objects.requireNonNull(emailEnabled);
+        public Builder emailEnabled(@Nullable Boolean emailEnabled) {
+            this.emailEnabled = emailEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder emailSettings(List<GetDomainsAuthenticationFactorSettingEmailSetting> emailSettings) {
-            this.emailSettings = Objects.requireNonNull(emailSettings);
+        public Builder emailSettings(@Nullable List<GetDomainsAuthenticationFactorSettingEmailSetting> emailSettings) {
+            this.emailSettings = emailSettings;
             return this;
         }
         public Builder emailSettings(GetDomainsAuthenticationFactorSettingEmailSetting... emailSettings) {
             return emailSettings(List.of(emailSettings));
         }
         @CustomType.Setter
-        public Builder endpointRestrictions(List<GetDomainsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions) {
-            this.endpointRestrictions = Objects.requireNonNull(endpointRestrictions);
+        public Builder endpointRestrictions(@Nullable List<GetDomainsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions) {
+            this.endpointRestrictions = endpointRestrictions;
             return this;
         }
         public Builder endpointRestrictions(GetDomainsAuthenticationFactorSettingEndpointRestriction... endpointRestrictions) {
             return endpointRestrictions(List.of(endpointRestrictions));
         }
         @CustomType.Setter
-        public Builder fidoAuthenticatorEnabled(Boolean fidoAuthenticatorEnabled) {
-            this.fidoAuthenticatorEnabled = Objects.requireNonNull(fidoAuthenticatorEnabled);
+        public Builder fidoAuthenticatorEnabled(@Nullable Boolean fidoAuthenticatorEnabled) {
+            this.fidoAuthenticatorEnabled = fidoAuthenticatorEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder hideBackupFactorEnabled(Boolean hideBackupFactorEnabled) {
-            this.hideBackupFactorEnabled = Objects.requireNonNull(hideBackupFactorEnabled);
+        public Builder hideBackupFactorEnabled(@Nullable Boolean hideBackupFactorEnabled) {
+            this.hideBackupFactorEnabled = hideBackupFactorEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAuthenticationFactorSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -735,73 +735,73 @@ public final class GetDomainsAuthenticationFactorSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder identityStoreSettings(List<GetDomainsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings) {
-            this.identityStoreSettings = Objects.requireNonNull(identityStoreSettings);
+        public Builder identityStoreSettings(@Nullable List<GetDomainsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings) {
+            this.identityStoreSettings = identityStoreSettings;
             return this;
         }
         public Builder identityStoreSettings(GetDomainsAuthenticationFactorSettingIdentityStoreSetting... identityStoreSettings) {
             return identityStoreSettings(List.of(identityStoreSettings));
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsAuthenticationFactorSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsAuthenticationFactorSettingMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAuthenticationFactorSettingMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder mfaEnabledCategory(String mfaEnabledCategory) {
-            this.mfaEnabledCategory = Objects.requireNonNull(mfaEnabledCategory);
+        public Builder mfaEnabledCategory(@Nullable String mfaEnabledCategory) {
+            this.mfaEnabledCategory = mfaEnabledCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder mfaEnrollmentType(String mfaEnrollmentType) {
-            this.mfaEnrollmentType = Objects.requireNonNull(mfaEnrollmentType);
+        public Builder mfaEnrollmentType(@Nullable String mfaEnrollmentType) {
+            this.mfaEnrollmentType = mfaEnrollmentType;
             return this;
         }
         @CustomType.Setter
-        public Builder notificationSettings(List<GetDomainsAuthenticationFactorSettingNotificationSetting> notificationSettings) {
-            this.notificationSettings = Objects.requireNonNull(notificationSettings);
+        public Builder notificationSettings(@Nullable List<GetDomainsAuthenticationFactorSettingNotificationSetting> notificationSettings) {
+            this.notificationSettings = notificationSettings;
             return this;
         }
         public Builder notificationSettings(GetDomainsAuthenticationFactorSettingNotificationSetting... notificationSettings) {
             return notificationSettings(List.of(notificationSettings));
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder phoneCallEnabled(Boolean phoneCallEnabled) {
-            this.phoneCallEnabled = Objects.requireNonNull(phoneCallEnabled);
+        public Builder phoneCallEnabled(@Nullable Boolean phoneCallEnabled) {
+            this.phoneCallEnabled = phoneCallEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder pushEnabled(Boolean pushEnabled) {
-            this.pushEnabled = Objects.requireNonNull(pushEnabled);
+        public Builder pushEnabled(@Nullable Boolean pushEnabled) {
+            this.pushEnabled = pushEnabled;
             return this;
         }
         @CustomType.Setter
@@ -810,84 +810,84 @@ public final class GetDomainsAuthenticationFactorSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder securityQuestionsEnabled(Boolean securityQuestionsEnabled) {
-            this.securityQuestionsEnabled = Objects.requireNonNull(securityQuestionsEnabled);
+        public Builder securityQuestionsEnabled(@Nullable Boolean securityQuestionsEnabled) {
+            this.securityQuestionsEnabled = securityQuestionsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder smsEnabled(Boolean smsEnabled) {
-            this.smsEnabled = Objects.requireNonNull(smsEnabled);
+        public Builder smsEnabled(@Nullable Boolean smsEnabled) {
+            this.smsEnabled = smsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsAuthenticationFactorSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsAuthenticationFactorSettingTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAuthenticationFactorSettingTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder thirdPartyFactors(List<GetDomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors) {
-            this.thirdPartyFactors = Objects.requireNonNull(thirdPartyFactors);
+        public Builder thirdPartyFactors(@Nullable List<GetDomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors) {
+            this.thirdPartyFactors = thirdPartyFactors;
             return this;
         }
         public Builder thirdPartyFactors(GetDomainsAuthenticationFactorSettingThirdPartyFactor... thirdPartyFactors) {
             return thirdPartyFactors(List.of(thirdPartyFactors));
         }
         @CustomType.Setter
-        public Builder totpEnabled(Boolean totpEnabled) {
-            this.totpEnabled = Objects.requireNonNull(totpEnabled);
+        public Builder totpEnabled(@Nullable Boolean totpEnabled) {
+            this.totpEnabled = totpEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder totpSettings(List<GetDomainsAuthenticationFactorSettingTotpSetting> totpSettings) {
-            this.totpSettings = Objects.requireNonNull(totpSettings);
+        public Builder totpSettings(@Nullable List<GetDomainsAuthenticationFactorSettingTotpSetting> totpSettings) {
+            this.totpSettings = totpSettings;
             return this;
         }
         public Builder totpSettings(GetDomainsAuthenticationFactorSettingTotpSetting... totpSettings) {
             return totpSettings(List.of(totpSettings));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings) {
-            this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings);
+        public Builder urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(@Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings) {
+            this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings = urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting... urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings) {
             return urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(List.of(urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings) {
-            this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings);
+        public Builder urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(@Nullable List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings) {
+            this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings = urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting... urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings) {
             return urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(List.of(urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings));
         }
         @CustomType.Setter
-        public Builder userEnrollmentDisabledFactors(List<String> userEnrollmentDisabledFactors) {
-            this.userEnrollmentDisabledFactors = Objects.requireNonNull(userEnrollmentDisabledFactors);
+        public Builder userEnrollmentDisabledFactors(@Nullable List<String> userEnrollmentDisabledFactors) {
+            this.userEnrollmentDisabledFactors = userEnrollmentDisabledFactors;
             return this;
         }
         public Builder userEnrollmentDisabledFactors(String... userEnrollmentDisabledFactors) {
             return userEnrollmentDisabledFactors(List.of(userEnrollmentDisabledFactors));
         }
         @CustomType.Setter
-        public Builder yubicoOtpEnabled(Boolean yubicoOtpEnabled) {
-            this.yubicoOtpEnabled = Objects.requireNonNull(yubicoOtpEnabled);
+        public Builder yubicoOtpEnabled(@Nullable Boolean yubicoOtpEnabled) {
+            this.yubicoOtpEnabled = yubicoOtpEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingResult build() {

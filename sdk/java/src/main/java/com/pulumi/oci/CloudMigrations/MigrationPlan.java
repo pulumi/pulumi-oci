@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -40,14 +41,14 @@ public class MigrationPlan extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="calculatedLimits", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> calculatedLimits;
+    private Output</* @Nullable */ Map<String,Object>> calculatedLimits;
 
     /**
      * @return Limits of the resources that are needed for migration. Example: {&#34;BlockVolume&#34;: 2, &#34;VCN&#34;: 1}
      * 
      */
-    public Output<Map<String,Object>> calculatedLimits() {
-        return this.calculatedLimits;
+    public Output<Optional<Map<String,Object>>> calculatedLimits() {
+        return Codegen.optional(this.calculatedLimits);
     }
     /**
      * (Updatable) Compartment identifier
@@ -68,14 +69,14 @@ public class MigrationPlan extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Migration plan identifier
@@ -96,28 +97,28 @@ public class MigrationPlan extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The OCID of the associated migration.
@@ -138,126 +139,126 @@ public class MigrationPlan extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="migrationPlanStats", refs={List.class,MigrationPlanMigrationPlanStat.class}, tree="[0,1]")
-    private Output<List<MigrationPlanMigrationPlanStat>> migrationPlanStats;
+    private Output</* @Nullable */ List<MigrationPlanMigrationPlanStat>> migrationPlanStats;
 
     /**
      * @return Status of the migration plan.
      * 
      */
-    public Output<List<MigrationPlanMigrationPlanStat>> migrationPlanStats() {
-        return this.migrationPlanStats;
+    public Output<Optional<List<MigrationPlanMigrationPlanStat>>> migrationPlanStats() {
+        return Codegen.optional(this.migrationPlanStats);
     }
     /**
      * OCID of the referenced ORM job.
      * 
      */
     @Export(name="referenceToRmsStack", refs={String.class}, tree="[0]")
-    private Output<String> referenceToRmsStack;
+    private Output</* @Nullable */ String> referenceToRmsStack;
 
     /**
      * @return OCID of the referenced ORM job.
      * 
      */
-    public Output<String> referenceToRmsStack() {
-        return this.referenceToRmsStack;
+    public Output<Optional<String>> referenceToRmsStack() {
+        return Codegen.optional(this.referenceToRmsStack);
     }
     /**
      * Source migraiton plan ID to be cloned.
      * 
      */
     @Export(name="sourceMigrationPlanId", refs={String.class}, tree="[0]")
-    private Output<String> sourceMigrationPlanId;
+    private Output</* @Nullable */ String> sourceMigrationPlanId;
 
     /**
      * @return Source migraiton plan ID to be cloned.
      * 
      */
-    public Output<String> sourceMigrationPlanId() {
-        return this.sourceMigrationPlanId;
+    public Output<Optional<String>> sourceMigrationPlanId() {
+        return Codegen.optional(this.sourceMigrationPlanId);
     }
     /**
      * The current state of the migration plan.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the migration plan.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) List of strategies for the resources to be migrated.
      * 
      */
     @Export(name="strategies", refs={List.class,MigrationPlanStrategy.class}, tree="[0,1]")
-    private Output<List<MigrationPlanStrategy>> strategies;
+    private Output</* @Nullable */ List<MigrationPlanStrategy>> strategies;
 
     /**
      * @return (Updatable) List of strategies for the resources to be migrated.
      * 
      */
-    public Output<List<MigrationPlanStrategy>> strategies() {
-        return this.strategies;
+    public Output<Optional<List<MigrationPlanStrategy>>> strategies() {
+        return Codegen.optional(this.strategies);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * (Updatable) List of target environments.
      * 
      */
     @Export(name="targetEnvironments", refs={List.class,MigrationPlanTargetEnvironment.class}, tree="[0,1]")
-    private Output<List<MigrationPlanTargetEnvironment>> targetEnvironments;
+    private Output</* @Nullable */ List<MigrationPlanTargetEnvironment>> targetEnvironments;
 
     /**
      * @return (Updatable) List of target environments.
      * 
      */
-    public Output<List<MigrationPlanTargetEnvironment>> targetEnvironments() {
-        return this.targetEnvironments;
+    public Output<Optional<List<MigrationPlanTargetEnvironment>>> targetEnvironments() {
+        return Codegen.optional(this.targetEnvironments);
     }
     /**
      * The time when the migration plan was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the migration plan was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

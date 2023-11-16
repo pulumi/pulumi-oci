@@ -11,6 +11,7 @@ import com.pulumi.oci.IdentityDataPlane.GeneratedScopedAccessTokenArgs;
 import com.pulumi.oci.IdentityDataPlane.inputs.GeneratedScopedAccessTokenState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -99,14 +100,14 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      * 
      */
     @Export(name="token", refs={String.class}, tree="[0]")
-    private Output<String> token;
+    private Output</* @Nullable */ String> token;
 
     /**
      * @return The security token, signed by auth service
      * 
      */
-    public Output<String> token() {
-        return this.token;
+    public Output<Optional<String>> token() {
+        return Codegen.optional(this.token);
     }
 
     /**

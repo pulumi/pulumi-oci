@@ -18,7 +18,7 @@ public final class GetAppCatalogListingsResult {
      * @return The list of app_catalog_listings.
      * 
      */
-    private List<GetAppCatalogListingsAppCatalogListing> appCatalogListings;
+    private @Nullable List<GetAppCatalogListingsAppCatalogListing> appCatalogListings;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -29,7 +29,7 @@ public final class GetAppCatalogListingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the publisher who published this listing.
      * 
@@ -43,7 +43,7 @@ public final class GetAppCatalogListingsResult {
      * 
      */
     public List<GetAppCatalogListingsAppCatalogListing> appCatalogListings() {
-        return this.appCatalogListings;
+        return this.appCatalogListings == null ? List.of() : this.appCatalogListings;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -59,8 +59,8 @@ public final class GetAppCatalogListingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the publisher who published this listing.
@@ -82,10 +82,10 @@ public final class GetAppCatalogListingsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAppCatalogListingsAppCatalogListing> appCatalogListings;
+        private @Nullable List<GetAppCatalogListingsAppCatalogListing> appCatalogListings;
         private @Nullable String displayName;
         private @Nullable List<GetAppCatalogListingsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String publisherName;
         private @Nullable String publisherType;
         public Builder() {}
@@ -100,8 +100,8 @@ public final class GetAppCatalogListingsResult {
         }
 
         @CustomType.Setter
-        public Builder appCatalogListings(List<GetAppCatalogListingsAppCatalogListing> appCatalogListings) {
-            this.appCatalogListings = Objects.requireNonNull(appCatalogListings);
+        public Builder appCatalogListings(@Nullable List<GetAppCatalogListingsAppCatalogListing> appCatalogListings) {
+            this.appCatalogListings = appCatalogListings;
             return this;
         }
         public Builder appCatalogListings(GetAppCatalogListingsAppCatalogListing... appCatalogListings) {
@@ -121,8 +121,8 @@ public final class GetAppCatalogListingsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

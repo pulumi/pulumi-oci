@@ -12,6 +12,7 @@ import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentDataMaskingActivityStat
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -83,7 +84,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * 
      */
     @Export(name="isResumeDataMasking", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isResumeDataMasking;
+    private Output</* @Nullable */ Boolean> isResumeDataMasking;
 
     /**
      * @return This allows the Data Safe service to resume the previously failed data masking activity.
@@ -92,50 +93,50 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> isResumeDataMasking() {
-        return this.isResumeDataMasking;
+    public Output<Optional<Boolean>> isResumeDataMasking() {
+        return Codegen.optional(this.isResumeDataMasking);
     }
     /**
      * The current state of the DataMaskingActivity.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the DataMaskingActivity.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the data masking activity ended. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeMaskingFinish", refs={String.class}, tree="[0]")
-    private Output<String> timeMaskingFinish;
+    private Output</* @Nullable */ String> timeMaskingFinish;
 
     /**
      * @return The time the data masking activity ended. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeMaskingFinish() {
-        return this.timeMaskingFinish;
+    public Output<Optional<String>> timeMaskingFinish() {
+        return Codegen.optional(this.timeMaskingFinish);
     }
     /**
      * The time the data masking activity started. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeMaskingStart", refs={String.class}, tree="[0]")
-    private Output<String> timeMaskingStart;
+    private Output</* @Nullable */ String> timeMaskingStart;
 
     /**
      * @return The time the data masking activity started. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeMaskingStart() {
-        return this.timeMaskingStart;
+    public Output<Optional<String>> timeMaskingStart() {
+        return Codegen.optional(this.timeMaskingStart);
     }
 
     /**

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database User Data Access Container resource in Oracle Cloud Infrastructure Database Management service.
@@ -66,7 +65,7 @@ type GetManagedDatabaseUserDataAccessContainerArgs struct {
 // A collection of values returned by getManagedDatabaseUserDataAccessContainer.
 type GetManagedDatabaseUserDataAccessContainerResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of container resources.
 	Items             []GetManagedDatabaseUserDataAccessContainerItem `pulumi:"items"`
 	ManagedDatabaseId string                                          `pulumi:"managedDatabaseId"`
@@ -117,15 +116,9 @@ func (o GetManagedDatabaseUserDataAccessContainerResultOutput) ToGetManagedDatab
 	return o
 }
 
-func (o GetManagedDatabaseUserDataAccessContainerResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserDataAccessContainerResult] {
-	return pulumix.Output[GetManagedDatabaseUserDataAccessContainerResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseUserDataAccessContainerResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserDataAccessContainerResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserDataAccessContainerResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserDataAccessContainerResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of container resources.

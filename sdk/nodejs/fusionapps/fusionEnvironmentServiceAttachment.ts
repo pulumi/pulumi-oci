@@ -61,19 +61,19 @@ export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {
     /**
      * Compartment Identifier
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Service Attachment Display name, can be renamed
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
@@ -81,7 +81,7 @@ export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {
     /**
      * Whether this service is provisioned due to the customer being subscribed to a specific SKU
      */
-    public /*out*/ readonly isSkuBased!: pulumi.Output<boolean>;
+    public /*out*/ readonly isSkuBased!: pulumi.Output<boolean | undefined>;
     /**
      * The service instance OCID of the instance being attached
      */
@@ -97,19 +97,19 @@ export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {
     /**
      * Public URL
      */
-    public /*out*/ readonly serviceUrl!: pulumi.Output<string>;
+    public /*out*/ readonly serviceUrl!: pulumi.Output<string | undefined>;
     /**
      * The current state of the ServiceInstance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the the ServiceInstance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the ServiceInstance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a FusionEnvironmentServiceAttachment resource with the given unique name, arguments, and options.

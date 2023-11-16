@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
         /// </summary>
-        public readonly string CachingDuration;
+        public readonly string? CachingDuration;
         /// <summary>
         /// The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
         /// </summary>
-        public readonly string ClientCachingDuration;
+        public readonly string? ClientCachingDuration;
         /// <summary>
         /// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
         /// </summary>
@@ -32,31 +32,31 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
         /// </summary>
-        public readonly bool IsClientCachingEnabled;
+        public readonly bool? IsClientCachingEnabled;
         /// <summary>
         /// The unique key for the caching rule.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The unique name of the whitelist.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetWaasPoliciesWaasPolicyWafConfigCachingRuleResult(
-            string action,
+            string? action,
 
-            string cachingDuration,
+            string? cachingDuration,
 
-            string clientCachingDuration,
+            string? clientCachingDuration,
 
             ImmutableArray<Outputs.GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaResult> criterias,
 
-            bool isClientCachingEnabled,
+            bool? isClientCachingEnabled,
 
-            string key,
+            string? key,
 
-            string name)
+            string? name)
         {
             Action = action;
             CachingDuration = cachingDuration;

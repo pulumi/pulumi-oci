@@ -60,11 +60,11 @@ export interface GetManagedDatabaseAddmTaskResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of ADDM task metadata.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseAddmTaskItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseAddmTaskItem[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

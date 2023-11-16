@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
@@ -73,7 +72,7 @@ type GetRecommendationStrategyResult struct {
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree bool   `pulumi:"compartmentIdInSubtree"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A collection of recommendation strategy summaries.
 	Items []GetRecommendationStrategyItem `pulumi:"items"`
 	// The name of the strategy parameter.
@@ -127,12 +126,6 @@ func (o GetRecommendationStrategyResultOutput) ToGetRecommendationStrategyResult
 	return o
 }
 
-func (o GetRecommendationStrategyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyResult] {
-	return pulumix.Output[GetRecommendationStrategyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategyResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecommendationStrategyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -142,8 +135,8 @@ func (o GetRecommendationStrategyResultOutput) CompartmentIdInSubtree() pulumi.B
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRecommendationStrategyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationStrategyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRecommendationStrategyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationStrategyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A collection of recommendation strategy summaries.

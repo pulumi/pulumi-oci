@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString {
@@ -17,32 +19,32 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
-    private Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,Object> allConnectionStrings;
     /**
      * @return The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    private String dedicated;
+    private @Nullable String dedicated;
     /**
      * @return The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      * 
      */
-    private String high;
+    private @Nullable String high;
     /**
      * @return The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    private String low;
+    private @Nullable String low;
     /**
      * @return The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
      * 
      */
-    private String medium;
+    private @Nullable String medium;
     /**
      * @return A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
      * 
      */
-    private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles;
+    private @Nullable List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString() {}
     /**
@@ -50,42 +52,42 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
      * 
      */
     public Map<String,Object> allConnectionStrings() {
-        return this.allConnectionStrings;
+        return this.allConnectionStrings == null ? Map.of() : this.allConnectionStrings;
     }
     /**
      * @return The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    public String dedicated() {
-        return this.dedicated;
+    public Optional<String> dedicated() {
+        return Optional.ofNullable(this.dedicated);
     }
     /**
      * @return The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      * 
      */
-    public String high() {
-        return this.high;
+    public Optional<String> high() {
+        return Optional.ofNullable(this.high);
     }
     /**
      * @return The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    public String low() {
-        return this.low;
+    public Optional<String> low() {
+        return Optional.ofNullable(this.low);
     }
     /**
      * @return The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
      * 
      */
-    public String medium() {
-        return this.medium;
+    public Optional<String> medium() {
+        return Optional.ofNullable(this.medium);
     }
     /**
      * @return A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles() {
-        return this.profiles;
+        return this.profiles == null ? List.of() : this.profiles;
     }
 
     public static Builder builder() {
@@ -97,12 +99,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> allConnectionStrings;
-        private String dedicated;
-        private String high;
-        private String low;
-        private String medium;
-        private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles;
+        private @Nullable Map<String,Object> allConnectionStrings;
+        private @Nullable String dedicated;
+        private @Nullable String high;
+        private @Nullable String low;
+        private @Nullable String medium;
+        private @Nullable List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,33 +117,33 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
-            this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
+        public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+            this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
-        public Builder dedicated(String dedicated) {
-            this.dedicated = Objects.requireNonNull(dedicated);
+        public Builder dedicated(@Nullable String dedicated) {
+            this.dedicated = dedicated;
             return this;
         }
         @CustomType.Setter
-        public Builder high(String high) {
-            this.high = Objects.requireNonNull(high);
+        public Builder high(@Nullable String high) {
+            this.high = high;
             return this;
         }
         @CustomType.Setter
-        public Builder low(String low) {
-            this.low = Objects.requireNonNull(low);
+        public Builder low(@Nullable String low) {
+            this.low = low;
             return this;
         }
         @CustomType.Setter
-        public Builder medium(String medium) {
-            this.medium = Objects.requireNonNull(medium);
+        public Builder medium(@Nullable String medium) {
+            this.medium = medium;
             return this;
         }
         @CustomType.Setter
-        public Builder profiles(List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+        public Builder profiles(@Nullable List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles) {
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile... profiles) {

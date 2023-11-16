@@ -87,13 +87,13 @@ namespace Pulumi.Oci.Analytics
         /// IP Address of the Private Access channel.
         /// </summary>
         [Output("ipAddress")]
-        public Output<string> IpAddress { get; private set; } = null!;
+        public Output<string?> IpAddress { get; private set; } = null!;
 
         /// <summary>
         /// Private Access Channel unique identifier key.
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Network Security Group OCIDs for an Analytics instance.

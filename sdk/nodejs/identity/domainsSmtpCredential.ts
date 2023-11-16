@@ -72,7 +72,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -86,7 +86,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * Description
      *
@@ -97,7 +97,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * required: false
      * * returned: default
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -111,7 +111,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * User credential expires on
      *
@@ -127,7 +127,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public readonly expiresOn!: pulumi.Output<string>;
+    public readonly expiresOn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -139,7 +139,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -155,7 +155,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -169,7 +169,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -182,7 +182,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -196,7 +196,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialMeta[] | undefined>;
     /**
      * User's ocid
      *
@@ -210,7 +210,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -244,7 +244,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -258,7 +258,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -272,11 +272,11 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * Controls whether a user can update themselves or not via User related APIs
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser | undefined>;
     /**
      * User linked to smtp credential
      *
@@ -290,7 +290,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly user!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialUser>;
+    public readonly user!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialUser | undefined>;
     /**
      * (Updatable) User name
      *
@@ -305,7 +305,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly userName!: pulumi.Output<string>;
+    public /*out*/ readonly userName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DomainsSmtpCredential resource with the given unique name, arguments, and options.

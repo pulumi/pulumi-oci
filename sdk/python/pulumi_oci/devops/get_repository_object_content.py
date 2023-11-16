@@ -42,7 +42,7 @@ class GetRepositoryObjectContentResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -76,25 +76,7 @@ def get_repository_object_content(file_path: Optional[str] = None,
                                   sha: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryObjectContentResult:
     """
-    This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieve contents of a specified object.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_object_content = oci.DevOps.get_repository_object_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        sha=var["repository_object_content_sha"],
-        file_path=var["repository_object_content_file_path"])
-    ```
-
-
-    :param str file_path: A filter to return only commits that affect any of the specified paths.
-    :param str repository_id: Unique repository identifier.
-    :param str sha: The SHA of a blob or tree.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filePath'] = file_path
@@ -116,24 +98,6 @@ def get_repository_object_content_output(file_path: Optional[pulumi.Input[Option
                                          sha: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryObjectContentResult]:
     """
-    This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieve contents of a specified object.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_object_content = oci.DevOps.get_repository_object_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        sha=var["repository_object_content_sha"],
-        file_path=var["repository_object_content_file_path"])
-    ```
-
-
-    :param str file_path: A filter to return only commits that affect any of the specified paths.
-    :param str repository_id: Unique repository identifier.
-    :param str sha: The SHA of a blob or tree.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -84,138 +84,87 @@ class GetAgentDependencyResult:
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Object storage bucket where the Agent dependency is uploaded.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def checksum(self) -> str:
-        """
-        The checksum associated with the dependency object returned by Object Storage.
-        """
+    def checksum(self) -> Optional[str]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dependencyName")
-    def dependency_name(self) -> str:
-        """
-        Name of the dependency type. This should match the whitelisted enum of dependency names.
-        """
+    def dependency_name(self) -> Optional[str]:
         return pulumi.get(self, "dependency_name")
 
     @property
     @pulumi.getter(name="dependencyVersion")
-    def dependency_version(self) -> str:
-        """
-        Version of the Agent dependency.
-        """
+    def dependency_version(self) -> Optional[str]:
         return pulumi.get(self, "dependency_version")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description about the Agent dependency.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Display name of the Agent dependency.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="eTag")
-    def e_tag(self) -> str:
-        """
-        The eTag associated with the dependency object returned by Object Storage.
-        """
+    def e_tag(self) -> Optional[str]:
         return pulumi.get(self, "e_tag")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Object storage namespace associated with the customer's tenancy.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Name of the dependency object uploaded by the customer.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of AgentDependency.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -248,21 +197,7 @@ class AwaitableGetAgentDependencyResult(GetAgentDependencyResult):
 def get_agent_dependency(agent_dependency_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentDependencyResult:
     """
-    This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Gets an AgentDependency by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=oci_cloud_bridge_agent_dependency["test_agent_dependency"]["id"])
-    ```
-
-
-    :param str agent_dependency_id: A unique AgentDependency identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['agentDependencyId'] = agent_dependency_id
@@ -294,20 +229,6 @@ def get_agent_dependency(agent_dependency_id: Optional[str] = None,
 def get_agent_dependency_output(agent_dependency_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentDependencyResult]:
     """
-    This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Gets an AgentDependency by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=oci_cloud_bridge_agent_dependency["test_agent_dependency"]["id"])
-    ```
-
-
-    :param str agent_dependency_id: A unique AgentDependency identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem {
@@ -13,27 +15,27 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
      * @return The resource name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The OCID of the software source that provides this module.
      * 
      */
-    private String softwareSourceId;
+    private @Nullable String softwareSourceId;
 
     private GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem() {}
     /**
      * @return The resource name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The OCID of the software source that provides this module.
      * 
      */
-    public String softwareSourceId() {
-        return this.softwareSourceId;
+    public Optional<String> softwareSourceId() {
+        return Optional.ofNullable(this.softwareSourceId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String softwareSourceId;
+        private @Nullable String name;
+        private @Nullable String softwareSourceId;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+        public Builder softwareSourceId(@Nullable String softwareSourceId) {
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         public GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem build() {

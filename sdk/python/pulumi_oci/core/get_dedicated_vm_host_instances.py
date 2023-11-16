@@ -46,17 +46,11 @@ class GetDedicatedVmHostInstancesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain the virtual machine instance is running in.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the virtual machine instance.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -66,10 +60,7 @@ class GetDedicatedVmHostInstancesResult:
 
     @property
     @pulumi.getter(name="dedicatedVmHostInstances")
-    def dedicated_vm_host_instances(self) -> Sequence['outputs.GetDedicatedVmHostInstancesDedicatedVmHostInstanceResult']:
-        """
-        The list of dedicated_vm_host_instances.
-        """
+    def dedicated_vm_host_instances(self) -> Optional[Sequence['outputs.GetDedicatedVmHostInstancesDedicatedVmHostInstanceResult']]:
         return pulumi.get(self, "dedicated_vm_host_instances")
 
     @property
@@ -79,7 +70,7 @@ class GetDedicatedVmHostInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -106,25 +97,7 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[str] = None,
                                     filters: Optional[Sequence[pulumi.InputType['GetDedicatedVmHostInstancesFilterArgs']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostInstancesResult:
     """
-    This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
-
-    Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=var["compartment_id"],
-        dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-        availability_domain=var["dedicated_vm_hosts_instance_availability_domain"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -150,24 +123,6 @@ def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.
                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDedicatedVmHostInstancesFilterArgs']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostInstancesResult]:
     """
-    This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
-
-    Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=var["compartment_id"],
-        dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-        availability_domain=var["dedicated_vm_hosts_instance_availability_domain"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
+    Use this data source to access information about an existing resource.
     """
     ...

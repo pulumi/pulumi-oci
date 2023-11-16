@@ -71,15 +71,15 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * Compartment Identifier
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * List of migration assets that depend on the asset.
      */
-    public /*out*/ readonly dependedOnBies!: pulumi.Output<string[]>;
+    public /*out*/ readonly dependedOnBies!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * OCID of an asset for an inventory.
      */
@@ -87,8 +87,8 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public readonly migrationAssetDependsOns!: pulumi.Output<string[]>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
+    public readonly migrationAssetDependsOns!: pulumi.Output<string[] | undefined>;
     /**
      * OCID of the associated migration.
      */
@@ -96,11 +96,11 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * List of notifications
      */
-    public /*out*/ readonly notifications!: pulumi.Output<string[]>;
+    public /*out*/ readonly notifications!: pulumi.Output<string[] | undefined>;
     /**
      * The parent snapshot of the migration asset to be used by the replication task.
      */
-    public /*out*/ readonly parentSnapshot!: pulumi.Output<string>;
+    public /*out*/ readonly parentSnapshot!: pulumi.Output<string | undefined>;
     /**
      * Replication compartment identifier
      */
@@ -108,7 +108,7 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * (Updatable) Replication schedule identifier
      */
-    public readonly replicationScheduleId!: pulumi.Output<string>;
+    public readonly replicationScheduleId!: pulumi.Output<string | undefined>;
     /**
      * Name of snapshot bucket
      *
@@ -120,31 +120,31 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly snapshots!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly snapshots!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * OCID that is referenced to an asset for an inventory.
      */
-    public /*out*/ readonly sourceAssetId!: pulumi.Output<string>;
+    public /*out*/ readonly sourceAssetId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the migration asset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Tenancy identifier
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyId!: pulumi.Output<string | undefined>;
     /**
      * The time when the migration asset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when the migration asset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The type of asset referenced for inventory.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    public /*out*/ readonly type!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MigrationAsset resource with the given unique name, arguments, and options.

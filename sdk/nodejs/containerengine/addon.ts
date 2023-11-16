@@ -50,7 +50,7 @@ export class Addon extends pulumi.CustomResource {
     /**
      * The error info of the addon.
      */
-    public /*out*/ readonly addonErrors!: pulumi.Output<outputs.ContainerEngine.AddonAddonError[]>;
+    public /*out*/ readonly addonErrors!: pulumi.Output<outputs.ContainerEngine.AddonAddonError[] | undefined>;
     /**
      * The name of the addon.
      */
@@ -62,11 +62,11 @@ export class Addon extends pulumi.CustomResource {
     /**
      * (Updatable) Addon configuration details.
      */
-    public readonly configurations!: pulumi.Output<outputs.ContainerEngine.AddonConfiguration[]>;
+    public readonly configurations!: pulumi.Output<outputs.ContainerEngine.AddonConfiguration[] | undefined>;
     /**
      * current installed version of the addon
      */
-    public /*out*/ readonly currentInstalledVersion!: pulumi.Output<string>;
+    public /*out*/ readonly currentInstalledVersion!: pulumi.Output<string | undefined>;
     /**
      * Whether to remove addon resource in deletion.
      */
@@ -74,11 +74,11 @@ export class Addon extends pulumi.CustomResource {
     /**
      * The state of the addon.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The version of addon to be installed.
      *
@@ -86,7 +86,7 @@ export class Addon extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly version!: pulumi.Output<string>;
+    public readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Addon resource with the given unique name, arguments, and options.

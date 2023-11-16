@@ -8,6 +8,8 @@ import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformComponentDetailOsn
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformComponentDetailOsn {
@@ -15,51 +17,51 @@ public final class GetBlockchainPlatformComponentDetailOsn {
      * @return Availability Domain of peer
      * 
      */
-    private String ad;
+    private @Nullable String ad;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
+    private @Nullable List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
     /**
      * @return OSN identifier
      * 
      */
-    private String osnKey;
+    private @Nullable String osnKey;
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetBlockchainPlatformComponentDetailOsn() {}
     /**
      * @return Availability Domain of peer
      * 
      */
-    public String ad() {
-        return this.ad;
+    public Optional<String> ad() {
+        return Optional.ofNullable(this.ad);
     }
     /**
      * @return OCPU allocation parameter
      * 
      */
     public List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams() {
-        return this.ocpuAllocationParams;
+        return this.ocpuAllocationParams == null ? List.of() : this.ocpuAllocationParams;
     }
     /**
      * @return OSN identifier
      * 
      */
-    public String osnKey() {
-        return this.osnKey;
+    public Optional<String> osnKey() {
+        return Optional.ofNullable(this.osnKey);
     }
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetBlockchainPlatformComponentDetailOsn {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ad;
-        private List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
-        private String osnKey;
-        private String state;
+        private @Nullable String ad;
+        private @Nullable List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
+        private @Nullable String osnKey;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetBlockchainPlatformComponentDetailOsn defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetBlockchainPlatformComponentDetailOsn {
         }
 
         @CustomType.Setter
-        public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+        public Builder ad(@Nullable String ad) {
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuAllocationParams(List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams) {
-            this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
+        public Builder ocpuAllocationParams(@Nullable List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams) {
+            this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
         public Builder ocpuAllocationParams(GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam... ocpuAllocationParams) {
             return ocpuAllocationParams(List.of(ocpuAllocationParams));
         }
         @CustomType.Setter
-        public Builder osnKey(String osnKey) {
-            this.osnKey = Objects.requireNonNull(osnKey);
+        public Builder osnKey(@Nullable String osnKey) {
+            this.osnKey = osnKey;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetBlockchainPlatformComponentDetailOsn build() {

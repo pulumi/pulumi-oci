@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceListOsPatchesOsPatch {
@@ -18,12 +20,12 @@ public final class GetBdsInstanceListOsPatchesOsPatch {
      * @return Patch version of the os patch.
      * 
      */
-    private String osPatchVersion;
+    private @Nullable String osPatchVersion;
     /**
      * @return The time when the OS patch was released.
      * 
      */
-    private String releaseDate;
+    private @Nullable String releaseDate;
 
     private GetBdsInstanceListOsPatchesOsPatch() {}
     /**
@@ -37,15 +39,15 @@ public final class GetBdsInstanceListOsPatchesOsPatch {
      * @return Patch version of the os patch.
      * 
      */
-    public String osPatchVersion() {
-        return this.osPatchVersion;
+    public Optional<String> osPatchVersion() {
+        return Optional.ofNullable(this.osPatchVersion);
     }
     /**
      * @return The time when the OS patch was released.
      * 
      */
-    public String releaseDate() {
-        return this.releaseDate;
+    public Optional<String> releaseDate() {
+        return Optional.ofNullable(this.releaseDate);
     }
 
     public static Builder builder() {
@@ -58,8 +60,8 @@ public final class GetBdsInstanceListOsPatchesOsPatch {
     @CustomType.Builder
     public static final class Builder {
         private String bdsInstanceId;
-        private String osPatchVersion;
-        private String releaseDate;
+        private @Nullable String osPatchVersion;
+        private @Nullable String releaseDate;
         public Builder() {}
         public Builder(GetBdsInstanceListOsPatchesOsPatch defaults) {
     	      Objects.requireNonNull(defaults);
@@ -74,13 +76,13 @@ public final class GetBdsInstanceListOsPatchesOsPatch {
             return this;
         }
         @CustomType.Setter
-        public Builder osPatchVersion(String osPatchVersion) {
-            this.osPatchVersion = Objects.requireNonNull(osPatchVersion);
+        public Builder osPatchVersion(@Nullable String osPatchVersion) {
+            this.osPatchVersion = osPatchVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+        public Builder releaseDate(@Nullable String releaseDate) {
+            this.releaseDate = releaseDate;
             return this;
         }
         public GetBdsInstanceListOsPatchesOsPatch build() {

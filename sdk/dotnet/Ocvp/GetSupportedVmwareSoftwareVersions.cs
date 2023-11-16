@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of the supported versions of bundled VMware software.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsItemResult> items)
         {

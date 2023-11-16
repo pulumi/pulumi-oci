@@ -16,35 +16,35 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// <summary>
         /// The IDCS application display name associated with the instance
         /// </summary>
-        public readonly string IdcsAppDisplayName;
+        public readonly string? IdcsAppDisplayName;
         /// <summary>
         /// The IDCS application ID associated with the instance
         /// </summary>
-        public readonly string IdcsAppId;
+        public readonly string? IdcsAppId;
         /// <summary>
         /// URL for the location of the IDCS Application (used by IDCS APIs)
         /// </summary>
-        public readonly string IdcsAppLocationUrl;
+        public readonly string? IdcsAppLocationUrl;
         /// <summary>
         /// The IDCS application name associated with the instance
         /// </summary>
-        public readonly string IdcsAppName;
+        public readonly string? IdcsAppName;
         /// <summary>
         /// The URL used as the primary audience for visual builder flows in this instance type: string
         /// </summary>
-        public readonly string InstancePrimaryAudienceUrl;
+        public readonly string? InstancePrimaryAudienceUrl;
 
         [OutputConstructor]
         private GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult(
-            string idcsAppDisplayName,
+            string? idcsAppDisplayName,
 
-            string idcsAppId,
+            string? idcsAppId,
 
-            string idcsAppLocationUrl,
+            string? idcsAppLocationUrl,
 
-            string idcsAppName,
+            string? idcsAppName,
 
-            string instancePrimaryAudienceUrl)
+            string? instancePrimaryAudienceUrl)
         {
             IdcsAppDisplayName = idcsAppDisplayName;
             IdcsAppId = idcsAppId;

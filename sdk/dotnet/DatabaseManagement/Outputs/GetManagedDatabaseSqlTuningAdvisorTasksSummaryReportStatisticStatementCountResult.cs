@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of distinct SQL statements.
         /// </summary>
-        public readonly int DistinctSql;
+        public readonly int? DistinctSql;
         /// <summary>
         /// The number of distinct SQL statements with errors.
         /// </summary>
-        public readonly int ErrorCount;
+        public readonly int? ErrorCount;
         /// <summary>
         /// The number of distinct SQL statements with findings.
         /// </summary>
-        public readonly int FindingCount;
+        public readonly int? FindingCount;
         /// <summary>
         /// The total number of SQL statements.
         /// </summary>
-        public readonly int TotalSql;
+        public readonly int? TotalSql;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountResult(
-            int distinctSql,
+            int? distinctSql,
 
-            int errorCount,
+            int? errorCount,
 
-            int findingCount,
+            int? findingCount,
 
-            int totalSql)
+            int? totalSql)
         {
             DistinctSql = distinctSql;
             ErrorCount = errorCount;

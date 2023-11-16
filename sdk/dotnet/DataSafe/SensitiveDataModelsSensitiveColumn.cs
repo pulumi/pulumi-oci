@@ -65,7 +65,7 @@ namespace Pulumi.Oci.DataSafe
         /// The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically populated with the value provided for the schemaName attribute.
         /// </summary>
         [Output("appName")]
-        public Output<string> AppName { get; private set; } = null!;
+        public Output<string?> AppName { get; private set; } = null!;
 
         /// <summary>
         /// The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The data type of the sensitive column.
         /// </summary>
         [Output("dataType")]
-        public Output<string> DataType { get; private set; } = null!;
+        public Output<string?> DataType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -95,19 +95,19 @@ namespace Pulumi.Oci.DataSafe
         /// The estimated number of data values the column has in the associated database.
         /// </summary>
         [Output("estimatedDataValueCount")]
-        public Output<string> EstimatedDataValueCount { get; private set; } = null!;
+        public Output<string?> EstimatedDataValueCount { get; private set; } = null!;
 
         /// <summary>
         /// The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the sensitive column.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The database object that contains the sensitive column.
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DataSafe
         /// The type of the database object that contains the sensitive column.
         /// </summary>
         [Output("objectType")]
-        public Output<string> ObjectType { get; private set; } = null!;
+        public Output<string?> ObjectType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         /// </summary>
         [Output("relationType")]
-        public Output<string> RelationType { get; private set; } = null!;
+        public Output<string?> RelationType { get; private set; } = null!;
 
         /// <summary>
         /// Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
@@ -155,19 +155,19 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
         /// </summary>
         [Output("sensitiveTypeId")]
-        public Output<string> SensitiveTypeId { get; private set; } = null!;
+        public Output<string?> SensitiveTypeId { get; private set; } = null!;
 
         /// <summary>
         /// The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
         /// </summary>
         [Output("source")]
-        public Output<string> Source { get; private set; } = null!;
+        public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the sensitive column.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
@@ -177,19 +177,19 @@ namespace Pulumi.Oci.DataSafe
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -77,11 +77,11 @@ export interface GetSendersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of senders.
      */
-    readonly senders: outputs.Email.GetSendersSender[];
+    readonly senders?: outputs.Email.GetSendersSender[];
     /**
      * The current status of the approved sender.
      */

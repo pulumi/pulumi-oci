@@ -50,12 +50,12 @@ export interface GetNetworkSecurityGroupVnicsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkSecurityGroupId: string;
     /**
      * The list of network_security_group_vnics.
      */
-    readonly networkSecurityGroupVnics: outputs.Core.GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic[];
+    readonly networkSecurityGroupVnics?: outputs.Core.GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic[];
 }
 /**
  * This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.

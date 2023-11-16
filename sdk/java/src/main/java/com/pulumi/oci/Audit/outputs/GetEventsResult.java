@@ -9,6 +9,7 @@ import com.pulumi.oci.Audit.outputs.GetEventsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetEventsResult {
      * @return The list of audit_events.
      * 
      */
-    private List<GetEventsAuditEvent> auditEvents;
+    private @Nullable List<GetEventsAuditEvent> auditEvents;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the resource  emitting the event.
      * 
@@ -29,7 +30,7 @@ public final class GetEventsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String startTime;
 
     private GetEventsResult() {}
@@ -38,7 +39,7 @@ public final class GetEventsResult {
      * 
      */
     public List<GetEventsAuditEvent> auditEvents() {
-        return this.auditEvents;
+        return this.auditEvents == null ? List.of() : this.auditEvents;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the resource  emitting the event.
@@ -57,8 +58,8 @@ public final class GetEventsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String startTime() {
         return this.startTime;
@@ -73,11 +74,11 @@ public final class GetEventsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetEventsAuditEvent> auditEvents;
+        private @Nullable List<GetEventsAuditEvent> auditEvents;
         private String compartmentId;
         private String endTime;
         private @Nullable List<GetEventsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String startTime;
         public Builder() {}
         public Builder(GetEventsResult defaults) {
@@ -91,8 +92,8 @@ public final class GetEventsResult {
         }
 
         @CustomType.Setter
-        public Builder auditEvents(List<GetEventsAuditEvent> auditEvents) {
-            this.auditEvents = Objects.requireNonNull(auditEvents);
+        public Builder auditEvents(@Nullable List<GetEventsAuditEvent> auditEvents) {
+            this.auditEvents = auditEvents;
             return this;
         }
         public Builder auditEvents(GetEventsAuditEvent... auditEvents) {
@@ -117,8 +118,8 @@ public final class GetEventsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

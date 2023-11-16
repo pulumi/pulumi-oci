@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHttpProbeResultsHttpProbeResultDn {
@@ -15,12 +17,12 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
      * @return The addresses returned by DNS resolution.
      * 
      */
-    private List<String> addresses;
+    private @Nullable List<String> addresses;
     /**
      * @return Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
      * 
      */
-    private Double domainLookupDuration;
+    private @Nullable Double domainLookupDuration;
 
     private GetHttpProbeResultsHttpProbeResultDn() {}
     /**
@@ -28,14 +30,14 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
      * 
      */
     public List<String> addresses() {
-        return this.addresses;
+        return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
      * 
      */
-    public Double domainLookupDuration() {
-        return this.domainLookupDuration;
+    public Optional<Double> domainLookupDuration() {
+        return Optional.ofNullable(this.domainLookupDuration);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> addresses;
-        private Double domainLookupDuration;
+        private @Nullable List<String> addresses;
+        private @Nullable Double domainLookupDuration;
         public Builder() {}
         public Builder(GetHttpProbeResultsHttpProbeResultDn defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
         }
 
         @CustomType.Setter
-        public Builder addresses(List<String> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+        public Builder addresses(@Nullable List<String> addresses) {
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
         }
         @CustomType.Setter
-        public Builder domainLookupDuration(Double domainLookupDuration) {
-            this.domainLookupDuration = Objects.requireNonNull(domainLookupDuration);
+        public Builder domainLookupDuration(@Nullable Double domainLookupDuration) {
+            this.domainLookupDuration = domainLookupDuration;
             return this;
         }
         public GetHttpProbeResultsHttpProbeResultDn build() {

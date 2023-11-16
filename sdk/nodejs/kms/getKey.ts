@@ -58,83 +58,83 @@ export interface GetKeyResult {
     /**
      * The OCID of the compartment that contains this master encryption key.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      */
-    readonly currentKeyVersion: string;
+    readonly currentKeyVersion?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
-    readonly desiredState: string;
+    readonly definedTags?: {[key: string]: any};
+    readonly desiredState?: string;
     /**
      * A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Key reference data to be returned to the customer as a response.
      */
-    readonly externalKeyReferenceDetails: outputs.Kms.GetKeyExternalKeyReferenceDetail[];
-    readonly externalKeyReferences: outputs.Kms.GetKeyExternalKeyReference[];
+    readonly externalKeyReferenceDetails?: outputs.Kms.GetKeyExternalKeyReferenceDetail[];
+    readonly externalKeyReferences?: outputs.Kms.GetKeyExternalKeyReference[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the key.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      */
-    readonly isPrimary: boolean;
+    readonly isPrimary?: boolean;
     readonly keyId: string;
     /**
      * The cryptographic properties of a key.
      */
-    readonly keyShapes: outputs.Kms.GetKeyKeyShape[];
+    readonly keyShapes?: outputs.Kms.GetKeyKeyShape[];
     readonly managementEndpoint: string;
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      */
-    readonly protectionMode: string;
+    readonly protectionMode?: string;
     /**
      * Key replica details
      */
-    readonly replicaDetails: outputs.Kms.GetKeyReplicaDetail[];
+    readonly replicaDetails?: outputs.Kms.GetKeyReplicaDetail[];
     /**
      * Details where key was backed up.
      */
-    readonly restoreFromFiles: outputs.Kms.GetKeyRestoreFromFile[];
+    readonly restoreFromFiles?: outputs.Kms.GetKeyRestoreFromFile[];
     /**
      * Details where key was backed up
      */
-    readonly restoreFromObjectStores: outputs.Kms.GetKeyRestoreFromObjectStore[];
+    readonly restoreFromObjectStores?: outputs.Kms.GetKeyRestoreFromObjectStore[];
     /**
      * When flipped, triggers restore if restore options are provided. Values of 0 or 1 are supported.
      */
-    readonly restoreTrigger: boolean;
+    readonly restoreTrigger?: boolean;
     /**
      * The OCID of the key from which this key was restored.
      */
-    readonly restoredFromKeyId: string;
+    readonly restoredFromKeyId?: string;
     /**
      * The key's current lifecycle state.  Example: `ENABLED`
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
     /**
      * The OCID of the vault that contains this key.
      */
-    readonly vaultId: string;
+    readonly vaultId?: string;
 }
 /**
  * This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.

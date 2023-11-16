@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
@@ -88,7 +87,7 @@ type GetDiscoveryJobsResultsResult struct {
 	DiscoveryType *string                         `pulumi:"discoveryType"`
 	Filters       []GetDiscoveryJobsResultsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 	IsResultApplied *bool `pulumi:"isResultApplied"`
 	// The database object that contains the sensitive column.
@@ -150,12 +149,6 @@ func (o GetDiscoveryJobsResultsResultOutput) ToGetDiscoveryJobsResultsResultOutp
 	return o
 }
 
-func (o GetDiscoveryJobsResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsResult] {
-	return pulumix.Output[GetDiscoveryJobsResultsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the sensitive column.
 func (o GetDiscoveryJobsResultsResultOutput) ColumnNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) []string { return v.ColumnNames }).(pulumi.StringArrayOutput)
@@ -183,8 +176,8 @@ func (o GetDiscoveryJobsResultsResultOutput) Filters() GetDiscoveryJobsResultsFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDiscoveryJobsResultsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDiscoveryJobsResultsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.

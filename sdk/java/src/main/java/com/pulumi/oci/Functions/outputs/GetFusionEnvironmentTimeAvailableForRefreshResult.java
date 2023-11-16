@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentTimeAvailableForRefr
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentTimeAvailableForRefreshResult {
@@ -16,12 +18,12 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of available refresh time objects.
      * 
      */
-    private List<GetFusionEnvironmentTimeAvailableForRefreshItem> items;
+    private @Nullable List<GetFusionEnvironmentTimeAvailableForRefreshItem> items;
 
     private GetFusionEnvironmentTimeAvailableForRefreshResult() {}
     public String fusionEnvironmentId() {
@@ -31,15 +33,15 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of available refresh time objects.
      * 
      */
     public List<GetFusionEnvironmentTimeAvailableForRefreshItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshResult {
     @CustomType.Builder
     public static final class Builder {
         private String fusionEnvironmentId;
-        private String id;
-        private List<GetFusionEnvironmentTimeAvailableForRefreshItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetFusionEnvironmentTimeAvailableForRefreshItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentTimeAvailableForRefreshResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentTimeAvailableForRefreshItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentTimeAvailableForRefreshItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentTimeAvailableForRefreshItem... items) {

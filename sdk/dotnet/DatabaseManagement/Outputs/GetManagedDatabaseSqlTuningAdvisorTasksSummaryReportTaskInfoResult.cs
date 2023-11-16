@@ -16,53 +16,53 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the SQL Tuning Advisor task.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The owner of the SQL Tuning Advisor task.
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
         /// </summary>
-        public readonly int RunningTime;
+        public readonly int? RunningTime;
         /// <summary>
         /// The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The end time of the task execution.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The start time of the task execution.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoResult(
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string owner,
+            string? owner,
 
-            int runningTime,
+            int? runningTime,
 
-            string status,
+            string? status,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted)
+            string? timeStarted)
         {
             Description = description;
             Id = id;

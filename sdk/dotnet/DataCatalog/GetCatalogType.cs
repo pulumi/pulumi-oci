@@ -152,85 +152,85 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// Detailed description of the type.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Mapping type equivalence in the external system.
         /// </summary>
-        public readonly string ExternalTypeName;
+        public readonly string? ExternalTypeName;
         public readonly ImmutableArray<string> Fields;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the type is approved for use as a classifying object.
         /// </summary>
-        public readonly bool IsApproved;
+        public readonly bool? IsApproved;
         /// <summary>
         /// Indicates whether the type is internal, making it unavailable for use by metadata elements.
         /// </summary>
-        public readonly bool IsInternal;
+        public readonly bool? IsInternal;
         /// <summary>
         /// Indicates whether the type can be used for tagging metadata elements.
         /// </summary>
-        public readonly bool IsTag;
+        public readonly bool? IsTag;
         /// <summary>
         /// Unique type key that is immutable.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The immutable name of the type.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, object>? Properties;
         /// <summary>
         /// The current state of the type.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Indicates the category this type belongs to. For instance, data assets, connections.
         /// </summary>
-        public readonly string TypeCategory;
+        public readonly string? TypeCategory;
         public readonly string TypeKey;
         /// <summary>
         /// URI to the type instance in the API.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetCatalogTypeResult(
             string catalogId,
 
-            string description,
+            string? description,
 
-            string externalTypeName,
+            string? externalTypeName,
 
             ImmutableArray<string> fields,
 
-            string id,
+            string? id,
 
-            bool isApproved,
+            bool? isApproved,
 
-            bool isInternal,
+            bool? isInternal,
 
-            bool isTag,
+            bool? isTag,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, object>? properties,
 
-            string state,
+            string? state,
 
-            string typeCategory,
+            string? typeCategory,
 
             string typeKey,
 
-            string uri)
+            string? uri)
         {
             CatalogId = catalogId;
             Description = description;

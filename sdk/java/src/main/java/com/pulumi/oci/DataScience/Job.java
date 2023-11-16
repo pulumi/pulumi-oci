@@ -145,16 +145,16 @@ public class Job extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.artifactContentLength);
     }
     @Export(name="artifactContentMd5", refs={String.class}, tree="[0]")
-    private Output<String> artifactContentMd5;
+    private Output</* @Nullable */ String> artifactContentMd5;
 
-    public Output<String> artifactContentMd5() {
-        return this.artifactContentMd5;
+    public Output<Optional<String>> artifactContentMd5() {
+        return Codegen.optional(this.artifactContentMd5);
     }
     @Export(name="artifactLastModified", refs={String.class}, tree="[0]")
-    private Output<String> artifactLastModified;
+    private Output</* @Nullable */ String> artifactLastModified;
 
-    public Output<String> artifactLastModified() {
-        return this.artifactLastModified;
+    public Output<Optional<String>> artifactLastModified() {
+        return Codegen.optional(this.artifactLastModified);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -175,28 +175,28 @@ public class Job extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Delete all related JobRuns upon deletion of the Job.
@@ -217,48 +217,48 @@ public class Job extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A short description of the job.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the resource.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     @Export(name="emptyArtifact", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> emptyArtifact;
+    private Output</* @Nullable */ Boolean> emptyArtifact;
 
-    public Output<Boolean> emptyArtifact() {
-        return this.emptyArtifact;
+    public Output<Optional<Boolean>> emptyArtifact() {
+        return Codegen.optional(this.emptyArtifact);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in &#34;Creating&#34; state until its artifact is uploaded.
@@ -307,42 +307,42 @@ public class Job extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="jobLogConfigurationDetails", refs={JobJobLogConfigurationDetails.class}, tree="[0]")
-    private Output<JobJobLogConfigurationDetails> jobLogConfigurationDetails;
+    private Output</* @Nullable */ JobJobLogConfigurationDetails> jobLogConfigurationDetails;
 
     /**
      * @return Logging configuration for resource.
      * 
      */
-    public Output<JobJobLogConfigurationDetails> jobLogConfigurationDetails() {
-        return this.jobLogConfigurationDetails;
+    public Output<Optional<JobJobLogConfigurationDetails>> jobLogConfigurationDetails() {
+        return Codegen.optional(this.jobLogConfigurationDetails);
     }
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      * 
      */
     @Export(name="jobStorageMountConfigurationDetailsLists", refs={List.class,JobJobStorageMountConfigurationDetailsList.class}, tree="[0,1]")
-    private Output<List<JobJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists;
+    private Output</* @Nullable */ List<JobJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists;
 
     /**
      * @return (Updatable) Collection of JobStorageMountConfigurationDetails.
      * 
      */
-    public Output<List<JobJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists() {
-        return this.jobStorageMountConfigurationDetailsLists;
+    public Output<Optional<List<JobJobStorageMountConfigurationDetailsList>>> jobStorageMountConfigurationDetailsLists() {
+        return Codegen.optional(this.jobStorageMountConfigurationDetailsLists);
     }
     /**
      * The state of the job.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return The state of the job.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -363,28 +363,28 @@ public class Job extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the job.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

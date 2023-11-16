@@ -115,26 +115,17 @@ class GetDeploymentUpgradeResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
+    def deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_id")
 
     @property
@@ -144,39 +135,27 @@ class GetDeploymentUpgradeResult:
 
     @property
     @pulumi.getter(name="deploymentUpgradeType")
-    def deployment_upgrade_type(self) -> str:
-        """
-        The type of the deployment upgrade: MANUAL or AUTOMATIC
-        """
+    def deployment_upgrade_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_upgrade_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Metadata about this specific object.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        An object's Display Name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -184,172 +163,107 @@ class GetDeploymentUpgradeResult:
 
     @property
     @pulumi.getter(name="isCancelAllowed")
-    def is_cancel_allowed(self) -> bool:
-        """
-        Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
-        """
+    def is_cancel_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_cancel_allowed")
 
     @property
     @pulumi.getter(name="isRescheduleAllowed")
-    def is_reschedule_allowed(self) -> bool:
-        """
-        Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
-        """
+    def is_reschedule_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_reschedule_allowed")
 
     @property
     @pulumi.getter(name="isRollbackAllowed")
-    def is_rollback_allowed(self) -> bool:
-        """
-        Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
-        * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
-        * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
-        """
+    def is_rollback_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_rollback_allowed")
 
     @property
     @pulumi.getter(name="isSecurityFix")
-    def is_security_fix(self) -> bool:
-        """
-        Indicates if OGG release contains security fix.
-        """
+    def is_security_fix(self) -> Optional[bool]:
         return pulumi.get(self, "is_security_fix")
 
     @property
     @pulumi.getter(name="isSnoozed")
-    def is_snoozed(self) -> bool:
-        """
-        Indicates if upgrade notifications are snoozed or not.
-        """
+    def is_snoozed(self) -> Optional[bool]:
         return pulumi.get(self, "is_snoozed")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> str:
-        """
-        Possible GGS lifecycle sub-states.
-        """
+    def lifecycle_sub_state(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="previousOggVersion")
-    def previous_ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def previous_ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "previous_ogg_version")
 
     @property
     @pulumi.getter(name="releaseType")
-    def release_type(self) -> str:
-        """
-        The type of release.
-        """
+    def release_type(self) -> Optional[str]:
         return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Possible lifecycle states.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeOggVersionSupportedUntil")
-    def time_ogg_version_supported_until(self) -> str:
-        """
-        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_ogg_version_supported_until(self) -> Optional[str]:
         return pulumi.get(self, "time_ogg_version_supported_until")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
     @pulumi.getter(name="timeSchedule")
-    def time_schedule(self) -> str:
-        """
-        The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_schedule(self) -> Optional[str]:
         return pulumi.get(self, "time_schedule")
 
     @property
     @pulumi.getter(name="timeScheduleMax")
-    def time_schedule_max(self) -> str:
-        """
-        Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_schedule_max(self) -> Optional[str]:
         return pulumi.get(self, "time_schedule_max")
 
     @property
     @pulumi.getter(name="timeSnoozedUntil")
-    def time_snoozed_until(self) -> str:
-        """
-        The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_snoozed_until(self) -> Optional[str]:
         return pulumi.get(self, "time_snoozed_until")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -394,21 +308,7 @@ class AwaitableGetDeploymentUpgradeResult(GetDeploymentUpgradeResult):
 def get_deployment_upgrade(deployment_upgrade_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentUpgradeResult:
     """
-    This data source provides details about a specific Deployment Upgrade resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a deployment upgrade.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=oci_golden_gate_deployment_upgrade["test_deployment_upgrade"]["id"])
-    ```
-
-
-    :param str deployment_upgrade_id: A unique Deployment Upgrade identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentUpgradeId'] = deployment_upgrade_id
@@ -452,20 +352,6 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[str] = None,
 def get_deployment_upgrade_output(deployment_upgrade_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentUpgradeResult]:
     """
-    This data source provides details about a specific Deployment Upgrade resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a deployment upgrade.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=oci_golden_gate_deployment_upgrade["test_deployment_upgrade"]["id"])
-    ```
-
-
-    :param str deployment_upgrade_id: A unique Deployment Upgrade identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

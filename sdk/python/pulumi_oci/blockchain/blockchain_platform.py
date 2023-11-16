@@ -34,26 +34,6 @@ class BlockchainPlatformArgs:
                  total_ocpu_capacity: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a BlockchainPlatform resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-        :param pulumi.Input[str] display_name: Platform Instance Display name, can be renamed
-        :param pulumi.Input[str] idcs_access_token: IDCS access token with Identity Domain Administrator role
-        :param pulumi.Input[str] platform_role: Role of platform - founder or participant
-        :param pulumi.Input[str] ca_cert_archive_text: Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Platform Instance Description
-        :param pulumi.Input[str] federated_user_id: Identifier for a federated user
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_byol: Bring your own license
-        :param pulumi.Input[str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] platform_version: Platform version
-        :param pulumi.Input['BlockchainPlatformReplicasArgs'] replicas: Number of replicas of service components like Rest Proxy, CA and Console
-        :param pulumi.Input[float] storage_size_in_tbs: Storage size in TBs
-        :param pulumi.Input[int] total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_shape", compute_shape)
@@ -86,9 +66,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -98,9 +75,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="computeShape")
     def compute_shape(self) -> pulumi.Input[str]:
-        """
-        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-        """
         return pulumi.get(self, "compute_shape")
 
     @compute_shape.setter
@@ -110,9 +84,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        Platform Instance Display name, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -122,9 +93,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> pulumi.Input[str]:
-        """
-        IDCS access token with Identity Domain Administrator role
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
@@ -134,9 +102,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="platformRole")
     def platform_role(self) -> pulumi.Input[str]:
-        """
-        Role of platform - founder or participant
-        """
         return pulumi.get(self, "platform_role")
 
     @platform_role.setter
@@ -146,9 +111,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="caCertArchiveText")
     def ca_cert_archive_text(self) -> Optional[pulumi.Input[str]]:
-        """
-        Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-        """
         return pulumi.get(self, "ca_cert_archive_text")
 
     @ca_cert_archive_text.setter
@@ -158,9 +120,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -170,9 +129,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Platform Instance Description
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -182,9 +138,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="federatedUserId")
     def federated_user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Identifier for a federated user
-        """
         return pulumi.get(self, "federated_user_id")
 
     @federated_user_id.setter
@@ -194,9 +147,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -206,9 +156,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="isByol")
     def is_byol(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Bring your own license
-        """
         return pulumi.get(self, "is_byol")
 
     @is_byol.setter
@@ -218,13 +165,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="loadBalancerShape")
     def load_balancer_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "load_balancer_shape")
 
     @load_balancer_shape.setter
@@ -234,9 +174,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="platformVersion")
     def platform_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Platform version
-        """
         return pulumi.get(self, "platform_version")
 
     @platform_version.setter
@@ -246,9 +183,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter
     def replicas(self) -> Optional[pulumi.Input['BlockchainPlatformReplicasArgs']]:
-        """
-        Number of replicas of service components like Rest Proxy, CA and Console
-        """
         return pulumi.get(self, "replicas")
 
     @replicas.setter
@@ -258,9 +192,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="storageSizeInTbs")
     def storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        Storage size in TBs
-        """
         return pulumi.get(self, "storage_size_in_tbs")
 
     @storage_size_in_tbs.setter
@@ -270,9 +201,6 @@ class BlockchainPlatformArgs:
     @property
     @pulumi.getter(name="totalOcpuCapacity")
     def total_ocpu_capacity(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of total OCPUs allocated to the platform cluster
-        """
         return pulumi.get(self, "total_ocpu_capacity")
 
     @total_ocpu_capacity.setter
@@ -312,37 +240,6 @@ class _BlockchainPlatformState:
                  total_ocpu_capacity: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering BlockchainPlatform resources.
-        :param pulumi.Input[str] ca_cert_archive_text: Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]] component_details: Blockchain Platform component details.
-        :param pulumi.Input[str] compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Platform Instance Description
-        :param pulumi.Input[str] display_name: Platform Instance Display name, can be renamed
-        :param pulumi.Input[str] federated_user_id: Identifier for a federated user
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]] host_ocpu_utilization_infos: List of OcpuUtilization for all hosts
-        :param pulumi.Input[str] idcs_access_token: IDCS access token with Identity Domain Administrator role
-        :param pulumi.Input[bool] is_byol: Bring your own license
-        :param pulumi.Input[bool] is_multi_ad: True for multi-AD blockchain plaforms, false for single-AD
-        :param pulumi.Input[str] lifecycle_details: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] platform_role: Role of platform - founder or participant
-        :param pulumi.Input[str] platform_shape_type: Type of Platform shape - DEFAULT or CUSTOM
-        :param pulumi.Input[str] platform_version: Platform version
-        :param pulumi.Input['BlockchainPlatformReplicasArgs'] replicas: Number of replicas of service components like Rest Proxy, CA and Console
-        :param pulumi.Input[str] service_endpoint: Service endpoint URL, valid post-provisioning
-        :param pulumi.Input[str] service_version: The version of the Platform Instance.
-        :param pulumi.Input[str] state: The current state of the Platform Instance.
-        :param pulumi.Input[float] storage_size_in_tbs: Storage size in TBs
-        :param pulumi.Input[float] storage_used_in_tbs: Storage used in TBs
-        :param pulumi.Input[str] time_created: The time the the Platform Instance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Platform Instance was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[int] total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
         if ca_cert_archive_text is not None:
             pulumi.set(__self__, "ca_cert_archive_text", ca_cert_archive_text)
@@ -402,9 +299,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="caCertArchiveText")
     def ca_cert_archive_text(self) -> Optional[pulumi.Input[str]]:
-        """
-        Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-        """
         return pulumi.get(self, "ca_cert_archive_text")
 
     @ca_cert_archive_text.setter
@@ -414,9 +308,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -426,9 +317,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="componentDetails")
     def component_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]]:
-        """
-        Blockchain Platform component details.
-        """
         return pulumi.get(self, "component_details")
 
     @component_details.setter
@@ -438,9 +326,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="computeShape")
     def compute_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-        """
         return pulumi.get(self, "compute_shape")
 
     @compute_shape.setter
@@ -450,9 +335,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -462,9 +344,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Platform Instance Description
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -474,9 +353,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Platform Instance Display name, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -486,9 +362,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="federatedUserId")
     def federated_user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Identifier for a federated user
-        """
         return pulumi.get(self, "federated_user_id")
 
     @federated_user_id.setter
@@ -498,9 +371,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -510,9 +380,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="hostOcpuUtilizationInfos")
     def host_ocpu_utilization_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]]:
-        """
-        List of OcpuUtilization for all hosts
-        """
         return pulumi.get(self, "host_ocpu_utilization_infos")
 
     @host_ocpu_utilization_infos.setter
@@ -522,9 +389,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> Optional[pulumi.Input[str]]:
-        """
-        IDCS access token with Identity Domain Administrator role
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
@@ -534,9 +398,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="isByol")
     def is_byol(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Bring your own license
-        """
         return pulumi.get(self, "is_byol")
 
     @is_byol.setter
@@ -546,9 +407,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="isMultiAd")
     def is_multi_ad(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True for multi-AD blockchain plaforms, false for single-AD
-        """
         return pulumi.get(self, "is_multi_ad")
 
     @is_multi_ad.setter
@@ -558,9 +416,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -570,13 +425,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="loadBalancerShape")
     def load_balancer_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "load_balancer_shape")
 
     @load_balancer_shape.setter
@@ -586,9 +434,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="platformRole")
     def platform_role(self) -> Optional[pulumi.Input[str]]:
-        """
-        Role of platform - founder or participant
-        """
         return pulumi.get(self, "platform_role")
 
     @platform_role.setter
@@ -598,9 +443,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="platformShapeType")
     def platform_shape_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of Platform shape - DEFAULT or CUSTOM
-        """
         return pulumi.get(self, "platform_shape_type")
 
     @platform_shape_type.setter
@@ -610,9 +452,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="platformVersion")
     def platform_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Platform version
-        """
         return pulumi.get(self, "platform_version")
 
     @platform_version.setter
@@ -622,9 +461,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter
     def replicas(self) -> Optional[pulumi.Input['BlockchainPlatformReplicasArgs']]:
-        """
-        Number of replicas of service components like Rest Proxy, CA and Console
-        """
         return pulumi.get(self, "replicas")
 
     @replicas.setter
@@ -634,9 +470,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="serviceEndpoint")
     def service_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        Service endpoint URL, valid post-provisioning
-        """
         return pulumi.get(self, "service_endpoint")
 
     @service_endpoint.setter
@@ -646,9 +479,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="serviceVersion")
     def service_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the Platform Instance.
-        """
         return pulumi.get(self, "service_version")
 
     @service_version.setter
@@ -658,9 +488,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Platform Instance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -670,9 +497,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="storageSizeInTbs")
     def storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        Storage size in TBs
-        """
         return pulumi.get(self, "storage_size_in_tbs")
 
     @storage_size_in_tbs.setter
@@ -682,9 +506,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="storageUsedInTbs")
     def storage_used_in_tbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        Storage used in TBs
-        """
         return pulumi.get(self, "storage_used_in_tbs")
 
     @storage_used_in_tbs.setter
@@ -694,9 +515,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the Platform Instance was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -706,9 +524,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Platform Instance was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -718,9 +533,6 @@ class _BlockchainPlatformState:
     @property
     @pulumi.getter(name="totalOcpuCapacity")
     def total_ocpu_capacity(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of total OCPUs allocated to the platform cluster
-        """
         return pulumi.get(self, "total_ocpu_capacity")
 
     @total_ocpu_capacity.setter
@@ -751,65 +563,9 @@ class BlockchainPlatform(pulumi.CustomResource):
                  total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Creates a new Blockchain Platform.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_blockchain_platform = oci.blockchain.BlockchainPlatform("testBlockchainPlatform",
-            compartment_id=var["compartment_id"],
-            compute_shape=var["blockchain_platform_compute_shape"],
-            display_name=var["blockchain_platform_display_name"],
-            idcs_access_token=var["blockchain_platform_idcs_access_token"],
-            platform_role=var["blockchain_platform_platform_role"],
-            ca_cert_archive_text=var["blockchain_platform_ca_cert_archive_text"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["blockchain_platform_description"],
-            federated_user_id=oci_identity_user["test_user"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_byol=var["blockchain_platform_is_byol"],
-            platform_version=var["blockchain_platform_platform_version"])
-        ```
-
-        ## Import
-
-        BlockchainPlatforms can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
-        ```
-
+        Create a BlockchainPlatform resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ca_cert_archive_text: Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Platform Instance Description
-        :param pulumi.Input[str] display_name: Platform Instance Display name, can be renamed
-        :param pulumi.Input[str] federated_user_id: Identifier for a federated user
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_access_token: IDCS access token with Identity Domain Administrator role
-        :param pulumi.Input[bool] is_byol: Bring your own license
-        :param pulumi.Input[str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] platform_role: Role of platform - founder or participant
-        :param pulumi.Input[str] platform_version: Platform version
-        :param pulumi.Input[pulumi.InputType['BlockchainPlatformReplicasArgs']] replicas: Number of replicas of service components like Rest Proxy, CA and Console
-        :param pulumi.Input[float] storage_size_in_tbs: Storage size in TBs
-        :param pulumi.Input[int] total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
         ...
     @overload
@@ -818,43 +574,7 @@ class BlockchainPlatform(pulumi.CustomResource):
                  args: BlockchainPlatformArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Creates a new Blockchain Platform.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_blockchain_platform = oci.blockchain.BlockchainPlatform("testBlockchainPlatform",
-            compartment_id=var["compartment_id"],
-            compute_shape=var["blockchain_platform_compute_shape"],
-            display_name=var["blockchain_platform_display_name"],
-            idcs_access_token=var["blockchain_platform_idcs_access_token"],
-            platform_role=var["blockchain_platform_platform_role"],
-            ca_cert_archive_text=var["blockchain_platform_ca_cert_archive_text"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["blockchain_platform_description"],
-            federated_user_id=oci_identity_user["test_user"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_byol=var["blockchain_platform_is_byol"],
-            platform_version=var["blockchain_platform_platform_version"])
-        ```
-
-        ## Import
-
-        BlockchainPlatforms can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
-        ```
-
+        Create a BlockchainPlatform resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BlockchainPlatformArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -978,37 +698,6 @@ class BlockchainPlatform(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ca_cert_archive_text: Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BlockchainPlatformComponentDetailArgs']]]] component_details: Blockchain Platform component details.
-        :param pulumi.Input[str] compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Platform Instance Description
-        :param pulumi.Input[str] display_name: Platform Instance Display name, can be renamed
-        :param pulumi.Input[str] federated_user_id: Identifier for a federated user
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]] host_ocpu_utilization_infos: List of OcpuUtilization for all hosts
-        :param pulumi.Input[str] idcs_access_token: IDCS access token with Identity Domain Administrator role
-        :param pulumi.Input[bool] is_byol: Bring your own license
-        :param pulumi.Input[bool] is_multi_ad: True for multi-AD blockchain plaforms, false for single-AD
-        :param pulumi.Input[str] lifecycle_details: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] platform_role: Role of platform - founder or participant
-        :param pulumi.Input[str] platform_shape_type: Type of Platform shape - DEFAULT or CUSTOM
-        :param pulumi.Input[str] platform_version: Platform version
-        :param pulumi.Input[pulumi.InputType['BlockchainPlatformReplicasArgs']] replicas: Number of replicas of service components like Rest Proxy, CA and Console
-        :param pulumi.Input[str] service_endpoint: Service endpoint URL, valid post-provisioning
-        :param pulumi.Input[str] service_version: The version of the Platform Instance.
-        :param pulumi.Input[str] state: The current state of the Platform Instance.
-        :param pulumi.Input[float] storage_size_in_tbs: Storage size in TBs
-        :param pulumi.Input[float] storage_used_in_tbs: Storage used in TBs
-        :param pulumi.Input[str] time_created: The time the the Platform Instance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Platform Instance was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[int] total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1045,221 +734,136 @@ class BlockchainPlatform(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="caCertArchiveText")
-    def ca_cert_archive_text(self) -> pulumi.Output[str]:
-        """
-        Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-        """
+    def ca_cert_archive_text(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ca_cert_archive_text")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentDetails")
-    def component_details(self) -> pulumi.Output[Sequence['outputs.BlockchainPlatformComponentDetail']]:
-        """
-        Blockchain Platform component details.
-        """
+    def component_details(self) -> pulumi.Output[Optional[Sequence['outputs.BlockchainPlatformComponentDetail']]]:
         return pulumi.get(self, "component_details")
 
     @property
     @pulumi.getter(name="computeShape")
     def compute_shape(self) -> pulumi.Output[str]:
-        """
-        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-        """
         return pulumi.get(self, "compute_shape")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Platform Instance Description
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        Platform Instance Display name, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="federatedUserId")
-    def federated_user_id(self) -> pulumi.Output[str]:
-        """
-        Identifier for a federated user
-        """
+    def federated_user_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "federated_user_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostOcpuUtilizationInfos")
-    def host_ocpu_utilization_infos(self) -> pulumi.Output[Sequence['outputs.BlockchainPlatformHostOcpuUtilizationInfo']]:
-        """
-        List of OcpuUtilization for all hosts
-        """
+    def host_ocpu_utilization_infos(self) -> pulumi.Output[Optional[Sequence['outputs.BlockchainPlatformHostOcpuUtilizationInfo']]]:
         return pulumi.get(self, "host_ocpu_utilization_infos")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> pulumi.Output[str]:
-        """
-        IDCS access token with Identity Domain Administrator role
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="isByol")
-    def is_byol(self) -> pulumi.Output[bool]:
-        """
-        Bring your own license
-        """
+    def is_byol(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_byol")
 
     @property
     @pulumi.getter(name="isMultiAd")
-    def is_multi_ad(self) -> pulumi.Output[bool]:
-        """
-        True for multi-AD blockchain plaforms, false for single-AD
-        """
+    def is_multi_ad(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_multi_ad")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="loadBalancerShape")
-    def load_balancer_shape(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def load_balancer_shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "load_balancer_shape")
 
     @property
     @pulumi.getter(name="platformRole")
     def platform_role(self) -> pulumi.Output[str]:
-        """
-        Role of platform - founder or participant
-        """
         return pulumi.get(self, "platform_role")
 
     @property
     @pulumi.getter(name="platformShapeType")
-    def platform_shape_type(self) -> pulumi.Output[str]:
-        """
-        Type of Platform shape - DEFAULT or CUSTOM
-        """
+    def platform_shape_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "platform_shape_type")
 
     @property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> pulumi.Output[str]:
-        """
-        Platform version
-        """
+    def platform_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "platform_version")
 
     @property
     @pulumi.getter
-    def replicas(self) -> pulumi.Output['outputs.BlockchainPlatformReplicas']:
-        """
-        Number of replicas of service components like Rest Proxy, CA and Console
-        """
+    def replicas(self) -> pulumi.Output[Optional['outputs.BlockchainPlatformReplicas']]:
         return pulumi.get(self, "replicas")
 
     @property
     @pulumi.getter(name="serviceEndpoint")
-    def service_endpoint(self) -> pulumi.Output[str]:
-        """
-        Service endpoint URL, valid post-provisioning
-        """
+    def service_endpoint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_endpoint")
 
     @property
     @pulumi.getter(name="serviceVersion")
-    def service_version(self) -> pulumi.Output[str]:
-        """
-        The version of the Platform Instance.
-        """
+    def service_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_version")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Platform Instance.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageSizeInTbs")
-    def storage_size_in_tbs(self) -> pulumi.Output[float]:
-        """
-        Storage size in TBs
-        """
+    def storage_size_in_tbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="storageUsedInTbs")
-    def storage_used_in_tbs(self) -> pulumi.Output[float]:
-        """
-        Storage used in TBs
-        """
+    def storage_used_in_tbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "storage_used_in_tbs")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the Platform Instance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the Platform Instance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalOcpuCapacity")
-    def total_ocpu_capacity(self) -> pulumi.Output[int]:
-        """
-        Number of total OCPUs allocated to the platform cluster
-        """
+    def total_ocpu_capacity(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_ocpu_capacity")
 

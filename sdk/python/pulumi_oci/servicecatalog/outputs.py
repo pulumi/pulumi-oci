@@ -58,11 +58,6 @@ class PrivateApplicationLogo(dict):
                  content_url: Optional[str] = None,
                  display_name: Optional[str] = None,
                  mime_type: Optional[str] = None):
-        """
-        :param str content_url: The content URL of the uploaded data.
-        :param str display_name: (Updatable) The name of the private application.
-        :param str mime_type: The MIME type of the uploaded data.
-        """
         if content_url is not None:
             pulumi.set(__self__, "content_url", content_url)
         if display_name is not None:
@@ -73,25 +68,16 @@ class PrivateApplicationLogo(dict):
     @property
     @pulumi.getter(name="contentUrl")
     def content_url(self) -> Optional[str]:
-        """
-        The content URL of the uploaded data.
-        """
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the private application.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> Optional[str]:
-        """
-        The MIME type of the uploaded data.
-        """
         return pulumi.get(self, "mime_type")
 
 
@@ -120,10 +106,6 @@ class PrivateApplicationPackageDetails(dict):
                  package_type: str,
                  version: str,
                  zip_file_base64encoded: Optional[str] = None):
-        """
-        :param str package_type: The package's type.
-        :param str version: The package version.
-        """
         pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "version", version)
         if zip_file_base64encoded is not None:
@@ -132,17 +114,11 @@ class PrivateApplicationPackageDetails(dict):
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> str:
-        """
-        The package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter
     def version(self) -> str:
-        """
-        The package version.
-        """
         return pulumi.get(self, "version")
 
     @property
@@ -154,72 +130,58 @@ class PrivateApplicationPackageDetails(dict):
 @pulumi.output_type
 class GetPrivateApplicationLogoResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 display_name: str,
-                 mime_type: str):
-        """
-        :param str content_url: The content URL of the uploaded data.
-        :param str display_name: The name used to refer to the uploaded data.
-        :param str mime_type: The MIME type of the uploaded data.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "mime_type", mime_type)
+                 content_url: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 mime_type: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the uploaded data.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name used to refer to the uploaded data.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the uploaded data.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
 
 @pulumi.output_type
 class GetPrivateApplicationPackageDetailResult(dict):
     def __init__(__self__, *,
-                 package_type: str,
-                 version: str,
-                 zip_file_base64encoded: str):
-        """
-        :param str package_type: Type of packages within this private application.
-        """
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "version", version)
-        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
+                 package_type: Optional[str] = None,
+                 version: Optional[str] = None,
+                 zip_file_base64encoded: Optional[str] = None):
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if zip_file_base64encoded is not None:
+            pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        Type of packages within this private application.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="zipFileBase64encoded")
-    def zip_file_base64encoded(self) -> str:
+    def zip_file_base64encoded(self) -> Optional[str]:
         return pulumi.get(self, "zip_file_base64encoded")
 
 
@@ -253,99 +215,82 @@ class GetPrivateApplicationPackagesFilterResult(dict):
 @pulumi.output_type
 class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 display_name: str,
-                 id: str,
-                 mime_type: str,
-                 package_type: str,
-                 private_application_id: str,
-                 time_created: str,
-                 version: str):
-        """
-        :param str display_name: Exact match name filter.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
-        :param str package_type: Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
-        :param str private_application_id: The unique identifier for the private application.
-        :param str time_created: The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
-        :param str version: The package version.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "private_application_id", private_application_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+                 content_url: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 package_type: Optional[str] = None,
+                 private_application_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 version: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if private_application_id is not None:
+            pulumi.set(__self__, "private_application_id", private_application_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Exact match name filter.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="privateApplicationId")
-    def private_application_id(self) -> str:
-        """
-        The unique identifier for the private application.
-        """
+    def private_application_id(self) -> Optional[str]:
         return pulumi.get(self, "private_application_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The package version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -379,237 +324,188 @@ class GetPrivateApplicationsFilterResult(dict):
 @pulumi.output_type
 class GetPrivateApplicationsPrivateApplicationCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 logo_file_base64encoded: str,
-                 logos: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult'],
-                 long_description: str,
-                 package_details: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult'],
-                 package_type: str,
-                 short_description: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The unique identifier for the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: Exact match name filter.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The unique identifier for the private application in Marketplace.
-        :param Sequence['GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs'] logos: The model for uploaded binary data, like logos and images.
-        :param str long_description: A long description of the private application.
-        :param str package_type: Type of packages within this private application.
-        :param str short_description: A short description of the private application.
-        :param str state: The lifecycle state of the private application.
-        :param str time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        :param str time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "logo_file_base64encoded", logo_file_base64encoded)
-        pulumi.set(__self__, "logos", logos)
-        pulumi.set(__self__, "long_description", long_description)
-        pulumi.set(__self__, "package_details", package_details)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "short_description", short_description)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 logo_file_base64encoded: Optional[str] = None,
+                 logos: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult']] = None,
+                 long_description: Optional[str] = None,
+                 package_details: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult']] = None,
+                 package_type: Optional[str] = None,
+                 short_description: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if logo_file_base64encoded is not None:
+            pulumi.set(__self__, "logo_file_base64encoded", logo_file_base64encoded)
+        if logos is not None:
+            pulumi.set(__self__, "logos", logos)
+        if long_description is not None:
+            pulumi.set(__self__, "long_description", long_description)
+        if package_details is not None:
+            pulumi.set(__self__, "package_details", package_details)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if short_description is not None:
+            pulumi.set(__self__, "short_description", short_description)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The unique identifier for the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Exact match name filter.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the private application in Marketplace.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="logoFileBase64encoded")
-    def logo_file_base64encoded(self) -> str:
+    def logo_file_base64encoded(self) -> Optional[str]:
         return pulumi.get(self, "logo_file_base64encoded")
 
     @property
     @pulumi.getter
-    def logos(self) -> Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult']:
-        """
-        The model for uploaded binary data, like logos and images.
-        """
+    def logos(self) -> Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult']]:
         return pulumi.get(self, "logos")
 
     @property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> str:
-        """
-        A long description of the private application.
-        """
+    def long_description(self) -> Optional[str]:
         return pulumi.get(self, "long_description")
 
     @property
     @pulumi.getter(name="packageDetails")
-    def package_details(self) -> Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult']:
+    def package_details(self) -> Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult']]:
         return pulumi.get(self, "package_details")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        Type of packages within this private application.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> str:
-        """
-        A short description of the private application.
-        """
+    def short_description(self) -> Optional[str]:
         return pulumi.get(self, "short_description")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the private application.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 display_name: str,
-                 mime_type: str):
-        """
-        :param str content_url: The content URL of the uploaded data.
-        :param str display_name: Exact match name filter.
-        :param str mime_type: The MIME type of the uploaded data.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "mime_type", mime_type)
+                 content_url: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 mime_type: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the uploaded data.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Exact match name filter.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the uploaded data.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
 
 @pulumi.output_type
 class GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult(dict):
     def __init__(__self__, *,
-                 package_type: str,
-                 version: str,
-                 zip_file_base64encoded: str):
-        """
-        :param str package_type: Type of packages within this private application.
-        """
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "version", version)
-        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
+                 package_type: Optional[str] = None,
+                 version: Optional[str] = None,
+                 zip_file_base64encoded: Optional[str] = None):
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if zip_file_base64encoded is not None:
+            pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        Type of packages within this private application.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="zipFileBase64encoded")
-    def zip_file_base64encoded(self) -> str:
+    def zip_file_base64encoded(self) -> Optional[str]:
         return pulumi.get(self, "zip_file_base64encoded")
 
 
@@ -643,74 +539,58 @@ class GetServiceCatalogAssociationsFilterResult(dict):
 @pulumi.output_type
 class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult(dict):
     def __init__(__self__, *,
-                 entity_id: str,
-                 entity_type: str,
-                 id: str,
-                 service_catalog_id: str,
-                 time_created: str):
-        """
-        :param str entity_id: The unique identifier of the entity associated with service catalog.
-        :param str entity_type: The type of the application in the service catalog.
-        :param str id: Identifier of the association.
-        :param str service_catalog_id: The unique identifier for the service catalog.
-        :param str time_created: Timestamp of when the resource was associated with service catalog.
-        """
-        pulumi.set(__self__, "entity_id", entity_id)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "service_catalog_id", service_catalog_id)
-        pulumi.set(__self__, "time_created", time_created)
+                 entity_id: Optional[str] = None,
+                 entity_type: Optional[str] = None,
+                 id: Optional[str] = None,
+                 service_catalog_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if service_catalog_id is not None:
+            pulumi.set(__self__, "service_catalog_id", service_catalog_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> str:
-        """
-        The unique identifier of the entity associated with service catalog.
-        """
+    def entity_id(self) -> Optional[str]:
         return pulumi.get(self, "entity_id")
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> str:
-        """
-        The type of the application in the service catalog.
-        """
+    def entity_type(self) -> Optional[str]:
         return pulumi.get(self, "entity_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Identifier of the association.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="serviceCatalogId")
-    def service_catalog_id(self) -> str:
-        """
-        The unique identifier for the service catalog.
-        """
+    def service_catalog_id(self) -> Optional[str]:
         return pulumi.get(self, "service_catalog_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Timestamp of when the resource was associated with service catalog.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -744,107 +624,82 @@ class GetServiceCatalogsFilterResult(dict):
 @pulumi.output_type
 class GetServiceCatalogsServiceCatalogCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The unique identifier for the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: Exact match name filter.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The unique identifier for the Service catalog.
-        :param str state: The lifecycle state of the service catalog.
-        :param str time_created: The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        :param str time_updated: The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The unique identifier for the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Exact match name filter.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the Service catalog.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the service catalog.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 

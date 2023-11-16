@@ -395,52 +395,37 @@ class GetAutonomousDatabaseResult:
 
     @property
     @pulumi.getter(name="actualUsedDataStorageSizeInTbs")
-    def actual_used_data_storage_size_in_tbs(self) -> float:
-        """
-        The current amount of storage in use for user and system data, in terabytes (TB).
-        """
+    def actual_used_data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "actual_used_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> str:
+    def admin_password(self) -> Optional[str]:
         return pulumi.get(self, "admin_password")
 
     @property
     @pulumi.getter(name="allocatedStorageSizeInTbs")
-    def allocated_storage_size_in_tbs(self) -> float:
-        """
-        The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
-        """
+    def allocated_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "allocated_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="apexDetails")
-    def apex_details(self) -> Sequence['outputs.GetAutonomousDatabaseApexDetailResult']:
-        """
-        Information about Oracle APEX Application Development.
-        """
+    def apex_details(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseApexDetailResult']]:
         return pulumi.get(self, "apex_details")
 
     @property
     @pulumi.getter(name="arePrimaryWhitelistedIpsUsed")
-    def are_primary_whitelisted_ips_used(self) -> bool:
-        """
-        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
-        """
+    def are_primary_whitelisted_ips_used(self) -> Optional[bool]:
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
-    def autonomous_container_database_id(self) -> str:
-        """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def autonomous_container_database_id(self) -> Optional[str]:
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
     @pulumi.getter(name="autonomousDatabaseBackupId")
-    def autonomous_database_backup_id(self) -> str:
+    def autonomous_database_backup_id(self) -> Optional[str]:
         return pulumi.get(self, "autonomous_database_backup_id")
 
     @property
@@ -450,891 +435,577 @@ class GetAutonomousDatabaseResult:
 
     @property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
-    def autonomous_maintenance_schedule_type(self) -> str:
-        """
-        The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
-        """
+    def autonomous_maintenance_schedule_type(self) -> Optional[str]:
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
 
     @property
     @pulumi.getter(name="availableUpgradeVersions")
-    def available_upgrade_versions(self) -> Sequence[str]:
-        """
-        List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
-        """
+    def available_upgrade_versions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "available_upgrade_versions")
 
     @property
     @pulumi.getter(name="backupConfigs")
-    def backup_configs(self) -> Sequence['outputs.GetAutonomousDatabaseBackupConfigResult']:
-        """
-        Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
-        """
+    def backup_configs(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseBackupConfigResult']]:
         return pulumi.get(self, "backup_configs")
 
     @property
     @pulumi.getter(name="backupRetentionPeriodInDays")
-    def backup_retention_period_in_days(self) -> int:
-        """
-        Retention period, in days, for backups.
-        """
+    def backup_retention_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "backup_retention_period_in_days")
 
     @property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> str:
-        """
-        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
-        """
+    def character_set(self) -> Optional[str]:
         return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="cloneType")
-    def clone_type(self) -> str:
+    def clone_type(self) -> Optional[str]:
         return pulumi.get(self, "clone_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> float:
-        """
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
-        """
+    def compute_count(self) -> Optional[float]:
         return pulumi.get(self, "compute_count")
 
     @property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> str:
-        """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
-        """
+    def compute_model(self) -> Optional[str]:
         return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Sequence['outputs.GetAutonomousDatabaseConnectionStringResult']:
-        """
-        The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
-        """
+    def connection_strings(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseConnectionStringResult']]:
         return pulumi.get(self, "connection_strings")
 
     @property
     @pulumi.getter(name="connectionUrls")
-    def connection_urls(self) -> Sequence['outputs.GetAutonomousDatabaseConnectionUrlResult']:
-        """
-        The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
-        """
+    def connection_urls(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseConnectionUrlResult']]:
         return pulumi.get(self, "connection_urls")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-        """
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Sequence['outputs.GetAutonomousDatabaseCustomerContactResult']:
-        """
-        Customer Contacts.
-        """
+    def customer_contacts(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseCustomerContactResult']]:
         return pulumi.get(self, "customer_contacts")
 
     @property
     @pulumi.getter(name="dataSafeStatus")
-    def data_safe_status(self) -> str:
-        """
-        Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
-        """
+    def data_safe_status(self) -> Optional[str]:
         return pulumi.get(self, "data_safe_status")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> int:
-        """
-        The quantity of data in the database, in gigabytes.
-        """
+    def data_storage_size_in_gb(self) -> Optional[int]:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> int:
-        """
-        The quantity of data in the database, in terabytes.
-        """
+    def data_storage_size_in_tbs(self) -> Optional[int]:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> str:
-        """
-        The Oracle Database Edition that applies to the Autonomous databases.
-        """
+    def database_edition(self) -> Optional[str]:
         return pulumi.get(self, "database_edition")
 
     @property
     @pulumi.getter(name="databaseManagementStatus")
-    def database_management_status(self) -> str:
-        """
-        Status of Database Management for this Autonomous Database.
-        """
+    def database_management_status(self) -> Optional[str]:
         return pulumi.get(self, "database_management_status")
 
     @property
     @pulumi.getter(name="dataguardRegionType")
-    def dataguard_region_type(self) -> str:
-        """
-        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
-        """
+    def dataguard_region_type(self) -> Optional[str]:
         return pulumi.get(self, "dataguard_region_type")
 
     @property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> str:
-        """
-        The database name.
-        """
+    def db_name(self) -> Optional[str]:
         return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> str:
-        """
-        A valid Oracle Database version for Autonomous Database.
-        """
+    def db_version(self) -> Optional[str]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="dbWorkload")
-    def db_workload(self) -> str:
-        """
-        The Autonomous Database workload type. The following values are valid:
-        * OLTP - indicates an Autonomous Transaction Processing database
-        * DW - indicates an Autonomous Data Warehouse database
-        * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-        """
+    def db_workload(self) -> Optional[str]:
         return pulumi.get(self, "db_workload")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="disasterRecoveryRegionType")
-    def disaster_recovery_region_type(self) -> str:
-        """
-        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
-        """
+    def disaster_recovery_region_type(self) -> Optional[str]:
         return pulumi.get(self, "disaster_recovery_region_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
-    def failed_data_recovery_in_seconds(self) -> int:
-        """
-        Indicates the number of seconds of data loss for a Data Guard failover.
-        """
+    def failed_data_recovery_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "failed_data_recovery_in_seconds")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inMemoryAreaInGbs")
-    def in_memory_area_in_gbs(self) -> int:
-        """
-        The area assigned to In-Memory tables in Autonomous Database.
-        """
+    def in_memory_area_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "in_memory_area_in_gbs")
 
     @property
     @pulumi.getter(name="inMemoryPercentage")
-    def in_memory_percentage(self) -> int:
-        """
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
-        """
+    def in_memory_percentage(self) -> Optional[int]:
         return pulumi.get(self, "in_memory_percentage")
 
     @property
     @pulumi.getter(name="infrastructureType")
-    def infrastructure_type(self) -> str:
-        """
-        The infrastructure type this resource belongs to.
-        """
+    def infrastructure_type(self) -> Optional[str]:
         return pulumi.get(self, "infrastructure_type")
 
     @property
     @pulumi.getter(name="isAccessControlEnabled")
-    def is_access_control_enabled(self) -> bool:
-        """
-        Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
-        """
+    def is_access_control_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_access_control_enabled")
 
     @property
     @pulumi.getter(name="isAutoScalingEnabled")
-    def is_auto_scaling_enabled(self) -> bool:
-        """
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
-        """
+    def is_auto_scaling_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @property
     @pulumi.getter(name="isAutoScalingForStorageEnabled")
-    def is_auto_scaling_for_storage_enabled(self) -> bool:
-        """
-        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-        """
+    def is_auto_scaling_for_storage_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
 
     @property
     @pulumi.getter(name="isDataGuardEnabled")
-    def is_data_guard_enabled(self) -> bool:
-        """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-        """
+    def is_data_guard_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isDedicated")
-    def is_dedicated(self) -> bool:
-        """
-        True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-        """
+    def is_dedicated(self) -> Optional[bool]:
         return pulumi.get(self, "is_dedicated")
 
     @property
     @pulumi.getter(name="isFreeTier")
-    def is_free_tier(self) -> bool:
-        """
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
-        """
+    def is_free_tier(self) -> Optional[bool]:
         return pulumi.get(self, "is_free_tier")
 
     @property
     @pulumi.getter(name="isLocalDataGuardEnabled")
-    def is_local_data_guard_enabled(self) -> bool:
-        """
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-        """
+    def is_local_data_guard_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_local_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isMtlsConnectionRequired")
-    def is_mtls_connection_required(self) -> bool:
-        """
-        Specifies if the Autonomous Database requires mTLS connections.
-        """
+    def is_mtls_connection_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_mtls_connection_required")
 
     @property
     @pulumi.getter(name="isPreview")
-    def is_preview(self) -> bool:
-        """
-        Indicates if the Autonomous Database version is a preview version.
-        """
+    def is_preview(self) -> Optional[bool]:
         return pulumi.get(self, "is_preview")
 
     @property
     @pulumi.getter(name="isPreviewVersionWithServiceTermsAccepted")
-    def is_preview_version_with_service_terms_accepted(self) -> bool:
+    def is_preview_version_with_service_terms_accepted(self) -> Optional[bool]:
         return pulumi.get(self, "is_preview_version_with_service_terms_accepted")
 
     @property
     @pulumi.getter(name="isReconnectCloneEnabled")
-    def is_reconnect_clone_enabled(self) -> bool:
-        """
-        Indicates if the refreshable clone can be reconnected to its source database.
-        """
+    def is_reconnect_clone_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_reconnect_clone_enabled")
 
     @property
     @pulumi.getter(name="isRefreshableClone")
-    def is_refreshable_clone(self) -> bool:
-        """
-        Indicates if the Autonomous Database is a refreshable clone.
-        """
+    def is_refreshable_clone(self) -> Optional[bool]:
         return pulumi.get(self, "is_refreshable_clone")
 
     @property
     @pulumi.getter(name="isRemoteDataGuardEnabled")
-    def is_remote_data_guard_enabled(self) -> bool:
-        """
-        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-        """
+    def is_remote_data_guard_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_remote_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isShrinkOnly")
-    def is_shrink_only(self) -> bool:
+    def is_shrink_only(self) -> Optional[bool]:
         return pulumi.get(self, "is_shrink_only")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
-    def key_history_entries(self) -> Sequence['outputs.GetAutonomousDatabaseKeyHistoryEntryResult']:
-        """
-        Key History Entry.
-        """
+    def key_history_entries(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseKeyHistoryEntryResult']]:
         return pulumi.get(self, "key_history_entries")
 
     @property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def key_store_id(self) -> Optional[str]:
         return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> str:
-        """
-        The wallet name for Oracle Key Vault.
-        """
+    def key_store_wallet_name(self) -> Optional[str]:
         return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyLifecycleDetails")
-    def kms_key_lifecycle_details(self) -> str:
-        """
-        KMS key lifecycle details.
-        """
+    def kms_key_lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_lifecycle_details")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> str:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
+    def kms_key_version_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> str:
-        """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
-        """
+    def license_model(self) -> Optional[str]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
-    def local_adg_auto_failover_max_data_loss_limit(self) -> int:
-        """
-        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
-        """
+    def local_adg_auto_failover_max_data_loss_limit(self) -> Optional[int]:
         return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @property
     @pulumi.getter(name="localDisasterRecoveryType")
-    def local_disaster_recovery_type(self) -> str:
-        """
-        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        """
+    def local_disaster_recovery_type(self) -> Optional[str]:
         return pulumi.get(self, "local_disaster_recovery_type")
 
     @property
     @pulumi.getter(name="localStandbyDbs")
-    def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabaseLocalStandbyDbResult']:
-        """
-        Autonomous Data Guard standby database details.
-        """
+    def local_standby_dbs(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseLocalStandbyDbResult']]:
         return pulumi.get(self, "local_standby_dbs")
 
     @property
     @pulumi.getter(name="longTermBackupSchedules")
-    def long_term_backup_schedules(self) -> Sequence['outputs.GetAutonomousDatabaseLongTermBackupScheduleResult']:
-        """
-        Details for the long-term backup schedule.
-        """
+    def long_term_backup_schedules(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseLongTermBackupScheduleResult']]:
         return pulumi.get(self, "long_term_backup_schedules")
 
     @property
     @pulumi.getter(name="maxCpuCoreCount")
-    def max_cpu_core_count(self) -> int:
-        """
-        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        """
+    def max_cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "max_cpu_core_count")
 
     @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
-    def memory_per_oracle_compute_unit_in_gbs(self) -> int:
-        """
-        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
-        """
+    def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> str:
-        """
-        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
+    def ncharacter_set(self) -> Optional[str]:
         return pulumi.get(self, "ncharacter_set")
 
     @property
     @pulumi.getter(name="nextLongTermBackupTimeStamp")
-    def next_long_term_backup_time_stamp(self) -> str:
-        """
-        The date and time when the next long-term backup would be created.
-        """
+    def next_long_term_backup_time_stamp(self) -> Optional[str]:
         return pulumi.get(self, "next_long_term_backup_time_stamp")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="ocpuCount")
-    def ocpu_count(self) -> float:
-        """
-        The number of OCPU cores to be made available to the database.
-        """
+    def ocpu_count(self) -> Optional[float]:
         return pulumi.get(self, "ocpu_count")
 
     @property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> str:
-        """
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
-        """
+    def open_mode(self) -> Optional[str]:
         return pulumi.get(self, "open_mode")
 
     @property
     @pulumi.getter(name="operationsInsightsStatus")
-    def operations_insights_status(self) -> str:
-        """
-        Status of Operations Insights for this Autonomous Database.
-        """
+    def operations_insights_status(self) -> Optional[str]:
         return pulumi.get(self, "operations_insights_status")
 
     @property
     @pulumi.getter(name="peerDbIds")
-    def peer_db_ids(self) -> Sequence[str]:
-        """
-        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
-        """
+    def peer_db_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "peer_db_ids")
 
     @property
     @pulumi.getter(name="permissionLevel")
-    def permission_level(self) -> str:
-        """
-        The Autonomous Database permission level. Restricted mode allows access only by admin users.
-        """
+    def permission_level(self) -> Optional[str]:
         return pulumi.get(self, "permission_level")
 
     @property
     @pulumi.getter(name="privateEndpoint")
-    def private_endpoint(self) -> str:
-        """
-        The private endpoint for the resource.
-        """
+    def private_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> str:
-        """
-        The private endpoint Ip address for the resource.
-        """
+    def private_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter(name="privateEndpointLabel")
-    def private_endpoint_label(self) -> str:
-        """
-        The private endpoint label for the resource.
-        """
+    def private_endpoint_label(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_label")
 
     @property
     @pulumi.getter(name="provisionableCpuses")
-    def provisionable_cpuses(self) -> Sequence[float]:
-        """
-        An array of CPU values that an Autonomous Database can be scaled to.
-        """
+    def provisionable_cpuses(self) -> Optional[Sequence[float]]:
         return pulumi.get(self, "provisionable_cpuses")
 
     @property
     @pulumi.getter(name="refreshableMode")
-    def refreshable_mode(self) -> str:
-        """
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-        """
+    def refreshable_mode(self) -> Optional[str]:
         return pulumi.get(self, "refreshable_mode")
 
     @property
     @pulumi.getter(name="refreshableStatus")
-    def refreshable_status(self) -> str:
-        """
-        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
-        """
+    def refreshable_status(self) -> Optional[str]:
         return pulumi.get(self, "refreshable_status")
 
     @property
     @pulumi.getter(name="remoteDisasterRecoveryConfigurations")
-    def remote_disaster_recovery_configurations(self) -> Sequence['outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult']:
-        """
-        Configurations of a Disaster Recovery.
-        """
+    def remote_disaster_recovery_configurations(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult']]:
         return pulumi.get(self, "remote_disaster_recovery_configurations")
 
     @property
     @pulumi.getter(name="remoteDisasterRecoveryType")
-    def remote_disaster_recovery_type(self) -> str:
+    def remote_disaster_recovery_type(self) -> Optional[str]:
         return pulumi.get(self, "remote_disaster_recovery_type")
 
     @property
     @pulumi.getter(name="resourcePoolLeaderId")
-    def resource_pool_leader_id(self) -> str:
-        """
-        The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def resource_pool_leader_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_pool_leader_id")
 
     @property
     @pulumi.getter(name="resourcePoolSummaries")
-    def resource_pool_summaries(self) -> Sequence['outputs.GetAutonomousDatabaseResourcePoolSummaryResult']:
-        """
-        The configuration details for resource pool
-        """
+    def resource_pool_summaries(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseResourcePoolSummaryResult']]:
         return pulumi.get(self, "resource_pool_summaries")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> bool:
+    def rotate_key_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "rotate_key_trigger")
 
     @property
     @pulumi.getter(name="scheduledOperations")
-    def scheduled_operations(self) -> Sequence['outputs.GetAutonomousDatabaseScheduledOperationResult']:
-        """
-        The list of scheduled operations.
-        """
+    def scheduled_operations(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseScheduledOperationResult']]:
         return pulumi.get(self, "scheduled_operations")
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="secretVersionNumber")
-    def secret_version_number(self) -> int:
+    def secret_version_number(self) -> Optional[int]:
         return pulumi.get(self, "secret_version_number")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")
-    def service_console_url(self) -> str:
-        """
-        The URL of the Service Console for the Autonomous Database.
-        """
+    def service_console_url(self) -> Optional[str]:
         return pulumi.get(self, "service_console_url")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter(name="standbyDbs")
-    def standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabaseStandbyDbResult']:
-        """
-        **Deprecated** Autonomous Data Guard standby database details.
-        """
+    def standby_dbs(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseStandbyDbResult']]:
         return pulumi.get(self, "standby_dbs")
 
     @property
     @pulumi.getter(name="standbyWhitelistedIps")
-    def standby_whitelisted_ips(self) -> Sequence[str]:
-        """
-        The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        """
+    def standby_whitelisted_ips(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "standby_whitelisted_ips")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Autonomous Database.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="supportedRegionsToCloneTos")
-    def supported_regions_to_clone_tos(self) -> Sequence[str]:
-        """
-        The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
-        """
+    def supported_regions_to_clone_tos(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "supported_regions_to_clone_tos")
 
     @property
     @pulumi.getter(name="switchoverTo")
-    def switchover_to(self) -> str:
+    def switchover_to(self) -> Optional[str]:
         return pulumi.get(self, "switchover_to")
 
     @property
     @pulumi.getter(name="switchoverToRemotePeerId")
-    def switchover_to_remote_peer_id(self) -> str:
+    def switchover_to_remote_peer_id(self) -> Optional[str]:
         return pulumi.get(self, "switchover_to_remote_peer_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Autonomous Database was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeDataGuardRoleChanged")
-    def time_data_guard_role_changed(self) -> str:
-        """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        """
+    def time_data_guard_role_changed(self) -> Optional[str]:
         return pulumi.get(self, "time_data_guard_role_changed")
 
     @property
     @pulumi.getter(name="timeDeletionOfFreeAutonomousDatabase")
-    def time_deletion_of_free_autonomous_database(self) -> str:
-        """
-        The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
-        """
+    def time_deletion_of_free_autonomous_database(self) -> Optional[str]:
         return pulumi.get(self, "time_deletion_of_free_autonomous_database")
 
     @property
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
-    def time_disaster_recovery_role_changed(self) -> str:
-        """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-        """
+    def time_disaster_recovery_role_changed(self) -> Optional[str]:
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @property
     @pulumi.getter(name="timeLocalDataGuardEnabled")
-    def time_local_data_guard_enabled(self) -> str:
-        """
-        The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
-        """
+    def time_local_data_guard_enabled(self) -> Optional[str]:
         return pulumi.get(self, "time_local_data_guard_enabled")
 
     @property
     @pulumi.getter(name="timeMaintenanceBegin")
-    def time_maintenance_begin(self) -> str:
-        """
-        The date and time when maintenance will begin.
-        """
+    def time_maintenance_begin(self) -> Optional[str]:
         return pulumi.get(self, "time_maintenance_begin")
 
     @property
     @pulumi.getter(name="timeMaintenanceEnd")
-    def time_maintenance_end(self) -> str:
-        """
-        The date and time when maintenance will end.
-        """
+    def time_maintenance_end(self) -> Optional[str]:
         return pulumi.get(self, "time_maintenance_end")
 
     @property
     @pulumi.getter(name="timeOfJoiningResourcePool")
-    def time_of_joining_resource_pool(self) -> str:
-        """
-        The time the member joined the resource pool.
-        """
+    def time_of_joining_resource_pool(self) -> Optional[str]:
         return pulumi.get(self, "time_of_joining_resource_pool")
 
     @property
     @pulumi.getter(name="timeOfLastFailover")
-    def time_of_last_failover(self) -> str:
-        """
-        The timestamp of the last failover operation.
-        """
+    def time_of_last_failover(self) -> Optional[str]:
         return pulumi.get(self, "time_of_last_failover")
 
     @property
     @pulumi.getter(name="timeOfLastRefresh")
-    def time_of_last_refresh(self) -> str:
-        """
-        The date and time when last refresh happened.
-        """
+    def time_of_last_refresh(self) -> Optional[str]:
         return pulumi.get(self, "time_of_last_refresh")
 
     @property
     @pulumi.getter(name="timeOfLastRefreshPoint")
-    def time_of_last_refresh_point(self) -> str:
-        """
-        The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
-        """
+    def time_of_last_refresh_point(self) -> Optional[str]:
         return pulumi.get(self, "time_of_last_refresh_point")
 
     @property
     @pulumi.getter(name="timeOfLastSwitchover")
-    def time_of_last_switchover(self) -> str:
-        """
-        The timestamp of the last switchover operation for the Autonomous Database.
-        """
+    def time_of_last_switchover(self) -> Optional[str]:
         return pulumi.get(self, "time_of_last_switchover")
 
     @property
     @pulumi.getter(name="timeOfNextRefresh")
-    def time_of_next_refresh(self) -> str:
-        """
-        The date and time of next refresh.
-        """
+    def time_of_next_refresh(self) -> Optional[str]:
         return pulumi.get(self, "time_of_next_refresh")
 
     @property
     @pulumi.getter(name="timeReclamationOfFreeAutonomousDatabase")
-    def time_reclamation_of_free_autonomous_database(self) -> str:
-        """
-        The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
-        """
+    def time_reclamation_of_free_autonomous_database(self) -> Optional[str]:
         return pulumi.get(self, "time_reclamation_of_free_autonomous_database")
 
     @property
     @pulumi.getter(name="timeUntilReconnectCloneEnabled")
-    def time_until_reconnect_clone_enabled(self) -> str:
-        """
-        The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
-        """
+    def time_until_reconnect_clone_enabled(self) -> Optional[str]:
         return pulumi.get(self, "time_until_reconnect_clone_enabled")
 
     @property
     @pulumi.getter
-    def timestamp(self) -> str:
+    def timestamp(self) -> Optional[str]:
         return pulumi.get(self, "timestamp")
 
     @property
     @pulumi.getter(name="totalBackupStorageSizeInGbs")
-    def total_backup_storage_size_in_gbs(self) -> float:
-        """
-        The backup storage to the database.
-        """
+    def total_backup_storage_size_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "total_backup_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
-    def use_latest_available_backup_time_stamp(self) -> bool:
+    def use_latest_available_backup_time_stamp(self) -> Optional[bool]:
         return pulumi.get(self, "use_latest_available_backup_time_stamp")
 
     @property
     @pulumi.getter(name="usedDataStorageSizeInGbs")
-    def used_data_storage_size_in_gbs(self) -> int:
-        """
-        The storage space consumed by Autonomous Database in GBs.
-        """
+    def used_data_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "used_data_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")
-    def used_data_storage_size_in_tbs(self) -> int:
-        """
-        The amount of storage that has been used, in terabytes.
-        """
+    def used_data_storage_size_in_tbs(self) -> Optional[int]:
         return pulumi.get(self, "used_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter(name="whitelistedIps")
-    def whitelisted_ips(self) -> Sequence[str]:
-        """
-        The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        """
+    def whitelisted_ips(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "whitelisted_ips")
 
 
@@ -1472,21 +1143,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
 def get_autonomous_database(autonomous_database_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseResult:
     """
-    This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -1623,20 +1280,6 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
 def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseResult]:
     """
-    This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

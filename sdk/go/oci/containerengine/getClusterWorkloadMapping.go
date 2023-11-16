@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
@@ -69,18 +68,18 @@ type LookupClusterWorkloadMappingResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ocid of the workloadMapping.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the mapped customer compartment.
-	MappedCompartmentId string `pulumi:"mappedCompartmentId"`
+	MappedCompartmentId *string `pulumi:"mappedCompartmentId"`
 	// The OCID of the mapped customer tenancy.
-	MappedTenancyId string `pulumi:"mappedTenancyId"`
+	MappedTenancyId *string `pulumi:"mappedTenancyId"`
 	// The namespace of the workloadMapping.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The state of the workloadMapping.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated       string `pulumi:"timeCreated"`
-	WorkloadMappingId string `pulumi:"workloadMappingId"`
+	TimeCreated       *string `pulumi:"timeCreated"`
+	WorkloadMappingId string  `pulumi:"workloadMappingId"`
 }
 
 func LookupClusterWorkloadMappingOutput(ctx *pulumi.Context, args LookupClusterWorkloadMappingOutputArgs, opts ...pulumi.InvokeOption) LookupClusterWorkloadMappingResultOutput {
@@ -123,12 +122,6 @@ func (o LookupClusterWorkloadMappingResultOutput) ToLookupClusterWorkloadMapping
 	return o
 }
 
-func (o LookupClusterWorkloadMappingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupClusterWorkloadMappingResult] {
-	return pulumix.Output[LookupClusterWorkloadMappingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster.
 func (o LookupClusterWorkloadMappingResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) string { return v.ClusterId }).(pulumi.StringOutput)
@@ -145,33 +138,33 @@ func (o LookupClusterWorkloadMappingResultOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // The ocid of the workloadMapping.
-func (o LookupClusterWorkloadMappingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupClusterWorkloadMappingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the mapped customer compartment.
-func (o LookupClusterWorkloadMappingResultOutput) MappedCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) string { return v.MappedCompartmentId }).(pulumi.StringOutput)
+func (o LookupClusterWorkloadMappingResultOutput) MappedCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) *string { return v.MappedCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the mapped customer tenancy.
-func (o LookupClusterWorkloadMappingResultOutput) MappedTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) string { return v.MappedTenancyId }).(pulumi.StringOutput)
+func (o LookupClusterWorkloadMappingResultOutput) MappedTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) *string { return v.MappedTenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The namespace of the workloadMapping.
-func (o LookupClusterWorkloadMappingResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupClusterWorkloadMappingResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The state of the workloadMapping.
-func (o LookupClusterWorkloadMappingResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupClusterWorkloadMappingResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created.
-func (o LookupClusterWorkloadMappingResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupClusterWorkloadMappingResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupClusterWorkloadMappingResultOutput) WorkloadMappingId() pulumi.StringOutput {

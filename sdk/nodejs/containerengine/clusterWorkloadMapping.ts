@@ -71,11 +71,11 @@ export class ClusterWorkloadMapping extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The OCID of the mapped customer compartment.
      */
@@ -83,7 +83,7 @@ export class ClusterWorkloadMapping extends pulumi.CustomResource {
     /**
      * The OCID of the mapped customer tenancy.
      */
-    public /*out*/ readonly mappedTenancyId!: pulumi.Output<string>;
+    public /*out*/ readonly mappedTenancyId!: pulumi.Output<string | undefined>;
     /**
      * The namespace of the workloadMapping.
      *
@@ -95,11 +95,11 @@ export class ClusterWorkloadMapping extends pulumi.CustomResource {
     /**
      * The state of the workloadMapping.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ClusterWorkloadMapping resource with the given unique name, arguments, and options.

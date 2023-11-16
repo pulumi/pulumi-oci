@@ -51,11 +51,11 @@ export interface GetOrganizationSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of organization_subscriptions.
      */
-    readonly organizationSubscriptions: outputs.OneSubsription.GetOrganizationSubscriptionsOrganizationSubscription[];
+    readonly organizationSubscriptions?: outputs.OneSubsription.GetOrganizationSubscriptionsOrganizationSubscription[];
 }
 /**
  * This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.

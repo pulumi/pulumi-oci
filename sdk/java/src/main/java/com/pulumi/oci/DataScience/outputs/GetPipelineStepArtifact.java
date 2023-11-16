@@ -6,42 +6,44 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelineStepArtifact {
-    private String artifactContentDisposition;
-    private String artifactContentLength;
-    private String artifactContentMd5;
-    private String artifactLastModified;
-    private String pipelineStepArtifact;
+    private @Nullable String artifactContentDisposition;
+    private @Nullable String artifactContentLength;
+    private @Nullable String artifactContentMd5;
+    private @Nullable String artifactLastModified;
+    private @Nullable String pipelineStepArtifact;
     /**
      * @return The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
-    private String stepName;
+    private @Nullable String stepName;
 
     private GetPipelineStepArtifact() {}
-    public String artifactContentDisposition() {
-        return this.artifactContentDisposition;
+    public Optional<String> artifactContentDisposition() {
+        return Optional.ofNullable(this.artifactContentDisposition);
     }
-    public String artifactContentLength() {
-        return this.artifactContentLength;
+    public Optional<String> artifactContentLength() {
+        return Optional.ofNullable(this.artifactContentLength);
     }
-    public String artifactContentMd5() {
-        return this.artifactContentMd5;
+    public Optional<String> artifactContentMd5() {
+        return Optional.ofNullable(this.artifactContentMd5);
     }
-    public String artifactLastModified() {
-        return this.artifactLastModified;
+    public Optional<String> artifactLastModified() {
+        return Optional.ofNullable(this.artifactLastModified);
     }
-    public String pipelineStepArtifact() {
-        return this.pipelineStepArtifact;
+    public Optional<String> pipelineStepArtifact() {
+        return Optional.ofNullable(this.pipelineStepArtifact);
     }
     /**
      * @return The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
-    public String stepName() {
-        return this.stepName;
+    public Optional<String> stepName() {
+        return Optional.ofNullable(this.stepName);
     }
 
     public static Builder builder() {
@@ -53,12 +55,12 @@ public final class GetPipelineStepArtifact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String artifactContentDisposition;
-        private String artifactContentLength;
-        private String artifactContentMd5;
-        private String artifactLastModified;
-        private String pipelineStepArtifact;
-        private String stepName;
+        private @Nullable String artifactContentDisposition;
+        private @Nullable String artifactContentLength;
+        private @Nullable String artifactContentMd5;
+        private @Nullable String artifactLastModified;
+        private @Nullable String pipelineStepArtifact;
+        private @Nullable String stepName;
         public Builder() {}
         public Builder(GetPipelineStepArtifact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,33 +73,33 @@ public final class GetPipelineStepArtifact {
         }
 
         @CustomType.Setter
-        public Builder artifactContentDisposition(String artifactContentDisposition) {
-            this.artifactContentDisposition = Objects.requireNonNull(artifactContentDisposition);
+        public Builder artifactContentDisposition(@Nullable String artifactContentDisposition) {
+            this.artifactContentDisposition = artifactContentDisposition;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactContentLength(String artifactContentLength) {
-            this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
+        public Builder artifactContentLength(@Nullable String artifactContentLength) {
+            this.artifactContentLength = artifactContentLength;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactContentMd5(String artifactContentMd5) {
-            this.artifactContentMd5 = Objects.requireNonNull(artifactContentMd5);
+        public Builder artifactContentMd5(@Nullable String artifactContentMd5) {
+            this.artifactContentMd5 = artifactContentMd5;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactLastModified(String artifactLastModified) {
-            this.artifactLastModified = Objects.requireNonNull(artifactLastModified);
+        public Builder artifactLastModified(@Nullable String artifactLastModified) {
+            this.artifactLastModified = artifactLastModified;
             return this;
         }
         @CustomType.Setter
-        public Builder pipelineStepArtifact(String pipelineStepArtifact) {
-            this.pipelineStepArtifact = Objects.requireNonNull(pipelineStepArtifact);
+        public Builder pipelineStepArtifact(@Nullable String pipelineStepArtifact) {
+            this.pipelineStepArtifact = pipelineStepArtifact;
             return this;
         }
         @CustomType.Setter
-        public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+        public Builder stepName(@Nullable String stepName) {
+            this.stepName = stepName;
             return this;
         }
         public GetPipelineStepArtifact build() {

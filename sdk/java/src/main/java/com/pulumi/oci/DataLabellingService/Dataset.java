@@ -18,6 +18,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -120,14 +121,14 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalProperties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> additionalProperties;
+    private Output</* @Nullable */ Map<String,Object>> additionalProperties;
 
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> additionalProperties() {
-        return this.additionalProperties;
+    public Output<Optional<Map<String,Object>>> additionalProperties() {
+        return Codegen.optional(this.additionalProperties);
     }
     /**
      * The annotation format name required for labeling records.
@@ -190,84 +191,84 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user provided description of the dataset
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A user provided description of the dataset
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the resource.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      * 
      */
     @Export(name="initialImportDatasetConfiguration", refs={DatasetInitialImportDatasetConfiguration.class}, tree="[0]")
-    private Output<DatasetInitialImportDatasetConfiguration> initialImportDatasetConfiguration;
+    private Output</* @Nullable */ DatasetInitialImportDatasetConfiguration> initialImportDatasetConfiguration;
 
     /**
      * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      * 
      */
-    public Output<DatasetInitialImportDatasetConfiguration> initialImportDatasetConfiguration() {
-        return this.initialImportDatasetConfiguration;
+    public Output<Optional<DatasetInitialImportDatasetConfiguration>> initialImportDatasetConfiguration() {
+        return Codegen.optional(this.initialImportDatasetConfiguration);
     }
     /**
      * The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     @Export(name="initialRecordGenerationConfiguration", refs={DatasetInitialRecordGenerationConfiguration.class}, tree="[0]")
-    private Output<DatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfiguration;
+    private Output</* @Nullable */ DatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfiguration;
 
     /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
-    public Output<DatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfiguration() {
-        return this.initialRecordGenerationConfiguration;
+    public Output<Optional<DatasetInitialRecordGenerationConfiguration>> initialRecordGenerationConfiguration() {
+        return Codegen.optional(this.initialRecordGenerationConfiguration);
     }
     /**
      * An ordered collection of labels that are unique by name.
@@ -291,7 +292,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="labelingInstructions", refs={String.class}, tree="[0]")
-    private Output<String> labelingInstructions;
+    private Output</* @Nullable */ String> labelingInstructions;
 
     /**
      * @return (Updatable) The labeling instructions for human labelers in rich text format
@@ -300,78 +301,78 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> labelingInstructions() {
-        return this.labelingInstructions;
+    public Output<Optional<String>> labelingInstructions() {
+        return Codegen.optional(this.labelingInstructions);
     }
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      * 
      */
     @Export(name="lifecycleSubstate", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleSubstate;
+    private Output</* @Nullable */ String> lifecycleSubstate;
 
     /**
      * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      * 
      */
-    public Output<String> lifecycleSubstate() {
-        return this.lifecycleSubstate;
+    public Output<Optional<String>> lifecycleSubstate() {
+        return Codegen.optional(this.lifecycleSubstate);
     }
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, in the timestamp format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

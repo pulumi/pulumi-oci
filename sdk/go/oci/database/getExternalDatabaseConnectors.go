@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Database Connectors in Oracle Cloud Infrastructure Database service.
@@ -79,7 +78,7 @@ type GetExternalDatabaseConnectorsResult struct {
 	ExternalDatabaseId string                                `pulumi:"externalDatabaseId"`
 	Filters            []GetExternalDatabaseConnectorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the external database connector resource.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetExternalDatabaseConnectorsResultOutput) ToGetExternalDatabaseConnecto
 	return o
 }
 
-func (o GetExternalDatabaseConnectorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalDatabaseConnectorsResult] {
-	return pulumix.Output[GetExternalDatabaseConnectorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExternalDatabaseConnectorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDatabaseConnectorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -162,8 +155,8 @@ func (o GetExternalDatabaseConnectorsResultOutput) Filters() GetExternalDatabase
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalDatabaseConnectorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDatabaseConnectorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalDatabaseConnectorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external database connector resource.

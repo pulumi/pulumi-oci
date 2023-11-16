@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The database name. For the default `DbPlan`, the `dbName` is `default`.
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
         /// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
         /// </summary>
-        public readonly string FlashCacheLimit;
+        public readonly string? FlashCacheLimit;
         /// <summary>
         /// The relative priority of this database.
         /// </summary>
-        public readonly int Share;
+        public readonly int? Share;
 
         [OutputConstructor]
         private GetCloudVmClusterIormConfigCachDbPlanResult(
-            string dbName,
+            string? dbName,
 
-            string flashCacheLimit,
+            string? flashCacheLimit,
 
-            int share)
+            int? share)
         {
             DbName = dbName;
             FlashCacheLimit = flashCacheLimit;

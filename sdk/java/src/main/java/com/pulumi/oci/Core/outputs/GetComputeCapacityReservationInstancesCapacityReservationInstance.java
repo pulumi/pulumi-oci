@@ -8,6 +8,8 @@ import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstancesCapacit
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeCapacityReservationInstancesCapacityReservationInstance {
@@ -15,75 +17,75 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The fault domain the instance is running in.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The shape of the instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The shape configuration requested when launching instances in a compute capacity reservation.
      * 
      */
-    private List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs;
+    private @Nullable List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs;
 
     private GetComputeCapacityReservationInstancesCapacityReservationInstance() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The fault domain the instance is running in.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return The OCID of the instance.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The shape of the instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The shape configuration requested when launching instances in a compute capacity reservation.
      * 
      */
     public List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs() {
-        return this.shapeConfigs;
+        return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private String faultDomain;
-        private String id;
-        private String shape;
-        private List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable String faultDomain;
+        private @Nullable String id;
+        private @Nullable String shape;
+        private @Nullable List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs;
         public Builder() {}
         public Builder(GetComputeCapacityReservationInstancesCapacityReservationInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,33 +115,33 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeConfigs(List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+        public Builder shapeConfigs(@Nullable List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs) {
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig... shapeConfigs) {

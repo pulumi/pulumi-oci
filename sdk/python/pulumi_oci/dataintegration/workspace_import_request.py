@@ -25,17 +25,6 @@ class WorkspaceImportRequestArgs:
                  object_storage_tenancy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a WorkspaceImportRequest resource.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
-        :param pulumi.Input[str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs'] import_conflict_resolution: Import Objects Conflict resolution.
-        :param pulumi.Input[str] object_key_for_import: Key of the object inside which all the objects will be imported
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "file_name", file_name)
@@ -52,9 +41,6 @@ class WorkspaceImportRequestArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Name of the Object Storage bucket where the object will be imported from.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -64,9 +50,6 @@ class WorkspaceImportRequestArgs:
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> pulumi.Input[str]:
-        """
-        Name of the zip file to be imported.
-        """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
@@ -76,13 +59,6 @@ class WorkspaceImportRequestArgs:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Input[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -92,9 +68,6 @@ class WorkspaceImportRequestArgs:
     @property
     @pulumi.getter(name="importConflictResolution")
     def import_conflict_resolution(self) -> Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']]:
-        """
-        Import Objects Conflict resolution.
-        """
         return pulumi.get(self, "import_conflict_resolution")
 
     @import_conflict_resolution.setter
@@ -104,9 +77,6 @@ class WorkspaceImportRequestArgs:
     @property
     @pulumi.getter(name="objectKeyForImport")
     def object_key_for_import(self) -> Optional[pulumi.Input[str]]:
-        """
-        Key of the object inside which all the objects will be imported
-        """
         return pulumi.get(self, "object_key_for_import")
 
     @object_key_for_import.setter
@@ -116,9 +86,6 @@ class WorkspaceImportRequestArgs:
     @property
     @pulumi.getter(name="objectStorageRegion")
     def object_storage_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
@@ -128,9 +95,6 @@ class WorkspaceImportRequestArgs:
     @property
     @pulumi.getter(name="objectStorageTenancyId")
     def object_storage_tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
@@ -159,26 +123,6 @@ class _WorkspaceImportRequestState:
                  workspace_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceImportRequest resources.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
-        :param pulumi.Input[str] created_by: Name of the user who initiated import request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
-        :param pulumi.Input[str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs'] import_conflict_resolution: Import Objects Conflict resolution.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]] imported_objects: The array of imported object details.
-        :param pulumi.Input[str] key: Import object request key
-        :param pulumi.Input[str] name: Name of the import request.
-        :param pulumi.Input[str] object_key_for_import: Key of the object inside which all the objects will be imported
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param pulumi.Input[str] status: Import Objects request status.
-        :param pulumi.Input[str] time_ended_in_millis: Time at which the request was completely processed.
-        :param pulumi.Input[str] time_started_in_millis: Time at which the request started getting processed.
-        :param pulumi.Input[int] total_imported_object_count: Number of objects that are imported.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -216,9 +160,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the Object Storage bucket where the object will be imported from.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -228,9 +169,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the user who initiated import request.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -240,9 +178,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="errorMessages")
     def error_messages(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Contains key of the error
-        """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
@@ -252,9 +187,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the zip file to be imported.
-        """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
@@ -264,9 +196,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="importConflictResolution")
     def import_conflict_resolution(self) -> Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']]:
-        """
-        Import Objects Conflict resolution.
-        """
         return pulumi.get(self, "import_conflict_resolution")
 
     @import_conflict_resolution.setter
@@ -276,9 +205,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="importedObjects")
     def imported_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]]:
-        """
-        The array of imported object details.
-        """
         return pulumi.get(self, "imported_objects")
 
     @imported_objects.setter
@@ -288,9 +214,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Import object request key
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -300,9 +223,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the import request.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -312,9 +232,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="objectKeyForImport")
     def object_key_for_import(self) -> Optional[pulumi.Input[str]]:
-        """
-        Key of the object inside which all the objects will be imported
-        """
         return pulumi.get(self, "object_key_for_import")
 
     @object_key_for_import.setter
@@ -324,9 +241,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="objectStorageRegion")
     def object_storage_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
@@ -336,9 +250,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="objectStorageTenancyId")
     def object_storage_tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
@@ -348,9 +259,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Import Objects request status.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -360,9 +268,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="timeEndedInMillis")
     def time_ended_in_millis(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time at which the request was completely processed.
-        """
         return pulumi.get(self, "time_ended_in_millis")
 
     @time_ended_in_millis.setter
@@ -372,9 +277,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="timeStartedInMillis")
     def time_started_in_millis(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time at which the request started getting processed.
-        """
         return pulumi.get(self, "time_started_in_millis")
 
     @time_started_in_millis.setter
@@ -384,9 +286,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="totalImportedObjectCount")
     def total_imported_object_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of objects that are imported.
-        """
         return pulumi.get(self, "total_imported_object_count")
 
     @total_imported_object_count.setter
@@ -396,13 +295,6 @@ class _WorkspaceImportRequestState:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -424,51 +316,9 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Import Metadata Object
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_import_request = oci.data_integration.WorkspaceImportRequest("testWorkspaceImportRequest",
-            bucket=var["workspace_import_request_bucket"],
-            file_name=var["workspace_import_request_file_name"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
-                import_conflict_resolution_type=var["workspace_import_request_import_conflict_resolution_import_conflict_resolution_type"],
-                duplicate_prefix=var["workspace_import_request_import_conflict_resolution_duplicate_prefix"],
-                duplicate_suffix=var["workspace_import_request_import_conflict_resolution_duplicate_suffix"],
-            ),
-            object_key_for_import=var["workspace_import_request_object_key_for_import"],
-            object_storage_region=var["workspace_import_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-        ```
-
-        ## Import
-
-        WorkspaceImportRequests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest test_workspace_import_request "workspaces/{workspaceId}/importRequests/{importRequestKey}"
-        ```
-
+        Create a WorkspaceImportRequest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
-        :param pulumi.Input[str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']] import_conflict_resolution: Import Objects Conflict resolution.
-        :param pulumi.Input[str] object_key_for_import: Key of the object inside which all the objects will be imported
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -477,38 +327,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  args: WorkspaceImportRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Import Metadata Object
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_import_request = oci.data_integration.WorkspaceImportRequest("testWorkspaceImportRequest",
-            bucket=var["workspace_import_request_bucket"],
-            file_name=var["workspace_import_request_file_name"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
-                import_conflict_resolution_type=var["workspace_import_request_import_conflict_resolution_import_conflict_resolution_type"],
-                duplicate_prefix=var["workspace_import_request_import_conflict_resolution_duplicate_prefix"],
-                duplicate_suffix=var["workspace_import_request_import_conflict_resolution_duplicate_suffix"],
-            ),
-            object_key_for_import=var["workspace_import_request_object_key_for_import"],
-            object_storage_region=var["workspace_import_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-        ```
-
-        ## Import
-
-        WorkspaceImportRequests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest test_workspace_import_request "workspaces/{workspaceId}/importRequests/{importRequestKey}"
-        ```
-
+        Create a WorkspaceImportRequest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param WorkspaceImportRequestArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -595,26 +414,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
-        :param pulumi.Input[str] created_by: Name of the user who initiated import request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
-        :param pulumi.Input[str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']] import_conflict_resolution: Import Objects Conflict resolution.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportedObjectArgs']]]] imported_objects: The array of imported object details.
-        :param pulumi.Input[str] key: Import object request key
-        :param pulumi.Input[str] name: Name of the import request.
-        :param pulumi.Input[str] object_key_for_import: Key of the object inside which all the objects will be imported
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param pulumi.Input[str] status: Import Objects request status.
-        :param pulumi.Input[str] time_ended_in_millis: Time at which the request was completely processed.
-        :param pulumi.Input[str] time_started_in_millis: Time at which the request started getting processed.
-        :param pulumi.Input[int] total_imported_object_count: Number of objects that are imported.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -641,132 +440,80 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        Name of the Object Storage bucket where the object will be imported from.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        Name of the user who initiated import request.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Contains key of the error
-        """
+    def error_messages(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "error_messages")
 
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> pulumi.Output[str]:
-        """
-        Name of the zip file to be imported.
-        """
         return pulumi.get(self, "file_name")
 
     @property
     @pulumi.getter(name="importConflictResolution")
-    def import_conflict_resolution(self) -> pulumi.Output['outputs.WorkspaceImportRequestImportConflictResolution']:
-        """
-        Import Objects Conflict resolution.
-        """
+    def import_conflict_resolution(self) -> pulumi.Output[Optional['outputs.WorkspaceImportRequestImportConflictResolution']]:
         return pulumi.get(self, "import_conflict_resolution")
 
     @property
     @pulumi.getter(name="importedObjects")
-    def imported_objects(self) -> pulumi.Output[Sequence['outputs.WorkspaceImportRequestImportedObject']]:
-        """
-        The array of imported object details.
-        """
+    def imported_objects(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceImportRequestImportedObject']]]:
         return pulumi.get(self, "imported_objects")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        Import object request key
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        """
-        Name of the import request.
-        """
+    def name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectKeyForImport")
-    def object_key_for_import(self) -> pulumi.Output[str]:
-        """
-        Key of the object inside which all the objects will be imported
-        """
+    def object_key_for_import(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_key_for_import")
 
     @property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> pulumi.Output[str]:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
+    def object_storage_region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_storage_region")
 
     @property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> pulumi.Output[str]:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
+    def object_storage_tenancy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        Import Objects request status.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> pulumi.Output[str]:
-        """
-        Time at which the request was completely processed.
-        """
+    def time_ended_in_millis(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_ended_in_millis")
 
     @property
     @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> pulumi.Output[str]:
-        """
-        Time at which the request started getting processed.
-        """
+    def time_started_in_millis(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started_in_millis")
 
     @property
     @pulumi.getter(name="totalImportedObjectCount")
-    def total_imported_object_count(self) -> pulumi.Output[int]:
-        """
-        Number of objects that are imported.
-        """
+    def total_imported_object_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_imported_object_count")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Output[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 

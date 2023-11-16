@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseTools.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword {
@@ -13,27 +15,27 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    private String secretId;
+    private @Nullable String secretId;
     /**
      * @return The value type of the user password.
      * 
      */
-    private String valueType;
+    private @Nullable String valueType;
 
     private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    public String secretId() {
-        return this.secretId;
+    public Optional<String> secretId() {
+        return Optional.ofNullable(this.secretId);
     }
     /**
      * @return The value type of the user password.
      * 
      */
-    public String valueType() {
-        return this.valueType;
+    public Optional<String> valueType() {
+        return Optional.ofNullable(this.valueType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String secretId;
-        private String valueType;
+        private @Nullable String secretId;
+        private @Nullable String valueType;
         public Builder() {}
         public Builder(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
 
         @CustomType.Setter
-        public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+        public Builder secretId(@Nullable String secretId) {
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
-        public Builder valueType(String valueType) {
-            this.valueType = Objects.requireNonNull(valueType);
+        public Builder valueType(@Nullable String valueType) {
+            this.valueType = valueType;
             return this;
         }
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword build() {

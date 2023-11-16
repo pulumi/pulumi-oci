@@ -56,14 +56,14 @@ export interface GetCloudAutonomousVmClusterAcdResourceUsagesResult {
     /**
      * The list of autonomous_container_database_resource_usages.
      */
-    readonly autonomousContainerDatabaseResourceUsages: outputs.Database.GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage[];
+    readonly autonomousContainerDatabaseResourceUsages?: outputs.Database.GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage[];
     readonly cloudAutonomousVmClusterId: string;
     readonly compartmentId?: string;
     readonly filters?: outputs.Database.GetCloudAutonomousVmClusterAcdResourceUsagesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.

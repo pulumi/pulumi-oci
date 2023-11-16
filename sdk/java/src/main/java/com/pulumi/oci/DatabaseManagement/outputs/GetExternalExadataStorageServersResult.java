@@ -25,13 +25,13 @@ public final class GetExternalExadataStorageServersResult {
      * @return The list of external_exadata_storage_server_collection.
      * 
      */
-    private List<GetExternalExadataStorageServersExternalExadataStorageServerCollection> externalExadataStorageServerCollections;
+    private @Nullable List<GetExternalExadataStorageServersExternalExadataStorageServerCollection> externalExadataStorageServerCollections;
     private @Nullable List<GetExternalExadataStorageServersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalExadataStorageServersResult() {}
     public String compartmentId() {
@@ -52,7 +52,7 @@ public final class GetExternalExadataStorageServersResult {
      * 
      */
     public List<GetExternalExadataStorageServersExternalExadataStorageServerCollection> externalExadataStorageServerCollections() {
-        return this.externalExadataStorageServerCollections;
+        return this.externalExadataStorageServerCollections == null ? List.of() : this.externalExadataStorageServerCollections;
     }
     public List<GetExternalExadataStorageServersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -61,8 +61,8 @@ public final class GetExternalExadataStorageServersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -77,9 +77,9 @@ public final class GetExternalExadataStorageServersResult {
         private String compartmentId;
         private @Nullable String displayName;
         private String externalExadataInfrastructureId;
-        private List<GetExternalExadataStorageServersExternalExadataStorageServerCollection> externalExadataStorageServerCollections;
+        private @Nullable List<GetExternalExadataStorageServersExternalExadataStorageServerCollection> externalExadataStorageServerCollections;
         private @Nullable List<GetExternalExadataStorageServersFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalExadataStorageServersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -107,8 +107,8 @@ public final class GetExternalExadataStorageServersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalExadataStorageServerCollections(List<GetExternalExadataStorageServersExternalExadataStorageServerCollection> externalExadataStorageServerCollections) {
-            this.externalExadataStorageServerCollections = Objects.requireNonNull(externalExadataStorageServerCollections);
+        public Builder externalExadataStorageServerCollections(@Nullable List<GetExternalExadataStorageServersExternalExadataStorageServerCollection> externalExadataStorageServerCollections) {
+            this.externalExadataStorageServerCollections = externalExadataStorageServerCollections;
             return this;
         }
         public Builder externalExadataStorageServerCollections(GetExternalExadataStorageServersExternalExadataStorageServerCollection... externalExadataStorageServerCollections) {
@@ -123,8 +123,8 @@ public final class GetExternalExadataStorageServersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalExadataStorageServersResult build() {

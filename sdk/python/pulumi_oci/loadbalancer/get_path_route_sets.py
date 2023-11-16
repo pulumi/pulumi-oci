@@ -44,7 +44,7 @@ class GetPathRouteSetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetPathRouteSetsResult:
 
     @property
     @pulumi.getter(name="pathRouteSets")
-    def path_route_sets(self) -> Sequence['outputs.GetPathRouteSetsPathRouteSetResult']:
-        """
-        The list of path_route_sets.
-        """
+    def path_route_sets(self) -> Optional[Sequence['outputs.GetPathRouteSetsPathRouteSetResult']]:
         return pulumi.get(self, "path_route_sets")
 
 
@@ -80,21 +77,7 @@ def get_path_route_sets(filters: Optional[Sequence[pulumi.InputType['GetPathRout
                         load_balancer_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPathRouteSetsResult:
     """
-    This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all path route sets associated with the specified load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_path_route_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[
                                load_balancer_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPathRouteSetsResult]:
     """
-    This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all path route sets associated with the specified load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.
+    Use this data source to access information about an existing resource.
     """
     ...

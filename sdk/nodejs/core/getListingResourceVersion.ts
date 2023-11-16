@@ -25,19 +25,19 @@ export interface GetListingResourceVersionArgs {
  * A collection of values returned by getListingResourceVersion.
  */
 export interface GetListingResourceVersionResult {
-    readonly accessiblePorts: number[];
-    readonly allowedActions: string[];
-    readonly availableRegions: string[];
-    readonly compatibleShapes: string[];
+    readonly accessiblePorts?: number[];
+    readonly allowedActions?: string[];
+    readonly availableRegions?: string[];
+    readonly compatibleShapes?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly listingId: string;
-    readonly listingResourceId: string;
-    readonly listingResourceVersion: string;
+    readonly listingResourceId?: string;
+    readonly listingResourceVersion?: string;
     readonly resourceVersion: string;
-    readonly timePublished: string;
+    readonly timePublished?: string;
 }
 export function getListingResourceVersionOutput(args: GetListingResourceVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingResourceVersionResult> {
     return pulumi.output(args).apply((a: any) => getListingResourceVersion(a, opts))

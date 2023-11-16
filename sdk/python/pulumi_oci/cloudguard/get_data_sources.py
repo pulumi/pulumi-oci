@@ -63,9 +63,6 @@ class GetDataSourcesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        CompartmentId of Data source.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -75,26 +72,17 @@ class GetDataSourcesResult:
 
     @property
     @pulumi.getter(name="dataSourceCollections")
-    def data_source_collections(self) -> Sequence['outputs.GetDataSourcesDataSourceCollectionResult']:
-        """
-        The list of data_source_collection.
-        """
+    def data_source_collections(self) -> Optional[Sequence['outputs.GetDataSourcesDataSourceCollectionResult']]:
         return pulumi.get(self, "data_source_collections")
 
     @property
     @pulumi.getter(name="dataSourceFeedProvider")
     def data_source_feed_provider(self) -> Optional[str]:
-        """
-        Possible type of dataSourceFeed Provider(LoggingQuery)
-        """
         return pulumi.get(self, "data_source_feed_provider")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        DisplayName of Data source.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -104,7 +92,7 @@ class GetDataSourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -113,17 +101,11 @@ class GetDataSourcesResult:
     @property
     @pulumi.getter(name="loggingQueryType")
     def logging_query_type(self) -> Optional[str]:
-        """
-        Logging query type for data source (Sighting/Insight)
-        """
         return pulumi.get(self, "logging_query_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -155,47 +137,7 @@ def get_data_sources(access_level: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataSourcesResult:
     """
-    This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of all Data Sources in a compartment
-
-    The ListDataSources operation returns only the data Sources in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=var["compartment_id"],
-        access_level=var["data_source_access_level"],
-        compartment_id_in_subtree=var["data_source_compartment_id_in_subtree"],
-        data_source_feed_provider=var["data_source_data_source_feed_provider"],
-        display_name=var["data_source_display_name"],
-        logging_query_type=var["data_source_logging_query_type"],
-        state=var["data_source_state"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str data_source_feed_provider: A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str logging_query_type: A filter to return only resources their query type matches the given LoggingQueryType.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -233,46 +175,6 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSourcesResult]:
     """
-    This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of all Data Sources in a compartment
-
-    The ListDataSources operation returns only the data Sources in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=var["compartment_id"],
-        access_level=var["data_source_access_level"],
-        compartment_id_in_subtree=var["data_source_compartment_id_in_subtree"],
-        data_source_feed_provider=var["data_source_data_source_feed_provider"],
-        display_name=var["data_source_display_name"],
-        logging_query_type=var["data_source_logging_query_type"],
-        state=var["data_source_state"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str data_source_feed_provider: A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str logging_query_type: A filter to return only resources their query type matches the given LoggingQueryType.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     ...

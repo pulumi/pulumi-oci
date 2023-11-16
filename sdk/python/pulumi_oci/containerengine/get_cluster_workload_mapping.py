@@ -56,73 +56,46 @@ class GetClusterWorkloadMappingResult:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> str:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "cluster_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The ocid of the workloadMapping.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="mappedCompartmentId")
-    def mapped_compartment_id(self) -> str:
-        """
-        The OCID of the mapped customer compartment.
-        """
+    def mapped_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "mapped_compartment_id")
 
     @property
     @pulumi.getter(name="mappedTenancyId")
-    def mapped_tenancy_id(self) -> str:
-        """
-        The OCID of the mapped customer tenancy.
-        """
+    def mapped_tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "mapped_tenancy_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace of the workloadMapping.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the workloadMapping.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the cluster was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
@@ -153,23 +126,7 @@ def get_cluster_workload_mapping(cluster_id: Optional[str] = None,
                                  workload_mapping_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterWorkloadMappingResult:
     """
-    This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the specified workloadMapping for a cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_workload_mapping = oci.ContainerEngine.get_cluster_workload_mapping(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        workload_mapping_id=oci_containerengine_workload_mapping["test_workload_mapping"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str workload_mapping_id: The OCID of the workloadMapping.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -195,22 +152,6 @@ def get_cluster_workload_mapping_output(cluster_id: Optional[pulumi.Input[str]] 
                                         workload_mapping_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterWorkloadMappingResult]:
     """
-    This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the specified workloadMapping for a cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_workload_mapping = oci.ContainerEngine.get_cluster_workload_mapping(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        workload_mapping_id=oci_containerengine_workload_mapping["test_workload_mapping"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str workload_mapping_id: The OCID of the workloadMapping.
+    Use this data source to access information about an existing resource.
     """
     ...

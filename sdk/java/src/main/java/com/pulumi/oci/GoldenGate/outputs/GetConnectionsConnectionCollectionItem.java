@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionsConnectionCollectionItem {
@@ -21,711 +23,711 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
-    private String accessKeyId;
-    private String accountKey;
+    private @Nullable String accessKeyId;
+    private @Nullable String accountKey;
     /**
      * @return Sets the Azure storage account name.
      * 
      */
-    private String accountName;
+    private @Nullable String accountName;
     /**
      * @return An array of name-value pair attribute entries. Used as additional parameters in connection string.
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
+    private @Nullable List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
     /**
      * @return Used authentication mechanism to access Azure Data Lake Storage.
      * 
      */
-    private String authenticationType;
+    private @Nullable String authenticationType;
     /**
      * @return Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
-    private String azureTenantId;
+    private @Nullable String azureTenantId;
     /**
      * @return Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `&#34;server1.example.com:9092,server2.example.com:9092&#34;`
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers;
+    private @Nullable List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers;
     /**
      * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
-    private String clientId;
-    private String clientSecret;
+    private @Nullable String clientId;
+    private @Nullable String clientSecret;
     /**
      * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
      * 
      */
-    private String connectionFactory;
+    private @Nullable String connectionFactory;
     /**
      * @return JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
-    private String connectionString;
+    private @Nullable String connectionString;
     /**
      * @return The array of connection types.
      * 
      */
-    private String connectionType;
+    private @Nullable String connectionType;
     /**
      * @return JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
-    private String connectionUrl;
-    private String consumerProperties;
-    private String coreSiteXml;
+    private @Nullable String connectionUrl;
+    private @Nullable String consumerProperties;
+    private @Nullable String coreSiteXml;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      * 
      */
-    private String databaseId;
+    private @Nullable String databaseId;
     /**
      * @return The name of the database.
      * 
      */
-    private String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    private String deploymentId;
+    private @Nullable String deploymentId;
     /**
      * @return Metadata about this specific object.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      * 
      */
-    private String endpoint;
+    private @Nullable String endpoint;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The name or address of a host.
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps;
+    private @Nullable List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps;
     /**
      * @return The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
      */
-    private String jndiConnectionFactory;
+    private @Nullable String jndiConnectionFactory;
     /**
      * @return The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
      * 
      */
-    private String jndiInitialContextFactory;
+    private @Nullable String jndiInitialContextFactory;
     /**
      * @return The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
      * 
      */
-    private String jndiProviderUrl;
-    private String jndiSecurityCredentials;
+    private @Nullable String jndiProviderUrl;
+    private @Nullable String jndiSecurityCredentials;
     /**
      * @return Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
-    private String jndiSecurityPrincipal;
+    private @Nullable String jndiSecurityPrincipal;
     /**
      * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
-    private String keyId;
-    private String keyStore;
-    private String keyStorePassword;
+    private @Nullable String keyId;
+    private @Nullable String keyStore;
+    private @Nullable String keyStorePassword;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
-    private List<String> nsgIds;
-    private String password;
+    private @Nullable List<String> nsgIds;
+    private @Nullable String password;
     /**
      * @return The port of an endpoint usually specified for a connection.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
-    private String privateIp;
-    private String privateKeyFile;
-    private String privateKeyPassphrase;
-    private String producerProperties;
-    private String publicKeyFingerprint;
+    private @Nullable String privateIp;
+    private @Nullable String privateKeyFile;
+    private @Nullable String privateKeyPassphrase;
+    private @Nullable String producerProperties;
+    private @Nullable String publicKeyFingerprint;
     /**
      * @return The name of the region. e.g.: us-ashburn-1
      * 
      */
-    private String region;
-    private String sasToken;
-    private String secretAccessKey;
+    private @Nullable String region;
+    private @Nullable String sasToken;
+    private @Nullable String secretAccessKey;
     /**
      * @return Security protocol for PostgreSQL / Microsoft SQL Server..
      * 
      */
-    private String securityProtocol;
+    private @Nullable String securityProtocol;
     /**
      * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
-    private String sessionMode;
+    private @Nullable String sessionMode;
     /**
      * @return If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      * 
      */
-    private Boolean shouldUseJndi;
+    private @Nullable Boolean shouldUseJndi;
     /**
      * @return If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
-    private Boolean shouldValidateServerCertificate;
+    private @Nullable Boolean shouldValidateServerCertificate;
     /**
      * @return Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      * 
      */
-    private String sslCa;
-    private String sslCert;
-    private String sslCrl;
-    private String sslKey;
-    private String sslKeyPassword;
+    private @Nullable String sslCa;
+    private @Nullable String sslCert;
+    private @Nullable String sslCrl;
+    private @Nullable String sslKey;
+    private @Nullable String sslKeyPassword;
     /**
      * @return SSL mode for PostgreSQL.
      * 
      */
-    private String sslMode;
+    private @Nullable String sslMode;
     /**
      * @return A filter to return only connections having the &#39;lifecycleState&#39; given.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
-    private String streamPoolId;
+    private @Nullable String streamPoolId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The array of technology types.
      * 
      */
-    private String technologyType;
+    private @Nullable String technologyType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
      * 
      */
-    private String tenancyId;
+    private @Nullable String tenancyId;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeUpdated;
-    private String trustStore;
-    private String trustStorePassword;
+    private @Nullable String timeUpdated;
+    private @Nullable String trustStore;
+    private @Nullable String trustStorePassword;
     /**
      * @return Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
      * 
      */
-    private String url;
+    private @Nullable String url;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
      * 
      */
-    private String userId;
+    private @Nullable String userId;
     /**
      * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
-    private String username;
+    private @Nullable String username;
     /**
      * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
-    private String vaultId;
-    private String wallet;
+    private @Nullable String vaultId;
+    private @Nullable String wallet;
 
     private GetConnectionsConnectionCollectionItem() {}
     /**
      * @return Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
-    public String accessKeyId() {
-        return this.accessKeyId;
+    public Optional<String> accessKeyId() {
+        return Optional.ofNullable(this.accessKeyId);
     }
-    public String accountKey() {
-        return this.accountKey;
+    public Optional<String> accountKey() {
+        return Optional.ofNullable(this.accountKey);
     }
     /**
      * @return Sets the Azure storage account name.
      * 
      */
-    public String accountName() {
-        return this.accountName;
+    public Optional<String> accountName() {
+        return Optional.ofNullable(this.accountName);
     }
     /**
      * @return An array of name-value pair attribute entries. Used as additional parameters in connection string.
      * 
      */
     public List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes() {
-        return this.additionalAttributes;
+        return this.additionalAttributes == null ? List.of() : this.additionalAttributes;
     }
     /**
      * @return Used authentication mechanism to access Azure Data Lake Storage.
      * 
      */
-    public String authenticationType() {
-        return this.authenticationType;
+    public Optional<String> authenticationType() {
+        return Optional.ofNullable(this.authenticationType);
     }
     /**
      * @return Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
-    public String azureTenantId() {
-        return this.azureTenantId;
+    public Optional<String> azureTenantId() {
+        return Optional.ofNullable(this.azureTenantId);
     }
     /**
      * @return Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `&#34;server1.example.com:9092,server2.example.com:9092&#34;`
      * 
      */
     public List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers() {
-        return this.bootstrapServers;
+        return this.bootstrapServers == null ? List.of() : this.bootstrapServers;
     }
     /**
      * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
-    public String clientId() {
-        return this.clientId;
+    public Optional<String> clientId() {
+        return Optional.ofNullable(this.clientId);
     }
-    public String clientSecret() {
-        return this.clientSecret;
+    public Optional<String> clientSecret() {
+        return Optional.ofNullable(this.clientSecret);
     }
     /**
      * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
      * 
      */
-    public String connectionFactory() {
-        return this.connectionFactory;
+    public Optional<String> connectionFactory() {
+        return Optional.ofNullable(this.connectionFactory);
     }
     /**
      * @return JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
-    public String connectionString() {
-        return this.connectionString;
+    public Optional<String> connectionString() {
+        return Optional.ofNullable(this.connectionString);
     }
     /**
      * @return The array of connection types.
      * 
      */
-    public String connectionType() {
-        return this.connectionType;
+    public Optional<String> connectionType() {
+        return Optional.ofNullable(this.connectionType);
     }
     /**
      * @return JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
-    public String connectionUrl() {
-        return this.connectionUrl;
+    public Optional<String> connectionUrl() {
+        return Optional.ofNullable(this.connectionUrl);
     }
-    public String consumerProperties() {
-        return this.consumerProperties;
+    public Optional<String> consumerProperties() {
+        return Optional.ofNullable(this.consumerProperties);
     }
-    public String coreSiteXml() {
-        return this.coreSiteXml;
+    public Optional<String> coreSiteXml() {
+        return Optional.ofNullable(this.coreSiteXml);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      * 
      */
-    public String databaseId() {
-        return this.databaseId;
+    public Optional<String> databaseId() {
+        return Optional.ofNullable(this.databaseId);
     }
     /**
      * @return The name of the database.
      * 
      */
-    public String databaseName() {
-        return this.databaseName;
+    public Optional<String> databaseName() {
+        return Optional.ofNullable(this.databaseName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    public String deploymentId() {
-        return this.deploymentId;
+    public Optional<String> deploymentId() {
+        return Optional.ofNullable(this.deploymentId);
     }
     /**
      * @return Metadata about this specific object.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      * 
      */
-    public String endpoint() {
-        return this.endpoint;
+    public Optional<String> endpoint() {
+        return Optional.ofNullable(this.endpoint);
     }
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The name or address of a host.
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
     public List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps() {
-        return this.ingressIps;
+        return this.ingressIps == null ? List.of() : this.ingressIps;
     }
     /**
      * @return The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
      */
-    public String jndiConnectionFactory() {
-        return this.jndiConnectionFactory;
+    public Optional<String> jndiConnectionFactory() {
+        return Optional.ofNullable(this.jndiConnectionFactory);
     }
     /**
      * @return The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
      * 
      */
-    public String jndiInitialContextFactory() {
-        return this.jndiInitialContextFactory;
+    public Optional<String> jndiInitialContextFactory() {
+        return Optional.ofNullable(this.jndiInitialContextFactory);
     }
     /**
      * @return The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
      * 
      */
-    public String jndiProviderUrl() {
-        return this.jndiProviderUrl;
+    public Optional<String> jndiProviderUrl() {
+        return Optional.ofNullable(this.jndiProviderUrl);
     }
-    public String jndiSecurityCredentials() {
-        return this.jndiSecurityCredentials;
+    public Optional<String> jndiSecurityCredentials() {
+        return Optional.ofNullable(this.jndiSecurityCredentials);
     }
     /**
      * @return Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
-    public String jndiSecurityPrincipal() {
-        return this.jndiSecurityPrincipal;
+    public Optional<String> jndiSecurityPrincipal() {
+        return Optional.ofNullable(this.jndiSecurityPrincipal);
     }
     /**
      * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
-    public String keyId() {
-        return this.keyId;
+    public Optional<String> keyId() {
+        return Optional.ofNullable(this.keyId);
     }
-    public String keyStore() {
-        return this.keyStore;
+    public Optional<String> keyStore() {
+        return Optional.ofNullable(this.keyStore);
     }
-    public String keyStorePassword() {
-        return this.keyStorePassword;
+    public Optional<String> keyStorePassword() {
+        return Optional.ofNullable(this.keyStorePassword);
     }
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return The port of an endpoint usually specified for a connection.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
-    public String privateIp() {
-        return this.privateIp;
+    public Optional<String> privateIp() {
+        return Optional.ofNullable(this.privateIp);
     }
-    public String privateKeyFile() {
-        return this.privateKeyFile;
+    public Optional<String> privateKeyFile() {
+        return Optional.ofNullable(this.privateKeyFile);
     }
-    public String privateKeyPassphrase() {
-        return this.privateKeyPassphrase;
+    public Optional<String> privateKeyPassphrase() {
+        return Optional.ofNullable(this.privateKeyPassphrase);
     }
-    public String producerProperties() {
-        return this.producerProperties;
+    public Optional<String> producerProperties() {
+        return Optional.ofNullable(this.producerProperties);
     }
-    public String publicKeyFingerprint() {
-        return this.publicKeyFingerprint;
+    public Optional<String> publicKeyFingerprint() {
+        return Optional.ofNullable(this.publicKeyFingerprint);
     }
     /**
      * @return The name of the region. e.g.: us-ashburn-1
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
-    public String sasToken() {
-        return this.sasToken;
+    public Optional<String> sasToken() {
+        return Optional.ofNullable(this.sasToken);
     }
-    public String secretAccessKey() {
-        return this.secretAccessKey;
+    public Optional<String> secretAccessKey() {
+        return Optional.ofNullable(this.secretAccessKey);
     }
     /**
      * @return Security protocol for PostgreSQL / Microsoft SQL Server..
      * 
      */
-    public String securityProtocol() {
-        return this.securityProtocol;
+    public Optional<String> securityProtocol() {
+        return Optional.ofNullable(this.securityProtocol);
     }
     /**
      * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
-    public String sessionMode() {
-        return this.sessionMode;
+    public Optional<String> sessionMode() {
+        return Optional.ofNullable(this.sessionMode);
     }
     /**
      * @return If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      * 
      */
-    public Boolean shouldUseJndi() {
-        return this.shouldUseJndi;
+    public Optional<Boolean> shouldUseJndi() {
+        return Optional.ofNullable(this.shouldUseJndi);
     }
     /**
      * @return If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
-    public Boolean shouldValidateServerCertificate() {
-        return this.shouldValidateServerCertificate;
+    public Optional<Boolean> shouldValidateServerCertificate() {
+        return Optional.ofNullable(this.shouldValidateServerCertificate);
     }
     /**
      * @return Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      * 
      */
-    public String sslCa() {
-        return this.sslCa;
+    public Optional<String> sslCa() {
+        return Optional.ofNullable(this.sslCa);
     }
-    public String sslCert() {
-        return this.sslCert;
+    public Optional<String> sslCert() {
+        return Optional.ofNullable(this.sslCert);
     }
-    public String sslCrl() {
-        return this.sslCrl;
+    public Optional<String> sslCrl() {
+        return Optional.ofNullable(this.sslCrl);
     }
-    public String sslKey() {
-        return this.sslKey;
+    public Optional<String> sslKey() {
+        return Optional.ofNullable(this.sslKey);
     }
-    public String sslKeyPassword() {
-        return this.sslKeyPassword;
+    public Optional<String> sslKeyPassword() {
+        return Optional.ofNullable(this.sslKeyPassword);
     }
     /**
      * @return SSL mode for PostgreSQL.
      * 
      */
-    public String sslMode() {
-        return this.sslMode;
+    public Optional<String> sslMode() {
+        return Optional.ofNullable(this.sslMode);
     }
     /**
      * @return A filter to return only connections having the &#39;lifecycleState&#39; given.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
-    public String streamPoolId() {
-        return this.streamPoolId;
+    public Optional<String> streamPoolId() {
+        return Optional.ofNullable(this.streamPoolId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The array of technology types.
      * 
      */
-    public String technologyType() {
-        return this.technologyType;
+    public Optional<String> technologyType() {
+        return Optional.ofNullable(this.technologyType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
      * 
      */
-    public String tenancyId() {
-        return this.tenancyId;
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
-    public String trustStore() {
-        return this.trustStore;
+    public Optional<String> trustStore() {
+        return Optional.ofNullable(this.trustStore);
     }
-    public String trustStorePassword() {
-        return this.trustStorePassword;
+    public Optional<String> trustStorePassword() {
+        return Optional.ofNullable(this.trustStorePassword);
     }
     /**
      * @return Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
     /**
      * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
     /**
      * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
-    public String wallet() {
-        return this.wallet;
+    public Optional<String> wallet() {
+        return Optional.ofNullable(this.wallet);
     }
 
     public static Builder builder() {
@@ -737,79 +739,79 @@ public final class GetConnectionsConnectionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accessKeyId;
-        private String accountKey;
-        private String accountName;
-        private List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
-        private String authenticationType;
-        private String azureTenantId;
-        private List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers;
-        private String clientId;
-        private String clientSecret;
-        private String compartmentId;
-        private String connectionFactory;
-        private String connectionString;
-        private String connectionType;
-        private String connectionUrl;
-        private String consumerProperties;
-        private String coreSiteXml;
-        private String databaseId;
-        private String databaseName;
-        private String dbSystemId;
-        private Map<String,Object> definedTags;
-        private String deploymentId;
-        private String description;
-        private String displayName;
-        private String endpoint;
-        private Map<String,Object> freeformTags;
-        private String host;
-        private String id;
-        private List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps;
-        private String jndiConnectionFactory;
-        private String jndiInitialContextFactory;
-        private String jndiProviderUrl;
-        private String jndiSecurityCredentials;
-        private String jndiSecurityPrincipal;
-        private String keyId;
-        private String keyStore;
-        private String keyStorePassword;
-        private String lifecycleDetails;
-        private List<String> nsgIds;
-        private String password;
-        private Integer port;
-        private String privateIp;
-        private String privateKeyFile;
-        private String privateKeyPassphrase;
-        private String producerProperties;
-        private String publicKeyFingerprint;
-        private String region;
-        private String sasToken;
-        private String secretAccessKey;
-        private String securityProtocol;
-        private String sessionMode;
-        private Boolean shouldUseJndi;
-        private Boolean shouldValidateServerCertificate;
-        private String sslCa;
-        private String sslCert;
-        private String sslCrl;
-        private String sslKey;
-        private String sslKeyPassword;
-        private String sslMode;
-        private String state;
-        private String streamPoolId;
-        private String subnetId;
-        private Map<String,Object> systemTags;
-        private String technologyType;
-        private String tenancyId;
-        private String timeCreated;
-        private String timeUpdated;
-        private String trustStore;
-        private String trustStorePassword;
-        private String url;
-        private String userId;
-        private String username;
-        private String vaultId;
-        private String wallet;
+        private @Nullable String accessKeyId;
+        private @Nullable String accountKey;
+        private @Nullable String accountName;
+        private @Nullable List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
+        private @Nullable String authenticationType;
+        private @Nullable String azureTenantId;
+        private @Nullable List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers;
+        private @Nullable String clientId;
+        private @Nullable String clientSecret;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionFactory;
+        private @Nullable String connectionString;
+        private @Nullable String connectionType;
+        private @Nullable String connectionUrl;
+        private @Nullable String consumerProperties;
+        private @Nullable String coreSiteXml;
+        private @Nullable String databaseId;
+        private @Nullable String databaseName;
+        private @Nullable String dbSystemId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deploymentId;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String endpoint;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String host;
+        private @Nullable String id;
+        private @Nullable List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps;
+        private @Nullable String jndiConnectionFactory;
+        private @Nullable String jndiInitialContextFactory;
+        private @Nullable String jndiProviderUrl;
+        private @Nullable String jndiSecurityCredentials;
+        private @Nullable String jndiSecurityPrincipal;
+        private @Nullable String keyId;
+        private @Nullable String keyStore;
+        private @Nullable String keyStorePassword;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String password;
+        private @Nullable Integer port;
+        private @Nullable String privateIp;
+        private @Nullable String privateKeyFile;
+        private @Nullable String privateKeyPassphrase;
+        private @Nullable String producerProperties;
+        private @Nullable String publicKeyFingerprint;
+        private @Nullable String region;
+        private @Nullable String sasToken;
+        private @Nullable String secretAccessKey;
+        private @Nullable String securityProtocol;
+        private @Nullable String sessionMode;
+        private @Nullable Boolean shouldUseJndi;
+        private @Nullable Boolean shouldValidateServerCertificate;
+        private @Nullable String sslCa;
+        private @Nullable String sslCert;
+        private @Nullable String sslCrl;
+        private @Nullable String sslKey;
+        private @Nullable String sslKeyPassword;
+        private @Nullable String sslMode;
+        private @Nullable String state;
+        private @Nullable String streamPoolId;
+        private @Nullable String subnetId;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String technologyType;
+        private @Nullable String tenancyId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String trustStore;
+        private @Nullable String trustStorePassword;
+        private @Nullable String url;
+        private @Nullable String userId;
+        private @Nullable String username;
+        private @Nullable String vaultId;
+        private @Nullable String wallet;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -889,380 +891,380 @@ public final class GetConnectionsConnectionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder accessKeyId(String accessKeyId) {
-            this.accessKeyId = Objects.requireNonNull(accessKeyId);
+        public Builder accessKeyId(@Nullable String accessKeyId) {
+            this.accessKeyId = accessKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder accountKey(String accountKey) {
-            this.accountKey = Objects.requireNonNull(accountKey);
+        public Builder accountKey(@Nullable String accountKey) {
+            this.accountKey = accountKey;
             return this;
         }
         @CustomType.Setter
-        public Builder accountName(String accountName) {
-            this.accountName = Objects.requireNonNull(accountName);
+        public Builder accountName(@Nullable String accountName) {
+            this.accountName = accountName;
             return this;
         }
         @CustomType.Setter
-        public Builder additionalAttributes(List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes) {
-            this.additionalAttributes = Objects.requireNonNull(additionalAttributes);
+        public Builder additionalAttributes(@Nullable List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes) {
+            this.additionalAttributes = additionalAttributes;
             return this;
         }
         public Builder additionalAttributes(GetConnectionsConnectionCollectionItemAdditionalAttribute... additionalAttributes) {
             return additionalAttributes(List.of(additionalAttributes));
         }
         @CustomType.Setter
-        public Builder authenticationType(String authenticationType) {
-            this.authenticationType = Objects.requireNonNull(authenticationType);
+        public Builder authenticationType(@Nullable String authenticationType) {
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
-        public Builder azureTenantId(String azureTenantId) {
-            this.azureTenantId = Objects.requireNonNull(azureTenantId);
+        public Builder azureTenantId(@Nullable String azureTenantId) {
+            this.azureTenantId = azureTenantId;
             return this;
         }
         @CustomType.Setter
-        public Builder bootstrapServers(List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers) {
-            this.bootstrapServers = Objects.requireNonNull(bootstrapServers);
+        public Builder bootstrapServers(@Nullable List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers) {
+            this.bootstrapServers = bootstrapServers;
             return this;
         }
         public Builder bootstrapServers(GetConnectionsConnectionCollectionItemBootstrapServer... bootstrapServers) {
             return bootstrapServers(List.of(bootstrapServers));
         }
         @CustomType.Setter
-        public Builder clientId(String clientId) {
-            this.clientId = Objects.requireNonNull(clientId);
+        public Builder clientId(@Nullable String clientId) {
+            this.clientId = clientId;
             return this;
         }
         @CustomType.Setter
-        public Builder clientSecret(String clientSecret) {
-            this.clientSecret = Objects.requireNonNull(clientSecret);
+        public Builder clientSecret(@Nullable String clientSecret) {
+            this.clientSecret = clientSecret;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionFactory(String connectionFactory) {
-            this.connectionFactory = Objects.requireNonNull(connectionFactory);
+        public Builder connectionFactory(@Nullable String connectionFactory) {
+            this.connectionFactory = connectionFactory;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+        public Builder connectionString(@Nullable String connectionString) {
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+        public Builder connectionType(@Nullable String connectionType) {
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionUrl(String connectionUrl) {
-            this.connectionUrl = Objects.requireNonNull(connectionUrl);
+        public Builder connectionUrl(@Nullable String connectionUrl) {
+            this.connectionUrl = connectionUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder consumerProperties(String consumerProperties) {
-            this.consumerProperties = Objects.requireNonNull(consumerProperties);
+        public Builder consumerProperties(@Nullable String consumerProperties) {
+            this.consumerProperties = consumerProperties;
             return this;
         }
         @CustomType.Setter
-        public Builder coreSiteXml(String coreSiteXml) {
-            this.coreSiteXml = Objects.requireNonNull(coreSiteXml);
+        public Builder coreSiteXml(@Nullable String coreSiteXml) {
+            this.coreSiteXml = coreSiteXml;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+        public Builder databaseId(@Nullable String databaseId) {
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+        public Builder databaseName(@Nullable String databaseName) {
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+        public Builder deploymentId(@Nullable String deploymentId) {
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder endpoint(String endpoint) {
-            this.endpoint = Objects.requireNonNull(endpoint);
+        public Builder endpoint(@Nullable String endpoint) {
+            this.endpoint = endpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ingressIps(List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps) {
-            this.ingressIps = Objects.requireNonNull(ingressIps);
+        public Builder ingressIps(@Nullable List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps) {
+            this.ingressIps = ingressIps;
             return this;
         }
         public Builder ingressIps(GetConnectionsConnectionCollectionItemIngressIp... ingressIps) {
             return ingressIps(List.of(ingressIps));
         }
         @CustomType.Setter
-        public Builder jndiConnectionFactory(String jndiConnectionFactory) {
-            this.jndiConnectionFactory = Objects.requireNonNull(jndiConnectionFactory);
+        public Builder jndiConnectionFactory(@Nullable String jndiConnectionFactory) {
+            this.jndiConnectionFactory = jndiConnectionFactory;
             return this;
         }
         @CustomType.Setter
-        public Builder jndiInitialContextFactory(String jndiInitialContextFactory) {
-            this.jndiInitialContextFactory = Objects.requireNonNull(jndiInitialContextFactory);
+        public Builder jndiInitialContextFactory(@Nullable String jndiInitialContextFactory) {
+            this.jndiInitialContextFactory = jndiInitialContextFactory;
             return this;
         }
         @CustomType.Setter
-        public Builder jndiProviderUrl(String jndiProviderUrl) {
-            this.jndiProviderUrl = Objects.requireNonNull(jndiProviderUrl);
+        public Builder jndiProviderUrl(@Nullable String jndiProviderUrl) {
+            this.jndiProviderUrl = jndiProviderUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder jndiSecurityCredentials(String jndiSecurityCredentials) {
-            this.jndiSecurityCredentials = Objects.requireNonNull(jndiSecurityCredentials);
+        public Builder jndiSecurityCredentials(@Nullable String jndiSecurityCredentials) {
+            this.jndiSecurityCredentials = jndiSecurityCredentials;
             return this;
         }
         @CustomType.Setter
-        public Builder jndiSecurityPrincipal(String jndiSecurityPrincipal) {
-            this.jndiSecurityPrincipal = Objects.requireNonNull(jndiSecurityPrincipal);
+        public Builder jndiSecurityPrincipal(@Nullable String jndiSecurityPrincipal) {
+            this.jndiSecurityPrincipal = jndiSecurityPrincipal;
             return this;
         }
         @CustomType.Setter
-        public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+        public Builder keyId(@Nullable String keyId) {
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStore(String keyStore) {
-            this.keyStore = Objects.requireNonNull(keyStore);
+        public Builder keyStore(@Nullable String keyStore) {
+            this.keyStore = keyStore;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStorePassword(String keyStorePassword) {
-            this.keyStorePassword = Objects.requireNonNull(keyStorePassword);
+        public Builder keyStorePassword(@Nullable String keyStorePassword) {
+            this.keyStorePassword = keyStorePassword;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+        public Builder privateIp(@Nullable String privateIp) {
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
-        public Builder privateKeyFile(String privateKeyFile) {
-            this.privateKeyFile = Objects.requireNonNull(privateKeyFile);
+        public Builder privateKeyFile(@Nullable String privateKeyFile) {
+            this.privateKeyFile = privateKeyFile;
             return this;
         }
         @CustomType.Setter
-        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
-            this.privateKeyPassphrase = Objects.requireNonNull(privateKeyPassphrase);
+        public Builder privateKeyPassphrase(@Nullable String privateKeyPassphrase) {
+            this.privateKeyPassphrase = privateKeyPassphrase;
             return this;
         }
         @CustomType.Setter
-        public Builder producerProperties(String producerProperties) {
-            this.producerProperties = Objects.requireNonNull(producerProperties);
+        public Builder producerProperties(@Nullable String producerProperties) {
+            this.producerProperties = producerProperties;
             return this;
         }
         @CustomType.Setter
-        public Builder publicKeyFingerprint(String publicKeyFingerprint) {
-            this.publicKeyFingerprint = Objects.requireNonNull(publicKeyFingerprint);
+        public Builder publicKeyFingerprint(@Nullable String publicKeyFingerprint) {
+            this.publicKeyFingerprint = publicKeyFingerprint;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder sasToken(String sasToken) {
-            this.sasToken = Objects.requireNonNull(sasToken);
+        public Builder sasToken(@Nullable String sasToken) {
+            this.sasToken = sasToken;
             return this;
         }
         @CustomType.Setter
-        public Builder secretAccessKey(String secretAccessKey) {
-            this.secretAccessKey = Objects.requireNonNull(secretAccessKey);
+        public Builder secretAccessKey(@Nullable String secretAccessKey) {
+            this.secretAccessKey = secretAccessKey;
             return this;
         }
         @CustomType.Setter
-        public Builder securityProtocol(String securityProtocol) {
-            this.securityProtocol = Objects.requireNonNull(securityProtocol);
+        public Builder securityProtocol(@Nullable String securityProtocol) {
+            this.securityProtocol = securityProtocol;
             return this;
         }
         @CustomType.Setter
-        public Builder sessionMode(String sessionMode) {
-            this.sessionMode = Objects.requireNonNull(sessionMode);
+        public Builder sessionMode(@Nullable String sessionMode) {
+            this.sessionMode = sessionMode;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldUseJndi(Boolean shouldUseJndi) {
-            this.shouldUseJndi = Objects.requireNonNull(shouldUseJndi);
+        public Builder shouldUseJndi(@Nullable Boolean shouldUseJndi) {
+            this.shouldUseJndi = shouldUseJndi;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldValidateServerCertificate(Boolean shouldValidateServerCertificate) {
-            this.shouldValidateServerCertificate = Objects.requireNonNull(shouldValidateServerCertificate);
+        public Builder shouldValidateServerCertificate(@Nullable Boolean shouldValidateServerCertificate) {
+            this.shouldValidateServerCertificate = shouldValidateServerCertificate;
             return this;
         }
         @CustomType.Setter
-        public Builder sslCa(String sslCa) {
-            this.sslCa = Objects.requireNonNull(sslCa);
+        public Builder sslCa(@Nullable String sslCa) {
+            this.sslCa = sslCa;
             return this;
         }
         @CustomType.Setter
-        public Builder sslCert(String sslCert) {
-            this.sslCert = Objects.requireNonNull(sslCert);
+        public Builder sslCert(@Nullable String sslCert) {
+            this.sslCert = sslCert;
             return this;
         }
         @CustomType.Setter
-        public Builder sslCrl(String sslCrl) {
-            this.sslCrl = Objects.requireNonNull(sslCrl);
+        public Builder sslCrl(@Nullable String sslCrl) {
+            this.sslCrl = sslCrl;
             return this;
         }
         @CustomType.Setter
-        public Builder sslKey(String sslKey) {
-            this.sslKey = Objects.requireNonNull(sslKey);
+        public Builder sslKey(@Nullable String sslKey) {
+            this.sslKey = sslKey;
             return this;
         }
         @CustomType.Setter
-        public Builder sslKeyPassword(String sslKeyPassword) {
-            this.sslKeyPassword = Objects.requireNonNull(sslKeyPassword);
+        public Builder sslKeyPassword(@Nullable String sslKeyPassword) {
+            this.sslKeyPassword = sslKeyPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+        public Builder sslMode(@Nullable String sslMode) {
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder streamPoolId(String streamPoolId) {
-            this.streamPoolId = Objects.requireNonNull(streamPoolId);
+        public Builder streamPoolId(@Nullable String streamPoolId) {
+            this.streamPoolId = streamPoolId;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder technologyType(String technologyType) {
-            this.technologyType = Objects.requireNonNull(technologyType);
+        public Builder technologyType(@Nullable String technologyType) {
+            this.technologyType = technologyType;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder trustStore(String trustStore) {
-            this.trustStore = Objects.requireNonNull(trustStore);
+        public Builder trustStore(@Nullable String trustStore) {
+            this.trustStore = trustStore;
             return this;
         }
         @CustomType.Setter
-        public Builder trustStorePassword(String trustStorePassword) {
-            this.trustStorePassword = Objects.requireNonNull(trustStorePassword);
+        public Builder trustStorePassword(@Nullable String trustStorePassword) {
+            this.trustStorePassword = trustStorePassword;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
-        public Builder wallet(String wallet) {
-            this.wallet = Objects.requireNonNull(wallet);
+        public Builder wallet(@Nullable String wallet) {
+            this.wallet = wallet;
             return this;
         }
         public GetConnectionsConnectionCollectionItem build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Iam Work Requests in Oracle Cloud Infrastructure Identity service.
@@ -72,7 +71,7 @@ type GetIamWorkRequestsResult struct {
 	// The list of iam_work_requests.
 	IamWorkRequests []GetIamWorkRequestsIamWorkRequest `pulumi:"iamWorkRequests"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string  `pulumi:"id"`
+	Id                 *string `pulumi:"id"`
 	ResourceIdentifier *string `pulumi:"resourceIdentifier"`
 }
 
@@ -117,12 +116,6 @@ func (o GetIamWorkRequestsResultOutput) ToGetIamWorkRequestsResultOutputWithCont
 	return o
 }
 
-func (o GetIamWorkRequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestsResult] {
-	return pulumix.Output[GetIamWorkRequestsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing this IAM work request.
 func (o GetIamWorkRequestsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamWorkRequestsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -138,8 +131,8 @@ func (o GetIamWorkRequestsResultOutput) IamWorkRequests() GetIamWorkRequestsIamW
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIamWorkRequestsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIamWorkRequestsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIamWorkRequestsResultOutput) ResourceIdentifier() pulumi.StringPtrOutput {

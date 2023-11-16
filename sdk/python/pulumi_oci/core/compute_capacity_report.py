@@ -21,9 +21,6 @@ class ComputeCapacityReportArgs:
                  shape_availabilities: pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]):
         """
         The set of arguments for constructing a ComputeCapacityReport resource.
-        :param pulumi.Input[str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -32,9 +29,6 @@ class ComputeCapacityReportArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -44,9 +38,6 @@ class ComputeCapacityReportArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -56,9 +47,6 @@ class ComputeCapacityReportArgs:
     @property
     @pulumi.getter(name="shapeAvailabilities")
     def shape_availabilities(self) -> pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]:
-        """
-        Information about the shapes in the capacity report.
-        """
         return pulumi.get(self, "shape_availabilities")
 
     @shape_availabilities.setter
@@ -75,10 +63,6 @@ class _ComputeCapacityReportState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ComputeCapacityReport resources.
-        :param pulumi.Input[str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
-        :param pulumi.Input[str] time_created: The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -92,9 +76,6 @@ class _ComputeCapacityReportState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -104,9 +85,6 @@ class _ComputeCapacityReportState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -116,9 +94,6 @@ class _ComputeCapacityReportState:
     @property
     @pulumi.getter(name="shapeAvailabilities")
     def shape_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]]:
-        """
-        Information about the shapes in the capacity report.
-        """
         return pulumi.get(self, "shape_availabilities")
 
     @shape_availabilities.setter
@@ -128,9 +103,6 @@ class _ComputeCapacityReportState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -148,48 +120,9 @@ class ComputeCapacityReport(pulumi.CustomResource):
                  shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Compute Capacity Report resource in Oracle Cloud Infrastructure Core service.
-
-        Generates a report of the host capacity within an availability domain that is available for you
-        to create compute instances. Host capacity is the physical infrastructure that resources such as compute
-        instances run on.
-
-        Use the capacity report to determine whether sufficient capacity is available for a shape before
-        you create an instance or change the shape of an instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compute_capacity_report = oci.core.ComputeCapacityReport("testComputeCapacityReport",
-            availability_domain=var["compute_capacity_report_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape_availabilities=[oci.core.ComputeCapacityReportShapeAvailabilityArgs(
-                instance_shape=var["compute_capacity_report_shape_availabilities_instance_shape"],
-                fault_domain=var["compute_capacity_report_shape_availabilities_fault_domain"],
-                instance_shape_config=oci.core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs"],
-                    nvmes=var["compute_capacity_report_shape_availabilities_instance_shape_config_nvmes"],
-                    ocpus=var["compute_capacity_report_shape_availabilities_instance_shape_config_ocpus"],
-                ),
-            )])
-        ```
-
-        ## Import
-
-        ComputeCapacityReports can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
-        ```
-
+        Create a ComputeCapacityReport resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]] shape_availabilities: Information about the shapes in the capacity report.
         """
         ...
     @overload
@@ -198,43 +131,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                  args: ComputeCapacityReportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compute Capacity Report resource in Oracle Cloud Infrastructure Core service.
-
-        Generates a report of the host capacity within an availability domain that is available for you
-        to create compute instances. Host capacity is the physical infrastructure that resources such as compute
-        instances run on.
-
-        Use the capacity report to determine whether sufficient capacity is available for a shape before
-        you create an instance or change the shape of an instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compute_capacity_report = oci.core.ComputeCapacityReport("testComputeCapacityReport",
-            availability_domain=var["compute_capacity_report_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape_availabilities=[oci.core.ComputeCapacityReportShapeAvailabilityArgs(
-                instance_shape=var["compute_capacity_report_shape_availabilities_instance_shape"],
-                fault_domain=var["compute_capacity_report_shape_availabilities_fault_domain"],
-                instance_shape_config=oci.core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs"],
-                    nvmes=var["compute_capacity_report_shape_availabilities_instance_shape_config_nvmes"],
-                    ocpus=var["compute_capacity_report_shape_availabilities_instance_shape_config_ocpus"],
-                ),
-            )])
-        ```
-
-        ## Import
-
-        ComputeCapacityReports can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
-        ```
-
+        Create a ComputeCapacityReport resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ComputeCapacityReportArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -293,10 +190,6 @@ class ComputeCapacityReport(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]] shape_availabilities: Information about the shapes in the capacity report.
-        :param pulumi.Input[str] time_created: The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -311,32 +204,20 @@ class ComputeCapacityReport(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="shapeAvailabilities")
     def shape_availabilities(self) -> pulumi.Output[Sequence['outputs.ComputeCapacityReportShapeAvailability']]:
-        """
-        Information about the shapes in the capacity report.
-        """
         return pulumi.get(self, "shape_availabilities")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

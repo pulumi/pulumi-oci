@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
@@ -71,7 +70,7 @@ type GetFastConnectProviderServicesResult struct {
 	FastConnectProviderServices []GetFastConnectProviderServicesFastConnectProviderService `pulumi:"fastConnectProviderServices"`
 	Filters                     []GetFastConnectProviderServicesFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetFastConnectProviderServicesOutput(ctx *pulumi.Context, args GetFastConnectProviderServicesOutputArgs, opts ...pulumi.InvokeOption) GetFastConnectProviderServicesResultOutput {
@@ -113,12 +112,6 @@ func (o GetFastConnectProviderServicesResultOutput) ToGetFastConnectProviderServ
 	return o
 }
 
-func (o GetFastConnectProviderServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFastConnectProviderServicesResult] {
-	return pulumix.Output[GetFastConnectProviderServicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFastConnectProviderServicesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFastConnectProviderServicesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -135,8 +128,8 @@ func (o GetFastConnectProviderServicesResultOutput) Filters() GetFastConnectProv
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFastConnectProviderServicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

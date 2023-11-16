@@ -201,7 +201,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// OPSI configuration type.
         /// </summary>
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.Opsi
 
             ImmutableArray<Outputs.GetOpsiConfigurationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> opsiConfigTypes,
 

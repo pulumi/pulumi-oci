@@ -138,19 +138,19 @@ namespace Pulumi.Oci.OsManagement
         /// <summary>
         /// The architecture for which the packages in this module stream were built
         /// </summary>
-        public readonly string Architecture;
+        public readonly string? Architecture;
         /// <summary>
         /// A description of the contents of the module stream
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if this stream is the default for its module.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// The name of the module that contains the stream
         /// </summary>
@@ -174,13 +174,13 @@ namespace Pulumi.Oci.OsManagement
 
         [OutputConstructor]
         private GetSoftwareSourceModuleStreamResult(
-            string architecture,
+            string? architecture,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            bool isDefault,
+            bool? isDefault,
 
             string moduleName,
 

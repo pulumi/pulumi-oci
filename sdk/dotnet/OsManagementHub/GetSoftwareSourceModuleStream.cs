@@ -138,23 +138,23 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The architecture for which the packages in this module stream were built.
         /// </summary>
-        public readonly string ArchType;
+        public readonly string? ArchType;
         /// <summary>
         /// A description of the contents of the module stream.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if this stream is the default for its module.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// Indicates whether this module stream is the latest.
         /// </summary>
-        public readonly bool IsLatest;
+        public readonly bool? IsLatest;
         /// <summary>
         /// The name of the module that contains the stream.
         /// </summary>
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The name of the stream.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
         /// </summary>
@@ -179,19 +179,19 @@ namespace Pulumi.Oci.OsManagementHub
 
         [OutputConstructor]
         private GetSoftwareSourceModuleStreamResult(
-            string archType,
+            string? archType,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            bool isDefault,
+            bool? isDefault,
 
-            bool isLatest,
+            bool? isLatest,
 
             string moduleName,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> packages,
 

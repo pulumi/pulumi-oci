@@ -163,7 +163,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of log_analytics_log_group_summary_collection.
         /// </summary>
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetLogAnalyticsLogGroupsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionResult> logAnalyticsLogGroupSummaryCollections,
 

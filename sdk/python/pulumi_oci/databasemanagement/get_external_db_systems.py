@@ -43,25 +43,16 @@ class GetExternalDbSystemsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalDbSystemCollections")
-    def external_db_system_collections(self) -> Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionResult']:
-        """
-        The list of external_db_system_collection.
-        """
+    def external_db_system_collections(self) -> Optional[Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionResult']]:
         return pulumi.get(self, "external_db_system_collections")
 
     @property
@@ -71,7 +62,7 @@ class GetExternalDbSystemsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,23 +87,7 @@ def get_external_db_systems(compartment_id: Optional[str] = None,
                             filters: Optional[Sequence[pulumi.InputType['GetExternalDbSystemsFilterArgs']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbSystemsResult:
     """
-    This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the external DB systems in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_systems = oci.DatabaseManagement.get_external_db_systems(compartment_id=var["compartment_id"],
-        display_name=var["external_db_system_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_external_db_systems_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDbSystemsFilterArgs']]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemsResult]:
     """
-    This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the external DB systems in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_systems = oci.DatabaseManagement.get_external_db_systems(compartment_id=var["compartment_id"],
-        display_name=var["external_db_system_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
+    Use this data source to access information about an existing resource.
     """
     ...

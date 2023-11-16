@@ -23,17 +23,6 @@ class BdsInstanceMetastoreConfigArgs:
                  display_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BdsInstanceMetastoreConfig resource.
-        :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
-        :param pulumi.Input[str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[str] metastore_id: The OCID of the Data Catalog metastore.
-        :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the metastore configuration
         """
         pulumi.set(__self__, "bds_api_key_id", bds_api_key_id)
         pulumi.set(__self__, "bds_api_key_passphrase", bds_api_key_passphrase)
@@ -48,9 +37,6 @@ class BdsInstanceMetastoreConfigArgs:
     @property
     @pulumi.getter(name="bdsApiKeyId")
     def bds_api_key_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
-        """
         return pulumi.get(self, "bds_api_key_id")
 
     @bds_api_key_id.setter
@@ -60,9 +46,6 @@ class BdsInstanceMetastoreConfigArgs:
     @property
     @pulumi.getter(name="bdsApiKeyPassphrase")
     def bds_api_key_passphrase(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Base-64 encoded passphrase of the BDS Api Key.
-        """
         return pulumi.get(self, "bds_api_key_passphrase")
 
     @bds_api_key_passphrase.setter
@@ -72,9 +55,6 @@ class BdsInstanceMetastoreConfigArgs:
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
@@ -84,9 +64,6 @@ class BdsInstanceMetastoreConfigArgs:
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Base-64 encoded password for the cluster admin user.
-        """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
@@ -96,9 +73,6 @@ class BdsInstanceMetastoreConfigArgs:
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the Data Catalog metastore.
-        """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
@@ -108,13 +82,6 @@ class BdsInstanceMetastoreConfigArgs:
     @property
     @pulumi.getter(name="activateTrigger")
     def activate_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional integer, when flipped triggers activation of metastore config.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "activate_trigger")
 
     @activate_trigger.setter
@@ -124,9 +91,6 @@ class BdsInstanceMetastoreConfigArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the metastore configuration
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -150,21 +114,6 @@ class _BdsInstanceMetastoreConfigState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceMetastoreConfig resources.
-        :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
-        :param pulumi.Input[str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the metastore configuration
-        :param pulumi.Input[str] metastore_id: The OCID of the Data Catalog metastore.
-        :param pulumi.Input[str] metastore_type: The type of the metastore in the metastore configuration.
-        :param pulumi.Input[str] state: the lifecycle state of the metastore configuration.
-        :param pulumi.Input[str] time_created: The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
         if activate_trigger is not None:
             pulumi.set(__self__, "activate_trigger", activate_trigger)
@@ -192,13 +141,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="activateTrigger")
     def activate_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional integer, when flipped triggers activation of metastore config.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "activate_trigger")
 
     @activate_trigger.setter
@@ -208,9 +150,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="bdsApiKeyId")
     def bds_api_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
-        """
         return pulumi.get(self, "bds_api_key_id")
 
     @bds_api_key_id.setter
@@ -220,9 +159,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="bdsApiKeyPassphrase")
     def bds_api_key_passphrase(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Base-64 encoded passphrase of the BDS Api Key.
-        """
         return pulumi.get(self, "bds_api_key_passphrase")
 
     @bds_api_key_passphrase.setter
@@ -232,9 +168,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
@@ -244,9 +177,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Base-64 encoded password for the cluster admin user.
-        """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
@@ -256,9 +186,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the metastore configuration
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -268,9 +195,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Data Catalog metastore.
-        """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
@@ -280,9 +204,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="metastoreType")
     def metastore_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the metastore in the metastore configuration.
-        """
         return pulumi.get(self, "metastore_type")
 
     @metastore_type.setter
@@ -292,9 +213,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        the lifecycle state of the metastore configuration.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -304,9 +222,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -316,9 +231,6 @@ class _BdsInstanceMetastoreConfigState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -340,46 +252,9 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create and activate external metastore configuration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_bds_instance_metastore_config = oci.big_data_service.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig",
-            bds_api_key_id=oci_identity_api_key["test_api_key"]["id"],
-            bds_api_key_passphrase=var["bds_instance_metastore_config_bds_api_key_passphrase"],
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_metastore_config_cluster_admin_password"],
-            metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
-            display_name=var["bds_instance_metastore_config_display_name"])
-        ```
-
-        ## Import
-
-        BdsInstanceMetastoreConfigs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
-        ```
-
+        Create a BdsInstanceMetastoreConfig resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
-        :param pulumi.Input[str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the metastore configuration
-        :param pulumi.Input[str] metastore_id: The OCID of the Data Catalog metastore.
         """
         ...
     @overload
@@ -388,33 +263,7 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
                  args: BdsInstanceMetastoreConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create and activate external metastore configuration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_bds_instance_metastore_config = oci.big_data_service.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig",
-            bds_api_key_id=oci_identity_api_key["test_api_key"]["id"],
-            bds_api_key_passphrase=var["bds_instance_metastore_config_bds_api_key_passphrase"],
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_metastore_config_cluster_admin_password"],
-            metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
-            display_name=var["bds_instance_metastore_config_display_name"])
-        ```
-
-        ## Import
-
-        BdsInstanceMetastoreConfigs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
-        ```
-
+        Create a BdsInstanceMetastoreConfig resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BdsInstanceMetastoreConfigArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -497,21 +346,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
-        :param pulumi.Input[str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the metastore configuration
-        :param pulumi.Input[str] metastore_id: The OCID of the Data Catalog metastore.
-        :param pulumi.Input[str] metastore_type: The type of the metastore in the metastore configuration.
-        :param pulumi.Input[str] state: the lifecycle state of the metastore configuration.
-        :param pulumi.Input[str] time_created: The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -533,92 +367,55 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
     @property
     @pulumi.getter(name="activateTrigger")
     def activate_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional integer, when flipped triggers activation of metastore config.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "activate_trigger")
 
     @property
     @pulumi.getter(name="bdsApiKeyId")
     def bds_api_key_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
-        """
         return pulumi.get(self, "bds_api_key_id")
 
     @property
     @pulumi.getter(name="bdsApiKeyPassphrase")
     def bds_api_key_passphrase(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Base-64 encoded passphrase of the BDS Api Key.
-        """
         return pulumi.get(self, "bds_api_key_passphrase")
 
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "bds_instance_id")
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Base-64 encoded password for the cluster admin user.
-        """
         return pulumi.get(self, "cluster_admin_password")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the metastore configuration
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Data Catalog metastore.
-        """
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="metastoreType")
-    def metastore_type(self) -> pulumi.Output[str]:
-        """
-        The type of the metastore in the metastore configuration.
-        """
+    def metastore_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "metastore_type")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        the lifecycle state of the metastore configuration.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

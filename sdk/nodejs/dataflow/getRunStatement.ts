@@ -53,19 +53,19 @@ export interface GetRunStatementResult {
     /**
      * The statement code to execute. Example: `println(sc.version)`
      */
-    readonly code: string;
+    readonly code?: string;
     /**
      * The statement ID.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The execution output of a statement.
      */
-    readonly outputs: outputs.DataFlow.GetRunStatementOutput[];
+    readonly outputs?: outputs.DataFlow.GetRunStatementOutput[];
     /**
      * The execution progress.
      */
-    readonly progress: number;
+    readonly progress?: number;
     /**
      * The ID of a run.
      */
@@ -73,16 +73,16 @@ export interface GetRunStatementResult {
     /**
      * The current state of this statement.
      */
-    readonly state: string;
+    readonly state?: string;
     readonly statementId: string;
     /**
      * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      */
-    readonly timeCompleted: string;
+    readonly timeCompleted?: string;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.

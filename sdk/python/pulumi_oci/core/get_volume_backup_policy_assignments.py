@@ -40,9 +40,6 @@ class GetVolumeBackupPolicyAssignmentsResult:
     @property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> str:
-        """
-        The OCID of the volume the policy has been assigned to.
-        """
         return pulumi.get(self, "asset_id")
 
     @property
@@ -52,7 +49,7 @@ class GetVolumeBackupPolicyAssignmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetVolumeBackupPolicyAssignmentsResult:
 
     @property
     @pulumi.getter(name="volumeBackupPolicyAssignments")
-    def volume_backup_policy_assignments(self) -> Sequence['outputs.GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentResult']:
-        """
-        The list of volume_backup_policy_assignments.
-        """
+    def volume_backup_policy_assignments(self) -> Optional[Sequence['outputs.GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentResult']]:
         return pulumi.get(self, "volume_backup_policy_assignments")
 
 
@@ -83,23 +77,7 @@ def get_volume_backup_policy_assignments(asset_id: Optional[str] = None,
                                          filters: Optional[Sequence[pulumi.InputType['GetVolumeBackupPolicyAssignmentsFilterArgs']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeBackupPolicyAssignmentsResult:
     """
-    This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
-
-    Gets the volume backup policy assignment for the specified volume. The
-    `assetId` query parameter is required, and the returned list will contain at most
-    one item, since volume can only have one volume backup policy assigned at a time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=oci_core_volume["test_volume"]["id"])
-    ```
-
-
-    :param str asset_id: The OCID of an asset (e.g. a volume).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['assetId'] = asset_id
@@ -119,22 +97,6 @@ def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[
                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVolumeBackupPolicyAssignmentsFilterArgs']]]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeBackupPolicyAssignmentsResult]:
     """
-    This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
-
-    Gets the volume backup policy assignment for the specified volume. The
-    `assetId` query parameter is required, and the returned list will contain at most
-    one item, since volume can only have one volume backup policy assigned at a time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=oci_core_volume["test_volume"]["id"])
-    ```
-
-
-    :param str asset_id: The OCID of an asset (e.g. a volume).
+    Use this data source to access information about an existing resource.
     """
     ...

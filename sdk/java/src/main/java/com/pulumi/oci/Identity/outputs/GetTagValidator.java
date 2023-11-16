@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTagValidator {
@@ -14,27 +16,27 @@ public final class GetTagValidator {
      * @return Specifies the type of validation: a static value (no validation) or a list.
      * 
      */
-    private String validatorType;
+    private @Nullable String validatorType;
     /**
      * @return The list of allowed values for a definedTag value.
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private GetTagValidator() {}
     /**
      * @return Specifies the type of validation: a static value (no validation) or a list.
      * 
      */
-    public String validatorType() {
-        return this.validatorType;
+    public Optional<String> validatorType() {
+        return Optional.ofNullable(this.validatorType);
     }
     /**
      * @return The list of allowed values for a definedTag value.
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetTagValidator {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String validatorType;
-        private List<String> values;
+        private @Nullable String validatorType;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(GetTagValidator defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetTagValidator {
         }
 
         @CustomType.Setter
-        public Builder validatorType(String validatorType) {
-            this.validatorType = Objects.requireNonNull(validatorType);
+        public Builder validatorType(@Nullable String validatorType) {
+            this.validatorType = validatorType;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<String> values) {
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

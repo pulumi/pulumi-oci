@@ -23,12 +23,12 @@ public final class GetDeploymentTypeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of DeploymentTypeSummary
      * 
      */
-    private List<GetDeploymentTypeItem> items;
+    private @Nullable List<GetDeploymentTypeItem> items;
 
     private GetDeploymentTypeResult() {}
     public String compartmentId() {
@@ -45,15 +45,15 @@ public final class GetDeploymentTypeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of DeploymentTypeSummary
      * 
      */
     public List<GetDeploymentTypeItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -67,8 +67,8 @@ public final class GetDeploymentTypeResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private String id;
-        private List<GetDeploymentTypeItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetDeploymentTypeItem> items;
         public Builder() {}
         public Builder(GetDeploymentTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -89,13 +89,13 @@ public final class GetDeploymentTypeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetDeploymentTypeItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentTypeItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentTypeItem... items) {

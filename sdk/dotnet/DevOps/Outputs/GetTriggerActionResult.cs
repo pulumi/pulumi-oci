@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of the build pipeline to be triggered.
         /// </summary>
-        public readonly string BuildPipelineId;
+        public readonly string? BuildPipelineId;
         /// <summary>
         /// The filters for the trigger.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetTriggerActionResult(
-            string buildPipelineId,
+            string? buildPipelineId,
 
             ImmutableArray<Outputs.GetTriggerActionFilterResult> filters,
 
-            string type)
+            string? type)
         {
             BuildPipelineId = buildPipelineId;
             Filters = filters;

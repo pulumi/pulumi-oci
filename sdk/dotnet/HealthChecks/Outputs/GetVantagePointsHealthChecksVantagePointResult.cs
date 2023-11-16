@@ -16,7 +16,7 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// Filters results that exactly match the `displayName` field.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Geographic information about a vantage point.
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// Filters results that exactly match the `name` field.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
         /// </summary>
-        public readonly string ProviderName;
+        public readonly string? ProviderName;
         /// <summary>
         /// An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.HealthChecks.Outputs
 
         [OutputConstructor]
         private GetVantagePointsHealthChecksVantagePointResult(
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetVantagePointsHealthChecksVantagePointGeoResult> geos,
 
-            string name,
+            string? name,
 
-            string providerName,
+            string? providerName,
 
             ImmutableArray<Outputs.GetVantagePointsHealthChecksVantagePointRoutingResult> routings)
         {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Artifacts.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerRepositoriesContainerRepositoryCollectionItemReadme {
@@ -13,27 +15,27 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItemRead
      * @return Readme content. Avoid entering confidential information.
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return Readme format. Supported formats are text/plain and text/markdown.
      * 
      */
-    private String format;
+    private @Nullable String format;
 
     private GetContainerRepositoriesContainerRepositoryCollectionItemReadme() {}
     /**
      * @return Readme content. Avoid entering confidential information.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return Readme format. Supported formats are text/plain and text/markdown.
      * 
      */
-    public String format() {
-        return this.format;
+    public Optional<String> format() {
+        return Optional.ofNullable(this.format);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItemRead
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
-        private String format;
+        private @Nullable String content;
+        private @Nullable String format;
         public Builder() {}
         public Builder(GetContainerRepositoriesContainerRepositoryCollectionItemReadme defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItemRead
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+        public Builder format(@Nullable String format) {
+            this.format = format;
             return this;
         }
         public GetContainerRepositoriesContainerRepositoryCollectionItemReadme build() {

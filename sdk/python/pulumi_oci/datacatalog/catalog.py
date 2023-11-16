@@ -21,15 +21,6 @@ class CatalogArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Catalog resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if attached_catalog_private_endpoints is not None:
@@ -44,9 +35,6 @@ class CatalogArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -56,13 +44,6 @@ class CatalogArgs:
     @property
     @pulumi.getter(name="attachedCatalogPrivateEndpoints")
     def attached_catalog_private_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of private reverse connection endpoints attached to the catalog
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "attached_catalog_private_endpoints")
 
     @attached_catalog_private_endpoints.setter
@@ -72,9 +53,6 @@ class CatalogArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -84,9 +62,6 @@ class CatalogArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Data catalog identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -96,9 +71,6 @@ class CatalogArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -123,22 +95,6 @@ class _CatalogState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Catalog resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[int] number_of_objects: The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-        :param pulumi.Input[str] service_api_url: The REST front endpoint URL to the data catalog instance.
-        :param pulumi.Input[str] service_console_url: The console front endpoint URL to the data catalog instance.
-        :param pulumi.Input[str] state: The current state of the data catalog resource.
-        :param pulumi.Input[str] time_created: The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         if attached_catalog_private_endpoints is not None:
             pulumi.set(__self__, "attached_catalog_private_endpoints", attached_catalog_private_endpoints)
@@ -168,13 +124,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="attachedCatalogPrivateEndpoints")
     def attached_catalog_private_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of private reverse connection endpoints attached to the catalog
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "attached_catalog_private_endpoints")
 
     @attached_catalog_private_endpoints.setter
@@ -184,9 +133,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -196,9 +142,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -208,9 +151,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Data catalog identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -220,9 +160,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -232,9 +169,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -244,9 +178,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="numberOfObjects")
     def number_of_objects(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-        """
         return pulumi.get(self, "number_of_objects")
 
     @number_of_objects.setter
@@ -256,9 +187,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="serviceApiUrl")
     def service_api_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The REST front endpoint URL to the data catalog instance.
-        """
         return pulumi.get(self, "service_api_url")
 
     @service_api_url.setter
@@ -268,9 +196,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="serviceConsoleUrl")
     def service_console_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The console front endpoint URL to the data catalog instance.
-        """
         return pulumi.get(self, "service_console_url")
 
     @service_console_url.setter
@@ -280,9 +205,6 @@ class _CatalogState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the data catalog resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -292,9 +214,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -304,9 +223,6 @@ class _CatalogState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -326,47 +242,9 @@ class Catalog(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new data catalog instance that includes a console and an API URL for managing metadata operations.
-        For more information, please see the documentation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_catalog = oci.data_catalog.Catalog("testCatalog",
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["catalog_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        Catalogs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
-        ```
-
+        Create a Catalog resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         ...
     @overload
@@ -375,36 +253,7 @@ class Catalog(pulumi.CustomResource):
                  args: CatalogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new data catalog instance that includes a console and an API URL for managing metadata operations.
-        For more information, please see the documentation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_catalog = oci.data_catalog.Catalog("testCatalog",
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["catalog_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        Catalogs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
-        ```
-
+        Create a Catalog resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CatalogArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -477,22 +326,6 @@ class Catalog(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[int] number_of_objects: The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-        :param pulumi.Input[str] service_api_url: The REST front endpoint URL to the data catalog instance.
-        :param pulumi.Input[str] service_console_url: The console front endpoint URL to the data catalog instance.
-        :param pulumi.Input[str] state: The current state of the data catalog resource.
-        :param pulumi.Input[str] time_created: The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -514,101 +347,61 @@ class Catalog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="attachedCatalogPrivateEndpoints")
-    def attached_catalog_private_endpoints(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The list of private reverse connection endpoints attached to the catalog
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def attached_catalog_private_endpoints(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "attached_catalog_private_endpoints")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Data catalog identifier.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="numberOfObjects")
-    def number_of_objects(self) -> pulumi.Output[int]:
-        """
-        The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-        """
+    def number_of_objects(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "number_of_objects")
 
     @property
     @pulumi.getter(name="serviceApiUrl")
-    def service_api_url(self) -> pulumi.Output[str]:
-        """
-        The REST front endpoint URL to the data catalog instance.
-        """
+    def service_api_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_api_url")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")
-    def service_console_url(self) -> pulumi.Output[str]:
-        """
-        The console front endpoint URL to the data catalog instance.
-        """
+    def service_console_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_console_url")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the data catalog resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

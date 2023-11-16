@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
         /// </summary>
-        public readonly bool IsPolicyEnabled;
+        public readonly bool? IsPolicyEnabled;
         /// <summary>
         /// A list of KMS key details.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private GetClustersClusterImagePolicyConfigResult(
-            bool isPolicyEnabled,
+            bool? isPolicyEnabled,
 
             ImmutableArray<Outputs.GetClustersClusterImagePolicyConfigKeyDetailResult> keyDetails)
         {

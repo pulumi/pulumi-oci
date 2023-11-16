@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -60,18 +59,18 @@ type GetNamespaceStorageRecallCountArgs struct {
 // A collection of values returned by getNamespaceStorageRecallCount.
 type GetNamespaceStorageRecallCountResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 	// This is the total number of recalls made so far
-	RecallCount int `pulumi:"recallCount"`
+	RecallCount *int `pulumi:"recallCount"`
 	// This is the number of recalls that failed
-	RecallFailed int `pulumi:"recallFailed"`
+	RecallFailed *int `pulumi:"recallFailed"`
 	// This is the maximum number of recalls (including successful and pending recalls) allowed
-	RecallLimit int `pulumi:"recallLimit"`
+	RecallLimit *int `pulumi:"recallLimit"`
 	// This is the number of recalls in pending state
-	RecallPending int `pulumi:"recallPending"`
+	RecallPending *int `pulumi:"recallPending"`
 	// This is the number of recalls that succeeded
-	RecallSucceeded int `pulumi:"recallSucceeded"`
+	RecallSucceeded *int `pulumi:"recallSucceeded"`
 }
 
 func GetNamespaceStorageRecallCountOutput(ctx *pulumi.Context, args GetNamespaceStorageRecallCountOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageRecallCountResultOutput {
@@ -112,15 +111,9 @@ func (o GetNamespaceStorageRecallCountResultOutput) ToGetNamespaceStorageRecallC
 	return o
 }
 
-func (o GetNamespaceStorageRecallCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageRecallCountResult] {
-	return pulumix.Output[GetNamespaceStorageRecallCountResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceStorageRecallCountResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceStorageRecallCountResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespaceStorageRecallCountResultOutput) Namespace() pulumi.StringOutput {
@@ -128,28 +121,28 @@ func (o GetNamespaceStorageRecallCountResultOutput) Namespace() pulumi.StringOut
 }
 
 // This is the total number of recalls made so far
-func (o GetNamespaceStorageRecallCountResultOutput) RecallCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) int { return v.RecallCount }).(pulumi.IntOutput)
+func (o GetNamespaceStorageRecallCountResultOutput) RecallCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) *int { return v.RecallCount }).(pulumi.IntPtrOutput)
 }
 
 // This is the number of recalls that failed
-func (o GetNamespaceStorageRecallCountResultOutput) RecallFailed() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) int { return v.RecallFailed }).(pulumi.IntOutput)
+func (o GetNamespaceStorageRecallCountResultOutput) RecallFailed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) *int { return v.RecallFailed }).(pulumi.IntPtrOutput)
 }
 
 // This is the maximum number of recalls (including successful and pending recalls) allowed
-func (o GetNamespaceStorageRecallCountResultOutput) RecallLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) int { return v.RecallLimit }).(pulumi.IntOutput)
+func (o GetNamespaceStorageRecallCountResultOutput) RecallLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) *int { return v.RecallLimit }).(pulumi.IntPtrOutput)
 }
 
 // This is the number of recalls in pending state
-func (o GetNamespaceStorageRecallCountResultOutput) RecallPending() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) int { return v.RecallPending }).(pulumi.IntOutput)
+func (o GetNamespaceStorageRecallCountResultOutput) RecallPending() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) *int { return v.RecallPending }).(pulumi.IntPtrOutput)
 }
 
 // This is the number of recalls that succeeded
-func (o GetNamespaceStorageRecallCountResultOutput) RecallSucceeded() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) int { return v.RecallSucceeded }).(pulumi.IntOutput)
+func (o GetNamespaceStorageRecallCountResultOutput) RecallSucceeded() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecallCountResult) *int { return v.RecallSucceeded }).(pulumi.IntPtrOutput)
 }
 
 func init() {

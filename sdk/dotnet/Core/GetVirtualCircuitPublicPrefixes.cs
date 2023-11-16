@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.
         /// </summary>
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.Core
         private GetVirtualCircuitPublicPrefixesResult(
             ImmutableArray<Outputs.GetVirtualCircuitPublicPrefixesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? verificationState,
 

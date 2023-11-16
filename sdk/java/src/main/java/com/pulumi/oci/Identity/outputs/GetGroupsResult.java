@@ -24,12 +24,12 @@ public final class GetGroupsResult {
      * @return The list of groups.
      * 
      */
-    private List<GetGroupsGroup> groups;
+    private @Nullable List<GetGroupsGroup> groups;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      * 
@@ -57,14 +57,14 @@ public final class GetGroupsResult {
      * 
      */
     public List<GetGroupsGroup> groups() {
-        return this.groups;
+        return this.groups == null ? List.of() : this.groups;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -92,8 +92,8 @@ public final class GetGroupsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetGroupsFilter> filters;
-        private List<GetGroupsGroup> groups;
-        private String id;
+        private @Nullable List<GetGroupsGroup> groups;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -121,16 +121,16 @@ public final class GetGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder groups(List<GetGroupsGroup> groups) {
-            this.groups = Objects.requireNonNull(groups);
+        public Builder groups(@Nullable List<GetGroupsGroup> groups) {
+            this.groups = groups;
             return this;
         }
         public Builder groups(GetGroupsGroup... groups) {
             return groups(List.of(groups));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

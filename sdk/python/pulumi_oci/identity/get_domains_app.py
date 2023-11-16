@@ -395,154 +395,97 @@ class GetDomainsAppResult:
 
     @property
     @pulumi.getter(name="accessTokenExpiry")
-    def access_token_expiry(self) -> int:
-        """
-        Access token expiry
-        """
+    def access_token_expiry(self) -> Optional[int]:
         return pulumi.get(self, "access_token_expiry")
 
     @property
     @pulumi.getter
-    def accounts(self) -> Sequence['outputs.GetDomainsAppAccountResult']:
-        """
-        Accounts of App
-        """
+    def accounts(self) -> Optional[Sequence['outputs.GetDomainsAppAccountResult']]:
         return pulumi.get(self, "accounts")
 
     @property
     @pulumi.getter
-    def active(self) -> bool:
-        """
-        If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-        """
+    def active(self) -> Optional[bool]:
         return pulumi.get(self, "active")
 
     @property
     @pulumi.getter(name="adminRoles")
-    def admin_roles(self) -> Sequence['outputs.GetDomainsAppAdminRoleResult']:
-        """
-        A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
-        """
+    def admin_roles(self) -> Optional[Sequence['outputs.GetDomainsAppAdminRoleResult']]:
         return pulumi.get(self, "admin_roles")
 
     @property
     @pulumi.getter(name="aliasApps")
-    def alias_apps(self) -> Sequence['outputs.GetDomainsAppAliasAppResult']:
-        """
-        Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-        """
+    def alias_apps(self) -> Optional[Sequence['outputs.GetDomainsAppAliasAppResult']]:
         return pulumi.get(self, "alias_apps")
 
     @property
     @pulumi.getter(name="allUrlSchemesAllowed")
-    def all_url_schemes_allowed(self) -> bool:
-        """
-        If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-        """
+    def all_url_schemes_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "all_url_schemes_allowed")
 
     @property
     @pulumi.getter(name="allowAccessControl")
-    def allow_access_control(self) -> bool:
-        """
-        If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-        """
+    def allow_access_control(self) -> Optional[bool]:
         return pulumi.get(self, "allow_access_control")
 
     @property
     @pulumi.getter(name="allowOffline")
-    def allow_offline(self) -> bool:
-        """
-        If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-        """
+    def allow_offline(self) -> Optional[bool]:
         return pulumi.get(self, "allow_offline")
 
     @property
     @pulumi.getter(name="allowedGrants")
-    def allowed_grants(self) -> Sequence[str]:
-        """
-        List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-        """
+    def allowed_grants(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_grants")
 
     @property
     @pulumi.getter(name="allowedOperations")
-    def allowed_operations(self) -> Sequence[str]:
-        """
-        OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-        """
+    def allowed_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_operations")
 
     @property
     @pulumi.getter(name="allowedScopes")
-    def allowed_scopes(self) -> Sequence['outputs.GetDomainsAppAllowedScopeResult']:
-        """
-        A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-        """
+    def allowed_scopes(self) -> Optional[Sequence['outputs.GetDomainsAppAllowedScopeResult']]:
         return pulumi.get(self, "allowed_scopes")
 
     @property
     @pulumi.getter(name="allowedTags")
-    def allowed_tags(self) -> Sequence['outputs.GetDomainsAppAllowedTagResult']:
-        """
-        A list of tags, acting as an OAuthClient, this App is allowed to access.
-        """
+    def allowed_tags(self) -> Optional[Sequence['outputs.GetDomainsAppAllowedTagResult']]:
         return pulumi.get(self, "allowed_tags")
 
     @property
     @pulumi.getter(name="appIcon")
-    def app_icon(self) -> str:
-        """
-        Application icon.
-        """
+    def app_icon(self) -> Optional[str]:
         return pulumi.get(self, "app_icon")
 
     @property
     @pulumi.getter(name="appId")
     def app_id(self) -> str:
-        """
-        The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
-        """
         return pulumi.get(self, "app_id")
 
     @property
     @pulumi.getter(name="appSignonPolicies")
-    def app_signon_policies(self) -> Sequence['outputs.GetDomainsAppAppSignonPolicyResult']:
-        """
-        App Sign-on Policy.
-        """
+    def app_signon_policies(self) -> Optional[Sequence['outputs.GetDomainsAppAppSignonPolicyResult']]:
         return pulumi.get(self, "app_signon_policies")
 
     @property
     @pulumi.getter(name="appThumbnail")
-    def app_thumbnail(self) -> str:
-        """
-        Application thumbnail.
-        """
+    def app_thumbnail(self) -> Optional[str]:
         return pulumi.get(self, "app_thumbnail")
 
     @property
     @pulumi.getter(name="appsNetworkPerimeters")
-    def apps_network_perimeters(self) -> Sequence['outputs.GetDomainsAppAppsNetworkPerimeterResult']:
-        """
-        Network Perimeter
-        """
+    def apps_network_perimeters(self) -> Optional[Sequence['outputs.GetDomainsAppAppsNetworkPerimeterResult']]:
         return pulumi.get(self, "apps_network_perimeters")
 
     @property
     @pulumi.getter(name="asOpcServices")
-    def as_opc_services(self) -> Sequence['outputs.GetDomainsAppAsOpcServiceResult']:
-        """
-        OPCService facet of the application.
-        """
+    def as_opc_services(self) -> Optional[Sequence['outputs.GetDomainsAppAsOpcServiceResult']]:
         return pulumi.get(self, "as_opc_services")
 
     @property
     @pulumi.getter(name="attrRenderingMetadatas")
-    def attr_rendering_metadatas(self) -> Sequence['outputs.GetDomainsAppAttrRenderingMetadataResult']:
-        """
-        Label for the attribute to be shown in the UI.
-        """
+    def attr_rendering_metadatas(self) -> Optional[Sequence['outputs.GetDomainsAppAttrRenderingMetadataResult']]:
         return pulumi.get(self, "attr_rendering_metadatas")
 
     @property
@@ -557,10 +500,7 @@ class GetDomainsAppResult:
 
     @property
     @pulumi.getter
-    def audience(self) -> str:
-        """
-        The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-        """
+    def audience(self) -> Optional[str]:
         return pulumi.get(self, "audience")
 
     @property
@@ -570,210 +510,132 @@ class GetDomainsAppResult:
 
     @property
     @pulumi.getter(name="basedOnTemplates")
-    def based_on_templates(self) -> Sequence['outputs.GetDomainsAppBasedOnTemplateResult']:
-        """
-        Application template on which the application is based.
-        """
+    def based_on_templates(self) -> Optional[Sequence['outputs.GetDomainsAppBasedOnTemplateResult']]:
         return pulumi.get(self, "based_on_templates")
 
     @property
     @pulumi.getter(name="bypassConsent")
-    def bypass_consent(self) -> bool:
-        """
-        If true, indicates that consent should be skipped for all scopes
-        """
+    def bypass_consent(self) -> Optional[bool]:
         return pulumi.get(self, "bypass_consent")
 
     @property
     @pulumi.getter(name="callbackServiceUrl")
-    def callback_service_url(self) -> str:
-        """
-        Callback Service URL
-        """
+    def callback_service_url(self) -> Optional[str]:
         return pulumi.get(self, "callback_service_url")
 
     @property
     @pulumi.getter
-    def certificates(self) -> Sequence['outputs.GetDomainsAppCertificateResult']:
-        """
-        Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-        """
+    def certificates(self) -> Optional[Sequence['outputs.GetDomainsAppCertificateResult']]:
         return pulumi.get(self, "certificates")
 
     @property
     @pulumi.getter(name="clientIpChecking")
-    def client_ip_checking(self) -> str:
-        """
-        Network Perimeters checking mode
-        """
+    def client_ip_checking(self) -> Optional[str]:
         return pulumi.get(self, "client_ip_checking")
 
     @property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> str:
-        """
-        This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
-        """
+    def client_secret(self) -> Optional[str]:
         return pulumi.get(self, "client_secret")
 
     @property
     @pulumi.getter(name="clientType")
-    def client_type(self) -> str:
-        """
-        Specifies the type of access that this App has when it acts as an OAuthClient.
-        """
+    def client_type(self) -> Optional[str]:
         return pulumi.get(self, "client_type")
 
     @property
     @pulumi.getter(name="cloudControlProperties")
-    def cloud_control_properties(self) -> Sequence['outputs.GetDomainsAppCloudControlPropertyResult']:
-        """
-        A collection of arbitrary properties that scope the privileges of a cloud-control App.
-        """
+    def cloud_control_properties(self) -> Optional[Sequence['outputs.GetDomainsAppCloudControlPropertyResult']]:
         return pulumi.get(self, "cloud_control_properties")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="contactEmailAddress")
-    def contact_email_address(self) -> str:
-        """
-        Contact Email Address
-        """
+    def contact_email_address(self) -> Optional[str]:
         return pulumi.get(self, "contact_email_address")
 
     @property
     @pulumi.getter(name="delegatedServiceNames")
-    def delegated_service_names(self) -> Sequence[str]:
-        """
-        Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-        """
+    def delegated_service_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "delegated_service_names")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the AppRole.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="disableKmsiTokenAuthentication")
-    def disable_kmsi_token_authentication(self) -> bool:
-        """
-        Indicates whether the application is allowed to be access using kmsi token.
-        """
+    def disable_kmsi_token_authentication(self) -> Optional[bool]:
         return pulumi.get(self, "disable_kmsi_token_authentication")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="editableAttributes")
-    def editable_attributes(self) -> Sequence['outputs.GetDomainsAppEditableAttributeResult']:
-        """
-        App attributes editable by subject
-        """
+    def editable_attributes(self) -> Optional[Sequence['outputs.GetDomainsAppEditableAttributeResult']]:
         return pulumi.get(self, "editable_attributes")
 
     @property
     @pulumi.getter(name="errorPageUrl")
-    def error_page_url(self) -> str:
-        """
-        This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-        """
+    def error_page_url(self) -> Optional[str]:
         return pulumi.get(self, "error_page_url")
 
     @property
     @pulumi.getter(name="grantedAppRoles")
-    def granted_app_roles(self) -> Sequence['outputs.GetDomainsAppGrantedAppRoleResult']:
-        """
-        A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
-        """
+    def granted_app_roles(self) -> Optional[Sequence['outputs.GetDomainsAppGrantedAppRoleResult']]:
         return pulumi.get(self, "granted_app_roles")
 
     @property
     @pulumi.getter
-    def grants(self) -> Sequence['outputs.GetDomainsAppGrantResult']:
-        """
-        Grants assigned to the app
-        """
+    def grants(self) -> Optional[Sequence['outputs.GetDomainsAppGrantResult']]:
         return pulumi.get(self, "grants")
 
     @property
     @pulumi.getter(name="hashedClientSecret")
-    def hashed_client_secret(self) -> str:
-        """
-        Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
-        """
+    def hashed_client_secret(self) -> Optional[str]:
         return pulumi.get(self, "hashed_client_secret")
 
     @property
     @pulumi.getter(name="homePageUrl")
-    def home_page_url(self) -> str:
-        """
-        Home Page URL
-        """
+    def home_page_url(self) -> Optional[str]:
         return pulumi.get(self, "home_page_url")
 
     @property
     @pulumi.getter
-    def icon(self) -> str:
-        """
-        URL of application icon.
-        """
+    def icon(self) -> Optional[str]:
         return pulumi.get(self, "icon")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idTokenEncAlgo")
-    def id_token_enc_algo(self) -> str:
-        """
-        Encryption Alogrithm to use for encrypting ID token.
-        """
+    def id_token_enc_algo(self) -> Optional[str]:
         return pulumi.get(self, "id_token_enc_algo")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsAppIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsAppIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -783,346 +645,217 @@ class GetDomainsAppResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsAppIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsAppIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="identityProviders")
-    def identity_providers(self) -> Sequence['outputs.GetDomainsAppIdentityProviderResult']:
-        """
-        A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-        """
+    def identity_providers(self) -> Optional[Sequence['outputs.GetDomainsAppIdentityProviderResult']]:
         return pulumi.get(self, "identity_providers")
 
     @property
     @pulumi.getter(name="idpPolicies")
-    def idp_policies(self) -> Sequence['outputs.GetDomainsAppIdpPolicyResult']:
-        """
-        IDP Policy.
-        """
+    def idp_policies(self) -> Optional[Sequence['outputs.GetDomainsAppIdpPolicyResult']]:
         return pulumi.get(self, "idp_policies")
 
     @property
     @pulumi.getter
-    def infrastructure(self) -> bool:
-        """
-        If true, this App is an internal infrastructure App.
-        """
+    def infrastructure(self) -> Optional[bool]:
         return pulumi.get(self, "infrastructure")
 
     @property
     @pulumi.getter(name="isAliasApp")
-    def is_alias_app(self) -> bool:
-        """
-        If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-        """
+    def is_alias_app(self) -> Optional[bool]:
         return pulumi.get(self, "is_alias_app")
 
     @property
     @pulumi.getter(name="isDatabaseService")
-    def is_database_service(self) -> bool:
-        """
-        If true, this application acts as database service Application
-        """
+    def is_database_service(self) -> Optional[bool]:
         return pulumi.get(self, "is_database_service")
 
     @property
     @pulumi.getter(name="isEnterpriseApp")
-    def is_enterprise_app(self) -> bool:
-        """
-        If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-        """
+    def is_enterprise_app(self) -> Optional[bool]:
         return pulumi.get(self, "is_enterprise_app")
 
     @property
     @pulumi.getter(name="isFormFill")
-    def is_form_fill(self) -> bool:
-        """
-        If true, this application acts as FormFill Application
-        """
+    def is_form_fill(self) -> Optional[bool]:
         return pulumi.get(self, "is_form_fill")
 
     @property
     @pulumi.getter(name="isKerberosRealm")
-    def is_kerberos_realm(self) -> bool:
-        """
-        If true, indicates that this App supports Kerberos Authentication
-        """
+    def is_kerberos_realm(self) -> Optional[bool]:
         return pulumi.get(self, "is_kerberos_realm")
 
     @property
     @pulumi.getter(name="isLoginTarget")
-    def is_login_target(self) -> bool:
-        """
-        If true, this App allows runtime services to log end users into this App automatically.
-        """
+    def is_login_target(self) -> Optional[bool]:
         return pulumi.get(self, "is_login_target")
 
     @property
     @pulumi.getter(name="isManagedApp")
-    def is_managed_app(self) -> bool:
-        """
-        If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
-        """
+    def is_managed_app(self) -> Optional[bool]:
         return pulumi.get(self, "is_managed_app")
 
     @property
     @pulumi.getter(name="isMobileTarget")
-    def is_mobile_target(self) -> bool:
-        """
-        If true, indicates that the App should be visible in each end-user's mobile application.
-        """
+    def is_mobile_target(self) -> Optional[bool]:
         return pulumi.get(self, "is_mobile_target")
 
     @property
     @pulumi.getter(name="isMulticloudServiceApp")
-    def is_multicloud_service_app(self) -> bool:
-        """
-        If true, indicates the app is used for multicloud service integration.
-        """
+    def is_multicloud_service_app(self) -> Optional[bool]:
         return pulumi.get(self, "is_multicloud_service_app")
 
     @property
     @pulumi.getter(name="isOauthClient")
-    def is_oauth_client(self) -> bool:
-        """
-        If true, this application acts as an OAuth Client
-        """
+    def is_oauth_client(self) -> Optional[bool]:
         return pulumi.get(self, "is_oauth_client")
 
     @property
     @pulumi.getter(name="isOauthResource")
-    def is_oauth_resource(self) -> bool:
-        """
-        If true, indicates that this application acts as an OAuth Resource.
-        """
+    def is_oauth_resource(self) -> Optional[bool]:
         return pulumi.get(self, "is_oauth_resource")
 
     @property
     @pulumi.getter(name="isObligationCapable")
-    def is_obligation_capable(self) -> bool:
-        """
-        This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-        """
+    def is_obligation_capable(self) -> Optional[bool]:
         return pulumi.get(self, "is_obligation_capable")
 
     @property
     @pulumi.getter(name="isOpcService")
-    def is_opc_service(self) -> bool:
-        """
-        If true, this application is an Oracle Public Cloud service-instance.
-        """
+    def is_opc_service(self) -> Optional[bool]:
         return pulumi.get(self, "is_opc_service")
 
     @property
     @pulumi.getter(name="isRadiusApp")
-    def is_radius_app(self) -> bool:
-        """
-        If true, this application acts as an Radius App
-        """
+    def is_radius_app(self) -> Optional[bool]:
         return pulumi.get(self, "is_radius_app")
 
     @property
     @pulumi.getter(name="isSamlServiceProvider")
-    def is_saml_service_provider(self) -> bool:
-        """
-        If true, then this App acts as a SAML Service Provider.
-        """
+    def is_saml_service_provider(self) -> Optional[bool]:
         return pulumi.get(self, "is_saml_service_provider")
 
     @property
     @pulumi.getter(name="isUnmanagedApp")
-    def is_unmanaged_app(self) -> bool:
-        """
-        If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-        """
+    def is_unmanaged_app(self) -> Optional[bool]:
         return pulumi.get(self, "is_unmanaged_app")
 
     @property
     @pulumi.getter(name="isWebTierPolicy")
-    def is_web_tier_policy(self) -> bool:
-        """
-        If true, the webtier policy is active
-        """
+    def is_web_tier_policy(self) -> Optional[bool]:
         return pulumi.get(self, "is_web_tier_policy")
 
     @property
     @pulumi.getter(name="landingPageUrl")
-    def landing_page_url(self) -> str:
-        """
-        The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-        """
+    def landing_page_url(self) -> Optional[str]:
         return pulumi.get(self, "landing_page_url")
 
     @property
     @pulumi.getter(name="linkingCallbackUrl")
-    def linking_callback_url(self) -> str:
-        """
-        This attribute specifies the callback URL for the social linking operation.
-        """
+    def linking_callback_url(self) -> Optional[str]:
         return pulumi.get(self, "linking_callback_url")
 
     @property
     @pulumi.getter(name="loginMechanism")
-    def login_mechanism(self) -> str:
-        """
-        The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-        """
+    def login_mechanism(self) -> Optional[str]:
         return pulumi.get(self, "login_mechanism")
 
     @property
     @pulumi.getter(name="loginPageUrl")
-    def login_page_url(self) -> str:
-        """
-        This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-        """
+    def login_page_url(self) -> Optional[str]:
         return pulumi.get(self, "login_page_url")
 
     @property
     @pulumi.getter(name="logoutPageUrl")
-    def logout_page_url(self) -> str:
-        """
-        This attribute specifies the URL of the page that the App uses when an end-user signs out.
-        """
+    def logout_page_url(self) -> Optional[str]:
         return pulumi.get(self, "logout_page_url")
 
     @property
     @pulumi.getter(name="logoutUri")
-    def logout_uri(self) -> str:
-        """
-        OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-        """
+    def logout_uri(self) -> Optional[str]:
         return pulumi.get(self, "logout_uri")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsAppMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsAppMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="meterAsOpcService")
-    def meter_as_opc_service(self) -> bool:
-        """
-        Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
-        """
+    def meter_as_opc_service(self) -> Optional[bool]:
         return pulumi.get(self, "meter_as_opc_service")
 
     @property
     @pulumi.getter
-    def migrated(self) -> bool:
-        """
-        If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
-        """
+    def migrated(self) -> Optional[bool]:
         return pulumi.get(self, "migrated")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="postLogoutRedirectUris")
-    def post_logout_redirect_uris(self) -> Sequence[str]:
-        """
-        Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-        """
+    def post_logout_redirect_uris(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "post_logout_redirect_uris")
 
     @property
     @pulumi.getter(name="privacyPolicyUrl")
-    def privacy_policy_url(self) -> str:
-        """
-        Privacy Policy URL
-        """
+    def privacy_policy_url(self) -> Optional[str]:
         return pulumi.get(self, "privacy_policy_url")
 
     @property
     @pulumi.getter(name="productLogoUrl")
-    def product_logo_url(self) -> str:
-        """
-        Application Logo URL
-        """
+    def product_logo_url(self) -> Optional[str]:
         return pulumi.get(self, "product_logo_url")
 
     @property
     @pulumi.getter(name="productName")
-    def product_name(self) -> str:
-        """
-        Product Name
-        """
+    def product_name(self) -> Optional[str]:
         return pulumi.get(self, "product_name")
 
     @property
     @pulumi.getter(name="protectableSecondaryAudiences")
-    def protectable_secondary_audiences(self) -> Sequence['outputs.GetDomainsAppProtectableSecondaryAudienceResult']:
-        """
-        A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-        """
+    def protectable_secondary_audiences(self) -> Optional[Sequence['outputs.GetDomainsAppProtectableSecondaryAudienceResult']]:
         return pulumi.get(self, "protectable_secondary_audiences")
 
     @property
     @pulumi.getter(name="radiusPolicies")
-    def radius_policies(self) -> Sequence['outputs.GetDomainsAppRadiusPolicyResult']:
-        """
-        RADIUS Policy assigned to this application.
-        """
+    def radius_policies(self) -> Optional[Sequence['outputs.GetDomainsAppRadiusPolicyResult']]:
         return pulumi.get(self, "radius_policies")
 
     @property
     @pulumi.getter(name="readyToUpgrade")
-    def ready_to_upgrade(self) -> bool:
-        """
-        If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
-        """
+    def ready_to_upgrade(self) -> Optional[bool]:
         return pulumi.get(self, "ready_to_upgrade")
 
     @property
     @pulumi.getter(name="redirectUris")
-    def redirect_uris(self) -> Sequence[str]:
-        """
-        OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-        """
+    def redirect_uris(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "redirect_uris")
 
     @property
     @pulumi.getter(name="refreshTokenExpiry")
-    def refresh_token_expiry(self) -> int:
-        """
-        Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-        """
+    def refresh_token_expiry(self) -> Optional[int]:
         return pulumi.get(self, "refresh_token_expiry")
 
     @property
@@ -1132,234 +865,147 @@ class GetDomainsAppResult:
 
     @property
     @pulumi.getter(name="samlServiceProviders")
-    def saml_service_providers(self) -> Sequence['outputs.GetDomainsAppSamlServiceProviderResult']:
-        """
-        An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-        """
+    def saml_service_providers(self) -> Optional[Sequence['outputs.GetDomainsAppSamlServiceProviderResult']]:
         return pulumi.get(self, "saml_service_providers")
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def scopes(self) -> Sequence['outputs.GetDomainsAppScopeResult']:
-        """
-        Scopes defined by this App. Used when this App acts as an OAuth Resource.
-        """
+    def scopes(self) -> Optional[Sequence['outputs.GetDomainsAppScopeResult']]:
         return pulumi.get(self, "scopes")
 
     @property
     @pulumi.getter(name="secondaryAudiences")
-    def secondary_audiences(self) -> Sequence[str]:
-        """
-        A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-        """
+    def secondary_audiences(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "secondary_audiences")
 
     @property
     @pulumi.getter(name="serviceParams")
-    def service_params(self) -> Sequence['outputs.GetDomainsAppServiceParamResult']:
-        """
-        Custom attribute that is required to compute other attribute values during app creation.
-        """
+    def service_params(self) -> Optional[Sequence['outputs.GetDomainsAppServiceParamResult']]:
         return pulumi.get(self, "service_params")
 
     @property
     @pulumi.getter(name="serviceTypeUrn")
-    def service_type_urn(self) -> str:
-        """
-        This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-        """
+    def service_type_urn(self) -> Optional[str]:
         return pulumi.get(self, "service_type_urn")
 
     @property
     @pulumi.getter(name="serviceTypeVersion")
-    def service_type_version(self) -> str:
-        """
-        This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-        """
+    def service_type_version(self) -> Optional[str]:
         return pulumi.get(self, "service_type_version")
 
     @property
     @pulumi.getter(name="showInMyApps")
-    def show_in_my_apps(self) -> bool:
-        """
-        If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-        """
+    def show_in_my_apps(self) -> Optional[bool]:
         return pulumi.get(self, "show_in_my_apps")
 
     @property
     @pulumi.getter(name="signonPolicies")
-    def signon_policies(self) -> Sequence['outputs.GetDomainsAppSignonPolicyResult']:
-        """
-        Sign-on Policy.
-        """
+    def signon_policies(self) -> Optional[Sequence['outputs.GetDomainsAppSignonPolicyResult']]:
         return pulumi.get(self, "signon_policies")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsAppTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsAppTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="termsOfServiceUrl")
-    def terms_of_service_url(self) -> str:
-        """
-        Terms of Service URL
-        """
+    def terms_of_service_url(self) -> Optional[str]:
         return pulumi.get(self, "terms_of_service_url")
 
     @property
     @pulumi.getter(name="termsOfUses")
-    def terms_of_uses(self) -> Sequence['outputs.GetDomainsAppTermsOfUseResult']:
-        """
-        Terms Of Use.
-        """
+    def terms_of_uses(self) -> Optional[Sequence['outputs.GetDomainsAppTermsOfUseResult']]:
         return pulumi.get(self, "terms_of_uses")
 
     @property
     @pulumi.getter(name="trustPolicies")
-    def trust_policies(self) -> Sequence['outputs.GetDomainsAppTrustPolicyResult']:
-        """
-        Trust Policies.
-        """
+    def trust_policies(self) -> Optional[Sequence['outputs.GetDomainsAppTrustPolicyResult']]:
         return pulumi.get(self, "trust_policies")
 
     @property
     @pulumi.getter(name="trustScope")
-    def trust_scope(self) -> str:
-        """
-        Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-        """
+    def trust_scope(self) -> Optional[str]:
         return pulumi.get(self, "trust_scope")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagResult']:
-        """
-        Oracle Cloud Infrastructure Tags.
-        """
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsApps")
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppResult']:
-        """
-        This extension provides attributes for database service facet of an App
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps")
-    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppResult']:
-        """
-        This extension defines the Enterprise App related attributes.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApps")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppResult']:
-        """
-        This extension provides attributes for Form-Fill facet of App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_templates(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateResult']:
-        """
-        This extension provides attributes for Form-Fill facet of AppTemplate
-        """
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_templates(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_templates")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppResult']:
-        """
-        Kerberos Realm
-        """
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApps")
-    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppResult']:
-        """
-        Managed App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps")
-    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppResult']:
-        """
-        This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApps")
-    def urnietfparamsscimschemasoracleidcsextensionopc_service_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppResult']:
-        """
-        This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionopc_service_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApps")
-    def urnietfparamsscimschemasoracleidcsextensionradius_app_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResult']:
-        """
-        This extension defines attributes specific to Apps that represent instances of Radius App.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionradius_app_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableApps")
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppResult']:
-        """
-        Requestable App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps")
-    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppResult']:
-        """
-        This extension defines attributes related to the Service Providers configuration.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps")
-    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps(self) -> Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResult']:
-        """
-        WebTier Policy
-        """
+    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps(self) -> Optional[Sequence['outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps")
 
     @property
     @pulumi.getter(name="userRoles")
-    def user_roles(self) -> Sequence['outputs.GetDomainsAppUserRoleResult']:
-        """
-        A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
-        """
+    def user_roles(self) -> Optional[Sequence['outputs.GetDomainsAppUserRoleResult']]:
         return pulumi.get(self, "user_roles")
 
 
@@ -1502,31 +1148,7 @@ def get_domains_app(app_id: Optional[str] = None,
                     resource_type_schema_version: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsAppResult:
     """
-    This data source provides details about a specific App resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an App
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app = oci.Identity.get_domains_app(app_id=oci_identity_domains_app["test_app"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["app_authorization"],
-        resource_type_schema_version=var["app_resource_type_schema_version"])
-    ```
-
-
-    :param str app_id: ID of the resource
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['appId'] = app_id
@@ -1673,30 +1295,6 @@ def get_domains_app_output(app_id: Optional[pulumi.Input[str]] = None,
                            resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsAppResult]:
     """
-    This data source provides details about a specific App resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an App
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app = oci.Identity.get_domains_app(app_id=oci_identity_domains_app["test_app"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["app_authorization"],
-        resource_type_schema_version=var["app_resource_type_schema_version"])
-    ```
-
-
-    :param str app_id: ID of the resource
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

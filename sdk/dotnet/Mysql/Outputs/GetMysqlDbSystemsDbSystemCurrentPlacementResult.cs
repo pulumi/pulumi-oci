@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The availability domain in which the DB System is placed.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
 
         [OutputConstructor]
         private GetMysqlDbSystemsDbSystemCurrentPlacementResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string faultDomain)
+            string? faultDomain)
         {
             AvailabilityDomain = availabilityDomain;
             FaultDomain = faultDomain;

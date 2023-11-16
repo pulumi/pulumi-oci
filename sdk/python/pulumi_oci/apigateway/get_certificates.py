@@ -45,26 +45,17 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter(name="certificateCollections")
-    def certificate_collections(self) -> Sequence['outputs.GetCertificatesCertificateCollectionResult']:
-        """
-        The list of certificate_collection.
-        """
+    def certificate_collections(self) -> Optional[Sequence['outputs.GetCertificatesCertificateCollectionResult']]:
         return pulumi.get(self, "certificate_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetCertificatesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the certificate.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_certificates(compartment_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesResult:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of certificates.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.ApiGateway.get_certificates(compartment_id=var["compartment_id"],
-        display_name=var["certificate_display_name"],
-        state=var["certificate_state"])
-    ```
-
-
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE` or `DELETED`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificatesResult]:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of certificates.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.ApiGateway.get_certificates(compartment_id=var["compartment_id"],
-        display_name=var["certificate_display_name"],
-        state=var["certificate_state"])
-    ```
-
-
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE` or `DELETED`
+    Use this data source to access information about an existing resource.
     """
     ...

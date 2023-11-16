@@ -32,14 +32,14 @@ public final class GetOnpremConnectorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String onPremConnectorId;
     private @Nullable String onPremConnectorLifecycleState;
     /**
      * @return The list of on_prem_connectors.
      * 
      */
-    private List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
+    private @Nullable List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
 
     private GetOnpremConnectorsResult() {}
     public Optional<String> accessLevel() {
@@ -69,8 +69,8 @@ public final class GetOnpremConnectorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> onPremConnectorId() {
         return Optional.ofNullable(this.onPremConnectorId);
@@ -83,7 +83,7 @@ public final class GetOnpremConnectorsResult {
      * 
      */
     public List<GetOnpremConnectorsOnPremConnector> onPremConnectors() {
-        return this.onPremConnectors;
+        return this.onPremConnectors == null ? List.of() : this.onPremConnectors;
     }
 
     public static Builder builder() {
@@ -100,10 +100,10 @@ public final class GetOnpremConnectorsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetOnpremConnectorsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String onPremConnectorId;
         private @Nullable String onPremConnectorLifecycleState;
-        private List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
+        private @Nullable List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
         public Builder() {}
         public Builder(GetOnpremConnectorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -147,8 +147,8 @@ public final class GetOnpremConnectorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -162,8 +162,8 @@ public final class GetOnpremConnectorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder onPremConnectors(List<GetOnpremConnectorsOnPremConnector> onPremConnectors) {
-            this.onPremConnectors = Objects.requireNonNull(onPremConnectors);
+        public Builder onPremConnectors(@Nullable List<GetOnpremConnectorsOnPremConnector> onPremConnectors) {
+            this.onPremConnectors = onPremConnectors;
             return this;
         }
         public Builder onPremConnectors(GetOnpremConnectorsOnPremConnector... onPremConnectors) {

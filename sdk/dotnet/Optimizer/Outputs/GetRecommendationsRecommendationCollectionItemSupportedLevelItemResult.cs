@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult(string name)
+        private GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult(string? name)
         {
             Name = name;
         }

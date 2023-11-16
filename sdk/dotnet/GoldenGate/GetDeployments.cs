@@ -243,7 +243,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Possible GGS lifecycle sub-states.
         /// </summary>
@@ -270,7 +270,7 @@ namespace Pulumi.Oci.GoldenGate
 
             string? fqdn,
 
-            string id,
+            string? id,
 
             string? lifecycleSubState,
 

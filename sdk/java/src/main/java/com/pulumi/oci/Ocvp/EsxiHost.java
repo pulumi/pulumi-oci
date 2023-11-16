@@ -44,14 +44,14 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="billingContractEndDate", refs={String.class}, tree="[0]")
-    private Output<String> billingContractEndDate;
+    private Output</* @Nullable */ String> billingContractEndDate;
 
     /**
      * @return Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> billingContractEndDate() {
-        return this.billingContractEndDate;
+    public Output<Optional<String>> billingContractEndDate() {
+        return Codegen.optional(this.billingContractEndDate);
     }
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
@@ -62,70 +62,70 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
     @Export(name="billingDonorHostId", refs={String.class}, tree="[0]")
-    private Output<String> billingDonorHostId;
+    private Output</* @Nullable */ String> billingDonorHostId;
 
     /**
      * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      * 
      */
-    public Output<String> billingDonorHostId() {
-        return this.billingDonorHostId;
+    public Output<Optional<String>> billingDonorHostId() {
+        return Codegen.optional(this.billingDonorHostId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
      */
     @Export(name="capacityReservationId", refs={String.class}, tree="[0]")
-    private Output<String> capacityReservationId;
+    private Output</* @Nullable */ String> capacityReservationId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
      */
-    public Output<String> capacityReservationId() {
-        return this.capacityReservationId;
+    public Output<Optional<String>> capacityReservationId() {
+        return Codegen.optional(this.capacityReservationId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      * 
      */
     @Export(name="computeAvailabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> computeAvailabilityDomain;
+    private Output</* @Nullable */ String> computeAvailabilityDomain;
 
     /**
      * @return The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      * 
      */
-    public Output<String> computeAvailabilityDomain() {
-        return this.computeAvailabilityDomain;
+    public Output<Optional<String>> computeAvailabilityDomain() {
+        return Codegen.optional(this.computeAvailabilityDomain);
     }
     /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
      */
     @Export(name="computeInstanceId", refs={String.class}, tree="[0]")
-    private Output<String> computeInstanceId;
+    private Output</* @Nullable */ String> computeInstanceId;
 
     /**
      * @return In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
      */
-    public Output<String> computeInstanceId() {
-        return this.computeInstanceId;
+    public Output<Optional<String>> computeInstanceId() {
+        return Codegen.optional(this.computeInstanceId);
     }
     /**
      * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -136,28 +136,28 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
     @Export(name="currentSku", refs={String.class}, tree="[0]")
-    private Output<String> currentSku;
+    private Output</* @Nullable */ String> currentSku;
 
     /**
      * @return (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
-    public Output<String> currentSku() {
-        return this.currentSku;
+    public Output<Optional<String>> currentSku() {
+        return Codegen.optional(this.currentSku);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
@@ -168,7 +168,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
@@ -178,8 +178,8 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
@@ -190,98 +190,98 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
     @Export(name="failedEsxiHostId", refs={String.class}, tree="[0]")
-    private Output<String> failedEsxiHostId;
+    private Output</* @Nullable */ String> failedEsxiHostId;
 
     /**
      * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
-    public Output<String> failedEsxiHostId() {
-        return this.failedEsxiHostId;
+    public Output<Optional<String>> failedEsxiHostId() {
+        return Codegen.optional(this.failedEsxiHostId);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
      * 
      */
     @Export(name="gracePeriodEndDate", refs={String.class}, tree="[0]")
-    private Output<String> gracePeriodEndDate;
+    private Output</* @Nullable */ String> gracePeriodEndDate;
 
     /**
      * @return The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
      * 
      */
-    public Output<String> gracePeriodEndDate() {
-        return this.gracePeriodEndDate;
+    public Output<Optional<String>> gracePeriodEndDate() {
+        return Codegen.optional(this.gracePeriodEndDate);
     }
     /**
      * The OCPU count of the ESXi host.
      * 
      */
     @Export(name="hostOcpuCount", refs={Double.class}, tree="[0]")
-    private Output<Double> hostOcpuCount;
+    private Output</* @Nullable */ Double> hostOcpuCount;
 
     /**
      * @return The OCPU count of the ESXi host.
      * 
      */
-    public Output<Double> hostOcpuCount() {
-        return this.hostOcpuCount;
+    public Output<Optional<Double>> hostOcpuCount() {
+        return Codegen.optional(this.hostOcpuCount);
     }
     /**
      * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     @Export(name="hostShapeName", refs={String.class}, tree="[0]")
-    private Output<String> hostShapeName;
+    private Output</* @Nullable */ String> hostShapeName;
 
     /**
      * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
-    public Output<String> hostShapeName() {
-        return this.hostShapeName;
+    public Output<Optional<String>> hostShapeName() {
+        return Codegen.optional(this.hostShapeName);
     }
     /**
      * Indicates whether this host is in the progress of billing continuation.
      * 
      */
     @Export(name="isBillingContinuationInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBillingContinuationInProgress;
+    private Output</* @Nullable */ Boolean> isBillingContinuationInProgress;
 
     /**
      * @return Indicates whether this host is in the progress of billing continuation.
      * 
      */
-    public Output<Boolean> isBillingContinuationInProgress() {
-        return this.isBillingContinuationInProgress;
+    public Output<Optional<Boolean>> isBillingContinuationInProgress() {
+        return Codegen.optional(this.isBillingContinuationInProgress);
     }
     /**
      * Indicates whether this host is in the progress of swapping billing.
      * 
      */
     @Export(name="isBillingSwappingInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBillingSwappingInProgress;
+    private Output</* @Nullable */ Boolean> isBillingSwappingInProgress;
 
     /**
      * @return Indicates whether this host is in the progress of swapping billing.
      * 
      */
-    public Output<Boolean> isBillingSwappingInProgress() {
-        return this.isBillingSwappingInProgress;
+    public Output<Optional<Boolean>> isBillingSwappingInProgress() {
+        return Codegen.optional(this.isBillingSwappingInProgress);
     }
     /**
      * @deprecated
@@ -290,10 +290,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
     @Export(name="nextSku", refs={String.class}, tree="[0]")
-    private Output<String> nextSku;
+    private Output</* @Nullable */ String> nextSku;
 
-    public Output<String> nextSku() {
-        return this.nextSku;
+    public Output<Optional<String>> nextSku() {
+        return Codegen.optional(this.nextSku);
     }
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
@@ -304,28 +304,28 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     @Export(name="nonUpgradedEsxiHostId", refs={String.class}, tree="[0]")
-    private Output<String> nonUpgradedEsxiHostId;
+    private Output</* @Nullable */ String> nonUpgradedEsxiHostId;
 
     /**
      * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      * 
      */
-    public Output<String> nonUpgradedEsxiHostId() {
-        return this.nonUpgradedEsxiHostId;
+    public Output<Optional<String>> nonUpgradedEsxiHostId() {
+        return Codegen.optional(this.nonUpgradedEsxiHostId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
      */
     @Export(name="replacementEsxiHostId", refs={String.class}, tree="[0]")
-    private Output<String> replacementEsxiHostId;
+    private Output</* @Nullable */ String> replacementEsxiHostId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
      */
-    public Output<String> replacementEsxiHostId() {
-        return this.replacementEsxiHostId;
+    public Output<Optional<String>> replacementEsxiHostId() {
+        return Codegen.optional(this.replacementEsxiHostId);
     }
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
@@ -356,84 +356,84 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the ESXi host.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      * 
      */
     @Export(name="swapBillingHostId", refs={String.class}, tree="[0]")
-    private Output<String> swapBillingHostId;
+    private Output</* @Nullable */ String> swapBillingHostId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      * 
      */
-    public Output<String> swapBillingHostId() {
-        return this.swapBillingHostId;
+    public Output<Optional<String>> swapBillingHostId() {
+        return Codegen.optional(this.swapBillingHostId);
     }
     /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      * 
      */
     @Export(name="upgradedReplacementEsxiHostId", refs={String.class}, tree="[0]")
-    private Output<String> upgradedReplacementEsxiHostId;
+    private Output</* @Nullable */ String> upgradedReplacementEsxiHostId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      * 
      */
-    public Output<String> upgradedReplacementEsxiHostId() {
-        return this.upgradedReplacementEsxiHostId;
+    public Output<Optional<String>> upgradedReplacementEsxiHostId() {
+        return Codegen.optional(this.upgradedReplacementEsxiHostId);
     }
     /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
     @Export(name="vmwareSoftwareVersion", refs={String.class}, tree="[0]")
-    private Output<String> vmwareSoftwareVersion;
+    private Output</* @Nullable */ String> vmwareSoftwareVersion;
 
     /**
      * @return The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
-    public Output<String> vmwareSoftwareVersion() {
-        return this.vmwareSoftwareVersion;
+    public Output<Optional<String>> vmwareSoftwareVersion() {
+        return Codegen.optional(this.vmwareSoftwareVersion);
     }
 
     /**

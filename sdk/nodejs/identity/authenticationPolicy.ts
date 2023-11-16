@@ -76,11 +76,11 @@ export class AuthenticationPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Network policy, Consists of a list of Network Source ids.
      */
-    public readonly networkPolicy!: pulumi.Output<outputs.Identity.AuthenticationPolicyNetworkPolicy>;
+    public readonly networkPolicy!: pulumi.Output<outputs.Identity.AuthenticationPolicyNetworkPolicy | undefined>;
     /**
      * (Updatable) Password policy, currently set for the given compartment.
      */
-    public readonly passwordPolicy!: pulumi.Output<outputs.Identity.AuthenticationPolicyPasswordPolicy>;
+    public readonly passwordPolicy!: pulumi.Output<outputs.Identity.AuthenticationPolicyPasswordPolicy | undefined>;
 
     /**
      * Create a AuthenticationPolicy resource with the given unique name, arguments, and options.

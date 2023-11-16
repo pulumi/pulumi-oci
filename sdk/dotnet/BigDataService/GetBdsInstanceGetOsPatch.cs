@@ -140,15 +140,15 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Minimum BDS version required to install current OS patch.
         /// </summary>
-        public readonly string MinBdsVersion;
+        public readonly string? MinBdsVersion;
         /// <summary>
         /// Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
         /// </summary>
-        public readonly ImmutableDictionary<string, object> MinCompatibleOdhVersionMap;
+        public readonly ImmutableDictionary<string, object>? MinCompatibleOdhVersionMap;
         /// <summary>
         /// Version of the os patch.
         /// </summary>
@@ -156,11 +156,11 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
         /// </summary>
-        public readonly string PatchType;
+        public readonly string? PatchType;
         /// <summary>
         /// Released date of the OS patch.
         /// </summary>
-        public readonly string ReleaseDate;
+        public readonly string? ReleaseDate;
         /// <summary>
         /// List of summaries of individual target packages.
         /// </summary>
@@ -172,17 +172,17 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstanceGetOsPatchFilterResult> filters,
 
-            string id,
+            string? id,
 
-            string minBdsVersion,
+            string? minBdsVersion,
 
-            ImmutableDictionary<string, object> minCompatibleOdhVersionMap,
+            ImmutableDictionary<string, object>? minCompatibleOdhVersionMap,
 
             string osPatchVersion,
 
-            string patchType,
+            string? patchType,
 
-            string releaseDate,
+            string? releaseDate,
 
             ImmutableArray<Outputs.GetBdsInstanceGetOsPatchTargetPackageResult> targetPackages)
         {

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// OCID of GoldenGate compute instance.
         /// </summary>
-        public readonly string ComputeId;
+        public readonly string? ComputeId;
         /// <summary>
         /// Database Administrator Credentials details.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Name of GoldenGate deployment to operate on source database
         /// </summary>
-        public readonly string SourceMicroservicesDeploymentName;
+        public readonly string? SourceMicroservicesDeploymentName;
         /// <summary>
         /// Database Administrator Credentials details.
         /// </summary>
@@ -40,15 +40,15 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Name of GoldenGate deployment to operate on target database
         /// </summary>
-        public readonly string TargetMicroservicesDeploymentName;
+        public readonly string? TargetMicroservicesDeploymentName;
         /// <summary>
         /// Oracle GoldenGate hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemGoldenGateDetailHubResult(
-            string computeId,
+            string? computeId,
 
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialResult> restAdminCredentials,
 
@@ -56,13 +56,13 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialResult> sourceDbAdminCredentials,
 
-            string sourceMicroservicesDeploymentName,
+            string? sourceMicroservicesDeploymentName,
 
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialResult> targetDbAdminCredentials,
 
-            string targetMicroservicesDeploymentName,
+            string? targetMicroservicesDeploymentName,
 
-            string url)
+            string? url)
         {
             ComputeId = computeId;
             RestAdminCredentials = restAdminCredentials;

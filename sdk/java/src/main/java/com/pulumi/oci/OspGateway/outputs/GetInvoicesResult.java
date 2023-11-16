@@ -20,12 +20,12 @@ public final class GetInvoicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of invoice_collection.
      * 
      */
-    private List<GetInvoicesInvoiceCollection> invoiceCollections;
+    private @Nullable List<GetInvoicesInvoiceCollection> invoiceCollections;
     /**
      * @return Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
      * 
@@ -51,15 +51,15 @@ public final class GetInvoicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of invoice_collection.
      * 
      */
     public List<GetInvoicesInvoiceCollection> invoiceCollections() {
-        return this.invoiceCollections;
+        return this.invoiceCollections == null ? List.of() : this.invoiceCollections;
     }
     /**
      * @return Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
@@ -104,8 +104,8 @@ public final class GetInvoicesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInvoicesFilter> filters;
-        private String id;
-        private List<GetInvoicesInvoiceCollection> invoiceCollections;
+        private @Nullable String id;
+        private @Nullable List<GetInvoicesInvoiceCollection> invoiceCollections;
         private @Nullable String invoiceId;
         private String ospHomeRegion;
         private @Nullable String searchText;
@@ -147,13 +147,13 @@ public final class GetInvoicesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder invoiceCollections(List<GetInvoicesInvoiceCollection> invoiceCollections) {
-            this.invoiceCollections = Objects.requireNonNull(invoiceCollections);
+        public Builder invoiceCollections(@Nullable List<GetInvoicesInvoiceCollection> invoiceCollections) {
+            this.invoiceCollections = invoiceCollections;
             return this;
         }
         public Builder invoiceCollections(GetInvoicesInvoiceCollection... invoiceCollections) {

@@ -45,18 +45,18 @@ export interface GetNetworkFirewallPolicySecurityRuleResult {
      * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      */
-    readonly action: string;
+    readonly action?: string;
     /**
      * Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      */
-    readonly conditions: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRuleCondition[];
-    readonly id: string;
+    readonly conditions?: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRuleCondition[];
+    readonly id?: string;
     /**
      * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
      * * INTRUSION_DETECTION - Intrusion Detection.
      * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      */
-    readonly inspection: string;
+    readonly inspection?: string;
     /**
      * Name for the Security rule, must be unique within the policy.
      */
@@ -65,12 +65,12 @@ export interface GetNetworkFirewallPolicySecurityRuleResult {
     /**
      * OCID of the Network Firewall Policy this security rule belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * An object which defines the position of the rule.
      */
-    readonly positions: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRulePosition[];
-    readonly priorityOrder: string;
+    readonly positions?: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRulePosition[];
+    readonly priorityOrder?: string;
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.

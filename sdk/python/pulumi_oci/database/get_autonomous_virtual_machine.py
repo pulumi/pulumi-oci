@@ -72,79 +72,52 @@ class GetAutonomousVirtualMachineResult:
 
     @property
     @pulumi.getter(name="autonomousVmClusterId")
-    def autonomous_vm_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
-        """
+    def autonomous_vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="clientIpAddress")
-    def client_ip_address(self) -> str:
-        """
-        Client IP Address.
-        """
+    def client_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "client_ip_address")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The number of CPU cores enabled on the Autonomous Virtual Machine.
-        """
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> int:
-        """
-        The allocated local node storage in GBs on the Autonomous Virtual Machine.
-        """
+    def db_node_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="dbServerDisplayName")
-    def db_server_display_name(self) -> str:
-        """
-        The display name of the dbServer associated with the Autonomous Virtual Machine.
-        """
+    def db_server_display_name(self) -> Optional[str]:
         return pulumi.get(self, "db_server_display_name")
 
     @property
     @pulumi.getter(name="dbServerId")
-    def db_server_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
-        """
+    def db_server_id(self) -> Optional[str]:
         return pulumi.get(self, "db_server_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -152,26 +125,17 @@ class GetAutonomousVirtualMachineResult:
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The allocated memory in GBs on the Autonomous Virtual Machine.
-        """
+    def memory_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Autonomous Virtual Machine.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vmName")
-    def vm_name(self) -> str:
-        """
-        The name of the Autonomous Virtual Machine.
-        """
+    def vm_name(self) -> Optional[str]:
         return pulumi.get(self, "vm_name")
 
 
@@ -200,21 +164,7 @@ class AwaitableGetAutonomousVirtualMachineResult(GetAutonomousVirtualMachineResu
 def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVirtualMachineResult:
     """
-    This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of specific Autonomous Virtual Machine.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=oci_database_autonomous_virtual_machine["test_autonomous_virtual_machine"]["id"])
-    ```
-
-
-    :param str autonomous_virtual_machine_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousVirtualMachineId'] = autonomous_virtual_machine_id
@@ -242,20 +192,6 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[str] 
 def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVirtualMachineResult]:
     """
-    This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of specific Autonomous Virtual Machine.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=oci_database_autonomous_virtual_machine["test_autonomous_virtual_machine"]["id"])
-    ```
-
-
-    :param str autonomous_virtual_machine_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

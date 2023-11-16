@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAccountMgmtInfoMatchingOwner {
@@ -13,63 +15,63 @@ public final class GetDomainsAccountMgmtInfoMatchingOwner {
      * @return Resource Type display name
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return The email address of this user
      * 
      */
-    private String email;
+    private @Nullable String email;
     /**
      * @return UserWalletArtifact URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return User name
      * 
      */
-    private String userName;
+    private @Nullable String userName;
     /**
      * @return UserWalletArtifact identifier
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAccountMgmtInfoMatchingOwner() {}
     /**
      * @return Resource Type display name
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return The email address of this user
      * 
      */
-    public String email() {
-        return this.email;
+    public Optional<String> email() {
+        return Optional.ofNullable(this.email);
     }
     /**
      * @return UserWalletArtifact URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return User name
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
     /**
      * @return UserWalletArtifact identifier
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsAccountMgmtInfoMatchingOwner {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private String email;
-        private String ref;
-        private String userName;
-        private String value;
+        private @Nullable String display;
+        private @Nullable String email;
+        private @Nullable String ref;
+        private @Nullable String userName;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAccountMgmtInfoMatchingOwner defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsAccountMgmtInfoMatchingOwner {
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+        public Builder email(@Nullable String email) {
+            this.email = email;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAccountMgmtInfoMatchingOwner build() {

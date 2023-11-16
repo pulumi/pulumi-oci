@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// A message describing the result of connection validation in more detail.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The latest result of whether the credentials pass the validation.
         /// </summary>
-        public readonly string Result;
+        public readonly string? Result;
         /// <summary>
         /// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeValidated;
+        public readonly string? TimeValidated;
 
         [OutputConstructor]
         private GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult(
-            string message,
+            string? message,
 
-            string result,
+            string? result,
 
-            string timeValidated)
+            string? timeValidated)
         {
             Message = message;
             Result = result;

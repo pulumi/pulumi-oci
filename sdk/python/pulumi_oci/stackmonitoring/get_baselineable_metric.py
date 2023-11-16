@@ -81,130 +81,82 @@ class GetBaselineableMetricResult:
 
     @property
     @pulumi.getter
-    def column(self) -> str:
-        """
-        metric column name
-        """
+    def column(self) -> Optional[str]:
         return pulumi.get(self, "column")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID of the compartment
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        Created user id
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        OCID of the metric
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isOutOfBox")
-    def is_out_of_box(self) -> bool:
-        """
-        Is the metric created out of box, default false
-        """
+    def is_out_of_box(self) -> Optional[bool]:
         return pulumi.get(self, "is_out_of_box")
 
     @property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> str:
-        """
-        last Updated user id
-        """
+    def last_updated_by(self) -> Optional[str]:
         return pulumi.get(self, "last_updated_by")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        name of the metric
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        namespace of the metric
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
-        """
-        Resource group of the metric
-        """
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the metric extension
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        OCID of the tenancy
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        creation date
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastUpdated")
-    def time_last_updated(self) -> str:
-        """
-        last updated time
-        """
+    def time_last_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_updated")
 
 
@@ -236,21 +188,7 @@ class AwaitableGetBaselineableMetricResult(GetBaselineableMetricResult):
 def get_baselineable_metric(baselineable_metric_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBaselineableMetricResult:
     """
-    This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Get the Baseline-able metric for the given id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"])
-    ```
-
-
-    :param str baselineable_metric_id: Identifier for the metric
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['baselineableMetricId'] = baselineable_metric_id
@@ -281,20 +219,6 @@ def get_baselineable_metric(baselineable_metric_id: Optional[str] = None,
 def get_baselineable_metric_output(baselineable_metric_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricResult]:
     """
-    This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Get the Baseline-able metric for the given id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"])
-    ```
-
-
-    :param str baselineable_metric_id: Identifier for the metric
+    Use this data source to access information about an existing resource.
     """
     ...

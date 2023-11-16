@@ -41,7 +41,7 @@ class GetPeerRegionForRemotePeeringsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetPeerRegionForRemotePeeringsResult:
 
     @property
     @pulumi.getter(name="peerRegionForRemotePeerings")
-    def peer_region_for_remote_peerings(self) -> Sequence['outputs.GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringResult']:
-        """
-        The list of peer_region_for_remote_peerings.
-        """
+    def peer_region_for_remote_peerings(self) -> Optional[Sequence['outputs.GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringResult']]:
         return pulumi.get(self, "peer_region_for_remote_peerings")
 
 
@@ -70,19 +67,7 @@ class AwaitableGetPeerRegionForRemotePeeringsResult(GetPeerRegionForRemotePeerin
 def get_peer_region_for_remote_peerings(filters: Optional[Sequence[pulumi.InputType['GetPeerRegionForRemotePeeringsFilterArgs']]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPeerRegionForRemotePeeringsResult:
     """
-    This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
-
-    Lists the regions that support remote VCN peering (which is peering across regions).
-    For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_peer_region_for_remote_peerings = oci.Core.get_peer_region_for_remote_peerings()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -99,18 +84,6 @@ def get_peer_region_for_remote_peerings(filters: Optional[Sequence[pulumi.InputT
 def get_peer_region_for_remote_peerings_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPeerRegionForRemotePeeringsFilterArgs']]]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeerRegionForRemotePeeringsResult]:
     """
-    This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
-
-    Lists the regions that support remote VCN peering (which is peering across regions).
-    For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_peer_region_for_remote_peerings = oci.Core.get_peer_region_for_remote_peerings()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -66,14 +66,6 @@ class MediaAssetMediaAssetTag(dict):
     def __init__(__self__, *,
                  value: str,
                  type: Optional[str] = None):
-        """
-        :param str value: (Updatable) Tag of the MediaAsset.
-        :param str type: (Updatable) The type of the media asset.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "value", value)
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -81,21 +73,11 @@ class MediaAssetMediaAssetTag(dict):
     @property
     @pulumi.getter
     def value(self) -> str:
-        """
-        (Updatable) Tag of the MediaAsset.
-        """
         return pulumi.get(self, "value")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        (Updatable) The type of the media asset.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
 
@@ -103,17 +85,11 @@ class MediaAssetMediaAssetTag(dict):
 class MediaAssetMetadata(dict):
     def __init__(__self__, *,
                  metadata: str):
-        """
-        :param str metadata: (Updatable) JSON string containing the technial metadata for the media asset.
-        """
         pulumi.set(__self__, "metadata", metadata)
 
     @property
     @pulumi.getter
     def metadata(self) -> str:
-        """
-        (Updatable) JSON string containing the technial metadata for the media asset.
-        """
         return pulumi.get(self, "metadata")
 
 
@@ -142,13 +118,6 @@ class MediaWorkflowJobOutput(dict):
                  id: Optional[str] = None,
                  namespace: Optional[str] = None,
                  object: Optional[str] = None):
-        """
-        :param str asset_type: Type of job output.
-        :param str bucket: The bucket name of the job output.
-        :param str id: The ID associated with the job output.
-        :param str namespace: The namespace name of the job output.
-        :param str object: The object name of the job output.
-        """
         if asset_type is not None:
             pulumi.set(__self__, "asset_type", asset_type)
         if bucket is not None:
@@ -163,41 +132,26 @@ class MediaWorkflowJobOutput(dict):
     @property
     @pulumi.getter(name="assetType")
     def asset_type(self) -> Optional[str]:
-        """
-        Type of job output.
-        """
         return pulumi.get(self, "asset_type")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        The bucket name of the job output.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The ID associated with the job output.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The namespace name of the job output.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        The object name of the job output.
-        """
         return pulumi.get(self, "object")
 
 
@@ -224,11 +178,6 @@ class MediaWorkflowJobTaskLifecycleState(dict):
                  key: Optional[str] = None,
                  lifecycle_details: Optional[str] = None,
                  state: Optional[str] = None):
-        """
-        :param str key: Unique key within a MediaWorkflowJob for the task.
-        :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param str state: The current state of the MediaWorkflowJob task.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if lifecycle_details is not None:
@@ -239,25 +188,16 @@ class MediaWorkflowJobTaskLifecycleState(dict):
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        Unique key within a MediaWorkflowJob for the task.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[str]:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the MediaWorkflowJob task.
-        """
         return pulumi.get(self, "state")
 
 
@@ -290,19 +230,6 @@ class MediaWorkflowTask(dict):
                  enable_parameter_reference: Optional[str] = None,
                  enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
                  prerequisites: Optional[Sequence[str]] = None):
-        """
-        :param str key: (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        :param str parameters: (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        :param str type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        :param str version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        :param Sequence[str] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "parameters", parameters)
         pulumi.set(__self__, "type", type)
@@ -317,61 +244,36 @@ class MediaWorkflowTask(dict):
     @property
     @pulumi.getter
     def key(self) -> str:
-        """
-        (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def parameters(self) -> str:
-        """
-        (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        """
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def version(self) -> str:
-        """
-        (Updatable) The version of the MediaWorkflowTaskDeclaration.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="enableParameterReference")
     def enable_parameter_reference(self) -> Optional[str]:
-        """
-        (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        """
         return pulumi.get(self, "enable_parameter_reference")
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
     def enable_when_referenced_parameter_equals(self) -> Optional[Mapping[str, Any]]:
-        """
-        (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        """
         return pulumi.get(self, "enable_when_referenced_parameter_equals")
 
     @property
     @pulumi.getter
     def prerequisites(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        """
         return pulumi.get(self, "prerequisites")
 
 
@@ -427,20 +329,6 @@ class StreamCdnConfigConfig(dict):
                  origin_auth_secret_key_nonce_b: Optional[str] = None,
                  origin_auth_sign_encryption: Optional[str] = None,
                  origin_auth_sign_type: Optional[str] = None):
-        """
-        :param str type: (Updatable) The name of the CDN configuration type.
-        :param str edge_hostname: (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
-        :param str edge_path_prefix: (Updatable) The path to prepend when building CDN URLs.
-        :param str edge_token_key: (Updatable) The encryption key to use for edge token authentication.
-        :param str edge_token_salt: (Updatable) Salt to use when encrypting authentication token.
-        :param bool is_edge_token_auth: (Updatable) Whether token authentication should be used at the CDN edge.
-        :param str origin_auth_secret_key_a: (Updatable) The shared secret key A, two for errorless key rotation.
-        :param str origin_auth_secret_key_b: (Updatable) The shared secret key B, two for errorless key rotation.
-        :param str origin_auth_secret_key_nonce_a: (Updatable) Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        :param str origin_auth_secret_key_nonce_b: (Updatable) Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        :param str origin_auth_sign_encryption: (Updatable) The type of encryption used to compute the signature.
-        :param str origin_auth_sign_type: (Updatable) The type of data used to compute the signature.
-        """
         pulumi.set(__self__, "type", type)
         if edge_hostname is not None:
             pulumi.set(__self__, "edge_hostname", edge_hostname)
@@ -468,97 +356,61 @@ class StreamCdnConfigConfig(dict):
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) The name of the CDN configuration type.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="edgeHostname")
     def edge_hostname(self) -> Optional[str]:
-        """
-        (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
-        """
         return pulumi.get(self, "edge_hostname")
 
     @property
     @pulumi.getter(name="edgePathPrefix")
     def edge_path_prefix(self) -> Optional[str]:
-        """
-        (Updatable) The path to prepend when building CDN URLs.
-        """
         return pulumi.get(self, "edge_path_prefix")
 
     @property
     @pulumi.getter(name="edgeTokenKey")
     def edge_token_key(self) -> Optional[str]:
-        """
-        (Updatable) The encryption key to use for edge token authentication.
-        """
         return pulumi.get(self, "edge_token_key")
 
     @property
     @pulumi.getter(name="edgeTokenSalt")
     def edge_token_salt(self) -> Optional[str]:
-        """
-        (Updatable) Salt to use when encrypting authentication token.
-        """
         return pulumi.get(self, "edge_token_salt")
 
     @property
     @pulumi.getter(name="isEdgeTokenAuth")
     def is_edge_token_auth(self) -> Optional[bool]:
-        """
-        (Updatable) Whether token authentication should be used at the CDN edge.
-        """
         return pulumi.get(self, "is_edge_token_auth")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyA")
     def origin_auth_secret_key_a(self) -> Optional[str]:
-        """
-        (Updatable) The shared secret key A, two for errorless key rotation.
-        """
         return pulumi.get(self, "origin_auth_secret_key_a")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyB")
     def origin_auth_secret_key_b(self) -> Optional[str]:
-        """
-        (Updatable) The shared secret key B, two for errorless key rotation.
-        """
         return pulumi.get(self, "origin_auth_secret_key_b")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceA")
     def origin_auth_secret_key_nonce_a(self) -> Optional[str]:
-        """
-        (Updatable) Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        """
         return pulumi.get(self, "origin_auth_secret_key_nonce_a")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceB")
     def origin_auth_secret_key_nonce_b(self) -> Optional[str]:
-        """
-        (Updatable) Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        """
         return pulumi.get(self, "origin_auth_secret_key_nonce_b")
 
     @property
     @pulumi.getter(name="originAuthSignEncryption")
     def origin_auth_sign_encryption(self) -> Optional[str]:
-        """
-        (Updatable) The type of encryption used to compute the signature.
-        """
         return pulumi.get(self, "origin_auth_sign_encryption")
 
     @property
     @pulumi.getter(name="originAuthSignType")
     def origin_auth_sign_type(self) -> Optional[str]:
-        """
-        (Updatable) The type of data used to compute the signature.
-        """
         return pulumi.get(self, "origin_auth_sign_type")
 
 
@@ -584,10 +436,6 @@ class StreamPackagingConfigEncryption(dict):
     def __init__(__self__, *,
                  algorithm: str,
                  kms_key_id: Optional[str] = None):
-        """
-        :param str algorithm: The encryption algorithm for the stream packaging configuration.
-        :param str kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
         pulumi.set(__self__, "algorithm", algorithm)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -595,64 +443,45 @@ class StreamPackagingConfigEncryption(dict):
     @property
     @pulumi.getter
     def algorithm(self) -> str:
-        """
-        The encryption algorithm for the stream packaging configuration.
-        """
         return pulumi.get(self, "algorithm")
 
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[str]:
-        """
-        The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
         return pulumi.get(self, "kms_key_id")
 
 
 @pulumi.output_type
 class GetMediaAssetMediaAssetTagResult(dict):
     def __init__(__self__, *,
-                 type: str,
-                 value: str):
-        """
-        :param str type: The type of the media asset.
-        :param str value: Tag of the MediaAsset.
-        """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the media asset.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Tag of the MediaAsset.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetMediaAssetMetadataResult(dict):
     def __init__(__self__, *,
-                 metadata: str):
-        """
-        :param str metadata: JSON string containing the technial metadata for the media asset.
-        """
-        pulumi.set(__self__, "metadata", metadata)
+                 metadata: Optional[str] = None):
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
 
     @property
     @pulumi.getter
-    def metadata(self) -> str:
-        """
-        JSON string containing the technial metadata for the media asset.
-        """
+    def metadata(self) -> Optional[str]:
         return pulumi.get(self, "metadata")
 
 
@@ -686,319 +515,236 @@ class GetMediaAssetsFilterResult(dict):
 @pulumi.output_type
 class GetMediaAssetsMediaAssetCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMediaAssetsMediaAssetCollectionItemResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 master_media_asset_id: str,
-                 media_asset_tags: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult'],
-                 media_workflow_job_id: str,
-                 metadatas: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult'],
-                 namespace: str,
-                 object: str,
-                 object_etag: str,
-                 parent_media_asset_id: str,
-                 segment_range_end_index: str,
-                 segment_range_start_index: str,
-                 source_media_workflow_id: str,
-                 source_media_workflow_version: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 type: str):
-        """
-        :param str bucket: Filter MediaAsset by the bucket where the object is stored.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique identifier that is immutable on creation.
-        :param str master_media_asset_id: Unique MediaAsset identifier of the first asset upload.
-        :param Sequence['GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs'] media_asset_tags: List of tags for the MediaAsset.
-        :param str media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
-        :param Sequence['GetMediaAssetsMediaAssetCollectionItemMetadataArgs'] metadatas: JSON string containing the technial metadata for the media asset.
-        :param str namespace: The object storage namespace where this asset is located.
-        :param str object: Filter MediaAsset by the name of the object in object storage.
-        :param str object_etag: eTag of the underlying object storage object.
-        :param str parent_media_asset_id: Unique MediaAsset identifier of the asset from which this asset is derived.
-        :param str segment_range_end_index: The end index of video segment files.
-        :param str segment_range_start_index: The start index for video segment files.
-        :param str source_media_workflow_id: The ID of the MediaWorkflow used to produce this asset.
-        :param str source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-        :param str type: Filter MediaAsset by the asset type.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
-        pulumi.set(__self__, "media_asset_tags", media_asset_tags)
-        pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_etag", object_etag)
-        pulumi.set(__self__, "parent_media_asset_id", parent_media_asset_id)
-        pulumi.set(__self__, "segment_range_end_index", segment_range_end_index)
-        pulumi.set(__self__, "segment_range_start_index", segment_range_start_index)
-        pulumi.set(__self__, "source_media_workflow_id", source_media_workflow_id)
-        pulumi.set(__self__, "source_media_workflow_version", source_media_workflow_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+                 bucket: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 master_media_asset_id: Optional[str] = None,
+                 media_asset_tags: Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult']] = None,
+                 media_workflow_job_id: Optional[str] = None,
+                 metadatas: Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult']] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 object_etag: Optional[str] = None,
+                 parent_media_asset_id: Optional[str] = None,
+                 segment_range_end_index: Optional[str] = None,
+                 segment_range_start_index: Optional[str] = None,
+                 source_media_workflow_id: Optional[str] = None,
+                 source_media_workflow_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 type: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if master_media_asset_id is not None:
+            pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
+        if media_asset_tags is not None:
+            pulumi.set(__self__, "media_asset_tags", media_asset_tags)
+        if media_workflow_job_id is not None:
+            pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if object_etag is not None:
+            pulumi.set(__self__, "object_etag", object_etag)
+        if parent_media_asset_id is not None:
+            pulumi.set(__self__, "parent_media_asset_id", parent_media_asset_id)
+        if segment_range_end_index is not None:
+            pulumi.set(__self__, "segment_range_end_index", segment_range_end_index)
+        if segment_range_start_index is not None:
+            pulumi.set(__self__, "segment_range_start_index", segment_range_start_index)
+        if source_media_workflow_id is not None:
+            pulumi.set(__self__, "source_media_workflow_id", source_media_workflow_id)
+        if source_media_workflow_version is not None:
+            pulumi.set(__self__, "source_media_workflow_version", source_media_workflow_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Filter MediaAsset by the bucket where the object is stored.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="masterMediaAssetId")
-    def master_media_asset_id(self) -> str:
-        """
-        Unique MediaAsset identifier of the first asset upload.
-        """
+    def master_media_asset_id(self) -> Optional[str]:
         return pulumi.get(self, "master_media_asset_id")
 
     @property
     @pulumi.getter(name="mediaAssetTags")
-    def media_asset_tags(self) -> Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult']:
-        """
-        List of tags for the MediaAsset.
-        """
+    def media_asset_tags(self) -> Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult']]:
         return pulumi.get(self, "media_asset_tags")
 
     @property
     @pulumi.getter(name="mediaWorkflowJobId")
-    def media_workflow_job_id(self) -> str:
-        """
-        The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
-        """
+    def media_workflow_job_id(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_job_id")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult']:
-        """
-        JSON string containing the technial metadata for the media asset.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace where this asset is located.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Filter MediaAsset by the name of the object in object storage.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="objectEtag")
-    def object_etag(self) -> str:
-        """
-        eTag of the underlying object storage object.
-        """
+    def object_etag(self) -> Optional[str]:
         return pulumi.get(self, "object_etag")
 
     @property
     @pulumi.getter(name="parentMediaAssetId")
-    def parent_media_asset_id(self) -> str:
-        """
-        Unique MediaAsset identifier of the asset from which this asset is derived.
-        """
+    def parent_media_asset_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_media_asset_id")
 
     @property
     @pulumi.getter(name="segmentRangeEndIndex")
-    def segment_range_end_index(self) -> str:
-        """
-        The end index of video segment files.
-        """
+    def segment_range_end_index(self) -> Optional[str]:
         return pulumi.get(self, "segment_range_end_index")
 
     @property
     @pulumi.getter(name="segmentRangeStartIndex")
-    def segment_range_start_index(self) -> str:
-        """
-        The start index for video segment files.
-        """
+    def segment_range_start_index(self) -> Optional[str]:
         return pulumi.get(self, "segment_range_start_index")
 
     @property
     @pulumi.getter(name="sourceMediaWorkflowId")
-    def source_media_workflow_id(self) -> str:
-        """
-        The ID of the MediaWorkflow used to produce this asset.
-        """
+    def source_media_workflow_id(self) -> Optional[str]:
         return pulumi.get(self, "source_media_workflow_id")
 
     @property
     @pulumi.getter(name="sourceMediaWorkflowVersion")
-    def source_media_workflow_version(self) -> str:
-        """
-        The version of the MediaWorkflow used to produce this asset.
-        """
+    def source_media_workflow_version(self) -> Optional[str]:
         return pulumi.get(self, "source_media_workflow_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Filter MediaAsset by the asset type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult(dict):
     def __init__(__self__, *,
-                 type: str,
-                 value: str):
-        """
-        :param str type: Filter MediaAsset by the asset type.
-        :param str value: Tag of the MediaAsset.
-        """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Filter MediaAsset by the asset type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Tag of the MediaAsset.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetMediaAssetsMediaAssetCollectionItemMetadataResult(dict):
     def __init__(__self__, *,
-                 metadata: str):
-        """
-        :param str metadata: JSON string containing the technial metadata for the media asset.
-        """
-        pulumi.set(__self__, "metadata", metadata)
+                 metadata: Optional[str] = None):
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
 
     @property
     @pulumi.getter
-    def metadata(self) -> str:
-        """
-        JSON string containing the technial metadata for the media asset.
-        """
+    def metadata(self) -> Optional[str]:
         return pulumi.get(self, "metadata")
 
 
@@ -1032,140 +778,106 @@ class GetMediaWorkflowConfigurationsFilterResult(dict):
 @pulumi.output_type
 class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecyle_details: str,
-                 parameters: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique MediaWorkflowConfiguration identifier.
-        :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str parameters: Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecyle_details: Optional[str] = None,
+                 parameters: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecyle_details is not None:
+            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique MediaWorkflowConfiguration identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -1175,9 +887,6 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique name. It is read-only and generated for the fact.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1186,9 +895,6 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name. It is read-only and generated for the fact.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1205,176 +911,132 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
 @pulumi.output_type
 class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(dict):
     def __init__(__self__, *,
-                 detail: str,
-                 key: str,
-                 media_workflow_job_id: str,
-                 name: str,
-                 type: str):
-        """
-        :param str detail: The body of the detail captured as JSON.
-        :param str key: Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-        :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
-        :param str name: Unique name. It is read-only and generated for the fact.
-        :param str type: Types of details to include.
-        """
-        pulumi.set(__self__, "detail", detail)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 detail: Optional[str] = None,
+                 key: Optional[str] = None,
+                 media_workflow_job_id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if media_workflow_job_id is not None:
+            pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def detail(self) -> str:
-        """
-        The body of the detail captured as JSON.
-        """
+    def detail(self) -> Optional[str]:
         return pulumi.get(self, "detail")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="mediaWorkflowJobId")
-    def media_workflow_job_id(self) -> str:
-        """
-        Unique MediaWorkflowJob identifier.
-        """
+    def media_workflow_job_id(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_job_id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Unique name. It is read-only and generated for the fact.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Types of details to include.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetMediaWorkflowJobOutputResult(dict):
     def __init__(__self__, *,
-                 asset_type: str,
-                 bucket: str,
-                 id: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str asset_type: Type of job output.
-        :param str bucket: The bucket name of the job output.
-        :param str id: The ID associated with the job output.
-        :param str namespace: The namespace name of the job output.
-        :param str object: The object name of the job output.
-        """
-        pulumi.set(__self__, "asset_type", asset_type)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 asset_type: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if asset_type is not None:
+            pulumi.set(__self__, "asset_type", asset_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter(name="assetType")
-    def asset_type(self) -> str:
-        """
-        Type of job output.
-        """
+    def asset_type(self) -> Optional[str]:
         return pulumi.get(self, "asset_type")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The bucket name of the job output.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The ID associated with the job output.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the job output.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the job output.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetMediaWorkflowJobTaskLifecycleStateResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 lifecycle_details: str,
-                 state: str):
-        """
-        :param str key: Unique key within a MediaWorkflowJob for the task.
-        :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param str state: The current state of the MediaWorkflowJob task.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
+                 key: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key within a MediaWorkflowJob for the task.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the MediaWorkflowJob task.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -1408,468 +1070,350 @@ class GetMediaWorkflowJobsFilterResult(dict):
 @pulumi.output_type
 class GetMediaWorkflowJobsMediaWorkflowJobCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 media_workflow_configuration_ids: Sequence[str],
-                 media_workflow_id: str,
-                 media_workflow_name: str,
-                 outputs: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult'],
-                 parameters: str,
-                 runnable: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 task_lifecycle_states: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult'],
-                 time_created: str,
-                 time_ended: str,
-                 time_started: str,
-                 time_updated: str,
-                 workflow_identifier_type: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique MediaWorkflowJob identifier
-        :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param Sequence[str] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
-        :param str media_workflow_id: Unique MediaWorkflow identifier.
-        :param Sequence['GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputArgs'] outputs: A list of JobOutput for the workflowJob.
-        :param str parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        :param str runnable: A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param Sequence['GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs'] task_lifecycle_states: Status of each task.
-        :param str time_created: Creation time of the job. An RFC3339 formatted datetime string.
-        :param str time_ended: Time when the job finished. An RFC3339 formatted datetime string.
-        :param str time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
-        :param str time_updated: Updated time of the job. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
-        pulumi.set(__self__, "media_workflow_id", media_workflow_id)
-        pulumi.set(__self__, "media_workflow_name", media_workflow_name)
-        pulumi.set(__self__, "outputs", outputs)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "runnable", runnable)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "task_lifecycle_states", task_lifecycle_states)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "workflow_identifier_type", workflow_identifier_type)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 media_workflow_configuration_ids: Optional[Sequence[str]] = None,
+                 media_workflow_id: Optional[str] = None,
+                 media_workflow_name: Optional[str] = None,
+                 outputs: Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult']] = None,
+                 parameters: Optional[str] = None,
+                 runnable: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 task_lifecycle_states: Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_ended: Optional[str] = None,
+                 time_started: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 workflow_identifier_type: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if media_workflow_configuration_ids is not None:
+            pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
+        if media_workflow_id is not None:
+            pulumi.set(__self__, "media_workflow_id", media_workflow_id)
+        if media_workflow_name is not None:
+            pulumi.set(__self__, "media_workflow_name", media_workflow_name)
+        if outputs is not None:
+            pulumi.set(__self__, "outputs", outputs)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if runnable is not None:
+            pulumi.set(__self__, "runnable", runnable)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if task_lifecycle_states is not None:
+            pulumi.set(__self__, "task_lifecycle_states", task_lifecycle_states)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_ended is not None:
+            pulumi.set(__self__, "time_ended", time_ended)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if workflow_identifier_type is not None:
+            pulumi.set(__self__, "workflow_identifier_type", workflow_identifier_type)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique MediaWorkflowJob identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
-    def media_workflow_configuration_ids(self) -> Sequence[str]:
-        """
-        Configurations to be applied to this run of the workflow.
-        """
+    def media_workflow_configuration_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @property
     @pulumi.getter(name="mediaWorkflowId")
-    def media_workflow_id(self) -> str:
-        """
-        Unique MediaWorkflow identifier.
-        """
+    def media_workflow_id(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_id")
 
     @property
     @pulumi.getter(name="mediaWorkflowName")
-    def media_workflow_name(self) -> str:
+    def media_workflow_name(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_name")
 
     @property
     @pulumi.getter
-    def outputs(self) -> Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult']:
-        """
-        A list of JobOutput for the workflowJob.
-        """
+    def outputs(self) -> Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult']]:
         return pulumi.get(self, "outputs")
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def runnable(self) -> str:
-        """
-        A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-        """
+    def runnable(self) -> Optional[str]:
         return pulumi.get(self, "runnable")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="taskLifecycleStates")
-    def task_lifecycle_states(self) -> Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult']:
-        """
-        Status of each task.
-        """
+    def task_lifecycle_states(self) -> Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult']]:
         return pulumi.get(self, "task_lifecycle_states")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Creation time of the job. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        Time when the job finished. An RFC3339 formatted datetime string.
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Time when the job started to execute. An RFC3339 formatted datetime string.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Updated time of the job. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workflowIdentifierType")
-    def workflow_identifier_type(self) -> str:
+    def workflow_identifier_type(self) -> Optional[str]:
         return pulumi.get(self, "workflow_identifier_type")
 
 
 @pulumi.output_type
 class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult(dict):
     def __init__(__self__, *,
-                 asset_type: str,
-                 bucket: str,
-                 id: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str asset_type: Type of job output.
-        :param str bucket: The bucket name of the job output.
-        :param str id: unique MediaWorkflowJob identifier
-        :param str namespace: The namespace name of the job output.
-        :param str object: The object name of the job output.
-        """
-        pulumi.set(__self__, "asset_type", asset_type)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 asset_type: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if asset_type is not None:
+            pulumi.set(__self__, "asset_type", asset_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter(name="assetType")
-    def asset_type(self) -> str:
-        """
-        Type of job output.
-        """
+    def asset_type(self) -> Optional[str]:
         return pulumi.get(self, "asset_type")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The bucket name of the job output.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique MediaWorkflowJob identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the job output.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the job output.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 lifecycle_details: str,
-                 state: str):
-        """
-        :param str key: Unique key within a MediaWorkflowJob for the task.
-        :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
+                 key: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key within a MediaWorkflowJob for the task.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
 @pulumi.output_type
 class GetMediaWorkflowTaskResult(dict):
     def __init__(__self__, *,
-                 enable_parameter_reference: str,
-                 enable_when_referenced_parameter_equals: Mapping[str, Any],
-                 key: str,
-                 parameters: str,
-                 prerequisites: Sequence[str],
-                 type: str,
-                 version: str):
-        """
-        :param str enable_parameter_reference: Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        :param str key: A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        :param Sequence[str] prerequisites: Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        :param str version: The version of the MediaWorkflow.
-        """
-        pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
-        pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "prerequisites", prerequisites)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+                 enable_parameter_reference: Optional[str] = None,
+                 enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+                 key: Optional[str] = None,
+                 parameters: Optional[str] = None,
+                 prerequisites: Optional[Sequence[str]] = None,
+                 type: Optional[str] = None,
+                 version: Optional[str] = None):
+        if enable_parameter_reference is not None:
+            pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
+        if enable_when_referenced_parameter_equals is not None:
+            pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if prerequisites is not None:
+            pulumi.set(__self__, "prerequisites", prerequisites)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="enableParameterReference")
-    def enable_parameter_reference(self) -> str:
-        """
-        Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        """
+    def enable_parameter_reference(self) -> Optional[str]:
         return pulumi.get(self, "enable_parameter_reference")
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Mapping[str, Any]:
-        """
-        Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        """
+    def enable_when_referenced_parameter_equals(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "enable_when_referenced_parameter_equals")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def prerequisites(self) -> Sequence[str]:
-        """
-        Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        """
+    def prerequisites(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "prerequisites")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the MediaWorkflow.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetMediaWorkflowTaskDeclarationItemResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 parameters_schema: str,
-                 parameters_schema_allowing_references: str,
-                 version: int):
-        """
-        :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
-        :param str parameters_schema: JSON schema specifying the parameters supported by this type of task. This is used to validate tasks' parameters when jobs are created.
-        :param str parameters_schema_allowing_references: JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
-        :param int version: A filter to select MediaWorkflowTaskDeclaration by version.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "parameters_schema", parameters_schema)
-        pulumi.set(__self__, "parameters_schema_allowing_references", parameters_schema_allowing_references)
-        pulumi.set(__self__, "version", version)
+                 name: Optional[str] = None,
+                 parameters_schema: Optional[str] = None,
+                 parameters_schema_allowing_references: Optional[str] = None,
+                 version: Optional[int] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if parameters_schema is not None:
+            pulumi.set(__self__, "parameters_schema", parameters_schema)
+        if parameters_schema_allowing_references is not None:
+            pulumi.set(__self__, "parameters_schema_allowing_references", parameters_schema_allowing_references)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only the resources with their system defined, unique name matching the given name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="parametersSchema")
-    def parameters_schema(self) -> str:
-        """
-        JSON schema specifying the parameters supported by this type of task. This is used to validate tasks' parameters when jobs are created.
-        """
+    def parameters_schema(self) -> Optional[str]:
         return pulumi.get(self, "parameters_schema")
 
     @property
     @pulumi.getter(name="parametersSchemaAllowingReferences")
-    def parameters_schema_allowing_references(self) -> str:
-        """
-        JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
-        """
+    def parameters_schema_allowing_references(self) -> Optional[str]:
         return pulumi.get(self, "parameters_schema_allowing_references")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        A filter to select MediaWorkflowTaskDeclaration by version.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
@@ -1903,396 +1447,292 @@ class GetMediaWorkflowsFilterResult(dict):
 @pulumi.output_type
 class GetMediaWorkflowsMediaWorkflowCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecyle_details: str,
-                 media_workflow_configuration_ids: Sequence[str],
-                 parameters: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 tasks: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult'],
-                 time_created: str,
-                 time_updated: str,
-                 version: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique MediaWorkflow identifier.
-        :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence[str] media_workflow_configuration_ids: Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
-        :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param Sequence['GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs'] tasks: The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
-        :param str time_created: The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
-        :param str version: The version of the MediaWorkflow.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "tasks", tasks)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecyle_details: Optional[str] = None,
+                 media_workflow_configuration_ids: Optional[Sequence[str]] = None,
+                 parameters: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 tasks: Optional[Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 version: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecyle_details is not None:
+            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        if media_workflow_configuration_ids is not None:
+            pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if tasks is not None:
+            pulumi.set(__self__, "tasks", tasks)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique MediaWorkflow identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
-    def media_workflow_configuration_ids(self) -> Sequence[str]:
-        """
-        Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
-        """
+    def media_workflow_configuration_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter
-    def tasks(self) -> Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult']:
-        """
-        The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
-        """
+    def tasks(self) -> Optional[Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult']]:
         return pulumi.get(self, "tasks")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the MediaWorkflow.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(dict):
     def __init__(__self__, *,
-                 enable_parameter_reference: str,
-                 enable_when_referenced_parameter_equals: Mapping[str, Any],
-                 key: str,
-                 parameters: str,
-                 prerequisites: Sequence[str],
-                 type: str,
-                 version: str):
-        """
-        :param str enable_parameter_reference: Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        :param str key: A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        :param Sequence[str] prerequisites: Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        :param str version: The version of the MediaWorkflow.
-        """
-        pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
-        pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "prerequisites", prerequisites)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+                 enable_parameter_reference: Optional[str] = None,
+                 enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+                 key: Optional[str] = None,
+                 parameters: Optional[str] = None,
+                 prerequisites: Optional[Sequence[str]] = None,
+                 type: Optional[str] = None,
+                 version: Optional[str] = None):
+        if enable_parameter_reference is not None:
+            pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
+        if enable_when_referenced_parameter_equals is not None:
+            pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if prerequisites is not None:
+            pulumi.set(__self__, "prerequisites", prerequisites)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="enableParameterReference")
-    def enable_parameter_reference(self) -> str:
-        """
-        Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        """
+    def enable_parameter_reference(self) -> Optional[str]:
         return pulumi.get(self, "enable_parameter_reference")
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Mapping[str, Any]:
-        """
-        Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        """
+    def enable_when_referenced_parameter_equals(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "enable_when_referenced_parameter_equals")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def prerequisites(self) -> Sequence[str]:
-        """
-        Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        """
+    def prerequisites(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "prerequisites")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the MediaWorkflow.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetStreamCdnConfigConfigResult(dict):
     def __init__(__self__, *,
-                 edge_hostname: str,
-                 edge_path_prefix: str,
-                 edge_token_key: str,
-                 edge_token_salt: str,
-                 is_edge_token_auth: bool,
-                 origin_auth_secret_key_a: str,
-                 origin_auth_secret_key_b: str,
-                 origin_auth_secret_key_nonce_a: str,
-                 origin_auth_secret_key_nonce_b: str,
-                 origin_auth_sign_encryption: str,
-                 origin_auth_sign_type: str,
-                 type: str):
-        """
-        :param str edge_hostname: The hostname of the CDN edge server to use when building CDN URLs.
-        :param str edge_path_prefix: The path to prepend when building CDN URLs.
-        :param str edge_token_key: The encryption key to use for edge token authentication.
-        :param str edge_token_salt: Salt to use when encrypting authentication token.
-        :param bool is_edge_token_auth: Whether token authentication should be used at the CDN edge.
-        :param str origin_auth_secret_key_a: The shared secret key A, two for errorless key rotation.
-        :param str origin_auth_secret_key_b: The shared secret key B, two for errorless key rotation.
-        :param str origin_auth_secret_key_nonce_a: Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        :param str origin_auth_secret_key_nonce_b: Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        :param str origin_auth_sign_encryption: The type of encryption used to compute the signature.
-        :param str origin_auth_sign_type: The type of data used to compute the signature.
-        :param str type: The name of the CDN configuration type.
-        """
-        pulumi.set(__self__, "edge_hostname", edge_hostname)
-        pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
-        pulumi.set(__self__, "edge_token_key", edge_token_key)
-        pulumi.set(__self__, "edge_token_salt", edge_token_salt)
-        pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
-        pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
-        pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
-        pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
-        pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
-        pulumi.set(__self__, "type", type)
+                 edge_hostname: Optional[str] = None,
+                 edge_path_prefix: Optional[str] = None,
+                 edge_token_key: Optional[str] = None,
+                 edge_token_salt: Optional[str] = None,
+                 is_edge_token_auth: Optional[bool] = None,
+                 origin_auth_secret_key_a: Optional[str] = None,
+                 origin_auth_secret_key_b: Optional[str] = None,
+                 origin_auth_secret_key_nonce_a: Optional[str] = None,
+                 origin_auth_secret_key_nonce_b: Optional[str] = None,
+                 origin_auth_sign_encryption: Optional[str] = None,
+                 origin_auth_sign_type: Optional[str] = None,
+                 type: Optional[str] = None):
+        if edge_hostname is not None:
+            pulumi.set(__self__, "edge_hostname", edge_hostname)
+        if edge_path_prefix is not None:
+            pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
+        if edge_token_key is not None:
+            pulumi.set(__self__, "edge_token_key", edge_token_key)
+        if edge_token_salt is not None:
+            pulumi.set(__self__, "edge_token_salt", edge_token_salt)
+        if is_edge_token_auth is not None:
+            pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
+        if origin_auth_secret_key_a is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
+        if origin_auth_secret_key_b is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
+        if origin_auth_secret_key_nonce_a is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
+        if origin_auth_secret_key_nonce_b is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
+        if origin_auth_sign_encryption is not None:
+            pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
+        if origin_auth_sign_type is not None:
+            pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="edgeHostname")
-    def edge_hostname(self) -> str:
-        """
-        The hostname of the CDN edge server to use when building CDN URLs.
-        """
+    def edge_hostname(self) -> Optional[str]:
         return pulumi.get(self, "edge_hostname")
 
     @property
     @pulumi.getter(name="edgePathPrefix")
-    def edge_path_prefix(self) -> str:
-        """
-        The path to prepend when building CDN URLs.
-        """
+    def edge_path_prefix(self) -> Optional[str]:
         return pulumi.get(self, "edge_path_prefix")
 
     @property
     @pulumi.getter(name="edgeTokenKey")
-    def edge_token_key(self) -> str:
-        """
-        The encryption key to use for edge token authentication.
-        """
+    def edge_token_key(self) -> Optional[str]:
         return pulumi.get(self, "edge_token_key")
 
     @property
     @pulumi.getter(name="edgeTokenSalt")
-    def edge_token_salt(self) -> str:
-        """
-        Salt to use when encrypting authentication token.
-        """
+    def edge_token_salt(self) -> Optional[str]:
         return pulumi.get(self, "edge_token_salt")
 
     @property
     @pulumi.getter(name="isEdgeTokenAuth")
-    def is_edge_token_auth(self) -> bool:
-        """
-        Whether token authentication should be used at the CDN edge.
-        """
+    def is_edge_token_auth(self) -> Optional[bool]:
         return pulumi.get(self, "is_edge_token_auth")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyA")
-    def origin_auth_secret_key_a(self) -> str:
-        """
-        The shared secret key A, two for errorless key rotation.
-        """
+    def origin_auth_secret_key_a(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_a")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyB")
-    def origin_auth_secret_key_b(self) -> str:
-        """
-        The shared secret key B, two for errorless key rotation.
-        """
+    def origin_auth_secret_key_b(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_b")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceA")
-    def origin_auth_secret_key_nonce_a(self) -> str:
-        """
-        Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        """
+    def origin_auth_secret_key_nonce_a(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_nonce_a")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceB")
-    def origin_auth_secret_key_nonce_b(self) -> str:
-        """
-        Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        """
+    def origin_auth_secret_key_nonce_b(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_nonce_b")
 
     @property
     @pulumi.getter(name="originAuthSignEncryption")
-    def origin_auth_sign_encryption(self) -> str:
-        """
-        The type of encryption used to compute the signature.
-        """
+    def origin_auth_sign_encryption(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_sign_encryption")
 
     @property
     @pulumi.getter(name="originAuthSignType")
-    def origin_auth_sign_type(self) -> str:
-        """
-        The type of data used to compute the signature.
-        """
+    def origin_auth_sign_type(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_sign_type")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The name of the CDN configuration type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -2326,301 +1766,223 @@ class GetStreamCdnConfigsFilterResult(dict):
 @pulumi.output_type
 class GetStreamCdnConfigsStreamCdnConfigCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 configs: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult'],
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 distribution_channel_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_enabled: bool,
-                 lifecyle_details: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: Compartment Identifier.
-        :param Sequence['GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs'] configs: Base fields of the StreamCdnConfig configuration object.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param str distribution_channel_id: The Stream Distribution Channel identifier this CdnConfig belongs to.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique StreamCdnConfig identifier.
-        :param bool is_enabled: Whether publishing to CDN is enabled.
-        :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 configs: Optional[Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 distribution_channel_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 lifecyle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configs is not None:
+            pulumi.set(__self__, "configs", configs)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if distribution_channel_id is not None:
+            pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if lifecyle_details is not None:
+            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configs(self) -> Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult']:
-        """
-        Base fields of the StreamCdnConfig configuration object.
-        """
+    def configs(self) -> Optional[Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult']]:
         return pulumi.get(self, "configs")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionChannelId")
-    def distribution_channel_id(self) -> str:
-        """
-        The Stream Distribution Channel identifier this CdnConfig belongs to.
-        """
+    def distribution_channel_id(self) -> Optional[str]:
         return pulumi.get(self, "distribution_channel_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique StreamCdnConfig identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether publishing to CDN is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the CDN Config was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult(dict):
     def __init__(__self__, *,
-                 edge_hostname: str,
-                 edge_path_prefix: str,
-                 edge_token_key: str,
-                 edge_token_salt: str,
-                 is_edge_token_auth: bool,
-                 origin_auth_secret_key_a: str,
-                 origin_auth_secret_key_b: str,
-                 origin_auth_secret_key_nonce_a: str,
-                 origin_auth_secret_key_nonce_b: str,
-                 origin_auth_sign_encryption: str,
-                 origin_auth_sign_type: str,
-                 type: str):
-        """
-        :param str edge_hostname: The hostname of the CDN edge server to use when building CDN URLs.
-        :param str edge_path_prefix: The path to prepend when building CDN URLs.
-        :param str edge_token_key: The encryption key to use for edge token authentication.
-        :param str edge_token_salt: Salt to use when encrypting authentication token.
-        :param bool is_edge_token_auth: Whether token authentication should be used at the CDN edge.
-        :param str origin_auth_secret_key_a: The shared secret key A, two for errorless key rotation.
-        :param str origin_auth_secret_key_b: The shared secret key B, two for errorless key rotation.
-        :param str origin_auth_secret_key_nonce_a: Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        :param str origin_auth_secret_key_nonce_b: Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        :param str origin_auth_sign_encryption: The type of encryption used to compute the signature.
-        :param str origin_auth_sign_type: The type of data used to compute the signature.
-        :param str type: The name of the CDN configuration type.
-        """
-        pulumi.set(__self__, "edge_hostname", edge_hostname)
-        pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
-        pulumi.set(__self__, "edge_token_key", edge_token_key)
-        pulumi.set(__self__, "edge_token_salt", edge_token_salt)
-        pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
-        pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
-        pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
-        pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
-        pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
-        pulumi.set(__self__, "type", type)
+                 edge_hostname: Optional[str] = None,
+                 edge_path_prefix: Optional[str] = None,
+                 edge_token_key: Optional[str] = None,
+                 edge_token_salt: Optional[str] = None,
+                 is_edge_token_auth: Optional[bool] = None,
+                 origin_auth_secret_key_a: Optional[str] = None,
+                 origin_auth_secret_key_b: Optional[str] = None,
+                 origin_auth_secret_key_nonce_a: Optional[str] = None,
+                 origin_auth_secret_key_nonce_b: Optional[str] = None,
+                 origin_auth_sign_encryption: Optional[str] = None,
+                 origin_auth_sign_type: Optional[str] = None,
+                 type: Optional[str] = None):
+        if edge_hostname is not None:
+            pulumi.set(__self__, "edge_hostname", edge_hostname)
+        if edge_path_prefix is not None:
+            pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
+        if edge_token_key is not None:
+            pulumi.set(__self__, "edge_token_key", edge_token_key)
+        if edge_token_salt is not None:
+            pulumi.set(__self__, "edge_token_salt", edge_token_salt)
+        if is_edge_token_auth is not None:
+            pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
+        if origin_auth_secret_key_a is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
+        if origin_auth_secret_key_b is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
+        if origin_auth_secret_key_nonce_a is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
+        if origin_auth_secret_key_nonce_b is not None:
+            pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
+        if origin_auth_sign_encryption is not None:
+            pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
+        if origin_auth_sign_type is not None:
+            pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="edgeHostname")
-    def edge_hostname(self) -> str:
-        """
-        The hostname of the CDN edge server to use when building CDN URLs.
-        """
+    def edge_hostname(self) -> Optional[str]:
         return pulumi.get(self, "edge_hostname")
 
     @property
     @pulumi.getter(name="edgePathPrefix")
-    def edge_path_prefix(self) -> str:
-        """
-        The path to prepend when building CDN URLs.
-        """
+    def edge_path_prefix(self) -> Optional[str]:
         return pulumi.get(self, "edge_path_prefix")
 
     @property
     @pulumi.getter(name="edgeTokenKey")
-    def edge_token_key(self) -> str:
-        """
-        The encryption key to use for edge token authentication.
-        """
+    def edge_token_key(self) -> Optional[str]:
         return pulumi.get(self, "edge_token_key")
 
     @property
     @pulumi.getter(name="edgeTokenSalt")
-    def edge_token_salt(self) -> str:
-        """
-        Salt to use when encrypting authentication token.
-        """
+    def edge_token_salt(self) -> Optional[str]:
         return pulumi.get(self, "edge_token_salt")
 
     @property
     @pulumi.getter(name="isEdgeTokenAuth")
-    def is_edge_token_auth(self) -> bool:
-        """
-        Whether token authentication should be used at the CDN edge.
-        """
+    def is_edge_token_auth(self) -> Optional[bool]:
         return pulumi.get(self, "is_edge_token_auth")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyA")
-    def origin_auth_secret_key_a(self) -> str:
-        """
-        The shared secret key A, two for errorless key rotation.
-        """
+    def origin_auth_secret_key_a(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_a")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyB")
-    def origin_auth_secret_key_b(self) -> str:
-        """
-        The shared secret key B, two for errorless key rotation.
-        """
+    def origin_auth_secret_key_b(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_b")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceA")
-    def origin_auth_secret_key_nonce_a(self) -> str:
-        """
-        Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        """
+    def origin_auth_secret_key_nonce_a(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_nonce_a")
 
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceB")
-    def origin_auth_secret_key_nonce_b(self) -> str:
-        """
-        Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        """
+    def origin_auth_secret_key_nonce_b(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_secret_key_nonce_b")
 
     @property
     @pulumi.getter(name="originAuthSignEncryption")
-    def origin_auth_sign_encryption(self) -> str:
-        """
-        The type of encryption used to compute the signature.
-        """
+    def origin_auth_sign_encryption(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_sign_encryption")
 
     @property
     @pulumi.getter(name="originAuthSignType")
-    def origin_auth_sign_type(self) -> str:
-        """
-        The type of data used to compute the signature.
-        """
+    def origin_auth_sign_type(self) -> Optional[str]:
         return pulumi.get(self, "origin_auth_sign_type")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The name of the CDN configuration type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -2654,158 +2016,119 @@ class GetStreamDistributionChannelsFilterResult(dict):
 @pulumi.output_type
 class GetStreamDistributionChannelsStreamDistributionChannelCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 domain_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param str domain_name: Unique domain name of the Distribution Channel.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique Stream Distribution Channel identifier.
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "domain_name", domain_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 domain_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainName")
-    def domain_name(self) -> str:
-        """
-        Unique domain name of the Distribution Channel.
-        """
+    def domain_name(self) -> Optional[str]:
         return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique Stream Distribution Channel identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetStreamPackagingConfigEncryptionResult(dict):
     def __init__(__self__, *,
-                 algorithm: str,
-                 kms_key_id: str):
-        """
-        :param str algorithm: The encryption algorithm for the stream packaging configuration.
-        :param str kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
-        pulumi.set(__self__, "algorithm", algorithm)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+                 algorithm: Optional[str] = None,
+                 kms_key_id: Optional[str] = None):
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
-    def algorithm(self) -> str:
-        """
-        The encryption algorithm for the stream packaging configuration.
-        """
+    def algorithm(self) -> Optional[str]:
         return pulumi.get(self, "algorithm")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
 
@@ -2839,326 +2162,240 @@ class GetStreamPackagingConfigsFilterResult(dict):
 @pulumi.output_type
 class GetStreamPackagingConfigsStreamPackagingConfigCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 distribution_channel_id: str,
-                 encryptions: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult'],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 segment_time_in_seconds: int,
-                 state: str,
-                 stream_packaging_format: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: Compartment Identifier
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param str distribution_channel_id: Unique Stream Distribution Channel identifier.
-        :param Sequence['GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs'] encryptions: The encryption used by the stream packaging configuration.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique identifier that is immutable on creation.
-        :param int segment_time_in_seconds: The duration in seconds for each fragment.
-        :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param str stream_packaging_format: The output format for the package.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
-        pulumi.set(__self__, "encryptions", encryptions)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "segment_time_in_seconds", segment_time_in_seconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_packaging_format", stream_packaging_format)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 distribution_channel_id: Optional[str] = None,
+                 encryptions: Optional[Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult']] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 segment_time_in_seconds: Optional[int] = None,
+                 state: Optional[str] = None,
+                 stream_packaging_format: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if distribution_channel_id is not None:
+            pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
+        if encryptions is not None:
+            pulumi.set(__self__, "encryptions", encryptions)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if segment_time_in_seconds is not None:
+            pulumi.set(__self__, "segment_time_in_seconds", segment_time_in_seconds)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if stream_packaging_format is not None:
+            pulumi.set(__self__, "stream_packaging_format", stream_packaging_format)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionChannelId")
-    def distribution_channel_id(self) -> str:
-        """
-        Unique Stream Distribution Channel identifier.
-        """
+    def distribution_channel_id(self) -> Optional[str]:
         return pulumi.get(self, "distribution_channel_id")
 
     @property
     @pulumi.getter
-    def encryptions(self) -> Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult']:
-        """
-        The encryption used by the stream packaging configuration.
-        """
+    def encryptions(self) -> Optional[Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult']]:
         return pulumi.get(self, "encryptions")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="segmentTimeInSeconds")
-    def segment_time_in_seconds(self) -> int:
-        """
-        The duration in seconds for each fragment.
-        """
+    def segment_time_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "segment_time_in_seconds")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streamPackagingFormat")
-    def stream_packaging_format(self) -> str:
-        """
-        The output format for the package.
-        """
+    def stream_packaging_format(self) -> Optional[str]:
         return pulumi.get(self, "stream_packaging_format")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult(dict):
     def __init__(__self__, *,
-                 algorithm: str,
-                 kms_key_id: str):
-        """
-        :param str algorithm: The encryption algorithm for the stream packaging configuration.
-        :param str kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
-        pulumi.set(__self__, "algorithm", algorithm)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+                 algorithm: Optional[str] = None,
+                 kms_key_id: Optional[str] = None):
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
-    def algorithm(self) -> str:
-        """
-        The encryption algorithm for the stream packaging configuration.
-        """
+    def algorithm(self) -> Optional[str]:
         return pulumi.get(self, "algorithm")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
 
 @pulumi.output_type
 class GetSystemMediaWorkflowItemResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 name: str,
-                 parameters: str,
-                 tasks: Sequence['outputs.GetSystemMediaWorkflowItemTaskResult']):
-        """
-        :param str description: Description of this workflow's processing and how that processing can be customized by specifying parameter values.
-        :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
-        :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        :param Sequence['GetSystemMediaWorkflowItemTaskArgs'] tasks: The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "tasks", tasks)
+                 description: Optional[str] = None,
+                 name: Optional[str] = None,
+                 parameters: Optional[str] = None,
+                 tasks: Optional[Sequence['outputs.GetSystemMediaWorkflowItemTaskResult']] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if tasks is not None:
+            pulumi.set(__self__, "tasks", tasks)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of this workflow's processing and how that processing can be customized by specifying parameter values.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only the resources with their system defined, unique name matching the given name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def tasks(self) -> Sequence['outputs.GetSystemMediaWorkflowItemTaskResult']:
-        """
-        The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
-        """
+    def tasks(self) -> Optional[Sequence['outputs.GetSystemMediaWorkflowItemTaskResult']]:
         return pulumi.get(self, "tasks")
 
 
 @pulumi.output_type
 class GetSystemMediaWorkflowItemTaskResult(dict):
     def __init__(__self__, *,
-                 enable_parameter_reference: str,
-                 enable_when_referenced_parameter_equals: Mapping[str, Any],
-                 key: str,
                  parameters: str,
-                 prerequisites: Sequence[str],
-                 type: str,
-                 version: str):
-        """
-        :param str enable_parameter_reference: Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        :param str key: A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        :param Sequence[str] prerequisites: Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        :param str version: The version of the MediaWorkflowTaskDeclaration.
-        """
-        pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
-        pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
-        pulumi.set(__self__, "key", key)
+                 enable_parameter_reference: Optional[str] = None,
+                 enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+                 key: Optional[str] = None,
+                 prerequisites: Optional[Sequence[str]] = None,
+                 type: Optional[str] = None,
+                 version: Optional[str] = None):
         pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "prerequisites", prerequisites)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
-
-    @property
-    @pulumi.getter(name="enableParameterReference")
-    def enable_parameter_reference(self) -> str:
-        """
-        Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        """
-        return pulumi.get(self, "enable_parameter_reference")
-
-    @property
-    @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Mapping[str, Any]:
-        """
-        Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        """
-        return pulumi.get(self, "enable_when_referenced_parameter_equals")
-
-    @property
-    @pulumi.getter
-    def key(self) -> str:
-        """
-        A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        """
-        return pulumi.get(self, "key")
+        if enable_parameter_reference is not None:
+            pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
+        if enable_when_referenced_parameter_equals is not None:
+            pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if prerequisites is not None:
+            pulumi.set(__self__, "prerequisites", prerequisites)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
     def parameters(self) -> str:
-        """
-        Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        """
         return pulumi.get(self, "parameters")
 
     @property
+    @pulumi.getter(name="enableParameterReference")
+    def enable_parameter_reference(self) -> Optional[str]:
+        return pulumi.get(self, "enable_parameter_reference")
+
+    @property
+    @pulumi.getter(name="enableWhenReferencedParameterEquals")
+    def enable_when_referenced_parameter_equals(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "enable_when_referenced_parameter_equals")
+
+    @property
     @pulumi.getter
-    def prerequisites(self) -> Sequence[str]:
-        """
-        Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        """
+    def key(self) -> Optional[str]:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def prerequisites(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "prerequisites")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the MediaWorkflowTaskDeclaration.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 

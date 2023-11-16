@@ -16,11 +16,11 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The compartment ID in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The query OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The common fields for queries.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
 
         [OutputConstructor]
         private GetQueriesQueryCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetQueriesQueryCollectionItemQueryDefinitionResult> queryDefinitions)
         {

@@ -26,12 +26,12 @@ public final class GetHistoriesResult {
      * @return The list of history_collection.
      * 
      */
-    private List<GetHistoriesHistoryCollection> historyCollections;
+    private @Nullable List<GetHistoriesHistoryCollection> historyCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name assigned to the resource.
      * 
@@ -82,14 +82,14 @@ public final class GetHistoriesResult {
      * 
      */
     public List<GetHistoriesHistoryCollection> historyCollections() {
-        return this.historyCollections;
+        return this.historyCollections == null ? List.of() : this.historyCollections;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name assigned to the resource.
@@ -146,8 +146,8 @@ public final class GetHistoriesResult {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetHistoriesFilter> filters;
-        private List<GetHistoriesHistoryCollection> historyCollections;
-        private String id;
+        private @Nullable List<GetHistoriesHistoryCollection> historyCollections;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String recommendationId;
         private @Nullable String recommendationName;
@@ -189,16 +189,16 @@ public final class GetHistoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder historyCollections(List<GetHistoriesHistoryCollection> historyCollections) {
-            this.historyCollections = Objects.requireNonNull(historyCollections);
+        public Builder historyCollections(@Nullable List<GetHistoriesHistoryCollection> historyCollections) {
+            this.historyCollections = historyCollections;
             return this;
         }
         public Builder historyCollections(GetHistoriesHistoryCollection... historyCollections) {
             return historyCollections(List.of(historyCollections));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

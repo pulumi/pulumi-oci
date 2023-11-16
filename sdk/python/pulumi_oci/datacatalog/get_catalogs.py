@@ -45,26 +45,17 @@ class GetCatalogsResult:
 
     @property
     @pulumi.getter
-    def catalogs(self) -> Sequence['outputs.GetCatalogsCatalogResult']:
-        """
-        The list of catalogs.
-        """
+    def catalogs(self) -> Optional[Sequence['outputs.GetCatalogsCatalogResult']]:
         return pulumi.get(self, "catalogs")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Data catalog identifier, which can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetCatalogsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetCatalogsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the data catalog resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_catalogs(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogsResult:
     """
-    This data source provides the list of Catalogs in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all the data catalogs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalogs = oci.DataCatalog.get_catalogs(compartment_id=var["compartment_id"],
-        display_name=var["catalog_display_name"],
-        state=var["catalog_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment where you want to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_catalogs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogsResult]:
     """
-    This data source provides the list of Catalogs in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all the data catalogs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalogs = oci.DataCatalog.get_catalogs(compartment_id=var["compartment_id"],
-        display_name=var["catalog_display_name"],
-        state=var["catalog_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment where you want to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -63,9 +63,6 @@ class GetReportsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the report.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -76,9 +73,6 @@ class GetReportsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Name of the report.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -88,7 +82,7 @@ class GetReportsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,34 +90,22 @@ class GetReportsResult:
 
     @property
     @pulumi.getter(name="reportCollections")
-    def report_collections(self) -> Sequence['outputs.GetReportsReportCollectionResult']:
-        """
-        The list of report_collection.
-        """
+    def report_collections(self) -> Optional[Sequence['outputs.GetReportsReportCollectionResult']]:
         return pulumi.get(self, "report_collections")
 
     @property
     @pulumi.getter(name="reportDefinitionId")
     def report_definition_id(self) -> Optional[str]:
-        """
-        The OCID of the report definition.
-        """
         return pulumi.get(self, "report_definition_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the audit report.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the audit report.
-        """
         return pulumi.get(self, "type")
 
 
@@ -155,33 +137,7 @@ def get_reports(access_level: Optional[str] = None,
                 type: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportsResult:
     """
-    This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all the reports in the compartment. It contains information such as report generation time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_reports = oci.DataSafe.get_reports(compartment_id=var["compartment_id"],
-        access_level=var["report_access_level"],
-        compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
-        display_name=var["report_display_name"],
-        report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"],
-        type=var["report_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: The name of the report definition to query.
-    :param str report_definition_id: The ID of the report definition to filter the list of reports
-    :param str state: An optional filter to return only resources that match the specified lifecycle state.
-    :param str type: An optional filter to return only resources that match the specified type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -219,32 +175,6 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
                        type: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportsResult]:
     """
-    This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all the reports in the compartment. It contains information such as report generation time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_reports = oci.DataSafe.get_reports(compartment_id=var["compartment_id"],
-        access_level=var["report_access_level"],
-        compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
-        display_name=var["report_display_name"],
-        report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"],
-        type=var["report_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: The name of the report definition to query.
-    :param str report_definition_id: The ID of the report definition to filter the list of reports
-    :param str state: An optional filter to return only resources that match the specified lifecycle state.
-    :param str type: An optional filter to return only resources that match the specified type.
+    Use this data source to access information about an existing resource.
     """
     ...

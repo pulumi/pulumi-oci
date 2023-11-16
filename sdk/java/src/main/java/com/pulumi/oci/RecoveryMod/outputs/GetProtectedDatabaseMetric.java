@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectedDatabaseMetric {
@@ -14,87 +16,87 @@ public final class GetProtectedDatabaseMetric {
      * @return The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
      * 
      */
-    private Double backupSpaceEstimateInGbs;
+    private @Nullable Double backupSpaceEstimateInGbs;
     /**
      * @return Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
      * 
      */
-    private Double backupSpaceUsedInGbs;
+    private @Nullable Double backupSpaceUsedInGbs;
     /**
      * @return Number of seconds backups are currently retained for this database.
      * 
      */
-    private Double currentRetentionPeriodInSeconds;
+    private @Nullable Double currentRetentionPeriodInSeconds;
     /**
      * @return The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
      * 
      */
-    private Double dbSizeInGbs;
+    private @Nullable Double dbSizeInGbs;
     /**
      * @return The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      * 
      */
-    private Boolean isRedoLogsEnabled;
+    private @Nullable Boolean isRedoLogsEnabled;
     /**
      * @return The maximum number of days to retain backups for a protected database.
      * 
      */
-    private Double retentionPeriodInDays;
+    private @Nullable Double retentionPeriodInDays;
     /**
      * @return This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
      * 
      */
-    private Double unprotectedWindowInSeconds;
+    private @Nullable Double unprotectedWindowInSeconds;
 
     private GetProtectedDatabaseMetric() {}
     /**
      * @return The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
      * 
      */
-    public Double backupSpaceEstimateInGbs() {
-        return this.backupSpaceEstimateInGbs;
+    public Optional<Double> backupSpaceEstimateInGbs() {
+        return Optional.ofNullable(this.backupSpaceEstimateInGbs);
     }
     /**
      * @return Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
      * 
      */
-    public Double backupSpaceUsedInGbs() {
-        return this.backupSpaceUsedInGbs;
+    public Optional<Double> backupSpaceUsedInGbs() {
+        return Optional.ofNullable(this.backupSpaceUsedInGbs);
     }
     /**
      * @return Number of seconds backups are currently retained for this database.
      * 
      */
-    public Double currentRetentionPeriodInSeconds() {
-        return this.currentRetentionPeriodInSeconds;
+    public Optional<Double> currentRetentionPeriodInSeconds() {
+        return Optional.ofNullable(this.currentRetentionPeriodInSeconds);
     }
     /**
      * @return The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
      * 
      */
-    public Double dbSizeInGbs() {
-        return this.dbSizeInGbs;
+    public Optional<Double> dbSizeInGbs() {
+        return Optional.ofNullable(this.dbSizeInGbs);
     }
     /**
      * @return The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      * 
      */
-    public Boolean isRedoLogsEnabled() {
-        return this.isRedoLogsEnabled;
+    public Optional<Boolean> isRedoLogsEnabled() {
+        return Optional.ofNullable(this.isRedoLogsEnabled);
     }
     /**
      * @return The maximum number of days to retain backups for a protected database.
      * 
      */
-    public Double retentionPeriodInDays() {
-        return this.retentionPeriodInDays;
+    public Optional<Double> retentionPeriodInDays() {
+        return Optional.ofNullable(this.retentionPeriodInDays);
     }
     /**
      * @return This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
      * 
      */
-    public Double unprotectedWindowInSeconds() {
-        return this.unprotectedWindowInSeconds;
+    public Optional<Double> unprotectedWindowInSeconds() {
+        return Optional.ofNullable(this.unprotectedWindowInSeconds);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetProtectedDatabaseMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double backupSpaceEstimateInGbs;
-        private Double backupSpaceUsedInGbs;
-        private Double currentRetentionPeriodInSeconds;
-        private Double dbSizeInGbs;
-        private Boolean isRedoLogsEnabled;
-        private Double retentionPeriodInDays;
-        private Double unprotectedWindowInSeconds;
+        private @Nullable Double backupSpaceEstimateInGbs;
+        private @Nullable Double backupSpaceUsedInGbs;
+        private @Nullable Double currentRetentionPeriodInSeconds;
+        private @Nullable Double dbSizeInGbs;
+        private @Nullable Boolean isRedoLogsEnabled;
+        private @Nullable Double retentionPeriodInDays;
+        private @Nullable Double unprotectedWindowInSeconds;
         public Builder() {}
         public Builder(GetProtectedDatabaseMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetProtectedDatabaseMetric {
         }
 
         @CustomType.Setter
-        public Builder backupSpaceEstimateInGbs(Double backupSpaceEstimateInGbs) {
-            this.backupSpaceEstimateInGbs = Objects.requireNonNull(backupSpaceEstimateInGbs);
+        public Builder backupSpaceEstimateInGbs(@Nullable Double backupSpaceEstimateInGbs) {
+            this.backupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder backupSpaceUsedInGbs(Double backupSpaceUsedInGbs) {
-            this.backupSpaceUsedInGbs = Objects.requireNonNull(backupSpaceUsedInGbs);
+        public Builder backupSpaceUsedInGbs(@Nullable Double backupSpaceUsedInGbs) {
+            this.backupSpaceUsedInGbs = backupSpaceUsedInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder currentRetentionPeriodInSeconds(Double currentRetentionPeriodInSeconds) {
-            this.currentRetentionPeriodInSeconds = Objects.requireNonNull(currentRetentionPeriodInSeconds);
+        public Builder currentRetentionPeriodInSeconds(@Nullable Double currentRetentionPeriodInSeconds) {
+            this.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSizeInGbs(Double dbSizeInGbs) {
-            this.dbSizeInGbs = Objects.requireNonNull(dbSizeInGbs);
+        public Builder dbSizeInGbs(@Nullable Double dbSizeInGbs) {
+            this.dbSizeInGbs = dbSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder isRedoLogsEnabled(Boolean isRedoLogsEnabled) {
-            this.isRedoLogsEnabled = Objects.requireNonNull(isRedoLogsEnabled);
+        public Builder isRedoLogsEnabled(@Nullable Boolean isRedoLogsEnabled) {
+            this.isRedoLogsEnabled = isRedoLogsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionPeriodInDays(Double retentionPeriodInDays) {
-            this.retentionPeriodInDays = Objects.requireNonNull(retentionPeriodInDays);
+        public Builder retentionPeriodInDays(@Nullable Double retentionPeriodInDays) {
+            this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder unprotectedWindowInSeconds(Double unprotectedWindowInSeconds) {
-            this.unprotectedWindowInSeconds = Objects.requireNonNull(unprotectedWindowInSeconds);
+        public Builder unprotectedWindowInSeconds(@Nullable Double unprotectedWindowInSeconds) {
+            this.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
             return this;
         }
         public GetProtectedDatabaseMetric build() {

@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
         /// </summary>
-        public readonly string ComputeDisplayName;
+        public readonly string? ComputeDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         /// </summary>
-        public readonly string ComputeId;
+        public readonly string? ComputeId;
         /// <summary>
         /// Source of the importable agent entity.
         /// </summary>
-        public readonly string EntitySource;
+        public readonly string? EntitySource;
         /// <summary>
         /// The host name. The host name is unique amongst the hosts managed by the same management agent.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         /// </summary>
-        public readonly string PlatformType;
+        public readonly string? PlatformType;
 
         [OutputConstructor]
         private GetImportableComputeEntityItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string computeDisplayName,
+            string? computeDisplayName,
 
-            string computeId,
+            string? computeId,
 
-            string entitySource,
+            string? entitySource,
 
-            string hostName,
+            string? hostName,
 
-            string platformType)
+            string? platformType)
         {
             CompartmentId = compartmentId;
             ComputeDisplayName = computeDisplayName;

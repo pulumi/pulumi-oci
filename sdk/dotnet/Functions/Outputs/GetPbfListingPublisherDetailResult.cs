@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// A brief descriptive name for the PBF trigger.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPbfListingPublisherDetailResult(string name)
+        private GetPbfListingPublisherDetailResult(string? name)
         {
             Name = name;
         }

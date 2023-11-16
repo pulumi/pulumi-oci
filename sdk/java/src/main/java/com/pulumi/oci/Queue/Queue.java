@@ -78,14 +78,14 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="channelConsumptionLimit", refs={Integer.class}, tree="[0]")
-    private Output<Integer> channelConsumptionLimit;
+    private Output</* @Nullable */ Integer> channelConsumptionLimit;
 
     /**
      * @return (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 
      */
-    public Output<Integer> channelConsumptionLimit() {
-        return this.channelConsumptionLimit;
+    public Output<Optional<Integer>> channelConsumptionLimit() {
+        return Codegen.optional(this.channelConsumptionLimit);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
@@ -106,42 +106,42 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="customEncryptionKeyId", refs={String.class}, tree="[0]")
-    private Output<String> customEncryptionKeyId;
+    private Output</* @Nullable */ String> customEncryptionKeyId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
-    public Output<String> customEncryptionKeyId() {
-        return this.customEncryptionKeyId;
+    public Output<Optional<String>> customEncryptionKeyId() {
+        return Codegen.optional(this.customEncryptionKeyId);
     }
     /**
      * (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
      * 
      */
     @Export(name="deadLetterQueueDeliveryCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> deadLetterQueueDeliveryCount;
+    private Output</* @Nullable */ Integer> deadLetterQueueDeliveryCount;
 
     /**
      * @return (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
      * 
      */
-    public Output<Integer> deadLetterQueueDeliveryCount() {
-        return this.deadLetterQueueDeliveryCount;
+    public Output<Optional<Integer>> deadLetterQueueDeliveryCount() {
+        return Codegen.optional(this.deadLetterQueueDeliveryCount);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The user-friendly name of the queue.
@@ -162,42 +162,42 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Any additional details about the current state of the queue.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Any additional details about the current state of the queue.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The endpoint to use to consume or publish messages in the queue.
      * 
      */
     @Export(name="messagesEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> messagesEndpoint;
+    private Output</* @Nullable */ String> messagesEndpoint;
 
     /**
      * @return The endpoint to use to consume or publish messages in the queue.
      * 
      */
-    public Output<String> messagesEndpoint() {
-        return this.messagesEndpoint;
+    public Output<Optional<String>> messagesEndpoint() {
+        return Codegen.optional(this.messagesEndpoint);
     }
     @Export(name="purgeQueue", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> purgeQueue;
@@ -216,98 +216,98 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="retentionInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> retentionInSeconds;
+    private Output</* @Nullable */ Integer> retentionInSeconds;
 
     /**
      * @return The retention period of messages in the queue, in seconds.
      * 
      */
-    public Output<Integer> retentionInSeconds() {
-        return this.retentionInSeconds;
+    public Output<Optional<Integer>> retentionInSeconds() {
+        return Codegen.optional(this.retentionInSeconds);
     }
     /**
      * The current state of the queue.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the queue.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) The default polling timeout of the messages in the queue, in seconds.
      * 
      */
     @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> timeoutInSeconds;
+    private Output</* @Nullable */ Integer> timeoutInSeconds;
 
     /**
      * @return (Updatable) The default polling timeout of the messages in the queue, in seconds.
      * 
      */
-    public Output<Integer> timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Output<Optional<Integer>> timeoutInSeconds() {
+        return Codegen.optional(this.timeoutInSeconds);
     }
     /**
      * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     @Export(name="visibilityInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> visibilityInSeconds;
+    private Output</* @Nullable */ Integer> visibilityInSeconds;
 
     /**
      * @return (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
-    public Output<Integer> visibilityInSeconds() {
-        return this.visibilityInSeconds;
+    public Output<Optional<Integer>> visibilityInSeconds() {
+        return Codegen.optional(this.visibilityInSeconds);
     }
 
     /**

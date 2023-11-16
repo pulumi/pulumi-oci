@@ -11,6 +11,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp {
@@ -18,327 +20,327 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
      * @return The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
      * 
      */
-    private String assertionConsumerUrl;
+    private @Nullable String assertionConsumerUrl;
     /**
      * @return If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
      * 
      */
-    private Boolean encryptAssertion;
+    private @Nullable Boolean encryptAssertion;
     /**
      * @return This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
      * 
      */
-    private String encryptionAlgorithm;
+    private @Nullable String encryptionAlgorithm;
     /**
      * @return This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
      * 
      */
-    private String encryptionCertificate;
+    private @Nullable String encryptionCertificate;
     /**
      * @return Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
      * 
      */
-    private String federationProtocol;
+    private @Nullable String federationProtocol;
     /**
      * @return Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes;
     /**
      * @return Hok Assertion Consumer Service Url
      * 
      */
-    private String hokAcsUrl;
+    private @Nullable String hokAcsUrl;
     /**
      * @return If enabled, then the SAML Service supports Hok for this App.
      * 
      */
-    private Boolean hokRequired;
+    private @Nullable Boolean hokRequired;
     /**
      * @return If true, then the signing certificate is included in the signature.
      * 
      */
-    private Boolean includeSigningCertInSignature;
+    private @Nullable Boolean includeSigningCertInSignature;
     /**
      * @return This attribute indicates the key encryption algorithm.
      * 
      */
-    private String keyEncryptionAlgorithm;
+    private @Nullable String keyEncryptionAlgorithm;
     /**
      * @return Records the notification timestamp for the SP whose signing certificate is about to expire.
      * 
      */
-    private String lastNotificationSentTime;
+    private @Nullable String lastNotificationSentTime;
     /**
      * @return This attribute represents the HTTP binding that would be used while logout.
      * 
      */
-    private String logoutBinding;
+    private @Nullable String logoutBinding;
     /**
      * @return If true, then the SAML Service supports logout for this App.
      * 
      */
-    private Boolean logoutEnabled;
+    private @Nullable Boolean logoutEnabled;
     /**
      * @return The URL to which the partner sends the logout request.
      * 
      */
-    private String logoutRequestUrl;
+    private @Nullable String logoutRequestUrl;
     /**
      * @return The URL to which the partner sends the logout response.
      * 
      */
-    private String logoutResponseUrl;
+    private @Nullable String logoutResponseUrl;
     /**
      * @return This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
      * 
      */
-    private String metadata;
+    private @Nullable String metadata;
     /**
      * @return This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
      * 
      */
-    private String nameIdFormat;
+    private @Nullable String nameIdFormat;
     /**
      * @return **Deprecated Since: 18.2.2**
      * 
      */
-    private String nameIdUserstoreAttribute;
+    private @Nullable String nameIdUserstoreAttribute;
     /**
      * @return Use to construct the outgoing SAML attributes
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes;
     /**
      * @return The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
      * 
      */
-    private String partnerProviderId;
+    private @Nullable String partnerProviderId;
     /**
      * @return The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
      * 
      */
-    private String partnerProviderPattern;
+    private @Nullable String partnerProviderPattern;
     /**
      * @return Indicates which part of the response should be signed.  A value of \&#34;Assertion\&#34; indicates that the Assertion should be signed.  A value of \&#34;Response\&#34; indicates that the SSO Response should be signed. A value of \&#34;AssertionAndResponse\&#34; indicates that both the Assertion and the SSO Response should be signed.
      * 
      */
-    private String signResponseOrAssertion;
+    private @Nullable String signResponseOrAssertion;
     /**
      * @return This attribute represents the algorithm used to hash the signature.
      * 
      */
-    private String signatureHashAlgorithm;
+    private @Nullable String signatureHashAlgorithm;
     /**
      * @return This attribute represents the signing certificate that an App uses to verify the signed authentication request.
      * 
      */
-    private String signingCertificate;
+    private @Nullable String signingCertificate;
     /**
      * @return This attribute represents the Succinct ID.
      * 
      */
-    private String succinctId;
+    private @Nullable String succinctId;
     /**
      * @return The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
      * 
      */
-    private String tenantProviderId;
+    private @Nullable String tenantProviderId;
     /**
      * @return Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp() {}
     /**
      * @return The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
      * 
      */
-    public String assertionConsumerUrl() {
-        return this.assertionConsumerUrl;
+    public Optional<String> assertionConsumerUrl() {
+        return Optional.ofNullable(this.assertionConsumerUrl);
     }
     /**
      * @return If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
      * 
      */
-    public Boolean encryptAssertion() {
-        return this.encryptAssertion;
+    public Optional<Boolean> encryptAssertion() {
+        return Optional.ofNullable(this.encryptAssertion);
     }
     /**
      * @return This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
      * 
      */
-    public String encryptionAlgorithm() {
-        return this.encryptionAlgorithm;
+    public Optional<String> encryptionAlgorithm() {
+        return Optional.ofNullable(this.encryptionAlgorithm);
     }
     /**
      * @return This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
      * 
      */
-    public String encryptionCertificate() {
-        return this.encryptionCertificate;
+    public Optional<String> encryptionCertificate() {
+        return Optional.ofNullable(this.encryptionCertificate);
     }
     /**
      * @return Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
      * 
      */
-    public String federationProtocol() {
-        return this.federationProtocol;
+    public Optional<String> federationProtocol() {
+        return Optional.ofNullable(this.federationProtocol);
     }
     /**
      * @return Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes() {
-        return this.groupAssertionAttributes;
+        return this.groupAssertionAttributes == null ? List.of() : this.groupAssertionAttributes;
     }
     /**
      * @return Hok Assertion Consumer Service Url
      * 
      */
-    public String hokAcsUrl() {
-        return this.hokAcsUrl;
+    public Optional<String> hokAcsUrl() {
+        return Optional.ofNullable(this.hokAcsUrl);
     }
     /**
      * @return If enabled, then the SAML Service supports Hok for this App.
      * 
      */
-    public Boolean hokRequired() {
-        return this.hokRequired;
+    public Optional<Boolean> hokRequired() {
+        return Optional.ofNullable(this.hokRequired);
     }
     /**
      * @return If true, then the signing certificate is included in the signature.
      * 
      */
-    public Boolean includeSigningCertInSignature() {
-        return this.includeSigningCertInSignature;
+    public Optional<Boolean> includeSigningCertInSignature() {
+        return Optional.ofNullable(this.includeSigningCertInSignature);
     }
     /**
      * @return This attribute indicates the key encryption algorithm.
      * 
      */
-    public String keyEncryptionAlgorithm() {
-        return this.keyEncryptionAlgorithm;
+    public Optional<String> keyEncryptionAlgorithm() {
+        return Optional.ofNullable(this.keyEncryptionAlgorithm);
     }
     /**
      * @return Records the notification timestamp for the SP whose signing certificate is about to expire.
      * 
      */
-    public String lastNotificationSentTime() {
-        return this.lastNotificationSentTime;
+    public Optional<String> lastNotificationSentTime() {
+        return Optional.ofNullable(this.lastNotificationSentTime);
     }
     /**
      * @return This attribute represents the HTTP binding that would be used while logout.
      * 
      */
-    public String logoutBinding() {
-        return this.logoutBinding;
+    public Optional<String> logoutBinding() {
+        return Optional.ofNullable(this.logoutBinding);
     }
     /**
      * @return If true, then the SAML Service supports logout for this App.
      * 
      */
-    public Boolean logoutEnabled() {
-        return this.logoutEnabled;
+    public Optional<Boolean> logoutEnabled() {
+        return Optional.ofNullable(this.logoutEnabled);
     }
     /**
      * @return The URL to which the partner sends the logout request.
      * 
      */
-    public String logoutRequestUrl() {
-        return this.logoutRequestUrl;
+    public Optional<String> logoutRequestUrl() {
+        return Optional.ofNullable(this.logoutRequestUrl);
     }
     /**
      * @return The URL to which the partner sends the logout response.
      * 
      */
-    public String logoutResponseUrl() {
-        return this.logoutResponseUrl;
+    public Optional<String> logoutResponseUrl() {
+        return Optional.ofNullable(this.logoutResponseUrl);
     }
     /**
      * @return This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
      * 
      */
-    public String metadata() {
-        return this.metadata;
+    public Optional<String> metadata() {
+        return Optional.ofNullable(this.metadata);
     }
     /**
      * @return This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
      * 
      */
-    public String nameIdFormat() {
-        return this.nameIdFormat;
+    public Optional<String> nameIdFormat() {
+        return Optional.ofNullable(this.nameIdFormat);
     }
     /**
      * @return **Deprecated Since: 18.2.2**
      * 
      */
-    public String nameIdUserstoreAttribute() {
-        return this.nameIdUserstoreAttribute;
+    public Optional<String> nameIdUserstoreAttribute() {
+        return Optional.ofNullable(this.nameIdUserstoreAttribute);
     }
     /**
      * @return Use to construct the outgoing SAML attributes
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes() {
-        return this.outboundAssertionAttributes;
+        return this.outboundAssertionAttributes == null ? List.of() : this.outboundAssertionAttributes;
     }
     /**
      * @return The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
      * 
      */
-    public String partnerProviderId() {
-        return this.partnerProviderId;
+    public Optional<String> partnerProviderId() {
+        return Optional.ofNullable(this.partnerProviderId);
     }
     /**
      * @return The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
      * 
      */
-    public String partnerProviderPattern() {
-        return this.partnerProviderPattern;
+    public Optional<String> partnerProviderPattern() {
+        return Optional.ofNullable(this.partnerProviderPattern);
     }
     /**
      * @return Indicates which part of the response should be signed.  A value of \&#34;Assertion\&#34; indicates that the Assertion should be signed.  A value of \&#34;Response\&#34; indicates that the SSO Response should be signed. A value of \&#34;AssertionAndResponse\&#34; indicates that both the Assertion and the SSO Response should be signed.
      * 
      */
-    public String signResponseOrAssertion() {
-        return this.signResponseOrAssertion;
+    public Optional<String> signResponseOrAssertion() {
+        return Optional.ofNullable(this.signResponseOrAssertion);
     }
     /**
      * @return This attribute represents the algorithm used to hash the signature.
      * 
      */
-    public String signatureHashAlgorithm() {
-        return this.signatureHashAlgorithm;
+    public Optional<String> signatureHashAlgorithm() {
+        return Optional.ofNullable(this.signatureHashAlgorithm);
     }
     /**
      * @return This attribute represents the signing certificate that an App uses to verify the signed authentication request.
      * 
      */
-    public String signingCertificate() {
-        return this.signingCertificate;
+    public Optional<String> signingCertificate() {
+        return Optional.ofNullable(this.signingCertificate);
     }
     /**
      * @return This attribute represents the Succinct ID.
      * 
      */
-    public String succinctId() {
-        return this.succinctId;
+    public Optional<String> succinctId() {
+        return Optional.ofNullable(this.succinctId);
     }
     /**
      * @return The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
      * 
      */
-    public String tenantProviderId() {
-        return this.tenantProviderId;
+    public Optional<String> tenantProviderId() {
+        return Optional.ofNullable(this.tenantProviderId);
     }
     /**
      * @return Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes() {
-        return this.userAssertionAttributes;
+        return this.userAssertionAttributes == null ? List.of() : this.userAssertionAttributes;
     }
 
     public static Builder builder() {
@@ -350,33 +352,33 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
     }
     @CustomType.Builder
     public static final class Builder {
-        private String assertionConsumerUrl;
-        private Boolean encryptAssertion;
-        private String encryptionAlgorithm;
-        private String encryptionCertificate;
-        private String federationProtocol;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes;
-        private String hokAcsUrl;
-        private Boolean hokRequired;
-        private Boolean includeSigningCertInSignature;
-        private String keyEncryptionAlgorithm;
-        private String lastNotificationSentTime;
-        private String logoutBinding;
-        private Boolean logoutEnabled;
-        private String logoutRequestUrl;
-        private String logoutResponseUrl;
-        private String metadata;
-        private String nameIdFormat;
-        private String nameIdUserstoreAttribute;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes;
-        private String partnerProviderId;
-        private String partnerProviderPattern;
-        private String signResponseOrAssertion;
-        private String signatureHashAlgorithm;
-        private String signingCertificate;
-        private String succinctId;
-        private String tenantProviderId;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes;
+        private @Nullable String assertionConsumerUrl;
+        private @Nullable Boolean encryptAssertion;
+        private @Nullable String encryptionAlgorithm;
+        private @Nullable String encryptionCertificate;
+        private @Nullable String federationProtocol;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes;
+        private @Nullable String hokAcsUrl;
+        private @Nullable Boolean hokRequired;
+        private @Nullable Boolean includeSigningCertInSignature;
+        private @Nullable String keyEncryptionAlgorithm;
+        private @Nullable String lastNotificationSentTime;
+        private @Nullable String logoutBinding;
+        private @Nullable Boolean logoutEnabled;
+        private @Nullable String logoutRequestUrl;
+        private @Nullable String logoutResponseUrl;
+        private @Nullable String metadata;
+        private @Nullable String nameIdFormat;
+        private @Nullable String nameIdUserstoreAttribute;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes;
+        private @Nullable String partnerProviderId;
+        private @Nullable String partnerProviderPattern;
+        private @Nullable String signResponseOrAssertion;
+        private @Nullable String signatureHashAlgorithm;
+        private @Nullable String signingCertificate;
+        private @Nullable String succinctId;
+        private @Nullable String tenantProviderId;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -410,144 +412,144 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
         }
 
         @CustomType.Setter
-        public Builder assertionConsumerUrl(String assertionConsumerUrl) {
-            this.assertionConsumerUrl = Objects.requireNonNull(assertionConsumerUrl);
+        public Builder assertionConsumerUrl(@Nullable String assertionConsumerUrl) {
+            this.assertionConsumerUrl = assertionConsumerUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder encryptAssertion(Boolean encryptAssertion) {
-            this.encryptAssertion = Objects.requireNonNull(encryptAssertion);
+        public Builder encryptAssertion(@Nullable Boolean encryptAssertion) {
+            this.encryptAssertion = encryptAssertion;
             return this;
         }
         @CustomType.Setter
-        public Builder encryptionAlgorithm(String encryptionAlgorithm) {
-            this.encryptionAlgorithm = Objects.requireNonNull(encryptionAlgorithm);
+        public Builder encryptionAlgorithm(@Nullable String encryptionAlgorithm) {
+            this.encryptionAlgorithm = encryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder encryptionCertificate(String encryptionCertificate) {
-            this.encryptionCertificate = Objects.requireNonNull(encryptionCertificate);
+        public Builder encryptionCertificate(@Nullable String encryptionCertificate) {
+            this.encryptionCertificate = encryptionCertificate;
             return this;
         }
         @CustomType.Setter
-        public Builder federationProtocol(String federationProtocol) {
-            this.federationProtocol = Objects.requireNonNull(federationProtocol);
+        public Builder federationProtocol(@Nullable String federationProtocol) {
+            this.federationProtocol = federationProtocol;
             return this;
         }
         @CustomType.Setter
-        public Builder groupAssertionAttributes(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes) {
-            this.groupAssertionAttributes = Objects.requireNonNull(groupAssertionAttributes);
+        public Builder groupAssertionAttributes(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes) {
+            this.groupAssertionAttributes = groupAssertionAttributes;
             return this;
         }
         public Builder groupAssertionAttributes(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute... groupAssertionAttributes) {
             return groupAssertionAttributes(List.of(groupAssertionAttributes));
         }
         @CustomType.Setter
-        public Builder hokAcsUrl(String hokAcsUrl) {
-            this.hokAcsUrl = Objects.requireNonNull(hokAcsUrl);
+        public Builder hokAcsUrl(@Nullable String hokAcsUrl) {
+            this.hokAcsUrl = hokAcsUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder hokRequired(Boolean hokRequired) {
-            this.hokRequired = Objects.requireNonNull(hokRequired);
+        public Builder hokRequired(@Nullable Boolean hokRequired) {
+            this.hokRequired = hokRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder includeSigningCertInSignature(Boolean includeSigningCertInSignature) {
-            this.includeSigningCertInSignature = Objects.requireNonNull(includeSigningCertInSignature);
+        public Builder includeSigningCertInSignature(@Nullable Boolean includeSigningCertInSignature) {
+            this.includeSigningCertInSignature = includeSigningCertInSignature;
             return this;
         }
         @CustomType.Setter
-        public Builder keyEncryptionAlgorithm(String keyEncryptionAlgorithm) {
-            this.keyEncryptionAlgorithm = Objects.requireNonNull(keyEncryptionAlgorithm);
+        public Builder keyEncryptionAlgorithm(@Nullable String keyEncryptionAlgorithm) {
+            this.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder lastNotificationSentTime(String lastNotificationSentTime) {
-            this.lastNotificationSentTime = Objects.requireNonNull(lastNotificationSentTime);
+        public Builder lastNotificationSentTime(@Nullable String lastNotificationSentTime) {
+            this.lastNotificationSentTime = lastNotificationSentTime;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutBinding(String logoutBinding) {
-            this.logoutBinding = Objects.requireNonNull(logoutBinding);
+        public Builder logoutBinding(@Nullable String logoutBinding) {
+            this.logoutBinding = logoutBinding;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutEnabled(Boolean logoutEnabled) {
-            this.logoutEnabled = Objects.requireNonNull(logoutEnabled);
+        public Builder logoutEnabled(@Nullable Boolean logoutEnabled) {
+            this.logoutEnabled = logoutEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutRequestUrl(String logoutRequestUrl) {
-            this.logoutRequestUrl = Objects.requireNonNull(logoutRequestUrl);
+        public Builder logoutRequestUrl(@Nullable String logoutRequestUrl) {
+            this.logoutRequestUrl = logoutRequestUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutResponseUrl(String logoutResponseUrl) {
-            this.logoutResponseUrl = Objects.requireNonNull(logoutResponseUrl);
+        public Builder logoutResponseUrl(@Nullable String logoutResponseUrl) {
+            this.logoutResponseUrl = logoutResponseUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable String metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder nameIdFormat(String nameIdFormat) {
-            this.nameIdFormat = Objects.requireNonNull(nameIdFormat);
+        public Builder nameIdFormat(@Nullable String nameIdFormat) {
+            this.nameIdFormat = nameIdFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder nameIdUserstoreAttribute(String nameIdUserstoreAttribute) {
-            this.nameIdUserstoreAttribute = Objects.requireNonNull(nameIdUserstoreAttribute);
+        public Builder nameIdUserstoreAttribute(@Nullable String nameIdUserstoreAttribute) {
+            this.nameIdUserstoreAttribute = nameIdUserstoreAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder outboundAssertionAttributes(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes) {
-            this.outboundAssertionAttributes = Objects.requireNonNull(outboundAssertionAttributes);
+        public Builder outboundAssertionAttributes(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes) {
+            this.outboundAssertionAttributes = outboundAssertionAttributes;
             return this;
         }
         public Builder outboundAssertionAttributes(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute... outboundAssertionAttributes) {
             return outboundAssertionAttributes(List.of(outboundAssertionAttributes));
         }
         @CustomType.Setter
-        public Builder partnerProviderId(String partnerProviderId) {
-            this.partnerProviderId = Objects.requireNonNull(partnerProviderId);
+        public Builder partnerProviderId(@Nullable String partnerProviderId) {
+            this.partnerProviderId = partnerProviderId;
             return this;
         }
         @CustomType.Setter
-        public Builder partnerProviderPattern(String partnerProviderPattern) {
-            this.partnerProviderPattern = Objects.requireNonNull(partnerProviderPattern);
+        public Builder partnerProviderPattern(@Nullable String partnerProviderPattern) {
+            this.partnerProviderPattern = partnerProviderPattern;
             return this;
         }
         @CustomType.Setter
-        public Builder signResponseOrAssertion(String signResponseOrAssertion) {
-            this.signResponseOrAssertion = Objects.requireNonNull(signResponseOrAssertion);
+        public Builder signResponseOrAssertion(@Nullable String signResponseOrAssertion) {
+            this.signResponseOrAssertion = signResponseOrAssertion;
             return this;
         }
         @CustomType.Setter
-        public Builder signatureHashAlgorithm(String signatureHashAlgorithm) {
-            this.signatureHashAlgorithm = Objects.requireNonNull(signatureHashAlgorithm);
+        public Builder signatureHashAlgorithm(@Nullable String signatureHashAlgorithm) {
+            this.signatureHashAlgorithm = signatureHashAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder signingCertificate(String signingCertificate) {
-            this.signingCertificate = Objects.requireNonNull(signingCertificate);
+        public Builder signingCertificate(@Nullable String signingCertificate) {
+            this.signingCertificate = signingCertificate;
             return this;
         }
         @CustomType.Setter
-        public Builder succinctId(String succinctId) {
-            this.succinctId = Objects.requireNonNull(succinctId);
+        public Builder succinctId(@Nullable String succinctId) {
+            this.succinctId = succinctId;
             return this;
         }
         @CustomType.Setter
-        public Builder tenantProviderId(String tenantProviderId) {
-            this.tenantProviderId = Objects.requireNonNull(tenantProviderId);
+        public Builder tenantProviderId(@Nullable String tenantProviderId) {
+            this.tenantProviderId = tenantProviderId;
             return this;
         }
         @CustomType.Setter
-        public Builder userAssertionAttributes(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes) {
-            this.userAssertionAttributes = Objects.requireNonNull(userAssertionAttributes);
+        public Builder userAssertionAttributes(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes) {
+            this.userAssertionAttributes = userAssertionAttributes;
             return this;
         }
         public Builder userAssertionAttributes(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute... userAssertionAttributes) {

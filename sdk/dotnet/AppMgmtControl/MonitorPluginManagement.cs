@@ -42,13 +42,13 @@ namespace Pulumi.Oci.AppMgmtControl
     public partial class MonitorPluginManagement : global::Pulumi.CustomResource
     {
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         [Output("monitoredInstanceDescription")]
-        public Output<string> MonitoredInstanceDescription { get; private set; } = null!;
+        public Output<string?> MonitoredInstanceDescription { get; private set; } = null!;
 
         [Output("monitoredInstanceDisplayName")]
-        public Output<string> MonitoredInstanceDisplayName { get; private set; } = null!;
+        public Output<string?> MonitoredInstanceDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// OCID of monitored instance.
@@ -61,10 +61,10 @@ namespace Pulumi.Oci.AppMgmtControl
         public Output<string> MonitoredInstanceId { get; private set; } = null!;
 
         [Output("monitoredInstanceManagementAgentId")]
-        public Output<string> MonitoredInstanceManagementAgentId { get; private set; } = null!;
+        public Output<string?> MonitoredInstanceManagementAgentId { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

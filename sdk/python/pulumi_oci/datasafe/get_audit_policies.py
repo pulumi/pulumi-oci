@@ -62,10 +62,7 @@ class GetAuditPoliciesResult:
 
     @property
     @pulumi.getter(name="auditPolicyCollections")
-    def audit_policy_collections(self) -> Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionResult']:
-        """
-        The list of audit_policy_collection.
-        """
+    def audit_policy_collections(self) -> Optional[Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionResult']]:
         return pulumi.get(self, "audit_policy_collections")
 
     @property
@@ -76,9 +73,6 @@ class GetAuditPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the audit policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -89,9 +83,6 @@ class GetAuditPoliciesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the audit policy.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -101,7 +92,7 @@ class GetAuditPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -110,17 +101,11 @@ class GetAuditPoliciesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the audit policy.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target for which the audit policy is created.
-        """
         return pulumi.get(self, "target_id")
 
 
@@ -152,47 +137,7 @@ def get_audit_policies(access_level: Optional[str] = None,
                        target_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditPoliciesResult:
     """
-    This data source provides the list of Audit Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all audited targets with their corresponding provisioned audit policies, and their provisioning conditions.
-
-    The ListAuditPolicies operation returns only the audit policies in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditPolicies on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=var["compartment_id"],
-        access_level=var["audit_policy_access_level"],
-        audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"],
-        compartment_id_in_subtree=var["audit_policy_compartment_id_in_subtree"],
-        display_name=var["audit_policy_display_name"],
-        state=var["audit_policy_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_policy_id: An optional filter to return only resources that match the specified id.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: The current state of the audit policy.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -230,46 +175,6 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditPoliciesResult]:
     """
-    This data source provides the list of Audit Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all audited targets with their corresponding provisioned audit policies, and their provisioning conditions.
-
-    The ListAuditPolicies operation returns only the audit policies in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditPolicies on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=var["compartment_id"],
-        access_level=var["audit_policy_access_level"],
-        audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"],
-        compartment_id_in_subtree=var["audit_policy_compartment_id_in_subtree"],
-        display_name=var["audit_policy_display_name"],
-        state=var["audit_policy_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_policy_id: An optional filter to return only resources that match the specified id.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: The current state of the audit policy.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

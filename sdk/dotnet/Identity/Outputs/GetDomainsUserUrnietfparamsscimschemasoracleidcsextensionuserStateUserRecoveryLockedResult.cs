@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The date and time that the current resource was locked.
         /// </summary>
-        public readonly string LockDate;
+        public readonly string? LockDate;
         /// <summary>
         /// Indicates that the recovery is locked.
         /// </summary>
-        public readonly bool On;
+        public readonly bool? On;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedResult(
-            string lockDate,
+            string? lockDate,
 
-            bool on)
+            bool? on)
         {
             LockDate = lockDate;
             On = on;

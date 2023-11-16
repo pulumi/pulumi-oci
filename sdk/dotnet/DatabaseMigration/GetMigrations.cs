@@ -175,7 +175,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional status related to the execution and current state of the Migration.
         /// </summary>
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
             ImmutableArray<Outputs.GetMigrationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? lifecycleDetails,
 

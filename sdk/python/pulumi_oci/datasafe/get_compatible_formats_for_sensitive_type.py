@@ -56,15 +56,12 @@ class GetCompatibleFormatsForSensitiveTypeResult:
 
     @property
     @pulumi.getter(name="formatsForSensitiveTypes")
-    def formats_for_sensitive_types(self) -> Sequence['outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult']:
-        """
-        An array of library masking formats compatible with the existing sensitive types.
-        """
+    def formats_for_sensitive_types(self) -> Optional[Sequence['outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult']]:
         return pulumi.get(self, "formats_for_sensitive_types")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,28 +86,7 @@ def get_compatible_formats_for_sensitive_type(access_level: Optional[str] = None
                                               compartment_id_in_subtree: Optional[bool] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCompatibleFormatsForSensitiveTypeResult:
     """
-    This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of library masking formats compatible with the existing sensitive types.
-    For each sensitive type, it returns the assigned default masking format as well as
-    the other library masking formats that have the sensitiveTypeIds attribute containing
-    the OCID of the sensitive type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=var["compartment_id"],
-        access_level=var["compatible_formats_for_sensitive_type_access_level"],
-        compartment_id_in_subtree=var["compatible_formats_for_sensitive_type_compartment_id_in_subtree"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -133,27 +109,6 @@ def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulu
                                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompatibleFormatsForSensitiveTypeResult]:
     """
-    This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of library masking formats compatible with the existing sensitive types.
-    For each sensitive type, it returns the assigned default masking format as well as
-    the other library masking formats that have the sensitiveTypeIds attribute containing
-    the OCID of the sensitive type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=var["compartment_id"],
-        access_level=var["compatible_formats_for_sensitive_type_access_level"],
-        compartment_id_in_subtree=var["compatible_formats_for_sensitive_type_compartment_id_in_subtree"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    Use this data source to access information about an existing resource.
     """
     ...

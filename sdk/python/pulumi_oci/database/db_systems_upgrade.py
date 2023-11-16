@@ -23,15 +23,6 @@ class DbSystemsUpgradeArgs:
                  snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a DbSystemsUpgrade resource.
-        :param pulumi.Input[str] action: The operating system upgrade action.
-        :param pulumi.Input[str] db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
-        :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -45,9 +36,6 @@ class DbSystemsUpgradeArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        The operating system upgrade action.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -57,9 +45,6 @@ class DbSystemsUpgradeArgs:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Input[str]:
-        """
-        The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -69,9 +54,6 @@ class DbSystemsUpgradeArgs:
     @property
     @pulumi.getter(name="isSnapshotRetentionDaysForceUpdated")
     def is_snapshot_retention_days_force_updated(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, rollback time is updated even if operating system upgrade history contains errors.
-        """
         return pulumi.get(self, "is_snapshot_retention_days_force_updated")
 
     @is_snapshot_retention_days_force_updated.setter
@@ -81,9 +63,6 @@ class DbSystemsUpgradeArgs:
     @property
     @pulumi.getter(name="newGiVersion")
     def new_gi_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
         return pulumi.get(self, "new_gi_version")
 
     @new_gi_version.setter
@@ -93,13 +72,6 @@ class DbSystemsUpgradeArgs:
     @property
     @pulumi.getter(name="snapshotRetentionPeriodInDays")
     def snapshot_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "snapshot_retention_period_in_days")
 
     @snapshot_retention_period_in_days.setter
@@ -161,62 +133,6 @@ class _DbSystemsUpgradeState:
                  zone_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DbSystemsUpgrade resources.
-        :param pulumi.Input[str] action: The operating system upgrade action.
-        :param pulumi.Input[str] availability_domain: The name of the availability domain that the DB system is located in.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
-        :param pulumi.Input[str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[int] cpu_core_count: The number of CPU cores enabled on the DB system.
-        :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
-        :param pulumi.Input[int] data_storage_size_in_gb: The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
-        :param pulumi.Input[str] database_edition: The Oracle Database edition that applies to all the databases on the DB system.
-        :param pulumi.Input[str] db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeDbSystemOptionArgs']]] db_system_options: The DB system options.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        :param pulumi.Input[str] display_name: The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] domain: The domain name for the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: List of the Fault Domains in which this DB system is provisioned.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname: The hostname for the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
-        :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        :param pulumi.Input[str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[int] listener_port: The port number configured for the listener on the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[int] node_count: The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
-        :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
-        :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        :param pulumi.Input[str] shape: The shape of the DB system. The shape determines resources to allocate to the DB system.
-               * For virtual machine shapes, the number of CPU cores and memory
-               * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
-        :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[bool] sparse_diskgroup: True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the DB system.
-        :param pulumi.Input[str] state: The current state of the DB system.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
-        :param pulumi.Input[str] time_created: The date and time the DB system was created.
-        :param pulumi.Input[str] time_zone: The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        :param pulumi.Input[str] version: The Oracle Database version of the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        :param pulumi.Input[str] zone_id: The OCID of the zone the DB system is associated with.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -320,9 +236,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        The operating system upgrade action.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -332,9 +245,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the availability domain that the DB system is located in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -344,9 +254,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="backupNetworkNsgIds")
     def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
@@ -356,9 +263,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="backupSubnetId")
     def backup_subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
-        """
         return pulumi.get(self, "backup_subnet_id")
 
     @backup_subnet_id.setter
@@ -368,9 +272,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
@@ -380,9 +281,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -392,9 +290,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of CPU cores enabled on the DB system.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -404,9 +299,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="dataStoragePercentage")
     def data_storage_percentage(self) -> Optional[pulumi.Input[int]]:
-        """
-        The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
-        """
         return pulumi.get(self, "data_storage_percentage")
 
     @data_storage_percentage.setter
@@ -416,9 +308,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
-        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
@@ -428,9 +317,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database edition that applies to all the databases on the DB system.
-        """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
@@ -440,9 +326,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -452,9 +335,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="dbSystemOptions")
     def db_system_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeDbSystemOptionArgs']]]]:
-        """
-        The DB system options.
-        """
         return pulumi.get(self, "db_system_options")
 
     @db_system_options.setter
@@ -464,9 +344,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -476,9 +353,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="diskRedundancy")
     def disk_redundancy(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        """
         return pulumi.get(self, "disk_redundancy")
 
     @disk_redundancy.setter
@@ -488,9 +362,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -500,9 +371,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The domain name for the DB system.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -512,9 +380,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="faultDomains")
     def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of the Fault Domains in which this DB system is provisioned.
-        """
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
@@ -524,9 +389,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -536,9 +398,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the DB system.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -548,9 +407,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="iormConfigCaches")
     def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachArgs']]]]:
-        """
-        The IORM settings of the Exadata DB system.
-        """
         return pulumi.get(self, "iorm_config_caches")
 
     @iorm_config_caches.setter
@@ -560,9 +416,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="isSnapshotRetentionDaysForceUpdated")
     def is_snapshot_retention_days_force_updated(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, rollback time is updated even if operating system upgrade history contains errors.
-        """
         return pulumi.get(self, "is_snapshot_retention_days_force_updated")
 
     @is_snapshot_retention_days_force_updated.setter
@@ -572,9 +425,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -584,9 +434,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
         return pulumi.get(self, "last_maintenance_run_id")
 
     @last_maintenance_run_id.setter
@@ -596,9 +443,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="lastPatchHistoryEntryId")
     def last_patch_history_entry_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        """
         return pulumi.get(self, "last_patch_history_entry_id")
 
     @last_patch_history_entry_id.setter
@@ -608,9 +452,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -620,9 +461,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -632,9 +470,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="listenerPort")
     def listener_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port number configured for the listener on the DB system.
-        """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
@@ -644,9 +479,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowArgs']]]]:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_windows")
 
     @maintenance_windows.setter
@@ -656,9 +488,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="newGiVersion")
     def new_gi_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
         return pulumi.get(self, "new_gi_version")
 
     @new_gi_version.setter
@@ -668,9 +497,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
         return pulumi.get(self, "next_maintenance_run_id")
 
     @next_maintenance_run_id.setter
@@ -680,9 +506,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-        """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
@@ -692,10 +515,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -705,9 +524,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="pointInTimeDataDiskCloneTimestamp")
     def point_in_time_data_disk_clone_timestamp(self) -> Optional[pulumi.Input[str]]:
-        """
-        The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "point_in_time_data_disk_clone_timestamp")
 
     @point_in_time_data_disk_clone_timestamp.setter
@@ -717,9 +533,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="recoStorageSizeInGb")
     def reco_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
-        """
         return pulumi.get(self, "reco_storage_size_in_gb")
 
     @reco_storage_size_in_gb.setter
@@ -729,9 +542,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="scanDnsName")
     def scan_dns_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        """
         return pulumi.get(self, "scan_dns_name")
 
     @scan_dns_name.setter
@@ -741,9 +551,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="scanDnsRecordId")
     def scan_dns_record_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        """
         return pulumi.get(self, "scan_dns_record_id")
 
     @scan_dns_record_id.setter
@@ -753,9 +560,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        """
         return pulumi.get(self, "scan_ip_ids")
 
     @scan_ip_ids.setter
@@ -765,11 +569,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of the DB system. The shape determines resources to allocate to the DB system.
-        * For virtual machine shapes, the number of CPU cores and memory
-        * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -779,13 +578,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="snapshotRetentionPeriodInDays")
     def snapshot_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "snapshot_retention_period_in_days")
 
     @snapshot_retention_period_in_days.setter
@@ -795,9 +587,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="sourceDbSystemId")
     def source_db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
         return pulumi.get(self, "source_db_system_id")
 
     @source_db_system_id.setter
@@ -807,9 +596,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="sparseDiskgroup")
     def sparse_diskgroup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
-        """
         return pulumi.get(self, "sparse_diskgroup")
 
     @sparse_diskgroup.setter
@@ -819,9 +605,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="sshPublicKeys")
     def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The public key portion of one or more key pairs used for SSH access to the DB system.
-        """
         return pulumi.get(self, "ssh_public_keys")
 
     @ssh_public_keys.setter
@@ -831,9 +614,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DB system.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -843,9 +623,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -855,9 +632,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DB system was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -867,9 +641,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -879,9 +650,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database version of the DB system.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -891,9 +659,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        """
         return pulumi.get(self, "vip_ids")
 
     @vip_ids.setter
@@ -903,9 +668,6 @@ class _DbSystemsUpgradeState:
     @property
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the zone the DB system is associated with.
-        """
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
@@ -925,39 +687,9 @@ class DbSystemsUpgrade(pulumi.CustomResource):
                  snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Db Systems Upgrade resource in Oracle Cloud Infrastructure Database service.
-
-        Upgrades the operating system and grid infrastructure of the DB system.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_db_systems_upgrade = oci.database.DbSystemsUpgrade("testDbSystemsUpgrade",
-            action=var["db_systems_upgrade_action"],
-            db_system_id=oci_database_db_system["test_db_system"]["id"],
-            is_snapshot_retention_days_force_updated=var["db_systems_upgrade_is_snapshot_retention_days_force_updated"],
-            new_gi_version=var["db_systems_upgrade_new_gi_version"],
-            snapshot_retention_period_in_days=var["db_systems_upgrade_snapshot_retention_period_in_days"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DbSystemsUpgrade resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: The operating system upgrade action.
-        :param pulumi.Input[str] db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
-        :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -966,28 +698,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
                  args: DbSystemsUpgradeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Systems Upgrade resource in Oracle Cloud Infrastructure Database service.
-
-        Upgrades the operating system and grid infrastructure of the DB system.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_db_systems_upgrade = oci.database.DbSystemsUpgrade("testDbSystemsUpgrade",
-            action=var["db_systems_upgrade_action"],
-            db_system_id=oci_database_db_system["test_db_system"]["id"],
-            is_snapshot_retention_days_force_updated=var["db_systems_upgrade_is_snapshot_retention_days_force_updated"],
-            new_gi_version=var["db_systems_upgrade_new_gi_version"],
-            snapshot_retention_period_in_days=var["db_systems_upgrade_snapshot_retention_period_in_days"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DbSystemsUpgrade resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DbSystemsUpgradeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1136,62 +847,6 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: The operating system upgrade action.
-        :param pulumi.Input[str] availability_domain: The name of the availability domain that the DB system is located in.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
-        :param pulumi.Input[str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[int] cpu_core_count: The number of CPU cores enabled on the DB system.
-        :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
-        :param pulumi.Input[int] data_storage_size_in_gb: The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
-        :param pulumi.Input[str] database_edition: The Oracle Database edition that applies to all the databases on the DB system.
-        :param pulumi.Input[str] db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeDbSystemOptionArgs']]]] db_system_options: The DB system options.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        :param pulumi.Input[str] display_name: The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] domain: The domain name for the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: List of the Fault Domains in which this DB system is provisioned.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname: The hostname for the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeIormConfigCachArgs']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
-        :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        :param pulumi.Input[str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[int] listener_port: The port number configured for the listener on the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[int] node_count: The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
-        :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
-        :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        :param pulumi.Input[str] shape: The shape of the DB system. The shape determines resources to allocate to the DB system.
-               * For virtual machine shapes, the number of CPU cores and memory
-               * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
-        :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[bool] sparse_diskgroup: True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the DB system.
-        :param pulumi.Input[str] state: The current state of the DB system.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
-        :param pulumi.Input[str] time_created: The date and time the DB system was created.
-        :param pulumi.Input[str] time_zone: The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        :param pulumi.Input[str] version: The Oracle Database version of the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        :param pulumi.Input[str] zone_id: The OCID of the zone the DB system is associated with.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1251,399 +906,245 @@ class DbSystemsUpgrade(pulumi.CustomResource):
     @property
     @pulumi.getter
     def action(self) -> pulumi.Output[str]:
-        """
-        The operating system upgrade action.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The name of the availability domain that the DB system is located in.
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        """
+    def backup_network_nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @property
     @pulumi.getter(name="backupSubnetId")
-    def backup_subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
-        """
+    def backup_subnet_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "backup_subnet_id")
 
     @property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> pulumi.Output[str]:
-        """
-        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        """
+    def cluster_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> pulumi.Output[int]:
-        """
-        The number of CPU cores enabled on the DB system.
-        """
+    def cpu_core_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="dataStoragePercentage")
-    def data_storage_percentage(self) -> pulumi.Output[int]:
-        """
-        The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
-        """
+    def data_storage_percentage(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "data_storage_percentage")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> pulumi.Output[int]:
-        """
-        The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
-        """
+    def data_storage_size_in_gb(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> pulumi.Output[str]:
-        """
-        The Oracle Database edition that applies to all the databases on the DB system.
-        """
+    def database_edition(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_edition")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Output[str]:
-        """
-        The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="dbSystemOptions")
-    def db_system_options(self) -> pulumi.Output[Sequence['outputs.DbSystemsUpgradeDbSystemOption']]:
-        """
-        The DB system options.
-        """
+    def db_system_options(self) -> pulumi.Output[Optional[Sequence['outputs.DbSystemsUpgradeDbSystemOption']]]:
         return pulumi.get(self, "db_system_options")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="diskRedundancy")
-    def disk_redundancy(self) -> pulumi.Output[str]:
-        """
-        The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        """
+    def disk_redundancy(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "disk_redundancy")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the DB system. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def domain(self) -> pulumi.Output[str]:
-        """
-        The domain name for the DB system.
-        """
+    def domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of the Fault Domains in which this DB system is provisioned.
-        """
+    def fault_domains(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "fault_domains")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def hostname(self) -> pulumi.Output[str]:
-        """
-        The hostname for the DB system.
-        """
+    def hostname(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.DbSystemsUpgradeIormConfigCach']]:
-        """
-        The IORM settings of the Exadata DB system.
-        """
+    def iorm_config_caches(self) -> pulumi.Output[Optional[Sequence['outputs.DbSystemsUpgradeIormConfigCach']]]:
         return pulumi.get(self, "iorm_config_caches")
 
     @property
     @pulumi.getter(name="isSnapshotRetentionDaysForceUpdated")
-    def is_snapshot_retention_days_force_updated(self) -> pulumi.Output[bool]:
-        """
-        If true, rollback time is updated even if operating system upgrade history contains errors.
-        """
+    def is_snapshot_retention_days_force_updated(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_snapshot_retention_days_force_updated")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
+    def last_maintenance_run_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_maintenance_run_id")
 
     @property
     @pulumi.getter(name="lastPatchHistoryEntryId")
-    def last_patch_history_entry_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        """
+    def last_patch_history_entry_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_patch_history_entry_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> pulumi.Output[str]:
-        """
-        The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-        """
+    def license_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> pulumi.Output[int]:
-        """
-        The port number configured for the listener on the DB system.
-        """
+    def listener_port(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "listener_port")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> pulumi.Output[Sequence['outputs.DbSystemsUpgradeMaintenanceWindow']]:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
+    def maintenance_windows(self) -> pulumi.Output[Optional[Sequence['outputs.DbSystemsUpgradeMaintenanceWindow']]]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="newGiVersion")
-    def new_gi_version(self) -> pulumi.Output[str]:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
+    def new_gi_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "new_gi_version")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
+    def next_maintenance_run_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "next_maintenance_run_id")
 
     @property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> pulumi.Output[int]:
-        """
-        The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-        """
+    def node_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
-        """
+    def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="pointInTimeDataDiskCloneTimestamp")
-    def point_in_time_data_disk_clone_timestamp(self) -> pulumi.Output[str]:
-        """
-        The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def point_in_time_data_disk_clone_timestamp(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "point_in_time_data_disk_clone_timestamp")
 
     @property
     @pulumi.getter(name="recoStorageSizeInGb")
-    def reco_storage_size_in_gb(self) -> pulumi.Output[int]:
-        """
-        The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
-        """
+    def reco_storage_size_in_gb(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "reco_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="scanDnsName")
-    def scan_dns_name(self) -> pulumi.Output[str]:
-        """
-        The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        """
+    def scan_dns_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scan_dns_name")
 
     @property
     @pulumi.getter(name="scanDnsRecordId")
-    def scan_dns_record_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        """
+    def scan_dns_record_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scan_dns_record_id")
 
     @property
     @pulumi.getter(name="scanIpIds")
-    def scan_ip_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        """
+    def scan_ip_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "scan_ip_ids")
 
     @property
     @pulumi.getter
-    def shape(self) -> pulumi.Output[str]:
-        """
-        The shape of the DB system. The shape determines resources to allocate to the DB system.
-        * For virtual machine shapes, the number of CPU cores and memory
-        * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
-        """
+    def shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="snapshotRetentionPeriodInDays")
-    def snapshot_retention_period_in_days(self) -> pulumi.Output[int]:
-        """
-        The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def snapshot_retention_period_in_days(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "snapshot_retention_period_in_days")
 
     @property
     @pulumi.getter(name="sourceDbSystemId")
-    def source_db_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
+    def source_db_system_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_db_system_id")
 
     @property
     @pulumi.getter(name="sparseDiskgroup")
-    def sparse_diskgroup(self) -> pulumi.Output[bool]:
-        """
-        True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
-        """
+    def sparse_diskgroup(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "sparse_diskgroup")
 
     @property
     @pulumi.getter(name="sshPublicKeys")
-    def ssh_public_keys(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The public key portion of one or more key pairs used for SSH access to the DB system.
-        """
+    def ssh_public_keys(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "ssh_public_keys")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the DB system.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
-        """
+    def subnet_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the DB system was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> pulumi.Output[str]:
-        """
-        The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        """
+    def time_zone(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        The Oracle Database version of the DB system.
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="vipIds")
-    def vip_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        """
+    def vip_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "vip_ids")
 
     @property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the zone the DB system is associated with.
-        """
+    def zone_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "zone_id")
 

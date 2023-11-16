@@ -78,7 +78,7 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
     /**
      * A page of AdminUserSummary objects.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.FusionApps.FusionEnvironmentAdminUserItem[]>;
+    public /*out*/ readonly items!: pulumi.Output<outputs.FusionApps.FusionEnvironmentAdminUserItem[] | undefined>;
     /**
      * The administrator's last name.
      */

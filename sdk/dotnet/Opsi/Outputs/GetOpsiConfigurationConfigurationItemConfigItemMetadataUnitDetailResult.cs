@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// User-friendly display name for the configuration item unit.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Unit of configuration item.
         /// </summary>
-        public readonly string Unit;
+        public readonly string? Unit;
 
         [OutputConstructor]
         private GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult(
-            string displayName,
+            string? displayName,
 
-            string unit)
+            string? unit)
         {
             DisplayName = displayName;
             Unit = unit;

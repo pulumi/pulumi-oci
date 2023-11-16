@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the cluster network.
         /// </summary>
@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetClusterNetworksFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

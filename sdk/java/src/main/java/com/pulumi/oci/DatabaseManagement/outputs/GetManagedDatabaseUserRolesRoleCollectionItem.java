@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserRolesRoleCollectionItem {
@@ -13,75 +15,75 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
      * @return Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
      * 
      */
-    private String adminOption;
+    private @Nullable String adminOption;
     /**
      * @return Indicates how the role was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
      * 
      */
-    private String common;
+    private @Nullable String common;
     /**
      * @return Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
      * 
      */
-    private String defaultRole;
+    private @Nullable String defaultRole;
     /**
      * @return Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
      * 
      */
-    private String delegateOption;
+    private @Nullable String delegateOption;
     /**
      * @return Indicates whether the granted role is inherited from another container (YES) or not (NO).
      * 
      */
-    private String inherited;
+    private @Nullable String inherited;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetManagedDatabaseUserRolesRoleCollectionItem() {}
     /**
      * @return Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
      * 
      */
-    public String adminOption() {
-        return this.adminOption;
+    public Optional<String> adminOption() {
+        return Optional.ofNullable(this.adminOption);
     }
     /**
      * @return Indicates how the role was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
      * 
      */
-    public String common() {
-        return this.common;
+    public Optional<String> common() {
+        return Optional.ofNullable(this.common);
     }
     /**
      * @return Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
      * 
      */
-    public String defaultRole() {
-        return this.defaultRole;
+    public Optional<String> defaultRole() {
+        return Optional.ofNullable(this.defaultRole);
     }
     /**
      * @return Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
      * 
      */
-    public String delegateOption() {
-        return this.delegateOption;
+    public Optional<String> delegateOption() {
+        return Optional.ofNullable(this.delegateOption);
     }
     /**
      * @return Indicates whether the granted role is inherited from another container (YES) or not (NO).
      * 
      */
-    public String inherited() {
-        return this.inherited;
+    public Optional<String> inherited() {
+        return Optional.ofNullable(this.inherited);
     }
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminOption;
-        private String common;
-        private String defaultRole;
-        private String delegateOption;
-        private String inherited;
-        private String name;
+        private @Nullable String adminOption;
+        private @Nullable String common;
+        private @Nullable String defaultRole;
+        private @Nullable String delegateOption;
+        private @Nullable String inherited;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetManagedDatabaseUserRolesRoleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder adminOption(String adminOption) {
-            this.adminOption = Objects.requireNonNull(adminOption);
+        public Builder adminOption(@Nullable String adminOption) {
+            this.adminOption = adminOption;
             return this;
         }
         @CustomType.Setter
-        public Builder common(String common) {
-            this.common = Objects.requireNonNull(common);
+        public Builder common(@Nullable String common) {
+            this.common = common;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultRole(String defaultRole) {
-            this.defaultRole = Objects.requireNonNull(defaultRole);
+        public Builder defaultRole(@Nullable String defaultRole) {
+            this.defaultRole = defaultRole;
             return this;
         }
         @CustomType.Setter
-        public Builder delegateOption(String delegateOption) {
-            this.delegateOption = Objects.requireNonNull(delegateOption);
+        public Builder delegateOption(@Nullable String delegateOption) {
+            this.delegateOption = delegateOption;
             return this;
         }
         @CustomType.Setter
-        public Builder inherited(String inherited) {
-            this.inherited = Objects.requireNonNull(inherited);
+        public Builder inherited(@Nullable String inherited) {
+            this.inherited = inherited;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseUserRolesRoleCollectionItem build() {

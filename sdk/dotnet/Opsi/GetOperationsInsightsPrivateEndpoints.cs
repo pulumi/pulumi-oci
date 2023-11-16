@@ -230,7 +230,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The flag is to identify if private endpoint is used for rac database or not
         /// </summary>
@@ -259,7 +259,7 @@ namespace Pulumi.Oci.Opsi
 
             ImmutableArray<Outputs.GetOperationsInsightsPrivateEndpointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isUsedForRacDbs,
 

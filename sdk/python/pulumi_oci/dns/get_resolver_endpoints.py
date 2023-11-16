@@ -53,7 +53,7 @@ class GetResolverEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,17 +62,11 @@ class GetResolverEndpointsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resolverEndpoints")
-    def resolver_endpoints(self) -> Sequence['outputs.GetResolverEndpointsResolverEndpointResult']:
-        """
-        The list of resolver_endpoints.
-        """
+    def resolver_endpoints(self) -> Optional[Sequence['outputs.GetResolverEndpointsResolverEndpointResult']]:
         return pulumi.get(self, "resolver_endpoints")
 
     @property
@@ -88,9 +82,6 @@ class GetResolverEndpointsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -116,30 +107,7 @@ def get_resolver_endpoints(filters: Optional[Sequence[pulumi.InputType['GetResol
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResolverEndpointsResult:
     """
-    This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
-    It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
-    query parameter is provided, the collection does not include resolver endpoints in the DELETED
-    lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=oci_dns_resolver["test_resolver"]["id"],
-        scope="PRIVATE",
-        name=var["resolver_endpoint_name"],
-        state=var["resolver_endpoint_state"])
-    ```
-
-
-    :param str name: The name of a resource.
-    :param str resolver_id: The OCID of the target resolver.
-    :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -168,29 +136,6 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverEndpointsResult]:
     """
-    This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
-    It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
-    query parameter is provided, the collection does not include resolver endpoints in the DELETED
-    lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=oci_dns_resolver["test_resolver"]["id"],
-        scope="PRIVATE",
-        name=var["resolver_endpoint_name"],
-        state=var["resolver_endpoint_state"])
-    ```
-
-
-    :param str name: The name of a resource.
-    :param str resolver_id: The OCID of the target resolver.
-    :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     ...

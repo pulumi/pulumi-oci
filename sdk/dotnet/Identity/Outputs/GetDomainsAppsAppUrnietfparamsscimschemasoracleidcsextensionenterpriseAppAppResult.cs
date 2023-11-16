@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Allow Authz policy decision expiry time in seconds.
         /// </summary>
-        public readonly int AllowAuthzDecisionTtl;
+        public readonly int? AllowAuthzDecisionTtl;
         /// <summary>
         /// Allow Authz Policy.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Deny Authz policy decision expiry time in seconds.
         /// </summary>
-        public readonly int DenyAuthzDecisionTtl;
+        public readonly int? DenyAuthzDecisionTtl;
         /// <summary>
         /// Deny Authz Policy.
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppResult(
-            int allowAuthzDecisionTtl,
+            int? allowAuthzDecisionTtl,
 
             ImmutableArray<Outputs.GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyResult> allowAuthzPolicies,
 
             ImmutableArray<Outputs.GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceResult> appResources,
 
-            int denyAuthzDecisionTtl,
+            int? denyAuthzDecisionTtl,
 
             ImmutableArray<Outputs.GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyResult> denyAuthzPolicies)
         {

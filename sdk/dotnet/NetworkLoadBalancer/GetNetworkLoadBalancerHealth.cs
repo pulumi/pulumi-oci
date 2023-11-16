@@ -112,7 +112,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string NetworkLoadBalancerId;
         /// <summary>
         /// The overall health status of the network load balancer.
@@ -125,11 +125,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// *  More than half of the backend sets associated with the network load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the network load balancer life cycle state is `ACTIVE`.
         /// *  The system could not retrieve metrics for any reason.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The total number of backend sets associated with this network load balancer.  Example: `4`
         /// </summary>
-        public readonly int TotalBackendSetCount;
+        public readonly int? TotalBackendSetCount;
         /// <summary>
         /// A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set2`
         /// </summary>
@@ -143,13 +143,13 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         private GetNetworkLoadBalancerHealthResult(
             ImmutableArray<string> criticalStateBackendSetNames,
 
-            string id,
+            string? id,
 
             string networkLoadBalancerId,
 
-            string status,
+            string? status,
 
-            int totalBackendSetCount,
+            int? totalBackendSetCount,
 
             ImmutableArray<string> unknownStateBackendSetNames,
 

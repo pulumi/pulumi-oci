@@ -20,13 +20,13 @@ public final class GetContainerInstanceShapesResult {
      * @return The list of container_instance_shape_collection.
      * 
      */
-    private List<GetContainerInstanceShapesContainerInstanceShapeCollection> containerInstanceShapeCollections;
+    private @Nullable List<GetContainerInstanceShapesContainerInstanceShapeCollection> containerInstanceShapeCollections;
     private @Nullable List<GetContainerInstanceShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetContainerInstanceShapesResult() {}
     public Optional<String> availabilityDomain() {
@@ -40,7 +40,7 @@ public final class GetContainerInstanceShapesResult {
      * 
      */
     public List<GetContainerInstanceShapesContainerInstanceShapeCollection> containerInstanceShapeCollections() {
-        return this.containerInstanceShapeCollections;
+        return this.containerInstanceShapeCollections == null ? List.of() : this.containerInstanceShapeCollections;
     }
     public List<GetContainerInstanceShapesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -49,8 +49,8 @@ public final class GetContainerInstanceShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -64,9 +64,9 @@ public final class GetContainerInstanceShapesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetContainerInstanceShapesContainerInstanceShapeCollection> containerInstanceShapeCollections;
+        private @Nullable List<GetContainerInstanceShapesContainerInstanceShapeCollection> containerInstanceShapeCollections;
         private @Nullable List<GetContainerInstanceShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetContainerInstanceShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,8 +88,8 @@ public final class GetContainerInstanceShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder containerInstanceShapeCollections(List<GetContainerInstanceShapesContainerInstanceShapeCollection> containerInstanceShapeCollections) {
-            this.containerInstanceShapeCollections = Objects.requireNonNull(containerInstanceShapeCollections);
+        public Builder containerInstanceShapeCollections(@Nullable List<GetContainerInstanceShapesContainerInstanceShapeCollection> containerInstanceShapeCollections) {
+            this.containerInstanceShapeCollections = containerInstanceShapeCollections;
             return this;
         }
         public Builder containerInstanceShapeCollections(GetContainerInstanceShapesContainerInstanceShapeCollection... containerInstanceShapeCollections) {
@@ -104,8 +104,8 @@ public final class GetContainerInstanceShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetContainerInstanceShapesResult build() {

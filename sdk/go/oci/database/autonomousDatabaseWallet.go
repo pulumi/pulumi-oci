@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -52,7 +51,7 @@ type AutonomousDatabaseWallet struct {
 	AutonomousDatabaseId pulumi.StringOutput  `pulumi:"autonomousDatabaseId"`
 	Base64EncodeContent  pulumi.BoolPtrOutput `pulumi:"base64EncodeContent"`
 	// content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-	Content pulumi.StringOutput `pulumi:"content"`
+	Content pulumi.StringPtrOutput `pulumi:"content"`
 	// The type of wallet to generate.
 	//
 	// **Serverless instance usage:**
@@ -198,12 +197,6 @@ func (i *AutonomousDatabaseWallet) ToAutonomousDatabaseWalletOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseWalletOutput)
 }
 
-func (i *AutonomousDatabaseWallet) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseWallet] {
-	return pulumix.Output[*AutonomousDatabaseWallet]{
-		OutputState: i.ToAutonomousDatabaseWalletOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutonomousDatabaseWalletArrayInput is an input type that accepts AutonomousDatabaseWalletArray and AutonomousDatabaseWalletArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseWalletArrayInput` via:
 //
@@ -227,12 +220,6 @@ func (i AutonomousDatabaseWalletArray) ToAutonomousDatabaseWalletArrayOutput() A
 
 func (i AutonomousDatabaseWalletArray) ToAutonomousDatabaseWalletArrayOutputWithContext(ctx context.Context) AutonomousDatabaseWalletArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseWalletArrayOutput)
-}
-
-func (i AutonomousDatabaseWalletArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseWallet] {
-	return pulumix.Output[[]*AutonomousDatabaseWallet]{
-		OutputState: i.ToAutonomousDatabaseWalletArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutonomousDatabaseWalletMapInput is an input type that accepts AutonomousDatabaseWalletMap and AutonomousDatabaseWalletMapOutput values.
@@ -260,12 +247,6 @@ func (i AutonomousDatabaseWalletMap) ToAutonomousDatabaseWalletMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseWalletMapOutput)
 }
 
-func (i AutonomousDatabaseWalletMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseWallet] {
-	return pulumix.Output[map[string]*AutonomousDatabaseWallet]{
-		OutputState: i.ToAutonomousDatabaseWalletMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutonomousDatabaseWalletOutput struct{ *pulumi.OutputState }
 
 func (AutonomousDatabaseWalletOutput) ElementType() reflect.Type {
@@ -280,12 +261,6 @@ func (o AutonomousDatabaseWalletOutput) ToAutonomousDatabaseWalletOutputWithCont
 	return o
 }
 
-func (o AutonomousDatabaseWalletOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseWallet] {
-	return pulumix.Output[*AutonomousDatabaseWallet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o AutonomousDatabaseWalletOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseWallet) pulumi.StringOutput { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
@@ -296,8 +271,8 @@ func (o AutonomousDatabaseWalletOutput) Base64EncodeContent() pulumi.BoolPtrOutp
 }
 
 // content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-func (o AutonomousDatabaseWalletOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousDatabaseWallet) pulumi.StringOutput { return v.Content }).(pulumi.StringOutput)
+func (o AutonomousDatabaseWalletOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseWallet) pulumi.StringPtrOutput { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // The type of wallet to generate.
@@ -329,12 +304,6 @@ func (o AutonomousDatabaseWalletArrayOutput) ToAutonomousDatabaseWalletArrayOutp
 	return o
 }
 
-func (o AutonomousDatabaseWalletArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseWallet] {
-	return pulumix.Output[[]*AutonomousDatabaseWallet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AutonomousDatabaseWalletArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseWalletOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousDatabaseWallet {
 		return vs[0].([]*AutonomousDatabaseWallet)[vs[1].(int)]
@@ -353,12 +322,6 @@ func (o AutonomousDatabaseWalletMapOutput) ToAutonomousDatabaseWalletMapOutput()
 
 func (o AutonomousDatabaseWalletMapOutput) ToAutonomousDatabaseWalletMapOutputWithContext(ctx context.Context) AutonomousDatabaseWalletMapOutput {
 	return o
-}
-
-func (o AutonomousDatabaseWalletMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseWallet] {
-	return pulumix.Output[map[string]*AutonomousDatabaseWallet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousDatabaseWalletMapOutput) MapIndex(k pulumi.StringInput) AutonomousDatabaseWalletOutput {

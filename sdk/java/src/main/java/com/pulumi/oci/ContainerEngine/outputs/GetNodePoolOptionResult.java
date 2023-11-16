@@ -18,28 +18,28 @@ public final class GetNodePoolOptionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `node_image_name` property.
      * 
      */
-    private List<String> images;
+    private @Nullable List<String> images;
     /**
      * @return Available Kubernetes versions.
      * 
      */
-    private List<String> kubernetesVersions;
+    private @Nullable List<String> kubernetesVersions;
     private String nodePoolOptionId;
     /**
      * @return Available shapes for nodes.
      * 
      */
-    private List<String> shapes;
+    private @Nullable List<String> shapes;
     /**
      * @return Available source of the node.
      * 
      */
-    private List<GetNodePoolOptionSource> sources;
+    private @Nullable List<GetNodePoolOptionSource> sources;
 
     private GetNodePoolOptionResult() {}
     public Optional<String> compartmentId() {
@@ -49,22 +49,22 @@ public final class GetNodePoolOptionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `node_image_name` property.
      * 
      */
     public List<String> images() {
-        return this.images;
+        return this.images == null ? List.of() : this.images;
     }
     /**
      * @return Available Kubernetes versions.
      * 
      */
     public List<String> kubernetesVersions() {
-        return this.kubernetesVersions;
+        return this.kubernetesVersions == null ? List.of() : this.kubernetesVersions;
     }
     public String nodePoolOptionId() {
         return this.nodePoolOptionId;
@@ -74,14 +74,14 @@ public final class GetNodePoolOptionResult {
      * 
      */
     public List<String> shapes() {
-        return this.shapes;
+        return this.shapes == null ? List.of() : this.shapes;
     }
     /**
      * @return Available source of the node.
      * 
      */
     public List<GetNodePoolOptionSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
     }
 
     public static Builder builder() {
@@ -94,12 +94,12 @@ public final class GetNodePoolOptionResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private String id;
-        private List<String> images;
-        private List<String> kubernetesVersions;
+        private @Nullable String id;
+        private @Nullable List<String> images;
+        private @Nullable List<String> kubernetesVersions;
         private String nodePoolOptionId;
-        private List<String> shapes;
-        private List<GetNodePoolOptionSource> sources;
+        private @Nullable List<String> shapes;
+        private @Nullable List<GetNodePoolOptionSource> sources;
         public Builder() {}
         public Builder(GetNodePoolOptionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,21 +118,21 @@ public final class GetNodePoolOptionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder images(List<String> images) {
-            this.images = Objects.requireNonNull(images);
+        public Builder images(@Nullable List<String> images) {
+            this.images = images;
             return this;
         }
         public Builder images(String... images) {
             return images(List.of(images));
         }
         @CustomType.Setter
-        public Builder kubernetesVersions(List<String> kubernetesVersions) {
-            this.kubernetesVersions = Objects.requireNonNull(kubernetesVersions);
+        public Builder kubernetesVersions(@Nullable List<String> kubernetesVersions) {
+            this.kubernetesVersions = kubernetesVersions;
             return this;
         }
         public Builder kubernetesVersions(String... kubernetesVersions) {
@@ -144,16 +144,16 @@ public final class GetNodePoolOptionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder shapes(List<String> shapes) {
-            this.shapes = Objects.requireNonNull(shapes);
+        public Builder shapes(@Nullable List<String> shapes) {
+            this.shapes = shapes;
             return this;
         }
         public Builder shapes(String... shapes) {
             return shapes(List.of(shapes));
         }
         @CustomType.Setter
-        public Builder sources(List<GetNodePoolOptionSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+        public Builder sources(@Nullable List<GetNodePoolOptionSource> sources) {
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetNodePoolOptionSource... sources) {

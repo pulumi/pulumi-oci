@@ -22,16 +22,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyMappedSecret resource.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
-        :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
-        :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
-        :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: Unique name to identify the group of urls to be used in the policy rules.
         """
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "source", source)
@@ -44,9 +34,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -56,9 +43,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @property
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
-        """
-        Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -68,9 +52,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Type of the secrets mapped based on the policy.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -80,9 +61,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @property
     @pulumi.getter(name="vaultSecretId")
     def vault_secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID for the Vault Secret to be used.
-        """
         return pulumi.get(self, "vault_secret_id")
 
     @vault_secret_id.setter
@@ -92,13 +70,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @property
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Version number of the secret to be used.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version_number")
 
     @version_number.setter
@@ -108,9 +79,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique name to identify the group of urls to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -130,17 +98,6 @@ class _NetworkFirewallPolicyMappedSecretState:
                  version_number: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyMappedSecret resources.
-        :param pulumi.Input[str] name: Unique name to identify the group of urls to be used in the policy rules.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this Mapped Secret belongs to.
-        :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
-        :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
-        :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
-        :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -160,9 +117,6 @@ class _NetworkFirewallPolicyMappedSecretState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique name to identify the group of urls to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -172,9 +126,6 @@ class _NetworkFirewallPolicyMappedSecretState:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -184,9 +135,6 @@ class _NetworkFirewallPolicyMappedSecretState:
     @property
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Network Firewall Policy this Mapped Secret belongs to.
-        """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
@@ -196,9 +144,6 @@ class _NetworkFirewallPolicyMappedSecretState:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -208,9 +153,6 @@ class _NetworkFirewallPolicyMappedSecretState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the secrets mapped based on the policy.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -220,9 +162,6 @@ class _NetworkFirewallPolicyMappedSecretState:
     @property
     @pulumi.getter(name="vaultSecretId")
     def vault_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID for the Vault Secret to be used.
-        """
         return pulumi.get(self, "vault_secret_id")
 
     @vault_secret_id.setter
@@ -232,13 +171,6 @@ class _NetworkFirewallPolicyMappedSecretState:
     @property
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Version number of the secret to be used.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version_number")
 
     @version_number.setter
@@ -259,44 +191,9 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
                  version_number: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Mapped Secret for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_mapped_secret = oci.network_firewall.NetworkFirewallPolicyMappedSecret("testNetworkFirewallPolicyMappedSecret",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            source=var["network_firewall_policy_mapped_secret_source"],
-            type=var["network_firewall_policy_mapped_secret_type"],
-            vault_secret_id=oci_vault_secret["test_secret"]["id"],
-            version_number=var["network_firewall_policy_mapped_secret_version_number"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyMappedSecrets can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
-        ```
-
+        Create a NetworkFirewallPolicyMappedSecret resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: Unique name to identify the group of urls to be used in the policy rules.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
-        :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
-        :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
-        :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -305,32 +202,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
                  args: NetworkFirewallPolicyMappedSecretArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Mapped Secret for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_mapped_secret = oci.network_firewall.NetworkFirewallPolicyMappedSecret("testNetworkFirewallPolicyMappedSecret",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            source=var["network_firewall_policy_mapped_secret_source"],
-            type=var["network_firewall_policy_mapped_secret_type"],
-            vault_secret_id=oci_vault_secret["test_secret"]["id"],
-            version_number=var["network_firewall_policy_mapped_secret_version_number"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyMappedSecrets can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
-        ```
-
+        Create a NetworkFirewallPolicyMappedSecret resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyMappedSecretArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -402,17 +274,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: Unique name to identify the group of urls to be used in the policy rules.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this Mapped Secret belongs to.
-        :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
-        :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
-        :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
-        :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -430,60 +291,35 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Unique name to identify the group of urls to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Network Firewall Policy this Mapped Secret belongs to.
-        """
+    def parent_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
     def source(self) -> pulumi.Output[str]:
-        """
-        Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
-        """
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Type of the secrets mapped based on the policy.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vaultSecretId")
     def vault_secret_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OCID for the Vault Secret to be used.
-        """
         return pulumi.get(self, "vault_secret_id")
 
     @property
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Version number of the secret to be used.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version_number")
 

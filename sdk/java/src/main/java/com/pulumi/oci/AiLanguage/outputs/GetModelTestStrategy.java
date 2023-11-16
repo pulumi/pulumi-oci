@@ -9,6 +9,8 @@ import com.pulumi.oci.AiLanguage.outputs.GetModelTestStrategyValidationDataset;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelTestStrategy {
@@ -16,39 +18,39 @@ public final class GetModelTestStrategy {
      * @return This information will define the test strategy different datasets for test and validation(optional) dataset.
      * 
      */
-    private String strategyType;
+    private @Nullable String strategyType;
     /**
      * @return Possible data set type
      * 
      */
-    private List<GetModelTestStrategyTestingDataset> testingDatasets;
+    private @Nullable List<GetModelTestStrategyTestingDataset> testingDatasets;
     /**
      * @return Possible data set type
      * 
      */
-    private List<GetModelTestStrategyValidationDataset> validationDatasets;
+    private @Nullable List<GetModelTestStrategyValidationDataset> validationDatasets;
 
     private GetModelTestStrategy() {}
     /**
      * @return This information will define the test strategy different datasets for test and validation(optional) dataset.
      * 
      */
-    public String strategyType() {
-        return this.strategyType;
+    public Optional<String> strategyType() {
+        return Optional.ofNullable(this.strategyType);
     }
     /**
      * @return Possible data set type
      * 
      */
     public List<GetModelTestStrategyTestingDataset> testingDatasets() {
-        return this.testingDatasets;
+        return this.testingDatasets == null ? List.of() : this.testingDatasets;
     }
     /**
      * @return Possible data set type
      * 
      */
     public List<GetModelTestStrategyValidationDataset> validationDatasets() {
-        return this.validationDatasets;
+        return this.validationDatasets == null ? List.of() : this.validationDatasets;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetModelTestStrategy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String strategyType;
-        private List<GetModelTestStrategyTestingDataset> testingDatasets;
-        private List<GetModelTestStrategyValidationDataset> validationDatasets;
+        private @Nullable String strategyType;
+        private @Nullable List<GetModelTestStrategyTestingDataset> testingDatasets;
+        private @Nullable List<GetModelTestStrategyValidationDataset> validationDatasets;
         public Builder() {}
         public Builder(GetModelTestStrategy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetModelTestStrategy {
         }
 
         @CustomType.Setter
-        public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+        public Builder strategyType(@Nullable String strategyType) {
+            this.strategyType = strategyType;
             return this;
         }
         @CustomType.Setter
-        public Builder testingDatasets(List<GetModelTestStrategyTestingDataset> testingDatasets) {
-            this.testingDatasets = Objects.requireNonNull(testingDatasets);
+        public Builder testingDatasets(@Nullable List<GetModelTestStrategyTestingDataset> testingDatasets) {
+            this.testingDatasets = testingDatasets;
             return this;
         }
         public Builder testingDatasets(GetModelTestStrategyTestingDataset... testingDatasets) {
             return testingDatasets(List.of(testingDatasets));
         }
         @CustomType.Setter
-        public Builder validationDatasets(List<GetModelTestStrategyValidationDataset> validationDatasets) {
-            this.validationDatasets = Objects.requireNonNull(validationDatasets);
+        public Builder validationDatasets(@Nullable List<GetModelTestStrategyValidationDataset> validationDatasets) {
+            this.validationDatasets = validationDatasets;
             return this;
         }
         public Builder validationDatasets(GetModelTestStrategyValidationDataset... validationDatasets) {

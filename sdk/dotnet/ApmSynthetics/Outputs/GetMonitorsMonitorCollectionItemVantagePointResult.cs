@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// A filter to return only the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Name of the vantage point.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetMonitorsMonitorCollectionItemVantagePointResult(
-            string displayName,
+            string? displayName,
 
-            string name)
+            string? name)
         {
             DisplayName = displayName;
             Name = name;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity {
@@ -14,39 +16,39 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItemPredic
      * @return Length of text
      * 
      */
-    private Integer length;
+    private @Nullable Integer length;
     /**
      * @return Starting index on text.
      * 
      */
-    private Integer offset;
+    private @Nullable Integer offset;
     /**
      * @return Type of entity text like PER, LOC, GPE, NOPE etc.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity() {}
     /**
      * @return Length of text
      * 
      */
-    public Integer length() {
-        return this.length;
+    public Optional<Integer> length() {
+        return Optional.ofNullable(this.length);
     }
     /**
      * @return Starting index on text.
      * 
      */
-    public Integer offset() {
-        return this.offset;
+    public Optional<Integer> offset() {
+        return Optional.ofNullable(this.offset);
     }
     /**
      * @return Type of entity text like PER, LOC, GPE, NOPE etc.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItemPredic
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer length;
-        private Integer offset;
-        private String type;
+        private @Nullable Integer length;
+        private @Nullable Integer offset;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItemPredic
         }
 
         @CustomType.Setter
-        public Builder length(Integer length) {
-            this.length = Objects.requireNonNull(length);
+        public Builder length(@Nullable Integer length) {
+            this.length = length;
             return this;
         }
         @CustomType.Setter
-        public Builder offset(Integer offset) {
-            this.offset = Objects.requireNonNull(offset);
+        public Builder offset(@Nullable Integer offset) {
+            this.offset = offset;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity build() {

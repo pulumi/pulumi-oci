@@ -200,7 +200,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of metric_extension_collection.
         /// </summary>
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetMetricExtensionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionResult> metricExtensionCollections,
 

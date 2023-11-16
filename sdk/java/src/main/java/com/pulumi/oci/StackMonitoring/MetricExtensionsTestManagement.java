@@ -11,6 +11,7 @@ import com.pulumi.oci.StackMonitoring.MetricExtensionsTestManagementArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionsTestManagementState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -95,56 +96,56 @@ public class MetricExtensionsTestManagement extends com.pulumi.resources.CustomR
      * 
      */
     @Export(name="testRunId", refs={String.class}, tree="[0]")
-    private Output<String> testRunId;
+    private Output</* @Nullable */ String> testRunId;
 
     /**
      * @return Test Run Id
      * 
      */
-    public Output<String> testRunId() {
-        return this.testRunId;
+    public Output<Optional<String>> testRunId() {
+        return Codegen.optional(this.testRunId);
     }
     /**
      * Test Run Metric Suffix
      * 
      */
     @Export(name="testRunMetricSuffix", refs={String.class}, tree="[0]")
-    private Output<String> testRunMetricSuffix;
+    private Output</* @Nullable */ String> testRunMetricSuffix;
 
     /**
      * @return Test Run Metric Suffix
      * 
      */
-    public Output<String> testRunMetricSuffix() {
-        return this.testRunMetricSuffix;
+    public Output<Optional<String>> testRunMetricSuffix() {
+        return Codegen.optional(this.testRunMetricSuffix);
     }
     /**
      * Test Run Namespace name
      * 
      */
     @Export(name="testRunNamespaceName", refs={String.class}, tree="[0]")
-    private Output<String> testRunNamespaceName;
+    private Output</* @Nullable */ String> testRunNamespaceName;
 
     /**
      * @return Test Run Namespace name
      * 
      */
-    public Output<String> testRunNamespaceName() {
-        return this.testRunNamespaceName;
+    public Output<Optional<String>> testRunNamespaceName() {
+        return Codegen.optional(this.testRunNamespaceName);
     }
     /**
      * Test Run Resource Group name
      * 
      */
     @Export(name="testRunResourceGroupName", refs={String.class}, tree="[0]")
-    private Output<String> testRunResourceGroupName;
+    private Output</* @Nullable */ String> testRunResourceGroupName;
 
     /**
      * @return Test Run Resource Group name
      * 
      */
-    public Output<String> testRunResourceGroupName() {
-        return this.testRunResourceGroupName;
+    public Output<Optional<String>> testRunResourceGroupName() {
+        return Codegen.optional(this.testRunResourceGroupName);
     }
 
     /**

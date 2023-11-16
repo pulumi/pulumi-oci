@@ -71,63 +71,42 @@ class GetWaasPolicyResult:
 
     @property
     @pulumi.getter(name="additionalDomains")
-    def additional_domains(self) -> Sequence[str]:
-        """
-        An array of additional domains for this web application.
-        """
+    def additional_domains(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "additional_domains")
 
     @property
     @pulumi.getter
-    def cname(self) -> str:
-        """
-        The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-        """
+    def cname(self) -> Optional[str]:
         return pulumi.get(self, "cname")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def domain(self) -> str:
-        """
-        The domain for which the cookie is set, defaults to WAAS policy domain.
-        """
+    def domain(self) -> Optional[str]:
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -135,42 +114,27 @@ class GetWaasPolicyResult:
 
     @property
     @pulumi.getter(name="originGroups")
-    def origin_groups(self) -> Sequence['outputs.GetWaasPolicyOriginGroupResult']:
-        """
-        The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        """
+    def origin_groups(self) -> Optional[Sequence['outputs.GetWaasPolicyOriginGroupResult']]:
         return pulumi.get(self, "origin_groups")
 
     @property
     @pulumi.getter
-    def origins(self) -> Sequence['outputs.GetWaasPolicyOriginResult']:
-        """
-        A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
-        """
+    def origins(self) -> Optional[Sequence['outputs.GetWaasPolicyOriginResult']]:
         return pulumi.get(self, "origins")
 
     @property
     @pulumi.getter(name="policyConfigs")
-    def policy_configs(self) -> Sequence['outputs.GetWaasPolicyPolicyConfigResult']:
-        """
-        The configuration details for the WAAS policy.
-        """
+    def policy_configs(self) -> Optional[Sequence['outputs.GetWaasPolicyPolicyConfigResult']]:
         return pulumi.get(self, "policy_configs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the WAAS policy.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
@@ -180,10 +144,7 @@ class GetWaasPolicyResult:
 
     @property
     @pulumi.getter(name="wafConfigs")
-    def waf_configs(self) -> Sequence['outputs.GetWaasPolicyWafConfigResult']:
-        """
-        The Web Application Firewall configuration for the WAAS policy.
-        """
+    def waf_configs(self) -> Optional[Sequence['outputs.GetWaasPolicyWafConfigResult']]:
         return pulumi.get(self, "waf_configs")
 
 
@@ -213,21 +174,7 @@ class AwaitableGetWaasPolicyResult(GetWaasPolicyResult):
 def get_waas_policy(waas_policy_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWaasPolicyResult:
     """
-    This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
-    ```
-
-
-    :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['waasPolicyId'] = waas_policy_id
@@ -256,20 +203,6 @@ def get_waas_policy(waas_policy_id: Optional[str] = None,
 def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWaasPolicyResult]:
     """
-    This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
-    ```
-
-
-    :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+    Use this data source to access information about an existing resource.
     """
     ...

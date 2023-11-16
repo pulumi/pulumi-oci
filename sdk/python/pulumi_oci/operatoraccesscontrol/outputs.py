@@ -31,444 +31,327 @@ __all__ = [
 @pulumi.output_type
 class GetAccessRequestHistoryItemResult(dict):
     def __init__(__self__, *,
-                 actions_lists: Sequence[str],
-                 description: str,
-                 duration: int,
-                 is_auto_approved: bool,
-                 state: str,
-                 time_of_action: str,
-                 user_id: str):
-        """
-        :param Sequence[str] actions_lists: List of operator actions for which approvals were requested by the operator.
-        :param str description: Reason or description about the cause of change.
-        :param int duration: Duration for approval of request or extension depending on the type of action.
-        :param bool is_auto_approved: Whether the access request was automatically approved.
-        :param str state: The current state of the AccessRequest.
-        :param str time_of_action: Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param str user_id: Approver who modified the access request.
-        """
-        pulumi.set(__self__, "actions_lists", actions_lists)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "is_auto_approved", is_auto_approved)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_of_action", time_of_action)
-        pulumi.set(__self__, "user_id", user_id)
+                 actions_lists: Optional[Sequence[str]] = None,
+                 description: Optional[str] = None,
+                 duration: Optional[int] = None,
+                 is_auto_approved: Optional[bool] = None,
+                 state: Optional[str] = None,
+                 time_of_action: Optional[str] = None,
+                 user_id: Optional[str] = None):
+        if actions_lists is not None:
+            pulumi.set(__self__, "actions_lists", actions_lists)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if duration is not None:
+            pulumi.set(__self__, "duration", duration)
+        if is_auto_approved is not None:
+            pulumi.set(__self__, "is_auto_approved", is_auto_approved)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_of_action is not None:
+            pulumi.set(__self__, "time_of_action", time_of_action)
+        if user_id is not None:
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter(name="actionsLists")
-    def actions_lists(self) -> Sequence[str]:
-        """
-        List of operator actions for which approvals were requested by the operator.
-        """
+    def actions_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "actions_lists")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Reason or description about the cause of change.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def duration(self) -> int:
-        """
-        Duration for approval of request or extension depending on the type of action.
-        """
+    def duration(self) -> Optional[int]:
         return pulumi.get(self, "duration")
 
     @property
     @pulumi.getter(name="isAutoApproved")
-    def is_auto_approved(self) -> bool:
-        """
-        Whether the access request was automatically approved.
-        """
+    def is_auto_approved(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_approved")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the AccessRequest.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeOfAction")
-    def time_of_action(self) -> str:
-        """
-        Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_action(self) -> Optional[str]:
         return pulumi.get(self, "time_of_action")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        Approver who modified the access request.
-        """
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
 
 @pulumi.output_type
 class GetAccessRequestsAccessRequestCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAccessRequestsAccessRequestCollectionItemResult(dict):
     def __init__(__self__, *,
-                 access_reason_summary: str,
-                 action_requests_lists: Sequence[str],
-                 approver_comment: str,
-                 audit_types: Sequence[str],
-                 closure_comment: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 duration: int,
-                 extend_duration: int,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_auto_approved: bool,
-                 lifecycle_details: str,
-                 opctl_additional_message: str,
-                 opctl_id: str,
-                 opctl_name: str,
-                 operator_id: str,
-                 reason: str,
-                 request_id: str,
-                 resource_id: str,
-                 resource_name: str,
-                 resource_type: str,
-                 severity: str,
-                 state: str,
-                 sub_resource_lists: Sequence[str],
-                 system_message: str,
-                 time_of_creation: str,
-                 time_of_modification: str,
-                 time_of_user_creation: str,
-                 user_id: str,
-                 workflow_ids: Sequence[str]):
-        """
-        :param str access_reason_summary: Summary comment by the operator creating the access request.
-        :param Sequence[str] action_requests_lists: List of operator actions for which approval is sought by the operator user.
-        :param str approver_comment: The last recent Comment entered by the approver of the request.
-        :param Sequence[str] audit_types: Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
-        :param str closure_comment: The comment entered by the operator while closing the request.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        :param int duration: Duration in hours for which access is sought on the target resource.
-        :param int extend_duration: Duration in hours for which extension access is sought on the target resource.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        :param str id: The OCID of the access request.
-        :param bool is_auto_approved: Whether the access request was automatically approved.
-        :param str lifecycle_details: more in detail about the lifeCycleState.
-        :param str opctl_additional_message: Additional message specific to the access request that can be specified by the approver at the time of approval.
-        :param str opctl_id: The OCID of the operator control governing the target resource.
-        :param str opctl_name: Name of the Operator control governing the target resource.
-        :param str operator_id: A unique identifier associated with the operator who raised the request. This identifier can not be used directly to identify the operator. You need to provide this identifier if you would like Oracle to provide additional information about the operator action within Oracle tenancy.
-        :param str reason: Summary reason for which the operator is requesting access on the target resource.
-        :param str request_id: This is an automatic identifier generated by the system which is easier for human comprehension.
-        :param str resource_id: The OCID of the target resource associated with the access request. The operator raises an access request to get approval to  access the target resource.
-        :param str resource_name: A filter to return only resources that match the given ResourceName.
-        :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-        :param str severity: Priority assigned to the access request by the operator
-        :param str state: A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
-        :param Sequence[str] sub_resource_lists: The subresources requested for approval.
-        :param str system_message: System message that will be displayed to the operator at login to the target resource.
-        :param str time_of_creation: Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param str time_of_modification: Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param str time_of_user_creation: The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        :param str user_id: The OCID of the user that last modified the access request.
-        :param Sequence[str] workflow_ids: The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
-        """
-        pulumi.set(__self__, "access_reason_summary", access_reason_summary)
-        pulumi.set(__self__, "action_requests_lists", action_requests_lists)
-        pulumi.set(__self__, "approver_comment", approver_comment)
-        pulumi.set(__self__, "audit_types", audit_types)
-        pulumi.set(__self__, "closure_comment", closure_comment)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "extend_duration", extend_duration)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_approved", is_auto_approved)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "opctl_additional_message", opctl_additional_message)
-        pulumi.set(__self__, "opctl_id", opctl_id)
-        pulumi.set(__self__, "opctl_name", opctl_name)
-        pulumi.set(__self__, "operator_id", operator_id)
-        pulumi.set(__self__, "reason", reason)
-        pulumi.set(__self__, "request_id", request_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "sub_resource_lists", sub_resource_lists)
-        pulumi.set(__self__, "system_message", system_message)
-        pulumi.set(__self__, "time_of_creation", time_of_creation)
-        pulumi.set(__self__, "time_of_modification", time_of_modification)
-        pulumi.set(__self__, "time_of_user_creation", time_of_user_creation)
-        pulumi.set(__self__, "user_id", user_id)
-        pulumi.set(__self__, "workflow_ids", workflow_ids)
+                 access_reason_summary: Optional[str] = None,
+                 action_requests_lists: Optional[Sequence[str]] = None,
+                 approver_comment: Optional[str] = None,
+                 audit_types: Optional[Sequence[str]] = None,
+                 closure_comment: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 duration: Optional[int] = None,
+                 extend_duration: Optional[int] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_auto_approved: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 opctl_additional_message: Optional[str] = None,
+                 opctl_id: Optional[str] = None,
+                 opctl_name: Optional[str] = None,
+                 operator_id: Optional[str] = None,
+                 reason: Optional[str] = None,
+                 request_id: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_name: Optional[str] = None,
+                 resource_type: Optional[str] = None,
+                 severity: Optional[str] = None,
+                 state: Optional[str] = None,
+                 sub_resource_lists: Optional[Sequence[str]] = None,
+                 system_message: Optional[str] = None,
+                 time_of_creation: Optional[str] = None,
+                 time_of_modification: Optional[str] = None,
+                 time_of_user_creation: Optional[str] = None,
+                 user_id: Optional[str] = None,
+                 workflow_ids: Optional[Sequence[str]] = None):
+        if access_reason_summary is not None:
+            pulumi.set(__self__, "access_reason_summary", access_reason_summary)
+        if action_requests_lists is not None:
+            pulumi.set(__self__, "action_requests_lists", action_requests_lists)
+        if approver_comment is not None:
+            pulumi.set(__self__, "approver_comment", approver_comment)
+        if audit_types is not None:
+            pulumi.set(__self__, "audit_types", audit_types)
+        if closure_comment is not None:
+            pulumi.set(__self__, "closure_comment", closure_comment)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if duration is not None:
+            pulumi.set(__self__, "duration", duration)
+        if extend_duration is not None:
+            pulumi.set(__self__, "extend_duration", extend_duration)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_auto_approved is not None:
+            pulumi.set(__self__, "is_auto_approved", is_auto_approved)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if opctl_additional_message is not None:
+            pulumi.set(__self__, "opctl_additional_message", opctl_additional_message)
+        if opctl_id is not None:
+            pulumi.set(__self__, "opctl_id", opctl_id)
+        if opctl_name is not None:
+            pulumi.set(__self__, "opctl_name", opctl_name)
+        if operator_id is not None:
+            pulumi.set(__self__, "operator_id", operator_id)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+        if request_id is not None:
+            pulumi.set(__self__, "request_id", request_id)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if severity is not None:
+            pulumi.set(__self__, "severity", severity)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if sub_resource_lists is not None:
+            pulumi.set(__self__, "sub_resource_lists", sub_resource_lists)
+        if system_message is not None:
+            pulumi.set(__self__, "system_message", system_message)
+        if time_of_creation is not None:
+            pulumi.set(__self__, "time_of_creation", time_of_creation)
+        if time_of_modification is not None:
+            pulumi.set(__self__, "time_of_modification", time_of_modification)
+        if time_of_user_creation is not None:
+            pulumi.set(__self__, "time_of_user_creation", time_of_user_creation)
+        if user_id is not None:
+            pulumi.set(__self__, "user_id", user_id)
+        if workflow_ids is not None:
+            pulumi.set(__self__, "workflow_ids", workflow_ids)
 
     @property
     @pulumi.getter(name="accessReasonSummary")
-    def access_reason_summary(self) -> str:
-        """
-        Summary comment by the operator creating the access request.
-        """
+    def access_reason_summary(self) -> Optional[str]:
         return pulumi.get(self, "access_reason_summary")
 
     @property
     @pulumi.getter(name="actionRequestsLists")
-    def action_requests_lists(self) -> Sequence[str]:
-        """
-        List of operator actions for which approval is sought by the operator user.
-        """
+    def action_requests_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "action_requests_lists")
 
     @property
     @pulumi.getter(name="approverComment")
-    def approver_comment(self) -> str:
-        """
-        The last recent Comment entered by the approver of the request.
-        """
+    def approver_comment(self) -> Optional[str]:
         return pulumi.get(self, "approver_comment")
 
     @property
     @pulumi.getter(name="auditTypes")
-    def audit_types(self) -> Sequence[str]:
-        """
-        Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
-        """
+    def audit_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "audit_types")
 
     @property
     @pulumi.getter(name="closureComment")
-    def closure_comment(self) -> str:
-        """
-        The comment entered by the operator while closing the request.
-        """
+    def closure_comment(self) -> Optional[str]:
         return pulumi.get(self, "closure_comment")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def duration(self) -> int:
-        """
-        Duration in hours for which access is sought on the target resource.
-        """
+    def duration(self) -> Optional[int]:
         return pulumi.get(self, "duration")
 
     @property
     @pulumi.getter(name="extendDuration")
-    def extend_duration(self) -> int:
-        """
-        Duration in hours for which extension access is sought on the target resource.
-        """
+    def extend_duration(self) -> Optional[int]:
         return pulumi.get(self, "extend_duration")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the access request.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoApproved")
-    def is_auto_approved(self) -> bool:
-        """
-        Whether the access request was automatically approved.
-        """
+    def is_auto_approved(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_approved")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        more in detail about the lifeCycleState.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opctlAdditionalMessage")
-    def opctl_additional_message(self) -> str:
-        """
-        Additional message specific to the access request that can be specified by the approver at the time of approval.
-        """
+    def opctl_additional_message(self) -> Optional[str]:
         return pulumi.get(self, "opctl_additional_message")
 
     @property
     @pulumi.getter(name="opctlId")
-    def opctl_id(self) -> str:
-        """
-        The OCID of the operator control governing the target resource.
-        """
+    def opctl_id(self) -> Optional[str]:
         return pulumi.get(self, "opctl_id")
 
     @property
     @pulumi.getter(name="opctlName")
-    def opctl_name(self) -> str:
-        """
-        Name of the Operator control governing the target resource.
-        """
+    def opctl_name(self) -> Optional[str]:
         return pulumi.get(self, "opctl_name")
 
     @property
     @pulumi.getter(name="operatorId")
-    def operator_id(self) -> str:
-        """
-        A unique identifier associated with the operator who raised the request. This identifier can not be used directly to identify the operator. You need to provide this identifier if you would like Oracle to provide additional information about the operator action within Oracle tenancy.
-        """
+    def operator_id(self) -> Optional[str]:
         return pulumi.get(self, "operator_id")
 
     @property
     @pulumi.getter
-    def reason(self) -> str:
-        """
-        Summary reason for which the operator is requesting access on the target resource.
-        """
+    def reason(self) -> Optional[str]:
         return pulumi.get(self, "reason")
 
     @property
     @pulumi.getter(name="requestId")
-    def request_id(self) -> str:
-        """
-        This is an automatic identifier generated by the system which is easier for human comprehension.
-        """
+    def request_id(self) -> Optional[str]:
         return pulumi.get(self, "request_id")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The OCID of the target resource associated with the access request. The operator raises an access request to get approval to  access the target resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        A filter to return only resources that match the given ResourceName.
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        A filter to return only lists of resources that match the entire given service type.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def severity(self) -> str:
-        """
-        Priority assigned to the access request by the operator
-        """
+    def severity(self) -> Optional[str]:
         return pulumi.get(self, "severity")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subResourceLists")
-    def sub_resource_lists(self) -> Sequence[str]:
-        """
-        The subresources requested for approval.
-        """
+    def sub_resource_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "sub_resource_lists")
 
     @property
     @pulumi.getter(name="systemMessage")
-    def system_message(self) -> str:
-        """
-        System message that will be displayed to the operator at login to the target resource.
-        """
+    def system_message(self) -> Optional[str]:
         return pulumi.get(self, "system_message")
 
     @property
     @pulumi.getter(name="timeOfCreation")
-    def time_of_creation(self) -> str:
-        """
-        Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_creation(self) -> Optional[str]:
         return pulumi.get(self, "time_of_creation")
 
     @property
     @pulumi.getter(name="timeOfModification")
-    def time_of_modification(self) -> str:
-        """
-        Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_modification(self) -> Optional[str]:
         return pulumi.get(self, "time_of_modification")
 
     @property
     @pulumi.getter(name="timeOfUserCreation")
-    def time_of_user_creation(self) -> str:
-        """
-        The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_user_creation(self) -> Optional[str]:
         return pulumi.get(self, "time_of_user_creation")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        The OCID of the user that last modified the access request.
-        """
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
     @property
     @pulumi.getter(name="workflowIds")
-    def workflow_ids(self) -> Sequence[str]:
-        """
-        The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
-        """
+    def workflow_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "workflow_ids")
 
 
@@ -502,29 +385,21 @@ class GetAccessRequestsFilterResult(dict):
 @pulumi.output_type
 class GetActionPropertyResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: Name of the property
-        :param str value: value of the property
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the property
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        value of the property
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -534,9 +409,6 @@ class GetActionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire display name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -545,9 +417,6 @@ class GetActionsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -564,149 +433,111 @@ class GetActionsFilterResult(dict):
 @pulumi.output_type
 class GetActionsOperatorActionCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetActionsOperatorActionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetActionsOperatorActionCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetActionsOperatorActionCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetActionsOperatorActionCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetActionsOperatorActionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 component: str,
-                 customer_display_name: str,
-                 description: str,
-                 id: str,
-                 name: str,
-                 properties: Sequence['outputs.GetActionsOperatorActionCollectionItemPropertyResult'],
-                 resource_type: str,
                  compartment_id: Optional[str] = None,
+                 component: Optional[str] = None,
+                 customer_display_name: Optional[str] = None,
+                 description: Optional[str] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 properties: Optional[Sequence['outputs.GetActionsOperatorActionCollectionItemPropertyResult']] = None,
+                 resource_type: Optional[str] = None,
                  state: Optional[str] = None):
-        """
-        :param str component: Name of the infrastructure layer associated with the operator action.
-        :param str customer_display_name: Display Name of the operator action.
-        :param str description: Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-        :param str id: Unique Oracle assigned identifier for the operator action.
-        :param str name: A filter to return only resources that match the entire display name given.
-        :param Sequence['GetActionsOperatorActionCollectionItemPropertyArgs'] properties: Fine grained properties associated with the operator control.
-        :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str state: A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
-        """
-        pulumi.set(__self__, "component", component)
-        pulumi.set(__self__, "customer_display_name", customer_display_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "properties", properties)
-        pulumi.set(__self__, "resource_type", resource_type)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if component is not None:
+            pulumi.set(__self__, "component", component)
+        if customer_display_name is not None:
+            pulumi.set(__self__, "customer_display_name", customer_display_name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
     @property
-    @pulumi.getter
-    def component(self) -> str:
-        """
-        Name of the infrastructure layer associated with the operator action.
-        """
-        return pulumi.get(self, "component")
-
-    @property
-    @pulumi.getter(name="customerDisplayName")
-    def customer_display_name(self) -> str:
-        """
-        Display Name of the operator action.
-        """
-        return pulumi.get(self, "customer_display_name")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-        """
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique Oracle assigned identifier for the operator action.
-        """
-        return pulumi.get(self, "id")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def properties(self) -> Sequence['outputs.GetActionsOperatorActionCollectionItemPropertyResult']:
-        """
-        Fine grained properties associated with the operator control.
-        """
-        return pulumi.get(self, "properties")
-
-    @property
-    @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        A filter to return only lists of resources that match the entire given service type.
-        """
-        return pulumi.get(self, "resource_type")
-
-    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The ID of the compartment in which to list resources.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
+    def component(self) -> Optional[str]:
+        return pulumi.get(self, "component")
+
+    @property
+    @pulumi.getter(name="customerDisplayName")
+    def customer_display_name(self) -> Optional[str]:
+        return pulumi.get(self, "customer_display_name")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional[Sequence['outputs.GetActionsOperatorActionCollectionItemPropertyResult']]:
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[str]:
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
-        """
         return pulumi.get(self, "state")
 
 
 @pulumi.output_type
 class GetActionsOperatorActionCollectionItemPropertyResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: A filter to return only resources that match the entire display name given.
-        :param str value: value of the property
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        value of the property
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -740,327 +571,242 @@ class GetControlAssignmentsFilterResult(dict):
 @pulumi.output_type
 class GetControlAssignmentsOperatorControlAssignmentCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
     def __init__(__self__, *,
-                 assigner_id: str,
-                 comment: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 detachment_description: str,
-                 error_code: int,
-                 error_message: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_auto_approve_during_maintenance: bool,
-                 is_default_assignment: bool,
-                 is_enforced_always: bool,
-                 is_log_forwarded: bool,
-                 lifecycle_details: str,
-                 operator_control_id: str,
-                 remote_syslog_server_address: str,
-                 remote_syslog_server_ca_cert: str,
-                 remote_syslog_server_port: int,
-                 resource_compartment_id: str,
-                 resource_id: str,
-                 resource_name: str,
-                 resource_type: str,
-                 state: str,
-                 time_assignment_from: str,
-                 time_assignment_to: str,
-                 time_of_assignment: str,
-                 time_of_deletion: str,
-                 unassigner_id: str):
-        """
-        :param str assigner_id: The OCID of the user who created this operator control assignment.
-        :param str comment: Comment about the assignment of the operator control to this target resource.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        :param str detachment_description: description containing reason for releasing of OperatorControl.
-        :param int error_code: The code identifying the error occurred during Assignment operation.
-        :param str error_message: The message describing the error occurred during Assignment operation.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        :param str id: The OCID of the operator control assignment.
-        :param bool is_auto_approve_during_maintenance: The boolean if true would autoApprove during maintenance.
-        :param bool is_default_assignment: Whether the assignment is a default assignment.
-        :param bool is_enforced_always: If set, then the target resource is always governed by the operator control.
-        :param bool is_log_forwarded: If set indicates that the audit logs are being forwarded to the relevant remote logging server
-        :param str lifecycle_details: More in detail about the lifeCycleState.
-        :param str operator_control_id: The OCID of the operator control.
-        :param str remote_syslog_server_address: The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
-        :param str remote_syslog_server_ca_cert: The CA certificate of the remote syslog server.
-        :param int remote_syslog_server_port: The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-        :param str resource_compartment_id: The OCID of the compartment that contains the target resource.
-        :param str resource_id: The OCID of the target resource.
-        :param str resource_name: A filter to return only resources that match the given ResourceName.
-        :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-        :param str state: A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
-        :param str time_assignment_from: The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
-        :param str time_assignment_to: The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param str time_of_assignment: Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param str time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        :param str unassigner_id: User id who released the operatorControl.
-        """
-        pulumi.set(__self__, "assigner_id", assigner_id)
-        pulumi.set(__self__, "comment", comment)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "detachment_description", detachment_description)
-        pulumi.set(__self__, "error_code", error_code)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
-        pulumi.set(__self__, "is_default_assignment", is_default_assignment)
-        pulumi.set(__self__, "is_enforced_always", is_enforced_always)
-        pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "operator_control_id", operator_control_id)
-        pulumi.set(__self__, "remote_syslog_server_address", remote_syslog_server_address)
-        pulumi.set(__self__, "remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
-        pulumi.set(__self__, "remote_syslog_server_port", remote_syslog_server_port)
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_assignment_from", time_assignment_from)
-        pulumi.set(__self__, "time_assignment_to", time_assignment_to)
-        pulumi.set(__self__, "time_of_assignment", time_of_assignment)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "unassigner_id", unassigner_id)
+                 assigner_id: Optional[str] = None,
+                 comment: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 detachment_description: Optional[str] = None,
+                 error_code: Optional[int] = None,
+                 error_message: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_auto_approve_during_maintenance: Optional[bool] = None,
+                 is_default_assignment: Optional[bool] = None,
+                 is_enforced_always: Optional[bool] = None,
+                 is_log_forwarded: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 operator_control_id: Optional[str] = None,
+                 remote_syslog_server_address: Optional[str] = None,
+                 remote_syslog_server_ca_cert: Optional[str] = None,
+                 remote_syslog_server_port: Optional[int] = None,
+                 resource_compartment_id: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_name: Optional[str] = None,
+                 resource_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_assignment_from: Optional[str] = None,
+                 time_assignment_to: Optional[str] = None,
+                 time_of_assignment: Optional[str] = None,
+                 time_of_deletion: Optional[str] = None,
+                 unassigner_id: Optional[str] = None):
+        if assigner_id is not None:
+            pulumi.set(__self__, "assigner_id", assigner_id)
+        if comment is not None:
+            pulumi.set(__self__, "comment", comment)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if detachment_description is not None:
+            pulumi.set(__self__, "detachment_description", detachment_description)
+        if error_code is not None:
+            pulumi.set(__self__, "error_code", error_code)
+        if error_message is not None:
+            pulumi.set(__self__, "error_message", error_message)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_auto_approve_during_maintenance is not None:
+            pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+        if is_default_assignment is not None:
+            pulumi.set(__self__, "is_default_assignment", is_default_assignment)
+        if is_enforced_always is not None:
+            pulumi.set(__self__, "is_enforced_always", is_enforced_always)
+        if is_log_forwarded is not None:
+            pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if operator_control_id is not None:
+            pulumi.set(__self__, "operator_control_id", operator_control_id)
+        if remote_syslog_server_address is not None:
+            pulumi.set(__self__, "remote_syslog_server_address", remote_syslog_server_address)
+        if remote_syslog_server_ca_cert is not None:
+            pulumi.set(__self__, "remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
+        if remote_syslog_server_port is not None:
+            pulumi.set(__self__, "remote_syslog_server_port", remote_syslog_server_port)
+        if resource_compartment_id is not None:
+            pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_assignment_from is not None:
+            pulumi.set(__self__, "time_assignment_from", time_assignment_from)
+        if time_assignment_to is not None:
+            pulumi.set(__self__, "time_assignment_to", time_assignment_to)
+        if time_of_assignment is not None:
+            pulumi.set(__self__, "time_of_assignment", time_of_assignment)
+        if time_of_deletion is not None:
+            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        if unassigner_id is not None:
+            pulumi.set(__self__, "unassigner_id", unassigner_id)
 
     @property
     @pulumi.getter(name="assignerId")
-    def assigner_id(self) -> str:
-        """
-        The OCID of the user who created this operator control assignment.
-        """
+    def assigner_id(self) -> Optional[str]:
         return pulumi.get(self, "assigner_id")
 
     @property
     @pulumi.getter
-    def comment(self) -> str:
-        """
-        Comment about the assignment of the operator control to this target resource.
-        """
+    def comment(self) -> Optional[str]:
         return pulumi.get(self, "comment")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="detachmentDescription")
-    def detachment_description(self) -> str:
-        """
-        description containing reason for releasing of OperatorControl.
-        """
+    def detachment_description(self) -> Optional[str]:
         return pulumi.get(self, "detachment_description")
 
     @property
     @pulumi.getter(name="errorCode")
-    def error_code(self) -> int:
-        """
-        The code identifying the error occurred during Assignment operation.
-        """
+    def error_code(self) -> Optional[int]:
         return pulumi.get(self, "error_code")
 
     @property
     @pulumi.getter(name="errorMessage")
-    def error_message(self) -> str:
-        """
-        The message describing the error occurred during Assignment operation.
-        """
+    def error_message(self) -> Optional[str]:
         return pulumi.get(self, "error_message")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the operator control assignment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoApproveDuringMaintenance")
-    def is_auto_approve_during_maintenance(self) -> bool:
-        """
-        The boolean if true would autoApprove during maintenance.
-        """
+    def is_auto_approve_during_maintenance(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_approve_during_maintenance")
 
     @property
     @pulumi.getter(name="isDefaultAssignment")
-    def is_default_assignment(self) -> bool:
-        """
-        Whether the assignment is a default assignment.
-        """
+    def is_default_assignment(self) -> Optional[bool]:
         return pulumi.get(self, "is_default_assignment")
 
     @property
     @pulumi.getter(name="isEnforcedAlways")
-    def is_enforced_always(self) -> bool:
-        """
-        If set, then the target resource is always governed by the operator control.
-        """
+    def is_enforced_always(self) -> Optional[bool]:
         return pulumi.get(self, "is_enforced_always")
 
     @property
     @pulumi.getter(name="isLogForwarded")
-    def is_log_forwarded(self) -> bool:
-        """
-        If set indicates that the audit logs are being forwarded to the relevant remote logging server
-        """
+    def is_log_forwarded(self) -> Optional[bool]:
         return pulumi.get(self, "is_log_forwarded")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        More in detail about the lifeCycleState.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="operatorControlId")
-    def operator_control_id(self) -> str:
-        """
-        The OCID of the operator control.
-        """
+    def operator_control_id(self) -> Optional[str]:
         return pulumi.get(self, "operator_control_id")
 
     @property
     @pulumi.getter(name="remoteSyslogServerAddress")
-    def remote_syslog_server_address(self) -> str:
-        """
-        The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
-        """
+    def remote_syslog_server_address(self) -> Optional[str]:
         return pulumi.get(self, "remote_syslog_server_address")
 
     @property
     @pulumi.getter(name="remoteSyslogServerCaCert")
-    def remote_syslog_server_ca_cert(self) -> str:
-        """
-        The CA certificate of the remote syslog server.
-        """
+    def remote_syslog_server_ca_cert(self) -> Optional[str]:
         return pulumi.get(self, "remote_syslog_server_ca_cert")
 
     @property
     @pulumi.getter(name="remoteSyslogServerPort")
-    def remote_syslog_server_port(self) -> int:
-        """
-        The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-        """
+    def remote_syslog_server_port(self) -> Optional[int]:
         return pulumi.get(self, "remote_syslog_server_port")
 
     @property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the target resource.
-        """
+    def resource_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_compartment_id")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The OCID of the target resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        A filter to return only resources that match the given ResourceName.
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        A filter to return only lists of resources that match the entire given service type.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAssignmentFrom")
-    def time_assignment_from(self) -> str:
-        """
-        The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_assignment_from(self) -> Optional[str]:
         return pulumi.get(self, "time_assignment_from")
 
     @property
     @pulumi.getter(name="timeAssignmentTo")
-    def time_assignment_to(self) -> str:
-        """
-        The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_assignment_to(self) -> Optional[str]:
         return pulumi.get(self, "time_assignment_to")
 
     @property
     @pulumi.getter(name="timeOfAssignment")
-    def time_of_assignment(self) -> str:
-        """
-        Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_assignment(self) -> Optional[str]:
         return pulumi.get(self, "time_of_assignment")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="unassignerId")
-    def unassigner_id(self) -> str:
-        """
-        User id who released the operatorControl.
-        """
+    def unassigner_id(self) -> Optional[str]:
         return pulumi.get(self, "unassigner_id")
 
 
@@ -1094,239 +840,178 @@ class GetControlsFilterResult(dict):
 @pulumi.output_type
 class GetControlsOperatorControlCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetControlsOperatorControlCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetControlsOperatorControlCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetControlsOperatorControlCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetControlsOperatorControlCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetControlsOperatorControlCollectionItemResult(dict):
     def __init__(__self__, *,
-                 approval_required_op_action_lists: Sequence[str],
-                 approver_groups_lists: Sequence[str],
-                 approvers_lists: Sequence[str],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 email_id_lists: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_default_operator_control: bool,
-                 is_fully_pre_approved: bool,
-                 last_modified_info: str,
-                 operator_control_name: str,
-                 pre_approved_op_action_lists: Sequence[str],
-                 resource_type: str,
-                 state: str,
-                 system_message: str,
-                 time_of_creation: str,
-                 time_of_deletion: str,
-                 time_of_modification: str):
-        """
-        :param Sequence[str] approval_required_op_action_lists: List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
-        :param Sequence[str] approver_groups_lists: List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
-        :param Sequence[str] approvers_lists: List of users who can approve an access request associated with a target resource under the governance of this operator control.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        :param str description: Description of operator control.
-        :param Sequence[str] email_id_lists: List of emailId.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        :param str id: The OCID of the operator control.
-        :param bool is_default_operator_control: Whether the operator control is a default Operator Control.
-        :param bool is_fully_pre_approved: Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-        :param str last_modified_info: Description associated with the latest modification of the operator control.
-        :param str operator_control_name: Name of the operator control. The name must be unique.
-        :param Sequence[str] pre_approved_op_action_lists: List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
-        :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-        :param str state: A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
-        :param str system_message: System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-        :param str time_of_creation: Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param str time_of_deletion: Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-        :param str time_of_modification: Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
-        pulumi.set(__self__, "approval_required_op_action_lists", approval_required_op_action_lists)
-        pulumi.set(__self__, "approver_groups_lists", approver_groups_lists)
-        pulumi.set(__self__, "approvers_lists", approvers_lists)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "email_id_lists", email_id_lists)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
-        pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
-        pulumi.set(__self__, "last_modified_info", last_modified_info)
-        pulumi.set(__self__, "operator_control_name", operator_control_name)
-        pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_message", system_message)
-        pulumi.set(__self__, "time_of_creation", time_of_creation)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "time_of_modification", time_of_modification)
+                 approval_required_op_action_lists: Optional[Sequence[str]] = None,
+                 approver_groups_lists: Optional[Sequence[str]] = None,
+                 approvers_lists: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 email_id_lists: Optional[Sequence[str]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_default_operator_control: Optional[bool] = None,
+                 is_fully_pre_approved: Optional[bool] = None,
+                 last_modified_info: Optional[str] = None,
+                 operator_control_name: Optional[str] = None,
+                 pre_approved_op_action_lists: Optional[Sequence[str]] = None,
+                 resource_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_message: Optional[str] = None,
+                 time_of_creation: Optional[str] = None,
+                 time_of_deletion: Optional[str] = None,
+                 time_of_modification: Optional[str] = None):
+        if approval_required_op_action_lists is not None:
+            pulumi.set(__self__, "approval_required_op_action_lists", approval_required_op_action_lists)
+        if approver_groups_lists is not None:
+            pulumi.set(__self__, "approver_groups_lists", approver_groups_lists)
+        if approvers_lists is not None:
+            pulumi.set(__self__, "approvers_lists", approvers_lists)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if email_id_lists is not None:
+            pulumi.set(__self__, "email_id_lists", email_id_lists)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_default_operator_control is not None:
+            pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
+        if is_fully_pre_approved is not None:
+            pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
+        if last_modified_info is not None:
+            pulumi.set(__self__, "last_modified_info", last_modified_info)
+        if operator_control_name is not None:
+            pulumi.set(__self__, "operator_control_name", operator_control_name)
+        if pre_approved_op_action_lists is not None:
+            pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_message is not None:
+            pulumi.set(__self__, "system_message", system_message)
+        if time_of_creation is not None:
+            pulumi.set(__self__, "time_of_creation", time_of_creation)
+        if time_of_deletion is not None:
+            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        if time_of_modification is not None:
+            pulumi.set(__self__, "time_of_modification", time_of_modification)
 
     @property
     @pulumi.getter(name="approvalRequiredOpActionLists")
-    def approval_required_op_action_lists(self) -> Sequence[str]:
-        """
-        List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
-        """
+    def approval_required_op_action_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "approval_required_op_action_lists")
 
     @property
     @pulumi.getter(name="approverGroupsLists")
-    def approver_groups_lists(self) -> Sequence[str]:
-        """
-        List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
-        """
+    def approver_groups_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "approver_groups_lists")
 
     @property
     @pulumi.getter(name="approversLists")
-    def approvers_lists(self) -> Sequence[str]:
-        """
-        List of users who can approve an access request associated with a target resource under the governance of this operator control.
-        """
+    def approvers_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "approvers_lists")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of operator control.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="emailIdLists")
-    def email_id_lists(self) -> Sequence[str]:
-        """
-        List of emailId.
-        """
+    def email_id_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "email_id_lists")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the operator control.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isDefaultOperatorControl")
-    def is_default_operator_control(self) -> bool:
-        """
-        Whether the operator control is a default Operator Control.
-        """
+    def is_default_operator_control(self) -> Optional[bool]:
         return pulumi.get(self, "is_default_operator_control")
 
     @property
     @pulumi.getter(name="isFullyPreApproved")
-    def is_fully_pre_approved(self) -> bool:
-        """
-        Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-        """
+    def is_fully_pre_approved(self) -> Optional[bool]:
         return pulumi.get(self, "is_fully_pre_approved")
 
     @property
     @pulumi.getter(name="lastModifiedInfo")
-    def last_modified_info(self) -> str:
-        """
-        Description associated with the latest modification of the operator control.
-        """
+    def last_modified_info(self) -> Optional[str]:
         return pulumi.get(self, "last_modified_info")
 
     @property
     @pulumi.getter(name="operatorControlName")
-    def operator_control_name(self) -> str:
-        """
-        Name of the operator control. The name must be unique.
-        """
+    def operator_control_name(self) -> Optional[str]:
         return pulumi.get(self, "operator_control_name")
 
     @property
     @pulumi.getter(name="preApprovedOpActionLists")
-    def pre_approved_op_action_lists(self) -> Sequence[str]:
-        """
-        List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
-        """
+    def pre_approved_op_action_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "pre_approved_op_action_lists")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        A filter to return only lists of resources that match the entire given service type.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemMessage")
-    def system_message(self) -> str:
-        """
-        System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-        """
+    def system_message(self) -> Optional[str]:
         return pulumi.get(self, "system_message")
 
     @property
     @pulumi.getter(name="timeOfCreation")
-    def time_of_creation(self) -> str:
-        """
-        Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_creation(self) -> Optional[str]:
         return pulumi.get(self, "time_of_creation")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="timeOfModification")
-    def time_of_modification(self) -> str:
-        """
-        Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_modification(self) -> Optional[str]:
         return pulumi.get(self, "time_of_modification")
 
 

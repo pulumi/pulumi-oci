@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRequestPolicyUsagePlan {
@@ -18,7 +19,7 @@ public final class GetDeploymentSpecificationRequestPolicyUsagePlan {
      * * &#34;request.path[TOKEN]&#34;
      * 
      */
-    private List<String> tokenLocations;
+    private @Nullable List<String> tokenLocations;
 
     private GetDeploymentSpecificationRequestPolicyUsagePlan() {}
     /**
@@ -30,7 +31,7 @@ public final class GetDeploymentSpecificationRequestPolicyUsagePlan {
      * 
      */
     public List<String> tokenLocations() {
-        return this.tokenLocations;
+        return this.tokenLocations == null ? List.of() : this.tokenLocations;
     }
 
     public static Builder builder() {
@@ -42,7 +43,7 @@ public final class GetDeploymentSpecificationRequestPolicyUsagePlan {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> tokenLocations;
+        private @Nullable List<String> tokenLocations;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyUsagePlan defaults) {
     	      Objects.requireNonNull(defaults);
@@ -50,8 +51,8 @@ public final class GetDeploymentSpecificationRequestPolicyUsagePlan {
         }
 
         @CustomType.Setter
-        public Builder tokenLocations(List<String> tokenLocations) {
-            this.tokenLocations = Objects.requireNonNull(tokenLocations);
+        public Builder tokenLocations(@Nullable List<String> tokenLocations) {
+            this.tokenLocations = tokenLocations;
             return this;
         }
         public Builder tokenLocations(String... tokenLocations) {

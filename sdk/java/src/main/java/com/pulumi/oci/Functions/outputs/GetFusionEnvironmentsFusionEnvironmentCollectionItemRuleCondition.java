@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition {
@@ -13,27 +15,27 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondi
      * @return RuleCondition type
      * 
      */
-    private String attributeName;
+    private @Nullable String attributeName;
     /**
      * @return The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
      * 
      */
-    private String attributeValue;
+    private @Nullable String attributeValue;
 
     private GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition() {}
     /**
      * @return RuleCondition type
      * 
      */
-    public String attributeName() {
-        return this.attributeName;
+    public Optional<String> attributeName() {
+        return Optional.ofNullable(this.attributeName);
     }
     /**
      * @return The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
      * 
      */
-    public String attributeValue() {
-        return this.attributeValue;
+    public Optional<String> attributeValue() {
+        return Optional.ofNullable(this.attributeValue);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondi
     }
     @CustomType.Builder
     public static final class Builder {
-        private String attributeName;
-        private String attributeValue;
+        private @Nullable String attributeName;
+        private @Nullable String attributeValue;
         public Builder() {}
         public Builder(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondi
         }
 
         @CustomType.Setter
-        public Builder attributeName(String attributeName) {
-            this.attributeName = Objects.requireNonNull(attributeName);
+        public Builder attributeName(@Nullable String attributeName) {
+            this.attributeName = attributeName;
             return this;
         }
         @CustomType.Setter
-        public Builder attributeValue(String attributeValue) {
-            this.attributeValue = Objects.requireNonNull(attributeValue);
+        public Builder attributeValue(@Nullable String attributeValue) {
+            this.attributeValue = attributeValue;
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition build() {

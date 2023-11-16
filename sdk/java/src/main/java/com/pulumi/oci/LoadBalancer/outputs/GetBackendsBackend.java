@@ -27,7 +27,7 @@ public final class GetBackendsBackend {
      * @return Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
-    private Boolean drain;
+    private @Nullable Boolean drain;
     /**
      * @return The IP address of the backend server.  Example: `10.0.0.3`
      * 
@@ -42,23 +42,23 @@ public final class GetBackendsBackend {
      * @return A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    private Boolean offline;
+    private @Nullable Boolean offline;
     /**
      * @return The communication port for the backend server.  Example: `8080`
      * 
      */
     private Integer port;
-    private String state;
+    private @Nullable String state;
     /**
      * @return The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
-    private Integer weight;
+    private @Nullable Integer weight;
 
     private GetBackendsBackend() {}
     /**
@@ -79,8 +79,8 @@ public final class GetBackendsBackend {
      * @return Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
-    public Boolean drain() {
-        return this.drain;
+    public Optional<Boolean> drain() {
+        return Optional.ofNullable(this.drain);
     }
     /**
      * @return The IP address of the backend server.  Example: `10.0.0.3`
@@ -100,15 +100,15 @@ public final class GetBackendsBackend {
      * @return A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    public Boolean offline() {
-        return this.offline;
+    public Optional<Boolean> offline() {
+        return Optional.ofNullable(this.offline);
     }
     /**
      * @return The communication port for the backend server.  Example: `8080`
@@ -117,15 +117,15 @@ public final class GetBackendsBackend {
     public Integer port() {
         return this.port;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
-    public Integer weight() {
-        return this.weight;
+    public Optional<Integer> weight() {
+        return Optional.ofNullable(this.weight);
     }
 
     public static Builder builder() {
@@ -139,14 +139,14 @@ public final class GetBackendsBackend {
     public static final class Builder {
         private String backendsetName;
         private @Nullable Boolean backup;
-        private Boolean drain;
+        private @Nullable Boolean drain;
         private String ipAddress;
         private String loadBalancerId;
-        private String name;
-        private Boolean offline;
+        private @Nullable String name;
+        private @Nullable Boolean offline;
         private Integer port;
-        private String state;
-        private Integer weight;
+        private @Nullable String state;
+        private @Nullable Integer weight;
         public Builder() {}
         public Builder(GetBackendsBackend defaults) {
     	      Objects.requireNonNull(defaults);
@@ -173,8 +173,8 @@ public final class GetBackendsBackend {
             return this;
         }
         @CustomType.Setter
-        public Builder drain(Boolean drain) {
-            this.drain = Objects.requireNonNull(drain);
+        public Builder drain(@Nullable Boolean drain) {
+            this.drain = drain;
             return this;
         }
         @CustomType.Setter
@@ -188,13 +188,13 @@ public final class GetBackendsBackend {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder offline(Boolean offline) {
-            this.offline = Objects.requireNonNull(offline);
+        public Builder offline(@Nullable Boolean offline) {
+            this.offline = offline;
             return this;
         }
         @CustomType.Setter
@@ -203,13 +203,13 @@ public final class GetBackendsBackend {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+        public Builder weight(@Nullable Integer weight) {
+            this.weight = weight;
             return this;
         }
         public GetBackendsBackend build() {

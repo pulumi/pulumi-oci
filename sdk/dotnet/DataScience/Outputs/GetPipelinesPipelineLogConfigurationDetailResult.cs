@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// If automatic on-behalf-of log object creation is enabled for pipeline runs.
         /// </summary>
-        public readonly bool EnableAutoLogCreation;
+        public readonly bool? EnableAutoLogCreation;
         /// <summary>
         /// If customer logging is enabled for pipeline.
         /// </summary>
-        public readonly bool EnableLogging;
+        public readonly bool? EnableLogging;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetPipelinesPipelineLogConfigurationDetailResult(
-            bool enableAutoLogCreation,
+            bool? enableAutoLogCreation,
 
-            bool enableLogging,
+            bool? enableLogging,
 
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             EnableAutoLogCreation = enableAutoLogCreation;
             EnableLogging = enableLogging;

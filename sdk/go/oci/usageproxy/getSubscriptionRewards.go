@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscription Rewards in Oracle Cloud Infrastructure Usage Proxy service.
@@ -65,7 +64,7 @@ type GetSubscriptionRewardsArgs struct {
 type GetSubscriptionRewardsResult struct {
 	Filters []GetSubscriptionRewardsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of reward_collection.
 	RewardCollections []GetSubscriptionRewardsRewardCollection `pulumi:"rewardCollections"`
 	// The entitlement ID from MQS, which is the same as the subcription ID.
@@ -115,19 +114,13 @@ func (o GetSubscriptionRewardsResultOutput) ToGetSubscriptionRewardsResultOutput
 	return o
 }
 
-func (o GetSubscriptionRewardsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsResult] {
-	return pulumix.Output[GetSubscriptionRewardsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRewardsResultOutput) Filters() GetSubscriptionRewardsFilterArrayOutput {
 	return o.ApplyT(func(v GetSubscriptionRewardsResult) []GetSubscriptionRewardsFilter { return v.Filters }).(GetSubscriptionRewardsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSubscriptionRewardsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of reward_collection.

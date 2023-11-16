@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         /// </summary>
-        public readonly string BaselineOcpuUtilization;
+        public readonly string? BaselineOcpuUtilization;
         /// <summary>
         /// The total amount of memory in gigabytes that is available to the instance.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// The total number of OCPUs available to the instance.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
 
         [OutputConstructor]
         private GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigResult(
-            string baselineOcpuUtilization,
+            string? baselineOcpuUtilization,
 
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double ocpus)
+            double? ocpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
             MemoryInGbs = memoryInGbs;

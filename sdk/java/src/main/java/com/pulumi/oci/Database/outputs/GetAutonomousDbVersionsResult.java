@@ -18,7 +18,7 @@ public final class GetAutonomousDbVersionsResult {
      * @return The list of autonomous_db_versions.
      * 
      */
-    private List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions;
+    private @Nullable List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions;
     private String compartmentId;
     /**
      * @return The Autonomous Database workload type. The following values are valid:
@@ -34,7 +34,7 @@ public final class GetAutonomousDbVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAutonomousDbVersionsResult() {}
     /**
@@ -42,7 +42,7 @@ public final class GetAutonomousDbVersionsResult {
      * 
      */
     public List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions() {
-        return this.autonomousDbVersions;
+        return this.autonomousDbVersions == null ? List.of() : this.autonomousDbVersions;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -65,8 +65,8 @@ public final class GetAutonomousDbVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -78,11 +78,11 @@ public final class GetAutonomousDbVersionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions;
+        private @Nullable List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions;
         private String compartmentId;
         private @Nullable String dbWorkload;
         private @Nullable List<GetAutonomousDbVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAutonomousDbVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,8 +94,8 @@ public final class GetAutonomousDbVersionsResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousDbVersions(List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions) {
-            this.autonomousDbVersions = Objects.requireNonNull(autonomousDbVersions);
+        public Builder autonomousDbVersions(@Nullable List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions) {
+            this.autonomousDbVersions = autonomousDbVersions;
             return this;
         }
         public Builder autonomousDbVersions(GetAutonomousDbVersionsAutonomousDbVersion... autonomousDbVersions) {
@@ -120,8 +120,8 @@ public final class GetAutonomousDbVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAutonomousDbVersionsResult build() {

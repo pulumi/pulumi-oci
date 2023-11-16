@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration {
@@ -14,7 +15,7 @@ public final class GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration
      * @return A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service&#39;s VCN to the customer&#39;s VCN.
      * 
      */
-    private List<GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps;
+    private @Nullable List<GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps;
 
     private GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration
      * 
      */
     public List<GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps() {
-        return this.reverseConnectionsSourceIps;
+        return this.reverseConnectionsSourceIps == null ? List.of() : this.reverseConnectionsSourceIps;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps;
+        private @Nullable List<GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps;
         public Builder() {}
         public Builder(GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration
         }
 
         @CustomType.Setter
-        public Builder reverseConnectionsSourceIps(List<GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps) {
-            this.reverseConnectionsSourceIps = Objects.requireNonNull(reverseConnectionsSourceIps);
+        public Builder reverseConnectionsSourceIps(@Nullable List<GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps) {
+            this.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
             return this;
         }
         public Builder reverseConnectionsSourceIps(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp... reverseConnectionsSourceIps) {

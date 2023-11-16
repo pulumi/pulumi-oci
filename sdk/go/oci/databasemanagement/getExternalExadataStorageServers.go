@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
@@ -74,7 +73,7 @@ type GetExternalExadataStorageServersResult struct {
 	ExternalExadataStorageServerCollections []GetExternalExadataStorageServersExternalExadataStorageServerCollection `pulumi:"externalExadataStorageServerCollections"`
 	Filters                                 []GetExternalExadataStorageServersFilter                                 `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalExadataStorageServersOutput(ctx *pulumi.Context, args GetExternalExadataStorageServersOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServersResultOutput {
@@ -120,12 +119,6 @@ func (o GetExternalExadataStorageServersResultOutput) ToGetExternalExadataStorag
 	return o
 }
 
-func (o GetExternalExadataStorageServersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServersResult] {
-	return pulumix.Output[GetExternalExadataStorageServersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExternalExadataStorageServersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageServersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -153,8 +146,8 @@ func (o GetExternalExadataStorageServersResultOutput) Filters() GetExternalExada
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageServersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,31 +16,31 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Filter MediaAsset by the bucket where the object is stored.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only the resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique MediaAsset identifier of the first asset upload.
         /// </summary>
-        public readonly string MasterMediaAssetId;
+        public readonly string? MasterMediaAssetId;
         /// <summary>
         /// List of tags for the MediaAsset.
         /// </summary>
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
         /// </summary>
-        public readonly string MediaWorkflowJobId;
+        public readonly string? MediaWorkflowJobId;
         /// <summary>
         /// JSON string containing the technial metadata for the media asset.
         /// </summary>
@@ -56,103 +56,103 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The object storage namespace where this asset is located.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Filter MediaAsset by the name of the object in object storage.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// eTag of the underlying object storage object.
         /// </summary>
-        public readonly string ObjectEtag;
+        public readonly string? ObjectEtag;
         /// <summary>
         /// Unique MediaAsset identifier of the asset from which this asset is derived.
         /// </summary>
-        public readonly string ParentMediaAssetId;
+        public readonly string? ParentMediaAssetId;
         /// <summary>
         /// The end index of video segment files.
         /// </summary>
-        public readonly string SegmentRangeEndIndex;
+        public readonly string? SegmentRangeEndIndex;
         /// <summary>
         /// The start index for video segment files.
         /// </summary>
-        public readonly string SegmentRangeStartIndex;
+        public readonly string? SegmentRangeStartIndex;
         /// <summary>
         /// The ID of the MediaWorkflow used to produce this asset.
         /// </summary>
-        public readonly string SourceMediaWorkflowId;
+        public readonly string? SourceMediaWorkflowId;
         /// <summary>
         /// The version of the MediaWorkflow used to produce this asset.
         /// </summary>
-        public readonly string SourceMediaWorkflowVersion;
+        public readonly string? SourceMediaWorkflowVersion;
         /// <summary>
         /// A filter to return only the resources with lifecycleState matching the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Filter MediaAsset by the asset type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMediaAssetsMediaAssetCollectionItemResult(
-            string bucket,
+            string? bucket,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string masterMediaAssetId,
+            string? masterMediaAssetId,
 
             ImmutableArray<Outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult> mediaAssetTags,
 
-            string mediaWorkflowJobId,
+            string? mediaWorkflowJobId,
 
             ImmutableArray<Outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult> metadatas,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object,
+            string? @object,
 
-            string objectEtag,
+            string? objectEtag,
 
-            string parentMediaAssetId,
+            string? parentMediaAssetId,
 
-            string segmentRangeEndIndex,
+            string? segmentRangeEndIndex,
 
-            string segmentRangeStartIndex,
+            string? segmentRangeStartIndex,
 
-            string sourceMediaWorkflowId,
+            string? sourceMediaWorkflowId,
 
-            string sourceMediaWorkflowVersion,
+            string? sourceMediaWorkflowVersion,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type)
+            string? type)
         {
             Bucket = bucket;
             CompartmentId = compartmentId;

@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetChannelTarget {
@@ -16,87 +18,87 @@ public final class GetChannelTarget {
      * @return The username for the replication applier of the target MySQL DB System.
      * 
      */
-    private String applierUsername;
+    private @Nullable String applierUsername;
     /**
      * @return The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
      * 
      */
-    private String channelName;
+    private @Nullable String channelName;
     /**
      * @return The OCID of the source DB System.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
      * 
      */
-    private Integer delayInSeconds;
+    private @Nullable Integer delayInSeconds;
     /**
      * @return Replication filter rules to be applied at the DB System Channel target.
      * 
      */
-    private List<GetChannelTargetFilter> filters;
+    private @Nullable List<GetChannelTargetFilter> filters;
     /**
      * @return Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
      * 
      */
-    private String tablesWithoutPrimaryKeyHandling;
+    private @Nullable String tablesWithoutPrimaryKeyHandling;
     /**
      * @return The specific target identifier.
      * 
      */
-    private String targetType;
+    private @Nullable String targetType;
 
     private GetChannelTarget() {}
     /**
      * @return The username for the replication applier of the target MySQL DB System.
      * 
      */
-    public String applierUsername() {
-        return this.applierUsername;
+    public Optional<String> applierUsername() {
+        return Optional.ofNullable(this.applierUsername);
     }
     /**
      * @return The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
      * 
      */
-    public String channelName() {
-        return this.channelName;
+    public Optional<String> channelName() {
+        return Optional.ofNullable(this.channelName);
     }
     /**
      * @return The OCID of the source DB System.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
      * 
      */
-    public Integer delayInSeconds() {
-        return this.delayInSeconds;
+    public Optional<Integer> delayInSeconds() {
+        return Optional.ofNullable(this.delayInSeconds);
     }
     /**
      * @return Replication filter rules to be applied at the DB System Channel target.
      * 
      */
     public List<GetChannelTargetFilter> filters() {
-        return this.filters;
+        return this.filters == null ? List.of() : this.filters;
     }
     /**
      * @return Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
      * 
      */
-    public String tablesWithoutPrimaryKeyHandling() {
-        return this.tablesWithoutPrimaryKeyHandling;
+    public Optional<String> tablesWithoutPrimaryKeyHandling() {
+        return Optional.ofNullable(this.tablesWithoutPrimaryKeyHandling);
     }
     /**
      * @return The specific target identifier.
      * 
      */
-    public String targetType() {
-        return this.targetType;
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetChannelTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applierUsername;
-        private String channelName;
-        private String dbSystemId;
-        private Integer delayInSeconds;
-        private List<GetChannelTargetFilter> filters;
-        private String tablesWithoutPrimaryKeyHandling;
-        private String targetType;
+        private @Nullable String applierUsername;
+        private @Nullable String channelName;
+        private @Nullable String dbSystemId;
+        private @Nullable Integer delayInSeconds;
+        private @Nullable List<GetChannelTargetFilter> filters;
+        private @Nullable String tablesWithoutPrimaryKeyHandling;
+        private @Nullable String targetType;
         public Builder() {}
         public Builder(GetChannelTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,41 +130,41 @@ public final class GetChannelTarget {
         }
 
         @CustomType.Setter
-        public Builder applierUsername(String applierUsername) {
-            this.applierUsername = Objects.requireNonNull(applierUsername);
+        public Builder applierUsername(@Nullable String applierUsername) {
+            this.applierUsername = applierUsername;
             return this;
         }
         @CustomType.Setter
-        public Builder channelName(String channelName) {
-            this.channelName = Objects.requireNonNull(channelName);
+        public Builder channelName(@Nullable String channelName) {
+            this.channelName = channelName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder delayInSeconds(Integer delayInSeconds) {
-            this.delayInSeconds = Objects.requireNonNull(delayInSeconds);
+        public Builder delayInSeconds(@Nullable Integer delayInSeconds) {
+            this.delayInSeconds = delayInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder filters(List<GetChannelTargetFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+        public Builder filters(@Nullable List<GetChannelTargetFilter> filters) {
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetChannelTargetFilter... filters) {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder tablesWithoutPrimaryKeyHandling(String tablesWithoutPrimaryKeyHandling) {
-            this.tablesWithoutPrimaryKeyHandling = Objects.requireNonNull(tablesWithoutPrimaryKeyHandling);
+        public Builder tablesWithoutPrimaryKeyHandling(@Nullable String tablesWithoutPrimaryKeyHandling) {
+            this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
             return this;
         }
         @CustomType.Setter
-        public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+        public Builder targetType(@Nullable String targetType) {
+            this.targetType = targetType;
             return this;
         }
         public GetChannelTarget build() {

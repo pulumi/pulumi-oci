@@ -52,19 +52,6 @@ class AlarmSuppression(dict):
                  time_suppress_from: str,
                  time_suppress_until: str,
                  description: Optional[str] = None):
-        """
-        :param str time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param str time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str description: (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-               
-               Oracle recommends including tracking information for the event or associated work, such as a ticket number.
-               
-               Example: `Planned outage due to change IT-1234.`
-        """
         pulumi.set(__self__, "time_suppress_from", time_suppress_from)
         pulumi.set(__self__, "time_suppress_until", time_suppress_until)
         if description is not None:
@@ -73,186 +60,127 @@ class AlarmSuppression(dict):
     @property
     @pulumi.getter(name="timeSuppressFrom")
     def time_suppress_from(self) -> str:
-        """
-        (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
         return pulumi.get(self, "time_suppress_from")
 
     @property
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> str:
-        """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_suppress_until")
 
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-
-        Oracle recommends including tracking information for the event or associated work, such as a ticket number.
-
-        Example: `Planned outage due to change IT-1234.`
-        """
         return pulumi.get(self, "description")
 
 
 @pulumi.output_type
 class GetAlarmHistoryCollectionEntryResult(dict):
     def __init__(__self__, *,
-                 summary: str,
-                 timestamp: str,
-                 timestamp_triggered: str):
-        """
-        :param str summary: Description for this alarm history entry.
-        :param str timestamp: Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param str timestamp_triggered: Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
-        """
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
+                 summary: Optional[str] = None,
+                 timestamp: Optional[str] = None,
+                 timestamp_triggered: Optional[str] = None):
+        if summary is not None:
+            pulumi.set(__self__, "summary", summary)
+        if timestamp is not None:
+            pulumi.set(__self__, "timestamp", timestamp)
+        if timestamp_triggered is not None:
+            pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
 
     @property
     @pulumi.getter
-    def summary(self) -> str:
-        """
-        Description for this alarm history entry.
-        """
+    def summary(self) -> Optional[str]:
         return pulumi.get(self, "summary")
 
     @property
     @pulumi.getter
-    def timestamp(self) -> str:
-        """
-        Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def timestamp(self) -> Optional[str]:
         return pulumi.get(self, "timestamp")
 
     @property
     @pulumi.getter(name="timestampTriggered")
-    def timestamp_triggered(self) -> str:
-        """
-        Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
-        """
+    def timestamp_triggered(self) -> Optional[str]:
         return pulumi.get(self, "timestamp_triggered")
 
 
 @pulumi.output_type
 class GetAlarmStatusesAlarmStatusResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str,
-                 severity: str,
-                 status: str,
-                 suppressions: Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult'],
-                 timestamp_triggered: str):
-        """
-        :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-        :param str severity: The configured severity of the alarm.  Example: `CRITICAL`
-        :param str status: The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
-        :param Sequence['GetAlarmStatusesAlarmStatusSuppressionArgs'] suppressions: The configuration details for suppressing an alarm.
-        :param str timestamp_triggered: Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "suppressions", suppressions)
-        pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 severity: Optional[str] = None,
+                 status: Optional[str] = None,
+                 suppressions: Optional[Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult']] = None,
+                 timestamp_triggered: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if severity is not None:
+            pulumi.set(__self__, "severity", severity)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if suppressions is not None:
+            pulumi.set(__self__, "suppressions", suppressions)
+        if timestamp_triggered is not None:
+            pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def severity(self) -> str:
-        """
-        The configured severity of the alarm.  Example: `CRITICAL`
-        """
+    def severity(self) -> Optional[str]:
         return pulumi.get(self, "severity")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def suppressions(self) -> Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult']:
-        """
-        The configuration details for suppressing an alarm.
-        """
+    def suppressions(self) -> Optional[Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult']]:
         return pulumi.get(self, "suppressions")
 
     @property
     @pulumi.getter(name="timestampTriggered")
-    def timestamp_triggered(self) -> str:
-        """
-        Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def timestamp_triggered(self) -> Optional[str]:
         return pulumi.get(self, "timestamp_triggered")
 
 
 @pulumi.output_type
 class GetAlarmStatusesAlarmStatusSuppressionResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 time_suppress_from: str,
-                 time_suppress_until: str):
-        """
-        :param str description: Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+                 description: Optional[str] = None,
+                 time_suppress_from: Optional[str] = None,
+                 time_suppress_until: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if time_suppress_from is not None:
+            pulumi.set(__self__, "time_suppress_from", time_suppress_from)
+        if time_suppress_until is not None:
+            pulumi.set(__self__, "time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="timeSuppressFrom")
-    def time_suppress_from(self) -> str:
-        """
-        The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def time_suppress_from(self) -> Optional[str]:
         return pulumi.get(self, "time_suppress_from")
 
     @property
     @pulumi.getter(name="timeSuppressUntil")
-    def time_suppress_until(self) -> str:
-        """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-        """
+    def time_suppress_until(self) -> Optional[str]:
         return pulumi.get(self, "time_suppress_until")
 
 
@@ -286,340 +214,247 @@ class GetAlarmStatusesFilterResult(dict):
 @pulumi.output_type
 class GetAlarmSuppressionResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 time_suppress_from: str,
-                 time_suppress_until: str):
-        """
-        :param str description: Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+                 description: Optional[str] = None,
+                 time_suppress_from: Optional[str] = None,
+                 time_suppress_until: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if time_suppress_from is not None:
+            pulumi.set(__self__, "time_suppress_from", time_suppress_from)
+        if time_suppress_until is not None:
+            pulumi.set(__self__, "time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="timeSuppressFrom")
-    def time_suppress_from(self) -> str:
-        """
-        The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def time_suppress_from(self) -> Optional[str]:
         return pulumi.get(self, "time_suppress_from")
 
     @property
     @pulumi.getter(name="timeSuppressUntil")
-    def time_suppress_until(self) -> str:
-        """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-        """
+    def time_suppress_until(self) -> Optional[str]:
         return pulumi.get(self, "time_suppress_until")
 
 
 @pulumi.output_type
 class GetAlarmsAlarmResult(dict):
     def __init__(__self__, *,
-                 body: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 destinations: Sequence[str],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_enabled: bool,
-                 is_notifications_per_metric_dimension_enabled: bool,
-                 message_format: str,
-                 metric_compartment_id: str,
-                 metric_compartment_id_in_subtree: bool,
-                 namespace: str,
-                 pending_duration: str,
-                 query: str,
-                 repeat_notification_duration: str,
-                 resolution: str,
-                 resource_group: str,
-                 severity: str,
-                 state: str,
-                 suppressions: Sequence['outputs.GetAlarmsAlarmSuppressionResult'],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str body: The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-        :param Sequence[str] destinations: A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
-        :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-        :param bool is_enabled: Whether the alarm is enabled.  Example: `true`
-        :param bool is_notifications_per_metric_dimension_enabled: When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-        :param str message_format: The format to use for alarm notifications. The formats are:
-        :param str metric_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-        :param bool metric_compartment_id_in_subtree: When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-        :param str namespace: The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
-        :param str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-        :param str repeat_notification_duration: The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-        :param str resolution: The time between calculated aggregation windows for the alarm. Supported value: `1m`
-        :param str resource_group: Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        :param str severity: The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-        :param str state: A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
-        :param Sequence['GetAlarmsAlarmSuppressionArgs'] suppressions: The configuration details for suppressing an alarm.
-        :param str time_created: The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param str time_updated: The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-        """
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
-        pulumi.set(__self__, "message_format", message_format)
-        pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
-        pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "pending_duration", pending_duration)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "repeat_notification_duration", repeat_notification_duration)
-        pulumi.set(__self__, "resolution", resolution)
-        pulumi.set(__self__, "resource_group", resource_group)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "suppressions", suppressions)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 body: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 destinations: Optional[Sequence[str]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 is_notifications_per_metric_dimension_enabled: Optional[bool] = None,
+                 message_format: Optional[str] = None,
+                 metric_compartment_id: Optional[str] = None,
+                 metric_compartment_id_in_subtree: Optional[bool] = None,
+                 namespace: Optional[str] = None,
+                 pending_duration: Optional[str] = None,
+                 query: Optional[str] = None,
+                 repeat_notification_duration: Optional[str] = None,
+                 resolution: Optional[str] = None,
+                 resource_group: Optional[str] = None,
+                 severity: Optional[str] = None,
+                 state: Optional[str] = None,
+                 suppressions: Optional[Sequence['outputs.GetAlarmsAlarmSuppressionResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if destinations is not None:
+            pulumi.set(__self__, "destinations", destinations)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_notifications_per_metric_dimension_enabled is not None:
+            pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
+        if message_format is not None:
+            pulumi.set(__self__, "message_format", message_format)
+        if metric_compartment_id is not None:
+            pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
+        if metric_compartment_id_in_subtree is not None:
+            pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if repeat_notification_duration is not None:
+            pulumi.set(__self__, "repeat_notification_duration", repeat_notification_duration)
+        if resolution is not None:
+            pulumi.set(__self__, "resolution", resolution)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if severity is not None:
+            pulumi.set(__self__, "severity", severity)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if suppressions is not None:
+            pulumi.set(__self__, "suppressions", suppressions)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
-    def body(self) -> str:
-        """
-        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-        """
+    def body(self) -> Optional[str]:
         return pulumi.get(self, "body")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def destinations(self) -> Sequence[str]:
-        """
-        A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
-        """
+    def destinations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "destinations")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether the alarm is enabled.  Example: `true`
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
-    def is_notifications_per_metric_dimension_enabled(self) -> bool:
-        """
-        When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-        """
+    def is_notifications_per_metric_dimension_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
     @property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> str:
-        """
-        The format to use for alarm notifications. The formats are:
-        """
+    def message_format(self) -> Optional[str]:
         return pulumi.get(self, "message_format")
 
     @property
     @pulumi.getter(name="metricCompartmentId")
-    def metric_compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-        """
+    def metric_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "metric_compartment_id")
 
     @property
     @pulumi.getter(name="metricCompartmentIdInSubtree")
-    def metric_compartment_id_in_subtree(self) -> bool:
-        """
-        When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-        """
+    def metric_compartment_id_in_subtree(self) -> Optional[bool]:
         return pulumi.get(self, "metric_compartment_id_in_subtree")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="pendingDuration")
-    def pending_duration(self) -> str:
-        """
-        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-        """
+    def pending_duration(self) -> Optional[str]:
         return pulumi.get(self, "pending_duration")
 
     @property
     @pulumi.getter
-    def query(self) -> str:
-        """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-        """
+    def query(self) -> Optional[str]:
         return pulumi.get(self, "query")
 
     @property
     @pulumi.getter(name="repeatNotificationDuration")
-    def repeat_notification_duration(self) -> str:
-        """
-        The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-        """
+    def repeat_notification_duration(self) -> Optional[str]:
         return pulumi.get(self, "repeat_notification_duration")
 
     @property
     @pulumi.getter
-    def resolution(self) -> str:
-        """
-        The time between calculated aggregation windows for the alarm. Supported value: `1m`
-        """
+    def resolution(self) -> Optional[str]:
         return pulumi.get(self, "resolution")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
-        """
-        Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        """
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
     @property
     @pulumi.getter
-    def severity(self) -> str:
-        """
-        The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-        """
+    def severity(self) -> Optional[str]:
         return pulumi.get(self, "severity")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def suppressions(self) -> Sequence['outputs.GetAlarmsAlarmSuppressionResult']:
-        """
-        The configuration details for suppressing an alarm.
-        """
+    def suppressions(self) -> Optional[Sequence['outputs.GetAlarmsAlarmSuppressionResult']]:
         return pulumi.get(self, "suppressions")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetAlarmsAlarmSuppressionResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 time_suppress_from: str,
-                 time_suppress_until: str):
-        """
-        :param str description: Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+                 description: Optional[str] = None,
+                 time_suppress_from: Optional[str] = None,
+                 time_suppress_until: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if time_suppress_from is not None:
+            pulumi.set(__self__, "time_suppress_from", time_suppress_from)
+        if time_suppress_until is not None:
+            pulumi.set(__self__, "time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="timeSuppressFrom")
-    def time_suppress_from(self) -> str:
-        """
-        The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def time_suppress_from(self) -> Optional[str]:
         return pulumi.get(self, "time_suppress_from")
 
     @property
     @pulumi.getter(name="timeSuppressUntil")
-    def time_suppress_until(self) -> str:
-        """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-        """
+    def time_suppress_until(self) -> Optional[str]:
         return pulumi.get(self, "time_suppress_until")
 
 
@@ -656,9 +491,6 @@ class GetMetricDataFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the metric.  Example: `CpuUtilization`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -667,9 +499,6 @@ class GetMetricDataFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the metric.  Example: `CpuUtilization`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -686,180 +515,119 @@ class GetMetricDataFilterResult(dict):
 @pulumi.output_type
 class GetMetricDataMetricDataResult(dict):
     def __init__(__self__, *,
-                 aggregated_datapoints: Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult'],
                  compartment_id: str,
-                 compartment_id_in_subtree: bool,
-                 dimensions: Mapping[str, Any],
-                 end_time: str,
-                 metadata: Mapping[str, Any],
-                 name: str,
                  namespace: str,
                  query: str,
-                 resolution: str,
-                 resource_group: str,
-                 start_time: str):
-        """
-        :param Sequence['GetMetricDataMetricDataAggregatedDatapointArgs'] aggregated_datapoints: The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-        :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-        :param Mapping[str, Any] dimensions: Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-        :param str end_time: The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
-        :param Mapping[str, Any] metadata: The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
-        :param str name: The name of the metric.  Example: `CpuUtilization`
-        :param str namespace: The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
-        :param str query: The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
-               
-               Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
-               
-               For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-               
-               Example: `CpuUtilization[1m].sum()`
-        :param str resolution: The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
-        :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        :param str start_time: The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
-        """
-        pulumi.set(__self__, "aggregated_datapoints", aggregated_datapoints)
+                 aggregated_datapoints: Optional[Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult']] = None,
+                 compartment_id_in_subtree: Optional[bool] = None,
+                 dimensions: Optional[Mapping[str, Any]] = None,
+                 end_time: Optional[str] = None,
+                 metadata: Optional[Mapping[str, Any]] = None,
+                 name: Optional[str] = None,
+                 resolution: Optional[str] = None,
+                 resource_group: Optional[str] = None,
+                 start_time: Optional[str] = None):
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "end_time", end_time)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "resolution", resolution)
-        pulumi.set(__self__, "resource_group", resource_group)
-        pulumi.set(__self__, "start_time", start_time)
-
-    @property
-    @pulumi.getter(name="aggregatedDatapoints")
-    def aggregated_datapoints(self) -> Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult']:
-        """
-        The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
-        """
-        return pulumi.get(self, "aggregated_datapoints")
+        if aggregated_datapoints is not None:
+            pulumi.set(__self__, "aggregated_datapoints", aggregated_datapoints)
+        if compartment_id_in_subtree is not None:
+            pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if end_time is not None:
+            pulumi.set(__self__, "end_time", end_time)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if resolution is not None:
+            pulumi.set(__self__, "resolution", resolution)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "compartment_id")
-
-    @property
-    @pulumi.getter(name="compartmentIdInSubtree")
-    def compartment_id_in_subtree(self) -> bool:
-        """
-        When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-        """
-        return pulumi.get(self, "compartment_id_in_subtree")
-
-    @property
-    @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
-        """
-        Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-        """
-        return pulumi.get(self, "dimensions")
-
-    @property
-    @pulumi.getter(name="endTime")
-    def end_time(self) -> str:
-        """
-        The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
-        """
-        return pulumi.get(self, "end_time")
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
-        """
-        return pulumi.get(self, "metadata")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the metric.  Example: `CpuUtilization`
-        """
-        return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def query(self) -> str:
-        """
-        The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
-
-        Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
-
-        For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-
-        Example: `CpuUtilization[1m].sum()`
-        """
         return pulumi.get(self, "query")
 
     @property
+    @pulumi.getter(name="aggregatedDatapoints")
+    def aggregated_datapoints(self) -> Optional[Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult']]:
+        return pulumi.get(self, "aggregated_datapoints")
+
+    @property
+    @pulumi.getter(name="compartmentIdInSubtree")
+    def compartment_id_in_subtree(self) -> Optional[bool]:
+        return pulumi.get(self, "compartment_id_in_subtree")
+
+    @property
     @pulumi.getter
-    def resolution(self) -> str:
-        """
-        The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
-        """
+    def dimensions(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> Optional[str]:
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def resolution(self) -> Optional[str]:
         return pulumi.get(self, "resolution")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
-        """
-        Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        """
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
     @property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> str:
-        """
-        The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def start_time(self) -> Optional[str]:
         return pulumi.get(self, "start_time")
 
 
 @pulumi.output_type
 class GetMetricDataMetricDataAggregatedDatapointResult(dict):
     def __init__(__self__, *,
-                 timestamp: str,
-                 value: float):
-        """
-        :param str timestamp: The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param float value: Numeric value of the metric.  Example: `10.4`
-        """
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "value", value)
+                 timestamp: Optional[str] = None,
+                 value: Optional[float] = None):
+        if timestamp is not None:
+            pulumi.set(__self__, "timestamp", timestamp)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def timestamp(self) -> str:
-        """
-        The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def timestamp(self) -> Optional[str]:
         return pulumi.get(self, "timestamp")
 
     @property
     @pulumi.getter
-    def value(self) -> float:
-        """
-        Numeric value of the metric.  Example: `10.4`
-        """
+    def value(self) -> Optional[float]:
         return pulumi.get(self, "value")
 
 
@@ -869,9 +637,6 @@ class GetMetricsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -880,9 +645,6 @@ class GetMetricsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -900,98 +662,67 @@ class GetMetricsFilterResult(dict):
 class GetMetricsMetricResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 compartment_id_in_subtree: bool,
-                 dimension_filters: Mapping[str, Any],
-                 dimensions: Mapping[str, Any],
-                 group_bies: Sequence[str],
-                 name: str,
-                 namespace: str,
-                 resource_group: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-        :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-        :param Mapping[str, Any] dimension_filters: Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-        :param Mapping[str, Any] dimensions: Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-        :param Sequence[str] group_bies: Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
-               
-               Example - group by namespace: `[ "namespace" ]`
-        :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-        :param str namespace: The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
-        :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        """
+                 compartment_id_in_subtree: Optional[bool] = None,
+                 dimension_filters: Optional[Mapping[str, Any]] = None,
+                 dimensions: Optional[Mapping[str, Any]] = None,
+                 group_bies: Optional[Sequence[str]] = None,
+                 name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 resource_group: Optional[str] = None):
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "dimension_filters", dimension_filters)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "group_bies", group_bies)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "resource_group", resource_group)
+        if compartment_id_in_subtree is not None:
+            pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if dimension_filters is not None:
+            pulumi.set(__self__, "dimension_filters", dimension_filters)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentIdInSubtree")
-    def compartment_id_in_subtree(self) -> bool:
-        """
-        When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-        """
+    def compartment_id_in_subtree(self) -> Optional[bool]:
         return pulumi.get(self, "compartment_id_in_subtree")
 
     @property
     @pulumi.getter(name="dimensionFilters")
-    def dimension_filters(self) -> Mapping[str, Any]:
-        """
-        Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-        """
+    def dimension_filters(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "dimension_filters")
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
-        """
-        Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-        """
+    def dimensions(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "dimensions")
 
     @property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Sequence[str]:
-        """
-        Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
-
-        Example - group by namespace: `[ "namespace" ]`
-        """
+    def group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
-        """
-        Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        """
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
 

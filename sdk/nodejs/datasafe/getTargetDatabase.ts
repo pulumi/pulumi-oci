@@ -47,68 +47,68 @@ export interface GetTargetDatabaseResult {
     /**
      * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      */
-    readonly associatedResourceIds: string[];
+    readonly associatedResourceIds?: string[];
     /**
      * The OCID of the compartment which contains the Data Safe target database.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Types of connection supported by Data Safe.
      */
-    readonly connectionOptions: outputs.DataSafe.GetTargetDatabaseConnectionOption[];
+    readonly connectionOptions?: outputs.DataSafe.GetTargetDatabaseConnectionOption[];
     /**
      * The database credentials required for Data Safe to connect to the database.
      */
-    readonly credentials: outputs.DataSafe.GetTargetDatabaseCredential[];
+    readonly credentials?: outputs.DataSafe.GetTargetDatabaseCredential[];
     /**
      * Details of the database for the registration in Data Safe.
      */
-    readonly databaseDetails: outputs.DataSafe.GetTargetDatabaseDatabaseDetail[];
+    readonly databaseDetails?: outputs.DataSafe.GetTargetDatabaseDatabaseDetail[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the target database in Data Safe.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the target database in Data Safe.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the Data Safe target database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the current state of the target database in Data Safe.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current state of the target database in Data Safe.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     readonly targetDatabaseId: string;
     /**
      * The date and time the database was registered in Data Safe and created as a target database in Data Safe.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time of the target database update in Data Safe.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The details required to establish a TLS enabled connection.
      */
-    readonly tlsConfigs: outputs.DataSafe.GetTargetDatabaseTlsConfig[];
+    readonly tlsConfigs?: outputs.DataSafe.GetTargetDatabaseTlsConfig[];
 }
 /**
  * This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.

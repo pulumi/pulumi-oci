@@ -192,13 +192,13 @@ namespace Pulumi.Oci.ContainerEngine
         /// The number of containers on the container instance.
         /// </summary>
         [Output("containerCount")]
-        public Output<int> ContainerCount { get; private set; } = null!;
+        public Output<int?> ContainerCount { get; private set; } = null!;
 
         /// <summary>
         /// Container restart policy
         /// </summary>
         [Output("containerRestartPolicy")]
-        public Output<string> ContainerRestartPolicy { get; private set; } = null!;
+        public Output<string?> ContainerRestartPolicy { get; private set; } = null!;
 
         /// <summary>
         /// The containers to create on this container instance.
@@ -210,37 +210,37 @@ namespace Pulumi.Oci.ContainerEngine
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         /// </summary>
         [Output("dnsConfig")]
-        public Output<Outputs.ContainerInstanceDnsConfig> DnsConfig { get; private set; } = null!;
+        public Output<Outputs.ContainerInstanceDnsConfig?> DnsConfig { get; private set; } = null!;
 
         /// <summary>
         /// The fault domain where the container instance runs.
         /// </summary>
         [Output("faultDomain")]
-        public Output<string> FaultDomain { get; private set; } = null!;
+        public Output<string?> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         /// </summary>
         [Output("gracefulShutdownTimeoutInSeconds")]
-        public Output<string> GracefulShutdownTimeoutInSeconds { get; private set; } = null!;
+        public Output<string?> GracefulShutdownTimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// The image pulls secrets so you can access private registry to pull container images.
@@ -252,7 +252,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the container instance. The shape determines the resources available to the container instance.
@@ -274,25 +274,25 @@ namespace Pulumi.Oci.ContainerEngine
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The networks available to containers on this container instance.
@@ -304,7 +304,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// The number of volumes that are attached to the container instance.
         /// </summary>
         [Output("volumeCount")]
-        public Output<int> VolumeCount { get; private set; } = null!;
+        public Output<int?> VolumeCount { get; private set; } = null!;
 
         /// <summary>
         /// A volume is a directory with data that is accessible across multiple containers in a container instance.

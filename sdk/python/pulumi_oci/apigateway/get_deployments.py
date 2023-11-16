@@ -49,25 +49,16 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deploymentCollections")
-    def deployment_collections(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionResult']:
-        """
-        The list of deployment_collection.
-        """
+    def deployment_collections(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionResult']]:
         return pulumi.get(self, "deployment_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -78,14 +69,11 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
         return pulumi.get(self, "gateway_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the deployment.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_deployments(compartment_id: Optional[str] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentsResult:
     """
-    This data source provides the list of Deployments in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of deployments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=var["compartment_id"],
-        display_name=var["deployment_display_name"],
-        gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
-        state=var["deployment_state"])
-    ```
-
-
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str gateway_id: Filter deployments by the gateway ocid.
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentsResult]:
     """
-    This data source provides the list of Deployments in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of deployments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=var["compartment_id"],
-        display_name=var["deployment_display_name"],
-        gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
-        state=var["deployment_state"])
-    ```
-
-
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str gateway_id: Filter deployments by the gateway ocid.
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
+    Use this data source to access information about an existing resource.
     """
     ...

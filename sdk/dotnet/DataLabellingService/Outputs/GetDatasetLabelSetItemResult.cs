@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// An unique name for a label within its dataset.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetDatasetLabelSetItemResult(string name)
+        private GetDatasetLabelSetItemResult(string? name)
         {
             Name = name;
         }

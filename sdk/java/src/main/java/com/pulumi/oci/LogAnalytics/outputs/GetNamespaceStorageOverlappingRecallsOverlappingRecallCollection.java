@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection {
@@ -14,7 +15,7 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
      * @return This is the array of overlapping recall requests
      * 
      */
-    private List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items;
+    private @Nullable List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items;
 
     private GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
      * 
      */
     public List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items;
+        private @Nullable List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items;
         public Builder() {}
         public Builder(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem... items) {

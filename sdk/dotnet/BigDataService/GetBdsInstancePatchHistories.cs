@@ -170,7 +170,7 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of patch_histories.
         /// </summary>
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstancePatchHistoriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetBdsInstancePatchHistoriesPatchHistoryResult> patchHistories,
 

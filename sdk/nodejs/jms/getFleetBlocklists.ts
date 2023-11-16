@@ -66,11 +66,11 @@ export interface GetFleetBlocklistsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The blocklist
      */
-    readonly items: outputs.Jms.GetFleetBlocklistsItem[];
+    readonly items?: outputs.Jms.GetFleetBlocklistsItem[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
      */

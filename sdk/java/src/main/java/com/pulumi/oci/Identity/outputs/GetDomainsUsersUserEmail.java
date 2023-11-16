@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserEmail {
@@ -14,75 +16,75 @@ public final class GetDomainsUsersUserEmail {
      * @return Pending e-mail address verification
      * 
      */
-    private String pendingVerificationData;
+    private @Nullable String pendingVerificationData;
     /**
      * @return A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    private Boolean primary;
+    private @Nullable Boolean primary;
     /**
      * @return A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    private Boolean secondary;
+    private @Nullable Boolean secondary;
     /**
      * @return A label indicating the attribute&#39;s function.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
     /**
      * @return A Boolean value that indicates if the phone number is verified.
      * 
      */
-    private Boolean verified;
+    private @Nullable Boolean verified;
 
     private GetDomainsUsersUserEmail() {}
     /**
      * @return Pending e-mail address verification
      * 
      */
-    public String pendingVerificationData() {
-        return this.pendingVerificationData;
+    public Optional<String> pendingVerificationData() {
+        return Optional.ofNullable(this.pendingVerificationData);
     }
     /**
      * @return A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    public Boolean primary() {
-        return this.primary;
+    public Optional<Boolean> primary() {
+        return Optional.ofNullable(this.primary);
     }
     /**
      * @return A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    public Boolean secondary() {
-        return this.secondary;
+    public Optional<Boolean> secondary() {
+        return Optional.ofNullable(this.secondary);
     }
     /**
      * @return A label indicating the attribute&#39;s function.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
     /**
      * @return A Boolean value that indicates if the phone number is verified.
      * 
      */
-    public Boolean verified() {
-        return this.verified;
+    public Optional<Boolean> verified() {
+        return Optional.ofNullable(this.verified);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetDomainsUsersUserEmail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String pendingVerificationData;
-        private Boolean primary;
-        private Boolean secondary;
-        private String type;
-        private String value;
-        private Boolean verified;
+        private @Nullable String pendingVerificationData;
+        private @Nullable Boolean primary;
+        private @Nullable Boolean secondary;
+        private @Nullable String type;
+        private @Nullable String value;
+        private @Nullable Boolean verified;
         public Builder() {}
         public Builder(GetDomainsUsersUserEmail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetDomainsUsersUserEmail {
         }
 
         @CustomType.Setter
-        public Builder pendingVerificationData(String pendingVerificationData) {
-            this.pendingVerificationData = Objects.requireNonNull(pendingVerificationData);
+        public Builder pendingVerificationData(@Nullable String pendingVerificationData) {
+            this.pendingVerificationData = pendingVerificationData;
             return this;
         }
         @CustomType.Setter
-        public Builder primary(Boolean primary) {
-            this.primary = Objects.requireNonNull(primary);
+        public Builder primary(@Nullable Boolean primary) {
+            this.primary = primary;
             return this;
         }
         @CustomType.Setter
-        public Builder secondary(Boolean secondary) {
-            this.secondary = Objects.requireNonNull(secondary);
+        public Builder secondary(@Nullable Boolean secondary) {
+            this.secondary = secondary;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         @CustomType.Setter
-        public Builder verified(Boolean verified) {
-            this.verified = Objects.requireNonNull(verified);
+        public Builder verified(@Nullable Boolean verified) {
+            this.verified = verified;
             return this;
         }
         public GetDomainsUsersUserEmail build() {

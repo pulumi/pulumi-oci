@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancersLoadBalancerIpAddressDetail {
@@ -16,39 +18,39 @@ public final class GetLoadBalancersLoadBalancerIpAddressDetail {
      * @return An IP address.  Example: `192.168.0.3`
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return Whether the IP address is public or private.
      * 
      */
-    private Boolean isPublic;
+    private @Nullable Boolean isPublic;
     /**
      * @return Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      * 
      */
-    private List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps;
+    private @Nullable List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps;
 
     private GetLoadBalancersLoadBalancerIpAddressDetail() {}
     /**
      * @return An IP address.  Example: `192.168.0.3`
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return Whether the IP address is public or private.
      * 
      */
-    public Boolean isPublic() {
-        return this.isPublic;
+    public Optional<Boolean> isPublic() {
+        return Optional.ofNullable(this.isPublic);
     }
     /**
      * @return Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      * 
      */
     public List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps() {
-        return this.reservedIps;
+        return this.reservedIps == null ? List.of() : this.reservedIps;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetLoadBalancersLoadBalancerIpAddressDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipAddress;
-        private Boolean isPublic;
-        private List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps;
+        private @Nullable String ipAddress;
+        private @Nullable Boolean isPublic;
+        private @Nullable List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps;
         public Builder() {}
         public Builder(GetLoadBalancersLoadBalancerIpAddressDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,18 +74,18 @@ public final class GetLoadBalancersLoadBalancerIpAddressDetail {
         }
 
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+        public Builder isPublic(@Nullable Boolean isPublic) {
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedIps(List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps) {
-            this.reservedIps = Objects.requireNonNull(reservedIps);
+        public Builder reservedIps(@Nullable List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps) {
+            this.reservedIps = reservedIps;
             return this;
         }
         public Builder reservedIps(GetLoadBalancersLoadBalancerIpAddressDetailReservedIp... reservedIps) {

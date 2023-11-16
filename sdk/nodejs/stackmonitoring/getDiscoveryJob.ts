@@ -47,61 +47,61 @@ export interface GetDiscoveryJobResult {
     /**
      * The OCID of the Compartment
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Client who submits discovery job.
      */
-    readonly discoveryClient: string;
+    readonly discoveryClient?: string;
     /**
      * The request of DiscoveryJob Resource details.
      */
-    readonly discoveryDetails: outputs.StackMonitoring.GetDiscoveryJobDiscoveryDetail[];
+    readonly discoveryDetails?: outputs.StackMonitoring.GetDiscoveryJobDiscoveryDetail[];
     readonly discoveryJobId: string;
     /**
      * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
      */
-    readonly discoveryType: string;
+    readonly discoveryType?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of Discovery job
      */
-    readonly id: string;
-    readonly shouldPropagateTagsToDiscoveredResources: boolean;
+    readonly id?: string;
+    readonly shouldPropagateTagsToDiscoveredResources?: boolean;
     /**
      * The current state of the DiscoveryJob Resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Specifies the status of the discovery job
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The short summary of the status of the discovery job
      */
-    readonly statusMessage: string;
+    readonly statusMessage?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The OCID of Tenant
      */
-    readonly tenantId: string;
+    readonly tenantId?: string;
     /**
      * The time the discovery Job was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The OCID of user in which the job is submitted
      */
-    readonly userId: string;
+    readonly userId?: string;
 }
 /**
  * This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.

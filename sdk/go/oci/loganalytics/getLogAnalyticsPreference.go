@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -60,7 +59,7 @@ type GetLogAnalyticsPreferenceArgs struct {
 // A collection of values returned by getLogAnalyticsPreference.
 type GetLogAnalyticsPreferenceResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of tenant preferences.
 	Items     []GetLogAnalyticsPreferenceItem `pulumi:"items"`
 	Namespace string                          `pulumi:"namespace"`
@@ -104,15 +103,9 @@ func (o GetLogAnalyticsPreferenceResultOutput) ToGetLogAnalyticsPreferenceResult
 	return o
 }
 
-func (o GetLogAnalyticsPreferenceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsPreferenceResult] {
-	return pulumix.Output[GetLogAnalyticsPreferenceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsPreferenceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsPreferenceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsPreferenceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsPreferenceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of tenant preferences.

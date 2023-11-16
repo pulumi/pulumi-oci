@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Number of threads used to read trail files (valid for Parallel Replicat)
         /// </summary>
-        public readonly int MapParallelism;
+        public readonly int? MapParallelism;
         /// <summary>
         /// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         /// </summary>
-        public readonly int MaxApplyParallelism;
+        public readonly int? MaxApplyParallelism;
         /// <summary>
         /// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         /// </summary>
-        public readonly int MinApplyParallelism;
+        public readonly int? MinApplyParallelism;
         /// <summary>
         /// Extract performance.
         /// </summary>
-        public readonly string PerformanceProfile;
+        public readonly string? PerformanceProfile;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatResult(
-            int mapParallelism,
+            int? mapParallelism,
 
-            int maxApplyParallelism,
+            int? maxApplyParallelism,
 
-            int minApplyParallelism,
+            int? minApplyParallelism,
 
-            string performanceProfile)
+            string? performanceProfile)
         {
             MapParallelism = mapParallelism;
             MaxApplyParallelism = maxApplyParallelism;

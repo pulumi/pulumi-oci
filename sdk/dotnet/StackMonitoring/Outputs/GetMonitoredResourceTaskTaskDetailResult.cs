@@ -16,7 +16,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
         /// </summary>
-        public readonly int AvailabilityProxyMetricCollectionInterval;
+        public readonly int? AvailabilityProxyMetricCollectionInterval;
         /// <summary>
         /// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
         /// </summary>
@@ -24,35 +24,35 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
         /// </summary>
-        public readonly string ResourceGroup;
+        public readonly string? ResourceGroup;
         /// <summary>
         /// Source from where the metrics pushed to telemetry. Possible values:
         /// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
         /// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// Task type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMonitoredResourceTaskTaskDetailResult(
-            int availabilityProxyMetricCollectionInterval,
+            int? availabilityProxyMetricCollectionInterval,
 
             ImmutableArray<string> availabilityProxyMetrics,
 
-            string @namespace,
+            string? @namespace,
 
-            string resourceGroup,
+            string? resourceGroup,
 
-            string source,
+            string? source,
 
-            string type)
+            string? type)
         {
             AvailabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             AvailabilityProxyMetrics = availabilityProxyMetrics;

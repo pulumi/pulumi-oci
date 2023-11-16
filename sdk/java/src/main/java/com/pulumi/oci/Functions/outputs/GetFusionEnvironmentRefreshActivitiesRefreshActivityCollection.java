@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection {
-    private List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem> items;
+    private @Nullable List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem> items;
 
     private GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection() {}
     public List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem> items;
+        private @Nullable List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem... items) {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Static response body text.
         /// </summary>
-        public readonly string Text;
+        public readonly string? Text;
         /// <summary>
         /// Type of WebAppFirewallPolicyRule.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult(
-            string text,
+            string? text,
 
-            string type)
+            string? type)
         {
             Text = text;
             Type = type;

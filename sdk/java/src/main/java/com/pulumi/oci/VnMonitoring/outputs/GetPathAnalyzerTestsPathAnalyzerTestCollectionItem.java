@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItem {
@@ -21,171 +23,171 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint> destinationEndpoints;
+    private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint> destinationEndpoints;
     /**
      * @return A filter that returns only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A unique identifier established when the resource is created. The identifier can&#39;t be changed later.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The IP protocol to use for the `PathAnalyzerTest` resource.
      * 
      */
-    private Integer protocol;
+    private @Nullable Integer protocol;
     /**
      * @return Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      * 
      */
-    private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter> protocolParameters;
+    private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter> protocolParameters;
     /**
      * @return Defines the query options required for a `PathAnalyzerTest` resource.
      * 
      */
-    private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption> queryOptions;
+    private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption> queryOptions;
     /**
      * @return Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint> sourceEndpoints;
+    private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint> sourceEndpoints;
     /**
      * @return A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetPathAnalyzerTestsPathAnalyzerTestCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
     public List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint> destinationEndpoints() {
-        return this.destinationEndpoints;
+        return this.destinationEndpoints == null ? List.of() : this.destinationEndpoints;
     }
     /**
      * @return A filter that returns only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A unique identifier established when the resource is created. The identifier can&#39;t be changed later.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The IP protocol to use for the `PathAnalyzerTest` resource.
      * 
      */
-    public Integer protocol() {
-        return this.protocol;
+    public Optional<Integer> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      * 
      */
     public List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter> protocolParameters() {
-        return this.protocolParameters;
+        return this.protocolParameters == null ? List.of() : this.protocolParameters;
     }
     /**
      * @return Defines the query options required for a `PathAnalyzerTest` resource.
      * 
      */
     public List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption> queryOptions() {
-        return this.queryOptions;
+        return this.queryOptions == null ? List.of() : this.queryOptions;
     }
     /**
      * @return Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
     public List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint> sourceEndpoints() {
-        return this.sourceEndpoints;
+        return this.sourceEndpoints == null ? List.of() : this.sourceEndpoints;
     }
     /**
      * @return A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -197,20 +199,20 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint> destinationEndpoints;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Integer protocol;
-        private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter> protocolParameters;
-        private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption> queryOptions;
-        private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint> sourceEndpoints;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint> destinationEndpoints;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Integer protocol;
+        private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter> protocolParameters;
+        private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption> queryOptions;
+        private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint> sourceEndpoints;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetPathAnalyzerTestsPathAnalyzerTestCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -231,85 +233,85 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder destinationEndpoints(List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint> destinationEndpoints) {
-            this.destinationEndpoints = Objects.requireNonNull(destinationEndpoints);
+        public Builder destinationEndpoints(@Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint> destinationEndpoints) {
+            this.destinationEndpoints = destinationEndpoints;
             return this;
         }
         public Builder destinationEndpoints(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint... destinationEndpoints) {
             return destinationEndpoints(List.of(destinationEndpoints));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(Integer protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable Integer protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder protocolParameters(List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter> protocolParameters) {
-            this.protocolParameters = Objects.requireNonNull(protocolParameters);
+        public Builder protocolParameters(@Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter> protocolParameters) {
+            this.protocolParameters = protocolParameters;
             return this;
         }
         public Builder protocolParameters(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter... protocolParameters) {
             return protocolParameters(List.of(protocolParameters));
         }
         @CustomType.Setter
-        public Builder queryOptions(List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption> queryOptions) {
-            this.queryOptions = Objects.requireNonNull(queryOptions);
+        public Builder queryOptions(@Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption> queryOptions) {
+            this.queryOptions = queryOptions;
             return this;
         }
         public Builder queryOptions(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption... queryOptions) {
             return queryOptions(List.of(queryOptions));
         }
         @CustomType.Setter
-        public Builder sourceEndpoints(List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint> sourceEndpoints) {
-            this.sourceEndpoints = Objects.requireNonNull(sourceEndpoints);
+        public Builder sourceEndpoints(@Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint> sourceEndpoints) {
+            this.sourceEndpoints = sourceEndpoints;
             return this;
         }
         public Builder sourceEndpoints(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint... sourceEndpoints) {
             return sourceEndpoints(List.of(sourceEndpoints));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPathAnalyzerTestsPathAnalyzerTestCollectionItem build() {

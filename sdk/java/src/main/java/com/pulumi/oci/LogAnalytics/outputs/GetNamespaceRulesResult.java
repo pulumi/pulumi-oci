@@ -29,7 +29,7 @@ public final class GetNamespaceRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The kind of rule - either an ingest time rule or a scheduled task.
      * 
@@ -40,7 +40,7 @@ public final class GetNamespaceRulesResult {
      * @return The list of rule_summary_collection.
      * 
      */
-    private List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections;
+    private @Nullable List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections;
     /**
      * @return The current state of the logging analytics rule.
      * 
@@ -69,8 +69,8 @@ public final class GetNamespaceRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The kind of rule - either an ingest time rule or a scheduled task.
@@ -87,7 +87,7 @@ public final class GetNamespaceRulesResult {
      * 
      */
     public List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections() {
-        return this.ruleSummaryCollections;
+        return this.ruleSummaryCollections == null ? List.of() : this.ruleSummaryCollections;
     }
     /**
      * @return The current state of the logging analytics rule.
@@ -109,10 +109,10 @@ public final class GetNamespaceRulesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetNamespaceRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String kind;
         private String namespace;
-        private List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections;
+        private @Nullable List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetNamespaceRulesResult defaults) {
@@ -146,8 +146,8 @@ public final class GetNamespaceRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -161,8 +161,8 @@ public final class GetNamespaceRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ruleSummaryCollections(List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections) {
-            this.ruleSummaryCollections = Objects.requireNonNull(ruleSummaryCollections);
+        public Builder ruleSummaryCollections(@Nullable List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections) {
+            this.ruleSummaryCollections = ruleSummaryCollections;
             return this;
         }
         public Builder ruleSummaryCollections(GetNamespaceRulesRuleSummaryCollection... ruleSummaryCollections) {

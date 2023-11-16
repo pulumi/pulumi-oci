@@ -71,119 +71,77 @@ class GetInstancePoolResult:
 
     @property
     @pulumi.getter(name="actualSize")
-    def actual_size(self) -> int:
+    def actual_size(self) -> Optional[int]:
         return pulumi.get(self, "actual_size")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        """
+    def instance_configuration_id(self) -> Optional[str]:
         return pulumi.get(self, "instance_configuration_id")
 
     @property
     @pulumi.getter(name="instanceDisplayNameFormatter")
-    def instance_display_name_formatter(self) -> str:
-        """
-        A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        """
+    def instance_display_name_formatter(self) -> Optional[str]:
         return pulumi.get(self, "instance_display_name_formatter")
 
     @property
     @pulumi.getter(name="instanceHostnameFormatter")
-    def instance_hostname_formatter(self) -> str:
-        """
-        A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        """
+    def instance_hostname_formatter(self) -> Optional[str]:
         return pulumi.get(self, "instance_hostname_formatter")
 
     @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
-        """
         return pulumi.get(self, "instance_pool_id")
 
     @property
     @pulumi.getter(name="loadBalancers")
-    def load_balancers(self) -> Sequence['outputs.GetInstancePoolLoadBalancerResult']:
-        """
-        The load balancers attached to the instance pool.
-        """
+    def load_balancers(self) -> Optional[Sequence['outputs.GetInstancePoolLoadBalancerResult']]:
         return pulumi.get(self, "load_balancers")
 
     @property
     @pulumi.getter(name="placementConfigurations")
-    def placement_configurations(self) -> Sequence['outputs.GetInstancePoolPlacementConfigurationResult']:
-        """
-        The placement configurations for the instance pool.
-        """
+    def placement_configurations(self) -> Optional[Sequence['outputs.GetInstancePoolPlacementConfigurationResult']]:
         return pulumi.get(self, "placement_configurations")
 
     @property
     @pulumi.getter
-    def size(self) -> int:
-        """
-        The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-        """
+    def size(self) -> Optional[int]:
         return pulumi.get(self, "size")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the instance pool.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -213,21 +171,7 @@ class AwaitableGetInstancePoolResult(GetInstancePoolResult):
 def get_instance_pool(instance_pool_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstancePoolResult:
     """
-    This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified instance pool
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
-    ```
-
-
-    :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['instancePoolId'] = instance_pool_id
@@ -256,20 +200,6 @@ def get_instance_pool(instance_pool_id: Optional[str] = None,
 def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolResult]:
     """
-    This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified instance pool
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
-    ```
-
-
-    :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+    Use this data source to access information about an existing resource.
     """
     ...

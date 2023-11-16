@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Name of the parameter (case-sensitive).
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Value of the parameter.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDeployStageSetStringItemResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

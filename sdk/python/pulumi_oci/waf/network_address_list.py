@@ -26,14 +26,6 @@ class NetworkAddressListArgs:
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]] = None):
         """
         The set of arguments for constructing a NetworkAddressList resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] type: (Updatable) Type of NetworkAddressList.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "type", type)
@@ -53,9 +45,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -65,9 +54,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of NetworkAddressList.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -77,9 +63,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A private IP address or CIDR IP address range.
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -89,9 +72,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -101,9 +81,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) NetworkAddressList display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -113,9 +90,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -125,9 +99,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -137,9 +108,6 @@ class NetworkAddressListArgs:
     @property
     @pulumi.getter(name="vcnAddresses")
     def vcn_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]]:
-        """
-        (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
-        """
         return pulumi.get(self, "vcn_addresses")
 
     @vcn_addresses.setter
@@ -164,18 +132,6 @@ class _NetworkAddressListState:
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]] = None):
         """
         Input properties used for looking up and filtering NetworkAddressList resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param pulumi.Input[str] state: The current state of the NetworkAddressList.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: (Updatable) Type of NetworkAddressList.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
@@ -205,9 +161,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A private IP address or CIDR IP address range.
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -217,9 +170,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -229,9 +179,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -241,9 +188,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) NetworkAddressList display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -253,9 +197,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -265,9 +206,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -277,9 +215,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the NetworkAddressList.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -289,9 +224,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -301,9 +233,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -313,9 +242,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -325,9 +251,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of NetworkAddressList.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -337,9 +260,6 @@ class _NetworkAddressListState:
     @property
     @pulumi.getter(name="vcnAddresses")
     def vcn_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]]:
-        """
-        (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
-        """
         return pulumi.get(self, "vcn_addresses")
 
     @vcn_addresses.setter
@@ -362,52 +282,9 @@ class NetworkAddressList(pulumi.CustomResource):
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkAddressListVcnAddressArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new NetworkAddressList.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_address_list = oci.waf.NetworkAddressList("testNetworkAddressList",
-            compartment_id=var["compartment_id"],
-            type=var["network_address_list_type"],
-            addresses=var["network_address_list_addresses"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["network_address_list_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            system_tags=var["network_address_list_system_tags"],
-            vcn_addresses=[oci.waf.NetworkAddressListVcnAddressArgs(
-                addresses=var["network_address_list_vcn_addresses_addresses"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-            )])
-        ```
-
-        ## Import
-
-        NetworkAddressLists can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
-        ```
-
+        Create a NetworkAddressList resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] type: (Updatable) Type of NetworkAddressList.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkAddressListVcnAddressArgs']]]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         ...
     @overload
@@ -416,42 +293,7 @@ class NetworkAddressList(pulumi.CustomResource):
                  args: NetworkAddressListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new NetworkAddressList.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_address_list = oci.waf.NetworkAddressList("testNetworkAddressList",
-            compartment_id=var["compartment_id"],
-            type=var["network_address_list_type"],
-            addresses=var["network_address_list_addresses"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["network_address_list_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            system_tags=var["network_address_list_system_tags"],
-            vcn_addresses=[oci.waf.NetworkAddressListVcnAddressArgs(
-                addresses=var["network_address_list_vcn_addresses_addresses"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-            )])
-        ```
-
-        ## Import
-
-        NetworkAddressLists can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
-        ```
-
+        Create a NetworkAddressList resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkAddressListArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -529,18 +371,6 @@ class NetworkAddressList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param pulumi.Input[str] state: The current state of the NetworkAddressList.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: (Updatable) Type of NetworkAddressList.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkAddressListVcnAddressArgs']]]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -563,96 +393,60 @@ class NetworkAddressList(pulumi.CustomResource):
     @property
     @pulumi.getter
     def addresses(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) A private IP address or CIDR IP address range.
-        """
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) NetworkAddressList display name, can be renamed.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the NetworkAddressList.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Type of NetworkAddressList.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vcnAddresses")
-    def vcn_addresses(self) -> pulumi.Output[Sequence['outputs.NetworkAddressListVcnAddress']]:
-        """
-        (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
-        """
+    def vcn_addresses(self) -> pulumi.Output[Optional[Sequence['outputs.NetworkAddressListVcnAddress']]]:
         return pulumi.get(self, "vcn_addresses")
 

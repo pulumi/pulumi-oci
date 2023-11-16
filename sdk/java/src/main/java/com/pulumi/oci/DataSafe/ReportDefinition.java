@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -109,14 +110,14 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="category", refs={String.class}, tree="[0]")
-    private Output<String> category;
+    private Output</* @Nullable */ String> category;
 
     /**
      * @return Specifies the name of the category that this report belongs to.
      * 
      */
-    public Output<String> category() {
-        return this.category;
+    public Output<Optional<String>> category() {
+        return Codegen.optional(this.category);
     }
     /**
      * (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
@@ -179,56 +180,56 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="complianceStandards", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> complianceStandards;
+    private Output</* @Nullable */ List<String>> complianceStandards;
 
     /**
      * @return The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
-    public Output<List<String>> complianceStandards() {
-        return this.complianceStandards;
+    public Output<Optional<List<String>>> complianceStandards() {
+        return Codegen.optional(this.complianceStandards);
     }
     /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
     @Export(name="dataSource", refs={String.class}, tree="[0]")
-    private Output<String> dataSource;
+    private Output</* @Nullable */ String> dataSource;
 
     /**
      * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
-    public Output<String> dataSource() {
-        return this.dataSource;
+    public Output<Optional<String>> dataSource() {
+        return Codegen.optional(this.dataSource);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the report definition.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the report definition.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Specifies the name of the report definition.
@@ -249,42 +250,42 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayOrder", refs={Integer.class}, tree="[0]")
-    private Output<Integer> displayOrder;
+    private Output</* @Nullable */ Integer> displayOrder;
 
     /**
      * @return (Updatable) Specifies the order in which the summary must be displayed.
      * 
      */
-    public Output<Integer> displayOrder() {
-        return this.displayOrder;
+    public Output<Optional<Integer>> displayOrder() {
+        return Codegen.optional(this.displayOrder);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     @Export(name="isSeeded", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSeeded;
+    private Output</* @Nullable */ Boolean> isSeeded;
 
     /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    public Output<Boolean> isSeeded() {
-        return this.isSeeded;
+    public Output<Optional<Boolean>> isSeeded() {
+        return Codegen.optional(this.isSeeded);
     }
     /**
      * The OCID of the parent report definition.
@@ -305,84 +306,84 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="recordTimeSpan", refs={String.class}, tree="[0]")
-    private Output<String> recordTimeSpan;
+    private Output</* @Nullable */ String> recordTimeSpan;
 
     /**
      * @return The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
-    public Output<String> recordTimeSpan() {
-        return this.recordTimeSpan;
+    public Output<Optional<String>> recordTimeSpan() {
+        return Codegen.optional(this.recordTimeSpan);
     }
     /**
      * The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
     @Export(name="schedule", refs={String.class}, tree="[0]")
-    private Output<String> schedule;
+    private Output</* @Nullable */ String> schedule;
 
     /**
      * @return The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    public Output<String> schedule() {
-        return this.schedule;
+    public Output<Optional<String>> schedule() {
+        return Codegen.optional(this.schedule);
     }
     /**
      * The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
     @Export(name="scheduledReportCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> scheduledReportCompartmentId;
+    private Output</* @Nullable */ String> scheduledReportCompartmentId;
 
     /**
      * @return The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
-    public Output<String> scheduledReportCompartmentId() {
-        return this.scheduledReportCompartmentId;
+    public Output<Optional<String>> scheduledReportCompartmentId() {
+        return Codegen.optional(this.scheduledReportCompartmentId);
     }
     /**
      * Specifies the format of the report ( either XLS or PDF )
      * 
      */
     @Export(name="scheduledReportMimeType", refs={String.class}, tree="[0]")
-    private Output<String> scheduledReportMimeType;
+    private Output</* @Nullable */ String> scheduledReportMimeType;
 
     /**
      * @return Specifies the format of the report ( either XLS or PDF )
      * 
      */
-    public Output<String> scheduledReportMimeType() {
-        return this.scheduledReportMimeType;
+    public Output<Optional<String>> scheduledReportMimeType() {
+        return Codegen.optional(this.scheduledReportMimeType);
     }
     /**
      * The name of the report to be scheduled.
      * 
      */
     @Export(name="scheduledReportName", refs={String.class}, tree="[0]")
-    private Output<String> scheduledReportName;
+    private Output</* @Nullable */ String> scheduledReportName;
 
     /**
      * @return The name of the report to be scheduled.
      * 
      */
-    public Output<String> scheduledReportName() {
-        return this.scheduledReportName;
+    public Output<Optional<String>> scheduledReportName() {
+        return Codegen.optional(this.scheduledReportName);
     }
     /**
      * Specifies the limit on the number of rows in the report.
      * 
      */
     @Export(name="scheduledReportRowLimit", refs={Integer.class}, tree="[0]")
-    private Output<Integer> scheduledReportRowLimit;
+    private Output</* @Nullable */ Integer> scheduledReportRowLimit;
 
     /**
      * @return Specifies the limit on the number of rows in the report.
      * 
      */
-    public Output<Integer> scheduledReportRowLimit() {
-        return this.scheduledReportRowLimit;
+    public Output<Optional<Integer>> scheduledReportRowLimit() {
+        return Codegen.optional(this.scheduledReportRowLimit);
     }
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
@@ -392,7 +393,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scimFilter", refs={String.class}, tree="[0]")
-    private Output<String> scimFilter;
+    private Output</* @Nullable */ String> scimFilter;
 
     /**
      * @return (Updatable) Additional scim filters used to get the specific summary.
@@ -401,22 +402,22 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> scimFilter() {
-        return this.scimFilter;
+    public Output<Optional<String>> scimFilter() {
+        return Codegen.optional(this.scimFilter);
     }
     /**
      * The current state of the report.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the report.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -437,42 +438,42 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * Specifies the data and time the report definition was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Specifies the data and time the report definition was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the report definition was update.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the report definition was update.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

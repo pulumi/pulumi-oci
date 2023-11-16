@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsIdentitySettingMyProfile {
@@ -13,51 +15,51 @@ public final class GetDomainsIdentitySettingMyProfile {
      * @return Whether to allow users to change their own password.
      * 
      */
-    private Boolean allowEndUsersToChangeTheirPassword;
+    private @Nullable Boolean allowEndUsersToChangeTheirPassword;
     /**
      * @return Whether to allow users to link or unlink their support accounts.
      * 
      */
-    private Boolean allowEndUsersToLinkTheirSupportAccount;
+    private @Nullable Boolean allowEndUsersToLinkTheirSupportAccount;
     /**
      * @return Whether to allow users to update their capabilities.
      * 
      */
-    private Boolean allowEndUsersToManageTheirCapabilities;
+    private @Nullable Boolean allowEndUsersToManageTheirCapabilities;
     /**
      * @return Whether to allow users to update their security settings.
      * 
      */
-    private Boolean allowEndUsersToUpdateTheirSecuritySettings;
+    private @Nullable Boolean allowEndUsersToUpdateTheirSecuritySettings;
 
     private GetDomainsIdentitySettingMyProfile() {}
     /**
      * @return Whether to allow users to change their own password.
      * 
      */
-    public Boolean allowEndUsersToChangeTheirPassword() {
-        return this.allowEndUsersToChangeTheirPassword;
+    public Optional<Boolean> allowEndUsersToChangeTheirPassword() {
+        return Optional.ofNullable(this.allowEndUsersToChangeTheirPassword);
     }
     /**
      * @return Whether to allow users to link or unlink their support accounts.
      * 
      */
-    public Boolean allowEndUsersToLinkTheirSupportAccount() {
-        return this.allowEndUsersToLinkTheirSupportAccount;
+    public Optional<Boolean> allowEndUsersToLinkTheirSupportAccount() {
+        return Optional.ofNullable(this.allowEndUsersToLinkTheirSupportAccount);
     }
     /**
      * @return Whether to allow users to update their capabilities.
      * 
      */
-    public Boolean allowEndUsersToManageTheirCapabilities() {
-        return this.allowEndUsersToManageTheirCapabilities;
+    public Optional<Boolean> allowEndUsersToManageTheirCapabilities() {
+        return Optional.ofNullable(this.allowEndUsersToManageTheirCapabilities);
     }
     /**
      * @return Whether to allow users to update their security settings.
      * 
      */
-    public Boolean allowEndUsersToUpdateTheirSecuritySettings() {
-        return this.allowEndUsersToUpdateTheirSecuritySettings;
+    public Optional<Boolean> allowEndUsersToUpdateTheirSecuritySettings() {
+        return Optional.ofNullable(this.allowEndUsersToUpdateTheirSecuritySettings);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDomainsIdentitySettingMyProfile {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean allowEndUsersToChangeTheirPassword;
-        private Boolean allowEndUsersToLinkTheirSupportAccount;
-        private Boolean allowEndUsersToManageTheirCapabilities;
-        private Boolean allowEndUsersToUpdateTheirSecuritySettings;
+        private @Nullable Boolean allowEndUsersToChangeTheirPassword;
+        private @Nullable Boolean allowEndUsersToLinkTheirSupportAccount;
+        private @Nullable Boolean allowEndUsersToManageTheirCapabilities;
+        private @Nullable Boolean allowEndUsersToUpdateTheirSecuritySettings;
         public Builder() {}
         public Builder(GetDomainsIdentitySettingMyProfile defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDomainsIdentitySettingMyProfile {
         }
 
         @CustomType.Setter
-        public Builder allowEndUsersToChangeTheirPassword(Boolean allowEndUsersToChangeTheirPassword) {
-            this.allowEndUsersToChangeTheirPassword = Objects.requireNonNull(allowEndUsersToChangeTheirPassword);
+        public Builder allowEndUsersToChangeTheirPassword(@Nullable Boolean allowEndUsersToChangeTheirPassword) {
+            this.allowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder allowEndUsersToLinkTheirSupportAccount(Boolean allowEndUsersToLinkTheirSupportAccount) {
-            this.allowEndUsersToLinkTheirSupportAccount = Objects.requireNonNull(allowEndUsersToLinkTheirSupportAccount);
+        public Builder allowEndUsersToLinkTheirSupportAccount(@Nullable Boolean allowEndUsersToLinkTheirSupportAccount) {
+            this.allowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;
             return this;
         }
         @CustomType.Setter
-        public Builder allowEndUsersToManageTheirCapabilities(Boolean allowEndUsersToManageTheirCapabilities) {
-            this.allowEndUsersToManageTheirCapabilities = Objects.requireNonNull(allowEndUsersToManageTheirCapabilities);
+        public Builder allowEndUsersToManageTheirCapabilities(@Nullable Boolean allowEndUsersToManageTheirCapabilities) {
+            this.allowEndUsersToManageTheirCapabilities = allowEndUsersToManageTheirCapabilities;
             return this;
         }
         @CustomType.Setter
-        public Builder allowEndUsersToUpdateTheirSecuritySettings(Boolean allowEndUsersToUpdateTheirSecuritySettings) {
-            this.allowEndUsersToUpdateTheirSecuritySettings = Objects.requireNonNull(allowEndUsersToUpdateTheirSecuritySettings);
+        public Builder allowEndUsersToUpdateTheirSecuritySettings(@Nullable Boolean allowEndUsersToUpdateTheirSecuritySettings) {
+            this.allowEndUsersToUpdateTheirSecuritySettings = allowEndUsersToUpdateTheirSecuritySettings;
             return this;
         }
         public GetDomainsIdentitySettingMyProfile build() {

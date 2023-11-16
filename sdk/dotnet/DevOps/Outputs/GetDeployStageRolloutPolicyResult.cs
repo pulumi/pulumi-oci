@@ -16,35 +16,35 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The number that will be used to determine how many instances will be deployed concurrently.
         /// </summary>
-        public readonly int BatchCount;
+        public readonly int? BatchCount;
         /// <summary>
         /// The duration of delay between batch rollout. The default delay is 1 minute.
         /// </summary>
-        public readonly int BatchDelayInSeconds;
+        public readonly int? BatchDelayInSeconds;
         /// <summary>
         /// The percentage that will be used to determine how many instances will be deployed concurrently.
         /// </summary>
-        public readonly int BatchPercentage;
+        public readonly int? BatchPercentage;
         /// <summary>
         /// The type of policy used for rolling out a deployment stage.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
         /// <summary>
         /// Indicates the criteria to stop.
         /// </summary>
-        public readonly double RampLimitPercent;
+        public readonly double? RampLimitPercent;
 
         [OutputConstructor]
         private GetDeployStageRolloutPolicyResult(
-            int batchCount,
+            int? batchCount,
 
-            int batchDelayInSeconds,
+            int? batchDelayInSeconds,
 
-            int batchPercentage,
+            int? batchPercentage,
 
-            string policyType,
+            string? policyType,
 
-            double rampLimitPercent)
+            double? rampLimitPercent)
         {
             BatchCount = batchCount;
             BatchDelayInSeconds = batchDelayInSeconds;

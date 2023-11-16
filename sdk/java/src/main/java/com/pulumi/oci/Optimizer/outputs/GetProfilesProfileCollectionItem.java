@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfilesProfileCollectionItem {
@@ -20,159 +22,159 @@ public final class GetProfilesProfileCollectionItem {
      * @return The time period over which to collect data for the recommendations, measured in number of days.
      * 
      */
-    private Integer aggregationIntervalInDays;
+    private @Nullable Integer aggregationIntervalInDays;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Text describing the profile. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The unique OCID of the profile.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of configuration levels for each recommendation.
      * 
      */
-    private List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations;
+    private @Nullable List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A filter that returns results that match the lifecycle state specified.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
      */
-    private List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments;
+    private @Nullable List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments;
     /**
      * @return Optional. The tags specified in the profile override for a recommendation.
      * 
      */
-    private List<GetProfilesProfileCollectionItemTargetTag> targetTags;
+    private @Nullable List<GetProfilesProfileCollectionItemTargetTag> targetTags;
     /**
      * @return The date and time the profile was created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the profile was last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetProfilesProfileCollectionItem() {}
     /**
      * @return The time period over which to collect data for the recommendations, measured in number of days.
      * 
      */
-    public Integer aggregationIntervalInDays() {
-        return this.aggregationIntervalInDays;
+    public Optional<Integer> aggregationIntervalInDays() {
+        return Optional.ofNullable(this.aggregationIntervalInDays);
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Text describing the profile. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The unique OCID of the profile.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of configuration levels for each recommendation.
      * 
      */
     public List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations() {
-        return this.levelsConfigurations;
+        return this.levelsConfigurations == null ? List.of() : this.levelsConfigurations;
     }
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A filter that returns results that match the lifecycle state specified.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
      */
     public List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments() {
-        return this.targetCompartments;
+        return this.targetCompartments == null ? List.of() : this.targetCompartments;
     }
     /**
      * @return Optional. The tags specified in the profile override for a recommendation.
      * 
      */
     public List<GetProfilesProfileCollectionItemTargetTag> targetTags() {
-        return this.targetTags;
+        return this.targetTags == null ? List.of() : this.targetTags;
     }
     /**
      * @return The date and time the profile was created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the profile was last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -184,19 +186,19 @@ public final class GetProfilesProfileCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer aggregationIntervalInDays;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations;
-        private String name;
-        private String state;
-        private List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments;
-        private List<GetProfilesProfileCollectionItemTargetTag> targetTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable Integer aggregationIntervalInDays;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments;
+        private @Nullable List<GetProfilesProfileCollectionItemTargetTag> targetTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetProfilesProfileCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -216,77 +218,77 @@ public final class GetProfilesProfileCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder aggregationIntervalInDays(Integer aggregationIntervalInDays) {
-            this.aggregationIntervalInDays = Objects.requireNonNull(aggregationIntervalInDays);
+        public Builder aggregationIntervalInDays(@Nullable Integer aggregationIntervalInDays) {
+            this.aggregationIntervalInDays = aggregationIntervalInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder levelsConfigurations(List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations) {
-            this.levelsConfigurations = Objects.requireNonNull(levelsConfigurations);
+        public Builder levelsConfigurations(@Nullable List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations) {
+            this.levelsConfigurations = levelsConfigurations;
             return this;
         }
         public Builder levelsConfigurations(GetProfilesProfileCollectionItemLevelsConfiguration... levelsConfigurations) {
             return levelsConfigurations(List.of(levelsConfigurations));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targetCompartments(List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments) {
-            this.targetCompartments = Objects.requireNonNull(targetCompartments);
+        public Builder targetCompartments(@Nullable List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments) {
+            this.targetCompartments = targetCompartments;
             return this;
         }
         public Builder targetCompartments(GetProfilesProfileCollectionItemTargetCompartment... targetCompartments) {
             return targetCompartments(List.of(targetCompartments));
         }
         @CustomType.Setter
-        public Builder targetTags(List<GetProfilesProfileCollectionItemTargetTag> targetTags) {
-            this.targetTags = Objects.requireNonNull(targetTags);
+        public Builder targetTags(@Nullable List<GetProfilesProfileCollectionItemTargetTag> targetTags) {
+            this.targetTags = targetTags;
             return this;
         }
         public Builder targetTags(GetProfilesProfileCollectionItemTargetTag... targetTags) {
             return targetTags(List.of(targetTags));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetProfilesProfileCollectionItem build() {

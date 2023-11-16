@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -60,58 +59,58 @@ type LookupExadataInsightArgs struct {
 // A collection of values returned by getExadataInsight.
 type LookupExadataInsightResult struct {
 	// Compartment identifier of the Exadata insight resource
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
-	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName string `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName *string `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier string `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier *string `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName string `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName *string `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType string `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType *string `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier string `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the Exadata system.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName string `pulumi:"exadataDisplayName"`
+	ExadataDisplayName *string `pulumi:"exadataDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-	ExadataInfraId string `pulumi:"exadataInfraId"`
+	ExadataInfraId *string `pulumi:"exadataInfraId"`
 	// Oracle Cloud Infrastructure exadata infrastructure resource type
-	ExadataInfraResourceType string `pulumi:"exadataInfraResourceType"`
-	ExadataInsightId         string `pulumi:"exadataInsightId"`
+	ExadataInfraResourceType *string `pulumi:"exadataInfraResourceType"`
+	ExadataInsightId         string  `pulumi:"exadataInsightId"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-	ExadataName string `pulumi:"exadataName"`
+	ExadataName *string `pulumi:"exadataName"`
 	// Exadata rack type.
-	ExadataRackType string `pulumi:"exadataRackType"`
+	ExadataRackType *string `pulumi:"exadataRackType"`
 	// The shape of the Exadata Infrastructure.
-	ExadataShape string `pulumi:"exadataShape"`
+	ExadataShape *string `pulumi:"exadataShape"`
 	// Operations Insights internal representation of the the Exadata system type.
-	ExadataType string `pulumi:"exadataType"`
+	ExadataType *string `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Exadata insight identifier
-	Id                string `pulumi:"id"`
-	IsAutoSyncEnabled bool   `pulumi:"isAutoSyncEnabled"`
+	Id                *string `pulumi:"id"`
+	IsAutoSyncEnabled *bool   `pulumi:"isAutoSyncEnabled"`
 	// true if virtualization is used in the Exadata system
-	IsVirtualizedExadata bool `pulumi:"isVirtualizedExadata"`
+	IsVirtualizedExadata *bool `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails       string                                   `pulumi:"lifecycleDetails"`
+	LifecycleDetails       *string                                  `pulumi:"lifecycleDetails"`
 	MemberVmClusterDetails []GetExadataInsightMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
 	// The current state of the Exadata insight.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Indicates the status of an Exadata insight in Operations Insights
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupExadataInsightOutput(ctx *pulumi.Context, args LookupExadataInsightOutputArgs, opts ...pulumi.InvokeOption) LookupExadataInsightResultOutput {
@@ -152,15 +151,9 @@ func (o LookupExadataInsightResultOutput) ToLookupExadataInsightResultOutputWith
 	return o
 }
 
-func (o LookupExadataInsightResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExadataInsightResult] {
-	return pulumix.Output[LookupExadataInsightResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment identifier of the Exadata insight resource
-func (o LookupExadataInsightResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -169,53 +162,53 @@ func (o LookupExadataInsightResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // OPSI Enterprise Manager Bridge OCID
-func (o LookupExadataInsightResultOutput) EnterpriseManagerBridgeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.EnterpriseManagerBridgeId }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) EnterpriseManagerBridgeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.EnterpriseManagerBridgeId }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Display Name
-func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.EnterpriseManagerEntityDisplayName }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.EnterpriseManagerEntityDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Unique Identifier
-func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.EnterpriseManagerEntityIdentifier }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.EnterpriseManagerEntityIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Name
-func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.EnterpriseManagerEntityName }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.EnterpriseManagerEntityName }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Type
-func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.EnterpriseManagerEntityType }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) EnterpriseManagerEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.EnterpriseManagerEntityType }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Unique Identifier
-func (o LookupExadataInsightResultOutput) EnterpriseManagerIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.EnterpriseManagerIdentifier }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) EnterpriseManagerIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.EnterpriseManagerIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // Source of the Exadata system.
-func (o LookupExadataInsightResultOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the Exadata system. The name does not have to be unique.
-func (o LookupExadataInsightResultOutput) ExadataDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataDisplayName }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) ExadataDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.ExadataDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-func (o LookupExadataInsightResultOutput) ExadataInfraId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataInfraId }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) ExadataInfraId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.ExadataInfraId }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure exadata infrastructure resource type
-func (o LookupExadataInsightResultOutput) ExadataInfraResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataInfraResourceType }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) ExadataInfraResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.ExadataInfraResourceType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExadataInsightResultOutput) ExadataInsightId() pulumi.StringOutput {
@@ -223,23 +216,23 @@ func (o LookupExadataInsightResultOutput) ExadataInsightId() pulumi.StringOutput
 }
 
 // The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-func (o LookupExadataInsightResultOutput) ExadataName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataName }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) ExadataName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.ExadataName }).(pulumi.StringPtrOutput)
 }
 
 // Exadata rack type.
-func (o LookupExadataInsightResultOutput) ExadataRackType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataRackType }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) ExadataRackType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.ExadataRackType }).(pulumi.StringPtrOutput)
 }
 
 // The shape of the Exadata Infrastructure.
-func (o LookupExadataInsightResultOutput) ExadataShape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataShape }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) ExadataShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.ExadataShape }).(pulumi.StringPtrOutput)
 }
 
 // Operations Insights internal representation of the the Exadata system type.
-func (o LookupExadataInsightResultOutput) ExadataType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataType }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) ExadataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.ExadataType }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -248,22 +241,22 @@ func (o LookupExadataInsightResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Exadata insight identifier
-func (o LookupExadataInsightResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupExadataInsightResultOutput) IsAutoSyncEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) bool { return v.IsAutoSyncEnabled }).(pulumi.BoolOutput)
+func (o LookupExadataInsightResultOutput) IsAutoSyncEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *bool { return v.IsAutoSyncEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // true if virtualization is used in the Exadata system
-func (o LookupExadataInsightResultOutput) IsVirtualizedExadata() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) bool { return v.IsVirtualizedExadata }).(pulumi.BoolOutput)
+func (o LookupExadataInsightResultOutput) IsVirtualizedExadata() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *bool { return v.IsVirtualizedExadata }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupExadataInsightResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExadataInsightResultOutput) MemberVmClusterDetails() GetExadataInsightMemberVmClusterDetailArrayOutput {
@@ -273,13 +266,13 @@ func (o LookupExadataInsightResultOutput) MemberVmClusterDetails() GetExadataIns
 }
 
 // The current state of the Exadata insight.
-func (o LookupExadataInsightResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the status of an Exadata insight in Operations Insights
-func (o LookupExadataInsightResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -288,13 +281,13 @@ func (o LookupExadataInsightResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-func (o LookupExadataInsightResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Exadata insight was updated. An RFC3339 formatted datetime string
-func (o LookupExadataInsightResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExadataInsightResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

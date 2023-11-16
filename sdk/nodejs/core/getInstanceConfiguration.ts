@@ -47,35 +47,35 @@ export interface GetInstanceConfigurationResult {
     /**
      * The OCID of the compartment containing images to search
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
      */
-    readonly deferredFields: string[];
+    readonly deferredFields?: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the volume backup.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instanceConfigurationId: string;
-    readonly instanceDetails: outputs.Core.GetInstanceConfigurationInstanceDetail[];
-    readonly instanceId: string;
-    readonly source: string;
+    readonly instanceDetails?: outputs.Core.GetInstanceConfigurationInstanceDetail[];
+    readonly instanceId?: string;
+    readonly source?: string;
     /**
      * The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.

@@ -46,7 +46,7 @@ class GetObjectLifecyclePolicyResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -56,18 +56,12 @@ class GetObjectLifecyclePolicyResult:
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetObjectLifecyclePolicyRuleResult']:
-        """
-        The live lifecycle policy on the bucket.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetObjectLifecyclePolicyRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -88,23 +82,7 @@ def get_object_lifecycle_policy(bucket: Optional[str] = None,
                                 namespace: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetObjectLifecyclePolicyResult:
     """
-    This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the object lifecycle policy for the bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
-        namespace=var["object_lifecycle_policy_namespace"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -125,22 +103,6 @@ def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[str]] = Non
                                        namespace: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectLifecyclePolicyResult]:
     """
-    This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the object lifecycle policy for the bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
-        namespace=var["object_lifecycle_policy_namespace"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

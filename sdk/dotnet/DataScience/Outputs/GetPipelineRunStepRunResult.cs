@@ -16,47 +16,47 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
         /// </summary>
-        public readonly string JobRunId;
+        public readonly string? JobRunId;
         /// <summary>
         /// Details of the state of the step run.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The state of the step run.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The name of the step.
         /// </summary>
-        public readonly string StepName;
+        public readonly string? StepName;
         /// <summary>
         /// The type of step.
         /// </summary>
-        public readonly string StepType;
+        public readonly string? StepType;
         /// <summary>
         /// The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetPipelineRunStepRunResult(
-            string jobRunId,
+            string? jobRunId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string stepName,
+            string? stepName,
 
-            string stepType,
+            string? stepType,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted)
+            string? timeStarted)
         {
             JobRunId = jobRunId;
             LifecycleDetails = lifecycleDetails;

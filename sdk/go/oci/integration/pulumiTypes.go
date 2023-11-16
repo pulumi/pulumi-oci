@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -59,12 +58,6 @@ func (i IntegrationInstanceAlternateCustomEndpointArgs) ToIntegrationInstanceAlt
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAlternateCustomEndpointOutput)
 }
 
-func (i IntegrationInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceAlternateCustomEndpointArrayInput is an input type that accepts IntegrationInstanceAlternateCustomEndpointArray and IntegrationInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceAlternateCustomEndpointArrayInput` via:
 //
@@ -90,12 +83,6 @@ func (i IntegrationInstanceAlternateCustomEndpointArray) ToIntegrationInstanceAl
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i IntegrationInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -108,12 +95,6 @@ func (o IntegrationInstanceAlternateCustomEndpointOutput) ToIntegrationInstanceA
 
 func (o IntegrationInstanceAlternateCustomEndpointOutput) ToIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) IntegrationInstanceAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o IntegrationInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -148,12 +129,6 @@ func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) ToIntegrationInst
 
 func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) ToIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) IntegrationInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceAlternateCustomEndpointOutput {
@@ -213,12 +188,6 @@ func (i IntegrationInstanceAttachmentArgs) ToIntegrationInstanceAttachmentOutput
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAttachmentOutput)
 }
 
-func (i IntegrationInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAttachment] {
-	return pulumix.Output[IntegrationInstanceAttachment]{
-		OutputState: i.ToIntegrationInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceAttachmentArrayInput is an input type that accepts IntegrationInstanceAttachmentArray and IntegrationInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceAttachmentArrayInput` via:
 //
@@ -244,12 +213,6 @@ func (i IntegrationInstanceAttachmentArray) ToIntegrationInstanceAttachmentArray
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAttachmentArrayOutput)
 }
 
-func (i IntegrationInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAttachment] {
-	return pulumix.Output[[]IntegrationInstanceAttachment]{
-		OutputState: i.ToIntegrationInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -262,12 +225,6 @@ func (o IntegrationInstanceAttachmentOutput) ToIntegrationInstanceAttachmentOutp
 
 func (o IntegrationInstanceAttachmentOutput) ToIntegrationInstanceAttachmentOutputWithContext(ctx context.Context) IntegrationInstanceAttachmentOutput {
 	return o
-}
-
-func (o IntegrationInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAttachment] {
-	return pulumix.Output[IntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -308,12 +265,6 @@ func (o IntegrationInstanceAttachmentArrayOutput) ToIntegrationInstanceAttachmen
 
 func (o IntegrationInstanceAttachmentArrayOutput) ToIntegrationInstanceAttachmentArrayOutputWithContext(ctx context.Context) IntegrationInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAttachment] {
-	return pulumix.Output[[]IntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceAttachmentOutput {
@@ -367,12 +318,6 @@ func (i IntegrationInstanceCustomEndpointArgs) ToIntegrationInstanceCustomEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceCustomEndpointOutput)
 }
 
-func (i IntegrationInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IntegrationInstanceCustomEndpointArgs) ToIntegrationInstanceCustomEndpointPtrOutput() IntegrationInstanceCustomEndpointPtrOutput {
 	return i.ToIntegrationInstanceCustomEndpointPtrOutputWithContext(context.Background())
 }
@@ -414,12 +359,6 @@ func (i *integrationInstanceCustomEndpointPtrType) ToIntegrationInstanceCustomEn
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceCustomEndpointPtrOutput)
 }
 
-func (i *integrationInstanceCustomEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[*IntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceCustomEndpointPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -442,12 +381,6 @@ func (o IntegrationInstanceCustomEndpointOutput) ToIntegrationInstanceCustomEndp
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IntegrationInstanceCustomEndpoint) *IntegrationInstanceCustomEndpoint {
 		return &v
 	}).(IntegrationInstanceCustomEndpointPtrOutput)
-}
-
-func (o IntegrationInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -482,12 +415,6 @@ func (o IntegrationInstanceCustomEndpointPtrOutput) ToIntegrationInstanceCustomE
 
 func (o IntegrationInstanceCustomEndpointPtrOutput) ToIntegrationInstanceCustomEndpointPtrOutputWithContext(ctx context.Context) IntegrationInstanceCustomEndpointPtrOutput {
 	return o
-}
-
-func (o IntegrationInstanceCustomEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[*IntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceCustomEndpointPtrOutput) Elem() IntegrationInstanceCustomEndpointOutput {
@@ -589,12 +516,6 @@ func (i IntegrationInstanceIdcsInfoArgs) ToIntegrationInstanceIdcsInfoOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceIdcsInfoOutput)
 }
 
-func (i IntegrationInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[IntegrationInstanceIdcsInfo]{
-		OutputState: i.ToIntegrationInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceIdcsInfoArrayInput is an input type that accepts IntegrationInstanceIdcsInfoArray and IntegrationInstanceIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceIdcsInfoArrayInput` via:
 //
@@ -620,12 +541,6 @@ func (i IntegrationInstanceIdcsInfoArray) ToIntegrationInstanceIdcsInfoArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceIdcsInfoArrayOutput)
 }
 
-func (i IntegrationInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]IntegrationInstanceIdcsInfo]{
-		OutputState: i.ToIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -638,12 +553,6 @@ func (o IntegrationInstanceIdcsInfoOutput) ToIntegrationInstanceIdcsInfoOutput()
 
 func (o IntegrationInstanceIdcsInfoOutput) ToIntegrationInstanceIdcsInfoOutputWithContext(ctx context.Context) IntegrationInstanceIdcsInfoOutput {
 	return o
-}
-
-func (o IntegrationInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[IntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -683,12 +592,6 @@ func (o IntegrationInstanceIdcsInfoArrayOutput) ToIntegrationInstanceIdcsInfoArr
 
 func (o IntegrationInstanceIdcsInfoArrayOutput) ToIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) IntegrationInstanceIdcsInfoArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]IntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceIdcsInfoOutput {
@@ -742,12 +645,6 @@ func (i IntegrationInstanceNetworkEndpointDetailsArgs) ToIntegrationInstanceNetw
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsOutput)
 }
 
-func (i IntegrationInstanceNetworkEndpointDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IntegrationInstanceNetworkEndpointDetailsArgs) ToIntegrationInstanceNetworkEndpointDetailsPtrOutput() IntegrationInstanceNetworkEndpointDetailsPtrOutput {
 	return i.ToIntegrationInstanceNetworkEndpointDetailsPtrOutputWithContext(context.Background())
 }
@@ -789,12 +686,6 @@ func (i *integrationInstanceNetworkEndpointDetailsPtrType) ToIntegrationInstance
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsPtrOutput)
 }
 
-func (i *integrationInstanceNetworkEndpointDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[*IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceNetworkEndpointDetailsOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceNetworkEndpointDetailsOutput) ElementType() reflect.Type {
@@ -817,12 +708,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsOutput) ToIntegrationInstanceNe
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IntegrationInstanceNetworkEndpointDetails) *IntegrationInstanceNetworkEndpointDetails {
 		return &v
 	}).(IntegrationInstanceNetworkEndpointDetailsPtrOutput)
-}
-
-func (o IntegrationInstanceNetworkEndpointDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -859,12 +744,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) ToIntegrationInstanc
 
 func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) ToIntegrationInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsPtrOutput {
 	return o
-}
-
-func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[*IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) Elem() IntegrationInstanceNetworkEndpointDetailsOutput {
@@ -954,12 +833,6 @@ func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs) ToInteg
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput)
 }
 
-func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray and IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput` via:
 //
@@ -985,12 +858,6 @@ func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray) ToInte
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput)
 }
 
-func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ElementType() reflect.Type {
@@ -1003,12 +870,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToInt
 
 func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToIntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
 	return o
-}
-
-func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -1035,12 +896,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) 
 	return o
 }
 
-func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
 		return vs[0].([]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn)[vs[1].(int)]
@@ -1049,13 +904,13 @@ func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) 
 
 type GetIntegrationInstanceAlternateCustomEndpoint struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias string `pulumi:"alias"`
+	Alias *string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetIntegrationInstanceAlternateCustomEndpointInput is an input type that accepts GetIntegrationInstanceAlternateCustomEndpointArgs and GetIntegrationInstanceAlternateCustomEndpointOutput values.
@@ -1071,13 +926,13 @@ type GetIntegrationInstanceAlternateCustomEndpointInput interface {
 
 type GetIntegrationInstanceAlternateCustomEndpointArgs struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias pulumi.StringInput `pulumi:"alias"`
+	Alias pulumi.StringPtrInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetIntegrationInstanceAlternateCustomEndpointArgs) ElementType() reflect.Type {
@@ -1090,12 +945,6 @@ func (i GetIntegrationInstanceAlternateCustomEndpointArgs) ToGetIntegrationInsta
 
 func (i GetIntegrationInstanceAlternateCustomEndpointArgs) ToGetIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstanceAlternateCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAlternateCustomEndpointOutput)
-}
-
-func (i GetIntegrationInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstanceAlternateCustomEndpointArrayInput is an input type that accepts GetIntegrationInstanceAlternateCustomEndpointArray and GetIntegrationInstanceAlternateCustomEndpointArrayOutput values.
@@ -1123,12 +972,6 @@ func (i GetIntegrationInstanceAlternateCustomEndpointArray) ToGetIntegrationInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -1143,30 +986,24 @@ func (o GetIntegrationInstanceAlternateCustomEndpointOutput) ToGetIntegrationIns
 	return o
 }
 
-func (o GetIntegrationInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-func (o GetIntegrationInstanceAlternateCustomEndpointOutput) Alias() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.Alias }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceAlternateCustomEndpointOutput) Alias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) *string { return v.Alias }).(pulumi.StringPtrOutput)
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) *string { return v.CertificateSecretId }).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) int { return v.CertificateSecretVersion }).(pulumi.IntOutput)
+func (o GetIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) *int { return v.CertificateSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the integration instance URL, in FQDN format.
-func (o GetIntegrationInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstanceAlternateCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -1183,12 +1020,6 @@ func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) ToGetIntegrati
 	return o
 }
 
-func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceAlternateCustomEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceAlternateCustomEndpoint {
 		return vs[0].([]GetIntegrationInstanceAlternateCustomEndpoint)[vs[1].(int)]
@@ -1198,15 +1029,15 @@ func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi
 type GetIntegrationInstanceAttachment struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
+	IsImplicit *bool `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole string `pulumi:"targetRole"`
+	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
+	TargetServiceType *string `pulumi:"targetServiceType"`
 }
 
 // GetIntegrationInstanceAttachmentInput is an input type that accepts GetIntegrationInstanceAttachmentArgs and GetIntegrationInstanceAttachmentOutput values.
@@ -1223,15 +1054,15 @@ type GetIntegrationInstanceAttachmentInput interface {
 type GetIntegrationInstanceAttachmentArgs struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
 }
 
 func (GetIntegrationInstanceAttachmentArgs) ElementType() reflect.Type {
@@ -1244,12 +1075,6 @@ func (i GetIntegrationInstanceAttachmentArgs) ToGetIntegrationInstanceAttachment
 
 func (i GetIntegrationInstanceAttachmentArgs) ToGetIntegrationInstanceAttachmentOutputWithContext(ctx context.Context) GetIntegrationInstanceAttachmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAttachmentOutput)
-}
-
-func (i GetIntegrationInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstanceAttachmentArrayInput is an input type that accepts GetIntegrationInstanceAttachmentArray and GetIntegrationInstanceAttachmentArrayOutput values.
@@ -1277,12 +1102,6 @@ func (i GetIntegrationInstanceAttachmentArray) ToGetIntegrationInstanceAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAttachmentArrayOutput)
 }
 
-func (i GetIntegrationInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -1297,36 +1116,30 @@ func (o GetIntegrationInstanceAttachmentOutput) ToGetIntegrationInstanceAttachme
 	return o
 }
 
-func (o GetIntegrationInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // * If role == `PARENT`, the attached instance was created by this service instance
 // * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetIntegrationInstanceAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+func (o GetIntegrationInstanceAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetIntegrationInstanceAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The dataplane instance URL of the attached instance
-func (o GetIntegrationInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The role of the target attachment.
-func (o GetIntegrationInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
 
 // The type of the target instance, such as "FUSION".
-func (o GetIntegrationInstanceAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -1343,12 +1156,6 @@ func (o GetIntegrationInstanceAttachmentArrayOutput) ToGetIntegrationInstanceAtt
 	return o
 }
 
-func (o GetIntegrationInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceAttachment {
 		return vs[0].([]GetIntegrationInstanceAttachment)[vs[1].(int)]
@@ -1357,13 +1164,13 @@ func (o GetIntegrationInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetIntegrationInstanceCustomEndpoint struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias string `pulumi:"alias"`
+	Alias *string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetIntegrationInstanceCustomEndpointInput is an input type that accepts GetIntegrationInstanceCustomEndpointArgs and GetIntegrationInstanceCustomEndpointOutput values.
@@ -1379,13 +1186,13 @@ type GetIntegrationInstanceCustomEndpointInput interface {
 
 type GetIntegrationInstanceCustomEndpointArgs struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias pulumi.StringInput `pulumi:"alias"`
+	Alias pulumi.StringPtrInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetIntegrationInstanceCustomEndpointArgs) ElementType() reflect.Type {
@@ -1398,12 +1205,6 @@ func (i GetIntegrationInstanceCustomEndpointArgs) ToGetIntegrationInstanceCustom
 
 func (i GetIntegrationInstanceCustomEndpointArgs) ToGetIntegrationInstanceCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstanceCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceCustomEndpointOutput)
-}
-
-func (i GetIntegrationInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstanceCustomEndpointArrayInput is an input type that accepts GetIntegrationInstanceCustomEndpointArray and GetIntegrationInstanceCustomEndpointArrayOutput values.
@@ -1431,12 +1232,6 @@ func (i GetIntegrationInstanceCustomEndpointArray) ToGetIntegrationInstanceCusto
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstanceCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -1451,30 +1246,24 @@ func (o GetIntegrationInstanceCustomEndpointOutput) ToGetIntegrationInstanceCust
 	return o
 }
 
-func (o GetIntegrationInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-func (o GetIntegrationInstanceCustomEndpointOutput) Alias() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.Alias }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceCustomEndpointOutput) Alias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) *string { return v.Alias }).(pulumi.StringPtrOutput)
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetIntegrationInstanceCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) *string { return v.CertificateSecretId }).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetIntegrationInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) int { return v.CertificateSecretVersion }).(pulumi.IntOutput)
+func (o GetIntegrationInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) *int { return v.CertificateSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the integration instance URL, in FQDN format.
-func (o GetIntegrationInstanceCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstanceCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -1491,12 +1280,6 @@ func (o GetIntegrationInstanceCustomEndpointArrayOutput) ToGetIntegrationInstanc
 	return o
 }
 
-func (o GetIntegrationInstanceCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceCustomEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceCustomEndpoint {
 		return vs[0].([]GetIntegrationInstanceCustomEndpoint)[vs[1].(int)]
@@ -1505,15 +1288,15 @@ func (o GetIntegrationInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput
 
 type GetIntegrationInstanceIdcsInfo struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName *string `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId string `pulumi:"idcsAppId"`
+	IdcsAppId *string `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl *string `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName string `pulumi:"idcsAppName"`
+	IdcsAppName *string `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for integration flows in this instance type: string
-	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl *string `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 // GetIntegrationInstanceIdcsInfoInput is an input type that accepts GetIntegrationInstanceIdcsInfoArgs and GetIntegrationInstanceIdcsInfoOutput values.
@@ -1529,15 +1312,15 @@ type GetIntegrationInstanceIdcsInfoInput interface {
 
 type GetIntegrationInstanceIdcsInfoArgs struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName pulumi.StringPtrInput `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
+	IdcsAppId pulumi.StringPtrInput `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl pulumi.StringPtrInput `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
+	IdcsAppName pulumi.StringPtrInput `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for integration flows in this instance type: string
-	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl pulumi.StringPtrInput `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 func (GetIntegrationInstanceIdcsInfoArgs) ElementType() reflect.Type {
@@ -1550,12 +1333,6 @@ func (i GetIntegrationInstanceIdcsInfoArgs) ToGetIntegrationInstanceIdcsInfoOutp
 
 func (i GetIntegrationInstanceIdcsInfoArgs) ToGetIntegrationInstanceIdcsInfoOutputWithContext(ctx context.Context) GetIntegrationInstanceIdcsInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceIdcsInfoOutput)
-}
-
-func (i GetIntegrationInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstanceIdcsInfoArrayInput is an input type that accepts GetIntegrationInstanceIdcsInfoArray and GetIntegrationInstanceIdcsInfoArrayOutput values.
@@ -1583,12 +1360,6 @@ func (i GetIntegrationInstanceIdcsInfoArray) ToGetIntegrationInstanceIdcsInfoArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceIdcsInfoArrayOutput)
 }
 
-func (i GetIntegrationInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -1603,35 +1374,29 @@ func (o GetIntegrationInstanceIdcsInfoOutput) ToGetIntegrationInstanceIdcsInfoOu
 	return o
 }
 
-func (o GetIntegrationInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The IDCS application display name associated with the instance
-func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) *string { return v.IdcsAppDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application ID associated with the instance
-func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) *string { return v.IdcsAppId }).(pulumi.StringPtrOutput)
 }
 
 // URL for the location of the IDCS Application (used by IDCS APIs)
-func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) *string { return v.IdcsAppLocationUrl }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application name associated with the instance
-func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) *string { return v.IdcsAppName }).(pulumi.StringPtrOutput)
 }
 
 // The URL used as the primary audience for integration flows in this instance type: string
-func (o GetIntegrationInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) *string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstanceIdcsInfoArrayOutput struct{ *pulumi.OutputState }
@@ -1648,12 +1413,6 @@ func (o GetIntegrationInstanceIdcsInfoArrayOutput) ToGetIntegrationInstanceIdcsI
 	return o
 }
 
-func (o GetIntegrationInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceIdcsInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceIdcsInfo {
 		return vs[0].([]GetIntegrationInstanceIdcsInfo)[vs[1].(int)]
@@ -1666,9 +1425,9 @@ type GetIntegrationInstanceNetworkEndpointDetail struct {
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns []GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
+	IsIntegrationVcnAllowlisted *bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	NetworkEndpointType *string `pulumi:"networkEndpointType"`
 }
 
 // GetIntegrationInstanceNetworkEndpointDetailInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailArgs and GetIntegrationInstanceNetworkEndpointDetailOutput values.
@@ -1688,9 +1447,9 @@ type GetIntegrationInstanceNetworkEndpointDetailArgs struct {
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
+	IsIntegrationVcnAllowlisted pulumi.BoolPtrInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	NetworkEndpointType pulumi.StringPtrInput `pulumi:"networkEndpointType"`
 }
 
 func (GetIntegrationInstanceNetworkEndpointDetailArgs) ElementType() reflect.Type {
@@ -1703,12 +1462,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailArgs) ToGetIntegrationInstanc
 
 func (i GetIntegrationInstanceNetworkEndpointDetailArgs) ToGetIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailOutput)
-}
-
-func (i GetIntegrationInstanceNetworkEndpointDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailArray and GetIntegrationInstanceNetworkEndpointDetailArrayOutput values.
@@ -1736,12 +1489,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailArray) ToGetIntegrationInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailArrayOutput)
 }
 
-func (i GetIntegrationInstanceNetworkEndpointDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceNetworkEndpointDetailOutput) ElementType() reflect.Type {
@@ -1754,12 +1501,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailOutput) ToGetIntegrationInsta
 
 func (o GetIntegrationInstanceNetworkEndpointDetailOutput) ToGetIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceNetworkEndpointDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -1775,13 +1516,13 @@ func (o GetIntegrationInstanceNetworkEndpointDetailOutput) AllowlistedHttpVcns()
 }
 
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-func (o GetIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllowlisted() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) bool { return v.IsIntegrationVcnAllowlisted }).(pulumi.BoolOutput)
+func (o GetIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) *bool { return v.IsIntegrationVcnAllowlisted }).(pulumi.BoolPtrOutput)
 }
 
 // The type of network endpoint.
-func (o GetIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) *string { return v.NetworkEndpointType }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstanceNetworkEndpointDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1798,12 +1539,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailArrayOutput) ToGetIntegration
 	return o
 }
 
-func (o GetIntegrationInstanceNetworkEndpointDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceNetworkEndpointDetail {
 		return vs[0].([]GetIntegrationInstanceNetworkEndpointDetail)[vs[1].(int)]
@@ -1814,7 +1549,7 @@ type GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn struct {
 	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
 	AllowlistedIps []string `pulumi:"allowlistedIps"`
 	// The Virtual Cloud Network OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs and GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput values.
@@ -1832,7 +1567,7 @@ type GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs struct {
 	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
 	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
 	// The Virtual Cloud Network OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ElementType() reflect.Type {
@@ -1845,12 +1580,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGet
 
 func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
-}
-
-func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray and GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput values.
@@ -1878,12 +1607,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
 }
 
-func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ElementType() reflect.Type {
@@ -1898,12 +1621,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToG
 	return o
 }
 
-func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
 func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn) []string {
@@ -1912,8 +1629,8 @@ func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) All
 }
 
 // The Virtual Cloud Network OCID.
-func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
@@ -1928,12 +1645,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
 
 func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
@@ -1977,12 +1688,6 @@ func (i GetIntegrationInstancesFilterArgs) ToGetIntegrationInstancesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesFilterOutput)
 }
 
-func (i GetIntegrationInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesFilter] {
-	return pulumix.Output[GetIntegrationInstancesFilter]{
-		OutputState: i.ToGetIntegrationInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesFilterArrayInput is an input type that accepts GetIntegrationInstancesFilterArray and GetIntegrationInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesFilterArrayInput` via:
 //
@@ -2008,12 +1713,6 @@ func (i GetIntegrationInstancesFilterArray) ToGetIntegrationInstancesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesFilterArrayOutput)
 }
 
-func (i GetIntegrationInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesFilter] {
-	return pulumix.Output[[]GetIntegrationInstancesFilter]{
-		OutputState: i.ToGetIntegrationInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesFilterOutput) ElementType() reflect.Type {
@@ -2026,12 +1725,6 @@ func (o GetIntegrationInstancesFilterOutput) ToGetIntegrationInstancesFilterOutp
 
 func (o GetIntegrationInstancesFilterOutput) ToGetIntegrationInstancesFilterOutputWithContext(ctx context.Context) GetIntegrationInstancesFilterOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesFilter] {
-	return pulumix.Output[GetIntegrationInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -2060,12 +1753,6 @@ func (o GetIntegrationInstancesFilterArrayOutput) ToGetIntegrationInstancesFilte
 	return o
 }
 
-func (o GetIntegrationInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesFilter] {
-	return pulumix.Output[[]GetIntegrationInstancesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesFilter {
 		return vs[0].([]GetIntegrationInstancesFilter)[vs[1].(int)]
@@ -2078,48 +1765,48 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	// A list of associated attachments to other services
 	Attachments []GetIntegrationInstancesIntegrationInstanceAttachment `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints []GetIntegrationInstancesIntegrationInstanceCustomEndpoint `pulumi:"customEndpoints"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName                    string `pulumi:"displayName"`
-	DomainId                       string `pulumi:"domainId"`
-	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
+	DisplayName                    *string `pulumi:"displayName"`
+	DomainId                       *string `pulumi:"domainId"`
+	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
-	Id     string `pulumi:"id"`
-	IdcsAt string `pulumi:"idcsAt"`
+	Id     *string `pulumi:"id"`
+	IdcsAt *string `pulumi:"idcsAt"`
 	// Information for IDCS access
 	IdcsInfos []GetIntegrationInstancesIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
-	InstanceUrl string `pulumi:"instanceUrl"`
+	InstanceUrl *string `pulumi:"instanceUrl"`
 	// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
+	IntegrationInstanceType *string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
-	IsByol bool `pulumi:"isByol"`
+	IsByol *bool `pulumi:"isByol"`
 	// The file server is enabled or not.
-	IsFileServerEnabled bool `pulumi:"isFileServerEnabled"`
+	IsFileServerEnabled *bool `pulumi:"isFileServerEnabled"`
 	// Visual Builder is enabled or not.
-	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
+	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
 	// The number of configured message packs (if any)
-	MessagePacks int `pulumi:"messagePacks"`
+	MessagePacks *int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// Shape
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// Life cycle state to query on.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage string `pulumi:"stateMessage"`
+	StateMessage *string `pulumi:"stateMessage"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceArgs and GetIntegrationInstancesIntegrationInstanceOutput values.
@@ -2139,48 +1826,48 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	// A list of associated attachments to other services
 	Attachments GetIntegrationInstancesIntegrationInstanceAttachmentArrayInput `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel pulumi.StringInput `pulumi:"consumptionModel"`
+	ConsumptionModel pulumi.StringPtrInput `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayInput `pulumi:"customEndpoints"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName                    pulumi.StringInput `pulumi:"displayName"`
-	DomainId                       pulumi.StringInput `pulumi:"domainId"`
-	EnableProcessAutomationTrigger pulumi.IntInput    `pulumi:"enableProcessAutomationTrigger"`
+	DisplayName                    pulumi.StringPtrInput `pulumi:"displayName"`
+	DomainId                       pulumi.StringPtrInput `pulumi:"domainId"`
+	EnableProcessAutomationTrigger pulumi.IntPtrInput    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
-	Id     pulumi.StringInput `pulumi:"id"`
-	IdcsAt pulumi.StringInput `pulumi:"idcsAt"`
+	Id     pulumi.StringPtrInput `pulumi:"id"`
+	IdcsAt pulumi.StringPtrInput `pulumi:"idcsAt"`
 	// Information for IDCS access
 	IdcsInfos GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
-	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
+	InstanceUrl pulumi.StringPtrInput `pulumi:"instanceUrl"`
 	// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-	IntegrationInstanceType pulumi.StringInput `pulumi:"integrationInstanceType"`
+	IntegrationInstanceType pulumi.StringPtrInput `pulumi:"integrationInstanceType"`
 	// Bring your own license.
-	IsByol pulumi.BoolInput `pulumi:"isByol"`
+	IsByol pulumi.BoolPtrInput `pulumi:"isByol"`
 	// The file server is enabled or not.
-	IsFileServerEnabled pulumi.BoolInput `pulumi:"isFileServerEnabled"`
+	IsFileServerEnabled pulumi.BoolPtrInput `pulumi:"isFileServerEnabled"`
 	// Visual Builder is enabled or not.
-	IsVisualBuilderEnabled pulumi.BoolInput `pulumi:"isVisualBuilderEnabled"`
+	IsVisualBuilderEnabled pulumi.BoolPtrInput `pulumi:"isVisualBuilderEnabled"`
 	// The number of configured message packs (if any)
-	MessagePacks pulumi.IntInput `pulumi:"messagePacks"`
+	MessagePacks pulumi.IntPtrInput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
 	// Shape
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// Life cycle state to query on.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrInput `pulumi:"stateMessage"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceArgs) ElementType() reflect.Type {
@@ -2193,12 +1880,6 @@ func (i GetIntegrationInstancesIntegrationInstanceArgs) ToGetIntegrationInstance
 
 func (i GetIntegrationInstancesIntegrationInstanceArgs) ToGetIntegrationInstancesIntegrationInstanceOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceOutput)
-}
-
-func (i GetIntegrationInstancesIntegrationInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstance]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstancesIntegrationInstanceArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceArray and GetIntegrationInstancesIntegrationInstanceArrayOutput values.
@@ -2226,12 +1907,6 @@ func (i GetIntegrationInstancesIntegrationInstanceArray) ToGetIntegrationInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstance]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceOutput) ElementType() reflect.Type {
@@ -2244,12 +1919,6 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) ToGetIntegrationInstan
 
 func (o GetIntegrationInstancesIntegrationInstanceOutput) ToGetIntegrationInstancesIntegrationInstanceOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of alternate custom endpoints used for the integration instance URL.
@@ -2267,13 +1936,13 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) Attachments() GetInteg
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement used for billing purposes.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) ConsumptionModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.ConsumptionModel }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) ConsumptionModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.ConsumptionModel }).(pulumi.StringPtrOutput)
 }
 
 // Details for a custom endpoint for the integration instance.
@@ -2289,16 +1958,16 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) DefinedTags() pulumi.M
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetIntegrationInstancesIntegrationInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceOutput) DomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.DomainId }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.EnableProcessAutomationTrigger }).(pulumi.IntOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *int { return v.EnableProcessAutomationTrigger }).(pulumi.IntPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2307,12 +1976,12 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) FreeformTags() pulumi.
 }
 
 // The Virtual Cloud Network OCID.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceOutput) IdcsAt() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.IdcsAt }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) IdcsAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.IdcsAt }).(pulumi.StringPtrOutput)
 }
 
 // Information for IDCS access
@@ -2323,33 +1992,33 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) IdcsInfos() GetIntegra
 }
 
 // The Integration Instance URL.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) InstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.InstanceUrl }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) InstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.InstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-func (o GetIntegrationInstancesIntegrationInstanceOutput) IntegrationInstanceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.IntegrationInstanceType }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) IntegrationInstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.IntegrationInstanceType }).(pulumi.StringPtrOutput)
 }
 
 // Bring your own license.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) IsByol() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) bool { return v.IsByol }).(pulumi.BoolOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) IsByol() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *bool { return v.IsByol }).(pulumi.BoolPtrOutput)
 }
 
 // The file server is enabled or not.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) IsFileServerEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) bool { return v.IsFileServerEnabled }).(pulumi.BoolOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) IsFileServerEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *bool { return v.IsFileServerEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Visual Builder is enabled or not.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The number of configured message packs (if any)
-func (o GetIntegrationInstancesIntegrationInstanceOutput) MessagePacks() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.MessagePacks }).(pulumi.IntOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) MessagePacks() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *int { return v.MessagePacks }).(pulumi.IntPtrOutput)
 }
 
 // Base representation of a network endpoint.
@@ -2360,28 +2029,28 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) NetworkEndpointDetails
 }
 
 // Shape
-func (o GetIntegrationInstancesIntegrationInstanceOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // Life cycle state to query on.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.State }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.StateMessage }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-func (o GetIntegrationInstancesIntegrationInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -2398,12 +2067,6 @@ func (o GetIntegrationInstancesIntegrationInstanceArrayOutput) ToGetIntegrationI
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesIntegrationInstanceArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstance {
 		return vs[0].([]GetIntegrationInstancesIntegrationInstance)[vs[1].(int)]
@@ -2412,13 +2075,13 @@ func (o GetIntegrationInstancesIntegrationInstanceArrayOutput) Index(i pulumi.In
 
 type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias string `pulumi:"alias"`
+	Alias *string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs and GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput values.
@@ -2434,13 +2097,13 @@ type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointInput inte
 
 type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias pulumi.StringInput `pulumi:"alias"`
+	Alias pulumi.StringPtrInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs) ElementType() reflect.Type {
@@ -2453,12 +2116,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs) T
 
 func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs) ToGetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput)
-}
-
-func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArray and GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput values.
@@ -2486,12 +2143,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -2506,34 +2157,28 @@ func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput)
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) Alias() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) string { return v.Alias }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) Alias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) *string { return v.Alias }).(pulumi.StringPtrOutput)
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) string {
+func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) *string {
 		return v.CertificateSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) int {
+func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) *int {
 		return v.CertificateSecretVersion
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the integration instance URL, in FQDN format.
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -2550,12 +2195,6 @@ func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOu
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint {
 		return vs[0].([]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint)[vs[1].(int)]
@@ -2565,15 +2204,15 @@ func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOu
 type GetIntegrationInstancesIntegrationInstanceAttachment struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
+	IsImplicit *bool `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole string `pulumi:"targetRole"`
+	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
+	TargetServiceType *string `pulumi:"targetServiceType"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceAttachmentInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceAttachmentArgs and GetIntegrationInstancesIntegrationInstanceAttachmentOutput values.
@@ -2590,15 +2229,15 @@ type GetIntegrationInstancesIntegrationInstanceAttachmentInput interface {
 type GetIntegrationInstancesIntegrationInstanceAttachmentArgs struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceAttachmentArgs) ElementType() reflect.Type {
@@ -2611,12 +2250,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAttachmentArgs) ToGetIntegrati
 
 func (i GetIntegrationInstancesIntegrationInstanceAttachmentArgs) ToGetIntegrationInstancesIntegrationInstanceAttachmentOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceAttachmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAttachmentOutput)
-}
-
-func (i GetIntegrationInstancesIntegrationInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstancesIntegrationInstanceAttachmentArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceAttachmentArray and GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput values.
@@ -2644,12 +2277,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAttachmentArray) ToGetIntegrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -2664,36 +2291,30 @@ func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) ToGetIntegra
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // * If role == `PARENT`, the attached instance was created by this service instance
 // * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The dataplane instance URL of the attached instance
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The role of the target attachment.
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
 
 // The type of the target instance, such as "FUSION".
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -2710,12 +2331,6 @@ func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) ToGetIn
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceAttachment {
 		return vs[0].([]GetIntegrationInstancesIntegrationInstanceAttachment)[vs[1].(int)]
@@ -2724,13 +2339,13 @@ func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) Index(i
 
 type GetIntegrationInstancesIntegrationInstanceCustomEndpoint struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias string `pulumi:"alias"`
+	Alias *string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceCustomEndpointInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs and GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput values.
@@ -2746,13 +2361,13 @@ type GetIntegrationInstancesIntegrationInstanceCustomEndpointInput interface {
 
 type GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs struct {
 	// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-	Alias pulumi.StringInput `pulumi:"alias"`
+	Alias pulumi.StringPtrInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs) ElementType() reflect.Type {
@@ -2765,12 +2380,6 @@ func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs) ToGetInteg
 
 func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs) ToGetIntegrationInstancesIntegrationInstanceCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput)
-}
-
-func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceCustomEndpointArray and GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput values.
@@ -2798,12 +2407,6 @@ func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArray) ToGetInte
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -2818,32 +2421,26 @@ func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ToGetInt
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) Alias() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.Alias }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) Alias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) *string { return v.Alias }).(pulumi.StringPtrOutput)
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) *string { return v.CertificateSecretId }).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) int {
+func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) *int {
 		return v.CertificateSecretVersion
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the integration instance URL, in FQDN format.
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -2860,12 +2457,6 @@ func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) ToG
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceCustomEndpoint {
 		return vs[0].([]GetIntegrationInstancesIntegrationInstanceCustomEndpoint)[vs[1].(int)]
@@ -2874,15 +2465,15 @@ func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) Ind
 
 type GetIntegrationInstancesIntegrationInstanceIdcsInfo struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName *string `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId string `pulumi:"idcsAppId"`
+	IdcsAppId *string `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl *string `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName string `pulumi:"idcsAppName"`
+	IdcsAppName *string `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for integration flows in this instance type: string
-	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl *string `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceIdcsInfoInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs and GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput values.
@@ -2898,15 +2489,15 @@ type GetIntegrationInstancesIntegrationInstanceIdcsInfoInput interface {
 
 type GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName pulumi.StringPtrInput `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
+	IdcsAppId pulumi.StringPtrInput `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl pulumi.StringPtrInput `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
+	IdcsAppName pulumi.StringPtrInput `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for integration flows in this instance type: string
-	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl pulumi.StringPtrInput `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs) ElementType() reflect.Type {
@@ -2919,12 +2510,6 @@ func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs) ToGetIntegration
 
 func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs) ToGetIntegrationInstancesIntegrationInstanceIdcsInfoOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput)
-}
-
-func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceIdcsInfoArray and GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput values.
@@ -2952,12 +2537,6 @@ func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArray) ToGetIntegratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -2972,35 +2551,31 @@ func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) ToGetIntegrati
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The IDCS application display name associated with the instance
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) *string { return v.IdcsAppDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application ID associated with the instance
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) *string { return v.IdcsAppId }).(pulumi.StringPtrOutput)
 }
 
 // URL for the location of the IDCS Application (used by IDCS APIs)
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) *string { return v.IdcsAppLocationUrl }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application name associated with the instance
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) *string { return v.IdcsAppName }).(pulumi.StringPtrOutput)
 }
 
 // The URL used as the primary audience for integration flows in this instance type: string
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) *string {
+		return v.InstancePrimaryAudienceUrl
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput struct{ *pulumi.OutputState }
@@ -3017,12 +2592,6 @@ func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput) ToGetInte
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceIdcsInfo {
 		return vs[0].([]GetIntegrationInstancesIntegrationInstanceIdcsInfo)[vs[1].(int)]
@@ -3035,9 +2604,9 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail struct {
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
+	IsIntegrationVcnAllowlisted *bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	NetworkEndpointType *string `pulumi:"networkEndpointType"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput values.
@@ -3057,9 +2626,9 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs struct 
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
+	IsIntegrationVcnAllowlisted pulumi.BoolPtrInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	NetworkEndpointType pulumi.StringPtrInput `pulumi:"networkEndpointType"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs) ElementType() reflect.Type {
@@ -3072,12 +2641,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs) ToG
 
 func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput)
-}
-
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput values.
@@ -3105,12 +2668,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) ElementType() reflect.Type {
@@ -3123,12 +2680,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) T
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -3146,17 +2697,17 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) A
 }
 
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllowlisted() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) bool {
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) *bool {
 		return v.IsIntegrationVcnAllowlisted
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The type of network endpoint.
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) string {
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) *string {
 		return v.NetworkEndpointType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput struct{ *pulumi.OutputState }
@@ -3173,12 +2724,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutp
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail {
 		return vs[0].([]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail)[vs[1].(int)]
@@ -3189,7 +2734,7 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedH
 	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
 	AllowlistedIps []string `pulumi:"allowlistedIps"`
 	// The Virtual Cloud Network OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput values.
@@ -3207,7 +2752,7 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedH
 	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
 	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
 	// The Virtual Cloud Network OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ElementType() reflect.Type {
@@ -3220,12 +2765,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 
 func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
-}
-
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput values.
@@ -3253,12 +2792,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ElementType() reflect.Type {
@@ -3273,12 +2806,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn) []string {
@@ -3287,10 +2814,10 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 }
 
 // The Virtual Cloud Network OCID.
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn) string {
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
@@ -3305,12 +2832,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {

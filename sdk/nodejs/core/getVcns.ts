@@ -74,7 +74,7 @@ export interface GetVcnsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The VCN's current state.
      */
@@ -82,7 +82,7 @@ export interface GetVcnsResult {
     /**
      * The list of virtual_networks.
      */
-    readonly virtualNetworks: outputs.Core.GetVcnsVirtualNetwork[];
+    readonly virtualNetworks?: outputs.Core.GetVcnsVirtualNetwork[];
 }
 /**
  * This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.

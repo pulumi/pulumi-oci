@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
@@ -65,23 +64,23 @@ type Ipv6 struct {
 	pulumi.CustomResourceState
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
-	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrOutput `pulumi:"ipAddress"`
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
-	Ipv6subnetCidr pulumi.StringOutput `pulumi:"ipv6subnetCidr"`
+	Ipv6subnetCidr pulumi.StringPtrOutput `pulumi:"ipv6subnetCidr"`
 	// The IPv6's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrOutput `pulumi:"subnetId"`
 	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
 	//
 	// ** IMPORTANT **
@@ -237,12 +236,6 @@ func (i *Ipv6) ToIpv6OutputWithContext(ctx context.Context) Ipv6Output {
 	return pulumi.ToOutputWithContext(ctx, i).(Ipv6Output)
 }
 
-func (i *Ipv6) ToOutput(ctx context.Context) pulumix.Output[*Ipv6] {
-	return pulumix.Output[*Ipv6]{
-		OutputState: i.ToIpv6OutputWithContext(ctx).OutputState,
-	}
-}
-
 // Ipv6ArrayInput is an input type that accepts Ipv6Array and Ipv6ArrayOutput values.
 // You can construct a concrete instance of `Ipv6ArrayInput` via:
 //
@@ -266,12 +259,6 @@ func (i Ipv6Array) ToIpv6ArrayOutput() Ipv6ArrayOutput {
 
 func (i Ipv6Array) ToIpv6ArrayOutputWithContext(ctx context.Context) Ipv6ArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(Ipv6ArrayOutput)
-}
-
-func (i Ipv6Array) ToOutput(ctx context.Context) pulumix.Output[[]*Ipv6] {
-	return pulumix.Output[[]*Ipv6]{
-		OutputState: i.ToIpv6ArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // Ipv6MapInput is an input type that accepts Ipv6Map and Ipv6MapOutput values.
@@ -299,12 +286,6 @@ func (i Ipv6Map) ToIpv6MapOutputWithContext(ctx context.Context) Ipv6MapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(Ipv6MapOutput)
 }
 
-func (i Ipv6Map) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipv6] {
-	return pulumix.Output[map[string]*Ipv6]{
-		OutputState: i.ToIpv6MapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type Ipv6Output struct{ *pulumi.OutputState }
 
 func (Ipv6Output) ElementType() reflect.Type {
@@ -319,15 +300,9 @@ func (o Ipv6Output) ToIpv6OutputWithContext(ctx context.Context) Ipv6Output {
 	return o
 }
 
-func (o Ipv6Output) ToOutput(ctx context.Context) pulumix.Output[*Ipv6] {
-	return pulumix.Output[*Ipv6]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
-func (o Ipv6Output) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o Ipv6Output) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -336,8 +311,8 @@ func (o Ipv6Output) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o Ipv6Output) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o Ipv6Output) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -346,28 +321,28 @@ func (o Ipv6Output) FreeformTags() pulumi.MapOutput {
 }
 
 // An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
-func (o Ipv6Output) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+func (o Ipv6Output) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
-func (o Ipv6Output) Ipv6subnetCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
+func (o Ipv6Output) Ipv6subnetCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.Ipv6subnetCidr }).(pulumi.StringPtrOutput)
 }
 
 // The IPv6's current state.
-func (o Ipv6Output) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o Ipv6Output) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-func (o Ipv6Output) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+func (o Ipv6Output) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o Ipv6Output) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o Ipv6Output) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
@@ -392,12 +367,6 @@ func (o Ipv6ArrayOutput) ToIpv6ArrayOutputWithContext(ctx context.Context) Ipv6A
 	return o
 }
 
-func (o Ipv6ArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Ipv6] {
-	return pulumix.Output[[]*Ipv6]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o Ipv6ArrayOutput) Index(i pulumi.IntInput) Ipv6Output {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Ipv6 {
 		return vs[0].([]*Ipv6)[vs[1].(int)]
@@ -416,12 +385,6 @@ func (o Ipv6MapOutput) ToIpv6MapOutput() Ipv6MapOutput {
 
 func (o Ipv6MapOutput) ToIpv6MapOutputWithContext(ctx context.Context) Ipv6MapOutput {
 	return o
-}
-
-func (o Ipv6MapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipv6] {
-	return pulumix.Output[map[string]*Ipv6]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o Ipv6MapOutput) MapIndex(k pulumi.StringInput) Ipv6Output {

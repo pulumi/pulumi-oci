@@ -11,6 +11,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDatapumpSettingMetad
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDatapumpSetting {
@@ -18,27 +20,27 @@ public final class GetMigrationDatapumpSetting {
      * @return Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
      * 
      */
-    private List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters;
+    private @Nullable List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters;
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
-    private List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
+    private @Nullable List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
-    private List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects;
+    private @Nullable List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects;
     /**
      * @return Data Pump job mode. Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
      * 
      */
-    private String jobMode;
+    private @Nullable String jobMode;
     /**
      * @return Defines remapping to be applied to objects as they are processed. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
-    private List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps;
+    private @Nullable List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps;
 
     private GetMigrationDatapumpSetting() {}
     /**
@@ -46,35 +48,35 @@ public final class GetMigrationDatapumpSetting {
      * 
      */
     public List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters() {
-        return this.dataPumpParameters;
+        return this.dataPumpParameters == null ? List.of() : this.dataPumpParameters;
     }
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
     public List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects() {
-        return this.exportDirectoryObjects;
+        return this.exportDirectoryObjects == null ? List.of() : this.exportDirectoryObjects;
     }
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
     public List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects() {
-        return this.importDirectoryObjects;
+        return this.importDirectoryObjects == null ? List.of() : this.importDirectoryObjects;
     }
     /**
      * @return Data Pump job mode. Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
      * 
      */
-    public String jobMode() {
-        return this.jobMode;
+    public Optional<String> jobMode() {
+        return Optional.ofNullable(this.jobMode);
     }
     /**
      * @return Defines remapping to be applied to objects as they are processed. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
     public List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps() {
-        return this.metadataRemaps;
+        return this.metadataRemaps == null ? List.of() : this.metadataRemaps;
     }
 
     public static Builder builder() {
@@ -86,11 +88,11 @@ public final class GetMigrationDatapumpSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters;
-        private List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
-        private List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects;
-        private String jobMode;
-        private List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps;
+        private @Nullable List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters;
+        private @Nullable List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
+        private @Nullable List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects;
+        private @Nullable String jobMode;
+        private @Nullable List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps;
         public Builder() {}
         public Builder(GetMigrationDatapumpSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,37 +104,37 @@ public final class GetMigrationDatapumpSetting {
         }
 
         @CustomType.Setter
-        public Builder dataPumpParameters(List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters) {
-            this.dataPumpParameters = Objects.requireNonNull(dataPumpParameters);
+        public Builder dataPumpParameters(@Nullable List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters) {
+            this.dataPumpParameters = dataPumpParameters;
             return this;
         }
         public Builder dataPumpParameters(GetMigrationDatapumpSettingDataPumpParameter... dataPumpParameters) {
             return dataPumpParameters(List.of(dataPumpParameters));
         }
         @CustomType.Setter
-        public Builder exportDirectoryObjects(List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects) {
-            this.exportDirectoryObjects = Objects.requireNonNull(exportDirectoryObjects);
+        public Builder exportDirectoryObjects(@Nullable List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects) {
+            this.exportDirectoryObjects = exportDirectoryObjects;
             return this;
         }
         public Builder exportDirectoryObjects(GetMigrationDatapumpSettingExportDirectoryObject... exportDirectoryObjects) {
             return exportDirectoryObjects(List.of(exportDirectoryObjects));
         }
         @CustomType.Setter
-        public Builder importDirectoryObjects(List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects) {
-            this.importDirectoryObjects = Objects.requireNonNull(importDirectoryObjects);
+        public Builder importDirectoryObjects(@Nullable List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects) {
+            this.importDirectoryObjects = importDirectoryObjects;
             return this;
         }
         public Builder importDirectoryObjects(GetMigrationDatapumpSettingImportDirectoryObject... importDirectoryObjects) {
             return importDirectoryObjects(List.of(importDirectoryObjects));
         }
         @CustomType.Setter
-        public Builder jobMode(String jobMode) {
-            this.jobMode = Objects.requireNonNull(jobMode);
+        public Builder jobMode(@Nullable String jobMode) {
+            this.jobMode = jobMode;
             return this;
         }
         @CustomType.Setter
-        public Builder metadataRemaps(List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps) {
-            this.metadataRemaps = Objects.requireNonNull(metadataRemaps);
+        public Builder metadataRemaps(@Nullable List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps) {
+            this.metadataRemaps = metadataRemaps;
             return this;
         }
         public Builder metadataRemaps(GetMigrationDatapumpSettingMetadataRemap... metadataRemaps) {

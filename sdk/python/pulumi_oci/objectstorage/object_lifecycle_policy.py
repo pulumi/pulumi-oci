@@ -21,9 +21,6 @@ class ObjectLifecyclePolicyArgs:
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None):
         """
         The set of arguments for constructing a ObjectLifecyclePolicy resource.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]] rules: (Updatable) The bucket's set of lifecycle policy rules.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -33,9 +30,6 @@ class ObjectLifecyclePolicyArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -45,9 +39,6 @@ class ObjectLifecyclePolicyArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -57,9 +48,6 @@ class ObjectLifecyclePolicyArgs:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]:
-        """
-        (Updatable) The bucket's set of lifecycle policy rules.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -76,10 +64,6 @@ class _ObjectLifecyclePolicyState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ObjectLifecyclePolicy resources.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]] rules: (Updatable) The bucket's set of lifecycle policy rules.
-        :param pulumi.Input[str] time_created: The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -93,9 +77,6 @@ class _ObjectLifecyclePolicyState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -105,9 +86,6 @@ class _ObjectLifecyclePolicyState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -117,9 +95,6 @@ class _ObjectLifecyclePolicyState:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]:
-        """
-        (Updatable) The bucket's set of lifecycle policy rules.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -129,9 +104,6 @@ class _ObjectLifecyclePolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -149,47 +121,9 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates or replaces the object lifecycle policy for the bucket.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("testObjectLifecyclePolicy",
-            bucket=var["object_lifecycle_policy_bucket"],
-            namespace=var["object_lifecycle_policy_namespace"],
-            rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=var["object_lifecycle_policy_rules_action"],
-                is_enabled=var["object_lifecycle_policy_rules_is_enabled"],
-                name=var["object_lifecycle_policy_rules_name"],
-                time_amount=var["object_lifecycle_policy_rules_time_amount"],
-                time_unit=var["object_lifecycle_policy_rules_time_unit"],
-                object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_exclusion_patterns"],
-                    inclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_inclusion_patterns"],
-                    inclusion_prefixes=var["object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes"],
-                ),
-                target=var["object_lifecycle_policy_rules_target"],
-            )])
-        ```
-
-        ## Import
-
-        ObjectLifecyclePolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
-        ```
-
+        Create a ObjectLifecyclePolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]] rules: (Updatable) The bucket's set of lifecycle policy rules.
         """
         ...
     @overload
@@ -198,42 +132,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                  args: ObjectLifecyclePolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates or replaces the object lifecycle policy for the bucket.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("testObjectLifecyclePolicy",
-            bucket=var["object_lifecycle_policy_bucket"],
-            namespace=var["object_lifecycle_policy_namespace"],
-            rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=var["object_lifecycle_policy_rules_action"],
-                is_enabled=var["object_lifecycle_policy_rules_is_enabled"],
-                name=var["object_lifecycle_policy_rules_name"],
-                time_amount=var["object_lifecycle_policy_rules_time_amount"],
-                time_unit=var["object_lifecycle_policy_rules_time_unit"],
-                object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_exclusion_patterns"],
-                    inclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_inclusion_patterns"],
-                    inclusion_prefixes=var["object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes"],
-                ),
-                target=var["object_lifecycle_policy_rules_target"],
-            )])
-        ```
-
-        ## Import
-
-        ObjectLifecyclePolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
-        ```
-
+        Create a ObjectLifecyclePolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ObjectLifecyclePolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -290,10 +189,6 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]] rules: (Updatable) The bucket's set of lifecycle policy rules.
-        :param pulumi.Input[str] time_created: The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -308,32 +203,20 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def rules(self) -> pulumi.Output[Sequence['outputs.ObjectLifecyclePolicyRule']]:
-        """
-        (Updatable) The bucket's set of lifecycle policy rules.
-        """
+    def rules(self) -> pulumi.Output[Optional[Sequence['outputs.ObjectLifecyclePolicyRule']]]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

@@ -23,7 +23,7 @@ public final class GetConnectionAssignmentsResult {
      * @return The list of connection_assignment_collection.
      * 
      */
-    private List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections;
+    private @Nullable List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      * 
@@ -39,7 +39,7 @@ public final class GetConnectionAssignmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String name;
     /**
      * @return Possible lifecycle states for connection assignments.
@@ -60,7 +60,7 @@ public final class GetConnectionAssignmentsResult {
      * 
      */
     public List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections() {
-        return this.connectionAssignmentCollections;
+        return this.connectionAssignmentCollections == null ? List.of() : this.connectionAssignmentCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
@@ -83,8 +83,8 @@ public final class GetConnectionAssignmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -107,11 +107,11 @@ public final class GetConnectionAssignmentsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections;
+        private @Nullable List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections;
         private @Nullable String connectionId;
         private @Nullable String deploymentId;
         private @Nullable List<GetConnectionAssignmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -133,8 +133,8 @@ public final class GetConnectionAssignmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder connectionAssignmentCollections(List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections) {
-            this.connectionAssignmentCollections = Objects.requireNonNull(connectionAssignmentCollections);
+        public Builder connectionAssignmentCollections(@Nullable List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections) {
+            this.connectionAssignmentCollections = connectionAssignmentCollections;
             return this;
         }
         public Builder connectionAssignmentCollections(GetConnectionAssignmentsConnectionAssignmentCollection... connectionAssignmentCollections) {
@@ -159,8 +159,8 @@ public final class GetConnectionAssignmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

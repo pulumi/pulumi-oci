@@ -60,25 +60,25 @@ namespace Pulumi.Oci.StackMonitoring
         /// Test Run Id
         /// </summary>
         [Output("testRunId")]
-        public Output<string> TestRunId { get; private set; } = null!;
+        public Output<string?> TestRunId { get; private set; } = null!;
 
         /// <summary>
         /// Test Run Metric Suffix
         /// </summary>
         [Output("testRunMetricSuffix")]
-        public Output<string> TestRunMetricSuffix { get; private set; } = null!;
+        public Output<string?> TestRunMetricSuffix { get; private set; } = null!;
 
         /// <summary>
         /// Test Run Namespace name
         /// </summary>
         [Output("testRunNamespaceName")]
-        public Output<string> TestRunNamespaceName { get; private set; } = null!;
+        public Output<string?> TestRunNamespaceName { get; private set; } = null!;
 
         /// <summary>
         /// Test Run Resource Group name
         /// </summary>
         [Output("testRunResourceGroupName")]
-        public Output<string> TestRunResourceGroupName { get; private set; } = null!;
+        public Output<string?> TestRunResourceGroupName { get; private set; } = null!;
 
 
         /// <summary>

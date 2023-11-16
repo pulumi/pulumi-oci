@@ -52,9 +52,6 @@ class GetPublicationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -64,7 +61,7 @@ class GetPublicationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,17 +70,11 @@ class GetPublicationsResult:
     @property
     @pulumi.getter(name="listingType")
     def listing_type(self) -> str:
-        """
-        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        """
         return pulumi.get(self, "listing_type")
 
     @property
     @pulumi.getter
     def names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the operating system.
-        """
         return pulumi.get(self, "names")
 
     @property
@@ -98,10 +89,7 @@ class GetPublicationsResult:
 
     @property
     @pulumi.getter
-    def publications(self) -> Sequence['outputs.GetPublicationsPublicationResult']:
-        """
-        The list of publications.
-        """
+    def publications(self) -> Optional[Sequence['outputs.GetPublicationsPublicationResult']]:
         return pulumi.get(self, "publications")
 
 
@@ -129,29 +117,7 @@ def get_publications(compartment_id: Optional[str] = None,
                      publication_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublicationsResult:
     """
-    This data source provides the list of Publications in Oracle Cloud Infrastructure Marketplace service.
-
-    Lists the publications in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publications = oci.Marketplace.get_publications(compartment_id=var["compartment_id"],
-        listing_type=var["publication_listing_type"],
-        names=var["publication_name"],
-        operating_systems=var["publication_operating_systems"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_type: The type of the listing.
-    :param Sequence[str] names: The name of the publication.
-    :param Sequence[str] operating_systems: The operating system of the listing.
-    :param str publication_id: The unique identifier for the publication.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -183,28 +149,6 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             publication_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicationsResult]:
     """
-    This data source provides the list of Publications in Oracle Cloud Infrastructure Marketplace service.
-
-    Lists the publications in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publications = oci.Marketplace.get_publications(compartment_id=var["compartment_id"],
-        listing_type=var["publication_listing_type"],
-        names=var["publication_name"],
-        operating_systems=var["publication_operating_systems"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_type: The type of the listing.
-    :param Sequence[str] names: The name of the publication.
-    :param Sequence[str] operating_systems: The operating system of the listing.
-    :param str publication_id: The unique identifier for the publication.
+    Use this data source to access information about an existing resource.
     """
     ...

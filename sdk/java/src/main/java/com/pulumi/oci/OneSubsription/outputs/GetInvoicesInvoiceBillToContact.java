@@ -6,6 +6,8 @@ package com.pulumi.oci.OneSubsription.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceBillToContact {
@@ -13,99 +15,99 @@ public final class GetInvoicesInvoiceBillToContact {
      * @return Email.
      * 
      */
-    private String email;
+    private @Nullable String email;
     /**
      * @return First name.
      * 
      */
-    private String firstName;
+    private @Nullable String firstName;
     /**
      * @return Last name.
      * 
      */
-    private String lastName;
+    private @Nullable String lastName;
     /**
      * @return Payment Term name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return TCA contact ID.
      * 
      */
-    private String tcaContactId;
+    private @Nullable String tcaContactId;
     /**
      * @return TCA customer account site ID.
      * 
      */
-    private String tcaCustAccntSiteId;
+    private @Nullable String tcaCustAccntSiteId;
     /**
      * @return TCA party ID.
      * 
      */
-    private String tcaPartyId;
+    private @Nullable String tcaPartyId;
     /**
      * @return userName.
      * 
      */
-    private String userName;
+    private @Nullable String userName;
 
     private GetInvoicesInvoiceBillToContact() {}
     /**
      * @return Email.
      * 
      */
-    public String email() {
-        return this.email;
+    public Optional<String> email() {
+        return Optional.ofNullable(this.email);
     }
     /**
      * @return First name.
      * 
      */
-    public String firstName() {
-        return this.firstName;
+    public Optional<String> firstName() {
+        return Optional.ofNullable(this.firstName);
     }
     /**
      * @return Last name.
      * 
      */
-    public String lastName() {
-        return this.lastName;
+    public Optional<String> lastName() {
+        return Optional.ofNullable(this.lastName);
     }
     /**
      * @return Payment Term name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return TCA contact ID.
      * 
      */
-    public String tcaContactId() {
-        return this.tcaContactId;
+    public Optional<String> tcaContactId() {
+        return Optional.ofNullable(this.tcaContactId);
     }
     /**
      * @return TCA customer account site ID.
      * 
      */
-    public String tcaCustAccntSiteId() {
-        return this.tcaCustAccntSiteId;
+    public Optional<String> tcaCustAccntSiteId() {
+        return Optional.ofNullable(this.tcaCustAccntSiteId);
     }
     /**
      * @return TCA party ID.
      * 
      */
-    public String tcaPartyId() {
-        return this.tcaPartyId;
+    public Optional<String> tcaPartyId() {
+        return Optional.ofNullable(this.tcaPartyId);
     }
     /**
      * @return userName.
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetInvoicesInvoiceBillToContact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String email;
-        private String firstName;
-        private String lastName;
-        private String name;
-        private String tcaContactId;
-        private String tcaCustAccntSiteId;
-        private String tcaPartyId;
-        private String userName;
+        private @Nullable String email;
+        private @Nullable String firstName;
+        private @Nullable String lastName;
+        private @Nullable String name;
+        private @Nullable String tcaContactId;
+        private @Nullable String tcaCustAccntSiteId;
+        private @Nullable String tcaPartyId;
+        private @Nullable String userName;
         public Builder() {}
         public Builder(GetInvoicesInvoiceBillToContact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetInvoicesInvoiceBillToContact {
         }
 
         @CustomType.Setter
-        public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+        public Builder email(@Nullable String email) {
+            this.email = email;
             return this;
         }
         @CustomType.Setter
-        public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+        public Builder firstName(@Nullable String firstName) {
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
-        public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+        public Builder lastName(@Nullable String lastName) {
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaContactId(String tcaContactId) {
-            this.tcaContactId = Objects.requireNonNull(tcaContactId);
+        public Builder tcaContactId(@Nullable String tcaContactId) {
+            this.tcaContactId = tcaContactId;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaCustAccntSiteId(String tcaCustAccntSiteId) {
-            this.tcaCustAccntSiteId = Objects.requireNonNull(tcaCustAccntSiteId);
+        public Builder tcaCustAccntSiteId(@Nullable String tcaCustAccntSiteId) {
+            this.tcaCustAccntSiteId = tcaCustAccntSiteId;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaPartyId(String tcaPartyId) {
-            this.tcaPartyId = Objects.requireNonNull(tcaPartyId);
+        public Builder tcaPartyId(@Nullable String tcaPartyId) {
+            this.tcaPartyId = tcaPartyId;
             return this;
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         public GetInvoicesInvoiceBillToContact build() {

@@ -144,14 +144,14 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * 
      */
     @Export(name="items", refs={List.class,MonitoredResourcesSearchAssociationItem.class}, tree="[0,1]")
-    private Output<List<MonitoredResourcesSearchAssociationItem>> items;
+    private Output</* @Nullable */ List<MonitoredResourcesSearchAssociationItem>> items;
 
     /**
      * @return List of Monitored Resource Associations.
      * 
      */
-    public Output<List<MonitoredResourcesSearchAssociationItem>> items() {
-        return this.items;
+    public Output<Optional<List<MonitoredResourcesSearchAssociationItem>>> items() {
+        return Codegen.optional(this.items);
     }
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

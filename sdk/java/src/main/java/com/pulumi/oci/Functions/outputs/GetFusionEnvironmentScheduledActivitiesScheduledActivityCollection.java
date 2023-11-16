@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection {
-    private List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem> items;
+    private @Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem> items;
 
     private GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection() {}
     public List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem> items;
+        private @Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem... items) {

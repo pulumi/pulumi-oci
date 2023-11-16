@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The media type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
         /// </summary>
-        public readonly string MediaType;
+        public readonly string? MediaType;
         /// <summary>
         /// Validation type defines the content validation method.
         /// </summary>
-        public readonly string ValidationType;
+        public readonly string? ValidationType;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult(
-            string mediaType,
+            string? mediaType,
 
-            string validationType)
+            string? validationType)
         {
             MediaType = mediaType;
             ValidationType = validationType;

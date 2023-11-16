@@ -45,26 +45,17 @@ class GetByoipRangesResult:
 
     @property
     @pulumi.getter(name="byoipRangeCollections")
-    def byoip_range_collections(self) -> Sequence['outputs.GetByoipRangesByoipRangeCollectionResult']:
-        """
-        The list of byoip_range_collection.
-        """
+    def byoip_range_collections(self) -> Optional[Sequence['outputs.GetByoipRangesByoipRangeCollectionResult']]:
         return pulumi.get(self, "byoip_range_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetByoipRangesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetByoipRangesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The `ByoipRange` resource's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,26 +97,7 @@ def get_byoip_ranges(compartment_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetByoipRangesResult:
     """
-    This data source provides the list of Byoip Ranges in Oracle Cloud Infrastructure Core service.
-
-    Lists the `ByoipRange` resources in the specified compartment.
-    You can filter the list using query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_byoip_ranges = oci.Core.get_byoip_ranges(compartment_id=var["compartment_id"],
-        display_name=var["byoip_range_display_name"],
-        state=var["byoip_range_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -154,25 +123,6 @@ def get_byoip_ranges_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetByoipRangesResult]:
     """
-    This data source provides the list of Byoip Ranges in Oracle Cloud Infrastructure Core service.
-
-    Lists the `ByoipRange` resources in the specified compartment.
-    You can filter the list using query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_byoip_ranges = oci.Core.get_byoip_ranges(compartment_id=var["compartment_id"],
-        display_name=var["byoip_range_display_name"],
-        state=var["byoip_range_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

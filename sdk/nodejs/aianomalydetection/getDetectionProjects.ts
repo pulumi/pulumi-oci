@@ -70,11 +70,11 @@ export interface GetDetectionProjectsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of project_collection.
      */
-    readonly projectCollections: outputs.AiAnomalyDetection.GetDetectionProjectsProjectCollection[];
+    readonly projectCollections?: outputs.AiAnomalyDetection.GetDetectionProjectsProjectCollection[];
     /**
      * The lifecycle state of the Project.
      */

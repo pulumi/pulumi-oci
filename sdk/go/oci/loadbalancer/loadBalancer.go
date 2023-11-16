@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -124,7 +123,7 @@ type LoadBalancer struct {
 	// If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
 	//
 	// Example: "ipMode":"IPV6"
-	IpMode pulumi.StringOutput `pulumi:"ipMode"`
+	IpMode pulumi.StringPtrOutput `pulumi:"ipMode"`
 	// Whether the load balancer has a VCN-local (private) IP address.
 	//
 	// If "true", the service assigns a private IP address to the load balancer.
@@ -134,7 +133,7 @@ type LoadBalancer struct {
 	// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
 	//
 	// Example: `true`
-	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
+	IsPrivate pulumi.BoolPtrOutput `pulumi:"isPrivate"`
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 	//
 	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
@@ -150,9 +149,9 @@ type LoadBalancer struct {
 	// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-	ShapeDetails LoadBalancerShapeDetailsOutput `pulumi:"shapeDetails"`
+	ShapeDetails LoadBalancerShapeDetailsPtrOutput `pulumi:"shapeDetails"`
 	// The current state of the load balancer.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	//
 	// ** IMPORTANT **
@@ -161,7 +160,7 @@ type LoadBalancer struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewLoadBalancer registers a new resource with the given unique name, arguments, and options.
@@ -457,12 +456,6 @@ func (i *LoadBalancer) ToLoadBalancerOutputWithContext(ctx context.Context) Load
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerOutput)
 }
 
-func (i *LoadBalancer) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancer] {
-	return pulumix.Output[*LoadBalancer]{
-		OutputState: i.ToLoadBalancerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerArrayInput is an input type that accepts LoadBalancerArray and LoadBalancerArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerArrayInput` via:
 //
@@ -486,12 +479,6 @@ func (i LoadBalancerArray) ToLoadBalancerArrayOutput() LoadBalancerArrayOutput {
 
 func (i LoadBalancerArray) ToLoadBalancerArrayOutputWithContext(ctx context.Context) LoadBalancerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerArrayOutput)
-}
-
-func (i LoadBalancerArray) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancer] {
-	return pulumix.Output[[]*LoadBalancer]{
-		OutputState: i.ToLoadBalancerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LoadBalancerMapInput is an input type that accepts LoadBalancerMap and LoadBalancerMapOutput values.
@@ -519,12 +506,6 @@ func (i LoadBalancerMap) ToLoadBalancerMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerMapOutput)
 }
 
-func (i LoadBalancerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancer] {
-	return pulumix.Output[map[string]*LoadBalancer]{
-		OutputState: i.ToLoadBalancerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerOutput) ElementType() reflect.Type {
@@ -537,12 +518,6 @@ func (o LoadBalancerOutput) ToLoadBalancerOutput() LoadBalancerOutput {
 
 func (o LoadBalancerOutput) ToLoadBalancerOutputWithContext(ctx context.Context) LoadBalancerOutput {
 	return o
-}
-
-func (o LoadBalancerOutput) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancer] {
-	return pulumix.Output[*LoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
@@ -584,8 +559,8 @@ func (o LoadBalancerOutput) IpAddresses() pulumi.StringArrayOutput {
 // If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
 //
 // Example: "ipMode":"IPV6"
-func (o LoadBalancerOutput) IpMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.IpMode }).(pulumi.StringOutput)
+func (o LoadBalancerOutput) IpMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.StringPtrOutput { return v.IpMode }).(pulumi.StringPtrOutput)
 }
 
 // Whether the load balancer has a VCN-local (private) IP address.
@@ -597,8 +572,8 @@ func (o LoadBalancerOutput) IpMode() pulumi.StringOutput {
 // A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
 //
 // Example: `true`
-func (o LoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v *LoadBalancer) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o LoadBalancerOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.BoolPtrOutput { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
@@ -625,13 +600,13 @@ func (o LoadBalancerOutput) Shape() pulumi.StringOutput {
 }
 
 // (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-func (o LoadBalancerOutput) ShapeDetails() LoadBalancerShapeDetailsOutput {
-	return o.ApplyT(func(v *LoadBalancer) LoadBalancerShapeDetailsOutput { return v.ShapeDetails }).(LoadBalancerShapeDetailsOutput)
+func (o LoadBalancerOutput) ShapeDetails() LoadBalancerShapeDetailsPtrOutput {
+	return o.ApplyT(func(v *LoadBalancer) LoadBalancerShapeDetailsPtrOutput { return v.ShapeDetails }).(LoadBalancerShapeDetailsPtrOutput)
 }
 
 // The current state of the load balancer.
-func (o LoadBalancerOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LoadBalancerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -648,8 +623,8 @@ func (o LoadBalancerOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LoadBalancerOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LoadBalancerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type LoadBalancerArrayOutput struct{ *pulumi.OutputState }
@@ -664,12 +639,6 @@ func (o LoadBalancerArrayOutput) ToLoadBalancerArrayOutput() LoadBalancerArrayOu
 
 func (o LoadBalancerArrayOutput) ToLoadBalancerArrayOutputWithContext(ctx context.Context) LoadBalancerArrayOutput {
 	return o
-}
-
-func (o LoadBalancerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancer] {
-	return pulumix.Output[[]*LoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerArrayOutput) Index(i pulumi.IntInput) LoadBalancerOutput {
@@ -690,12 +659,6 @@ func (o LoadBalancerMapOutput) ToLoadBalancerMapOutput() LoadBalancerMapOutput {
 
 func (o LoadBalancerMapOutput) ToLoadBalancerMapOutputWithContext(ctx context.Context) LoadBalancerMapOutput {
 	return o
-}
-
-func (o LoadBalancerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancer] {
-	return pulumix.Output[map[string]*LoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerMapOutput) MapIndex(k pulumi.StringInput) LoadBalancerOutput {

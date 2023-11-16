@@ -23,17 +23,6 @@ class ModelProvenanceArgs:
                  training_script: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ModelProvenance resource.
-        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        :param pulumi.Input[str] git_branch: (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-        :param pulumi.Input[str] git_commit: (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-        :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
-        :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "model_id", model_id)
         if git_branch is not None:
@@ -52,9 +41,6 @@ class ModelProvenanceArgs:
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
@@ -64,9 +50,6 @@ class ModelProvenanceArgs:
     @property
     @pulumi.getter(name="gitBranch")
     def git_branch(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-        """
         return pulumi.get(self, "git_branch")
 
     @git_branch.setter
@@ -76,9 +59,6 @@ class ModelProvenanceArgs:
     @property
     @pulumi.getter(name="gitCommit")
     def git_commit(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        """
         return pulumi.get(self, "git_commit")
 
     @git_commit.setter
@@ -88,9 +68,6 @@ class ModelProvenanceArgs:
     @property
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-        """
         return pulumi.get(self, "repository_url")
 
     @repository_url.setter
@@ -100,9 +77,6 @@ class ModelProvenanceArgs:
     @property
     @pulumi.getter(name="scriptDir")
     def script_dir(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Path to model artifacts.
-        """
         return pulumi.get(self, "script_dir")
 
     @script_dir.setter
@@ -112,9 +86,6 @@ class ModelProvenanceArgs:
     @property
     @pulumi.getter(name="trainingId")
     def training_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        """
         return pulumi.get(self, "training_id")
 
     @training_id.setter
@@ -124,13 +95,6 @@ class ModelProvenanceArgs:
     @property
     @pulumi.getter(name="trainingScript")
     def training_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "training_script")
 
     @training_script.setter
@@ -150,17 +114,6 @@ class _ModelProvenanceState:
                  training_script: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ModelProvenance resources.
-        :param pulumi.Input[str] git_branch: (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-        :param pulumi.Input[str] git_commit: (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-        :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
-        :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if git_branch is not None:
             pulumi.set(__self__, "git_branch", git_branch)
@@ -180,9 +133,6 @@ class _ModelProvenanceState:
     @property
     @pulumi.getter(name="gitBranch")
     def git_branch(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-        """
         return pulumi.get(self, "git_branch")
 
     @git_branch.setter
@@ -192,9 +142,6 @@ class _ModelProvenanceState:
     @property
     @pulumi.getter(name="gitCommit")
     def git_commit(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        """
         return pulumi.get(self, "git_commit")
 
     @git_commit.setter
@@ -204,9 +151,6 @@ class _ModelProvenanceState:
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
@@ -216,9 +160,6 @@ class _ModelProvenanceState:
     @property
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-        """
         return pulumi.get(self, "repository_url")
 
     @repository_url.setter
@@ -228,9 +169,6 @@ class _ModelProvenanceState:
     @property
     @pulumi.getter(name="scriptDir")
     def script_dir(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Path to model artifacts.
-        """
         return pulumi.get(self, "script_dir")
 
     @script_dir.setter
@@ -240,9 +178,6 @@ class _ModelProvenanceState:
     @property
     @pulumi.getter(name="trainingId")
     def training_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        """
         return pulumi.get(self, "training_id")
 
     @training_id.setter
@@ -252,13 +187,6 @@ class _ModelProvenanceState:
     @property
     @pulumi.getter(name="trainingScript")
     def training_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "training_script")
 
     @training_script.setter
@@ -280,47 +208,9 @@ class ModelProvenance(pulumi.CustomResource):
                  training_script: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates provenance information for the specified model.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model_provenance = oci.data_science.ModelProvenance("testModelProvenance",
-            model_id=oci_datascience_model["test_model"]["id"],
-            git_branch=var["model_provenance_git_branch"],
-            git_commit=var["model_provenance_git_commit"],
-            repository_url=var["model_provenance_repository_url"],
-            script_dir=var["model_provenance_script_dir"],
-            training_id=oci_datascience_training["test_training"]["id"],
-            training_script=var["model_provenance_training_script"])
-        ```
-
-        ## Import
-
-        ModelProvenances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
-        ```
-
+        Create a ModelProvenance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] git_branch: (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-        :param pulumi.Input[str] git_commit: (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-        :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
-        :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -329,34 +219,7 @@ class ModelProvenance(pulumi.CustomResource):
                  args: ModelProvenanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates provenance information for the specified model.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model_provenance = oci.data_science.ModelProvenance("testModelProvenance",
-            model_id=oci_datascience_model["test_model"]["id"],
-            git_branch=var["model_provenance_git_branch"],
-            git_commit=var["model_provenance_git_commit"],
-            repository_url=var["model_provenance_repository_url"],
-            script_dir=var["model_provenance_script_dir"],
-            training_id=oci_datascience_training["test_training"]["id"],
-            training_script=var["model_provenance_training_script"])
-        ```
-
-        ## Import
-
-        ModelProvenances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
-        ```
-
+        Create a ModelProvenance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ModelProvenanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -421,17 +284,6 @@ class ModelProvenance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] git_branch: (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-        :param pulumi.Input[str] git_commit: (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        :param pulumi.Input[str] repository_url: (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-        :param pulumi.Input[str] script_dir: (Updatable) For model reproducibility purposes. Path to model artifacts.
-        :param pulumi.Input[str] training_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        :param pulumi.Input[str] training_script: (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -448,61 +300,36 @@ class ModelProvenance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="gitBranch")
-    def git_branch(self) -> pulumi.Output[str]:
-        """
-        (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-        """
+    def git_branch(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "git_branch")
 
     @property
     @pulumi.getter(name="gitCommit")
-    def git_commit(self) -> pulumi.Output[str]:
-        """
-        (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        """
+    def git_commit(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "git_commit")
 
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        """
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="repositoryUrl")
-    def repository_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-        """
+    def repository_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "repository_url")
 
     @property
     @pulumi.getter(name="scriptDir")
-    def script_dir(self) -> pulumi.Output[str]:
-        """
-        (Updatable) For model reproducibility purposes. Path to model artifacts.
-        """
+    def script_dir(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "script_dir")
 
     @property
     @pulumi.getter(name="trainingId")
-    def training_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        """
+    def training_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "training_id")
 
     @property
     @pulumi.getter(name="trainingScript")
-    def training_script(self) -> pulumi.Output[str]:
-        """
-        (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def training_script(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "training_script")
 

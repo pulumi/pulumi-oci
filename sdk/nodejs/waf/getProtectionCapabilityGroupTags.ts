@@ -63,7 +63,7 @@ export interface GetProtectionCapabilityGroupTagsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Unique name of protection capability group tag.
      */
@@ -71,7 +71,7 @@ export interface GetProtectionCapabilityGroupTagsResult {
     /**
      * The list of protection_capability_group_tag_collection.
      */
-    readonly protectionCapabilityGroupTagCollections: outputs.Waf.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection[];
+    readonly protectionCapabilityGroupTagCollections?: outputs.Waf.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection[];
     readonly type?: string;
 }
 /**

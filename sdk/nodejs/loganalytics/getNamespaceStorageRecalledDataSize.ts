@@ -57,24 +57,24 @@ export interface GetNamespaceStorageRecalledDataSizeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * This is the size of the archival data not recalled yet
      */
-    readonly notRecalledDataInBytes: string;
+    readonly notRecalledDataInBytes?: string;
     /**
      * This is the size of the recalled data
      */
-    readonly recalledDataInBytes: string;
+    readonly recalledDataInBytes?: string;
     /**
      * This is the end of the time range of the archival data
      */
-    readonly timeDataEnded: string;
+    readonly timeDataEnded?: string;
     /**
      * This is the start of the time range of the archival data
      */
-    readonly timeDataStarted: string;
+    readonly timeDataStarted?: string;
 }
 /**
  * This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.

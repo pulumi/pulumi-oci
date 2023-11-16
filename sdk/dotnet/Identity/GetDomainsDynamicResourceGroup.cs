@@ -193,23 +193,23 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// text that explains the purpose of this Dynamic Resource Group
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// User-friendly, mutable identifier
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
         /// </summary>
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -235,7 +235,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -243,7 +243,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
         /// </summary>
-        public readonly string MatchingRule;
+        public readonly string? MatchingRule;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -251,7 +251,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Oracle Cloud Infrastructure Tags.
         /// </summary>
@@ -278,15 +278,15 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string domainOcid,
+            string? domainOcid,
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupDynamicGroupAppRoleResult> dynamicGroupAppRoles,
 
@@ -294,7 +294,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupGrantResult> grants,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupIdcsCreatedByResult> idcsCreatedBies,
 
@@ -302,15 +302,15 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            string matchingRule,
+            string? matchingRule,
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupMetaResult> metas,
 
-            string ocid,
+            string? ocid,
 
             string? resourceTypeSchemaVersion,
 
@@ -318,7 +318,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
             ImmutableArray<Outputs.GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagResult> urnietfparamsscimschemasoracleidcsextensionOciTags)
         {

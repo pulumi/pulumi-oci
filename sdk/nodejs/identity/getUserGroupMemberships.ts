@@ -79,11 +79,11 @@ export interface GetUserGroupMembershipsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of memberships.
      */
-    readonly memberships: outputs.Identity.GetUserGroupMembershipsMembership[];
+    readonly memberships?: outputs.Identity.GetUserGroupMembershipsMembership[];
     /**
      * The OCID of the user.
      */

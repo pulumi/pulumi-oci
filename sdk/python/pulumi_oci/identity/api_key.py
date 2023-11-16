@@ -18,12 +18,6 @@ class ApiKeyArgs:
                  user_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a ApiKey resource.
-        :param pulumi.Input[str] key_value: The public key.  Must be an RSA key in PEM format.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "key_value", key_value)
         pulumi.set(__self__, "user_id", user_id)
@@ -31,9 +25,6 @@ class ApiKeyArgs:
     @property
     @pulumi.getter(name="keyValue")
     def key_value(self) -> pulumi.Input[str]:
-        """
-        The public key.  Must be an RSA key in PEM format.
-        """
         return pulumi.get(self, "key_value")
 
     @key_value.setter
@@ -43,13 +34,6 @@ class ApiKeyArgs:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -68,16 +52,6 @@ class _ApiKeyState:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ApiKey resources.
-        :param pulumi.Input[str] fingerprint: The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-        :param pulumi.Input[str] inactive_status: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] key_value: The public key.  Must be an RSA key in PEM format.
-        :param pulumi.Input[str] state: The API key's current state.
-        :param pulumi.Input[str] time_created: Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if fingerprint is not None:
             pulumi.set(__self__, "fingerprint", fingerprint)
@@ -95,9 +69,6 @@ class _ApiKeyState:
     @property
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-        """
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
@@ -107,9 +78,6 @@ class _ApiKeyState:
     @property
     @pulumi.getter(name="inactiveStatus")
     def inactive_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
         return pulumi.get(self, "inactive_status")
 
     @inactive_status.setter
@@ -119,9 +87,6 @@ class _ApiKeyState:
     @property
     @pulumi.getter(name="keyValue")
     def key_value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public key.  Must be an RSA key in PEM format.
-        """
         return pulumi.get(self, "key_value")
 
     @key_value.setter
@@ -131,9 +96,6 @@ class _ApiKeyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The API key's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -143,9 +105,6 @@ class _ApiKeyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -155,13 +114,6 @@ class _ApiKeyState:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -178,48 +130,9 @@ class ApiKey(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity service.
-
-        Uploads an API signing key for the specified user.
-
-        Every user has permission to use this operation to upload a key for *their own user ID*. An
-        administrator in your organization does not need to write a policy to give users this ability.
-        To compare, administrators who have permission to the tenancy can use this operation to upload a
-        key for any user, including themselves.
-
-        **Important:** Even though you have permission to upload an API key, you might not yet
-        have permission to do much else. If you try calling an operation unrelated to your own credential
-        management (e.g., `ListUsers`, `LaunchInstance`) and receive an "unauthorized" error,
-        check with an administrator to confirm which IAM Service group(s) you're in and what access
-        you have. Also confirm you're working in the correct compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_api_key = oci.identity.ApiKey("testApiKey",
-            key_value=var["api_key_key_value"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        ApiKeys can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
-        ```
-
+        Create a ApiKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] key_value: The public key.  Must be an RSA key in PEM format.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -228,40 +141,7 @@ class ApiKey(pulumi.CustomResource):
                  args: ApiKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity service.
-
-        Uploads an API signing key for the specified user.
-
-        Every user has permission to use this operation to upload a key for *their own user ID*. An
-        administrator in your organization does not need to write a policy to give users this ability.
-        To compare, administrators who have permission to the tenancy can use this operation to upload a
-        key for any user, including themselves.
-
-        **Important:** Even though you have permission to upload an API key, you might not yet
-        have permission to do much else. If you try calling an operation unrelated to your own credential
-        management (e.g., `ListUsers`, `LaunchInstance`) and receive an "unauthorized" error,
-        check with an administrator to confirm which IAM Service group(s) you're in and what access
-        you have. Also confirm you're working in the correct compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_api_key = oci.identity.ApiKey("testApiKey",
-            key_value=var["api_key_key_value"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        ApiKeys can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
-        ```
-
+        Create a ApiKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ApiKeyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -321,16 +201,6 @@ class ApiKey(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] fingerprint: The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-        :param pulumi.Input[str] inactive_status: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] key_value: The public key.  Must be an RSA key in PEM format.
-        :param pulumi.Input[str] state: The API key's current state.
-        :param pulumi.Input[str] time_created: Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -346,53 +216,31 @@ class ApiKey(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def fingerprint(self) -> pulumi.Output[str]:
-        """
-        The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-        """
+    def fingerprint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fingerprint")
 
     @property
     @pulumi.getter(name="inactiveStatus")
-    def inactive_status(self) -> pulumi.Output[str]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "inactive_status")
 
     @property
     @pulumi.getter(name="keyValue")
     def key_value(self) -> pulumi.Output[str]:
-        """
-        The public key.  Must be an RSA key in PEM format.
-        """
         return pulumi.get(self, "key_value")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The API key's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 

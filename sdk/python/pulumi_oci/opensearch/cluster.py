@@ -43,37 +43,6 @@ class ClusterArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Cluster resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
-        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
-        :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
-        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
-        :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
-        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
-        :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
-        :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
-        :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
-        :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
-        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
-        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_node_count", data_node_count)
@@ -114,9 +83,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment to create the cluster in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -126,9 +92,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="dataNodeCount")
     def data_node_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of data nodes to configure for the cluster.
-        """
         return pulumi.get(self, "data_node_count")
 
     @data_node_count.setter
@@ -138,9 +101,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="dataNodeHostMemoryGb")
     def data_node_host_memory_gb(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_memory_gb")
 
     @data_node_host_memory_gb.setter
@@ -150,9 +110,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="dataNodeHostOcpuCount")
     def data_node_host_ocpu_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_ocpu_count")
 
     @data_node_host_ocpu_count.setter
@@ -162,9 +119,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="dataNodeHostType")
     def data_node_host_type(self) -> pulumi.Input[str]:
-        """
-        TThe instance type for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_type")
 
     @data_node_host_type.setter
@@ -174,9 +128,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="dataNodeStorageGb")
     def data_node_storage_gb(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_storage_gb")
 
     @data_node_storage_gb.setter
@@ -186,9 +137,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the cluster. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -198,9 +146,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="masterNodeCount")
     def master_node_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of master nodes to configure for the cluster.
-        """
         return pulumi.get(self, "master_node_count")
 
     @master_node_count.setter
@@ -210,9 +155,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="masterNodeHostMemoryGb")
     def master_node_host_memory_gb(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_memory_gb")
 
     @master_node_host_memory_gb.setter
@@ -222,9 +164,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="masterNodeHostOcpuCount")
     def master_node_host_ocpu_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluser's master nodes.
-        """
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @master_node_host_ocpu_count.setter
@@ -234,9 +173,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="masterNodeHostType")
     def master_node_host_type(self) -> pulumi.Input[str]:
-        """
-        The instance type for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_type")
 
     @master_node_host_type.setter
@@ -246,9 +182,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="opendashboardNodeCount")
     def opendashboard_node_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
-        """
         return pulumi.get(self, "opendashboard_node_count")
 
     @opendashboard_node_count.setter
@@ -258,9 +191,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
     def opendashboard_node_host_memory_gb(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        """
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
     @opendashboard_node_host_memory_gb.setter
@@ -270,9 +200,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
     def opendashboard_node_host_ocpu_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
-        """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 
     @opendashboard_node_host_ocpu_count.setter
@@ -282,9 +209,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The version of the software the cluster is running.
-        """
         return pulumi.get(self, "software_version")
 
     @software_version.setter
@@ -294,9 +218,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="subnetCompartmentId")
     def subnet_compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID for the compartment where the cluster's subnet is located.
-        """
         return pulumi.get(self, "subnet_compartment_id")
 
     @subnet_compartment_id.setter
@@ -306,9 +227,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the cluster's subnet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -318,9 +236,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="vcnCompartmentId")
     def vcn_compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID for the compartment where the cluster's VCN is located.
-        """
         return pulumi.get(self, "vcn_compartment_id")
 
     @vcn_compartment_id.setter
@@ -330,13 +245,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the cluster's VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -346,9 +254,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="dataNodeHostBareMetalShape")
     def data_node_host_bare_metal_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The bare metal shape for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_bare_metal_shape")
 
     @data_node_host_bare_metal_shape.setter
@@ -358,9 +263,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -370,9 +272,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -382,9 +281,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="masterNodeHostBareMetalShape")
     def master_node_host_bare_metal_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The bare metal shape for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_bare_metal_shape")
 
     @master_node_host_bare_metal_shape.setter
@@ -394,9 +290,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the master user that are used to manage security config
-        """
         return pulumi.get(self, "security_master_user_name")
 
     @security_master_user_name.setter
@@ -406,9 +299,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="securityMasterUserPasswordHash")
     def security_master_user_password_hash(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The password hash of the master user that are used to manage security config
-        """
         return pulumi.get(self, "security_master_user_password_hash")
 
     @security_master_user_password_hash.setter
@@ -418,9 +308,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="securityMode")
     def security_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The security mode of the cluster.
-        """
         return pulumi.get(self, "security_mode")
 
     @security_mode.setter
@@ -430,9 +317,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -484,49 +368,6 @@ class _ClusterState:
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Cluster resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
-        :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
-        :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
-        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
-        :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
-        :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
-        :param pulumi.Input[str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
-        :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
-        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
-        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
-        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
-        :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
-        :param pulumi.Input[str] state: The current state of the cluster.
-        :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
-        :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The amount of time in milliseconds since the cluster was created.
-        :param pulumi.Input[str] time_deleted: The amount of time in milliseconds since the cluster was updated.
-        :param pulumi.Input[str] time_updated: The amount of time in milliseconds since the cluster was updated.
-        :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
-        :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
-        :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if availability_domains is not None:
             pulumi.set(__self__, "availability_domains", availability_domains)
@@ -610,9 +451,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="availabilityDomains")
     def availability_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The availability domains to distribute the cluser nodes across.
-        """
         return pulumi.get(self, "availability_domains")
 
     @availability_domains.setter
@@ -622,9 +460,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment to create the cluster in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -634,9 +469,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="dataNodeCount")
     def data_node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of data nodes to configure for the cluster.
-        """
         return pulumi.get(self, "data_node_count")
 
     @data_node_count.setter
@@ -646,9 +478,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="dataNodeHostBareMetalShape")
     def data_node_host_bare_metal_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The bare metal shape for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_bare_metal_shape")
 
     @data_node_host_bare_metal_shape.setter
@@ -658,9 +487,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="dataNodeHostMemoryGb")
     def data_node_host_memory_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_memory_gb")
 
     @data_node_host_memory_gb.setter
@@ -670,9 +496,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="dataNodeHostOcpuCount")
     def data_node_host_ocpu_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_ocpu_count")
 
     @data_node_host_ocpu_count.setter
@@ -682,9 +505,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="dataNodeHostType")
     def data_node_host_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        TThe instance type for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_type")
 
     @data_node_host_type.setter
@@ -694,9 +514,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="dataNodeStorageGb")
     def data_node_storage_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_storage_gb")
 
     @data_node_storage_gb.setter
@@ -706,9 +523,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -718,9 +532,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the cluster. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -730,9 +541,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
         return pulumi.get(self, "fqdn")
 
     @fqdn.setter
@@ -742,9 +550,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -754,9 +559,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state of the cluster.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -766,9 +568,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="masterNodeCount")
     def master_node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of master nodes to configure for the cluster.
-        """
         return pulumi.get(self, "master_node_count")
 
     @master_node_count.setter
@@ -778,9 +577,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="masterNodeHostBareMetalShape")
     def master_node_host_bare_metal_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The bare metal shape for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_bare_metal_shape")
 
     @master_node_host_bare_metal_shape.setter
@@ -790,9 +586,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="masterNodeHostMemoryGb")
     def master_node_host_memory_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_memory_gb")
 
     @master_node_host_memory_gb.setter
@@ -802,9 +595,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="masterNodeHostOcpuCount")
     def master_node_host_ocpu_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluser's master nodes.
-        """
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @master_node_host_ocpu_count.setter
@@ -814,9 +604,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="masterNodeHostType")
     def master_node_host_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The instance type for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_type")
 
     @master_node_host_type.setter
@@ -826,9 +613,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="opendashboardFqdn")
     def opendashboard_fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        """
         return pulumi.get(self, "opendashboard_fqdn")
 
     @opendashboard_fqdn.setter
@@ -838,9 +622,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="opendashboardNodeCount")
     def opendashboard_node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
-        """
         return pulumi.get(self, "opendashboard_node_count")
 
     @opendashboard_node_count.setter
@@ -850,9 +631,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
     def opendashboard_node_host_memory_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        """
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
     @opendashboard_node_host_memory_gb.setter
@@ -862,9 +640,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
     def opendashboard_node_host_ocpu_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
-        """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 
     @opendashboard_node_host_ocpu_count.setter
@@ -874,9 +649,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
     def opendashboard_private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address for the cluster's OpenSearch Dashboard.
-        """
         return pulumi.get(self, "opendashboard_private_ip")
 
     @opendashboard_private_ip.setter
@@ -886,9 +658,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="opensearchFqdn")
     def opensearch_fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
         return pulumi.get(self, "opensearch_fqdn")
 
     @opensearch_fqdn.setter
@@ -898,9 +667,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="opensearchPrivateIp")
     def opensearch_private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The cluster's private IP address.
-        """
         return pulumi.get(self, "opensearch_private_ip")
 
     @opensearch_private_ip.setter
@@ -910,9 +676,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the master user that are used to manage security config
-        """
         return pulumi.get(self, "security_master_user_name")
 
     @security_master_user_name.setter
@@ -922,9 +685,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="securityMasterUserPasswordHash")
     def security_master_user_password_hash(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The password hash of the master user that are used to manage security config
-        """
         return pulumi.get(self, "security_master_user_password_hash")
 
     @security_master_user_password_hash.setter
@@ -934,9 +694,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="securityMode")
     def security_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The security mode of the cluster.
-        """
         return pulumi.get(self, "security_mode")
 
     @security_mode.setter
@@ -946,9 +703,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of the software the cluster is running.
-        """
         return pulumi.get(self, "software_version")
 
     @software_version.setter
@@ -958,9 +712,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the cluster.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -970,9 +721,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="subnetCompartmentId")
     def subnet_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID for the compartment where the cluster's subnet is located.
-        """
         return pulumi.get(self, "subnet_compartment_id")
 
     @subnet_compartment_id.setter
@@ -982,9 +730,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the cluster's subnet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -994,9 +739,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -1006,9 +748,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The amount of time in milliseconds since the cluster was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -1018,9 +757,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="timeDeleted")
     def time_deleted(self) -> Optional[pulumi.Input[str]]:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
         return pulumi.get(self, "time_deleted")
 
     @time_deleted.setter
@@ -1030,9 +766,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -1042,9 +775,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="totalStorageGb")
     def total_storage_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        The size in GB of the cluster's total storage.
-        """
         return pulumi.get(self, "total_storage_gb")
 
     @total_storage_gb.setter
@@ -1054,9 +784,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="vcnCompartmentId")
     def vcn_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID for the compartment where the cluster's VCN is located.
-        """
         return pulumi.get(self, "vcn_compartment_id")
 
     @vcn_compartment_id.setter
@@ -1066,13 +793,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the cluster's VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -1114,103 +834,9 @@ class Cluster(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-
-        Creates a new OpensearchCluster.
-
-        ## Prerequisites
-
-        The below policies must be created in compartment before creating OpensearchCluster
-
-        ##### {Compartment-Name} - Name of  your compartment
-        ```python
-        import pulumi
-        ```
-
-        For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-        Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_opensearch_cluster = oci.opensearch.Cluster("testOpensearchCluster",
-            compartment_id=var["compartment_id"],
-            data_node_count=var["opensearch_cluster_data_node_count"],
-            data_node_host_memory_gb=var["opensearch_cluster_data_node_host_memory_gb"],
-            data_node_host_ocpu_count=var["opensearch_cluster_data_node_host_ocpu_count"],
-            data_node_host_type=var["opensearch_cluster_data_node_host_type"],
-            data_node_storage_gb=var["opensearch_cluster_data_node_storage_gb"],
-            display_name=var["opensearch_cluster_display_name"],
-            master_node_count=var["opensearch_cluster_master_node_count"],
-            master_node_host_memory_gb=var["opensearch_cluster_master_node_host_memory_gb"],
-            master_node_host_ocpu_count=var["opensearch_cluster_master_node_host_ocpu_count"],
-            master_node_host_type=var["opensearch_cluster_master_node_host_type"],
-            opendashboard_node_count=var["opensearch_cluster_opendashboard_node_count"],
-            opendashboard_node_host_memory_gb=var["opensearch_cluster_opendashboard_node_host_memory_gb"],
-            opendashboard_node_host_ocpu_count=var["opensearch_cluster_opendashboard_node_host_ocpu_count"],
-            software_version=var["opensearch_cluster_software_version"],
-            subnet_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            data_node_host_bare_metal_shape=var["opensearch_cluster_data_node_host_bare_metal_shape"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            master_node_host_bare_metal_shape=var["opensearch_cluster_master_node_host_bare_metal_shape"],
-            security_master_user_name=oci_identity_user["test_user"]["name"],
-            security_master_user_password_hash=var["opensearch_cluster_security_master_user_password_hash"],
-            security_mode=var["opensearch_cluster_security_mode"],
-            system_tags=var["opensearch_cluster_system_tags"])
-        ```
-
-        ## Import
-
-        OpensearchClusters can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
-        ```
-
+        Create a Cluster resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
-        :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
-        :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
-        :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
-        :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
-        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
-        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
-        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
-        :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
-        :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
-        :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
-        :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1219,70 +845,7 @@ class Cluster(pulumi.CustomResource):
                  args: ClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-
-        Creates a new OpensearchCluster.
-
-        ## Prerequisites
-
-        The below policies must be created in compartment before creating OpensearchCluster
-
-        ##### {Compartment-Name} - Name of  your compartment
-        ```python
-        import pulumi
-        ```
-
-        For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-        Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_opensearch_cluster = oci.opensearch.Cluster("testOpensearchCluster",
-            compartment_id=var["compartment_id"],
-            data_node_count=var["opensearch_cluster_data_node_count"],
-            data_node_host_memory_gb=var["opensearch_cluster_data_node_host_memory_gb"],
-            data_node_host_ocpu_count=var["opensearch_cluster_data_node_host_ocpu_count"],
-            data_node_host_type=var["opensearch_cluster_data_node_host_type"],
-            data_node_storage_gb=var["opensearch_cluster_data_node_storage_gb"],
-            display_name=var["opensearch_cluster_display_name"],
-            master_node_count=var["opensearch_cluster_master_node_count"],
-            master_node_host_memory_gb=var["opensearch_cluster_master_node_host_memory_gb"],
-            master_node_host_ocpu_count=var["opensearch_cluster_master_node_host_ocpu_count"],
-            master_node_host_type=var["opensearch_cluster_master_node_host_type"],
-            opendashboard_node_count=var["opensearch_cluster_opendashboard_node_count"],
-            opendashboard_node_host_memory_gb=var["opensearch_cluster_opendashboard_node_host_memory_gb"],
-            opendashboard_node_host_ocpu_count=var["opensearch_cluster_opendashboard_node_host_ocpu_count"],
-            software_version=var["opensearch_cluster_software_version"],
-            subnet_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            data_node_host_bare_metal_shape=var["opensearch_cluster_data_node_host_bare_metal_shape"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            master_node_host_bare_metal_shape=var["opensearch_cluster_master_node_host_bare_metal_shape"],
-            security_master_user_name=oci_identity_user["test_user"]["name"],
-            security_master_user_password_hash=var["opensearch_cluster_security_master_user_password_hash"],
-            security_mode=var["opensearch_cluster_security_mode"],
-            system_tags=var["opensearch_cluster_system_tags"])
-        ```
-
-        ## Import
-
-        OpensearchClusters can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
-        ```
-
+        Create a Cluster resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ClusterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1469,49 +1032,6 @@ class Cluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
-        :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
-        :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
-        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
-        :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
-        :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
-        :param pulumi.Input[str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
-        :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
-        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
-        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
-        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
-        :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
-        :param pulumi.Input[str] state: The current state of the cluster.
-        :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
-        :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The amount of time in milliseconds since the cluster was created.
-        :param pulumi.Input[str] time_deleted: The amount of time in milliseconds since the cluster was updated.
-        :param pulumi.Input[str] time_updated: The amount of time in milliseconds since the cluster was updated.
-        :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
-        :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
-        :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1560,317 +1080,196 @@ class Cluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomains")
-    def availability_domains(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The availability domains to distribute the cluser nodes across.
-        """
+    def availability_domains(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "availability_domains")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment to create the cluster in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataNodeCount")
     def data_node_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of data nodes to configure for the cluster.
-        """
         return pulumi.get(self, "data_node_count")
 
     @property
     @pulumi.getter(name="dataNodeHostBareMetalShape")
-    def data_node_host_bare_metal_shape(self) -> pulumi.Output[str]:
-        """
-        The bare metal shape for the cluster's data nodes.
-        """
+    def data_node_host_bare_metal_shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "data_node_host_bare_metal_shape")
 
     @property
     @pulumi.getter(name="dataNodeHostMemoryGb")
     def data_node_host_memory_gb(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="dataNodeHostOcpuCount")
     def data_node_host_ocpu_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="dataNodeHostType")
     def data_node_host_type(self) -> pulumi.Output[str]:
-        """
-        TThe instance type for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_host_type")
 
     @property
     @pulumi.getter(name="dataNodeStorageGb")
     def data_node_storage_gb(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        """
         return pulumi.get(self, "data_node_storage_gb")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the cluster. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> pulumi.Output[str]:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
+    def fqdn(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state of the cluster.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="masterNodeCount")
     def master_node_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of master nodes to configure for the cluster.
-        """
         return pulumi.get(self, "master_node_count")
 
     @property
     @pulumi.getter(name="masterNodeHostBareMetalShape")
-    def master_node_host_bare_metal_shape(self) -> pulumi.Output[str]:
-        """
-        The bare metal shape for the cluster's master nodes.
-        """
+    def master_node_host_bare_metal_shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "master_node_host_bare_metal_shape")
 
     @property
     @pulumi.getter(name="masterNodeHostMemoryGb")
     def master_node_host_memory_gb(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="masterNodeHostOcpuCount")
     def master_node_host_ocpu_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluser's master nodes.
-        """
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="masterNodeHostType")
     def master_node_host_type(self) -> pulumi.Output[str]:
-        """
-        The instance type for the cluster's master nodes.
-        """
         return pulumi.get(self, "master_node_host_type")
 
     @property
     @pulumi.getter(name="opendashboardFqdn")
-    def opendashboard_fqdn(self) -> pulumi.Output[str]:
-        """
-        The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        """
+    def opendashboard_fqdn(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "opendashboard_fqdn")
 
     @property
     @pulumi.getter(name="opendashboardNodeCount")
     def opendashboard_node_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
-        """
         return pulumi.get(self, "opendashboard_node_count")
 
     @property
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
     def opendashboard_node_host_memory_gb(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        """
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
     def opendashboard_node_host_ocpu_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
-        """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
-    def opendashboard_private_ip(self) -> pulumi.Output[str]:
-        """
-        The private IP address for the cluster's OpenSearch Dashboard.
-        """
+    def opendashboard_private_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "opendashboard_private_ip")
 
     @property
     @pulumi.getter(name="opensearchFqdn")
-    def opensearch_fqdn(self) -> pulumi.Output[str]:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
+    def opensearch_fqdn(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "opensearch_fqdn")
 
     @property
     @pulumi.getter(name="opensearchPrivateIp")
-    def opensearch_private_ip(self) -> pulumi.Output[str]:
-        """
-        The cluster's private IP address.
-        """
+    def opensearch_private_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "opensearch_private_ip")
 
     @property
     @pulumi.getter(name="securityMasterUserName")
-    def security_master_user_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the master user that are used to manage security config
-        """
+    def security_master_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "security_master_user_name")
 
     @property
     @pulumi.getter(name="securityMasterUserPasswordHash")
-    def security_master_user_password_hash(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The password hash of the master user that are used to manage security config
-        """
+    def security_master_user_password_hash(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "security_master_user_password_hash")
 
     @property
     @pulumi.getter(name="securityMode")
-    def security_mode(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The security mode of the cluster.
-        """
+    def security_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "security_mode")
 
     @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The version of the software the cluster is running.
-        """
         return pulumi.get(self, "software_version")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the cluster.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetCompartmentId")
     def subnet_compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID for the compartment where the cluster's subnet is located.
-        """
         return pulumi.get(self, "subnet_compartment_id")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the cluster's subnet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The amount of time in milliseconds since the cluster was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeDeleted")
-    def time_deleted(self) -> pulumi.Output[str]:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
+    def time_deleted(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_deleted")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalStorageGb")
-    def total_storage_gb(self) -> pulumi.Output[int]:
-        """
-        The size in GB of the cluster's total storage.
-        """
+    def total_storage_gb(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_storage_gb")
 
     @property
     @pulumi.getter(name="vcnCompartmentId")
     def vcn_compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID for the compartment where the cluster's VCN is located.
-        """
         return pulumi.get(self, "vcn_compartment_id")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the cluster's VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 

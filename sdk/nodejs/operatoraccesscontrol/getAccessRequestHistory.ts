@@ -48,11 +48,11 @@ export interface GetAccessRequestHistoryResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * contains AccessRequestHistorySummary
      */
-    readonly items: outputs.OperatorAccessControl.GetAccessRequestHistoryItem[];
+    readonly items?: outputs.OperatorAccessControl.GetAccessRequestHistoryItem[];
 }
 /**
  * This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.

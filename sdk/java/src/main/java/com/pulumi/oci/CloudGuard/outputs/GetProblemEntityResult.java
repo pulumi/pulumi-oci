@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetProblemEntityItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProblemEntityResult {
@@ -15,12 +17,12 @@ public final class GetProblemEntityResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of problem entities summaries related to a data source.
      * 
      */
-    private List<GetProblemEntityItem> items;
+    private @Nullable List<GetProblemEntityItem> items;
     /**
      * @return Attached problem id
      * 
@@ -32,15 +34,15 @@ public final class GetProblemEntityResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of problem entities summaries related to a data source.
      * 
      */
     public List<GetProblemEntityItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return Attached problem id
@@ -59,8 +61,8 @@ public final class GetProblemEntityResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetProblemEntityItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetProblemEntityItem> items;
         private String problemId;
         public Builder() {}
         public Builder(GetProblemEntityResult defaults) {
@@ -71,13 +73,13 @@ public final class GetProblemEntityResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetProblemEntityItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProblemEntityItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProblemEntityItem... items) {

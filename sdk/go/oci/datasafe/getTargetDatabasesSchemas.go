@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Databases Schemas in Oracle Cloud Infrastructure Data Safe service.
@@ -71,7 +70,7 @@ type GetTargetDatabasesSchemasArgs struct {
 type GetTargetDatabasesSchemasResult struct {
 	Filters []GetTargetDatabasesSchemasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if the schema is oracle supplied.
 	IsOracleMaintained *bool   `pulumi:"isOracleMaintained"`
 	SchemaNameContains *string `pulumi:"schemaNameContains"`
@@ -127,19 +126,13 @@ func (o GetTargetDatabasesSchemasResultOutput) ToGetTargetDatabasesSchemasResult
 	return o
 }
 
-func (o GetTargetDatabasesSchemasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesSchemasResult] {
-	return pulumix.Output[GetTargetDatabasesSchemasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTargetDatabasesSchemasResultOutput) Filters() GetTargetDatabasesSchemasFilterArrayOutput {
 	return o.ApplyT(func(v GetTargetDatabasesSchemasResult) []GetTargetDatabasesSchemasFilter { return v.Filters }).(GetTargetDatabasesSchemasFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTargetDatabasesSchemasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTargetDatabasesSchemasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTargetDatabasesSchemasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesSchemasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the schema is oracle supplied.

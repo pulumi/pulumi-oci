@@ -14,6 +14,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteRequestP
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteRequestPolicy {
@@ -21,42 +22,42 @@ public final class GetDeploymentSpecificationRouteRequestPolicy {
      * @return If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations;
     /**
      * @return Validate the payload body of the incoming API requests on a specific route.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations;
     /**
      * @return Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyCor> cors;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyCor> cors;
     /**
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations;
     /**
      * @return Validate the HTTP headers on the incoming API requests on a specific route.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations;
     /**
      * @return A set of transformations to apply to query parameters that pass through the gateway.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations;
     /**
      * @return Validate the URL query parameters on the incoming API requests on a specific route.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations;
     /**
      * @return Base policy for Response Cache lookup.
      * 
      */
-    private List<GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups;
+    private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups;
 
     private GetDeploymentSpecificationRouteRequestPolicy() {}
     /**
@@ -64,56 +65,56 @@ public final class GetDeploymentSpecificationRouteRequestPolicy {
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations() {
-        return this.authorizations;
+        return this.authorizations == null ? List.of() : this.authorizations;
     }
     /**
      * @return Validate the payload body of the incoming API requests on a specific route.
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations() {
-        return this.bodyValidations;
+        return this.bodyValidations == null ? List.of() : this.bodyValidations;
     }
     /**
      * @return Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyCor> cors() {
-        return this.cors;
+        return this.cors == null ? List.of() : this.cors;
     }
     /**
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations() {
-        return this.headerTransformations;
+        return this.headerTransformations == null ? List.of() : this.headerTransformations;
     }
     /**
      * @return Validate the HTTP headers on the incoming API requests on a specific route.
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations() {
-        return this.headerValidations;
+        return this.headerValidations == null ? List.of() : this.headerValidations;
     }
     /**
      * @return A set of transformations to apply to query parameters that pass through the gateway.
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations() {
-        return this.queryParameterTransformations;
+        return this.queryParameterTransformations == null ? List.of() : this.queryParameterTransformations;
     }
     /**
      * @return Validate the URL query parameters on the incoming API requests on a specific route.
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations() {
-        return this.queryParameterValidations;
+        return this.queryParameterValidations == null ? List.of() : this.queryParameterValidations;
     }
     /**
      * @return Base policy for Response Cache lookup.
      * 
      */
     public List<GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups() {
-        return this.responseCacheLookups;
+        return this.responseCacheLookups == null ? List.of() : this.responseCacheLookups;
     }
 
     public static Builder builder() {
@@ -125,14 +126,14 @@ public final class GetDeploymentSpecificationRouteRequestPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations;
-        private List<GetDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations;
-        private List<GetDeploymentSpecificationRouteRequestPolicyCor> cors;
-        private List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations;
-        private List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations;
-        private List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations;
-        private List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations;
-        private List<GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyCor> cors;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations;
+        private @Nullable List<GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -147,64 +148,64 @@ public final class GetDeploymentSpecificationRouteRequestPolicy {
         }
 
         @CustomType.Setter
-        public Builder authorizations(List<GetDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations) {
-            this.authorizations = Objects.requireNonNull(authorizations);
+        public Builder authorizations(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations) {
+            this.authorizations = authorizations;
             return this;
         }
         public Builder authorizations(GetDeploymentSpecificationRouteRequestPolicyAuthorization... authorizations) {
             return authorizations(List.of(authorizations));
         }
         @CustomType.Setter
-        public Builder bodyValidations(List<GetDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations) {
-            this.bodyValidations = Objects.requireNonNull(bodyValidations);
+        public Builder bodyValidations(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations) {
+            this.bodyValidations = bodyValidations;
             return this;
         }
         public Builder bodyValidations(GetDeploymentSpecificationRouteRequestPolicyBodyValidation... bodyValidations) {
             return bodyValidations(List.of(bodyValidations));
         }
         @CustomType.Setter
-        public Builder cors(List<GetDeploymentSpecificationRouteRequestPolicyCor> cors) {
-            this.cors = Objects.requireNonNull(cors);
+        public Builder cors(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyCor> cors) {
+            this.cors = cors;
             return this;
         }
         public Builder cors(GetDeploymentSpecificationRouteRequestPolicyCor... cors) {
             return cors(List.of(cors));
         }
         @CustomType.Setter
-        public Builder headerTransformations(List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations) {
-            this.headerTransformations = Objects.requireNonNull(headerTransformations);
+        public Builder headerTransformations(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations) {
+            this.headerTransformations = headerTransformations;
             return this;
         }
         public Builder headerTransformations(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformation... headerTransformations) {
             return headerTransformations(List.of(headerTransformations));
         }
         @CustomType.Setter
-        public Builder headerValidations(List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations) {
-            this.headerValidations = Objects.requireNonNull(headerValidations);
+        public Builder headerValidations(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations) {
+            this.headerValidations = headerValidations;
             return this;
         }
         public Builder headerValidations(GetDeploymentSpecificationRouteRequestPolicyHeaderValidation... headerValidations) {
             return headerValidations(List.of(headerValidations));
         }
         @CustomType.Setter
-        public Builder queryParameterTransformations(List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations) {
-            this.queryParameterTransformations = Objects.requireNonNull(queryParameterTransformations);
+        public Builder queryParameterTransformations(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations) {
+            this.queryParameterTransformations = queryParameterTransformations;
             return this;
         }
         public Builder queryParameterTransformations(GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation... queryParameterTransformations) {
             return queryParameterTransformations(List.of(queryParameterTransformations));
         }
         @CustomType.Setter
-        public Builder queryParameterValidations(List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations) {
-            this.queryParameterValidations = Objects.requireNonNull(queryParameterValidations);
+        public Builder queryParameterValidations(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations) {
+            this.queryParameterValidations = queryParameterValidations;
             return this;
         }
         public Builder queryParameterValidations(GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation... queryParameterValidations) {
             return queryParameterValidations(List.of(queryParameterValidations));
         }
         @CustomType.Setter
-        public Builder responseCacheLookups(List<GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups) {
-            this.responseCacheLookups = Objects.requireNonNull(responseCacheLookups);
+        public Builder responseCacheLookups(@Nullable List<GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups) {
+            this.responseCacheLookups = responseCacheLookups;
             return this;
         }
         public Builder responseCacheLookups(GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookup... responseCacheLookups) {

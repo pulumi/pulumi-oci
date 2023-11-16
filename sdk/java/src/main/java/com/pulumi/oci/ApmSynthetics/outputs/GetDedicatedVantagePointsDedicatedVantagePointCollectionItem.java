@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItem {
@@ -18,147 +20,147 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItem 
      * @return The APM domain ID the request is intended for.
      * 
      */
-    private String apmDomainId;
+    private @Nullable String apmDomainId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
-    private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails;
+    private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
-    private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
+    private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
     /**
      * @return A filter to return only the resources that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Name of the region.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return A filter to return only the dedicated vantage points that match a given status.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDedicatedVantagePointsDedicatedVantagePointCollectionItem() {}
     /**
      * @return The APM domain ID the request is intended for.
      * 
      */
-    public String apmDomainId() {
-        return this.apmDomainId;
+    public Optional<String> apmDomainId() {
+        return Optional.ofNullable(this.apmDomainId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
     public List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails() {
-        return this.dvpStackDetails;
+        return this.dvpStackDetails == null ? List.of() : this.dvpStackDetails;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
     public List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap> monitorStatusCountMaps() {
-        return this.monitorStatusCountMaps;
+        return this.monitorStatusCountMaps == null ? List.of() : this.monitorStatusCountMaps;
     }
     /**
      * @return A filter to return only the resources that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Name of the region.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return A filter to return only the dedicated vantage points that match a given status.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -170,18 +172,18 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItem 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String apmDomainId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
-        private String name;
-        private String region;
-        private String status;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String apmDomainId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
+        private @Nullable String name;
+        private @Nullable String region;
+        private @Nullable String status;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDedicatedVantagePointsDedicatedVantagePointCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -200,69 +202,69 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItem 
         }
 
         @CustomType.Setter
-        public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+        public Builder apmDomainId(@Nullable String apmDomainId) {
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dvpStackDetails(List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails) {
-            this.dvpStackDetails = Objects.requireNonNull(dvpStackDetails);
+        public Builder dvpStackDetails(@Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails) {
+            this.dvpStackDetails = dvpStackDetails;
             return this;
         }
         public Builder dvpStackDetails(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail... dvpStackDetails) {
             return dvpStackDetails(List.of(dvpStackDetails));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder monitorStatusCountMaps(List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap> monitorStatusCountMaps) {
-            this.monitorStatusCountMaps = Objects.requireNonNull(monitorStatusCountMaps);
+        public Builder monitorStatusCountMaps(@Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap> monitorStatusCountMaps) {
+            this.monitorStatusCountMaps = monitorStatusCountMaps;
             return this;
         }
         public Builder monitorStatusCountMaps(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap... monitorStatusCountMaps) {
             return monitorStatusCountMaps(List.of(monitorStatusCountMaps));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDedicatedVantagePointsDedicatedVantagePointCollectionItem build() {

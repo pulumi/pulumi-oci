@@ -25,12 +25,12 @@ public final class GetOceInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of oce_instances.
      * 
      */
-    private List<GetOceInstancesOceInstance> oceInstances;
+    private @Nullable List<GetOceInstancesOceInstance> oceInstances;
     /**
      * @return The current state of the instance lifecycle.
      * 
@@ -60,15 +60,15 @@ public final class GetOceInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of oce_instances.
      * 
      */
     public List<GetOceInstancesOceInstance> oceInstances() {
-        return this.oceInstances;
+        return this.oceInstances == null ? List.of() : this.oceInstances;
     }
     /**
      * @return The current state of the instance lifecycle.
@@ -97,8 +97,8 @@ public final class GetOceInstancesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetOceInstancesFilter> filters;
-        private String id;
-        private List<GetOceInstancesOceInstance> oceInstances;
+        private @Nullable String id;
+        private @Nullable List<GetOceInstancesOceInstance> oceInstances;
         private @Nullable String state;
         private @Nullable String tenancyId;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetOceInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder oceInstances(List<GetOceInstancesOceInstance> oceInstances) {
-            this.oceInstances = Objects.requireNonNull(oceInstances);
+        public Builder oceInstances(@Nullable List<GetOceInstancesOceInstance> oceInstances) {
+            this.oceInstances = oceInstances;
             return this;
         }
         public Builder oceInstances(GetOceInstancesOceInstance... oceInstances) {

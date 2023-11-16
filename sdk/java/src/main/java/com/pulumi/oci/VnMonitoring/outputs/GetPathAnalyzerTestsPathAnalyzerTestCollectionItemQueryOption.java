@@ -6,6 +6,8 @@ package com.pulumi.oci.VnMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption {
@@ -13,15 +15,15 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
      */
-    private Boolean isBiDirectionalAnalysis;
+    private @Nullable Boolean isBiDirectionalAnalysis;
 
     private GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption() {}
     /**
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
      */
-    public Boolean isBiDirectionalAnalysis() {
-        return this.isBiDirectionalAnalysis;
+    public Optional<Boolean> isBiDirectionalAnalysis() {
+        return Optional.ofNullable(this.isBiDirectionalAnalysis);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isBiDirectionalAnalysis;
+        private @Nullable Boolean isBiDirectionalAnalysis;
         public Builder() {}
         public Builder(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption
         }
 
         @CustomType.Setter
-        public Builder isBiDirectionalAnalysis(Boolean isBiDirectionalAnalysis) {
-            this.isBiDirectionalAnalysis = Objects.requireNonNull(isBiDirectionalAnalysis);
+        public Builder isBiDirectionalAnalysis(@Nullable Boolean isBiDirectionalAnalysis) {
+            this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
             return this;
         }
         public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption build() {

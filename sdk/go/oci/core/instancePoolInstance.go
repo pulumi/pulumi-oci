@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
@@ -62,16 +61,16 @@ type InstancePoolInstance struct {
 
 	AutoTerminateInstanceOnDelete pulumi.BoolPtrOutput `pulumi:"autoTerminateInstanceOnDelete"`
 	// The availability domain the instance is running in.
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
-	CompartmentId         pulumi.StringOutput  `pulumi:"compartmentId"`
-	DecrementSizeOnDelete pulumi.BoolPtrOutput `pulumi:"decrementSizeOnDelete"`
+	CompartmentId         pulumi.StringPtrOutput `pulumi:"compartmentId"`
+	DecrementSizeOnDelete pulumi.BoolPtrOutput   `pulumi:"decrementSizeOnDelete"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The fault domain the instance is running in.
-	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrOutput `pulumi:"faultDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
-	InstanceConfigurationId pulumi.StringOutput `pulumi:"instanceConfigurationId"`
+	InstanceConfigurationId pulumi.StringPtrOutput `pulumi:"instanceConfigurationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -82,13 +81,13 @@ type InstancePoolInstance struct {
 	// The load balancer backends that are configured for the instance pool instance.
 	LoadBalancerBackends InstancePoolInstanceLoadBalancerBackendArrayOutput `pulumi:"loadBalancerBackends"`
 	// The region that contains the availability domain the instance is running in.
-	Region pulumi.StringOutput `pulumi:"region"`
+	Region pulumi.StringPtrOutput `pulumi:"region"`
 	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewInstancePoolInstance registers a new resource with the given unique name, arguments, and options.
@@ -242,12 +241,6 @@ func (i *InstancePoolInstance) ToInstancePoolInstanceOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceOutput)
 }
 
-func (i *InstancePoolInstance) ToOutput(ctx context.Context) pulumix.Output[*InstancePoolInstance] {
-	return pulumix.Output[*InstancePoolInstance]{
-		OutputState: i.ToInstancePoolInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstancePoolInstanceArrayInput is an input type that accepts InstancePoolInstanceArray and InstancePoolInstanceArrayOutput values.
 // You can construct a concrete instance of `InstancePoolInstanceArrayInput` via:
 //
@@ -271,12 +264,6 @@ func (i InstancePoolInstanceArray) ToInstancePoolInstanceArrayOutput() InstanceP
 
 func (i InstancePoolInstanceArray) ToInstancePoolInstanceArrayOutputWithContext(ctx context.Context) InstancePoolInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceArrayOutput)
-}
-
-func (i InstancePoolInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePoolInstance] {
-	return pulumix.Output[[]*InstancePoolInstance]{
-		OutputState: i.ToInstancePoolInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstancePoolInstanceMapInput is an input type that accepts InstancePoolInstanceMap and InstancePoolInstanceMapOutput values.
@@ -304,12 +291,6 @@ func (i InstancePoolInstanceMap) ToInstancePoolInstanceMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMapOutput)
 }
 
-func (i InstancePoolInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePoolInstance] {
-	return pulumix.Output[map[string]*InstancePoolInstance]{
-		OutputState: i.ToInstancePoolInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstancePoolInstanceOutput struct{ *pulumi.OutputState }
 
 func (InstancePoolInstanceOutput) ElementType() reflect.Type {
@@ -324,24 +305,18 @@ func (o InstancePoolInstanceOutput) ToInstancePoolInstanceOutputWithContext(ctx 
 	return o
 }
 
-func (o InstancePoolInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*InstancePoolInstance] {
-	return pulumix.Output[*InstancePoolInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InstancePoolInstanceOutput) AutoTerminateInstanceOnDelete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstancePoolInstance) pulumi.BoolPtrOutput { return v.AutoTerminateInstanceOnDelete }).(pulumi.BoolPtrOutput)
 }
 
 // The availability domain the instance is running in.
-func (o InstancePoolInstanceOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
-func (o InstancePoolInstanceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o InstancePoolInstanceOutput) DecrementSizeOnDelete() pulumi.BoolPtrOutput {
@@ -349,18 +324,18 @@ func (o InstancePoolInstanceOutput) DecrementSizeOnDelete() pulumi.BoolPtrOutput
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o InstancePoolInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The fault domain the instance is running in.
-func (o InstancePoolInstanceOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
-func (o InstancePoolInstanceOutput) InstanceConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.InstanceConfigurationId }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) InstanceConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.InstanceConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -384,23 +359,23 @@ func (o InstancePoolInstanceOutput) LoadBalancerBackends() InstancePoolInstanceL
 }
 
 // The region that contains the availability domain the instance is running in.
-func (o InstancePoolInstanceOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-func (o InstancePoolInstanceOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-func (o InstancePoolInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o InstancePoolInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o InstancePoolInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type InstancePoolInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -415,12 +390,6 @@ func (o InstancePoolInstanceArrayOutput) ToInstancePoolInstanceArrayOutput() Ins
 
 func (o InstancePoolInstanceArrayOutput) ToInstancePoolInstanceArrayOutputWithContext(ctx context.Context) InstancePoolInstanceArrayOutput {
 	return o
-}
-
-func (o InstancePoolInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePoolInstance] {
-	return pulumix.Output[[]*InstancePoolInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstancePoolInstanceArrayOutput) Index(i pulumi.IntInput) InstancePoolInstanceOutput {
@@ -441,12 +410,6 @@ func (o InstancePoolInstanceMapOutput) ToInstancePoolInstanceMapOutput() Instanc
 
 func (o InstancePoolInstanceMapOutput) ToInstancePoolInstanceMapOutputWithContext(ctx context.Context) InstancePoolInstanceMapOutput {
 	return o
-}
-
-func (o InstancePoolInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePoolInstance] {
-	return pulumix.Output[map[string]*InstancePoolInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstancePoolInstanceMapOutput) MapIndex(k pulumi.StringInput) InstancePoolInstanceOutput {

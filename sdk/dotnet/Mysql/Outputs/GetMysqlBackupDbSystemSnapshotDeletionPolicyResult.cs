@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
         /// </summary>
-        public readonly string AutomaticBackupRetention;
+        public readonly string? AutomaticBackupRetention;
         /// <summary>
         /// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         /// </summary>
-        public readonly string FinalBackup;
+        public readonly string? FinalBackup;
         /// <summary>
         /// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         /// </summary>
-        public readonly bool IsDeleteProtected;
+        public readonly bool? IsDeleteProtected;
 
         [OutputConstructor]
         private GetMysqlBackupDbSystemSnapshotDeletionPolicyResult(
-            string automaticBackupRetention,
+            string? automaticBackupRetention,
 
-            string finalBackup,
+            string? finalBackup,
 
-            bool isDeleteProtected)
+            bool? isDeleteProtected)
         {
             AutomaticBackupRetention = automaticBackupRetention;
             FinalBackup = finalBackup;

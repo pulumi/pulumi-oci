@@ -16,65 +16,65 @@ namespace Pulumi.Oci.Audit.Outputs
         /// <summary>
         /// The type of authentication used.  Example: `natv`
         /// </summary>
-        public readonly string AuthType;
+        public readonly string? AuthType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a  request on behalf of the prinicpal.
         /// </summary>
-        public readonly string CallerId;
+        public readonly string? CallerId;
         /// <summary>
         /// The name of the user or service. This value is the friendly name associated with `callerId`.
         /// </summary>
-        public readonly string CallerName;
+        public readonly string? CallerName;
         /// <summary>
         /// This value identifies any Console session associated with this request.
         /// </summary>
-        public readonly string ConsoleSessionId;
+        public readonly string? ConsoleSessionId;
         /// <summary>
         /// The credential ID of the user. This value is extracted from the HTTP 'Authorization' request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
         /// </summary>
-        public readonly string Credentials;
+        public readonly string? Credentials;
         /// <summary>
         /// The IP address of the source of the request.  Example: `172.24.80.88`
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
         /// </summary>
-        public readonly string PrincipalId;
+        public readonly string? PrincipalId;
         /// <summary>
         /// The name of the user or service. This value is the friendly name associated with `principalId`.  Example: `ExampleName`
         /// </summary>
-        public readonly string PrincipalName;
+        public readonly string? PrincipalName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
         /// </summary>
-        public readonly string TenantId;
+        public readonly string? TenantId;
         /// <summary>
         /// The user agent of the client that made the request.  Example: `Jersey/2.23 (HttpUrlConnection 1.8.0_212)`
         /// </summary>
-        public readonly string UserAgent;
+        public readonly string? UserAgent;
 
         [OutputConstructor]
         private GetEventsAuditEventDataIdentityResult(
-            string authType,
+            string? authType,
 
-            string callerId,
+            string? callerId,
 
-            string callerName,
+            string? callerName,
 
-            string consoleSessionId,
+            string? consoleSessionId,
 
-            string credentials,
+            string? credentials,
 
-            string ipAddress,
+            string? ipAddress,
 
-            string principalId,
+            string? principalId,
 
-            string principalName,
+            string? principalName,
 
-            string tenantId,
+            string? tenantId,
 
-            string userAgent)
+            string? userAgent)
         {
             AuthType = authType;
             CallerId = callerId;

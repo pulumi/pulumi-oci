@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUserItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentAdminUserResult {
@@ -15,75 +17,75 @@ public final class GetFusionEnvironmentAdminUserResult {
      * @return Admin users email address
      * 
      */
-    private String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return Admin users first name
      * 
      */
-    private String firstName;
+    private @Nullable String firstName;
     private String fusionEnvironmentId;
-    private String id;
+    private @Nullable String id;
     /**
      * @return A page of AdminUserSummary objects.
      * 
      */
-    private List<GetFusionEnvironmentAdminUserItem> items;
+    private @Nullable List<GetFusionEnvironmentAdminUserItem> items;
     /**
      * @return Admin users last name
      * 
      */
-    private String lastName;
-    private String password;
+    private @Nullable String lastName;
+    private @Nullable String password;
     /**
      * @return Admin username
      * 
      */
-    private String username;
+    private @Nullable String username;
 
     private GetFusionEnvironmentAdminUserResult() {}
     /**
      * @return Admin users email address
      * 
      */
-    public String emailAddress() {
-        return this.emailAddress;
+    public Optional<String> emailAddress() {
+        return Optional.ofNullable(this.emailAddress);
     }
     /**
      * @return Admin users first name
      * 
      */
-    public String firstName() {
-        return this.firstName;
+    public Optional<String> firstName() {
+        return Optional.ofNullable(this.firstName);
     }
     public String fusionEnvironmentId() {
         return this.fusionEnvironmentId;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A page of AdminUserSummary objects.
      * 
      */
     public List<GetFusionEnvironmentAdminUserItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return Admin users last name
      * 
      */
-    public String lastName() {
-        return this.lastName;
+    public Optional<String> lastName() {
+        return Optional.ofNullable(this.lastName);
     }
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return Admin username
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -95,14 +97,14 @@ public final class GetFusionEnvironmentAdminUserResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String emailAddress;
-        private String firstName;
+        private @Nullable String emailAddress;
+        private @Nullable String firstName;
         private String fusionEnvironmentId;
-        private String id;
-        private List<GetFusionEnvironmentAdminUserItem> items;
-        private String lastName;
-        private String password;
-        private String username;
+        private @Nullable String id;
+        private @Nullable List<GetFusionEnvironmentAdminUserItem> items;
+        private @Nullable String lastName;
+        private @Nullable String password;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetFusionEnvironmentAdminUserResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,13 +119,13 @@ public final class GetFusionEnvironmentAdminUserResult {
         }
 
         @CustomType.Setter
-        public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+        public Builder emailAddress(@Nullable String emailAddress) {
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+        public Builder firstName(@Nullable String firstName) {
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
@@ -132,31 +134,31 @@ public final class GetFusionEnvironmentAdminUserResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentAdminUserItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentAdminUserItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentAdminUserItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+        public Builder lastName(@Nullable String lastName) {
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetFusionEnvironmentAdminUserResult build() {

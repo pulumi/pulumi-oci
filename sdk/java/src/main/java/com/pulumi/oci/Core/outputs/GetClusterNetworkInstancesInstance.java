@@ -8,6 +8,8 @@ import com.pulumi.oci.Core.outputs.GetClusterNetworkInstancesInstanceLoadBalance
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworkInstancesInstance {
@@ -15,135 +17,135 @@ public final class GetClusterNetworkInstancesInstance {
      * @return The availability domain the instance is running in.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The fault domain the instance is running in.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the instance confgiuration used to create the instance.
      * 
      */
-    private String instanceConfigurationId;
+    private @Nullable String instanceConfigurationId;
     /**
      * @return The load balancer backends that are configured for the instance pool instance.
      * 
      */
-    private List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends;
+    private @Nullable List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends;
     /**
      * @return The region that contains the availability domain the instance is running in.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The current state of the instance pool instance.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetClusterNetworkInstancesInstance() {}
     /**
      * @return The availability domain the instance is running in.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The fault domain the instance is running in.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return The OCID of the instance.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the instance confgiuration used to create the instance.
      * 
      */
-    public String instanceConfigurationId() {
-        return this.instanceConfigurationId;
+    public Optional<String> instanceConfigurationId() {
+        return Optional.ofNullable(this.instanceConfigurationId);
     }
     /**
      * @return The load balancer backends that are configured for the instance pool instance.
      * 
      */
     public List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends() {
-        return this.loadBalancerBackends;
+        return this.loadBalancerBackends == null ? List.of() : this.loadBalancerBackends;
     }
     /**
      * @return The region that contains the availability domain the instance is running in.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The current state of the instance pool instance.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -155,17 +157,17 @@ public final class GetClusterNetworkInstancesInstance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private String displayName;
-        private String faultDomain;
-        private String id;
-        private String instanceConfigurationId;
-        private List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends;
-        private String region;
-        private String shape;
-        private String state;
-        private String timeCreated;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable String displayName;
+        private @Nullable String faultDomain;
+        private @Nullable String id;
+        private @Nullable String instanceConfigurationId;
+        private @Nullable List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends;
+        private @Nullable String region;
+        private @Nullable String shape;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetClusterNetworkInstancesInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -183,61 +185,61 @@ public final class GetClusterNetworkInstancesInstance {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+        public Builder instanceConfigurationId(@Nullable String instanceConfigurationId) {
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerBackends(List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends) {
-            this.loadBalancerBackends = Objects.requireNonNull(loadBalancerBackends);
+        public Builder loadBalancerBackends(@Nullable List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends) {
+            this.loadBalancerBackends = loadBalancerBackends;
             return this;
         }
         public Builder loadBalancerBackends(GetClusterNetworkInstancesInstanceLoadBalancerBackend... loadBalancerBackends) {
             return loadBalancerBackends(List.of(loadBalancerBackends));
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetClusterNetworkInstancesInstance build() {

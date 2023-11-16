@@ -6,18 +6,20 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVcnByoipv6cidrDetail {
-    private String byoipv6rangeId;
-    private String ipv6cidrBlock;
+    private @Nullable String byoipv6rangeId;
+    private @Nullable String ipv6cidrBlock;
 
     private GetVcnByoipv6cidrDetail() {}
-    public String byoipv6rangeId() {
-        return this.byoipv6rangeId;
+    public Optional<String> byoipv6rangeId() {
+        return Optional.ofNullable(this.byoipv6rangeId);
     }
-    public String ipv6cidrBlock() {
-        return this.ipv6cidrBlock;
+    public Optional<String> ipv6cidrBlock() {
+        return Optional.ofNullable(this.ipv6cidrBlock);
     }
 
     public static Builder builder() {
@@ -29,8 +31,8 @@ public final class GetVcnByoipv6cidrDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String byoipv6rangeId;
-        private String ipv6cidrBlock;
+        private @Nullable String byoipv6rangeId;
+        private @Nullable String ipv6cidrBlock;
         public Builder() {}
         public Builder(GetVcnByoipv6cidrDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -39,13 +41,13 @@ public final class GetVcnByoipv6cidrDetail {
         }
 
         @CustomType.Setter
-        public Builder byoipv6rangeId(String byoipv6rangeId) {
-            this.byoipv6rangeId = Objects.requireNonNull(byoipv6rangeId);
+        public Builder byoipv6rangeId(@Nullable String byoipv6rangeId) {
+            this.byoipv6rangeId = byoipv6rangeId;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6cidrBlock(String ipv6cidrBlock) {
-            this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
+        public Builder ipv6cidrBlock(@Nullable String ipv6cidrBlock) {
+            this.ipv6cidrBlock = ipv6cidrBlock;
             return this;
         }
         public GetVcnByoipv6cidrDetail build() {

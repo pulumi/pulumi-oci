@@ -55,13 +55,13 @@ export interface GetNetworkFirewallPolicyDecryptionProfilesResult {
     /**
      * The list of decryption_profile_summary_collection.
      */
-    readonly decryptionProfileSummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection[];
+    readonly decryptionProfileSummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection[];
     readonly displayName?: string;
     readonly filters?: outputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionProfilesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkFirewallPolicyId: string;
 }
 /**

@@ -55,13 +55,13 @@ export interface GetNetworkFirewallPolicyAddressListsResult {
     /**
      * The list of address_list_summary_collection.
      */
-    readonly addressListSummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection[];
+    readonly addressListSummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection[];
     readonly displayName?: string;
     readonly filters?: outputs.NetworkFirewall.GetNetworkFirewallPolicyAddressListsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkFirewallPolicyId: string;
 }
 /**

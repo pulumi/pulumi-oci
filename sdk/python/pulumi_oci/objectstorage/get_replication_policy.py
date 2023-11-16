@@ -66,7 +66,7 @@ class GetReplicationPolicyResult:
 
     @property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
-    def delete_object_in_destination_bucket(self) -> str:
+    def delete_object_in_destination_bucket(self) -> Optional[str]:
         warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
         pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
 
@@ -74,34 +74,22 @@ class GetReplicationPolicyResult:
 
     @property
     @pulumi.getter(name="destinationBucketName")
-    def destination_bucket_name(self) -> str:
-        """
-        The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-        """
+    def destination_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_bucket_name")
 
     @property
     @pulumi.getter(name="destinationRegionName")
-    def destination_region_name(self) -> str:
-        """
-        The destination region to replicate to, for example "us-ashburn-1".
-        """
+    def destination_region_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_region_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The id of the replication policy.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the policy.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -116,34 +104,22 @@ class GetReplicationPolicyResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusMessage")
-    def status_message(self) -> str:
-        """
-        A human-readable description of the status.
-        """
+    def status_message(self) -> Optional[str]:
         return pulumi.get(self, "status_message")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastSync")
-    def time_last_sync(self) -> str:
-        """
-        Changes made to the source bucket before this time has been replicated.
-        """
+    def time_last_sync(self) -> Optional[str]:
         return pulumi.get(self, "time_last_sync")
 
 
@@ -172,25 +148,7 @@ def get_replication_policy(bucket: Optional[str] = None,
                            replication_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationPolicyResult:
     """
-    This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Get the replication policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=var["replication_policy_bucket"],
-        namespace=var["replication_policy_namespace"],
-        replication_id=oci_objectstorage_replication["test_replication"]["id"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str replication_id: The ID of the replication policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -220,24 +178,6 @@ def get_replication_policy_output(bucket: Optional[pulumi.Input[str]] = None,
                                   replication_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationPolicyResult]:
     """
-    This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Get the replication policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=var["replication_policy_bucket"],
-        namespace=var["replication_policy_namespace"],
-        replication_id=oci_objectstorage_replication["test_replication"]["id"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str replication_id: The ID of the replication policy.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -77,12 +77,12 @@ export interface GetDrgRouteTablesResult {
     /**
      * The list of drg_route_tables.
      */
-    readonly drgRouteTables: outputs.Core.GetDrgRouteTablesDrgRouteTable[];
+    readonly drgRouteTables?: outputs.Core.GetDrgRouteTablesDrgRouteTable[];
     readonly filters?: outputs.Core.GetDrgRouteTablesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
      */

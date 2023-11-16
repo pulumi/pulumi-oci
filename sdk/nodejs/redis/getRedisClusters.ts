@@ -81,7 +81,7 @@ export interface GetRedisClustersResult {
     /**
      * The list of redis_cluster_collection.
      */
-    readonly redisClusterCollections: outputs.Redis.GetRedisClustersRedisClusterCollection[];
+    readonly redisClusterCollections?: outputs.Redis.GetRedisClustersRedisClusterCollection[];
     /**
      * The current state of the Redis cluster.
      */

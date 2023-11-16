@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting {
@@ -13,15 +15,15 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
      * @return If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
      * 
      */
-    private Boolean pullEnabled;
+    private @Nullable Boolean pullEnabled;
 
     private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting() {}
     /**
      * @return If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
      * 
      */
-    public Boolean pullEnabled() {
-        return this.pullEnabled;
+    public Optional<Boolean> pullEnabled() {
+        return Optional.ofNullable(this.pullEnabled);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean pullEnabled;
+        private @Nullable Boolean pullEnabled;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
 
         @CustomType.Setter
-        public Builder pullEnabled(Boolean pullEnabled) {
-            this.pullEnabled = Objects.requireNonNull(pullEnabled);
+        public Builder pullEnabled(@Nullable Boolean pullEnabled) {
+            this.pullEnabled = pullEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting build() {

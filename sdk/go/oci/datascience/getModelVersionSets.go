@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
@@ -139,12 +138,6 @@ func (o GetModelVersionSetsResultOutput) ToGetModelVersionSetsResultOutput() Get
 
 func (o GetModelVersionSetsResultOutput) ToGetModelVersionSetsResultOutputWithContext(ctx context.Context) GetModelVersionSetsResultOutput {
 	return o
-}
-
-func (o GetModelVersionSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelVersionSetsResult] {
-	return pulumix.Output[GetModelVersionSetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.

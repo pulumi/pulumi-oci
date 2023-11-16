@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
         /// </summary>
-        public readonly int MaxAllowedFailuresPerInterval;
+        public readonly int? MaxAllowedFailuresPerInterval;
         /// <summary>
         /// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
         /// </summary>
-        public readonly int MinAllowedRunsPerInterval;
+        public readonly int? MinAllowedRunsPerInterval;
 
         [OutputConstructor]
         private GetMonitorAvailabilityConfigurationResult(
-            int maxAllowedFailuresPerInterval,
+            int? maxAllowedFailuresPerInterval,
 
-            int minAllowedRunsPerInterval)
+            int? minAllowedRunsPerInterval)
         {
             MaxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
             MinAllowedRunsPerInterval = minAllowedRunsPerInterval;

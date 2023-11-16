@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy {
@@ -14,51 +16,51 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
      * @return PasswordPolicy Name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return PasswordPolicy priority
      * 
      */
-    private Integer priority;
+    private @Nullable Integer priority;
     /**
      * @return App URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The ID of the App.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy() {}
     /**
      * @return PasswordPolicy Name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return PasswordPolicy priority
      * 
      */
-    public Integer priority() {
-        return this.priority;
+    public Optional<Integer> priority() {
+        return Optional.ofNullable(this.priority);
     }
     /**
      * @return App URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The ID of the App.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private Integer priority;
-        private String ref;
-        private String value;
+        private @Nullable String name;
+        private @Nullable Integer priority;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+        public Builder priority(@Nullable Integer priority) {
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy build() {

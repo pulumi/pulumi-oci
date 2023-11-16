@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
@@ -66,7 +65,7 @@ type AwrHub struct {
 	pulumi.CustomResourceState
 
 	// Mailbox URL required for AWR hub and AWR source setup.
-	AwrMailboxUrl pulumi.StringOutput `pulumi:"awrMailboxUrl"`
+	AwrMailboxUrl pulumi.StringPtrOutput `pulumi:"awrMailboxUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -76,7 +75,7 @@ type AwrHub struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
 	ObjectStorageBucketName pulumi.StringOutput `pulumi:"objectStorageBucketName"`
 	// OPSI Warehouse OCID
@@ -85,13 +84,13 @@ type AwrHub struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAwrHub registers a new resource with the given unique name, arguments, and options.
@@ -259,12 +258,6 @@ func (i *AwrHub) ToAwrHubOutputWithContext(ctx context.Context) AwrHubOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AwrHubOutput)
 }
 
-func (i *AwrHub) ToOutput(ctx context.Context) pulumix.Output[*AwrHub] {
-	return pulumix.Output[*AwrHub]{
-		OutputState: i.ToAwrHubOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AwrHubArrayInput is an input type that accepts AwrHubArray and AwrHubArrayOutput values.
 // You can construct a concrete instance of `AwrHubArrayInput` via:
 //
@@ -288,12 +281,6 @@ func (i AwrHubArray) ToAwrHubArrayOutput() AwrHubArrayOutput {
 
 func (i AwrHubArray) ToAwrHubArrayOutputWithContext(ctx context.Context) AwrHubArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AwrHubArrayOutput)
-}
-
-func (i AwrHubArray) ToOutput(ctx context.Context) pulumix.Output[[]*AwrHub] {
-	return pulumix.Output[[]*AwrHub]{
-		OutputState: i.ToAwrHubArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AwrHubMapInput is an input type that accepts AwrHubMap and AwrHubMapOutput values.
@@ -321,12 +308,6 @@ func (i AwrHubMap) ToAwrHubMapOutputWithContext(ctx context.Context) AwrHubMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(AwrHubMapOutput)
 }
 
-func (i AwrHubMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AwrHub] {
-	return pulumix.Output[map[string]*AwrHub]{
-		OutputState: i.ToAwrHubMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AwrHubOutput struct{ *pulumi.OutputState }
 
 func (AwrHubOutput) ElementType() reflect.Type {
@@ -341,15 +322,9 @@ func (o AwrHubOutput) ToAwrHubOutputWithContext(ctx context.Context) AwrHubOutpu
 	return o
 }
 
-func (o AwrHubOutput) ToOutput(ctx context.Context) pulumix.Output[*AwrHub] {
-	return pulumix.Output[*AwrHub]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Mailbox URL required for AWR hub and AWR source setup.
-func (o AwrHubOutput) AwrMailboxUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.StringOutput { return v.AwrMailboxUrl }).(pulumi.StringOutput)
+func (o AwrHubOutput) AwrMailboxUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringPtrOutput { return v.AwrMailboxUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -373,8 +348,8 @@ func (o AwrHubOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o AwrHubOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AwrHubOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Bucket Name
@@ -391,8 +366,8 @@ func (o AwrHubOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 }
 
 // Possible lifecycle states
-func (o AwrHubOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AwrHubOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -401,13 +376,13 @@ func (o AwrHubOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o AwrHubOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AwrHubOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o AwrHubOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AwrHubOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AwrHubArrayOutput struct{ *pulumi.OutputState }
@@ -422,12 +397,6 @@ func (o AwrHubArrayOutput) ToAwrHubArrayOutput() AwrHubArrayOutput {
 
 func (o AwrHubArrayOutput) ToAwrHubArrayOutputWithContext(ctx context.Context) AwrHubArrayOutput {
 	return o
-}
-
-func (o AwrHubArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AwrHub] {
-	return pulumix.Output[[]*AwrHub]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AwrHubArrayOutput) Index(i pulumi.IntInput) AwrHubOutput {
@@ -448,12 +417,6 @@ func (o AwrHubMapOutput) ToAwrHubMapOutput() AwrHubMapOutput {
 
 func (o AwrHubMapOutput) ToAwrHubMapOutputWithContext(ctx context.Context) AwrHubMapOutput {
 	return o
-}
-
-func (o AwrHubMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AwrHub] {
-	return pulumix.Output[map[string]*AwrHub]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AwrHubMapOutput) MapIndex(k pulumi.StringInput) AwrHubOutput {

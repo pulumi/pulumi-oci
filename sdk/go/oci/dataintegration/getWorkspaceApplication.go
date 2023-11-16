@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
@@ -65,39 +64,39 @@ type LookupWorkspaceApplicationResult struct {
 	// The source application key to use when creating the application.
 	ApplicationKey string `pulumi:"applicationKey"`
 	// The source application version of the application.
-	ApplicationVersion int `pulumi:"applicationVersion"`
+	ApplicationVersion *int `pulumi:"applicationVersion"`
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas []GetWorkspaceApplicationDependentObjectMetadata `pulumi:"dependentObjectMetadatas"`
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the resource that is used to uniquely identify the application
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceApplicationMetadata `pulumi:"metadatas"`
 	// The object type.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The object's model version.
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus int `pulumi:"objectStatus"`
+	ObjectStatus *int `pulumi:"objectStatus"`
 	// The object version.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves []GetWorkspaceApplicationParentRef `pulumi:"parentReves"`
 	// A list of objects that are published or unpublished in this patch.
@@ -106,13 +105,13 @@ type LookupWorkspaceApplicationResult struct {
 	// The information about the application.
 	SourceApplicationInfos []GetWorkspaceApplicationSourceApplicationInfo `pulumi:"sourceApplicationInfos"`
 	// The current state of the workspace.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the application was patched, in the timestamp format defined by RFC3339.
-	TimePatched string `pulumi:"timePatched"`
+	TimePatched *string `pulumi:"timePatched"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
 	WorkspaceId string `pulumi:"workspaceId"`
 }
@@ -157,25 +156,19 @@ func (o LookupWorkspaceApplicationResultOutput) ToLookupWorkspaceApplicationResu
 	return o
 }
 
-func (o LookupWorkspaceApplicationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceApplicationResult] {
-	return pulumix.Output[LookupWorkspaceApplicationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The source application key to use when creating the application.
 func (o LookupWorkspaceApplicationResultOutput) ApplicationKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.ApplicationKey }).(pulumi.StringOutput)
 }
 
 // The source application version of the application.
-func (o LookupWorkspaceApplicationResultOutput) ApplicationVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) int { return v.ApplicationVersion }).(pulumi.IntOutput)
+func (o LookupWorkspaceApplicationResultOutput) ApplicationVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *int { return v.ApplicationVersion }).(pulumi.IntPtrOutput)
 }
 
 // OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-func (o LookupWorkspaceApplicationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -191,13 +184,13 @@ func (o LookupWorkspaceApplicationResultOutput) DependentObjectMetadatas() GetWo
 }
 
 // The description of the aggregator.
-func (o LookupWorkspaceApplicationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o LookupWorkspaceApplicationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -206,18 +199,18 @@ func (o LookupWorkspaceApplicationResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // OCID of the resource that is used to uniquely identify the application
-func (o LookupWorkspaceApplicationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-func (o LookupWorkspaceApplicationResultOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.Identifier }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o LookupWorkspaceApplicationResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -231,28 +224,28 @@ func (o LookupWorkspaceApplicationResultOutput) Metadatas() GetWorkspaceApplicat
 }
 
 // The object type.
-func (o LookupWorkspaceApplicationResultOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.ModelType }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The object's model version.
-func (o LookupWorkspaceApplicationResultOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o LookupWorkspaceApplicationResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o LookupWorkspaceApplicationResultOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) int { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o LookupWorkspaceApplicationResultOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The object version.
-func (o LookupWorkspaceApplicationResultOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o LookupWorkspaceApplicationResultOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.
@@ -281,23 +274,23 @@ func (o LookupWorkspaceApplicationResultOutput) SourceApplicationInfos() GetWork
 }
 
 // The current state of the workspace.
-func (o LookupWorkspaceApplicationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was created, in the timestamp format defined by RFC3339.
-func (o LookupWorkspaceApplicationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was patched, in the timestamp format defined by RFC3339.
-func (o LookupWorkspaceApplicationResultOutput) TimePatched() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.TimePatched }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) TimePatched() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.TimePatched }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-func (o LookupWorkspaceApplicationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupWorkspaceApplicationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.

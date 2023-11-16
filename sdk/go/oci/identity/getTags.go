@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.
@@ -65,7 +64,7 @@ type GetTagsArgs struct {
 type GetTagsResult struct {
 	Filters []GetTagsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
 	State *string `pulumi:"state"`
 	// The OCID of the namespace that contains the tag definition.
@@ -115,19 +114,13 @@ func (o GetTagsResultOutput) ToGetTagsResultOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetTagsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagsResult] {
-	return pulumix.Output[GetTagsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTagsResultOutput) Filters() GetTagsFilterArrayOutput {
 	return o.ApplyT(func(v GetTagsResult) []GetTagsFilter { return v.Filters }).(GetTagsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTagsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTagsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTagsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTagsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.

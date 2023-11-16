@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Performance Tuning Analysis Results in Oracle Cloud Infrastructure Jms service.
@@ -78,7 +77,7 @@ type GetFleetPerformanceTuningAnalysisResultsResult struct {
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The managed instance OCID.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The list of performance_tuning_analysis_result_collection.
@@ -134,12 +133,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) ToGetFleetPerforma
 	return o
 }
 
-func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsResult] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the application for which the report has been generated.
 func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsResult) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
@@ -157,8 +150,8 @@ func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) FleetId() pulumi.S
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The managed instance OCID.

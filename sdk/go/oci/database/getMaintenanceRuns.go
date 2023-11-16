@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
@@ -83,7 +82,7 @@ type GetMaintenanceRunsResult struct {
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetMaintenanceRunsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of maintenance_runs.
 	MaintenanceRuns []GetMaintenanceRunsMaintenanceRun `pulumi:"maintenanceRuns"`
 	// Maintenance sub-type.
@@ -149,12 +148,6 @@ func (o GetMaintenanceRunsResultOutput) ToGetMaintenanceRunsResultOutputWithCont
 	return o
 }
 
-func (o GetMaintenanceRunsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaintenanceRunsResult] {
-	return pulumix.Output[GetMaintenanceRunsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMaintenanceRunsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -169,8 +162,8 @@ func (o GetMaintenanceRunsResultOutput) Filters() GetMaintenanceRunsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaintenanceRunsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaintenanceRunsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaintenanceRunsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of maintenance_runs.

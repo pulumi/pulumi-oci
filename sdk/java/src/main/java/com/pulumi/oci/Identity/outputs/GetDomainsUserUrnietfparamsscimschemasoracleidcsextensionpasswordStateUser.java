@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser {
@@ -16,42 +18,42 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
      * @return Applicable Password Policy
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies;
     /**
      * @return Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
      * 
      */
-    private Boolean cantChange;
+    private @Nullable Boolean cantChange;
     /**
      * @return Indicates that the password expiry policy will not be applied for the current Resource
      * 
      */
-    private Boolean cantExpire;
+    private @Nullable Boolean cantExpire;
     /**
      * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
-    private Boolean expired;
+    private @Nullable Boolean expired;
     /**
      * @return A DateTime that specifies the date and time when last failed password validation was set
      * 
      */
-    private String lastFailedValidationDate;
+    private @Nullable String lastFailedValidationDate;
     /**
      * @return A DateTime that specifies the date and time when the current password was set
      * 
      */
-    private String lastSuccessfulSetDate;
+    private @Nullable String lastSuccessfulSetDate;
     /**
      * @return A DateTime that specifies the date and time when last successful password validation was set
      * 
      */
-    private String lastSuccessfulValidationDate;
+    private @Nullable String lastSuccessfulValidationDate;
     /**
      * @return Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject&#39;s current password expires or directly set by an administrator.
      * 
      */
-    private Boolean mustChange;
+    private @Nullable Boolean mustChange;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser() {}
     /**
@@ -59,56 +61,56 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies() {
-        return this.applicablePasswordPolicies;
+        return this.applicablePasswordPolicies == null ? List.of() : this.applicablePasswordPolicies;
     }
     /**
      * @return Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
      * 
      */
-    public Boolean cantChange() {
-        return this.cantChange;
+    public Optional<Boolean> cantChange() {
+        return Optional.ofNullable(this.cantChange);
     }
     /**
      * @return Indicates that the password expiry policy will not be applied for the current Resource
      * 
      */
-    public Boolean cantExpire() {
-        return this.cantExpire;
+    public Optional<Boolean> cantExpire() {
+        return Optional.ofNullable(this.cantExpire);
     }
     /**
      * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
-    public Boolean expired() {
-        return this.expired;
+    public Optional<Boolean> expired() {
+        return Optional.ofNullable(this.expired);
     }
     /**
      * @return A DateTime that specifies the date and time when last failed password validation was set
      * 
      */
-    public String lastFailedValidationDate() {
-        return this.lastFailedValidationDate;
+    public Optional<String> lastFailedValidationDate() {
+        return Optional.ofNullable(this.lastFailedValidationDate);
     }
     /**
      * @return A DateTime that specifies the date and time when the current password was set
      * 
      */
-    public String lastSuccessfulSetDate() {
-        return this.lastSuccessfulSetDate;
+    public Optional<String> lastSuccessfulSetDate() {
+        return Optional.ofNullable(this.lastSuccessfulSetDate);
     }
     /**
      * @return A DateTime that specifies the date and time when last successful password validation was set
      * 
      */
-    public String lastSuccessfulValidationDate() {
-        return this.lastSuccessfulValidationDate;
+    public Optional<String> lastSuccessfulValidationDate() {
+        return Optional.ofNullable(this.lastSuccessfulValidationDate);
     }
     /**
      * @return Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject&#39;s current password expires or directly set by an administrator.
      * 
      */
-    public Boolean mustChange() {
-        return this.mustChange;
+    public Optional<Boolean> mustChange() {
+        return Optional.ofNullable(this.mustChange);
     }
 
     public static Builder builder() {
@@ -120,14 +122,14 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies;
-        private Boolean cantChange;
-        private Boolean cantExpire;
-        private Boolean expired;
-        private String lastFailedValidationDate;
-        private String lastSuccessfulSetDate;
-        private String lastSuccessfulValidationDate;
-        private Boolean mustChange;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies;
+        private @Nullable Boolean cantChange;
+        private @Nullable Boolean cantExpire;
+        private @Nullable Boolean expired;
+        private @Nullable String lastFailedValidationDate;
+        private @Nullable String lastSuccessfulSetDate;
+        private @Nullable String lastSuccessfulValidationDate;
+        private @Nullable Boolean mustChange;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,46 +144,46 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
         }
 
         @CustomType.Setter
-        public Builder applicablePasswordPolicies(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies) {
-            this.applicablePasswordPolicies = Objects.requireNonNull(applicablePasswordPolicies);
+        public Builder applicablePasswordPolicies(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies) {
+            this.applicablePasswordPolicies = applicablePasswordPolicies;
             return this;
         }
         public Builder applicablePasswordPolicies(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy... applicablePasswordPolicies) {
             return applicablePasswordPolicies(List.of(applicablePasswordPolicies));
         }
         @CustomType.Setter
-        public Builder cantChange(Boolean cantChange) {
-            this.cantChange = Objects.requireNonNull(cantChange);
+        public Builder cantChange(@Nullable Boolean cantChange) {
+            this.cantChange = cantChange;
             return this;
         }
         @CustomType.Setter
-        public Builder cantExpire(Boolean cantExpire) {
-            this.cantExpire = Objects.requireNonNull(cantExpire);
+        public Builder cantExpire(@Nullable Boolean cantExpire) {
+            this.cantExpire = cantExpire;
             return this;
         }
         @CustomType.Setter
-        public Builder expired(Boolean expired) {
-            this.expired = Objects.requireNonNull(expired);
+        public Builder expired(@Nullable Boolean expired) {
+            this.expired = expired;
             return this;
         }
         @CustomType.Setter
-        public Builder lastFailedValidationDate(String lastFailedValidationDate) {
-            this.lastFailedValidationDate = Objects.requireNonNull(lastFailedValidationDate);
+        public Builder lastFailedValidationDate(@Nullable String lastFailedValidationDate) {
+            this.lastFailedValidationDate = lastFailedValidationDate;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSuccessfulSetDate(String lastSuccessfulSetDate) {
-            this.lastSuccessfulSetDate = Objects.requireNonNull(lastSuccessfulSetDate);
+        public Builder lastSuccessfulSetDate(@Nullable String lastSuccessfulSetDate) {
+            this.lastSuccessfulSetDate = lastSuccessfulSetDate;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSuccessfulValidationDate(String lastSuccessfulValidationDate) {
-            this.lastSuccessfulValidationDate = Objects.requireNonNull(lastSuccessfulValidationDate);
+        public Builder lastSuccessfulValidationDate(@Nullable String lastSuccessfulValidationDate) {
+            this.lastSuccessfulValidationDate = lastSuccessfulValidationDate;
             return this;
         }
         @CustomType.Setter
-        public Builder mustChange(Boolean mustChange) {
-            this.mustChange = Objects.requireNonNull(mustChange);
+        public Builder mustChange(@Nullable Boolean mustChange) {
+            this.mustChange = mustChange;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser build() {

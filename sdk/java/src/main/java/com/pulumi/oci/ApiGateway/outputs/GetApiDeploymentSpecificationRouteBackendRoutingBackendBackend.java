@@ -11,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackend {
@@ -18,107 +20,107 @@ public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendBacken
      * @return The body of the stock response from the mock backend.
      * 
      */
-    private String body;
+    private @Nullable String body;
     /**
      * @return Defines a timeout for establishing a connection with a proxied server.
      * 
      */
-    private Double connectTimeoutInSeconds;
+    private @Nullable Double connectTimeoutInSeconds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
-    private String functionId;
-    private List<GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers;
+    private @Nullable String functionId;
+    private @Nullable List<GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers;
     /**
      * @return Defines whether or not to uphold SSL verification.
      * 
      */
-    private Boolean isSslVerifyDisabled;
+    private @Nullable Boolean isSslVerifyDisabled;
     /**
      * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
-    private Double readTimeoutInSeconds;
+    private @Nullable Double readTimeoutInSeconds;
     /**
      * @return Defines a timeout for transmitting a request to the proxied server.
      * 
      */
-    private Double sendTimeoutInSeconds;
+    private @Nullable Double sendTimeoutInSeconds;
     /**
      * @return The status code of the stock response from the mock backend.
      * 
      */
-    private Integer status;
+    private @Nullable Integer status;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
-    private String url;
+    private @Nullable String type;
+    private @Nullable String url;
 
     private GetApiDeploymentSpecificationRouteBackendRoutingBackendBackend() {}
     /**
      * @return The body of the stock response from the mock backend.
      * 
      */
-    public String body() {
-        return this.body;
+    public Optional<String> body() {
+        return Optional.ofNullable(this.body);
     }
     /**
      * @return Defines a timeout for establishing a connection with a proxied server.
      * 
      */
-    public Double connectTimeoutInSeconds() {
-        return this.connectTimeoutInSeconds;
+    public Optional<Double> connectTimeoutInSeconds() {
+        return Optional.ofNullable(this.connectTimeoutInSeconds);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
-    public String functionId() {
-        return this.functionId;
+    public Optional<String> functionId() {
+        return Optional.ofNullable(this.functionId);
     }
     public List<GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers() {
-        return this.headers;
+        return this.headers == null ? List.of() : this.headers;
     }
     /**
      * @return Defines whether or not to uphold SSL verification.
      * 
      */
-    public Boolean isSslVerifyDisabled() {
-        return this.isSslVerifyDisabled;
+    public Optional<Boolean> isSslVerifyDisabled() {
+        return Optional.ofNullable(this.isSslVerifyDisabled);
     }
     /**
      * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
-    public Double readTimeoutInSeconds() {
-        return this.readTimeoutInSeconds;
+    public Optional<Double> readTimeoutInSeconds() {
+        return Optional.ofNullable(this.readTimeoutInSeconds);
     }
     /**
      * @return Defines a timeout for transmitting a request to the proxied server.
      * 
      */
-    public Double sendTimeoutInSeconds() {
-        return this.sendTimeoutInSeconds;
+    public Optional<Double> sendTimeoutInSeconds() {
+        return Optional.ofNullable(this.sendTimeoutInSeconds);
     }
     /**
      * @return The status code of the stock response from the mock backend.
      * 
      */
-    public Integer status() {
-        return this.status;
+    public Optional<Integer> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -130,16 +132,16 @@ public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendBacken
     }
     @CustomType.Builder
     public static final class Builder {
-        private String body;
-        private Double connectTimeoutInSeconds;
-        private String functionId;
-        private List<GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers;
-        private Boolean isSslVerifyDisabled;
-        private Double readTimeoutInSeconds;
-        private Double sendTimeoutInSeconds;
-        private Integer status;
-        private String type;
-        private String url;
+        private @Nullable String body;
+        private @Nullable Double connectTimeoutInSeconds;
+        private @Nullable String functionId;
+        private @Nullable List<GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers;
+        private @Nullable Boolean isSslVerifyDisabled;
+        private @Nullable Double readTimeoutInSeconds;
+        private @Nullable Double sendTimeoutInSeconds;
+        private @Nullable Integer status;
+        private @Nullable String type;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteBackendRoutingBackendBackend defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,56 +158,56 @@ public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendBacken
         }
 
         @CustomType.Setter
-        public Builder body(String body) {
-            this.body = Objects.requireNonNull(body);
+        public Builder body(@Nullable String body) {
+            this.body = body;
             return this;
         }
         @CustomType.Setter
-        public Builder connectTimeoutInSeconds(Double connectTimeoutInSeconds) {
-            this.connectTimeoutInSeconds = Objects.requireNonNull(connectTimeoutInSeconds);
+        public Builder connectTimeoutInSeconds(@Nullable Double connectTimeoutInSeconds) {
+            this.connectTimeoutInSeconds = connectTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+        public Builder functionId(@Nullable String functionId) {
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
-        public Builder headers(List<GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable List<GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers) {
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader... headers) {
             return headers(List.of(headers));
         }
         @CustomType.Setter
-        public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+        public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder readTimeoutInSeconds(Double readTimeoutInSeconds) {
-            this.readTimeoutInSeconds = Objects.requireNonNull(readTimeoutInSeconds);
+        public Builder readTimeoutInSeconds(@Nullable Double readTimeoutInSeconds) {
+            this.readTimeoutInSeconds = readTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder sendTimeoutInSeconds(Double sendTimeoutInSeconds) {
-            this.sendTimeoutInSeconds = Objects.requireNonNull(sendTimeoutInSeconds);
+        public Builder sendTimeoutInSeconds(@Nullable Double sendTimeoutInSeconds) {
+            this.sendTimeoutInSeconds = sendTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder status(Integer status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable Integer status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetApiDeploymentSpecificationRouteBackendRoutingBackendBackend build() {

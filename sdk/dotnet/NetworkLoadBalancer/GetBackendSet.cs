@@ -82,24 +82,24 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetHealthCheckerResult> HealthCheckers;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// IP version associated with the backend set.
         /// </summary>
-        public readonly string IpVersion;
+        public readonly string? IpVersion;
         /// <summary>
         /// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         /// </summary>
-        public readonly bool IsPreserveSource;
+        public readonly bool? IsPreserveSource;
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string NetworkLoadBalancerId;
         /// <summary>
         /// The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
         /// </summary>
-        public readonly string Policy;
+        public readonly string? Policy;
 
         [OutputConstructor]
         private GetBackendSetResult(
@@ -109,17 +109,17 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             ImmutableArray<Outputs.GetBackendSetHealthCheckerResult> healthCheckers,
 
-            string id,
+            string? id,
 
-            string ipVersion,
+            string? ipVersion,
 
-            bool isPreserveSource,
+            bool? isPreserveSource,
 
-            string name,
+            string? name,
 
             string networkLoadBalancerId,
 
-            string policy)
+            string? policy)
         {
             BackendSetName = backendSetName;
             Backends = backends;

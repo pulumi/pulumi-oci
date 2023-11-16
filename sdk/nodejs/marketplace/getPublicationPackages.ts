@@ -62,7 +62,7 @@ export interface GetPublicationPackagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The specified package's type.
      */
@@ -72,7 +72,7 @@ export interface GetPublicationPackagesResult {
     /**
      * The list of publication_packages.
      */
-    readonly publicationPackages: outputs.Marketplace.GetPublicationPackagesPublicationPackage[];
+    readonly publicationPackages?: outputs.Marketplace.GetPublicationPackagesPublicationPackage[];
 }
 /**
  * This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.

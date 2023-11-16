@@ -71,7 +71,7 @@ export interface GetDatabaseToolsConnectionsResult {
     /**
      * The list of database_tools_connection_collection.
      */
-    readonly databaseToolsConnectionCollections: outputs.DatabaseTools.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection[];
+    readonly databaseToolsConnectionCollections?: outputs.DatabaseTools.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -80,7 +80,7 @@ export interface GetDatabaseToolsConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Database Tools connection.
      */

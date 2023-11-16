@@ -50,10 +50,6 @@ class ConfigDimension(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
                  value_source: Optional[str] = None):
-        """
-        :param str name: (Updatable) The name of the metric. This must be a known metric name.
-        :param str value_source: (Updatable) This must not be set.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value_source is not None:
@@ -62,17 +58,11 @@ class ConfigDimension(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the metric. This must be a known metric name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="valueSource")
     def value_source(self) -> Optional[str]:
-        """
-        (Updatable) This must not be set.
-        """
         return pulumi.get(self, "value_source")
 
 
@@ -104,12 +94,6 @@ class ConfigInUseBy(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None,
                  options_group: Optional[str] = None):
-        """
-        :param str config_type: (Updatable) The type of configuration item.
-        :param str display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        :param str options_group: A string that specifies the group that an OPTIONS item belongs to.
-        """
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
         if display_name is not None:
@@ -122,33 +106,21 @@ class ConfigInUseBy(dict):
     @property
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[str]:
-        """
-        (Updatable) The type of configuration item.
-        """
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) The name by which a configuration entity is displayed to the end user.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="optionsGroup")
     def options_group(self) -> Optional[str]:
-        """
-        A string that specifies the group that an OPTIONS item belongs to.
-        """
         return pulumi.get(self, "options_group")
 
 
@@ -176,12 +148,6 @@ class ConfigMetric(dict):
                  name: Optional[str] = None,
                  unit: Optional[str] = None,
                  value_source: Optional[str] = None):
-        """
-        :param str description: (Updatable) A description of the metric.
-        :param str name: (Updatable) The name of the metric. This must be a known metric name.
-        :param str unit: (Updatable) The unit of the metric.
-        :param str value_source: (Updatable) This must not be set.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if name is not None:
@@ -194,33 +160,21 @@ class ConfigMetric(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) A description of the metric.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the metric. This must be a known metric name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def unit(self) -> Optional[str]:
-        """
-        (Updatable) The unit of the metric.
-        """
         return pulumi.get(self, "unit")
 
     @property
     @pulumi.getter(name="valueSource")
     def value_source(self) -> Optional[str]:
-        """
-        (Updatable) This must not be set.
-        """
         return pulumi.get(self, "value_source")
 
 
@@ -261,19 +215,6 @@ class ConfigRule(dict):
                  priority: Optional[int] = None,
                  satisfied_response_time: Optional[int] = None,
                  tolerating_response_time: Optional[int] = None):
-        """
-        :param str display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
-        :param str filter_text: (Updatable) The string that defines the Span Filter expression.
-        :param bool is_apply_to_error_spans: (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-        :param bool is_enabled: (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-        :param int priority: (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        :param int satisfied_response_time: (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        :param int tolerating_response_time: (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if filter_text is not None:
@@ -292,744 +233,542 @@ class ConfigRule(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) The name by which a configuration entity is displayed to the end user.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="filterText")
     def filter_text(self) -> Optional[str]:
-        """
-        (Updatable) The string that defines the Span Filter expression.
-        """
         return pulumi.get(self, "filter_text")
 
     @property
     @pulumi.getter(name="isApplyToErrorSpans")
     def is_apply_to_error_spans(self) -> Optional[bool]:
-        """
-        (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-        """
         return pulumi.get(self, "is_apply_to_error_spans")
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
     def priority(self) -> Optional[int]:
-        """
-        (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        """
         return pulumi.get(self, "priority")
 
     @property
     @pulumi.getter(name="satisfiedResponseTime")
     def satisfied_response_time(self) -> Optional[int]:
-        """
-        (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        """
         return pulumi.get(self, "satisfied_response_time")
 
     @property
     @pulumi.getter(name="toleratingResponseTime")
     def tolerating_response_time(self) -> Optional[int]:
-        """
-        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "tolerating_response_time")
 
 
 @pulumi.output_type
 class GetConfigDimensionResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value_source: str):
-        """
-        :param str name: The name of the metric. This must be a known metric name.
-        :param str value_source: This must not be set.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value_source", value_source)
+                 name: Optional[str] = None,
+                 value_source: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value_source is not None:
+            pulumi.set(__self__, "value_source", value_source)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the metric. This must be a known metric name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="valueSource")
-    def value_source(self) -> str:
-        """
-        This must not be set.
-        """
+    def value_source(self) -> Optional[str]:
         return pulumi.get(self, "value_source")
 
 
 @pulumi.output_type
 class GetConfigInUseByResult(dict):
     def __init__(__self__, *,
-                 config_type: str,
-                 display_name: str,
-                 id: str,
-                 options_group: str):
-        """
-        :param str config_type: The type of configuration item.
-        :param str display_name: The name by which a configuration entity is displayed to the end user.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        :param str options_group: A string that specifies the group that an OPTIONS item belongs to.
-        """
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "options_group", options_group)
+                 config_type: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 options_group: Optional[str] = None):
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if options_group is not None:
+            pulumi.set(__self__, "options_group", options_group)
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        The type of configuration item.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name by which a configuration entity is displayed to the end user.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="optionsGroup")
-    def options_group(self) -> str:
-        """
-        A string that specifies the group that an OPTIONS item belongs to.
-        """
+    def options_group(self) -> Optional[str]:
         return pulumi.get(self, "options_group")
 
 
 @pulumi.output_type
 class GetConfigMetricResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 name: str,
-                 unit: str,
-                 value_source: str):
-        """
-        :param str description: A description of the metric.
-        :param str name: The name of the metric. This must be a known metric name.
-        :param str unit: The unit of the metric.
-        :param str value_source: This must not be set.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value_source", value_source)
+                 description: Optional[str] = None,
+                 name: Optional[str] = None,
+                 unit: Optional[str] = None,
+                 value_source: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+        if value_source is not None:
+            pulumi.set(__self__, "value_source", value_source)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the metric.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the metric. This must be a known metric name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def unit(self) -> str:
-        """
-        The unit of the metric.
-        """
+    def unit(self) -> Optional[str]:
         return pulumi.get(self, "unit")
 
     @property
     @pulumi.getter(name="valueSource")
-    def value_source(self) -> str:
-        """
-        This must not be set.
-        """
+    def value_source(self) -> Optional[str]:
         return pulumi.get(self, "value_source")
 
 
 @pulumi.output_type
 class GetConfigRuleResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 filter_text: str,
-                 is_apply_to_error_spans: bool,
-                 is_enabled: bool,
-                 priority: int,
-                 satisfied_response_time: int,
-                 tolerating_response_time: int):
-        """
-        :param str display_name: The name by which a configuration entity is displayed to the end user.
-        :param str filter_text: The string that defines the Span Filter expression.
-        :param bool is_apply_to_error_spans: Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-        :param bool is_enabled: Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-        :param int priority: The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        :param int satisfied_response_time: The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        :param int tolerating_response_time: The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "filter_text", filter_text)
-        pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "priority", priority)
-        pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
-        pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
+                 display_name: Optional[str] = None,
+                 filter_text: Optional[str] = None,
+                 is_apply_to_error_spans: Optional[bool] = None,
+                 is_enabled: Optional[bool] = None,
+                 priority: Optional[int] = None,
+                 satisfied_response_time: Optional[int] = None,
+                 tolerating_response_time: Optional[int] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if filter_text is not None:
+            pulumi.set(__self__, "filter_text", filter_text)
+        if is_apply_to_error_spans is not None:
+            pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if satisfied_response_time is not None:
+            pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
+        if tolerating_response_time is not None:
+            pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name by which a configuration entity is displayed to the end user.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="filterText")
-    def filter_text(self) -> str:
-        """
-        The string that defines the Span Filter expression.
-        """
+    def filter_text(self) -> Optional[str]:
         return pulumi.get(self, "filter_text")
 
     @property
     @pulumi.getter(name="isApplyToErrorSpans")
-    def is_apply_to_error_spans(self) -> bool:
-        """
-        Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-        """
+    def is_apply_to_error_spans(self) -> Optional[bool]:
         return pulumi.get(self, "is_apply_to_error_spans")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def priority(self) -> int:
-        """
-        The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        """
+    def priority(self) -> Optional[int]:
         return pulumi.get(self, "priority")
 
     @property
     @pulumi.getter(name="satisfiedResponseTime")
-    def satisfied_response_time(self) -> int:
-        """
-        The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        """
+    def satisfied_response_time(self) -> Optional[int]:
         return pulumi.get(self, "satisfied_response_time")
 
     @property
     @pulumi.getter(name="toleratingResponseTime")
-    def tolerating_response_time(self) -> int:
-        """
-        The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-        """
+    def tolerating_response_time(self) -> Optional[int]:
         return pulumi.get(self, "tolerating_response_time")
 
 
 @pulumi.output_type
 class GetConfigsConfigCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetConfigsConfigCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetConfigsConfigCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetConfigsConfigCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetConfigsConfigCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetConfigsConfigCollectionItemResult(dict):
     def __init__(__self__, *,
-                 apm_domain_id: str,
-                 config_type: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 dimensions: Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult'],
-                 display_name: str,
-                 etag: str,
-                 filter_id: str,
-                 filter_text: str,
-                 freeform_tags: Mapping[str, Any],
-                 group: str,
-                 id: str,
-                 in_use_bies: Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult'],
-                 metrics: Sequence['outputs.GetConfigsConfigCollectionItemMetricResult'],
-                 namespace: str,
-                 opc_dry_run: str,
-                 options: str,
-                 rules: Sequence['outputs.GetConfigsConfigCollectionItemRuleResult'],
-                 time_created: str,
-                 time_updated: str,
-                 updated_by: str):
-        """
-        :param str apm_domain_id: The APM Domain ID the request is intended for.
-        :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-        :param str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A description of the metric.
-        :param Sequence['GetConfigsConfigCollectionItemDimensionArgs'] dimensions: A list of dimensions for the metric. This variable should not be used.
-        :param str display_name: A filter to return resources that match the given display name.
-        :param str etag: For optimistic concurrency control. See `if-match`.
-        :param str filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-        :param str filter_text: The string that defines the Span Filter expression.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str group: A string that specifies the group that an OPTIONS item belongs to.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        :param Sequence['GetConfigsConfigCollectionItemInUseByArgs'] in_use_bies: The list of configuration items that reference the span filter.
-        :param Sequence['GetConfigsConfigCollectionItemMetricArgs'] metrics: The list of metrics in this group.
-        :param str namespace: The namespace to which the metrics are published. It must be one of several predefined namespaces.
-        :param str options: The options are stored here as JSON.
-        :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param str updated_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "filter_id", filter_id)
-        pulumi.set(__self__, "filter_text", filter_text)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "group", group)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "in_use_bies", in_use_bies)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "opc_dry_run", opc_dry_run)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
+                 apm_domain_id: Optional[str] = None,
+                 config_type: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 dimensions: Optional[Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult']] = None,
+                 display_name: Optional[str] = None,
+                 etag: Optional[str] = None,
+                 filter_id: Optional[str] = None,
+                 filter_text: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 group: Optional[str] = None,
+                 id: Optional[str] = None,
+                 in_use_bies: Optional[Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult']] = None,
+                 metrics: Optional[Sequence['outputs.GetConfigsConfigCollectionItemMetricResult']] = None,
+                 namespace: Optional[str] = None,
+                 opc_dry_run: Optional[str] = None,
+                 options: Optional[str] = None,
+                 rules: Optional[Sequence['outputs.GetConfigsConfigCollectionItemRuleResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None):
+        if apm_domain_id is not None:
+            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if etag is not None:
+            pulumi.set(__self__, "etag", etag)
+        if filter_id is not None:
+            pulumi.set(__self__, "filter_id", filter_id)
+        if filter_text is not None:
+            pulumi.set(__self__, "filter_text", filter_text)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if in_use_bies is not None:
+            pulumi.set(__self__, "in_use_bies", in_use_bies)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if opc_dry_run is not None:
+            pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
 
     @property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> str:
-        """
-        The APM Domain ID the request is intended for.
-        """
+    def apm_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "apm_domain_id")
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the metric.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult']:
-        """
-        A list of dimensions for the metric. This variable should not be used.
-        """
+    def dimensions(self) -> Optional[Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult']]:
         return pulumi.get(self, "dimensions")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        For optimistic concurrency control. See `if-match`.
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="filterId")
-    def filter_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-        """
+    def filter_id(self) -> Optional[str]:
         return pulumi.get(self, "filter_id")
 
     @property
     @pulumi.getter(name="filterText")
-    def filter_text(self) -> str:
-        """
-        The string that defines the Span Filter expression.
-        """
+    def filter_text(self) -> Optional[str]:
         return pulumi.get(self, "filter_text")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def group(self) -> str:
-        """
-        A string that specifies the group that an OPTIONS item belongs to.
-        """
+    def group(self) -> Optional[str]:
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inUseBies")
-    def in_use_bies(self) -> Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult']:
-        """
-        The list of configuration items that reference the span filter.
-        """
+    def in_use_bies(self) -> Optional[Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult']]:
         return pulumi.get(self, "in_use_bies")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetConfigsConfigCollectionItemMetricResult']:
-        """
-        The list of metrics in this group.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetConfigsConfigCollectionItemMetricResult']]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace to which the metrics are published. It must be one of several predefined namespaces.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="opcDryRun")
-    def opc_dry_run(self) -> str:
+    def opc_dry_run(self) -> Optional[str]:
         return pulumi.get(self, "opc_dry_run")
 
     @property
     @pulumi.getter
-    def options(self) -> str:
-        """
-        The options are stored here as JSON.
-        """
+    def options(self) -> Optional[str]:
         return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetConfigsConfigCollectionItemRuleResult']:
+    def rules(self) -> Optional[Sequence['outputs.GetConfigsConfigCollectionItemRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
 
 @pulumi.output_type
 class GetConfigsConfigCollectionItemDimensionResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value_source: str):
-        """
-        :param str name: The name of the metric. This must be a known metric name.
-        :param str value_source: This must not be set.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value_source", value_source)
+                 name: Optional[str] = None,
+                 value_source: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value_source is not None:
+            pulumi.set(__self__, "value_source", value_source)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the metric. This must be a known metric name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="valueSource")
-    def value_source(self) -> str:
-        """
-        This must not be set.
-        """
+    def value_source(self) -> Optional[str]:
         return pulumi.get(self, "value_source")
 
 
 @pulumi.output_type
 class GetConfigsConfigCollectionItemInUseByResult(dict):
     def __init__(__self__, *,
-                 config_type: str,
-                 display_name: str,
-                 id: str,
-                 options_group: str):
-        """
-        :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-        :param str display_name: A filter to return resources that match the given display name.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        :param str options_group: A filter to return OPTIONS resources that match the given group.
-        """
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "options_group", options_group)
+                 config_type: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 options_group: Optional[str] = None):
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if options_group is not None:
+            pulumi.set(__self__, "options_group", options_group)
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="optionsGroup")
-    def options_group(self) -> str:
-        """
-        A filter to return OPTIONS resources that match the given group.
-        """
+    def options_group(self) -> Optional[str]:
         return pulumi.get(self, "options_group")
 
 
 @pulumi.output_type
 class GetConfigsConfigCollectionItemMetricResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 name: str,
-                 unit: str,
-                 value_source: str):
-        """
-        :param str description: A description of the metric.
-        :param str name: The name of the metric. This must be a known metric name.
-        :param str unit: The unit of the metric.
-        :param str value_source: This must not be set.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value_source", value_source)
+                 description: Optional[str] = None,
+                 name: Optional[str] = None,
+                 unit: Optional[str] = None,
+                 value_source: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+        if value_source is not None:
+            pulumi.set(__self__, "value_source", value_source)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the metric.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the metric. This must be a known metric name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def unit(self) -> str:
-        """
-        The unit of the metric.
-        """
+    def unit(self) -> Optional[str]:
         return pulumi.get(self, "unit")
 
     @property
     @pulumi.getter(name="valueSource")
-    def value_source(self) -> str:
-        """
-        This must not be set.
-        """
+    def value_source(self) -> Optional[str]:
         return pulumi.get(self, "value_source")
 
 
 @pulumi.output_type
 class GetConfigsConfigCollectionItemRuleResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 filter_text: str,
-                 is_apply_to_error_spans: bool,
-                 is_enabled: bool,
-                 priority: int,
-                 satisfied_response_time: int,
-                 tolerating_response_time: int):
-        """
-        :param str display_name: A filter to return resources that match the given display name.
-        :param str filter_text: The string that defines the Span Filter expression.
-        :param bool is_apply_to_error_spans: Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-        :param bool is_enabled: Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-        :param int priority: The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        :param int satisfied_response_time: The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        :param int tolerating_response_time: The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "filter_text", filter_text)
-        pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "priority", priority)
-        pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
-        pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
+                 display_name: Optional[str] = None,
+                 filter_text: Optional[str] = None,
+                 is_apply_to_error_spans: Optional[bool] = None,
+                 is_enabled: Optional[bool] = None,
+                 priority: Optional[int] = None,
+                 satisfied_response_time: Optional[int] = None,
+                 tolerating_response_time: Optional[int] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if filter_text is not None:
+            pulumi.set(__self__, "filter_text", filter_text)
+        if is_apply_to_error_spans is not None:
+            pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if satisfied_response_time is not None:
+            pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
+        if tolerating_response_time is not None:
+            pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="filterText")
-    def filter_text(self) -> str:
-        """
-        The string that defines the Span Filter expression.
-        """
+    def filter_text(self) -> Optional[str]:
         return pulumi.get(self, "filter_text")
 
     @property
     @pulumi.getter(name="isApplyToErrorSpans")
-    def is_apply_to_error_spans(self) -> bool:
-        """
-        Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-        """
+    def is_apply_to_error_spans(self) -> Optional[bool]:
         return pulumi.get(self, "is_apply_to_error_spans")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def priority(self) -> int:
-        """
-        The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        """
+    def priority(self) -> Optional[int]:
         return pulumi.get(self, "priority")
 
     @property
     @pulumi.getter(name="satisfiedResponseTime")
-    def satisfied_response_time(self) -> int:
-        """
-        The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        """
+    def satisfied_response_time(self) -> Optional[int]:
         return pulumi.get(self, "satisfied_response_time")
 
     @property
     @pulumi.getter(name="toleratingResponseTime")
-    def tolerating_response_time(self) -> int:
-        """
-        The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-        """
+    def tolerating_response_time(self) -> Optional[int]:
         return pulumi.get(self, "tolerating_response_time")
 
 
@@ -1039,9 +778,6 @@ class GetConfigsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the metric. This must be a known metric name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1050,9 +786,6 @@ class GetConfigsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the metric. This must be a known metric name.
-        """
         return pulumi.get(self, "name")
 
     @property

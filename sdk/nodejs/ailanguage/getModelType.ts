@@ -45,16 +45,16 @@ export interface GetModelTypeResult {
     /**
      * Model information capabilities related to version
      */
-    readonly capabilities: string;
+    readonly capabilities?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly modelType: string;
     /**
      * Model versions available for this model type
      */
-    readonly versions: string[];
+    readonly versions?: string[];
 }
 /**
  * This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.

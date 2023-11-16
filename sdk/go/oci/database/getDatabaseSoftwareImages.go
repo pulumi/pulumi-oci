@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
@@ -83,7 +82,7 @@ type GetDatabaseSoftwareImagesResult struct {
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetDatabaseSoftwareImagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// To what shape the image is meant for.
 	ImageShapeFamily *string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
@@ -143,12 +142,6 @@ func (o GetDatabaseSoftwareImagesResultOutput) ToGetDatabaseSoftwareImagesResult
 	return o
 }
 
-func (o GetDatabaseSoftwareImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSoftwareImagesResult] {
-	return pulumix.Output[GetDatabaseSoftwareImagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetDatabaseSoftwareImagesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseSoftwareImagesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -171,8 +164,8 @@ func (o GetDatabaseSoftwareImagesResultOutput) Filters() GetDatabaseSoftwareImag
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseSoftwareImagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseSoftwareImagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseSoftwareImagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseSoftwareImagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // To what shape the image is meant for.

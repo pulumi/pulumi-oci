@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
@@ -13,22 +15,22 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
      * @return Publix IP prefix (CIDR) that the customer specified.
      * 
      */
-    private String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return A filter to only return resources that match the given verification state.
      * 
      * The state value is case-insensitive.
      * 
      */
-    private String verificationState;
+    private @Nullable String verificationState;
 
     private GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix() {}
     /**
      * @return Publix IP prefix (CIDR) that the customer specified.
      * 
      */
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
     /**
      * @return A filter to only return resources that match the given verification state.
@@ -36,8 +38,8 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
      * The state value is case-insensitive.
      * 
      */
-    public String verificationState() {
-        return this.verificationState;
+    public Optional<String> verificationState() {
+        return Optional.ofNullable(this.verificationState);
     }
 
     public static Builder builder() {
@@ -49,8 +51,8 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cidrBlock;
-        private String verificationState;
+        private @Nullable String cidrBlock;
+        private @Nullable String verificationState;
         public Builder() {}
         public Builder(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,13 +61,13 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
         }
 
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder verificationState(String verificationState) {
-            this.verificationState = Objects.requireNonNull(verificationState);
+        public Builder verificationState(@Nullable String verificationState) {
+            this.verificationState = verificationState;
             return this;
         }
         public GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix build() {

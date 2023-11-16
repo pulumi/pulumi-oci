@@ -69,11 +69,11 @@ export interface GetRecommendationStrategyResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A collection of recommendation strategy summaries.
      */
-    readonly items: outputs.Optimizer.GetRecommendationStrategyItem[];
+    readonly items?: outputs.Optimizer.GetRecommendationStrategyItem[];
     /**
      * The name of the strategy parameter.
      */

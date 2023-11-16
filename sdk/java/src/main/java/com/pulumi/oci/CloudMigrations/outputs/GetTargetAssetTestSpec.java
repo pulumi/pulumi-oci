@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetTestSpec {
@@ -23,88 +25,88 @@ public final class GetTargetAssetTestSpec {
      * @return Configuration options for the Oracle Cloud Agent software running on the instance.
      * 
      */
-    private List<GetTargetAssetTestSpecAgentConfig> agentConfigs;
+    private @Nullable List<GetTargetAssetTestSpecAgentConfig> agentConfigs;
     /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
-    private String capacityReservationId;
+    private @Nullable String capacityReservationId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
-    private List<GetTargetAssetTestSpecCreateVnicDetail> createVnicDetails;
+    private @Nullable List<GetTargetAssetTestSpecCreateVnicDetail> createVnicDetails;
     /**
      * @return The OCID of the dedicated VM host.
      * 
      */
-    private String dedicatedVmHostId;
+    private @Nullable String dedicatedVmHostId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
      */
-    private String hostnameLabel;
+    private @Nullable String hostnameLabel;
     /**
      * @return Optional mutable instance options
      * 
      */
-    private List<GetTargetAssetTestSpecInstanceOption> instanceOptions;
+    private @Nullable List<GetTargetAssetTestSpecInstanceOption> instanceOptions;
     /**
      * @return This is an advanced option.
      * 
      */
-    private String ipxeScript;
+    private @Nullable String ipxeScript;
     /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
      * 
      */
-    private Boolean isPvEncryptionInTransitEnabled;
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Configuration options for preemptible instances.
      * 
      */
-    private List<GetTargetAssetTestSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs;
+    private @Nullable List<GetTargetAssetTestSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs;
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The shape configuration requested for the instance.
      * 
      */
-    private List<GetTargetAssetTestSpecShapeConfig> shapeConfigs;
-    private List<GetTargetAssetTestSpecSourceDetail> sourceDetails;
+    private @Nullable List<GetTargetAssetTestSpecShapeConfig> shapeConfigs;
+    private @Nullable List<GetTargetAssetTestSpecSourceDetail> sourceDetails;
 
     private GetTargetAssetTestSpec() {}
     /**
@@ -112,122 +114,122 @@ public final class GetTargetAssetTestSpec {
      * 
      */
     public List<GetTargetAssetTestSpecAgentConfig> agentConfigs() {
-        return this.agentConfigs;
+        return this.agentConfigs == null ? List.of() : this.agentConfigs;
     }
     /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
-    public String capacityReservationId() {
-        return this.capacityReservationId;
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
     public List<GetTargetAssetTestSpecCreateVnicDetail> createVnicDetails() {
-        return this.createVnicDetails;
+        return this.createVnicDetails == null ? List.of() : this.createVnicDetails;
     }
     /**
      * @return The OCID of the dedicated VM host.
      * 
      */
-    public String dedicatedVmHostId() {
-        return this.dedicatedVmHostId;
+    public Optional<String> dedicatedVmHostId() {
+        return Optional.ofNullable(this.dedicatedVmHostId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
      */
-    public String hostnameLabel() {
-        return this.hostnameLabel;
+    public Optional<String> hostnameLabel() {
+        return Optional.ofNullable(this.hostnameLabel);
     }
     /**
      * @return Optional mutable instance options
      * 
      */
     public List<GetTargetAssetTestSpecInstanceOption> instanceOptions() {
-        return this.instanceOptions;
+        return this.instanceOptions == null ? List.of() : this.instanceOptions;
     }
     /**
      * @return This is an advanced option.
      * 
      */
-    public String ipxeScript() {
-        return this.ipxeScript;
+    public Optional<String> ipxeScript() {
+        return Optional.ofNullable(this.ipxeScript);
     }
     /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
      * 
      */
-    public Boolean isPvEncryptionInTransitEnabled() {
-        return this.isPvEncryptionInTransitEnabled;
+    public Optional<Boolean> isPvEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
     }
     /**
      * @return Configuration options for preemptible instances.
      * 
      */
     public List<GetTargetAssetTestSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs() {
-        return this.preemptibleInstanceConfigs;
+        return this.preemptibleInstanceConfigs == null ? List.of() : this.preemptibleInstanceConfigs;
     }
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The shape configuration requested for the instance.
      * 
      */
     public List<GetTargetAssetTestSpecShapeConfig> shapeConfigs() {
-        return this.shapeConfigs;
+        return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
     public List<GetTargetAssetTestSpecSourceDetail> sourceDetails() {
-        return this.sourceDetails;
+        return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }
 
     public static Builder builder() {
@@ -239,24 +241,24 @@ public final class GetTargetAssetTestSpec {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTargetAssetTestSpecAgentConfig> agentConfigs;
-        private String availabilityDomain;
-        private String capacityReservationId;
-        private String compartmentId;
-        private List<GetTargetAssetTestSpecCreateVnicDetail> createVnicDetails;
-        private String dedicatedVmHostId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String faultDomain;
-        private Map<String,Object> freeformTags;
-        private String hostnameLabel;
-        private List<GetTargetAssetTestSpecInstanceOption> instanceOptions;
-        private String ipxeScript;
-        private Boolean isPvEncryptionInTransitEnabled;
-        private List<GetTargetAssetTestSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs;
-        private String shape;
-        private List<GetTargetAssetTestSpecShapeConfig> shapeConfigs;
-        private List<GetTargetAssetTestSpecSourceDetail> sourceDetails;
+        private @Nullable List<GetTargetAssetTestSpecAgentConfig> agentConfigs;
+        private @Nullable String availabilityDomain;
+        private @Nullable String capacityReservationId;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetTargetAssetTestSpecCreateVnicDetail> createVnicDetails;
+        private @Nullable String dedicatedVmHostId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String faultDomain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostnameLabel;
+        private @Nullable List<GetTargetAssetTestSpecInstanceOption> instanceOptions;
+        private @Nullable String ipxeScript;
+        private @Nullable Boolean isPvEncryptionInTransitEnabled;
+        private @Nullable List<GetTargetAssetTestSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs;
+        private @Nullable String shape;
+        private @Nullable List<GetTargetAssetTestSpecShapeConfig> shapeConfigs;
+        private @Nullable List<GetTargetAssetTestSpecSourceDetail> sourceDetails;
         public Builder() {}
         public Builder(GetTargetAssetTestSpec defaults) {
     	      Objects.requireNonNull(defaults);
@@ -281,108 +283,108 @@ public final class GetTargetAssetTestSpec {
         }
 
         @CustomType.Setter
-        public Builder agentConfigs(List<GetTargetAssetTestSpecAgentConfig> agentConfigs) {
-            this.agentConfigs = Objects.requireNonNull(agentConfigs);
+        public Builder agentConfigs(@Nullable List<GetTargetAssetTestSpecAgentConfig> agentConfigs) {
+            this.agentConfigs = agentConfigs;
             return this;
         }
         public Builder agentConfigs(GetTargetAssetTestSpecAgentConfig... agentConfigs) {
             return agentConfigs(List.of(agentConfigs));
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createVnicDetails(List<GetTargetAssetTestSpecCreateVnicDetail> createVnicDetails) {
-            this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
+        public Builder createVnicDetails(@Nullable List<GetTargetAssetTestSpecCreateVnicDetail> createVnicDetails) {
+            this.createVnicDetails = createVnicDetails;
             return this;
         }
         public Builder createVnicDetails(GetTargetAssetTestSpecCreateVnicDetail... createVnicDetails) {
             return createVnicDetails(List.of(createVnicDetails));
         }
         @CustomType.Setter
-        public Builder dedicatedVmHostId(String dedicatedVmHostId) {
-            this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
+        public Builder dedicatedVmHostId(@Nullable String dedicatedVmHostId) {
+            this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+        public Builder hostnameLabel(@Nullable String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceOptions(List<GetTargetAssetTestSpecInstanceOption> instanceOptions) {
-            this.instanceOptions = Objects.requireNonNull(instanceOptions);
+        public Builder instanceOptions(@Nullable List<GetTargetAssetTestSpecInstanceOption> instanceOptions) {
+            this.instanceOptions = instanceOptions;
             return this;
         }
         public Builder instanceOptions(GetTargetAssetTestSpecInstanceOption... instanceOptions) {
             return instanceOptions(List.of(instanceOptions));
         }
         @CustomType.Setter
-        public Builder ipxeScript(String ipxeScript) {
-            this.ipxeScript = Objects.requireNonNull(ipxeScript);
+        public Builder ipxeScript(@Nullable String ipxeScript) {
+            this.ipxeScript = ipxeScript;
             return this;
         }
         @CustomType.Setter
-        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+        public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder preemptibleInstanceConfigs(List<GetTargetAssetTestSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
-            this.preemptibleInstanceConfigs = Objects.requireNonNull(preemptibleInstanceConfigs);
+        public Builder preemptibleInstanceConfigs(@Nullable List<GetTargetAssetTestSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
+            this.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             return this;
         }
         public Builder preemptibleInstanceConfigs(GetTargetAssetTestSpecPreemptibleInstanceConfig... preemptibleInstanceConfigs) {
             return preemptibleInstanceConfigs(List.of(preemptibleInstanceConfigs));
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeConfigs(List<GetTargetAssetTestSpecShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+        public Builder shapeConfigs(@Nullable List<GetTargetAssetTestSpecShapeConfig> shapeConfigs) {
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetTargetAssetTestSpecShapeConfig... shapeConfigs) {
             return shapeConfigs(List.of(shapeConfigs));
         }
         @CustomType.Setter
-        public Builder sourceDetails(List<GetTargetAssetTestSpecSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+        public Builder sourceDetails(@Nullable List<GetTargetAssetTestSpecSourceDetail> sourceDetails) {
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetTargetAssetTestSpecSourceDetail... sourceDetails) {

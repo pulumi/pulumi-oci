@@ -16,31 +16,31 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \"isConfidential\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly bool Confidential;
+        public readonly bool? Confidential;
         /// <summary>
         /// Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Help message of the flatfile bundle configuration property. This attribute maps to \"helpMessage\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly string HelpMessage;
+        public readonly string? HelpMessage;
         /// <summary>
         /// ICF data type of flatfile the bundle configuration property. This attribute maps to \"type\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly string IcfType;
+        public readonly string? IcfType;
         /// <summary>
         /// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Display sequence of the bundle configuration property.
         /// </summary>
-        public readonly int Order;
+        public readonly int? Order;
         /// <summary>
         /// If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \"isRequired\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly bool Required;
+        public readonly bool? Required;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
@@ -48,19 +48,19 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyResult(
-            bool confidential,
+            bool? confidential,
 
-            string displayName,
+            string? displayName,
 
-            string helpMessage,
+            string? helpMessage,
 
-            string icfType,
+            string? icfType,
 
-            string name,
+            string? name,
 
-            int order,
+            int? order,
 
-            bool required,
+            bool? required,
 
             ImmutableArray<string> values)
         {

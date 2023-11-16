@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -78,7 +77,7 @@ type GetMaskingReportsResult struct {
 	CompartmentIdInSubtree *bool                     `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetMaskingReportsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the masking policy used.
 	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
 	// The list of masking_report_collection.
@@ -134,12 +133,6 @@ func (o GetMaskingReportsResultOutput) ToGetMaskingReportsResultOutputWithContex
 	return o
 }
 
-func (o GetMaskingReportsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsResult] {
-	return pulumix.Output[GetMaskingReportsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMaskingReportsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMaskingReportsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -158,8 +151,8 @@ func (o GetMaskingReportsResultOutput) Filters() GetMaskingReportsFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaskingReportsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaskingReportsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the masking policy used.

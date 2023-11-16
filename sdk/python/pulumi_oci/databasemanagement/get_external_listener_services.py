@@ -47,10 +47,7 @@ class GetExternalListenerServicesResult:
 
     @property
     @pulumi.getter(name="externalListenerServiceCollections")
-    def external_listener_service_collections(self) -> Sequence['outputs.GetExternalListenerServicesExternalListenerServiceCollectionResult']:
-        """
-        The list of external_listener_service_collection.
-        """
+    def external_listener_service_collections(self) -> Optional[Sequence['outputs.GetExternalListenerServicesExternalListenerServiceCollectionResult']]:
         return pulumi.get(self, "external_listener_service_collections")
 
     @property
@@ -60,7 +57,7 @@ class GetExternalListenerServicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,9 +66,6 @@ class GetExternalListenerServicesResult:
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
 
@@ -93,24 +87,7 @@ def get_external_listener_services(external_listener_id: Optional[str] = None,
                                    managed_database_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalListenerServicesResult:
     """
-    This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the database services registered with the specified external listener
-    for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=oci_database_management_external_listener["test_external_listener"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str external_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalListenerId'] = external_listener_id
@@ -133,23 +110,6 @@ def get_external_listener_services_output(external_listener_id: Optional[pulumi.
                                           managed_database_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalListenerServicesResult]:
     """
-    This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the database services registered with the specified external listener
-    for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=oci_database_management_external_listener["test_external_listener"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str external_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     ...

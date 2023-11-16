@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
         /// </summary>
-        public readonly string ComputeGlobalImageCapabilitySchemaId;
+        public readonly string? ComputeGlobalImageCapabilitySchemaId;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The name of the compute global image capability schema version
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The map of each capability name to its ImageCapabilityDescriptor.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SchemaData;
+        public readonly ImmutableDictionary<string, object>? SchemaData;
         /// <summary>
         /// The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersionResult(
-            string computeGlobalImageCapabilitySchemaId,
+            string? computeGlobalImageCapabilitySchemaId,
 
-            string displayName,
+            string? displayName,
 
-            string name,
+            string? name,
 
-            ImmutableDictionary<string, object> schemaData,
+            ImmutableDictionary<string, object>? schemaData,
 
-            string timeCreated)
+            string? timeCreated)
         {
             ComputeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             DisplayName = displayName;

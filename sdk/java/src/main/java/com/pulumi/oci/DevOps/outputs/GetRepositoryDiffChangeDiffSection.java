@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffChangeDiffSectionLine;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryDiffChangeDiffSection {
@@ -15,12 +17,12 @@ public final class GetRepositoryDiffChangeDiffSection {
      * @return The lines within changed section.
      * 
      */
-    private List<GetRepositoryDiffChangeDiffSectionLine> lines;
+    private @Nullable List<GetRepositoryDiffChangeDiffSectionLine> lines;
     /**
      * @return Type of change.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetRepositoryDiffChangeDiffSection() {}
     /**
@@ -28,14 +30,14 @@ public final class GetRepositoryDiffChangeDiffSection {
      * 
      */
     public List<GetRepositoryDiffChangeDiffSectionLine> lines() {
-        return this.lines;
+        return this.lines == null ? List.of() : this.lines;
     }
     /**
      * @return Type of change.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetRepositoryDiffChangeDiffSection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRepositoryDiffChangeDiffSectionLine> lines;
-        private String type;
+        private @Nullable List<GetRepositoryDiffChangeDiffSectionLine> lines;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetRepositoryDiffChangeDiffSection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetRepositoryDiffChangeDiffSection {
         }
 
         @CustomType.Setter
-        public Builder lines(List<GetRepositoryDiffChangeDiffSectionLine> lines) {
-            this.lines = Objects.requireNonNull(lines);
+        public Builder lines(@Nullable List<GetRepositoryDiffChangeDiffSectionLine> lines) {
+            this.lines = lines;
             return this;
         }
         public Builder lines(GetRepositoryDiffChangeDiffSectionLine... lines) {
             return lines(List.of(lines));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetRepositoryDiffChangeDiffSection build() {

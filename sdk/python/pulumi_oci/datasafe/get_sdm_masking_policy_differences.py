@@ -58,9 +58,6 @@ class GetSdmMaskingPolicyDifferencesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the SDM masking policy difference.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -76,9 +73,6 @@ class GetSdmMaskingPolicyDifferencesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the SDM masking policy difference.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -88,7 +82,7 @@ class GetSdmMaskingPolicyDifferencesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,33 +91,21 @@ class GetSdmMaskingPolicyDifferencesResult:
     @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> Optional[str]:
-        """
-        The OCID of the masking policy associated with the SDM masking policy difference.
-        """
         return pulumi.get(self, "masking_policy_id")
 
     @property
     @pulumi.getter(name="sdmMaskingPolicyDifferenceCollections")
-    def sdm_masking_policy_difference_collections(self) -> Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult']:
-        """
-        The list of sdm_masking_policy_difference_collection.
-        """
+    def sdm_masking_policy_difference_collections(self) -> Optional[Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult']]:
         return pulumi.get(self, "sdm_masking_policy_difference_collections")
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> Optional[str]:
-        """
-        The OCID of the sensitive data model associated with the SDM masking policy difference.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the SDM masking policy difference.
-        """
         return pulumi.get(self, "state")
 
 
@@ -155,33 +137,7 @@ def get_sdm_masking_policy_differences(compartment_id: Optional[str] = None,
                                        state: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSdmMaskingPolicyDifferencesResult:
     """
-    This data source provides the list of Sdm Masking Policy Differences in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of SDM and masking policy difference resources based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["sdm_masking_policy_difference_compartment_id_in_subtree"],
-        difference_access_level=var["sdm_masking_policy_difference_difference_access_level"],
-        display_name=var["sdm_masking_policy_difference_display_name"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        state=var["sdm_masking_policy_difference_state"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str difference_access_level: Valid value is ACCESSIBLE. Default is ACCESSIBLE. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment).
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle states.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -219,32 +175,6 @@ def get_sdm_masking_policy_differences_output(compartment_id: Optional[pulumi.In
                                               state: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferencesResult]:
     """
-    This data source provides the list of Sdm Masking Policy Differences in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of SDM and masking policy difference resources based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["sdm_masking_policy_difference_compartment_id_in_subtree"],
-        difference_access_level=var["sdm_masking_policy_difference_difference_access_level"],
-        display_name=var["sdm_masking_policy_difference_display_name"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        state=var["sdm_masking_policy_difference_state"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str difference_access_level: Valid value is ACCESSIBLE. Default is ACCESSIBLE. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment).
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle states.
+    Use this data source to access information about an existing resource.
     """
     ...

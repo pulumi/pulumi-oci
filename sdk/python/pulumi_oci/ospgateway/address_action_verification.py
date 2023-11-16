@@ -46,38 +46,6 @@ class AddressActionVerificationArgs:
                  street_number: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AddressActionVerification resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] osp_home_region: The home region's public name of the logged in user.
-        :param pulumi.Input[str] address_key: Address identifier.
-        :param pulumi.Input[str] city: Name of the city.
-        :param pulumi.Input[str] company_name: Name of the customer company.
-        :param pulumi.Input[str] contributor_class: Contributor class of the customer company.
-        :param pulumi.Input[str] country: Country of the address.
-        :param pulumi.Input[str] county: County of the address.
-        :param pulumi.Input[str] department_name: Department name of the customer company.
-        :param pulumi.Input[str] email_address: Contact person email address.
-        :param pulumi.Input[str] first_name: First name of the contact person.
-        :param pulumi.Input[str] internal_number: Internal number of the customer company.
-        :param pulumi.Input[str] job_title: Job title of the contact person.
-        :param pulumi.Input[str] last_name: Last name of the contact person.
-        :param pulumi.Input[str] line1: Address line 1.
-        :param pulumi.Input[str] line2: Address line 2.
-        :param pulumi.Input[str] line3: Address line 3.
-        :param pulumi.Input[str] line4: Address line 4.
-        :param pulumi.Input[str] middle_name: Middle name of the contact person.
-        :param pulumi.Input[str] municipal_inscription: Municipal Inscription.
-        :param pulumi.Input[str] phone_country_code: Phone country code of the contact person.
-        :param pulumi.Input[str] phone_number: Phone number of the contact person.
-        :param pulumi.Input[str] postal_code: Post code of the address.
-        :param pulumi.Input[str] province: Province of the address.
-        :param pulumi.Input[str] state: State of the address.
-        :param pulumi.Input[str] state_inscription: State Inscription.
-        :param pulumi.Input[str] street_name: Street name of the address.
-        :param pulumi.Input[str] street_number: Street number of the address.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "osp_home_region", osp_home_region)
@@ -137,9 +105,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -149,9 +114,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="ospHomeRegion")
     def osp_home_region(self) -> pulumi.Input[str]:
-        """
-        The home region's public name of the logged in user.
-        """
         return pulumi.get(self, "osp_home_region")
 
     @osp_home_region.setter
@@ -161,9 +123,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="addressKey")
     def address_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address identifier.
-        """
         return pulumi.get(self, "address_key")
 
     @address_key.setter
@@ -173,9 +132,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def city(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the city.
-        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -185,9 +141,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="companyName")
     def company_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the customer company.
-        """
         return pulumi.get(self, "company_name")
 
     @company_name.setter
@@ -197,9 +150,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="contributorClass")
     def contributor_class(self) -> Optional[pulumi.Input[str]]:
-        """
-        Contributor class of the customer company.
-        """
         return pulumi.get(self, "contributor_class")
 
     @contributor_class.setter
@@ -209,9 +159,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
-        """
-        Country of the address.
-        """
         return pulumi.get(self, "country")
 
     @country.setter
@@ -221,9 +168,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def county(self) -> Optional[pulumi.Input[str]]:
-        """
-        County of the address.
-        """
         return pulumi.get(self, "county")
 
     @county.setter
@@ -233,9 +177,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="departmentName")
     def department_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Department name of the customer company.
-        """
         return pulumi.get(self, "department_name")
 
     @department_name.setter
@@ -245,9 +186,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        Contact person email address.
-        """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
@@ -257,9 +195,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        First name of the contact person.
-        """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
@@ -269,9 +204,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="internalNumber")
     def internal_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        Internal number of the customer company.
-        """
         return pulumi.get(self, "internal_number")
 
     @internal_number.setter
@@ -281,9 +213,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="jobTitle")
     def job_title(self) -> Optional[pulumi.Input[str]]:
-        """
-        Job title of the contact person.
-        """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
@@ -293,9 +222,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Last name of the contact person.
-        """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
@@ -305,9 +231,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def line1(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 1.
-        """
         return pulumi.get(self, "line1")
 
     @line1.setter
@@ -317,9 +240,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def line2(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 2.
-        """
         return pulumi.get(self, "line2")
 
     @line2.setter
@@ -329,9 +249,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def line3(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 3.
-        """
         return pulumi.get(self, "line3")
 
     @line3.setter
@@ -341,9 +258,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def line4(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 4.
-        """
         return pulumi.get(self, "line4")
 
     @line4.setter
@@ -353,9 +267,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="middleName")
     def middle_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Middle name of the contact person.
-        """
         return pulumi.get(self, "middle_name")
 
     @middle_name.setter
@@ -365,9 +276,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="municipalInscription")
     def municipal_inscription(self) -> Optional[pulumi.Input[str]]:
-        """
-        Municipal Inscription.
-        """
         return pulumi.get(self, "municipal_inscription")
 
     @municipal_inscription.setter
@@ -377,9 +285,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="phoneCountryCode")
     def phone_country_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        Phone country code of the contact person.
-        """
         return pulumi.get(self, "phone_country_code")
 
     @phone_country_code.setter
@@ -389,9 +294,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        Phone number of the contact person.
-        """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
@@ -401,9 +303,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        Post code of the address.
-        """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
@@ -413,9 +312,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def province(self) -> Optional[pulumi.Input[str]]:
-        """
-        Province of the address.
-        """
         return pulumi.get(self, "province")
 
     @province.setter
@@ -425,9 +321,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        State of the address.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -437,9 +330,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="stateInscription")
     def state_inscription(self) -> Optional[pulumi.Input[str]]:
-        """
-        State Inscription.
-        """
         return pulumi.get(self, "state_inscription")
 
     @state_inscription.setter
@@ -449,9 +339,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="streetName")
     def street_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Street name of the address.
-        """
         return pulumi.get(self, "street_name")
 
     @street_name.setter
@@ -461,13 +348,6 @@ class AddressActionVerificationArgs:
     @property
     @pulumi.getter(name="streetNumber")
     def street_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        Street number of the address.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "street_number")
 
     @street_number.setter
@@ -511,41 +391,6 @@ class _AddressActionVerificationState:
                  verification_code: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AddressActionVerification resources.
-        :param pulumi.Input[str] address_key: Address identifier.
-        :param pulumi.Input[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]] addresses: Address details model.
-        :param pulumi.Input[str] city: Name of the city.
-        :param pulumi.Input[str] company_name: Name of the customer company.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] contributor_class: Contributor class of the customer company.
-        :param pulumi.Input[str] country: Country of the address.
-        :param pulumi.Input[str] county: County of the address.
-        :param pulumi.Input[str] department_name: Department name of the customer company.
-        :param pulumi.Input[str] email_address: Contact person email address.
-        :param pulumi.Input[str] first_name: First name of the contact person.
-        :param pulumi.Input[str] internal_number: Internal number of the customer company.
-        :param pulumi.Input[str] job_title: Job title of the contact person.
-        :param pulumi.Input[str] last_name: Last name of the contact person.
-        :param pulumi.Input[str] line1: Address line 1.
-        :param pulumi.Input[str] line2: Address line 2.
-        :param pulumi.Input[str] line3: Address line 3.
-        :param pulumi.Input[str] line4: Address line 4.
-        :param pulumi.Input[str] middle_name: Middle name of the contact person.
-        :param pulumi.Input[str] municipal_inscription: Municipal Inscription.
-        :param pulumi.Input[str] osp_home_region: The home region's public name of the logged in user.
-        :param pulumi.Input[str] phone_country_code: Phone country code of the contact person.
-        :param pulumi.Input[str] phone_number: Phone number of the contact person.
-        :param pulumi.Input[str] postal_code: Post code of the address.
-        :param pulumi.Input[str] province: Province of the address.
-        :param pulumi.Input[str] quality: Address quality type.
-        :param pulumi.Input[str] state: State of the address.
-        :param pulumi.Input[str] state_inscription: State Inscription.
-        :param pulumi.Input[str] street_name: Street name of the address.
-        :param pulumi.Input[str] street_number: Street number of the address.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] verification_code: Address verification code.
         """
         if address_key is not None:
             pulumi.set(__self__, "address_key", address_key)
@@ -613,9 +458,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="addressKey")
     def address_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address identifier.
-        """
         return pulumi.get(self, "address_key")
 
     @address_key.setter
@@ -625,9 +467,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]]:
-        """
-        Address details model.
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -637,9 +476,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def city(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the city.
-        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -649,9 +485,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="companyName")
     def company_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the customer company.
-        """
         return pulumi.get(self, "company_name")
 
     @company_name.setter
@@ -661,9 +494,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -673,9 +503,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="contributorClass")
     def contributor_class(self) -> Optional[pulumi.Input[str]]:
-        """
-        Contributor class of the customer company.
-        """
         return pulumi.get(self, "contributor_class")
 
     @contributor_class.setter
@@ -685,9 +512,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
-        """
-        Country of the address.
-        """
         return pulumi.get(self, "country")
 
     @country.setter
@@ -697,9 +521,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def county(self) -> Optional[pulumi.Input[str]]:
-        """
-        County of the address.
-        """
         return pulumi.get(self, "county")
 
     @county.setter
@@ -709,9 +530,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="departmentName")
     def department_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Department name of the customer company.
-        """
         return pulumi.get(self, "department_name")
 
     @department_name.setter
@@ -721,9 +539,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        Contact person email address.
-        """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
@@ -733,9 +548,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        First name of the contact person.
-        """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
@@ -745,9 +557,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="internalNumber")
     def internal_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        Internal number of the customer company.
-        """
         return pulumi.get(self, "internal_number")
 
     @internal_number.setter
@@ -757,9 +566,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="jobTitle")
     def job_title(self) -> Optional[pulumi.Input[str]]:
-        """
-        Job title of the contact person.
-        """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
@@ -769,9 +575,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Last name of the contact person.
-        """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
@@ -781,9 +584,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def line1(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 1.
-        """
         return pulumi.get(self, "line1")
 
     @line1.setter
@@ -793,9 +593,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def line2(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 2.
-        """
         return pulumi.get(self, "line2")
 
     @line2.setter
@@ -805,9 +602,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def line3(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 3.
-        """
         return pulumi.get(self, "line3")
 
     @line3.setter
@@ -817,9 +611,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def line4(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address line 4.
-        """
         return pulumi.get(self, "line4")
 
     @line4.setter
@@ -829,9 +620,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="middleName")
     def middle_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Middle name of the contact person.
-        """
         return pulumi.get(self, "middle_name")
 
     @middle_name.setter
@@ -841,9 +629,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="municipalInscription")
     def municipal_inscription(self) -> Optional[pulumi.Input[str]]:
-        """
-        Municipal Inscription.
-        """
         return pulumi.get(self, "municipal_inscription")
 
     @municipal_inscription.setter
@@ -853,9 +638,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="ospHomeRegion")
     def osp_home_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        The home region's public name of the logged in user.
-        """
         return pulumi.get(self, "osp_home_region")
 
     @osp_home_region.setter
@@ -865,9 +647,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="phoneCountryCode")
     def phone_country_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        Phone country code of the contact person.
-        """
         return pulumi.get(self, "phone_country_code")
 
     @phone_country_code.setter
@@ -877,9 +656,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        Phone number of the contact person.
-        """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
@@ -889,9 +665,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        Post code of the address.
-        """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
@@ -901,9 +674,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def province(self) -> Optional[pulumi.Input[str]]:
-        """
-        Province of the address.
-        """
         return pulumi.get(self, "province")
 
     @province.setter
@@ -913,9 +683,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def quality(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address quality type.
-        """
         return pulumi.get(self, "quality")
 
     @quality.setter
@@ -925,9 +692,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        State of the address.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -937,9 +701,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="stateInscription")
     def state_inscription(self) -> Optional[pulumi.Input[str]]:
-        """
-        State Inscription.
-        """
         return pulumi.get(self, "state_inscription")
 
     @state_inscription.setter
@@ -949,9 +710,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="streetName")
     def street_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Street name of the address.
-        """
         return pulumi.get(self, "street_name")
 
     @street_name.setter
@@ -961,13 +719,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="streetNumber")
     def street_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        Street number of the address.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "street_number")
 
     @street_number.setter
@@ -977,9 +728,6 @@ class _AddressActionVerificationState:
     @property
     @pulumi.getter(name="verificationCode")
     def verification_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        Address verification code.
-        """
         return pulumi.get(self, "verification_code")
 
     @verification_code.setter
@@ -1022,89 +770,9 @@ class AddressActionVerification(pulumi.CustomResource):
                  street_number: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-        Verify address
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_address_action_verification = oci.osp_gateway.AddressActionVerification("testAddressActionVerification",
-            compartment_id=var["compartment_id"],
-            osp_home_region=var["address_action_verification_osp_home_region"],
-            address_key=var["address_action_verification_address_key"],
-            city=var["address_action_verification_city"],
-            company_name=var["address_action_verification_company_name"],
-            contributor_class=var["address_action_verification_contributor_class"],
-            country=var["address_action_verification_country"],
-            county=var["address_action_verification_county"],
-            department_name=var["address_action_verification_department_name"],
-            email_address=var["address_action_verification_email_address"],
-            first_name=var["address_action_verification_first_name"],
-            internal_number=var["address_action_verification_internal_number"],
-            job_title=var["address_action_verification_job_title"],
-            last_name=var["address_action_verification_last_name"],
-            line1=var["address_action_verification_line1"],
-            line2=var["address_action_verification_line2"],
-            line3=var["address_action_verification_line3"],
-            line4=var["address_action_verification_line4"],
-            middle_name=var["address_action_verification_middle_name"],
-            municipal_inscription=var["address_action_verification_municipal_inscription"],
-            phone_country_code=var["address_action_verification_phone_country_code"],
-            phone_number=var["address_action_verification_phone_number"],
-            postal_code=var["address_action_verification_postal_code"],
-            province=var["address_action_verification_province"],
-            state=var["address_action_verification_state"],
-            state_inscription=var["address_action_verification_state_inscription"],
-            street_name=var["address_action_verification_street_name"],
-            street_number=var["address_action_verification_street_number"])
-        ```
-
-        ## Import
-
-        AddressActionVerifications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
-        ```
-
+        Create a AddressActionVerification resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] address_key: Address identifier.
-        :param pulumi.Input[str] city: Name of the city.
-        :param pulumi.Input[str] company_name: Name of the customer company.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] contributor_class: Contributor class of the customer company.
-        :param pulumi.Input[str] country: Country of the address.
-        :param pulumi.Input[str] county: County of the address.
-        :param pulumi.Input[str] department_name: Department name of the customer company.
-        :param pulumi.Input[str] email_address: Contact person email address.
-        :param pulumi.Input[str] first_name: First name of the contact person.
-        :param pulumi.Input[str] internal_number: Internal number of the customer company.
-        :param pulumi.Input[str] job_title: Job title of the contact person.
-        :param pulumi.Input[str] last_name: Last name of the contact person.
-        :param pulumi.Input[str] line1: Address line 1.
-        :param pulumi.Input[str] line2: Address line 2.
-        :param pulumi.Input[str] line3: Address line 3.
-        :param pulumi.Input[str] line4: Address line 4.
-        :param pulumi.Input[str] middle_name: Middle name of the contact person.
-        :param pulumi.Input[str] municipal_inscription: Municipal Inscription.
-        :param pulumi.Input[str] osp_home_region: The home region's public name of the logged in user.
-        :param pulumi.Input[str] phone_country_code: Phone country code of the contact person.
-        :param pulumi.Input[str] phone_number: Phone number of the contact person.
-        :param pulumi.Input[str] postal_code: Post code of the address.
-        :param pulumi.Input[str] province: Province of the address.
-        :param pulumi.Input[str] state: State of the address.
-        :param pulumi.Input[str] state_inscription: State Inscription.
-        :param pulumi.Input[str] street_name: Street name of the address.
-        :param pulumi.Input[str] street_number: Street number of the address.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1113,55 +781,7 @@ class AddressActionVerification(pulumi.CustomResource):
                  args: AddressActionVerificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-        Verify address
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_address_action_verification = oci.osp_gateway.AddressActionVerification("testAddressActionVerification",
-            compartment_id=var["compartment_id"],
-            osp_home_region=var["address_action_verification_osp_home_region"],
-            address_key=var["address_action_verification_address_key"],
-            city=var["address_action_verification_city"],
-            company_name=var["address_action_verification_company_name"],
-            contributor_class=var["address_action_verification_contributor_class"],
-            country=var["address_action_verification_country"],
-            county=var["address_action_verification_county"],
-            department_name=var["address_action_verification_department_name"],
-            email_address=var["address_action_verification_email_address"],
-            first_name=var["address_action_verification_first_name"],
-            internal_number=var["address_action_verification_internal_number"],
-            job_title=var["address_action_verification_job_title"],
-            last_name=var["address_action_verification_last_name"],
-            line1=var["address_action_verification_line1"],
-            line2=var["address_action_verification_line2"],
-            line3=var["address_action_verification_line3"],
-            line4=var["address_action_verification_line4"],
-            middle_name=var["address_action_verification_middle_name"],
-            municipal_inscription=var["address_action_verification_municipal_inscription"],
-            phone_country_code=var["address_action_verification_phone_country_code"],
-            phone_number=var["address_action_verification_phone_number"],
-            postal_code=var["address_action_verification_postal_code"],
-            province=var["address_action_verification_province"],
-            state=var["address_action_verification_state"],
-            state_inscription=var["address_action_verification_state_inscription"],
-            street_name=var["address_action_verification_street_name"],
-            street_number=var["address_action_verification_street_number"])
-        ```
-
-        ## Import
-
-        AddressActionVerifications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
-        ```
-
+        Create a AddressActionVerification resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AddressActionVerificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1297,41 +917,6 @@ class AddressActionVerification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] address_key: Address identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AddressActionVerificationAddressArgs']]]] addresses: Address details model.
-        :param pulumi.Input[str] city: Name of the city.
-        :param pulumi.Input[str] company_name: Name of the customer company.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] contributor_class: Contributor class of the customer company.
-        :param pulumi.Input[str] country: Country of the address.
-        :param pulumi.Input[str] county: County of the address.
-        :param pulumi.Input[str] department_name: Department name of the customer company.
-        :param pulumi.Input[str] email_address: Contact person email address.
-        :param pulumi.Input[str] first_name: First name of the contact person.
-        :param pulumi.Input[str] internal_number: Internal number of the customer company.
-        :param pulumi.Input[str] job_title: Job title of the contact person.
-        :param pulumi.Input[str] last_name: Last name of the contact person.
-        :param pulumi.Input[str] line1: Address line 1.
-        :param pulumi.Input[str] line2: Address line 2.
-        :param pulumi.Input[str] line3: Address line 3.
-        :param pulumi.Input[str] line4: Address line 4.
-        :param pulumi.Input[str] middle_name: Middle name of the contact person.
-        :param pulumi.Input[str] municipal_inscription: Municipal Inscription.
-        :param pulumi.Input[str] osp_home_region: The home region's public name of the logged in user.
-        :param pulumi.Input[str] phone_country_code: Phone country code of the contact person.
-        :param pulumi.Input[str] phone_number: Phone number of the contact person.
-        :param pulumi.Input[str] postal_code: Post code of the address.
-        :param pulumi.Input[str] province: Province of the address.
-        :param pulumi.Input[str] quality: Address quality type.
-        :param pulumi.Input[str] state: State of the address.
-        :param pulumi.Input[str] state_inscription: State Inscription.
-        :param pulumi.Input[str] street_name: Street name of the address.
-        :param pulumi.Input[str] street_number: Street number of the address.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] verification_code: Address verification code.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1372,253 +957,156 @@ class AddressActionVerification(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> pulumi.Output[str]:
-        """
-        Address identifier.
-        """
+    def address_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
-    def addresses(self) -> pulumi.Output[Sequence['outputs.AddressActionVerificationAddress']]:
-        """
-        Address details model.
-        """
+    def addresses(self) -> pulumi.Output[Optional[Sequence['outputs.AddressActionVerificationAddress']]]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter
-    def city(self) -> pulumi.Output[str]:
-        """
-        Name of the city.
-        """
+    def city(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> pulumi.Output[str]:
-        """
-        Name of the customer company.
-        """
+    def company_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> pulumi.Output[str]:
-        """
-        Contributor class of the customer company.
-        """
+    def contributor_class(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
-    def country(self) -> pulumi.Output[str]:
-        """
-        Country of the address.
-        """
+    def country(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
-    def county(self) -> pulumi.Output[str]:
-        """
-        County of the address.
-        """
+    def county(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> pulumi.Output[str]:
-        """
-        Department name of the customer company.
-        """
+    def department_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> pulumi.Output[str]:
-        """
-        Contact person email address.
-        """
+    def email_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> pulumi.Output[str]:
-        """
-        First name of the contact person.
-        """
+    def first_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> pulumi.Output[str]:
-        """
-        Internal number of the customer company.
-        """
+    def internal_number(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> pulumi.Output[str]:
-        """
-        Job title of the contact person.
-        """
+    def job_title(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> pulumi.Output[str]:
-        """
-        Last name of the contact person.
-        """
+    def last_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
-    def line1(self) -> pulumi.Output[str]:
-        """
-        Address line 1.
-        """
+    def line1(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
-    def line2(self) -> pulumi.Output[str]:
-        """
-        Address line 2.
-        """
+    def line2(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
-    def line3(self) -> pulumi.Output[str]:
-        """
-        Address line 3.
-        """
+    def line3(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
-    def line4(self) -> pulumi.Output[str]:
-        """
-        Address line 4.
-        """
+    def line4(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> pulumi.Output[str]:
-        """
-        Middle name of the contact person.
-        """
+    def middle_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> pulumi.Output[str]:
-        """
-        Municipal Inscription.
-        """
+    def municipal_inscription(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="ospHomeRegion")
     def osp_home_region(self) -> pulumi.Output[str]:
-        """
-        The home region's public name of the logged in user.
-        """
         return pulumi.get(self, "osp_home_region")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> pulumi.Output[str]:
-        """
-        Phone country code of the contact person.
-        """
+    def phone_country_code(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> pulumi.Output[str]:
-        """
-        Phone number of the contact person.
-        """
+    def phone_number(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> pulumi.Output[str]:
-        """
-        Post code of the address.
-        """
+    def postal_code(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> pulumi.Output[str]:
-        """
-        Province of the address.
-        """
+    def province(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def quality(self) -> pulumi.Output[str]:
-        """
-        Address quality type.
-        """
+    def quality(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "quality")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        State of the address.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> pulumi.Output[str]:
-        """
-        State Inscription.
-        """
+    def state_inscription(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> pulumi.Output[str]:
-        """
-        Street name of the address.
-        """
+    def street_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> pulumi.Output[str]:
-        """
-        Street number of the address.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def street_number(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "street_number")
 
     @property
     @pulumi.getter(name="verificationCode")
-    def verification_code(self) -> pulumi.Output[str]:
-        """
-        Address verification code.
-        """
+    def verification_code(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "verification_code")
 

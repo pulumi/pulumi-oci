@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSteeringPolicyRuleCase {
@@ -16,17 +18,17 @@ public final class GetSteeringPolicyRuleCase {
      * @return An array of `SteeringPolicyPriorityAnswerData` objects.
      * 
      */
-    private List<GetSteeringPolicyRuleCaseAnswerData> answerDatas;
+    private @Nullable List<GetSteeringPolicyRuleCaseAnswerData> answerDatas;
     /**
      * @return An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in (&#39;192.0.2.0/24&#39;)` to define a case that matches queries from that office.
      * 
      */
-    private String caseCondition;
+    private @Nullable String caseCondition;
     /**
      * @return The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
 
     private GetSteeringPolicyRuleCase() {}
     /**
@@ -34,21 +36,21 @@ public final class GetSteeringPolicyRuleCase {
      * 
      */
     public List<GetSteeringPolicyRuleCaseAnswerData> answerDatas() {
-        return this.answerDatas;
+        return this.answerDatas == null ? List.of() : this.answerDatas;
     }
     /**
      * @return An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in (&#39;192.0.2.0/24&#39;)` to define a case that matches queries from that office.
      * 
      */
-    public String caseCondition() {
-        return this.caseCondition;
+    public Optional<String> caseCondition() {
+        return Optional.ofNullable(this.caseCondition);
     }
     /**
      * @return The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetSteeringPolicyRuleCase {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSteeringPolicyRuleCaseAnswerData> answerDatas;
-        private String caseCondition;
-        private Integer count;
+        private @Nullable List<GetSteeringPolicyRuleCaseAnswerData> answerDatas;
+        private @Nullable String caseCondition;
+        private @Nullable Integer count;
         public Builder() {}
         public Builder(GetSteeringPolicyRuleCase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetSteeringPolicyRuleCase {
         }
 
         @CustomType.Setter
-        public Builder answerDatas(List<GetSteeringPolicyRuleCaseAnswerData> answerDatas) {
-            this.answerDatas = Objects.requireNonNull(answerDatas);
+        public Builder answerDatas(@Nullable List<GetSteeringPolicyRuleCaseAnswerData> answerDatas) {
+            this.answerDatas = answerDatas;
             return this;
         }
         public Builder answerDatas(GetSteeringPolicyRuleCaseAnswerData... answerDatas) {
             return answerDatas(List.of(answerDatas));
         }
         @CustomType.Setter
-        public Builder caseCondition(String caseCondition) {
-            this.caseCondition = Objects.requireNonNull(caseCondition);
+        public Builder caseCondition(@Nullable String caseCondition) {
+            this.caseCondition = caseCondition;
             return this;
         }
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         public GetSteeringPolicyRuleCase build() {

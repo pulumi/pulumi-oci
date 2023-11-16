@@ -44,7 +44,7 @@ class GetSslCipherSuitesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetSslCipherSuitesResult:
 
     @property
     @pulumi.getter(name="sslCipherSuites")
-    def ssl_cipher_suites(self) -> Sequence['outputs.GetSslCipherSuitesSslCipherSuiteResult']:
-        """
-        The list of ssl_cipher_suites.
-        """
+    def ssl_cipher_suites(self) -> Optional[Sequence['outputs.GetSslCipherSuitesSslCipherSuiteResult']]:
         return pulumi.get(self, "ssl_cipher_suites")
 
 
@@ -80,21 +77,7 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[pulumi.InputType['GetSslCip
                           load_balancer_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSslCipherSuitesResult:
     """
-    This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all SSL cipher suites associated with the specified load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequenc
                                  load_balancer_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSslCipherSuitesResult]:
     """
-    This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all SSL cipher suites associated with the specified load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
+    Use this data source to access information about an existing resource.
     """
     ...

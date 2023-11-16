@@ -49,25 +49,16 @@ class GetVirtualNodePoolsResult:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[str]:
-        """
-        The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
-        """
         return pulumi.get(self, "cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment of the virtual node pool.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Display name of the virtual node pool. This is a non-unique value.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +68,7 @@ class GetVirtualNodePoolsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,17 +77,11 @@ class GetVirtualNodePoolsResult:
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The state of the Virtual Node Pool.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter(name="virtualNodePools")
-    def virtual_node_pools(self) -> Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolResult']:
-        """
-        The list of virtual_node_pools.
-        """
+    def virtual_node_pools(self) -> Optional[Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolResult']]:
         return pulumi.get(self, "virtual_node_pools")
 
 
@@ -122,15 +107,7 @@ def get_virtual_node_pools(cluster_id: Optional[str] = None,
                            states: Optional[Sequence[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualNodePoolsResult:
     """
-    This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the virtual node pools in a compartment, and optionally filter by cluster.
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: Display name of the virtual node pool. This is a non-unique value.
-    :param Sequence[str] states: A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -159,14 +136,6 @@ def get_virtual_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str
                                   states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualNodePoolsResult]:
     """
-    This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the virtual node pools in a compartment, and optionally filter by cluster.
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: Display name of the virtual node pool. This is a non-unique value.
-    :param Sequence[str] states: A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
+    Use this data source to access information about an existing resource.
     """
     ...

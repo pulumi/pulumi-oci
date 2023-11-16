@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The action being performed or was completed.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
         /// </summary>
-        public readonly string PatchId;
+        public readonly string? PatchId;
         /// <summary>
         /// The type of Patch operation.
         /// </summary>
-        public readonly string PatchType;
+        public readonly string? PatchType;
         /// <summary>
         /// The current state of the action.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time when the patch action completed
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time when the patch action started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetDbHomePatchHistoryEntriesPatchHistoryEntryResult(
-            string action,
+            string? action,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string patchId,
+            string? patchId,
 
-            string patchType,
+            string? patchType,
 
-            string state,
+            string? state,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted)
+            string? timeStarted)
         {
             Action = action;
             Id = id;

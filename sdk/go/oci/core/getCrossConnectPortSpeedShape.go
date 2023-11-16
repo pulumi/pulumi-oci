@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
@@ -67,7 +66,7 @@ type GetCrossConnectPortSpeedShapeResult struct {
 	CrossConnectPortSpeedShapes []GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape `pulumi:"crossConnectPortSpeedShapes"`
 	Filters                     []GetCrossConnectPortSpeedShapeFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetCrossConnectPortSpeedShapeOutput(ctx *pulumi.Context, args GetCrossConnectPortSpeedShapeOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectPortSpeedShapeResultOutput {
@@ -109,12 +108,6 @@ func (o GetCrossConnectPortSpeedShapeResultOutput) ToGetCrossConnectPortSpeedSha
 	return o
 }
 
-func (o GetCrossConnectPortSpeedShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCrossConnectPortSpeedShapeResult] {
-	return pulumix.Output[GetCrossConnectPortSpeedShapeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCrossConnectPortSpeedShapeResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectPortSpeedShapeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -131,8 +124,8 @@ func (o GetCrossConnectPortSpeedShapeResultOutput) Filters() GetCrossConnectPort
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCrossConnectPortSpeedShapeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCrossConnectPortSpeedShapeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCrossConnectPortSpeedShapeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCrossConnectPortSpeedShapeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

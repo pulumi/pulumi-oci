@@ -167,7 +167,7 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the private endpoint resource.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.DataCatalog
 
             ImmutableArray<Outputs.GetCatalogPrivateEndpointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

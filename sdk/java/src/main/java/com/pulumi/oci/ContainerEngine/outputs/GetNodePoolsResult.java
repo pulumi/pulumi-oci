@@ -29,7 +29,7 @@ public final class GetNodePoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the node pool.
      * 
@@ -39,7 +39,7 @@ public final class GetNodePoolsResult {
      * @return The list of node_pools.
      * 
      */
-    private List<GetNodePoolsNodePool> nodePools;
+    private @Nullable List<GetNodePoolsNodePool> nodePools;
     /**
      * @return The state of the nodepool.
      * 
@@ -68,8 +68,8 @@ public final class GetNodePoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the node pool.
@@ -83,7 +83,7 @@ public final class GetNodePoolsResult {
      * 
      */
     public List<GetNodePoolsNodePool> nodePools() {
-        return this.nodePools;
+        return this.nodePools == null ? List.of() : this.nodePools;
     }
     /**
      * @return The state of the nodepool.
@@ -105,9 +105,9 @@ public final class GetNodePoolsResult {
         private @Nullable String clusterId;
         private String compartmentId;
         private @Nullable List<GetNodePoolsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetNodePoolsNodePool> nodePools;
+        private @Nullable List<GetNodePoolsNodePool> nodePools;
         private @Nullable List<String> states;
         public Builder() {}
         public Builder(GetNodePoolsResult defaults) {
@@ -140,8 +140,8 @@ public final class GetNodePoolsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -150,8 +150,8 @@ public final class GetNodePoolsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder nodePools(List<GetNodePoolsNodePool> nodePools) {
-            this.nodePools = Objects.requireNonNull(nodePools);
+        public Builder nodePools(@Nullable List<GetNodePoolsNodePool> nodePools) {
+            this.nodePools = nodePools;
             return this;
         }
         public Builder nodePools(GetNodePoolsNodePool... nodePools) {

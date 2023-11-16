@@ -13,23 +13,23 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigResult
     {
-        public readonly int MemoryStepSize;
+        public readonly int? MemoryStepSize;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricResult> Metrics;
-        public readonly int MinMemoryPerNode;
-        public readonly int MinOcpusPerNode;
-        public readonly int OcpuStepSize;
+        public readonly int? MinMemoryPerNode;
+        public readonly int? MinOcpusPerNode;
+        public readonly int? OcpuStepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigResult(
-            int memoryStepSize,
+            int? memoryStepSize,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricResult> metrics,
 
-            int minMemoryPerNode,
+            int? minMemoryPerNode,
 
-            int minOcpusPerNode,
+            int? minOcpusPerNode,
 
-            int ocpuStepSize)
+            int? ocpuStepSize)
         {
             MemoryStepSize = memoryStepSize;
             Metrics = metrics;

@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction {
@@ -13,35 +15,35 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMe
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
-    private String metricName;
+    private @Nullable String compartmentId;
+    private @Nullable String metricName;
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    private String namespace;
-    private String resourceGroup;
+    private @Nullable String namespace;
+    private @Nullable String resourceGroup;
 
     private GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
 
     public static Builder builder() {
@@ -53,10 +55,10 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMe
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String metricName;
-        private String namespace;
-        private String resourceGroup;
+        private @Nullable String compartmentId;
+        private @Nullable String metricName;
+        private @Nullable String namespace;
+        private @Nullable String resourceGroup;
         public Builder() {}
         public Builder(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -67,23 +69,23 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMe
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         public GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction build() {

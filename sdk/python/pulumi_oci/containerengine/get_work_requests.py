@@ -57,9 +57,6 @@ class GetWorkRequestsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which the work request exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -69,7 +66,7 @@ class GetWorkRequestsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,17 +85,11 @@ class GetWorkRequestsResult:
     @property
     @pulumi.getter
     def statuses(self) -> Optional[Sequence[str]]:
-        """
-        The current status of the work request.
-        """
         return pulumi.get(self, "statuses")
 
     @property
     @pulumi.getter(name="workRequests")
-    def work_requests(self) -> Sequence['outputs.GetWorkRequestsWorkRequestResult']:
-        """
-        The list of work_requests.
-        """
+    def work_requests(self) -> Optional[Sequence['outputs.GetWorkRequestsWorkRequestResult']]:
         return pulumi.get(self, "work_requests")
 
 
@@ -126,29 +117,7 @@ def get_work_requests(cluster_id: Optional[str] = None,
                       statuses: Optional[Sequence[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkRequestsResult:
     """
-    This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
-
-    List all work requests in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=var["compartment_id"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        resource_id=oci_containerengine_resource["test_resource"]["id"],
-        resource_type=var["work_request_resource_type"],
-        statuses=var["work_request_status"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str compartment_id: The OCID of the compartment.
-    :param str resource_id: The OCID of the resource associated with a work request
-    :param str resource_type: Type of the resource associated with a work request
-    :param Sequence[str] statuses: A work request status to filter on. Can have multiple parameters of this name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -180,28 +149,6 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] =
                              statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkRequestsResult]:
     """
-    This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
-
-    List all work requests in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=var["compartment_id"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        resource_id=oci_containerengine_resource["test_resource"]["id"],
-        resource_type=var["work_request_resource_type"],
-        statuses=var["work_request_status"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str compartment_id: The OCID of the compartment.
-    :param str resource_id: The OCID of the resource associated with a work request
-    :param str resource_type: Type of the resource associated with a work request
-    :param Sequence[str] statuses: A work request status to filter on. Can have multiple parameters of this name.
+    Use this data source to access information about an existing resource.
     """
     ...

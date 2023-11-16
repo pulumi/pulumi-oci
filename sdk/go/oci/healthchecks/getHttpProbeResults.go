@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Http Probe Results in Oracle Cloud Infrastructure Health Checks service.
@@ -75,7 +74,7 @@ type GetHttpProbeResultsResult struct {
 	// The list of http_probe_results.
 	HttpProbeResults []GetHttpProbeResultsHttpProbeResult `pulumi:"httpProbeResults"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the monitor or on-demand probe responsible for creating this result.
 	ProbeConfigurationId          string   `pulumi:"probeConfigurationId"`
 	StartTimeGreaterThanOrEqualTo *float64 `pulumi:"startTimeGreaterThanOrEqualTo"`
@@ -129,12 +128,6 @@ func (o GetHttpProbeResultsResultOutput) ToGetHttpProbeResultsResultOutputWithCo
 	return o
 }
 
-func (o GetHttpProbeResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsResult] {
-	return pulumix.Output[GetHttpProbeResultsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpProbeResultsResultOutput) Filters() GetHttpProbeResultsFilterArrayOutput {
 	return o.ApplyT(func(v GetHttpProbeResultsResult) []GetHttpProbeResultsFilter { return v.Filters }).(GetHttpProbeResultsFilterArrayOutput)
 }
@@ -145,8 +138,8 @@ func (o GetHttpProbeResultsResultOutput) HttpProbeResults() GetHttpProbeResultsH
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetHttpProbeResultsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the monitor or on-demand probe responsible for creating this result.

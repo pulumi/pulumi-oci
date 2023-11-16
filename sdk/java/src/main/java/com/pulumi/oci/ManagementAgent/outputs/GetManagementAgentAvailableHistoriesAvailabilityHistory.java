@@ -6,6 +6,8 @@ package com.pulumi.oci.ManagementAgent.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
@@ -13,51 +15,51 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
      * @return The availability status of managementAgent
      * 
      */
-    private String availabilityStatus;
+    private @Nullable String availabilityStatus;
     /**
      * @return Unique Management Agent identifier
      * 
      */
-    private String managementAgentId;
+    private @Nullable String managementAgentId;
     /**
      * @return The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
      * 
      */
-    private String timeAvailabilityStatusEnded;
+    private @Nullable String timeAvailabilityStatusEnded;
     /**
      * @return The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
      * 
      */
-    private String timeAvailabilityStatusStarted;
+    private @Nullable String timeAvailabilityStatusStarted;
 
     private GetManagementAgentAvailableHistoriesAvailabilityHistory() {}
     /**
      * @return The availability status of managementAgent
      * 
      */
-    public String availabilityStatus() {
-        return this.availabilityStatus;
+    public Optional<String> availabilityStatus() {
+        return Optional.ofNullable(this.availabilityStatus);
     }
     /**
      * @return Unique Management Agent identifier
      * 
      */
-    public String managementAgentId() {
-        return this.managementAgentId;
+    public Optional<String> managementAgentId() {
+        return Optional.ofNullable(this.managementAgentId);
     }
     /**
      * @return The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
      * 
      */
-    public String timeAvailabilityStatusEnded() {
-        return this.timeAvailabilityStatusEnded;
+    public Optional<String> timeAvailabilityStatusEnded() {
+        return Optional.ofNullable(this.timeAvailabilityStatusEnded);
     }
     /**
      * @return The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
      * 
      */
-    public String timeAvailabilityStatusStarted() {
-        return this.timeAvailabilityStatusStarted;
+    public Optional<String> timeAvailabilityStatusStarted() {
+        return Optional.ofNullable(this.timeAvailabilityStatusStarted);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityStatus;
-        private String managementAgentId;
-        private String timeAvailabilityStatusEnded;
-        private String timeAvailabilityStatusStarted;
+        private @Nullable String availabilityStatus;
+        private @Nullable String managementAgentId;
+        private @Nullable String timeAvailabilityStatusEnded;
+        private @Nullable String timeAvailabilityStatusStarted;
         public Builder() {}
         public Builder(GetManagementAgentAvailableHistoriesAvailabilityHistory defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
         }
 
         @CustomType.Setter
-        public Builder availabilityStatus(String availabilityStatus) {
-            this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
+        public Builder availabilityStatus(@Nullable String availabilityStatus) {
+            this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+        public Builder managementAgentId(@Nullable String managementAgentId) {
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAvailabilityStatusEnded(String timeAvailabilityStatusEnded) {
-            this.timeAvailabilityStatusEnded = Objects.requireNonNull(timeAvailabilityStatusEnded);
+        public Builder timeAvailabilityStatusEnded(@Nullable String timeAvailabilityStatusEnded) {
+            this.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAvailabilityStatusStarted(String timeAvailabilityStatusStarted) {
-            this.timeAvailabilityStatusStarted = Objects.requireNonNull(timeAvailabilityStatusStarted);
+        public Builder timeAvailabilityStatusStarted(@Nullable String timeAvailabilityStatusStarted) {
+            this.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
             return this;
         }
         public GetManagementAgentAvailableHistoriesAvailabilityHistory build() {

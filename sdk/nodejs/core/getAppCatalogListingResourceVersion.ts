@@ -51,23 +51,23 @@ export interface GetAppCatalogListingResourceVersionResult {
     /**
      * List of accessible ports for instances launched with this listing resource version.
      */
-    readonly accessiblePorts: number[];
+    readonly accessiblePorts?: number[];
     /**
      * Allowed actions for the listing resource.
      */
-    readonly allowedActions: string[];
+    readonly allowedActions?: string[];
     /**
      * List of regions that this listing resource version is available.
      */
-    readonly availableRegions: string[];
+    readonly availableRegions?: string[];
     /**
      * Array of shapes compatible with this resource.
      */
-    readonly compatibleShapes: string[];
+    readonly compatibleShapes?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the listing this resource version belongs to.
      */
@@ -75,16 +75,16 @@ export interface GetAppCatalogListingResourceVersionResult {
     /**
      * OCID of the listing resource.
      */
-    readonly listingResourceId: string;
+    readonly listingResourceId?: string;
     /**
      * Resource Version.
      */
-    readonly listingResourceVersion: string;
+    readonly listingResourceVersion?: string;
     readonly resourceVersion: string;
     /**
      * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      */
-    readonly timePublished: string;
+    readonly timePublished?: string;
 }
 /**
  * This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.

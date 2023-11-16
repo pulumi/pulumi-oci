@@ -76,7 +76,7 @@ export interface GetMigrationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional status related to the execution and current state of the Migration.
      */
@@ -84,7 +84,7 @@ export interface GetMigrationsResult {
     /**
      * The list of migration_collection.
      */
-    readonly migrationCollections: outputs.DatabaseMigration.GetMigrationsMigrationCollection[];
+    readonly migrationCollections?: outputs.DatabaseMigration.GetMigrationsMigrationCollection[];
     /**
      * The current state of the Migration resource.
      */

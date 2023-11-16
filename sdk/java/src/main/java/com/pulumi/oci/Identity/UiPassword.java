@@ -11,6 +11,7 @@ import com.pulumi.oci.Identity.UiPasswordArgs;
 import com.pulumi.oci.Identity.inputs.UiPasswordState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -70,56 +71,56 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="inactiveStatus", refs={String.class}, tree="[0]")
-    private Output<String> inactiveStatus;
+    private Output</* @Nullable */ String> inactiveStatus;
 
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public Output<String> inactiveStatus() {
-        return this.inactiveStatus;
+    public Output<Optional<String>> inactiveStatus() {
+        return Codegen.optional(this.inactiveStatus);
     }
     /**
      * The user&#39;s password for the Console.
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
-    private Output<String> password;
+    private Output</* @Nullable */ String> password;
 
     /**
      * @return The user&#39;s password for the Console.
      * 
      */
-    public Output<String> password() {
-        return this.password;
+    public Output<Optional<String>> password() {
+        return Codegen.optional(this.password);
     }
     /**
      * The password&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The password&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The OCID of the user.

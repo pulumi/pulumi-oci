@@ -16,23 +16,23 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Unique key within a MediaWorkflowJob for the task.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The lifecycle details of MediaWorkflowJob task.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current state of the MediaWorkflowJob task.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetMediaWorkflowJobTaskLifecycleStateResult(
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state)
+            string? state)
         {
             Key = key;
             LifecycleDetails = lifecycleDetails;

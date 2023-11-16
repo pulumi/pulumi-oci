@@ -29,7 +29,7 @@ public final class GetUsagePlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the usage plan.
      * 
@@ -39,7 +39,7 @@ public final class GetUsagePlansResult {
      * @return The list of usage_plan_collection.
      * 
      */
-    private List<GetUsagePlansUsagePlanCollection> usagePlanCollections;
+    private @Nullable List<GetUsagePlansUsagePlanCollection> usagePlanCollections;
 
     private GetUsagePlansResult() {}
     /**
@@ -63,8 +63,8 @@ public final class GetUsagePlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the usage plan.
@@ -78,7 +78,7 @@ public final class GetUsagePlansResult {
      * 
      */
     public List<GetUsagePlansUsagePlanCollection> usagePlanCollections() {
-        return this.usagePlanCollections;
+        return this.usagePlanCollections == null ? List.of() : this.usagePlanCollections;
     }
 
     public static Builder builder() {
@@ -93,9 +93,9 @@ public final class GetUsagePlansResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetUsagePlansFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetUsagePlansUsagePlanCollection> usagePlanCollections;
+        private @Nullable List<GetUsagePlansUsagePlanCollection> usagePlanCollections;
         public Builder() {}
         public Builder(GetUsagePlansResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,8 +126,8 @@ public final class GetUsagePlansResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -136,8 +136,8 @@ public final class GetUsagePlansResult {
             return this;
         }
         @CustomType.Setter
-        public Builder usagePlanCollections(List<GetUsagePlansUsagePlanCollection> usagePlanCollections) {
-            this.usagePlanCollections = Objects.requireNonNull(usagePlanCollections);
+        public Builder usagePlanCollections(@Nullable List<GetUsagePlansUsagePlanCollection> usagePlanCollections) {
+            this.usagePlanCollections = usagePlanCollections;
             return this;
         }
         public Builder usagePlanCollections(GetUsagePlansUsagePlanCollection... usagePlanCollections) {

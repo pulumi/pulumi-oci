@@ -123,91 +123,91 @@ export class BuildPipelineStage extends pulumi.CustomResource {
     /**
      * (Updatable) The information about build runner.
      */
-    public readonly buildRunnerShapeConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
+    public readonly buildRunnerShapeConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig | undefined>;
     /**
      * (Updatable) Collection of build sources.
      */
-    public readonly buildSourceCollection!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildSourceCollection>;
+    public readonly buildSourceCollection!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildSourceCollection | undefined>;
     /**
      * (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      */
-    public readonly buildSpecFile!: pulumi.Output<string>;
+    public readonly buildSpecFile!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment where the pipeline is created.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
      */
-    public readonly deliverArtifactCollection!: pulumi.Output<outputs.DevOps.BuildPipelineStageDeliverArtifactCollection>;
+    public readonly deliverArtifactCollection!: pulumi.Output<outputs.DevOps.BuildPipelineStageDeliverArtifactCollection | undefined>;
     /**
      * (Updatable) A target deployment pipeline OCID that will run in this stage.
      */
-    public readonly deployPipelineId!: pulumi.Output<string>;
+    public readonly deployPipelineId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Optional description about the stage.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Image name for the build environment
      */
-    public readonly image!: pulumi.Output<string>;
+    public readonly image!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      */
-    public readonly isPassAllParametersEnabled!: pulumi.Output<boolean>;
+    public readonly isPassAllParametersEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      */
-    public readonly primaryBuildSource!: pulumi.Output<string>;
+    public readonly primaryBuildSource!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
      */
-    public readonly privateAccessConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
+    public readonly privateAccessConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStagePrivateAccessConfig | undefined>;
     /**
      * The OCID of the DevOps project.
      */
-    public /*out*/ readonly projectId!: pulumi.Output<string>;
+    public /*out*/ readonly projectId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      */
-    public readonly stageExecutionTimeoutInSeconds!: pulumi.Output<number>;
+    public readonly stageExecutionTimeoutInSeconds!: pulumi.Output<number | undefined>;
     /**
      * The current state of the stage.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
-    public readonly waitCriteria!: pulumi.Output<outputs.DevOps.BuildPipelineStageWaitCriteria>;
+    public readonly waitCriteria!: pulumi.Output<outputs.DevOps.BuildPipelineStageWaitCriteria | undefined>;
 
     /**
      * Create a BuildPipelineStage resource with the given unique name, arguments, and options.

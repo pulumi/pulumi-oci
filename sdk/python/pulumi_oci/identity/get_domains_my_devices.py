@@ -94,7 +94,7 @@ class GetDomainsMyDevicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -107,7 +107,7 @@ class GetDomainsMyDevicesResult:
 
     @property
     @pulumi.getter(name="itemsPerPage")
-    def items_per_page(self) -> int:
+    def items_per_page(self) -> Optional[int]:
         return pulumi.get(self, "items_per_page")
 
     @property
@@ -122,10 +122,7 @@ class GetDomainsMyDevicesResult:
 
     @property
     @pulumi.getter(name="myDevices")
-    def my_devices(self) -> Sequence['outputs.GetDomainsMyDevicesMyDeviceResult']:
-        """
-        The list of my_devices.
-        """
+    def my_devices(self) -> Optional[Sequence['outputs.GetDomainsMyDevicesMyDeviceResult']]:
         return pulumi.get(self, "my_devices")
 
     @property
@@ -135,10 +132,7 @@ class GetDomainsMyDevicesResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
@@ -158,7 +152,7 @@ class GetDomainsMyDevicesResult:
 
     @property
     @pulumi.getter(name="totalResults")
-    def total_results(self) -> int:
+    def total_results(self) -> Optional[int]:
         return pulumi.get(self, "total_results")
 
 
@@ -199,35 +193,7 @@ def get_domains_my_devices(attribute_sets: Optional[Sequence[str]] = None,
                            start_index: Optional[int] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsMyDevicesResult:
     """
-    This data source provides the list of My Devices in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search Devices
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_device_count=var["my_device_my_device_count"],
-        my_device_filter=var["my_device_my_device_filter"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["my_device_authorization"],
-        resource_type_schema_version=var["my_device_resource_type_schema_version"],
-        start_index=var["my_device_start_index"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param int my_device_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
-    :param str my_device_filter: OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -277,34 +243,6 @@ def get_domains_my_devices_output(attribute_sets: Optional[pulumi.Input[Optional
                                   start_index: Optional[pulumi.Input[Optional[int]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyDevicesResult]:
     """
-    This data source provides the list of My Devices in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search Devices
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_device_count=var["my_device_my_device_count"],
-        my_device_filter=var["my_device_my_device_filter"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["my_device_authorization"],
-        resource_type_schema_version=var["my_device_resource_type_schema_version"],
-        start_index=var["my_device_start_index"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param int my_device_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
-    :param str my_device_filter: OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+    Use this data source to access information about an existing resource.
     """
     ...

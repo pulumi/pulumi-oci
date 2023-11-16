@@ -287,7 +287,7 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the zone.
         /// </summary>
@@ -328,7 +328,7 @@ namespace Pulumi.Oci.Dns
 
             ImmutableArray<Outputs.GetZonesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

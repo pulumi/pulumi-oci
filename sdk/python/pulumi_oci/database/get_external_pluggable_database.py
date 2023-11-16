@@ -95,98 +95,62 @@ class GetExternalPluggableDatabaseResult:
 
     @property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> str:
-        """
-        The character set of the external database.
-        """
+    def character_set(self) -> Optional[str]:
         return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseConfiguration")
-    def database_configuration(self) -> str:
-        """
-        The Oracle Database configuration
-        """
+    def database_configuration(self) -> Optional[str]:
         return pulumi.get(self, "database_configuration")
 
     @property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> str:
-        """
-        The Oracle Database edition.
-        """
+    def database_edition(self) -> Optional[str]:
         return pulumi.get(self, "database_edition")
 
     @property
     @pulumi.getter(name="databaseManagementConfigs")
-    def database_management_configs(self) -> Sequence['outputs.GetExternalPluggableDatabaseDatabaseManagementConfigResult']:
-        """
-        The configuration of the Database Management service.
-        """
+    def database_management_configs(self) -> Optional[Sequence['outputs.GetExternalPluggableDatabaseDatabaseManagementConfigResult']]:
         return pulumi.get(self, "database_management_configs")
 
     @property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> str:
-        """
-        The Oracle Database version.
-        """
+    def database_version(self) -> Optional[str]:
         return pulumi.get(self, "database_version")
 
     @property
     @pulumi.getter(name="dbId")
-    def db_id(self) -> str:
-        """
-        The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-        """
+    def db_id(self) -> Optional[str]:
         return pulumi.get(self, "db_id")
 
     @property
     @pulumi.getter(name="dbPacks")
-    def db_packs(self) -> str:
-        """
-        The database packs licensed for the external Oracle Database.
-        """
+    def db_packs(self) -> Optional[str]:
         return pulumi.get(self, "db_packs")
 
     @property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> str:
-        """
-        The `DB_UNIQUE_NAME` of the external database.
-        """
+    def db_unique_name(self) -> Optional[str]:
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the external database. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalContainerDatabaseId")
-    def external_container_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalContainerDatabaseDetails) that contains the specified [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
-        """
+    def external_container_database_id(self) -> Optional[str]:
         return pulumi.get(self, "external_container_database_id")
 
     @property
@@ -196,82 +160,52 @@ class GetExternalPluggableDatabaseResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> str:
-        """
-        The national character of the external database.
-        """
+    def ncharacter_set(self) -> Optional[str]:
         return pulumi.get(self, "ncharacter_set")
 
     @property
     @pulumi.getter(name="operationsInsightsConfigs")
-    def operations_insights_configs(self) -> Sequence['outputs.GetExternalPluggableDatabaseOperationsInsightsConfigResult']:
-        """
-        The configuration of Operations Insights for the external database
-        """
+    def operations_insights_configs(self) -> Optional[Sequence['outputs.GetExternalPluggableDatabaseOperationsInsightsConfigResult']]:
         return pulumi.get(self, "operations_insights_configs")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter(name="stackMonitoringConfigs")
-    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalPluggableDatabaseStackMonitoringConfigResult']:
-        """
-        The configuration of Stack Monitoring for the external database.
-        """
+    def stack_monitoring_configs(self) -> Optional[Sequence['outputs.GetExternalPluggableDatabaseStackMonitoringConfigResult']]:
         return pulumi.get(self, "stack_monitoring_configs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Oracle Cloud Infrastructure external database resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the database was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
-        """
-        The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-        """
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
 
@@ -309,22 +243,7 @@ class AwaitableGetExternalPluggableDatabaseResult(GetExternalPluggableDatabaseRe
 def get_external_pluggable_database(external_pluggable_database_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalPluggableDatabaseResult:
     """
-    This data source provides details about a specific External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specific
-    [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_pluggable_database = oci.Database.get_external_pluggable_database(external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"])
-    ```
-
-
-    :param str external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalPluggableDatabaseId'] = external_pluggable_database_id
@@ -361,21 +280,6 @@ def get_external_pluggable_database(external_pluggable_database_id: Optional[str
 def get_external_pluggable_database_output(external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalPluggableDatabaseResult]:
     """
-    This data source provides details about a specific External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specific
-    [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_pluggable_database = oci.Database.get_external_pluggable_database(external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"])
-    ```
-
-
-    :param str external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

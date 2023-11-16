@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -70,7 +69,7 @@ type GetMonitoredResourcesResult struct {
 	CompartmentId string                        `pulumi:"compartmentId"`
 	Filters       []GetMonitoredResourcesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of monitored_resource_collection.
 	MonitoredResourceCollections []GetMonitoredResourcesMonitoredResourceCollection `pulumi:"monitoredResourceCollections"`
 	// Property Name.
@@ -121,12 +120,6 @@ func (o GetMonitoredResourcesResultOutput) ToGetMonitoredResourcesResultOutputWi
 	return o
 }
 
-func (o GetMonitoredResourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesResult] {
-	return pulumix.Output[GetMonitoredResourcesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetMonitoredResourcesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourcesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -137,8 +130,8 @@ func (o GetMonitoredResourcesResultOutput) Filters() GetMonitoredResourcesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMonitoredResourcesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredResourcesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMonitoredResourcesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of monitored_resource_collection.

@@ -69,7 +69,7 @@ export class AppCatalogSubscription extends pulumi.CustomResource {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * EULA link
      */
@@ -81,7 +81,7 @@ export class AppCatalogSubscription extends pulumi.CustomResource {
     /**
      * Listing resource id.
      */
-    public /*out*/ readonly listingResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly listingResourceId!: pulumi.Output<string | undefined>;
     /**
      * Listing resource version.
      */
@@ -93,7 +93,7 @@ export class AppCatalogSubscription extends pulumi.CustomResource {
     /**
      * Name of the publisher who published this listing.
      */
-    public /*out*/ readonly publisherName!: pulumi.Output<string>;
+    public /*out*/ readonly publisherName!: pulumi.Output<string | undefined>;
     /**
      * A generated signature for this listing resource version retrieved the agreements API.
      */
@@ -101,11 +101,11 @@ export class AppCatalogSubscription extends pulumi.CustomResource {
     /**
      * The short summary to the listing.
      */
-    public /*out*/ readonly summary!: pulumi.Output<string>;
+    public /*out*/ readonly summary!: pulumi.Output<string | undefined>;
     /**
      * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
      *

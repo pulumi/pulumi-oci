@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
@@ -32,27 +31,27 @@ type ManagedInstance struct {
 	// if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
 	Autonomouses ManagedInstanceAutonomouseArrayOutput `pulumi:"autonomouses"`
 	// Number of bug fix type updates available to be installed
-	BugUpdatesAvailable pulumi.IntOutput `pulumi:"bugUpdatesAvailable"`
+	BugUpdatesAvailable pulumi.IntPtrOutput `pulumi:"bugUpdatesAvailable"`
 	// list of child Software Sources attached to the Managed Instance
 	ChildSoftwareSources ManagedInstanceChildSoftwareSourceArrayOutput `pulumi:"childSoftwareSources"`
 	// OCID for the Compartment
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Information specified by the user about the managed instance
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// User friendly name
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Number of enhancement type updates available to be installed
-	EnhancementUpdatesAvailable pulumi.IntOutput `pulumi:"enhancementUpdatesAvailable"`
+	EnhancementUpdatesAvailable pulumi.IntPtrOutput `pulumi:"enhancementUpdatesAvailable"`
 	// (Updatable) True if user allow data collection for this instance
-	IsDataCollectionAuthorized pulumi.BoolOutput `pulumi:"isDataCollectionAuthorized"`
+	IsDataCollectionAuthorized pulumi.BoolPtrOutput `pulumi:"isDataCollectionAuthorized"`
 	// Indicates whether a reboot is required to complete installation of updates.
-	IsRebootRequired pulumi.BoolOutput `pulumi:"isRebootRequired"`
+	IsRebootRequired pulumi.BoolPtrOutput `pulumi:"isRebootRequired"`
 	// The ksplice effective kernel version
-	KspliceEffectiveKernelVersion pulumi.StringOutput `pulumi:"kspliceEffectiveKernelVersion"`
+	KspliceEffectiveKernelVersion pulumi.StringPtrOutput `pulumi:"kspliceEffectiveKernelVersion"`
 	// Time at which the instance last booted
-	LastBoot pulumi.StringOutput `pulumi:"lastBoot"`
+	LastBoot pulumi.StringPtrOutput `pulumi:"lastBoot"`
 	// Time at which the instance last checked in
-	LastCheckin pulumi.StringOutput `pulumi:"lastCheckin"`
+	LastCheckin pulumi.StringPtrOutput `pulumi:"lastCheckin"`
 	// The ids of the managed instance groups of which this instance is a member.
 	ManagedInstanceGroups ManagedInstanceManagedInstanceGroupArrayOutput `pulumi:"managedInstanceGroups"`
 	// OCID for the managed instance
@@ -61,29 +60,29 @@ type ManagedInstance struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	NotificationTopicId pulumi.StringOutput `pulumi:"notificationTopicId"`
+	NotificationTopicId pulumi.StringPtrOutput `pulumi:"notificationTopicId"`
 	// The Operating System type of the managed instance.
-	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrOutput `pulumi:"osFamily"`
 	// Operating System Kernel Version
-	OsKernelVersion pulumi.StringOutput `pulumi:"osKernelVersion"`
+	OsKernelVersion pulumi.StringPtrOutput `pulumi:"osKernelVersion"`
 	// Operating System Name
-	OsName pulumi.StringOutput `pulumi:"osName"`
+	OsName pulumi.StringPtrOutput `pulumi:"osName"`
 	// Operating System Version
-	OsVersion pulumi.StringOutput `pulumi:"osVersion"`
+	OsVersion pulumi.StringPtrOutput `pulumi:"osVersion"`
 	// Number of non-classified updates available to be installed
-	OtherUpdatesAvailable pulumi.IntOutput `pulumi:"otherUpdatesAvailable"`
+	OtherUpdatesAvailable pulumi.IntPtrOutput `pulumi:"otherUpdatesAvailable"`
 	// the parent (base) Software Source attached to the Managed Instance
 	ParentSoftwareSources ManagedInstanceParentSoftwareSourceArrayOutput `pulumi:"parentSoftwareSources"`
 	// Number of scheduled jobs associated with this instance
-	ScheduledJobCount pulumi.IntOutput `pulumi:"scheduledJobCount"`
+	ScheduledJobCount pulumi.IntPtrOutput `pulumi:"scheduledJobCount"`
 	// Number of security type updates available to be installed
-	SecurityUpdatesAvailable pulumi.IntOutput `pulumi:"securityUpdatesAvailable"`
+	SecurityUpdatesAvailable pulumi.IntPtrOutput `pulumi:"securityUpdatesAvailable"`
 	// status of the managed instance.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// Number of updates available to be installed
-	UpdatesAvailable pulumi.IntOutput `pulumi:"updatesAvailable"`
+	UpdatesAvailable pulumi.IntPtrOutput `pulumi:"updatesAvailable"`
 	// Number of work requests associated with this instance
-	WorkRequestCount pulumi.IntOutput `pulumi:"workRequestCount"`
+	WorkRequestCount pulumi.IntPtrOutput `pulumi:"workRequestCount"`
 }
 
 // NewManagedInstance registers a new resource with the given unique name, arguments, and options.
@@ -286,12 +285,6 @@ func (i *ManagedInstance) ToManagedInstanceOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceOutput)
 }
 
-func (i *ManagedInstance) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstance] {
-	return pulumix.Output[*ManagedInstance]{
-		OutputState: i.ToManagedInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceArrayInput is an input type that accepts ManagedInstanceArray and ManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceArrayInput` via:
 //
@@ -315,12 +308,6 @@ func (i ManagedInstanceArray) ToManagedInstanceArrayOutput() ManagedInstanceArra
 
 func (i ManagedInstanceArray) ToManagedInstanceArrayOutputWithContext(ctx context.Context) ManagedInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceArrayOutput)
-}
-
-func (i ManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstance] {
-	return pulumix.Output[[]*ManagedInstance]{
-		OutputState: i.ToManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedInstanceMapInput is an input type that accepts ManagedInstanceMap and ManagedInstanceMapOutput values.
@@ -348,12 +335,6 @@ func (i ManagedInstanceMap) ToManagedInstanceMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceMapOutput)
 }
 
-func (i ManagedInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstance] {
-	return pulumix.Output[map[string]*ManagedInstance]{
-		OutputState: i.ToManagedInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceOutput) ElementType() reflect.Type {
@@ -368,20 +349,14 @@ func (o ManagedInstanceOutput) ToManagedInstanceOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstance] {
-	return pulumix.Output[*ManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
 func (o ManagedInstanceOutput) Autonomouses() ManagedInstanceAutonomouseArrayOutput {
 	return o.ApplyT(func(v *ManagedInstance) ManagedInstanceAutonomouseArrayOutput { return v.Autonomouses }).(ManagedInstanceAutonomouseArrayOutput)
 }
 
 // Number of bug fix type updates available to be installed
-func (o ManagedInstanceOutput) BugUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.IntOutput { return v.BugUpdatesAvailable }).(pulumi.IntOutput)
+func (o ManagedInstanceOutput) BugUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.IntPtrOutput { return v.BugUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // list of child Software Sources attached to the Managed Instance
@@ -390,48 +365,48 @@ func (o ManagedInstanceOutput) ChildSoftwareSources() ManagedInstanceChildSoftwa
 }
 
 // OCID for the Compartment
-func (o ManagedInstanceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Information specified by the user about the managed instance
-func (o ManagedInstanceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User friendly name
-func (o ManagedInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Number of enhancement type updates available to be installed
-func (o ManagedInstanceOutput) EnhancementUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.IntOutput { return v.EnhancementUpdatesAvailable }).(pulumi.IntOutput)
+func (o ManagedInstanceOutput) EnhancementUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.IntPtrOutput { return v.EnhancementUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) True if user allow data collection for this instance
-func (o ManagedInstanceOutput) IsDataCollectionAuthorized() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.BoolOutput { return v.IsDataCollectionAuthorized }).(pulumi.BoolOutput)
+func (o ManagedInstanceOutput) IsDataCollectionAuthorized() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.BoolPtrOutput { return v.IsDataCollectionAuthorized }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether a reboot is required to complete installation of updates.
-func (o ManagedInstanceOutput) IsRebootRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.BoolOutput { return v.IsRebootRequired }).(pulumi.BoolOutput)
+func (o ManagedInstanceOutput) IsRebootRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.BoolPtrOutput { return v.IsRebootRequired }).(pulumi.BoolPtrOutput)
 }
 
 // The ksplice effective kernel version
-func (o ManagedInstanceOutput) KspliceEffectiveKernelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.KspliceEffectiveKernelVersion }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) KspliceEffectiveKernelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.KspliceEffectiveKernelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the instance last booted
-func (o ManagedInstanceOutput) LastBoot() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.LastBoot }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) LastBoot() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.LastBoot }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the instance last checked in
-func (o ManagedInstanceOutput) LastCheckin() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.LastCheckin }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) LastCheckin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.LastCheckin }).(pulumi.StringPtrOutput)
 }
 
 // The ids of the managed instance groups of which this instance is a member.
@@ -450,33 +425,33 @@ func (o ManagedInstanceOutput) ManagedInstanceId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ManagedInstanceOutput) NotificationTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.NotificationTopicId }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) NotificationTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.NotificationTopicId }).(pulumi.StringPtrOutput)
 }
 
 // The Operating System type of the managed instance.
-func (o ManagedInstanceOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Kernel Version
-func (o ManagedInstanceOutput) OsKernelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.OsKernelVersion }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) OsKernelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.OsKernelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Name
-func (o ManagedInstanceOutput) OsName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.OsName }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) OsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.OsName }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Version
-func (o ManagedInstanceOutput) OsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.OsVersion }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) OsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
 // Number of non-classified updates available to be installed
-func (o ManagedInstanceOutput) OtherUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.IntOutput { return v.OtherUpdatesAvailable }).(pulumi.IntOutput)
+func (o ManagedInstanceOutput) OtherUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.IntPtrOutput { return v.OtherUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // the parent (base) Software Source attached to the Managed Instance
@@ -487,28 +462,28 @@ func (o ManagedInstanceOutput) ParentSoftwareSources() ManagedInstanceParentSoft
 }
 
 // Number of scheduled jobs associated with this instance
-func (o ManagedInstanceOutput) ScheduledJobCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.IntOutput { return v.ScheduledJobCount }).(pulumi.IntOutput)
+func (o ManagedInstanceOutput) ScheduledJobCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.IntPtrOutput { return v.ScheduledJobCount }).(pulumi.IntPtrOutput)
 }
 
 // Number of security type updates available to be installed
-func (o ManagedInstanceOutput) SecurityUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.IntOutput { return v.SecurityUpdatesAvailable }).(pulumi.IntOutput)
+func (o ManagedInstanceOutput) SecurityUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.IntPtrOutput { return v.SecurityUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // status of the managed instance.
-func (o ManagedInstanceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o ManagedInstanceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Number of updates available to be installed
-func (o ManagedInstanceOutput) UpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.IntOutput { return v.UpdatesAvailable }).(pulumi.IntOutput)
+func (o ManagedInstanceOutput) UpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.IntPtrOutput { return v.UpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // Number of work requests associated with this instance
-func (o ManagedInstanceOutput) WorkRequestCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstance) pulumi.IntOutput { return v.WorkRequestCount }).(pulumi.IntOutput)
+func (o ManagedInstanceOutput) WorkRequestCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.IntPtrOutput { return v.WorkRequestCount }).(pulumi.IntPtrOutput)
 }
 
 type ManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -523,12 +498,6 @@ func (o ManagedInstanceArrayOutput) ToManagedInstanceArrayOutput() ManagedInstan
 
 func (o ManagedInstanceArrayOutput) ToManagedInstanceArrayOutputWithContext(ctx context.Context) ManagedInstanceArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstance] {
-	return pulumix.Output[[]*ManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceOutput {
@@ -549,12 +518,6 @@ func (o ManagedInstanceMapOutput) ToManagedInstanceMapOutput() ManagedInstanceMa
 
 func (o ManagedInstanceMapOutput) ToManagedInstanceMapOutputWithContext(ctx context.Context) ManagedInstanceMapOutput {
 	return o
-}
-
-func (o ManagedInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstance] {
-	return pulumix.Output[map[string]*ManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceMapOutput) MapIndex(k pulumi.StringInput) ManagedInstanceOutput {

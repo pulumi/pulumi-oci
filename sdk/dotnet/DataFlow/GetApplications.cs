@@ -196,7 +196,7 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the user who created the resource.
         /// </summary>
@@ -218,7 +218,7 @@ namespace Pulumi.Oci.DataFlow
 
             ImmutableArray<Outputs.GetApplicationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? ownerPrincipalId,
 

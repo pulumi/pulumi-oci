@@ -16,12 +16,12 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
-        public readonly string PlacementConstraint;
+        public readonly string? AvailabilityDomain;
+        public readonly string? PlacementConstraint;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         /// </summary>
-        public readonly string PrimarySubnetId;
+        public readonly string? PrimarySubnetId;
         /// <summary>
         /// Details about the IPv6 primary subnet.
         /// </summary>
@@ -33,11 +33,11 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetClusterNetworkPlacementConfigurationResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string placementConstraint,
+            string? placementConstraint,
 
-            string primarySubnetId,
+            string? primarySubnetId,
 
             ImmutableArray<Outputs.GetClusterNetworkPlacementConfigurationPrimaryVnicSubnetResult> primaryVnicSubnets,
 

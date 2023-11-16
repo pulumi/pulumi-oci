@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -67,12 +66,6 @@ func (i DatabaseInsightConnectionCredentialDetailsArgs) ToDatabaseInsightConnect
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightConnectionCredentialDetailsOutput)
 }
 
-func (i DatabaseInsightConnectionCredentialDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightConnectionCredentialDetails] {
-	return pulumix.Output[DatabaseInsightConnectionCredentialDetails]{
-		OutputState: i.ToDatabaseInsightConnectionCredentialDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatabaseInsightConnectionCredentialDetailsArgs) ToDatabaseInsightConnectionCredentialDetailsPtrOutput() DatabaseInsightConnectionCredentialDetailsPtrOutput {
 	return i.ToDatabaseInsightConnectionCredentialDetailsPtrOutputWithContext(context.Background())
 }
@@ -114,12 +107,6 @@ func (i *databaseInsightConnectionCredentialDetailsPtrType) ToDatabaseInsightCon
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightConnectionCredentialDetailsPtrOutput)
 }
 
-func (i *databaseInsightConnectionCredentialDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsightConnectionCredentialDetails] {
-	return pulumix.Output[*DatabaseInsightConnectionCredentialDetails]{
-		OutputState: i.ToDatabaseInsightConnectionCredentialDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseInsightConnectionCredentialDetailsOutput struct{ *pulumi.OutputState }
 
 func (DatabaseInsightConnectionCredentialDetailsOutput) ElementType() reflect.Type {
@@ -142,12 +129,6 @@ func (o DatabaseInsightConnectionCredentialDetailsOutput) ToDatabaseInsightConne
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseInsightConnectionCredentialDetails) *DatabaseInsightConnectionCredentialDetails {
 		return &v
 	}).(DatabaseInsightConnectionCredentialDetailsPtrOutput)
-}
-
-func (o DatabaseInsightConnectionCredentialDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightConnectionCredentialDetails] {
-	return pulumix.Output[DatabaseInsightConnectionCredentialDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
@@ -192,12 +173,6 @@ func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) ToDatabaseInsightCo
 
 func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) ToDatabaseInsightConnectionCredentialDetailsPtrOutputWithContext(ctx context.Context) DatabaseInsightConnectionCredentialDetailsPtrOutput {
 	return o
-}
-
-func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsightConnectionCredentialDetails] {
-	return pulumix.Output[*DatabaseInsightConnectionCredentialDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) Elem() DatabaseInsightConnectionCredentialDetailsOutput {
@@ -319,12 +294,6 @@ func (i DatabaseInsightConnectionDetailsArgs) ToDatabaseInsightConnectionDetails
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightConnectionDetailsOutput)
 }
 
-func (i DatabaseInsightConnectionDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightConnectionDetails] {
-	return pulumix.Output[DatabaseInsightConnectionDetails]{
-		OutputState: i.ToDatabaseInsightConnectionDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatabaseInsightConnectionDetailsArgs) ToDatabaseInsightConnectionDetailsPtrOutput() DatabaseInsightConnectionDetailsPtrOutput {
 	return i.ToDatabaseInsightConnectionDetailsPtrOutputWithContext(context.Background())
 }
@@ -366,12 +335,6 @@ func (i *databaseInsightConnectionDetailsPtrType) ToDatabaseInsightConnectionDet
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightConnectionDetailsPtrOutput)
 }
 
-func (i *databaseInsightConnectionDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsightConnectionDetails] {
-	return pulumix.Output[*DatabaseInsightConnectionDetails]{
-		OutputState: i.ToDatabaseInsightConnectionDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseInsightConnectionDetailsOutput struct{ *pulumi.OutputState }
 
 func (DatabaseInsightConnectionDetailsOutput) ElementType() reflect.Type {
@@ -394,12 +357,6 @@ func (o DatabaseInsightConnectionDetailsOutput) ToDatabaseInsightConnectionDetai
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseInsightConnectionDetails) *DatabaseInsightConnectionDetails {
 		return &v
 	}).(DatabaseInsightConnectionDetailsPtrOutput)
-}
-
-func (o DatabaseInsightConnectionDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightConnectionDetails] {
-	return pulumix.Output[DatabaseInsightConnectionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the listener host that will be used to create the connect string to the database.
@@ -439,12 +396,6 @@ func (o DatabaseInsightConnectionDetailsPtrOutput) ToDatabaseInsightConnectionDe
 
 func (o DatabaseInsightConnectionDetailsPtrOutput) ToDatabaseInsightConnectionDetailsPtrOutputWithContext(ctx context.Context) DatabaseInsightConnectionDetailsPtrOutput {
 	return o
-}
-
-func (o DatabaseInsightConnectionDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsightConnectionDetails] {
-	return pulumix.Output[*DatabaseInsightConnectionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseInsightConnectionDetailsPtrOutput) Elem() DatabaseInsightConnectionDetailsOutput {
@@ -544,12 +495,6 @@ func (i DatabaseInsightConnectionDetailsHostArgs) ToDatabaseInsightConnectionDet
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightConnectionDetailsHostOutput)
 }
 
-func (i DatabaseInsightConnectionDetailsHostArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightConnectionDetailsHost] {
-	return pulumix.Output[DatabaseInsightConnectionDetailsHost]{
-		OutputState: i.ToDatabaseInsightConnectionDetailsHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseInsightConnectionDetailsHostArrayInput is an input type that accepts DatabaseInsightConnectionDetailsHostArray and DatabaseInsightConnectionDetailsHostArrayOutput values.
 // You can construct a concrete instance of `DatabaseInsightConnectionDetailsHostArrayInput` via:
 //
@@ -575,12 +520,6 @@ func (i DatabaseInsightConnectionDetailsHostArray) ToDatabaseInsightConnectionDe
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightConnectionDetailsHostArrayOutput)
 }
 
-func (i DatabaseInsightConnectionDetailsHostArray) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseInsightConnectionDetailsHost] {
-	return pulumix.Output[[]DatabaseInsightConnectionDetailsHost]{
-		OutputState: i.ToDatabaseInsightConnectionDetailsHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseInsightConnectionDetailsHostOutput struct{ *pulumi.OutputState }
 
 func (DatabaseInsightConnectionDetailsHostOutput) ElementType() reflect.Type {
@@ -593,12 +532,6 @@ func (o DatabaseInsightConnectionDetailsHostOutput) ToDatabaseInsightConnectionD
 
 func (o DatabaseInsightConnectionDetailsHostOutput) ToDatabaseInsightConnectionDetailsHostOutputWithContext(ctx context.Context) DatabaseInsightConnectionDetailsHostOutput {
 	return o
-}
-
-func (o DatabaseInsightConnectionDetailsHostOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightConnectionDetailsHost] {
-	return pulumix.Output[DatabaseInsightConnectionDetailsHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Host IP used for connection requests for Cloud DB resource.
@@ -623,12 +556,6 @@ func (o DatabaseInsightConnectionDetailsHostArrayOutput) ToDatabaseInsightConnec
 
 func (o DatabaseInsightConnectionDetailsHostArrayOutput) ToDatabaseInsightConnectionDetailsHostArrayOutputWithContext(ctx context.Context) DatabaseInsightConnectionDetailsHostArrayOutput {
 	return o
-}
-
-func (o DatabaseInsightConnectionDetailsHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseInsightConnectionDetailsHost] {
-	return pulumix.Output[[]DatabaseInsightConnectionDetailsHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseInsightConnectionDetailsHostArrayOutput) Index(i pulumi.IntInput) DatabaseInsightConnectionDetailsHostOutput {
@@ -690,12 +617,6 @@ func (i DatabaseInsightCredentialDetailsArgs) ToDatabaseInsightCredentialDetails
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightCredentialDetailsOutput)
 }
 
-func (i DatabaseInsightCredentialDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightCredentialDetails] {
-	return pulumix.Output[DatabaseInsightCredentialDetails]{
-		OutputState: i.ToDatabaseInsightCredentialDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatabaseInsightCredentialDetailsArgs) ToDatabaseInsightCredentialDetailsPtrOutput() DatabaseInsightCredentialDetailsPtrOutput {
 	return i.ToDatabaseInsightCredentialDetailsPtrOutputWithContext(context.Background())
 }
@@ -737,12 +658,6 @@ func (i *databaseInsightCredentialDetailsPtrType) ToDatabaseInsightCredentialDet
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightCredentialDetailsPtrOutput)
 }
 
-func (i *databaseInsightCredentialDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsightCredentialDetails] {
-	return pulumix.Output[*DatabaseInsightCredentialDetails]{
-		OutputState: i.ToDatabaseInsightCredentialDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseInsightCredentialDetailsOutput struct{ *pulumi.OutputState }
 
 func (DatabaseInsightCredentialDetailsOutput) ElementType() reflect.Type {
@@ -765,12 +680,6 @@ func (o DatabaseInsightCredentialDetailsOutput) ToDatabaseInsightCredentialDetai
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseInsightCredentialDetails) *DatabaseInsightCredentialDetails {
 		return &v
 	}).(DatabaseInsightCredentialDetailsPtrOutput)
-}
-
-func (o DatabaseInsightCredentialDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseInsightCredentialDetails] {
-	return pulumix.Output[DatabaseInsightCredentialDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
@@ -815,12 +724,6 @@ func (o DatabaseInsightCredentialDetailsPtrOutput) ToDatabaseInsightCredentialDe
 
 func (o DatabaseInsightCredentialDetailsPtrOutput) ToDatabaseInsightCredentialDetailsPtrOutputWithContext(ctx context.Context) DatabaseInsightCredentialDetailsPtrOutput {
 	return o
-}
-
-func (o DatabaseInsightCredentialDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsightCredentialDetails] {
-	return pulumix.Output[*DatabaseInsightCredentialDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseInsightCredentialDetailsPtrOutput) Elem() DatabaseInsightCredentialDetailsOutput {
@@ -942,12 +845,6 @@ func (i ExadataInsightMemberVmClusterDetailArgs) ToExadataInsightMemberVmCluster
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetail]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExadataInsightMemberVmClusterDetailArrayInput is an input type that accepts ExadataInsightMemberVmClusterDetailArray and ExadataInsightMemberVmClusterDetailArrayOutput values.
 // You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailArrayInput` via:
 //
@@ -973,12 +870,6 @@ func (i ExadataInsightMemberVmClusterDetailArray) ToExadataInsightMemberVmCluste
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailArrayOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[[]ExadataInsightMemberVmClusterDetail]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInsightMemberVmClusterDetailOutput struct{ *pulumi.OutputState }
 
 func (ExadataInsightMemberVmClusterDetailOutput) ElementType() reflect.Type {
@@ -991,12 +882,6 @@ func (o ExadataInsightMemberVmClusterDetailOutput) ToExadataInsightMemberVmClust
 
 func (o ExadataInsightMemberVmClusterDetailOutput) ToExadataInsightMemberVmClusterDetailOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailOutput {
 	return o
-}
-
-func (o ExadataInsightMemberVmClusterDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier of database
@@ -1038,12 +923,6 @@ func (o ExadataInsightMemberVmClusterDetailArrayOutput) ToExadataInsightMemberVm
 
 func (o ExadataInsightMemberVmClusterDetailArrayOutput) ToExadataInsightMemberVmClusterDetailArrayOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailArrayOutput {
 	return o
-}
-
-func (o ExadataInsightMemberVmClusterDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[[]ExadataInsightMemberVmClusterDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInsightMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInput) ExadataInsightMemberVmClusterDetailOutput {
@@ -1133,12 +1012,6 @@ func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToExadataIn
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput values.
 // You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput` via:
 //
@@ -1164,12 +1037,6 @@ func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToExadataI
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput struct{ *pulumi.OutputState }
 
 func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ElementType() reflect.Type {
@@ -1182,12 +1049,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToExadata
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
 	return o
-}
-
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier of database
@@ -1281,12 +1142,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToEx
 	return o
 }
 
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) Index(i pulumi.IntInput) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
 		return vs[0].([]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail)[vs[1].(int)]
@@ -1334,12 +1189,6 @@ func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput {
 	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutputWithContext(context.Background())
 }
@@ -1381,12 +1230,6 @@ func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput)
 }
 
-func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails] {
-	return pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput struct{ *pulumi.OutputState }
 
 func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput) ElementType() reflect.Type {
@@ -1409,12 +1252,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails {
 		return &v
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput)
-}
-
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of hosts and port for private endpoint accessed database resource.
@@ -1450,12 +1287,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput {
 	return o
-}
-
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails] {
-	return pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput) Elem() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput {
@@ -1535,12 +1366,6 @@ func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArray and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput values.
 // You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayInput` via:
 //
@@ -1566,12 +1391,6 @@ func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArray) ToOutput(ctx context.Context) pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost] {
-	return pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput struct{ *pulumi.OutputState }
 
 func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput) ElementType() reflect.Type {
@@ -1584,12 +1403,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput {
 	return o
-}
-
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Host IP used for connection requests for Cloud DB resource.
@@ -1618,12 +1431,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput {
 	return o
-}
-
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost] {
-	return pulumix.Output[[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput) Index(i pulumi.IntInput) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput {
@@ -1685,12 +1492,6 @@ func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput)
 }
 
-func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
 	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(context.Background())
 }
@@ -1732,12 +1533,6 @@ func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput)
 }
 
-func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails] {
-	return pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails]{
-		OutputState: i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput struct{ *pulumi.OutputState }
 
 func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) ElementType() reflect.Type {
@@ -1760,12 +1555,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
 		return &v
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput)
-}
-
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails] {
-	return pulumix.Output[ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
@@ -1822,12 +1611,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
 	return o
-}
-
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails] {
-	return pulumix.Output[*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) Elem() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput {
@@ -1933,12 +1716,6 @@ func (i NewsReportContentTypesArgs) ToNewsReportContentTypesOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportContentTypesOutput)
 }
 
-func (i NewsReportContentTypesArgs) ToOutput(ctx context.Context) pulumix.Output[NewsReportContentTypes] {
-	return pulumix.Output[NewsReportContentTypes]{
-		OutputState: i.ToNewsReportContentTypesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NewsReportContentTypesArgs) ToNewsReportContentTypesPtrOutput() NewsReportContentTypesPtrOutput {
 	return i.ToNewsReportContentTypesPtrOutputWithContext(context.Background())
 }
@@ -1980,12 +1757,6 @@ func (i *newsReportContentTypesPtrType) ToNewsReportContentTypesPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportContentTypesPtrOutput)
 }
 
-func (i *newsReportContentTypesPtrType) ToOutput(ctx context.Context) pulumix.Output[*NewsReportContentTypes] {
-	return pulumix.Output[*NewsReportContentTypes]{
-		OutputState: i.ToNewsReportContentTypesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NewsReportContentTypesOutput struct{ *pulumi.OutputState }
 
 func (NewsReportContentTypesOutput) ElementType() reflect.Type {
@@ -2010,12 +1781,6 @@ func (o NewsReportContentTypesOutput) ToNewsReportContentTypesPtrOutputWithConte
 	}).(NewsReportContentTypesPtrOutput)
 }
 
-func (o NewsReportContentTypesOutput) ToOutput(ctx context.Context) pulumix.Output[NewsReportContentTypes] {
-	return pulumix.Output[NewsReportContentTypes]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Supported resources for capacity planning content type.
 func (o NewsReportContentTypesOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
@@ -2033,12 +1798,6 @@ func (o NewsReportContentTypesPtrOutput) ToNewsReportContentTypesPtrOutput() New
 
 func (o NewsReportContentTypesPtrOutput) ToNewsReportContentTypesPtrOutputWithContext(ctx context.Context) NewsReportContentTypesPtrOutput {
 	return o
-}
-
-func (o NewsReportContentTypesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NewsReportContentTypes] {
-	return pulumix.Output[*NewsReportContentTypes]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NewsReportContentTypesPtrOutput) Elem() NewsReportContentTypesOutput {
@@ -2114,12 +1873,6 @@ func (i OpsiConfigurationConfigItemArgs) ToOpsiConfigurationConfigItemOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemOutput)
 }
 
-func (i OpsiConfigurationConfigItemArgs) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItem] {
-	return pulumix.Output[OpsiConfigurationConfigItem]{
-		OutputState: i.ToOpsiConfigurationConfigItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpsiConfigurationConfigItemArrayInput is an input type that accepts OpsiConfigurationConfigItemArray and OpsiConfigurationConfigItemArrayOutput values.
 // You can construct a concrete instance of `OpsiConfigurationConfigItemArrayInput` via:
 //
@@ -2145,12 +1898,6 @@ func (i OpsiConfigurationConfigItemArray) ToOpsiConfigurationConfigItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemArrayOutput)
 }
 
-func (i OpsiConfigurationConfigItemArray) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItem] {
-	return pulumix.Output[[]OpsiConfigurationConfigItem]{
-		OutputState: i.ToOpsiConfigurationConfigItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpsiConfigurationConfigItemOutput struct{ *pulumi.OutputState }
 
 func (OpsiConfigurationConfigItemOutput) ElementType() reflect.Type {
@@ -2163,12 +1910,6 @@ func (o OpsiConfigurationConfigItemOutput) ToOpsiConfigurationConfigItemOutput()
 
 func (o OpsiConfigurationConfigItemOutput) ToOpsiConfigurationConfigItemOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemOutput {
 	return o
-}
-
-func (o OpsiConfigurationConfigItemOutput) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItem] {
-	return pulumix.Output[OpsiConfigurationConfigItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of contexts in Operations Insights where this configuration item is applicable.
@@ -2213,12 +1954,6 @@ func (o OpsiConfigurationConfigItemArrayOutput) ToOpsiConfigurationConfigItemArr
 
 func (o OpsiConfigurationConfigItemArrayOutput) ToOpsiConfigurationConfigItemArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemArrayOutput {
 	return o
-}
-
-func (o OpsiConfigurationConfigItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItem] {
-	return pulumix.Output[[]OpsiConfigurationConfigItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OpsiConfigurationConfigItemArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemOutput {
@@ -2280,12 +2015,6 @@ func (i OpsiConfigurationConfigItemMetadataArgs) ToOpsiConfigurationConfigItemMe
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataOutput)
 }
 
-func (i OpsiConfigurationConfigItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[OpsiConfigurationConfigItemMetadata]{
-		OutputState: i.ToOpsiConfigurationConfigItemMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpsiConfigurationConfigItemMetadataArrayInput is an input type that accepts OpsiConfigurationConfigItemMetadataArray and OpsiConfigurationConfigItemMetadataArrayOutput values.
 // You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataArrayInput` via:
 //
@@ -2311,12 +2040,6 @@ func (i OpsiConfigurationConfigItemMetadataArray) ToOpsiConfigurationConfigItemM
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataArrayOutput)
 }
 
-func (i OpsiConfigurationConfigItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[[]OpsiConfigurationConfigItemMetadata]{
-		OutputState: i.ToOpsiConfigurationConfigItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpsiConfigurationConfigItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (OpsiConfigurationConfigItemMetadataOutput) ElementType() reflect.Type {
@@ -2329,12 +2052,6 @@ func (o OpsiConfigurationConfigItemMetadataOutput) ToOpsiConfigurationConfigItem
 
 func (o OpsiConfigurationConfigItemMetadataOutput) ToOpsiConfigurationConfigItemMetadataOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataOutput {
 	return o
-}
-
-func (o OpsiConfigurationConfigItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[OpsiConfigurationConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Type of configuration item.
@@ -2385,12 +2102,6 @@ func (o OpsiConfigurationConfigItemMetadataArrayOutput) ToOpsiConfigurationConfi
 	return o
 }
 
-func (o OpsiConfigurationConfigItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[[]OpsiConfigurationConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OpsiConfigurationConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpsiConfigurationConfigItemMetadata {
 		return vs[0].([]OpsiConfigurationConfigItemMetadata)[vs[1].(int)]
@@ -2434,12 +2145,6 @@ func (i OpsiConfigurationConfigItemMetadataUnitDetailArgs) ToOpsiConfigurationCo
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataUnitDetailOutput)
 }
 
-func (i OpsiConfigurationConfigItemMetadataUnitDetailArgs) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[OpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: i.ToOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpsiConfigurationConfigItemMetadataUnitDetailArrayInput is an input type that accepts OpsiConfigurationConfigItemMetadataUnitDetailArray and OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput values.
 // You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataUnitDetailArrayInput` via:
 //
@@ -2465,12 +2170,6 @@ func (i OpsiConfigurationConfigItemMetadataUnitDetailArray) ToOpsiConfigurationC
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput)
 }
 
-func (i OpsiConfigurationConfigItemMetadataUnitDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]OpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: i.ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpsiConfigurationConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
 
 func (OpsiConfigurationConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
@@ -2483,12 +2182,6 @@ func (o OpsiConfigurationConfigItemMetadataUnitDetailOutput) ToOpsiConfiguration
 
 func (o OpsiConfigurationConfigItemMetadataUnitDetailOutput) ToOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataUnitDetailOutput {
 	return o
-}
-
-func (o OpsiConfigurationConfigItemMetadataUnitDetailOutput) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[OpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
@@ -2513,12 +2206,6 @@ func (o OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToOpsiConfigur
 
 func (o OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
 	return o
-}
-
-func (o OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]OpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemMetadataUnitDetailOutput {
@@ -2572,12 +2259,6 @@ func (i OpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToOpsiConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataValueInputDetailOutput)
 }
 
-func (i OpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[OpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpsiConfigurationConfigItemMetadataValueInputDetailArrayInput is an input type that accepts OpsiConfigurationConfigItemMetadataValueInputDetailArray and OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput values.
 // You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataValueInputDetailArrayInput` via:
 //
@@ -2603,12 +2284,6 @@ func (i OpsiConfigurationConfigItemMetadataValueInputDetailArray) ToOpsiConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput)
 }
 
-func (i OpsiConfigurationConfigItemMetadataValueInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]OpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpsiConfigurationConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
 
 func (OpsiConfigurationConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
@@ -2621,12 +2296,6 @@ func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToOpsiConfigu
 
 func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataValueInputDetailOutput {
 	return o
-}
-
-func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[OpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[OpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed value type of configuration item.
@@ -2663,12 +2332,6 @@ func (o OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToOpsiCo
 	return o
 }
 
-func (o OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]OpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemMetadataValueInputDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpsiConfigurationConfigItemMetadataValueInputDetail {
 		return vs[0].([]OpsiConfigurationConfigItemMetadataValueInputDetail)[vs[1].(int)]
@@ -2677,19 +2340,19 @@ func (o OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) Index(i 
 
 type GetAwrHubAwrSnapshotItem struct {
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-	AwrSourceDatabaseId string `pulumi:"awrSourceDatabaseId"`
+	AwrSourceDatabaseId *string `pulumi:"awrSourceDatabaseId"`
 	// The total number of errors.
-	ErrorCount string `pulumi:"errorCount"`
+	ErrorCount *string `pulumi:"errorCount"`
 	// The database instance number.
-	InstanceNumber int `pulumi:"instanceNumber"`
+	InstanceNumber *int `pulumi:"instanceNumber"`
 	// The identifier of the snapshot.
-	SnapshotIdentifier int `pulumi:"snapshotIdentifier"`
+	SnapshotIdentifier *int `pulumi:"snapshotIdentifier"`
 	// The timestamp of the database startup.
-	TimeDbStartup string `pulumi:"timeDbStartup"`
+	TimeDbStartup *string `pulumi:"timeDbStartup"`
 	// The start time of the snapshot.
-	TimeSnapshotBegin string `pulumi:"timeSnapshotBegin"`
+	TimeSnapshotBegin *string `pulumi:"timeSnapshotBegin"`
 	// The end time of the snapshot.
-	TimeSnapshotEnd string `pulumi:"timeSnapshotEnd"`
+	TimeSnapshotEnd *string `pulumi:"timeSnapshotEnd"`
 }
 
 // GetAwrHubAwrSnapshotItemInput is an input type that accepts GetAwrHubAwrSnapshotItemArgs and GetAwrHubAwrSnapshotItemOutput values.
@@ -2705,19 +2368,19 @@ type GetAwrHubAwrSnapshotItemInput interface {
 
 type GetAwrHubAwrSnapshotItemArgs struct {
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-	AwrSourceDatabaseId pulumi.StringInput `pulumi:"awrSourceDatabaseId"`
+	AwrSourceDatabaseId pulumi.StringPtrInput `pulumi:"awrSourceDatabaseId"`
 	// The total number of errors.
-	ErrorCount pulumi.StringInput `pulumi:"errorCount"`
+	ErrorCount pulumi.StringPtrInput `pulumi:"errorCount"`
 	// The database instance number.
-	InstanceNumber pulumi.IntInput `pulumi:"instanceNumber"`
+	InstanceNumber pulumi.IntPtrInput `pulumi:"instanceNumber"`
 	// The identifier of the snapshot.
-	SnapshotIdentifier pulumi.IntInput `pulumi:"snapshotIdentifier"`
+	SnapshotIdentifier pulumi.IntPtrInput `pulumi:"snapshotIdentifier"`
 	// The timestamp of the database startup.
-	TimeDbStartup pulumi.StringInput `pulumi:"timeDbStartup"`
+	TimeDbStartup pulumi.StringPtrInput `pulumi:"timeDbStartup"`
 	// The start time of the snapshot.
-	TimeSnapshotBegin pulumi.StringInput `pulumi:"timeSnapshotBegin"`
+	TimeSnapshotBegin pulumi.StringPtrInput `pulumi:"timeSnapshotBegin"`
 	// The end time of the snapshot.
-	TimeSnapshotEnd pulumi.StringInput `pulumi:"timeSnapshotEnd"`
+	TimeSnapshotEnd pulumi.StringPtrInput `pulumi:"timeSnapshotEnd"`
 }
 
 func (GetAwrHubAwrSnapshotItemArgs) ElementType() reflect.Type {
@@ -2730,12 +2393,6 @@ func (i GetAwrHubAwrSnapshotItemArgs) ToGetAwrHubAwrSnapshotItemOutput() GetAwrH
 
 func (i GetAwrHubAwrSnapshotItemArgs) ToGetAwrHubAwrSnapshotItemOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotItemOutput)
-}
-
-func (i GetAwrHubAwrSnapshotItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotItem] {
-	return pulumix.Output[GetAwrHubAwrSnapshotItem]{
-		OutputState: i.ToGetAwrHubAwrSnapshotItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAwrHubAwrSnapshotItemArrayInput is an input type that accepts GetAwrHubAwrSnapshotItemArray and GetAwrHubAwrSnapshotItemArrayOutput values.
@@ -2763,12 +2420,6 @@ func (i GetAwrHubAwrSnapshotItemArray) ToGetAwrHubAwrSnapshotItemArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotItemArrayOutput)
 }
 
-func (i GetAwrHubAwrSnapshotItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotItem] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotItem]{
-		OutputState: i.ToGetAwrHubAwrSnapshotItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubAwrSnapshotItemOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubAwrSnapshotItemOutput) ElementType() reflect.Type {
@@ -2783,45 +2434,39 @@ func (o GetAwrHubAwrSnapshotItemOutput) ToGetAwrHubAwrSnapshotItemOutputWithCont
 	return o
 }
 
-func (o GetAwrHubAwrSnapshotItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotItem] {
-	return pulumix.Output[GetAwrHubAwrSnapshotItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-func (o GetAwrHubAwrSnapshotItemOutput) AwrSourceDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) string { return v.AwrSourceDatabaseId }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotItemOutput) AwrSourceDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) *string { return v.AwrSourceDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // The total number of errors.
-func (o GetAwrHubAwrSnapshotItemOutput) ErrorCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) string { return v.ErrorCount }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotItemOutput) ErrorCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) *string { return v.ErrorCount }).(pulumi.StringPtrOutput)
 }
 
 // The database instance number.
-func (o GetAwrHubAwrSnapshotItemOutput) InstanceNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) int { return v.InstanceNumber }).(pulumi.IntOutput)
+func (o GetAwrHubAwrSnapshotItemOutput) InstanceNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) *int { return v.InstanceNumber }).(pulumi.IntPtrOutput)
 }
 
 // The identifier of the snapshot.
-func (o GetAwrHubAwrSnapshotItemOutput) SnapshotIdentifier() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) int { return v.SnapshotIdentifier }).(pulumi.IntOutput)
+func (o GetAwrHubAwrSnapshotItemOutput) SnapshotIdentifier() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) *int { return v.SnapshotIdentifier }).(pulumi.IntPtrOutput)
 }
 
 // The timestamp of the database startup.
-func (o GetAwrHubAwrSnapshotItemOutput) TimeDbStartup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) string { return v.TimeDbStartup }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotItemOutput) TimeDbStartup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) *string { return v.TimeDbStartup }).(pulumi.StringPtrOutput)
 }
 
 // The start time of the snapshot.
-func (o GetAwrHubAwrSnapshotItemOutput) TimeSnapshotBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) string { return v.TimeSnapshotBegin }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotItemOutput) TimeSnapshotBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) *string { return v.TimeSnapshotBegin }).(pulumi.StringPtrOutput)
 }
 
 // The end time of the snapshot.
-func (o GetAwrHubAwrSnapshotItemOutput) TimeSnapshotEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) string { return v.TimeSnapshotEnd }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotItemOutput) TimeSnapshotEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotItem) *string { return v.TimeSnapshotEnd }).(pulumi.StringPtrOutput)
 }
 
 type GetAwrHubAwrSnapshotItemArrayOutput struct{ *pulumi.OutputState }
@@ -2836,12 +2481,6 @@ func (o GetAwrHubAwrSnapshotItemArrayOutput) ToGetAwrHubAwrSnapshotItemArrayOutp
 
 func (o GetAwrHubAwrSnapshotItemArrayOutput) ToGetAwrHubAwrSnapshotItemArrayOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotItemArrayOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSnapshotItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotItem] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubAwrSnapshotItemArrayOutput) Index(i pulumi.IntInput) GetAwrHubAwrSnapshotItemOutput {
@@ -2883,12 +2522,6 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs) ToGetAwrHubAwrSnapshotsA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput)
 }
 
-func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollection] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollection]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionArray and GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayInput` via:
 //
@@ -2914,12 +2547,6 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionArray) ToGetAwrHubAwrSnapshots
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput)
 }
 
-func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollection] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollection]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput) ElementType() reflect.Type {
@@ -2932,12 +2559,6 @@ func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput) ToGetAwrHubAwrSnapshot
 
 func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput) ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollection] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of AWR snapshot summary data.
@@ -2959,12 +2580,6 @@ func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput) ToGetAwrHubAwrSna
 
 func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput) ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollection] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput) Index(i pulumi.IntInput) GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput {
@@ -3006,12 +2621,6 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs) ToGetAwrHubAwrSnapsh
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput)
 }
 
-func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArray and GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayInput` via:
 //
@@ -3037,12 +2646,6 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArray) ToGetAwrHubAwrSnaps
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutput)
 }
 
-func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput) ElementType() reflect.Type {
@@ -3055,12 +2658,6 @@ func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput) ToGetAwrHubAwrSnap
 
 func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput) ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of AWR snapshot summary data.
@@ -3084,12 +2681,6 @@ func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutput) ToGetAwrHubAw
 	return o
 }
 
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem {
 		return vs[0].([]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem)[vs[1].(int)]
@@ -3098,19 +2689,19 @@ func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutput) Index(i pulum
 
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem struct {
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-	AwrSourceDatabaseId string `pulumi:"awrSourceDatabaseId"`
+	AwrSourceDatabaseId *string `pulumi:"awrSourceDatabaseId"`
 	// The total number of errors.
-	ErrorCount string `pulumi:"errorCount"`
+	ErrorCount *string `pulumi:"errorCount"`
 	// The database instance number.
-	InstanceNumber int `pulumi:"instanceNumber"`
+	InstanceNumber *int `pulumi:"instanceNumber"`
 	// The identifier of the snapshot.
-	SnapshotIdentifier int `pulumi:"snapshotIdentifier"`
+	SnapshotIdentifier *int `pulumi:"snapshotIdentifier"`
 	// The timestamp of the database startup.
-	TimeDbStartup string `pulumi:"timeDbStartup"`
+	TimeDbStartup *string `pulumi:"timeDbStartup"`
 	// The start time of the snapshot.
-	TimeSnapshotBegin string `pulumi:"timeSnapshotBegin"`
+	TimeSnapshotBegin *string `pulumi:"timeSnapshotBegin"`
 	// The end time of the snapshot.
-	TimeSnapshotEnd string `pulumi:"timeSnapshotEnd"`
+	TimeSnapshotEnd *string `pulumi:"timeSnapshotEnd"`
 }
 
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs and GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput values.
@@ -3126,19 +2717,19 @@ type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemInput interface {
 
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs struct {
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-	AwrSourceDatabaseId pulumi.StringInput `pulumi:"awrSourceDatabaseId"`
+	AwrSourceDatabaseId pulumi.StringPtrInput `pulumi:"awrSourceDatabaseId"`
 	// The total number of errors.
-	ErrorCount pulumi.StringInput `pulumi:"errorCount"`
+	ErrorCount pulumi.StringPtrInput `pulumi:"errorCount"`
 	// The database instance number.
-	InstanceNumber pulumi.IntInput `pulumi:"instanceNumber"`
+	InstanceNumber pulumi.IntPtrInput `pulumi:"instanceNumber"`
 	// The identifier of the snapshot.
-	SnapshotIdentifier pulumi.IntInput `pulumi:"snapshotIdentifier"`
+	SnapshotIdentifier pulumi.IntPtrInput `pulumi:"snapshotIdentifier"`
 	// The timestamp of the database startup.
-	TimeDbStartup pulumi.StringInput `pulumi:"timeDbStartup"`
+	TimeDbStartup pulumi.StringPtrInput `pulumi:"timeDbStartup"`
 	// The start time of the snapshot.
-	TimeSnapshotBegin pulumi.StringInput `pulumi:"timeSnapshotBegin"`
+	TimeSnapshotBegin pulumi.StringPtrInput `pulumi:"timeSnapshotBegin"`
 	// The end time of the snapshot.
-	TimeSnapshotEnd pulumi.StringInput `pulumi:"timeSnapshotEnd"`
+	TimeSnapshotEnd pulumi.StringPtrInput `pulumi:"timeSnapshotEnd"`
 }
 
 func (GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs) ElementType() reflect.Type {
@@ -3151,12 +2742,6 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs) ToGetAwrHubAwrSn
 
 func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs) ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput)
-}
-
-func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArray and GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput values.
@@ -3184,12 +2769,6 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArray) ToGetAwrHubAwrS
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput)
 }
 
-func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) ElementType() reflect.Type {
@@ -3204,45 +2783,39 @@ func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) ToGetAwrHubAwr
 	return o
 }
 
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) AwrSourceDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) string { return v.AwrSourceDatabaseId }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) AwrSourceDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) *string { return v.AwrSourceDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // The total number of errors.
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) ErrorCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) string { return v.ErrorCount }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) ErrorCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) *string { return v.ErrorCount }).(pulumi.StringPtrOutput)
 }
 
 // The database instance number.
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) InstanceNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) int { return v.InstanceNumber }).(pulumi.IntOutput)
+func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) InstanceNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) *int { return v.InstanceNumber }).(pulumi.IntPtrOutput)
 }
 
 // The identifier of the snapshot.
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) SnapshotIdentifier() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) int { return v.SnapshotIdentifier }).(pulumi.IntOutput)
+func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) SnapshotIdentifier() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) *int { return v.SnapshotIdentifier }).(pulumi.IntPtrOutput)
 }
 
 // The timestamp of the database startup.
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) TimeDbStartup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) string { return v.TimeDbStartup }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) TimeDbStartup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) *string { return v.TimeDbStartup }).(pulumi.StringPtrOutput)
 }
 
 // The start time of the snapshot.
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) TimeSnapshotBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) string { return v.TimeSnapshotBegin }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) TimeSnapshotBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) *string { return v.TimeSnapshotBegin }).(pulumi.StringPtrOutput)
 }
 
 // The end time of the snapshot.
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) TimeSnapshotEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) string { return v.TimeSnapshotEnd }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput) TimeSnapshotEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem) *string { return v.TimeSnapshotEnd }).(pulumi.StringPtrOutput)
 }
 
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -3257,12 +2830,6 @@ func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput) ToGetAwrH
 
 func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput) ToGetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput {
@@ -3306,12 +2873,6 @@ func (i GetAwrHubAwrSnapshotsFilterArgs) ToGetAwrHubAwrSnapshotsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsFilterOutput)
 }
 
-func (i GetAwrHubAwrSnapshotsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsFilter] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsFilter]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAwrHubAwrSnapshotsFilterArrayInput is an input type that accepts GetAwrHubAwrSnapshotsFilterArray and GetAwrHubAwrSnapshotsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsFilterArrayInput` via:
 //
@@ -3337,12 +2898,6 @@ func (i GetAwrHubAwrSnapshotsFilterArray) ToGetAwrHubAwrSnapshotsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSnapshotsFilterArrayOutput)
 }
 
-func (i GetAwrHubAwrSnapshotsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsFilter] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsFilter]{
-		OutputState: i.ToGetAwrHubAwrSnapshotsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubAwrSnapshotsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubAwrSnapshotsFilterOutput) ElementType() reflect.Type {
@@ -3355,12 +2910,6 @@ func (o GetAwrHubAwrSnapshotsFilterOutput) ToGetAwrHubAwrSnapshotsFilterOutput()
 
 func (o GetAwrHubAwrSnapshotsFilterOutput) ToGetAwrHubAwrSnapshotsFilterOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotsFilterOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSnapshotsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsFilter] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubAwrSnapshotsFilterOutput) Name() pulumi.StringOutput {
@@ -3389,12 +2938,6 @@ func (o GetAwrHubAwrSnapshotsFilterArrayOutput) ToGetAwrHubAwrSnapshotsFilterArr
 	return o
 }
 
-func (o GetAwrHubAwrSnapshotsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSnapshotsFilter] {
-	return pulumix.Output[[]GetAwrHubAwrSnapshotsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAwrHubAwrSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetAwrHubAwrSnapshotsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAwrHubAwrSnapshotsFilter {
 		return vs[0].([]GetAwrHubAwrSnapshotsFilter)[vs[1].(int)]
@@ -3403,23 +2946,23 @@ func (o GetAwrHubAwrSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetAwrH
 
 type GetAwrHubAwrSourcesSummaryItem struct {
 	// Unique Awr Hub identifier
-	AwrHubId string `pulumi:"awrHubId"`
+	AwrHubId *string `pulumi:"awrHubId"`
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-	AwrSourceDatabaseId string `pulumi:"awrSourceDatabaseId"`
+	AwrSourceDatabaseId *string `pulumi:"awrSourceDatabaseId"`
 	// Number of hours since last AWR snapshots import happened from the Source database.
-	HoursSinceLastImport float64 `pulumi:"hoursSinceLastImport"`
+	HoursSinceLastImport *float64 `pulumi:"hoursSinceLastImport"`
 	// The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-	MaxSnapshotIdentifier float64 `pulumi:"maxSnapshotIdentifier"`
+	MaxSnapshotIdentifier *float64 `pulumi:"maxSnapshotIdentifier"`
 	// The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-	MinSnapshotIdentifier float64 `pulumi:"minSnapshotIdentifier"`
+	MinSnapshotIdentifier *float64 `pulumi:"minSnapshotIdentifier"`
 	// Name for an Awr source database
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Number of AWR snapshots uploaded from the Source database.
-	SnapshotsUploaded float64 `pulumi:"snapshotsUploaded"`
+	SnapshotsUploaded *float64 `pulumi:"snapshotsUploaded"`
 	// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-	TimeFirstSnapshotGenerated string `pulumi:"timeFirstSnapshotGenerated"`
+	TimeFirstSnapshotGenerated *string `pulumi:"timeFirstSnapshotGenerated"`
 	// The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-	TimeLastSnapshotGenerated string `pulumi:"timeLastSnapshotGenerated"`
+	TimeLastSnapshotGenerated *string `pulumi:"timeLastSnapshotGenerated"`
 }
 
 // GetAwrHubAwrSourcesSummaryItemInput is an input type that accepts GetAwrHubAwrSourcesSummaryItemArgs and GetAwrHubAwrSourcesSummaryItemOutput values.
@@ -3435,23 +2978,23 @@ type GetAwrHubAwrSourcesSummaryItemInput interface {
 
 type GetAwrHubAwrSourcesSummaryItemArgs struct {
 	// Unique Awr Hub identifier
-	AwrHubId pulumi.StringInput `pulumi:"awrHubId"`
+	AwrHubId pulumi.StringPtrInput `pulumi:"awrHubId"`
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-	AwrSourceDatabaseId pulumi.StringInput `pulumi:"awrSourceDatabaseId"`
+	AwrSourceDatabaseId pulumi.StringPtrInput `pulumi:"awrSourceDatabaseId"`
 	// Number of hours since last AWR snapshots import happened from the Source database.
-	HoursSinceLastImport pulumi.Float64Input `pulumi:"hoursSinceLastImport"`
+	HoursSinceLastImport pulumi.Float64PtrInput `pulumi:"hoursSinceLastImport"`
 	// The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-	MaxSnapshotIdentifier pulumi.Float64Input `pulumi:"maxSnapshotIdentifier"`
+	MaxSnapshotIdentifier pulumi.Float64PtrInput `pulumi:"maxSnapshotIdentifier"`
 	// The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-	MinSnapshotIdentifier pulumi.Float64Input `pulumi:"minSnapshotIdentifier"`
+	MinSnapshotIdentifier pulumi.Float64PtrInput `pulumi:"minSnapshotIdentifier"`
 	// Name for an Awr source database
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Number of AWR snapshots uploaded from the Source database.
-	SnapshotsUploaded pulumi.Float64Input `pulumi:"snapshotsUploaded"`
+	SnapshotsUploaded pulumi.Float64PtrInput `pulumi:"snapshotsUploaded"`
 	// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-	TimeFirstSnapshotGenerated pulumi.StringInput `pulumi:"timeFirstSnapshotGenerated"`
+	TimeFirstSnapshotGenerated pulumi.StringPtrInput `pulumi:"timeFirstSnapshotGenerated"`
 	// The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-	TimeLastSnapshotGenerated pulumi.StringInput `pulumi:"timeLastSnapshotGenerated"`
+	TimeLastSnapshotGenerated pulumi.StringPtrInput `pulumi:"timeLastSnapshotGenerated"`
 }
 
 func (GetAwrHubAwrSourcesSummaryItemArgs) ElementType() reflect.Type {
@@ -3464,12 +3007,6 @@ func (i GetAwrHubAwrSourcesSummaryItemArgs) ToGetAwrHubAwrSourcesSummaryItemOutp
 
 func (i GetAwrHubAwrSourcesSummaryItemArgs) ToGetAwrHubAwrSourcesSummaryItemOutputWithContext(ctx context.Context) GetAwrHubAwrSourcesSummaryItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSourcesSummaryItemOutput)
-}
-
-func (i GetAwrHubAwrSourcesSummaryItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSourcesSummaryItem] {
-	return pulumix.Output[GetAwrHubAwrSourcesSummaryItem]{
-		OutputState: i.ToGetAwrHubAwrSourcesSummaryItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAwrHubAwrSourcesSummaryItemArrayInput is an input type that accepts GetAwrHubAwrSourcesSummaryItemArray and GetAwrHubAwrSourcesSummaryItemArrayOutput values.
@@ -3497,12 +3034,6 @@ func (i GetAwrHubAwrSourcesSummaryItemArray) ToGetAwrHubAwrSourcesSummaryItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubAwrSourcesSummaryItemArrayOutput)
 }
 
-func (i GetAwrHubAwrSourcesSummaryItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSourcesSummaryItem] {
-	return pulumix.Output[[]GetAwrHubAwrSourcesSummaryItem]{
-		OutputState: i.ToGetAwrHubAwrSourcesSummaryItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubAwrSourcesSummaryItemOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubAwrSourcesSummaryItemOutput) ElementType() reflect.Type {
@@ -3517,55 +3048,49 @@ func (o GetAwrHubAwrSourcesSummaryItemOutput) ToGetAwrHubAwrSourcesSummaryItemOu
 	return o
 }
 
-func (o GetAwrHubAwrSourcesSummaryItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSourcesSummaryItem] {
-	return pulumix.Output[GetAwrHubAwrSourcesSummaryItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique Awr Hub identifier
-func (o GetAwrHubAwrSourcesSummaryItemOutput) AwrHubId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) string { return v.AwrHubId }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) AwrHubId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *string { return v.AwrHubId }).(pulumi.StringPtrOutput)
 }
 
 // DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-func (o GetAwrHubAwrSourcesSummaryItemOutput) AwrSourceDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) string { return v.AwrSourceDatabaseId }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) AwrSourceDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *string { return v.AwrSourceDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Number of hours since last AWR snapshots import happened from the Source database.
-func (o GetAwrHubAwrSourcesSummaryItemOutput) HoursSinceLastImport() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) float64 { return v.HoursSinceLastImport }).(pulumi.Float64Output)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) HoursSinceLastImport() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *float64 { return v.HoursSinceLastImport }).(pulumi.Float64PtrOutput)
 }
 
 // The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-func (o GetAwrHubAwrSourcesSummaryItemOutput) MaxSnapshotIdentifier() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) float64 { return v.MaxSnapshotIdentifier }).(pulumi.Float64Output)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) MaxSnapshotIdentifier() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *float64 { return v.MaxSnapshotIdentifier }).(pulumi.Float64PtrOutput)
 }
 
 // The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-func (o GetAwrHubAwrSourcesSummaryItemOutput) MinSnapshotIdentifier() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) float64 { return v.MinSnapshotIdentifier }).(pulumi.Float64Output)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) MinSnapshotIdentifier() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *float64 { return v.MinSnapshotIdentifier }).(pulumi.Float64PtrOutput)
 }
 
 // Name for an Awr source database
-func (o GetAwrHubAwrSourcesSummaryItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Number of AWR snapshots uploaded from the Source database.
-func (o GetAwrHubAwrSourcesSummaryItemOutput) SnapshotsUploaded() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) float64 { return v.SnapshotsUploaded }).(pulumi.Float64Output)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) SnapshotsUploaded() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *float64 { return v.SnapshotsUploaded }).(pulumi.Float64PtrOutput)
 }
 
 // The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-func (o GetAwrHubAwrSourcesSummaryItemOutput) TimeFirstSnapshotGenerated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) string { return v.TimeFirstSnapshotGenerated }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) TimeFirstSnapshotGenerated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *string { return v.TimeFirstSnapshotGenerated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-func (o GetAwrHubAwrSourcesSummaryItemOutput) TimeLastSnapshotGenerated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) string { return v.TimeLastSnapshotGenerated }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSourcesSummaryItemOutput) TimeLastSnapshotGenerated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryItem) *string { return v.TimeLastSnapshotGenerated }).(pulumi.StringPtrOutput)
 }
 
 type GetAwrHubAwrSourcesSummaryItemArrayOutput struct{ *pulumi.OutputState }
@@ -3580,12 +3105,6 @@ func (o GetAwrHubAwrSourcesSummaryItemArrayOutput) ToGetAwrHubAwrSourcesSummaryI
 
 func (o GetAwrHubAwrSourcesSummaryItemArrayOutput) ToGetAwrHubAwrSourcesSummaryItemArrayOutputWithContext(ctx context.Context) GetAwrHubAwrSourcesSummaryItemArrayOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSourcesSummaryItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubAwrSourcesSummaryItem] {
-	return pulumix.Output[[]GetAwrHubAwrSourcesSummaryItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubAwrSourcesSummaryItemArrayOutput) Index(i pulumi.IntInput) GetAwrHubAwrSourcesSummaryItemOutput {
@@ -3625,12 +3144,6 @@ func (i GetAwrHubsAwrHubSummaryCollectionArgs) ToGetAwrHubsAwrHubSummaryCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubsAwrHubSummaryCollectionOutput)
 }
 
-func (i GetAwrHubsAwrHubSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubsAwrHubSummaryCollection] {
-	return pulumix.Output[GetAwrHubsAwrHubSummaryCollection]{
-		OutputState: i.ToGetAwrHubsAwrHubSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAwrHubsAwrHubSummaryCollectionArrayInput is an input type that accepts GetAwrHubsAwrHubSummaryCollectionArray and GetAwrHubsAwrHubSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubsAwrHubSummaryCollectionArrayInput` via:
 //
@@ -3656,12 +3169,6 @@ func (i GetAwrHubsAwrHubSummaryCollectionArray) ToGetAwrHubsAwrHubSummaryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubsAwrHubSummaryCollectionArrayOutput)
 }
 
-func (i GetAwrHubsAwrHubSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubsAwrHubSummaryCollection] {
-	return pulumix.Output[[]GetAwrHubsAwrHubSummaryCollection]{
-		OutputState: i.ToGetAwrHubsAwrHubSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubsAwrHubSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubsAwrHubSummaryCollectionOutput) ElementType() reflect.Type {
@@ -3674,12 +3181,6 @@ func (o GetAwrHubsAwrHubSummaryCollectionOutput) ToGetAwrHubsAwrHubSummaryCollec
 
 func (o GetAwrHubsAwrHubSummaryCollectionOutput) ToGetAwrHubsAwrHubSummaryCollectionOutputWithContext(ctx context.Context) GetAwrHubsAwrHubSummaryCollectionOutput {
 	return o
-}
-
-func (o GetAwrHubsAwrHubSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubsAwrHubSummaryCollection] {
-	return pulumix.Output[GetAwrHubsAwrHubSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubsAwrHubSummaryCollectionOutput) Items() GetAwrHubsAwrHubSummaryCollectionItemArrayOutput {
@@ -3700,12 +3201,6 @@ func (o GetAwrHubsAwrHubSummaryCollectionArrayOutput) ToGetAwrHubsAwrHubSummaryC
 	return o
 }
 
-func (o GetAwrHubsAwrHubSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubsAwrHubSummaryCollection] {
-	return pulumix.Output[[]GetAwrHubsAwrHubSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAwrHubsAwrHubSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetAwrHubsAwrHubSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAwrHubsAwrHubSummaryCollection {
 		return vs[0].([]GetAwrHubsAwrHubSummaryCollection)[vs[1].(int)]
@@ -3714,31 +3209,31 @@ func (o GetAwrHubsAwrHubSummaryCollectionArrayOutput) Index(i pulumi.IntInput) G
 
 type GetAwrHubsAwrHubSummaryCollectionItem struct {
 	// Mailbox URL required for AWR hub and AWR source setup.
-	AwrMailboxUrl string `pulumi:"awrMailboxUrl"`
+	AwrMailboxUrl *string `pulumi:"awrMailboxUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Awr Hub identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// Unique Operations Insights Warehouse identifier
-	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAwrHubsAwrHubSummaryCollectionItemInput is an input type that accepts GetAwrHubsAwrHubSummaryCollectionItemArgs and GetAwrHubsAwrHubSummaryCollectionItemOutput values.
@@ -3754,31 +3249,31 @@ type GetAwrHubsAwrHubSummaryCollectionItemInput interface {
 
 type GetAwrHubsAwrHubSummaryCollectionItemArgs struct {
 	// Mailbox URL required for AWR hub and AWR source setup.
-	AwrMailboxUrl pulumi.StringInput `pulumi:"awrMailboxUrl"`
+	AwrMailboxUrl pulumi.StringPtrInput `pulumi:"awrMailboxUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Awr Hub identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
-	ObjectStorageBucketName pulumi.StringInput `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName pulumi.StringPtrInput `pulumi:"objectStorageBucketName"`
 	// Unique Operations Insights Warehouse identifier
-	OperationsInsightsWarehouseId pulumi.StringInput `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseId pulumi.StringPtrInput `pulumi:"operationsInsightsWarehouseId"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAwrHubsAwrHubSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -3791,12 +3286,6 @@ func (i GetAwrHubsAwrHubSummaryCollectionItemArgs) ToGetAwrHubsAwrHubSummaryColl
 
 func (i GetAwrHubsAwrHubSummaryCollectionItemArgs) ToGetAwrHubsAwrHubSummaryCollectionItemOutputWithContext(ctx context.Context) GetAwrHubsAwrHubSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubsAwrHubSummaryCollectionItemOutput)
-}
-
-func (i GetAwrHubsAwrHubSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubsAwrHubSummaryCollectionItem] {
-	return pulumix.Output[GetAwrHubsAwrHubSummaryCollectionItem]{
-		OutputState: i.ToGetAwrHubsAwrHubSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAwrHubsAwrHubSummaryCollectionItemArrayInput is an input type that accepts GetAwrHubsAwrHubSummaryCollectionItemArray and GetAwrHubsAwrHubSummaryCollectionItemArrayOutput values.
@@ -3824,12 +3313,6 @@ func (i GetAwrHubsAwrHubSummaryCollectionItemArray) ToGetAwrHubsAwrHubSummaryCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubsAwrHubSummaryCollectionItemArrayOutput)
 }
 
-func (i GetAwrHubsAwrHubSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubsAwrHubSummaryCollectionItem] {
-	return pulumix.Output[[]GetAwrHubsAwrHubSummaryCollectionItem]{
-		OutputState: i.ToGetAwrHubsAwrHubSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubsAwrHubSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubsAwrHubSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -3844,20 +3327,14 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) ToGetAwrHubsAwrHubSummaryCo
 	return o
 }
 
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubsAwrHubSummaryCollectionItem] {
-	return pulumix.Output[GetAwrHubsAwrHubSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Mailbox URL required for AWR hub and AWR source setup.
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) AwrMailboxUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.AwrMailboxUrl }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) AwrMailboxUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.AwrMailboxUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -3866,8 +3343,8 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) DefinedTags() pulumi.MapOut
 }
 
 // A filter to return only resources that match the entire display name.
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -3876,28 +3353,28 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) FreeformTags() pulumi.MapOu
 }
 
 // Unique Awr Hub identifier
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Bucket Name
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) ObjectStorageBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.ObjectStorageBucketName }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) ObjectStorageBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.ObjectStorageBucketName }).(pulumi.StringPtrOutput)
 }
 
 // Unique Operations Insights Warehouse identifier
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) OperationsInsightsWarehouseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.OperationsInsightsWarehouseId }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3906,13 +3383,13 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) SystemTags() pulumi.MapOutp
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAwrHubsAwrHubSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3927,12 +3404,6 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemArrayOutput) ToGetAwrHubsAwrHubSumm
 
 func (o GetAwrHubsAwrHubSummaryCollectionItemArrayOutput) ToGetAwrHubsAwrHubSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAwrHubsAwrHubSummaryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAwrHubsAwrHubSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubsAwrHubSummaryCollectionItem] {
-	return pulumix.Output[[]GetAwrHubsAwrHubSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubsAwrHubSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAwrHubsAwrHubSummaryCollectionItemOutput {
@@ -3976,12 +3447,6 @@ func (i GetAwrHubsFilterArgs) ToGetAwrHubsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubsFilterOutput)
 }
 
-func (i GetAwrHubsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubsFilter] {
-	return pulumix.Output[GetAwrHubsFilter]{
-		OutputState: i.ToGetAwrHubsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAwrHubsFilterArrayInput is an input type that accepts GetAwrHubsFilterArray and GetAwrHubsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubsFilterArrayInput` via:
 //
@@ -4007,12 +3472,6 @@ func (i GetAwrHubsFilterArray) ToGetAwrHubsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubsFilterArrayOutput)
 }
 
-func (i GetAwrHubsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubsFilter] {
-	return pulumix.Output[[]GetAwrHubsFilter]{
-		OutputState: i.ToGetAwrHubsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAwrHubsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAwrHubsFilterOutput) ElementType() reflect.Type {
@@ -4025,12 +3484,6 @@ func (o GetAwrHubsFilterOutput) ToGetAwrHubsFilterOutput() GetAwrHubsFilterOutpu
 
 func (o GetAwrHubsFilterOutput) ToGetAwrHubsFilterOutputWithContext(ctx context.Context) GetAwrHubsFilterOutput {
 	return o
-}
-
-func (o GetAwrHubsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubsFilter] {
-	return pulumix.Output[GetAwrHubsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubsFilterOutput) Name() pulumi.StringOutput {
@@ -4059,12 +3512,6 @@ func (o GetAwrHubsFilterArrayOutput) ToGetAwrHubsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetAwrHubsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAwrHubsFilter] {
-	return pulumix.Output[[]GetAwrHubsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAwrHubsFilterArrayOutput) Index(i pulumi.IntInput) GetAwrHubsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAwrHubsFilter {
 		return vs[0].([]GetAwrHubsFilter)[vs[1].(int)]
@@ -4073,17 +3520,17 @@ func (o GetAwrHubsFilterArrayOutput) Index(i pulumi.IntInput) GetAwrHubsFilterOu
 
 type GetDatabaseInsightConnectionCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType string `pulumi:"credentialType"`
+	CredentialType *string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// database user role.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 	// database user name.
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId string `pulumi:"walletSecretId"`
+	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
 // GetDatabaseInsightConnectionCredentialDetailInput is an input type that accepts GetDatabaseInsightConnectionCredentialDetailArgs and GetDatabaseInsightConnectionCredentialDetailOutput values.
@@ -4099,17 +3546,17 @@ type GetDatabaseInsightConnectionCredentialDetailInput interface {
 
 type GetDatabaseInsightConnectionCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// database user role.
-	Role pulumi.StringInput `pulumi:"role"`
+	Role pulumi.StringPtrInput `pulumi:"role"`
 	// database user name.
-	UserName pulumi.StringInput `pulumi:"userName"`
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId pulumi.StringInput `pulumi:"walletSecretId"`
+	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (GetDatabaseInsightConnectionCredentialDetailArgs) ElementType() reflect.Type {
@@ -4122,12 +3569,6 @@ func (i GetDatabaseInsightConnectionCredentialDetailArgs) ToGetDatabaseInsightCo
 
 func (i GetDatabaseInsightConnectionCredentialDetailArgs) ToGetDatabaseInsightConnectionCredentialDetailOutputWithContext(ctx context.Context) GetDatabaseInsightConnectionCredentialDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightConnectionCredentialDetailOutput)
-}
-
-func (i GetDatabaseInsightConnectionCredentialDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightConnectionCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightConnectionCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightConnectionCredentialDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightConnectionCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightConnectionCredentialDetailArray and GetDatabaseInsightConnectionCredentialDetailArrayOutput values.
@@ -4155,12 +3596,6 @@ func (i GetDatabaseInsightConnectionCredentialDetailArray) ToGetDatabaseInsightC
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightConnectionCredentialDetailArrayOutput)
 }
 
-func (i GetDatabaseInsightConnectionCredentialDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightConnectionCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightConnectionCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightConnectionCredentialDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightConnectionCredentialDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightConnectionCredentialDetailOutput) ElementType() reflect.Type {
@@ -4175,40 +3610,34 @@ func (o GetDatabaseInsightConnectionCredentialDetailOutput) ToGetDatabaseInsight
 	return o
 }
 
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightConnectionCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightConnectionCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.CredentialSourceName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionCredentialDetailOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) *string { return v.CredentialSourceName }).(pulumi.StringPtrOutput)
 }
 
 // Credential type.
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) CredentialType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.CredentialType }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionCredentialDetailOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) *string { return v.CredentialType }).(pulumi.StringPtrOutput)
 }
 
 // The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionCredentialDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // database user role.
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.Role }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionCredentialDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // database user name.
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.UserName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionCredentialDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.WalletSecretId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) *string { return v.WalletSecretId }).(pulumi.StringPtrOutput)
 }
 
 type GetDatabaseInsightConnectionCredentialDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4225,12 +3654,6 @@ func (o GetDatabaseInsightConnectionCredentialDetailArrayOutput) ToGetDatabaseIn
 	return o
 }
 
-func (o GetDatabaseInsightConnectionCredentialDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightConnectionCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightConnectionCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightConnectionCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightConnectionCredentialDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightConnectionCredentialDetail {
 		return vs[0].([]GetDatabaseInsightConnectionCredentialDetail)[vs[1].(int)]
@@ -4239,15 +3662,15 @@ func (o GetDatabaseInsightConnectionCredentialDetailArrayOutput) Index(i pulumi.
 
 type GetDatabaseInsightConnectionDetail struct {
 	// Name of the listener host that will be used to create the connect string to the database.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts []GetDatabaseInsightConnectionDetailHost `pulumi:"hosts"`
 	// Listener port number used for connection requests.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Database service name used for connection requests.
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 }
 
 // GetDatabaseInsightConnectionDetailInput is an input type that accepts GetDatabaseInsightConnectionDetailArgs and GetDatabaseInsightConnectionDetailOutput values.
@@ -4263,15 +3686,15 @@ type GetDatabaseInsightConnectionDetailInput interface {
 
 type GetDatabaseInsightConnectionDetailArgs struct {
 	// Name of the listener host that will be used to create the connect string to the database.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts GetDatabaseInsightConnectionDetailHostArrayInput `pulumi:"hosts"`
 	// Listener port number used for connection requests.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Database service name used for connection requests.
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 }
 
 func (GetDatabaseInsightConnectionDetailArgs) ElementType() reflect.Type {
@@ -4284,12 +3707,6 @@ func (i GetDatabaseInsightConnectionDetailArgs) ToGetDatabaseInsightConnectionDe
 
 func (i GetDatabaseInsightConnectionDetailArgs) ToGetDatabaseInsightConnectionDetailOutputWithContext(ctx context.Context) GetDatabaseInsightConnectionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightConnectionDetailOutput)
-}
-
-func (i GetDatabaseInsightConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightConnectionDetail] {
-	return pulumix.Output[GetDatabaseInsightConnectionDetail]{
-		OutputState: i.ToGetDatabaseInsightConnectionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightConnectionDetailArrayInput is an input type that accepts GetDatabaseInsightConnectionDetailArray and GetDatabaseInsightConnectionDetailArrayOutput values.
@@ -4317,12 +3734,6 @@ func (i GetDatabaseInsightConnectionDetailArray) ToGetDatabaseInsightConnectionD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightConnectionDetailArrayOutput)
 }
 
-func (i GetDatabaseInsightConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightConnectionDetail] {
-	return pulumix.Output[[]GetDatabaseInsightConnectionDetail]{
-		OutputState: i.ToGetDatabaseInsightConnectionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightConnectionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightConnectionDetailOutput) ElementType() reflect.Type {
@@ -4337,15 +3748,9 @@ func (o GetDatabaseInsightConnectionDetailOutput) ToGetDatabaseInsightConnection
 	return o
 }
 
-func (o GetDatabaseInsightConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightConnectionDetail] {
-	return pulumix.Output[GetDatabaseInsightConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the listener host that will be used to create the connect string to the database.
-func (o GetDatabaseInsightConnectionDetailOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionDetailOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // List of hosts and port for private endpoint accessed database resource.
@@ -4354,18 +3759,18 @@ func (o GetDatabaseInsightConnectionDetailOutput) Hosts() GetDatabaseInsightConn
 }
 
 // Listener port number used for connection requests.
-func (o GetDatabaseInsightConnectionDetailOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) int { return v.Port }).(pulumi.IntOutput)
+func (o GetDatabaseInsightConnectionDetailOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Protocol used for connection requests for private endpoint accssed database resource.
-func (o GetDatabaseInsightConnectionDetailOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionDetailOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Database service name used for connection requests.
-func (o GetDatabaseInsightConnectionDetailOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionDetail) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 type GetDatabaseInsightConnectionDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4382,12 +3787,6 @@ func (o GetDatabaseInsightConnectionDetailArrayOutput) ToGetDatabaseInsightConne
 	return o
 }
 
-func (o GetDatabaseInsightConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightConnectionDetail] {
-	return pulumix.Output[[]GetDatabaseInsightConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightConnectionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightConnectionDetail {
 		return vs[0].([]GetDatabaseInsightConnectionDetail)[vs[1].(int)]
@@ -4396,9 +3795,9 @@ func (o GetDatabaseInsightConnectionDetailArrayOutput) Index(i pulumi.IntInput) 
 
 type GetDatabaseInsightConnectionDetailHost struct {
 	// Host IP used for connection requests for Cloud DB resource.
-	HostIp string `pulumi:"hostIp"`
+	HostIp *string `pulumi:"hostIp"`
 	// Listener port number used for connection requests.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 }
 
 // GetDatabaseInsightConnectionDetailHostInput is an input type that accepts GetDatabaseInsightConnectionDetailHostArgs and GetDatabaseInsightConnectionDetailHostOutput values.
@@ -4414,9 +3813,9 @@ type GetDatabaseInsightConnectionDetailHostInput interface {
 
 type GetDatabaseInsightConnectionDetailHostArgs struct {
 	// Host IP used for connection requests for Cloud DB resource.
-	HostIp pulumi.StringInput `pulumi:"hostIp"`
+	HostIp pulumi.StringPtrInput `pulumi:"hostIp"`
 	// Listener port number used for connection requests.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
 func (GetDatabaseInsightConnectionDetailHostArgs) ElementType() reflect.Type {
@@ -4429,12 +3828,6 @@ func (i GetDatabaseInsightConnectionDetailHostArgs) ToGetDatabaseInsightConnecti
 
 func (i GetDatabaseInsightConnectionDetailHostArgs) ToGetDatabaseInsightConnectionDetailHostOutputWithContext(ctx context.Context) GetDatabaseInsightConnectionDetailHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightConnectionDetailHostOutput)
-}
-
-func (i GetDatabaseInsightConnectionDetailHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightConnectionDetailHost] {
-	return pulumix.Output[GetDatabaseInsightConnectionDetailHost]{
-		OutputState: i.ToGetDatabaseInsightConnectionDetailHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightConnectionDetailHostArrayInput is an input type that accepts GetDatabaseInsightConnectionDetailHostArray and GetDatabaseInsightConnectionDetailHostArrayOutput values.
@@ -4462,12 +3855,6 @@ func (i GetDatabaseInsightConnectionDetailHostArray) ToGetDatabaseInsightConnect
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightConnectionDetailHostArrayOutput)
 }
 
-func (i GetDatabaseInsightConnectionDetailHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightConnectionDetailHost] {
-	return pulumix.Output[[]GetDatabaseInsightConnectionDetailHost]{
-		OutputState: i.ToGetDatabaseInsightConnectionDetailHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightConnectionDetailHostOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightConnectionDetailHostOutput) ElementType() reflect.Type {
@@ -4482,20 +3869,14 @@ func (o GetDatabaseInsightConnectionDetailHostOutput) ToGetDatabaseInsightConnec
 	return o
 }
 
-func (o GetDatabaseInsightConnectionDetailHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightConnectionDetailHost] {
-	return pulumix.Output[GetDatabaseInsightConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Host IP used for connection requests for Cloud DB resource.
-func (o GetDatabaseInsightConnectionDetailHostOutput) HostIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionDetailHost) string { return v.HostIp }).(pulumi.StringOutput)
+func (o GetDatabaseInsightConnectionDetailHostOutput) HostIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionDetailHost) *string { return v.HostIp }).(pulumi.StringPtrOutput)
 }
 
 // Listener port number used for connection requests.
-func (o GetDatabaseInsightConnectionDetailHostOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionDetailHost) int { return v.Port }).(pulumi.IntOutput)
+func (o GetDatabaseInsightConnectionDetailHostOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightConnectionDetailHost) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 type GetDatabaseInsightConnectionDetailHostArrayOutput struct{ *pulumi.OutputState }
@@ -4512,12 +3893,6 @@ func (o GetDatabaseInsightConnectionDetailHostArrayOutput) ToGetDatabaseInsightC
 	return o
 }
 
-func (o GetDatabaseInsightConnectionDetailHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightConnectionDetailHost] {
-	return pulumix.Output[[]GetDatabaseInsightConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightConnectionDetailHostArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightConnectionDetailHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightConnectionDetailHost {
 		return vs[0].([]GetDatabaseInsightConnectionDetailHost)[vs[1].(int)]
@@ -4526,17 +3901,17 @@ func (o GetDatabaseInsightConnectionDetailHostArrayOutput) Index(i pulumi.IntInp
 
 type GetDatabaseInsightCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType string `pulumi:"credentialType"`
+	CredentialType *string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// database user role.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 	// database user name.
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId string `pulumi:"walletSecretId"`
+	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
 // GetDatabaseInsightCredentialDetailInput is an input type that accepts GetDatabaseInsightCredentialDetailArgs and GetDatabaseInsightCredentialDetailOutput values.
@@ -4552,17 +3927,17 @@ type GetDatabaseInsightCredentialDetailInput interface {
 
 type GetDatabaseInsightCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// database user role.
-	Role pulumi.StringInput `pulumi:"role"`
+	Role pulumi.StringPtrInput `pulumi:"role"`
 	// database user name.
-	UserName pulumi.StringInput `pulumi:"userName"`
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId pulumi.StringInput `pulumi:"walletSecretId"`
+	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (GetDatabaseInsightCredentialDetailArgs) ElementType() reflect.Type {
@@ -4575,12 +3950,6 @@ func (i GetDatabaseInsightCredentialDetailArgs) ToGetDatabaseInsightCredentialDe
 
 func (i GetDatabaseInsightCredentialDetailArgs) ToGetDatabaseInsightCredentialDetailOutputWithContext(ctx context.Context) GetDatabaseInsightCredentialDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightCredentialDetailOutput)
-}
-
-func (i GetDatabaseInsightCredentialDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightCredentialDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightCredentialDetailArray and GetDatabaseInsightCredentialDetailArrayOutput values.
@@ -4608,12 +3977,6 @@ func (i GetDatabaseInsightCredentialDetailArray) ToGetDatabaseInsightCredentialD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightCredentialDetailArrayOutput)
 }
 
-func (i GetDatabaseInsightCredentialDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightCredentialDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightCredentialDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightCredentialDetailOutput) ElementType() reflect.Type {
@@ -4628,40 +3991,34 @@ func (o GetDatabaseInsightCredentialDetailOutput) ToGetDatabaseInsightCredential
 	return o
 }
 
-func (o GetDatabaseInsightCredentialDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-func (o GetDatabaseInsightCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.CredentialSourceName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightCredentialDetailOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) *string { return v.CredentialSourceName }).(pulumi.StringPtrOutput)
 }
 
 // Credential type.
-func (o GetDatabaseInsightCredentialDetailOutput) CredentialType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.CredentialType }).(pulumi.StringOutput)
+func (o GetDatabaseInsightCredentialDetailOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) *string { return v.CredentialType }).(pulumi.StringPtrOutput)
 }
 
 // The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-func (o GetDatabaseInsightCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightCredentialDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // database user role.
-func (o GetDatabaseInsightCredentialDetailOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.Role }).(pulumi.StringOutput)
+func (o GetDatabaseInsightCredentialDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // database user name.
-func (o GetDatabaseInsightCredentialDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.UserName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightCredentialDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-func (o GetDatabaseInsightCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.WalletSecretId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightCredentialDetailOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) *string { return v.WalletSecretId }).(pulumi.StringPtrOutput)
 }
 
 type GetDatabaseInsightCredentialDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4676,12 +4033,6 @@ func (o GetDatabaseInsightCredentialDetailArrayOutput) ToGetDatabaseInsightCrede
 
 func (o GetDatabaseInsightCredentialDetailArrayOutput) ToGetDatabaseInsightCredentialDetailArrayOutputWithContext(ctx context.Context) GetDatabaseInsightCredentialDetailArrayOutput {
 	return o
-}
-
-func (o GetDatabaseInsightCredentialDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightCredentialDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseInsightCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightCredentialDetailOutput {
@@ -4721,12 +4072,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionArgs) ToGetDatabaseInsights
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionOutput)
 }
 
-func (i GetDatabaseInsightsDatabaseInsightsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollection] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollection]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseInsightsDatabaseInsightsCollectionArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionArray and GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionArrayInput` via:
 //
@@ -4752,12 +4097,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionArray) ToGetDatabaseInsight
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput)
 }
 
-func (i GetDatabaseInsightsDatabaseInsightsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollection] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollection]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightsDatabaseInsightsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionOutput) ElementType() reflect.Type {
@@ -4770,12 +4109,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionOutput) ToGetDatabaseInsigh
 
 func (o GetDatabaseInsightsDatabaseInsightsCollectionOutput) ToGetDatabaseInsightsDatabaseInsightsCollectionOutputWithContext(ctx context.Context) GetDatabaseInsightsDatabaseInsightsCollectionOutput {
 	return o
-}
-
-func (o GetDatabaseInsightsDatabaseInsightsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollection] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseInsightsDatabaseInsightsCollectionOutput) Items() GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput {
@@ -4798,12 +4131,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput) ToGetDatabaseI
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollection] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightsDatabaseInsightsCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightsDatabaseInsightsCollection {
 		return vs[0].([]GetDatabaseInsightsDatabaseInsightsCollection)[vs[1].(int)]
@@ -4812,7 +4139,7 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput) Index(i pulumi
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
@@ -4820,65 +4147,65 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	CredentialDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-	DatabaseConnectionStatusDetails string `pulumi:"databaseConnectionStatusDetails"`
+	DatabaseConnectionStatusDetails *string `pulumi:"databaseConnectionStatusDetails"`
 	// Display name of database
-	DatabaseDisplayName string `pulumi:"databaseDisplayName"`
+	DatabaseDisplayName *string `pulumi:"databaseDisplayName"`
 	// Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-	DatabaseId string `pulumi:"databaseId"`
+	DatabaseId *string `pulumi:"databaseId"`
 	// Name of database
-	DatabaseName string `pulumi:"databaseName"`
+	DatabaseName *string `pulumi:"databaseName"`
 	// Oracle Cloud Infrastructure database resource type
-	DatabaseResourceType string `pulumi:"databaseResourceType"`
+	DatabaseResourceType *string `pulumi:"databaseResourceType"`
 	// Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-	DatabaseType string `pulumi:"databaseType"`
+	DatabaseType *string `pulumi:"databaseType"`
 	// The version of the database.
-	DatabaseVersion      string `pulumi:"databaseVersion"`
-	DbmPrivateEndpointId string `pulumi:"dbmPrivateEndpointId"`
+	DatabaseVersion      *string `pulumi:"databaseVersion"`
+	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DeploymentType *string                `pulumi:"deploymentType"`
 	// Unique Enterprise Manager bridge identifier
-	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName string `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName *string `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier string `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier *string `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName string `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName *string `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType string `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType *string `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unqiue Identifier
-	EnterpriseManagerIdentifier string `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the database entity.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	ExadataInsightId string `pulumi:"exadataInsightId"`
+	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Unique Operations Insights PrivateEndpoint identifier
-	OpsiPrivateEndpointId string `pulumi:"opsiPrivateEndpointId"`
+	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-	ParentId string `pulumi:"parentId"`
+	ParentId *string `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-	ProcessorCount int `pulumi:"processorCount"`
+	ProcessorCount *int `pulumi:"processorCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-	RootId string `pulumi:"rootId"`
+	RootId *string `pulumi:"rootId"`
 	// Database service name used for connection requests.
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Resource Status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemOutput values.
@@ -4894,7 +4221,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemInput interface {
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayInput `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
@@ -4902,65 +4229,65 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	CredentialDetails GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-	DatabaseConnectionStatusDetails pulumi.StringInput `pulumi:"databaseConnectionStatusDetails"`
+	DatabaseConnectionStatusDetails pulumi.StringPtrInput `pulumi:"databaseConnectionStatusDetails"`
 	// Display name of database
-	DatabaseDisplayName pulumi.StringInput `pulumi:"databaseDisplayName"`
+	DatabaseDisplayName pulumi.StringPtrInput `pulumi:"databaseDisplayName"`
 	// Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	DatabaseId pulumi.StringPtrInput `pulumi:"databaseId"`
 	// Name of database
-	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	DatabaseName pulumi.StringPtrInput `pulumi:"databaseName"`
 	// Oracle Cloud Infrastructure database resource type
-	DatabaseResourceType pulumi.StringInput `pulumi:"databaseResourceType"`
+	DatabaseResourceType pulumi.StringPtrInput `pulumi:"databaseResourceType"`
 	// Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	DatabaseType pulumi.StringPtrInput `pulumi:"databaseType"`
 	// The version of the database.
-	DatabaseVersion      pulumi.StringInput `pulumi:"databaseVersion"`
-	DbmPrivateEndpointId pulumi.StringInput `pulumi:"dbmPrivateEndpointId"`
+	DatabaseVersion      pulumi.StringPtrInput `pulumi:"databaseVersion"`
+	DbmPrivateEndpointId pulumi.StringPtrInput `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
-	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	DefinedTags    pulumi.MapInput       `pulumi:"definedTags"`
+	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
 	// Unique Enterprise Manager bridge identifier
-	EnterpriseManagerBridgeId pulumi.StringInput `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId pulumi.StringPtrInput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName pulumi.StringInput `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier pulumi.StringInput `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName pulumi.StringInput `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType pulumi.StringInput `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unqiue Identifier
-	EnterpriseManagerIdentifier pulumi.StringInput `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier pulumi.StringPtrInput `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the database entity.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	ExadataInsightId pulumi.StringInput `pulumi:"exadataInsightId"`
+	ExadataInsightId pulumi.StringPtrInput `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Unique Operations Insights PrivateEndpoint identifier
-	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
+	OpsiPrivateEndpointId pulumi.StringPtrInput `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-	ParentId pulumi.StringInput `pulumi:"parentId"`
+	ParentId pulumi.StringPtrInput `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-	ProcessorCount pulumi.IntInput `pulumi:"processorCount"`
+	ProcessorCount pulumi.IntPtrInput `pulumi:"processorCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-	RootId pulumi.StringInput `pulumi:"rootId"`
+	RootId pulumi.StringPtrInput `pulumi:"rootId"`
 	// Database service name used for connection requests.
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Resource Status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemArgs) ElementType() reflect.Type {
@@ -4973,12 +4300,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemArgs) ToGetDatabaseInsi
 
 func (i GetDatabaseInsightsDatabaseInsightsCollectionItemArgs) ToGetDatabaseInsightsDatabaseInsightsCollectionItemOutputWithContext(ctx context.Context) GetDatabaseInsightsDatabaseInsightsCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemOutput)
-}
-
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItem] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItem]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemArray and GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput values.
@@ -5006,12 +4327,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemArray) ToGetDatabaseIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput)
 }
 
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItem] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItem]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightsDatabaseInsightsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ElementType() reflect.Type {
@@ -5026,15 +4341,9 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ToGetDatabaseIn
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItem] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // User credential details to connect to the database. This is supplied via the External Database Service.
@@ -5059,44 +4368,44 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) CredentialDetai
 }
 
 // A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseConnectionStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseConnectionStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string {
 		return v.DatabaseConnectionStatusDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Display name of database
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseDisplayName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DatabaseDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Name of database
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure database resource type
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseResourceType }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DatabaseResourceType }).(pulumi.StringPtrOutput)
 }
 
 // Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseType }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
 }
 
 // The version of the database.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DbmPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DbmPrivateEndpointId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DbmPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -5104,52 +4413,58 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DefinedTags() p
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DeploymentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
 
 // Unique Enterprise Manager bridge identifier
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerBridgeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.EnterpriseManagerBridgeId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerBridgeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.EnterpriseManagerBridgeId }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Display Name
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string {
 		return v.EnterpriseManagerEntityDisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Unique Identifier
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string {
 		return v.EnterpriseManagerEntityIdentifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Name
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.EnterpriseManagerEntityName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string {
+		return v.EnterpriseManagerEntityName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Type
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.EnterpriseManagerEntityType }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string {
+		return v.EnterpriseManagerEntityType
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Unqiue Identifier
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.EnterpriseManagerIdentifier }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EnterpriseManagerIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string {
+		return v.EnterpriseManagerIdentifier
+	}).(pulumi.StringPtrOutput)
 }
 
 // Source of the database entity.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ExadataInsightId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.ExadataInsightId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ExadataInsightId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.ExadataInsightId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -5160,48 +4475,48 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) FreeformTags() 
 }
 
 // Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Unique Operations Insights PrivateEndpoint identifier
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.OpsiPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ParentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.ParentId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ParentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.ParentId }).(pulumi.StringPtrOutput)
 }
 
 // Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ProcessorCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) int { return v.ProcessorCount }).(pulumi.IntOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ProcessorCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *int { return v.ProcessorCount }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) RootId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.RootId }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) RootId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.RootId }).(pulumi.StringPtrOutput)
 }
 
 // Database service name used for connection requests.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Resource Status
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5210,13 +4525,13 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) SystemTags() pu
 }
 
 // The time the the database insight was first enabled. An RFC3339 formatted datetime string
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the database insight was updated. An RFC3339 formatted datetime string
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5233,12 +4548,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput) ToGetDatab
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItem] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightsDatabaseInsightsCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightsDatabaseInsightsCollectionItem {
 		return vs[0].([]GetDatabaseInsightsDatabaseInsightsCollectionItem)[vs[1].(int)]
@@ -5247,17 +4556,17 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput) Index(i pu
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType string `pulumi:"credentialType"`
+	CredentialType *string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// database user role.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 	// database user name.
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId string `pulumi:"walletSecretId"`
+	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput values.
@@ -5273,17 +4582,17 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// database user role.
-	Role pulumi.StringInput `pulumi:"role"`
+	Role pulumi.StringPtrInput `pulumi:"role"`
 	// database user name.
-	UserName pulumi.StringInput `pulumi:"userName"`
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId pulumi.StringInput `pulumi:"walletSecretId"`
+	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs) ElementType() reflect.Type {
@@ -5296,12 +4605,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 
 func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs) ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutputWithContext(ctx context.Context) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput)
-}
-
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArray and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutput values.
@@ -5329,12 +4632,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutput)
 }
 
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) ElementType() reflect.Type {
@@ -5349,52 +4646,46 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) *string {
 		return v.CredentialSourceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Credential type.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) CredentialType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) *string {
 		return v.CredentialType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) *string {
 		return v.PasswordSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // database user role.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) *string {
 		return v.Role
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // database user name.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) *string {
 		return v.UserName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) *string {
 		return v.WalletSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutput struct{ *pulumi.OutputState }
@@ -5411,12 +4702,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail {
 		return vs[0].([]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail)[vs[1].(int)]
@@ -5425,15 +4710,15 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail struct {
 	// Name of the listener host that will be used to create the connect string to the database.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost `pulumi:"hosts"`
 	// Listener port number used for connection requests.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Database service name used for connection requests.
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput values.
@@ -5449,15 +4734,15 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailInput inte
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs struct {
 	// Name of the listener host that will be used to create the connect string to the database.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayInput `pulumi:"hosts"`
 	// Listener port number used for connection requests.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Database service name used for connection requests.
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs) ElementType() reflect.Type {
@@ -5470,12 +4755,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs) T
 
 func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs) ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutputWithContext(ctx context.Context) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput)
-}
-
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArray and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput values.
@@ -5503,12 +4782,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput)
 }
 
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) ElementType() reflect.Type {
@@ -5523,15 +4796,9 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput)
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the listener host that will be used to create the connect string to the database.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // List of hosts and port for private endpoint accessed database resource.
@@ -5542,18 +4809,20 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput)
 }
 
 // Listener port number used for connection requests.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) int { return v.Port }).(pulumi.IntOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Protocol used for connection requests for private endpoint accssed database resource.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Database service name used for connection requests.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail) *string {
+		return v.ServiceName
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput struct{ *pulumi.OutputState }
@@ -5570,12 +4839,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOu
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail {
 		return vs[0].([]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail)[vs[1].(int)]
@@ -5584,9 +4847,9 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOu
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost struct {
 	// Host IP used for connection requests for Cloud DB resource.
-	HostIp string `pulumi:"hostIp"`
+	HostIp *string `pulumi:"hostIp"`
 	// Listener port number used for connection requests.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput values.
@@ -5602,9 +4865,9 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostInput 
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs struct {
 	// Host IP used for connection requests for Cloud DB resource.
-	HostIp pulumi.StringInput `pulumi:"hostIp"`
+	HostIp pulumi.StringPtrInput `pulumi:"hostIp"`
 	// Listener port number used for connection requests.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs) ElementType() reflect.Type {
@@ -5617,12 +4880,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArg
 
 func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs) ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutputWithContext(ctx context.Context) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput)
-}
-
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArray and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayOutput values.
@@ -5650,12 +4907,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayOutput)
 }
 
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput) ElementType() reflect.Type {
@@ -5670,20 +4921,14 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOut
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Host IP used for connection requests for Cloud DB resource.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput) HostIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost) string { return v.HostIp }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput) HostIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost) *string { return v.HostIp }).(pulumi.StringPtrOutput)
 }
 
 // Listener port number used for connection requests.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost) int { return v.Port }).(pulumi.IntOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayOutput struct{ *pulumi.OutputState }
@@ -5700,12 +4945,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArr
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost {
 		return vs[0].([]GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost)[vs[1].(int)]
@@ -5714,17 +4953,17 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArr
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType string `pulumi:"credentialType"`
+	CredentialType *string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// database user role.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 	// database user name.
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId string `pulumi:"walletSecretId"`
+	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput values.
@@ -5740,17 +4979,17 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailInput inte
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// database user role.
-	Role pulumi.StringInput `pulumi:"role"`
+	Role pulumi.StringPtrInput `pulumi:"role"`
 	// database user name.
-	UserName pulumi.StringInput `pulumi:"userName"`
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId pulumi.StringInput `pulumi:"walletSecretId"`
+	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs) ElementType() reflect.Type {
@@ -5763,12 +5002,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs) T
 
 func (i GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs) ToGetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutputWithContext(ctx context.Context) GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput)
-}
-
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArray and GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput values.
@@ -5796,12 +5029,6 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput)
 }
 
-func (i GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail]{
-		OutputState: i.ToGetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) ElementType() reflect.Type {
@@ -5816,48 +5043,42 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput)
 	return o
 }
 
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail] {
-	return pulumix.Output[GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) *string {
 		return v.CredentialSourceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Credential type.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) CredentialType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) *string {
 		return v.CredentialType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) *string {
 		return v.PasswordSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // database user role.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) string { return v.Role }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // database user name.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) string { return v.UserName }).(pulumi.StringOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) string {
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) *string {
 		return v.WalletSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput struct{ *pulumi.OutputState }
@@ -5872,12 +5093,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOu
 
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput) ToGetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutputWithContext(ctx context.Context) GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput {
 	return o
-}
-
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail] {
-	return pulumix.Output[[]GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput {
@@ -5921,12 +5136,6 @@ func (i GetDatabaseInsightsFilterArgs) ToGetDatabaseInsightsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsFilterOutput)
 }
 
-func (i GetDatabaseInsightsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsFilter] {
-	return pulumix.Output[GetDatabaseInsightsFilter]{
-		OutputState: i.ToGetDatabaseInsightsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseInsightsFilterArrayInput is an input type that accepts GetDatabaseInsightsFilterArray and GetDatabaseInsightsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsFilterArrayInput` via:
 //
@@ -5952,12 +5161,6 @@ func (i GetDatabaseInsightsFilterArray) ToGetDatabaseInsightsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseInsightsFilterArrayOutput)
 }
 
-func (i GetDatabaseInsightsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsFilter] {
-	return pulumix.Output[[]GetDatabaseInsightsFilter]{
-		OutputState: i.ToGetDatabaseInsightsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseInsightsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseInsightsFilterOutput) ElementType() reflect.Type {
@@ -5970,12 +5173,6 @@ func (o GetDatabaseInsightsFilterOutput) ToGetDatabaseInsightsFilterOutput() Get
 
 func (o GetDatabaseInsightsFilterOutput) ToGetDatabaseInsightsFilterOutputWithContext(ctx context.Context) GetDatabaseInsightsFilterOutput {
 	return o
-}
-
-func (o GetDatabaseInsightsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsFilter] {
-	return pulumix.Output[GetDatabaseInsightsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseInsightsFilterOutput) Name() pulumi.StringOutput {
@@ -6002,12 +5199,6 @@ func (o GetDatabaseInsightsFilterArrayOutput) ToGetDatabaseInsightsFilterArrayOu
 
 func (o GetDatabaseInsightsFilterArrayOutput) ToGetDatabaseInsightsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseInsightsFilterArrayOutput {
 	return o
-}
-
-func (o GetDatabaseInsightsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseInsightsFilter] {
-	return pulumix.Output[[]GetDatabaseInsightsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseInsightsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseInsightsFilterOutput {
@@ -6047,12 +5238,6 @@ func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs) ToGetE
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput)
 }
 
-func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection] {
-	return pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection]{
-		OutputState: i.ToGetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayInput is an input type that accepts GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArray and GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayInput` via:
 //
@@ -6078,12 +5263,6 @@ func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutput)
 }
 
-func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection] {
-	return pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection]{
-		OutputState: i.ToGetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput) ElementType() reflect.Type {
@@ -6096,12 +5275,6 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput) ToGe
 
 func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput) ToGetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutputWithContext(ctx context.Context) GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput {
 	return o
-}
-
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection] {
-	return pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput) Items() GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput {
@@ -6124,12 +5297,6 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutput)
 	return o
 }
 
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection] {
-	return pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutput) Index(i pulumi.IntInput) GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection {
 		return vs[0].([]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection)[vs[1].(int)]
@@ -6138,33 +5305,33 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutput)
 
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of Enterprise Manager Bridge
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Enterprise Manager bridge identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-	ObjectStorageBucketStatusDetails string `pulumi:"objectStorageBucketStatusDetails"`
+	ObjectStorageBucketStatusDetails *string `pulumi:"objectStorageBucketStatusDetails"`
 	// Object Storage Namespace Name
-	ObjectStorageNamespaceName string `pulumi:"objectStorageNamespaceName"`
+	ObjectStorageNamespaceName *string `pulumi:"objectStorageNamespaceName"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemInput is an input type that accepts GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs and GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput values.
@@ -6180,33 +5347,33 @@ type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemInput inter
 
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of Enterprise Manager Bridge
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Enterprise Manager bridge identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
-	ObjectStorageBucketName pulumi.StringInput `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName pulumi.StringPtrInput `pulumi:"objectStorageBucketName"`
 	// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-	ObjectStorageBucketStatusDetails pulumi.StringInput `pulumi:"objectStorageBucketStatusDetails"`
+	ObjectStorageBucketStatusDetails pulumi.StringPtrInput `pulumi:"objectStorageBucketStatusDetails"`
 	// Object Storage Namespace Name
-	ObjectStorageNamespaceName pulumi.StringInput `pulumi:"objectStorageNamespaceName"`
+	ObjectStorageNamespaceName pulumi.StringPtrInput `pulumi:"objectStorageNamespaceName"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs) ElementType() reflect.Type {
@@ -6219,12 +5386,6 @@ func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs) To
 
 func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs) ToGetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutputWithContext(ctx context.Context) GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput)
-}
-
-func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem] {
-	return pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem]{
-		OutputState: i.ToGetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayInput is an input type that accepts GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray and GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput values.
@@ -6252,12 +5413,6 @@ func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput)
 }
 
-func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem] {
-	return pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem]{
-		OutputState: i.ToGetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ElementType() reflect.Type {
@@ -6272,17 +5427,11 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) 
 	return o
 }
 
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem] {
-	return pulumix.Output[GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -6293,13 +5442,13 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) 
 }
 
 // Description of Enterprise Manager Bridge
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name.
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -6310,41 +5459,41 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) 
 }
 
 // Unique Enterprise Manager bridge identifier
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Bucket Name
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ObjectStorageBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ObjectStorageBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string {
 		return v.ObjectStorageBucketName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ObjectStorageBucketStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ObjectStorageBucketStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string {
 		return v.ObjectStorageBucketStatusDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Namespace Name
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ObjectStorageNamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) ObjectStorageNamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string {
 		return v.ObjectStorageNamespaceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6355,13 +5504,13 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) 
 }
 
 // The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6376,12 +5525,6 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOut
 
 func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput) ToGetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutputWithContext(ctx context.Context) GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem] {
-	return pulumix.Output[[]GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput {
@@ -6425,12 +5568,6 @@ func (i GetEnterpriseManagerBridgesFilterArgs) ToGetEnterpriseManagerBridgesFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnterpriseManagerBridgesFilterOutput)
 }
 
-func (i GetEnterpriseManagerBridgesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnterpriseManagerBridgesFilter] {
-	return pulumix.Output[GetEnterpriseManagerBridgesFilter]{
-		OutputState: i.ToGetEnterpriseManagerBridgesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnterpriseManagerBridgesFilterArrayInput is an input type that accepts GetEnterpriseManagerBridgesFilterArray and GetEnterpriseManagerBridgesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesFilterArrayInput` via:
 //
@@ -6456,12 +5593,6 @@ func (i GetEnterpriseManagerBridgesFilterArray) ToGetEnterpriseManagerBridgesFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnterpriseManagerBridgesFilterArrayOutput)
 }
 
-func (i GetEnterpriseManagerBridgesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnterpriseManagerBridgesFilter] {
-	return pulumix.Output[[]GetEnterpriseManagerBridgesFilter]{
-		OutputState: i.ToGetEnterpriseManagerBridgesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnterpriseManagerBridgesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEnterpriseManagerBridgesFilterOutput) ElementType() reflect.Type {
@@ -6474,12 +5605,6 @@ func (o GetEnterpriseManagerBridgesFilterOutput) ToGetEnterpriseManagerBridgesFi
 
 func (o GetEnterpriseManagerBridgesFilterOutput) ToGetEnterpriseManagerBridgesFilterOutputWithContext(ctx context.Context) GetEnterpriseManagerBridgesFilterOutput {
 	return o
-}
-
-func (o GetEnterpriseManagerBridgesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnterpriseManagerBridgesFilter] {
-	return pulumix.Output[GetEnterpriseManagerBridgesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnterpriseManagerBridgesFilterOutput) Name() pulumi.StringOutput {
@@ -6508,12 +5633,6 @@ func (o GetEnterpriseManagerBridgesFilterArrayOutput) ToGetEnterpriseManagerBrid
 	return o
 }
 
-func (o GetEnterpriseManagerBridgesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnterpriseManagerBridgesFilter] {
-	return pulumix.Output[[]GetEnterpriseManagerBridgesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEnterpriseManagerBridgesFilterArrayOutput) Index(i pulumi.IntInput) GetEnterpriseManagerBridgesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEnterpriseManagerBridgesFilter {
 		return vs[0].([]GetEnterpriseManagerBridgesFilter)[vs[1].(int)]
@@ -6522,11 +5641,11 @@ func (o GetEnterpriseManagerBridgesFilterArrayOutput) Index(i pulumi.IntInput) G
 
 type GetExadataInsightMemberVmClusterDetail struct {
 	// Compartment identifier of the Exadata insight resource
-	CompartmentId         string                                                       `pulumi:"compartmentId"`
-	DbmPrivateEndpointId  string                                                       `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId         *string                                                      `pulumi:"compartmentId"`
+	DbmPrivateEndpointId  *string                                                      `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
-	OpsiPrivateEndpointId string                                                       `pulumi:"opsiPrivateEndpointId"`
-	VmclusterId           string                                                       `pulumi:"vmclusterId"`
+	OpsiPrivateEndpointId *string                                                      `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           *string                                                      `pulumi:"vmclusterId"`
 }
 
 // GetExadataInsightMemberVmClusterDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailArgs and GetExadataInsightMemberVmClusterDetailOutput values.
@@ -6542,11 +5661,11 @@ type GetExadataInsightMemberVmClusterDetailInput interface {
 
 type GetExadataInsightMemberVmClusterDetailArgs struct {
 	// Compartment identifier of the Exadata insight resource
-	CompartmentId         pulumi.StringInput                                                   `pulumi:"compartmentId"`
-	DbmPrivateEndpointId  pulumi.StringInput                                                   `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId         pulumi.StringPtrInput                                                `pulumi:"compartmentId"`
+	DbmPrivateEndpointId  pulumi.StringPtrInput                                                `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
-	OpsiPrivateEndpointId pulumi.StringInput                                                   `pulumi:"opsiPrivateEndpointId"`
-	VmclusterId           pulumi.StringInput                                                   `pulumi:"vmclusterId"`
+	OpsiPrivateEndpointId pulumi.StringPtrInput                                                `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           pulumi.StringPtrInput                                                `pulumi:"vmclusterId"`
 }
 
 func (GetExadataInsightMemberVmClusterDetailArgs) ElementType() reflect.Type {
@@ -6559,12 +5678,6 @@ func (i GetExadataInsightMemberVmClusterDetailArgs) ToGetExadataInsightMemberVmC
 
 func (i GetExadataInsightMemberVmClusterDetailArgs) ToGetExadataInsightMemberVmClusterDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailOutput)
-}
-
-func (i GetExadataInsightMemberVmClusterDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightMemberVmClusterDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailArray and GetExadataInsightMemberVmClusterDetailArrayOutput values.
@@ -6592,12 +5705,6 @@ func (i GetExadataInsightMemberVmClusterDetailArray) ToGetExadataInsightMemberVm
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailArrayOutput)
 }
 
-func (i GetExadataInsightMemberVmClusterDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightMemberVmClusterDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightMemberVmClusterDetailOutput) ElementType() reflect.Type {
@@ -6612,19 +5719,13 @@ func (o GetExadataInsightMemberVmClusterDetailOutput) ToGetExadataInsightMemberV
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment identifier of the Exadata insight resource
-func (o GetExadataInsightMemberVmClusterDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailOutput) DbmPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.DbmPrivateEndpointId }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) *string { return v.DbmPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExadataInsightMemberVmClusterDetailOutput) MemberDatabaseDetails() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
@@ -6633,12 +5734,12 @@ func (o GetExadataInsightMemberVmClusterDetailOutput) MemberDatabaseDetails() Ge
 	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) *string { return v.OpsiPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailOutput) VmclusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.VmclusterId }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailOutput) VmclusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) *string { return v.VmclusterId }).(pulumi.StringPtrOutput)
 }
 
 type GetExadataInsightMemberVmClusterDetailArrayOutput struct{ *pulumi.OutputState }
@@ -6655,12 +5756,6 @@ func (o GetExadataInsightMemberVmClusterDetailArrayOutput) ToGetExadataInsightMe
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetail {
 		return vs[0].([]GetExadataInsightMemberVmClusterDetail)[vs[1].(int)]
@@ -6669,21 +5764,21 @@ func (o GetExadataInsightMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInp
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	// Compartment identifier of the Exadata insight resource
-	CompartmentId        string                                                                       `pulumi:"compartmentId"`
+	CompartmentId        *string                                                                      `pulumi:"compartmentId"`
 	ConnectionDetails    []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail `pulumi:"connectionDetails"`
 	CredentialDetails    []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail `pulumi:"credentialDetails"`
-	DatabaseId           string                                                                       `pulumi:"databaseId"`
-	DatabaseResourceType string                                                                       `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId string                                                                       `pulumi:"dbmPrivateEndpointId"`
+	DatabaseId           *string                                                                      `pulumi:"databaseId"`
+	DatabaseResourceType *string                                                                      `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId *string                                                                      `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DeploymentType *string                `pulumi:"deploymentType"`
 	// Source of the Exadata system.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId string                 `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           string                 `pulumi:"serviceName"`
+	OpsiPrivateEndpointId *string                `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           *string                `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
@@ -6701,21 +5796,21 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput interface {
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	// Compartment identifier of the Exadata insight resource
-	CompartmentId        pulumi.StringInput                                                                   `pulumi:"compartmentId"`
+	CompartmentId        pulumi.StringPtrInput                                                                `pulumi:"compartmentId"`
 	ConnectionDetails    GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput `pulumi:"connectionDetails"`
 	CredentialDetails    GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput `pulumi:"credentialDetails"`
-	DatabaseId           pulumi.StringInput                                                                   `pulumi:"databaseId"`
-	DatabaseResourceType pulumi.StringInput                                                                   `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId pulumi.StringInput                                                                   `pulumi:"dbmPrivateEndpointId"`
+	DatabaseId           pulumi.StringPtrInput                                                                `pulumi:"databaseId"`
+	DatabaseResourceType pulumi.StringPtrInput                                                                `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId pulumi.StringPtrInput                                                                `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
-	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	DefinedTags    pulumi.MapInput       `pulumi:"definedTags"`
+	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
 	// Source of the Exadata system.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          pulumi.MapInput    `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           pulumi.StringInput `pulumi:"serviceName"`
+	FreeformTags          pulumi.MapInput       `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId pulumi.StringPtrInput `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           pulumi.StringPtrInput `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 }
@@ -6730,12 +5825,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToGetExa
 
 func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
-}
-
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput values.
@@ -6763,12 +5852,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToGetEx
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
 }
 
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ElementType() reflect.Type {
@@ -6783,15 +5866,9 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToGetE
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment identifier of the Exadata insight resource
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionDetails() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput {
@@ -6806,20 +5883,20 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Creden
 	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.DatabaseId }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.DatabaseResourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.DbmPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -6829,13 +5906,13 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Define
 	}).(pulumi.MapOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.DeploymentType }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
 
 // Source of the Exadata system.
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -6845,14 +5922,14 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Freefo
 	}).(pulumi.MapOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.OpsiPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6876,12 +5953,6 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) T
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
 		return vs[0].([]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail)[vs[1].(int)]
@@ -6890,8 +5961,8 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) I
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail struct {
 	Hosts       []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost `pulumi:"hosts"`
-	Protocol    string                                                                           `pulumi:"protocol"`
-	ServiceName string                                                                           `pulumi:"serviceName"`
+	Protocol    *string                                                                          `pulumi:"protocol"`
+	ServiceName *string                                                                          `pulumi:"serviceName"`
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput values.
@@ -6907,8 +5978,8 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailI
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs struct {
 	Hosts       GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayInput `pulumi:"hosts"`
-	Protocol    pulumi.StringInput                                                                       `pulumi:"protocol"`
-	ServiceName pulumi.StringInput                                                                       `pulumi:"serviceName"`
+	Protocol    pulumi.StringPtrInput                                                                    `pulumi:"protocol"`
+	ServiceName pulumi.StringPtrInput                                                                    `pulumi:"serviceName"`
 }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs) ElementType() reflect.Type {
@@ -6921,12 +5992,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 
 func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput)
-}
-
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArray and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput values.
@@ -6954,12 +6019,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput)
 }
 
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ElementType() reflect.Type {
@@ -6974,28 +6033,22 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Hosts() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput {
 	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost {
 		return v.Hosts
 	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) *string {
 		return v.Protocol
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) *string {
 		return v.ServiceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput struct{ *pulumi.OutputState }
@@ -7012,12 +6065,6 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail {
 		return vs[0].([]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail)[vs[1].(int)]
@@ -7025,8 +6072,8 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost struct {
-	HostIp string `pulumi:"hostIp"`
-	Port   int    `pulumi:"port"`
+	HostIp *string `pulumi:"hostIp"`
+	Port   *int    `pulumi:"port"`
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput values.
@@ -7041,8 +6088,8 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailH
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs struct {
-	HostIp pulumi.StringInput `pulumi:"hostIp"`
-	Port   pulumi.IntInput    `pulumi:"port"`
+	HostIp pulumi.StringPtrInput `pulumi:"hostIp"`
+	Port   pulumi.IntPtrInput    `pulumi:"port"`
 }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs) ElementType() reflect.Type {
@@ -7055,12 +6102,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 
 func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput)
-}
-
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArray and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput values.
@@ -7088,12 +6129,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput)
 }
 
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) ElementType() reflect.Type {
@@ -7108,22 +6143,16 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) HostIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) HostIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) *string {
 		return v.HostIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) int {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) *int {
 		return v.Port
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput struct{ *pulumi.OutputState }
@@ -7140,12 +6169,6 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost {
 		return vs[0].([]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost)[vs[1].(int)]
@@ -7153,12 +6176,12 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail struct {
-	CredentialSourceName string `pulumi:"credentialSourceName"`
-	CredentialType       string `pulumi:"credentialType"`
-	PasswordSecretId     string `pulumi:"passwordSecretId"`
-	Role                 string `pulumi:"role"`
-	UserName             string `pulumi:"userName"`
-	WalletSecretId       string `pulumi:"walletSecretId"`
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
+	CredentialType       *string `pulumi:"credentialType"`
+	PasswordSecretId     *string `pulumi:"passwordSecretId"`
+	Role                 *string `pulumi:"role"`
+	UserName             *string `pulumi:"userName"`
+	WalletSecretId       *string `pulumi:"walletSecretId"`
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput values.
@@ -7173,12 +6196,12 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailI
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs struct {
-	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
-	CredentialType       pulumi.StringInput `pulumi:"credentialType"`
-	PasswordSecretId     pulumi.StringInput `pulumi:"passwordSecretId"`
-	Role                 pulumi.StringInput `pulumi:"role"`
-	UserName             pulumi.StringInput `pulumi:"userName"`
-	WalletSecretId       pulumi.StringInput `pulumi:"walletSecretId"`
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
+	CredentialType       pulumi.StringPtrInput `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringPtrInput `pulumi:"role"`
+	UserName             pulumi.StringPtrInput `pulumi:"userName"`
+	WalletSecretId       pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ElementType() reflect.Type {
@@ -7191,12 +6214,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDeta
 
 func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput)
-}
-
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput values.
@@ -7224,12 +6241,6 @@ func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
 }
 
-func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ElementType() reflect.Type {
@@ -7244,46 +6255,40 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDeta
 	return o
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.CredentialSourceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.CredentialType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.PasswordSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.Role
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.UserName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.WalletSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput struct{ *pulumi.OutputState }
@@ -7298,12 +6303,6 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDeta
 
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
 	return o
-}
-
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
@@ -7343,12 +6342,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionArgs) ToGetExadataInsig
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollection] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollection]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetExadataInsightsExadataInsightSummaryCollectionArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionArray and GetExadataInsightsExadataInsightSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionArrayInput` via:
 //
@@ -7374,12 +6367,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionArray) ToGetExadataInsi
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionArrayOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollection] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollection]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsExadataInsightSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionOutput) ElementType() reflect.Type {
@@ -7392,12 +6379,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionOutput) ToGetExadataIns
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionOutput) ToGetExadataInsightsExadataInsightSummaryCollectionOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionOutput {
 	return o
-}
-
-func (o GetExadataInsightsExadataInsightSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollection] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionOutput) Items() GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput {
@@ -7420,12 +6401,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionArrayOutput) ToGetExada
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollection] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightsExadataInsightSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollection {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollection)[vs[1].(int)]
@@ -7434,57 +6409,57 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionArrayOutput) Index(i pu
 
 type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
-	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName string `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName *string `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier string `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier *string `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName string `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName *string `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType string `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType *string `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier string `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the Exadata system.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName string `pulumi:"exadataDisplayName"`
+	ExadataDisplayName *string `pulumi:"exadataDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-	ExadataInfraId string `pulumi:"exadataInfraId"`
+	ExadataInfraId *string `pulumi:"exadataInfraId"`
 	// Oracle Cloud Infrastructure exadata infrastructure resource type
-	ExadataInfraResourceType string `pulumi:"exadataInfraResourceType"`
+	ExadataInfraResourceType *string `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-	ExadataName string `pulumi:"exadataName"`
+	ExadataName *string `pulumi:"exadataName"`
 	// Exadata rack type.
-	ExadataRackType string `pulumi:"exadataRackType"`
+	ExadataRackType *string `pulumi:"exadataRackType"`
 	// The shape of the Exadata Infrastructure.
-	ExadataShape string `pulumi:"exadataShape"`
+	ExadataShape *string `pulumi:"exadataShape"`
 	// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-	ExadataType string `pulumi:"exadataType"`
+	ExadataType *string `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id                string `pulumi:"id"`
-	IsAutoSyncEnabled bool   `pulumi:"isAutoSyncEnabled"`
+	Id                *string `pulumi:"id"`
+	IsAutoSyncEnabled *bool   `pulumi:"isAutoSyncEnabled"`
 	// true if virtualization is used in the Exadata system
-	IsVirtualizedExadata bool `pulumi:"isVirtualizedExadata"`
+	IsVirtualizedExadata *bool `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails       string                                                                       `pulumi:"lifecycleDetails"`
+	LifecycleDetails       *string                                                                      `pulumi:"lifecycleDetails"`
 	MemberVmClusterDetails []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Resource Status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemArgs and GetExadataInsightsExadataInsightSummaryCollectionItemOutput values.
@@ -7500,57 +6475,57 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemInput interface {
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
-	EnterpriseManagerBridgeId pulumi.StringInput `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId pulumi.StringPtrInput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName pulumi.StringInput `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier pulumi.StringInput `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName pulumi.StringInput `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType pulumi.StringInput `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier pulumi.StringInput `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier pulumi.StringPtrInput `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the Exadata system.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName pulumi.StringInput `pulumi:"exadataDisplayName"`
+	ExadataDisplayName pulumi.StringPtrInput `pulumi:"exadataDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-	ExadataInfraId pulumi.StringInput `pulumi:"exadataInfraId"`
+	ExadataInfraId pulumi.StringPtrInput `pulumi:"exadataInfraId"`
 	// Oracle Cloud Infrastructure exadata infrastructure resource type
-	ExadataInfraResourceType pulumi.StringInput `pulumi:"exadataInfraResourceType"`
+	ExadataInfraResourceType pulumi.StringPtrInput `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-	ExadataName pulumi.StringInput `pulumi:"exadataName"`
+	ExadataName pulumi.StringPtrInput `pulumi:"exadataName"`
 	// Exadata rack type.
-	ExadataRackType pulumi.StringInput `pulumi:"exadataRackType"`
+	ExadataRackType pulumi.StringPtrInput `pulumi:"exadataRackType"`
 	// The shape of the Exadata Infrastructure.
-	ExadataShape pulumi.StringInput `pulumi:"exadataShape"`
+	ExadataShape pulumi.StringPtrInput `pulumi:"exadataShape"`
 	// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-	ExadataType pulumi.StringInput `pulumi:"exadataType"`
+	ExadataType pulumi.StringPtrInput `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id                pulumi.StringInput `pulumi:"id"`
-	IsAutoSyncEnabled pulumi.BoolInput   `pulumi:"isAutoSyncEnabled"`
+	Id                pulumi.StringPtrInput `pulumi:"id"`
+	IsAutoSyncEnabled pulumi.BoolPtrInput   `pulumi:"isAutoSyncEnabled"`
 	// true if virtualization is used in the Exadata system
-	IsVirtualizedExadata pulumi.BoolInput `pulumi:"isVirtualizedExadata"`
+	IsVirtualizedExadata pulumi.BoolPtrInput `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails       pulumi.StringInput                                                                   `pulumi:"lifecycleDetails"`
+	LifecycleDetails       pulumi.StringPtrInput                                                                `pulumi:"lifecycleDetails"`
 	MemberVmClusterDetails GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput `pulumi:"memberVmClusterDetails"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Resource Status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -7563,12 +6538,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemArgs) ToGetExadataI
 
 func (i GetExadataInsightsExadataInsightSummaryCollectionItemArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemOutput)
-}
-
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItem] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItem]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemArray and GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput values.
@@ -7596,12 +6565,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemArray) ToGetExadata
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItem] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItem]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsExadataInsightSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -7616,15 +6579,9 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ToGetExadat
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItem] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -7635,87 +6592,87 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) DefinedTags
 }
 
 // Unique Enterprise Manager bridge identifier
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerBridgeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerBridgeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerBridgeId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Display Name
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerEntityDisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Unique Identifier
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerEntityIdentifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Name
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerEntityName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Type
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerEntityType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Unique Identifier
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EnterpriseManagerIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerIdentifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Source of the Exadata system.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the Exadata system. The name does not have to be unique.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataDisplayName }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.ExadataDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataInfraId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataInfraId }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataInfraId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.ExadataInfraId }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure exadata infrastructure resource type
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataInfraResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataInfraResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string {
 		return v.ExadataInfraResourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataName }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.ExadataName }).(pulumi.StringPtrOutput)
 }
 
 // Exadata rack type.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataRackType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataRackType }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataRackType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.ExadataRackType }).(pulumi.StringPtrOutput)
 }
 
 // The shape of the Exadata Infrastructure.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataShape }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.ExadataShape }).(pulumi.StringPtrOutput)
 }
 
 // Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataType }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.ExadataType }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -7726,22 +6683,22 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) FreeformTag
 }
 
 // Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) IsAutoSyncEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) bool { return v.IsAutoSyncEnabled }).(pulumi.BoolOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) IsAutoSyncEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *bool { return v.IsAutoSyncEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // true if virtualization is used in the Exadata system
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) IsVirtualizedExadata() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) bool { return v.IsVirtualizedExadata }).(pulumi.BoolOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) IsVirtualizedExadata() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *bool { return v.IsVirtualizedExadata }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) MemberVmClusterDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput {
@@ -7751,13 +6708,13 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) MemberVmClu
 }
 
 // Lifecycle states
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Resource Status
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7768,13 +6725,13 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) SystemTags(
 }
 
 // The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Exadata insight was updated. An RFC3339 formatted datetime string
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7791,12 +6748,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput) ToGetE
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItem] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItem {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItem)[vs[1].(int)]
@@ -7805,11 +6756,11 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput) Index(
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId         string                                                                                           `pulumi:"compartmentId"`
-	DbmPrivateEndpointId  string                                                                                           `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId         *string                                                                                          `pulumi:"compartmentId"`
+	DbmPrivateEndpointId  *string                                                                                          `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
-	OpsiPrivateEndpointId string                                                                                           `pulumi:"opsiPrivateEndpointId"`
-	VmclusterId           string                                                                                           `pulumi:"vmclusterId"`
+	OpsiPrivateEndpointId *string                                                                                          `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           *string                                                                                          `pulumi:"vmclusterId"`
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput values.
@@ -7825,11 +6776,11 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailI
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId         pulumi.StringInput                                                                                       `pulumi:"compartmentId"`
-	DbmPrivateEndpointId  pulumi.StringInput                                                                                       `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId         pulumi.StringPtrInput                                                                                    `pulumi:"compartmentId"`
+	DbmPrivateEndpointId  pulumi.StringPtrInput                                                                                    `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
-	OpsiPrivateEndpointId pulumi.StringInput                                                                                       `pulumi:"opsiPrivateEndpointId"`
-	VmclusterId           pulumi.StringInput                                                                                       `pulumi:"vmclusterId"`
+	OpsiPrivateEndpointId pulumi.StringPtrInput                                                                                    `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           pulumi.StringPtrInput                                                                                    `pulumi:"vmclusterId"`
 }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs) ElementType() reflect.Type {
@@ -7842,12 +6793,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput)
-}
-
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput values.
@@ -7875,12 +6820,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) ElementType() reflect.Type {
@@ -7895,23 +6834,17 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) DbmPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) *string {
 		return v.DbmPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) MemberDatabaseDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
@@ -7920,16 +6853,16 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) *string {
 		return v.OpsiPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) VmclusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) VmclusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) *string {
 		return v.VmclusterId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput struct{ *pulumi.OutputState }
@@ -7946,12 +6879,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail)[vs[1].(int)]
@@ -7960,21 +6887,21 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId        string                                                                                                           `pulumi:"compartmentId"`
+	CompartmentId        *string                                                                                                          `pulumi:"compartmentId"`
 	ConnectionDetails    []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail `pulumi:"connectionDetails"`
 	CredentialDetails    []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail `pulumi:"credentialDetails"`
-	DatabaseId           string                                                                                                           `pulumi:"databaseId"`
-	DatabaseResourceType string                                                                                                           `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId string                                                                                                           `pulumi:"dbmPrivateEndpointId"`
+	DatabaseId           *string                                                                                                          `pulumi:"databaseId"`
+	DatabaseResourceType *string                                                                                                          `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId *string                                                                                                          `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DeploymentType *string                `pulumi:"deploymentType"`
 	// Source of the Exadata system.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId string                 `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           string                 `pulumi:"serviceName"`
+	OpsiPrivateEndpointId *string                `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           *string                `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
@@ -7992,21 +6919,21 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId        pulumi.StringInput                                                                                                       `pulumi:"compartmentId"`
+	CompartmentId        pulumi.StringPtrInput                                                                                                    `pulumi:"compartmentId"`
 	ConnectionDetails    GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput `pulumi:"connectionDetails"`
 	CredentialDetails    GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput `pulumi:"credentialDetails"`
-	DatabaseId           pulumi.StringInput                                                                                                       `pulumi:"databaseId"`
-	DatabaseResourceType pulumi.StringInput                                                                                                       `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId pulumi.StringInput                                                                                                       `pulumi:"dbmPrivateEndpointId"`
+	DatabaseId           pulumi.StringPtrInput                                                                                                    `pulumi:"databaseId"`
+	DatabaseResourceType pulumi.StringPtrInput                                                                                                    `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId pulumi.StringPtrInput                                                                                                    `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
-	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	DefinedTags    pulumi.MapInput       `pulumi:"definedTags"`
+	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
 	// Source of the Exadata system.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          pulumi.MapInput    `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           pulumi.StringInput `pulumi:"serviceName"`
+	FreeformTags          pulumi.MapInput       `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId pulumi.StringPtrInput `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           pulumi.StringPtrInput `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 }
@@ -8021,12 +6948,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput)
-}
-
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput values.
@@ -8054,12 +6975,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ElementType() reflect.Type {
@@ -8074,17 +6989,11 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput {
@@ -8099,22 +7008,22 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.DatabaseId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.DatabaseResourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.DbmPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -8124,17 +7033,17 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(pulumi.MapOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.DeploymentType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Source of the Exadata system.
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.EntitySource
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -8144,16 +7053,16 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(pulumi.MapOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.OpsiPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) *string {
 		return v.ServiceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -8177,12 +7086,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail)[vs[1].(int)]
@@ -8191,8 +7094,8 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail struct {
 	Hosts       []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost `pulumi:"hosts"`
-	Protocol    string                                                                                                               `pulumi:"protocol"`
-	ServiceName string                                                                                                               `pulumi:"serviceName"`
+	Protocol    *string                                                                                                              `pulumi:"protocol"`
+	ServiceName *string                                                                                                              `pulumi:"serviceName"`
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput values.
@@ -8208,8 +7111,8 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs struct {
 	Hosts       GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayInput `pulumi:"hosts"`
-	Protocol    pulumi.StringInput                                                                                                           `pulumi:"protocol"`
-	ServiceName pulumi.StringInput                                                                                                           `pulumi:"serviceName"`
+	Protocol    pulumi.StringPtrInput                                                                                                        `pulumi:"protocol"`
+	ServiceName pulumi.StringPtrInput                                                                                                        `pulumi:"serviceName"`
 }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs) ElementType() reflect.Type {
@@ -8222,12 +7125,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput)
-}
-
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput values.
@@ -8255,12 +7152,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ElementType() reflect.Type {
@@ -8275,28 +7166,22 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Hosts() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost {
 		return v.Hosts
 	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) *string {
 		return v.Protocol
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) *string {
 		return v.ServiceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8313,12 +7198,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail)[vs[1].(int)]
@@ -8326,8 +7205,8 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost struct {
-	HostIp string `pulumi:"hostIp"`
-	Port   int    `pulumi:"port"`
+	HostIp *string `pulumi:"hostIp"`
+	Port   *int    `pulumi:"port"`
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput values.
@@ -8342,8 +7221,8 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs struct {
-	HostIp pulumi.StringInput `pulumi:"hostIp"`
-	Port   pulumi.IntInput    `pulumi:"port"`
+	HostIp pulumi.StringPtrInput `pulumi:"hostIp"`
+	Port   pulumi.IntPtrInput    `pulumi:"port"`
 }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs) ElementType() reflect.Type {
@@ -8356,12 +7235,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput)
-}
-
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput values.
@@ -8389,12 +7262,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) ElementType() reflect.Type {
@@ -8409,22 +7276,16 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) HostIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) HostIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) *string {
 		return v.HostIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) int {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost) *int {
 		return v.Port
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput struct{ *pulumi.OutputState }
@@ -8441,12 +7302,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost)[vs[1].(int)]
@@ -8454,12 +7309,12 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail struct {
-	CredentialSourceName string `pulumi:"credentialSourceName"`
-	CredentialType       string `pulumi:"credentialType"`
-	PasswordSecretId     string `pulumi:"passwordSecretId"`
-	Role                 string `pulumi:"role"`
-	UserName             string `pulumi:"userName"`
-	WalletSecretId       string `pulumi:"walletSecretId"`
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
+	CredentialType       *string `pulumi:"credentialType"`
+	PasswordSecretId     *string `pulumi:"passwordSecretId"`
+	Role                 *string `pulumi:"role"`
+	UserName             *string `pulumi:"userName"`
+	WalletSecretId       *string `pulumi:"walletSecretId"`
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput values.
@@ -8474,12 +7329,12 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs struct {
-	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
-	CredentialType       pulumi.StringInput `pulumi:"credentialType"`
-	PasswordSecretId     pulumi.StringInput `pulumi:"passwordSecretId"`
-	Role                 pulumi.StringInput `pulumi:"role"`
-	UserName             pulumi.StringInput `pulumi:"userName"`
-	WalletSecretId       pulumi.StringInput `pulumi:"walletSecretId"`
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
+	CredentialType       pulumi.StringPtrInput `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringPtrInput `pulumi:"role"`
+	UserName             pulumi.StringPtrInput `pulumi:"userName"`
+	WalletSecretId       pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ElementType() reflect.Type {
@@ -8492,12 +7347,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput)
-}
-
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput values.
@@ -8525,12 +7374,6 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
 }
 
-func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ElementType() reflect.Type {
@@ -8545,46 +7388,40 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.CredentialSourceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.CredentialType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.PasswordSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.Role
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.UserName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) *string {
 		return v.WalletSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8599,12 +7436,6 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
 	return o
-}
-
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail] {
-	return pulumix.Output[[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
@@ -8648,12 +7479,6 @@ func (i GetExadataInsightsFilterArgs) ToGetExadataInsightsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsFilterOutput)
 }
 
-func (i GetExadataInsightsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsFilter] {
-	return pulumix.Output[GetExadataInsightsFilter]{
-		OutputState: i.ToGetExadataInsightsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetExadataInsightsFilterArrayInput is an input type that accepts GetExadataInsightsFilterArray and GetExadataInsightsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExadataInsightsFilterArrayInput` via:
 //
@@ -8679,12 +7504,6 @@ func (i GetExadataInsightsFilterArray) ToGetExadataInsightsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsFilterArrayOutput)
 }
 
-func (i GetExadataInsightsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsFilter] {
-	return pulumix.Output[[]GetExadataInsightsFilter]{
-		OutputState: i.ToGetExadataInsightsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExadataInsightsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetExadataInsightsFilterOutput) ElementType() reflect.Type {
@@ -8697,12 +7516,6 @@ func (o GetExadataInsightsFilterOutput) ToGetExadataInsightsFilterOutput() GetEx
 
 func (o GetExadataInsightsFilterOutput) ToGetExadataInsightsFilterOutputWithContext(ctx context.Context) GetExadataInsightsFilterOutput {
 	return o
-}
-
-func (o GetExadataInsightsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInsightsFilter] {
-	return pulumix.Output[GetExadataInsightsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExadataInsightsFilterOutput) Name() pulumi.StringOutput {
@@ -8729,12 +7542,6 @@ func (o GetExadataInsightsFilterArrayOutput) ToGetExadataInsightsFilterArrayOutp
 
 func (o GetExadataInsightsFilterArrayOutput) ToGetExadataInsightsFilterArrayOutputWithContext(ctx context.Context) GetExadataInsightsFilterArrayOutput {
 	return o
-}
-
-func (o GetExadataInsightsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExadataInsightsFilter] {
-	return pulumix.Output[[]GetExadataInsightsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExadataInsightsFilterArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsFilterOutput {
@@ -8778,12 +7585,6 @@ func (i GetHostInsightsFilterArgs) ToGetHostInsightsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostInsightsFilterOutput)
 }
 
-func (i GetHostInsightsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHostInsightsFilter] {
-	return pulumix.Output[GetHostInsightsFilter]{
-		OutputState: i.ToGetHostInsightsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHostInsightsFilterArrayInput is an input type that accepts GetHostInsightsFilterArray and GetHostInsightsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHostInsightsFilterArrayInput` via:
 //
@@ -8809,12 +7610,6 @@ func (i GetHostInsightsFilterArray) ToGetHostInsightsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostInsightsFilterArrayOutput)
 }
 
-func (i GetHostInsightsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHostInsightsFilter] {
-	return pulumix.Output[[]GetHostInsightsFilter]{
-		OutputState: i.ToGetHostInsightsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHostInsightsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHostInsightsFilterOutput) ElementType() reflect.Type {
@@ -8827,12 +7622,6 @@ func (o GetHostInsightsFilterOutput) ToGetHostInsightsFilterOutput() GetHostInsi
 
 func (o GetHostInsightsFilterOutput) ToGetHostInsightsFilterOutputWithContext(ctx context.Context) GetHostInsightsFilterOutput {
 	return o
-}
-
-func (o GetHostInsightsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostInsightsFilter] {
-	return pulumix.Output[GetHostInsightsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHostInsightsFilterOutput) Name() pulumi.StringOutput {
@@ -8859,12 +7648,6 @@ func (o GetHostInsightsFilterArrayOutput) ToGetHostInsightsFilterArrayOutput() G
 
 func (o GetHostInsightsFilterArrayOutput) ToGetHostInsightsFilterArrayOutputWithContext(ctx context.Context) GetHostInsightsFilterArrayOutput {
 	return o
-}
-
-func (o GetHostInsightsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHostInsightsFilter] {
-	return pulumix.Output[[]GetHostInsightsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHostInsightsFilterArrayOutput) Index(i pulumi.IntInput) GetHostInsightsFilterOutput {
@@ -8904,12 +7687,6 @@ func (i GetHostInsightsHostInsightSummaryCollectionArgs) ToGetHostInsightsHostIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostInsightsHostInsightSummaryCollectionOutput)
 }
 
-func (i GetHostInsightsHostInsightSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetHostInsightsHostInsightSummaryCollection] {
-	return pulumix.Output[GetHostInsightsHostInsightSummaryCollection]{
-		OutputState: i.ToGetHostInsightsHostInsightSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHostInsightsHostInsightSummaryCollectionArrayInput is an input type that accepts GetHostInsightsHostInsightSummaryCollectionArray and GetHostInsightsHostInsightSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetHostInsightsHostInsightSummaryCollectionArrayInput` via:
 //
@@ -8935,12 +7712,6 @@ func (i GetHostInsightsHostInsightSummaryCollectionArray) ToGetHostInsightsHostI
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostInsightsHostInsightSummaryCollectionArrayOutput)
 }
 
-func (i GetHostInsightsHostInsightSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHostInsightsHostInsightSummaryCollection] {
-	return pulumix.Output[[]GetHostInsightsHostInsightSummaryCollection]{
-		OutputState: i.ToGetHostInsightsHostInsightSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHostInsightsHostInsightSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetHostInsightsHostInsightSummaryCollectionOutput) ElementType() reflect.Type {
@@ -8953,12 +7724,6 @@ func (o GetHostInsightsHostInsightSummaryCollectionOutput) ToGetHostInsightsHost
 
 func (o GetHostInsightsHostInsightSummaryCollectionOutput) ToGetHostInsightsHostInsightSummaryCollectionOutputWithContext(ctx context.Context) GetHostInsightsHostInsightSummaryCollectionOutput {
 	return o
-}
-
-func (o GetHostInsightsHostInsightSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostInsightsHostInsightSummaryCollection] {
-	return pulumix.Output[GetHostInsightsHostInsightSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHostInsightsHostInsightSummaryCollectionOutput) Items() GetHostInsightsHostInsightSummaryCollectionItemArrayOutput {
@@ -8981,12 +7746,6 @@ func (o GetHostInsightsHostInsightSummaryCollectionArrayOutput) ToGetHostInsight
 	return o
 }
 
-func (o GetHostInsightsHostInsightSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHostInsightsHostInsightSummaryCollection] {
-	return pulumix.Output[[]GetHostInsightsHostInsightSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHostInsightsHostInsightSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetHostInsightsHostInsightSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostInsightsHostInsightSummaryCollection {
 		return vs[0].([]GetHostInsightsHostInsightSummaryCollection)[vs[1].(int)]
@@ -8995,59 +7754,59 @@ func (o GetHostInsightsHostInsightSummaryCollectionArrayOutput) Index(i pulumi.I
 
 type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-	ComputeId string `pulumi:"computeId"`
+	ComputeId *string `pulumi:"computeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
-	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName string `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName *string `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier string `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier *string `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName string `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName *string `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType string `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType *string `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier string `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the host entity.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	ExadataInsightId string `pulumi:"exadataInsightId"`
+	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The user-friendly name for the host. The name does not have to be unique.
-	HostDisplayName string `pulumi:"hostDisplayName"`
+	HostDisplayName *string `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
-	HostType string `pulumi:"hostType"`
+	HostType *string `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Platform name.
-	PlatformName string `pulumi:"platformName"`
+	PlatformName *string `pulumi:"platformName"`
 	// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 	// Platform version.
-	PlatformVersion string `pulumi:"platformVersion"`
+	PlatformVersion *string `pulumi:"platformVersion"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-	ProcessorCount int `pulumi:"processorCount"`
+	ProcessorCount *int `pulumi:"processorCount"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Resource Status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the host insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetHostInsightsHostInsightSummaryCollectionItemInput is an input type that accepts GetHostInsightsHostInsightSummaryCollectionItemArgs and GetHostInsightsHostInsightSummaryCollectionItemOutput values.
@@ -9063,59 +7822,59 @@ type GetHostInsightsHostInsightSummaryCollectionItemInput interface {
 
 type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-	ComputeId pulumi.StringInput `pulumi:"computeId"`
+	ComputeId pulumi.StringPtrInput `pulumi:"computeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
-	EnterpriseManagerBridgeId pulumi.StringInput `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId pulumi.StringPtrInput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName pulumi.StringInput `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier pulumi.StringInput `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName pulumi.StringInput `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType pulumi.StringInput `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType pulumi.StringPtrInput `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier pulumi.StringInput `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier pulumi.StringPtrInput `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the host entity.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	ExadataInsightId pulumi.StringInput `pulumi:"exadataInsightId"`
+	ExadataInsightId pulumi.StringPtrInput `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The user-friendly name for the host. The name does not have to be unique.
-	HostDisplayName pulumi.StringInput `pulumi:"hostDisplayName"`
+	HostDisplayName pulumi.StringPtrInput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
-	HostType pulumi.StringInput `pulumi:"hostType"`
+	HostType pulumi.StringPtrInput `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// Platform name.
-	PlatformName pulumi.StringInput `pulumi:"platformName"`
+	PlatformName pulumi.StringPtrInput `pulumi:"platformName"`
 	// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 	// Platform version.
-	PlatformVersion pulumi.StringInput `pulumi:"platformVersion"`
+	PlatformVersion pulumi.StringPtrInput `pulumi:"platformVersion"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-	ProcessorCount pulumi.IntInput `pulumi:"processorCount"`
+	ProcessorCount pulumi.IntPtrInput `pulumi:"processorCount"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Resource Status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the host insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetHostInsightsHostInsightSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -9128,12 +7887,6 @@ func (i GetHostInsightsHostInsightSummaryCollectionItemArgs) ToGetHostInsightsHo
 
 func (i GetHostInsightsHostInsightSummaryCollectionItemArgs) ToGetHostInsightsHostInsightSummaryCollectionItemOutputWithContext(ctx context.Context) GetHostInsightsHostInsightSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostInsightsHostInsightSummaryCollectionItemOutput)
-}
-
-func (i GetHostInsightsHostInsightSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetHostInsightsHostInsightSummaryCollectionItem] {
-	return pulumix.Output[GetHostInsightsHostInsightSummaryCollectionItem]{
-		OutputState: i.ToGetHostInsightsHostInsightSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHostInsightsHostInsightSummaryCollectionItemArrayInput is an input type that accepts GetHostInsightsHostInsightSummaryCollectionItemArray and GetHostInsightsHostInsightSummaryCollectionItemArrayOutput values.
@@ -9161,12 +7914,6 @@ func (i GetHostInsightsHostInsightSummaryCollectionItemArray) ToGetHostInsightsH
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostInsightsHostInsightSummaryCollectionItemArrayOutput)
 }
 
-func (i GetHostInsightsHostInsightSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHostInsightsHostInsightSummaryCollectionItem] {
-	return pulumix.Output[[]GetHostInsightsHostInsightSummaryCollectionItem]{
-		OutputState: i.ToGetHostInsightsHostInsightSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHostInsightsHostInsightSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetHostInsightsHostInsightSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -9181,20 +7928,14 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ToGetHostInsights
 	return o
 }
 
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostInsightsHostInsightSummaryCollectionItem] {
-	return pulumix.Output[GetHostInsightsHostInsightSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ComputeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.ComputeId }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ComputeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.ComputeId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9203,47 +7944,47 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) DefinedTags() pul
 }
 
 // Unique Enterprise Manager bridge identifier
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerBridgeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.EnterpriseManagerBridgeId }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerBridgeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.EnterpriseManagerBridgeId }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Display Name
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string {
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerEntityDisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Unique Identifier
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string {
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string {
 		return v.EnterpriseManagerEntityIdentifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Name
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.EnterpriseManagerEntityName }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.EnterpriseManagerEntityName }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Type
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.EnterpriseManagerEntityType }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.EnterpriseManagerEntityType }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Unique Identifier
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.EnterpriseManagerIdentifier }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EnterpriseManagerIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.EnterpriseManagerIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // Source of the host entity.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ExadataInsightId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.ExadataInsightId }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ExadataInsightId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.ExadataInsightId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -9252,63 +7993,63 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) FreeformTags() pu
 }
 
 // The user-friendly name for the host. The name does not have to be unique.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostDisplayName }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.HostDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The host name. The host name is unique amongst the hosts managed by the same management agent.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostType }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.HostType }).(pulumi.StringPtrOutput)
 }
 
 // Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Platform name.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.PlatformName }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.PlatformName }).(pulumi.StringPtrOutput)
 }
 
 // Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 // Platform version.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.PlatformVersion }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.PlatformVersion }).(pulumi.StringPtrOutput)
 }
 
 // Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ProcessorCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) int { return v.ProcessorCount }).(pulumi.IntOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ProcessorCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *int { return v.ProcessorCount }).(pulumi.IntPtrOutput)
 }
 
 // Lifecycle states
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Resource Status
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -9317,13 +8058,13 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) SystemTags() pulu
 }
 
 // The time the the host insight was first enabled. An RFC3339 formatted datetime string
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the host insight was updated. An RFC3339 formatted datetime string
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetHostInsightsHostInsightSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9340,12 +8081,6 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemArrayOutput) ToGetHostIns
 	return o
 }
 
-func (o GetHostInsightsHostInsightSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHostInsightsHostInsightSummaryCollectionItem] {
-	return pulumix.Output[[]GetHostInsightsHostInsightSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHostInsightsHostInsightSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetHostInsightsHostInsightSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostInsightsHostInsightSummaryCollectionItem {
 		return vs[0].([]GetHostInsightsHostInsightSummaryCollectionItem)[vs[1].(int)]
@@ -9354,15 +8089,15 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemArrayOutput) Index(i pulu
 
 type GetImportableAgentEntitiesItem struct {
 	// Source of the importable agent entity.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-	ManagementAgentDisplayName string `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName *string `pulumi:"managementAgentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 }
 
 // GetImportableAgentEntitiesItemInput is an input type that accepts GetImportableAgentEntitiesItemArgs and GetImportableAgentEntitiesItemOutput values.
@@ -9378,15 +8113,15 @@ type GetImportableAgentEntitiesItemInput interface {
 
 type GetImportableAgentEntitiesItemArgs struct {
 	// Source of the importable agent entity.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-	ManagementAgentDisplayName pulumi.StringInput `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName pulumi.StringPtrInput `pulumi:"managementAgentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 }
 
 func (GetImportableAgentEntitiesItemArgs) ElementType() reflect.Type {
@@ -9399,12 +8134,6 @@ func (i GetImportableAgentEntitiesItemArgs) ToGetImportableAgentEntitiesItemOutp
 
 func (i GetImportableAgentEntitiesItemArgs) ToGetImportableAgentEntitiesItemOutputWithContext(ctx context.Context) GetImportableAgentEntitiesItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntitiesItemOutput)
-}
-
-func (i GetImportableAgentEntitiesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetImportableAgentEntitiesItem] {
-	return pulumix.Output[GetImportableAgentEntitiesItem]{
-		OutputState: i.ToGetImportableAgentEntitiesItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetImportableAgentEntitiesItemArrayInput is an input type that accepts GetImportableAgentEntitiesItemArray and GetImportableAgentEntitiesItemArrayOutput values.
@@ -9432,12 +8161,6 @@ func (i GetImportableAgentEntitiesItemArray) ToGetImportableAgentEntitiesItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntitiesItemArrayOutput)
 }
 
-func (i GetImportableAgentEntitiesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableAgentEntitiesItem] {
-	return pulumix.Output[[]GetImportableAgentEntitiesItem]{
-		OutputState: i.ToGetImportableAgentEntitiesItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetImportableAgentEntitiesItemOutput struct{ *pulumi.OutputState }
 
 func (GetImportableAgentEntitiesItemOutput) ElementType() reflect.Type {
@@ -9452,35 +8175,29 @@ func (o GetImportableAgentEntitiesItemOutput) ToGetImportableAgentEntitiesItemOu
 	return o
 }
 
-func (o GetImportableAgentEntitiesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableAgentEntitiesItem] {
-	return pulumix.Output[GetImportableAgentEntitiesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Source of the importable agent entity.
-func (o GetImportableAgentEntitiesItemOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetImportableAgentEntitiesItemOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // The host name. The host name is unique amongst the hosts managed by the same management agent.
-func (o GetImportableAgentEntitiesItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetImportableAgentEntitiesItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-func (o GetImportableAgentEntitiesItemOutput) ManagementAgentDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.ManagementAgentDisplayName }).(pulumi.StringOutput)
+func (o GetImportableAgentEntitiesItemOutput) ManagementAgentDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) *string { return v.ManagementAgentDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-func (o GetImportableAgentEntitiesItemOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetImportableAgentEntitiesItemOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-func (o GetImportableAgentEntitiesItemOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetImportableAgentEntitiesItemOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 type GetImportableAgentEntitiesItemArrayOutput struct{ *pulumi.OutputState }
@@ -9497,12 +8214,6 @@ func (o GetImportableAgentEntitiesItemArrayOutput) ToGetImportableAgentEntitiesI
 	return o
 }
 
-func (o GetImportableAgentEntitiesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableAgentEntitiesItem] {
-	return pulumix.Output[[]GetImportableAgentEntitiesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetImportableAgentEntitiesItemArrayOutput) Index(i pulumi.IntInput) GetImportableAgentEntitiesItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportableAgentEntitiesItem {
 		return vs[0].([]GetImportableAgentEntitiesItem)[vs[1].(int)]
@@ -9511,15 +8222,15 @@ func (o GetImportableAgentEntitiesItemArrayOutput) Index(i pulumi.IntInput) GetI
 
 type GetImportableAgentEntityItem struct {
 	// Source of the importable agent entity.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-	ManagementAgentDisplayName string `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName *string `pulumi:"managementAgentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 }
 
 // GetImportableAgentEntityItemInput is an input type that accepts GetImportableAgentEntityItemArgs and GetImportableAgentEntityItemOutput values.
@@ -9535,15 +8246,15 @@ type GetImportableAgentEntityItemInput interface {
 
 type GetImportableAgentEntityItemArgs struct {
 	// Source of the importable agent entity.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-	ManagementAgentDisplayName pulumi.StringInput `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName pulumi.StringPtrInput `pulumi:"managementAgentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 }
 
 func (GetImportableAgentEntityItemArgs) ElementType() reflect.Type {
@@ -9556,12 +8267,6 @@ func (i GetImportableAgentEntityItemArgs) ToGetImportableAgentEntityItemOutput()
 
 func (i GetImportableAgentEntityItemArgs) ToGetImportableAgentEntityItemOutputWithContext(ctx context.Context) GetImportableAgentEntityItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntityItemOutput)
-}
-
-func (i GetImportableAgentEntityItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetImportableAgentEntityItem] {
-	return pulumix.Output[GetImportableAgentEntityItem]{
-		OutputState: i.ToGetImportableAgentEntityItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetImportableAgentEntityItemArrayInput is an input type that accepts GetImportableAgentEntityItemArray and GetImportableAgentEntityItemArrayOutput values.
@@ -9589,12 +8294,6 @@ func (i GetImportableAgentEntityItemArray) ToGetImportableAgentEntityItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntityItemArrayOutput)
 }
 
-func (i GetImportableAgentEntityItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableAgentEntityItem] {
-	return pulumix.Output[[]GetImportableAgentEntityItem]{
-		OutputState: i.ToGetImportableAgentEntityItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetImportableAgentEntityItemOutput struct{ *pulumi.OutputState }
 
 func (GetImportableAgentEntityItemOutput) ElementType() reflect.Type {
@@ -9609,35 +8308,29 @@ func (o GetImportableAgentEntityItemOutput) ToGetImportableAgentEntityItemOutput
 	return o
 }
 
-func (o GetImportableAgentEntityItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableAgentEntityItem] {
-	return pulumix.Output[GetImportableAgentEntityItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Source of the importable agent entity.
-func (o GetImportableAgentEntityItemOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetImportableAgentEntityItemOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // The host name. The host name is unique amongst the hosts managed by the same management agent.
-func (o GetImportableAgentEntityItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetImportableAgentEntityItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-func (o GetImportableAgentEntityItemOutput) ManagementAgentDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.ManagementAgentDisplayName }).(pulumi.StringOutput)
+func (o GetImportableAgentEntityItemOutput) ManagementAgentDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) *string { return v.ManagementAgentDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-func (o GetImportableAgentEntityItemOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetImportableAgentEntityItemOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-func (o GetImportableAgentEntityItemOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetImportableAgentEntityItemOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 type GetImportableAgentEntityItemArrayOutput struct{ *pulumi.OutputState }
@@ -9654,12 +8347,6 @@ func (o GetImportableAgentEntityItemArrayOutput) ToGetImportableAgentEntityItemA
 	return o
 }
 
-func (o GetImportableAgentEntityItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableAgentEntityItem] {
-	return pulumix.Output[[]GetImportableAgentEntityItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetImportableAgentEntityItemArrayOutput) Index(i pulumi.IntInput) GetImportableAgentEntityItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportableAgentEntityItem {
 		return vs[0].([]GetImportableAgentEntityItem)[vs[1].(int)]
@@ -9668,17 +8355,17 @@ func (o GetImportableAgentEntityItemArrayOutput) Index(i pulumi.IntInput) GetImp
 
 type GetImportableComputeEntitiesItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-	ComputeDisplayName string `pulumi:"computeDisplayName"`
+	ComputeDisplayName *string `pulumi:"computeDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-	ComputeId string `pulumi:"computeId"`
+	ComputeId *string `pulumi:"computeId"`
 	// Source of the importable agent entity.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 }
 
 // GetImportableComputeEntitiesItemInput is an input type that accepts GetImportableComputeEntitiesItemArgs and GetImportableComputeEntitiesItemOutput values.
@@ -9694,17 +8381,17 @@ type GetImportableComputeEntitiesItemInput interface {
 
 type GetImportableComputeEntitiesItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-	ComputeDisplayName pulumi.StringInput `pulumi:"computeDisplayName"`
+	ComputeDisplayName pulumi.StringPtrInput `pulumi:"computeDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-	ComputeId pulumi.StringInput `pulumi:"computeId"`
+	ComputeId pulumi.StringPtrInput `pulumi:"computeId"`
 	// Source of the importable agent entity.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 }
 
 func (GetImportableComputeEntitiesItemArgs) ElementType() reflect.Type {
@@ -9717,12 +8404,6 @@ func (i GetImportableComputeEntitiesItemArgs) ToGetImportableComputeEntitiesItem
 
 func (i GetImportableComputeEntitiesItemArgs) ToGetImportableComputeEntitiesItemOutputWithContext(ctx context.Context) GetImportableComputeEntitiesItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntitiesItemOutput)
-}
-
-func (i GetImportableComputeEntitiesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetImportableComputeEntitiesItem] {
-	return pulumix.Output[GetImportableComputeEntitiesItem]{
-		OutputState: i.ToGetImportableComputeEntitiesItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetImportableComputeEntitiesItemArrayInput is an input type that accepts GetImportableComputeEntitiesItemArray and GetImportableComputeEntitiesItemArrayOutput values.
@@ -9750,12 +8431,6 @@ func (i GetImportableComputeEntitiesItemArray) ToGetImportableComputeEntitiesIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntitiesItemArrayOutput)
 }
 
-func (i GetImportableComputeEntitiesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableComputeEntitiesItem] {
-	return pulumix.Output[[]GetImportableComputeEntitiesItem]{
-		OutputState: i.ToGetImportableComputeEntitiesItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetImportableComputeEntitiesItemOutput struct{ *pulumi.OutputState }
 
 func (GetImportableComputeEntitiesItemOutput) ElementType() reflect.Type {
@@ -9770,40 +8445,34 @@ func (o GetImportableComputeEntitiesItemOutput) ToGetImportableComputeEntitiesIt
 	return o
 }
 
-func (o GetImportableComputeEntitiesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableComputeEntitiesItem] {
-	return pulumix.Output[GetImportableComputeEntitiesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetImportableComputeEntitiesItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetImportableComputeEntitiesItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-func (o GetImportableComputeEntitiesItemOutput) ComputeDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.ComputeDisplayName }).(pulumi.StringOutput)
+func (o GetImportableComputeEntitiesItemOutput) ComputeDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) *string { return v.ComputeDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-func (o GetImportableComputeEntitiesItemOutput) ComputeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.ComputeId }).(pulumi.StringOutput)
+func (o GetImportableComputeEntitiesItemOutput) ComputeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) *string { return v.ComputeId }).(pulumi.StringPtrOutput)
 }
 
 // Source of the importable agent entity.
-func (o GetImportableComputeEntitiesItemOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetImportableComputeEntitiesItemOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // The host name. The host name is unique amongst the hosts managed by the same management agent.
-func (o GetImportableComputeEntitiesItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetImportableComputeEntitiesItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-func (o GetImportableComputeEntitiesItemOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetImportableComputeEntitiesItemOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 type GetImportableComputeEntitiesItemArrayOutput struct{ *pulumi.OutputState }
@@ -9820,12 +8489,6 @@ func (o GetImportableComputeEntitiesItemArrayOutput) ToGetImportableComputeEntit
 	return o
 }
 
-func (o GetImportableComputeEntitiesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableComputeEntitiesItem] {
-	return pulumix.Output[[]GetImportableComputeEntitiesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetImportableComputeEntitiesItemArrayOutput) Index(i pulumi.IntInput) GetImportableComputeEntitiesItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportableComputeEntitiesItem {
 		return vs[0].([]GetImportableComputeEntitiesItem)[vs[1].(int)]
@@ -9834,17 +8497,17 @@ func (o GetImportableComputeEntitiesItemArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetImportableComputeEntityItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-	ComputeDisplayName string `pulumi:"computeDisplayName"`
+	ComputeDisplayName *string `pulumi:"computeDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-	ComputeId string `pulumi:"computeId"`
+	ComputeId *string `pulumi:"computeId"`
 	// Source of the importable agent entity.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 }
 
 // GetImportableComputeEntityItemInput is an input type that accepts GetImportableComputeEntityItemArgs and GetImportableComputeEntityItemOutput values.
@@ -9860,17 +8523,17 @@ type GetImportableComputeEntityItemInput interface {
 
 type GetImportableComputeEntityItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-	ComputeDisplayName pulumi.StringInput `pulumi:"computeDisplayName"`
+	ComputeDisplayName pulumi.StringPtrInput `pulumi:"computeDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-	ComputeId pulumi.StringInput `pulumi:"computeId"`
+	ComputeId pulumi.StringPtrInput `pulumi:"computeId"`
 	// Source of the importable agent entity.
-	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 }
 
 func (GetImportableComputeEntityItemArgs) ElementType() reflect.Type {
@@ -9883,12 +8546,6 @@ func (i GetImportableComputeEntityItemArgs) ToGetImportableComputeEntityItemOutp
 
 func (i GetImportableComputeEntityItemArgs) ToGetImportableComputeEntityItemOutputWithContext(ctx context.Context) GetImportableComputeEntityItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntityItemOutput)
-}
-
-func (i GetImportableComputeEntityItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetImportableComputeEntityItem] {
-	return pulumix.Output[GetImportableComputeEntityItem]{
-		OutputState: i.ToGetImportableComputeEntityItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetImportableComputeEntityItemArrayInput is an input type that accepts GetImportableComputeEntityItemArray and GetImportableComputeEntityItemArrayOutput values.
@@ -9916,12 +8573,6 @@ func (i GetImportableComputeEntityItemArray) ToGetImportableComputeEntityItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntityItemArrayOutput)
 }
 
-func (i GetImportableComputeEntityItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableComputeEntityItem] {
-	return pulumix.Output[[]GetImportableComputeEntityItem]{
-		OutputState: i.ToGetImportableComputeEntityItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetImportableComputeEntityItemOutput struct{ *pulumi.OutputState }
 
 func (GetImportableComputeEntityItemOutput) ElementType() reflect.Type {
@@ -9936,40 +8587,34 @@ func (o GetImportableComputeEntityItemOutput) ToGetImportableComputeEntityItemOu
 	return o
 }
 
-func (o GetImportableComputeEntityItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableComputeEntityItem] {
-	return pulumix.Output[GetImportableComputeEntityItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetImportableComputeEntityItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetImportableComputeEntityItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-func (o GetImportableComputeEntityItemOutput) ComputeDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.ComputeDisplayName }).(pulumi.StringOutput)
+func (o GetImportableComputeEntityItemOutput) ComputeDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) *string { return v.ComputeDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-func (o GetImportableComputeEntityItemOutput) ComputeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.ComputeId }).(pulumi.StringOutput)
+func (o GetImportableComputeEntityItemOutput) ComputeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) *string { return v.ComputeId }).(pulumi.StringPtrOutput)
 }
 
 // Source of the importable agent entity.
-func (o GetImportableComputeEntityItemOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o GetImportableComputeEntityItemOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // The host name. The host name is unique amongst the hosts managed by the same management agent.
-func (o GetImportableComputeEntityItemOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetImportableComputeEntityItemOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
-func (o GetImportableComputeEntityItemOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetImportableComputeEntityItemOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 type GetImportableComputeEntityItemArrayOutput struct{ *pulumi.OutputState }
@@ -9984,12 +8629,6 @@ func (o GetImportableComputeEntityItemArrayOutput) ToGetImportableComputeEntityI
 
 func (o GetImportableComputeEntityItemArrayOutput) ToGetImportableComputeEntityItemArrayOutputWithContext(ctx context.Context) GetImportableComputeEntityItemArrayOutput {
 	return o
-}
-
-func (o GetImportableComputeEntityItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetImportableComputeEntityItem] {
-	return pulumix.Output[[]GetImportableComputeEntityItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetImportableComputeEntityItemArrayOutput) Index(i pulumi.IntInput) GetImportableComputeEntityItemOutput {
@@ -10031,12 +8670,6 @@ func (i GetNewsReportContentTypeArgs) ToGetNewsReportContentTypeOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportContentTypeOutput)
 }
 
-func (i GetNewsReportContentTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportContentType] {
-	return pulumix.Output[GetNewsReportContentType]{
-		OutputState: i.ToGetNewsReportContentTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNewsReportContentTypeArrayInput is an input type that accepts GetNewsReportContentTypeArray and GetNewsReportContentTypeArrayOutput values.
 // You can construct a concrete instance of `GetNewsReportContentTypeArrayInput` via:
 //
@@ -10062,12 +8695,6 @@ func (i GetNewsReportContentTypeArray) ToGetNewsReportContentTypeArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportContentTypeArrayOutput)
 }
 
-func (i GetNewsReportContentTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportContentType] {
-	return pulumix.Output[[]GetNewsReportContentType]{
-		OutputState: i.ToGetNewsReportContentTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNewsReportContentTypeOutput struct{ *pulumi.OutputState }
 
 func (GetNewsReportContentTypeOutput) ElementType() reflect.Type {
@@ -10080,12 +8707,6 @@ func (o GetNewsReportContentTypeOutput) ToGetNewsReportContentTypeOutput() GetNe
 
 func (o GetNewsReportContentTypeOutput) ToGetNewsReportContentTypeOutputWithContext(ctx context.Context) GetNewsReportContentTypeOutput {
 	return o
-}
-
-func (o GetNewsReportContentTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportContentType] {
-	return pulumix.Output[GetNewsReportContentType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Supported resources for capacity planning content type.
@@ -10105,12 +8726,6 @@ func (o GetNewsReportContentTypeArrayOutput) ToGetNewsReportContentTypeArrayOutp
 
 func (o GetNewsReportContentTypeArrayOutput) ToGetNewsReportContentTypeArrayOutputWithContext(ctx context.Context) GetNewsReportContentTypeArrayOutput {
 	return o
-}
-
-func (o GetNewsReportContentTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportContentType] {
-	return pulumix.Output[[]GetNewsReportContentType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNewsReportContentTypeArrayOutput) Index(i pulumi.IntInput) GetNewsReportContentTypeOutput {
@@ -10156,12 +8771,6 @@ func (i GetNewsReportsFilterArgs) ToGetNewsReportsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsFilterOutput)
 }
 
-func (i GetNewsReportsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsFilter] {
-	return pulumix.Output[GetNewsReportsFilter]{
-		OutputState: i.ToGetNewsReportsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNewsReportsFilterArrayInput is an input type that accepts GetNewsReportsFilterArray and GetNewsReportsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNewsReportsFilterArrayInput` via:
 //
@@ -10187,12 +8796,6 @@ func (i GetNewsReportsFilterArray) ToGetNewsReportsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsFilterArrayOutput)
 }
 
-func (i GetNewsReportsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsFilter] {
-	return pulumix.Output[[]GetNewsReportsFilter]{
-		OutputState: i.ToGetNewsReportsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNewsReportsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNewsReportsFilterOutput) ElementType() reflect.Type {
@@ -10205,12 +8808,6 @@ func (o GetNewsReportsFilterOutput) ToGetNewsReportsFilterOutput() GetNewsReport
 
 func (o GetNewsReportsFilterOutput) ToGetNewsReportsFilterOutputWithContext(ctx context.Context) GetNewsReportsFilterOutput {
 	return o
-}
-
-func (o GetNewsReportsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsFilter] {
-	return pulumix.Output[GetNewsReportsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The news report name.
@@ -10238,12 +8835,6 @@ func (o GetNewsReportsFilterArrayOutput) ToGetNewsReportsFilterArrayOutput() Get
 
 func (o GetNewsReportsFilterArrayOutput) ToGetNewsReportsFilterArrayOutputWithContext(ctx context.Context) GetNewsReportsFilterArrayOutput {
 	return o
-}
-
-func (o GetNewsReportsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsFilter] {
-	return pulumix.Output[[]GetNewsReportsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNewsReportsFilterArrayOutput) Index(i pulumi.IntInput) GetNewsReportsFilterOutput {
@@ -10283,12 +8874,6 @@ func (i GetNewsReportsNewsReportCollectionArgs) ToGetNewsReportsNewsReportCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionOutput)
 }
 
-func (i GetNewsReportsNewsReportCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsNewsReportCollection] {
-	return pulumix.Output[GetNewsReportsNewsReportCollection]{
-		OutputState: i.ToGetNewsReportsNewsReportCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNewsReportsNewsReportCollectionArrayInput is an input type that accepts GetNewsReportsNewsReportCollectionArray and GetNewsReportsNewsReportCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNewsReportsNewsReportCollectionArrayInput` via:
 //
@@ -10314,12 +8899,6 @@ func (i GetNewsReportsNewsReportCollectionArray) ToGetNewsReportsNewsReportColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionArrayOutput)
 }
 
-func (i GetNewsReportsNewsReportCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsNewsReportCollection] {
-	return pulumix.Output[[]GetNewsReportsNewsReportCollection]{
-		OutputState: i.ToGetNewsReportsNewsReportCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNewsReportsNewsReportCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNewsReportsNewsReportCollectionOutput) ElementType() reflect.Type {
@@ -10332,12 +8911,6 @@ func (o GetNewsReportsNewsReportCollectionOutput) ToGetNewsReportsNewsReportColl
 
 func (o GetNewsReportsNewsReportCollectionOutput) ToGetNewsReportsNewsReportCollectionOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionOutput {
 	return o
-}
-
-func (o GetNewsReportsNewsReportCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsNewsReportCollection] {
-	return pulumix.Output[GetNewsReportsNewsReportCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNewsReportsNewsReportCollectionOutput) Items() GetNewsReportsNewsReportCollectionItemArrayOutput {
@@ -10358,12 +8931,6 @@ func (o GetNewsReportsNewsReportCollectionArrayOutput) ToGetNewsReportsNewsRepor
 	return o
 }
 
-func (o GetNewsReportsNewsReportCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsNewsReportCollection] {
-	return pulumix.Output[[]GetNewsReportsNewsReportCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNewsReportsNewsReportCollectionArrayOutput) Index(i pulumi.IntInput) GetNewsReportsNewsReportCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNewsReportsNewsReportCollection {
 		return vs[0].([]GetNewsReportsNewsReportCollection)[vs[1].(int)]
@@ -10372,37 +8939,37 @@ func (o GetNewsReportsNewsReportCollectionArrayOutput) Index(i pulumi.IntInput) 
 
 type GetNewsReportsNewsReportCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Content types that the news report can handle.
 	ContentTypes []GetNewsReportsNewsReportCollectionItemContentType `pulumi:"contentTypes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the news report.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Language of the news report.
-	Locale string `pulumi:"locale"`
+	Locale *string `pulumi:"locale"`
 	// The news report name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// News report frequency.
-	NewsFrequency string `pulumi:"newsFrequency"`
+	NewsFrequency *string `pulumi:"newsFrequency"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-	OnsTopicId string `pulumi:"onsTopicId"`
+	OnsTopicId *string `pulumi:"onsTopicId"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Resource Status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetNewsReportsNewsReportCollectionItemInput is an input type that accepts GetNewsReportsNewsReportCollectionItemArgs and GetNewsReportsNewsReportCollectionItemOutput values.
@@ -10418,37 +8985,37 @@ type GetNewsReportsNewsReportCollectionItemInput interface {
 
 type GetNewsReportsNewsReportCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Content types that the news report can handle.
 	ContentTypes GetNewsReportsNewsReportCollectionItemContentTypeArrayInput `pulumi:"contentTypes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the news report.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Language of the news report.
-	Locale pulumi.StringInput `pulumi:"locale"`
+	Locale pulumi.StringPtrInput `pulumi:"locale"`
 	// The news report name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// News report frequency.
-	NewsFrequency pulumi.StringInput `pulumi:"newsFrequency"`
+	NewsFrequency pulumi.StringPtrInput `pulumi:"newsFrequency"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-	OnsTopicId pulumi.StringInput `pulumi:"onsTopicId"`
+	OnsTopicId pulumi.StringPtrInput `pulumi:"onsTopicId"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Resource Status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetNewsReportsNewsReportCollectionItemArgs) ElementType() reflect.Type {
@@ -10461,12 +9028,6 @@ func (i GetNewsReportsNewsReportCollectionItemArgs) ToGetNewsReportsNewsReportCo
 
 func (i GetNewsReportsNewsReportCollectionItemArgs) ToGetNewsReportsNewsReportCollectionItemOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemOutput)
-}
-
-func (i GetNewsReportsNewsReportCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsNewsReportCollectionItem] {
-	return pulumix.Output[GetNewsReportsNewsReportCollectionItem]{
-		OutputState: i.ToGetNewsReportsNewsReportCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNewsReportsNewsReportCollectionItemArrayInput is an input type that accepts GetNewsReportsNewsReportCollectionItemArray and GetNewsReportsNewsReportCollectionItemArrayOutput values.
@@ -10494,12 +9055,6 @@ func (i GetNewsReportsNewsReportCollectionItemArray) ToGetNewsReportsNewsReportC
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemArrayOutput)
 }
 
-func (i GetNewsReportsNewsReportCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsNewsReportCollectionItem] {
-	return pulumix.Output[[]GetNewsReportsNewsReportCollectionItem]{
-		OutputState: i.ToGetNewsReportsNewsReportCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNewsReportsNewsReportCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNewsReportsNewsReportCollectionItemOutput) ElementType() reflect.Type {
@@ -10514,15 +9069,9 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) ToGetNewsReportsNewsReport
 	return o
 }
 
-func (o GetNewsReportsNewsReportCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsNewsReportCollectionItem] {
-	return pulumix.Output[GetNewsReportsNewsReportCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetNewsReportsNewsReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Content types that the news report can handle.
@@ -10538,8 +9087,8 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) DefinedTags() pulumi.MapOu
 }
 
 // The description of the news report.
-func (o GetNewsReportsNewsReportCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -10548,43 +9097,43 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) FreeformTags() pulumi.MapO
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-func (o GetNewsReportsNewsReportCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetNewsReportsNewsReportCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Language of the news report.
-func (o GetNewsReportsNewsReportCollectionItemOutput) Locale() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Locale }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.Locale }).(pulumi.StringPtrOutput)
 }
 
 // The news report name.
-func (o GetNewsReportsNewsReportCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // News report frequency.
-func (o GetNewsReportsNewsReportCollectionItemOutput) NewsFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.NewsFrequency }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) NewsFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.NewsFrequency }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-func (o GetNewsReportsNewsReportCollectionItemOutput) OnsTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.OnsTopicId }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) OnsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.OnsTopicId }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states
-func (o GetNewsReportsNewsReportCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Resource Status
-func (o GetNewsReportsNewsReportCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -10593,13 +9142,13 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) SystemTags() pulumi.MapOut
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.
-func (o GetNewsReportsNewsReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the news report was updated. An RFC3339 formatted datetime string.
-func (o GetNewsReportsNewsReportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetNewsReportsNewsReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10614,12 +9163,6 @@ func (o GetNewsReportsNewsReportCollectionItemArrayOutput) ToGetNewsReportsNewsR
 
 func (o GetNewsReportsNewsReportCollectionItemArrayOutput) ToGetNewsReportsNewsReportCollectionItemArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetNewsReportsNewsReportCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsNewsReportCollectionItem] {
-	return pulumix.Output[[]GetNewsReportsNewsReportCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNewsReportsNewsReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNewsReportsNewsReportCollectionItemOutput {
@@ -10661,12 +9204,6 @@ func (i GetNewsReportsNewsReportCollectionItemContentTypeArgs) ToGetNewsReportsN
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemContentTypeOutput)
 }
 
-func (i GetNewsReportsNewsReportCollectionItemContentTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsNewsReportCollectionItemContentType] {
-	return pulumix.Output[GetNewsReportsNewsReportCollectionItemContentType]{
-		OutputState: i.ToGetNewsReportsNewsReportCollectionItemContentTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNewsReportsNewsReportCollectionItemContentTypeArrayInput is an input type that accepts GetNewsReportsNewsReportCollectionItemContentTypeArray and GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput values.
 // You can construct a concrete instance of `GetNewsReportsNewsReportCollectionItemContentTypeArrayInput` via:
 //
@@ -10692,12 +9229,6 @@ func (i GetNewsReportsNewsReportCollectionItemContentTypeArray) ToGetNewsReports
 	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput)
 }
 
-func (i GetNewsReportsNewsReportCollectionItemContentTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsNewsReportCollectionItemContentType] {
-	return pulumix.Output[[]GetNewsReportsNewsReportCollectionItemContentType]{
-		OutputState: i.ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNewsReportsNewsReportCollectionItemContentTypeOutput struct{ *pulumi.OutputState }
 
 func (GetNewsReportsNewsReportCollectionItemContentTypeOutput) ElementType() reflect.Type {
@@ -10710,12 +9241,6 @@ func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToGetNewsReport
 
 func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToGetNewsReportsNewsReportCollectionItemContentTypeOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemContentTypeOutput {
 	return o
-}
-
-func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNewsReportsNewsReportCollectionItemContentType] {
-	return pulumix.Output[GetNewsReportsNewsReportCollectionItemContentType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Supported resources for capacity planning content type.
@@ -10735,12 +9260,6 @@ func (o GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) ToGetNewsR
 
 func (o GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput {
 	return o
-}
-
-func (o GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNewsReportsNewsReportCollectionItemContentType] {
-	return pulumix.Output[[]GetNewsReportsNewsReportCollectionItemContentType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) Index(i pulumi.IntInput) GetNewsReportsNewsReportCollectionItemContentTypeOutput {
@@ -10784,12 +9303,6 @@ func (i GetOperationsInsightsPrivateEndpointsFilterArgs) ToGetOperationsInsights
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsPrivateEndpointsFilterOutput)
 }
 
-func (i GetOperationsInsightsPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsPrivateEndpointsFilter] {
-	return pulumix.Output[GetOperationsInsightsPrivateEndpointsFilter]{
-		OutputState: i.ToGetOperationsInsightsPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOperationsInsightsPrivateEndpointsFilterArrayInput is an input type that accepts GetOperationsInsightsPrivateEndpointsFilterArray and GetOperationsInsightsPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsFilterArrayInput` via:
 //
@@ -10815,12 +9328,6 @@ func (i GetOperationsInsightsPrivateEndpointsFilterArray) ToGetOperationsInsight
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetOperationsInsightsPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetOperationsInsightsPrivateEndpointsFilter]{
-		OutputState: i.ToGetOperationsInsightsPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -10833,12 +9340,6 @@ func (o GetOperationsInsightsPrivateEndpointsFilterOutput) ToGetOperationsInsigh
 
 func (o GetOperationsInsightsPrivateEndpointsFilterOutput) ToGetOperationsInsightsPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetOperationsInsightsPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetOperationsInsightsPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsPrivateEndpointsFilter] {
-	return pulumix.Output[GetOperationsInsightsPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -10865,12 +9366,6 @@ func (o GetOperationsInsightsPrivateEndpointsFilterArrayOutput) ToGetOperationsI
 
 func (o GetOperationsInsightsPrivateEndpointsFilterArrayOutput) ToGetOperationsInsightsPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetOperationsInsightsPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetOperationsInsightsPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetOperationsInsightsPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsPrivateEndpointsFilterOutput {
@@ -10910,12 +9405,6 @@ func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput)
 }
 
-func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection] {
-	return pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection]{
-		OutputState: i.ToGetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayInput is an input type that accepts GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArray and GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayInput` via:
 //
@@ -10941,12 +9430,6 @@ func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection]{
-		OutputState: i.ToGetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -10959,12 +9442,6 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 
 func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput) ToGetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection] {
-	return pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput) Items() GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput {
@@ -10987,12 +9464,6 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 	return o
 }
 
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection {
 		return vs[0].([]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection)[vs[1].(int)]
@@ -11001,37 +9472,37 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the private endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Private service accessed database.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
-	IsUsedForRacDbs bool `pulumi:"isUsedForRacDbs"`
+	IsUsedForRacDbs *bool `pulumi:"isUsedForRacDbs"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds []string `pulumi:"nsgIds"`
 	// A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-	PrivateEndpointStatusDetails string `pulumi:"privateEndpointStatusDetails"`
+	PrivateEndpointStatusDetails *string `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-	PrivateIp string `pulumi:"privateIp"`
+	PrivateIp *string `pulumi:"privateIp"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemInput is an input type that accepts GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs and GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput values.
@@ -11047,37 +9518,37 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the private endpoint.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Private service accessed database.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
-	IsUsedForRacDbs pulumi.BoolInput `pulumi:"isUsedForRacDbs"`
+	IsUsedForRacDbs pulumi.BoolPtrInput `pulumi:"isUsedForRacDbs"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-	PrivateEndpointStatusDetails pulumi.StringInput `pulumi:"privateEndpointStatusDetails"`
+	PrivateEndpointStatusDetails pulumi.StringPtrInput `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -11090,12 +9561,6 @@ func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 
 func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs) ToGetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput)
-}
-
-func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArray and GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput values.
@@ -11123,12 +9588,6 @@ func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -11143,17 +9602,11 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 	return o
 }
 
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -11164,17 +9617,17 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 // The description of the private endpoint.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -11185,24 +9638,24 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 // The OCID of the Private service accessed database.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) IsUsedForRacDbs() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) bool {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) IsUsedForRacDbs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *bool {
 		return v.IsUsedForRacDbs
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCIDs of the network security groups that the private endpoint belongs to.
@@ -11213,31 +9666,31 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 // A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) PrivateEndpointStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) PrivateEndpointStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.PrivateEndpointStatusDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.PrivateIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.SubnetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -11248,17 +9701,17 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) *string {
 		return v.VcnId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11273,12 +9726,6 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 
 func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput) ToGetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput {
@@ -11324,12 +9771,6 @@ func (i GetOperationsInsightsWarehouseUsersFilterArgs) ToGetOperationsInsightsWa
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehouseUsersFilterOutput)
 }
 
-func (i GetOperationsInsightsWarehouseUsersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseUsersFilter] {
-	return pulumix.Output[GetOperationsInsightsWarehouseUsersFilter]{
-		OutputState: i.ToGetOperationsInsightsWarehouseUsersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOperationsInsightsWarehouseUsersFilterArrayInput is an input type that accepts GetOperationsInsightsWarehouseUsersFilterArray and GetOperationsInsightsWarehouseUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersFilterArrayInput` via:
 //
@@ -11355,12 +9796,6 @@ func (i GetOperationsInsightsWarehouseUsersFilterArray) ToGetOperationsInsightsW
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehouseUsersFilterArrayOutput)
 }
 
-func (i GetOperationsInsightsWarehouseUsersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehouseUsersFilter] {
-	return pulumix.Output[[]GetOperationsInsightsWarehouseUsersFilter]{
-		OutputState: i.ToGetOperationsInsightsWarehouseUsersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsWarehouseUsersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsWarehouseUsersFilterOutput) ElementType() reflect.Type {
@@ -11373,12 +9808,6 @@ func (o GetOperationsInsightsWarehouseUsersFilterOutput) ToGetOperationsInsights
 
 func (o GetOperationsInsightsWarehouseUsersFilterOutput) ToGetOperationsInsightsWarehouseUsersFilterOutputWithContext(ctx context.Context) GetOperationsInsightsWarehouseUsersFilterOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehouseUsersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseUsersFilter] {
-	return pulumix.Output[GetOperationsInsightsWarehouseUsersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
@@ -11406,12 +9835,6 @@ func (o GetOperationsInsightsWarehouseUsersFilterArrayOutput) ToGetOperationsIns
 
 func (o GetOperationsInsightsWarehouseUsersFilterArrayOutput) ToGetOperationsInsightsWarehouseUsersFilterArrayOutputWithContext(ctx context.Context) GetOperationsInsightsWarehouseUsersFilterArrayOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehouseUsersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehouseUsersFilter] {
-	return pulumix.Output[[]GetOperationsInsightsWarehouseUsersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsWarehouseUsersFilterArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsWarehouseUsersFilterOutput {
@@ -11451,12 +9874,6 @@ func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput)
 }
 
-func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection] {
-	return pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection]{
-		OutputState: i.ToGetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayInput is an input type that accepts GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArray and GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayInput` via:
 //
@@ -11482,12 +9899,6 @@ func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayOutput)
 }
 
-func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection] {
-	return pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection]{
-		OutputState: i.ToGetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput) ElementType() reflect.Type {
@@ -11500,12 +9911,6 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 
 func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput) ToGetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutputWithContext(ctx context.Context) GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection] {
-	return pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput) Items() GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput {
@@ -11528,12 +9933,6 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 	return o
 }
 
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection] {
-	return pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection {
 		return vs[0].([]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection)[vs[1].(int)]
@@ -11542,35 +9941,35 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	ConnectionPassword string `pulumi:"connectionPassword"`
+	ConnectionPassword *string `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Operations Insights Warehouse User identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicate whether user has access to AWR data.
-	IsAwrDataAccess bool `pulumi:"isAwrDataAccess"`
+	IsAwrDataAccess *bool `pulumi:"isAwrDataAccess"`
 	// Indicate whether user has access to EM data.
-	IsEmDataAccess bool `pulumi:"isEmDataAccess"`
+	IsEmDataAccess *bool `pulumi:"isEmDataAccess"`
 	// Indicate whether user has access to OPSI data.
-	IsOpsiDataAccess bool `pulumi:"isOpsiDataAccess"`
+	IsOpsiDataAccess *bool `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Unique Operations Insights Warehouse identifier
-	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemInput is an input type that accepts GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs and GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput values.
@@ -11586,35 +9985,35 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	ConnectionPassword pulumi.StringInput `pulumi:"connectionPassword"`
+	ConnectionPassword pulumi.StringPtrInput `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Operations Insights Warehouse User identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicate whether user has access to AWR data.
-	IsAwrDataAccess pulumi.BoolInput `pulumi:"isAwrDataAccess"`
+	IsAwrDataAccess pulumi.BoolPtrInput `pulumi:"isAwrDataAccess"`
 	// Indicate whether user has access to EM data.
-	IsEmDataAccess pulumi.BoolInput `pulumi:"isEmDataAccess"`
+	IsEmDataAccess pulumi.BoolPtrInput `pulumi:"isEmDataAccess"`
 	// Indicate whether user has access to OPSI data.
-	IsOpsiDataAccess pulumi.BoolInput `pulumi:"isOpsiDataAccess"`
+	IsOpsiDataAccess pulumi.BoolPtrInput `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Unique Operations Insights Warehouse identifier
-	OperationsInsightsWarehouseId pulumi.StringInput `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseId pulumi.StringPtrInput `pulumi:"operationsInsightsWarehouseId"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -11627,12 +10026,6 @@ func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 
 func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs) ToGetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutputWithContext(ctx context.Context) GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput)
-}
-
-func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem] {
-	return pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem]{
-		OutputState: i.ToGetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayInput is an input type that accepts GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArray and GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput values.
@@ -11660,12 +10053,6 @@ func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput)
 }
 
-func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem] {
-	return pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem]{
-		OutputState: i.ToGetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -11680,24 +10067,18 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 	return o
 }
 
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem] {
-	return pulumix.Output[GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) ConnectionPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) ConnectionPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.ConnectionPassword
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -11715,59 +10096,59 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 }
 
 // Unique Operations Insights Warehouse User identifier
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Indicate whether user has access to AWR data.
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) IsAwrDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) bool {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) IsAwrDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *bool {
 		return v.IsAwrDataAccess
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Indicate whether user has access to EM data.
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) IsEmDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) bool {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) IsEmDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *bool {
 		return v.IsEmDataAccess
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Indicate whether user has access to OPSI data.
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) IsOpsiDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) bool {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) IsOpsiDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *bool {
 		return v.IsOpsiDataAccess
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique Operations Insights Warehouse identifier
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) OperationsInsightsWarehouseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.OperationsInsightsWarehouseId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -11778,17 +10159,17 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11803,12 +10184,6 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 
 func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput) ToGetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem] {
-	return pulumix.Output[[]GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput {
@@ -11852,12 +10227,6 @@ func (i GetOperationsInsightsWarehousesFilterArgs) ToGetOperationsInsightsWareho
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehousesFilterOutput)
 }
 
-func (i GetOperationsInsightsWarehousesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehousesFilter] {
-	return pulumix.Output[GetOperationsInsightsWarehousesFilter]{
-		OutputState: i.ToGetOperationsInsightsWarehousesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOperationsInsightsWarehousesFilterArrayInput is an input type that accepts GetOperationsInsightsWarehousesFilterArray and GetOperationsInsightsWarehousesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesFilterArrayInput` via:
 //
@@ -11883,12 +10252,6 @@ func (i GetOperationsInsightsWarehousesFilterArray) ToGetOperationsInsightsWareh
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehousesFilterArrayOutput)
 }
 
-func (i GetOperationsInsightsWarehousesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehousesFilter] {
-	return pulumix.Output[[]GetOperationsInsightsWarehousesFilter]{
-		OutputState: i.ToGetOperationsInsightsWarehousesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsWarehousesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsWarehousesFilterOutput) ElementType() reflect.Type {
@@ -11901,12 +10264,6 @@ func (o GetOperationsInsightsWarehousesFilterOutput) ToGetOperationsInsightsWare
 
 func (o GetOperationsInsightsWarehousesFilterOutput) ToGetOperationsInsightsWarehousesFilterOutputWithContext(ctx context.Context) GetOperationsInsightsWarehousesFilterOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehousesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehousesFilter] {
-	return pulumix.Output[GetOperationsInsightsWarehousesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsWarehousesFilterOutput) Name() pulumi.StringOutput {
@@ -11933,12 +10290,6 @@ func (o GetOperationsInsightsWarehousesFilterArrayOutput) ToGetOperationsInsight
 
 func (o GetOperationsInsightsWarehousesFilterArrayOutput) ToGetOperationsInsightsWarehousesFilterArrayOutputWithContext(ctx context.Context) GetOperationsInsightsWarehousesFilterArrayOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehousesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehousesFilter] {
-	return pulumix.Output[[]GetOperationsInsightsWarehousesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsWarehousesFilterArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsWarehousesFilterOutput {
@@ -11978,12 +10329,6 @@ func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput)
 }
 
-func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection] {
-	return pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection]{
-		OutputState: i.ToGetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayInput is an input type that accepts GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArray and GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayInput` via:
 //
@@ -12009,12 +10354,6 @@ func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayOutput)
 }
 
-func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection] {
-	return pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection]{
-		OutputState: i.ToGetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput) ElementType() reflect.Type {
@@ -12027,12 +10366,6 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput) ToGetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutputWithContext(ctx context.Context) GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection] {
-	return pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput) Items() GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput {
@@ -12055,12 +10388,6 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	return o
 }
 
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection] {
-	return pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection {
 		return vs[0].([]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection)[vs[1].(int)]
@@ -12069,39 +10396,39 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Number of OCPUs allocated to OPSI Warehouse ADW.
-	CpuAllocated float64 `pulumi:"cpuAllocated"`
+	CpuAllocated *float64 `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-	CpuUsed float64 `pulumi:"cpuUsed"`
+	CpuUsed *float64 `pulumi:"cpuUsed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
-	DynamicGroupId string `pulumi:"dynamicGroupId"`
+	DynamicGroupId *string `pulumi:"dynamicGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Operations Insights Warehouse identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Tenancy Identifier of Operations Insights service
-	OperationsInsightsTenancyId string `pulumi:"operationsInsightsTenancyId"`
+	OperationsInsightsTenancyId *string `pulumi:"operationsInsightsTenancyId"`
 	// Lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Storage allocated to OPSI Warehouse ADW.
-	StorageAllocatedInGbs float64 `pulumi:"storageAllocatedInGbs"`
+	StorageAllocatedInGbs *float64 `pulumi:"storageAllocatedInGbs"`
 	// Storage by OPSI Warehouse ADW in GB.
-	StorageUsedInGbs float64 `pulumi:"storageUsedInGbs"`
+	StorageUsedInGbs *float64 `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-	TimeLastWalletRotated string `pulumi:"timeLastWalletRotated"`
+	TimeLastWalletRotated *string `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemInput is an input type that accepts GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs and GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput values.
@@ -12117,39 +10444,39 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Number of OCPUs allocated to OPSI Warehouse ADW.
-	CpuAllocated pulumi.Float64Input `pulumi:"cpuAllocated"`
+	CpuAllocated pulumi.Float64PtrInput `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-	CpuUsed pulumi.Float64Input `pulumi:"cpuUsed"`
+	CpuUsed pulumi.Float64PtrInput `pulumi:"cpuUsed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
-	DynamicGroupId pulumi.StringInput `pulumi:"dynamicGroupId"`
+	DynamicGroupId pulumi.StringPtrInput `pulumi:"dynamicGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Operations Insights Warehouse identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Tenancy Identifier of Operations Insights service
-	OperationsInsightsTenancyId pulumi.StringInput `pulumi:"operationsInsightsTenancyId"`
+	OperationsInsightsTenancyId pulumi.StringPtrInput `pulumi:"operationsInsightsTenancyId"`
 	// Lifecycle states
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Storage allocated to OPSI Warehouse ADW.
-	StorageAllocatedInGbs pulumi.Float64Input `pulumi:"storageAllocatedInGbs"`
+	StorageAllocatedInGbs pulumi.Float64PtrInput `pulumi:"storageAllocatedInGbs"`
 	// Storage by OPSI Warehouse ADW in GB.
-	StorageUsedInGbs pulumi.Float64Input `pulumi:"storageUsedInGbs"`
+	StorageUsedInGbs pulumi.Float64PtrInput `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-	TimeLastWalletRotated pulumi.StringInput `pulumi:"timeLastWalletRotated"`
+	TimeLastWalletRotated pulumi.StringPtrInput `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -12162,12 +10489,6 @@ func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 
 func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs) ToGetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutputWithContext(ctx context.Context) GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput)
-}
-
-func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem] {
-	return pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem]{
-		OutputState: i.ToGetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayInput is an input type that accepts GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArray and GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput values.
@@ -12195,12 +10516,6 @@ func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput)
 }
 
-func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem] {
-	return pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem]{
-		OutputState: i.ToGetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -12215,31 +10530,25 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	return o
 }
 
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem] {
-	return pulumix.Output[GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Number of OCPUs allocated to OPSI Warehouse ADW.
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) CpuAllocated() pulumi.Float64Output {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) float64 {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) CpuAllocated() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *float64 {
 		return v.CpuAllocated
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) CpuUsed() pulumi.Float64Output {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) float64 {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) CpuUsed() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *float64 {
 		return v.CpuUsed
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -12250,17 +10559,17 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 }
 
 // A filter to return only resources that match the entire display name.
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // OCID of the dynamic group created for the warehouse
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) DynamicGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) DynamicGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.DynamicGroupId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -12271,45 +10580,45 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 }
 
 // Unique Operations Insights Warehouse identifier
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Tenancy Identifier of Operations Insights service
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) OperationsInsightsTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) OperationsInsightsTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.OperationsInsightsTenancyId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Storage allocated to OPSI Warehouse ADW.
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) StorageAllocatedInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) float64 {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) StorageAllocatedInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *float64 {
 		return v.StorageAllocatedInGbs
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // Storage by OPSI Warehouse ADW in GB.
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) StorageUsedInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) float64 {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) StorageUsedInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *float64 {
 		return v.StorageUsedInGbs
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -12320,24 +10629,24 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) TimeLastWalletRotated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) TimeLastWalletRotated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.TimeLastWalletRotated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -12354,12 +10663,6 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	return o
 }
 
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem] {
-	return pulumix.Output[[]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem {
 		return vs[0].([]GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem)[vs[1].(int)]
@@ -12370,15 +10673,15 @@ type GetOpsiConfigurationConfigItem struct {
 	// List of contexts in Operations Insights where this configuration item is applicable.
 	ApplicableContexts []string `pulumi:"applicableContexts"`
 	// Type of configuration item.
-	ConfigItemType string `pulumi:"configItemType"`
+	ConfigItemType *string `pulumi:"configItemType"`
 	// Value of configuration item.
-	DefaultValue string `pulumi:"defaultValue"`
+	DefaultValue *string `pulumi:"defaultValue"`
 	// Configuration item metadata.
 	Metadatas []GetOpsiConfigurationConfigItemMetadata `pulumi:"metadatas"`
 	// Name of configuration item.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Value of configuration item.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetOpsiConfigurationConfigItemInput is an input type that accepts GetOpsiConfigurationConfigItemArgs and GetOpsiConfigurationConfigItemOutput values.
@@ -12396,15 +10699,15 @@ type GetOpsiConfigurationConfigItemArgs struct {
 	// List of contexts in Operations Insights where this configuration item is applicable.
 	ApplicableContexts pulumi.StringArrayInput `pulumi:"applicableContexts"`
 	// Type of configuration item.
-	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
 	// Value of configuration item.
-	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
 	// Configuration item metadata.
 	Metadatas GetOpsiConfigurationConfigItemMetadataArrayInput `pulumi:"metadatas"`
 	// Name of configuration item.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Value of configuration item.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetOpsiConfigurationConfigItemArgs) ElementType() reflect.Type {
@@ -12417,12 +10720,6 @@ func (i GetOpsiConfigurationConfigItemArgs) ToGetOpsiConfigurationConfigItemOutp
 
 func (i GetOpsiConfigurationConfigItemArgs) ToGetOpsiConfigurationConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemOutput)
-}
-
-func (i GetOpsiConfigurationConfigItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItem] {
-	return pulumix.Output[GetOpsiConfigurationConfigItem]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigItemArrayInput is an input type that accepts GetOpsiConfigurationConfigItemArray and GetOpsiConfigurationConfigItemArrayOutput values.
@@ -12450,12 +10747,6 @@ func (i GetOpsiConfigurationConfigItemArray) ToGetOpsiConfigurationConfigItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItem] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItem]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigItemOutput) ElementType() reflect.Type {
@@ -12470,25 +10761,19 @@ func (o GetOpsiConfigurationConfigItemOutput) ToGetOpsiConfigurationConfigItemOu
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItem] {
-	return pulumix.Output[GetOpsiConfigurationConfigItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of contexts in Operations Insights where this configuration item is applicable.
 func (o GetOpsiConfigurationConfigItemOutput) ApplicableContexts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) []string { return v.ApplicableContexts }).(pulumi.StringArrayOutput)
 }
 
 // Type of configuration item.
-func (o GetOpsiConfigurationConfigItemOutput) ConfigItemType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.ConfigItemType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemOutput) ConfigItemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) *string { return v.ConfigItemType }).(pulumi.StringPtrOutput)
 }
 
 // Value of configuration item.
-func (o GetOpsiConfigurationConfigItemOutput) DefaultValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.DefaultValue }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
 }
 
 // Configuration item metadata.
@@ -12497,13 +10782,13 @@ func (o GetOpsiConfigurationConfigItemOutput) Metadatas() GetOpsiConfigurationCo
 }
 
 // Name of configuration item.
-func (o GetOpsiConfigurationConfigItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Value of configuration item.
-func (o GetOpsiConfigurationConfigItemOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.Value }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetOpsiConfigurationConfigItemArrayOutput struct{ *pulumi.OutputState }
@@ -12520,12 +10805,6 @@ func (o GetOpsiConfigurationConfigItemArrayOutput) ToGetOpsiConfigurationConfigI
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItem] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItem {
 		return vs[0].([]GetOpsiConfigurationConfigItem)[vs[1].(int)]
@@ -12534,13 +10813,13 @@ func (o GetOpsiConfigurationConfigItemArrayOutput) Index(i pulumi.IntInput) GetO
 
 type GetOpsiConfigurationConfigItemMetadata struct {
 	// Type of configuration item.
-	ConfigItemType string `pulumi:"configItemType"`
+	ConfigItemType *string `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-	DataType string `pulumi:"dataType"`
+	DataType *string `pulumi:"dataType"`
 	// Description of OPSI configuration.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unit details of configuration item.
 	UnitDetails []GetOpsiConfigurationConfigItemMetadataUnitDetail `pulumi:"unitDetails"`
 	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
@@ -12560,13 +10839,13 @@ type GetOpsiConfigurationConfigItemMetadataInput interface {
 
 type GetOpsiConfigurationConfigItemMetadataArgs struct {
 	// Type of configuration item.
-	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-	DataType pulumi.StringInput `pulumi:"dataType"`
+	DataType pulumi.StringPtrInput `pulumi:"dataType"`
 	// Description of OPSI configuration.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unit details of configuration item.
 	UnitDetails GetOpsiConfigurationConfigItemMetadataUnitDetailArrayInput `pulumi:"unitDetails"`
 	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
@@ -12583,12 +10862,6 @@ func (i GetOpsiConfigurationConfigItemMetadataArgs) ToGetOpsiConfigurationConfig
 
 func (i GetOpsiConfigurationConfigItemMetadataArgs) ToGetOpsiConfigurationConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataOutput)
-}
-
-func (i GetOpsiConfigurationConfigItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[GetOpsiConfigurationConfigItemMetadata]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigItemMetadataArrayInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataArray and GetOpsiConfigurationConfigItemMetadataArrayOutput values.
@@ -12616,12 +10889,6 @@ func (i GetOpsiConfigurationConfigItemMetadataArray) ToGetOpsiConfigurationConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItemMetadata]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigItemMetadataOutput) ElementType() reflect.Type {
@@ -12636,30 +10903,24 @@ func (o GetOpsiConfigurationConfigItemMetadataOutput) ToGetOpsiConfigurationConf
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[GetOpsiConfigurationConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of configuration item.
-func (o GetOpsiConfigurationConfigItemMetadataOutput) ConfigItemType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.ConfigItemType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataOutput) ConfigItemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) *string { return v.ConfigItemType }).(pulumi.StringPtrOutput)
 }
 
 // Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-func (o GetOpsiConfigurationConfigItemMetadataOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.DataType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 // Description of OPSI configuration.
-func (o GetOpsiConfigurationConfigItemMetadataOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.Description }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User-friendly display name for the OPSI configuration. The name does not have to be unique.
-func (o GetOpsiConfigurationConfigItemMetadataOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Unit details of configuration item.
@@ -12690,12 +10951,6 @@ func (o GetOpsiConfigurationConfigItemMetadataArrayOutput) ToGetOpsiConfiguratio
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItemMetadata] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItemMetadata {
 		return vs[0].([]GetOpsiConfigurationConfigItemMetadata)[vs[1].(int)]
@@ -12704,9 +10959,9 @@ func (o GetOpsiConfigurationConfigItemMetadataArrayOutput) Index(i pulumi.IntInp
 
 type GetOpsiConfigurationConfigItemMetadataUnitDetail struct {
 	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unit of configuration item.
-	Unit string `pulumi:"unit"`
+	Unit *string `pulumi:"unit"`
 }
 
 // GetOpsiConfigurationConfigItemMetadataUnitDetailInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataUnitDetailArgs and GetOpsiConfigurationConfigItemMetadataUnitDetailOutput values.
@@ -12722,9 +10977,9 @@ type GetOpsiConfigurationConfigItemMetadataUnitDetailInput interface {
 
 type GetOpsiConfigurationConfigItemMetadataUnitDetailArgs struct {
 	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unit of configuration item.
-	Unit pulumi.StringInput `pulumi:"unit"`
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
 }
 
 func (GetOpsiConfigurationConfigItemMetadataUnitDetailArgs) ElementType() reflect.Type {
@@ -12737,12 +10992,6 @@ func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigura
 
 func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataUnitDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataUnitDetailOutput)
-}
-
-func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigItemMetadataUnitDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataUnitDetailArray and GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput values.
@@ -12770,12 +11019,6 @@ func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArray) ToGetOpsiConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
@@ -12790,20 +11033,14 @@ func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) ToGetOpsiConfigu
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User-friendly display name for the OPSI configuration. The name does not have to be unique.
-func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataUnitDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataUnitDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Unit of configuration item.
-func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataUnitDetail) string { return v.Unit }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataUnitDetail) *string { return v.Unit }).(pulumi.StringPtrOutput)
 }
 
 type GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput struct{ *pulumi.OutputState }
@@ -12820,12 +11057,6 @@ func (o GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToGetOpsiCo
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemMetadataUnitDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItemMetadataUnitDetail {
 		return vs[0].([]GetOpsiConfigurationConfigItemMetadataUnitDetail)[vs[1].(int)]
@@ -12834,11 +11065,11 @@ func (o GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) Index(i pul
 
 type GetOpsiConfigurationConfigItemMetadataValueInputDetail struct {
 	// Allowed value type of configuration item.
-	AllowedValueType string `pulumi:"allowedValueType"`
+	AllowedValueType *string `pulumi:"allowedValueType"`
 	// Maximum value limit for the configuration item.
-	MaxValue string `pulumi:"maxValue"`
+	MaxValue *string `pulumi:"maxValue"`
 	// Minimum value limit for the configuration item.
-	MinValue string `pulumi:"minValue"`
+	MinValue *string `pulumi:"minValue"`
 	// Allowed values to pick for the configuration item.
 	PossibleValues []string `pulumi:"possibleValues"`
 }
@@ -12856,11 +11087,11 @@ type GetOpsiConfigurationConfigItemMetadataValueInputDetailInput interface {
 
 type GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs struct {
 	// Allowed value type of configuration item.
-	AllowedValueType pulumi.StringInput `pulumi:"allowedValueType"`
+	AllowedValueType pulumi.StringPtrInput `pulumi:"allowedValueType"`
 	// Maximum value limit for the configuration item.
-	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
 	// Minimum value limit for the configuration item.
-	MinValue pulumi.StringInput `pulumi:"minValue"`
+	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
 	// Allowed values to pick for the configuration item.
 	PossibleValues pulumi.StringArrayInput `pulumi:"possibleValues"`
 }
@@ -12875,12 +11106,6 @@ func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToGetOpsiCon
 
 func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput)
-}
-
-func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataValueInputDetailArray and GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput values.
@@ -12908,12 +11133,6 @@ func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArray) ToGetOpsiCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
@@ -12928,25 +11147,19 @@ func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToGetOpsiC
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Allowed value type of configuration item.
-func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) string { return v.AllowedValueType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) *string { return v.AllowedValueType }).(pulumi.StringPtrOutput)
 }
 
 // Maximum value limit for the configuration item.
-func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) string { return v.MaxValue }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) *string { return v.MaxValue }).(pulumi.StringPtrOutput)
 }
 
 // Minimum value limit for the configuration item.
-func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) string { return v.MinValue }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) *string { return v.MinValue }).(pulumi.StringPtrOutput)
 }
 
 // Allowed values to pick for the configuration item.
@@ -12968,12 +11181,6 @@ func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToGet
 	return o
 }
 
-func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItemMetadataValueInputDetail {
 		return vs[0].([]GetOpsiConfigurationConfigItemMetadataValueInputDetail)[vs[1].(int)]
@@ -12984,17 +11191,17 @@ type GetOpsiConfigurationConfigurationItemConfigItem struct {
 	// List of contexts in Operations Insights where this configuration item is applicable.
 	ApplicableContexts []string `pulumi:"applicableContexts"`
 	// Type of configuration item.
-	ConfigItemType string `pulumi:"configItemType"`
+	ConfigItemType *string `pulumi:"configItemType"`
 	// Value of configuration item.
-	DefaultValue string `pulumi:"defaultValue"`
+	DefaultValue *string `pulumi:"defaultValue"`
 	// Configuration item metadata.
 	Metadatas []GetOpsiConfigurationConfigurationItemConfigItemMetadata `pulumi:"metadatas"`
 	// A filter to return only configuration items that match the entire name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Value of configuration item.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 	// Source configuration from where the value is taken for a configuration item.
-	ValueSourceConfig string `pulumi:"valueSourceConfig"`
+	ValueSourceConfig *string `pulumi:"valueSourceConfig"`
 }
 
 // GetOpsiConfigurationConfigurationItemConfigItemInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemArgs and GetOpsiConfigurationConfigurationItemConfigItemOutput values.
@@ -13012,17 +11219,17 @@ type GetOpsiConfigurationConfigurationItemConfigItemArgs struct {
 	// List of contexts in Operations Insights where this configuration item is applicable.
 	ApplicableContexts pulumi.StringArrayInput `pulumi:"applicableContexts"`
 	// Type of configuration item.
-	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
 	// Value of configuration item.
-	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
 	// Configuration item metadata.
 	Metadatas GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayInput `pulumi:"metadatas"`
 	// A filter to return only configuration items that match the entire name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Value of configuration item.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 	// Source configuration from where the value is taken for a configuration item.
-	ValueSourceConfig pulumi.StringInput `pulumi:"valueSourceConfig"`
+	ValueSourceConfig pulumi.StringPtrInput `pulumi:"valueSourceConfig"`
 }
 
 func (GetOpsiConfigurationConfigurationItemConfigItemArgs) ElementType() reflect.Type {
@@ -13035,12 +11242,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemArgs) ToGetOpsiConfigurat
 
 func (i GetOpsiConfigurationConfigurationItemConfigItemArgs) ToGetOpsiConfigurationConfigurationItemConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemOutput)
-}
-
-func (i GetOpsiConfigurationConfigurationItemConfigItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItem] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItem]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigurationItemConfigItemArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemArray and GetOpsiConfigurationConfigurationItemConfigItemArrayOutput values.
@@ -13068,12 +11269,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemArray) ToGetOpsiConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigurationItemConfigItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItem] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItem]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigurationItemConfigItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigurationItemConfigItemOutput) ElementType() reflect.Type {
@@ -13088,25 +11283,19 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ToGetOpsiConfigur
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItem] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of contexts in Operations Insights where this configuration item is applicable.
 func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ApplicableContexts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) []string { return v.ApplicableContexts }).(pulumi.StringArrayOutput)
 }
 
 // Type of configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ConfigItemType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.ConfigItemType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ConfigItemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) *string { return v.ConfigItemType }).(pulumi.StringPtrOutput)
 }
 
 // Value of configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) DefaultValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.DefaultValue }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
 }
 
 // Configuration item metadata.
@@ -13117,18 +11306,18 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Metadatas() GetOp
 }
 
 // A filter to return only configuration items that match the entire name.
-func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Value of configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.Value }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 // Source configuration from where the value is taken for a configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ValueSourceConfig() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.ValueSourceConfig }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ValueSourceConfig() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) *string { return v.ValueSourceConfig }).(pulumi.StringPtrOutput)
 }
 
 type GetOpsiConfigurationConfigurationItemConfigItemArrayOutput struct{ *pulumi.OutputState }
@@ -13145,12 +11334,6 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) ToGetOpsiCon
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItem] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigurationItemConfigItem {
 		return vs[0].([]GetOpsiConfigurationConfigurationItemConfigItem)[vs[1].(int)]
@@ -13159,13 +11342,13 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) Index(i pulu
 
 type GetOpsiConfigurationConfigurationItemConfigItemMetadata struct {
 	// Type of configuration item.
-	ConfigItemType string `pulumi:"configItemType"`
+	ConfigItemType *string `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-	DataType string `pulumi:"dataType"`
+	DataType *string `pulumi:"dataType"`
 	// Description of configuration item .
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User-friendly display name for the configuration item unit.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unit details of configuration item.
 	UnitDetails []GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail `pulumi:"unitDetails"`
 	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
@@ -13185,13 +11368,13 @@ type GetOpsiConfigurationConfigurationItemConfigItemMetadataInput interface {
 
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs struct {
 	// Type of configuration item.
-	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-	DataType pulumi.StringInput `pulumi:"dataType"`
+	DataType pulumi.StringPtrInput `pulumi:"dataType"`
 	// Description of configuration item .
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// User-friendly display name for the configuration item unit.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unit details of configuration item.
 	UnitDetails GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayInput `pulumi:"unitDetails"`
 	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
@@ -13208,12 +11391,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs) ToGetOpsiCo
 
 func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput)
-}
-
-func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadata] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadata]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataArray and GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput values.
@@ -13241,12 +11418,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArray) ToGetOpsiC
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadata] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadata]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ElementType() reflect.Type {
@@ -13261,30 +11432,24 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ToGetOpsi
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadata] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ConfigItemType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.ConfigItemType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ConfigItemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) *string { return v.ConfigItemType }).(pulumi.StringPtrOutput)
 }
 
 // Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.DataType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 // Description of configuration item .
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.Description }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User-friendly display name for the configuration item unit.
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Unit details of configuration item.
@@ -13315,12 +11480,6 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) ToGe
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadata] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigurationItemConfigItemMetadata {
 		return vs[0].([]GetOpsiConfigurationConfigurationItemConfigItemMetadata)[vs[1].(int)]
@@ -13329,9 +11488,9 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) Inde
 
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail struct {
 	// User-friendly display name for the configuration item unit.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unit of configuration item.
-	Unit string `pulumi:"unit"`
+	Unit *string `pulumi:"unit"`
 }
 
 // GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs and GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput values.
@@ -13347,9 +11506,9 @@ type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailInput inte
 
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs struct {
 	// User-friendly display name for the configuration item unit.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unit of configuration item.
-	Unit pulumi.StringInput `pulumi:"unit"`
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
 }
 
 func (GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs) ElementType() reflect.Type {
@@ -13362,12 +11521,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs) T
 
 func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput)
-}
-
-func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray and GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput values.
@@ -13395,12 +11548,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
@@ -13415,20 +11562,16 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput)
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User-friendly display name for the configuration item unit.
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail) *string {
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail) string { return v.Unit }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail) *string { return v.Unit }).(pulumi.StringPtrOutput)
 }
 
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput struct{ *pulumi.OutputState }
@@ -13445,12 +11588,6 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOu
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail {
 		return vs[0].([]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail)[vs[1].(int)]
@@ -13459,11 +11596,11 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOu
 
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail struct {
 	// Allowed value type of configuration item.
-	AllowedValueType string `pulumi:"allowedValueType"`
+	AllowedValueType *string `pulumi:"allowedValueType"`
 	// Maximum value limit for the configuration item.
-	MaxValue string `pulumi:"maxValue"`
+	MaxValue *string `pulumi:"maxValue"`
 	// Minimum value limit for the configuration item.
-	MinValue string `pulumi:"minValue"`
+	MinValue *string `pulumi:"minValue"`
 	// Allowed values to pick for the configuration item.
 	PossibleValues []string `pulumi:"possibleValues"`
 }
@@ -13481,11 +11618,11 @@ type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailInpu
 
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs struct {
 	// Allowed value type of configuration item.
-	AllowedValueType pulumi.StringInput `pulumi:"allowedValueType"`
+	AllowedValueType pulumi.StringPtrInput `pulumi:"allowedValueType"`
 	// Maximum value limit for the configuration item.
-	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
 	// Minimum value limit for the configuration item.
-	MinValue pulumi.StringInput `pulumi:"minValue"`
+	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
 	// Allowed values to pick for the configuration item.
 	PossibleValues pulumi.StringArrayInput `pulumi:"possibleValues"`
 }
@@ -13500,12 +11637,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailA
 
 func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput)
-}
-
-func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray and GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput values.
@@ -13533,12 +11664,6 @@ func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput)
 }
 
-func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
@@ -13553,31 +11678,25 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailO
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Allowed value type of configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) string {
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) *string {
 		return v.AllowedValueType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Maximum value limit for the configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) string {
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) *string {
 		return v.MaxValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Minimum value limit for the configuration item.
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) string {
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) *string {
 		return v.MinValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Allowed values to pick for the configuration item.
@@ -13599,12 +11718,6 @@ func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailA
 
 func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput {
 	return o
-}
-
-func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput {
@@ -13650,12 +11763,6 @@ func (i GetOpsiConfigurationsFilterArgs) ToGetOpsiConfigurationsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsFilterOutput)
 }
 
-func (i GetOpsiConfigurationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsFilter] {
-	return pulumix.Output[GetOpsiConfigurationsFilter]{
-		OutputState: i.ToGetOpsiConfigurationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpsiConfigurationsFilterArrayInput is an input type that accepts GetOpsiConfigurationsFilterArray and GetOpsiConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOpsiConfigurationsFilterArrayInput` via:
 //
@@ -13681,12 +11788,6 @@ func (i GetOpsiConfigurationsFilterArray) ToGetOpsiConfigurationsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsFilterArrayOutput)
 }
 
-func (i GetOpsiConfigurationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsFilter] {
-	return pulumix.Output[[]GetOpsiConfigurationsFilter]{
-		OutputState: i.ToGetOpsiConfigurationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationsFilterOutput) ElementType() reflect.Type {
@@ -13699,12 +11800,6 @@ func (o GetOpsiConfigurationsFilterOutput) ToGetOpsiConfigurationsFilterOutput()
 
 func (o GetOpsiConfigurationsFilterOutput) ToGetOpsiConfigurationsFilterOutputWithContext(ctx context.Context) GetOpsiConfigurationsFilterOutput {
 	return o
-}
-
-func (o GetOpsiConfigurationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsFilter] {
-	return pulumix.Output[GetOpsiConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of configuration item.
@@ -13732,12 +11827,6 @@ func (o GetOpsiConfigurationsFilterArrayOutput) ToGetOpsiConfigurationsFilterArr
 
 func (o GetOpsiConfigurationsFilterArrayOutput) ToGetOpsiConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsFilterArrayOutput {
 	return o
-}
-
-func (o GetOpsiConfigurationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsFilter] {
-	return pulumix.Output[[]GetOpsiConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpsiConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsFilterOutput {
@@ -13777,12 +11866,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArgs) ToGetOpsiConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionOutput)
 }
 
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollection] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollection]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpsiConfigurationsOpsiConfigurationsCollectionArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionArray and GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionArrayInput` via:
 //
@@ -13808,12 +11891,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArray) ToGetOpsiConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput)
 }
 
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollection] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollection]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationsOpsiConfigurationsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) ElementType() reflect.Type {
@@ -13826,12 +11903,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) ToGetOpsiConfig
 
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionOutput {
 	return o
-}
-
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollection] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) Items() GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput {
@@ -13854,12 +11925,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) ToGetOpsiC
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollection] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollection {
 		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollection)[vs[1].(int)]
@@ -13868,7 +11933,7 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) Index(i pu
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId            string   `pulumi:"compartmentId"`
+	CompartmentId            *string  `pulumi:"compartmentId"`
 	ConfigItemCustomStatuses []string `pulumi:"configItemCustomStatuses"`
 	ConfigItemFields         []string `pulumi:"configItemFields"`
 	// Array of configuration item summary objects.
@@ -13877,26 +11942,26 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of OPSI configuration.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Filter to return based on resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string  `pulumi:"lifecycleDetails"`
 	OpsiConfigFields []string `pulumi:"opsiConfigFields"`
 	// Filter to return based on configuration type of OPSI configuration.
-	OpsiConfigType string `pulumi:"opsiConfigType"`
+	OpsiConfigType *string `pulumi:"opsiConfigType"`
 	// Filter to return based on Lifecycle state of OPSI configuration.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput values.
@@ -13912,7 +11977,7 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemInput interface {
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId            pulumi.StringInput      `pulumi:"compartmentId"`
+	CompartmentId            pulumi.StringPtrInput   `pulumi:"compartmentId"`
 	ConfigItemCustomStatuses pulumi.StringArrayInput `pulumi:"configItemCustomStatuses"`
 	ConfigItemFields         pulumi.StringArrayInput `pulumi:"configItemFields"`
 	// Array of configuration item summary objects.
@@ -13921,26 +11986,26 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of OPSI configuration.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Filter to return based on resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput   `pulumi:"lifecycleDetails"`
 	OpsiConfigFields pulumi.StringArrayInput `pulumi:"opsiConfigFields"`
 	// Filter to return based on configuration type of OPSI configuration.
-	OpsiConfigType pulumi.StringInput `pulumi:"opsiConfigType"`
+	OpsiConfigType pulumi.StringPtrInput `pulumi:"opsiConfigType"`
 	// Filter to return based on Lifecycle state of OPSI configuration.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs) ElementType() reflect.Type {
@@ -13953,12 +12018,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs) ToGetOpsiConf
 
 func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput)
-}
-
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItem] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItem]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput values.
@@ -13986,12 +12045,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray) ToGetOpsiCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput)
 }
 
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItem] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItem]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ElementType() reflect.Type {
@@ -14006,15 +12059,9 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ToGetOpsiCo
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItem] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ConfigItemCustomStatuses() pulumi.StringArrayOutput {
@@ -14048,13 +12095,13 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DefinedTags
 }
 
 // Description of OPSI configuration.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Filter to return based on resources that match the entire display name.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -14065,13 +12112,13 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) FreeformTag
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) OpsiConfigFields() pulumi.StringArrayOutput {
@@ -14079,13 +12126,13 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) OpsiConfigF
 }
 
 // Filter to return based on configuration type of OPSI configuration.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) OpsiConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.OpsiConfigType }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) OpsiConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.OpsiConfigType }).(pulumi.StringPtrOutput)
 }
 
 // Filter to return based on Lifecycle state of OPSI configuration.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -14096,13 +12143,13 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) SystemTags(
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -14119,12 +12166,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput) ToGetO
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItem] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItem {
 		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItem)[vs[1].(int)]
@@ -14135,15 +12176,15 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem struct {
 	// List of contexts in Operations Insights where this configuration item is applicable.
 	ApplicableContexts []string `pulumi:"applicableContexts"`
 	// Type of configuration item.
-	ConfigItemType string `pulumi:"configItemType"`
+	ConfigItemType *string `pulumi:"configItemType"`
 	// Value of configuration item.
-	DefaultValue string `pulumi:"defaultValue"`
+	DefaultValue *string `pulumi:"defaultValue"`
 	// Configuration item metadata.
 	Metadatas []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata `pulumi:"metadatas"`
 	// Name of configuration item.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Value of configuration item.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput values.
@@ -14161,15 +12202,15 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs struct 
 	// List of contexts in Operations Insights where this configuration item is applicable.
 	ApplicableContexts pulumi.StringArrayInput `pulumi:"applicableContexts"`
 	// Type of configuration item.
-	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
 	// Value of configuration item.
-	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
 	// Configuration item metadata.
 	Metadatas GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayInput `pulumi:"metadatas"`
 	// Name of configuration item.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Value of configuration item.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs) ElementType() reflect.Type {
@@ -14182,12 +12223,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs) ToG
 
 func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput)
-}
-
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput values.
@@ -14215,12 +12250,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput)
 }
 
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ElementType() reflect.Type {
@@ -14235,12 +12264,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) T
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of contexts in Operations Insights where this configuration item is applicable.
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ApplicableContexts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) []string {
@@ -14249,15 +12272,15 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) A
 }
 
 // Type of configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ConfigItemType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ConfigItemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) *string {
 		return v.ConfigItemType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Value of configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) DefaultValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string { return v.DefaultValue }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
 }
 
 // Configuration item metadata.
@@ -14268,13 +12291,13 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) M
 }
 
 // Name of configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Value of configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string { return v.Value }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput struct{ *pulumi.OutputState }
@@ -14291,12 +12314,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutp
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem {
 		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem)[vs[1].(int)]
@@ -14305,13 +12322,13 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutp
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata struct {
 	// Type of configuration item.
-	ConfigItemType string `pulumi:"configItemType"`
+	ConfigItemType *string `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-	DataType string `pulumi:"dataType"`
+	DataType *string `pulumi:"dataType"`
 	// Description of OPSI configuration.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Filter to return based on resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unit details of configuration item.
 	UnitDetails []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail `pulumi:"unitDetails"`
 	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
@@ -14331,13 +12348,13 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataInpu
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs struct {
 	// Type of configuration item.
-	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-	DataType pulumi.StringInput `pulumi:"dataType"`
+	DataType pulumi.StringPtrInput `pulumi:"dataType"`
 	// Description of OPSI configuration.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Filter to return based on resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unit details of configuration item.
 	UnitDetails GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput `pulumi:"unitDetails"`
 	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
@@ -14354,12 +12371,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataA
 
 func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput)
-}
-
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput values.
@@ -14387,12 +12398,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataA
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput)
 }
 
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ElementType() reflect.Type {
@@ -14407,38 +12412,32 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataO
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ConfigItemType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ConfigItemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) *string {
 		return v.ConfigItemType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) *string {
 		return v.DataType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Description of OPSI configuration.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Filter to return based on resources that match the entire display name.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit details of configuration item.
@@ -14469,12 +12468,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataA
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata {
 		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata)[vs[1].(int)]
@@ -14483,9 +12476,9 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataA
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail struct {
 	// Filter to return based on resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unit of configuration item.
-	Unit string `pulumi:"unit"`
+	Unit *string `pulumi:"unit"`
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput values.
@@ -14501,9 +12494,9 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnit
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs struct {
 	// Filter to return based on resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Unit of configuration item.
-	Unit pulumi.StringInput `pulumi:"unit"`
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
 }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs) ElementType() reflect.Type {
@@ -14516,12 +12509,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataU
 
 func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput)
-}
-
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput values.
@@ -14549,12 +12536,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataU
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput)
 }
 
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
@@ -14569,24 +12550,18 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataU
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filter to return based on resources that match the entire display name.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail) *string {
 		return v.Unit
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput struct{ *pulumi.OutputState }
@@ -14603,12 +12578,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataU
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail {
 		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail)[vs[1].(int)]
@@ -14617,11 +12586,11 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataU
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail struct {
 	// Allowed value type of configuration item.
-	AllowedValueType string `pulumi:"allowedValueType"`
+	AllowedValueType *string `pulumi:"allowedValueType"`
 	// Maximum value limit for the configuration item.
-	MaxValue string `pulumi:"maxValue"`
+	MaxValue *string `pulumi:"maxValue"`
 	// Minimum value limit for the configuration item.
-	MinValue string `pulumi:"minValue"`
+	MinValue *string `pulumi:"minValue"`
 	// Allowed values to pick for the configuration item.
 	PossibleValues []string `pulumi:"possibleValues"`
 }
@@ -14639,11 +12608,11 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValu
 
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs struct {
 	// Allowed value type of configuration item.
-	AllowedValueType pulumi.StringInput `pulumi:"allowedValueType"`
+	AllowedValueType pulumi.StringPtrInput `pulumi:"allowedValueType"`
 	// Maximum value limit for the configuration item.
-	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
 	// Minimum value limit for the configuration item.
-	MinValue pulumi.StringInput `pulumi:"minValue"`
+	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
 	// Allowed values to pick for the configuration item.
 	PossibleValues pulumi.StringArrayInput `pulumi:"possibleValues"`
 }
@@ -14658,12 +12627,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataV
 
 func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput)
-}
-
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput values.
@@ -14691,12 +12654,6 @@ func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataV
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput)
 }
 
-func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail]{
-		OutputState: i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
@@ -14711,31 +12668,25 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataV
 	return o
 }
 
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Allowed value type of configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) *string {
 		return v.AllowedValueType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Maximum value limit for the configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) *string {
 		return v.MaxValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Minimum value limit for the configuration item.
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) string {
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) *string {
 		return v.MinValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Allowed values to pick for the configuration item.
@@ -14757,12 +12708,6 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataV
 
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput {
 	return o
-}
-
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail] {
-	return pulumix.Output[[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput {

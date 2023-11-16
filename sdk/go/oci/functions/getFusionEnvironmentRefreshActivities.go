@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
@@ -77,7 +76,7 @@ type GetFusionEnvironmentRefreshActivitiesResult struct {
 	Filters             []GetFusionEnvironmentRefreshActivitiesFilter `pulumi:"filters"`
 	FusionEnvironmentId string                                        `pulumi:"fusionEnvironmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of refresh_activity_collection.
 	RefreshActivityCollections []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection `pulumi:"refreshActivityCollections"`
 	// The current state of the refreshActivity.
@@ -133,12 +132,6 @@ func (o GetFusionEnvironmentRefreshActivitiesResultOutput) ToGetFusionEnvironmen
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesResult] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A friendly name for the refresh activity. Can be changed later.
 func (o GetFusionEnvironmentRefreshActivitiesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -155,8 +148,8 @@ func (o GetFusionEnvironmentRefreshActivitiesResultOutput) FusionEnvironmentId()
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentRefreshActivitiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivitiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of refresh_activity_collection.

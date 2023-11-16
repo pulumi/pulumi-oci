@@ -19,7 +19,7 @@ public final class GetTagsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The tag&#39;s current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag&#39;s `lifecycleState` changes from DELETING to DELETED.
      * 
@@ -34,7 +34,7 @@ public final class GetTagsResult {
      * @return The list of tags.
      * 
      */
-    private List<GetTagsTag> tags;
+    private @Nullable List<GetTagsTag> tags;
 
     private GetTagsResult() {}
     public List<GetTagsFilter> filters() {
@@ -44,8 +44,8 @@ public final class GetTagsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The tag&#39;s current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag&#39;s `lifecycleState` changes from DELETING to DELETED.
@@ -66,7 +66,7 @@ public final class GetTagsResult {
      * 
      */
     public List<GetTagsTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
 
     public static Builder builder() {
@@ -79,10 +79,10 @@ public final class GetTagsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTagsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private String tagNamespaceId;
-        private List<GetTagsTag> tags;
+        private @Nullable List<GetTagsTag> tags;
         public Builder() {}
         public Builder(GetTagsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,8 +102,8 @@ public final class GetTagsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -117,8 +117,8 @@ public final class GetTagsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetTagsTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetTagsTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetTagsTag... tags) {

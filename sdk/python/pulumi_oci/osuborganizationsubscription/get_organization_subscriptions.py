@@ -55,7 +55,7 @@ class GetOrganizationSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,10 +68,7 @@ class GetOrganizationSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def subscriptions(self) -> Sequence['outputs.GetOrganizationSubscriptionsSubscriptionResult']:
-        """
-        The list of subscriptions.
-        """
+    def subscriptions(self) -> Optional[Sequence['outputs.GetOrganizationSubscriptionsSubscriptionResult']]:
         return pulumi.get(self, "subscriptions")
 
     @property
@@ -100,25 +97,7 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
                                    x_one_origin_region: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationSubscriptionsResult:
     """
-    This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Osub Organization Subscription service.
-
-    API that returns data for the list of subscription ids returned from Organizations API
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_organization_subscriptions = oci.OsubOrganizationSubscription.get_organization_subscriptions(compartment_id=var["compartment_id"],
-        subscription_ids=var["organization_subscription_subscription_ids"],
-        x_one_origin_region=var["organization_subscription_x_one_origin_region"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str subscription_ids: Comma separated list of subscription ids, pass "DUMMY" as value
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -144,24 +123,6 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
                                           x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOrganizationSubscriptionsResult]:
     """
-    This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Osub Organization Subscription service.
-
-    API that returns data for the list of subscription ids returned from Organizations API
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_organization_subscriptions = oci.OsubOrganizationSubscription.get_organization_subscriptions(compartment_id=var["compartment_id"],
-        subscription_ids=var["organization_subscription_subscription_ids"],
-        x_one_origin_region=var["organization_subscription_x_one_origin_region"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str subscription_ids: Comma separated list of subscription ids, pass "DUMMY" as value
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     ...

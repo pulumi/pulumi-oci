@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail {
@@ -13,51 +15,51 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
      * @return Client ID for the OAuth2/OIDC app.
      * 
      */
-    private String clientId;
+    private @Nullable String clientId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
      * 
      */
-    private String clientSecretId;
+    private @Nullable String clientSecretId;
     /**
      * @return The version number of the client secret to use.
      * 
      */
-    private String clientSecretVersionNumber;
+    private @Nullable String clientSecretVersionNumber;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail() {}
     /**
      * @return Client ID for the OAuth2/OIDC app.
      * 
      */
-    public String clientId() {
-        return this.clientId;
+    public Optional<String> clientId() {
+        return Optional.ofNullable(this.clientId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
      * 
      */
-    public String clientSecretId() {
-        return this.clientSecretId;
+    public Optional<String> clientSecretId() {
+        return Optional.ofNullable(this.clientSecretId);
     }
     /**
      * @return The version number of the client secret to use.
      * 
      */
-    public String clientSecretVersionNumber() {
-        return this.clientSecretVersionNumber;
+    public Optional<String> clientSecretVersionNumber() {
+        return Optional.ofNullable(this.clientSecretVersionNumber);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
     }
     @CustomType.Builder
     public static final class Builder {
-        private String clientId;
-        private String clientSecretId;
-        private String clientSecretVersionNumber;
-        private String type;
+        private @Nullable String clientId;
+        private @Nullable String clientSecretId;
+        private @Nullable String clientSecretVersionNumber;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
         }
 
         @CustomType.Setter
-        public Builder clientId(String clientId) {
-            this.clientId = Objects.requireNonNull(clientId);
+        public Builder clientId(@Nullable String clientId) {
+            this.clientId = clientId;
             return this;
         }
         @CustomType.Setter
-        public Builder clientSecretId(String clientSecretId) {
-            this.clientSecretId = Objects.requireNonNull(clientSecretId);
+        public Builder clientSecretId(@Nullable String clientSecretId) {
+            this.clientSecretId = clientSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder clientSecretVersionNumber(String clientSecretVersionNumber) {
-            this.clientSecretVersionNumber = Objects.requireNonNull(clientSecretVersionNumber);
+        public Builder clientSecretVersionNumber(@Nullable String clientSecretVersionNumber) {
+            this.clientSecretVersionNumber = clientSecretVersionNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail build() {

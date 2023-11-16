@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// A filter to return resources that match the given display names.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The OCID of the software source.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult(
-            string displayName,
+            string? displayName,
 
-            string id)
+            string? id)
         {
             DisplayName = displayName;
             Id = id;

@@ -60,11 +60,11 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
     /**
      * The summary of the Managed Database resource.
      */
-    readonly databases: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase[];
+    readonly databases?: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase[];
     /**
      * The errors in the Optimizer Statistics Advisor execution, if any.
      */
-    readonly errorMessage: string;
+    readonly errorMessage?: string;
     /**
      * The name of the Optimizer Statistics Advisor execution.
      */
@@ -72,24 +72,24 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
     /**
      * The list of findings for the rule.
      */
-    readonly findings: number;
+    readonly findings?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
      */
-    readonly reports: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport[];
+    readonly reports?: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport[];
     /**
      * The status of the Optimizer Statistics Advisor execution.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The Optimizer Statistics Advisor execution status message, if any.
      */
-    readonly statusMessage: string;
+    readonly statusMessage?: string;
     /**
      * The name of the Optimizer Statistics Advisor task.
      */
@@ -97,11 +97,11 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
     /**
      * The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */
-    readonly timeEnd: string;
+    readonly timeEnd?: string;
     /**
      * The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */
-    readonly timeStart: string;
+    readonly timeStart?: string;
 }
 /**
  * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.

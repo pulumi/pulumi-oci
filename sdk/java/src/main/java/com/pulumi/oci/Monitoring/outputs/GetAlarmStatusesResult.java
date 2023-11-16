@@ -19,7 +19,7 @@ public final class GetAlarmStatusesResult {
      * @return The list of alarm_statuses.
      * 
      */
-    private List<GetAlarmStatusesAlarmStatus> alarmStatuses;
+    private @Nullable List<GetAlarmStatusesAlarmStatus> alarmStatuses;
     private String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     /**
@@ -33,7 +33,7 @@ public final class GetAlarmStatusesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String resourceId;
     private @Nullable String serviceName;
     /**
@@ -48,7 +48,7 @@ public final class GetAlarmStatusesResult {
      * 
      */
     public List<GetAlarmStatusesAlarmStatus> alarmStatuses() {
-        return this.alarmStatuses;
+        return this.alarmStatuses == null ? List.of() : this.alarmStatuses;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -73,8 +73,8 @@ public final class GetAlarmStatusesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
@@ -99,13 +99,13 @@ public final class GetAlarmStatusesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAlarmStatusesAlarmStatus> alarmStatuses;
+        private @Nullable List<GetAlarmStatusesAlarmStatus> alarmStatuses;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable String entityId;
         private @Nullable List<GetAlarmStatusesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String resourceId;
         private @Nullable String serviceName;
         private @Nullable String status;
@@ -125,8 +125,8 @@ public final class GetAlarmStatusesResult {
         }
 
         @CustomType.Setter
-        public Builder alarmStatuses(List<GetAlarmStatusesAlarmStatus> alarmStatuses) {
-            this.alarmStatuses = Objects.requireNonNull(alarmStatuses);
+        public Builder alarmStatuses(@Nullable List<GetAlarmStatusesAlarmStatus> alarmStatuses) {
+            this.alarmStatuses = alarmStatuses;
             return this;
         }
         public Builder alarmStatuses(GetAlarmStatusesAlarmStatus... alarmStatuses) {
@@ -161,8 +161,8 @@ public final class GetAlarmStatusesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

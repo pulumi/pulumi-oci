@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// All connection strings to use to connect to the Database.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AllConnectionStrings;
+        public readonly ImmutableDictionary<string, object>? AllConnectionStrings;
         /// <summary>
         /// Host name based CDB Connection String.
         /// </summary>
-        public readonly string CdbDefault;
+        public readonly string? CdbDefault;
         /// <summary>
         /// IP based CDB Connection String.
         /// </summary>
-        public readonly string CdbIpDefault;
+        public readonly string? CdbIpDefault;
 
         [OutputConstructor]
         private GetDatabasesDatabaseConnectionStringResult(
-            ImmutableDictionary<string, object> allConnectionStrings,
+            ImmutableDictionary<string, object>? allConnectionStrings,
 
-            string cdbDefault,
+            string? cdbDefault,
 
-            string cdbIpDefault)
+            string? cdbIpDefault)
         {
             AllConnectionStrings = allConnectionStrings;
             CdbDefault = cdbDefault;

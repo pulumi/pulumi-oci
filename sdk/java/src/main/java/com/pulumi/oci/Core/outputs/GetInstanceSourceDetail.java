@@ -8,6 +8,8 @@ import com.pulumi.oci.Core.outputs.GetInstanceSourceDetailInstanceSourceImageFil
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceSourceDetail {
@@ -15,75 +17,75 @@ public final class GetInstanceSourceDetail {
      * @return The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
      * 
      */
-    private String bootVolumeSizeInGbs;
+    private @Nullable String bootVolumeSizeInGbs;
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
-    private String bootVolumeVpusPerGb;
+    private @Nullable String bootVolumeVpusPerGb;
     /**
      * @return These are the criteria for selecting an image. This is required if imageId is not specified.
      * 
      */
-    private List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
+    private @Nullable List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
     /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The OCID of the boot volume used to boot the instance.
      * 
      */
-    private String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetInstanceSourceDetail() {}
     /**
      * @return The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
      * 
      */
-    public String bootVolumeSizeInGbs() {
-        return this.bootVolumeSizeInGbs;
+    public Optional<String> bootVolumeSizeInGbs() {
+        return Optional.ofNullable(this.bootVolumeSizeInGbs);
     }
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
-    public String bootVolumeVpusPerGb() {
-        return this.bootVolumeVpusPerGb;
+    public Optional<String> bootVolumeVpusPerGb() {
+        return Optional.ofNullable(this.bootVolumeVpusPerGb);
     }
     /**
      * @return These are the criteria for selecting an image. This is required if imageId is not specified.
      * 
      */
     public List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails() {
-        return this.instanceSourceImageFilterDetails;
+        return this.instanceSourceImageFilterDetails == null ? List.of() : this.instanceSourceImageFilterDetails;
     }
     /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return The OCID of the boot volume used to boot the instance.
      * 
      */
-    public String sourceId() {
-        return this.sourceId;
+    public Optional<String> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
     /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetInstanceSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bootVolumeSizeInGbs;
-        private String bootVolumeVpusPerGb;
-        private List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
-        private String kmsKeyId;
-        private String sourceId;
-        private String sourceType;
+        private @Nullable String bootVolumeSizeInGbs;
+        private @Nullable String bootVolumeVpusPerGb;
+        private @Nullable List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
+        private @Nullable String kmsKeyId;
+        private @Nullable String sourceId;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetInstanceSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetInstanceSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
-            this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
+        public Builder bootVolumeSizeInGbs(@Nullable String bootVolumeSizeInGbs) {
+            this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
-            this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
+        public Builder bootVolumeVpusPerGb(@Nullable String bootVolumeVpusPerGb) {
+            this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceSourceImageFilterDetails(List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails) {
-            this.instanceSourceImageFilterDetails = Objects.requireNonNull(instanceSourceImageFilterDetails);
+        public Builder instanceSourceImageFilterDetails(@Nullable List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails) {
+            this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             return this;
         }
         public Builder instanceSourceImageFilterDetails(GetInstanceSourceDetailInstanceSourceImageFilterDetail... instanceSourceImageFilterDetails) {
             return instanceSourceImageFilterDetails(List.of(instanceSourceImageFilterDetails));
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+        public Builder sourceId(@Nullable String sourceId) {
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetInstanceSourceDetail build() {

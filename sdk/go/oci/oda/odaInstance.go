@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -76,29 +75,29 @@ type OdaInstance struct {
 	// (Updatable) Identifier of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// URL for the connector's endpoint.
-	ConnectorUrl pulumi.StringOutput `pulumi:"connectorUrl"`
+	ConnectorUrl pulumi.StringPtrOutput `pulumi:"connectorUrl"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the Digital Assistant instance.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-	IdentityAppConsoleUrl pulumi.StringOutput `pulumi:"identityAppConsoleUrl"`
+	IdentityAppConsoleUrl pulumi.StringPtrOutput `pulumi:"identityAppConsoleUrl"`
 	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-	IdentityAppGuid pulumi.StringOutput `pulumi:"identityAppGuid"`
+	IdentityAppGuid pulumi.StringPtrOutput `pulumi:"identityAppGuid"`
 	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-	IdentityDomain pulumi.StringOutput `pulumi:"identityDomain"`
+	IdentityDomain pulumi.StringPtrOutput `pulumi:"identityDomain"`
 	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
 	ImportedPackageIds pulumi.StringArrayOutput `pulumi:"importedPackageIds"`
 	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
 	ImportedPackageNames pulumi.StringArrayOutput `pulumi:"importedPackageNames"`
 	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-	IsRoleBasedAccess pulumi.BoolOutput `pulumi:"isRoleBasedAccess"`
+	IsRoleBasedAccess pulumi.BoolPtrOutput `pulumi:"isRoleBasedAccess"`
 	// The current sub-state of the Digital Assistant instance.
-	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
+	LifecycleSubState pulumi.StringPtrOutput `pulumi:"lifecycleSubState"`
 	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
 	RestrictedOperations OdaInstanceRestrictedOperationArrayOutput `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
@@ -107,15 +106,15 @@ type OdaInstance struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The current state of the Digital Assistant instance.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrOutput `pulumi:"stateMessage"`
 	// When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// URL for the Digital Assistant web application that's associated with the instance.
-	WebAppUrl pulumi.StringOutput `pulumi:"webAppUrl"`
+	WebAppUrl pulumi.StringPtrOutput `pulumi:"webAppUrl"`
 }
 
 // NewOdaInstance registers a new resource with the given unique name, arguments, and options.
@@ -329,12 +328,6 @@ func (i *OdaInstance) ToOdaInstanceOutputWithContext(ctx context.Context) OdaIns
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceOutput)
 }
 
-func (i *OdaInstance) ToOutput(ctx context.Context) pulumix.Output[*OdaInstance] {
-	return pulumix.Output[*OdaInstance]{
-		OutputState: i.ToOdaInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaInstanceArrayInput is an input type that accepts OdaInstanceArray and OdaInstanceArrayOutput values.
 // You can construct a concrete instance of `OdaInstanceArrayInput` via:
 //
@@ -358,12 +351,6 @@ func (i OdaInstanceArray) ToOdaInstanceArrayOutput() OdaInstanceArrayOutput {
 
 func (i OdaInstanceArray) ToOdaInstanceArrayOutputWithContext(ctx context.Context) OdaInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceArrayOutput)
-}
-
-func (i OdaInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*OdaInstance] {
-	return pulumix.Output[[]*OdaInstance]{
-		OutputState: i.ToOdaInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OdaInstanceMapInput is an input type that accepts OdaInstanceMap and OdaInstanceMapOutput values.
@@ -391,12 +378,6 @@ func (i OdaInstanceMap) ToOdaInstanceMapOutputWithContext(ctx context.Context) O
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceMapOutput)
 }
 
-func (i OdaInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaInstance] {
-	return pulumix.Output[map[string]*OdaInstance]{
-		OutputState: i.ToOdaInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaInstanceOutput struct{ *pulumi.OutputState }
 
 func (OdaInstanceOutput) ElementType() reflect.Type {
@@ -409,12 +390,6 @@ func (o OdaInstanceOutput) ToOdaInstanceOutput() OdaInstanceOutput {
 
 func (o OdaInstanceOutput) ToOdaInstanceOutputWithContext(ctx context.Context) OdaInstanceOutput {
 	return o
-}
-
-func (o OdaInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*OdaInstance] {
-	return pulumix.Output[*OdaInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
@@ -433,8 +408,8 @@ func (o OdaInstanceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // URL for the connector's endpoint.
-func (o OdaInstanceOutput) ConnectorUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.ConnectorUrl }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) ConnectorUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.ConnectorUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -448,8 +423,8 @@ func (o OdaInstanceOutput) Description() pulumi.StringPtrOutput {
 }
 
 // (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-func (o OdaInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
@@ -458,18 +433,18 @@ func (o OdaInstanceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-func (o OdaInstanceOutput) IdentityAppConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.IdentityAppConsoleUrl }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) IdentityAppConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.IdentityAppConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
 // If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-func (o OdaInstanceOutput) IdentityAppGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.IdentityAppGuid }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) IdentityAppGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.IdentityAppGuid }).(pulumi.StringPtrOutput)
 }
 
 // If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-func (o OdaInstanceOutput) IdentityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.IdentityDomain }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) IdentityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.IdentityDomain }).(pulumi.StringPtrOutput)
 }
 
 // A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
@@ -483,13 +458,13 @@ func (o OdaInstanceOutput) ImportedPackageNames() pulumi.StringArrayOutput {
 }
 
 // Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-func (o OdaInstanceOutput) IsRoleBasedAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.BoolOutput { return v.IsRoleBasedAccess }).(pulumi.BoolOutput)
+func (o OdaInstanceOutput) IsRoleBasedAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.BoolPtrOutput { return v.IsRoleBasedAccess }).(pulumi.BoolPtrOutput)
 }
 
 // The current sub-state of the Digital Assistant instance.
-func (o OdaInstanceOutput) LifecycleSubState() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.LifecycleSubState }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) LifecycleSubState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.LifecycleSubState }).(pulumi.StringPtrOutput)
 }
 
 // A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
@@ -506,28 +481,28 @@ func (o OdaInstanceOutput) ShapeName() pulumi.StringOutput {
 }
 
 // The current state of the Digital Assistant instance.
-func (o OdaInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-func (o OdaInstanceOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.StateMessage }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o OdaInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o OdaInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // URL for the Digital Assistant web application that's associated with the instance.
-func (o OdaInstanceOutput) WebAppUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.WebAppUrl }).(pulumi.StringOutput)
+func (o OdaInstanceOutput) WebAppUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringPtrOutput { return v.WebAppUrl }).(pulumi.StringPtrOutput)
 }
 
 type OdaInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -542,12 +517,6 @@ func (o OdaInstanceArrayOutput) ToOdaInstanceArrayOutput() OdaInstanceArrayOutpu
 
 func (o OdaInstanceArrayOutput) ToOdaInstanceArrayOutputWithContext(ctx context.Context) OdaInstanceArrayOutput {
 	return o
-}
-
-func (o OdaInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OdaInstance] {
-	return pulumix.Output[[]*OdaInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaInstanceArrayOutput) Index(i pulumi.IntInput) OdaInstanceOutput {
@@ -568,12 +537,6 @@ func (o OdaInstanceMapOutput) ToOdaInstanceMapOutput() OdaInstanceMapOutput {
 
 func (o OdaInstanceMapOutput) ToOdaInstanceMapOutputWithContext(ctx context.Context) OdaInstanceMapOutput {
 	return o
-}
-
-func (o OdaInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaInstance] {
-	return pulumix.Output[map[string]*OdaInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaInstanceMapOutput) MapIndex(k pulumi.StringInput) OdaInstanceOutput {

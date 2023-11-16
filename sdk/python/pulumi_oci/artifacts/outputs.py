@@ -40,430 +40,311 @@ class ContainerRepositoryReadme(dict):
     def __init__(__self__, *,
                  content: str,
                  format: str):
-        """
-        :param str content: (Updatable) Readme content. Avoid entering confidential information.
-        :param str format: (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "format", format)
 
     @property
     @pulumi.getter
     def content(self) -> str:
-        """
-        (Updatable) Readme content. Avoid entering confidential information.
-        """
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter
     def format(self) -> str:
-        """
-        (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "format")
 
 
 @pulumi.output_type
 class GetContainerImageLayerResult(dict):
     def __init__(__self__, *,
-                 digest: str,
-                 size_in_bytes: str,
-                 time_created: str):
-        """
-        :param str digest: The sha256 digest of the image layer.
-        :param str size_in_bytes: The size of the layer in bytes.
-        :param str time_created: The creation time of the version.
-        """
-        pulumi.set(__self__, "digest", digest)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_created", time_created)
+                 digest: Optional[str] = None,
+                 size_in_bytes: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if digest is not None:
+            pulumi.set(__self__, "digest", digest)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
-    def digest(self) -> str:
-        """
-        The sha256 digest of the image layer.
-        """
+    def digest(self) -> Optional[str]:
         return pulumi.get(self, "digest")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        The size of the layer in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation time of the version.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetContainerImageVersionResult(dict):
     def __init__(__self__, *,
-                 created_by: str,
-                 time_created: str,
-                 version: str):
-        """
-        :param str created_by: The OCID of the user or principal that pushed the version.
-        :param str time_created: The creation time of the version.
-        :param str version: The version name.
-        """
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+                 created_by: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 version: Optional[str] = None):
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The OCID of the user or principal that pushed the version.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation time of the version.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version name.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetContainerImagesContainerImageCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult'],
-                 remaining_items_count: int):
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "remaining_items_count", remaining_items_count)
+                 items: Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult']] = None,
+                 remaining_items_count: Optional[int] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+        if remaining_items_count is not None:
+            pulumi.set(__self__, "remaining_items_count", remaining_items_count)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="remainingItemsCount")
-    def remaining_items_count(self) -> int:
+    def remaining_items_count(self) -> Optional[int]:
         return pulumi.get(self, "remaining_items_count")
 
 
 @pulumi.output_type
 class GetContainerImagesContainerImageCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 digest: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 layers: Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult'],
-                 layers_size_in_bytes: str,
-                 manifest_size_in_bytes: int,
-                 pull_count: str,
-                 repository_id: str,
-                 repository_name: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_last_pulled: str,
-                 version: str,
-                 versions: Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult']):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: The OCID of the user or principal that pushed the version.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str digest: The sha256 digest of the image layer.
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        :param Sequence['GetContainerImagesContainerImageCollectionItemLayerArgs'] layers: Layers of which the image is composed, ordered by the layer digest.
-        :param str layers_size_in_bytes: The total size of the container image layers in bytes.
-        :param int manifest_size_in_bytes: The size of the container image manifest in bytes.
-        :param str pull_count: Total number of pulls.
-        :param str repository_id: A filter to return container images only for the specified container repository OCID.
-        :param str repository_name: A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
-        :param str state: A filter to return only resources that match the given lifecycle state name exactly.
-        :param Mapping[str, Any] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The creation time of the version.
-        :param str time_last_pulled: An RFC 3339 timestamp indicating when the image was last pulled.
-        :param str version: A filter to return container images that match the version.  Example: `foo` or `foo*`
-        :param Sequence['GetContainerImagesContainerImageCollectionItemVersionArgs'] versions: The versions associated with this image.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "digest", digest)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "layers", layers)
-        pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
-        pulumi.set(__self__, "manifest_size_in_bytes", manifest_size_in_bytes)
-        pulumi.set(__self__, "pull_count", pull_count)
-        pulumi.set(__self__, "repository_id", repository_id)
-        pulumi.set(__self__, "repository_name", repository_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_pulled", time_last_pulled)
-        pulumi.set(__self__, "version", version)
-        pulumi.set(__self__, "versions", versions)
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 digest: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 layers: Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult']] = None,
+                 layers_size_in_bytes: Optional[str] = None,
+                 manifest_size_in_bytes: Optional[int] = None,
+                 pull_count: Optional[str] = None,
+                 repository_id: Optional[str] = None,
+                 repository_name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_last_pulled: Optional[str] = None,
+                 version: Optional[str] = None,
+                 versions: Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult']] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if digest is not None:
+            pulumi.set(__self__, "digest", digest)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if layers is not None:
+            pulumi.set(__self__, "layers", layers)
+        if layers_size_in_bytes is not None:
+            pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        if manifest_size_in_bytes is not None:
+            pulumi.set(__self__, "manifest_size_in_bytes", manifest_size_in_bytes)
+        if pull_count is not None:
+            pulumi.set(__self__, "pull_count", pull_count)
+        if repository_id is not None:
+            pulumi.set(__self__, "repository_id", repository_id)
+        if repository_name is not None:
+            pulumi.set(__self__, "repository_name", repository_name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_last_pulled is not None:
+            pulumi.set(__self__, "time_last_pulled", time_last_pulled)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The OCID of the user or principal that pushed the version.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def digest(self) -> str:
-        """
-        The sha256 digest of the image layer.
-        """
+    def digest(self) -> Optional[str]:
         return pulumi.get(self, "digest")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def layers(self) -> Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult']:
-        """
-        Layers of which the image is composed, ordered by the layer digest.
-        """
+    def layers(self) -> Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult']]:
         return pulumi.get(self, "layers")
 
     @property
     @pulumi.getter(name="layersSizeInBytes")
-    def layers_size_in_bytes(self) -> str:
-        """
-        The total size of the container image layers in bytes.
-        """
+    def layers_size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "layers_size_in_bytes")
 
     @property
     @pulumi.getter(name="manifestSizeInBytes")
-    def manifest_size_in_bytes(self) -> int:
-        """
-        The size of the container image manifest in bytes.
-        """
+    def manifest_size_in_bytes(self) -> Optional[int]:
         return pulumi.get(self, "manifest_size_in_bytes")
 
     @property
     @pulumi.getter(name="pullCount")
-    def pull_count(self) -> str:
-        """
-        Total number of pulls.
-        """
+    def pull_count(self) -> Optional[str]:
         return pulumi.get(self, "pull_count")
 
     @property
     @pulumi.getter(name="repositoryId")
-    def repository_id(self) -> str:
-        """
-        A filter to return container images only for the specified container repository OCID.
-        """
+    def repository_id(self) -> Optional[str]:
         return pulumi.get(self, "repository_id")
 
     @property
     @pulumi.getter(name="repositoryName")
-    def repository_name(self) -> str:
-        """
-        A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
-        """
+    def repository_name(self) -> Optional[str]:
         return pulumi.get(self, "repository_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycle state name exactly.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation time of the version.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastPulled")
-    def time_last_pulled(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the image was last pulled.
-        """
+    def time_last_pulled(self) -> Optional[str]:
         return pulumi.get(self, "time_last_pulled")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        A filter to return container images that match the version.  Example: `foo` or `foo*`
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter
-    def versions(self) -> Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult']:
-        """
-        The versions associated with this image.
-        """
+    def versions(self) -> Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult']]:
         return pulumi.get(self, "versions")
 
 
 @pulumi.output_type
 class GetContainerImagesContainerImageCollectionItemLayerResult(dict):
     def __init__(__self__, *,
-                 digest: str,
-                 size_in_bytes: str,
-                 time_created: str):
-        """
-        :param str digest: The sha256 digest of the image layer.
-        :param str size_in_bytes: The size of the layer in bytes.
-        :param str time_created: The creation time of the version.
-        """
-        pulumi.set(__self__, "digest", digest)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_created", time_created)
+                 digest: Optional[str] = None,
+                 size_in_bytes: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if digest is not None:
+            pulumi.set(__self__, "digest", digest)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
-    def digest(self) -> str:
-        """
-        The sha256 digest of the image layer.
-        """
+    def digest(self) -> Optional[str]:
         return pulumi.get(self, "digest")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        The size of the layer in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation time of the version.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetContainerImagesContainerImageCollectionItemVersionResult(dict):
     def __init__(__self__, *,
-                 created_by: str,
-                 time_created: str,
-                 version: str):
-        """
-        :param str created_by: The OCID of the user or principal that pushed the version.
-        :param str time_created: The creation time of the version.
-        :param str version: A filter to return container images that match the version.  Example: `foo` or `foo*`
-        """
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+                 created_by: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 version: Optional[str] = None):
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The OCID of the user or principal that pushed the version.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation time of the version.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        A filter to return container images that match the version.  Example: `foo` or `foo*`
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -497,295 +378,223 @@ class GetContainerImagesFilterResult(dict):
 @pulumi.output_type
 class GetContainerRepositoriesContainerRepositoryCollectionResult(dict):
     def __init__(__self__, *,
-                 image_count: int,
-                 items: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult'],
-                 layer_count: int,
-                 layers_size_in_bytes: str,
-                 remaining_items_count: int,
-                 repository_count: int):
-        """
-        :param int image_count: Total number of images.
-        :param int layer_count: Total number of layers.
-        :param str layers_size_in_bytes: Total storage in bytes consumed by layers.
-        """
-        pulumi.set(__self__, "image_count", image_count)
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "layer_count", layer_count)
-        pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
-        pulumi.set(__self__, "remaining_items_count", remaining_items_count)
-        pulumi.set(__self__, "repository_count", repository_count)
+                 image_count: Optional[int] = None,
+                 items: Optional[Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult']] = None,
+                 layer_count: Optional[int] = None,
+                 layers_size_in_bytes: Optional[str] = None,
+                 remaining_items_count: Optional[int] = None,
+                 repository_count: Optional[int] = None):
+        if image_count is not None:
+            pulumi.set(__self__, "image_count", image_count)
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+        if layer_count is not None:
+            pulumi.set(__self__, "layer_count", layer_count)
+        if layers_size_in_bytes is not None:
+            pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        if remaining_items_count is not None:
+            pulumi.set(__self__, "remaining_items_count", remaining_items_count)
+        if repository_count is not None:
+            pulumi.set(__self__, "repository_count", repository_count)
 
     @property
     @pulumi.getter(name="imageCount")
-    def image_count(self) -> int:
-        """
-        Total number of images.
-        """
+    def image_count(self) -> Optional[int]:
         return pulumi.get(self, "image_count")
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="layerCount")
-    def layer_count(self) -> int:
-        """
-        Total number of layers.
-        """
+    def layer_count(self) -> Optional[int]:
         return pulumi.get(self, "layer_count")
 
     @property
     @pulumi.getter(name="layersSizeInBytes")
-    def layers_size_in_bytes(self) -> str:
-        """
-        Total storage in bytes consumed by layers.
-        """
+    def layers_size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "layers_size_in_bytes")
 
     @property
     @pulumi.getter(name="remainingItemsCount")
-    def remaining_items_count(self) -> int:
+    def remaining_items_count(self) -> Optional[int]:
         return pulumi.get(self, "remaining_items_count")
 
     @property
     @pulumi.getter(name="repositoryCount")
-    def repository_count(self) -> int:
+    def repository_count(self) -> Optional[int]:
         return pulumi.get(self, "repository_count")
 
 
 @pulumi.output_type
 class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 billable_size_in_gbs: str,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 image_count: int,
-                 is_immutable: bool,
-                 is_public: bool,
-                 layer_count: int,
-                 layers_size_in_bytes: str,
-                 namespace: str,
-                 readmes: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_last_pushed: str):
-        """
-        :param str billable_size_in_gbs: Total storage size in GBs that will be charged.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: The id of the user or principal that created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-        :param int image_count: Total number of images.
-        :param bool is_immutable: Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        :param bool is_public: A filter to return resources that match the isPublic value.
-        :param int layer_count: Total number of layers.
-        :param str layers_size_in_bytes: Total storage in bytes consumed by layers.
-        :param str namespace: The tenancy namespace used in the container repository path.
-        :param Sequence['GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs'] readmes: Container repository readme.
-        :param str state: A filter to return only resources that match the given lifecycle state name exactly.
-        :param Mapping[str, Any] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: An RFC 3339 timestamp indicating when the repository was created.
-        :param str time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-        """
-        pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_count", image_count)
-        pulumi.set(__self__, "is_immutable", is_immutable)
-        pulumi.set(__self__, "is_public", is_public)
-        pulumi.set(__self__, "layer_count", layer_count)
-        pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "readmes", readmes)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_pushed", time_last_pushed)
+                 billable_size_in_gbs: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 image_count: Optional[int] = None,
+                 is_immutable: Optional[bool] = None,
+                 is_public: Optional[bool] = None,
+                 layer_count: Optional[int] = None,
+                 layers_size_in_bytes: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 readmes: Optional[Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_last_pushed: Optional[str] = None):
+        if billable_size_in_gbs is not None:
+            pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if image_count is not None:
+            pulumi.set(__self__, "image_count", image_count)
+        if is_immutable is not None:
+            pulumi.set(__self__, "is_immutable", is_immutable)
+        if is_public is not None:
+            pulumi.set(__self__, "is_public", is_public)
+        if layer_count is not None:
+            pulumi.set(__self__, "layer_count", layer_count)
+        if layers_size_in_bytes is not None:
+            pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if readmes is not None:
+            pulumi.set(__self__, "readmes", readmes)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_last_pushed is not None:
+            pulumi.set(__self__, "time_last_pushed", time_last_pushed)
 
     @property
     @pulumi.getter(name="billableSizeInGbs")
-    def billable_size_in_gbs(self) -> str:
-        """
-        Total storage size in GBs that will be charged.
-        """
+    def billable_size_in_gbs(self) -> Optional[str]:
         return pulumi.get(self, "billable_size_in_gbs")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The id of the user or principal that created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imageCount")
-    def image_count(self) -> int:
-        """
-        Total number of images.
-        """
+    def image_count(self) -> Optional[int]:
         return pulumi.get(self, "image_count")
 
     @property
     @pulumi.getter(name="isImmutable")
-    def is_immutable(self) -> bool:
-        """
-        Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        """
+    def is_immutable(self) -> Optional[bool]:
         return pulumi.get(self, "is_immutable")
 
     @property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> bool:
-        """
-        A filter to return resources that match the isPublic value.
-        """
+    def is_public(self) -> Optional[bool]:
         return pulumi.get(self, "is_public")
 
     @property
     @pulumi.getter(name="layerCount")
-    def layer_count(self) -> int:
-        """
-        Total number of layers.
-        """
+    def layer_count(self) -> Optional[int]:
         return pulumi.get(self, "layer_count")
 
     @property
     @pulumi.getter(name="layersSizeInBytes")
-    def layers_size_in_bytes(self) -> str:
-        """
-        Total storage in bytes consumed by layers.
-        """
+    def layers_size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "layers_size_in_bytes")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The tenancy namespace used in the container repository path.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def readmes(self) -> Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult']:
-        """
-        Container repository readme.
-        """
+    def readmes(self) -> Optional[Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult']]:
         return pulumi.get(self, "readmes")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycle state name exactly.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the repository was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastPushed")
-    def time_last_pushed(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-        """
+    def time_last_pushed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_pushed")
 
 
 @pulumi.output_type
 class GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 format: str):
-        """
-        :param str content: Readme content. Avoid entering confidential information.
-        :param str format: Readme format. Supported formats are text/plain and text/markdown.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "format", format)
+                 content: Optional[str] = None,
+                 format: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if format is not None:
+            pulumi.set(__self__, "format", format)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        Readme content. Avoid entering confidential information.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter
-    def format(self) -> str:
-        """
-        Readme format. Supported formats are text/plain and text/markdown.
-        """
+    def format(self) -> Optional[str]:
         return pulumi.get(self, "format")
 
 
@@ -819,220 +628,167 @@ class GetContainerRepositoriesFilterResult(dict):
 @pulumi.output_type
 class GetContainerRepositoryReadmeResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 format: str):
-        """
-        :param str content: Readme content. Avoid entering confidential information.
-        :param str format: Readme format. Supported formats are text/plain and text/markdown.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "format", format)
+                 content: Optional[str] = None,
+                 format: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if format is not None:
+            pulumi.set(__self__, "format", format)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        Readme content. Avoid entering confidential information.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter
-    def format(self) -> str:
-        """
-        Readme format. Supported formats are text/plain and text/markdown.
-        """
+    def format(self) -> Optional[str]:
         return pulumi.get(self, "format")
 
 
 @pulumi.output_type
 class GetContainerSignaturesContainerImageSignatureCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult'],
-                 remaining_items_count: int):
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "remaining_items_count", remaining_items_count)
+                 items: Optional[Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult']] = None,
+                 remaining_items_count: Optional[int] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+        if remaining_items_count is not None:
+            pulumi.set(__self__, "remaining_items_count", remaining_items_count)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="remainingItemsCount")
-    def remaining_items_count(self) -> int:
+    def remaining_items_count(self) -> Optional[int]:
         return pulumi.get(self, "remaining_items_count")
 
 
 @pulumi.output_type
 class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 image_id: str,
-                 kms_key_id: str,
-                 kms_key_version_id: str,
-                 message: str,
-                 signature: str,
-                 signing_algorithm: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: The id of the user or principal that created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
-        :param str image_id: A filter to return a container image summary only for the specified container image OCID.
-        :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        :param str kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        :param str message: The base64 encoded signature payload that was signed.
-        :param str signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        :param str signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-        :param str state: The current state of the container image signature.
-        :param Mapping[str, Any] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: An RFC 3339 timestamp indicating when the image was created.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "signature", signature)
-        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 image_id: Optional[str] = None,
+                 kms_key_id: Optional[str] = None,
+                 kms_key_version_id: Optional[str] = None,
+                 message: Optional[str] = None,
+                 signature: Optional[str] = None,
+                 signing_algorithm: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if image_id is not None:
+            pulumi.set(__self__, "image_id", image_id)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if signature is not None:
+            pulumi.set(__self__, "signature", signature)
+        if signing_algorithm is not None:
+            pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The id of the user or principal that created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> str:
-        """
-        A filter to return a container image summary only for the specified container image OCID.
-        """
+    def image_id(self) -> Optional[str]:
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        """
+    def kms_key_version_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter
-    def message(self) -> str:
-        """
-        The base64 encoded signature payload that was signed.
-        """
+    def message(self) -> Optional[str]:
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter
-    def signature(self) -> str:
-        """
-        The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-        """
+    def signature(self) -> Optional[str]:
         return pulumi.get(self, "signature")
 
     @property
     @pulumi.getter(name="signingAlgorithm")
-    def signing_algorithm(self) -> str:
-        """
-        The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-        """
+    def signing_algorithm(self) -> Optional[str]:
         return pulumi.get(self, "signing_algorithm")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the container image signature.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the image was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -1093,158 +849,122 @@ class GetGenericArtifactsFilterResult(dict):
 @pulumi.output_type
 class GetGenericArtifactsGenericArtifactCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetGenericArtifactsGenericArtifactCollectionItemResult(dict):
     def __init__(__self__, *,
-                 artifact_id: str,
-                 artifact_path: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 repository_id: str,
-                 sha256: str,
-                 size_in_bytes: str,
-                 state: str,
-                 time_created: str,
-                 version: str):
-        """
-        :param str artifact_path: Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: A filter to return the resources for the specified OCID.
-        :param str repository_id: A filter to return the artifacts only for the specified repository OCID.
-        :param str sha256: Filter results by a specified SHA256 digest for the artifact.
-        :param str size_in_bytes: The size of the artifact in bytes.
-        :param str state: A filter to return only resources that match the given lifecycle state name exactly.
-        :param str time_created: An RFC 3339 timestamp indicating when the repository was created.
-        :param str version: Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
-        """
-        pulumi.set(__self__, "artifact_id", artifact_id)
-        pulumi.set(__self__, "artifact_path", artifact_path)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "repository_id", repository_id)
-        pulumi.set(__self__, "sha256", sha256)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+                 artifact_id: Optional[str] = None,
+                 artifact_path: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 repository_id: Optional[str] = None,
+                 sha256: Optional[str] = None,
+                 size_in_bytes: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 version: Optional[str] = None):
+        if artifact_id is not None:
+            pulumi.set(__self__, "artifact_id", artifact_id)
+        if artifact_path is not None:
+            pulumi.set(__self__, "artifact_path", artifact_path)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if repository_id is not None:
+            pulumi.set(__self__, "repository_id", repository_id)
+        if sha256 is not None:
+            pulumi.set(__self__, "sha256", sha256)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="artifactId")
-    def artifact_id(self) -> str:
+    def artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "artifact_id")
 
     @property
     @pulumi.getter(name="artifactPath")
-    def artifact_path(self) -> str:
-        """
-        Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
-        """
+    def artifact_path(self) -> Optional[str]:
         return pulumi.get(self, "artifact_path")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to return the resources for the specified OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="repositoryId")
-    def repository_id(self) -> str:
-        """
-        A filter to return the artifacts only for the specified repository OCID.
-        """
+    def repository_id(self) -> Optional[str]:
         return pulumi.get(self, "repository_id")
 
     @property
     @pulumi.getter
-    def sha256(self) -> str:
-        """
-        Filter results by a specified SHA256 digest for the artifact.
-        """
+    def sha256(self) -> Optional[str]:
         return pulumi.get(self, "sha256")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        The size of the artifact in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycle state name exactly.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the repository was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -1278,129 +998,98 @@ class GetRepositoriesFilterResult(dict):
 @pulumi.output_type
 class GetRepositoriesRepositoryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRepositoriesRepositoryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_immutable: bool,
-                 repository_type: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str description: The repository description.
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: A filter to return the resources for the specified OCID.
-        :param bool is_immutable: A filter to return resources that match the isImmutable value.
-        :param str repository_type: The repository's supported artifact type.
-        :param str state: A filter to return only resources that match the given lifecycle state name exactly.
-        :param str time_created: An RFC 3339 timestamp indicating when the repository was created.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_immutable", is_immutable)
-        pulumi.set(__self__, "repository_type", repository_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_immutable: Optional[bool] = None,
+                 repository_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_immutable is not None:
+            pulumi.set(__self__, "is_immutable", is_immutable)
+        if repository_type is not None:
+            pulumi.set(__self__, "repository_type", repository_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The repository description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to return the resources for the specified OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isImmutable")
-    def is_immutable(self) -> bool:
-        """
-        A filter to return resources that match the isImmutable value.
-        """
+    def is_immutable(self) -> Optional[bool]:
         return pulumi.get(self, "is_immutable")
 
     @property
     @pulumi.getter(name="repositoryType")
-    def repository_type(self) -> str:
-        """
-        The repository's supported artifact type.
-        """
+    def repository_type(self) -> Optional[str]:
         return pulumi.get(self, "repository_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycle state name exactly.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the repository was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Operator Actions in Oracle Cloud Infrastructure Operator Access Control service.
@@ -72,7 +71,7 @@ type GetActionsResult struct {
 	CompartmentId string             `pulumi:"compartmentId"`
 	Filters       []GetActionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Name of the property
 	Name *string `pulumi:"name"`
 	// The list of operator_action_collection.
@@ -127,12 +126,6 @@ func (o GetActionsResultOutput) ToGetActionsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetActionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsResult] {
-	return pulumix.Output[GetActionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetActionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -142,8 +135,8 @@ func (o GetActionsResultOutput) Filters() GetActionsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetActionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetActionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the property

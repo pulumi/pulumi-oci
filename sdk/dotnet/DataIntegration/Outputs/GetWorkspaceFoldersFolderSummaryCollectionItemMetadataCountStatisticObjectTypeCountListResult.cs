@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The value for the count statistic object.
         /// </summary>
-        public readonly string ObjectCount;
+        public readonly string? ObjectCount;
         /// <summary>
         /// The type of object for the count statistic object.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
 
         [OutputConstructor]
         private GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult(
-            string objectCount,
+            string? objectCount,
 
-            string objectType)
+            string? objectType)
         {
             ObjectCount = objectCount;
             ObjectType = objectType;

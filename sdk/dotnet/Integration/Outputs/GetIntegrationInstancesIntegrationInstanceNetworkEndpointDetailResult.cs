@@ -24,11 +24,11 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         /// </summary>
-        public readonly bool IsIntegrationVcnAllowlisted;
+        public readonly bool? IsIntegrationVcnAllowlisted;
         /// <summary>
         /// The type of network endpoint.
         /// </summary>
-        public readonly string NetworkEndpointType;
+        public readonly string? NetworkEndpointType;
 
         [OutputConstructor]
         private GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(
@@ -36,9 +36,9 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult> allowlistedHttpVcns,
 
-            bool isIntegrationVcnAllowlisted,
+            bool? isIntegrationVcnAllowlisted,
 
-            string networkEndpointType)
+            string? networkEndpointType)
         {
             AllowlistedHttpIps = allowlistedHttpIps;
             AllowlistedHttpVcns = allowlistedHttpVcns;

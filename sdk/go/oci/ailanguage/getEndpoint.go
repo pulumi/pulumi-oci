@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
@@ -34,33 +33,33 @@ type LookupEndpointArgs struct {
 // A collection of values returned by getEndpoint.
 type LookupEndpointResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier endpoint OCID of an endpoint that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Number of replicas required for this endpoint.
-	InferenceUnits int `pulumi:"inferenceUnits"`
+	InferenceUnits *int `pulumi:"inferenceUnits"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
-	ModelId string `pulumi:"modelId"`
+	ModelId *string `pulumi:"modelId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the Endpoint.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the endpoint was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the endpoint was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupEndpointOutput(ctx *pulumi.Context, args LookupEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupEndpointResultOutput {
@@ -101,15 +100,9 @@ func (o LookupEndpointResultOutput) ToLookupEndpointResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEndpointResult] {
-	return pulumix.Output[LookupEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
-func (o LookupEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -118,13 +111,13 @@ func (o LookupEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the endpoint.
-func (o LookupEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
-func (o LookupEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -138,28 +131,28 @@ func (o LookupEndpointResultOutput) Id() pulumi.StringOutput {
 }
 
 // Number of replicas required for this endpoint.
-func (o LookupEndpointResultOutput) InferenceUnits() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupEndpointResult) int { return v.InferenceUnits }).(pulumi.IntOutput)
+func (o LookupEndpointResultOutput) InferenceUnits() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *int { return v.InferenceUnits }).(pulumi.IntPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-func (o LookupEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
-func (o LookupEndpointResultOutput) ModelId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.ModelId }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.ModelId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the Endpoint.
-func (o LookupEndpointResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the endpoint.
-func (o LookupEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -168,13 +161,13 @@ func (o LookupEndpointResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the endpoint was created. An RFC3339 formatted datetime string.
-func (o LookupEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the endpoint was updated. An RFC3339 formatted datetime string.
-func (o LookupEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

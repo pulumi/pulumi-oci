@@ -17,6 +17,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser {
@@ -24,291 +26,291 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return Boolean value to prompt user to setup account recovery during login.
      * 
      */
-    private Boolean accountRecoveryRequired;
+    private @Nullable Boolean accountRecoveryRequired;
     /**
      * @return Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts;
     /**
      * @return A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles;
     /**
      * @return The app against which the user will authenticate. The value is not persisted but rather calculated. If the user&#39;s delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user&#39;s applicable Delegated Authentication Policy is returned.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps;
     /**
      * @return A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
      * 
      */
-    private Boolean bypassNotification;
+    private @Nullable Boolean bypassNotification;
     /**
      * @return User creation mechanism
      * 
      */
-    private String creationMechanism;
+    private @Nullable String creationMechanism;
     /**
      * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps;
     /**
      * @return A Boolean value indicating whether or not to hide the getting started page
      * 
      */
-    private Boolean doNotShowGettingStarted;
+    private @Nullable Boolean doNotShowGettingStarted;
     /**
      * @return Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
     /**
      * @return Specifies date time when a User&#39;s group membership was last modified.
      * 
      */
-    private String groupMembershipLastModified;
+    private @Nullable String groupMembershipLastModified;
     /**
      * @return Description:
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups;
     /**
      * @return A Boolean value indicating whether or not a user is enrolled for account recovery
      * 
      */
-    private Boolean isAccountRecoveryEnrolled;
+    private @Nullable Boolean isAccountRecoveryEnrolled;
     /**
      * @return A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
      * 
      */
-    private Boolean isAuthenticationDelegated;
+    private @Nullable Boolean isAuthenticationDelegated;
     /**
      * @return A Boolean value indicating whether or not the user is federated.
      * 
      */
-    private Boolean isFederatedUser;
+    private @Nullable Boolean isFederatedUser;
     /**
      * @return A Boolean value indicating whether or not group membership is normalized for this user.
      * 
      */
-    private Boolean isGroupMembershipNormalized;
+    private @Nullable Boolean isGroupMembershipNormalized;
     /**
      * @return A Boolean value Indicates whether this User&#39;s group membership has been sync&#39;ed from Group.members to UsersGroups.
      * 
      */
-    private Boolean isGroupMembershipSyncedToUsersGroups;
+    private @Nullable Boolean isGroupMembershipSyncedToUsersGroups;
     /**
      * @return Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
      * 
      */
-    private String notificationEmailTemplateId;
+    private @Nullable String notificationEmailTemplateId;
     /**
      * @return User&#39;s preferred landing page following login, logout and reset password.
      * 
      */
-    private String preferredUiLandingPage;
+    private @Nullable String preferredUiLandingPage;
     /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return A list of Support Accounts corresponding to user.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
     /**
      * @return Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps;
     /**
      * @return A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
      * 
      */
-    private Boolean userFlowControlledByExternalClient;
+    private @Nullable Boolean userFlowControlledByExternalClient;
     /**
      * @return User Support Account Provider
      * 
      */
-    private String userProvider;
+    private @Nullable String userProvider;
     /**
      * @return User token returned if userFlowControlledByExternalClient is true
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser() {}
     /**
      * @return Boolean value to prompt user to setup account recovery during login.
      * 
      */
-    public Boolean accountRecoveryRequired() {
-        return this.accountRecoveryRequired;
+    public Optional<Boolean> accountRecoveryRequired() {
+        return Optional.ofNullable(this.accountRecoveryRequired);
     }
     /**
      * @return Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts() {
-        return this.accounts;
+        return this.accounts == null ? List.of() : this.accounts;
     }
     /**
      * @return A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles() {
-        return this.appRoles;
+        return this.appRoles == null ? List.of() : this.appRoles;
     }
     /**
      * @return The app against which the user will authenticate. The value is not persisted but rather calculated. If the user&#39;s delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user&#39;s applicable Delegated Authentication Policy is returned.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps() {
-        return this.applicableAuthenticationTargetApps;
+        return this.applicableAuthenticationTargetApps == null ? List.of() : this.applicableAuthenticationTargetApps;
     }
     /**
      * @return A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
      * 
      */
-    public Boolean bypassNotification() {
-        return this.bypassNotification;
+    public Optional<Boolean> bypassNotification() {
+        return Optional.ofNullable(this.bypassNotification);
     }
     /**
      * @return User creation mechanism
      * 
      */
-    public String creationMechanism() {
-        return this.creationMechanism;
+    public Optional<String> creationMechanism() {
+        return Optional.ofNullable(this.creationMechanism);
     }
     /**
      * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps() {
-        return this.delegatedAuthenticationTargetApps;
+        return this.delegatedAuthenticationTargetApps == null ? List.of() : this.delegatedAuthenticationTargetApps;
     }
     /**
      * @return A Boolean value indicating whether or not to hide the getting started page
      * 
      */
-    public Boolean doNotShowGettingStarted() {
-        return this.doNotShowGettingStarted;
+    public Optional<Boolean> doNotShowGettingStarted() {
+        return Optional.ofNullable(this.doNotShowGettingStarted);
     }
     /**
      * @return Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants() {
-        return this.grants;
+        return this.grants == null ? List.of() : this.grants;
     }
     /**
      * @return Specifies date time when a User&#39;s group membership was last modified.
      * 
      */
-    public String groupMembershipLastModified() {
-        return this.groupMembershipLastModified;
+    public Optional<String> groupMembershipLastModified() {
+        return Optional.ofNullable(this.groupMembershipLastModified);
     }
     /**
      * @return Description:
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups() {
-        return this.idcsAppRolesLimitedToGroups;
+        return this.idcsAppRolesLimitedToGroups == null ? List.of() : this.idcsAppRolesLimitedToGroups;
     }
     /**
      * @return A Boolean value indicating whether or not a user is enrolled for account recovery
      * 
      */
-    public Boolean isAccountRecoveryEnrolled() {
-        return this.isAccountRecoveryEnrolled;
+    public Optional<Boolean> isAccountRecoveryEnrolled() {
+        return Optional.ofNullable(this.isAccountRecoveryEnrolled);
     }
     /**
      * @return A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
      * 
      */
-    public Boolean isAuthenticationDelegated() {
-        return this.isAuthenticationDelegated;
+    public Optional<Boolean> isAuthenticationDelegated() {
+        return Optional.ofNullable(this.isAuthenticationDelegated);
     }
     /**
      * @return A Boolean value indicating whether or not the user is federated.
      * 
      */
-    public Boolean isFederatedUser() {
-        return this.isFederatedUser;
+    public Optional<Boolean> isFederatedUser() {
+        return Optional.ofNullable(this.isFederatedUser);
     }
     /**
      * @return A Boolean value indicating whether or not group membership is normalized for this user.
      * 
      */
-    public Boolean isGroupMembershipNormalized() {
-        return this.isGroupMembershipNormalized;
+    public Optional<Boolean> isGroupMembershipNormalized() {
+        return Optional.ofNullable(this.isGroupMembershipNormalized);
     }
     /**
      * @return A Boolean value Indicates whether this User&#39;s group membership has been sync&#39;ed from Group.members to UsersGroups.
      * 
      */
-    public Boolean isGroupMembershipSyncedToUsersGroups() {
-        return this.isGroupMembershipSyncedToUsersGroups;
+    public Optional<Boolean> isGroupMembershipSyncedToUsersGroups() {
+        return Optional.ofNullable(this.isGroupMembershipSyncedToUsersGroups);
     }
     /**
      * @return Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
      * 
      */
-    public String notificationEmailTemplateId() {
-        return this.notificationEmailTemplateId;
+    public Optional<String> notificationEmailTemplateId() {
+        return Optional.ofNullable(this.notificationEmailTemplateId);
     }
     /**
      * @return User&#39;s preferred landing page following login, logout and reset password.
      * 
      */
-    public String preferredUiLandingPage() {
-        return this.preferredUiLandingPage;
+    public Optional<String> preferredUiLandingPage() {
+        return Optional.ofNullable(this.preferredUiLandingPage);
     }
     /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return A list of Support Accounts corresponding to user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts() {
-        return this.supportAccounts;
+        return this.supportAccounts == null ? List.of() : this.supportAccounts;
     }
     /**
      * @return Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps() {
-        return this.syncedFromApps;
+        return this.syncedFromApps == null ? List.of() : this.syncedFromApps;
     }
     /**
      * @return A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
      * 
      */
-    public Boolean userFlowControlledByExternalClient() {
-        return this.userFlowControlledByExternalClient;
+    public Optional<Boolean> userFlowControlledByExternalClient() {
+        return Optional.ofNullable(this.userFlowControlledByExternalClient);
     }
     /**
      * @return User Support Account Provider
      * 
      */
-    public String userProvider() {
-        return this.userProvider;
+    public Optional<String> userProvider() {
+        return Optional.ofNullable(this.userProvider);
     }
     /**
      * @return User token returned if userFlowControlledByExternalClient is true
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens() {
-        return this.userTokens;
+        return this.userTokens == null ? List.of() : this.userTokens;
     }
 
     public static Builder builder() {
@@ -320,30 +322,30 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean accountRecoveryRequired;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps;
-        private Boolean bypassNotification;
-        private String creationMechanism;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps;
-        private Boolean doNotShowGettingStarted;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
-        private String groupMembershipLastModified;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups;
-        private Boolean isAccountRecoveryEnrolled;
-        private Boolean isAuthenticationDelegated;
-        private Boolean isFederatedUser;
-        private Boolean isGroupMembershipNormalized;
-        private Boolean isGroupMembershipSyncedToUsersGroups;
-        private String notificationEmailTemplateId;
-        private String preferredUiLandingPage;
-        private String status;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps;
-        private Boolean userFlowControlledByExternalClient;
-        private String userProvider;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens;
+        private @Nullable Boolean accountRecoveryRequired;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps;
+        private @Nullable Boolean bypassNotification;
+        private @Nullable String creationMechanism;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps;
+        private @Nullable Boolean doNotShowGettingStarted;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
+        private @Nullable String groupMembershipLastModified;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups;
+        private @Nullable Boolean isAccountRecoveryEnrolled;
+        private @Nullable Boolean isAuthenticationDelegated;
+        private @Nullable Boolean isFederatedUser;
+        private @Nullable Boolean isGroupMembershipNormalized;
+        private @Nullable Boolean isGroupMembershipSyncedToUsersGroups;
+        private @Nullable String notificationEmailTemplateId;
+        private @Nullable String preferredUiLandingPage;
+        private @Nullable String status;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps;
+        private @Nullable Boolean userFlowControlledByExternalClient;
+        private @Nullable String userProvider;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -374,147 +376,147 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder accountRecoveryRequired(Boolean accountRecoveryRequired) {
-            this.accountRecoveryRequired = Objects.requireNonNull(accountRecoveryRequired);
+        public Builder accountRecoveryRequired(@Nullable Boolean accountRecoveryRequired) {
+            this.accountRecoveryRequired = accountRecoveryRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder accounts(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts) {
-            this.accounts = Objects.requireNonNull(accounts);
+        public Builder accounts(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts) {
+            this.accounts = accounts;
             return this;
         }
         public Builder accounts(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount... accounts) {
             return accounts(List.of(accounts));
         }
         @CustomType.Setter
-        public Builder appRoles(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles) {
-            this.appRoles = Objects.requireNonNull(appRoles);
+        public Builder appRoles(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles) {
+            this.appRoles = appRoles;
             return this;
         }
         public Builder appRoles(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole... appRoles) {
             return appRoles(List.of(appRoles));
         }
         @CustomType.Setter
-        public Builder applicableAuthenticationTargetApps(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps) {
-            this.applicableAuthenticationTargetApps = Objects.requireNonNull(applicableAuthenticationTargetApps);
+        public Builder applicableAuthenticationTargetApps(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps) {
+            this.applicableAuthenticationTargetApps = applicableAuthenticationTargetApps;
             return this;
         }
         public Builder applicableAuthenticationTargetApps(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp... applicableAuthenticationTargetApps) {
             return applicableAuthenticationTargetApps(List.of(applicableAuthenticationTargetApps));
         }
         @CustomType.Setter
-        public Builder bypassNotification(Boolean bypassNotification) {
-            this.bypassNotification = Objects.requireNonNull(bypassNotification);
+        public Builder bypassNotification(@Nullable Boolean bypassNotification) {
+            this.bypassNotification = bypassNotification;
             return this;
         }
         @CustomType.Setter
-        public Builder creationMechanism(String creationMechanism) {
-            this.creationMechanism = Objects.requireNonNull(creationMechanism);
+        public Builder creationMechanism(@Nullable String creationMechanism) {
+            this.creationMechanism = creationMechanism;
             return this;
         }
         @CustomType.Setter
-        public Builder delegatedAuthenticationTargetApps(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps) {
-            this.delegatedAuthenticationTargetApps = Objects.requireNonNull(delegatedAuthenticationTargetApps);
+        public Builder delegatedAuthenticationTargetApps(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps) {
+            this.delegatedAuthenticationTargetApps = delegatedAuthenticationTargetApps;
             return this;
         }
         public Builder delegatedAuthenticationTargetApps(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp... delegatedAuthenticationTargetApps) {
             return delegatedAuthenticationTargetApps(List.of(delegatedAuthenticationTargetApps));
         }
         @CustomType.Setter
-        public Builder doNotShowGettingStarted(Boolean doNotShowGettingStarted) {
-            this.doNotShowGettingStarted = Objects.requireNonNull(doNotShowGettingStarted);
+        public Builder doNotShowGettingStarted(@Nullable Boolean doNotShowGettingStarted) {
+            this.doNotShowGettingStarted = doNotShowGettingStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder grants(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+        public Builder grants(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants) {
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant... grants) {
             return grants(List.of(grants));
         }
         @CustomType.Setter
-        public Builder groupMembershipLastModified(String groupMembershipLastModified) {
-            this.groupMembershipLastModified = Objects.requireNonNull(groupMembershipLastModified);
+        public Builder groupMembershipLastModified(@Nullable String groupMembershipLastModified) {
+            this.groupMembershipLastModified = groupMembershipLastModified;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAppRolesLimitedToGroups(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups) {
-            this.idcsAppRolesLimitedToGroups = Objects.requireNonNull(idcsAppRolesLimitedToGroups);
+        public Builder idcsAppRolesLimitedToGroups(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups) {
+            this.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             return this;
         }
         public Builder idcsAppRolesLimitedToGroups(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup... idcsAppRolesLimitedToGroups) {
             return idcsAppRolesLimitedToGroups(List.of(idcsAppRolesLimitedToGroups));
         }
         @CustomType.Setter
-        public Builder isAccountRecoveryEnrolled(Boolean isAccountRecoveryEnrolled) {
-            this.isAccountRecoveryEnrolled = Objects.requireNonNull(isAccountRecoveryEnrolled);
+        public Builder isAccountRecoveryEnrolled(@Nullable Boolean isAccountRecoveryEnrolled) {
+            this.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             return this;
         }
         @CustomType.Setter
-        public Builder isAuthenticationDelegated(Boolean isAuthenticationDelegated) {
-            this.isAuthenticationDelegated = Objects.requireNonNull(isAuthenticationDelegated);
+        public Builder isAuthenticationDelegated(@Nullable Boolean isAuthenticationDelegated) {
+            this.isAuthenticationDelegated = isAuthenticationDelegated;
             return this;
         }
         @CustomType.Setter
-        public Builder isFederatedUser(Boolean isFederatedUser) {
-            this.isFederatedUser = Objects.requireNonNull(isFederatedUser);
+        public Builder isFederatedUser(@Nullable Boolean isFederatedUser) {
+            this.isFederatedUser = isFederatedUser;
             return this;
         }
         @CustomType.Setter
-        public Builder isGroupMembershipNormalized(Boolean isGroupMembershipNormalized) {
-            this.isGroupMembershipNormalized = Objects.requireNonNull(isGroupMembershipNormalized);
+        public Builder isGroupMembershipNormalized(@Nullable Boolean isGroupMembershipNormalized) {
+            this.isGroupMembershipNormalized = isGroupMembershipNormalized;
             return this;
         }
         @CustomType.Setter
-        public Builder isGroupMembershipSyncedToUsersGroups(Boolean isGroupMembershipSyncedToUsersGroups) {
-            this.isGroupMembershipSyncedToUsersGroups = Objects.requireNonNull(isGroupMembershipSyncedToUsersGroups);
+        public Builder isGroupMembershipSyncedToUsersGroups(@Nullable Boolean isGroupMembershipSyncedToUsersGroups) {
+            this.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             return this;
         }
         @CustomType.Setter
-        public Builder notificationEmailTemplateId(String notificationEmailTemplateId) {
-            this.notificationEmailTemplateId = Objects.requireNonNull(notificationEmailTemplateId);
+        public Builder notificationEmailTemplateId(@Nullable String notificationEmailTemplateId) {
+            this.notificationEmailTemplateId = notificationEmailTemplateId;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredUiLandingPage(String preferredUiLandingPage) {
-            this.preferredUiLandingPage = Objects.requireNonNull(preferredUiLandingPage);
+        public Builder preferredUiLandingPage(@Nullable String preferredUiLandingPage) {
+            this.preferredUiLandingPage = preferredUiLandingPage;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder supportAccounts(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts) {
-            this.supportAccounts = Objects.requireNonNull(supportAccounts);
+        public Builder supportAccounts(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts) {
+            this.supportAccounts = supportAccounts;
             return this;
         }
         public Builder supportAccounts(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount... supportAccounts) {
             return supportAccounts(List.of(supportAccounts));
         }
         @CustomType.Setter
-        public Builder syncedFromApps(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps) {
-            this.syncedFromApps = Objects.requireNonNull(syncedFromApps);
+        public Builder syncedFromApps(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps) {
+            this.syncedFromApps = syncedFromApps;
             return this;
         }
         public Builder syncedFromApps(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp... syncedFromApps) {
             return syncedFromApps(List.of(syncedFromApps));
         }
         @CustomType.Setter
-        public Builder userFlowControlledByExternalClient(Boolean userFlowControlledByExternalClient) {
-            this.userFlowControlledByExternalClient = Objects.requireNonNull(userFlowControlledByExternalClient);
+        public Builder userFlowControlledByExternalClient(@Nullable Boolean userFlowControlledByExternalClient) {
+            this.userFlowControlledByExternalClient = userFlowControlledByExternalClient;
             return this;
         }
         @CustomType.Setter
-        public Builder userProvider(String userProvider) {
-            this.userProvider = Objects.requireNonNull(userProvider);
+        public Builder userProvider(@Nullable String userProvider) {
+            this.userProvider = userProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder userTokens(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens) {
-            this.userTokens = Objects.requireNonNull(userTokens);
+        public Builder userTokens(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens) {
+            this.userTokens = userTokens;
             return this;
         }
         public Builder userTokens(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken... userTokens) {

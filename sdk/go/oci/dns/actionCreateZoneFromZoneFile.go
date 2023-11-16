@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
@@ -73,32 +72,32 @@ type ActionCreateZoneFromZoneFile struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrOutput `pulumi:"isProtected"`
 	// The name of the zone.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// The authoritative nameservers for the zone.
 	Nameservers ActionCreateZoneFromZoneFileNameserverArrayOutput `pulumi:"nameservers"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringOutput `pulumi:"self"`
+	Self pulumi.StringPtrOutput `pulumi:"self"`
 	// The current serial of the zone. As seen in the zone's SOA record.
-	Serial pulumi.StringOutput `pulumi:"serial"`
+	Serial pulumi.StringPtrOutput `pulumi:"serial"`
 	// The current state of the zone resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 	// The OCID of the view the resource is associated with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ViewId pulumi.StringOutput `pulumi:"viewId"`
+	ViewId pulumi.StringPtrOutput `pulumi:"viewId"`
 	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
 	ZoneTransferServers ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput `pulumi:"zoneTransferServers"`
 	// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
-	ZoneType pulumi.StringOutput `pulumi:"zoneType"`
+	ZoneType pulumi.StringPtrOutput `pulumi:"zoneType"`
 }
 
 // NewActionCreateZoneFromZoneFile registers a new resource with the given unique name, arguments, and options.
@@ -276,12 +275,6 @@ func (i *ActionCreateZoneFromZoneFile) ToActionCreateZoneFromZoneFileOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileOutput)
 }
 
-func (i *ActionCreateZoneFromZoneFile) ToOutput(ctx context.Context) pulumix.Output[*ActionCreateZoneFromZoneFile] {
-	return pulumix.Output[*ActionCreateZoneFromZoneFile]{
-		OutputState: i.ToActionCreateZoneFromZoneFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ActionCreateZoneFromZoneFileArrayInput is an input type that accepts ActionCreateZoneFromZoneFileArray and ActionCreateZoneFromZoneFileArrayOutput values.
 // You can construct a concrete instance of `ActionCreateZoneFromZoneFileArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i ActionCreateZoneFromZoneFileArray) ToActionCreateZoneFromZoneFileArrayOu
 
 func (i ActionCreateZoneFromZoneFileArray) ToActionCreateZoneFromZoneFileArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileArrayOutput)
-}
-
-func (i ActionCreateZoneFromZoneFileArray) ToOutput(ctx context.Context) pulumix.Output[[]*ActionCreateZoneFromZoneFile] {
-	return pulumix.Output[[]*ActionCreateZoneFromZoneFile]{
-		OutputState: i.ToActionCreateZoneFromZoneFileArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ActionCreateZoneFromZoneFileMapInput is an input type that accepts ActionCreateZoneFromZoneFileMap and ActionCreateZoneFromZoneFileMapOutput values.
@@ -338,12 +325,6 @@ func (i ActionCreateZoneFromZoneFileMap) ToActionCreateZoneFromZoneFileMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileMapOutput)
 }
 
-func (i ActionCreateZoneFromZoneFileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ActionCreateZoneFromZoneFile] {
-	return pulumix.Output[map[string]*ActionCreateZoneFromZoneFile]{
-		OutputState: i.ToActionCreateZoneFromZoneFileMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ActionCreateZoneFromZoneFileOutput struct{ *pulumi.OutputState }
 
 func (ActionCreateZoneFromZoneFileOutput) ElementType() reflect.Type {
@@ -356,12 +337,6 @@ func (o ActionCreateZoneFromZoneFileOutput) ToActionCreateZoneFromZoneFileOutput
 
 func (o ActionCreateZoneFromZoneFileOutput) ToActionCreateZoneFromZoneFileOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileOutput) ToOutput(ctx context.Context) pulumix.Output[*ActionCreateZoneFromZoneFile] {
-	return pulumix.Output[*ActionCreateZoneFromZoneFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment the resource belongs to.
@@ -399,13 +374,13 @@ func (o ActionCreateZoneFromZoneFileOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o ActionCreateZoneFromZoneFileOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.BoolOutput { return v.IsProtected }).(pulumi.BoolOutput)
+func (o ActionCreateZoneFromZoneFileOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.BoolPtrOutput { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the zone.
-func (o ActionCreateZoneFromZoneFileOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The authoritative nameservers for the zone.
@@ -416,41 +391,41 @@ func (o ActionCreateZoneFromZoneFileOutput) Nameservers() ActionCreateZoneFromZo
 }
 
 // Specifies to operate only on resources that have a matching DNS scope.
-func (o ActionCreateZoneFromZoneFileOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o ActionCreateZoneFromZoneFileOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.Self }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current serial of the zone. As seen in the zone's SOA record.
-func (o ActionCreateZoneFromZoneFileOutput) Serial() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.Serial }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) Serial() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.Serial }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the zone resource.
-func (o ActionCreateZoneFromZoneFileOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ActionCreateZoneFromZoneFileOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-func (o ActionCreateZoneFromZoneFileOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the view the resource is associated with.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ActionCreateZoneFromZoneFileOutput) ViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.ViewId }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) ViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.ViewId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
@@ -461,8 +436,8 @@ func (o ActionCreateZoneFromZoneFileOutput) ZoneTransferServers() ActionCreateZo
 }
 
 // The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
-func (o ActionCreateZoneFromZoneFileOutput) ZoneType() pulumi.StringOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.ZoneType }).(pulumi.StringOutput)
+func (o ActionCreateZoneFromZoneFileOutput) ZoneType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringPtrOutput { return v.ZoneType }).(pulumi.StringPtrOutput)
 }
 
 type ActionCreateZoneFromZoneFileArrayOutput struct{ *pulumi.OutputState }
@@ -477,12 +452,6 @@ func (o ActionCreateZoneFromZoneFileArrayOutput) ToActionCreateZoneFromZoneFileA
 
 func (o ActionCreateZoneFromZoneFileArrayOutput) ToActionCreateZoneFromZoneFileArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileArrayOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ActionCreateZoneFromZoneFile] {
-	return pulumix.Output[[]*ActionCreateZoneFromZoneFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ActionCreateZoneFromZoneFileArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileOutput {
@@ -503,12 +472,6 @@ func (o ActionCreateZoneFromZoneFileMapOutput) ToActionCreateZoneFromZoneFileMap
 
 func (o ActionCreateZoneFromZoneFileMapOutput) ToActionCreateZoneFromZoneFileMapOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileMapOutput {
 	return o
-}
-
-func (o ActionCreateZoneFromZoneFileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ActionCreateZoneFromZoneFile] {
-	return pulumix.Output[map[string]*ActionCreateZoneFromZoneFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ActionCreateZoneFromZoneFileMapOutput) MapIndex(k pulumi.StringInput) ActionCreateZoneFromZoneFileOutput {

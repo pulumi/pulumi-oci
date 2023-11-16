@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion {
@@ -14,12 +15,12 @@ public final class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabi
      * @return List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter &#39;argumentName=argumentValue&#39; and args=[&#39;argumentName&#39;], both &#39;argumentName&#39; and &#39;argumentValue&#39; will not be inspected.
      * 
      */
-    private List<String> args;
+    private @Nullable List<String> args;
     /**
      * @return List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie &#39;cookieName=cookieValue&#39; and requestCookies=[&#39;cookieName&#39;], both &#39;cookieName&#39; and &#39;cookieValue&#39; will not be inspected.
      * 
      */
-    private List<String> requestCookies;
+    private @Nullable List<String> requestCookies;
 
     private GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion() {}
     /**
@@ -27,14 +28,14 @@ public final class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabi
      * 
      */
     public List<String> args() {
-        return this.args;
+        return this.args == null ? List.of() : this.args;
     }
     /**
      * @return List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie &#39;cookieName=cookieValue&#39; and requestCookies=[&#39;cookieName&#39;], both &#39;cookieName&#39; and &#39;cookieValue&#39; will not be inspected.
      * 
      */
     public List<String> requestCookies() {
-        return this.requestCookies;
+        return this.requestCookies == null ? List.of() : this.requestCookies;
     }
 
     public static Builder builder() {
@@ -46,8 +47,8 @@ public final class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabi
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> args;
-        private List<String> requestCookies;
+        private @Nullable List<String> args;
+        private @Nullable List<String> requestCookies;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +57,16 @@ public final class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabi
         }
 
         @CustomType.Setter
-        public Builder args(List<String> args) {
-            this.args = Objects.requireNonNull(args);
+        public Builder args(@Nullable List<String> args) {
+            this.args = args;
             return this;
         }
         public Builder args(String... args) {
             return args(List.of(args));
         }
         @CustomType.Setter
-        public Builder requestCookies(List<String> requestCookies) {
-            this.requestCookies = Objects.requireNonNull(requestCookies);
+        public Builder requestCookies(@Nullable List<String> requestCookies) {
+            this.requestCookies = requestCookies;
             return this;
         }
         public Builder requestCookies(String... requestCookies) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -60,10 +59,10 @@ type GetLogSetsCountArgs struct {
 // A collection of values returned by getLogSetsCount.
 type GetLogSetsCountResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// This is the total number of log sets the tenancy has configured.
-	LogSetsCount string `pulumi:"logSetsCount"`
-	Namespace    string `pulumi:"namespace"`
+	LogSetsCount *string `pulumi:"logSetsCount"`
+	Namespace    string  `pulumi:"namespace"`
 }
 
 func GetLogSetsCountOutput(ctx *pulumi.Context, args GetLogSetsCountOutputArgs, opts ...pulumi.InvokeOption) GetLogSetsCountResultOutput {
@@ -104,20 +103,14 @@ func (o GetLogSetsCountResultOutput) ToGetLogSetsCountResultOutputWithContext(ct
 	return o
 }
 
-func (o GetLogSetsCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogSetsCountResult] {
-	return pulumix.Output[GetLogSetsCountResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogSetsCountResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogSetsCountResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogSetsCountResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogSetsCountResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // This is the total number of log sets the tenancy has configured.
-func (o GetLogSetsCountResultOutput) LogSetsCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogSetsCountResult) string { return v.LogSetsCount }).(pulumi.StringOutput)
+func (o GetLogSetsCountResultOutput) LogSetsCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogSetsCountResult) *string { return v.LogSetsCount }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLogSetsCountResultOutput) Namespace() pulumi.StringOutput {

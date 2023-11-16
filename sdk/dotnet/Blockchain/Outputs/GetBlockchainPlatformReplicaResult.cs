@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// Number of CA replicas
         /// </summary>
-        public readonly int CaCount;
+        public readonly int? CaCount;
         /// <summary>
         /// Number of console replicas
         /// </summary>
-        public readonly int ConsoleCount;
+        public readonly int? ConsoleCount;
         /// <summary>
         /// Number of REST proxy replicas
         /// </summary>
-        public readonly int ProxyCount;
+        public readonly int? ProxyCount;
 
         [OutputConstructor]
         private GetBlockchainPlatformReplicaResult(
-            int caCount,
+            int? caCount,
 
-            int consoleCount,
+            int? consoleCount,
 
-            int proxyCount)
+            int? proxyCount)
         {
             CaCount = caCount;
             ConsoleCount = consoleCount;

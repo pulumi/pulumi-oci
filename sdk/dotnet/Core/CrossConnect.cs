@@ -97,37 +97,37 @@ namespace Pulumi.Oci.Core
         /// The OCID of the cross-connect group to put this cross-connect in.
         /// </summary>
         [Output("crossConnectGroupId")]
-        public Output<string> CrossConnectGroupId { get; private set; } = null!;
+        public Output<string?> CrossConnectGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
         /// </summary>
         [Output("customerReferenceName")]
-        public Output<string> CustomerReferenceName { get; private set; } = null!;
+        public Output<string?> CustomerReferenceName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         /// </summary>
         [Output("farCrossConnectOrCrossConnectGroupId")]
-        public Output<string> FarCrossConnectOrCrossConnectGroupId { get; private set; } = null!;
+        public Output<string?> FarCrossConnectOrCrossConnectGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
@@ -145,31 +145,31 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Output("macsecProperties")]
-        public Output<Outputs.CrossConnectMacsecProperties> MacsecProperties { get; private set; } = null!;
+        public Output<Outputs.CrossConnectMacsecProperties?> MacsecProperties { get; private set; } = null!;
 
         /// <summary>
         /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         /// </summary>
         [Output("nearCrossConnectOrCrossConnectGroupId")]
-        public Output<string> NearCrossConnectOrCrossConnectGroupId { get; private set; } = null!;
+        public Output<string?> NearCrossConnectOrCrossConnectGroupId { get; private set; } = null!;
 
         /// <summary>
         /// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         /// </summary>
         [Output("ociLogicalDeviceName")]
-        public Output<string> OciLogicalDeviceName { get; private set; } = null!;
+        public Output<string?> OciLogicalDeviceName { get; private set; } = null!;
 
         /// <summary>
         /// The FastConnect device that terminates the physical connection.
         /// </summary>
         [Output("ociPhysicalDeviceName")]
-        public Output<string> OciPhysicalDeviceName { get; private set; } = null!;
+        public Output<string?> OciPhysicalDeviceName { get; private set; } = null!;
 
         /// <summary>
         /// A string identifying the meet-me room port for this cross-connect.
         /// </summary>
         [Output("portName")]
-        public Output<string> PortName { get; private set; } = null!;
+        public Output<string?> PortName { get; private set; } = null!;
 
         /// <summary>
         /// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
@@ -185,13 +185,13 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Indicates whether or not MACsec is enabled.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

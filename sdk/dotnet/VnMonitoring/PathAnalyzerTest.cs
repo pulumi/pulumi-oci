@@ -99,7 +99,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
@@ -111,13 +111,13 @@ namespace Pulumi.Oci.VnMonitoring
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
@@ -129,13 +129,13 @@ namespace Pulumi.Oci.VnMonitoring
         /// (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         /// </summary>
         [Output("protocolParameters")]
-        public Output<Outputs.PathAnalyzerTestProtocolParameters> ProtocolParameters { get; private set; } = null!;
+        public Output<Outputs.PathAnalyzerTestProtocolParameters?> ProtocolParameters { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
         /// </summary>
         [Output("queryOptions")]
-        public Output<Outputs.PathAnalyzerTestQueryOptions> QueryOptions { get; private set; } = null!;
+        public Output<Outputs.PathAnalyzerTestQueryOptions?> QueryOptions { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
@@ -147,25 +147,25 @@ namespace Pulumi.Oci.VnMonitoring
         /// The current state of the `PathAnalyzerTest` resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

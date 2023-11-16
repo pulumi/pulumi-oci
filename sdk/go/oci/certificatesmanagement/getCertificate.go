@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -63,43 +62,43 @@ type LookupCertificateResult struct {
 	// The OCID of the certificate.
 	CertificateId string `pulumi:"certificateId"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
-	CertificateProfileType string `pulumi:"certificateProfileType"`
+	CertificateProfileType *string `pulumi:"certificateProfileType"`
 	// The details of the certificate revocation list (CRL).
 	CertificateRevocationListDetails []GetCertificateCertificateRevocationListDetail `pulumi:"certificateRevocationListDetails"`
 	// A list of rules that control how the certificate is used and managed.
 	CertificateRules []GetCertificateCertificateRule `pulumi:"certificateRules"`
 	// The OCID of the compartment where you want to create the certificate.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The origin of the certificate.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificateCurrentVersion `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A brief description of the certificate. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the certificate.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
-	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
 	// Additional information about the current lifecycle state of the certificate.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The algorithm used to sign the public key certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// The current lifecycle state of the certificate.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects []GetCertificateSubject `pulumi:"subjects"`
 	// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 }
 
 func LookupCertificateOutput(ctx *pulumi.Context, args LookupCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupCertificateResultOutput {
@@ -140,12 +139,6 @@ func (o LookupCertificateResultOutput) ToLookupCertificateResultOutputWithContex
 	return o
 }
 
-func (o LookupCertificateResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCertificateResult] {
-	return pulumix.Output[LookupCertificateResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupCertificateResultOutput) CertificateConfigs() GetCertificateCertificateConfigArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []GetCertificateCertificateConfig { return v.CertificateConfigs }).(GetCertificateCertificateConfigArrayOutput)
 }
@@ -156,8 +149,8 @@ func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
 }
 
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
-func (o LookupCertificateResultOutput) CertificateProfileType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateProfileType }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) CertificateProfileType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.CertificateProfileType }).(pulumi.StringPtrOutput)
 }
 
 // The details of the certificate revocation list (CRL).
@@ -173,13 +166,13 @@ func (o LookupCertificateResultOutput) CertificateRules() GetCertificateCertific
 }
 
 // The OCID of the compartment where you want to create the certificate.
-func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The origin of the certificate.
-func (o LookupCertificateResultOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // The details of the certificate version. This object does not contain the certificate contents.
@@ -193,8 +186,8 @@ func (o LookupCertificateResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A brief description of the certificate. Avoid entering confidential information.
-func (o LookupCertificateResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -203,38 +196,38 @@ func (o LookupCertificateResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the certificate.
-func (o LookupCertificateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the certificate authority (CA) that issued the certificate.
-func (o LookupCertificateResultOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.IssuerCertificateAuthorityId }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.IssuerCertificateAuthorityId }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to create key pairs.
-func (o LookupCertificateResultOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the certificate.
-func (o LookupCertificateResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-func (o LookupCertificateResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to sign the public key certificate.
-func (o LookupCertificateResultOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the certificate.
-func (o LookupCertificateResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -243,13 +236,13 @@ func (o LookupCertificateResultOutput) Subjects() GetCertificateSubjectArrayOutp
 }
 
 // A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o LookupCertificateResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o LookupCertificateResultOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 func init() {

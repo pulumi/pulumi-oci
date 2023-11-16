@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
@@ -60,40 +59,40 @@ type LookupHttpMonitorArgs struct {
 // A collection of values returned by getHttpMonitor.
 type LookupHttpMonitorResult struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly and mutable name suitable for display in a user interface.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A dictionary of HTTP request headers.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
-	HomeRegion string `pulumi:"homeRegion"`
+	HomeRegion *string `pulumi:"homeRegion"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The monitor interval in seconds. Valid values: 10, 30, and 60.
-	IntervalInSeconds int `pulumi:"intervalInSeconds"`
+	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
 	// Enables or disables the monitor. Set to 'true' to launch monitoring.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The supported HTTP methods available for probes.
-	Method    string `pulumi:"method"`
-	MonitorId string `pulumi:"monitorId"`
+	Method    *string `pulumi:"method"`
+	MonitorId string  `pulumi:"monitorId"`
 	// The optional URL path to probe, including query parameters.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The supported protocols available for HTTP probes.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl string `pulumi:"resultsUrl"`
+	ResultsUrl *string `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets []string `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
@@ -136,15 +135,9 @@ func (o LookupHttpMonitorResultOutput) ToLookupHttpMonitorResultOutputWithContex
 	return o
 }
 
-func (o LookupHttpMonitorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupHttpMonitorResult] {
-	return pulumix.Output[LookupHttpMonitorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o LookupHttpMonitorResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -153,8 +146,8 @@ func (o LookupHttpMonitorResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly and mutable name suitable for display in a user interface.
-func (o LookupHttpMonitorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -168,28 +161,28 @@ func (o LookupHttpMonitorResultOutput) Headers() pulumi.MapOutput {
 }
 
 // The region where updates must be made and where results must be fetched from.
-func (o LookupHttpMonitorResultOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.HomeRegion }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource.
-func (o LookupHttpMonitorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The monitor interval in seconds. Valid values: 10, 30, and 60.
-func (o LookupHttpMonitorResultOutput) IntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
+func (o LookupHttpMonitorResultOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the monitor. Set to 'true' to launch monitoring.
-func (o LookupHttpMonitorResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupHttpMonitorResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The supported HTTP methods available for probes.
-func (o LookupHttpMonitorResultOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.Method }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupHttpMonitorResultOutput) MonitorId() pulumi.StringOutput {
@@ -197,23 +190,23 @@ func (o LookupHttpMonitorResultOutput) MonitorId() pulumi.StringOutput {
 }
 
 // The optional URL path to probe, including query parameters.
-func (o LookupHttpMonitorResultOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.Path }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-func (o LookupHttpMonitorResultOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) int { return v.Port }).(pulumi.IntOutput)
+func (o LookupHttpMonitorResultOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The supported protocols available for HTTP probes.
-func (o LookupHttpMonitorResultOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.Protocol }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // A URL for fetching the probe results.
-func (o LookupHttpMonitorResultOutput) ResultsUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.ResultsUrl }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) ResultsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.ResultsUrl }).(pulumi.StringPtrOutput)
 }
 
 // A list of targets (hostnames or IP addresses) of the probe.
@@ -222,13 +215,13 @@ func (o LookupHttpMonitorResultOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The RFC 3339-formatted creation date and time of the probe.
-func (o LookupHttpMonitorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupHttpMonitorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-func (o LookupHttpMonitorResultOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupHttpMonitorResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o LookupHttpMonitorResultOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupHttpMonitorResult) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // A list of names of vantage points from which to execute the probe.

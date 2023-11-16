@@ -21,7 +21,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isAccepted;
     private @Nullable Boolean isAdaptive;
     private @Nullable Boolean isEnabled;
@@ -48,7 +48,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
      * @return The list of sql_plan_baseline_collection.
      * 
      */
-    private List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections;
+    private @Nullable List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections;
     /**
      * @return The SQL text.
      * 
@@ -63,8 +63,8 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isAccepted() {
         return Optional.ofNullable(this.isAccepted);
@@ -113,7 +113,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
      * 
      */
     public List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections() {
-        return this.sqlPlanBaselineCollections;
+        return this.sqlPlanBaselineCollections == null ? List.of() : this.sqlPlanBaselineCollections;
     }
     /**
      * @return The SQL text.
@@ -133,7 +133,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseSqlPlanBaselinesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isAccepted;
         private @Nullable Boolean isAdaptive;
         private @Nullable Boolean isEnabled;
@@ -144,7 +144,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
         private @Nullable String origin;
         private @Nullable String planName;
         private @Nullable String sqlHandle;
-        private List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections;
+        private @Nullable List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections;
         private @Nullable String sqlText;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselinesResult defaults) {
@@ -174,8 +174,8 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -229,8 +229,8 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlPlanBaselineCollections(List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections) {
-            this.sqlPlanBaselineCollections = Objects.requireNonNull(sqlPlanBaselineCollections);
+        public Builder sqlPlanBaselineCollections(@Nullable List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections) {
+            this.sqlPlanBaselineCollections = sqlPlanBaselineCollections;
             return this;
         }
         public Builder sqlPlanBaselineCollections(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection... sqlPlanBaselineCollections) {

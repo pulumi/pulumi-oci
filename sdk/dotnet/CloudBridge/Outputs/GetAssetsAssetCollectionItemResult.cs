@@ -20,11 +20,11 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// The type of asset.
         /// </summary>
-        public readonly string AssetType;
+        public readonly string? AssetType;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Compute related properties.
         /// </summary>
@@ -32,47 +32,47 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// External asset key.
         /// </summary>
-        public readonly string ExternalAssetKey;
+        public readonly string? ExternalAssetKey;
         /// <summary>
         /// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Asset OCID that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique Inventory identifier.
         /// </summary>
-        public readonly string InventoryId;
+        public readonly string? InventoryId;
         /// <summary>
         /// Source key from where the assets originate.
         /// </summary>
-        public readonly string SourceKey;
+        public readonly string? SourceKey;
         /// <summary>
         /// A filter to return only assets whose lifecycleState matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time when the asset was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when the asset was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Virtual machine related properties.
         /// </summary>
@@ -90,33 +90,33 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         private GetAssetsAssetCollectionItemResult(
             ImmutableArray<string> assetSourceIds,
 
-            string assetType,
+            string? assetType,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetAssetsAssetCollectionItemComputeResult> computes,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string externalAssetKey,
+            string? externalAssetKey,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string inventoryId,
+            string? inventoryId,
 
-            string sourceKey,
+            string? sourceKey,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetAssetsAssetCollectionItemVmResult> vms,
 

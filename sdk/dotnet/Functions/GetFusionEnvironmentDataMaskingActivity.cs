@@ -127,20 +127,20 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
-        public readonly bool IsResumeDataMasking;
+        public readonly string? Id;
+        public readonly bool? IsResumeDataMasking;
         /// <summary>
         /// The current state of the DataMaskingActivity.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the data masking activity ended. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeMaskingFinish;
+        public readonly string? TimeMaskingFinish;
         /// <summary>
         /// The time the data masking activity started. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeMaskingStart;
+        public readonly string? TimeMaskingStart;
 
         [OutputConstructor]
         private GetFusionEnvironmentDataMaskingActivityResult(
@@ -148,15 +148,15 @@ namespace Pulumi.Oci.Functions
 
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
-            bool isResumeDataMasking,
+            bool? isResumeDataMasking,
 
-            string state,
+            string? state,
 
-            string timeMaskingFinish,
+            string? timeMaskingFinish,
 
-            string timeMaskingStart)
+            string? timeMaskingStart)
         {
             DataMaskingActivityId = dataMaskingActivityId;
             FusionEnvironmentId = fusionEnvironmentId;

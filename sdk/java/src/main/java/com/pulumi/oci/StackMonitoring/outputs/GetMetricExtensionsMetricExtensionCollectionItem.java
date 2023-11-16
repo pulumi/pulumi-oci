@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionsMetricExtensionCollectionItem {
@@ -19,247 +21,247 @@ public final class GetMetricExtensionsMetricExtensionCollectionItem {
      * @return Type of possible collection methods.
      * 
      */
-    private String collectionMethod;
+    private @Nullable String collectionMethod;
     /**
      * @return Schedule of metric extension should use RFC 5545 format &gt; recur-rule-part = &#34;FREQ&#34;;&#34;INTERVAL&#34; where FREQ rule part identifies the type of recurrence rule. Valid values are &#34;MINUTELY&#34;,&#34;HOURLY&#34;,&#34;DAILY&#34; to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
      * 
      */
-    private String collectionRecurrences;
+    private @Nullable String collectionRecurrences;
     /**
      * @return The ID of the compartment in which data is listed.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Created by user
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Description of the metric extension.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Display name of the metric.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return List of resource objects on which this metric extension is enabled.
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources;
     /**
      * @return Count of resources on which this metric extension is enabled.
      * 
      */
-    private Integer enabledOnResourcesCount;
+    private @Nullable Integer enabledOnResourcesCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Last updated by user
      * 
      */
-    private String lastUpdatedBy;
+    private @Nullable String lastUpdatedBy;
     /**
      * @return List of metrics which are part of this metric extension
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists;
     /**
      * @return A filter to return resources based on name.
      * 
      */
-    private String name;
-    private Boolean publishTrigger;
+    private @Nullable String name;
+    private @Nullable Boolean publishTrigger;
     /**
      * @return Collection method and query properties details of metric extension
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties;
     /**
      * @return A filter to return resources based on resource type.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The URI path that the user can do a GET on to access the metric extension metadata
      * 
      */
-    private String resourceUri;
+    private @Nullable String resourceUri;
     /**
      * @return A filter to return metric extensions based on Lifecycle State
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A filter to return resources based on status e.g. Draft or Published
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private String tenantId;
+    private @Nullable String tenantId;
     /**
      * @return Metric Extension creation time. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Metric Extension update time. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetMetricExtensionsMetricExtensionCollectionItem() {}
     /**
      * @return Type of possible collection methods.
      * 
      */
-    public String collectionMethod() {
-        return this.collectionMethod;
+    public Optional<String> collectionMethod() {
+        return Optional.ofNullable(this.collectionMethod);
     }
     /**
      * @return Schedule of metric extension should use RFC 5545 format &gt; recur-rule-part = &#34;FREQ&#34;;&#34;INTERVAL&#34; where FREQ rule part identifies the type of recurrence rule. Valid values are &#34;MINUTELY&#34;,&#34;HOURLY&#34;,&#34;DAILY&#34; to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
      * 
      */
-    public String collectionRecurrences() {
-        return this.collectionRecurrences;
+    public Optional<String> collectionRecurrences() {
+        return Optional.ofNullable(this.collectionRecurrences);
     }
     /**
      * @return The ID of the compartment in which data is listed.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Created by user
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Description of the metric extension.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Display name of the metric.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return List of resource objects on which this metric extension is enabled.
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources() {
-        return this.enabledOnResources;
+        return this.enabledOnResources == null ? List.of() : this.enabledOnResources;
     }
     /**
      * @return Count of resources on which this metric extension is enabled.
      * 
      */
-    public Integer enabledOnResourcesCount() {
-        return this.enabledOnResourcesCount;
+    public Optional<Integer> enabledOnResourcesCount() {
+        return Optional.ofNullable(this.enabledOnResourcesCount);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Last updated by user
      * 
      */
-    public String lastUpdatedBy() {
-        return this.lastUpdatedBy;
+    public Optional<String> lastUpdatedBy() {
+        return Optional.ofNullable(this.lastUpdatedBy);
     }
     /**
      * @return List of metrics which are part of this metric extension
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists() {
-        return this.metricLists;
+        return this.metricLists == null ? List.of() : this.metricLists;
     }
     /**
      * @return A filter to return resources based on name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
-    public Boolean publishTrigger() {
-        return this.publishTrigger;
+    public Optional<Boolean> publishTrigger() {
+        return Optional.ofNullable(this.publishTrigger);
     }
     /**
      * @return Collection method and query properties details of metric extension
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties() {
-        return this.queryProperties;
+        return this.queryProperties == null ? List.of() : this.queryProperties;
     }
     /**
      * @return A filter to return resources based on resource type.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return The URI path that the user can do a GET on to access the metric extension metadata
      * 
      */
-    public String resourceUri() {
-        return this.resourceUri;
+    public Optional<String> resourceUri() {
+        return Optional.ofNullable(this.resourceUri);
     }
     /**
      * @return A filter to return metric extensions based on Lifecycle State
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A filter to return resources based on status e.g. Draft or Published
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    public String tenantId() {
-        return this.tenantId;
+    public Optional<String> tenantId() {
+        return Optional.ofNullable(this.tenantId);
     }
     /**
      * @return Metric Extension creation time. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Metric Extension update time. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -271,27 +273,27 @@ public final class GetMetricExtensionsMetricExtensionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String collectionMethod;
-        private String collectionRecurrences;
-        private String compartmentId;
-        private String createdBy;
-        private String description;
-        private String displayName;
-        private List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources;
-        private Integer enabledOnResourcesCount;
-        private String id;
-        private String lastUpdatedBy;
-        private List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists;
-        private String name;
-        private Boolean publishTrigger;
-        private List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties;
-        private String resourceType;
-        private String resourceUri;
-        private String state;
-        private String status;
-        private String tenantId;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String collectionMethod;
+        private @Nullable String collectionRecurrences;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources;
+        private @Nullable Integer enabledOnResourcesCount;
+        private @Nullable String id;
+        private @Nullable String lastUpdatedBy;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists;
+        private @Nullable String name;
+        private @Nullable Boolean publishTrigger;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties;
+        private @Nullable String resourceType;
+        private @Nullable String resourceUri;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String tenantId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetMetricExtensionsMetricExtensionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -319,117 +321,117 @@ public final class GetMetricExtensionsMetricExtensionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder collectionMethod(String collectionMethod) {
-            this.collectionMethod = Objects.requireNonNull(collectionMethod);
+        public Builder collectionMethod(@Nullable String collectionMethod) {
+            this.collectionMethod = collectionMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder collectionRecurrences(String collectionRecurrences) {
-            this.collectionRecurrences = Objects.requireNonNull(collectionRecurrences);
+        public Builder collectionRecurrences(@Nullable String collectionRecurrences) {
+            this.collectionRecurrences = collectionRecurrences;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder enabledOnResources(List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources) {
-            this.enabledOnResources = Objects.requireNonNull(enabledOnResources);
+        public Builder enabledOnResources(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources) {
+            this.enabledOnResources = enabledOnResources;
             return this;
         }
         public Builder enabledOnResources(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource... enabledOnResources) {
             return enabledOnResources(List.of(enabledOnResources));
         }
         @CustomType.Setter
-        public Builder enabledOnResourcesCount(Integer enabledOnResourcesCount) {
-            this.enabledOnResourcesCount = Objects.requireNonNull(enabledOnResourcesCount);
+        public Builder enabledOnResourcesCount(@Nullable Integer enabledOnResourcesCount) {
+            this.enabledOnResourcesCount = enabledOnResourcesCount;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lastUpdatedBy(String lastUpdatedBy) {
-            this.lastUpdatedBy = Objects.requireNonNull(lastUpdatedBy);
+        public Builder lastUpdatedBy(@Nullable String lastUpdatedBy) {
+            this.lastUpdatedBy = lastUpdatedBy;
             return this;
         }
         @CustomType.Setter
-        public Builder metricLists(List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists) {
-            this.metricLists = Objects.requireNonNull(metricLists);
+        public Builder metricLists(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists) {
+            this.metricLists = metricLists;
             return this;
         }
         public Builder metricLists(GetMetricExtensionsMetricExtensionCollectionItemMetricList... metricLists) {
             return metricLists(List.of(metricLists));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder publishTrigger(Boolean publishTrigger) {
-            this.publishTrigger = Objects.requireNonNull(publishTrigger);
+        public Builder publishTrigger(@Nullable Boolean publishTrigger) {
+            this.publishTrigger = publishTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder queryProperties(List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties) {
-            this.queryProperties = Objects.requireNonNull(queryProperties);
+        public Builder queryProperties(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties) {
+            this.queryProperties = queryProperties;
             return this;
         }
         public Builder queryProperties(GetMetricExtensionsMetricExtensionCollectionItemQueryProperty... queryProperties) {
             return queryProperties(List.of(queryProperties));
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceUri(String resourceUri) {
-            this.resourceUri = Objects.requireNonNull(resourceUri);
+        public Builder resourceUri(@Nullable String resourceUri) {
+            this.resourceUri = resourceUri;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+        public Builder tenantId(@Nullable String tenantId) {
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItem build() {

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobsResultsDiscoveryJobResultCollection {
-    private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items;
+    private @Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items;
 
     private GetDiscoveryJobsResultsDiscoveryJobResultCollection() {}
     public List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items;
+        private @Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items;
         public Builder() {}
         public Builder(GetDiscoveryJobsResultsDiscoveryJobResultCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem... items) {

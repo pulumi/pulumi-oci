@@ -16,59 +16,59 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The architecture type supported by the Software Source
         /// </summary>
-        public readonly string ArchType;
+        public readonly string? ArchType;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// OCID of a software source
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current log from the management station plugin.
         /// </summary>
-        public readonly string Log;
+        public readonly string? Log;
         /// <summary>
         /// The OS family the Software Source belongs to
         /// </summary>
-        public readonly string OsFamily;
+        public readonly string? OsFamily;
         /// <summary>
         /// A decimal number representing the completness percentage
         /// </summary>
-        public readonly int Percentage;
+        public readonly int? Percentage;
         /// <summary>
         /// Current state of the mirror
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Timestamp of the last time the mirror was sync
         /// </summary>
-        public readonly string TimeLastSynced;
+        public readonly string? TimeLastSynced;
         /// <summary>
         /// Type of the mirror
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetManagementStationMirrorsMirrorsCollectionItemResult(
-            string archType,
+            string? archType,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string log,
+            string? log,
 
-            string osFamily,
+            string? osFamily,
 
-            int percentage,
+            int? percentage,
 
-            string state,
+            string? state,
 
-            string timeLastSynced,
+            string? timeLastSynced,
 
-            string type)
+            string? type)
         {
             ArchType = archType;
             DisplayName = displayName;

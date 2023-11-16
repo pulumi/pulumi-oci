@@ -166,7 +166,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetEtlRunsResult(
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.EmWarehouse
 
             ImmutableArray<Outputs.GetEtlRunsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

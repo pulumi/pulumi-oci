@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorConfigurationClientCertificateDetailPrivateKey {
@@ -13,27 +15,27 @@ public final class GetMonitorConfigurationClientCertificateDetailPrivateKey {
      * @return Content of the private key file.
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return Name of the private key file.
      * 
      */
-    private String fileName;
+    private @Nullable String fileName;
 
     private GetMonitorConfigurationClientCertificateDetailPrivateKey() {}
     /**
      * @return Content of the private key file.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return Name of the private key file.
      * 
      */
-    public String fileName() {
-        return this.fileName;
+    public Optional<String> fileName() {
+        return Optional.ofNullable(this.fileName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMonitorConfigurationClientCertificateDetailPrivateKey {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
-        private String fileName;
+        private @Nullable String content;
+        private @Nullable String fileName;
         public Builder() {}
         public Builder(GetMonitorConfigurationClientCertificateDetailPrivateKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMonitorConfigurationClientCertificateDetailPrivateKey {
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+        public Builder fileName(@Nullable String fileName) {
+            this.fileName = fileName;
             return this;
         }
         public GetMonitorConfigurationClientCertificateDetailPrivateKey build() {

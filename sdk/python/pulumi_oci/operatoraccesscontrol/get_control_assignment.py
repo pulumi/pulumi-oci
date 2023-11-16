@@ -112,114 +112,72 @@ class GetControlAssignmentResult:
 
     @property
     @pulumi.getter(name="assignerId")
-    def assigner_id(self) -> str:
-        """
-        The OCID of the user who created this operator control assignment.
-        """
+    def assigner_id(self) -> Optional[str]:
         return pulumi.get(self, "assigner_id")
 
     @property
     @pulumi.getter
-    def comment(self) -> str:
-        """
-        Comment about the assignment of the operator control to this target resource.
-        """
+    def comment(self) -> Optional[str]:
         return pulumi.get(self, "comment")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the comparment that contains the operator control assignment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="detachmentDescription")
-    def detachment_description(self) -> str:
-        """
-        description containing reason for releasing of OperatorControl.
-        """
+    def detachment_description(self) -> Optional[str]:
         return pulumi.get(self, "detachment_description")
 
     @property
     @pulumi.getter(name="errorCode")
-    def error_code(self) -> int:
-        """
-        The code identifying the error occurred during Assignment operation.
-        """
+    def error_code(self) -> Optional[int]:
         return pulumi.get(self, "error_code")
 
     @property
     @pulumi.getter(name="errorMessage")
-    def error_message(self) -> str:
-        """
-        The message describing the error occurred during Assignment operation.
-        """
+    def error_message(self) -> Optional[str]:
         return pulumi.get(self, "error_message")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the operator control assignment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoApproveDuringMaintenance")
-    def is_auto_approve_during_maintenance(self) -> bool:
-        """
-        The boolean if true would autoApprove during maintenance.
-        """
+    def is_auto_approve_during_maintenance(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_approve_during_maintenance")
 
     @property
     @pulumi.getter(name="isDefaultAssignment")
-    def is_default_assignment(self) -> bool:
-        """
-        Whether the assignment is a default assignment.
-        """
+    def is_default_assignment(self) -> Optional[bool]:
         return pulumi.get(self, "is_default_assignment")
 
     @property
     @pulumi.getter(name="isEnforcedAlways")
-    def is_enforced_always(self) -> bool:
-        """
-        If set, then the target resource is always governed by the operator control.
-        """
+    def is_enforced_always(self) -> Optional[bool]:
         return pulumi.get(self, "is_enforced_always")
 
     @property
     @pulumi.getter(name="isLogForwarded")
-    def is_log_forwarded(self) -> bool:
-        """
-        If set indicates that the audit logs are being forwarded to the relevant remote logging server
-        """
+    def is_log_forwarded(self) -> Optional[bool]:
         return pulumi.get(self, "is_log_forwarded")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        More in detail about the lifeCycleState.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -229,114 +187,72 @@ class GetControlAssignmentResult:
 
     @property
     @pulumi.getter(name="operatorControlId")
-    def operator_control_id(self) -> str:
-        """
-        The OCID of the operator control.
-        """
+    def operator_control_id(self) -> Optional[str]:
         return pulumi.get(self, "operator_control_id")
 
     @property
     @pulumi.getter(name="remoteSyslogServerAddress")
-    def remote_syslog_server_address(self) -> str:
-        """
-        The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
-        """
+    def remote_syslog_server_address(self) -> Optional[str]:
         return pulumi.get(self, "remote_syslog_server_address")
 
     @property
     @pulumi.getter(name="remoteSyslogServerCaCert")
-    def remote_syslog_server_ca_cert(self) -> str:
-        """
-        The CA certificate of the remote syslog server.
-        """
+    def remote_syslog_server_ca_cert(self) -> Optional[str]:
         return pulumi.get(self, "remote_syslog_server_ca_cert")
 
     @property
     @pulumi.getter(name="remoteSyslogServerPort")
-    def remote_syslog_server_port(self) -> int:
-        """
-        The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-        """
+    def remote_syslog_server_port(self) -> Optional[int]:
         return pulumi.get(self, "remote_syslog_server_port")
 
     @property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the target resource.
-        """
+    def resource_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_compartment_id")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The OCID of the target resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        Name of the target resource.
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        resourceType for which the OperatorControlAssignment is applicable
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifcycle state of the OperatorControl.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAssignmentFrom")
-    def time_assignment_from(self) -> str:
-        """
-        The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_assignment_from(self) -> Optional[str]:
         return pulumi.get(self, "time_assignment_from")
 
     @property
     @pulumi.getter(name="timeAssignmentTo")
-    def time_assignment_to(self) -> str:
-        """
-        The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_assignment_to(self) -> Optional[str]:
         return pulumi.get(self, "time_assignment_to")
 
     @property
     @pulumi.getter(name="timeOfAssignment")
-    def time_of_assignment(self) -> str:
-        """
-        Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_assignment(self) -> Optional[str]:
         return pulumi.get(self, "time_of_assignment")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="unassignerId")
-    def unassigner_id(self) -> str:
-        """
-        User id who released the operatorControl.
-        """
+    def unassigner_id(self) -> Optional[str]:
         return pulumi.get(self, "unassigner_id")
 
 
@@ -380,21 +296,7 @@ class AwaitableGetControlAssignmentResult(GetControlAssignmentResult):
 def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetControlAssignmentResult:
     """
-    This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets the details of an Operator Control Assignment of the specified ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=oci_operator_access_control_operator_control_assignment["test_operator_control_assignment"]["id"])
-    ```
-
-
-    :param str operator_control_assignment_id: unique OperatorControl identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['operatorControlAssignmentId'] = operator_control_assignment_id
@@ -437,20 +339,6 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
 def get_control_assignment_output(operator_control_assignment_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlAssignmentResult]:
     """
-    This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets the details of an Operator Control Assignment of the specified ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=oci_operator_access_control_operator_control_assignment["test_operator_control_assignment"]["id"])
-    ```
-
-
-    :param str operator_control_assignment_id: unique OperatorControl identifier
+    Use this data source to access information about an existing resource.
     """
     ...

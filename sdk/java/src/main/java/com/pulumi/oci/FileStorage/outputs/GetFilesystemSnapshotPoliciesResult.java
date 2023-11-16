@@ -33,7 +33,7 @@ public final class GetFilesystemSnapshotPoliciesResult {
      * @return The list of filesystem_snapshot_policies.
      * 
      */
-    private List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy> filesystemSnapshotPolicies;
+    private @Nullable List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy> filesystemSnapshotPolicies;
     private @Nullable List<GetFilesystemSnapshotPoliciesFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
@@ -73,7 +73,7 @@ public final class GetFilesystemSnapshotPoliciesResult {
      * 
      */
     public List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy> filesystemSnapshotPolicies() {
-        return this.filesystemSnapshotPolicies;
+        return this.filesystemSnapshotPolicies == null ? List.of() : this.filesystemSnapshotPolicies;
     }
     public List<GetFilesystemSnapshotPoliciesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -105,7 +105,7 @@ public final class GetFilesystemSnapshotPoliciesResult {
         private String availabilityDomain;
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy> filesystemSnapshotPolicies;
+        private @Nullable List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy> filesystemSnapshotPolicies;
         private @Nullable List<GetFilesystemSnapshotPoliciesFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
@@ -137,8 +137,8 @@ public final class GetFilesystemSnapshotPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder filesystemSnapshotPolicies(List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy> filesystemSnapshotPolicies) {
-            this.filesystemSnapshotPolicies = Objects.requireNonNull(filesystemSnapshotPolicies);
+        public Builder filesystemSnapshotPolicies(@Nullable List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy> filesystemSnapshotPolicies) {
+            this.filesystemSnapshotPolicies = filesystemSnapshotPolicies;
             return this;
         }
         public Builder filesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy... filesystemSnapshotPolicies) {

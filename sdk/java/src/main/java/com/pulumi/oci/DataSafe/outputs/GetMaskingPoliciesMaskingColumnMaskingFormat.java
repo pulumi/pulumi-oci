@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnMaskingFor
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPoliciesMaskingColumnMaskingFormat {
@@ -15,39 +17,39 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormat {
      * @return A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return The description of the format entry.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return An array of format entries. The combined output of all the format entries is  used for masking the column data values.
      * 
      */
-    private List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
+    private @Nullable List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
 
     private GetMaskingPoliciesMaskingColumnMaskingFormat() {}
     /**
      * @return A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return The description of the format entry.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return An array of format entries. The combined output of all the format entries is  used for masking the column data values.
      * 
      */
     public List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries() {
-        return this.formatEntries;
+        return this.formatEntries == null ? List.of() : this.formatEntries;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormat {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String condition;
-        private String description;
-        private List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
+        private @Nullable String condition;
+        private @Nullable String description;
+        private @Nullable List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
         public Builder() {}
         public Builder(GetMaskingPoliciesMaskingColumnMaskingFormat defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormat {
         }
 
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder formatEntries(List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries) {
-            this.formatEntries = Objects.requireNonNull(formatEntries);
+        public Builder formatEntries(@Nullable List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries) {
+            this.formatEntries = formatEntries;
             return this;
         }
         public Builder formatEntries(GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry... formatEntries) {

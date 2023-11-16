@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -73,8 +72,8 @@ type GetAddressRuleResult struct {
 	// Country code for the address rule in ISO-3166-1 2-letter format
 	CountryCode string `pulumi:"countryCode"`
 	// The provider-assigned unique ID for this managed resource.
-	Id            string `pulumi:"id"`
-	OspHomeRegion string `pulumi:"ospHomeRegion"`
+	Id            *string `pulumi:"id"`
+	OspHomeRegion string  `pulumi:"ospHomeRegion"`
 	// Tax type rule information
 	Taxes []GetAddressRuleTax `pulumi:"taxes"`
 }
@@ -121,12 +120,6 @@ func (o GetAddressRuleResultOutput) ToGetAddressRuleResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAddressRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleResult] {
-	return pulumix.Output[GetAddressRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address type rule information
 func (o GetAddressRuleResultOutput) Addresses() GetAddressRuleAddressArrayOutput {
 	return o.ApplyT(func(v GetAddressRuleResult) []GetAddressRuleAddress { return v.Addresses }).(GetAddressRuleAddressArrayOutput)
@@ -147,8 +140,8 @@ func (o GetAddressRuleResultOutput) CountryCode() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAddressRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAddressRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAddressRuleResultOutput) OspHomeRegion() pulumi.StringOutput {

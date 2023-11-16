@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("additionalDetails")]
-        public Output<ImmutableDictionary<string, object>> AdditionalDetails { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdditionalDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// (Updatable) The unique key of the discovery request.
         /// </summary>
         [Output("discoveryKey")]
-        public Output<string> DiscoveryKey { get; private set; } = null!;
+        public Output<string?> DiscoveryKey { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the Exadata infrastructure.
@@ -99,37 +99,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The internal ID of the Exadata resource.
         /// </summary>
         [Output("internalId")]
-        public Output<string> InternalId { get; private set; } = null!;
+        public Output<string?> InternalId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Oracle license model that applies to the database management resources.
         /// </summary>
         [Output("licenseModel")]
-        public Output<string> LicenseModel { get; private set; } = null!;
+        public Output<string?> LicenseModel { get; private set; } = null!;
 
         /// <summary>
         /// The details of the lifecycle state of the Exadata resource.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The rack size of the Exadata infrastructure.
         /// </summary>
         [Output("rackSize")]
-        public Output<string> RackSize { get; private set; } = null!;
+        public Output<string?> RackSize { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the database resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The status of the Exadata resource.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// The Exadata storage server grid of the Exadata infrastructure.
@@ -151,19 +151,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The timestamp of the creation of the Exadata resource.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp of the last update of the Exadata resource.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The version of the Exadata resource.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

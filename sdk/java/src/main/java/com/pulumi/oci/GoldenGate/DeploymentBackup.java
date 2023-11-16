@@ -15,6 +15,7 @@ import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,14 +76,14 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
-    private Output<String> backupType;
+    private Output</* @Nullable */ String> backupType;
 
     /**
      * @return Possible Deployment backup types.
      * 
      */
-    public Output<String> backupType() {
-        return this.backupType;
+    public Output<Optional<String>> backupType() {
+        return Codegen.optional(this.backupType);
     }
     /**
      * Name of the bucket where the object is to be uploaded in the object storage
@@ -117,14 +118,14 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -159,42 +160,42 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * True if this object is automatically created
      * 
      */
     @Export(name="isAutomatic", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutomatic;
+    private Output</* @Nullable */ Boolean> isAutomatic;
 
     /**
      * @return True if this object is automatically created
      * 
      */
-    public Output<Boolean> isAutomatic() {
-        return this.isAutomatic;
+    public Output<Optional<Boolean>> isAutomatic() {
+        return Codegen.optional(this.isAutomatic);
     }
     /**
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Name of namespace that serves as a container for all of your buckets
@@ -235,112 +236,112 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="oggVersion", refs={String.class}, tree="[0]")
-    private Output<String> oggVersion;
+    private Output</* @Nullable */ String> oggVersion;
 
     /**
      * @return Version of OGG
      * 
      */
-    public Output<String> oggVersion() {
-        return this.oggVersion;
+    public Output<Optional<String>> oggVersion() {
+        return Codegen.optional(this.oggVersion);
     }
     /**
      * The size of the backup stored in object storage (in bytes)
      * 
      */
     @Export(name="sizeInBytes", refs={Double.class}, tree="[0]")
-    private Output<Double> sizeInBytes;
+    private Output</* @Nullable */ Double> sizeInBytes;
 
     /**
      * @return The size of the backup stored in object storage (in bytes)
      * 
      */
-    public Output<Double> sizeInBytes() {
-        return this.sizeInBytes;
+    public Output<Optional<Double>> sizeInBytes() {
+        return Codegen.optional(this.sizeInBytes);
     }
     /**
      * Possible lifecycle states.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return Possible lifecycle states.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeBackupFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeBackupFinished;
+    private Output</* @Nullable */ String> timeBackupFinished;
 
     /**
      * @return The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeBackupFinished() {
-        return this.timeBackupFinished;
+    public Output<Optional<String>> timeBackupFinished() {
+        return Codegen.optional(this.timeBackupFinished);
     }
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeOfBackup", refs={String.class}, tree="[0]")
-    private Output<String> timeOfBackup;
+    private Output</* @Nullable */ String> timeOfBackup;
 
     /**
      * @return The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeOfBackup() {
-        return this.timeOfBackup;
+    public Output<Optional<String>> timeOfBackup() {
+        return Codegen.optional(this.timeOfBackup);
     }
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

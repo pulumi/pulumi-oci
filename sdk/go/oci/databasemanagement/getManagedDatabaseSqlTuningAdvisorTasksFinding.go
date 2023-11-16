@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Finding resource in Oracle Cloud Infrastructure Database Management service.
@@ -84,7 +83,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingResult struct {
 	EndExecId     *string `pulumi:"endExecId"`
 	FindingFilter *string `pulumi:"findingFilter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string  `pulumi:"id"`
+	Id              *string `pulumi:"id"`
 	IndexHashFilter *string `pulumi:"indexHashFilter"`
 	// An array of the findings for a tuning task.
 	Items             []GetManagedDatabaseSqlTuningAdvisorTasksFindingItem `pulumi:"items"`
@@ -147,12 +146,6 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingResultOutput) ToGetManaged
 	return o
 }
 
-func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksFindingResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksFindingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingResultOutput) BeginExecId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksFindingResult) *string { return v.BeginExecId }).(pulumi.StringPtrOutput)
 }
@@ -166,8 +159,8 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingResultOutput) FindingFilte
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksFindingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksFindingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingResultOutput) IndexHashFilter() pulumi.StringPtrOutput {

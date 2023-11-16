@@ -8,6 +8,8 @@ import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostIns
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationLcm {
@@ -15,27 +17,27 @@ public final class GetFleetAdvancedFeatureConfigurationLcm {
      * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return List of available post actions you can execute after the successful Java installation.
      * 
      */
-    private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions;
+    private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions;
 
     private GetFleetAdvancedFeatureConfigurationLcm() {}
     /**
      * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return List of available post actions you can execute after the successful Java installation.
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions() {
-        return this.postInstallationActions;
+        return this.postInstallationActions == null ? List.of() : this.postInstallationActions;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetFleetAdvancedFeatureConfigurationLcm {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isEnabled;
-        private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions;
+        private @Nullable Boolean isEnabled;
+        private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationLcm defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetFleetAdvancedFeatureConfigurationLcm {
         }
 
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder postInstallationActions(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions) {
-            this.postInstallationActions = Objects.requireNonNull(postInstallationActions);
+        public Builder postInstallationActions(@Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions) {
+            this.postInstallationActions = postInstallationActions;
             return this;
         }
         public Builder postInstallationActions(GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction... postInstallationActions) {

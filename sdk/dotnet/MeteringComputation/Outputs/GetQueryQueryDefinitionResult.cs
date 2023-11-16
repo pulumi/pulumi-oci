@@ -20,7 +20,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The query display name. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The request of the generated Cost Analysis report.
         /// </summary>
@@ -28,17 +28,17 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The saved query version.
         /// </summary>
-        public readonly double Version;
+        public readonly double? Version;
 
         [OutputConstructor]
         private GetQueryQueryDefinitionResult(
             ImmutableArray<Outputs.GetQueryQueryDefinitionCostAnalysisUiResult> costAnalysisUis,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetQueryQueryDefinitionReportQueryResult> reportQueries,
 
-            double version)
+            double? version)
         {
             CostAnalysisUis = costAnalysisUis;
             DisplayName = displayName;

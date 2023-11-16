@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Data Pump job mode. Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
         /// </summary>
-        public readonly string JobMode;
+        public readonly string? JobMode;
         /// <summary>
         /// Defines remapping to be applied to objects as they are processed. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
         /// </summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             ImmutableArray<Outputs.GetMigrationDatapumpSettingImportDirectoryObjectResult> importDirectoryObjects,
 
-            string jobMode,
+            string? jobMode,
 
             ImmutableArray<Outputs.GetMigrationDatapumpSettingMetadataRemapResult> metadataRemaps)
         {

@@ -76,7 +76,7 @@ export class RedisCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -84,15 +84,15 @@ export class RedisCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The collection of Redis cluster nodes.
      */
-    public /*out*/ readonly nodeCollections!: pulumi.Output<outputs.Redis.RedisClusterNodeCollection[]>;
+    public /*out*/ readonly nodeCollections!: pulumi.Output<outputs.Redis.RedisClusterNodeCollection[] | undefined>;
     /**
      * (Updatable) The number of nodes in the Redis cluster.
      */
@@ -104,19 +104,19 @@ export class RedisCluster extends pulumi.CustomResource {
     /**
      * The private IP address of the API endpoint for the Redis cluster's primary node.
      */
-    public /*out*/ readonly primaryEndpointIpAddress!: pulumi.Output<string>;
+    public /*out*/ readonly primaryEndpointIpAddress!: pulumi.Output<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
      */
-    public /*out*/ readonly primaryFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly primaryFqdn!: pulumi.Output<string | undefined>;
     /**
      * The private IP address of the API endpoint for the Redis cluster's replica nodes.
      */
-    public /*out*/ readonly replicasEndpointIpAddress!: pulumi.Output<string>;
+    public /*out*/ readonly replicasEndpointIpAddress!: pulumi.Output<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
      */
-    public /*out*/ readonly replicasFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly replicasFqdn!: pulumi.Output<string | undefined>;
     /**
      * The Redis version that the cluster is running.
      */
@@ -124,7 +124,7 @@ export class RedisCluster extends pulumi.CustomResource {
     /**
      * The current state of the Redis cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
      *
@@ -136,15 +136,15 @@ export class RedisCluster extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a RedisCluster resource with the given unique name, arguments, and options.

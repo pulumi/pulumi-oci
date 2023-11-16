@@ -16,44 +16,44 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The count of the branches present in the repository.
         /// </summary>
-        public readonly int BranchCount;
+        public readonly int? BranchCount;
         /// <summary>
         /// The count of the commits present in the repository.
         /// </summary>
-        public readonly int CommitCount;
+        public readonly int? CommitCount;
         /// <summary>
         /// The OCID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The default branch of the repository.
         /// </summary>
-        public readonly string DefaultBranch;
+        public readonly string? DefaultBranch;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Details of the repository. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// HTTP URL that you use to git clone, pull and push.
         /// </summary>
-        public readonly string HttpUrl;
+        public readonly string? HttpUrl;
         /// <summary>
         /// The OCID of the repository. This value is unique and immutable.
         /// </summary>
         public readonly string Id;
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Configuration information for mirroring the repository.
         /// </summary>
-        public readonly Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult MirrorRepositoryConfig;
+        public readonly Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult? MirrorRepositoryConfig;
         /// <summary>
         /// A filter to return only resources that match the entire name given.
         /// </summary>
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Tenancy unique namespace.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// unique project identifier
         /// </summary>
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Unique project name in a namespace.
         /// </summary>
-        public readonly string ProjectName;
+        public readonly string? ProjectName;
         /// <summary>
         /// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
         /// </summary>
@@ -77,27 +77,27 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The size of the repository in bytes.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         /// <summary>
         /// SSH URL that you use to git clone, pull and push.
         /// </summary>
-        public readonly string SshUrl;
+        public readonly string? SshUrl;
         /// <summary>
         /// A filter to return only resources whose lifecycle state matches the given lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         /// </summary>
@@ -105,49 +105,49 @@ namespace Pulumi.Oci.DevOps.Outputs
 
         [OutputConstructor]
         private GetRepositoriesRepositoryCollectionItemResult(
-            int branchCount,
+            int? branchCount,
 
-            int commitCount,
+            int? commitCount,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string defaultBranch,
+            string? defaultBranch,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string httpUrl,
+            string? httpUrl,
 
             string id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult mirrorRepositoryConfig,
+            Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult? mirrorRepositoryConfig,
 
             string name,
 
-            string @namespace,
+            string? @namespace,
 
             string projectId,
 
-            string projectName,
+            string? projectName,
 
             string repositoryType,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string sshUrl,
+            string? sshUrl,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<string> triggerBuildEvents)
         {

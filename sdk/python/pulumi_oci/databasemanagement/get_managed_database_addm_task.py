@@ -41,7 +41,7 @@ class GetManagedDatabaseAddmTaskResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,18 +49,12 @@ class GetManagedDatabaseAddmTaskResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseAddmTaskItemResult']:
-        """
-        The list of ADDM task metadata.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseAddmTaskItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @property
@@ -92,26 +86,7 @@ def get_managed_database_addm_task(managed_database_id: Optional[str] = None,
                                    time_start: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseAddmTaskResult:
     """
-    This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
-    the name of the ADDM task, description, user, status and creation date time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_addm_task = oci.DatabaseManagement.get_managed_database_addm_task(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        time_end=var["managed_database_addm_task_time_end"],
-        time_start=var["managed_database_addm_task_time_start"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_end: The end of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
-    :param str time_start: The beginning of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -134,25 +109,6 @@ def get_managed_database_addm_task_output(managed_database_id: Optional[pulumi.I
                                           time_start: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseAddmTaskResult]:
     """
-    This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
-    the name of the ADDM task, description, user, status and creation date time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_addm_task = oci.DatabaseManagement.get_managed_database_addm_task(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        time_end=var["managed_database_addm_task_time_end"],
-        time_start=var["managed_database_addm_task_time_start"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_end: The end of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
-    :param str time_start: The beginning of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
+    Use this data source to access information about an existing resource.
     """
     ...

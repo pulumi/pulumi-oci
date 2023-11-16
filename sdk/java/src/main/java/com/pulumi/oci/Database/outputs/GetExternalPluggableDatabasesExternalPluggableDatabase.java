@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
@@ -19,267 +21,267 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
      * @return The character set of the external database.
      * 
      */
-    private String characterSet;
+    private @Nullable String characterSet;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The Oracle Database configuration
      * 
      */
-    private String databaseConfiguration;
+    private @Nullable String databaseConfiguration;
     /**
      * @return The Oracle Database edition.
      * 
      */
-    private String databaseEdition;
+    private @Nullable String databaseEdition;
     /**
      * @return The configuration of the Database Management service.
      * 
      */
-    private List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs;
+    private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private String databaseVersion;
+    private @Nullable String databaseVersion;
     /**
      * @return The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      * 
      */
-    private String dbId;
+    private @Nullable String dbId;
     /**
      * @return The database packs licensed for the external Oracle Database.
      * 
      */
-    private String dbPacks;
+    private @Nullable String dbPacks;
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    private String dbUniqueName;
+    private @Nullable String dbUniqueName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String externalContainerDatabaseId;
+    private @Nullable String externalContainerDatabaseId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The national character of the external database.
      * 
      */
-    private String ncharacterSet;
+    private @Nullable String ncharacterSet;
     /**
      * @return The configuration of Operations Insights for the external database
      * 
      */
-    private List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
+    private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
      * 
      */
-    private String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return The configuration of Stack Monitoring for the external database.
      * 
      */
-    private List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
     /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the database was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time zone of the external database. It is a time zone offset (a character type in the format &#39;[+|-]TZH:TZM&#39;) or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      * 
      */
-    private String timeZone;
+    private @Nullable String timeZone;
 
     private GetExternalPluggableDatabasesExternalPluggableDatabase() {}
     /**
      * @return The character set of the external database.
      * 
      */
-    public String characterSet() {
-        return this.characterSet;
+    public Optional<String> characterSet() {
+        return Optional.ofNullable(this.characterSet);
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The Oracle Database configuration
      * 
      */
-    public String databaseConfiguration() {
-        return this.databaseConfiguration;
+    public Optional<String> databaseConfiguration() {
+        return Optional.ofNullable(this.databaseConfiguration);
     }
     /**
      * @return The Oracle Database edition.
      * 
      */
-    public String databaseEdition() {
-        return this.databaseEdition;
+    public Optional<String> databaseEdition() {
+        return Optional.ofNullable(this.databaseEdition);
     }
     /**
      * @return The configuration of the Database Management service.
      * 
      */
     public List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs() {
-        return this.databaseManagementConfigs;
+        return this.databaseManagementConfigs == null ? List.of() : this.databaseManagementConfigs;
     }
     /**
      * @return The Oracle Database version.
      * 
      */
-    public String databaseVersion() {
-        return this.databaseVersion;
+    public Optional<String> databaseVersion() {
+        return Optional.ofNullable(this.databaseVersion);
     }
     /**
      * @return The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      * 
      */
-    public String dbId() {
-        return this.dbId;
+    public Optional<String> dbId() {
+        return Optional.ofNullable(this.dbId);
     }
     /**
      * @return The database packs licensed for the external Oracle Database.
      * 
      */
-    public String dbPacks() {
-        return this.dbPacks;
+    public Optional<String> dbPacks() {
+        return Optional.ofNullable(this.dbPacks);
     }
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String externalContainerDatabaseId() {
-        return this.externalContainerDatabaseId;
+    public Optional<String> externalContainerDatabaseId() {
+        return Optional.ofNullable(this.externalContainerDatabaseId);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The national character of the external database.
      * 
      */
-    public String ncharacterSet() {
-        return this.ncharacterSet;
+    public Optional<String> ncharacterSet() {
+        return Optional.ofNullable(this.ncharacterSet);
     }
     /**
      * @return The configuration of Operations Insights for the external database
      * 
      */
     public List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs() {
-        return this.operationsInsightsConfigs;
+        return this.operationsInsightsConfigs == null ? List.of() : this.operationsInsightsConfigs;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
      * 
      */
-    public String sourceId() {
-        return this.sourceId;
+    public Optional<String> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
     /**
      * @return The configuration of Stack Monitoring for the external database.
      * 
      */
     public List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs() {
-        return this.stackMonitoringConfigs;
+        return this.stackMonitoringConfigs == null ? List.of() : this.stackMonitoringConfigs;
     }
     /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the database was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time zone of the external database. It is a time zone offset (a character type in the format &#39;[+|-]TZH:TZM&#39;) or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      * 
      */
-    public String timeZone() {
-        return this.timeZone;
+    public Optional<String> timeZone() {
+        return Optional.ofNullable(this.timeZone);
     }
 
     public static Builder builder() {
@@ -291,28 +293,28 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String characterSet;
-        private String compartmentId;
-        private String databaseConfiguration;
-        private String databaseEdition;
-        private List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs;
-        private String databaseVersion;
-        private String dbId;
-        private String dbPacks;
-        private String dbUniqueName;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String externalContainerDatabaseId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String ncharacterSet;
-        private List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
-        private String sourceId;
-        private List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
-        private String state;
-        private String timeCreated;
-        private String timeZone;
+        private @Nullable String characterSet;
+        private @Nullable String compartmentId;
+        private @Nullable String databaseConfiguration;
+        private @Nullable String databaseEdition;
+        private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs;
+        private @Nullable String databaseVersion;
+        private @Nullable String dbId;
+        private @Nullable String dbPacks;
+        private @Nullable String dbUniqueName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String externalContainerDatabaseId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String ncharacterSet;
+        private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
+        private @Nullable String sourceId;
+        private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeZone;
         public Builder() {}
         public Builder(GetExternalPluggableDatabasesExternalPluggableDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -341,122 +343,122 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         }
 
         @CustomType.Setter
-        public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+        public Builder characterSet(@Nullable String characterSet) {
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseConfiguration(String databaseConfiguration) {
-            this.databaseConfiguration = Objects.requireNonNull(databaseConfiguration);
+        public Builder databaseConfiguration(@Nullable String databaseConfiguration) {
+            this.databaseConfiguration = databaseConfiguration;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseEdition(String databaseEdition) {
-            this.databaseEdition = Objects.requireNonNull(databaseEdition);
+        public Builder databaseEdition(@Nullable String databaseEdition) {
+            this.databaseEdition = databaseEdition;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseManagementConfigs(List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
-            this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
+        public Builder databaseManagementConfigs(@Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
+            this.databaseManagementConfigs = databaseManagementConfigs;
             return this;
         }
         public Builder databaseManagementConfigs(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig... databaseManagementConfigs) {
             return databaseManagementConfigs(List.of(databaseManagementConfigs));
         }
         @CustomType.Setter
-        public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+        public Builder databaseVersion(@Nullable String databaseVersion) {
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder dbId(String dbId) {
-            this.dbId = Objects.requireNonNull(dbId);
+        public Builder dbId(@Nullable String dbId) {
+            this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbPacks(String dbPacks) {
-            this.dbPacks = Objects.requireNonNull(dbPacks);
+        public Builder dbPacks(@Nullable String dbPacks) {
+            this.dbPacks = dbPacks;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalContainerDatabaseId(String externalContainerDatabaseId) {
-            this.externalContainerDatabaseId = Objects.requireNonNull(externalContainerDatabaseId);
+        public Builder externalContainerDatabaseId(@Nullable String externalContainerDatabaseId) {
+            this.externalContainerDatabaseId = externalContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+        public Builder ncharacterSet(@Nullable String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsConfigs(List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs) {
-            this.operationsInsightsConfigs = Objects.requireNonNull(operationsInsightsConfigs);
+        public Builder operationsInsightsConfigs(@Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs) {
+            this.operationsInsightsConfigs = operationsInsightsConfigs;
             return this;
         }
         public Builder operationsInsightsConfigs(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig... operationsInsightsConfigs) {
             return operationsInsightsConfigs(List.of(operationsInsightsConfigs));
         }
         @CustomType.Setter
-        public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+        public Builder sourceId(@Nullable String sourceId) {
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder stackMonitoringConfigs(List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
-            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+        public Builder stackMonitoringConfigs(@Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = stackMonitoringConfigs;
             return this;
         }
         public Builder stackMonitoringConfigs(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
             return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+        public Builder timeZone(@Nullable String timeZone) {
+            this.timeZone = timeZone;
             return this;
         }
         public GetExternalPluggableDatabasesExternalPluggableDatabase build() {

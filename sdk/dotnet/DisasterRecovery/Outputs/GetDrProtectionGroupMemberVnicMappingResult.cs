@@ -20,31 +20,31 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
         /// </summary>
-        public readonly string DestinationPrimaryPrivateIpAddress;
+        public readonly string? DestinationPrimaryPrivateIpAddress;
         /// <summary>
         /// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
         /// </summary>
-        public readonly string DestinationPrimaryPrivateIpHostnameLabel;
+        public readonly string? DestinationPrimaryPrivateIpHostnameLabel;
         /// <summary>
         /// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
         /// </summary>
-        public readonly string DestinationSubnetId;
+        public readonly string? DestinationSubnetId;
         /// <summary>
         /// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         /// </summary>
-        public readonly string SourceVnicId;
+        public readonly string? SourceVnicId;
 
         [OutputConstructor]
         private GetDrProtectionGroupMemberVnicMappingResult(
             ImmutableArray<string> destinationNsgIdLists,
 
-            string destinationPrimaryPrivateIpAddress,
+            string? destinationPrimaryPrivateIpAddress,
 
-            string destinationPrimaryPrivateIpHostnameLabel,
+            string? destinationPrimaryPrivateIpHostnameLabel,
 
-            string destinationSubnetId,
+            string? destinationSubnetId,
 
-            string sourceVnicId)
+            string? sourceVnicId)
         {
             DestinationNsgIdLists = destinationNsgIdLists;
             DestinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;

@@ -53,168 +53,168 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="actualUsedDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> actualUsedDataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> actualUsedDataStorageSizeInTbs;
 
     /**
      * @return The current amount of storage in use for user and system data, in terabytes (TB).
      * 
      */
-    public Output<Double> actualUsedDataStorageSizeInTbs() {
-        return this.actualUsedDataStorageSizeInTbs;
+    public Output<Optional<Double>> actualUsedDataStorageSizeInTbs() {
+        return Codegen.optional(this.actualUsedDataStorageSizeInTbs);
     }
     /**
      * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
      * 
      */
     @Export(name="adminPassword", refs={String.class}, tree="[0]")
-    private Output<String> adminPassword;
+    private Output</* @Nullable */ String> adminPassword;
 
     /**
      * @return (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
      * 
      */
-    public Output<String> adminPassword() {
-        return this.adminPassword;
+    public Output<Optional<String>> adminPassword() {
+        return Codegen.optional(this.adminPassword);
     }
     /**
      * The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      * 
      */
     @Export(name="allocatedStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> allocatedStorageSizeInTbs;
+    private Output</* @Nullable */ Double> allocatedStorageSizeInTbs;
 
     /**
      * @return The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      * 
      */
-    public Output<Double> allocatedStorageSizeInTbs() {
-        return this.allocatedStorageSizeInTbs;
+    public Output<Optional<Double>> allocatedStorageSizeInTbs() {
+        return Codegen.optional(this.allocatedStorageSizeInTbs);
     }
     /**
      * Information about Oracle APEX Application Development.
      * 
      */
     @Export(name="apexDetails", refs={List.class,AutonomousDatabaseApexDetail.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseApexDetail>> apexDetails;
+    private Output</* @Nullable */ List<AutonomousDatabaseApexDetail>> apexDetails;
 
     /**
      * @return Information about Oracle APEX Application Development.
      * 
      */
-    public Output<List<AutonomousDatabaseApexDetail>> apexDetails() {
-        return this.apexDetails;
+    public Output<Optional<List<AutonomousDatabaseApexDetail>>> apexDetails() {
+        return Codegen.optional(this.apexDetails);
     }
     /**
      * (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
     @Export(name="arePrimaryWhitelistedIpsUsed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> arePrimaryWhitelistedIpsUsed;
+    private Output</* @Nullable */ Boolean> arePrimaryWhitelistedIpsUsed;
 
     /**
      * @return (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
-    public Output<Boolean> arePrimaryWhitelistedIpsUsed() {
-        return this.arePrimaryWhitelistedIpsUsed;
+    public Output<Optional<Boolean>> arePrimaryWhitelistedIpsUsed() {
+        return Codegen.optional(this.arePrimaryWhitelistedIpsUsed);
     }
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="autonomousContainerDatabaseId", refs={String.class}, tree="[0]")
-    private Output<String> autonomousContainerDatabaseId;
+    private Output</* @Nullable */ String> autonomousContainerDatabaseId;
 
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public Output<String> autonomousContainerDatabaseId() {
-        return this.autonomousContainerDatabaseId;
+    public Output<Optional<String>> autonomousContainerDatabaseId() {
+        return Codegen.optional(this.autonomousContainerDatabaseId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      * 
      */
     @Export(name="autonomousDatabaseBackupId", refs={String.class}, tree="[0]")
-    private Output<String> autonomousDatabaseBackupId;
+    private Output</* @Nullable */ String> autonomousDatabaseBackupId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      * 
      */
-    public Output<String> autonomousDatabaseBackupId() {
-        return this.autonomousDatabaseBackupId;
+    public Output<Optional<String>> autonomousDatabaseBackupId() {
+        return Codegen.optional(this.autonomousDatabaseBackupId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      * 
      */
     @Export(name="autonomousDatabaseId", refs={String.class}, tree="[0]")
-    private Output<String> autonomousDatabaseId;
+    private Output</* @Nullable */ String> autonomousDatabaseId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      * 
      */
-    public Output<String> autonomousDatabaseId() {
-        return this.autonomousDatabaseId;
+    public Output<Optional<String>> autonomousDatabaseId() {
+        return Codegen.optional(this.autonomousDatabaseId);
     }
     /**
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      * 
      */
     @Export(name="autonomousMaintenanceScheduleType", refs={String.class}, tree="[0]")
-    private Output<String> autonomousMaintenanceScheduleType;
+    private Output</* @Nullable */ String> autonomousMaintenanceScheduleType;
 
     /**
      * @return The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      * 
      */
-    public Output<String> autonomousMaintenanceScheduleType() {
-        return this.autonomousMaintenanceScheduleType;
+    public Output<Optional<String>> autonomousMaintenanceScheduleType() {
+        return Codegen.optional(this.autonomousMaintenanceScheduleType);
     }
     /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
     @Export(name="availableUpgradeVersions", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> availableUpgradeVersions;
+    private Output</* @Nullable */ List<String>> availableUpgradeVersions;
 
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
-    public Output<List<String>> availableUpgradeVersions() {
-        return this.availableUpgradeVersions;
+    public Output<Optional<List<String>>> availableUpgradeVersions() {
+        return Codegen.optional(this.availableUpgradeVersions);
     }
     /**
      * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
     @Export(name="backupConfigs", refs={List.class,AutonomousDatabaseBackupConfig.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseBackupConfig>> backupConfigs;
+    private Output</* @Nullable */ List<AutonomousDatabaseBackupConfig>> backupConfigs;
 
     /**
      * @return Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
-    public Output<List<AutonomousDatabaseBackupConfig>> backupConfigs() {
-        return this.backupConfigs;
+    public Output<Optional<List<AutonomousDatabaseBackupConfig>>> backupConfigs() {
+        return Codegen.optional(this.backupConfigs);
     }
     /**
      * (Updatable) Retention period, in days, for backups.
      * 
      */
     @Export(name="backupRetentionPeriodInDays", refs={Integer.class}, tree="[0]")
-    private Output<Integer> backupRetentionPeriodInDays;
+    private Output</* @Nullable */ Integer> backupRetentionPeriodInDays;
 
     /**
      * @return (Updatable) Retention period, in days, for backups.
      * 
      */
-    public Output<Integer> backupRetentionPeriodInDays() {
-        return this.backupRetentionPeriodInDays;
+    public Output<Optional<Integer>> backupRetentionPeriodInDays() {
+        return Codegen.optional(this.backupRetentionPeriodInDays);
     }
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
@@ -225,7 +225,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="characterSet", refs={String.class}, tree="[0]")
-    private Output<String> characterSet;
+    private Output</* @Nullable */ String> characterSet;
 
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
@@ -235,22 +235,22 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
      * 
      */
-    public Output<String> characterSet() {
-        return this.characterSet;
+    public Output<Optional<String>> characterSet() {
+        return Codegen.optional(this.characterSet);
     }
     /**
      * The Autonomous Database clone type.
      * 
      */
     @Export(name="cloneType", refs={String.class}, tree="[0]")
-    private Output<String> cloneType;
+    private Output</* @Nullable */ String> cloneType;
 
     /**
      * @return The Autonomous Database clone type.
      * 
      */
-    public Output<String> cloneType() {
-        return this.cloneType;
+    public Output<Optional<String>> cloneType() {
+        return Codegen.optional(this.cloneType);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
@@ -271,56 +271,56 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="computeCount", refs={Double.class}, tree="[0]")
-    private Output<Double> computeCount;
+    private Output</* @Nullable */ Double> computeCount;
 
     /**
      * @return (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
-    public Output<Double> computeCount() {
-        return this.computeCount;
+    public Output<Optional<Double>> computeCount() {
+        return Codegen.optional(this.computeCount);
     }
     /**
      * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      * 
      */
     @Export(name="computeModel", refs={String.class}, tree="[0]")
-    private Output<String> computeModel;
+    private Output</* @Nullable */ String> computeModel;
 
     /**
      * @return (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      * 
      */
-    public Output<String> computeModel() {
-        return this.computeModel;
+    public Output<Optional<String>> computeModel() {
+        return Codegen.optional(this.computeModel);
     }
     /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
     @Export(name="connectionStrings", refs={List.class,AutonomousDatabaseConnectionString.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseConnectionString>> connectionStrings;
+    private Output</* @Nullable */ List<AutonomousDatabaseConnectionString>> connectionStrings;
 
     /**
      * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
-    public Output<List<AutonomousDatabaseConnectionString>> connectionStrings() {
-        return this.connectionStrings;
+    public Output<Optional<List<AutonomousDatabaseConnectionString>>> connectionStrings() {
+        return Codegen.optional(this.connectionStrings);
     }
     /**
      * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
      * 
      */
     @Export(name="connectionUrls", refs={List.class,AutonomousDatabaseConnectionUrl.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseConnectionUrl>> connectionUrls;
+    private Output</* @Nullable */ List<AutonomousDatabaseConnectionUrl>> connectionUrls;
 
     /**
      * @return The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
      * 
      */
-    public Output<List<AutonomousDatabaseConnectionUrl>> connectionUrls() {
-        return this.connectionUrls;
+    public Output<Optional<List<AutonomousDatabaseConnectionUrl>>> connectionUrls() {
+        return Codegen.optional(this.connectionUrls);
     }
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -333,7 +333,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpuCoreCount;
+    private Output</* @Nullable */ Integer> cpuCoreCount;
 
     /**
      * @return (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -345,36 +345,36 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
-    public Output<Integer> cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Output<Optional<Integer>> cpuCoreCount() {
+        return Codegen.optional(this.cpuCoreCount);
     }
     /**
      * (Updatable) Customer Contacts.
      * 
      */
     @Export(name="customerContacts", refs={List.class,AutonomousDatabaseCustomerContact.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseCustomerContact>> customerContacts;
+    private Output</* @Nullable */ List<AutonomousDatabaseCustomerContact>> customerContacts;
 
     /**
      * @return (Updatable) Customer Contacts.
      * 
      */
-    public Output<List<AutonomousDatabaseCustomerContact>> customerContacts() {
-        return this.customerContacts;
+    public Output<Optional<List<AutonomousDatabaseCustomerContact>>> customerContacts() {
+        return Codegen.optional(this.customerContacts);
     }
     /**
      * (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
      * 
      */
     @Export(name="dataSafeStatus", refs={String.class}, tree="[0]")
-    private Output<String> dataSafeStatus;
+    private Output</* @Nullable */ String> dataSafeStatus;
 
     /**
      * @return (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
      * 
      */
-    public Output<String> dataSafeStatus() {
-        return this.dataSafeStatus;
+    public Output<Optional<String>> dataSafeStatus() {
+        return Codegen.optional(this.dataSafeStatus);
     }
     /**
      * (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -385,7 +385,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dataStorageSizeInGb;
+    private Output</* @Nullable */ Integer> dataStorageSizeInGb;
 
     /**
      * @return (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -395,8 +395,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
      * 
      */
-    public Output<Integer> dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Output<Optional<Integer>> dataStorageSizeInGb() {
+        return Codegen.optional(this.dataStorageSizeInGb);
     }
     /**
      * (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.  A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
@@ -405,7 +405,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataStorageSizeInTbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dataStorageSizeInTbs;
+    private Output</* @Nullable */ Integer> dataStorageSizeInTbs;
 
     /**
      * @return (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.  A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
@@ -413,50 +413,50 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
      * 
      */
-    public Output<Integer> dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Output<Optional<Integer>> dataStorageSizeInTbs() {
+        return Codegen.optional(this.dataStorageSizeInTbs);
     }
     /**
      * (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
      * 
      */
     @Export(name="databaseEdition", refs={String.class}, tree="[0]")
-    private Output<String> databaseEdition;
+    private Output</* @Nullable */ String> databaseEdition;
 
     /**
      * @return (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
      * 
      */
-    public Output<String> databaseEdition() {
-        return this.databaseEdition;
+    public Output<Optional<String>> databaseEdition() {
+        return Codegen.optional(this.databaseEdition);
     }
     /**
      * Status of Database Management for this Autonomous Database.
      * 
      */
     @Export(name="databaseManagementStatus", refs={String.class}, tree="[0]")
-    private Output<String> databaseManagementStatus;
+    private Output</* @Nullable */ String> databaseManagementStatus;
 
     /**
      * @return Status of Database Management for this Autonomous Database.
      * 
      */
-    public Output<String> databaseManagementStatus() {
-        return this.databaseManagementStatus;
+    public Output<Optional<String>> databaseManagementStatus() {
+        return Codegen.optional(this.databaseManagementStatus);
     }
     /**
      * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
      * 
      */
     @Export(name="dataguardRegionType", refs={String.class}, tree="[0]")
-    private Output<String> dataguardRegionType;
+    private Output</* @Nullable */ String> dataguardRegionType;
 
     /**
      * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
      * 
      */
-    public Output<String> dataguardRegionType() {
-        return this.dataguardRegionType;
+    public Output<Optional<String>> dataguardRegionType() {
+        return Codegen.optional(this.dataguardRegionType);
     }
     /**
      * (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
@@ -477,14 +477,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
-    private Output<String> dbVersion;
+    private Output</* @Nullable */ String> dbVersion;
 
     /**
      * @return (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
      * 
      */
-    public Output<String> dbVersion() {
-        return this.dbVersion;
+    public Output<Optional<String>> dbVersion() {
+        return Codegen.optional(this.dbVersion);
     }
     /**
      * (Updatable) The Autonomous Database workload type. The following values are valid:
@@ -497,7 +497,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dbWorkload", refs={String.class}, tree="[0]")
-    private Output<String> dbWorkload;
+    private Output</* @Nullable */ String> dbWorkload;
 
     /**
      * @return (Updatable) The Autonomous Database workload type. The following values are valid:
@@ -509,120 +509,120 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
      */
-    public Output<String> dbWorkload() {
-        return this.dbWorkload;
+    public Output<Optional<String>> dbWorkload() {
+        return Codegen.optional(this.dbWorkload);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     @Export(name="disasterRecoveryRegionType", refs={String.class}, tree="[0]")
-    private Output<String> disasterRecoveryRegionType;
+    private Output</* @Nullable */ String> disasterRecoveryRegionType;
 
     /**
      * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
-    public Output<String> disasterRecoveryRegionType() {
-        return this.disasterRecoveryRegionType;
+    public Output<Optional<String>> disasterRecoveryRegionType() {
+        return Codegen.optional(this.disasterRecoveryRegionType);
     }
     /**
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
     @Export(name="failedDataRecoveryInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> failedDataRecoveryInSeconds;
+    private Output</* @Nullable */ Integer> failedDataRecoveryInSeconds;
 
     /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
-    public Output<Integer> failedDataRecoveryInSeconds() {
-        return this.failedDataRecoveryInSeconds;
+    public Output<Optional<Integer>> failedDataRecoveryInSeconds() {
+        return Codegen.optional(this.failedDataRecoveryInSeconds);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The area assigned to In-Memory tables in Autonomous Database.
      * 
      */
     @Export(name="inMemoryAreaInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> inMemoryAreaInGbs;
+    private Output</* @Nullable */ Integer> inMemoryAreaInGbs;
 
     /**
      * @return The area assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    public Output<Integer> inMemoryAreaInGbs() {
-        return this.inMemoryAreaInGbs;
+    public Output<Optional<Integer>> inMemoryAreaInGbs() {
+        return Codegen.optional(this.inMemoryAreaInGbs);
     }
     /**
      * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
      * 
      */
     @Export(name="inMemoryPercentage", refs={Integer.class}, tree="[0]")
-    private Output<Integer> inMemoryPercentage;
+    private Output</* @Nullable */ Integer> inMemoryPercentage;
 
     /**
      * @return (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    public Output<Integer> inMemoryPercentage() {
-        return this.inMemoryPercentage;
+    public Output<Optional<Integer>> inMemoryPercentage() {
+        return Codegen.optional(this.inMemoryPercentage);
     }
     /**
      * The infrastructure type this resource belongs to.
      * 
      */
     @Export(name="infrastructureType", refs={String.class}, tree="[0]")
-    private Output<String> infrastructureType;
+    private Output</* @Nullable */ String> infrastructureType;
 
     /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
-    public Output<String> infrastructureType() {
-        return this.infrastructureType;
+    public Output<Optional<String>> infrastructureType() {
+        return Codegen.optional(this.infrastructureType);
     }
     /**
      * (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -631,7 +631,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isAccessControlEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAccessControlEnabled;
+    private Output</* @Nullable */ Boolean> isAccessControlEnabled;
 
     /**
      * @return (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -639,176 +639,176 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
      * 
      */
-    public Output<Boolean> isAccessControlEnabled() {
-        return this.isAccessControlEnabled;
+    public Output<Optional<Boolean>> isAccessControlEnabled() {
+        return Codegen.optional(this.isAccessControlEnabled);
     }
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
      * 
      */
     @Export(name="isAutoScalingEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoScalingEnabled;
+    private Output</* @Nullable */ Boolean> isAutoScalingEnabled;
 
     /**
      * @return (Updatable) Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
      * 
      */
-    public Output<Boolean> isAutoScalingEnabled() {
-        return this.isAutoScalingEnabled;
+    public Output<Optional<Boolean>> isAutoScalingEnabled() {
+        return Codegen.optional(this.isAutoScalingEnabled);
     }
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      * 
      */
     @Export(name="isAutoScalingForStorageEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoScalingForStorageEnabled;
+    private Output</* @Nullable */ Boolean> isAutoScalingForStorageEnabled;
 
     /**
      * @return (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      * 
      */
-    public Output<Boolean> isAutoScalingForStorageEnabled() {
-        return this.isAutoScalingForStorageEnabled;
+    public Output<Optional<Boolean>> isAutoScalingForStorageEnabled() {
+        return Codegen.optional(this.isAutoScalingForStorageEnabled);
     }
     /**
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
     @Export(name="isDataGuardEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDataGuardEnabled;
+    private Output</* @Nullable */ Boolean> isDataGuardEnabled;
 
     /**
      * @return (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    public Output<Boolean> isDataGuardEnabled() {
-        return this.isDataGuardEnabled;
+    public Output<Optional<Boolean>> isDataGuardEnabled() {
+        return Codegen.optional(this.isDataGuardEnabled);
     }
     /**
      * True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
      * 
      */
     @Export(name="isDedicated", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDedicated;
+    private Output</* @Nullable */ Boolean> isDedicated;
 
     /**
      * @return True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
      * 
      */
-    public Output<Boolean> isDedicated() {
-        return this.isDedicated;
+    public Output<Optional<Boolean>> isDedicated() {
+        return Codegen.optional(this.isDedicated);
     }
     /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
      * 
      */
     @Export(name="isFreeTier", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isFreeTier;
+    private Output</* @Nullable */ Boolean> isFreeTier;
 
     /**
      * @return (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
      * 
      */
-    public Output<Boolean> isFreeTier() {
-        return this.isFreeTier;
+    public Output<Optional<Boolean>> isFreeTier() {
+        return Codegen.optional(this.isFreeTier);
     }
     /**
      * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
     @Export(name="isLocalDataGuardEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLocalDataGuardEnabled;
+    private Output</* @Nullable */ Boolean> isLocalDataGuardEnabled;
 
     /**
      * @return (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    public Output<Boolean> isLocalDataGuardEnabled() {
-        return this.isLocalDataGuardEnabled;
+    public Output<Optional<Boolean>> isLocalDataGuardEnabled() {
+        return Codegen.optional(this.isLocalDataGuardEnabled);
     }
     /**
      * (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
      * 
      */
     @Export(name="isMtlsConnectionRequired", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMtlsConnectionRequired;
+    private Output</* @Nullable */ Boolean> isMtlsConnectionRequired;
 
     /**
      * @return (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
      * 
      */
-    public Output<Boolean> isMtlsConnectionRequired() {
-        return this.isMtlsConnectionRequired;
+    public Output<Optional<Boolean>> isMtlsConnectionRequired() {
+        return Codegen.optional(this.isMtlsConnectionRequired);
     }
     /**
      * Indicates if the Autonomous Database version is a preview version.
      * 
      */
     @Export(name="isPreview", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPreview;
+    private Output</* @Nullable */ Boolean> isPreview;
 
     /**
      * @return Indicates if the Autonomous Database version is a preview version.
      * 
      */
-    public Output<Boolean> isPreview() {
-        return this.isPreview;
+    public Output<Optional<Boolean>> isPreview() {
+        return Codegen.optional(this.isPreview);
     }
     /**
      * If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version&#39;s terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
     @Export(name="isPreviewVersionWithServiceTermsAccepted", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPreviewVersionWithServiceTermsAccepted;
+    private Output</* @Nullable */ Boolean> isPreviewVersionWithServiceTermsAccepted;
 
     /**
      * @return If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version&#39;s terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
-    public Output<Boolean> isPreviewVersionWithServiceTermsAccepted() {
-        return this.isPreviewVersionWithServiceTermsAccepted;
+    public Output<Optional<Boolean>> isPreviewVersionWithServiceTermsAccepted() {
+        return Codegen.optional(this.isPreviewVersionWithServiceTermsAccepted);
     }
     /**
      * Indicates if the refreshable clone can be reconnected to its source database.
      * 
      */
     @Export(name="isReconnectCloneEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isReconnectCloneEnabled;
+    private Output</* @Nullable */ Boolean> isReconnectCloneEnabled;
 
     /**
      * @return Indicates if the refreshable clone can be reconnected to its source database.
      * 
      */
-    public Output<Boolean> isReconnectCloneEnabled() {
-        return this.isReconnectCloneEnabled;
+    public Output<Optional<Boolean>> isReconnectCloneEnabled() {
+        return Codegen.optional(this.isReconnectCloneEnabled);
     }
     /**
      * (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
      * 
      */
     @Export(name="isRefreshableClone", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRefreshableClone;
+    private Output</* @Nullable */ Boolean> isRefreshableClone;
 
     /**
      * @return (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
      * 
      */
-    public Output<Boolean> isRefreshableClone() {
-        return this.isRefreshableClone;
+    public Output<Optional<Boolean>> isRefreshableClone() {
+        return Codegen.optional(this.isRefreshableClone);
     }
     /**
      * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
     @Export(name="isRemoteDataGuardEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRemoteDataGuardEnabled;
+    private Output</* @Nullable */ Boolean> isRemoteDataGuardEnabled;
 
     /**
      * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    public Output<Boolean> isRemoteDataGuardEnabled() {
-        return this.isRemoteDataGuardEnabled;
+    public Output<Optional<Boolean>> isRemoteDataGuardEnabled() {
+        return Codegen.optional(this.isRemoteDataGuardEnabled);
     }
     /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
@@ -835,224 +835,224 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="keyHistoryEntries", refs={List.class,AutonomousDatabaseKeyHistoryEntry.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseKeyHistoryEntry>> keyHistoryEntries;
+    private Output</* @Nullable */ List<AutonomousDatabaseKeyHistoryEntry>> keyHistoryEntries;
 
     /**
      * @return Key History Entry.
      * 
      */
-    public Output<List<AutonomousDatabaseKeyHistoryEntry>> keyHistoryEntries() {
-        return this.keyHistoryEntries;
+    public Output<Optional<List<AutonomousDatabaseKeyHistoryEntry>>> keyHistoryEntries() {
+        return Codegen.optional(this.keyHistoryEntries);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
     @Export(name="keyStoreId", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreId;
+    private Output</* @Nullable */ String> keyStoreId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public Output<String> keyStoreId() {
-        return this.keyStoreId;
+    public Output<Optional<String>> keyStoreId() {
+        return Codegen.optional(this.keyStoreId);
     }
     /**
      * The wallet name for Oracle Key Vault.
      * 
      */
     @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreWalletName;
+    private Output</* @Nullable */ String> keyStoreWalletName;
 
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public Output<String> keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Output<Optional<String>> keyStoreWalletName() {
+        return Codegen.optional(this.keyStoreWalletName);
     }
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * KMS key lifecycle details.
      * 
      */
     @Export(name="kmsKeyLifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyLifecycleDetails;
+    private Output</* @Nullable */ String> kmsKeyLifecycleDetails;
 
     /**
      * @return KMS key lifecycle details.
      * 
      */
-    public Output<String> kmsKeyLifecycleDetails() {
-        return this.kmsKeyLifecycleDetails;
+    public Output<Optional<String>> kmsKeyLifecycleDetails() {
+        return Codegen.optional(this.kmsKeyLifecycleDetails);
     }
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyVersionId;
+    private Output</* @Nullable */ String> kmsKeyVersionId;
 
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public Output<String> kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Output<Optional<String>> kmsKeyVersionId() {
+        return Codegen.optional(this.kmsKeyVersionId);
     }
     /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      * 
      */
     @Export(name="localAdgAutoFailoverMaxDataLossLimit", refs={Integer.class}, tree="[0]")
-    private Output<Integer> localAdgAutoFailoverMaxDataLossLimit;
+    private Output</* @Nullable */ Integer> localAdgAutoFailoverMaxDataLossLimit;
 
     /**
      * @return Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      * 
      */
-    public Output<Integer> localAdgAutoFailoverMaxDataLossLimit() {
-        return this.localAdgAutoFailoverMaxDataLossLimit;
+    public Output<Optional<Integer>> localAdgAutoFailoverMaxDataLossLimit() {
+        return Codegen.optional(this.localAdgAutoFailoverMaxDataLossLimit);
     }
     /**
      * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Export(name="localDisasterRecoveryType", refs={String.class}, tree="[0]")
-    private Output<String> localDisasterRecoveryType;
+    private Output</* @Nullable */ String> localDisasterRecoveryType;
 
     /**
      * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    public Output<String> localDisasterRecoveryType() {
-        return this.localDisasterRecoveryType;
+    public Output<Optional<String>> localDisasterRecoveryType() {
+        return Codegen.optional(this.localDisasterRecoveryType);
     }
     /**
      * Autonomous Data Guard standby database details.
      * 
      */
     @Export(name="localStandbyDbs", refs={List.class,AutonomousDatabaseLocalStandbyDb.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseLocalStandbyDb>> localStandbyDbs;
+    private Output</* @Nullable */ List<AutonomousDatabaseLocalStandbyDb>> localStandbyDbs;
 
     /**
      * @return Autonomous Data Guard standby database details.
      * 
      */
-    public Output<List<AutonomousDatabaseLocalStandbyDb>> localStandbyDbs() {
-        return this.localStandbyDbs;
+    public Output<Optional<List<AutonomousDatabaseLocalStandbyDb>>> localStandbyDbs() {
+        return Codegen.optional(this.localStandbyDbs);
     }
     /**
      * Details for the long-term backup schedule.
      * 
      */
     @Export(name="longTermBackupSchedules", refs={List.class,AutonomousDatabaseLongTermBackupSchedule.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseLongTermBackupSchedule>> longTermBackupSchedules;
+    private Output</* @Nullable */ List<AutonomousDatabaseLongTermBackupSchedule>> longTermBackupSchedules;
 
     /**
      * @return Details for the long-term backup schedule.
      * 
      */
-    public Output<List<AutonomousDatabaseLongTermBackupSchedule>> longTermBackupSchedules() {
-        return this.longTermBackupSchedules;
+    public Output<Optional<List<AutonomousDatabaseLongTermBackupSchedule>>> longTermBackupSchedules() {
+        return Codegen.optional(this.longTermBackupSchedules);
     }
     /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
     @Export(name="maxCpuCoreCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxCpuCoreCount;
+    private Output</* @Nullable */ Integer> maxCpuCoreCount;
 
     /**
      * @return (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
-    public Output<Integer> maxCpuCoreCount() {
-        return this.maxCpuCoreCount;
+    public Output<Optional<Integer>> maxCpuCoreCount() {
+        return Codegen.optional(this.maxCpuCoreCount);
     }
     /**
      * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memoryPerOracleComputeUnitInGbs;
+    private Output</* @Nullable */ Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
      * @return The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
      * 
      */
-    public Output<Integer> memoryPerOracleComputeUnitInGbs() {
-        return this.memoryPerOracleComputeUnitInGbs;
+    public Output<Optional<Integer>> memoryPerOracleComputeUnitInGbs() {
+        return Codegen.optional(this.memoryPerOracleComputeUnitInGbs);
     }
     /**
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
     @Export(name="ncharacterSet", refs={String.class}, tree="[0]")
-    private Output<String> ncharacterSet;
+    private Output</* @Nullable */ String> ncharacterSet;
 
     /**
      * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
-    public Output<String> ncharacterSet() {
-        return this.ncharacterSet;
+    public Output<Optional<String>> ncharacterSet() {
+        return Codegen.optional(this.ncharacterSet);
     }
     /**
      * The date and time when the next long-term backup would be created.
      * 
      */
     @Export(name="nextLongTermBackupTimeStamp", refs={String.class}, tree="[0]")
-    private Output<String> nextLongTermBackupTimeStamp;
+    private Output</* @Nullable */ String> nextLongTermBackupTimeStamp;
 
     /**
      * @return The date and time when the next long-term backup would be created.
      * 
      */
-    public Output<String> nextLongTermBackupTimeStamp() {
-        return this.nextLongTermBackupTimeStamp;
+    public Output<Optional<String>> nextLongTermBackupTimeStamp() {
+        return Codegen.optional(this.nextLongTermBackupTimeStamp);
     }
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -1060,15 +1060,15 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * (Updatable) The number of OCPU cores to be made available to the database.
@@ -1083,7 +1083,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocpuCount", refs={Double.class}, tree="[0]")
-    private Output<Double> ocpuCount;
+    private Output</* @Nullable */ Double> ocpuCount;
 
     /**
      * @return (Updatable) The number of OCPU cores to be made available to the database.
@@ -1097,202 +1097,202 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      * 
      */
-    public Output<Double> ocpuCount() {
-        return this.ocpuCount;
+    public Output<Optional<Double>> ocpuCount() {
+        return Codegen.optional(this.ocpuCount);
     }
     /**
      * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     @Export(name="openMode", refs={String.class}, tree="[0]")
-    private Output<String> openMode;
+    private Output</* @Nullable */ String> openMode;
 
     /**
      * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
-    public Output<String> openMode() {
-        return this.openMode;
+    public Output<Optional<String>> openMode() {
+        return Codegen.optional(this.openMode);
     }
     /**
      * (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
      * 
      */
     @Export(name="operationsInsightsStatus", refs={String.class}, tree="[0]")
-    private Output<String> operationsInsightsStatus;
+    private Output</* @Nullable */ String> operationsInsightsStatus;
 
     /**
      * @return (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
      * 
      */
-    public Output<String> operationsInsightsStatus() {
-        return this.operationsInsightsStatus;
+    public Output<Optional<String>> operationsInsightsStatus() {
+        return Codegen.optional(this.operationsInsightsStatus);
     }
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     @Export(name="peerDbIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> peerDbIds;
+    private Output</* @Nullable */ List<String>> peerDbIds;
 
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
-    public Output<List<String>> peerDbIds() {
-        return this.peerDbIds;
+    public Output<Optional<List<String>>> peerDbIds() {
+        return Codegen.optional(this.peerDbIds);
     }
     /**
      * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
     @Export(name="permissionLevel", refs={String.class}, tree="[0]")
-    private Output<String> permissionLevel;
+    private Output</* @Nullable */ String> permissionLevel;
 
     /**
      * @return The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
-    public Output<String> permissionLevel() {
-        return this.permissionLevel;
+    public Output<Optional<String>> permissionLevel() {
+        return Codegen.optional(this.permissionLevel);
     }
     /**
      * The private endpoint for the resource.
      * 
      */
     @Export(name="privateEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpoint;
+    private Output</* @Nullable */ String> privateEndpoint;
 
     /**
      * @return The private endpoint for the resource.
      * 
      */
-    public Output<String> privateEndpoint() {
-        return this.privateEndpoint;
+    public Output<Optional<String>> privateEndpoint() {
+        return Codegen.optional(this.privateEndpoint);
     }
     /**
      * The private endpoint Ip address for the resource.
      * 
      */
     @Export(name="privateEndpointIp", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointIp;
+    private Output</* @Nullable */ String> privateEndpointIp;
 
     /**
      * @return The private endpoint Ip address for the resource.
      * 
      */
-    public Output<String> privateEndpointIp() {
-        return this.privateEndpointIp;
+    public Output<Optional<String>> privateEndpointIp() {
+        return Codegen.optional(this.privateEndpointIp);
     }
     /**
      * (Updatable) The private endpoint label for the resource.
      * 
      */
     @Export(name="privateEndpointLabel", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointLabel;
+    private Output</* @Nullable */ String> privateEndpointLabel;
 
     /**
      * @return (Updatable) The private endpoint label for the resource.
      * 
      */
-    public Output<String> privateEndpointLabel() {
-        return this.privateEndpointLabel;
+    public Output<Optional<String>> privateEndpointLabel() {
+        return Codegen.optional(this.privateEndpointLabel);
     }
     /**
      * An array of CPU values that an Autonomous Database can be scaled to.
      * 
      */
     @Export(name="provisionableCpuses", refs={List.class,Double.class}, tree="[0,1]")
-    private Output<List<Double>> provisionableCpuses;
+    private Output</* @Nullable */ List<Double>> provisionableCpuses;
 
     /**
      * @return An array of CPU values that an Autonomous Database can be scaled to.
      * 
      */
-    public Output<List<Double>> provisionableCpuses() {
-        return this.provisionableCpuses;
+    public Output<Optional<List<Double>>> provisionableCpuses() {
+        return Codegen.optional(this.provisionableCpuses);
     }
     /**
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
     @Export(name="refreshableMode", refs={String.class}, tree="[0]")
-    private Output<String> refreshableMode;
+    private Output</* @Nullable */ String> refreshableMode;
 
     /**
      * @return (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
-    public Output<String> refreshableMode() {
-        return this.refreshableMode;
+    public Output<Optional<String>> refreshableMode() {
+        return Codegen.optional(this.refreshableMode);
     }
     /**
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      * 
      */
     @Export(name="refreshableStatus", refs={String.class}, tree="[0]")
-    private Output<String> refreshableStatus;
+    private Output</* @Nullable */ String> refreshableStatus;
 
     /**
      * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      * 
      */
-    public Output<String> refreshableStatus() {
-        return this.refreshableStatus;
+    public Output<Optional<String>> refreshableStatus() {
+        return Codegen.optional(this.refreshableStatus);
     }
     /**
      * Configurations of a Disaster Recovery.
      * 
      */
     @Export(name="remoteDisasterRecoveryConfigurations", refs={List.class,AutonomousDatabaseRemoteDisasterRecoveryConfiguration.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> remoteDisasterRecoveryConfigurations;
+    private Output</* @Nullable */ List<AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> remoteDisasterRecoveryConfigurations;
 
     /**
      * @return Configurations of a Disaster Recovery.
      * 
      */
-    public Output<List<AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> remoteDisasterRecoveryConfigurations() {
-        return this.remoteDisasterRecoveryConfigurations;
+    public Output<Optional<List<AutonomousDatabaseRemoteDisasterRecoveryConfiguration>>> remoteDisasterRecoveryConfigurations() {
+        return Codegen.optional(this.remoteDisasterRecoveryConfigurations);
     }
     /**
      * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Export(name="remoteDisasterRecoveryType", refs={String.class}, tree="[0]")
-    private Output<String> remoteDisasterRecoveryType;
+    private Output</* @Nullable */ String> remoteDisasterRecoveryType;
 
     /**
      * @return Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    public Output<String> remoteDisasterRecoveryType() {
-        return this.remoteDisasterRecoveryType;
+    public Output<Optional<String>> remoteDisasterRecoveryType() {
+        return Codegen.optional(this.remoteDisasterRecoveryType);
     }
     @Export(name="resourcePoolLeaderId", refs={String.class}, tree="[0]")
-    private Output<String> resourcePoolLeaderId;
+    private Output</* @Nullable */ String> resourcePoolLeaderId;
 
-    public Output<String> resourcePoolLeaderId() {
-        return this.resourcePoolLeaderId;
+    public Output<Optional<String>> resourcePoolLeaderId() {
+        return Codegen.optional(this.resourcePoolLeaderId);
     }
     @Export(name="resourcePoolSummary", refs={AutonomousDatabaseResourcePoolSummary.class}, tree="[0]")
-    private Output<AutonomousDatabaseResourcePoolSummary> resourcePoolSummary;
+    private Output</* @Nullable */ AutonomousDatabaseResourcePoolSummary> resourcePoolSummary;
 
-    public Output<AutonomousDatabaseResourcePoolSummary> resourcePoolSummary() {
-        return this.resourcePoolSummary;
+    public Output<Optional<AutonomousDatabaseResourcePoolSummary>> resourcePoolSummary() {
+        return Codegen.optional(this.resourcePoolSummary);
     }
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
-    private Output<String> role;
+    private Output</* @Nullable */ String> role;
 
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public Output<String> role() {
-        return this.role;
+    public Output<Optional<String>> role() {
+        return Codegen.optional(this.role);
     }
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
@@ -1315,7 +1315,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scheduledOperations", refs={List.class,AutonomousDatabaseScheduledOperation.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseScheduledOperation>> scheduledOperations;
+    private Output</* @Nullable */ List<AutonomousDatabaseScheduledOperation>> scheduledOperations;
 
     /**
      * @return (Updatable) The list of scheduled operations.
@@ -1323,50 +1323,50 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
-    public Output<List<AutonomousDatabaseScheduledOperation>> scheduledOperations() {
-        return this.scheduledOperations;
+    public Output<Optional<List<AutonomousDatabaseScheduledOperation>>> scheduledOperations() {
+        return Codegen.optional(this.scheduledOperations);
     }
     /**
      * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      * 
      */
     @Export(name="secretId", refs={String.class}, tree="[0]")
-    private Output<String> secretId;
+    private Output</* @Nullable */ String> secretId;
 
     /**
      * @return (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      * 
      */
-    public Output<String> secretId() {
-        return this.secretId;
+    public Output<Optional<String>> secretId() {
+        return Codegen.optional(this.secretId);
     }
     /**
      * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
      * 
      */
     @Export(name="secretVersionNumber", refs={Integer.class}, tree="[0]")
-    private Output<Integer> secretVersionNumber;
+    private Output</* @Nullable */ Integer> secretVersionNumber;
 
     /**
      * @return (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
      * 
      */
-    public Output<Integer> secretVersionNumber() {
-        return this.secretVersionNumber;
+    public Output<Optional<Integer>> secretVersionNumber() {
+        return Codegen.optional(this.secretVersionNumber);
     }
     /**
      * The URL of the Service Console for the Autonomous Database.
      * 
      */
     @Export(name="serviceConsoleUrl", refs={String.class}, tree="[0]")
-    private Output<String> serviceConsoleUrl;
+    private Output</* @Nullable */ String> serviceConsoleUrl;
 
     /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
      */
-    public Output<String> serviceConsoleUrl() {
-        return this.serviceConsoleUrl;
+    public Output<Optional<String>> serviceConsoleUrl() {
+        return Codegen.optional(this.serviceConsoleUrl);
     }
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -1375,7 +1375,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
-    private Output<String> source;
+    private Output</* @Nullable */ String> source;
 
     /**
      * @return The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -1383,36 +1383,36 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * For Autonomous Databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      * 
      */
-    public Output<String> source() {
-        return this.source;
+    public Output<Optional<String>> source() {
+        return Codegen.optional(this.source);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
      * 
      */
     @Export(name="sourceId", refs={String.class}, tree="[0]")
-    private Output<String> sourceId;
+    private Output</* @Nullable */ String> sourceId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
      * 
      */
-    public Output<String> sourceId() {
-        return this.sourceId;
+    public Output<Optional<String>> sourceId() {
+        return Codegen.optional(this.sourceId);
     }
     /**
      * **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     @Export(name="standbyDbs", refs={List.class,AutonomousDatabaseStandbyDb.class}, tree="[0,1]")
-    private Output<List<AutonomousDatabaseStandbyDb>> standbyDbs;
+    private Output</* @Nullable */ List<AutonomousDatabaseStandbyDb>> standbyDbs;
 
     /**
      * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
-    public Output<List<AutonomousDatabaseStandbyDb>> standbyDbs() {
-        return this.standbyDbs;
+    public Output<Optional<List<AutonomousDatabaseStandbyDb>>> standbyDbs() {
+        return Codegen.optional(this.standbyDbs);
     }
     /**
      * (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -1425,7 +1425,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="standbyWhitelistedIps", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> standbyWhitelistedIps;
+    private Output</* @Nullable */ List<String>> standbyWhitelistedIps;
 
     /**
      * @return (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -1437,22 +1437,22 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
-    public Output<List<String>> standbyWhitelistedIps() {
-        return this.standbyWhitelistedIps;
+    public Output<Optional<List<String>>> standbyWhitelistedIps() {
+        return Codegen.optional(this.standbyWhitelistedIps);
     }
     /**
      * The current state of the Autonomous Database.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Autonomous Database.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -1466,7 +1466,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
-    private Output<String> subnetId;
+    private Output</* @Nullable */ String> subnetId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -1479,22 +1479,22 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
      */
-    public Output<String> subnetId() {
-        return this.subnetId;
+    public Output<Optional<String>> subnetId() {
+        return Codegen.optional(this.subnetId);
     }
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      * 
      */
     @Export(name="supportedRegionsToCloneTos", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> supportedRegionsToCloneTos;
+    private Output</* @Nullable */ List<String>> supportedRegionsToCloneTos;
 
     /**
      * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      * 
      */
-    public Output<List<String>> supportedRegionsToCloneTos() {
-        return this.supportedRegionsToCloneTos;
+    public Output<Optional<List<String>>> supportedRegionsToCloneTos() {
+        return Codegen.optional(this.supportedRegionsToCloneTos);
     }
     /**
      * It is applicable only when `is_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
@@ -1529,300 +1529,300 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the Autonomous Database was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Autonomous Database was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     @Export(name="timeDataGuardRoleChanged", refs={String.class}, tree="[0]")
-    private Output<String> timeDataGuardRoleChanged;
+    private Output</* @Nullable */ String> timeDataGuardRoleChanged;
 
     /**
      * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    public Output<String> timeDataGuardRoleChanged() {
-        return this.timeDataGuardRoleChanged;
+    public Output<Optional<String>> timeDataGuardRoleChanged() {
+        return Codegen.optional(this.timeDataGuardRoleChanged);
     }
     /**
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      * 
      */
     @Export(name="timeDeletionOfFreeAutonomousDatabase", refs={String.class}, tree="[0]")
-    private Output<String> timeDeletionOfFreeAutonomousDatabase;
+    private Output</* @Nullable */ String> timeDeletionOfFreeAutonomousDatabase;
 
     /**
      * @return The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      * 
      */
-    public Output<String> timeDeletionOfFreeAutonomousDatabase() {
-        return this.timeDeletionOfFreeAutonomousDatabase;
+    public Output<Optional<String>> timeDeletionOfFreeAutonomousDatabase() {
+        return Codegen.optional(this.timeDeletionOfFreeAutonomousDatabase);
     }
     /**
      * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * 
      */
     @Export(name="timeDisasterRecoveryRoleChanged", refs={String.class}, tree="[0]")
-    private Output<String> timeDisasterRecoveryRoleChanged;
+    private Output</* @Nullable */ String> timeDisasterRecoveryRoleChanged;
 
     /**
      * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * 
      */
-    public Output<String> timeDisasterRecoveryRoleChanged() {
-        return this.timeDisasterRecoveryRoleChanged;
+    public Output<Optional<String>> timeDisasterRecoveryRoleChanged() {
+        return Codegen.optional(this.timeDisasterRecoveryRoleChanged);
     }
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
      */
     @Export(name="timeLocalDataGuardEnabled", refs={String.class}, tree="[0]")
-    private Output<String> timeLocalDataGuardEnabled;
+    private Output</* @Nullable */ String> timeLocalDataGuardEnabled;
 
     /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
      */
-    public Output<String> timeLocalDataGuardEnabled() {
-        return this.timeLocalDataGuardEnabled;
+    public Output<Optional<String>> timeLocalDataGuardEnabled() {
+        return Codegen.optional(this.timeLocalDataGuardEnabled);
     }
     /**
      * The date and time when maintenance will begin.
      * 
      */
     @Export(name="timeMaintenanceBegin", refs={String.class}, tree="[0]")
-    private Output<String> timeMaintenanceBegin;
+    private Output</* @Nullable */ String> timeMaintenanceBegin;
 
     /**
      * @return The date and time when maintenance will begin.
      * 
      */
-    public Output<String> timeMaintenanceBegin() {
-        return this.timeMaintenanceBegin;
+    public Output<Optional<String>> timeMaintenanceBegin() {
+        return Codegen.optional(this.timeMaintenanceBegin);
     }
     /**
      * The date and time when maintenance will end.
      * 
      */
     @Export(name="timeMaintenanceEnd", refs={String.class}, tree="[0]")
-    private Output<String> timeMaintenanceEnd;
+    private Output</* @Nullable */ String> timeMaintenanceEnd;
 
     /**
      * @return The date and time when maintenance will end.
      * 
      */
-    public Output<String> timeMaintenanceEnd() {
-        return this.timeMaintenanceEnd;
+    public Output<Optional<String>> timeMaintenanceEnd() {
+        return Codegen.optional(this.timeMaintenanceEnd);
     }
     @Export(name="timeOfJoiningResourcePool", refs={String.class}, tree="[0]")
-    private Output<String> timeOfJoiningResourcePool;
+    private Output</* @Nullable */ String> timeOfJoiningResourcePool;
 
-    public Output<String> timeOfJoiningResourcePool() {
-        return this.timeOfJoiningResourcePool;
+    public Output<Optional<String>> timeOfJoiningResourcePool() {
+        return Codegen.optional(this.timeOfJoiningResourcePool);
     }
     /**
      * The timestamp of the last failover operation.
      * 
      */
     @Export(name="timeOfLastFailover", refs={String.class}, tree="[0]")
-    private Output<String> timeOfLastFailover;
+    private Output</* @Nullable */ String> timeOfLastFailover;
 
     /**
      * @return The timestamp of the last failover operation.
      * 
      */
-    public Output<String> timeOfLastFailover() {
-        return this.timeOfLastFailover;
+    public Output<Optional<String>> timeOfLastFailover() {
+        return Codegen.optional(this.timeOfLastFailover);
     }
     /**
      * The date and time when last refresh happened.
      * 
      */
     @Export(name="timeOfLastRefresh", refs={String.class}, tree="[0]")
-    private Output<String> timeOfLastRefresh;
+    private Output</* @Nullable */ String> timeOfLastRefresh;
 
     /**
      * @return The date and time when last refresh happened.
      * 
      */
-    public Output<String> timeOfLastRefresh() {
-        return this.timeOfLastRefresh;
+    public Output<Optional<String>> timeOfLastRefresh() {
+        return Codegen.optional(this.timeOfLastRefresh);
     }
     /**
      * The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      * 
      */
     @Export(name="timeOfLastRefreshPoint", refs={String.class}, tree="[0]")
-    private Output<String> timeOfLastRefreshPoint;
+    private Output</* @Nullable */ String> timeOfLastRefreshPoint;
 
     /**
      * @return The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      * 
      */
-    public Output<String> timeOfLastRefreshPoint() {
-        return this.timeOfLastRefreshPoint;
+    public Output<Optional<String>> timeOfLastRefreshPoint() {
+        return Codegen.optional(this.timeOfLastRefreshPoint);
     }
     /**
      * The timestamp of the last switchover operation for the Autonomous Database.
      * 
      */
     @Export(name="timeOfLastSwitchover", refs={String.class}, tree="[0]")
-    private Output<String> timeOfLastSwitchover;
+    private Output</* @Nullable */ String> timeOfLastSwitchover;
 
     /**
      * @return The timestamp of the last switchover operation for the Autonomous Database.
      * 
      */
-    public Output<String> timeOfLastSwitchover() {
-        return this.timeOfLastSwitchover;
+    public Output<Optional<String>> timeOfLastSwitchover() {
+        return Codegen.optional(this.timeOfLastSwitchover);
     }
     /**
      * The date and time of next refresh.
      * 
      */
     @Export(name="timeOfNextRefresh", refs={String.class}, tree="[0]")
-    private Output<String> timeOfNextRefresh;
+    private Output</* @Nullable */ String> timeOfNextRefresh;
 
     /**
      * @return The date and time of next refresh.
      * 
      */
-    public Output<String> timeOfNextRefresh() {
-        return this.timeOfNextRefresh;
+    public Output<Optional<String>> timeOfNextRefresh() {
+        return Codegen.optional(this.timeOfNextRefresh);
     }
     /**
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      * 
      */
     @Export(name="timeReclamationOfFreeAutonomousDatabase", refs={String.class}, tree="[0]")
-    private Output<String> timeReclamationOfFreeAutonomousDatabase;
+    private Output</* @Nullable */ String> timeReclamationOfFreeAutonomousDatabase;
 
     /**
      * @return The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      * 
      */
-    public Output<String> timeReclamationOfFreeAutonomousDatabase() {
-        return this.timeReclamationOfFreeAutonomousDatabase;
+    public Output<Optional<String>> timeReclamationOfFreeAutonomousDatabase() {
+        return Codegen.optional(this.timeReclamationOfFreeAutonomousDatabase);
     }
     /**
      * The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      * 
      */
     @Export(name="timeUntilReconnectCloneEnabled", refs={String.class}, tree="[0]")
-    private Output<String> timeUntilReconnectCloneEnabled;
+    private Output</* @Nullable */ String> timeUntilReconnectCloneEnabled;
 
     /**
      * @return The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      * 
      */
-    public Output<String> timeUntilReconnectCloneEnabled() {
-        return this.timeUntilReconnectCloneEnabled;
+    public Output<Optional<String>> timeUntilReconnectCloneEnabled() {
+        return Codegen.optional(this.timeUntilReconnectCloneEnabled);
     }
     /**
      * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      * 
      */
     @Export(name="timestamp", refs={String.class}, tree="[0]")
-    private Output<String> timestamp;
+    private Output</* @Nullable */ String> timestamp;
 
     /**
      * @return The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      * 
      */
-    public Output<String> timestamp() {
-        return this.timestamp;
+    public Output<Optional<String>> timestamp() {
+        return Codegen.optional(this.timestamp);
     }
     /**
      * The backup storage to the database.
      * 
      */
     @Export(name="totalBackupStorageSizeInGbs", refs={Double.class}, tree="[0]")
-    private Output<Double> totalBackupStorageSizeInGbs;
+    private Output</* @Nullable */ Double> totalBackupStorageSizeInGbs;
 
     /**
      * @return The backup storage to the database.
      * 
      */
-    public Output<Double> totalBackupStorageSizeInGbs() {
-        return this.totalBackupStorageSizeInGbs;
+    public Output<Optional<Double>> totalBackupStorageSizeInGbs() {
+        return Codegen.optional(this.totalBackupStorageSizeInGbs);
     }
     /**
      * Clone from latest available backup timestamp.
      * 
      */
     @Export(name="useLatestAvailableBackupTimeStamp", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> useLatestAvailableBackupTimeStamp;
+    private Output</* @Nullable */ Boolean> useLatestAvailableBackupTimeStamp;
 
     /**
      * @return Clone from latest available backup timestamp.
      * 
      */
-    public Output<Boolean> useLatestAvailableBackupTimeStamp() {
-        return this.useLatestAvailableBackupTimeStamp;
+    public Output<Optional<Boolean>> useLatestAvailableBackupTimeStamp() {
+        return Codegen.optional(this.useLatestAvailableBackupTimeStamp);
     }
     /**
      * The storage space consumed by Autonomous Database in GBs.
      * 
      */
     @Export(name="usedDataStorageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> usedDataStorageSizeInGbs;
+    private Output</* @Nullable */ Integer> usedDataStorageSizeInGbs;
 
     /**
      * @return The storage space consumed by Autonomous Database in GBs.
      * 
      */
-    public Output<Integer> usedDataStorageSizeInGbs() {
-        return this.usedDataStorageSizeInGbs;
+    public Output<Optional<Integer>> usedDataStorageSizeInGbs() {
+        return Codegen.optional(this.usedDataStorageSizeInGbs);
     }
     /**
      * The amount of storage that has been used, in terabytes.
      * 
      */
     @Export(name="usedDataStorageSizeInTbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> usedDataStorageSizeInTbs;
+    private Output</* @Nullable */ Integer> usedDataStorageSizeInTbs;
 
     /**
      * @return The amount of storage that has been used, in terabytes.
      * 
      */
-    public Output<Integer> usedDataStorageSizeInTbs() {
-        return this.usedDataStorageSizeInTbs;
+    public Output<Optional<Integer>> usedDataStorageSizeInTbs() {
+        return Codegen.optional(this.usedDataStorageSizeInTbs);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
-    private Output<String> vaultId;
+    private Output</* @Nullable */ String> vaultId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public Output<String> vaultId() {
-        return this.vaultId;
+    public Output<Optional<String>> vaultId() {
+        return Codegen.optional(this.vaultId);
     }
     /**
      * (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.

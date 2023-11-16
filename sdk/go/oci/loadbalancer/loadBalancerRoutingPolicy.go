@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -80,7 +79,7 @@ type LoadBalancerRoutingPolicy struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The list of routing rules.
 	Rules LoadBalancerRoutingPolicyRuleArrayOutput `pulumi:"rules"`
-	State pulumi.StringOutput                      `pulumi:"state"`
+	State pulumi.StringPtrOutput                   `pulumi:"state"`
 }
 
 // NewLoadBalancerRoutingPolicy registers a new resource with the given unique name, arguments, and options.
@@ -207,12 +206,6 @@ func (i *LoadBalancerRoutingPolicy) ToLoadBalancerRoutingPolicyOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyOutput)
 }
 
-func (i *LoadBalancerRoutingPolicy) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[*LoadBalancerRoutingPolicy]{
-		OutputState: i.ToLoadBalancerRoutingPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerRoutingPolicyArrayInput is an input type that accepts LoadBalancerRoutingPolicyArray and LoadBalancerRoutingPolicyArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerRoutingPolicyArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i LoadBalancerRoutingPolicyArray) ToLoadBalancerRoutingPolicyArrayOutput()
 
 func (i LoadBalancerRoutingPolicyArray) ToLoadBalancerRoutingPolicyArrayOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyArrayOutput)
-}
-
-func (i LoadBalancerRoutingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[[]*LoadBalancerRoutingPolicy]{
-		OutputState: i.ToLoadBalancerRoutingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LoadBalancerRoutingPolicyMapInput is an input type that accepts LoadBalancerRoutingPolicyMap and LoadBalancerRoutingPolicyMapOutput values.
@@ -269,12 +256,6 @@ func (i LoadBalancerRoutingPolicyMap) ToLoadBalancerRoutingPolicyMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyMapOutput)
 }
 
-func (i LoadBalancerRoutingPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[map[string]*LoadBalancerRoutingPolicy]{
-		OutputState: i.ToLoadBalancerRoutingPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerRoutingPolicyOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerRoutingPolicyOutput) ElementType() reflect.Type {
@@ -287,12 +268,6 @@ func (o LoadBalancerRoutingPolicyOutput) ToLoadBalancerRoutingPolicyOutput() Loa
 
 func (o LoadBalancerRoutingPolicyOutput) ToLoadBalancerRoutingPolicyOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[*LoadBalancerRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The version of the language in which `condition` of `rules` are composed.
@@ -318,8 +293,8 @@ func (o LoadBalancerRoutingPolicyOutput) Rules() LoadBalancerRoutingPolicyRuleAr
 	return o.ApplyT(func(v *LoadBalancerRoutingPolicy) LoadBalancerRoutingPolicyRuleArrayOutput { return v.Rules }).(LoadBalancerRoutingPolicyRuleArrayOutput)
 }
 
-func (o LoadBalancerRoutingPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LoadBalancerRoutingPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LoadBalancerRoutingPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerRoutingPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type LoadBalancerRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -334,12 +309,6 @@ func (o LoadBalancerRoutingPolicyArrayOutput) ToLoadBalancerRoutingPolicyArrayOu
 
 func (o LoadBalancerRoutingPolicyArrayOutput) ToLoadBalancerRoutingPolicyArrayOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyArrayOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[[]*LoadBalancerRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerRoutingPolicyArrayOutput) Index(i pulumi.IntInput) LoadBalancerRoutingPolicyOutput {
@@ -360,12 +329,6 @@ func (o LoadBalancerRoutingPolicyMapOutput) ToLoadBalancerRoutingPolicyMapOutput
 
 func (o LoadBalancerRoutingPolicyMapOutput) ToLoadBalancerRoutingPolicyMapOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyMapOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[map[string]*LoadBalancerRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerRoutingPolicyMapOutput) MapIndex(k pulumi.StringInput) LoadBalancerRoutingPolicyOutput {

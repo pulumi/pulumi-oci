@@ -41,39 +41,27 @@ class GetIpsecAlgorithmResult:
 
     @property
     @pulumi.getter(name="allowedPhaseOneParameters")
-    def allowed_phase_one_parameters(self) -> Sequence['outputs.GetIpsecAlgorithmAllowedPhaseOneParameterResult']:
-        """
-        Allowed phase one parameters.
-        """
+    def allowed_phase_one_parameters(self) -> Optional[Sequence['outputs.GetIpsecAlgorithmAllowedPhaseOneParameterResult']]:
         return pulumi.get(self, "allowed_phase_one_parameters")
 
     @property
     @pulumi.getter(name="allowedPhaseTwoParameters")
-    def allowed_phase_two_parameters(self) -> Sequence['outputs.GetIpsecAlgorithmAllowedPhaseTwoParameterResult']:
-        """
-        Allowed phase two parameters.
-        """
+    def allowed_phase_two_parameters(self) -> Optional[Sequence['outputs.GetIpsecAlgorithmAllowedPhaseTwoParameterResult']]:
         return pulumi.get(self, "allowed_phase_two_parameters")
 
     @property
     @pulumi.getter(name="defaultPhaseOneParameters")
-    def default_phase_one_parameters(self) -> Sequence['outputs.GetIpsecAlgorithmDefaultPhaseOneParameterResult']:
-        """
-        Default phase one parameters.
-        """
+    def default_phase_one_parameters(self) -> Optional[Sequence['outputs.GetIpsecAlgorithmDefaultPhaseOneParameterResult']]:
         return pulumi.get(self, "default_phase_one_parameters")
 
     @property
     @pulumi.getter(name="defaultPhaseTwoParameters")
-    def default_phase_two_parameters(self) -> Sequence['outputs.GetIpsecAlgorithmDefaultPhaseTwoParameterResult']:
-        """
-        Default phase two parameters.
-        """
+    def default_phase_two_parameters(self) -> Optional[Sequence['outputs.GetIpsecAlgorithmDefaultPhaseTwoParameterResult']]:
         return pulumi.get(self, "default_phase_two_parameters")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -95,18 +83,7 @@ class AwaitableGetIpsecAlgorithmResult(GetIpsecAlgorithmResult):
 
 def get_ipsec_algorithm(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecAlgorithmResult:
     """
-    This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
-
-    The parameters allowed for IKE IPSec tunnels.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipsec_algorithm = oci.Core.get_ipsec_algorithm()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -123,17 +100,6 @@ def get_ipsec_algorithm(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
 @_utilities.lift_output_func(get_ipsec_algorithm)
 def get_ipsec_algorithm_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecAlgorithmResult]:
     """
-    This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
-
-    The parameters allowed for IKE IPSec tunnels.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipsec_algorithm = oci.Core.get_ipsec_algorithm()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

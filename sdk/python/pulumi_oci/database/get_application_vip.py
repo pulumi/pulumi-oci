@@ -69,95 +69,62 @@ class GetApplicationVipResult:
 
     @property
     @pulumi.getter(name="cloudVmClusterId")
-    def cloud_vm_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
-        """
+    def cloud_vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "cloud_vm_cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbNodeId")
-    def db_node_id(self) -> str:
+    def db_node_id(self) -> Optional[str]:
         return pulumi.get(self, "db_node_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> str:
-        """
-        The hostname of the application virtual IP (VIP) address.
-        """
+    def hostname_label(self) -> Optional[str]:
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> str:
-        """
-        The application virtual IP (VIP) address.
-        """
+    def ip_address(self) -> Optional[str]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state of the application virtual IP (VIP) address.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the application virtual IP (VIP) address.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeAssigned")
-    def time_assigned(self) -> str:
-        """
-        The date and time when the create operation for the application virtual IP (VIP) address completed.
-        """
+    def time_assigned(self) -> Optional[str]:
         return pulumi.get(self, "time_assigned")
 
 
@@ -185,21 +152,7 @@ class AwaitableGetApplicationVipResult(GetApplicationVipResult):
 def get_application_vip(application_vip_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationVipResult:
     """
-    This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specified application virtual IP (VIP) address.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_application_vip = oci.Database.get_application_vip(application_vip_id=oci_database_application_vip["test_application_vip"]["id"])
-    ```
-
-
-    :param str application_vip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['applicationVipId'] = application_vip_id
@@ -226,20 +179,6 @@ def get_application_vip(application_vip_id: Optional[str] = None,
 def get_application_vip_output(application_vip_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationVipResult]:
     """
-    This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specified application virtual IP (VIP) address.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_application_vip = oci.Database.get_application_vip(application_vip_id=oci_database_application_vip["test_application_vip"]["id"])
-    ```
-
-
-    :param str application_vip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -8,18 +8,19 @@ import com.pulumi.oci.Core.outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptio
 import com.pulumi.oci.Core.outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCaptureFilterVtapCaptureFilterRuleUdpOption {
-    private List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
-    private List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
+    private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
+    private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
 
     private GetCaptureFilterVtapCaptureFilterRuleUdpOption() {}
     public List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges() {
-        return this.destinationPortRanges;
+        return this.destinationPortRanges == null ? List.of() : this.destinationPortRanges;
     }
     public List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges() {
-        return this.sourcePortRanges;
+        return this.sourcePortRanges == null ? List.of() : this.sourcePortRanges;
     }
 
     public static Builder builder() {
@@ -31,8 +32,8 @@ public final class GetCaptureFilterVtapCaptureFilterRuleUdpOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
-        private List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
+        private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
+        private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
         public Builder() {}
         public Builder(GetCaptureFilterVtapCaptureFilterRuleUdpOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,16 +42,16 @@ public final class GetCaptureFilterVtapCaptureFilterRuleUdpOption {
         }
 
         @CustomType.Setter
-        public Builder destinationPortRanges(List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+        public Builder destinationPortRanges(@Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges) {
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange... destinationPortRanges) {
             return destinationPortRanges(List.of(destinationPortRanges));
         }
         @CustomType.Setter
-        public Builder sourcePortRanges(List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+        public Builder sourcePortRanges(@Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges) {
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange... sourcePortRanges) {

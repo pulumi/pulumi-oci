@@ -47,38 +47,38 @@ export interface GetStackResult {
     /**
      * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
      */
-    readonly compartmentId: string;
-    readonly configSources: outputs.ResourceManager.GetStackConfigSource[];
+    readonly compartmentId?: string;
+    readonly configSources?: outputs.ResourceManager.GetStackConfigSource[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * General description of the stack.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Human-readable display name for the stack.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly stackId: string;
     /**
      * The current lifecycle state of the stack.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time at which the stack was created.
      */
-    readonly timeCreated: string;
-    readonly variables: {[key: string]: any};
+    readonly timeCreated?: string;
+    readonly variables?: {[key: string]: any};
 }
 /**
  * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.

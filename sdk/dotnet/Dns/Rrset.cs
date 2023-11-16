@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Dns
         /// (Updatable) The OCID of the compartment the resource belongs to.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The fully qualified domain name where the record can be located.

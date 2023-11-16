@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -132,56 +133,56 @@ public class Config extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A description of the metric.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A description of the metric.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A list of dimensions for the metric. This variable should not be used.
      * 
      */
     @Export(name="dimensions", refs={List.class,ConfigDimension.class}, tree="[0,1]")
-    private Output<List<ConfigDimension>> dimensions;
+    private Output</* @Nullable */ List<ConfigDimension>> dimensions;
 
     /**
      * @return (Updatable) A list of dimensions for the metric. This variable should not be used.
      * 
      */
-    public Output<List<ConfigDimension>> dimensions() {
-        return this.dimensions;
+    public Output<Optional<List<ConfigDimension>>> dimensions() {
+        return Codegen.optional(this.dimensions);
     }
     /**
      * (Updatable) The name by which a configuration entity is displayed to the end user.
@@ -202,196 +203,196 @@ public class Config extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="etag", refs={String.class}, tree="[0]")
-    private Output<String> etag;
+    private Output</* @Nullable */ String> etag;
 
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    public Output<String> etag() {
-        return this.etag;
+    public Output<Optional<String>> etag() {
+        return Codegen.optional(this.etag);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
     @Export(name="filterId", refs={String.class}, tree="[0]")
-    private Output<String> filterId;
+    private Output</* @Nullable */ String> filterId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
-    public Output<String> filterId() {
-        return this.filterId;
+    public Output<Optional<String>> filterId() {
+        return Codegen.optional(this.filterId);
     }
     /**
      * (Updatable) The string that defines the Span Filter expression.
      * 
      */
     @Export(name="filterText", refs={String.class}, tree="[0]")
-    private Output<String> filterText;
+    private Output</* @Nullable */ String> filterText;
 
     /**
      * @return (Updatable) The string that defines the Span Filter expression.
      * 
      */
-    public Output<String> filterText() {
-        return this.filterText;
+    public Output<Optional<String>> filterText() {
+        return Codegen.optional(this.filterText);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
     @Export(name="group", refs={String.class}, tree="[0]")
-    private Output<String> group;
+    private Output</* @Nullable */ String> group;
 
     /**
      * @return (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
-    public Output<String> group() {
-        return this.group;
+    public Output<Optional<String>> group() {
+        return Codegen.optional(this.group);
     }
     /**
      * The list of configuration items that reference the span filter.
      * 
      */
     @Export(name="inUseBies", refs={List.class,ConfigInUseBy.class}, tree="[0,1]")
-    private Output<List<ConfigInUseBy>> inUseBies;
+    private Output</* @Nullable */ List<ConfigInUseBy>> inUseBies;
 
     /**
      * @return The list of configuration items that reference the span filter.
      * 
      */
-    public Output<List<ConfigInUseBy>> inUseBies() {
-        return this.inUseBies;
+    public Output<Optional<List<ConfigInUseBy>>> inUseBies() {
+        return Codegen.optional(this.inUseBies);
     }
     /**
      * (Updatable) The list of metrics in this group.
      * 
      */
     @Export(name="metrics", refs={List.class,ConfigMetric.class}, tree="[0,1]")
-    private Output<List<ConfigMetric>> metrics;
+    private Output</* @Nullable */ List<ConfigMetric>> metrics;
 
     /**
      * @return (Updatable) The list of metrics in this group.
      * 
      */
-    public Output<List<ConfigMetric>> metrics() {
-        return this.metrics;
+    public Output<Optional<List<ConfigMetric>>> metrics() {
+        return Codegen.optional(this.metrics);
     }
     /**
      * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
-    private Output<String> namespace;
+    private Output</* @Nullable */ String> namespace;
 
     /**
      * @return (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
-    public Output<String> namespace() {
-        return this.namespace;
+    public Output<Optional<String>> namespace() {
+        return Codegen.optional(this.namespace);
     }
     /**
      * (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      * 
      */
     @Export(name="opcDryRun", refs={String.class}, tree="[0]")
-    private Output<String> opcDryRun;
+    private Output</* @Nullable */ String> opcDryRun;
 
     /**
      * @return (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      * 
      */
-    public Output<String> opcDryRun() {
-        return this.opcDryRun;
+    public Output<Optional<String>> opcDryRun() {
+        return Codegen.optional(this.opcDryRun);
     }
     /**
      * (Updatable) The options are stored here as JSON.
      * 
      */
     @Export(name="options", refs={String.class}, tree="[0]")
-    private Output<String> options;
+    private Output</* @Nullable */ String> options;
 
     /**
      * @return (Updatable) The options are stored here as JSON.
      * 
      */
-    public Output<String> options() {
-        return this.options;
+    public Output<Optional<String>> options() {
+        return Codegen.optional(this.options);
     }
     /**
      * (Updatable)
      * 
      */
     @Export(name="rules", refs={List.class,ConfigRule.class}, tree="[0,1]")
-    private Output<List<ConfigRule>> rules;
+    private Output</* @Nullable */ List<ConfigRule>> rules;
 
     /**
      * @return (Updatable)
      * 
      */
-    public Output<List<ConfigRule>> rules() {
-        return this.rules;
+    public Output<Optional<List<ConfigRule>>> rules() {
+        return Codegen.optional(this.rules);
     }
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
     @Export(name="updatedBy", refs={String.class}, tree="[0]")
-    private Output<String> updatedBy;
+    private Output</* @Nullable */ String> updatedBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    public Output<String> updatedBy() {
-        return this.updatedBy;
+    public Output<Optional<String>> updatedBy() {
+        return Codegen.optional(this.updatedBy);
     }
 
     /**

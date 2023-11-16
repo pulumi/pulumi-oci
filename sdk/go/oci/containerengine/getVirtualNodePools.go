@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
@@ -48,7 +47,7 @@ type GetVirtualNodePoolsResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetVirtualNodePoolsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The state of the Virtual Node Pool.
 	States []string `pulumi:"states"`
 	// The list of virtual_node_pools.
@@ -100,12 +99,6 @@ func (o GetVirtualNodePoolsResultOutput) ToGetVirtualNodePoolsResultOutputWithCo
 	return o
 }
 
-func (o GetVirtualNodePoolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsResult] {
-	return pulumix.Output[GetVirtualNodePoolsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
 func (o GetVirtualNodePoolsResultOutput) ClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolsResult) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
@@ -126,8 +119,8 @@ func (o GetVirtualNodePoolsResultOutput) Filters() GetVirtualNodePoolsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVirtualNodePoolsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The state of the Virtual Node Pool.

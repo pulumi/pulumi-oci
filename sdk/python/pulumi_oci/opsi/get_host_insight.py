@@ -109,106 +109,67 @@ class GetHostInsightResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeId")
-    def compute_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        """
+    def compute_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> str:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
+    def enterprise_manager_bridge_id(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> str:
-        """
-        Enterprise Manager Entity Display Name
-        """
+    def enterprise_manager_entity_display_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> str:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
+    def enterprise_manager_entity_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> str:
-        """
-        Enterprise Manager Entity Name
-        """
+    def enterprise_manager_entity_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> str:
-        """
-        Enterprise Manager Entity Type
-        """
+    def enterprise_manager_entity_type(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> str:
-        """
-        Enterprise Manager Unique Identifier
-        """
+    def enterprise_manager_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the host entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="exadataInsightId")
-    def exadata_insight_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        """
+    def exadata_insight_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_insight_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostDisplayName")
-    def host_display_name(self) -> str:
-        """
-        The user-friendly name for the host. The name does not have to be unique.
-        """
+    def host_display_name(self) -> Optional[str]:
         return pulumi.get(self, "host_display_name")
 
     @property
@@ -218,114 +179,72 @@ class GetHostInsightResult:
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="hostType")
-    def host_type(self) -> str:
-        """
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-        """
+    def host_type(self) -> Optional[str]:
         return pulumi.get(self, "host_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="platformName")
-    def platform_name(self) -> str:
-        """
-        Platform name.
-        """
+    def platform_name(self) -> Optional[str]:
         return pulumi.get(self, "platform_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
     @property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> str:
-        """
-        Platform version.
-        """
+    def platform_version(self) -> Optional[str]:
         return pulumi.get(self, "platform_version")
 
     @property
     @pulumi.getter(name="processorCount")
-    def processor_count(self) -> int:
-        """
-        Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        """
+    def processor_count(self) -> Optional[int]:
         return pulumi.get(self, "processor_count")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the host.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Indicates the status of a host insight in Operations Insights
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the host insight was first enabled. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the host insight was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -368,21 +287,7 @@ class AwaitableGetHostInsightResult(GetHostInsightResult):
 def get_host_insight(host_insight_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostInsightResult:
     """
-    This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of a host insight.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=oci_opsi_host_insight["test_host_insight"]["id"])
-    ```
-
-
-    :param str host_insight_id: Unique host insight identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['hostInsightId'] = host_insight_id
@@ -424,20 +329,6 @@ def get_host_insight(host_insight_id: Optional[str] = None,
 def get_host_insight_output(host_insight_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostInsightResult]:
     """
-    This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of a host insight.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=oci_opsi_host_insight["test_host_insight"]["id"])
-    ```
-
-
-    :param str host_insight_id: Unique host insight identifier
+    Use this data source to access information about an existing resource.
     """
     ...

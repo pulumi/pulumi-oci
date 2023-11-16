@@ -50,11 +50,11 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * Available Kubernetes versions to which the clusters masters may be upgraded.
      */
-    public /*out*/ readonly availableKubernetesUpgrades!: pulumi.Output<string[]>;
+    public /*out*/ readonly availableKubernetesUpgrades!: pulumi.Output<string[] | undefined>;
     /**
      * Available CNIs and network options for existing and new node pools of the cluster
      */
-    public readonly clusterPodNetworkOptions!: pulumi.Output<outputs.ContainerEngine.ClusterClusterPodNetworkOption[]>;
+    public readonly clusterPodNetworkOptions!: pulumi.Output<outputs.ContainerEngine.ClusterClusterPodNetworkOption[] | undefined>;
     /**
      * The OCID of the compartment in which to create the cluster.
      */
@@ -62,7 +62,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The network configuration for access to the Cluster control plane.
      */
@@ -70,19 +70,19 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * Endpoints served up by the cluster masters.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.ContainerEngine.ClusterEndpoint[]>;
+    public /*out*/ readonly endpoints!: pulumi.Output<outputs.ContainerEngine.ClusterEndpoint[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
      */
-    public readonly imagePolicyConfig!: pulumi.Output<outputs.ContainerEngine.ClusterImagePolicyConfig>;
+    public readonly imagePolicyConfig!: pulumi.Output<outputs.ContainerEngine.ClusterImagePolicyConfig | undefined>;
     /**
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The version of Kubernetes to install into the cluster masters.
      */
@@ -90,11 +90,11 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * Details about the state of the cluster masters.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Metadata about the cluster.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.ContainerEngine.ClusterMetadata[]>;
+    public /*out*/ readonly metadatas!: pulumi.Output<outputs.ContainerEngine.ClusterMetadata[] | undefined>;
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
@@ -102,15 +102,15 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * (Updatable) Optional attributes for the cluster.
      */
-    public readonly options!: pulumi.Output<outputs.ContainerEngine.ClusterOptions>;
+    public readonly options!: pulumi.Output<outputs.ContainerEngine.ClusterOptions | undefined>;
     /**
      * The state of the cluster masters.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Type of cluster
      */
-    public readonly type!: pulumi.Output<string>;
+    public readonly type!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      *

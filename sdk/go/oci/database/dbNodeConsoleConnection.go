@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
@@ -63,28 +62,28 @@ type DbNodeConsoleConnection struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the compartment to contain the console connection.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The SSH connection string for the console connection.
-	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
+	ConnectionString pulumi.StringPtrOutput `pulumi:"connectionString"`
 	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbNodeId pulumi.StringOutput `pulumi:"dbNodeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The SSH public key fingerprint for the console connection.
-	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
+	Fingerprint pulumi.StringPtrOutput `pulumi:"fingerprint"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The SSH public key used to authenticate the console connection.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
 	// The SSH public key's fingerprint for the console connection service host.
-	ServiceHostKeyFingerprint pulumi.StringOutput `pulumi:"serviceHostKeyFingerprint"`
+	ServiceHostKeyFingerprint pulumi.StringPtrOutput `pulumi:"serviceHostKeyFingerprint"`
 	// The current state of the console connection.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewDbNodeConsoleConnection registers a new resource with the given unique name, arguments, and options.
@@ -230,12 +229,6 @@ func (i *DbNodeConsoleConnection) ToDbNodeConsoleConnectionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeConsoleConnectionOutput)
 }
 
-func (i *DbNodeConsoleConnection) ToOutput(ctx context.Context) pulumix.Output[*DbNodeConsoleConnection] {
-	return pulumix.Output[*DbNodeConsoleConnection]{
-		OutputState: i.ToDbNodeConsoleConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbNodeConsoleConnectionArrayInput is an input type that accepts DbNodeConsoleConnectionArray and DbNodeConsoleConnectionArrayOutput values.
 // You can construct a concrete instance of `DbNodeConsoleConnectionArrayInput` via:
 //
@@ -259,12 +252,6 @@ func (i DbNodeConsoleConnectionArray) ToDbNodeConsoleConnectionArrayOutput() DbN
 
 func (i DbNodeConsoleConnectionArray) ToDbNodeConsoleConnectionArrayOutputWithContext(ctx context.Context) DbNodeConsoleConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeConsoleConnectionArrayOutput)
-}
-
-func (i DbNodeConsoleConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbNodeConsoleConnection] {
-	return pulumix.Output[[]*DbNodeConsoleConnection]{
-		OutputState: i.ToDbNodeConsoleConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbNodeConsoleConnectionMapInput is an input type that accepts DbNodeConsoleConnectionMap and DbNodeConsoleConnectionMapOutput values.
@@ -292,12 +279,6 @@ func (i DbNodeConsoleConnectionMap) ToDbNodeConsoleConnectionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeConsoleConnectionMapOutput)
 }
 
-func (i DbNodeConsoleConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbNodeConsoleConnection] {
-	return pulumix.Output[map[string]*DbNodeConsoleConnection]{
-		OutputState: i.ToDbNodeConsoleConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbNodeConsoleConnectionOutput struct{ *pulumi.OutputState }
 
 func (DbNodeConsoleConnectionOutput) ElementType() reflect.Type {
@@ -312,20 +293,14 @@ func (o DbNodeConsoleConnectionOutput) ToDbNodeConsoleConnectionOutputWithContex
 	return o
 }
 
-func (o DbNodeConsoleConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*DbNodeConsoleConnection] {
-	return pulumix.Output[*DbNodeConsoleConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment to contain the console connection.
-func (o DbNodeConsoleConnectionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DbNodeConsoleConnectionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The SSH connection string for the console connection.
-func (o DbNodeConsoleConnectionOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringOutput { return v.ConnectionString }).(pulumi.StringOutput)
+func (o DbNodeConsoleConnectionOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringPtrOutput { return v.ConnectionString }).(pulumi.StringPtrOutput)
 }
 
 // The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -339,8 +314,8 @@ func (o DbNodeConsoleConnectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The SSH public key fingerprint for the console connection.
-func (o DbNodeConsoleConnectionOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringOutput { return v.Fingerprint }).(pulumi.StringOutput)
+func (o DbNodeConsoleConnectionOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -349,8 +324,8 @@ func (o DbNodeConsoleConnectionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Information about the current lifecycle state.
-func (o DbNodeConsoleConnectionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DbNodeConsoleConnectionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The SSH public key used to authenticate the console connection.
@@ -362,13 +337,13 @@ func (o DbNodeConsoleConnectionOutput) PublicKey() pulumi.StringOutput {
 }
 
 // The SSH public key's fingerprint for the console connection service host.
-func (o DbNodeConsoleConnectionOutput) ServiceHostKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringOutput { return v.ServiceHostKeyFingerprint }).(pulumi.StringOutput)
+func (o DbNodeConsoleConnectionOutput) ServiceHostKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringPtrOutput { return v.ServiceHostKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the console connection.
-func (o DbNodeConsoleConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DbNodeConsoleConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type DbNodeConsoleConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -383,12 +358,6 @@ func (o DbNodeConsoleConnectionArrayOutput) ToDbNodeConsoleConnectionArrayOutput
 
 func (o DbNodeConsoleConnectionArrayOutput) ToDbNodeConsoleConnectionArrayOutputWithContext(ctx context.Context) DbNodeConsoleConnectionArrayOutput {
 	return o
-}
-
-func (o DbNodeConsoleConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbNodeConsoleConnection] {
-	return pulumix.Output[[]*DbNodeConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbNodeConsoleConnectionArrayOutput) Index(i pulumi.IntInput) DbNodeConsoleConnectionOutput {
@@ -409,12 +378,6 @@ func (o DbNodeConsoleConnectionMapOutput) ToDbNodeConsoleConnectionMapOutput() D
 
 func (o DbNodeConsoleConnectionMapOutput) ToDbNodeConsoleConnectionMapOutputWithContext(ctx context.Context) DbNodeConsoleConnectionMapOutput {
 	return o
-}
-
-func (o DbNodeConsoleConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbNodeConsoleConnection] {
-	return pulumix.Output[map[string]*DbNodeConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbNodeConsoleConnectionMapOutput) MapIndex(k pulumi.StringInput) DbNodeConsoleConnectionOutput {

@@ -6,19 +6,21 @@ package com.pulumi.oci.ResourceManager.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStacksStackConfigSource {
     private String configSourceType;
-    private String workingDirectory;
+    private @Nullable String workingDirectory;
     private String zipFileBase64encoded;
 
     private GetStacksStackConfigSource() {}
     public String configSourceType() {
         return this.configSourceType;
     }
-    public String workingDirectory() {
-        return this.workingDirectory;
+    public Optional<String> workingDirectory() {
+        return Optional.ofNullable(this.workingDirectory);
     }
     public String zipFileBase64encoded() {
         return this.zipFileBase64encoded;
@@ -34,7 +36,7 @@ public final class GetStacksStackConfigSource {
     @CustomType.Builder
     public static final class Builder {
         private String configSourceType;
-        private String workingDirectory;
+        private @Nullable String workingDirectory;
         private String zipFileBase64encoded;
         public Builder() {}
         public Builder(GetStacksStackConfigSource defaults) {
@@ -50,8 +52,8 @@ public final class GetStacksStackConfigSource {
             return this;
         }
         @CustomType.Setter
-        public Builder workingDirectory(String workingDirectory) {
-            this.workingDirectory = Objects.requireNonNull(workingDirectory);
+        public Builder workingDirectory(@Nullable String workingDirectory) {
+            this.workingDirectory = workingDirectory;
             return this;
         }
         @CustomType.Setter

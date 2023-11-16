@@ -70,11 +70,11 @@ export interface GetLogAnalyticsLogGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of log_analytics_log_group_summary_collection.
      */
-    readonly logAnalyticsLogGroupSummaryCollections: outputs.LogAnalytics.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection[];
+    readonly logAnalyticsLogGroupSummaryCollections?: outputs.LogAnalytics.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection[];
     readonly namespace: string;
 }
 /**

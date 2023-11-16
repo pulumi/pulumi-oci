@@ -46,51 +46,51 @@ export interface GetGenericArtifactResult {
     /**
      * A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
      */
-    readonly artifactPath: string;
+    readonly artifactPath?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */
-    readonly repositoryId: string;
+    readonly repositoryId?: string;
     /**
      * The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      */
-    readonly sha256: string;
+    readonly sha256?: string;
     /**
      * The size of the artifact in bytes.
      */
-    readonly sizeInBytes: string;
+    readonly sizeInBytes?: string;
     /**
      * The current state of the artifact.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.

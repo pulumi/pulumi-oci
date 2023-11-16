@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only the resources that match the specified sensitive data model OCID.
         /// </summary>
-        public readonly string SensitiveDataModelId;
+        public readonly string? SensitiveDataModelId;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult(
-            string sensitiveDataModelId,
+            string? sensitiveDataModelId,
 
-            string targetId)
+            string? targetId)
         {
             SensitiveDataModelId = sensitiveDataModelId;
             TargetId = targetId;

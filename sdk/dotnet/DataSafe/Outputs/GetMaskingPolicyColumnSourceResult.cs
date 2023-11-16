@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The source of masking columns.
         /// </summary>
-        public readonly string ColumnSource;
+        public readonly string? ColumnSource;
         /// <summary>
         /// The OCID of the sensitive data model that's used as the source of masking columns.
         /// </summary>
-        public readonly string SensitiveDataModelId;
+        public readonly string? SensitiveDataModelId;
         /// <summary>
         /// The OCID of the target database that's used as the source of masking columns.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetMaskingPolicyColumnSourceResult(
-            string columnSource,
+            string? columnSource,
 
-            string sensitiveDataModelId,
+            string? sensitiveDataModelId,
 
-            string targetId)
+            string? targetId)
         {
             ColumnSource = columnSource;
             SensitiveDataModelId = sensitiveDataModelId;

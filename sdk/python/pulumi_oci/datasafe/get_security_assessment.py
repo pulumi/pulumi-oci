@@ -107,122 +107,77 @@ class GetSecurityAssessmentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the security assessment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the security assessment.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the security assessment.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the security assessment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ignoredAssessmentIds")
-    def ignored_assessment_ids(self) -> Sequence[str]:
-        """
-        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        """
+    def ignored_assessment_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ignored_assessment_ids")
 
     @property
     @pulumi.getter(name="ignoredTargets")
-    def ignored_targets(self) -> Sequence[str]:
-        """
-        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        """
+    def ignored_targets(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ignored_targets")
 
     @property
     @pulumi.getter(name="isBaseline")
-    def is_baseline(self) -> bool:
-        """
-        Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-        """
+    def is_baseline(self) -> Optional[bool]:
         return pulumi.get(self, "is_baseline")
 
     @property
     @pulumi.getter(name="isDeviatedFromBaseline")
-    def is_deviated_from_baseline(self) -> bool:
-        """
-        Indicates whether or not the security assessment deviates from the baseline.
-        """
+    def is_deviated_from_baseline(self) -> Optional[bool]:
         return pulumi.get(self, "is_deviated_from_baseline")
 
     @property
     @pulumi.getter(name="lastComparedBaselineId")
-    def last_compared_baseline_id(self) -> str:
-        """
-        The OCID of the baseline against which the latest security assessment was compared.
-        """
+    def last_compared_baseline_id(self) -> Optional[str]:
         return pulumi.get(self, "last_compared_baseline_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the current state of the security assessment.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def link(self) -> str:
-        """
-        The summary of findings for the security assessment.
-        """
+    def link(self) -> Optional[str]:
         return pulumi.get(self, "link")
 
     @property
     @pulumi.getter
-    def schedule(self) -> str:
-        """
-        Schedule of the assessment that runs periodically in the specified format: - <version-string>;<version-specific-schedule>
-        """
+    def schedule(self) -> Optional[str]:
         return pulumi.get(self, "schedule")
 
     @property
     @pulumi.getter(name="scheduleSecurityAssessmentId")
-    def schedule_security_assessment_id(self) -> str:
-        """
-        The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-        """
+    def schedule_security_assessment_id(self) -> Optional[str]:
         return pulumi.get(self, "schedule_security_assessment_id")
 
     @property
@@ -232,87 +187,57 @@ class GetSecurityAssessmentResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the security assessment.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def statistics(self) -> Sequence['outputs.GetSecurityAssessmentStatisticResult']:
-        """
-        Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
-        """
+    def statistics(self) -> Optional[Sequence['outputs.GetSecurityAssessmentStatisticResult']]:
         return pulumi.get(self, "statistics")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> Sequence[str]:
-        """
-        Array of database target OCIDs.
-        """
+    def target_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_ids")
 
     @property
     @pulumi.getter(name="targetVersion")
-    def target_version(self) -> str:
-        """
-        The version of the target database.
-        """
+    def target_version(self) -> Optional[str]:
         return pulumi.get(self, "target_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastAssessed")
-    def time_last_assessed(self) -> str:
-        """
-        The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_last_assessed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_assessed")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="triggeredBy")
-    def triggered_by(self) -> str:
-        """
-        Indicates whether the security assessment was created by system or by a user.
-        """
+    def triggered_by(self) -> Optional[str]:
         return pulumi.get(self, "triggered_by")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of this security assessment. The possible types are:
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -354,21 +279,7 @@ class AwaitableGetSecurityAssessmentResult(GetSecurityAssessmentResult):
 def get_security_assessment(security_assessment_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentResult:
     """
-    This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified security assessment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
-    ```
-
-
-    :param str security_assessment_id: The OCID of the security assessment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['securityAssessmentId'] = security_assessment_id
@@ -409,20 +320,6 @@ def get_security_assessment(security_assessment_id: Optional[str] = None,
 def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentResult]:
     """
-    This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified security assessment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
-    ```
-
-
-    :param str security_assessment_id: The OCID of the security assessment.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -18,6 +18,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolResult {
@@ -25,57 +27,57 @@ public final class GetNodePoolResult {
      * @return The OCID of the cluster to which this node pool is attached.
      * 
      */
-    private String clusterId;
+    private @Nullable String clusterId;
     /**
      * @return The OCID of the compartment in which the node pool exists.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the compute instance backing this node.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      * 
      */
-    private List<GetNodePoolInitialNodeLabel> initialNodeLabels;
+    private @Nullable List<GetNodePoolInitialNodeLabel> initialNodeLabels;
     /**
      * @return The version of Kubernetes this node is running.
      * 
      */
-    private String kubernetesVersion;
+    private @Nullable String kubernetesVersion;
     /**
      * @return Details about the state of the node.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The name of the node.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The configuration of nodes in the node pool.
      * 
      */
-    private List<GetNodePoolNodeConfigDetail> nodeConfigDetails;
+    private @Nullable List<GetNodePoolNodeConfigDetail> nodeConfigDetails;
     /**
      * @return Node Eviction Details configuration
      * 
      */
-    private List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
+    private @Nullable List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
     /**
      * @return Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      * 
@@ -84,7 +86,7 @@ public final class GetNodePoolResult {
      * 
      */
     @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
-    private String nodeImageId;
+    private @Nullable String nodeImageId;
     /**
      * @return Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
      * 
@@ -93,17 +95,17 @@ public final class GetNodePoolResult {
      * 
      */
     @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
-    private String nodeImageName;
+    private @Nullable String nodeImageName;
     /**
      * @return A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      * 
      */
-    private Map<String,Object> nodeMetadata;
+    private @Nullable Map<String,Object> nodeMetadata;
     /**
      * @return Node Pool Cycling Details
      * 
      */
-    private List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
+    private @Nullable List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
     /**
      * @return The OCID of the node pool to which this node belongs.
      * 
@@ -113,125 +115,125 @@ public final class GetNodePoolResult {
      * @return The name of the node shape of the nodes in the node pool.
      * 
      */
-    private String nodeShape;
+    private @Nullable String nodeShape;
     /**
      * @return The shape configuration of the nodes.
      * 
      */
-    private List<GetNodePoolNodeShapeConfig> nodeShapeConfigs;
+    private @Nullable List<GetNodePoolNodeShapeConfig> nodeShapeConfigs;
     /**
      * @return Source running on the nodes in the node pool.
      * 
      */
-    private List<GetNodePoolNodeSourceDetail> nodeSourceDetails;
+    private @Nullable List<GetNodePoolNodeSourceDetail> nodeSourceDetails;
     /**
      * @return Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      * 
      */
-    private List<GetNodePoolNodeSource> nodeSources;
+    private @Nullable List<GetNodePoolNodeSource> nodeSources;
     /**
      * @return The nodes in the node pool.
      * 
      */
-    private List<GetNodePoolNode> nodes;
+    private @Nullable List<GetNodePoolNode> nodes;
     /**
      * @return The number of nodes in each subnet.
      * 
      */
-    private Integer quantityPerSubnet;
+    private @Nullable Integer quantityPerSubnet;
     /**
      * @return The SSH public key on each node in the node pool on launch.
      * 
      */
-    private String sshPublicKey;
+    private @Nullable String sshPublicKey;
     /**
      * @return The state of the nodepool.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCIDs of the subnets in which to place nodes for this node pool.
      * 
      */
-    private List<String> subnetIds;
+    private @Nullable List<String> subnetIds;
 
     private GetNodePoolResult() {}
     /**
      * @return The OCID of the cluster to which this node pool is attached.
      * 
      */
-    public String clusterId() {
-        return this.clusterId;
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
     }
     /**
      * @return The OCID of the compartment in which the node pool exists.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the compute instance backing this node.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      * 
      */
     public List<GetNodePoolInitialNodeLabel> initialNodeLabels() {
-        return this.initialNodeLabels;
+        return this.initialNodeLabels == null ? List.of() : this.initialNodeLabels;
     }
     /**
      * @return The version of Kubernetes this node is running.
      * 
      */
-    public String kubernetesVersion() {
-        return this.kubernetesVersion;
+    public Optional<String> kubernetesVersion() {
+        return Optional.ofNullable(this.kubernetesVersion);
     }
     /**
      * @return Details about the state of the node.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The name of the node.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The configuration of nodes in the node pool.
      * 
      */
     public List<GetNodePoolNodeConfigDetail> nodeConfigDetails() {
-        return this.nodeConfigDetails;
+        return this.nodeConfigDetails == null ? List.of() : this.nodeConfigDetails;
     }
     /**
      * @return Node Eviction Details configuration
      * 
      */
     public List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings() {
-        return this.nodeEvictionNodePoolSettings;
+        return this.nodeEvictionNodePoolSettings == null ? List.of() : this.nodeEvictionNodePoolSettings;
     }
     /**
      * @return Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -241,8 +243,8 @@ public final class GetNodePoolResult {
      * 
      */
     @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
-    public String nodeImageId() {
-        return this.nodeImageId;
+    public Optional<String> nodeImageId() {
+        return Optional.ofNullable(this.nodeImageId);
     }
     /**
      * @return Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
@@ -252,22 +254,22 @@ public final class GetNodePoolResult {
      * 
      */
     @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
-    public String nodeImageName() {
-        return this.nodeImageName;
+    public Optional<String> nodeImageName() {
+        return Optional.ofNullable(this.nodeImageName);
     }
     /**
      * @return A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      * 
      */
     public Map<String,Object> nodeMetadata() {
-        return this.nodeMetadata;
+        return this.nodeMetadata == null ? Map.of() : this.nodeMetadata;
     }
     /**
      * @return Node Pool Cycling Details
      * 
      */
     public List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails() {
-        return this.nodePoolCyclingDetails;
+        return this.nodePoolCyclingDetails == null ? List.of() : this.nodePoolCyclingDetails;
     }
     /**
      * @return The OCID of the node pool to which this node belongs.
@@ -280,64 +282,64 @@ public final class GetNodePoolResult {
      * @return The name of the node shape of the nodes in the node pool.
      * 
      */
-    public String nodeShape() {
-        return this.nodeShape;
+    public Optional<String> nodeShape() {
+        return Optional.ofNullable(this.nodeShape);
     }
     /**
      * @return The shape configuration of the nodes.
      * 
      */
     public List<GetNodePoolNodeShapeConfig> nodeShapeConfigs() {
-        return this.nodeShapeConfigs;
+        return this.nodeShapeConfigs == null ? List.of() : this.nodeShapeConfigs;
     }
     /**
      * @return Source running on the nodes in the node pool.
      * 
      */
     public List<GetNodePoolNodeSourceDetail> nodeSourceDetails() {
-        return this.nodeSourceDetails;
+        return this.nodeSourceDetails == null ? List.of() : this.nodeSourceDetails;
     }
     /**
      * @return Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      * 
      */
     public List<GetNodePoolNodeSource> nodeSources() {
-        return this.nodeSources;
+        return this.nodeSources == null ? List.of() : this.nodeSources;
     }
     /**
      * @return The nodes in the node pool.
      * 
      */
     public List<GetNodePoolNode> nodes() {
-        return this.nodes;
+        return this.nodes == null ? List.of() : this.nodes;
     }
     /**
      * @return The number of nodes in each subnet.
      * 
      */
-    public Integer quantityPerSubnet() {
-        return this.quantityPerSubnet;
+    public Optional<Integer> quantityPerSubnet() {
+        return Optional.ofNullable(this.quantityPerSubnet);
     }
     /**
      * @return The SSH public key on each node in the node pool on launch.
      * 
      */
-    public String sshPublicKey() {
-        return this.sshPublicKey;
+    public Optional<String> sshPublicKey() {
+        return Optional.ofNullable(this.sshPublicKey);
     }
     /**
      * @return The state of the nodepool.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCIDs of the subnets in which to place nodes for this node pool.
      * 
      */
     public List<String> subnetIds() {
-        return this.subnetIds;
+        return this.subnetIds == null ? List.of() : this.subnetIds;
     }
 
     public static Builder builder() {
@@ -349,31 +351,31 @@ public final class GetNodePoolResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String clusterId;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetNodePoolInitialNodeLabel> initialNodeLabels;
-        private String kubernetesVersion;
-        private String lifecycleDetails;
-        private String name;
-        private List<GetNodePoolNodeConfigDetail> nodeConfigDetails;
-        private List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
-        private String nodeImageId;
-        private String nodeImageName;
-        private Map<String,Object> nodeMetadata;
-        private List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
+        private @Nullable String clusterId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetNodePoolInitialNodeLabel> initialNodeLabels;
+        private @Nullable String kubernetesVersion;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable List<GetNodePoolNodeConfigDetail> nodeConfigDetails;
+        private @Nullable List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
+        private @Nullable String nodeImageId;
+        private @Nullable String nodeImageName;
+        private @Nullable Map<String,Object> nodeMetadata;
+        private @Nullable List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
         private String nodePoolId;
-        private String nodeShape;
-        private List<GetNodePoolNodeShapeConfig> nodeShapeConfigs;
-        private List<GetNodePoolNodeSourceDetail> nodeSourceDetails;
-        private List<GetNodePoolNodeSource> nodeSources;
-        private List<GetNodePoolNode> nodes;
-        private Integer quantityPerSubnet;
-        private String sshPublicKey;
-        private String state;
-        private List<String> subnetIds;
+        private @Nullable String nodeShape;
+        private @Nullable List<GetNodePoolNodeShapeConfig> nodeShapeConfigs;
+        private @Nullable List<GetNodePoolNodeSourceDetail> nodeSourceDetails;
+        private @Nullable List<GetNodePoolNodeSource> nodeSources;
+        private @Nullable List<GetNodePoolNode> nodes;
+        private @Nullable Integer quantityPerSubnet;
+        private @Nullable String sshPublicKey;
+        private @Nullable String state;
+        private @Nullable List<String> subnetIds;
         public Builder() {}
         public Builder(GetNodePoolResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -405,87 +407,87 @@ public final class GetNodePoolResult {
         }
 
         @CustomType.Setter
-        public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+        public Builder clusterId(@Nullable String clusterId) {
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder initialNodeLabels(List<GetNodePoolInitialNodeLabel> initialNodeLabels) {
-            this.initialNodeLabels = Objects.requireNonNull(initialNodeLabels);
+        public Builder initialNodeLabels(@Nullable List<GetNodePoolInitialNodeLabel> initialNodeLabels) {
+            this.initialNodeLabels = initialNodeLabels;
             return this;
         }
         public Builder initialNodeLabels(GetNodePoolInitialNodeLabel... initialNodeLabels) {
             return initialNodeLabels(List.of(initialNodeLabels));
         }
         @CustomType.Setter
-        public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+        public Builder kubernetesVersion(@Nullable String kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeConfigDetails(List<GetNodePoolNodeConfigDetail> nodeConfigDetails) {
-            this.nodeConfigDetails = Objects.requireNonNull(nodeConfigDetails);
+        public Builder nodeConfigDetails(@Nullable List<GetNodePoolNodeConfigDetail> nodeConfigDetails) {
+            this.nodeConfigDetails = nodeConfigDetails;
             return this;
         }
         public Builder nodeConfigDetails(GetNodePoolNodeConfigDetail... nodeConfigDetails) {
             return nodeConfigDetails(List.of(nodeConfigDetails));
         }
         @CustomType.Setter
-        public Builder nodeEvictionNodePoolSettings(List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings) {
-            this.nodeEvictionNodePoolSettings = Objects.requireNonNull(nodeEvictionNodePoolSettings);
+        public Builder nodeEvictionNodePoolSettings(@Nullable List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings) {
+            this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
             return this;
         }
         public Builder nodeEvictionNodePoolSettings(GetNodePoolNodeEvictionNodePoolSetting... nodeEvictionNodePoolSettings) {
             return nodeEvictionNodePoolSettings(List.of(nodeEvictionNodePoolSettings));
         }
         @CustomType.Setter
-        public Builder nodeImageId(String nodeImageId) {
-            this.nodeImageId = Objects.requireNonNull(nodeImageId);
+        public Builder nodeImageId(@Nullable String nodeImageId) {
+            this.nodeImageId = nodeImageId;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeImageName(String nodeImageName) {
-            this.nodeImageName = Objects.requireNonNull(nodeImageName);
+        public Builder nodeImageName(@Nullable String nodeImageName) {
+            this.nodeImageName = nodeImageName;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeMetadata(Map<String,Object> nodeMetadata) {
-            this.nodeMetadata = Objects.requireNonNull(nodeMetadata);
+        public Builder nodeMetadata(@Nullable Map<String,Object> nodeMetadata) {
+            this.nodeMetadata = nodeMetadata;
             return this;
         }
         @CustomType.Setter
-        public Builder nodePoolCyclingDetails(List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails) {
-            this.nodePoolCyclingDetails = Objects.requireNonNull(nodePoolCyclingDetails);
+        public Builder nodePoolCyclingDetails(@Nullable List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails) {
+            this.nodePoolCyclingDetails = nodePoolCyclingDetails;
             return this;
         }
         public Builder nodePoolCyclingDetails(GetNodePoolNodePoolCyclingDetail... nodePoolCyclingDetails) {
@@ -497,60 +499,60 @@ public final class GetNodePoolResult {
             return this;
         }
         @CustomType.Setter
-        public Builder nodeShape(String nodeShape) {
-            this.nodeShape = Objects.requireNonNull(nodeShape);
+        public Builder nodeShape(@Nullable String nodeShape) {
+            this.nodeShape = nodeShape;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeShapeConfigs(List<GetNodePoolNodeShapeConfig> nodeShapeConfigs) {
-            this.nodeShapeConfigs = Objects.requireNonNull(nodeShapeConfigs);
+        public Builder nodeShapeConfigs(@Nullable List<GetNodePoolNodeShapeConfig> nodeShapeConfigs) {
+            this.nodeShapeConfigs = nodeShapeConfigs;
             return this;
         }
         public Builder nodeShapeConfigs(GetNodePoolNodeShapeConfig... nodeShapeConfigs) {
             return nodeShapeConfigs(List.of(nodeShapeConfigs));
         }
         @CustomType.Setter
-        public Builder nodeSourceDetails(List<GetNodePoolNodeSourceDetail> nodeSourceDetails) {
-            this.nodeSourceDetails = Objects.requireNonNull(nodeSourceDetails);
+        public Builder nodeSourceDetails(@Nullable List<GetNodePoolNodeSourceDetail> nodeSourceDetails) {
+            this.nodeSourceDetails = nodeSourceDetails;
             return this;
         }
         public Builder nodeSourceDetails(GetNodePoolNodeSourceDetail... nodeSourceDetails) {
             return nodeSourceDetails(List.of(nodeSourceDetails));
         }
         @CustomType.Setter
-        public Builder nodeSources(List<GetNodePoolNodeSource> nodeSources) {
-            this.nodeSources = Objects.requireNonNull(nodeSources);
+        public Builder nodeSources(@Nullable List<GetNodePoolNodeSource> nodeSources) {
+            this.nodeSources = nodeSources;
             return this;
         }
         public Builder nodeSources(GetNodePoolNodeSource... nodeSources) {
             return nodeSources(List.of(nodeSources));
         }
         @CustomType.Setter
-        public Builder nodes(List<GetNodePoolNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+        public Builder nodes(@Nullable List<GetNodePoolNode> nodes) {
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(GetNodePoolNode... nodes) {
             return nodes(List.of(nodes));
         }
         @CustomType.Setter
-        public Builder quantityPerSubnet(Integer quantityPerSubnet) {
-            this.quantityPerSubnet = Objects.requireNonNull(quantityPerSubnet);
+        public Builder quantityPerSubnet(@Nullable Integer quantityPerSubnet) {
+            this.quantityPerSubnet = quantityPerSubnet;
             return this;
         }
         @CustomType.Setter
-        public Builder sshPublicKey(String sshPublicKey) {
-            this.sshPublicKey = Objects.requireNonNull(sshPublicKey);
+        public Builder sshPublicKey(@Nullable String sshPublicKey) {
+            this.sshPublicKey = sshPublicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetIds(List<String> subnetIds) {
-            this.subnetIds = Objects.requireNonNull(subnetIds);
+        public Builder subnetIds(@Nullable List<String> subnetIds) {
+            this.subnetIds = subnetIds;
             return this;
         }
         public Builder subnetIds(String... subnetIds) {

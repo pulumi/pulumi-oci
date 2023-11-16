@@ -20,12 +20,6 @@ class LogAnalyticsPreferencesManagementArgs:
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None):
         """
         The set of arguments for constructing a LogAnalyticsPreferencesManagement resource.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]] items: An array of tenant preference details.
         """
         pulumi.set(__self__, "namespace", namespace)
         if items is not None:
@@ -34,13 +28,6 @@ class LogAnalyticsPreferencesManagementArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -50,9 +37,6 @@ class LogAnalyticsPreferencesManagementArgs:
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]:
-        """
-        An array of tenant preference details.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -67,12 +51,6 @@ class _LogAnalyticsPreferencesManagementState:
                  namespace: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsPreferencesManagement resources.
-        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]] items: An array of tenant preference details.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -82,9 +60,6 @@ class _LogAnalyticsPreferencesManagementState:
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]:
-        """
-        An array of tenant preference details.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -94,13 +69,6 @@ class _LogAnalyticsPreferencesManagementState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -117,36 +85,9 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement",
-            namespace=var["log_analytics_preferences_management_namespace"],
-            items=[oci.log_analytics.LogAnalyticsPreferencesManagementItemArgs(
-                name=var["log_analytics_preferences_management_items_name"],
-                value=var["log_analytics_preferences_management_items_value"],
-            )])
-        ```
-
-        ## Import
-
-        Import is not supported for LogAnalyticsPreferencesManagement
-
+        Create a LogAnalyticsPreferencesManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsPreferencesManagementItemArgs']]]] items: An array of tenant preference details.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -155,28 +96,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                  args: LogAnalyticsPreferencesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement",
-            namespace=var["log_analytics_preferences_management_namespace"],
-            items=[oci.log_analytics.LogAnalyticsPreferencesManagementItemArgs(
-                name=var["log_analytics_preferences_management_items_name"],
-                value=var["log_analytics_preferences_management_items_value"],
-            )])
-        ```
-
-        ## Import
-
-        Import is not supported for LogAnalyticsPreferencesManagement
-
+        Create a LogAnalyticsPreferencesManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LogAnalyticsPreferencesManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -226,12 +146,6 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsPreferencesManagementItemArgs']]]] items: An array of tenant preference details.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -244,20 +158,10 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     @property
     @pulumi.getter
     def items(self) -> pulumi.Output[Optional[Sequence['outputs.LogAnalyticsPreferencesManagementItem']]]:
-        """
-        An array of tenant preference details.
-        """
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 

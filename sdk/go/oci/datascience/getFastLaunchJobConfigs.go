@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
@@ -65,7 +64,7 @@ type GetFastLaunchJobConfigsResult struct {
 	FastLaunchJobConfigs []GetFastLaunchJobConfigsFastLaunchJobConfig `pulumi:"fastLaunchJobConfigs"`
 	Filters              []GetFastLaunchJobConfigsFilter              `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetFastLaunchJobConfigsOutput(ctx *pulumi.Context, args GetFastLaunchJobConfigsOutputArgs, opts ...pulumi.InvokeOption) GetFastLaunchJobConfigsResultOutput {
@@ -107,12 +106,6 @@ func (o GetFastLaunchJobConfigsResultOutput) ToGetFastLaunchJobConfigsResultOutp
 	return o
 }
 
-func (o GetFastLaunchJobConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFastLaunchJobConfigsResult] {
-	return pulumix.Output[GetFastLaunchJobConfigsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFastLaunchJobConfigsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFastLaunchJobConfigsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -129,8 +122,8 @@ func (o GetFastLaunchJobConfigsResultOutput) Filters() GetFastLaunchJobConfigsFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFastLaunchJobConfigsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastLaunchJobConfigsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFastLaunchJobConfigsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastLaunchJobConfigsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

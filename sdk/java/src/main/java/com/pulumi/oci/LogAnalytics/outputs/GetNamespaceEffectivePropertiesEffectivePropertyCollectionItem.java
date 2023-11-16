@@ -8,6 +8,8 @@ import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceEffectivePropertiesEffect
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem {
@@ -15,51 +17,51 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
      * @return The effective level of the property value.
      * 
      */
-    private String effectiveLevel;
+    private @Nullable String effectiveLevel;
     /**
      * @return The property name used for filtering.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A list of pattern level override values for the property.
      * 
      */
-    private List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns;
+    private @Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns;
     /**
      * @return The effective value of the property. This is determined by considering the value set at the most effective level.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem() {}
     /**
      * @return The effective level of the property value.
      * 
      */
-    public String effectiveLevel() {
-        return this.effectiveLevel;
+    public Optional<String> effectiveLevel() {
+        return Optional.ofNullable(this.effectiveLevel);
     }
     /**
      * @return The property name used for filtering.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A list of pattern level override values for the property.
      * 
      */
     public List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns() {
-        return this.patterns;
+        return this.patterns == null ? List.of() : this.patterns;
     }
     /**
      * @return The effective value of the property. This is determined by considering the value set at the most effective level.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String effectiveLevel;
-        private String name;
-        private List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns;
-        private String value;
+        private @Nullable String effectiveLevel;
+        private @Nullable String name;
+        private @Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
         }
 
         @CustomType.Setter
-        public Builder effectiveLevel(String effectiveLevel) {
-            this.effectiveLevel = Objects.requireNonNull(effectiveLevel);
+        public Builder effectiveLevel(@Nullable String effectiveLevel) {
+            this.effectiveLevel = effectiveLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder patterns(List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns) {
-            this.patterns = Objects.requireNonNull(patterns);
+        public Builder patterns(@Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns) {
+            this.patterns = patterns;
             return this;
         }
         public Builder patterns(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern... patterns) {
             return patterns(List.of(patterns));
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem build() {

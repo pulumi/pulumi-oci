@@ -66,11 +66,11 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
     /**
      * The OCID of the compartment to contain the console connection.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The SSH connection string for the console connection.
      */
-    public /*out*/ readonly connectionString!: pulumi.Output<string>;
+    public /*out*/ readonly connectionString!: pulumi.Output<string | undefined>;
     /**
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -78,19 +78,19 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The SSH public key fingerprint for the console connection.
      */
-    public /*out*/ readonly fingerprint!: pulumi.Output<string>;
+    public /*out*/ readonly fingerprint!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The SSH public key used to authenticate the console connection.
      *
@@ -102,11 +102,11 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
     /**
      * The SSH public key's fingerprint for the console connection service host.
      */
-    public /*out*/ readonly serviceHostKeyFingerprint!: pulumi.Output<string>;
+    public /*out*/ readonly serviceHostKeyFingerprint!: pulumi.Output<string | undefined>;
     /**
      * The current state of the console connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DbNodeConsoleConnection resource with the given unique name, arguments, and options.

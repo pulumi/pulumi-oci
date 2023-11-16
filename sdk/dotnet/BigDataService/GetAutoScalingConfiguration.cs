@@ -123,20 +123,20 @@ namespace Pulumi.Oci.BigDataService
     {
         public readonly string AutoScalingConfigurationId;
         public readonly string BdsInstanceId;
-        public readonly string ClusterAdminPassword;
+        public readonly string? ClusterAdminPassword;
         /// <summary>
         /// A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The unique identifier for the autoscale configuration.
         /// </summary>
-        public readonly string Id;
-        public readonly bool IsEnabled;
+        public readonly string? Id;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
         /// </summary>
-        public readonly string NodeType;
+        public readonly string? NodeType;
         /// <summary>
         /// This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         /// </summary>
@@ -148,15 +148,15 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The state of the autoscale configuration.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationResult(
@@ -164,25 +164,25 @@ namespace Pulumi.Oci.BigDataService
 
             string bdsInstanceId,
 
-            string clusterAdminPassword,
+            string? clusterAdminPassword,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string nodeType,
+            string? nodeType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyResult> policies,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailResult> policyDetails,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AutoScalingConfigurationId = autoScalingConfigurationId;
             BdsInstanceId = bdsInstanceId;

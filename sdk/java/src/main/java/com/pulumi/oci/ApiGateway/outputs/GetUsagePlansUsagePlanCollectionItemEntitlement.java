@@ -10,6 +10,8 @@ import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollectionItemEnt
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
@@ -17,63 +19,63 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
      * @return A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return An entitlement name, unique within a usage plan.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Quota policy for a usage plan.
      * 
      */
-    private List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas;
+    private @Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas;
     /**
      * @return Rate-limiting policy for a usage plan.
      * 
      */
-    private List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits;
+    private @Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits;
     /**
      * @return A collection of targeted deployments that the entitlement will be applied to.
      * 
      */
-    private List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets;
+    private @Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets;
 
     private GetUsagePlansUsagePlanCollectionItemEntitlement() {}
     /**
      * @return A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return An entitlement name, unique within a usage plan.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Quota policy for a usage plan.
      * 
      */
     public List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas() {
-        return this.quotas;
+        return this.quotas == null ? List.of() : this.quotas;
     }
     /**
      * @return Rate-limiting policy for a usage plan.
      * 
      */
     public List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits() {
-        return this.rateLimits;
+        return this.rateLimits == null ? List.of() : this.rateLimits;
     }
     /**
      * @return A collection of targeted deployments that the entitlement will be applied to.
      * 
      */
     public List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets() {
-        return this.targets;
+        return this.targets == null ? List.of() : this.targets;
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String name;
-        private List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas;
-        private List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits;
-        private List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets;
+        private @Nullable String description;
+        private @Nullable String name;
+        private @Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas;
+        private @Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits;
+        private @Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets;
         public Builder() {}
         public Builder(GetUsagePlansUsagePlanCollectionItemEntitlement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,34 +103,34 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder quotas(List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas) {
-            this.quotas = Objects.requireNonNull(quotas);
+        public Builder quotas(@Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas) {
+            this.quotas = quotas;
             return this;
         }
         public Builder quotas(GetUsagePlansUsagePlanCollectionItemEntitlementQuota... quotas) {
             return quotas(List.of(quotas));
         }
         @CustomType.Setter
-        public Builder rateLimits(List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits) {
-            this.rateLimits = Objects.requireNonNull(rateLimits);
+        public Builder rateLimits(@Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits) {
+            this.rateLimits = rateLimits;
             return this;
         }
         public Builder rateLimits(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit... rateLimits) {
             return rateLimits(List.of(rateLimits));
         }
         @CustomType.Setter
-        public Builder targets(List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+        public Builder targets(@Nullable List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets) {
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetUsagePlansUsagePlanCollectionItemEntitlementTarget... targets) {

@@ -6,6 +6,8 @@ package com.pulumi.oci.DataCatalog.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCatalogTypesTypeCollectionItem {
@@ -13,87 +15,87 @@ public final class GetCatalogTypesTypeCollectionItem {
      * @return Unique catalog identifier.
      * 
      */
-    private String catalogId;
+    private @Nullable String catalogId;
     /**
      * @return Detailed description of the type.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Unique type key that is immutable.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Immutable resource name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Indicates the category of this type . For example, data assets or connections.
      * 
      */
-    private String typeCategory;
+    private @Nullable String typeCategory;
     /**
      * @return URI to the type instance in the API.
      * 
      */
-    private String uri;
+    private @Nullable String uri;
 
     private GetCatalogTypesTypeCollectionItem() {}
     /**
      * @return Unique catalog identifier.
      * 
      */
-    public String catalogId() {
-        return this.catalogId;
+    public Optional<String> catalogId() {
+        return Optional.ofNullable(this.catalogId);
     }
     /**
      * @return Detailed description of the type.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Unique type key that is immutable.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Immutable resource name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Indicates the category of this type . For example, data assets or connections.
      * 
      */
-    public String typeCategory() {
-        return this.typeCategory;
+    public Optional<String> typeCategory() {
+        return Optional.ofNullable(this.typeCategory);
     }
     /**
      * @return URI to the type instance in the API.
      * 
      */
-    public String uri() {
-        return this.uri;
+    public Optional<String> uri() {
+        return Optional.ofNullable(this.uri);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetCatalogTypesTypeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String catalogId;
-        private String description;
-        private String key;
-        private String name;
-        private String state;
-        private String typeCategory;
-        private String uri;
+        private @Nullable String catalogId;
+        private @Nullable String description;
+        private @Nullable String key;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable String typeCategory;
+        private @Nullable String uri;
         public Builder() {}
         public Builder(GetCatalogTypesTypeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetCatalogTypesTypeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder catalogId(String catalogId) {
-            this.catalogId = Objects.requireNonNull(catalogId);
+        public Builder catalogId(@Nullable String catalogId) {
+            this.catalogId = catalogId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder typeCategory(String typeCategory) {
-            this.typeCategory = Objects.requireNonNull(typeCategory);
+        public Builder typeCategory(@Nullable String typeCategory) {
+            this.typeCategory = typeCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+        public Builder uri(@Nullable String uri) {
+            this.uri = uri;
             return this;
         }
         public GetCatalogTypesTypeCollectionItem build() {

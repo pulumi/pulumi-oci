@@ -71,7 +71,7 @@ export class Catalog extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly attachedCatalogPrivateEndpoints!: pulumi.Output<string[]>;
+    public readonly attachedCatalogPrivateEndpoints!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Compartment identifier.
      */
@@ -79,43 +79,43 @@ export class Catalog extends pulumi.CustomResource {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Data catalog identifier.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      */
-    public /*out*/ readonly numberOfObjects!: pulumi.Output<number>;
+    public /*out*/ readonly numberOfObjects!: pulumi.Output<number | undefined>;
     /**
      * The REST front endpoint URL to the data catalog instance.
      */
-    public /*out*/ readonly serviceApiUrl!: pulumi.Output<string>;
+    public /*out*/ readonly serviceApiUrl!: pulumi.Output<string | undefined>;
     /**
      * The console front endpoint URL to the data catalog instance.
      */
-    public /*out*/ readonly serviceConsoleUrl!: pulumi.Output<string>;
+    public /*out*/ readonly serviceConsoleUrl!: pulumi.Output<string | undefined>;
     /**
      * The current state of the data catalog resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Catalog resource with the given unique name, arguments, and options.

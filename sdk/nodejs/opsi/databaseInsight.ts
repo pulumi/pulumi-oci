@@ -50,11 +50,11 @@ export class DatabaseInsight extends pulumi.CustomResource {
     /**
      * User credential details to connect to the database. This is supplied via the External Database Service.
      */
-    public readonly connectionCredentialDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionCredentialDetails>;
+    public readonly connectionCredentialDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionCredentialDetails | undefined>;
     /**
      * Connection details of the private endpoints.
      */
-    public readonly connectionDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionDetails>;
+    public readonly connectionDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionDetails | undefined>;
     /**
      * User credential details to connect to the database. This is supplied via the External Database Service.
      */
@@ -62,67 +62,67 @@ export class DatabaseInsight extends pulumi.CustomResource {
     /**
      * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      */
-    public readonly databaseConnectionStatusDetails!: pulumi.Output<string>;
+    public readonly databaseConnectionStatusDetails!: pulumi.Output<string | undefined>;
     /**
      * Display name of database
      */
-    public /*out*/ readonly databaseDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly databaseDisplayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    public readonly databaseId!: pulumi.Output<string | undefined>;
     /**
      * Name of database
      */
-    public /*out*/ readonly databaseName!: pulumi.Output<string>;
+    public /*out*/ readonly databaseName!: pulumi.Output<string | undefined>;
     /**
      * Oracle Cloud Infrastructure database resource type
      */
-    public readonly databaseResourceType!: pulumi.Output<string>;
+    public readonly databaseResourceType!: pulumi.Output<string | undefined>;
     /**
      * Operations Insights internal representation of the database type.
      */
-    public /*out*/ readonly databaseType!: pulumi.Output<string>;
+    public /*out*/ readonly databaseType!: pulumi.Output<string | undefined>;
     /**
      * The version of the database.
      */
-    public /*out*/ readonly databaseVersion!: pulumi.Output<string>;
+    public /*out*/ readonly databaseVersion!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
      */
-    public readonly dbmPrivateEndpointId!: pulumi.Output<string>;
+    public readonly dbmPrivateEndpointId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Database Deployment Type
      */
-    public readonly deploymentType!: pulumi.Output<string>;
+    public readonly deploymentType!: pulumi.Output<string | undefined>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    public readonly enterpriseManagerBridgeId!: pulumi.Output<string>;
+    public readonly enterpriseManagerBridgeId!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Display Name
      */
-    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string>;
+    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Name
      */
-    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Type
      */
-    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    public readonly enterpriseManagerIdentifier!: pulumi.Output<string>;
+    public readonly enterpriseManagerIdentifier!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Source of the database entity.
      */
@@ -130,58 +130,58 @@ export class DatabaseInsight extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      */
-    public readonly exadataInsightId!: pulumi.Output<string>;
+    public readonly exadataInsightId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      */
-    public readonly opsiPrivateEndpointId!: pulumi.Output<string>;
+    public readonly opsiPrivateEndpointId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      */
-    public /*out*/ readonly parentId!: pulumi.Output<string>;
+    public /*out*/ readonly parentId!: pulumi.Output<string | undefined>;
     /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      */
-    public /*out*/ readonly processorCount!: pulumi.Output<number>;
+    public /*out*/ readonly processorCount!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      */
-    public /*out*/ readonly rootId!: pulumi.Output<string>;
+    public /*out*/ readonly rootId!: pulumi.Output<string | undefined>;
     /**
      * Database service name used for connection requests.
      */
-    public readonly serviceName!: pulumi.Output<string>;
+    public readonly serviceName!: pulumi.Output<string | undefined>;
     /**
      * The current state of the database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the the database insight was first enabled. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the database insight was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DatabaseInsight resource with the given unique name, arguments, and options.

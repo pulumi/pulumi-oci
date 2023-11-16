@@ -16,48 +16,48 @@ namespace Pulumi.Oci.OsubUsage.Outputs
         /// <summary>
         /// Subscribed service commitmentId.
         /// </summary>
-        public readonly string CommitmentServiceId;
+        public readonly string? CommitmentServiceId;
         /// <summary>
         /// SPM Internal compute records source .
         /// </summary>
-        public readonly string ComputeSource;
-        public readonly string ComputedUsageId;
+        public readonly string? ComputeSource;
+        public readonly string? ComputedUsageId;
         /// <summary>
         /// Computed Line Amount not rounded
         /// </summary>
-        public readonly string Cost;
+        public readonly string? Cost;
         /// <summary>
         /// Computed Line Amount rounded.
         /// </summary>
-        public readonly string CostRounded;
+        public readonly string? CostRounded;
         /// <summary>
         /// Currency code
         /// </summary>
-        public readonly string CurrencyCode;
+        public readonly string? CurrencyCode;
         /// <summary>
         /// Data Center Attribute as sent by MQS to SPM.
         /// </summary>
-        public readonly string DataCenter;
+        public readonly string? DataCenter;
         /// <summary>
         /// SPM Internal computed usage Id , 32 character string
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Invoicing status for the aggregated compute usage
         /// </summary>
-        public readonly bool IsInvoiced;
+        public readonly bool? IsInvoiced;
         /// <summary>
         /// MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
         /// </summary>
-        public readonly string MqsMessageId;
+        public readonly string? MqsMessageId;
         /// <summary>
         /// Net Unit Price for the product in consideration, price actual.
         /// </summary>
-        public readonly string NetUnitPrice;
+        public readonly string? NetUnitPrice;
         /// <summary>
         /// SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
         /// </summary>
-        public readonly string OriginalUsageNumber;
+        public readonly string? OriginalUsageNumber;
         /// <summary>
         /// Product part number for subscribed service line, called parent product.
         /// </summary>
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.OsubUsage.Outputs
         /// <summary>
         /// Subscribed service line parent id
         /// </summary>
-        public readonly string ParentSubscribedServiceId;
+        public readonly string? ParentSubscribedServiceId;
         /// <summary>
         /// Subscription plan number
         /// </summary>
-        public readonly string PlanNumber;
+        public readonly string? PlanNumber;
         /// <summary>
         /// Product description
         /// </summary>
@@ -77,97 +77,97 @@ namespace Pulumi.Oci.OsubUsage.Outputs
         /// <summary>
         /// Total Quantity that was used for computation
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// Ratecard Id at subscribed service level
         /// </summary>
-        public readonly string RateCardId;
+        public readonly string? RateCardId;
         /// <summary>
         /// References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
         /// </summary>
-        public readonly string RateCardTierdId;
+        public readonly string? RateCardTierdId;
         /// <summary>
         /// Computed Usage created time, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Metered Service date, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeMeteredOn;
+        public readonly string? TimeMeteredOn;
         /// <summary>
         /// Usae computation date, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeOfArrival;
+        public readonly string? TimeOfArrival;
         /// <summary>
         /// Computed Usage updated time, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Usage compute type in SPM.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Unit of Messure
         /// </summary>
-        public readonly string UnitOfMeasure;
+        public readonly string? UnitOfMeasure;
         /// <summary>
         /// SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
         /// </summary>
-        public readonly string UsageNumber;
+        public readonly string? UsageNumber;
 
         [OutputConstructor]
         private GetComputedUsagesComputedUsageResult(
-            string commitmentServiceId,
+            string? commitmentServiceId,
 
-            string computeSource,
+            string? computeSource,
 
-            string computedUsageId,
+            string? computedUsageId,
 
-            string cost,
+            string? cost,
 
-            string costRounded,
+            string? costRounded,
 
-            string currencyCode,
+            string? currencyCode,
 
-            string dataCenter,
+            string? dataCenter,
 
-            string id,
+            string? id,
 
-            bool isInvoiced,
+            bool? isInvoiced,
 
-            string mqsMessageId,
+            string? mqsMessageId,
 
-            string netUnitPrice,
+            string? netUnitPrice,
 
-            string originalUsageNumber,
+            string? originalUsageNumber,
 
             ImmutableArray<Outputs.GetComputedUsagesComputedUsageParentProductResult> parentProducts,
 
-            string parentSubscribedServiceId,
+            string? parentSubscribedServiceId,
 
-            string planNumber,
+            string? planNumber,
 
             ImmutableArray<Outputs.GetComputedUsagesComputedUsageProductResult> products,
 
-            string quantity,
+            string? quantity,
 
-            string rateCardId,
+            string? rateCardId,
 
-            string rateCardTierdId,
+            string? rateCardTierdId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeMeteredOn,
+            string? timeMeteredOn,
 
-            string timeOfArrival,
+            string? timeOfArrival,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type,
+            string? type,
 
-            string unitOfMeasure,
+            string? unitOfMeasure,
 
-            string usageNumber)
+            string? usageNumber)
         {
             CommitmentServiceId = commitmentServiceId;
             ComputeSource = computeSource;

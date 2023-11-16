@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
@@ -64,7 +63,7 @@ type GetInstanceConfigurationsResult struct {
 	CompartmentId string                            `pulumi:"compartmentId"`
 	Filters       []GetInstanceConfigurationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of instance_configurations.
 	InstanceConfigurations []GetInstanceConfigurationsInstanceConfiguration `pulumi:"instanceConfigurations"`
 }
@@ -108,12 +107,6 @@ func (o GetInstanceConfigurationsResultOutput) ToGetInstanceConfigurationsResult
 	return o
 }
 
-func (o GetInstanceConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceConfigurationsResult] {
-	return pulumix.Output[GetInstanceConfigurationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing images to search
 func (o GetInstanceConfigurationsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -124,8 +117,8 @@ func (o GetInstanceConfigurationsResultOutput) Filters() GetInstanceConfiguratio
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstanceConfigurationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstanceConfigurationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of instance_configurations.

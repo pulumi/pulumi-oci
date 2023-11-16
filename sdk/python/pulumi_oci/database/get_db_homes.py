@@ -63,41 +63,26 @@ class GetDbHomesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbHomes")
-    def db_homes(self) -> Sequence['outputs.GetDbHomesDbHomeResult']:
-        """
-        The list of db_homes.
-        """
+    def db_homes(self) -> Optional[Sequence['outputs.GetDbHomesDbHomeResult']]:
         return pulumi.get(self, "db_homes")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[str]:
-        """
-        The Oracle Database version.
-        """
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-provided name for the Database Home. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -107,7 +92,7 @@ class GetDbHomesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -116,17 +101,11 @@ class GetDbHomesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Database Home.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vmClusterId")
     def vm_cluster_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
         return pulumi.get(self, "vm_cluster_id")
 
 
@@ -158,18 +137,7 @@ def get_db_homes(backup_id: Optional[str] = None,
                  vm_cluster_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomesResult:
     """
-    This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
-
-    Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
-
-
-    :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
-    :param str db_version: A filter to return only DB Homes that match the specified dbVersion.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
@@ -207,17 +175,6 @@ def get_db_homes_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                         vm_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomesResult]:
     """
-    This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
-
-    Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
-
-
-    :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
-    :param str db_version: A filter to return only DB Homes that match the specified dbVersion.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

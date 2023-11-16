@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
@@ -76,9 +75,9 @@ type ProtectedDatabase struct {
 	// (Updatable) The OCID of the compartment that contains the protected database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The OCID of the protected database.
-	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
+	DatabaseId pulumi.StringPtrOutput `pulumi:"databaseId"`
 	// (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-	DatabaseSize pulumi.StringOutput `pulumi:"databaseSize"`
+	DatabaseSize pulumi.StringPtrOutput `pulumi:"databaseSize"`
 	// The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -91,15 +90,15 @@ type ProtectedDatabase struct {
 	// * HEALTHY
 	// * WARNING
 	// * ALERT
-	Health pulumi.StringOutput `pulumi:"health"`
+	Health pulumi.StringPtrOutput `pulumi:"health"`
 	// A message describing the current health of the protected database.
-	HealthDetails pulumi.StringOutput `pulumi:"healthDetails"`
+	HealthDetails pulumi.StringPtrOutput `pulumi:"healthDetails"`
 	// Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-	IsReadOnlyResource pulumi.BoolOutput `pulumi:"isReadOnlyResource"`
+	IsReadOnlyResource pulumi.BoolPtrOutput `pulumi:"isReadOnlyResource"`
 	// (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-	IsRedoLogsShipped pulumi.BoolOutput `pulumi:"isRedoLogsShipped"`
+	IsRedoLogsShipped pulumi.BoolPtrOutput `pulumi:"isRedoLogsShipped"`
 	// Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics ProtectedDatabaseMetricArrayOutput `pulumi:"metrics"`
 	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
@@ -109,15 +108,15 @@ type ProtectedDatabase struct {
 	// (Updatable) List of recovery service subnet resources associated with the protected database.
 	RecoveryServiceSubnets ProtectedDatabaseRecoveryServiceSubnetArrayOutput `pulumi:"recoveryServiceSubnets"`
 	// The current state of the Protected Database.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-	VpcUserName pulumi.StringOutput `pulumi:"vpcUserName"`
+	VpcUserName pulumi.StringPtrOutput `pulumi:"vpcUserName"`
 }
 
 // NewProtectedDatabase registers a new resource with the given unique name, arguments, and options.
@@ -348,12 +347,6 @@ func (i *ProtectedDatabase) ToProtectedDatabaseOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseOutput)
 }
 
-func (i *ProtectedDatabase) ToOutput(ctx context.Context) pulumix.Output[*ProtectedDatabase] {
-	return pulumix.Output[*ProtectedDatabase]{
-		OutputState: i.ToProtectedDatabaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectedDatabaseArrayInput is an input type that accepts ProtectedDatabaseArray and ProtectedDatabaseArrayOutput values.
 // You can construct a concrete instance of `ProtectedDatabaseArrayInput` via:
 //
@@ -377,12 +370,6 @@ func (i ProtectedDatabaseArray) ToProtectedDatabaseArrayOutput() ProtectedDataba
 
 func (i ProtectedDatabaseArray) ToProtectedDatabaseArrayOutputWithContext(ctx context.Context) ProtectedDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseArrayOutput)
-}
-
-func (i ProtectedDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectedDatabase] {
-	return pulumix.Output[[]*ProtectedDatabase]{
-		OutputState: i.ToProtectedDatabaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProtectedDatabaseMapInput is an input type that accepts ProtectedDatabaseMap and ProtectedDatabaseMapOutput values.
@@ -410,12 +397,6 @@ func (i ProtectedDatabaseMap) ToProtectedDatabaseMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseMapOutput)
 }
 
-func (i ProtectedDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectedDatabase] {
-	return pulumix.Output[map[string]*ProtectedDatabase]{
-		OutputState: i.ToProtectedDatabaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectedDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ProtectedDatabaseOutput) ElementType() reflect.Type {
@@ -430,25 +411,19 @@ func (o ProtectedDatabaseOutput) ToProtectedDatabaseOutputWithContext(ctx contex
 	return o
 }
 
-func (o ProtectedDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ProtectedDatabase] {
-	return pulumix.Output[*ProtectedDatabase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that contains the protected database.
 func (o ProtectedDatabaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The OCID of the protected database.
-func (o ProtectedDatabaseOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.DatabaseId }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-func (o ProtectedDatabaseOutput) DatabaseSize() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.DatabaseSize }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) DatabaseSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.DatabaseSize }).(pulumi.StringPtrOutput)
 }
 
 // The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
@@ -475,28 +450,28 @@ func (o ProtectedDatabaseOutput) FreeformTags() pulumi.MapOutput {
 // * HEALTHY
 // * WARNING
 // * ALERT
-func (o ProtectedDatabaseOutput) Health() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.Health }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) Health() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.Health }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current health of the protected database.
-func (o ProtectedDatabaseOutput) HealthDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.HealthDetails }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) HealthDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.HealthDetails }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-func (o ProtectedDatabaseOutput) IsReadOnlyResource() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.BoolOutput { return v.IsReadOnlyResource }).(pulumi.BoolOutput)
+func (o ProtectedDatabaseOutput) IsReadOnlyResource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.BoolPtrOutput { return v.IsReadOnlyResource }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-func (o ProtectedDatabaseOutput) IsRedoLogsShipped() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.BoolOutput { return v.IsRedoLogsShipped }).(pulumi.BoolOutput)
+func (o ProtectedDatabaseOutput) IsRedoLogsShipped() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.BoolPtrOutput { return v.IsRedoLogsShipped }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o ProtectedDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Backup performance and storage utilization metrics for the protected database.
@@ -522,8 +497,8 @@ func (o ProtectedDatabaseOutput) RecoveryServiceSubnets() ProtectedDatabaseRecov
 }
 
 // The current state of the Protected Database.
-func (o ProtectedDatabaseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -532,18 +507,18 @@ func (o ProtectedDatabaseOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-func (o ProtectedDatabaseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-func (o ProtectedDatabaseOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-func (o ProtectedDatabaseOutput) VpcUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringOutput { return v.VpcUserName }).(pulumi.StringOutput)
+func (o ProtectedDatabaseOutput) VpcUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringPtrOutput { return v.VpcUserName }).(pulumi.StringPtrOutput)
 }
 
 type ProtectedDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -558,12 +533,6 @@ func (o ProtectedDatabaseArrayOutput) ToProtectedDatabaseArrayOutput() Protected
 
 func (o ProtectedDatabaseArrayOutput) ToProtectedDatabaseArrayOutputWithContext(ctx context.Context) ProtectedDatabaseArrayOutput {
 	return o
-}
-
-func (o ProtectedDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectedDatabase] {
-	return pulumix.Output[[]*ProtectedDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProtectedDatabaseArrayOutput) Index(i pulumi.IntInput) ProtectedDatabaseOutput {
@@ -584,12 +553,6 @@ func (o ProtectedDatabaseMapOutput) ToProtectedDatabaseMapOutput() ProtectedData
 
 func (o ProtectedDatabaseMapOutput) ToProtectedDatabaseMapOutputWithContext(ctx context.Context) ProtectedDatabaseMapOutput {
 	return o
-}
-
-func (o ProtectedDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectedDatabase] {
-	return pulumix.Output[map[string]*ProtectedDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProtectedDatabaseMapOutput) MapIndex(k pulumi.StringInput) ProtectedDatabaseOutput {

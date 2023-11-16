@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Data Source replication region.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// Status of data Source
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult(
-            string region,
+            string? region,
 
-            string status)
+            string? status)
         {
             Region = region;
             Status = status;

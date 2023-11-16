@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vlans in Oracle Cloud Infrastructure Core service.
@@ -75,7 +74,7 @@ type GetVlansResult struct {
 	DisplayName *string          `pulumi:"displayName"`
 	Filters     []GetVlansFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The VLAN's current state.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the VLAN is in.
@@ -129,12 +128,6 @@ func (o GetVlansResultOutput) ToGetVlansResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetVlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVlansResult] {
-	return pulumix.Output[GetVlansResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
 func (o GetVlansResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVlansResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -150,8 +143,8 @@ func (o GetVlansResultOutput) Filters() GetVlansFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVlansResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVlansResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVlansResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVlansResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The VLAN's current state.

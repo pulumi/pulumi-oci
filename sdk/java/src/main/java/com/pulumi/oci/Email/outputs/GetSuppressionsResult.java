@@ -29,12 +29,12 @@ public final class GetSuppressionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of suppressions.
      * 
      */
-    private List<GetSuppressionsSuppression> suppressions;
+    private @Nullable List<GetSuppressionsSuppression> suppressions;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
     private @Nullable String timeCreatedLessThan;
 
@@ -60,15 +60,15 @@ public final class GetSuppressionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of suppressions.
      * 
      */
     public List<GetSuppressionsSuppression> suppressions() {
-        return this.suppressions;
+        return this.suppressions == null ? List.of() : this.suppressions;
     }
     public Optional<String> timeCreatedGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timeCreatedGreaterThanOrEqualTo);
@@ -89,8 +89,8 @@ public final class GetSuppressionsResult {
         private String compartmentId;
         private @Nullable String emailAddress;
         private @Nullable List<GetSuppressionsFilter> filters;
-        private String id;
-        private List<GetSuppressionsSuppression> suppressions;
+        private @Nullable String id;
+        private @Nullable List<GetSuppressionsSuppression> suppressions;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
         public Builder() {}
@@ -124,13 +124,13 @@ public final class GetSuppressionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder suppressions(List<GetSuppressionsSuppression> suppressions) {
-            this.suppressions = Objects.requireNonNull(suppressions);
+        public Builder suppressions(@Nullable List<GetSuppressionsSuppression> suppressions) {
+            this.suppressions = suppressions;
             return this;
         }
         public Builder suppressions(GetSuppressionsSuppression... suppressions) {

@@ -52,65 +52,41 @@ class GetBuildRunsResult:
     @property
     @pulumi.getter(name="buildPipelineId")
     def build_pipeline_id(self) -> Optional[str]:
-        """
-        The OCID of the build pipeline to be triggered.
-        """
         return pulumi.get(self, "build_pipeline_id")
 
     @property
     @pulumi.getter(name="buildRunSummaryCollections")
-    def build_run_summary_collections(self) -> Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionResult']:
-        """
-        The list of build_run_summary_collection.
-        """
+    def build_run_summary_collections(self) -> Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionResult']]:
         return pulumi.get(self, "build_run_summary_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment where the build is running.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetBuildRunsFilterResult']]:
-        """
-        The filters for the trigger.
-        """
         return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The OCID of the DevOps project.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the build run.
-        """
         return pulumi.get(self, "state")
 
 
@@ -139,32 +115,7 @@ def get_build_runs(build_pipeline_id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBuildRunsResult:
     """
-    This data source provides the list of Build Runs in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of build run summary.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["build_run_display_name"],
-        id=var["build_run_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["build_run_state"])
-    ```
-
-
-    :param str build_pipeline_id: Unique build pipeline identifier.
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetBuildRunsFilterArgs']] filters: The filters for the trigger.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only build runs that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['buildPipelineId'] = build_pipeline_id
@@ -198,31 +149,6 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildRunsResult]:
     """
-    This data source provides the list of Build Runs in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of build run summary.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["build_run_display_name"],
-        id=var["build_run_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["build_run_state"])
-    ```
-
-
-    :param str build_pipeline_id: Unique build pipeline identifier.
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetBuildRunsFilterArgs']] filters: The filters for the trigger.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only build runs that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -26,14 +26,6 @@ class ChannelArgs:
                  is_enabled: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Channel resource.
-        :param pulumi.Input['ChannelSourceArgs'] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
-        :param pulumi.Input['ChannelTargetArgs'] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided information about the Channel.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
         """
         pulumi.set(__self__, "source", source)
         pulumi.set(__self__, "target", target)
@@ -53,9 +45,6 @@ class ChannelArgs:
     @property
     @pulumi.getter
     def source(self) -> pulumi.Input['ChannelSourceArgs']:
-        """
-        (Updatable) Parameters detailing how to provision the source for the given Channel.
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -65,9 +54,6 @@ class ChannelArgs:
     @property
     @pulumi.getter
     def target(self) -> pulumi.Input['ChannelTargetArgs']:
-        """
-        (Updatable) Parameters detailing how to provision the target for the given Channel.
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -77,9 +63,6 @@ class ChannelArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -89,9 +72,6 @@ class ChannelArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -101,9 +81,6 @@ class ChannelArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User provided information about the Channel.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -113,9 +90,6 @@ class ChannelArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -125,9 +99,6 @@ class ChannelArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -137,9 +108,6 @@ class ChannelArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -164,18 +132,6 @@ class _ChannelState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Channel resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided information about the Channel.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-        :param pulumi.Input[str] lifecycle_details: A message describing the state of the Channel.
-        :param pulumi.Input['ChannelSourceArgs'] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
-        :param pulumi.Input[str] state: The state of the Channel.
-        :param pulumi.Input['ChannelTargetArgs'] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
-        :param pulumi.Input[str] time_created: The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -205,9 +161,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -217,9 +170,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -229,9 +179,6 @@ class _ChannelState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User provided information about the Channel.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -241,9 +188,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -253,9 +197,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -265,9 +206,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -277,9 +215,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the state of the Channel.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -289,9 +224,6 @@ class _ChannelState:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['ChannelSourceArgs']]:
-        """
-        (Updatable) Parameters detailing how to provision the source for the given Channel.
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -301,9 +233,6 @@ class _ChannelState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the Channel.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -313,9 +242,6 @@ class _ChannelState:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input['ChannelTargetArgs']]:
-        """
-        (Updatable) Parameters detailing how to provision the target for the given Channel.
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -325,9 +251,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -337,9 +260,6 @@ class _ChannelState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -362,28 +282,9 @@ class Channel(pulumi.CustomResource):
                  target: Optional[pulumi.Input[pulumi.InputType['ChannelTargetArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a Channel to establish replication from a source to a target.
-
-        ## Import
-
-        Channels can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/channel:Channel test_channel "id"
-        ```
-
+        Create a Channel resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided information about the Channel.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-        :param pulumi.Input[pulumi.InputType['ChannelSourceArgs']] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
-        :param pulumi.Input[pulumi.InputType['ChannelTargetArgs']] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
         """
         ...
     @overload
@@ -392,18 +293,7 @@ class Channel(pulumi.CustomResource):
                  args: ChannelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a Channel to establish replication from a source to a target.
-
-        ## Import
-
-        Channels can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/channel:Channel test_channel "id"
-        ```
-
+        Create a Channel resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ChannelArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -481,18 +371,6 @@ class Channel(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided information about the Channel.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-        :param pulumi.Input[str] lifecycle_details: A message describing the state of the Channel.
-        :param pulumi.Input[pulumi.InputType['ChannelSourceArgs']] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
-        :param pulumi.Input[str] state: The state of the Channel.
-        :param pulumi.Input[pulumi.InputType['ChannelTargetArgs']] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
-        :param pulumi.Input[str] time_created: The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -514,97 +392,61 @@ class Channel(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User provided information about the Channel.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-        """
+    def is_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the state of the Channel.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def source(self) -> pulumi.Output['outputs.ChannelSource']:
-        """
-        (Updatable) Parameters detailing how to provision the source for the given Channel.
-        """
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the Channel.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def target(self) -> pulumi.Output['outputs.ChannelTarget']:
-        """
-        (Updatable) Parameters detailing how to provision the target for the given Channel.
-        """
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

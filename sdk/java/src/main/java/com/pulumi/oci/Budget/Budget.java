@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -82,28 +83,28 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="actualSpend", refs={Double.class}, tree="[0]")
-    private Output<Double> actualSpend;
+    private Output</* @Nullable */ Double> actualSpend;
 
     /**
      * @return The actual spend in currency for the current budget cycle.
      * 
      */
-    public Output<Double> actualSpend() {
-        return this.actualSpend;
+    public Output<Optional<Double>> actualSpend() {
+        return Codegen.optional(this.actualSpend);
     }
     /**
      * The total number of alert rules in the budget.
      * 
      */
     @Export(name="alertRuleCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> alertRuleCount;
+    private Output</* @Nullable */ Integer> alertRuleCount;
 
     /**
      * @return The total number of alert rules in the budget.
      * 
      */
-    public Output<Integer> alertRuleCount() {
-        return this.alertRuleCount;
+    public Output<Optional<Integer>> alertRuleCount() {
+        return Codegen.optional(this.alertRuleCount);
     }
     /**
      * (Updatable) The amount of the budget expressed as a whole number in the currency of the customer&#39;s rate card.
@@ -124,14 +125,14 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="budgetProcessingPeriodStartOffset", refs={Integer.class}, tree="[0]")
-    private Output<Integer> budgetProcessingPeriodStartOffset;
+    private Output</* @Nullable */ Integer> budgetProcessingPeriodStartOffset;
 
     /**
      * @return (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
      * 
      */
-    public Output<Integer> budgetProcessingPeriodStartOffset() {
-        return this.budgetProcessingPeriodStartOffset;
+    public Output<Optional<Integer>> budgetProcessingPeriodStartOffset() {
+        return Codegen.optional(this.budgetProcessingPeriodStartOffset);
     }
     /**
      * The OCID of the compartment.
@@ -152,98 +153,98 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the budget.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the budget.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     @Export(name="endDate", refs={String.class}, tree="[0]")
-    private Output<String> endDate;
+    private Output</* @Nullable */ String> endDate;
 
     /**
      * @return (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
-    public Output<String> endDate() {
-        return this.endDate;
+    public Output<Optional<String>> endDate() {
+        return Codegen.optional(this.endDate);
     }
     /**
      * The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
     @Export(name="forecastedSpend", refs={Double.class}, tree="[0]")
-    private Output<Double> forecastedSpend;
+    private Output</* @Nullable */ Double> forecastedSpend;
 
     /**
      * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
-    public Output<Double> forecastedSpend() {
-        return this.forecastedSpend;
+    public Output<Optional<Double>> forecastedSpend() {
+        return Codegen.optional(this.forecastedSpend);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
     @Export(name="processingPeriodType", refs={String.class}, tree="[0]")
-    private Output<String> processingPeriodType;
+    private Output</* @Nullable */ String> processingPeriodType;
 
     /**
      * @return (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
-    public Output<String> processingPeriodType() {
-        return this.processingPeriodType;
+    public Output<Optional<String>> processingPeriodType() {
+        return Codegen.optional(this.processingPeriodType);
     }
     /**
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -264,28 +265,28 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="startDate", refs={String.class}, tree="[0]")
-    private Output<String> startDate;
+    private Output</* @Nullable */ String> startDate;
 
     /**
      * @return (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
-    public Output<String> startDate() {
-        return this.startDate;
+    public Output<Optional<String>> startDate() {
+        return Codegen.optional(this.startDate);
     }
     /**
      * The current state of the budget.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the budget.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
@@ -296,28 +297,28 @@ public class Budget extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
     @Export(name="targetCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> targetCompartmentId;
+    private Output</* @Nullable */ String> targetCompartmentId;
 
     /**
      * @return This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      */
-    public Output<String> targetCompartmentId() {
-        return this.targetCompartmentId;
+    public Output<Optional<String>> targetCompartmentId() {
+        return Codegen.optional(this.targetCompartmentId);
     }
     /**
      * The type of target on which the budget is applied.
      * 
      */
     @Export(name="targetType", refs={String.class}, tree="[0]")
-    private Output<String> targetType;
+    private Output</* @Nullable */ String> targetType;
 
     /**
      * @return The type of target on which the budget is applied.
      * 
      */
-    public Output<String> targetType() {
-        return this.targetType;
+    public Output<Optional<String>> targetType() {
+        return Codegen.optional(this.targetType);
     }
     /**
      * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
@@ -327,7 +328,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="targets", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> targets;
+    private Output</* @Nullable */ List<String>> targets;
 
     /**
      * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
@@ -336,64 +337,64 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> targets() {
-        return this.targets;
+    public Output<Optional<List<String>>> targets() {
+        return Codegen.optional(this.targets);
     }
     /**
      * The time that the budget was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time that the budget was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time that the budget spend was last computed.
      * 
      */
     @Export(name="timeSpendComputed", refs={String.class}, tree="[0]")
-    private Output<String> timeSpendComputed;
+    private Output</* @Nullable */ String> timeSpendComputed;
 
     /**
      * @return The time that the budget spend was last computed.
      * 
      */
-    public Output<String> timeSpendComputed() {
-        return this.timeSpendComputed;
+    public Output<Optional<String>> timeSpendComputed() {
+        return Codegen.optional(this.timeSpendComputed);
     }
     /**
      * The time that the budget was updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time that the budget was updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The version of the budget. Starts from 1 and increments by 1.
      * 
      */
     @Export(name="version", refs={Integer.class}, tree="[0]")
-    private Output<Integer> version;
+    private Output</* @Nullable */ Integer> version;
 
     /**
      * @return The version of the budget. Starts from 1 and increments by 1.
      * 
      */
-    public Output<Integer> version() {
-        return this.version;
+    public Output<Optional<Integer>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

@@ -50,14 +50,11 @@ class GetTrailFileResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,26 +62,17 @@ class GetTrailFileResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetTrailFileItemResult']:
-        """
-        An array of TrailFiles.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetTrailFileItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="timeLastFetched")
-    def time_last_fetched(self) -> str:
-        """
-        The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_last_fetched(self) -> Optional[str]:
         return pulumi.get(self, "time_last_fetched")
 
     @property
     @pulumi.getter(name="trailFileId")
     def trail_file_id(self) -> str:
-        """
-        The TrailFile Id.
-        """
         return pulumi.get(self, "trail_file_id")
 
 
@@ -107,25 +95,7 @@ def get_trail_file(deployment_id: Optional[str] = None,
                    trail_file_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTrailFileResult:
     """
-    This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the TrailFiles for a deployment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trail_file = oci.GoldenGate.get_trail_file(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_file_display_name"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str trail_file_id: A Trail File identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
@@ -149,24 +119,6 @@ def get_trail_file_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           trail_file_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTrailFileResult]:
     """
-    This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the TrailFiles for a deployment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trail_file = oci.GoldenGate.get_trail_file(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_file_display_name"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str trail_file_id: A Trail File identifier
+    Use this data source to access information about an existing resource.
     """
     ...

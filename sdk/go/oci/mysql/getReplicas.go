@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
@@ -88,7 +87,7 @@ type GetReplicasResult struct {
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetReplicasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string  `pulumi:"id"`
+	Id         *string `pulumi:"id"`
 	IsUpToDate *bool   `pulumi:"isUpToDate"`
 	ReplicaId  *string `pulumi:"replicaId"`
 	// The list of replicas.
@@ -148,12 +147,6 @@ func (o GetReplicasResultOutput) ToGetReplicasResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetReplicasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasResult] {
-	return pulumix.Output[GetReplicasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the read replica.
 func (o GetReplicasResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -179,8 +172,8 @@ func (o GetReplicasResultOutput) Filters() GetReplicasFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetReplicasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReplicasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetReplicasResultOutput) IsUpToDate() pulumi.BoolPtrOutput {

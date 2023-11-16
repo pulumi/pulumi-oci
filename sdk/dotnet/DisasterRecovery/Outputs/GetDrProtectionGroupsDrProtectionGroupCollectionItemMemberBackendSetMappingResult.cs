@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
         /// </summary>
-        public readonly string DestinationBackendSetName;
+        public readonly string? DestinationBackendSetName;
         /// <summary>
         /// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
         /// </summary>
-        public readonly bool IsBackendSetForNonMovable;
+        public readonly bool? IsBackendSetForNonMovable;
         /// <summary>
         /// The name of the source backend set.  Example: `My_Source_Backend_Set`
         /// </summary>
-        public readonly string SourceBackendSetName;
+        public readonly string? SourceBackendSetName;
 
         [OutputConstructor]
         private GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingResult(
-            string destinationBackendSetName,
+            string? destinationBackendSetName,
 
-            bool isBackendSetForNonMovable,
+            bool? isBackendSetForNonMovable,
 
-            string sourceBackendSetName)
+            string? sourceBackendSetName)
         {
             DestinationBackendSetName = destinationBackendSetName;
             IsBackendSetForNonMovable = isBackendSetForNonMovable;

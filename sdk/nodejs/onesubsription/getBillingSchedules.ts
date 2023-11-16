@@ -62,13 +62,13 @@ export interface GetBillingSchedulesResult {
     /**
      * The list of billing_schedules.
      */
-    readonly billingSchedules: outputs.OneSubsription.GetBillingSchedulesBillingSchedule[];
+    readonly billingSchedules?: outputs.OneSubsription.GetBillingSchedulesBillingSchedule[];
     readonly compartmentId: string;
     readonly filters?: outputs.OneSubsription.GetBillingSchedulesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * SPM internal Subscribed Service ID
      */

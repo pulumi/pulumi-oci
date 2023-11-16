@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
@@ -77,30 +76,30 @@ type DedicatedVmHost struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
 	//
 	// To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
 	//
 	// Example: `FAULT-DOMAIN-1`
-	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrOutput `pulumi:"faultDomain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current available memory of the dedicated VM host, in GBs.
-	RemainingMemoryInGbs pulumi.Float64Output `pulumi:"remainingMemoryInGbs"`
+	RemainingMemoryInGbs pulumi.Float64PtrOutput `pulumi:"remainingMemoryInGbs"`
 	// The current available OCPUs of the dedicated VM host.
-	RemainingOcpus pulumi.Float64Output `pulumi:"remainingOcpus"`
+	RemainingOcpus pulumi.Float64PtrOutput `pulumi:"remainingOcpus"`
 	// The current state of the dedicated VM host.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The current total memory of the dedicated VM host, in GBs.
-	TotalMemoryInGbs pulumi.Float64Output `pulumi:"totalMemoryInGbs"`
+	TotalMemoryInGbs pulumi.Float64PtrOutput `pulumi:"totalMemoryInGbs"`
 	// The current total OCPUs of the dedicated VM host.
-	TotalOcpus pulumi.Float64Output `pulumi:"totalOcpus"`
+	TotalOcpus pulumi.Float64PtrOutput `pulumi:"totalOcpus"`
 }
 
 // NewDedicatedVmHost registers a new resource with the given unique name, arguments, and options.
@@ -289,12 +288,6 @@ func (i *DedicatedVmHost) ToDedicatedVmHostOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVmHostOutput)
 }
 
-func (i *DedicatedVmHost) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVmHost] {
-	return pulumix.Output[*DedicatedVmHost]{
-		OutputState: i.ToDedicatedVmHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DedicatedVmHostArrayInput is an input type that accepts DedicatedVmHostArray and DedicatedVmHostArrayOutput values.
 // You can construct a concrete instance of `DedicatedVmHostArrayInput` via:
 //
@@ -318,12 +311,6 @@ func (i DedicatedVmHostArray) ToDedicatedVmHostArrayOutput() DedicatedVmHostArra
 
 func (i DedicatedVmHostArray) ToDedicatedVmHostArrayOutputWithContext(ctx context.Context) DedicatedVmHostArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVmHostArrayOutput)
-}
-
-func (i DedicatedVmHostArray) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVmHost] {
-	return pulumix.Output[[]*DedicatedVmHost]{
-		OutputState: i.ToDedicatedVmHostArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DedicatedVmHostMapInput is an input type that accepts DedicatedVmHostMap and DedicatedVmHostMapOutput values.
@@ -351,12 +338,6 @@ func (i DedicatedVmHostMap) ToDedicatedVmHostMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVmHostMapOutput)
 }
 
-func (i DedicatedVmHostMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVmHost] {
-	return pulumix.Output[map[string]*DedicatedVmHost]{
-		OutputState: i.ToDedicatedVmHostMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DedicatedVmHostOutput struct{ *pulumi.OutputState }
 
 func (DedicatedVmHostOutput) ElementType() reflect.Type {
@@ -369,12 +350,6 @@ func (o DedicatedVmHostOutput) ToDedicatedVmHostOutput() DedicatedVmHostOutput {
 
 func (o DedicatedVmHostOutput) ToDedicatedVmHostOutputWithContext(ctx context.Context) DedicatedVmHostOutput {
 	return o
-}
-
-func (o DedicatedVmHostOutput) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVmHost] {
-	return pulumix.Output[*DedicatedVmHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
@@ -398,8 +373,8 @@ func (o DedicatedVmHostOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o DedicatedVmHostOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DedicatedVmHostOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
@@ -407,8 +382,8 @@ func (o DedicatedVmHostOutput) DisplayName() pulumi.StringOutput {
 // To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
 //
 // Example: `FAULT-DOMAIN-1`
-func (o DedicatedVmHostOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
+func (o DedicatedVmHostOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringPtrOutput { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -420,33 +395,33 @@ func (o DedicatedVmHostOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current available memory of the dedicated VM host, in GBs.
-func (o DedicatedVmHostOutput) RemainingMemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64Output { return v.RemainingMemoryInGbs }).(pulumi.Float64Output)
+func (o DedicatedVmHostOutput) RemainingMemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64PtrOutput { return v.RemainingMemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The current available OCPUs of the dedicated VM host.
-func (o DedicatedVmHostOutput) RemainingOcpus() pulumi.Float64Output {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64Output { return v.RemainingOcpus }).(pulumi.Float64Output)
+func (o DedicatedVmHostOutput) RemainingOcpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64PtrOutput { return v.RemainingOcpus }).(pulumi.Float64PtrOutput)
 }
 
 // The current state of the dedicated VM host.
-func (o DedicatedVmHostOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DedicatedVmHostOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o DedicatedVmHostOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DedicatedVmHostOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The current total memory of the dedicated VM host, in GBs.
-func (o DedicatedVmHostOutput) TotalMemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64Output { return v.TotalMemoryInGbs }).(pulumi.Float64Output)
+func (o DedicatedVmHostOutput) TotalMemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64PtrOutput { return v.TotalMemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The current total OCPUs of the dedicated VM host.
-func (o DedicatedVmHostOutput) TotalOcpus() pulumi.Float64Output {
-	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64Output { return v.TotalOcpus }).(pulumi.Float64Output)
+func (o DedicatedVmHostOutput) TotalOcpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64PtrOutput { return v.TotalOcpus }).(pulumi.Float64PtrOutput)
 }
 
 type DedicatedVmHostArrayOutput struct{ *pulumi.OutputState }
@@ -461,12 +436,6 @@ func (o DedicatedVmHostArrayOutput) ToDedicatedVmHostArrayOutput() DedicatedVmHo
 
 func (o DedicatedVmHostArrayOutput) ToDedicatedVmHostArrayOutputWithContext(ctx context.Context) DedicatedVmHostArrayOutput {
 	return o
-}
-
-func (o DedicatedVmHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVmHost] {
-	return pulumix.Output[[]*DedicatedVmHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DedicatedVmHostArrayOutput) Index(i pulumi.IntInput) DedicatedVmHostOutput {
@@ -487,12 +456,6 @@ func (o DedicatedVmHostMapOutput) ToDedicatedVmHostMapOutput() DedicatedVmHostMa
 
 func (o DedicatedVmHostMapOutput) ToDedicatedVmHostMapOutputWithContext(ctx context.Context) DedicatedVmHostMapOutput {
 	return o
-}
-
-func (o DedicatedVmHostMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVmHost] {
-	return pulumix.Output[map[string]*DedicatedVmHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DedicatedVmHostMapOutput) MapIndex(k pulumi.StringInput) DedicatedVmHostOutput {

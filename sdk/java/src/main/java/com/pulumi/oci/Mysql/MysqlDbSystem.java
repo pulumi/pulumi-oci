@@ -125,28 +125,28 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="adminPassword", refs={String.class}, tree="[0]")
-    private Output<String> adminPassword;
+    private Output</* @Nullable */ String> adminPassword;
 
     /**
      * @return The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      * 
      */
-    public Output<String> adminPassword() {
-        return this.adminPassword;
+    public Output<Optional<String>> adminPassword() {
+        return Codegen.optional(this.adminPassword);
     }
     /**
      * The username for the administrative user.
      * 
      */
     @Export(name="adminUsername", refs={String.class}, tree="[0]")
-    private Output<String> adminUsername;
+    private Output</* @Nullable */ String> adminUsername;
 
     /**
      * @return The username for the administrative user.
      * 
      */
-    public Output<String> adminUsername() {
-        return this.adminUsername;
+    public Output<Optional<String>> adminUsername() {
+        return Codegen.optional(this.adminUsername);
     }
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -175,28 +175,28 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="backupPolicy", refs={MysqlDbSystemBackupPolicy.class}, tree="[0]")
-    private Output<MysqlDbSystemBackupPolicy> backupPolicy;
+    private Output</* @Nullable */ MysqlDbSystemBackupPolicy> backupPolicy;
 
     /**
      * @return (Updatable) Backup policy as optionally used for DB System Creation.
      * 
      */
-    public Output<MysqlDbSystemBackupPolicy> backupPolicy() {
-        return this.backupPolicy;
+    public Output<Optional<MysqlDbSystemBackupPolicy>> backupPolicy() {
+        return Codegen.optional(this.backupPolicy);
     }
     /**
      * A list with a summary of all the Channels attached to the DB System.
      * 
      */
     @Export(name="channels", refs={List.class,MysqlDbSystemChannel.class}, tree="[0,1]")
-    private Output<List<MysqlDbSystemChannel>> channels;
+    private Output</* @Nullable */ List<MysqlDbSystemChannel>> channels;
 
     /**
      * @return A list with a summary of all the Channels attached to the DB System.
      * 
      */
-    public Output<List<MysqlDbSystemChannel>> channels() {
-        return this.channels;
+    public Output<Optional<List<MysqlDbSystemChannel>>> channels() {
+        return Codegen.optional(this.channels);
     }
     /**
      * The OCID of the compartment.
@@ -217,140 +217,140 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configurationId", refs={String.class}, tree="[0]")
-    private Output<String> configurationId;
+    private Output</* @Nullable */ String> configurationId;
 
     /**
      * @return (Updatable) The OCID of the Configuration to be used for this DB System.
      * 
      */
-    public Output<String> configurationId() {
-        return this.configurationId;
+    public Output<Optional<String>> configurationId() {
+        return Codegen.optional(this.configurationId);
     }
     /**
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      * 
      */
     @Export(name="crashRecovery", refs={String.class}, tree="[0]")
-    private Output<String> crashRecovery;
+    private Output</* @Nullable */ String> crashRecovery;
 
     /**
      * @return (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      * 
      */
-    public Output<String> crashRecovery() {
-        return this.crashRecovery;
+    public Output<Optional<String>> crashRecovery() {
+        return Codegen.optional(this.crashRecovery);
     }
     /**
      * The availability domain and fault domain a DB System is placed in.
      * 
      */
     @Export(name="currentPlacements", refs={List.class,MysqlDbSystemCurrentPlacement.class}, tree="[0,1]")
-    private Output<List<MysqlDbSystemCurrentPlacement>> currentPlacements;
+    private Output</* @Nullable */ List<MysqlDbSystemCurrentPlacement>> currentPlacements;
 
     /**
      * @return The availability domain and fault domain a DB System is placed in.
      * 
      */
-    public Output<List<MysqlDbSystemCurrentPlacement>> currentPlacements() {
-        return this.currentPlacements;
+    public Output<Optional<List<MysqlDbSystemCurrentPlacement>>> currentPlacements() {
+        return Codegen.optional(this.currentPlacements);
     }
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      * 
      */
     @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dataStorageSizeInGb;
+    private Output</* @Nullable */ Integer> dataStorageSizeInGb;
 
     /**
      * @return (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      * 
      */
-    public Output<Integer> dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Output<Optional<Integer>> dataStorageSizeInGb() {
+        return Codegen.optional(this.dataStorageSizeInGb);
     }
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      * 
      */
     @Export(name="databaseManagement", refs={String.class}, tree="[0]")
-    private Output<String> databaseManagement;
+    private Output</* @Nullable */ String> databaseManagement;
 
     /**
      * @return (Updatable) Whether to enable monitoring via the Database Management service.
      * 
      */
-    public Output<String> databaseManagement() {
-        return this.databaseManagement;
+    public Output<Optional<String>> databaseManagement() {
+        return Codegen.optional(this.databaseManagement);
     }
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
      * 
      */
     @Export(name="deletionPolicies", refs={List.class,MysqlDbSystemDeletionPolicy.class}, tree="[0,1]")
-    private Output<List<MysqlDbSystemDeletionPolicy>> deletionPolicies;
+    private Output</* @Nullable */ List<MysqlDbSystemDeletionPolicy>> deletionPolicies;
 
     /**
      * @return (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
      * 
      */
-    public Output<List<MysqlDbSystemDeletionPolicy>> deletionPolicies() {
-        return this.deletionPolicies;
+    public Output<Optional<List<MysqlDbSystemDeletionPolicy>>> deletionPolicies() {
+        return Codegen.optional(this.deletionPolicies);
     }
     /**
      * (Updatable) User-provided data about the DB System.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) User-provided data about the DB System.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The network endpoints available for this DB System.
      * 
      */
     @Export(name="endpoints", refs={List.class,MysqlDbSystemEndpoint.class}, tree="[0,1]")
-    private Output<List<MysqlDbSystemEndpoint>> endpoints;
+    private Output</* @Nullable */ List<MysqlDbSystemEndpoint>> endpoints;
 
     /**
      * @return The network endpoints available for this DB System.
      * 
      */
-    public Output<List<MysqlDbSystemEndpoint>> endpoints() {
-        return this.endpoints;
+    public Output<Optional<List<MysqlDbSystemEndpoint>>> endpoints() {
+        return Codegen.optional(this.endpoints);
     }
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -361,7 +361,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="faultDomain", refs={String.class}, tree="[0]")
-    private Output<String> faultDomain;
+    private Output</* @Nullable */ String> faultDomain;
 
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -371,36 +371,36 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      * 
      */
-    public Output<String> faultDomain() {
-        return this.faultDomain;
+    public Output<Optional<String>> faultDomain() {
+        return Codegen.optional(this.faultDomain);
     }
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A summary of a HeatWave cluster.
      * 
      */
     @Export(name="heatWaveClusters", refs={List.class,MysqlDbSystemHeatWaveCluster.class}, tree="[0,1]")
-    private Output<List<MysqlDbSystemHeatWaveCluster>> heatWaveClusters;
+    private Output</* @Nullable */ List<MysqlDbSystemHeatWaveCluster>> heatWaveClusters;
 
     /**
      * @return A summary of a HeatWave cluster.
      * 
      */
-    public Output<List<MysqlDbSystemHeatWaveCluster>> heatWaveClusters() {
-        return this.heatWaveClusters;
+    public Output<Optional<List<MysqlDbSystemHeatWaveCluster>>> heatWaveClusters() {
+        return Codegen.optional(this.heatWaveClusters);
     }
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
@@ -411,7 +411,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="hostnameLabel", refs={String.class}, tree="[0]")
-    private Output<String> hostnameLabel;
+    private Output</* @Nullable */ String> hostnameLabel;
 
     /**
      * @return The hostname for the primary endpoint of the DB System. Used for DNS.
@@ -421,36 +421,36 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      * 
      */
-    public Output<String> hostnameLabel() {
-        return this.hostnameLabel;
+    public Output<Optional<String>> hostnameLabel() {
+        return Codegen.optional(this.hostnameLabel);
     }
     /**
      * The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
-    private Output<String> ipAddress;
+    private Output</* @Nullable */ String> ipAddress;
 
     /**
      * @return The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    public Output<String> ipAddress() {
-        return this.ipAddress;
+    public Output<Optional<String>> ipAddress() {
+        return Codegen.optional(this.ipAddress);
     }
     /**
      * If the DB System has a HeatWave Cluster attached.
      * 
      */
     @Export(name="isHeatWaveClusterAttached", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isHeatWaveClusterAttached;
+    private Output</* @Nullable */ Boolean> isHeatWaveClusterAttached;
 
     /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
-    public Output<Boolean> isHeatWaveClusterAttached() {
-        return this.isHeatWaveClusterAttached;
+    public Output<Optional<Boolean>> isHeatWaveClusterAttached() {
+        return Codegen.optional(this.isHeatWaveClusterAttached);
     }
     /**
      * (Updatable) Specifies if the DB System is highly available.
@@ -459,7 +459,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isHighlyAvailable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isHighlyAvailable;
+    private Output</* @Nullable */ Boolean> isHighlyAvailable;
 
     /**
      * @return (Updatable) Specifies if the DB System is highly available.
@@ -467,92 +467,92 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      * 
      */
-    public Output<Boolean> isHighlyAvailable() {
-        return this.isHighlyAvailable;
+    public Output<Optional<Boolean>> isHighlyAvailable() {
+        return Codegen.optional(this.isHighlyAvailable);
     }
     /**
      * Additional information about the current lifecycleState.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
      * 
      */
     @Export(name="maintenance", refs={MysqlDbSystemMaintenance.class}, tree="[0]")
-    private Output<MysqlDbSystemMaintenance> maintenance;
+    private Output</* @Nullable */ MysqlDbSystemMaintenance> maintenance;
 
     /**
      * @return (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
      * 
      */
-    public Output<MysqlDbSystemMaintenance> maintenance() {
-        return this.maintenance;
+    public Output<Optional<MysqlDbSystemMaintenance>> maintenance() {
+        return Codegen.optional(this.maintenance);
     }
     /**
      * The specific MySQL version identifier.
      * 
      */
     @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
-    private Output<String> mysqlVersion;
+    private Output</* @Nullable */ String> mysqlVersion;
 
     /**
      * @return The specific MySQL version identifier.
      * 
      */
-    public Output<String> mysqlVersion() {
-        return this.mysqlVersion;
+    public Output<Optional<String>> mysqlVersion() {
+        return Codegen.optional(this.mysqlVersion);
     }
     /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
     @Export(name="pointInTimeRecoveryDetails", refs={List.class,MysqlDbSystemPointInTimeRecoveryDetail.class}, tree="[0,1]")
-    private Output<List<MysqlDbSystemPointInTimeRecoveryDetail>> pointInTimeRecoveryDetails;
+    private Output</* @Nullable */ List<MysqlDbSystemPointInTimeRecoveryDetail>> pointInTimeRecoveryDetails;
 
     /**
      * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
-    public Output<List<MysqlDbSystemPointInTimeRecoveryDetail>> pointInTimeRecoveryDetails() {
-        return this.pointInTimeRecoveryDetails;
+    public Output<Optional<List<MysqlDbSystemPointInTimeRecoveryDetail>>> pointInTimeRecoveryDetails() {
+        return Codegen.optional(this.pointInTimeRecoveryDetails);
     }
     /**
      * The port for primary endpoint of the DB System to listen on.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
-    private Output<Integer> port;
+    private Output</* @Nullable */ Integer> port;
 
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Output<Optional<Integer>> port() {
+        return Codegen.optional(this.port);
     }
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      * 
      */
     @Export(name="portX", refs={Integer.class}, tree="[0]")
-    private Output<Integer> portX;
+    private Output</* @Nullable */ Integer> portX;
 
     /**
      * @return The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      * 
      */
-    public Output<Integer> portX() {
-        return this.portX;
+    public Output<Optional<Integer>> portX() {
+        return Codegen.optional(this.portX);
     }
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
@@ -595,28 +595,28 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="source", refs={MysqlDbSystemSource.class}, tree="[0]")
-    private Output<MysqlDbSystemSource> source;
+    private Output</* @Nullable */ MysqlDbSystemSource> source;
 
     /**
      * @return Parameters detailing how to provision the initial data of the system.
      * 
      */
-    public Output<MysqlDbSystemSource> source() {
-        return this.source;
+    public Output<Optional<MysqlDbSystemSource>> source() {
+        return Codegen.optional(this.source);
     }
     /**
      * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The OCID of the subnet the DB System is associated with.
@@ -637,28 +637,28 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the DB System was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the DB System was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the DB System was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

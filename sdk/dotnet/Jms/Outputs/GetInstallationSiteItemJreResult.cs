@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
         /// </summary>
-        public readonly string Distribution;
+        public readonly string? Distribution;
         /// <summary>
         /// The unique identifier for a Java Runtime.
         /// </summary>
-        public readonly string JreKey;
+        public readonly string? JreKey;
         /// <summary>
         /// The vendor of the Java Runtime.
         /// </summary>
-        public readonly string Vendor;
+        public readonly string? Vendor;
         /// <summary>
         /// The version of the operating system as provided by the Java system property os.version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetInstallationSiteItemJreResult(
-            string distribution,
+            string? distribution,
 
-            string jreKey,
+            string? jreKey,
 
-            string vendor,
+            string? vendor,
 
-            string version)
+            string? version)
         {
             Distribution = distribution;
             JreKey = jreKey;

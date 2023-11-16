@@ -8,22 +8,24 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryPat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveryPatchOperation {
-    private String operation;
-    private String selection;
-    private List<GetExternalDbSystemDiscoveryPatchOperationValue> values;
+    private @Nullable String operation;
+    private @Nullable String selection;
+    private @Nullable List<GetExternalDbSystemDiscoveryPatchOperationValue> values;
 
     private GetExternalDbSystemDiscoveryPatchOperation() {}
-    public String operation() {
-        return this.operation;
+    public Optional<String> operation() {
+        return Optional.ofNullable(this.operation);
     }
-    public String selection() {
-        return this.selection;
+    public Optional<String> selection() {
+        return Optional.ofNullable(this.selection);
     }
     public List<GetExternalDbSystemDiscoveryPatchOperationValue> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -35,9 +37,9 @@ public final class GetExternalDbSystemDiscoveryPatchOperation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String operation;
-        private String selection;
-        private List<GetExternalDbSystemDiscoveryPatchOperationValue> values;
+        private @Nullable String operation;
+        private @Nullable String selection;
+        private @Nullable List<GetExternalDbSystemDiscoveryPatchOperationValue> values;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveryPatchOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,18 +49,18 @@ public final class GetExternalDbSystemDiscoveryPatchOperation {
         }
 
         @CustomType.Setter
-        public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+        public Builder operation(@Nullable String operation) {
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
-        public Builder selection(String selection) {
-            this.selection = Objects.requireNonNull(selection);
+        public Builder selection(@Nullable String selection) {
+            this.selection = selection;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<GetExternalDbSystemDiscoveryPatchOperationValue> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<GetExternalDbSystemDiscoveryPatchOperationValue> values) {
+            this.values = values;
             return this;
         }
         public Builder values(GetExternalDbSystemDiscoveryPatchOperationValue... values) {

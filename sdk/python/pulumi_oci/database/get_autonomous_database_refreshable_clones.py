@@ -49,7 +49,7 @@ class GetAutonomousDatabaseRefreshableClonesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetAutonomousDatabaseRefreshableClonesResult:
 
     @property
     @pulumi.getter(name="refreshableCloneCollections")
-    def refreshable_clone_collections(self) -> Sequence['outputs.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult']:
-        """
-        The list of refreshable_clone_collection.
-        """
+    def refreshable_clone_collections(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult']]:
         return pulumi.get(self, "refreshable_clone_collections")
 
 
@@ -80,21 +77,7 @@ def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[
                                                filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseRefreshableClonesFilterArgs']]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseRefreshableClonesResult:
     """
-    This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
-
-    Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_refreshable_clones = oci.Database.get_autonomous_database_refreshable_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -114,20 +97,6 @@ def get_autonomous_database_refreshable_clones_output(autonomous_database_id: Op
                                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseRefreshableClonesFilterArgs']]]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseRefreshableClonesResult]:
     """
-    This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
-
-    Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_refreshable_clones = oci.Database.get_autonomous_database_refreshable_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

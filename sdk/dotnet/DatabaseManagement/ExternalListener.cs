@@ -29,31 +29,31 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("additionalDetails")]
-        public Output<ImmutableDictionary<string, object>> AdditionalDetails { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdditionalDetails { get; private set; } = null!;
 
         /// <summary>
         /// The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
         /// </summary>
         [Output("adrHomeDirectory")]
-        public Output<string> AdrHomeDirectory { get; private set; } = null!;
+        public Output<string?> AdrHomeDirectory { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the external listener.
         /// </summary>
         [Output("componentName")]
-        public Output<string> ComponentName { get; private set; } = null!;
+        public Output<string?> ComponentName { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the database. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The list of protocol addresses the listener is configured to listen on.
@@ -65,25 +65,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
         [Output("externalConnectorId")]
-        public Output<string> ExternalConnectorId { get; private set; } = null!;
+        public Output<string?> ExternalConnectorId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         /// </summary>
         [Output("externalDbHomeId")]
-        public Output<string> ExternalDbHomeId { get; private set; } = null!;
+        public Output<string?> ExternalDbHomeId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         /// </summary>
         [Output("externalDbNodeId")]
-        public Output<string> ExternalDbNodeId { get; private set; } = null!;
+        public Output<string?> ExternalDbNodeId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
         /// </summary>
         [Output("externalDbSystemId")]
-        public Output<string> ExternalDbSystemId { get; private set; } = null!;
+        public Output<string?> ExternalDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
@@ -99,43 +99,43 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The name of the host on which the external listener is running.
         /// </summary>
         [Output("hostName")]
-        public Output<string> HostName { get; private set; } = null!;
+        public Output<string?> HostName { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The listener alias.
         /// </summary>
         [Output("listenerAlias")]
-        public Output<string> ListenerAlias { get; private set; } = null!;
+        public Output<string?> ListenerAlias { get; private set; } = null!;
 
         /// <summary>
         /// The location of the listener configuration file listener.ora.
         /// </summary>
         [Output("listenerOraLocation")]
-        public Output<string> ListenerOraLocation { get; private set; } = null!;
+        public Output<string?> ListenerOraLocation { get; private set; } = null!;
 
         /// <summary>
         /// The type of listener.
         /// </summary>
         [Output("listenerType")]
-        public Output<string> ListenerType { get; private set; } = null!;
+        public Output<string?> ListenerType { get; private set; } = null!;
 
         /// <summary>
         /// The destination directory of the listener log file.
         /// </summary>
         [Output("logDirectory")]
-        public Output<string> LogDirectory { get; private set; } = null!;
+        public Output<string?> LogDirectory { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle home location of the listener.
         /// </summary>
         [Output("oracleHome")]
-        public Output<string> OracleHome { get; private set; } = null!;
+        public Output<string?> OracleHome { get; private set; } = null!;
 
         /// <summary>
         /// The list of ASMs that are serviced by the listener.
@@ -153,31 +153,31 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The current lifecycle state of the external listener.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external listener was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external listener was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The destination directory of the listener trace file.
         /// </summary>
         [Output("traceDirectory")]
-        public Output<string> TraceDirectory { get; private set; } = null!;
+        public Output<string?> TraceDirectory { get; private set; } = null!;
 
         /// <summary>
         /// The listener version.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

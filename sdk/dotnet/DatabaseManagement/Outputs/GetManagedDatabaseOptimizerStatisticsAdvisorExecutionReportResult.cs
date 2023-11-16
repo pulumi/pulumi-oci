@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// A summary of the Optimizer Statistics Advisor execution.
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult(
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult> rules,
 
-            string summary)
+            string? summary)
         {
             Rules = rules;
             Summary = summary;

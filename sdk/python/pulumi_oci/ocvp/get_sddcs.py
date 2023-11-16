@@ -49,25 +49,16 @@ class GetSddcsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeAvailabilityDomain")
     def compute_availability_domain(self) -> Optional[str]:
-        """
-        (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
-        """
         return pulumi.get(self, "compute_availability_domain")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +68,7 @@ class GetSddcsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -85,18 +76,12 @@ class GetSddcsResult:
 
     @property
     @pulumi.getter(name="sddcCollections")
-    def sddc_collections(self) -> Sequence['outputs.GetSddcsSddcCollectionResult']:
-        """
-        The list of sddc_collection.
-        """
+    def sddc_collections(self) -> Optional[Sequence['outputs.GetSddcsSddcCollectionResult']]:
         return pulumi.get(self, "sddc_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the SDDC.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,28 +107,7 @@ def get_sddcs(compartment_id: Optional[str] = None,
               state: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSddcsResult:
     """
-    This data source provides the list of Sddcs in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists the SDDCs in the specified compartment. The list can be
-    filtered by display name or availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=var["compartment_id"],
-        compute_availability_domain=var["sddc_compute_availability_domain"],
-        display_name=var["sddc_display_name"],
-        state=var["sddc_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: The lifecycle state of the resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -172,27 +136,6 @@ def get_sddcs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSddcsResult]:
     """
-    This data source provides the list of Sddcs in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists the SDDCs in the specified compartment. The list can be
-    filtered by display name or availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=var["compartment_id"],
-        compute_availability_domain=var["sddc_compute_availability_domain"],
-        display_name=var["sddc_display_name"],
-        state=var["sddc_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: The lifecycle state of the resource.
+    Use this data source to access information about an existing resource.
     """
     ...

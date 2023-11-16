@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// An array of the basic masking formats compatible with the data type category.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
         [OutputConstructor]
         private GetCompatibleFormatsForDataTypeFormatsForDataTypeResult(
-            string dataType,
+            string? dataType,
 
             ImmutableArray<Outputs.GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult> maskingFormats)
         {

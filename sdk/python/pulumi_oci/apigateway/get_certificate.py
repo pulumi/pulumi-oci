@@ -70,10 +70,7 @@ class GetCertificateResult:
 
     @property
     @pulumi.getter
-    def certificate(self) -> str:
-        """
-        The data of the leaf certificate in pem format.
-        """
+    def certificate(self) -> Optional[str]:
         return pulumi.get(self, "certificate")
 
     @property
@@ -83,103 +80,67 @@ class GetCertificateResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="intermediateCertificates")
-    def intermediate_certificates(self) -> str:
-        """
-        The intermediate certificate data associated with the certificate in pem format.
-        """
+    def intermediate_certificates(self) -> Optional[str]:
         return pulumi.get(self, "intermediate_certificates")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="privateKey")
-    def private_key(self) -> str:
+    def private_key(self) -> Optional[str]:
         return pulumi.get(self, "private_key")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the certificate.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subjectNames")
-    def subject_names(self) -> Sequence[str]:
-        """
-        The entity to be secured by the certificate and additional host names.
-        """
+    def subject_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "subject_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeNotValidAfter")
-    def time_not_valid_after(self) -> str:
-        """
-        The date and time the certificate will expire.
-        """
+    def time_not_valid_after(self) -> Optional[str]:
         return pulumi.get(self, "time_not_valid_after")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -209,21 +170,7 @@ class AwaitableGetCertificateResult(GetCertificateResult):
 def get_certificate(certificate_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateResult:
     """
-    This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a certificate by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate = oci.ApiGateway.get_certificate(certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
-    ```
-
-
-    :param str certificate_id: The ocid of the certificate.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
@@ -252,20 +199,6 @@ def get_certificate(certificate_id: Optional[str] = None,
 def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateResult]:
     """
-    This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a certificate by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate = oci.ApiGateway.get_certificate(certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
-    ```
-
-
-    :param str certificate_id: The ocid of the certificate.
+    Use this data source to access information about an existing resource.
     """
     ...

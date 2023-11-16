@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         /// </summary>
         [Output("gracePeriod")]
-        public Output<int> GracePeriod { get; private set; } = null!;
+        public Output<int?> GracePeriod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
@@ -67,13 +67,13 @@ namespace Pulumi.Oci.Database
         /// The current lifecycle state of the Autonomous Database wallet.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the wallet was last rotated.
         /// </summary>
         [Output("timeRotated")]
-        public Output<string> TimeRotated { get; private set; } = null!;
+        public Output<string?> TimeRotated { get; private set; } = null!;
 
 
         /// <summary>

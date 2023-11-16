@@ -21,14 +21,14 @@ public final class GetNetworkFirewallPolicySecurityRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkFirewallPolicyId;
     private @Nullable Integer securityRulePriorityOrder;
     /**
      * @return The list of security_rule_summary_collection.
      * 
      */
-    private List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection> securityRuleSummaryCollections;
+    private @Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection> securityRuleSummaryCollections;
 
     private GetNetworkFirewallPolicySecurityRulesResult() {}
     public Optional<String> displayName() {
@@ -41,8 +41,8 @@ public final class GetNetworkFirewallPolicySecurityRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkFirewallPolicyId() {
         return this.networkFirewallPolicyId;
@@ -55,7 +55,7 @@ public final class GetNetworkFirewallPolicySecurityRulesResult {
      * 
      */
     public List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection> securityRuleSummaryCollections() {
-        return this.securityRuleSummaryCollections;
+        return this.securityRuleSummaryCollections == null ? List.of() : this.securityRuleSummaryCollections;
     }
 
     public static Builder builder() {
@@ -69,10 +69,10 @@ public final class GetNetworkFirewallPolicySecurityRulesResult {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetNetworkFirewallPolicySecurityRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkFirewallPolicyId;
         private @Nullable Integer securityRulePriorityOrder;
-        private List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection> securityRuleSummaryCollections;
+        private @Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection> securityRuleSummaryCollections;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicySecurityRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,8 +98,8 @@ public final class GetNetworkFirewallPolicySecurityRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -113,8 +113,8 @@ public final class GetNetworkFirewallPolicySecurityRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityRuleSummaryCollections(List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection> securityRuleSummaryCollections) {
-            this.securityRuleSummaryCollections = Objects.requireNonNull(securityRuleSummaryCollections);
+        public Builder securityRuleSummaryCollections(@Nullable List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection> securityRuleSummaryCollections) {
+            this.securityRuleSummaryCollections = securityRuleSummaryCollections;
             return this;
         }
         public Builder securityRuleSummaryCollections(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection... securityRuleSummaryCollections) {

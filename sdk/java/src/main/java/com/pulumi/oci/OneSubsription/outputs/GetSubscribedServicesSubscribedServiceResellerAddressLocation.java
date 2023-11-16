@@ -6,6 +6,8 @@ package com.pulumi.oci.OneSubsription.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscribedServicesSubscribedServiceResellerAddressLocation {
@@ -13,87 +15,87 @@ public final class GetSubscribedServicesSubscribedServiceResellerAddressLocation
      * @return Address first line.
      * 
      */
-    private String address1;
+    private @Nullable String address1;
     /**
      * @return Address second line.
      * 
      */
-    private String address2;
+    private @Nullable String address2;
     /**
      * @return City.
      * 
      */
-    private String city;
+    private @Nullable String city;
     /**
      * @return Country.
      * 
      */
-    private String country;
+    private @Nullable String country;
     /**
      * @return Postal code.
      * 
      */
-    private String postalCode;
+    private @Nullable String postalCode;
     /**
      * @return Region.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return Region.
      * 
      */
-    private String tcaLocationId;
+    private @Nullable String tcaLocationId;
 
     private GetSubscribedServicesSubscribedServiceResellerAddressLocation() {}
     /**
      * @return Address first line.
      * 
      */
-    public String address1() {
-        return this.address1;
+    public Optional<String> address1() {
+        return Optional.ofNullable(this.address1);
     }
     /**
      * @return Address second line.
      * 
      */
-    public String address2() {
-        return this.address2;
+    public Optional<String> address2() {
+        return Optional.ofNullable(this.address2);
     }
     /**
      * @return City.
      * 
      */
-    public String city() {
-        return this.city;
+    public Optional<String> city() {
+        return Optional.ofNullable(this.city);
     }
     /**
      * @return Country.
      * 
      */
-    public String country() {
-        return this.country;
+    public Optional<String> country() {
+        return Optional.ofNullable(this.country);
     }
     /**
      * @return Postal code.
      * 
      */
-    public String postalCode() {
-        return this.postalCode;
+    public Optional<String> postalCode() {
+        return Optional.ofNullable(this.postalCode);
     }
     /**
      * @return Region.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return Region.
      * 
      */
-    public String tcaLocationId() {
-        return this.tcaLocationId;
+    public Optional<String> tcaLocationId() {
+        return Optional.ofNullable(this.tcaLocationId);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetSubscribedServicesSubscribedServiceResellerAddressLocation
     }
     @CustomType.Builder
     public static final class Builder {
-        private String address1;
-        private String address2;
-        private String city;
-        private String country;
-        private String postalCode;
-        private String region;
-        private String tcaLocationId;
+        private @Nullable String address1;
+        private @Nullable String address2;
+        private @Nullable String city;
+        private @Nullable String country;
+        private @Nullable String postalCode;
+        private @Nullable String region;
+        private @Nullable String tcaLocationId;
         public Builder() {}
         public Builder(GetSubscribedServicesSubscribedServiceResellerAddressLocation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetSubscribedServicesSubscribedServiceResellerAddressLocation
         }
 
         @CustomType.Setter
-        public Builder address1(String address1) {
-            this.address1 = Objects.requireNonNull(address1);
+        public Builder address1(@Nullable String address1) {
+            this.address1 = address1;
             return this;
         }
         @CustomType.Setter
-        public Builder address2(String address2) {
-            this.address2 = Objects.requireNonNull(address2);
+        public Builder address2(@Nullable String address2) {
+            this.address2 = address2;
             return this;
         }
         @CustomType.Setter
-        public Builder city(String city) {
-            this.city = Objects.requireNonNull(city);
+        public Builder city(@Nullable String city) {
+            this.city = city;
             return this;
         }
         @CustomType.Setter
-        public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+        public Builder country(@Nullable String country) {
+            this.country = country;
             return this;
         }
         @CustomType.Setter
-        public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+        public Builder postalCode(@Nullable String postalCode) {
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaLocationId(String tcaLocationId) {
-            this.tcaLocationId = Objects.requireNonNull(tcaLocationId);
+        public Builder tcaLocationId(@Nullable String tcaLocationId) {
+            this.tcaLocationId = tcaLocationId;
             return this;
         }
         public GetSubscribedServicesSubscribedServiceResellerAddressLocation build() {

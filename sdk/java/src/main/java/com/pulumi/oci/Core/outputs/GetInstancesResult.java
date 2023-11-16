@@ -40,12 +40,12 @@ public final class GetInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of instances.
      * 
      */
-    private List<GetInstancesInstance> instances;
+    private @Nullable List<GetInstancesInstance> instances;
     /**
      * @return The current state of the instance.
      * 
@@ -91,15 +91,15 @@ public final class GetInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of instances.
      * 
      */
     public List<GetInstancesInstance> instances() {
-        return this.instances;
+        return this.instances == null ? List.of() : this.instances;
     }
     /**
      * @return The current state of the instance.
@@ -124,8 +124,8 @@ public final class GetInstancesResult {
         private @Nullable String computeClusterId;
         private @Nullable String displayName;
         private @Nullable List<GetInstancesFilter> filters;
-        private String id;
-        private List<GetInstancesInstance> instances;
+        private @Nullable String id;
+        private @Nullable List<GetInstancesInstance> instances;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetInstancesResult defaults) {
@@ -175,13 +175,13 @@ public final class GetInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instances(List<GetInstancesInstance> instances) {
-            this.instances = Objects.requireNonNull(instances);
+        public Builder instances(@Nullable List<GetInstancesInstance> instances) {
+            this.instances = instances;
             return this;
         }
         public Builder instances(GetInstancesInstance... instances) {

@@ -47,123 +47,123 @@ export interface GetVirtualCircuitResult {
     /**
      * The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      */
-    readonly bandwidthShapeName: string;
+    readonly bandwidthShapeName?: string;
     /**
      * Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      */
-    readonly bgpAdminState: string;
+    readonly bgpAdminState?: string;
     /**
      * The state of the Ipv6 BGP session associated with the virtual circuit.
      */
-    readonly bgpIpv6sessionState: string;
+    readonly bgpIpv6sessionState?: string;
     /**
      * Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      *
      * @deprecated The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.
      */
-    readonly bgpManagement: string;
+    readonly bgpManagement?: string;
     /**
      * The state of the Ipv4 BGP session associated with the virtual circuit.
      */
-    readonly bgpSessionState: string;
+    readonly bgpSessionState?: string;
     /**
      * The OCID of the compartment containing the virtual circuit.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
      */
-    readonly crossConnectMappings: outputs.Core.GetVirtualCircuitCrossConnectMapping[];
+    readonly crossConnectMappings?: outputs.Core.GetVirtualCircuitCrossConnectMapping[];
     /**
      * The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer's edge router and Oracle, the value is the customer's ASN. If the BGP session is between the provider's edge router and Oracle, the value is the provider's ASN. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
      */
-    readonly customerAsn: string;
+    readonly customerAsn?: string;
     /**
      * Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      *
      * @deprecated The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
      */
-    readonly customerBgpAsn: number;
+    readonly customerBgpAsn?: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
      */
-    readonly gatewayId: string;
+    readonly gatewayId?: string;
     /**
      * The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The layer 3 IP MTU to use on this virtual circuit.
      */
-    readonly ipMtu: string;
+    readonly ipMtu?: string;
     /**
      * Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
-    readonly isBfdEnabled: boolean;
+    readonly isBfdEnabled?: boolean;
     /**
      * Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      */
-    readonly isTransportMode: boolean;
+    readonly isTransportMode?: boolean;
     /**
      * The Oracle BGP ASN.
      */
-    readonly oracleBgpAsn: number;
+    readonly oracleBgpAsn?: number;
     /**
      * The OCID of the service offered by the provider (if the customer is connecting via a provider).
      */
-    readonly providerServiceId: string;
+    readonly providerServiceId?: string;
     /**
      * The service key name offered by the provider (if the customer is connecting via a provider).
      */
-    readonly providerServiceKeyName: string;
+    readonly providerServiceKeyName?: string;
     /**
      * The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
      */
-    readonly providerState: string;
+    readonly providerState?: string;
     /**
      * For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
      */
-    readonly publicPrefixes: outputs.Core.GetVirtualCircuitPublicPrefix[];
+    readonly publicPrefixes?: outputs.Core.GetVirtualCircuitPublicPrefix[];
     /**
      * Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
      */
-    readonly referenceComment: string;
+    readonly referenceComment?: string;
     /**
      * The Oracle Cloud Infrastructure region where this virtual circuit is located.
      */
-    readonly region: string;
+    readonly region?: string;
     /**
      * The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      */
-    readonly routingPolicies: string[];
+    readonly routingPolicies?: string[];
     /**
      * Provider service type.
      */
-    readonly serviceType: string;
+    readonly serviceType?: string;
     /**
      * The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
-    readonly type: string;
+    readonly type?: string;
     readonly virtualCircuitId: string;
 }
 /**

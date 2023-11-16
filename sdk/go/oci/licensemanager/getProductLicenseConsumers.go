@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Product License Consumers in Oracle Cloud Infrastructure License Manager service.
@@ -67,8 +66,8 @@ type GetProductLicenseConsumersArgs struct {
 type GetProductLicenseConsumersResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string `pulumi:"id"`
-	IsCompartmentIdInSubtree *bool  `pulumi:"isCompartmentIdInSubtree"`
+	Id                       *string `pulumi:"id"`
+	IsCompartmentIdInSubtree *bool   `pulumi:"isCompartmentIdInSubtree"`
 	// Collection of product license consumers.
 	Items            []GetProductLicenseConsumersItem `pulumi:"items"`
 	ProductLicenseId string                           `pulumi:"productLicenseId"`
@@ -116,19 +115,13 @@ func (o GetProductLicenseConsumersResultOutput) ToGetProductLicenseConsumersResu
 	return o
 }
 
-func (o GetProductLicenseConsumersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersResult] {
-	return pulumix.Output[GetProductLicenseConsumersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProductLicenseConsumersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProductLicenseConsumersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetProductLicenseConsumersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProductLicenseConsumersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProductLicenseConsumersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProductLicenseConsumersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetProductLicenseConsumersResultOutput) IsCompartmentIdInSubtree() pulumi.BoolPtrOutput {

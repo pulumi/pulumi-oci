@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
@@ -79,7 +78,7 @@ type GetCaptureFiltersResult struct {
 	FilterType *string                   `pulumi:"filterType"`
 	Filters    []GetCaptureFiltersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The capture filter's current administrative state.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetCaptureFiltersResultOutput) ToGetCaptureFiltersResultOutputWithContex
 	return o
 }
 
-func (o GetCaptureFiltersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCaptureFiltersResult] {
-	return pulumix.Output[GetCaptureFiltersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of capture_filters.
 func (o GetCaptureFiltersResultOutput) CaptureFilters() GetCaptureFiltersCaptureFilterArrayOutput {
 	return o.ApplyT(func(v GetCaptureFiltersResult) []GetCaptureFiltersCaptureFilter { return v.CaptureFilters }).(GetCaptureFiltersCaptureFilterArrayOutput)
@@ -160,8 +153,8 @@ func (o GetCaptureFiltersResultOutput) Filters() GetCaptureFiltersFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCaptureFiltersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaptureFiltersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCaptureFiltersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaptureFiltersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The capture filter's current administrative state.

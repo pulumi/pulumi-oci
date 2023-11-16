@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -66,16 +65,16 @@ type GetNamespaceStorageRecalledDataSizeArgs struct {
 // A collection of values returned by getNamespaceStorageRecalledDataSize.
 type GetNamespaceStorageRecalledDataSizeResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 	// This is the size of the archival data not recalled yet
-	NotRecalledDataInBytes string `pulumi:"notRecalledDataInBytes"`
+	NotRecalledDataInBytes *string `pulumi:"notRecalledDataInBytes"`
 	// This is the size of the recalled data
-	RecalledDataInBytes string `pulumi:"recalledDataInBytes"`
+	RecalledDataInBytes *string `pulumi:"recalledDataInBytes"`
 	// This is the end of the time range of the archival data
-	TimeDataEnded string `pulumi:"timeDataEnded"`
+	TimeDataEnded *string `pulumi:"timeDataEnded"`
 	// This is the start of the time range of the archival data
-	TimeDataStarted string `pulumi:"timeDataStarted"`
+	TimeDataStarted *string `pulumi:"timeDataStarted"`
 }
 
 func GetNamespaceStorageRecalledDataSizeOutput(ctx *pulumi.Context, args GetNamespaceStorageRecalledDataSizeOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageRecalledDataSizeResultOutput {
@@ -120,15 +119,9 @@ func (o GetNamespaceStorageRecalledDataSizeResultOutput) ToGetNamespaceStorageRe
 	return o
 }
 
-func (o GetNamespaceStorageRecalledDataSizeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageRecalledDataSizeResult] {
-	return pulumix.Output[GetNamespaceStorageRecalledDataSizeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceStorageRecalledDataSizeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceStorageRecalledDataSizeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespaceStorageRecalledDataSizeResultOutput) Namespace() pulumi.StringOutput {
@@ -136,23 +129,23 @@ func (o GetNamespaceStorageRecalledDataSizeResultOutput) Namespace() pulumi.Stri
 }
 
 // This is the size of the archival data not recalled yet
-func (o GetNamespaceStorageRecalledDataSizeResultOutput) NotRecalledDataInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) string { return v.NotRecalledDataInBytes }).(pulumi.StringOutput)
+func (o GetNamespaceStorageRecalledDataSizeResultOutput) NotRecalledDataInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) *string { return v.NotRecalledDataInBytes }).(pulumi.StringPtrOutput)
 }
 
 // This is the size of the recalled data
-func (o GetNamespaceStorageRecalledDataSizeResultOutput) RecalledDataInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) string { return v.RecalledDataInBytes }).(pulumi.StringOutput)
+func (o GetNamespaceStorageRecalledDataSizeResultOutput) RecalledDataInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) *string { return v.RecalledDataInBytes }).(pulumi.StringPtrOutput)
 }
 
 // This is the end of the time range of the archival data
-func (o GetNamespaceStorageRecalledDataSizeResultOutput) TimeDataEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) string { return v.TimeDataEnded }).(pulumi.StringOutput)
+func (o GetNamespaceStorageRecalledDataSizeResultOutput) TimeDataEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) *string { return v.TimeDataEnded }).(pulumi.StringPtrOutput)
 }
 
 // This is the start of the time range of the archival data
-func (o GetNamespaceStorageRecalledDataSizeResultOutput) TimeDataStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) string { return v.TimeDataStarted }).(pulumi.StringOutput)
+func (o GetNamespaceStorageRecalledDataSizeResultOutput) TimeDataStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageRecalledDataSizeResult) *string { return v.TimeDataStarted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

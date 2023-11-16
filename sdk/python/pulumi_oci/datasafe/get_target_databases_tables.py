@@ -56,7 +56,7 @@ class GetTargetDatabasesTablesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,9 +70,6 @@ class GetTargetDatabasesTablesResult:
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        Name of the schema.
-        """
         return pulumi.get(self, "schema_names")
 
     @property
@@ -83,17 +80,11 @@ class GetTargetDatabasesTablesResult:
     @property
     @pulumi.getter(name="tableNames")
     def table_names(self) -> Optional[Sequence[str]]:
-        """
-        Name of the table.
-        """
         return pulumi.get(self, "table_names")
 
     @property
     @pulumi.getter
-    def tables(self) -> Sequence['outputs.GetTargetDatabasesTablesTableResult']:
-        """
-        The list of tables.
-        """
+    def tables(self) -> Optional[Sequence['outputs.GetTargetDatabasesTablesTableResult']]:
         return pulumi.get(self, "tables")
 
     @property
@@ -126,29 +117,7 @@ def get_target_databases_tables(filters: Optional[Sequence[pulumi.InputType['Get
                                 target_database_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetDatabasesTablesResult:
     """
-    This data source provides the list of Target Databases Tables in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns a list of table metadata objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        schema_names=var["target_databases_table_schema_name"],
-        schema_name_contains=var["target_databases_table_schema_name_contains"],
-        table_names=oci_nosql_table["test_table"]["name"],
-        table_name_contains=var["target_databases_table_table_name_contains"])
-    ```
-
-
-    :param str schema_name_contains: A filter to return only items if schema name contains a specific string.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str table_name_contains: A filter to return only items if table name contains a specific string.
-    :param Sequence[str] table_names: A filter to return only items related to specific table name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -180,28 +149,6 @@ def get_target_databases_tables_output(filters: Optional[pulumi.Input[Optional[S
                                        target_database_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasesTablesResult]:
     """
-    This data source provides the list of Target Databases Tables in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns a list of table metadata objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        schema_names=var["target_databases_table_schema_name"],
-        schema_name_contains=var["target_databases_table_schema_name_contains"],
-        table_names=oci_nosql_table["test_table"]["name"],
-        table_name_contains=var["target_databases_table_table_name_contains"])
-    ```
-
-
-    :param str schema_name_contains: A filter to return only items if schema name contains a specific string.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str table_name_contains: A filter to return only items if table name contains a specific string.
-    :param Sequence[str] table_names: A filter to return only items related to specific table name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     ...

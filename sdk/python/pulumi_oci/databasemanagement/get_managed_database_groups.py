@@ -46,9 +46,6 @@ class GetManagedDatabaseGroupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -59,33 +56,21 @@ class GetManagedDatabaseGroupsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedDatabaseGroupCollections")
-    def managed_database_group_collections(self) -> Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionResult']:
-        """
-        The list of managed_database_group_collection.
-        """
+    def managed_database_group_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionResult']]:
         return pulumi.get(self, "managed_database_group_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the Managed Database Group.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the Managed Database Group.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,30 +95,7 @@ def get_managed_database_groups(compartment_id: Optional[str] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseGroupsResult:
     """
-    This data source provides the list of Managed Database Groups in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the Managed Database Group for a specific ID or the list of Managed Database Groups in
-    a specific compartment. Managed Database Groups can also be filtered based on the name parameter.
-    Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
-    all the Managed Database Groups in the compartment are listed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=var["compartment_id"],
-        id=var["managed_database_group_id"],
-        name=var["managed_database_group_name"],
-        state=var["managed_database_group_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str id: The identifier of the resource. Only one of the parameters, id or name should be provided.
-    :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
-    :param str state: The lifecycle state of a resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -161,29 +123,6 @@ def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[str
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseGroupsResult]:
     """
-    This data source provides the list of Managed Database Groups in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the Managed Database Group for a specific ID or the list of Managed Database Groups in
-    a specific compartment. Managed Database Groups can also be filtered based on the name parameter.
-    Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
-    all the Managed Database Groups in the compartment are listed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=var["compartment_id"],
-        id=var["managed_database_group_id"],
-        name=var["managed_database_group_name"],
-        state=var["managed_database_group_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str id: The identifier of the resource. Only one of the parameters, id or name should be provided.
-    :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
-    :param str state: The lifecycle state of a resource.
+    Use this data source to access information about an existing resource.
     """
     ...

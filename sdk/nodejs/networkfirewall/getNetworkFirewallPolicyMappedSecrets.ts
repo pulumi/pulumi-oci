@@ -54,11 +54,11 @@ export interface GetNetworkFirewallPolicyMappedSecretsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of mapped_secret_summary_collection.
      */
-    readonly mappedSecretSummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection[];
+    readonly mappedSecretSummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection[];
     readonly networkFirewallPolicyId: string;
 }
 /**

@@ -18,7 +18,7 @@ public final class GetAnnouncementSubscriptionsResult {
      * @return The list of announcement_subscription_collection.
      * 
      */
-    private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections;
+    private @Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections;
     /**
      * @return The OCID of the compartment that contains the announcement subscription.
      * 
@@ -47,7 +47,7 @@ public final class GetAnnouncementSubscriptionsResult {
      * 
      */
     public List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections() {
-        return this.announcementSubscriptionCollections;
+        return this.announcementSubscriptionCollections == null ? List.of() : this.announcementSubscriptionCollections;
     }
     /**
      * @return The OCID of the compartment that contains the announcement subscription.
@@ -90,7 +90,7 @@ public final class GetAnnouncementSubscriptionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections;
+        private @Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAnnouncementSubscriptionsFilter> filters;
@@ -108,8 +108,8 @@ public final class GetAnnouncementSubscriptionsResult {
         }
 
         @CustomType.Setter
-        public Builder announcementSubscriptionCollections(List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections) {
-            this.announcementSubscriptionCollections = Objects.requireNonNull(announcementSubscriptionCollections);
+        public Builder announcementSubscriptionCollections(@Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections) {
+            this.announcementSubscriptionCollections = announcementSubscriptionCollections;
             return this;
         }
         public Builder announcementSubscriptionCollections(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection... announcementSubscriptionCollections) {

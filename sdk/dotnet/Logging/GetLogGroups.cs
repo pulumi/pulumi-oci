@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsCompartmentIdInSubtree;
         /// <summary>
         /// The list of log_groups.
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Logging
 
             ImmutableArray<Outputs.GetLogGroupsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isCompartmentIdInSubtree,
 

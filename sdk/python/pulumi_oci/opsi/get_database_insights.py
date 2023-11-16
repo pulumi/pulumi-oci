@@ -67,9 +67,6 @@ class GetDatabaseInsightsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment identifier of the database
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -80,41 +77,26 @@ class GetDatabaseInsightsResult:
     @property
     @pulumi.getter(name="databaseIds")
     def database_ids(self) -> Optional[Sequence[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "database_ids")
 
     @property
     @pulumi.getter(name="databaseInsightsCollections")
-    def database_insights_collections(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionResult']:
-        """
-        The list of database_insights_collection.
-        """
+    def database_insights_collections(self) -> Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionResult']]:
         return pulumi.get(self, "database_insights_collections")
 
     @property
     @pulumi.getter(name="databaseTypes")
     def database_types(self) -> Optional[Sequence[str]]:
-        """
-        Operations Insights internal representation of the database type.
-        """
         return pulumi.get(self, "database_types")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
     def enterprise_manager_bridge_id(self) -> Optional[str]:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="exadataInsightId")
     def exadata_insight_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        """
         return pulumi.get(self, "exadata_insight_id")
 
     @property
@@ -130,33 +112,21 @@ class GetDatabaseInsightsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Database insight identifier
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
     def opsi_private_endpoint_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the database.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter
     def statuses(self) -> Optional[Sequence[str]]:
-        """
-        Indicates the status of a database insight in Operations Insights
-        """
         return pulumi.get(self, "statuses")
 
 
@@ -195,42 +165,7 @@ def get_database_insights(compartment_id: Optional[str] = None,
                           statuses: Optional[Sequence[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseInsightsResult:
     """
-    This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["database_insight_compartment_id_in_subtree"],
-        database_ids=oci_database_database["test_database"]["id"],
-        database_types=var["database_insight_database_type"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-        fields=var["database_insight_fields"],
-        id=var["database_insight_id"],
-        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-        states=var["database_insight_state"],
-        statuses=var["database_insight_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param Sequence[str] database_ids: Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-    :param Sequence[str] database_types: Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-    :param Sequence[str] fields: Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
-    :param str id: Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str opsi_private_endpoint_id: Unique Operations Insights PrivateEndpoint identifier
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -279,41 +214,6 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
                                  statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseInsightsResult]:
     """
-    This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["database_insight_compartment_id_in_subtree"],
-        database_ids=oci_database_database["test_database"]["id"],
-        database_types=var["database_insight_database_type"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-        fields=var["database_insight_fields"],
-        id=var["database_insight_id"],
-        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-        states=var["database_insight_state"],
-        statuses=var["database_insight_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param Sequence[str] database_ids: Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-    :param Sequence[str] database_types: Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-    :param Sequence[str] fields: Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
-    :param str id: Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str opsi_private_endpoint_id: Unique Operations Insights PrivateEndpoint identifier
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     ...

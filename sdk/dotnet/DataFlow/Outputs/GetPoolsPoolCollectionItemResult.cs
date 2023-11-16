@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// List of PoolConfig items.
         /// </summary>
@@ -24,39 +24,39 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly description. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The query parameter for the Spark application name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
         /// </summary>
-        public readonly int IdleTimeoutInMinutes;
+        public readonly int? IdleTimeoutInMinutes;
         /// <summary>
         /// The detailed messages about the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The OCID of the user who created the resource.
         /// </summary>
-        public readonly string OwnerPrincipalId;
+        public readonly string? OwnerPrincipalId;
         /// <summary>
         /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
-        public readonly string OwnerUserName;
+        public readonly string? OwnerUserName;
         /// <summary>
         /// A collection of metrics related to a particular pool.
         /// </summary>
@@ -68,49 +68,49 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The LifecycleState of the pool.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetPoolsPoolCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetPoolsPoolCollectionItemConfigurationResult> configurations,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            int idleTimeoutInMinutes,
+            int? idleTimeoutInMinutes,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string ownerPrincipalId,
+            string? ownerPrincipalId,
 
-            string ownerUserName,
+            string? ownerUserName,
 
             ImmutableArray<Outputs.GetPoolsPoolCollectionItemPoolMetricResult> poolMetrics,
 
             ImmutableArray<Outputs.GetPoolsPoolCollectionItemScheduleResult> schedules,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             Configurations = configurations;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -64,7 +63,7 @@ type LookupMonitoredResourceResult struct {
 	// Monitored Resource Alias Credential Details
 	Aliases []GetMonitoredResourceAlias `pulumi:"aliases"`
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Monitored Resource Credential Details.
 	Credentials []GetMonitoredResourceCredential `pulumi:"credentials"`
 	// Connection details for the database.
@@ -72,39 +71,39 @@ type LookupMonitoredResourceResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Monitored resource display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-	ExternalId         string `pulumi:"externalId"`
-	ExternalResourceId string `pulumi:"externalResourceId"`
+	ExternalId         *string `pulumi:"externalId"`
+	ExternalResourceId *string `pulumi:"externalResourceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Monitored resource host name.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// License edition of the monitored resource.
-	License string `pulumi:"license"`
+	License *string `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	ManagementAgentId   string `pulumi:"managementAgentId"`
-	MonitoredResourceId string `pulumi:"monitoredResourceId"`
+	ManagementAgentId   *string `pulumi:"managementAgentId"`
+	MonitoredResourceId string  `pulumi:"monitoredResourceId"`
 	// Property Name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// List of monitored resource properties.
 	Properties []GetMonitoredResourceProperty `pulumi:"properties"`
 	// Time zone in the form of tz database canonical zone ID.
-	ResourceTimeZone string `pulumi:"resourceTimeZone"`
+	ResourceTimeZone *string `pulumi:"resourceTimeZone"`
 	// Lifecycle state of the monitored resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Monitored Resource Type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupMonitoredResourceOutput(ctx *pulumi.Context, args LookupMonitoredResourceOutputArgs, opts ...pulumi.InvokeOption) LookupMonitoredResourceResultOutput {
@@ -145,12 +144,6 @@ func (o LookupMonitoredResourceResultOutput) ToLookupMonitoredResourceResultOutp
 	return o
 }
 
-func (o LookupMonitoredResourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMonitoredResourceResult] {
-	return pulumix.Output[LookupMonitoredResourceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupMonitoredResourceResultOutput) AdditionalAliases() GetMonitoredResourceAdditionalAliasArrayOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceAdditionalAlias {
 		return v.AdditionalAliases
@@ -169,8 +162,8 @@ func (o LookupMonitoredResourceResultOutput) Aliases() GetMonitoredResourceAlias
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupMonitoredResourceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Monitored Resource Credential Details.
@@ -191,17 +184,17 @@ func (o LookupMonitoredResourceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Monitored resource display name.
-func (o LookupMonitoredResourceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-func (o LookupMonitoredResourceResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupMonitoredResourceResultOutput) ExternalResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ExternalResourceId }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) ExternalResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.ExternalResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -210,23 +203,23 @@ func (o LookupMonitoredResourceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Monitored resource host name.
-func (o LookupMonitoredResourceResultOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.HostName }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupMonitoredResourceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // License edition of the monitored resource.
-func (o LookupMonitoredResourceResultOutput) License() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.License }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.License }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupMonitoredResourceResultOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMonitoredResourceResultOutput) MonitoredResourceId() pulumi.StringOutput {
@@ -234,8 +227,8 @@ func (o LookupMonitoredResourceResultOutput) MonitoredResourceId() pulumi.String
 }
 
 // Property Name.
-func (o LookupMonitoredResourceResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // List of monitored resource properties.
@@ -244,13 +237,13 @@ func (o LookupMonitoredResourceResultOutput) Properties() GetMonitoredResourcePr
 }
 
 // Time zone in the form of tz database canonical zone ID.
-func (o LookupMonitoredResourceResultOutput) ResourceTimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ResourceTimeZone }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) ResourceTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.ResourceTimeZone }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle state of the monitored resource.
-func (o LookupMonitoredResourceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -259,23 +252,23 @@ func (o LookupMonitoredResourceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupMonitoredResourceResultOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.TenantId }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o LookupMonitoredResourceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o LookupMonitoredResourceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Monitored Resource Type.
-func (o LookupMonitoredResourceResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupMonitoredResourceResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

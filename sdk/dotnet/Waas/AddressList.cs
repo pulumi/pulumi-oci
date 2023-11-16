@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waas
         /// The total number of unique IP addresses in the address list.
         /// </summary>
         [Output("addressCount")]
-        public Output<double> AddressCount { get; private set; } = null!;
+        public Output<double?> AddressCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of IP addresses or CIDR notations.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Waas
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name for the address list.
@@ -91,19 +91,19 @@ namespace Pulumi.Oci.Waas
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the address list.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the address list was created, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

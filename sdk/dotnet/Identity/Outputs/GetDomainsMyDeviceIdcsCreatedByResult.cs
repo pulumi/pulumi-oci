@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// User display name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The OCID of the user
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// The URI that corresponds to the member Resource of this device
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The type of resource, User or App, that modified this Resource
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The identifier of the user
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyDeviceIdcsCreatedByResult(
-            string display,
+            string? display,
 
-            string ocid,
+            string? ocid,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Display = display;
             Ocid = ocid;

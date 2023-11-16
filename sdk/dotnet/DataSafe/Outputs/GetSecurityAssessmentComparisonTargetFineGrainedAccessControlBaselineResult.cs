@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A unique identifier for the finding. This is common for the finding across targets.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         /// </summary>
@@ -28,35 +28,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         /// </summary>
-        public readonly string Remarks;
+        public readonly string? Remarks;
         /// <summary>
         /// The severity of this diff.
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
         /// <summary>
         /// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
         /// <summary>
         /// The short title for the finding.
         /// </summary>
-        public readonly string Title;
+        public readonly string? Title;
 
         [OutputConstructor]
         private GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResult(
             ImmutableArray<string> details,
 
-            string key,
+            string? key,
 
             ImmutableArray<Outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceResult> references,
 
-            string remarks,
+            string? remarks,
 
-            string severity,
+            string? severity,
 
-            string summary,
+            string? summary,
 
-            string title)
+            string? title)
         {
             Details = details;
             Key = key;

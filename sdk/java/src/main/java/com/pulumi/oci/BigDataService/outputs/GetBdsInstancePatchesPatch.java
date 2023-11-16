@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstancePatchesPatch {
@@ -13,27 +15,27 @@ public final class GetBdsInstancePatchesPatch {
      * @return The time when the patch was released.
      * 
      */
-    private String timeReleased;
+    private @Nullable String timeReleased;
     /**
      * @return The version of the patch.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetBdsInstancePatchesPatch() {}
     /**
      * @return The time when the patch was released.
      * 
      */
-    public String timeReleased() {
-        return this.timeReleased;
+    public Optional<String> timeReleased() {
+        return Optional.ofNullable(this.timeReleased);
     }
     /**
      * @return The version of the patch.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBdsInstancePatchesPatch {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timeReleased;
-        private String version;
+        private @Nullable String timeReleased;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetBdsInstancePatchesPatch defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBdsInstancePatchesPatch {
         }
 
         @CustomType.Setter
-        public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+        public Builder timeReleased(@Nullable String timeReleased) {
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetBdsInstancePatchesPatch build() {

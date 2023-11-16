@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancerRoutingPoliciesRouting
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetLoadBalancerRoutingPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String loadBalancerId;
     /**
      * @return The list of routing_policies.
      * 
      */
-    private List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies;
+    private @Nullable List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies;
 
     private GetLoadBalancerRoutingPoliciesResult() {}
     public List<GetLoadBalancerRoutingPoliciesFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetLoadBalancerRoutingPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -45,7 +46,7 @@ public final class GetLoadBalancerRoutingPoliciesResult {
      * 
      */
     public List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies() {
-        return this.routingPolicies;
+        return this.routingPolicies == null ? List.of() : this.routingPolicies;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetLoadBalancerRoutingPoliciesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetLoadBalancerRoutingPoliciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String loadBalancerId;
-        private List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies;
+        private @Nullable List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies;
         public Builder() {}
         public Builder(GetLoadBalancerRoutingPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetLoadBalancerRoutingPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetLoadBalancerRoutingPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder routingPolicies(List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies) {
-            this.routingPolicies = Objects.requireNonNull(routingPolicies);
+        public Builder routingPolicies(@Nullable List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies) {
+            this.routingPolicies = routingPolicies;
             return this;
         }
         public Builder routingPolicies(GetLoadBalancerRoutingPoliciesRoutingPolicy... routingPolicies) {

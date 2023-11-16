@@ -60,7 +60,7 @@ namespace Pulumi.Oci.GoldenGate
         /// Possible Deployment backup types.
         /// </summary>
         [Output("backupType")]
-        public Output<string> BackupType { get; private set; } = null!;
+        public Output<string?> BackupType { get; private set; } = null!;
 
         /// <summary>
         /// Name of the bucket where the object is to be uploaded in the object storage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.GoldenGate
         /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -96,19 +96,19 @@ namespace Pulumi.Oci.GoldenGate
         /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// True if this object is automatically created
         /// </summary>
         [Output("isAutomatic")]
-        public Output<bool> IsAutomatic { get; private set; } = null!;
+        public Output<bool?> IsAutomatic { get; private set; } = null!;
 
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Name of namespace that serves as a container for all of your buckets
@@ -130,49 +130,49 @@ namespace Pulumi.Oci.GoldenGate
         /// Version of OGG
         /// </summary>
         [Output("oggVersion")]
-        public Output<string> OggVersion { get; private set; } = null!;
+        public Output<string?> OggVersion { get; private set; } = null!;
 
         /// <summary>
         /// The size of the backup stored in object storage (in bytes)
         /// </summary>
         [Output("sizeInBytes")]
-        public Output<double> SizeInBytes { get; private set; } = null!;
+        public Output<double?> SizeInBytes { get; private set; } = null!;
 
         /// <summary>
         /// Possible lifecycle states.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeBackupFinished")]
-        public Output<string> TimeBackupFinished { get; private set; } = null!;
+        public Output<string?> TimeBackupFinished { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeOfBackup")]
-        public Output<string> TimeOfBackup { get; private set; } = null!;
+        public Output<string?> TimeOfBackup { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

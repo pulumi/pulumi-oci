@@ -39,8 +39,8 @@ export interface GetNetworkFirewallPolicyAddressListResult {
     /**
      * List of addresses.
      */
-    readonly addresses: string[];
-    readonly id: string;
+    readonly addresses?: string[];
+    readonly id?: string;
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
      */
@@ -49,15 +49,15 @@ export interface GetNetworkFirewallPolicyAddressListResult {
     /**
      * OCID of the Network Firewall Policy this Address List belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * Count of total Addresses in the AddressList
      */
-    readonly totalAddresses: number;
+    readonly totalAddresses?: number;
     /**
      * Type of address List.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.

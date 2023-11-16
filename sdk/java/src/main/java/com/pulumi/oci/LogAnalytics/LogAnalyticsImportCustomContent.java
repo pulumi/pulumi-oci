@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -66,28 +67,28 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="changeLists", refs={List.class,LogAnalyticsImportCustomContentChangeList.class}, tree="[0,1]")
-    private Output<List<LogAnalyticsImportCustomContentChangeList>> changeLists;
+    private Output</* @Nullable */ List<LogAnalyticsImportCustomContentChangeList>> changeLists;
 
     /**
      * @return LogAnalyticsImportCustomChangeList
      * 
      */
-    public Output<List<LogAnalyticsImportCustomContentChangeList>> changeLists() {
-        return this.changeLists;
+    public Output<Optional<List<LogAnalyticsImportCustomContentChangeList>>> changeLists() {
+        return Codegen.optional(this.changeLists);
     }
     /**
      * The content name.
      * 
      */
     @Export(name="contentName", refs={String.class}, tree="[0]")
-    private Output<String> contentName;
+    private Output</* @Nullable */ String> contentName;
 
     /**
      * @return The content name.
      * 
      */
-    public Output<String> contentName() {
-        return this.contentName;
+    public Output<Optional<String>> contentName() {
+        return Codegen.optional(this.contentName);
     }
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is &#34;100-Continue&#34; (case-insensitive).
@@ -97,7 +98,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="expect", refs={String.class}, tree="[0]")
-    private Output<String> expect;
+    private Output</* @Nullable */ String> expect;
 
     /**
      * @return A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is &#34;100-Continue&#34; (case-insensitive).
@@ -106,22 +107,22 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> expect() {
-        return this.expect;
+    public Output<Optional<String>> expect() {
+        return Codegen.optional(this.expect);
     }
     /**
      * The field names.
      * 
      */
     @Export(name="fieldNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> fieldNames;
+    private Output</* @Nullable */ List<String>> fieldNames;
 
     /**
      * @return The field names.
      * 
      */
-    public Output<List<String>> fieldNames() {
-        return this.fieldNames;
+    public Output<Optional<List<String>>> fieldNames() {
+        return Codegen.optional(this.fieldNames);
     }
     /**
      * Path to the file to upload which contains the custom content.
@@ -142,14 +143,14 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="isOverwrite", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOverwrite;
+    private Output</* @Nullable */ Boolean> isOverwrite;
 
     /**
      * @return A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
      * 
      */
-    public Output<Boolean> isOverwrite() {
-        return this.isOverwrite;
+    public Output<Optional<Boolean>> isOverwrite() {
+        return Codegen.optional(this.isOverwrite);
     }
     /**
      * The Logging Analytics namespace used for the request.
@@ -170,28 +171,28 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="parserNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> parserNames;
+    private Output</* @Nullable */ List<String>> parserNames;
 
     /**
      * @return The parser names.
      * 
      */
-    public Output<List<String>> parserNames() {
-        return this.parserNames;
+    public Output<Optional<List<String>>> parserNames() {
+        return Codegen.optional(this.parserNames);
     }
     /**
      * The source names.
      * 
      */
     @Export(name="sourceNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> sourceNames;
+    private Output</* @Nullable */ List<String>> sourceNames;
 
     /**
      * @return The source names.
      * 
      */
-    public Output<List<String>> sourceNames() {
-        return this.sourceNames;
+    public Output<Optional<List<String>>> sourceNames() {
+        return Codegen.optional(this.sourceNames);
     }
 
     /**

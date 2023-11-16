@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Route Table resource in Oracle Cloud Infrastructure Core service.
@@ -93,15 +92,15 @@ type RouteTable struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The collection of rules used for routing destination IPs to network devices.
 	RouteRules RouteTableRouteRuleArrayOutput `pulumi:"routeRules"`
 	// The route table's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the route table belongs to.
 	//
 	// ** IMPORTANT **
@@ -252,12 +251,6 @@ func (i *RouteTable) ToRouteTableOutputWithContext(ctx context.Context) RouteTab
 	return pulumi.ToOutputWithContext(ctx, i).(RouteTableOutput)
 }
 
-func (i *RouteTable) ToOutput(ctx context.Context) pulumix.Output[*RouteTable] {
-	return pulumix.Output[*RouteTable]{
-		OutputState: i.ToRouteTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RouteTableArrayInput is an input type that accepts RouteTableArray and RouteTableArrayOutput values.
 // You can construct a concrete instance of `RouteTableArrayInput` via:
 //
@@ -281,12 +274,6 @@ func (i RouteTableArray) ToRouteTableArrayOutput() RouteTableArrayOutput {
 
 func (i RouteTableArray) ToRouteTableArrayOutputWithContext(ctx context.Context) RouteTableArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RouteTableArrayOutput)
-}
-
-func (i RouteTableArray) ToOutput(ctx context.Context) pulumix.Output[[]*RouteTable] {
-	return pulumix.Output[[]*RouteTable]{
-		OutputState: i.ToRouteTableArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RouteTableMapInput is an input type that accepts RouteTableMap and RouteTableMapOutput values.
@@ -314,12 +301,6 @@ func (i RouteTableMap) ToRouteTableMapOutputWithContext(ctx context.Context) Rou
 	return pulumi.ToOutputWithContext(ctx, i).(RouteTableMapOutput)
 }
 
-func (i RouteTableMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RouteTable] {
-	return pulumix.Output[map[string]*RouteTable]{
-		OutputState: i.ToRouteTableMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RouteTableOutput struct{ *pulumi.OutputState }
 
 func (RouteTableOutput) ElementType() reflect.Type {
@@ -334,12 +315,6 @@ func (o RouteTableOutput) ToRouteTableOutputWithContext(ctx context.Context) Rou
 	return o
 }
 
-func (o RouteTableOutput) ToOutput(ctx context.Context) pulumix.Output[*RouteTable] {
-	return pulumix.Output[*RouteTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the route table.
 func (o RouteTableOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RouteTable) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -351,8 +326,8 @@ func (o RouteTableOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o RouteTableOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *RouteTable) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o RouteTableOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RouteTable) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -366,13 +341,13 @@ func (o RouteTableOutput) RouteRules() RouteTableRouteRuleArrayOutput {
 }
 
 // The route table's current state.
-func (o RouteTableOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RouteTable) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RouteTableOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RouteTable) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o RouteTableOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RouteTable) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RouteTableOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RouteTable) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the route table belongs to.
@@ -397,12 +372,6 @@ func (o RouteTableArrayOutput) ToRouteTableArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o RouteTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RouteTable] {
-	return pulumix.Output[[]*RouteTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RouteTableArrayOutput) Index(i pulumi.IntInput) RouteTableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RouteTable {
 		return vs[0].([]*RouteTable)[vs[1].(int)]
@@ -421,12 +390,6 @@ func (o RouteTableMapOutput) ToRouteTableMapOutput() RouteTableMapOutput {
 
 func (o RouteTableMapOutput) ToRouteTableMapOutputWithContext(ctx context.Context) RouteTableMapOutput {
 	return o
-}
-
-func (o RouteTableMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RouteTable] {
-	return pulumix.Output[map[string]*RouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RouteTableMapOutput) MapIndex(k pulumi.StringInput) RouteTableOutput {

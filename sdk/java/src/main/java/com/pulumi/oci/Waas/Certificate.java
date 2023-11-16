@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -113,90 +114,90 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      * 
      */
     @Export(name="extensions", refs={List.class,CertificateExtension.class}, tree="[0,1]")
-    private Output<List<CertificateExtension>> extensions;
+    private Output</* @Nullable */ List<CertificateExtension>> extensions;
 
     /**
      * @return Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      * 
      */
-    public Output<List<CertificateExtension>> extensions() {
-        return this.extensions;
+    public Output<Optional<List<CertificateExtension>>> extensions() {
+        return Codegen.optional(this.extensions);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Set to `true` if the SSL certificate is self-signed.
      * 
      */
     @Export(name="isTrustVerificationDisabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isTrustVerificationDisabled;
+    private Output</* @Nullable */ Boolean> isTrustVerificationDisabled;
 
     /**
      * @return Set to `true` if the SSL certificate is self-signed.
      * 
      */
-    public Output<Boolean> isTrustVerificationDisabled() {
-        return this.isTrustVerificationDisabled;
+    public Output<Optional<Boolean>> isTrustVerificationDisabled() {
+        return Codegen.optional(this.isTrustVerificationDisabled);
     }
     @Export(name="issuedBy", refs={String.class}, tree="[0]")
-    private Output<String> issuedBy;
+    private Output</* @Nullable */ String> issuedBy;
 
-    public Output<String> issuedBy() {
-        return this.issuedBy;
+    public Output<Optional<String>> issuedBy() {
+        return Codegen.optional(this.issuedBy);
     }
     /**
      * The issuer of the certificate.
      * 
      */
     @Export(name="issuerNames", refs={List.class,CertificateIssuerName.class}, tree="[0,1]")
-    private Output<List<CertificateIssuerName>> issuerNames;
+    private Output</* @Nullable */ List<CertificateIssuerName>> issuerNames;
 
     /**
      * @return The issuer of the certificate.
      * 
      */
-    public Output<List<CertificateIssuerName>> issuerNames() {
-        return this.issuerNames;
+    public Output<Optional<List<CertificateIssuerName>>> issuerNames() {
+        return Codegen.optional(this.issuerNames);
     }
     /**
      * The private key of the SSL certificate.
@@ -223,126 +224,126 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="publicKeyInfos", refs={List.class,CertificatePublicKeyInfo.class}, tree="[0,1]")
-    private Output<List<CertificatePublicKeyInfo>> publicKeyInfos;
+    private Output</* @Nullable */ List<CertificatePublicKeyInfo>> publicKeyInfos;
 
     /**
      * @return Information about the public key and the algorithm used by the public key.
      * 
      */
-    public Output<List<CertificatePublicKeyInfo>> publicKeyInfos() {
-        return this.publicKeyInfos;
+    public Output<Optional<List<CertificatePublicKeyInfo>>> publicKeyInfos() {
+        return Codegen.optional(this.publicKeyInfos);
     }
     /**
      * A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      * 
      */
     @Export(name="serialNumber", refs={String.class}, tree="[0]")
-    private Output<String> serialNumber;
+    private Output</* @Nullable */ String> serialNumber;
 
     /**
      * @return A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      * 
      */
-    public Output<String> serialNumber() {
-        return this.serialNumber;
+    public Output<Optional<String>> serialNumber() {
+        return Codegen.optional(this.serialNumber);
     }
     /**
      * The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      * 
      */
     @Export(name="signatureAlgorithm", refs={String.class}, tree="[0]")
-    private Output<String> signatureAlgorithm;
+    private Output</* @Nullable */ String> signatureAlgorithm;
 
     /**
      * @return The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      * 
      */
-    public Output<String> signatureAlgorithm() {
-        return this.signatureAlgorithm;
+    public Output<Optional<String>> signatureAlgorithm() {
+        return Codegen.optional(this.signatureAlgorithm);
     }
     /**
      * The current lifecycle state of the SSL certificate.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the SSL certificate.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The entity to be secured by the certificate.
      * 
      */
     @Export(name="subjectNames", refs={List.class,CertificateSubjectName.class}, tree="[0,1]")
-    private Output<List<CertificateSubjectName>> subjectNames;
+    private Output</* @Nullable */ List<CertificateSubjectName>> subjectNames;
 
     /**
      * @return The entity to be secured by the certificate.
      * 
      */
-    public Output<List<CertificateSubjectName>> subjectNames() {
-        return this.subjectNames;
+    public Output<Optional<List<CertificateSubjectName>>> subjectNames() {
+        return Codegen.optional(this.subjectNames);
     }
     /**
      * The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      * 
      */
     @Export(name="timeNotValidAfter", refs={String.class}, tree="[0]")
-    private Output<String> timeNotValidAfter;
+    private Output</* @Nullable */ String> timeNotValidAfter;
 
     /**
      * @return The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      * 
      */
-    public Output<String> timeNotValidAfter() {
-        return this.timeNotValidAfter;
+    public Output<Optional<String>> timeNotValidAfter() {
+        return Codegen.optional(this.timeNotValidAfter);
     }
     /**
      * The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      * 
      */
     @Export(name="timeNotValidBefore", refs={String.class}, tree="[0]")
-    private Output<String> timeNotValidBefore;
+    private Output</* @Nullable */ String> timeNotValidBefore;
 
     /**
      * @return The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      * 
      */
-    public Output<String> timeNotValidBefore() {
-        return this.timeNotValidBefore;
+    public Output<Optional<String>> timeNotValidBefore() {
+        return Codegen.optional(this.timeNotValidBefore);
     }
     /**
      * The version of the encoded certificate.
      * 
      */
     @Export(name="version", refs={Integer.class}, tree="[0]")
-    private Output<Integer> version;
+    private Output</* @Nullable */ Integer> version;
 
     /**
      * @return The version of the encoded certificate.
      * 
      */
-    public Output<Integer> version() {
-        return this.version;
+    public Output<Optional<Integer>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

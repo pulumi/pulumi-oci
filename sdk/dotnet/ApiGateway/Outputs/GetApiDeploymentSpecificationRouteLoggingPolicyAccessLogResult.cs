@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Whether this policy is currently enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
-        private GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogResult(bool isEnabled)
+        private GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogResult(bool? isEnabled)
         {
             IsEnabled = isEnabled;
         }

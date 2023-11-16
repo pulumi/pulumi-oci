@@ -16,11 +16,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
         /// </summary>
-        public readonly string AttributeName;
+        public readonly string? AttributeName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet must match.
         /// </summary>
-        public readonly string AttributeValue;
+        public readonly string? AttributeValue;
         /// <summary>
         /// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
         /// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
@@ -28,15 +28,15 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
         /// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         /// </summary>
-        public readonly string Operator;
+        public readonly string? Operator;
 
         [OutputConstructor]
         private GetListenerRulesListenerRuleRuleConditionResult(
-            string attributeName,
+            string? attributeName,
 
-            string attributeValue,
+            string? attributeValue,
 
-            string @operator)
+            string? @operator)
         {
             AttributeName = attributeName;
             AttributeValue = attributeValue;

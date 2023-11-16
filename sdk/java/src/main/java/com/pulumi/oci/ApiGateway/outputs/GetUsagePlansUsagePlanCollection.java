@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUsagePlansUsagePlanCollection {
-    private List<GetUsagePlansUsagePlanCollectionItem> items;
+    private @Nullable List<GetUsagePlansUsagePlanCollectionItem> items;
 
     private GetUsagePlansUsagePlanCollection() {}
     public List<GetUsagePlansUsagePlanCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetUsagePlansUsagePlanCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetUsagePlansUsagePlanCollectionItem> items;
+        private @Nullable List<GetUsagePlansUsagePlanCollectionItem> items;
         public Builder() {}
         public Builder(GetUsagePlansUsagePlanCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetUsagePlansUsagePlanCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetUsagePlansUsagePlanCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetUsagePlansUsagePlanCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetUsagePlansUsagePlanCollectionItem... items) {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsIdentityProvidersIdentityProviderJitUserProvGroupMapping {
@@ -13,39 +15,39 @@ public final class GetDomainsIdentityProvidersIdentityProviderJitUserProvGroupMa
      * @return IDP Group Name
      * 
      */
-    private String idpGroup;
+    private @Nullable String idpGroup;
     /**
      * @return Group URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Value of the tag.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsIdentityProvidersIdentityProviderJitUserProvGroupMapping() {}
     /**
      * @return IDP Group Name
      * 
      */
-    public String idpGroup() {
-        return this.idpGroup;
+    public Optional<String> idpGroup() {
+        return Optional.ofNullable(this.idpGroup);
     }
     /**
      * @return Group URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Value of the tag.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainsIdentityProvidersIdentityProviderJitUserProvGroupMa
     }
     @CustomType.Builder
     public static final class Builder {
-        private String idpGroup;
-        private String ref;
-        private String value;
+        private @Nullable String idpGroup;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsIdentityProvidersIdentityProviderJitUserProvGroupMapping defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainsIdentityProvidersIdentityProviderJitUserProvGroupMa
         }
 
         @CustomType.Setter
-        public Builder idpGroup(String idpGroup) {
-            this.idpGroup = Objects.requireNonNull(idpGroup);
+        public Builder idpGroup(@Nullable String idpGroup) {
+            this.idpGroup = idpGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsIdentityProvidersIdentityProviderJitUserProvGroupMapping build() {

@@ -20,15 +20,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
         /// </summary>
-        public readonly string AppName;
+        public readonly string? AppName;
         /// <summary>
         /// A filter to return only a specific column based on column name.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// The data type of the sensitive column.
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         /// </summary>
@@ -40,19 +40,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only the resources that match the specified discovery type.
         /// </summary>
-        public readonly string DiscoveryType;
+        public readonly string? DiscoveryType;
         /// <summary>
         /// The estimated number of data values the column has in the associated database.
         /// </summary>
-        public readonly string EstimatedDataValueCount;
+        public readonly string? EstimatedDataValueCount;
         /// <summary>
         /// A filter to return the discovery result resources based on the value of their isResultApplied attribute.
         /// </summary>
-        public readonly bool IsResultApplied;
+        public readonly bool? IsResultApplied;
         /// <summary>
         /// The unique key that identifies the discovery result.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
         /// </summary>
@@ -60,11 +60,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to a specific object name.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// The type of the database object that contains the sensitive column.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
         /// </summary>
@@ -72,11 +72,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only the resources that match the specified planned action.
         /// </summary>
-        public readonly string PlannedAction;
+        public readonly string? PlannedAction;
         /// <summary>
         /// The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         /// </summary>
-        public readonly string RelationType;
+        public readonly string? RelationType;
         /// <summary>
         /// Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
         /// </summary>
@@ -84,57 +84,57 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// The unique key that identifies the sensitive column represented by the discovery result.
         /// </summary>
-        public readonly string SensitiveColumnkey;
+        public readonly string? SensitiveColumnkey;
         /// <summary>
         /// The OCID of the sensitive type associated with the sensitive column.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
 
         [OutputConstructor]
         private GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(
             ImmutableArray<string> appDefinedChildColumnKeys,
 
-            string appName,
+            string? appName,
 
-            string columnName,
+            string? columnName,
 
-            string dataType,
+            string? dataType,
 
             ImmutableArray<string> dbDefinedChildColumnKeys,
 
             string discoveryJobId,
 
-            string discoveryType,
+            string? discoveryType,
 
-            string estimatedDataValueCount,
+            string? estimatedDataValueCount,
 
-            bool isResultApplied,
+            bool? isResultApplied,
 
-            string key,
+            string? key,
 
             ImmutableArray<Outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeResult> modifiedAttributes,
 
-            string @object,
+            string? @object,
 
-            string objectType,
+            string? objectType,
 
             ImmutableArray<string> parentColumnKeys,
 
-            string plannedAction,
+            string? plannedAction,
 
-            string relationType,
+            string? relationType,
 
             ImmutableArray<string> sampleDataValues,
 
-            string schemaName,
+            string? schemaName,
 
-            string sensitiveColumnkey,
+            string? sensitiveColumnkey,
 
-            string sensitiveTypeId)
+            string? sensitiveTypeId)
         {
             AppDefinedChildColumnKeys = appDefinedChildColumnKeys;
             AppName = appName;

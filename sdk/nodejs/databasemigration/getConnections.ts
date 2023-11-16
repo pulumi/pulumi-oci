@@ -65,7 +65,7 @@ export interface GetConnectionsResult {
     /**
      * The list of connection_collection.
      */
-    readonly connectionCollections: outputs.DatabaseMigration.GetConnectionsConnectionCollection[];
+    readonly connectionCollections?: outputs.DatabaseMigration.GetConnectionsConnectionCollection[];
     /**
      * Database Connection display name identifier.
      */
@@ -74,7 +74,7 @@ export interface GetConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Connection resource.
      */

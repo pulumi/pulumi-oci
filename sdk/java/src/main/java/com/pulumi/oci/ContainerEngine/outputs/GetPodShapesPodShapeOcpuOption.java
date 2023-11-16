@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPodShapesPodShapeOcpuOption {
@@ -13,27 +15,27 @@ public final class GetPodShapesPodShapeOcpuOption {
      * @return The maximum number of OCPUs.
      * 
      */
-    private Double max;
+    private @Nullable Double max;
     /**
      * @return The minimum number of OCPUs.
      * 
      */
-    private Double min;
+    private @Nullable Double min;
 
     private GetPodShapesPodShapeOcpuOption() {}
     /**
      * @return The maximum number of OCPUs.
      * 
      */
-    public Double max() {
-        return this.max;
+    public Optional<Double> max() {
+        return Optional.ofNullable(this.max);
     }
     /**
      * @return The minimum number of OCPUs.
      * 
      */
-    public Double min() {
-        return this.min;
+    public Optional<Double> min() {
+        return Optional.ofNullable(this.min);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetPodShapesPodShapeOcpuOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double max;
-        private Double min;
+        private @Nullable Double max;
+        private @Nullable Double min;
         public Builder() {}
         public Builder(GetPodShapesPodShapeOcpuOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetPodShapesPodShapeOcpuOption {
         }
 
         @CustomType.Setter
-        public Builder max(Double max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Double max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Double min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Double min) {
+            this.min = min;
             return this;
         }
         public GetPodShapesPodShapeOcpuOption build() {
